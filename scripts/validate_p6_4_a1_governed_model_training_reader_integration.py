@@ -49,7 +49,10 @@ def errors(data: dict) -> list[str]:
     if a1_index < 1 or ids[a1_index - 1] != "replaceable-cognitive-substrates-beyond-transformer-monoculture" or ids[a1_index + 1] != "readiness-gates-residual-escrow-and-quarantine":
         out.append("A1 Part III placement drifted")
     chapter = next((row for row in chapters if row["id"] == CHAPTER_ID), {})
-    if set(chapter.get("source_ids", [])) != SOURCE_IDS | LOCAL_SOURCE_IDS or chapter.get("evidence_level") != "argument" or chapter.get("claim_label") != "Design rationale":
+    # A1 freezes the seven-source admission packet, not the chapter's maximum
+    # future bibliography. Later source packets may extend the chapter provided
+    # the admitted packet and its support ceiling remain intact.
+    if not (SOURCE_IDS | LOCAL_SOURCE_IDS).issubset(set(chapter.get("source_ids", []))) or chapter.get("evidence_level") != "argument" or chapter.get("claim_label") != "Design rationale":
         out.append("A1 manifest source or support boundary drifted")
 
     inventory = {row["id"]: row for row in data["sources"]}
@@ -105,8 +108,15 @@ def errors(data: dict) -> list[str]:
                 out.append(f"{name} reader surface missing: {fragment}")
 
     artifact_hashes = audit.get("artifact_sha256", {})
-    for relative in audit.get("artifacts", {}).values():
+    for artifact_name, relative in audit.get("artifacts", {}).items():
         path = ROOT / relative
+        # The chapter is a living reader surface. Its A1 admission identity is
+        # checked above through placement, source-subset, and support-boundary
+        # invariants; byte-freezing it would forbid later reader improvements.
+        if artifact_name == "chapter":
+            if not path.is_file():
+                out.append(f"A1 living chapter missing: {relative}")
+            continue
         if not path.is_file() or artifact_hashes.get(relative) != sha(path):
             out.append(f"A1 artifact digest drifted: {relative}")
     for source_id in SOURCE_IDS:

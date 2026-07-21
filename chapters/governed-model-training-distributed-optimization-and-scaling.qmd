@@ -3,8 +3,8 @@ title: "Governed Model Training, Distributed Optimization, and Scaling"
 chapter_id: "governed-model-training-distributed-optimization-and-scaling"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
-draft_maturity: "v0.1 integrated argument chapter"
-last_updated: "2026-07-19"
+draft_maturity: "v0.2 optimizer-landscape integration"
+last_updated: "2026-07-21"
 primary_sources:
   - "ext_llama3_herd_2024"
   - "ext_megatron_distributed_training_2021"
@@ -13,6 +13,21 @@ primary_sources:
   - "ext_datastates_llm_2024"
   - "ext_pytorch_distributed_checkpoint_2026"
   - "ext_mlperf_training_v6_2026"
+  - "ext_adam_2015"
+  - "ext_amsgrad_2018"
+  - "ext_adamw_2019"
+  - "ext_adafactor_2018"
+  - "ext_lamb_2019"
+  - "ext_shampoo_2018"
+  - "ext_kfac_2015"
+  - "ext_lion_2023"
+  - "ext_sophia_2023"
+  - "ext_soap_2024"
+  - "ext_schedule_free_2024"
+  - "ext_mup_2022"
+  - "ext_modular_norm_2024"
+  - "ext_muon_scalable_2025"
+  - "ext_muon_spectral_norm_2026"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -20,6 +35,7 @@ open_evidence_gaps:
   - "The authored transaction fixture is record-shape evidence only; its resume probe is explicitly not an executed training result."
   - "No checkpoint has been shown to resume a natural run under bitwise, operation-order-bounded, or statistical equivalence."
   - "No source-reported throughput, interruption, checkpoint, or scale result has been reproduced locally."
+  - "No optimizer family has been compared locally under the chapter's matched tuning, rescue, transfer, and lifecycle-cost protocol."
 ---
 
 ## Chapter status
@@ -29,13 +45,13 @@ open_evidence_gaps:
 | Chapter ID | `governed-model-training-distributed-optimization-and-scaling` |
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
-| Manuscript maturity | v0.1 integrated argument chapter |
-| Last updated | 2026-07-19 |
-| Primary source records | `ext_llama3_herd_2024`, `ext_megatron_distributed_training_2021`, `ext_zero_optimizer_2019`, `ext_gspmd_2021`, `ext_datastates_llm_2024`, `ext_pytorch_distributed_checkpoint_2026`, `ext_mlperf_training_v6_2026` |
+| Manuscript maturity | v0.2 optimizer-landscape integration |
+| Last updated | 2026-07-21 |
+| Primary source records | Seven distributed-training/checkpoint records plus fifteen optimizer records spanning Adam/AdamW, failure variants, memory/layer scaling, tensor and curvature preconditioning, Lion, Sophia, SOAP, schedule-free methods, maximal-update and modular-norm transfer, and Muon. |
 | Local implementation reference | `corbens_trainer_project` supplies a pinned failure-bearing trainer/control-plane comparator; it is not a reproduced training result. |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source loading state | Seven primary or official records cover a large-run case, composed parallelism, sharded-state design, compiler-mediated topology, distributed checkpoint consistency, a current implementation interface, and time-to-quality measurement. All source results remain source-reported. |
+| Source loading state | Twenty-two primary or official records now cover the distributed run lifecycle and a practical/theoretical optimizer landscape. All cited results remain source-reported. |
 | Test state | One authored transaction fixture, a JSON Schema, an independent semantic validator, and 21 rejecting mutations are implemented. The natural five-arm campaign is prospectively specified and unexecuted. |
 | Formal state | Two public targets are implemented in `AsiStackProofs.GovernedModelTraining` through thirteen theorem declarations. Their ceiling is finite record-route semantics. |
 
@@ -43,9 +59,9 @@ open_evidence_gaps:
 
 This chapter governs **the identity and faithful execution of a training run**.
 It does not claim that larger training is better, that one optimizer or
-parallelism method wins, that the recorded state inventory is complete for every
+parallelism or optimizer method wins, that the recorded state inventory is complete for every
 framework, or that a checkpoint which loads continues the same learning
-trajectory. The seven sources establish mechanisms, reported cases, concrete
+trajectory. The sources establish mechanisms, reported cases, concrete
 interfaces, and measurement comparators. None supplies local evidence.
 
 The chapter remains **Design rationale + argument**. Its authored positive
@@ -265,6 +281,246 @@ Identity fields must be content- or version-bound. A free-text name such as
 the base inventory rather than disappearing because an existing schema does not
 know it.
 
+### The optimizer is a coupled run policy
+
+An optimizer name is an index into a family, not an executable specification.
+Two runs both labeled “AdamW” can differ in epsilon placement, moment precision,
+bias correction, parameter exclusions, decay semantics, clipping, learning-rate
+schedule, warmup, batch arithmetic, gradient accumulation, loss scaling, or
+implementation version. Those differences can change the update as materially
+as changing the optimizer family. The same is more obvious for methods with a
+preconditioner, curvature estimator, trust ratio, averaging state, or
+orthogonalization approximation.
+
+The run contract therefore carries an **Optimizer Policy Card**:
+
+```text
+OptimizerPolicyCard {
+  family, implementation, version, parameterization,
+  eligible_parameters, parameter_groups, fallback_policy,
+  state_tensors_and_dtypes, update_equation,
+  learning_rate, warmup, schedule_or_averaging_state,
+  decay_semantics, clipping, epsilon_and_stabilizers,
+  preconditioner_or_curvature_cadence,
+  approximation_algorithm_and_precision,
+  batch_and_accumulation_semantics,
+  distributed_placement_and_communication,
+  tuning_budget, rescue_ladder, stopping_rule,
+  checkpoint_state, nonclaims
+}
+```
+
+The machine-readable contract is `schemas/optimizer_policy_card.schema.json`.
+Its public fixture is an authored Muon-primary/AdamW-fallback identity example,
+not a training result; `scripts/validate_optimizer_policy_card.py` checks the
+policy seams and adversarial mutations without asserting that either arm works.
+
+This card changes how optimizer evidence is interpreted. A claim about “Muon”
+applies only to the declared matrix eligibility, fallback rule,
+orthogonalization, update scaling, decay, communication, and tuning policy. A
+claim about “schedule-free AdamW” includes the averaging iterates and which
+iterate is used for evaluation. A claim about maximal-update parameterization
+is not a claim about standard parameterization. Silent substitution creates a
+new run segment; it cannot inherit the old result.
+
+```{mermaid}
+flowchart TD
+  A["Architecture, parameterization, and parameter shapes"] --> C["Optimizer Policy Card"]
+  B["Objective, data order, batch regime, and precision"] --> C
+  C --> D{"Parameter eligible for selected family?"}
+  D -- "yes" --> E["Declared family update and state"]
+  D -- "no" --> F["Declared fallback optimizer and state"]
+  E --> G["Schedule / averaging / clipping / decay"]
+  F --> G
+  G --> H["Distributed placement, communication, and numerical execution"]
+  H --> I["Complete checkpoint and resume probe"]
+  I --> J["Matched qualification and lifecycle-cost report"]
+```
+
+**What this optimizer-policy diagram shows:** optimizer selection starts before
+the update equation and ends after state recovery and matched evaluation.
+Architecture and parameter shape determine eligibility; fallback is explicit;
+schedule, regularization, numerics, and distribution remain part of the method.
+No box grants a universal superiority claim.
+
+### Optimizer families and what they actually change
+
+The useful organizing question is not “which optimizer is best?” It is “what
+information does the update retain or approximate, in what geometry, at what
+cost, and under which transfer assumptions?”
+
+| Family | Representative methods | Additional information or transformation | State and systems pressure | Primary failure to test |
+|---|---|---|---|---|
+| Classical first order | SGD, momentum, Nesterov | Gradient plus optional velocity/look-ahead | Usually one velocity tensor or less; simple communication | Poor conditioning, schedule sensitivity, or misleadingly weak tuning |
+| Coordinate-adaptive | AdaGrad, RMSProp, Adam, AMSGrad, AdamW | Per-coordinate gradient-history scale; Adam-family first moments | One or two state tensors per parameter | Effective-step instability, epsilon/decay ambiguity, high state memory |
+| Memory/layer scaled | Adafactor, LARS, LAMB | Factored moments or layer-wise trust ratios | Lower state or extra norm reductions | Approximation error, layer-rule pathologies, critical-batch mismatch |
+| Tensor/matrix preconditioned | Shampoo, SOAP | Per-axis matrix statistics and rotated adaptive updates | Matrix state, inverse roots/eigendecompositions, refresh and communication | Approximation/cadence overhead erases progress-per-step gains |
+| Curvature-aware | K-FAC, Sophia | Fisher/Kronecker factors or diagonal Hessian estimates | Curvature statistics, damping/clipping, periodic inversion/refresh | Stale or invalid curvature proxy; unstable or costly updates |
+| Sign/discovered | Lion | Momentum transformed through a sign update | One state tensor; larger fixed-magnitude coordinate updates | Learning-rate/decay mismatch or poor transfer from search proxies |
+| Orthogonalized matrix | Muon | Momentum followed by approximate matrix orthogonalization | Matrix-only eligibility, Newton--Schulz work, collective communication | Bad fallback, scaling, approximation, or topology implementation |
+| Schedule/averaging | schedule-free methods | Online iterates coupled to averaging rather than a stopping-time schedule | Multiple iterate states and evaluation-mode discipline | Evaluating or resuming the wrong iterate |
+| Geometry and transfer | maximal-update parameterization, modular norm, natural gradient | Width/depth scaling rules or parameterization-aware metric | Architecture metadata, module norms, Fisher/metric approximations | Applying transfer outside its declared axis or assumptions |
+
+This taxonomy is deliberately non-exclusive. SOAP combines matrix
+preconditioning with Adam-like moments. Muon can be interpreted through a
+spectral or norm-constrained lens while remaining an approximate executable
+algorithm. Schedule-free AdamW changes the temporal policy around a familiar
+base update. A run record must describe the composition rather than forcing one
+marketing label.
+
+### AdamW is the reference, not the default winner
+
+Adam estimates a bias-corrected first moment and a coordinate-wise second
+moment. AdamW separates multiplicative weight decay from the adaptive gradient
+transformation; ordinary L2 regularization and decoupled decay are not the same
+operation for an adaptive optimizer. AMSGrad's counterexample lineage also
+shows why the history of effective coordinate steps matters and why a practical
+success record cannot erase a theorem-scoped failure.
+
+For modern model training, a tuned AdamW arm is the minimum serious adaptive
+baseline because it is familiar, broadly implemented, and exposes a demanding
+state/memory comparison. But “use AdamW” still leaves open:
+
+- which weights decay, including embeddings, normalization scales, biases, and
+  architecture-specific state;
+- whether decay is scaled with the learning rate, batch, model, or duration;
+- betas, epsilon and its placement, moment and master-weight dtypes, gradient
+  clipping, loss scaling, and overflow response;
+- warmup, peak rate, decay shape, stopping time, and continual-training reset;
+- sharding, offload, fused kernels, update order, and checkpoint layout; and
+- the tuning budget and local sensitivity around the selected recipe.
+
+A comparison that gives the proposed method architecture-specific care but
+uses a generic AdamW default is baseline sabotage. Conversely, a strong AdamW
+result does not make richer geometry unnecessary everywhere. The decision is
+empirical and regime-bound.
+
+### Structure-aware alternatives: what is gained and paid for
+
+**Adafactor** reduces second-moment storage for matrix parameters by estimating
+the full tensor from row and column statistics. That is valuable when Adam's
+optimizer state dominates memory, but it introduces a structured approximation
+and separate handling for non-matrix parameters. Update clipping and
+parameter-scale-relative rules are part of the method, not optional cleanup.
+
+**LAMB** adds a layer-wise trust ratio to an Adam-like direction, targeting
+large-batch regimes. Its reported BERT training time is a systems result for one
+quality target and platform. The chapter therefore records optimizer steps,
+tokens, examples, total compute, hardware time, and data efficiency together;
+otherwise parallel speedup can conceal optimization loss.
+
+**Shampoo** retains tensor structure through per-dimension preconditioners.
+**SOAP** runs Adam-like moments in the evolving eigenbasis of a Shampoo
+preconditioner. These methods can make more progress per step while spending
+more on matrix statistics, inverse roots or eigendecompositions, state, and
+communication. Block size, grafting, preconditioner frequency, numerical
+approximation, and state placement determine the actual algorithm.
+
+**K-FAC** approximates blocks of the Fisher information matrix with Kronecker
+products. **Sophia** uses a lightweight periodically refreshed diagonal
+curvature estimate and clips the resulting coordinate update. Both are
+“second-order” only in a bounded approximate sense. Their curvature proxy,
+damping or clipping, estimator cadence, model mapping, and inversion cost must
+be tested. Fewer steps cannot be assumed to mean less wall time or lower risk.
+
+**Lion** keeps one momentum state and applies a sign-based update found through
+symbolic optimizer search. This makes optimizer discovery itself visible: the
+search tasks, selection criteria, simplification, and transfer settings become
+provenance. A self-improving stack may propose a discovered update, but it must
+version and qualify that proposal like any other architecture change.
+
+### Muon: matrix geometry without a magic label
+
+Muon deserves explicit treatment because it changes the unit of adaptation.
+Instead of treating every matrix entry as an unrelated coordinate, a common
+form accumulates momentum and approximately orthogonalizes the matrix update
+using a short Newton--Schulz iteration. The large-scale source adds weight
+decay and per-parameter update scaling and reports a distributed implementation.
+The accepted spectral-norm analysis supplies one theoretical interpretation:
+under its idealized Lion-K/nuclear-norm formulation with decoupled decay, Muon
+implicitly enforces a spectral-norm constraint.
+
+That description creates six non-negotiable implementation questions:
+
+1. **Eligibility:** which two-dimensional parameters use Muon, and how are
+   convolutions, experts, tied weights, low-rank factors, or unusual modules
+   reshaped?
+2. **Fallback:** which optimizer handles embeddings, biases, normalization
+   parameters, scalars, and vectors, with what schedule and decay?
+3. **Approximation:** which polynomial coefficients, iteration count,
+   normalization, transpose convention, accumulator precision, and residual
+   tolerance define the orthogonalization?
+4. **Scaling:** how are updates scaled by matrix shape, parameter norm, width,
+   depth, batch, and learning rate?
+5. **Distribution:** where does momentum live, what is sharded, which
+   collectives reconstruct or transform matrices, and how much communication
+   and synchronization are added?
+6. **Recovery:** can momentum, approximation/scaling configuration, parameter
+   routing, fallback state, and topology resume under the declared equivalence
+   class?
+
+An experiment that ignores any of these may test a poor port rather than Muon.
+Likewise, the ideal spectral account and the finite-iteration implementation
+are related but not identical evidence objects. The book should measure
+orthogonality error and spectral diagnostics without treating either as a
+substitute for useful downstream behavior.
+
+### Scheduling, parameterization, and architecture transfer
+
+Learning-rate policy can dominate an optimizer comparison. Standard recipes
+combine warmup with constant, linear, cosine, inverse-square-root, or staged
+decay. Schedule-free methods instead maintain coupled online/averaged iterates
+without requiring a predeclared stopping step. That removes one dependency but
+creates explicit evaluation and checkpoint semantics: restoring only the model
+weights while losing the averaging state is not faithful resume.
+
+Parameterization is another axis. Maximal Update Parametrization aims to
+preserve feature-learning behavior as width changes and enables muTransfer from
+a smaller proxy under its specified rules. The modular norm recursively assigns
+geometry to architecture modules and can normalize a base optimizer's updates
+for reported width/depth transfer. These approaches are not interchangeable
+with choosing AdamW or Muon; they can wrap, rescale, or condition a base update.
+
+Every transfer claim therefore names its axis: batch, width, depth, duration,
+data, modality, architecture, optimizer, or hardware topology. Success across
+width does not imply success across depth. Transformer-to-Transformer transfer
+does not prove transfer to recurrent, state-space, graph, or hybrid kernels.
+Replaceable Cognitive Substrates supplies the candidate architecture and state
+contract; this chapter decides whether its optimizer policy transfers or must
+be retuned and requalified.
+
+### A competent optimizer-selection protocol
+
+Optimizer selection is a multi-objective qualification problem. Before final
+outcomes open, the comparison freezes the model graph, initialization and
+parameterization; data identity and order; objective; token/example budget;
+batch and accumulation; precision; hardware and topology; checkpoint and fault
+policy; evaluation cadence; target metrics; tuning budget; and stopping rule.
+Every arm receives a correct reference implementation, unit and small-scale
+positive controls, an equal or explicitly priced search budget, at least three
+independent seeds, and a method-specific rescue ladder.
+
+The report keeps these dimensions separate:
+
+| Dimension | Required observations |
+|---|---|
+| Progress | tokens, examples, optimizer steps, wall time, accelerator time, and energy to prospectively frozen quality thresholds |
+| Final behavior | loss, task quality, calibration, robustness, retained capabilities, and downstream transfer |
+| Resources | optimizer-state bytes, peak memory, measured compute, communication volume/time, storage, and checkpoint overhead |
+| Stability | divergence, overflow/underflow, update and gradient norms, curvature/orthogonality diagnostics where applicable, failed runs, and seed variance |
+| Tuning | trials, search space, selected recipe, rescue actions, and sensitivity around the selection |
+| Transfer | declared batch, width, depth, duration, architecture, data, and topology axes—only those actually tested |
+| Recovery | complete state closure and uninterrupted-versus-resumed behavior under the frozen equivalence class |
+| Governance | instrumentation, independent evaluation, operator work, rollback, retained failures, and total lifecycle cost |
+
+The inference ceiling follows the weakest relevant gate. A method that is
+faster per step but worse per token has not won efficiency. A method that reaches
+loss sooner but harms transfer has not won quality. A method that saves state
+but cannot resume faithfully has not won lifecycle cost. A single-scale win is
+evidence for that scale. A failed, under-tuned, incorrectly grouped,
+resource-starved, or positive-control-failing arm is N0--N2 evidence about that
+attempt, not a refutation of the optimizer family.
+
 ### Topology and numerical policy are semantic inputs
 
 The device mesh is not merely infrastructure. Parallelism dimensions determine
@@ -307,7 +563,12 @@ than an inconvenience.
 - Data Engines provide a versioned rights-bearing data lease; this chapter
   returns order, cursor, multiplicity, exclusion, and consumption receipts.
 - Replaceable Substrates provides an architecture and architecture-specific
-  state schema; the run cannot force every substrate into Transformer state.
+  state schema; the run cannot force every substrate into Transformer state or
+  assume an optimizer transfers across architectures.
+- Policy Optimization provides the authorized feedback objective and update
+  target; this chapter owns the parameter optimizer that executes that update,
+  so PPO/DPO/GRPO-style objective families are not confused with AdamW/Muon-
+  style parameter-update families.
 - Supply Chain provides code, environment, compiler, library, driver, and
   hardware lineage.
 - Resource Economics provides budgets and protected verification capacity;
@@ -340,6 +601,9 @@ to competent empirical tests.
 
 - Frozen inputs precede outcome inspection.
 - Every executed topology and numerical policy has an exact identity.
+- Every optimizer policy records parameter eligibility/groups, fallback,
+  parameterization, state, decay, clipping, schedule, approximation, and
+  distributed semantics rather than only a family name.
 - Global batch reconciles microbatch, accumulation, and parallel degrees.
 - Example order and multiplicity are reconstructable across retries and resume.
 - The declared complete state inventory includes architecture-specific state.
@@ -387,6 +651,21 @@ training.
    qualification and labels dependency as independence.
 14. **Record completeness theater:** a schema passes while the real framework
    state or external data pipeline remains outside the inventory.
+15. **Optimizer-label equivalence:** materially different parameter groups,
+   decay, epsilon, schedule, state precision, or approximation settings share
+   one method label and result.
+16. **Fallback concealment:** a matrix optimizer receives credit for a run while
+   an undeclared optimizer handles embeddings, vectors, or unstable modules.
+17. **Baseline sabotage:** the proposed method receives method-specific tuning
+   while AdamW, SGD/momentum, or another strong baseline uses an arbitrary
+   default.
+18. **False optimizer negative:** a naive port, broken positive control,
+   under-tuned arm, inadequate scale, or resource ceiling is presented as a
+   family-level failure.
+19. **Step-count laundering:** fewer optimizer steps substitutes for matched
+   tokens, time, compute, energy, final behavior, and lifecycle cost.
+20. **Transfer laundering:** width, batch, or one architecture's result is
+   described as general scale or substrate transfer.
 
 ## Minimum Viable Implementation
 
@@ -402,6 +681,15 @@ checkpointing, a deliberately weight-only recovery, the full transaction, and
 a compiler-selected or otherwise strong alternative topology when supported.
 All arms receive matched tuning opportunity. An independently implemented
 evaluator keeps qualification unopened until validation selection freezes.
+
+The minimum optimizer slice adds a tuned AdamW reference and one materially
+different family selected for the target architecture—for example Adafactor for
+state pressure, Shampoo/SOAP for tensor preconditioning, Sophia for curvature,
+or Muon for matrix orthogonalization. It freezes the Optimizer Policy Card,
+runs implementation positive controls, budgets tuning equally, permits a
+prospectively specified method-specific rescue, and retains at least three
+seeds and every failed attempt. A small test may establish that the instrument
+can distinguish policies; it cannot establish broad superiority.
 
 The result reports time-to-quality, resume success, equivalence distance,
 silent-drift detection, downstream variance, attempted and failed runs, wall
@@ -429,6 +717,15 @@ transfer across frameworks, hardware, topology sizes, model families, fault
 distributions, and time. A simpler standard checkpoint workflow winning the
 joint useful-quality, integrity, and lifecycle-cost frontier would narrow or
 refute the added governance.
+
+The optimizer endpoint is a substrate-aware selection service rather than a
+fixed winner. A new kernel declares parameter geometry and mutable state; the
+service composes eligible optimizer families, predicts state/compute/
+communication cost, runs shadow comparisons, and returns an exact policy card
+with rollback and retirement rules. Learned or self-generated optimizer
+proposals enter through the same gate. Recursive improvement means the stack can
+replace update machinery without allowing the proposal to grade itself or
+silently rewrite prior evidence.
 
 The deeper endpoint is prospective rather than retrospective: before an
 unfamiliar substrate can train, its kernel contract declares what state exists,
@@ -498,6 +795,8 @@ across seeds and timings. Otherwise the disposition is blocked or invalid, not
 | Natural distributed fault campaign | Compare five competent matched arms across 13 injected fault families, three or more seeds, multiple timings, hidden qualification, and joint costs. | prospectively specified; not run |
 | Independent replay | Reconstruct data order, topology plan, checkpoint state, selected candidate, and reported metrics from retained artifacts. | planned after a valid campaign |
 | Cross-substrate transfer | Repeat on at least one non-Transformer mutable-state architecture. | planned; dependent on prior evidence |
+| Optimizer-policy surface | Validate complete policy identity, parameter/fallback routing, state closure, schedule/averaging state, approximation and communication identity, matched tuning/rescue, joint evaluation, and incompatible-policy mutations. | implemented as authored schema/fixture with 18 rejecting mutations; no optimizer result |
+| Matched optimizer campaign | Compare tuned AdamW with at least one materially different competent family under equal/priced tuning, three or more seeds, method rescue, independent evaluation, and joint lifecycle metrics. | preregistration specified; not run |
 
 ## Formalization hooks
 
@@ -521,16 +820,34 @@ completeness, support, or release.
 | `ext_datastates_llm_2024` | limitation + recovery mechanism | Grounds distributed checkpoint consistency, asynchronous completion, storage-tier cost, and shard coordination. It does not establish full trajectory equivalence. |
 | `ext_pytorch_distributed_checkpoint_2026` | implementation interface | Grounds current save/load, asynchronous future, canonical state, strict load, and resharding semantics. Documentation is not benchmark evidence or complete application state. |
 | `ext_mlperf_training_v6_2026` | measurement/evaluation | Grounds fixed quality targets, repeated time-to-quality measures, system metadata, divisions, variance, and result correction. No MLPerf run is claimed, and the suite does not establish safety or complete run integrity. |
+| `ext_adam_2015` | reference mechanism | Grounds bias-corrected adaptive first/second moments. Its analysis and experiments do not establish universal nonconvex convergence or superiority. |
+| `ext_amsgrad_2018` | limitation + variant | Supplies a theorem-scoped Adam failure construction and AMSGrad remedy. It does not imply every practical Adam run fails or AMSGrad always wins. |
+| `ext_adamw_2019` | strong reference baseline | Grounds decoupled weight decay. Its setting-bound results do not make an `AdamW` label a complete policy or universal winner. |
+| `ext_adafactor_2018` | state-efficient design | Grounds factored second moments, update clipping, and lower matrix-state memory. Approximation and tensor-shape limits remain. |
+| `ext_lamb_2019` | layer-scaled design | Grounds layer-wise trust ratios and large-batch optimization. Its BERT time result is configuration- and platform-bound. |
+| `ext_shampoo_2018` | tensor preconditioner | Grounds per-dimension tensor preconditioning. Convex theory and source experiments do not settle current distributed cost. |
+| `ext_kfac_2015` | curvature design | Grounds Kronecker-factored Fisher approximation. Damping, factorization, cadence, architecture, and cost remain implementation-specific. |
+| `ext_lion_2023` | discovered/sign design | Grounds symbolic optimizer search and Lion's one-state sign-momentum update, including source-reported weak settings. |
+| `ext_sophia_2023` | curvature design | Grounds periodic diagonal-curvature estimation and clipped updates. Reported GPT speedups and simplified theory remain source-scoped. |
+| `ext_soap_2024` | hybrid tensor/adaptive design | Grounds Adam-like moments in Shampoo's changing eigenbasis. Results remain bound to model size, large batches, refresh frequency, and overhead. |
+| `ext_schedule_free_2024` | temporal-policy design | Grounds scheduling/averaging unification and schedule-free state. It removes stopping-time schedule dependence, not all hyperparameters or evaluation semantics. |
+| `ext_mup_2022` | parameterization/transfer | Grounds maximal-update parameterization and widthwise muTransfer. It does not establish arbitrary depth, duration, or architecture transfer. |
+| `ext_modular_norm_2024` | architecture-aware geometry | Grounds recursively composed module norms and reported width/depth learning-rate transfer under stated assumptions. |
+| `ext_muon_scalable_2025` | orthogonalized matrix design | Grounds large-scale Muon, weight decay, update scaling, and distributed implementation. Reported efficiency and Moonlight results are unreproduced here. |
+| `ext_muon_spectral_norm_2026` | theoretical interpretation | Grounds one accepted Lion-K/nuclear-norm account of Muon's implicit spectral constraint. It does not equate ideal and inexact updates or prove task-level superiority. |
 | `corbens_trainer_project` | local implementation + failure comparator | Supplies typed campaigns, training-truth gates, checkpoint lineage, retained run facts, quarantine history, and concrete seed, content-pin, promotion-revocation, and asynchronous-checkpoint acknowledgement failures. The pinned project was not trained or reproduced for this chapter and supports no model-quality or resume claim. |
 
-The seven-source external packet fills all four required roles:
+The distributed-systems packet and optimizer packet together fill all four required roles:
 mechanism/capability, limitation or failure, competing design, and
 measurement/evaluation. The pinned local project adds implementation and
 failure pressure without being counted as external evidence. Their disagreement
 is intentional. Manual composition, sharded data parallelism, compiler-mediated
 partitioning, asynchronous checkpointing, and standardized benchmarking are
 alternatives and complements whose boundaries must be tested rather than
-collapsed into one recipe.
+collapsed into one recipe. The optimizer sources add a second disagreement
+surface: coordinate, layer, tensor, curvature, sign, spectral, scheduling, and
+parameterization-aware methods trade different information and costs. Their
+source reports orient competent comparisons; none chooses the book's winner.
 
 ## Summary
 
@@ -551,6 +868,14 @@ evidence denominator. Future architecture families are protected as well:
 recurrent, state-space, sparse-expert, graph, test-time-memory, and hybrid
 systems may declare different state, but none may hide that state during
 recovery.
+
+Optimizer diversity follows the same principle. AdamW is a strong reference,
+not a constitutional default. Muon, Shampoo/SOAP, Adafactor, Lion, Sophia,
+K-FAC, LAMB, schedule-free methods, maximal-update parameterization, and modular
+norms remain available where their geometry and costs fit. Each must disclose
+the complete policy, earn a competent comparison, and preserve its state across
+recovery. That is how the stack can absorb better training ideas without
+hard-coding today's favorite update rule.
 
 The practical payoff is epistemic. A completed job becomes a candidate-
 producing event, not a self-validating success. A successful load becomes one

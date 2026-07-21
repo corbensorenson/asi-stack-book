@@ -4,7 +4,7 @@ chapter_id: "policy-optimization-and-learning-from-feedback"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.3 manuscript draft"
-last_updated: "2026-07-16"
+last_updated: "2026-07-21"
 primary_sources:
   - "benchmaxxing"
   - "rmi"
@@ -576,6 +576,12 @@ deployment, transfer, or support movement.
 
 Policy updates decide how behavior responds to feedback, but they still require a
 governed account of the feedback and training material that enters the loop.
+PPO, DPO, GRPO, and related names identify feedback objectives or policy-update
+procedures; they do not fully specify the parameter optimizer. Governed Model
+Training owns whether AdamW, Muon, Shampoo, Sophia, or another exact Optimizer
+Policy Card faithfully executes the authorized update and resumes with complete
+state. This chapter retains authority over what behavior is optimized and why;
+neither owner may silently absorb the other.
 **Data Engines, Continual Learning, and Unlearning** follows the learning
 actuator with that lifecycle: provenance, split exclusions, synthetic lineage,
 retention, deletion scope, contamination controls, residuals, and the boundary

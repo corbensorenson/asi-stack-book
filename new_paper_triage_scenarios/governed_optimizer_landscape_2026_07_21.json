@@ -1,0 +1,73 @@
+{
+  "scenario_id": "governed-optimizer-landscape-triage-2026-07-21",
+  "scenario_scope": "Coordinated intake of fifteen primary optimizer sources spanning adaptive moments, weight decay, state-efficient and layer-scaled methods, matrix and curvature preconditioning, sign updates, scheduling, scale transfer, and Muon.",
+  "case_validity_state": "reviewed",
+  "cases": [
+    {
+      "case_id": "optimizer-existing-owner-integration",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "governed-model-training-distributed-optimization-and-scaling",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "The existing chapter already owns optimizer, scheduler, numerical policy, state, topology, checkpointing, and qualification. The new literature supplies missing mechanism and selection depth without a distinct owner boundary.",
+      "required_before_drafting": [
+        "completed primary source notes",
+        "completed mechanism taxonomy",
+        "completed optimizer-versus-policy-objective boundary",
+        "source-scoped claims and non-authorities"
+      ],
+      "evidence_transition_preconditions": [
+        "matched competent comparison",
+        "method-specific rescue",
+        "independent evaluator",
+        "accepted claim-specific transition"
+      ],
+      "promotion_blockers": [
+        "no local campaign",
+        "no independent reproduction",
+        "source reports remain configuration-bound"
+      ],
+      "non_claims": [
+        "does not establish a universal optimizer winner",
+        "does not promote the governed-training core claim"
+      ]
+    },
+    {
+      "case_id": "optimizer-standalone-chapter-rejection",
+      "intake_kind": "source_variant",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "reject_duplicate",
+      "chapter_manifest_action": "reject_duplicate",
+      "existing_chapter_id": "governed-model-training-distributed-optimization-and-scaling",
+      "proposed_chapter_id": "optimizer-landscape-and-theory",
+      "decision_rationale": "A separate optimizer owner would split one executable run policy across chapters and duplicate full-state, schedule, topology, and qualification semantics.",
+      "required_before_drafting": [
+        "not applicable; use the existing owner"
+      ],
+      "evidence_transition_preconditions": [
+        "a future observed distinct interface would require fresh adjudication"
+      ],
+      "promotion_blockers": [
+        "topic breadth alone is not a chapter boundary"
+      ],
+      "non_claims": [
+        "does not reserve a future optimizer chapter"
+      ]
+    }
+  ],
+  "validation_boundary": "Records an existing-chapter source integration and rejects a duplicate chapter. It does not validate any optimizer implementation, theorem outside its assumptions, benchmark result, transfer claim, or training policy.",
+  "support_state_effect": "backlog_only",
+  "non_claims": [
+    "does not change chapter order",
+    "does not promote support",
+    "does not authorize a model-training campaign or release"
+  ]
+}

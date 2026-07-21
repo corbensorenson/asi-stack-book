@@ -1211,6 +1211,20 @@ protocol or support a negative inference. Source reports, theory, prose,
 fixtures, and protocol readiness alone cannot establish optimizer superiority,
 scale transfer, model quality, safety, support, RSI, release, or SOTA.
 
+**2026-07-21 implementation checkpoint.** Fifteen primary optimizer records and
+passage notes are now ingested; the existing chapter contains the family
+taxonomy, AdamW reference, Muon implementation questions, scale/parameterization
+boundary, competent selection protocol, and joint reporting matrix; adjacent
+substrate, policy-update, and resource handoffs and the glossary/source appendix
+are reconciled. `schemas/optimizer_policy_card.schema.json` plus its authored
+Muon-primary/AdamW-fallback fixture and independent validator reject eighteen
+identity, routing, state, approximation, communication, tuning, rescue,
+evaluation, source, and authority mutations. This materially closes the reader,
+source, and policy-contract surfaces but does **not** close R16-E: its claim-atom
+projection remains owned by R16-A, the current-reader projection remains owned
+by R16-B, and the resource-gated matched campaign plus independent reproduction
+remain unexecuted. Support and release effects remain `none`.
+
 ## P7 — Reader remediation and owner-authorized publication
 
 The first Round 15 publication transaction is complete. The

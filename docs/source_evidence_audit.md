@@ -11,12 +11,12 @@ It does **not** quote or publish raw private source passages. It also does **not
 | Metric | Value |
 |---|---:|
 | Chapters audited | 61 |
-| Assigned source/chapter pairs | 944 |
-| Exact claim-source mappings | 874 |
+| Assigned source/chapter pairs | 959 |
+| Exact claim-source mappings | 889 |
 | Unmapped assigned pairs | 70 |
-| Source notes present for assigned pairs | 944 |
-| Source notes listing assigned chapter | 944 |
-| Passage-reviewed mappings recorded | 874 |
+| Source notes present for assigned pairs | 959 |
+| Source notes listing assigned chapter | 959 |
+| Passage-reviewed mappings recorded | 889 |
 | Support-state counts | {"argument": 61} |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -67,7 +67,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `procedural-memory-and-cognitive-loop-closure` | 22 | 18 | 22 | 22 | 18 | argument | passage review required before source-derived promotion |
 | `routing-heads-and-specialist-cores` | 19 | 17 | 19 | 19 | 17 | argument | passage review required before source-derived promotion |
 | `replaceable-cognitive-substrates-beyond-transformer-monoculture` | 37 | 35 | 37 | 37 | 35 | argument | passage review required before source-derived promotion |
-| `governed-model-training-distributed-optimization-and-scaling` | 8 | 8 | 8 | 8 | 8 | argument | eligible for support review |
+| `governed-model-training-distributed-optimization-and-scaling` | 23 | 23 | 23 | 23 | 23 | argument | eligible for support review |
 | `readiness-gates-residual-escrow-and-quarantine` | 19 | 18 | 19 | 19 | 18 | argument | passage review required before source-derived promotion |
 | `personal-compute-hives-and-federated-edge-intelligence` | 23 | 23 | 23 | 23 | 23 | argument | eligible for support review |
 | `compact-generative-systems-and-residual-honesty` | 19 | 17 | 19 | 19 | 17 | argument | passage review required before source-derived promotion |
@@ -340,6 +340,21 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_gspmd_2021` | 1 | yes |
 | `ext_datastates_llm_2024` | 1 | yes |
 | `ext_pytorch_distributed_checkpoint_2026` | 1 | yes |
+| `ext_adam_2015` | 1 | yes |
+| `ext_amsgrad_2018` | 1 | yes |
+| `ext_adamw_2019` | 1 | yes |
+| `ext_adafactor_2018` | 1 | yes |
+| `ext_lamb_2019` | 1 | yes |
+| `ext_shampoo_2018` | 1 | yes |
+| `ext_kfac_2015` | 1 | yes |
+| `ext_lion_2023` | 1 | yes |
+| `ext_sophia_2023` | 1 | yes |
+| `ext_soap_2024` | 1 | yes |
+| `ext_schedule_free_2024` | 1 | yes |
+| `ext_mup_2022` | 1 | yes |
+| `ext_modular_norm_2024` | 1 | yes |
+| `ext_muon_scalable_2025` | 1 | yes |
+| `ext_muon_spectral_norm_2026` | 1 | yes |
 | `ext_tailscale_docs_2025` | 1 | yes |
 | `ext_kubernetes_overview_docs` | 1 | yes |
 | `ext_k3s_docs_2026` | 1 | yes |
@@ -942,6 +957,21 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `governed-model-training-distributed-optimization-and-scaling.core` | `governed-model-training-distributed-optimization-and-scaling` | `ext_datastates_llm_2024` | mapped | note present | chapter listed | passage-reviewed |
 | `governed-model-training-distributed-optimization-and-scaling.core` | `governed-model-training-distributed-optimization-and-scaling` | `ext_pytorch_distributed_checkpoint_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `governed-model-training-distributed-optimization-and-scaling.core` | `governed-model-training-distributed-optimization-and-scaling` | `ext_mlperf_training_v6_2026` | mapped | note present | chapter listed | passage-reviewed |
+| `governed-model-training-distributed-optimization-and-scaling.core` | `governed-model-training-distributed-optimization-and-scaling` | `ext_adam_2015` | mapped | note present | chapter listed | passage-reviewed |
+| `governed-model-training-distributed-optimization-and-scaling.core` | `governed-model-training-distributed-optimization-and-scaling` | `ext_amsgrad_2018` | mapped | note present | chapter listed | passage-reviewed |
+| `governed-model-training-distributed-optimization-and-scaling.core` | `governed-model-training-distributed-optimization-and-scaling` | `ext_adamw_2019` | mapped | note present | chapter listed | passage-reviewed |
+| `governed-model-training-distributed-optimization-and-scaling.core` | `governed-model-training-distributed-optimization-and-scaling` | `ext_adafactor_2018` | mapped | note present | chapter listed | passage-reviewed |
+| `governed-model-training-distributed-optimization-and-scaling.core` | `governed-model-training-distributed-optimization-and-scaling` | `ext_lamb_2019` | mapped | note present | chapter listed | passage-reviewed |
+| `governed-model-training-distributed-optimization-and-scaling.core` | `governed-model-training-distributed-optimization-and-scaling` | `ext_shampoo_2018` | mapped | note present | chapter listed | passage-reviewed |
+| `governed-model-training-distributed-optimization-and-scaling.core` | `governed-model-training-distributed-optimization-and-scaling` | `ext_kfac_2015` | mapped | note present | chapter listed | passage-reviewed |
+| `governed-model-training-distributed-optimization-and-scaling.core` | `governed-model-training-distributed-optimization-and-scaling` | `ext_lion_2023` | mapped | note present | chapter listed | passage-reviewed |
+| `governed-model-training-distributed-optimization-and-scaling.core` | `governed-model-training-distributed-optimization-and-scaling` | `ext_sophia_2023` | mapped | note present | chapter listed | passage-reviewed |
+| `governed-model-training-distributed-optimization-and-scaling.core` | `governed-model-training-distributed-optimization-and-scaling` | `ext_soap_2024` | mapped | note present | chapter listed | passage-reviewed |
+| `governed-model-training-distributed-optimization-and-scaling.core` | `governed-model-training-distributed-optimization-and-scaling` | `ext_schedule_free_2024` | mapped | note present | chapter listed | passage-reviewed |
+| `governed-model-training-distributed-optimization-and-scaling.core` | `governed-model-training-distributed-optimization-and-scaling` | `ext_mup_2022` | mapped | note present | chapter listed | passage-reviewed |
+| `governed-model-training-distributed-optimization-and-scaling.core` | `governed-model-training-distributed-optimization-and-scaling` | `ext_modular_norm_2024` | mapped | note present | chapter listed | passage-reviewed |
+| `governed-model-training-distributed-optimization-and-scaling.core` | `governed-model-training-distributed-optimization-and-scaling` | `ext_muon_scalable_2025` | mapped | note present | chapter listed | passage-reviewed |
+| `governed-model-training-distributed-optimization-and-scaling.core` | `governed-model-training-distributed-optimization-and-scaling` | `ext_muon_spectral_norm_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `governed-model-training-distributed-optimization-and-scaling.core` | `governed-model-training-distributed-optimization-and-scaling` | `corbens_trainer_project` | mapped | note present | chapter listed | passage-reviewed |
 | `readiness-gates-residual-escrow-and-quarantine.core` | `readiness-gates-residual-escrow-and-quarantine` | `rmi` | mapped | note present | chapter listed | passage-reviewed |
 | `readiness-gates-residual-escrow-and-quarantine.core` | `readiness-gates-residual-escrow-and-quarantine` | `deterministic_capability_compilation` | unmapped | note present | chapter listed | not passage-reviewed |

@@ -3588,6 +3588,10 @@ Source loading queue:
 | Limitation or failure | `ext_llama3_herd_2024`, `ext_datastates_llm_2024`, `ext_pytorch_distributed_checkpoint_2026` | Use for normal interruption burden, distributed checkpoint consistency, asynchronous completion, canonical state, resharding, strict load, and interface preconditions. Do not infer complete application state or exact resume. |
 | Competing designs | `ext_zero_optimizer_2019`, `ext_gspmd_2021` | Preserve progressive state sharding and compiler-mediated general sharding as serious alternatives under matched quality, hardware, tuning, and cost rather than combining them into one presumed winner. |
 | Measurement and evaluation | `ext_mlperf_training_v6_2026` | Use fixed quality targets, repetitions, system metadata, variance, divisions, time-to-quality, and result correction as a measurement comparator. No MLPerf run, safety result, or complete run-integrity claim follows. |
+| Optimizer reference and failure | `ext_adam_2015`, `ext_amsgrad_2018`, `ext_adamw_2019` | Explain adaptive moments, effective-step failure cases, and decoupled weight decay. Treat tuned AdamW as the strong modern reference; a method name is not a complete parameter, schedule, precision, or decay policy. |
+| State, layer, tensor, and curvature alternatives | `ext_adafactor_2018`, `ext_lamb_2019`, `ext_shampoo_2018`, `ext_kfac_2015`, `ext_lion_2023`, `ext_sophia_2023`, `ext_soap_2024` | Compare mechanism, eligible tensors, optimizer state, approximation, preconditioner/curvature cadence, clipping, layer scaling, communication, and total cost. Preserve source-reported wins as configuration-bound. |
+| Scheduling, parameterization, and scale transfer | `ext_schedule_free_2024`, `ext_mup_2022`, `ext_modular_norm_2024` | Keep evaluation iterates, averaging state, parameterization, architecture-recursive geometry, and declared transfer axes inside optimizer policy. Do not infer arbitrary architecture or duration transfer. |
+| Orthogonalized matrix updates | `ext_muon_scalable_2025`, `ext_muon_spectral_norm_2026` | Explain momentum plus approximate matrix orthogonalization, matrix eligibility, fallback optimizers, weight decay, update scaling, approximation precision, communication, and one theoretical spectral-norm interpretation. Do not collapse ideal and implemented Muon or infer universal superiority. |
 
 
 | Manifest assignment reconciliation | `corbens_trainer_project` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
@@ -3600,6 +3604,12 @@ Draft arc:
   qualification, and nonclaims before outcomes.
 - Record the executed device mesh, every parallelism dimension, collective and
   compiler plan, batch arithmetic, synchronization, and optimizer semantics.
+- Treat optimizer selection as a coupled run-policy decision spanning
+  parameter groups, state, decay, clipping, schedule, parameterization,
+  precision, batch regime, approximation, topology, and stopping semantics.
+- Compare AdamW, Muon, and alternative practical/theoretical families through
+  a common mechanism matrix and prospectively matched qualification protocol,
+  not brand names or one under-tuned run.
 - Make base and architecture-specific model, optimizer, scheduler, scaler, RNG,
   sampler, data-cursor, topology, and compiler state explicit.
 - Preserve every attempt, failure, interruption, recovery, anomaly,
@@ -3630,6 +3640,11 @@ Primary invariants:
 Failure modes to cover:
 
 - Identity, topology, numerical, data-order, or optimizer-semantics drift.
+- Optimizer-label equivalence: claiming two runs used the same optimizer while
+  parameter groups, decay, schedule, epsilon, state precision, approximation,
+  fallback, or implementation differed.
+- Baseline sabotage or false-negative laundering through unequal tuning,
+  missing method-specific rescue, or a naive Muon/matrix-preconditioner port.
 - Torn or undurable checkpoints, state amnesia, data replay/skip, stale or
   duplicated updates, and undeclared precision surgery.
 - Failure censorship, loss-spike intervention laundering, checkpoint
@@ -3653,6 +3668,10 @@ Draft deliverables:
 - Prospectively frozen five-arm natural campaign across thirteen fault families,
   at least three seeds, multiple timings, hidden independent qualification,
   complete run retention, and joint quality/integrity/resource/operator cost.
+- Passage-reviewed optimizer source packet, practical/theoretical family map,
+  optimizer-policy identity extension, matched AdamW-versus-alternative design,
+  and joint progress/quality/memory/communication/stability/tuning/transfer/
+  recovery/governance reporting contract.
 
 Lean proof targets:
 

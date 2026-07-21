@@ -1,0 +1,134 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ASI Stack Optimizer Policy Card",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "card_id", "case_kind", "run_contract_digest",
+    "implementation", "parameterization", "parameter_groups", "state_classes",
+    "schedule", "update_semantics", "approximation", "distributed_semantics",
+    "tuning_and_rescue", "checkpoint_contract", "evaluation_dimensions",
+    "source_ids", "non_authorities"
+  ],
+  "properties": {
+    "schema_version": {"const": "asi_stack.optimizer_policy_card.v1"},
+    "card_id": {"type": "string", "minLength": 1},
+    "case_kind": {"const": "authored_policy_identity_fixture_not_optimizer_result"},
+    "run_contract_digest": {"type": "string", "minLength": 16},
+    "implementation": {
+      "type": "object", "additionalProperties": false,
+      "required": ["family_composition", "package_or_repository", "version_or_commit", "code_digest"],
+      "properties": {
+        "family_composition": {"const": "muon_primary_adamw_fallback"},
+        "package_or_repository": {"type": "string", "minLength": 1},
+        "version_or_commit": {"type": "string", "minLength": 1},
+        "code_digest": {"type": "string", "minLength": 16}
+      }
+    },
+    "parameterization": {
+      "type": "object", "additionalProperties": false,
+      "required": ["kind", "initialization_digest", "shape_manifest_digest", "transfer_axes_claimed"],
+      "properties": {
+        "kind": {"enum": ["standard", "mup", "modular_norm", "other_versioned"]},
+        "initialization_digest": {"type": "string", "minLength": 16},
+        "shape_manifest_digest": {"type": "string", "minLength": 16},
+        "transfer_axes_claimed": {"type": "array", "uniqueItems": true, "items": {"enum": ["none", "batch", "width", "depth", "duration", "architecture", "data", "topology"]}}
+      }
+    },
+    "parameter_groups": {
+      "type": "array", "minItems": 2, "uniqueItems": true,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["group_id", "selector", "tensor_rank_rule", "optimizer_family", "role", "decay", "learning_rate"],
+        "properties": {
+          "group_id": {"type": "string", "minLength": 1},
+          "selector": {"type": "string", "minLength": 1},
+          "tensor_rank_rule": {"type": "string", "minLength": 1},
+          "optimizer_family": {"enum": ["sgd_momentum", "adamw", "adafactor", "shampoo", "soap", "lion", "sophia", "kfac", "muon", "other_versioned"]},
+          "role": {"enum": ["primary", "fallback"]},
+          "decay": {"type": "number", "minimum": 0},
+          "learning_rate": {"type": "number", "exclusiveMinimum": 0}
+        }
+      }
+    },
+    "state_classes": {
+      "type": "array", "minItems": 5, "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "schedule": {
+      "type": "object", "additionalProperties": false,
+      "required": ["kind", "warmup_steps", "stopping_step_required", "evaluation_iterate", "state_classes"],
+      "properties": {
+        "kind": {"enum": ["constant", "linear_decay", "cosine_decay", "inverse_sqrt", "schedule_free", "other_versioned"]},
+        "warmup_steps": {"type": "integer", "minimum": 0},
+        "stopping_step_required": {"type": "boolean"},
+        "evaluation_iterate": {"type": "string", "minLength": 1},
+        "state_classes": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}}
+      }
+    },
+    "update_semantics": {
+      "type": "object", "additionalProperties": false,
+      "required": ["gradient_clipping", "epsilon", "decay_semantics", "bias_correction", "update_order_digest", "state_dtype"],
+      "properties": {
+        "gradient_clipping": {"type": "string", "minLength": 1},
+        "epsilon": {"type": "number", "exclusiveMinimum": 0},
+        "decay_semantics": {"enum": ["none", "coupled_l2", "decoupled"]},
+        "bias_correction": {"type": "boolean"},
+        "update_order_digest": {"type": "string", "minLength": 16},
+        "state_dtype": {"type": "string", "minLength": 1}
+      }
+    },
+    "approximation": {
+      "type": "object", "additionalProperties": false,
+      "required": ["method", "iterations", "coefficient_digest", "accumulation_dtype", "residual_metric", "residual_tolerance"],
+      "properties": {
+        "method": {"enum": ["not_applicable", "newton_schulz", "inverse_root", "eigendecomposition", "diagonal_curvature", "kronecker_factors", "other_versioned"]},
+        "iterations": {"type": "integer", "minimum": 0},
+        "coefficient_digest": {"type": "string", "minLength": 1},
+        "accumulation_dtype": {"type": "string", "minLength": 1},
+        "residual_metric": {"type": "string", "minLength": 1},
+        "residual_tolerance": {"type": "number", "minimum": 0}
+      }
+    },
+    "distributed_semantics": {
+      "type": "object", "additionalProperties": false,
+      "required": ["topology_digest", "state_placement", "communication_operation", "communication_accounted", "resharding_policy"],
+      "properties": {
+        "topology_digest": {"type": "string", "minLength": 16},
+        "state_placement": {"type": "string", "minLength": 1},
+        "communication_operation": {"type": "string", "minLength": 1},
+        "communication_accounted": {"const": true},
+        "resharding_policy": {"type": "string", "minLength": 1}
+      }
+    },
+    "tuning_and_rescue": {
+      "type": "object", "additionalProperties": false,
+      "required": ["budget_id", "matched_or_priced_against_baselines", "minimum_seed_count", "search_space_digest", "rescue_frozen_before_final", "positive_controls_required"],
+      "properties": {
+        "budget_id": {"type": "string", "minLength": 1},
+        "matched_or_priced_against_baselines": {"const": true},
+        "minimum_seed_count": {"type": "integer", "minimum": 3},
+        "search_space_digest": {"type": "string", "minLength": 16},
+        "rescue_frozen_before_final": {"const": true},
+        "positive_controls_required": {"const": true}
+      }
+    },
+    "checkpoint_contract": {
+      "type": "object", "additionalProperties": false,
+      "required": ["all_policy_state_required", "parameter_routing_required", "schedule_state_required", "approximation_configuration_required", "resume_equivalence_class"],
+      "properties": {
+        "all_policy_state_required": {"const": true},
+        "parameter_routing_required": {"const": true},
+        "schedule_state_required": {"const": true},
+        "approximation_configuration_required": {"const": true},
+        "resume_equivalence_class": {"enum": ["bitwise", "operation_order_bounded", "statistical_only"]}
+      }
+    },
+    "evaluation_dimensions": {
+      "type": "array", "minItems": 8, "uniqueItems": true,
+      "items": {"enum": ["progress", "final_behavior", "resources", "stability", "tuning", "transfer", "recovery", "governance_cost"]}
+    },
+    "source_ids": {"type": "array", "minItems": 3, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "non_authorities": {"type": "array", "minItems": 6, "uniqueItems": true, "items": {"type": "string", "minLength": 1}}
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "schema_version": "asi_stack.optimizer_policy_card.v1",
+  "card_id": "optimizer-policy-authored-muon-adamw-001",
+  "case_kind": "authored_policy_identity_fixture_not_optimizer_result",
+  "run_contract_digest": "sha256:authored-run-contract-001",
+  "implementation": {
+    "family_composition": "muon_primary_adamw_fallback",
+    "package_or_repository": "authored-reference-only",
+    "version_or_commit": "not-executed-v1",
+    "code_digest": "sha256:authored-code-001"
+  },
+  "parameterization": {
+    "kind": "standard",
+    "initialization_digest": "sha256:authored-init-001",
+    "shape_manifest_digest": "sha256:authored-shapes-001",
+    "transfer_axes_claimed": ["none"]
+  },
+  "parameter_groups": [
+    {
+      "group_id": "matrix-hidden-weights",
+      "selector": "rank=2 and role in {attention,mlp}",
+      "tensor_rank_rule": "exactly_two_dimensional_after_declared_layout",
+      "optimizer_family": "muon",
+      "role": "primary",
+      "decay": 0.1,
+      "learning_rate": 0.02
+    },
+    {
+      "group_id": "embedding-bias-norm-and-vector-fallback",
+      "selector": "embedding or bias or normalization or rank<2",
+      "tensor_rank_rule": "all_parameters_not_admitted_to_primary_group",
+      "optimizer_family": "adamw",
+      "role": "fallback",
+      "decay": 0.0,
+      "learning_rate": 0.0003
+    }
+  ],
+  "state_classes": [
+    "muon_momentum",
+    "fallback_first_moment",
+    "fallback_second_moment",
+    "optimizer_step",
+    "parameter_group_routing",
+    "schedule_state",
+    "approximation_configuration"
+  ],
+  "schedule": {
+    "kind": "cosine_decay",
+    "warmup_steps": 100,
+    "stopping_step_required": true,
+    "evaluation_iterate": "current_training_iterate",
+    "state_classes": ["optimizer_step", "warmup_and_decay_position"]
+  },
+  "update_semantics": {
+    "gradient_clipping": "global_l2_norm_at_1.0_before_parameter_routing",
+    "epsilon": 1e-08,
+    "decay_semantics": "decoupled",
+    "bias_correction": true,
+    "update_order_digest": "sha256:authored-update-order-001",
+    "state_dtype": "float32"
+  },
+  "approximation": {
+    "method": "newton_schulz",
+    "iterations": 5,
+    "coefficient_digest": "sha256:authored-ns-coefficients-001",
+    "accumulation_dtype": "float32",
+    "residual_metric": "frobenius_orthogonality_residual",
+    "residual_tolerance": 0.1
+  },
+  "distributed_semantics": {
+    "topology_digest": "sha256:authored-topology-001",
+    "state_placement": "sharded_with_declared_matrix_reconstruction",
+    "communication_operation": "all_gather_then_reduce_scatter_accounted_per_step",
+    "communication_accounted": true,
+    "resharding_policy": "new_run_segment_unless_equivalence_probe_passes"
+  },
+  "tuning_and_rescue": {
+    "budget_id": "matched-search-budget-authored-001",
+    "matched_or_priced_against_baselines": true,
+    "minimum_seed_count": 3,
+    "search_space_digest": "sha256:authored-search-space-001",
+    "rescue_frozen_before_final": true,
+    "positive_controls_required": true
+  },
+  "checkpoint_contract": {
+    "all_policy_state_required": true,
+    "parameter_routing_required": true,
+    "schedule_state_required": true,
+    "approximation_configuration_required": true,
+    "resume_equivalence_class": "operation_order_bounded"
+  },
+  "evaluation_dimensions": [
+    "progress", "final_behavior", "resources", "stability",
+    "tuning", "transfer", "recovery", "governance_cost"
+  ],
+  "source_ids": ["ext_adamw_2019", "ext_muon_scalable_2025", "ext_muon_spectral_norm_2026"],
+  "non_authorities": [
+    "optimizer_superiority", "model_quality", "scale_transfer", "safety",
+    "support_transition", "release_or_publication"
+  ]
+}

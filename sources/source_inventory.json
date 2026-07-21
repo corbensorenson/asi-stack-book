@@ -5935,6 +5935,243 @@
     "citation_label": "MLCommons (2026), MLPerf Training v6.0"
   },
   {
+    "id": "ext_adam_2015",
+    "title": "Adam: A Method for Stochastic Optimization",
+    "priority": "external_literature",
+    "layer": "optimizer_mechanisms_and_selection",
+    "chapter_targets": [
+      "governed-model-training-distributed-optimization-and-scaling"
+    ],
+    "url": "https://arxiv.org/abs/1412.6980",
+    "notes": "Primary Adam mechanism source for bias-corrected first- and second-moment estimates and coordinate-wise adaptive updates. Its online-convex analysis and reported experiments do not establish universal convergence, quality, or optimizer superiority in foundation-model training.",
+    "source_type": "conference_paper",
+    "arxiv_id": "1412.6980",
+    "published": "2014-12-22",
+    "citation_label": "Kingma and Ba (2015), Adam",
+    "doi": "10.48550/arXiv.1412.6980"
+  },
+  {
+    "id": "ext_amsgrad_2018",
+    "title": "On the Convergence of Adam and Beyond",
+    "priority": "external_literature",
+    "layer": "optimizer_failure_and_convergence",
+    "chapter_targets": [
+      "governed-model-training-distributed-optimization-and-scaling"
+    ],
+    "url": "https://openreview.net/forum?id=ryQu7f-RZ",
+    "notes": "Primary Adam failure and AMSGrad source. It gives constructed stochastic-convex non-convergence cases and a maximum-second-moment remedy; those cases do not imply every practical Adam run fails or that AMSGrad is universally preferable.",
+    "source_type": "conference_paper",
+    "published": "2018-02-15",
+    "citation_label": "Reddi, Kale, and Kumar (2018), On the Convergence of Adam and Beyond",
+    "doi": null
+  },
+  {
+    "id": "ext_adamw_2019",
+    "title": "Decoupled Weight Decay Regularization",
+    "priority": "external_literature",
+    "layer": "optimizer_mechanisms_and_selection",
+    "chapter_targets": [
+      "governed-model-training-distributed-optimization-and-scaling"
+    ],
+    "url": "https://openreview.net/forum?id=Bkg6RiCqY7",
+    "notes": "Primary AdamW source separating weight decay from the adaptive gradient update. Its reported tuning and generalization results are setting-bound; the optimizer name alone does not specify parameter exclusions, schedule, decay scaling, or implementation semantics.",
+    "source_type": "conference_paper",
+    "arxiv_id": "1711.05101",
+    "published": "2017-11-14",
+    "citation_label": "Loshchilov and Hutter (2019), Decoupled Weight Decay Regularization",
+    "doi": "10.48550/arXiv.1711.05101"
+  },
+  {
+    "id": "ext_adafactor_2018",
+    "title": "Adafactor: Adaptive Learning Rates with Sublinear Memory Cost",
+    "priority": "external_literature",
+    "layer": "optimizer_memory_and_scaling",
+    "chapter_targets": [
+      "governed-model-training-distributed-optimization-and-scaling"
+    ],
+    "url": "https://proceedings.mlr.press/v80/shazeer18a.html",
+    "notes": "Primary factored-second-moment optimizer source. It reduces auxiliary state for matrix parameters and adds update clipping and parameter-scale rules; factorization remains an approximation and its reported translation result does not establish universal parity with Adam.",
+    "source_type": "conference_paper",
+    "arxiv_id": "1804.04235",
+    "published": "2018-07-10",
+    "citation_label": "Shazeer and Stern (2018), Adafactor",
+    "doi": "10.48550/arXiv.1804.04235"
+  },
+  {
+    "id": "ext_lamb_2019",
+    "title": "Large Batch Optimization for Deep Learning: Training BERT in 76 minutes",
+    "priority": "external_literature",
+    "layer": "optimizer_memory_and_scaling",
+    "chapter_targets": [
+      "governed-model-training-distributed-optimization-and-scaling"
+    ],
+    "url": "https://arxiv.org/abs/1904.00962",
+    "notes": "Primary LAMB source for layer-wise trust ratios and large-batch optimization. Its reported BERT time-to-target is tied to model, batch, hardware, quality target, and tuning conditions and is not a universal large-batch or wall-clock result.",
+    "source_type": "conference_paper",
+    "arxiv_id": "1904.00962",
+    "published": "2019-04-01",
+    "citation_label": "You et al. (2020), Large Batch Optimization for Deep Learning",
+    "doi": "10.48550/arXiv.1904.00962"
+  },
+  {
+    "id": "ext_shampoo_2018",
+    "title": "Shampoo: Preconditioned Stochastic Tensor Optimization",
+    "priority": "external_literature",
+    "layer": "tensor_and_matrix_preconditioning",
+    "chapter_targets": [
+      "governed-model-training-distributed-optimization-and-scaling"
+    ],
+    "url": "https://proceedings.mlr.press/v80/gupta18a.html",
+    "notes": "Primary tensor-structured preconditioning source. Shampoo maintains per-dimension preconditioners and reports faster convergence with practical per-step cost in studied models; stochastic-convex theory and source experiments do not settle current distributed lifecycle cost.",
+    "source_type": "conference_paper",
+    "published": "2018-07-10",
+    "citation_label": "Gupta, Koren, and Singer (2018), Shampoo",
+    "doi": null
+  },
+  {
+    "id": "ext_kfac_2015",
+    "title": "Optimizing Neural Networks with Kronecker-factored Approximate Curvature",
+    "priority": "external_literature",
+    "layer": "curvature_aware_optimization",
+    "chapter_targets": [
+      "governed-model-training-distributed-optimization-and-scaling"
+    ],
+    "url": "https://proceedings.mlr.press/v37/martens15.html",
+    "notes": "Primary K-FAC source for an efficiently invertible Kronecker-factored approximation to the Fisher matrix. Its approximation, damping, inversion, and empirical cost-benefit are architecture- and implementation-dependent.",
+    "source_type": "conference_paper",
+    "published": "2015-07-07",
+    "citation_label": "Martens and Grosse (2015), K-FAC",
+    "doi": null
+  },
+  {
+    "id": "ext_lion_2023",
+    "title": "Symbolic Discovery of Optimization Algorithms",
+    "priority": "external_literature",
+    "layer": "optimizer_discovery_and_sign_updates",
+    "chapter_targets": [
+      "governed-model-training-distributed-optimization-and-scaling"
+    ],
+    "url": "https://arxiv.org/abs/2302.06675",
+    "notes": "Primary Lion and symbolic optimizer-search source. Lion uses sign-based momentum and one optimizer-state tensor; the paper also reports method-specific learning-rate behavior and settings where gains are small or insignificant.",
+    "source_type": "conference_paper",
+    "arxiv_id": "2302.06675",
+    "published": "2023-02-13",
+    "citation_label": "Chen et al. (2023), Symbolic Discovery of Optimization Algorithms",
+    "doi": "10.48550/arXiv.2302.06675"
+  },
+  {
+    "id": "ext_sophia_2023",
+    "title": "Sophia: A Scalable Stochastic Second-order Optimizer for Language Model Pre-training",
+    "priority": "external_literature",
+    "layer": "curvature_aware_optimization",
+    "chapter_targets": [
+      "governed-model-training-distributed-optimization-and-scaling"
+    ],
+    "url": "https://arxiv.org/abs/2305.14342",
+    "notes": "Primary Sophia source for periodic diagonal-Hessian estimation and clipped curvature-aware updates. Its reported GPT pretraining speedups and simplified theory require matched reproduction before any broader optimizer claim.",
+    "source_type": "conference_paper",
+    "arxiv_id": "2305.14342",
+    "published": "2023-05-23",
+    "citation_label": "Liu et al. (2023), Sophia",
+    "doi": "10.48550/arXiv.2305.14342"
+  },
+  {
+    "id": "ext_soap_2024",
+    "title": "SOAP: Improving and Stabilizing Shampoo using Adam",
+    "priority": "external_literature",
+    "layer": "tensor_and_matrix_preconditioning",
+    "chapter_targets": [
+      "governed-model-training-distributed-optimization-and-scaling"
+    ],
+    "url": "https://arxiv.org/abs/2409.11321",
+    "notes": "Primary SOAP source connecting Shampoo to adaptive moments in a changing preconditioner eigenbasis. Reported large-batch pretraining gains remain tied to 360M/660M models, preconditioning frequency, overhead, and tuning conditions.",
+    "source_type": "arxiv",
+    "arxiv_id": "2409.11321",
+    "published": "2024-09-17",
+    "citation_label": "Vyas et al. (2024), SOAP",
+    "doi": "10.48550/arXiv.2409.11321"
+  },
+  {
+    "id": "ext_schedule_free_2024",
+    "title": "The Road Less Scheduled",
+    "priority": "external_literature",
+    "layer": "optimizer_scheduling_and_averaging",
+    "chapter_targets": [
+      "governed-model-training-distributed-optimization-and-scaling"
+    ],
+    "url": "https://arxiv.org/abs/2405.15682",
+    "notes": "Primary schedule-free optimization source unifying scheduling and iterate averaging without requiring a stopping step. Removing a stopping-time schedule does not remove learning-rate, warmup, evaluation-iterate, checkpoint, or method-selection choices.",
+    "source_type": "conference_paper",
+    "arxiv_id": "2405.15682",
+    "published": "2024-05-24",
+    "citation_label": "Defazio et al. (2024), The Road Less Scheduled",
+    "doi": "10.48550/arXiv.2405.15682"
+  },
+  {
+    "id": "ext_mup_2022",
+    "title": "Tensor Programs V: Tuning Large Neural Networks via Zero-Shot Hyperparameter Transfer",
+    "priority": "external_literature",
+    "layer": "optimizer_parametrization_and_scale_transfer",
+    "chapter_targets": [
+      "governed-model-training-distributed-optimization-and-scaling"
+    ],
+    "url": "https://arxiv.org/abs/2203.03466",
+    "notes": "Primary maximal-update parametrization and muTransfer source. It reports widthwise hyperparameter transfer under a prescribed parametrization on Transformer and ResNet settings; it does not establish arbitrary depth, duration, optimizer, or architecture transfer.",
+    "source_type": "conference_paper",
+    "arxiv_id": "2203.03466",
+    "published": "2022-03-07",
+    "citation_label": "Yang et al. (2022), Tensor Programs V",
+    "doi": "10.48550/arXiv.2203.03466"
+  },
+  {
+    "id": "ext_modular_norm_2024",
+    "title": "Scalable Optimization in the Modular Norm",
+    "priority": "external_literature",
+    "layer": "optimizer_parametrization_and_scale_transfer",
+    "chapter_targets": [
+      "governed-model-training-distributed-optimization-and-scaling"
+    ],
+    "url": "https://arxiv.org/abs/2405.14813",
+    "notes": "Primary modular-norm source defining architecture-recursive update geometry and reporting learning-rate transfer across width and depth. Its well-behaved-module assumptions and experiments do not prove arbitrary substrate transfer or optimizer superiority.",
+    "source_type": "conference_paper",
+    "arxiv_id": "2405.14813",
+    "published": "2024-05-23",
+    "citation_label": "Large et al. (2024), Scalable Optimization in the Modular Norm",
+    "doi": "10.48550/arXiv.2405.14813"
+  },
+  {
+    "id": "ext_muon_scalable_2025",
+    "title": "Muon is Scalable for LLM Training",
+    "priority": "external_literature",
+    "layer": "orthogonalized_matrix_optimization",
+    "chapter_targets": [
+      "governed-model-training-distributed-optimization-and-scaling"
+    ],
+    "url": "https://arxiv.org/abs/2502.16982",
+    "notes": "Primary large-scale Muon source for momentum plus matrix orthogonalization, weight decay, per-parameter update scaling, and a distributed implementation. Its reported compute-efficiency and Moonlight results are source-scoped and not locally reproduced.",
+    "source_type": "arxiv",
+    "arxiv_id": "2502.16982",
+    "published": "2025-02-24",
+    "citation_label": "Liu et al. (2025), Muon is Scalable for LLM Training",
+    "doi": "10.48550/arXiv.2502.16982"
+  },
+  {
+    "id": "ext_muon_spectral_norm_2026",
+    "title": "Muon Optimizes Under Spectral Norm Constraints",
+    "priority": "external_literature",
+    "layer": "orthogonalized_matrix_optimization_theory",
+    "chapter_targets": [
+      "governed-model-training-distributed-optimization-and-scaling"
+    ],
+    "url": "https://openreview.net/forum?id=Blz4hjxLwU",
+    "notes": "Accepted TMLR theoretical source placing Muon with decoupled weight decay in a Lion-K/nuclear-norm framework and deriving implicit spectral-norm constraint behavior. The interpretation does not establish task-level quality, safety, or universal advantage.",
+    "source_type": "journal_paper",
+    "published": "2026-03-23",
+    "updated": "2026-03-23",
+    "citation_label": "Chen, Li, and Liu (2026), Muon Optimizes Under Spectral Norm Constraints",
+    "doi": null
+  },
+  {
     "id": "ext_nist_privacy_framework_2020",
     "title": "NIST Privacy Framework: A Tool for Improving Privacy through Enterprise Risk Management, Version 1.0",
     "priority": "external_literature",

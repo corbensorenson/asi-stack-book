@@ -4,7 +4,7 @@ chapter_id: "replaceable-cognitive-substrates-beyond-transformer-monoculture"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-07-16"
+last_updated: "2026-07-21"
 primary_sources:
   - "corben_chatgpt_kiss_irreducible_intelligence_2026"
   - "corben_chatgpt_onecell_theseus_2026"
@@ -866,3 +866,12 @@ and qualification boundary so a trained candidate can be identified without
 letting training certify its own quality. Readiness later decides whether an
 independently qualified candidate may leave evaluation, what unresolved burden
 must travel with it, and how rejection or rollback remains operationally exact.
+
+That handoff now includes optimizer geometry. A candidate substrate declares
+which parameters are matrices, vectors, scalars, recurrent state, sparse expert
+state, or architecture-specific memory; Governed Model Training returns an
+Optimizer Policy Card naming which families are eligible, what fallback handles
+the rest, and whether any width/depth/architecture transfer was actually tested.
+Replaceability therefore does not mean silently applying AdamW or Muon to every
+future kernel—it means the stack can qualify and replace the update machinery
+without breaking state identity or inheriting unsupported transfer claims.

@@ -12375,6 +12375,21 @@
             "ext_datastates_llm_2024",
             "ext_pytorch_distributed_checkpoint_2026",
             "ext_mlperf_training_v6_2026",
+            "ext_adam_2015",
+            "ext_amsgrad_2018",
+            "ext_adamw_2019",
+            "ext_adafactor_2018",
+            "ext_lamb_2019",
+            "ext_shampoo_2018",
+            "ext_kfac_2015",
+            "ext_lion_2023",
+            "ext_sophia_2023",
+            "ext_soap_2024",
+            "ext_schedule_free_2024",
+            "ext_mup_2022",
+            "ext_modular_norm_2024",
+            "ext_muon_scalable_2025",
+            "ext_muon_spectral_norm_2026",
             "corbens_trainer_project"
           ],
           "source_queue": {
@@ -12385,12 +12400,28 @@
               "ext_gspmd_2021",
               "ext_datastates_llm_2024",
               "ext_pytorch_distributed_checkpoint_2026",
-              "ext_mlperf_training_v6_2026"
+              "ext_mlperf_training_v6_2026",
+              "ext_adam_2015",
+              "ext_adamw_2019",
+              "ext_shampoo_2018",
+              "ext_schedule_free_2024",
+              "ext_mup_2022",
+              "ext_muon_scalable_2025"
             ],
             "supporting": [
+              "ext_adafactor_2018",
+              "ext_lamb_2019",
+              "ext_kfac_2015",
+              "ext_lion_2023",
+              "ext_sophia_2023",
+              "ext_soap_2024",
+              "ext_modular_norm_2024",
               "corbens_trainer_project"
             ],
-            "variants": [],
+            "variants": [
+              "ext_amsgrad_2018",
+              "ext_muon_spectral_norm_2026"
+            ],
             "connector_or_recovery": [],
             "handoff_or_recovery_notes": [
               "Receives a selected substrate, data lease, authorized objective, supply-chain identities, and resource budget; returns one exact candidate and complete run receipt to independent qualification without model-quality, support, readiness, or release authority."
@@ -12468,6 +12499,126 @@
                 "sources/source_notes/ext_mlperf_training_v6_2026.md"
               ],
               "passage_review_note": "Reviewed the primary paper or official documentation at the bounded passages recorded in the source note; no source-reported result is treated as local evidence.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_adam_2015",
+              "mapped_support": "Grounds bias-corrected first- and second-moment adaptive updates as the reference adaptive family.",
+              "limits": "Its analysis and experiments do not establish universal nonconvex convergence or superiority.",
+              "passage_refs": ["sources/source_notes/ext_adam_2015.md"],
+              "passage_review_note": "Primary mechanism, assumptions, evidence, and limitations reviewed; no result reproduced.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_amsgrad_2018",
+              "mapped_support": "Supplies an Adam non-convergence construction and the AMSGrad maximum-second-moment variant.",
+              "limits": "A constructed failure does not imply all practical Adam runs fail or AMSGrad always wins.",
+              "passage_refs": ["sources/source_notes/ext_amsgrad_2018.md"],
+              "passage_review_note": "Primary counterexample, theorem assumptions, and variant reviewed.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_adamw_2019",
+              "mapped_support": "Grounds decoupled weight decay and the modern AdamW reference baseline.",
+              "limits": "Reported tuning/generalization results are setting-bound and the method name does not specify a full policy.",
+              "passage_refs": ["sources/source_notes/ext_adamw_2019.md"],
+              "passage_review_note": "Primary algorithms, tuning evidence, and limitations reviewed.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_adafactor_2018",
+              "mapped_support": "Grounds factored second moments, update clipping, and reduced optimizer state for matrix parameters.",
+              "limits": "Factorization is approximate and source parity does not transfer across tasks or tensor shapes.",
+              "passage_refs": ["sources/source_notes/ext_adafactor_2018.md"],
+              "passage_review_note": "Primary memory mechanism and experiment reviewed.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_lamb_2019",
+              "mapped_support": "Grounds layer-wise trust ratios and large-batch optimization as a separate scaling family.",
+              "limits": "BERT time-to-target is hardware, batch, target, implementation, and tuning bound.",
+              "passage_refs": ["sources/source_notes/ext_lamb_2019.md"],
+              "passage_review_note": "Primary mechanism, theory scope, and reported scale result reviewed.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_shampoo_2018",
+              "mapped_support": "Grounds tensor-structured per-dimension preconditioning rather than flattened coordinate adaptation.",
+              "limits": "Stochastic-convex theory and source experiments do not settle current distributed lifecycle cost.",
+              "passage_refs": ["sources/source_notes/ext_shampoo_2018.md"],
+              "passage_review_note": "Primary preconditioner, assumptions, and results reviewed.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_kfac_2015",
+              "mapped_support": "Grounds Kronecker-factored Fisher approximations as a practical curvature-aware family.",
+              "limits": "Approximation, damping, inversion, architecture, and distributed cost determine applicability.",
+              "passage_refs": ["sources/source_notes/ext_kfac_2015.md"],
+              "passage_review_note": "Primary factorization and empirical cost-benefit reviewed.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_lion_2023",
+              "mapped_support": "Grounds symbolic optimizer discovery and Lion's one-state sign-momentum update.",
+              "limits": "Search transfer and reported wins are task/budget bound; the source reports weak settings too.",
+              "passage_refs": ["sources/source_notes/ext_lion_2023.md"],
+              "passage_review_note": "Primary discovery method, update rule, results, and limitations reviewed.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_sophia_2023",
+              "mapped_support": "Grounds periodic diagonal-curvature estimation and clipped second-order updates for language-model training.",
+              "limits": "Reported speedups and simplified theory require matched reproduction before generalization.",
+              "passage_refs": ["sources/source_notes/ext_sophia_2023.md"],
+              "passage_review_note": "Primary estimator, clipping, theory scope, and experiments reviewed.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_soap_2024",
+              "mapped_support": "Grounds Adam-like moments in Shampoo's evolving preconditioner eigenbasis.",
+              "limits": "Large-batch results remain tied to model scale, basis refresh, overhead, and tuning.",
+              "passage_refs": ["sources/source_notes/ext_soap_2024.md"],
+              "passage_review_note": "Primary mechanism, ablation, and pretraining results reviewed.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_schedule_free_2024",
+              "mapped_support": "Grounds the scheduling/iterate-averaging connection and schedule-free optimizer state.",
+              "limits": "It removes dependence on a stopping-time schedule, not all hyperparameters or evaluation choices.",
+              "passage_refs": ["sources/source_notes/ext_schedule_free_2024.md"],
+              "passage_review_note": "Primary theory, algorithms, evaluation semantics, and results reviewed.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_mup_2022",
+              "mapped_support": "Grounds maximal-update parametrization and widthwise hyperparameter transfer.",
+              "limits": "Transfer depends on the prescribed parameterization and does not establish arbitrary substrate transfer.",
+              "passage_refs": ["sources/source_notes/ext_mup_2022.md"],
+              "passage_review_note": "Primary parameterization, transfer protocol, experiments, and limits reviewed.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_modular_norm_2024",
+              "mapped_support": "Grounds architecture-recursive update geometry and reported learning-rate transfer across width/depth.",
+              "limits": "Well-behaved-module assumptions and studied architectures bound the result.",
+              "passage_refs": ["sources/source_notes/ext_modular_norm_2024.md"],
+              "passage_review_note": "Primary norm construction, assumptions, and experiments reviewed.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_muon_scalable_2025",
+              "mapped_support": "Grounds large-scale Muon, weight decay, per-parameter update scaling, and distributed orthogonalization.",
+              "limits": "Reported compute efficiency and Moonlight results are source-scoped and unreproduced.",
+              "passage_refs": ["sources/source_notes/ext_muon_scalable_2025.md"],
+              "passage_review_note": "Primary algorithm, scaling, distributed design, and results reviewed.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_muon_spectral_norm_2026",
+              "mapped_support": "Supplies an accepted theoretical interpretation of Muon through Lion-K, nuclear norm, and implicit spectral constraints.",
+              "limits": "The idealized interpretation does not establish practical approximation fidelity, quality, safety, or superiority.",
+              "passage_refs": ["sources/source_notes/ext_muon_spectral_norm_2026.md"],
+              "passage_review_note": "Accepted TMLR theory and its inference ceiling reviewed.",
               "passage_review_state": "reviewed"
             },
             {

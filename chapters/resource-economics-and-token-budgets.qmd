@@ -4,7 +4,7 @@ chapter_id: "resource-economics-and-token-budgets"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.3 claim-proof program"
-last_updated: "2026-07-16"
+last_updated: "2026-07-21"
 primary_sources:
   - "tokenmana"
   - "planforge"
@@ -649,3 +649,12 @@ Across 82 atoms, the terminal ledger records 82 `blocked_after_full_attempt`.
 ## Handoff
 
 Resource budgets and simulation contracts decide what the stack can afford to try and what each experiment is allowed to mean. Mathematical and Search Substrates extends the same discipline to unusual calculi, cyclic structures, semantic graphs, search spaces, and sequence alternatives. Candidate substrates can remain interesting only while carrying baselines, falsification conditions, readiness states, proof boundaries, resource bills, fidelity limits, and ordinary fallback paths.
+
+Optimizer choice is one such resource decision, but step count is not the bill.
+Governed Model Training returns tokens/examples, wall and accelerator time,
+energy, optimizer-state and peak memory, preconditioner or curvature work,
+communication, tuning trials, failures, checkpoint overhead, resume cost, and
+operator/governance work. Resource Economics may compare that joint lifecycle
+vector; it may not declare a method efficient because it uses fewer steps or
+less optimizer state while moving cost into communication, tuning, instability,
+or lost data efficiency.

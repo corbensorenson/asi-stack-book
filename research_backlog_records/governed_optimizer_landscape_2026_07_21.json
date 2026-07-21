@@ -1,0 +1,78 @@
+{
+  "backlog_id": "governed-optimizer-landscape-2026-07-21",
+  "triage_state": "integrated",
+  "source_or_gap": "The governed model-training chapter owned optimizer identity and checkpoint state but lacked a practical and theoretical optimizer landscape, modern AdamW and Muon treatment, and a competent selection protocol.",
+  "access_state": "source_note_available",
+  "source_storage_policy": "repo_public_note_only",
+  "public_safety_state": "public_safe",
+  "assigned_chapters": [
+    "governed-model-training-distributed-optimization-and-scaling",
+    "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+    "resource-economics-and-token-budgets",
+    "policy-optimization-and-learning-from-feedback"
+  ],
+  "chapter_action_policy": "Deepen Governed Model Training as the exclusive owner of optimizer mechanisms and optimizer-policy qualification. Add bounded handoffs to substrate, resource, and policy-update owners without creating a standalone optimizer chapter.",
+  "chapter_decision_refs": [
+    "docs/optimizer_landscape_chapter_research_2026_07_21.md",
+    "new_paper_triage_scenarios/governed_optimizer_landscape_2026_07_21.json",
+    "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md"
+  ],
+  "deduplication_state": "overlaps_existing_chapter",
+  "merge_or_split_policy": "Keep optimizer algorithms, scheduling, parameterization, full state, distributed cost, and selection inside the governed training transaction. Policy-gradient objectives remain separate; substrate and resource chapters consume bounded outputs.",
+  "boundary_decision_rationale": "An optimizer's meaning depends on the same parameter groups, schedule, precision, batch arithmetic, topology, checkpoint state, and selection policy already owned by Governed Model Training. Splitting the topic would create conflicting run identities.",
+  "source_note_state": "available",
+  "claim_mapping_state": "complete",
+  "passage_review_state": "complete",
+  "external_literature_need": [
+    "periodic refresh of accepted primary work on practical Muon variants and distributed matrix preconditioners",
+    "independent optimizer benchmark suites with equal tuning budgets and end-to-end cost accounting",
+    "architecture-transfer evidence beyond Transformer and ResNet families"
+  ],
+  "proof_or_test_backlog": [
+    "implement the optimizer-policy identity extension to the Training Run Transaction schema",
+    "build reference self-tests for parameter grouping, state closure, schedule-free evaluation state, and Muon matrix/fallback routing",
+    "preregister a matched AdamW-versus-alternative comparison with equal tuning budgets, at least three seeds, complete failures, and method-specific rescue",
+    "measure quality, tokens, steps, wall time, energy, memory, communication, stability, tuning cost, transfer, and resume equivalence together"
+  ],
+  "evidence_transition_precondition": [
+    "exact implementation and parameter-policy identities frozen before outcomes",
+    "matched model, data, token, hardware, evaluation, and tuning opportunities",
+    "positive controls and method-specific rescue pass before negative inference",
+    "independent final evaluator and complete attempted-run denominator",
+    "accepted claim-specific evidence transition"
+  ],
+  "required_before_drafting": [
+    "completed: primary source records and passage-level public notes",
+    "completed: existing-owner and policy-objective deduplication",
+    "completed: common mechanism taxonomy and coupled-policy identity",
+    "completed: source-scoped claims and explicit non-authorities"
+  ],
+  "insertion_decision": "update_existing_chapter",
+  "source_refs": [
+    "docs/optimizer_landscape_chapter_research_2026_07_21.md",
+    "sources/source_notes/ext_adamw_2019.md",
+    "sources/source_notes/ext_muon_scalable_2025.md",
+    "sources/source_notes/ext_muon_spectral_norm_2026.md"
+  ],
+  "support_state_effect": "argument_only",
+  "promotion_blockers": [
+    "no local optimizer comparison has executed",
+    "source-reported speedups are configuration-bound",
+    "no independent reproduction or cross-substrate transfer exists",
+    "no accepted evidence transition promotes the chapter core"
+  ],
+  "residuals": [
+    "exact executable optimizer-policy schema extension remains open",
+    "resource-gated matched campaign remains unexecuted",
+    "current Muon variant literature requires periodic freshness review",
+    "natural-gradient, mirror-descent, and trust-region theory receive bounded orientation rather than textbook-complete derivations"
+  ],
+  "next_action": "Implement the optimizer-policy schema/self-tests and execute a competent matched campaign only when the resource and evaluation gates can be satisfied; preserve the integrated reader material meanwhile.",
+  "non_claims": [
+    "does not create a new chapter",
+    "does not prove any optimizer superior",
+    "does not execute or reproduce any cited experiment",
+    "does not promote a chapter-core claim",
+    "does not authorize training spend, release, deployment, or publication"
+  ]
+}

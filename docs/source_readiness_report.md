@@ -9,12 +9,38 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 - `cached_existing`: 38
 - `connector_readable`: 7
 - `source_note_available_public_project`: 18
-- `source_note_available_uncached`: 256
+- `source_note_available_uncached`: 311
 
 ## Records
 
 | Source ID | Title | Cache status | Bytes | Local raw path | Error / note |
 |---|---|---:|---:|---|---|
+| `ext_un_global_digital_compact_2024` | Global Digital Compact | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_council_europe_ai_convention_2024` | Framework Convention on Artificial Intelligence and Human Rights, Democracy and the Rule of Law | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_generative_ai_at_work_2025` | Generative AI at Work | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_ilo_genai_jobs_index_2025` | Generative AI and Jobs: A Refined Global Index of Occupational Exposure | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_iea_energy_and_ai_2025` | Energy and AI | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_lbnl_data_center_energy_2024` | 2024 United States Data Center Energy Usage Report | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_nist_incident_response_2025` | Incident Response Recommendations and Considerations for Cybersecurity Risk Management: A CSF 2.0 Community Profile | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_llama3_herd_2024` | The Llama 3 Herd of Models | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_3d_detection_corruptions_2023` | Benchmarking Robustness of 3D Object Detection to Common Corruptions | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_foundation_robotics_physical_risk_2025` | A Comprehensive Survey on Physical Risk Control in the Era of Foundation Model-enabled Robotics | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_nist_differential_privacy_2025` | Guidelines for Evaluating Differential Privacy Guarantees | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_multi_agent_risks_2025` | Multi-Agent Risks from Advanced AI | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_replibench_2025` | RepliBench: Evaluating the Autonomous Replication Capabilities of Language Model Agents | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_autonomous_lab_materials_2023` | An autonomous laboratory for the accelerated synthesis of inorganic materials | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_moral_crumple_zones_2019` | Moral Crumple Zones: Cautionary Tales in Human-Robot Interaction | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_conversational_persuasion_gpt4_2025` | On the conversational persuasiveness of GPT-4 | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_anthropic_model_persuasiveness_2024` | Measuring the Persuasiveness of Language Models | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_commercial_persuasion_ai_2026` | Commercial Persuasion in AI-Mediated Conversations | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_gradual_disempowerment_2025` | Gradual Disempowerment: Systemic Existential Risks from Incremental AI Development | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_circuit_tracing_2025` | Circuit Tracing: Revealing Computational Graphs in Language Models | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_scaling_sparse_autoencoders_2024` | Scaling and evaluating sparse autoencoders | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_world_models_2018` | World Models | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_dreamer_v3_2025` | Mastering diverse control tasks through world models | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_meaningful_human_control_actionable_2022` | Meaningful human control: actionable properties for AI system development | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_agentic_oversight_practice_2026` | Human oversight of agentic systems in practice: Examining the oversight work, challenges, and heuristics of developers using software agents | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_nist_deployed_ai_monitoring_2026` | Challenges to the Monitoring of Deployed AI Systems | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_metr_time_horizons_2025` | Measuring AI Ability to Complete Long Software Tasks | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_anthropic_rsp_2026` | Anthropic's Responsible Scaling Policy | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_openai_preparedness_framework_2025` | Our updated Preparedness Framework | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
@@ -334,3 +360,32 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 | `kernel_english_residual_compiler` | Kernel English with Hierarchical, Interaction-Amortized Residuals: A Dual-Vocabulary Cognitive Compiler for Efficient Language-Model Reasoning | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `deterministic_capability_compilation` | Deterministic Capability Compilation: A Capability-Preserving Ladder from Executable Scaffolds to Governed Adaptive Agents | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `platonic_world_model` | The Platonic World Model: A Semantic Constitution for Grounded, Proof-Carrying, Self-Editing Artificial Intelligence | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_megatron_distributed_training_2021` | Efficient Large-Scale Language Model Training on GPU Clusters Using Megatron-LM | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_zero_optimizer_2019` | ZeRO: Memory Optimizations Toward Training Trillion Parameter Models | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_gspmd_2021` | GSPMD: General and Scalable Parallelization for ML Computation Graphs | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_datastates_llm_2024` | DataStates-LLM: Lazy Asynchronous Checkpointing for Large Language Models | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_pytorch_distributed_checkpoint_2026` | Distributed Checkpoint — PyTorch documentation | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_mlperf_training_v6_2026` | MLPerf Training v6.0 | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_adam_2015` | Adam: A Method for Stochastic Optimization | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_amsgrad_2018` | On the Convergence of Adam and Beyond | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_adamw_2019` | Decoupled Weight Decay Regularization | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_adafactor_2018` | Adafactor: Adaptive Learning Rates with Sublinear Memory Cost | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_lamb_2019` | Large Batch Optimization for Deep Learning: Training BERT in 76 minutes | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_shampoo_2018` | Shampoo: Preconditioned Stochastic Tensor Optimization | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_kfac_2015` | Optimizing Neural Networks with Kronecker-factored Approximate Curvature | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_lion_2023` | Symbolic Discovery of Optimization Algorithms | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_sophia_2023` | Sophia: A Scalable Stochastic Second-order Optimizer for Language Model Pre-training | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_soap_2024` | SOAP: Improving and Stabilizing Shampoo using Adam | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_schedule_free_2024` | The Road Less Scheduled | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_mup_2022` | Tensor Programs V: Tuning Large Neural Networks via Zero-Shot Hyperparameter Transfer | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_modular_norm_2024` | Scalable Optimization in the Modular Norm | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_muon_scalable_2025` | Muon is Scalable for LLM Training | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_muon_spectral_norm_2026` | Muon Optimizes Under Spectral Norm Constraints | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_nist_privacy_framework_2020` | NIST Privacy Framework: A Tool for Improving Privacy through Enterprise Risk Management, Version 1.0 | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_eu_gdpr_2016` | Regulation (EU) 2016/679 (General Data Protection Regulation) | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_w3c_dpv_2024` | Data Privacy Vocabulary (DPV), Version 2 | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_abadi_dpsgd_2016` | Deep Learning with Differential Privacy | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_algospec_purpose_limitation_2024` | Being Transparent Is Merely the Beginning: Enforcing Purpose Limitation with Polynomial Approximation | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_carlini_training_data_extraction_2021` | Extracting Training Data from Large Language Models | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_choquette_choo_label_only_mia_2021` | Label-Only Membership Inference Attacks | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_mahloujifar_fdp_audit_2025` | Auditing f-Differential Privacy in One Run | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
