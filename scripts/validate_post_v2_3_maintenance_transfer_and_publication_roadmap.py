@@ -40,6 +40,7 @@ READER_MANIFEST = ROOT / "editions/reader_manuscript/reader_2026_07_18/manifest.
 READER_RELEASE_RECORD = ROOT / "release_records/2026-07-18-reader-2026-07-18-0921a924.json"
 STRUCTURAL_RESEARCH = ROOT / "docs/structural_completeness_chapter_research_2026_07_19.md"
 STRUCTURAL_GAP_AUDIT = ROOT / "docs/structural_completeness_gap_audit_2026_07_19.md"
+OPTIMIZER_RESEARCH = ROOT / "docs/optimizer_landscape_chapter_research_2026_07_21.md"
 SOURCE_INVENTORY = ROOT / "sources/source_inventory.json"
 BOOK_MANIFEST = ROOT / "book_structure.json"
 STRUCTURAL_CHAPTER_PATHS = {
@@ -154,6 +155,7 @@ def inputs() -> dict:
         "reader_release_record": load(READER_RELEASE_RECORD),
         "structural_research": STRUCTURAL_RESEARCH.read_text(encoding="utf-8"),
         "structural_gap_audit": STRUCTURAL_GAP_AUDIT.read_text(encoding="utf-8"),
+        "optimizer_research": OPTIMIZER_RESEARCH.read_text(encoding="utf-8"),
         "source_inventory": load(SOURCE_INVENTORY),
         "book_manifest": load(BOOK_MANIFEST),
         "transition_snapshot": transition_snapshot(atom_ids),
@@ -272,6 +274,11 @@ def errors(data: dict) -> list[str]:
         "append-only post-activation atom pack",
         "material empirical/evidence checkpoint",
         "Are Sparse Autoencoder Benchmarks Reliable?",
+        "R16-E — Governed optimizer landscape and optimizer-policy qualification",
+        "AdamW",
+        "Muon",
+        "method-specific rescue",
+        "a toy or under-tuned experiment cannot close the protocol",
     ]:
         if phrase.casefold() not in roadmap_normalized:
             out.append(f"roadmap governing boundary missing: {phrase}")
@@ -332,6 +339,23 @@ def errors(data: dict) -> list[str]:
     ]:
         if phrase.casefold() not in structural_gap_normalized:
             out.append(f"structural gap audit boundary missing: {phrase}")
+
+    optimizer_research_normalized = re.sub(r"\s+", " ", data["optimizer_research"]).casefold()
+    for phrase in [
+        "The book has the correct owner but not yet the required optimizer depth",
+        "Do not create a separate optimizer chapter",
+        "AdamW as the modern reference baseline",
+        "Structure-aware alternatives",
+        "Muon and qualified variants",
+        "Optimizer choice is a run-policy choice",
+        "Competent comparison and argument-exit protocol",
+        "equal or explicitly accounted tuning budgets",
+        "at least three independent seeds",
+        "Failure of a naive, under-tuned, incorrectly grouped, or resource-starved arm",
+        "Optimizer selection creates no automatic safety, governance, readiness, release, RSI, or ASI claim",
+    ]:
+        if phrase.casefold() not in optimizer_research_normalized:
+            out.append(f"optimizer research boundary missing: {phrase}")
     inventory = {row.get("id"): row for row in data["source_inventory"]}
     for source_id in STRUCTURAL_SOURCE_IDS + STRUCTURAL_GAP_SOURCE_IDS:
         if source_id not in inventory:
@@ -713,6 +737,7 @@ def errors(data: dict) -> list[str]:
         "P6.5-R16-current-sixty-one-chapter-reader-freshness-terminal",
         "P7.1a-W3-admission-template-inheritance-guard-terminal",
         "P7.2-T1D-white-box-construct-validity-and-feature-analysis-depth-terminal",
+        "P6.5-R16-governed-optimizer-landscape-depth-terminal",
     ]
     if execution_readiness.get("structural_resume_requires") != expected_resume_gates:
         out.append("execution board structural-resume gate set drifted")
@@ -825,6 +850,25 @@ def errors(data: dict) -> list[str]:
     reader_freshness = round16.get("current_reader_freshness_packet", {})
     if reader_freshness.get("current_working_manifest_chapter_count") != 61 or reader_freshness.get("must_cover_all_current_manifest_chapters") is not True:
         out.append("Round 16 current-reader packet does not cover the live 61-chapter manifest")
+    optimizer_amendment = round16.get("optimizer_landscape_depth_amendment", {})
+    if optimizer_amendment.get("chapter_id") != "governed-model-training-distributed-optimization-and-scaling":
+        out.append("optimizer landscape lost its existing governed-training owner")
+    if optimizer_amendment.get("new_chapter_allowed") is not False:
+        out.append("optimizer landscape permits a duplicate chapter owner")
+    if optimizer_amendment.get("optimizer_is_coupled_run_policy") is not True:
+        out.append("optimizer landscape lost coupled run-policy identity")
+    if optimizer_amendment.get("matched_tuning_budget_required") is not True:
+        out.append("optimizer landscape permits unmatched tuning budgets")
+    if optimizer_amendment.get("method_specific_rescue_required_before_negative_inference") is not True:
+        out.append("optimizer landscape permits naive negative inference")
+    if optimizer_amendment.get("minimum_independent_seed_count", 0) < 3:
+        out.append("optimizer landscape permits an inadequate seed count")
+    optimizer_families = " ".join(optimizer_amendment.get("required_families", []))
+    for family in ["adamw", "muon", "shampoo", "soap", "schedule_free", "modular_norm"]:
+        if family not in optimizer_families:
+            out.append(f"optimizer landscape family missing: {family}")
+    if optimizer_amendment.get("support_state_effect") != "none" or optimizer_amendment.get("release_effect") != "none":
+        out.append("optimizer roadmap amendment laundered support or release state")
     admission_contract = round16.get("future_admission_contract", {})
     if admission_contract.get("maximum_new_chapters_per_empirical_checkpoint") != 1 or admission_contract.get("manifest_admission_without_all_birth_artifacts_allowed") is not False:
         out.append("Round 16 future-admission cadence or birth-artifact gate weakened")
@@ -1115,6 +1159,11 @@ def main() -> None:
     mutate("future reader-at-birth deletion", lambda c: c["status"]["round_16_evidence_first_amendment"]["future_admission_contract"].__setitem__("reader_projection_required_at_birth", False))
     mutate("future admission cadence expansion", lambda c: c["status"]["round_16_evidence_first_amendment"]["future_admission_contract"].__setitem__("maximum_new_chapters_per_empirical_checkpoint", 9))
     mutate("non-Docker deletion authorization", lambda c: c["status"]["round_16_evidence_first_amendment"]["p2_empirical_recovery"].__setitem__("non_docker_user_data_deletion_allowed", True))
+    mutate("optimizer duplicate chapter authorization", lambda c: c["status"]["round_16_evidence_first_amendment"]["optimizer_landscape_depth_amendment"].__setitem__("new_chapter_allowed", True))
+    mutate("optimizer coupled-policy deletion", lambda c: c["status"]["round_16_evidence_first_amendment"]["optimizer_landscape_depth_amendment"].__setitem__("optimizer_is_coupled_run_policy", False))
+    mutate("optimizer unmatched tuning", lambda c: c["status"]["round_16_evidence_first_amendment"]["optimizer_landscape_depth_amendment"].__setitem__("matched_tuning_budget_required", False))
+    mutate("optimizer rescue deletion", lambda c: c["status"]["round_16_evidence_first_amendment"]["optimizer_landscape_depth_amendment"].__setitem__("method_specific_rescue_required_before_negative_inference", False))
+    mutate("optimizer Muon family deletion", lambda c: c["status"]["round_16_evidence_first_amendment"]["optimizer_landscape_depth_amendment"]["required_families"].pop(6))
     mutate("P2 pre-content rank skipping", lambda c: c["status"]["p2_sequential_materialization_contract"].__setitem__("pre_content_failure_may_skip_or_burn_rank", True))
     mutate("P2 post-content replay", lambda c: c["status"]["p2_sequential_materialization_contract"].__setitem__("post_content_replay_allowed", True))
     mutate("semantic proof cluster deletion", lambda c: c["status"]["semantic_proof_cluster_inventory"]["clusters"].pop())
@@ -1138,7 +1187,7 @@ def main() -> None:
         "90 accepted historical negatives classified as 1 N0, 15 N1, 74 N2, and 0 N3-N5; "
         "the frozen 75-surface rehabilitation snapshot including the then-live 55 chapters reconciled with zero overbroad negative language; "
         "P2 selected prospectively from five candidates; natural development preflight covers 1,117 post-snapshot tasks, 12 repositories, seven languages, and 12 image manifests; the fixed gold denominator is fully dispositioned as eight qualified and four N0 replacements across 62 verified arm logs and eight attempts; the corrected infrastructure/content boundary reinstates rank five as setup-retry-pending, keeps rank six closed, and blocks the complete 30-image pool before any further protected content opens; Q1 D1 and Theseus Q2 D2 remain disjoint and sealed; remeasurement, qualification, construct, and heldout gates remain closed; "
-        "all six semantic proof clusters are terminally adequate at bounded scope; all four first-tranche structural chapters and second-tranche A1/A2 retain terminal admission receipts with protected empirical outcomes closed; Round 16 freezes A3 and every new chapter behind P2 materialization/replacement qualification plus six-chapter atom, current-reader, W3, and white-box-depth integration gates; current proof and main-attestation baselines exact; no support/release effect; "
+        "all six semantic proof clusters are terminally adequate at bounded scope; all four first-tranche structural chapters and second-tranche A1/A2 retain terminal admission receipts with protected empirical outcomes closed; Round 16 freezes A3 and every new chapter behind P2 materialization/replacement qualification plus six-chapter atom, current-reader, W3, white-box-depth, and governed optimizer-landscape integration gates; current proof and main-attestation baselines exact; no support/release effect; "
         f"{len(mutations)}/{len(mutations)} mutations rejected."
     )
 

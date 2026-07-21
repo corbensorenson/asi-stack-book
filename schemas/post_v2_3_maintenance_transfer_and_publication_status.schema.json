@@ -39,7 +39,7 @@
   ],
   "properties": {
     "schema_version": {
-      "const": "asi_stack.post_v2_3_maintenance_transfer_publication_status.v17"
+      "const": "asi_stack.post_v2_3_maintenance_transfer_publication_status.v18"
     },
     "roadmap_id": {
       "const": "asi-stack-post-v2-3-evidence-competence-transfer-publication-2026-07-17"
@@ -120,7 +120,8 @@
             "P6.5-R16-six-chapter-claim-atom-addendum-terminal",
             "P6.5-R16-current-sixty-one-chapter-reader-freshness-terminal",
             "P7.1a-W3-admission-template-inheritance-guard-terminal",
-            "P7.2-T1D-white-box-construct-validity-and-feature-analysis-depth-terminal"
+            "P7.2-T1D-white-box-construct-validity-and-feature-analysis-depth-terminal",
+            "P6.5-R16-governed-optimizer-landscape-depth-terminal"
           ]
         },
         "first_tranche_completion_order": {
@@ -637,6 +638,52 @@
             "SAEBench: A Comprehensive Benchmark for Sparse Autoencoders in Language Model Interpretability",
             "Are Sparse Autoencoder Benchmarks Reliable?"
           ]
+        },
+        "optimizer_landscape_depth_amendment": {
+          "state": "required",
+          "chapter_id": "governed-model-training-distributed-optimization-and-scaling",
+          "research_path": "docs/optimizer_landscape_chapter_research_2026_07_21.md",
+          "new_chapter_allowed": false,
+          "required_families": [
+            "sgd_momentum_and_nesterov",
+            "adagrad_rmsprop_adam_amsgrad_and_adamw",
+            "adafactor_lars_and_lamb",
+            "shampoo_and_soap",
+            "lion",
+            "sophia_and_curvature_aware_methods",
+            "muon_and_orthogonalized_matrix_update_variants",
+            "schedule_free_methods",
+            "mup_modular_norm_scion_natural_gradient_kfac_mirror_proximal_and_trust_region_theory"
+          ],
+          "optimizer_is_coupled_run_policy": true,
+          "matched_tuning_budget_required": true,
+          "method_specific_rescue_required_before_negative_inference": true,
+          "minimum_independent_seed_count": 3,
+          "required_comparison_dimensions": [
+            "tokens_examples_steps_wall_time_and_energy_to_frozen_quality",
+            "final_quality_calibration_robustness_and_downstream_transfer",
+            "peak_memory_optimizer_state_compute_communication_and_storage",
+            "numerical_stability_failed_run_denominator_and_seed_variance",
+            "tuning_budget_search_space_and_sensitivity",
+            "batch_width_depth_architecture_duration_and_topology_transfer",
+            "full_state_resume_equivalence",
+            "instrumentation_operator_rollback_and_lifecycle_governance_cost"
+          ],
+          "required_primary_source_titles": [
+            "Decoupled Weight Decay Regularization",
+            "Adafactor: Adaptive Learning Rates with Sublinear Memory Cost",
+            "Shampoo: Preconditioned Stochastic Tensor Optimization",
+            "Symbolic Discovery of Optimization Algorithms",
+            "Sophia: A Scalable Stochastic Second-order Optimizer for Language Model Pre-training",
+            "SOAP: Improving and Stabilizing Shampoo using Adam",
+            "The Road Less Scheduled",
+            "Tensor Programs V: Tuning Large Neural Networks via Zero-Shot Hyperparameter Transfer",
+            "Scalable Optimization in the Modular Norm",
+            "Muon is Scalable for LLM Training",
+            "Muon Optimizes Under Spectral Norm Constraints"
+          ],
+          "support_state_effect": "none",
+          "release_effect": "none"
         },
         "future_admission_contract": {
           "maximum_new_chapters_per_empirical_checkpoint": 1,

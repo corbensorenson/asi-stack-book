@@ -1,5 +1,28 @@
 # Changelog
 
+## 2026-07-21 — Governed optimizer-landscape roadmap amendment
+
+- Audited the existing Governed Model Training chapter and found the correct
+  ownership shell but no named treatment of AdamW, Muon, or the wider practical
+  and theoretical optimizer landscape. Kept the work in that chapter rather
+  than creating a duplicate owner, and added
+  `docs/optimizer_landscape_chapter_research_2026_07_21.md` as the exact source,
+  mechanism, handoff, and terminal-artifact plan.
+- Added R16-E to the active P6.5 book packet and made it a structural-resume
+  gate. The packet spans classical, coordinate-adaptive, memory/layer-scaled,
+  matrix-preconditioned, curvature-aware, sign/discovered, orthogonalized,
+  schedule-free, scale-transfer, and theoretical families, with AdamW and Muon
+  receiving explicit depth.
+- Required optimizer evaluation as a coupled run-policy comparison with matched
+  model/data/token/hardware conditions, fair tuning budgets, method-specific
+  rescue, at least three seeds, complete failure denominators, full-state
+  recovery, independent evaluation, scale/architecture transfer boundaries,
+  and joint quality, stability, resource, communication, and governance-cost
+  reporting. A naive or under-tuned failure cannot refute an optimizer.
+- This roadmap and research amendment ingests no source record, executes no
+  optimizer comparison, and changes no claim support, release, publication,
+  license, RSI, SOTA, or external-action authority.
+
 ## 2026-07-19 — Round 16 evidence-first roadmap amendment
 
 - Adjudicated Claude's Round 16 review against current repository truth. The

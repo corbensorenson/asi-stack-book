@@ -93,13 +93,13 @@ proceeds.
 | Slot | Next packet | Entry condition | Terminal output |
 |---|---|---|---|
 | Continuous custody | P0 repository and public-truth reconciliation | Always open | Clean `main`, exact generated/source boundaries, current roadmap pointers, and no stale claim or release identity. |
-| Existing-book integration — now | `P6.5-R16-post-activation-integration-debt` | No new manifest owner may enter while the evidence-first gate is active | Add an append-only atom pack for the six post-baseline chapters; build a current 61-chapter reader-freshness packet; install the W3 template-inheritance guard; and complete the white-box construct-validity/feature-analysis depth amendment. No support or publication effect. |
+| Existing-book integration — now | `P6.5-R16-post-activation-integration-debt` | No new manifest owner may enter while the evidence-first gate is active | Add an append-only atom pack for the six post-baseline chapters; build a current 61-chapter reader-freshness packet; install the W3 template-inheritance guard; complete the white-box construct-validity/feature-analysis depth amendment; and deepen the governed-training chapter with a source-grounded optimizer landscape and competent matched-selection protocol. No support or publication effect. |
 | Formal slot — terminal | `P4-terminal-no-open-formal-packet` | All six frozen clusters terminal across 24 modules | Maintain the terminal audits and their consumers; open no new proof packet unless a dated, machine-validated amendment names the claim consumer, countermodel, and maximum inference. |
 | Empirical headline — blocked | `P2-R3-storage-materialization-and-replacement-qualification` | An authorized capacity change leaves at least the frozen 50 GiB host-free-space floor; every setup action remains inside the approved Docker-scoped protocol | Thirty sealed candidate recipes and receipts; terminal pool materialization; four competently qualified replacements restoring the fixed twelve-task denominator; rank progression only under the frozen amendment; zero protected-content leakage. No deletion of non-Docker user data is authorized. |
 | First structural tranche — terminal | White-Box, World Models, Human Factors, and Governed Operations are terminal at argument support | Four exact integration packets preserve owners, sources, formal ceilings, protocols, reader handoffs, and no-promotion boundaries | Maintenance only; no reopened chapter packet without a dated machine-validated defect. |
 | Second structural tranche — paused | Governed Model Training and Privacy/Data Rights remain terminal historical admissions; `perception-sensor-fusion-and-observation-trust` remains next in queue, not active | Resume only after both P2 materialization and four-slot replacement qualification are terminal and all four Round 16 integration repairs pass | After resumption, admit at most one chapter per material empirical/evidence checkpoint. Every admitted chapter must ship its atom pack, reader projection, and template-inheritance check in the admission transaction. |
 
-The structural freeze has six conjunctive exit gates:
+The structural freeze has seven conjunctive exit gates:
 
 1. P2 pool materialization has a terminal receipt for all thirty sealed
    candidate environments;
@@ -113,7 +113,11 @@ The structural freeze has six conjunctive exit gates:
 5. W3 rebaselines current 61-chapter repetition and rejects inherited shared
    prose in future chapter transactions; and
 6. the White-Box chapter completes its construct-validity, feature-analysis,
-   causal-intervention, and interpretability-failure depth amendment.
+   causal-intervention, and interpretability-failure depth amendment; and
+7. the Governed Model Training chapter completes its optimizer-landscape depth
+   amendment, including AdamW, Muon, competing practical and theoretical
+   families, coupled-policy identity, and a non-naive matched qualification
+   protocol.
 
 The 2026-07-19 checkpoint closed both former immediate packets,
 `P7.1a-W1-template-centralization-and-boundary-coverage` and
@@ -1166,6 +1170,47 @@ protocol, reader projection, validators and non-claims agree. It does not
 require running the resource-gated model campaign and cannot promote support by
 prose, source citation, formal record, fixture or protocol readiness.
 
+**R16-E — Governed optimizer landscape and optimizer-policy qualification.**
+Deepen `Governed Model Training, Distributed Optimization, and Scaling`; do not
+create a separate optimizer chapter. The existing owner already binds optimizer,
+scheduler, numerical policy, topology, full-state recovery, checkpoint family,
+and qualified handoff, but its current source packet and prose do not provide a
+real optimizer landscape. The exact research and chapter plan is
+`docs/optimizer_landscape_chapter_research_2026_07_21.md`.
+
+Passage-review primary sources and explain, through common notation and a
+comparative mechanism matrix, classical SGD/momentum/Nesterov; adaptive
+AdaGrad/RMSProp/Adam/AMSGrad/AdamW; memory- and layer-scaled Adafactor,
+LARS/LAMB; tensor/matrix preconditioners Shampoo and SOAP; Lion; Sophia;
+schedule-free methods; Muon and qualified variants; and theoretical or
+scale-transfer families including maximal-update parametrization, modular
+norm/Scion, natural gradient, K-FAC, mirror/proximal methods, and trust-region
+methods. Policy-gradient and preference objectives remain owned by Policy
+Optimization and Learning from Feedback.
+
+Treat each optimizer as a coupled run policy: implementation and version,
+parameter eligibility/groups, parametrization, initialization, decay, clipping,
+schedule and warmup, batch arithmetic, state precision, approximation settings,
+distributed topology, stopping rule, and checkpoint state are identity-bearing.
+A competent comparison must freeze model/data/token/hardware/evaluation
+conditions; grant equal or explicitly accounted tuning budgets and
+method-specific rescue; run at least three seeds; retain all attempted and
+failed runs; and measure tokens, steps, wall time, energy, final and downstream
+quality, robustness, memory, communication, numerical stability, tuning cost,
+scale transfer, resume equivalence, and governance cost together. Muon-specific
+tests must include matrix eligibility, fallback optimizer rules,
+orthogonalization approximation precision, update scaling, and distributed
+communication rather than testing a naive label-level implementation.
+
+R16-E is terminal only when passage-reviewed source records/notes, chapter
+mechanism and decision sections, claim atoms, an optimizer-policy contract and
+negative mutations, a preregistered matched-comparison protocol with executable
+self-tests, reader/source/glossary projections, and validators agree. Execution
+may remain resource-gated: a toy or under-tuned experiment cannot close the
+protocol or support a negative inference. Source reports, theory, prose,
+fixtures, and protocol readiness alone cannot establish optimizer superiority,
+scale transfer, model quality, safety, support, RSI, release, or SOTA.
+
 ## P7 — Reader remediation and owner-authorized publication
 
 The first Round 15 publication transaction is complete. The
@@ -1418,9 +1463,10 @@ is not a debugging interface.
    governed update/unlearning, Deterministic Capability Compilation, and the
    Platonic World Model current without allowing prose to inherit evidence.
    Close P6.5 over append-only atoms for the six post-baseline chapters, the
-   current 61-chapter reader packet, W3 inheritance guard, and White-Box depth
-   amendment. Only after P2 materialization and replacement qualification plus
-   those four integration repairs are terminal may A3 resume. Thereafter
+   current 61-chapter reader packet, W3 inheritance guard, White-Box depth
+   amendment, and governed optimizer-landscape depth amendment. Only after P2
+   materialization and replacement qualification plus those five integration
+   repairs are terminal may A3 resume. Thereafter
    adjudicate at most one candidate per material empirical/evidence checkpoint
    under exclusive-owner, competence, reader-value, safety, birth-artifact, and
    non-displacement gates. Manifest or roadmap admission alone changes no
@@ -1462,7 +1508,7 @@ lies.
 | M3 — Reproduction and transfer | pending | Any broadened result has independent reproduction and two prospectively selected materially different transfer settings. |
 | M4 — Semantic formal depth | completed | All six frozen clusters are terminal across 24 modules with exact dispositions, modeled state, assumptions, countermodels, consumers, mutations, semantic separations, and maximum-inference ceilings. No aggregate theorem count or finite record grants empirical support. |
 | M5 — Effect-complete reference | pending | Multi-process authority-to-effect, rollback/residual, full-state, and deletion behavior passes adversarial and recovery tests. |
-| M6 — Renewal and structural completeness | in progress | A1/A2 and the four first-tranche admissions remain historical terminal receipts, but new admission is frozen. First close P2 materialization/replacement qualification and P6.5's atom, current-reader, W3, and White-Box depth gates. Then disposition the remaining eleven candidates at most one per material empirical/evidence checkpoint, with birth-complete atom, reader, source, ownership, and inheritance artifacts. |
+| M6 — Renewal and structural completeness | in progress | A1/A2 and the four first-tranche admissions remain historical terminal receipts, but new admission is frozen. First close P2 materialization/replacement qualification and P6.5's atom, current-reader, W3, White-Box depth, and governed optimizer-landscape depth gates. Then disposition the remaining eleven candidates at most one per material empirical/evidence checkpoint, with birth-complete atom, reader, source, ownership, and inheritance artifacts. |
 | M7 — Reader/publication disposition | in progress | PDF, EPUB, and DOCX in `reader-2026-07-18` remain immutable published artifacts with exact receipts. Close only after the current 61-chapter derived-reader packet and compatibility residuals are terminally dispositioned, all public surfaces remain synchronized, and the final main/Pages attestation succeeds; a local freshness packet does not imply external publication. |
 | M8 — Successor continuity | pending | Every open item has a terminal disposition and the next exact authority is active. |
 
