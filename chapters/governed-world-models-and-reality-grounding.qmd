@@ -325,11 +325,84 @@ to their branch. Crossing into actuality requires an observation, authorized
 effect, adoption decision, and later reconciliation—not aggregation over a
 branch axis.
 
+```{mermaid}
+stateDiagram-v2
+  [*] --> Proposed
+  Proposed --> QualifiedHypothesis: type, role, evidence, and branch checks
+  Proposed --> Residual: unresolved or rejected
+  QualifiedHypothesis --> AdmittedBelief: consumer-specific admission
+  AdmittedBelief --> ObservedOrExecuted: observation or authorized effect
+  AdmittedBelief --> Weakened: counterevidence
+  ObservedOrExecuted --> Confirmed: outcome reconciliation
+  ObservedOrExecuted --> Contradicted: discrepant outcome
+  QualifiedHypothesis --> Superseded: better schema or binding
+  Weakened --> Retired: expiry or failed requalification
+  Contradicted --> Retired: descendants invalidated
+  Superseded --> Retired
+```
+
+These transitions are not a confidence ladder. `QualifiedHypothesis` means the
+candidate survived a declared structural and evidentiary policy for a named
+use. `AdmittedBelief` says the world model currently uses it inside a bounded
+state estimate. `ObservedOrExecuted` names a different event: either an
+observation was accepted or an authorized action produced an acknowledged
+effect. None of the earlier states grants permission to create the later one.
+The transition record retains source observations, proposer, qualifier,
+alternative schemas and role bindings, calibration, counterevidence, known
+defeaters, downstream consumers, and invalidation dependencies.
+
+A branch is likewise an identity-bearing object, not a column in an anonymous
+batch. It records its parent, fork cause, assumptions or interventions,
+observation cutoff, model and policy versions, time horizon, uncertainty,
+changed entities, changed fields, changed relations, and descendants. A
+planning branch can share immutable history with the actual branch while its
+hypothetical transfer, collision, promise, or failure remains local. Comparing
+branches is a typed operation; adopting a branch prediction into actual state
+is a governed event; averaging branches into one apparently observed world is
+an axis error.
+
 The same state can join discrete objects to continuous fields. An entity may
 sample a field, contribute a source term, or participate in a relation that
 sets a boundary condition; a field event may create, split, merge, or retire an
 entity. This avoids forcing every continuous phenomenon into tokens while
 retaining stable identity and role-sensitive events where they matter.
+
+#### From events to effective objects
+
+The paper's “semantic renormalization” becomes useful here when treated as
+governed abstraction rather than as a claim that the model discovered nature's
+true objects. Suppose a group of components interacts frequently internally
+and exposes only a few stable boundary variables. The world model may propose a
+contraction from that subcomplex into a macro-object. The contraction packet
+names the exact source version, admissible external inputs, observable outputs
+or effects, retained boundary state, environment and query family, uncertainty,
+known omissions, rights and authority that cannot be hidden, and triggers that
+force expansion.
+
+Soundness is query-relative. A molecule may be an adequate object for a fluid
+simulation and an invalid abstraction for a reaction analysis. A software
+service may be atomic for capacity planning and require expansion during an
+incident. A team may be a useful unit for scheduling while being impermissible
+for a decision about an individual's rights. The model therefore does not ask
+whether the macro-object is universally “real.” It asks whether the contracted
+boundary answers a declared family of questions within a declared error and
+governance envelope.
+
+Expansion is ordinary operation. It occurs when a query falls outside the
+certificate, the environment shifts, an internal anomaly crosses a threshold,
+new evidence invalidates a member relation, an intervention targets an internal
+component, uncertainty grows, provenance or rights require finer inspection,
+or a model or schema change makes the certificate stale. The source subcomplex
+and its lineage remain addressable so the world model can reopen detail rather
+than silently inventing it after compression.
+
+This produces a recursive hierarchy of effective objects without making the
+hierarchy permanent. Signals may stabilize into features, features into
+objects, objects into events or systems, and systems into larger operational
+units. Each level is a consumer-relative view with a reversible map, not a
+license to delete the lower level. In this sense, a governed world model learns
+which structures are useful to treat as units while preserving the evidence
+needed to decide when that treatment has failed.
 
 Finally, abstraction becomes a world-model operation with a receipt. A stable
 subcomplex may be contracted into a macro-object only for a declared query

@@ -391,6 +391,41 @@ Before implementation, the suite needs an anti-self-confirmation review: its
 generators and metrics cannot simply reward the relation ontology and minimum
 order assumed by the RDC design.
 
+#### What a credible RODIE campaign would have to show
+
+Synthetic structure is useful for isolating order and role binding, but it can
+also build the answer into the generator. A credible campaign therefore needs
+two linked tracks. The first uses controlled tasks with independently known
+entities, roles, branches, interventions, and contraction structure. The
+second uses natural domains in which useful relational structure is not chosen
+by the benchmark author—for example event extraction with role changes,
+scientific systems with independently measured interventions, program or
+workflow traces with exact identities, or physical simulations whose fields
+and discrete objects have separate ground truth. Success on the controlled
+track qualifies the instrument; success on the natural track tests transfer.
+
+The final split stays sealed until candidate proposal, schema choice, role
+labels, evaluator sensitivity, and lower-order rescues pass development gates.
+Evaluation separates at least four questions: whether the correct participants
+were ever proposed; whether the correct schema and roles were assigned;
+whether the resulting structure improved prediction, intervention, or useful
+action; and whether the total route beat a competent simpler alternative. A
+system can pass one and fail the next. High relation precision with poor
+proposal recall is selective omission. Correct co-membership with swapped roles
+is semantic failure. Better structural reconstruction without useful or causal
+gain is a representation result, not a capability result. Faster kernel time
+with worse end-to-end qualification cost is a hardware-local result, not an
+efficiency result.
+
+Negative results need the same discipline. Failure of one naive triadic layer
+cannot refute higher-order computation. Failure after matched architecture
+engineering, method-specific tuning, adequate candidate recall, evaluator
+sensitivity, lower-order and fixed-order rescue, multiple seeds, complete
+failure denominators, and transfer can narrow the exact mechanism and regime.
+Conversely, a positive result does not establish one true ontology: alternative
+latent mediators, equivalent schemas, and simpler computation plans remain
+live explanations until interventions distinguish them.
+
 ## Interfaces
 
 The Benchmark Ratchet Record is the interface between evaluation, readiness gates, Appendix C, prototype phases, and the changelog. It carries enough evidence metadata for downstream layers to distinguish a reproduced result, a source-reported result, a synthetic fixture, a failed run, and an unattempted target.

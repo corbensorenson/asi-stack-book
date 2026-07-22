@@ -390,6 +390,29 @@ The relational IR therefore carries four linked views:
 | Computational | selected operator, primitive arity, factorization, precision, device placement, caches, and measured cost |
 | Abstraction | contraction map, macro-object boundary, query envelope, approximation error, and expansion triggers |
 
+The axis type is more than a name attached to a tensor dimension. For every
+active axis, the compiler needs enough information to reject transformations
+that are numerically well formed but semantically illegal:
+
+| Axis-type field | Compiler question |
+|---|---|
+| Carrier | What values may occur on this axis: entities, coordinates, roles, times, branches, evidence states, or scales? |
+| Semantics | What does one index or element denote for the declared consumer? |
+| Symmetry | Which permutations, rotations, translations, reflections, or renamings preserve meaning? |
+| Metric and unit | Which comparisons, distances, additions, or contractions are meaningful? |
+| Transformation law | How does the value change when coordinates, orientation, schema, or representation changes? |
+| Legal operations | May the axis be pooled, marginalized, joined, contracted, broadcast, reordered, or approximated? |
+| Loss policy | Which information may be discarded, for which consumer, within what error envelope, and with what reopening trigger? |
+
+This type makes several common mistakes visible. A batch of alternative worlds
+cannot be reduced as if the alternatives were simultaneous observations. A
+directed role axis cannot be pooled as an exchangeable set. An epistemic score
+cannot be cast into action authority. A spatial vector cannot be moved between
+frames without the required transformation. A macro-object cannot cross into a
+consumer whose query was excluded from its contraction certificate. Ordinary
+shape checking would accept many of these operations; dimension-safe lowering
+does not.
+
 This does not turn Cognitive Compilation into the owner of world structure.
 Governed World Models still decide how proposed entities, fields, and
 relations relate to observation and reality. The compiler's narrower duty is
@@ -404,6 +427,66 @@ selective triadic operator, and later queried through pairwise message passing.
 Those representations are equivalent only if relation-instance identity,
 roles, multiplicity, time, branch, uncertainty, and provenance survive. A
 compiler receipt must name what was preserved and what became approximate.
+
+#### Worked lowering: an authorization-bound transfer
+
+Consider an accepted obligation to reason about a transfer with six roles:
+
+```text
+TRANSFER(
+  giver=A,
+  recipient=B,
+  object=C,
+  authorization=D,
+  valid_time=t,
+  jurisdiction=J
+)
+```
+
+The semantic arity is six because six typed arguments jointly determine the
+claim. The compiler does not infer that the transfer occurred; it receives an
+already admitted relation candidate or obligation from the appropriate owner.
+Its first lowering creates one stable relation-instance identity, such as
+`transfer:r742`, and six role-labelled incidences. Generic
+`participates_in` edges are insufficient: they preserve co-membership while
+losing who gave what to whom, under which authorization and jurisdiction.
+Multiplicity, optional roles, schema version, observation time, valid time,
+branch, uncertainty, provenance, defeaters, and lifecycle state travel with the
+relation object.
+
+The next lowering selects a computation plan. One target may use exact joins to
+check role types and authorization scope, pairwise retrieval to propose likely
+participants, and a selective triadic operator to disambiguate
+giver–recipient–object bindings. Another target may use a tree of pairwise
+contractions. A third may call a symbolic solver. These plans do not change the
+semantic arity. They declare primitive computational arity, candidate source,
+factorization, precision, operator versions, cost, and the lower-order rescue
+used to test whether specialized higher-order work was necessary.
+
+The hardware lowering then groups compatible work by schema, primitive order,
+feature width, symmetry class, branch and time window, device, and precision.
+Sparse gather, contraction, normalization, and scatter may be fused, but the
+fusion receipt still points back to `transfer:r742` and its exact role
+incidences. Cache keys include every identity capable of changing validity:
+model and schema version, observation basis, branch, factorization, precision,
+environment, consumer, and qualification policy. A faster kernel is rejected
+if it returns a plausible transfer while swapping giver and recipient, dropping
+authorization, merging branches, or hiding an unqualified approximation.
+
+The final preservation receipt therefore answers four different questions:
+
+1. Can the semantic relation and its typed roles be reconstructed?
+2. Did the chosen computation preserve the consumer's required behavior and
+   calibration inside the declared envelope?
+3. Which approximation, candidate, cache, or contraction losses remain?
+4. Which change invalidates the receipt and reopens a slower or more exact
+   route?
+
+Exact incidence reconstruction answers only the first question. It does not
+establish that the participants were identified correctly, that the transfer
+is true, that the selected operator is efficient, or that an external effect is
+authorized. Keeping those claims separate is the point of the compiler
+boundary.
 
 This creates two additional translation checks:
 

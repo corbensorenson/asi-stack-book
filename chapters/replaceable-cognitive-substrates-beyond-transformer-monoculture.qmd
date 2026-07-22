@@ -252,6 +252,25 @@ be participants in further relations—an observation can support a claim, an
 event can cause another event, or new evidence can invalidate an earlier
 relation—without inventing a dense primitive tensor for every semantic arity.
 
+The construction is simple enough to state precisely. Create one entity node
+for every participant and one relation-instance node for every finite relation.
+Label the relation node with its schema. For each schema role, create a directed
+role-labelled incidence from the relation node to the participant. Attach valid
+time, observation time, branch, uncertainty, provenance, defeaters, qualifiers,
+and lifecycle state to the relation instance or typed metadata relations. To
+recover the original fact, read the schema and the complete role-labelled
+incidence set. Symmetric roles are represented by declared permutation classes;
+ordered roles retain their order. The result is exact only when identity,
+multiplicity, optionality, role semantics, and metadata survive.
+
+This is a useful theorem with a deliberately narrow ceiling. It says that the
+stack does not need a new persistent storage primitive for every finite
+semantic arity. It does not say that pairwise neural computation can learn or
+query every relation efficiently, that graphification preserves roles without
+typed incidences, that the recovered relation is true, or that relation nodes
+are the best representation for every workload. Representational sufficiency
+and computational sufficiency are different questions.
+
 This is representational sufficiency, not computational equivalence. A direct
 triadic, quartic, or domain-specific operator may still discover or evaluate a
 joint dependency with less depth, data, precision, or latency than a pairwise
@@ -265,6 +284,38 @@ relation packet and the operator that produced it:
 - branch, time, provenance, uncertainty, and lifecycle;
 - measured compute, memory, communication, verification, and repair; and
 - a reconstruction or loss receipt for every lowering.
+
+The substrate registry can consequently expose a diverse operator portfolio
+without allowing any operator to define the book's ontology:
+
+| Operator family | Appropriate pressure | Qualification question |
+|---|---|---|
+| Dense or sparse attention | broad pairwise content routing and proposal | Did a strong pairwise route solve the task without hidden context or cache advantage? |
+| Selective triadic or polynomial kernels | local interactions whose joint residual survives lower-order rescue | Did role-sensitive benefit survive matched depth, width, precision, data, and tuning? |
+| Graph or hypergraph updates | known or proposed incidence structure | Who constructed the graph, what was its recall, and did oracle structure leak the answer? |
+| Simplicial or cellular operators | oriented local interactions across grades | Does the topology match the semantic role structure rather than merely resemble it? |
+| Equivariant kernels | geometric entities, vectors, frames, and symmetries | Are transformation laws correct under held-out rotations, translations, reflections, and permutations? |
+| Neural operators or numerical solvers | continuous fields and boundary-value dynamics | Does discretization transfer, and are solver tolerance and field-to-object coupling visible? |
+| Tensor factorizations | compact multilinear interactions | Did rank or contraction order suppress the residual the higher-order path was meant to capture? |
+| Symbolic constraints, database joins, and planners | exact identity, role, search, and consistency operations | Are source facts, open-world assumptions, solver scope, and failure completeness explicit? |
+
+The registry entry includes input and output types, symmetry, primitive arity,
+factorization and rank, precision, state semantics, asymptotic envelope,
+measured hardware cost, known failures, fallback, and qualification expiry. A
+router can select among these implementations by task and state. If selective
+triadic computation wins for a local three-body interaction but exact joins win
+for authorization checks and a field solver wins for diffusion, the stable
+stack can compose all three without pretending that one is the universal
+architecture.
+
+This changes what “beyond the Transformer” should mean. The goal is not to
+replace one monoculture with a polyadic monoculture. It is to make learned
+architecture a replaceable implementation of typed semantic and governance
+contracts. Architectural self-improvement then means proposing a new operator,
+showing where it changes the quality–cost–risk frontier, migrating compatible
+state, shadowing and canarying the replacement, preserving rollback, and
+retiring it when its envelope fails. The relation calculus supplies one stable
+intermediate language through which those substitutions can be compared.
 
 Graph, hypergraph, simplicial, tensor, field, database, symbolic, recurrent,
 and Transformer implementations can then compete behind one semantic

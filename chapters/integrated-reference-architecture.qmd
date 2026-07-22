@@ -180,6 +180,94 @@ orders used, proposal and qualification lineage, lower-order rescues,
 counterfactual and invariance results, uncertainty, contraction maps,
 permitted uses, prohibited inferences, residuals, and complete cost receipts.
 
+```{mermaid}
+flowchart LR
+  A["Observation and accepted context"] --> B["Typed construction request"]
+  B --> C["Candidate proposal"]
+  C --> D["Order and operator routing"]
+  D --> E["Relation qualification"]
+  E -->|accepted| F["Typed relation object and incidences"]
+  E -->|unresolved or rejected| R["Relational residual ledger"]
+  F --> G["Branch-local world and memory state"]
+  G --> H["Optional contraction into macro-object"]
+  H --> I["Planner, compiler, verifier, or specialist consumer"]
+  I --> J["Authorized effect boundary"]
+  J --> K["Outcome observation and reconciliation"]
+  K --> G
+  K -->|invalidates| H
+  D --> L["Cost and routing receipt"]
+  E --> L
+  H --> L
+```
+
+The diagram is a join map, not a claim that one service implements the whole
+path. It shows why the relation packet belongs in the reference architecture:
+no individual owner can establish that the same relation survived proposal,
+qualification, storage, abstraction, consumption, effect, and reconciliation.
+That fact exists only if their records join.
+
+#### One relational packet through the stack
+
+Suppose a planner asks whether an authorization-bound transfer is possible in
+a predicted branch. Context supplies observations, known entities, schema
+versions, field or resource state, and explicit unknowns. Governed World Models
+creates a branch rather than editing actual state. The construction request
+names the consumer, branch, observation and belief bases, permitted schemas and
+operators, maximum primitive arity, invariances, evidence requirements,
+resource and verification budgets, authority ceiling, fallback, and prohibited
+uses.
+
+The proposer may combine pairwise salience, exact identity lookup, time and
+geometry neighborhoods, schema completion, residual hotspots, memory
+precedents, and the planner's query. Every proposed and rejected participant
+stays in the candidate denominator. Routing attempts the least expensive
+qualified path: perhaps exact joins for identity and authorization, pairwise
+retrieval for candidates, then selective triadic scoring for a disputed role
+binding. Its receipt records the candidate topology, operator, primitive arity,
+factorization, precision, information available, estimated gain, complete cost,
+fallback, and expiry.
+
+Qualification is a different custody boundary. It checks role types and
+multiplicity, time and branch compatibility, evidence, alternative bindings,
+lower-order sufficiency, role-specific counterfactual deletion, invariance or
+equivariance, calibration, downstream risk, and cost justification. An accepted
+candidate becomes one versioned relation instance plus typed incidences; an
+unresolved candidate becomes a residual rather than disappearing. Acceptance
+means only that the candidate passed this policy for this consumer. It does not
+mean the predicted transfer occurred or that an effect is permitted.
+
+Memory can now retrieve the event as an addressable object, not merely as
+similar text. Cognitive Compilation can lower it into planner predicates,
+database joins, graph batches, tensors, symbolic constraints, simulator inputs,
+or verification queries while preserving the semantic and evidence packet.
+Procedural Memory may later compile a repeatedly qualified construction path
+into a faster recognizer, but the card retains its slow path, counterexamples,
+monitoring, invalidation dependencies, and rollback descendants. Resource
+Economics sees proposal, rejection, kernel, storage, qualification, repair, and
+human burdens rather than only the winning contraction.
+
+If the planner proposes an external action, the authority boundary receives a
+proposal and its relational evidence; confidence or structural coherence does
+not grant permission. After an authorized effect, an independent observation
+records what happened. Reconciliation compares the result with the original
+branch-local prediction, creates a discrepancy relation where needed, updates
+calibration, invalidates affected descendants and contractions, and preserves
+the original prediction for replay. The Claim Ledger may then update only the
+exact scoped proposition through its own evidence transition.
+
+The packet earns integration when these identities join without ambiguity:
+
+| Join identity | Failure if it changes silently |
+|---|---|
+| Entity, relation instance, schema, and role binding | A plausible but different event is evaluated or executed |
+| Observation basis, branch, valid time, and horizon | Simulation or stale state is laundered into actuality |
+| Proposer, candidate set, and rejected alternatives | Hidden-oracle work and survivorship disappear |
+| Operator, primitive arity, factorization, precision, and device | Computational credit and approximation loss become unattributable |
+| Qualifier, tests, alternatives, uncertainty, and defeaters | Proposal confidence is mistaken for qualified belief |
+| Contraction map, query envelope, error, and expansion triggers | A macro-object travels beyond the questions it can answer |
+| Authority request, decision, effect, and acknowledgement | A relation packet is mistaken for permission or completion |
+| Outcome, discrepancy, descendants, and support transition | Failure is overwritten and downstream claims remain stale |
+
 That packet does not replace current owners. Governed World Models own the
 observation-to-belief and prediction-to-reality boundary. Routing owns operator
 and specialist admission. Cognitive Compilation owns semantics-preserving

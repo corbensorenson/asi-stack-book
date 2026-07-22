@@ -5,7 +5,7 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
     "structured_atoms_reviewed": 74,
-    "prose_candidates_adjudicated": 82,
+    "prose_candidates_adjudicated": 84,
     "unowned_material_claims": 0,
     "review_note": "Reviewed the complete chapter, all twenty-nine exact source mappings, benchmark-ratchet schema/fixture, metric-provenance schema with one blocked record and ten mutations, two-valid/five-invalid synthetic anti-Goodhart harness and persisted bridge, all three proof targets, all eight BenchmarkRatchets declarations, every manifest atom, every prose candidate, test plan, source crosswalk, reconciliation rows, summary, and handoff. The sweep made the construct-, task-, dataset-, metric-, harness-, model-, checkpoint-, output-, evaluator-, baseline-, retry-lineage-, budget-, environment-, claim-axis-, and time-specific Benchmark Instrument Lease the distinct owner; expanded it to eighteen mechanisms, twelve interfaces, eighteen invariants, and eighteen failure modes; preserved zero chapter-core effect; and froze the natural/adversarial workload, construct-validity, strong-baseline, contamination, causal, metric-faithfulness, independent-reproduction, and transfer campaign."
   },
@@ -411,6 +411,16 @@
       "state": "duplicate_of_atom",
       "rationale": "The anti-self-confirmation requirement restates causal metric meta-evaluation against benign and harmful changes.",
       "target_atom_id": "benchmark-ratchets-and-anti-goodhart-evidence.mechanism.013"
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.a4d7139effc1": {
+      "state": "duplicate_of_atom",
+      "rationale": "The controlled-to-natural transfer distinction instantiates the existing independent reproduction and transfer mechanism.",
+      "target_atom_id": "benchmark-ratchets-and-anti-goodhart-evidence.mechanism.017"
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.64ff6528564c": {
+      "state": "duplicate_of_atom",
+      "rationale": "The competent negative-result boundary restates the chapter's full matched instrument and transfer program.",
+      "target_atom_id": "benchmark-ratchets-and-anti-goodhart-evidence.beyond_sota.001"
     }
   },
   "non_claims": [
