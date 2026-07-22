@@ -39,7 +39,7 @@
   ],
   "properties": {
     "schema_version": {
-      "const": "asi_stack.post_v2_3_maintenance_transfer_publication_status.v18"
+      "const": "asi_stack.post_v2_3_maintenance_transfer_publication_status.v19"
     },
     "roadmap_id": {
       "const": "asi-stack-post-v2-3-evidence-competence-transfer-publication-2026-07-17"
@@ -48,7 +48,7 @@
       "const": "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md"
     },
     "snapshot_date": {
-      "const": "2026-07-19"
+      "const": "2026-07-22"
     },
     "authority": {
       "const": "Corben Sorenson"
@@ -90,7 +90,7 @@
           "const": "P2"
         },
         "headline_priority_state": {
-          "const": "blocked_below_frozen_host_free_space_floor"
+          "const": "capacity_entry_condition_met_materialization_not_yet_run"
         },
         "work_in_progress_limit": {
           "const": 2
@@ -108,7 +108,7 @@
           "const": "P2-R3-storage-materialization-and-replacement-qualification"
         },
         "immediate_book_packet": {
-          "const": "P6.5-R16-post-activation-integration-debt"
+          "const": "P6.5-R16-A-six-chapter-atom-pack"
         },
         "immediate_formal_packet": {
           "const": "P4-terminal-no-open-formal-packet"
@@ -120,8 +120,7 @@
             "P6.5-R16-six-chapter-claim-atom-addendum-terminal",
             "P6.5-R16-current-sixty-one-chapter-reader-freshness-terminal",
             "P7.1a-W3-admission-template-inheritance-guard-terminal",
-            "P7.2-T1D-white-box-construct-validity-and-feature-analysis-depth-terminal",
-            "P6.5-R16-governed-optimizer-landscape-depth-terminal"
+            "P7.2-T1D-white-box-construct-validity-and-feature-analysis-depth-terminal"
           ]
         },
         "first_tranche_completion_order": {
@@ -562,7 +561,10 @@
         "structural_admission_freeze": true,
         "paused_candidate_id": "perception-sensor-fusion-and-observation-trust",
         "p2_empirical_recovery": {
-          "state": "blocked_pending_authorized_capacity_change",
+          "state": "capacity_entry_condition_met_materialization_not_yet_run",
+          "observed_host_free_bytes_2026_07_22": 71648034816,
+          "docker_daemon_available_2026_07_22": true,
+          "docker_storage_zero_2026_07_22": true,
           "minimum_host_free_bytes": 53687091200,
           "non_docker_user_data_deletion_allowed": false,
           "materialization_recipe_and_receipt_count_required": 30,
@@ -571,7 +573,7 @@
           "protected_outcomes_may_open_during_recovery": false
         },
         "post_activation_atom_pack": {
-          "state": "required",
+          "state": "active_zero_of_six_terminal",
           "historical_3730_activation_atom_denominator_is_immutable": true,
           "historical_15_atom_addendum_is_immutable": true,
           "chapter_ids": [
@@ -594,7 +596,7 @@
           "support_state_effect": "none"
         },
         "current_reader_freshness_packet": {
-          "state": "required",
+          "state": "queued_after_atom_w3_and_white_box",
           "published_reader_2026_07_18_is_immutable_historical_release": true,
           "current_working_manifest_chapter_count": 61,
           "must_cover_all_current_manifest_chapters": true,
@@ -611,7 +613,9 @@
           ]
         },
         "template_inheritance_guard": {
-          "state": "required",
+          "state": "queued_after_atom_pack",
+          "provisional_current_61_chapter_repeated_12_gram_count": 738,
+          "provisional_current_61_chapter_maximum_spread": 55,
           "historical_w1_and_w2_receipts_are_immutable": true,
           "current_live_chapter_scope": 61,
           "requires_reproducible_current_baseline": true,
@@ -619,7 +623,7 @@
           "shared_method_prose_owner": "chapters/living-book-methodology.qmd"
         },
         "white_box_depth_amendment": {
-          "state": "required",
+          "state": "queued_after_w3",
           "chapter_id": "white-box-evidence-interpretability-and-activation-governance",
           "required_dimensions": [
             "sparse_autoencoder_and_dictionary_learning_mechanisms",
@@ -640,7 +644,7 @@
           ]
         },
         "optimizer_landscape_depth_amendment": {
-          "state": "in_progress_reader_source_and_policy_contract_integrated_atom_and_campaign_residuals",
+          "state": "terminal_manuscript_depth_at_argument_shared_atom_reader_and_empirical_residuals",
           "chapter_id": "governed-model-training-distributed-optimization-and-scaling",
           "research_path": "docs/optimizer_landscape_chapter_research_2026_07_21.md",
           "new_chapter_allowed": false,
@@ -694,7 +698,7 @@
           "remaining_surfaces": [
             "append_only_claim_atom_projection_under_R16_A",
             "current_sixty_one_chapter_reader_freshness_projection_under_R16_B",
-            "resource_gated_matched_optimizer_campaign_and_independent_reproduction"
+            "resource_gated_matched_optimizer_campaign_and_independent_reproduction_as_nonblocking_evidence_residual"
           ],
           "support_state_effect": "none",
           "release_effect": "none"
@@ -1510,7 +1514,7 @@
       ],
       "properties": {
         "state": {
-          "const": "pool_materialization_blocked_rank5_setup_retry_pending_rank6_closed"
+          "const": "capacity_floor_met_pool_materialization_not_run_rank5_setup_retry_pending_rank6_closed"
         },
         "independent_evaluator_calibration_case_count": {
           "const": 32
@@ -1691,7 +1695,7 @@
       ],
       "properties": {
         "state": {
-          "const": "pending_complete_pool_recipe_and_receipt_set"
+          "const": "capacity_entry_condition_met_pending_complete_pool_recipe_and_receipt_set"
         },
         "candidate_count": {
           "const": 30

@@ -34,6 +34,18 @@ current authority owns only unfinished or recurring work. It resolves all 115
 accepted transition IDs through 25 exact atom, 61 bounded subclaim, and 29
 proxy relations with zero indirect parent movement.
 
+Round 17 makes that authority operational rather than aspirational. The
+2026-07-22 host check meets P2's frozen 50 GiB capacity entry floor, so the
+empirical slot is now the thirty-candidate content-sealed sequential
+materialization packet; materialization itself remains unpassed. The parallel
+book slot is strictly ordered: first the reviewed append-only atom pack for all
+six post-baseline chapters, then the W3 template-inheritance guard, then the
+White-Box construct-validity and feature-analysis deepening, then one combined
+current 61-chapter reader-freshness derivative. The optimizer-landscape
+manuscript-depth amendment is terminal at argument support. Unrelated paper
+mining, chapter admission, and general prose deepening cannot displace these
+packets.
+
 The decisive current program is `ASI-THESEUS-FLAGSHIP-01`: close Theseus's
 finite training architecture, train the frozen local seed and matched control,
 establish an honest model-only behavioral numerator, collect real multi-day
