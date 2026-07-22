@@ -4,7 +4,7 @@ chapter_id: "routing-heads-and-specialist-cores"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.3 claim-proof program"
-last_updated: "2026-07-16"
+last_updated: "2026-07-22"
 primary_sources:
   - "octopus_router"
   - "rmi"
@@ -24,6 +24,7 @@ primary_sources:
   - "ext_dont_hallucinate_abstain_2024"
   - "qcsa_whitepaper"
   - "reflexive_router_whitepaper"
+  - "relational_dimension_compiler"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -40,11 +41,11 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | v0.3 claim-proof program |
-| Last updated | 2026-07-15 |
-| Primary source records | All 18 assigned routing, runtime, associative-retrieval, abstention, semantic-addressing, and reflexive-dispatch records |
+| Last updated | 2026-07-22 |
+| Primary source records | 20 assigned records with 18 exact mappings, including relational operator, order, topology, fallback, and abstention routing |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source queue | primary: `octopus_router`, `rmi`, `benchmaxxing`; supporting: `beastbrain`, `cognitive_loop_closure`, `rgs`, `viea`, `scf`, `talos`, `project_theseus_whitepaper`, `theseus_operator_os`, `theseus_architecture_gate`, `reflexive_router_whitepaper`; variant: `moecot_md`; connector/recovery: `moecot` |
+| Source queue | primary: `octopus_router`, `rmi`, `benchmaxxing`; supporting: `beastbrain`, `cognitive_loop_closure`, `rgs`, `viea`, `scf`, `talos`, `project_theseus_whitepaper`, `theseus_operator_os`, `theseus_architecture_gate`, `reflexive_router_whitepaper`, `relational_dimension_compiler`; variant: `moecot_md`; connector/recovery: `moecot` |
 | Source loading state | passage-reviewed local raw cache: `octopus_router`, `rmi`, `beastbrain`, `cognitive_loop_closure`, `rgs`, `benchmaxxing`, `viea`, `scf`, `talos`; passage-reviewed local public-project source: `project_theseus_whitepaper`, `theseus_operator_os`, `theseus_architecture_gate`; authenticated connector text reviewed for `moecot` and the `moecot_md` variant; raw source text is not published. |
 | Test state | Three routing/runtime schemas; 3/7 route-lease and 4/5 readiness fixtures; a 300-example matched three-seed program; one 60-request ambiguous single-model workload; two conservative dispositions; and 21 live family declarations. The new refinement contributes seventeen lifecycle theorems, retains four load-bearing legacy theorems, and physically retires sixteen projection/fixture declarations. Its independent consumer covers seven stages, all 42 routes, and 47/47 rejecting mutations while keeping route and answer outcomes distinct. The only current narrow empirical result remains route discrimination plus exercised non-answer behavior, not useful specialist answers. |
 
@@ -275,6 +276,54 @@ Routing should retain stable identity, separate authority, fallback, receipt,
 and migration interfaces, but it cannot cite this experiment as learned-route,
 latency, throughput, or efficiency evidence. The core claim remains at
 `argument`.
+
+### Relational order is another routed resource
+
+The Relational Dimension Compiler extends route choice below the level of
+model or specialist identity. For a given candidate structure, the router may
+choose unary lookup, pairwise attention or message passing, a selective
+triadic kernel, a tree-structured polynomial, a hypergraph update, an
+equivariant operator, a field solver, an exact join, or a symbolic constraint
+path. It also chooses candidate topology, factorization, precision, scale,
+branch resolution, verification effort, and whether to stop or abstain.
+
+The default is not “use the highest order available.” Pairwise computation is
+the ordinary route. Escalation is warranted only when a lower-order route
+leaves a material, consumer-relative residual and the expected improvement
+survives total cost:
+
+```text
+RelationalOrderDecision {
+  consumer, task, branch, candidate_denominator,
+  proposed_entities_and_roles, proposal_recall_basis,
+  lower_order_route_and_residual,
+  candidate_operator, primitive_arity, factorization,
+  expected_quality_or_information_gain,
+  compute_memory_communication_verification_and_repair_cost,
+  authority_ceiling, fallback, abstention, expiry
+}
+```
+
+Sparse routing does not get candidate generation for free. A route that inspects
+only $nK^2$ triples instead of $n^3$ must report how the neighborhoods were
+constructed, whether the target tuple was ever proposed, and the complete
+rejected-candidate denominator. Otherwise a privileged proposer can contain
+most of the intelligence while the advertised higher-order kernel receives the
+credit.
+
+Admission requires a **lower-order rescue**: a deeper, wider, better-tuned, or
+better-structured pairwise baseline receives matched information, data,
+parameters or priced capacity, inference compute, memory, tuning, and repair.
+If it reaches the same generalization and calibration at lower total cost, the
+higher-order route has not earned an efficiency claim. Conversely, a failed
+naive port or proposal-recall failure is evidence about that attempt, not a
+refutation of polyadic computation.
+
+The useful routing outputs are therefore order regret, proposal recall, role
+accuracy, intervention fidelity, calibrated abstention, useful outcome, total
+lifecycle cost, and residuals—not the nominal tensor order selected. The paper
+proposes this contract but supplies no trained order router, natural task, or
+measured advantage.
 
 ### Pre-deliberative reflexive dispatch
 
@@ -672,6 +721,7 @@ These rows keep Routing Heads and Specialist Cores's manifest assignments visibl
 | `deterministic_capability_compilation` | Metadata-first comparator: Deterministic Capability Compilation: A Capability-Preserving Ladder from Executable Scaffolds to Governed Adaptive Agents. Corben-authored July 2026 architecture and research program for compiling executable scaffolds into contract-bound experts and linked Neural Capability Objects while retaining semantic obligation mass balance, candidate-specific translation validation, fallback, residual escrow, authority ceilings, reification, and effect-complete recovery. Existing chapters are upgraded first; no foundry implementation, learned-capability result, preservation result, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_dont_hallucinate_abstain_2024` | Passage-reviewed comparator: Don't Hallucinate, Abstain: Identifying LLM Knowledge Gaps via Multi-LLM Collaboration. Supports measuring abstention with coverage, accuracy, calibration, and useful response behavior while treating self-reflection and model agreement as fallible evidence. | The ACL models, prompts, domains, collaboration schemes, and reported gains were not reproduced; the local single-model router is not an independent multi-model panel. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `qcsa_whitepaper` | Passage-reviewed comparator: Question-Compiled Semantic Addressing. Separates semantic identity and address selection from the physical expert/model route, while making fallback, abstention, load, cost, hardware, permissions, and verifier requirements explicit in the compiled route plan; the later repository adds a bounded local 12-lane implementation, 60-case held-out evaluation over 13 systems and three seeds, and one 13-stage governed vertical trace. | The exact matched-advantage and resource gates failed, and the active-question ablation is N2 proxy/regime evidence rather than an exact or broad refutation. No learned-router, trained-specialist, production, chapter-core promotion, AGI, or ASI result is established. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `relational_dimension_compiler` | Passage-reviewed comparator: The Relational Dimension Compiler: Adaptive Polyadic Cognition with Bounded Computational Arity and Unbounded Semantic Structure. Extends routing to candidate topology, relational order, operator family, factorization, precision, scale, branch resolution, verification effort, and stopping or abstention under a complete proposal-through-repair cost ledger. | No learned order router, proposal-recall result, regret bound, useful polyadic route, or natural-task routing advantage is demonstrated. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Post-v2 matched routing result

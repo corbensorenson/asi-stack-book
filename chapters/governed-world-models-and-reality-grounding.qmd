@@ -4,7 +4,7 @@ chapter_id: "governed-world-models-and-reality-grounding"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.4 integrated reader chapter"
-last_updated: "2026-07-19"
+last_updated: "2026-07-22"
 primary_sources:
   - "platonic_world_model"
   - "deterministic_capability_compilation"
@@ -15,6 +15,7 @@ primary_sources:
   - "ext_world_models_2018"
   - "ext_dreamer_v3_2025"
   - "ext_v_jepa_2_2025"
+  - "relational_dimension_compiler"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -32,12 +33,12 @@ open_evidence_gaps:
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
 | Manuscript maturity | v0.4 integrated reader chapter |
-| Last updated | 2026-07-19 |
-| Primary source records | `platonic_world_model`, `deterministic_capability_compilation`, `qcsa_whitepaper`, `simulation_scaling`, `cognitive_compilation`, `planforge`, `ext_world_models_2018`, `ext_dreamer_v3_2025`, `ext_v_jepa_2_2025` |
+| Last updated | 2026-07-22 |
+| Primary source records | ten assigned and exactly mapped records, adding `relational_dimension_compiler` for typed relation objects, branch-local relational state, and semantic renormalization |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `ext_world_models_2018`, `ext_dreamer_v3_2025`, `ext_v_jepa_2_2025`; supporting: `platonic_world_model`, `simulation_scaling`, `planforge`; variants: `deterministic_capability_compilation`, `qcsa_whitepaper`, `cognitive_compilation` |
-| Source loading state | Public-safe source notes exist for all nine assigned records. External results remain source-reported and unreproduced; Corben-authored sources contribute architecture and bounded lineage at their recorded limits. |
+| Source loading state | Public-safe source notes and exact mappings exist for all ten assigned records. External results remain source-reported and unreproduced; Corben-authored sources contribute architecture and bounded lineage at their recorded limits. |
 | Test state | The governed packet schema, safe-hold record fixture, independent semantic validator, thirteen negative mutations, and two public Lean targets through nine declarations are implemented. The six-arm claim-bearing campaign is protocol-ready and resource-isolated, not executed; protected outcomes remain closed. |
 
 ## Drafting guardrail
@@ -295,6 +296,53 @@ independent effect gate can permit an action. Later observation returns through
 the residual path rather than overwriting the earlier prediction. The diagram
 specifies interfaces and refusal routes; it reports no implemented service or
 control result.
+
+### Relations are branch-local state, not attention scores
+
+The Relational Dimension Compiler sharpens the world-model state boundary.
+An interaction score is transient computation; a relation admitted into the
+world state is a versioned object with a schema, typed role bindings, valid
+time, branch, uncertainty, provenance, defeaters, lifecycle state, and named
+consumers. The model must not turn a high score, coherent latent cluster, or
+simulated event directly into an actual-world fact.
+
+A governed relational state distinguishes three arities:
+
+- semantic arity—the number of role-bearing arguments in the relation;
+- computational arity—the number of items jointly scored by one operator; and
+- storage arity—the incidence structure used to persist the accepted relation.
+
+This lets the world model preserve an arbitrary finite event as one relation
+object plus typed role incidences without requiring a permanent dense
+high-order tensor. It also keeps roles visible: recognizing that Alice, Bob,
+and a key co-occur is not the same as establishing who gave what to whom.
+
+Relations move through explicit states such as proposed, qualified hypothesis,
+admitted belief, observed or executed, weakened, contradicted, superseded, and
+retired. Possible-world branches use copy-on-write state; unchanged entities
+and relations may be shared immutably, but hypothetical deltas remain attached
+to their branch. Crossing into actuality requires an observation, authorized
+effect, adoption decision, and later reconciliation—not aggregation over a
+branch axis.
+
+The same state can join discrete objects to continuous fields. An entity may
+sample a field, contribute a source term, or participate in a relation that
+sets a boundary condition; a field event may create, split, merge, or retire an
+entity. This avoids forcing every continuous phenomenon into tokens while
+retaining stable identity and role-sensitive events where they matter.
+
+Finally, abstraction becomes a world-model operation with a receipt. A stable
+subcomplex may be contracted into a macro-object only for a declared query
+family, environment class, error envelope, boundary interface, uncertainty,
+and expansion triggers. A molecule, organization, or software module may be a
+sound object for one consumer and an invalid contraction for another. Expansion
+on anomaly, targeted intervention, rights-sensitive query, stale certificate,
+or distribution shift is normal operation rather than failure.
+
+None of this makes an explicit relation true or a macro-object faithful. It
+makes identity, branch leakage, role error, alternative hypotheses,
+contraction loss, and required reopening addressable to the existing reality
+loop.
 
 ### Governed rollout contract
 
@@ -687,6 +735,15 @@ evaluator error separately addressable while preserving the rule that a model
 update cannot widen authority. This synthesis is recorded as design rationale,
 not as a result reported by any one assigned source.
 
+### Manifest source assignment reconciliation
+
+These rows keep Governed World Models and Reality Grounding's manifest assignments visible at their recorded review boundary. Passage review does not establish local reproduction, performance, safety, deployment, or support-state movement.
+
+| Source | Intake role | Boundary |
+|---|---|---|
+| `relational_dimension_compiler` | Passage-reviewed comparator: The Relational Dimension Compiler: Adaptive Polyadic Cognition with Bounded Computational Arity and Unbounded Semantic Structure. Adds typed entity, relation, field, branch, provenance, uncertainty, lifecycle, and reversible macro-object state plus explicit separation between proposed, qualified, believed, observed, executed, contradicted, and retired relations. | The architecture does not establish correct perception, grounding, relation truth, causal structure, branch calibration, contraction fidelity, or world-model advantage. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+
+<!-- manifest-source-reconciliation:end -->
 ## Summary
 
 A governed world model is a versioned prediction service whose outputs remain

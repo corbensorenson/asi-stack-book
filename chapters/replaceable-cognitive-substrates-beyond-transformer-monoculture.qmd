@@ -4,7 +4,7 @@ chapter_id: "replaceable-cognitive-substrates-beyond-transformer-monoculture"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-07-21"
+last_updated: "2026-07-22"
 primary_sources:
   - "corben_chatgpt_kiss_irreducible_intelligence_2026"
   - "corben_chatgpt_onecell_theseus_2026"
@@ -41,6 +41,7 @@ primary_sources:
   - "ext_universal_transformer_2019"
   - "ext_dynamic_compute_recurrent_transformers_2026"
   - "ext_dreamcoder_2020"
+  - "relational_dimension_compiler"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -59,11 +60,11 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-07-15 |
-| Primary source records | 35 bounded assignments spanning two author-intent conversations; dense attention; S4 and Mamba/SSD through Mamba-3; Gated DeltaNet-2 as the dated reported recurrent frontier for its exact envelope; an edge-hardware SSM counterstudy; Gated DeltaNet; Jamba; the release-day Inkling hybrid; graph message passing; long convolution; recurrent, tiny-recursive, test-time-memory, external-memory, continuous-time, KAN, and program-learning comparators; two independent TRM pressure tests; two current recurrence-versus-addressable-memory studies; and the existing SCF/RMI/benchmark sources. |
+| Last updated | 2026-07-22 |
+| Primary source records | 38 bounded assignments spanning author-intent inputs, transformer and non-transformer comparators, governed replacement sources, and the Relational Dimension Compiler's separation of semantic, computational, and storage arity. |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source loading state | All 34 assigned records have source notes and reviewed, bounded claim mappings. The two public shares are author-intent inputs; the architecture sources are external comparators. No architecture result was imported as local evidence. |
+| Source loading state | All 38 assigned records have source notes; 36 carry exact bounded claim mappings. The public shares are author-intent inputs, the Relational Dimension Compiler is an author proposal, and the architecture sources are external comparators. No architecture result was imported as local evidence. |
 | Test state | Bounded synthetic ABI conformance and malicious-kernel rejection are implemented. The matched heterogeneous-kernel tournament, frozen-core verified-abstraction ratchet, and governed architectural-RSI lifecycle remain preregistered and unrun. |
 
 ## Drafting guardrail
@@ -230,6 +231,49 @@ time model may own a control route while an exact planner owns the action graph.
 A state-space model may handle streaming perception while a Transformer or
 program synthesizer handles another route. "Best for the job" becomes meaningful
 only after the job, consumer, costs, authority, and defeat conditions are fixed.
+
+### Bounded computational arity, unbounded semantic structure
+
+The Relational Dimension Compiler prevents this architecture catalog from
+collapsing semantic structure into one implementation label. A relation can
+have many typed roles without requiring one primitive kernel of the same
+arity. The stack should distinguish:
+
+| Order | Meaning | Example |
+|---|---|---|
+| Semantic arity | Number of typed role-bearing arguments in the represented relation | giver, recipient, object, authorization, time, and jurisdiction |
+| Primitive computational arity | Number of items one kernel evaluates jointly | pairwise attention or selective triadic scoring |
+| Storage arity | Shape of the durable representation | one relation object plus typed binary incidences |
+
+For any finite relation whose schema, roles, participants, time, branch,
+uncertainty, provenance, and lifecycle are preserved, relation-node reification
+can store the structure exactly up to identifier renaming. Relations can then
+be participants in further relations—an observation can support a claim, an
+event can cause another event, or new evidence can invalidate an earlier
+relation—without inventing a dense primitive tensor for every semantic arity.
+
+This is representational sufficiency, not computational equivalence. A direct
+triadic, quartic, or domain-specific operator may still discover or evaluate a
+joint dependency with less depth, data, precision, or latency than a pairwise
+composition. The Cognitive Kernel ABI must therefore expose both the stable
+relation packet and the operator that produced it:
+
+- dimensional types and legal symmetries;
+- entity, field, relation-schema, and role identities;
+- primitive arity, factorization, approximation, and precision;
+- candidate proposal and lower-order fallback;
+- branch, time, provenance, uncertainty, and lifecycle;
+- measured compute, memory, communication, verification, and repair; and
+- a reconstruction or loss receipt for every lowering.
+
+Graph, hypergraph, simplicial, tensor, field, database, symbolic, recurrent,
+and Transformer implementations can then compete behind one semantic
+contract. None inherits credit merely because its carrier looks more
+relational. The central falsifier is practical: if competent pairwise or other
+simpler systems match role-sensitive, counterfactual, transfer, and cost
+outcomes, explicit higher-order machinery should be narrowed or removed. If
+order-four or higher primitives repeatedly win after full rescue, the registry
+should admit them instead of defending a dogmatic bound.
 
 ## What the recent counterevidence changes
 
@@ -798,6 +842,7 @@ These rows keep Replaceable Cognitive Substrates: Beyond Transformer Monoculture
 | `deterministic_capability_compilation` | Metadata-first comparator: Deterministic Capability Compilation: A Capability-Preserving Ladder from Executable Scaffolds to Governed Adaptive Agents. Corben-authored July 2026 architecture and research program for compiling executable scaffolds into contract-bound experts and linked Neural Capability Objects while retaining semantic obligation mass balance, candidate-specific translation validation, fallback, residual escrow, authority ceilings, reification, and effect-complete recovery. Existing chapters are upgraded first; no foundry implementation, learned-capability result, preservation result, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_hyperscale_lottery_2026` | Passage-reviewed comparator: The Hyperscale Lottery: How State-Space Models Have Sacrificed Edge Efficiency. Supplies adversarial edge-hardware measurements showing that an architecture optimized for hyperscale GPU utilization can move cost onto smaller deployment targets. | One preprint and its selected devices do not establish a universal edge penalty or outweigh model quality; the result sets a platform-stratified measurement requirement. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `kernel_english_residual_compiler` | Metadata-first comparator: Kernel English with Hierarchical, Interaction-Amortized Residuals: A Dual-Vocabulary Cognitive Compiler for Efficient Language-Model Reasoning. Corben-authored July 2026 architecture proposal for KERC: protected-object capture, uncertainty-aware normalization, sense-aware Kernel IR, dual surface/core vocabularies, a four-level interaction-amortized residual ledger, exact object storage, grammar-aware macro fusion, structured answer packets, rendering, round-trip verification, versioned migration, and complete rate-compute-fidelity evaluation. Existing chapters are upgraded first; no implementation, benchmark, novelty, efficiency, fidelity, safety, transfer, SOTA, AGI, ASI, or support-state result is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `relational_dimension_compiler` | Passage-reviewed comparator: The Relational Dimension Compiler: Adaptive Polyadic Cognition with Bounded Computational Arity and Unbounded Semantic Structure. Separates semantic arity, primitive computational arity, and storage arity; uses typed relation-node reification for persistent arbitrary finite relations while treating pairwise, polyadic, graph, hypergraph, topological, field, symbolic, and tensor systems as replaceable computational lowerings. | Finite reification establishes representational sufficiency only; bounded primitive arity, efficient discovery, hardware advantage, natural transfer, and substrate superiority remain untested. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Summary

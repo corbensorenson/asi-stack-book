@@ -62,7 +62,7 @@ def errors(data: dict[str, Any]) -> list[str]:
         out.append("record-contract custody drifted")
 
     assigned = audit["source_crosswalk"]["primary_external_source_ids"] + audit["source_crosswalk"]["supporting_corben_source_ids"]
-    if len(assigned) != 9 or audit["source_crosswalk"].get("assigned_source_count") != 9:
+    if len(assigned) != 10 or audit["source_crosswalk"].get("assigned_source_count") != 10:
         out.append("source denominator drifted")
     inventory = {row["id"]: row for row in data["inventory"]}
     for source_id in assigned:
@@ -160,7 +160,7 @@ def main() -> None:
     if failures:
         raise SystemExit("P7.2-T2 reader integration failed:\n - " + "\n - ".join(failures))
     print(
-        "P7.2-T2 reader integration passed: 1 terminal argument-level chapter, 9 source "
+        "P7.2-T2 reader integration passed: 1 terminal argument-level chapter, 10 source "
         "mappings, 2 implemented public proof targets, 9 theorem declarations, 6 arms, "
         "8 competence gates, protected outcomes closed, 13 integration mutations rejected; "
         "support/release/publication none."

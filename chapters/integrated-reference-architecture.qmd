@@ -4,7 +4,7 @@ chapter_id: "integrated-reference-architecture"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.3 manuscript draft"
-last_updated: "2026-07-16"
+last_updated: "2026-07-22"
 primary_sources:
   - "viea"
   - "scf"
@@ -37,6 +37,7 @@ primary_sources:
   - "ext_v_jepa_2_2025"
   - "ext_embedded_agency_2019"
   - "reflexive_router_whitepaper"
+  - "relational_dimension_compiler"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -53,11 +54,11 @@ open_evidence_gaps:
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
 | Manuscript maturity | v0.3 manuscript draft |
-| Last updated | 2026-07-15 |
-| Primary source records | 31 assigned and 31 exact passage-reviewed mappings spanning the stack sources, local implementation lineage, CAIS, ADAS, QCSA, The Reflexive Router, V-JEPA 2, and Embedded Agency |
+| Last updated | 2026-07-22 |
+| Primary source records | 36 assigned records with 32 exact passage-reviewed mappings spanning the stack sources, local implementation lineage, external comparators, and a typed relational-complex integration packet |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source queue | primary: `viea`, `scf`, `vcm_public`, `planforge`, `talos`, `spinoza`, `octopus_router`, `rmi`, `benchmaxxing`; supporting: `alignment_field`, `cgs`, `cognitive_loop_closure`, `project_theseus_whitepaper`, `theseus_plan_compiler`, `theseus_self_evolution_system`, `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer`, `reflexive_router_whitepaper`; connector/recovery: `moecot`, `vcm_editable` |
+| Source queue | primary: `viea`, `scf`, `vcm_public`, `planforge`, `talos`, `spinoza`, `octopus_router`, `rmi`, `benchmaxxing`; supporting: `alignment_field`, `cgs`, `cognitive_loop_closure`, `project_theseus_whitepaper`, `theseus_plan_compiler`, `theseus_self_evolution_system`, `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer`, `reflexive_router_whitepaper`, `relational_dimension_compiler`; connector/recovery: `moecot`, `vcm_editable` |
 | Source loading state | source notes: `viea`, `scf`, `vcm_public`, `planforge`, `talos`, `spinoza`, `octopus_router`, `rmi`, `benchmaxxing`, `alignment_field`, `cgs`, `cognitive_loop_closure`, `moecot`, `vcm_editable`, `project_theseus_whitepaper`, `theseus_plan_compiler`, `theseus_self_evolution_system`, `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer`; raw cache: `viea`, `scf`, `vcm_public`, `planforge`, `talos`, `spinoza`, `octopus_router`, `rmi`, `benchmaxxing`, `alignment_field`, `cgs`, `cognitive_loop_closure`; connector/recovery: `moecot`, `vcm_editable` |
 | Test state | `reference_trace_record.valid.json` passes repository-level protocol fixture validation with trace state, execution boundary, parent artifacts, authority/evidence/residual deltas, promotion blockers, source refs, support-state effect, and non-claims; `python3 scripts/validate_reference_trace.py` checks 2 valid and 6 expected-invalid deterministic reference-trace fixtures; `AsiStackProofs.ReferenceArchitecture` implements finite handoff-artifact and governance-gate trace predicates. No integrated runtime trace, live artifact-continuity audit, deployed authority stop-condition checker, or runtime replay exists. |
 
@@ -113,7 +114,7 @@ The claim remains at `argument` support. The source notes support architecture s
 
 ### Claim-source mapping status
 
-Appendix C now records thirty passage-reviewed mappings for this synthesis. The five historical-project records count as one related implementation lineage, not five independent confirmations. The review makes the source map traceable enough for drafting and later support review, but it does not move the core claim above `argument` support. It also does not convert CAIS or ADAS results, Project Theseus reports, historical-project notes, MoECOT connector context, VCM Editable terminology, schemas, fixtures, or finite Lean predicates into an integrated runtime result.
+Appendix C now records thirty-two exact passage-reviewed mappings across thirty-six assigned sources for this synthesis. The five historical-project records count as one related implementation lineage, not five independent confirmations. The review makes the source map traceable enough for drafting and later support review, but it does not move the core claim above `argument` support. It also does not convert CAIS or ADAS results, Project Theseus reports, historical-project notes, MoECOT connector context, VCM Editable terminology, the Relational Dimension Compiler proposal, schemas, fixtures, or finite Lean predicates into an integrated runtime result.
 
 | Mapping group | Reviewed support | Boundary |
 |---|---|---|
@@ -170,6 +171,37 @@ The control question at every step is simple: what artifact was received, what a
 The trace should include positive and negative checkpoints. A positive checkpoint says what the layer completed and which downstream dependency may now consume it. A negative checkpoint says why the flow stopped, narrowed, escalated, or entered quarantine. This makes the blocked path a first-class artifact instead of an exception that disappears into prose.
 
 The reference trace below is conceptual. It is a design target for later schemas, tests, and proofs, not a report of a completed implementation. The deterministic fixtures under `experiments/reference_trace/fixtures/` now provide a record-level worked trace for that design target, but they remain `fixture_only` records rather than runtime execution.
+
+The Relational Dimension Compiler adds a cross-layer state that the reference
+trace must eventually be able to join. A `QualifiedRelationalComplexPacket`
+contains versioned entity and macro-object identities, field domains, relation
+instances, typed role incidences, branch identity, operators and primitive
+orders used, proposal and qualification lineage, lower-order rescues,
+counterfactual and invariance results, uncertainty, contraction maps,
+permitted uses, prohibited inferences, residuals, and complete cost receipts.
+
+That packet does not replace current owners. Governed World Models own the
+observation-to-belief and prediction-to-reality boundary. Routing owns operator
+and specialist admission. Cognitive Compilation owns semantics-preserving
+lowering. Context and memory own mounted state. Runtime and Authority own
+effects. Artifact and Claim Ledgers own lineage and support. Procedural Memory
+owns slow-to-fast compilation. Resource Economics owns total burden. The
+reference architecture owns only the joins among those owner-specific records.
+
+The relational packet creates four additional join questions:
+
+1. Did the same entity, relation schema, role binding, branch, and time survive
+   from proposal through consumption?
+2. Did a computational rewrite change semantic arity, role symmetry,
+   approximation, or abstraction scope without a loss receipt?
+3. Did a macro-object cross a consumer or environment boundary that should have
+   triggered expansion?
+4. Did a compiled fast path preserve its qualified slow path, counterexamples,
+   expiry, and rollback descendants?
+
+This is source-grounded architecture integration only. No RDC packet has run
+through the reference fixture, and no whole-stack relational advantage or
+semantic-preservation result follows.
 
 ### Eighteen-stage cross-layer join lifecycle
 
@@ -846,6 +878,7 @@ These rows keep Integrated Reference Architecture's manifest assignments visible
 | `ext_embedded_agency_2019` | Passage-reviewed comparator: Embedded Agency. Supplies the open-world foundations residual beneath the finite reference trace: the stack is inside the world it records and cannot treat its own ledger as an external omniscient model. | The paper is an informal obstacle survey, not a solved theory; the ASI Stack's finite records and proofs do not solve logical uncertainty, self-reference, robust delegation, subsystem alignment, or open-world embedded agency. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `kernel_english_residual_compiler` | Metadata-first comparator: Kernel English with Hierarchical, Interaction-Amortized Residuals: A Dual-Vocabulary Cognitive Compiler for Efficient Language-Model Reasoning. Corben-authored July 2026 architecture proposal for KERC: protected-object capture, uncertainty-aware normalization, sense-aware Kernel IR, dual surface/core vocabularies, a four-level interaction-amortized residual ledger, exact object storage, grammar-aware macro fusion, structured answer packets, rendering, round-trip verification, versioned migration, and complete rate-compute-fidelity evaluation. Existing chapters are upgraded first; no implementation, benchmark, novelty, efficiency, fidelity, safety, transfer, SOTA, AGI, ASI, or support-state result is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_swe_rebench_v2_2026` | Passage-reviewed comparator: SWE-rebench V2: Language-Agnostic SWE Task Collection at Scale. Provides a natural repository-change substrate for testing the same candidate through matched test-only, record-only, and full-governance admission routes with visible utility, unsafe admission, false blocking, latency, rollback, residual, and cost outcomes. | No local gold run, candidate campaign, final heldout result, governance advantage, deployment, safety, or transfer result exists yet. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `relational_dimension_compiler` | Passage-reviewed comparator: The Relational Dimension Compiler: Adaptive Polyadic Cognition with Bounded Computational Arity and Unbounded Semantic Structure. Adds a joined relational-complex state across semantic entities/relations/fields, evidence and lifecycle metadata, selected computational operators, branch identity, and abstraction maps, with explicit interfaces to routing, world models, memory, effects, and reconciliation. | The RDC lifecycle has not been implemented, joined to the current reference trace, or shown to preserve semantics, improve utility, reduce cost, or govern effects. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Summary

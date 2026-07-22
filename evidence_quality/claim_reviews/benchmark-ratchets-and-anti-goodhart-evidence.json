@@ -5,7 +5,7 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
     "structured_atoms_reviewed": 74,
-    "prose_candidates_adjudicated": 80,
+    "prose_candidates_adjudicated": 82,
     "unowned_material_claims": 0,
     "review_note": "Reviewed the complete chapter, all twenty-nine exact source mappings, benchmark-ratchet schema/fixture, metric-provenance schema with one blocked record and ten mutations, two-valid/five-invalid synthetic anti-Goodhart harness and persisted bridge, all three proof targets, all eight BenchmarkRatchets declarations, every manifest atom, every prose candidate, test plan, source crosswalk, reconciliation rows, summary, and handoff. The sweep made the construct-, task-, dataset-, metric-, harness-, model-, checkpoint-, output-, evaluator-, baseline-, retry-lineage-, budget-, environment-, claim-axis-, and time-specific Benchmark Instrument Lease the distinct owner; expanded it to eighteen mechanisms, twelve interfaces, eighteen invariants, and eighteen failure modes; preserved zero chapter-core effect; and froze the natural/adversarial workload, construct-validity, strong-baseline, contamination, causal, metric-faithfulness, independent-reproduction, and transfer campaign."
   },
@@ -401,6 +401,16 @@
     "benchmark-ratchets-and-anti-goodhart-evidence.prose.29bc21c6802b": {
       "state": "historical_or_source_report",
       "rationale": "Reports the exact frozen Campaign 6 construct-validity ceiling; it does not add a separate benchmark proposition."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.f02dabe69563": {
+      "state": "duplicate_of_atom",
+      "rationale": "The RODIE metric fragment instantiates the existing prospective metric and transfer registration obligation.",
+      "target_atom_id": "benchmark-ratchets-and-anti-goodhart-evidence.mechanism.004"
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.3c0b9f3482b6": {
+      "state": "duplicate_of_atom",
+      "rationale": "The anti-self-confirmation requirement restates causal metric meta-evaluation against benign and harmful changes.",
+      "target_atom_id": "benchmark-ratchets-and-anti-goodhart-evidence.mechanism.013"
     }
   },
   "non_claims": [

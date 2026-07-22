@@ -4,7 +4,7 @@ chapter_id: "open-research-agenda-and-bibliography-plan"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.3 semantically audited manuscript"
-last_updated: "2026-07-16"
+last_updated: "2026-07-22"
 primary_sources:
   - "verification_bandwidth"
   - "benchmaxxing"
@@ -34,10 +34,11 @@ primary_sources:
   - "ext_livebench_2024"
   - "ext_lean4_theorem_proving"
   - "ext_moe_llm_survey_2024"
+  - "relational_dimension_compiler"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Appendix C records passage-reviewed mappings for all twenty-eight assigned sources, including source-note-only connector/recovery records, pinned local Project Theseus/Circle/constitution references, durable-memory comparators, and five external benchmark, proof-assistant, and MoE queue sources; support remains argument until natural intake, citation, closure, reproduction, and transfer campaigns justify a separate transition."
+  - "Appendix C records twenty-nine exact passage-reviewed mappings across thirty-one assigned sources, including the Relational Dimension Compiler intake and its deferred standalone-chapter decision; support remains argument until natural intake, citation, closure, reproduction, and transfer campaigns justify a separate transition."
   - "The research_backlog_record and new_paper_triage_scenario fixtures and AsiStackProofs.BibliographyPlan finite-record predicates with negative cases validate backlog-record shape, triage state, source storage policy, public-safety state, chapter action policy, chapter-decision refs, deduplication state, merge/split policy, boundary-decision rationale, required pre-drafting work, evidence-transition preconditions, source refs, promotion blockers, support-state effect, non-claims, source-note gates, chapter-assignment gates, and synthetic update/propose/defer/reject decisions only; they do not prove citation accuracy, external-literature completeness, claim-to-source mapping quality, public-release permission, or real new-paper triage quality."
   - "Connector/recovery and variant sources remain bounded: MoECOT, CoilMoECOT, Road To AGI, and VCM Editable do not promote runtime, benchmark, model-facing, or citation-normalized third-party claims."
   - "No chapter-core support-state promotion, external-literature normalization result, direct citation check, benchmark reproduction, runtime artifact, model-quality result, broad Circle command coverage, current Theseus report verification, policy-engine result, or raw source publication is implied by this drafting pass; the separate Circle rope receipt slice remains bounded to its own evidence transition."
@@ -51,11 +52,11 @@ open_evidence_gaps:
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
 | Manuscript maturity | v0.3 semantically audited manuscript |
-| Last updated | 2026-07-15 |
-| Primary source records | `verification_bandwidth`, `benchmaxxing`, `alignment_field`, `scf`, `planforge`, `vcm_public`, `spinoza`, `talos`, `rmi`, `cgs`, `genesiscode`, `simulation_scaling`, `moecot`, `coilmoecot`, `road_to_agi`, `vcm_editable`, `field_of_god_ai_constitution`, `project_theseus_whitepaper`, `circle_calculus_core`, `circle_ai_contract_suite`, `theseus_circle_transfer`, `ext_graphrag_2024`, `ext_hipporag_2024`, `ext_mmlu_2020`, `ext_gpqa_2023`, `ext_livebench_2024`, `ext_lean4_theorem_proving`, `ext_moe_llm_survey_2024` |
+| Last updated | 2026-07-22 |
+| Primary source records | 31 assigned records with 29 exact mappings, including `relational_dimension_compiler` and its freeze-compliant chapter-boundary adjudication |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source queue | primary: `verification_bandwidth`, `benchmaxxing`; supporting: `alignment_field`, `scf`, `planforge`, `vcm_public`, `spinoza`, `talos`, `rmi`, `cgs`, `genesiscode`, `simulation_scaling`, `field_of_god_ai_constitution`, `project_theseus_whitepaper`, `circle_calculus_core`, `circle_ai_contract_suite`, `theseus_circle_transfer`; connector/recovery: `moecot`, `coilmoecot`, `road_to_agi`, `vcm_editable` |
+| Source queue | primary: `verification_bandwidth`, `benchmaxxing`; supporting: `alignment_field`, `scf`, `planforge`, `vcm_public`, `spinoza`, `talos`, `rmi`, `cgs`, `genesiscode`, `simulation_scaling`, `field_of_god_ai_constitution`, `project_theseus_whitepaper`, `circle_calculus_core`, `circle_ai_contract_suite`, `theseus_circle_transfer`, `relational_dimension_compiler`; connector/recovery: `moecot`, `coilmoecot`, `road_to_agi`, `vcm_editable` |
 | Source loading state | source notes: `verification_bandwidth`, `benchmaxxing`, `alignment_field`, `scf`, `planforge`, `vcm_public`, `spinoza`, `talos`, `rmi`, `cgs`, `genesiscode`, `simulation_scaling`, `moecot`, `coilmoecot`, `road_to_agi`, `vcm_editable`, `field_of_god_ai_constitution`, `project_theseus_whitepaper`, `circle_calculus_core`, `circle_ai_contract_suite`, `theseus_circle_transfer`; raw cache: `verification_bandwidth`, `benchmaxxing`, `alignment_field`, `scf`, `planforge`, `vcm_public`, `spinoza`, `talos`, `rmi`, `cgs`, `genesiscode`, `simulation_scaling`; source-note-only or connector/recovery: `moecot`, `coilmoecot`, `road_to_agi`, `vcm_editable`; pinned local references: Project Theseus, Circle Math, and Field of God AI Constitution |
 | Test state | Source inventory validation, source-note validation, `research_backlog_record.valid.json`, and `new_paper_triage_scenario.valid.json` protocol fixture validation pass; the backlog fixture carries triage state, source storage policy, public-safety state, chapter action policy, chapter-decision refs, deduplication state, merge/split policy, boundary rationale, required pre-drafting work, evidence-transition preconditions, source refs, promotion blockers, support-state effect, and non-claims; the triage scenario fixture covers synthetic update-existing, propose-new-chapter, defer-external-literature, and reject-duplicate cases only; `AsiStackProofs.BibliographyPlan` implements finite source-derived-claim ingestion and source-assignment gates plus negative cases for missing source records and nonexistent chapter assignments. |
 
@@ -104,7 +105,7 @@ The claim remains at `argument` support. The repository now has source inventory
 
 ### Claim-source mapping status
 
-Appendix C now records twenty-eight passage-reviewed mappings for this claim. Seven mappings close prior prose-only gaps for GraphRAG, HippoRAG, MMLU, GPQA, LiveBench, Lean 4, and the MoE survey. The review turns the agenda into a context-loading map for future writing, proof, and experiment work; it does not turn any queue or backlog item into completed evidence.
+Appendix C now records twenty-nine exact passage-reviewed mappings across thirty-one assigned sources for this claim. Seven mappings close prior prose-only gaps for GraphRAG, HippoRAG, MMLU, GPQA, LiveBench, Lean 4, and the MoE survey; the new mapping records the Relational Dimension Compiler intake and deferred chapter decision. The review turns the agenda into a context-loading map for future writing, proof, and experiment work; it does not turn any queue or backlog item into completed evidence.
 
 | Source group | Reviewed support | Boundary |
 |---|---|---|
@@ -113,6 +114,42 @@ Appendix C now records twenty-eight passage-reviewed mappings for this claim. Se
 | Planning, context, execution, and improvement backlog: `planforge`, `vcm_public`, `talos`, `rmi`, `genesiscode` | Planning experiments, primitive schemas, VCM packet schemas, source binding, typed job lifecycles, audit/replay, residual escrow, specialist lifecycle, capability policies, effect logs, replay, and translation-validation topics. | No planner implementation, VCM-Bench, retrieval-quality result, Talos runtime/security run, RMI prototype, GenesisCode implementation, replay checker, benchmark, or security audit. |
 | Compression, simulation, and optional substrate backlog: `cgs`, `simulation_scaling`, `coilmoecot`, `vcm_editable` | Compact-seed and residual-honesty research items, simulation contracts and resource limits, optional routed coil/specialist lanes, richer VCM terminology, planner-guided paging, and third-party citation candidates. | No CGS benchmark, simulation benchmark, feasibility audit, CoilMoECOT baseline, route run, VCM model-facing result, or normalized third-party citation. |
 | Implementation and proof-contract backlog: `moecot`, `road_to_agi`, `project_theseus_whitepaper`, `circle_calculus_core`, `circle_ai_contract_suite`, `theseus_circle_transfer` | Runtime artifact tracking, readiness gates, replay, promotion blockers, remaining-work status, report-first Theseus artifacts, theorem ids, proof-boundary discipline, AI contract fields, receipts, consumer gates, and transfer-lane insertion rules. | The separate Circle rope receipt slice covers one bounded external receipt replay only; no MoECOT runtime artifact, reproduced MoECOT command, current Theseus report verification, broad Circle contract pack, ASI Stack consumer gate, transfer consumer, proxy benchmark, private workload report, or model-improvement result exists. |
+
+### Relational Dimension Compiler research program
+
+`relational_dimension_compiler` is passage-reviewed and mapped across its nine
+current owner interfaces. It also clears the conceptual distinct-interface
+test for a future `relational-dimension-compilation-and-polyadic-cognition`
+chapter: dimensional typing, semantic/computational/storage arity, persistent
+role-sensitive relation objects, adaptive relational-order routing, relation
+qualification lifecycle, reversible semantic contraction, and RODIE form one
+coherent artifact and failure boundary not owned elsewhere.
+
+The candidate is deliberately **deferred**, not admitted. The active roadmap
+freezes new chapter decisions until P2 materialization/replacement work and the
+Round 16 atom, current-reader, inheritance, White-Box, and governed-training
+integration gates are terminal. During that freeze there is no chapter file,
+manifest row, proof target, reader insertion, order reservation, or assumption
+that the proposal will pass later adjudication.
+
+The source packet creates five coordinated research lanes:
+
+1. verify the paper's external bibliography source by source rather than
+   inheriting its citations through the Corben-authored paper;
+2. formalize finite typed role reification at the narrow ceiling of
+   representational reconstruction;
+3. specify relation request, packet, axis, incidence, order-decision, and
+   contraction-certificate records with adversarial mutations;
+4. build an anti-self-confirming RODIE pilot with strong lower-order rescues,
+   proposal denominators, held-out roles/topologies/branches/scales, and total
+   cost; and
+5. transfer any surviving mechanism to one natural workload and reproduce it
+   independently before broadening the claim.
+
+Existing chapters receive only the pieces they already own. The governed
+backlog and triage records preserve the prospective owner so these bounded
+integrations do not erase the paper's distinctive conjunction or create nine
+competing RDC chapters.
 
 ## Mechanism
 
@@ -286,6 +323,7 @@ These rows keep Open Research Agenda and Bibliography Plan's manifest assignment
 | `ext_livebench_2024` | Passage-reviewed comparator: LiveBench: A Challenging, Contamination-Limited LLM Benchmark. Provides an external comparator for living benchmark refresh, objective scoring, contamination pressure, versioned evaluation, and historical result lineage. | No LiveBench data, model, run, score, refresh process, contamination test, reproduction, or research-backlog closure is performed here. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_lean4_theorem_proving` | Passage-reviewed comparator: Theorem Proving in Lean 4. Provides an external comparator for the proof-assistant backlog: theorem statements, definitions, tactics, kernel checking, reusable libraries, and the boundary between formalization and empirical truth. | Does not prove any ASI Stack theorem, validate the chosen models, close proof adequacy, establish runtime refinement, or complete a research item. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_moe_llm_survey_2024` | Passage-reviewed comparator: A Survey on Mixture of Experts in Large Language Models. Provides an external routing-literature comparator for sparse mixture-of-experts architectures, routers, expert specialization, load balancing, training and inference tradeoffs, and open problems. | No surveyed MoE system, router, model, benchmark, efficiency result, specialization result, reproduction, or local routing claim is established here. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `relational_dimension_compiler` | Passage-reviewed comparator: The Relational Dimension Compiler: Adaptive Polyadic Cognition with Bounded Computational Arity and Unbounded Semantic Structure. Adds a coordinated research program for typed polyadic cognition, relational-order routing, role-sensitive reification, object-field coupling, topology learning, semantic contraction, hardware compilation, schema evolution, and RODIE. | The Corben-authored bibliography and proposed experiments require source-by-source external verification, implementation, competent baselines, independent evaluation, and claim-specific transitions before support use. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Summary

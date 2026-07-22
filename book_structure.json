@@ -6436,7 +6436,8 @@
             "planforge",
             "ext_world_models_2018",
             "ext_dreamer_v3_2025",
-            "ext_v_jepa_2_2025"
+            "ext_v_jepa_2_2025",
+            "relational_dimension_compiler"
           ],
           "source_queue": {
             "primary": [
@@ -6447,7 +6448,8 @@
             "supporting": [
               "platonic_world_model",
               "simulation_scaling",
-              "planforge"
+              "planforge",
+              "relational_dimension_compiler"
             ],
             "variants": [
               "deterministic_capability_compilation",
@@ -6551,6 +6553,16 @@
                 "sources/source_notes/ext_v_jepa_2_2025.md"
               ],
               "passage_review_note": "Reviewed source note; bounded to reported tasks and methods.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "relational_dimension_compiler",
+              "mapped_support": "Adds typed entity, relation, field, branch, provenance, uncertainty, lifecycle, and reversible macro-object state plus explicit separation between proposed, qualified, believed, observed, executed, contradicted, and retired relations.",
+              "limits": "The architecture does not establish correct perception, grounding, relation truth, causal structure, branch calibration, contraction fidelity, or world-model advantage.",
+              "passage_refs": [
+                "sources/source_notes/relational_dimension_compiler.md"
+              ],
+              "passage_review_note": "Reviewed the complete Corben-authored paper and public-safe note for relational state, branch, object-field, qualification, contraction, reconciliation, and non-claim boundaries.",
               "passage_review_state": "reviewed"
             }
           ],
@@ -6670,7 +6682,8 @@
             "ext_llvm_langref_docs",
             "ext_mlir_2020",
             "ext_translation_validation_1998",
-            "kernel_english_residual_compiler"
+            "kernel_english_residual_compiler",
+            "relational_dimension_compiler"
           ],
           "source_queue": {
             "primary": [
@@ -6685,7 +6698,8 @@
               "moecot_manifest_project",
               "corbens_best_model_possible_project",
               "qcsa_whitepaper",
-              "kernel_english_residual_compiler"
+              "kernel_english_residual_compiler",
+              "relational_dimension_compiler"
             ],
             "variants": [
               "ext_pddl_1998",
@@ -7015,6 +7029,16 @@
                 "sources/source_notes/ext_translation_validation_1998.md:15-40"
               ],
               "passage_review_note": "Reviewed the primary bibliographic/abstract source note for per-translation validation; it sharpens the required lowering receipt but supplies no local proof or validator."
+            },
+            {
+              "source_id": "relational_dimension_compiler",
+              "mapped_support": "Adds a dimensional type system and a four-layer relational IR whose semantic, evidence, computational, and abstraction records can lower relation objects into neural, graph, database, symbolic, simulator, planning, or verification backends without identifying a tensor index with semantic identity.",
+              "limits": "The existing chapter owns accepted-obligation translation, not the complete RDC world-structure lifecycle; no lowering preserves open-world relational meaning by source authority alone.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/relational_dimension_compiler.md"
+              ],
+              "passage_review_note": "Reviewed the complete Corben-authored paper for typed axes, relation reification, relational IR layers, lowering, hardware compilation, and the boundary between obligation compilation and world-structure construction."
             }
           ]
         },
@@ -10900,7 +10924,8 @@
             "ext_dreamcoder_2020",
             "ext_mem0_2025",
             "reflexive_router_whitepaper",
-            "kernel_english_residual_compiler"
+            "kernel_english_residual_compiler",
+            "relational_dimension_compiler"
           ],
           "source_queue": {
             "primary": [
@@ -10924,7 +10949,8 @@
               "ext_dreamcoder_2020",
               "ext_mem0_2025",
               "reflexive_router_whitepaper",
-              "kernel_english_residual_compiler"
+              "kernel_english_residual_compiler",
+              "relational_dimension_compiler"
             ],
             "variants": [],
             "connector_or_recovery": [
@@ -11151,6 +11177,16 @@
                 "sources/source_notes/ext_mem0_2025.md:11-38"
               ],
               "passage_review_note": "Reviewed the metadata-first source note at its explicit scope; reported benchmarks remain unreviewed and no local result is imported."
+            },
+            {
+              "source_id": "relational_dimension_compiler",
+              "mapped_support": "Adds a slow-path-to-specialist lifecycle in which repeatedly qualified relation programs become monitored recognizers, indexes, rules, kernels, macro-objects, or specialists while retaining scope, counterexamples, expiry, requalification, rollback, and the original slow route.",
+              "limits": "No relation program was compiled, no specialist equivalence or cost saving was measured, and no shift detector or rollback path was exercised.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/relational_dimension_compiler.md"
+              ],
+              "passage_review_note": "Reviewed the complete paper for relation compilation, cognitive reflex formation, specialist lifecycle, requalification, and explicit no-result boundaries."
             }
           ],
           "mechanism": [
@@ -11358,7 +11394,8 @@
             "ext_hipporag_2024",
             "ext_dont_hallucinate_abstain_2024",
             "qcsa_whitepaper",
-            "reflexive_router_whitepaper"
+            "reflexive_router_whitepaper",
+            "relational_dimension_compiler"
           ],
           "source_queue": {
             "primary": [
@@ -11379,7 +11416,8 @@
               "ext_hipporag_2024",
               "ext_dont_hallucinate_abstain_2024",
               "qcsa_whitepaper",
-              "reflexive_router_whitepaper"
+              "reflexive_router_whitepaper",
+              "relational_dimension_compiler"
             ],
             "variants": [
               "moecot_md"
@@ -11650,6 +11688,16 @@
                 "sources/raw/question_compiled_semantic_addressing_whitepaper.md:1389-1396"
               ],
               "passage_review_note": "Reviewed the complete local Corben-authored QCSA whitepaper for the named chapter interface, formal contract, failure modes, baselines, evaluation gates, and non-claims; the mapping remains design rationale at argument support."
+            },
+            {
+              "source_id": "relational_dimension_compiler",
+              "mapped_support": "Extends routing to candidate topology, relational order, operator family, factorization, precision, scale, branch resolution, verification effort, and stopping or abstention under a complete proposal-through-repair cost ledger.",
+              "limits": "No learned order router, proposal-recall result, regret bound, useful polyadic route, or natural-task routing advantage is demonstrated.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/relational_dimension_compiler.md"
+              ],
+              "passage_review_note": "Reviewed the complete paper for relational-order routing, operator registry, candidate denominators, least-sufficient-order escalation, lower-order rescue, abstention, and total-cost boundaries."
             }
           ],
           "mechanism": [
@@ -11857,7 +11905,8 @@
             "ext_universal_transformer_2019",
             "ext_dynamic_compute_recurrent_transformers_2026",
             "ext_dreamcoder_2020",
-            "kernel_english_residual_compiler"
+            "kernel_english_residual_compiler",
+            "relational_dimension_compiler"
           ],
           "source_queue": {
             "primary": [
@@ -11898,7 +11947,8 @@
               "ext_universal_transformer_2019",
               "ext_dynamic_compute_recurrent_transformers_2026",
               "ext_dreamcoder_2020",
-              "kernel_english_residual_compiler"
+              "kernel_english_residual_compiler",
+              "relational_dimension_compiler"
             ],
             "variants": [],
             "connector_or_recovery": [],
@@ -12265,6 +12315,16 @@
                 "arXiv:2602.24281, Abstract and memory-caching design"
               ],
               "passage_review_note": "Primary source or author-supplied design input was reviewed for this bounded contribution and its limits. No local implementation, reproduction, superiority, safety, deployment, or support-state movement is inferred.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "relational_dimension_compiler",
+              "mapped_support": "Separates semantic arity, primitive computational arity, and storage arity; uses typed relation-node reification for persistent arbitrary finite relations while treating pairwise, polyadic, graph, hypergraph, topological, field, symbolic, and tensor systems as replaceable computational lowerings.",
+              "limits": "Finite reification establishes representational sufficiency only; bounded primitive arity, efficient discovery, hardware advantage, natural transfer, and substrate superiority remain untested.",
+              "passage_refs": [
+                "sources/source_notes/relational_dimension_compiler.md"
+              ],
+              "passage_review_note": "Reviewed the complete paper for arity separation, relation reification, operator families, substrate-neutral lowering, hardware constraints, and falsification criteria.",
               "passage_review_state": "reviewed"
             }
           ],
@@ -15500,7 +15560,8 @@
             "ext_claw_swe_bench_2026",
             "reflexive_router_whitepaper",
             "kernel_english_residual_compiler",
-            "ext_mlperf_training_v6_2026"
+            "ext_mlperf_training_v6_2026",
+            "relational_dimension_compiler"
           ],
           "source_queue": {
             "primary": [
@@ -15517,7 +15578,8 @@
               "rankfold_neuralfold",
               "alignment_field",
               "reflexive_router_whitepaper",
-              "kernel_english_residual_compiler"
+              "kernel_english_residual_compiler",
+              "relational_dimension_compiler"
             ],
             "variants": [
               "ext_pagedattention_vllm_2023",
@@ -16069,6 +16131,16 @@
               ],
               "passage_review_note": "Reviewed the source note's primary-preprint summary for harness/model effects, fixed evaluation surfaces, cost comparisons, contamination pressure, and governance omissions.",
               "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "relational_dimension_compiler",
+              "mapped_support": "Adds candidate proposal, rejected tuples, sparse gather, factorization, kernel execution, state, communication, qualification, verification, contraction, expansion, repair, and compiler work to relational-compute accounting.",
+              "limits": "The paper provides asymptotic envelopes and required cost categories, not measured costs, resource advantage, queue behavior, hardware utilization, or economic optimality.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/relational_dimension_compiler.md"
+              ],
+              "passage_review_note": "Reviewed the complete paper for sparse relational complexity, candidate denominators, hardware illusion, end-to-end lifecycle cost, and measured-versus-asymptotic boundaries."
             }
           ],
           "draft_maturity": "v0.3 claim-proof program",
@@ -17914,7 +17986,8 @@
             "reflexive_router_whitepaper",
             "kernel_english_residual_compiler",
             "ext_swe_rebench_v2_2026",
-            "ext_mlperf_training_v6_2026"
+            "ext_mlperf_training_v6_2026",
+            "relational_dimension_compiler"
           ],
           "source_queue": {
             "primary": [
@@ -17937,7 +18010,8 @@
               "corbens_trainer_project",
               "corbens_best_model_possible_project",
               "reflexive_router_whitepaper",
-              "kernel_english_residual_compiler"
+              "kernel_english_residual_compiler",
+              "relational_dimension_compiler"
             ],
             "variants": [
               "ext_mlperf_training_v6_2026"
@@ -18334,6 +18408,16 @@
               ],
               "passage_review_state": "reviewed",
               "passage_review_note": "Primary paper, official code/data descriptions, pinned metadata, and local preflight receipt reviewed; no paper result is promoted into local evidence."
+            },
+            {
+              "source_id": "relational_dimension_compiler",
+              "mapped_support": "Adds the RODIE evaluation program: minimum relational order, exact role binding, latent topology, interventions, dynamic identity, reversible contraction, object-field coupling, branch separation, compilation reuse, proposal recall, no-regret routing, transfer, and complete lifecycle cost.",
+              "limits": "RODIE is a proposed suite with no corpus, independent evaluator, benchmark run, result, construct-validity receipt, or evidence transition.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/relational_dimension_compiler.md"
+              ],
+              "passage_review_note": "Reviewed the complete paper for RODIE suites, baseline requirements, falsifiers, candidate denominators, causal controls, transfer axes, and anti-self-confirmation limits."
             }
           ],
           "mechanism": [
@@ -21313,7 +21397,8 @@
             "ext_embedded_agency_2019",
             "reflexive_router_whitepaper",
             "kernel_english_residual_compiler",
-            "ext_swe_rebench_v2_2026"
+            "ext_swe_rebench_v2_2026",
+            "relational_dimension_compiler"
           ],
           "source_queue": {
             "primary": [
@@ -21343,7 +21428,8 @@
               "corbens_trainer_project",
               "corbens_best_model_possible_project",
               "reflexive_router_whitepaper",
-              "kernel_english_residual_compiler"
+              "kernel_english_residual_compiler",
+              "relational_dimension_compiler"
             ],
             "variants": [],
             "connector_or_recovery": [
@@ -21772,6 +21858,16 @@
               ],
               "passage_review_state": "reviewed",
               "passage_review_note": "Primary paper, official code/data descriptions, pinned metadata, and local preflight receipt reviewed; no paper result is promoted into local evidence."
+            },
+            {
+              "source_id": "relational_dimension_compiler",
+              "mapped_support": "Adds a joined relational-complex state across semantic entities/relations/fields, evidence and lifecycle metadata, selected computational operators, branch identity, and abstraction maps, with explicit interfaces to routing, world models, memory, effects, and reconciliation.",
+              "limits": "The RDC lifecycle has not been implemented, joined to the current reference trace, or shown to preserve semantics, improve utility, reduce cost, or govern effects.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/relational_dimension_compiler.md"
+              ],
+              "passage_review_note": "Reviewed the complete paper for its end-to-end request, relational packet, branch, qualifier, contraction, compiler, effect-boundary, reconciliation, and subsystem-owner joins."
             }
           ],
           "mechanism": [
@@ -23536,7 +23632,8 @@
             "ext_gpqa_2023",
             "ext_livebench_2024",
             "ext_lean4_theorem_proving",
-            "ext_moe_llm_survey_2024"
+            "ext_moe_llm_survey_2024",
+            "relational_dimension_compiler"
           ],
           "source_queue": {
             "primary": [
@@ -23565,7 +23662,8 @@
               "ext_gpqa_2023",
               "ext_livebench_2024",
               "ext_lean4_theorem_proving",
-              "ext_moe_llm_survey_2024"
+              "ext_moe_llm_survey_2024",
+              "relational_dimension_compiler"
             ],
             "variants": [],
             "connector_or_recovery": [
@@ -23953,6 +24051,17 @@
                 "sources/source_notes/ext_moe_llm_survey_2024.md:13-48"
               ],
               "passage_review_note": "Reviewed the source note for MoE architecture families, routing, load balancing, efficiency, specialization, and survey limitations; used only as an external routing research queue.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "relational_dimension_compiler",
+              "mapped_support": "Adds a coordinated research program for typed polyadic cognition, relational-order routing, role-sensitive reification, object-field coupling, topology learning, semantic contraction, hardware compilation, schema evolution, and RODIE.",
+              "limits": "The Corben-authored bibliography and proposed experiments require source-by-source external verification, implementation, competent baselines, independent evaluation, and claim-specific transitions before support use.",
+              "passage_refs": [
+                "sources/source_notes/relational_dimension_compiler.md",
+                "research_backlog_records/relational_dimension_compiler_2026_07_22.json"
+              ],
+              "passage_review_note": "Reviewed the complete paper and governed backlog for its research families, proposed sources, experiments, falsifiers, chapter boundary, and active-freeze constraints.",
               "passage_review_state": "reviewed"
             }
           ],

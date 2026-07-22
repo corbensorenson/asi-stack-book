@@ -2,8 +2,8 @@
 
 Working title: **The ASI Stack: A Governed Systems Architecture for Advanced AI, with ASI as the Stress Case**
 
-Status: expanded source-of-truth drafting outline, updated 2026-07-19 after the
-shared flagship, execution-order, and narrative-quality roadmap review.
+Status: expanded source-of-truth drafting outline, updated 2026-07-22 after the
+Relational Dimension Compiler intake and existing-owner integration review.
 `book_structure.json` remains the ordering source of truth; Quarto generates
 displayed chapter numbers from the manifest.
 
@@ -166,6 +166,42 @@ Drafting rules:
 This overlay changes future drafting priority and source routing. It does not
 add the provisional chapter, publish private project material, or promote any
 claim.
+
+## Relational Dimension Compiler Integration Overlay
+
+`relational_dimension_compiler` is a passage-reviewed Corben-authored proposal,
+not independent evidence. Its most useful contribution is the separation of
+semantic arity, primitive computational arity, and storage arity: a system may
+preserve an n-role relation while computing it through bounded-order operators
+and storing it as a typed relation node plus binary incidences. The book should
+use that distinction without implying that every high-order relation is true,
+grounded, efficiently learnable, or advantageously represented this way.
+
+Existing owners absorb the paper as follows:
+
+| Existing owner | Material integration | Boundary retained |
+|---|---|---|
+| Cognitive Compilation and Semantic IR | Dimension-safe lowering across semantic relation, typed incidence, operator plan, and hardware plan layers | Owns accepted-obligation translation, not relation discovery or world truth |
+| Governed World Models and Reality Grounding | Branch-local typed relation objects, qualification lifecycle, object-field coupling, and reversible macro-object contraction | Owns predictive state and reality reconciliation, not compiler correctness |
+| Routing Heads and Specialist Cores | Route relation operator, order, topology, fallback, abstention, and expansion jointly | Owns selection, not relation truth or operator qualification |
+| Replaceable Cognitive Substrates | Keep semantic/computational/storage arity distinct and require role-preserving lowerings behind the Cognitive Kernel ABI | Owns substrate interchange, not the relational topology lifecycle |
+| Procedural Memory and Cognitive Loop Closure | Compile repeated relational slow paths into qualified specialists while retaining decompilation and fallback | Owns promotion and retirement, not relation discovery |
+| Benchmark Ratchets and Anti-Goodhart Evidence | Treat RODIE as an unexecuted vector instrument spanning role, order, topology, branch, contraction, intervention, and lifecycle costs | Owns instrument validity, not a favorable RDC result |
+| Resource Economics and Token Budgets | Count proposal, rejected-tuple, sparse-kernel, qualification, branch, contraction, repair, and hardware costs | Owns total cost, not semantic adequacy |
+| Integrated Reference Architecture | Carry a typed relational-complex packet through the stack with state, branch, provenance, qualification, and contraction lineage | Owns cross-layer joins, not an implemented RDC runtime |
+| Open Research Agenda and Bibliography Plan | Preserve the source intake, external-literature verification queue, and deferred chapter-boundary decision | Owns admission and closure, not automatic chapter creation |
+
+The conjunction remains distinct enough for a future candidate called
+`relational-dimension-compilation-and-polyadic-cognition`: it would own the
+typed relational-complex interface, dimension system, persistent role-sensitive
+relation topology, qualification lifecycle, adaptive relational order,
+reversible semantic contraction, operator registry, and RODIE falsification
+program. The active Round 16 freeze prohibits a chapter path, manifest row,
+proof target, reader insertion, or order reservation now. After the freeze,
+admission requires independent bibliography verification plus the standard
+birth-complete atom, source-role, ownership, reader, and W3 inheritance packet.
+Until then, improve these nine owners and avoid duplicating their established
+responsibilities.
 
 ## Reader Promise
 
@@ -2216,6 +2252,8 @@ Source loading queue:
 | Supporting | `platonic_world_model`, `simulation_scaling`, `planforge` | Use for representation hypotheses, simulation budgets, planning interfaces, and residual-aware replanning; retain proposal status. |
 | Variants | `deterministic_capability_compilation`, `qcsa_whitepaper`, `cognitive_compilation` | Use for versioned admission, heterogeneous substrates, and typed artifacts; none establishes prediction quality. |
 
+
+| Manifest assignment reconciliation | `relational_dimension_compiler` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: planners can optimize an attractive hallucinated future when partial
@@ -2306,7 +2344,7 @@ Source loading queue:
 
 
 
-| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `kernel_english_residual_compiler` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `kernel_english_residual_compiler`, `relational_dimension_compiler` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: after Planning admits an obligation, every source-to-IR-to-target transformation can silently lose meaning, non-goals, authority, rights, evidence, repair identity, or residual duties while retaining fluent output.
@@ -3294,7 +3332,7 @@ Source loading queue:
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 
-| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `relational_dimension_compiler` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: Repeated reasoning trajectories should not be improvised forever when they can become verified procedures or tools.
@@ -3382,7 +3420,7 @@ Source loading queue:
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 
-| Manifest assignment reconciliation | `deterministic_capability_compilation`, `ext_dont_hallucinate_abstain_2024`, `qcsa_whitepaper`, `reflexive_router_whitepaper` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `deterministic_capability_compilation`, `ext_dont_hallucinate_abstain_2024`, `qcsa_whitepaper`, `reflexive_router_whitepaper`, `relational_dimension_compiler` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: The architecture needs to allocate cognition across specialists rather than force one system to do every task.
@@ -3488,7 +3526,7 @@ Source loading queue:
 | Mutable/external/dynamical/function/graph/program alternatives | `ext_ttt_layers_2024`, `ext_titans_2025`, `ext_kan_2024`, `ext_kan_or_mlp_fairer_comparison_2024`, `ext_neural_turing_machines_2014`, `ext_differentiable_neural_computer_2016`, `ext_liquid_time_constant_networks_2021`, `ext_neural_message_passing_2017`, `ext_dreamcoder_2020` | Use for online-state custody, fair KAN comparison, memory and topology extrapolation, continuous-time cost, relational processing, and verified abstraction tests. |
 | Hybrid composition | `ext_jamba_2024` | Use to make layer/expert/substrate composition and active-versus-total accounting explicit; do not infer a generally optimal mixture or local result. |
 
-| Manifest assignment reconciliation | `deterministic_capability_compilation`, `ext_gated_deltanet2_2026`, `ext_hyperscale_lottery_2026`, `ext_inkling_2026`, `kernel_english_residual_compiler` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `deterministic_capability_compilation`, `ext_gated_deltanet2_2026`, `ext_hyperscale_lottery_2026`, `ext_inkling_2026`, `kernel_english_residual_compiler`, `relational_dimension_compiler` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Explain why a stable stack must abstract architecture without pretending that
@@ -4224,7 +4262,7 @@ Source loading queue:
 | Memory and adaptive-compute comparators | `ext_mem0_2025`, `ext_recurrent_transformer_2026`, `ext_dynamic_compute_recurrent_transformers_2026` | Compare token/latency savings, recurrent cache/traffic claims, and difficulty-dependent compute. Require pinned configurations and distinguish allocation from generalization, quality, and safety. |
 
 
-| Manifest assignment reconciliation | `ext_claw_swe_bench_2026`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `ext_mlperf_training_v6_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `ext_claw_swe_bench_2026`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `ext_mlperf_training_v6_2026`, `relational_dimension_compiler` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: Compute, context, verification, simulation fidelity, and human attention are scarce resources that the architecture must allocate explicitly.
@@ -4794,7 +4832,7 @@ Source loading queue:
 
 
 
-| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `ext_claw_swe_bench_2026`, `ext_muse_unlearning_2025`, `ext_unlearning_benchmarks_weak_2024`, `ext_openunlearning_2025`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `ext_swe_rebench_v2_2026`, `ext_mlperf_training_v6_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `ext_claw_swe_bench_2026`, `ext_muse_unlearning_2025`, `ext_unlearning_benchmarks_weak_2024`, `ext_openunlearning_2025`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `ext_swe_rebench_v2_2026`, `ext_mlperf_training_v6_2026`, `relational_dimension_compiler` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: The architecture needs a way to move capability claims through evidence without overfitting to fixed benchmarks.
@@ -5796,7 +5834,7 @@ Source loading queue:
 
 
 
-| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `qcsa_whitepaper`, `ext_v_jepa_2_2025`, `ext_embedded_agency_2019`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `ext_swe_rebench_v2_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `qcsa_whitepaper`, `ext_v_jepa_2_2025`, `ext_embedded_agency_2019`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `ext_swe_rebench_v2_2026`, `relational_dimension_compiler` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: Readers need to see how the layers operate as one machine from intent to governed action and improvement.
@@ -6172,6 +6210,8 @@ Source loading queue:
 | Connector or recovery required | `moecot`, `coilmoecot`, `road_to_agi`, `vcm_editable` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 
+
+| Manifest assignment reconciliation | `relational_dimension_compiler` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: The book needs a managed research backlog and bibliography plan so new papers can be inserted without destabilizing the architecture.

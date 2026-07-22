@@ -9,7 +9,7 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 - `cached_existing`: 38
 - `connector_readable`: 7
 - `source_note_available_public_project`: 18
-- `source_note_available_uncached`: 311
+- `source_note_available_uncached`: 312
 
 ## Records
 
@@ -360,6 +360,7 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 | `kernel_english_residual_compiler` | Kernel English with Hierarchical, Interaction-Amortized Residuals: A Dual-Vocabulary Cognitive Compiler for Efficient Language-Model Reasoning | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `deterministic_capability_compilation` | Deterministic Capability Compilation: A Capability-Preserving Ladder from Executable Scaffolds to Governed Adaptive Agents | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `platonic_world_model` | The Platonic World Model: A Semantic Constitution for Grounded, Proof-Carrying, Self-Editing Artificial Intelligence | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `relational_dimension_compiler` | The Relational Dimension Compiler: Adaptive Polyadic Cognition with Bounded Computational Arity and Unbounded Semantic Structure | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_megatron_distributed_training_2021` | Efficient Large-Scale Language Model Training on GPU Clusters Using Megatron-LM | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_zero_optimizer_2019` | ZeRO: Memory Optimizations Toward Training Trillion Parameter Models | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_gspmd_2021` | GSPMD: General and Scalable Parallelization for ML Computation Graphs | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |

@@ -4,7 +4,7 @@ chapter_id: "benchmark-ratchets-and-anti-goodhart-evidence"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.3 manuscript draft"
-last_updated: "2026-07-16"
+last_updated: "2026-07-22"
 primary_sources:
   - "benchmaxxing"
   - "rmi"
@@ -19,10 +19,11 @@ primary_sources:
   - "theseus_self_evolution_system"
   - "theseus_circle_transfer"
   - "reflexive_router_whitepaper"
+  - "relational_dimension_compiler"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "All twenty-nine assigned sources have exact passage-reviewed mappings, but source-reported memory, dataset, evaluation-framework, agent-security, self-improvement, architecture-search, dynamic-compute, coding, and unlearning results remain comparator context only."
+  - "Thirty-one exact passage-reviewed mappings cover the chapter's thirty-six assigned sources, now including the proposed RODIE relational instrument family; source-reported results and the unexecuted RODIE proposal remain comparator or design context only."
   - "The current implementation is two schemas, one blocked provenance record plus ten rejecting mutations, two valid and five invalid synthetic anti-Goodhart fixtures, one persisted fixture bridge, three proof targets, and eight finite declarations. It includes no natural benchmark run, hidden holdout, contamination audit, empirical baseline matrix, trained model or policy result, independent evaluator, or support transition."
   - "Argument exit requires preregistered natural and adversarial workloads, construct and target-capacity validation, strong matched controls, complete selection and failure lineage, raw output binding, contamination/public-calibration controls, causal and meta-evaluation, independent reproduction, heterogeneous transfer, complete cost and rights accounting, fallback, and a claim-specific transition."
   - "Campaign 5 adds a prospectively frozen two-environment, five-seed, ten-arm causal packet and one bounded non-core synthetic transition; it does not validate the authored simulators, establish general transfer, or promote this chapter core."
@@ -36,11 +37,11 @@ open_evidence_gaps:
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
 | Manuscript maturity | v0.3 manuscript draft |
-| Last updated | 2026-07-15 |
+| Last updated | 2026-07-22 |
 | Primary source records | `benchmaxxing`, `rmi`, `cognitive_loop_closure`, `uat`, `coherence_exchange`, `tokenmana`, `moecot`, `road_to_agi`, `project_theseus_whitepaper`, `theseus_architecture_gate`, `theseus_self_evolution_system`, `theseus_circle_transfer`, `reflexive_router_whitepaper` |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source queue | primary: `benchmaxxing`, `rmi`; supporting: `cognitive_loop_closure`, `uat`, `coherence_exchange`, `tokenmana`, `project_theseus_whitepaper`, `theseus_architecture_gate`, `theseus_self_evolution_system`, `theseus_circle_transfer`, `reflexive_router_whitepaper`; connector/recovery: `moecot`, `road_to_agi` |
+| Source queue | primary: `benchmaxxing`, `rmi`; supporting: `cognitive_loop_closure`, `uat`, `coherence_exchange`, `tokenmana`, `project_theseus_whitepaper`, `theseus_architecture_gate`, `theseus_self_evolution_system`, `theseus_circle_transfer`, `reflexive_router_whitepaper`, `relational_dimension_compiler`; connector/recovery: `moecot`, `road_to_agi` |
 | Source loading state | source notes: `benchmaxxing`, `rmi`, `cognitive_loop_closure`, `uat`, `coherence_exchange`, `tokenmana`, `moecot`, `road_to_agi`, `project_theseus_whitepaper`, `theseus_architecture_gate`, `theseus_self_evolution_system`, `theseus_circle_transfer`; raw cache: `benchmaxxing`, `rmi`, `cognitive_loop_closure`, `uat`, `tokenmana`, `road_to_agi`; connector/recovery: `coherence_exchange`, `moecot` |
 | Test state | `benchmark_ratchet_record.valid.json` passes repository-level protocol fixture validation; `AsiStackProofs.BenchmarkRatchets` implements finite capability-promotion evidence, saturated-benchmark higher-readiness gates, a ratchet-decision envelope, and `lean:benchmarks.ratchet.fixture_bridge`; `python3 scripts/validate_benchmark_antigoodhart.py` validates synthetic saturation, holdout/contamination/mutation-or-transfer, regression-ref, negative-result, and promotion-blocking semantics; `python3 scripts/validate_benchmark_fixture_bridge.py` validates `experiments/benchmark_antigoodhart/results/2026-07-02-fixture-bridge.json` against 2 valid fixtures, 5 expected-invalid controls, and the Lean fixture bridge. Empirical benchmark runs, hidden holdout execution, contamination audits, policy-training runs, steward release execution, source-reported replay, and current Theseus report verification remain planned. |
 
@@ -92,7 +93,7 @@ The claim remains at `argument` support. The assigned sources support design dis
 
 ### Claim-source mapping status
 
-Appendix C now records exact passage-reviewed mappings for all twenty-nine assigned sources, including the six historical projects as one related local implementation lineage. Those mappings make the source map traceable enough for drafting and support review, but they do not move the claim above `argument` support. They also do not convert source-reported benchmark commands, local-project status notes, schemas, fixtures, or finite Lean predicates into benchmark evidence.
+Appendix C now records thirty-one exact passage-reviewed mappings across thirty-six assigned sources, including the six historical projects as one related local implementation lineage. Those mappings make the source map traceable enough for drafting and support review, but they do not move the claim above `argument` support. They also do not convert source-reported benchmark commands, local-project status notes, schemas, fixtures, or finite Lean predicates into benchmark evidence.
 
 | Source ID | Reviewed support | Boundary |
 |---|---|---|
@@ -349,6 +350,47 @@ well-tuned simpler systems on a measured frontier after total cost and failure
 denominators. A neat schema, self-consistent receipt, or internally generated
 test suite cannot promote a claim by itself.
 
+### RODIE: relational structure as a vector instrument
+
+The Relational Dimension Compiler contributes a future instrument family,
+**RODIE**—Relational Order and Dimensional Intelligence Evaluation. It should
+not become one leaderboard number. Its job is to isolate which structural
+operation occurred and whether a simpler route could recover it.
+
+| Suite | Construct that must remain separate |
+|---|---|
+| Minimum order | unary, pairwise, triadic, quartic, composition, and mixed-order tasks under matched resources |
+| Typed role binding | exact participant identity, co-membership, relation schema, role assignment, symmetry, and multiplicity |
+| Latent topology | entity count/identity, relation proposal, changing hyperedges, event boundaries, and alternative structures |
+| Counterfactual fidelity | observational fit versus role-specific deletion, substitution, and intervention effects |
+| Dynamic identity | persistence, split, merge, retirement, invalidation, and branch-local state |
+| Reversible contraction | coarse-query fidelity, compression, expansion triggers, lineage, and failure under changed queries |
+| Geometry and fields | equivariance, discretization transfer, object–field coupling, and conservation or boundary constraints |
+| Branch discipline | simulated-versus-actual separation, false actualization, adoption events, and horizon calibration |
+| Compilation and reuse | slow-path equivalence, monitoring, shift detection, rollback, and net cost saving |
+
+Every suite needs a complete proposal denominator. Candidate recall is reported
+beside relation precision and recall; otherwise a sparse model can appear
+precise by never proposing hard structures. Role permutations, lower-order
+rescues, latent-mediator alternatives, oracle structure/order upper bounds,
+exact symbolic controls where applicable, and strong fixed-order systems are
+mandatory. Parameters, data, accessible information, context, compute, memory,
+tuning, retry, evaluator, and repair opportunity are matched or explicitly
+priced.
+
+The primary result is a vector: useful task behavior, exact role accuracy,
+order regret, intervention consistency, branch leakage, contraction fidelity,
+expansion precision/recall, calibration, topology transfer, active and total
+resources, rejected candidates, verifier/human burden, repair, rollback, and
+hidden residuals. A nominally higher-order model has not won if proposal,
+qualification, sparse data movement, or monitoring consumes its local gain.
+
+RODIE is presently a proposed benchmark program. No generator, held-out split,
+evaluator, preregistration, model run, or result exists in this repository.
+Before implementation, the suite needs an anti-self-confirmation review: its
+generators and metrics cannot simply reward the relation ontology and minimum
+order assumed by the RDC design.
+
 ## Interfaces
 
 The Benchmark Ratchet Record is the interface between evaluation, readiness gates, Appendix C, prototype phases, and the changelog. It carries enough evidence metadata for downstream layers to distinguish a reproduced result, a source-reported result, a synthetic fixture, a failed run, and an unattempted target.
@@ -603,6 +645,7 @@ These rows keep Benchmark Ratchets and Anti-Goodhart Evidence's manifest assignm
 | `kernel_english_residual_compiler` | Metadata-first comparator: Kernel English with Hierarchical, Interaction-Amortized Residuals: A Dual-Vocabulary Cognitive Compiler for Efficient Language-Model Reasoning. Corben-authored July 2026 architecture proposal for KERC: protected-object capture, uncertainty-aware normalization, sense-aware Kernel IR, dual surface/core vocabularies, a four-level interaction-amortized residual ledger, exact object storage, grammar-aware macro fusion, structured answer packets, rendering, round-trip verification, versioned migration, and complete rate-compute-fidelity evaluation. Existing chapters are upgraded first; no implementation, benchmark, novelty, efficiency, fidelity, safety, transfer, SOTA, AGI, ASI, or support-state result is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_swe_rebench_v2_2026` | Passage-reviewed comparator: SWE-rebench V2: Language-Agnostic SWE Task Collection at Scale. Adds a current multilingual natural repository-task construction funnel, full-suite executable oracle, per-instance pathology metadata, and setup/clarity ablations that expose why benchmark membership is not construct validity. | The released tasks and automated labels are not locally validated en masse; post-snapshot filtering reduces but does not eliminate contamination, and no local benchmark score is established. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_mlperf_training_v6_2026` | Metadata-first comparator: MLPerf Training v6.0. Official current measurement comparator for fixed datasets and quality targets, repeated time-to-quality, system metadata, divisions, variance, and corrected results. No MLPerf run is performed and the benchmark does not establish safety or complete run integrity. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `relational_dimension_compiler` | Passage-reviewed comparator: The Relational Dimension Compiler: Adaptive Polyadic Cognition with Bounded Computational Arity and Unbounded Semantic Structure. Adds the RODIE evaluation program: minimum relational order, exact role binding, latent topology, interventions, dynamic identity, reversible contraction, object-field coupling, branch separation, compilation reuse, proposal recall, no-regret routing, transfer, and complete lifecycle cost. | RODIE is a proposed suite with no corpus, independent evaluator, benchmark run, result, construct-validity receipt, or evidence transition. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Summary

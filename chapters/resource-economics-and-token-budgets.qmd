@@ -4,7 +4,7 @@ chapter_id: "resource-economics-and-token-budgets"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.3 claim-proof program"
-last_updated: "2026-07-21"
+last_updated: "2026-07-22"
 primary_sources:
   - "tokenmana"
   - "planforge"
@@ -23,6 +23,7 @@ primary_sources:
   - "ext_dynamic_compute_recurrent_transformers_2026"
   - "ext_claw_swe_bench_2026"
   - "reflexive_router_whitepaper"
+  - "relational_dimension_compiler"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -40,12 +41,12 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | v0.3 claim-proof program |
-| Last updated | 2026-07-14 |
-| Primary source records | all 17 manifest-assigned resource, simulation, serving, memory, recurrent-compute, verification, routing-economics, and harness records |
+| Last updated | 2026-07-22 |
+| Primary source records | 20 assigned records with 17 exact mappings across resource, simulation, serving, memory, recurrent-compute, verification, routing-economics, relational-compute, and harness concerns |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source queue | primary: `tokenmana`, `planforge`; supporting: the local resource/simulation lineage and `reflexive_router_whitepaper`; external comparators: PagedAttention, Reluplex, Mem0, Recurrent Transformer, Dynamic Compute, and Claw-SWE-Bench |
-| Source loading state | exact passage-reviewed mappings exist for all 17 assigned sources; local and external results remain source-scoped unless a named repository artifact independently supports them. |
+| Source queue | primary: `tokenmana`, `planforge`; supporting: the local resource/simulation lineage, `reflexive_router_whitepaper`, and `relational_dimension_compiler`; external comparators: PagedAttention, Reluplex, Mem0, Recurrent Transformer, Dynamic Compute, and Claw-SWE-Bench |
+| Source loading state | 17 exact passage-reviewed mappings cover 20 assigned sources; local and external results remain source-scoped unless a named repository artifact independently supports them. |
 | Test state | `resource_budget_record.valid.json` and `simulation_contract_record.valid.json` pass repository-level protocol fixture validation; `python3 scripts/validate_generation_mode_baselines.py` checks paired generation-mode/resource-budget fixture alignment; `python3 scripts/validate_costed_route_resource_slice.py` checks the four-route costed selector against JSON costs, eligibility fields, negative controls, a finite Lean selector-state trace theorem, and the tracked result's field-level Python/Lean alignment record; `python3 scripts/validate_resource_budget_ledgers.py` checks 6 valid and 7 expected-invalid deterministic budget-ledger dispatch, escalation, protected-overhead, security-overhead erasure rejection, displaced-cost residualization, review-capacity hoarding, KV-cache/serving-memory accounting separation, throughput-to-quality overclaim rejection, evidence-ref, and no-promotion scenarios; `python3 scripts/validate_capacity_smoothing.py` checks 3 valid and 6 expected-invalid toy capacity traces for bounded regeneration arithmetic, priority deferral, reviewer-capacity arithmetic, protected-review overhead, displaced-review-cost residualization, overload rejection, Lean bridge coverage, and no-promotion boundaries; `python3 scripts/validate_resource_workflow_trace.py` checks 1 valid and 5 expected-invalid deterministic workflow fixtures for selected-route cost recomputation, scheduler ordering, protected high-risk review, displaced-cost residuals, capacity-budget-overrun rejection, physical-feasibility overclaim rejection, no-promotion boundaries, and the tracked result's trace-property Python/Lean alignment record over finite dispatch events, rollup totals, high-risk-first order, guard flags, over-budget rejection, and no-promotion boundaries; `python3 scripts/validate_resource_live_probe.py` replays 5 local Resource Economics validators and checks command-output digests plus tracked artifact hashes without creating a support-state transition; `python3 scripts/validate_resource_workload_quality_probe.py` checks 3 local route candidates across 5 measured samples each for a scoped workflow-trace review task, selects `validate_resource_workflow_trace.py` over the broader Resource live-probe baseline by median elapsed time, rejects a cheaper no-op success-text route, records residuals, and preserves no-promotion boundaries; `python3 scripts/validate_resource_load_stability_probe.py` checks a 10-task local synthetic burst-review workload across admit-arrivals, protected capacity-smoothing, and review-erasure routes, verifies 100.0 percent selected-vs-baseline finite overload reduction, 7 residualized selected deferrals, 3 review-erasure negative-control violations, Lean fixture alignment, and no-promotion boundaries; `python3 scripts/validate_resource_ci_cost_profile.py` checks 8 recorded GitHub Pages runs, 8 completed runs, 5 successful completed runs, 3 classified deploy-service failures, a 131-second recovery boundary, finite Lean fixture alignment, duration metrics, and no-transition boundaries as publication-pipeline metadata only; `python3 scripts/validate_simulation_transfer_boundaries.py` checks 3 valid and 6 expected-invalid simulation-transfer fixtures for fidelity declaration, resource bills, bottlenecks, omissions, approximation liberties, instrumentation effects, transfer decisions, residual/downgrade behavior, and support-state non-promotion; `python3 scripts/validate_resource_flagship_lane.py` now also checks an aggregate Python/Lean flagship invariant over 10 command replays, 26 tracked artifacts, 3 accepted narrow transitions, 5 no-promotion decisions, preserved negative controls, residuals, non-claims, and the no-core-promotion/no-new-transition boundary; `AsiStackProofs.ResourceEconomics` and `AsiStackProofs.SimulationFidelity` implement finite record-level predicates plus negative cases for disabled required gates, high-risk insufficient-budget dispatch, finite selector-state trace selection, finite workflow event rollup/order/guard preservation, finite capacity-smoothing reviewer trace guards, aggregate serving-throughput quality overclaim rejection, aggregate flagship replay accounting, CI failure-classification accounting, missing simulation scope, and fidelity overclaim; deployed scheduler, real load-stability, verification-tax optimization, KV-cache behavior, serving throughput, single-request quality, physical-feasibility, runtime security-budget enforcement, reviewer-capacity optimization, displaced-cost measurement, stable speedup, external workload-quality review, and live cost-quality tests remain planned. |
 
 One narrow non-core import has moved: the Theseus simulation-fidelity receipt suite import, `resource-economics.simulation_fidelity_receipt_suite_import`, is `prototype-backed` through `python3 scripts/validate_theseus_simulation_fidelity_receipt_suite_import.py`. It records a public-safe digest-and-count summary of 5/5 passed fixture scenarios, six simulation contract records, six fidelity records, six world-adapter receipts, six evidence-transition records, six failure-boundary records, one blocked transfer, one downgraded claim, one scenario-only record, and seven expected-invalid controls. It does not prove simulator adequacy, physical feasibility, benchmark transfer, native KV parity, deployment, live simulator behavior, model quality, economic outcome, learned generation, clean live Project Theseus replay, or any chapter-core support-state promotion.
@@ -126,7 +127,7 @@ Folded simulation-fidelity subclaim: simulation and synthetic-environment result
 
 ### Claim-source mapping status
 
-Appendix C carries exact passage-reviewed mappings for all sixteen assigned sources. The mappings support budget records, regenerative capacity, scheduling, physical/fidelity boundaries, execution-spine discipline, hidden-burden warnings, serving and recurrent-compute comparisons, variable-depth allocation, persistent-memory costs, scoped verification, and harness-bound cost reporting. They do not support measured economic outcomes, welfare effects, scheduler quality, serving performance, simulator adequacy, physical feasibility, open-world transfer, cache behavior, model quality, or local superiority.
+Appendix C carries seventeen exact passage-reviewed mappings across twenty assigned sources. The mappings support budget records, regenerative capacity, scheduling, physical/fidelity boundaries, execution-spine discipline, hidden-burden warnings, serving and recurrent-compute comparisons, variable-depth allocation, persistent-memory costs, relational-compute accounting, scoped verification, and harness-bound cost reporting. They do not support measured economic outcomes, welfare effects, scheduler quality, serving performance, simulator adequacy, physical feasibility, open-world transfer, cache behavior, model quality, or local superiority.
 
 | Source | What it supports | Limit |
 |---|---|---|
@@ -259,6 +260,25 @@ discarded governance has not demonstrated minimum sufficient compute.
 The source includes illustrative budgets and launch gates, not measured
 resource results. Its economics therefore strengthens the natural campaign and
 cost ledger while leaving the core at `argument`.
+
+The same rule now covers relational computation. A comparison cannot report
+only the final pairwise or polyadic contraction. Its cost vector includes
+candidate construction, rejected tuples, sparse gathers and scatters,
+factorization, kernel work, optimizer state, memory traffic, communication,
+relation qualification, branch bookkeeping, persistent incidence storage,
+contraction, expansion, cache invalidation, verification, repair, and compiler
+overhead. Candidate proposal recall belongs beside cost: an inexpensive route
+that never considers the required relation has not reached the same quality
+frontier.
+
+Semantic arity is not itself a cost estimate. A six-role relation may be stored
+as one object and six incidences, while a pairwise system may spend substantial
+depth and intermediate state reconstructing it; a selective triadic kernel may
+save steps but lose on irregular memory traffic. The ledger therefore records
+primitive arity, candidate count, accepted relation count, persistent bytes,
+measured data movement, verification burden, and total time-to-qualified-useful
+outcome separately. Asymptotic sparsity and nominal tensor order are diagnostic
+metadata, not economic conclusions.
 
 ### P4/M6 bounded cost record
 
@@ -521,6 +541,7 @@ These rows keep Resource Economics and Token Budgets's manifest assignments visi
 | `ext_claw_swe_bench_2026` | Passage-reviewed comparator: Claw-SWE-Bench: A Benchmark for Evaluating OpenClaw-style Agent Harnesses on Coding Tasks. Supports binding coding-agent outcomes to a fixed model, harness, workspace, patch extraction, evaluator, runtime budget, and cost rather than attributing a harness result to the model alone. | Primary preprint comparator only; no reported task, score, harness, cost, contamination control, or safety result was reproduced here. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `kernel_english_residual_compiler` | Metadata-first comparator: Kernel English with Hierarchical, Interaction-Amortized Residuals: A Dual-Vocabulary Cognitive Compiler for Efficient Language-Model Reasoning. Corben-authored July 2026 architecture proposal for KERC: protected-object capture, uncertainty-aware normalization, sense-aware Kernel IR, dual surface/core vocabularies, a four-level interaction-amortized residual ledger, exact object storage, grammar-aware macro fusion, structured answer packets, rendering, round-trip verification, versioned migration, and complete rate-compute-fidelity evaluation. Existing chapters are upgraded first; no implementation, benchmark, novelty, efficiency, fidelity, safety, transfer, SOTA, AGI, ASI, or support-state result is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_mlperf_training_v6_2026` | Metadata-first comparator: MLPerf Training v6.0. Official current measurement comparator for fixed datasets and quality targets, repeated time-to-quality, system metadata, divisions, variance, and corrected results. No MLPerf run is performed and the benchmark does not establish safety or complete run integrity. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `relational_dimension_compiler` | Passage-reviewed comparator: The Relational Dimension Compiler: Adaptive Polyadic Cognition with Bounded Computational Arity and Unbounded Semantic Structure. Adds candidate proposal, rejected tuples, sparse gather, factorization, kernel execution, state, communication, qualification, verification, contraction, expansion, repair, and compiler work to relational-compute accounting. | The paper provides asymptotic envelopes and required cost categories, not measured costs, resource advantage, queue behavior, hardware utilization, or economic optimality. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Post-v2 measured governance cost

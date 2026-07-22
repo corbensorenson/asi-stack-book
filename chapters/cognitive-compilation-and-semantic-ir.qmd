@@ -4,7 +4,7 @@ chapter_id: "cognitive-compilation-and-semantic-ir"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 semantically reviewed proof-contract draft"
-last_updated: "2026-07-16"
+last_updated: "2026-07-22"
 primary_sources:
   - "cognitive_compilation"
   - "planforge_compiler_arch"
@@ -22,10 +22,11 @@ primary_sources:
   - "ext_llvm_langref_docs"
   - "ext_mlir_2020"
   - "ext_translation_validation_1998"
+  - "relational_dimension_compiler"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "All sixteen assigned sources are reviewed at their available boundary: five local raw caches, three pinned-project notes, the QCSA paper and bounded local program, and seven external comparators. Source mapping does not establish local reproduction, semantic preservation, or novelty."
+  - "Seventeen exact claim mappings now cover the chapter's twenty assigned sources, including the passage-reviewed Relational Dimension Compiler. Three assigned comparators remain supporting context rather than exact mappings; source mapping does not establish local reproduction, semantic preservation, or novelty."
   - "The current scaffold contains two valid and four rejecting compilation traces, one blocked semantic-preservation record with nine rejecting mutations, and 24 live Lean declarations across the retained route module and reachable refinement under three targets. These are hand-authored record and finite-transition evidence, not a source parser, compiler backend, translation proof, or natural artifact result."
   - "The QCSA program produced 2,340 deterministic predictions over 60 cases, 13 systems, and three seeds plus one 13-stage zero-model temporary-file trace with ten rejecting adversarial paths and one exact rollback. QCSA tied the selected baseline at 1.000 task accuracy while using 1.913386 times the operations; matched advantage and resource gates failed on this proxy, the active-question ablation is N2 proxy/regime evidence rather than an exact refutation, and the chapter core received no support movement."
   - "No natural accepted plan has been compiled into a concrete cognitive artifact and independently validated for semantic preservation, useful quality, causal repair benefit, reproducibility, or cross-target transfer."
@@ -39,12 +40,12 @@ open_evidence_gaps:
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
 | Manuscript maturity | v0.3 semantically reviewed proof-contract draft |
-| Last updated | 2026-07-14 |
-| Primary source records | 16 mapped sources: five author-lineage raw-cache sources, three pinned-project records, QCSA, and seven external comparators |
+| Last updated | 2026-07-22 |
+| Primary source records | 20 assigned records with 17 exact claim mappings, including the Relational Dimension Compiler's dimension-safe relational lowering proposal |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `cognitive_compilation`; supporting: `planforge_compiler_arch`, `genesiscode`, `treellm`, `viea`, `cca_project`, `moecot_manifest_project`, `corbens_best_model_possible_project`, `qcsa_whitepaper`; external comparators: `ext_pddl_1998`, `ext_shop2_2003`, `ext_tree_of_thoughts_2023`, `ext_dreamcoder_2020`, `ext_llvm_langref_docs`, `ext_mlir_2020`, `ext_translation_validation_1998` |
-| Source loading state | all sixteen source notes reviewed; five local raw caches and the QCSA paper passage-reviewed; three pinned private projects represented by public-safe notes; external systems not locally reproduced |
+| Source loading state | all twenty source notes reviewed at their recorded boundary; the Relational Dimension Compiler is passage-reviewed from the local author paper; external systems are not locally reproduced |
 | Test state | Exact current boundary: two valid/four rejecting hand-authored compilation traces; one independent seven-event obligation/repair refinement with 47 rejected mutations; one blocked semantic-preservation record/nine rejecting mutations; 24 live Lean declarations across two modules under three targets; 2,340 QCSA predictions over 60 synthetic cases, 13 systems, and three seeds; one 13-stage zero-model reversible trace with ten rejecting adversarial controls; no natural cognitive artifact, matched advantage, or chapter-core support movement. |
 
 ## Drafting guardrail
@@ -151,7 +152,7 @@ not a natural cognitive compiler.
 
 ### Claim-source mapping status
 
-Appendix C maps all sixteen assigned sources: five passage-reviewed local raw
+Appendix C records seventeen exact mappings across twenty assigned sources: the passage-reviewed local raw
 caches, three public-safe pinned-project notes, QCSA, and seven external
 comparators. They support IR and translation vocabulary, provenance, authority
 and ambiguity retention, pass/failure traceability, localized-repair receipts,
@@ -369,6 +370,56 @@ mechanism claim, while semantic round-trip preservation remains a narrowed
 share one result bundle but license different prose. None
 licenses the core claim, arbitrary semantic equivalence, or question-policy
 value outside the frozen fixtures.
+
+### Relational IR requires dimension-safe lowering
+
+The Relational Dimension Compiler adds an important distinction to this
+chapter: a compiler may preserve the fields of an obligation while still
+destroying the meaning of the axes over which the artifact operates. A tensor
+index, a role position, a possible-world branch, a time interval, and an
+abstraction level are not interchangeable dimensions. Each needs a type that
+states its carrier, semantics, legal symmetries, units or metric where
+relevant, transformation law, and permitted contractions.
+
+The relational IR therefore carries four linked views:
+
+| View | What must survive lowering |
+|---|---|
+| Semantic | entity and relation identity, role schema, field domain, time, branch, lifecycle, and permitted use |
+| Evidence | provenance, uncertainty, alternatives, qualification, defeaters, evaluator dependencies, and residuals |
+| Computational | selected operator, primitive arity, factorization, precision, device placement, caches, and measured cost |
+| Abstraction | contraction map, macro-object boundary, query envelope, approximation error, and expansion triggers |
+
+This does not turn Cognitive Compilation into the owner of world structure.
+Governed World Models still decide how proposed entities, fields, and
+relations relate to observation and reality. The compiler's narrower duty is
+to prevent a legal computational rewrite from silently changing semantic
+arity, ordered roles, branch identity, evidence status, or the query envelope
+of an abstraction.
+
+The separation among **semantic arity**, **primitive computational arity**, and
+**storage arity** is especially useful. A six-role transfer event may be stored
+as one relation object plus six typed binary incidences, discovered with a
+selective triadic operator, and later queried through pairwise message passing.
+Those representations are equivalent only if relation-instance identity,
+roles, multiplicity, time, branch, uncertainty, and provenance survive. A
+compiler receipt must name what was preserved and what became approximate.
+
+This creates two additional translation checks:
+
+1. **Dimensional legality:** no pass averages mutually exclusive branches,
+   permutes directed roles as though they were exchangeable, erases units or
+   orientation, or treats confidence as effect authority.
+2. **Relational preservation:** a lowering from relation objects to tensors,
+   graphs, tables, logic, planners, or simulators must either reconstruct the
+   declared relation packet within its envelope or expose the exact loss and
+   residual.
+
+The source supplies an architecture and finite reification construction, not a
+working relational compiler or proof that any lowering preserves open-world
+meaning. The prospective full RDC owner remains deferred by the active chapter
+freeze; this section strengthens the existing translation boundary without
+pre-empting that later adjudication.
 
 ## Interfaces
 
@@ -691,7 +742,7 @@ incremental-repair locality, artifact usefulness, or production transfer.
 | `ext_mlir_2020` | MLIR: A Compiler Infrastructure for the End of Moore's Law | multi_level_compiler_ir | External comparator for multi-level IR, dialects, modular passes, verifiers, and progressive lowering. | source note available; comparator only |
 | `ext_translation_validation_1998` | Translation Validation | translation_validation | External comparator for per-translation source-target validation through semantic frameworks, refinement, and simulation-based proof. | source note available; comparator only |
 
-All sixteen assigned sources are mapped at their available evidence boundary.
+Seventeen exact mappings cover the chapter's twenty assigned sources at their available evidence boundaries.
 The author and project lineage supports semantic IR, provenance, ambiguity,
 authority, repair, QCSA identity/address/route separation, and negative
 implementation cases. The external comparators ground planning interfaces,
@@ -711,6 +762,7 @@ These rows keep Cognitive Compilation and Semantic IR's manifest assignments vis
 | `platonic_world_model` | Metadata-first comparator: The Platonic World Model: A Semantic Constitution for Grounded, Proof-Carrying, Self-Editing Artificial Intelligence. Corben-authored July 2026 conceptual architecture and falsifiable research program for semantic continuity through stable Form lineages, immutable semantic versions, typed Essence Contracts, six mutually constraining planes, explicit proposition-attestation-commitment-proof separation, branch-protected world dynamics, qualified grounding, semantic transactions, runtime packet compilation, and federated mappings. Existing chapters are upgraded first; no implemented substrate, benchmark result, philosophical solution to grounding, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `qcsa_whitepaper` | Passage-reviewed comparator: Question-Compiled Semantic Addressing. Frames SOIDs and SACs as typed semantic-IR references, question traces as evidence-acquisition programs, and semantic-to-physical route plans as policy-constrained target lowering; the later repository adds a bounded local 12-lane implementation, 60-case held-out evaluation over 13 systems and three seeds, and one 13-stage governed vertical trace. | The exact matched-advantage and resource gates failed, and the active-question ablation is N2 proxy/regime evidence rather than an exact or broad refutation. No natural-task, learned-model, universal-semantic, production, safety, privacy, external-independence, chapter-core promotion, AGI, or ASI result is established. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `kernel_english_residual_compiler` | Metadata-first comparator: Kernel English with Hierarchical, Interaction-Amortized Residuals: A Dual-Vocabulary Cognitive Compiler for Efficient Language-Model Reasoning. Corben-authored July 2026 architecture proposal for KERC: protected-object capture, uncertainty-aware normalization, sense-aware Kernel IR, dual surface/core vocabularies, a four-level interaction-amortized residual ledger, exact object storage, grammar-aware macro fusion, structured answer packets, rendering, round-trip verification, versioned migration, and complete rate-compute-fidelity evaluation. Existing chapters are upgraded first; no implementation, benchmark, novelty, efficiency, fidelity, safety, transfer, SOTA, AGI, ASI, or support-state result is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `relational_dimension_compiler` | Passage-reviewed comparator: The Relational Dimension Compiler: Adaptive Polyadic Cognition with Bounded Computational Arity and Unbounded Semantic Structure. Adds a dimensional type system and a four-layer relational IR whose semantic, evidence, computational, and abstraction records can lower relation objects into neural, graph, database, symbolic, simulator, planning, or verification backends without identifying a tensor index with semantic identity. | The existing chapter owns accepted-obligation translation, not the complete RDC world-structure lifecycle; no lowering preserves open-world relational meaning by source authority alone. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Summary

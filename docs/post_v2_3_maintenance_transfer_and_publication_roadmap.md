@@ -1225,6 +1225,35 @@ projection remains owned by R16-A, the current-reader projection remains owned
 by R16-B, and the resource-gated matched campaign plus independent reproduction
 remain unexecuted. Support and release effects remain `none`.
 
+**2026-07-22 Relational Dimension Compiler source-intake checkpoint.** The
+Corben-authored Markdown/DOCX pair is archived in the ignored raw-source cache
+with recorded SHA-256 digests, and the Markdown is the semantic reference after
+heading-level comparison with the DOCX presentation copy. A public-safe,
+passage-level source note now distinguishes semantic, primitive computational,
+and storage arity; typed relation objects and incidences; adaptive relational
+order; branch-local qualification; reversible semantic contraction; compiled
+relational specialists; hardware lowering; and the proposed RODIE instrument.
+The source inventory, exact claim mappings, triage scenario, and research
+backlog route bounded material into Cognitive Compilation, Governed World
+Models, Routing, Replaceable Substrates, Procedural Memory, Benchmark Ratchets,
+Resource Economics, Integrated Reference Architecture, and the Open Research
+Agenda. Their reader prose, source queues, glossary, outline, and generated
+appendices must remain reconciled.
+
+The paper also clears the conceptual distinct-owner test for a future
+`relational-dimension-compilation-and-polyadic-cognition` chapter because no
+current owner holds the full relational-topology lifecycle. It is nevertheless
+**deferred, not admitted**: the structural freeze grants no chapter path,
+manifest row, proof target, reader position, or admission transaction. After
+the freeze clears, the candidate must be adjudicated atomically with verified
+external bibliography, exact ownership and adjacency, a birth-complete claim
+atom and reader packet, W3 inheritance, formal maximum-inference ceilings, and
+an anti-self-confirming RODIE protocol with strong lower-order rescues,
+complete candidate denominators, independent evaluation, lifecycle cost, and
+natural-task transfer. Current integration changes no support state and proves
+no relational advantage, world truth, grounding, implementation, benchmark
+result, release, RSI, AGI, ASI, or SOTA claim.
+
 ## P7 — Reader remediation and owner-authorized publication
 
 The first Round 15 publication transaction is complete. The
