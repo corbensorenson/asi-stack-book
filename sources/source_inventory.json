@@ -6321,5 +6321,230 @@
     "published": "2025-07",
     "updated": "2025-07",
     "citation_label": "Mahloujifar, Melis, and Chaudhuri (2025), Auditing f-Differential Privacy in One Run"
+  },
+  {
+    "id": "ext_airllm_2023",
+    "title": "AirLLM: Scaling Large Language Models on Low-End Commodity Computers",
+    "priority": "external_literature",
+    "layer": "heterogeneous_inference_memory",
+    "chapter_targets": [
+      "fast-generation-architectures",
+      "personal-compute-hives-and-federated-edge-intelligence",
+      "resource-economics-and-token-budgets",
+      "model-weight-custody-and-hardware-roots-of-trust"
+    ],
+    "url": "https://github.com/lyogavin/airllm",
+    "notes": "Official implementation comparator for layer-wise model sharding, one-layer accelerator residency, next-layer prefetch, optional storage compression, and original-versus-transformed model storage. Maintainer-reported fit and speed claims are not independently reproduced.",
+    "source_type": "software_repository",
+    "published": "2023-11-20",
+    "updated": "2026-06-30",
+    "citation_label": "Li (2023-2026), AirLLM"
+  },
+  {
+    "id": "ext_deepspeed_inference_2022",
+    "title": "DeepSpeed Inference: Enabling Efficient Inference of Transformer Models at Unprecedented Scale",
+    "priority": "external_literature",
+    "layer": "heterogeneous_inference_memory",
+    "chapter_targets": [
+      "fast-generation-architectures",
+      "personal-compute-hives-and-federated-edge-intelligence",
+      "resource-economics-and-token-budgets"
+    ],
+    "url": "https://arxiv.org/abs/2207.00032",
+    "notes": "Primary heterogeneous-inference systems source spanning GPU, CPU, and NVMe for dense and sparse Transformer inference. Reported latency, throughput, scale, and model-fit results remain source-scoped and unreproduced.",
+    "source_type": "arxiv",
+    "arxiv_id": "2207.00032",
+    "published": "2022-06-30",
+    "updated": "2022-06-30",
+    "citation_label": "Aminabadi et al. (2022), DeepSpeed Inference",
+    "doi": "10.48550/arXiv.2207.00032"
+  },
+  {
+    "id": "ext_flexgen_2023",
+    "title": "FlexGen: High-Throughput Generative Inference of Large Language Models with a Single GPU",
+    "priority": "external_literature",
+    "layer": "heterogeneous_inference_memory",
+    "chapter_targets": [
+      "fast-generation-architectures",
+      "personal-compute-hives-and-federated-edge-intelligence",
+      "resource-economics-and-token-budgets"
+    ],
+    "url": "https://arxiv.org/abs/2303.06865",
+    "notes": "Primary planned-placement source for GPU/CPU/disk tensor storage and access, batching, and optional weight/cache compression under latency-insensitive workloads. Its throughput results are not interactive-latency or local evidence.",
+    "source_type": "arxiv",
+    "arxiv_id": "2303.06865",
+    "published": "2023-03-13",
+    "updated": "2023-06-12",
+    "citation_label": "Sheng et al. (2023), FlexGen",
+    "doi": "10.48550/arXiv.2303.06865"
+  },
+  {
+    "id": "ext_hf_accelerate_big_model_inference_2026",
+    "title": "Hugging Face Accelerate: Loading Big Models into Memory",
+    "priority": "external_literature",
+    "layer": "heterogeneous_inference_memory",
+    "chapter_targets": [
+      "fast-generation-architectures",
+      "personal-compute-hives-and-federated-edge-intelligence",
+      "resource-economics-and-token-budgets",
+      "model-weight-custody-and-hardware-roots-of-trust"
+    ],
+    "url": "https://huggingface.co/docs/accelerate/en/concept_guides/big_model_inference",
+    "notes": "Official implementation documentation for automatic or explicit GPU/CPU/disk device maps and memory-mapped disk tensors. The documented sequential-dispatch, prefetch, and hard-drive-performance limitations make it a baseline, not a qualification result.",
+    "source_type": "official_documentation",
+    "published": "2026-07-23",
+    "updated": "2026-07-23",
+    "citation_label": "Hugging Face (2026), Accelerate Big Model Inference documentation"
+  },
+  {
+    "id": "ext_llama_cpp_memory_mapping_2026",
+    "title": "llama.cpp CLI Memory Mapping, Tensor Placement, and KV Offload Controls",
+    "priority": "external_literature",
+    "layer": "heterogeneous_inference_memory",
+    "chapter_targets": [
+      "fast-generation-architectures",
+      "personal-compute-hives-and-federated-edge-intelligence",
+      "resource-economics-and-token-budgets",
+      "model-weight-custody-and-hardware-roots-of-trust"
+    ],
+    "url": "https://github.com/ggml-org/llama.cpp/blob/master/tools/cli/README.md",
+    "notes": "Official consumer-runtime documentation for model load modes, memory mapping, DirectIO, GPU-layer and tensor placement, MoE CPU placement, KV offload, and KV data types. No local model or performance result is implied.",
+    "source_type": "official_documentation",
+    "published": "2026-07-23",
+    "updated": "2026-07-23",
+    "citation_label": "ggml-org (2026), llama.cpp CLI documentation"
+  },
+  {
+    "id": "ext_llm_in_flash_2024",
+    "title": "LLM in a Flash: Efficient Large Language Model Inference with Limited Memory",
+    "priority": "external_literature",
+    "layer": "heterogeneous_inference_memory",
+    "chapter_targets": [
+      "fast-generation-architectures",
+      "personal-compute-hives-and-federated-edge-intelligence",
+      "resource-economics-and-token-budgets",
+      "model-weight-custody-and-hardware-roots-of-trust",
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture"
+    ],
+    "url": "https://arxiv.org/abs/2312.11514",
+    "notes": "Primary flash-aware inference source for on-demand parameter loading, I/O cost modeling, transfer reduction, contiguous reads, windowing, and row-column bundling. Sparse/context-adaptive loading is not an exact dense paging result.",
+    "source_type": "conference_paper",
+    "arxiv_id": "2312.11514",
+    "published": "2023-12-12",
+    "updated": "2024-07-30",
+    "citation_label": "Alizadeh et al. (2024), LLM in a Flash",
+    "doi": "10.48550/arXiv.2312.11514"
+  },
+  {
+    "id": "ext_powerinfer_2024",
+    "title": "PowerInfer: Fast Large Language Model Serving with a Consumer-Grade GPU",
+    "priority": "external_literature",
+    "layer": "heterogeneous_inference_memory",
+    "chapter_targets": [
+      "fast-generation-architectures",
+      "personal-compute-hives-and-federated-edge-intelligence",
+      "resource-economics-and-token-budgets",
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture"
+    ],
+    "url": "https://arxiv.org/abs/2312.12456",
+    "notes": "Primary consumer-inference source for source-reported power-law neuron locality, hot-GPU/cold-CPU placement, adaptive predictors, and sparse operators. Architecture transfer and performance are not locally reproduced.",
+    "source_type": "conference_paper",
+    "arxiv_id": "2312.12456",
+    "published": "2023-12-16",
+    "updated": "2024-12-12",
+    "citation_label": "Song et al. (2024), PowerInfer",
+    "doi": "10.48550/arXiv.2312.12456"
+  },
+  {
+    "id": "ext_vattention_2025",
+    "title": "vAttention: Dynamic Memory Management for Serving LLMs without PagedAttention",
+    "priority": "external_literature",
+    "layer": "heterogeneous_inference_memory",
+    "chapter_targets": [
+      "fast-generation-architectures",
+      "resource-economics-and-token-budgets"
+    ],
+    "url": "https://arxiv.org/abs/2405.04437",
+    "notes": "Primary counterpoint to non-contiguous PagedAttention layouts: decouples virtual and physical GPU memory while retaining contiguous KV virtual addresses. Reported serving results remain source-scoped.",
+    "source_type": "conference_paper",
+    "arxiv_id": "2405.04437",
+    "published": "2024-05-07",
+    "updated": "2025-01-29",
+    "citation_label": "Prabhu et al. (2025), vAttention",
+    "doi": "10.48550/arXiv.2405.04437"
+  },
+  {
+    "id": "ext_infinigen_2024",
+    "title": "InfiniGen: Efficient Generative Inference of Large Language Models with Dynamic KV Cache Management",
+    "priority": "external_literature",
+    "layer": "heterogeneous_inference_memory",
+    "chapter_targets": [
+      "fast-generation-architectures",
+      "resource-economics-and-token-budgets"
+    ],
+    "url": "https://arxiv.org/abs/2406.19707",
+    "notes": "Primary speculative-KV-prefetch source using minimal rehearsal and partial next-layer state to select host-resident KV entries. Prediction, quality, miss, and fallback results are not locally reproduced.",
+    "source_type": "conference_paper",
+    "arxiv_id": "2406.19707",
+    "published": "2024-06-28",
+    "updated": "2024-06-28",
+    "citation_label": "Lee et al. (2024), InfiniGen",
+    "doi": "10.48550/arXiv.2406.19707"
+  },
+  {
+    "id": "ext_specache_2025",
+    "title": "SpeCache: Speculative Key-Value Caching for Efficient Generation of LLMs",
+    "priority": "external_literature",
+    "layer": "heterogeneous_inference_memory",
+    "chapter_targets": [
+      "fast-generation-architectures",
+      "resource-economics-and-token-budgets"
+    ],
+    "url": "https://arxiv.org/abs/2503.16163",
+    "notes": "Primary speculative-KV-prefetch source keeping complete KV state in CPU memory, a low-bit importance copy in VRAM, and predicted next-step KV transfers. Source-reported quality and memory results are unreproduced.",
+    "source_type": "arxiv",
+    "arxiv_id": "2503.16163",
+    "published": "2025-03-20",
+    "updated": "2025-03-20",
+    "citation_label": "Jie et al. (2025), SpeCache",
+    "doi": "10.48550/arXiv.2503.16163"
+  },
+  {
+    "id": "ext_specoffload_2025",
+    "title": "SpecOffload: Unlocking Latent GPU Capacity for LLM Inference on Resource-Constrained Devices",
+    "priority": "external_literature",
+    "layer": "heterogeneous_inference_memory",
+    "chapter_targets": [
+      "fast-generation-architectures",
+      "resource-economics-and-token-budgets"
+    ],
+    "url": "https://arxiv.org/abs/2505.10259",
+    "notes": "Primary composition source for target-model offloading, draft-model placement, speculative decoding, and joint tensor/decoding planning. It is not speculative physical-page prediction, and reported results are unreproduced.",
+    "source_type": "arxiv",
+    "arxiv_id": "2505.10259",
+    "published": "2025-05-15",
+    "updated": "2025-05-21",
+    "citation_label": "Zhuge et al. (2025), SpecOffload",
+    "doi": "10.48550/arXiv.2505.10259"
+  },
+  {
+    "id": "ext_atsinfer_2026",
+    "title": "Automated Tensor Scheduling for Hybrid CPU-GPU LLM Inference on Consumer Devices",
+    "priority": "external_literature",
+    "layer": "heterogeneous_inference_memory",
+    "chapter_targets": [
+      "fast-generation-architectures",
+      "personal-compute-hives-and-federated-edge-intelligence",
+      "resource-economics-and-token-budgets",
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture"
+    ],
+    "url": "https://arxiv.org/abs/2607.10183",
+    "notes": "Very recent preprint comparator for tensor-granular static placement, load-aware dynamic transfer, and asynchronous CPU-GPU coordination on consumer devices. Only abstract/metadata were reviewed; reported results are provisional and unreproduced.",
+    "source_type": "arxiv",
+    "arxiv_id": "2607.10183",
+    "published": "2026-07-11",
+    "updated": "2026-07-14",
+    "citation_label": "Liu et al. (2026), ATSInfer",
+    "doi": "10.48550/arXiv.2607.10183"
   }
 ]

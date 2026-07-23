@@ -12,6 +12,10 @@
 
 PagedAttention and vLLM treat KV-cache memory as a serving bottleneck. Their book value is to separate aggregate serving throughput and memory utilization from single-request verified-output quality: serving acceleration is a different evidence lane from decoding correctness.
 
+PagedAttention pages dynamically growing request KV state inside an LLM serving
+system. It is not SSD-backed model-weight streaming, semantic context paging,
+activation or expert paging, speculative prefetch, or speculative decoding.
+
 ## Mechanisms
 
 - Partition KV-cache memory into paged blocks inspired by operating-system virtual memory.
@@ -32,6 +36,9 @@ PagedAttention and vLLM treat KV-cache memory as a serving bottleneck. Their boo
 - Memory savings may depend on request length distribution, batching policy, hardware, and model architecture.
 - Cache sharing creates its own isolation, taint, and scheduling questions in governed systems.
 - Serving metrics do not replace verifier cost, accepted-output accounting, or task-success measurement.
+- A paged non-contiguous virtual layout is not the only viable fragmentation
+  strategy; vAttention supplies a contiguous-virtual-memory counterpoint that
+  must remain a live alternative.
 
 ## Book Chapters Supported
 
@@ -43,6 +50,8 @@ PagedAttention and vLLM treat KV-cache memory as a serving bottleneck. Their boo
 - Use this source to source-note KV-cache and serving-layer acceleration as a separate mode family.
 - Require fast-generation records to separate throughput, memory pressure, latency, and verified-output metrics.
 - Use this source in resource economics to separate serving-memory and aggregate-throughput gains from verified-output quality and task-success claims.
+- Use it as one KV-allocation arm inside the wider heterogeneous inference
+  memory taxonomy, not as the generic definition of paging.
 - Do not use this note to claim local serving performance or quality improvement.
 
 ## Open Questions

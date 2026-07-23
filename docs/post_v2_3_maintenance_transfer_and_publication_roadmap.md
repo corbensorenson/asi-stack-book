@@ -101,6 +101,7 @@ proceeds.
 | Existing-book integration — next | `P7.1a-W3-admission-template-inheritance-guard` | R16-A is committed and validated | Freeze the current 61-chapter tokenizer/corpus baseline; centralize invariant method prose; reject a copied-scaffold negative control; preserve unique meaning. |
 | Existing-book integration — then | `P7.2-T1D-white-box-construct-validity-and-feature-analysis-depth` | W3 is terminal | Ingest the four missing primary records/notes, write the comparative method and construct-validity treatment, reconcile atoms and reader surfaces, and retain the no-promotion boundary. |
 | Existing-book integration — last | `P6.5-R16-B-current-reader-freshness` | R16-A, W3, and White-Box depth are terminal | Derive one current 61-chapter reader packet after the meaning-bearing edits, preserving the historical `reader-2026-07-18` release. |
+| Existing-owner research — deferred | `P6.6-heterogeneous-inference-memory-and-speculative-paging` | All six structural-resume gates are terminal; the packet receives an ordinary existing-owner WIP slot without displacing P2 or a chapter admission | Integrate the reviewed VRAM/DRAM/SSD source family into five existing owners; implement and validate a heterogeneous-memory policy; run only competent, matched, hardware-characterized paging experiments; preserve exact/approximate, throughput/latency, and source/local evidence boundaries. No new chapter. |
 | Formal slot — terminal | `P4-terminal-no-open-formal-packet` | All six frozen clusters terminal across 24 modules | Maintain the terminal audits and their consumers; open no new proof packet unless a dated, machine-validated amendment names the claim consumer, countermodel, and maximum inference. |
 | Empirical headline — ready, not passed | `P2-R3-storage-materialization-and-replacement-qualification` | Re-measure at run start; at the 2026-07-22 check the host had 71,648,034,816 free bytes, above the frozen 53,687,091,200-byte floor; every setup action remains inside the approved Docker-scoped protocol | Thirty sealed candidate recipes and receipts; terminal pool materialization; four competently qualified replacements restoring the fixed twelve-task denominator; rank progression only under the frozen amendment; zero protected-content leakage. No deletion of non-Docker user data is authorized. |
 | First structural tranche — terminal | White-Box, World Models, Human Factors, and Governed Operations are terminal at argument support | Four exact integration packets preserve owners, sources, formal ceilings, protocols, reader handoffs, and no-promotion boundaries | Maintenance only; no reopened chapter packet without a dated machine-validated defect. |
@@ -1327,6 +1328,106 @@ complete candidate denominators, independent evaluation, lifecycle cost, and
 natural-task transfer. Current integration changes no support state and proves
 no relational advantage, world truth, grounding, implementation, benchmark
 result, release, RSI, AGI, ASI, or SOTA claim.
+
+### P6.6 — Heterogeneous inference memory and speculative paging
+
+**Status:** primary-source and official-implementation intake completed
+2026-07-23; existing-owner implementation packet deferred until all six
+structural-resume gates are terminal.
+
+The source family now spans AirLLM layer streaming; DeepSpeed Inference and
+FlexGen GPU/CPU/NVMe placement; ordinary Hugging Face Accelerate and llama.cpp
+disk/memory-map baselines; flash-aware loading; PowerInfer hot/cold neuron
+placement; PagedAttention and vAttention's competing KV-layout choices;
+InfiniGen and SpeCache speculative KV prefetch; SpecOffload's distinct
+composition of offload with speculative decoding; and the very recent ATSInfer
+tensor-granular consumer-device preprint. The exact research and implementation
+contract is
+`docs/heterogeneous_inference_memory_and_paging_research_2026_07_23.md`.
+
+**Ownership decision.** Do not create a chapter. Fast Generation owns the
+physical-memory method taxonomy and route admission. Personal Compute Hives
+owns worker-specific capability and policy admission; Resource Economics owns
+the I/O roofline and lifecycle bill; Model-Weight Custody owns shard/page
+identity and storage lifecycle; Replaceable Cognitive Substrates owns
+architecture-specific granularity. Virtual Context receives only a
+semantic-page versus physical-page boundary. Training offload remains separate
+from inference paging.
+
+**Required manuscript integration.**
+
+1. Add `Heterogeneous inference memory: residency, paging, and prediction` to
+   Fast Generation, separating weight, KV, activation, expert, recurrent, and
+   draft state; layer streaming, planned placement, demand paging,
+   contiguous-virtual allocation, predictive prefetch, sparse placement, and
+   speculative-decoding/offload composition; and exact versus approximate
+   behavior.
+2. Add worker-internal memory-tier admission to Personal Compute Hives,
+   including storage/RAM/VRAM/thermal capability cards, scratch and recovery
+   floors, largest-indivisible-object checks, and workload-specific
+   interactive/batch/background qualification.
+3. Add `The I/O roofline and the price of virtual VRAM` to Resource Economics,
+   accounting for bytes per token, random versus sequential reads, conversion,
+   duplicate storage, cold starts, unused prefetch, cache pollution, energy,
+   thermal throttling, storage wear, and displaced capacity.
+4. Add paged-weight custody to Model-Weight Custody, binding every transformed
+   shard to parent checkpoint, adapter, quantization, layout, runtime,
+   checksum, encryption/key state, backup, scratch, recovery, sanitization, and
+   descendant closure.
+5. Add substrate-specific paging policy to Replaceable Cognitive Substrates so
+   dense, sparse/MoE, recurrent, state-space, and future architectures expose
+   their own memory objects and locality assumptions through the Cognitive
+   Kernel ABI.
+6. Add only a no-conflation note to Virtual Context: semantic pages and
+   physical runtime pages have different identities, authority, eviction,
+   integrity, and correctness contracts.
+
+**Policy and validation artifacts.** Create
+`schemas/heterogeneous_inference_memory_policy.schema.json`, at least two valid
+policies, and rejecting fixtures for wrong shard identity, stale/cross-request
+KV ownership, hidden approximation, missing speculative-miss fallback,
+capacity overcommit, absent scratch/recovery, unbounded or unaudited prefetch,
+missing I/O/energy/endurance accounting, and support overclaim. An independent
+validator must check exact model/runtime/hardware/storage identity, distinct
+object classes and tiers, page/shard checksums, placement/eviction/prefetch
+rules, exact-versus-approximate status, request isolation, crash recovery,
+expiry, and residual ownership. A dry-run planner may emit placement,
+transfer, and fallback decisions but cannot establish performance.
+
+**Competence gate before empirical interpretation.** A slow toy implementation
+cannot refute paging. Every evaluated arm must pin a competent current
+implementation, model, tokenizer, adapter, quantization, runtime, kernel,
+device map, load mode, filesystem, storage device, thermal state, and rescue
+budget. Characterize sequential/random SSD bandwidth, PCIe and host-memory
+bandwidth, page-cache behavior, and power policy before model results. Separate
+cold/warm/steady state; prefill/decode; batch-1/batched; short/long context;
+prefix reuse; concurrency; dense/MoE; interruption/recovery; and locality-shift
+workloads.
+
+**Matched arms and metrics.** Compare the smallest adequate resident model,
+CPU/unified-memory inference, ordinary partial offload, layer streaming,
+planned heterogeneous placement, paged and contiguous-virtual KV baselines,
+exact host-KV offload, predicted KV prefetch, hot/cold sparse placement,
+speculative-decoding/offload composition, and prediction-disabled fallback
+where competent implementations exist. Factorially ablate quantization,
+sparsity, paging, scheduling, and speculative decoding or retain an explicit
+non-isolation residual. Report useful accepted task success and quality with
+first-token, inter-token, end-to-end, median/tail, tokens/requests per second,
+peak VRAM/RAM, bytes read/written per token, transfer overlap, page misses,
+prefetch precision/recall, unused reads, cache pollution, compute utilization,
+energy, thermal behavior, wear proxy, conversion amplification, crash
+recovery, and total cost.
+
+**Promotion and terminal gate.** Admission is workload-region-specific. “The
+model loaded,” “a token was emitted,” lower VRAM, or higher aggregate
+throughput cannot establish interactive usability, quality, deployment,
+support, architecture generality, or SOTA. The packet closes only after the
+five owner edits and Virtual Context boundary, source/outline/Appendix H
+reconciliation, policy schema and rejecting validator, hardware and workload
+receipts, competent protocol, any honestly available measurements, atom and
+reader projections, W3 inheritance check, and explicit dispositions for
+unavailable hardware or unrun methods. Source-reported performance remains
+source-reported until independently reproduced.
 
 ## P7 — Reader remediation and owner-authorized publication
 

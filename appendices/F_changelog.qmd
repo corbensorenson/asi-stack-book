@@ -1,5 +1,32 @@
 # Changelog
 
+## 2026-07-23 — Heterogeneous inference memory and speculative paging intake
+
+- Researched the primary and official implementation lineage for running models
+  beyond accelerator memory: AirLLM, DeepSpeed Inference, FlexGen, Hugging Face
+  Accelerate, llama.cpp, LLM in a Flash, PowerInfer, PagedAttention,
+  vAttention, InfiniGen, SpeCache, SpecOffload, and the July 2026 ATSInfer
+  preprint. Added twelve new inventory records and public source notes; retained
+  every reported performance result as source-reported and unreproduced.
+- Separated model-weight, KV-cache, activation, expert/neuron, recurrent, and
+  draft state; accelerator/host/storage tiers; deterministic prefetch,
+  speculative physical-page prefetch, and speculative decoding; and exact
+  residency changes from quantization, sparsity, selection, eviction, or other
+  approximation.
+- Chose existing-owner integration instead of a new chapter. Fast Generation is
+  the primary physical-memory method owner, with bounded handoffs to Personal
+  Compute Hives, Resource Economics, Model-Weight Custody, and Replaceable
+  Cognitive Substrates; Virtual Context receives only a semantic-page versus
+  physical-page no-conflation boundary.
+- Added deferred roadmap packet `P6.6-heterogeneous-inference-memory-and-speculative-paging`
+  and a detailed research contract covering policy fields, integrity and
+  fallback invariants, false-negative-resistant competence gates, matched
+  baselines, hardware/workload characterization, I/O/endurance accounting,
+  required manuscript sections, validators, and terminal artifacts.
+- Preserved the Round 17 work order: the research intake does not activate
+  manuscript work or displace R16-A, W3, White-Box depth, R16-B, or P2. It
+  changes no support, empirical, deployment, release, SOTA, AGI, or ASI state.
+
 ## 2026-07-22 — Round 17 priority enforcement and P2 capacity recheck
 
 - Adjudicated the Round 17 review against the live repository. Accepted the
