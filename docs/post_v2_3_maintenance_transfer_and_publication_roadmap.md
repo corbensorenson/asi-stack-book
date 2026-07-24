@@ -43,11 +43,13 @@ Embodied Agency, Human–AI Organizations, Multi-Agent Dynamics, and Inner
 Alignment and by integrating seven narrower gaps into existing owners. Its
 controlling adjudication is
 `docs/round_18_bounded_breadth_completion_adjudication_2026_07_24.md`.
-Structural admission is frozen again after that transaction. The latest clean,
-pushed, built, and deployed ancestral
-checkpoint is `1ed1413f1` on 2026-07-19: tested Pages build `29709193773`
+Structural admission is frozen again after that transaction. The last
+pre-Round-18 clean, pushed, built, and deployed ancestral checkpoint is
+`1ed1413f1` on 2026-07-19: tested Pages build `29709193773`
 passed, and deploy/attest run `29709417250` passed on its second attempt after
 GitHub's artifact service returned a transient HTTP 503 on the first download.
+P0 below requires the exact Round 18 public checkpoint to complete its own
+build, deploy, and route attestation before public currency is claimed.
 Neither checkpoint is a new
 living-book or reader release, DOI/archive deposit, license grant, or public
 post.
@@ -79,6 +81,17 @@ The roadmap optimizes for five outcomes, in order:
 3. a matched causal comparison against simpler controls;
 4. a shorter, clearer reader spine organized around that case; and
 5. independent challenge and transfer before any broad architecture claim.
+
+The post-breadth critique reconciliation is
+`docs/round_18_post_breadth_review_reconciliation_2026_07_24.md`. It accepts
+the apparatus-to-evidence imbalance, rejects the stale 61-chapter description
+of the working tree, narrows “zero empirical results” to the exact missing
+competence-qualified natural/non-authored class, and makes two consequences
+binding: publish the exact 66-chapter `main` state under continuous-custody P0,
+then return immediately to P2. The governance construct tested by P2 is stable
+under the completed Round 18 additions, so conceptual growth no longer
+justifies deferral. Counts of prose, sources, proofs, validators, schemas,
+receipts, or green checks do not satisfy that empirical objective.
 
 ## Execution-ready work board
 
@@ -393,8 +406,8 @@ stale.
 |---|---|---|
 | P2 was called the headline while two further chapters were admitted and A3 was activated | **Accepted.** | Freeze A3 and every later structural candidate. P2-R3 is the sole empirical headline: earn a thirty-environment materialization receipt and competently qualify four replacements to restore the fixed twelve-task denominator. At the Round 16 checkpoint the below-floor blocker was honest and Docker-only reclamation could not be replaced by deleting unrelated user data; the Round 17 capacity recheck below supersedes that transient diagnosis without rewriting its history. |
 | Six newly admitted chapters have no atoms in the frozen registry | **Accepted with denominator correction.** | The 3,730 activation atoms and existing 15-atom addendum are immutable historical baselines, not files to rewrite. Create a new append-only post-activation atom pack for White-Box, World Models, Human Factors, Governed Operations, Governed Model Training, and Privacy/Data Rights. Every atom needs stable identity, claim text, falsifier, acceptance criterion, promotion ceiling, evidence-plan route, and owner. Atom creation itself changes no support. |
-| The new chapters have no reader edition | **Partly accepted.** | They already contain validated Human Reading Paths and reader-spine integration, but the published `reader-2026-07-18` derivative predates the 61-chapter manifest. Preserve that release as immutable history and produce a current 61-chapter derived-reader freshness packet covering the opening map, roles, handoffs, overview, glossary, sources, claim/evidence projection, and synthesis. No external publication is required or implied. |
-| Repeated chapter templates survived the W1/W2 cleanup | **Accepted with measurement correction.** | W1 and W2 remain immutable terminal receipts for their historical 55- and 60-chapter scopes. Open W3 over the current 61 chapters, record the exact tokenizer/corpus/threshold baseline, centralize shared method prose, and add a prospective admission validator that rejects high-spread prose fingerprints and repeated disposition-table scaffolds. Do not report Claude's approximate block count as repository truth. |
+| The new chapters have no reader edition | **Partly accepted.** | They already contain validated Human Reading Paths and reader-spine integration, but the published `reader-2026-07-18` derivative predates the current 66-chapter manifest. Preserve that release as immutable history and produce a current 66-chapter derived-reader freshness packet covering the opening map, roles, handoffs, overview, glossary, sources, claim/evidence projection, and synthesis. No external publication is required or implied. |
+| Repeated chapter templates survived the W1/W2 cleanup | **Accepted with measurement correction.** | W1 and W2 remain immutable terminal receipts for their historical 55- and 60-chapter scopes. Open W3 over the current 66 chapters, record the exact tokenizer/corpus/threshold baseline, centralize shared method prose, and add a prospective admission validator that rejects high-spread prose fingerprints and repeated disposition-table scaffolds. Do not report an approximate block count as repository truth. |
 | White-Box is too thin and omits sparse autoencoders | **Depth criticism accepted; omission claim stale.** | The chapter already records sparse-autoencoder scaling, reconstruction/sparsity trade-offs, dead latents, feature splitting/merging, probes, causal interventions, and steering boundaries. It still needs a substantive method-comparison section on SAE/dictionary-learning construct validity, probe selectivity and leakage controls, interpretability illusions under cross-distribution challenge, feature absorption/splitting and metric reliability, diagnostic-versus-causal evidence, off-target/capability damage, strong behavioral baselines, and independent evaluation. Source ingestion must include Hewitt and Liang (2019), Bolukbasi et al. (2021), Gao et al. (2024), SAEBench (2025), and the 2026 audit of SAE benchmark reliability, each with explicit admissible use and non-authority. |
 | Future growth should be constrained | **Accepted.** | After the freeze clears, admit at most one new chapter per material empirical/evidence checkpoint. “Material” means a terminal measured or evidentiary milestone—not prose, source inventory, schema, proof-count, build, or validation movement. Every future admission transaction must include the chapter atom pack, reader projection, source roles, ownership decision, and W3 inheritance check at birth. |
 
@@ -411,7 +424,7 @@ debt from behaving like an interchangeable menu.
 | The capacity blocker may have cleared | **Accepted with an important boundary.** | The 2026-07-22 diagnostic recorded `71,648,034,816` free bytes, above the frozen `53,687,091,200`-byte floor, with Docker available and reporting zero retained images, containers, volumes, and build cache. This changes P2 from `blocked_pending_authorized_capacity_change` to `capacity_entry_condition_met_materialization_not_yet_run`. It is permission to attempt the frozen protocol, not a materialization pass, task result, or support movement. |
 | Work after the freeze again preferred source/prose deepening | **Accepted.** | R16-A is the sole current book packet. W3 follows R16-A; White-Box depth follows W3; the combined current-reader packet follows all three so it is not stale on arrival. No unrelated paper intake, chapter proposal, optimizer expansion, or general prose deepening may enter the active WIP slots. |
 | Six admitted chapters still lack claim atoms | **Accepted exactly.** | There is no dedicated post-activation six-chapter atom addendum. Claim-review files and the 2,921 prose-candidate audit are useful review machinery but are not the required structured pack. R16-A must create the data record, schema, validator, identity-graph edges, Appendix C projection, per-chapter review receipt, and negative mutations as one transaction without rewriting either historical denominator. |
-| W3 is absent and repetition may be rising | **Guard criticism accepted; quoted count not adopted.** | No W3 receipt or prospective copied-template rejection exists. Re-running the declared W1 tokenizer over all 61 current chapter files at `d6f6e62d7` gives 444,758 word tokens, 738 distinct repeated 12-grams present in at least eight chapters, and a maximum spread of 55 chapters—not the review's approximate 956. W3 must freeze its own reproducible baseline before edits and treat direction-of-change as diagnostic; its terminal gate is centralized ownership plus prospective rejection, not an arbitrary percentage. |
+| W3 is absent and repetition may be rising | **Guard criticism accepted; quoted count not adopted.** | The historical `d6f6e62d7` recheck covered the then-current 61 chapter files and found 444,758 word tokens, 738 distinct repeated 12-grams present in at least eight chapters, and a maximum spread of 55 chapters. That receipt is not the current baseline. W3 must freeze a fresh reproducible baseline over all 66 chapters before edits and treat direction-of-change as diagnostic; its terminal gate is centralized ownership plus prospective rejection, not an arbitrary percentage. |
 | White-Box depth was twice deferred | **Accepted with scope correction.** | The 5,290-word chapter already names sparse autoencoders, dictionary learning, probes, feature splitting/merging, reconstruction limits, causal interventions, and steering risks. Only Gao et al. (2024) of the five required depth sources is currently inventoried and source-noted; the probe-control, interpretability-illusion, SAEBench, and SAE-reliability records are absent. R16-D must add those four records and notes, then write the comparative construct-validity and causal-evidence sections specified below. |
 | Optimizer work was the only commissioned item substantially closed | **Accepted.** | Treat R16-E's source/prose/policy-contract depth amendment as terminal at argument support. Its shared atom and reader obligations are completed through R16-A/R16-B. A future matched optimizer campaign remains evidence work but is not another manuscript-depth gate and may not displace P2. |
 
@@ -430,13 +443,13 @@ Two slots may operate, but each slot has exactly one eligible packet:
    exact rank-5 disposition.
 3. **Book slot — R16-A:** complete all six chapter atom packs. No partial
    chapter count is terminal; zero support movement is expected.
-4. **Book slot — W3:** freeze the then-current 61-chapter baseline, centralize shared method
+4. **Book slot — W3:** freeze the current 66-chapter baseline, centralize shared method
    prose, run semantic-diff review, and prove the admission guard rejects a
    copied scaffold while accepting a genuinely distinct chapter fixture.
 5. **Book slot — R16-D:** ingest the four missing White-Box sources, write the
    comparative method matrix and evidence ladder, and reconcile the chapter,
    atoms, protocol, reader projection, appendices, and validators.
-6. **Book slot — R16-B:** build and validate the combined then-current 61-chapter
+6. **Book slot — R16-B:** build and validate the combined current 66-chapter
    reader-freshness packet from the post-edit state. Existing per-chapter
    reader integration receipts are inputs, not a substitute for this combined
    derivative.

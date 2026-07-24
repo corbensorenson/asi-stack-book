@@ -55,6 +55,7 @@ Talos treats AI work as a labor operating system: typed jobs, deterministic cont
 - Benchmark Ratchets and Anti-Goodhart Evidence
 - Fast Generation Architectures
 - Policy Optimization and Learning from Feedback
+- `human-ai-organizations-delegation-and-accountability` (Human-AI Organizations, Delegation, and Accountability)
 - Artifact Steward Agents and Living Project Governance
 - Integrated Reference Architecture
 - Open Research Agenda and Bibliography Plan

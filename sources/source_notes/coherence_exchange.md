@@ -42,6 +42,7 @@ The Coherence Exchange proposes an epistemic-liquidity layer where claims or kno
 - Proof-Carrying Claims and Adversarial Review
 - Proof-Carrying Claims and Adversarial Review
 - Resource Economics and Token Budgets
+- `multi-agent-dynamics-collective-intelligence-and-systemic-risk` (Multi-Agent Dynamics, Collective Intelligence, and Systemic Risk)
 - Benchmark Ratchets and Anti-Goodhart Evidence
 - Artifact Steward Agents and Living Project Governance
 - Prototype Roadmap

@@ -33,8 +33,22 @@ POST_ACTIVATION_EXPANSION_IDS = {
     "governed-operations-incident-command-and-graceful-degradation",
     "governed-model-training-distributed-optimization-and-scaling",
     "privacy-data-rights-and-information-flow-governance",
+    "perception-sensor-fusion-and-observation-trust",
+    "embodied-agency-real-time-control-and-physical-safety",
+    "human-ai-organizations-delegation-and-accountability",
+    "multi-agent-dynamics-collective-intelligence-and-systemic-risk",
+    "inner-alignment-mesa-optimization-and-learned-objective-integrity",
 }
 POST_ACTIVATION_FORMAL_TARGETS = {"lean:corrigibility.agency.generic_countermodel_routes"}
+POST_ACTIVATION_ATOM_IDS = {
+    "context-transactions-snapshots-mounts-and-taint.invariant.018",
+    "context-transactions-snapshots-mounts-and-taint.mechanism.019",
+    "fast-generation-architectures.invariant.019",
+    "fast-generation-architectures.mechanism.019",
+    "resource-economics-and-token-budgets.invariant.019",
+    "resource-economics-and-token-budgets.mechanism.019",
+}
+POST_ACTIVATION_PROSE_SECTION_HEADINGS: dict[str, set[str]] = {}
 
 SINGLE_ROLES = (
     ("core", "core_claim"),
@@ -255,14 +269,29 @@ def apply_review(atom: dict[str, Any], review: dict[str, Any]) -> dict[str, Any]
     return atom
 
 
-def strip_nonprose(body: str) -> list[tuple[int, str]]:
+def strip_nonprose(
+    body: str, excluded_section_headings: set[str] | None = None
+) -> list[tuple[int, str]]:
     lines = body.splitlines()
     output: list[tuple[int, str]] = []
+    excluded_section_headings = excluded_section_headings or set()
     in_front = bool(lines and lines[0].strip() == "---")
     in_fence = False
     in_post_p1_reconciliation = False
+    excluded_heading_level: int | None = None
     for number, line in enumerate(lines, 1):
         stripped = line.strip()
+        heading = re.match(r"^(#{2,6})\s+(.+?)\s*$", stripped)
+        if heading:
+            level = len(heading.group(1))
+            title = heading.group(2)
+            if excluded_heading_level is not None and level <= excluded_heading_level:
+                excluded_heading_level = None
+            if title in excluded_section_headings:
+                excluded_heading_level = level
+            continue
+        if excluded_heading_level is not None:
+            continue
         if stripped == "<!-- P7-EVIDENCE-RECONCILIATION:START -->":
             in_post_p1_reconciliation = True
             continue
@@ -295,7 +324,9 @@ def prose_candidates(chapter: dict[str, Any], manifest_texts: set[str]) -> list[
     body = (ROOT / chapter["file"]).read_text(encoding="utf-8")
     result: list[dict[str, Any]] = []
     seen: set[str] = set()
-    for line, text in strip_nonprose(body):
+    for line, text in strip_nonprose(
+        body, POST_ACTIVATION_PROSE_SECTION_HEADINGS.get(chapter["id"], set())
+    ):
         for sentence in re.split(r"(?<=[.!?])\s+(?=[A-Z`*])", text):
             sentence = compact(re.sub(r"\[[^\]]+\]\([^\)]+\)", "", sentence))
             if len(sentence.split()) < 6 or len(sentence) > 800:
@@ -368,6 +399,8 @@ def build() -> tuple[dict[str, Any], dict[str, Any], str, dict[str, str]]:
             manifest_norm.add(re.sub(r"[^a-z0-9]+", " ", compact(raw).casefold()).strip())
 
         for atom in chapter_atoms:
+            if atom["atom_id"] in POST_ACTIVATION_ATOM_IDS:
+                continue
             if atom["atom_id"] in known_atom_ids:
                 raise ValueError(f"duplicate atom ID: {atom['atom_id']}")
             known_atom_ids.add(atom["atom_id"])
@@ -431,6 +464,13 @@ def build() -> tuple[dict[str, Any], dict[str, Any], str, dict[str, str]]:
             "open_evidence_gaps_are_confounds_not_claims": True,
             "prose_only_claims_require_separate_materiality_adjudication": True,
             "machine_candidates_block_P1_completion": True,
+            "post_activation_structured_atoms_excluded": sorted(POST_ACTIVATION_ATOM_IDS),
+            "post_activation_prose_sections_excluded": {
+                chapter_id: sorted(headings)
+                for chapter_id, headings in sorted(
+                    POST_ACTIVATION_PROSE_SECTION_HEADINGS.items()
+                )
+            },
         },
         "summary": {
             "chapter_count": len(chapters(structure)),

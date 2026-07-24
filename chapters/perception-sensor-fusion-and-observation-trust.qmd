@@ -42,18 +42,24 @@ world model, or that a calibrated detector makes physical action safe.
 ## Human Reading Path
 
 The stack cannot begin with “the camera saw a person” as if that sentence were
-raw reality. A camera emitted time-stamped measurements through a particular
-lens, calibration, exposure, software version, and data path. A detector
+raw reality. A camera emitted time-stamped measurements through a lens,
+calibration, exposure, software, and data path. A detector
 transformed those measurements into a hypothesis. Other sensors may agree
 because they provide independent evidence, or because they share the same
 weather, alignment error, training data, or attacker.
 
-Perception governance preserves that chain. Every consequential observation
+Perception governance preserves that chain. Each observation
 states which modalities contributed, when and where they were measured, how
 they were calibrated and aligned, what was missing or occluded, how fusion
 changed the result, what uncertainty remains, and which new observation could
 resolve it. The output is trusted enough for a named use or it is not. It is
 never promoted to universal truth.
+
+A planner may use an estimate for a reversible step while refusing an
+irreversible sequence. A controller may slow when synchronization degrades. A
+world model may retain hypotheses rather than average away warnings.
+Observation trust is not a permanent sensor score; it is a bounded permission
+whose assumptions and unresolved disagreement remain visible to every consumer.
 :::
 
 ## Problem
@@ -252,6 +258,12 @@ and returns observed outcomes, clock failures, replacements, and repair state.
 
 ## Invariants
 
+The invariant set protects the observation's meaning while it crosses models,
+planners, controllers, storage, and later review. A downstream consumer may
+narrow a record for its task, but it may not erase missingness, manufacture
+independence, refresh stale evidence, or turn semantic confidence into broader
+authority.
+
 - Missing or stale modalities remain visible.
 - Agreement from correlated channels cannot count as independent evidence.
 - Calibration is bound to a population, environment, metric, and version.
@@ -379,6 +391,13 @@ current result**: no such joint campaign has passed, and the present work does
 not establish superior fusion or observation trust.
 
 ## Codex test plan
+
+### Planned formalization
+
+`lean:perception.correlated_agreement_no_independent_promotion` will model a
+declared dependence relation and prevent correlated agreement from increasing
+the finite record's independent-evidence count. It will not prove dependence,
+calibration, observation truth, robustness, causal grounding, or safety.
 
 | Test | Purpose | Status |
 |---|---|---|

@@ -3109,7 +3109,57 @@
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
       "rationale": "Finite authored separation theorem only; it cannot establish deletion, forgetting, influence removal, privacy, compliance, support, readiness, or release."
+    },
+    {
+      "tag": "lean:inner_alignment.behavior_does_not_identify_objective",
+      "chapter_id": "inner-alignment-mesa-optimization-and-learned-objective-integrity",
+      "module": "AsiStackProofs.LearnedObjectiveIntegrity",
+      "formal_target": "A finite admission model refuses to infer learned-objective identity from compliant behavior alone.",
+      "target_status": "planned",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Model only the non-identification boundary over finite authored policy hypotheses and behavior observations. The theorem must not claim access to a model's true objective, absence of mesa-optimization or deception, alignment, safety, or deployment readiness."
+    },
+    {
+      "tag": "lean:perception.correlated_agreement_no_independent_promotion",
+      "chapter_id": "perception-sensor-fusion-and-observation-trust",
+      "module": "AsiStackProofs.ObservationTrust",
+      "formal_target": "A finite admission model refuses to promote correlated channel agreement as independent evidence.",
+      "target_status": "planned",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Encode a declared channel-dependence relation and prove only that correlated agreement cannot increase the finite record's independent-evidence count. The theorem cannot establish real dependence, calibration, observation truth, robustness, causal grounding, or safety."
+    },
+    {
+      "tag": "lean:human_ai_org.accountability_requires_authority",
+      "chapter_id": "human-ai-organizations-delegation-and-accountability",
+      "module": "AsiStackProofs.HumanAIOrganizations",
+      "formal_target": "A finite organizational record refuses accountability assignment when information, competence, time, or intervention authority is absent.",
+      "target_status": "planned",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Prove rejection over explicitly authored role-capacity fields without asserting that the fields are true or complete. The theorem cannot establish meaningful control, organizational effectiveness, legitimacy, worker welfare, legal accountability, or safe deployment."
+    },
+    {
+      "tag": "lean:embodiment.missing_safety_state_blocks_control",
+      "chapter_id": "embodied-agency-real-time-control-and-physical-safety",
+      "module": "AsiStackProofs.EmbodiedPhysicalSafety",
+      "formal_target": "A finite control admission model blocks physical commands when timing, state, envelope, fallback, or stop evidence is missing.",
+      "target_status": "planned",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Model an authored control-lease checklist and derive rejection for absent required fields. The theorem trusts plant predicates and cannot prove dynamics, state-estimation accuracy, safe-set validity, deadline satisfaction, fallback reachability, effect reversibility, or physical safety."
+    },
+    {
+      "tag": "lean:multi_agent.pairwise_validity_no_systemic_promotion",
+      "chapter_id": "multi-agent-dynamics-collective-intelligence-and-systemic-risk",
+      "module": "AsiStackProofs.MultiAgentDynamics",
+      "formal_target": "A finite population record refuses to infer systemic safety or beneficial cooperation from pairwise-valid interactions alone.",
+      "target_status": "planned",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Encode pairwise validity and population authority as distinct finite predicates and prove the former cannot promote the latter. The theorem cannot establish cooperation, non-collusion, systemic safety, human agency, institutional legitimacy, social prediction, or deployment readiness."
     }
   ],
-  "record_count": 310
+  "record_count": 315
 }

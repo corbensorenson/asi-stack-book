@@ -42,10 +42,11 @@ wide transition, and emergent multi-agent dynamics remain separate owners.
 ::: {.asi-human-only}
 ## Human Reading Path
 
-An AI system rarely acts alone. It sits inside a team, firm, laboratory,
-government office, household, or network. People decide what work exists, who
-may delegate it, when an AI can decide, who must review, who receives the
-benefits, and who carries the consequences.
+An AI system almost never acts alone once its outputs matter to other people.
+It sits inside a team, firm, laboratory, government office, household, or
+network. People decide what work exists, who may delegate it, when an AI can
+decide, who must review, who receives the benefits, and who carries the
+consequences.
 
 The organization needs more than a list of users and agents. It needs roles,
 competence requirements, decision rights, workload limits, separation of
@@ -54,6 +55,13 @@ dissolve the arrangement. If the AI makes the real decision while a person
 absorbs the blame, the system has created a moral crumple zone. If the human
 retains a title but loses information, time, skill, or authority, human control
 is ceremonial.
+
+Inspect the recurring arrangement rather than one approval screen. Ask whether
+the reviewer can change the decision in time, a worker can challenge it,
+delegation can silently pass through another agent, and responsibilities
+survive model or management changes. A credible arrangement answers before an
+incident and preserves responsibility, remedy, and residual obligations when it
+ends.
 :::
 
 ## Problem
@@ -251,6 +259,12 @@ deliberately designed organization and an emergent population.
 
 ## Invariants
 
+These constraints keep an organization from using paperwork to counterfeit
+control. They bind responsibility to actual information and intervention
+capacity, keep burden and benefit visible, and ensure that reorganization,
+model replacement, or closure cannot erase rights, remedies, records, and
+residual obligations created earlier.
+
 - Decision authority, execution authority, review authority, and accountability
   are explicit and may differ.
 - A person cannot be accountable for an action they lacked information,
@@ -376,6 +390,13 @@ passed here, so the technical record establishes no superior organization or
 institutional legitimacy.
 
 ## Codex test plan
+
+### Planned formalization
+
+`lean:human_ai_org.accountability_requires_authority` will reject an
+accountability assignment when the authored organizational record lacks
+information, competence, time, or intervention authority. It cannot establish
+that those fields are true, complete, legitimate, lawful, or effective.
 
 | Test | Purpose | Status |
 |---|---|---|

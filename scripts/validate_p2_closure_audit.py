@@ -20,9 +20,9 @@ STATUS = ROOT / "roadmap_records" / "post_v2_3_claim_proof_and_sota_challenge_st
 MAINTENANCE_STATUS = ROOT / "roadmap_records" / "post_v2_3_maintenance_transfer_and_publication_status.json"
 
 HISTORICAL_PROOF_TARGET_COUNT = 298
-CURRENT_PROOF_TARGET_COUNT = 310
+CURRENT_PROOF_TARGET_COUNT = 315
 CURRENT_IMPLEMENTED_TARGET_COUNT = 310
-CURRENT_PLANNED_TARGET_COUNT = 0
+CURRENT_PLANNED_TARGET_COUNT = 5
 HISTORICAL_EXPECTED_CLASSES = {
     "adequate finite-record invariant": 73,
     "useful but too narrow": 158,
@@ -34,9 +34,9 @@ HISTORICAL_EXPECTED_CLASSES = {
 CURRENT_EXPECTED_CLASSES = {
     "adequate finite-record invariant": 73,
     "useful but too narrow": 162,
-    "needs richer state-machine or review semantics": 20,
-    "needs executable tests first": 37,
-    "needs empirical or baseline tests first": 16,
+    "needs richer state-machine or review semantics": 22,
+    "needs executable tests first": 38,
+    "needs empirical or baseline tests first": 18,
     "research-agenda until artifact import": 2,
 }
 FIRST_TRANCHE_ADMITTED_CHAPTERS = {
@@ -48,9 +48,24 @@ FIRST_TRANCHE_ADMITTED_CHAPTERS = {
 SECOND_TRANCHE_ADMITTED_CHAPTERS = {
     "governed-model-training-distributed-optimization-and-scaling",
     "privacy-data-rights-and-information-flow-governance",
+    "perception-sensor-fusion-and-observation-trust",
+    "embodied-agency-real-time-control-and-physical-safety",
+    "human-ai-organizations-delegation-and-accountability",
+    "multi-agent-dynamics-collective-intelligence-and-systemic-risk",
 }
-ADMITTED_CHAPTERS = FIRST_TRANCHE_ADMITTED_CHAPTERS | SECOND_TRANCHE_ADMITTED_CHAPTERS
-PLANNED_CHAPTERS: set[str] = set()
+ROUND_18_ADMITTED_CHAPTERS = {
+    "perception-sensor-fusion-and-observation-trust",
+    "embodied-agency-real-time-control-and-physical-safety",
+    "human-ai-organizations-delegation-and-accountability",
+    "multi-agent-dynamics-collective-intelligence-and-systemic-risk",
+    "inner-alignment-mesa-optimization-and-learned-objective-integrity",
+}
+ADMITTED_CHAPTERS = (
+    FIRST_TRANCHE_ADMITTED_CHAPTERS
+    | SECOND_TRANCHE_ADMITTED_CHAPTERS
+    | ROUND_18_ADMITTED_CHAPTERS
+)
+PLANNED_CHAPTERS = ROUND_18_ADMITTED_CHAPTERS
 EXPECTED_RICHER = {
     "constitutional-alignment-substrate": 6,
     "moral-uncertainty-and-value-conflict": 6,
@@ -103,16 +118,25 @@ def current_proof_errors(
         .get("structural_completeness_tranche", {})
         .get("second_tranche", {})
     )
+    round_18_tranche = (
+        maintenance_status.get("quality_uplift_program", {})
+        .get("structural_completeness_tranche", {})
+        .get("round_18_breadth_completion", {})
+    )
     if (
         manifest.get("proof_target_count") != CURRENT_PROOF_TARGET_COUNT
         or len(current_targets) != CURRENT_PROOF_TARGET_COUNT
         or len(set(manifest_ids)) != CURRENT_PROOF_TARGET_COUNT
-        or dict(status_counts) != {"implemented": CURRENT_IMPLEMENTED_TARGET_COUNT}
+        or dict(status_counts)
+        != {
+            "implemented": CURRENT_IMPLEMENTED_TARGET_COUNT,
+            "planned": CURRENT_PLANNED_TARGET_COUNT,
+        }
         or manifest.get("status_counts") != dict(status_counts)
         or activation_truth.get("proof_target_count") != CURRENT_PROOF_TARGET_COUNT
         or activation_truth.get("chapter_core_promotion_count") != 0
     ):
-        out.append("current proof manifest/status is not exactly 310 unique implemented targets with no planned target or core promotion")
+        out.append("current proof manifest/status is not exactly 315 unique targets (310 implemented, five planned) with no core promotion")
     if (
         maintenance_status.get("status") != "active"
         or maintenance_status.get("roadmap_path") != "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md"
@@ -120,11 +144,12 @@ def current_proof_errors(
         or set(first_tranche.get("candidate_ids", [])) != FIRST_TRANCHE_ADMITTED_CHAPTERS
         or second_tranche.get("manifest_admitted_count") != len(SECOND_TRANCHE_ADMITTED_CHAPTERS)
         or set(second_tranche.get("adjudicated_candidate_ids", [])) != SECOND_TRANCHE_ADMITTED_CHAPTERS
+        or set(round_18_tranche.get("new_chapter_ids", [])) != ROUND_18_ADMITTED_CHAPTERS
         or len(planned_targets) != CURRENT_PLANNED_TARGET_COUNT
         or {row.get("chapter_id") for row in planned_targets} != PLANNED_CHAPTERS
-        or planned_chapter_counts != Counter({chapter_id: 2 for chapter_id in PLANNED_CHAPTERS})
+        or planned_chapter_counts != Counter({chapter_id: 1 for chapter_id in PLANNED_CHAPTERS})
     ):
-        out.append("terminal admitted-chapter proof inventory retains a planned target or loses tranche custody")
+        out.append("admitted-chapter proof inventory loses tranche custody or misstates the five Round 18 planned targets")
     triage_by_tag = {row.get("tag"): row for row in triage_records}
     if (
         triage.get("record_count") != CURRENT_PROOF_TARGET_COUNT
@@ -299,8 +324,8 @@ def main() -> None:
         raise SystemExit("P2 closure audit failed:\n - " + "\n - ".join(failures))
     print(
         "P2 closure audit passed: 1,151 baseline theorem declarations, 298 unique historical targets, "
-        "65/65 reviewed modules, 298/298 frozen historical adequacy routes, 310 current targets "
-        "(310 implemented and zero planned after terminal A2 integration), 310/310 current adequacy classifications, "
+        "65/65 reviewed historical modules, 298/298 frozen historical adequacy routes, 315 current targets "
+        "(310 implemented and five planned after the Round 18 breadth transaction), 315/315 current adequacy classifications, "
         f"nine semantic-model dossiers/consumers, {len(mutations) + current_mutation_count} rejecting mutations, and no support-state effect."
     )
 

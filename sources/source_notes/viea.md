@@ -52,6 +52,7 @@ VIEA frames advanced AI as an intent-to-execution system rather than a response 
 - Artifact Graphs, Audit Logs, and Replay
 - Runtime Adapters, Tool Permissions, and Human Approval
 - Resource Economics and Token Budgets
+- `embodied-agency-real-time-control-and-physical-safety` (Embodied Agency, Real-Time Control, and Physical Safety)
 - Executable Specifications and Lean Proof Envelope
 - `routing-heads-and-specialist-cores` (Routing Heads and Specialist Cores; includes folded MoECOT Runtime Crosswalk)
 - Artifact Steward Agents and Living Project Governance

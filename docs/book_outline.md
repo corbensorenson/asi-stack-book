@@ -41,7 +41,7 @@ materialization packet; materialization itself remains unpassed. The parallel
 book slot is strictly ordered: first the reviewed append-only atom pack for all
 six post-baseline chapters, then the W3 template-inheritance guard, then the
 White-Box construct-validity and feature-analysis deepening, then one combined
-current 61-chapter reader-freshness derivative. The optimizer-landscape
+current 66-chapter reader-freshness derivative. The optimizer-landscape
 manuscript-depth amendment is terminal at argument support. Unrelated paper
 mining, chapter admission, and general prose deepening cannot displace these
 packets.
@@ -5069,7 +5069,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 298 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 298 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 310 proof targets, 104 Lean modules, 1370 theorem declarations, 924 derived/decomposed, 230 direct/projection, 216 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 315 proof targets, 109 Lean modules, 1370 theorem declarations, 924 derived/decomposed, 230 direct/projection, 216 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.

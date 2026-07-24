@@ -52,8 +52,14 @@ The physical layer translates a symbolic action into a time-indexed control
 lease. The lease names the plant, controller, state estimator, safe region,
 force and speed limits, deadline, interlocks, fallback controller, independent
 stop path, human-presence rules, and compensation limits. Authority shrinks as
-uncertainty or latency grows. A general model may propose actions, but it does
-not become the safety controller merely because it is capable.
+uncertainty or latency grows. A model may propose actions, but it does
+not become the safety controller because it is capable.
+
+Choosing an action differs from keeping a plant inside its envelope while the
+action unfolds. Each period can reveal delay, contact, or human presence.
+Enough margin must remain to filter commands, reach fallback, stop energy, and
+observe effects. Even a successful stop records what moved, what remains
+irreversible, who must inspect it, and which evidence expired.
 :::
 
 ## Problem
@@ -118,7 +124,7 @@ and environment assumptions. Simulated safety is not hardware evidence.
 **Constraints need an operational fallback.** Barrier functions can enforce a
 modeled safe set; constrained RL can shape exploration; Simplex can switch to a
 baseline. Each fails if its model, monitor, feasible set, timing, or backup path
-is wrong. The stack needs plural evidence and explicit residuals.
+is wrong. The control path needs plural evidence and explicit residuals.
 
 **Emergency stop is not effect-complete recovery.** The system must know which
 commands reached actuators, what motion or energy remains, which interlocks
@@ -248,6 +254,12 @@ claims in distinct lanes. Privacy and Rights govern sensing and recording
 around people.
 
 ## Invariants
+
+Physical invariants must survive the exact moment when the advanced route is
+wrong, late, disconnected, or unable to observe the plant. They keep a
+controller certificate tied to current state and timing, preserve independent
+stopping power, and prevent software records from overstating what happened in
+the world.
 
 - Every physical command belongs to a current plant and control lease.
 - A stop path is independent enough to survive the advanced controller's
@@ -380,6 +392,13 @@ model. This is a **research target, not a current result**: no campaign here
 establishes dominance, physical safety, or general embodied competence.
 
 ## Codex test plan
+
+### Planned formalization
+
+`lean:embodiment.missing_safety_state_blocks_control` will reject a finite
+control lease missing required timing, state, envelope, fallback, or stop
+evidence. It will trust the authored predicates and cannot establish plant
+dynamics, safe-set validity, deadline satisfaction, recovery, or physical safety.
 
 | Test | Purpose | Status |
 |---|---|---|

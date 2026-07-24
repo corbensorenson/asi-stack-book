@@ -631,16 +631,18 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 310 |
+| Proof targets covered by triage | 315 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
 | implemented | 310 |
+| planned | 5 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
 | implemented | formal-invariant | lean-candidate | 310 |
+| planned | formal-invariant | lean-candidate | 5 |

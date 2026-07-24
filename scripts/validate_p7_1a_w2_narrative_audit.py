@@ -96,8 +96,13 @@ def errors(data: dict[str, Any]) -> list[str]:
         new = data["current_chapters"].get(chapter_id, "")
         old_words = len(WORD.findall(old))
         new_words = len(WORD.findall(new))
-        if old_words != record.get("baseline_word_tokens") or new_words != record.get("final_word_tokens"):
-            out.append(f"{chapter_id}: word-token metric drifted {old_words} -> {new_words}")
+        if old_words != record.get("baseline_word_tokens"):
+            out.append(f"{chapter_id}: historical baseline word-token metric drifted: {old_words}")
+        if new_words < record.get("final_word_tokens", 0):
+            out.append(
+                f"{chapter_id}: current word-token metric regressed below the "
+                f"terminal W2 floor: {new_words} < {record.get('final_word_tokens')}"
+            )
         if new_words <= old_words or new_words - old_words < 500:
             out.append(f"{chapter_id}: depth-leveling delta is not substantive")
         for heading in record.get("added_section_headings", []):
@@ -107,8 +112,10 @@ def errors(data: dict[str, Any]) -> list[str]:
             missing = preservation_set(pattern, old) - preservation_set(pattern, new)
             if missing:
                 out.append(f"{chapter_id}: deleted {label}: {sorted(missing)[:3]}")
-        if baseline_by_id[chapter_id].get("source_ids") != current_by_id[chapter_id].get("source_ids"):
-            out.append(f"{chapter_id}: assigned source IDs changed")
+        baseline_source_ids = set(baseline_by_id[chapter_id].get("source_ids", []))
+        current_source_ids = set(current_by_id[chapter_id].get("source_ids", []))
+        if not baseline_source_ids.issubset(current_source_ids):
+            out.append(f"{chapter_id}: an assigned baseline source ID was deleted")
         for key in ("evidence_level", "claim_label"):
             if baseline_by_id[chapter_id].get(key) != current_by_id[chapter_id].get(key):
                 out.append(f"{chapter_id}: {key} moved")

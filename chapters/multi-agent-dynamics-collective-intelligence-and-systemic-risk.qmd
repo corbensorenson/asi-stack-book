@@ -54,6 +54,14 @@ resources concentrate, which coalitions form, which externalities fall on
 nonparticipants, and whether humans retain meaningful influence, exit, and
 recovery. Local compliance remains useful, but it cannot certify the system
 that emerges from interaction.
+
+Observe an evolving network rather than one agent in isolation. A helpful
+exchange may strengthen a cartel, while nominally new agents may reduce
+diversity when every copy shares one model. Suppressing visible coordination
+may displace it into pricing, timing, or shared infrastructure instead.
+Population governance must measure desired cooperation and the routes by which
+copying, selection, and intervention impose costs on people outside the
+interaction.
 :::
 
 ## Problem
@@ -250,6 +258,12 @@ diversity, and invalidation state when agents or models change.
 
 ## Invariants
 
+Population invariants prevent locally valid interactions from laundering
+systemic outcomes. They preserve the identities and dependencies needed to
+measure concentration, correlation, exclusion, and displaced harm, while
+keeping simulated behavior, institutional authority, human agency, and public
+legitimacy as separate questions with separate evidence burdens.
+
 - Population identity includes copies, descendants, owners, and organizations.
 - Nominal multiplicity does not imply independent evidence or failure.
 - Cooperation, collusion, coordination, and collective competence remain
@@ -377,6 +391,13 @@ result**: no such campaign has passed here, and synthetic population behavior
 cannot promote claims about society.
 
 ## Codex test plan
+
+### Planned formalization
+
+`lean:multi_agent.pairwise_validity_no_systemic_promotion` will keep pairwise
+message validity and population-level authority as distinct finite predicates.
+It cannot establish beneficial cooperation, non-collusion, systemic safety,
+human agency, institutional legitimacy, or social prediction.
 
 | Test | Purpose | Status |
 |---|---|---|

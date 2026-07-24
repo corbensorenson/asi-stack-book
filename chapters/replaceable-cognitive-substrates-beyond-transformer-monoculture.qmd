@@ -240,7 +240,7 @@ only after the job, consumer, costs, authority, and defeat conditions are fixed.
 The Relational Dimension Compiler prevents this architecture catalog from
 collapsing semantic structure into one implementation label. A relation can
 have many typed roles without requiring one primitive kernel of the same
-arity. The stack should distinguish:
+arity. A governed comparison distinguishes:
 
 | Order | Meaning | Example |
 |---|---|---|
@@ -263,7 +263,7 @@ time, observation time, branch, uncertainty, provenance, defeaters, qualifiers,
 and lifecycle state to the relation instance or typed metadata relations. To
 recover the original fact, read the schema and the complete role-labelled
 incidence set. Symmetric roles are represented by declared permutation classes;
-ordered roles retain their order. The result is exact only when identity,
+ordered roles retain their order. Exactness holds only when identity,
 multiplicity, optionality, role semantics, and metadata survive.
 
 This is a useful theorem with a deliberately narrow ceiling. It says that the
@@ -654,7 +654,7 @@ Memory virtualization is a useful test of whether the Cognitive Kernel ABI is
 actually neutral. If every memory contract assumes numbered Transformer layers,
 attention heads, and KV-cache blocks, a Mamba-like state-space model, recurrent
 kernel, graph system, or sparse expert substrate can only enter by pretending to
-be a Transformer. That is compatibility theater. The interface should describe
+be a Transformer. That is compatibility theater. A useful interface describes
 memory objects by their computational role and lifecycle while allowing each
 kernel to expose architecture-specific placement and locality.
 

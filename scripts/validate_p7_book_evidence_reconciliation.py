@@ -391,6 +391,17 @@ def admitted_chapter_ids(status: dict[str, Any]) -> tuple[set[str], list[str]]:
         errors.append("second_tranche lacks an exact manifest-admitted identity set")
     else:
         admitted.update(second_ids)
+
+    round_18 = tranche.get("round_18_breadth_completion", {})
+    round_18_ids = [str(value) for value in round_18.get("new_chapter_ids", [])]
+    if (
+        len(set(round_18_ids)) != len(round_18_ids)
+        or round_18.get("state") != "terminal_argument_integration_post_transaction_freeze"
+        or round_18.get("post_transaction_structural_freeze") is not True
+    ):
+        errors.append("round_18_breadth_completion lacks an exact frozen manifest-admitted identity set")
+    else:
+        admitted.update(round_18_ids)
     return admitted, errors
 
 

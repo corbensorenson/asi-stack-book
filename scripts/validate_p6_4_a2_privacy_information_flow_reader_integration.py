@@ -23,7 +23,7 @@ def errors(data: dict) -> list[str]:
     if set(roles) != {"mechanism_or_capability", "limitation_or_failure", "competing_design", "measurement_or_evaluation"}: out.append("four-role vocabulary drifted")
     if {s for values in roles.values() for s in values} != SOURCE_IDS: out.append("nine-source role packet incomplete")
     chapters = [c for p in data["structure"]["parts"] for c in p["chapters"]]; ids = [c["id"] for c in chapters]
-    if len(ids) != 61 or ids.count(CHAPTER_ID) != 1: out.append("61-chapter manifest or A2 uniqueness drifted")
+    if len(ids) != 66 or ids.count(CHAPTER_ID) != 1: out.append("66-chapter manifest or A2 uniqueness drifted")
     i = ids.index(CHAPTER_ID) if CHAPTER_ID in ids else -1
     if i < 1 or ids[i-1] != "security-kernel-and-digital-scifs" or ids[i+1] != "model-weight-custody-and-hardware-roots-of-trust": out.append("A2 placement drifted")
     chapter = next((c for c in chapters if c["id"] == CHAPTER_ID), {})
@@ -44,7 +44,13 @@ def errors(data: dict) -> list[str]:
     protocol = data["protocol"]
     if protocol.get("state") != "prospectively_frozen_unexecuted" or protocol.get("protected_outcomes_opened") is not False or len(protocol.get("arms", [])) != 6 or len(protocol.get("failure_families", [])) != 13 or len(protocol.get("competence_gates", [])) != 15: out.append("A2 campaign custody drifted")
     second = data["status"]["quality_uplift_program"]["structural_completeness_tranche"]["second_tranche"]
-    if second.get("manifest_admitted_count") != 2 or second.get("active_candidate_id") is not None or second.get("next_queued_candidate_id") != NEXT_ID or data["status"]["execution_readiness"].get("immediate_book_packet") != NEXT_PACKET: out.append("A2 status did not preserve A3 as queued behind the Round 17 atom-first sequence")
+    if (
+        second.get("manifest_admitted_count") != 6
+        or second.get("active_candidate_id") is not None
+        or second.get("next_queued_candidate_id") is not None
+        or second.get("admission_state") != "post_round18_breadth_freeze_no_active_queue"
+        or data["status"]["execution_readiness"].get("immediate_book_packet") != NEXT_PACKET
+    ): out.append("A2 status did not preserve the post-Round-18 structural freeze and atom-first debt")
     if second.get("terminal_candidate_dispositions", {}).get(CHAPTER_ID) != "admitted_terminal_argument_reader_chapter": out.append("A2 terminal disposition missing")
     surfaces = data["surfaces"]
     required = {"index": ["Purpose-bounded information use and data rights"], "glossary": ["Information Lifecycle Transaction", "Purpose Lease"], "outline": ["### Privacy, Data Rights, and Information-Flow Governance"], "roadmap": [NEXT_PACKET, "P6.4-A1 and P6.4-A2"], "security": ["Privacy, Data Rights, and Information-Flow Governance now governs"], "custody": ["already constrained by Privacy, Data Rights"]}
@@ -70,6 +76,6 @@ def main() -> None:
     if failures: raise SystemExit("P6.4-A2 reader integration failed:\n- " + "\n- ".join(failures))
     probe = subprocess.run(["python3", "scripts/validate_information_lifecycle_transaction.py"], cwd=ROOT, capture_output=True, text=True)
     if probe.returncode: raise SystemExit(probe.stdout + probe.stderr)
-    print("P6.4-A2 reader integration passed: terminal argument chapter, nine-source four-role packet plus one bounded local implementation-pressure record, 2 targets/11 theorems, 6 arms/13 failures/15 competence gates unopened, 26 transaction mutations plus 10 integration mutations, 61-chapter reconciliation, A3 queued behind the Round 17 atom-first sequence, no compliance/support/release effect.")
+    print("P6.4-A2 reader integration passed: terminal argument chapter, nine-source four-role packet plus one bounded local implementation-pressure record, 2 targets/11 theorems, 6 arms/13 failures/15 competence gates unopened, 26 transaction mutations plus 10 integration mutations, 66-chapter reconciliation, post-Round-18 structural freeze and atom-first debt preserved, no compliance/support/release effect.")
 
 if __name__ == "__main__": main()

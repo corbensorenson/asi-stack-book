@@ -34,8 +34,21 @@ POST_ACTIVATION_EXPANSION_IDS = {
     "governed-operations-incident-command-and-graceful-degradation",
     "governed-model-training-distributed-optimization-and-scaling",
     "privacy-data-rights-and-information-flow-governance",
+    "perception-sensor-fusion-and-observation-trust",
+    "embodied-agency-real-time-control-and-physical-safety",
+    "human-ai-organizations-delegation-and-accountability",
+    "multi-agent-dynamics-collective-intelligence-and-systemic-risk",
+    "inner-alignment-mesa-optimization-and-learned-objective-integrity",
 }
 POST_ACTIVATION_FORMAL_TARGETS = {"lean:corrigibility.agency.generic_countermodel_routes"}
+POST_ACTIVATION_ATOM_IDS = {
+    "context-transactions-snapshots-mounts-and-taint.invariant.018",
+    "context-transactions-snapshots-mounts-and-taint.mechanism.019",
+    "fast-generation-architectures.invariant.019",
+    "fast-generation-architectures.mechanism.019",
+    "resource-economics-and-token-budgets.invariant.019",
+    "resource-economics-and-token-budgets.mechanism.019",
+}
 
 def accepted_upward_states() -> dict[str, str]:
     states: dict[str, str] = {}
@@ -65,15 +78,22 @@ def chapters(structure: dict[str, Any]) -> list[dict[str, Any]]:
 def expected_role_counts(structure: dict[str, Any]) -> Counter[str]:
     result: Counter[str] = Counter()
     for chapter in chapters(structure):
-        result.update({"core": 1, "problem": 1, "insufficiency": 1, "minimum": 1, "beyond_sota": 1})
-        result["mechanism"] += len(chapter.get("mechanism", []))
-        result["interface"] += len(chapter.get("interfaces", []))
-        result["invariant"] += len(chapter.get("invariants", []))
-        result["failure_mode"] += len(chapter.get("failure_modes", []))
-        result["formal_target"] += sum(
-            row.get("tag") not in POST_ACTIVATION_FORMAL_TARGETS
-            for row in chapter.get("proof_targets", [])
-        )
+        chapter_id = chapter["id"]
+        for role in ("core", "problem", "insufficiency", "minimum", "beyond_sota"):
+            if f"{chapter_id}.{role if role == 'core' else role + '.001'}" not in POST_ACTIVATION_ATOM_IDS:
+                result[role] += 1
+        for role, field in (
+            ("mechanism", "mechanism"),
+            ("interface", "interfaces"),
+            ("invariant", "invariants"),
+            ("failure_mode", "failure_modes"),
+        ):
+            for ordinal, _ in enumerate(chapter.get(field, []), 1):
+                if f"{chapter_id}.{role}.{ordinal:03d}" not in POST_ACTIVATION_ATOM_IDS:
+                    result[role] += 1
+        for row in chapter.get("proof_targets", []):
+            if row.get("tag") not in POST_ACTIVATION_FORMAL_TARGETS:
+                result["formal_target"] += 1
     return result
 
 

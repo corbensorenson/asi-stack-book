@@ -68,9 +68,9 @@ designers' intentions is not sufficient for ecosystem-level alignment.
 
 - `failure-modes-of-ungoverned-intelligence`: add gradual disempowerment as a
   distinct slow, distributed, cross-system failure class.
-- Future candidate `multi-agent-systemic-risk-and-agent-economies`: use as an
-  admission source for population and institutional dynamics, without treating
-  the candidate as admitted here.
+- `multi-agent-dynamics-collective-intelligence-and-systemic-risk`: use as an
+  admission source for population and institutional dynamics while preserving
+  the paper's conceptual, non-forecast evidence boundary.
 - Boundary links: `human-factors-and-meaningful-control-in-oversight`,
   `moral-uncertainty-and-value-conflict`,
   `inter-stack-protocols-identity-and-economic-exchange`, and

@@ -36,6 +36,7 @@ This source belongs in the failure-mode and authority chapters as the external p
 
 ## Book Chapters Supported
 
+- `inner-alignment-mesa-optimization-and-learned-objective-integrity` (Inner Alignment, Mesa-Optimization, and Learned-Objective Integrity)
 - `failure-modes-of-ungoverned-intelligence` (Failure Modes of Ungoverned Intelligence)
 - `system-boundaries-and-authority` (System Boundaries and Authority)
 - `recursive-self-improvement-boundaries` (Recursive Self-Improvement Boundaries)

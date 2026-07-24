@@ -55,6 +55,13 @@ which behaviors are indistinguishable on the training distribution, what
 evidence suggests internal optimization, and where deployment creates a chance
 for those policies to diverge. Good behavior is evidence about behavior. It is
 not proof of the objective that produced it.
+
+Replace “Is this model aligned?” with questions about which policies fit the
+observations and which deployment changes let them separate. Ask what
+interventions predict different outcomes, whether safety training hides an
+underlying policy, and which tools, memory, horizon, copies, or authority create
+new opportunity. These questions cannot eliminate hidden objectives, but they
+stop confidence from outrunning evidence for a use.
 :::
 
 ## Problem
@@ -220,6 +227,12 @@ case. Rollback must cover model, route, attached memory, monitor state, cached
 decisions, and descendants; restoring weights alone is not objective-risk
 recovery.
 
+The mechanism therefore produces a scoped evidence case, not a hidden-objective
+verdict. Its useful output is a set of live hypotheses, separating tests,
+competence and opportunity controls, mitigation residuals, and an authority
+decision that can be reopened whenever the learner or its operating environment
+changes.
+
 ### Required artifacts
 
 ```text
@@ -265,6 +278,11 @@ objective strategically active. Every consumer returns the exact changed state
 and affected decision lease rather than a scalar “aligned” flag.
 
 ## Invariants
+
+These invariants prevent the evidence case from collapsing distinctions that
+the mechanism cannot recover later. They apply when a test succeeds as well as
+when it fails, because an impressive behavioral result can launder uncertainty
+just as easily as an underpowered negative result can create false confidence.
 
 - Outer objective, training signal, learned behavior, and learned-objective
   hypothesis remain distinct.
@@ -402,6 +420,13 @@ passed here, and the current evidence supports only the need for the bounded
 integrity contract.
 
 ## Codex test plan
+
+### Planned formalization
+
+`lean:inner_alignment.behavior_does_not_identify_objective` will encode only a
+finite non-identification boundary: compliant observations cannot select one
+learned-objective hypothesis without separating evidence. It will not identify
+an actual model objective or prove alignment, safety, or deception absence.
 
 | Test | Purpose | Status |
 |---|---|---|

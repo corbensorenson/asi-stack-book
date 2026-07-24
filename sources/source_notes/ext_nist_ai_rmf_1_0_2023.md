@@ -36,6 +36,7 @@ This source belongs in the governance and methodology chapters as an official ri
 
 ## Book Chapters Supported
 
+- `human-ai-organizations-delegation-and-accountability` (Human-AI Organizations, Delegation, and Accountability)
 - `system-boundaries-and-authority` (System Boundaries and Authority)
 - `readiness-gates-residual-escrow-and-quarantine` (Readiness Gates, Residual Escrow, and Quarantine)
 - `living-book-methodology` (Living Book Methodology)
