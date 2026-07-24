@@ -257,6 +257,58 @@ changes to source, snapshot, address atlas, policy, authority, rights,
 evaluator, environment, consumer, or target use expire affected receipts and
 require revalidation or an explicit residual.
 
+### Retrieval-augmented generation is a governed pipeline, not a feature toggle
+
+RAG is often described as “search, add passages to the prompt, generate.” That
+description hides the transactions that determine whether retrieval helps.
+The source corpus may be incomplete, stale, poisoned, unauthorized, or
+fragmented. The retriever may optimize lexical or embedding similarity rather
+than answer sufficiency. The ranker may drop the decisive contradiction. The
+context builder may truncate or reorder evidence. The model may ignore the
+passage, cite it decoratively, or synthesize an unsupported claim.
+
+The original RAG architecture and Self-RAG are valuable comparators: one joins
+parametric generation with retrieved non-parametric memory; the other adds
+learned decisions about retrieval and critique. Neither removes the need for a
+typed retrieval receipt. The ABI should preserve at least six states:
+
+1. **available:** the frozen corpus and candidate frontier that could have been
+   searched;
+2. **retrieved:** the exact objects and scores returned by each query;
+3. **selected:** the items admitted after ranking, deduplication, rights,
+   provenance, conflict, freshness, and budget checks;
+4. **delivered:** the exact bytes, order, placement, and truncation visible to
+   the model;
+5. **used:** evidence that the consumer relied on, cited, contradicted, or
+   ignored an item; and
+6. **outcome-relevant:** causal or ablation evidence that the item changed the
+   result.
+
+These states support a **Retrieval Transaction Receipt** binding corpus and
+snapshot identity, access and purpose, query set, retriever/ranker versions,
+candidate and omitted frontiers, scores and filters, conflict handling,
+source-to-packet lineage, context placement, citation mapping, model and
+generation identity, cache state, downstream-use instrumentation, latency,
+cost, privacy, and residuals. A citation is not proof of use; use is not proof
+of support; support is not proof of truth.
+
+Competent evaluation separates retrieval from generation. Test source recall
+and ranking on independently answerable queries; packet sufficiency and
+faithfulness against source documents; model use through controlled
+counterfactual insertion, removal, and contradiction; and end-to-end utility
+against closed-book, long-context, ordinary RAG, Self-RAG, graph, hierarchical,
+and oracle-retrieval controls. Include unanswerable queries, stale versions,
+poisoned passages, near-duplicate conflicts, authority violations, multi-hop
+tails, “lost in the middle,” and a positive control whose answer changes only
+when the decisive source is delivered.
+
+Caching adds another distinction. Reusing a validated retrieval packet may
+save work only while corpus, policy, rights, query semantics, retriever,
+ranker, consumer, and freshness epochs remain compatible. A cache hit cannot
+inherit correctness from the request key. The receipt states whether the
+system reused candidates, a selected packet, physical KV state, or an output,
+and which invalidation checks ran before use.
+
 ### Certified bounded graph snapshots
 
 The historical-project lineage sharpens the static ABI at one seam: a context

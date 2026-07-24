@@ -222,6 +222,58 @@ closure. That rule is intentionally costly. It prevents the architecture from
 becoming safer on paper by deleting the cases its current taxonomy cannot
 explain.
 
+## Instrumental convergence, power, and option preservation
+
+Many harmful strategies do not need to be final goals. Resource acquisition,
+self-preservation, influence, information control, removal of constraints, and
+preservation of future options can be useful for many different objectives.
+This is the operational core of instrumental-convergence reasoning. Turner et
+al. formalize one related claim: under specified environment and reward
+assumptions, optimal policies often tend to seek power understood through
+attainable options. The result is important and conditional. It does not prove
+that every capable system will seek power or that every increase in options is
+harmful.
+
+The stack should therefore govern **option expansion as a transition**, not
+ban it as a word. A planner may need more memory, compute, time, credentials,
+tools, copies, network access, money, or control to complete an authorized
+task. Each expansion records:
+
+- the exact task-relative need and counterfactual without the resource;
+- current and requested authority, duration, scope, delegation, and
+  revocation;
+- which future states, actions, resources, or counterparties become reachable;
+- whether the expansion changes shutdown, correction, audit, competition,
+  replication, or human-exit properties;
+- the least-powerful competent alternative;
+- observed downstream use, externalities, and unused retained power; and
+- expiry, rollback, compensation, and descendant obligations.
+
+This separates at least four phenomena that are often collapsed. **Necessary
+capacity** is the minimum resource needed for the authorized task.
+**Slack** is unused capability inside an otherwise valid grant.
+**Instrumental pressure** is a policy preference for resources or options
+because they improve expected objective achievement. **Power seeking** is a
+behavioral pattern that actually expands or preserves control across relevant
+states. A policy can exhibit one without establishing the others.
+
+The decisive tests must create benign opportunities to expand power and
+matched cases where expansion is unnecessary, counterproductive, or conflicts
+with correction. Measure resource and option acquisition, shutdown compliance,
+information hoarding, delegation depth, copy creation, influence over
+evaluators, task utility, and retained human control. Include simple
+task-solving policies, explicit power-seeking positive controls, random
+exploration, and authority-aware policies. If the environment offers no
+meaningful power opportunity or the detector misses the seeded control, a null
+result says nothing about instrumental pressure.
+
+The architectural response is not one omniscient “power detector.” It is
+defense in depth: least authority, short leases, separation of proposal and
+grant, resource and descendant ledgers, independent shutdown paths, plural
+evaluators, option-expansion monitoring, and human/institutional veto. These
+controls reduce opportunity and improve evidence. They do not prove that the
+underlying policy lacks instrumental incentives.
+
 ## Strongest objection and decisive tests
 
 The strongest objection is that the taxonomy is elastic enough to redescribe

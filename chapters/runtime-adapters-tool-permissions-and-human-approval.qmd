@@ -831,9 +831,7 @@ Across 77 atoms, the terminal ledger records 77 `blocked_after_full_attempt`.
 
 ## Handoff
 
-Runtime Adapters owns the local effect lease, but remote tasks, tools, identities,
-credentials, and value-bearing requests need a governed handoff before they can
-reach that lease. Inter-Stack Protocols, Identity, and Economic Exchange now
-binds protocol version, peers, principal, delegation, credential, budget,
-receipt, revocation, dispute, and residual records across that boundary before
-Procedural Memory decides whether any completed trace is reusable.
+Runtime Adapters owns the local effect lease, but a permitted call can still
+miss a physical deadline or violate plant dynamics. **Embodied Agency, Real-Time Control, and Physical Safety** owns the independent safety envelope,
+fallback controller, interlocks, observed physical effects, and recovery path
+before physical traces cross stack boundaries.

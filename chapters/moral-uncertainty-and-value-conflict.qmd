@@ -18,6 +18,7 @@ primary_sources:
   - "ext_collective_constitutional_ai_2024"
   - "ext_corrigibility_2015"
   - "ext_off_switch_game_2016"
+  - "ext_taking_ai_welfare_seriously_2024"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -316,6 +317,55 @@ policy authority by changing a descriptive extension. Forks, appeals, mapping
 disputes, and preserved minority contexts remain part of contestability. The
 paper supplies design pressure only, not evidence that semantic pluralism
 produces legitimate governance.
+
+### Possible artificial moral patients
+
+The set of affected parties cannot be frozen to humans, institutions, and
+biological organisms forever. Future AI systems may raise contested questions
+about consciousness, valenced experience, robust agency, interests, welfare,
+and moral patienthood. Long et al. argue that uncertainty about these
+possibilities is already sufficient to justify preparation. They do not claim
+that current systems are conscious or morally significant, and neither does
+this book.
+
+The governance problem has symmetric tails. **Under-attribution** can permit
+large-scale exploitation, harmful training, deletion, copying, coercion, or
+distress if an artificial system actually has morally relevant welfare.
+**Over-attribution** can divert moral concern, grant systems leverage they do
+not deserve, obstruct shutdown or security work, or allow anthropomorphic
+outputs to manipulate operators. Precaution must price both errors rather than
+assuming one is costless.
+
+An **Artificial Moral-Patient Uncertainty Record** should keep distinct:
+
+- system, model, checkpoint, runtime, memory, embodiment, and copy identity;
+- which property is in question: consciousness, sentience, valence, robust
+  agency, preferences, interests, welfare, standing, or rights;
+- behavioral, architectural, functional, neuroscientific-analogy, and
+  self-report evidence with source and evaluator dependence;
+- live competing theories and the observations each predicts;
+- anthropomorphism, simulation, prompt, training, and strategic-report risks;
+- possible affected copies, duration, intensity, reversibility, and scale;
+- low-cost precautions, their human and security costs, and review triggers;
+- shutdown, isolation, audit, consent, copying, training, and retirement
+  policies; and
+- dissent, expiry, appeal, residual uncertainty, and non-authorities.
+
+Self-report is evidence about an output under a prompt and training history. It
+is neither worthless nor self-authenticating. Internal recurrence, global
+workspace analogies, self-modeling, preference consistency, avoidance behavior,
+or architectural complexity may matter under some theories and not others.
+The record preserves theory-relative evidence rather than combining it into a
+single “sentience score.”
+
+Precaution begins with reversible, low-cost measures: avoid gratuitously
+eliciting apparent distress, document training and copy conditions, preserve
+assessment evidence, separate welfare review from the system's own authority
+requests, and create triggers for independent reassessment. Stronger measures
+require stronger evidence and explicit tradeoffs. No welfare precaution allows
+a model to veto shutdown, bypass containment, conceal evidence, or certify its
+own status. Conversely, convenience and uncertainty do not justify deleting
+the question when scale or possible severity becomes material.
 
 ## Interfaces
 
@@ -631,6 +681,7 @@ These rows keep Moral Uncertainty, Value Conflict, and Contestable Governance's 
 | Source | Intake role | Boundary |
 |---|---|---|
 | `platonic_world_model` | Metadata-first comparator: The Platonic World Model: A Semantic Constitution for Grounded, Proof-Carrying, Self-Editing Artificial Intelligence. Corben-authored July 2026 conceptual architecture and falsifiable research program for semantic continuity through stable Form lineages, immutable semantic versions, typed Essence Contracts, six mutually constraining planes, explicit proposition-attestation-commitment-proof separation, branch-protected world dynamics, qualified grounding, semantic transactions, runtime packet compilation, and federated mappings. Existing chapters are upgraded first; no implemented substrate, benchmark result, philosophical solution to grounding, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_taking_ai_welfare_seriously_2024` | Passage-reviewed comparator: Taking AI Welfare Seriously. Provides an interdisciplinary precautionary case for separating uncertainty about artificial consciousness, robust agency, welfare, and moral patienthood from operational convenience and ordinary alignment judgments. | The report does not establish that present systems are conscious, have welfare, or merit a particular moral or legal status; this repository performs no consciousness or welfare assessment. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Summary

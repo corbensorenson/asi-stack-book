@@ -15,6 +15,7 @@ This generated audit checks every active chapter against the architecture-refere
 | `human-intent-as-a-formal-input` | pass | bounded in insufficiency section | complete packet surface |
 | `human-factors-and-meaningful-control-in-oversight` | pass | bounded in insufficiency section | complete packet surface |
 | `constitutional-alignment-substrate` | pass | bounded in insufficiency section | complete packet surface |
+| `inner-alignment-mesa-optimization-and-learned-objective-integrity` | pass | explicit heading | complete packet surface |
 | `moral-uncertainty-and-value-conflict` | pass | bounded in insufficiency section | complete packet surface |
 | `stable-capability-fields` | pass | bounded in insufficiency section | complete packet surface |
 | `capability-replacement-and-rollback` | pass | bounded in insufficiency section | complete packet surface |
@@ -25,6 +26,7 @@ This generated audit checks every active chapter against the architecture-refere
 | `recursive-self-improvement-boundaries` | pass | explicit heading | complete packet surface |
 | `open-ended-improvement-engines` | pass | bounded in insufficiency section | complete packet surface |
 | `intent-to-execution-contracts` | pass | explicit heading | complete packet surface |
+| `perception-sensor-fusion-and-observation-trust` | pass | explicit heading | complete packet surface |
 | `planning-as-a-control-layer` | pass | explicit heading | complete packet surface |
 | `governed-world-models-and-reality-grounding` | pass | explicit heading | complete packet surface |
 | `cognitive-compilation-and-semantic-ir` | pass | explicit heading | complete packet surface |
@@ -34,9 +36,12 @@ This generated audit checks every active chapter against the architecture-refere
 | `claim-ledgers-and-belief-revision` | pass | explicit heading | complete packet surface |
 | `spinoza-verification-and-proof-carrying-claims` | pass | explicit heading | complete packet surface |
 | `labor-os-and-typed-jobs` | pass | explicit heading | complete packet surface |
+| `human-ai-organizations-delegation-and-accountability` | pass | explicit heading | complete packet surface |
 | `artifact-graphs-audit-logs-and-replay` | pass | explicit heading | complete packet surface |
 | `runtime-adapters-tool-permissions-and-human-approval` | pass | bounded in insufficiency section | complete packet surface |
+| `embodied-agency-real-time-control-and-physical-safety` | pass | explicit heading | complete packet surface |
 | `inter-stack-protocols-identity-and-economic-exchange` | pass | bounded in insufficiency section | complete packet surface |
+| `multi-agent-dynamics-collective-intelligence-and-systemic-risk` | pass | explicit heading | complete packet surface |
 | `procedural-memory-and-cognitive-loop-closure` | pass | explicit heading | complete packet surface |
 | `routing-heads-and-specialist-cores` | pass | bounded in insufficiency section | complete packet surface |
 | `replaceable-cognitive-substrates-beyond-transformer-monoculture` | pass | bounded in insufficiency section | complete packet surface |
@@ -68,6 +73,6 @@ This generated audit checks every active chapter against the architecture-refere
 | `living-book-methodology` | pass | bounded in insufficiency section | complete packet surface |
 | `open-research-agenda-and-bibliography-plan` | pass | bounded in insufficiency section | complete packet surface |
 
-Summary: 61 of 61 active chapters pass; 0 remain open.
+Summary: 66 of 66 active chapters pass; 0 remain open.
 
 Non-claims: this is a structural and bounded semantic audit, not proof of prose quality, source interpretation, empirical validity, formal adequacy, deployment, safety, or independent review.

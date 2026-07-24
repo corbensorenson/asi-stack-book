@@ -16,6 +16,10 @@ primary_sources:
   - "beastbrain_timeless"
   - "aletheia"
   - "moecot"
+  - "ext_scaling_laws_neural_language_models_2020"
+  - "ext_chinchilla_compute_optimal_2022"
+  - "ext_emergent_abilities_2022"
+  - "ext_emergence_mirage_2023"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -151,6 +155,61 @@ verification may dominate because route prediction is unreliable and errors
 are expensive. The architecture should be allowed to learn that selectivity
 has no value in such a regime. “Use minimum viable intelligence” is a policy
 candidate, not an axiom.
+
+### Scaling laws, emergence, and capability forecasting
+
+Efficiency governance must reason about scale without turning an empirical fit
+into destiny. Kaplan et al. report power-law relationships between
+cross-entropy loss, model size, data, and compute in a bounded language-model
+regime. Hoffmann et al. show why the allocation matters: within their studied
+family, a smaller model trained on substantially more data outperformed larger
+undertrained systems under a comparable compute budget. The policy lesson is
+not one eternal parameter-to-token ratio. It is that model size, data quantity
+and quality, optimizer, architecture, training duration, and lifecycle cost
+must be planned jointly and re-fit when the regime changes.
+
+A **Scaling Forecast Record** should bind:
+
+- architecture, tokenizer, objective, optimizer, data mixture and quality;
+- parameter, token, FLOP, wall-time, energy, hardware, and failure
+  denominators;
+- fitted response variable and why it matters;
+- training range, uncertainty, residual structure, and break tests;
+- downstream capability and risk metrics kept separate from training loss;
+- prospective predictions, decision thresholds, and later backtests; and
+- invalidation triggers for architecture, curriculum, post-training,
+  retrieval, tool, routing, memory, or inference-time-compute changes.
+
+The distinction between loss and capability is essential. A smooth
+cross-entropy curve can coexist with a task metric that appears to turn on
+abruptly. Wei et al. catalogue such apparent emergent abilities. Schaeffer,
+Miranda, and Koyejo show that discontinuous or nonlinear scoring can create
+apparent emergence from smoothly changing outputs in studied settings. Both
+observations matter: the former warns that operational capabilities may cross
+useful or dangerous thresholds; the latter warns that the threshold may be a
+measurement artifact.
+
+The stack therefore does not choose “emergence is real” or “emergence is a
+mirage” as a global position. It runs a threshold protocol:
+
+1. freeze the capability definition and operational consequence;
+2. report continuous, probabilistic, and decision-threshold metrics together;
+3. control prompt, contamination, model family, loss, and evaluation budget;
+4. fit smooth and change-point alternatives prospectively;
+5. test sensitivity to scoring resolution and aggregation;
+6. backtest the forecast on later checkpoints without outcome-aware refitting;
+7. stop or narrow authority when a risk-relevant threshold is crossed even if
+   its mechanism remains uncertain; and
+8. decline a broad emergence claim unless the transition survives alternate
+   metrics, neighboring scales, seeds, and independent reproduction.
+
+Forecasting is useful even when it is wrong—if the error is retained. A
+forecast residual can expose a new data regime, architecture interaction,
+evaluation artifact, or capability mechanism. Deleting the failed forecast
+would make scaling analysis look accurate while depriving the stack of its most
+important evidence. Model scaling, routed composition, retrieval, distillation,
+recurrence, test-time search, and tool use should compete on the same useful-
+outcome and lifecycle-cost frontier rather than receive separate accounting.
 
 ## Alternatives, failure case, and decisive evidence
 
@@ -369,6 +428,18 @@ The external comparator set is now wider than the original three-record anchor. 
 | Fast generation | `ext_speculative_decoding_2022`, `ext_multi_token_prediction_2024`, `ext_medusa_2024`, `ext_eagle_2024` | Draft/verify/accept accounting, future-token proposal heads, multi-head candidate generation, feature-level drafting, acceptance rate, and verifier cost. | No local speedup, quality preservation, distribution-preservation audit, MTP model, or workload transfer claim. |
 | Benchmark pressure | `ext_bigbench_2022` | Broad capability-suite pressure and the need to separate score, cost, residuals, and hidden route work. | No BIG-bench reproduction, benchmark score, or general capability claim. |
 
+### Manifest source assignment reconciliation
+
+These rows keep The Efficient ASI Hypothesis's manifest assignments visible at their recorded review boundary. Passage review does not establish local reproduction, performance, safety, deployment, or support-state movement.
+
+| Source | Intake role | Boundary |
+|---|---|---|
+| `ext_scaling_laws_neural_language_models_2020` | Passage-reviewed comparator: Scaling Laws for Neural Language Models. Supplies empirical prior art for smooth loss scaling with model size, data, and compute inside the studied language-model family, establishing why route and capability planning should use fitted curves rather than scale folklore. | The reported relationships are metric-, architecture-, data-, and regime-bound; this repository has not reproduced the runs, and loss scaling is not a downstream-capability or safety forecast. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_chinchilla_compute_optimal_2022` | Passage-reviewed comparator: Training Compute-Optimal Large Language Models. Supplies the compute-allocation result that parameter count and training-token count must be optimized jointly, countering the assumption that the largest parameter count is automatically the most efficient use of a fixed budget. | The optimum is fitted within the authors' model, data, and compute regime; the repository has not reproduced the training campaign and does not treat the prescription as architecture-independent. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_emergent_abilities_2022` | Passage-reviewed comparator: Emergent Abilities of Large Language Models. Provides evidence that some benchmark scores appeared discontinuous across reported model scales, motivating threshold surveillance and held-out capability probes rather than assuming every measured ability improves smoothly. | The catalogued effects depend on model family, prompting, task, and metric and do not establish prospective predictability or abrupt underlying mechanism changes. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_emergence_mirage_2023` | Passage-reviewed comparator: Are Emergent Abilities of Large Language Models a Mirage?. Provides the necessary measurement counterweight: discontinuous scoring rules can transform smoothly improving outputs into apparently abrupt benchmark abilities. | The result explains studied apparent discontinuities but does not prove that every capability transition is smooth, measurement-induced, or operationally harmless. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+
+<!-- manifest-source-reconciliation:end -->
 ## Summary
 
 The efficient path to advanced capability is an economy of cognition. Capability grows when work can move to the smallest adequate capability, solved work can be reused, lawful structure can be compressed without hiding repair cost, and fallback routes remain available when the cheap path is not enough.

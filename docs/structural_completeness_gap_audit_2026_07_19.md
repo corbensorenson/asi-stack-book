@@ -1,6 +1,20 @@
 # ASI Stack Structural Completeness Gap Audit — 2026-07-19
 
-Status: **second-tranche coverage audit; roadmap admission does not imply manifest admission**
+Status: **historical second-tranche audit, amended by the terminal Round 18 breadth transaction**
+
+> **2026-07-24 amendment.** The bounded Round 18 transaction admitted
+> `perception-sensor-fusion-and-observation-trust`,
+> `embodied-agency-real-time-control-and-physical-safety`,
+> `human-ai-organizations-delegation-and-accountability`, and
+> `multi-agent-dynamics-collective-intelligence-and-systemic-risk` from this
+> audit, plus the separately identified
+> `inner-alignment-mesa-optimization-and-learned-objective-integrity` boundary.
+> It also routed seven section-scale gaps into existing owners. The working
+> manifest is now 66 chapters and the structural freeze is restored. See
+> `docs/round_18_bounded_breadth_completion_adjudication_2026_07_24.md` for the
+> controlling decision, stop rule, non-claims, and post-transaction sequence.
+> Candidate counts and absence scans below remain a historical record of the
+> 2026-07-19 audit; they are not current-state claims.
 
 This audit asks which responsibilities required to build, govern, operate, and
 improve an advanced general intelligence still lack a primary owner after the

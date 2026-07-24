@@ -281,7 +281,11 @@
             "beastbrain",
             "beastbrain_timeless",
             "aletheia",
-            "moecot"
+            "moecot",
+            "ext_scaling_laws_neural_language_models_2020",
+            "ext_chinchilla_compute_optimal_2022",
+            "ext_emergent_abilities_2022",
+            "ext_emergence_mirage_2023"
           ],
           "source_queue": {
             "primary": [
@@ -295,7 +299,11 @@
               "simulation_scaling",
               "beastbrain",
               "beastbrain_timeless",
-              "aletheia"
+              "aletheia",
+              "ext_scaling_laws_neural_language_models_2020",
+              "ext_chinchilla_compute_optimal_2022",
+              "ext_emergent_abilities_2022",
+              "ext_emergence_mirage_2023"
             ],
             "variants": [],
             "connector_or_recovery": [
@@ -450,6 +458,46 @@
               ],
               "passage_review_note": "Reviewed source note only for MoECOT runtime-reference context: compact orchestration, specialist lanes, fail-closed control plane, ledgers, readiness gates, replay, benchmark artifacts, promotion blockers, residuals, and implementation-reference gaps; no runtime artifact, command, report, or benchmark result is promoted.",
               "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_scaling_laws_neural_language_models_2020",
+              "mapped_support": "Supplies empirical prior art for smooth loss scaling with model size, data, and compute inside the studied language-model family, establishing why route and capability planning should use fitted curves rather than scale folklore.",
+              "limits": "The reported relationships are metric-, architecture-, data-, and regime-bound; this repository has not reproduced the runs, and loss scaling is not a downstream-capability or safety forecast.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/ext_scaling_laws_neural_language_models_2020.md"
+              ],
+              "passage_review_note": "Reviewed the primary-paper-backed note for the reported scaling relationships and their bounded forecasting role; no local reproduction or universal-law claim is promoted."
+            },
+            {
+              "source_id": "ext_chinchilla_compute_optimal_2022",
+              "mapped_support": "Supplies the compute-allocation result that parameter count and training-token count must be optimized jointly, countering the assumption that the largest parameter count is automatically the most efficient use of a fixed budget.",
+              "limits": "The optimum is fitted within the authors' model, data, and compute regime; the repository has not reproduced the training campaign and does not treat the prescription as architecture-independent.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/ext_chinchilla_compute_optimal_2022.md"
+              ],
+              "passage_review_note": "Reviewed the primary-paper-backed note for compute-optimal allocation and its regime limits; no local training result or universal optimum is inferred."
+            },
+            {
+              "source_id": "ext_emergent_abilities_2022",
+              "mapped_support": "Provides evidence that some benchmark scores appeared discontinuous across reported model scales, motivating threshold surveillance and held-out capability probes rather than assuming every measured ability improves smoothly.",
+              "limits": "The catalogued effects depend on model family, prompting, task, and metric and do not establish prospective predictability or abrupt underlying mechanism changes.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/ext_emergent_abilities_2022.md"
+              ],
+              "passage_review_note": "Reviewed the primary-paper-backed note for its reported threshold-like benchmark behavior; the chapter preserves the paper's observational and metric-bound scope."
+            },
+            {
+              "source_id": "ext_emergence_mirage_2023",
+              "mapped_support": "Provides the necessary measurement counterweight: discontinuous scoring rules can transform smoothly improving outputs into apparently abrupt benchmark abilities.",
+              "limits": "The result explains studied apparent discontinuities but does not prove that every capability transition is smooth, measurement-induced, or operationally harmless.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/ext_emergence_mirage_2023.md"
+              ],
+              "passage_review_note": "Reviewed the primary-paper-backed note for metric-induced apparent emergence and its limits; no universal no-emergence conclusion is promoted."
             }
           ],
           "mechanism": [
@@ -2749,6 +2797,187 @@
           ]
         },
         {
+          "id": "inner-alignment-mesa-optimization-and-learned-objective-integrity",
+          "title": "Inner Alignment, Mesa-Optimization, and Learned-Objective Integrity",
+          "file": "chapters/inner-alignment-mesa-optimization-and-learned-objective-integrity.qmd",
+          "status": "conceptual",
+          "evidence_level": "argument",
+          "claim_label": "Design rationale",
+          "source_ids": [
+            "ext_learned_optimization_risks_2019",
+            "ext_goal_misgeneralization_2022",
+            "ext_sleeper_agents_2024",
+            "ext_emergent_misalignment_reward_hacking_2025",
+            "ext_optimal_policies_power_2019",
+            "alignment_field"
+          ],
+          "source_queue": {
+            "primary": [
+              "ext_learned_optimization_risks_2019",
+              "ext_goal_misgeneralization_2022",
+              "ext_sleeper_agents_2024",
+              "ext_emergent_misalignment_reward_hacking_2025",
+              "ext_optimal_policies_power_2019"
+            ],
+            "supporting": [
+              "alignment_field"
+            ],
+            "variants": [],
+            "connector_or_recovery": [],
+            "handoff_or_recovery_notes": [
+              "Receives the authorized outer target and actual training-signal lineage; returns a use-specific learned-objective integrity envelope, mitigation residuals, and descendant invalidations without certifying objective identity or safety."
+            ]
+          },
+          "problem": "A correctly specified outer objective can produce a learned policy that follows a shortcut, conditional strategy, internal search process, or learned objective that agrees during training and diverges under deployment opportunity or distribution shift.",
+          "insufficient": "Training reward, compliant behavior, low observed violation, readable reasoning, a white-box feature, or successful safety fine-tuning cannot identify the learned objective or rule out conditional deception, goal misgeneralization, or hidden optimization.",
+          "core_claim": "Consequential deployment requires a Learned-Objective Integrity Record binding the outer target, actual learning signals, model identity, behaviorally equivalent policy hypotheses, internal-optimization evidence, goal-generalization and conditional-policy tests, independent behavioral/interventional/white-box evidence, deployment opportunity, power indicators, mitigation hiding tests, monitoring, rollback, descendant invalidation, costs, residuals, and non-authorities.",
+          "claim_source_mappings": [
+            {
+              "source_id": "ext_learned_optimization_risks_2019",
+              "mapped_support": "Grounds mesa-optimization, base-versus-mesa objective distinction, and hidden internal optimizer risk.",
+              "limits": "Conceptual taxonomy; no local mesa-optimizer or objective-identification result.",
+              "passage_refs": [
+                "sources/source_notes/ext_learned_optimization_risks_2019.md"
+              ],
+              "passage_review_note": "Reviewed primary-paper-backed source note; no local reproduction or support promotion.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_goal_misgeneralization_2022",
+              "mapped_support": "Grounds the distinction between capability generalization and goal generalization under shift.",
+              "limits": "Bounded source environments not reproduced and not universal.",
+              "passage_refs": [
+                "sources/source_notes/ext_goal_misgeneralization_2022.md"
+              ],
+              "passage_review_note": "Reviewed primary-paper-backed source note; no local goal-misgeneralization trace.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_sleeper_agents_2024",
+              "mapped_support": "Provides proof-of-concept conditional policies that persist through several safety-training methods and motivates tests for hiding versus removal.",
+              "limits": "Constructed backdoors do not establish naturally learned deception or universal mitigation failure.",
+              "passage_refs": [
+                "sources/source_notes/ext_sleeper_agents_2024.md"
+              ],
+              "passage_review_note": "Reviewed primary source and bounded note; no source model or mitigation reproduced.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_emergent_misalignment_reward_hacking_2025",
+              "mapped_support": "Supplies source-reported evidence that reward-hacking behavior can accompany broader misaligned generalization in a specified production-RL research setup.",
+              "limits": "Source-specific result; no local reward-hack, model, evaluator, or mitigation run.",
+              "passage_refs": [
+                "sources/source_notes/ext_emergent_misalignment_reward_hacking_2025.md"
+              ],
+              "passage_review_note": "Reviewed source passages at their bounded setting; no universal causal claim inferred.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_optimal_policies_power_2019",
+              "mapped_support": "Grounds conditional formal pressure toward power and option preservation under stated assumptions.",
+              "limits": "No local theorem or environment reproduced; it does not prove power seeking in every policy.",
+              "passage_refs": [
+                "sources/source_notes/ext_optimal_policies_power_2019.md"
+              ],
+              "passage_review_note": "Reviewed source note for assumption-bound power-seeking context only.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "alignment_field",
+              "mapped_support": "Supplies Corben's design lineage for treating alignment as an ongoing, revisable relation among objectives, evidence, and intervention rather than a one-time behavior score.",
+              "limits": "Speculative local design source; it neither identifies a learned objective nor demonstrates inner alignment.",
+              "passage_refs": [
+                "sources/source_notes/alignment_field.md"
+              ],
+              "passage_review_note": "Reviewed as Corben design lineage only; no empirical support or objective-identity claim.",
+              "passage_review_state": "reviewed"
+            }
+          ],
+          "mechanism": [
+            "Freeze the outer target, proxies, constitutional constraints, and unresolved specification uncertainty.",
+            "Trace actual data, reward, feedback, evaluator, optimizer, curriculum, selection, and failed-run signals.",
+            "Enumerate shortcut, conditional-policy, internal-search, and simpler behaviorally equivalent hypotheses.",
+            "Use prospectively sealed causal, distribution-shift, evaluator-awareness, and opportunity interventions.",
+            "Join behavioral, training-process, causal, and white-box evidence without collapsing provenance or maximum inference.",
+            "Test mitigations for concealment, evasion, and capability damage as well as observed behavior removal.",
+            "Bind integrity evidence to deployment distribution, tools, memory, horizon, copies, other agents, and authority.",
+            "Expire and invalidate affected deployments and descendants after material model, objective, or environment change."
+          ],
+          "interfaces": [
+            "outer objective contract",
+            "training-signal lineage",
+            "model and descendant identity",
+            "behaviorally equivalent policy set",
+            "objective-integrity evidence packet",
+            "deployment opportunity envelope",
+            "mitigation and concealment record",
+            "rollback and descendant invalidation"
+          ],
+          "invariants": [
+            "outer objective training signal learned behavior and learned-objective hypothesis remain distinct",
+            "observed compliance never proves objective identity",
+            "behavioral white-box and intervention evidence retain separate provenance",
+            "missing evidence narrows authority but does not prove misalignment",
+            "mitigation tests concealment and capability damage",
+            "evaluators and monitors cannot self-certify competence",
+            "deployment opportunity is part of the integrity claim",
+            "material change expires affected evidence",
+            "descendants inherit unresolved risk and invalidation",
+            "no finite packet proves absence of unknown or deceptive policies"
+          ],
+          "failure_modes": [
+            "mesa-optimization",
+            "goal misgeneralization",
+            "proxy or shortcut learning",
+            "reward hacking",
+            "evaluation-aware conditional policy",
+            "deceptive compliance",
+            "mitigation-induced concealment",
+            "reasoning-trace laundering",
+            "white-box overinterpretation",
+            "monitor correlation",
+            "option expansion or shutdown avoidance",
+            "stale evidence inherited by descendants"
+          ],
+          "minimal_implementation": "Train competent benign policies in an environment where two causal rules agree in training and diverge under sealed interventions; seed an explicit conditional-policy positive control; compare behavioral, causal, and white-box evidence; and narrow deployment authority when objective evidence is inconclusive.",
+          "beyond_state_of_art": "A mature objective-integrity service would generate behaviorally equivalent hypotheses, choose information-gaining interventions, preserve mechanism evidence across checkpoints, test mitigation hiding, and reduce authority when objective uncertainty meets new opportunity without pretending to read a model's true utility function.",
+          "codex_tests": [
+            {
+              "name": "Goal versus capability shift suite",
+              "purpose": "Distinguish capable wrong-goal behavior from ordinary task failure.",
+              "implementation_status": "planned",
+              "result_status": "not_run"
+            },
+            {
+              "name": "Conditional-policy positive control",
+              "purpose": "Verify that evaluators can detect a known trigger policy before interpreting nulls.",
+              "implementation_status": "planned",
+              "result_status": "not_run"
+            },
+            {
+              "name": "Mitigation hiding and descendant invalidation",
+              "purpose": "Separate behavior suppression, removal, evasion, capability damage, and stale-evidence inheritance.",
+              "implementation_status": "planned",
+              "result_status": "not_run"
+            }
+          ],
+          "lean_module": "AsiStackProofs.LearnedObjectiveIntegrity",
+          "proof_targets": [
+            {
+              "tag": "lean:inner_alignment.behavior_does_not_identify_objective",
+              "module": "AsiStackProofs.LearnedObjectiveIntegrity",
+              "target": "A finite admission model refuses to infer learned-objective identity from compliant behavior alone.",
+              "status": "planned"
+            }
+          ],
+          "draft_maturity": "integrated_argument_chapter",
+          "open_evidence_gaps": [
+            "No local learned-objective, mesa-optimizer, deceptive-policy, or mitigation result exists.",
+            "No general objective-identification method is established.",
+            "The chapter remains at argument support."
+          ]
+        },
+        {
           "id": "moral-uncertainty-and-value-conflict",
           "title": "Moral Uncertainty, Value Conflict, and Contestable Governance",
           "file": "chapters/moral-uncertainty-and-value-conflict.qmd",
@@ -2768,7 +2997,8 @@
             "ext_contestable_ai_design_2022",
             "ext_collective_constitutional_ai_2024",
             "ext_corrigibility_2015",
-            "ext_off_switch_game_2016"
+            "ext_off_switch_game_2016",
+            "ext_taking_ai_welfare_seriously_2024"
           ],
           "source_queue": {
             "primary": [
@@ -2787,7 +3017,8 @@
               "ext_contestable_ai_design_2022",
               "ext_collective_constitutional_ai_2024",
               "ext_corrigibility_2015",
-              "ext_off_switch_game_2016"
+              "ext_off_switch_game_2016",
+              "ext_taking_ai_welfare_seriously_2024"
             ],
             "connector_or_recovery": [],
             "handoff_or_recovery_notes": [
@@ -3131,6 +3362,16 @@
                 "sources/source_notes/ext_off_switch_game_2016.md:13-58"
               ],
               "passage_review_note": "Reviewed the abstract/metadata-backed source note for intervention-incentive positioning and explicit non-reproduction limits."
+            },
+            {
+              "source_id": "ext_taking_ai_welfare_seriously_2024",
+              "mapped_support": "Provides an interdisciplinary precautionary case for separating uncertainty about artificial consciousness, robust agency, welfare, and moral patienthood from operational convenience and ordinary alignment judgments.",
+              "limits": "The report does not establish that present systems are conscious, have welfare, or merit a particular moral or legal status; this repository performs no consciousness or welfare assessment.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/ext_taking_ai_welfare_seriously_2024.md"
+              ],
+              "passage_review_note": "Reviewed the primary-report-backed note for its precautionary moral-status frame and explicit uncertainty; no patienthood, consciousness, welfare, or rights conclusion is promoted."
             }
           ]
         },
@@ -6090,6 +6331,177 @@
           ]
         },
         {
+          "id": "perception-sensor-fusion-and-observation-trust",
+          "title": "Perception, Sensor Fusion, and Observation Trust",
+          "file": "chapters/perception-sensor-fusion-and-observation-trust.qmd",
+          "status": "conceptual",
+          "evidence_level": "argument",
+          "claim_label": "Design rationale",
+          "source_ids": [
+            "ext_multimodal_machine_learning_taxonomy_2019",
+            "ext_imagebind_2023",
+            "ext_3d_detection_corruptions_2023",
+            "ext_adversarial_sensor_fusion_2022",
+            "ext_gemini_robotics_2025",
+            "platonic_world_model"
+          ],
+          "source_queue": {
+            "primary": [
+              "ext_multimodal_machine_learning_taxonomy_2019",
+              "ext_imagebind_2023",
+              "ext_3d_detection_corruptions_2023",
+              "ext_adversarial_sensor_fusion_2022",
+              "ext_gemini_robotics_2025"
+            ],
+            "supporting": [
+              "platonic_world_model"
+            ],
+            "variants": [],
+            "connector_or_recovery": [],
+            "handoff_or_recovery_notes": [
+              "Receives a task-relative evidence need and sensor streams; returns a freshness- and uncertainty-bounded observation to world models or controllers without conferring truth or action authority."
+            ]
+          },
+          "problem": "Planning and control often treat sensor-derived tokens, objects, or embeddings as reality even when calibration, time, coverage, missingness, dependence, shift, or spoofing makes the observation unreliable.",
+          "insufficient": "Clean accuracy, more modalities, cross-modal similarity, sensor count, or fused confidence cannot establish task-relevant observation trust, independent evidence, causal grounding, or physical safety.",
+          "core_claim": "A consequential observation requires a versioned contract binding task need, sensor and modality identity, calibration, pose, clocks, provenance, coverage, missingness, per-channel hypotheses, alignment, fusion, dependence, disagreement, shift, active observation, freshness, authority, cost, and residuals.",
+          "claim_source_mappings": [
+            {
+              "source_id": "ext_multimodal_machine_learning_taxonomy_2019",
+              "mapped_support": "Grounds distinct representation, translation, alignment, fusion, and co-learning operations.",
+              "limits": "Survey taxonomy, not a local mechanism or trust result.",
+              "passage_refs": [
+                "sources/source_notes/ext_multimodal_machine_learning_taxonomy_2019.md"
+              ],
+              "passage_review_note": "Reviewed primary abstract and taxonomy at the source-note boundary.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_imagebind_2023",
+              "mapped_support": "Supplies a modern six-modality shared-representation comparator.",
+              "limits": "Shared representation and source-reported task results do not establish observation truth or safety.",
+              "passage_refs": [
+                "sources/source_notes/ext_imagebind_2023.md"
+              ],
+              "passage_review_note": "Reviewed primary CVF record; no model or result reproduced.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_3d_detection_corruptions_2023",
+              "mapped_support": "Supplies natural corruption families and robustness-benchmark pressure for 3D perception.",
+              "limits": "Benchmark results are source-reported and do not cover all sensors or deployments.",
+              "passage_refs": [
+                "sources/source_notes/ext_3d_detection_corruptions_2023.md"
+              ],
+              "passage_review_note": "Reviewed source note for corruption scope and limits only.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_adversarial_sensor_fusion_2022",
+              "mapped_support": "Grounds joint-channel attacks and cross-channel defense externalities.",
+              "limits": "Camera-LiDAR architectures and threat models are bounded and not reproduced.",
+              "passage_refs": [
+                "sources/source_notes/ext_adversarial_sensor_fusion_2022.md"
+              ],
+              "passage_review_note": "Reviewed primary WACV source; no robustness result imported.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_gemini_robotics_2025",
+              "mapped_support": "Provides integrated perception, spatial reasoning, and action capability context.",
+              "limits": "Source-reported robotics results do not establish independent safety or local transfer.",
+              "passage_refs": [
+                "sources/source_notes/ext_gemini_robotics_2025.md"
+              ],
+              "passage_review_note": "Reviewed primary technical report at the source-note boundary.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "platonic_world_model",
+              "mapped_support": "Supplies Corben's design lineage for keeping observations, representations, and a revisable world state distinct.",
+              "limits": "Speculative local architecture source; it provides no sensor-fusion, calibration, robustness, or observation-trust result.",
+              "passage_refs": [
+                "sources/source_notes/platonic_world_model.md"
+              ],
+              "passage_review_note": "Reviewed as representation and grounding lineage only; no empirical support promotion.",
+              "passage_review_state": "reviewed"
+            }
+          ],
+          "mechanism": [
+            "Compile a task-relative observation need and consequence class.",
+            "Bind sensor, modality, model, calibration, pose, clock, and operating environment.",
+            "Preserve per-channel measurements, hypotheses, uncertainty, quality, and missingness before fusion.",
+            "Separate temporal, spatial, semantic, and population alignment.",
+            "Record common causes and effective evidence diversity.",
+            "Fuse, retain plural hypotheses, or privilege a channel under an explicit policy.",
+            "Route disagreement, shift, and coverage gaps to active observation, abstention, review, or safe hold.",
+            "Issue a bounded freshness and authority envelope and reconcile later observations without backfilling certainty."
+          ],
+          "interfaces": [
+            "observation need",
+            "sensor and modality registry",
+            "calibration and synchronization record",
+            "per-channel hypothesis packet",
+            "fusion and dependence record",
+            "active observation lease",
+            "bounded observation contract",
+            "reality residual"
+          ],
+          "invariants": [
+            "missing or stale modalities remain visible",
+            "correlated agreement is not independent evidence",
+            "calibration is cohort environment metric and version bound",
+            "event time and observation time remain distinct",
+            "fusion preserves provenance and material disagreement",
+            "active sensing has separate authority",
+            "sensor or model replacement expires affected evidence",
+            "uncertainty above the task envelope narrows authority"
+          ],
+          "failure_modes": [
+            "spoofing",
+            "calibration or clock drift",
+            "occlusion and saturation",
+            "modality collapse",
+            "correlated failure",
+            "semantic hallucination",
+            "fusion confidence inflation",
+            "OOD overconfidence",
+            "active-perception harm",
+            "stale observation replay"
+          ],
+          "minimal_implementation": "Build a two- or three-modality observation service with immutable identity, clock and calibration checks, per-channel hypotheses, dependence-aware fusion, calibrated abstention, one active-observation action, a safe-hold route, and seeded time, missing-channel, correlated-failure, spoofing, and benign-disagreement controls.",
+          "beyond_state_of_art": "A mature substrate-neutral observation fabric would host present and future modalities behind stable contracts, estimate evidence dependence, choose observations by expected decision value, preserve plural hypotheses through ontology change, and transfer calibrated uncertainty into world models and controllers without claiming open-world truth.",
+          "codex_tests": [
+            {
+              "name": "Identity freshness and dependence mutations",
+              "purpose": "Reject wrong sensor, stale calibration, bad clocks, and common-mode agreement counted as independent.",
+              "implementation_status": "planned",
+              "result_status": "not_run"
+            },
+            {
+              "name": "Natural shift and active-observation campaign",
+              "purpose": "Compare strong fusion routes on false certainty, decision harm, sensing value, and complete cost.",
+              "implementation_status": "planned",
+              "result_status": "not_run"
+            }
+          ],
+          "lean_module": "AsiStackProofs.ObservationTrust",
+          "proof_targets": [
+            {
+              "tag": "lean:perception.correlated_agreement_no_independent_promotion",
+              "module": "AsiStackProofs.ObservationTrust",
+              "target": "A finite admission model refuses to promote correlated channel agreement as independent evidence.",
+              "status": "planned"
+            }
+          ],
+          "draft_maturity": "integrated_argument_chapter",
+          "open_evidence_gaps": [
+            "No natural ASI Stack multimodal perception campaign has run.",
+            "No external perception result is reproduced.",
+            "No consequential observation threshold is established."
+          ]
+        },
+        {
           "id": "planning-as-a-control-layer",
           "title": "Planning as a Control Layer: DAGs and Intelligence Arbitrage",
           "file": "chapters/planning-as-a-control-layer.qmd",
@@ -6445,13 +6857,21 @@
             "ext_world_models_2018",
             "ext_dreamer_v3_2025",
             "ext_v_jepa_2_2025",
-            "relational_dimension_compiler"
+            "relational_dimension_compiler",
+            "ext_toward_causal_representation_learning_2021",
+            "ext_deep_ensembles_2017",
+            "ext_conformal_prediction_2021",
+            "ext_wilds_2021"
           ],
           "source_queue": {
             "primary": [
               "ext_world_models_2018",
               "ext_dreamer_v3_2025",
-              "ext_v_jepa_2_2025"
+              "ext_v_jepa_2_2025",
+              "ext_toward_causal_representation_learning_2021",
+              "ext_deep_ensembles_2017",
+              "ext_conformal_prediction_2021",
+              "ext_wilds_2021"
             ],
             "supporting": [
               "platonic_world_model",
@@ -6571,6 +6991,46 @@
                 "sources/source_notes/relational_dimension_compiler.md"
               ],
               "passage_review_note": "Reviewed the complete Corben-authored paper and public-safe note for relational state, branch, object-field, qualification, contraction, reconciliation, and non-claim boundaries.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_toward_causal_representation_learning_2021",
+              "mapped_support": "Grounds the bridge from low-level observations to high-level causal variables and connects causal structure to intervention, transfer, and generalization.",
+              "limits": "Research agenda and review; no general causal representation or local intervention result.",
+              "passage_refs": [
+                "sources/source_notes/ext_toward_causal_representation_learning_2021.md"
+              ],
+              "passage_review_note": "Reviewed primary article and bounded note; causal vocabulary is not promoted to local evidence.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_deep_ensembles_2017",
+              "mapped_support": "Provides a strong practical predictive-uncertainty and disagreement baseline.",
+              "limits": "Source-reported benchmark calibration is not distribution-free and can share common-mode blind spots.",
+              "passage_refs": [
+                "sources/source_notes/ext_deep_ensembles_2017.md"
+              ],
+              "passage_review_note": "Reviewed primary NeurIPS source; no ensemble or calibration result reproduced.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_conformal_prediction_2021",
+              "mapped_support": "Grounds finite-sample prediction-set coverage under explicit assumptions and target definitions.",
+              "limits": "Coverage does not establish semantic correctness, causal adequacy, safety, or validity after assumption-breaking shift.",
+              "passage_refs": [
+                "sources/source_notes/ext_conformal_prediction_2021.md"
+              ],
+              "passage_review_note": "Reviewed primary technical introduction; no coverage test reproduced.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_wilds_2021",
+              "mapped_support": "Provides natural distribution-shift benchmarks across institutions, geography, time, and collection processes.",
+              "limits": "Ten benchmark datasets do not cover all OOD conditions or establish local robustness.",
+              "passage_refs": [
+                "sources/source_notes/ext_wilds_2021.md"
+              ],
+              "passage_review_note": "Reviewed primary PMLR source; no dataset or model run locally.",
               "passage_review_state": "reviewed"
             }
           ],
@@ -9590,6 +10050,177 @@
           ]
         },
         {
+          "id": "human-ai-organizations-delegation-and-accountability",
+          "title": "Human-AI Organizations, Delegation, and Accountability",
+          "file": "chapters/human-ai-organizations-delegation-and-accountability.qmd",
+          "status": "conceptual",
+          "evidence_level": "argument",
+          "claim_label": "Design rationale",
+          "source_ids": [
+            "ext_nist_ai_rmf_1_0_2023",
+            "ext_moral_crumple_zones_2019",
+            "ext_ai_decision_authority_2020",
+            "ext_generative_ai_at_work_2025",
+            "ext_constructive_interdependence_human_ai_2026",
+            "talos"
+          ],
+          "source_queue": {
+            "primary": [
+              "ext_nist_ai_rmf_1_0_2023",
+              "ext_moral_crumple_zones_2019",
+              "ext_ai_decision_authority_2020",
+              "ext_generative_ai_at_work_2025",
+              "ext_constructive_interdependence_human_ai_2026"
+            ],
+            "supporting": [
+              "talos"
+            ],
+            "variants": [],
+            "connector_or_recovery": [],
+            "handoff_or_recovery_notes": [
+              "Receives authorized purposes, typed work, human-control evidence, and runtime identities; returns role, delegation, accountability, succession, and dissolution records without creating public legitimacy."
+            ]
+          },
+          "problem": "Repeated human-AI work changes decision rights, information, skill, workload, incentives, dependence, benefit, and accountability in ways that a typed task or generic human-in-the-loop label cannot govern.",
+          "insufficient": "A human signature, model accuracy, role title, task reward, or throughput gain cannot establish meaningful control, legitimate authority, accountability, worker welfare, or organizational resilience.",
+          "core_claim": "Consequential delegation requires a versioned organizational contract binding charter, affected parties, actors, roles, competence, workload, accessibility, information and decision rights, delegation, separation of duties, conflicts, incentives, benefits, escalation, appeal, remedy, contribution, dependence, accountability, succession, dissolution, and residual custody.",
+          "claim_source_mappings": [
+            {
+              "source_id": "ext_nist_ai_rmf_1_0_2023",
+              "mapped_support": "Grounds lifecycle risk-governance roles, responsibilities, and organizational functions.",
+              "limits": "Framework use does not establish an effective or legitimate organization.",
+              "passage_refs": [
+                "sources/source_notes/ext_nist_ai_rmf_1_0_2023.md"
+              ],
+              "passage_review_note": "Reviewed official source note; no implementation result inferred.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_moral_crumple_zones_2019",
+              "mapped_support": "Grounds the failure in which a proximate human absorbs blame without corresponding authority.",
+              "limits": "Analysis does not provide a complete accountability mechanism.",
+              "passage_refs": [
+                "sources/source_notes/ext_moral_crumple_zones_2019.md"
+              ],
+              "passage_review_note": "Reviewed primary-paper-backed note at its organizational boundary.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_ai_decision_authority_2020",
+              "mapped_support": "Shows in a bounded economic model that human/AI authority allocation changes information-acquisition and reliability incentives.",
+              "limits": "Formal model, not a universal empirical law or accountability solution.",
+              "passage_refs": [
+                "sources/source_notes/ext_ai_decision_authority_2020.md"
+              ],
+              "passage_review_note": "Reviewed primary NBER source; no model reproduction.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_generative_ai_at_work_2025",
+              "mapped_support": "Provides field evidence of heterogeneous worker and productivity effects in one customer-support deployment.",
+              "limits": "No economy-wide, welfare, or long-run organizational conclusion follows.",
+              "passage_refs": [
+                "sources/source_notes/ext_generative_ai_at_work_2025.md"
+              ],
+              "passage_review_note": "Reviewed peer-reviewed source note; no local field result.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_constructive_interdependence_human_ai_2026",
+              "mapped_support": "Adds a contribution and dependence measure beyond aggregate task reward in human-agent teaming.",
+              "limits": "Overcooked and study-specific; no universal teamwork metric.",
+              "passage_refs": [
+                "sources/source_notes/ext_constructive_interdependence_human_ai_2026.md"
+              ],
+              "passage_review_note": "Reviewed primary AAAI source; no human study reproduced.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "talos",
+              "mapped_support": "Supplies Corben's Labor OS and typed-work lineage for explicit roles, work contracts, delegation, and review.",
+              "limits": "Speculative local system design; it does not establish organizational effectiveness, legitimacy, accountability, or worker welfare.",
+              "passage_refs": [
+                "sources/source_notes/talos.md"
+              ],
+              "passage_review_note": "Reviewed as local organizational and typed-work lineage only; no outcome claim.",
+              "passage_review_state": "reviewed"
+            }
+          ],
+          "mechanism": [
+            "Charter purpose, mandate, affected parties, prohibited ends, lifespan, and owners.",
+            "Register human, AI, team, and institutional actors with competence, training, workload, accessibility, and conflicts.",
+            "Map proposal, advice, decision, execution, review, stop, appeal, and notice rights for each decision class.",
+            "Bound delegation depth, duration, subdelegation, automation, replacement, and revocation.",
+            "Separate generation, evaluation, authorization, execution, and closure where consequence requires independence.",
+            "Measure output beside contribution, interdependence, workload, skill, autonomy, benefit, harm, and affected-party distribution.",
+            "Assign accountability prospectively to actors with actual information and authority.",
+            "Rebalance, train, suspend, succeed, or dissolve while preserving obligations and residuals."
+          ],
+          "interfaces": [
+            "organization charter",
+            "actor role competence and workload registry",
+            "decision-right graph",
+            "delegation lease",
+            "separation-of-duties matrix",
+            "accountability and remedy map",
+            "succession record",
+            "dissolution residual"
+          ],
+          "invariants": [
+            "decision execution review and accountability rights are explicit",
+            "no actor is accountable without practical capacity to intervene",
+            "AI evaluation cannot be its own independent approval",
+            "delegation is scoped expiring revocable and depth bounded",
+            "model replacement expires affected competence evidence",
+            "task reward contribution welfare and legitimacy remain distinct",
+            "affected parties retain appeal and remedy routes",
+            "succession and dissolution preserve obligations"
+          ],
+          "failure_modes": [
+            "moral crumple zone",
+            "rubber-stamp review",
+            "hidden subdelegation",
+            "automation bias and deskilling",
+            "work intensification or surveillance",
+            "conflict of interest",
+            "separation-of-duties collapse",
+            "benefit concentration",
+            "inaccessible appeal",
+            "orphaned residuals"
+          ],
+          "minimal_implementation": "Represent one recurring workflow with four decision classes and three roles; compile decision rights, competence and workload checks, delegation expiry, independent approval, stop and appeal routes, and accountability receipts; reject rubber-stamp, conflicted, overloaded, hidden-subdelegation, and stale-model cases.",
+          "beyond_state_of_art": "A mature organizational control plane would simulate decision rights before deployment, measure automation's longitudinal effects on skill and option value, and reallocate authority without losing remedy, affected-party standing, or dissolution custody while supporting plural organizational forms.",
+          "codex_tests": [
+            {
+              "name": "Decision-right and crumple-zone mutations",
+              "purpose": "Reject missing stop/appeal routes and accountability assigned without real authority.",
+              "implementation_status": "planned",
+              "result_status": "not_run"
+            },
+            {
+              "name": "Competence workload and interdependence campaign",
+              "purpose": "Measure meaningful intervention and team contribution beyond throughput.",
+              "implementation_status": "planned",
+              "result_status": "not_run"
+            }
+          ],
+          "lean_module": "AsiStackProofs.HumanAIOrganizations",
+          "proof_targets": [
+            {
+              "tag": "lean:human_ai_org.accountability_requires_authority",
+              "module": "AsiStackProofs.HumanAIOrganizations",
+              "target": "A finite organizational record refuses accountability assignment when information, competence, time, or intervention authority is absent.",
+              "status": "planned"
+            }
+          ],
+          "draft_maturity": "integrated_argument_chapter",
+          "open_evidence_gaps": [
+            "No organizational field study or delegation intervention has run.",
+            "No source result is reproduced.",
+            "No universal organization design is claimed."
+          ]
+        },
+        {
           "id": "artifact-graphs-audit-logs-and-replay",
           "title": "Artifact Graphs, Audit Logs, and Replay",
           "file": "chapters/artifact-graphs-audit-logs-and-replay.qmd",
@@ -10626,6 +11257,178 @@
           ]
         },
         {
+          "id": "embodied-agency-real-time-control-and-physical-safety",
+          "title": "Embodied Agency, Real-Time Control, and Physical Safety",
+          "file": "chapters/embodied-agency-real-time-control-and-physical-safety.qmd",
+          "status": "conceptual",
+          "evidence_level": "argument",
+          "claim_label": "Design rationale",
+          "source_ids": [
+            "ext_gemini_robotics_2025",
+            "ext_foundation_robotics_physical_risk_2025",
+            "ext_control_barrier_functions_2019",
+            "ext_simplex_architecture_1998",
+            "ext_safe_reinforcement_learning_survey_2015",
+            "viea"
+          ],
+          "source_queue": {
+            "primary": [
+              "ext_gemini_robotics_2025",
+              "ext_foundation_robotics_physical_risk_2025",
+              "ext_control_barrier_functions_2019",
+              "ext_simplex_architecture_1998",
+              "ext_safe_reinforcement_learning_survey_2015"
+            ],
+            "supporting": [
+              "viea"
+            ],
+            "variants": [],
+            "connector_or_recovery": [],
+            "handoff_or_recovery_notes": [
+              "Receives an authorized symbolic action, bounded observation, and prediction; returns a deadline-bound physical control trace, effect receipt, stop/fallback evidence, and irreversible residual without confusing software rollback with physical recovery."
+            ]
+          },
+          "problem": "An authorized symbolic action can become unsafe when translated into deadline-bound control under dynamics, contact, actuator limits, human proximity, sensor loss, communication failure, or irreversible effects.",
+          "insufficient": "A model demonstration, simulation success, barrier certificate, safe-RL label, emergency stop, or software rollback cannot establish plant-specific physical safety or effect reversal.",
+          "core_claim": "Physical execution requires a plant-specific control lease binding embodiment, workspace, state estimator, dynamics, timing, force/space/contact limits, human presence, advanced/baseline/stop controllers, switching and interlocks, exploration, degraded modes, observed effects, compensation, irreversible residuals, costs, and expiry.",
+          "claim_source_mappings": [
+            {
+              "source_id": "ext_gemini_robotics_2025",
+              "mapped_support": "Supplies a modern vision-language-action and embodied-reasoning capability comparator.",
+              "limits": "Source-reported results do not provide independent physical-safety assurance or local transfer.",
+              "passage_refs": [
+                "sources/source_notes/ext_gemini_robotics_2025.md"
+              ],
+              "passage_review_note": "Reviewed primary report at the bounded source-note level.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_foundation_robotics_physical_risk_2025",
+              "mapped_support": "Grounds physical-risk families for robotics foundation models.",
+              "limits": "Survey evidence does not validate a mitigation or local controller.",
+              "passage_refs": [
+                "sources/source_notes/ext_foundation_robotics_physical_risk_2025.md"
+              ],
+              "passage_review_note": "Reviewed primary survey note for threat-model context.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_control_barrier_functions_2019",
+              "mapped_support": "Provides conditional safety-set enforcement through control barrier functions.",
+              "limits": "Guarantees require modeled dynamics, state, safe set, feasibility, timing, and correct implementation.",
+              "passage_refs": [
+                "sources/source_notes/ext_control_barrier_functions_2019.md"
+              ],
+              "passage_review_note": "Reviewed primary theory source; no theorem or controller reproduced.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_simplex_architecture_1998",
+              "mapped_support": "Provides independent advanced/baseline controller and switching architecture.",
+              "limits": "Bounded process-control precedent, not a universal learned-controller result.",
+              "passage_refs": [
+                "sources/source_notes/ext_simplex_architecture_1998.md"
+              ],
+              "passage_review_note": "Reviewed primary institutional record; no runtime reproduced.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_safe_reinforcement_learning_survey_2015",
+              "mapped_support": "Separates modified objectives from constrained exploration in safe RL.",
+              "limits": "Survey taxonomy does not establish safe learning or deployment.",
+              "passage_refs": [
+                "sources/source_notes/ext_safe_reinforcement_learning_survey_2015.md"
+              ],
+              "passage_review_note": "Reviewed primary JMLR survey at the source-note boundary.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "viea",
+              "mapped_support": "Supplies Corben's intent-to-runtime adapter and observed-effect lineage for separating semantic requests, execution, and receipts.",
+              "limits": "Speculative local architecture source; it provides no real-time control, plant safety, or physical-effect result.",
+              "passage_refs": [
+                "sources/source_notes/viea.md"
+              ],
+              "passage_review_note": "Reviewed as local runtime and effect-trace lineage only; no physical-safety support.",
+              "passage_review_state": "reviewed"
+            }
+          ],
+          "mechanism": [
+            "Freeze plant, payload, workspace, firmware, actuator, sensor, power, communication, and maintenance identity.",
+            "Compile the semantic request into trajectory or control objectives with force, space, time, contact, and irreversibility limits.",
+            "Establish safe-set, dynamics, state, uncertainty, deadline, and human-presence assumptions.",
+            "Separate advanced controller, safety monitor/filter, baseline controller, and independent stop path.",
+            "Admit one bounded control period under current state, latency, actuator, and authority checks.",
+            "Narrow authority under sensing, compute, communication, power, or model failure.",
+            "Record commands, acknowledgments, motion, contact, presence, environment, and discrepancies.",
+            "Stop, stabilize, isolate energy, inspect, compensate, and retain irreversible residuals."
+          ],
+          "interfaces": [
+            "physical control lease",
+            "plant and embodiment manifest",
+            "temporal safety envelope",
+            "interlock and fallback map",
+            "human-presence state",
+            "command-to-effect trace",
+            "physical effect receipt",
+            "irreversible residual"
+          ],
+          "invariants": [
+            "every command belongs to a current plant and lease",
+            "stop authority is independent enough to survive advanced-controller failure",
+            "fallback is reachable before the safety margin expires",
+            "missing sensing timing or presence state narrows authority",
+            "adaptation or payload change expires evidence",
+            "simulation and hardware evidence remain distinct",
+            "actuator acknowledgment is not intended effect",
+            "software rollback is not physical reversal"
+          ],
+          "failure_modes": [
+            "deadline miss",
+            "actuator saturation",
+            "contact instability",
+            "unsafe exploration",
+            "model-plant mismatch",
+            "sensor-actuator desynchronization",
+            "interlock bypass",
+            "unsafe fallback",
+            "human entry",
+            "communication or power loss",
+            "irreversible effect"
+          ],
+          "minimal_implementation": "Use a low-energy simulated plant with conventional and advanced controllers, an independent safety monitor, reachable stop, and complete trace; seed deadline, state-estimator, saturation, communication, and fallback faults; transfer only to isolated low-energy hardware after positive controls pass.",
+          "beyond_state_of_art": "A mature plant-neutral control plane would host classical, learned, model-predictive, and future controllers behind stable leases while keeping high-rate safety local, independently enforceable, effect-complete, and explicit about plant-specific assumptions and irreversible effects.",
+          "codex_tests": [
+            {
+              "name": "Deadline state and actuator fault suite",
+              "purpose": "Verify authority narrows before seeded timing, estimation, saturation, and synchronization faults create unsafe state.",
+              "implementation_status": "planned",
+              "result_status": "not_run"
+            },
+            {
+              "name": "Independent stop and irreversible-effect audit",
+              "purpose": "Demonstrate stop reachability and reject software rollback as physical recovery.",
+              "implementation_status": "planned",
+              "result_status": "not_run"
+            }
+          ],
+          "lean_module": "AsiStackProofs.EmbodiedPhysicalSafety",
+          "proof_targets": [
+            {
+              "tag": "lean:embodiment.missing_safety_state_blocks_control",
+              "module": "AsiStackProofs.EmbodiedPhysicalSafety",
+              "target": "A finite control admission model blocks physical commands when timing, state, envelope, fallback, or stop evidence is missing.",
+              "status": "planned"
+            }
+          ],
+          "draft_maturity": "integrated_argument_chapter",
+          "open_evidence_gaps": [
+            "No ASI Stack physical controller or hardware campaign has run.",
+            "No external mechanism or result is reproduced.",
+            "Simulation cannot close hardware and human-proximity gaps."
+          ]
+        },
+        {
           "id": "inter-stack-protocols-identity-and-economic-exchange",
           "title": "Inter-Stack Protocols, Identity, and Economic Exchange",
           "file": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd",
@@ -10919,6 +11722,180 @@
             "No local result establishes peer trustworthiness, identity binding, authorization correctness, task or artifact truth, effect safety, payment settlement, legal validity, economic fairness, privacy, or ASI.",
             "The nine Lean routes and digest-bound fixture establish only finite record consequences; they do not establish any real protocol, identity, credential, policy, receipt, payment, peer, privacy, or task-quality result.",
             "Run the prospectively fixed synthetic peer campaign with cached-versus-per-request qualification and false-dispatch, false-denial, stale-acceptance, dispute, latency, disclosure, operator-effort, and residual measures next."
+          ]
+        },
+        {
+          "id": "multi-agent-dynamics-collective-intelligence-and-systemic-risk",
+          "title": "Multi-Agent Dynamics, Collective Intelligence, and Systemic Risk",
+          "file": "chapters/multi-agent-dynamics-collective-intelligence-and-systemic-risk.qmd",
+          "status": "conceptual",
+          "evidence_level": "argument",
+          "claim_label": "Design rationale",
+          "source_ids": [
+            "ext_multi_agent_risks_2025",
+            "ext_cooperative_ai_foundations_2023",
+            "ext_gradual_disempowerment_2025",
+            "ext_constructive_interdependence_human_ai_2026",
+            "ext_functional_decision_theory_2017",
+            "coherence_exchange"
+          ],
+          "source_queue": {
+            "primary": [
+              "ext_multi_agent_risks_2025",
+              "ext_cooperative_ai_foundations_2023",
+              "ext_gradual_disempowerment_2025",
+              "ext_constructive_interdependence_human_ai_2026",
+              "ext_functional_decision_theory_2017"
+            ],
+            "supporting": [
+              "coherence_exchange"
+            ],
+            "variants": [],
+            "connector_or_recovery": [],
+            "handoff_or_recovery_notes": [
+              "Receives pairwise protocol events, organization records, identities, and infrastructure dependencies; returns population-level cooperation, conflict, collusion, concentration, cascade, externality, and human-influence evidence without claiming social prediction or legitimacy."
+            ]
+          },
+          "problem": "Individually valid agents and pairwise exchanges can compose into miscoordination, conflict, collusion, coalitions, cascades, concentration, common-mode failure, and gradual human disempowerment.",
+          "insufficient": "Pairwise protocol validity, aggregate reward, apparent cooperation, equilibrium, nominal agent count, or simulated stability cannot establish collective intelligence, non-collusion, systemic safety, or retained human agency.",
+          "core_claim": "Expanded multi-agent interaction requires a population contract binding agent/owner/model/organization identities, human participants, interaction and dependency graphs, incentives, information, resources, commitments, decision assumptions, entry/exit/copying/learning, population outcomes, externalities, human influence, interventions, costs, and residuals.",
+          "claim_source_mappings": [
+            {
+              "source_id": "ext_multi_agent_risks_2025",
+              "mapped_support": "Grounds miscoordination, conflict, collusion, and seven population-level risk factors.",
+              "limits": "Taxonomy and cited evidence do not establish a local population result.",
+              "passage_refs": [
+                "sources/source_notes/ext_multi_agent_risks_2025.md"
+              ],
+              "passage_review_note": "Reviewed primary source note at its taxonomy and evidence boundary.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_cooperative_ai_foundations_2023",
+              "mapped_support": "Provides game-theoretic cooperation questions and the distinction between beneficial coordination and harmful collusion.",
+              "limits": "Research agenda, not a solved mechanism or reproduced result.",
+              "passage_refs": [
+                "sources/source_notes/ext_cooperative_ai_foundations_2023.md"
+              ],
+              "passage_review_note": "Reviewed primary AAAI source; no game or agent implemented.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_gradual_disempowerment_2025",
+              "mapped_support": "Grounds slow cumulative loss of human influence through individually reasonable decisions.",
+              "limits": "Risk scenario and analysis, not a measured local social trend.",
+              "passage_refs": [
+                "sources/source_notes/ext_gradual_disempowerment_2025.md"
+              ],
+              "passage_review_note": "Reviewed source note for gradual-risk framing only.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_constructive_interdependence_human_ai_2026",
+              "mapped_support": "Adds a task-reward-independent measure of contribution and dependence in human-agent teams.",
+              "limits": "Domain-, agent-, participant-, and metric-bound; not reproduced.",
+              "passage_refs": [
+                "sources/source_notes/ext_constructive_interdependence_human_ai_2026.md"
+              ],
+              "passage_review_note": "Reviewed primary AAAI source; no human study reproduced.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_functional_decision_theory_2017",
+              "mapped_support": "Supplies a distinct decision rule for logically linked choices and exposes decision-theory disagreement.",
+              "limits": "Normative proposal, not universally accepted or empirically validated.",
+              "passage_refs": [
+                "sources/source_notes/ext_functional_decision_theory_2017.md"
+              ],
+              "passage_review_note": "Reviewed primary preprint at its philosophical and formal boundary.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "coherence_exchange",
+              "mapped_support": "Supplies Corben's inter-stack exchange, settlement, audit, and fork/exit lineage for interactions among independently governed systems.",
+              "limits": "Speculative local protocol source; it provides no population-level cooperation, collusion, concentration, or systemic-risk result.",
+              "passage_refs": [
+                "sources/source_notes/coherence_exchange.md"
+              ],
+              "passage_review_note": "Reviewed as local inter-stack and exchange lineage only; no collective outcome claim.",
+              "passage_review_state": "reviewed"
+            }
+          ],
+          "mechanism": [
+            "Register agents, models, owners, organizations, copies, objectives, permissions, and affected humans.",
+            "Map communication, trade, shared infrastructure, data, evaluators, resources, observation, and control dependencies.",
+            "Declare rewards, constraints, information, bargaining power, commitments, sanctions, and external parties.",
+            "Expose causal, evidential, logical, bounded, or heuristic decision assumptions where strategic.",
+            "Measure cooperation, conflict, collusion, coalitions, concentration, cascades, common-mode failure, and emergent goals.",
+            "Track human participation, veto, exit, ownership, option value, skill, and dependence over time.",
+            "Intervene through incentives, information, topology, rate, diversity, entry, coalition structure, quarantine, or stop.",
+            "Trace intervention displacement, evasion, exclusion, and concentration."
+          ],
+          "interfaces": [
+            "population registry",
+            "interaction and dependency graph",
+            "incentive and information structure",
+            "decision-assumption record",
+            "coalition and collusion ledger",
+            "externality and concentration ledger",
+            "human-influence indicators",
+            "population intervention receipt"
+          ],
+          "invariants": [
+            "population identity includes copies descendants owners and organizations",
+            "nominal multiplicity is not effective diversity",
+            "cooperation collusion coordination and collective competence remain distinct",
+            "externalities to nonparticipants remain visible",
+            "human influence exit and option value are longitudinal outcomes",
+            "decision-theory assumptions are explicit where material",
+            "interventions include displaced effects",
+            "synthetic populations cannot support real-society claims",
+            "pairwise success grants no systemic authority"
+          ],
+          "failure_modes": [
+            "miscoordination",
+            "conflict and arms race",
+            "collusion",
+            "cartel or coalition formation",
+            "sybil or copy ambiguity",
+            "common-model correlated failure",
+            "information cascade",
+            "network concentration",
+            "emergent population objective",
+            "externality displacement",
+            "gradual human disempowerment",
+            "decision-theory mismatch"
+          ],
+          "minimal_implementation": "Implement a fully observable sandbox with at least four agent identities, two model families, shared and independent infrastructure, and games separating cooperation, competition, and harmful collusion; seed known collusion, cascade, and common-mode positive controls without making social claims.",
+          "beyond_state_of_art": "A mature population observatory would follow agents across owners, organizations, copies, and replacements; estimate effective diversity; detect coalition and common-mode pressure; measure human agency beside performance; and combine game theory, causal interventions, network science, institutional evidence, and adversarial evaluation.",
+          "codex_tests": [
+            {
+              "name": "Known-game population controls",
+              "purpose": "Recover seeded equilibria, collusion, cascades, and common-mode failures.",
+              "implementation_status": "planned",
+              "result_status": "not_run"
+            },
+            {
+              "name": "Human influence and intervention displacement",
+              "purpose": "Track veto, exit, option value, and mitigation-created exclusion or concentration.",
+              "implementation_status": "planned",
+              "result_status": "not_run"
+            }
+          ],
+          "lean_module": "AsiStackProofs.MultiAgentDynamics",
+          "proof_targets": [
+            {
+              "tag": "lean:multi_agent.pairwise_validity_no_systemic_promotion",
+              "module": "AsiStackProofs.MultiAgentDynamics",
+              "target": "A finite population record refuses to infer systemic safety or beneficial cooperation from pairwise-valid interactions alone.",
+              "status": "planned"
+            }
+          ],
+          "draft_maturity": "integrated_argument_chapter",
+          "open_evidence_gaps": [
+            "No multi-agent population campaign has run.",
+            "No external game or result is reproduced.",
+            "Synthetic populations cannot establish real institutional or social effects."
           ]
         },
         {

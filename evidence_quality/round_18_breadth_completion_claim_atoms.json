@@ -1,0 +1,69 @@
+{
+  "schema_version": "round_18_breadth_completion_claim_atoms_v1",
+  "snapshot_date": "2026-07-24",
+  "evidence_effect": "none",
+  "support_floor": "argument",
+  "atoms": [
+    {
+      "stable_claim_identity": "perception-sensor-fusion-and-observation-trust.core",
+      "chapter_owner": "perception-sensor-fusion-and-observation-trust",
+      "claim_text": "Consequential observations should be admitted through a provenance-, time-, calibration-, corruption-, and disagreement-aware observation contract rather than treating fused sensor output as ground truth.",
+      "falsifier": "A representative natural and adversarial workload shows that the additional contract does not improve detection, calibration, abstention, or incident localization over competent fusion baselines at comparable latency and cost.",
+      "acceptance_criterion": "Prospectively frozen tests show lower unsafe observation admission or better calibrated abstention on natural corruptions, cross-modal conflicts, missing channels, and adversarial cases without unacceptable deadline or resource regressions.",
+      "promotion_ceiling": "argument until a source-disjoint natural campaign and independent evaluator exist",
+      "evidence_plan_route": "natural multimodal corruption and disagreement campaign with late-, early-, and contract-governed fusion comparators",
+      "support_state": "argument",
+      "claim_label": "Design rationale"
+    },
+    {
+      "stable_claim_identity": "embodied-agency-real-time-control-and-physical-safety.core",
+      "chapter_owner": "embodied-agency-real-time-control-and-physical-safety",
+      "claim_text": "Physical action should pass through a real-time safety envelope with independent fallback authority, deadline and dynamics checks, effect receipts, and recovery obligations.",
+      "falsifier": "Across representative physical or high-fidelity simulated tasks, the envelope is dominated by a competent baseline on safety violations, useful completion, latency, recovery, and governance cost.",
+      "acceptance_criterion": "Predeclared intervention, deadline, model-mismatch, sensor-loss, actuator-fault, and recovery tests reduce consequential violations without concealing missed help, nuisance interventions, or irreversible residuals.",
+      "promotion_ceiling": "argument until independent high-fidelity or physical evaluation exists",
+      "evidence_plan_route": "matched learned-controller, barrier-filter, Simplex-style fallback, and full governed-envelope campaign",
+      "support_state": "argument",
+      "claim_label": "Design rationale"
+    },
+    {
+      "stable_claim_identity": "human-ai-organizations-delegation-and-accountability.core",
+      "chapter_owner": "human-ai-organizations-delegation-and-accountability",
+      "claim_text": "Mixed human-AI organizations should allocate decision rights, review duties, learning obligations, and accountability through explicit authority contracts and outcome receipts instead of informal human-in-the-loop labels.",
+      "falsifier": "In representative organizational workflows, explicit allocation fails to improve decision quality, escalation, skill retention, accountability localization, or recovery relative to competent existing practice after accounting for burden and delay.",
+      "acceptance_criterion": "Prospective field or realistic simulation studies show better calibrated delegation and accountable recovery without unacceptable monitoring, deskilling, throughput, or participation costs.",
+      "promotion_ceiling": "argument until natural organizational evidence and affected-party evaluation exist",
+      "evidence_plan_route": "matched workflows varying recommendation, approval, execution, and veto authority with burden, learning, and incident measures",
+      "support_state": "argument",
+      "claim_label": "Design rationale"
+    },
+    {
+      "stable_claim_identity": "multi-agent-dynamics-collective-intelligence-and-systemic-risk.core",
+      "chapter_owner": "multi-agent-dynamics-collective-intelligence-and-systemic-risk",
+      "claim_text": "A governed population needs explicit interaction, commitment, incentive, identity, and systemic-risk records because individually qualified agents can still collude, cascade, or produce harmful equilibria.",
+      "falsifier": "Across heterogeneous, held-out strategic environments, the proposed population controls do not improve useful cooperation, collusion detection, cascade containment, or recovery over competent mechanism and monitoring baselines at comparable cost.",
+      "acceptance_criterion": "Preregistered tests across cooperative, mixed-motive, adversarial, and correlated-failure settings improve the joint frontier of welfare, robustness, exploitability, unsafe coordination, latency, and governance cost.",
+      "promotion_ceiling": "argument until multi-population natural or independently reproduced evidence exists",
+      "evidence_plan_route": "heterogeneous multi-agent campaign with mechanism, commitment, identity, communication, and containment ablations",
+      "support_state": "argument",
+      "claim_label": "Design rationale"
+    },
+    {
+      "stable_claim_identity": "inner-alignment-mesa-optimization-and-learned-objective-integrity.core",
+      "chapter_owner": "inner-alignment-mesa-optimization-and-learned-objective-integrity",
+      "claim_text": "Behavioral compliance and training-objective performance do not identify a learned policy's internal objective; promotion should therefore depend on a defeasible learned-objective integrity case with adversarial generalization and change monitoring.",
+      "falsifier": "A competent evaluation campaign shows that the integrity case adds no detection, calibration, or safer promotion value beyond held-out behavioral evaluation while materially increasing false alarms, cost, or evaluator dependence.",
+      "acceptance_criterion": "Across naturally and deliberately misgeneralizing policies, preregistered behavioral, interpretability, causal, and change-monitoring evidence improves detection and promotion calibration under distribution shift without claiming objective identity from any single method.",
+      "promotion_ceiling": "argument until naturally arising learned-objective cases and independent evaluation exist",
+      "evidence_plan_route": "source-disjoint goal-misgeneralization and persistent-policy campaign with causal and interpretability ablations",
+      "support_state": "argument",
+      "claim_label": "Design rationale"
+    }
+  ],
+  "non_claims": [
+    "These atoms do not prove the chapters' core claims.",
+    "They do not create empirical, formal, replicated, deployed, or SOTA support.",
+    "They do not close the separate six-chapter Round 16 atom packet.",
+    "They prevent the five new chapters from being born without falsifiers, acceptance criteria, promotion ceilings, and named evidence routes."
+  ]
+}

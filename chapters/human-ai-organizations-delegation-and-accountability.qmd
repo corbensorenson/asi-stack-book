@@ -1,0 +1,434 @@
+---
+title: "Human-AI Organizations, Delegation, and Accountability"
+chapter_id: "human-ai-organizations-delegation-and-accountability"
+part_id: "planning-memory-reasoning-execution"
+status: "conceptual"
+draft_maturity: "v0.1 integrated argument chapter"
+last_updated: "2026-07-24"
+primary_sources:
+  - "ext_nist_ai_rmf_1_0_2023"
+  - "ext_moral_crumple_zones_2019"
+  - "ext_ai_decision_authority_2020"
+  - "ext_generative_ai_at_work_2025"
+  - "ext_constructive_interdependence_human_ai_2026"
+evidence_level: "argument"
+claim_label: "Design rationale"
+open_evidence_gaps:
+  - "No ASI Stack organizational field study or delegation intervention has run."
+  - "No source workplace, human-team, economic model, or accountability result has been reproduced."
+  - "The chapter does not establish one universally legitimate organization design."
+---
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `human-ai-organizations-delegation-and-accountability` |
+| Part | Part II - Planning, Memory, Reasoning, and Execution |
+| Status | conceptual |
+| Manuscript maturity | v0.1 integrated argument chapter |
+| Claim label | Design rationale |
+| Evidence level | argument |
+| Source loading state | Five external records cover risk-governance roles, moral crumple zones, decision-authority incentives, field productivity heterogeneity, and constructive interdependence. |
+| Test state | Prospective organizational comparison specified; no organization, worker, task, or intervention observed. |
+
+## Drafting guardrail
+
+This chapter does not prescribe one employment model, turn productivity into
+welfare, or treat a human name on an approval form as accountability. It owns
+the meso-level design of a human-AI organization; public legitimacy, economy-
+wide transition, and emergent multi-agent dynamics remain separate owners.
+
+::: {.asi-human-only}
+## Human Reading Path
+
+An AI system rarely acts alone. It sits inside a team, firm, laboratory,
+government office, household, or network. People decide what work exists, who
+may delegate it, when an AI can decide, who must review, who receives the
+benefits, and who carries the consequences.
+
+The organization needs more than a list of users and agents. It needs roles,
+competence requirements, decision rights, workload limits, separation of
+duties, escalation, conflict rules, accountability, succession, and a way to
+dissolve the arrangement. If the AI makes the real decision while a person
+absorbs the blame, the system has created a moral crumple zone. If the human
+retains a title but loses information, time, skill, or authority, human control
+is ceremonial.
+:::
+
+## Problem
+
+Labor OS can type one unit of work and Human Factors can ask whether an
+oversight action is usable. Neither owns the organization that repeatedly
+allocates tasks and authority among human and AI actors. Repetition changes
+skills, incentives, workload, information flow, bargaining power, and the
+meaning of review. An arrangement can improve throughput while concentrating
+decision power, degrading human competence, or assigning blame to the least
+powerful participant.
+
+The external evidence makes the boundary concrete. NIST AI RMF supplies roles
+and lifecycle governance but does not design a particular organization.
+Elish's moral-crumple-zone analysis warns against accountability being
+misallocated to a proximate human. Athey, Bryan, and Gans show in a formal
+model that authority allocation can alter human information-acquisition
+incentives and AI-reliability investment. Generative AI at Work reports
+heterogeneous worker effects in one customer-support deployment. Biswas et al.
+show that team reward can fail to reveal constructive interdependence. Together
+they argue against designing organizations from accuracy or throughput alone.
+
+### Exclusive job and adjacent boundaries
+
+| Adjacent owner | That owner keeps | Human-AI Organizations owns |
+|---|---|---|
+| Labor OS | One typed job, its inputs, authority, worker, output, and receipt. | Repeated allocation of roles, decision rights, workload, incentives, accountability, succession, and dissolution. |
+| Human Factors | Whether an oversight or control action is exercisable. | Which actor is assigned that action and whether the organization preserves capacity to perform it. |
+| Human Intent | Authorized purposes and contestable intent. | Organizational delegation of decisions under those purposes. |
+| Inter-Stack Protocols | Pairwise identity, message, transaction, and exchange. | Internal organizational authority and responsibility across actors. |
+| Multi-Agent Dynamics | Emergent population behavior, coalitions, collusion, cascades, and systemic externalities. | Deliberately designed meso-level organization and its lifecycle. |
+
+```{mermaid}
+flowchart LR
+  C["Organization charter and purpose"] --> R["Actor, role, competence, workload, and conflict registry"]
+  C --> P["Affected parties, participation, rights, and benefit commitments"]
+  P --> R
+  R --> D["Decision-right and delegation graph"]
+  D --> J{"Authority, information, time, and separation adequate?"}
+  J -- "no" --> E["Escalate, reassign, train, slow, or suspend"]
+  J -- "yes" --> W["Execute typed work and decision"]
+  W --> O["Observe outcome, contribution, dependence, burden, and affected parties"]
+  O --> A["Accountability, remedy, learning, and authority update"]
+  A --> D
+  A --> X["Succession or dissolution with residual custody"]
+```
+
+**How to read the organizational-authority loop:** accountability begins before a decision, in the
+charter and authority graph. Outcome review includes contribution, dependence,
+and burden rather than task reward alone. Authority can be reassigned, and the
+organization must survive or close without orphaning residuals.
+
+## Why existing approaches are insufficient
+
+**“Human in the loop” is not an organization.** It says nothing about which
+human, what authority, which information, available time, incentives, workload,
+appeal path, or consequences.
+
+**Task routing is not decision-right allocation.** The best-performing actor
+may not be the legitimate decision maker. Expertise, affected-party rights,
+separation of duties, conflicts, and reversibility matter.
+
+**Accountability after failure is too late.** A named person cannot be
+responsible for a decision they could not inspect, change, stop, or appeal.
+Responsibility must track prospective authority and actual capacity.
+
+**Productivity is not organizational welfare.** Faster work can coexist with
+deskilling, surveillance, work intensification, inequitable benefit, lower
+autonomy, or fragile dependence. Heterogeneous worker and affected-party
+outcomes must remain separate.
+
+**Task reward is not teamwork.** A team can achieve the goal with one actor
+dominating and another cleaning up errors. Contribution and constructive
+interdependence are useful diagnostics, but even they cannot replace welfare,
+legitimacy, or accountability.
+
+### Strongest objection
+
+Organization design is contextual, political, and legally situated; a generic
+AI stack should not encode one managerial ideology. The design therefore
+standardizes the questions, records, and failure routes—not the answer. The
+mechanism earns its place only if it makes authority, dependence, workload,
+accountability, and remedy more visible and improves decisions compared with a
+simple role-and-approval matrix.
+
+## Core Claim
+
+[human-ai-organizations-delegation-and-accountability.core, label: Design
+rationale, support: argument] A human-AI organization is eligible to delegate
+consequential work only when a versioned organizational contract binds purpose
+and mandate; membership and affected parties; human, AI, and institutional
+identities; roles, competence, training, workload, and accessibility;
+information and decision rights; delegation depth, expiry, revocation, and
+separation of duties; conflicts, incentives, compensation, and benefit
+distribution; escalation, appeal, incident, and remedy paths; contribution,
+dependence, and outcome measures; accountability; succession; dissolution; and
+residual custody. A human signature, model accuracy, task reward, throughput
+gain, role label, or source-reported field result alone establishes neither
+meaningful control, legitimate authority, accountability, worker welfare,
+organizational resilience, support, readiness, release, transfer, nor SOTA.
+
+## Mechanism
+
+1. **Charter the organization.** State purpose, mandate, affected parties,
+   prohibited ends, jurisdictional assumptions, lifespan, and owners.
+2. **Register actors and roles.** Bind human, AI, team, and institutional
+   identities to competence, training, workload, accessibility, conflicts, and
+   maintenance state.
+3. **Map decision rights.** For each decision class, name who proposes,
+   advises, decides, executes, reviews, can stop, can appeal, and receives
+   notice.
+4. **Constrain delegation.** Limit depth, duration, scope, subdelegation,
+   automation, and model replacement; preserve revocation and reversion.
+5. **Separate duties.** Avoid one actor generating, evaluating, authorizing,
+   executing, and closing a consequential action without independent checks.
+6. **Observe real work.** Record task outcomes beside contribution,
+   interdependence, error recovery, workload, skill change, autonomy, access,
+   benefit, harm, and affected-party distribution.
+7. **Assign accountability prospectively.** Accountability follows actual
+   information and authority; impossible oversight becomes an organizational
+   defect, not personal blame.
+8. **Adapt or dissolve.** Rebalance roles, train, narrow automation, compensate,
+   transfer custody, or close the organization with residuals intact.
+
+The decision-right graph is typed by consequence, not merely by department.
+For each decision class it distinguishes recommendation, option generation,
+selection, approval, execution, veto, audit, appeal, remedy, and policy change.
+An actor may hold several roles, but the contract exposes that concentration
+and states when independent review is mandatory. Authority is granted only
+when information, competence, time, accessibility, workload, and conflict
+conditions make the role usable in practice.
+
+Organizational evidence is longitudinal. A deployment can raise immediate
+throughput while reducing skill, situational awareness, bargaining power, or
+capacity to recover later. The outcome ledger therefore measures learning,
+dependency, review quality, error discovery, workload, distribution of gains
+and losses, worker and affected-party option value, and what happens when the
+AI is unavailable or wrong. Counterfactual staffing and automation alternatives
+remain visible instead of disappearing after adoption.
+
+Delegation changes the institution's incentives. A vendor may benefit from
+automation while a worker bears review liability; a manager may optimize
+average speed while a minority receives more failures; an AI evaluator may
+reward the behaviors it generates. Conflict-of-interest and benefit records
+join the authority graph, and material conflicts narrow the route or require a
+separate owner.
+
+Succession and dissolution are ordinary lifecycle states. The organization
+must transfer role identity, credentials, pending appeals, evidence, benefits,
+liabilities, learned procedures, affected-party notices, and residuals when a
+person leaves, a model changes, a vendor fails, or the institution closes.
+
+### Required artifacts
+
+```text
+HumanAIOrganizationContract {
+  charter_mandate_lifespan_and_affected_parties,
+  actor_role_competence_workload_and_accessibility_registry,
+  information_and_decision_rights_graph,
+  delegation_subdelegation_expiry_and_revocation,
+  separation_of_duties_and_independence_matrix,
+  conflict_incentive_compensation_and_benefit_record,
+  escalation_stop_appeal_incident_and_remedy_routes,
+  contribution_interdependence_outcome_and_burden_ledger,
+  accountability_map,
+  succession_dissolution_and_residual_custody,
+  non_authorities
+}
+```
+
+## Interfaces
+
+Human Intent supplies authorized purpose. Labor OS supplies typed work and
+receipts. Human Factors supplies control-envelope evidence. Security and
+Runtime Adapters supply identities and actual permissions. Claim Ledgers and
+Operations receive organizational outcomes and residuals. Inter-Stack
+Protocols govern external counterparties; Multi-Agent Dynamics observes
+population consequences. No interface allows a role title to substitute for
+competence or a completed task to settle accountability.
+
+Privacy and Data Rights governs employee, customer, and affected-party data,
+including monitoring and derived performance records. Moral Uncertainty and
+Constitutional Alignment supply protected predicates and unresolved value
+conflicts; an organization cannot vote itself broader technical authority.
+Resource Economics receives human review, training, delay, coordination,
+appeal, and recovery cost rather than counting only model tokens.
+
+Artifact Graphs preserves decision, delegation, review, intervention, outcome,
+and remedy receipts. Capability Replacement invalidates role competence and
+delegation leases when the underlying model or tool changes materially.
+Readiness can require organizational evidence for a named deployment, but it
+cannot establish legitimacy or legal compliance. Institutions and Multi-Agent
+Dynamics consume aggregate signals while preserving the difference between a
+deliberately designed organization and an emergent population.
+
+## Invariants
+
+- Decision authority, execution authority, review authority, and accountability
+  are explicit and may differ.
+- A person cannot be accountable for an action they lacked information,
+  competence, time, authority, or practical ability to change.
+- AI-generated evaluation cannot be its own independent approval.
+- Delegation is scoped, expiring, revocable, and depth-bounded.
+- Model replacement expires competence and role evidence where material.
+- Workload, accessibility, conflict, and incentive state travel with a role.
+- Task reward, contribution, interdependence, welfare, and legitimacy remain
+  separate outcome axes.
+- Affected parties retain named notice, appeal, and remedy routes.
+- Succession and dissolution preserve artifacts, obligations, and residuals.
+- Organizational records create no public or legal legitimacy by themselves.
+- Review burden, training cost, and benefit distribution remain attributed to
+  the actors and decisions that cause them.
+
+## Evidence
+
+The current source packet spans governance, theory, field evidence, and
+measurement. Its diversity is useful because no one source can establish the
+chapter. The first campaign should examine a real but low-consequence recurring
+workflow with prospective participants and appropriate ethics/privacy review.
+Compare a conventional human workflow, AI advice, AI execution with human
+approval, competence-aware dynamic delegation, and a deliberately simple
+role-and-approval baseline. Freeze tasks, role training, escalation routes,
+model versions, positive controls, and independent scoring before held-out
+work.
+
+Measure useful output and errors, but also information acquisition,
+intervention success, review time, workload, skill retention, constructive
+interdependence, automation bias, appeal, affected-party distribution,
+accountability accuracy, recovery, worker experience, access, and cost. A
+participant study or organizational intervention cannot begin from repository
+authority alone. Synthetic human models may support debugging but remain
+separate from evidence about people.
+
+## Failure modes
+
+- moral crumple zone;
+- rubber-stamp or impossible review;
+- authority without accountability or accountability without authority;
+- hidden subdelegation;
+- automation bias and deskilling;
+- work intensification or surveillance;
+- conflict of interest and incentive gaming;
+- separation-of-duties collapse;
+- contribution or interdependence mismeasurement;
+- benefit concentration and harm externalization;
+- inaccessible oversight or appeal;
+- succession failure and orphaned residuals.
+
+Further failures include *role-label laundering*, where “reviewer” is recorded
+without time or control; *accountability diffusion*, where every actor owns a
+small step and nobody owns the outcome; and *automation ratchet*, where
+temporary assistance removes the human competence needed for rollback.
+Metric capture can optimize task reward while degrading service quality,
+worker welfare, or affected-party rights. Vendor opacity can make competence,
+incident, or change evidence unavailable. Appeals can be formally present but
+too slow, costly, inaccessible, or retaliatory to use. A technically reversible
+workflow can become institutionally irreversible through layoffs, lost skills,
+contract lock-in, or redistributed liability.
+
+## Minimum Viable Implementation
+
+Represent one recurring workflow with four decision classes and at least three
+actor roles. Compile a decision-right graph, competence and workload checks,
+delegation expiry, independent approval, stop and appeal routes, and
+accountability receipts. Use synthetic cases to reject rubber-stamp approval,
+conflicted review, overloaded humans, unauthorized subdelegation, and model
+replacement without requalification before any human study.
+
+The **minimum honest implementation** includes a versioned organization schema,
+decision-class inventory, actor and role registry, competence/workload state,
+typed rights graph, delegation leases, conflicts and benefits, stop/appeal
+routes, accountability mapping, and succession receipt. A validator rejects
+missing affected parties, role without a usable authority path, accountability
+without control, self-approval, stale model competence, overloaded review,
+unbounded subdelegation, and orphaned residuals.
+
+Synthetic cases are only the first artifact. They must show that the control
+plane changes routing and catches seeded defects while allowing legitimate
+work. Passing those cases is **not** evidence about human behavior,
+organizational effectiveness, worker welfare, legitimacy, or legal liability.
+Support remains `argument` until an ethically reviewed natural or high-fidelity
+workflow compares competent alternatives with independent outcome and
+affected-party evaluation.
+
+## Beyond the State of the Art
+
+The mature target is an organizational control plane that can simulate and
+audit decision rights before deployment, measure how automation changes human
+skill and option value over time, and reallocate authority without losing
+traceability or remedy. It would support many organizational forms rather than
+hard-code one. It would integrate collective bargaining, accessibility,
+affected-party representation, and dissolution while refusing to infer
+legitimacy from technical coherence.
+
+Beyond current practice, the target would make organizational design
+counterfactual and testable. Before deployment it could compare human-only,
+advice, approval, execution, mixed-team, and dynamically delegated structures
+under the same task and consequence model. During operation it would estimate
+review capacity, dependence, skill change, contribution, intervention
+effectiveness, distributional outcomes, and recovery readiness, and it would
+reallocate authority or slow work when those conditions deteriorate.
+
+The research program must use real or realistic recurring work with multiple
+decision classes, heterogeneous roles, consequential but ethically acceptable
+errors, and affected-party feedback. Comparators should include mature workflow
+and process controls, ordinary role matrices, strong human-AI assistance,
+static approval, competence-aware delegation, and the full organizational
+contract. Outcomes include useful quality, error and recovery, false approval,
+missed help, review time, workload, training, skill retention, autonomy,
+accessibility, appeal, accountability accuracy, benefit and harm distribution,
+latency, cost, and resilience to AI or vendor loss.
+
+Causal ablations remove workload checks, competence leases, separation of
+duties, contribution measures, affected-party routes, or succession custody.
+Transfer spans domains, organization sizes, labor arrangements, models,
+jurisdictions, and time. Independent evaluators and participant safeguards are
+mandatory, and synthetic people cannot stand in for human evidence. This is a
+**falsifiable research program, not a current result**: no such campaign has
+passed here, so the technical record establishes no superior organization or
+institutional legitimacy.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Decision-right reachability | Ensure each consequential decision has proposal, review, stop, appeal, and accountable owners. | planned |
+| Moral-crumple-zone mutation | Reject accountability assigned to an actor without real authority or capacity. | planned |
+| Delegation-depth and expiry | Reject hidden subdelegation and stale model/role authority. | planned |
+| Workload and competence positive controls | Verify the route narrows when a reviewer cannot meaningfully act. | planned |
+| Contribution/interdependence audit | Prevent task reward from standing in for teamwork. | planned |
+
+## Source crosswalk
+
+| Source | Contribution | Boundary |
+|---|---|---|
+| `ext_nist_ai_rmf_1_0_2023` | Lifecycle roles and risk-governance vocabulary. | Framework; no organization design or effectiveness result. |
+| `ext_moral_crumple_zones_2019` | Accountability-misallocation failure model. | Conceptual/empirical analysis, not a complete remedy. |
+| `ext_ai_decision_authority_2020` | Incentive-aware human/AI authority allocation. | Bounded economic model, not a universal law. |
+| `ext_generative_ai_at_work_2025` | Heterogeneous field effects in customer support. | One deployment setting; no economy-wide inference. |
+| `ext_constructive_interdependence_human_ai_2026` | Team-dependence measure beyond task reward. | Domain- and metric-bound; not reproduced. |
+| `talos` | Corben's Labor OS and typed-work lineage for roles, work contracts, delegation, and review. | Speculative system design; no organizational, legitimacy, accountability, or welfare result. |
+
+## Summary
+
+Human-AI organization design governs the repeated allocation of information,
+work, authority, burden, benefit, and accountability. Its purpose is not to
+choose one institutional form but to prevent throughput and role labels from
+hiding who actually decides, who can intervene, who bears the cost, and how the
+arrangement changes or ends.
+
+The central rule is that responsibility follows prospective information,
+competence, time, authority, and practical control. Recommendation, decision,
+approval, execution, veto, audit, appeal, remedy, and policy change remain
+separate rights even when one actor holds several. Delegation is scoped,
+expiring, revocable, and requalified when the model, task, workload, or
+institution changes.
+
+Outcomes include contribution, dependence, skill, burden, access, benefit,
+harm, recovery, and affected-party experience alongside useful task quality.
+This prevents short-run throughput from hiding deskilling, surveillance,
+fragile dependence, or concentrated gains. Succession and dissolution preserve
+pending appeals, artifacts, liabilities, learned procedures, and residuals so
+temporary automation does not become an unowned institutional ratchet. The
+result is a governable organization contract, not a claim that one structure
+is universally legitimate.
+
+## Handoff
+
+The organizational contract hands its decisions, role assignments, incidents,
+appeals, and outcome receipts to **Artifact Graphs, Audit Logs, and Replay**.
+Artifact custody preserves who decided and who could intervene without turning
+organizational records into proof of legitimacy, fairness, or good outcomes.
+It also keeps appeals, remedies, role changes, and unresolved responsibility
+attached to the artifacts that later evaluators consume.
+
+## Sources
+
+See the source crosswalk above and the generated external-source appendix.

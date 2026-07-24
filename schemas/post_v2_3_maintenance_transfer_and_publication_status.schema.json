@@ -39,7 +39,7 @@
   ],
   "properties": {
     "schema_version": {
-      "const": "asi_stack.post_v2_3_maintenance_transfer_publication_status.v19"
+      "const": "asi_stack.post_v2_3_maintenance_transfer_publication_status.v20"
     },
     "roadmap_id": {
       "const": "asi-stack-post-v2-3-evidence-competence-transfer-publication-2026-07-17"
@@ -48,7 +48,7 @@
       "const": "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md"
     },
     "snapshot_date": {
-      "const": "2026-07-22"
+      "const": "2026-07-24"
     },
     "authority": {
       "const": "Corben Sorenson"
@@ -84,13 +84,13 @@
       ],
       "properties": {
         "state": {
-          "const": "evidence_first_recovery_with_structural_admission_freeze"
+          "const": "round18_breadth_terminal_evidence_first_recovery_restored"
         },
         "headline_priority": {
           "const": "P2"
         },
         "headline_priority_state": {
-          "const": "capacity_entry_condition_met_materialization_not_yet_run"
+          "const": "below_storage_floor_exact_attempt_or_failure_receipt_required"
         },
         "work_in_progress_limit": {
           "const": 2
@@ -118,7 +118,7 @@
             "P2-pool-materialization-terminal-receipt",
             "P2-four-replacement-slots-qualified-and-twelve-task-denominator-restored",
             "P6.5-R16-six-chapter-claim-atom-addendum-terminal",
-            "P6.5-R16-current-sixty-one-chapter-reader-freshness-terminal",
+            "P6.5-R16-current-sixty-six-chapter-reader-freshness-terminal",
             "P7.1a-W3-admission-template-inheritance-guard-terminal",
             "P7.2-T1D-white-box-construct-validity-and-feature-analysis-depth-terminal"
           ]
@@ -312,19 +312,20 @@
             "planned_merge_count",
             "first_tranche",
             "second_tranche",
+            "round_18_breadth_completion",
             "p2_displacement_allowed",
             "support_state_effect",
             "release_effect"
           ],
           "properties": {
             "state": {
-              "const": "first_tranche_terminal_second_tranche_a1_a2_terminal_admissions_paused"
+              "const": "round18_breadth_terminal_post_transaction_freeze"
             },
             "current_manifest_chapter_count": {
-              "const": 61
+              "const": 66
             },
             "maximum_if_all_candidates_pass": {
-              "const": 72
+              "const": 73
             },
             "planned_merge_count": {
               "const": 0
@@ -419,7 +420,7 @@
               ],
               "properties": {
                 "state": {
-                  "const": "a1_a2_terminal_eleven_manifest_gated_admissions_paused"
+                  "const": "a1_a2_b_c_e_f_terminal_seven_research_only_post_breadth_freeze"
                 },
                 "audit_path": {
                   "const": "docs/structural_completeness_gap_audit_2026_07_19.md"
@@ -445,10 +446,10 @@
                   ]
                 },
                 "manifest_admitted_count": {
-                  "const": 2
+                  "const": 6
                 },
                 "primary_source_record_count_added": {
-                  "const": 31
+                  "const": 43
                 },
                 "communication_required_source_ids": {
                   "const": [
@@ -495,30 +496,34 @@
                 "adjudicated_candidate_ids": {
                   "const": [
                     "governed-model-training-distributed-optimization-and-scaling",
-                    "privacy-data-rights-and-information-flow-governance"
+                    "privacy-data-rights-and-information-flow-governance",
+                    "perception-sensor-fusion-and-observation-trust",
+                    "embodied-agency-real-time-control-and-physical-safety",
+                    "human-ai-organizations-delegation-and-accountability",
+                    "multi-agent-dynamics-collective-intelligence-and-systemic-risk"
                   ]
                 },
                 "terminal_candidate_dispositions": {
                   "const": {
                     "governed-model-training-distributed-optimization-and-scaling": "admitted_terminal_argument_reader_chapter",
-                    "privacy-data-rights-and-information-flow-governance": "admitted_terminal_argument_reader_chapter"
+                    "privacy-data-rights-and-information-flow-governance": "admitted_terminal_argument_reader_chapter",
+                    "perception-sensor-fusion-and-observation-trust": "admitted_terminal_argument_reader_chapter_round18",
+                    "embodied-agency-real-time-control-and-physical-safety": "admitted_terminal_argument_reader_chapter_round18",
+                    "human-ai-organizations-delegation-and-accountability": "admitted_terminal_argument_reader_chapter_round18",
+                    "multi-agent-dynamics-collective-intelligence-and-systemic-risk": "admitted_terminal_argument_reader_chapter_round18"
                   }
                 },
                 "active_candidate_id": {
                   "type": "null"
                 },
                 "next_queued_candidate_id": {
-                  "const": "perception-sensor-fusion-and-observation-trust"
+                  "type": "null"
                 },
                 "admission_state": {
-                  "const": "paused_by_round16_evidence_first_gate"
+                  "const": "post_round18_breadth_freeze_no_active_queue"
                 },
                 "remaining_candidate_ids": {
                   "const": [
-                    "perception-sensor-fusion-and-observation-trust",
-                    "embodied-agency-real-time-control-and-physical-safety",
-                    "human-ai-organizations-delegation-and-accountability",
-                    "multi-agent-dynamics-collective-intelligence-and-systemic-risk",
                     "autonomous-replication-proliferation-and-containment",
                     "scientific-discovery-and-experimental-governance",
                     "human-ai-communication-persuasion-and-epistemic-security",
@@ -534,6 +539,37 @@
                 "a2_decision_packet": {
                   "const": "docs/p6_4_a2_privacy_data_rights_adjudication.md"
                 }
+              }
+            },
+            "round_18_breadth_completion": {
+              "const": {
+                "state": "terminal_argument_integration_post_transaction_freeze",
+                "adjudication_path": "docs/round_18_bounded_breadth_completion_adjudication_2026_07_24.md",
+                "research_backlog_path": "research_backlog_records/round_18_bounded_breadth_completion_2026_07_24.json",
+                "triage_path": "new_paper_triage_scenarios/round_18_bounded_breadth_completion_2026_07_24.json",
+                "claim_atom_path": "evidence_quality/round_18_breadth_completion_claim_atoms.json",
+                "reader_projection_path": "docs/round_18_breadth_completion_reader_projection.md",
+                "inheritance_audit_path": "evidence_quality/round_18_breadth_completion_inheritance_audit.json",
+                "new_chapter_ids": [
+                  "perception-sensor-fusion-and-observation-trust",
+                  "embodied-agency-real-time-control-and-physical-safety",
+                  "human-ai-organizations-delegation-and-accountability",
+                  "multi-agent-dynamics-collective-intelligence-and-systemic-risk",
+                  "inner-alignment-mesa-optimization-and-learned-objective-integrity"
+                ],
+                "existing_owner_section_integrations": {
+                  "causal_reasoning_and_typed_uncertainty": "governed-world-models-and-reality-grounding",
+                  "scaling_emergence_and_capability_forecasting": "the-efficient-asi-hypothesis",
+                  "instrumental_convergence": "failure-modes-of-ungoverned-intelligence",
+                  "retrieval_augmented_generation": "virtual-context-abi",
+                  "artificial_moral_status_and_welfare": "moral-uncertainty-and-value-conflict",
+                  "decision_theory": "multi-agent-dynamics-collective-intelligence-and-systemic-risk"
+                },
+                "new_external_source_record_count": 21,
+                "birth_claim_atom_count": 5,
+                "post_transaction_structural_freeze": true,
+                "support_state_effect": "none",
+                "release_effect": "none"
               }
             },
             "p2_displacement_allowed": {
@@ -559,12 +595,15 @@
       "const": {
         "state": "active",
         "structural_admission_freeze": true,
-        "paused_candidate_id": "perception-sensor-fusion-and-observation-trust",
+        "paused_candidate_id": null,
         "p2_empirical_recovery": {
-          "state": "capacity_entry_condition_met_materialization_not_yet_run",
+          "state": "below_storage_floor_exact_attempt_or_failure_receipt_required",
           "observed_host_free_bytes_2026_07_22": 71648034816,
           "docker_daemon_available_2026_07_22": true,
           "docker_storage_zero_2026_07_22": true,
+          "observed_host_available_1k_blocks_2026_07_24": 22337556,
+          "observed_host_available_bytes_2026_07_24": 22873657344,
+          "docker_inspection_state_2026_07_24": "permission_denied_local_socket",
           "minimum_host_free_bytes": 53687091200,
           "non_docker_user_data_deletion_allowed": false,
           "materialization_recipe_and_receipt_count_required": 30,
@@ -598,7 +637,7 @@
         "current_reader_freshness_packet": {
           "state": "queued_after_atom_w3_and_white_box",
           "published_reader_2026_07_18_is_immutable_historical_release": true,
-          "current_working_manifest_chapter_count": 61,
+          "current_working_manifest_chapter_count": 66,
           "must_cover_all_current_manifest_chapters": true,
           "external_publication_required": false,
           "required_surfaces": [
@@ -617,7 +656,7 @@
           "provisional_current_61_chapter_repeated_12_gram_count": 738,
           "provisional_current_61_chapter_maximum_spread": 55,
           "historical_w1_and_w2_receipts_are_immutable": true,
-          "current_live_chapter_scope": 61,
+          "current_live_chapter_scope": 66,
           "requires_reproducible_current_baseline": true,
           "rejects_high_spread_shared_prose_in_new_or_revised_chapters": true,
           "shared_method_prose_owner": "chapters/living-book-methodology.qmd"
@@ -697,14 +736,14 @@
           ],
           "remaining_surfaces": [
             "append_only_claim_atom_projection_under_R16_A",
-            "current_sixty_one_chapter_reader_freshness_projection_under_R16_B",
+            "current_sixty_six_chapter_reader_freshness_projection_under_R16_B",
             "resource_gated_matched_optimizer_campaign_and_independent_reproduction_as_nonblocking_evidence_residual"
           ],
           "support_state_effect": "none",
           "release_effect": "none"
         },
         "future_admission_contract": {
-          "maximum_new_chapters_per_empirical_checkpoint": 1,
+          "maximum_new_chapters_per_empirical_checkpoint": 0,
           "material_empirical_or_evidence_milestone_since_previous_admission_required": true,
           "claim_atom_pack_required_at_birth": true,
           "reader_projection_required_at_birth": true,

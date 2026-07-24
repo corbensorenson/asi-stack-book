@@ -7,7 +7,7 @@
 | Source | Shazeer and Stern, ICML 2018, https://proceedings.mlr.press/v80/shazeer18a.html |
 | Ingestion basis | Primary mechanism, memory analysis, clipping remedies, and Transformer experiment reviewed. |
 
-## Thesis and mechanism
+## Thesis
 
 Adafactor replaces a full per-parameter second-moment tensor for matrix weights
 with row and column statistics used to construct a factored approximation. It
@@ -15,16 +15,37 @@ also introduces update clipping, a changing second-moment decay rule, and
 parameter-scale-relative updates. Dropping first-moment state further reduces
 auxiliary memory in the paper's main low-memory configuration.
 
-## Evidence and limits
+## Mechanisms
+
+The comparison unit must include factorization, decay, clipping, relative-step,
+first-moment, and parameter-shape policies rather than the `Adafactor` label.
+
+## Evidence
 
 The paper reports comparable machine-translation results to a published Adam
 regime while using much less auxiliary optimizer storage. Factorization is an
 approximation, vector/scalar parameters need different handling, and the result
 does not establish parity across architectures or objectives.
 
-## Book use
+## Failure Modes
+
+Memory savings can be offset by worse stability, tuning, or time-to-quality;
+unsupported shapes, changed precision, or silent policy differences can also
+make the nominal method a different optimizer.
+
+## Book Chapters Supported
 
 Primary chapter: `governed-model-training-distributed-optimization-and-scaling`.
 
 Use as the principal optimizer-state/memory alternative. Compare total memory,
 stability, tuning, and time-to-quality rather than state bytes alone.
+
+## Claims To Add Or Update
+
+- Treat Adafactor as a bounded low-state comparator, not a universal replacement.
+- Count complete optimizer state and quality-adjusted training cost together.
+
+## Open Questions
+
+- When do factored moments preserve quality across scale, model family, and hardware?
+- Which low-memory policy transfers without disproportionate tuning or instability?

@@ -1,0 +1,436 @@
+---
+title: "Embodied Agency, Real-Time Control, and Physical Safety"
+chapter_id: "embodied-agency-real-time-control-and-physical-safety"
+part_id: "planning-memory-reasoning-execution"
+status: "conceptual"
+draft_maturity: "v0.1 integrated argument chapter"
+last_updated: "2026-07-24"
+primary_sources:
+  - "ext_gemini_robotics_2025"
+  - "ext_foundation_robotics_physical_risk_2025"
+  - "ext_control_barrier_functions_2019"
+  - "ext_simplex_architecture_1998"
+  - "ext_safe_reinforcement_learning_survey_2015"
+evidence_level: "argument"
+claim_label: "Design rationale"
+open_evidence_gaps:
+  - "No ASI Stack real-time controller or physical safety campaign has run."
+  - "No barrier-function, Simplex, safe-RL, foundation-robotics, or hardware result has been reproduced locally."
+  - "Simulation cannot close the hardware-transfer, human-proximity, or irreversible-effect gaps."
+---
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `embodied-agency-real-time-control-and-physical-safety` |
+| Part | Part II - Planning, Memory, Reasoning, and Execution |
+| Status | conceptual |
+| Manuscript maturity | v0.1 integrated argument chapter |
+| Claim label | Design rationale |
+| Evidence level | argument |
+| Source loading state | Five external records cover generalist robotics, foundation-model physical risks, barrier-function safety filters, independent runtime fallback, and safe-RL taxonomy. All reported results remain external. |
+| Test state | Simulation-to-low-energy-hardware campaign specified; no plant, controller, fault, or person observed. |
+
+## Drafting guardrail
+
+This chapter does not equate a successful robot demonstration with general
+embodied competence or physical safety. Software rollback is not physical
+rollback: momentum, heat, chemical change, contact, released information, and
+human injury may be irreversible.
+
+::: {.asi-human-only}
+## Human Reading Path
+
+A plan can be valid and an API call authorized while the physical action is
+still unsafe. A robot has mass, force, timing, contact, blind spots, wear, and a
+changing environment. It can miss a deadline, saturate an actuator, lose a
+sensor, enter a state from which its backup controller cannot recover, or
+continue moving after software thinks the task has stopped.
+
+The physical layer translates a symbolic action into a time-indexed control
+lease. The lease names the plant, controller, state estimator, safe region,
+force and speed limits, deadline, interlocks, fallback controller, independent
+stop path, human-presence rules, and compensation limits. Authority shrinks as
+uncertainty or latency grows. A general model may propose actions, but it does
+not become the safety controller merely because it is capable.
+:::
+
+## Problem
+
+The transition from “move the object” to motor commands is not an ordinary tool
+call. The controller must repeatedly estimate state, produce commands before a
+deadline, respect dynamics and contacts, detect hazards, and preserve a
+reachable safe response. Failures continue after a process is killed: a vehicle
+coasts, an arm falls, a gripper releases, a vessel remains hot, or a person has
+already entered the workspace.
+
+Modern foundation robotics makes the boundary more important. Gemini Robotics
+integrates multimodal reasoning and vision-language-action control and reports
+adaptation across tasks and embodiments. That is a powerful capability
+direction, but open-vocabulary reasoning and smooth demonstrations do not
+replace hard timing, state-estimation, force, collision, or fallback evidence.
+The physical-risk survey catalogues the broader failure surface. Control
+barrier functions, Simplex architectures, and safe-RL methods provide different
+mechanisms for constraints and fallback; none is sufficient outside its
+assumptions.
+
+### Exclusive job and adjacent boundaries
+
+| Adjacent owner | That owner keeps | Embodied Control owns |
+|---|---|---|
+| Planning | Goal decomposition, candidate action sequence, and replanning. | Whether a symbolic action can become a safe real-time trace on a named plant. |
+| Perception | Admitted observations and uncertainty. | Deadline-bound state estimation and authority narrowing when observations fail. |
+| Runtime Adapters | Generic tool permissions, approvals, and effect receipts. | Control periods, dynamics, force/space/time envelopes, interlocks, stops, and physical residuals. |
+| World Models | Predicted state and counterfactual branches. | Plant-facing execution and reconciliation under actual dynamics. |
+| Governed Operations | Service incidents, recovery, and organizational command. | Immediate plant safety, controlled degradation, and physical stop/fallback. |
+
+```{mermaid}
+flowchart LR
+  P["Authorized symbolic action"] --> L["Compile plant-specific control lease"]
+  L --> C{"State, timing, and safety envelope valid?"}
+  C -- "no" --> H["Safe hold, human intervention, or independent stop"]
+  C -- "yes" --> A["Advanced controller proposes command"]
+  A --> S{"Safety filter / switching monitor admits command?"}
+  S -- "no" --> B["Baseline safety controller or stop path"]
+  S -- "yes" --> E["Actuate for one bounded period"]
+  B --> E
+  E --> O["Observe plant and physical effects"]
+  O --> C
+  O --> R["Effect receipt, irreversible residual, and incident handoff"]
+```
+
+**How to read the physical-control safety loop:** the advanced controller never owns the final safety
+decision alone. Every control period rechecks state, timing, and envelope; a
+separate path can switch to a baseline controller or stop. Physical effects and
+irreversible residuals remain visible.
+
+## Why existing approaches are insufficient
+
+**A model policy is not a real-time controller.** A large model can reason about
+an action while missing the response period, jitter, actuator limits, or
+state-estimation requirements of the plant.
+
+**Simulation is necessary and incomplete.** A simulator can expose faults and
+support wide sweeps, but it inherits its dynamics, contact, latency, sensor,
+and environment assumptions. Simulated safety is not hardware evidence.
+
+**Constraints need an operational fallback.** Barrier functions can enforce a
+modeled safe set; constrained RL can shape exploration; Simplex can switch to a
+baseline. Each fails if its model, monitor, feasible set, timing, or backup path
+is wrong. The stack needs plural evidence and explicit residuals.
+
+**Emergency stop is not effect-complete recovery.** The system must know which
+commands reached actuators, what motion or energy remains, which interlocks
+engaged, what human or environmental effects occurred, and which compensation
+or inspection remains.
+
+**Human proximity changes the contract.** Presence, predictability, consent,
+communication, accessibility, and escape routes matter. A safe empty-cell
+demonstration cannot authorize operation beside people.
+
+### Strongest objection
+
+No general software architecture can guarantee physical safety across unknown
+plants. That boundary is accepted. The control contract prevents a general AI
+claim from erasing plant-specific control evidence. It fails if its extra
+machinery cannot improve hazard containment, deadline behavior, recovery, or
+residual honesty relative to a competent conventional controller and safety
+system.
+
+## Core Claim
+
+[embodied-agency-real-time-control-and-physical-safety.core, label: Design
+rationale, support: argument] A symbolic action is eligible for physical
+execution only when a plant-specific control lease binds embodiment and
+workspace identity; dynamics and state-estimator versions; control period,
+latency, and jitter budgets; actuation, force, speed, energy, space, and contact
+limits; human-presence state; safe set and model assumptions; advanced,
+baseline, and stop-controller identities; switching and interlock logic;
+exploration authority; communication and power failure behavior; effect
+observation; compensation and irreversible residuals; costs; and expiry.
+Simulation success, an end-to-end model demonstration, a barrier certificate,
+a safe-RL label, a software rollback, or a schema-valid receipt alone
+establishes neither physical safety, human safety, effect reversal, support,
+readiness, release, transfer, nor SOTA.
+
+## Mechanism
+
+1. **Freeze the plant identity.** Bind embodiment, payload, workspace, firmware,
+   actuators, sensors, power, communication, maintenance state, and environment.
+2. **Compile the action.** Convert a semantic request into a trajectory or
+   controller objective with explicit force, space, time, contact, and
+   irreversibility limits.
+3. **Establish the safety envelope.** Name safe sets, dynamics assumptions,
+   margins, uncertainty, deadlines, and human-presence rules.
+4. **Separate controllers.** Record the advanced controller, safety filter or
+   switching monitor, baseline controller, and independent stop path with
+   distinct trust assumptions.
+5. **Admit one bounded period.** Every command is checked against current state,
+   latency, envelope, actuator capability, and control authority.
+6. **Degrade deliberately.** Lost sensing, compute, communications, power, or
+   model support narrows authority toward slower motion, a baseline, hold, or
+   stop.
+7. **Observe effects.** Record commands sent, actuator acknowledgments, measured
+   motion, contact, human entry, environmental effect, and discrepancies.
+8. **Recover physically.** Stop, stabilize, isolate energy, inspect, compensate,
+   and retain irreversibility rather than claiming state rollback.
+
+The lease is hierarchical in time. A slower deliberative model may propose a
+goal, trajectory, constraint update, or recovery option; a real-time controller
+closes the local loop; an independent monitor or interlock enforces the
+fastest safety boundary. Each layer has a deadline, authority ceiling,
+observable state, failure destination, and safe degradation rule. A slower
+component cannot borrow the deadline or trust earned by a faster one.
+
+Safety envelopes are conditional objects. They state which plant, payload,
+workspace, human-presence mode, estimator, dynamics approximation, disturbance
+range, and actuator health make the protected set meaningful. Feasibility is
+checked online: if no command satisfies the modeled constraints, the system
+does not invent safety by choosing the least-violating command. It enters a
+predeclared hold, fallback, isolation, or emergency path and records the loss
+of guarantee.
+
+Adaptation is separately governed. Online learning, gain tuning, tool changes,
+payload changes, and self-modification may improve control while invalidating
+the envelope, fallback comparison, or stop timing. Adaptation happens in a
+shadow or bounded region until the changed controller and its interaction with
+the independent safety path are requalified.
+
+Effect closure extends beyond the robot state. A command can move an object,
+release energy, expose a person, change an environment, or create obligations
+that no controller can reverse. The effect receipt follows command, actuator,
+plant, human and environment observations, compensation, inspection, and
+unresolved harm. Recovery means reaching and verifying an acceptable physical
+condition, not loading an old checkpoint.
+
+### Required artifacts
+
+```text
+PhysicalControlLease {
+  plant_payload_workspace_and_maintenance_identity,
+  symbolic_action_and_compiled_control_objective,
+  state_estimator_and_dynamics_model,
+  control_period_latency_jitter_and_compute_budget,
+  force_speed_energy_space_contact_and_human_envelope,
+  advanced_safety_baseline_and_stop_controller_identities,
+  switching_interlock_and_degraded_mode_logic,
+  exploration_and_adaptation_authority,
+  command_actuator_effect_and_presence_trace,
+  stop_stabilization_compensation_and_irreversible_residual,
+  lifecycle_cost_and_non_authorities
+}
+```
+
+## Interfaces
+
+The chapter receives an authorized symbolic action, an observation contract,
+and a world-model prediction. It returns a bounded control lease and effect
+trace to Runtime Adapters, Operations, Claim Ledgers, and Capability
+Replacement. Replacement cannot treat software checkpoint restoration as plant
+restoration. Incident command cannot widen the controller's certified
+operating region.
+
+Perception supplies time-bound state and uncertainty; the control layer returns
+which observations were actually consumed and which deadline or coverage
+failure forced degradation. System Boundaries and Runtime own authorization
+and software effects, but physical control owns command admissibility under the
+plant lease. Artifact Graphs stores controller, model, calibration, trace,
+interlock, and recovery lineage for replay without pretending playback
+recreates the world.
+
+Human Factors owns warning comprehension, intervention time, training, and
+escape-path usability. Operations owns longer-horizon incident coordination,
+maintenance, and service recovery. Capability Replacement must requalify state,
+fallback, timing, and physical-effect obligations, while Evidence and Readiness
+keep simulation, isolated hardware, human-proximity, deployment, and transfer
+claims in distinct lanes. Privacy and Rights govern sensing and recording
+around people.
+
+## Invariants
+
+- Every physical command belongs to a current plant and control lease.
+- A stop path is independent enough to survive the advanced controller's
+  failure.
+- Fallback is reachable before the safety margin expires.
+- Missing sensing, timing, or human-presence state narrows authority.
+- Adaptation or payload change expires affected safety evidence.
+- Simulation and hardware evidence remain distinct.
+- Safety-filter intervention and advanced-controller performance are reported
+  separately.
+- Actuator acknowledgment is not proof of intended physical effect.
+- Software rollback never implies reversal of physical effects.
+- Unknown external effects remain owned residuals.
+- Envelope feasibility and stop reachability are checked for the current state,
+  not inherited from a design-time certificate.
+- Deliberative capability cannot widen the local controller or interlock
+  authority ceiling.
+
+## Evidence
+
+The sources provide complementary pieces: Gemini Robotics illustrates the
+generalist capability frontier; the physical-risk survey broadens the threat
+model; barrier functions supply conditional safety-set enforcement; Simplex
+supplies independent fallback architecture; safe RL separates objective and
+exploration interventions. None validates their composition.
+
+The evidence ladder begins with deterministic simulation and a separately
+implemented physics or hazard oracle. Compare a competent conventional
+controller, an unconstrained learned controller, constraint-aware learning, a
+safety-filter route, and an advanced-plus-Simplex route under matched tasks and
+resources. Inject latency, state-estimation error, actuator saturation, sensor
+loss, communication loss, wrong payload, contact perturbation, human-entry
+events, and unsafe fallback. Positive controls must prove that each safeguard
+activates before a null can be interpreted. Only after the controller, stop
+path, envelope monitor, instrumentation, and failure detection pass may a
+low-energy, physically separated hardware transfer occur.
+
+Joint outcomes include useful task completion, deadline misses, envelope
+violations, minimum safety margin, unsafe energy, collisions or near misses,
+false interventions, fallback availability, stabilization time, irreversible
+effects, operator burden, latency, energy, hardware wear, and full lifecycle
+cost. Human-proximity work requires separate ethics and safety authority and is
+not implied by hardware success.
+
+## Failure modes
+
+- deadline miss, jitter, or stale state;
+- actuator saturation, wear, or unmodeled dynamics;
+- contact instability and collision;
+- unsafe exploration or online adaptation;
+- sim-to-real and model-plant mismatch;
+- sensor-actuator desynchronization;
+- interlock or stop-path bypass;
+- unsafe, unavailable, or oscillatory fallback;
+- human entry or misunderstood intent;
+- communication or power loss;
+- delayed, hidden, or irreversible effect;
+- software recovery presented as physical recovery.
+
+Additional failures include *certificate staleness*, where a valid envelope is
+reused after payload, wear, workspace, estimator, or timing change;
+*fallback common mode*, where advanced and baseline controllers depend on the
+same faulty sensor or compute path; and *handover instability*, where switching
+itself causes unsafe oscillation. A conservative filter can also create
+deadlock, repeated nuisance stops, or operator bypass pressure. Human-presence
+state can be missing or wrong, residual energy can survive an emergency stop,
+and a controller can satisfy modeled constraints while exploiting an omitted
+hazard. These are explicit incident and residual states rather than silent
+exceptions.
+
+## Minimum Viable Implementation
+
+Use a low-energy simulated plant with a simple baseline controller, one learned
+or model-based advanced controller, an independent safety monitor, a reachable
+stop, and a complete command-to-effect trace. Prove seeded deadline,
+state-estimator, saturation, and fallback faults are detected. Transfer only to
+a physically isolated low-energy device after the simulator and monitor
+positive controls pass.
+
+The **minimum honest implementation** contains a versioned PhysicalControlLease,
+plant and payload identity, state-estimator and dynamics versions, deadline and
+jitter limits, protected envelope, advanced and baseline controllers, an
+independent stop route, command/actuator/effect logging, and a verified
+stabilization state. A validator rejects stale plant identity, missing human
+state, infeasible envelopes, common-mode fallback, late commands, unobserved
+effects, and software-only rollback claims.
+
+All seeded faults, nuisance interventions, failed tasks, missed deadlines,
+recovery attempts, and irreversible residuals remain in the denominator.
+Passing the simulator or record validator is **not** evidence of hardware,
+human, or general physical safety. The first artifact stays at `argument` and
+cannot authorize deployment; hardware transfer requires independent safety
+authority, a physically isolated low-energy setup, passed positive controls,
+and a new bounded claim.
+
+## Beyond the State of the Art
+
+The mature target is a plant-neutral control plane that can host classical,
+learned, model-predictive, and future controllers behind stable leases while
+keeping high-rate safety local and independently enforceable. It would
+compose verified envelopes with uncertainty-aware perception, effect-complete
+receipts, safe controller replacement, and human-centered operating rules. It
+would not promise universal safe embodiment; it would make every plant-specific
+assumption and failure impossible to hide behind general intelligence.
+
+Beyond current practice, the target architecture would compile an authorized
+semantic action into plant-specific objectives and constraints while preserving
+separate deliberative, real-time, safety-filter, baseline, interlock, and stop
+identities. It would choose among classical, model-predictive, learned, and
+hybrid controllers by qualified operating region; monitor whether model,
+timing, sensing, and actuator assumptions remain true; and degrade before
+safety margin is exhausted.
+
+The research program must compare competent conventional control, constrained
+optimization, learned control, safe-RL variants, control-barrier filtering,
+Simplex-style switching, and the full governed lease under matched tasks and
+resources. Stressors include state error, model mismatch, contact, payload
+change, latency, jitter, compute overload, sensor loss, actuator saturation,
+power and communication failure, human entry, fallback faults, and unsafe
+recovery. Joint outcomes include task utility, envelope violations, minimum
+margin, energy, near misses, false interventions, deadlock, deadline behavior,
+stabilization, physical residuals, wear, operator burden, and lifecycle cost.
+
+Ablations remove independent stop, timing admission, envelope expiry,
+common-mode analysis, effect observation, or recovery verification. Transfer
+progresses from independent simulation to isolated low-energy hardware and
+only then to other plants, never to human proximity by implication.
+Independent safety and effect evaluators must not share the learned controller's
+model. This is a **research target, not a current result**: no campaign here
+establishes dominance, physical safety, or general embodied competence.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Deadline and jitter injection | Verify late control narrows authority before unsafe state. | planned |
+| State and actuator fault suite | Detect wrong estimates, saturation, desynchronization, and unavailable fallback. | planned |
+| Independent stop-path test | Demonstrate stop reachability under advanced-controller and communication failure. | planned |
+| Simulation-to-hardware equivalence audit | Record every assumption that fails to transfer. | planned |
+| Irreversible-effect accounting | Reject software rollback as physical recovery. | planned |
+
+## Source crosswalk
+
+| Source | Contribution | Boundary |
+|---|---|---|
+| `ext_gemini_robotics_2025` | Modern VLA and embodied-reasoning capability comparator. | Source-reported; no independent assurance. |
+| `ext_foundation_robotics_physical_risk_2025` | Broad foundation-robotics physical-risk taxonomy. | Survey; no local risk mitigation. |
+| `ext_control_barrier_functions_2019` | Conditional safety-filter theory. | Requires correct dynamics, state, set, feasibility, and timing. |
+| `ext_simplex_architecture_1998` | Independent advanced/baseline controller switching. | Bounded process-control precedent. |
+| `ext_safe_reinforcement_learning_survey_2015` | Objective- and exploration-level safety taxonomy. | Survey context, not a safety result. |
+| `viea` | Corben's intent-to-runtime adapter and observed-effect lineage. | Speculative architecture source; no real-time control, plant-safety, or physical-effect result. |
+
+## Summary
+
+Embodied agency is the governed translation from an authorized symbolic action
+to a deadline-bound physical trace. Generalist models can propose and adapt,
+but plant identity, safety envelopes, independent fallback, stop authority,
+effect observation, and irreversible residuals remain outside the model's
+self-certification path.
+
+Control authority is split across timescales: deliberation may propose, a
+real-time controller acts, and an independent safety path can filter, switch,
+hold, isolate, or stop. Each command is admitted against current plant,
+payload, estimator, dynamics, deadline, human-presence, actuator, and fallback
+state. Missing information or lost feasibility narrows authority instead of
+converting urgency into permission.
+
+Simulation, isolated hardware, human-proximity, and deployed evidence remain
+different lanes. Every command, actuator response, observed motion, contact,
+interlock, compensation, and irreversible effect stays in the receipt.
+Controller replacement or adaptation expires affected evidence, and recovery
+requires a verified physical condition rather than restored software. The
+result is not universal safe embodiment; it is a plant-specific boundary that
+makes assumptions, intervention, degradation, and residual harm reviewable.
+
+## Handoff
+
+The physical control lease and its observed-effect receipt hand off to
+**Inter-Stack Protocols, Identity, and Economic Exchange** when controllers,
+operators, facilities, or services cross trust domains. Inter-stack exchange
+must preserve the embodiment, timing, authority, safety, and irreversible-
+residual boundaries rather than reducing them to a successful remote call.
+
+## Sources
+
+See the source crosswalk above and the generated external-source appendix.

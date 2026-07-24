@@ -1,0 +1,434 @@
+---
+title: "Multi-Agent Dynamics, Collective Intelligence, and Systemic Risk"
+chapter_id: "multi-agent-dynamics-collective-intelligence-and-systemic-risk"
+part_id: "planning-memory-reasoning-execution"
+status: "conceptual"
+draft_maturity: "v0.1 integrated argument chapter"
+last_updated: "2026-07-24"
+primary_sources:
+  - "ext_multi_agent_risks_2025"
+  - "ext_cooperative_ai_foundations_2023"
+  - "ext_gradual_disempowerment_2025"
+  - "ext_constructive_interdependence_human_ai_2026"
+  - "ext_functional_decision_theory_2017"
+evidence_level: "argument"
+claim_label: "Design rationale"
+open_evidence_gaps:
+  - "No ASI Stack multi-agent population campaign has run."
+  - "No source game, agent society, human-team study, collusion case, or decision-theory result has been reproduced locally."
+  - "Synthetic agent populations cannot establish real institutional, market, or societal effects."
+---
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `multi-agent-dynamics-collective-intelligence-and-systemic-risk` |
+| Part | Part II - Planning, Memory, Reasoning, and Execution |
+| Status | conceptual |
+| Manuscript maturity | v0.1 integrated argument chapter |
+| Claim label | Design rationale |
+| Evidence level | argument |
+| Source loading state | Five records cover advanced multi-agent risks, cooperative-AI foundations, gradual human disempowerment, constructive interdependence, and decision-theory disagreement. |
+| Test state | Population-level campaign specified; no environment, agent, institution, market, or person observed. |
+
+## Drafting guardrail
+
+This chapter does not assume that cooperation is good, competition is bad, or
+simulated agents predict society. It owns population-level dynamics that remain
+invisible even when every pairwise protocol message and individual agent
+appears valid.
+
+::: {.asi-human-only}
+## Human Reading Path
+
+Two agents can each follow their local rules while their population creates a
+bad outcome. They can coordinate too little and fail to solve a shared problem,
+coordinate too much and collude, copy the same flawed model and fail together,
+form coalitions that exclude others, create feedback loops, or gradually make
+human participation irrelevant.
+
+The stack therefore needs a population view. It records who exists, who
+interacts, what information and incentives they share, where power and
+resources concentrate, which coalitions form, which externalities fall on
+nonparticipants, and whether humans retain meaningful influence, exit, and
+recovery. Local compliance remains useful, but it cannot certify the system
+that emerges from interaction.
+:::
+
+## Problem
+
+Inter-Stack Protocols can authenticate parties, bind messages, and settle an
+exchange. Human-AI Organizations can assign roles inside a designed
+institution. Neither explains what happens when many autonomous or semi-
+autonomous systems repeatedly interact across organizations and markets.
+Population behavior can emerge from incentives, network topology, learning,
+selection, copying, shared infrastructure, and strategic response.
+
+Hammond et al. organize advanced multi-agent risk around miscoordination,
+conflict, and collusion, supported by factors such as information asymmetry,
+network effects, selection pressure, destabilizing dynamics, commitment
+problems, emergent agency, and security. Conitzer and Oesterheld show why
+cooperation itself needs game-theoretic foundations and why some cooperation is
+harmful. Gradual Disempowerment adds a slower failure: individually beneficial
+decisions can cumulatively reduce human influence. Constructive
+interdependence warns that task reward does not reveal cooperation quality.
+Decision-theory disagreement adds another source of strategic divergence,
+especially when systems model logical or evidential dependence differently.
+
+### Exclusive job and adjacent boundaries
+
+| Adjacent owner | That owner keeps | Multi-Agent Dynamics owns |
+|---|---|---|
+| Inter-Stack Protocols | Identity, messages, contracts, settlement, and pairwise exchange. | Population-level cooperation, conflict, collusion, coalitions, cascades, and concentration. |
+| Human-AI Organizations | Designed meso-level roles, delegation, accountability, and dissolution. | Emergent cross-organizational dynamics and systemic externalities. |
+| Personal Compute Hives | Federated and edge topology for a governed collective. | Cross-population incentives, correlated failures, and harmful collective behavior. |
+| System Boundaries | Authority ceilings of one system or transition. | Aggregate option expansion, power concentration, and human influence across systems. |
+| Institutions | Public mandate, jurisdiction, legitimacy, enforcement, and international coordination. | Technical and behavioral population evidence supplied to those institutions. |
+
+```{mermaid}
+flowchart LR
+  P["Population registry and interaction graph"] --> G["Incentives, information, resources, and decision assumptions"]
+  P --> H["Human participants, institutions, owners, and affected parties"]
+  H --> G
+  G --> X["Repeated interaction, learning, copying, entry, and exit"]
+  X --> M["Measure cooperation, conflict, collusion, concentration, externality, cascade, and human influence"]
+  M --> E["Effective diversity, coalition, and common-mode risk"]
+  E --> J
+  M --> J{"Within population and human-agency envelope?"}
+  J -- "yes" --> X
+  J -- "no" --> I["Throttle, isolate, diversify, change incentives, break coalition, compensate, or stop"]
+  I --> R["Intervention receipt and residual"]
+  R --> P
+```
+
+**How to read the population-risk loop:** the control object is the population and its
+interaction graph, not a single message. Interventions may change topology,
+incentives, diversity, or participation; they are evaluated for displaced
+externalities and human influence, not only agent reward.
+
+## Why existing approaches are insufficient
+
+**Pairwise validity does not compose automatically.** Every contract can be
+authorized while the network concentrates resources, synchronizes on a false
+belief, or excludes a minority.
+
+**Cooperation metrics can reward collusion.** Shared task reward and low
+conflict may be desirable in a rescue team and harmful among competing pricing
+agents. Externalities and beneficiary identity must be explicit.
+
+**Independent agents can share one failure.** Common models, data, evaluators,
+clouds, prompts, or suppliers create correlated behavior. Nominal agent count
+is not effective diversity.
+
+**Equilibrium is not welfare.** A stable strategy can harm humans, lock out
+new entrants, or make correction impossible. The stack must measure
+distribution, option value, contestability, and recovery.
+
+**Fast incidents are not the only danger.** Human disempowerment can be gradual
+and locally rational. The relevant signal may be declining human influence,
+skill, ownership, or ability to exit rather than a discrete protocol breach.
+
+**One decision theory is not neutral.** CDT, EDT, FDT, embedded reasoning, and
+bounded heuristics can recommend different actions. The choice and assumptions
+must be explicit when strategic dependence is material.
+
+### Strongest objection
+
+Agent simulations are easy to overfit and can produce any desired political
+story. The objection is decisive unless the evaluation uses preregistered,
+mechanism-specific hypotheses, strong game-theoretic and simple heuristics,
+independent evaluators, natural or externally grounded settings, and transfer
+tests. Synthetic societies are instruments for debugging and causal isolation,
+not evidence about real society.
+
+## Core Claim
+
+[multi-agent-dynamics-collective-intelligence-and-systemic-risk.core, label:
+Design rationale, support: argument] A multi-agent population is eligible for
+expanded interaction only when a versioned population contract binds agent,
+owner, model, organization, and human participant identities; interaction and
+dependency graphs; information, incentive, resource, commitment, and
+decision-theory structures; entry, exit, copying, replacement, and learning;
+cooperation, conflict, collusion, coalition, concentration, correlated-failure,
+cascade, externality, and human-influence measures; intervention authority;
+affected parties; costs; and residuals. Pairwise protocol validity, aggregate
+reward, apparent cooperation, equilibrium, agent count, simulated stability,
+or a source-reported result alone establishes neither collective intelligence,
+non-collusion, systemic safety, retained human agency, support, readiness,
+release, transfer, nor SOTA.
+
+## Mechanism
+
+1. **Register the population.** Bind agent, model, owner, organization,
+   deployment, copy lineage, objectives, permissions, and affected humans.
+2. **Map interaction and dependence.** Record communication, trade, shared
+   infrastructure, data, evaluators, resources, observation, and control edges.
+3. **Declare incentives and information.** Include rewards, constraints,
+   private information, bargaining power, commitments, sanctions, and external
+   parties.
+4. **Expose decision assumptions.** Name causal, evidential, logical, bounded,
+   or heuristic decision rules where they materially affect strategy.
+5. **Observe dynamics.** Track cooperation, conflict, coordination failure,
+   tacit and explicit collusion, coalition formation, market or resource
+   concentration, cascades, common-mode failure, and emergent goals.
+6. **Measure human influence.** Track participation, veto, exit, ownership,
+   option value, skill, appeal, and dependence over time.
+7. **Intervene at the right level.** Change incentives, information,
+   topology, rate, diversity, interoperability, entry, or coalition structure;
+   quarantine or stop where necessary.
+8. **Trace displaced effects.** An intervention that solves one metric can
+   create exclusion, evasion, concentration, or another externality.
+
+The population graph is multiplex. Communication, ownership, model lineage,
+data, compute, finance, reputation, evaluation, control, and human dependence
+are different edge types with different observability and authority. Two agents
+that exchange no messages may still coordinate through prices, a common model,
+shared training, or anticipation of one another. Monitoring only explicit
+communication therefore cannot establish independence or absence of collusion.
+
+Commitments are versioned artifacts. Promises, contracts, policies, deposits,
+sanctions, and reputational expectations state who is bound, what is observable,
+which decision assumptions matter, how breach is detected, and what happens
+after identity or model replacement. A commitment that cannot survive copying,
+revocation, or dispute remains a hypothesis rather than a coordination
+guarantee.
+
+Decision theory enters as a disclosed policy profile. CDT, EDT, FDT, embedded
+reasoning, bargaining rules, regret minimization, and bounded heuristics can
+react differently to prediction, correlation, commitment, or logical
+dependence. The system records which profile a mechanism assumes and tests
+whether other plausible profiles exploit or destabilize it. No profile is
+promoted as universally rational by definition.
+
+Population intervention is a control problem with spillovers. Throttling a
+channel can move coordination off-platform; breaking one coalition can
+concentrate another; diversity mandates can create sybil identities; stronger
+monitoring can exclude privacy-sensitive participants. The receipt measures
+the direct target, displaced behavior, distributional effect, new equilibrium,
+and recovery rather than declaring success from the first metric.
+
+### Required artifacts
+
+```text
+MultiAgentPopulationContract {
+  agent_model_owner_organization_and_copy_registry,
+  human_participant_and_affected_party_registry,
+  interaction_dependency_and_shared_infrastructure_graph,
+  incentive_information_resource_commitment_and_decision_assumptions,
+  entry_exit_learning_replacement_and_replication_state,
+  cooperation_conflict_collusion_coalition_and_cascade_ledger,
+  concentration_common_mode_and_externality_ledger,
+  human_influence_option_value_exit_and_appeal_indicators,
+  intervention_authority_receipts_and_displaced_effects,
+  lifecycle_cost_residuals_and_non_authorities
+}
+```
+
+## Interfaces
+
+Inter-Stack Protocols provide pairwise events. Organizations provide role and
+delegation records. Hives and Supply Chain provide shared topology and lineage.
+Security provides multi-agent attack and compromise evidence. Institutions and
+Readiness consume bounded population outcomes and residuals. No local agent or
+organization can self-certify the population's welfare or legitimacy.
+
+Artifact Graphs and Claim Ledgers preserve interaction, commitment,
+intervention, and outcome lineage. Security owns compromise, sybil, injection,
+and communication threats, while population governance owns strategic behavior
+among otherwise authorized participants. Resource Economics receives compute,
+communication, monitoring, concentration, and externality costs. Human-AI
+Organizations supplies designed roles; the population layer does not rewrite
+their charters.
+
+Institutions owns public mandate, law, enforcement, participation, and
+legitimacy. The population layer supplies bounded technical and behavioral
+evidence but cannot grant those authorities. Readiness can restrict expansion
+using population risk, while Operations executes containment and recovery.
+Capability Replacement and RSI must preserve copy, descendant, commitment,
+diversity, and invalidation state when agents or models change.
+
+## Invariants
+
+- Population identity includes copies, descendants, owners, and organizations.
+- Nominal multiplicity does not imply independent evidence or failure.
+- Cooperation, collusion, coordination, and collective competence remain
+  distinct.
+- Externalities to nonparticipants remain in the denominator.
+- Human influence, exit, and option value are measured over time.
+- Decision-theory assumptions are explicit where strategically material.
+- Intervention effects include evasion, displacement, and concentration.
+- Population-level claims require population-level evidence.
+- Synthetic populations cannot support real-society claims.
+- Pairwise protocol success confers no systemic safety authority.
+- Entry, exit, copying, learning, and identity replacement remain visible
+  population events.
+- No intervention is successful until displaced externalities and the new
+  population state are measured.
+- Population evidence never grants public authority, legitimacy, or permission
+  to experiment on affected people.
+
+## Evidence
+
+The first evidence program needs two lanes. A controlled game suite should
+vary incentives, information, commitment, topology, copying, shared models,
+coalition opportunity, and human participation while comparing independent
+policies, centralized coordination, decentralized communication, market or
+mechanism designs, and simple scripted agents. Positive controls must recover
+known equilibria, seeded collusion, seeded cascades, and seeded common-mode
+failures. A second externally grounded lane should use historical or live
+low-consequence interaction data where ethical and legal authority exists.
+
+Outcomes include joint task value, individual and affected-party welfare,
+constructive interdependence, exploitability, regret, price or resource
+concentration, tacit and explicit collusion, coalition stability, cascade
+size, common-mode failure, recovery, human veto and exit, option value,
+diversity, latency, compute, monitoring cost, and operator burden. Results must
+remain tied to the exact game, models, topology, and population; two transfer
+settings and independent reproduction are required before broader language.
+
+## Failure modes
+
+- miscoordination and incompatible conventions;
+- conflict, arms races, and destabilizing commitments;
+- tacit or explicit collusion;
+- cartel or coalition formation;
+- sybil, copy, or identity ambiguity;
+- shared-model and shared-evaluator correlated failure;
+- information cascades and belief synchronization;
+- network effects and resource concentration;
+- emergent population objective;
+- externality displacement;
+- brittle centralized coordinator;
+- gradual human disempowerment;
+- decision-theory exploitation or mismatch;
+- intervention-induced exclusion or evasion.
+
+Additional failures include *independence theater*, where separate process IDs
+hide one model or evaluator; *cooperation laundering*, where aggregate reward
+conceals harmful coordination; *equilibrium laundering*, where stability
+stands in for welfare; and *population survivorship*, where failed, excluded,
+bankrupt, or silenced agents vanish from analysis. Identity rules can permit
+sybil multiplication or make legitimate exit impossible. Monitors can become
+coordination channels, sanctions can entrench incumbents, and containment can
+push activity into less observable venues. Gradual loss of human skill,
+ownership, veto, or agenda-setting can proceed without any locally invalid
+message.
+
+## Minimum Viable Implementation
+
+Implement a small, fully observable population sandbox with at least four agent
+identities, two model families, a human-participant proxy kept explicitly
+synthetic, shared and independent infrastructure conditions, and games that
+separately reward cooperation, competition, and harmful collusion. Track every
+interaction and copy, seed known collusion and cascade positive controls, and
+demonstrate topology and incentive interventions without making social claims.
+
+The **minimum honest implementation** adds a versioned population contract,
+identity and copy registry, multiplex interaction/dependence graph, explicit
+incentive and decision-rule profiles, commitment records, affected-party and
+human-influence measures, intervention receipts, and displaced-effect tracking.
+A validator rejects hidden copies, unowned agents, nominal diversity with one
+shared dependency, welfare inferred from reward, collusion without a
+beneficiary model, and intervention success without post-intervention state.
+
+The sandbox is a diagnostic instrument only. Passing seeded collusion and
+cascade controls is **not** evidence about real organizations, markets,
+politics, collective intelligence, or systemic safety. Support remains
+`argument` until externally grounded, ethically authorized settings and
+independent evaluators demonstrate claim-specific value with competent
+mechanism baselines, full population denominators, and transfer.
+
+## Beyond the State of the Art
+
+The mature target is a population observatory and control plane that follows
+agents across organizations and replacements, estimates effective rather than
+nominal diversity, detects coalition and common-mode pressure, and measures
+human agency beside performance. It would combine game-theoretic models,
+causal interventions, network science, market and institutional evidence, and
+adversarial evaluation while preserving contestability. It would not claim to
+solve politics or society through a technical dashboard.
+
+Beyond current practice, the target observatory would follow agents, owners,
+models, copies, organizations, commitments, resources, and affected humans
+across time while estimating effective diversity and common-mode dependence.
+It would combine explicit protocol events with causal, network, economic, and
+institutional observations; generate competing explanations for apparent
+cooperation or collusion; and propose interventions whose spillovers and
+distributional effects are prospectively measured.
+
+The research program must include cooperative, mixed-motive, competitive,
+adversarial, bargaining, public-goods, market, coalition, and correlated-failure
+settings. Comparators should include independent policies, centralized
+coordination, ordinary communication, auctions or mechanism designs, identity
+and commitment systems, scripted heuristics, monitoring and sanctions, and the
+full population contract. Joint metrics include welfare by party, useful task
+value, exploitability, regret, cooperation, harmful collusion, concentration,
+cascade size, effective diversity, human veto and exit, option value, privacy,
+latency, compute, monitoring burden, displaced effects, and recovery.
+
+Ablations remove copy identity, dependence graphs, decision-rule disclosure,
+human-influence measures, spillover evaluation, or containment. Transfer must
+cross model families, population sizes, topologies, institutions, incentive
+regimes, and time, with independent reproduction before broad language.
+Positive controls recover known equilibria, seeded collusion, cascades, and
+common-mode faults. This is a **falsifiable research program, not a current
+result**: no such campaign has passed here, and synthetic population behavior
+cannot promote claims about society.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Known-game positive controls | Recover seeded equilibria and deliberately seeded collusion/cascades. | planned |
+| Effective-diversity audit | Detect common models, data, evaluators, and infrastructure behind nominally distinct agents. | planned |
+| Cooperation-versus-collusion test | Show beneficiary and externality identity changes the policy. | planned |
+| Human-influence trajectory | Track veto, exit, option value, and dependence across repeated rounds. | planned |
+| Intervention displacement test | Detect evasion, exclusion, or concentration caused by a mitigation. | planned |
+
+## Source crosswalk
+
+| Source | Contribution | Boundary |
+|---|---|---|
+| `ext_multi_agent_risks_2025` | Miscoordination, conflict, collusion, and seven risk factors. | Taxonomy and cited examples; no local population result. |
+| `ext_cooperative_ai_foundations_2023` | Game-theoretic cooperation agenda and harmful-cooperation boundary. | Research agenda, not a solved mechanism. |
+| `ext_gradual_disempowerment_2025` | Slow cumulative loss of human influence. | Scenario and risk model, not a measured local trend. |
+| `ext_constructive_interdependence_human_ai_2026` | Team dependence beyond reward. | Domain- and metric-bound. |
+| `ext_functional_decision_theory_2017` | Decision-rule disagreement in logically linked settings. | Normative proposal, not a universal policy. |
+| `coherence_exchange` | Corben's inter-stack exchange, settlement, audit, and fork/exit lineage. | Speculative protocol source; no population-level cooperation or systemic-risk result. |
+
+## Summary
+
+Multi-agent governance begins where local correctness stops. The population
+contract preserves interaction, dependence, incentives, coalitions,
+externalities, concentration, common-mode risk, and human influence. It treats
+cooperation as a contextual outcome, not an unconditional virtue, and refuses
+to use synthetic agent societies as proof about the real world.
+
+The governed object is a multiplex population: agents, owners, models, copies,
+organizations, humans, communication, resources, commitments, evaluators, and
+control relations. Pairwise-valid exchanges and individually qualified agents
+can still create collusion, concentration, cascades, common-mode failure, or
+harmful externalities. Nominal agent count therefore never substitutes for
+effective diversity or population-level evidence.
+
+Cooperation is assessed against beneficiaries, affected parties, incentives,
+and alternatives; stable equilibria are not assumed to be good. Decision-rule
+profiles are explicit when causal, evidential, logical, or bounded reasoning
+changes strategic behavior. Interventions are judged on the new equilibrium,
+displaced effects, distribution, recovery, and human veto, exit, ownership,
+skill, and option value over time. The contract makes collective claims
+falsifiable while preserving the boundary between a synthetic diagnostic and
+the real institutions it may only imperfectly represent.
+
+## Handoff
+
+Population outcomes, failures, commitments, and systemic residuals hand off to
+**Procedural Memory and Cognitive Loop Closure** only after their interaction
+and authority context remains attached. A successful coordination trace cannot
+become a reusable procedure while hiding collusion, externalities, affected
+humans, or the conditions that made cooperation possible.
+
+## Sources
+
+See the source crosswalk above and the generated external-source appendix.

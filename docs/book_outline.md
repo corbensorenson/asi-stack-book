@@ -401,6 +401,8 @@ Source loading queue:
 | External comparators | `ext_sparse_moe_2017`, `ext_gshard_2020`, `ext_switch_transformer_2021`, `ext_expert_choice_routing_2022`, `ext_moe_llm_survey_2024`, `ext_frugalgpt_2023`, `ext_hybrid_llm_2024`, `ext_routellm_2024`, `ext_longllmlingua_2023`, `ext_speculative_decoding_2022`, `ext_multi_token_prediction_2024`, `ext_medusa_2024`, `ext_eagle_2024`, `ext_bigbench_2022` | Load after internal efficiency sources to position route-ledger accounting against conditional computation, distributed sparse experts, learned/query routing, prompt compression, fast generation, and benchmark pressure. Treat as comparator vocabulary only; do not claim reproduced efficiency, router quality, speedup, compression utility, benchmark score, or support-state promotion. |
 | Runtime-reference source | `moecot` | Use the reviewed source note for fail-closed orchestration, ledgers, replay, handoff, and residual vocabulary only; no runtime effect or benchmark is imported. |
 
+
+| Manifest assignment reconciliation | `ext_scaling_laws_neural_language_models_2020`, `ext_chinchilla_compute_optimal_2022`, `ext_emergent_abilities_2022`, `ext_emergence_mirage_2023` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: The architecture needs a non-scale-only theory for how capability can increase without using maximal cognition for every subtask.
@@ -1169,6 +1171,62 @@ Lean proof targets:
 | `lean:corrigibility.agency.failure_blocks_promotion` | `AsiStackProofs.SafetyCriticalLifecycle` | The missing-affected-party countermodel cannot commit, and protected-predicate removal or authority widening remains unrepresentable as an accepted transition. | implemented |
 | `lean:corrigibility.agency.generic_countermodel_routes` | `AsiStackProofs.Corrigibility` | Within the bounded AgencyActionDecision and AgencyControlDecision models, missing usable or pre-effect review on high-impact actions routes to review, low-risk unbounded delegation routes to narrowing, and denial without an accountable principal preserves an audit residual. | implemented |
 
+### Inner Alignment, Mesa-Optimization, and Learned-Objective Integrity
+
+Stable ID: `inner-alignment-mesa-optimization-and-learned-objective-integrity`
+
+Chapter job: Own the defeasible case about what a learned policy may be
+optimizing under distribution shift, without inferring objective identity from
+training reward, behavioral compliance, interpretability output, or one
+adversarial test.
+
+Core claim: Consequential deployment requires a Learned-Objective Integrity Record binding the outer target, actual learning signals, model identity, behaviorally equivalent policy hypotheses, internal-optimization evidence, goal-generalization and conditional-policy tests, independent behavioral/interventional/white-box evidence, deployment opportunity, power indicators, mitigation hiding tests, monitoring, rollback, descendant invalidation, costs, residuals, and non-authorities.
+
+Source loading queue:
+
+| Role | Source IDs | Loading instruction |
+|---|---|---|
+| Primary | `ext_learned_optimization_risks_2019`, `ext_goal_misgeneralization_2022` | Read for mesa-optimization and goal-misgeneralization problem structure; preserve their conceptual and empirical limits. |
+| Supporting | `ext_sleeper_agents_2024`, `ext_emergent_misalignment_reward_hacking_2025` | Use for constructed persistent policies and reported reward-hacking-to-broad-misalignment behavior; do not generalize to naturally arising deception or all training regimes. |
+| Boundary comparator | `ext_optimal_policies_power_2019` | Use to connect objective uncertainty to option-preserving behavior under stated environment assumptions; do not turn possibility into inevitability. |
+
+
+| Manifest assignment reconciliation | `alignment_field` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+Draft arc:
+
+- Separate the base objective, training signal, learned policy, learned
+  optimizer, deployment objective hypothesis, and observed behavior.
+- Preserve competing objective hypotheses and require evidence that could
+  distinguish them under relevant shift, trigger, capability, and opportunity
+  conditions.
+- Combine behavioral stress, causal intervention, mechanistic evidence,
+  training-history inspection, and post-update monitoring without treating any
+  one method as an objective-identification oracle.
+- Bind promotion to exact artifact, training lineage, environment, evaluator,
+  authority, consumer, and time-bounded lease; material updates reopen review.
+- Cover goal misgeneralization, deceptive persistence, trigger-conditioned
+  policy changes, situational awareness, evaluator gaming, objective drift,
+  false-positive detector capture, and mitigation-induced concealment.
+
+Draft deliverables:
+
+- A learned-objective integrity case, hypothesis ledger, intervention plan,
+  deployment-shift map, trigger/deception test register, monitoring contract,
+  promotion ceiling, rollback route, and residual record.
+- A natural and constructed misgeneralization campaign with competent
+  behavioral, causal, mechanistic, and no-integrity-case baselines; independent
+  evaluation; false-positive and false-negative accounting; and no inference
+  beyond the sampled policies, shifts, and methods.
+- Current support remains `argument`: cited studies are comparators, not local
+  proof of objective identity, natural deception, mitigation efficacy, or
+  deployment safety.
+
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:inner_alignment.behavior_does_not_identify_objective` | `AsiStackProofs.LearnedObjectiveIntegrity` | A finite admission model refuses to infer learned-objective identity from compliant behavior alone. | planned |
+
 ### Moral Uncertainty, Value Conflict, and Contestable Governance
 
 Stable ID: `moral-uncertainty-and-value-conflict`
@@ -1187,7 +1245,7 @@ Source loading queue:
 | Folded history | `governance-rights-fork-exit-and-audit` | Folded into this destination on 2026-06-30; preserve fork, exit, audit, redaction, appeal, dissent, contestability, durable record paths, safety-limited fork obligations, source mappings, tests, and proof hooks as subclaims and history. |
 
 
-| Manifest assignment reconciliation | `platonic_world_model` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `platonic_world_model`, `ext_taking_ai_welfare_seriously_2024` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: A stack may need to act while moral theories, stakeholder interests,
@@ -2166,6 +2224,59 @@ Lean proof targets:
 
 Proof boundary: the two assumption-restating Intent-to-Execution declarations and two projection-only Command declarations are retired with frozen lineage. Their replacements are reachable models plus independent consumers; retained dispatch and command-field branches remain finite consequences. The combined surface does not prove arbitrary semantic preservation, natural-language interpretation, authentic authority, complete effects, evaluator correctness, useful execution, deployment, reproduction, transfer, or production safety.
 
+### Perception, Sensor Fusion, and Observation Trust
+
+Stable ID: `perception-sensor-fusion-and-observation-trust`
+
+Chapter job: Own the transition from heterogeneous raw signals to an admitted
+observation, preserving sensor identity, time, calibration, missingness,
+corruption, fusion disagreement, and authority before World Models or Planning
+may treat the result as evidence.
+
+Core claim: A consequential observation requires a versioned contract binding task need, sensor and modality identity, calibration, pose, clocks, provenance, coverage, missingness, per-channel hypotheses, alignment, fusion, dependence, disagreement, shift, active observation, freshness, authority, cost, and residuals.
+
+Source loading queue:
+
+| Role | Source IDs | Loading instruction |
+|---|---|---|
+| Taxonomy | `ext_multimodal_machine_learning_taxonomy_2019` | Use for representation, translation, alignment, fusion, and co-learning distinctions; it is a survey, not observation-admission evidence. |
+| Representation comparator | `ext_imagebind_2023` | Use for shared multimodal embedding prior art; do not equate embedding proximity with calibrated truth or causal grounding. |
+| Robustness and corruption | `ext_3d_detection_corruptions_2023`, `ext_adversarial_sensor_fusion_2022` | Use for reported corruption and adversarial fusion behavior; preserve threat-model, architecture, and benchmark limits. |
+| Embodied handoff | `ext_gemini_robotics_2025` | Use for multimodal embodied capability context; reported results do not establish independent safety assurance or local transfer. |
+
+
+| Manifest assignment reconciliation | `platonic_world_model` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+Draft arc:
+
+- Separate raw signal, calibrated measurement, aligned observation candidate,
+  fused representation, inferred state, and action-authorizing evidence.
+- Record clocks, geometry, calibration, provenance, preprocessing, missingness,
+  corruption hypotheses, distribution support, and transformation loss.
+- Preserve cross-channel disagreement and causal dependence; fusion must not
+  average away the evidence needed to detect common-mode or adversarial error.
+- Qualify early, late, shared-embedding, learned, and rule-based fusion routes
+  against the consumer, deadline, threat model, and fallback.
+- Route stale, unsupported, contradictory, uncalibrated, or integrity-failing
+  observations to abstention, active sensing, degraded mode, or safe hold.
+
+Draft deliverables:
+
+- An observation lease, sensor/transformation graph, clock and calibration
+  ledger, disagreement record, corruption/OOD monitor, degradation route, and
+  observation-admission receipt.
+- A preregistered natural corruption and adversarial disagreement campaign with
+  competent early/late/shared-representation baselines, missing-channel and
+  common-mode controls, calibration/selective-risk metrics, complete latency
+  and cost, and an independent outcome evaluator.
+- Current support remains `argument`; cited multimodal and robotics results are
+  not local sensor-truth, robustness, causal-grounding, or safety evidence.
+
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:perception.correlated_agreement_no_independent_promotion` | `AsiStackProofs.ObservationTrust` | A finite admission model refuses to promote correlated channel agreement as independent evidence. | planned |
+
 ### Planning as a Control Layer: DAGs and Intelligence Arbitrage
 
 Stable ID: `planning-as-a-control-layer`
@@ -2271,7 +2382,7 @@ Source loading queue:
 | Variants | `deterministic_capability_compilation`, `qcsa_whitepaper`, `cognitive_compilation` | Use for versioned admission, heterogeneous substrates, and typed artifacts; none establishes prediction quality. |
 
 
-| Manifest assignment reconciliation | `relational_dimension_compiler` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `relational_dimension_compiler`, `ext_toward_causal_representation_learning_2021`, `ext_deep_ensembles_2017`, `ext_conformal_prediction_2021`, `ext_wilds_2021` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: planners can optimize an attractive hallucinated future when partial
@@ -2928,6 +3039,60 @@ Lean proof targets:
 | `lean:jobs.lifecycle.delivery_probe_fixture_bridge` | `AsiStackProofs.TypedJobRefinement` | The versioned lifecycle consumer preserves the exact two-valid/seven-invalid typed-job delivery suite without treating delivery or verification fields as task success, output truth, support, or external effects. | implemented |
 | `lean:jobs.lifecycle.durable_lifecycle_probe_bridge` | `AsiStackProofs.TypedJobRefinement` | The versioned lifecycle consumer preserves the exact two-valid/nine-invalid durable retry and lease suite without treating declared idempotence, recovery, enforcement, receipt, or replay fields as real service behavior. | implemented |
 
+### Human-AI Organizations, Delegation, and Accountability
+
+Stable ID: `human-ai-organizations-delegation-and-accountability`
+
+Chapter job: Own the meso-level allocation of decision rights, review duties,
+learning obligations, liability, incentives, and recovery across mixed human-AI
+institutions, rather than reducing governance to a nominal human in the loop.
+
+Core claim: Consequential delegation requires a versioned organizational contract binding charter, affected parties, actors, roles, competence, workload, accessibility, information and decision rights, delegation, separation of duties, conflicts, incentives, benefits, escalation, appeal, remedy, contribution, dependence, accountability, succession, dissolution, and residual custody.
+
+Source loading queue:
+
+| Role | Source IDs | Loading instruction |
+|---|---|---|
+| Governance baseline | `ext_nist_ai_rmf_1_0_2023` | Use for organizational risk-management functions and role discipline; do not treat framework adoption as efficacy. |
+| Accountability failure | `ext_moral_crumple_zones_2019` | Use for responsibility/control mismatch and blame displacement; preserve its conceptual and case-bound scope. |
+| Authority allocation | `ext_ai_decision_authority_2020` | Use for the modeled trade-off among alignment, human information acquisition, and AI reliability; do not generalize the economic model into a universal organization. |
+| Work outcomes | `ext_generative_ai_at_work_2025` | Use for reported field evidence on assistance and heterogeneous effects; do not infer all-job or long-run institutional outcomes. |
+| Team interaction | `ext_constructive_interdependence_human_ai_2026` | Use to distinguish task reward from whether team members actually enable one another; reported Overcooked findings are not a general cooperation result. |
+
+
+| Manifest assignment reconciliation | `talos` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+Draft arc:
+
+- Separate recommendation, decision, approval, execution, veto, audit,
+  ownership, remedy, and liability rather than naming one “human owner.”
+- Match authority to information, competence, time, workload, control,
+  contestability, and ability to change the outcome.
+- Preserve monitoring and review burdens, automation bias, deskilling,
+  dependency, incentives, distributional effects, worker voice, and exit.
+- Emit organization-level outcome and incident receipts that keep individual,
+  team, institution, and vendor responsibilities distinct.
+- Reallocate or suspend authority when competence, workload, model behavior,
+  task distribution, law, or organizational purpose changes materially.
+
+Draft deliverables:
+
+- An organization charter, role/competence registry, decision-rights matrix,
+  delegation lease, review-capacity budget, incident-accountability graph,
+  learning/skill plan, succession/dissolution plan, and outcome receipt.
+- A matched natural or realistic organizational campaign varying recommendation,
+  approval, execution, and veto authority while measuring useful outcomes,
+  calibration, escalation, burden, skill, accountability localization,
+  distributional effects, recovery, and cost.
+- Current support remains `argument`; cited field and modeling work does not
+  establish an optimal organization, legitimate authority, legal liability, or
+  local outcome.
+
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:human_ai_org.accountability_requires_authority` | `AsiStackProofs.HumanAIOrganizations` | A finite organizational record refuses accountability assignment when information, competence, time, or intervention authority is absent. | planned |
+
 ### Artifact Graphs, Audit Logs, and Replay
 
 Stable ID: `artifact-graphs-audit-logs-and-replay`
@@ -3222,6 +3387,63 @@ Lean proof targets:
 
 Cross-chapter partitioned-authority proof note: the partitioned-authority fixture is implemented under `AsiStackProofs.PersonalComputeHives` as `lean:personal_hives.partitioned_authority.fixture_bridge`, not duplicated in the Runtime Adapters proof table. It keeps the hives/runtime grant-effect boundary synchronized while preserving no deployed partition tolerance, distributed consensus, availability, revocation propagation, runtime adapter enforcement, support-state promotion, or chapter-core promotion.
 
+### Embodied Agency, Real-Time Control, and Physical Safety
+
+Stable ID: `embodied-agency-real-time-control-and-physical-safety`
+
+Chapter job: Own the transition from an authorized decision to deadline-bound
+physical actuation under uncertain dynamics, independent interlocks, fallback
+control, observed effects, and recovery.
+
+Core claim: Physical execution requires a plant-specific control lease binding embodiment, workspace, state estimator, dynamics, timing, force/space/contact limits, human presence, advanced/baseline/stop controllers, switching and interlocks, exploration, degraded modes, observed effects, compensation, irreversible residuals, costs, and expiry.
+
+Source loading queue:
+
+| Role | Source IDs | Loading instruction |
+|---|---|---|
+| Embodied capability | `ext_gemini_robotics_2025` | Use for reported vision-language-action and spatial-reasoning capability; do not infer independent safety or local transfer. |
+| Risk boundary | `ext_foundation_robotics_physical_risk_2025` | Use for physical-risk and evaluation framing; preserve source scope and non-reproduction. |
+| Formal safety comparator | `ext_control_barrier_functions_2019` | Use for forward-invariance and constraint-filtering theory under stated dynamics and set assumptions. |
+| Independent fallback | `ext_simplex_architecture_1998` | Use for advanced-controller/safety-controller switching prior art; do not generalize one control case into universal safety. |
+| Learning taxonomy | `ext_safe_reinforcement_learning_survey_2015` | Use for constrained objective and safe-exploration taxonomy; a survey does not validate a deployed controller. |
+
+
+| Manifest assignment reconciliation | `viea` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+Draft arc:
+
+- Separate deliberative policy, trajectory or action proposal, safety filter,
+  low-level controller, independent interlock, actuator command, observed
+  effect, and recovery.
+- Bind every control decision to clock, latency and jitter budget, state
+  estimate, model confidence, actuation limits, protected sets, contact and
+  human proximity, authority, and fallback readiness.
+- Give the safety controller and emergency stop an authority path that does not
+  depend on the advanced policy's cooperation.
+- Treat model mismatch, sensor loss, actuator fault, communication loss,
+  deadline miss, nuisance intervention, and unsafe handover as first-class
+  outcomes.
+- Record physical side effects, compensation limits, safe state, recovery
+  evidence, maintenance, and requalification after material change.
+
+Draft deliverables:
+
+- A safety-envelope contract, timing ledger, dynamics/support record, protected-
+  set registry, fallback controller and handover lease, intervention/effect
+  receipt, and recovery/requalification packet.
+- A matched high-fidelity or physical campaign comparing learned control,
+  conventional control, barrier filtering, Simplex-style fallback, and the
+  full governed envelope across normal, shift, fault, deadline, and recovery
+  cases with complete useful-throughput, intervention, missed-help, latency,
+  damage, and governance cost.
+- Current support remains `argument`; no local control, physical safety,
+  invariance, recovery, or deployment result exists.
+
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:embodiment.missing_safety_state_blocks_control` | `AsiStackProofs.EmbodiedPhysicalSafety` | A finite control admission model blocks physical commands when timing, state, envelope, fallback, or stop evidence is missing. | planned |
+
 ### Inter-Stack Protocols, Identity, and Economic Exchange
 
 Stable ID: `inter-stack-protocols-identity-and-economic-exchange`
@@ -3334,6 +3556,65 @@ Lean proof targets:
 | `lean:inter_stack.revoked_credential.denies_dispatch` | `AsiStackProofs.InterStackProtocols` | A verified but no-longer-current required credential denies dispatch. | implemented |
 | `lean:inter_stack.disputed_receipt.requires_review` | `AsiStackProofs.InterStackProtocols` | A disputed expected receipt routes to accountable review. | implemented |
 | `lean:inter_stack.missing_residual_owner.requires_review` | `AsiStackProofs.InterStackProtocols` | Missing residual ownership routes to accountable review. | implemented |
+
+### Multi-Agent Dynamics, Collective Intelligence, and Systemic Risk
+
+Stable ID: `multi-agent-dynamics-collective-intelligence-and-systemic-risk`
+
+Chapter job: Own population-level behavior among heterogeneous agents whose
+pairwise exchanges may be valid while incentives, commitments, coalitions,
+collusion, cascades, correlated failure, and aggregate human influence remain
+unsafe or unstable.
+
+Core claim: Expanded multi-agent interaction requires a population contract binding agent/owner/model/organization identities, human participants, interaction and dependency graphs, incentives, information, resources, commitments, decision assumptions, entry/exit/copying/learning, population outcomes, externalities, human influence, interventions, costs, and residuals.
+
+Source loading queue:
+
+| Role | Source IDs | Loading instruction |
+|---|---|---|
+| Risk map | `ext_multi_agent_risks_2025` | Use for population-level failure categories and governance questions; do not infer local prevalence or solution efficacy. |
+| Cooperative foundations | `ext_cooperative_ai_foundations_2023` | Use for game-theoretic cooperation research structure and the distinction between beneficial cooperation and harmful collusion. |
+| Human influence | `ext_gradual_disempowerment_2025` | Use for aggregate economic, cultural, and political influence-loss scenarios; preserve its modeling assumptions. |
+| Human-agent interdependence | `ext_constructive_interdependence_human_ai_2026` | Use to separate task reward from reciprocal contribution in a studied team setting. |
+| Decision-theory comparator | `ext_functional_decision_theory_2017` | Compare CDT, EDT, and FDT recommendations as contested policy designs; do not declare one universally rational or deployable. |
+
+
+| Manifest assignment reconciliation | `coherence_exchange` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+Draft arc:
+
+- Separate protocol validity, individual competence, bilateral cooperation,
+  population welfare, exploitability, concentration, and systemic resilience.
+- Represent games, roles, information, communication, incentives, commitments,
+  enforcement, decision rules, identities, coalitions, resources, externalities,
+  and affected humans explicitly.
+- Test beneficial cooperation, bargaining, coordination failure, collusion,
+  cartelization, deception, sybil behavior, arms races, correlated errors,
+  cascading defaults, and gradual disempowerment.
+- Keep CDT, EDT, FDT, embedded dependence, bargaining, and commitment as
+  explicit policy profiles whose consequences are evaluated rather than
+  smuggled into a generic “rational agent.”
+- Govern population entry, communication, rate and resource limits,
+  concentration, monitoring, quarantine, dissolution, recovery, and appeal.
+
+Draft deliverables:
+
+- An interaction contract, decision-rule profile, commitment and enforcement
+  receipt, coalition/concentration ledger, externality record, systemic-risk
+  monitor, human-influence indicators, containment plan, and population receipt.
+- A heterogeneous held-out campaign across cooperative, mixed-motive,
+  adversarial, and correlated-failure environments with strong mechanism,
+  monitoring, communication, identity, commitment, and containment baselines;
+  independent outcome evaluation; causal ablations; complete welfare, safety,
+  latency, exploitability, and governance cost; and transfer.
+- Current support remains `argument`; no cited paper establishes a solved
+  population mechanism, universal decision rule, local cooperation result, or
+  safe multi-agent deployment.
+
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:multi_agent.pairwise_validity_no_systemic_promotion` | `AsiStackProofs.MultiAgentDynamics` | A finite population record refuses to infer systemic safety or beneficial cooperation from pairwise-valid interactions alone. | planned |
 
 ### Procedural Memory and Cognitive Loop Closure
 

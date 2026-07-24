@@ -9,7 +9,7 @@ Active successor: `docs/post_v2_evidence_roadmap.md`
 This ledger names the current v1.x evidence-cycle chapter lanes selected from
 `docs/per_chapter_evidence_plan.md`. It exists to enforce the lane cap: this
 cycle selects one flagship measured lane plus two direct support lanes and
-leaves the other 58 chapter lanes planned-only. It is a planning and
+leaves the other 63 chapter lanes planned-only. It is a planning and
 release-control record, not a support-state transition.
 
 The selected lanes sit inside a wider defended-contribution pool where the
@@ -26,13 +26,13 @@ promotion.
 | Field | Value |
 |---|---|
 | Selected chapter lanes | 3 |
-| Planned-only chapter lanes | 58 |
+| Planned-only chapter lanes | 63 |
 | Lane cap | 1 flagship measured lane plus at most 2 direct support lanes per v1.x cycle |
 | Flagship measured lane | `resource-economics-and-token-budgets` |
 | Direct support lanes | `project-theseus-as-report-first-implementation-reference`; `fast-generation-architectures` |
-| Chapter core support effect | None; all 61 chapter core claims remain `argument`. |
+| Chapter core support effect | None; all 66 chapter core claims remain `argument`. |
 | Non-core support effect | Existing non-core transitions remain scoped to their accepted records. |
-| No-sweep rule | No 61-lane fixture sweep is claimed or implied. |
+| No-sweep rule | No 66-lane fixture sweep is claimed or implied. |
 
 ## Selected Lanes
 
@@ -83,6 +83,7 @@ promotion.
 - `human-intent-as-a-formal-input`
 - `human-factors-and-meaningful-control-in-oversight`
 - `constitutional-alignment-substrate`
+- `inner-alignment-mesa-optimization-and-learned-objective-integrity`
 - `moral-uncertainty-and-value-conflict`
 - `stable-capability-fields`
 - `capability-replacement-and-rollback`
@@ -93,6 +94,7 @@ promotion.
 - `recursive-self-improvement-boundaries`
 - `open-ended-improvement-engines`
 - `intent-to-execution-contracts`
+- `perception-sensor-fusion-and-observation-trust`
 - `planning-as-a-control-layer`
 - `governed-world-models-and-reality-grounding`
 - `cognitive-compilation-and-semantic-ir`
@@ -102,9 +104,12 @@ promotion.
 - `claim-ledgers-and-belief-revision`
 - `spinoza-verification-and-proof-carrying-claims`
 - `labor-os-and-typed-jobs`
+- `human-ai-organizations-delegation-and-accountability`
 - `artifact-graphs-audit-logs-and-replay`
 - `runtime-adapters-tool-permissions-and-human-approval`
+- `embodied-agency-real-time-control-and-physical-safety`
 - `inter-stack-protocols-identity-and-economic-exchange`
+- `multi-agent-dynamics-collective-intelligence-and-systemic-risk`
 - `procedural-memory-and-cognitive-loop-closure`
 - `routing-heads-and-specialist-cores`
 - `replaceable-cognitive-substrates-beyond-transformer-monoculture`

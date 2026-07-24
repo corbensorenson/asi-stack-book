@@ -199,6 +199,7 @@ def errors(data: dict) -> list[str]:
         "## P4 — Semantically meaningful formal evidence",
         "## P5 — Effect-complete governed reference system",
         "## P6 — Evidence, instrument, and source renewal",
+        "### P6.4-R18 — terminal bounded conceptual-completeness packet",
         "### P6.5 — Round 16 post-activation integration debt",
         "## P7 — Reader remediation and owner-authorized publication",
         "## P8 — Closure, residual ownership, and successor continuity",
@@ -250,7 +251,7 @@ def errors(data: dict) -> list[str]:
         "P7.2 — Structural-tranche reader integration",
         "no chapter merges",
         "Manifest admission is not chapter completion",
-        "60 to at most 72 chapters",
+        "bringing the manifest to 66",
         "human-ai-communication-persuasion-and-epistemic-security",
         "institutions-international-coordination-and-public-legitimacy",
         "ai-deployment-transition-distribution-and-human-agency",
@@ -268,7 +269,7 @@ def errors(data: dict) -> list[str]:
         "P7.2-T1-white-box-evidence-interpretability-and-activation-governance",
         "P4-C3-authority-effect-rollback-and-corrigibility-semantic-audit",
         "A blocked packet does not consume a slot",
-        "All new chapter adjudication, paper-mining expansion, and manifest admission are frozen",
+        "The structural window is therefore closed again",
         "P2-R3-storage-materialization-and-replacement-qualification",
         "P6.5-R16-A-six-chapter-atom-pack",
         "P7.1a-W3 — prospective inheritance guard",
@@ -309,7 +310,7 @@ def errors(data: dict) -> list[str]:
     structural_gap = data["structural_gap_audit"]
     structural_gap_normalized = re.sub(r"\s+", " ", structural_gap).casefold()
     for phrase in [
-        "Status: **second-tranche coverage audit; roadmap admission does not imply manifest admission**",
+        "Status: **historical second-tranche audit, amended by the terminal Round 18 breadth transaction**",
         "bounded thirteen-candidate second tranche",
         "Governed Model Training, Distributed Optimization, and Scaling",
         "Perception, Sensor Fusion, and Observation Trust",
@@ -379,8 +380,8 @@ def errors(data: dict) -> list[str]:
     manifest_ids = {chapter.get("id") for chapter in manifest_chapters}
     first_ids = set(status["quality_uplift_program"]["structural_completeness_tranche"]["first_tranche"]["candidate_ids"])
     second_ids = set(status["quality_uplift_program"]["structural_completeness_tranche"]["second_tranche"]["candidate_ids"])
-    if len(manifest_chapters) != 61:
-        out.append(f"working manifest chapter count is {len(manifest_chapters)}, expected 61")
+    if len(manifest_chapters) != 66:
+        out.append(f"working manifest chapter count is {len(manifest_chapters)}, expected 66")
     if not first_ids.issubset(manifest_ids):
         out.append(f"first structural tranche missing manifest IDs: {sorted(first_ids - manifest_ids)}")
     if set(STRUCTURAL_CHAPTER_PATHS) != first_ids:
@@ -395,6 +396,10 @@ def errors(data: dict) -> list[str]:
     expected_admitted_second = {
         "governed-model-training-distributed-optimization-and-scaling",
         "privacy-data-rights-and-information-flow-governance",
+        "perception-sensor-fusion-and-observation-trust",
+        "embodied-agency-real-time-control-and-physical-safety",
+        "human-ai-organizations-delegation-and-accountability",
+        "multi-agent-dynamics-collective-intelligence-and-systemic-risk",
     }
     if admitted_second != expected_admitted_second:
         out.append(f"second structural tranche terminal/admission set drifted: {sorted(admitted_second)}")
@@ -719,10 +724,10 @@ def errors(data: dict) -> list[str]:
 
     quality_program = status.get("quality_uplift_program", {})
     execution_readiness = status.get("execution_readiness", {})
-    if execution_readiness.get("state") != "evidence_first_recovery_with_structural_admission_freeze":
-        out.append("execution board is not in its Round 16 evidence-first freeze state")
-    if execution_readiness.get("headline_priority") != "P2" or execution_readiness.get("headline_priority_state") != "capacity_entry_condition_met_materialization_not_yet_run":
-        out.append("execution board obscures the P2 headline or launders capacity readiness into materialization")
+    if execution_readiness.get("state") != "round18_breadth_terminal_evidence_first_recovery_restored":
+        out.append("execution board does not close the Round 18 breadth transaction and restore evidence-first recovery")
+    if execution_readiness.get("headline_priority") != "P2" or execution_readiness.get("headline_priority_state") != "below_storage_floor_exact_attempt_or_failure_receipt_required":
+        out.append("execution board obscures the P2 headline or the current below-floor attempt requirement")
     if execution_readiness.get("work_in_progress_limit") != 2 or execution_readiness.get("blocked_lane_consumes_work_in_progress") is not False:
         out.append("execution board lost its bounded WIP or blocked-lane rule")
     if execution_readiness.get("protected_outcome_inspection_allowed") is not False:
@@ -741,7 +746,7 @@ def errors(data: dict) -> list[str]:
         "P2-pool-materialization-terminal-receipt",
         "P2-four-replacement-slots-qualified-and-twelve-task-denominator-restored",
         "P6.5-R16-six-chapter-claim-atom-addendum-terminal",
-        "P6.5-R16-current-sixty-one-chapter-reader-freshness-terminal",
+        "P6.5-R16-current-sixty-six-chapter-reader-freshness-terminal",
         "P7.1a-W3-admission-template-inheritance-guard-terminal",
         "P7.2-T1D-white-box-construct-validity-and-feature-analysis-depth-terminal",
     ]
@@ -830,11 +835,33 @@ def errors(data: dict) -> list[str]:
         out.append("terminal first structural tranche retains a residual chapter")
     second_tranche = quality_program.get("structural_completeness_tranche", {}).get("second_tranche", {})
     if second_tranche.get("active_candidate_id") is not None:
-        out.append("a second-tranche candidate is active during the Round 16 freeze")
-    if second_tranche.get("next_queued_candidate_id") != "perception-sensor-fusion-and-observation-trust":
-        out.append("A3 queue identity drifted during the structural freeze")
-    if second_tranche.get("admission_state") != "paused_by_round16_evidence_first_gate":
-        out.append("second-tranche admission state is not paused by the evidence-first gate")
+        out.append("a second-tranche candidate is active during the post-breadth freeze")
+    if second_tranche.get("next_queued_candidate_id") is not None:
+        out.append("post-breadth freeze retains an unauthorized chapter queue")
+    if second_tranche.get("admission_state") != "post_round18_breadth_freeze_no_active_queue":
+        out.append("second-tranche admission state does not enforce the post-breadth freeze")
+    round18 = quality_program.get("structural_completeness_tranche", {}).get("round_18_breadth_completion", {})
+    expected_round18_chapters = [
+        "perception-sensor-fusion-and-observation-trust",
+        "embodied-agency-real-time-control-and-physical-safety",
+        "human-ai-organizations-delegation-and-accountability",
+        "multi-agent-dynamics-collective-intelligence-and-systemic-risk",
+        "inner-alignment-mesa-optimization-and-learned-objective-integrity",
+    ]
+    if round18.get("state") != "terminal_argument_integration_post_transaction_freeze":
+        out.append("Round 18 breadth transaction is not terminal at argument support")
+    if round18.get("new_chapter_ids") != expected_round18_chapters:
+        out.append("Round 18 new-chapter identity set drifted")
+    if not set(expected_round18_chapters).issubset(manifest_ids):
+        out.append("Round 18 manifest chapters are incomplete")
+    if round18.get("new_external_source_record_count") != 21 or round18.get("birth_claim_atom_count") != 5:
+        out.append("Round 18 source or birth-atom count drifted")
+    if round18.get("post_transaction_structural_freeze") is not True:
+        out.append("Round 18 does not restore the structural freeze")
+    for path_field in ["adjudication_path", "research_backlog_path", "triage_path", "claim_atom_path", "reader_projection_path", "inheritance_audit_path"]:
+        path_value = round18.get(path_field)
+        if not isinstance(path_value, str) or not (ROOT / path_value).exists():
+            out.append(f"Round 18 artifact missing: {path_field}")
 
     round16 = status.get("round_16_evidence_first_amendment", {})
     expected_round16_chapters = expected_first_tranche_order + [
@@ -856,16 +883,19 @@ def errors(data: dict) -> list[str]:
     ):
         out.append("Round 16 amendment permits rewriting a historical atom denominator")
     reader_freshness = round16.get("current_reader_freshness_packet", {})
-    if reader_freshness.get("current_working_manifest_chapter_count") != 61 or reader_freshness.get("must_cover_all_current_manifest_chapters") is not True:
-        out.append("Round 16 current-reader packet does not cover the live 61-chapter manifest")
+    if reader_freshness.get("current_working_manifest_chapter_count") != 66 or reader_freshness.get("must_cover_all_current_manifest_chapters") is not True:
+        out.append("Round 16 current-reader packet does not cover the live 66-chapter manifest")
     recovery = round16.get("p2_empirical_recovery", {})
     if (
-        recovery.get("state") != "capacity_entry_condition_met_materialization_not_yet_run"
+        recovery.get("state") != "below_storage_floor_exact_attempt_or_failure_receipt_required"
         or recovery.get("observed_host_free_bytes_2026_07_22") != 71648034816
         or recovery.get("docker_daemon_available_2026_07_22") is not True
         or recovery.get("docker_storage_zero_2026_07_22") is not True
+        or recovery.get("observed_host_available_1k_blocks_2026_07_24") != 22337556
+        or recovery.get("observed_host_available_bytes_2026_07_24") != 22873657344
+        or recovery.get("docker_inspection_state_2026_07_24") != "permission_denied_local_socket"
     ):
-        out.append("Round 17 P2 capacity recheck truth drifted")
+        out.append("P2 historical or current capacity truth drifted")
     template_guard = round16.get("template_inheritance_guard", {})
     if template_guard.get("provisional_current_61_chapter_repeated_12_gram_count") != 738 or template_guard.get("provisional_current_61_chapter_maximum_spread") != 55:
         out.append("Round 17 provisional W3 diagnostic drifted")
@@ -889,8 +919,8 @@ def errors(data: dict) -> list[str]:
     if optimizer_amendment.get("support_state_effect") != "none" or optimizer_amendment.get("release_effect") != "none":
         out.append("optimizer roadmap amendment laundered support or release state")
     admission_contract = round16.get("future_admission_contract", {})
-    if admission_contract.get("maximum_new_chapters_per_empirical_checkpoint") != 1 or admission_contract.get("manifest_admission_without_all_birth_artifacts_allowed") is not False:
-        out.append("Round 16 future-admission cadence or birth-artifact gate weakened")
+    if admission_contract.get("maximum_new_chapters_per_empirical_checkpoint") != 0 or admission_contract.get("manifest_admission_without_all_birth_artifacts_allowed") is not False:
+        out.append("post-Round-18 freeze or birth-artifact gate weakened")
     if not all(
         admission_contract.get(field) is True
         for field in [
@@ -1018,8 +1048,10 @@ def errors(data: dict) -> list[str]:
     expected_proof = (310, 104, 1370, 924, 230, 216)
     if not proof_match or tuple(map(int, proof_match.groups())) != expected_proof:
         out.append("proof-depth baseline drifted without roadmap reconciliation")
-    if data["proof_manifest"].get("proof_target_count") != expected_proof[0]:
-        out.append("proof manifest target count disagrees with reconciled proof-depth baseline")
+    if data["proof_manifest"].get("proof_target_count") != 315:
+        out.append("proof manifest target count disagrees with the 310 implemented plus five Round 18 planned targets")
+    if data["proof_manifest"].get("status_counts") != {"implemented": 310, "planned": 5}:
+        out.append("Round 18 planned proof targets altered the frozen implemented-proof denominator")
 
     proof_inventory = status.get("semantic_proof_cluster_inventory", {})
     proof_clusters = proof_inventory.get("clusters", [])
@@ -1205,8 +1237,8 @@ def main() -> None:
         "25 direct and 90 indirect identities resolved with zero unmapped; N0-N5 competence contract active and historical rehabilitation complete; "
         "90 accepted historical negatives classified as 1 N0, 15 N1, 74 N2, and 0 N3-N5; "
         "the frozen 75-surface rehabilitation snapshot including the then-live 55 chapters reconciled with zero overbroad negative language; "
-        "P2 selected prospectively from five candidates; natural development preflight covers 1,117 post-snapshot tasks, 12 repositories, seven languages, and 12 image manifests; the fixed gold denominator is fully dispositioned as eight qualified and four N0 replacements across 62 verified arm logs and eight attempts; the corrected infrastructure/content boundary reinstates rank five as setup-retry-pending and keeps rank six closed; the 2026-07-22 capacity entry condition is met but the complete 30-candidate sequential materialization remains unpassed; Q1 D1 and Theseus Q2 D2 remain disjoint and sealed; remeasurement, qualification, construct, and heldout gates remain closed; "
-        "all six semantic proof clusters are terminally adequate at bounded scope; all four first-tranche structural chapters and second-tranche A1/A2 retain terminal admission receipts with protected empirical outcomes closed; Round 17 freezes A3 and every new chapter behind P2 materialization/replacement qualification plus the enforced six-chapter atom, W3, white-box-depth, and current-reader sequence; optimizer manuscript depth is terminal while its empirical campaign remains a nonblocking evidence residual; current proof and main-attestation baselines exact; no support/release effect; "
+        "P2 selected prospectively from five candidates; natural development preflight covers 1,117 post-snapshot tasks, 12 repositories, seven languages, and 12 image manifests; the fixed gold denominator is fully dispositioned as eight qualified and four N0 replacements across 62 verified arm logs and eight attempts; the corrected infrastructure/content boundary reinstates rank five as setup-retry-pending and keeps rank six closed; the historical 2026-07-22 capacity entry condition was met, while the 2026-07-24 observation is below the frozen floor and requires an exact attempt or failure receipt; the complete 30-candidate sequential materialization remains unpassed; Q1 D1 and Theseus Q2 D2 remain disjoint and sealed; remeasurement, qualification, construct, and heldout gates remain closed; "
+        "all six semantic proof clusters are terminally adequate at bounded scope; all four first-tranche structural chapters, six admitted second-tranche chapters, and the separate Inner Alignment admission retain argument-level custody with protected empirical outcomes closed; Round 18 closes a five-chapter/seven-section breadth transaction at a 66-chapter manifest and restores the structural freeze; the historical six-chapter atom, W3, white-box-depth, and current-reader sequence remains open; optimizer manuscript depth is terminal while its empirical campaign remains a nonblocking evidence residual; current proof and main-attestation baselines exact; no support/release effect; "
         f"{len(mutations)}/{len(mutations)} mutations rejected."
     )
 

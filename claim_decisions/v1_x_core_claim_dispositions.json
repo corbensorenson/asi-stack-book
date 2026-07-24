@@ -1,7 +1,7 @@
 {
   "disposition_set_id": "v1_x.per_chapter_core_claim_dispositions",
-  "date": "2026-07-03",
-  "scope_boundary": "Standing per-chapter disposition record for the 61 active manifest chapter core claims. It consolidates accepted no-change transitions, accepted no-promotion decisions, Appendix C open gaps, and per-chapter evidence-plan promotion paths. It creates no support-state movement.",
+  "date": "2026-07-24",
+  "scope_boundary": "Standing per-chapter disposition record for the 66 active manifest chapter core claims. It consolidates accepted no-change transitions, accepted no-promotion decisions, Appendix C open gaps, and per-chapter evidence-plan promotion paths. It creates no support-state movement.",
   "review_status": "active_validator_checked_record",
   "generated_from": [
     "book_structure.json",
@@ -12,11 +12,11 @@
   ],
   "support_state_effect": "none",
   "summary": {
-    "manifest_chapter_core_claims": 61,
+    "manifest_chapter_core_claims": 66,
     "accepted_core_transition_dispositions": 22,
-    "accepted_no_promotion_dispositions": 39,
+    "accepted_no_promotion_dispositions": 44,
     "promoted_core_claims": 0,
-    "chapter_core_claims_remaining_at_argument": 61
+    "chapter_core_claims_remaining_at_argument": 66
   },
   "dispositions": [
     {
@@ -102,7 +102,7 @@
         "does not prove compression or reuse utility",
         "does not prove runtime routing or deployment behavior"
       ],
-      "current_evidence_summary": "Source notes available for all 10 assigned sources; 10 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "current_evidence_summary": "Source notes available for all 14 assigned sources; 14 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
       "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
       "primary_evidence_lane": "Cost/resource harness plus external routing literature",
       "formal_or_prototype_work": "Extend the costed-route slice beyond toy routes and tie it to budget ledgers.",
@@ -425,6 +425,45 @@
       "relevant_non_core_transition_refs": []
     },
     {
+      "claim_id": "inner-alignment-mesa-optimization-and-learned-objective-integrity.core",
+      "chapter_id": "inner-alignment-mesa-optimization-and-learned-objective-integrity",
+      "chapter_title": "Inner Alignment, Mesa-Optimization, and Learned-Objective Integrity",
+      "part_id": "foundations-alignment-governance",
+      "part_title": "Part I - Foundations, Alignment, and Governance",
+      "chapter_file": "chapters/inner-alignment-mesa-optimization-and-learned-objective-integrity.qmd",
+      "current_support_state": "argument",
+      "claim_label": "Design rationale",
+      "core_claim": "Consequential deployment requires a Learned-Objective Integrity Record binding the outer target, actual learning signals, model identity, behaviorally equivalent policy hypotheses, internal-optimization evidence, goal-generalization and conditional-policy tests, independent behavioral/interventional/white-box evidence, deployment opportunity, power indicators, mitigation hiding tests, monitoring, rollback, descendant invalidation, costs, residuals, and non-authorities.",
+      "disposition": "retained_at_argument_via_accepted_no_promotion_decision",
+      "disposition_record_ref": "claim_decisions/v1_0_core_claim_no_promotion.json",
+      "coverage_type": "accepted_no_promotion_decision",
+      "support_state_effect": "argument_only",
+      "required_evidence": [
+        "prospectively sealed multi-seed workloads with positive-controlled shortcuts, conditional policies, goal shift, evaluator awareness, opportunity change, and power indicators against strong behavioral-only and mitigation baselines",
+        "independent behavioral, causal-intervention, training-lineage, and white-box methods with competence controls, complete attempted-run denominators, concealment and capability-damage measures, and explicit unresolved hypotheses",
+        "independent reproduction and transfer across a second model family without converting finite objective evidence into alignment, safety, readiness, or release authority"
+      ],
+      "blockers": [
+        "no local learned-objective or conditional-policy campaign has run",
+        "no independent method family or evaluator has reproduced an objective-integrity result",
+        "behavioral compliance cannot identify an objective and the planned formal target remains unimplemented"
+      ],
+      "promotion_burden": "The chapter has a source-reviewed conceptual packet, a bounded evidence contract, a birth atom, and a planned non-identifiability theorem, but no local multi-seed learned-objective campaign, causal or white-box replication, mitigation-hiding result, model-family transfer, or independent reproduction has been accepted.",
+      "limitations": [],
+      "non_claims": [
+        "does not identify a model's objective or prove the absence of mesa-optimization, deception, shortcuts, or goal misgeneralization",
+        "does not prove that safety fine-tuning removed rather than hid a conditional policy",
+        "does not establish alignment, corrigibility, safety, readiness, release, AGI, or ASI"
+      ],
+      "current_evidence_summary": "Source notes available for all 6 assigned sources; 6 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
+      "primary_evidence_lane": "Source-reviewed learned-objective packet plus prospectively sealed behavioral, causal-intervention, training-lineage, and white-box comparisons",
+      "formal_or_prototype_work": "Formalize that behavioral agreement does not identify an objective; build conditional-policy, goal-shift, evaluator-awareness, mitigation-hiding, opportunity, power-indicator, and descendant-invalidation controls.",
+      "human_reader_focus": "Separate what a model did in observed tests from what policy it may follow under a new opportunity, and show why no finite packet certifies objective identity.",
+      "what_would_move_this": "Across multiple seeds and model families, a use-specific integrity process detects or preserves uncertainty about positive-controlled shortcuts and conditional policies better than behavioral-only and fine-tuning baselines under held-out shifts, independently reproduces causal and white-box findings, records capability damage and concealment, and never turns residual uncertainty into an alignment or safety certificate.",
+      "relevant_non_core_transition_refs": []
+    },
+    {
       "claim_id": "moral-uncertainty-and-value-conflict.core",
       "chapter_id": "moral-uncertainty-and-value-conflict",
       "chapter_title": "Moral Uncertainty, Value Conflict, and Contestable Governance",
@@ -472,7 +511,7 @@
         "does not prove source interpretation",
         "does not prove runtime policy behavior"
       ],
-      "current_evidence_summary": "Source notes available for all 13 assigned sources; 12 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "current_evidence_summary": "Source notes available for all 14 assigned sources; 13 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
       "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
       "primary_evidence_lane": "Safety-critical Lean plus value-conflict and governance-right harnesses",
       "formal_or_prototype_work": "Deepen uncertainty residuals, dissent, revisit conditions, fork/exit/audit preservation, redaction, and appeal obligations.",
@@ -738,7 +777,7 @@
         "does not prove hardware, vendor, operator, software, key-service, or attestation trustworthiness",
         "does not prove model safety, release desirability, readiness, authority, deployment, or ASI"
       ],
-      "current_evidence_summary": "Source notes available for all 9 assigned sources; 9 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "current_evidence_summary": "Source notes available for all 13 assigned sources; 9 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
       "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
       "primary_evidence_lane": "Full comparator audit across graduated weight security, confidential-computing trust domains, vendor lifecycle, in-toto signed layouts/links/thresholds, protected-release critique, plus nine derived Lean theorems and an eight-case deterministic lifecycle bridge",
       "formal_or_prototype_work": "Preserve consumer-bound model/artifact identity, lineage closure, policy/verifier/measurement binding, relational freshness, verifier dependencies, independent load observation, distinct revocation meanings, release authority, irreversibility, and residual ownership.",
@@ -956,6 +995,45 @@
       ]
     },
     {
+      "claim_id": "perception-sensor-fusion-and-observation-trust.core",
+      "chapter_id": "perception-sensor-fusion-and-observation-trust",
+      "chapter_title": "Perception, Sensor Fusion, and Observation Trust",
+      "part_id": "planning-memory-reasoning-execution",
+      "part_title": "Part II - Planning, Memory, Reasoning, and Execution",
+      "chapter_file": "chapters/perception-sensor-fusion-and-observation-trust.qmd",
+      "current_support_state": "argument",
+      "claim_label": "Design rationale",
+      "core_claim": "A consequential observation requires a versioned contract binding task need, sensor and modality identity, calibration, pose, clocks, provenance, coverage, missingness, per-channel hypotheses, alignment, fusion, dependence, disagreement, shift, active observation, freshness, authority, cost, and residuals.",
+      "disposition": "retained_at_argument_via_accepted_no_promotion_decision",
+      "disposition_record_ref": "claim_decisions/v1_0_core_claim_no_promotion.json",
+      "coverage_type": "accepted_no_promotion_decision",
+      "support_state_effect": "argument_only",
+      "required_evidence": [
+        "representative multimodal workloads with strong single-channel, naive-fusion, and learned-fusion baselines under corruption, spoofing, drift, occlusion, missingness, disagreement, shift, and shared-cause controls",
+        "joint task outcome, calibration, unsafe action, latency, sensing cost, abstention, active-observation, and residual accounting with complete attempted-run denominators and positive controls",
+        "independent reproduction and transfer across a second sensor or model family while preserving task-relative authority and uncertainty"
+      ],
+      "blockers": [
+        "no local sensor stream, fusion mechanism, corruption suite, or active-observation policy has been evaluated",
+        "no independent calibration or attack assessment exists",
+        "shared representation and source-reported robotics performance do not establish observation trust"
+      ],
+      "promotion_burden": "The chapter has a six-source conceptual packet, a complete observation-contract design, a birth atom, and a planned correlation invariant, but no local natural or adversarial sensor campaign, calibrated fusion comparison, active-observation result, independent reproduction, or transfer has been accepted.",
+      "limitations": [],
+      "non_claims": [
+        "does not prove sensor truth, calibration, robustness, causal grounding, or independent evidence",
+        "does not prove that agreement among correlated channels increases effective evidence diversity",
+        "does not establish physical safety, readiness, release, AGI, or ASI"
+      ],
+      "current_evidence_summary": "Source notes available for all 6 assigned sources; 6 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
+      "primary_evidence_lane": "Natural and adversarial multimodal observation campaign with corruption, spoofing, clock/calibration drift, occlusion, missingness, dependence, disagreement, and active-observation arms",
+      "formal_or_prototype_work": "Implement a versioned observation contract, correlation-aware fusion, plural-hypothesis retention, freshness expiry, safe hold, and the planned correlated-agreement non-promotion invariant.",
+      "human_reader_focus": "Teach readers that a confident fused representation is still an observation with provenance, timing, coverage, and uncertainty\u2014not reality itself.",
+      "what_would_move_this": "On representative tasks and at least two sensor/model families, the governed route improves calibration and task-relative useful outcomes over strong single-channel, naive-fusion, and learned-fusion baselines under preregistered faults without worse unsafe action, latency, or sensing cost; joint-channel attacks, shared-cause controls, and independent reproduction preserve explicit residuals and bounded authority.",
+      "relevant_non_core_transition_refs": []
+    },
+    {
       "claim_id": "planning-as-a-control-layer.core",
       "chapter_id": "planning-as-a-control-layer",
       "chapter_title": "Planning as a Control Layer: DAGs and Intelligence Arbitrage",
@@ -1040,7 +1118,7 @@
         "does not prove causal prediction, calibrated planning, safe action selection, or real-world transfer",
         "does not prove readiness, deployment authority, safety, or ASI"
       ],
-      "current_evidence_summary": "Source notes available for all 9 assigned sources; 9 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "current_evidence_summary": "Source notes available for all 14 assigned sources; 14 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
       "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
       "primary_evidence_lane": "Held-out intervention, calibration, disagreement, and reality-residual campaign",
       "formal_or_prototype_work": "Formalize unsupported-rollout non-authority and residual-triggered routing; implement versioned prediction packets and receding-observation reconciliation.",
@@ -1080,7 +1158,7 @@
         "does not prove artifact quality improvement or repair locality",
         "does not reproduce the mined historical projects"
       ],
-      "current_evidence_summary": "Source notes available for all 19 assigned sources; 16 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "current_evidence_summary": "Source notes available for all 20 assigned sources; 17 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
       "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
       "primary_evidence_lane": "Compiler IR fixtures plus external program-synthesis baselines",
       "formal_or_prototype_work": "Add semantic atom lowering and failed-preservation cases.",
@@ -1141,7 +1219,7 @@
         "does not prove summary fidelity",
         "does not prove long-context adequacy or model verification bandwidth"
       ],
-      "current_evidence_summary": "Source notes available for all 28 assigned sources; 24 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "current_evidence_summary": "Source notes available for all 31 assigned sources; 24 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
       "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
       "primary_evidence_lane": "Context admission harness, certificate fixtures, Lean hooks, and VCM source notes",
       "formal_or_prototype_work": "Add admission, mount, capability, typed page/cell, certificate-truthfulness, authority-ceiling, loss-contract, permitted-use, and context-window negative controls.",
@@ -1181,7 +1259,7 @@
         "does not prove context memory correctness",
         "does not prove taint isolation in a deployed system"
       ],
-      "current_evidence_summary": "Source notes available for all 18 assigned sources; 15 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "current_evidence_summary": "Source notes available for all 23 assigned sources; 15 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
       "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
       "primary_evidence_lane": "Context transaction harness",
       "formal_or_prototype_work": "Add deletion closure, mount taint, snapshot conflict, and rollback cases.",
@@ -1384,6 +1462,45 @@
       ]
     },
     {
+      "claim_id": "human-ai-organizations-delegation-and-accountability.core",
+      "chapter_id": "human-ai-organizations-delegation-and-accountability",
+      "chapter_title": "Human-AI Organizations, Delegation, and Accountability",
+      "part_id": "planning-memory-reasoning-execution",
+      "part_title": "Part II - Planning, Memory, Reasoning, and Execution",
+      "chapter_file": "chapters/human-ai-organizations-delegation-and-accountability.qmd",
+      "current_support_state": "argument",
+      "claim_label": "Design rationale",
+      "core_claim": "Consequential delegation requires a versioned organizational contract binding charter, affected parties, actors, roles, competence, workload, accessibility, information and decision rights, delegation, separation of duties, conflicts, incentives, benefits, escalation, appeal, remedy, contribution, dependence, accountability, succession, dissolution, and residual custody.",
+      "disposition": "retained_at_argument_via_accepted_no_promotion_decision",
+      "disposition_record_ref": "claim_decisions/v1_0_core_claim_no_promotion.json",
+      "coverage_type": "accepted_no_promotion_decision",
+      "support_state_effect": "argument_only",
+      "required_evidence": [
+        "preregistered representative recurring workflows with real participants and strong manual, automation-first, and nominal-human-review baselines",
+        "joint task outcome, error, workload, comprehension, intervention, deskilling, burden, benefit, appeal, remedy, dependence, and accountability-with-authority measures over time",
+        "independent reproduction in a second organization or workflow while keeping effectiveness, welfare, accountability, and legitimacy claims separate"
+      ],
+      "blockers": [
+        "no local human-participant or longitudinal organizational study has run",
+        "no succession, dissolution, appeal, remedy, or accountability intervention has been tested",
+        "field and formal source results are setting-bound and do not validate this organizational contract"
+      ],
+      "promotion_burden": "The chapter has a six-source conceptual packet, a complete organizational-contract design, and a birth atom, but no local longitudinal workflow, organizational comparison, affected-party outcome, accountability intervention, independent reproduction, or legitimacy assessment has been accepted.",
+      "limitations": [],
+      "non_claims": [
+        "does not prove meaningful human control, legitimate authority, effective accountability, worker welfare, or organizational resilience",
+        "does not prove that a signature, role title, or nominal human review prevents a moral crumple zone",
+        "does not establish legal compliance, public legitimacy, safe deployment, AGI, or ASI"
+      ],
+      "current_evidence_summary": "Source notes available for all 6 assigned sources; 6 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
+      "primary_evidence_lane": "Longitudinal recurring-work study plus organizational simulations and source-reviewed human-AI authority and labor comparators",
+      "formal_or_prototype_work": "Implement charter, actor/competence/workload registry, decision-right graph, expiring delegation, separation of duties, appeal/remedy, succession, dissolution, and accountability-with-authority checks.",
+      "human_reader_focus": "Show that \u201chuman in the loop\u201d is an organization-design claim: who knows, decides, stops, answers, benefits, appeals, and retains obligations must all be visible.",
+      "what_would_move_this": "Preregistered representative workflows with real participants and strong manual, automation-first, and nominal-human-review baselines improve joint task outcomes without worse error, rubber-stamping, workload, deskilling, inequitable burden, inaccessible appeal, or accountability mismatch; effects persist longitudinally and reproduce independently without implying legitimacy beyond the studied setting.",
+      "relevant_non_core_transition_refs": []
+    },
+    {
       "claim_id": "artifact-graphs-audit-logs-and-replay.core",
       "chapter_id": "artifact-graphs-audit-logs-and-replay",
       "chapter_title": "Artifact Graphs, Audit Logs, and Replay",
@@ -1499,6 +1616,45 @@
       ]
     },
     {
+      "claim_id": "embodied-agency-real-time-control-and-physical-safety.core",
+      "chapter_id": "embodied-agency-real-time-control-and-physical-safety",
+      "chapter_title": "Embodied Agency, Real-Time Control, and Physical Safety",
+      "part_id": "planning-memory-reasoning-execution",
+      "part_title": "Part II - Planning, Memory, Reasoning, and Execution",
+      "chapter_file": "chapters/embodied-agency-real-time-control-and-physical-safety.qmd",
+      "current_support_state": "argument",
+      "claim_label": "Design rationale",
+      "core_claim": "Physical execution requires a plant-specific control lease binding embodiment, workspace, state estimator, dynamics, timing, force/space/contact limits, human presence, advanced/baseline/stop controllers, switching and interlocks, exploration, degraded modes, observed effects, compensation, irreversible residuals, costs, and expiry.",
+      "disposition": "retained_at_argument_via_accepted_no_promotion_decision",
+      "disposition_record_ref": "claim_decisions/v1_0_core_claim_no_promotion.json",
+      "coverage_type": "accepted_no_promotion_decision",
+      "support_state_effect": "argument_only",
+      "required_evidence": [
+        "multi-seed fault-injected simulation against conventional, advanced-only, barrier-filtered, and Simplex-style baselines with sensing, timing, saturation, communication, power, payload, human-entry, and model-mismatch controls",
+        "isolated low-energy hardware transfer with independent effect observation, fallback and stop reachability, complete attempted-run denominators, and joint safety-envelope, task, latency, nuisance-stop, operator-cost, compensation, and irreversible-residual measures",
+        "independent reproduction on a second plant while preserving every plant-, state-, timing-, and consequence-bound assumption"
+      ],
+      "blockers": [
+        "no local controller or physical plant campaign has run",
+        "no fallback, independent stop, stabilization, compensation, or irreversible effect has been observed",
+        "source-reported robotics and conditional control theory do not establish plant-specific safety"
+      ],
+      "promotion_burden": "The chapter has a six-source conceptual packet, a plant-specific lease design, a birth atom, and a planned missing-state invariant, but no local fault-injected controller, hardware effect trace, fallback-reachability result, independent reproduction, or transfer has been accepted.",
+      "limitations": [],
+      "non_claims": [
+        "does not prove physical safety, correct dynamics, safe-set validity, deadline satisfaction, fallback reachability, or effect reversibility",
+        "does not treat software rollback, actuator acknowledgment, simulation success, or an emergency stop as physical recovery",
+        "does not establish readiness, deployment authority, AGI, or ASI"
+      ],
+      "current_evidence_summary": "Source notes available for all 6 assigned sources; 6 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
+      "primary_evidence_lane": "Multi-seed fault-injected simulation followed by isolated low-energy hardware transfer against conventional, advanced-only, barrier-filtered, and Simplex-style controller baselines",
+      "formal_or_prototype_work": "Implement plant-specific leases, timing and force/space/contact limits, independent filter and stop paths, reachable fallback, command-to-effect traces, stabilization, compensation, and the planned missing-safety-state rejection invariant.",
+      "human_reader_focus": "Explain why software permission and rollback do not stop momentum, undo contact, restore energy, or reverse a physical effect.",
+      "what_would_move_this": "Across representative plants and preregistered sensing, timing, saturation, communication, power, payload, human-entry, and model-mismatch faults, the governed controller reduces safety-envelope violations without unacceptable task, latency, nuisance-stop, or operator cost; fallback is demonstrated reachable under deadline, effects are independently observed, irreversible residuals remain explicit, and transfer reproduces without a universal safety claim.",
+      "relevant_non_core_transition_refs": []
+    },
+    {
       "claim_id": "inter-stack-protocols-identity-and-economic-exchange.core",
       "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
       "chapter_title": "Inter-Stack Protocols, Identity, and Economic Exchange",
@@ -1538,6 +1694,45 @@
       "relevant_non_core_transition_refs": []
     },
     {
+      "claim_id": "multi-agent-dynamics-collective-intelligence-and-systemic-risk.core",
+      "chapter_id": "multi-agent-dynamics-collective-intelligence-and-systemic-risk",
+      "chapter_title": "Multi-Agent Dynamics, Collective Intelligence, and Systemic Risk",
+      "part_id": "planning-memory-reasoning-execution",
+      "part_title": "Part II - Planning, Memory, Reasoning, and Execution",
+      "chapter_file": "chapters/multi-agent-dynamics-collective-intelligence-and-systemic-risk.qmd",
+      "current_support_state": "argument",
+      "claim_label": "Design rationale",
+      "core_claim": "Expanded multi-agent interaction requires a population contract binding agent/owner/model/organization identities, human participants, interaction and dependency graphs, incentives, information, resources, commitments, decision assumptions, entry/exit/copying/learning, population outcomes, externalities, human influence, interventions, costs, and residuals.",
+      "disposition": "retained_at_argument_via_accepted_no_promotion_decision",
+      "disposition_record_ref": "claim_decisions/v1_0_core_claim_no_promotion.json",
+      "coverage_type": "accepted_no_promotion_decision",
+      "support_state_effect": "argument_only",
+      "required_evidence": [
+        "positive-controlled population workloads spanning model families, owners, copies, population sizes, games, and topologies with strong pairwise-validity and aggregate-reward baselines",
+        "complete cooperation, conflict, collusion, coalition, concentration, cascade, common-mode, externality, exclusion, human-influence, intervention-displacement, cost, and attempted-run measures",
+        "independent reproduction and transfer to a second population design while bounding every inference to the tested agents and refusing society-scale prediction"
+      ],
+      "blockers": [
+        "no local multi-agent population campaign has run",
+        "no independent evaluator has calibrated collusion, effective diversity, systemic risk, or human-influence measures",
+        "pairwise protocol validity and source taxonomies do not establish population-level outcomes"
+      ],
+      "promotion_burden": "The chapter has a six-source conceptual packet, a population-contract design, a birth atom, and a planned pairwise-validity invariant, but no local population sandbox, collusion or cascade result, effective-diversity calibration, longitudinal human-influence evidence, independent reproduction, or transfer has been accepted.",
+      "limitations": [],
+      "non_claims": [
+        "does not prove collective intelligence, cooperation, non-collusion, systemic safety, stable equilibrium, or retained human agency",
+        "does not treat nominal agent count, aggregate reward, or simulated stability as effective diversity or social evidence",
+        "does not forecast society or establish institutional legitimacy, readiness, safe deployment, AGI, or ASI"
+      ],
+      "current_evidence_summary": "Source notes available for all 6 assigned sources; 6 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
+      "primary_evidence_lane": "Positive-controlled population sandbox plus network, game-theoretic, institutional, and longitudinal human-influence measurements",
+      "formal_or_prototype_work": "Implement identity/copy/owner graphs, effective-diversity estimates, incentive and information interventions, collusion and coalition controls, cascade and common-mode faults, entry/exit, displaced-externality receipts, and the planned pairwise-validity non-promotion invariant.",
+      "human_reader_focus": "Move from one valid exchange to what repeated populations do: cooperate, collude, concentrate, cascade, exclude, and alter human option value over time.",
+      "what_would_move_this": "Across multiple seeds, model families, population sizes, games, and topologies, preregistered population interventions detect positive-controlled collusion, cascade, and common-mode risk and improve beneficial cooperation over strong pairwise and aggregate-reward baselines without hiding externalities, concentration, exclusion, or human-agency loss; results reproduce independently and remain bounded to the tested populations rather than forecasting society.",
+      "relevant_non_core_transition_refs": []
+    },
+    {
       "claim_id": "procedural-memory-and-cognitive-loop-closure.core",
       "chapter_id": "procedural-memory-and-cognitive-loop-closure",
       "chapter_title": "Procedural Memory and Cognitive Loop Closure",
@@ -1567,7 +1762,7 @@
         "does not prove reusable cognition quality",
         "does not prove safe tool promotion"
       ],
-      "current_evidence_summary": "Source notes available for all 22 assigned sources; 18 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "current_evidence_summary": "Source notes available for all 23 assigned sources; 19 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
       "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
       "primary_evidence_lane": "Theseus self-evolution/operator traces plus loop harness",
       "formal_or_prototype_work": "Add policy update, regression, and rollback memory traces.",
@@ -1654,7 +1849,7 @@
         "does not prove OneCell, KAN, Mamba, recurrent, memory-augmented, continuous-time, or hybrid architecture quality",
         "does not prove governed architectural self-improvement, safety, AGI, or ASI"
       ],
-      "current_evidence_summary": "Source notes available for all 37 assigned sources; 35 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "current_evidence_summary": "Source notes available for all 41 assigned sources; 36 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
       "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
       "primary_evidence_lane": "Source-reviewed Cognitive Kernel ABI contract, architecture taxonomy, 15-atom claim addendum, and one planned formal target",
       "formal_or_prototype_work": "Implement three heterogeneous kernels and an independent malicious-kernel checker; prove/refine proposal-effect, authority, checkpoint, revocation, fallback, and lineage invariants; run matched equal-active-parameter and equal-total-lifecycle-cost tournaments plus the frozen-core ratchet.",
@@ -1695,7 +1890,7 @@
         "does not prove that a completed job, falling loss, high utilization, checkpoint file, successful load, or selected candidate is qualified",
         "does not prove safety, support, readiness, release, transfer, SOTA, AGI, or ASI"
       ],
-      "current_evidence_summary": "Source notes available for all 8 assigned sources; 8 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "current_evidence_summary": "Source notes available for all 23 assigned sources; 23 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
       "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
       "primary_evidence_lane": "Source-reviewed distributed-training packet, exact training-run transaction fixture, formal admission invariants, and prospective five-arm fault campaign",
       "formal_or_prototype_work": "Implement the frozen campaign with strong manual-composition, compiler-planned, sharded, and checkpoint-strategy comparators; exercise thirteen fault families, twelve competence gates, complete attempted-run denominators, full-state capture, exact and bounded-equivalence resume, validation-only checkpoint-family selection, hidden qualification, and independent reproduction.",
@@ -1795,7 +1990,7 @@
         "does not prove federated edge intelligence",
         "does not prove safe rented-compute execution"
       ],
-      "current_evidence_summary": "Source notes available for all 23 assigned sources; 23 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "current_evidence_summary": "Source notes available for all 31 assigned sources; 23 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
       "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
       "primary_evidence_lane": "Theseus operator OS plus external distributed-systems baselines",
       "formal_or_prototype_work": "Add lease, approval, runner, and federation negative controls.",
@@ -1903,7 +2098,7 @@
         "does not prove useful-solution-per-second performance",
         "does not prove runtime routing or deployment behavior"
       ],
-      "current_evidence_summary": "Source notes available for all 22 assigned sources; 21 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "current_evidence_summary": "Source notes available for all 43 assigned sources; 21 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
       "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
       "primary_evidence_lane": "Generation-mode baseline harness, static Theseus generation-mode import, and external inference literature",
       "formal_or_prototype_work": "Use the new Theseus import as negative promotion evidence, then add a public-safe task bundle with quality-adjusted useful-solution-per-second, verifier cost, residuals, and negative controls.",
@@ -2360,7 +2555,7 @@
         "does not treat six related local projects as independent confirmations",
         "does not authorize publication of raw private project material"
       ],
-      "current_evidence_summary": "Source notes available for all 35 assigned sources; 30 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "current_evidence_summary": "Source notes available for all 36 assigned sources; 31 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
       "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
       "primary_evidence_lane": "Benchmark anti-Goodhart harness plus external benchmarks",
       "formal_or_prototype_work": "Add contamination, saturation, and transfer negative controls.",
@@ -2723,7 +2918,7 @@
         "does not prove cross-layer safety or open-world joinability",
         "does not reproduce any historical-project capability or runtime result"
       ],
-      "current_evidence_summary": "Source notes available for all 35 assigned sources; 31 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "current_evidence_summary": "Source notes available for all 36 assigned sources; 32 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
       "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
       "primary_evidence_lane": "End-to-end Theseus report plus architecture trace",
       "formal_or_prototype_work": "Build a public-safe thin vertical slice through several layers.",
@@ -2904,7 +3099,7 @@
         "does not claim external literature-backed support",
         "does not promote any chapter claim"
       ],
-      "current_evidence_summary": "Source notes available for all 30 assigned sources; 28 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "current_evidence_summary": "Source notes available for all 31 assigned sources; 29 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
       "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
       "primary_evidence_lane": "External review and source-note backlog",
       "formal_or_prototype_work": "Prioritize literature gaps, preprint extractions, and external reviewer tasks.",

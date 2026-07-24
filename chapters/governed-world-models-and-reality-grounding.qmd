@@ -16,6 +16,10 @@ primary_sources:
   - "ext_dreamer_v3_2025"
   - "ext_v_jepa_2_2025"
   - "relational_dimension_compiler"
+  - "ext_toward_causal_representation_learning_2021"
+  - "ext_deep_ensembles_2017"
+  - "ext_conformal_prediction_2021"
+  - "ext_wilds_2021"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -34,11 +38,11 @@ open_evidence_gaps:
 | Status | conceptual |
 | Manuscript maturity | v0.4 integrated reader chapter |
 | Last updated | 2026-07-22 |
-| Primary source records | ten assigned and exactly mapped records, adding `relational_dimension_compiler` for typed relation objects, branch-local relational state, and semantic renormalization |
+| Primary source records | fourteen assigned records, adding causal-representation, deep-ensemble, conformal-prediction, and natural distribution-shift comparators to the prior typed relation, latent dynamics, and governance sources |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `ext_world_models_2018`, `ext_dreamer_v3_2025`, `ext_v_jepa_2_2025`; supporting: `platonic_world_model`, `simulation_scaling`, `planforge`; variants: `deterministic_capability_compilation`, `qcsa_whitepaper`, `cognitive_compilation` |
-| Source loading state | Public-safe source notes and exact mappings exist for all ten assigned records. External results remain source-reported and unreproduced; Corben-authored sources contribute architecture and bounded lineage at their recorded limits. |
+| Source loading state | Public-safe source notes exist for all fourteen assigned records. External results remain source-reported and unreproduced; Corben-authored sources contribute architecture and bounded lineage at their recorded limits. |
 | Test state | The governed packet schema, safe-hold record fixture, independent semantic validator, thirteen negative mutations, and two public Lean targets through nine declarations are implemented. The six-arm claim-bearing campaign is protocol-ready and resource-isolated, not executed; protected outcomes remain closed. |
 
 ## Drafting guardrail
@@ -296,6 +300,75 @@ independent effect gate can permit an action. Later observation returns through
 the residual path rather than overwriting the earlier prediction. The diagram
 specifies interfaces and refusal routes; it reports no implemented service or
 control result.
+
+### Causal reasoning and representation
+
+A predictive model can be accurate while being useless under intervention.
+The distinction matters because an agent changes the distribution it predicts:
+opening a valve, changing a prompt, moving a camera, publishing a claim, or
+delegating to another agent is not passive observation. The governed record
+therefore distinguishes three questions:
+
+- **association:** what tends to co-occur under the observed data process;
+- **intervention:** what changes when a named action sets or perturbs a
+  variable under stated assumptions; and
+- **counterfactual:** what would have happened in the same case under an
+  alternative action and structural model.
+
+Schölkopf et al. identify the missing bridge clearly: causal inference usually
+assumes its variables, while representation learning must often discover useful
+variables from low-level observations. The stack does not solve that
+identification problem by naming a latent “causal.” Every causal-representation
+claim binds the proposed variables, measurement and intervention process,
+graph or mechanism family, latent-confounding and selection assumptions,
+invariances, identifiability result or unresolved equivalence class, supported
+interventions, and failure tests.
+
+For planning, this creates a **causal-use gate**. An observational predictor may
+support forecasting inside a stable policy regime while being denied authority
+for a novel intervention. A model whose held-out interventions succeed may
+receive a wider but still bounded envelope. Competing causal graphs or latent
+variable interpretations remain plural when the available evidence cannot
+distinguish them. Ontology or sensor changes invalidate affected causal claims
+instead of being treated as ordinary calibration drift.
+
+The strongest controls are deliberately ordinary: a high-capacity predictive
+model, a symbolic model with hand-specified variables, an invariant
+representation, and an oracle over the known simulator structure. The causal
+route earns credit only if it improves held-out intervention prediction,
+policy regret, transfer, or information-gathering decisions after complete
+cost and uncertainty are counted. Source theory or causal vocabulary alone
+changes no support state.
+
+### Uncertainty is typed, calibrated, and decision-relative
+
+One scalar confidence cannot carry the chapter's uncertainty burden. At
+minimum, the record separates:
+
+- observation noise and irreducible outcome variation;
+- model or parameter uncertainty that may shrink with evidence;
+- ambiguity among representations, causal graphs, or world hypotheses;
+- distribution and support uncertainty;
+- horizon-amplified dynamics error; and
+- decision uncertainty, where several predictions imply the same safe action
+  or one small uncertainty crosses a high-consequence boundary.
+
+Deep ensembles provide a strong practical baseline for predictive
+disagreement, but shared data, architecture, and training can create common-
+mode certainty. Conformal prediction can provide finite-sample coverage for a
+declared target under stated assumptions, but marginal coverage can hide
+subgroup and high-consequence misses, and broken exchangeability voids the
+guarantee. WILDS supplies natural-shift pressure across institutions, time,
+geography, and collection processes; it is not a complete OOD universe.
+
+Every uncertainty receipt therefore names the target, unit, cohort,
+environment, scoring rule, calibration data, model family, dependence among
+estimators, coverage or calibration claim, consequence weighting, freshness,
+shift detector, and action route. It reports interval or set width and
+abstention cost beside coverage. If a distribution shift, intervention, model
+replacement, or adaptive data-collection policy breaks the assumptions, the
+receipt expires and the system re-observes, broadens the set, falls back, or
+holds. “Uncertain” must change what the stack does.
 
 ### Relations are branch-local state, not attention scores
 
@@ -815,6 +888,10 @@ These rows keep Governed World Models and Reality Grounding's manifest assignmen
 | Source | Intake role | Boundary |
 |---|---|---|
 | `relational_dimension_compiler` | Passage-reviewed comparator: The Relational Dimension Compiler: Adaptive Polyadic Cognition with Bounded Computational Arity and Unbounded Semantic Structure. Adds typed entity, relation, field, branch, provenance, uncertainty, lifecycle, and reversible macro-object state plus explicit separation between proposed, qualified, believed, observed, executed, contradicted, and retired relations. | The architecture does not establish correct perception, grounding, relation truth, causal structure, branch calibration, contraction fidelity, or world-model advantage. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_toward_causal_representation_learning_2021` | Passage-reviewed comparator: Toward Causal Representation Learning. Grounds the bridge from low-level observations to high-level causal variables and connects causal structure to intervention, transfer, and generalization. | Research agenda and review; no general causal representation or local intervention result. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_deep_ensembles_2017` | Passage-reviewed comparator: Simple and Scalable Predictive Uncertainty Estimation using Deep Ensembles. Provides a strong practical predictive-uncertainty and disagreement baseline. | Source-reported benchmark calibration is not distribution-free and can share common-mode blind spots. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_conformal_prediction_2021` | Passage-reviewed comparator: A Gentle Introduction to Conformal Prediction and Distribution-Free Uncertainty Quantification. Grounds finite-sample prediction-set coverage under explicit assumptions and target definitions. | Coverage does not establish semantic correctness, causal adequacy, safety, or validity after assumption-breaking shift. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_wilds_2021` | Passage-reviewed comparator: WILDS: A Benchmark of in-the-Wild Distribution Shifts. Provides natural distribution-shift benchmarks across institutions, geography, time, and collection processes. | Ten benchmark datasets do not cover all OOD conditions or establish local robustness. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Summary

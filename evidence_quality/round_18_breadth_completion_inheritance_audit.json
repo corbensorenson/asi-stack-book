@@ -1,0 +1,91 @@
+{
+  "audit_id": "round_18_breadth_completion_inheritance_audit_2026_07_24",
+  "audit_date": "2026-07-24",
+  "scope": "The five chapters admitted in the bounded Round 18 breadth transaction.",
+  "state": "targeted_birth_guard_passed",
+  "maximum_inference": "The five chapters have distinct owners, core claims, interfaces, diagrams, failure surfaces, and handoffs at birth. This does not close the whole-book P7.1a-W3 repetition and inheritance audit.",
+  "method": [
+    "Confirm that every chapter owns a system object not already owned by an adjacent chapter.",
+    "Confirm that every chapter has a chapter-specific mechanism diagram and explanatory walkthrough.",
+    "Confirm that its manifest packet, prose packet, source crosswalk, birth atom, and handoff identify the same owner.",
+    "Run the chapter definition-of-done, visual-coverage, handoff, source-hygiene, outline-consistency, and packet-contract validators over the full 66-chapter manifest."
+  ],
+  "chapters": [
+    {
+      "chapter_id": "inner-alignment-mesa-optimization-and-learned-objective-integrity",
+      "distinct_owner": "Use-specific evidence about learned objectives, conditional policies, internal optimization, mitigation hiding, and descendant invalidation.",
+      "not_inherited_from": [
+        "constitutional-alignment-substrate",
+        "policy-optimization-and-preference-fidelity",
+        "white-box-evidence-and-mechanistic-anomaly-detection",
+        "adversarial-evaluation-red-teaming-and-evidence-budgets"
+      ],
+      "diagram_identity": "Authorized outer objective through training lineage, alternative objective hypotheses, objective-integrity judgment, bounded deployment, and descendant invalidation.",
+      "result": "pass"
+    },
+    {
+      "chapter_id": "perception-sensor-fusion-and-observation-trust",
+      "distinct_owner": "Task-relative admission of sensor-derived observations under calibration, timing, coverage, dependence, disagreement, shift, and spoofing.",
+      "not_inherited_from": [
+        "governed-world-models-and-reality-grounding",
+        "virtual-context-abi",
+        "security-kernel-identity-secrets-and-cryptographic-policy"
+      ],
+      "diagram_identity": "Sensor streams through identity, calibration, dependence, quality, fusion, disagreement routing, and a bounded observation contract.",
+      "result": "pass"
+    },
+    {
+      "chapter_id": "human-ai-organizations-delegation-and-accountability",
+      "distinct_owner": "Meso-level organizational charters, roles, decision rights, delegation, accountability, succession, dissolution, and residual custody.",
+      "not_inherited_from": [
+        "labor-os-and-typed-jobs",
+        "human-factors-oversight-fatigue-and-meaningful-control",
+        "intent-to-execution-contracts",
+        "inter-stack-protocols-identity-and-economic-exchange"
+      ],
+      "diagram_identity": "Organization charter through actor registry, participation, decision rights, execution, burden and dependence review, accountability, and dissolution.",
+      "result": "pass"
+    },
+    {
+      "chapter_id": "embodied-agency-real-time-control-and-physical-safety",
+      "distinct_owner": "Deadline-bound plant control, independent safety filtering and fallback, physical effects, stabilization, and irreversible residuals.",
+      "not_inherited_from": [
+        "runtime-adapters-tool-permissions-and-human-approval",
+        "governed-world-models-and-reality-grounding",
+        "governed-operations-and-deployment-topologies",
+        "perception-sensor-fusion-and-observation-trust"
+      ],
+      "diagram_identity": "Symbolic action through a plant-specific lease, per-period safety check, advanced and baseline controllers, actuation, observation, and physical residual.",
+      "result": "pass"
+    },
+    {
+      "chapter_id": "multi-agent-dynamics-collective-intelligence-and-systemic-risk",
+      "distinct_owner": "Population-level cooperation, conflict, collusion, coalitions, concentration, cascades, externalities, common-mode risk, and longitudinal human influence.",
+      "not_inherited_from": [
+        "human-ai-organizations-delegation-and-accountability",
+        "inter-stack-protocols-identity-and-economic-exchange",
+        "personal-compute-hives-and-federated-edge-intelligence",
+        "institutional-design-law-and-international-coordination"
+      ],
+      "diagram_identity": "Population registry and interaction graph through incentives, repeated interaction, population outcomes, systemic-risk judgment, intervention, and displaced residuals.",
+      "result": "pass"
+    }
+  ],
+  "negative_control": {
+    "shape": "A chapter that changes only nouns in a generic claim-contract-invariant-test scaffold while retaining the same owner, mechanism path, and failure surface.",
+    "expected_result": "reject",
+    "observed_result": "rejected_by_distinct_owner_and_diagram_identity_checks",
+    "note": "This is a structural negative control, not an empirical plagiarism or semantic-similarity benchmark."
+  },
+  "validation_snapshot": {
+    "manifest_chapter_count": 66,
+    "chapter_definition_of_done": "pass",
+    "visual_coverage": "pass",
+    "chapter_handoffs": "pass",
+    "chapter_packet_contract": "pass",
+    "chapter_source_hygiene": "pass",
+    "outline_consistency": "pass"
+  },
+  "support_state_effect": "none",
+  "release_effect": "none"
+}

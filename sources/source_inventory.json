@@ -1,5 +1,343 @@
 [
   {
+    "id": "ext_constructive_interdependence_human_ai_2026",
+    "title": "Who Is Helping Whom? Analyzing Inter-Dependencies to Evaluate Cooperation in Human-AI Teaming",
+    "priority": "external_literature",
+    "layer": "multi_agent_dynamics_and_human_ai_organizations",
+    "chapter_targets": [
+      "human-ai-organizations-delegation-and-accountability",
+      "multi-agent-dynamics-collective-intelligence-and-systemic-risk"
+    ],
+    "url": "https://ojs.aaai.org/index.php/AAAI/article/view/38787",
+    "notes": "AAAI-26 paper introducing constructive interdependence as a complement to task reward for evaluating human-agent cooperation in Overcooked. The source reports that high task reward can coexist with low interdependence in its studied teams; no local human study, teaming result, or general cooperation claim is reproduced.",
+    "source_type": "conference_paper",
+    "published": "2026-03-14",
+    "updated": "2026-03-14",
+    "citation_label": "Biswas et al. (2026), Who Is Helping Whom?",
+    "doi": "10.1609/aaai.v40i21.38787"
+  },
+  {
+    "id": "ext_adversarial_sensor_fusion_2022",
+    "title": "Adversarial Robustness of Deep Sensor Fusion Models",
+    "priority": "external_literature",
+    "layer": "perception_sensor_fusion_and_observation_trust",
+    "chapter_targets": [
+      "perception-sensor-fusion-and-observation-trust"
+    ],
+    "url": "https://openaccess.thecvf.com/content/WACV2022/html/Wang_Adversarial_Robustness_of_Deep_Sensor_Fusion_Models_WACV_2022_paper.html",
+    "notes": "WACV camera-LiDAR study reporting that fusion can improve clean accuracy and some single-source robustness while single-channel adversarial training can create cross-channel externalities. The results are source-reported, architecture- and threat-model-bound, and not local evidence that fusion is safe.",
+    "source_type": "conference_paper",
+    "published": "2022-01-04",
+    "updated": "2022-01-04",
+    "citation_label": "Wang et al. (2022), Adversarial Robustness of Deep Sensor Fusion Models",
+    "doi": null
+  },
+  {
+    "id": "ext_imagebind_2023",
+    "title": "ImageBind: One Embedding Space To Bind Them All",
+    "priority": "external_literature",
+    "layer": "perception_sensor_fusion_and_observation_trust",
+    "chapter_targets": [
+      "perception-sensor-fusion-and-observation-trust"
+    ],
+    "url": "https://openaccess.thecvf.com/content/CVPR2023/html/Girdhar_ImageBind_One_Embedding_Space_To_Bind_Them_All_CVPR_2023_paper",
+    "notes": "CVPR paper learning a shared space across image, text, audio, depth, thermal, and IMU modalities using image-paired data. It supplies a representation comparator; reported zero-shot and few-shot results do not establish calibrated sensor truth, robust fusion, causal grounding, or local performance.",
+    "source_type": "conference_paper",
+    "published": "2023-06-18",
+    "updated": "2023-06-18",
+    "citation_label": "Girdhar et al. (2023), ImageBind",
+    "doi": null
+  },
+  {
+    "id": "ext_multimodal_machine_learning_taxonomy_2019",
+    "title": "Multimodal Machine Learning: A Survey and Taxonomy",
+    "priority": "external_literature",
+    "layer": "perception_sensor_fusion_and_observation_trust",
+    "chapter_targets": [
+      "perception-sensor-fusion-and-observation-trust"
+    ],
+    "url": "https://arxiv.org/abs/1705.09406",
+    "notes": "Peer-reviewed survey organizing multimodal learning around representation, translation, alignment, fusion, and co-learning. It supplies taxonomy and research context, not a locally reproduced mechanism or evidence that any fusion design is adequate for consequential observation admission.",
+    "source_type": "journal_article",
+    "published": "2019-02-01",
+    "updated": "2019-02-01",
+    "citation_label": "Baltrušaitis, Ahuja, and Morency (2019), Multimodal Machine Learning",
+    "doi": "10.1109/TPAMI.2018.2798607"
+  },
+  {
+    "id": "ext_control_barrier_functions_2019",
+    "title": "Control Barrier Functions: Theory and Applications",
+    "priority": "external_literature",
+    "layer": "embodied_real_time_control_and_physical_safety",
+    "chapter_targets": [
+      "embodied-agency-real-time-control-and-physical-safety"
+    ],
+    "url": "https://arxiv.org/abs/1903.11199",
+    "notes": "Overview of control barrier functions for verifying and enforcing safety properties in optimization-based controllers, including robotic applications. It supplies a formal-control comparator under stated dynamics and set assumptions, not a universal physical-safety guarantee or local implementation result.",
+    "source_type": "conference_paper",
+    "published": "2019-04-10",
+    "updated": "2019-04-10",
+    "citation_label": "Ames et al. (2019), Control Barrier Functions",
+    "doi": "10.23919/ECC.2019.8796030"
+  },
+  {
+    "id": "ext_simplex_architecture_1998",
+    "title": "The Simplex Architecture for Safe On-Line Control System Upgrades",
+    "priority": "external_literature",
+    "layer": "embodied_real_time_control_and_physical_safety",
+    "chapter_targets": [
+      "embodied-agency-real-time-control-and-physical-safety"
+    ],
+    "url": "https://doi.org/10.1109/ACC.1998.703255",
+    "notes": "American Control Conference paper describing a runtime architecture that protects an advanced controller with a safety controller and switching logic. It motivates independent fallback authority; its process-control case does not validate an ASI Stack controller or arbitrary learned policy.",
+    "source_type": "conference_paper",
+    "published": "1998-06-24",
+    "updated": "1998-06-24",
+    "citation_label": "Seto et al. (1998), The Simplex Architecture",
+    "doi": "10.1109/ACC.1998.703255"
+  },
+  {
+    "id": "ext_safe_reinforcement_learning_survey_2015",
+    "title": "A Comprehensive Survey on Safe Reinforcement Learning",
+    "priority": "external_literature",
+    "layer": "embodied_real_time_control_and_physical_safety",
+    "chapter_targets": [
+      "embodied-agency-real-time-control-and-physical-safety"
+    ],
+    "url": "https://www.jmlr.org/papers/v16/garcia15a.html",
+    "notes": "JMLR survey classifying safe reinforcement learning through modified optimality criteria and modified exploration using external knowledge or risk measures. It supplies a design taxonomy, not evidence that a particular controller is safe or that learning-time and deployment-time constraints compose.",
+    "source_type": "journal_article",
+    "published": "2015-04-27",
+    "updated": "2015-04-27",
+    "citation_label": "García and Fernández (2015), A Comprehensive Survey on Safe Reinforcement Learning",
+    "doi": null
+  },
+  {
+    "id": "ext_gemini_robotics_2025",
+    "title": "Gemini Robotics: Bringing AI into the Physical World",
+    "priority": "external_literature",
+    "layer": "embodied_real_time_control_and_physical_safety",
+    "chapter_targets": [
+      "embodied-agency-real-time-control-and-physical-safety",
+      "perception-sensor-fusion-and-observation-trust"
+    ],
+    "url": "https://arxiv.org/abs/2503.20020",
+    "notes": "Technical report on Gemini Robotics and Gemini Robotics-ER, including vision-language-action control, spatial reasoning, adaptation, and reported safety considerations. Capability results are source-reported and do not establish independent physical-safety assurance, local transfer, or general embodiment.",
+    "source_type": "technical_report",
+    "published": "2025-03-25",
+    "updated": "2025-03-25",
+    "citation_label": "Gemini Robotics Team et al. (2025), Gemini Robotics",
+    "doi": "10.48550/arXiv.2503.20020"
+  },
+  {
+    "id": "ext_ai_decision_authority_2020",
+    "title": "The Allocation of Decision Authority to Human and Artificial Intelligence",
+    "priority": "external_literature",
+    "layer": "human_ai_organizations_delegation_and_accountability",
+    "chapter_targets": [
+      "human-ai-organizations-delegation-and-accountability"
+    ],
+    "url": "https://www.nber.org/papers/w26673",
+    "notes": "Economic model of a principal allocating decision authority between a human and an AI while trading off alignment, human information-acquisition effort, and AI reliability. It supplies a bounded organizational-design comparator, not an empirical finding about all workplaces or an accountability solution.",
+    "source_type": "working_paper",
+    "published": "2020-01-20",
+    "updated": "2020-01-20",
+    "citation_label": "Athey, Bryan, and Gans (2020), Allocation of Decision Authority",
+    "doi": "10.3386/w26673"
+  },
+  {
+    "id": "ext_cooperative_ai_foundations_2023",
+    "title": "Foundations of Cooperative AI",
+    "priority": "external_literature",
+    "layer": "multi_agent_dynamics_collective_intelligence_and_systemic_risk",
+    "chapter_targets": [
+      "multi-agent-dynamics-collective-intelligence-and-systemic-risk"
+    ],
+    "url": "https://ojs.aaai.org/index.php/AAAI/article/view/26791",
+    "notes": "AAAI research agenda applying game-theoretic foundations to cooperation among advanced AI agents while noting settings where cooperation becomes harmful collusion. It supplies problem structure and comparator families, not a solved coordination mechanism or local population-level result.",
+    "source_type": "conference_paper",
+    "published": "2023-06-26",
+    "updated": "2023-06-26",
+    "citation_label": "Conitzer and Oesterheld (2023), Foundations of Cooperative AI",
+    "doi": "10.1609/aaai.v37i13.26791"
+  },
+  {
+    "id": "ext_sleeper_agents_2024",
+    "title": "Sleeper Agents: Training Deceptive LLMs that Persist Through Safety Training",
+    "priority": "external_literature",
+    "layer": "inner_alignment_and_learned_objective_integrity",
+    "chapter_targets": [
+      "inner-alignment-mesa-optimization-and-learned-objective-integrity"
+    ],
+    "url": "https://arxiv.org/abs/2401.05566",
+    "notes": "Proof-of-concept backdoored-language-model study reporting persistence through several safety-training methods and warning that adversarial training can improve trigger recognition. The constructed examples do not establish naturally learned deception, a universal failure, or local detector performance.",
+    "source_type": "preprint",
+    "published": "2024-01-10",
+    "updated": "2024-01-17",
+    "citation_label": "Hubinger et al. (2024), Sleeper Agents",
+    "doi": "10.48550/arXiv.2401.05566"
+  },
+  {
+    "id": "ext_toward_causal_representation_learning_2021",
+    "title": "Toward Causal Representation Learning",
+    "priority": "external_literature",
+    "layer": "world_models_causal_reasoning_and_representation",
+    "chapter_targets": [
+      "governed-world-models-and-reality-grounding"
+    ],
+    "url": "https://arxiv.org/abs/2102.11107",
+    "notes": "Proceedings of the IEEE article connecting graphical causality with representation learning and identifying discovery of high-level causal variables from low-level observations as a central open problem. It supplies a research frame, not a locally validated causal representation or intervention model.",
+    "source_type": "journal_article",
+    "published": "2021-02-26",
+    "updated": "2021-05-01",
+    "citation_label": "Schölkopf et al. (2021), Toward Causal Representation Learning",
+    "doi": "10.1109/JPROC.2021.3058954"
+  },
+  {
+    "id": "ext_scaling_laws_neural_language_models_2020",
+    "title": "Scaling Laws for Neural Language Models",
+    "priority": "external_literature",
+    "layer": "scaling_laws_emergence_and_capability_forecasting",
+    "chapter_targets": [
+      "the-efficient-asi-hypothesis"
+    ],
+    "url": "https://arxiv.org/abs/2001.08361",
+    "notes": "Empirical study reporting power-law relationships between cross-entropy loss, model size, data, and compute in its model family. These fitted relations are source-reported, metric- and regime-bound, and do not automatically forecast downstream capabilities, safety, or other architectures.",
+    "source_type": "preprint",
+    "published": "2020-01-23",
+    "updated": "2020-01-23",
+    "citation_label": "Kaplan et al. (2020), Scaling Laws for Neural Language Models",
+    "doi": "10.48550/arXiv.2001.08361"
+  },
+  {
+    "id": "ext_chinchilla_compute_optimal_2022",
+    "title": "Training Compute-Optimal Large Language Models",
+    "priority": "external_literature",
+    "layer": "scaling_laws_emergence_and_capability_forecasting",
+    "chapter_targets": [
+      "the-efficient-asi-hypothesis"
+    ],
+    "url": "https://arxiv.org/abs/2203.15556",
+    "notes": "Study of compute-optimal allocation between model parameters and training tokens, based on more than 400 reported training runs and the Chinchilla comparison. It revises one scaling prescription within a bounded family; no local large-scale reproduction or universal optimum is claimed.",
+    "source_type": "conference_paper",
+    "published": "2022-03-29",
+    "updated": "2022-03-29",
+    "citation_label": "Hoffmann et al. (2022), Training Compute-Optimal Large Language Models",
+    "doi": "10.48550/arXiv.2203.15556"
+  },
+  {
+    "id": "ext_emergent_abilities_2022",
+    "title": "Emergent Abilities of Large Language Models",
+    "priority": "external_literature",
+    "layer": "scaling_laws_emergence_and_capability_forecasting",
+    "chapter_targets": [
+      "the-efficient-asi-hypothesis"
+    ],
+    "url": "https://arxiv.org/abs/2206.07682",
+    "notes": "Paper cataloguing task abilities that appear discontinuously under particular model families, prompts, and metrics. It motivates threshold monitoring but does not establish that all reported discontinuities reflect abrupt underlying mechanisms or are prospectively predictable.",
+    "source_type": "conference_paper",
+    "published": "2022-06-15",
+    "updated": "2022-06-15",
+    "citation_label": "Wei et al. (2022), Emergent Abilities of Large Language Models",
+    "doi": "10.48550/arXiv.2206.07682"
+  },
+  {
+    "id": "ext_emergence_mirage_2023",
+    "title": "Are Emergent Abilities of Large Language Models a Mirage?",
+    "priority": "external_literature",
+    "layer": "scaling_laws_emergence_and_capability_forecasting",
+    "chapter_targets": [
+      "the-efficient-asi-hypothesis"
+    ],
+    "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/adc98a266f45005c403b8311ca7e8bd7-Abstract-Conference.html",
+    "notes": "NeurIPS paper showing that discontinuous metrics can create apparent emergence from smoothly changing model outputs in studied settings. It is a measurement critique and counterweight, not proof that every capability transition is smooth or non-emergent.",
+    "source_type": "conference_paper",
+    "published": "2023-12-10",
+    "updated": "2023-12-10",
+    "citation_label": "Schaeffer, Miranda, and Koyejo (2023), Emergent Abilities Mirage",
+    "doi": null
+  },
+  {
+    "id": "ext_deep_ensembles_2017",
+    "title": "Simple and Scalable Predictive Uncertainty Estimation using Deep Ensembles",
+    "priority": "external_literature",
+    "layer": "uncertainty_calibration_and_distribution_shift",
+    "chapter_targets": [
+      "governed-world-models-and-reality-grounding"
+    ],
+    "url": "https://papers.nips.cc/paper_files/paper/2017/hash/9ef2ed4b7fd2c810847ffa5fa85bce38-Abstract.html",
+    "notes": "NeurIPS paper presenting independently trained probabilistic neural-network ensembles as a strong practical predictive-uncertainty baseline. Reported calibration and out-of-distribution behavior are benchmark-bound and do not provide distribution-free guarantees or local evidence.",
+    "source_type": "conference_paper",
+    "published": "2017-12-04",
+    "updated": "2017-12-04",
+    "citation_label": "Lakshminarayanan, Pritzel, and Blundell (2017), Deep Ensembles",
+    "doi": null
+  },
+  {
+    "id": "ext_conformal_prediction_2021",
+    "title": "A Gentle Introduction to Conformal Prediction and Distribution-Free Uncertainty Quantification",
+    "priority": "external_literature",
+    "layer": "uncertainty_calibration_and_distribution_shift",
+    "chapter_targets": [
+      "governed-world-models-and-reality-grounding"
+    ],
+    "url": "https://arxiv.org/abs/2107.07511",
+    "notes": "Technical introduction to conformal prediction, coverage guarantees, and extensions. Coverage depends on the method's stated exchangeability or shift assumptions and target; it does not establish semantic correctness, causal adequacy, safety, or local calibration.",
+    "source_type": "technical_report",
+    "published": "2021-07-15",
+    "updated": "2022-12-01",
+    "citation_label": "Angelopoulos and Bates (2021), Conformal Prediction",
+    "doi": "10.48550/arXiv.2107.07511"
+  },
+  {
+    "id": "ext_wilds_2021",
+    "title": "WILDS: A Benchmark of in-the-Wild Distribution Shifts",
+    "priority": "external_literature",
+    "layer": "uncertainty_calibration_and_distribution_shift",
+    "chapter_targets": [
+      "governed-world-models-and-reality-grounding"
+    ],
+    "url": "https://proceedings.mlr.press/v139/koh21a.html",
+    "notes": "ICML benchmark of ten datasets with naturally occurring shifts across domains such as hospitals, camera traps, geography, and time. It supplies representative shift designs and reported gaps, not a universal OOD benchmark or local robustness result.",
+    "source_type": "conference_paper",
+    "published": "2021-07-18",
+    "updated": "2021-07-18",
+    "citation_label": "Koh et al. (2021), WILDS",
+    "doi": null
+  },
+  {
+    "id": "ext_taking_ai_welfare_seriously_2024",
+    "title": "Taking AI Welfare Seriously",
+    "priority": "external_literature",
+    "layer": "moral_uncertainty_ai_welfare_and_moral_status",
+    "chapter_targets": [
+      "moral-uncertainty-and-value-conflict"
+    ],
+    "url": "https://arxiv.org/abs/2411.00986",
+    "notes": "Interdisciplinary report arguing for precautionary attention to uncertainty about AI consciousness, robust agency, welfare, and moral patienthood. It does not establish that current systems are conscious, have welfare, or deserve any particular status, and it supplies no local assessment.",
+    "source_type": "report",
+    "published": "2024-11-04",
+    "updated": "2024-11-04",
+    "citation_label": "Long et al. (2024), Taking AI Welfare Seriously",
+    "doi": "10.48550/arXiv.2411.00986"
+  },
+  {
+    "id": "ext_functional_decision_theory_2017",
+    "title": "Functional Decision Theory: A New Theory of Instrumental Rationality",
+    "priority": "external_literature",
+    "layer": "decision_theory_embedded_agents_and_multi_agent_dynamics",
+    "chapter_targets": [
+      "multi-agent-dynamics-collective-intelligence-and-systemic-risk"
+    ],
+    "url": "https://arxiv.org/abs/1710.05060",
+    "notes": "Paper defining functional decision theory and comparing its recommendations with causal and evidential decision theories on classic decision problems. It is a normative proposal with contested assumptions, not an empirically validated universal decision rule or a deployment policy.",
+    "source_type": "preprint",
+    "published": "2017-10-13",
+    "updated": "2017-10-13",
+    "citation_label": "Yudkowsky and Soares (2017), Functional Decision Theory",
+    "doi": "10.48550/arXiv.1710.05060"
+  },
+  {
     "id": "ext_un_global_digital_compact_2024",
     "title": "Global Digital Compact",
     "priority": "external_literature",

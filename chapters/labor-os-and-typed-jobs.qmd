@@ -691,4 +691,8 @@ Across 76 atoms, the terminal ledger records 76 `blocked_after_full_attempt`.
 
 ## Handoff
 
-Typed jobs give execution a bounded work unit, but the stack still needs a durable record of what each job produced, read, changed, and failed to prove. Artifact Graphs, Audit Logs, and Replay supplies that continuity layer. It makes outputs, sources, context transactions, tools, audit events, replay limits, and residuals part of the system's memory rather than leftovers around the work.
+Typed jobs give execution a bounded work unit, but repeated work also changes
+the institution that assigns it. **Human-AI Organizations, Delegation, and Accountability** owns the allocation of information, decision rights, review
+burden, skill, benefits, and responsibility before organization-level outputs
+flow into durable artifact custody. This keeps job completion separate from
+institutional authority, legitimacy, and accountability for downstream effects.
