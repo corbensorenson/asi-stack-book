@@ -291,6 +291,49 @@ This is source-grounded architecture integration only. No RDC packet has run
 through the reference fixture, and no whole-stack relational advantage or
 semantic-preservation result follows.
 
+### Functional precision across the reference trace
+
+Functional precision is intentionally split across owners but remains one
+joined trace. The task contract identifies protected behavior and consequence.
+RankFold/NeuralFold owns canonicalization, transformation, complete description
+accounting, and the candidate precision package. Compact Generation owns base
+and residual honesty. Fast Generation owns runtime refinement and fallback.
+Resource Economics closes physical and assurance cost. Executable
+Specifications owns finite transformation obligations. Weight Custody owns
+derivatives and platform identity. Readiness owns certificate expiry,
+quarantine, and revocation. The Efficient ASI policy decides whether precision
+is the resource worth changing.
+
+The join identity is:
+
+`reference -> protected contract -> canonicalization -> precision plan ->
+complete package -> base/residual route -> verification -> certificate ->
+expiry or revocation`.
+
+No boundary may substitute parameter proximity for protected behavior, payload
+bytes for complete cost, reconstruction for utility, a certificate for
+correctness, or a faster route for authority. The reference trace records the
+same artifact, decoder, kernel, platform, domain, evaluator, route, fallback,
+and evidence identities at every step. A material mismatch produces a new
+candidate or invalidation, not silent inheritance.
+
+```mermaid
+flowchart LR
+    C["Task and protected behavior"] --> P["Precision transformation"]
+    P --> B["Complete base + residual package"]
+    B --> R["Runtime precision route"]
+    R --> V["Behavior and cost verification"]
+    V --> Q["Scoped precision certificate"]
+    Q --> U["Use under readiness lease"]
+    U --> X["Drift / expiry / revocation"]
+    X --> P
+```
+
+This integration supplies a reader-visible architecture and falsification
+contract. It does not establish a universal bit bound, implemented compiler,
+behavior-preserving quantizer, cost advantage, certificate validity, or
+deployment result.
+
 ### Eighteen-stage cross-layer join lifecycle
 
 The contract (1) freezes purpose, request, intent, affected parties, consumers,

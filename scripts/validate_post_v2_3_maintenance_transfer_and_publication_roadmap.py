@@ -54,6 +54,26 @@ STRUCTURAL_CHAPTER_PATHS = {
     "human-factors-and-meaningful-control-in-oversight": ROOT / "chapters/human-factors-and-meaningful-control-in-oversight.qmd",
     "governed-operations-incident-command-and-graceful-degradation": ROOT / "chapters/governed-operations-incident-command-and-graceful-degradation.qmd",
 }
+MANUSCRIPT_COMPLETION_PATHS = {
+    "inner_alignment_depth": ROOT / "chapters/inner-alignment-mesa-optimization-and-learned-objective-integrity.qmd",
+    "multi_agent_depth": ROOT / "chapters/multi-agent-dynamics-collective-intelligence-and-systemic-risk.qmd",
+    "perception_depth": ROOT / "chapters/perception-sensor-fusion-and-observation-trust.qmd",
+    "embodied_depth": ROOT / "chapters/embodied-agency-real-time-control-and-physical-safety.qmd",
+    "organization_depth": ROOT / "chapters/human-ai-organizations-delegation-and-accountability.qmd",
+    "white_box_depth": ROOT / "chapters/white-box-evidence-interpretability-and-activation-governance.qmd",
+    "uncertainty_repair": ROOT / "chapters/governed-world-models-and-reality-grounding.qmd",
+    "types_and_transformation_repair": ROOT / "chapters/executable-specifications-and-lean-proof-envelope.qmd",
+    "synthetic_data_repair": ROOT / "chapters/data-engines-continual-learning-and-unlearning.qmd",
+    "explanation_repair": ROOT / "chapters/human-factors-and-meaningful-control-in-oversight.qmd",
+    "precision_primary": ROOT / "chapters/rankfold-neuralfold-and-artifact-compression.qmd",
+    "precision_residual": ROOT / "chapters/compact-generative-systems-and-residual-honesty.qmd",
+    "precision_runtime": ROOT / "chapters/fast-generation-architectures.qmd",
+    "precision_economics": ROOT / "chapters/resource-economics-and-token-budgets.qmd",
+    "precision_readiness": ROOT / "chapters/readiness-gates-residual-escrow-and-quarantine.qmd",
+    "precision_custody": ROOT / "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd",
+    "precision_efficiency": ROOT / "chapters/the-efficient-asi-hypothesis.qmd",
+    "precision_synthesis": ROOT / "chapters/integrated-reference-architecture.qmd",
+}
 STRUCTURAL_SOURCE_IDS = [
     "ext_circuit_tracing_2025",
     "ext_scaling_sparse_autoencoders_2024",
@@ -168,6 +188,10 @@ def inputs() -> dict:
         "precision_contract_triage": load(PRECISION_CONTRACT_TRIAGE),
         "source_inventory": load(SOURCE_INVENTORY),
         "book_manifest": load(BOOK_MANIFEST),
+        "manuscript_completion": {
+            key: path.read_text(encoding="utf-8")
+            for key, path in MANUSCRIPT_COMPLETION_PATHS.items()
+        },
         "transition_snapshot": transition_snapshot(atom_ids),
         "proof_review": PROOF_REVIEW.read_text(encoding="utf-8"),
         "proof_manifest": load(PROOF_MANIFEST),
@@ -367,7 +391,7 @@ def errors(data: dict) -> list[str]:
     precision_status = status.get("post_round_18_depth_and_coverage_amendment", {}).get(
         "precision_contract_source_amendment", {}
     )
-    if precision_status.get("state") != "source_intake_terminal_existing_owner_prose_queued":
+    if precision_status.get("state") != "source_and_existing_owner_prose_terminal_evidence_queued":
         out.append("Precision Contract source intake state drifted")
     if precision_status.get("primary_owner") != "rankfold-neuralfold-and-artifact-compression":
         out.append("Precision Contract primary owner drifted")
@@ -383,6 +407,30 @@ def errors(data: dict) -> list[str]:
         out.append("Precision Contract packet automatically admits cited sources")
     if precision_status.get("support_state_effect") != "none" or precision_status.get("release_effect") != "none":
         out.append("Precision Contract packet launders support or release state")
+
+    required_manuscript_phrases = {
+        "inner_alignment_depth": "### Deceptive alignment, training games, and gradient hacking",
+        "multi_agent_depth": "### Strategic foundations: games, bargaining, choice, and adaptation",
+        "perception_depth": "### Bayesian state estimation and concrete fusion regimes",
+        "embodied_depth": "### Hybrid control, timing evidence, and sim-to-real limits",
+        "organization_depth": "### Organizational transition: tasks, jobs, power, and public capacity",
+        "white_box_depth": "### Probes, sparse dictionaries, circuits, and causal challenge",
+        "uncertainty_repair": "Four uncertainty families receive separate fields and remedies",
+        "types_and_transformation_repair": "### Compression as a verified program transformation",
+        "synthetic_data_repair": "### Governed synthetic-data and self-play lifecycle",
+        "explanation_repair": "### Explanation generation as a governed translation",
+        "precision_primary": "### Functional precision: preserve behavior, not coordinates",
+        "precision_residual": "### Progressive numerical precision as residual honesty",
+        "precision_runtime": "### Precision routing is an execution policy",
+        "precision_economics": "### The full economics of precision",
+        "precision_readiness": "### Precision certificates, expiry, and readmission",
+        "precision_custody": "### Precision derivatives extend the custody graph",
+        "precision_efficiency": "### Functional precision as one routed resource",
+        "precision_synthesis": "### Functional precision across the reference trace",
+    }
+    for key, phrase in required_manuscript_phrases.items():
+        if phrase not in data["manuscript_completion"].get(key, ""):
+            out.append(f"roadmap manuscript completion missing: {key}")
 
     precision_inventory_rows = [
         row for row in data["source_inventory"] if row.get("id") == "precision_contract"
@@ -1348,6 +1396,7 @@ def main() -> None:
     mutate("Precision Contract third WIP lane", lambda c: c["status"]["post_round_18_depth_and_coverage_amendment"]["precision_contract_source_amendment"].__setitem__("third_wip_lane_allowed", True))
     mutate("Precision Contract automatic Appendix H admission", lambda c: c["status"]["post_round_18_depth_and_coverage_amendment"]["precision_contract_source_amendment"].__setitem__("automatic_appendix_h_admission_allowed", True))
     mutate("Precision Contract support laundering", lambda c: c["status"]["post_round_18_depth_and_coverage_amendment"]["precision_contract_source_amendment"].__setitem__("support_state_effect", "supported"))
+    mutate("roadmap manuscript prose deletion", lambda c: c["manuscript_completion"].__setitem__("precision_primary", c["manuscript_completion"]["precision_primary"].replace("### Functional precision: preserve behavior, not coordinates", "### Deleted precision prose", 1)))
     mutate("non-Docker deletion authorization", lambda c: c["status"]["round_16_evidence_first_amendment"]["p2_empirical_recovery"].__setitem__("non_docker_user_data_deletion_allowed", True))
     mutate("optimizer duplicate chapter authorization", lambda c: c["status"]["round_16_evidence_first_amendment"]["optimizer_landscape_depth_amendment"].__setitem__("new_chapter_allowed", True))
     mutate("optimizer coupled-policy deletion", lambda c: c["status"]["round_16_evidence_first_amendment"]["optimizer_landscape_depth_amendment"].__setitem__("optimizer_is_coupled_run_policy", False))

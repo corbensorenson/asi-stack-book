@@ -216,6 +216,73 @@ monitoring can exclude privacy-sensitive participants. The receipt measures
 the direct target, displaced behavior, distributional effect, new equilibrium,
 and recovery rather than declaring success from the first metric.
 
+### Strategic foundations: games, bargaining, choice, and adaptation
+
+A population contract needs a formal description of what each participant can
+observe, choose, commit to, receive, and change. A useful minimum is an
+extensive-form or stochastic game with typed players, information sets, action
+spaces, transition rules, utilities or bounded preference representations,
+horizon assumptions, and exogenous affected parties. Cooperative formulations
+add coalitions and surplus allocation; network games declare the topology
+through which influence and resources travel. These models are explicit
+approximations, not the population itself.
+
+**Equilibrium is conditional prediction, not a welfare certificate.** Nash,
+correlated, coarse-correlated, sequential, and Markov-perfect equilibria answer
+different questions. Existence does not establish uniqueness, reachability,
+stability under learning, fairness, or desirability. A result therefore names
+the equilibrium concept, solver, approximation error, initialization,
+selection rule, and evidence that the observed population approached the
+modeled regime. A cartel or race to the bottom can be stable.
+
+**Bargaining makes power and disagreement explicit.** The record names the
+feasible set, outside options, information asymmetry, delay costs, commitment
+capacity, representation, and allocation rule. Nash bargaining,
+alternating-offer games, auctions, and informal negotiation can allocate the
+same surplus differently. Human exit that is formally available but
+economically ruinous is not a credible outside option.
+
+**Social choice exposes aggregation failures.** Voting, ranking, consensus,
+prediction markets, and learned aggregators trade off information,
+manipulability, representation, and accountability. The mechanism records
+eligibility, agenda control, preference elicitation, minority protection,
+delegation, and strategic-reporting assumptions. An aggregate choice cannot
+erase people who lacked standing, data, or meaningful exit.
+
+**Mechanism design is an intervention hypothesis.** A payment, reputation
+rule, access constraint, matching market, or sanction is admitted with its
+incentive-compatibility assumptions, participation constraints, information
+and budget needs, collusion surface, distributional effects, and enforcement
+owner. Clean-model truthfulness does not imply truthfulness under bounded
+cognition, sybils, learned agents, side payments, or unverifiable actions.
+
+**Learning changes the game while it is measured.** Independent RL agents,
+no-regret learners, opponent models, population-based training, and
+shared-model agents generate different non-stationarity and correlation. The
+ledger tracks updates, shared initialization, replay data, communication, and
+evaluator feedback. Low regret against a fixed comparator does not imply a safe
+equilibrium, and aggregate reward can rise while concentration or human option
+value deteriorates.
+
+Argument-exit workloads therefore cross coordination, anti-coordination,
+public goods, bargaining, auctions, commons, coalition formation, security
+dilemmas, cascades, and common-mode failure. They compare scripted policies,
+standard game-theoretic baselines, learned agents, and favorable regimes while
+reporting equilibrium fit, welfare vector, distribution, collusion,
+externalities, concentration, human influence, displaced behavior, and cost
+separately.
+
+```mermaid
+flowchart TD
+    M["Population model"] --> S["Strategies and information"]
+    S --> L["Learning and adaptation"]
+    L --> O["Observed joint behavior"]
+    O --> E["Equilibrium and welfare analysis"]
+    E --> I["Mechanism or governance intervention"]
+    I --> D["Displaced effects and new game"]
+    D --> L
+```
+
 ### Required artifacts
 
 ```text

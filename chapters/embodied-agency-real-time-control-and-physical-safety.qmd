@@ -210,6 +210,57 @@ plant, human and environment observations, compensation, inspection, and
 unresolved harm. Recovery means reaching and verifying an acceptable physical
 condition, not loading an old checkpoint.
 
+### Hybrid control, timing evidence, and sim-to-real limits
+
+Embodied intelligence is a hybrid system: discrete modes such as
+*deliberate*, *execute*, *degrade*, *hold*, *stop*, and *recover* contain
+continuous plant dynamics. A controller can satisfy a continuous barrier
+condition inside one mode yet become unsafe through a late or invalid mode
+transition. The contract specifies mode guards, reset maps, dwell times,
+hysteresis, priority, and the monitor that arbitrates simultaneous transitions.
+
+Timing is measured end to end: sensing exposure, transport, synchronization,
+state estimation, model inference, planning, safety filtering, queueing,
+actuator acceptance, and plant response. Average latency is insufficient; the
+lease binds worst-case or defensible tail bounds, jitter, deadline-miss policy,
+clock source, and contention. Every command carries the observation age and
+prediction horizon it consumed.
+
+The advanced controller and safety path must fail differently enough for
+separation to matter. Shared sensing, power, runtime, learned features, code
+generation, or networking can create common-mode dependency despite different
+component names. Simplex switching and control-barrier filters are strong
+comparators, not magic labels: model assumptions, feasible sets, switching
+latency, and recovery remain test obligations. Hazard analysis may still
+require a mechanically simple stop or energy-isolation path.
+
+Simulation is a development and falsification instrument. Qualification names
+which dynamics, contacts, latency, corruptions, humans, and failures are
+represented; what was calibrated against the plant; and what remains outside
+the simulator. Progression moves from software-in-loop to hardware-in-loop,
+bounded empty-cell trials, controlled interaction, and the intended envelope
+only as each stage passes positive controls and retains an independent stop.
+
+Evaluation includes ordinary success, boundary behavior, deadline misses,
+estimator drift, actuator saturation, unexpected contact, communication loss,
+power transitions, human entry, payload change, controller replacement, and
+recovery after partial effect. Metrics include task value, envelope violation,
+minimum margin, stop distance, isolation time, false intervention, residual
+harm, and operator burden. A scripted trajectory cannot stand in for them.
+
+```mermaid
+stateDiagram-v2
+    [*] --> Deliberate
+    Deliberate --> Execute: lease and fresh state
+    Execute --> Degraded: lost margin or support
+    Execute --> Stop: hazard or deadline miss
+    Degraded --> Hold: no safe command
+    Degraded --> Execute: requalified
+    Stop --> Recover: energy isolated
+    Hold --> Recover: inspection authorized
+    Recover --> Deliberate: plant state verified
+```
+
 ### Required artifacts
 
 ```text

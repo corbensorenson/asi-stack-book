@@ -5,7 +5,7 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd",
     "structured_atoms_reviewed": 74,
-    "prose_candidates_adjudicated": 45,
+    "prose_candidates_adjudicated": 47,
     "unowned_material_claims": 0,
     "review_note": "Reviewed the complete chapter, all six exact source mappings, the compressed-artifact schema, the fresh RAW0 replay, three imported NEURAL0 metadata observations, two no-change transitions, all three proof targets and nineteen ArtifactCompression declarations, every manifest atom, every prose candidate, the test plan, source crosswalk, summary, and handoff. The sweep made the artifact-, consumer-, use-, access-pattern-, decoder-, platform-, and time-specific Compressed Artifact Admission Lease the distinct owner; expanded the contract to eighteen lifecycle mechanisms, twelve owner interfaces, eighteen invariants, and eighteen failure modes; separated representation, reconstruction, ratio, utility, latency, authority, support, deployment, and SOTA; classified the formal surface as two direct predicate or projection consequences and seventeen derived negative or finite routes; specified strong matched baselines, complete byte and operation accounting, causal ablations, independent implementations, and heterogeneous transfer; and preserved zero chapter-core support effect."
   },
@@ -173,6 +173,15 @@
     "rankfold-neuralfold-and-artifact-compression.prose.3d40c25c37c6": {
       "state": "historical_or_source_report",
       "rationale": "Consolidated finite-model non-claim boundary; it does not promote the chapter core."
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.efbe01a309dc": {
+      "state": "duplicate_of_atom",
+      "rationale": "The measurement step operationalizes the existing artifact-specific admission contract and is not a separate claim.",
+      "target_atom_id": "rankfold-neuralfold-and-artifact-compression.core"
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.aeabad7162a4": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explicit limitation that curvature and salience are candidate-selection proxies rather than preservation guarantees."
     }
   },
   "prose_review_lineage": [

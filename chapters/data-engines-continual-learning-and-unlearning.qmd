@@ -339,6 +339,58 @@ This improves update custody but does not collapse behavioral cohort removal,
 causal influence reduction, privacy leakage reduction, storage erasure, or
 legal compliance into one claim.
 
+### Governed synthetic-data and self-play lifecycle
+
+Synthetic data is a generated claim about a useful training experience. It
+begins with a **generation charter**: target capability or failure, eligible
+source material, generator and judge identities, protected-data and rights
+boundaries, diversity and difficulty requirements, contamination rules, cost
+ceiling, and the externally grounded validation that could show usefulness.
+
+The lifecycle separates proposal, filtering, verification, curation, training,
+and evaluation. Generators propose examples, environments, opponents, or
+trajectories. Filters reject malformed, duplicated, contaminated, or
+rights-incompatible material. Verification checks answers, transitions,
+difficulty, and intended phenomena without reducing truth to generator
+confidence. Curation builds a versioned coverage and provenance record.
+Training follows a frozen mixture and checkpoint policy. Final evaluation uses
+natural, independently sourced, or otherwise non-generator-circular evidence.
+
+Self-play is one generator family, not automatic ground truth. Its record names
+the game, rules, population, opponent sampling, starting states, exploration,
+reward, curriculum, termination, and archive. Verifier-complete formal domains
+can supply stronger labels than open-ended social or language simulations, but
+population collapse, cycling, exploit overfitting, reward hacking, and
+evaluator co-adaptation remain visible in both.
+
+The central failure is a closed epistemic loop: generator, filter, judge,
+student, and evaluator share one model family or blind spot. More volume can
+then amplify error, reduce diversity, leak evaluation patterns, or cause model
+collapse while internal scores improve. Controls include real-data anchors,
+held-out generators, executable verification where available, independent
+judges, evaluation-set deduplication, mixture ablations, source-only and
+synthetic-only baselines, and fresh natural outcomes.
+
+Every accepted item carries generator lineage, prompt or environment identity,
+source dependencies, transformations, verifier result, uncertainty, rights and
+privacy disposition, deduplication state, curriculum role, expiry, and
+descendants. Deleting a seed source propagates through generated examples,
+checkpoints, caches, releases, and backups according to the relevant claim;
+“synthetic” never means provenance-free.
+
+```mermaid
+flowchart LR
+    C["Generation charter"] --> G["Generator / self-play"]
+    G --> F["Filter and deduplicate"]
+    F --> V["Independent or executable verification"]
+    V --> D["Versioned curated dataset"]
+    D --> T["Bounded training mixture"]
+    T --> E["Fresh natural evaluation"]
+    E --> R{"Useful without collapse or leakage?"}
+    R -->|yes, scoped| A["Admit dataset version"]
+    R -->|no or unknown| Q["Quarantine / revise / retire"]
+```
+
 ## Interfaces
 
 The custody lease has twelve explicit neighbors. Policy Optimization consumes

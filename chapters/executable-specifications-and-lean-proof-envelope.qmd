@@ -217,6 +217,73 @@ identity, and it blocks runtime language while implementation binding is
 absent. This still does not prove that the abstraction map is correct; it makes
 that judgment and its losses inspectable.
 
+### Refinement types, dependent types, and proof-carrying data
+
+Ordinary schemas establish shape. **Refinement types** add predicates to a base
+type—for example, a nonnegative latency below a declared deadline, or a grant
+whose scope is a subset of an authority ceiling. **Dependent types** allow one
+field or artifact type to depend on another value, such as a vector indexed by
+its declared dimension, a route receipt indexed by the exact contract version,
+or a rollback witness tied to the state surface it claims to restore. These
+tools move selected preconditions from prose into construction and checking.
+
+The gain is real but bounded. A refinement checker proves the encoded
+predicate for the encoded value under the checker and logic assumptions. It
+does not prove that a field measures the intended property, that the bound is
+safe, or that serialization and runtime preserve the semantics. Dependent
+encodings can hide assumptions in indices, conversion functions, proof
+erasure, foreign calls, or trusted axioms.
+
+**Proof-carrying data** treats evidence, not only code, as a typed artifact. A
+dataset row, observation, model output, authorization, transformation, or
+certificate can travel with a machine-checkable witness for provenance,
+schema, permitted derivation, range, freshness, or another finite property.
+Consumers verify that witness against a named policy and exact identity before
+using the payload. Familiar JSON shape alone is never the proof.
+
+The envelope also states finite-encoding limits. Continuous dynamics, real
+numbers, distributions, neural computations, clocks, and open environments
+enter a proof assistant through finite representations and abstraction maps.
+Quantization, rounding, overflow, nondeterminism, concurrency, compiler
+lowering, kernels, and sensor interpretation can break a property that held in
+the mathematical model. Every transported proof therefore binds numeric
+format, tolerance, runtime, transformation chain, trusted base, and exact
+property preserved at each step.
+
+```mermaid
+flowchart LR
+    D["Runtime or data artifact"] --> T["Base type / schema"]
+    T --> R["Refinement predicate"]
+    R --> P["Dependent identity and witness"]
+    P --> C["Consumer verification"]
+    C --> B{"Abstraction and runtime bound?"}
+    B -->|yes, finite scope| U["Use under named contract"]
+    B -->|missing| H["Hold as unbound formal evidence"]
+```
+
+### Compression as a verified program transformation
+
+Quantization and compression transform one executable program into another.
+The refinement question is not whether their parameter arrays are close. It is
+whether the transformed package—including decoder, scales, codebooks, indices,
+residuals, kernels, routing, and fallback—preserves each named protected
+property under the contract.
+
+Some obligations can be formal: integer range, saturation, rounding semantics,
+serialization, decoder determinism, shape, bounded numeric error, route
+priority, identity checks, or exact fallback. Others require competent
+empirical evidence: calibration, rare-behavior preservation, natural utility,
+distribution shift, and evaluator adequacy. The transformation record assigns
+each obligation to its actual evidence lane rather than claiming that a finite
+numeric bound proves behavior.
+
+A translation-validation pattern is appropriate when verifying every compiler
+pass is impractical. For each produced artifact, independently check the exact
+reference/transformed pair against a bounded equivalence or refinement
+condition. `pass`, `fail`, and `unknown` are all valid results. An unknown
+protected property routes to more precision, the reference implementation,
+abstention, or escalation; it never becomes equivalence by default.
+
 ## Interfaces
 
 The Proof Target Record is the interface between prose, outline, Lean, schemas, validators, and Appendix E. It lets the book say exactly which finite predicate has an artifact behind it while keeping broader system behavior outside the proof claim.

@@ -237,6 +237,29 @@ policy-update lease and independent shield. Promotion is blocked when the
 residual dominates the base behavior, the verifier cannot distinguish a
 material defect, or the fallback and rollback paths have not been exercised.
 
+### Precision certificates, expiry, and readmission
+
+A precision-transformed artifact enters readiness through a scoped
+`PrecisionCertificate`. The certificate names the source and transformed
+artifacts, decoder, kernels, runtime, platform, contract, protected slices,
+evaluation, physical-cost ledger, residual planes, router, fallback, evidence
+window, and non-claims. Its existence is evidence that a qualification packet
+was assembled; it is not evidence that the packet was correct or that
+deployment is authorized.
+
+Readiness rejects certificate laundering across a changed model, decoder,
+kernel, hardware target, runtime, domain, evaluator, threshold, routing policy,
+or consumer. Drift can narrow the artifact to a residual-only or shadow route,
+quarantine it, or expire it completely. Revocation propagates to cached
+decisions, copies, descendants, and deployments that cite the certificate.
+
+Readmission requires the failed or changed predicates to be re-evaluated and
+the reference fallback to remain reachable. A residual plane that repairs one
+slice cannot erase a different failure, and an average-quality recovery cannot
+retire a protected-tail residual. Certificate history stays append-only so the
+system can explain which deployment relied on which precision policy at the
+time.
+
 ## Interfaces
 
 Readiness decisions pass through the Readiness Gate Record.

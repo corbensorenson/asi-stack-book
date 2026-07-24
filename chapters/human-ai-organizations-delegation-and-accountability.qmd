@@ -214,6 +214,63 @@ must transfer role identity, credentials, pending appeals, evidence, benefits,
 liabilities, learned procedures, affected-party notices, and residuals when a
 person leaves, a model changes, a vendor fails, or the institution closes.
 
+### Organizational transition: tasks, jobs, power, and public capacity
+
+The unit of change is not simply “a job exposed to AI.” A job bundles tasks,
+relationships, tacit knowledge, legal duties, bargaining arrangements,
+learning pathways, and responsibility. Automation can remove one task while
+increasing review, exception handling, customer interaction, or liability. It
+can also remove entry-level work that trained future experts. The transition
+ledger maps task creation, substitution, complementarity, supervision,
+rework, and coordination burden before making a job-level claim.
+
+Adoption is a diffusion process, not an instantaneous technical capability.
+Integration cost, data and workflow constraints, trust, regulation, capital,
+vendor dependence, and managerial incentives determine uptake. A field
+productivity result can establish a bounded task effect; it does not by itself
+forecast occupation-wide employment, wages, firm concentration, public-service
+capacity, or economic growth.
+
+Distribution is a first-class outcome. The record follows wages, hours,
+workload, surveillance, accessibility, error liability, bargaining power,
+ownership, consumer benefit, vendor rents, geographic concentration, and
+affected parties who never touch the system. More output can coexist with
+deskilling, work intensification, exclusion, or a moral crumple zone where the
+least empowered human absorbs blame for a decision they could not change.
+
+Skill is dynamic. AI may scaffold learning and widen access; it may also
+replace deliberate practice, hide causal structure, or turn professionals into
+exception handlers who cannot recover when automation fails. Qualification
+tracks unaided and assisted performance, error detection, novel-case transfer,
+recovery after tool loss, mentoring capacity, and who receives training or
+advancement.
+
+Concentration and public capacity need separate denominators. Shared models,
+clouds, data suppliers, and evaluators create common-mode risk and bargaining
+asymmetry across nominally independent organizations. Public institutions may
+gain service capacity or become dependent on vendors whose objectives and
+continuity they do not control. Procurement, interoperability, exit, local
+capability, audit rights, continuity, and public-interest obligations belong
+in the organizational contract.
+
+A serious comparison includes workflow redesign, conventional software,
+staffing, training, reduced workload, decision support, partial automation,
+collective governance, and full delegation under matched obligations. It
+reports output, quality, distribution, skill, autonomy, resilience,
+accountability, infrastructure cost, and option value separately. Economy-wide
+inference remains another modeling and evidence problem.
+
+```mermaid
+flowchart LR
+    J["Job and institutional mandate"] --> T["Task decomposition"]
+    T --> A["Automation / augmentation alternatives"]
+    A --> W["Workflow and decision-right redesign"]
+    W --> O["Output, burden, skill, distribution"]
+    O --> P["Bargaining, remedy, public capacity"]
+    P --> R{"Renew, narrow, retrain, or exit"}
+    R --> W
+```
+
 ### Required artifacts
 
 ```text

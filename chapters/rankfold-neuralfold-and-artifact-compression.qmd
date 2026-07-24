@@ -180,6 +180,107 @@ fallback execution, and independent review exist.
 | 17. Quarantine and recover | Drift, disagreement, loss, provenance damage, unavailable fallback | Block use, preserve evidence, restore source path, and retest. |
 | 18. Adjudicate | Claim-specific promote, narrow, refute, deprecate, or no-change transition | Green validators alone have no support effect. |
 
+### Functional precision: preserve behavior, not coordinates
+
+The Precision Contract sharpens what the admission lifecycle is optimizing.
+“How many bits does this weight need?” has no representation-independent
+answer. Function-preserving rescaling, permutation, basis changes, codebooks,
+factorizations, limb decompositions, external decoders, and serialization
+choices can change apparent magnitudes and bit widths without changing the
+realized computation. Parameter distance can be useful inside a fixed
+representation, but it is not the protected object.
+
+The stable question is contract-relative:
+
+> Among complete executable implementations, which has the lowest declared
+> description or physical cost while preserving the protected behavior within
+> the deployment contract?
+
+The contract identifies the domain, excluded cases, protected behaviors,
+metric vector, tail and aggregation rules, confidence, resource limits,
+fallback, escalation, abstention, and exact reference identities. The
+acceptable set is therefore a behavioral-equivalence class *relative to that
+contract*. Two artifacts may be far apart in parameter space and equivalent
+for one bounded consumer; two nearby parameter vectors may differ on a rare,
+calibrated, abstention-sensitive, or high-consequence slice.
+
+Complete description length counts more than payload values:
+
+$$
+L_{\text{complete}} =
+L_{\text{values}} + L_{\text{structure}} + L_{\text{indices}}
++ L_{\text{scales/codebooks}} + L_{\text{residuals}}
++ L_{\text{decoder/runtime}} + L_{\text{routing}}
++ L_{\text{verification/assurance}}.
+$$
+
+The same honesty applies to physical cost: stored bytes, moved bytes, decode
+operations, latency, memory pressure, energy, verification, fallback, repair,
+and certificate generation remain separate terms. A representation is not
+compact merely because the headline checkpoint is small.
+
+Precision is therefore a **field**, not one model-wide integer. Different
+layers, channels, directions, tokens, tasks, uncertainty states, and
+consequence classes may justify different numerical treatment. A cheap base
+encoding can be paired with ordered residual precision planes. The route uses
+the base only where the protected contract remains satisfied; it adds
+residuals, falls back to the reference, abstains, or escalates elsewhere.
+Residual order and routing are themselves qualified artifacts whose cost and
+attack surface count.
+
+### Functional Precision Compiler
+
+The primary compressed-artifact owner uses a ten-stage compiler:
+
+1. **Reference:** freeze model, runtime, task contract, evaluator, evidence
+   policy, and resource envelope.
+2. **Canonicalize:** normalize known coordinate and serialization freedoms
+   before interpreting magnitude or sensitivity.
+3. **Measure:** estimate functional and contract-level distortion; treat
+   curvature and salience as proxies, not guarantees.
+4. **Transform:** propose quantization, pruning, factorization, codebook,
+   mixed-precision, and residual candidates.
+5. **Allocate:** assign precision by marginal protected-behavior benefit per
+   marginal physical cost.
+6. **Encode:** account for the complete executable package.
+7. **Layer residuals:** order optional refinement planes while preserving a
+   safe terminal route.
+8. **Route:** choose base, refined, reference, abstention, or escalation from
+   observable signals.
+9. **Verify:** test protected slices, shifts, calibration, cost, and recovery.
+10. **Certify:** bind scope, identities, evidence, limits, expiry, revocation,
+    fallback, and non-claims.
+
+```mermaid
+flowchart LR
+    R["Reference + protected contract"] --> C["Canonicalize"]
+    C --> M["Measure functional distortion"]
+    M --> T["Transform and allocate"]
+    T --> B["Base + residual bundle"]
+    B --> Q{"Contract-preserving route?"}
+    Q -->|base| E["Execute base"]
+    Q -->|refine| P["Add precision plane"]
+    Q -->|uncertain| F["Reference / abstain / escalate"]
+    E --> V["Verify and certify"]
+    P --> V
+    F --> V
+```
+
+A `PrecisionCertificate` is a scoped admission receipt, not a declaration of
+optimality. It binds the reference and transformed artifact, decoder, kernels,
+runtime, platform, contract, evaluator, evidence, costs, residuals, fallback,
+validity window, and revocation state. A changed kernel, platform, domain,
+decoder, model descendant, or evaluator can expire the certificate even when
+the payload bytes are unchanged.
+
+The falsification program compares naïve magnitude rules under
+function-preserving reparameterization; parameter distance against behavioral
+distance; payload-only against complete accounting; static, layer-wise, mixed,
+progressive, and dynamically routed precision; and average parity against
+protected-slice failures. A strong static policy wins if it preserves the same
+contract at lower total cost. Dynamic precision loses if routing overhead,
+instability, attack surface, or fallback burden exceeds the saved work.
+
 ## Mechanism
 
 Artifact compression is where representation cost meets task routing. RankFold/NeuralFold supplies the archive framing: per-artifact transforms, residual coding aligned to actual bit cost, manifests, deterministic decode, WORM assumptions, and tests. BBVCA v9 supplies reconstruction-contract and repair-stream discipline. CGS supplies residual honesty, while BugBrain keeps the edge/local resource pressure visible. The routing question is not whether a compressed artifact is impressive; it is whether this task can use it without losing the constraints that matter.

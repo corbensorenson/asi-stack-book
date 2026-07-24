@@ -297,6 +297,31 @@ regression repair, fallback storage, migration, and densification amnesia.
 Compactness is accepted only when total capability and residual cost improves,
 not when the visible checkpoint becomes smaller.
 
+### Progressive numerical precision as residual honesty
+
+Numerical precision is one concrete instance of the compact-generator
+contract. A base representation carries the common computation; ordered
+residual bit planes or higher-precision fragments repair cases whose protected
+behavior would otherwise leave the contract. Each plane names the tensors or
+operations it refines, its decoder and kernel requirements, expected
+contract-level benefit, added bytes and movement, verification burden, and the
+route that requests it.
+
+This is not permission to relabel reconstruction quality as capability.
+Weight error, activation error, output divergence, protected behavior,
+downstream utility, physical cost, and authority are separate ledgers. A low
+mean-squared parameter error can coexist with a rare catastrophic behavioral
+change; an exact reconstruction can still be too expensive to decode; and a
+small base can create more total burden than a strong static representation
+once residuals and fallback are counted.
+
+Residual order is consumer- and workload-relative. The first extra plane for a
+code task may not be the first for calibrated classification or tool routing.
+A compact package either qualifies one fixed ordering for a declared envelope
+or treats ordering as another governed route. Unknown cases go to more
+precision, the reference implementation, abstention, or escalation—not silent
+approximation.
+
 ## Interfaces
 
 Compact generators are exposed through the Compact Generative Record.

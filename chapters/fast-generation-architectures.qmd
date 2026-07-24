@@ -580,6 +580,40 @@ source-recommended configuration must pass self-tests and rescue. The current
 sources define this design space. No cache implementation or speed result has
 been reproduced here.
 
+### Precision routing is an execution policy
+
+Static quantization, layer-wise mixed precision, progressive refinement, and
+dynamic precision are distinct generation routes. A request-level policy may
+start with a qualified base representation and request residual precision when
+observable uncertainty, disagreement, consequence, or verification failure
+crosses a threshold. The terminal alternatives remain the full reference
+route, abstention, or escalation.
+
+The router cannot inspect the answer key or use a confidence signal that was
+never calibrated for the transformed model. Its inputs, thresholds, maximum
+refinement, oscillation control, latency deadline, fallback capacity, and
+adversarial tests are frozen with the route. If the low-precision path changes
+the uncertainty signal used to decide whether more precision is needed, that
+feedback loop receives explicit positive controls.
+
+The matched comparison reports accepted output quality and protected slices
+beside time to first token, decode rate, tail latency, throughput, bytes moved,
+energy, residual-plane frequency, fallback frequency, router overhead, and
+verification cost. A dynamic policy is faster only if the complete workload
+distribution benefits after those costs. A strong tuned static mixed-precision
+policy is the minimum serious baseline.
+
+```mermaid
+flowchart LR
+    A["Admitted request"] --> B["Base precision route"]
+    B --> S["Uncertainty / consequence / verifier signals"]
+    S --> D{"Contract likely satisfied?"}
+    D -->|yes| O["Accept bounded output"]
+    D -->|refine| P["Load residual precision"]
+    P --> S
+    D -->|unknown or deadline| F["Reference / abstain / escalate"]
+```
+
 ## Interfaces
 
 Generation choices are surfaced through a generation-mode record. Fast

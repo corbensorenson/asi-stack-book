@@ -370,6 +370,30 @@ replacement, or adaptive data-collection policy breaks the assumptions, the
 receipt expires and the system re-observes, broadens the set, falls back, or
 holds. “Uncertain” must change what the stack does.
 
+Four uncertainty families receive separate fields and remedies:
+
+1. **Aleatoric uncertainty** is outcome or observation variation that remains
+   after the chosen state and model are fixed. More data may estimate it better
+   without removing it; action may instead reduce exposure or consequence.
+2. **Epistemic uncertainty** reflects limited evidence about parameters,
+   functions, or hypotheses. Diverse observations, comparison, or active
+   experimentation may reduce it.
+3. **Structural or causal uncertainty** concerns which variables,
+   relationships, mechanisms, interventions, or latent confounders belong in
+   the model. A narrow ensemble over one structure cannot represent it.
+   Competing graphs remain plural until interventions separate them.
+4. **Distributional uncertainty** asks whether the case belongs to the
+   population and support for which the other estimates were qualified. An
+   unsupported case routes conservatively instead of receiving
+   in-distribution confidence.
+
+These axes interact but do not substitute for one another. Wide aleatoric
+noise does not excuse an unmodeled confounder; low ensemble disagreement does
+not establish support; marginal coverage does not resolve causal ambiguity.
+The decision record states which uncertainty drives the action, which evidence
+could reduce it, and which safe response survives if it cannot be reduced
+before the deadline.
+
 ### Relations are branch-local state, not attention scores
 
 The Relational Dimension Compiler sharpens the world-model state boundary.

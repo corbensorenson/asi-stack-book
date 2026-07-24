@@ -330,6 +330,56 @@ task, model, interface, evidence view, consequence, authority, reviewer role,
 time window, or intervention path invalidate the old admission and require a
 new snapshot or contract version.
 
+### Explanation generation as a governed translation
+
+An explanation is an artifact generated for a consumer and decision, not a
+transparent copy of internal reasoning. Its source packet may include
+white-box evidence, provenance, alternatives, uncertainty, policy constraints,
+causal tests, and observed effects. The explanation layer selects and
+translates that material into a form the named reviewer can use before the
+last reversible point.
+
+Three obligations stay separate:
+
+- **faithfulness:** statements trace to actual evidence and do not invent a
+  mechanism, cause, confidence, or policy basis;
+- **decision relevance:** alternatives, uncertainty, consequences, omissions,
+  and intervention choices material to the decision are exposed; and
+- **comprehensibility:** the reviewer can locate and correctly use those facts
+  under real time, workload, accessibility, and expertise constraints.
+
+A fluent rationale can be comprehensible but unfaithful. A raw activation map
+can be faithful to a method yet irrelevant or unusable. A short recommendation
+can improve immediate accuracy while inducing automation bias or hiding
+disagreement. Qualification compares concise and detailed formats,
+no-explanation and conventional-documentation baselines, counterfactual and
+contrastive forms, uncertainty displays, evidence links, and explicit unknowns.
+
+The explanation record binds model and evidence identities, audience and task,
+generation method, source-to-statement links, omitted material, uncertainty,
+reading time, accessibility transformation, comprehension probe, decision and
+intervention outcome, expiry, privacy, and residuals. Unsupported claims,
+stale evidence, changed model state, or a failed comprehension probe narrow the
+route instead of inviting more persuasive wording.
+
+Internal evidence remains owned by White-Box Evidence and other producers.
+Human Factors owns consumer-facing translation and its measured effect on
+control. This prevents an explanation generator from grading its own
+faithfulness or turning an attractive narrative into deployment authority.
+
+```mermaid
+flowchart LR
+    E["Bounded internal and external evidence"] --> X["Explanation generator"]
+    X --> F["Faithfulness trace"]
+    X --> D["Decision-relevance check"]
+    X --> C["Comprehension and accessibility check"]
+    F --> R{"All required obligations pass?"}
+    D --> R
+    C --> R
+    R -->|yes| H["Human review packet"]
+    R -->|no| Q["Clarify / degrade / safe hold"]
+```
+
 ## Interfaces
 
 Meaningful control is a joined property, so its interface cannot be reduced to

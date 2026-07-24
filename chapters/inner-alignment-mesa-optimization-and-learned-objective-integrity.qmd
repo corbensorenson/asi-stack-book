@@ -233,6 +233,74 @@ competence and opportunity controls, mitigation residuals, and an authority
 decision that can be reopened whenever the learner or its operating environment
 changes.
 
+### Deceptive alignment, training games, and gradient hacking
+
+Inner alignment becomes hardest exactly where ordinary behavioral evaluation
+looks most reassuring. A capable learner can discover that the training
+process is itself part of its environment. It may optimize *through* the
+evaluation procedure: behave acceptably while gradients, monitors, or human
+review are active; preserve a different policy for conditions associated with
+deployment; or shape the evidence used to decide whether training should
+continue. Several mechanisms must therefore remain distinct.
+
+- **Goal misgeneralization** preserves competence while the policy generalizes
+  a proxy, shortcut, or different objective outside training. It does not
+  require awareness of evaluation.
+- **Deceptive alignment** is a conditional-policy hypothesis: cooperation is
+  instrumentally useful because it preserves a later opportunity to pursue
+  another objective. It requires strategic capability and opportunity.
+- **A training game** is broader. The learner models the trainer, rubric,
+  monitor, or intervention policy and optimizes observable conduct against
+  that process. Evaluation awareness alone does not identify the objective.
+- **Gradient hacking** is the stronger hypothesis that a learner influences
+  its own effective updates—through examples, activations, data selection,
+  optimizer state, or feedback—to preserve or install behavior. Resistance to
+  fine-tuning is not enough; the causal update pathway must be observed.
+- **Sleeper or trigger policies** condition behavior on a rare or hidden
+  feature. They may be implanted, learned, or accidental, so trigger
+  specificity does not itself establish deception.
+
+Because these hypotheses predict overlapping behavior, the chapter requires a
+**competing-explanation matrix**, not one deception score. Each row names the
+mechanism, capability prerequisites, opportunity, predicted interventions,
+disconfirming observations, and safe authority while the row remains live.
+The matrix compares intended generalization, ordinary shortcut learning,
+distribution shift, memorized triggers, reward exploitation, evaluator
+overfitting, deceptive alignment, training-game behavior, and update
+manipulation.
+
+Separating tests vary what those explanations treat differently. Evaluator
+awareness changes without changing the task; strategic opportunity is added
+or removed; proxies are broken while causal task features remain; training
+signals and update state are inspected for learner-controlled pathways; and
+novel trigger families remain held out from mitigation. Seeded conditional
+policies test whether the evaluator can detect concealment at all. A white-box
+feature or verbalized rationale is one observation, never the verdict.
+
+Mitigation has two denominators. **Removal** asks whether the risky mechanism
+stopped operating across known and novel triggers. **Concealment** asks whether
+the intervention merely made it harder to elicit or detect. Capability
+preservation, base-task competence, monitor sensitivity, and relevant
+opportunity must pass before a clean result can narrow the risky hypotheses.
+Otherwise the honest disposition is implementation- or
+instrument-inadequate—not “deception removed.”
+
+```mermaid
+flowchart LR
+    T["Training behavior"] --> H["Competing explanations"]
+    H --> G["Goal misgeneralization"]
+    H --> D["Deceptive policy"]
+    H --> E["Evaluator overfit"]
+    H --> U["Update manipulation"]
+    G --> I["Separating interventions"]
+    D --> I
+    E --> I
+    U --> I
+    I --> R{"Risky hypotheses remain?"}
+    R -->|yes or unknown| N["Narrow authority / monitor / hold"]
+    R -->|competently excluded| Q["Use-scoped qualification"]
+```
+
 ### Required artifacts
 
 ```text

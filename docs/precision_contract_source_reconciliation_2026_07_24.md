@@ -41,28 +41,30 @@ count. Reconsideration is allowed only after the coordinated integrations are
 complete and only if the compiler/certificate lifecycle remains incoherent
 under the present owners.
 
-## Draft packet
+## Manuscript packet completed 2026-07-24
 
-The eventual prose transaction must:
+The coordinated prose transaction now:
 
-1. add one primary section-scale treatment to RankFold/NeuralFold;
-2. add bounded handoff sections or subsections to the seven supporting owners;
-3. use one shared `PrecisionContract` vocabulary and avoid eight independent
+1. adds one primary section-scale treatment to RankFold/NeuralFold;
+2. adds bounded handoff sections or subsections to the seven supporting owners;
+3. uses one shared `PrecisionContract` vocabulary and avoids eight independent
    restatements of the paper;
-4. preserve protected-behavior, complete-accounting, and certificate-scope
+4. preserves protected-behavior, complete-accounting, and certificate-scope
    nonclaims at every handoff;
-5. add chapter-local failure modes and one joined experiment table;
-6. reconcile overview, glossary, Appendix C, Appendix G, and final synthesis;
-7. change no support state, release identity, or chapter count.
+5. adds chapter-local failure treatment and one joined experiment program;
+6. reconciles the live overview, glossary, Appendix C/G source surfaces, and
+   Integrated Reference Architecture synthesis; and
+7. changes no support state, release identity, or chapter count.
 
-Acceptance is semantic rather than word-count based. The packet is terminal
-only when a reader can follow:
+The prose acceptance is semantic rather than word-count based. A reader can
+now follow:
 
 `reference -> contract -> canonicalization -> allocation -> encoding ->
 residual/routing -> verification -> certificate -> expiry/revocation`
 
 without encountering duplicate ownership or an implied behavior-preservation
-result.
+result. Schema, validator, formal, and empirical work remain separate evidence
+residuals and are not implied by the completed manuscript transaction.
 
 ## External-source resolution
 
@@ -85,12 +87,15 @@ transition says otherwise.
 
 ## Roadmap placement
 
-Source intake, storage, note, triage, and owner adjudication are terminal in
-this transaction. Prose integration is queued in the existing-book slot after
-`P6.5-R16-A-six-chapter-atom-pack`,
-`P7.1a-W3-admission-template-inheritance-guard`, and
-`P7.2-T1D-proof-readiness-depth-pack`. It cannot displace P2, activate a third
-WIP lane, reopen structural admission, or begin candidate N/O research.
+Source intake, storage, note, triage, owner adjudication, and the bounded
+eight-owner manuscript integration are terminal. Corben's explicit request to
+put all roadmap concepts into the live manuscript authorized the prose-only
+transaction without opening evidence work or another chapter. The transaction
+does not displace P2, activate a third empirical WIP lane, reopen structural
+admission, or begin candidate N/O research. The remaining schema, validator,
+formal, external-literature, and empirical work retains its ordinary roadmap
+ordering and gates. In the roadmap's exact boundary language, this packet
+**cannot displace P2**.
 
 The later empirical program remains separately gated. It requires competent
 strong baselines, complete physical-cost accounting, positive controls,

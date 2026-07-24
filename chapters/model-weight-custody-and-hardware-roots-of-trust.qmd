@@ -431,6 +431,29 @@ artifact is effectively extractable after delivery, the route must say so
 before the decision rather than representing revocation as a capability the
 system does not have.
 
+### Precision derivatives extend the custody graph
+
+A quantized model is not one smaller copy. It may include packed shards,
+scales, zero points, codebooks, sparse indices, low-rank factors, residual bit
+planes, decoder code, kernels, calibration sets, routing policy, caches, and a
+retained reference fallback. Each component can reconstruct, approximate,
+modify, or enable capability differently, so each receives a derivative edge,
+holder, location, access purpose, inherited restriction, expiry, and
+sanitization route.
+
+The precision certificate binds exact platform and execution identities
+because a changed kernel, rounding mode, decoder, driver, or accelerator can
+change behavior without changing the nominal weight package. Attestation can
+support the narrow claim that named code and data executed in a measured
+environment. It cannot prove behavioral equivalence, prevent output-mediated
+exfiltration, or make remotely distributed derivatives recallable.
+
+Deletion and revocation therefore close over the whole package: hot and cold
+shards, page cache, host buffers, device memory, temporary unpacked forms,
+compiled kernels, residual stores, backups, peer replicas, and descendant
+certificates. Where physical recall is impossible, policy revocation and key
+destruction are reported separately from copy erasure and capability removal.
+
 ## Interfaces
 
 The ownership split prevents a custody receipt from becoming an all-purpose

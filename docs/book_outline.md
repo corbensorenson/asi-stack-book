@@ -2,8 +2,8 @@
 
 Working title: **The ASI Stack: A Governed Systems Architecture for Advanced AI, with ASI as the Stress Case**
 
-Status: expanded source-of-truth drafting outline, updated 2026-07-22 after the
-Relational Dimension Compiler intake and existing-owner integration review.
+Status: expanded source-of-truth drafting outline, updated 2026-07-24 after the
+Round 18 depth pass and Precision Contract existing-owner manuscript integration.
 `book_structure.json` remains the ordering source of truth; Quarto generates
 displayed chapter numbers from the manifest.
 
@@ -34,17 +34,19 @@ current authority owns only unfinished or recurring work. It resolves all 115
 accepted transition IDs through 25 exact atom, 61 bounded subclaim, and 29
 proxy relations with zero indirect parent movement.
 
-Round 17 makes that authority operational rather than aspirational. The
-2026-07-22 host check meets P2's frozen 50 GiB capacity entry floor, so the
-empirical slot is now the thirty-candidate content-sealed sequential
-materialization packet; materialization itself remains unpassed. The parallel
-book slot is strictly ordered: first the reviewed append-only atom pack for all
-six post-baseline chapters, then the W3 template-inheritance guard, then the
-White-Box construct-validity and feature-analysis deepening, then one combined
-current 66-chapter reader-freshness derivative. The optimizer-landscape
-manuscript-depth amendment is terminal at argument support. Unrelated paper
-mining, chapter admission, and general prose deepening cannot displace these
-packets.
+Round 17 makes that authority operational rather than aspirational. P2 remains
+the empirical slot and its materialization entry is governed by the latest
+exact capacity and Docker receipt rather than inherited storage weather. The
+book slot remains strictly ordered: reviewed append-only atoms for all six
+post-baseline chapters, the W3 inheritance guard, the T1D maturity/source/atom/
+reader/inheritance artifacts, and one combined current 66-chapter reader
+derivative. The owner-directed prose-completion transaction has already placed
+all accepted T1D concepts and the eight-owner Precision Contract treatment in
+the manuscript without opening protected outcomes, a third empirical lane, a
+new chapter, or support movement. Optimizer, heterogeneous-memory,
+inference-cache, T1D, and Precision Contract manuscript depth is therefore
+present at argument support; their remaining formal, executable, empirical,
+source-resolution, and reader artifacts retain the active roadmap gates.
 
 The decisive current program is `ASI-THESEUS-FLAGSHIP-01`: close Theseus's
 finite training architecture, train the frozen local seed and matched control,

@@ -293,6 +293,31 @@ The ledger also gives efficiency a set of outcome states:
 
 These are not benchmark results. They are accounting states. They let a future implementation report that a route was useful without pretending it was efficient, or report that a route was efficient without hiding the work that made it safe enough to use.
 
+### Functional precision as one routed resource
+
+The stack can route numerical precision just as it routes model capacity,
+context, search, deliberation, tools, and verification. A low-cost
+representation may be adequate for one protected contract and inadequate for
+another. The route may add residual precision, switch kernels, invoke the
+reference artifact, abstain, or escalate. This is architectural
+self-improvement only when the new route is qualified, observable, reversible,
+and cheaper on the joint quality-and-cost frontier.
+
+Bits per weight are therefore not the efficiency objective. The denominator
+includes complete executable description, moved bytes, decode work, latency,
+energy, memory pressure, verification, routing, fallback, repair, assurance
+generation, and certificate renewal. The numerator is preserved useful
+behavior under a declared contract, including rare and high-consequence
+slices. A representation-independent universal optimum is neither assumed nor
+needed.
+
+Precision joins other resources through substitution tests. If a stronger
+model at lower precision, a smaller model at higher precision, more retrieval,
+more verification, or a static mixed-precision baseline satisfies the contract
+more cheaply, the ledger should choose it. Dynamic precision earns a place
+only where its complete routed policy improves the measured frontier rather
+than merely shrinking the visible checkpoint.
+
 ## Interfaces
 
 Efficiency decisions travel through the Costed Route Record.

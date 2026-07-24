@@ -569,6 +569,31 @@ and complete receipts. Semantic response reuse is a separate experiment with
 deliberately confusable prompts, dynamic facts, poisoning, calibrated
 abstention, and a fresh-model fallback.
 
+### The full economics of precision
+
+Precision is a governed resource only when its entire cost path is measured.
+The ledger separates artifact storage, host-to-device and device-to-device
+movement, decompression or dequantization, arithmetic, kernel conversion,
+residual fetches, router execution, verification, fallback, repair,
+certificate generation, cache interaction, and operator work. It also records
+the opportunity cost of memory occupied by codebooks, scales, residuals, or a
+retained reference model.
+
+Allocation follows marginal protected-behavior value per marginal physical
+cost, not bits-per-weight in isolation. One more precision plane may be cheap
+in storage and expensive in random I/O; a higher-precision kernel may reduce
+verification and fallback enough to lower total cost; a smaller payload may
+increase energy through decoding. The relevant frontier joins quality, tail
+risk, latency, throughput, memory, bandwidth, energy, money, and governance
+burden.
+
+Assurance-generation cost is distinct from runtime assurance cost. Building
+the protected corpus, calibrating routes, producing certificates, and
+requalifying after drift may dominate an apparent inference saving. Those
+costs are amortized only over the exact workload and validity window that use
+them. A precision policy that is economical at high stable reuse can be
+uneconomical for a volatile or low-volume deployment.
+
 ## Interfaces
 
 Resource choices move through the Resource Budget Record and, when synthetic or simulated evidence is used, the Simulation Contract Record.

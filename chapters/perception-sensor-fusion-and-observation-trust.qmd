@@ -213,6 +213,66 @@ but they create a new evidence event rather than rewriting the old receipt.
 That distinction permits incident reconstruction and prevents hindsight from
 laundering a false observation into an apparently well-founded decision.
 
+### Bayesian state estimation and concrete fusion regimes
+
+The contract becomes implementation-determining when it names the estimation
+regime rather than saying only “fuse the sensors.” Let $x_t$ be latent state,
+$u_t$ an applied control, and $y_t^m$ the observation from modality $m$. A
+governed estimator declares a transition model
+$p(x_t\mid x_{t-1},u_{t-1})$, observation models
+$p(y_t^m\mid x_t)$, the prior, clock and pose transformations, missingness
+process, and the approximation used to update the belief. The posterior is
+useful only inside those assumptions and its calibration envelope.
+
+| Regime | Competent baseline | Principal boundary |
+|---|---|---|
+| approximately linear, Gaussian, synchronized | Kalman or information filter | covariance and model mismatch remain visible |
+| nonlinear but locally smooth | extended or unscented Kalman filter | linearization can produce false certainty |
+| multimodal, discontinuous, or contact-rich | particle or mixture filter | particle impoverishment and deadlines matter |
+| learned high-dimensional observations | calibrated encoder plus explicit filter | representation drift and training correlation remain |
+| asynchronous event streams | timestamped factor graph or smoothing window | late data cannot rewrite an executed decision |
+| adversarial or unknown corruption | robust estimator, channel exclusion, or plural hypotheses | robust loss does not identify coordinated compromise |
+
+Observability is tested before confidence is consumed. A state component can
+be unobservable under the current motion, view, topology, or sensor set even
+when an estimator emits a narrow covariance. The receipt records local
+observability or empirical identifiability, excitation, geometry, and
+unresolved symmetries. Active sensing earns its cost when it changes that
+condition, not merely when it gathers more correlated evidence.
+
+Fusion must model correlation. Multiplying likelihoods or averaging confidence
+double-counts evidence when modalities share a clock, pose estimate, training
+set, encoder, weather condition, mount, or attack path. A competent system
+carries cross-covariance where known, uses conservative fusion where dependence
+is uncertain, or retains separate hypotheses. Learned fusion is compared with
+strong late-fusion and channel-local baselines so average accuracy cannot hide
+correlation errors.
+
+Calibration is conditional and consequence-aware. Proper scoring, coverage,
+reliability, and residual tests are stratified by channel, environment, range,
+object or population slice where applicable, corruption, missingness, and
+decision consequence. Tail and abstention behavior appear beside average
+error. Aggregate calibration can coexist with dangerous miscalibration on the
+exact boundary that triggers physical action.
+
+Degradation is an explicit state machine. Channel loss may preserve a
+low-speed mode; synchronization loss may widen uncertainty; unknown
+common-mode failure may preserve plural hypotheses; loss of observability may
+require active sensing, human inspection, or safe hold. The consumer receives
+the estimate together with estimator mode, coverage, age, and invalidating
+assumptions.
+
+```mermaid
+flowchart LR
+    S["Channel-local measurements"] --> A["Time / pose / semantic alignment"]
+    A --> C["Dependence and corruption model"]
+    C --> B["Bayesian or set-valued estimator"]
+    B --> O{"Observable and calibrated?"}
+    O -->|yes| R["Bounded observation receipt"]
+    O -->|recoverable| Q["Active sensing / degraded mode"]
+    O -->|no| H["Plural hypotheses / abstain / safe hold"]
+```
+
 ### Required artifacts
 
 ```text

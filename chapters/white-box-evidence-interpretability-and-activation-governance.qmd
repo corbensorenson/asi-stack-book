@@ -283,6 +283,75 @@ White-box evidence may block, narrow, quarantine, or demand more review before
 it may widen authority. A release decision remains with readiness and assurance
 owners after independent behavioral qualification.
 
+### Probes, sparse dictionaries, circuits, and causal challenge
+
+White-box methods answer different questions and should not be blended into
+one “interpretability score.”
+
+**Diagnostic probes** ask whether information usable by a chosen probe family
+is present in an activation. Accuracy depends on layer, token selection,
+regularization, data, negative controls, and probe capacity. A powerful probe
+may learn a task from weak traces; a linear probe may miss information
+available nonlinearly. Selectivity controls, label permutations, matched random
+features, held-out concepts, and interventions are needed before performance
+becomes mechanism evidence.
+
+**Sparse autoencoders and dictionary learning** approximate activations with a
+learned feature dictionary and sparse codes. The record includes training
+distribution, hook point, normalization, dictionary width, sparsity penalty,
+reconstruction error, dead and dense feature rates, seed and checkpoint
+stability, feature splitting and merging, and coverage of the target behavior.
+A named or apparently monosemantic feature is an interpretation hypothesis.
+Readable exemplars do not prove that it causes the behavior, exhausts the
+concept, or survives model change.
+
+**Circuit and attribution methods** propose a computational subgraph, path, or
+set of components relevant to an output. Local linearity, patching
+distribution, baseline, decomposition, attention interpretation, and graph
+extraction are assumptions in the claim. Sufficiency and necessity are
+separate: preserving a circuit may recreate behavior without showing it is the
+only route, while ablation can break behavior through broad distributional
+damage rather than removal of the proposed mechanism.
+
+Construct validity joins these methods to the deployment question.
+“Deception,” “uncertainty,” “planning,” “harmful intent,” or “memorization” is
+not validated by a convenient label set alone. The case supplies competing
+constructs, convergent and discriminant tests, relevant opportunities,
+known-positive and known-negative controls, and label provenance. Failure to
+detect a construct with an insensitive instrument cannot become evidence of
+absence.
+
+Causal challenge changes the proposed mechanism while preserving as much else
+as possible. Activation patching, ablation, steering, feature clamping,
+counterfactual input edits, path intervention, targeted fine-tuning, and
+mechanistically chosen adversarial examples have different semantics. The
+record asks whether predicted behavior changed, unrelated capabilities moved,
+redundant paths compensated, the intervention was on-distribution, and an
+independently implemented evaluator agreed.
+
+The strongest result is a scoped chain: seeded mechanisms are recovered;
+plausible alternatives are distinguished; held-out behavior or failure is
+predicted; findings survive method and seed variation; causal interventions
+move behavior as predicted without disqualifying collateral damage; and the
+evidence improves a governed decision while preserving uncovered cases. Even
+that chain is evidence about one model, method, behavior, and domain—not
+transparent access to the model's “true thoughts.”
+
+```mermaid
+flowchart TD
+    M["Registered model and behavior"] --> P["Probe evidence"]
+    M --> D["Sparse dictionary evidence"]
+    M --> C["Circuit / attribution hypothesis"]
+    P --> V["Construct-validity challenge"]
+    D --> V
+    C --> V
+    V --> I["Causal interventions"]
+    I --> O["Predicted and collateral outcomes"]
+    O --> G{"Decision-relevant and stable?"}
+    G -->|yes, scoped| A["Governed activation policy"]
+    G -->|no or unknown| R["Residual / abstain / new test"]
+```
+
 ## Interfaces
 
 No single interface is allowed to collapse internal observation into a release
