@@ -4,7 +4,7 @@ chapter_id: "model-weight-custody-and-hardware-roots-of-trust"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.3 semantically reviewed proof-contract draft"
-last_updated: "2026-07-16"
+last_updated: "2026-07-23"
 primary_sources:
   - "ext_rand_model_weight_security_2024"
   - "ext_nist_confidential_computing_2026"
@@ -15,10 +15,14 @@ primary_sources:
   - "ext_ietf_rats_architecture_2023"
   - "ext_nist_key_management_2020"
   - "ext_nist_media_sanitization_2025"
+  - "ext_airllm_2023"
+  - "ext_hf_accelerate_big_model_inference_2026"
+  - "ext_llama_cpp_memory_mapping_2026"
+  - "ext_llm_in_flash_2024"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "All nine assigned source notes have reviewed manifest mappings, but no external comparator has been locally reproduced and CCA is private author-lineage context rather than independent corroboration."
+  - "The original nine assigned source notes have reviewed manifest mappings; four heterogeneous-memory records now add metadata-first custody context. No external comparator has been locally reproduced and CCA is private author-lineage context rather than independent corroboration."
   - "Current evidence is exactly eight deterministic Boolean custody records, nine Lean theorem declarations under eight manifest targets, and nine rejecting mutations with support_state_effect=none; no real model-family asset, derivative closure, key, KMS/HSM, TEE, root, Evidence, Attestation Result, verifier, relying-party policy, plaintext load, extraction, revocation, recovery, sanitization, recipient release, privacy, availability, or security metric has been exercised."
   - "No local result establishes custody completeness, hardware or vendor trustworthiness, weight confidentiality, extraction resistance, key-management correctness, sanitization, recall, release desirability, model safety, readiness, authority, or ASI."
   - "Promotion or refutation requires the preregistered effect-bearing multi-comparator campaign with independent discovery, appraisal, relying-party policy, load/effect observation, extraction, incident/recovery, and sanitization implementations plus causal ablations, replication, and transfer."
@@ -31,12 +35,12 @@ open_evidence_gaps:
 | Chapter ID | `model-weight-custody-and-hardware-roots-of-trust` |
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
-| Last updated | 2026-07-14 |
+| Last updated | 2026-07-23 |
 | Manuscript maturity | v0.3 semantically reviewed proof-contract draft |
-| Primary source records | nine reviewed mappings: RAND weight security; NIST confidential computing, key management, and media sanitization; IETF RATS; NVIDIA lifecycle; formal release analysis; in-toto; CCA implementation context |
+| Primary source records | 13 assignments: nine reviewed custody mappings plus four metadata-first heterogeneous-memory implementation or paper comparators |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source loading state | 9 assigned sources / 9 reviewed mappings; the three added primary standards close attestation-role, key-lifecycle, and sanitization gaps without implying conformance or efficacy. |
+| Source loading state | 13 assigned sources / 9 reviewed mappings; four paging records add shard, mapping, conversion, and storage-lifecycle drafting context without implying conformance or efficacy. |
 | Test state | Exact finite boundary: 8 deterministic routes, 9 Lean declarations under 8 targets, and 9 rejecting mutations. No hardware, encrypted artifact, key service, attestation procedure, plaintext load, extraction, revocation propagation, recovery, sanitization, or release effect was exercised. |
 
 ## Drafting guardrail
@@ -298,6 +302,98 @@ Attestation Result, and Relying-Party authorization are different propositions.
 A bounded key decision is then separated from the effects of decrypting,
 loading, serving, copying, extracting, recovering, sanitizing, or distributing
 the artifact. No favorable node is a universal trust verdict.
+
+### Paged weight custody
+
+Offloading weights to host memory or SSD does not create a special exception to
+the custody graph. It creates more representations, more storage locations, and
+more transient plaintext. A single checkpoint may become downloaded archives,
+decrypted originals, quantized copies, layer shards, reordered tensor files,
+memory-mapped pages, operating-system cache entries, pinned host buffers,
+accelerator allocations, crash dumps, backups, and partial conversions. The
+custody unit is therefore not “the model file.” It is the derivative closure of
+every artifact and recoverable state that can reconstruct protected weights or
+a governed approximation of them.
+
+Every transformed shard needs a durable identity. At minimum, its record binds
+the parent checkpoint and version; tokenizer and adapter set; conversion tool
+and configuration; quantization, sparsity, compression, dtype, tensor shape and
+range; target layout and runtime compatibility; content digest; encryption
+state; storage location; holder; creation and verification time; and descendant
+edges. Content addressing catches accidental substitution and allows a
+requesting runtime to ask for an exact page. It does not prove that the
+conversion was semantically correct, that the parent was authorized, or that a
+host will preserve confidentiality. Those remain separate checks.
+
+The transformed manifest should be verified before the original is discarded.
+Conversion is a transaction with prepare, write, verify, commit, and cleanup
+states. The system reserves enough space for the original, destination, scratch
+buffers, and recovery metadata; writes shards under temporary identities;
+checks completeness, range coverage, layout, and digests; and publishes the new
+manifest only after all required shards pass. A crash, checksum failure, or
+out-of-space condition leaves an inspectable partial transaction that can be
+resumed or removed without being mistaken for a complete model. Deleting the
+last known-good parent before the transformed child verifies is not
+optimization; it is an unrecorded recovery decision.
+
+### Encryption across memory tiers
+
+SSD-resident pages can remain encrypted at rest, but inference eventually needs
+usable tensors. The custody policy must say where decryption occurs, which key
+or derived key authorizes it, which artifact digest and environment measurement
+the key release is bound to, how long plaintext may live, and which buffers or
+caches can receive it. A key released for checkpoint `W` does not authorize a
+different quantized child merely because the child has a valid checksum.
+Lineage and relying-party policy must connect the requested representation to
+the approved use.
+
+Memory mapping complicates casual claims about “encrypted weights on disk.”
+Application pages may be copied into an operating-system page cache, pinned host
+buffers, temporary files, swap, hibernation images, diagnostics, or accelerator
+driver state. Some paths are encrypted by the storage stack, some only by
+process or hardware isolation, and some may be outside the intended trust
+boundary. The policy records which plaintext-bearing tiers are allowed,
+whether swap and crash dumps are disabled or protected, what happens on
+process failure, and how caches are invalidated after revocation. Hardware
+attestation can inform a bounded key decision; it does not enumerate every
+derivative or prove that model outputs cannot leak capabilities.
+
+Shared pages need explicit sharing scope. A base-model shard may be reusable
+across requests only if model, layout, runtime, authority, and revocation state
+match. Adapter-specific or tenant-specific state cannot inherit that lease by
+physical proximity. KV pages are usually request- or prefix-scoped and belong
+to a different custody relation from weights. A fast cache lookup must still
+verify the object identity and sharing boundary before use.
+
+### Eviction, deletion, erasure, sanitization, and recall
+
+These verbs name different outcomes:
+
+| Operation | What it can establish | What it cannot establish by itself |
+|---|---|---|
+| Cache eviction | an entry is no longer addressable through that cache policy | bytes disappeared from RAM, swap, storage, replicas, or recipient systems |
+| File deletion | a namespace entry was removed | underlying blocks are unrecoverable or every copy is gone |
+| Key revocation | future compliant key requests should be denied | holders erased cached plaintext or previously released keys |
+| Cryptographic erase | protected ciphertext is infeasible to decrypt under a declared key-destruction and attacker model | unencrypted copies, exported keys, snapshots, backups, or recipients are gone |
+| Media sanitization | a declared method and validation were applied to a declared medium and sensitivity level | unknown descendants or already distributed copies were recalled |
+| Recipient recall | a recipient was asked or required to return or delete material | the recipient complied or no reconstruction remains |
+
+The custody graph should record which operation occurred, on which object and
+medium, under which validation, and what residual remains. “Unload the model”
+can mean releasing an accelerator allocation while exact bytes persist in host
+RAM and storage. “Clear the cache” can leave converted shards and backups.
+“Delete the model” can leave a recipient with an irreversible copy. Accurate
+language matters because recovery, incident response, and public claims depend
+on different propositions.
+
+Paged inference is therefore a custody stress test. It increases the number of
+places where the same capability-bearing material can reside and the number of
+failures that can interrupt its lifecycle. A sound implementation can still
+use SSD and host memory aggressively, but it must make the speed path consume
+the same artifact identity, key, authority, derivative, recovery, and
+sanitization contracts as every other model load. Paging changes residency. It
+does not reduce the obligation to know what was loaded, where its descendants
+went, and who owns what remains.
 
 ### Worked custody trace: a valid token for the wrong artifact
 
@@ -800,6 +896,18 @@ neighbor; CCA is author-lineage implementation context. Corroboration counts
 must not treat those nine records as nine independent demonstrations of one
 claim.
 
+### Manifest source assignment reconciliation
+
+These rows keep Model-Weight Custody and Hardware Roots of Trust's manifest assignments visible at their recorded review boundary. Passage review does not establish local reproduction, performance, safety, deployment, or support-state movement.
+
+| Source | Intake role | Boundary |
+|---|---|---|
+| `ext_airllm_2023` | Metadata-first comparator: AirLLM: Scaling Large Language Models on Low-End Commodity Computers. Official implementation comparator for layer-wise model sharding, one-layer accelerator residency, next-layer prefetch, optional storage compression, and original-versus-transformed model storage. Maintainer-reported fit and speed claims are not independently reproduced. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_hf_accelerate_big_model_inference_2026` | Metadata-first comparator: Hugging Face Accelerate: Loading Big Models into Memory. Official implementation documentation for automatic or explicit GPU/CPU/disk device maps and memory-mapped disk tensors. The documented sequential-dispatch, prefetch, and hard-drive-performance limitations make it a baseline, not a qualification result. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_llama_cpp_memory_mapping_2026` | Metadata-first comparator: llama.cpp CLI Memory Mapping, Tensor Placement, and KV Offload Controls. Official consumer-runtime documentation for model load modes, memory mapping, DirectIO, GPU-layer and tensor placement, MoE CPU placement, KV offload, and KV data types. No local model or performance result is implied. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_llm_in_flash_2024` | Metadata-first comparator: LLM in a Flash: Efficient Large Language Model Inference with Limited Memory. Primary flash-aware inference source for on-demand parameter loading, I/O cost modeling, transfer reduction, contiguous reads, windowing, and row-column bundling. Sparse/context-adaptive loading is not an exact dense paging result. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+
+<!-- manifest-source-reconciliation:end -->
 ## Summary
 
 Model weights are one node in a model-family asset graph that can include

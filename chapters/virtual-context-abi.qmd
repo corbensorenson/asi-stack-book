@@ -4,7 +4,7 @@ chapter_id: "virtual-context-abi"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 proof-program manuscript"
-last_updated: "2026-07-16"
+last_updated: "2026-07-23"
 primary_sources:
   - "vcm_public"
   - "context_engineer"
@@ -31,10 +31,13 @@ primary_sources:
   - "ext_alce_2023"
   - "ext_self_rag_2023"
   - "ext_longllmlingua_2023"
+  - "ext_pagedattention_vllm_2023"
+  - "ext_airllm_2023"
+  - "ext_hf_accelerate_big_model_inference_2026"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "All twenty-four assigned sources are reviewed at their available boundary: five local raw-cache notes, two connector/source-note variants, four pinned-project notes, QCSA, and twelve external comparators. Mapping completeness does not establish source-to-packet fidelity, context adequacy, model use, or novelty."
+  - "The original twenty-four mapped sources are reviewed at their available boundary; seven additional manifest assignments, including three physical-memory comparators, remain metadata-first drafting context. Mapping completeness does not establish source-to-packet fidelity, context adequacy, model use, or novelty."
   - "Current evidence is exact but narrow: three valid/five rejecting admission fixtures, two valid/nine rejecting resolver routes, one bounded certificate/eleven rejecting mutations, thirty-one theorem declarations under six targets, and mixed bounded QCSA results. None runs a deployed resolver or natural model-facing context campaign."
   - "A full attempt still requires natural source sets, actual emitted packets, independently implemented source-to-packet and use evaluators, strong matched context baselines, staleness/poisoning/omission/authority/cache attacks, complete costs, causal ablations, clean reproduction, and cross-model/cross-backend transfer."
   - "Chapter-core support remains at `argument`; the bounded QCSA mechanism dispositions do not promote the ABI core."
@@ -48,8 +51,8 @@ open_evidence_gaps:
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
 | Manuscript maturity | v0.3 proof-program manuscript |
-| Last updated | 2026-07-15 |
-| Primary source records | 25 assigned records: VCM and adjacent author sources, four pinned projects, QCSA, The Reflexive Router, and twelve external comparators |
+| Last updated | 2026-07-23 |
+| Primary source records | 31 assigned records spanning VCM and adjacent author sources, four pinned projects, QCSA, The Reflexive Router, retrieval and memory comparators, and three physical-memory comparators used only to define the abstraction boundary |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `vcm_public`; supporting: eight author/project notes plus QCSA and `reflexive_router_whitepaper`; connector/recovery: `vcm_editable`, `moecot`; external comparators: graph retrieval, hierarchical abstraction, persistent memory, RAG, long-context use, citations, adaptive retrieval, OS-style tiering, and prompt compression |
@@ -386,6 +389,52 @@ ablation found no decision benefit, and the overall matched-resource gate
 failed. The ABI should adopt the stable-identity, plural-address, certificate,
 typed-fault, and migration records without treating them as semantic-quality
 or production evidence; the core claim remains at `argument`.
+
+### Semantic pages are not physical inference pages
+
+“Paging” appears at two different layers of the stack and should not be allowed
+to blur them. A **semantic context page** is a governed information object: a
+typed claim, excerpt, summary, constraint, decision, artifact, graph
+neighborhood, or other representation selected for a consumer and use. A
+**physical inference page** is runtime state: a weight shard, KV block,
+activation buffer, expert, recurrent state, draft state, or storage block moved
+among accelerator memory, host RAM, and storage.
+
+Both layers use indirection, caching, prefetch, eviction, and faults, but their
+correctness questions differ:
+
+| Question | Semantic context page | Physical inference page |
+|---|---|---|
+| Identity | which source object, version, representation, snapshot, and semantic address? | which model/runtime object, tensor range, layout, precision, request, and memory-policy epoch? |
+| Admission | is it relevant, adequate, permitted, untainted enough, and within the consumer's authority? | does it fit, arrive before use, satisfy exactness or declared approximation, and remain compatible with the executing kernel? |
+| Eviction | may this representation leave the working packet, and what omission or later refresh follows? | may these bytes leave this tier, and will reload, recompute, or fallback preserve the execution contract? |
+| Fault | missing, stale, conflicting, ambiguous, unauthorized, revoked, or inadequate information | missing, corrupt, late, stale, wrong-layout, cross-request, out-of-space, or unrecoverable runtime state |
+| Closure | record influence, downstream use, correction, expiry, revocation, and residual knowledge | release buffers, close transfers, invalidate caches, retain recovery state, sanitize protected copies, and own physical residuals |
+
+A VCM semantic address must never be treated as a device pointer or storage
+location. It can resolve through many physical stores and caches while
+preserving the same semantic object identity. Conversely, moving a weight or KV
+page from SSD to RAM to VRAM does not create a new source claim, grant authority,
+or make the bytes part of the consumer's semantic context. The physical
+materialization path belongs in a linked runtime receipt, not in the semantic
+meaning of the page.
+
+The bridge is explicit. A context materialization receipt can reference the
+runtime objects and costs used to build or serve it; a runtime memory policy can
+reference the authorized model, request, and context packet that caused a
+fetch. The two ledgers may invalidate one another where dependencies demand it.
+For example, revoking a model artifact can invalidate physical pages and future
+materializations, while correcting a source claim can invalidate semantic
+packets without implying that accelerator memory is corrupt. Neither ledger
+silently inherits the other's identity, authority, or proof state.
+
+This separation lets the stack borrow good systems ideas without confusing
+abstraction levels. Planner-guided semantic retrieval may inspire context
+prefetch; PagedAttention-style allocation may inspire efficient physical
+storage. Yet semantic adequacy cannot be proved by a cache hit, and physical
+correctness cannot be proved by a valid representation certificate. The word
+“page” describes a useful interface pattern. It does not make knowledge and
+tensor memory the same kind of thing.
 
 ### Typed result continuity and the hot routing projection
 
@@ -739,7 +788,7 @@ boundary that keeps those context objects from becoming anonymous prompt mass.
 | `ext_graphrag_2024`, `ext_hipporag_2024`, `ext_raptor_2024`, `ext_mem0_2025`, `ext_rag_2020`, `ext_lost_in_middle_2023`, `ext_longbench_2023`, `ext_ruler_2024`, `ext_memgpt_2023`, `ext_alce_2023`, `ext_self_rag_2023`, `ext_longllmlingua_2023` | External comparators for retrieval, graph/community sensemaking, associative navigation, hierarchical abstraction, persistent memory, long-context use, citations, adaptive retrieval, OS-style tiering, and compression; use to sharpen typed representation, actual use, provenance, loss, update, poisoning, cost, and adequacy boundaries. | bounded primary-record notes available; no local model, memory, benchmark, citation, compression, or production result |
 | `cca_project`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project` | One historical-project lineage for durable-memory/context separation, frozen and TTL-bounded slices, bounded graph snapshots, generation-leased handles, provenance, expiry, revocation, restore revalidation, and invalid-slice controls. | public-safe pinned notes reviewed; one hand-authored bounded certificate and mutations only, with no historical runtime replay or independent replication |
 
-All twenty-four assigned sources now have first-class Appendix C mappings. The
+The original twenty-four mapped sources have first-class Appendix C mappings. The
 mappings support static context ABI and certificate vocabulary. They do not
 support claims of resolver correctness, summary fidelity, certificate
 truthfulness, contradiction-rate improvement, context compiler performance,
@@ -755,6 +804,9 @@ These rows keep The Virtual Context ABI: Typed Pages, Cells, and Certificates's 
 | `platonic_world_model` | Metadata-first comparator: The Platonic World Model: A Semantic Constitution for Grounded, Proof-Carrying, Self-Editing Artificial Intelligence. Corben-authored July 2026 conceptual architecture and falsifiable research program for semantic continuity through stable Form lineages, immutable semantic versions, typed Essence Contracts, six mutually constraining planes, explicit proposition-attestation-commitment-proof separation, branch-protected world dynamics, qualified grounding, semantic transactions, runtime packet compilation, and federated mappings. Existing chapters are upgraded first; no implemented substrate, benchmark result, philosophical solution to grounding, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `qcsa_whitepaper` | Passage-reviewed comparator: Question-Compiled Semantic Addressing. Adds stable SOID identity, plural contextual SVA leases, atlas epochs, SAC adequacy and residual fields, bounded graph materialization, revalidation triggers, and explicit failure when semantic uncertainty is insufficient for a consumer; the later repository adds a bounded local 12-lane implementation, 60-case held-out evaluation over 13 systems and three seeds, and one 13-stage governed vertical trace. | The exact matched-advantage and resource gates failed, and the active-question ablation is N2 proxy/regime evidence rather than an exact or broad refutation. No natural-task, learned-model, universal-semantic, production, safety, privacy, external-independence, chapter-core promotion, AGI, or ASI result is established. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `kernel_english_residual_compiler` | Metadata-first comparator: Kernel English with Hierarchical, Interaction-Amortized Residuals: A Dual-Vocabulary Cognitive Compiler for Efficient Language-Model Reasoning. Corben-authored July 2026 architecture proposal for KERC: protected-object capture, uncertainty-aware normalization, sense-aware Kernel IR, dual surface/core vocabularies, a four-level interaction-amortized residual ledger, exact object storage, grammar-aware macro fusion, structured answer packets, rendering, round-trip verification, versioned migration, and complete rate-compute-fidelity evaluation. Existing chapters are upgraded first; no implementation, benchmark, novelty, efficiency, fidelity, safety, transfer, SOTA, AGI, ASI, or support-state result is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_pagedattention_vllm_2023` | Metadata-first comparator: Efficient Memory Management for Large Language Model Serving with PagedAttention. Primary external paper for vLLM/PagedAttention, which treats KV-cache memory management and serving throughput as a distinct acceleration axis. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_airllm_2023` | Metadata-first comparator: AirLLM: Scaling Large Language Models on Low-End Commodity Computers. Official implementation comparator for layer-wise model sharding, one-layer accelerator residency, next-layer prefetch, optional storage compression, and original-versus-transformed model storage. Maintainer-reported fit and speed claims are not independently reproduced. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_hf_accelerate_big_model_inference_2026` | Metadata-first comparator: Hugging Face Accelerate: Loading Big Models into Memory. Official implementation documentation for automatic or explicit GPU/CPU/disk device maps and memory-mapped disk tensors. The documented sequential-dispatch, prefetch, and hard-drive-performance limitations make it a baseline, not a qualification result. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Summary

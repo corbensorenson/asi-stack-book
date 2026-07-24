@@ -4,7 +4,7 @@ chapter_id: "personal-compute-hives-and-federated-edge-intelligence"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.3 claim-proof program"
-last_updated: "2026-07-16"
+last_updated: "2026-07-23"
 primary_sources:
   - "field_of_god_ai_constitution"
   - "scf"
@@ -29,6 +29,14 @@ primary_sources:
   - "ext_golem_docs_2025"
   - "ext_github_self_hosted_runners_docs"
   - "ext_cap_theorem_gilbert_lynch_2002"
+  - "ext_airllm_2023"
+  - "ext_deepspeed_inference_2022"
+  - "ext_flexgen_2023"
+  - "ext_hf_accelerate_big_model_inference_2026"
+  - "ext_llama_cpp_memory_mapping_2026"
+  - "ext_llm_in_flash_2024"
+  - "ext_powerinfer_2024"
+  - "ext_atsinfer_2026"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -45,11 +53,11 @@ open_evidence_gaps:
 | Chapter ID | `personal-compute-hives-and-federated-edge-intelligence` |
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
-| Last updated | 2026-07-15 |
-| Primary source records | `field_of_god_ai_constitution`, `scf`, `talos`, `vcm_public`, `planforge`, `octopus_router`, `rmi`, `tokenmana`, `project_theseus_whitepaper`, `theseus_operator_os`, `ladon_manhattan`, plus external source notes for Tailscale, Kubernetes, K3s, Nomad, Ray Core, BOINC, Syncthing, IPFS, Akash, Golem, GitHub self-hosted runners, and CAP-style partition trade-offs via `ext_cap_theorem_gilbert_lynch_2002` |
+| Last updated | 2026-07-23 |
+| Primary source records | 31 assigned records: eleven local architecture sources, twelve network/cluster/federation and partition comparators, and eight heterogeneous-memory implementation or paper comparators |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source loading state | All 23 assigned sources have exact reviewed mappings. Internal and tracked-project passages support bounded architectural components; official tooling sources and the CAP paper supply adjacent substrate and failure-pressure comparators only. None is implementation or safety evidence for this hive. |
+| Source loading state | The original 23 sources have exact reviewed mappings; eight heterogeneous-memory sources add metadata-first worker-admission context. None is implementation, performance, privacy, or safety evidence for this hive. |
 | Test state | Seven public record schemas validate. The exact 2/8 Hive-admission and 3/6 partitioned-authority suites remain passing. The new refinement covers seven stages, all 47 routes, and 53/53 rejecting mutations. Seventeen refinement declarations and 21 retained legacy consequences remain live; five projections/fixture declarations are retired. No live scheduler, registry, portal, authority service, network overlay, federation, partition run, runtime enforcement, rented-node sandbox, energy measurement, dropout recovery, security, privacy, availability, useful-work, or transfer result has been run. |
 
 ## Drafting guardrail
@@ -94,7 +102,18 @@ The claim is architectural, not empirical. The current support state is `argumen
 
 ### Claim-source mapping status
 
-The core claim has not been promoted above `argument`. Appendix C carries exact reviewed mappings for all 23 assigned sources: eleven internal or tracked local architecture sources and twelve external comparator sources, including Gilbert and Lynch for the bounded partition-pressure warning. The internal mappings support pieces of the design: VCM for governed context and taint, Talos for typed jobs and audit, Octopus/RMI for routed specialists and lifecycle state, TokenMana for resource budgets, Project Theseus and Hive Operator OS for trusted-machine node registries and operator surfaces, SCF for capability boundaries, Field of God governance for consent and least sufficient power, PlanForge for scheduling, and Ladon/Manhattan for handle-based secret use.
+The core claim has not been promoted above `argument`. Appendix C carries exact
+reviewed mappings for the original 23 sources: eleven internal or tracked local
+architecture sources and twelve external comparator sources, including Gilbert
+and Lynch for the bounded partition-pressure warning. Eight newly assigned
+heterogeneous-memory sources supply metadata-first drafting context for worker
+admission only. The internal mappings support pieces of the design: VCM for
+governed context and taint, Talos for typed jobs and audit, Octopus/RMI for
+routed specialists and lifecycle state, TokenMana for resource budgets,
+Project Theseus and Hive Operator OS for trusted-machine node registries and
+operator surfaces, SCF for capability boundaries, Field of God governance for
+consent and least sufficient power, PlanForge for scheduling, and
+Ladon/Manhattan for handle-based secret use.
 
 External mappings ground adjacent substrate vocabulary such as private overlay networking, cluster orchestration, distributed tasks, volunteer compute, file synchronization, content-addressed retrieval, rented compute, self-hosted runners, and consistency/availability pressure under partition. The repository includes record-shape schemas, synthetic fixtures, and finite Lean consequences, but no live hive scheduler, registry, approval portal, authority service, family-governance engine, network overlay, rented-node sandbox, federation, security evaluation, privacy evaluation, useful-work campaign, independent reproduction, or transfer result.
 
@@ -193,6 +212,97 @@ The point of the hive is not to make every device interchangeable. It is to stop
 | Rented or public node | burst compute, public tests, synthetic workloads, rented inference | no private memory or secrets unless a stronger contract proves the exposure is lawful |
 
 The hive vocabulary therefore separates portals, workers, stores, and authorities. A phone can approve a job that runs on the desktop. A NAS can hold the source corpus without executing untrusted code. A rented GPU can process public or synthetic work while being forbidden from private memory. A family tablet can be a learning portal without becoming a surveillance device.
+
+## Memory-tier admission inside a worker
+
+A device can have enough total storage to hold a model and still be unable to
+serve it usefully. The scheduler therefore needs two admission decisions. Hive
+admission asks whether the job may run on the worker. Memory-tier admission
+asks whether this exact model, runtime, and paging policy can run inside that
+worker's physical limits without violating the job contract.
+
+The worker publishes a `MemoryTierCapabilityCard` as a versioned component of
+its `DeviceResourceCard`. It should describe more than nominal VRAM:
+
+- accelerator memory, reserved floors, largest allocatable block, supported
+  dtypes and kernels, and measured host-device bandwidth;
+- host RAM, pinned-memory allowance, swap policy, memory pressure, and the
+  amount that may be consumed without destabilizing the machine;
+- storage device and filesystem, available and reserved capacity, sequential
+  and random read behavior, page-cache policy, scratch requirement, integrity
+  checks, endurance assumptions, encryption state, and recovery path;
+- sustained rather than advertised thermal and power behavior, including
+  battery constraints and whether a human is actively using the device;
+- permitted concurrency, request classes, interruption expectations, and
+  background windows; and
+- the model, tensor layouts, runtimes, and memory-policy classes the worker can
+  actually execute.
+
+The policy then declares its largest indivisible objects and simultaneous
+working set. A layer-streaming runtime may need one full layer plus kernels,
+buffers, and KV state in accelerator memory. A sparse expert system may need a
+cold expert fallback that is larger than the nominal hot set. A conversion may
+temporarily require the original model, transformed shards, and scratch space
+at once. If any required indivisible object does not fit, or the working set
+depends on memory that the worker has reserved for safety and recovery, the
+policy is not admissible on that device. Aggregate SSD capacity cannot override
+that result.
+
+### Runnable is not qualified
+
+The hive should use at least four memory-service grades:
+
+| Grade | Meaning | Typical use |
+|---|---|---|
+| `runnable` | the worker can load the policy and complete a bounded smoke request without violating hard capacity limits | diagnosis, conversion validation, or emergency fallback |
+| `interactive-qualified` | the worker meets a declared first-token, inter-token, tail-latency, thermal, and interruption contract | conversation, coding, or human-in-the-loop work |
+| `batch-qualified` | the worker meets a throughput, completion-window, energy, and recovery contract while latency may be high | overnight extraction, summarization, indexing, or synthetic evaluation |
+| `background-qualified` | the worker can yield to foreground use, survive pause or cancellation, respect battery and quiet hours, and resume from a verified boundary | opportunistic household or project work |
+
+A model that produces one token after a long cold load is only runnable. It
+does not inherit interactive qualification. Conversely, a slow disk-backed
+route can be valuable for a weekend batch if it amortizes weight transfers,
+stays inside thermal and wear budgets, and can recover after interruption. The
+job contract chooses the needed grade before node bidding begins.
+
+Admission fails closed when storage identity or integrity is unknown, free
+space cannot cover conversion and recovery, the fallback cannot run, cache or
+scratch cleanup is unowned, thermal telemetry is unavailable for a
+thermally-limited job, or measured bandwidth makes the deadline physically
+implausible. It also expires after changes to the model, adapter, tokenizer,
+quantization, runtime, kernel, driver, filesystem, storage device, power mode,
+or material hardware condition. A stale benchmark is not a permanent device
+capability.
+
+### Choose the adequate model and machine before paging
+
+The point of heterogeneous memory is to enlarge the feasible set, not to make
+the largest available model the default. The scheduler first finds the
+least-authority adequate combination of model, worker, and memory policy. A
+smaller fully resident model on a private laptop may satisfy an interactive
+editing contract with less latency, energy, storage exposure, and failure
+surface than a much larger SSD-streamed model. A large disk-backed model may be
+appropriate when its quality advantage is material, the task is
+latency-insensitive, the source data may remain local, and the full lifecycle
+fits the worker. A remote or rented accelerator may be cheaper, but it is
+ineligible when data, model-weight, or authority constraints do not permit the
+transfer.
+
+This creates a two-level bid. The node offers a physical envelope; the
+model-memory route offers a predicted quality, latency, throughput, energy,
+wear, recovery, and privacy profile inside that envelope. The hive records
+rejected pairings and reasons, selects among the eligible pairs, and returns
+actual measurements after execution. Repeated results may update a capability
+card, but learned performance estimates cannot widen data rights, authority, or
+trust.
+
+For personal compute, this distinction is practical. An old desktop with fast
+NVMe may become a useful batch worker but a poor interactive portal. A laptop
+on battery may temporarily lose background qualification. A NAS can store
+verified shards while being forbidden to decrypt or execute them. A rented
+node can have excellent memory bandwidth and still be disqualified for private
+context. The hive becomes intelligent by making these differences explicit,
+not by pretending that every byte of storage is interchangeable virtual VRAM.
 
 ## Interfaces
 
@@ -424,6 +534,22 @@ The family now contains 38 live declarations: seventeen reachable-lifecycle decl
 | `ext_github_self_hosted_runners_docs` | User-managed CI runners as physical, virtual, containerized, on-prem, or cloud execution slots. | Does not prove unattended runner safety for untrusted work. |
 | `ext_cap_theorem_gilbert_lynch_2002` | CAP-style consistency, availability, partition-tolerance, and safety/liveness trade-off vocabulary for partitioned authority, stale grants, revocation delay, and grant/effect races. | Does not prove deployed partition tolerance, consensus, availability, revocation propagation, or ASI Stack governance consistency. |
 
+### Manifest source assignment reconciliation
+
+These rows keep Personal Compute Hives and Federated Edge Intelligence's manifest assignments visible at their recorded review boundary. Passage review does not establish local reproduction, performance, safety, deployment, or support-state movement.
+
+| Source | Intake role | Boundary |
+|---|---|---|
+| `ext_airllm_2023` | Metadata-first comparator: AirLLM: Scaling Large Language Models on Low-End Commodity Computers. Official implementation comparator for layer-wise model sharding, one-layer accelerator residency, next-layer prefetch, optional storage compression, and original-versus-transformed model storage. Maintainer-reported fit and speed claims are not independently reproduced. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_deepspeed_inference_2022` | Metadata-first comparator: DeepSpeed Inference: Enabling Efficient Inference of Transformer Models at Unprecedented Scale. Primary heterogeneous-inference systems source spanning GPU, CPU, and NVMe for dense and sparse Transformer inference. Reported latency, throughput, scale, and model-fit results remain source-scoped and unreproduced. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_flexgen_2023` | Metadata-first comparator: FlexGen: High-Throughput Generative Inference of Large Language Models with a Single GPU. Primary planned-placement source for GPU/CPU/disk tensor storage and access, batching, and optional weight/cache compression under latency-insensitive workloads. Its throughput results are not interactive-latency or local evidence. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_hf_accelerate_big_model_inference_2026` | Metadata-first comparator: Hugging Face Accelerate: Loading Big Models into Memory. Official implementation documentation for automatic or explicit GPU/CPU/disk device maps and memory-mapped disk tensors. The documented sequential-dispatch, prefetch, and hard-drive-performance limitations make it a baseline, not a qualification result. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_llama_cpp_memory_mapping_2026` | Metadata-first comparator: llama.cpp CLI Memory Mapping, Tensor Placement, and KV Offload Controls. Official consumer-runtime documentation for model load modes, memory mapping, DirectIO, GPU-layer and tensor placement, MoE CPU placement, KV offload, and KV data types. No local model or performance result is implied. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_llm_in_flash_2024` | Metadata-first comparator: LLM in a Flash: Efficient Large Language Model Inference with Limited Memory. Primary flash-aware inference source for on-demand parameter loading, I/O cost modeling, transfer reduction, contiguous reads, windowing, and row-column bundling. Sparse/context-adaptive loading is not an exact dense paging result. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_powerinfer_2024` | Metadata-first comparator: PowerInfer: Fast Large Language Model Serving with a Consumer-Grade GPU. Primary consumer-inference source for source-reported power-law neuron locality, hot-GPU/cold-CPU placement, adaptive predictors, and sparse operators. Architecture transfer and performance are not locally reproduced. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_atsinfer_2026` | Metadata-first comparator: Automated Tensor Scheduling for Hybrid CPU-GPU LLM Inference on Consumer Devices. Very recent preprint comparator for tensor-granular static placement, load-aware dynamic transfer, and asynchronous CPU-GPU coordination on consumer devices. Only abstract/metadata were reviewed; reported results are provisional and unreproduced. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+
+<!-- manifest-source-reconciliation:end -->
 ## External literature and tooling queue
 
 Initial source records and conservative source notes now exist for the most important adjacent systems named above, including content-addressed storage. Remaining queue items include secret-management systems, sandbox runtimes, family safety/tutoring systems, local-first databases, and privacy-preserving computation. Before those support claims, each needs a source record, source note, and explicit mapping to a hive claim.

@@ -1,7 +1,7 @@
 # Heterogeneous Inference Memory and Paging Research
 
 Date: 2026-07-23
-Status: research intake complete; implementation packet queued behind the active Round 17 sequence
+Status: research intake and reader-prose integration complete; policy, validator, planner, and empirical packet queued behind the active Round 17 sequence
 Support effect: none
 Chapter-admission effect: none
 
@@ -33,9 +33,12 @@ activation, and expert pages are physical runtime objects. Similar paging
 vocabulary does not make their identity, authority, eviction, or correctness
 contracts interchangeable.
 
-This is a research-only owner-authorized intake during the Round 17 freeze. It
-does not activate manuscript work, displace R16-A/W3/White-Box/R16-B, create a
-manifest owner, or change support.
+The initial intake was research-only. On 2026-07-23, the owner expressly
+commissioned the reader prose, and the five owner sections plus the Virtual
+Context boundary were written and source-reconciled as a bounded exception to
+the Round 17 sequencing rule. No chapter owner was created, no support state
+changed, and the policy, validation, planner, hardware, and empirical work
+remain deferred.
 
 ## What the source family actually covers
 
@@ -217,7 +220,7 @@ on task quality, latency or throughput objective, memory ceiling, stability,
 recovery, and lifecycle cost. No universal “best paging method” claim is
 allowed.
 
-## Chapter implementation packet
+## Chapter implementation packet — manuscript slice completed 2026-07-23
 
 ### Fast Generation Architectures — primary owner
 

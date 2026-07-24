@@ -52,6 +52,7 @@ to ignore.
 - `personal-compute-hives-and-federated-edge-intelligence`
 - `resource-economics-and-token-budgets`
 - `model-weight-custody-and-hardware-roots-of-trust`
+- `virtual-context-abi` (boundary comparator only: physical weight pages are not semantic context pages)
 
 ## Claims To Add Or Update
 

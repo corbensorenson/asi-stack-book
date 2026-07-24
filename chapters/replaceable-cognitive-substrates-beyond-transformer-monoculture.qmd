@@ -4,7 +4,7 @@ chapter_id: "replaceable-cognitive-substrates-beyond-transformer-monoculture"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-07-22"
+last_updated: "2026-07-23"
 primary_sources:
   - "corben_chatgpt_kiss_irreducible_intelligence_2026"
   - "corben_chatgpt_onecell_theseus_2026"
@@ -42,6 +42,9 @@ primary_sources:
   - "ext_dynamic_compute_recurrent_transformers_2026"
   - "ext_dreamcoder_2020"
   - "relational_dimension_compiler"
+  - "ext_llm_in_flash_2024"
+  - "ext_powerinfer_2024"
+  - "ext_atsinfer_2026"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -60,11 +63,11 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-07-22 |
-| Primary source records | 38 bounded assignments spanning author-intent inputs, transformer and non-transformer comparators, governed replacement sources, and the Relational Dimension Compiler's separation of semantic, computational, and storage arity. |
+| Last updated | 2026-07-23 |
+| Primary source records | 41 bounded assignments spanning author-intent inputs, Transformer and non-Transformer comparators, governed replacement sources, the Relational Dimension Compiler, and three substrate-sensitive paging comparators. |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source loading state | All 38 assigned records have source notes; 36 carry exact bounded claim mappings. The public shares are author-intent inputs, the Relational Dimension Compiler is an author proposal, and the architecture sources are external comparators. No architecture result was imported as local evidence. |
+| Source loading state | All 41 assigned records have source notes; 36 carry exact bounded claim mappings and five are metadata-first reconciliation assignments. The public shares are author-intent inputs, the Relational Dimension Compiler is an author proposal, and the architecture and paging sources are external comparators. No architecture result was imported as local evidence. |
 | Test state | Bounded synthetic ABI conformance and malicious-kernel rejection are implemented. The matched heterogeneous-kernel tournament, frozen-core verified-abstraction ratchet, and governed architectural-RSI lifecycle remain preregistered and unrun. |
 
 ## Drafting guardrail
@@ -645,6 +648,87 @@ the difference through adapters, routes, or process boundaries. Architectural
 RSI improves these interfaces and foundry rules instead of forcing every new
 idea into one monolith.
 
+### Paging policy is substrate-specific
+
+Memory virtualization is a useful test of whether the Cognitive Kernel ABI is
+actually neutral. If every memory contract assumes numbered Transformer layers,
+attention heads, and KV-cache blocks, a Mamba-like state-space model, recurrent
+kernel, graph system, or sparse expert substrate can only enter by pretending to
+be a Transformer. That is compatibility theater. The interface should describe
+memory objects by their computational role and lifecycle while allowing each
+kernel to expose architecture-specific placement and locality.
+
+A dense Transformer offers unusually regular structure. Layer order is known,
+weight access is largely predictable, and autoregressive attention creates KV
+state whose size grows with sequence length and concurrency. These properties
+make sequential layer streaming, deterministic next-layer prefetch, and
+block- or virtual-memory KV allocation natural. They do not guarantee good
+performance: repeatedly scanning dense weights can remain bandwidth-bound, and
+KV layout interacts with the kernels that consume it. PagedAttention and
+vAttention are instructive precisely because they solve related allocation
+pressure with different physical-layout choices.
+
+Sparse and mixture-of-experts systems shift the problem. Only a subset of
+experts or neurons may activate for a token, creating an opportunity to keep a
+hot set near compute and cold state in host memory or storage. The access
+sequence is no longer fully known before routing. A locality predictor can
+prefetch likely experts, but it introduces precision, recall, miss, fallback,
+and distribution-shift obligations. PowerInfer's hot/cold neuron framing is a
+useful comparator, not a universal law of sparse models. A route that performs
+well on stable conversational locality may stall on a domain shift, adversarial
+prompt, new adapter, or changed router. Cold-expert fallback must preserve the
+declared exactness class and tail-latency contract.
+
+Recurrent and state-space systems move the pressure again. They may replace a
+growing per-token KV history with a bounded or differently scaling recurrent
+state, which can improve long-sequence residency. That does not eliminate
+weight traffic, kernel state, convolution or scan buffers, mutable test-time
+state, or checkpoint compatibility. The recurrent state may be smaller than a
+Transformer cache yet more sequentially critical: a stale state, wrong reset,
+or cross-session reuse can corrupt every later output. Its page identity needs
+sequence, state-schema, reset, and migration semantics rather than token-block
+terminology.
+
+Graph, memory-augmented, and tool-coupled substrates can have irregular
+frontiers of their own. Their expensive object may be an embedding table, graph
+partition, external memory bank, learned program state, or compiled specialist.
+A future optical, analog, neuromorphic, or compute-in-storage kernel may not
+have a meaningful “GPU page” at all. The ABI must therefore ask what state is
+required, when it becomes knowable, whether moving or transforming it changes
+the computation, how a miss recovers, and what lifecycle closes it.
+
+The memory projection of a `KernelCapabilityCard` should expose:
+
+- memory-object classes and their stable identities;
+- exact, quantized, compressed, sparse, predicted, reconstructable, and
+  disposable status;
+- minimum indivisible object and simultaneous working-set requirements;
+- placement tiers, transfer paths, locality assumptions, reuse and sharing
+  scope, and concurrency dependence;
+- mutable-state reset, checkpoint, migration, revocation, and recovery rules;
+- prefetch or routing predictors, confidence, miss behavior, and conservative
+  fallback;
+- measured bytes, stalls, latency, energy, temperature, and residual state for
+  each qualified workload region; and
+- adapters that translate these objects into the stack's generic resource,
+  custody, and evidence records without erasing architecture-specific fields.
+
+This interface keeps two truths visible. First, the stack can route to the best
+substrate for the job without hard-coding one model family into every higher
+layer. Second, substrates are not interchangeable merely because their
+capability cards share field names. Qualification remains architecture- and
+workload-specific.
+
+This matters for architectural recursive self-improvement. A self-improving
+stack should be able to discover that a new kernel changes not only accuracy or
+parameter count but the shape of state, memory traffic, recovery, and hardware
+fit. It should then propose new adapters and paging policies, evaluate them
+under locality shift and failure, migrate only compatible state, and retain the
+old route as fallback until the new lifecycle is qualified. RSI is not just
+moving weights. It is improving the interfaces that let fundamentally
+different computational organs be adopted without making the rest of the
+system brittle.
+
 ## Interfaces
 
 The ABI is useful only where its neighboring owners remain distinct. Routing
@@ -894,6 +978,9 @@ These rows keep Replaceable Cognitive Substrates: Beyond Transformer Monoculture
 | `ext_hyperscale_lottery_2026` | Passage-reviewed comparator: The Hyperscale Lottery: How State-Space Models Have Sacrificed Edge Efficiency. Supplies adversarial edge-hardware measurements showing that an architecture optimized for hyperscale GPU utilization can move cost onto smaller deployment targets. | One preprint and its selected devices do not establish a universal edge penalty or outweigh model quality; the result sets a platform-stratified measurement requirement. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `kernel_english_residual_compiler` | Metadata-first comparator: Kernel English with Hierarchical, Interaction-Amortized Residuals: A Dual-Vocabulary Cognitive Compiler for Efficient Language-Model Reasoning. Corben-authored July 2026 architecture proposal for KERC: protected-object capture, uncertainty-aware normalization, sense-aware Kernel IR, dual surface/core vocabularies, a four-level interaction-amortized residual ledger, exact object storage, grammar-aware macro fusion, structured answer packets, rendering, round-trip verification, versioned migration, and complete rate-compute-fidelity evaluation. Existing chapters are upgraded first; no implementation, benchmark, novelty, efficiency, fidelity, safety, transfer, SOTA, AGI, ASI, or support-state result is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `relational_dimension_compiler` | Passage-reviewed comparator: The Relational Dimension Compiler: Adaptive Polyadic Cognition with Bounded Computational Arity and Unbounded Semantic Structure. Separates semantic arity, primitive computational arity, and storage arity; uses typed relation-node reification for persistent arbitrary finite relations while treating pairwise, polyadic, graph, hypergraph, topological, field, symbolic, and tensor systems as replaceable computational lowerings. | Finite reification establishes representational sufficiency only; bounded primitive arity, efficient discovery, hardware advantage, natural transfer, and substrate superiority remain untested. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_llm_in_flash_2024` | Metadata-first comparator: LLM in a Flash: Efficient Large Language Model Inference with Limited Memory. Primary flash-aware inference source for on-demand parameter loading, I/O cost modeling, transfer reduction, contiguous reads, windowing, and row-column bundling. Sparse/context-adaptive loading is not an exact dense paging result. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_powerinfer_2024` | Metadata-first comparator: PowerInfer: Fast Large Language Model Serving with a Consumer-Grade GPU. Primary consumer-inference source for source-reported power-law neuron locality, hot-GPU/cold-CPU placement, adaptive predictors, and sparse operators. Architecture transfer and performance are not locally reproduced. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_atsinfer_2026` | Metadata-first comparator: Automated Tensor Scheduling for Hybrid CPU-GPU LLM Inference on Consumer Devices. Very recent preprint comparator for tensor-granular static placement, load-aware dynamic transfer, and asynchronous CPU-GPU coordination on consumer devices. Only abstract/metadata were reviewed; reported results are provisional and unreproduced. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Summary

@@ -1,5 +1,34 @@
 # Changelog
 
+## 2026-07-23 — Heterogeneous inference memory written into the manuscript
+
+- Converted the P6.6 paging packet from planning-only material into six
+  reader-facing integrations without adding a chapter: a full heterogeneous
+  inference-memory treatment in Fast Generation; worker memory-tier admission
+  in Personal Compute Hives; the I/O roofline and lifecycle cost of virtual
+  VRAM in Resource Economics; paged-weight custody; substrate-specific paging
+  policy; and an explicit semantic-page versus physical-page boundary in the
+  Virtual Context ABI.
+- Added the physical object taxonomy for weights, KV cache, activations,
+  experts, recurrent state, and draft state; distinguished layer streaming,
+  planned placement, demand paging, deterministic prefetch, speculative
+  physical-page prediction, sparse placement, and speculative decoding; and
+  preserved exact-versus-approximate behavior throughout.
+- Wrote a worked SSD-shard-to-request-closure trace, worker qualification
+  grades, bytes-per-token I/O lower bounds, page-cache and conversion
+  accounting, encryption and derivative-closure handling, eviction/deletion/
+  erasure distinctions, and a substrate-neutral memory projection for the
+  Cognitive Kernel ABI.
+- Assigned the reviewed paging source family to the six actual chapter owners
+  and synchronized the manifest, outline queues, source matrix, Appendix H,
+  and chapter source crosswalks. All external performance remains
+  source-reported and unreproduced; chapter support remains `argument`.
+- Marked the reader-prose slice terminal while retaining the policy schema,
+  rejecting validator, dry-run planner, hardware characterization, matched
+  empirical campaign, W3 inheritance, and reader/atom projection as explicit
+  deferred work. This commission changes no empirical, deployment, release,
+  SOTA, AGI, or ASI state.
+
 ## 2026-07-23 — Heterogeneous inference memory and speculative paging intake
 
 - Researched the primary and official implementation lineage for running models

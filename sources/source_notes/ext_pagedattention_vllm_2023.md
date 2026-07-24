@@ -44,6 +44,7 @@ activation or expert paging, speculative prefetch, or speculative decoding.
 
 - `fast-generation-architectures` (Fast Generation Architectures)
 - `resource-economics-and-token-budgets` (Resource Economics and Token Budgets)
+- `virtual-context-abi` (boundary comparator only: physical KV pages are not semantic context pages)
 
 ## Claims To Add Or Update
 

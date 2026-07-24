@@ -4386,7 +4386,11 @@
             "ext_nist_key_management_2020",
             "ext_nist_media_sanitization_2025",
             "cca_project",
-            "ext_in_toto_2019"
+            "ext_in_toto_2019",
+            "ext_airllm_2023",
+            "ext_hf_accelerate_big_model_inference_2026",
+            "ext_llama_cpp_memory_mapping_2026",
+            "ext_llm_in_flash_2024"
           ],
           "source_queue": {
             "primary": [
@@ -4400,7 +4404,11 @@
             "supporting": [
               "cca_project",
               "ext_in_toto_2019",
-              "ext_nvidia_confidential_model_lifecycle_2026"
+              "ext_nvidia_confidential_model_lifecycle_2026",
+              "ext_airllm_2023",
+              "ext_hf_accelerate_big_model_inference_2026",
+              "ext_llama_cpp_memory_mapping_2026",
+              "ext_llm_in_flash_2024"
             ],
             "variants": [
               "ext_nvidia_confidential_model_lifecycle_2026"
@@ -7077,7 +7085,10 @@
             "bugbrain_project",
             "qcsa_whitepaper",
             "reflexive_router_whitepaper",
-            "kernel_english_residual_compiler"
+            "kernel_english_residual_compiler",
+            "ext_pagedattention_vllm_2023",
+            "ext_airllm_2023",
+            "ext_hf_accelerate_big_model_inference_2026"
           ],
           "source_queue": {
             "primary": [
@@ -7108,7 +7119,10 @@
               "ext_memgpt_2023",
               "ext_alce_2023",
               "ext_self_rag_2023",
-              "ext_longllmlingua_2023"
+              "ext_longllmlingua_2023",
+              "ext_pagedattention_vllm_2023",
+              "ext_airllm_2023",
+              "ext_hf_accelerate_big_model_inference_2026"
             ],
             "connector_or_recovery": [
               "vcm_editable",
@@ -11906,7 +11920,10 @@
             "ext_dynamic_compute_recurrent_transformers_2026",
             "ext_dreamcoder_2020",
             "kernel_english_residual_compiler",
-            "relational_dimension_compiler"
+            "relational_dimension_compiler",
+            "ext_llm_in_flash_2024",
+            "ext_powerinfer_2024",
+            "ext_atsinfer_2026"
           ],
           "source_queue": {
             "primary": [
@@ -11948,7 +11965,10 @@
               "ext_dynamic_compute_recurrent_transformers_2026",
               "ext_dreamcoder_2020",
               "kernel_english_residual_compiler",
-              "relational_dimension_compiler"
+              "relational_dimension_compiler",
+              "ext_llm_in_flash_2024",
+              "ext_powerinfer_2024",
+              "ext_atsinfer_2026"
             ],
             "variants": [],
             "connector_or_recovery": [],
@@ -13322,7 +13342,15 @@
             "ext_akash_docs_2026",
             "ext_golem_docs_2025",
             "ext_github_self_hosted_runners_docs",
-            "ext_cap_theorem_gilbert_lynch_2002"
+            "ext_cap_theorem_gilbert_lynch_2002",
+            "ext_airllm_2023",
+            "ext_deepspeed_inference_2022",
+            "ext_flexgen_2023",
+            "ext_hf_accelerate_big_model_inference_2026",
+            "ext_llama_cpp_memory_mapping_2026",
+            "ext_llm_in_flash_2024",
+            "ext_powerinfer_2024",
+            "ext_atsinfer_2026"
           ],
           "source_queue": {
             "primary": [
@@ -13352,7 +13380,15 @@
               "ext_akash_docs_2026",
               "ext_golem_docs_2025",
               "ext_github_self_hosted_runners_docs",
-              "ext_cap_theorem_gilbert_lynch_2002"
+              "ext_cap_theorem_gilbert_lynch_2002",
+              "ext_airllm_2023",
+              "ext_deepspeed_inference_2022",
+              "ext_flexgen_2023",
+              "ext_hf_accelerate_big_model_inference_2026",
+              "ext_llama_cpp_memory_mapping_2026",
+              "ext_llm_in_flash_2024",
+              "ext_powerinfer_2024",
+              "ext_atsinfer_2026"
             ],
             "connector_or_recovery": [],
             "handoff_or_recovery_notes": [
@@ -14503,7 +14539,19 @@
             "ext_llada_2025",
             "ext_scaling_dllms_2026",
             "ext_recurrent_transformer_2026",
-            "kernel_english_residual_compiler"
+            "kernel_english_residual_compiler",
+            "ext_airllm_2023",
+            "ext_deepspeed_inference_2022",
+            "ext_flexgen_2023",
+            "ext_hf_accelerate_big_model_inference_2026",
+            "ext_llama_cpp_memory_mapping_2026",
+            "ext_llm_in_flash_2024",
+            "ext_powerinfer_2024",
+            "ext_vattention_2025",
+            "ext_infinigen_2024",
+            "ext_specache_2025",
+            "ext_specoffload_2025",
+            "ext_atsinfer_2026"
           ],
           "source_queue": {
             "primary": [
@@ -14532,7 +14580,19 @@
               "ext_mamba_2023",
               "ext_llada_2025",
               "ext_scaling_dllms_2026",
-              "ext_recurrent_transformer_2026"
+              "ext_recurrent_transformer_2026",
+              "ext_airllm_2023",
+              "ext_deepspeed_inference_2022",
+              "ext_flexgen_2023",
+              "ext_hf_accelerate_big_model_inference_2026",
+              "ext_llama_cpp_memory_mapping_2026",
+              "ext_llm_in_flash_2024",
+              "ext_powerinfer_2024",
+              "ext_vattention_2025",
+              "ext_infinigen_2024",
+              "ext_specache_2025",
+              "ext_specoffload_2025",
+              "ext_atsinfer_2026"
             ],
             "connector_or_recovery": [],
             "handoff_or_recovery_notes": [
@@ -15561,7 +15621,19 @@
             "reflexive_router_whitepaper",
             "kernel_english_residual_compiler",
             "ext_mlperf_training_v6_2026",
-            "relational_dimension_compiler"
+            "relational_dimension_compiler",
+            "ext_airllm_2023",
+            "ext_deepspeed_inference_2022",
+            "ext_flexgen_2023",
+            "ext_hf_accelerate_big_model_inference_2026",
+            "ext_llama_cpp_memory_mapping_2026",
+            "ext_llm_in_flash_2024",
+            "ext_powerinfer_2024",
+            "ext_vattention_2025",
+            "ext_infinigen_2024",
+            "ext_specache_2025",
+            "ext_specoffload_2025",
+            "ext_atsinfer_2026"
           ],
           "source_queue": {
             "primary": [
@@ -15584,7 +15656,19 @@
             "variants": [
               "ext_pagedattention_vllm_2023",
               "ext_reluplex_2017",
-              "ext_mlperf_training_v6_2026"
+              "ext_mlperf_training_v6_2026",
+              "ext_airllm_2023",
+              "ext_deepspeed_inference_2022",
+              "ext_flexgen_2023",
+              "ext_hf_accelerate_big_model_inference_2026",
+              "ext_llama_cpp_memory_mapping_2026",
+              "ext_llm_in_flash_2024",
+              "ext_powerinfer_2024",
+              "ext_vattention_2025",
+              "ext_infinigen_2024",
+              "ext_specache_2025",
+              "ext_specoffload_2025",
+              "ext_atsinfer_2026"
             ],
             "connector_or_recovery": [],
             "handoff_or_recovery_notes": [

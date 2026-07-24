@@ -1622,6 +1622,8 @@ Source loading queue:
 | Supporting | `cca_project`, `ext_in_toto_2019`, `ext_nvidia_confidential_model_lifecycle_2026` | Use CCA only as author-lineage implementation context, in-toto as a signed-provenance neighbor, and NVIDIA as a vendor-specific lifecycle variant. Do not count the nine records as nine independent demonstrations of one claim. |
 | Variant | `ext_nvidia_confidential_model_lifecycle_2026` | Preserve vendor-specific encrypted-artifact, attestation, and key-release detail without importing cross-platform confidentiality, verifier independence, or deployment correctness. |
 
+
+| Manifest assignment reconciliation | `ext_airllm_2023`, `ext_hf_accelerate_big_model_inference_2026`, `ext_llama_cpp_memory_mapping_2026`, `ext_llm_in_flash_2024` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: Runtime tool governance can coexist with uncontrolled optimizer
@@ -1640,6 +1642,10 @@ Draft arc:
 - Observe and control effects: distinguish requested key release from observed
   decrypt, plaintext residency, load, serve, copy, extraction, crash/cache,
   unload, runtime action, recipient distribution, and open release.
+- Paged-weight custody: treat split, quantized, reordered, encrypted,
+  memory-mapped, cached, scratch, backup, and partial-conversion artifacts as
+  one derivative closure; bind every shard to its parent, layout, runtime,
+  digest, key state, holder, recovery transaction, and sanitization residual.
 - Recover and adjudicate: propagate incidents and revocations, reconcile every
   break-glass/recovery effect, validate sanitization at a declared effort, and
   record irreversible recipient/open release before authority is granted.
@@ -2428,13 +2434,17 @@ Source loading queue:
 | Connector or recovery required | `vcm_editable`, `moecot` | Use source notes or connector reads before source-derived claims; no resolver, VCM-Bench, runtime, or benchmark result is promoted from these sources. |
 
 
-| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `ext_pagedattention_vllm_2023`, `ext_airllm_2023`, `ext_hf_accelerate_big_model_inference_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: a consumer must connect exact durable source state to the actual finite packet it receives without losing identity, lineage, authority, rights, omissions, costs, or faults.
 - Insufficiency: access, retrieval, graph traversal, summarization, compression, persistence, citations, and long context do not alone establish consumer-relative packet conformance, use, adequacy, or support.
 - Mechanism: freeze consumer, purpose, obligation, object/address/snapshot scope, representation, authority/rights/use, adequacy target, budget, horizon, support ceiling, and material-change triggers.
 - Mechanism: keep durable identity, plural semantic addresses, storage, retrieval routes, representation identities, packets, physical routes, and support states separate.
+- Mechanism: keep semantic context pages and physical inference pages
+  explicitly distinct: information-object identity, adequacy, authority,
+  omission, and influence do not collapse into tensor-page layout, residency,
+  transfer, cache, corruption, or cleanup.
 - Mechanism: generate and retain eligible source, graph, excerpt, summary, redaction, translation, abstraction, contradiction, and cell candidates; select the least sufficient packet while disclosing rejected candidates and the exact omitted frontier.
 - Mechanism: preserve stable field lineage and an explicit transformation, omission, loss, uncertainty, conflict, provenance, taint, authority, rights, and use ledger.
 - Mechanism: issue a falsifiable representation certificate and a materialization receipt tied to actual emitted content, placement, cache route, denominator, costs, faults, and residuals.
@@ -3538,7 +3548,7 @@ Source loading queue:
 | Mutable/external/dynamical/function/graph/program alternatives | `ext_ttt_layers_2024`, `ext_titans_2025`, `ext_kan_2024`, `ext_kan_or_mlp_fairer_comparison_2024`, `ext_neural_turing_machines_2014`, `ext_differentiable_neural_computer_2016`, `ext_liquid_time_constant_networks_2021`, `ext_neural_message_passing_2017`, `ext_dreamcoder_2020` | Use for online-state custody, fair KAN comparison, memory and topology extrapolation, continuous-time cost, relational processing, and verified abstraction tests. |
 | Hybrid composition | `ext_jamba_2024` | Use to make layer/expert/substrate composition and active-versus-total accounting explicit; do not infer a generally optimal mixture or local result. |
 
-| Manifest assignment reconciliation | `deterministic_capability_compilation`, `ext_gated_deltanet2_2026`, `ext_hyperscale_lottery_2026`, `ext_inkling_2026`, `kernel_english_residual_compiler`, `relational_dimension_compiler` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `deterministic_capability_compilation`, `ext_gated_deltanet2_2026`, `ext_hyperscale_lottery_2026`, `ext_inkling_2026`, `kernel_english_residual_compiler`, `relational_dimension_compiler`, `ext_llm_in_flash_2024`, `ext_powerinfer_2024`, `ext_atsinfer_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Explain why a stable stack must abstract architecture without pretending that
@@ -3552,6 +3562,11 @@ Draft arc:
   ABI rather than tying them to Transformers.
 - Compare architecture families by computational affordance, state semantics,
   hardware fit, exactness limits, adaptation surface, and defeat conditions.
+- Expose substrate-specific memory objects, indivisible working sets, locality
+  assumptions, exact or approximate transformations, predictor-miss behavior,
+  state reset and migration, measured transfer costs, and conservative fallback
+  through the Cognitive Kernel ABI without forcing every substrate into
+  Transformer layer or KV terminology.
 - Define architectural RSI as governed candidate generation, training,
   independent evaluation, shadow, canary, promotion, rollback, retirement, and
   descendant invalidation—not merely weight updates.
@@ -3836,6 +3851,8 @@ Source loading queue:
 | Handoff or recovery notes | `sources/inbox/personal_compute_hives_browser_note_2026-06-25/` | Local-only author-intent context. Do not quote verbatim or promote claims from this packet. |
 | Remaining external queue | secret-management systems, sandbox runtimes, family safety/tutoring systems, local-first databases, privacy-preserving computation | Add source records and source notes before citation or support-state promotion. |
 
+
+| Manifest assignment reconciliation | `ext_airllm_2023`, `ext_deepspeed_inference_2022`, `ext_flexgen_2023`, `ext_hf_accelerate_big_model_inference_2026`, `ext_llama_cpp_memory_mapping_2026`, `ext_llm_in_flash_2024`, `ext_powerinfer_2024`, `ext_atsinfer_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: exact governed work must cross heterogeneous owned and external nodes under churn and partition while preserving principal, data, tool, locality, rights, resource, effect, evidence, revocation, recovery, and residual boundaries.
@@ -3843,6 +3860,10 @@ Draft arc:
 - Lifecycle: freeze exact job and horizon; inventory and attest separate participants; classify obligations; compile typed job and context lease; policy-filter; construct eligible-node features; bid; choose least-authority route; approve; issue execution lease; transfer minimal data/handles; enforce and monitor; handle partition/dropout/revocation; collect complete receipts; recover/invalidate; update scoped reputation; replay campaigns.
 - Distinct ownership: the hive owns consumer-specific placement. Intent/Contracts/Planning, VCM/Context, Routing/SCF/Readiness, Security/Privacy/Rights/Legal/Constitutional, Runtime/Tools/Physical Effects, Humans/Labor/Family/Tribunal, Resources, Artifact/Evidence/Claims, Procedural/Data/Learning, Inter-Stack/Federation, project stewards/providers, and Release/Deployment retain their own authority.
 - Mechanism: seven public cards and contracts separate principal, portal, worker, store, authority, evaluator, and external-provider roles; policy and readiness rejection occurs before optimization.
+- Mechanism: a worker memory-tier capability card binds accelerator, host,
+  storage, scratch, bandwidth, thermal, battery, integrity, concurrency, and
+  recovery limits; the hive rejects an oversized indivisible object and keeps
+  runnable, interactive, batch, and background qualification distinct.
 - Mechanism: task-local context and execution leases intersect authority and transfer only permitted data or opaque handles into a monitored sandbox.
 - Mechanism: partition, stale grant, revocation, and dropout route high-impact mutation to denial or quarantine pending fresh receipt and preserve no-mutation evidence, recovery, descendant invalidation, and residual custody.
 - Handoff: the hive creates pressure for compact generation, but compression claims remain governed by residual burden, verification, repair, fallback, and displaced lifecycle cost.
@@ -4037,12 +4058,17 @@ External literature queue:
 | KV-cache and serving-layer accelerators | Compare memory-bandwidth and throughput improvements separately from single-request latency. | source-noted via `ext_pagedattention_vllm_2023`; no local serving benchmark |
 
 
-| Manifest assignment reconciliation | `kernel_english_residual_compiler` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `kernel_english_residual_compiler`, `ext_airllm_2023`, `ext_deepspeed_inference_2022`, `ext_flexgen_2023`, `ext_hf_accelerate_big_model_inference_2026`, `ext_llama_cpp_memory_mapping_2026`, `ext_llm_in_flash_2024`, `ext_powerinfer_2024`, `ext_vattention_2025`, `ext_infinigen_2024`, `ext_specache_2025`, `ext_specoffload_2025`, `ext_atsinfer_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: token rate and serving throughput are routinely measured outside the consumer, quality, verifier, load, resource, rights, and recovery boundary needed for a useful-work claim.
 - Owner boundary: Planning supplies a request, Routing supplies qualified candidates, Fast Generation admits the exact speed route, Runtime executes it, Verification judges bounded obligations, Artifact/Labor systems deliver work, Benchmaxxing compares complete attempts, and Readiness or Claim Ledgers own qualification.
 - Lifecycle: eighteen mechanisms freeze scope and baselines; register immutable implementations; bind context/cache/risk/rights; separate output states; admit prospectively; trace attempts; measure queue-to-delivery time; record acceptance; verify; attribute repair/fallback; bill all resources; observe load/fairness; execute fallback; run causal interventions; govern transitions; and monitor expiry/rollback/residuals.
+- Heterogeneous-memory mechanism: distinguish weight, KV, activation, expert,
+  recurrent, and draft state; compare layer streaming, planned placement,
+  demand paging, physical KV allocation, predicted prefetch, sparse placement,
+  and speculative-decoding/offload composition under one versioned exact-or-
+  approximate memory policy and an SSD-shard-to-request-closure trace.
 - Interfaces: twelve owner handoffs cover intent/planning, context, routing/readiness, runtime, resource economics, security/authority/rights, generator traces, verification, delivery/artifact custody, benchmarking, support transitions, and operator/consumer recovery.
 - Handoff: accepted output becomes a typed delivered artifact; every rejection, retry, fallback, resource bill, incident, and residual remains attached to the route receipt.
 
@@ -4274,7 +4300,7 @@ Source loading queue:
 | Memory and adaptive-compute comparators | `ext_mem0_2025`, `ext_recurrent_transformer_2026`, `ext_dynamic_compute_recurrent_transformers_2026` | Compare token/latency savings, recurrent cache/traffic claims, and difficulty-dependent compute. Require pinned configurations and distinguish allocation from generalization, quality, and safety. |
 
 
-| Manifest assignment reconciliation | `ext_claw_swe_bench_2026`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `ext_mlperf_training_v6_2026`, `relational_dimension_compiler` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `ext_claw_swe_bench_2026`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `ext_mlperf_training_v6_2026`, `relational_dimension_compiler`, `ext_airllm_2023`, `ext_deepspeed_inference_2022`, `ext_flexgen_2023`, `ext_hf_accelerate_big_model_inference_2026`, `ext_llama_cpp_memory_mapping_2026`, `ext_llm_in_flash_2024`, `ext_powerinfer_2024`, `ext_vattention_2025`, `ext_infinigen_2024`, `ext_specache_2025`, `ext_specoffload_2025`, `ext_atsinfer_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: Compute, context, verification, simulation fidelity, and human attention are scarce resources that the architecture must allocate explicitly.
@@ -4283,6 +4309,11 @@ Draft arc:
 - Mechanism: Use regenerative or budgeted capacity mechanisms where useful.
 - Mechanism: Escalate verification when risk justifies the cost.
 - Mechanism: Separate aggregate serving throughput and memory pressure from single-request verified-output value.
+- Mechanism: apply an I/O roofline to virtual VRAM, separating capacity,
+  bandwidth, latency, and endurance; charge random versus sequential reads,
+  page-cache residency, conversion and duplicate storage, cold starts, unused
+  prefetch, pollution, energy, thermal throttling, wear, recovery, and displaced
+  capacity before comparing workload-specific quality/cost frontiers.
 - Mechanism: Attach Simulation Contract Records when simulated, synthetic, benchmark, or scenario results are used as evidence.
 - Mechanism: Block, downgrade, or residualize claims whose simulation scope, fidelity, temporal semantics, resource bill, bottlenecks, omissions, or transfer decision do not support the stronger claim.
 - Handoff: Mathematical, cyclic, and search substrates enter only through resource, fidelity, baseline, and evidence contracts rather than elegance or apparent cheapness.

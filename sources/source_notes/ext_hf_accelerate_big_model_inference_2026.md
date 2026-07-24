@@ -45,6 +45,7 @@ optimized.
 - `personal-compute-hives-and-federated-edge-intelligence`
 - `resource-economics-and-token-budgets`
 - `model-weight-custody-and-hardware-roots-of-trust`
+- `virtual-context-abi` (boundary comparator only: runtime device mapping is not semantic context paging)
 
 ## Claims To Add Or Update
 

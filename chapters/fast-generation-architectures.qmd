@@ -4,7 +4,7 @@ chapter_id: "fast-generation-architectures"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.3 claim-proof program"
-last_updated: "2026-07-16"
+last_updated: "2026-07-23"
 primary_sources:
   - "cgs"
   - "cognitive_loop_closure"
@@ -27,6 +27,18 @@ primary_sources:
   - "ext_llada_2025"
   - "ext_scaling_dllms_2026"
   - "ext_recurrent_transformer_2026"
+  - "ext_airllm_2023"
+  - "ext_deepspeed_inference_2022"
+  - "ext_flexgen_2023"
+  - "ext_hf_accelerate_big_model_inference_2026"
+  - "ext_llama_cpp_memory_mapping_2026"
+  - "ext_llm_in_flash_2024"
+  - "ext_powerinfer_2024"
+  - "ext_vattention_2025"
+  - "ext_infinigen_2024"
+  - "ext_specache_2025"
+  - "ext_specoffload_2025"
+  - "ext_atsinfer_2026"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -44,8 +56,8 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | v0.3 claim-proof program |
-| Last updated | 2026-07-15 |
-| Primary source records | `cgs`, `cognitive_loop_closure`, `benchmaxxing`, `planforge`, `verification_bandwidth`, `tokenmana`, `talos`, `vcm_public`, `spinoza`, `rmi`, `ext_speculative_decoding_2022`, `ext_multi_token_prediction_2024`, `ext_medusa_2024`, `ext_eagle_2024`, `ext_lookahead_decoding_2024`, `ext_layerskip_2024`, `ext_pagedattention_vllm_2023`, `ext_mamba_2023`, `ext_llada_2025`, `ext_scaling_dllms_2026`, `ext_recurrent_transformer_2026` |
+| Last updated | 2026-07-23 |
+| Primary source records | 34 assigned records: ten local architecture sources; eleven decoding, serving, recurrent, state-space, and diffusion comparators; and thirteen heterogeneous-memory comparators spanning layer streaming, planned placement, memory mapping, flash-aware loading, sparse placement, KV allocation and prediction, speculative offload, and tensor scheduling |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `cgs`, `cognitive_loop_closure`, `benchmaxxing`; supporting: `planforge`, `verification_bandwidth`, `tokenmana`, `talos`, `vcm_public`, `spinoza`, `rmi`; variants/external literature: `ext_speculative_decoding_2022`, `ext_multi_token_prediction_2024`, `ext_medusa_2024`, `ext_eagle_2024`, `ext_lookahead_decoding_2024`, `ext_layerskip_2024`, `ext_pagedattention_vllm_2023`, `ext_mamba_2023`, `ext_llada_2025`, `ext_scaling_dllms_2026`, `ext_recurrent_transformer_2026` |
@@ -106,7 +118,11 @@ The claim remains at `argument`. It does not say that one acceleration family wi
 
 ### Claim-source mapping status
 
-Appendix C now carries exact bounded mappings for all twenty-one assigned sources. Ten local design sources provide passage-reviewed control-plane lineage; ten public paper records bound the external acceleration taxonomy; and the metadata-first Recurrent Transformer source note supplies a current recurrent-KV comparator. None supports a local decoder, serving system, verifier-preserving speed result, hardware transfer, or promoted generation mode.
+Appendix C carries exact bounded mappings for the original twenty-one assigned
+sources. Thirteen heterogeneous-memory records now add metadata-first drafting
+context and manuscript comparators without moving support. None supports a
+local decoder, serving system, paging implementation, verifier-preserving speed
+result, hardware transfer, or promoted generation mode.
 
 | Source | What it supports | Limit |
 |---|---|---|
@@ -219,6 +235,176 @@ This makes speed a governed policy choice. A low-risk autocomplete can use a che
 | KV-cache and serving-layer accelerators | Improve memory layout, batching, and throughput around generation. | Separate aggregate serving throughput from single-request verified output. | Source-noted external literature; no local test |
 
 The taxonomy is deliberately plural. Generation governance must not collapse all speed work into one bucket. A decoding trick, a training objective, a serving memory system, and a sequence-model substrate solve different bottlenecks. They can be combined, but their evidence records must stay separate.
+
+## Heterogeneous inference memory: residency, paging, and prediction
+
+A model can be too large for accelerator memory without being too large for the
+machine. Host RAM, NVMe storage, and remote stores can extend the apparent
+capacity of a GPU, but they cannot manufacture bandwidth. This is the central
+fact behind “run a large model on a small GPU” systems: capacity decides whether
+the bytes can exist somewhere; bandwidth, latency, locality, and overlap decide
+whether inference is usable.
+
+The first design rule is to name the object being moved. “Model paging” often
+collapses several objects whose lifetimes and correctness conditions differ:
+
+| Physical object | Typical lifetime | What makes reuse valid | Main bottleneck or hazard |
+|---|---|---|---|
+| Weight shard | checkpoint, adapter, or converted-layout version | exact model lineage, tensor range, dtype, quantization, layout, runtime compatibility, and digest | the same weights may be scanned repeatedly, making storage bandwidth the decode ceiling |
+| KV-cache page | request, prefix, batch, or session | exact model, adapter, tokenizer, token positions, request or sharing scope, precision, and cache epoch | transient state grows with context and concurrency; stale or cross-request reuse changes computation |
+| Activation page | layer, microbatch, or generation step | exact execution state and recomputation contract | spill and reload can cost more than recomputation and can block the next kernel |
+| Expert or neuron block | route, token, or locality epoch | exact expert version plus a valid routing or prediction decision | cold experts create irregular transfers; prediction misses create stalls or approximation |
+| Recurrent state | sequence, segment, or session | architecture-specific state schema, reset rule, and sequence identity | small state can still be latency-critical and cannot be treated as a Transformer KV page |
+| Draft/verifier state | speculative step or accepted span | draft and target identities, acceptance state, and rollback point | rejected proposals can waste compute and evict state needed by the exact target |
+
+That distinction separates seven mechanisms that are useful in different
+regions. **Layer streaming** loads a predictable layer or shard just before the
+forward pass needs it. AirLLM is a visible implementation of this idea.
+**Planned heterogeneous placement** chooses a steady assignment and transfer
+schedule across GPU, CPU, and disk; DeepSpeed Inference and FlexGen represent
+this systems family. **Ordinary demand paging** fetches an object once execution
+identifies it. **Virtual-memory KV management** changes how dynamically growing
+cache is allocated: PagedAttention uses non-contiguous physical blocks behind a
+paging abstraction, while vAttention preserves contiguous virtual addresses and
+maps physical GPU memory on demand. **Predictive KV prefetch** uses partial
+computation or a compact importance representation to fetch likely-needed host
+KV entries before they block a step, as in InfiniGen and SpeCache. **Hot/cold
+sparse placement** keeps frequently activated neurons or experts near compute
+and places colder state in a slower tier, as explored by PowerInfer and related
+systems. **Speculative-decoding-plus-offload** uses otherwise idle accelerator
+capacity for a draft model while target weights are being transferred, as in
+SpecOffload.
+
+These mechanisms are composable, but they are not synonyms. Predicting a future
+physical page is speculative paging. Proposing future tokens and checking them
+with a target model is speculative decoding. Loading the next known dense layer
+early is deterministic prefetch. Selecting only a predicted subset of KV,
+neurons, or experts is an approximate policy unless an exact miss path restores
+the same computation. A compound implementation should report which of these
+things it does instead of attributing the entire result to “paging.”
+
+### The I/O roof under generation
+
+Suppose a dense model requires \(W\) bytes of weights per full forward pass and
+the serving path effectively reloads those bytes for each generated token. With
+sustained usable transfer bandwidth \(B\), the weight-transfer component alone
+has the lower bound
+
+\[
+t_{\text{weight/token}} \ge \frac{W_{\text{transferred/token}}}{B},
+\qquad
+r_{\text{token}} \le \frac{B}{W_{\text{transferred/token}}}.
+\]
+
+This is not a performance prediction. Real time also includes page faults,
+filesystem and page-cache behavior, small-read penalties, decompression,
+host-to-device transfer, synchronization, kernel execution, KV traffic,
+verification, and queueing. It is a fast impossibility check. If the proposed
+interactive token rate would require several times the measured storage and
+interconnect bandwidth, no scheduler diagram can rescue it.
+
+Batching changes the arithmetic intensity. One transferred weight block can
+serve many sequences or tokens before eviction, so FlexGen-style policies can
+produce useful throughput for latency-insensitive batches even when batch-one
+interactive decode is slow. The same technique can therefore be good for an
+overnight corpus job and unacceptable for a conversation. Prefill and decode
+also differ. Prefill exposes more parallel work and often reuses each loaded
+weight across many prompt tokens; decode exposes a thin sequential dependency
+where each next token may trigger another sweep. Every memory-policy result
+must name batch size, concurrency, prompt length, generated length, cold or warm
+state, prefix reuse, and whether the reported number is first-token latency,
+inter-token latency, request throughput, or total completion time.
+
+### A physical-memory policy
+
+The runtime needs a versioned **Heterogeneous Inference Memory Policy** rather
+than a collection of command-line flags. The policy binds:
+
+- the exact model, tokenizer, adapter, quantization, tensor layout, runtime,
+  kernels, driver, operating system, filesystem, storage device, and hardware;
+- weight, KV, activation, expert, recurrent, draft, metadata, and recovery
+  objects to explicit page or shard identities;
+- capacity floors and measured bandwidth, latency, concurrency, thermal,
+  energy, endurance, and failure assumptions for every tier;
+- placement, eviction, prefetch, prediction, backpressure, fallback, recovery,
+  invalidation, and sanitization behavior; and
+- receipts for bytes moved, stalls, unused reads, cache pollution, page faults,
+  prediction misses, compute utilization, latency, throughput, energy,
+  temperature, storage amplification, crashes, and residual state.
+
+An **exact residency policy** changes where and when state is stored without
+intentionally changing the mathematical object consumed by the model, apart
+from declared numerical-layout effects. An **approximate memory policy** changes
+the consumed state through quantization, compression, sparse selection,
+eviction, reconstruction, or skipped fetches. Both can be useful. They need
+different baselines and claims. A predictor miss in an exact arm must stall,
+fetch, recompute, or take another explicit exact route; it cannot silently
+become approximation. An approximate arm must measure task quality and identify
+the workload region where the loss is accepted.
+
+A cache hit is valid only for the same object version, layout, precision,
+request or compatible sharing scope, authority, and revocation epoch. This is
+especially important in multi-tenant and adapter-heavy serving. A page whose
+bytes are locally present can still be wrong for the request.
+
+### Worked request: SSD shards to closure
+
+Consider a quantized checkpoint that does not fit in VRAM or host RAM. Before
+serving, conversion produces content-addressed layer shards plus a manifest
+binding their parent checkpoint, tokenizer, adapter, quantization recipe,
+tensor ranges, layout, and checksums. The worker reserves VRAM for the largest
+indivisible layer, KV state, kernels, transfer buffers, and recovery headroom.
+It reserves disk scratch for an interrupted conversion and keeps the original
+artifact until every transformed shard verifies.
+
+At admission, the runtime freezes the request class: batch one, a bounded
+prompt and generation length, exact weight streaming, declared KV placement,
+and a conservative fallback. The first shard moves from SSD to a pinned host
+buffer and then to the accelerator. While that layer executes, the next shard
+is prefetched into a different buffer. A successful overlap receipt records
+both transfer and kernel time; it does not infer that transfer was free. If a
+checksum fails, storage runs out, the next shard arrives late, thermal
+throttling changes the deadline, or the request is cancelled, the policy stops
+or falls back according to the frozen contract.
+
+During decode, the system records bytes read per emitted and per accepted token,
+page-cache hits, host-to-device traffic, KV growth, stalls, unused prefetch,
+energy, temperature, and tail latency. If speculative decoding is enabled, its
+draft and acceptance work is charged separately. Completion closes the request:
+temporary buffers are invalidated, request-scoped KV pages are released,
+shared-prefix pages retain only their valid lease, partial outputs and errors
+become artifacts, and any cache, scratch, corrupted shard, or failed cleanup
+becomes an owned residual. “The model emitted a token” is therefore an
+intermediate event, not the end of the memory lifecycle.
+
+### Qualification is workload-specific
+
+A competent comparison begins with the smallest fully resident model that
+meets the task contract, a CPU or unified-memory path, ordinary CPU/GPU
+offload, layer streaming, planned placement where available, exact and
+predictive KV variants, architecture-compatible sparse placement, and a
+prediction-disabled fallback. Compound arms need ablations that distinguish
+quantization, scheduling, sparsity, paging, and speculative decoding.
+
+The joint report should include task success and quality alongside median and
+tail first-token latency, inter-token latency, end-to-end time, request and
+token throughput, peak VRAM and RAM, bytes read and written per token, transfer
+overlap, misses, unused prefetch, cache pollution, utilization, energy,
+temperature, storage wear proxy, conversion amplification, interruption, and
+recovery. A route qualifies only for the region where it meets the requested
+quality, latency or throughput, memory, stability, and recovery contract.
+
+The current literature is a design map, not a local result. AirLLM, Accelerate,
+llama.cpp, and related tools show that disk- and host-backed execution is
+possible. FlexGen shows why batching and planned placement matter. LLM in a
+Flash and PowerInfer show how locality can reduce transferred bytes.
+PagedAttention and vAttention preserve a live layout choice rather than a
+settled universal answer. InfiniGen and SpeCache motivate predictive KV fetch;
+SpecOffload motivates composition with token speculation; ATSInfer adds a
+recent tensor-granular consumer-device comparator. None of those sources proves
+that this repository has a fast, exact, durable, or generally superior
+implementation. They tell us which mechanism distinctions a serious
+implementation and benchmark must preserve.
 
 ## Interfaces
 
@@ -426,6 +612,18 @@ These rows keep Fast Generation Architectures's manifest assignments visible at 
 | Source | Intake role | Boundary |
 |---|---|---|
 | `kernel_english_residual_compiler` | Metadata-first comparator: Kernel English with Hierarchical, Interaction-Amortized Residuals: A Dual-Vocabulary Cognitive Compiler for Efficient Language-Model Reasoning. Corben-authored July 2026 architecture proposal for KERC: protected-object capture, uncertainty-aware normalization, sense-aware Kernel IR, dual surface/core vocabularies, a four-level interaction-amortized residual ledger, exact object storage, grammar-aware macro fusion, structured answer packets, rendering, round-trip verification, versioned migration, and complete rate-compute-fidelity evaluation. Existing chapters are upgraded first; no implementation, benchmark, novelty, efficiency, fidelity, safety, transfer, SOTA, AGI, ASI, or support-state result is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_airllm_2023` | Metadata-first comparator: AirLLM: Scaling Large Language Models on Low-End Commodity Computers. Official implementation comparator for layer-wise model sharding, one-layer accelerator residency, next-layer prefetch, optional storage compression, and original-versus-transformed model storage. Maintainer-reported fit and speed claims are not independently reproduced. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_deepspeed_inference_2022` | Metadata-first comparator: DeepSpeed Inference: Enabling Efficient Inference of Transformer Models at Unprecedented Scale. Primary heterogeneous-inference systems source spanning GPU, CPU, and NVMe for dense and sparse Transformer inference. Reported latency, throughput, scale, and model-fit results remain source-scoped and unreproduced. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_flexgen_2023` | Metadata-first comparator: FlexGen: High-Throughput Generative Inference of Large Language Models with a Single GPU. Primary planned-placement source for GPU/CPU/disk tensor storage and access, batching, and optional weight/cache compression under latency-insensitive workloads. Its throughput results are not interactive-latency or local evidence. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_hf_accelerate_big_model_inference_2026` | Metadata-first comparator: Hugging Face Accelerate: Loading Big Models into Memory. Official implementation documentation for automatic or explicit GPU/CPU/disk device maps and memory-mapped disk tensors. The documented sequential-dispatch, prefetch, and hard-drive-performance limitations make it a baseline, not a qualification result. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_llama_cpp_memory_mapping_2026` | Metadata-first comparator: llama.cpp CLI Memory Mapping, Tensor Placement, and KV Offload Controls. Official consumer-runtime documentation for model load modes, memory mapping, DirectIO, GPU-layer and tensor placement, MoE CPU placement, KV offload, and KV data types. No local model or performance result is implied. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_llm_in_flash_2024` | Metadata-first comparator: LLM in a Flash: Efficient Large Language Model Inference with Limited Memory. Primary flash-aware inference source for on-demand parameter loading, I/O cost modeling, transfer reduction, contiguous reads, windowing, and row-column bundling. Sparse/context-adaptive loading is not an exact dense paging result. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_powerinfer_2024` | Metadata-first comparator: PowerInfer: Fast Large Language Model Serving with a Consumer-Grade GPU. Primary consumer-inference source for source-reported power-law neuron locality, hot-GPU/cold-CPU placement, adaptive predictors, and sparse operators. Architecture transfer and performance are not locally reproduced. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_vattention_2025` | Metadata-first comparator: vAttention: Dynamic Memory Management for Serving LLMs without PagedAttention. Primary counterpoint to non-contiguous PagedAttention layouts: decouples virtual and physical GPU memory while retaining contiguous KV virtual addresses. Reported serving results remain source-scoped. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_infinigen_2024` | Metadata-first comparator: InfiniGen: Efficient Generative Inference of Large Language Models with Dynamic KV Cache Management. Primary speculative-KV-prefetch source using minimal rehearsal and partial next-layer state to select host-resident KV entries. Prediction, quality, miss, and fallback results are not locally reproduced. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_specache_2025` | Metadata-first comparator: SpeCache: Speculative Key-Value Caching for Efficient Generation of LLMs. Primary speculative-KV-prefetch source keeping complete KV state in CPU memory, a low-bit importance copy in VRAM, and predicted next-step KV transfers. Source-reported quality and memory results are unreproduced. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_specoffload_2025` | Metadata-first comparator: SpecOffload: Unlocking Latent GPU Capacity for LLM Inference on Resource-Constrained Devices. Primary composition source for target-model offloading, draft-model placement, speculative decoding, and joint tensor/decoding planning. It is not speculative physical-page prediction, and reported results are unreproduced. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_atsinfer_2026` | Metadata-first comparator: Automated Tensor Scheduling for Hybrid CPU-GPU LLM Inference on Consumer Devices. Very recent preprint comparator for tensor-granular static placement, load-aware dynamic transfer, and asynchronous CPU-GPU coordination on consumer devices. Only abstract/metadata were reviewed; reported results are provisional and unreproduced. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Summary
