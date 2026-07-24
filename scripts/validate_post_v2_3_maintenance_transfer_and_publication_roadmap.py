@@ -41,6 +41,7 @@ READER_RELEASE_RECORD = ROOT / "release_records/2026-07-18-reader-2026-07-18-092
 STRUCTURAL_RESEARCH = ROOT / "docs/structural_completeness_chapter_research_2026_07_19.md"
 STRUCTURAL_GAP_AUDIT = ROOT / "docs/structural_completeness_gap_audit_2026_07_19.md"
 OPTIMIZER_RESEARCH = ROOT / "docs/optimizer_landscape_chapter_research_2026_07_21.md"
+POST_ROUND_18_DEPTH_REVIEW = ROOT / "docs/post_round_18_depth_and_coverage_review_reconciliation_2026_07_24.md"
 SOURCE_INVENTORY = ROOT / "sources/source_inventory.json"
 BOOK_MANIFEST = ROOT / "book_structure.json"
 STRUCTURAL_CHAPTER_PATHS = {
@@ -156,6 +157,7 @@ def inputs() -> dict:
         "structural_research": STRUCTURAL_RESEARCH.read_text(encoding="utf-8"),
         "structural_gap_audit": STRUCTURAL_GAP_AUDIT.read_text(encoding="utf-8"),
         "optimizer_research": OPTIMIZER_RESEARCH.read_text(encoding="utf-8"),
+        "post_round_18_depth_review": POST_ROUND_18_DEPTH_REVIEW.read_text(encoding="utf-8"),
         "source_inventory": load(SOURCE_INVENTORY),
         "book_manifest": load(BOOK_MANIFEST),
         "transition_snapshot": transition_snapshot(atom_ids),
@@ -191,6 +193,7 @@ def errors(data: dict) -> list[str]:
         "## Review adjudication and corrected baseline",
         "## Round 16 evidence-first adjudication and amendment",
         "## Round 17 priority enforcement and blocker recheck",
+        "## Post-Round-18 depth and coverage amendment",
         "## Operating rules",
         "## P0 — Public truth, claim identity, and attestation continuity",
         "## P1 — Negative-result rehabilitation and false-negative defense",
@@ -287,9 +290,37 @@ def errors(data: dict) -> list[str]:
         "prose scanner rows and chapter review JSON do not satisfy this packet",
         "738 distinct repeated 12-grams",
         "0/6 terminal packs",
+        "P7.2-T1D — proof-readiness depth pack",
+        "Claim-bearing chapter maturity gate",
+        "adversarial-machine-learning-and-model-attack-surface",
+        "learning-theory-generalization-and-scaling-science",
+        "Sixty-eight chapters is a possible result if both pass, not a target",
     ]:
         if phrase.casefold() not in roadmap_normalized:
             out.append(f"roadmap governing boundary missing: {phrase}")
+
+    depth_review_normalized = re.sub(
+        r"\s+", " ", data["post_round_18_depth_review"]
+    ).casefold()
+    for phrase in [
+        "binding roadmap amendment; no support or release effect",
+        "The working manifest contains **66 chapters**, not 61",
+        "Claim-bearing chapter maturity gate",
+        "Field decomposition",
+        "Strongest challenge",
+        "Implementation determination",
+        "Failure and non-claim envelope",
+        "Literature engagement by role",
+        "Territory-sized reader value",
+        "P7.2-T1D-proof-readiness-depth-pack",
+        "Adversarial Machine Learning and the Model Attack Surface",
+        "Learning Theory, Generalization, and Scaling Science",
+        "approved for research and adjudication, not for immediate manifest admission",
+        "Sixty-eight chapters is a possible result if both candidates pass, not a target",
+        "Raw keyword counts do not adjudicate completeness",
+    ]:
+        if phrase.casefold() not in depth_review_normalized:
+            out.append(f"post-Round-18 depth-review boundary missing: {phrase}")
 
     structural = data["structural_research"]
     structural_normalized = re.sub(r"\s+", " ", structural).casefold()
@@ -748,7 +779,7 @@ def errors(data: dict) -> list[str]:
         "P6.5-R16-six-chapter-claim-atom-addendum-terminal",
         "P6.5-R16-current-sixty-six-chapter-reader-freshness-terminal",
         "P7.1a-W3-admission-template-inheritance-guard-terminal",
-        "P7.2-T1D-white-box-construct-validity-and-feature-analysis-depth-terminal",
+        "P7.2-T1D-six-chapter-proof-readiness-depth-pack-terminal",
     ]
     if execution_readiness.get("structural_resume_requires") != expected_resume_gates:
         out.append("execution board structural-resume gate set drifted")
@@ -1209,6 +1240,13 @@ def main() -> None:
     mutate("future atom-at-birth deletion", lambda c: c["status"]["round_16_evidence_first_amendment"]["future_admission_contract"].__setitem__("claim_atom_pack_required_at_birth", False))
     mutate("future reader-at-birth deletion", lambda c: c["status"]["round_16_evidence_first_amendment"]["future_admission_contract"].__setitem__("reader_projection_required_at_birth", False))
     mutate("future admission cadence expansion", lambda c: c["status"]["round_16_evidence_first_amendment"]["future_admission_contract"].__setitem__("maximum_new_chapters_per_empirical_checkpoint", 9))
+    mutate("post-Round-18 P2 displacement", lambda c: c["status"]["post_round_18_depth_and_coverage_amendment"].__setitem__("p2_displacement_allowed", True))
+    mutate("post-Round-18 structural admission", lambda c: c["status"]["post_round_18_depth_and_coverage_amendment"].__setitem__("structural_admission_freeze", False))
+    mutate("post-Round-18 maturity gate deletion", lambda c: c["status"]["post_round_18_depth_and_coverage_amendment"]["maturity_gate_conditions"].pop())
+    mutate("post-Round-18 chapter omission", lambda c: c["status"]["post_round_18_depth_and_coverage_amendment"]["depth_packet"]["chapter_ids"].pop())
+    mutate("post-Round-18 candidate research premature activation", lambda c: c["status"]["post_round_18_depth_and_coverage_amendment"].__setitem__("candidate_research_active", True))
+    mutate("post-Round-18 candidate premature admission", lambda c: c["status"]["post_round_18_depth_and_coverage_amendment"]["research_candidates"][0].__setitem__("admission_state", "manifest_admitted"))
+    mutate("post-Round-18 word-count gate", lambda c: c["status"]["post_round_18_depth_and_coverage_amendment"]["depth_packet"].__setitem__("word_count_is_acceptance_gate", True))
     mutate("non-Docker deletion authorization", lambda c: c["status"]["round_16_evidence_first_amendment"]["p2_empirical_recovery"].__setitem__("non_docker_user_data_deletion_allowed", True))
     mutate("optimizer duplicate chapter authorization", lambda c: c["status"]["round_16_evidence_first_amendment"]["optimizer_landscape_depth_amendment"].__setitem__("new_chapter_allowed", True))
     mutate("optimizer coupled-policy deletion", lambda c: c["status"]["round_16_evidence_first_amendment"]["optimizer_landscape_depth_amendment"].__setitem__("optimizer_is_coupled_run_policy", False))
@@ -1238,7 +1276,7 @@ def main() -> None:
         "90 accepted historical negatives classified as 1 N0, 15 N1, 74 N2, and 0 N3-N5; "
         "the frozen 75-surface rehabilitation snapshot including the then-live 55 chapters reconciled with zero overbroad negative language; "
         "P2 selected prospectively from five candidates; natural development preflight covers 1,117 post-snapshot tasks, 12 repositories, seven languages, and 12 image manifests; the fixed gold denominator is fully dispositioned as eight qualified and four N0 replacements across 62 verified arm logs and eight attempts; the corrected infrastructure/content boundary reinstates rank five as setup-retry-pending and keeps rank six closed; the historical 2026-07-22 capacity entry condition was met, while the 2026-07-24 observation is below the frozen floor and requires an exact attempt or failure receipt; the complete 30-candidate sequential materialization remains unpassed; Q1 D1 and Theseus Q2 D2 remain disjoint and sealed; remeasurement, qualification, construct, and heldout gates remain closed; "
-        "all six semantic proof clusters are terminally adequate at bounded scope; all four first-tranche structural chapters, six admitted second-tranche chapters, and the separate Inner Alignment admission retain argument-level custody with protected empirical outcomes closed; Round 18 closes a five-chapter/seven-section breadth transaction at a 66-chapter manifest and restores the structural freeze; the historical six-chapter atom, W3, white-box-depth, and current-reader sequence remains open; optimizer manuscript depth is terminal while its empirical campaign remains a nonblocking evidence residual; current proof and main-attestation baselines exact; no support/release effect; "
+        "all six semantic proof clusters are terminally adequate at bounded scope; all four first-tranche structural chapters, six admitted second-tranche chapters, and the separate Inner Alignment admission retain argument-level custody with protected empirical outcomes closed; Round 18 closes a five-chapter/seven-section breadth transaction at a 66-chapter manifest and restores the structural freeze; the historical six-chapter atom, W3, six-chapter proof-readiness depth, and current-reader sequence remains open; the two post-Round-18 chapter candidates remain research-only behind material P2 and terminal-depth gates; optimizer manuscript depth is terminal while its empirical campaign remains a nonblocking evidence residual; current proof and main-attestation baselines exact; no support/release effect; "
         f"{len(mutations)}/{len(mutations)} mutations rejected."
     )
 

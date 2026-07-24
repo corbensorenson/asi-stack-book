@@ -14,6 +14,7 @@
     "execution_readiness",
     "quality_uplift_program",
     "round_16_evidence_first_amendment",
+    "post_round_18_depth_and_coverage_amendment",
     "predecessor",
     "activation_truth",
     "competence_and_identity_contract",
@@ -39,7 +40,7 @@
   ],
   "properties": {
     "schema_version": {
-      "const": "asi_stack.post_v2_3_maintenance_transfer_publication_status.v20"
+      "const": "asi_stack.post_v2_3_maintenance_transfer_publication_status.v21"
     },
     "roadmap_id": {
       "const": "asi-stack-post-v2-3-evidence-competence-transfer-publication-2026-07-17"
@@ -120,7 +121,7 @@
             "P6.5-R16-six-chapter-claim-atom-addendum-terminal",
             "P6.5-R16-current-sixty-six-chapter-reader-freshness-terminal",
             "P7.1a-W3-admission-template-inheritance-guard-terminal",
-            "P7.2-T1D-white-box-construct-validity-and-feature-analysis-depth-terminal"
+            "P7.2-T1D-six-chapter-proof-readiness-depth-pack-terminal"
           ]
         },
         "first_tranche_completion_order": {
@@ -325,7 +326,7 @@
               "const": 66
             },
             "maximum_if_all_candidates_pass": {
-              "const": 73
+              "const": 75
             },
             "planned_merge_count": {
               "const": 0
@@ -635,7 +636,7 @@
           "support_state_effect": "none"
         },
         "current_reader_freshness_packet": {
-          "state": "queued_after_atom_w3_and_white_box",
+          "state": "queued_after_atom_w3_and_six_chapter_depth_pack",
           "published_reader_2026_07_18_is_immutable_historical_release": true,
           "current_working_manifest_chapter_count": 66,
           "must_cover_all_current_manifest_chapters": true,
@@ -662,7 +663,7 @@
           "shared_method_prose_owner": "chapters/living-book-methodology.qmd"
         },
         "white_box_depth_amendment": {
-          "state": "queued_after_w3",
+          "state": "queued_after_w3_subsumed_into_P7_2_T1D_six_chapter_depth_pack",
           "chapter_id": "white-box-evidence-interpretability-and-activation-governance",
           "required_dimensions": [
             "sparse_autoencoder_and_dictionary_learning_mechanisms",
@@ -750,6 +751,82 @@
           "template_inheritance_guard_required_at_birth": true,
           "manifest_admission_without_all_birth_artifacts_allowed": false
         },
+        "support_state_effect": "none",
+        "release_effect": "none"
+      }
+    },
+    "post_round_18_depth_and_coverage_amendment": {
+      "const": {
+        "state": "binding_planned_depth_packet_and_research_candidates",
+        "review_path": "docs/post_round_18_depth_and_coverage_review_reconciliation_2026_07_24.md",
+        "p2_displacement_allowed": false,
+        "structural_admission_freeze": true,
+        "maturity_gate_conditions": [
+          "field_decomposition",
+          "strongest_challenge_and_simpler_baseline",
+          "implementation_determination",
+          "failure_and_nonclaim_envelope",
+          "literature_engagement_by_role",
+          "territory_sized_reader_value"
+        ],
+        "depth_packet": {
+          "id": "P7.2-T1D-proof-readiness-depth-pack",
+          "state": "queued_after_R16_A_and_W3",
+          "chapter_ids": [
+            "inner-alignment-mesa-optimization-and-learned-objective-integrity",
+            "multi-agent-dynamics-collective-intelligence-and-systemic-risk",
+            "perception-sensor-fusion-and-observation-trust",
+            "embodied-agency-real-time-control-and-physical-safety",
+            "human-ai-organizations-delegation-and-accountability",
+            "white-box-evidence-interpretability-and-activation-governance"
+          ],
+          "existing_owner_section_repairs": {
+            "uncertainty_decomposition": "governed-world-models-and-reality-grounding",
+            "refinement_and_dependent_types": "executable-specifications-and-the-lean-proof-envelope",
+            "synthetic_data_and_self_play_generation": "data-engines-continual-learning-and-unlearning",
+            "human_explanation_generation": "human-factors-and-meaningful-control-in-oversight",
+            "organizational_transition_and_economic_diffusion_scope": "human-ai-organizations-delegation-and-accountability"
+          },
+          "word_count_is_acceptance_gate": false,
+          "chapter_specific_inheritance_audit_required": true,
+          "support_state_effect": "none"
+        },
+        "already_owned_findings": {
+          "instrumental_convergence": "failure-modes-of-ungoverned-intelligence",
+          "causal_reasoning_and_confounding": "governed-world-models-and-reality-grounding",
+          "conformal_prediction": "governed-world-models-and-reality-grounding",
+          "retrieval_augmented_generation": "virtual-context-abi",
+          "artificial_moral_status_and_welfare": "moral-uncertainty-and-value-conflict"
+        },
+        "research_candidates": [
+          {
+            "id": "adversarial-machine-learning-and-model-attack-surface",
+            "provisional_part": "I",
+            "admission_state": "research_and_distinct_owner_adjudication_only"
+          },
+          {
+            "id": "learning-theory-generalization-and-scaling-science",
+            "provisional_part": "III",
+            "admission_state": "research_and_distinct_owner_adjudication_only"
+          }
+        ],
+        "candidate_research_active": false,
+        "candidate_research_activation_requires": [
+          "completed_material_P2_empirical_or_evidence_checkpoint",
+          "terminal_P7.2_T1D_depth_packet",
+          "existing_book_WIP_slot_available"
+        ],
+        "candidate_admission_requires": [
+          "completed_material_P2_empirical_or_evidence_checkpoint",
+          "terminal_P7.2_T1D_depth_packet",
+          "dated_distinct_owner_decision_packet",
+          "source_role_and_adjacent_owner_gates",
+          "birth_atom_reader_and_inheritance_artifacts",
+          "one_chapter_maximum_per_checkpoint"
+        ],
+        "current_manifest_chapter_count": 66,
+        "possible_count_if_both_new_candidates_pass": 68,
+        "theoretical_all_candidate_envelope_not_target": 75,
         "support_state_effect": "none",
         "release_effect": "none"
       }
@@ -1846,7 +1923,7 @@
           "const": false
         },
         "attested_head": {
-          "const": "1ed1413f124d6d95053380a1fdbef47dc0ee683c"
+          "const": "12d987bded2e504f5ec677df06c4fcdb281b1fdd"
         },
         "state": {
           "const": "pushed_deployed_clean_ancestral_checkpoint"
