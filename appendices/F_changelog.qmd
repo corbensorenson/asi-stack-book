@@ -1,5 +1,33 @@
 # Changelog
 
+## 2026-07-23 — Inference cache reuse and honest pricing written into the manuscript
+
+- Added nine primary or official cache sources: the current OpenAI, Anthropic,
+  and Gemini provider contracts; vLLM Automatic Prefix Caching; SGLang
+  RadixAttention; Prompt Cache; Mooncake; CacheBlend; and the Azure semantic
+  response-cache policy. Every provider term is dated and every external
+  performance result remains source-reported and unreproduced.
+- Chose a three-owner integration instead of a new chapter. Fast Generation
+  now owns exact-prefix, prompt-module, persistent/disaggregated, non-prefix,
+  exact-output, and semantic-response mechanism distinctions; Resource
+  Economics owns break-even and downstream pricing; Context Transactions owns
+  response validity, dependency closure, invalidation, disclosure, poisoning,
+  tenant isolation, and deletion residuals.
+- Explained why a prefix hit can support cheaper cached input while still
+  requiring suffix prefill, new output generation, verification, rate-limit
+  capacity, storage, lookup, transfer, and governance. Added dated provider
+  contract examples, a cache break-even equation, measured pass-through and
+  blended pricing choices, and a joint useful-reuse ledger.
+- Added the `CacheReuseReceipt` design, exact versus approximate and
+  KV-versus-answer boundaries, cache-aware scheduling constraints,
+  non-prefix cross-attention repair, semantic-cache risk tiers, provider
+  opacity, timing leakage, and false-negative-resistant experiment gates.
+- Added P6.7 and its research, intake, and triage records. Reader prose and
+  source integration are terminal at `argument`; the receipt schema,
+  validator, natural exact-prefix campaign, and separate semantic-response
+  safety campaign remain deferred and confer no support, price, speed,
+  privacy, deployment, release, or SOTA claim.
+
 ## 2026-07-23 — Heterogeneous inference memory written into the manuscript
 
 - Converted the P6.6 paging packet from planning-only material into six

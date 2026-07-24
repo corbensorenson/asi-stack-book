@@ -27,6 +27,7 @@ primary_sources:
   - "ext_llada_2025"
   - "ext_scaling_dllms_2026"
   - "ext_recurrent_transformer_2026"
+  - "kernel_english_residual_compiler"
   - "ext_airllm_2023"
   - "ext_deepspeed_inference_2022"
   - "ext_flexgen_2023"
@@ -39,6 +40,15 @@ primary_sources:
   - "ext_specache_2025"
   - "ext_specoffload_2025"
   - "ext_atsinfer_2026"
+  - "ext_openai_prompt_caching_docs_2026"
+  - "ext_anthropic_prompt_caching_docs_2026"
+  - "ext_gemini_context_caching_docs_2026"
+  - "ext_vllm_automatic_prefix_caching_2026"
+  - "ext_sglang_radixattention_2024"
+  - "ext_prompt_cache_2024"
+  - "ext_mooncake_2025"
+  - "ext_cacheblend_2025"
+  - "ext_azure_llm_semantic_cache_2026"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -57,11 +67,11 @@ open_evidence_gaps:
 | Status | conceptual |
 | Manuscript maturity | v0.3 claim-proof program |
 | Last updated | 2026-07-23 |
-| Primary source records | 34 assigned records: ten local architecture sources; eleven decoding, serving, recurrent, state-space, and diffusion comparators; and thirteen heterogeneous-memory comparators spanning layer streaming, planned placement, memory mapping, flash-aware loading, sparse placement, KV allocation and prediction, speculative offload, and tensor scheduling |
+| Primary source records | 43 assigned records: eleven local architecture and residual sources; eleven decoding, serving, recurrent, state-space, and diffusion comparators; thirteen heterogeneous-memory comparators; and nine prefix, prompt-module, disaggregated-KV, non-prefix-fusion, provider-contract, and semantic-response-cache records |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source queue | primary: `cgs`, `cognitive_loop_closure`, `benchmaxxing`; supporting: `planforge`, `verification_bandwidth`, `tokenmana`, `talos`, `vcm_public`, `spinoza`, `rmi`; variants/external literature: `ext_speculative_decoding_2022`, `ext_multi_token_prediction_2024`, `ext_medusa_2024`, `ext_eagle_2024`, `ext_lookahead_decoding_2024`, `ext_layerskip_2024`, `ext_pagedattention_vllm_2023`, `ext_mamba_2023`, `ext_llada_2025`, `ext_scaling_dllms_2026`, `ext_recurrent_transformer_2026` |
-| Source loading state | source notes and passage-reviewed local raw-cache mappings exist for assigned internal sources; selected external literature mappings are passage-reviewed against public arXiv abstract/metadata pages only; the browser-GPT packet remains local-only author-intent context; no raw private source text or full external paper artifacts are published. |
+| Source queue | primary: `cgs`, `cognitive_loop_closure`, `benchmaxxing`; supporting: the local generation, verification, resource, context, residual, and architecture sources; variants/external literature: acceleration substrates, heterogeneous inference memory, exact-prefix and prompt-module caches, cache-aware scheduling, disaggregated and non-prefix KV reuse, current provider contracts, and semantic response caching |
+| Source loading state | all 43 assigned records have source notes; passage-reviewed local raw-cache mappings retain their earlier boundary, while the new cache packet is mapped from primary papers and current official documentation inspected 2026-07-23; the browser-GPT packet remains local-only author-intent context; no provider behavior or external performance result is reproduced. |
 | Test state | `AsiStackProofs.FastGeneration` retains three genuine finite countermodels. `AsiStackProofs.FastGenerationRefinement` adds a seventeen-declaration, eight-stage request-to-closure lifecycle with sixty routes. `python3 scripts/validate_fast_generation_refinement.py` independently reaches every route, rejects 51/51 non-accepting mutations, recompiles Lean, replays the exact 2-valid/4-invalid baseline harness, revalidates the three-route/four-task accounting bundle and 1-valid/6-invalid Theseus import, and digest-binds every consumed fixture and result. One verified witness and one fallback witness reach closure with no support assignment or external-effect authority. Thirty-five projection, assumption-restatement, and copied-summary declarations are physically retired. This is finite authored policy/conformance evidence only: no model-speed, natural-workload usefulness, verifier-independence, deployed-fallback, serving, transfer, SOTA, or support claim. |
 
 ## Drafting guardrail
@@ -406,6 +416,170 @@ that this repository has a fast, exact, durable, or generally superior
 implementation. They tell us which mechanism distinctions a serious
 implementation and benchmark must preserve.
 
+## Inference reuse: prefix hits, KV reuse, and response caching
+
+“Cache hit” is too vague for an inference contract. It can mean that one
+autoregressive request reused its own earlier keys and values, that a later
+request inherited an exact prompt prefix, that a worker fetched compatible KV
+state from another tier, or that the service returned an old answer without
+running the model at all. Those routes avoid different work and carry different
+correctness, privacy, freshness, and pricing obligations.
+
+| Cache object | Match rule | Work avoided | Work that remains |
+|---|---|---|---|
+| In-request decode KV | Same live sequence and model state | Recomputing prior-token keys and values | Every next-token model step |
+| Exact prompt-prefix KV | Exact compatible token prefix | Prefill for the reusable prefix | Uncached suffix prefill and a new output |
+| Prompt module | Declared module, position schema, and composition | Attention-state work for the module | Composition, suffix, and new output |
+| Persistent or disaggregated KV | Compatible state available on another tier or worker | Repeated prefill after retrieval | Lookup, transfer, validation, suffix, and decode |
+| Non-prefix chunk KV | Compatible chunks plus a recomputation policy | Part of repeated chunk prefill | Cross-context repair and decode |
+| Exact output memo | Exact request and dependency closure | The model request | Validity checks, disclosure, and downstream verification |
+| Semantic response cache | Similar request accepted by an approximate policy | The model request on a hit | Similarity lookup, freshness checks, and often verification |
+
+The first line is ordinary autoregressive execution, not a cross-request hit.
+The next four reuse model computation but still produce a new answer. The last
+two reuse a decision or artifact. A service that bills “cached inference”
+should say which row occurred.
+
+### Exact prefix reuse saves prefill, not generation
+
+During prefill, a causal transformer computes attention state for the prompt.
+When a later request begins with the same compatible token sequence, the
+runtime can retain or load that prefix state and compute only the uncached
+suffix. This principally reduces prefill work, time to first token, and prefill
+capacity pressure. It does not remove the sequential decode of newly generated
+tokens. It also does not guarantee that the new answer matches an earlier
+answer: sampling, an uncached suffix, tool state, model behavior, or downstream
+verification can all differ.
+
+Current OpenAI, Anthropic, and Gemini documentation exposes variations of this
+contract. The details differ—automatic versus explicit caching, breakpoints,
+minimum sizes, lifetimes, write meters, read meters, and storage charges—but
+the common rule is to put the largest stable prefix before volatile material.
+Stable tool definitions, system policy, output schemas, examples, and canonical
+reference material are natural candidates. Per-user data, timestamps, retrieved
+material that changes frequently, and the current question usually come later.
+That layout is subordinate to instruction and security semantics: untrusted
+text must not be moved into a privileged position merely to win a cache hit.
+
+Text equality is not enough to establish state equality. A reusable-prefix key
+may need to bind the provider, model and checkpoint, tokenizer and vocabulary,
+adapter, quantization, runtime, kernels, precision, position scheme, prompt
+tokens and order, image bytes and detail, tools, output schema, and any
+reasoning or generation configuration that changes the cached computation. It
+also needs a tenant or sharing scope, authority and policy epoch, privacy and
+rights class, source versions, cache format, block chain, creation time,
+expiry, and invalidation epoch. Where a provider keeps part of that identity
+opaque, the application should record both the fields it supplied and the
+provider-reported cached-token count instead of claiming that it verified the
+internal key.
+
+vLLM's Automatic Prefix Caching makes the systems form concrete: completed KV
+blocks are chained through parent and token-block hashes, adapter and
+multi-modal identity can enter the hash, and unreferenced cached blocks are
+evicted under pressure. Its cache-salt option matters because shared-cache
+timing can itself reveal that another trust domain requested a prefix. A
+cryptographic digest reduces accidental or adversarial collision risk, but it
+does not supply authorization, freshness, deletion, or useful economics.
+
+### Reuse is a scheduling and placement policy
+
+SGLang's RadixAttention treats shared prefixes as workload structure. Requests
+or branches with a long shared prefix can occupy a radix tree, and a
+cache-aware scheduler can order work to preserve useful state. That expands the
+decision from “is this block present?” to “which admitted request should run
+next?” Prefix locality can improve aggregate throughput while worsening a
+deadline, starving an unrelated request, or creating cross-tenant coupling.
+The scheduler therefore needs explicit fairness, risk, deadline, isolation,
+backpressure, and tail-latency constraints in addition to a reuse objective.
+
+Prompt Cache takes a more explicit route. It defines reusable prompt modules
+through a schema and preserves their positional meaning when composing a
+request. This can make reuse auditable: the caller names a versioned module
+rather than hoping an opaque prefix happens to match. It also creates a new
+contract. The module schema, positions, composition rules, source dependencies,
+and rights must remain compatible at use time.
+
+Mooncake pushes KV state beyond one worker, treating DRAM, SSD, network links,
+prefill workers, and decode workers as a distributed cache fabric. Persistent
+or disaggregated reuse is beneficial only when
+
+\[
+t_{\text{lookup}} + t_{\text{transfer}} + t_{\text{validation}}
+< t_{\text{recompute}} + \Delta_{\text{queue}}
+\]
+
+under the same quality and lifecycle contract. A remote KV object can be
+numerically compatible yet slower to fetch than recompute, expired under a
+source correction, inaccessible to the current tenant, or costly to delete
+from every replica. Cross-worker reuse is distributed state management, not a
+free extension of a local allocator.
+
+### Non-prefix fusion needs recomputation or an approximation claim
+
+Retrieved documents and reusable instruction blocks do not always remain one
+unchanged prefix. An independently cached chunk was encoded at some position
+with some preceding context. Concatenating several such KV objects can omit the
+cross-attention that full prefill would have computed between the chunks.
+CacheBlend makes this failure explicit and selectively recomputes a subset of
+token state while overlapping that work with KV retrieval.
+
+The important lesson is not that selective recomputation is always enough. It
+is that arbitrary chunk reuse is not exact prefix reuse. Unless full
+recomputation or an accepted equivalence argument restores the same
+computation, the route is approximate. Qualification needs a full-prefill
+baseline, adversarial chunk order and interaction cases, task quality and
+calibration, recomputation selection diagnostics, and a method-specific rescue
+ladder. A fast negative result from naïvely concatenated caches would only
+refute that broken composition, not non-prefix reuse as a class.
+
+### Output and semantic caches reuse decisions
+
+An exact output cache returns a prior answer. Its key must close over every
+dependency that can change the answer's admissibility: request and model
+identity, decoding policy and randomness, retrieved sources, tool results,
+current time and locale, user permissions, policy, external side-effect state,
+and output schema. That closure can be useful for immutable classification,
+content-addressed transformation, or verified deterministic compilation. It is
+much narrower for personalized, dynamic, open-world, or side-effecting work.
+
+A semantic response cache goes further by treating embedding similarity as
+permission to reuse a prior answer. Microsoft's Azure policy documentation
+explicitly warns that a semantic hit can be incorrect, outdated, or unsafe.
+This is approximate decision reuse, not numerical acceleration. It should be a
+named route with calibrated thresholds, tenant and policy partitions, risk
+admission, stale and poisoned-entry tests, disclosure, verification where
+required, and a fresh-model fallback. Time-sensitive facts, personalized
+decisions, high-impact advice, security operations, and rights-sensitive
+material should default to fresh evaluation unless a claim-specific policy
+earns a narrower exception.
+
+### The cache-reuse receipt
+
+Every route returns a `CacheReuseReceipt` even on a miss. The minimum record
+binds:
+
+- cache kind, entry identity, key digest, matched-prefix and total-input
+  lengths, hit, miss, partial, bypass, or invalid state, and reason;
+- model/runtime identity, tenant and sharing scope, dependency digest, creation
+  and access times, lifetime, invalidation epoch, and deletion state;
+- lookup, hash, write, read, transfer, storage-time, eviction, recomputation,
+  verification, output, and provider-reported token meters;
+- cold or warm class, queue time, time to first token, time per output token,
+  completion time, accepted-output state, repair, and fallback; and
+- authority decision, privacy treatment, reuse disclosure, cleanup, and any
+  unresolved residual.
+
+The matched benchmark uses the same model, prompt, hardware, runtime, load,
+tenant mix, output work, validation, and quality bar with the cache cold or
+disabled. It reports useful-token and byte reuse, not only request hit rate;
+cold, warm, steady, burst, eviction, failover, and adversarial-tenant regimes;
+and quality, safety, tails, fairness, storage, transfer, energy, money,
+invalidation lag, and deletion closure. Before a negative inference, key
+correctness, prompt layout, capacity, lifetime, scheduling, prewarming, and the
+source-recommended configuration must pass self-tests and rescue. The current
+sources define this design space. No cache implementation or speed result has
+been reproduced here.
+
 ## Interfaces
 
 Generation choices are surfaced through a generation-mode record. Fast
@@ -624,6 +798,15 @@ These rows keep Fast Generation Architectures's manifest assignments visible at 
 | `ext_specache_2025` | Metadata-first comparator: SpeCache: Speculative Key-Value Caching for Efficient Generation of LLMs. Primary speculative-KV-prefetch source keeping complete KV state in CPU memory, a low-bit importance copy in VRAM, and predicted next-step KV transfers. Source-reported quality and memory results are unreproduced. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_specoffload_2025` | Metadata-first comparator: SpecOffload: Unlocking Latent GPU Capacity for LLM Inference on Resource-Constrained Devices. Primary composition source for target-model offloading, draft-model placement, speculative decoding, and joint tensor/decoding planning. It is not speculative physical-page prediction, and reported results are unreproduced. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_atsinfer_2026` | Metadata-first comparator: Automated Tensor Scheduling for Hybrid CPU-GPU LLM Inference on Consumer Devices. Very recent preprint comparator for tensor-granular static placement, load-aware dynamic transfer, and asynchronous CPU-GPU coordination on consumer devices. Only abstract/metadata were reviewed; reported results are provisional and unreproduced. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_openai_prompt_caching_docs_2026` | Metadata-first comparator: Prompt Caching. Current official provider contract for exact-prefix prompt caching, cache-write and cache-read metering, usage receipts, retention, organization isolation, and rate-limit boundaries. Product behavior and prices are time-sensitive; inspected 2026-07-23. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_anthropic_prompt_caching_docs_2026` | Metadata-first comparator: Prompt caching. Current official provider contract for reusable prompt prefixes, explicit cache breakpoints, five-minute and one-hour lifetimes, cache creation and read metering, and prewarming. Product behavior and prices are time-sensitive; inspected 2026-07-23. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_gemini_context_caching_docs_2026` | Metadata-first comparator: Context caching. Current official provider contract for implicit and explicit context caching, common-prefix placement, cached-token usage reporting, time-to-live, and storage charges. Product behavior and prices are time-sensitive; inspected 2026-07-23. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_vllm_automatic_prefix_caching_2026` | Metadata-first comparator: Automatic Prefix Caching. Official vLLM design documentation for block-hash exact-prefix KV reuse, least-recently-used eviction, multi-modal and adapter identity, and tenant cache-salt protection against timing inference. No local serving benchmark was run. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_sglang_radixattention_2024` | Metadata-first comparator: SGLang: Efficient Execution of Structured Language Model Programs. Primary RadixAttention and cache-aware scheduling source for structured multi-call language-model programs. Source-reported throughput and theorem scope remain unreproduced. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_prompt_cache_2024` | Metadata-first comparator: Prompt Cache: Modular Attention Reuse for Low-Latency Inference. Primary MLSys source for schema-defined reusable prompt modules, positional accuracy, and attention-state reuse across prompts. Source-reported latency remains unreproduced. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_mooncake_2025` | Metadata-first comparator: Mooncake: Trading More Storage for Less Computation — A KVCache-centric Architecture for Serving LLM Chatbot. Primary FAST 2025 source for a KV-cache-centric disaggregated serving architecture spanning prefill, decode, DRAM, SSD, and network resources. Production-trace and capacity results remain source-reported. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_cacheblend_2025` | Metadata-first comparator: CacheBlend: Fast Large Language Model Serving for RAG with Cached Knowledge Fusion. Primary source for non-prefix and multi-chunk KV reuse with selective recomputation. It makes the cross-attention failure of naïve independent-chunk KV fusion explicit. Source-reported latency and quality remain unreproduced. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_azure_llm_semantic_cache_2026` | Metadata-first comparator: Azure API Management LLM semantic cache lookup policy. Official semantic-response-cache policy documentation. It treats vector similarity as an approximate response-reuse decision and warns that a hit can return an incorrect, outdated, or unsafe answer. No local semantic-cache deployment was run. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Summary

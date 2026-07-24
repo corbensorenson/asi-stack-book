@@ -4,9 +4,10 @@ chapter_id: "context-transactions-snapshots-mounts-and-taint"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 manuscript draft"
-last_updated: "2026-07-16"
+last_updated: "2026-07-23"
 primary_sources:
   - "vcm_public"
+  - "platonic_world_model"
   - "ladon_manhattan"
   - "context_engineer"
   - "black_hole_context_manager"
@@ -22,6 +23,12 @@ primary_sources:
   - "bugbrain_project"
   - "corbens_best_model_possible_project"
   - "reflexive_router_whitepaper"
+  - "kernel_english_residual_compiler"
+  - "ext_openai_prompt_caching_docs_2026"
+  - "ext_anthropic_prompt_caching_docs_2026"
+  - "ext_gemini_context_caching_docs_2026"
+  - "ext_vllm_automatic_prefix_caching_2026"
+  - "ext_azure_llm_semantic_cache_2026"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -40,12 +47,12 @@ open_evidence_gaps:
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
 | Manuscript maturity | v0.3 manuscript draft |
-| Last updated | 2026-07-14 |
-| Primary source records | `vcm_public`, `ladon_manhattan`, `context_engineer`, `black_hole_context_manager`, `vcm_editable`, `ext_graphrag_2024`, `ext_mem0_2025`, `ext_cap_theorem_gilbert_lynch_2002`, `ext_txfs_2018`, `ext_bourtoule_machine_unlearning_2021`, `cca_project`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `corbens_best_model_possible_project`, `reflexive_router_whitepaper` |
+| Last updated | 2026-07-23 |
+| Primary source records | 23 assigned records spanning transactional context, state and branch semantics, historical project recovery, exact-prefix cache contracts, tenant-partitioned KV reuse, and semantic-response-cache validity |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source queue | primary: `vcm_public`; supporting: `ladon_manhattan`, `context_engineer`, `black_hole_context_manager`, `ext_cap_theorem_gilbert_lynch_2002`, `ext_txfs_2018`, `cca_project`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `corbens_best_model_possible_project`, `reflexive_router_whitepaper`; variants: `ext_graphrag_2024`, `ext_mem0_2025`; connector/recovery: `vcm_editable`, `ext_bourtoule_machine_unlearning_2021` |
-| Source loading state | all 16 source notes inspected and mapped; passage-reviewed local raw cache: `vcm_public`, `ladon_manhattan`, `context_engineer`, `black_hole_context_manager`, `reflexive_router_whitepaper`; connector/source-note boundary: `vcm_editable`; bounded primary-record or primary-paper notes: GraphRAG, Mem0, CAP, TxFS, and Machine Unlearning; public-safe pinned notes: five historical projects |
+| Source queue | primary: `vcm_public`; supporting: the local context, semantic-basis, transaction, recovery, and residual sources; variants: GraphRAG, Mem0, and the four current prefix-cache contracts; connector/recovery: editable VCM, machine unlearning, and semantic response caching |
+| Source loading state | all 23 source notes inspected and mapped; passage-reviewed local raw caches retain their earlier boundary, while the new provider and implementation records are public documentation comparators inspected 2026-07-23; no provider cache behavior or semantic-cache validity result is reproduced |
 | Test state | Exact authored scaffold: 3 valid/6 rejecting memory-store records; 2 valid/4 rejecting ordered sequences; 1 bounded five-project restart lifecycle/10 rejecting mutations; reachable 6-event transaction execution with 78/78 rejected mutations; 37 live Lean declarations under 4 targets. No concurrent store, actual process crash, filesystem-journal recovery, distributed commit, natural model-backed workload, useful advantage, or chapter-core support effect. |
 
 ## Drafting guardrail
@@ -318,6 +325,96 @@ while a consumer view expires preserves history without authorizing reuse.
 These rules are architectural requirements from the paper. They have not been
 tested under concurrent actors, real cache collisions, cross-tenant traffic,
 crashes, or production invalidation, so the core remains at `argument`.
+
+### Response-cache validity: exact and semantic hits
+
+An inference prefix cache and a response cache are different descendants. The
+prefix cache reuses compatible model state and produces a new answer. A
+response cache returns a prior answer and skips some or all new model
+evaluation. Its transaction boundary must therefore establish that the old
+answer remains admissible for the new request.
+
+An exact output-cache key closes over more than prompt bytes. It binds the
+request and consumer, model and decoding policy, tool versions and results,
+retrieved sources, schema, locale and time horizon, principal and permissions,
+purpose, policy and rights epochs, side-effect state, verifier requirements,
+and every source dependency whose change can alter the answer. Random
+generation may make byte-identical replay impossible even under an identical
+prompt; “exact” then means exact request identity under a policy that
+explicitly permits prior-output reuse, not a proof that a fresh stochastic run
+would have returned the same text.
+
+A semantic cache weakens the match rule further. It embeds a new request,
+searches prior requests, and returns a stored answer when similarity clears a
+threshold. That is an approximate routing decision. Microsoft's Azure policy
+documentation warns directly that a semantic hit can be incorrect, outdated,
+or unsafe. A high vector score does not establish the same user, time, legal
+regime, source state, requested granularity, negation, exception, or
+side-effect intent.
+
+The transaction layer therefore treats a semantic match as a candidate, never
+as truth. Admission is risk-class specific:
+
+- immutable, content-addressed, side-effect-free transformations may admit
+  exact output memoization after deterministic verification;
+- bounded low-impact questions may admit semantic reuse with calibrated
+  thresholds, freshness, disclosure, and a fresh-evaluation fallback;
+- dynamic facts, personalized decisions, high-impact advice, security actions,
+  rights-sensitive material, and side-effecting operations default to fresh
+  evaluation unless a narrower policy has earned qualification; and
+- any request with unresolved tenant, authority, source, policy, or time
+  dependencies bypasses the response cache.
+
+“Fresh” is not one time-to-live field. An entry can remain inside a provider's
+retention window while a cited source is corrected, an access grant is revoked,
+a tool changes, a policy is replaced, a user leaves a role, or an external
+effect changes the world. Each entry records both a physical lifetime and a
+dependency closure. Invalidation walks that closure to response variants,
+embeddings, indexes, replicas, backups, downstream artifacts, and any compiled
+route that can return the answer. If a descendant cannot be reached or deleted,
+the transaction records an owned residual and blocks claims of complete
+removal.
+
+Provider-side prefix caches add an opacity boundary. OpenAI, Anthropic, and
+Gemini expose cached-token or cache-read/write usage and document current
+retention behavior, but the application may not observe the exact internal
+block identity or every eviction. The application receipt can state that the
+provider reported a hit, the request fields it supplied, the contract version
+it relied on, and the invalidation it requested. It cannot convert those facts
+into proof that all provider state was fresh, erased, isolated, or
+cryptographically identical.
+
+Shared self-hosted caches need an additional confidentiality boundary. vLLM
+documents a request cache salt that prevents different trust groups from
+sharing hash-derived blocks and reduces timing inference about another group's
+prefixes. Tenant partitioning, encryption, access control, constant-time
+behavior where required, and rate-limit isolation are distinct defenses. A
+hash collision defense does not prevent a valid but unauthorized cross-tenant
+hit, and an access check does not prevent timing from revealing that an entry
+exists.
+
+Every response hit returns the stored answer plus a `CacheReuseReceipt`. The
+receipt names exact or semantic match, entry and dependency digests, similarity
+and threshold where applicable, tenant and authority scope, source and policy
+epochs, creation and access time, expiry, invalidation status, verifier result,
+reuse disclosure, downstream effects, and residuals. It also preserves the
+miss and bypass reasons. This lets a later observer distinguish “the model
+answered now,” “compatible prefill was reused,” and “a prior answer was
+returned.”
+
+Poisoning is a lifecycle event, not only a retrieval error. A malicious prompt,
+compromised source, weak answer, or prompt-injected tool result can become a
+popular cached artifact and spread farther than the original request.
+Qualification therefore includes poisoned entries, near-duplicate negations,
+changed dates and permissions, source corrections, revocation races,
+cross-tenant probes, stale replicas, failed deletion, and verifier outage. The
+semantic threshold is calibrated against harmful false positives, not chosen
+only to maximize hit rate.
+
+These requirements do not establish that response caching is useful. The book
+has not deployed or calibrated one. They establish the minimum record needed
+to test the idea without laundering approximate similarity into a claim of
+fresh reasoning.
 
 ### Semantic basis, branch containment, and actuality promotion
 
@@ -677,6 +774,11 @@ These rows keep Context Transactions, Snapshots, Mounts, and Taint's manifest as
 |---|---|---|
 | `platonic_world_model` | Metadata-first comparator: The Platonic World Model: A Semantic Constitution for Grounded, Proof-Carrying, Self-Editing Artificial Intelligence. Corben-authored July 2026 conceptual architecture and falsifiable research program for semantic continuity through stable Form lineages, immutable semantic versions, typed Essence Contracts, six mutually constraining planes, explicit proposition-attestation-commitment-proof separation, branch-protected world dynamics, qualified grounding, semantic transactions, runtime packet compilation, and federated mappings. Existing chapters are upgraded first; no implemented substrate, benchmark result, philosophical solution to grounding, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `kernel_english_residual_compiler` | Metadata-first comparator: Kernel English with Hierarchical, Interaction-Amortized Residuals: A Dual-Vocabulary Cognitive Compiler for Efficient Language-Model Reasoning. Corben-authored July 2026 architecture proposal for KERC: protected-object capture, uncertainty-aware normalization, sense-aware Kernel IR, dual surface/core vocabularies, a four-level interaction-amortized residual ledger, exact object storage, grammar-aware macro fusion, structured answer packets, rendering, round-trip verification, versioned migration, and complete rate-compute-fidelity evaluation. Existing chapters are upgraded first; no implementation, benchmark, novelty, efficiency, fidelity, safety, transfer, SOTA, AGI, ASI, or support-state result is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_openai_prompt_caching_docs_2026` | Metadata-first comparator: Prompt Caching. Current official provider contract for exact-prefix prompt caching, cache-write and cache-read metering, usage receipts, retention, organization isolation, and rate-limit boundaries. Product behavior and prices are time-sensitive; inspected 2026-07-23. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_anthropic_prompt_caching_docs_2026` | Metadata-first comparator: Prompt caching. Current official provider contract for reusable prompt prefixes, explicit cache breakpoints, five-minute and one-hour lifetimes, cache creation and read metering, and prewarming. Product behavior and prices are time-sensitive; inspected 2026-07-23. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_gemini_context_caching_docs_2026` | Metadata-first comparator: Context caching. Current official provider contract for implicit and explicit context caching, common-prefix placement, cached-token usage reporting, time-to-live, and storage charges. Product behavior and prices are time-sensitive; inspected 2026-07-23. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_vllm_automatic_prefix_caching_2026` | Metadata-first comparator: Automatic Prefix Caching. Official vLLM design documentation for block-hash exact-prefix KV reuse, least-recently-used eviction, multi-modal and adapter identity, and tenant cache-salt protection against timing inference. No local serving benchmark was run. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_azure_llm_semantic_cache_2026` | Metadata-first comparator: Azure API Management LLM semantic cache lookup policy. Official semantic-response-cache policy documentation. It treats vector similarity as an approximate response-reuse decision and warns that a hit can return an incorrect, outdated, or unsafe answer. No local semantic-cache deployment was run. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Summary

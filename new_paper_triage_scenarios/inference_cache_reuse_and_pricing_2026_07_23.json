@@ -1,0 +1,73 @@
+{
+  "scenario_id": "inference-cache-reuse-and-pricing-triage-2026-07-23",
+  "scenario_scope": "Coordinated intake of official provider contracts and primary systems work on exact prefix caching, prompt modules, cache-aware scheduling, disaggregated KV state, non-prefix fusion, semantic output caching, and cache-hit pricing.",
+  "case_validity_state": "reviewed",
+  "cases": [
+    {
+      "case_id": "cache-existing-owner-integration",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "fast-generation-architectures",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "Fast Generation already owns KV allocation, prefix-reuse controls, serving architecture, and latency semantics. Resource Economics and Context Transactions already own the two bounded handoffs.",
+      "required_before_drafting": [
+        "completed primary source notes",
+        "completed cache taxonomy",
+        "completed owner-boundary decision",
+        "current-price volatility and non-reproduction boundaries"
+      ],
+      "evidence_transition_preconditions": [
+        "matched natural workload",
+        "complete cache-disabled baseline",
+        "method-specific rescue and independent evaluator",
+        "accepted claim-specific transition"
+      ],
+      "promotion_blockers": [
+        "no local cache deployment",
+        "no reproduced external performance result",
+        "no semantic-cache calibration or lifecycle closure"
+      ],
+      "non_claims": [
+        "does not establish faster or cheaper inference",
+        "does not promote any chapter core"
+      ]
+    },
+    {
+      "case_id": "cache-standalone-chapter-rejection",
+      "intake_kind": "source_variant",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "reject_duplicate",
+      "chapter_manifest_action": "reject_duplicate",
+      "existing_chapter_id": "fast-generation-architectures",
+      "proposed_chapter_id": "inference-cache-architectures-and-pricing",
+      "decision_rationale": "A standalone chapter would split one serving route across generation mechanics, economic allocation, and context validity while duplicating three mature owner boundaries.",
+      "required_before_drafting": [
+        "not applicable; use the three existing owners"
+      ],
+      "evidence_transition_preconditions": [
+        "a future distinct owner interface would require fresh adjudication"
+      ],
+      "promotion_blockers": [
+        "topic breadth alone is not a chapter boundary"
+      ],
+      "non_claims": [
+        "does not reserve a future cache chapter"
+      ]
+    }
+  ],
+  "validation_boundary": "Records an existing-chapter integration and rejects a duplicate chapter. It does not validate provider prices, a cache implementation, any latency or cost result, semantic equivalence, privacy, invalidation, deletion, or transfer.",
+  "support_state_effect": "backlog_only",
+  "non_claims": [
+    "does not change chapter order",
+    "does not promote support",
+    "does not authorize deployment or cross-tenant cache sharing"
+  ]
+}

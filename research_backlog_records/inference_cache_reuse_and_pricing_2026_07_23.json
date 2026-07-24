@@ -1,0 +1,80 @@
+{
+  "backlog_id": "inference-cache-reuse-and-pricing-2026-07-23",
+  "triage_state": "integrated",
+  "source_or_gap": "The book discussed KV allocation, warm-prefix controls, page cache, and semantic descendants but did not coherently distinguish exact prefix reuse, persistent KV reuse, output memoization, semantic response caching, or honest cache-hit pricing.",
+  "access_state": "source_note_available",
+  "source_storage_policy": "repo_public_note_only",
+  "public_safety_state": "public_safe",
+  "assigned_chapters": [
+    "fast-generation-architectures",
+    "resource-economics-and-token-budgets",
+    "context-transactions-snapshots-mounts-and-taint"
+  ],
+  "chapter_action_policy": "Deepen three existing owners: Fast Generation owns inference-reuse mechanisms and receipts; Resource Economics owns break-even and pricing; Context Transactions owns response validity and invalidation. Do not create a standalone cache chapter.",
+  "chapter_decision_refs": [
+    "docs/inference_cache_reuse_and_pricing_research_2026_07_23.md",
+    "new_paper_triage_scenarios/inference_cache_reuse_and_pricing_2026_07_23.json",
+    "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md"
+  ],
+  "deduplication_state": "overlaps_existing_chapter",
+  "merge_or_split_policy": "Keep numerical reuse, economics, and durable validity in their existing owners and connect them with one CacheReuseReceipt. A standalone chapter would duplicate serving, resource, and transaction boundaries.",
+  "boundary_decision_rationale": "A cache hit is not one mechanism: exact KV reuse changes prefill, output memoization changes whether a model runs, semantic reuse changes decision semantics, and persistence changes state lifecycle. The existing owners already govern those consequences.",
+  "source_note_state": "available",
+  "claim_mapping_state": "complete",
+  "passage_review_state": "complete",
+  "external_literature_need": [
+    "periodic refresh of current provider cache contracts and prices",
+    "independent benchmark of persistent and disaggregated KV-cache implementations",
+    "semantic-cache false-positive and stale-answer benchmarks with public workloads",
+    "cache privacy, timing, poisoning, and deletion studies"
+  ],
+  "proof_or_test_backlog": [
+    "implement a versioned CacheReuseReceipt schema with valid, partial-hit, stale, cross-tenant, and deleted-entry fixtures",
+    "execute a natural exact-prefix workload with multiple prefix lengths and reuse counts under cold, warm, burst, and failover conditions",
+    "compare cache-aware and fairness-aware scheduling with complete tail and starvation accounting",
+    "evaluate semantic output reuse separately on deliberately confusable, dynamic, personalized, and poisoned prompts"
+  ],
+  "evidence_transition_precondition": [
+    "exact model, tokenizer, runtime, cache identity, capacity, lifetime, tenant, policy, and source epochs frozen prospectively",
+    "matched cache-disabled and full-prefill baselines plus source-recommended tuning",
+    "quality and exact-output checks, method-specific rescue, and independent evaluator",
+    "complete write, read, storage, transfer, lookup, eviction, miss, output, verification, and governance cost",
+    "accepted claim-specific evidence transition"
+  ],
+  "required_before_drafting": [
+    "completed: primary source inventory and notes",
+    "completed: exact-prefix versus result-versus-semantic taxonomy",
+    "completed: chapter-owner deduplication",
+    "completed: source-scoped claims and current-price volatility boundary"
+  ],
+  "insertion_decision": "update_existing_chapter",
+  "source_refs": [
+    "docs/inference_cache_reuse_and_pricing_research_2026_07_23.md",
+    "sources/source_notes/ext_openai_prompt_caching_docs_2026.md",
+    "sources/source_notes/ext_sglang_radixattention_2024.md",
+    "sources/source_notes/ext_cacheblend_2025.md",
+    "sources/source_notes/ext_azure_llm_semantic_cache_2026.md"
+  ],
+  "support_state_effect": "argument_only",
+  "promotion_blockers": [
+    "no local cross-request cache deployment or billed hit",
+    "no independent reproduction of external latency or throughput results",
+    "no calibrated semantic-response-cache policy",
+    "no complete invalidation, deletion, privacy, or transfer result",
+    "provider behavior and price terms are time-sensitive"
+  ],
+  "residuals": [
+    "CacheReuseReceipt schema and fixtures remain unimplemented",
+    "natural exact-prefix campaign remains unexecuted",
+    "semantic-cache safety campaign remains unexecuted",
+    "provider-contract freshness requires periodic review"
+  ],
+  "next_action": "Retain the integrated reader material and implement the exact-prefix receipt and natural workload before any cost, speed, or safety promotion.",
+  "non_claims": [
+    "does not create a new chapter",
+    "does not prove a cache implementation faster, cheaper, private, or correct",
+    "does not reproduce provider pricing, bills, or service behavior",
+    "does not promote a chapter-core claim",
+    "does not authorize deployment, cross-tenant sharing, or semantic answer reuse"
+  ]
+}

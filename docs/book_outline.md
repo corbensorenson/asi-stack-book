@@ -2524,7 +2524,7 @@ Source loading queue:
 | Connector or recovery required | `vcm_editable`, `ext_bourtoule_machine_unlearning_2021` | Use editable VCM for vocabulary only and Machine Unlearning to separate storage deletion from parametric influence, privacy, behavioral forgetting, and downstream erasure. |
 
 
-| Manifest assignment reconciliation | `platonic_world_model`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `platonic_world_model`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `ext_openai_prompt_caching_docs_2026`, `ext_anthropic_prompt_caching_docs_2026`, `ext_gemini_context_caching_docs_2026`, `ext_vllm_automatic_prefix_caching_2026`, `ext_azure_llm_semantic_cache_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: Parallel and long-lived context mutation cannot be governed from retrieval results or success-shaped logs.
@@ -4058,7 +4058,7 @@ External literature queue:
 | KV-cache and serving-layer accelerators | Compare memory-bandwidth and throughput improvements separately from single-request latency. | source-noted via `ext_pagedattention_vllm_2023`; no local serving benchmark |
 
 
-| Manifest assignment reconciliation | `kernel_english_residual_compiler`, `ext_airllm_2023`, `ext_deepspeed_inference_2022`, `ext_flexgen_2023`, `ext_hf_accelerate_big_model_inference_2026`, `ext_llama_cpp_memory_mapping_2026`, `ext_llm_in_flash_2024`, `ext_powerinfer_2024`, `ext_vattention_2025`, `ext_infinigen_2024`, `ext_specache_2025`, `ext_specoffload_2025`, `ext_atsinfer_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `kernel_english_residual_compiler`, `ext_airllm_2023`, `ext_deepspeed_inference_2022`, `ext_flexgen_2023`, `ext_hf_accelerate_big_model_inference_2026`, `ext_llama_cpp_memory_mapping_2026`, `ext_llm_in_flash_2024`, `ext_powerinfer_2024`, `ext_vattention_2025`, `ext_infinigen_2024`, `ext_specache_2025`, `ext_specoffload_2025`, `ext_atsinfer_2026`, `ext_openai_prompt_caching_docs_2026`, `ext_anthropic_prompt_caching_docs_2026`, `ext_gemini_context_caching_docs_2026`, `ext_vllm_automatic_prefix_caching_2026`, `ext_sglang_radixattention_2024`, `ext_prompt_cache_2024`, `ext_mooncake_2025`, `ext_cacheblend_2025`, `ext_azure_llm_semantic_cache_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: token rate and serving throughput are routinely measured outside the consumer, quality, verifier, load, resource, rights, and recovery boundary needed for a useful-work claim.
@@ -4300,7 +4300,7 @@ Source loading queue:
 | Memory and adaptive-compute comparators | `ext_mem0_2025`, `ext_recurrent_transformer_2026`, `ext_dynamic_compute_recurrent_transformers_2026` | Compare token/latency savings, recurrent cache/traffic claims, and difficulty-dependent compute. Require pinned configurations and distinguish allocation from generalization, quality, and safety. |
 
 
-| Manifest assignment reconciliation | `ext_claw_swe_bench_2026`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `ext_mlperf_training_v6_2026`, `relational_dimension_compiler`, `ext_airllm_2023`, `ext_deepspeed_inference_2022`, `ext_flexgen_2023`, `ext_hf_accelerate_big_model_inference_2026`, `ext_llama_cpp_memory_mapping_2026`, `ext_llm_in_flash_2024`, `ext_powerinfer_2024`, `ext_vattention_2025`, `ext_infinigen_2024`, `ext_specache_2025`, `ext_specoffload_2025`, `ext_atsinfer_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `ext_claw_swe_bench_2026`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `ext_mlperf_training_v6_2026`, `relational_dimension_compiler`, `ext_airllm_2023`, `ext_deepspeed_inference_2022`, `ext_flexgen_2023`, `ext_hf_accelerate_big_model_inference_2026`, `ext_llama_cpp_memory_mapping_2026`, `ext_llm_in_flash_2024`, `ext_powerinfer_2024`, `ext_vattention_2025`, `ext_infinigen_2024`, `ext_specache_2025`, `ext_specoffload_2025`, `ext_atsinfer_2026`, `ext_openai_prompt_caching_docs_2026`, `ext_anthropic_prompt_caching_docs_2026`, `ext_gemini_context_caching_docs_2026`, `ext_vllm_automatic_prefix_caching_2026`, `ext_sglang_radixattention_2024`, `ext_prompt_cache_2024`, `ext_mooncake_2025`, `ext_cacheblend_2025`, `ext_azure_llm_semantic_cache_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: Compute, context, verification, simulation fidelity, and human attention are scarce resources that the architecture must allocate explicitly.

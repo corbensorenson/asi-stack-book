@@ -2,7 +2,7 @@
 
 Status: **active canonical successor**  
 Activated: 2026-07-16  
-Substantively revised: 2026-07-19
+Substantively revised: 2026-07-23
 Authority: Corben Sorenson  
 Machine status: `roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json`  
 Experiment authority: `docs/claim_bearing_experiment_competence_standard.md`
@@ -102,6 +102,7 @@ proceeds.
 | Existing-book integration — then | `P7.2-T1D-white-box-construct-validity-and-feature-analysis-depth` | W3 is terminal | Ingest the four missing primary records/notes, write the comparative method and construct-validity treatment, reconcile atoms and reader surfaces, and retain the no-promotion boundary. |
 | Existing-book integration — last | `P6.5-R16-B-current-reader-freshness` | R16-A, W3, and White-Box depth are terminal | Derive one current 61-chapter reader packet after the meaning-bearing edits, preserving the historical `reader-2026-07-18` release. |
 | Existing-owner paging packet — prose terminal; policy and empirical work deferred | `P6.6-heterogeneous-inference-memory-and-speculative-paging` | Reader-facing source integration was expressly commissioned and completed 2026-07-23; schema, validator, planner, hardware characterization, and empirical work retain the ordinary post-gate entry condition | Maintain the six completed manuscript integrations and source reconciliation. Later implement and validate the heterogeneous-memory policy and run only competent, matched, hardware-characterized paging experiments. Preserve exact/approximate, throughput/latency, and source/local evidence boundaries. No new chapter. |
+| Existing-owner inference-cache packet — prose terminal; receipt and empirical work deferred | `P6.7-inference-cache-reuse-and-honest-pricing` | Reader-facing source integration was expressly commissioned and completed 2026-07-23; no new chapter or support movement | Maintain the three coordinated manuscript integrations and nine-source packet. Later implement the cache-reuse receipt and run separate exact-prefix and semantic-response campaigns under the ordinary post-gate entry condition. Preserve KV-versus-output, exact-versus-semantic, hit-versus-useful-outcome, and provider-contract-versus-local-evidence boundaries. |
 | Formal slot — terminal | `P4-terminal-no-open-formal-packet` | All six frozen clusters terminal across 24 modules | Maintain the terminal audits and their consumers; open no new proof packet unless a dated, machine-validated amendment names the claim consumer, countermodel, and maximum inference. |
 | Empirical headline — ready, not passed | `P2-R3-storage-materialization-and-replacement-qualification` | Re-measure at run start; at the 2026-07-22 check the host had 71,648,034,816 free bytes, above the frozen 53,687,091,200-byte floor; every setup action remains inside the approved Docker-scoped protocol | Thirty sealed candidate recipes and receipts; terminal pool materialization; four competently qualified replacements restoring the fixed twelve-task denominator; rank progression only under the frozen amendment; zero protected-content leakage. No deletion of non-Docker user data is authorized. |
 | First structural tranche — terminal | White-Box, World Models, Human Factors, and Governed Operations are terminal at argument support | Four exact integration packets preserve owners, sources, formal ceilings, protocols, reader handoffs, and no-promotion boundaries | Maintenance only; no reopened chapter packet without a dated machine-validated defect. |
@@ -1433,6 +1434,88 @@ projections, W3 inheritance check, and explicit dispositions for unavailable
 hardware or unrun methods. Source-reported performance remains source-reported
 until independently reproduced.
 
+### P6.7 — Inference cache reuse and honest pricing
+
+**Status:** nine-source primary intake and the complete three-owner
+reader-prose slice completed 2026-07-23 by express owner commission. The
+`CacheReuseReceipt` schema, rejecting validator, natural exact-prefix workload,
+cache-aware scheduling comparison, and semantic-response-cache safety campaign
+remain deferred until the structural-resume gates are terminal.
+
+The source family now spans current OpenAI, Anthropic, and Gemini provider
+contracts; vLLM block-hash prefix reuse and tenant cache salts; SGLang
+RadixAttention and cache-aware scheduling; Prompt Cache's position-aware
+modules; Mooncake's disaggregated KV fabric; CacheBlend's non-prefix
+cross-attention repair; and Microsoft's semantic-response-cache warning. The
+exact research and pricing analysis is
+`docs/inference_cache_reuse_and_pricing_research_2026_07_23.md`.
+
+**Ownership decision.** Do not create a chapter. Fast Generation owns
+in-request KV, exact-prefix, prompt-module, persistent/disaggregated,
+non-prefix, exact-output, and semantic-response mechanism distinctions plus the
+cache-reuse receipt. Resource Economics owns write, read, storage, lookup,
+transfer, eviction, miss, rate-limit, and downstream-pricing economics.
+Context Transactions owns exact-response dependency closure, semantic-match
+admission, tenant and authority binding, freshness, invalidation, poisoning,
+disclosure, deletion, and residual state.
+
+**Completed manuscript integration.**
+
+1. Fast Generation now distinguishes seven cache objects; explains why exact
+   prefix hits reduce prefill and time to first token while still generating a
+   new answer; binds model, tokenizer, adapter, runtime, prompt, tenant, policy,
+   and source identity; covers prompt shape, block hashes, scheduling,
+   persistent placement, non-prefix repair, output memoization, semantic reuse,
+   and a complete cache-reuse receipt.
+2. Resource Economics now supplies a cache break-even model, dated examples of
+   current provider contract shapes, measured pass-through and alternative
+   pricing models, and a joint useful-reuse ledger rather than raw hit-rate
+   optimization.
+3. Context Transactions now separates prefix-state reuse from prior-answer
+   reuse; treats semantic similarity as an approximate candidate; defines
+   risk-tier admission and dependency-complete invalidation; and covers
+   provider opacity, timing leakage, poisoning, disclosure, and deletion
+   residuals.
+
+**Receipt and validation artifacts.** Create a versioned
+`CacheReuseReceipt` schema and fixtures for exact hit, partial hit, ordinary
+miss, policy bypass, stale source, wrong model or adapter, cross-tenant
+collision, expired authority, poisoned response, invalid semantic match, and
+incomplete deletion. The independent validator checks cache kind, entry and
+key identity, matched length, model/runtime identity, tenant and sharing scope,
+source and policy epochs, creation and expiry, invalidation, write/read/storage/
+lookup/transfer/eviction/recompute meters, quality and fallback, disclosure,
+cleanup, and residual ownership.
+
+**Competence gate before empirical interpretation.** A naïve cache layout or
+broken key cannot refute reuse. The exact-prefix campaign freezes model,
+tokenizer, adapter, runtime, hardware, load, capacity, lifetime, tenant mix,
+prompt layout, prefix length, reuse distribution, output work, and evaluator.
+It must pass source-recommended configuration, prewarming, identity,
+invalidation, isolation, and method-specific rescue before a negative
+classification. The matched cache-disabled/full-prefill baseline uses the same
+request stream. Run cold, warm, steady, burst, eviction, failover, source
+correction, policy revocation, and adversarial-tenant regimes.
+
+The semantic-response campaign remains separate because it tests decision
+reuse rather than prefill reuse. It needs deliberately confusable prompts,
+negation, changing dates and permissions, personalized queries, dynamic facts,
+poisoned entries, calibrated abstention, independent evaluation, disclosure,
+and a fresh-model fallback. A high hit rate or low bill cannot qualify unsafe
+answer reuse.
+
+**Metrics and promotion boundary.** Report eligible, written, read, partially
+reused, expired, invalidated, evicted, and deleted tokens and bytes; cache
+build, hashing, lookup, transfer, storage, eviction, recomputation, output,
+verification, and governance cost; time to first token, per-output-token and
+end-to-end latency, tails, queueing, throughput, fairness, quality, stale and
+unsafe reuse, accepted useful outcomes, deletion closure, and provider and
+infrastructure bills. “The provider reported cached tokens,” “the prefix was
+resident,” or “the invoice was lower” does not establish application validity,
+useful advantage, privacy, complete erasure, deployment, transfer, support, or
+SOTA. All current performance and prices remain source- or contract-reported
+until independently observed.
+
 ## P7 — Reader remediation and owner-authorized publication
 
 The first Round 15 publication transaction is complete. The
@@ -1690,6 +1773,9 @@ is not a debugging interface.
    current 61-chapter reader packet. The optimizer-landscape manuscript-depth
    amendment is terminal; its shared atom/reader projections remain inside
    R16-A/R16-B and its matched campaign remains an ordinary evidence residual.
+   Preserve the terminal P6.7 inference-cache prose and source packet while its
+   receipt schema and separate exact-prefix and semantic-response campaigns
+   remain deferred evidence residuals.
    Only after P2 materialization and replacement qualification plus those four
    integration repairs are terminal may A3 resume. Thereafter
    adjudicate at most one candidate per material empirical/evidence checkpoint
@@ -1733,7 +1819,7 @@ lies.
 | M3 — Reproduction and transfer | pending | Any broadened result has independent reproduction and two prospectively selected materially different transfer settings. |
 | M4 — Semantic formal depth | completed | All six frozen clusters are terminal across 24 modules with exact dispositions, modeled state, assumptions, countermodels, consumers, mutations, semantic separations, and maximum-inference ceilings. No aggregate theorem count or finite record grants empirical support. |
 | M5 — Effect-complete reference | pending | Multi-process authority-to-effect, rollback/residual, full-state, and deletion behavior passes adversarial and recovery tests. |
-| M6 — Renewal and structural completeness | in progress | A1/A2 and the four first-tranche admissions remain historical terminal receipts, but new admission is frozen. The optimizer-landscape manuscript-depth amendment is terminal. First close P2 materialization/replacement qualification and P6.5's atom, W3, White-Box depth, and current-reader gates in their enforced order. Then disposition the remaining eleven candidates at most one per material empirical/evidence checkpoint, with birth-complete atom, reader, source, ownership, and inheritance artifacts. |
+| M6 — Renewal and structural completeness | in progress | A1/A2 and the four first-tranche admissions remain historical terminal receipts, but new admission is frozen. The optimizer, heterogeneous-memory, and inference-cache manuscript-depth amendments are terminal at argument support; their executable evidence residuals remain open. First close P2 materialization/replacement qualification and P6.5's atom, W3, White-Box depth, and current-reader gates in their enforced order. Then disposition the remaining eleven candidates at most one per material empirical/evidence checkpoint, with birth-complete atom, reader, source, ownership, and inheritance artifacts. |
 | M7 — Reader/publication disposition | in progress | PDF, EPUB, and DOCX in `reader-2026-07-18` remain immutable published artifacts with exact receipts. Close only after the current 61-chapter derived-reader packet and compatibility residuals are terminally dispositioned, all public surfaces remain synchronized, and the final main/Pages attestation succeeds; a local freshness packet does not imply external publication. |
 | M8 — Successor continuity | pending | Every open item has a terminal disposition and the next exact authority is active. |
 

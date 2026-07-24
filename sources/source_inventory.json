@@ -6546,5 +6546,154 @@
     "updated": "2026-07-14",
     "citation_label": "Liu et al. (2026), ATSInfer",
     "doi": "10.48550/arXiv.2607.10183"
+  },
+  {
+    "id": "ext_openai_prompt_caching_docs_2026",
+    "title": "Prompt Caching",
+    "priority": "external_literature",
+    "layer": "inference_cache_reuse",
+    "chapter_targets": [
+      "fast-generation-architectures",
+      "resource-economics-and-token-budgets",
+      "context-transactions-snapshots-mounts-and-taint"
+    ],
+    "url": "https://developers.openai.com/api/docs/guides/prompt-caching",
+    "notes": "Current official provider contract for exact-prefix prompt caching, cache-write and cache-read metering, usage receipts, retention, organization isolation, and rate-limit boundaries. Product behavior and prices are time-sensitive; inspected 2026-07-23.",
+    "source_type": "official_documentation",
+    "updated": "2026-07-23",
+    "citation_label": "OpenAI (2026), Prompt Caching"
+  },
+  {
+    "id": "ext_anthropic_prompt_caching_docs_2026",
+    "title": "Prompt caching",
+    "priority": "external_literature",
+    "layer": "inference_cache_reuse",
+    "chapter_targets": [
+      "fast-generation-architectures",
+      "resource-economics-and-token-budgets",
+      "context-transactions-snapshots-mounts-and-taint"
+    ],
+    "url": "https://platform.claude.com/docs/en/build-with-claude/prompt-caching",
+    "notes": "Current official provider contract for reusable prompt prefixes, explicit cache breakpoints, five-minute and one-hour lifetimes, cache creation and read metering, and prewarming. Product behavior and prices are time-sensitive; inspected 2026-07-23.",
+    "source_type": "official_documentation",
+    "updated": "2026-07-23",
+    "citation_label": "Anthropic (2026), Prompt caching"
+  },
+  {
+    "id": "ext_gemini_context_caching_docs_2026",
+    "title": "Context caching",
+    "priority": "external_literature",
+    "layer": "inference_cache_reuse",
+    "chapter_targets": [
+      "fast-generation-architectures",
+      "resource-economics-and-token-budgets",
+      "context-transactions-snapshots-mounts-and-taint"
+    ],
+    "url": "https://ai.google.dev/gemini-api/docs/caching",
+    "notes": "Current official provider contract for implicit and explicit context caching, common-prefix placement, cached-token usage reporting, time-to-live, and storage charges. Product behavior and prices are time-sensitive; inspected 2026-07-23.",
+    "source_type": "official_documentation",
+    "updated": "2026-07-23",
+    "citation_label": "Google (2026), Gemini Context Caching"
+  },
+  {
+    "id": "ext_vllm_automatic_prefix_caching_2026",
+    "title": "Automatic Prefix Caching",
+    "priority": "external_literature",
+    "layer": "inference_cache_reuse",
+    "chapter_targets": [
+      "fast-generation-architectures",
+      "resource-economics-and-token-budgets",
+      "context-transactions-snapshots-mounts-and-taint"
+    ],
+    "url": "https://docs.vllm.ai/en/v0.14.1/design/prefix_caching/",
+    "notes": "Official vLLM design documentation for block-hash exact-prefix KV reuse, least-recently-used eviction, multi-modal and adapter identity, and tenant cache-salt protection against timing inference. No local serving benchmark was run.",
+    "source_type": "official_documentation",
+    "updated": "2026-07-23",
+    "citation_label": "vLLM (2026), Automatic Prefix Caching"
+  },
+  {
+    "id": "ext_sglang_radixattention_2024",
+    "title": "SGLang: Efficient Execution of Structured Language Model Programs",
+    "priority": "external_literature",
+    "layer": "inference_cache_reuse",
+    "chapter_targets": [
+      "fast-generation-architectures",
+      "resource-economics-and-token-budgets"
+    ],
+    "url": "https://papers.nips.cc/paper_files/paper/2024/hash/724be4472168f31ba1c9ac630f15dec8-Abstract-Conference.html",
+    "notes": "Primary RadixAttention and cache-aware scheduling source for structured multi-call language-model programs. Source-reported throughput and theorem scope remain unreproduced.",
+    "source_type": "conference_paper",
+    "arxiv_id": "2312.07104",
+    "published": "2024",
+    "updated": "2024-06-06",
+    "citation_label": "Zheng et al. (2024), SGLang",
+    "doi": "10.48550/arXiv.2312.07104"
+  },
+  {
+    "id": "ext_prompt_cache_2024",
+    "title": "Prompt Cache: Modular Attention Reuse for Low-Latency Inference",
+    "priority": "external_literature",
+    "layer": "inference_cache_reuse",
+    "chapter_targets": [
+      "fast-generation-architectures",
+      "resource-economics-and-token-budgets"
+    ],
+    "url": "https://proceedings.mlsys.org/paper_files/paper/2024/file/a66caa1703fe34705a4368c3014c1966-Paper-Conference.pdf",
+    "notes": "Primary MLSys source for schema-defined reusable prompt modules, positional accuracy, and attention-state reuse across prompts. Source-reported latency remains unreproduced.",
+    "source_type": "conference_paper",
+    "arxiv_id": "2311.04934",
+    "published": "2024",
+    "updated": "2024-04-25",
+    "citation_label": "Gim et al. (2024), Prompt Cache",
+    "doi": "10.48550/arXiv.2311.04934"
+  },
+  {
+    "id": "ext_mooncake_2025",
+    "title": "Mooncake: Trading More Storage for Less Computation — A KVCache-centric Architecture for Serving LLM Chatbot",
+    "priority": "external_literature",
+    "layer": "inference_cache_reuse",
+    "chapter_targets": [
+      "fast-generation-architectures",
+      "resource-economics-and-token-budgets"
+    ],
+    "url": "https://www.usenix.org/conference/fast25/presentation/qin",
+    "notes": "Primary FAST 2025 source for a KV-cache-centric disaggregated serving architecture spanning prefill, decode, DRAM, SSD, and network resources. Production-trace and capacity results remain source-reported.",
+    "source_type": "conference_paper",
+    "published": "2025",
+    "citation_label": "Qin et al. (2025), Mooncake"
+  },
+  {
+    "id": "ext_cacheblend_2025",
+    "title": "CacheBlend: Fast Large Language Model Serving for RAG with Cached Knowledge Fusion",
+    "priority": "external_literature",
+    "layer": "inference_cache_reuse",
+    "chapter_targets": [
+      "fast-generation-architectures",
+      "resource-economics-and-token-budgets"
+    ],
+    "url": "https://arxiv.org/abs/2405.16444",
+    "notes": "Primary source for non-prefix and multi-chunk KV reuse with selective recomputation. It makes the cross-attention failure of naïve independent-chunk KV fusion explicit. Source-reported latency and quality remain unreproduced.",
+    "source_type": "conference_paper",
+    "arxiv_id": "2405.16444",
+    "published": "2025",
+    "updated": "2025-04-03",
+    "citation_label": "Yao et al. (2025), CacheBlend",
+    "doi": "10.48550/arXiv.2405.16444"
+  },
+  {
+    "id": "ext_azure_llm_semantic_cache_2026",
+    "title": "Azure API Management LLM semantic cache lookup policy",
+    "priority": "external_literature",
+    "layer": "inference_cache_reuse",
+    "chapter_targets": [
+      "fast-generation-architectures",
+      "resource-economics-and-token-budgets",
+      "context-transactions-snapshots-mounts-and-taint"
+    ],
+    "url": "https://learn.microsoft.com/en-ie/azure/api-management/llm-semantic-cache-lookup-policy",
+    "notes": "Official semantic-response-cache policy documentation. It treats vector similarity as an approximate response-reuse decision and warns that a hit can return an incorrect, outdated, or unsafe answer. No local semantic-cache deployment was run.",
+    "source_type": "official_documentation",
+    "updated": "2026-07-23",
+    "citation_label": "Microsoft (2026), LLM semantic cache lookup policy"
   }
 ]

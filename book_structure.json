@@ -7651,7 +7651,12 @@
             "bugbrain_project",
             "corbens_best_model_possible_project",
             "reflexive_router_whitepaper",
-            "kernel_english_residual_compiler"
+            "kernel_english_residual_compiler",
+            "ext_openai_prompt_caching_docs_2026",
+            "ext_anthropic_prompt_caching_docs_2026",
+            "ext_gemini_context_caching_docs_2026",
+            "ext_vllm_automatic_prefix_caching_2026",
+            "ext_azure_llm_semantic_cache_2026"
           ],
           "source_queue": {
             "primary": [
@@ -7673,7 +7678,12 @@
             ],
             "variants": [
               "ext_graphrag_2024",
-              "ext_mem0_2025"
+              "ext_mem0_2025",
+              "ext_openai_prompt_caching_docs_2026",
+              "ext_anthropic_prompt_caching_docs_2026",
+              "ext_gemini_context_caching_docs_2026",
+              "ext_vllm_automatic_prefix_caching_2026",
+              "ext_azure_llm_semantic_cache_2026"
             ],
             "connector_or_recovery": [
               "vcm_editable",
@@ -7690,6 +7700,7 @@
             "Capture an observed pre-state binding exact source versions, content and index epochs, provenance and taint state, mount policy, locks or leases, caches, descendants, backups, and open obligations before mutation.",
             "Enforce purpose-bound mount namespaces with separate read, write, derive, delete, share, export, train, and execute permissions; transaction admission cannot widen authority or rights.",
             "Record actual reads, writes, derivations, deletions, revocations, cache touches, and side records rather than trusting requested or declared sets.",
+            "Classify exact response memoization and semantic response reuse separately from prefix-state reuse; bind every returned prior answer to request, model, tool, source, time, tenant, authority, policy, rights, verifier, disclosure, invalidation, deletion, and residual dependencies.",
             "Declare and test the isolation contract, including dirty reads, non-repeatable reads, phantoms, lost updates, write skew, stale-index reads, cross-branch leakage, and unauthorized mount visibility.",
             "Give copy-on-write branches explicit create, rebase, compare, merge, reject, quarantine, abort, and garbage-collection states; conflicts and unresolved obligations cannot collapse into silent last-writer-wins.",
             "Separate requested, admitted, prepared, applied, durably committed, consumer-visible, replayed, recovered, compensated, aborted, and indeterminate states with typed faults and observed transition receipts.",
@@ -7725,6 +7736,7 @@
             "No uncommitted, stale, foreign-branch, policy-mismatched, or unauthorized state becomes visible where the declared isolation and mount contract forbid it.",
             "Concurrent conflicts, lost updates, write skew, phantoms, stale indexes, and merge disagreements remain explicit; silent last-writer-wins cannot masquerade as a conflict-free commit.",
             "Mounts, branches, summaries, embeddings, translations, caches, replicas, and exports cannot widen authority, rights, purpose, retention, permitted use, support, or release.",
+            "A semantic cache match is an approximate route candidate rather than evidence of request equivalence, freshness, truth, authority, or safety; every response hit preserves its dependency closure and reuse disclosure.",
             "Provenance, taint, privacy, authority, rights, prohibited use, and unresolved conflict propagate to every derivative unless a separately authorized declassification records evidence, scope, consequence, expiry, and residual.",
             "Deletion and revocation closure states name exact reachable storage and derivative scope; logical deletion, inaccessibility, physical erasure, behavioral removal, influence removal, privacy protection, and unknown completion are never conflated.",
             "Atomicity, consistency, isolation, and durability claims are limited to the declared participants, operations, journal, platform, fault model, and observation boundary; uncertain or partitioned participants remain residual rather than silently committed.",
@@ -14551,7 +14563,16 @@
             "ext_infinigen_2024",
             "ext_specache_2025",
             "ext_specoffload_2025",
-            "ext_atsinfer_2026"
+            "ext_atsinfer_2026",
+            "ext_openai_prompt_caching_docs_2026",
+            "ext_anthropic_prompt_caching_docs_2026",
+            "ext_gemini_context_caching_docs_2026",
+            "ext_vllm_automatic_prefix_caching_2026",
+            "ext_sglang_radixattention_2024",
+            "ext_prompt_cache_2024",
+            "ext_mooncake_2025",
+            "ext_cacheblend_2025",
+            "ext_azure_llm_semantic_cache_2026"
           ],
           "source_queue": {
             "primary": [
@@ -14592,7 +14613,16 @@
               "ext_infinigen_2024",
               "ext_specache_2025",
               "ext_specoffload_2025",
-              "ext_atsinfer_2026"
+              "ext_atsinfer_2026",
+              "ext_openai_prompt_caching_docs_2026",
+              "ext_anthropic_prompt_caching_docs_2026",
+              "ext_gemini_context_caching_docs_2026",
+              "ext_vllm_automatic_prefix_caching_2026",
+              "ext_sglang_radixattention_2024",
+              "ext_prompt_cache_2024",
+              "ext_mooncake_2025",
+              "ext_cacheblend_2025",
+              "ext_azure_llm_semantic_cache_2026"
             ],
             "connector_or_recovery": [],
             "handoff_or_recovery_notes": [
@@ -14607,6 +14637,7 @@
             "Register every autoregressive, speculative, multi-token, multi-head, feature-level, lookahead, diffusion, early-exit, recurrent, state-space, KV-cache, serving, or hybrid route by immutable implementation, configuration, dependency, checkpoint, compiler, and environment identity.",
             "Choose matched quality-equivalent baselines prospectively, including an optimized autoregressive target-model route, an ordinary serving stack, and any stronger current method applicable to the exact workload and hardware.",
             "Bind the exact VCM context packet, prompt and output contract, prefill state, cache provenance, warmup policy, seed policy, and invalidation conditions to each attempt.",
+            "Classify in-request KV, exact-prefix, prompt-module, persistent/disaggregated, non-prefix, exact-output, and semantic-response reuse separately; issue a CacheReuseReceipt for every hit, partial hit, miss, bypass, invalidation, and fallback.",
             "Classify task risk, authority, affected-party rights, latency objective, deadline, reversibility, and minimum verification obligation before mode selection.",
             "Define attempted, proposed, accepted, verified, delivered, and useful work as distinct denominators, with exact correctness, quality, safety, abstention, and selective-coverage criteria.",
             "Let the planner request and the generation controller admit a mode only from prospectively qualified eligibility; neither route choice nor qualification may use hidden test outcomes or infer authority from semantic identity.",
@@ -14645,6 +14676,7 @@
             "End-to-end latency includes queueing, prefill, decode, verification, repair, retry, fallback, artifactization, and delivery; decoder-only time cannot support an end-to-end claim.",
             "Verification, repair, fallback, human review, and evaluator disagreement are charged to the candidate route and preserved even when they erase the apparent speed gain.",
             "Warm caches, compiled graphs, prefix reuse, batching, and startup amortization are declared and matched; cold-start and steady-state claims cannot be conflated.",
+            "A prefix-state hit proves neither prior-answer reuse nor task success; exact-output and semantic-response hits require separate validity, disclosure, freshness, and risk contracts.",
             "Aggregate throughput, per-request latency, time to first token, inter-token latency, completion latency, and deadline success remain separate metrics with median and tail behavior.",
             "Compute, memory, KV-cache, bandwidth, energy, money, human effort, governance work, displaced capacity, and opportunity cost remain visible beside latency and quality.",
             "All failures, timeouts, cancellations, OOMs, verifier overloads, rejected drafts, retries, abstentions, fallbacks, and censored attempts remain in the denominator and artifact graph.",
@@ -15633,7 +15665,16 @@
             "ext_infinigen_2024",
             "ext_specache_2025",
             "ext_specoffload_2025",
-            "ext_atsinfer_2026"
+            "ext_atsinfer_2026",
+            "ext_openai_prompt_caching_docs_2026",
+            "ext_anthropic_prompt_caching_docs_2026",
+            "ext_gemini_context_caching_docs_2026",
+            "ext_vllm_automatic_prefix_caching_2026",
+            "ext_sglang_radixattention_2024",
+            "ext_prompt_cache_2024",
+            "ext_mooncake_2025",
+            "ext_cacheblend_2025",
+            "ext_azure_llm_semantic_cache_2026"
           ],
           "source_queue": {
             "primary": [
@@ -15668,7 +15709,16 @@
               "ext_infinigen_2024",
               "ext_specache_2025",
               "ext_specoffload_2025",
-              "ext_atsinfer_2026"
+              "ext_atsinfer_2026",
+              "ext_openai_prompt_caching_docs_2026",
+              "ext_anthropic_prompt_caching_docs_2026",
+              "ext_gemini_context_caching_docs_2026",
+              "ext_vllm_automatic_prefix_caching_2026",
+              "ext_sglang_radixattention_2024",
+              "ext_prompt_cache_2024",
+              "ext_mooncake_2025",
+              "ext_cacheblend_2025",
+              "ext_azure_llm_semantic_cache_2026"
             ],
             "connector_or_recovery": [],
             "handoff_or_recovery_notes": [
@@ -15688,6 +15738,7 @@
             "Use regenerative or budgeted capacity mechanisms only with bounded issuance, conservation, debt, expiry, and anti-hoarding rules.",
             "Reserve scarce verifier and human capacity by risk and expected value without allowing low-risk volume to starve protected work.",
             "Measure queueing, batching, cache, warmup, compilation, preemption, retries, tail latency, OOM, saturation, and tenant interference.",
+            "Price inference reuse from observed write, read, storage, lookup, transfer, eviction, miss, recomputation, output, verification, rate-limit, and governance receipts; compare expected reuse against cache creation and retention before admission.",
             "Separate aggregate throughput and memory efficiency from single-request verified useful outcomes and downstream value.",
             "Attach Simulation Contract Records to every synthetic, simulated, benchmark, scenario, or modeled economic result used as evidence.",
             "Bind simulation scope, fidelity, temporal semantics, assumptions, demand, resources, bottlenecks, omissions, instrumentation, and transfer decision before claim transport.",
@@ -15702,7 +15753,7 @@
             "Intent and Planning provide consumer value, task scope, deadlines, dependencies, and acceptable deferral or reduction.",
             "Resource Budget Record owns the allocation lease, units, capacity, floors, estimates, decision, actuals, variance, and residuals.",
             "Routing provides eligible costed routes and receives dispatch, defer, escalate, fallback, or refusal decisions.",
-            "Runtime and Serving report queue, cache, batching, compilation, execution, tail, failure, retry, saturation, and recovery receipts.",
+            "Runtime and Serving report queue, cache-reuse, write/read/storage/transfer, batching, compilation, execution, tail, failure, retry, saturation, and recovery receipts.",
             "Verification owns required checks, verifier capacity, independence, confidence limits, and accepted-output receipts.",
             "Security, Rights, and Authority own protected floors that resource pressure cannot waive.",
             "Labor and Human review own reviewer capacity, work conditions, intervention, disagreement, fatigue, and displaced labor.",
@@ -15717,6 +15768,7 @@
             "High-risk work either receives the required verification and review capacity or routes to scope reduction, escalation, deferral, fallback, or refusal.",
             "Every resource quantity has a unit, meter or estimation method, time window, owner, uncertainty, and reconciliation path.",
             "Cost savings travel with useful outcome, safety, fairness, latency, tail, failure, fallback, recovery, and residual results.",
+            "A cached-input discount is based on the observed reuse route and complete bill; prefix hits, answer hits, partial hits, expected hits, and misses are never conflated.",
             "Aggregate throughput, cache efficiency, or memory reduction never implies single-request quality, verified usefulness, safety, or economic value.",
             "Protected overhead is explicit and cannot be deleted, relabeled, or shifted outside the denominator.",
             "Displaced costs and opportunity costs remain residuals until measured or accepted by a scoped transition.",

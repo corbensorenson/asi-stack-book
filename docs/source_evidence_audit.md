@@ -11,11 +11,11 @@ It does **not** quote or publish raw private source passages. It also does **not
 | Metric | Value |
 |---|---:|
 | Chapters audited | 61 |
-| Assigned source/chapter pairs | 1010 |
+| Assigned source/chapter pairs | 1033 |
 | Exact claim-source mappings | 898 |
-| Unmapped assigned pairs | 112 |
-| Source notes present for assigned pairs | 1010 |
-| Source notes listing assigned chapter | 1010 |
+| Unmapped assigned pairs | 135 |
+| Source notes present for assigned pairs | 1033 |
+| Source notes listing assigned chapter | 1033 |
 | Passage-reviewed mappings recorded | 898 |
 | Support-state counts | {"argument": 61} |
 | Validation errors | 0 |
@@ -56,7 +56,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `governed-world-models-and-reality-grounding` | 10 | 10 | 10 | 10 | 10 | argument | eligible for support review |
 | `cognitive-compilation-and-semantic-ir` | 20 | 17 | 20 | 20 | 17 | argument | passage review required before source-derived promotion |
 | `virtual-context-abi` | 31 | 24 | 31 | 31 | 24 | argument | passage review required before source-derived promotion |
-| `context-transactions-snapshots-mounts-and-taint` | 18 | 15 | 18 | 18 | 15 | argument | passage review required before source-derived promotion |
+| `context-transactions-snapshots-mounts-and-taint` | 23 | 15 | 23 | 23 | 15 | argument | passage review required before source-derived promotion |
 | `verification-bandwidth-and-context-adequacy` | 17 | 16 | 17 | 17 | 16 | argument | passage review required before source-derived promotion |
 | `claim-ledgers-and-belief-revision` | 20 | 18 | 20 | 20 | 18 | argument | passage review required before source-derived promotion |
 | `spinoza-verification-and-proof-carrying-claims` | 20 | 18 | 20 | 20 | 18 | argument | passage review required before source-derived promotion |
@@ -71,10 +71,10 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `readiness-gates-residual-escrow-and-quarantine` | 19 | 18 | 19 | 19 | 18 | argument | passage review required before source-derived promotion |
 | `personal-compute-hives-and-federated-edge-intelligence` | 31 | 23 | 31 | 31 | 23 | argument | passage review required before source-derived promotion |
 | `compact-generative-systems-and-residual-honesty` | 19 | 17 | 19 | 19 | 17 | argument | passage review required before source-derived promotion |
-| `fast-generation-architectures` | 34 | 21 | 34 | 34 | 21 | argument | passage review required before source-derived promotion |
+| `fast-generation-architectures` | 43 | 21 | 43 | 43 | 21 | argument | passage review required before source-derived promotion |
 | `governed-deliberation-and-test-time-scaling` | 8 | 8 | 8 | 8 | 8 | argument | eligible for support review |
 | `rankfold-neuralfold-and-artifact-compression` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
-| `resource-economics-and-token-budgets` | 32 | 17 | 32 | 32 | 17 | argument | passage review required before source-derived promotion |
+| `resource-economics-and-token-budgets` | 41 | 17 | 41 | 41 | 17 | argument | passage review required before source-derived promotion |
 | `mathematical-and-search-substrates` | 14 | 14 | 14 | 14 | 14 | argument | eligible for support review |
 | `circle-calculus-and-proof-carrying-ai-contracts` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
 | `coil-attention-cyclic-memory-and-recurrence-contracts` | 7 | 7 | 7 | 7 | 7 | argument | eligible for support review |
@@ -188,6 +188,11 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_alce_2023` | 3 | yes |
 | `ext_pagedattention_vllm_2023` | 3 | yes |
 | `ext_cap_theorem_gilbert_lynch_2002` | 3 | yes |
+| `ext_openai_prompt_caching_docs_2026` | 3 | yes |
+| `ext_anthropic_prompt_caching_docs_2026` | 3 | yes |
+| `ext_gemini_context_caching_docs_2026` | 3 | yes |
+| `ext_vllm_automatic_prefix_caching_2026` | 3 | yes |
+| `ext_azure_llm_semantic_cache_2026` | 3 | yes |
 | `ext_dont_hallucinate_abstain_2024` | 3 | yes |
 | `ext_checklist_2020` | 3 | yes |
 | `rgs` | 3 | yes |
@@ -236,6 +241,10 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_infinigen_2024` | 2 | yes |
 | `ext_specache_2025` | 2 | yes |
 | `ext_specoffload_2025` | 2 | yes |
+| `ext_sglang_radixattention_2024` | 2 | yes |
+| `ext_prompt_cache_2024` | 2 | yes |
+| `ext_mooncake_2025` | 2 | yes |
+| `ext_cacheblend_2025` | 2 | yes |
 | `ext_deepseek_r1_2025` | 2 | yes |
 | `ext_s_grpo_2025` | 2 | yes |
 | `coilmoecot` | 2 | yes |
@@ -766,6 +775,11 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `context-transactions-snapshots-mounts-and-taint.core` | `context-transactions-snapshots-mounts-and-taint` | `corbens_best_model_possible_project` | mapped | note present | chapter listed | passage-reviewed |
 | `context-transactions-snapshots-mounts-and-taint.core` | `context-transactions-snapshots-mounts-and-taint` | `reflexive_router_whitepaper` | unmapped | note present | chapter listed | not passage-reviewed |
 | `context-transactions-snapshots-mounts-and-taint.core` | `context-transactions-snapshots-mounts-and-taint` | `kernel_english_residual_compiler` | unmapped | note present | chapter listed | not passage-reviewed |
+| `context-transactions-snapshots-mounts-and-taint.core` | `context-transactions-snapshots-mounts-and-taint` | `ext_openai_prompt_caching_docs_2026` | unmapped | note present | chapter listed | not passage-reviewed |
+| `context-transactions-snapshots-mounts-and-taint.core` | `context-transactions-snapshots-mounts-and-taint` | `ext_anthropic_prompt_caching_docs_2026` | unmapped | note present | chapter listed | not passage-reviewed |
+| `context-transactions-snapshots-mounts-and-taint.core` | `context-transactions-snapshots-mounts-and-taint` | `ext_gemini_context_caching_docs_2026` | unmapped | note present | chapter listed | not passage-reviewed |
+| `context-transactions-snapshots-mounts-and-taint.core` | `context-transactions-snapshots-mounts-and-taint` | `ext_vllm_automatic_prefix_caching_2026` | unmapped | note present | chapter listed | not passage-reviewed |
+| `context-transactions-snapshots-mounts-and-taint.core` | `context-transactions-snapshots-mounts-and-taint` | `ext_azure_llm_semantic_cache_2026` | unmapped | note present | chapter listed | not passage-reviewed |
 | `verification-bandwidth-and-context-adequacy.core` | `verification-bandwidth-and-context-adequacy` | `verification_bandwidth` | mapped | note present | chapter listed | passage-reviewed |
 | `verification-bandwidth-and-context-adequacy.core` | `verification-bandwidth-and-context-adequacy` | `vcm_public` | mapped | note present | chapter listed | passage-reviewed |
 | `verification-bandwidth-and-context-adequacy.core` | `verification-bandwidth-and-context-adequacy` | `spinoza` | mapped | note present | chapter listed | passage-reviewed |
@@ -1104,6 +1118,15 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `fast-generation-architectures.core` | `fast-generation-architectures` | `ext_specache_2025` | unmapped | note present | chapter listed | not passage-reviewed |
 | `fast-generation-architectures.core` | `fast-generation-architectures` | `ext_specoffload_2025` | unmapped | note present | chapter listed | not passage-reviewed |
 | `fast-generation-architectures.core` | `fast-generation-architectures` | `ext_atsinfer_2026` | unmapped | note present | chapter listed | not passage-reviewed |
+| `fast-generation-architectures.core` | `fast-generation-architectures` | `ext_openai_prompt_caching_docs_2026` | unmapped | note present | chapter listed | not passage-reviewed |
+| `fast-generation-architectures.core` | `fast-generation-architectures` | `ext_anthropic_prompt_caching_docs_2026` | unmapped | note present | chapter listed | not passage-reviewed |
+| `fast-generation-architectures.core` | `fast-generation-architectures` | `ext_gemini_context_caching_docs_2026` | unmapped | note present | chapter listed | not passage-reviewed |
+| `fast-generation-architectures.core` | `fast-generation-architectures` | `ext_vllm_automatic_prefix_caching_2026` | unmapped | note present | chapter listed | not passage-reviewed |
+| `fast-generation-architectures.core` | `fast-generation-architectures` | `ext_sglang_radixattention_2024` | unmapped | note present | chapter listed | not passage-reviewed |
+| `fast-generation-architectures.core` | `fast-generation-architectures` | `ext_prompt_cache_2024` | unmapped | note present | chapter listed | not passage-reviewed |
+| `fast-generation-architectures.core` | `fast-generation-architectures` | `ext_mooncake_2025` | unmapped | note present | chapter listed | not passage-reviewed |
+| `fast-generation-architectures.core` | `fast-generation-architectures` | `ext_cacheblend_2025` | unmapped | note present | chapter listed | not passage-reviewed |
+| `fast-generation-architectures.core` | `fast-generation-architectures` | `ext_azure_llm_semantic_cache_2026` | unmapped | note present | chapter listed | not passage-reviewed |
 | `governed-deliberation-and-test-time-scaling.core` | `governed-deliberation-and-test-time-scaling` | `verification_bandwidth` | mapped | note present | chapter listed | passage-reviewed |
 | `governed-deliberation-and-test-time-scaling.core` | `governed-deliberation-and-test-time-scaling` | `ext_tree_of_thoughts_2023` | mapped | note present | chapter listed | passage-reviewed |
 | `governed-deliberation-and-test-time-scaling.core` | `governed-deliberation-and-test-time-scaling` | `ext_test_time_compute_scaling_2024` | mapped | note present | chapter listed | passage-reviewed |
@@ -1150,6 +1173,15 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `resource-economics-and-token-budgets.core` | `resource-economics-and-token-budgets` | `ext_specache_2025` | unmapped | note present | chapter listed | not passage-reviewed |
 | `resource-economics-and-token-budgets.core` | `resource-economics-and-token-budgets` | `ext_specoffload_2025` | unmapped | note present | chapter listed | not passage-reviewed |
 | `resource-economics-and-token-budgets.core` | `resource-economics-and-token-budgets` | `ext_atsinfer_2026` | unmapped | note present | chapter listed | not passage-reviewed |
+| `resource-economics-and-token-budgets.core` | `resource-economics-and-token-budgets` | `ext_openai_prompt_caching_docs_2026` | unmapped | note present | chapter listed | not passage-reviewed |
+| `resource-economics-and-token-budgets.core` | `resource-economics-and-token-budgets` | `ext_anthropic_prompt_caching_docs_2026` | unmapped | note present | chapter listed | not passage-reviewed |
+| `resource-economics-and-token-budgets.core` | `resource-economics-and-token-budgets` | `ext_gemini_context_caching_docs_2026` | unmapped | note present | chapter listed | not passage-reviewed |
+| `resource-economics-and-token-budgets.core` | `resource-economics-and-token-budgets` | `ext_vllm_automatic_prefix_caching_2026` | unmapped | note present | chapter listed | not passage-reviewed |
+| `resource-economics-and-token-budgets.core` | `resource-economics-and-token-budgets` | `ext_sglang_radixattention_2024` | unmapped | note present | chapter listed | not passage-reviewed |
+| `resource-economics-and-token-budgets.core` | `resource-economics-and-token-budgets` | `ext_prompt_cache_2024` | unmapped | note present | chapter listed | not passage-reviewed |
+| `resource-economics-and-token-budgets.core` | `resource-economics-and-token-budgets` | `ext_mooncake_2025` | unmapped | note present | chapter listed | not passage-reviewed |
+| `resource-economics-and-token-budgets.core` | `resource-economics-and-token-budgets` | `ext_cacheblend_2025` | unmapped | note present | chapter listed | not passage-reviewed |
+| `resource-economics-and-token-budgets.core` | `resource-economics-and-token-budgets` | `ext_azure_llm_semantic_cache_2026` | unmapped | note present | chapter listed | not passage-reviewed |
 | `mathematical-and-search-substrates.core` | `mathematical-and-search-substrates` | `genesiscode` | mapped | note present | chapter listed | passage-reviewed |
 | `mathematical-and-search-substrates.core` | `mathematical-and-search-substrates` | `temporal_coil_research` | mapped | note present | chapter listed | passage-reviewed |
 | `mathematical-and-search-substrates.core` | `mathematical-and-search-substrates` | `cognitive_compilation` | mapped | note present | chapter listed | passage-reviewed |

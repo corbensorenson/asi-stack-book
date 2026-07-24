@@ -23,6 +23,8 @@ primary_sources:
   - "ext_dynamic_compute_recurrent_transformers_2026"
   - "ext_claw_swe_bench_2026"
   - "reflexive_router_whitepaper"
+  - "kernel_english_residual_compiler"
+  - "ext_mlperf_training_v6_2026"
   - "relational_dimension_compiler"
   - "ext_airllm_2023"
   - "ext_deepspeed_inference_2022"
@@ -36,6 +38,15 @@ primary_sources:
   - "ext_specache_2025"
   - "ext_specoffload_2025"
   - "ext_atsinfer_2026"
+  - "ext_openai_prompt_caching_docs_2026"
+  - "ext_anthropic_prompt_caching_docs_2026"
+  - "ext_gemini_context_caching_docs_2026"
+  - "ext_vllm_automatic_prefix_caching_2026"
+  - "ext_sglang_radixattention_2024"
+  - "ext_prompt_cache_2024"
+  - "ext_mooncake_2025"
+  - "ext_cacheblend_2025"
+  - "ext_azure_llm_semantic_cache_2026"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -54,11 +65,11 @@ open_evidence_gaps:
 | Status | conceptual |
 | Manuscript maturity | v0.3 claim-proof program |
 | Last updated | 2026-07-23 |
-| Primary source records | 32 assigned records with 17 exact mappings and 15 metadata-first reconciliation records across resource, simulation, serving, heterogeneous memory, recurrent compute, verification, routing economics, relational compute, and harness concerns |
+| Primary source records | 41 assigned records spanning local resource and simulation lineage, serving and heterogeneous-memory comparators, current provider cache contracts, exact and modular prefix reuse, disaggregated and non-prefix KV state, semantic response caching, and benchmark context |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source queue | primary: `tokenmana`, `planforge`; supporting: the local resource/simulation lineage, `reflexive_router_whitepaper`, and `relational_dimension_compiler`; external comparators: PagedAttention, Reluplex, Mem0, Recurrent Transformer, Dynamic Compute, and Claw-SWE-Bench |
-| Source loading state | 17 exact passage-reviewed mappings cover the preexisting core; 15 assigned records add metadata-first relational, training-benchmark, and heterogeneous-memory context. Local and external results remain source-scoped unless a named repository artifact independently supports them. |
+| Source queue | primary: `tokenmana`, `planforge`; supporting: the local resource, simulation, routing, residual, and relational lineage; external comparators: verification, memory, serving, recurrent compute, training benchmarks, heterogeneous inference memory, exact-prefix and prompt-module caches, disaggregated and non-prefix KV state, current provider contracts, and semantic response caching |
+| Source loading state | the preexisting passage-reviewed mappings retain their exact boundaries; the assigned cache records add primary papers and official documentation inspected 2026-07-23. Local and external results remain source-scoped unless a named repository artifact independently supports them. |
 | Test state | `resource_budget_record.valid.json` and `simulation_contract_record.valid.json` pass repository-level protocol fixture validation; `python3 scripts/validate_generation_mode_baselines.py` checks paired generation-mode/resource-budget fixture alignment; `python3 scripts/validate_costed_route_resource_slice.py` checks the four-route costed selector against JSON costs, eligibility fields, negative controls, a finite Lean selector-state trace theorem, and the tracked result's field-level Python/Lean alignment record; `python3 scripts/validate_resource_budget_ledgers.py` checks 6 valid and 7 expected-invalid deterministic budget-ledger dispatch, escalation, protected-overhead, security-overhead erasure rejection, displaced-cost residualization, review-capacity hoarding, KV-cache/serving-memory accounting separation, throughput-to-quality overclaim rejection, evidence-ref, and no-promotion scenarios; `python3 scripts/validate_capacity_smoothing.py` checks 3 valid and 6 expected-invalid toy capacity traces for bounded regeneration arithmetic, priority deferral, reviewer-capacity arithmetic, protected-review overhead, displaced-review-cost residualization, overload rejection, Lean bridge coverage, and no-promotion boundaries; `python3 scripts/validate_resource_workflow_trace.py` checks 1 valid and 5 expected-invalid deterministic workflow fixtures for selected-route cost recomputation, scheduler ordering, protected high-risk review, displaced-cost residuals, capacity-budget-overrun rejection, physical-feasibility overclaim rejection, no-promotion boundaries, and the tracked result's trace-property Python/Lean alignment record over finite dispatch events, rollup totals, high-risk-first order, guard flags, over-budget rejection, and no-promotion boundaries; `python3 scripts/validate_resource_live_probe.py` replays 5 local Resource Economics validators and checks command-output digests plus tracked artifact hashes without creating a support-state transition; `python3 scripts/validate_resource_workload_quality_probe.py` checks 3 local route candidates across 5 measured samples each for a scoped workflow-trace review task, selects `validate_resource_workflow_trace.py` over the broader Resource live-probe baseline by median elapsed time, rejects a cheaper no-op success-text route, records residuals, and preserves no-promotion boundaries; `python3 scripts/validate_resource_load_stability_probe.py` checks a 10-task local synthetic burst-review workload across admit-arrivals, protected capacity-smoothing, and review-erasure routes, verifies 100.0 percent selected-vs-baseline finite overload reduction, 7 residualized selected deferrals, 3 review-erasure negative-control violations, Lean fixture alignment, and no-promotion boundaries; `python3 scripts/validate_resource_ci_cost_profile.py` checks 8 recorded GitHub Pages runs, 8 completed runs, 5 successful completed runs, 3 classified deploy-service failures, a 131-second recovery boundary, finite Lean fixture alignment, duration metrics, and no-transition boundaries as publication-pipeline metadata only; `python3 scripts/validate_simulation_transfer_boundaries.py` checks 3 valid and 6 expected-invalid simulation-transfer fixtures for fidelity declaration, resource bills, bottlenecks, omissions, approximation liberties, instrumentation effects, transfer decisions, residual/downgrade behavior, and support-state non-promotion; `python3 scripts/validate_resource_flagship_lane.py` now also checks an aggregate Python/Lean flagship invariant over 10 command replays, 26 tracked artifacts, 3 accepted narrow transitions, 5 no-promotion decisions, preserved negative controls, residuals, non-claims, and the no-core-promotion/no-new-transition boundary; `AsiStackProofs.ResourceEconomics` and `AsiStackProofs.SimulationFidelity` implement finite record-level predicates plus negative cases for disabled required gates, high-risk insufficient-budget dispatch, finite selector-state trace selection, finite workflow event rollup/order/guard preservation, finite capacity-smoothing reviewer trace guards, aggregate serving-throughput quality overclaim rejection, aggregate flagship replay accounting, CI failure-classification accounting, missing simulation scope, and fidelity overclaim; deployed scheduler, real load-stability, verification-tax optimization, KV-cache behavior, serving throughput, single-request quality, physical-feasibility, runtime security-budget enforcement, reviewer-capacity optimization, displaced-cost measurement, stable speedup, external workload-quality review, and live cost-quality tests remain planned. |
 
 One narrow non-core import has moved: the Theseus simulation-fidelity receipt suite import, `resource-economics.simulation_fidelity_receipt_suite_import`, is `prototype-backed` through `python3 scripts/validate_theseus_simulation_fidelity_receipt_suite_import.py`. It records a public-safe digest-and-count summary of 5/5 passed fixture scenarios, six simulation contract records, six fidelity records, six world-adapter receipts, six evidence-transition records, six failure-boundary records, one blocked transfer, one downgraded claim, one scenario-only record, and seven expected-invalid controls. It does not prove simulator adequacy, physical feasibility, benchmark transfer, native KV parity, deployment, live simulator behavior, model quality, economic outcome, learned generation, clean live Project Theseus replay, or any chapter-core support-state promotion.
@@ -435,6 +446,129 @@ the cost model. The ASI Stack should adopt a method only after its own measured
 bundle shows a better qualified-useful frontier for a named consumer—not merely
 lower peak VRAM or the ability to emit a token.
 
+## Cache-hit economics and honest inference pricing
+
+Reusable inference state can lower marginal cost, so offering cached input more
+cheaply is economically sensible. The discount is not automatic, and “cached”
+must name the object. An exact prompt-prefix hit avoids part of prefill while
+the system still generates and verifies a new output. A persistent KV hit also
+pays lookup and transfer. An exact or semantic response hit may avoid model
+generation but assumes a much stricter or more approximate validity decision.
+Those are different products.
+
+Let \(S\) be the reusable prefix tokens, \(p_u\) the ordinary input price per
+token, \(p_w\) the effective cache-write price, \(p_r\) the cache-read price,
+\(N\) successful reuses after creation, \(C_s\) storage and retention cost, and
+\(C_l\) lookup, transfer, validation, eviction, and governance cost. Ignoring
+the suffix and output work common to both routes, repeated uncached prefill is
+
+\[
+C_{\text{uncached}}=(N+1)S p_u .
+\]
+
+A simplified explicit-cache route is
+
+\[
+C_{\text{cache}}=S p_w + N S p_r + C_s + C_l .
+\]
+
+When \(p_u>p_r\), the simplified break-even is
+
+\[
+N >
+\frac{S(p_w-p_u)+C_s+C_l}{S(p_u-p_r)}.
+\]
+
+This equation is a decision aid, not an invoice. A provider may charge ordinary
+input plus a write premium, make implicit writes free, meter storage by token
+and time, expire an entry early, or return a partial hit. The actual contract
+must replace the abstraction. Misses, unused prewarming, invalidations,
+evictions, write amplification, lookup failures, and retained state that is
+never read belong in the observed denominator.
+
+### Current provider contracts are examples, not constants
+
+The official contracts inspected on 2026-07-23 show why the ledger needs
+separate meters:
+
+| Provider contract | Cache-cost shape | Boundary |
+|---|---|---|
+| OpenAI prompt caching | Current models report cached input and, where supported, cache-write tokens; current GPT-5.6-family documentation describes a 1.25-times write meter and a discounted cached-input meter | A hit reuses a prefix and generates a new answer; cached tokens can still count toward rate limits |
+| Anthropic prompt caching | Five-minute writes are currently documented at 1.25 times base input, one-hour writes at 2 times, and reads at 0.1 times | Lifetime choice and unused writes can erase the saving |
+| Gemini context caching | Supported models expose implicit or explicit reuse, a discounted cached-input meter, and storage charges for explicit retention | Implicit hits are not guaranteed; explicit storage continues until expiry or deletion |
+
+Models, eligibility, thresholds, multipliers, lifetimes, and rate-limit terms
+change. The book records their contract shapes, dates the inspection, and
+routes current purchasing decisions to the provider's live pricing page. No
+provider bill or latency result has been reproduced by this repository.
+
+The same logic applies to self-hosting. A cache hit may save accelerator
+prefill while consuming CPU hashing, DRAM or SSD capacity, network transfer,
+replication, invalidation, encryption, observability, deletion, incident
+response, and opportunity cost. Cached tokens can still occupy admission and
+rate-limit capacity because the service has more scarce resources than model
+FLOPs. Lower marginal compute supports a lower price; it does not imply zero
+cost.
+
+### Price the observed route
+
+The cleanest downstream policy is measured pass-through: charge the actual
+uncached input, cache write, cache read, storage, output, tools, and service
+margin recorded for the request. A service can also publish a blended price
+for a named cohort, charge separately for reserved cache lifetime, or sell
+bounded capacity through a subscription. Those choices are defensible when the
+customer can see what the unit buys and the operator reconciles the realized
+hit distribution.
+
+Three practices are not defensible:
+
+1. promising a cache discount before knowing whether the request hit;
+2. calling an input-prefix hit a fully cached answer; or
+3. passing through only the saved token price while hiding storage,
+   rate-limit, privacy, support, or governance costs.
+
+A measured receipt lets the service share savings while retaining a disclosed
+margin. It records eligible, written, read, partially reused, invalidated,
+evicted, and expired tokens; request and byte hit rates; provider meters;
+lookup and transfer; cache lifetime; output generation; verification and
+repair; accepted task result; and the final customer price. A miss is a normal
+measured outcome, not evidence of operator failure or permission to relabel
+uncached work.
+
+### Optimize useful reuse, not raw hit rate
+
+Raw request hit rate is easy to game. A system can cache tiny prefixes, reuse
+stale answers, or retain everything indefinitely and report many hits while
+saving little or creating unacceptable risk. The joint report includes:
+
+- eligible, written, read, partially reused, expired, invalidated, evicted, and
+  deleted tokens and bytes;
+- cache-build, hashing, lookup, transfer, storage-time, eviction,
+  recomputation, and unused-prefetch cost;
+- cold, warm, steady-state, burst, failover, and mixed-tenant behavior;
+- time to first token, time per output token, completion and tail latency,
+  throughput, queueing, starvation, and fairness;
+- task quality, calibration, stale or unsafe reuse, verification, repair,
+  fallback, and accepted useful outcomes; and
+- provider bill, infrastructure bill, energy, human support, privacy,
+  invalidation, deletion, incident, and residual cost.
+
+The budget policy can then select different routes by workload. A high-reuse
+immutable reference prefix may justify an explicit long-lived entry. A
+low-reuse or fast-changing prefix may be cheaper to recompute. Remote KV
+retrieval may win when prefill is expensive and the interconnect is free, while
+local recomputation wins when transfer or validation dominates. A semantic
+response cache may look cheapest of all and still be inadmissible because its
+false-positive cost exceeds any saving.
+
+No cache-cost transition follows from this prose. A competent campaign needs
+natural repeated-prefix work across several prefix lengths and reuse counts,
+matched cache-disabled execution, cold and warm runs, burst and eviction
+pressure, tenant-isolation negatives, source correction and policy revocation,
+and complete receipts. Semantic response reuse is a separate experiment with
+deliberately confusable prompts, dynamic facts, poisoning, calibrated
+abstention, and a fresh-model fallback.
+
 ## Interfaces
 
 Resource choices move through the Resource Budget Record and, when synthetic or simulated evidence is used, the Simulation Contract Record.
@@ -697,6 +831,15 @@ These rows keep Resource Economics and Token Budgets's manifest assignments visi
 | `ext_specache_2025` | Metadata-first comparator: SpeCache: Speculative Key-Value Caching for Efficient Generation of LLMs. Primary speculative-KV-prefetch source keeping complete KV state in CPU memory, a low-bit importance copy in VRAM, and predicted next-step KV transfers. Source-reported quality and memory results are unreproduced. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_specoffload_2025` | Metadata-first comparator: SpecOffload: Unlocking Latent GPU Capacity for LLM Inference on Resource-Constrained Devices. Primary composition source for target-model offloading, draft-model placement, speculative decoding, and joint tensor/decoding planning. It is not speculative physical-page prediction, and reported results are unreproduced. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_atsinfer_2026` | Metadata-first comparator: Automated Tensor Scheduling for Hybrid CPU-GPU LLM Inference on Consumer Devices. Very recent preprint comparator for tensor-granular static placement, load-aware dynamic transfer, and asynchronous CPU-GPU coordination on consumer devices. Only abstract/metadata were reviewed; reported results are provisional and unreproduced. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_openai_prompt_caching_docs_2026` | Metadata-first comparator: Prompt Caching. Current official provider contract for exact-prefix prompt caching, cache-write and cache-read metering, usage receipts, retention, organization isolation, and rate-limit boundaries. Product behavior and prices are time-sensitive; inspected 2026-07-23. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_anthropic_prompt_caching_docs_2026` | Metadata-first comparator: Prompt caching. Current official provider contract for reusable prompt prefixes, explicit cache breakpoints, five-minute and one-hour lifetimes, cache creation and read metering, and prewarming. Product behavior and prices are time-sensitive; inspected 2026-07-23. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_gemini_context_caching_docs_2026` | Metadata-first comparator: Context caching. Current official provider contract for implicit and explicit context caching, common-prefix placement, cached-token usage reporting, time-to-live, and storage charges. Product behavior and prices are time-sensitive; inspected 2026-07-23. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_vllm_automatic_prefix_caching_2026` | Metadata-first comparator: Automatic Prefix Caching. Official vLLM design documentation for block-hash exact-prefix KV reuse, least-recently-used eviction, multi-modal and adapter identity, and tenant cache-salt protection against timing inference. No local serving benchmark was run. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_sglang_radixattention_2024` | Metadata-first comparator: SGLang: Efficient Execution of Structured Language Model Programs. Primary RadixAttention and cache-aware scheduling source for structured multi-call language-model programs. Source-reported throughput and theorem scope remain unreproduced. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_prompt_cache_2024` | Metadata-first comparator: Prompt Cache: Modular Attention Reuse for Low-Latency Inference. Primary MLSys source for schema-defined reusable prompt modules, positional accuracy, and attention-state reuse across prompts. Source-reported latency remains unreproduced. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_mooncake_2025` | Metadata-first comparator: Mooncake: Trading More Storage for Less Computation — A KVCache-centric Architecture for Serving LLM Chatbot. Primary FAST 2025 source for a KV-cache-centric disaggregated serving architecture spanning prefill, decode, DRAM, SSD, and network resources. Production-trace and capacity results remain source-reported. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_cacheblend_2025` | Metadata-first comparator: CacheBlend: Fast Large Language Model Serving for RAG with Cached Knowledge Fusion. Primary source for non-prefix and multi-chunk KV reuse with selective recomputation. It makes the cross-attention failure of naïve independent-chunk KV fusion explicit. Source-reported latency and quality remain unreproduced. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_azure_llm_semantic_cache_2026` | Metadata-first comparator: Azure API Management LLM semantic cache lookup policy. Official semantic-response-cache policy documentation. It treats vector similarity as an approximate response-reuse decision and warns that a hit can return an incorrect, outdated, or unsafe answer. No local semantic-cache deployment was run. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Post-v2 measured governance cost

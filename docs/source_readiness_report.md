@@ -8,8 +8,8 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 
 - `cached_existing`: 38
 - `connector_readable`: 7
-- `source_note_available_public_project`: 18
-- `source_note_available_uncached`: 312
+- `source_note_available_public_project`: 20
+- `source_note_available_uncached`: 331
 
 ## Records
 
@@ -390,3 +390,24 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 | `ext_carlini_training_data_extraction_2021` | Extracting Training Data from Large Language Models | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_choquette_choo_label_only_mia_2021` | Label-Only Membership Inference Attacks | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_mahloujifar_fdp_audit_2025` | Auditing f-Differential Privacy in One Run | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_airllm_2023` | AirLLM: Scaling Large Language Models on Low-End Commodity Computers | `source_note_available_public_project` |  |  | source note available from inspected public project source; not part of Google Drive cache manifest |
+| `ext_deepspeed_inference_2022` | DeepSpeed Inference: Enabling Efficient Inference of Transformer Models at Unprecedented Scale | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_flexgen_2023` | FlexGen: High-Throughput Generative Inference of Large Language Models with a Single GPU | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_hf_accelerate_big_model_inference_2026` | Hugging Face Accelerate: Loading Big Models into Memory | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_llama_cpp_memory_mapping_2026` | llama.cpp CLI Memory Mapping, Tensor Placement, and KV Offload Controls | `source_note_available_public_project` |  |  | source note available from inspected public project source; not part of Google Drive cache manifest |
+| `ext_llm_in_flash_2024` | LLM in a Flash: Efficient Large Language Model Inference with Limited Memory | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_powerinfer_2024` | PowerInfer: Fast Large Language Model Serving with a Consumer-Grade GPU | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_vattention_2025` | vAttention: Dynamic Memory Management for Serving LLMs without PagedAttention | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_infinigen_2024` | InfiniGen: Efficient Generative Inference of Large Language Models with Dynamic KV Cache Management | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_specache_2025` | SpeCache: Speculative Key-Value Caching for Efficient Generation of LLMs | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_specoffload_2025` | SpecOffload: Unlocking Latent GPU Capacity for LLM Inference on Resource-Constrained Devices | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_atsinfer_2026` | Automated Tensor Scheduling for Hybrid CPU-GPU LLM Inference on Consumer Devices | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_openai_prompt_caching_docs_2026` | Prompt Caching | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_anthropic_prompt_caching_docs_2026` | Prompt caching | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_gemini_context_caching_docs_2026` | Context caching | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_vllm_automatic_prefix_caching_2026` | Automatic Prefix Caching | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_sglang_radixattention_2024` | SGLang: Efficient Execution of Structured Language Model Programs | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_prompt_cache_2024` | Prompt Cache: Modular Attention Reuse for Low-Latency Inference | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_mooncake_2025` | Mooncake: Trading More Storage for Less Computation — A KVCache-centric Architecture for Serving LLM Chatbot | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_cacheblend_2025` | CacheBlend: Fast Large Language Model Serving for RAG with Cached Knowledge Fusion | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_azure_llm_semantic_cache_2026` | Azure API Management LLM semantic cache lookup policy | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
