@@ -397,7 +397,7 @@ Source loading queue:
 | Role | Source IDs | Loading instruction |
 |---|---|---|
 | Primary | `viea`, `rmi`, `cgs` | Read first for chapter claims and mechanisms. |
-| Supporting | `rankfold_neuralfold`, `bbvca_v9`, `simulation_scaling`, `beastbrain`, `beastbrain_timeless`, `aletheia` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
+| Supporting | `rankfold_neuralfold`, `bbvca_v9`, `simulation_scaling`, `beastbrain`, `beastbrain_timeless`, `aletheia`, `precision_contract` | Mine after primary sources for cross-layer connections, variants, and failure modes. Use `precision_contract` for precision as a contract-routed resource, not measured efficiency. |
 | External comparators | `ext_sparse_moe_2017`, `ext_gshard_2020`, `ext_switch_transformer_2021`, `ext_expert_choice_routing_2022`, `ext_moe_llm_survey_2024`, `ext_frugalgpt_2023`, `ext_hybrid_llm_2024`, `ext_routellm_2024`, `ext_longllmlingua_2023`, `ext_speculative_decoding_2022`, `ext_multi_token_prediction_2024`, `ext_medusa_2024`, `ext_eagle_2024`, `ext_bigbench_2022` | Load after internal efficiency sources to position route-ledger accounting against conditional computation, distributed sparse experts, learned/query routing, prompt compression, fast generation, and benchmark pressure. Treat as comparator vocabulary only; do not claim reproduced efficiency, router quality, speedup, compression utility, benchmark score, or support-state promotion. |
 | Runtime-reference source | `moecot` | Use the reviewed source note for fail-closed orchestration, ledgers, replay, handoff, and residual vocabulary only; no runtime effect or benchmark is imported. |
 
@@ -1677,7 +1677,7 @@ Source loading queue:
 | Role | Source IDs | Loading instruction |
 |---|---|---|
 | Primary | `ext_rand_model_weight_security_2024`, `ext_nist_confidential_computing_2026`, `ext_provable_model_weight_release_2025`, `ext_ietf_rats_architecture_2023`, `ext_nist_key_management_2020`, `ext_nist_media_sanitization_2025` | Read as distinct primary comparators for threat surfaces, defense in depth, confidential-computing limits, extraction and irreversible release, RATS role and policy separation, full key lifecycle, and effort-relative sanitization. None is local efficacy or conformance evidence. |
-| Supporting | `cca_project`, `ext_in_toto_2019`, `ext_nvidia_confidential_model_lifecycle_2026` | Use CCA only as author-lineage implementation context, in-toto as a signed-provenance neighbor, and NVIDIA as a vendor-specific lifecycle variant. Do not count the nine records as nine independent demonstrations of one claim. |
+| Supporting | `cca_project`, `ext_in_toto_2019`, `ext_nvidia_confidential_model_lifecycle_2026`, `precision_contract` | Use CCA only as author-lineage implementation context, in-toto as a signed-provenance neighbor, NVIDIA as a vendor-specific lifecycle variant, and `precision_contract` for quantized derivative closure. Do not count these records as independent demonstrations of one claim. |
 | Variant | `ext_nvidia_confidential_model_lifecycle_2026` | Preserve vendor-specific encrypted-artifact, attestation, and key-release detail without importing cross-platform confidentiality, verifier independence, or deployment correctness. |
 
 
@@ -4044,7 +4044,7 @@ Source loading queue:
 | Role | Source IDs | Loading instruction |
 |---|---|---|
 | Primary | `rmi`, `benchmaxxing`, `scf` | Read first for chapter claims and mechanisms. |
-| Supporting | `octopus_router`, `cognitive_loop_closure`, `project_theseus_whitepaper`, `theseus_architecture_gate`, `theseus_self_evolution_system`, `cca_project`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `corbens_trainer_project`, `corbens_best_model_possible_project` | Mine after primary sources for lifecycle controls and historical negative cases: readiness overclaim, skipped-as-green checks, stale promotions, transitive quarantine, and named transitions without material effect. |
+| Supporting | `octopus_router`, `cognitive_loop_closure`, `project_theseus_whitepaper`, `theseus_architecture_gate`, `theseus_self_evolution_system`, `cca_project`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `corbens_trainer_project`, `corbens_best_model_possible_project`, `precision_contract` | Mine after primary sources for lifecycle controls and historical negative cases. Use `precision_contract` for scoped certificate expiry, restriction, revocation, and residual custody without inferring readiness. |
 | Self-improvement comparator | `ext_darwin_godel_machine_2025` | Use for archive-based candidate generation and benchmark-selected descendants under stated sandbox/human oversight. Do not treat benchmark improvement as readiness, monotonic safety, or promotion authority. |
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
@@ -4222,7 +4222,7 @@ Source loading queue:
 | Role | Source IDs | Loading instruction |
 |---|---|---|
 | Primary | `cgs`, `rgs`, `bbvca_v9`, `bbvca_main`, `treellm` | Read first for compact-system, generate/verify/repair, and semantic-representation claims and mechanisms. |
-| Supporting | `bugbrain`, `simulation_scaling`, `rmi`, `project_theseus_whitepaper`, `rankfold_neuralfold`, `spinoza`, `verification_bandwidth`, `cognitive_compilation`, `circle_ai_architectures`, `coilra_multicoil_rope` | Mine after primary sources for edge/resource constraints, ratcheting, implementation lineage, artifact-compression comparison, semantic-IR pressure, proof-carrying claim graphs, optional cyclic substrate guardrails, and failure modes. |
+| Supporting | `bugbrain`, `simulation_scaling`, `rmi`, `project_theseus_whitepaper`, `rankfold_neuralfold`, `spinoza`, `verification_bandwidth`, `cognitive_compilation`, `circle_ai_architectures`, `coilra_multicoil_rope`, `precision_contract` | Mine after primary sources for edge/resource constraints, ratcheting, implementation lineage, artifact-compression comparison, semantic-IR pressure, proof-carrying claim graphs, optional cyclic substrate guardrails, and failure modes. Use `precision_contract` for base/residual precision and complete-description accounting. |
 | Hierarchical-compression comparator | `ext_raptor_2024` | Use for recursively clustered and summarized retrieval trees. Require source bindings, loss contracts, reversibility limits, and residuals; do not infer local summary fidelity or benchmark gains. |
 
 
@@ -4320,7 +4320,7 @@ Source loading queue:
 | Role | Source IDs | Loading instruction |
 |---|---|---|
 | Primary | `cgs`, `cognitive_loop_closure`, `benchmaxxing` | Read first for the compact-generation loop, procedural chunking intuition, and measurement discipline. |
-| Supporting | `planforge`, `verification_bandwidth`, `tokenmana`, `talos`, `vcm_public`, `spinoza`, `rmi` | Mine after primary sources for planner selection, verifier capacity, budget accounting, artifactization, context packets, repair, and readiness routing. |
+| Supporting | `planforge`, `verification_bandwidth`, `tokenmana`, `talos`, `vcm_public`, `spinoza`, `rmi`, `precision_contract` | Mine after primary sources for planner selection, verifier capacity, budget accounting, artifactization, context packets, repair, and readiness routing. Use `precision_contract` for static, progressive, and routed precision with conservative fallback. |
 | External literature variants | `ext_speculative_decoding_2022`, `ext_multi_token_prediction_2024`, `ext_medusa_2024`, `ext_eagle_2024`, `ext_lookahead_decoding_2024`, `ext_layerskip_2024`, `ext_pagedattention_vllm_2023`, `ext_mamba_2023`, `ext_llada_2025`, `ext_scaling_dllms_2026`, `ext_recurrent_transformer_2026` | Read after internal sources to ground the method taxonomy; treat reported results as source-reported until reproduced or independently checked. |
 | Current recurrent-decoding comparator | `ext_recurrent_transformer_2026` | Use for layerwise recurrent KV memory, exact tiling, effective-depth/width tradeoffs, and cache pressure. Treat small-model and asymptotic claims as source-scoped until measured locally. |
 | Handoff or recovery notes | `sources/inbox/fast_generation_browser_note_2026-06-24/` | Local-only author-intent and external-literature queue context. Do not quote verbatim or promote claims from this packet. |
@@ -4500,9 +4500,10 @@ Source loading queue:
 
 | Role | Source IDs | Loading instruction |
 |---|---|---|
-| Primary | `rankfold_neuralfold`, `rankfold_compressor` | Read first for chapter claims and mechanisms. |
+| Primary | `rankfold_neuralfold`, `rankfold_compressor`, `precision_contract` | Read first for chapter claims and mechanisms. Use `precision_contract` as the functional rate–distortion, complete-accounting, compiler, and certificate source while preserving its theoretical evidence ceiling. |
 | Supporting | `bbvca_v9`, `cgs`, `bugbrain` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
 | Hierarchical-retrieval comparator | `ext_raptor_2024` | Compare multi-level recursive summaries with artifact compression. Keep benchmark improvement separate from fidelity, source preservation, reversibility, and local RankFold/NeuralFold evidence. |
+
 
 Draft arc:
 
@@ -4576,7 +4577,7 @@ Source loading queue:
 | Role | Source IDs | Loading instruction |
 |---|---|---|
 | Primary | `tokenmana`, `planforge` | Read first for budget, scheduler, and scarcity framing. |
-| Supporting | `coherence_exchange`, `simulation_scaling`, `viea`, `project_theseus_whitepaper`, `coilra_multicoil_rope`, `cgs`, `rankfold_neuralfold`, `alignment_field` | Mine after primary sources for cross-layer budget pressure, simulation fidelity, hidden residual burden, execution/report discipline, normative boundaries, and failure modes. |
+| Supporting | `coherence_exchange`, `simulation_scaling`, `viea`, `project_theseus_whitepaper`, `coilra_multicoil_rope`, `cgs`, `rankfold_neuralfold`, `alignment_field`, `precision_contract` | Mine after primary sources for cross-layer budget pressure, simulation fidelity, hidden residual burden, execution/report discipline, normative boundaries, and failure modes. Use `precision_contract` to separate stored, moved, decoded, verified, and assurance-generating cost. |
 | External literature variants | `ext_pagedattention_vllm_2023`, `ext_reluplex_2017` | Read for serving-memory economics and scoped property-verification comparison; treat reported results as source-reported until reproduced. |
 | Memory and adaptive-compute comparators | `ext_mem0_2025`, `ext_recurrent_transformer_2026`, `ext_dynamic_compute_recurrent_transformers_2026` | Compare token/latency savings, recurrent cache/traffic claims, and difficulty-dependent compute. Require pinned configurations and distinguish allocation from generalization, quality, and safety. |
 
@@ -5013,7 +5014,8 @@ Source loading queue:
 | Role | Source IDs | Loading instruction |
 |---|---|---|
 | Primary | `genesiscode` | Read first for chapter claims and mechanisms. |
-| Supporting | `spinoza`, `scf`, `talos`, `viea`, `circle_calculus_core`, `circle_ai_contract_suite`, `rope_position_certifier`, `proof_carrying_circular_computation`, `cca_project`, `moecot_manifest_project`, `corbens_best_model_possible_project` | Mine after primary sources for cross-layer connections, variants, failure modes, abstraction maps, semantic-depth boundaries, and implementation-binding negative cases. Treat the three historical projects as one local lineage, not independent validation. |
+| Supporting | `spinoza`, `scf`, `talos`, `viea`, `circle_calculus_core`, `circle_ai_contract_suite`, `rope_position_certifier`, `proof_carrying_circular_computation`, `cca_project`, `moecot_manifest_project`, `corbens_best_model_possible_project`, `precision_contract` | Mine after primary sources for cross-layer connections, variants, failure modes, abstraction maps, semantic-depth boundaries, and implementation-binding negative cases. Use `precision_contract` for quantization-as-program-transformation and its formal ceiling. Treat the three historical projects as one local lineage, not independent validation. |
+
 
 Draft arc:
 

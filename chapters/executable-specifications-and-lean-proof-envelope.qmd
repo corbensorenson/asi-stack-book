@@ -461,6 +461,15 @@ and empirical evidence as their actual obligations require.
 | `moecot_manifest_project` | MoECOT Manifest compiler-era project | local historical-project lineage | Pass/reproducer/legality artifacts, internal-contract breadth, and the boundary between executable models and external behavior. | public-safe source note available; project not replayed |
 | `corbens_best_model_possible_project` | Corben's Best Model Possible | local historical-project lineage | Negative cases for vacuous checks, playback/live-replay confusion, absent current builds, and missing implementation binding. | public-safe source note available; project not replayed |
 
+### Manifest source assignment reconciliation
+
+These rows keep Executable Specifications and Lean Proof Envelope's manifest assignments visible at their recorded review boundary. Passage review does not establish local reproduction, performance, safety, deployment, or support-state movement.
+
+| Source | Intake role | Boundary |
+|---|---|---|
+| `precision_contract` | Metadata-first comparator: The Precision Contract: A Functional Rate–Distortion Theory for Behavior-Preserving Neural Computation. Corben-authored July 2026 theoretical and systems paper replacing universal per-weight precision questions with a contract-relative functional rate-distortion problem over complete executable descriptions. It proposes representation canonicalization, protected-behavior contracts, precision fields, progressive base/residual encoding, dynamic routing, full physical and assurance-cost accounting, a Functional Precision Compiler, and scoped precision certificates. Existing chapters are upgraded first; no universal bit bound, implemented compiler, preserved-behavior result, efficiency result, certificate validity, support promotion, SOTA, AGI, or ASI claim is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+
+<!-- manifest-source-reconciliation:end -->
 ## Summary
 
 The proof envelope makes formality useful by staying small, operational, and bounded. Lean proves only what Lean checks. Schemas validate shape. Tests validate behavior. Benchmarks validate measured claims. The living book must keep those lanes separate.

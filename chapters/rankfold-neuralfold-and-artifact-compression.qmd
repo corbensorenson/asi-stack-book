@@ -408,6 +408,15 @@ This finite model does not prove decoder or codec correctness, NeuralFold reprod
 
 The crosswalk keeps the implementation hypothesis bounded. `rankfold_neuralfold` supplies the mature artifact-archive framing, `rankfold_compressor` preserves low-rank/tensor lineage, `bbvca_v9` supplies reconstruction and rate-accounting discipline, `cgs` supplies residual honesty, and `bugbrain` keeps edge-resource constraints visible. None of them should be used to report ratios until a decoder and benchmark harness exist.
 
+### Manifest source assignment reconciliation
+
+These rows keep RankFold, NeuralFold, and Artifact Compression's manifest assignments visible at their recorded review boundary. Passage review does not establish local reproduction, performance, safety, deployment, or support-state movement.
+
+| Source | Intake role | Boundary |
+|---|---|---|
+| `precision_contract` | Metadata-first comparator: The Precision Contract: A Functional Rate–Distortion Theory for Behavior-Preserving Neural Computation. Corben-authored July 2026 theoretical and systems paper replacing universal per-weight precision questions with a contract-relative functional rate-distortion problem over complete executable descriptions. It proposes representation canonicalization, protected-behavior contracts, precision fields, progressive base/residual encoding, dynamic routing, full physical and assurance-cost accounting, a Functional Precision Compiler, and scoped precision certificates. Existing chapters are upgraded first; no universal bit bound, implemented compiler, preserved-behavior result, efficiency result, certificate validity, support promotion, SOTA, AGI, or ASI claim is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+
+<!-- manifest-source-reconciliation:end -->
 ## Summary
 
 Artifact compression is a routing decision under evidence. A compressed artifact may be cheaper to store, but it becomes usable only when reconstruction, residuals, probes, fallback, utility, and cost accounting are explicit.

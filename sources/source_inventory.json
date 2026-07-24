@@ -7033,5 +7033,27 @@
     "source_type": "official_documentation",
     "updated": "2026-07-23",
     "citation_label": "Microsoft (2026), LLM semantic cache lookup policy"
+  },
+  {
+    "id": "precision_contract",
+    "title": "The Precision Contract: A Functional Rate–Distortion Theory for Behavior-Preserving Neural Computation",
+    "priority": "must_use",
+    "layer": "functional_precision_behavior_preserving_compression_and_certification",
+    "chapter_targets": [
+      "rankfold-neuralfold-and-artifact-compression",
+      "compact-generative-systems-and-residual-honesty",
+      "fast-generation-architectures",
+      "resource-economics-and-token-budgets",
+      "readiness-gates-residual-escrow-and-quarantine",
+      "executable-specifications-and-lean-proof-envelope",
+      "model-weight-custody-and-hardware-roots-of-trust",
+      "the-efficient-asi-hypothesis"
+    ],
+    "url": "local-source:sources/raw/corben_papers/precision_contract/precision_contract.md@sha256:c8c5eeedf72f5fad4132d9916971f1c1853c74f01fc4a6bab9ad8c0700b39ac7",
+    "notes": "Corben-authored July 2026 theoretical and systems paper replacing universal per-weight precision questions with a contract-relative functional rate-distortion problem over complete executable descriptions. It proposes representation canonicalization, protected-behavior contracts, precision fields, progressive base/residual encoding, dynamic routing, full physical and assurance-cost accounting, a Functional Precision Compiler, and scoped precision certificates. Existing chapters are upgraded first; no universal bit bound, implemented compiler, preserved-behavior result, efficiency result, certificate validity, support promotion, SOTA, AGI, or ASI claim is inferred.",
+    "source_type": "author_whitepaper",
+    "published": "2026-07",
+    "updated": "2026-07-24",
+    "citation_label": "Sorenson (2026), The Precision Contract"
   }
 ]

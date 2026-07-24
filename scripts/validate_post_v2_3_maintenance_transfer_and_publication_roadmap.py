@@ -42,6 +42,10 @@ STRUCTURAL_RESEARCH = ROOT / "docs/structural_completeness_chapter_research_2026
 STRUCTURAL_GAP_AUDIT = ROOT / "docs/structural_completeness_gap_audit_2026_07_19.md"
 OPTIMIZER_RESEARCH = ROOT / "docs/optimizer_landscape_chapter_research_2026_07_21.md"
 POST_ROUND_18_DEPTH_REVIEW = ROOT / "docs/post_round_18_depth_and_coverage_review_reconciliation_2026_07_24.md"
+PRECISION_CONTRACT_RECONCILIATION = ROOT / "docs/precision_contract_source_reconciliation_2026_07_24.md"
+PRECISION_CONTRACT_SOURCE_NOTE = ROOT / "sources/source_notes/precision_contract.md"
+PRECISION_CONTRACT_BACKLOG = ROOT / "research_backlog_records/precision_contract_2026_07_24.json"
+PRECISION_CONTRACT_TRIAGE = ROOT / "new_paper_triage_scenarios/precision_contract_2026_07_24.json"
 SOURCE_INVENTORY = ROOT / "sources/source_inventory.json"
 BOOK_MANIFEST = ROOT / "book_structure.json"
 STRUCTURAL_CHAPTER_PATHS = {
@@ -158,6 +162,10 @@ def inputs() -> dict:
         "structural_gap_audit": STRUCTURAL_GAP_AUDIT.read_text(encoding="utf-8"),
         "optimizer_research": OPTIMIZER_RESEARCH.read_text(encoding="utf-8"),
         "post_round_18_depth_review": POST_ROUND_18_DEPTH_REVIEW.read_text(encoding="utf-8"),
+        "precision_contract_reconciliation": PRECISION_CONTRACT_RECONCILIATION.read_text(encoding="utf-8"),
+        "precision_contract_source_note": PRECISION_CONTRACT_SOURCE_NOTE.read_text(encoding="utf-8"),
+        "precision_contract_backlog": load(PRECISION_CONTRACT_BACKLOG),
+        "precision_contract_triage": load(PRECISION_CONTRACT_TRIAGE),
         "source_inventory": load(SOURCE_INVENTORY),
         "book_manifest": load(BOOK_MANIFEST),
         "transition_snapshot": transition_snapshot(atom_ids),
@@ -204,6 +212,7 @@ def errors(data: dict) -> list[str]:
         "## P6 — Evidence, instrument, and source renewal",
         "### P6.4-R18 — terminal bounded conceptual-completeness packet",
         "### P6.5 — Round 16 post-activation integration debt",
+        "### P6.8 — Functional precision and behavior-preserving computation",
         "## P7 — Reader remediation and owner-authorized publication",
         "## P8 — Closure, residual ownership, and successor continuity",
         "## Execution order and decision rules",
@@ -295,6 +304,12 @@ def errors(data: dict) -> list[str]:
         "adversarial-machine-learning-and-model-attack-surface",
         "learning-theory-generalization-and-scaling-science",
         "Sixty-eight chapters is a possible result if both pass, not a target",
+        "P6.8-functional-precision-and-behavior-preserving-computation",
+        "The contingency title",
+        "is not an active chapter candidate",
+        "The paper's 49 references are an author-supplied research map, not automatic Appendix H records",
+        "A naïve quantizer",
+        "may not displace P2",
     ]:
         if phrase.casefold() not in roadmap_normalized:
             out.append(f"roadmap governing boundary missing: {phrase}")
@@ -321,6 +336,86 @@ def errors(data: dict) -> list[str]:
     ]:
         if phrase.casefold() not in depth_review_normalized:
             out.append(f"post-Round-18 depth-review boundary missing: {phrase}")
+
+    precision_reconciliation_normalized = re.sub(
+        r"\s+", " ", data["precision_contract_reconciliation"]
+    ).casefold()
+    for phrase in [
+        "integrate into existing owners; no new chapter now",
+        "rankfold-neuralfold-and-artifact-compression",
+        "functional-precision-and-behavior-preserving-computation",
+        "not a chapter candidate in active research",
+        "The paper cites 49 external works",
+        "A small broken quantizer or weak average-accuracy probe",
+        "cannot displace P2",
+    ]:
+        if phrase.casefold() not in precision_reconciliation_normalized:
+            out.append(f"Precision Contract reconciliation boundary missing: {phrase}")
+
+    precision_note_normalized = re.sub(
+        r"\s+", " ", data["precision_contract_source_note"]
+    ).casefold()
+    for phrase in [
+        "Functional Precision Compiler",
+        "CompleteDescriptionLedger",
+        "update existing chapters first; do not add a chapter now",
+        "No universal optimal precision",
+    ]:
+        if phrase.casefold() not in precision_note_normalized:
+            out.append(f"Precision Contract source-note boundary missing: {phrase}")
+
+    precision_status = status.get("post_round_18_depth_and_coverage_amendment", {}).get(
+        "precision_contract_source_amendment", {}
+    )
+    if precision_status.get("state") != "source_intake_terminal_existing_owner_prose_queued":
+        out.append("Precision Contract source intake state drifted")
+    if precision_status.get("primary_owner") != "rankfold-neuralfold-and-artifact-compression":
+        out.append("Precision Contract primary owner drifted")
+    if precision_status.get("new_chapter_allowed_now") is not False:
+        out.append("Precision Contract prematurely authorizes a new chapter")
+    if precision_status.get("contingency_is_active_candidate") is not False:
+        out.append("Precision Contract contingency became an active candidate")
+    if precision_status.get("p2_displacement_allowed") is not False:
+        out.append("Precision Contract packet displaces P2")
+    if precision_status.get("third_wip_lane_allowed") is not False:
+        out.append("Precision Contract packet creates a third WIP lane")
+    if precision_status.get("automatic_appendix_h_admission_allowed") is not False:
+        out.append("Precision Contract packet automatically admits cited sources")
+    if precision_status.get("support_state_effect") != "none" or precision_status.get("release_effect") != "none":
+        out.append("Precision Contract packet launders support or release state")
+
+    precision_inventory_rows = [
+        row for row in data["source_inventory"] if row.get("id") == "precision_contract"
+    ]
+    if len(precision_inventory_rows) != 1:
+        out.append("Precision Contract source inventory row missing or duplicated")
+    else:
+        expected_precision_targets = {
+            "rankfold-neuralfold-and-artifact-compression",
+            "compact-generative-systems-and-residual-honesty",
+            "fast-generation-architectures",
+            "resource-economics-and-token-budgets",
+            "readiness-gates-residual-escrow-and-quarantine",
+            "executable-specifications-and-lean-proof-envelope",
+            "model-weight-custody-and-hardware-roots-of-trust",
+            "the-efficient-asi-hypothesis",
+        }
+        if set(precision_inventory_rows[0].get("chapter_targets", [])) != expected_precision_targets:
+            out.append("Precision Contract source target set drifted")
+        assigned_precision_chapters = {
+            chapter["id"]
+            for part in data["book_manifest"]["parts"]
+            for chapter in part["chapters"]
+            if "precision_contract" in chapter.get("source_ids", [])
+        }
+        if assigned_precision_chapters != expected_precision_targets:
+            out.append("Precision Contract manifest assignment set drifted")
+    if data["precision_contract_backlog"].get("insertion_decision") != "update_existing_chapter":
+        out.append("Precision Contract backlog insertion decision drifted")
+    if data["precision_contract_backlog"].get("support_state_effect") != "argument_only":
+        out.append("Precision Contract backlog support boundary drifted")
+    if data["precision_contract_triage"].get("support_state_effect") != "backlog_only":
+        out.append("Precision Contract triage support boundary drifted")
 
     structural = data["structural_research"]
     structural_normalized = re.sub(r"\s+", " ", structural).casefold()
@@ -1247,6 +1342,12 @@ def main() -> None:
     mutate("post-Round-18 candidate research premature activation", lambda c: c["status"]["post_round_18_depth_and_coverage_amendment"].__setitem__("candidate_research_active", True))
     mutate("post-Round-18 candidate premature admission", lambda c: c["status"]["post_round_18_depth_and_coverage_amendment"]["research_candidates"][0].__setitem__("admission_state", "manifest_admitted"))
     mutate("post-Round-18 word-count gate", lambda c: c["status"]["post_round_18_depth_and_coverage_amendment"]["depth_packet"].__setitem__("word_count_is_acceptance_gate", True))
+    mutate("Precision Contract premature chapter authorization", lambda c: c["status"]["post_round_18_depth_and_coverage_amendment"]["precision_contract_source_amendment"].__setitem__("new_chapter_allowed_now", True))
+    mutate("Precision Contract contingency activation", lambda c: c["status"]["post_round_18_depth_and_coverage_amendment"]["precision_contract_source_amendment"].__setitem__("contingency_is_active_candidate", True))
+    mutate("Precision Contract P2 displacement", lambda c: c["status"]["post_round_18_depth_and_coverage_amendment"]["precision_contract_source_amendment"].__setitem__("p2_displacement_allowed", True))
+    mutate("Precision Contract third WIP lane", lambda c: c["status"]["post_round_18_depth_and_coverage_amendment"]["precision_contract_source_amendment"].__setitem__("third_wip_lane_allowed", True))
+    mutate("Precision Contract automatic Appendix H admission", lambda c: c["status"]["post_round_18_depth_and_coverage_amendment"]["precision_contract_source_amendment"].__setitem__("automatic_appendix_h_admission_allowed", True))
+    mutate("Precision Contract support laundering", lambda c: c["status"]["post_round_18_depth_and_coverage_amendment"]["precision_contract_source_amendment"].__setitem__("support_state_effect", "supported"))
     mutate("non-Docker deletion authorization", lambda c: c["status"]["round_16_evidence_first_amendment"]["p2_empirical_recovery"].__setitem__("non_docker_user_data_deletion_allowed", True))
     mutate("optimizer duplicate chapter authorization", lambda c: c["status"]["round_16_evidence_first_amendment"]["optimizer_landscape_depth_amendment"].__setitem__("new_chapter_allowed", True))
     mutate("optimizer coupled-policy deletion", lambda c: c["status"]["round_16_evidence_first_amendment"]["optimizer_landscape_depth_amendment"].__setitem__("optimizer_is_coupled_run_policy", False))

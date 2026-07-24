@@ -141,6 +141,7 @@ proceeds.
 | Existing-book integration — last | `P6.5-R16-B-current-reader-freshness` | R16-A, W3, and the six-chapter depth pack are terminal | Derive one current 66-chapter reader packet after the meaning-bearing edits, preserving the historical `reader-2026-07-18` release. |
 | Existing-owner paging packet — prose terminal; policy and empirical work deferred | `P6.6-heterogeneous-inference-memory-and-speculative-paging` | Reader-facing source integration was expressly commissioned and completed 2026-07-23; schema, validator, planner, hardware characterization, and empirical work retain the ordinary post-gate entry condition | Maintain the six completed manuscript integrations and source reconciliation. Later implement and validate the heterogeneous-memory policy and run only competent, matched, hardware-characterized paging experiments. Preserve exact/approximate, throughput/latency, and source/local evidence boundaries. No new chapter. |
 | Existing-owner inference-cache packet — prose terminal; receipt and empirical work deferred | `P6.7-inference-cache-reuse-and-honest-pricing` | Reader-facing source integration was expressly commissioned and completed 2026-07-23; no new chapter or support movement | Maintain the three coordinated manuscript integrations and nine-source packet. Later implement the cache-reuse receipt and run separate exact-prefix and semantic-response campaigns under the ordinary post-gate entry condition. Preserve KV-versus-output, exact-versus-semantic, hit-versus-useful-outcome, and provider-contract-versus-local-evidence boundaries. |
+| Existing-owner functional-precision packet — source intake terminal; prose and empirical work queued | `P6.8-functional-precision-and-behavior-preserving-computation` | Source intake is complete; prose waits for R16-A, W3, and T1D; no new chapter or support movement | Integrate the Precision Contract across eight existing owners, led by RankFold/NeuralFold. Preserve representation invariance, protected behavior, complete executable and physical-cost accounting, progressive residual precision, routed fallback, certificate scope, and program-transformation proof limits. Resolve the cited external literature independently. Reconsider a standalone chapter only after the integrations fail a dated coherence audit. |
 | Formal slot — terminal | `P4-terminal-no-open-formal-packet` | All six frozen clusters terminal across 24 modules | Maintain the terminal audits and their consumers; open no new proof packet unless a dated, machine-validated amendment names the claim consumer, countermodel, and maximum inference. |
 | Empirical headline — below entry floor, exact receipt next | `P2-R3-storage-materialization-and-replacement-qualification` | Re-measure at run start; the 2026-07-24 observation was about 21.3 GiB available and Docker inspection lacked socket permission; every setup action remains inside the approved Docker-scoped protocol | First, an exact command-bound attempt or failure receipt. Then thirty sealed candidate recipes and receipts; terminal pool materialization; four competently qualified replacements restoring the fixed twelve-task denominator; rank progression only under the frozen amendment; zero protected-content leakage. No deletion of non-Docker user data is authorized. |
 | First structural tranche — terminal | White-Box, World Models, Human Factors, and Governed Operations are terminal at argument support | Four exact integration packets preserve owners, sources, formal ceilings, protocols, reader handoffs, and no-promotion boundaries | Maintenance only; no reopened chapter packet without a dated machine-validated defect. |
@@ -1772,6 +1773,103 @@ useful advantage, privacy, complete erasure, deployment, transfer, support, or
 SOTA. All current performance and prices remain source- or contract-reported
 until independently observed.
 
+### P6.8 — Functional precision and behavior-preserving computation
+
+**Status:** full source read, Markdown/DOCX pair verification, canonical raw
+storage, public-safe note, inventory entry, chapter mapping, triage record, and
+owner adjudication completed 2026-07-24. Meaning-bearing prose, external-source
+resolution, schemas, validators, and empirical work remain queued. The
+controlling reconciliation is
+`docs/precision_contract_source_reconciliation_2026_07_24.md`.
+
+**Ownership decision.** Do not add a chapter now.
+`rankfold-neuralfold-and-artifact-compression` is the primary owner for
+functional rate–distortion, behavioral-equivalence sets, representation
+canonicalization, complete executable accounting, the Functional Precision
+Compiler, and precision certificates.
+`compact-generative-systems-and-residual-honesty` owns base/residual precision
+and reconstruction-versus-utility separation. Fast Generation owns static,
+mixed, progressive, and dynamic precision execution; Resource Economics owns
+physical and assurance-generation cost; Readiness owns certificate status,
+expiry, restriction, and revocation; Executable Specifications owns
+program-transformation refinement; Model-Weight Custody owns derivative and
+platform identity; and the Efficient ASI Hypothesis owns precision as one
+governed adaptive resource.
+
+The contingency title
+`functional-precision-and-behavior-preserving-computation` is not an active
+chapter candidate, manifest reservation, or target count. A dated owner audit
+may reconsider it only after all eight bounded integrations are drafted and
+only if the end-to-end compiler/certificate lifecycle remains fragmented or
+overloads the current owners. Structural admission remains frozen; Candidates
+N/O remain the only approved research candidates and remain inactive.
+
+**Required manuscript transaction.**
+
+1. Add the primary section-scale explanation to RankFold/NeuralFold: why
+   per-weight precision is representation-dependent; how the behavioral
+   contract defines an acceptable implementation set; how complete executable
+   description length replaces payload-only counting; and how the compiler and
+   certificate lifecycle fits the existing admission lease.
+2. Add bounded, nonduplicative handoffs to Compact Generative Systems, Fast
+   Generation, Resource Economics, Readiness, Executable Specifications,
+   Model-Weight Custody, and the Efficient ASI Hypothesis.
+3. Use one shared `PrecisionContract` vocabulary, one joined lifecycle, and one
+   experiment/falsifier table rather than eight restatements.
+4. Preserve exact distinctions among parameter distance, reconstruction,
+   protected behavior, downstream utility, physical cost, assurance, authority,
+   and support.
+5. Reconcile chapter source maps, outline queues, Appendix C, Appendix G,
+   glossary, overview, and final synthesis without changing chapter count,
+   release identity, or support state.
+6. Pass the W3 inheritance guard and a chapter-specific duplication audit.
+
+Semantic acceptance requires a reader to follow
+`reference -> contract -> canonicalization -> allocation -> encoding ->
+residual/routing -> verification -> certificate -> expiry/revocation` with one
+clear owner at every transition. Heading count, word count, source count, or a
+green generic build cannot substitute for that trace.
+
+**External-source resolution.** The paper's 49 references are an author-supplied
+research map, not automatic Appendix H records. Deduplicate them against the
+inventory by title, DOI, arXiv identifier, and canonical URL; verify primary
+publication pages and current status; passage-review the exact result used; and
+add only genuinely missing records. Resolve rate–distortion, MDL,
+floating-point and numerical-analysis, post-training quantization, mixed and
+progressive precision, verification, and quantization-security families by
+role. Reuse already-inventoried GPTQ, compression, and MDL sources. Treat every
+external performance, error, or security result as source-reported until an
+accepted local reproduction exists.
+
+**Implementation and evidence backlog.** Define versioned
+`PrecisionContract`, `CompleteDescriptionLedger`, `PrecisionFieldPlan`,
+`BaseResidualPrecisionBundle`, `PrecisionRouteDecision`, and
+`PrecisionCertificate` schemas with rejecting fixtures for omitted protected
+slices, hidden codebooks or decoder burden, wrong artifact/runtime/platform,
+stale domains, missing fallback, invalid residual order, expired evidence, and
+revocation bypass. The independent validator must bind exact identities,
+contract metrics and thresholds, complete accounting, route/fallback policy,
+evidence scope, expiry, and residual ownership. Formal work may model only the
+finite refinement and certificate route; it cannot prove that the selected
+contract captures all important behavior.
+
+**Competence gate before empirical interpretation.** A naïve quantizer, weak
+average-accuracy probe, broken positive control, uncanonicalized salience rule,
+or under-tuned router cannot refute the proposal. Freeze protected behavior and
+maximum inference; give static, layer-wise, mixed, progressive, and routed
+policies matched tuning and method-specific rescue; include favorable/oracle
+checks; retain complete candidate and cost denominators; and use an
+independently implemented final evaluator where the claim requires it. Compare
+stored and moved bytes, decoder work, latency, energy, memory, verification,
+repair, fallback, assurance-generation cost, rare and high-consequence slices,
+calibration, abstention, distribution shift, and router attacks together.
+
+This packet joins the existing-book lane only after R16-A, W3, and T1D are
+terminal. It may not displace P2, consume a third WIP slot, open protected
+outcomes, activate Candidate N/O research, or move support. Its source intake
+is terminal; its prose, evidence, and contingency decisions remain owned
+residuals.
+
 ## P7 — Reader remediation and owner-authorized publication
 
 The first Round 15 publication transaction is complete. The
@@ -2039,6 +2137,11 @@ is not a debugging interface.
    Preserve the terminal P6.7 inference-cache prose and source packet while its
    receipt schema and separate exact-prefix and semantic-response campaigns
    remain deferred evidence residuals.
+   Preserve the terminal P6.8 Precision Contract source intake and route its
+   eight-owner prose transaction after R16-A, W3, and T1D. Resolve the cited
+   external literature before Appendix H use, and do not activate the
+   standalone-chapter contingency unless a post-integration coherence audit
+   demonstrates a distinct unowned lifecycle.
    The Round 18 bounded breadth packet is terminal at argument support and the
    structural freeze is restored. The remaining seven P6.4 candidates and
    post-Round-18 Candidates N/O have no active queue position. N/O source and
