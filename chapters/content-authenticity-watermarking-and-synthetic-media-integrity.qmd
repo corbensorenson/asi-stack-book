@@ -1,0 +1,423 @@
+---
+title: "Content Authenticity, Watermarking, and Synthetic Media Integrity"
+chapter_id: "content-authenticity-watermarking-and-synthetic-media-integrity"
+part_id: "evidence-implementation-living-book"
+status: "conceptual"
+draft_maturity: "v0.2 complete argument-level manuscript"
+last_updated: "2026-07-24"
+primary_sources:
+  - "ext_c2pa_specification_2_3_2025"
+  - "ext_eu_article_50_transparency_guidelines_2026"
+  - "ext_international_ai_safety_report_2026"
+evidence_level: "argument"
+claim_label: "Design rationale"
+open_evidence_gaps:
+  - "No production provenance, watermark, detector, disclosure, or correction system is implemented or evaluated here."
+  - "Current EU guidance is recorded for architecture context and must be rechecked at action time; it is not legal advice or compliance evidence."
+  - "No authenticity signal is treated as proof that an asset's semantic content is true."
+---
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `content-authenticity-watermarking-and-synthetic-media-integrity` |
+| Exclusive job | preserve and interpret evidence about generated-output origin, edits, disclosure, and transformation |
+| Claim label / support | Design rationale / `argument` |
+| Current regulatory context | EU Article 50 transparency obligations are stated by the Commission to apply from 2 August 2026, subject to scope and transition details |
+| Local evidence | architecture and planned transformation harness only |
+
+Source loading state: all assigned source notes were reviewed for bounded
+mechanism, evidence, failure, and nonclaim use; external results remain
+source-reported.
+
+## Drafting guardrail
+
+“Authentic” is overloaded. A credential can be cryptographically valid while
+the depicted claim is false. A real photograph can be presented in a deceptive
+context. A synthetic image can be disclosed, consensual, and harmless. This
+chapter governs evidence about origin and transformation; it does not create a
+machine oracle for truth, consent, legality, or social meaning.
+
+::: {.asi-human-only}
+## Human Reading Path
+
+The book already tracks where models, code, data, and releases came from. That
+is supply-chain provenance. This chapter follows a different object: the text,
+image, audio, video, or multimodal artifact produced by a system and changed
+by later tools.
+
+Six signal families matter: signed provenance, watermarking, fingerprinting,
+statistical detection, visible disclosure, and contextual verification. Each
+answers a different question. Their errors also differ. A robust design keeps
+the signals separate, preserves transformation history, shows uncertainty, and
+offers a correction or remedy route.
+
+The reader should remember two asymmetric rules. Missing provenance does not
+prove that content is synthetic. Valid provenance does not prove that content
+is true. The useful system is an authenticity envelope that helps people and
+institutions reason better despite those limits.
+:::
+
+## Problem
+
+Generative systems can create or modify media at scale, but downstream readers
+often see only the final bytes. Model identity, generation policy, edits,
+consent, source ingredients, and disclosure can disappear during export,
+re-encoding, screenshotting, platform upload, or deliberate laundering.
+
+The C2PA specification supplies a concrete interoperability mechanism: signed
+manifests, assertions, ingredients, actions, content bindings, and validation.
+The 2026 International AI Safety Report places content detection and disclosure
+inside a wider resilience system. The European Commission's July 2026 Article
+50 guidance makes the architecture operationally timely by distinguishing
+provider and deployer duties, machine-readable marking, deepfake labeling, and
+certain public-interest text. These sources have different authority. A
+technical standard is not law; official guidance is not a robustness result;
+an international report is not a local implementation.
+
+## Why existing approaches are insufficient
+
+### Signed provenance
+
+Signed provenance answers: “Which entity signed which claims about this asset
+and its history, under this trust policy?” It can preserve generator identity,
+editing actions, ingredients, and validation status.
+
+**Failure mode:** a compromised or authorized signer makes a false claim, or a
+viewer trusts the wrong root.
+
+**Non-claim:** signature validity does not establish truth of depicted events,
+human authorship, consent, or harmlessness.
+
+**Source engagement:** C2PA 2.3 makes content bindings and validation semantics
+concrete. Its strength is inspectable claim lineage; its limit is that claims
+remain claims.
+
+### Watermarking
+
+A watermark embeds a signal in generated content. Useful properties include
+detection accuracy, perceptual quality, payload, robustness to transformation,
+key security, collision resistance, localization, and revocability. Text,
+image, audio, and video require different constructions and threat models.
+
+**Failure mode:** cropping, paraphrase, re-generation, compression, noise, or
+adaptive optimization removes or forges the mark.
+
+**Non-claim:** failure to detect a watermark does not prove human origin;
+successful detection does not identify every editing step or establish truth.
+
+### Fingerprinting
+
+Fingerprints associate an artifact or generator with a learned or computed
+signature without necessarily embedding new data. They can support duplicate
+detection, known-model attribution, or incident clustering.
+
+**Failure mode:** updates, fine-tunes, codecs, and distribution shift invalidate
+the fingerprint; a shared base model creates ambiguous attribution.
+
+**Non-claim:** similarity is not custody lineage unless a signed or otherwise
+verified chain provides it.
+
+### Statistical detection
+
+Detectors estimate whether content belongs to a learned class. They can be
+useful where provenance is absent. Their thresholds, populations, models,
+languages, compression levels, and dates are part of the result.
+
+**Failure mode:** distribution shift creates false accusation or missed
+synthetic content; an adaptive generator trains against the detector.
+
+**Non-claim:** a detector probability is not a fact about authorship, and it
+must not silently become a disciplinary or legal decision.
+
+### Visible disclosure
+
+Labels communicate generation or manipulation to people. They require
+placement, persistence, comprehensibility, accessibility, localization, and a
+definition of what is being disclosed.
+
+**Failure mode:** tiny, temporary, ambiguous, or inaccessible labels satisfy a
+checkbox while users remain misled.
+
+**Non-claim:** disclosure does not eliminate manipulation or establish
+informed understanding.
+
+### Contextual verification
+
+Journalistic verification, source corroboration, reverse search, chronology,
+location, witness evidence, and domain expertise remain essential. Provenance
+can strengthen that work but cannot replace it.
+
+## Core Claim
+
+[content-authenticity-watermarking-and-synthetic-media-integrity.core, label: Design rationale, support: argument]
+Synthetic-media integrity should use a layered authenticity envelope that
+binds asset identity, generator and editor claims, signed provenance, content
+bindings, watermark or fingerprint signals, detector outputs, visible
+disclosure, transformation history, trust policy, uncertainty, and remedy;
+every signal retains its own semantics, and no missing or valid signal becomes
+a universal truth judgment.
+
+## Mechanism
+
+### The authenticity envelope
+
+```{mermaid}
+flowchart LR
+  G["Generation or edit event"] --> P["Signed provenance and content binding"]
+  G --> W["Optional watermark / fingerprint"]
+  P --> T["Transformation ledger"]
+  W --> T
+  T --> V["Validation under declared trust policy"]
+  T --> D["Detector and contextual evidence"]
+  V --> U["Accessible visible disclosure"]
+  D --> U
+  U --> R{"Conflict, harm, or dispute?"}
+  R -- "yes" --> C["Correct, reattribute, notify, remove, or preserve for review"]
+  R -- "no" --> H["Bounded downstream use"]
+  C --> L["Residual and lineage update"]
+```
+
+**How to read the synthetic-media authenticity envelope:** generation creates
+separate provenance and auxiliary-signal paths that meet only after real
+transformations are recorded. Validation and contextual detection feed an
+accessible disclosure; disputes route to correction and lineage updates,
+while an undisputed result earns only the bounded downstream use allowed by
+its trust policy.
+
+An envelope is a set of typed evidence, not one score. At minimum it records:
+
+- asset and rendition identifiers;
+- signed claims and signer chain;
+- generator, editing tool, and model claims where available;
+- ingredient and action history;
+- content-binding method and validation state;
+- watermark/fingerprint detector identity, threshold, and result;
+- statistical detector identity, calibration population, and result;
+- visible disclosure text, location, language, and accessibility;
+- known transformations and explicit lineage breaks;
+- consent, privacy, and rights references where authorized;
+- conflicts, uncertainty, expiry, and remedy route.
+
+### Transformation is the central engineering problem
+
+An authenticity system that works only on the first exported file will fail in
+ordinary media pipelines. Evaluate at least:
+
+| Transformation | Provenance question | Watermark/detector question |
+|---|---|---|
+| resize / crop | can the new rendition link to its ingredient? | does localization or detection survive? |
+| lossy re-encode | is the binding method compatible? | what quality/robustness tradeoff appears? |
+| edit / composite | are ingredients and actions preserved? | can signals distinguish regions or sources? |
+| metadata stripping | is the break explicit to the viewer? | does an auxiliary signal remain? |
+| screenshot / analog capture | can a new claim link back probabilistically or manually? | what false-positive cost follows? |
+| translation / paraphrase | is semantic lineage represented honestly? | does a text mark survive without degrading language? |
+| model regeneration | is the result a new generation event? | can inherited-looking signals be laundered? |
+
+Every unsupported transformation creates a break, not a guessed link.
+Platforms may issue a new manifest that names the prior asset as an ingredient;
+they must not claim the original signer authorized later edits unless the chain
+says so.
+
+### Trust policy and validation
+
+A viewer needs a trust policy: which roots, signers, algorithms, timestamps,
+revocation information, and claim types are accepted for which decision.
+Validation should return typed states such as valid, invalid, unsupported,
+expired, revoked, incomplete, conflicting, and absent. “Green check” is too
+coarse.
+
+Compromise response needs to propagate. If a signing key or trust root is
+revoked, affected manifests, cached decisions, platform labels, and derivative
+claims must be re-evaluated. Historical evidence should remain available for
+authorized investigation with its invalidation state, not disappear.
+
+### Regulation is an interface, not a design substitute
+
+The European Commission states that Article 50 transparency obligations apply
+from 2 August 2026 and distinguishes machine-readable marking, deepfake and
+specified public-interest disclosure, provider and deployer roles, scope, and
+transitional details. The architecture should therefore expose:
+
+- the provider that generated or manipulated content;
+- the deployer that presents or publishes it;
+- the content and jurisdictional scope;
+- machine-readable marking state;
+- visible-label state;
+- exemptions or transitional basis asserted;
+- evidence retained for the decision;
+- current legal-policy version and review date.
+
+The system must recheck official law and guidance at action time. This chapter
+does not decide legal scope, give legal advice, or claim that C2PA, a watermark,
+or a label alone satisfies any obligation.
+
+### Privacy, consent, and accessibility
+
+Provenance can leak identity, location, workflow, device, or editing history.
+Minimize public claims, separate public and restricted assertions, and use
+selective disclosure where supported. Do not expose a victim or confidential
+source merely to make a provenance graph complete.
+
+Visible disclosure must work for screen readers, low vision, hearing
+differences, localization, small screens, and transformed embeds. Test whether
+people understand what was generated or changed; label presence is not the
+same as comprehension.
+
+Consent and likeness require a separate rights record. A credential can state
+that consent was asserted and by whom. It cannot prove that consent was
+informed, valid, uncoerced, current, or legally sufficient without the
+corresponding governance process.
+
+## Interfaces
+
+The envelope is a cross-layer object, but each neighbor retains its own
+decision. Supply-chain evidence identifies the generator and official
+artifacts; privacy governs whose identity and likeness may travel; epistemic
+security reasons about deception and belief; institutions interpret legal
+duties; resilience responds to harm at scale. A consumer must preserve signal,
+trust-policy, transformation, channel, and affected-party identities rather
+than importing a generic “verified” flag.
+
+- **AI Supply-Chain Integrity** owns model, code, data, and dependency
+  provenance. This chapter owns generated-output and edit provenance.
+- **Privacy, Data Rights, and Information-Flow Governance** controls identity,
+  likeness, consent, retention, disclosure, and remedy.
+- **Human-AI Communication and Epistemic Security** uses authenticity evidence
+  when assessing persuasion and public knowledge.
+- **Institutions and Public Legitimacy** owns legal interpretation and
+  accountable rulemaking.
+- **Societal Resilience** coordinates response after deceptive content spreads.
+
+## Invariants
+
+These invariants make degraded and conflicting evidence visible. They prohibit
+the two most dangerous shortcuts: treating missing provenance as proof of
+fakery, and treating valid provenance as proof of truth. They also require
+accessible disclosure and contestation so an authenticity system cannot count
+a machine-readable success that the relevant person could not perceive,
+understand, or challenge.
+
+- Provenance, watermark, fingerprint, detector, disclosure, and contextual
+  verification remain distinct evidence types.
+- A valid signature proves only a signed claim under a named trust policy.
+- Absence of a credential or mark proves neither synthetic nor human origin.
+- Each transformation preserves a verified link or records an explicit break.
+- Conflicts and invalid states remain visible to downstream consumers.
+- Disclosure is perceivable, understandable, accessible, and attached to the
+  relevant asset and context.
+
+## Failure modes
+
+### Strongest objection
+
+The strongest objection is the analog hole: anyone can screenshot, re-record,
+or regenerate media, so durable provenance will never cover everything. The
+objection has teeth. A simpler baseline—visible labels and ordinary
+verification—may beat a complex credential stack where ecosystem support is
+poor. The chapter's answer is graceful degradation, not perfect coverage.
+When provenance disappears, the system says so and falls back to detector,
+context, and institutional verification without treating uncertainty as guilt.
+
+Additional failures include signer compromise, trust-list fragmentation,
+metadata stripping, false credentials, watermark removal, detector drift,
+model-update drift, collision, copied labels, privacy leakage, inaccessible
+disclosure, provenance spam, platform lock-in, remedy failure, and
+compliance theater.
+
+## Minimum Viable Implementation
+
+Create a public-safe asset corpus with human, generated, edited, and composite
+examples. Attach signed test manifests, visible labels, and a toy auxiliary
+mark. Run crop, resize, re-encode, edit, metadata-strip, screenshot, and
+regeneration transforms. Record signal survival, false positives, false
+negatives, validation states, lineage breaks, and user comprehension. Include
+compromised-signer, validly-signed-false-claim, absent-credential, conflicting-
+claim, privacy-redaction, and correction fixtures.
+
+Use at least two independent authoring tools, validators, and distribution
+paths so the exercise tests interoperability rather than a single vendor’s
+round trip. Blind evaluators to origin when measuring detector calibration and
+human comprehension. Publish the transformation matrix, complete denominator,
+accessibility results, privacy removals, unresolved conflicts, and correction
+latency. The exercise validates a bounded content-evidence pipeline; it does
+not establish universal origin detection or public trust.
+
+## Beyond the State of the Art
+
+The mature system gives every governed output a portable authenticity envelope
+that survives ordinary workflows where possible and degrades honestly where it
+cannot. Readers can inspect what is claimed, by whom, under which trust policy,
+through which transformations, with which auxiliary signals, and with what
+uncertainty. Affected people can correct or contest the record. The design
+supports current transparency duties without turning compliance into a false
+truth oracle.
+
+At maturity, authoring, editing, publishing, messaging, archival, and forensic
+tools preserve a portable chain where possible and emit an explicit break
+where not. Trust policies can differ by jurisdiction and use while validators
+show exactly which signer, assertion, binding, and transformation was accepted.
+The user sees a useful explanation, not merely a cryptographic success code.
+
+The system combines provenance with calibrated auxiliary evidence.
+Watermarks, fingerprints, and detectors are tested under realistic editing,
+regeneration, laundering, and adaptive removal; none is required to be
+indestructible. Conflicts route to contextual verification and remedy rather
+than an automatic accusation. Privacy-preserving disclosures reveal only what
+the decision requires.
+
+The state-of-the-art outcome is not perfect synthetic-media detection. It is a
+degrading-honestly evidence network that improves attribution and correction,
+reduces false certainty, survives ordinary transformations at measured rates,
+and gives affected people practical contestation without creating a universal
+identity or surveillance layer.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Evidence-type separation | Reject a record that collapses signature, watermark, detector, and truth into one field. | planned |
+| Transformation matrix | Exercise ordinary and adversarial transformations and preserve explicit lineage breaks. | planned |
+| Signed-false-claim control | Prove that cryptographic validity does not force semantic-truth status. | planned |
+| Missing-signal control | Reject inference of human or synthetic origin from absence alone. | planned |
+| Trust revocation | Propagate signer/root invalidation to cached and derivative decisions. | planned |
+| Accessibility and remedy | Check visible disclosure, correction, and harmed-party routes. | planned |
+| No-promotion control | Prevent standards conformance or prose from becoming a robustness, compliance, or truth claim. | planned |
+
+## Source crosswalk
+
+| Source ID | Bounded use | Non-authority |
+|---|---|---|
+| `ext_c2pa_specification_2_3_2025` | signed manifests, assertions, ingredients, content bindings, and validation | does not prove semantic truth, consent, or universal retention |
+| `ext_eu_article_50_transparency_guidelines_2026` | current provider/deployer, marking, deepfake, and disclosure context | not legal advice, scope decision, or compliance proof |
+| `ext_international_ai_safety_report_2026` | synthetic-media risk, detection, disclosure, correction, education, and resilience synthesis | no local detector or intervention result |
+
+## Summary
+
+Synthetic-media integrity is not solved by an indestructible watermark because
+no such universal signal exists. It is improved by composing typed evidence:
+signed provenance, content bindings, bounded watermarks and fingerprints,
+calibrated detectors, visible disclosure, contextual verification,
+transformation history, and remedy. The envelope's honesty is as important as
+its coverage.
+
+Readers should therefore ask what exact claim was signed, how it binds to the
+asset, which edits and distribution steps remain linked, what auxiliary signal
+was measured under which threshold, who set the trust policy, what a missing
+signal means, and how a harmed person can correct the record. The chapter’s
+answer is layered evidence with visible breaks—not a single badge that decides
+truth, human authorship, consent, or harmlessness.
+
+## Handoff
+
+**Governed Operations, Incident Command, and Graceful Degradation** follows. It
+receives validation failures, compromised signers, large-scale laundering,
+disclosure outages, and correction obligations. It does not receive a claim
+that unauthenticated content is false or authenticated content is true. The
+handoff preserves asset, generator, credential, watermark, detector,
+transformation, channel, affected-party, incident, remedy, uncertainty, and
+expiry identities so operations can contain a concrete failure without
+laundering an evidence signal into truth. Receipt completeness proves neither
+detector transfer, signer integrity, platform cooperation, successful
+correction, reduced harm, nor readiness for broad deployment.

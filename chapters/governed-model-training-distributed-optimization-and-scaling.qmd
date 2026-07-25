@@ -698,6 +698,16 @@ operator intervention, and governance work. If the baseline cannot competently
 train or the fault injector does not work, the campaign is invalid rather than
 negative evidence about the architecture.
 
+## Training order, audit witnesses, and test-time updates
+
+Example order is part of training state. Curriculum learning showed that a schedule from easier or more canonical examples toward harder cases can change the optimization path [@ext_curriculum_learning_2009]. For a governed run, “same data” is therefore insufficient: the run contract records sampling distribution, curriculum metric, pacing function, competence thresholds, reshuffle seeds, replay policy, and every adaptive schedule change. A curriculum claim needs matched random-order, anti-curriculum, and strong adaptive-sampling baselines, with final quality, worst-group behavior, calibration, convergence cost, and forgetting reported together. Easier-first is a hypothesis, not a universal rule.
+
+Proof-of-learning protocols add an audit surface by committing to intermediate training states that a verifier can challenge [@ext_proof_of_learning_2021]. The stack should emit a **training witness manifest** containing the committed state sequence, checkpoint cadence, data-batch commitments, optimizer transition identity, verifier challenges, tolerances, and unverified spans. This can deter some fabricated run histories, but it does not prove lawful data, correct objectives, absence of hidden training, exact reproducibility, or safe behavior. It is one supply-chain witness attached to the full run receipt.
+
+Test-time training moves optimization into inference [@ext_test_time_training_2020]. That does not exempt it from training governance. The active state now includes base model, per-input or per-cohort adaptation weights, optimizer, RNG, caches, update budget, reset rule, and descendant outputs. Shared adaptation can create poisoning and cross-user influence; incomplete resets can make nominally identical requests depend on hidden history. The default route isolates and expires test-time state, while durable updates require the same prospective objective, data-rights, evaluation, rollback, and admission gates as any other update.
+
+The common failure is provenance theater: recording a curriculum label, witness hash, or reset flag while leaving the operative order, hidden state, or update path unmeasured. The explicit nonclaim is that none of these mechanisms establishes optimizer superiority, faithful reproduction, model quality, safety, or readiness without the corresponding observed campaign.
+
 ## Beyond the State of the Art
 
 The mature target is a substrate-neutral training transaction whose state and
@@ -849,6 +859,17 @@ surface: coordinate, layer, tensor, curvature, sign, spectral, scheduling, and
 parameterization-aware methods trade different information and costs. Their
 source reports orient competent comparisons; none chooses the book's winner.
 
+### Manifest source assignment reconciliation
+
+These rows keep Governed Model Training, Distributed Optimization, and Scaling's manifest assignments visible at their recorded review boundary. Passage review does not establish local reproduction, performance, safety, deployment, or support-state movement.
+
+| Source | Intake role | Boundary |
+|---|---|---|
+| `ext_proof_of_learning_2021` | Passage-reviewed comparator: Proof-of-Learning: Definitions and Practice. Provides a transcript-based comparator for auditing whether a claimed training process follows a committed sequence of states. | It does not prove dataset legitimacy, objective adequacy, hidden-compute absence, exact reproduction, model quality, or safety. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_test_time_training_2020` | Passage-reviewed comparator: Test-Time Training with Self-Supervision for Generalization under Distribution Shifts. Provides a distinct training-timescale comparator in which per-input self-supervised updates occur at test time. | The method does not establish safe online learning, distributed-state consistency, rollback, or general robustness. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_curriculum_learning_2009` | Passage-reviewed comparator: Curriculum Learning. Provides the foundational curriculum-learning hypothesis that example order and difficulty schedules can change optimization outcomes. | Curriculum effects are task-, model-, metric-, and schedule-dependent; easier-first ordering is not a universal improvement rule. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+
+<!-- manifest-source-reconciliation:end -->
 ## Summary
 
 Training is not a weight file plus a loss curve. It is a stateful distributed

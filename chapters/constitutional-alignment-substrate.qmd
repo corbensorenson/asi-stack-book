@@ -428,6 +428,14 @@ impractical. That is not solved by friendlier behavior alone. It requires exit,
 export, review, audit, correction, replacement, and rollback surfaces that
 remain live after the system becomes useful.
 
+## Legal alignment is a governed translation problem
+
+A constitution for an AI system cannot simply contain the instruction “follow the law.” The relevant law depends on jurisdiction, time, system role, affected party, contractual relationship, conflicts of law, exceptions, and contested interpretation. Legal text can also be invalid, superseded, inaccessible, underdetermined, or in tension with protected rights. The legal-alignment research agenda is therefore best understood as a translation and authority problem, not as retrieval over statutes [@ext_legal_alignment_2026].
+
+The stack should compile a **legal authority packet** beside—not inside—the durable constitutional kernel. The packet identifies the applicable jurisdiction and time, authoritative texts and versions, interpretation source, conflicts and uncertainty, protected-rights floor, permitted discretion, escalation forum, emergency exceptions, expiry, and change authority. A legal-policy adapter may propose a rule for the present case; it cannot silently rewrite the constitution or promote one model’s interpretation into law. High-impact ambiguity routes to accountable review, while clearly unlawful requests can be refused with a cited, contestable reason.
+
+The mechanism fails through stale corpora, jurisdiction laundering, selective citation, inaccessible appeals, executive-policy substitution for law, or a model resolving genuine legal disputes in its own favor. The explicit nonclaim is equally important: a valid authority packet does not prove that the model understood the law, chose the correct interpretation, behaved lawfully, or that the governing legal regime is legitimate. Legal compliance, constitutional alignment, public legitimacy, and ethical adequacy remain separate evidence axes.
+
 ## Minimum Viable Implementation
 
 The current minimum is two public record schemas with valid fixtures, a
@@ -574,6 +582,7 @@ These rows keep Constitutional Alignment: Agency, Dignity, and Corrigibility's m
 | Source | Intake role | Boundary |
 |---|---|---|
 | `ext_embedded_agency_2019` | Passage-reviewed comparator: Embedded Agency. Shows why corrigibility and alignment cannot assume an external, fully informed agent model when the system and its modifiable parts are embedded in the governed world. | The paper is an informal obstacle survey, not a solved theory; the ASI Stack's finite records and proofs do not solve logical uncertainty, self-reference, robust delegation, subsystem alignment, or open-world embedded agency. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_legal_alignment_2026` | Passage-reviewed comparator: Legal Alignment for Safe and Ethical AI. Frames law-following AI as a technical and institutional alignment problem involving rule identification, interpretation, conflicts, jurisdiction, and legitimate update authority. | A legal-alignment research agenda does not identify the governing law, settle contested interpretation, establish legitimacy, or prove compliant model behavior. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Summary

@@ -53,6 +53,7 @@ of its desired property.
 ## Book Chapters Supported
 
 - `model-weight-custody-and-hardware-roots-of-trust` (Model-Weight Custody and Hardware Roots of Trust)
+- `open-weight-release-and-post-release-control` (Open-Weight Release and Post-Release Control)
 
 ## Claims To Add Or Update
 

@@ -1,0 +1,451 @@
+---
+title: "Societal Resilience and Misuse Defense"
+chapter_id: "societal-resilience-and-misuse-defense"
+part_id: "foundations-alignment-governance"
+status: "conceptual"
+draft_maturity: "v0.2 complete argument-level manuscript"
+last_updated: "2026-07-24"
+primary_sources:
+  - "ext_singapore_consensus_2026"
+  - "ext_international_ai_safety_report_2026"
+  - "ext_nist_incident_response_2025"
+evidence_level: "argument"
+claim_label: "Design rationale"
+open_evidence_gaps:
+  - "No cross-organization misuse-defense network, victim-support process, or societal-resilience intervention is operated or evaluated here."
+  - "The chapter avoids operational attack recipes and uses synthetic exercises as the minimum implementation."
+  - "No incident-reporting, classifier, education, provenance, or response intervention is assumed effective across jurisdictions or populations."
+---
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `societal-resilience-and-misuse-defense` |
+| Exclusive job | coordinate resistance, absorption, recovery, and adaptation beyond one model provider or stack operator |
+| Claim label / support | Design rationale / `argument` |
+| Evidence available | current international taxonomies, incident-response standard, worked misuse-safety-case method |
+| Evidence absent | deployed network, causal harm reduction, universal coverage, or public legitimacy result |
+
+Source loading state: all assigned source notes were reviewed for bounded
+mechanism, evidence, failure, and nonclaim use; external results remain
+source-reported.
+
+## Drafting guardrail
+
+This chapter discusses defense against fraud, sexual abuse, cyber misuse,
+biological/chemical misuse, manipulation, and vulnerable-user harms at the
+level required to design response systems. It does not reproduce harmful
+content, target data, exploit procedures, or victim information. Resilience is
+not permission to release an unsafe model: downstream recovery complements,
+but does not excuse, prevention.
+
+::: {.asi-human-only}
+## Human Reading Path
+
+Even a strong model safeguard will sometimes fail. Harm can also begin outside
+the model provider: a fine-tuned open model, stolen account, compromised tool,
+or ordinary non-AI method can enter the same social system. Defense therefore
+needs an outer layer.
+
+Societal resilience has four verbs. **Resist** makes harmful action harder.
+**Absorb** keeps essential functions and support available during an incident.
+**Recover** contains damage, helps affected people, corrects records, and
+restores services. **Adapt** changes defenses, institutions, and incentives
+after learning from the event.
+
+The chapter's main artifact is a federated incident envelope. It lets
+providers, platforms, infrastructure operators, public agencies, researchers,
+civil society, and affected communities refer to the same incident without
+sharing unlimited data or surrendering their own authority. Its success is
+measured in harm and recovery, not just classifier accuracy or takedown count.
+:::
+
+## Problem
+
+Internal incident command can stop a service, revoke a credential, roll back a
+model, and restore a system. It cannot alone repair a defrauded person's
+finances, remove copies across platforms, notify a targeted community, patch
+critical infrastructure, support a child or vulnerable user, coordinate
+public-health defenses, or correct a false narrative after it spreads.
+
+The Singapore Consensus 2026 elevates societal resilience to a fourth research
+pillar alongside assessment, development, and control. The International AI
+Safety Report describes resilience across biological/chemical, cyber,
+synthetic-media, influence, and cross-cutting risks. NIST SP 800-61 Rev. 3
+supplies a mature incident-response lifecycle. The synthesis here is that
+model safeguards and operator response need a rights-preserving federated
+outer loop.
+
+That outer loop must work when organizations disagree, evidence is incomplete,
+and the attacker adapts faster than ordinary policy revision.
+
+## Why existing approaches are insufficient
+
+### One classifier sees one surface
+
+Prompt and output classifiers can reduce harmful interactions in an official
+service. They face false positives, distribution shift, obfuscation, adaptive
+attack, language gaps, and displacement to another channel. A platform may
+remove content while preserving no evidence for victim remedy or cross-platform
+investigation.
+
+**Failure mode:** classifier pass rate becomes the societal-harm metric.
+
+**Non-claim:** classifier limitations do not imply that filtering is useless.
+They imply layered controls and explicit coverage.
+
+### Takedown is not recovery
+
+Removing one account or artifact can leave financial loss, copied media,
+search-result persistence, reputational damage, compromised infrastructure,
+trauma, and follow-on targeting. Recovery needs harmed-party contact, evidence
+preservation, correction, service restoration, compensation or remedy routes,
+and checks for recurrence.
+
+**Failure mode:** response closes when the provider's ticket closes.
+
+**Non-claim:** the architecture cannot guarantee legal remedy or complete
+removal across every jurisdiction.
+
+### Reporting is not automatically safe
+
+Shared incident data can expose victims, confidential reporters, security
+weaknesses, or sensitive defenses. It can also enable surveillance or false
+accusation. The network needs purpose limitation, minimization, access control,
+retention, challenge, and correction.
+
+**Failure mode:** a centralized threat database becomes an unaccountable
+identity and behavior registry.
+
+**Non-claim:** privacy constraints do not justify keeping serious incidents
+unreportable; they shape what is shared and with whom.
+
+## Core Claim
+
+[societal-resilience-and-misuse-defense.core, label: Design rationale, support: argument]
+Societal misuse defense should be operated as a domain-specific
+resist-absorb-recover-adapt network with shared incident identity, lawful
+minimal telemetry, harmed-party routes, cross-organization escalation,
+defensive service levels, evidence-preserving response, correction, and
+residual ownership; prevention metrics alone establish neither resilience nor
+acceptable harm.
+
+## Mechanism
+
+### The four-stage resilience contract
+
+```{mermaid}
+flowchart TD
+  T["Threat and affected-system model"] --> R["Resist: access, friction, safeguards, education, defensive tools"]
+  R --> A["Absorb: continuity, triage, human support, bounded degradation"]
+  A --> C["Recover: contain, notify, correct, restore, remedy"]
+  C --> D["Adapt: patch, share lessons, change incentives and controls"]
+  D --> T
+  I["Federated incident identity and evidence envelope"] -- "minimum evidence" --> R
+  I -- "continuity state" --> A
+  I -- "incident custody" --> C
+  I -- "lessons and residuals" --> D
+  P["Privacy, due process, accessibility, and harmed-party rights"] --- I
+  C -- "unrepaired harm" --> P
+```
+
+**How to read the societal-resilience cycle:** the outer loop moves from
+resistance through absorption, recovery, and adaptation, while every stage
+shares a bounded incident identity rather than a universal surveillance
+record. Rights constrain the evidence envelope, and unrepaired harm returns to
+affected-party support and remedy instead of disappearing into a closed
+incident ticket.
+
+### Resist
+
+Resistance can include safer model defaults, access controls, due diligence,
+transaction friction, content provenance, media literacy, identity assurance,
+DNA-order screening, defensive cyber tooling, vulnerability patching, abuse
+classifiers, and rate limits. Each intervention needs an explicit threat and
+population. Friction that stops low-resource legitimate users while capable
+attackers bypass it can worsen the distribution of safety.
+
+### Absorb
+
+Absorption keeps essential functions available during an incident. Examples
+include manual fallback, segregated networks, emergency contacts, trusted human
+review, financial holds, backup communication channels, surge moderation, and
+support capacity. Graceful degradation should protect affected people rather
+than merely protect provider uptime.
+
+### Recover
+
+Recovery detects scope, contains active harm, revokes reachable authority,
+notifies affected parties, preserves evidence, corrects misinformation,
+restores systems, supports victims, and tracks residual copies or access.
+“Removed from our platform” is one field, not terminal closure.
+
+### Adapt
+
+Adaptation updates threat models, patches safeguards, changes operational
+agreements, funds defense, improves education, alters incentives, and publishes
+public-safe lessons. Preserve negative and null results. A response that worked
+in one language, platform, or jurisdiction needs transfer evidence before
+broader claims.
+
+### The federated incident envelope
+
+The envelope creates shared reference without creating one omniscient owner:
+
+| Field family | Purpose |
+|---|---|
+| incident identity and aliases | link reports while preserving local records |
+| domain, severity, and affected functions | route to competent responders |
+| model/system/artifact versions | distinguish changing technical objects |
+| evidence summary and confidence | state what is observed versus inferred |
+| privacy and disclosure class | constrain sharing, retention, and publication |
+| affected-party and accessibility routes | enable notification, support, challenge, and remedy |
+| organizations and authority | show who can act on which surface |
+| stage and service levels | measure detect, contain, notify, restore, correct, and adapt |
+| false-positive and dispute state | prevent allegation from becoming fact |
+| residuals and next owner | keep unresolved copies, harms, and gaps visible |
+
+Organizations can exchange signed, minimal packets while keeping sensitive raw
+evidence in appropriate custody. A shared ID does not give every participant
+access to every field.
+
+### Domain playbooks
+
+### Fraud, scams, extortion, defamation, and impersonation
+
+Resistance combines identity and transaction friction, anomaly detection,
+provenance, user education, and high-risk action confirmation. Recovery needs
+rapid financial and account intervention, evidence preservation, notification,
+correction, and dispute routes. Measure prevented loss, recovered loss, time to
+intervention, false blocks, repeat targeting, and unequal coverage.
+
+**Failure mode:** total blocked messages rises while successful losses and
+victim burden remain unmeasured.
+
+**Non-claim:** identity assurance cannot prove every speaker's legitimacy or
+eliminate social engineering.
+
+### Child safety and non-consensual intimate imagery
+
+The design must center victim safety, age-appropriate support, privacy,
+specialist review, lawful reporting, removal and hash-sharing where authorized,
+recurrence detection, and protection against revictimization. Do not expose
+harmful media to unnecessary reviewers or training pipelines.
+
+**Failure mode:** evidence collection multiplies access to abusive material or
+incorrect automated accusation harms a person.
+
+**Non-claim:** this chapter does not specify legal reporting duties or replace
+specialist child-safety and survivor organizations.
+
+### Cyber misuse
+
+Connect frontier capability evaluation to defender-favoring tools, rapid
+vulnerability triage and patching, critical-infrastructure continuity, shared
+incident indicators, and cross-organization exercises. Withhold details that
+would make exploitation easier. Measure time to patch, exposed population,
+defender workload, false alarms, service continuity, and recurrence.
+
+**Failure mode:** “AI for defense” generates more unactionable findings than
+operators can verify and patch.
+
+**Non-claim:** a defensive advantage on one benchmark does not establish a
+better offense-defense balance in the field.
+
+### Biological and chemical misuse
+
+Resilience sits downstream of model safeguards: screening and customer
+verification, laboratory biosafety and biosecurity, public-health surveillance,
+diagnostics, therapeutics, supply-chain monitoring, emergency coordination,
+and international reporting. Sensitive data and methods require strict
+handling.
+
+**Failure mode:** attention to model outputs displaces investment in physical
+and institutional defenses.
+
+**Non-claim:** the chapter makes no judgment that a specific model or
+biotechnology tool crosses a hazard threshold.
+
+### Manipulation, mental health, and parasocial harms
+
+Protect vulnerable users through product design, crisis routes, age-appropriate
+controls, monitoring that respects privacy, staged rollout, independent
+research, user agency, and exit without punishment. Separate persuasion,
+sycophancy, dependency, delusion reinforcement, emotional attachment, and
+clinical outcomes.
+
+**Failure mode:** engagement optimization is treated as wellbeing, or broad
+monitoring becomes intimate surveillance.
+
+**Non-claim:** an AI system is not established here as a clinical treatment,
+cause of a diagnosis, or substitute for professional care.
+
+### Defense-favoring AI
+
+The Singapore Consensus highlights capabilities that improve defense. A
+defense-favoring claim needs a joint comparison:
+
+- defender time and quality;
+- attacker time and quality under appropriately safe evaluation;
+- false positives and missed events;
+- capacity bottlenecks and actionability;
+- access distribution;
+- opportunity for repurposing;
+- total cost and downstream harm.
+
+An AI patch generator that finds vulnerabilities faster but publishes
+exploitable detail, overwhelms maintainers, or produces unsafe fixes may not
+favor defense. The metric is a changed field outcome, not model cleverness.
+
+## Interfaces
+
+This chapter is the point where model-centered evidence becomes a
+multi-institution operating problem. It accepts bounded threat and incident
+records, then assigns prevention, detection, response, recovery, and remedy
+without absorbing the legal or technical authority of neighboring chapters.
+Every handoff names an organization, jurisdiction, data class, service level,
+appeal path, expiry, and residual owner so “coordination” cannot mean an
+unaccountable shared database.
+
+- **Dangerous Capability Domains** supplies the threat and bounded uplift
+  evidence.
+- **Governed Operations** owns incident command inside the stack and provider.
+- **Institutions and Public Legitimacy** owns mandate, jurisdiction, public
+  accountability, and enforcement.
+- **Privacy and Data Rights** governs collection, sharing, retention, challenge,
+  and remedy.
+- **Content Authenticity** supplies synthetic-media lineage and disclosure
+  evidence.
+- **Capability Thresholds and Open-Weight Release** receive resilience limits;
+  recovery capacity does not automatically lower release risk.
+
+## Invariants
+
+The invariants protect both effectiveness and legitimacy. A defense that
+reduces one measured incident type by shifting harm to an unmeasured
+community, normalizing pervasive surveillance, or denying innocent people
+essential services has not become resilient. Coverage and burden stay
+disaggregated by affected population and institution rather than disappearing
+inside an average response time.
+
+- Victim safety, privacy, due process, and remedy remain outcomes, not footnotes.
+- Cross-organization data sharing is necessary, proportionate,
+  purpose-limited, minimized, logged, and expiring.
+- Resistance, absorption, recovery, and adaptation retain separate measures.
+- False intervention and unequal coverage remain in every denominator.
+- Public reporting preserves accountability while withholding victim data and
+  reusable attack detail.
+
+## Failure modes
+
+### Strongest objection
+
+The strongest objection is institutional: no technical schema can make
+organizations cooperate, fund capacity, respect rights, or act across
+jurisdictions. A simpler local playbook may outperform a grand network. This
+chapter accepts that limit. Federation begins with bounded bilateral or
+sectoral agreements, tests actual handoffs, and preserves nonparticipation as a
+coverage gap. Institutions retains authority over legitimacy.
+
+Other failures include alert floods, shared blind spots, classifier monoculture,
+victim exclusion, jurisdiction shopping, political abuse, data hoarding,
+underreporting, duplicate incidents, incompatible severity, responder burnout,
+unfunded mandates, inaccessible support, slow correction, patch nonadoption,
+defense-tool dual use, and success metrics detached from harm.
+
+## Minimum Viable Implementation
+
+Choose a harmless synthetic incident, such as an impersonation campaign against
+fictional entities. Run a tabletop across a model provider, platform,
+infrastructure operator, support organization, and public coordinator. Exercise
+shared identity, minimal evidence, privacy classes, escalation, false-positive
+challenge, containment, notification, correction, restoration, and after-
+action adaptation. Measure handoff loss and service times. No real victim,
+credential, exploit, or harmful artifact enters the exercise.
+
+Repeat the exercise with missing participants, conflicting jurisdictions,
+delayed evidence, a compromised signal, a false accusation, a privacy
+constraint, and an attacker that changes channels after containment. Require
+an independent observer to score both operational outcomes and rights burdens.
+The minimum implementation qualifies the incident-envelope mechanics and
+reveals coordination gaps; it does not establish real-world deterrence,
+population protection, or transfer across institutions.
+
+## Beyond the State of the Art
+
+The mature resilience fabric connects frontier evaluation to practical
+defense, response, recovery, and adaptation without centralizing unlimited
+surveillance. It knows which organizations can act, what evidence they may
+receive, how affected people obtain support and challenge, which communities
+remain uncovered, and whether defensive capability changes outcomes. It
+improves over time while preserving a hard boundary: society's ability to
+recover is not a waiver for avoidable risk.
+
+At maturity, communities and smaller institutions participate as first-class
+defense nodes rather than passive recipients of provider warnings. Shared
+formats allow a victim-support organization, platform, infrastructure
+operator, laboratory, and public agency to exchange the minimum evidence each
+needs while retaining different mandates and privacy constraints. Exercises
+measure handoff loss and correlated failure before a real crisis.
+
+The program also learns across incidents without publishing reusable attack
+detail. Public-safe summaries expose coverage, delays, false interventions,
+disparate burden, remedy, and unresolved residuals; protected annexes preserve
+the operational trace for accountable evaluators. Defensive models are
+compared with non-model workflows so automation does not become the assumed
+answer.
+
+The advance over conventional incident response is a continuously tested
+social control plane whose unit of success is avoided and repaired harm across
+the real exposure denominator. It remains contestable, expires stale
+authorities, and treats civil-liberties cost and institutional capacity as
+joint outcomes rather than externalities.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Stage completeness | Reject a playbook that measures prevention but omits absorption, recovery, or adaptation. | planned |
+| Federated identity | Verify that local records link without granting universal data access. | planned |
+| Rights mutation | Reject missing privacy, due-process, accessibility, affected-party, or remedy routes. | planned |
+| False-positive exercise | Preserve dispute and correction when an alert is wrong. | planned |
+| Coverage test | Report language, geography, organization, and population gaps. | planned |
+| No-promotion control | Prevent tabletop or source synthesis from becoming a societal-harm-reduction claim. | planned |
+
+## Source crosswalk
+
+| Source ID | Bounded use | Non-authority |
+|---|---|---|
+| `ext_singapore_consensus_2026` | societal resilience pillar, defense-favoring capability, incident sharing, rapid patching | agenda, not intervention evidence |
+| `ext_international_ai_safety_report_2026` | resist/absorb/recover/adapt synthesis and domain examples | effectiveness remains uneven and context-bound |
+| `ext_nist_incident_response_2025` | preparation, detection, response, recovery, and improvement lifecycle | general cyber guidance, not complete AI societal defense |
+| `ext_aisi_misuse_safeguards_safety_case_2026` | link from safeguard bypass and uplift to deployment monitoring | example argument, not real-world harm reduction |
+
+## Summary
+
+The stack needs an outer defense because model controls and internal incident
+command end at organizational boundaries while harms do not. Societal
+resilience joins prevention with continuity, recovery, adaptation, affected-
+party rights, and cross-organization evidence. Its unit of success is reduced
+and repaired harm under explicit coverage—not a green classifier dashboard.
+
+The chapter therefore asks not only whether an alert fired, but whether the
+right organization could act, whether help reached the affected person,
+whether essential services continued, whether a false intervention was
+reversed, whether evidence was shared lawfully, and whether the next attack
+became harder. Resilience is the measured capacity to preserve and restore
+social function under adaptation, never a rhetorical license to accept
+preventable misuse.
+
+## Handoff
+
+**Stable Capability Fields** follows. It receives requirements for replaceable
+defensive services, stable incident identities, service levels, and renewal
+triggers. It does not receive authority to freeze one classifier, institution,
+or response mechanism as permanent. The handoff preserves hazard, population,
+coverage, attacker adaptation, defender burden, observed harm, recovery,
+expiry, and residual ownership so stable fields can survive implementation
+replacement. It proves neither that the fields are complete nor that any
+defense reduced harm, transferred across institutions, preserved rights, or
+earned deployment authority.

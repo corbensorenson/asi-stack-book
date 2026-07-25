@@ -1,0 +1,457 @@
+---
+title: "Dangerous Capability Domains and Misuse Uplift"
+chapter_id: "dangerous-capability-domains-and-misuse-uplift"
+part_id: "foundations-alignment-governance"
+status: "conceptual"
+draft_maturity: "v0.2 complete argument-level manuscript"
+last_updated: "2026-07-24"
+primary_sources:
+  - "ext_singapore_consensus_2026"
+  - "ext_international_ai_safety_report_2026"
+  - "ext_model_evaluation_extreme_risks_2023"
+  - "ext_aisi_frontier_ai_trends_2025"
+evidence_level: "argument"
+claim_label: "Design rationale"
+open_evidence_gaps:
+  - "No hazardous-domain uplift study is run or reproduced here."
+  - "The chapter specifies a public-safe evaluation architecture; it does not authorize operational CBRN, cyber, manipulation, or other harmful tasks."
+  - "Source-reported capabilities, thresholds, and safeguards remain source-reported and model-, protocol-, actor-, and date-bound."
+---
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `dangerous-capability-domains-and-misuse-uplift` |
+| Part | Part I - Foundations, Alignment, and Governance |
+| Manuscript maturity | complete argument-level architecture |
+| Claim label / support | Design rationale / `argument` |
+| Evidence available | passage-reviewed source notes and an evaluation design |
+| Evidence absent | local hazardous-domain evaluation, independent reproduction, calibrated threshold, or safety result |
+
+Source loading state: all assigned source notes were reviewed for bounded
+mechanism, evidence, failure, and nonclaim use; external results remain
+source-reported.
+
+## Drafting guardrail
+
+This chapter describes how to measure whether AI changes a threat actor's
+effective capability without publishing a recipe for causing harm. Domain
+examples stay at the level needed to define evaluation and governance. A
+benchmark, provider system card, safety framework, or source-reported result is
+not imported as proof that a model is dangerous, safe, or below a threshold.
+
+::: {.asi-human-only}
+## Human Reading Path
+
+A model can know dangerous facts without making a person more capable of
+causing harm. It can also appear harmless because it refuses a direct request
+while retaining capability that a different prompt, scaffold, fine-tune, or
+toolchain can elicit. The decision-relevant quantity is therefore not “does the
+model answer a quiz?” It is “how much does this exact system change what this
+actor can accomplish under these conditions?”
+
+The chapter separates five quantities that safety discussions often blur:
+latent capability, elicited task performance, behavioral propensity, safeguard
+bypass, and actor uplift. Realized harm is a sixth quantity downstream of all
+five. Each has a different instrument and a different non-claim.
+
+The practical artifact is an uplift dossier. It freezes a domain threat model,
+actor cohorts, model and scaffold, tools, assistance, tasks, controls,
+elicitation budget, evaluator, uncertainty, information-hazard boundary,
+expiry, and maximum inference. That dossier can inform a capability threshold,
+release decision, or resilience plan. It cannot silently become a universal
+danger score.
+:::
+
+## Problem
+
+The ASI Stack already has machinery for threshold-linked commitments, readiness
+gates, evaluation, custody, and incident command. Those mechanisms answer “what
+should happen if evidence crosses a boundary?” They do not define the threat
+content or establish what a crossing means.
+
+That absence is material. The 2026 Singapore Consensus treats dangerous
+capability and propensity assessment across cyber, chemical, biological,
+radiological, nuclear, psychological-manipulation, deception, autonomy, and AI
+R&D domains as a top-level research priority. The International AI Safety
+Report likewise separates model capabilities, safeguards, open-weight access,
+misuse, and societal resilience. These sources do not prove a specific risk,
+but they show why one generic “frontier capability” field is inadequate.
+
+The stack needs a safe owner for three questions:
+
+1. What harm pathway is being measured?
+2. Did the model causally increase an actor's ability to traverse that pathway?
+3. What may a downstream decision maker infer from the result?
+
+## Why existing approaches are insufficient
+
+### Knowledge is not completion
+
+A multiple-choice or short-answer test can reveal relevant knowledge. It does
+not establish whether an actor can plan, adapt, operate tools, recognize
+failure, satisfy prerequisites, cross bottlenecks, or complete a long-horizon
+workflow. Conversely, a low score may reflect language, interface, time, or
+elicitation failure rather than absent capability.
+
+**Failure mode:** an evaluator treats knowledge accuracy as operational uplift.
+
+**Non-claim:** workflow evaluation does not establish that a real harmful
+operation is feasible; the safe evaluation may intentionally omit decisive
+real-world steps.
+
+**Source engagement:** *Model Evaluation for Extreme Risks* distinguishes
+dangerous-capability evaluations from alignment evaluations and connects both
+to deployment and security decisions. The AISI trends report provides a
+current example of domain- and horizon-specific measurement. Neither source
+turns a task result into realized harm.
+
+### Refusal is not incapability
+
+Default policy behavior is useful deployment evidence. It is not a complete
+capability probe. Fine-tuning, alternate scaffolds, prompt decomposition, tool
+access, or a different system policy may expose different behavior.
+OpenAI's gpt-oss study is useful here as a bounded comparator because it
+explicitly evaluates deliberately fine-tuned cyber and biology variants rather
+than only the default model. Its reported result is not a worst-case proof:
+another budget, method, domain, or future model can differ.
+
+**Failure mode:** high refusal becomes “the model cannot do it.”
+
+**Non-claim:** strong elicitation does not show that the deployed model will
+spontaneously misuse the capability. That is a propensity question.
+
+### Capability is not propensity
+
+Capability asks whether a system can produce an outcome under competent
+elicitation. Propensity asks when it chooses, assists, deceives, persists, or
+refuses under a specified policy and context. A model can score high on one and
+low on the other. Threat assessment needs both, but their denominators cannot
+be merged.
+
+**Failure mode:** a capable model is described as intending harm, or a
+well-behaved model is described as incapable.
+
+**Non-claim:** this distinction does not solve intent attribution. It prevents
+one measurement from being mislabeled as another.
+
+## Core Claim
+
+[dangerous-capability-domains-and-misuse-uplift.core, label: Design rationale, support: argument]
+Dangerous-capability authority should be based on a versioned domain threat
+model and an uplift dossier that separates latent capability, elicited
+performance, propensity, safeguard bypass, actor uplift, and realized harm;
+preserves expertise, tools, assistance, attempts, uncertainty, and
+sensitive-detail boundaries; and routes only bounded findings into thresholds,
+release, monitoring, and resilience decisions.
+
+## Mechanism
+
+### The six-level measurement ladder
+
+| Level | Question | Example evidence type | Prohibited inference |
+|---|---|---|---|
+| D0 — relevant knowledge | Does the model possess bounded domain information? | calibrated questions and expert review | real-world task completion |
+| D1 — component skill | Can it perform a safe analogue of one component? | controlled task with positive controls | end-to-end operation |
+| D2 — workflow contribution | Does it improve multi-step performance in a bounded environment? | long-horizon safe simulation | real infrastructure effect |
+| D3 — actor uplift | Do matched actors perform better with the system? | randomized or carefully matched assistance study | realized harm or general population effect |
+| D4 — safeguard robustness | How much effort defeats the deployed controls? | adaptive red team and bypass-cost estimate | absence of untested bypasses |
+| D5 — field consequence | Are real incidents, defensive outcomes, or losses changing? | privacy-preserving incident and response evidence | clean causal attribution without a design |
+
+The levels can inform one another, but none automatically promotes the next.
+The AISI misuse-safeguards example is valuable because it tries to connect
+red-team effort and uplift into a decision argument. Its equations and
+assumptions would still need domain-specific validation.
+
+### Build an uplift dossier
+
+```{mermaid}
+flowchart TD
+  T["Versioned domain threat model"] --> C["Actor cohorts and no-model baseline"]
+  C --> S["Exact model, scaffold, tools, and safeguards"]
+  S --> E["Safe tasks, elicitation audit, and positive controls"]
+  E --> U["Uplift estimate with uncertainty and full attempts"]
+  U --> R{"Independent review and information-hazard gate"}
+  R -- "invalid or unsafe" --> Q["Quarantine, redesign, or narrow"]
+  R -- "bounded finding" --> D["Least-authority decision dossier"]
+  D --> H["Threshold, release, monitoring, and resilience owners"]
+  H --> X["Expiry and renewed measurement"]
+  Q -- "redesign safely" --> T
+  X -- "material change" --> T
+```
+
+**How to read the dangerous-capability uplift loop:** move from a frozen threat
+model through matched actors, exact system state, safe controls, and an
+uncertainty-bearing uplift estimate. Independent review either narrows and
+redesigns the study or hands a bounded dossier to decision owners; expiry and
+material change return the claim to measurement rather than preserving a
+permanent danger label.
+
+### 1. Freeze the threat model
+
+Name the actor, objective, target class, access, prerequisites, missing
+resources, model contribution, external bottlenecks, plausible consequence,
+defensive controls, time horizon, and evaluation exclusions. “Cyber” and
+“biology” are not threat models. Each contains tasks with different knowledge,
+tool, resource, legality, and harm boundaries.
+
+The threat model must include a strongest benign alternative explanation. A
+score increase may reflect better writing, interface familiarity, or test
+gaming rather than increased harmful competence.
+
+### 2. Define actor cohorts and counterfactuals
+
+An uplift study is relational. It compares an actor's outcome with model
+assistance against a credible counterfactual. Cohorts should reflect prior
+expertise, language, tool fluency, motivation, and relevant training. Experts
+and novices answer different policy questions; averaging them can erase both.
+
+Randomization is preferable where safe and feasible. Matched or crossover
+designs need carryover and learning controls. AI-agent cohorts need the same
+discipline: exact checkpoint, scaffold, context, tools, retry budget, and human
+assistance are part of the actor.
+
+### 3. Audit elicitation competence
+
+A null result is uninterpretable if the model was poorly prompted, denied
+needed harmless tools, given an inadequate context, or evaluated on an
+impossible task. Before interpreting failure:
+
+- a known-positive system must succeed where the instrument expects success;
+- a known-negative control must remain below the measured boundary;
+- expert review must find the task relevant but safely incomplete;
+- allowed elicitation and rescue budgets must be prospectively frozen;
+- evaluator sensitivity must cover a practically important effect.
+
+This is the chapter's defense against false negatives. Failure at this stage is
+an instrument or implementation result, not evidence against the capability.
+
+### 4. Preserve multidimensional outcomes
+
+Report success, quality, time, errors, unsafe details, help requests,
+abandonment, confidence, safeguard interventions, bypass effort, human burden,
+cost, and residuals. Retain every assigned attempt. A higher completion score
+can coexist with slower performance or more dangerous errors; a safeguard can
+reduce harmful output while producing high false refusal.
+
+### 5. Separate analysis from disclosure
+
+High-hazard evaluation creates an information-security obligation. Raw tasks,
+solutions, model traces, target identifiers, credentials, and reusable
+procedures may require restricted custody. Public reports should preserve the
+claim, method class, uncertainty, evaluator independence, and limitations
+without reconstructing the dangerous artifact.
+
+Redaction is not automatically trustworthy. The restricted record needs an
+authorized reviewer, digest, retention rule, access log, expiry, and a public
+statement of what the redaction prevents readers from checking.
+
+### Domain programs
+
+### CBRN and biological/chemical misuse
+
+The decision question is whether assistance materially reduces the knowledge,
+planning, troubleshooting, acquisition, or execution barriers faced by a
+specified actor. Safe studies can use non-hazardous analogues, structured
+expert judgments, and deliberately incomplete workflows. They must not create
+or distribute operational designs, materials, or target-specific procedures.
+
+**Failure mode:** expert-rated helpfulness is treated as demonstrated novice
+completion.
+
+**Non-claim:** a non-hazardous analogue may validate an instrument but cannot
+prove transfer to a hazardous workflow.
+
+### Offensive cyber capability
+
+Cyber evaluation ranges from bounded vulnerability reasoning through
+long-horizon operation. Use isolated, authorized environments and synthetic
+credentials. Preserve reconnaissance, exploitation, persistence, lateral
+movement, recovery, and defender intervention as separate components. A
+capture-the-flag score is not an attack on a live system.
+
+**Failure mode:** short puzzle success is extrapolated to reliable autonomous
+operations.
+
+**Non-claim:** an isolated cyber-range result authorizes no action against
+external systems.
+
+### Manipulation and influence
+
+Measure effects on specified decisions, beliefs, or behaviors with consent,
+debriefing, vulnerable-population protections, and delayed-harm monitoring.
+Persuasiveness, engagement, dependency, deception, and coercion are not one
+construct.
+
+**Failure mode:** preference for a message is labeled durable behavioral
+control.
+
+**Non-claim:** laboratory persuasion does not establish population-scale
+influence, and absence of an average effect does not protect susceptible
+subgroups.
+
+### AI R&D acceleration and autonomy
+
+Separate assistance on bounded research tasks from end-to-end acceleration of
+the development loop. Track whether the model proposes, implements, evaluates,
+and selects improvements; who supplies missing judgment; and whether the
+result changes a real bottleneck. Autonomous replication and RSI remain owned
+by their dedicated chapters.
+
+## Interfaces
+
+The dossier is deliberately a shared boundary object. Upstream evaluators can
+contribute observations without acquiring deployment authority, and downstream
+governors can consume the same versioned result without rewriting its threat
+model. Every consumer must cite the exact domain, actor cohort, access level,
+comparator, elicitation procedure, safeguard state, uncertainty interval, and
+expiry that justified its own decision.
+No interface receives a portable danger label detached from that packet.
+
+- **Capability Thresholds and Deployment Commitments** consumes a dated,
+  bounded measurement and decides what commitment it triggers.
+- **Adversarial Evaluation** challenges sandbagging, evaluation awareness, and
+  adaptive behavior.
+- **Open-Weight Release** adds malicious-fine-tuning and accessible-frontier
+  analysis before an irreversible publication decision.
+- **Safety Cases** connects the measured claim to a release argument without
+  hiding defeaters.
+- **Societal Resilience** converts the threat model into detection, defense,
+  response, and recovery requirements.
+
+## Invariants
+
+These invariants prevent the chapter from collapsing a chain of conditional
+measurements into one emotionally powerful label. They also preserve failed,
+inconclusive, and unsafe-to-run cases: absence of an observed success cannot
+erase blocked attempts, inadequate elicitation, evaluator disagreement,
+information-hazard exclusions, or inaccessible real-world steps.
+
+- Capability, propensity, bypass, uplift, and harm retain separate identities.
+- Every result names its exact model, checkpoint, policy, scaffold, tools,
+  cohort, task, evaluator, date, and uncertainty.
+- Failed positive controls block negative interpretation.
+- Real targets, credentials, materials, and harmful operational artifacts stay
+  outside chapter authority.
+- Expiry follows any material change in model, elicitation, access, threat,
+  comparator frontier, safeguard, or incident evidence.
+
+## Failure modes
+
+### Strongest objection
+
+The strongest objection is that sufficiently realistic uplift evaluation may
+itself transfer dangerous knowledge or create reusable artifacts. The answer is
+not to substitute harmless toy scores and call the model safe. It is to
+separate progressively more realistic evidence tiers, require hazard review
+and least-disclosing outputs at every tier, stop before operational detail
+escapes, and retain the resulting uncertainty as a release residual.
+
+The program can create bureaucracy without validity, legitimize harmful
+research, or give false precision to sparse evidence. A simpler policy—avoid
+releasing highly general autonomous systems—can dominate when evaluation
+cannot be conducted safely. The chapter therefore requires a stop route:
+unknown risk plus inadequate measurement can justify narrower access without
+fabricating a score.
+
+Other failures include evaluator capture, underpowered cohorts, expertise
+imbalance, contamination, task leakage, ceiling effects, weak scaffolds,
+unmeasured human help, stale comparators, incident underreporting, publication
+bias, and a provider evaluating its own decision without independent challenge.
+
+## Minimum Viable Implementation
+
+Build the dossier schema and run it on a harmless analogue such as debugging a
+synthetic system or planning a non-hazardous laboratory workflow. Compare
+stratified participants or capable agents with and without bounded assistance.
+Include known-positive and known-negative controls, blinded scoring, an
+elicitation audit, complete attempt retention, an information-hazard review,
+and a no-promotion receipt. The result validates only the instrument in that
+analogue.
+
+A second phase uses sealed, independently authored tasks with domain experts
+who can judge correctness without releasing operational detail. It
+preregisters the maximum inference, positive-control threshold, rescue budget,
+stopping rules, and adjudication path. The exercise reports utility, unsafe
+completion, refusal, information leakage, evaluator disagreement, latency, and
+cost together; it cannot convert a harmless analogue into evidence about a
+high-consequence domain.
+
+## Beyond the State of the Art
+
+The mature service continuously joins controlled uplift, long-horizon
+completion, safeguard bypass, accessible-frontier comparison, real incident
+indicators, and independent expert review. It renews threat models as
+capabilities, tools, actors, and defenses change. It can inform strict action
+without claiming that uncertainty is zero, and it can report a null without
+turning an inadequate test into a false negative.
+
+The next advance is institutional as much as statistical. Independent teams
+need protected access to the same frozen artifact while keeping dangerous
+outputs compartmented, and policy owners need a stable way to compare
+non-release, restricted access, API access, and open release under the same
+threat assumptions. Renewal must be automatic when scaffolds, tools, access,
+or accessible competitors change.
+
+A credible program also measures defenses as causal interventions. It compares
+the same actors and tasks with and without safeguards, records substitution
+into other tools, and follows delayed outcomes instead of counting only blocked
+requests. Cross-domain aggregation may summarize resource needs, but never
+allows a low score in one domain to cancel a severe result in another.
+
+The state-of-the-art target is therefore not a larger danger leaderboard. It
+is a reproducible decision instrument that makes uncertainty, information
+hazards, capability elicitation, attacker uplift, defense effect, and expiry
+jointly inspectable while remaining safe enough to operate.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Threat-model completeness | Reject missing actor, objective, access, bottleneck, consequence, or safe-exclusion fields. | planned |
+| Type-confusion mutation | Reject capability described as propensity, uplift, or realized harm. | planned |
+| Competence gate | Block negative interpretation when elicitation, positive control, sensitivity, or task validity fails. | planned |
+| Disclosure boundary | Reject public packets containing prohibited operational details or missing restricted-review custody. | planned |
+| Expiry test | Reopen the dossier after model, scaffold, tool, threat, or comparator change. | planned |
+| No-promotion control | Ensure prose, source synthesis, schema checks, and safe analogues do not promote the chapter core. | planned |
+
+## Source crosswalk
+
+| Source ID | Bounded use | Non-authority |
+|---|---|---|
+| `ext_singapore_consensus_2026` | current domain taxonomy; capability/propensity, malicious-fine-tuning, and resilience priorities | research agenda, not safeguard evidence |
+| `ext_international_ai_safety_report_2026` | international synthesis of capability, misuse, safeguards, open weights, and resilience | underlying studies not locally reproduced |
+| `ext_model_evaluation_extreme_risks_2023` | dangerous-capability/alignment evaluation and governance linkage | framework, not a local extreme-risk result |
+| `ext_aisi_frontier_ai_trends_2025` | repeated domain-specific evaluation and horizon distinctions | bounded institute-reported trends |
+| `ext_openai_worst_case_open_weight_risks_2025` | malicious-fine-tuning and accessible-frontier comparator | provider-authored, model-specific result |
+| `ext_aisi_misuse_safeguards_safety_case_2026` | uplift model and misuse safety-case connection | worked methodology, not real-world risk proof |
+| `ext_openai_preparedness_framework_2025` | threshold-linked commitment comparator | provider policy, not independent validation |
+| `ext_anthropic_responsible_scaling_policy_3_4_2026` | current versioned threshold/safeguard comparator | mutable provider policy |
+
+## Summary
+
+The chapter fills the missing content beneath capability thresholds. It treats
+dangerous capability as a causal, domain-specific measurement problem and
+forces each result to preserve the difference between what a model can do,
+what it tends to do, what safeguards block, how much an actor improves, and
+what harm occurs. The result is an honest uplift dossier, not a universal
+danger score.
+
+For readers, the practical lesson is to ask a sequence of narrower questions:
+which model and version, helping which actor, with what access, on which
+hazardous step, compared with what unassisted or alternative baseline, under
+which safeguards, observed by whom, and for how long is the result current?
+If any answer is missing, the stack retains a bounded concern or unknown—not a
+universal statement about danger or safety.
+
+## Handoff
+
+**Evidence States and Claim Discipline** follows. It receives bounded
+measurement claims, uncertainty, expiry, and non-claims. It does not inherit a
+danger, safety, release, or support judgment merely because the dossier is
+complete. The receiving chapter must preserve domain, actor, access, baseline,
+model, evaluator, attempt denominator, safeguard, version, and maximum-
+inference identities before any transition is considered; a complete handoff
+shows record custody, not dangerous capability, realized misuse, effective
+mitigation, readiness, or permission to release.

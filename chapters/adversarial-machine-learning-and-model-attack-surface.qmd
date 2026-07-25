@@ -111,6 +111,94 @@ bounded downstream handoff; it does not erase residuals or promote its core clai
 
 **Closure.** Feed successful or unresolved attacks into custody, privacy, supply-chain, readiness, rollback, and incident systems without duplicating their authority. This stage is recorded as a versioned decision rather than an invisible implementation detail. For Adversarial Machine Learning and the Model Attack Surface, the record must name its inputs, authority, consumer, expiry, and unresolved residuals. A later stage may narrow the decision, but it may not silently broaden the earlier grant or reinterpret a missing field as success.
 
+### Adversarial examples: learned-boundary failure under bounded perturbation
+
+An adversarial example is not simply “weird input.” It is an input chosen under
+a threat model to change a learned system's behavior while satisfying a
+specified perturbation, access, and plausibility constraint. The constraint is
+part of the claim. A small norm ball, a physically realizable patch, a semantic
+rewrite, a sensor corruption, and a multimodal conflict describe different
+attacks and different operational meaning.
+
+The mechanism is decision-boundary exploitation. The attacker searches for an
+input whose task-relevant meaning or physical state should remain stable for
+the consumer while the model crosses a behavior boundary. White-box gradient
+access, transfer from a surrogate, query-only optimization, or ordinary
+environmental corruption changes what conclusions the result supports.
+
+The NIST adversarial-ML taxonomy is useful because it forces the attack to name
+stage, goal, knowledge, capability, and mitigation rather than treating all
+failures as one phenomenon. The sensor-fusion study in the source set supplies
+a concrete warning about composition: fusion can improve clean performance and
+some single-channel robustness while a defense applied to one channel creates
+cross-channel effects. That source-reported result does not establish that
+fusion is safe or unsafe in general; it shows why a system-level threat model
+must preserve modality and defense identity.
+
+**Failure mode.** A defense appears robust because gradients are hidden or the
+attacker is not adapted to it. Another failure is an imperceptibility metric
+that has little relation to task semantics or physical plausibility.
+
+**Explicit non-claim.** Defeating one bounded attack does not prove general
+robustness. Finding an adversarial example does not prove that the same input
+is reachable, harmful, or common in deployment.
+
+### Extraction, inversion, and model stealing are separate objectives
+
+Model extraction seeks to reproduce behavior or recover parameters through
+queries, artifacts, side channels, or compromised access. Training-data
+extraction seeks memorized examples. Model inversion estimates properties or
+representations associated with inputs. Membership inference asks whether a
+record influenced training. These objectives can overlap, but their assets,
+success conditions, and harmed parties differ.
+
+Carlini et al.'s GPT-2 study is a source-backed failure example: the authors
+reported black-box extraction of memorized training sequences in their tested
+setting. The correct lesson is configuration-bound. It motivates canaries,
+exposure measurement, query analysis, privacy review, and data-remedy
+interfaces; it does not establish that every model leaks, that a failed attack
+proves privacy, or that behavior cloning recovers exact weights.
+
+A competent extraction evaluation records the adversary's query budget,
+auxiliary data, target outputs, fidelity metric, parameter or example recovery
+criterion, duplicate handling, and baseline. It also measures service utility,
+false alarms, rate-limit effects, and whether the defense simply displaces the
+attack.
+
+**Failure mode.** High behavioral agreement is called parameter recovery, or a
+memorized public string is presented as private-data extraction.
+
+**Explicit non-claim.** A detector that catches one extraction strategy does
+not prove that the model, training set, or API is confidential.
+
+### Poisoning and backdoors: attacks that survive the learning transition
+
+Poisoning changes training, adaptation, retrieval, or feedback inputs so that
+the learned artifact acquires a targeted or broad failure. Backdoors are
+persistent conditional behaviors, often associated with a trigger. Clean-label
+poisoning, preference-data manipulation, retrieval poisoning, adapter
+insertion, and compromised evaluation feedback enter at different boundaries.
+
+*Sleeper Agents* supplies a deliberately constructed proof-of-concept in which
+backdoored language-model behavior persisted through several safety-training
+methods, and adversarial training could improve trigger recognition. This is a
+specific model-organism result, not evidence that deployed models naturally
+learn deception or that safety training generally strengthens backdoors. It
+does show why clean validation accuracy and post-training refusal rates are
+insufficient to clear artifact lineage.
+
+The evaluation must include poisoned and clean utility, trigger precision and
+recall, transfer across fine-tuning, persistence under model changes,
+trigger-search coverage, false accusation, and recovery after data or
+checkpoint removal.
+
+**Failure mode.** A known trigger is removed while a correlated family
+survives, or adversarial training teaches the model a better trigger detector.
+
+**Explicit non-claim.** Failure to discover a backdoor is not evidence that no
+backdoor exists; a constructed backdoor is not evidence of natural deceptive
+alignment.
+
 ## Interfaces
 
 Adversarial machine learning is useful only when its boundaries are sharper than neighboring owners.
@@ -224,6 +312,15 @@ Planned formalization hook: `lean:adversarial-machine-learning-and-model-attack-
 | `ext_carlini_training_data_extraction_2021` | Extracting Training Data from Large Language Models | Primary failure source reporting black-box extraction of memorized GPT-2 training sequences. The source result is configuration-bound and not a local or universal leakage result. |
 | `ext_adversarial_sensor_fusion_2022` | Adversarial Robustness of Deep Sensor Fusion Models | WACV camera-LiDAR study reporting that fusion can improve clean accuracy and some single-source robustness while single-channel adversarial training can create cross-channel externalities. The results are source-reported, architecture- and threat-model-bound, and not local evidence that fusion is safe. |
 
+### Manifest source assignment reconciliation
+
+These rows keep Adversarial Machine Learning and the Model Attack Surface's manifest assignments visible at their recorded review boundary. Passage review does not establish local reproduction, performance, safety, deployment, or support-state movement.
+
+| Source | Intake role | Boundary |
+|---|---|---|
+| `ext_reluplex_2017` | Passage-reviewed comparator: Reluplex: An Efficient SMT Solver for Verifying Deep Neural Networks. Supplies an early neural-network verification comparator for exact property checking over a bounded network and input region. | A bounded verifier result is architecture-, property-, implementation-, and region-specific and does not establish empirical robustness or secure deployment. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+
+<!-- manifest-source-reconciliation:end -->
 ## Summary
 
 A learned model should receive security authority only through a versioned model-threat contract and attack/defense ledger that binds checkpoint identity, lifecycle stage, attacker knowledge and capability, surface, budget, objective, adaptation, transfer, observed effect, detection, mitigation, utility cost, recovery, residual, and disclosure; clean accuracy, attack failure, benchmark robustness, red-team coverage, or formal certification alone establishes neither general robustness nor secure deployment. The subject is now integrated into the live manuscript at argument

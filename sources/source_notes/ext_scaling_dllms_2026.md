@@ -36,6 +36,7 @@ Scaling Beyond Masked Diffusion Language Models argues that diffusion language-m
 ## Book Chapters Supported
 
 - `fast-generation-architectures` (Fast Generation Architectures)
+- `replaceable-cognitive-substrates-beyond-transformer-monoculture` (Replaceable Cognitive Substrates: Beyond Transformer Monoculture)
 
 ## Claims To Add Or Update
 

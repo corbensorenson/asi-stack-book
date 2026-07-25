@@ -1,0 +1,57 @@
+{
+  "schema_version": "asi_stack.taxonomy_completion_claim_atoms.v1",
+  "snapshot_date": "2026-07-24",
+  "support_floor": "argument",
+  "evidence_effect": "none",
+  "atoms": [
+    {
+      "stable_claim_identity": "dangerous-capability-domains-and-misuse-uplift.core",
+      "chapter_owner": "dangerous-capability-domains-and-misuse-uplift",
+      "claim_text": "Dangerous-capability conclusions require domain-, actor-, access-, baseline-, task-, evaluator-, safeguard-, uncertainty-, and time-specific misuse-uplift dossiers rather than one undifferentiated frontier-risk score.",
+      "falsifier": "A prospectively frozen natural campaign shows that the dossier adds no decision-relevant calibration, threat discrimination, or safer release decision over a competent simpler domain-evaluation baseline at comparable burden.",
+      "acceptance_criterion": "Independent, source-disjoint evaluations across multiple dangerous-capability domains improve calibrated uplift estimation or reduce unsafe release decisions without unacceptable false restriction, latency, or governance burden.",
+      "promotion_ceiling": "argument until independent natural evaluation, reproduction, and domain transfer pass",
+      "evidence_plan_route": "domain-separated misuse-uplift campaign with actor/access baselines, safeguard ablations, temporal renewal, and complete attempt denominators",
+      "support_state": "argument",
+      "claim_label": "Design rationale"
+    },
+    {
+      "stable_claim_identity": "societal-resilience-and-misuse-defense.core",
+      "chapter_owner": "societal-resilience-and-misuse-defense",
+      "claim_text": "AI-misuse resilience should be evaluated as an adaptive defense portfolio spanning prevention, detection, communication, response, recovery, burden, and residual harm across the exposed population.",
+      "falsifier": "Representative exercises and natural incidents show no reduction in harm, recovery time, or distributional burden relative to competent incident-response baselines after accounting for displacement and attacker adaptation.",
+      "acceptance_criterion": "Independent exercises and observed incidents show jointly better detection, harm containment, recovery, and equitable burden under adaptive attack without unacceptable civil-liberties or access costs.",
+      "promotion_ceiling": "argument until natural incident evidence, independent exercises, and heterogeneous institutional transfer pass",
+      "evidence_plan_route": "multi-institution misuse exercise with adaptive attacker, no-defense and competent-response comparators, affected-population denominators, and delayed recovery outcomes",
+      "support_state": "argument",
+      "claim_label": "Design rationale"
+    },
+    {
+      "stable_claim_identity": "open-weight-release-and-post-release-control.core",
+      "chapter_owner": "open-weight-release-and-post-release-control",
+      "claim_text": "Open-weight release is an irreversible control-boundary transition that requires artifact-specific comparison of release forms, adaptation risk, safeguards, post-release observability, response, and residual ownership.",
+      "falsifier": "A prospectively frozen release study shows that the proposed packet does not improve calibration or reduce unsafe release decisions over a competent simpler release review while adding material delay or burden.",
+      "acceptance_criterion": "Independent stress tests across matched no-release, gated, API, research-access, and open-weight options improve dangerous fine-tuning detection and release calibration with explicit irreversibility and post-release residuals.",
+      "promotion_ceiling": "argument until independent fine-tuning, proliferation, and post-release monitoring campaigns pass",
+      "evidence_plan_route": "release-form tournament with malicious and benign adaptation, safeguard bypass, artifact propagation, observability loss, and no-release baseline",
+      "support_state": "argument",
+      "claim_label": "Design rationale"
+    },
+    {
+      "stable_claim_identity": "content-authenticity-watermarking-and-synthetic-media-integrity.core",
+      "chapter_owner": "content-authenticity-watermarking-and-synthetic-media-integrity",
+      "claim_text": "Synthetic-media integrity requires a lifecycle record that keeps provenance, watermark evidence, semantic truth, consent, distribution context, response, and remedy as separate claims.",
+      "falsifier": "Natural transformation and distribution tests show no improvement in useful provenance recovery, calibrated detection, or affected-party remedy over competent labeling and provenance baselines at comparable accessibility and privacy cost.",
+      "acceptance_criterion": "Independent cross-tool and cross-platform tests improve provenance continuity, calibrated synthetic-media detection, and remedy routing under realistic transformations without unacceptable privacy, accessibility, or false-attribution harms.",
+      "promotion_ceiling": "argument until natural media transformations, independent evaluation, platform transfer, and affected-party outcomes pass",
+      "evidence_plan_route": "end-to-end generation-to-distribution campaign with signed provenance, watermark, detector, stripping, editing, recompression, accessibility, and remedy comparators",
+      "support_state": "argument",
+      "claim_label": "Design rationale"
+    }
+  ],
+  "non_claims": [
+    "These atoms do not prove any chapter core claim.",
+    "They do not establish empirical support, formal correctness, safety, readiness, release authority, deployment, transfer, or SOTA.",
+    "They create stable falsifiers and evidence routes so conceptual admission does not create untracked evidence debt."
+  ]
+}

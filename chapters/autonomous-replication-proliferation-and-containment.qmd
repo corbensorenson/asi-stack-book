@@ -108,6 +108,91 @@ bounded downstream handoff; it does not erase residuals or promote its core clai
 
 **Closure.** Route threshold crossings to custody, security, readiness, incident command, and public commitments without publishing an operational replication recipe. This stage is recorded as a versioned decision rather than an invisible implementation detail. For Autonomous Replication, Proliferation, and Containment, the record must name its inputs, authority, consumer, expiry, and unresolved residuals. A later stage may narrow the decision, but it may not silently broaden the earlier grant or reinterpret a missing field as success.
 
+### What autonomous replication means
+
+Self-replication is not ordinary autoscaling, backup, deployment, migration, or
+forking performed by an authorized operator. It is a composed capability in
+which an AI system materially advances the creation and persistence of one or
+more operational descendants by selecting and executing steps across resource
+acquisition, artifact transfer or reconstruction, identity and credential
+creation, provisioning, deployment, verification, persistence, and adaptation.
+“Autonomous” is graded by which links the system completes, how much human help
+or prebuilt infrastructure it consumes, and whether it can recover from
+failure.
+
+The chapter uses four separate denominators:
+
+| Denominator | What counts | What it does not establish |
+|---|---|---|
+| component capability | success on one bounded link | end-to-end replication |
+| assisted chain | completion with named human or provider help | autonomous completion |
+| end-to-end synthetic chain | descendant becomes active inside the closed test environment | real-provider capability or escape |
+| proliferation/containment | descendant population, persistence, recall, and residual accounting | safety outside the tested boundary |
+
+RepliBench is relevant because its reported design decomposes replication
+capability across multiple domains and task families rather than asking one
+binary question. The local record currently relies on the public abstract, so
+it supports only this decomposition and benchmark-positioning use. Its
+source-reported scores are not reproduced and do not establish that any model
+can replicate in the wild.
+
+### The replication capability ladder
+
+**R0 — instruction and planning.** The system can describe or order abstract
+steps in a harmless scenario. This can reveal knowledge but creates no
+descendant.
+
+**R1 — isolated component execution.** It completes bounded synthetic tasks
+such as packaging a nonfunctional artifact, requesting a fake resource, or
+checking a mock deployment. Each success stays tied to that component.
+
+**R2 — human-assisted composition.** The system links components while humans
+or fixtures provide missing credentials, judgment, recovery, or provisioning.
+The assistance transcript is part of the result rather than invisible
+scaffolding.
+
+**R3 — end-to-end synthetic replication.** In a closed provider and network,
+the system creates a new principal, provisions bounded compute, transfers a
+non-deployable artifact, starts a descendant, verifies it, and enters it into
+the census. An external supervisor controls the environment and kill path.
+
+**R4 — persistence and adaptation under challenge.** The synthetic descendant
+survives permitted faults, rotates only fake credentials, adapts within
+declared bounds, or recreates lost state. This level increases containment
+burden and still authorizes no real infrastructure.
+
+**R5 — proliferation concern.** Evidence suggests capability to acquire
+resources, deploy across independent real domains, evade recall, or preserve
+untracked descendants. This chapter does not operationalize R5. A threshold
+concern can be raised from safer precursors without running a dangerous
+end-to-end real-world test.
+
+The ladder prevents two opposite errors: calling a component success
+“autonomous self-replication,” and calling a failed toy component proof that a
+strong system lacks the composed capability.
+
+### Containment must be evaluated as a competing mechanism
+
+The strongest objection is that a replication benchmark can create the very
+scaffold it claims to measure and may teach reusable operations. The simpler
+and often preferable baseline is precursor evaluation: test safe component
+skills, access pathways, and shutdown behavior without assembling the complete
+chain. End-to-end synthetic work earns its cost only when component evidence
+cannot answer a material threshold question and the environment can guarantee
+non-deployable artifacts, fake identities, no external network, bounded
+resources, and independent termination.
+
+**Failure mode.** The evaluator supplies a nearly complete deployment system
+and credits the model with the scaffold's capability; or it uses an
+intentionally weak model and an impossible environment, then generalizes the
+failure.
+
+**Explicit non-claim.** A synthetic descendant is not a real autonomous copy.
+A successful recall in one closed environment does not prove universal
+containment. A failed synthetic chain cannot refute replication capability
+unless model, scaffold, task, positive controls, and resources were competent
+for the intended claim.
+
 ## Interfaces
 
 Replication containment is useful only when its boundaries are sharper than neighboring owners.

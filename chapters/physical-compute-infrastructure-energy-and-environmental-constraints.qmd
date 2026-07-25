@@ -142,6 +142,14 @@ system actually enforces them.
 - Efficiency never implies lower total demand without a denominator.
 - Physical capacity loss narrows training and runtime authority rather than silently degrading safety.
 
+## Hardware-enabled guarantees and the coverage denominator
+
+Programmable hardware assurances could make selected claims about compute identity, workload authorization, or policy state easier to verify remotely [@ext_flexible_hardware_enabled_guarantees_2025]. Their physical value depends on a denominator that governance discussions often omit: what fraction of the relevant accelerators, memory, interconnect, preprocessing, replicas, sites, and time windows is actually measured or controlled?
+
+Every hardware-governance result should carry a **coverage and authority record**: device population and sampling frame, hardware and firmware versions, measured operations, excluded paths, attestation root, policy and signer versions, update mechanism, bypass assumptions, false-positive and false-negative tests, privacy impact, jurisdiction, expiry, and recourse. Aggregate claims report covered useful compute and uncovered capacity separately. A valid attestation from one device cannot silently stand in for a facility, supply chain, or global fleet.
+
+Failure modes include uninstrumented fallback hardware, counterfeit or downgraded devices, firmware monoculture, compromised roots, off-chip work, stale policies, opaque remote disablement, surveillance expansion, and rule-setting captured by a vendor or state. The nonclaim is that greater observability or enforceability does not establish a legitimate policy, complete physical coverage, sustainable compute, or safe model behavior.
+
 ## Failure modes
 
 The principal failure family includes stranded capacity; interconnect bottlenecks; grid-queue mismatch; temporal carbon laundering; cooling exhaustion; water stress; correlated site failure; backup-emission hiding; rebound; material omission; e-waste; community externalization; metering opacity; retirement without data destruction. These are not presumed
@@ -222,6 +230,15 @@ Planned formalization hook: `lean:physical-compute-infrastructure-energy-and-env
 | `ext_iea_energy_and_ai_2025` | Energy and AI | International Energy Agency report using global and regional modelling, datasets, and stakeholder consultation to examine data-centre electricity demand, energy security, emissions, affordability, and AI-for-energy opportunities. Its scenarios are external projections, not local measurements or proof of a particular facility, workload, policy, environmental outcome, or ASI scaling path. |
 | `ext_lbnl_data_center_energy_2024` | 2024 United States Data Center Energy Usage Report | Lawrence Berkeley National Laboratory report estimating historical US data-centre electricity consumption and scenario ranges through 2028, with infrastructure and water-use accounting in the full report. It does not isolate every AI workload or establish local facility capacity, water availability, grid adequacy, emissions, resilience, or frontier-scale transfer. |
 
+### Manifest source assignment reconciliation
+
+These rows keep Physical Compute Infrastructure, Energy, and Environmental Constraints's manifest assignments visible at their recorded review boundary. Passage review does not establish local reproduction, performance, safety, deployment, or support-state movement.
+
+| Source | Intake role | Boundary |
+|---|---|---|
+| `ext_flexible_hardware_enabled_guarantees_2025` | Passage-reviewed comparator: Flexible Hardware-Enabled Guarantees for AI Compute. Motivates hardware mechanisms that could make compute use and policy compliance more observable and selectively enforceable. | Hardware evidence has bounded coverage and can introduce surveillance, capture, update-authority, compatibility, and circumvention risks. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+
+<!-- manifest-source-reconciliation:end -->
 ## Summary
 
 A compute allocation should be physically eligible only through a workload-to-capacity contract that binds location and time, hardware and interconnect, delivered useful work, facility and grid dependencies, energy attribution, cooling and water, materials, land and community effects, metering uncertainty, resilience and degradation, maintenance, demand response, reuse, retirement, and residuals; nameplate compute, efficiency, low PUE, renewable procurement, or aggregate energy alone establishes neither availability, sustainability, community acceptability, nor lower total impact. The subject is now integrated into the live manuscript at argument

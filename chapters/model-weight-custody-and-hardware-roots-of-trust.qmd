@@ -739,6 +739,14 @@ support promotion from field presence. The executable route proposed below is
 valuable only as evidence that missing modeled conditions are not silently
 bypassed. It is not evidence that the model captures every real attack.
 
+## Flexible hardware guarantees: evidence, not sovereignty
+
+Hardware can make some software-only promises harder to fake. A device may attest its measured boot state, bind a key release to an approved workload, count bounded classes of accelerator use, or refuse execution when a signed policy is absent. The flexible-hardware-enabled-guarantees agenda extends this idea toward AI governance, where selectively programmable mechanisms could support changing assurance needs without replacing every deployed accelerator [@ext_flexible_hardware_enabled_guarantees_2025].
+
+The custody layer should treat such a mechanism as a **hardware evidence lease**. It binds device and firmware identity, measurement root, policy version, update signers, covered operations, observable events, bypass assumptions, privacy budget, verifier, revocation, recovery, expiry, and the human institution authorized to change the rule. Evidence from the device joins software provenance and operational observation; it never overwrites them. A verifier must be able to say “device attested, coverage unknown” rather than converting a valid signature into a claim about the whole training or inference system.
+
+Three boundaries matter. First, coverage: uninstrumented chips, preprocessing, remote services, side channels, and physical substitution can sit outside the measured envelope. Second, authority: a technically enforceable rule can still be illegitimate, stale, or captured. Third, abuse: remote policy control can become surveillance, censorship, anticompetitive lock-in, or a correlated failure point. The explicit nonclaim is that attested hardware proves neither correct model behavior nor safe use. It proves only the stated measurement or enforcement fact under a versioned trust and threat model.
+
 ## Minimum Viable Implementation
 
 **Recovery is part of custody.**
@@ -930,6 +938,7 @@ These rows keep Model-Weight Custody and Hardware Roots of Trust's manifest assi
 | `ext_llama_cpp_memory_mapping_2026` | Metadata-first comparator: llama.cpp CLI Memory Mapping, Tensor Placement, and KV Offload Controls. Official consumer-runtime documentation for model load modes, memory mapping, DirectIO, GPU-layer and tensor placement, MoE CPU placement, KV offload, and KV data types. No local model or performance result is implied. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_llm_in_flash_2024` | Metadata-first comparator: LLM in a Flash: Efficient Large Language Model Inference with Limited Memory. Primary flash-aware inference source for on-demand parameter loading, I/O cost modeling, transfer reduction, contiguous reads, windowing, and row-column bundling. Sparse/context-adaptive loading is not an exact dense paging result. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `precision_contract` | Metadata-first comparator: The Precision Contract: A Functional Rate–Distortion Theory for Behavior-Preserving Neural Computation. Corben-authored July 2026 theoretical and systems paper replacing universal per-weight precision questions with a contract-relative functional rate-distortion problem over complete executable descriptions. It proposes representation canonicalization, protected-behavior contracts, precision fields, progressive base/residual encoding, dynamic routing, full physical and assurance-cost accounting, a Functional Precision Compiler, and scoped precision certificates. Existing chapters are upgraded first; no universal bit bound, implemented compiler, preserved-behavior result, efficiency result, certificate validity, support promotion, SOTA, AGI, or ASI claim is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_flexible_hardware_enabled_guarantees_2025` | Passage-reviewed comparator: Flexible Hardware-Enabled Guarantees for AI Compute. Motivates hardware-supported policy evidence and remote verification as possible custody controls. | A hardware guarantee can be partial, circumvented, misconfigured, obsolete, or governed by the wrong authority; no local hardware mechanism was implemented. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Summary
@@ -995,8 +1004,10 @@ support movement.
 ## Handoff
 
 Model-Weight Custody and Hardware Roots of Trust governs a known artifact and
-the conditions for a bounded load. AI Supply-Chain Integrity and Lifecycle Provenance
-now governs the upstream data, code, build, training, supplier, signature,
-advisory, derivative, and retirement relationships that make that artifact's
-custody record meaningful before Recursive Self-Improvement Boundaries considers
-changes to either boundary.
+the conditions for a bounded load. **Open-Weight Release and Post-Release Control**
+now governs the qualitatively different transition in which the
+artifact is deliberately made reproducible outside direct custody. It receives
+exact artifact identity, key and access history, hardware evidence, threat
+model, sanitization state, and custody residuals; it does not inherit a claim
+that theft prevention makes release safe, that attestation controls downstream
+copies, or that a released weight can later be recalled.

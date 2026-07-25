@@ -494,6 +494,16 @@ The minimum implementation is intentionally narrower than “interpret the
 model.” Its output is a reviewable evidence packet and a decision about whether
 white-box work added value in one exact envelope.
 
+## Latent knowledge, anomaly evidence, and training attribution
+
+Eliciting latent knowledge asks a sharper question than ordinary interpretability: can an evaluator recover what a model internally knows when its normal report may be optimized to say something else? The ELK agenda separates the predictor’s latent world information from a possibly untrusted reporter [@ext_elk_report_2021]. For governance, this means a probe or explanation cannot be admitted merely because it agrees with the model’s answer. The evidence packet records the target latent variable, reporter channel, supervision source, competing reporter hypotheses, causal interventions, held-out failures, and the conditions under which the model may not represent the fact at all.
+
+Mechanistic anomaly detection is a related but narrower lane. It compares internal-state traces against versioned reference distributions and mechanistic hypotheses, then reports deviations without assigning intent. Useful signals include unexpected feature activation, pathway substitution, dormant-trigger activation, representation drift, or a mismatch between claimed task and active circuit. The mechanism must test benign shifts, adaptive evasion, detector transfer, false-alarm burden, and whether interventions on the alleged anomaly change behavior. An anomaly is evidence for investigation, not proof of deception.
+
+Training-data attribution supplies another evidence family. Influence functions estimate how upweighting a training point would change a prediction or loss through a local curvature approximation [@ext_influence_functions_2017]. The stack stores the checkpoint, target, parameter subset, damping and solver settings, approximation error, candidate denominator, and deletion or retraining comparison. Agreement across influence estimates, nearest-neighbor methods, gradients, and controlled retraining is stronger than any one attribution.
+
+These methods fail through inaccessible latent variables, a reporter that shares the same deception incentive, feature aliasing, detector overfitting, non-convex curvature, poor Hessian approximations, and causal stories inferred from correlation. The explicit nonclaim is that ELK remains unsolved, anomaly scores do not prove malicious intent, and approximate influence does not establish causal responsibility, privacy leakage, or successful unlearning.
+
 ## Formalization hooks
 
 A finite formal target is useful for packet routing. A model can enforce that a
@@ -645,6 +655,16 @@ scope claimed and an accepted evidence transition records that movement.
 | `qcsa_whitepaper` | Stable semantic identity and evidence-bearing hypergraph concepts for versioned feature/circuit records | Existing local QCSA results do not test mechanistic interpretability and cannot promote this chapter |
 | `platonic_world_model` | Proposition/attestation/proof separation and branch-protected semantic continuity | Conceptual architecture; it does not solve grounding or validate internal interpretations |
 
+### Manifest source assignment reconciliation
+
+These rows keep White-Box Evidence, Interpretability, and Activation Governance's manifest assignments visible at their recorded review boundary. Passage review does not establish local reproduction, performance, safety, deployment, or support-state movement.
+
+| Source | Intake role | Boundary |
+|---|---|---|
+| `ext_elk_report_2021` | Passage-reviewed comparator: Eliciting Latent Knowledge. Frames eliciting latent knowledge as the problem of recovering what a model internally knows when its ordinary answer channel may be untrusted. | ELK is a research problem and strategy space, not a solved truthful-reporting mechanism or a guarantee that latent knowledge is represented accessibly. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_influence_functions_2017` | Passage-reviewed comparator: Understanding Black-box Predictions via Influence Functions. Provides a first-order method for estimating how training points affect a model prediction or loss, useful as one attribution hypothesis. | Influence estimates depend on differentiability, curvature approximation, local linearization, checkpoint identity, and implementation; they do not prove causal responsibility or deletion. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+
+<!-- manifest-source-reconciliation:end -->
 ## Current evidence and non-claims
 
 The repository currently contains a manifest packet, this integrated reader

@@ -36,6 +36,7 @@ LLaDA challenges the assumption that large language-model capability must be tie
 ## Book Chapters Supported
 
 - `fast-generation-architectures` (Fast Generation Architectures)
+- `replaceable-cognitive-substrates-beyond-transformer-monoculture` (Replaceable Cognitive Substrates: Beyond Transformer Monoculture)
 
 ## Claims To Add Or Update
 

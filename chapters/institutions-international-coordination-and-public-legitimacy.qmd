@@ -142,6 +142,16 @@ system actually enforces them.
 - Jurisdictional conflicts route to an explicit forum rather than disappearing.
 - Emergency and exceptional authority expires and faces review.
 
+## Independent access without uncontrolled disclosure
+
+Independent scrutiny is necessary, but “give researchers access” is not an adequate control design. Frontier systems, sensitive evaluations, model weights, user data, and incident records create conflicting needs: evaluators need enough access to find failures that the developer missed, while the governed organization must not turn review into an exfiltration path or constrain it until no adverse result can survive. The access contract therefore separates sponsor, custodian, evaluator, method owner, adjudicator, and publication authority.
+
+A **secure research access packet** binds the exact artifact and checkpoint, research question, evaluator independence and conflicts, permitted interfaces, protected data, compute and query budgets, logging, privacy controls, enclave or clean-room boundary, red-team authority, result custody, disclosure timing, appeal, and emergency revocation. Evaluators must be able to run negative controls, preserve complete attempt denominators, publish adverse findings through a protected channel, and distinguish developer-provided evidence from independently observed results. Double-blind assignment can reduce some social bias, but cannot substitute for method transparency or conflict disclosure.
+
+Hardware-enabled guarantees may eventually make parts of compute use, model identity, and policy enforcement more inspectable [@ext_flexible_hardware_enabled_guarantees_2025]. They also introduce governance questions: who defines the policy, who can update it, what hardware and jurisdictions are covered, how false positives are appealed, and whether the same mechanism becomes surveillance or market exclusion. Likewise, law-following AI and current transparency rules create concrete obligations, but their authority, scope, enforcement, and legitimacy remain distinct [@ext_legal_alignment_2026; @ext_eu_article_50_transparency_guidelines_2026].
+
+The mechanism fails through sponsor veto, cherry-picked evaluators, unsafe disclosure, enclave theater, inaccessible replication, undisclosed conflicts, or a hardware root controlled by the party being audited. The nonclaim is strict: independent access does not make an evaluation representative, and an audit, attestation, legal opinion, or transparency filing does not prove safety or public legitimacy.
+
 ## Failure modes
 
 The principal failure family includes regulatory capture; forum shopping; race-to-the-bottom deployment; standards laundering; treaty theater; unverifiable commitments; enforcement asymmetry; participation without power; affected-public omission; capacity inequality; panel capture; fragmented jurisdiction; inaccessible remedy; permanent emergency powers. These are not presumed
@@ -222,6 +232,17 @@ Planned formalization hook: `lean:institutions-international-coordination-and-pu
 | `ext_un_global_digital_compact_2024` | Global Digital Compact | Official United Nations record of the intergovernmentally negotiated Global Digital Compact, including commitments on international AI governance, interoperable approaches, inclusion, capacity building, scientific assessment, and global dialogue. It is a governance comparator, not evidence of implementation, effectiveness, legal compliance, representative legitimacy, or ASI safety. |
 | `ext_council_europe_ai_convention_2024` | Framework Convention on Artificial Intelligence and Human Rights, Democracy and the Rule of Law | Official Council of Europe treaty page covering lifecycle principles, risk and impact management, procedural safeguards, remedies, monitoring, and the Conference of the Parties. It supplies an institutional comparator only; no local legal interpretation, treaty compliance, implementation effectiveness, democratic legitimacy, or safety result is claimed. |
 
+### Manifest source assignment reconciliation
+
+These rows keep Institutions, International Coordination, and Public Legitimacy's manifest assignments visible at their recorded review boundary. Passage review does not establish local reproduction, performance, safety, deployment, or support-state movement.
+
+| Source | Intake role | Boundary |
+|---|---|---|
+| `ext_flexible_hardware_enabled_guarantees_2025` | Passage-reviewed comparator: Flexible Hardware-Enabled Guarantees for AI Compute. Supplies a hardware-enabled-guarantee research agenda for making compute-governance claims more inspectable than voluntary reporting alone. | The proposal does not establish complete coverage, secure implementation, legitimate update authority, or resistance to hardware and governance abuse. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_legal_alignment_2026` | Passage-reviewed comparator: Legal Alignment for Safe and Ethical AI. Identifies law-following AI as a coordination problem across jurisdictions, interpretations, exceptions, institutions, and technical systems. | Does not supply a universally legitimate legal corpus, interpretation engine, compliance proof, or public mandate. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_eu_article_50_transparency_guidelines_2026` | Passage-reviewed comparator: Guidelines on Transparency Obligations for Providers and Deployers of AI Systems. Provides a current regulatory comparator for transparency duties around AI-generated and manipulated content. | Guidance is jurisdiction- and obligation-specific; transparency compliance alone does not establish safety, authenticity, legitimacy, or effective enforcement. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+
+<!-- manifest-source-reconciliation:end -->
 ## Summary
 
 Public deployment and cross-border coordination should proceed only through a versioned institutional packet that keeps jurisdiction, mandate, participation, scientific evidence, law and standards, verification, enforcement, remedy, capacity, conflict, expiry, and legitimacy residuals distinct; legal text, technical conformance, stakeholder consultation, or an international commitment alone establishes neither lawful authority, effective governance, representative legitimacy, nor safety. The subject is now integrated into the live manuscript at argument
@@ -237,11 +258,11 @@ not a sweeping refutation of the idea.
 
 ## Handoff
 
-**Stable Capability Fields** follows. It consumes this chapter's bounded
-outputs without inheriting authority, certainty, or support that this chapter
-did not establish. The receiving chapter must preserve the identities,
-versions, unresolved conflicts, residuals, and non-claims recorded here, then
-perform its own admission checks before acting. A handoff receipt proves only
-that the packet crossed the declared interface; it does not prove that either
-chapter's mechanism is effective, complete, safe, transferable, or ready for
-release.
+Institutions can authorize and coordinate rules, but they do not make society
+robust to actors that evade them. **Societal Resilience and Misuse Defense**
+follows by receiving jurisdiction, standing, public mandate, independent-
+access rules, enforcement gaps, cross-border commitments, affected
+populations, and remedy obligations. It must build prevention, detection,
+response, recovery, and adaptation around those constraints without inheriting
+a claim that the institution is legitimate, the commitment is effective, or
+the exposed population is protected.

@@ -355,6 +355,14 @@ effects, operator burden, latency, energy, hardware wear, and full lifecycle
 cost. Human-proximity work requires separate ethics and safety authority and is
 not implied by hardware success.
 
+## Digital twins and sim-to-real custody
+
+A digital twin is useful when it is treated as a versioned, synchronized model of a particular physical system—not as a more convenient reality. AI-enabled twins can fuse telemetry, simulation, learned residuals, maintenance history, and scenario generation to support diagnosis and control design [@ext_ai_simulation_digital_twins_2025]. Their value depends on fidelity at the states, contacts, faults, humans, and time scales relevant to the proposed action.
+
+The controller should receive a **twin validity envelope** binding plant identity, geometry and dynamics version, sensors and calibration, synchronization delay, operating region, modeled and omitted phenomena, intervention interface, uncertainty, validation episodes, fault library, sim-to-real residuals, expiry, and the authority permitted to consume the prediction. A twin may expand shadow testing or narrow a control lease; it cannot authorize physical action merely because a simulated trajectory succeeded. Deployment compares predicted and observed trajectories online, and residual growth routes to a baseline controller, stop, or human review.
+
+The mechanism fails through stale synchronization, reality-gap hiding, simulator overfitting, missing contact modes, correlated sensor errors, invented fault coverage, or a learned residual compensating for the wrong physics. The explicit nonclaim is that a high-fidelity twin in a measured operating region does not prove physical safety outside that region, and simulation coverage does not establish the frequency or severity of real hazards.
+
 ## Failure modes
 
 - deadline miss, jitter, or stale state;
@@ -470,6 +478,15 @@ dynamics, safe-set validity, deadline satisfaction, recovery, or physical safety
 | `ext_safe_reinforcement_learning_survey_2015` | Objective- and exploration-level safety taxonomy. | Survey context, not a safety result. |
 | `viea` | Corben's intent-to-runtime adapter and observed-effect lineage. | Speculative architecture source; no real-time control, plant-safety, or physical-effect result. |
 
+### Manifest source assignment reconciliation
+
+These rows keep Embodied Agency, Real-Time Control, and Physical Safety's manifest assignments visible at their recorded review boundary. Passage review does not establish local reproduction, performance, safety, deployment, or support-state movement.
+
+| Source | Intake role | Boundary |
+|---|---|---|
+| `ext_ai_simulation_digital_twins_2025` | Passage-reviewed comparator: AI Simulation by Digital Twins: Systematic Survey, Reference Framework, and Mapping to a Standardized Architecture. Surveys AI-enabled simulation and digital-twin patterns relevant to plant models, telemetry synchronization, scenario testing, and sim-to-real residuals. | A digital twin is a maintained model, not the physical system; fidelity, synchronization, coverage, and transfer must be measured for each use. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+
+<!-- manifest-source-reconciliation:end -->
 ## Summary
 
 Embodied agency is the governed translation from an authorized symbolic action

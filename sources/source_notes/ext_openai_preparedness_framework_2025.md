@@ -55,6 +55,7 @@ safeguards sufficiently minimize risk in another system.
 ## Book Chapters Supported
 
 - `capability-thresholds-and-deployment-commitments` (Capability Thresholds and Deployment Commitments)
+- `dangerous-capability-domains-and-misuse-uplift` (Dangerous Capability Domains and Misuse Uplift)
 
 ## Claims To Add Or Update
 

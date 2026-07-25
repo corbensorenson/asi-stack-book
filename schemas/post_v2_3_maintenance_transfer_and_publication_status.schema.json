@@ -307,8 +307,8 @@
         "structural_completeness_tranche": {
           "const": {
             "state": "no_deferral_manuscript_admission_terminal_argument_support",
-            "current_manifest_chapter_count": 76,
-            "maximum_if_all_candidates_pass": 76,
+            "current_manifest_chapter_count": 80,
+            "maximum_if_all_candidates_pass": 80,
             "planned_merge_count": 0,
             "first_tranche": {
               "state": "terminal_four_reader_chapters",
@@ -439,6 +439,42 @@
               "support_state_effect": "none",
               "release_effect": "none"
             },
+            "taxonomy_and_structural_maturity_reconciliation": {
+              "state": "terminal_argument_level_manuscript_integration",
+              "date": "2026-07-24",
+              "decision_path": "docs/taxonomy_and_structural_maturity_reconciliation_2026_07_24.md",
+              "claim_atom_path": "evidence_quality/taxonomy_completion_claim_atoms_2026_07_24.json",
+              "previous_manifest_chapter_count": 76,
+              "current_manifest_chapter_count": 80,
+              "new_chapter_ids": [
+                "dangerous-capability-domains-and-misuse-uplift",
+                "societal-resilience-and-misuse-defense",
+                "open-weight-release-and-post-release-control",
+                "content-authenticity-watermarking-and-synthetic-media-integrity"
+              ],
+              "title_content_repairs": [
+                "adversarial-machine-learning-and-model-attack-surface",
+                "learning-theory-generalization-and-scaling-science",
+                "autonomous-replication-proliferation-and-containment"
+              ],
+              "existing_owner_integration_count": 13,
+              "net_new_external_source_record_count": 21,
+              "birth_claim_atom_count": 4,
+              "maturity_gate": [
+                "distinct_owner_and_interface",
+                "named_non_template_mechanism_sections",
+                "failure_family",
+                "strongest_challenge_or_simpler_baseline",
+                "explicit_nonclaim",
+                "source_specific_contribution_and_limit",
+                "ownership_preserving_handoff",
+                "auditable_source_and_claim_wiring"
+              ],
+              "remaining_live_candidate_queue_count": 0,
+              "post_transaction_structural_freeze": false,
+              "support_state_effect": "none",
+              "release_effect": "none"
+            },
             "p2_displacement_allowed": false,
             "support_state_effect": "none",
             "release_effect": "none"
@@ -496,9 +532,9 @@
           "support_state_effect": "none"
         },
         "current_reader_freshness_packet": {
-          "state": "queued_for_current_76_chapter_derivative",
+          "state": "queued_for_current_80_chapter_derivative",
           "published_reader_2026_07_18_is_immutable_historical_release": true,
-          "current_working_manifest_chapter_count": 76,
+          "current_working_manifest_chapter_count": 80,
           "must_cover_all_current_manifest_chapters": true,
           "external_publication_required": false,
           "required_surfaces": [
@@ -735,12 +771,12 @@
           "support_state_effect": "none",
           "release_effect": "none"
         },
-        "current_manifest_chapter_count": 66,
-        "possible_count_if_both_new_candidates_pass": 68,
-        "theoretical_all_candidate_envelope_not_target": 75,
+        "current_manifest_chapter_count": 80,
+        "possible_count_if_both_new_candidates_pass": 80,
+        "theoretical_all_candidate_envelope_not_target": 80,
         "support_state_effect": "none",
         "release_effect": "none",
-        "candidate_admission_superseded_by": "no_deferral_manuscript_admission"
+        "candidate_admission_superseded_by": "taxonomy_and_structural_maturity_reconciliation"
       }
     },
     "predecessor": {
@@ -1825,7 +1861,7 @@
         "date": "2026-07-24",
         "policy": "Every worthwhile manuscript idea is integrated now, admitted as a distinct owner now, or explicitly rejected with a reason; only evidence maturity may remain open.",
         "previous_manifest_chapter_count": 66,
-        "current_manifest_chapter_count": 76,
+        "current_manifest_chapter_count": 80,
         "admitted_chapter_ids": [
           "human-ai-communication-persuasion-and-epistemic-security",
           "governed-objective-formation-value-learning-and-goal-integrity",
@@ -1836,13 +1872,17 @@
           "ai-deployment-transition-distribution-and-human-agency",
           "learning-theory-generalization-and-scaling-science",
           "physical-compute-infrastructure-energy-and-environmental-constraints",
-          "scientific-discovery-and-experimental-governance"
+          "scientific-discovery-and-experimental-governance",
+          "dangerous-capability-domains-and-misuse-uplift",
+          "societal-resilience-and-misuse-defense",
+          "open-weight-release-and-post-release-control",
+          "content-authenticity-watermarking-and-synthetic-media-integrity"
         ],
         "remaining_live_candidate_queue_count": 0,
         "structural_freeze_for_manuscript_ideas": false,
         "all_chapter_core_support_states": "argument",
         "chapter_core_support_state_effect": "none",
-        "current_semantically_reviewed_chapter_count": 64,
+        "current_semantically_reviewed_chapter_count": 68,
         "current_structured_atom_count": 4071
       }
     }

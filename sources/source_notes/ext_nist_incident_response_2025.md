@@ -46,6 +46,7 @@ coverage, safe degradation, or recovery in this project.
 - `governed-operations-incident-command-and-graceful-degradation`
 - `safety-cases-and-structured-assurance`
 - `artifact-graphs-audit-logs-and-replay`
+- `societal-resilience-and-misuse-defense`
 
 ## Claims To Add Or Update
 

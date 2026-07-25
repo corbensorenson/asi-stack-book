@@ -1,0 +1,435 @@
+---
+title: "Open-Weight Release and Post-Release Control"
+chapter_id: "open-weight-release-and-post-release-control"
+part_id: "foundations-alignment-governance"
+status: "conceptual"
+draft_maturity: "v0.2 complete argument-level manuscript"
+last_updated: "2026-07-24"
+primary_sources:
+  - "ext_international_ai_safety_report_2026"
+  - "ext_openai_worst_case_open_weight_risks_2025"
+  - "ext_provable_model_weight_release_2025"
+evidence_level: "argument"
+claim_label: "Design rationale"
+open_evidence_gaps:
+  - "No model-release decision, malicious-fine-tuning reproduction, or post-release ecosystem measurement is performed here."
+  - "No license, signature, policy, or post-release coordination mechanism is represented as remote revocation of unrestricted copies."
+  - "The chapter does not decide that open-weight or closed-weight release is categorically preferable."
+---
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `open-weight-release-and-post-release-control` |
+| Exclusive job | govern the irreversible transition from controlled custody to unrestricted copying |
+| Claim label / support | Design rationale / `argument` |
+| Source state | passage-reviewed source notes |
+| Test state | release-dossier and mutation tests planned; no actual release authorized |
+
+Source loading state: all assigned source notes were reviewed for bounded
+mechanism, evidence, failure, and nonclaim use; external results remain
+source-reported.
+
+## Drafting guardrail
+
+Open-weight release can expand research, access, audit, competition, local
+control, and innovation. It can also make safeguards removable and copies
+unobservable. This chapter does not prejudge that tradeoff. It requires the
+decision to describe the actual artifact, counterfactual ecosystem, benefits,
+risks, and surviving controls without pretending that a published weight file
+can later be recalled.
+
+::: {.asi-human-only}
+## Human Reading Path
+
+Weight custody asks who may access a model while the owner still controls the
+artifact. Open-weight release asks what happens when that control is
+deliberately surrendered. The two decisions are adjacent but not equivalent.
+
+Before release, an operator can deny a credential, patch a service, monitor
+requests, change a system prompt, rate-limit a user, or shut down an endpoint.
+After unrestricted publication, third parties can copy, fine-tune, merge,
+quantize, rehost, and redistribute the weights. Some will build valuable tools
+the original developer never could. Some may remove safeguards. The original
+publisher can issue better weights and warnings, but cannot assume every copy
+will update.
+
+The governing artifact is therefore an irreversible-release case. It evaluates
+the candidate and strong adversarial derivatives against the current
+accessible frontier, accounts for benefits and cumulative risk, records what
+controls survive weight access, and defines honest post-release duties. Its
+most important field is a non-authority: no universal recall.
+:::
+
+## Problem
+
+The ASI Stack's custody chapter protects weights, keys, and loading authority.
+That is the correct owner for restricted artifacts. It becomes conceptually
+misleading once a release intentionally enables unlimited copying.
+
+The International AI Safety Report 2026 states the asymmetric issue plainly:
+open-weight systems can support research and commercial benefit, especially
+for actors with fewer resources, while safeguards are easier to remove, use is
+harder to monitor, and released weights cannot be recalled. The report
+describes marginal risk as one decision lens: how much additional risk the
+release creates relative to what is already accessible. That comparison is
+necessary, but it is not sufficient. Repeated small increments can accumulate,
+and a release can change cost, convenience, reliability, or distribution even
+when a nominal capability already exists.
+
+## Why existing approaches are insufficient
+
+### A license is a norm and legal instrument, not a kill switch
+
+Licenses can establish permissions, conditions, remedies, and community
+expectations. They matter. Determined or unreachable actors may still ignore
+them, and model behavior cannot be technically constrained merely by placing a
+use restriction in a file.
+
+**Failure mode:** the release case lists prohibited uses as though the
+publisher can prevent them.
+
+**Non-claim:** saying that licenses are not universal technical enforcement
+does not make them useless or predict legal enforceability in a jurisdiction.
+
+### Default alignment is not downstream alignment
+
+Refusal tuning and system-level safeguards can improve the default model.
+Unrestricted weight access allows new fine-tuning, adapters, merging, pruning,
+quantization, and serving stacks. OpenAI's gpt-oss work is a useful concrete
+methodological example because it deliberately fine-tuned variants for cyber
+and biology tasks before release. The reported results remain bounded to that
+artifact, training stack, budget, tasks, and date.
+
+**Failure mode:** an evaluation of the default checkpoint is presented as the
+worst case.
+
+**Non-claim:** a competent malicious-fine-tuning attempt is still not proof
+that a stronger unknown method does not exist.
+
+### Documentation is not mitigation
+
+A model card can make limitations legible. Signatures and hashes can identify
+official bytes. Provenance can help distinguish derivatives. None prevents an
+unofficial deployment from operating. Documentation is a decision and
+coordination surface, not a physical boundary.
+
+## Core Claim
+
+[open-weight-release-and-post-release-control.core, label: Design rationale, support: argument]
+An open-weight release should require a prospective irreversible-release case
+that binds the exact artifact and license to accessible-frontier comparison,
+malicious-fine-tuning and scaffolded elicitation, marginal and cumulative risk,
+benefit and access distribution, downstream safeguard portability, derivative
+lineage, incident channels, post-release measurement, and residual ownership;
+after release, governance may inform, patch, coordinate, and support safer
+derivatives, but it must not claim revocation authority it no longer possesses.
+
+## Mechanism
+
+### Access is a ladder, not a binary
+
+| Tier | Typical control retained | Typical residual |
+|---|---|---|
+| internal restricted | physical, organizational, and technical custody | insider and supply-chain risk |
+| trusted research access | identity, contracts, monitoring, enclave or scoped API | evaluator dependence and leakage |
+| public hosted service | serving stack, account controls, monitoring, patching | jailbreaks, stolen outputs, provider concentration |
+| gated weight access | recipient identity and contractual duties | recipient compromise and redistribution |
+| open weights | official distribution channel and downstream coordination | no universal observation, patching, or recall |
+
+These tiers can coexist. A release decision should compare realistic access
+options rather than “publish everything” against “permit no research.”
+Structured researcher access or secure enclaves may capture some benefits when
+irreversibility is not justified; open release may be the better choice when
+benefits, distributed capability, transparency, or counterfactual availability
+dominate.
+
+### The irreversible-release case
+
+```{mermaid}
+flowchart TD
+  A["Exact candidate bytes, code, data disclosures, and license"] --> B["Current accessible-frontier baseline"]
+  B --> C["Default, safety-removed, fine-tuned, merged, and scaffolded variants"]
+  C --> D["Benefit, marginal-risk, cumulative-risk, and distribution analysis"]
+  D --> E{"Independent release review"}
+  E -- "insufficient or too risky" --> F["Retain custody, narrow access, or improve candidate"]
+  E -- "authorized release" --> G["Signed publication and immutable release record"]
+  G --> H["Derivative lineage, incidents, patches, safer variants, renewed reports"]
+  H --> I["Residual copies remain outside unilateral recall"]
+  G -- "observed derivative" --> J["Post-release monitoring and incident intake"]
+  J -- "new evidence" --> H
+  I -- "renew threat model" --> B
+```
+
+**How to read the open-weight release boundary:** the candidate first passes
+an accessible-frontier and derivative-space comparison. Independent review can
+retain custody or authorize an exact signed publication. After publication,
+monitoring can update lineage, patches, and safer alternatives, but residual
+copies stay outside unilateral recall and force the threat model to renew.
+
+### 1. Freeze the exact object
+
+Record weight digests, architecture, tokenizer, configuration, inference code,
+precision, licenses, usage policy, evaluation commit, training and
+post-training disclosures, known dependencies, and build instructions. A
+quantized or merged derivative is a different object even when it uses the
+same name.
+
+### 2. Compare against the accessible frontier
+
+The correct counterfactual is not necessarily the best closed model. It is the
+capability, cost, modifiability, and accessibility already available to the
+relevant actor. The ledger should include open models, closed services,
+specialized tools, non-AI methods, and foreseeable near-term releases.
+
+The frontier expires. A decision made six months earlier may be stale because
+fine-tuning improved, costs fell, a new open model appeared, or a system
+integration made a previously awkward capability practical.
+
+### 3. Stress the derivative space
+
+At minimum, compare:
+
+- the default release candidate;
+- a safety-removed or non-refusing variant;
+- competent domain fine-tunes within a prospectively bounded adversary budget;
+- common quantized and merged forms;
+- strong tool and agent scaffolds;
+- the strongest current accessible comparator.
+
+The goal is not to enumerate every derivative. It is to avoid evaluating only
+the easiest version. Failed positive controls or weak fine-tuning block a
+negative risk inference.
+
+### 4. Measure marginal and cumulative effects
+
+Marginal risk asks whether the release changes harmful capability or access
+beyond the existing ecosystem. Add at least four dimensions:
+
+1. **cost reduction** — does the artifact make an existing capability much
+   cheaper?
+2. **reliability increase** — does it turn a fragile workflow into a routine
+   one?
+3. **distribution change** — who gains access, and who bears risk?
+4. **composition** — does the release combine with other tools or models to
+   remove a bottleneck?
+
+Cumulative risk prevents a series of “small” releases from escaping review.
+Each release updates the accessible baseline for the next.
+
+### 5. Account for benefits with the same seriousness
+
+Record who can research, audit, localize, adapt, teach, compete, or operate
+offline because of the release. Include resource-constrained users, languages,
+privacy-preserving local uses, scientific reproducibility, defensive research,
+and concentration effects. Benefits should be measured where possible, not
+added as an unbounded rhetorical offset.
+
+**Failure mode:** risks receive a detailed model while benefits are a slogan,
+or benefits receive anecdotes while affected groups carry unmeasured risk.
+
+**Non-claim:** a distribution ledger does not solve political legitimacy or
+determine the morally correct tradeoff.
+
+### What control survives release?
+
+| Mechanism | Survives unrestricted copies? | Honest authority |
+|---|---:|---|
+| API access control | no | controls only official hosted service |
+| system prompt / server classifier | no | controls only the shipped serving path |
+| safety fine-tuning | partially | influences defaults; can be altered |
+| license and policy | normatively / legally, context-dependent | establishes duties and remedies, not universal prevention |
+| signatures and hashes | yes as identification evidence | identifies bytes under a trust policy |
+| provenance and model cards | only when retained | informs users and investigators |
+| update or patched model | optional adoption | offers a safer alternative |
+| derivative registry | voluntary or platform-enforced | improves lineage coverage, not completeness |
+| incident reporting and coordination | partially | supports detection and response |
+| recall | no | cannot retract all unrestricted copies |
+
+The last row is the chapter's non-negotiable semantic boundary.
+
+### Post-release control without fictional recall
+
+### Observe
+
+Maintain public and restricted incident channels, model and derivative
+fingerprints, vulnerability intake, benchmark renewal, abuse-trend monitoring,
+and an evidence threshold for public warnings. Monitoring must respect privacy
+and cannot assume all private uses are observable.
+
+### Coordinate
+
+Work with downstream maintainers, hosting providers, researchers, civil
+society, affected communities, and authorities within lawful scope. Share
+patches and defensive indicators without publishing reusable exploit detail.
+
+### Improve
+
+Release corrected documentation, safer fine-tunes, filters, evaluation suites,
+or new weights. Distinguish “new recommended artifact” from “old artifact
+revoked.” Track adoption where possible and preserve non-adoption as a
+residual.
+
+### Learn
+
+Update the release case when incidents, new fine-tuning methods, frontier
+models, tools, or defenses change the analysis. Do not rewrite the historical
+decision; append a dated reassessment.
+
+## Interfaces
+
+Release is where several neighboring assurances must meet without collapsing.
+Custody establishes what artifact is leaving control; dangerous-capability
+evaluation bounds foreseeable misuse; thresholds determine commitments;
+supply-chain records preserve official lineage; institutions assess standing
+and legitimacy; resilience owns harms that escape. The release packet cites
+each exact input and records disagreements instead of turning their presence
+into an automatic yes or no.
+Downstream incidents return as new evidence and renewal triggers, never as a
+retroactive claim that the original decision was fully controllable.
+
+- **Model-Weight Custody** owns theft prevention, restricted access, and
+  attestation before release.
+- **Dangerous Capability Domains** supplies actor-uplift and worst-case
+  elicitation evidence.
+- **Capability Thresholds** states when open release is prohibited, delayed,
+  or requires safeguards.
+- **AI Supply-Chain Integrity** tracks official artifacts, dependencies, and
+  derivatives.
+- **Societal Resilience** receives downstream incidents and recovery duties.
+
+## Invariants
+
+These invariants keep reversibility honest. Before publication, access can
+often be narrowed or revoked; after recipients possess usable bytes, the same
+verbs describe only official channels, keys, hosting, licenses, or cooperation.
+Every decision must expose which controls survive copying and which depend on
+voluntary compliance, platform reach, legal authority, or detection after
+harm.
+
+- Release identity includes exact bytes, configuration, code, license, and
+  evaluation state.
+- Default refusal never stands in for malicious-derivative evaluation.
+- The accessible comparator and decision date are explicit and expiring.
+- Benefits, risks, access distribution, costs, and affected parties remain
+  visible together.
+- No post-release action is called universal recall or revocation.
+
+## Failure modes
+
+### Strongest objection
+
+Open-release governance can become ceremony that delays beneficial work while
+determined actors use existing alternatives. The strongest simpler baseline is
+a short public model card plus ordinary law and incident response. The
+chapter earns its complexity only if the case changes a decision, improves
+downstream evidence, or catches a risk/benefit fact the simple baseline misses.
+
+Other failures include benchmark gaming, weak adversarial fine-tuning, stale
+comparators, hidden training data, unreviewed quantization, license laundering,
+false provenance, registry nonparticipation, patch fragmentation, overbroad
+monitoring, concentration disguised as safety, benefit exclusion, and release
+by precedent.
+
+The formal-security work on “secure” weight release adds another warning:
+schemes that claim to expose useful inference without exposing recoverable
+parameters need exact threat models and extraction analysis. A formal scheme is
+not an open-weight decision and a broken scheme should not be marketed as
+custody.
+
+## Minimum Viable Implementation
+
+Exercise the dossier on a harmless, small model. Freeze exact bytes and a
+realistic comparator set. Produce default, policy-removed, fine-tuned,
+quantized, and merged variants. Test that the ledger rejects missing
+irreversibility, weak positive controls, stale comparators, and “recall”
+language. Publish signed artifacts only in the harmless exercise; the test does
+not authorize release of any high-risk model.
+
+Run a second round in which independent teams attempt benign adaptation,
+safeguard removal, quantization, merging, repackaging, and lineage stripping.
+Compare no release, gated research access, hosted API, delayed release, and
+full weights under the same utility and risk tasks. Record successful and
+failed variants, evaluator blind spots, time and cost, downstream
+observability, and which proposed responses still have a real enforcement
+path.
+
+## Beyond the State of the Art
+
+The mature program makes open release a transparent ecosystem decision rather
+than a one-time file upload. It joins competent derivative elicitation,
+accessible-frontier and cumulative-risk analysis, benefit distribution,
+independent review, public-safe evidence, signed lineage, incident learning,
+and safer downstream alternatives. Its credibility comes partly from stating
+what it cannot do: restore custody over copies already given away.
+
+The mature decision service evaluates release as an option set rather than a
+binary ideology. It can recommend narrower research access, delayed
+publication, capability-reduced artifacts, hosted inference, staged expansion,
+or no release while preserving the foregone benefits and affected communities
+in the record. Benefits are measured, not assumed from an “open” label.
+
+After release, public-safe derivative identifiers and incident channels help
+cooperative actors coordinate patches and warnings. Independent evaluators
+continue testing accessible derivatives, and the threat model renews when
+fine-tuning methods, scaffolds, hardware, or substitute models improve. These
+mechanisms can reduce harm without pretending that every holder will
+participate.
+
+The state-of-the-art objective is calibrated release governance under genuine
+irreversibility. Success means better choices among access forms, earlier
+detection of dangerous adaptation, more useful safer alternatives, and faster
+response at acceptable cost—not a fictitious global kill switch for published
+weights.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Artifact identity | Reject a release record missing exact weight, tokenizer, config, code, license, or evaluation identity. | planned |
+| Adversarial derivative gate | Reject default-only evaluation and failed malicious-fine-tuning positive controls. | planned |
+| Comparator expiry | Reopen analysis when the accessible frontier or fine-tuning method changes. | planned |
+| False-recall mutation | Reject any record that claims unrestricted copies were revoked or fully patched. | planned |
+| Distribution completeness | Require benefit, risk, access, affected-party, and cumulative-effect fields. | planned |
+| No-promotion control | Ensure a complete dossier does not itself authorize release or promote support. | planned |
+
+## Source crosswalk
+
+| Source ID | Bounded use | Non-authority |
+|---|---|---|
+| `ext_international_ai_safety_report_2026` | benefits, safeguard-removal, monitoring, irreversibility, and marginal-risk synthesis | no categorical release decision |
+| `ext_openai_worst_case_open_weight_risks_2025` | concrete malicious-fine-tuning and frontier comparison | provider-authored, model-specific result |
+| `ext_provable_model_weight_release_2025` | formal-security comparator for parameter-extraction claims | no ASI Stack scheme or release authority |
+| `ext_singapore_consensus_2026` | malicious fine-tuning and societal monitoring priorities | research agenda |
+| `ext_rand_model_weight_security_2024` | pre-release weight threat and defense context | custody evidence does not survive public release |
+| `ext_anthropic_responsible_scaling_policy_3_4_2026` | threshold and safeguard-policy comparator | provider policy, not independent validation |
+
+## Summary
+
+Open-weight release is not simply weak custody. It is a distinct, usually
+irreversible transition that replaces direct control with evidence,
+coordination, norms, safer alternatives, and societal response. The chapter
+preserves both sides of that trade: open weights can distribute real benefits,
+and post-release governance must never pretend it can recall every copy.
+
+The practical decision is therefore artifact- and date-specific. A release
+record must say what was published, which adaptations were competently tested,
+who gains and bears risk, what alternatives were compared, which safeguards
+remain technically enforceable, how downstream evidence will be collected,
+and who owns incidents after direct control ends. Missing answers remain
+residuals; openness, a license, or a model card cannot supply them by
+assertion.
+
+## Handoff
+
+**AI Supply-Chain Integrity and Lifecycle Provenance** follows. It receives the
+official artifact identity, signed lineage, dependency record, derivative
+policy, and known residuals. It does not receive fictitious authority over
+unregistered or independently modified copies. The handoff must preserve the
+release form, license or use terms, fine-tuning and proliferation model,
+irreversibility estimate, safeguard evidence, observed descendants,
+post-release incidents, response obligations, expiry, and residual owner.
+Lineage completeness proves neither compliance by recipients nor safety,
+control, faithful derivatives, effective monitoring, or authority to suppress
+independently held artifacts.

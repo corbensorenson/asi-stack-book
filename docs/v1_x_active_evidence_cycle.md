@@ -9,7 +9,7 @@ Active successor: `docs/post_v2_evidence_roadmap.md`
 This ledger names the current v1.x evidence-cycle chapter lanes selected from
 `docs/per_chapter_evidence_plan.md`. It exists to enforce the lane cap: this
 cycle selects one flagship measured lane plus two direct support lanes and
-leaves the other 73 chapter lanes planned-only. It is a planning and
+leaves the other 77 chapter lanes planned-only. It is a planning and
 release-control record, not a support-state transition.
 
 The selected lanes sit inside a wider defended-contribution pool where the
@@ -26,13 +26,13 @@ promotion.
 | Field | Value |
 |---|---|
 | Selected chapter lanes | 3 |
-| Planned-only chapter lanes | 73 |
+| Planned-only chapter lanes | 77 |
 | Lane cap | 1 flagship measured lane plus at most 2 direct support lanes per v1.x cycle |
 | Flagship measured lane | `resource-economics-and-token-budgets` |
 | Direct support lanes | `project-theseus-as-report-first-implementation-reference`; `fast-generation-architectures` |
-| Chapter core support effect | None; all 76 chapter core claims remain `argument`. |
+| Chapter core support effect | None; all 80 chapter core claims remain `argument`. |
 | Non-core support effect | Existing non-core transitions remain scoped to their accepted records. |
-| No-sweep rule | No 76-lane fixture sweep is claimed or implied. |
+| No-sweep rule | No 80-lane fixture sweep is claimed or implied. |
 
 ## Selected Lanes
 
@@ -78,6 +78,7 @@ promotion.
 - `the-efficient-asi-hypothesis`
 - `system-boundaries-and-authority`
 - `failure-modes-of-ungoverned-intelligence`
+- `dangerous-capability-domains-and-misuse-uplift`
 - `evidence-states-and-claim-discipline`
 - `scalable-oversight-and-adversarial-ai-control`
 - `human-intent-as-a-formal-input`
@@ -88,12 +89,14 @@ promotion.
 - `moral-uncertainty-and-value-conflict`
 - `governed-objective-formation-value-learning-and-goal-integrity`
 - `institutions-international-coordination-and-public-legitimacy`
+- `societal-resilience-and-misuse-defense`
 - `stable-capability-fields`
 - `capability-replacement-and-rollback`
 - `security-kernel-and-digital-scifs`
 - `adversarial-machine-learning-and-model-attack-surface`
 - `privacy-data-rights-and-information-flow-governance`
 - `model-weight-custody-and-hardware-roots-of-trust`
+- `open-weight-release-and-post-release-control`
 - `ai-supply-chain-integrity-and-lifecycle-provenance`
 - `recursive-self-improvement-boundaries`
 - `open-ended-improvement-engines`
@@ -138,6 +141,7 @@ promotion.
 - `capability-thresholds-and-deployment-commitments`
 - `adversarial-evaluation-sandbagging-and-training-time-deception`
 - `safety-cases-and-structured-assurance`
+- `content-authenticity-watermarking-and-synthetic-media-integrity`
 - `governed-operations-incident-command-and-graceful-degradation`
 - `policy-optimization-and-learning-from-feedback`
 - `data-engines-continual-learning-and-unlearning`

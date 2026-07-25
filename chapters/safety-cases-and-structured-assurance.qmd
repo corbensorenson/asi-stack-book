@@ -651,9 +651,10 @@ Across 79 atoms, the terminal ledger records 79 `blocked_after_full_attempt`.
 
 Safety Cases and Structured Assurance compiles the claims, evidence,
 assumptions, countercases, residuals, and decision boundaries that constrain a
-release. Governed Operations, Incident Command, and Graceful Degradation
-receives those exact conditions after deployment and owns field invalidation,
-incident declaration, command, containment, degraded or fallback modes,
-recovery, disclosure, and retirement. Policy Optimization receives only the
-bounded incident lessons that survive that operational lifecycle and a separate
-update-authority review.
+release. **Content Authenticity, Watermarking, and Synthetic Media Integrity**
+follows by applying that discipline to the generation-to-distribution
+lifecycle: provenance, watermark evidence, detector calibration, semantic
+truth, consent, transformations, disclosure, and remedy remain separate. It
+inherits assurance limits and residual owners, not a claim that signed content
+is true, unlabeled content is synthetic, a detector generalizes, or a
+publication channel will preserve the evidence.

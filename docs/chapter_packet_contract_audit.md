@@ -10,6 +10,7 @@ This generated audit checks every active chapter against the architecture-refere
 | `the-efficient-asi-hypothesis` | pass | bounded in insufficiency section | complete packet surface |
 | `system-boundaries-and-authority` | pass | bounded in insufficiency section | complete packet surface |
 | `failure-modes-of-ungoverned-intelligence` | pass | bounded in insufficiency section | complete packet surface |
+| `dangerous-capability-domains-and-misuse-uplift` | pass | explicit heading | complete packet surface |
 | `evidence-states-and-claim-discipline` | pass | bounded in insufficiency section | complete packet surface |
 | `scalable-oversight-and-adversarial-ai-control` | pass | bounded in insufficiency section | complete packet surface |
 | `human-intent-as-a-formal-input` | pass | bounded in insufficiency section | complete packet surface |
@@ -20,12 +21,14 @@ This generated audit checks every active chapter against the architecture-refere
 | `moral-uncertainty-and-value-conflict` | pass | bounded in insufficiency section | complete packet surface |
 | `governed-objective-formation-value-learning-and-goal-integrity` | pass | bounded in insufficiency section | complete packet surface |
 | `institutions-international-coordination-and-public-legitimacy` | pass | bounded in insufficiency section | complete packet surface |
+| `societal-resilience-and-misuse-defense` | pass | explicit heading | complete packet surface |
 | `stable-capability-fields` | pass | bounded in insufficiency section | complete packet surface |
 | `capability-replacement-and-rollback` | pass | bounded in insufficiency section | complete packet surface |
 | `security-kernel-and-digital-scifs` | pass | bounded in insufficiency section | complete packet surface |
 | `adversarial-machine-learning-and-model-attack-surface` | pass | bounded in insufficiency section | complete packet surface |
 | `privacy-data-rights-and-information-flow-governance` | pass | explicit heading | complete packet surface |
 | `model-weight-custody-and-hardware-roots-of-trust` | pass | bounded in insufficiency section | complete packet surface |
+| `open-weight-release-and-post-release-control` | pass | explicit heading | complete packet surface |
 | `ai-supply-chain-integrity-and-lifecycle-provenance` | pass | bounded in insufficiency section | complete packet surface |
 | `recursive-self-improvement-boundaries` | pass | explicit heading | complete packet surface |
 | `open-ended-improvement-engines` | pass | bounded in insufficiency section | complete packet surface |
@@ -72,6 +75,7 @@ This generated audit checks every active chapter against the architecture-refere
 | `capability-thresholds-and-deployment-commitments` | pass | bounded in insufficiency section | complete packet surface |
 | `adversarial-evaluation-sandbagging-and-training-time-deception` | pass | bounded in insufficiency section | complete packet surface |
 | `safety-cases-and-structured-assurance` | pass | bounded in insufficiency section | complete packet surface |
+| `content-authenticity-watermarking-and-synthetic-media-integrity` | pass | explicit heading | complete packet surface |
 | `governed-operations-incident-command-and-graceful-degradation` | pass | bounded in insufficiency section | complete packet surface |
 | `policy-optimization-and-learning-from-feedback` | pass | explicit heading | complete packet surface |
 | `data-engines-continual-learning-and-unlearning` | pass | bounded in insufficiency section | complete packet surface |
@@ -83,6 +87,6 @@ This generated audit checks every active chapter against the architecture-refere
 | `living-book-methodology` | pass | bounded in insufficiency section | complete packet surface |
 | `open-research-agenda-and-bibliography-plan` | pass | bounded in insufficiency section | complete packet surface |
 
-Summary: 76 of 76 active chapters pass; 0 remain open.
+Summary: 80 of 80 active chapters pass; 0 remain open.
 
 Non-claims: this is a structural and bounded semantic audit, not proof of prose quality, source interpretation, empirical validity, formal adequacy, deployment, safety, or independent review.

@@ -40,6 +40,7 @@ This source belongs in the benchmark and readiness chapters as the external refe
 - `readiness-gates-residual-escrow-and-quarantine` (Readiness Gates, Residual Escrow, and Quarantine)
 - `recursive-self-improvement-boundaries` (Recursive Self-Improvement Boundaries)
 - `prototype-roadmap` (Prototype Roadmap)
+- `dangerous-capability-domains-and-misuse-uplift` (Dangerous Capability Domains and Misuse Uplift)
 
 ## Claims To Add Or Update
 

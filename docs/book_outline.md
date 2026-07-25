@@ -7,6 +7,14 @@ Round 18 depth pass and Precision Contract existing-owner manuscript integration
 `book_structure.json` remains the ordering source of truth; Quarto generates
 displayed chapter numbers from the manifest.
 
+The 2026-07-24 taxonomy and structural-maturity reconciliation makes **80
+chapters** the current manifest truth. It admits four distinct owners for
+dangerous-capability domains, societal misuse resilience, open-weight release,
+and content authenticity; repairs three title/content mismatches; and routes
+thirteen narrower findings into existing owners. All chapter-core claims remain
+at `argument`. The controlling decision packet is
+`docs/taxonomy_and_structural_maturity_reconciliation_2026_07_24.md`.
+
 Active improvement authority:
 `docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md`, with machine
 state in
@@ -39,7 +47,7 @@ the empirical slot and its materialization entry is governed by the latest
 exact capacity and Docker receipt rather than inherited storage weather. The
 book slot remains strictly ordered: reviewed append-only atoms for all six
 post-baseline chapters, the W3 inheritance guard, the T1D maturity/source/atom/
-reader/inheritance artifacts, and one combined current 66-chapter reader
+reader/inheritance artifacts, and one combined current 80-chapter reader
 derivative. The owner-directed prose-completion transaction has already placed
 all accepted T1D concepts and the eight-owner Precision Contract treatment in
 the manuscript without opening protected outcomes, a third empirical lane, a
@@ -1170,7 +1178,7 @@ Source loading queue:
 | Folded history | `agency-dignity-and-corrigibility` | Folded into this destination on 2026-06-30; preserve agency, dignity, corrigibility, material-usability, refusal, review, appeal, rollback, exit, audit, accountability, source mappings, tests, and proof hooks as subclaims and history. |
 
 
-| Manifest assignment reconciliation | `ext_embedded_agency_2019` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `ext_embedded_agency_2019`, `ext_legal_alignment_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: A powerful stack can satisfy a request or policy while concentrating
@@ -1481,7 +1489,7 @@ Source loading queue:
 | Primary | `ext_un_global_digital_compact_2024`, `ext_council_europe_ai_convention_2024` | Use the assigned source notes for bounded mechanism, comparator, failure, and limitation context. Source-reported results remain distinct from local evidence. |
 
 
-| Manifest assignment reconciliation | `coherence_exchange` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `coherence_exchange`, `ext_flexible_hardware_enabled_guarantees_2025`, `ext_legal_alignment_2026`, `ext_eu_article_50_transparency_guidelines_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: ASI-scale systems cross organizations, jurisdictions, borders, public services, and affected populations. Technical permissions and private governance cannot determine who has public authority, whose participation counts, how conflicting rules are resolved, or how international commitments are verified and amended.
@@ -1797,7 +1805,7 @@ Source loading queue:
 | Primary | `ext_nist_adversarial_ml_2024`, `ext_sleeper_agents_2024`, `ext_carlini_training_data_extraction_2021`, `ext_adversarial_sensor_fusion_2022` | Use the assigned source notes for bounded mechanism, comparator, failure, and limitation context. Source-reported results remain distinct from local evidence. |
 
 
-| Manifest assignment reconciliation | `deterministic_capability_compilation` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `deterministic_capability_compilation`, `ext_reluplex_2017` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: A learned artifact creates attack surfaces that ordinary application security does not fully own. Attackers can shape training data, perturb inference inputs, implant triggers, adapt to defenses, steal behavior through queries, infer sensitive properties, or exploit multimodal and agentic pathways while the surrounding software remains nominally secure.
@@ -1940,7 +1948,7 @@ Source loading queue:
 | Variant | `ext_nvidia_confidential_model_lifecycle_2026` | Preserve vendor-specific encrypted-artifact, attestation, and key-release detail without importing cross-platform confidentiality, verifier independence, or deployment correctness. |
 
 
-| Manifest assignment reconciliation | `ext_airllm_2023`, `ext_hf_accelerate_big_model_inference_2026`, `ext_llama_cpp_memory_mapping_2026`, `ext_llm_in_flash_2024` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `ext_airllm_2023`, `ext_hf_accelerate_big_model_inference_2026`, `ext_llama_cpp_memory_mapping_2026`, `ext_llm_in_flash_2024`, `ext_flexible_hardware_enabled_guarantees_2025` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: Runtime tool governance can coexist with uncontrolled optimizer
@@ -2056,7 +2064,7 @@ Source loading queue:
 | Supporting | `cca_project`, `moecot_manifest_project`, `corbens_trainer_project`, `ext_owasp_agentic_top_10_2026` | Use the projects only as author-lineage implementation context and OWASP only as supporting threat taxonomy. Do not count the eleven records as eleven independent demonstrations of one control. |
 
 
-| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `ext_proof_of_learning_2021`, `ext_c2pa_specification_2_3_2025` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: A valid custody record can protect one digest while material data,
@@ -2700,7 +2708,7 @@ Source loading queue:
 | Variants | `deterministic_capability_compilation`, `qcsa_whitepaper`, `cognitive_compilation` | Use for versioned admission, heterogeneous substrates, and typed artifacts; none establishes prediction quality. |
 
 
-| Manifest assignment reconciliation | `relational_dimension_compiler`, `ext_toward_causal_representation_learning_2021`, `ext_deep_ensembles_2017`, `ext_conformal_prediction_2021`, `ext_wilds_2021` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `relational_dimension_compiler`, `ext_toward_causal_representation_learning_2021`, `ext_causal_calculus_1995`, `ext_deep_ensembles_2017`, `ext_conformal_prediction_2021`, `ext_wilds_2021` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: planners can optimize an attractive hallucinated future when partial
@@ -3845,7 +3853,7 @@ Source loading queue:
 | Learning taxonomy | `ext_safe_reinforcement_learning_survey_2015` | Use for constrained objective and safe-exploration taxonomy; a survey does not validate a deployed controller. |
 
 
-| Manifest assignment reconciliation | `viea` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `ext_ai_simulation_digital_twins_2025`, `viea` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Separate deliberative policy, trajectory or action proposal, safety filter,
@@ -4266,7 +4274,7 @@ Source loading queue:
 | Mutable/external/dynamical/function/graph/program alternatives | `ext_ttt_layers_2024`, `ext_titans_2025`, `ext_kan_2024`, `ext_kan_or_mlp_fairer_comparison_2024`, `ext_neural_turing_machines_2014`, `ext_differentiable_neural_computer_2016`, `ext_liquid_time_constant_networks_2021`, `ext_neural_message_passing_2017`, `ext_dreamcoder_2020` | Use for online-state custody, fair KAN comparison, memory and topology extrapolation, continuous-time cost, relational processing, and verified abstraction tests. |
 | Hybrid composition | `ext_jamba_2024` | Use to make layer/expert/substrate composition and active-versus-total accounting explicit; do not infer a generally optimal mixture or local result. |
 
-| Manifest assignment reconciliation | `deterministic_capability_compilation`, `ext_gated_deltanet2_2026`, `ext_hyperscale_lottery_2026`, `ext_inkling_2026`, `kernel_english_residual_compiler`, `relational_dimension_compiler`, `ext_llm_in_flash_2024`, `ext_powerinfer_2024`, `ext_atsinfer_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `deterministic_capability_compilation`, `ext_gated_deltanet2_2026`, `ext_hyperscale_lottery_2026`, `ext_inkling_2026`, `kernel_english_residual_compiler`, `relational_dimension_compiler`, `ext_llm_in_flash_2024`, `ext_powerinfer_2024`, `ext_atsinfer_2026`, `ext_test_time_training_2020`, `ext_llada_2025`, `ext_scaling_dllms_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Explain why a stable stack must abstract architecture without pretending that
@@ -4377,7 +4385,7 @@ Source loading queue:
 | Orthogonalized matrix updates | `ext_muon_scalable_2025`, `ext_muon_spectral_norm_2026` | Explain momentum plus approximate matrix orthogonalization, matrix eligibility, fallback optimizers, weight decay, update scaling, approximation precision, communication, and one theoretical spectral-norm interpretation. Do not collapse ideal and implemented Muon or infer universal superiority. |
 
 
-| Manifest assignment reconciliation | `corbens_trainer_project` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `corbens_trainer_project`, `ext_proof_of_learning_2021`, `ext_test_time_training_2020`, `ext_curriculum_learning_2009` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Explain why code, data, weights, and loss do not fully identify a stateful
@@ -4484,7 +4492,7 @@ Source loading queue:
 | Primary | `ext_scaling_laws_neural_language_models_2020`, `ext_mdl_tutorial_2004`, `ext_weak_to_strong_generalization_2023`, `ext_information_bottleneck_2000` | Use the assigned source notes for bounded mechanism, comparator, failure, and limitation context. Source-reported results remain distinct from local evidence. |
 
 
-| Manifest assignment reconciliation | `simulation_scaling` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `simulation_scaling`, `ext_valiant_theory_learnable_1984`, `ext_deep_double_descent_2020`, `ext_emergent_abilities_llms_2022`, `ext_emergent_abilities_mirage_2023` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: The stack repeatedly relies on claims that learning will generalize, capabilities will transfer, losses will scale, or phase changes will appear outside observed training support. Those claims require an owner that connects assumptions about data, hypothesis class, optimization, inductive bias, compute, and evaluation to an exact prediction and failure envelope.
@@ -5181,7 +5189,7 @@ Source loading queue:
 | Primary | `ext_iea_energy_and_ai_2025`, `ext_lbnl_data_center_energy_2024` | Use the assigned source notes for bounded mechanism, comparator, failure, and limitation context. Source-reported results remain distinct from local evidence. |
 
 
-| Manifest assignment reconciliation | `tokenmana` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `tokenmana`, `ext_flexible_hardware_enabled_guarantees_2025` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: Requested compute becomes useful work only through accelerators, memory, storage, interconnect, facilities, grid connections, generation, cooling, water, land, materials, maintenance, resilience, and retirement at particular places and times. Abstract token or FLOP budgets hide these physical constraints and their affected communities.
@@ -5572,6 +5580,8 @@ Source loading queue:
 | Supporting | `spinoza`, `scf`, `talos`, `viea`, `circle_calculus_core`, `circle_ai_contract_suite`, `rope_position_certifier`, `proof_carrying_circular_computation`, `cca_project`, `moecot_manifest_project`, `corbens_best_model_possible_project`, `precision_contract` | Mine after primary sources for cross-layer connections, variants, failure modes, abstraction maps, semantic-depth boundaries, and implementation-binding negative cases. Use `precision_contract` for quantization-as-program-transformation and its formal ceiling. Treat the three historical projects as one local lineage, not independent validation. |
 
 
+
+| Manifest assignment reconciliation | `ext_reluplex_2017` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: The book needs to decide which architecture claims should become executable specs or Lean proofs.
@@ -5825,6 +5835,8 @@ Source loading queue:
 | Primary | `ext_transformer_circuits_2021`, `ext_monosemanticity_2023`, `ext_scaling_sparse_autoencoders_2024`, `ext_circuit_tracing_2025` | Read for mechanistic frameworks, sparse features, scaling, interventions, and stated limits; do not infer completeness or cross-model transfer. |
 | Supporting | `deterministic_capability_compilation`, `kernel_english_residual_compiler`, `qcsa_whitepaper`, `platonic_world_model` | Use for evidence contracts, residual accounting, substrate plurality, and representation hypotheses; local sources provide no interpretability result. |
 
+
+| Manifest assignment reconciliation | `ext_elk_report_2021`, `ext_influence_functions_2017` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: behavior tests reveal outputs but not necessarily mechanisms, while
@@ -6401,7 +6413,7 @@ Source loading queue:
 
 
 
-| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `ext_muse_unlearning_2025`, `ext_unlearning_benchmarks_weak_2024`, `ext_openunlearning_2025`, `qcsa_whitepaper`, `ext_v_jepa_2_2025` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `ext_muse_unlearning_2025`, `ext_unlearning_benchmarks_weak_2024`, `ext_openunlearning_2025`, `qcsa_whitepaper`, `ext_v_jepa_2_2025`, `ext_influence_functions_2017`, `ext_curriculum_learning_2009` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: Learning inputs become transformed, mixed, replayed, indexed,
@@ -7189,6 +7201,74 @@ Lean proof targets:
 |---|---|---|---|
 | `lean:bibliography.plan.operational_invariant` | `AsiStackProofs.BibliographyPlan` | A source-derived claim requires a source note or equivalent ingested-source artifact. | implemented |
 | `lean:bibliography.plan.failure_blocks_promotion` | `AsiStackProofs.BibliographyPlan` | A new source cannot be assigned to a non-existent chapter id. | implemented |
+
+## Taxonomy completion admissions (2026-07-24)
+
+These four entries close the dangerous-capability, post-release, information-integrity, and social-resilience holes found by the 80-chapter taxonomy audit. Their location here is an outline amendment only; `book_structure.json` remains authoritative for reading order.
+
+### Dangerous Capability Domains and Misuse Uplift
+
+Stable ID: `dangerous-capability-domains-and-misuse-uplift`
+
+Chapter job: Separate dangerous-capability measurement by domain, actor, access, task horizon, and uplift over a realistic baseline.
+
+Core claim: A dangerous-capability conclusion requires a versioned domain dossier that binds the exact model, threat actor, access, baseline, task, evaluator, safeguards, uncertainty, expiry, maximum inference, and downstream authority. A source taxonomy, benchmark score, observed capability, or absence of a successful attack does not establish real-world harm or safety.
+
+Draft deliverables: Complete argument-level manuscript; domain-by-domain CBRN, cyber, autonomy, persuasion, and AI-R&D treatment; attempt denominator and misuse-uplift mechanism; explicit evaluator, safeguard, temporal-renewal, and nonclaim boundaries; source crosswalk and adjacent handoffs.
+
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:dangerous-capability-domains-and-misuse-uplift.admission_boundary` | `AsiStackProofs.NoDeferralAdmission` | A finite dangerous-capability dossier may hand off only when model, threat, cohort, access, evaluator, uncertainty, expiry, and maximum inference are present; no theorem establishes dangerous capability or safety. | planned |
+
+### Societal Resilience and Misuse Defense
+
+Stable ID: `societal-resilience-and-misuse-defense`
+
+Chapter job: Govern the defensive systems that absorb, detect, communicate, recover from, and learn after AI-enabled misuse at social scale.
+
+Core claim: Resilience must be evaluated as a versioned defense portfolio across exposed population, institutions, preparedness, detection, response, recovery, burden, adaptation, and residual harm. The existence of a policy, classifier, takedown channel, incident plan, or successful exercise does not prove population protection.
+
+Draft deliverables: Complete argument-level manuscript; layered prevention-to-recovery architecture; defender/attacker adaptation loop; distributional burden and civil-liberties constraints; independent exercise design; source crosswalk and handoffs.
+
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:societal-resilience-and-misuse-defense.admission_boundary` | `AsiStackProofs.NoDeferralAdmission` | A finite resilience dossier may hand off only when hazard, exposed cohort, defense layers, observed outcome, burden, expiry, and residual owner are explicit; no theorem proves social resilience. | planned |
+
+### Open-Weight Release and Post-Release Control
+
+Stable ID: `open-weight-release-and-post-release-control`
+
+Chapter job: Treat deliberate release of model weights as an irreversible control-boundary change rather than an ordinary deployment.
+
+Core claim: Open-weight release requires a prospective, artifact-specific decision packet that compares release forms, foreseeable adaptation, irreversibility, safeguards, independent evaluation, downstream observability, revocation limits, post-release response, and residual ownership. Pre-release custody or a model card cannot establish that release is safe or controllable.
+
+Draft deliverables: Complete argument-level manuscript; release-form ladder; malicious fine-tuning and proliferation model; irreversibility and post-release monitoring; strong no-release and narrower-release comparators; source crosswalk and handoffs.
+
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:open-weight-release-and-post-release-control.admission_boundary` | `AsiStackProofs.NoDeferralAdmission` | A finite open-weight decision may hand off only when artifact identity, irreversibility, comparator, fine-tuning state, residual owner, and post-release non-authority are explicit; no theorem authorizes release. | planned |
+
+### Content Authenticity, Watermarking, and Synthetic-Media Integrity
+
+Stable ID: `content-authenticity-watermarking-and-synthetic-media-integrity`
+
+Chapter job: Keep provenance, watermark detection, semantic truth, consent, distribution, and remedy as separate claims across synthetic-media lifecycles.
+
+Core claim: Content-integrity governance requires an end-to-end receipt that joins generation identity, provenance, watermark and detector conditions, transformations, distribution context, affected parties, response, and residual uncertainty. A valid credential, visible label, detector score, or watermark failure proves neither truth nor origin.
+
+Draft deliverables: Complete argument-level manuscript; C2PA and watermark roles; transformation and removal attacks; source-to-channel custody; legal-transparency and platform interfaces; explicit accessibility, privacy, and nonclaim boundaries.
+
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:content-authenticity-watermarking-and-synthetic-media-integrity.admission_boundary` | `AsiStackProofs.NoDeferralAdmission` | A finite content-integrity record may hand off only when asset identity, provenance, detector scope, transformation, distribution, remedy, uncertainty, and non-truth boundary are explicit; no theorem establishes authenticity or truth. | planned |
 
 ## Source Corpus and External Literature
 

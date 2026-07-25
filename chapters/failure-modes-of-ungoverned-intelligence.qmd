@@ -610,9 +610,11 @@ Across 32 atoms, the terminal ledger records 24 `blocked_after_full_attempt`; 8 
 
 ## Handoff
 
-Prospective failure obligations create claims about detectors, controls,
-containment, and recovery; those claims can fail just as the underlying system
-can. **Evidence States and Claim Discipline** follows by separating taxonomy,
-mechanism evidence, observed incidents, mitigation results, and broader safety
-inference. The handoff prevents a seeded detector pass or a polished
-postmortem from becoming an unsupported claim that the failure has been solved.
+Prospective failure obligations identify broad hazards but do not measure
+whether a particular model materially helps a particular actor cause them.
+**Dangerous Capability Domains and Misuse Uplift** follows by turning the
+highest-consequence hazard families into model-, actor-, access-, baseline-,
+task-, evaluator-, safeguard-, and time-specific dossiers. It inherits the
+failure taxonomy and residual owners, not a conclusion that a capability,
+misuse pathway, real-world harm, mitigation, or safety state has been
+established.

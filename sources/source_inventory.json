@@ -439,6 +439,7 @@
     "priority": "external_literature",
     "layer": "incident_response",
     "chapter_targets": [
+      "societal-resilience-and-misuse-defense",
       "governed-operations-incident-command-and-graceful-degradation"
     ],
     "url": "https://csrc.nist.gov/pubs/sp/800/61/r3/final",
@@ -799,6 +800,7 @@
     "priority": "external_literature",
     "layer": "capability_commitments",
     "chapter_targets": [
+      "dangerous-capability-domains-and-misuse-uplift",
       "capability-thresholds-and-deployment-commitments"
     ],
     "url": "https://openai.com/index/updating-our-preparedness-framework/",
@@ -1960,6 +1962,7 @@
     "priority": "external_literature",
     "layer": "governance_evals",
     "chapter_targets": [
+      "dangerous-capability-domains-and-misuse-uplift",
       "benchmark-ratchets-and-anti-goodhart-evidence",
       "readiness-gates-residual-escrow-and-quarantine",
       "recursive-self-improvement-boundaries",
@@ -2629,7 +2632,8 @@
       "verification-bandwidth-and-context-adequacy",
       "executable-specifications-and-lean-proof-envelope",
       "benchmark-ratchets-and-anti-goodhart-evidence",
-      "resource-economics-and-token-budgets"
+      "resource-economics-and-token-budgets",
+      "adversarial-machine-learning-and-model-attack-surface"
     ],
     "url": "https://arxiv.org/abs/1702.01135",
     "notes": "External AI formal-verification source for SMT-style verification of ReLU neural networks, counterexamples, safety-critical properties, and ACAS Xu evaluation boundaries.",
@@ -3602,7 +3606,8 @@
     "priority": "external_literature",
     "layer": "diffusion_language_models",
     "chapter_targets": [
-      "fast-generation"
+      "fast-generation-architectures",
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture"
     ],
     "url": "https://arxiv.org/abs/2502.09992",
     "notes": "Primary external paper for LLaDA, a large masked-diffusion language model trained with pretraining and supervised fine-tuning rather than left-to-right autoregression.",
@@ -3619,7 +3624,8 @@
     "priority": "external_literature",
     "layer": "diffusion_language_models",
     "chapter_targets": [
-      "fast-generation"
+      "fast-generation-architectures",
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture"
     ],
     "url": "https://arxiv.org/abs/2602.15014",
     "notes": "Primary external paper for comparing diffusion language-model families by speed-quality tradeoffs rather than perplexity alone.",
@@ -4814,6 +4820,7 @@
     "priority": "external_literature",
     "layer": "model_weight_custody",
     "chapter_targets": [
+      "open-weight-release-and-post-release-control",
       "model-weight-custody-and-hardware-roots-of-trust"
     ],
     "url": "https://www.rand.org/content/dam/rand/pubs/research_reports/RRA2800/RRA2849-1/RAND_RRA2849-1.pdf",
@@ -4859,6 +4866,7 @@
     "priority": "external_literature",
     "layer": "open_weight_release_security",
     "chapter_targets": [
+      "open-weight-release-and-post-release-control",
       "model-weight-custody-and-hardware-roots-of-trust"
     ],
     "url": "https://arxiv.org/abs/2506.19874",
@@ -7080,5 +7088,334 @@
     "published": "2024-01-04",
     "citation_label": "Vassilev et al. (2024), NIST AI 100-2",
     "doi": "10.6028/NIST.AI.100-2e2023"
+  },
+  {
+    "id": "ext_singapore_consensus_2026",
+    "title": "The 2026 Singapore Consensus on Global AI Safety Research Priorities",
+    "priority": "external_literature",
+    "layer": "dangerous_capability_assessment_societal_resilience_and_agentic_risk",
+    "chapter_targets": [
+      "dangerous-capability-domains-and-misuse-uplift",
+      "societal-resilience-and-misuse-defense",
+      "open-weight-release-and-post-release-control",
+      "capability-thresholds-and-deployment-commitments"
+    ],
+    "url": "https://aisafetypriorities.org/",
+    "notes": "International 2026 technical-research-priority synthesis covering risk assessment, development, control, and societal resilience, including CBRN, cyber, psychological manipulation, malicious fine-tuning, agent monitoring, incident reporting, and defense-favoring capabilities. It is a research agenda and consensus synthesis, not evidence that any listed safeguard works or that this book's contracts are complete.",
+    "source_type": "international_consensus_report",
+    "published": "2026-07",
+    "updated": "2026-07",
+    "citation_label": "Singapore Consensus (2026), Global AI Safety Research Priorities"
+  },
+  {
+    "id": "ext_international_ai_safety_report_2026",
+    "title": "International AI Safety Report 2026",
+    "priority": "external_literature",
+    "layer": "frontier_ai_risk_misuse_open_weight_and_societal_resilience",
+    "chapter_targets": [
+      "dangerous-capability-domains-and-misuse-uplift",
+      "societal-resilience-and-misuse-defense",
+      "open-weight-release-and-post-release-control",
+      "content-authenticity-watermarking-and-synthetic-media-integrity"
+    ],
+    "url": "https://internationalaisafetyreport.org/publication/international-ai-safety-report-2026",
+    "notes": "International expert report synthesizing evidence on general-purpose AI capabilities, misuse, open-weight risks, safeguards, monitoring, and societal resilience. It supports risk taxonomy and uncertainty boundaries; its literature synthesis does not reproduce component studies locally or establish that any ASI Stack mechanism is effective.",
+    "source_type": "international_expert_report",
+    "published": "2026-02-03",
+    "updated": "2026-02-03",
+    "citation_label": "International AI Safety Report (2026)"
+  },
+  {
+    "id": "ext_c2pa_specification_2_3_2025",
+    "title": "C2PA Content Credentials Technical Specification 2.3",
+    "priority": "external_literature",
+    "layer": "content_provenance_and_authenticity",
+    "chapter_targets": [
+      "content-authenticity-watermarking-and-synthetic-media-integrity",
+      "ai-supply-chain-integrity-and-lifecycle-provenance"
+    ],
+    "url": "https://spec.c2pa.org/specifications/specifications/2.3/index.html",
+    "notes": "Official C2PA specification for signed manifests, assertions, ingredients, content bindings, validation, and provenance history. It provides a concrete interoperability comparator; it does not prove truth of depicted events, creator identity beyond the credential chain, semantic authenticity, universal platform retention, or resistance to removal and laundering.",
+    "source_type": "technical_standard",
+    "published": "2025-12",
+    "updated": "2026-01-05",
+    "citation_label": "C2PA (2025), Content Credentials Specification 2.3"
+  },
+  {
+    "id": "ext_eu_article_50_transparency_guidelines_2026",
+    "title": "Guidelines on Transparency Obligations for Providers and Deployers of AI Systems",
+    "priority": "external_literature",
+    "layer": "synthetic_content_transparency_and_disclosure",
+    "chapter_targets": [
+      "content-authenticity-watermarking-and-synthetic-media-integrity",
+      "institutions-international-coordination-and-public-legitimacy"
+    ],
+    "url": "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems",
+    "notes": "European Commission guidance for Article 50 transparency obligations concerning AI interaction, machine-readable marking, deepfakes, and certain public-interest text, with obligations applying from 2 August 2026 subject to scope and transitional details. It is legal and implementation guidance, not legal advice, proof of compliance, or evidence that a marking technique is robust.",
+    "source_type": "official_regulatory_guidance",
+    "published": "2026-07-20",
+    "updated": "2026-07-20",
+    "citation_label": "European Commission (2026), Article 50 Transparency Guidelines"
+  },
+  {
+    "id": "ext_openai_worst_case_open_weight_risks_2025",
+    "title": "Estimating Worst-Case Frontier Risks of Open-Weight LLMs",
+    "priority": "external_literature",
+    "layer": "malicious_fine_tuning_and_open_weight_release_evaluation",
+    "chapter_targets": [
+      "open-weight-release-and-post-release-control",
+      "dangerous-capability-domains-and-misuse-uplift"
+    ],
+    "url": "https://openai.com/index/estimating-worst-case-frontier-risks-of-open-weight-llms/",
+    "notes": "Provider-authored study of malicious fine-tuning for biology and cyber evaluations before the gpt-oss release. It supplies a concrete worst-case-elicitation comparator and reports bounded provider results; it does not prove future-release safety, general malicious-fine-tuning resistance, independent reproduction, or absence of untested harms.",
+    "source_type": "provider_research_paper",
+    "published": "2025-08-05",
+    "updated": "2025-08-05",
+    "citation_label": "Wallace et al. (2025), Worst-Case Open-Weight Frontier Risks"
+  },
+  {
+    "id": "ext_aisi_misuse_safeguards_safety_case_2026",
+    "title": "An Example Safety Case for Safeguards Against Misuse",
+    "priority": "external_literature",
+    "layer": "misuse_safeguard_uplift_and_safety_cases",
+    "chapter_targets": [
+      "dangerous-capability-domains-and-misuse-uplift",
+      "safety-cases-and-structured-assurance",
+      "societal-resilience-and-misuse-defense"
+    ],
+    "url": "https://www.aisi.gov.uk/research/an-example-safety-case-for-safeguards-against-misuse",
+    "notes": "UK AI Security Institute example connecting safeguard red teaming, attacker effort, an uplift model, and a deployment safety case. It is a worked argument and measurement proposal, not proof that real safeguards reduce misuse to a particular level or that the book's proposed defense contracts work.",
+    "source_type": "government_research_report",
+    "published": "2026",
+    "citation_label": "Clymer et al. (2026), Misuse Safeguards Safety Case"
+  },
+  {
+    "id": "ext_anthropic_responsible_scaling_policy_3_4_2026",
+    "title": "Anthropic Responsible Scaling Policy 3.4",
+    "priority": "external_literature",
+    "layer": "frontier_capability_thresholds_and_safeguards",
+    "chapter_targets": [
+      "dangerous-capability-domains-and-misuse-uplift",
+      "capability-thresholds-and-deployment-commitments",
+      "open-weight-release-and-post-release-control"
+    ],
+    "url": "https://www.anthropic.com/responsible-scaling-policy",
+    "notes": "Current provider policy comparator linking capability thresholds and safeguards across CBRN and automated R&D threat models, with public risk-report and review commitments. It is a revocable provider policy and self-described governance mechanism, not independent evidence that thresholds are complete, evaluations are sensitive, or safeguards are effective.",
+    "source_type": "provider_policy",
+    "published": "2026-07-08",
+    "updated": "2026-07-08",
+    "citation_label": "Anthropic (2026), Responsible Scaling Policy 3.4"
+  },
+  {
+    "id": "ext_aisi_frontier_ai_trends_2025",
+    "title": "AISI Frontier AI Trends Report 2025",
+    "priority": "external_literature",
+    "layer": "frontier_capability_evaluation_trends",
+    "chapter_targets": [
+      "dangerous-capability-domains-and-misuse-uplift",
+      "benchmark-ratchets-and-anti-goodhart-evidence"
+    ],
+    "url": "https://www.aisi.gov.uk/research/aisi-frontier-ai-trends-report-2025",
+    "notes": "UK AI Security Institute synthesis of evaluations across offensive cyber, dual-use chemistry and biology, autonomous systems, and societal impacts. It is an institute-reported trend record with bounded methods and coverage, not a complete threat census or local reproduction.",
+    "source_type": "government_research_report",
+    "published": "2025",
+    "citation_label": "UK AISI (2025), Frontier AI Trends Report"
+  },
+  {
+    "id": "ext_valiant_theory_learnable_1984",
+    "title": "A Theory of the Learnable",
+    "priority": "external_literature",
+    "layer": "computational_learning_theory_and_sample_complexity",
+    "chapter_targets": [
+      "learning-theory-generalization-and-scaling-science"
+    ],
+    "url": "https://dl.acm.org/doi/10.1145/1968.1972",
+    "notes": "Foundational PAC-learning source for defining learnability through accuracy, confidence, resource, hypothesis, and data assumptions. Its distributional and concept-class assumptions do not directly explain modern foundation-model generalization or certify a trained model.",
+    "source_type": "journal_article",
+    "published": "1984-11-05",
+    "citation_label": "Valiant (1984), A Theory of the Learnable",
+    "doi": "10.1145/1968.1972"
+  },
+  {
+    "id": "ext_deep_double_descent_2020",
+    "title": "Deep Double Descent: Where Bigger Models and More Data Hurt",
+    "priority": "external_literature",
+    "layer": "generalization_and_interpolation_regimes",
+    "chapter_targets": [
+      "learning-theory-generalization-and-scaling-science"
+    ],
+    "url": "https://openreview.net/forum?id=-bJ_Hb7lCVH",
+    "notes": "ICLR 2020 empirical study reporting model-wise, sample-wise, and epoch-wise double-descent phenomena and proposing effective model complexity. The phenomenon is configuration- and regime-bound and does not imply that larger models or more data generally hurt or help.",
+    "source_type": "conference_paper",
+    "published": "2020",
+    "citation_label": "Nakkiran et al. (2020), Deep Double Descent",
+    "doi": "10.1088/1742-5468/ac3a74"
+  },
+  {
+    "id": "ext_emergent_abilities_llms_2022",
+    "title": "Emergent Abilities of Large Language Models",
+    "priority": "external_literature",
+    "layer": "scaling_and_emergent_capability_measurement",
+    "chapter_targets": [
+      "learning-theory-generalization-and-scaling-science"
+    ],
+    "url": "https://openreview.net/forum?id=yzkSU5zdwD",
+    "notes": "TMLR survey and framing of task abilities that appear sharply at larger model scales under reported evaluations. It motivates prospective scaling measurement but does not establish that every apparent threshold is mechanistically discontinuous or unpredictable.",
+    "source_type": "journal_article",
+    "published": "2022-08-31",
+    "citation_label": "Wei et al. (2022), Emergent Abilities of Large Language Models"
+  },
+  {
+    "id": "ext_emergent_abilities_mirage_2023",
+    "title": "Are Emergent Abilities of Large Language Models a Mirage?",
+    "priority": "external_literature",
+    "layer": "metric_induced_emergence_and_scaling_measurement",
+    "chapter_targets": [
+      "learning-theory-generalization-and-scaling-science",
+      "benchmark-ratchets-and-anti-goodhart-evidence"
+    ],
+    "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/adc98a266f45005c403b8311ca7e8bd7-Abstract-Conference.html",
+    "notes": "NeurIPS 2023 counterevidence showing that nonlinear or discontinuous metrics and limited test data can produce apparently sharp emergence from smoother underlying changes in studied settings. It does not prove that all emergence is a metric artifact.",
+    "source_type": "conference_paper",
+    "published": "2023",
+    "citation_label": "Schaeffer et al. (2023), Emergent Abilities a Mirage?"
+  },
+  {
+    "id": "ext_elk_report_2021",
+    "title": "Eliciting Latent Knowledge",
+    "priority": "external_literature",
+    "layer": "latent_knowledge_and_ontology_identification",
+    "chapter_targets": [
+      "white-box-evidence-interpretability-and-activation-governance"
+    ],
+    "url": "https://www.alignment.org/blog/arcs-first-technical-report-eliciting-latent-knowledge/",
+    "notes": "ARC technical-report agenda on mapping between a model's world model and human concepts when ordinary supervision may reward convincing but false reports. It defines an open problem and candidate approaches, not a solved elicitation method or evidence that a deployed model's reports are truthful.",
+    "source_type": "technical_report",
+    "published": "2021-12-14",
+    "citation_label": "Christiano and Xu (2021), Eliciting Latent Knowledge"
+  },
+  {
+    "id": "ext_influence_functions_2017",
+    "title": "Understanding Black-box Predictions via Influence Functions",
+    "priority": "external_literature",
+    "layer": "training_data_attribution_and_influence",
+    "chapter_targets": [
+      "white-box-evidence-interpretability-and-activation-governance",
+      "data-engines-continual-learning-and-unlearning"
+    ],
+    "url": "https://proceedings.mlr.press/v70/koh17a.html",
+    "notes": "ICML 2017 source tracing predictions through a learning algorithm to influential training points using influence-function approximations. The theory and approximations have model and optimization assumptions and do not establish exact causal provenance, privacy erasure, or influence removal in foundation models.",
+    "source_type": "conference_paper",
+    "published": "2017",
+    "citation_label": "Koh and Liang (2017), Influence Functions"
+  },
+  {
+    "id": "ext_flexible_hardware_enabled_guarantees_2025",
+    "title": "Flexible Hardware-Enabled Guarantees for AI Compute",
+    "priority": "external_literature",
+    "layer": "hardware_enabled_governance_and_compute_attestation",
+    "chapter_targets": [
+      "model-weight-custody-and-hardware-roots-of-trust",
+      "physical-compute-infrastructure-energy-and-environmental-constraints",
+      "institutions-international-coordination-and-public-legitimacy"
+    ],
+    "url": "https://arxiv.org/abs/2506.15093",
+    "notes": "Design proposal for auditable guarantee processors and tamper-resistant enclosures supporting privacy-preserving verification or enforcement of AI-compute claims. It is a proposed architecture with adoption, legacy-hardware, update-authority, side-channel, sovereignty, and abuse risks; no local device or governance guarantee exists.",
+    "source_type": "technical_report",
+    "published": "2025-06-18",
+    "citation_label": "Petrie et al. (2025), Flexible Hardware-Enabled Guarantees",
+    "doi": "10.48550/arXiv.2506.15093"
+  },
+  {
+    "id": "ext_proof_of_learning_2021",
+    "title": "Proof-of-Learning: Definitions and Practice",
+    "priority": "external_literature",
+    "layer": "training_provenance_and_computation_attestation",
+    "chapter_targets": [
+      "governed-model-training-distributed-optimization-and-scaling",
+      "ai-supply-chain-integrity-and-lifecycle-provenance"
+    ],
+    "url": "https://arxiv.org/abs/2103.05633",
+    "notes": "Research proposal for proving that final parameters arose through a claimed iterative learning process using checkpoint and stochastic-training evidence. Later attacks and security work show that proof-of-learning/proof-of-training claims require adversarial review; the source does not prove data rights, objective legitimacy, clean training, or model safety.",
+    "source_type": "conference_paper",
+    "published": "2021",
+    "citation_label": "Jia et al. (2021), Proof-of-Learning",
+    "doi": "10.48550/arXiv.2103.05633"
+  },
+  {
+    "id": "ext_test_time_training_2020",
+    "title": "Test-Time Training with Self-Supervision for Generalization under Distribution Shifts",
+    "priority": "external_literature",
+    "layer": "test_time_adaptation_and_online_update",
+    "chapter_targets": [
+      "governed-model-training-distributed-optimization-and-scaling",
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture"
+    ],
+    "url": "https://proceedings.mlr.press/v119/sun20b.html",
+    "notes": "ICML 2020 method adapting model parameters on each test sample using a self-supervised objective and reporting improvements on studied image-corruption benchmarks. The result is task- and method-bound and does not establish safe online adaptation, resistance to poisoning, or benefit under arbitrary shift.",
+    "source_type": "conference_paper",
+    "published": "2020",
+    "citation_label": "Sun et al. (2020), Test-Time Training"
+  },
+  {
+    "id": "ext_legal_alignment_2026",
+    "title": "Legal Alignment for Safe and Ethical AI",
+    "priority": "external_literature",
+    "layer": "law_following_ai_and_legal_alignment",
+    "chapter_targets": [
+      "constitutional-alignment-substrate",
+      "institutions-international-coordination-and-public-legitimacy"
+    ],
+    "url": "https://arxiv.org/abs/2601.04175",
+    "notes": "2026 interdisciplinary agenda for using legal rules, methods of interpretation, and institutional structures in AI alignment. Law is jurisdictional, contested, changing, and sometimes unjust or conflicting; the source does not establish that legal compliance equals moral alignment or that a model can reliably determine applicable law.",
+    "source_type": "research_agenda",
+    "published": "2026-01-07",
+    "citation_label": "Kolt et al. (2026), Legal Alignment for Safe and Ethical AI",
+    "doi": "10.48550/arXiv.2601.04175"
+  },
+  {
+    "id": "ext_curriculum_learning_2009",
+    "title": "Curriculum Learning",
+    "priority": "external_literature",
+    "layer": "training_curricula_and_example_order",
+    "chapter_targets": [
+      "governed-model-training-distributed-optimization-and-scaling",
+      "data-engines-continual-learning-and-unlearning"
+    ],
+    "url": "https://doi.org/10.1145/1553374.1553380",
+    "notes": "ICML 2009 source proposing training curricula that begin with easier examples or concepts and increase difficulty. Reported benefits are problem- and curriculum-bound; ordering can introduce bias, hide hard cases, or create capability and safety regressions.",
+    "source_type": "conference_paper",
+    "published": "2009",
+    "citation_label": "Bengio et al. (2009), Curriculum Learning",
+    "doi": "10.1145/1553374.1553380"
+  },
+  {
+    "id": "ext_causal_calculus_1995",
+    "title": "A Causal Calculus for Statistical Research",
+    "priority": "external_literature",
+    "layer": "structural_causal_models_and_intervention_identification",
+    "chapter_targets": [
+      "governed-world-models-and-reality-grounding"
+    ],
+    "url": "https://proceedings.mlr.press/r0/pearl95a.html",
+    "notes": "Foundational do-calculus source distinguishing intervention from observation under an explicit structural causal model. Identification depends on the causal graph and assumptions; the calculus does not discover the correct graph from arbitrary data or establish that a learned world model is causally valid.",
+    "source_type": "conference_paper",
+    "published": "1995",
+    "citation_label": "Pearl (1995), A Causal Calculus for Statistical Research"
+  },
+  {
+    "id": "ext_ai_simulation_digital_twins_2025",
+    "title": "AI Simulation by Digital Twins: Systematic Survey, Reference Framework, and Mapping to a Standardized Architecture",
+    "priority": "external_literature",
+    "layer": "digital_twins_and_simulation_fidelity",
+    "chapter_targets": [
+      "embodied-agency-real-time-control-and-physical-safety"
+    ],
+    "url": "https://arxiv.org/abs/2506.06580",
+    "notes": "Systematic survey and reference framework for digital-twin-enabled AI simulation. It supports explicit virtual/physical synchronization and simulation roles; it does not establish that a digital twin is faithful, safe for policy transfer, or an adequate substitute for physical testing.",
+    "source_type": "systematic_review",
+    "published": "2025-06-06",
+    "citation_label": "Liu et al. (2025), AI Simulation by Digital Twins",
+    "doi": "10.48550/arXiv.2506.06580"
   }
 ]
