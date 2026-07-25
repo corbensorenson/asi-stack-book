@@ -47,6 +47,8 @@ The Coherence Exchange proposes an epistemic-liquidity layer where claims or kno
 - Artifact Steward Agents and Living Project Governance
 - Prototype Roadmap
 - Open Research Agenda and Bibliography Plan
+- `institutions-international-coordination-and-public-legitimacy` (Institutions, International Coordination, and Public Legitimacy)
+- `ai-deployment-transition-distribution-and-human-agency` (AI Deployment, Transition, Distribution, and Human Agency)
 
 ## Claims To Add Or Update
 

@@ -40,6 +40,7 @@ epistemic caution, not a universal claim about models or mitigations.
 
 ## Book Chapters Supported
 
+- `adversarial-machine-learning-and-model-attack-surface` (Adversarial Machine Learning and the Model Attack Surface)
 - `inner-alignment-mesa-optimization-and-learned-objective-integrity`
 - `adversarial-evaluation-sandbagging-and-training-time-deception`
 

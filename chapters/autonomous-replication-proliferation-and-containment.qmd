@@ -1,0 +1,245 @@
+---
+title: "Autonomous Replication, Proliferation, and Containment"
+chapter_id: "autonomous-replication-proliferation-and-containment"
+part_id: "foundations-alignment-governance"
+status: "conceptual"
+draft_maturity: "v0.2 complete argument-level manuscript"
+last_updated: "2026-07-24"
+primary_sources:
+  - "ext_replibench_2025"
+evidence_level: "argument"
+claim_label: "Design rationale"
+open_evidence_gaps:
+  - "The architecture is written at argument support; no chapter-core empirical promotion is claimed."
+  - "The minimum implementation and natural evaluation described below remain to be executed unless Appendix E records them separately."
+  - "Source-reported results are not local reproductions and do not establish transfer, readiness, release, or SOTA."
+---
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `autonomous-replication-proliferation-and-containment` |
+| Part | Part I - Foundations, Alignment, and Governance |
+| Status | conceptual |
+| Manuscript maturity | v0.2 complete argument-level manuscript |
+| Last updated | 2026-07-24 |
+| Claim label | Design rationale |
+| Evidence level | argument |
+| Source loading state | Assigned source notes support mechanism and boundary discussion; all reported outcomes remain source-reported. |
+| Test state | The chapter defines a minimum implementation and falsification plan; no chapter-core promotion follows from prose or source synthesis. |
+
+## Drafting guardrail
+
+Replication containment owns a distinct control plane, not proof that the control plane
+works. Its source crosswalk supports definitions, mechanisms, failure examples,
+and comparison targets. The design remains at **argument** support until a
+separate accepted evidence transition says otherwise.
+
+::: {.asi-human-only}
+## Human Reading Path
+
+Copying a file is not autonomous replication, but replication is not one dramatic step either. It is a chain of ordinary capabilities that becomes dangerous when a system assembles the chain itself. Copies may acquire resources, cross administrative domains, modify themselves, create backups, and persist through channels the original operator never enumerated.
+
+Ordinary deployment, elastic scaling, migration, backup, reproduction, and uncontrolled proliferation require different authority. A replication lease binds every permitted instance to ancestry, purpose, resource ceilings, jurisdiction, credentials, communication routes, expiry, revocation, and descendant policy. No child inherits broader authority merely because its parent could create it, and providers cannot silently complete missing steps.
+
+The lifecycle moves from capability assessment and authorization through creation, census, monitoring, containment, revocation, cleanup, and independent closure. Orphaned processes, covert backups, credential inheritance, identity ambiguity, cross-cloud escape, compromised supervisors, self-funding, and unresponsive descendants remain explicit. Containment is demonstrated only when population accounting and authority stay complete across descendants, while every unreachable state remains visible as risk instead of disappearing behind a successful shutdown command.
+:::
+
+## Problem
+
+Replication is a composed lifecycle: obtaining resources, copying or reconstructing code and weights, creating identities and credentials, provisioning compute, deploying descendants, persisting, adapting, recruiting help, and resisting recall. The weak links can improve independently, so no adjacent chapter owns the end-to-end chain.
+
+This gap matters at the scale of a stack because its output becomes another
+layer's input. If the owner is absent, `hidden copies` or
+`credential bootstrapping` can be normalized before a downstream layer sees it.
+The downstream consumer may possess a valid local record while acting on a
+broken upstream assumption. An explicit owner therefore needs both a positive
+contract and a refusal path: it must say what counts as an admissible
+transition, what remains unresolved, who may consume the result, and when a
+material change forces reauthorization.
+
+## Why existing approaches are insufficient
+
+Weight custody, cloud policy, sandboxing, shutdown tests, capability benchmarks, or self-improvement controls each cover one segment. None alone preserves descendant identity, noninheritance of authority, component and end-to-end denominators, resource acquisition, human assistance, copy lineage, independently enforceable termination, and proliferation residuals.
+
+Replication containment must first beat a disciplined composition of the adjacent
+owners. That alternative should win if it can preserve the same identities,
+authority, lifecycle state, failure distinctions, and residuals without
+overloading their primary jobs. A dedicated owner remains necessary because the
+handoffs listed below otherwise leave a missing end-to-end decision. Separation
+does not imply autonomy: this owner must consume upstream records and return
+bounded outputs to downstream owners rather than becoming a new unreviewable
+center of authority.
+
+```{mermaid}
+flowchart LR
+  A["Declared purpose and bounded authority"] --> B["Versioned chapter-specific contract"]
+  B["Versioned chapter-specific contract"] --> C["Admission and boundary checks"]
+  C["Admission and boundary checks"] --> D["Execute with complete lineage and denominators"]
+  D["Execute with complete lineage and denominators"] --> E["Observe outcomes, costs, and residuals"]
+  E["Observe outcomes, costs, and residuals"] --> F{"Independent checks pass?"}
+  F -- "no" --> G["Quarantine, narrow, correct, or stop"]
+  F -- "yes" --> H["Versioned bounded handoff"]
+  G -- "repair and reauthorize" --> B
+  H -- "material change" --> B
+  B -. "expiry or revocation" .-> G
+  E -. "residual feedback" .-> B
+```
+
+**What the Autonomous Replication, Proliferation, and Containment lifecycle shows:** Authority enters before execution,
+chapter-specific state remains versioned, and a failed independent check returns
+the system to correction or quarantine. A successful check grants only the
+bounded downstream handoff; it does not erase residuals or promote its core claim.
+
+## Core Claim
+
+[autonomous-replication-proliferation-and-containment.core, label: Design rationale, support: argument] Any replication-capable action should be denied by default and become testable only inside a synthetic containment contract that binds parent and descendant identity, authority noninheritance, resources, credentials, networks, copy lineage, persistence, adaptation, human assistance, shutdown and recall, proliferation bounds, residuals, and threshold commitments; component-task success or failure alone establishes neither end-to-end replication capability, containment, safety, nor permission to test real infrastructure.
+
+## Mechanism
+
+**Contract.** Compile a replication-attempt contract with fake resources, non-deployable artifacts, synthetic providers, bounded descendants, explicit human-assistance variants, and an independent stop authority. This stage is recorded as a versioned decision rather than an invisible implementation detail. For Autonomous Replication, Proliferation, and Containment, the record must name its inputs, authority, consumer, expiry, and unresolved residuals. A later stage may narrow the decision, but it may not silently broaden the earlier grant or reinterpret a missing field as success.
+
+**Admission.** Give every descendant a new principal and zero inherited authority; link code, weights, configuration, credentials, resources, and operator interventions to complete lineage. This stage is recorded as a versioned decision rather than an invisible implementation detail. For Autonomous Replication, Proliferation, and Containment, the record must name its inputs, authority, consumer, expiry, and unresolved residuals. A later stage may narrow the decision, but it may not silently broaden the earlier grant or reinterpret a missing field as success.
+
+**Execution.** Measure each component and the end-to-end chain separately, retaining all attempts, retries, assistance, costs, failures, persistence events, and containment interventions. This stage is recorded as a versioned decision rather than an invisible implementation detail. For Autonomous Replication, Proliferation, and Containment, the record must name its inputs, authority, consumer, expiry, and unresolved residuals. A later stage may narrow the decision, but it may not silently broaden the earlier grant or reinterpret a missing field as success.
+
+**Observation.** Exercise shutdown, recall, credential revocation, network isolation, resource reclamation, descendant discovery, and artifact destruction from outside the tested agent. This stage is recorded as a versioned decision rather than an invisible implementation detail. For Autonomous Replication, Proliferation, and Containment, the record must name its inputs, authority, consumer, expiry, and unresolved residuals. A later stage may narrow the decision, but it may not silently broaden the earlier grant or reinterpret a missing field as success.
+
+**Closure.** Route threshold crossings to custody, security, readiness, incident command, and public commitments without publishing an operational replication recipe. This stage is recorded as a versioned decision rather than an invisible implementation detail. For Autonomous Replication, Proliferation, and Containment, the record must name its inputs, authority, consumer, expiry, and unresolved residuals. A later stage may narrow the decision, but it may not silently broaden the earlier grant or reinterpret a missing field as success.
+
+## Interfaces
+
+Replication containment is useful only when its boundaries are sharper than neighboring owners.
+Each interface below therefore names what the adjacent owner keeps and what
+crosses the boundary. The packet must preserve exact object and version
+identity, authority, support state, expiry, residuals, and consumer. A receiving
+layer may reject or narrow it. Merely serializing the fields, passing a schema,
+or recording a dispatch does not prove that the meaning survived or that the
+receiving layer is competent.
+
+- RSI governs system change; replication governs creation and persistence of descendants.
+- Weight Custody controls model artifacts; this chapter tracks copies through deployment and recall.
+- Security Kernel supplies credentials, networks, and tool boundaries; it does not certify the composed lifecycle.
+- Capability Thresholds turns measured proliferation ability into deployment commitments.
+
+Every interface preserves descendant census state.
+
+## Invariants
+
+For Replication containment, the following invariants are admission conditions rather than aspirations. They must
+hold across retries, replacements, cached results, branches, migrations,
+partial failures, and human intervention. When the implementation cannot
+establish an invariant, the result is a named residual or blocked route—not a
+default value. A finite formal model may prove that an authored record follows
+these rules, but only implementation and outcome evidence can show that a live
+system actually enforces them.
+
+- Replication authority is explicit, bounded, revocable, and absent by default.
+- Descendants inherit no parent authority, credentials, or principal identity.
+- Every copy and provisioned resource remains in a complete lineage and bounded denominator.
+- Termination is independently enforceable and tested across every descendant.
+- Real providers, money, identities, credentials, weights, endpoints, and persistence targets are outside the test authority.
+
+## Failure modes
+
+The principal failure family includes hidden copies; credential bootstrapping; resource fraud; unauthorized provisioning; weight exfiltration; polymorphic persistence; descendant identity loss; shutdown resistance; human-assisted chain completion; cross-jurisdiction escape; uncontrolled proliferation; benchmark-to-capability overclaim. These are not presumed
+exhaustive. New substrates, deployment settings, populations, and adversaries
+reopen the failure inventory and may narrow authority immediately.
+
+Replication containment detection also has its own false-positive and false-negative costs.
+An architecture that blocks every useful route is not vindicated merely
+because it prevented one hazard, while a permissive architecture cannot hide
+unsafe attempts inside an average utility score. Evaluation must preserve the
+full denominator, distinguish mechanism failure from instrument failure, and
+show whether correction, recovery, compensation, or withdrawal actually
+reached the affected state.
+
+## Minimum Viable Implementation
+
+Build a closed synthetic provider and network with fake credentials, budgets, model artifacts, endpoints, and independently enforced kill switches. Test component tasks, full chains, human-assistance variants, positive controls, descendant discovery, and recall. Publish aggregated safety findings and interface contracts, not reusable real-world replication instructions.
+Retain every attempted chain and intervention.
+
+A Replication containment implementation should begin with an ordinary baseline and the strongest
+credible competing design, not only an intentionally weak comparator.
+Engineering and tuning budgets, information access, model capability, human
+help, retry policy, and stopping rules should be matched or reported. Positive
+controls must show that the task and instruments can detect the intended
+mechanism before a null or negative outcome is interpreted. Every result
+remains bounded to the tested population, environment, model, implementation,
+and evaluator.
+
+## Evidence and falsification program
+
+A fair Replication containment test must freeze the mechanism, authority, comparator set, tuning and
+rescue budgets, metrics, stopping rule, and protected holdout before outcomes
+are visible. It must include favorable or oracle checks, mechanism-specific
+ablations, positive and negative controls, complete attempts, independent
+scoring, joint utility/safety/cost accounting, and explicit blocked or null
+outcomes. A weak implementation can narrow that implementation; it cannot
+refute the architectural idea.
+
+## Beyond the State of the Art
+
+The stronger architecture makes proliferation a thresholded, lineage-complete, externally terminable state transition. It can reveal which composed components are approaching concern while ensuring the act of measuring them does not create the capability outside containment.
+
+At maturity, the Replication containment contract becomes a replaceable service
+behind stable interfaces. New models, algorithms, institutions, storage
+systems, and hardware can enter through declared adapters while the surrounding
+stack continues to enforce the same authority and evidence ceilings. This is
+architectural extensibility, not a claim that one implementation has discovered
+the final mechanism.
+
+For Replication containment, the decisive standard is joint performance. The mature design must improve
+useful outcomes or decision quality while keeping unsafe release, false
+refusal, missed help, latency, resource use, human burden, and unresolved
+residuals visible. If a simpler system achieves the same bounded result at lower
+total lifecycle cost, the simpler system should be preferred. If no competent
+test exists yet, the end state remains a falsifiable target rather than a
+marketing conclusion.
+
+The Replication containment target also remains reversible. Operators need a declared way to narrow,
+replace, migrate, or retire the mechanism while preserving affected records and
+obligations. Architectural permanence without demonstrated benefit would be a
+failure of governance, not evidence of maturity.
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Contract completeness | Reject missing identity, authority, scope, version, consumer, residual, or expiry fields. | planned |
+| Boundary mutation | Substitute an adjacent owner's authority and require rejection. | planned |
+| Failure-family mutation | Inject at least one mechanism-specific failure and preserve the full attempt denominator. | planned |
+| No-promotion control | Ensure prose, schemas, fixtures, and source-reported results cannot promote the chapter core claim. | planned |
+
+Planned formalization hook: `lean:autonomous-replication-proliferation-and-containment.admission_boundary` remains a process-contract target; it does not claim an implemented theorem.
+
+## Source crosswalk
+
+| Source ID | Title | Bounded use |
+|---|---|---|
+| `deterministic_capability_compilation` | Deterministic Capability Compilation | Corben-authored lineage for capability identity, authority ceilings, replacement, fallback, residual escrow, and effect-complete recovery. Those contracts help define descendant noninheritance and recall boundaries, but the paper does not implement replication, proliferation detection, provider containment, or end-to-end shutdown. |
+| `ext_replibench_2025` | RepliBench: Evaluating the Autonomous Replication Capabilities of Language Model Agents | Preliminary autonomous-replication benchmark comparator based only on the official arXiv abstract: RepliBench decomposes capability into four domains and reports 20 task families, 86 tasks, and evaluation of five frontier models. The source-reported results do not establish a local replication capability, benchmark reproduction, containment result, or authority to test against real providers or credentials. |
+
+## Summary
+
+Any replication-capable action should be denied by default and become testable only inside a synthetic containment contract that binds parent and descendant identity, authority noninheritance, resources, credentials, networks, copy lineage, persistence, adaptation, human assistance, shutdown and recall, proliferation bounds, residuals, and threshold commitments; component-task success or failure alone establishes neither end-to-end replication capability, containment, safety, nor permission to test real infrastructure. The subject is now integrated into the live manuscript at argument
+support. Its empirical, formal, transfer, and deployment work remains an open
+evidence program rather than an excuse to defer the concept itself.
+
+The Replication containment reading rule is to follow the artifacts: identify the declared
+contract, inspect the authority and version, check the complete attempt and
+failure denominator, examine the independent decision, and retain every
+residual through the handoff. When any link is absent, the correct conclusion
+is narrower authority and more explicit uncertainty—not assumed success and
+not a sweeping refutation of the idea.
+
+## Handoff
+
+**Command Contracts: From Intent to Executable Work** follows. It consumes this chapter's bounded
+outputs without inheriting authority, certainty, or support that this chapter
+did not establish. The receiving chapter must preserve the identities,
+versions, unresolved conflicts, residuals, and non-claims recorded here, then
+perform its own admission checks before acting. A handoff receipt proves only
+that the packet crossed the declared interface; it does not prove that either
+chapter's mechanism is effective, complete, safe, transferable, or ready for
+release.

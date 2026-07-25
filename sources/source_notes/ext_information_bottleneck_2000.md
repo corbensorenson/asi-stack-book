@@ -36,6 +36,7 @@ The information bottleneck method belongs in the representation and compression 
 
 ## Book Chapters Supported
 
+- `learning-theory-generalization-and-scaling-science` (Learning Theory, Generalization, and Scaling Science)
 - `compact-generative-systems-and-residual-honesty` (Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty)
 - `compact-generative-systems-and-residual-honesty` (Compact Generative Systems and Residual Honesty)
 - `resource-economics-and-token-budgets` (Resource Economics and Token Budgets)

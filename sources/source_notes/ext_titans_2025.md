@@ -32,6 +32,7 @@ model, memory update, or benchmark has run.
 
 ## Book Chapters Supported
 
+- `durable-semantic-memory-and-knowledge-lattices` (Durable Semantic Memory and Knowledge Lattices)
 - `replaceable-cognitive-substrates-beyond-transformer-monoculture`
 
 ## Claims To Add Or Update

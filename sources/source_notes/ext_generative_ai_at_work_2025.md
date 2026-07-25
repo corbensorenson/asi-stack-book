@@ -9,7 +9,7 @@
 | Citation label | Brynjolfsson, Li, and Raymond (2025), Generative AI at Work |
 | Published / updated | 2025-02-04 / 2025-02-04 |
 | DOI | 10.1093/qje/qjae044 |
-| Review state | Preliminary structural-gap note; the proposed chapter remains unadmitted. |
+| Review state | Passage-bounded source note assigned to the admitted argument-level deployment-transition chapter; no economy-wide transfer or support promotion. |
 | Ingestion basis | Open article metadata, abstract, design/setting, selected result, heterogeneity, work-experience, limitation, and data-availability passages inspected. Replication code, restricted conversations, and independent replications were not run locally. |
 
 ## Thesis

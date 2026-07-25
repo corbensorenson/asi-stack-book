@@ -240,11 +240,11 @@ Secondary destinations:
 ## Chapter-boundary decision
 
 No new BugBrain-specific chapter is recommended. The project strengthens the
-provisional Durable Semantic Memory and Knowledge Lattices boundary through
+admitted **Durable Semantic Memory and Knowledge Lattices** boundary through
 Context Horizon and graph compilation, but it also maps cleanly into existing
 context, authority, execution, resource, security, supply-chain, benchmark, and
-readiness chapters. The durable-memory decision remains deferred until all old
-projects and independent literature are mined.
+readiness chapters. Its durable-memory ideas now live in the manuscript rather
+than a candidate queue.
 
 ## Failure Modes
 

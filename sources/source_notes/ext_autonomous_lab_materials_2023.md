@@ -9,7 +9,7 @@
 | Citation label | Szymanski et al. (2023), A-Lab |
 | Published / updated | 2023-11-29 / 2026-01-19 |
 | DOI | 10.1038/s41586-023-06734-w |
-| Review state | Preliminary second-tranche audit note; the proposed chapter remains provisionally unadmitted. |
+| Review state | Passage-bounded source note assigned to the admitted argument-level scientific-discovery chapter; no laboratory reproduction or support promotion. |
 | Ingestion basis | Corrected official Nature abstract, selected article-page passages describing the closed loop and target scope, and the official 2026 author correction inspected. The supplementary files, code, data, diffraction patterns, instruments, robotics, and laboratory run were not ingested or reproduced locally. |
 
 ## Thesis
@@ -50,7 +50,7 @@ here.
 
 ## Book Chapters Supported
 
-- Provisionally proposed: `scientific-discovery-and-experimental-governance`
+- `scientific-discovery-and-experimental-governance`
 - Existing boundary owners: `data-engines-continual-learning-and-unlearning`,
   `benchmark-ratchets-and-anti-goodhart-evidence`,
   `artifact-graphs-audit-logs-and-replay`, and

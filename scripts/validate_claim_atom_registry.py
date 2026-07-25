@@ -289,8 +289,8 @@ def errors(data: dict[str, Any], *, check_generation: bool = True) -> list[str]:
     if completed:
         if atom_review_counts.get("machine_candidate", 0) or prose_review_counts.get("pending_materiality_adjudication", 0):
             out.append("P1 completion launders unreviewed structured atoms or prose candidates")
-        if program.get("semantic_chapter_sweep_completed_count") != 54:
-            out.append("P1 completion lacks 54 semantic chapter sweeps")
+        if program.get("semantic_chapter_sweep_completed_count") != 64:
+            out.append("P1 completion lacks 64 semantic chapter sweeps")
         if any(row.get("review_state") not in {"semantically_reviewed", "campaign_frozen", "terminally_adjudicated"} for row in atoms):
             out.append("P1 completion retains an unreviewed material atom")
     elif (p1_state, m1_state, program.get("state")) != ("in_progress", "in_progress", "in_progress"):
@@ -414,7 +414,7 @@ def main() -> None:
         raise SystemExit("Claim-atom registry validation failed:\n - " + "\n - ".join(failures))
     print(
         f"Claim-atom registry passed: {len(base['registry']['atoms'])} structured atoms, "
-        f"{len(base['queue']['candidates'])} prose candidates, 54 generated dossiers, "
+        f"{len(base['queue']['candidates'])} prose candidates, {len(base['review_packets'])} generated dossiers, "
         "P1/M1 complete at the activation baseline, no support effect, and 13 rejecting mutations."
     )
 

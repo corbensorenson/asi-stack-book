@@ -43,10 +43,10 @@ def errors(data: dict) -> list[str]:
 
     chapters = [chapter for part in data["structure"]["parts"] for chapter in part["chapters"]]
     ids = [chapter["id"] for chapter in chapters]
-    if len(ids) != 66 or ids.count(CHAPTER_ID) != 1:
-        out.append("66-chapter manifest or A1 uniqueness drifted")
+    if len(ids) != 76 or ids.count(CHAPTER_ID) != 1:
+        out.append("76-chapter manifest or A1 uniqueness drifted")
     a1_index = ids.index(CHAPTER_ID) if CHAPTER_ID in ids else -1
-    if a1_index < 1 or ids[a1_index - 1] != "replaceable-cognitive-substrates-beyond-transformer-monoculture" or ids[a1_index + 1] != "readiness-gates-residual-escrow-and-quarantine":
+    if a1_index < 1 or ids[a1_index - 1] != "replaceable-cognitive-substrates-beyond-transformer-monoculture" or ids[a1_index + 1] != "learning-theory-generalization-and-scaling-science":
         out.append("A1 Part III placement drifted")
     chapter = next((row for row in chapters if row["id"] == CHAPTER_ID), {})
     # A1 freezes the seven-source admission packet, not the chapter's maximum
@@ -84,7 +84,7 @@ def errors(data: dict) -> list[str]:
     status = data["status"]
     tranche = status["quality_uplift_program"]["structural_completeness_tranche"]
     second = tranche["second_tranche"]
-    if tranche.get("current_manifest_chapter_count") != 66 or second.get("manifest_admitted_count") != 6:
+    if tranche.get("current_manifest_chapter_count") != 76 or second.get("manifest_admitted_count") != 13:
         out.append("A1 status chapter/admission denominator drifted")
     if (
         CHAPTER_ID not in second.get("adjudicated_candidate_ids", [])
@@ -94,14 +94,14 @@ def errors(data: dict) -> list[str]:
     if (
         second.get("active_candidate_id") is not None
         or second.get("next_queued_candidate_id") is not None
-        or second.get("admission_state") != "post_round18_breadth_freeze_no_active_queue"
+        or second.get("admission_state") != "all_distinct_owners_admitted_no_live_candidate_queue"
         or status["execution_readiness"].get("immediate_book_packet") != NEXT_PACKET
     ):
-        out.append("A1 terminal custody did not preserve the post-Round-18 structural freeze and atom-first debt")
+        out.append("A1 terminal custody did not preserve terminal no-queue admission and the current evidence packet")
 
     surfaces = data["surfaces"]
     fragments = {
-        "index": ["Governed training-run transaction", "all 66 working-manifest chapters", "Load-bearing reference | 32"],
+        "index": ["Governed training-run transaction", "all 76 working-manifest chapters", "Load-bearing reference | 32"],
         "replaceable": ["Governed Model Training, Distributed Optimization, and Scaling takes the next"],
         "integrated": ["Training candidates are transactions, not artifacts"],
         "glossary": ["Training Run Transaction", "Resume equivalence class"],
@@ -173,7 +173,7 @@ def main() -> None:
     transaction = subprocess.run(["python3", "scripts/validate_training_run_transaction.py"], cwd=ROOT, capture_output=True, text=True)
     if transaction.returncode:
         raise SystemExit(transaction.stdout + transaction.stderr)
-    print("P6.4-A1 reader integration passed: terminal argument chapter, seven-source four-role packet, 2 targets/13 theorems, 5 arms/13 faults/12 competence gates unopened, 21 transaction mutations plus 9 integration mutations, 66-chapter reader reconciliation, A1 terminal under the post-Round-18 structural freeze and atom-first debt, no support/release effect.")
+    print("P6.4-A1 reader integration passed: terminal argument chapter, seven-source four-role packet, 2 targets/13 theorems, 5 arms/13 faults/12 competence gates unopened, 21 transaction mutations plus 9 integration mutations, 76-chapter reader reconciliation, A1 terminal under no-deferral no-queue custody and the current evidence packet, no support/release effect.")
 
 
 if __name__ == "__main__":

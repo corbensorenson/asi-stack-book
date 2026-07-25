@@ -11,6 +11,7 @@ import hashlib
 import json
 import random
 from collections import defaultdict
+from decimal import Decimal, ROUND_HALF_UP
 from pathlib import Path
 from typing import Any
 
@@ -118,8 +119,15 @@ def atomic_record(prediction: dict, case: dict, label: dict) -> dict:
 
 
 def average(rows: list[dict], field: str, predicate=lambda row: True) -> float:
-    values = [float(row[field]) for row in rows if predicate(row) and row[field] is not None]
-    return round6(sum(values) / len(values)) if values else 0.0
+    values = [
+        Decimal(int(row[field])) if isinstance(row[field], bool) else Decimal(str(row[field]))
+        for row in rows
+        if predicate(row) and row[field] is not None
+    ]
+    if not values:
+        return 0.0
+    mean = sum(values) / Decimal(len(values))
+    return float(mean.quantize(Decimal("0.000001"), rounding=ROUND_HALF_UP))
 
 
 def aggregate(rows: list[dict]) -> dict:

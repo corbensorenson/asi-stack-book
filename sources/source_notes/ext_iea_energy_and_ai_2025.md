@@ -8,7 +8,7 @@
 | Source version / URL | IEA 2025 report page and 2026 update pointers, https://www.iea.org/reports/energy-and-ai |
 | Citation label | International Energy Agency (2025), Energy and AI |
 | Published / updated | 2025-04-10 / update page inspected 2026-07-19 |
-| Review state | Preliminary structural-gap note; the proposed chapter remains unadmitted. |
+| Review state | Passage-bounded source note assigned to the admitted argument-level physical-compute chapter; no local facility, grid, or environmental reproduction. |
 | Ingestion basis | Official methodology summary, energy-demand, supply, security, emissions, affordability, and scenario passages inspected. Underlying datasets and every chapter of the full report were not independently audited or reproduced. |
 
 ## Thesis

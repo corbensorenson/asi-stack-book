@@ -191,13 +191,16 @@ def semantic_errors(data: dict[str, Any]) -> list[str]:
     first_tranche = structural_tranche.get("first_tranche", {})
     second_tranche = structural_tranche.get("second_tranche", {})
     round_18_tranche = structural_tranche.get("round_18_breadth_completion", {})
+    no_deferral_tranche = maintenance_status.get("no_deferral_manuscript_admission", {})
     first_admitted_chapter_ids = set(first_tranche.get("candidate_ids", []))
     second_admitted_chapter_ids = set(second_tranche.get("adjudicated_candidate_ids", []))
     round_18_admitted_chapter_ids = set(round_18_tranche.get("new_chapter_ids", []))
+    no_deferral_admitted_chapter_ids = set(no_deferral_tranche.get("admitted_chapter_ids", []))
     admitted_chapter_ids = (
         first_admitted_chapter_ids
         | second_admitted_chapter_ids
         | round_18_admitted_chapter_ids
+        | no_deferral_admitted_chapter_ids
     )
     if (
         maintenance_status.get("status") != "active"
@@ -206,11 +209,14 @@ def semantic_errors(data: dict[str, Any]) -> list[str]:
         or activation_truth.get("chapter_core_argument_count") != chapter_count
         or activation_truth.get("chapter_core_promotion_count") != 0
         or structural_tranche.get("current_manifest_chapter_count") != chapter_count
+        or no_deferral_tranche.get("current_manifest_chapter_count") != chapter_count
+        or no_deferral_tranche.get("remaining_live_candidate_queue_count") != 0
         or first_tranche.get("manifest_admitted_count") != len(first_admitted_chapter_ids)
         or second_tranche.get("manifest_admitted_count") != len(second_admitted_chapter_ids)
         or chapter_count != historical_expansion.get("live_chapter_count") + len(admitted_chapter_ids)
         or not admitted_chapter_ids.issubset(chapter_ids)
         or not round_18_admitted_chapter_ids.issubset(chapter_ids)
+        or not no_deferral_admitted_chapter_ids.issubset(chapter_ids)
     ):
         errors.append("current live chapters escaped later manifest-admitted structural authority")
     proof_manifest = data["proof_manifest"]

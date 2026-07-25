@@ -13,7 +13,7 @@
     "work_in_progress_limit": 2,
     "blocked_lane_consumes_work_in_progress": false,
     "protected_outcome_inspection_allowed": false,
-    "structural_admission_freeze": true,
+    "structural_admission_freeze": false,
     "immediate_empirical_packet": "P2-R3-storage-materialization-and-replacement-qualification",
     "immediate_book_packet": "P6.5-R16-A-six-chapter-atom-pack",
     "immediate_formal_packet": "P4-terminal-no-open-formal-packet",
@@ -164,9 +164,9 @@
       "requires_meaning_preservation_audit": true
     },
     "structural_completeness_tranche": {
-      "state": "round18_breadth_terminal_post_transaction_freeze",
-      "current_manifest_chapter_count": 66,
-      "maximum_if_all_candidates_pass": 75,
+      "state": "no_deferral_manuscript_admission_terminal_argument_support",
+      "current_manifest_chapter_count": 76,
+      "maximum_if_all_candidates_pass": 76,
       "planned_merge_count": 0,
       "first_tranche": {
         "state": "terminal_four_reader_chapters",
@@ -191,7 +191,7 @@
         "primary_source_record_count_added": 8
       },
       "second_tranche": {
-        "state": "a1_a2_b_c_e_f_terminal_seven_research_only_post_breadth_freeze",
+        "state": "all_thirteen_distinct_owners_admitted_at_argument_support",
         "audit_path": "docs/structural_completeness_gap_audit_2026_07_19.md",
         "candidate_count": 13,
         "candidate_ids": [
@@ -209,7 +209,7 @@
           "physical-compute-infrastructure-energy-and-environmental-constraints",
           "governed-objective-formation-value-learning-and-goal-integrity"
         ],
-        "manifest_admitted_count": 6,
+        "manifest_admitted_count": 13,
         "primary_source_record_count_added": 43,
         "communication_required_source_ids": [
           "ext_conversational_persuasion_gpt4_2025",
@@ -233,24 +233,11 @@
         ],
         "adjudicated_candidate_ids": [
           "governed-model-training-distributed-optimization-and-scaling",
-          "privacy-data-rights-and-information-flow-governance",
           "perception-sensor-fusion-and-observation-trust",
           "embodied-agency-real-time-control-and-physical-safety",
+          "privacy-data-rights-and-information-flow-governance",
           "human-ai-organizations-delegation-and-accountability",
-          "multi-agent-dynamics-collective-intelligence-and-systemic-risk"
-        ],
-        "terminal_candidate_dispositions": {
-          "governed-model-training-distributed-optimization-and-scaling": "admitted_terminal_argument_reader_chapter",
-          "privacy-data-rights-and-information-flow-governance": "admitted_terminal_argument_reader_chapter",
-          "perception-sensor-fusion-and-observation-trust": "admitted_terminal_argument_reader_chapter_round18",
-          "embodied-agency-real-time-control-and-physical-safety": "admitted_terminal_argument_reader_chapter_round18",
-          "human-ai-organizations-delegation-and-accountability": "admitted_terminal_argument_reader_chapter_round18",
-          "multi-agent-dynamics-collective-intelligence-and-systemic-risk": "admitted_terminal_argument_reader_chapter_round18"
-        },
-        "active_candidate_id": null,
-        "next_queued_candidate_id": null,
-        "admission_state": "post_round18_breadth_freeze_no_active_queue",
-        "remaining_candidate_ids": [
+          "multi-agent-dynamics-collective-intelligence-and-systemic-risk",
           "autonomous-replication-proliferation-and-containment",
           "scientific-discovery-and-experimental-governance",
           "human-ai-communication-persuasion-and-epistemic-security",
@@ -259,6 +246,25 @@
           "physical-compute-infrastructure-energy-and-environmental-constraints",
           "governed-objective-formation-value-learning-and-goal-integrity"
         ],
+        "terminal_candidate_dispositions": {
+          "governed-model-training-distributed-optimization-and-scaling": "admitted_terminal_argument_reader_chapter",
+          "privacy-data-rights-and-information-flow-governance": "admitted_terminal_argument_reader_chapter",
+          "perception-sensor-fusion-and-observation-trust": "admitted_terminal_argument_reader_chapter",
+          "embodied-agency-real-time-control-and-physical-safety": "admitted_terminal_argument_reader_chapter",
+          "human-ai-organizations-delegation-and-accountability": "admitted_terminal_argument_reader_chapter",
+          "multi-agent-dynamics-collective-intelligence-and-systemic-risk": "admitted_terminal_argument_reader_chapter",
+          "autonomous-replication-proliferation-and-containment": "admitted_terminal_argument_reader_chapter",
+          "scientific-discovery-and-experimental-governance": "admitted_terminal_argument_reader_chapter",
+          "human-ai-communication-persuasion-and-epistemic-security": "admitted_terminal_argument_reader_chapter",
+          "institutions-international-coordination-and-public-legitimacy": "admitted_terminal_argument_reader_chapter",
+          "ai-deployment-transition-distribution-and-human-agency": "admitted_terminal_argument_reader_chapter",
+          "physical-compute-infrastructure-energy-and-environmental-constraints": "admitted_terminal_argument_reader_chapter",
+          "governed-objective-formation-value-learning-and-goal-integrity": "admitted_terminal_argument_reader_chapter"
+        },
+        "active_candidate_id": null,
+        "next_queued_candidate_id": null,
+        "admission_state": "all_distinct_owners_admitted_no_live_candidate_queue",
+        "remaining_candidate_ids": [],
         "a1_decision_packet": "docs/p6_4_a1_governed_model_training_adjudication.md",
         "a2_decision_packet": "docs/p6_4_a2_privacy_data_rights_adjudication.md"
       },
@@ -266,11 +272,11 @@
         "state": "terminal_argument_integration_post_transaction_freeze",
         "adjudication_path": "docs/round_18_bounded_breadth_completion_adjudication_2026_07_24.md",
         "research_backlog_path": "research_backlog_records/round_18_bounded_breadth_completion_2026_07_24.json",
-          "triage_path": "new_paper_triage_scenarios/round_18_bounded_breadth_completion_2026_07_24.json",
-          "claim_atom_path": "evidence_quality/round_18_breadth_completion_claim_atoms.json",
-          "reader_projection_path": "docs/round_18_breadth_completion_reader_projection.md",
-          "inheritance_audit_path": "evidence_quality/round_18_breadth_completion_inheritance_audit.json",
-          "new_chapter_ids": [
+        "triage_path": "new_paper_triage_scenarios/round_18_bounded_breadth_completion_2026_07_24.json",
+        "claim_atom_path": "evidence_quality/round_18_breadth_completion_claim_atoms.json",
+        "reader_projection_path": "docs/round_18_breadth_completion_reader_projection.md",
+        "inheritance_audit_path": "evidence_quality/round_18_breadth_completion_inheritance_audit.json",
+        "new_chapter_ids": [
           "perception-sensor-fusion-and-observation-trust",
           "embodied-agency-real-time-control-and-physical-safety",
           "human-ai-organizations-delegation-and-accountability",
@@ -300,7 +306,7 @@
   },
   "round_16_evidence_first_amendment": {
     "state": "active",
-    "structural_admission_freeze": true,
+    "structural_admission_freeze": false,
     "paused_candidate_id": null,
     "p2_empirical_recovery": {
       "state": "below_storage_floor_exact_attempt_or_failure_receipt_required",
@@ -341,9 +347,9 @@
       "support_state_effect": "none"
     },
     "current_reader_freshness_packet": {
-      "state": "queued_after_atom_w3_and_six_chapter_depth_pack",
+      "state": "queued_for_current_76_chapter_derivative",
       "published_reader_2026_07_18_is_immutable_historical_release": true,
-      "current_working_manifest_chapter_count": 66,
+      "current_working_manifest_chapter_count": 76,
       "must_cover_all_current_manifest_chapters": true,
       "external_publication_required": false,
       "required_surfaces": [
@@ -460,10 +466,10 @@
     "release_effect": "none"
   },
   "post_round_18_depth_and_coverage_amendment": {
-    "state": "binding_planned_depth_packet_and_research_candidates",
+    "state": "depth_packet_active_candidates_admitted_by_no_deferral_policy",
     "review_path": "docs/post_round_18_depth_and_coverage_review_reconciliation_2026_07_24.md",
     "p2_displacement_allowed": false,
-    "structural_admission_freeze": true,
+    "structural_admission_freeze": false,
     "maturity_gate_conditions": [
       "field_decomposition",
       "strongest_challenge_and_simpler_baseline",
@@ -505,12 +511,12 @@
       {
         "id": "adversarial-machine-learning-and-model-attack-surface",
         "provisional_part": "I",
-        "admission_state": "research_and_distinct_owner_adjudication_only"
+        "admission_state": "admitted_terminal_argument_reader_chapter"
       },
       {
         "id": "learning-theory-generalization-and-scaling-science",
         "provisional_part": "III",
-        "admission_state": "research_and_distinct_owner_adjudication_only"
+        "admission_state": "admitted_terminal_argument_reader_chapter"
       }
     ],
     "candidate_research_active": false,
@@ -582,7 +588,8 @@
     "possible_count_if_both_new_candidates_pass": 68,
     "theoretical_all_candidate_envelope_not_target": 75,
     "support_state_effect": "none",
-    "release_effect": "none"
+    "release_effect": "none",
+    "candidate_admission_superseded_by": "no_deferral_manuscript_admission"
   },
   "predecessor": {
     "path": "docs/post_v2_3_claim_proof_and_sota_challenge_roadmap.md",
@@ -592,11 +599,11 @@
   },
   "activation_truth": {
     "latest_public_living_book_release": "v2.3.0",
-    "live_working_chapter_count": 66,
+    "live_working_chapter_count": 76,
     "activation_registry_atom_count": 3730,
     "post_activation_addendum_atom_count": 15,
     "total_structured_atom_count": 3745,
-    "chapter_core_argument_count": 66,
+    "chapter_core_argument_count": 76,
     "chapter_core_promotion_count": 0,
     "activation_registry_non_argument_atom_count": 2,
     "blocked_after_full_attempt_atom_count": 3698,
@@ -614,7 +621,7 @@
     "competence_qualified_natural_non_authored_empirical_transition_count": 0,
     "external_reproduction_count": 0,
     "sota_supported_count": 0,
-    "proof_target_count": 315,
+    "proof_target_count": 325,
     "lean_module_count": 109,
     "theorem_declaration_count": 1370,
     "derived_or_decomposed_theorem_count": 924,
@@ -703,8 +710,8 @@
     "frozen_snapshot_sha256": "bb20c1f8932e915b392a76ae776c7487817ee734b0cd3684134e2b9d57e75ba1",
     "frozen_surface_count": 75,
     "frozen_chapter_surface_count": 55,
-    "current_surface_count": 86,
-    "live_chapter_surface_count": 66,
+    "current_surface_count": 96,
+    "live_chapter_surface_count": 76,
     "forbidden_overbroad_phrase_count": 0,
     "missing_rehabilitation_boundary_count": 0,
     "blocked_chapter_boundary_failure_count": 0,
@@ -1065,5 +1072,30 @@
     "A historical negative outcome remains observable even when broader negative inference is quarantined.",
     "A competence contract cannot guarantee a perfect experiment; it forces inadequate tests to fail closed.",
     "This revision does not authorize commit, push, tag, deploy, archive deposit, license change, publication, or release."
-  ]
+  ],
+  "no_deferral_manuscript_admission": {
+    "state": "terminal_argument_level_admission",
+    "date": "2026-07-24",
+    "policy": "Every worthwhile manuscript idea is integrated now, admitted as a distinct owner now, or explicitly rejected with a reason; only evidence maturity may remain open.",
+    "previous_manifest_chapter_count": 66,
+    "current_manifest_chapter_count": 76,
+    "admitted_chapter_ids": [
+      "human-ai-communication-persuasion-and-epistemic-security",
+      "governed-objective-formation-value-learning-and-goal-integrity",
+      "institutions-international-coordination-and-public-legitimacy",
+      "adversarial-machine-learning-and-model-attack-surface",
+      "autonomous-replication-proliferation-and-containment",
+      "durable-semantic-memory-and-knowledge-lattices",
+      "ai-deployment-transition-distribution-and-human-agency",
+      "learning-theory-generalization-and-scaling-science",
+      "physical-compute-infrastructure-energy-and-environmental-constraints",
+      "scientific-discovery-and-experimental-governance"
+    ],
+    "remaining_live_candidate_queue_count": 0,
+    "structural_freeze_for_manuscript_ideas": false,
+    "all_chapter_core_support_states": "argument",
+    "chapter_core_support_state_effect": "none",
+    "current_semantically_reviewed_chapter_count": 64,
+    "current_structured_atom_count": 4071
+  }
 }

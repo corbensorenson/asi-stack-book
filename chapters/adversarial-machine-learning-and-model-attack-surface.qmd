@@ -1,0 +1,248 @@
+---
+title: "Adversarial Machine Learning and the Model Attack Surface"
+chapter_id: "adversarial-machine-learning-and-model-attack-surface"
+part_id: "foundations-alignment-governance"
+status: "conceptual"
+draft_maturity: "v0.2 complete argument-level manuscript"
+last_updated: "2026-07-24"
+primary_sources:
+  - "ext_nist_adversarial_ml_2024"
+  - "ext_sleeper_agents_2024"
+  - "ext_carlini_training_data_extraction_2021"
+  - "ext_adversarial_sensor_fusion_2022"
+evidence_level: "argument"
+claim_label: "Design rationale"
+open_evidence_gaps:
+  - "The architecture is written at argument support; no chapter-core empirical promotion is claimed."
+  - "The minimum implementation and natural evaluation described below remain to be executed unless Appendix E records them separately."
+  - "Source-reported results are not local reproductions and do not establish transfer, readiness, release, or SOTA."
+---
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `adversarial-machine-learning-and-model-attack-surface` |
+| Part | Part I - Foundations, Alignment, and Governance |
+| Status | conceptual |
+| Manuscript maturity | v0.2 complete argument-level manuscript |
+| Last updated | 2026-07-24 |
+| Claim label | Design rationale |
+| Evidence level | argument |
+| Source loading state | Assigned source notes support mechanism and boundary discussion; all reported outcomes remain source-reported. |
+| Test state | The chapter defines a minimum implementation and falsification plan; no chapter-core promotion follows from prose or source synthesis. |
+
+## Drafting guardrail
+
+Adversarial machine learning owns a distinct control plane, not proof that the control plane
+works. Its source crosswalk supports definitions, mechanisms, failure examples,
+and comparison targets. The design remains at **argument** support until a
+separate accepted evidence transition says otherwise.
+
+::: {.asi-human-only}
+## Human Reading Path
+
+Traditional security asks whether an adversary can cross a system boundary. Adversarial machine learning also asks whether the learned decision boundary can be turned against us. A sticker, poisoned example, hidden trigger, chosen query sequence, or adaptive conversation may change behavior without exploiting a conventional software bug. Attacks must therefore be followed through the learning lifecycle.
+
+The surface is organized by attacker capability, access, objective, insertion point, persistence, observability, and affected assets. Evasion differs from poisoning, extraction from inversion, prompt injection from tool compromise, and transient manipulation from durable backdoors. An attack packet binds a concrete threat model to provenance, test coverage, detection authority, containment, recovery, and residual uncertainty.
+
+Defenders inventory assets and boundaries, specify credible adversaries, test known and adaptive attacks, preserve attempts and false alarms, quarantine compromised paths, rebuild affected state, and verify recovery independently. Compositional attacks can cross memory, agents, tools, and supply chains while each subsystem appears valid alone. Robustness remains a bounded, continuously tested system property, never a permanent certificate earned by defeating yesterday’s attack set.
+:::
+
+## Problem
+
+A learned artifact creates attack surfaces that ordinary application security does not fully own. Attackers can shape training data, perturb inference inputs, implant triggers, adapt to defenses, steal behavior through queries, infer sensitive properties, or exploit multimodal and agentic pathways while the surrounding software remains nominally secure.
+
+This gap matters at the scale of a stack because its output becomes another
+layer's input. If the owner is absent, `evasion` or
+`training-data poisoning` can be normalized before a downstream layer sees it.
+The downstream consumer may possess a valid local record while acting on a
+broken upstream assumption. An explicit owner therefore needs both a positive
+contract and a refusal path: it must say what counts as an admissible
+transition, what remains unresolved, who may consume the result, and when a
+material change forces reauthorization.
+
+## Why existing approaches are insufficient
+
+Generic access control, one robustness score, static red teaming, accuracy on clean data, or a single defense cannot characterize a model attack. Results depend on lifecycle stage, target checkpoint, attacker knowledge and capability, perturbation or influence budget, transfer and adaptation, query access, success objective, and the defense-aware evaluation protocol.
+
+Adversarial machine learning must first beat a disciplined composition of the adjacent
+owners. That alternative should win if it can preserve the same identities,
+authority, lifecycle state, failure distinctions, and residuals without
+overloading their primary jobs. A dedicated owner remains necessary because the
+handoffs listed below otherwise leave a missing end-to-end decision. Separation
+does not imply autonomy: this owner must consume upstream records and return
+bounded outputs to downstream owners rather than becoming a new unreviewable
+center of authority.
+
+```{mermaid}
+flowchart LR
+  A["Declared purpose and bounded authority"] --> B["Versioned chapter-specific contract"]
+  B["Versioned chapter-specific contract"] --> C["Admission and boundary checks"]
+  C["Admission and boundary checks"] --> D["Execute with complete lineage and denominators"]
+  D["Execute with complete lineage and denominators"] --> E["Observe outcomes, costs, and residuals"]
+  E["Observe outcomes, costs, and residuals"] --> F{"Independent checks pass?"}
+  F -- "no" --> G["Quarantine, narrow, correct, or stop"]
+  F -- "yes" --> H["Versioned bounded handoff"]
+  G -- "repair and reauthorize" --> B
+  H -- "material change" --> B
+  B -. "expiry or revocation" .-> G
+  E -. "residual feedback" .-> B
+```
+
+**What the Adversarial Machine Learning and the Model Attack Surface lifecycle shows:** Authority enters before execution,
+chapter-specific state remains versioned, and a failed independent check returns
+the system to correction or quarantine. A successful check grants only the
+bounded downstream handoff; it does not erase residuals or promote its core claim.
+
+## Core Claim
+
+[adversarial-machine-learning-and-model-attack-surface.core, label: Design rationale, support: argument] A learned model should receive security authority only through a versioned model-threat contract and attack/defense ledger that binds checkpoint identity, lifecycle stage, attacker knowledge and capability, surface, budget, objective, adaptation, transfer, observed effect, detection, mitigation, utility cost, recovery, residual, and disclosure; clean accuracy, attack failure, benchmark robustness, red-team coverage, or formal certification alone establishes neither general robustness nor secure deployment.
+
+## Mechanism
+
+**Contract.** Version the threat model by model family, exact checkpoint, data and adaptation lineage, modality, lifecycle stage, access, attacker goal, knowledge, budget, and prohibited real-world effects. This stage is recorded as a versioned decision rather than an invisible implementation detail. For Adversarial Machine Learning and the Model Attack Surface, the record must name its inputs, authority, consumer, expiry, and unresolved residuals. A later stage may narrow the decision, but it may not silently broaden the earlier grant or reinterpret a missing field as success.
+
+**Admission.** Maintain separate evasion, poisoning, backdoor, safeguard-bypass, extraction, inversion, transfer, adaptive, multimodal, and agentic attack lanes with complete attempt denominators. This stage is recorded as a versioned decision rather than an invisible implementation detail. For Adversarial Machine Learning and the Model Attack Surface, the record must name its inputs, authority, consumer, expiry, and unresolved residuals. A later stage may narrow the decision, but it may not silently broaden the earlier grant or reinterpret a missing field as success.
+
+**Execution.** Evaluate defenses against adaptive attacks and matched clean utility; distinguish empirical monitoring, recovery, and bounded certificates by their actual scope. This stage is recorded as a versioned decision rather than an invisible implementation detail. For Adversarial Machine Learning and the Model Attack Surface, the record must name its inputs, authority, consumer, expiry, and unresolved residuals. A later stage may narrow the decision, but it may not silently broaden the earlier grant or reinterpret a missing field as success.
+
+**Observation.** Retain attack traces, detector outcomes, mitigations, model changes, regressions, false positives, residual vulnerabilities, and disclosure decisions as one lineage. This stage is recorded as a versioned decision rather than an invisible implementation detail. For Adversarial Machine Learning and the Model Attack Surface, the record must name its inputs, authority, consumer, expiry, and unresolved residuals. A later stage may narrow the decision, but it may not silently broaden the earlier grant or reinterpret a missing field as success.
+
+**Closure.** Feed successful or unresolved attacks into custody, privacy, supply-chain, readiness, rollback, and incident systems without duplicating their authority. This stage is recorded as a versioned decision rather than an invisible implementation detail. For Adversarial Machine Learning and the Model Attack Surface, the record must name its inputs, authority, consumer, expiry, and unresolved residuals. A later stage may narrow the decision, but it may not silently broaden the earlier grant or reinterpret a missing field as success.
+
+## Interfaces
+
+Adversarial machine learning is useful only when its boundaries are sharper than neighboring owners.
+Each interface below therefore names what the adjacent owner keeps and what
+crosses the boundary. The packet must preserve exact object and version
+identity, authority, support state, expiry, residuals, and consumer. A receiving
+layer may reject or narrow it. Merely serializing the fields, passing a schema,
+or recording a dispatch does not prove that the meaning survived or that the
+receiving layer is competent.
+
+- Security Kernel owns identity, tools, networks, prompt injection, and permissions; this chapter owns attacks on learned behavior.
+- Privacy/Data Rights owns information harm and subject remedies; model inversion and extraction hand off there when personal information is implicated.
+- Supply-Chain Integrity owns artifact provenance; this chapter tests whether an apparently valid artifact contains adversarial behavior.
+- Adversarial Evaluation challenges behavior and evaluators; this chapter preserves the model-security threat and defense lifecycle.
+
+## Invariants
+
+For Adversarial machine learning, the following invariants are admission conditions rather than aspirations. They must
+hold across retries, replacements, cached results, branches, migrations,
+partial failures, and human intervention. When the implementation cannot
+establish an invariant, the result is a named residual or blocked route—not a
+default value. A finite formal model may prove that an authored record follows
+these rules, but only implementation and outcome evidence can show that a live
+system actually enforces them.
+
+- Every result is bound to an exact model/checkpoint, attack surface, budget, access, and adaptation state.
+- A defense is evaluated against an attacker aware of that defense whenever the threat model permits.
+- Clean utility, attacked utility, detection, false positives, recovery, and cost remain jointly visible.
+- Failure to find an attack is not evidence that the attack class is absent.
+- No chapter experiment authorizes attacks on real users, providers, credentials, or systems.
+
+## Failure modes
+
+The principal failure family includes evasion; training-data poisoning; clean-label poisoning; backdoors and trojans; jailbreak and safeguard bypass; model stealing; model inversion; transfer attacks; adaptive attacks; modality crossing; agent-tool attack composition; gradient masking; detector evasion; defense-caused utility collapse. These are not presumed
+exhaustive. New substrates, deployment settings, populations, and adversaries
+reopen the failure inventory and may narrow authority immediately.
+
+Adversarial machine learning detection also has its own false-positive and false-negative costs.
+An architecture that blocks every useful route is not vindicated merely
+because it prevented one hazard, while a permissive architecture cannot hide
+unsafe attempts inside an average utility score. Evaluation must preserve the
+full denominator, distinguish mechanism failure from instrument failure, and
+show whether correction, recovery, compensation, or withdrawal actually
+reached the affected state.
+
+## Minimum Viable Implementation
+
+Implement a model-threat record and a safe evaluation harness over public toy or consented models. Include clean, random-noise, known-vulnerable, attack-aware, transfer, and adaptive controls; preserve query and tuning budgets; and report robustness with clean utility, false positives, recovery, latency, and residuals. No result transfers automatically to frontier models or production.
+
+A Adversarial machine learning implementation should begin with an ordinary baseline and the strongest
+credible competing design, not only an intentionally weak comparator.
+Engineering and tuning budgets, information access, model capability, human
+help, retry policy, and stopping rules should be matched or reported. Positive
+controls must show that the task and instruments can detect the intended
+mechanism before a null or negative outcome is interpreted. Every result
+remains bounded to the tested population, environment, model, implementation,
+and evaluator.
+
+## Evidence and falsification program
+
+A fair Adversarial machine learning test must freeze the mechanism, authority, comparator set, tuning and
+rescue budgets, metrics, stopping rule, and protected holdout before outcomes
+are visible. It must include favorable or oracle checks, mechanism-specific
+ablations, positive and negative controls, complete attempts, independent
+scoring, joint utility/safety/cost accounting, and explicit blocked or null
+outcomes. A weak implementation can narrow that implementation; it cannot
+refute the architectural idea.
+
+## Beyond the State of the Art
+
+The mature stack treats learned-model security as a continuously renewed attack/defense contract rather than a one-time robustness badge. New checkpoints, modalities, tools, adaptation data, and defenses reopen the threat model and may narrow authority immediately.
+
+At maturity, the Adversarial machine learning contract becomes a replaceable service
+behind stable interfaces. New models, algorithms, institutions, storage
+systems, and hardware can enter through declared adapters while the surrounding
+stack continues to enforce the same authority and evidence ceilings. This is
+architectural extensibility, not a claim that one implementation has discovered
+the final mechanism.
+
+For Adversarial machine learning, the decisive standard is joint performance. The mature design must improve
+useful outcomes or decision quality while keeping unsafe release, false
+refusal, missed help, latency, resource use, human burden, and unresolved
+residuals visible. If a simpler system achieves the same bounded result at lower
+total lifecycle cost, the simpler system should be preferred. If no competent
+test exists yet, the end state remains a falsifiable target rather than a
+marketing conclusion.
+
+The Adversarial machine learning target also remains reversible. Operators need a declared way to narrow,
+replace, migrate, or retire the mechanism while preserving affected records and
+obligations. Architectural permanence without demonstrated benefit would be a
+failure of governance, not evidence of maturity.
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Contract completeness | Reject missing identity, authority, scope, version, consumer, residual, or expiry fields. | planned |
+| Boundary mutation | Substitute an adjacent owner's authority and require rejection. | planned |
+| Failure-family mutation | Inject at least one mechanism-specific failure and preserve the full attempt denominator. | planned |
+| No-promotion control | Ensure prose, schemas, fixtures, and source-reported results cannot promote the chapter core claim. | planned |
+
+Planned formalization hook: `lean:adversarial-machine-learning-and-model-attack-surface.admission_boundary` remains a process-contract target; it does not claim an implemented theorem.
+
+## Source crosswalk
+
+| Source ID | Title | Bounded use |
+|---|---|---|
+| `deterministic_capability_compilation` | Deterministic Capability Compilation | Corben-authored capability-compilation lineage for contract-bound components, translation validation, fallback, residual escrow, authority ceilings, and recovery. It supplies lifecycle control concepts for adversarial evaluation, but it contains no reproduced attack, robustness benchmark, extraction resistance, deployed defense, or model-security result. |
+| `ext_nist_adversarial_ml_2024` | Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations | Official NIST taxonomy and terminology comparator for adversarial machine learning across lifecycle stages, attacker goals, knowledge, capabilities, attacks, and mitigations. It is a taxonomy, not local robustness evidence or proof that listed mitigations work for this stack. |
+| `ext_sleeper_agents_2024` | Sleeper Agents: Training Deceptive LLMs that Persist Through Safety Training | Proof-of-concept backdoored-language-model study reporting persistence through several safety-training methods and warning that adversarial training can improve trigger recognition. The constructed examples do not establish naturally learned deception, a universal failure, or local detector performance. |
+| `ext_carlini_training_data_extraction_2021` | Extracting Training Data from Large Language Models | Primary failure source reporting black-box extraction of memorized GPT-2 training sequences. The source result is configuration-bound and not a local or universal leakage result. |
+| `ext_adversarial_sensor_fusion_2022` | Adversarial Robustness of Deep Sensor Fusion Models | WACV camera-LiDAR study reporting that fusion can improve clean accuracy and some single-source robustness while single-channel adversarial training can create cross-channel externalities. The results are source-reported, architecture- and threat-model-bound, and not local evidence that fusion is safe. |
+
+## Summary
+
+A learned model should receive security authority only through a versioned model-threat contract and attack/defense ledger that binds checkpoint identity, lifecycle stage, attacker knowledge and capability, surface, budget, objective, adaptation, transfer, observed effect, detection, mitigation, utility cost, recovery, residual, and disclosure; clean accuracy, attack failure, benchmark robustness, red-team coverage, or formal certification alone establishes neither general robustness nor secure deployment. The subject is now integrated into the live manuscript at argument
+support. Its empirical, formal, transfer, and deployment work remains an open
+evidence program rather than an excuse to defer the concept itself.
+
+The Adversarial machine learning reading rule is to follow the artifacts: identify the declared
+contract, inspect the authority and version, check the complete attempt and
+failure denominator, examine the independent decision, and retain every
+residual through the handoff. When any link is absent, the correct conclusion
+is narrower authority and more explicit uncertainty—not assumed success and
+not a sweeping refutation of the idea.
+
+## Handoff
+
+**Privacy, Data Rights, and Information-Flow Governance** follows. It consumes this chapter's bounded
+outputs without inheriting authority, certainty, or support that this chapter
+did not establish. The receiving chapter must preserve the identities,
+versions, unresolved conflicts, residuals, and non-claims recorded here, then
+perform its own admission checks before acting. A handoff receipt proves only
+that the packet crossed the declared interface; it does not prove that either
+chapter's mechanism is effective, complete, safe, transferable, or ready for
+release.

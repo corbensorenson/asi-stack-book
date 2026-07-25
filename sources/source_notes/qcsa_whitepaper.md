@@ -190,6 +190,7 @@ nine existing chapter owners; they do not promote any chapter-core claim above
 | `integrated-reference-architecture` | QCSA as the semantic control plane joining grounding, context, planning, memory, routing, tools, generation, evidence, and lifecycle governance. | §§5, 18; Appendix B | The source is a reference architecture; the separate local vertical trace implements one bounded reversible path but establishes no validated advantage or production transfer. |
 | `governed-world-models-and-reality-grounding` | Uses qualified semantic addresses, observation provenance, atlas epochs, uncertainty, contradiction, and revalidation to keep model state answerable to changing reality. | Axioms 1–12; §§5–10, 14, 18 | Semantic resolution is not a reality oracle or validated world-model controller. |
 | `white-box-evidence-interpretability-and-activation-governance` | Treats internal semantic structures as versioned, defeasible evidence inputs whose use remains separate from action authority. | §§5–8, 10, 14, 18 | No interpretability method, causal validation, or governance efficacy result. |
+| `durable-semantic-memory-and-knowledge-lattices` | Supplies stable semantic identities, evidence-bearing temporal hypergraphs, plural versioned addresses, migration records, contradiction state, and explicit residuals for a durable knowledge substrate. | Axioms 1–12; §§5–8, 12–14, 18; Appendices A–B | No durable-memory truth, deletion completeness, restart equivalence, retrieval-quality, or production-transfer result. |
 
 ## Chapter Decision
 

@@ -2,8 +2,8 @@
 
 Date: 2026-07-17
 
-This current-prose audit covers 86 reader-facing
-surfaces, including all 66 live chapters. It
+This current-prose audit covers 96 reader-facing
+surfaces, including all 76 live chapters. It
 deliberately excludes immutable transition records, completed historical
 roadmaps, frozen reader editions, and raw experiment outputs. Those records
 remain discoverable; their usable interpretation is governed by the separate

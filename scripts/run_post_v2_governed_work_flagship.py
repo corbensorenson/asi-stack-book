@@ -17,10 +17,6 @@ from pathlib import Path
 
 os.environ.setdefault("TOKENIZERS_PARALLELISM", "false")
 
-import torch
-from transformers import AutoModelForCausalLM, AutoTokenizer
-
-
 ROOT = Path(__file__).resolve().parents[1]
 TASKS = ROOT / "experiments/post_v2_governed_work_flagship/tasks.json"
 AMENDMENT = ROOT / "experiments/post_v2_evidence_program/amendments/governed_work_v1.json"
@@ -261,6 +257,8 @@ def code_prompt(task: dict, plan: str) -> list[dict[str, str]]:
 
 
 def generate(model, tokenizer, messages: list[dict[str, str]], seed: int, max_new_tokens: int) -> tuple[str, int, int, float]:
+    import torch
+
     rendered = tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
     inputs = tokenizer(rendered, return_tensors="pt")
     torch.manual_seed(seed)
@@ -280,6 +278,9 @@ def generate(model, tokenizer, messages: list[dict[str, str]], seed: int, max_ne
 
 
 def main() -> None:
+    import torch
+    from transformers import AutoModelForCausalLM, AutoTokenizer
+
     parser = argparse.ArgumentParser()
     parser.add_argument("--force", action="store_true")
     args = parser.parse_args()

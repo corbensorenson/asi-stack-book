@@ -7,6 +7,45 @@ Authority: Corben Sorenson
 Machine status: `roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json`  
 Experiment authority: `docs/claim_bearing_experiment_competence_standard.md`
 
+## Binding no-deferral manuscript policy — 2026-07-24
+
+The author has withdrawn the structural-freeze rule for manuscript ideas.
+**No worthwhile chapter or section idea may remain in a candidate, frozen,
+research-only, provisional, or “reconsider later” state.** Each identified
+manuscript idea must receive one immediate disposition: integrate it as
+meaning-bearing prose in its existing owner; add a chapter now when it owns a
+distinct interface, artifact, lifecycle, invariant, or failure family; or
+reject it as duplicative, incoherent, unsafe to operationalize, or outside the
+book, with the reason recorded.
+
+This rule distinguishes *manuscript coverage* from *evidence maturity*.
+Experiments, formalization, reproduction, transfer, and deployment can remain
+open when competence or resources are missing. The explanatory architecture
+cannot. Prose and source synthesis remain at `argument` and cannot promote a
+claim.
+
+The first execution of this policy admits the ten previously deferred distinct
+owners and moves the working manifest from 66 to **76 chapters**:
+
+- Human–AI Communication, Persuasion, and Epistemic Security;
+- Governed Objective Formation, Value Learning, and Goal Integrity;
+- Institutions, International Coordination, and Public Legitimacy;
+- Adversarial Machine Learning and the Model Attack Surface;
+- Autonomous Replication, Proliferation, and Containment;
+- Durable Semantic Memory and Knowledge Lattices;
+- AI Deployment, Transition, Distribution, and Human Agency;
+- Learning Theory, Generalization, and Scaling Science;
+- Physical Compute Infrastructure, Energy, and Environmental Constraints; and
+- Scientific Discovery and Experimental Governance.
+
+Each has a complete argument-level manuscript, Human Reading Path, lifecycle
+diagram, core claim, mechanism, interfaces, invariants, failure families,
+minimum implementation, evidence program, source crosswalk, no-promotion
+decision, evidence-plan row, and adjacent handoff. This section supersedes every
+later sentence in this roadmap that describes these topics as unadmitted or
+restores a structural freeze. Those sentences remain only as historical
+sequence records. There is now no live chapter-candidate queue.
+
 ## Purpose
 
 This roadmap contains the unfinished and recurring work after the completed
@@ -43,7 +82,8 @@ Embodied Agency, Human–AI Organizations, Multi-Agent Dynamics, and Inner
 Alignment and by integrating seven narrower gaps into existing owners. Its
 controlling adjudication is
 `docs/round_18_bounded_breadth_completion_adjudication_2026_07_24.md`.
-Structural admission is frozen again after that transaction. The latest clean,
+The later no-deferral transaction admits ten more owners and makes **76**
+the current working count; it moves no support. The latest previously clean,
 pushed, built, and deployed ancestral checkpoint is the exact 66-chapter Round
 18 reconciliation commit `12d987bded2e504f5ec677df06c4fcdb281b1fdd` on
 2026-07-24: tested Pages build `30120127304` passed and deploy/attest run
@@ -58,7 +98,7 @@ post.
 
 The book's strongest assets are architecture breadth, explicit interfaces,
 claim discipline, negative-evidence hygiene, and reproducible research
-machinery. Its limiting weakness is causal concentration: all 66 chapter cores
+machinery. Its limiting weakness is causal concentration: all 76 chapter cores
 remain `Design rationale` at `argument`, no competence-qualified natural,
 non-authored empirical transition exists, and the reader must traverse many
 mechanisms before seeing one decisive case that tests the stack against a
@@ -99,11 +139,10 @@ It rejects brittle keyword absence as a completeness test, accepts the relative
 thinness of five Round 18 chapters and the still-open White-Box depth defect,
 and makes a six-condition claim-bearing maturity gate binding. It also
 identifies two plausible distinct owners—adversarial machine learning against
-learned systems and learning/generalization/scaling science—but approves them
-only as research and adjudication candidates. Neither may enter the manifest
-before a material P2 checkpoint and the six-chapter depth packet are terminal.
-Depth is now the binding book-quality constraint; it runs in the existing-book
-slot and may not displace P2.
+learned systems and learning/generalization/scaling science. The binding
+no-deferral policy now admits both, together with the other formerly deferred
+owners. Depth and evidence competence remain binding book-quality constraints;
+the admission does not displace P2 or move support.
 
 ## Execution-ready work board
 
@@ -125,10 +164,10 @@ materialization command when its entry conditions hold, or an exact failure
 receipt naming the attempted command, exit state, and blocker. More prose
 cannot substitute for that attempt.
 
-**Work-in-progress limit:** at most two work packets may be active: one
+**Work-in-progress limit:** at most two evidence or maturity packets may be active: one
 existing-book integration packet and one empirical/formal packet. A blocked
-packet does not consume a slot. The maximum number of active second-tranche
-chapter candidates is presently **zero**. Protected P2, Q1, or Q2 task content,
+packet does not consume a slot. Manuscript ideas do not wait for a WIP slot:
+they are integrated, admitted, or explicitly rejected immediately. Protected P2, Q1, or Q2 task content,
 labels, outcomes, or evaluator judgments remain closed while other work
 proceeds.
 
@@ -136,16 +175,16 @@ proceeds.
 |---|---|---|---|
 | Continuous custody | P0 repository and public-truth reconciliation | Always open | Clean `main`, exact generated/source boundaries, current roadmap pointers, and no stale claim or release identity. |
 | Existing-book integration — now | `P6.5-R16-A-six-chapter-atom-pack` | No new manifest owner may enter while the evidence-first gate is active | One separately versioned, schema-valid addendum for all six post-baseline chapters, with reviewed stable identities, falsifiers, acceptance criteria, promotion ceilings, evidence routes, owners, identity-graph reconciliation, and rejecting mutations. Prose scanner rows and chapter review JSON do not satisfy this packet. |
-| Existing-book integration — next | `P7.1a-W3-admission-template-inheritance-guard` | R16-A is committed and validated | Freeze the current 66-chapter tokenizer/corpus baseline; centralize invariant method prose; reject a copied-scaffold negative control; preserve unique meaning. |
+| Existing-book integration — next | `P7.1a-W3-admission-template-inheritance-guard` | R16-A is committed and validated | Rebaseline the current 76-chapter tokenizer/corpus state; centralize invariant method prose; reject a copied-scaffold negative control; preserve unique meaning. |
 | Existing-book integration — then | `P7.2-T1D-proof-readiness-depth-pack` | R16-A and W3 are terminal | Apply the six-condition maturity gate to Inner Alignment, Multi-Agent Dynamics, Perception, Embodied Agency, Human–AI Organizations, and White-Box Evidence; complete the accepted section-scale depth repairs; reconcile sources, atoms, reader surfaces, and template-inheritance evidence; retain the no-promotion boundary. |
-| Existing-book integration — last | `P6.5-R16-B-current-reader-freshness` | R16-A, W3, and the six-chapter depth pack are terminal | Derive one current 66-chapter reader packet after the meaning-bearing edits, preserving the historical `reader-2026-07-18` release. |
+| Existing-book integration — last | `P6.5-R16-B-current-reader-freshness` | R16-A, W3, and the six-chapter depth pack are terminal | Derive one current 76-chapter reader packet after the meaning-bearing edits, preserving the historical `reader-2026-07-18` release. |
 | Existing-owner paging packet — prose terminal; policy and empirical work deferred | `P6.6-heterogeneous-inference-memory-and-speculative-paging` | Reader-facing source integration was expressly commissioned and completed 2026-07-23; schema, validator, planner, hardware characterization, and empirical work retain the ordinary post-gate entry condition | Maintain the six completed manuscript integrations and source reconciliation. Later implement and validate the heterogeneous-memory policy and run only competent, matched, hardware-characterized paging experiments. Preserve exact/approximate, throughput/latency, and source/local evidence boundaries. No new chapter. |
 | Existing-owner inference-cache packet — prose terminal; receipt and empirical work deferred | `P6.7-inference-cache-reuse-and-honest-pricing` | Reader-facing source integration was expressly commissioned and completed 2026-07-23; no new chapter or support movement | Maintain the three coordinated manuscript integrations and nine-source packet. Later implement the cache-reuse receipt and run separate exact-prefix and semantic-response campaigns under the ordinary post-gate entry condition. Preserve KV-versus-output, exact-versus-semantic, hit-versus-useful-outcome, and provider-contract-versus-local-evidence boundaries. |
 | Existing-owner functional-precision packet — source and prose terminal; evidence work queued | `P6.8-functional-precision-and-behavior-preserving-computation` | Source intake and the eight-owner manuscript integration are complete; schemas, validators, source resolution, and empirical work retain ordinary gates; no new chapter or support movement | Maintain the integrated Precision Contract treatment led by RankFold/NeuralFold. Preserve representation invariance, protected behavior, complete executable and physical-cost accounting, progressive residual precision, routed fallback, certificate scope, and program-transformation proof limits. Reconsider a standalone chapter only if a dated post-integration coherence audit finds a genuinely unowned lifecycle. |
 | Formal slot — terminal | `P4-terminal-no-open-formal-packet` | All six frozen clusters terminal across 24 modules | Maintain the terminal audits and their consumers; open no new proof packet unless a dated, machine-validated amendment names the claim consumer, countermodel, and maximum inference. |
 | Empirical headline — below entry floor, exact receipt next | `P2-R3-storage-materialization-and-replacement-qualification` | Re-measure at run start; the 2026-07-24 observation was about 21.3 GiB available and Docker inspection lacked socket permission; every setup action remains inside the approved Docker-scoped protocol | First, an exact command-bound attempt or failure receipt. Then thirty sealed candidate recipes and receipts; terminal pool materialization; four competently qualified replacements restoring the fixed twelve-task denominator; rank progression only under the frozen amendment; zero protected-content leakage. No deletion of non-Docker user data is authorized. |
 | First structural tranche — terminal | White-Box, World Models, Human Factors, and Governed Operations are terminal at argument support | Four exact integration packets preserve owners, sources, formal ceilings, protocols, reader handoffs, and no-promotion boundaries | Maintenance only; no reopened chapter packet without a dated machine-validated defect. |
-| Round 18 bounded breadth transaction — terminal at argument support; depth follow-up queued | Governed Model Training, Privacy/Data Rights, Perception, Embodied Agency, Human–AI Organizations, and Multi-Agent Dynamics are admitted from the second-tranche audit; Inner Alignment is separately admitted | Five chapters, seven section integrations, twenty-one source records/notes, five birth atoms, reader projection, targeted inheritance audit, manifest reconciliation, and the controlling adjudication are present | Structural freeze restored. The five new chapters remain useful argument-level owners while the six-chapter maturity packet is open. The remaining seven second-tranche candidates and the two post-Round-18 candidates are research records, not a live admission queue. |
+| No-deferral manuscript transaction — terminal at argument support; evidence follow-up open | All ten formerly deferred distinct owners are admitted | Ten complete argument-level chapters, one new NIST source record/note, source crosswalks, evidence-plan rows, no-promotion decisions, handoffs, outline/roadmap reconciliation, and 76-chapter manifest truth | No manuscript idea remains in a candidate queue. All 76 chapter cores remain at `argument`; implementation, empirical, formal, reproduction, transfer, and deployment residuals remain open. |
 
 The post-breadth integration debt has six conjunctive completion gates. They do
 not reopen structural admission automatically:
@@ -157,9 +196,9 @@ not reopen structural admission automatically:
 3. the six post-baseline chapters have an append-only claim-atom addendum with
    falsifiers, acceptance criteria, promotion ceilings, evidence-plan routes,
    and stable identity edges;
-4. a current derived-reader freshness packet covers all 66 manifest chapters
+4. a current derived-reader freshness packet covers all 76 manifest chapters
    without rewriting the immutable `reader-2026-07-18` release;
-5. W3 rebaselines current 66-chapter repetition and rejects inherited shared
+5. W3 rebaselines current 76-chapter repetition and rejects inherited shared
    prose in future chapter transactions; and
 6. Inner Alignment, Multi-Agent Dynamics, Perception, Embodied Agency,
    Human–AI Organizations, and White-Box Evidence pass the six-condition

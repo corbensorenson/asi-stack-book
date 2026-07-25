@@ -31,6 +31,7 @@ Mem0 is a comparator for extracting, consolidating, retrieving, and graph-linkin
 
 ## Book Chapters Supported
 
+- `durable-semantic-memory-and-knowledge-lattices` (Durable Semantic Memory and Knowledge Lattices)
 - `virtual-context-abi`
 - `context-transactions-snapshots-mounts-and-taint`
 - `procedural-memory-and-cognitive-loop-closure`

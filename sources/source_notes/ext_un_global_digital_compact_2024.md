@@ -8,7 +8,7 @@
 | Source version / URL | Official United Nations implementation page and adopted-text summary, https://www.un.org/global-digital-compact/en |
 | Citation label | United Nations (2024), Global Digital Compact |
 | Published / updated | 2024-09-22 / page inspected 2026-07-19 |
-| Review state | Preliminary structural-gap source note; the proposed chapter remains unadmitted. |
+| Review state | Passage-bounded source note assigned to the admitted argument-level institutions chapter; no implementation, effectiveness, or legitimacy claim. |
 | Ingestion basis | Official UN overview, commitments, implementation timeline, and AI-governance mechanism passages inspected. Linked resolutions, submissions, implementation data, and national measures were not comprehensively audited. |
 
 ## Thesis

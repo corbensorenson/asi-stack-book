@@ -5,7 +5,7 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/resource-economics-and-token-budgets.qmd",
     "structured_atoms_reviewed": 82,
-    "prose_candidates_adjudicated": 125,
+    "prose_candidates_adjudicated": 126,
     "unowned_material_claims": 0,
     "review_note": "Reviewed the complete chapter, all sixteen exact source mappings, both protocol records, the ten-command flagship and component artifacts, three accepted narrow transitions, five no-promotion decisions, all eleven proof targets, all forty-five ResourceEconomics and thirteen SimulationFidelity theorem declarations, every manifest atom, every prose candidate, the test plan, source crosswalk, summary, and handoff. The sweep made the consumer-, task-, risk-, workload-, organization-, resource-, and time-specific Resource Allocation Lease plus bounded simulation claim transport the distinct owner; expanded the contract to eighteen lifecycle mechanisms, twelve interfaces, eighteen invariants, and eighteen failure modes; preserved complete-cost, protected-floor, denominator, simulation-transfer, causal, reproduction, and transfer requirements; and preserved zero chapter-core support effect."
   },
@@ -145,13 +145,34 @@
     }
   },
   "prose_candidate_dispositions": {
-    "resource-economics-and-token-budgets.prose.2c9d1d4cb42c": {"state": "nonmaterial_explanation", "rationale": "Ledger-measure list elaborates the existing plural resource-accounting atoms."},
-    "resource-economics-and-token-budgets.prose.a2d9fb88dba1": {"state": "nonmaterial_explanation", "rationale": "View-over-measures fragment restates the non-aggregation invariant."},
-    "resource-economics-and-token-budgets.prose.0356dc89b2ff": {"state": "nonmaterial_explanation", "rationale": "Minimum-compute warning elaborates the existing total-system cost boundary."},
-    "resource-economics-and-token-budgets.prose.96cb5b38e3dd": {"state": "historical_or_source_report", "rationale": "Reports the terminal Campaign 4 extraction defect and missing requested-check work."},
-    "resource-economics-and-token-budgets.prose.46df4c752377": {"state": "nonmaterial_explanation", "rationale": "Admissible-check pricing requirement specializes the existing verification-cost interface."},
-    "resource-economics-and-token-budgets.prose.7e0e37b37bcd": {"state": "historical_or_source_report", "rationale": "Reports the bounded governed-usefulness transition while preserving its economic non-claim."},
-    "resource-economics-and-token-budgets.prose.3b623ec81253": {"state": "historical_or_source_report", "rationale": "Reports omitted latency, energy, dollar, and human estimands from the frozen campaign."},
+    "resource-economics-and-token-budgets.prose.2c9d1d4cb42c": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Ledger-measure list elaborates the existing plural resource-accounting atoms."
+    },
+    "resource-economics-and-token-budgets.prose.a2d9fb88dba1": {
+      "state": "nonmaterial_explanation",
+      "rationale": "View-over-measures fragment restates the non-aggregation invariant."
+    },
+    "resource-economics-and-token-budgets.prose.0356dc89b2ff": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Minimum-compute warning elaborates the existing total-system cost boundary."
+    },
+    "resource-economics-and-token-budgets.prose.96cb5b38e3dd": {
+      "state": "historical_or_source_report",
+      "rationale": "Reports the terminal Campaign 4 extraction defect and missing requested-check work."
+    },
+    "resource-economics-and-token-budgets.prose.46df4c752377": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Admissible-check pricing requirement specializes the existing verification-cost interface."
+    },
+    "resource-economics-and-token-budgets.prose.7e0e37b37bcd": {
+      "state": "historical_or_source_report",
+      "rationale": "Reports the bounded governed-usefulness transition while preserving its economic non-claim."
+    },
+    "resource-economics-and-token-budgets.prose.3b623ec81253": {
+      "state": "historical_or_source_report",
+      "rationale": "Reports omitted latency, energy, dollar, and human estimands from the frozen campaign."
+    },
     "resource-economics-and-token-budgets.prose.630029062324": {
       "state": "historical_or_source_report",
       "rationale": "Bounded source, fixture, result, formal-surface, or non-claim report; it creates no independent promoted atom."
@@ -568,33 +589,140 @@
       "rationale": "The proposal-recall fragment restates complete attempted and rejected denominators needed for a valid cost-quality comparison.",
       "target_atom_id": "resource-economics-and-token-budgets.mechanism.005"
     },
-    "resource-economics-and-token-budgets.prose.fffc49df2889": {"state": "duplicate_of_atom", "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.", "target_atom_id": "resource-economics-and-token-budgets.core"},
-    "resource-economics-and-token-budgets.prose.34c720c4d5f2": {"state": "duplicate_of_atom", "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.", "target_atom_id": "resource-economics-and-token-budgets.core"},
-    "resource-economics-and-token-budgets.prose.a4b91128c123": {"state": "duplicate_of_atom", "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.", "target_atom_id": "resource-economics-and-token-budgets.core"},
-    "resource-economics-and-token-budgets.prose.10f77ff7f51e": {"state": "duplicate_of_atom", "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.", "target_atom_id": "resource-economics-and-token-budgets.core"},
-    "resource-economics-and-token-budgets.prose.833692cb2aea": {"state": "duplicate_of_atom", "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.", "target_atom_id": "resource-economics-and-token-budgets.core"},
-    "resource-economics-and-token-budgets.prose.848e5b1b8255": {"state": "duplicate_of_atom", "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.", "target_atom_id": "resource-economics-and-token-budgets.core"},
-    "resource-economics-and-token-budgets.prose.e4428896ea13": {"state": "duplicate_of_atom", "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.", "target_atom_id": "resource-economics-and-token-budgets.core"},
-    "resource-economics-and-token-budgets.prose.133ad0892bce": {"state": "duplicate_of_atom", "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.", "target_atom_id": "resource-economics-and-token-budgets.core"},
-    "resource-economics-and-token-budgets.prose.2df5e5f6fe46": {"state": "duplicate_of_atom", "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.", "target_atom_id": "resource-economics-and-token-budgets.core"},
-    "resource-economics-and-token-budgets.prose.43f4140d7dc8": {"state": "duplicate_of_atom", "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.", "target_atom_id": "resource-economics-and-token-budgets.core"},
-    "resource-economics-and-token-budgets.prose.47b9349fe656": {"state": "duplicate_of_atom", "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.", "target_atom_id": "resource-economics-and-token-budgets.core"},
-    "resource-economics-and-token-budgets.prose.845f0537c239": {"state": "duplicate_of_atom", "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.", "target_atom_id": "resource-economics-and-token-budgets.core"},
-    "resource-economics-and-token-budgets.prose.1377eb5f194d": {"state": "duplicate_of_atom", "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.", "target_atom_id": "resource-economics-and-token-budgets.core"},
-    "resource-economics-and-token-budgets.prose.e01ca2807fc0": {"state": "duplicate_of_atom", "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.", "target_atom_id": "resource-economics-and-token-budgets.core"},
-    "resource-economics-and-token-budgets.prose.36fea5f9aec9": {"state": "historical_or_source_report", "rationale": "Bounded source, measurement, or explicit non-claim report; it adds no independent load-bearing atom."},
-    "resource-economics-and-token-budgets.prose.0acc79165f9d": {"state": "duplicate_of_atom", "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.", "target_atom_id": "resource-economics-and-token-budgets.core"},
-    "resource-economics-and-token-budgets.prose.82ab0cbf5658": {"state": "duplicate_of_atom", "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.", "target_atom_id": "resource-economics-and-token-budgets.core"},
-    "resource-economics-and-token-budgets.prose.4cd834d95047": {"state": "duplicate_of_atom", "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.", "target_atom_id": "resource-economics-and-token-budgets.core"},
-    "resource-economics-and-token-budgets.prose.d5271f6494c5": {"state": "historical_or_source_report", "rationale": "Bounded source, measurement, or explicit non-claim report; it adds no independent load-bearing atom."},
-    "resource-economics-and-token-budgets.prose.926b84a78b46": {"state": "duplicate_of_atom", "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.", "target_atom_id": "resource-economics-and-token-budgets.core"},
-    "resource-economics-and-token-budgets.prose.87a3f88bd7ff": {"state": "historical_or_source_report", "rationale": "Bounded source, measurement, or explicit non-claim report; it adds no independent load-bearing atom."},
-    "resource-economics-and-token-budgets.prose.0db53d1d4c56": {"state": "duplicate_of_atom", "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.", "target_atom_id": "resource-economics-and-token-budgets.core"},
-    "resource-economics-and-token-budgets.prose.d7eeb3d6bbc4": {"state": "duplicate_of_atom", "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.", "target_atom_id": "resource-economics-and-token-budgets.core"},
-    "resource-economics-and-token-budgets.prose.dace4c3c3542": {"state": "duplicate_of_atom", "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.", "target_atom_id": "resource-economics-and-token-budgets.core"},
-    "resource-economics-and-token-budgets.prose.d7ae406f6973": {"state": "duplicate_of_atom", "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.", "target_atom_id": "resource-economics-and-token-budgets.core"},
-    "resource-economics-and-token-budgets.prose.5a0653ebfc29": {"state": "nonmaterial_explanation", "rationale": "Line-wrapped enumeration of memory opportunity costs for precision artifacts; the complete accounting obligation is already owned by the chapter core."},
-    "resource-economics-and-token-budgets.prose.9bcb6f9c6d2e": {"state": "nonmaterial_explanation", "rationale": "Concrete tradeoff example showing why storage size alone is not a total-cost result."}
+    "resource-economics-and-token-budgets.prose.fffc49df2889": {
+      "state": "duplicate_of_atom",
+      "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.core"
+    },
+    "resource-economics-and-token-budgets.prose.34c720c4d5f2": {
+      "state": "duplicate_of_atom",
+      "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.core"
+    },
+    "resource-economics-and-token-budgets.prose.a4b91128c123": {
+      "state": "duplicate_of_atom",
+      "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.core"
+    },
+    "resource-economics-and-token-budgets.prose.10f77ff7f51e": {
+      "state": "duplicate_of_atom",
+      "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.core"
+    },
+    "resource-economics-and-token-budgets.prose.833692cb2aea": {
+      "state": "duplicate_of_atom",
+      "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.core"
+    },
+    "resource-economics-and-token-budgets.prose.848e5b1b8255": {
+      "state": "duplicate_of_atom",
+      "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.core"
+    },
+    "resource-economics-and-token-budgets.prose.e4428896ea13": {
+      "state": "duplicate_of_atom",
+      "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.core"
+    },
+    "resource-economics-and-token-budgets.prose.133ad0892bce": {
+      "state": "duplicate_of_atom",
+      "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.core"
+    },
+    "resource-economics-and-token-budgets.prose.2df5e5f6fe46": {
+      "state": "duplicate_of_atom",
+      "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.core"
+    },
+    "resource-economics-and-token-budgets.prose.43f4140d7dc8": {
+      "state": "duplicate_of_atom",
+      "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.core"
+    },
+    "resource-economics-and-token-budgets.prose.47b9349fe656": {
+      "state": "duplicate_of_atom",
+      "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.core"
+    },
+    "resource-economics-and-token-budgets.prose.845f0537c239": {
+      "state": "duplicate_of_atom",
+      "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.core"
+    },
+    "resource-economics-and-token-budgets.prose.1377eb5f194d": {
+      "state": "duplicate_of_atom",
+      "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.core"
+    },
+    "resource-economics-and-token-budgets.prose.e01ca2807fc0": {
+      "state": "duplicate_of_atom",
+      "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.core"
+    },
+    "resource-economics-and-token-budgets.prose.36fea5f9aec9": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, measurement, or explicit non-claim report; it adds no independent load-bearing atom."
+    },
+    "resource-economics-and-token-budgets.prose.0acc79165f9d": {
+      "state": "duplicate_of_atom",
+      "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.core"
+    },
+    "resource-economics-and-token-budgets.prose.82ab0cbf5658": {
+      "state": "duplicate_of_atom",
+      "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.core"
+    },
+    "resource-economics-and-token-budgets.prose.4cd834d95047": {
+      "state": "duplicate_of_atom",
+      "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.core"
+    },
+    "resource-economics-and-token-budgets.prose.d5271f6494c5": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, measurement, or explicit non-claim report; it adds no independent load-bearing atom."
+    },
+    "resource-economics-and-token-budgets.prose.926b84a78b46": {
+      "state": "duplicate_of_atom",
+      "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.core"
+    },
+    "resource-economics-and-token-budgets.prose.87a3f88bd7ff": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, measurement, or explicit non-claim report; it adds no independent load-bearing atom."
+    },
+    "resource-economics-and-token-budgets.prose.0db53d1d4c56": {
+      "state": "duplicate_of_atom",
+      "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.core"
+    },
+    "resource-economics-and-token-budgets.prose.d7eeb3d6bbc4": {
+      "state": "duplicate_of_atom",
+      "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.core"
+    },
+    "resource-economics-and-token-budgets.prose.dace4c3c3542": {
+      "state": "duplicate_of_atom",
+      "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.core"
+    },
+    "resource-economics-and-token-budgets.prose.d7ae406f6973": {
+      "state": "duplicate_of_atom",
+      "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.",
+      "target_atom_id": "resource-economics-and-token-budgets.core"
+    },
+    "resource-economics-and-token-budgets.prose.5a0653ebfc29": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Line-wrapped enumeration of memory opportunity costs for precision artifacts; the complete accounting obligation is already owned by the chapter core."
+    },
+    "resource-economics-and-token-budgets.prose.9bcb6f9c6d2e": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Concrete tradeoff example showing why storage size alone is not a total-cost result."
+    },
+    "resource-economics-and-token-budgets.prose.5fb9400c6762": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Line-wrapped cross-chapter handoff fragment; the complete boundary is owned by existing structured atoms and creates no independent support-bearing claim."
+    }
   },
   "prose_review_lineage": [
     {

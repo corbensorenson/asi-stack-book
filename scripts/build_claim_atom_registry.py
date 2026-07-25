@@ -582,12 +582,12 @@ def main() -> None:
             ]
         if stale or extra:
             raise SystemExit(f"claim-atom artifacts stale: stale={stale[:10]} extra={extra[:10]}")
-        print(f"Claim-atom artifacts current: {registry['summary']['atom_count']} structured atoms, {queue['summary']['candidate_count']} prose candidates, 54 dossiers.")
+        print(f"Claim-atom artifacts current: {registry['summary']['atom_count']} structured atoms, {queue['summary']['candidate_count']} prose candidates, {len(dossiers)} dossiers.")
         return
     for path, body in expected.items():
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(body, encoding="utf-8")
-    print(f"Wrote claim-atom artifacts: {registry['summary']['atom_count']} structured atoms, {queue['summary']['candidate_count']} prose candidates, 54 dossiers.")
+    print(f"Wrote claim-atom artifacts: {registry['summary']['atom_count']} structured atoms, {queue['summary']['candidate_count']} prose candidates, {len(dossiers)} dossiers.")
 
 
 if __name__ == "__main__":

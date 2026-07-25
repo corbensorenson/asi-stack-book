@@ -32,6 +32,7 @@ GraphRAG is an external comparator for deriving graph and community-summary laye
 
 ## Book Chapters Supported
 
+- `durable-semantic-memory-and-knowledge-lattices` (Durable Semantic Memory and Knowledge Lattices)
 - `virtual-context-abi`
 - `context-transactions-snapshots-mounts-and-taint`
 - `verification-bandwidth-and-context-adequacy`

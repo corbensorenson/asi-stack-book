@@ -10,11 +10,6 @@ import time
 from collections import Counter, defaultdict
 from pathlib import Path
 
-import numpy as np
-import sklearn
-from sklearn.linear_model import LogisticRegression
-
-
 ROOT = Path(__file__).resolve().parents[1]
 CORPUS = ROOT / "experiments/post_v2_routing_deliberation/input/corpus.json"
 RESULT = ROOT / "experiments/post_v2_routing_deliberation/results/2026-07-10-local.json"
@@ -74,6 +69,9 @@ def rule_route(request: str) -> str:
 
 
 def fit_router(train: list[dict], seed: int) -> LogisticRegression:
+    import numpy as np
+    from sklearn.linear_model import LogisticRegression
+
     x_train = np.asarray([row["features"] for row in train], dtype=float)
     y_train = np.asarray([row["family"] for row in train])
     model = LogisticRegression(max_iter=500, random_state=seed)
@@ -82,6 +80,8 @@ def fit_router(train: list[dict], seed: int) -> LogisticRegression:
 
 
 def route_one(example: dict, arm: str, seed: int, learned: LogisticRegression) -> dict:
+    import numpy as np
+
     expected = example["answer"]
     fallback_used = False
     abstained = False
@@ -230,6 +230,9 @@ def aggregate_deliberation(rows: list[dict]) -> list[dict]:
 
 
 def main() -> None:
+    import numpy as np
+    import sklearn
+
     parser = argparse.ArgumentParser()
     parser.add_argument("--force", action="store_true")
     args = parser.parse_args()

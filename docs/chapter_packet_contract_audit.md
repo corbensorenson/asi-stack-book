@@ -14,29 +14,36 @@ This generated audit checks every active chapter against the architecture-refere
 | `scalable-oversight-and-adversarial-ai-control` | pass | bounded in insufficiency section | complete packet surface |
 | `human-intent-as-a-formal-input` | pass | bounded in insufficiency section | complete packet surface |
 | `human-factors-and-meaningful-control-in-oversight` | pass | bounded in insufficiency section | complete packet surface |
+| `human-ai-communication-persuasion-and-epistemic-security` | pass | bounded in insufficiency section | complete packet surface |
 | `constitutional-alignment-substrate` | pass | bounded in insufficiency section | complete packet surface |
 | `inner-alignment-mesa-optimization-and-learned-objective-integrity` | pass | explicit heading | complete packet surface |
 | `moral-uncertainty-and-value-conflict` | pass | bounded in insufficiency section | complete packet surface |
+| `governed-objective-formation-value-learning-and-goal-integrity` | pass | bounded in insufficiency section | complete packet surface |
+| `institutions-international-coordination-and-public-legitimacy` | pass | bounded in insufficiency section | complete packet surface |
 | `stable-capability-fields` | pass | bounded in insufficiency section | complete packet surface |
 | `capability-replacement-and-rollback` | pass | bounded in insufficiency section | complete packet surface |
 | `security-kernel-and-digital-scifs` | pass | bounded in insufficiency section | complete packet surface |
+| `adversarial-machine-learning-and-model-attack-surface` | pass | bounded in insufficiency section | complete packet surface |
 | `privacy-data-rights-and-information-flow-governance` | pass | explicit heading | complete packet surface |
 | `model-weight-custody-and-hardware-roots-of-trust` | pass | bounded in insufficiency section | complete packet surface |
 | `ai-supply-chain-integrity-and-lifecycle-provenance` | pass | bounded in insufficiency section | complete packet surface |
 | `recursive-self-improvement-boundaries` | pass | explicit heading | complete packet surface |
 | `open-ended-improvement-engines` | pass | bounded in insufficiency section | complete packet surface |
+| `autonomous-replication-proliferation-and-containment` | pass | bounded in insufficiency section | complete packet surface |
 | `intent-to-execution-contracts` | pass | explicit heading | complete packet surface |
 | `perception-sensor-fusion-and-observation-trust` | pass | explicit heading | complete packet surface |
 | `planning-as-a-control-layer` | pass | explicit heading | complete packet surface |
 | `governed-world-models-and-reality-grounding` | pass | explicit heading | complete packet surface |
 | `cognitive-compilation-and-semantic-ir` | pass | explicit heading | complete packet surface |
 | `virtual-context-abi` | pass | explicit heading | complete packet surface |
+| `durable-semantic-memory-and-knowledge-lattices` | pass | bounded in insufficiency section | complete packet surface |
 | `context-transactions-snapshots-mounts-and-taint` | pass | explicit heading | complete packet surface |
 | `verification-bandwidth-and-context-adequacy` | pass | bounded in insufficiency section | complete packet surface |
 | `claim-ledgers-and-belief-revision` | pass | explicit heading | complete packet surface |
 | `spinoza-verification-and-proof-carrying-claims` | pass | explicit heading | complete packet surface |
 | `labor-os-and-typed-jobs` | pass | explicit heading | complete packet surface |
 | `human-ai-organizations-delegation-and-accountability` | pass | explicit heading | complete packet surface |
+| `ai-deployment-transition-distribution-and-human-agency` | pass | bounded in insufficiency section | complete packet surface |
 | `artifact-graphs-audit-logs-and-replay` | pass | explicit heading | complete packet surface |
 | `runtime-adapters-tool-permissions-and-human-approval` | pass | bounded in insufficiency section | complete packet surface |
 | `embodied-agency-real-time-control-and-physical-safety` | pass | explicit heading | complete packet surface |
@@ -46,6 +53,7 @@ This generated audit checks every active chapter against the architecture-refere
 | `routing-heads-and-specialist-cores` | pass | bounded in insufficiency section | complete packet surface |
 | `replaceable-cognitive-substrates-beyond-transformer-monoculture` | pass | bounded in insufficiency section | complete packet surface |
 | `governed-model-training-distributed-optimization-and-scaling` | pass | explicit heading | complete packet surface |
+| `learning-theory-generalization-and-scaling-science` | pass | bounded in insufficiency section | complete packet surface |
 | `readiness-gates-residual-escrow-and-quarantine` | pass | bounded in insufficiency section | complete packet surface |
 | `personal-compute-hives-and-federated-edge-intelligence` | pass | bounded in insufficiency section | complete packet surface |
 | `compact-generative-systems-and-residual-honesty` | pass | bounded in insufficiency section | complete packet surface |
@@ -53,6 +61,7 @@ This generated audit checks every active chapter against the architecture-refere
 | `governed-deliberation-and-test-time-scaling` | pass | bounded in insufficiency section | complete packet surface |
 | `rankfold-neuralfold-and-artifact-compression` | pass | bounded in insufficiency section | complete packet surface |
 | `resource-economics-and-token-budgets` | pass | bounded in insufficiency section | complete packet surface |
+| `physical-compute-infrastructure-energy-and-environmental-constraints` | pass | bounded in insufficiency section | complete packet surface |
 | `mathematical-and-search-substrates` | pass | explicit heading | complete packet surface |
 | `circle-calculus-and-proof-carrying-ai-contracts` | pass | bounded in insufficiency section | complete packet surface |
 | `coil-attention-cyclic-memory-and-recurrence-contracts` | pass | bounded in insufficiency section | complete packet surface |
@@ -66,6 +75,7 @@ This generated audit checks every active chapter against the architecture-refere
 | `governed-operations-incident-command-and-graceful-degradation` | pass | bounded in insufficiency section | complete packet surface |
 | `policy-optimization-and-learning-from-feedback` | pass | explicit heading | complete packet surface |
 | `data-engines-continual-learning-and-unlearning` | pass | bounded in insufficiency section | complete packet surface |
+| `scientific-discovery-and-experimental-governance` | pass | bounded in insufficiency section | complete packet surface |
 | `artifact-steward-agents-and-living-project-governance` | pass | bounded in insufficiency section | complete packet surface |
 | `integrated-reference-architecture` | pass | bounded in insufficiency section | complete packet surface |
 | `project-theseus-as-report-first-implementation-reference` | pass | bounded in insufficiency section | complete packet surface |
@@ -73,6 +83,6 @@ This generated audit checks every active chapter against the architecture-refere
 | `living-book-methodology` | pass | bounded in insufficiency section | complete packet surface |
 | `open-research-agenda-and-bibliography-plan` | pass | bounded in insufficiency section | complete packet surface |
 
-Summary: 66 of 66 active chapters pass; 0 remain open.
+Summary: 76 of 76 active chapters pass; 0 remain open.
 
 Non-claims: this is a structural and bounded semantic audit, not proof of prose quality, source interpretation, empirical validity, formal adequacy, deployment, safety, or independent review.

@@ -35,6 +35,7 @@ in one training document. This is not proof that every model or the local stack 
 
 ## Book Chapters Supported
 
+- `adversarial-machine-learning-and-model-attack-surface` (Adversarial Machine Learning and the Model Attack Surface)
 - `privacy-data-rights-and-information-flow-governance`
 - `data-engines-continual-learning-and-unlearning`
 

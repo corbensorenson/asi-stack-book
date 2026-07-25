@@ -37,6 +37,7 @@ has been reproduced.
 
 ## Book Chapters Supported
 
+- `learning-theory-generalization-and-scaling-science` (Learning Theory, Generalization, and Scaling Science)
 - `the-efficient-asi-hypothesis`
 - `governed-model-training-distributed-optimization-and-scaling`
 

@@ -274,9 +274,11 @@ device latency.
 - `executable-specifications-and-lean-proof-envelope`
 - `intent-to-execution-contracts`
 
-No project-specific chapter is recommended. A separate metric-provenance or
-causal-capability-receipt boundary remains deferred until cross-project
-deduplication.
+No project-specific chapter is recommended. Metric provenance and
+causal-capability receipts are now integrated across the admitted evidence
+states, artifact graphs, integrated architecture, objective formation, and
+scientific-governance owners. Cross-project deduplication found no additional
+standalone chapter owner.
 
 ## Failure Modes
 

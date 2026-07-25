@@ -1,0 +1,244 @@
+---
+title: "AI Deployment, Transition, Distribution, and Human Agency"
+chapter_id: "ai-deployment-transition-distribution-and-human-agency"
+part_id: "planning-memory-reasoning-execution"
+status: "conceptual"
+draft_maturity: "v0.2 complete argument-level manuscript"
+last_updated: "2026-07-24"
+primary_sources:
+  - "ext_generative_ai_at_work_2025"
+  - "ext_ilo_genai_jobs_index_2025"
+evidence_level: "argument"
+claim_label: "Design rationale"
+open_evidence_gaps:
+  - "The architecture is written at argument support; no chapter-core empirical promotion is claimed."
+  - "The minimum implementation and natural evaluation described below remain to be executed unless Appendix E records them separately."
+  - "Source-reported results are not local reproductions and do not establish transfer, readiness, release, or SOTA."
+---
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `ai-deployment-transition-distribution-and-human-agency` |
+| Part | Part II - Planning, Memory, Reasoning, and Execution |
+| Status | conceptual |
+| Manuscript maturity | v0.2 complete argument-level manuscript |
+| Last updated | 2026-07-24 |
+| Claim label | Design rationale |
+| Evidence level | argument |
+| Source loading state | Assigned source notes support mechanism and boundary discussion; all reported outcomes remain source-reported. |
+| Test state | The chapter defines a minimum implementation and falsification plan; no chapter-core promotion follows from prose or source synthesis. |
+
+## Drafting guardrail
+
+Deployment transition governance owns a distinct control plane, not proof that the control plane
+works. Its source crosswalk supports definitions, mechanisms, failure examples,
+and comparison targets. The design remains at **argument** support until a
+separate accepted evidence transition says otherwise.
+
+::: {.asi-human-only}
+## Human Reading Path
+
+The same AI system can make one worker faster, eliminate another role, create customer dependence, enrich an owner, and make a public service cheaper but harder to contest. These outcomes are different positions inside one transition. They must stay visible before an efficiency story dominates and reversible experiments harden into arrangements that affected people cannot leave.
+
+Technical capability differs from deployment choice, and productivity differs from distribution. A transition packet records the changed task, affected populations, baselines, expected gains, displacement and dependency risks, accessibility, bargaining power, alternatives, notice, authority, appeal, remedy, monitoring, and exit. It asks who receives benefits, who bears costs, whose judgment is displaced, and whether meaningful agency remains.
+
+The lifecycle moves from mapping and participatory design through staged rollout, outcome measurement, redistribution, contest, rollback, and long-horizon review. Deskilling, surveillance, algorithmic management, accessibility failures, vendor lock-in, coercion, benefit concentration, service withdrawal, and ceremonial human oversight remain visible. Deployment is a governed social transformation, not a final API call, and broad benefit must be demonstrated across people and time rather than inferred from average output or lower unit cost.
+:::
+
+## Problem
+
+A useful AI deployment changes tasks, roles, skill, discretion, wages, ownership returns, prices, access, concentration, critical-service continuity, and the practical choices available to people and communities. Aggregate productivity cannot reveal who benefits, who loses, or whether transition capacity exists.
+
+This gap matters at the scale of a stack because its output becomes another
+layer's input. If the owner is absent, `exposure-as-displacement overclaim` or
+`automation theater` can be normalized before a downstream layer sees it.
+The downstream consumer may possess a valid local record while acting on a
+broken upstream assumption. An explicit owner therefore needs both a positive
+contract and a refusal path: it must say what counts as an admissible
+transition, what remains unresolved, who may consume the result, and when a
+material change forces reauthorization.
+
+## Why existing approaches are insufficient
+
+Task benchmarks, exposure indices, adoption counts, productivity averages, job forecasts, and organizational charts describe different levels. Treating any one as a welfare result hides substitution versus complementarity, delayed effects, distribution, bargaining power, ownership, access, deskilling, dependency, and exit.
+
+Deployment transition governance must first beat a disciplined composition of the adjacent
+owners. That alternative should win if it can preserve the same identities,
+authority, lifecycle state, failure distinctions, and residuals without
+overloading their primary jobs. A dedicated owner remains necessary because the
+handoffs listed below otherwise leave a missing end-to-end decision. Separation
+does not imply autonomy: this owner must consume upstream records and return
+bounded outputs to downstream owners rather than becoming a new unreviewable
+center of authority.
+
+```{mermaid}
+flowchart LR
+  A["Declared purpose and bounded authority"] --> B["Versioned chapter-specific contract"]
+  B["Versioned chapter-specific contract"] --> C["Admission and boundary checks"]
+  C["Admission and boundary checks"] --> D["Execute with complete lineage and denominators"]
+  D["Execute with complete lineage and denominators"] --> E["Observe outcomes, costs, and residuals"]
+  E["Observe outcomes, costs, and residuals"] --> F{"Independent checks pass?"}
+  F -- "no" --> G["Quarantine, narrow, correct, or stop"]
+  F -- "yes" --> H["Versioned bounded handoff"]
+  G -- "repair and reauthorize" --> B
+  H -- "material change" --> B
+  B -. "expiry or revocation" .-> G
+  E -. "residual feedback" .-> B
+```
+
+**What the AI Deployment, Transition, Distribution, and Human Agency lifecycle shows:** Authority enters before execution,
+chapter-specific state remains versioned, and a failed independent check returns
+the system to correction or quarantine. A successful check grants only the
+bounded downstream handoff; it does not erase residuals or promote its core claim.
+
+## Core Claim
+
+[ai-deployment-transition-distribution-and-human-agency.core, label: Design rationale, support: argument] Consequential deployment should advance only through a prospective transition contract that binds a counterfactual baseline, affected-person denominator, task-role-skill changes, adoption, substitution and complementarity, compensation and ownership, access and prices, concentration, critical-service continuity, human decision rights, training and redeployment, delayed outcomes, remedy, pause conditions, and residuals; exposure, productivity, adoption, or aggregate gain alone establishes neither job loss, welfare, fairness, human agency, nor a successful transition.
+
+## Mechanism
+
+**Contract.** Freeze the deployment, nondeployment counterfactual, affected-worker and community denominator, rollout stages, measurement schedule, and pause criteria before adoption. This stage is recorded as a versioned decision rather than an invisible implementation detail. For AI Deployment, Transition, Distribution, and Human Agency, the record must name its inputs, authority, consumer, expiry, and unresolved residuals. A later stage may narrow the decision, but it may not silently broaden the earlier grant or reinterpret a missing field as success.
+
+**Admission.** Track exposure, actual use, task change, role change, employment, skill, discretion, workload, compensation, ownership returns, prices, access, quality, and distribution separately. This stage is recorded as a versioned decision rather than an invisible implementation detail. For AI Deployment, Transition, Distribution, and Human Agency, the record must name its inputs, authority, consumer, expiry, and unresolved residuals. A later stage may narrow the decision, but it may not silently broaden the earlier grant or reinterpret a missing field as success.
+
+**Execution.** Map substitution, complementarity, human-AI decision rights, hidden labor, data and expertise contributions, bargaining power, concentration, and realistic exit. This stage is recorded as a versioned decision rather than an invisible implementation detail. For AI Deployment, Transition, Distribution, and Human Agency, the record must name its inputs, authority, consumer, expiry, and unresolved residuals. A later stage may narrow the decision, but it may not silently broaden the earlier grant or reinterpret a missing field as success.
+
+**Observation.** Fund training, redeployment, income and service continuity, accessibility, contestability, and remedy as deployment costs rather than externalities. This stage is recorded as a versioned decision rather than an invisible implementation detail. For AI Deployment, Transition, Distribution, and Human Agency, the record must name its inputs, authority, consumer, expiry, and unresolved residuals. A later stage may narrow the decision, but it may not silently broaden the earlier grant or reinterpret a missing field as success.
+
+**Closure.** Use staged rollout and delayed follow-up to narrow, pause, redesign, compensate, or withdraw when transition capacity or observed outcomes fail. This stage is recorded as a versioned decision rather than an invisible implementation detail. For AI Deployment, Transition, Distribution, and Human Agency, the record must name its inputs, authority, consumer, expiry, and unresolved residuals. A later stage may narrow the decision, but it may not silently broaden the earlier grant or reinterpret a missing field as success.
+
+## Interfaces
+
+Deployment transition governance is useful only when its boundaries are sharper than neighboring owners.
+Each interface below therefore names what the adjacent owner keeps and what
+crosses the boundary. The packet must preserve exact object and version
+identity, authority, support state, expiry, residuals, and consumer. A receiving
+layer may reject or narrow it. Merely serializing the fields, passing a schema,
+or recording a dispatch does not prove that the meaning survived or that the
+receiving layer is competent.
+
+- Labor OS owns a typed work unit; this chapter owns cumulative task-to-social transition.
+- Human-AI Organizations owns internal roles and accountability; transition governance includes workers, customers, communities, and markets.
+- Resource Economics owns compute allocation; this chapter owns distribution of deployment benefits and burdens.
+- Multi-Agent Dynamics reports concentration and disempowerment; public institutions receive cross-organization effects.
+
+## Invariants
+
+For Deployment transition governance, the following invariants are admission conditions rather than aspirations. They must
+hold across retries, replacements, cached results, branches, migrations,
+partial failures, and human intervention. When the implementation cannot
+establish an invariant, the result is a named residual or blocked route—not a
+default value. A finite formal model may prove that an authored record follows
+these rules, but only implementation and outcome evidence can show that a live
+system actually enforces them.
+
+- Exposure, adoption, productivity, task change, job change, wages, welfare, access, ownership, and distribution remain separate claims.
+- Aggregate gains never erase harmed subgroups or uncompensated contributors.
+- Productivity does not stand in for worker, customer, or community welfare.
+- Essential-service access, human discretion, contestability, and exit remain measured.
+- Deployment pauses when required transition capacity or remedy is absent.
+
+## Failure modes
+
+The principal failure family includes exposure-as-displacement overclaim; automation theater; deskilling; dependency; wage suppression; uncompensated knowledge capture; rent concentration; regional disparity; digital exclusion; inaccessible services; surveillance productivity; hidden labor; induced demand; political capture; gradual disempowerment. These are not presumed
+exhaustive. New substrates, deployment settings, populations, and adversaries
+reopen the failure inventory and may narrow authority immediately.
+
+Deployment transition governance detection also has its own false-positive and false-negative costs.
+An architecture that blocks every useful route is not vindicated merely
+because it prevented one hazard, while a permissive architecture cannot hide
+unsafe attempts inside an average utility score. Evaluation must preserve the
+full denominator, distinguish mechanism failure from instrument failure, and
+show whether correction, recovery, compensation, or withdrawal actually
+reached the affected state.
+
+## Minimum Viable Implementation
+
+Run a staged natural workflow study with a frozen non-adoption comparator, worker and customer measures, subgroup denominators, delayed follow-up, independent analysis, and real remedy. Measure useful throughput and quality alongside skill, workload, discretion, compensation where appropriate, access, distribution, concentration proxies, exit, and transition cost. Simulation can test accounting, not economy-wide welfare.
+
+A Deployment transition governance implementation should begin with an ordinary baseline and the strongest
+credible competing design, not only an intentionally weak comparator.
+Engineering and tuning budgets, information access, model capability, human
+help, retry policy, and stopping rules should be matched or reported. Positive
+controls must show that the task and instruments can detect the intended
+mechanism before a null or negative outcome is interpreted. Every result
+remains bounded to the tested population, environment, model, implementation,
+and evaluator.
+
+## Evidence and falsification program
+
+A fair Deployment transition governance test must freeze the mechanism, authority, comparator set, tuning and
+rescue budgets, metrics, stopping rule, and protected holdout before outcomes
+are visible. It must include favorable or oracle checks, mechanism-specific
+ablations, positive and negative controls, complete attempts, independent
+scoring, joint utility/safety/cost accounting, and explicit blocked or null
+outcomes. A weak implementation can narrow that implementation; it cannot
+refute the architectural idea.
+
+## Beyond the State of the Art
+
+The mature stack treats deployment as a reversible social transition rather than a software launch. Capability gains remain coupled to measured distribution, continuity, agency, and remedy so that optimization cannot hide the people whose options it changes.
+
+At maturity, the Deployment transition governance contract becomes a replaceable service
+behind stable interfaces. New models, algorithms, institutions, storage
+systems, and hardware can enter through declared adapters while the surrounding
+stack continues to enforce the same authority and evidence ceilings. This is
+architectural extensibility, not a claim that one implementation has discovered
+the final mechanism.
+
+For Deployment transition governance, the decisive standard is joint performance. The mature design must improve
+useful outcomes or decision quality while keeping unsafe release, false
+refusal, missed help, latency, resource use, human burden, and unresolved
+residuals visible. If a simpler system achieves the same bounded result at lower
+total lifecycle cost, the simpler system should be preferred. If no competent
+test exists yet, the end state remains a falsifiable target rather than a
+marketing conclusion.
+
+The Deployment transition governance target also remains reversible. Operators need a declared way to narrow,
+replace, migrate, or retire the mechanism while preserving affected records and
+obligations. Architectural permanence without demonstrated benefit would be a
+failure of governance, not evidence of maturity.
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Contract completeness | Reject missing identity, authority, scope, version, consumer, residual, or expiry fields. | planned |
+| Boundary mutation | Substitute an adjacent owner's authority and require rejection. | planned |
+| Failure-family mutation | Inject at least one mechanism-specific failure and preserve the full attempt denominator. | planned |
+| No-promotion control | Ensure prose, schemas, fixtures, and source-reported results cannot promote the chapter core claim. | planned |
+
+Planned formalization hook: `lean:ai-deployment-transition-distribution-and-human-agency.admission_boundary` remains a process-contract target; it does not claim an implemented theorem.
+
+## Source crosswalk
+
+| Source ID | Title | Bounded use |
+|---|---|---|
+| `coherence_exchange` | The Coherence Exchange | Corben-authored speculative lineage connecting epistemic markets, typed labor, verification, alignment, and resource allocation. It motivates cross-layer distribution questions, but it does not measure employment, wages, welfare, concentration, transition capacity, public legitimacy, or preserved human agency. |
+| `ext_generative_ai_at_work_2025` | Generative AI at Work | Open peer-reviewed field study of a staggered generative-AI assistant introduction among 5,172 customer-support agents, reporting heterogeneous worker and productivity effects in that setting. It is a bounded deployment comparator and does not establish economy-wide employment, wages, inequality, concentration, long-run skill, or ASI-transition effects. |
+| `ext_ilo_genai_jobs_index_2025` | Generative AI and Jobs: A Refined Global Index of Occupational Exposure | ILO working paper combining task data, worker surveys, expert deliberation, and model-assisted scoring to estimate occupational exposure across countries and groups. Exposure is not realized automation, displacement, welfare, or a forecast of ASI effects, and the study is not a local reproduction. |
+
+## Summary
+
+Consequential deployment should advance only through a prospective transition contract that binds a counterfactual baseline, affected-person denominator, task-role-skill changes, adoption, substitution and complementarity, compensation and ownership, access and prices, concentration, critical-service continuity, human decision rights, training and redeployment, delayed outcomes, remedy, pause conditions, and residuals; exposure, productivity, adoption, or aggregate gain alone establishes neither job loss, welfare, fairness, human agency, nor a successful transition. The subject is now integrated into the live manuscript at argument
+support. Its empirical, formal, transfer, and deployment work remains an open
+evidence program rather than an excuse to defer the concept itself.
+
+The Deployment transition governance reading rule is to follow the artifacts: identify the declared
+contract, inspect the authority and version, check the complete attempt and
+failure denominator, examine the independent decision, and retain every
+residual through the handoff. When any link is absent, the correct conclusion
+is narrower authority and more explicit uncertainty—not assumed success and
+not a sweeping refutation of the idea.
+
+## Handoff
+
+**Artifact Graphs, Audit Logs, and Replay** follows. It consumes this chapter's bounded
+outputs without inheriting authority, certainty, or support that this chapter
+did not establish. The receiving chapter must preserve the identities,
+versions, unresolved conflicts, residuals, and non-claims recorded here, then
+perform its own admission checks before acting. A handoff receipt proves only
+that the packet crossed the declared interface; it does not prove that either
+chapter's mechanism is effective, complete, safe, transferable, or ready for
+release.

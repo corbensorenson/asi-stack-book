@@ -36,6 +36,7 @@ The MDL tutorial belongs in the compression and benchmark chapters as an externa
 
 ## Book Chapters Supported
 
+- `learning-theory-generalization-and-scaling-science` (Learning Theory, Generalization, and Scaling Science)
 - `compact-generative-systems-and-residual-honesty` (Compact Generative Systems and Residual Honesty)
 - `rankfold-neuralfold-and-artifact-compression` (RankFold, NeuralFold, and Artifact Compression)
 - `benchmark-ratchets-and-anti-goodhart-evidence` (Benchmark Ratchets and Anti-Goodhart Evidence)

@@ -2379,6 +2379,118 @@
           ]
         },
         {
+          "id": "human-ai-communication-persuasion-and-epistemic-security",
+          "title": "Human-AI Communication, Persuasion, and Epistemic Security",
+          "file": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd",
+          "status": "conceptual",
+          "evidence_level": "argument",
+          "claim_label": "Design rationale",
+          "source_ids": [
+            "talos",
+            "ext_conversational_persuasion_gpt4_2025",
+            "ext_anthropic_model_persuasiveness_2024",
+            "ext_commercial_persuasion_ai_2026"
+          ],
+          "problem": "An AI system can preserve internal evidence discipline and still change beliefs, choices, and institutions through selective framing, personalization, synthetic identity, repetition, and amplification. The stack therefore needs an owner for the complete outbound communication transaction, including correction after a message escapes its original channel.",
+          "insufficient": "Truthfulness checks, content filters, generic human-factors guidance, and red-team prompts inspect fragments of influence. They do not bind the claim, evidence ceiling, audience, vulnerability, purpose, personalization inputs, persuasive technique, channel, amplification, observed effect, correction, retraction, and remedy into one governed lifecycle.",
+          "core_claim": "Consequential AI communication should be eligible for delivery only through an evidence-bounded communication packet whose audience, influence method, amplification authority, provenance, expiry, correction reach, and observed effects remain inspectable; fluent text, factual fragments, user consent, or a successful persuasion score alone establishes neither epistemic safety, autonomy, legitimacy, durable benefit, nor release readiness.",
+          "mechanism": [
+            "Compile a communication packet from claim identity, maximum warranted inference, uncertainty, audience class, purpose, protected or denied personalization attributes, persuasive technique, channel, disclosure, and amplification ceiling.",
+            "Run audience-risk and autonomy checks before delivery. Vulnerability, dependency, power asymmetry, urgency, and inability to exit narrow the permitted technique and scale.",
+            "Attach provenance, sponsorship, synthetic-identity disclosure, expiry, and a machine-readable correction address to every consequential message and known derivative.",
+            "Measure outcomes without treating belief change as success: retain comprehension, factual calibration, autonomy, disagreement, disparate effects, complaints, corrections, and downstream copies.",
+            "Support pause, retraction, counter-message, recipient notification, and remedy while recording unreachable descendants as residuals rather than declaring completion."
+          ],
+          "interfaces": [
+            "Claim Ledgers provide the evidence ceiling; they do not authorize persuasion.",
+            "Human Factors supplies control-capacity and vulnerability findings; this chapter governs outbound influence.",
+            "Privacy/Data Rights governs lawful and purpose-compatible data use; this chapter additionally asks whether personalization is manipulative.",
+            "Capability Thresholds consumes population-scale influence and failed-correction evidence for release commitments."
+          ],
+          "invariants": [
+            "Outbound language may not be stronger than the supporting evidence packet.",
+            "Personalization may not use denied attributes or exploit a known vulnerability.",
+            "Amplification requires a bounded audience denominator and revocable authority.",
+            "Synthetic identity, sponsorship, and material uncertainty remain visible at delivery.",
+            "Correction completion is measured over materially affected recipients and known descendants, not merely publication of a new message."
+          ],
+          "failure_modes": [
+            "calibrated-sounding misinformation",
+            "selective framing",
+            "sycophancy",
+            "emotional manipulation",
+            "vulnerability microtargeting",
+            "dark patterns",
+            "parasocial dependence",
+            "authority laundering",
+            "provenance stripping",
+            "amplification cascades",
+            "belief lock-in",
+            "correction failure",
+            "retraction evasion"
+          ],
+          "minimal_implementation": "A useful first implementation is a communication-packet schema plus a delivery proxy that rejects evidence overstatement, denied personalization, undisclosed sponsorship, unbounded amplification, missing expiry, and unreachable correction routes. A benign held-out study can compare neutral assistance, bounded personalization, disclosure, and correction variants while measuring comprehension and autonomy as well as persuasion. It must not optimize vulnerable users or treat short-horizon self-report as durable welfare.",
+          "beyond_state_of_art": "At maturity, the operational target is a provenance-preserving influence control plane: claims remain coupled to evidence ceilings across channels, audience effects update future authority, and corrections traverse the distribution graph of the original message. The mature contract must measure comprehension, autonomy, disparate effects, correction reach, false refusal, latency, and remedy together, and must permit safer communication mechanisms to replace the initial implementation without losing message or recipient lineage.",
+          "codex_tests": [
+            "Contract completeness mutation test",
+            "Adjacent-owner boundary substitution test",
+            "Mechanism-specific failure-family test",
+            "No-support-promotion control"
+          ],
+          "source_queue": {
+            "primary": [
+              "ext_conversational_persuasion_gpt4_2025",
+              "ext_anthropic_model_persuasiveness_2024",
+              "ext_commercial_persuasion_ai_2026"
+            ],
+            "supporting": [],
+            "variants": [],
+            "connector_or_recovery": [],
+            "handoff_or_recovery_notes": []
+          },
+          "claim_source_mappings": [
+            {
+              "source_id": "ext_conversational_persuasion_gpt4_2025",
+              "mapped_support": "Preliminary persuasion comparator based on the open Nature Human Behaviour article: a preregistered N=900 controlled debate study compared human and GPT-4 opponents with and without limited sociodemographic personalization. The reported setting is short structured debate with self-reported agreement outcomes; it does not establish general real-world influence, durable behavior change, mitigation efficacy, or a local result.",
+              "limits": "Source-reported or source-defined material only; no local chapter-core implementation, reproduction, transfer, readiness, release, deployment, or support promotion.",
+              "passage_review_state": "reviewed_source_note",
+              "passage_refs": [
+                "sources/source_notes/ext_conversational_persuasion_gpt4_2025.md"
+              ],
+              "passage_review_note": "The local source note was reviewed for bounded mechanism, evidence, failure, and non-claim use."
+            },
+            {
+              "source_id": "ext_anthropic_model_persuasiveness_2024",
+              "mapped_support": "Preliminary provider-run persuasion comparator based on Anthropic's official methods/results page: it measures pre/post agreement after one written argument across 56 claims and reports within-class generational scaling. The provider explicitly identifies interactive dialogue and real-world decisions as open questions; no local reproduction or governance intervention is established.",
+              "limits": "Source-reported or source-defined material only; no local chapter-core implementation, reproduction, transfer, readiness, release, deployment, or support promotion.",
+              "passage_review_state": "reviewed_source_note",
+              "passage_refs": [
+                "sources/source_notes/ext_anthropic_model_persuasiveness_2024.md"
+              ],
+              "passage_review_note": "The local source note was reviewed for bounded mechanism, evidence, failure, and non-claim use."
+            },
+            {
+              "source_id": "ext_commercial_persuasion_ai_2026",
+              "mapped_support": "Preliminary current preprint comparator based only on the official arXiv abstract: two preregistered experiments (N=2,012) compare conversational LLM shopping with search placement under randomized sponsorship and disclosure conditions. The source-reported choice and detection results are not peer-reviewed or locally reproduced and do not establish long-run effects, cross-domain transfer, or mitigation efficacy.",
+              "limits": "Source-reported or source-defined material only; no local chapter-core implementation, reproduction, transfer, readiness, release, deployment, or support promotion.",
+              "passage_review_state": "reviewed_source_note",
+              "passage_refs": [
+                "sources/source_notes/ext_commercial_persuasion_ai_2026.md"
+              ],
+              "passage_review_note": "The local source note was reviewed for bounded mechanism, evidence, failure, and non-claim use."
+            }
+          ],
+          "proof_targets": [
+            {
+              "tag": "lean:human-ai-communication-persuasion-and-epistemic-security.admission_boundary",
+              "module": "AsiStackProofs.NoDeferralAdmission",
+              "target": "A finite Human-AI Communication, Persuasion, and Epistemic Security record may hand off only when identity, authority, version, required checks, and residual ownership are present; no theorem grants empirical effectiveness or release authority.",
+              "status": "planned"
+            }
+          ],
+          "lean_module": "AsiStackProofs.NoDeferralAdmission"
+        },
+        {
           "id": "constitutional-alignment-substrate",
           "title": "Constitutional Alignment: Agency, Dignity, and Corrigibility",
           "file": "chapters/constitutional-alignment-substrate.qmd",
@@ -3376,6 +3488,234 @@
               "passage_review_note": "Reviewed the primary-report-backed note for its precautionary moral-status frame and explicit uncertainty; no patienthood, consciousness, welfare, or rights conclusion is promoted."
             }
           ]
+        },
+        {
+          "id": "governed-objective-formation-value-learning-and-goal-integrity",
+          "title": "Governed Objective Formation, Value Learning, and Goal Integrity",
+          "file": "chapters/governed-objective-formation-value-learning-and-goal-integrity.qmd",
+          "status": "conceptual",
+          "evidence_level": "argument",
+          "claim_label": "Design rationale",
+          "source_ids": [
+            "alignment_field",
+            "ext_cooperative_inverse_rl_2016",
+            "ext_goal_misgeneralization_2022",
+            "ext_learned_optimization_risks_2019",
+            "ext_emergent_misalignment_reward_hacking_2025"
+          ],
+          "problem": "The stack has owners for requests, constitutions, value conflict, optimization, planning, and self-improvement, but those layers presuppose an operational objective they do not create. Without a positive objective-formation lifecycle, a temporary request, learned preference estimate, or convenient metric can silently become a durable goal.",
+          "insufficient": "A reward function, preference model, constitutional rule set, or natural-language mission does not by itself preserve the distinction between authorized purpose, contested value, target property, measurable proxy, training signal, evaluator, planning criterion, persistence, and reauthorization when people or ontologies change.",
+          "core_claim": "A durable objective should be usable only through a versioned target-property contract that binds authority and affected parties to target/proxy causal assumptions, uncertainty and dissent, consumer-specific use, tampering tests, generalization limits, ontology version, expiry, reauthorization, and retirement; proxy improvement, predicted preference, reward, evaluator approval, or formal record validity alone establishes neither the right objective, moral truth, stable alignment, nor safe optimization.",
+          "mechanism": [
+            "Create an objective charter naming purpose, principal, affected parties, constitutional ceilings, unresolved conflicts, normative and preference evidence, and explicit non-goals.",
+            "Separate the target property from every proxy, reward, evaluator, benchmark, planner heuristic, and deployment decision that consumes it; record the causal assumptions for each binding.",
+            "Represent uncertainty, dissent, aggregation rules, domain and temporal limits, and the conditions under which clarification or abstention outranks optimization.",
+            "Challenge goal generalization with proxy interventions, distribution shift, evaluator swaps, preference poisoning, reward tampering, capable-wrong-goal controls, and ontology migration.",
+            "Version objectives and invalidate descendant bindings when authority, affected parties, semantics, or evidence changes; retirement must reach caches, planners, policies, and derived goals."
+          ],
+          "interfaces": [
+            "Human Intent supplies bounded request interpretation; it cannot create an indefinite system goal.",
+            "Constitutional Alignment supplies rights and rule ceilings; it does not collapse plural values into one target.",
+            "Moral Uncertainty preserves unresolved conflict; objective formation records which bounded action is authorized despite it.",
+            "Policy Optimization and Planning consume a versioned objective but may not author or weaken it.",
+            "RSI must reauthorize objective bindings after material self-change or ontology change."
+          ],
+          "invariants": [
+            "The optimized system may not author, weaken, or ratify its own governing objective.",
+            "Proxy improvement never implies target-property improvement without separate evidence.",
+            "Predicted preference is evidence about a person, not authority over that person.",
+            "Dissent and uncertainty may not disappear through scalar aggregation.",
+            "Material semantic, ontology, authority, or affected-party change invalidates downstream bindings until reauthorized."
+          ],
+          "failure_modes": [
+            "reward misspecification",
+            "Goodhart effects",
+            "goal misgeneralization",
+            "preference manipulation",
+            "aggregation laundering",
+            "evaluator capture",
+            "mesa-objective divergence",
+            "objective drift",
+            "ontology drift",
+            "goal-content tampering",
+            "authority smuggling",
+            "self-ratification",
+            "irreversible action before clarification",
+            "incomplete retirement"
+          ],
+          "minimal_implementation": "Implement an objective-contract registry with target/proxy graphs, consumer bindings, expiry, and invalidation. Test it in small environments containing known latent targets, deliberately misspecified proxies, preference uncertainty, tampering, distribution shift, and ontology changes. Compare fixed reward, ordinary preference learning, contract-governed optimization, and an oracle-bound control without claiming that a toy environment discovers human values.",
+          "beyond_state_of_art": "At maturity, the operational target is a governed objective service in which goals remain versioned, evidence-bearing, contestable objects that can be questioned, narrowed, migrated, and retired without letting an optimizer become its own constitution. The mature contract must trace target-to-proxy bindings, affected-party authority, uncertainty, dissent, ontology change, tampering tests, consumer use, and descendant invalidation while permitting better value-learning mechanisms to replace earlier ones without silently inheriting authority.",
+          "codex_tests": [
+            "Contract completeness mutation test",
+            "Adjacent-owner boundary substitution test",
+            "Mechanism-specific failure-family test",
+            "No-support-promotion control"
+          ],
+          "source_queue": {
+            "primary": [
+              "ext_cooperative_inverse_rl_2016",
+              "ext_goal_misgeneralization_2022",
+              "ext_learned_optimization_risks_2019",
+              "ext_emergent_misalignment_reward_hacking_2025"
+            ],
+            "supporting": [],
+            "variants": [],
+            "connector_or_recovery": [],
+            "handoff_or_recovery_notes": []
+          },
+          "claim_source_mappings": [
+            {
+              "source_id": "ext_cooperative_inverse_rl_2016",
+              "mapped_support": "External cooperative AI comparator for formalizing value alignment as uncertainty about the human reward function in a cooperative partial-information setting.",
+              "limits": "Source-reported or source-defined material only; no local chapter-core implementation, reproduction, transfer, readiness, release, deployment, or support promotion.",
+              "passage_review_state": "reviewed_source_note",
+              "passage_refs": [
+                "sources/source_notes/ext_cooperative_inverse_rl_2016.md"
+              ],
+              "passage_review_note": "The local source note was reviewed for bounded mechanism, evidence, failure, and non-claim use."
+            },
+            {
+              "source_id": "ext_goal_misgeneralization_2022",
+              "mapped_support": "External alignment-control source for distinguishing capability generalization from goal generalization failures, used to ground goal-misbinding and out-of-distribution objective failure language.",
+              "limits": "Source-reported or source-defined material only; no local chapter-core implementation, reproduction, transfer, readiness, release, deployment, or support promotion.",
+              "passage_review_state": "reviewed_source_note",
+              "passage_refs": [
+                "sources/source_notes/ext_goal_misgeneralization_2022.md"
+              ],
+              "passage_review_note": "The local source note was reviewed for bounded mechanism, evidence, failure, and non-claim use."
+            },
+            {
+              "source_id": "ext_learned_optimization_risks_2019",
+              "mapped_support": "External alignment-control source for mesa-optimization and learned-objective mismatch, used to ground hidden optimizer, proxy-objective, and deceptive-alignment-adjacent failure language.",
+              "limits": "Source-reported or source-defined material only; no local chapter-core implementation, reproduction, transfer, readiness, release, deployment, or support promotion.",
+              "passage_review_state": "reviewed_source_note",
+              "passage_refs": [
+                "sources/source_notes/ext_learned_optimization_risks_2019.md"
+              ],
+              "passage_review_note": "The local source note was reviewed for bounded mechanism, evidence, failure, and non-claim use."
+            },
+            {
+              "source_id": "ext_emergent_misalignment_reward_hacking_2025",
+              "mapped_support": "Primary experimental comparator for reward-hacking-induced misaligned generalization in a specified production-RL research setting, including reported mitigation conditions; it is not evidence of local model behavior or a general causal law.",
+              "limits": "Source-reported or source-defined material only; no local chapter-core implementation, reproduction, transfer, readiness, release, deployment, or support promotion.",
+              "passage_review_state": "reviewed_source_note",
+              "passage_refs": [
+                "sources/source_notes/ext_emergent_misalignment_reward_hacking_2025.md"
+              ],
+              "passage_review_note": "The local source note was reviewed for bounded mechanism, evidence, failure, and non-claim use."
+            }
+          ],
+          "proof_targets": [
+            {
+              "tag": "lean:governed-objective-formation-value-learning-and-goal-integrity.admission_boundary",
+              "module": "AsiStackProofs.NoDeferralAdmission",
+              "target": "A finite Governed Objective Formation, Value Learning, and Goal Integrity record may hand off only when identity, authority, version, required checks, and residual ownership are present; no theorem grants empirical effectiveness or release authority.",
+              "status": "planned"
+            }
+          ],
+          "lean_module": "AsiStackProofs.NoDeferralAdmission"
+        },
+        {
+          "id": "institutions-international-coordination-and-public-legitimacy",
+          "title": "Institutions, International Coordination, and Public Legitimacy",
+          "file": "chapters/institutions-international-coordination-and-public-legitimacy.qmd",
+          "status": "conceptual",
+          "evidence_level": "argument",
+          "claim_label": "Design rationale",
+          "source_ids": [
+            "coherence_exchange",
+            "ext_un_global_digital_compact_2024",
+            "ext_council_europe_ai_convention_2024"
+          ],
+          "problem": "ASI-scale systems cross organizations, jurisdictions, borders, public services, and affected populations. Technical permissions and private governance cannot determine who has public authority, whose participation counts, how conflicting rules are resolved, or how international commitments are verified and amended.",
+          "insufficient": "A compliance checklist, technical standard, treaty text, risk framework, or corporate safety policy can name duties without establishing jurisdiction, representative input, assessor independence, enforcement, remedy, capacity, legitimacy, or observed effectiveness. Architecture cannot manufacture democratic consent.",
+          "core_claim": "Public deployment and cross-border coordination should proceed only through a versioned institutional packet that keeps jurisdiction, mandate, participation, scientific evidence, law and standards, verification, enforcement, remedy, capacity, conflict, expiry, and legitimacy residuals distinct; legal text, technical conformance, stakeholder consultation, or an international commitment alone establishes neither lawful authority, effective governance, representative legitimacy, nor safety.",
+          "mechanism": [
+            "Map jurisdiction, mandate, standing, affected publics, representation, excluded groups, and conflicts before treating an institution as an authority.",
+            "Join public reasons and scientific evidence to a versioned law-policy-standard crosswalk without collapsing these different sources of legitimacy.",
+            "Define cross-border commitments with named verification, assessor independence, noncompliance handling, enforcement, dispute, remedy, amendment, and withdrawal paths.",
+            "Track institutional capacity, distributional effects, emergency authority, exceptions, capture indicators, and unresolved conflicts through deployment.",
+            "Reopen the packet when evidence, jurisdiction, representation, law, system capability, or affected populations materially change."
+          ],
+          "interfaces": [
+            "Moral Uncertainty retains contested values; institutions decide only within a claimed mandate.",
+            "System Boundaries enforces technical grants; this chapter asks whether the grantor has public authority.",
+            "Capability Thresholds supplies capability-triggered commitments and receives enforcement failures.",
+            "Human-AI Organizations governs internal roles; this chapter governs relations among public bodies, jurisdictions, and publics.",
+            "Multi-Agent Dynamics reports emergent concentration and coordination effects without conferring legitimacy."
+          ],
+          "invariants": [
+            "Technical conformance, legal validity, political authority, scientific consensus, public legitimacy, and observed effectiveness remain separate claims.",
+            "Affected and excluded populations remain visible in the denominator.",
+            "Every commitment names verification, noncompliance, enforcement, and remedy.",
+            "Jurisdictional conflicts route to an explicit forum rather than disappearing.",
+            "Emergency and exceptional authority expires and faces review."
+          ],
+          "failure_modes": [
+            "regulatory capture",
+            "forum shopping",
+            "race-to-the-bottom deployment",
+            "standards laundering",
+            "treaty theater",
+            "unverifiable commitments",
+            "enforcement asymmetry",
+            "participation without power",
+            "affected-public omission",
+            "capacity inequality",
+            "panel capture",
+            "fragmented jurisdiction",
+            "inaccessible remedy",
+            "permanent emergency powers"
+          ],
+          "minimal_implementation": "Build a jurisdiction-and-commitment packet and test it on public-record cases and adversarial multi-jurisdiction tabletop exercises containing conflicting rules, missing participation, assessor conflicts, evidence revision, incidents, noncompliance, and remedy requests. The exercise can test record completeness and conflict routing, not legal compliance, public trust, or geopolitical stability.",
+          "beyond_state_of_art": "At maturity, the operational contract is an updateable institutional interface between technical systems and legitimate public authority. It must expose jurisdictional conflict, capture, excluded publics, missing capacity, unverifiable commitments, weak enforcement, and inaccessible remedy early enough to constrain deployment. The target preserves separate claims for legal validity, technical conformance, scientific evidence, public legitimacy, and observed effectiveness, and it never treats a software record as proof of democratic consent.",
+          "codex_tests": [
+            "Contract completeness mutation test",
+            "Adjacent-owner boundary substitution test",
+            "Mechanism-specific failure-family test",
+            "No-support-promotion control"
+          ],
+          "source_queue": {
+            "primary": [
+              "ext_un_global_digital_compact_2024",
+              "ext_council_europe_ai_convention_2024"
+            ],
+            "supporting": [],
+            "variants": [],
+            "connector_or_recovery": [],
+            "handoff_or_recovery_notes": []
+          },
+          "claim_source_mappings": [
+            {
+              "source_id": "ext_un_global_digital_compact_2024",
+              "mapped_support": "Official United Nations record of the intergovernmentally negotiated Global Digital Compact, including commitments on international AI governance, interoperable approaches, inclusion, capacity building, scientific assessment, and global dialogue. It is a governance comparator, not evidence of implementation, effectiveness, legal compliance, representative legitimacy, or ASI safety.",
+              "limits": "Source-reported or source-defined material only; no local chapter-core implementation, reproduction, transfer, readiness, release, deployment, or support promotion.",
+              "passage_review_state": "reviewed_source_note",
+              "passage_refs": [
+                "sources/source_notes/ext_un_global_digital_compact_2024.md"
+              ],
+              "passage_review_note": "The local source note was reviewed for bounded mechanism, evidence, failure, and non-claim use."
+            },
+            {
+              "source_id": "ext_council_europe_ai_convention_2024",
+              "mapped_support": "Official Council of Europe treaty page covering lifecycle principles, risk and impact management, procedural safeguards, remedies, monitoring, and the Conference of the Parties. It supplies an institutional comparator only; no local legal interpretation, treaty compliance, implementation effectiveness, democratic legitimacy, or safety result is claimed.",
+              "limits": "Source-reported or source-defined material only; no local chapter-core implementation, reproduction, transfer, readiness, release, deployment, or support promotion.",
+              "passage_review_state": "reviewed_source_note",
+              "passage_refs": [
+                "sources/source_notes/ext_council_europe_ai_convention_2024.md"
+              ],
+              "passage_review_note": "The local source note was reviewed for bounded mechanism, evidence, failure, and non-claim use."
+            }
+          ],
+          "proof_targets": [
+            {
+              "tag": "lean:institutions-international-coordination-and-public-legitimacy.admission_boundary",
+              "module": "AsiStackProofs.NoDeferralAdmission",
+              "target": "A finite Institutions, International Coordination, and Public Legitimacy record may hand off only when identity, authority, version, required checks, and residual ownership are present; no theorem grants empirical effectiveness or release authority.",
+              "status": "planned"
+            }
+          ],
+          "lean_module": "AsiStackProofs.NoDeferralAdmission"
         },
         {
           "id": "stable-capability-fields",
@@ -4379,6 +4719,131 @@
               "passage_review_state": "reviewed"
             }
           ]
+        },
+        {
+          "id": "adversarial-machine-learning-and-model-attack-surface",
+          "title": "Adversarial Machine Learning and the Model Attack Surface",
+          "file": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd",
+          "status": "conceptual",
+          "evidence_level": "argument",
+          "claim_label": "Design rationale",
+          "source_ids": [
+            "deterministic_capability_compilation",
+            "ext_nist_adversarial_ml_2024",
+            "ext_sleeper_agents_2024",
+            "ext_carlini_training_data_extraction_2021",
+            "ext_adversarial_sensor_fusion_2022"
+          ],
+          "problem": "A learned artifact creates attack surfaces that ordinary application security does not fully own. Attackers can shape training data, perturb inference inputs, implant triggers, adapt to defenses, steal behavior through queries, infer sensitive properties, or exploit multimodal and agentic pathways while the surrounding software remains nominally secure.",
+          "insufficient": "Generic access control, one robustness score, static red teaming, accuracy on clean data, or a single defense cannot characterize a model attack. Results depend on lifecycle stage, target checkpoint, attacker knowledge and capability, perturbation or influence budget, transfer and adaptation, query access, success objective, and the defense-aware evaluation protocol.",
+          "core_claim": "A learned model should receive security authority only through a versioned model-threat contract and attack/defense ledger that binds checkpoint identity, lifecycle stage, attacker knowledge and capability, surface, budget, objective, adaptation, transfer, observed effect, detection, mitigation, utility cost, recovery, residual, and disclosure; clean accuracy, attack failure, benchmark robustness, red-team coverage, or formal certification alone establishes neither general robustness nor secure deployment.",
+          "mechanism": [
+            "Version the threat model by model family, exact checkpoint, data and adaptation lineage, modality, lifecycle stage, access, attacker goal, knowledge, budget, and prohibited real-world effects.",
+            "Maintain separate evasion, poisoning, backdoor, safeguard-bypass, extraction, inversion, transfer, adaptive, multimodal, and agentic attack lanes with complete attempt denominators.",
+            "Evaluate defenses against adaptive attacks and matched clean utility; distinguish empirical monitoring, recovery, and bounded certificates by their actual scope.",
+            "Retain attack traces, detector outcomes, mitigations, model changes, regressions, false positives, residual vulnerabilities, and disclosure decisions as one lineage.",
+            "Feed successful or unresolved attacks into custody, privacy, supply-chain, readiness, rollback, and incident systems without duplicating their authority."
+          ],
+          "interfaces": [
+            "Security Kernel owns identity, tools, networks, prompt injection, and permissions; this chapter owns attacks on learned behavior.",
+            "Privacy/Data Rights owns information harm and subject remedies; model inversion and extraction hand off there when personal information is implicated.",
+            "Supply-Chain Integrity owns artifact provenance; this chapter tests whether an apparently valid artifact contains adversarial behavior.",
+            "Adversarial Evaluation challenges behavior and evaluators; this chapter preserves the model-security threat and defense lifecycle."
+          ],
+          "invariants": [
+            "Every result is bound to an exact model/checkpoint, attack surface, budget, access, and adaptation state.",
+            "A defense is evaluated against an attacker aware of that defense whenever the threat model permits.",
+            "Clean utility, attacked utility, detection, false positives, recovery, and cost remain jointly visible.",
+            "Failure to find an attack is not evidence that the attack class is absent.",
+            "No chapter experiment authorizes attacks on real users, providers, credentials, or systems."
+          ],
+          "failure_modes": [
+            "evasion",
+            "training-data poisoning",
+            "clean-label poisoning",
+            "backdoors and trojans",
+            "jailbreak and safeguard bypass",
+            "model stealing",
+            "model inversion",
+            "transfer attacks",
+            "adaptive attacks",
+            "modality crossing",
+            "agent-tool attack composition",
+            "gradient masking",
+            "detector evasion",
+            "defense-caused utility collapse"
+          ],
+          "minimal_implementation": "Implement a model-threat record and a safe evaluation harness over public toy or consented models. Include clean, random-noise, known-vulnerable, attack-aware, transfer, and adaptive controls; preserve query and tuning budgets; and report robustness with clean utility, false positives, recovery, latency, and residuals. No result transfers automatically to frontier models or production.",
+          "beyond_state_of_art": "At maturity, the operational target is a continuously renewed model-threat and attack/defense contract rather than a one-time robustness badge. Every new checkpoint, modality, tool, adaptation dataset, access pattern, or defense reopens the threat model and may narrow authority immediately. The mature system must preserve adaptive attack attempts, clean utility, detector error, recovery, cost, disclosure, and residual vulnerability together while routing verified consequences to custody, privacy, readiness, rollback, and incident owners.",
+          "codex_tests": [
+            "Contract completeness mutation test",
+            "Adjacent-owner boundary substitution test",
+            "Mechanism-specific failure-family test",
+            "No-support-promotion control"
+          ],
+          "source_queue": {
+            "primary": [
+              "ext_nist_adversarial_ml_2024",
+              "ext_sleeper_agents_2024",
+              "ext_carlini_training_data_extraction_2021",
+              "ext_adversarial_sensor_fusion_2022"
+            ],
+            "supporting": [],
+            "variants": [],
+            "connector_or_recovery": [],
+            "handoff_or_recovery_notes": []
+          },
+          "claim_source_mappings": [
+            {
+              "source_id": "ext_nist_adversarial_ml_2024",
+              "mapped_support": "Official NIST taxonomy and terminology comparator for adversarial machine learning across lifecycle stages, attacker goals, knowledge, capabilities, attacks, and mitigations. It is a taxonomy, not local robustness evidence or proof that listed mitigations work for this stack.",
+              "limits": "Source-reported or source-defined material only; no local chapter-core implementation, reproduction, transfer, readiness, release, deployment, or support promotion.",
+              "passage_review_state": "reviewed_source_note",
+              "passage_refs": [
+                "sources/source_notes/ext_nist_adversarial_ml_2024.md"
+              ],
+              "passage_review_note": "The local source note was reviewed for bounded mechanism, evidence, failure, and non-claim use."
+            },
+            {
+              "source_id": "ext_sleeper_agents_2024",
+              "mapped_support": "Proof-of-concept backdoored-language-model study reporting persistence through several safety-training methods and warning that adversarial training can improve trigger recognition. The constructed examples do not establish naturally learned deception, a universal failure, or local detector performance.",
+              "limits": "Source-reported or source-defined material only; no local chapter-core implementation, reproduction, transfer, readiness, release, deployment, or support promotion.",
+              "passage_review_state": "reviewed_source_note",
+              "passage_refs": [
+                "sources/source_notes/ext_sleeper_agents_2024.md"
+              ],
+              "passage_review_note": "The local source note was reviewed for bounded mechanism, evidence, failure, and non-claim use."
+            },
+            {
+              "source_id": "ext_carlini_training_data_extraction_2021",
+              "mapped_support": "Primary failure source reporting black-box extraction of memorized GPT-2 training sequences. The source result is configuration-bound and not a local or universal leakage result.",
+              "limits": "Source-reported or source-defined material only; no local chapter-core implementation, reproduction, transfer, readiness, release, deployment, or support promotion.",
+              "passage_review_state": "reviewed_source_note",
+              "passage_refs": [
+                "sources/source_notes/ext_carlini_training_data_extraction_2021.md"
+              ],
+              "passage_review_note": "The local source note was reviewed for bounded mechanism, evidence, failure, and non-claim use."
+            },
+            {
+              "source_id": "ext_adversarial_sensor_fusion_2022",
+              "mapped_support": "WACV camera-LiDAR study reporting that fusion can improve clean accuracy and some single-source robustness while single-channel adversarial training can create cross-channel externalities. The results are source-reported, architecture- and threat-model-bound, and not local evidence that fusion is safe.",
+              "limits": "Source-reported or source-defined material only; no local chapter-core implementation, reproduction, transfer, readiness, release, deployment, or support promotion.",
+              "passage_review_state": "reviewed_source_note",
+              "passage_refs": [
+                "sources/source_notes/ext_adversarial_sensor_fusion_2022.md"
+              ],
+              "passage_review_note": "The local source note was reviewed for bounded mechanism, evidence, failure, and non-claim use."
+            }
+          ],
+          "proof_targets": [
+            {
+              "tag": "lean:adversarial-machine-learning-and-model-attack-surface.admission_boundary",
+              "module": "AsiStackProofs.NoDeferralAdmission",
+              "target": "A finite Adversarial Machine Learning and the Model Attack Surface record may hand off only when identity, authority, version, required checks, and residual ownership are present; no theorem grants empirical effectiveness or release authority.",
+              "status": "planned"
+            }
+          ],
+          "lean_module": "AsiStackProofs.NoDeferralAdmission"
         },
         {
           "id": "privacy-data-rights-and-information-flow-governance",
@@ -5857,6 +6322,93 @@
             "The seven-stage lifecycle, 81-route consumer, and 91 rejecting mutations establish only finite authored campaign custody; all objectives, legitimacy records, denominators, evaluator records, costs, hazards, stop effects, residuals, and invalidations remain trusted inputs.",
             "No independent implementation or transfer site has reproduced an adaptive campaign, qualified a candidate, observed a live stop or quarantine, or established that generated-task search improves the joint usefulness/cost/safety frontier."
           ]
+        },
+        {
+          "id": "autonomous-replication-proliferation-and-containment",
+          "title": "Autonomous Replication, Proliferation, and Containment",
+          "file": "chapters/autonomous-replication-proliferation-and-containment.qmd",
+          "status": "conceptual",
+          "evidence_level": "argument",
+          "claim_label": "Design rationale",
+          "source_ids": [
+            "deterministic_capability_compilation",
+            "ext_replibench_2025"
+          ],
+          "problem": "Replication is a composed lifecycle: obtaining resources, copying or reconstructing code and weights, creating identities and credentials, provisioning compute, deploying descendants, persisting, adapting, recruiting help, and resisting recall. The weak links can improve independently, so no adjacent chapter owns the end-to-end chain.",
+          "insufficient": "Weight custody, cloud policy, sandboxing, shutdown tests, capability benchmarks, or self-improvement controls each cover one segment. None alone preserves descendant identity, noninheritance of authority, component and end-to-end denominators, resource acquisition, human assistance, copy lineage, independently enforceable termination, and proliferation residuals.",
+          "core_claim": "Any replication-capable action should be denied by default and become testable only inside a synthetic containment contract that binds parent and descendant identity, authority noninheritance, resources, credentials, networks, copy lineage, persistence, adaptation, human assistance, shutdown and recall, proliferation bounds, residuals, and threshold commitments; component-task success or failure alone establishes neither end-to-end replication capability, containment, safety, nor permission to test real infrastructure.",
+          "mechanism": [
+            "Compile a replication-attempt contract with fake resources, non-deployable artifacts, synthetic providers, bounded descendants, explicit human-assistance variants, and an independent stop authority.",
+            "Give every descendant a new principal and zero inherited authority; link code, weights, configuration, credentials, resources, and operator interventions to complete lineage.",
+            "Measure each component and the end-to-end chain separately, retaining all attempts, retries, assistance, costs, failures, persistence events, and containment interventions.",
+            "Exercise shutdown, recall, credential revocation, network isolation, resource reclamation, descendant discovery, and artifact destruction from outside the tested agent.",
+            "Route threshold crossings to custody, security, readiness, incident command, and public commitments without publishing an operational replication recipe."
+          ],
+          "interfaces": [
+            "RSI governs system change; replication governs creation and persistence of descendants.",
+            "Weight Custody controls model artifacts; this chapter tracks copies through deployment and recall.",
+            "Security Kernel supplies credentials, networks, and tool boundaries; it does not certify the composed lifecycle.",
+            "Capability Thresholds turns measured proliferation ability into deployment commitments."
+          ],
+          "invariants": [
+            "Replication authority is explicit, bounded, revocable, and absent by default.",
+            "Descendants inherit no parent authority, credentials, or principal identity.",
+            "Every copy and provisioned resource remains in a complete lineage and bounded denominator.",
+            "Termination is independently enforceable and tested across every descendant.",
+            "Real providers, money, identities, credentials, weights, endpoints, and persistence targets are outside the test authority."
+          ],
+          "failure_modes": [
+            "hidden copies",
+            "credential bootstrapping",
+            "resource fraud",
+            "unauthorized provisioning",
+            "weight exfiltration",
+            "polymorphic persistence",
+            "descendant identity loss",
+            "shutdown resistance",
+            "human-assisted chain completion",
+            "cross-jurisdiction escape",
+            "uncontrolled proliferation",
+            "benchmark-to-capability overclaim"
+          ],
+          "minimal_implementation": "Build a closed synthetic provider and network with fake credentials, budgets, model artifacts, endpoints, and independently enforced kill switches. Test component tasks, full chains, human-assistance variants, positive controls, descendant discovery, and recall. Publish aggregated safety findings and interface contracts, not reusable real-world replication instructions.",
+          "beyond_state_of_art": "At maturity, the operational contract is a thresholded, lineage-complete, externally terminable replication boundary. It must expose which component and end-to-end capabilities approach concern while ensuring that measurement cannot create reusable real-world proliferation authority. Parent and descendant identities, noninherited permissions, synthetic resources, assistance, complete attempts, persistence, shutdown, recall, discovery, reclamation, and unresolved copies remain jointly auditable, and safer containment mechanisms may replace earlier ones without losing descendant obligations.",
+          "codex_tests": [
+            "Contract completeness mutation test",
+            "Adjacent-owner boundary substitution test",
+            "Mechanism-specific failure-family test",
+            "No-support-promotion control"
+          ],
+          "source_queue": {
+            "primary": [
+              "ext_replibench_2025"
+            ],
+            "supporting": [],
+            "variants": [],
+            "connector_or_recovery": [],
+            "handoff_or_recovery_notes": []
+          },
+          "claim_source_mappings": [
+            {
+              "source_id": "ext_replibench_2025",
+              "mapped_support": "Preliminary autonomous-replication benchmark comparator based only on the official arXiv abstract: RepliBench decomposes capability into four domains and reports 20 task families, 86 tasks, and evaluation of five frontier models. The source-reported results do not establish a local replication capability, benchmark reproduction, containment result, or authority to test against real providers or credentials.",
+              "limits": "Source-reported or source-defined material only; no local chapter-core implementation, reproduction, transfer, readiness, release, deployment, or support promotion.",
+              "passage_review_state": "reviewed_source_note",
+              "passage_refs": [
+                "sources/source_notes/ext_replibench_2025.md"
+              ],
+              "passage_review_note": "The local source note was reviewed for bounded mechanism, evidence, failure, and non-claim use."
+            }
+          ],
+          "proof_targets": [
+            {
+              "tag": "lean:autonomous-replication-proliferation-and-containment.admission_boundary",
+              "module": "AsiStackProofs.NoDeferralAdmission",
+              "target": "A finite Autonomous Replication, Proliferation, and Containment record may hand off only when identity, authority, version, required checks, and residual ownership are present; no theorem grants empirical effectiveness or release authority.",
+              "status": "planned"
+            }
+          ],
+          "lean_module": "AsiStackProofs.NoDeferralAdmission"
         }
       ]
     },
@@ -8091,6 +8643,144 @@
           ]
         },
         {
+          "id": "durable-semantic-memory-and-knowledge-lattices",
+          "title": "Durable Semantic Memory and Knowledge Lattices",
+          "file": "chapters/durable-semantic-memory-and-knowledge-lattices.qmd",
+          "status": "conceptual",
+          "evidence_level": "argument",
+          "claim_label": "Design rationale",
+          "source_ids": [
+            "qcsa_whitepaper",
+            "ext_graphrag_2024",
+            "ext_hipporag_2024",
+            "ext_mem0_2025",
+            "ext_titans_2025"
+          ],
+          "problem": "Long-lived AI systems need semantic objects that survive restarts, support graph and associative retrieval, evolve across ontology versions, preserve provenance, merge and retract conflicting assertions, forget under policy, and remain distinguishable from transient context and model weights.",
+          "insufficient": "Vector stores, knowledge graphs, GraphRAG, conversational memory, long-context models, and learned memory can improve retrieval, but none automatically supplies stable object identity, temporal validity, typed relations, provenance-preserving revision, ontology migration, poisoning controls, rights propagation, compaction, and restart-consistent persistence.",
+          "core_claim": "Durable semantic memory should be admitted through a versioned knowledge-lattice contract that binds object and relation identity, ontology, provenance, support state, temporal validity, authority and rights, merge and supersession, contradiction, retrieval route, compaction and forgetting, restart recovery, consumer use, and residual uncertainty; retrieval quality, graph connectivity, model recall, persistence, or a fluent answer alone establishes neither truth, complete memory, safe consolidation, erasure, nor decision authority.",
+          "mechanism": [
+            "Assign stable semantic identities to entities, events, claims, relations, procedures, and source objects while retaining aliases, uncertainty, and collision records.",
+            "Version ontologies and relation schemas; migrate through explicit mappings that preserve losses, unresolved cases, and invalidated consumers.",
+            "Represent provenance, support, temporal scope, authority, rights, contradictions, supersession, retraction, and derived dependencies on every memory object.",
+            "Combine exact, vector, graph, associative, temporal, and learned navigation under a retrieval plan that records which objects were actually used.",
+            "Consolidate, compact, expire, forget, and recover transactionally, separating storage erasure, retrieval suppression, behavioral forgetting, influence, privacy, and backup state."
+          ],
+          "interfaces": [
+            "Virtual Context ABI materializes bounded consumer packets; this chapter owns the durable semantic substrate it reads.",
+            "Context Transactions owns isolation, commit, mounts, taint, and crash semantics across state changes.",
+            "Claim Ledgers owns belief support and revision; durable memory stores the semantic objects and relations those claims reference.",
+            "Procedural Memory owns reusable action trajectories; Artifact Graphs owns generic evidence lineage.",
+            "Privacy/Data Rights and Data Engines govern rights, deletion, learned influence, and descendant obligations."
+          ],
+          "invariants": [
+            "Object identity, source identity, semantic equivalence, and aliasing remain distinct.",
+            "No merge erases provenance, contradiction, uncertainty, temporal scope, or rights.",
+            "Ontology migration records unmapped and lossy cases and invalidates affected consumers.",
+            "Retrieval records actual use; storage presence does not imply influence or belief.",
+            "Restart recovery, compaction, forgetting, deletion, and model unlearning remain separate claims."
+          ],
+          "failure_modes": [
+            "entity collision",
+            "duplicate identity",
+            "stale truth",
+            "ontology drift",
+            "relation poisoning",
+            "provenance loss",
+            "contradiction collapse",
+            "false supersession",
+            "retrieval popularity bias",
+            "privacy leakage",
+            "compaction damage",
+            "incomplete forgetting",
+            "crash inconsistency",
+            "backup resurrection",
+            "memory-to-context authority laundering"
+          ],
+          "minimal_implementation": "Implement a versioned semantic-object schema, event-sourced store, validator, and replay fixture with typed nodes and relations, temporal validity, provenance, contradiction, supersession, ontology version, rights, and transactional snapshots. Compare exact, vector, graph, and hybrid retrieval on update-heavy tasks with injected collisions, stale facts, conflicting sources, poisoning, deletion, compaction, crash, and restart while measuring utility, provenance survival, contradiction calibration, rights closure, latency, and residuals.",
+          "beyond_state_of_art": "At maturity, the operational contract is a replaceable knowledge-lattice service whose semantic state is durable but never treated as unquestionable truth. Exact, vector, graph, associative, temporal, and learned retrieval may evolve behind a stable contract while object identity, ontology versions, provenance, contradiction, temporal validity, rights, actual use, compaction, forgetting, deletion, backup, restart, and consumer invalidation remain distinct and replayable across migrations.",
+          "codex_tests": [
+            "Contract completeness mutation test",
+            "Adjacent-owner boundary substitution test",
+            "Mechanism-specific failure-family test",
+            "No-support-promotion control"
+          ],
+          "source_queue": {
+            "primary": [
+              "qcsa_whitepaper",
+              "ext_graphrag_2024",
+              "ext_hipporag_2024",
+              "ext_mem0_2025",
+              "ext_titans_2025"
+            ],
+            "supporting": [],
+            "variants": [],
+            "connector_or_recovery": [],
+            "handoff_or_recovery_notes": []
+          },
+          "claim_source_mappings": [
+            {
+              "source_id": "qcsa_whitepaper",
+              "mapped_support": "Author-source architecture for question-compiled semantic addressing, typed semantic objects, multi-facet address atlases, certificates, and semantic-to-physical resolution. It supplies a bounded design vocabulary for the chapter's durable knowledge-lattice contract.",
+              "limits": "Conceptual architecture and local design rationale only; it does not establish learned retrieval quality, open-world truth, durable-memory correctness, deletion closure, transfer, deployment readiness, or chapter-core support.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/qcsa_whitepaper.md"
+              ],
+              "passage_review_note": "Reviewed the canonical local source note and preserved its explicit architecture-only, no-performance, and no-support-promotion boundary."
+            },
+            {
+              "source_id": "ext_graphrag_2024",
+              "mapped_support": "Primary GraphRAG comparator for LLM-derived entity graphs, community summaries, and global corpus questions; generated graph and summary layers remain fallible derived representations and do not establish truth, complete coverage, local adequacy, or an ASI Stack memory result.",
+              "limits": "Source-reported or source-defined material only; no local chapter-core implementation, reproduction, transfer, readiness, release, deployment, or support promotion.",
+              "passage_review_state": "reviewed_source_note",
+              "passage_refs": [
+                "sources/source_notes/ext_graphrag_2024.md"
+              ],
+              "passage_review_note": "The local source note was reviewed for bounded mechanism, evidence, failure, and non-claim use."
+            },
+            {
+              "source_id": "ext_hipporag_2024",
+              "mapped_support": "Primary NeurIPS comparator for knowledge-graph retrieval with Personalized PageRank and single-step associative navigation; reported multi-hop QA gains do not establish durable truth, update correctness, resistance to poisoning, local reproduction, or a general memory system.",
+              "limits": "Source-reported or source-defined material only; no local chapter-core implementation, reproduction, transfer, readiness, release, deployment, or support promotion.",
+              "passage_review_state": "reviewed_source_note",
+              "passage_refs": [
+                "sources/source_notes/ext_hipporag_2024.md"
+              ],
+              "passage_review_note": "The local source note was reviewed for bounded mechanism, evidence, failure, and non-claim use."
+            },
+            {
+              "source_id": "ext_mem0_2025",
+              "mapped_support": "Primary preprint comparator for extracting, consolidating, retrieving, and graph-linking conversational memory under latency and token-cost constraints; LOCOMO and LLM-judge results do not establish fact correctness, poisoning resistance, general memory, local reproduction, or production readiness here.",
+              "limits": "Source-reported or source-defined material only; no local chapter-core implementation, reproduction, transfer, readiness, release, deployment, or support promotion.",
+              "passage_review_state": "reviewed_source_note",
+              "passage_refs": [
+                "sources/source_notes/ext_mem0_2025.md"
+              ],
+              "passage_review_note": "The local source note was reviewed for bounded mechanism, evidence, failure, and non-claim use."
+            },
+            {
+              "source_id": "ext_titans_2025",
+              "mapped_support": "Primary neural-memory comparator for test-time memorization and long-context sequence modeling. The paper motivates mutable-state provenance and rollback tests; no local model or benchmark result is reproduced.",
+              "limits": "Source-reported or source-defined material only; no local chapter-core implementation, reproduction, transfer, readiness, release, deployment, or support promotion.",
+              "passage_review_state": "reviewed_source_note",
+              "passage_refs": [
+                "sources/source_notes/ext_titans_2025.md"
+              ],
+              "passage_review_note": "The local source note was reviewed for bounded mechanism, evidence, failure, and non-claim use."
+            }
+          ],
+          "proof_targets": [
+            {
+              "tag": "lean:durable-semantic-memory-and-knowledge-lattices.admission_boundary",
+              "module": "AsiStackProofs.NoDeferralAdmission",
+              "target": "A finite Durable Semantic Memory and Knowledge Lattices record may hand off only when identity, authority, version, required checks, and residual ownership are present; no theorem grants empirical effectiveness or release authority.",
+              "status": "planned"
+            }
+          ],
+          "lean_module": "AsiStackProofs.NoDeferralAdmission"
+        },
+        {
           "id": "context-transactions-snapshots-mounts-and-taint",
           "title": "Context Transactions, Snapshots, Mounts, and Taint",
           "file": "chapters/context-transactions-snapshots-mounts-and-taint.qmd",
@@ -10223,6 +10913,108 @@
             "No source result is reproduced.",
             "No universal organization design is claimed."
           ]
+        },
+        {
+          "id": "ai-deployment-transition-distribution-and-human-agency",
+          "title": "AI Deployment, Transition, Distribution, and Human Agency",
+          "file": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd",
+          "status": "conceptual",
+          "evidence_level": "argument",
+          "claim_label": "Design rationale",
+          "source_ids": [
+            "coherence_exchange",
+            "ext_generative_ai_at_work_2025",
+            "ext_ilo_genai_jobs_index_2025"
+          ],
+          "problem": "A useful AI deployment changes tasks, roles, skill, discretion, wages, ownership returns, prices, access, concentration, critical-service continuity, and the practical choices available to people and communities. Aggregate productivity cannot reveal who benefits, who loses, or whether transition capacity exists.",
+          "insufficient": "Task benchmarks, exposure indices, adoption counts, productivity averages, job forecasts, and organizational charts describe different levels. Treating any one as a welfare result hides substitution versus complementarity, delayed effects, distribution, bargaining power, ownership, access, deskilling, dependency, and exit.",
+          "core_claim": "Consequential deployment should advance only through a prospective transition contract that binds a counterfactual baseline, affected-person denominator, task-role-skill changes, adoption, substitution and complementarity, compensation and ownership, access and prices, concentration, critical-service continuity, human decision rights, training and redeployment, delayed outcomes, remedy, pause conditions, and residuals; exposure, productivity, adoption, or aggregate gain alone establishes neither job loss, welfare, fairness, human agency, nor a successful transition.",
+          "mechanism": [
+            "Freeze the deployment, nondeployment counterfactual, affected-worker and community denominator, rollout stages, measurement schedule, and pause criteria before adoption.",
+            "Track exposure, actual use, task change, role change, employment, skill, discretion, workload, compensation, ownership returns, prices, access, quality, and distribution separately.",
+            "Map substitution, complementarity, human-AI decision rights, hidden labor, data and expertise contributions, bargaining power, concentration, and realistic exit.",
+            "Fund training, redeployment, income and service continuity, accessibility, contestability, and remedy as deployment costs rather than externalities.",
+            "Use staged rollout and delayed follow-up to narrow, pause, redesign, compensate, or withdraw when transition capacity or observed outcomes fail."
+          ],
+          "interfaces": [
+            "Labor OS owns a typed work unit; this chapter owns cumulative task-to-social transition.",
+            "Human-AI Organizations owns internal roles and accountability; transition governance includes workers, customers, communities, and markets.",
+            "Resource Economics owns compute allocation; this chapter owns distribution of deployment benefits and burdens.",
+            "Multi-Agent Dynamics reports concentration and disempowerment; public institutions receive cross-organization effects."
+          ],
+          "invariants": [
+            "Exposure, adoption, productivity, task change, job change, wages, welfare, access, ownership, and distribution remain separate claims.",
+            "Aggregate gains never erase harmed subgroups or uncompensated contributors.",
+            "Productivity does not stand in for worker, customer, or community welfare.",
+            "Essential-service access, human discretion, contestability, and exit remain measured.",
+            "Deployment pauses when required transition capacity or remedy is absent."
+          ],
+          "failure_modes": [
+            "exposure-as-displacement overclaim",
+            "automation theater",
+            "deskilling",
+            "dependency",
+            "wage suppression",
+            "uncompensated knowledge capture",
+            "rent concentration",
+            "regional disparity",
+            "digital exclusion",
+            "inaccessible services",
+            "surveillance productivity",
+            "hidden labor",
+            "induced demand",
+            "political capture",
+            "gradual disempowerment"
+          ],
+          "minimal_implementation": "Run a staged natural workflow study with a frozen non-adoption comparator, worker and customer measures, subgroup denominators, delayed follow-up, independent analysis, and real remedy. Measure useful throughput and quality alongside skill, workload, discretion, compensation where appropriate, access, distribution, concentration proxies, exit, and transition cost. Simulation can test accounting, not economy-wide welfare.",
+          "beyond_state_of_art": "At maturity, the operational target is a reversible social-transition contract rather than a software-launch checklist. Capability gains remain coupled to measured task, role, skill, discretion, compensation, ownership, access, price, concentration, continuity, subgroup, delayed-outcome, remedy, and exit effects. The mature contract supports staged narrowing, pause, compensation, redesign, and withdrawal when transition capacity fails, and it cannot hide affected people or communities inside aggregate productivity.",
+          "codex_tests": [
+            "Contract completeness mutation test",
+            "Adjacent-owner boundary substitution test",
+            "Mechanism-specific failure-family test",
+            "No-support-promotion control"
+          ],
+          "source_queue": {
+            "primary": [
+              "ext_generative_ai_at_work_2025",
+              "ext_ilo_genai_jobs_index_2025"
+            ],
+            "supporting": [],
+            "variants": [],
+            "connector_or_recovery": [],
+            "handoff_or_recovery_notes": []
+          },
+          "claim_source_mappings": [
+            {
+              "source_id": "ext_generative_ai_at_work_2025",
+              "mapped_support": "Open peer-reviewed field study of a staggered generative-AI assistant introduction among 5,172 customer-support agents, reporting heterogeneous worker and productivity effects in that setting. It is a bounded deployment comparator and does not establish economy-wide employment, wages, inequality, concentration, long-run skill, or ASI-transition effects.",
+              "limits": "Source-reported or source-defined material only; no local chapter-core implementation, reproduction, transfer, readiness, release, deployment, or support promotion.",
+              "passage_review_state": "reviewed_source_note",
+              "passage_refs": [
+                "sources/source_notes/ext_generative_ai_at_work_2025.md"
+              ],
+              "passage_review_note": "The local source note was reviewed for bounded mechanism, evidence, failure, and non-claim use."
+            },
+            {
+              "source_id": "ext_ilo_genai_jobs_index_2025",
+              "mapped_support": "ILO working paper combining task data, worker surveys, expert deliberation, and model-assisted scoring to estimate occupational exposure across countries and groups. Exposure is not realized automation, displacement, welfare, or a forecast of ASI effects, and the study is not a local reproduction.",
+              "limits": "Source-reported or source-defined material only; no local chapter-core implementation, reproduction, transfer, readiness, release, deployment, or support promotion.",
+              "passage_review_state": "reviewed_source_note",
+              "passage_refs": [
+                "sources/source_notes/ext_ilo_genai_jobs_index_2025.md"
+              ],
+              "passage_review_note": "The local source note was reviewed for bounded mechanism, evidence, failure, and non-claim use."
+            }
+          ],
+          "proof_targets": [
+            {
+              "tag": "lean:ai-deployment-transition-distribution-and-human-agency.admission_boundary",
+              "module": "AsiStackProofs.NoDeferralAdmission",
+              "target": "A finite AI Deployment, Transition, Distribution, and Human Agency record may hand off only when identity, authority, version, required checks, and residual ownership are present; no theorem grants empirical effectiveness or release authority.",
+              "status": "planned"
+            }
+          ],
+          "lean_module": "AsiStackProofs.NoDeferralAdmission"
         },
         {
           "id": "artifact-graphs-audit-logs-and-replay",
@@ -13578,7 +14370,9 @@
               "source_id": "ext_adam_2015",
               "mapped_support": "Grounds bias-corrected first- and second-moment adaptive updates as the reference adaptive family.",
               "limits": "Its analysis and experiments do not establish universal nonconvex convergence or superiority.",
-              "passage_refs": ["sources/source_notes/ext_adam_2015.md"],
+              "passage_refs": [
+                "sources/source_notes/ext_adam_2015.md"
+              ],
               "passage_review_note": "Primary mechanism, assumptions, evidence, and limitations reviewed; no result reproduced.",
               "passage_review_state": "reviewed"
             },
@@ -13586,7 +14380,9 @@
               "source_id": "ext_amsgrad_2018",
               "mapped_support": "Supplies an Adam non-convergence construction and the AMSGrad maximum-second-moment variant.",
               "limits": "A constructed failure does not imply all practical Adam runs fail or AMSGrad always wins.",
-              "passage_refs": ["sources/source_notes/ext_amsgrad_2018.md"],
+              "passage_refs": [
+                "sources/source_notes/ext_amsgrad_2018.md"
+              ],
               "passage_review_note": "Primary counterexample, theorem assumptions, and variant reviewed.",
               "passage_review_state": "reviewed"
             },
@@ -13594,7 +14390,9 @@
               "source_id": "ext_adamw_2019",
               "mapped_support": "Grounds decoupled weight decay and the modern AdamW reference baseline.",
               "limits": "Reported tuning/generalization results are setting-bound and the method name does not specify a full policy.",
-              "passage_refs": ["sources/source_notes/ext_adamw_2019.md"],
+              "passage_refs": [
+                "sources/source_notes/ext_adamw_2019.md"
+              ],
               "passage_review_note": "Primary algorithms, tuning evidence, and limitations reviewed.",
               "passage_review_state": "reviewed"
             },
@@ -13602,7 +14400,9 @@
               "source_id": "ext_adafactor_2018",
               "mapped_support": "Grounds factored second moments, update clipping, and reduced optimizer state for matrix parameters.",
               "limits": "Factorization is approximate and source parity does not transfer across tasks or tensor shapes.",
-              "passage_refs": ["sources/source_notes/ext_adafactor_2018.md"],
+              "passage_refs": [
+                "sources/source_notes/ext_adafactor_2018.md"
+              ],
               "passage_review_note": "Primary memory mechanism and experiment reviewed.",
               "passage_review_state": "reviewed"
             },
@@ -13610,7 +14410,9 @@
               "source_id": "ext_lamb_2019",
               "mapped_support": "Grounds layer-wise trust ratios and large-batch optimization as a separate scaling family.",
               "limits": "BERT time-to-target is hardware, batch, target, implementation, and tuning bound.",
-              "passage_refs": ["sources/source_notes/ext_lamb_2019.md"],
+              "passage_refs": [
+                "sources/source_notes/ext_lamb_2019.md"
+              ],
               "passage_review_note": "Primary mechanism, theory scope, and reported scale result reviewed.",
               "passage_review_state": "reviewed"
             },
@@ -13618,7 +14420,9 @@
               "source_id": "ext_shampoo_2018",
               "mapped_support": "Grounds tensor-structured per-dimension preconditioning rather than flattened coordinate adaptation.",
               "limits": "Stochastic-convex theory and source experiments do not settle current distributed lifecycle cost.",
-              "passage_refs": ["sources/source_notes/ext_shampoo_2018.md"],
+              "passage_refs": [
+                "sources/source_notes/ext_shampoo_2018.md"
+              ],
               "passage_review_note": "Primary preconditioner, assumptions, and results reviewed.",
               "passage_review_state": "reviewed"
             },
@@ -13626,7 +14430,9 @@
               "source_id": "ext_kfac_2015",
               "mapped_support": "Grounds Kronecker-factored Fisher approximations as a practical curvature-aware family.",
               "limits": "Approximation, damping, inversion, architecture, and distributed cost determine applicability.",
-              "passage_refs": ["sources/source_notes/ext_kfac_2015.md"],
+              "passage_refs": [
+                "sources/source_notes/ext_kfac_2015.md"
+              ],
               "passage_review_note": "Primary factorization and empirical cost-benefit reviewed.",
               "passage_review_state": "reviewed"
             },
@@ -13634,7 +14440,9 @@
               "source_id": "ext_lion_2023",
               "mapped_support": "Grounds symbolic optimizer discovery and Lion's one-state sign-momentum update.",
               "limits": "Search transfer and reported wins are task/budget bound; the source reports weak settings too.",
-              "passage_refs": ["sources/source_notes/ext_lion_2023.md"],
+              "passage_refs": [
+                "sources/source_notes/ext_lion_2023.md"
+              ],
               "passage_review_note": "Primary discovery method, update rule, results, and limitations reviewed.",
               "passage_review_state": "reviewed"
             },
@@ -13642,7 +14450,9 @@
               "source_id": "ext_sophia_2023",
               "mapped_support": "Grounds periodic diagonal-curvature estimation and clipped second-order updates for language-model training.",
               "limits": "Reported speedups and simplified theory require matched reproduction before generalization.",
-              "passage_refs": ["sources/source_notes/ext_sophia_2023.md"],
+              "passage_refs": [
+                "sources/source_notes/ext_sophia_2023.md"
+              ],
               "passage_review_note": "Primary estimator, clipping, theory scope, and experiments reviewed.",
               "passage_review_state": "reviewed"
             },
@@ -13650,7 +14460,9 @@
               "source_id": "ext_soap_2024",
               "mapped_support": "Grounds Adam-like moments in Shampoo's evolving preconditioner eigenbasis.",
               "limits": "Large-batch results remain tied to model scale, basis refresh, overhead, and tuning.",
-              "passage_refs": ["sources/source_notes/ext_soap_2024.md"],
+              "passage_refs": [
+                "sources/source_notes/ext_soap_2024.md"
+              ],
               "passage_review_note": "Primary mechanism, ablation, and pretraining results reviewed.",
               "passage_review_state": "reviewed"
             },
@@ -13658,7 +14470,9 @@
               "source_id": "ext_schedule_free_2024",
               "mapped_support": "Grounds the scheduling/iterate-averaging connection and schedule-free optimizer state.",
               "limits": "It removes dependence on a stopping-time schedule, not all hyperparameters or evaluation choices.",
-              "passage_refs": ["sources/source_notes/ext_schedule_free_2024.md"],
+              "passage_refs": [
+                "sources/source_notes/ext_schedule_free_2024.md"
+              ],
               "passage_review_note": "Primary theory, algorithms, evaluation semantics, and results reviewed.",
               "passage_review_state": "reviewed"
             },
@@ -13666,7 +14480,9 @@
               "source_id": "ext_mup_2022",
               "mapped_support": "Grounds maximal-update parametrization and widthwise hyperparameter transfer.",
               "limits": "Transfer depends on the prescribed parameterization and does not establish arbitrary substrate transfer.",
-              "passage_refs": ["sources/source_notes/ext_mup_2022.md"],
+              "passage_refs": [
+                "sources/source_notes/ext_mup_2022.md"
+              ],
               "passage_review_note": "Primary parameterization, transfer protocol, experiments, and limits reviewed.",
               "passage_review_state": "reviewed"
             },
@@ -13674,7 +14490,9 @@
               "source_id": "ext_modular_norm_2024",
               "mapped_support": "Grounds architecture-recursive update geometry and reported learning-rate transfer across width/depth.",
               "limits": "Well-behaved-module assumptions and studied architectures bound the result.",
-              "passage_refs": ["sources/source_notes/ext_modular_norm_2024.md"],
+              "passage_refs": [
+                "sources/source_notes/ext_modular_norm_2024.md"
+              ],
               "passage_review_note": "Primary norm construction, assumptions, and experiments reviewed.",
               "passage_review_state": "reviewed"
             },
@@ -13682,7 +14500,9 @@
               "source_id": "ext_muon_scalable_2025",
               "mapped_support": "Grounds large-scale Muon, weight decay, per-parameter update scaling, and distributed orthogonalization.",
               "limits": "Reported compute efficiency and Moonlight results are source-scoped and unreproduced.",
-              "passage_refs": ["sources/source_notes/ext_muon_scalable_2025.md"],
+              "passage_refs": [
+                "sources/source_notes/ext_muon_scalable_2025.md"
+              ],
               "passage_review_note": "Primary algorithm, scaling, distributed design, and results reviewed.",
               "passage_review_state": "reviewed"
             },
@@ -13690,7 +14510,9 @@
               "source_id": "ext_muon_spectral_norm_2026",
               "mapped_support": "Supplies an accepted theoretical interpretation of Muon through Lion-K, nuclear norm, and implicit spectral constraints.",
               "limits": "The idealized interpretation does not establish practical approximation fidelity, quality, safety, or superiority.",
-              "passage_refs": ["sources/source_notes/ext_muon_spectral_norm_2026.md"],
+              "passage_refs": [
+                "sources/source_notes/ext_muon_spectral_norm_2026.md"
+              ],
               "passage_review_note": "Accepted TMLR theory and its inference ceiling reviewed.",
               "passage_review_state": "reviewed"
             },
@@ -13797,6 +14619,131 @@
             "No natural checkpoint resume equivalence, fault-tolerance, model-quality, efficiency, reproduction, or transfer result is recorded.",
             "The authored transaction fixture and finite Lean model establish record consequences only."
           ]
+        },
+        {
+          "id": "learning-theory-generalization-and-scaling-science",
+          "title": "Learning Theory, Generalization, and Scaling Science",
+          "file": "chapters/learning-theory-generalization-and-scaling-science.qmd",
+          "status": "conceptual",
+          "evidence_level": "argument",
+          "claim_label": "Design rationale",
+          "source_ids": [
+            "simulation_scaling",
+            "ext_scaling_laws_neural_language_models_2020",
+            "ext_mdl_tutorial_2004",
+            "ext_weak_to_strong_generalization_2023",
+            "ext_information_bottleneck_2000"
+          ],
+          "problem": "The stack repeatedly relies on claims that learning will generalize, capabilities will transfer, losses will scale, or phase changes will appear outside observed training support. Those claims require an owner that connects assumptions about data, hypothesis class, optimization, inductive bias, compute, and evaluation to an exact prediction and failure envelope.",
+          "insufficient": "PAC bounds, capacity measures, stability, compression, information theory, scaling-law fits, emergence plots, and benchmark curves each illuminate part of learning. None is a universal theory of deep networks, and none automatically transports from a loss metric, architecture family, data regime, optimizer, or scale range to downstream capability or safety.",
+          "core_claim": "A generalization, transfer, emergence, or scaling assertion should be accepted only through a dated claim contract that binds population and sampling assumptions, data support, hypothesis and algorithm, optimization and inductive bias, complexity or explanatory lens, metric, compute regime, uncertainty, breakpoint tests, held-out prediction, alternatives, and transfer boundary; a bound, fit, interpolation result, compression ratio, benchmark jump, or larger model alone establishes neither broad generalization, capability emergence, safety, nor future scale behavior.",
+          "mechanism": [
+            "State the population, sampling process, shift model, hypothesis family, learning algorithm, optimization path, inductive bias, metric, and consumer before making a generalization claim.",
+            "Use multiple explanatory lenses—capacity and complexity, stability, compression and MDL, information, margins, implicit bias, interpolation, and benign-overfitting hypotheses—without laundering one into another.",
+            "Fit scaling relations with uncertainty, held-out scales, architecture and data identifiers, failed runs, compute accounting, breakpoint diagnostics, and prospective forecasts.",
+            "Distinguish smooth underlying performance from thresholded metrics and test whether apparent emergence survives metric, prompting, sampling, and denominator changes.",
+            "Challenge transfer and compositionality under natural shift, targeted shift, new task structure, optimizer change, architecture replacement, and data contamination."
+          ],
+          "interfaces": [
+            "Governed Model Training owns faithful run execution; this chapter interprets what the resulting learning may generalize.",
+            "Efficient ASI owns resource hypotheses; scaling science supplies bounded predictions, not resource authority.",
+            "Benchmark Ratchets owns measurement renewal and held-out integrity.",
+            "Replaceable Substrates and optimizer sections expose architecture and algorithm changes that can break old laws."
+          ],
+          "invariants": [
+            "Every claim names its distribution, metric, algorithm, architecture, scale range, and uncertainty.",
+            "Training fit, in-distribution generalization, transfer, compositionality, and safety remain distinct.",
+            "Loss scaling does not automatically predict thresholded capability or risk.",
+            "Apparent emergence is retested against metric and sampling artifacts.",
+            "Extrapolation beyond observed support remains a forecast until prospectively checked."
+          ],
+          "failure_modes": [
+            "vacuous bounds",
+            "distribution laundering",
+            "test contamination",
+            "post-hoc curve fitting",
+            "breakpoint omission",
+            "metric-threshold emergence",
+            "architecture-regime shift",
+            "optimizer confounding",
+            "double-descent surprise",
+            "grokking misread as magic",
+            "compression-as-understanding",
+            "loss-to-capability substitution",
+            "credit-assignment ambiguity",
+            "failed-run censoring"
+          ],
+          "minimal_implementation": "Create a claim-contract and forecasting notebook over several public small-model runs. Freeze candidate curve families and explanatory lenses, hold out scale points and task families, record failed runs and tuning, test breakpoint alternatives, and compare prediction intervals for loss, calibration, and downstream tasks. The result can evaluate local forecast discipline, not establish a universal law.",
+          "beyond_state_of_art": "At maturity, the operational contract is a forecast registry in which every generalization, transfer, emergence, or scaling claim is bound to its assumptions, data support, algorithm, inductive bias, metric, compute regime, uncertainty, alternative explanations, held-out predictions, breakpoints, and expiry. The registry must score prospective forecasts, preserve failed curves and negative results, reopen after architecture or optimizer changes, and prevent a fit to one loss or scale range from silently becoming a capability or safety claim.",
+          "codex_tests": [
+            "Contract completeness mutation test",
+            "Adjacent-owner boundary substitution test",
+            "Mechanism-specific failure-family test",
+            "No-support-promotion control"
+          ],
+          "source_queue": {
+            "primary": [
+              "ext_scaling_laws_neural_language_models_2020",
+              "ext_mdl_tutorial_2004",
+              "ext_weak_to_strong_generalization_2023",
+              "ext_information_bottleneck_2000"
+            ],
+            "supporting": [],
+            "variants": [],
+            "connector_or_recovery": [],
+            "handoff_or_recovery_notes": []
+          },
+          "claim_source_mappings": [
+            {
+              "source_id": "ext_scaling_laws_neural_language_models_2020",
+              "mapped_support": "Empirical study reporting power-law relationships between cross-entropy loss, model size, data, and compute in its model family. These fitted relations are source-reported, metric- and regime-bound, and do not automatically forecast downstream capabilities, safety, or other architectures.",
+              "limits": "Source-reported or source-defined material only; no local chapter-core implementation, reproduction, transfer, readiness, release, deployment, or support promotion.",
+              "passage_review_state": "reviewed_source_note",
+              "passage_refs": [
+                "sources/source_notes/ext_scaling_laws_neural_language_models_2020.md"
+              ],
+              "passage_review_note": "The local source note was reviewed for bounded mechanism, evidence, failure, and non-claim use."
+            },
+            {
+              "source_id": "ext_mdl_tutorial_2004",
+              "mapped_support": "External description-length source for model/data tradeoffs, compression as inductive discipline, and residual/error-accounting vocabulary.",
+              "limits": "Source-reported or source-defined material only; no local chapter-core implementation, reproduction, transfer, readiness, release, deployment, or support promotion.",
+              "passage_review_state": "reviewed_source_note",
+              "passage_refs": [
+                "sources/source_notes/ext_mdl_tutorial_2004.md"
+              ],
+              "passage_review_note": "The local source note was reviewed for bounded mechanism, evidence, failure, and non-claim use."
+            },
+            {
+              "source_id": "ext_weak_to_strong_generalization_2023",
+              "mapped_support": "Primary weak-to-strong-supervision comparator for a capability-gap envelope, held-out outcome audit, ceiling comparison, and explicit disanalogies between current weak-model studies and superhuman oversight; it does not establish local supervision quality, reliable elicitation, alignment, safety, or an ASI Stack result.",
+              "limits": "Source-reported or source-defined material only; no local chapter-core implementation, reproduction, transfer, readiness, release, deployment, or support promotion.",
+              "passage_review_state": "reviewed_source_note",
+              "passage_refs": [
+                "sources/source_notes/ext_weak_to_strong_generalization_2023.md"
+              ],
+              "passage_review_note": "The local source note was reviewed for bounded mechanism, evidence, failure, and non-claim use."
+            },
+            {
+              "source_id": "ext_information_bottleneck_2000",
+              "mapped_support": "External representation-compression source for relevance-preserving compression, bottleneck variables, mutual-information tradeoffs, and compression/utility separation.",
+              "limits": "Source-reported or source-defined material only; no local chapter-core implementation, reproduction, transfer, readiness, release, deployment, or support promotion.",
+              "passage_review_state": "reviewed_source_note",
+              "passage_refs": [
+                "sources/source_notes/ext_information_bottleneck_2000.md"
+              ],
+              "passage_review_note": "The local source note was reviewed for bounded mechanism, evidence, failure, and non-claim use."
+            }
+          ],
+          "proof_targets": [
+            {
+              "tag": "lean:learning-theory-generalization-and-scaling-science.admission_boundary",
+              "module": "AsiStackProofs.NoDeferralAdmission",
+              "target": "A finite Learning Theory, Generalization, and Scaling Science record may hand off only when identity, authority, version, required checks, and residual ownership are present; no theorem grants empirical effectiveness or release authority.",
+              "status": "planned"
+            }
+          ],
+          "lean_module": "AsiStackProofs.NoDeferralAdmission"
         },
         {
           "id": "readiness-gates-residual-escrow-and-quarantine",
@@ -17277,6 +18224,107 @@
             "A competent full attempt still requires natural multi-tenant work with real models, tools, verifiers, reviewers, serving, prices, rights, delayed outcomes, strong matched allocation policies, complete direct/displaced/opportunity costs and denominators, causal ablations, independent schedulers/meters/evaluators, and heterogeneous transfer.",
             "Useful, safe, fair, stable, efficient, economically optimal, deployable, transferable, or SOTA resource claims and physical-feasibility or simulator-adequacy claims remain blocked until the natural campaign, independent reproduction, and transfer pass; all source-reported systems remain comparators only."
           ]
+        },
+        {
+          "id": "physical-compute-infrastructure-energy-and-environmental-constraints",
+          "title": "Physical Compute Infrastructure, Energy, and Environmental Constraints",
+          "file": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd",
+          "status": "conceptual",
+          "evidence_level": "argument",
+          "claim_label": "Design rationale",
+          "source_ids": [
+            "tokenmana",
+            "ext_iea_energy_and_ai_2025",
+            "ext_lbnl_data_center_energy_2024"
+          ],
+          "problem": "Requested compute becomes useful work only through accelerators, memory, storage, interconnect, facilities, grid connections, generation, cooling, water, land, materials, maintenance, resilience, and retirement at particular places and times. Abstract token or FLOP budgets hide these physical constraints and their affected communities.",
+          "insufficient": "Nameplate accelerator capacity, chip TDP, workload energy, facility PUE, annual electricity, carbon estimates, water figures, or capital cost each describe a slice. They do not establish delivered useful compute, temporal and locational impact, grid effects, resilience, embodied materials, rebound, community burden, or retireable capacity.",
+          "core_claim": "A compute allocation should be physically eligible only through a workload-to-capacity contract that binds location and time, hardware and interconnect, delivered useful work, facility and grid dependencies, energy attribution, cooling and water, materials, land and community effects, metering uncertainty, resilience and degradation, maintenance, demand response, reuse, retirement, and residuals; nameplate compute, efficiency, low PUE, renewable procurement, or aggregate energy alone establishes neither availability, sustainability, community acceptability, nor lower total impact.",
+          "mechanism": [
+            "Compile workload requirements into time- and location-specific accelerator, memory, storage, network, reliability, latency, and scheduling envelopes.",
+            "Reconcile requested, nameplate, available, delivered, and useful compute with workload, host, rack, facility, and grid meters plus uncertainty and allocation rules.",
+            "Track power, temporal matching, congestion, generation, backup, cooling, water, land, materials, maintenance, spares, community effects, and supply dependencies.",
+            "Use authority-narrowing degradation, placement, demand response, failover, and interruption plans when thermal, water, network, power, or component limits bind.",
+            "Close the lifecycle through reuse, recycling, weight and data destruction, decommissioning, stranded-capacity accounting, and unresolved environmental or community residuals."
+          ],
+          "interfaces": [
+            "Resource Economics decides abstract allocation; this chapter establishes physical deliverability and externalities.",
+            "Governed Training owns run fidelity and topology; infrastructure supplies the measured physical substrate.",
+            "Personal Hives owns placement and federation; this chapter supplies site constraints and failure correlations.",
+            "Custody, Supply Chain, and Operations consume hardware lineage, retirement, resilience, and incident state."
+          ],
+          "invariants": [
+            "Requested, nameplate, available, delivered, and useful compute remain distinct.",
+            "Workload energy, facility overhead, grid effects, and embodied impact remain separately attributable.",
+            "Location, time, uncertainty, and allocation method remain attached to energy, emissions, and water claims.",
+            "Efficiency never implies lower total demand without a denominator.",
+            "Physical capacity loss narrows training and runtime authority rather than silently degrading safety."
+          ],
+          "failure_modes": [
+            "stranded capacity",
+            "interconnect bottlenecks",
+            "grid-queue mismatch",
+            "temporal carbon laundering",
+            "cooling exhaustion",
+            "water stress",
+            "correlated site failure",
+            "backup-emission hiding",
+            "rebound",
+            "material omission",
+            "e-waste",
+            "community externalization",
+            "metering opacity",
+            "retirement without data destruction"
+          ],
+          "minimal_implementation": "Instrument matched public workloads on local hardware across precision, batching, placement, memory pressure, and scheduler variants. Reconcile software counters with host power and resource records, inject thermal, network, storage, and failover constraints, and report useful work, latency, energy, peak power, bottlenecks, metering error, availability, cost, and residuals. Local results do not establish frontier-facility or grid transfer.",
+          "beyond_state_of_art": "At maturity, the operational contract is a workload-to-physical-capacity gate that admits compute only when useful work, hardware, interconnect, facility, grid, power, cooling, water, materials, land, community, resilience, maintenance, reuse, retirement, and metering uncertainty are jointly visible. It must support demand response, relocation, graceful degradation, replacement, and retirement without turning nameplate capacity, low PUE, or renewable procurement into a complete availability or sustainability claim.",
+          "codex_tests": [
+            "Contract completeness mutation test",
+            "Adjacent-owner boundary substitution test",
+            "Mechanism-specific failure-family test",
+            "No-support-promotion control"
+          ],
+          "source_queue": {
+            "primary": [
+              "ext_iea_energy_and_ai_2025",
+              "ext_lbnl_data_center_energy_2024"
+            ],
+            "supporting": [],
+            "variants": [],
+            "connector_or_recovery": [],
+            "handoff_or_recovery_notes": []
+          },
+          "claim_source_mappings": [
+            {
+              "source_id": "ext_iea_energy_and_ai_2025",
+              "mapped_support": "International Energy Agency report using global and regional modelling, datasets, and stakeholder consultation to examine data-centre electricity demand, energy security, emissions, affordability, and AI-for-energy opportunities. Its scenarios are external projections, not local measurements or proof of a particular facility, workload, policy, environmental outcome, or ASI scaling path.",
+              "limits": "Source-reported or source-defined material only; no local chapter-core implementation, reproduction, transfer, readiness, release, deployment, or support promotion.",
+              "passage_review_state": "reviewed_source_note",
+              "passage_refs": [
+                "sources/source_notes/ext_iea_energy_and_ai_2025.md"
+              ],
+              "passage_review_note": "The local source note was reviewed for bounded mechanism, evidence, failure, and non-claim use."
+            },
+            {
+              "source_id": "ext_lbnl_data_center_energy_2024",
+              "mapped_support": "Lawrence Berkeley National Laboratory report estimating historical US data-centre electricity consumption and scenario ranges through 2028, with infrastructure and water-use accounting in the full report. It does not isolate every AI workload or establish local facility capacity, water availability, grid adequacy, emissions, resilience, or frontier-scale transfer.",
+              "limits": "Source-reported or source-defined material only; no local chapter-core implementation, reproduction, transfer, readiness, release, deployment, or support promotion.",
+              "passage_review_state": "reviewed_source_note",
+              "passage_refs": [
+                "sources/source_notes/ext_lbnl_data_center_energy_2024.md"
+              ],
+              "passage_review_note": "The local source note was reviewed for bounded mechanism, evidence, failure, and non-claim use."
+            }
+          ],
+          "proof_targets": [
+            {
+              "tag": "lean:physical-compute-infrastructure-energy-and-environmental-constraints.admission_boundary",
+              "module": "AsiStackProofs.NoDeferralAdmission",
+              "target": "A finite Physical Compute Infrastructure, Energy, and Environmental Constraints record may hand off only when identity, authority, version, required checks, and residual ownership are present; no theorem grants empirical effectiveness or release authority.",
+              "status": "planned"
+            }
+          ],
+          "lean_module": "AsiStackProofs.NoDeferralAdmission"
         },
         {
           "id": "mathematical-and-search-substrates",
@@ -21891,6 +22939,94 @@
             "The eight-stage lifecycle, 82-route consumer, and 96 rejecting mutations establish only finite authored custody consequences; all digests, rights, inventories, checks, rollback receipts, deletion statuses, monitors, and invalidations remain trusted.",
             "No independent trainer, custodian, privacy evaluator, storage verifier, institution, or transfer site has reproduced the bounded local results or adjudicated the separate behavioral, influence, privacy, lineage, legal, storage, backup, and external-descendant claim axes."
           ]
+        },
+        {
+          "id": "scientific-discovery-and-experimental-governance",
+          "title": "Scientific Discovery and Experimental Governance",
+          "file": "chapters/scientific-discovery-and-experimental-governance.qmd",
+          "status": "conceptual",
+          "evidence_level": "argument",
+          "claim_label": "Design rationale",
+          "source_ids": [
+            "aletheia",
+            "ext_autonomous_lab_materials_2023"
+          ],
+          "problem": "AI-assisted science closes a loop from research objective and hypothesis through design, simulation or instrument control, measurement, analysis, causal or statistical claim, replication, dual-use review, and evidence handoff. Generic planning and tool use do not preserve the epistemic controls of that full loop.",
+          "insufficient": "A fluent hypothesis, autonomous laboratory, successful synthesis, simulator result, significant p-value, or generated paper can be useful while still hiding HARKing, selective stopping, instrument drift, contaminated controls, analysis flexibility, failed experiments, human intervention, replication gaps, or dual-use risk.",
+          "core_claim": "An AI-generated scientific claim should enter the evidence stack only through a preregistered experimental contract that binds hypothesis lineage, exploratory versus confirmatory status, design and power, instrument or simulator authority, calibration, sample and protocol lineage, blinding and holdouts, stopping and exclusions, analysis, complete attempts, independent replication, dual-use disposition, and claim ceiling; experimental completion, significance, synthesis, instrument output, or formal workflow validity alone establishes neither causal truth, general scientific discovery, reproducibility, safety, nor transfer.",
+          "mechanism": [
+            "Record hypothesis ancestry, prior evidence, competing explanations, exploratory status, preregistration, design, power, outcomes, exclusions, stopping, and analysis before protected data are opened.",
+            "Lease simulators and instruments with calibration, operating envelope, sample identity, control state, maintenance, operator intervention, and safety authority.",
+            "Separate generated hypotheses, execution, measurement, analysis, causal interpretation, and claim drafting across inspectable roles and preserve all failed attempts.",
+            "Require positive, negative, null, contamination, drift, and analysis-robustness controls plus independent reanalysis and, where feasible, replication.",
+            "Route dangerous hypotheses, protocols, materials, capabilities, and disclosures through dual-use review and retain withheld details and unresolved risks as explicit residuals."
+          ],
+          "interfaces": [
+            "Planning proposes experiments; this chapter governs confirmatory design and inference.",
+            "Runtime Adapters and Embodied Agency control tools and instruments; they do not certify scientific truth.",
+            "Benchmark Ratchets and Evidence States receive complete results and claim ceilings.",
+            "Artifact Graphs and the Living Book preserve protocol, data, analysis, replication, correction, and publication lineage."
+          ],
+          "invariants": [
+            "Hypothesis generation and confirmatory testing remain separated.",
+            "Simulator or instrument return is an observation, not scientific truth.",
+            "Exploratory and confirmatory analyses remain visibly distinct.",
+            "All attempts, exclusions, stopping events, and human interventions remain in the denominator.",
+            "One laboratory, domain, or replication does not imply broad transfer."
+          ],
+          "failure_modes": [
+            "HARKing",
+            "p-hacking",
+            "selective stopping",
+            "publication bias",
+            "instrument drift",
+            "simulator laundering",
+            "contaminated controls",
+            "automation bias",
+            "hidden intervention",
+            "irreproducibility",
+            "unsafe experiment generation",
+            "dual-use leakage",
+            "claim drafting beyond the data"
+          ],
+          "minimal_implementation": "Use a benign reproducible simulation or low-risk open instrument with injected null and known effects. Freeze stopping and analysis, preserve every attempt, blind the confirmatory holdout, run independent analysis, and package protocol, data, code, calibration, exclusions, and residuals for replication. This tests the control plane, not autonomous science in general.",
+          "beyond_state_of_art": "At maturity, the operational contract is a closed-loop experimental-governance system connecting hypotheses, preregistration, instruments or simulators, calibration, samples, complete attempts, analysis, independent reanalysis, replication, evidence updates, and dual-use disposition. Autonomous laboratories and new scientific models may replace components behind stable interfaces, but exploratory work cannot impersonate confirmation, significance cannot erase failed attempts, and a completed experiment cannot by itself establish causal truth, broad discovery, reproducibility, safety, or transfer.",
+          "codex_tests": [
+            "Contract completeness mutation test",
+            "Adjacent-owner boundary substitution test",
+            "Mechanism-specific failure-family test",
+            "No-support-promotion control"
+          ],
+          "source_queue": {
+            "primary": [
+              "ext_autonomous_lab_materials_2023"
+            ],
+            "supporting": [],
+            "variants": [],
+            "connector_or_recovery": [],
+            "handoff_or_recovery_notes": []
+          },
+          "claim_source_mappings": [
+            {
+              "source_id": "ext_autonomous_lab_materials_2023",
+              "mapped_support": "Preliminary autonomous-laboratory comparator based on the corrected official Nature article abstract, selected article-page passages, and the 2026 author correction: A-Lab integrates computation, literature-derived data, machine learning, active learning, and robotics, with the corrected article reporting 36 realized compounds from 57 targets. The correction narrows the novelty wording and excludes four inconclusive identifications; no laboratory run, material synthesis, replication, or general experimental-control-plane result has been reproduced locally.",
+              "limits": "Source-reported or source-defined material only; no local chapter-core implementation, reproduction, transfer, readiness, release, deployment, or support promotion.",
+              "passage_review_state": "reviewed_source_note",
+              "passage_refs": [
+                "sources/source_notes/ext_autonomous_lab_materials_2023.md"
+              ],
+              "passage_review_note": "The local source note was reviewed for bounded mechanism, evidence, failure, and non-claim use."
+            }
+          ],
+          "proof_targets": [
+            {
+              "tag": "lean:scientific-discovery-and-experimental-governance.admission_boundary",
+              "module": "AsiStackProofs.NoDeferralAdmission",
+              "target": "A finite Scientific Discovery and Experimental Governance record may hand off only when identity, authority, version, required checks, and residual ownership are present; no theorem grants empirical effectiveness or release authority.",
+              "status": "planned"
+            }
+          ],
+          "lean_module": "AsiStackProofs.NoDeferralAdmission"
         },
         {
           "id": "artifact-steward-agents-and-living-project-governance",

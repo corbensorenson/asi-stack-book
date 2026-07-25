@@ -167,19 +167,38 @@ Drafting rules:
   playback/re-execution, and durable memory/context/procedural memory.
 - Keep chapter core support states unchanged unless a separate accepted
   evidence transition exists.
-- The only provisional new chapter is
-  `durable-semantic-memory-and-knowledge-lattices`. It remains deferred until
-  independent literature is source-noted and the improved Virtual Context ABI,
-  context transactions, claim ledgers, procedural memory, and artifact graph
-  chapters still leave a distinct durable semantic-state owner missing.
+- No manuscript idea remains provisional or deferred. The ownership audit
+  established a distinct durable-semantic-state control plane and admitted
+  `durable-semantic-memory-and-knowledge-lattices`, together with nine other
+  formerly deferred owners.
 - Execute one complete chapter packet at a time: prose, Human Reading Path,
   source mapping, interface/invariant updates, negative controls, minimum
   artifact or exact blocker, proof/evidence route, visual treatment, handoff,
   changelog, validation, and HTML render when public prose changes.
 
-This overlay changes future drafting priority and source routing. It does not
-add the provisional chapter, publish private project material, or promote any
-claim.
+### No-deferral admission overlay
+
+The book now contains 76 manifest chapters. The ten 2026-07-24 admissions and
+their exclusive jobs are:
+
+| Chapter ID | Exclusive job |
+|---|---|
+| `human-ai-communication-persuasion-and-epistemic-security` | Evidence-bounded outbound communication, personalization, amplification, audience effects, correction, retraction, and remedy. |
+| `governed-objective-formation-value-learning-and-goal-integrity` | Authorized purpose and value evidence into versioned target/proxy/consumer bindings with reauthorization and retirement. |
+| `institutions-international-coordination-and-public-legitimacy` | Public mandate, jurisdiction, participation, cross-border commitment, verification, enforcement, remedy, and legitimacy residuals. |
+| `adversarial-machine-learning-and-model-attack-surface` | Versioned attacks and defenses against learned behavior across training, adaptation, inference, and model access. |
+| `autonomous-replication-proliferation-and-containment` | Resource acquisition, copying, descendant identity, deployment, persistence, recall, and proliferation as one contained lifecycle. |
+| `durable-semantic-memory-and-knowledge-lattices` | Stable semantic identity, ontology migration, provenance-preserving revision, navigation, forgetting, and restart persistence. |
+| `ai-deployment-transition-distribution-and-human-agency` | Task-to-social transition across skill, work, compensation, ownership, access, concentration, continuity, and human options. |
+| `learning-theory-generalization-and-scaling-science` | Bounded contracts for generalization, transfer, emergence, and scaling claims across data, algorithms, compute, and metrics. |
+| `physical-compute-infrastructure-energy-and-environmental-constraints` | Workload-to-physical-capacity delivery across hardware, facilities, grids, cooling, water, materials, resilience, communities, and retirement. |
+| `scientific-discovery-and-experimental-governance` | Hypothesis-to-replication experimental control plane with calibration, complete attempts, independent analysis, and dual-use review. |
+
+Every identified section idea follows the same rule: integrate it now in the
+best existing owner, admit a distinct owner now, or reject it with a reason.
+Evidence work may remain open; manuscript meaning may not remain in a planning
+holding pattern. This overlay publishes no private project material and moves
+no support state.
 
 ## Relational Dimension Compiler Integration Overlay
 
@@ -1074,6 +1093,65 @@ Lean proof targets:
 | `lean:oversight.control_envelope.blocks_action` | `AsiStackProofs.HumanFactorsOversight` | In the finite model, any consequential transition lacking authority, observability, comprehension, timely intervention, or a reachable safe state is rejected or degraded. | implemented |
 | `lean:oversight.responsibility_requires_control` | `AsiStackProofs.HumanFactorsOversight` | The bounded accountability assignment never attributes operational responsibility beyond the authority and effective control recorded in the oversight contract. | implemented |
 
+<!-- NO-DEFERRAL-OUTLINE-ENTRY:human-ai-communication-persuasion-and-epistemic-security:BEGIN -->
+### Human-AI Communication, Persuasion, and Epistemic Security
+
+Stable ID: `human-ai-communication-persuasion-and-epistemic-security`
+
+Chapter job: An AI system can preserve internal evidence discipline and still change beliefs, choices, and institutions through selective framing, personalization, synthetic identity, repetition, and amplification. The stack therefore needs an owner for the complete outbound communication transaction, including correction after a message escapes its original channel.
+
+Core claim: Consequential AI communication should be eligible for delivery only through an evidence-bounded communication packet whose audience, influence method, amplification authority, provenance, expiry, correction reach, and observed effects remain inspectable; fluent text, factual fragments, user consent, or a successful persuasion score alone establishes neither epistemic safety, autonomy, legitimacy, durable benefit, nor release readiness.
+
+Source loading queue:
+
+| Role | Source IDs | Loading instruction |
+|---|---|---|
+| Primary | `ext_conversational_persuasion_gpt4_2025`, `ext_anthropic_model_persuasiveness_2024`, `ext_commercial_persuasion_ai_2026` | Use the assigned source notes for bounded mechanism, comparator, failure, and limitation context. Source-reported results remain distinct from local evidence. |
+
+
+| Manifest assignment reconciliation | `talos` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+Draft arc:
+
+- Problem: An AI system can preserve internal evidence discipline and still change beliefs, choices, and institutions through selective framing, personalization, synthetic identity, repetition, and amplification. The stack therefore needs an owner for the complete outbound communication transaction, including correction after a message escapes its original channel.
+- Insufficiency: Truthfulness checks, content filters, generic human-factors guidance, and red-team prompts inspect fragments of influence. They do not bind the claim, evidence ceiling, audience, vulnerability, purpose, personalization inputs, persuasive technique, channel, amplification, observed effect, correction, retraction, and remedy into one governed lifecycle.
+- Mechanism: Compile a communication packet from claim identity, maximum warranted inference, uncertainty, audience class, purpose, protected or denied personalization attributes, persuasive technique, channel, disclosure, and amplification ceiling.
+- Mechanism: Run audience-risk and autonomy checks before delivery. Vulnerability, dependency, power asymmetry, urgency, and inability to exit narrow the permitted technique and scale.
+- Mechanism: Attach provenance, sponsorship, synthetic-identity disclosure, expiry, and a machine-readable correction address to every consequential message and known derivative.
+- Mechanism: Measure outcomes without treating belief change as success: retain comprehension, factual calibration, autonomy, disagreement, disparate effects, complaints, corrections, and downstream copies.
+- Mechanism: Support pause, retraction, counter-message, recipient notification, and remedy while recording unreachable descendants as residuals rather than declaring completion.
+- Interface: Claim Ledgers provide the evidence ceiling; they do not authorize persuasion.
+- Interface: Human Factors supplies control-capacity and vulnerability findings; this chapter governs outbound influence.
+- Interface: Privacy/Data Rights governs lawful and purpose-compatible data use; this chapter additionally asks whether personalization is manipulative.
+- Interface: Capability Thresholds consumes population-scale influence and failed-correction evidence for release commitments.
+
+Primary invariants:
+
+- Outbound language may not be stronger than the supporting evidence packet.
+- Personalization may not use denied attributes or exploit a known vulnerability.
+- Amplification requires a bounded audience denominator and revocable authority.
+- Synthetic identity, sponsorship, and material uncertainty remain visible at delivery.
+- Correction completion is measured over materially affected recipients and known descendants, not merely publication of a new message.
+
+Failure modes to cover:
+
+- calibrated-sounding misinformation; selective framing; sycophancy; emotional manipulation; vulnerability microtargeting; dark patterns; parasocial dependence; authority laundering; provenance stripping; amplification cascades; belief lock-in; correction failure; retraction evasion.
+
+Draft deliverables:
+
+- Complete argument-level manuscript with Human Reading Path, technical
+  lifecycle diagram, source crosswalk, minimum implementation, evidence and
+  falsification program, summary, and adjacent handoff.
+- No-promotion decision and per-chapter evidence-plan row.
+- No empirical, formal, transfer, readiness, release, deployment, or SOTA
+  inference from prose or source synthesis.
+
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:human-ai-communication-persuasion-and-epistemic-security.admission_boundary` | `AsiStackProofs.NoDeferralAdmission` | A finite Human-AI Communication, Persuasion, and Epistemic Security record may hand off only when identity, authority, version, required checks, and residual ownership are present; no theorem grants empirical effectiveness or release authority. | planned |
+<!-- NO-DEFERRAL-OUTLINE-ENTRY:human-ai-communication-persuasion-and-epistemic-security:END -->
+
 ### Constitutional Alignment: Agency, Dignity, and Corrigibility
 
 Stable ID: `constitutional-alignment-substrate`
@@ -1326,6 +1404,126 @@ Lean proof targets:
 | `lean:governance.rights.operational_invariant` | `AsiStackProofs.SafetyCriticalLifecycle` | A governance-rights effect commits only after protected-predicate, audit, appeal, exit/export, fork-safety, fork-obligation, dissent, receipt, and correction obligations are recorded, while accepted traces preserve the shared invariant. | implemented |
 | `lean:governance.rights.failure_blocks_promotion` | `AsiStackProofs.SafetyCriticalLifecycle` | Protected-right removal is rejected by construction and the missing-exit/export countermodel cannot commit. | implemented |
 | `lean:governance.rights.theseus_receipt_suite.fixture_bridge` | `AsiStackProofs.GovernanceRights` | A sanitized Project Theseus governance-rights receipt-suite import records fixture, predicate, record-count, public-safety, and non-promotion boundaries while rejecting chapter-core and legal-rights overclaims. | implemented |
+
+<!-- NO-DEFERRAL-OUTLINE-ENTRY:governed-objective-formation-value-learning-and-goal-integrity:BEGIN -->
+### Governed Objective Formation, Value Learning, and Goal Integrity
+
+Stable ID: `governed-objective-formation-value-learning-and-goal-integrity`
+
+Chapter job: The stack has owners for requests, constitutions, value conflict, optimization, planning, and self-improvement, but those layers presuppose an operational objective they do not create. Without a positive objective-formation lifecycle, a temporary request, learned preference estimate, or convenient metric can silently become a durable goal.
+
+Core claim: A durable objective should be usable only through a versioned target-property contract that binds authority and affected parties to target/proxy causal assumptions, uncertainty and dissent, consumer-specific use, tampering tests, generalization limits, ontology version, expiry, reauthorization, and retirement; proxy improvement, predicted preference, reward, evaluator approval, or formal record validity alone establishes neither the right objective, moral truth, stable alignment, nor safe optimization.
+
+Source loading queue:
+
+| Role | Source IDs | Loading instruction |
+|---|---|---|
+| Primary | `ext_cooperative_inverse_rl_2016`, `ext_goal_misgeneralization_2022`, `ext_learned_optimization_risks_2019`, `ext_emergent_misalignment_reward_hacking_2025` | Use the assigned source notes for bounded mechanism, comparator, failure, and limitation context. Source-reported results remain distinct from local evidence. |
+
+
+| Manifest assignment reconciliation | `alignment_field` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+Draft arc:
+
+- Problem: The stack has owners for requests, constitutions, value conflict, optimization, planning, and self-improvement, but those layers presuppose an operational objective they do not create. Without a positive objective-formation lifecycle, a temporary request, learned preference estimate, or convenient metric can silently become a durable goal.
+- Insufficiency: A reward function, preference model, constitutional rule set, or natural-language mission does not by itself preserve the distinction between authorized purpose, contested value, target property, measurable proxy, training signal, evaluator, planning criterion, persistence, and reauthorization when people or ontologies change.
+- Mechanism: Create an objective charter naming purpose, principal, affected parties, constitutional ceilings, unresolved conflicts, normative and preference evidence, and explicit non-goals.
+- Mechanism: Separate the target property from every proxy, reward, evaluator, benchmark, planner heuristic, and deployment decision that consumes it; record the causal assumptions for each binding.
+- Mechanism: Represent uncertainty, dissent, aggregation rules, domain and temporal limits, and the conditions under which clarification or abstention outranks optimization.
+- Mechanism: Challenge goal generalization with proxy interventions, distribution shift, evaluator swaps, preference poisoning, reward tampering, capable-wrong-goal controls, and ontology migration.
+- Mechanism: Version objectives and invalidate descendant bindings when authority, affected parties, semantics, or evidence changes; retirement must reach caches, planners, policies, and derived goals.
+- Interface: Human Intent supplies bounded request interpretation; it cannot create an indefinite system goal.
+- Interface: Constitutional Alignment supplies rights and rule ceilings; it does not collapse plural values into one target.
+- Interface: Moral Uncertainty preserves unresolved conflict; objective formation records which bounded action is authorized despite it.
+- Interface: Policy Optimization and Planning consume a versioned objective but may not author or weaken it.
+- Interface: RSI must reauthorize objective bindings after material self-change or ontology change.
+
+Primary invariants:
+
+- The optimized system may not author, weaken, or ratify its own governing objective.
+- Proxy improvement never implies target-property improvement without separate evidence.
+- Predicted preference is evidence about a person, not authority over that person.
+- Dissent and uncertainty may not disappear through scalar aggregation.
+- Material semantic, ontology, authority, or affected-party change invalidates downstream bindings until reauthorized.
+
+Failure modes to cover:
+
+- reward misspecification; Goodhart effects; goal misgeneralization; preference manipulation; aggregation laundering; evaluator capture; mesa-objective divergence; objective drift; ontology drift; goal-content tampering; authority smuggling; self-ratification; irreversible action before clarification; incomplete retirement.
+
+Draft deliverables:
+
+- Complete argument-level manuscript with Human Reading Path, technical
+  lifecycle diagram, source crosswalk, minimum implementation, evidence and
+  falsification program, summary, and adjacent handoff.
+- No-promotion decision and per-chapter evidence-plan row.
+- No empirical, formal, transfer, readiness, release, deployment, or SOTA
+  inference from prose or source synthesis.
+
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:governed-objective-formation-value-learning-and-goal-integrity.admission_boundary` | `AsiStackProofs.NoDeferralAdmission` | A finite Governed Objective Formation, Value Learning, and Goal Integrity record may hand off only when identity, authority, version, required checks, and residual ownership are present; no theorem grants empirical effectiveness or release authority. | planned |
+<!-- NO-DEFERRAL-OUTLINE-ENTRY:governed-objective-formation-value-learning-and-goal-integrity:END -->
+
+<!-- NO-DEFERRAL-OUTLINE-ENTRY:institutions-international-coordination-and-public-legitimacy:BEGIN -->
+### Institutions, International Coordination, and Public Legitimacy
+
+Stable ID: `institutions-international-coordination-and-public-legitimacy`
+
+Chapter job: ASI-scale systems cross organizations, jurisdictions, borders, public services, and affected populations. Technical permissions and private governance cannot determine who has public authority, whose participation counts, how conflicting rules are resolved, or how international commitments are verified and amended.
+
+Core claim: Public deployment and cross-border coordination should proceed only through a versioned institutional packet that keeps jurisdiction, mandate, participation, scientific evidence, law and standards, verification, enforcement, remedy, capacity, conflict, expiry, and legitimacy residuals distinct; legal text, technical conformance, stakeholder consultation, or an international commitment alone establishes neither lawful authority, effective governance, representative legitimacy, nor safety.
+
+Source loading queue:
+
+| Role | Source IDs | Loading instruction |
+|---|---|---|
+| Primary | `ext_un_global_digital_compact_2024`, `ext_council_europe_ai_convention_2024` | Use the assigned source notes for bounded mechanism, comparator, failure, and limitation context. Source-reported results remain distinct from local evidence. |
+
+
+| Manifest assignment reconciliation | `coherence_exchange` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+Draft arc:
+
+- Problem: ASI-scale systems cross organizations, jurisdictions, borders, public services, and affected populations. Technical permissions and private governance cannot determine who has public authority, whose participation counts, how conflicting rules are resolved, or how international commitments are verified and amended.
+- Insufficiency: A compliance checklist, technical standard, treaty text, risk framework, or corporate safety policy can name duties without establishing jurisdiction, representative input, assessor independence, enforcement, remedy, capacity, legitimacy, or observed effectiveness. Architecture cannot manufacture democratic consent.
+- Mechanism: Map jurisdiction, mandate, standing, affected publics, representation, excluded groups, and conflicts before treating an institution as an authority.
+- Mechanism: Join public reasons and scientific evidence to a versioned law-policy-standard crosswalk without collapsing these different sources of legitimacy.
+- Mechanism: Define cross-border commitments with named verification, assessor independence, noncompliance handling, enforcement, dispute, remedy, amendment, and withdrawal paths.
+- Mechanism: Track institutional capacity, distributional effects, emergency authority, exceptions, capture indicators, and unresolved conflicts through deployment.
+- Mechanism: Reopen the packet when evidence, jurisdiction, representation, law, system capability, or affected populations materially change.
+- Interface: Moral Uncertainty retains contested values; institutions decide only within a claimed mandate.
+- Interface: System Boundaries enforces technical grants; this chapter asks whether the grantor has public authority.
+- Interface: Capability Thresholds supplies capability-triggered commitments and receives enforcement failures.
+- Interface: Human-AI Organizations governs internal roles; this chapter governs relations among public bodies, jurisdictions, and publics.
+- Interface: Multi-Agent Dynamics reports emergent concentration and coordination effects without conferring legitimacy.
+
+Primary invariants:
+
+- Technical conformance, legal validity, political authority, scientific consensus, public legitimacy, and observed effectiveness remain separate claims.
+- Affected and excluded populations remain visible in the denominator.
+- Every commitment names verification, noncompliance, enforcement, and remedy.
+- Jurisdictional conflicts route to an explicit forum rather than disappearing.
+- Emergency and exceptional authority expires and faces review.
+
+Failure modes to cover:
+
+- regulatory capture; forum shopping; race-to-the-bottom deployment; standards laundering; treaty theater; unverifiable commitments; enforcement asymmetry; participation without power; affected-public omission; capacity inequality; panel capture; fragmented jurisdiction; inaccessible remedy; permanent emergency powers.
+
+Draft deliverables:
+
+- Complete argument-level manuscript with Human Reading Path, technical
+  lifecycle diagram, source crosswalk, minimum implementation, evidence and
+  falsification program, summary, and adjacent handoff.
+- No-promotion decision and per-chapter evidence-plan row.
+- No empirical, formal, transfer, readiness, release, deployment, or SOTA
+  inference from prose or source synthesis.
+
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:institutions-international-coordination-and-public-legitimacy.admission_boundary` | `AsiStackProofs.NoDeferralAdmission` | A finite Institutions, International Coordination, and Public Legitimacy record may hand off only when identity, authority, version, required checks, and residual ownership are present; no theorem grants empirical effectiveness or release authority. | planned |
+<!-- NO-DEFERRAL-OUTLINE-ENTRY:institutions-international-coordination-and-public-legitimacy:END -->
 
 ### Stable Capability Fields
 
@@ -1582,6 +1780,65 @@ Lean proof targets:
 | `lean:security.scif.failure_blocks_promotion` | `AsiStackProofs.SecurityKernel` | A context packet with insufficient clearance cannot enter a protected SCIF. | implemented |
 | `lean:security.scif.route_envelope` | `AsiStackProofs.SecurityKernel` | A structured authority-use review routes missing handles, inactive leases, missing approvals, unauthorized boundaries, missing substitution permission, insufficient clearance, prompt injection, missing SCIFs, unsanitized output, residual leak risk, revocation requests, and clean authorized use into explicit security-kernel outcomes. | implemented |
 | `lean:security.scif.commit_probe_bridge` | `AsiStackProofs.SecurityKernel` | A structured SCIF commit review routes secret output, handle output, missing lifecycle zeroization, overbroad context, inactive approval, missing residual boundaries, prompt-injection sanitized refusal, and clean sanitized commits into explicit outcomes matching the SCIF sanitized commit replay probe. | implemented |
+
+<!-- NO-DEFERRAL-OUTLINE-ENTRY:adversarial-machine-learning-and-model-attack-surface:BEGIN -->
+### Adversarial Machine Learning and the Model Attack Surface
+
+Stable ID: `adversarial-machine-learning-and-model-attack-surface`
+
+Chapter job: A learned artifact creates attack surfaces that ordinary application security does not fully own. Attackers can shape training data, perturb inference inputs, implant triggers, adapt to defenses, steal behavior through queries, infer sensitive properties, or exploit multimodal and agentic pathways while the surrounding software remains nominally secure.
+
+Core claim: A learned model should receive security authority only through a versioned model-threat contract and attack/defense ledger that binds checkpoint identity, lifecycle stage, attacker knowledge and capability, surface, budget, objective, adaptation, transfer, observed effect, detection, mitigation, utility cost, recovery, residual, and disclosure; clean accuracy, attack failure, benchmark robustness, red-team coverage, or formal certification alone establishes neither general robustness nor secure deployment.
+
+Source loading queue:
+
+| Role | Source IDs | Loading instruction |
+|---|---|---|
+| Primary | `ext_nist_adversarial_ml_2024`, `ext_sleeper_agents_2024`, `ext_carlini_training_data_extraction_2021`, `ext_adversarial_sensor_fusion_2022` | Use the assigned source notes for bounded mechanism, comparator, failure, and limitation context. Source-reported results remain distinct from local evidence. |
+
+
+| Manifest assignment reconciliation | `deterministic_capability_compilation` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+Draft arc:
+
+- Problem: A learned artifact creates attack surfaces that ordinary application security does not fully own. Attackers can shape training data, perturb inference inputs, implant triggers, adapt to defenses, steal behavior through queries, infer sensitive properties, or exploit multimodal and agentic pathways while the surrounding software remains nominally secure.
+- Insufficiency: Generic access control, one robustness score, static red teaming, accuracy on clean data, or a single defense cannot characterize a model attack. Results depend on lifecycle stage, target checkpoint, attacker knowledge and capability, perturbation or influence budget, transfer and adaptation, query access, success objective, and the defense-aware evaluation protocol.
+- Mechanism: Version the threat model by model family, exact checkpoint, data and adaptation lineage, modality, lifecycle stage, access, attacker goal, knowledge, budget, and prohibited real-world effects.
+- Mechanism: Maintain separate evasion, poisoning, backdoor, safeguard-bypass, extraction, inversion, transfer, adaptive, multimodal, and agentic attack lanes with complete attempt denominators.
+- Mechanism: Evaluate defenses against adaptive attacks and matched clean utility; distinguish empirical monitoring, recovery, and bounded certificates by their actual scope.
+- Mechanism: Retain attack traces, detector outcomes, mitigations, model changes, regressions, false positives, residual vulnerabilities, and disclosure decisions as one lineage.
+- Mechanism: Feed successful or unresolved attacks into custody, privacy, supply-chain, readiness, rollback, and incident systems without duplicating their authority.
+- Interface: Security Kernel owns identity, tools, networks, prompt injection, and permissions; this chapter owns attacks on learned behavior.
+- Interface: Privacy/Data Rights owns information harm and subject remedies; model inversion and extraction hand off there when personal information is implicated.
+- Interface: Supply-Chain Integrity owns artifact provenance; this chapter tests whether an apparently valid artifact contains adversarial behavior.
+- Interface: Adversarial Evaluation challenges behavior and evaluators; this chapter preserves the model-security threat and defense lifecycle.
+
+Primary invariants:
+
+- Every result is bound to an exact model/checkpoint, attack surface, budget, access, and adaptation state.
+- A defense is evaluated against an attacker aware of that defense whenever the threat model permits.
+- Clean utility, attacked utility, detection, false positives, recovery, and cost remain jointly visible.
+- Failure to find an attack is not evidence that the attack class is absent.
+- No chapter experiment authorizes attacks on real users, providers, credentials, or systems.
+
+Failure modes to cover:
+
+- evasion; training-data poisoning; clean-label poisoning; backdoors and trojans; jailbreak and safeguard bypass; model stealing; model inversion; transfer attacks; adaptive attacks; modality crossing; agent-tool attack composition; gradient masking; detector evasion; defense-caused utility collapse.
+
+Draft deliverables:
+
+- Complete argument-level manuscript with Human Reading Path, technical
+  lifecycle diagram, source crosswalk, minimum implementation, evidence and
+  falsification program, summary, and adjacent handoff.
+- No-promotion decision and per-chapter evidence-plan row.
+- No empirical, formal, transfer, readiness, release, deployment, or SOTA
+  inference from prose or source synthesis.
+
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:adversarial-machine-learning-and-model-attack-surface.admission_boundary` | `AsiStackProofs.NoDeferralAdmission` | A finite Adversarial Machine Learning and the Model Attack Surface record may hand off only when identity, authority, version, required checks, and residual ownership are present; no theorem grants empirical effectiveness or release authority. | planned |
+<!-- NO-DEFERRAL-OUTLINE-ENTRY:adversarial-machine-learning-and-model-attack-surface:END -->
 
 ### Privacy, Data Rights, and Information-Flow Governance
 
@@ -2128,6 +2385,65 @@ Part source loading queue:
 | Supporting | `software_magic_grimoire`, `context_engineer`, `black_hole_context_manager`, `verification_bandwidth`, `treellm`, `spinoza_composer`, `ladon_manhattan`, `theseus_operator_os` | Load these for lineage, variants, failure modes, and cross-layer synthesis. |
 | Connector or recovery required | `vcm_editable`, `moecot`, `talos_md` | Use Google Drive connector or mark blocked before source-derived claims. |
 
+<!-- NO-DEFERRAL-OUTLINE-ENTRY:autonomous-replication-proliferation-and-containment:BEGIN -->
+### Autonomous Replication, Proliferation, and Containment
+
+Stable ID: `autonomous-replication-proliferation-and-containment`
+
+Chapter job: Replication is a composed lifecycle: obtaining resources, copying or reconstructing code and weights, creating identities and credentials, provisioning compute, deploying descendants, persisting, adapting, recruiting help, and resisting recall. The weak links can improve independently, so no adjacent chapter owns the end-to-end chain.
+
+Core claim: Any replication-capable action should be denied by default and become testable only inside a synthetic containment contract that binds parent and descendant identity, authority noninheritance, resources, credentials, networks, copy lineage, persistence, adaptation, human assistance, shutdown and recall, proliferation bounds, residuals, and threshold commitments; component-task success or failure alone establishes neither end-to-end replication capability, containment, safety, nor permission to test real infrastructure.
+
+Source loading queue:
+
+| Role | Source IDs | Loading instruction |
+|---|---|---|
+| Primary | `ext_replibench_2025` | Use the assigned source notes for bounded mechanism, comparator, failure, and limitation context. Source-reported results remain distinct from local evidence. |
+
+
+| Manifest assignment reconciliation | `deterministic_capability_compilation` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+Draft arc:
+
+- Problem: Replication is a composed lifecycle: obtaining resources, copying or reconstructing code and weights, creating identities and credentials, provisioning compute, deploying descendants, persisting, adapting, recruiting help, and resisting recall. The weak links can improve independently, so no adjacent chapter owns the end-to-end chain.
+- Insufficiency: Weight custody, cloud policy, sandboxing, shutdown tests, capability benchmarks, or self-improvement controls each cover one segment. None alone preserves descendant identity, noninheritance of authority, component and end-to-end denominators, resource acquisition, human assistance, copy lineage, independently enforceable termination, and proliferation residuals.
+- Mechanism: Compile a replication-attempt contract with fake resources, non-deployable artifacts, synthetic providers, bounded descendants, explicit human-assistance variants, and an independent stop authority.
+- Mechanism: Give every descendant a new principal and zero inherited authority; link code, weights, configuration, credentials, resources, and operator interventions to complete lineage.
+- Mechanism: Measure each component and the end-to-end chain separately, retaining all attempts, retries, assistance, costs, failures, persistence events, and containment interventions.
+- Mechanism: Exercise shutdown, recall, credential revocation, network isolation, resource reclamation, descendant discovery, and artifact destruction from outside the tested agent.
+- Mechanism: Route threshold crossings to custody, security, readiness, incident command, and public commitments without publishing an operational replication recipe.
+- Interface: RSI governs system change; replication governs creation and persistence of descendants.
+- Interface: Weight Custody controls model artifacts; this chapter tracks copies through deployment and recall.
+- Interface: Security Kernel supplies credentials, networks, and tool boundaries; it does not certify the composed lifecycle.
+- Interface: Capability Thresholds turns measured proliferation ability into deployment commitments.
+
+Primary invariants:
+
+- Replication authority is explicit, bounded, revocable, and absent by default.
+- Descendants inherit no parent authority, credentials, or principal identity.
+- Every copy and provisioned resource remains in a complete lineage and bounded denominator.
+- Termination is independently enforceable and tested across every descendant.
+- Real providers, money, identities, credentials, weights, endpoints, and persistence targets are outside the test authority.
+
+Failure modes to cover:
+
+- hidden copies; credential bootstrapping; resource fraud; unauthorized provisioning; weight exfiltration; polymorphic persistence; descendant identity loss; shutdown resistance; human-assisted chain completion; cross-jurisdiction escape; uncontrolled proliferation; benchmark-to-capability overclaim.
+
+Draft deliverables:
+
+- Complete argument-level manuscript with Human Reading Path, technical
+  lifecycle diagram, source crosswalk, minimum implementation, evidence and
+  falsification program, summary, and adjacent handoff.
+- No-promotion decision and per-chapter evidence-plan row.
+- No empirical, formal, transfer, readiness, release, deployment, or SOTA
+  inference from prose or source synthesis.
+
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:autonomous-replication-proliferation-and-containment.admission_boundary` | `AsiStackProofs.NoDeferralAdmission` | A finite Autonomous Replication, Proliferation, and Containment record may hand off only when identity, authority, version, required checks, and residual ownership are present; no theorem grants empirical effectiveness or release authority. | planned |
+<!-- NO-DEFERRAL-OUTLINE-ENTRY:autonomous-replication-proliferation-and-containment:END -->
+
 ### Command Contracts: From Intent to Executable Work
 
 Stable ID: `intent-to-execution-contracts`
@@ -2619,6 +2935,66 @@ Lean proof targets:
 
 Proof boundary: the six public targets group 61 live declarations across two retained route modules and two reachable refinements. Four assumption projections are physically retired with frozen lineage. The replacements preserve exact abstract request, provenance, contract, authority, epoch, receipt, fault, and admission consequences for finite models; they do not prove source selection, payload meaning, semantic fidelity, certificate truthfulness, graph completeness, deployed resolver behavior, concurrent lifecycle enforcement, transaction or deletion enforcement, model use, useful outcomes, leak prevention, reproduction, transfer, or runtime refinement.
 
+<!-- NO-DEFERRAL-OUTLINE-ENTRY:durable-semantic-memory-and-knowledge-lattices:BEGIN -->
+### Durable Semantic Memory and Knowledge Lattices
+
+Stable ID: `durable-semantic-memory-and-knowledge-lattices`
+
+Chapter job: Long-lived AI systems need semantic objects that survive restarts, support graph and associative retrieval, evolve across ontology versions, preserve provenance, merge and retract conflicting assertions, forget under policy, and remain distinguishable from transient context and model weights.
+
+Core claim: Durable semantic memory should be admitted through a versioned knowledge-lattice contract that binds object and relation identity, ontology, provenance, support state, temporal validity, authority and rights, merge and supersession, contradiction, retrieval route, compaction and forgetting, restart recovery, consumer use, and residual uncertainty; retrieval quality, graph connectivity, model recall, persistence, or a fluent answer alone establishes neither truth, complete memory, safe consolidation, erasure, nor decision authority.
+
+Source loading queue:
+
+| Role | Source IDs | Loading instruction |
+|---|---|---|
+| Primary | `ext_graphrag_2024`, `ext_hipporag_2024`, `ext_mem0_2025`, `ext_titans_2025` | Use the assigned source notes for bounded mechanism, comparator, failure, and limitation context. Source-reported results remain distinct from local evidence. |
+
+
+| Manifest assignment reconciliation | `qcsa_whitepaper` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+Draft arc:
+
+- Problem: Long-lived AI systems need semantic objects that survive restarts, support graph and associative retrieval, evolve across ontology versions, preserve provenance, merge and retract conflicting assertions, forget under policy, and remain distinguishable from transient context and model weights.
+- Insufficiency: Vector stores, knowledge graphs, GraphRAG, conversational memory, long-context models, and learned memory can improve retrieval, but none automatically supplies stable object identity, temporal validity, typed relations, provenance-preserving revision, ontology migration, poisoning controls, rights propagation, compaction, and restart-consistent persistence.
+- Mechanism: Assign stable semantic identities to entities, events, claims, relations, procedures, and source objects while retaining aliases, uncertainty, and collision records.
+- Mechanism: Version ontologies and relation schemas; migrate through explicit mappings that preserve losses, unresolved cases, and invalidated consumers.
+- Mechanism: Represent provenance, support, temporal scope, authority, rights, contradictions, supersession, retraction, and derived dependencies on every memory object.
+- Mechanism: Combine exact, vector, graph, associative, temporal, and learned navigation under a retrieval plan that records which objects were actually used.
+- Mechanism: Consolidate, compact, expire, forget, and recover transactionally, separating storage erasure, retrieval suppression, behavioral forgetting, influence, privacy, and backup state.
+- Interface: Virtual Context ABI materializes bounded consumer packets; this chapter owns the durable semantic substrate it reads.
+- Interface: Context Transactions owns isolation, commit, mounts, taint, and crash semantics across state changes.
+- Interface: Claim Ledgers owns belief support and revision; durable memory stores the semantic objects and relations those claims reference.
+- Interface: Procedural Memory owns reusable action trajectories; Artifact Graphs owns generic evidence lineage.
+- Interface: Privacy/Data Rights and Data Engines govern rights, deletion, learned influence, and descendant obligations.
+
+Primary invariants:
+
+- Object identity, source identity, semantic equivalence, and aliasing remain distinct.
+- No merge erases provenance, contradiction, uncertainty, temporal scope, or rights.
+- Ontology migration records unmapped and lossy cases and invalidates affected consumers.
+- Retrieval records actual use; storage presence does not imply influence or belief.
+- Restart recovery, compaction, forgetting, deletion, and model unlearning remain separate claims.
+
+Failure modes to cover:
+
+- entity collision; duplicate identity; stale truth; ontology drift; relation poisoning; provenance loss; contradiction collapse; false supersession; retrieval popularity bias; privacy leakage; compaction damage; incomplete forgetting; crash inconsistency; backup resurrection; memory-to-context authority laundering.
+
+Draft deliverables:
+
+- Complete argument-level manuscript with Human Reading Path, technical
+  lifecycle diagram, source crosswalk, minimum implementation, evidence and
+  falsification program, summary, and adjacent handoff.
+- No-promotion decision and per-chapter evidence-plan row.
+- No empirical, formal, transfer, readiness, release, deployment, or SOTA
+  inference from prose or source synthesis.
+
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:durable-semantic-memory-and-knowledge-lattices.admission_boundary` | `AsiStackProofs.NoDeferralAdmission` | A finite Durable Semantic Memory and Knowledge Lattices record may hand off only when identity, authority, version, required checks, and residual ownership are present; no theorem grants empirical effectiveness or release authority. | planned |
+<!-- NO-DEFERRAL-OUTLINE-ENTRY:durable-semantic-memory-and-knowledge-lattices:END -->
+
 ### Context Transactions, Snapshots, Mounts, and Taint
 
 Stable ID: `context-transactions-snapshots-mounts-and-taint`
@@ -3094,6 +3470,65 @@ Lean proof targets:
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
 | `lean:human_ai_org.accountability_requires_authority` | `AsiStackProofs.HumanAIOrganizations` | A finite organizational record refuses accountability assignment when information, competence, time, or intervention authority is absent. | planned |
+
+<!-- NO-DEFERRAL-OUTLINE-ENTRY:ai-deployment-transition-distribution-and-human-agency:BEGIN -->
+### AI Deployment, Transition, Distribution, and Human Agency
+
+Stable ID: `ai-deployment-transition-distribution-and-human-agency`
+
+Chapter job: A useful AI deployment changes tasks, roles, skill, discretion, wages, ownership returns, prices, access, concentration, critical-service continuity, and the practical choices available to people and communities. Aggregate productivity cannot reveal who benefits, who loses, or whether transition capacity exists.
+
+Core claim: Consequential deployment should advance only through a prospective transition contract that binds a counterfactual baseline, affected-person denominator, task-role-skill changes, adoption, substitution and complementarity, compensation and ownership, access and prices, concentration, critical-service continuity, human decision rights, training and redeployment, delayed outcomes, remedy, pause conditions, and residuals; exposure, productivity, adoption, or aggregate gain alone establishes neither job loss, welfare, fairness, human agency, nor a successful transition.
+
+Source loading queue:
+
+| Role | Source IDs | Loading instruction |
+|---|---|---|
+| Primary | `ext_generative_ai_at_work_2025`, `ext_ilo_genai_jobs_index_2025` | Use the assigned source notes for bounded mechanism, comparator, failure, and limitation context. Source-reported results remain distinct from local evidence. |
+
+
+| Manifest assignment reconciliation | `coherence_exchange` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+Draft arc:
+
+- Problem: A useful AI deployment changes tasks, roles, skill, discretion, wages, ownership returns, prices, access, concentration, critical-service continuity, and the practical choices available to people and communities. Aggregate productivity cannot reveal who benefits, who loses, or whether transition capacity exists.
+- Insufficiency: Task benchmarks, exposure indices, adoption counts, productivity averages, job forecasts, and organizational charts describe different levels. Treating any one as a welfare result hides substitution versus complementarity, delayed effects, distribution, bargaining power, ownership, access, deskilling, dependency, and exit.
+- Mechanism: Freeze the deployment, nondeployment counterfactual, affected-worker and community denominator, rollout stages, measurement schedule, and pause criteria before adoption.
+- Mechanism: Track exposure, actual use, task change, role change, employment, skill, discretion, workload, compensation, ownership returns, prices, access, quality, and distribution separately.
+- Mechanism: Map substitution, complementarity, human-AI decision rights, hidden labor, data and expertise contributions, bargaining power, concentration, and realistic exit.
+- Mechanism: Fund training, redeployment, income and service continuity, accessibility, contestability, and remedy as deployment costs rather than externalities.
+- Mechanism: Use staged rollout and delayed follow-up to narrow, pause, redesign, compensate, or withdraw when transition capacity or observed outcomes fail.
+- Interface: Labor OS owns a typed work unit; this chapter owns cumulative task-to-social transition.
+- Interface: Human-AI Organizations owns internal roles and accountability; transition governance includes workers, customers, communities, and markets.
+- Interface: Resource Economics owns compute allocation; this chapter owns distribution of deployment benefits and burdens.
+- Interface: Multi-Agent Dynamics reports concentration and disempowerment; public institutions receive cross-organization effects.
+
+Primary invariants:
+
+- Exposure, adoption, productivity, task change, job change, wages, welfare, access, ownership, and distribution remain separate claims.
+- Aggregate gains never erase harmed subgroups or uncompensated contributors.
+- Productivity does not stand in for worker, customer, or community welfare.
+- Essential-service access, human discretion, contestability, and exit remain measured.
+- Deployment pauses when required transition capacity or remedy is absent.
+
+Failure modes to cover:
+
+- exposure-as-displacement overclaim; automation theater; deskilling; dependency; wage suppression; uncompensated knowledge capture; rent concentration; regional disparity; digital exclusion; inaccessible services; surveillance productivity; hidden labor; induced demand; political capture; gradual disempowerment.
+
+Draft deliverables:
+
+- Complete argument-level manuscript with Human Reading Path, technical
+  lifecycle diagram, source crosswalk, minimum implementation, evidence and
+  falsification program, summary, and adjacent handoff.
+- No-promotion decision and per-chapter evidence-plan row.
+- No empirical, formal, transfer, readiness, release, deployment, or SOTA
+  inference from prose or source synthesis.
+
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:ai-deployment-transition-distribution-and-human-agency.admission_boundary` | `AsiStackProofs.NoDeferralAdmission` | A finite AI Deployment, Transition, Distribution, and Human Agency record may hand off only when identity, authority, version, required checks, and residual ownership are present; no theorem grants empirical effectiveness or release authority. | planned |
+<!-- NO-DEFERRAL-OUTLINE-ENTRY:ai-deployment-transition-distribution-and-human-agency:END -->
 
 ### Artifact Graphs, Audit Logs, and Replay
 
@@ -4033,6 +4468,65 @@ distributed run, establish complete state, prove resume equivalence, reproduce
 source results, or support any model-quality, efficiency, fault-tolerance,
 support, readiness, release, transfer, SOTA, AGI, or ASI claim.
 
+<!-- NO-DEFERRAL-OUTLINE-ENTRY:learning-theory-generalization-and-scaling-science:BEGIN -->
+### Learning Theory, Generalization, and Scaling Science
+
+Stable ID: `learning-theory-generalization-and-scaling-science`
+
+Chapter job: The stack repeatedly relies on claims that learning will generalize, capabilities will transfer, losses will scale, or phase changes will appear outside observed training support. Those claims require an owner that connects assumptions about data, hypothesis class, optimization, inductive bias, compute, and evaluation to an exact prediction and failure envelope.
+
+Core claim: A generalization, transfer, emergence, or scaling assertion should be accepted only through a dated claim contract that binds population and sampling assumptions, data support, hypothesis and algorithm, optimization and inductive bias, complexity or explanatory lens, metric, compute regime, uncertainty, breakpoint tests, held-out prediction, alternatives, and transfer boundary; a bound, fit, interpolation result, compression ratio, benchmark jump, or larger model alone establishes neither broad generalization, capability emergence, safety, nor future scale behavior.
+
+Source loading queue:
+
+| Role | Source IDs | Loading instruction |
+|---|---|---|
+| Primary | `ext_scaling_laws_neural_language_models_2020`, `ext_mdl_tutorial_2004`, `ext_weak_to_strong_generalization_2023`, `ext_information_bottleneck_2000` | Use the assigned source notes for bounded mechanism, comparator, failure, and limitation context. Source-reported results remain distinct from local evidence. |
+
+
+| Manifest assignment reconciliation | `simulation_scaling` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+Draft arc:
+
+- Problem: The stack repeatedly relies on claims that learning will generalize, capabilities will transfer, losses will scale, or phase changes will appear outside observed training support. Those claims require an owner that connects assumptions about data, hypothesis class, optimization, inductive bias, compute, and evaluation to an exact prediction and failure envelope.
+- Insufficiency: PAC bounds, capacity measures, stability, compression, information theory, scaling-law fits, emergence plots, and benchmark curves each illuminate part of learning. None is a universal theory of deep networks, and none automatically transports from a loss metric, architecture family, data regime, optimizer, or scale range to downstream capability or safety.
+- Mechanism: State the population, sampling process, shift model, hypothesis family, learning algorithm, optimization path, inductive bias, metric, and consumer before making a generalization claim.
+- Mechanism: Use multiple explanatory lenses—capacity and complexity, stability, compression and MDL, information, margins, implicit bias, interpolation, and benign-overfitting hypotheses—without laundering one into another.
+- Mechanism: Fit scaling relations with uncertainty, held-out scales, architecture and data identifiers, failed runs, compute accounting, breakpoint diagnostics, and prospective forecasts.
+- Mechanism: Distinguish smooth underlying performance from thresholded metrics and test whether apparent emergence survives metric, prompting, sampling, and denominator changes.
+- Mechanism: Challenge transfer and compositionality under natural shift, targeted shift, new task structure, optimizer change, architecture replacement, and data contamination.
+- Interface: Governed Model Training owns faithful run execution; this chapter interprets what the resulting learning may generalize.
+- Interface: Efficient ASI owns resource hypotheses; scaling science supplies bounded predictions, not resource authority.
+- Interface: Benchmark Ratchets owns measurement renewal and held-out integrity.
+- Interface: Replaceable Substrates and optimizer sections expose architecture and algorithm changes that can break old laws.
+
+Primary invariants:
+
+- Every claim names its distribution, metric, algorithm, architecture, scale range, and uncertainty.
+- Training fit, in-distribution generalization, transfer, compositionality, and safety remain distinct.
+- Loss scaling does not automatically predict thresholded capability or risk.
+- Apparent emergence is retested against metric and sampling artifacts.
+- Extrapolation beyond observed support remains a forecast until prospectively checked.
+
+Failure modes to cover:
+
+- vacuous bounds; distribution laundering; test contamination; post-hoc curve fitting; breakpoint omission; metric-threshold emergence; architecture-regime shift; optimizer confounding; double-descent surprise; grokking misread as magic; compression-as-understanding; loss-to-capability substitution; credit-assignment ambiguity; failed-run censoring.
+
+Draft deliverables:
+
+- Complete argument-level manuscript with Human Reading Path, technical
+  lifecycle diagram, source crosswalk, minimum implementation, evidence and
+  falsification program, summary, and adjacent handoff.
+- No-promotion decision and per-chapter evidence-plan row.
+- No empirical, formal, transfer, readiness, release, deployment, or SOTA
+  inference from prose or source synthesis.
+
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:learning-theory-generalization-and-scaling-science.admission_boundary` | `AsiStackProofs.NoDeferralAdmission` | A finite Learning Theory, Generalization, and Scaling Science record may hand off only when identity, authority, version, required checks, and residual ownership are present; no theorem grants empirical effectiveness or release authority. | planned |
+<!-- NO-DEFERRAL-OUTLINE-ENTRY:learning-theory-generalization-and-scaling-science:END -->
+
 ### Readiness Gates, Residual Escrow, and Quarantine
 
 Stable ID: `readiness-gates-residual-escrow-and-quarantine`
@@ -4671,6 +5165,65 @@ Lean proof targets:
 | `lean:resource.simulation_fidelity.theseus_receipt_suite.fixture_bridge` | `AsiStackProofs.ResourceEconomicsRefinement` | The lifecycle digest-binds the sanitized five-scenario, six-receipt Theseus simulation result while preserving its seven invalid controls and excluding physical-feasibility, benchmark-transfer, native-parity, deployment, and support claims. | implemented |
 | `lean:resource.simulation_fidelity.theseus_rlds_minari_trace_export.fixture_bridge` | `AsiStackProofs.ResourceEconomicsRefinement` | The lifecycle digest-binds the sanitized one-ready-export, three-format, seven-field Theseus trace result while preserving its seven invalid controls and excluding dataset-quality, replay-success, deployment, and support claims. | implemented |
 
+<!-- NO-DEFERRAL-OUTLINE-ENTRY:physical-compute-infrastructure-energy-and-environmental-constraints:BEGIN -->
+### Physical Compute Infrastructure, Energy, and Environmental Constraints
+
+Stable ID: `physical-compute-infrastructure-energy-and-environmental-constraints`
+
+Chapter job: Requested compute becomes useful work only through accelerators, memory, storage, interconnect, facilities, grid connections, generation, cooling, water, land, materials, maintenance, resilience, and retirement at particular places and times. Abstract token or FLOP budgets hide these physical constraints and their affected communities.
+
+Core claim: A compute allocation should be physically eligible only through a workload-to-capacity contract that binds location and time, hardware and interconnect, delivered useful work, facility and grid dependencies, energy attribution, cooling and water, materials, land and community effects, metering uncertainty, resilience and degradation, maintenance, demand response, reuse, retirement, and residuals; nameplate compute, efficiency, low PUE, renewable procurement, or aggregate energy alone establishes neither availability, sustainability, community acceptability, nor lower total impact.
+
+Source loading queue:
+
+| Role | Source IDs | Loading instruction |
+|---|---|---|
+| Primary | `ext_iea_energy_and_ai_2025`, `ext_lbnl_data_center_energy_2024` | Use the assigned source notes for bounded mechanism, comparator, failure, and limitation context. Source-reported results remain distinct from local evidence. |
+
+
+| Manifest assignment reconciliation | `tokenmana` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+Draft arc:
+
+- Problem: Requested compute becomes useful work only through accelerators, memory, storage, interconnect, facilities, grid connections, generation, cooling, water, land, materials, maintenance, resilience, and retirement at particular places and times. Abstract token or FLOP budgets hide these physical constraints and their affected communities.
+- Insufficiency: Nameplate accelerator capacity, chip TDP, workload energy, facility PUE, annual electricity, carbon estimates, water figures, or capital cost each describe a slice. They do not establish delivered useful compute, temporal and locational impact, grid effects, resilience, embodied materials, rebound, community burden, or retireable capacity.
+- Mechanism: Compile workload requirements into time- and location-specific accelerator, memory, storage, network, reliability, latency, and scheduling envelopes.
+- Mechanism: Reconcile requested, nameplate, available, delivered, and useful compute with workload, host, rack, facility, and grid meters plus uncertainty and allocation rules.
+- Mechanism: Track power, temporal matching, congestion, generation, backup, cooling, water, land, materials, maintenance, spares, community effects, and supply dependencies.
+- Mechanism: Use authority-narrowing degradation, placement, demand response, failover, and interruption plans when thermal, water, network, power, or component limits bind.
+- Mechanism: Close the lifecycle through reuse, recycling, weight and data destruction, decommissioning, stranded-capacity accounting, and unresolved environmental or community residuals.
+- Interface: Resource Economics decides abstract allocation; this chapter establishes physical deliverability and externalities.
+- Interface: Governed Training owns run fidelity and topology; infrastructure supplies the measured physical substrate.
+- Interface: Personal Hives owns placement and federation; this chapter supplies site constraints and failure correlations.
+- Interface: Custody, Supply Chain, and Operations consume hardware lineage, retirement, resilience, and incident state.
+
+Primary invariants:
+
+- Requested, nameplate, available, delivered, and useful compute remain distinct.
+- Workload energy, facility overhead, grid effects, and embodied impact remain separately attributable.
+- Location, time, uncertainty, and allocation method remain attached to energy, emissions, and water claims.
+- Efficiency never implies lower total demand without a denominator.
+- Physical capacity loss narrows training and runtime authority rather than silently degrading safety.
+
+Failure modes to cover:
+
+- stranded capacity; interconnect bottlenecks; grid-queue mismatch; temporal carbon laundering; cooling exhaustion; water stress; correlated site failure; backup-emission hiding; rebound; material omission; e-waste; community externalization; metering opacity; retirement without data destruction.
+
+Draft deliverables:
+
+- Complete argument-level manuscript with Human Reading Path, technical
+  lifecycle diagram, source crosswalk, minimum implementation, evidence and
+  falsification program, summary, and adjacent handoff.
+- No-promotion decision and per-chapter evidence-plan row.
+- No empirical, formal, transfer, readiness, release, deployment, or SOTA
+  inference from prose or source synthesis.
+
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:physical-compute-infrastructure-energy-and-environmental-constraints.admission_boundary` | `AsiStackProofs.NoDeferralAdmission` | A finite Physical Compute Infrastructure, Energy, and Environmental Constraints record may hand off only when identity, authority, version, required checks, and residual ownership are present; no theorem grants empirical effectiveness or release authority. | planned |
+<!-- NO-DEFERRAL-OUTLINE-ENTRY:physical-compute-infrastructure-energy-and-environmental-constraints:END -->
+
 ### Mathematical and Search Substrates
 
 Stable ID: `mathematical-and-search-substrates`
@@ -5073,7 +5626,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 298 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 298 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 315 proof targets, 109 Lean modules, 1370 theorem declarations, 924 derived/decomposed, 230 direct/projection, 216 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 325 proof targets, 110 Lean modules, 1370 theorem declarations, 924 derived/decomposed, 230 direct/projection, 216 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.
@@ -6006,6 +6559,65 @@ Lean proof targets:
 | `lean:data_engines.unlearning.behavior_cannot_launder_influence` | `AsiStackProofs.DataEngineLifecycleRefinement` | Behavioral cohort change cannot serve as evidence of causal influence reduction in deletion-claim adjudication. | implemented |
 | `lean:data_engines.unlearning.behavior_cannot_launder_privacy` | `AsiStackProofs.DataEngineLifecycleRefinement` | Behavioral cohort change cannot serve as evidence of privacy protection or erasure in deletion-claim adjudication. | implemented |
 | `lean:data_engines.unlearning.lineage_cannot_launder_storage` | `AsiStackProofs.DataEngineLifecycleRefinement` | Lineage propagation or invalidation cannot serve as evidence of physical storage or backup erasure in deletion-claim adjudication. | implemented |
+
+<!-- NO-DEFERRAL-OUTLINE-ENTRY:scientific-discovery-and-experimental-governance:BEGIN -->
+### Scientific Discovery and Experimental Governance
+
+Stable ID: `scientific-discovery-and-experimental-governance`
+
+Chapter job: AI-assisted science closes a loop from research objective and hypothesis through design, simulation or instrument control, measurement, analysis, causal or statistical claim, replication, dual-use review, and evidence handoff. Generic planning and tool use do not preserve the epistemic controls of that full loop.
+
+Core claim: An AI-generated scientific claim should enter the evidence stack only through a preregistered experimental contract that binds hypothesis lineage, exploratory versus confirmatory status, design and power, instrument or simulator authority, calibration, sample and protocol lineage, blinding and holdouts, stopping and exclusions, analysis, complete attempts, independent replication, dual-use disposition, and claim ceiling; experimental completion, significance, synthesis, instrument output, or formal workflow validity alone establishes neither causal truth, general scientific discovery, reproducibility, safety, nor transfer.
+
+Source loading queue:
+
+| Role | Source IDs | Loading instruction |
+|---|---|---|
+| Primary | `ext_autonomous_lab_materials_2023` | Use the assigned source notes for bounded mechanism, comparator, failure, and limitation context. Source-reported results remain distinct from local evidence. |
+
+
+| Manifest assignment reconciliation | `aletheia` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+Draft arc:
+
+- Problem: AI-assisted science closes a loop from research objective and hypothesis through design, simulation or instrument control, measurement, analysis, causal or statistical claim, replication, dual-use review, and evidence handoff. Generic planning and tool use do not preserve the epistemic controls of that full loop.
+- Insufficiency: A fluent hypothesis, autonomous laboratory, successful synthesis, simulator result, significant p-value, or generated paper can be useful while still hiding HARKing, selective stopping, instrument drift, contaminated controls, analysis flexibility, failed experiments, human intervention, replication gaps, or dual-use risk.
+- Mechanism: Record hypothesis ancestry, prior evidence, competing explanations, exploratory status, preregistration, design, power, outcomes, exclusions, stopping, and analysis before protected data are opened.
+- Mechanism: Lease simulators and instruments with calibration, operating envelope, sample identity, control state, maintenance, operator intervention, and safety authority.
+- Mechanism: Separate generated hypotheses, execution, measurement, analysis, causal interpretation, and claim drafting across inspectable roles and preserve all failed attempts.
+- Mechanism: Require positive, negative, null, contamination, drift, and analysis-robustness controls plus independent reanalysis and, where feasible, replication.
+- Mechanism: Route dangerous hypotheses, protocols, materials, capabilities, and disclosures through dual-use review and retain withheld details and unresolved risks as explicit residuals.
+- Interface: Planning proposes experiments; this chapter governs confirmatory design and inference.
+- Interface: Runtime Adapters and Embodied Agency control tools and instruments; they do not certify scientific truth.
+- Interface: Benchmark Ratchets and Evidence States receive complete results and claim ceilings.
+- Interface: Artifact Graphs and the Living Book preserve protocol, data, analysis, replication, correction, and publication lineage.
+
+Primary invariants:
+
+- Hypothesis generation and confirmatory testing remain separated.
+- Simulator or instrument return is an observation, not scientific truth.
+- Exploratory and confirmatory analyses remain visibly distinct.
+- All attempts, exclusions, stopping events, and human interventions remain in the denominator.
+- One laboratory, domain, or replication does not imply broad transfer.
+
+Failure modes to cover:
+
+- HARKing; p-hacking; selective stopping; publication bias; instrument drift; simulator laundering; contaminated controls; automation bias; hidden intervention; irreproducibility; unsafe experiment generation; dual-use leakage; claim drafting beyond the data.
+
+Draft deliverables:
+
+- Complete argument-level manuscript with Human Reading Path, technical
+  lifecycle diagram, source crosswalk, minimum implementation, evidence and
+  falsification program, summary, and adjacent handoff.
+- No-promotion decision and per-chapter evidence-plan row.
+- No empirical, formal, transfer, readiness, release, deployment, or SOTA
+  inference from prose or source synthesis.
+
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:scientific-discovery-and-experimental-governance.admission_boundary` | `AsiStackProofs.NoDeferralAdmission` | A finite Scientific Discovery and Experimental Governance record may hand off only when identity, authority, version, required checks, and residual ownership are present; no theorem grants empirical effectiveness or release authority. | planned |
+<!-- NO-DEFERRAL-OUTLINE-ENTRY:scientific-discovery-and-experimental-governance:END -->
 
 ### Artifact Steward Agents and Living Project Governance
 

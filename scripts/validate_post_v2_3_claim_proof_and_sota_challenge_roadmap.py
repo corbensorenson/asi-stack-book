@@ -1221,7 +1221,7 @@ def errors(data: dict) -> list[str]:
         p1.get("state") == "completed"
         and p1.get("structured_machine_candidate_count") == 0
         and p1.get("pending_prose_candidate_count") == 0
-        and p1.get("semantic_chapter_sweep_completed_count") == 54
+        and p1.get("semantic_chapter_sweep_completed_count") == 64
         and expansion_complete
     )
     if (priority_states[1] == "completed" or milestone_states[1] == "completed") and not p1_complete:

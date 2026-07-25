@@ -1,0 +1,55 @@
+# Claim Dossier: Learning Theory, Generalization, and Scaling Science
+
+Chapter ID: `learning-theory-generalization-and-scaling-science`
+
+Status: P1 semantic review pending
+
+Core support state: `argument`
+
+This dossier is generated from the manifest and review overlay. Inclusion is not proof or promotion.
+
+| Atom | Role | Type | Review | Proposition |
+|---|---|---|---|---|
+| `learning-theory-generalization-and-scaling-science.core` | `core` | `composite` | `semantically_reviewed` | A generalization, transfer, emergence, or scaling assertion should be accepted only through a dated claim contract that binds population and sampling assumptions, data support, hypothesis and algorithm, optimization and inductive bias, complexity or explanatory lens, metric, compute regime, uncertainty, breakpoint tests, held-out prediction, alternatives, and transfer boundary; a bound, fit, interpolation result, compression ratio, benchmark jump, or larger model alone establishes neither broad generalization, capability emergence, safety, nor future scale behavior. |
+| `learning-theory-generalization-and-scaling-science.problem.001` | `problem` | `source-synthesis` | `semantically_reviewed` | The stack repeatedly relies on claims that learning will generalize, capabilities will transfer, losses will scale, or phase changes will appear outside observed training support. Those claims require an owner that connects assumptions about data, hypothesis class, optimization, inductive bias, compute, and evaluation to an exact prediction and failure envelope. |
+| `learning-theory-generalization-and-scaling-science.insufficiency.001` | `insufficiency` | `composite` | `semantically_reviewed` | PAC bounds, capacity measures, stability, compression, information theory, scaling-law fits, emergence plots, and benchmark curves each illuminate part of learning. None is a universal theory of deep networks, and none automatically transports from a loss metric, architecture family, data regime, optimizer, or scale range to downstream capability or safety. |
+| `learning-theory-generalization-and-scaling-science.minimum.001` | `minimum` | `executable` | `semantically_reviewed` | The smallest honest implementation boundary for Learning Theory, Generalization, and Scaling Science is: Create a claim-contract and forecasting notebook over several public small-model runs. Freeze candidate curve families and explanatory lenses, hold out scale points and task families, record failed runs and tuning, test breakpoint alternatives, and compare prediction intervals for loss, calibration, and downstream tasks. The result can evaluate local forecast discipline, not establish a universal law. |
+| `learning-theory-generalization-and-scaling-science.beyond_sota.001` | `beyond_sota` | `composite` | `semantically_reviewed` | At maturity, the operational contract is a forecast registry in which every generalization, transfer, emergence, or scaling claim is bound to its assumptions, data support, algorithm, inductive bias, metric, compute regime, uncertainty, alternative explanations, held-out predictions, breakpoints, and expiry. The registry must score prospective forecasts, preserve failed curves and negative results, reopen after architecture or optimizer changes, and prevent a fit to one loss or scale range from silently becoming a capability or safety claim. |
+| `learning-theory-generalization-and-scaling-science.mechanism.001` | `mechanism` | `composite` | `semantically_reviewed` | State the population, sampling process, shift model, hypothesis family, learning algorithm, optimization path, inductive bias, metric, and consumer before making a generalization claim. |
+| `learning-theory-generalization-and-scaling-science.mechanism.002` | `mechanism` | `composite` | `semantically_reviewed` | Use multiple explanatory lenses—capacity and complexity, stability, compression and MDL, information, margins, implicit bias, interpolation, and benign-overfitting hypotheses—without laundering one into another. |
+| `learning-theory-generalization-and-scaling-science.mechanism.003` | `mechanism` | `composite` | `semantically_reviewed` | Fit scaling relations with uncertainty, held-out scales, architecture and data identifiers, failed runs, compute accounting, breakpoint diagnostics, and prospective forecasts. |
+| `learning-theory-generalization-and-scaling-science.mechanism.004` | `mechanism` | `composite` | `semantically_reviewed` | Distinguish smooth underlying performance from thresholded metrics and test whether apparent emergence survives metric, prompting, sampling, and denominator changes. |
+| `learning-theory-generalization-and-scaling-science.mechanism.005` | `mechanism` | `composite` | `semantically_reviewed` | Challenge transfer and compositionality under natural shift, targeted shift, new task structure, optimizer change, architecture replacement, and data contamination. |
+| `learning-theory-generalization-and-scaling-science.interface.001` | `interface` | `executable` | `semantically_reviewed` | Governed Model Training owns faithful run execution; this chapter interprets what the resulting learning may generalize. |
+| `learning-theory-generalization-and-scaling-science.interface.002` | `interface` | `executable` | `semantically_reviewed` | Efficient ASI owns resource hypotheses; scaling science supplies bounded predictions, not resource authority. |
+| `learning-theory-generalization-and-scaling-science.interface.003` | `interface` | `executable` | `semantically_reviewed` | Benchmark Ratchets owns measurement renewal and held-out integrity. |
+| `learning-theory-generalization-and-scaling-science.interface.004` | `interface` | `executable` | `semantically_reviewed` | Replaceable Substrates and optimizer sections expose architecture and algorithm changes that can break old laws. |
+| `learning-theory-generalization-and-scaling-science.invariant.001` | `invariant` | `formal` | `semantically_reviewed` | Every claim names its distribution, metric, algorithm, architecture, scale range, and uncertainty. |
+| `learning-theory-generalization-and-scaling-science.invariant.002` | `invariant` | `formal` | `semantically_reviewed` | Training fit, in-distribution generalization, transfer, compositionality, and safety remain distinct. |
+| `learning-theory-generalization-and-scaling-science.invariant.003` | `invariant` | `formal` | `semantically_reviewed` | Loss scaling does not automatically predict thresholded capability or risk. |
+| `learning-theory-generalization-and-scaling-science.invariant.004` | `invariant` | `formal` | `semantically_reviewed` | Apparent emergence is retested against metric and sampling artifacts. |
+| `learning-theory-generalization-and-scaling-science.invariant.005` | `invariant` | `formal` | `semantically_reviewed` | Extrapolation beyond observed support remains a forecast until prospectively checked. |
+| `learning-theory-generalization-and-scaling-science.failure_mode.001` | `failure_mode` | `causal` | `semantically_reviewed` | For Learning Theory, Generalization, and Scaling Science, a material failure mode is: vacuous bounds |
+| `learning-theory-generalization-and-scaling-science.failure_mode.002` | `failure_mode` | `causal` | `semantically_reviewed` | For Learning Theory, Generalization, and Scaling Science, a material failure mode is: distribution laundering |
+| `learning-theory-generalization-and-scaling-science.failure_mode.003` | `failure_mode` | `causal` | `semantically_reviewed` | For Learning Theory, Generalization, and Scaling Science, a material failure mode is: test contamination |
+| `learning-theory-generalization-and-scaling-science.failure_mode.004` | `failure_mode` | `causal` | `semantically_reviewed` | For Learning Theory, Generalization, and Scaling Science, a material failure mode is: post-hoc curve fitting |
+| `learning-theory-generalization-and-scaling-science.failure_mode.005` | `failure_mode` | `causal` | `semantically_reviewed` | For Learning Theory, Generalization, and Scaling Science, a material failure mode is: breakpoint omission |
+| `learning-theory-generalization-and-scaling-science.failure_mode.006` | `failure_mode` | `causal` | `semantically_reviewed` | For Learning Theory, Generalization, and Scaling Science, a material failure mode is: metric-threshold emergence |
+| `learning-theory-generalization-and-scaling-science.failure_mode.007` | `failure_mode` | `causal` | `semantically_reviewed` | For Learning Theory, Generalization, and Scaling Science, a material failure mode is: architecture-regime shift |
+| `learning-theory-generalization-and-scaling-science.failure_mode.008` | `failure_mode` | `causal` | `semantically_reviewed` | For Learning Theory, Generalization, and Scaling Science, a material failure mode is: optimizer confounding |
+| `learning-theory-generalization-and-scaling-science.failure_mode.009` | `failure_mode` | `causal` | `semantically_reviewed` | For Learning Theory, Generalization, and Scaling Science, a material failure mode is: double-descent surprise |
+| `learning-theory-generalization-and-scaling-science.failure_mode.010` | `failure_mode` | `causal` | `semantically_reviewed` | For Learning Theory, Generalization, and Scaling Science, a material failure mode is: grokking misread as magic |
+| `learning-theory-generalization-and-scaling-science.failure_mode.011` | `failure_mode` | `causal` | `semantically_reviewed` | For Learning Theory, Generalization, and Scaling Science, a material failure mode is: compression-as-understanding |
+| `learning-theory-generalization-and-scaling-science.failure_mode.012` | `failure_mode` | `causal` | `semantically_reviewed` | For Learning Theory, Generalization, and Scaling Science, a material failure mode is: loss-to-capability substitution |
+| `learning-theory-generalization-and-scaling-science.failure_mode.013` | `failure_mode` | `causal` | `semantically_reviewed` | For Learning Theory, Generalization, and Scaling Science, a material failure mode is: credit-assignment ambiguity |
+| `learning-theory-generalization-and-scaling-science.failure_mode.014` | `failure_mode` | `causal` | `semantically_reviewed` | For Learning Theory, Generalization, and Scaling Science, a material failure mode is: failed-run censoring |
+| `learning-theory-generalization-and-scaling-science.formal.learning-theory-generalization-and-scaling-science-admission-boundary` | `formal_target` | `formal` | `semantically_reviewed` | A finite Learning Theory, Generalization, and Scaling Science record may hand off only when identity, authority, version, required checks, and residual ownership are present; no theorem grants empirical effectiveness or release authority. |
+
+## Argument-exit state
+
+No promotion-or-refutation campaign is frozen yet. P1 must first replace every machine candidate with a semantic review and adjudicate every prose-only candidate.
+
+## Non-claims
+
+- This dossier does not establish semantic adequacy, implementation behavior, empirical benefit, transfer, safety, or SOTA status.
+- All support movement requires a separate accepted evidence-transition record.

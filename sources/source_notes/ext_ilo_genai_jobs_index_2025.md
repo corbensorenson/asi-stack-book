@@ -9,7 +9,7 @@
 | Citation label | Gmyrek et al. (2025), Generative AI and Jobs |
 | Published / updated | 2025-05-20 / 2025-05-20 |
 | DOI | 10.54394/HETP0387 |
-| Review state | Preliminary structural-gap note; the proposed chapter remains unadmitted. |
+| Review state | Passage-bounded source note assigned to the admitted argument-level deployment-transition chapter; exposure remains distinct from observed job outcomes. |
 | Ingestion basis | Official abstract, methods summary, exposure-gradient, group-difference, and limitation passages inspected. Full model prompts, task repository, microdata linkages, and downstream validations were not audited locally. |
 
 ## Thesis

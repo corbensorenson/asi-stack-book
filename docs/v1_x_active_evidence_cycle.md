@@ -9,7 +9,7 @@ Active successor: `docs/post_v2_evidence_roadmap.md`
 This ledger names the current v1.x evidence-cycle chapter lanes selected from
 `docs/per_chapter_evidence_plan.md`. It exists to enforce the lane cap: this
 cycle selects one flagship measured lane plus two direct support lanes and
-leaves the other 63 chapter lanes planned-only. It is a planning and
+leaves the other 73 chapter lanes planned-only. It is a planning and
 release-control record, not a support-state transition.
 
 The selected lanes sit inside a wider defended-contribution pool where the
@@ -26,13 +26,13 @@ promotion.
 | Field | Value |
 |---|---|
 | Selected chapter lanes | 3 |
-| Planned-only chapter lanes | 63 |
+| Planned-only chapter lanes | 73 |
 | Lane cap | 1 flagship measured lane plus at most 2 direct support lanes per v1.x cycle |
 | Flagship measured lane | `resource-economics-and-token-budgets` |
 | Direct support lanes | `project-theseus-as-report-first-implementation-reference`; `fast-generation-architectures` |
-| Chapter core support effect | None; all 66 chapter core claims remain `argument`. |
+| Chapter core support effect | None; all 76 chapter core claims remain `argument`. |
 | Non-core support effect | Existing non-core transitions remain scoped to their accepted records. |
-| No-sweep rule | No 66-lane fixture sweep is claimed or implied. |
+| No-sweep rule | No 76-lane fixture sweep is claimed or implied. |
 
 ## Selected Lanes
 
@@ -82,29 +82,36 @@ promotion.
 - `scalable-oversight-and-adversarial-ai-control`
 - `human-intent-as-a-formal-input`
 - `human-factors-and-meaningful-control-in-oversight`
+- `human-ai-communication-persuasion-and-epistemic-security`
 - `constitutional-alignment-substrate`
 - `inner-alignment-mesa-optimization-and-learned-objective-integrity`
 - `moral-uncertainty-and-value-conflict`
+- `governed-objective-formation-value-learning-and-goal-integrity`
+- `institutions-international-coordination-and-public-legitimacy`
 - `stable-capability-fields`
 - `capability-replacement-and-rollback`
 - `security-kernel-and-digital-scifs`
+- `adversarial-machine-learning-and-model-attack-surface`
 - `privacy-data-rights-and-information-flow-governance`
 - `model-weight-custody-and-hardware-roots-of-trust`
 - `ai-supply-chain-integrity-and-lifecycle-provenance`
 - `recursive-self-improvement-boundaries`
 - `open-ended-improvement-engines`
+- `autonomous-replication-proliferation-and-containment`
 - `intent-to-execution-contracts`
 - `perception-sensor-fusion-and-observation-trust`
 - `planning-as-a-control-layer`
 - `governed-world-models-and-reality-grounding`
 - `cognitive-compilation-and-semantic-ir`
 - `virtual-context-abi`
+- `durable-semantic-memory-and-knowledge-lattices`
 - `context-transactions-snapshots-mounts-and-taint`
 - `verification-bandwidth-and-context-adequacy`
 - `claim-ledgers-and-belief-revision`
 - `spinoza-verification-and-proof-carrying-claims`
 - `labor-os-and-typed-jobs`
 - `human-ai-organizations-delegation-and-accountability`
+- `ai-deployment-transition-distribution-and-human-agency`
 - `artifact-graphs-audit-logs-and-replay`
 - `runtime-adapters-tool-permissions-and-human-approval`
 - `embodied-agency-real-time-control-and-physical-safety`
@@ -114,11 +121,13 @@ promotion.
 - `routing-heads-and-specialist-cores`
 - `replaceable-cognitive-substrates-beyond-transformer-monoculture`
 - `governed-model-training-distributed-optimization-and-scaling`
+- `learning-theory-generalization-and-scaling-science`
 - `readiness-gates-residual-escrow-and-quarantine`
 - `personal-compute-hives-and-federated-edge-intelligence`
 - `compact-generative-systems-and-residual-honesty`
 - `governed-deliberation-and-test-time-scaling`
 - `rankfold-neuralfold-and-artifact-compression`
+- `physical-compute-infrastructure-energy-and-environmental-constraints`
 - `mathematical-and-search-substrates`
 - `circle-calculus-and-proof-carrying-ai-contracts`
 - `coil-attention-cyclic-memory-and-recurrence-contracts`
@@ -132,6 +141,7 @@ promotion.
 - `governed-operations-incident-command-and-graceful-degradation`
 - `policy-optimization-and-learning-from-feedback`
 - `data-engines-continual-learning-and-unlearning`
+- `scientific-discovery-and-experimental-governance`
 - `artifact-steward-agents-and-living-project-governance`
 - `integrated-reference-architecture`
 - `prototype-roadmap`

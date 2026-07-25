@@ -164,7 +164,7 @@ def main() -> None:
     if failures:
         raise SystemExit("Claim identity graph validation failed:\n - " + "\n - ".join(failures))
     print(
-        "Claim identity graph passed: 115/115 accepted transitions resolved to 3,745 canonical atoms "
+        f"Claim identity graph passed: 115/115 accepted transitions resolved to {graph['summary']['canonical_atom_count']:,} canonical atoms "
         "(25 direct, 61 subclaims, 29 proxies), zero parent support movement, "
         f"and {len(mutations)}/{len(mutations)} mutations rejected."
     )

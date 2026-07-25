@@ -9,7 +9,7 @@
 | Citation label | Shehabi et al. (2024), United States Data Center Energy Usage Report |
 | Published / updated | 2024-12-19 / 2024-12-19 |
 | DOI | 10.71468/P1WC7Q |
-| Review state | Preliminary structural-gap note; the proposed chapter remains unadmitted. |
+| Review state | Passage-bounded source note assigned to the admitted argument-level physical-compute chapter; no local facility, grid, or environmental reproduction. |
 | Ingestion basis | Official LBNL metadata and abstract plus indexed report passages identifying historical electricity, scenario, infrastructure, and water accounting. The full model and source datasets were not reproduced locally. |
 
 ## Thesis

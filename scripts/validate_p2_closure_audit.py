@@ -20,9 +20,9 @@ STATUS = ROOT / "roadmap_records" / "post_v2_3_claim_proof_and_sota_challenge_st
 MAINTENANCE_STATUS = ROOT / "roadmap_records" / "post_v2_3_maintenance_transfer_and_publication_status.json"
 
 HISTORICAL_PROOF_TARGET_COUNT = 298
-CURRENT_PROOF_TARGET_COUNT = 315
+CURRENT_PROOF_TARGET_COUNT = 325
 CURRENT_IMPLEMENTED_TARGET_COUNT = 310
-CURRENT_PLANNED_TARGET_COUNT = 5
+CURRENT_PLANNED_TARGET_COUNT = 15
 HISTORICAL_EXPECTED_CLASSES = {
     "adequate finite-record invariant": 73,
     "useful but too narrow": 158,
@@ -34,7 +34,7 @@ HISTORICAL_EXPECTED_CLASSES = {
 CURRENT_EXPECTED_CLASSES = {
     "adequate finite-record invariant": 73,
     "useful but too narrow": 162,
-    "needs richer state-machine or review semantics": 22,
+    "needs richer state-machine or review semantics": 32,
     "needs executable tests first": 38,
     "needs empirical or baseline tests first": 18,
     "research-agenda until artifact import": 2,
@@ -52,6 +52,13 @@ SECOND_TRANCHE_ADMITTED_CHAPTERS = {
     "embodied-agency-real-time-control-and-physical-safety",
     "human-ai-organizations-delegation-and-accountability",
     "multi-agent-dynamics-collective-intelligence-and-systemic-risk",
+    "autonomous-replication-proliferation-and-containment",
+    "scientific-discovery-and-experimental-governance",
+    "human-ai-communication-persuasion-and-epistemic-security",
+    "institutions-international-coordination-and-public-legitimacy",
+    "ai-deployment-transition-distribution-and-human-agency",
+    "physical-compute-infrastructure-energy-and-environmental-constraints",
+    "governed-objective-formation-value-learning-and-goal-integrity",
 }
 ROUND_18_ADMITTED_CHAPTERS = {
     "perception-sensor-fusion-and-observation-trust",
@@ -60,12 +67,25 @@ ROUND_18_ADMITTED_CHAPTERS = {
     "multi-agent-dynamics-collective-intelligence-and-systemic-risk",
     "inner-alignment-mesa-optimization-and-learned-objective-integrity",
 }
+NO_DEFERRAL_ADMITTED_CHAPTERS = {
+    "human-ai-communication-persuasion-and-epistemic-security",
+    "governed-objective-formation-value-learning-and-goal-integrity",
+    "institutions-international-coordination-and-public-legitimacy",
+    "adversarial-machine-learning-and-model-attack-surface",
+    "autonomous-replication-proliferation-and-containment",
+    "durable-semantic-memory-and-knowledge-lattices",
+    "ai-deployment-transition-distribution-and-human-agency",
+    "learning-theory-generalization-and-scaling-science",
+    "physical-compute-infrastructure-energy-and-environmental-constraints",
+    "scientific-discovery-and-experimental-governance",
+}
 ADMITTED_CHAPTERS = (
     FIRST_TRANCHE_ADMITTED_CHAPTERS
     | SECOND_TRANCHE_ADMITTED_CHAPTERS
     | ROUND_18_ADMITTED_CHAPTERS
+    | NO_DEFERRAL_ADMITTED_CHAPTERS
 )
-PLANNED_CHAPTERS = ROUND_18_ADMITTED_CHAPTERS
+PLANNED_CHAPTERS = ROUND_18_ADMITTED_CHAPTERS | NO_DEFERRAL_ADMITTED_CHAPTERS
 EXPECTED_RICHER = {
     "constitutional-alignment-substrate": 6,
     "moral-uncertainty-and-value-conflict": 6,
@@ -136,7 +156,7 @@ def current_proof_errors(
         or activation_truth.get("proof_target_count") != CURRENT_PROOF_TARGET_COUNT
         or activation_truth.get("chapter_core_promotion_count") != 0
     ):
-        out.append("current proof manifest/status is not exactly 315 unique targets (310 implemented, five planned) with no core promotion")
+        out.append("current proof manifest/status is not exactly 325 unique targets (310 implemented, fifteen planned) with no core promotion")
     if (
         maintenance_status.get("status") != "active"
         or maintenance_status.get("roadmap_path") != "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md"
@@ -149,7 +169,7 @@ def current_proof_errors(
         or {row.get("chapter_id") for row in planned_targets} != PLANNED_CHAPTERS
         or planned_chapter_counts != Counter({chapter_id: 1 for chapter_id in PLANNED_CHAPTERS})
     ):
-        out.append("admitted-chapter proof inventory loses tranche custody or misstates the five Round 18 planned targets")
+        out.append("admitted-chapter proof inventory loses tranche custody or misstates the fifteen current planned targets")
     triage_by_tag = {row.get("tag"): row for row in triage_records}
     if (
         triage.get("record_count") != CURRENT_PROOF_TARGET_COUNT
@@ -324,8 +344,8 @@ def main() -> None:
         raise SystemExit("P2 closure audit failed:\n - " + "\n - ".join(failures))
     print(
         "P2 closure audit passed: 1,151 baseline theorem declarations, 298 unique historical targets, "
-        "65/65 reviewed historical modules, 298/298 frozen historical adequacy routes, 315 current targets "
-        "(310 implemented and five planned after the Round 18 breadth transaction), 315/315 current adequacy classifications, "
+        "65/65 reviewed historical modules, 298/298 frozen historical adequacy routes, 325 current targets "
+        "(310 implemented and fifteen planned after the no-deferral transaction), 325/325 current adequacy classifications, "
         f"nine semantic-model dossiers/consumers, {len(mutations) + current_mutation_count} rejecting mutations, and no support-state effect."
     )
 

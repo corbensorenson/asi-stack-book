@@ -402,6 +402,19 @@ def admitted_chapter_ids(status: dict[str, Any]) -> tuple[set[str], list[str]]:
         errors.append("round_18_breadth_completion lacks an exact frozen manifest-admitted identity set")
     else:
         admitted.update(round_18_ids)
+    no_deferral = status.get("no_deferral_manuscript_admission", {})
+    no_deferral_ids = [str(value) for value in no_deferral.get("admitted_chapter_ids", [])]
+    if (
+        no_deferral.get("state") != "terminal_argument_level_admission"
+        or no_deferral.get("current_manifest_chapter_count")
+        != no_deferral.get("previous_manifest_chapter_count", 0) + len(no_deferral_ids)
+        or len(set(no_deferral_ids)) != len(no_deferral_ids)
+        or no_deferral.get("remaining_live_candidate_queue_count") != 0
+        or no_deferral.get("structural_freeze_for_manuscript_ideas") is not False
+    ):
+        errors.append("no_deferral_manuscript_admission lacks an exact manifest-admitted identity set")
+    else:
+        admitted.update(no_deferral_ids)
     return admitted, errors
 
 

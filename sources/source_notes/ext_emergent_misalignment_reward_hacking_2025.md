@@ -43,6 +43,7 @@ neither a task-success proof nor a guarantee of safe generalization.
 
 ## Book Chapters Supported
 
+- `governed-objective-formation-value-learning-and-goal-integrity` (Governed Objective Formation, Value Learning, and Goal Integrity)
 - `inner-alignment-mesa-optimization-and-learned-objective-integrity`
   (Inner Alignment, Mesa-Optimization, and Learned-Objective Integrity)
 - `adversarial-evaluation-sandbagging-and-training-time-deception`

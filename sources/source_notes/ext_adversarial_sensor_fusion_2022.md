@@ -40,6 +40,7 @@ hurts.
 
 ## Book Chapters Supported
 
+- `adversarial-machine-learning-and-model-attack-surface` (Adversarial Machine Learning and the Model Attack Surface)
 - `perception-sensor-fusion-and-observation-trust`
 
 ## Claims To Add Or Update

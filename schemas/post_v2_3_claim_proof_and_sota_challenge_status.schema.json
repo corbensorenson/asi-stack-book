@@ -1326,8 +1326,8 @@
         "structured_machine_candidate_count": {"type": "integer", "minimum": 0},
         "prose_candidate_count": {"type": "integer", "minimum": 0},
         "pending_prose_candidate_count": {"type": "integer", "minimum": 0},
-        "chapter_dossier_count": {"const": 54},
-        "semantic_chapter_sweep_completed_count": {"type": "integer", "minimum": 0, "maximum": 54},
+        "chapter_dossier_count": {"const": 64},
+        "semantic_chapter_sweep_completed_count": {"type": "integer", "minimum": 0, "maximum": 64},
         "support_state_effect": {"const": "none"}
       }
     },

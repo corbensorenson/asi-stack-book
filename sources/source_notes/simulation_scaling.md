@@ -48,6 +48,7 @@ Simulation Scaling Law treats simulation feasibility as contract-relative. A sim
 - `mathematical-and-search-substrates` (Mathematical and Search Substrates)
 - `open-research-agenda-and-bibliography-plan` (Open Research Agenda and Bibliography Plan)
 - `governed-world-models-and-reality-grounding`
+- `learning-theory-generalization-and-scaling-science` (Learning Theory, Generalization, and Scaling Science)
 
 ## Claims To Add Or Update
 

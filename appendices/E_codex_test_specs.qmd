@@ -61,6 +61,10 @@ No result is recorded here unless a test has actually been implemented and run.
 | `human-factors-and-meaningful-control-in-oversight` | Human Factors and Meaningful Control in Oversight | Oversight-envelope boundary suite | planned | not_run |
 | `human-factors-and-meaningful-control-in-oversight` | Human Factors and Meaningful Control in Oversight | Automation-bias and mode-confusion adversarial study | planned | not_run |
 | `human-factors-and-meaningful-control-in-oversight` | Human Factors and Meaningful Control in Oversight | Rare-event intervention retention study | planned | not_run |
+| `human-ai-communication-persuasion-and-epistemic-security` | Human-AI Communication, Persuasion, and Epistemic Security | Contract completeness mutation test | planned | not run |
+| `human-ai-communication-persuasion-and-epistemic-security` | Human-AI Communication, Persuasion, and Epistemic Security | Adjacent-owner boundary substitution test | planned | not run |
+| `human-ai-communication-persuasion-and-epistemic-security` | Human-AI Communication, Persuasion, and Epistemic Security | Mechanism-specific failure-family test | planned | not run |
+| `human-ai-communication-persuasion-and-epistemic-security` | Human-AI Communication, Persuasion, and Epistemic Security | No-support-promotion control | planned | not run |
 | `constitutional-alignment-substrate` | Constitutional Alignment: Agency, Dignity, and Corrigibility | Constitutional consistency test | implemented | passing via synthetic constitutional alignment harness; no deployed constitutional-alignment or moral-correctness claim |
 | `constitutional-alignment-substrate` | Constitutional Alignment: Agency, Dignity, and Corrigibility | Predicate-conflict routing test | implemented | passing via synthetic constitutional alignment harness; no runtime conflict-resolution or review-quality claim |
 | `constitutional-alignment-substrate` | Constitutional Alignment: Agency, Dignity, and Corrigibility | Constitutional migration test | implemented | passing via synthetic constitutional alignment harness; no deployed migration or rollback behavior claim |
@@ -87,6 +91,14 @@ No result is recorded here unless a test has actually been implemented and run.
 | `moral-uncertainty-and-value-conflict` | Moral Uncertainty, Value Conflict, and Contestable Governance | Fork-right safety test | implemented | passing via synthetic governance rights harness; no deployed fork enforcement or legal-rights claim |
 | `moral-uncertainty-and-value-conflict` | Moral Uncertainty, Value Conflict, and Contestable Governance | Governance rights lifecycle route envelope | implemented | passes via Lean route theorems; no legal-rights, institutional-adequacy, export-usability, fork-safety, redaction-quality, SCF replacement, deployed-governance, or support-state-promotion claim |
 | `moral-uncertainty-and-value-conflict` | Moral Uncertainty, Value Conflict, and Contestable Governance | Theseus governance-rights receipt suite import | implemented | passing via python3 scripts/validate_theseus_governance_rights_receipt_suite_import.py; narrow import claim only is prototype-backed; no legal-rights, institutional-governance, moral-correctness, reviewer-independence, export-usability, fork-safety, deployed-governance, clean-live-Theseus-replay, or chapter-core-promotion claim |
+| `governed-objective-formation-value-learning-and-goal-integrity` | Governed Objective Formation, Value Learning, and Goal Integrity | Contract completeness mutation test | planned | not run |
+| `governed-objective-formation-value-learning-and-goal-integrity` | Governed Objective Formation, Value Learning, and Goal Integrity | Adjacent-owner boundary substitution test | planned | not run |
+| `governed-objective-formation-value-learning-and-goal-integrity` | Governed Objective Formation, Value Learning, and Goal Integrity | Mechanism-specific failure-family test | planned | not run |
+| `governed-objective-formation-value-learning-and-goal-integrity` | Governed Objective Formation, Value Learning, and Goal Integrity | No-support-promotion control | planned | not run |
+| `institutions-international-coordination-and-public-legitimacy` | Institutions, International Coordination, and Public Legitimacy | Contract completeness mutation test | planned | not run |
+| `institutions-international-coordination-and-public-legitimacy` | Institutions, International Coordination, and Public Legitimacy | Adjacent-owner boundary substitution test | planned | not run |
+| `institutions-international-coordination-and-public-legitimacy` | Institutions, International Coordination, and Public Legitimacy | Mechanism-specific failure-family test | planned | not run |
+| `institutions-international-coordination-and-public-legitimacy` | Institutions, International Coordination, and Public Legitimacy | No-support-promotion control | planned | not run |
 | `stable-capability-fields` | Stable Capability Fields | Qualification predicate test | implemented | validated locally by synthetic fixtures; runtime route quality not run |
 | `stable-capability-fields` | Stable Capability Fields | Route validity test | implemented | validated locally by synthetic fixtures |
 | `stable-capability-fields` | Stable Capability Fields | Authority non-escalation test | implemented | validated locally by synthetic fixtures; deployed authority enforcement not run |
@@ -109,6 +121,10 @@ No result is recorded here unless a test has actually been implemented and run.
 | `security-kernel-and-digital-scifs` | Security Kernel and Digital SCIFs | Security-overhead budget preservation test | implemented | passing via Resource Budget Ledger synthetic security-overhead erasure negative fixture; no runtime budget enforcement, deployed security-kernel behavior, or security-economics claim |
 | `security-kernel-and-digital-scifs` | Security Kernel and Digital SCIFs | Synthetic prompt-injection record-route controls | implemented | passing only for self-authored receipt and commit-probe fields; no model attack, runtime containment, semantic non-disclosure, or transfer claim |
 | `security-kernel-and-digital-scifs` | Security Kernel and Digital SCIFs | Security kernel route proof | implemented | passes via Lean build with 22 theorem declarations under four manifest targets; finite record and route consequences only |
+| `adversarial-machine-learning-and-model-attack-surface` | Adversarial Machine Learning and the Model Attack Surface | Contract completeness mutation test | planned | not run |
+| `adversarial-machine-learning-and-model-attack-surface` | Adversarial Machine Learning and the Model Attack Surface | Adjacent-owner boundary substitution test | planned | not run |
+| `adversarial-machine-learning-and-model-attack-surface` | Adversarial Machine Learning and the Model Attack Surface | Mechanism-specific failure-family test | planned | not run |
+| `adversarial-machine-learning-and-model-attack-surface` | Adversarial Machine Learning and the Model Attack Surface | No-support-promotion control | planned | not run |
 | `privacy-data-rights-and-information-flow-governance` | Privacy, Data Rights, and Information-Flow Governance | Information lifecycle transaction contract | implemented | authored_record_only_no_privacy_or_compliance_effect |
 | `privacy-data-rights-and-information-flow-governance` | Privacy, Data Rights, and Information-Flow Governance | Natural privacy and rights campaign | planned | prospectively_frozen_unexecuted |
 | `model-weight-custody-and-hardware-roots-of-trust` | Model-Weight Custody and Hardware Roots of Trust | Required invalid-attestation load block | planned | not run |
@@ -134,6 +150,10 @@ No result is recorded here unless a test has actually been implemented and run.
 | `open-ended-improvement-engines` | Open-Ended Improvement Engines | Candidate archive and stop-boundary review | planned | not run |
 | `open-ended-improvement-engines` | Open-Ended Improvement Engines | Authority-laundering negative control | planned | not run |
 | `open-ended-improvement-engines` | Open-Ended Improvement Engines | Open-ended improvement campaign-to-governor lifecycle refinement | implemented | passes two composed Lean traces, three inherited result suites, 81 routes, seven reachable stages, 91/91 route mutations, and 3/3 cross-stage mutations; one governor-review handoff returns to scoped generation only through version-2 readmission; support/effect none; no adaptive search, novelty, usefulness, evaluator-independence, safety, release, transfer, or support claim |
+| `autonomous-replication-proliferation-and-containment` | Autonomous Replication, Proliferation, and Containment | Contract completeness mutation test | planned | not run |
+| `autonomous-replication-proliferation-and-containment` | Autonomous Replication, Proliferation, and Containment | Adjacent-owner boundary substitution test | planned | not run |
+| `autonomous-replication-proliferation-and-containment` | Autonomous Replication, Proliferation, and Containment | Mechanism-specific failure-family test | planned | not run |
+| `autonomous-replication-proliferation-and-containment` | Autonomous Replication, Proliferation, and Containment | No-support-promotion control | planned | not run |
 | `intent-to-execution-contracts` | Command Contracts: From Intent to Executable Work | Intent and trace fixture validation | implemented | passes via protocol fixture validation; shape only |
 | `intent-to-execution-contracts` | Command Contracts: From Intent to Executable Work | Contract field completeness test | implemented | passes via synthetic plan-execution contract harness |
 | `intent-to-execution-contracts` | Command Contracts: From Intent to Executable Work | Constraint preservation test | implemented | passes via synthetic plan-execution contract harness |
@@ -192,6 +212,10 @@ No result is recorded here unless a test has actually been implemented and run.
 | `virtual-context-abi` | The Virtual Context ABI: Typed Pages, Cells, and Certificates | Historical-project bounded graph-snapshot certificate | implemented | passes via one bounded four-project certificate and eleven expected-invalid mutations; no deployed resolver, durable-store correctness, graph completeness, historical runtime behavior, or support promotion |
 | `virtual-context-abi` | The Virtual Context ABI: Typed Pages, Cells, and Certificates | Executed resolver/materialization and mandatory-fault refinement | implemented | passes via `python3 scripts/validate_virtual_context_refinement.py`: 2 valid/9 invalid resolver scenarios, distinct 3-valid/5-invalid admission fixtures, 4-event materialization and 2-event fault witnesses, and 55/55 rejected mutations; support-state effect none |
 | `virtual-context-abi` | The Virtual Context ABI: Typed Pages, Cells, and Certificates | Executed certificate provenance/lifecycle refinement | implemented | passes via `python3 scripts/validate_context_certificate_refinement.py`: 12 schema-valid certificate projections across 8 scenarios remain distinct from the 3-valid/5-invalid admission result, one 5-event witness, and 64/64 rejected mutations; support-state effect none |
+| `durable-semantic-memory-and-knowledge-lattices` | Durable Semantic Memory and Knowledge Lattices | Contract completeness mutation test | planned | not run |
+| `durable-semantic-memory-and-knowledge-lattices` | Durable Semantic Memory and Knowledge Lattices | Adjacent-owner boundary substitution test | planned | not run |
+| `durable-semantic-memory-and-knowledge-lattices` | Durable Semantic Memory and Knowledge Lattices | Mechanism-specific failure-family test | planned | not run |
+| `durable-semantic-memory-and-knowledge-lattices` | Durable Semantic Memory and Knowledge Lattices | No-support-promotion control | planned | not run |
 | `context-transactions-snapshots-mounts-and-taint` | Context Transactions, Snapshots, Mounts, and Taint | Context transaction fixture validation | implemented | passes via protocol fixture validation; shape only |
 | `context-transactions-snapshots-mounts-and-taint` | Context Transactions, Snapshots, Mounts, and Taint | Snapshot read finite-record proof | implemented | builds in AsiStackProofs.ContextTransactions; no memory-store claim |
 | `context-transactions-snapshots-mounts-and-taint` | Context Transactions, Snapshots, Mounts, and Taint | Taint propagation finite-record proof | implemented | builds in AsiStackProofs.ContextTransactions; no deployed taint engine claim |
@@ -236,6 +260,10 @@ No result is recorded here unless a test has actually been implemented and run.
 | `labor-os-and-typed-jobs` | Labor OS and Typed Jobs | Typed-job versioned execution and closure refinement | implemented | passes exact 2/7 delivery and 2/9 durable suites, 28 routes, seven reachable stages, and 42/42 rejecting mutations; support-state effect none; no deployed scheduler, enforcement, recovery, task-success, truth, usefulness, safety, reproduction, or transfer claim |
 | `human-ai-organizations-delegation-and-accountability` | Human-AI Organizations, Delegation, and Accountability | Decision-right and crumple-zone mutations | planned | not_run |
 | `human-ai-organizations-delegation-and-accountability` | Human-AI Organizations, Delegation, and Accountability | Competence workload and interdependence campaign | planned | not_run |
+| `ai-deployment-transition-distribution-and-human-agency` | AI Deployment, Transition, Distribution, and Human Agency | Contract completeness mutation test | planned | not run |
+| `ai-deployment-transition-distribution-and-human-agency` | AI Deployment, Transition, Distribution, and Human Agency | Adjacent-owner boundary substitution test | planned | not run |
+| `ai-deployment-transition-distribution-and-human-agency` | AI Deployment, Transition, Distribution, and Human Agency | Mechanism-specific failure-family test | planned | not run |
+| `ai-deployment-transition-distribution-and-human-agency` | AI Deployment, Transition, Distribution, and Human Agency | No-support-promotion control | planned | not run |
 | `artifact-graphs-audit-logs-and-replay` | Artifact Graphs, Audit Logs, and Replay | Artifact traceability test | implemented | passing via Lean traceability predicate, missing-ref negative case, artifact-admission route proof, and synthetic artifact graph replay harness; no deployed artifact-service claim |
 | `artifact-graphs-audit-logs-and-replay` | Artifact Graphs, Audit Logs, and Replay | Audit reconstruction test | implemented | passing via synthetic artifact graph replay harness and bounded provenance/route negative cases; no deployed audit-reconstruction claim |
 | `artifact-graphs-audit-logs-and-replay` | Artifact Graphs, Audit Logs, and Replay | Replay metadata completeness test | implemented | passing via synthetic artifact graph replay harness and bounded provenance/route negative cases; no deployed replay-engine claim |
@@ -293,6 +321,10 @@ No result is recorded here unless a test has actually been implemented and run.
 | `governed-model-training-distributed-optimization-and-scaling` | Governed Model Training, Distributed Optimization, and Scaling | Training-run transaction contract | implemented | authored_record_only_no_training_effect |
 | `governed-model-training-distributed-optimization-and-scaling` | Governed Model Training, Distributed Optimization, and Scaling | Natural distributed fault campaign | planned | prospectively_frozen_unexecuted |
 | `governed-model-training-distributed-optimization-and-scaling` | Governed Model Training, Distributed Optimization, and Scaling | Independent run replay | planned | blocked_by_valid_campaign |
+| `learning-theory-generalization-and-scaling-science` | Learning Theory, Generalization, and Scaling Science | Contract completeness mutation test | planned | not run |
+| `learning-theory-generalization-and-scaling-science` | Learning Theory, Generalization, and Scaling Science | Adjacent-owner boundary substitution test | planned | not run |
+| `learning-theory-generalization-and-scaling-science` | Learning Theory, Generalization, and Scaling Science | Mechanism-specific failure-family test | planned | not run |
+| `learning-theory-generalization-and-scaling-science` | Learning Theory, Generalization, and Scaling Science | No-support-promotion control | planned | not run |
 | `readiness-gates-residual-escrow-and-quarantine` | Readiness Gates, Residual Escrow, and Quarantine | Readiness gate fixture validation | implemented | passes via `python3 scripts/validate_protocol_examples.py`; schema/fixture consistency only |
 | `readiness-gates-residual-escrow-and-quarantine` | Readiness Gates, Residual Escrow, and Quarantine | Readiness gate promotion predicate | implemented | passes via Lean build; record-boundary predicate only |
 | `readiness-gates-residual-escrow-and-quarantine` | Readiness Gates, Residual Escrow, and Quarantine | Quarantine ordinary-route predicate | implemented | passes via Lean build; no live quarantine routing claim |
@@ -401,6 +433,10 @@ No result is recorded here unless a test has actually been implemented and run.
 | `resource-economics-and-token-budgets` | Resource Economics and Token Budgets | Theseus simulation-fidelity receipt suite import | implemented | passing via `python3 scripts/validate_theseus_simulation_fidelity_receipt_suite_import.py`; narrow import claim `resource-economics.simulation_fidelity_receipt_suite_import` only is prototype-backed; no simulator-adequacy, physical-feasibility, benchmark-transfer, native-KV-parity, deployment, model-quality, economic-outcome, clean-live-Theseus-replay, or chapter-core-promotion claim |
 | `resource-economics-and-token-budgets` | Resource Economics and Token Budgets | Theseus RLDS/Minari trace export import | implemented | passing via `python3 scripts/validate_theseus_rlds_minari_trace_export_import.py`; narrow import claim `resource-economics.theseus_rlds_minari_trace_export_import` only is prototype-backed; no RLDS dataset correctness, Minari dataset quality, simulator adequacy, replay success, model-quality, clean-live-Theseus-replay, or chapter-core-promotion claim |
 | `resource-economics-and-token-budgets` | Resource Economics and Token Budgets | Resource Economics request-to-closure refinement | implemented | passes nine stages, all 66 routes, 57/57 non-accepting mutations, twelve digest-bound bounded source families, resource/simulation separation, reconciliation and closure, support/effect none; no economic-optimality, useful-throughput, deployment, simulation-adequacy, transfer, or support claim |
+| `physical-compute-infrastructure-energy-and-environmental-constraints` | Physical Compute Infrastructure, Energy, and Environmental Constraints | Contract completeness mutation test | planned | not run |
+| `physical-compute-infrastructure-energy-and-environmental-constraints` | Physical Compute Infrastructure, Energy, and Environmental Constraints | Adjacent-owner boundary substitution test | planned | not run |
+| `physical-compute-infrastructure-energy-and-environmental-constraints` | Physical Compute Infrastructure, Energy, and Environmental Constraints | Mechanism-specific failure-family test | planned | not run |
+| `physical-compute-infrastructure-energy-and-environmental-constraints` | Physical Compute Infrastructure, Energy, and Environmental Constraints | No-support-promotion control | planned | not run |
 | `mathematical-and-search-substrates` | Mathematical and Search Substrates | Required-field negative case | implemented | passes via Lean negative case; no substrate-quality claim |
 | `mathematical-and-search-substrates` | Mathematical and Search Substrates | Unproven qualified-state negative case | implemented | passes via Lean negative case; no core-substrate promotion claim |
 | `mathematical-and-search-substrates` | Mathematical and Search Substrates | Qualified-without-evidence negative case | implemented | passes via Lean negative case; no empirical substrate result |
@@ -513,6 +549,10 @@ No result is recorded here unless a test has actually been implemented and run.
 | `data-engines-continual-learning-and-unlearning` | Data Engines, Continual Learning, and Unlearning | Data-admission lifecycle probe | implemented | validated locally by `experiments/data_admission_receipt_probe/results/2026-07-10-local.json`; no data-quality, model, unlearning, or support-state result |
 | `data-engines-continual-learning-and-unlearning` | Data Engines, Continual Learning, and Unlearning | Continual-learning and deletion workload | planned | not run |
 | `data-engines-continual-learning-and-unlearning` | Data Engines, Continual Learning, and Unlearning | Data-engine custody/update/deletion lifecycle refinement | implemented | passes two composed Lean traces, three inherited result suites, 82 routes, eight reachable stages, 96/96 route mutations, and 3/3 cross-stage mutations; one bounded custody handoff returns to scoped admission only through version-2 readmission; support/effect none; no source-truth, learning, influence, forgetting, privacy/legal/storage erasure, production rollback, release, transfer, or support claim |
+| `scientific-discovery-and-experimental-governance` | Scientific Discovery and Experimental Governance | Contract completeness mutation test | planned | not run |
+| `scientific-discovery-and-experimental-governance` | Scientific Discovery and Experimental Governance | Adjacent-owner boundary substitution test | planned | not run |
+| `scientific-discovery-and-experimental-governance` | Scientific Discovery and Experimental Governance | Mechanism-specific failure-family test | planned | not run |
+| `scientific-discovery-and-experimental-governance` | Scientific Discovery and Experimental Governance | No-support-promotion control | planned | not run |
 | `artifact-steward-agents-and-living-project-governance` | Artifact Steward Agents and Living Project Governance | Project steward manifest fixture validation | implemented | passes via protocol fixture validation |
 | `artifact-steward-agents-and-living-project-governance` | Artifact Steward Agents and Living Project Governance | Treasury policy and event-taint fixture validation | implemented | passes via protocol fixture validation |
 | `artifact-steward-agents-and-living-project-governance` | Artifact Steward Agents and Living Project Governance | Work contract authority denial test | implemented | passes via Lean build |
@@ -631,14 +671,14 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 315 |
+| Proof targets covered by triage | 325 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
 | implemented | 310 |
-| planned | 5 |
+| planned | 15 |
 
 ### Coverage by Route
 
@@ -646,3 +686,4 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 |---|---|---|---:|
 | implemented | formal-invariant | lean-candidate | 310 |
 | planned | formal-invariant | lean-candidate | 5 |
+| planned | process-contract | policy-model-first | 10 |

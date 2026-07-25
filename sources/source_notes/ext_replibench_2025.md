@@ -9,7 +9,7 @@
 | Citation label | Black et al. (2025), RepliBench |
 | Published / updated | 2025-04-21 / 2025-05-05 |
 | DOI | 10.48550/arXiv.2504.18565 |
-| Review state | Preliminary second-tranche audit note; the proposed chapter remains unadmitted. |
+| Review state | Passage-bounded source note assigned to the admitted argument-level replication chapter; no benchmark reproduction or support promotion. |
 | Ingestion basis | Official arXiv metadata and abstract inspected. The paper body, tasks, prompts, code, environments, provider interactions, model traces, and scores were not ingested or reproduced locally. No real replication testing was performed. |
 
 ## Thesis
@@ -47,7 +47,7 @@ here.
 
 ## Book Chapters Supported
 
-- Proposed: `autonomous-replication-proliferation-and-containment`
+- `autonomous-replication-proliferation-and-containment`
 - Existing boundary owners: `recursive-self-improvement-boundaries`,
   `model-weight-custody-and-hardware-roots-of-trust`, and
   `security-kernel-and-digital-scifs`

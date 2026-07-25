@@ -1,0 +1,250 @@
+---
+title: "Durable Semantic Memory and Knowledge Lattices"
+chapter_id: "durable-semantic-memory-and-knowledge-lattices"
+part_id: "planning-memory-reasoning-execution"
+status: "conceptual"
+draft_maturity: "v0.2 complete argument-level manuscript"
+last_updated: "2026-07-24"
+primary_sources:
+  - "ext_graphrag_2024"
+  - "ext_hipporag_2024"
+  - "ext_mem0_2025"
+  - "ext_titans_2025"
+evidence_level: "argument"
+claim_label: "Design rationale"
+open_evidence_gaps:
+  - "The architecture is written at argument support; no chapter-core empirical promotion is claimed."
+  - "The minimum implementation and natural evaluation described below remain to be executed unless Appendix E records them separately."
+  - "Source-reported results are not local reproductions and do not establish transfer, readiness, release, or SOTA."
+---
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `durable-semantic-memory-and-knowledge-lattices` |
+| Part | Part II - Planning, Memory, Reasoning, and Execution |
+| Status | conceptual |
+| Manuscript maturity | v0.2 complete argument-level manuscript |
+| Last updated | 2026-07-24 |
+| Claim label | Design rationale |
+| Evidence level | argument |
+| Source loading state | Assigned source notes support mechanism and boundary discussion; all reported outcomes remain source-reported. |
+| Test state | The chapter defines a minimum implementation and falsification plan; no chapter-core promotion follows from prose or source synthesis. |
+
+## Drafting guardrail
+
+Durable semantic memory owns a distinct control plane, not proof that the control plane
+works. Its source crosswalk supports definitions, mechanisms, failure examples,
+and comparison targets. The design remains at **argument** support until a
+separate accepted evidence transition says otherwise.
+
+::: {.asi-human-only}
+## Human Reading Path
+
+Context is what a system can see now; durable semantic memory is what it believes it may carry forward. A retrieved statement may be stale, duplicated, contradicted, derived from a denied source, or expressed in an ontology that no longer fits the task. Memory must preserve why content exists, which version is authoritative, what depends on it, and who may revise it.
+
+A governed knowledge lattice keeps assertions, observations, summaries, rules, identities, provenance, confidence, validity, permissions, contradictions, and derivations distinct but linked. Each memory packet records content, evidence ceiling, transformation, scope, retention and deletion duties, and downstream dependencies. Retrieval becomes a bounded proposal subject to relevance, authority, conflict, freshness, and policy checks rather than injection of semantically similar text.
+
+The lifecycle runs from admission and normalization through linking, consolidation, retrieval, use, correction, forgetting, and descendant repair. Summary drift, ontology collapse, poisoned memory, duplicated authority, temporal leakage, incomplete deletion, and synthesis across incompatible contexts remain visible. Durable memory must preserve meaning and obligations across time, while retrieval never proves that the returned content is still true, authorized, or safe to apply.
+:::
+
+## Problem
+
+Long-lived AI systems need semantic objects that survive restarts, support graph and associative retrieval, evolve across ontology versions, preserve provenance, merge and retract conflicting assertions, forget under policy, and remain distinguishable from transient context and model weights.
+Those obligations persist across consumers.
+
+This gap matters at the scale of a stack because its output becomes another
+layer's input. If the owner is absent, `entity collision` or
+`duplicate identity` can be normalized before a downstream layer sees it.
+The downstream consumer may possess a valid local record while acting on a
+broken upstream assumption. An explicit owner therefore needs both a positive
+contract and a refusal path: it must say what counts as an admissible
+transition, what remains unresolved, who may consume the result, and when a
+material change forces reauthorization.
+
+## Why existing approaches are insufficient
+
+Vector stores, knowledge graphs, GraphRAG, conversational memory, long-context models, and learned memory can improve retrieval, but none automatically supplies stable object identity, temporal validity, typed relations, provenance-preserving revision, ontology migration, poisoning controls, rights propagation, compaction, and restart-consistent persistence.
+
+Durable semantic memory must first beat a disciplined composition of the adjacent
+owners. That alternative should win if it can preserve the same identities,
+authority, lifecycle state, failure distinctions, and residuals without
+overloading their primary jobs. A dedicated owner remains necessary because the
+handoffs listed below otherwise leave a missing end-to-end decision. Separation
+does not imply autonomy: this owner must consume upstream records and return
+bounded outputs to downstream owners rather than becoming a new unreviewable
+center of authority.
+
+```{mermaid}
+flowchart LR
+  A["Declared purpose and bounded authority"] --> B["Versioned chapter-specific contract"]
+  B["Versioned chapter-specific contract"] --> C["Admission and boundary checks"]
+  C["Admission and boundary checks"] --> D["Execute with complete lineage and denominators"]
+  D["Execute with complete lineage and denominators"] --> E["Observe outcomes, costs, and residuals"]
+  E["Observe outcomes, costs, and residuals"] --> F{"Independent checks pass?"}
+  F -- "no" --> G["Quarantine, narrow, correct, or stop"]
+  F -- "yes" --> H["Versioned bounded handoff"]
+  G -- "repair and reauthorize" --> B
+  H -- "material change" --> B
+  B -. "expiry or revocation" .-> G
+  E -. "residual feedback" .-> B
+```
+
+**What the Durable Semantic Memory and Knowledge Lattices lifecycle shows:** Authority enters before execution,
+chapter-specific state remains versioned, and a failed independent check returns
+the system to correction or quarantine. A successful check grants only the
+bounded downstream handoff; it does not erase residuals or promote its core claim.
+
+## Core Claim
+
+[durable-semantic-memory-and-knowledge-lattices.core, label: Design rationale, support: argument] Durable semantic memory should be admitted through a versioned knowledge-lattice contract that binds object and relation identity, ontology, provenance, support state, temporal validity, authority and rights, merge and supersession, contradiction, retrieval route, compaction and forgetting, restart recovery, consumer use, and residual uncertainty; retrieval quality, graph connectivity, model recall, persistence, or a fluent answer alone establishes neither truth, complete memory, safe consolidation, erasure, nor decision authority.
+
+## Mechanism
+
+**Contract.** Assign stable semantic identities to entities, events, claims, relations, procedures, and source objects while retaining aliases, uncertainty, and collision records. This stage is recorded as a versioned decision rather than an invisible implementation detail. For Durable Semantic Memory and Knowledge Lattices, the record must name its inputs, authority, consumer, expiry, and unresolved residuals. A later stage may narrow the decision, but it may not silently broaden the earlier grant or reinterpret a missing field as success.
+
+**Admission.** Version ontologies and relation schemas; migrate through explicit mappings that preserve losses, unresolved cases, and invalidated consumers. This stage is recorded as a versioned decision rather than an invisible implementation detail. For Durable Semantic Memory and Knowledge Lattices, the record must name its inputs, authority, consumer, expiry, and unresolved residuals. A later stage may narrow the decision, but it may not silently broaden the earlier grant or reinterpret a missing field as success.
+
+**Execution.** Represent provenance, support, temporal scope, authority, rights, contradictions, supersession, retraction, and derived dependencies on every memory object. This stage is recorded as a versioned decision rather than an invisible implementation detail. For Durable Semantic Memory and Knowledge Lattices, the record must name its inputs, authority, consumer, expiry, and unresolved residuals. A later stage may narrow the decision, but it may not silently broaden the earlier grant or reinterpret a missing field as success.
+
+**Observation.** Combine exact, vector, graph, associative, temporal, and learned navigation under a retrieval plan that records which objects were actually used. This stage is recorded as a versioned decision rather than an invisible implementation detail. For Durable Semantic Memory and Knowledge Lattices, the record must name its inputs, authority, consumer, expiry, and unresolved residuals. A later stage may narrow the decision, but it may not silently broaden the earlier grant or reinterpret a missing field as success.
+
+**Closure.** Consolidate, compact, expire, forget, and recover transactionally, separating storage erasure, retrieval suppression, behavioral forgetting, influence, privacy, and backup state. This stage is recorded as a versioned decision rather than an invisible implementation detail. For Durable Semantic Memory and Knowledge Lattices, the record must name its inputs, authority, consumer, expiry, and unresolved residuals. A later stage may narrow the decision, but it may not silently broaden the earlier grant or reinterpret a missing field as success.
+
+## Interfaces
+
+Durable semantic memory is useful only when its boundaries are sharper than neighboring owners.
+Each interface below therefore names what the adjacent owner keeps and what
+crosses the boundary. The packet must preserve exact object and version
+identity, authority, support state, expiry, residuals, and consumer. A receiving
+layer may reject or narrow it. Merely serializing the fields, passing a schema,
+or recording a dispatch does not prove that the meaning survived or that the
+receiving layer is competent.
+
+- Virtual Context ABI materializes bounded consumer packets; this chapter owns the durable semantic substrate it reads.
+- Context Transactions owns isolation, commit, mounts, taint, and crash semantics across state changes.
+- Claim Ledgers owns belief support and revision; durable memory stores the semantic objects and relations those claims reference.
+- Procedural Memory owns reusable action trajectories; Artifact Graphs owns generic evidence lineage.
+- Privacy/Data Rights and Data Engines govern rights, deletion, learned influence, and descendant obligations.
+
+## Invariants
+
+For Durable semantic memory, the following invariants are admission conditions rather than aspirations. They must
+hold across retries, replacements, cached results, branches, migrations,
+partial failures, and human intervention. When the implementation cannot
+establish an invariant, the result is a named residual or blocked route—not a
+default value. A finite formal model may prove that an authored record follows
+these rules, but only implementation and outcome evidence can show that a live
+system actually enforces them.
+
+- Object identity, source identity, semantic equivalence, and aliasing remain distinct.
+- No merge erases provenance, contradiction, uncertainty, temporal scope, or rights.
+- Ontology migration records unmapped and lossy cases and invalidates affected consumers.
+- Retrieval records actual use; storage presence does not imply influence or belief.
+- Restart recovery, compaction, forgetting, deletion, and model unlearning remain separate claims.
+
+## Failure modes
+
+The principal failure family includes entity collision; duplicate identity; stale truth; ontology drift; relation poisoning; provenance loss; contradiction collapse; false supersession; retrieval popularity bias; privacy leakage; compaction damage; incomplete forgetting; crash inconsistency; backup resurrection; memory-to-context authority laundering. These are not presumed
+exhaustive. New substrates, deployment settings, populations, and adversaries
+reopen the failure inventory and may narrow authority immediately.
+
+Durable semantic memory detection also has its own false-positive and false-negative costs.
+An architecture that blocks every useful route is not vindicated merely
+because it prevented one hazard, while a permissive architecture cannot hide
+unsafe attempts inside an average utility score. Evaluation must preserve the
+full denominator, distinguish mechanism failure from instrument failure, and
+show whether correction, recovery, compensation, or withdrawal actually
+reached the affected state.
+
+## Minimum Viable Implementation
+
+Implement an event-sourced semantic-object store with typed nodes and relations, temporal validity, provenance, contradiction, supersession, ontology version, rights, and transactional snapshots. Compare exact, vector, graph, and hybrid retrieval on update-heavy tasks with injected collisions, stale facts, conflicting sources, poisoning, deletion, compaction, crash, and restart. Measure task utility together with provenance survival, contradiction calibration, rights closure, latency, and residuals.
+
+A Durable semantic memory implementation should begin with an ordinary baseline and the strongest
+credible competing design, not only an intentionally weak comparator.
+Engineering and tuning budgets, information access, model capability, human
+help, retry policy, and stopping rules should be matched or reported. Positive
+controls must show that the task and instruments can detect the intended
+mechanism before a null or negative outcome is interpreted. Every result
+remains bounded to the tested population, environment, model, implementation,
+and evaluator.
+
+## Evidence and falsification program
+
+A fair Durable semantic memory test must freeze the mechanism, authority, comparator set, tuning and
+rescue budgets, metrics, stopping rule, and protected holdout before outcomes
+are visible. It must include favorable or oracle checks, mechanism-specific
+ablations, positive and negative controls, complete attempts, independent
+scoring, joint utility/safety/cost accounting, and explicit blocked or null
+outcomes. A weak implementation can narrow that implementation; it cannot
+refute the architectural idea.
+
+## Beyond the State of the Art
+
+The target is a knowledge lattice whose semantic state is durable but never treated as unquestionable truth. It should let new retrieval and memory architectures plug into the stack while preserving object identity, revision, rights, and restart semantics across substrate replacement.
+
+At maturity, the Durable semantic memory contract becomes a replaceable service
+behind stable interfaces. New models, algorithms, institutions, storage
+systems, and hardware can enter through declared adapters while the surrounding
+stack continues to enforce the same authority and evidence ceilings. This is
+architectural extensibility, not a claim that one implementation has discovered
+the final mechanism.
+
+For Durable semantic memory, the decisive standard is joint performance. The mature design must improve
+useful outcomes or decision quality while keeping unsafe release, false
+refusal, missed help, latency, resource use, human burden, and unresolved
+residuals visible. If a simpler system achieves the same bounded result at lower
+total lifecycle cost, the simpler system should be preferred. If no competent
+test exists yet, the end state remains a falsifiable target rather than a
+marketing conclusion.
+
+The Durable semantic memory target also remains reversible. Operators need a declared way to narrow,
+replace, migrate, or retire the mechanism while preserving affected records and
+obligations. Architectural permanence without demonstrated benefit would be a
+failure of governance, not evidence of maturity.
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Contract completeness | Reject missing identity, authority, scope, version, consumer, residual, or expiry fields. | planned |
+| Boundary mutation | Substitute an adjacent owner's authority and require rejection. | planned |
+| Failure-family mutation | Inject at least one mechanism-specific failure and preserve the full attempt denominator. | planned |
+| No-promotion control | Ensure prose, schemas, fixtures, and source-reported results cannot promote the chapter core claim. | planned |
+
+Planned formalization hook: `lean:durable-semantic-memory-and-knowledge-lattices.admission_boundary` remains a process-contract target; it does not claim an implemented theorem.
+
+## Source crosswalk
+
+| Source ID | Title | Bounded use |
+|---|---|---|
+| `qcsa_whitepaper` | Question-Compiled Semantic Addressing | Corben-authored semantic-control-plane lineage for stable object identity, versioned addresses, evidence-bearing hypergraphs, lifecycle migration, and explicit residuals. Its bounded local artifacts do not establish durable memory truth, deletion completeness, restart equivalence, retrieval quality, or production transfer. |
+| `ext_graphrag_2024` | From Local to Global: A Graph RAG Approach to Query-Focused Summarization | Primary GraphRAG comparator for LLM-derived entity graphs, community summaries, and global corpus questions; generated graph and summary layers remain fallible derived representations and do not establish truth, complete coverage, local adequacy, or an ASI Stack memory result. |
+| `ext_hipporag_2024` | HippoRAG: Neurobiologically Inspired Long-Term Memory for Large Language Models | Primary NeurIPS comparator for knowledge-graph retrieval with Personalized PageRank and single-step associative navigation; reported multi-hop QA gains do not establish durable truth, update correctness, resistance to poisoning, local reproduction, or a general memory system. |
+| `ext_mem0_2025` | Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory | Primary preprint comparator for extracting, consolidating, retrieving, and graph-linking conversational memory under latency and token-cost constraints; LOCOMO and LLM-judge results do not establish fact correctness, poisoning resistance, general memory, local reproduction, or production readiness here. |
+| `ext_titans_2025` | Titans: Learning to Memorize at Test Time | Primary neural-memory comparator for test-time memorization and long-context sequence modeling. The paper motivates mutable-state provenance and rollback tests; no local model or benchmark result is reproduced. |
+
+## Summary
+
+Durable semantic memory should be admitted through a versioned knowledge-lattice contract that binds object and relation identity, ontology, provenance, support state, temporal validity, authority and rights, merge and supersession, contradiction, retrieval route, compaction and forgetting, restart recovery, consumer use, and residual uncertainty; retrieval quality, graph connectivity, model recall, persistence, or a fluent answer alone establishes neither truth, complete memory, safe consolidation, erasure, nor decision authority. The subject is now integrated into the live manuscript at argument
+support. Its empirical, formal, transfer, and deployment work remains an open
+evidence program rather than an excuse to defer the concept itself.
+
+The Durable semantic memory reading rule is to follow the artifacts: identify the declared
+contract, inspect the authority and version, check the complete attempt and
+failure denominator, examine the independent decision, and retain every
+residual through the handoff. When any link is absent, the correct conclusion
+is narrower authority and more explicit uncertainty—not assumed success and
+not a sweeping refutation of the idea.
+
+## Handoff
+
+**Context Transactions, Snapshots, Mounts, and Taint** follows. It consumes this chapter's bounded
+outputs without inheriting authority, certainty, or support that this chapter
+did not establish. The receiving chapter must preserve the identities,
+versions, unresolved conflicts, residuals, and non-claims recorded here, then
+perform its own admission checks before acting. A handoff receipt proves only
+that the packet crossed the declared interface; it does not prove that either
+chapter's mechanism is effective, complete, safe, transferable, or ready for
+release.

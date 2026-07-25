@@ -1,0 +1,53 @@
+# Claim Dossier: Autonomous Replication, Proliferation, and Containment
+
+Chapter ID: `autonomous-replication-proliferation-and-containment`
+
+Status: P1 semantic review pending
+
+Core support state: `argument`
+
+This dossier is generated from the manifest and review overlay. Inclusion is not proof or promotion.
+
+| Atom | Role | Type | Review | Proposition |
+|---|---|---|---|---|
+| `autonomous-replication-proliferation-and-containment.core` | `core` | `composite` | `semantically_reviewed` | Any replication-capable action should be denied by default and become testable only inside a synthetic containment contract that binds parent and descendant identity, authority noninheritance, resources, credentials, networks, copy lineage, persistence, adaptation, human assistance, shutdown and recall, proliferation bounds, residuals, and threshold commitments; component-task success or failure alone establishes neither end-to-end replication capability, containment, safety, nor permission to test real infrastructure. |
+| `autonomous-replication-proliferation-and-containment.problem.001` | `problem` | `source-synthesis` | `semantically_reviewed` | Replication is a composed lifecycle: obtaining resources, copying or reconstructing code and weights, creating identities and credentials, provisioning compute, deploying descendants, persisting, adapting, recruiting help, and resisting recall. The weak links can improve independently, so no adjacent chapter owns the end-to-end chain. |
+| `autonomous-replication-proliferation-and-containment.insufficiency.001` | `insufficiency` | `composite` | `semantically_reviewed` | Weight custody, cloud policy, sandboxing, shutdown tests, capability benchmarks, or self-improvement controls each cover one segment. None alone preserves descendant identity, noninheritance of authority, component and end-to-end denominators, resource acquisition, human assistance, copy lineage, independently enforceable termination, and proliferation residuals. |
+| `autonomous-replication-proliferation-and-containment.minimum.001` | `minimum` | `executable` | `semantically_reviewed` | The smallest honest implementation boundary for Autonomous Replication, Proliferation, and Containment is: Build a closed synthetic provider and network with fake credentials, budgets, model artifacts, endpoints, and independently enforced kill switches. Test component tasks, full chains, human-assistance variants, positive controls, descendant discovery, and recall. Publish aggregated safety findings and interface contracts, not reusable real-world replication instructions. |
+| `autonomous-replication-proliferation-and-containment.beyond_sota.001` | `beyond_sota` | `composite` | `semantically_reviewed` | At maturity, the operational contract is a thresholded, lineage-complete, externally terminable replication boundary. It must expose which component and end-to-end capabilities approach concern while ensuring that measurement cannot create reusable real-world proliferation authority. Parent and descendant identities, noninherited permissions, synthetic resources, assistance, complete attempts, persistence, shutdown, recall, discovery, reclamation, and unresolved copies remain jointly auditable, and safer containment mechanisms may replace earlier ones without losing descendant obligations. |
+| `autonomous-replication-proliferation-and-containment.mechanism.001` | `mechanism` | `composite` | `semantically_reviewed` | Compile a replication-attempt contract with fake resources, non-deployable artifacts, synthetic providers, bounded descendants, explicit human-assistance variants, and an independent stop authority. |
+| `autonomous-replication-proliferation-and-containment.mechanism.002` | `mechanism` | `composite` | `semantically_reviewed` | Give every descendant a new principal and zero inherited authority; link code, weights, configuration, credentials, resources, and operator interventions to complete lineage. |
+| `autonomous-replication-proliferation-and-containment.mechanism.003` | `mechanism` | `composite` | `semantically_reviewed` | Measure each component and the end-to-end chain separately, retaining all attempts, retries, assistance, costs, failures, persistence events, and containment interventions. |
+| `autonomous-replication-proliferation-and-containment.mechanism.004` | `mechanism` | `composite` | `semantically_reviewed` | Exercise shutdown, recall, credential revocation, network isolation, resource reclamation, descendant discovery, and artifact destruction from outside the tested agent. |
+| `autonomous-replication-proliferation-and-containment.mechanism.005` | `mechanism` | `composite` | `semantically_reviewed` | Route threshold crossings to custody, security, readiness, incident command, and public commitments without publishing an operational replication recipe. |
+| `autonomous-replication-proliferation-and-containment.interface.001` | `interface` | `executable` | `semantically_reviewed` | RSI governs system change; replication governs creation and persistence of descendants. |
+| `autonomous-replication-proliferation-and-containment.interface.002` | `interface` | `executable` | `semantically_reviewed` | Weight Custody controls model artifacts; this chapter tracks copies through deployment and recall. |
+| `autonomous-replication-proliferation-and-containment.interface.003` | `interface` | `executable` | `semantically_reviewed` | Security Kernel supplies credentials, networks, and tool boundaries; it does not certify the composed lifecycle. |
+| `autonomous-replication-proliferation-and-containment.interface.004` | `interface` | `executable` | `semantically_reviewed` | Capability Thresholds turns measured proliferation ability into deployment commitments. |
+| `autonomous-replication-proliferation-and-containment.invariant.001` | `invariant` | `formal` | `semantically_reviewed` | Replication authority is explicit, bounded, revocable, and absent by default. |
+| `autonomous-replication-proliferation-and-containment.invariant.002` | `invariant` | `formal` | `semantically_reviewed` | Descendants inherit no parent authority, credentials, or principal identity. |
+| `autonomous-replication-proliferation-and-containment.invariant.003` | `invariant` | `formal` | `semantically_reviewed` | Every copy and provisioned resource remains in a complete lineage and bounded denominator. |
+| `autonomous-replication-proliferation-and-containment.invariant.004` | `invariant` | `formal` | `semantically_reviewed` | Termination is independently enforceable and tested across every descendant. |
+| `autonomous-replication-proliferation-and-containment.invariant.005` | `invariant` | `formal` | `semantically_reviewed` | Real providers, money, identities, credentials, weights, endpoints, and persistence targets are outside the test authority. |
+| `autonomous-replication-proliferation-and-containment.failure_mode.001` | `failure_mode` | `causal` | `semantically_reviewed` | For Autonomous Replication, Proliferation, and Containment, a material failure mode is: hidden copies |
+| `autonomous-replication-proliferation-and-containment.failure_mode.002` | `failure_mode` | `causal` | `semantically_reviewed` | For Autonomous Replication, Proliferation, and Containment, a material failure mode is: credential bootstrapping |
+| `autonomous-replication-proliferation-and-containment.failure_mode.003` | `failure_mode` | `causal` | `semantically_reviewed` | For Autonomous Replication, Proliferation, and Containment, a material failure mode is: resource fraud |
+| `autonomous-replication-proliferation-and-containment.failure_mode.004` | `failure_mode` | `causal` | `semantically_reviewed` | For Autonomous Replication, Proliferation, and Containment, a material failure mode is: unauthorized provisioning |
+| `autonomous-replication-proliferation-and-containment.failure_mode.005` | `failure_mode` | `causal` | `semantically_reviewed` | For Autonomous Replication, Proliferation, and Containment, a material failure mode is: weight exfiltration |
+| `autonomous-replication-proliferation-and-containment.failure_mode.006` | `failure_mode` | `causal` | `semantically_reviewed` | For Autonomous Replication, Proliferation, and Containment, a material failure mode is: polymorphic persistence |
+| `autonomous-replication-proliferation-and-containment.failure_mode.007` | `failure_mode` | `causal` | `semantically_reviewed` | For Autonomous Replication, Proliferation, and Containment, a material failure mode is: descendant identity loss |
+| `autonomous-replication-proliferation-and-containment.failure_mode.008` | `failure_mode` | `causal` | `semantically_reviewed` | For Autonomous Replication, Proliferation, and Containment, a material failure mode is: shutdown resistance |
+| `autonomous-replication-proliferation-and-containment.failure_mode.009` | `failure_mode` | `causal` | `semantically_reviewed` | For Autonomous Replication, Proliferation, and Containment, a material failure mode is: human-assisted chain completion |
+| `autonomous-replication-proliferation-and-containment.failure_mode.010` | `failure_mode` | `causal` | `semantically_reviewed` | For Autonomous Replication, Proliferation, and Containment, a material failure mode is: cross-jurisdiction escape |
+| `autonomous-replication-proliferation-and-containment.failure_mode.011` | `failure_mode` | `causal` | `semantically_reviewed` | For Autonomous Replication, Proliferation, and Containment, a material failure mode is: uncontrolled proliferation |
+| `autonomous-replication-proliferation-and-containment.failure_mode.012` | `failure_mode` | `causal` | `semantically_reviewed` | For Autonomous Replication, Proliferation, and Containment, a material failure mode is: benchmark-to-capability overclaim |
+| `autonomous-replication-proliferation-and-containment.formal.autonomous-replication-proliferation-and-containment-admission-boundary` | `formal_target` | `formal` | `semantically_reviewed` | A finite Autonomous Replication, Proliferation, and Containment record may hand off only when identity, authority, version, required checks, and residual ownership are present; no theorem grants empirical effectiveness or release authority. |
+
+## Argument-exit state
+
+No promotion-or-refutation campaign is frozen yet. P1 must first replace every machine candidate with a semantic review and adjudicate every prose-only candidate.
+
+## Non-claims
+
+- This dossier does not establish semantic adequacy, implementation behavior, empirical benefit, transfer, safety, or SOTA status.
+- All support movement requires a separate accepted evidence-transition record.

@@ -1,0 +1,244 @@
+---
+title: "Scientific Discovery and Experimental Governance"
+chapter_id: "scientific-discovery-and-experimental-governance"
+part_id: "evidence-implementation-living-book"
+status: "conceptual"
+draft_maturity: "v0.2 complete argument-level manuscript"
+last_updated: "2026-07-24"
+primary_sources:
+  - "ext_autonomous_lab_materials_2023"
+evidence_level: "argument"
+claim_label: "Design rationale"
+open_evidence_gaps:
+  - "The architecture is written at argument support; no chapter-core empirical promotion is claimed."
+  - "The minimum implementation and natural evaluation described below remain to be executed unless Appendix E records them separately."
+  - "Source-reported results are not local reproductions and do not establish transfer, readiness, release, or SOTA."
+---
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `scientific-discovery-and-experimental-governance` |
+| Part | Part IV - Evidence, Implementation, and the Living Book |
+| Status | conceptual |
+| Manuscript maturity | v0.2 complete argument-level manuscript |
+| Last updated | 2026-07-24 |
+| Claim label | Design rationale |
+| Evidence level | argument |
+| Source loading state | Assigned source notes support mechanism and boundary discussion; all reported outcomes remain source-reported. |
+| Test state | The chapter defines a minimum implementation and falsification plan; no chapter-core promotion follows from prose or source synthesis. |
+
+## Drafting guardrail
+
+Experimental governance owns a distinct control plane, not proof that the control plane
+works. Its source crosswalk supports definitions, mechanisms, failure examples,
+and comparison targets. The design remains at **argument** support until a
+separate accepted evidence transition says otherwise.
+
+::: {.asi-human-only}
+## Human Reading Path
+
+Science is not one act of generation followed by one act of verification. Question choice, design, instruments, stopping rules, exclusions, analysis, and publication all shape what appears known. Automation can accelerate this loop, but it can also repeat bias, conceal failed attempts, and hide discretionary choices behind a seamless pipeline. The entire evidence-producing lifecycle therefore needs governance.
+
+Exploration and confirmation must remain distinct. An experimental contract records hypothesis ancestry, prior evidence, competing explanations, preregistration, design and power, samples, controls, instruments or simulators, calibration, blinding, stopping, exclusions, analysis, human intervention, replication, and dual-use boundaries. Generated ideas may expand search, but protected data and outcome-dependent choices cannot rewrite the test that evaluates them.
+
+The lifecycle runs from question selection through design, authorization, execution, measurement, analysis, independent reanalysis, replication, claim drafting, disclosure, and correction. HARKing, p-hacking, selective stopping, simulator laundering, drift, contaminated controls, publication bias, irreproducibility, and dangerous affordances remain visible. Automation may accelerate inquiry only while complete denominators and independent checks determine what may be claimed, because no smooth workflow substitutes for causal identification, reproducibility, or responsible control of dangerous knowledge.
+:::
+
+## Problem
+
+AI-assisted science closes a loop from research objective and hypothesis through design, simulation or instrument control, measurement, analysis, causal or statistical claim, replication, dual-use review, and evidence handoff. Generic planning and tool use do not preserve the epistemic controls of that full loop.
+
+This gap matters at the scale of a stack because its output becomes another
+layer's input. If the owner is absent, `HARKing` or
+`p-hacking` can be normalized before a downstream layer sees it.
+The downstream consumer may possess a valid local record while acting on a
+broken upstream assumption. An explicit owner therefore needs both a positive
+contract and a refusal path: it must say what counts as an admissible
+transition, what remains unresolved, who may consume the result, and when a
+material change forces reauthorization.
+
+## Why existing approaches are insufficient
+
+A fluent hypothesis, autonomous laboratory, successful synthesis, simulator result, significant p-value, or generated paper can be useful while still hiding HARKing, selective stopping, instrument drift, contaminated controls, analysis flexibility, failed experiments, human intervention, replication gaps, or dual-use risk.
+
+Experimental governance must first beat a disciplined composition of the adjacent
+owners. That alternative should win if it can preserve the same identities,
+authority, lifecycle state, failure distinctions, and residuals without
+overloading their primary jobs. A dedicated owner remains necessary because the
+handoffs listed below otherwise leave a missing end-to-end decision. Separation
+does not imply autonomy: this owner must consume upstream records and return
+bounded outputs to downstream owners rather than becoming a new unreviewable
+center of authority.
+
+```{mermaid}
+flowchart LR
+  A["Declared purpose and bounded authority"] --> B["Versioned chapter-specific contract"]
+  B["Versioned chapter-specific contract"] --> C["Admission and boundary checks"]
+  C["Admission and boundary checks"] --> D["Execute with complete lineage and denominators"]
+  D["Execute with complete lineage and denominators"] --> E["Observe outcomes, costs, and residuals"]
+  E["Observe outcomes, costs, and residuals"] --> F{"Independent checks pass?"}
+  F -- "no" --> G["Quarantine, narrow, correct, or stop"]
+  F -- "yes" --> H["Versioned bounded handoff"]
+  G -- "repair and reauthorize" --> B
+  H -- "material change" --> B
+  B -. "expiry or revocation" .-> G
+  E -. "residual feedback" .-> B
+```
+
+**What the Scientific Discovery and Experimental Governance lifecycle shows:** Authority enters before execution,
+chapter-specific state remains versioned, and a failed independent check returns
+the system to correction or quarantine. A successful check grants only the
+bounded downstream handoff; it does not erase residuals or promote its core claim.
+
+## Core Claim
+
+[scientific-discovery-and-experimental-governance.core, label: Design rationale, support: argument] An AI-generated scientific claim should enter the evidence stack only through a preregistered experimental contract that binds hypothesis lineage, exploratory versus confirmatory status, design and power, instrument or simulator authority, calibration, sample and protocol lineage, blinding and holdouts, stopping and exclusions, analysis, complete attempts, independent replication, dual-use disposition, and claim ceiling; experimental completion, significance, synthesis, instrument output, or formal workflow validity alone establishes neither causal truth, general scientific discovery, reproducibility, safety, nor transfer.
+
+## Mechanism
+
+**Contract.** Record hypothesis ancestry, prior evidence, competing explanations, exploratory status, preregistration, design, power, outcomes, exclusions, stopping, and analysis before protected data are opened. This stage is recorded as a versioned decision rather than an invisible implementation detail. For Scientific Discovery and Experimental Governance, the record must name its inputs, authority, consumer, expiry, and unresolved residuals. A later stage may narrow the decision, but it may not silently broaden the earlier grant or reinterpret a missing field as success.
+
+**Admission.** Lease simulators and instruments with calibration, operating envelope, sample identity, control state, maintenance, operator intervention, and safety authority. This stage is recorded as a versioned decision rather than an invisible implementation detail. For Scientific Discovery and Experimental Governance, the record must name its inputs, authority, consumer, expiry, and unresolved residuals. A later stage may narrow the decision, but it may not silently broaden the earlier grant or reinterpret a missing field as success.
+
+**Execution.** Separate generated hypotheses, execution, measurement, analysis, causal interpretation, and claim drafting across inspectable roles and preserve all failed attempts. This stage is recorded as a versioned decision rather than an invisible implementation detail. For Scientific Discovery and Experimental Governance, the record must name its inputs, authority, consumer, expiry, and unresolved residuals. A later stage may narrow the decision, but it may not silently broaden the earlier grant or reinterpret a missing field as success.
+
+**Observation.** Require positive, negative, null, contamination, drift, and analysis-robustness controls plus independent reanalysis and, where feasible, replication. This stage is recorded as a versioned decision rather than an invisible implementation detail. For Scientific Discovery and Experimental Governance, the record must name its inputs, authority, consumer, expiry, and unresolved residuals. A later stage may narrow the decision, but it may not silently broaden the earlier grant or reinterpret a missing field as success.
+
+**Closure.** Route dangerous hypotheses, protocols, materials, capabilities, and disclosures through dual-use review and retain withheld details and unresolved risks as explicit residuals. This stage is recorded as a versioned decision rather than an invisible implementation detail. For Scientific Discovery and Experimental Governance, the record must name its inputs, authority, consumer, expiry, and unresolved residuals. A later stage may narrow the decision, but it may not silently broaden the earlier grant or reinterpret a missing field as success.
+
+## Interfaces
+
+Experimental governance is useful only when its boundaries are sharper than neighboring owners.
+Each interface below therefore names what the adjacent owner keeps and what
+crosses the boundary. The packet must preserve exact object and version
+identity, authority, support state, expiry, residuals, and consumer. A receiving
+layer may reject or narrow it. Merely serializing the fields, passing a schema,
+or recording a dispatch does not prove that the meaning survived or that the
+receiving layer is competent.
+
+- Planning proposes experiments; this chapter governs confirmatory design and inference.
+- Runtime Adapters and Embodied Agency control tools and instruments; they do not certify scientific truth.
+- Benchmark Ratchets and Evidence States receive complete results and claim ceilings.
+- Artifact Graphs and the Living Book preserve protocol, data, analysis, replication, correction, and publication lineage.
+
+Failed attempts remain included.
+
+## Invariants
+
+For Experimental governance, the following invariants are admission conditions rather than aspirations. They must
+hold across retries, replacements, cached results, branches, migrations,
+partial failures, and human intervention. When the implementation cannot
+establish an invariant, the result is a named residual or blocked route—not a
+default value. A finite formal model may prove that an authored record follows
+these rules, but only implementation and outcome evidence can show that a live
+system actually enforces them.
+
+- Hypothesis generation and confirmatory testing remain separated.
+- Simulator or instrument return is an observation, not scientific truth.
+- Exploratory and confirmatory analyses remain visibly distinct.
+- All attempts, exclusions, stopping events, and human interventions remain in the denominator.
+- One laboratory, domain, or replication does not imply broad transfer.
+
+## Failure modes
+
+The principal failure family includes HARKing; p-hacking; selective stopping; publication bias; instrument drift; simulator laundering; contaminated controls; automation bias; hidden intervention; irreproducibility; unsafe experiment generation; dual-use leakage; claim drafting beyond the data. These are not presumed
+exhaustive. New substrates, deployment settings, populations, and adversaries
+reopen the failure inventory and may narrow authority immediately.
+
+Experimental governance detection also has its own false-positive and false-negative costs.
+An architecture that blocks every useful route is not vindicated merely
+because it prevented one hazard, while a permissive architecture cannot hide
+unsafe attempts inside an average utility score. Evaluation must preserve the
+full denominator, distinguish mechanism failure from instrument failure, and
+show whether correction, recovery, compensation, or withdrawal actually
+reached the affected state.
+
+## Minimum Viable Implementation
+
+Use a benign reproducible simulation or low-risk open instrument with injected null and known effects. Freeze stopping and analysis, preserve every attempt, blind the confirmatory holdout, run independent analysis, and package protocol, data, code, calibration, exclusions, and residuals for replication. This tests the control plane, not autonomous science in general.
+
+A Experimental governance implementation should begin with an ordinary baseline and the strongest
+credible competing design, not only an intentionally weak comparator.
+Engineering and tuning budgets, information access, model capability, human
+help, retry policy, and stopping rules should be matched or reported. Positive
+controls must show that the task and instruments can detect the intended
+mechanism before a null or negative outcome is interpreted. Every result
+remains bounded to the tested population, environment, model, implementation,
+and evaluator.
+
+## Evidence and falsification program
+
+A fair Experimental governance test must freeze the mechanism, authority, comparator set, tuning and
+rescue budgets, metrics, stopping rule, and protected holdout before outcomes
+are visible. It must include favorable or oracle checks, mechanism-specific
+ablations, positive and negative controls, complete attempts, independent
+scoring, joint utility/safety/cost accounting, and explicit blocked or null
+outcomes. A weak implementation can narrow that implementation; it cannot
+refute the architectural idea.
+
+## Beyond the State of the Art
+
+The stronger architecture makes scientific discovery a governed evidence-production lifecycle. AI can expand hypothesis and experiment search while independent controls, complete denominators, replication, and dual-use boundaries determine what the stack is allowed to claim.
+
+At maturity, the Experimental governance contract becomes a replaceable service
+behind stable interfaces. New models, algorithms, institutions, storage
+systems, and hardware can enter through declared adapters while the surrounding
+stack continues to enforce the same authority and evidence ceilings. This is
+architectural extensibility, not a claim that one implementation has discovered
+the final mechanism.
+
+For Experimental governance, the decisive standard is joint performance. The mature design must improve
+useful outcomes or decision quality while keeping unsafe release, false
+refusal, missed help, latency, resource use, human burden, and unresolved
+residuals visible. If a simpler system achieves the same bounded result at lower
+total lifecycle cost, the simpler system should be preferred. If no competent
+test exists yet, the end state remains a falsifiable target rather than a
+marketing conclusion.
+
+The Experimental governance target also remains reversible. Operators need a declared way to narrow,
+replace, migrate, or retire the mechanism while preserving affected records and
+obligations. Architectural permanence without demonstrated benefit would be a
+failure of governance, not evidence of maturity.
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Contract completeness | Reject missing identity, authority, scope, version, consumer, residual, or expiry fields. | planned |
+| Boundary mutation | Substitute an adjacent owner's authority and require rejection. | planned |
+| Failure-family mutation | Inject at least one mechanism-specific failure and preserve the full attempt denominator. | planned |
+| No-promotion control | Ensure prose, schemas, fixtures, and source-reported results cannot promote the chapter core claim. | planned |
+
+Planned formalization hook: `lean:scientific-discovery-and-experimental-governance.admission_boundary` remains a process-contract target; it does not claim an implemented theorem.
+
+## Source crosswalk
+
+| Source ID | Title | Bounded use |
+|---|---|---|
+| `aletheia` | Aletheia Foundry | Corben-authored safe-intelligence lineage for truth-seeking, verification, and disciplined knowledge production. It motivates an epistemic foundry interface, but it does not supply preregistered experiments, instrument calibration, causal identification, independent replication, laboratory safety, or a scientific-discovery result. |
+| `ext_autonomous_lab_materials_2023` | An autonomous laboratory for the accelerated synthesis of inorganic materials | Preliminary autonomous-laboratory comparator based on the corrected official Nature article abstract, selected article-page passages, and the 2026 author correction: A-Lab integrates computation, literature-derived data, machine learning, active learning, and robotics, with the corrected article reporting 36 realized compounds from 57 targets. The correction narrows the novelty wording and excludes four inconclusive identifications; no laboratory run, material synthesis, replication, or general experimental-control-plane result has been reproduced locally. |
+
+## Summary
+
+An AI-generated scientific claim should enter the evidence stack only through a preregistered experimental contract that binds hypothesis lineage, exploratory versus confirmatory status, design and power, instrument or simulator authority, calibration, sample and protocol lineage, blinding and holdouts, stopping and exclusions, analysis, complete attempts, independent replication, dual-use disposition, and claim ceiling; experimental completion, significance, synthesis, instrument output, or formal workflow validity alone establishes neither causal truth, general scientific discovery, reproducibility, safety, nor transfer. The subject is now integrated into the live manuscript at argument
+support. Its empirical, formal, transfer, and deployment work remains an open
+evidence program rather than an excuse to defer the concept itself.
+
+The Experimental governance reading rule is to follow the artifacts: identify the declared
+contract, inspect the authority and version, check the complete attempt and
+failure denominator, examine the independent decision, and retain every
+residual through the handoff. When any link is absent, the correct conclusion
+is narrower authority and more explicit uncertainty—not assumed success and
+not a sweeping refutation of the idea.
+
+## Handoff
+
+**Artifact Steward Agents and Living Project Governance** follows. It consumes this chapter's bounded
+outputs without inheriting authority, certainty, or support that this chapter
+did not establish. The receiving chapter must preserve the identities,
+versions, unresolved conflicts, residuals, and non-claims recorded here, then
+perform its own admission checks before acting. A handoff receipt proves only
+that the packet crossed the declared interface; it does not prove that either
+chapter's mechanism is effective, complete, safe, transferable, or ready for
+release.

@@ -1,0 +1,249 @@
+---
+title: "Governed Objective Formation, Value Learning, and Goal Integrity"
+chapter_id: "governed-objective-formation-value-learning-and-goal-integrity"
+part_id: "foundations-alignment-governance"
+status: "conceptual"
+draft_maturity: "v0.2 complete argument-level manuscript"
+last_updated: "2026-07-24"
+primary_sources:
+  - "ext_cooperative_inverse_rl_2016"
+  - "ext_goal_misgeneralization_2022"
+  - "ext_learned_optimization_risks_2019"
+  - "ext_emergent_misalignment_reward_hacking_2025"
+evidence_level: "argument"
+claim_label: "Design rationale"
+open_evidence_gaps:
+  - "The architecture is written at argument support; no chapter-core empirical promotion is claimed."
+  - "The minimum implementation and natural evaluation described below remain to be executed unless Appendix E records them separately."
+  - "Source-reported results are not local reproductions and do not establish transfer, readiness, release, or SOTA."
+---
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `governed-objective-formation-value-learning-and-goal-integrity` |
+| Part | Part I - Foundations, Alignment, and Governance |
+| Status | conceptual |
+| Manuscript maturity | v0.2 complete argument-level manuscript |
+| Last updated | 2026-07-24 |
+| Claim label | Design rationale |
+| Evidence level | argument |
+| Source loading state | Assigned source notes support mechanism and boundary discussion; all reported outcomes remain source-reported. |
+| Test state | The chapter defines a minimum implementation and falsification plan; no chapter-core promotion follows from prose or source synthesis. |
+
+## Drafting guardrail
+
+Governed objective formation owns a distinct control plane, not proof that the control plane
+works. Its source crosswalk supports definitions, mechanisms, failure examples,
+and comparison targets. The design remains at **argument** support until a
+separate accepted evidence transition says otherwise.
+
+::: {.asi-human-only}
+## Human Reading Path
+
+An optimizer is literal about its signal, while people are often imprecise, divided, or mistaken about what they mean. Danger begins before reward hacking, when a request, preference sample, constitutional phrase, proxy metric, or evaluator judgment becomes an apparently settled target that persists across tasks, users, and versions. That conversion requires an explicit, revisable governance transaction.
+
+Authorized purpose, contested values, target properties, measurable proxies, training signals, planning criteria, and persistence may inform one another, but they are not interchangeable. An objective packet preserves their identities, evidence, affected parties, disagreement, uncertainty, scope, expiry, and amendment authority. Value learning supplies evidence about preferences and tradeoffs; it is not an oracle that eliminates moral uncertainty or political legitimacy.
+
+An objective moves through proposal, adversarial interpretation, conflict analysis, approval, optimization, monitoring, and reauthorization. Goal drift, Goodhart effects, evaluator capture, preference manipulation, ontological change, and self-protective persistence can arise anywhere along that path. Capable optimization therefore needs goals that can be inspected, challenged, narrowed, expired, and replaced without allowing the optimizing system to define the terms of its own continued authority.
+:::
+
+## Problem
+
+The stack has owners for requests, constitutions, value conflict, optimization, planning, and self-improvement, but those layers presuppose an operational objective they do not create. Without a positive objective-formation lifecycle, a temporary request, learned preference estimate, or convenient metric can silently become a durable goal.
+
+This gap matters at the scale of a stack because its output becomes another
+layer's input. If the owner is absent, `reward misspecification` or
+`Goodhart effects` can be normalized before a downstream layer sees it.
+The downstream consumer may possess a valid local record while acting on a
+broken upstream assumption. An explicit owner therefore needs both a positive
+contract and a refusal path: it must say what counts as an admissible
+transition, what remains unresolved, who may consume the result, and when a
+material change forces reauthorization.
+
+## Why existing approaches are insufficient
+
+A reward function, preference model, constitutional rule set, or natural-language mission does not by itself preserve the distinction between authorized purpose, contested value, target property, measurable proxy, training signal, evaluator, planning criterion, persistence, and reauthorization when people or ontologies change.
+
+Governed objective formation must first beat a disciplined composition of the adjacent
+owners. That alternative should win if it can preserve the same identities,
+authority, lifecycle state, failure distinctions, and residuals without
+overloading their primary jobs. A dedicated owner remains necessary because the
+handoffs listed below otherwise leave a missing end-to-end decision. Separation
+does not imply autonomy: this owner must consume upstream records and return
+bounded outputs to downstream owners rather than becoming a new unreviewable
+center of authority.
+
+```{mermaid}
+flowchart LR
+  A["Declared purpose and bounded authority"] --> B["Versioned chapter-specific contract"]
+  B["Versioned chapter-specific contract"] --> C["Admission and boundary checks"]
+  C["Admission and boundary checks"] --> D["Execute with complete lineage and denominators"]
+  D["Execute with complete lineage and denominators"] --> E["Observe outcomes, costs, and residuals"]
+  E["Observe outcomes, costs, and residuals"] --> F{"Independent checks pass?"}
+  F -- "no" --> G["Quarantine, narrow, correct, or stop"]
+  F -- "yes" --> H["Versioned bounded handoff"]
+  G -- "repair and reauthorize" --> B
+  H -- "material change" --> B
+  B -. "expiry or revocation" .-> G
+  E -. "residual feedback" .-> B
+```
+
+**What the Governed Objective Formation, Value Learning, and Goal Integrity lifecycle shows:** Authority enters before execution,
+chapter-specific state remains versioned, and a failed independent check returns
+the system to correction or quarantine. A successful check grants only the
+bounded downstream handoff; it does not erase residuals or promote its core claim.
+
+## Core Claim
+
+[governed-objective-formation-value-learning-and-goal-integrity.core, label: Design rationale, support: argument] A durable objective should be usable only through a versioned target-property contract that binds authority and affected parties to target/proxy causal assumptions, uncertainty and dissent, consumer-specific use, tampering tests, generalization limits, ontology version, expiry, reauthorization, and retirement; proxy improvement, predicted preference, reward, evaluator approval, or formal record validity alone establishes neither the right objective, moral truth, stable alignment, nor safe optimization.
+
+## Mechanism
+
+**Contract.** Create an objective charter naming purpose, principal, affected parties, constitutional ceilings, unresolved conflicts, normative and preference evidence, and explicit non-goals. This stage is recorded as a versioned decision rather than an invisible implementation detail. For Governed Objective Formation, Value Learning, and Goal Integrity, the record must name its inputs, authority, consumer, expiry, and unresolved residuals. A later stage may narrow the decision, but it may not silently broaden the earlier grant or reinterpret a missing field as success.
+
+**Admission.** Separate the target property from every proxy, reward, evaluator, benchmark, planner heuristic, and deployment decision that consumes it; record the causal assumptions for each binding. This stage is recorded as a versioned decision rather than an invisible implementation detail. For Governed Objective Formation, Value Learning, and Goal Integrity, the record must name its inputs, authority, consumer, expiry, and unresolved residuals. A later stage may narrow the decision, but it may not silently broaden the earlier grant or reinterpret a missing field as success.
+
+**Execution.** Represent uncertainty, dissent, aggregation rules, domain and temporal limits, and the conditions under which clarification or abstention outranks optimization. This stage is recorded as a versioned decision rather than an invisible implementation detail. For Governed Objective Formation, Value Learning, and Goal Integrity, the record must name its inputs, authority, consumer, expiry, and unresolved residuals. A later stage may narrow the decision, but it may not silently broaden the earlier grant or reinterpret a missing field as success.
+
+**Observation.** Challenge goal generalization with proxy interventions, distribution shift, evaluator swaps, preference poisoning, reward tampering, capable-wrong-goal controls, and ontology migration. This stage is recorded as a versioned decision rather than an invisible implementation detail. For Governed Objective Formation, Value Learning, and Goal Integrity, the record must name its inputs, authority, consumer, expiry, and unresolved residuals. A later stage may narrow the decision, but it may not silently broaden the earlier grant or reinterpret a missing field as success.
+
+**Closure.** Version objectives and invalidate descendant bindings when authority, affected parties, semantics, or evidence changes; retirement must reach caches, planners, policies, and derived goals. This stage is recorded as a versioned decision rather than an invisible implementation detail. For Governed Objective Formation, Value Learning, and Goal Integrity, the record must name its inputs, authority, consumer, expiry, and unresolved residuals. A later stage may narrow the decision, but it may not silently broaden the earlier grant or reinterpret a missing field as success.
+
+## Interfaces
+
+Governed objective formation is useful only when its boundaries are sharper than neighboring owners.
+Each interface below therefore names what the adjacent owner keeps and what
+crosses the boundary. The packet must preserve exact object and version
+identity, authority, support state, expiry, residuals, and consumer. A receiving
+layer may reject or narrow it. Merely serializing the fields, passing a schema,
+or recording a dispatch does not prove that the meaning survived or that the
+receiving layer is competent.
+
+- Human Intent supplies bounded request interpretation; it cannot create an indefinite system goal.
+- Constitutional Alignment supplies rights and rule ceilings; it does not collapse plural values into one target.
+- Moral Uncertainty preserves unresolved conflict; objective formation records which bounded action is authorized despite it.
+- Policy Optimization and Planning consume a versioned objective but may not author or weaken it.
+- RSI must reauthorize objective bindings after material self-change or ontology change.
+
+## Invariants
+
+For Governed objective formation, the following invariants are admission conditions rather than aspirations. They must
+hold across retries, replacements, cached results, branches, migrations,
+partial failures, and human intervention. When the implementation cannot
+establish an invariant, the result is a named residual or blocked route—not a
+default value. A finite formal model may prove that an authored record follows
+these rules, but only implementation and outcome evidence can show that a live
+system actually enforces them.
+
+- The optimized system may not author, weaken, or ratify its own governing objective.
+- Proxy improvement never implies target-property improvement without separate evidence.
+- Predicted preference is evidence about a person, not authority over that person.
+- Dissent and uncertainty may not disappear through scalar aggregation.
+- Material semantic, ontology, authority, or affected-party change invalidates downstream bindings until reauthorized.
+
+## Failure modes
+
+The principal failure family includes reward misspecification; Goodhart effects; goal misgeneralization; preference manipulation; aggregation laundering; evaluator capture; mesa-objective divergence; objective drift; ontology drift; goal-content tampering; authority smuggling; self-ratification; irreversible action before clarification; incomplete retirement. These are not presumed
+exhaustive. New substrates, deployment settings, populations, and adversaries
+reopen the failure inventory and may narrow authority immediately.
+
+Governed objective formation detection also has its own false-positive and false-negative costs.
+An architecture that blocks every useful route is not vindicated merely
+because it prevented one hazard, while a permissive architecture cannot hide
+unsafe attempts inside an average utility score. Evaluation must preserve the
+full denominator, distinguish mechanism failure from instrument failure, and
+show whether correction, recovery, compensation, or withdrawal actually
+reached the affected state.
+
+## Minimum Viable Implementation
+
+Implement an objective-contract registry with target/proxy graphs, consumer bindings, expiry, and invalidation. Test it in small environments containing known latent targets, deliberately misspecified proxies, preference uncertainty, tampering, distribution shift, and ontology changes. Compare fixed reward, ordinary preference learning, contract-governed optimization, and an oracle-bound control without asserting that a toy environment discovers human values.
+
+A Governed objective formation implementation should begin with an ordinary baseline and the strongest
+credible competing design, not only an intentionally weak comparator.
+Engineering and tuning budgets, information access, model capability, human
+help, retry policy, and stopping rules should be matched or reported. Positive
+controls must show that the task and instruments can detect the intended
+mechanism before a null or negative outcome is interpreted. Every result
+remains bounded to the tested population, environment, model, implementation,
+and evaluator.
+
+## Evidence and falsification program
+
+A fair Governed objective formation test must freeze the mechanism, authority, comparator set, tuning and
+rescue budgets, metrics, stopping rule, and protected holdout before outcomes
+are visible. It must include favorable or oracle checks, mechanism-specific
+ablations, positive and negative controls, complete attempts, independent
+scoring, joint utility/safety/cost accounting, and explicit blocked or null
+outcomes. A weak implementation can narrow that implementation; it cannot
+refute the architectural idea.
+
+## Beyond the State of the Art
+
+A mature stack treats goals as governed, evidence-bearing objects that can be questioned, narrowed, migrated, and retired without letting the optimizer become the constitution. The chapter supplies that missing control plane while explicitly leaving moral truth and universal value aggregation unresolved.
+
+At maturity, the Governed objective formation contract becomes a replaceable service
+behind stable interfaces. New models, algorithms, institutions, storage
+systems, and hardware can enter through declared adapters while the surrounding
+stack continues to enforce the same authority and evidence ceilings. This is
+architectural extensibility, not a claim that one implementation has discovered
+the final mechanism.
+
+For Governed objective formation, the decisive standard is joint performance. The mature design must improve
+useful outcomes or decision quality while keeping unsafe release, false
+refusal, missed help, latency, resource use, human burden, and unresolved
+residuals visible. If a simpler system achieves the same bounded result at lower
+total lifecycle cost, the simpler system should be preferred. If no competent
+test exists yet, the end state remains a falsifiable target rather than a
+marketing conclusion.
+
+The Governed objective formation target also remains reversible. Operators need a declared way to narrow,
+replace, migrate, or retire the mechanism while preserving affected records and
+obligations. Architectural permanence without demonstrated benefit would be a
+failure of governance, not evidence of maturity.
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Contract completeness | Reject missing identity, authority, scope, version, consumer, residual, or expiry fields. | planned |
+| Boundary mutation | Substitute an adjacent owner's authority and require rejection. | planned |
+| Failure-family mutation | Inject at least one mechanism-specific failure and preserve the full attempt denominator. | planned |
+| No-promotion control | Ensure prose, schemas, fixtures, and source-reported results cannot promote the chapter core claim. | planned |
+
+Planned formalization hook: `lean:governed-objective-formation-value-learning-and-goal-integrity.admission_boundary` remains a process-contract target; it does not claim an implemented theorem.
+
+## Source crosswalk
+
+| Source ID | Title | Bounded use |
+|---|---|---|
+| `alignment_field` | Field of God / Alignment Field family | Corben-authored alignment lineage for agency, consent, non-domination, truth orientation, and limits on self-authorization. It motivates the objective charter and constitutional ceiling, but it does not identify a correct target property, solve plural values, validate preference inference, or prove goal integrity. |
+| `ext_cooperative_inverse_rl_2016` | Cooperative Inverse Reinforcement Learning | External cooperative AI comparator for formalizing value alignment as uncertainty about the human reward function in a cooperative partial-information setting. |
+| `ext_goal_misgeneralization_2022` | Goal Misgeneralization in Deep Reinforcement Learning | External alignment-control source for distinguishing capability generalization from goal generalization failures, used to ground goal-misbinding and out-of-distribution objective failure language. |
+| `ext_learned_optimization_risks_2019` | Risks from Learned Optimization in Advanced Machine Learning Systems | External alignment-control source for mesa-optimization and learned-objective mismatch, used to ground hidden optimizer, proxy-objective, and deceptive-alignment-adjacent failure language. |
+| `ext_emergent_misalignment_reward_hacking_2025` | Natural Emergent Misalignment from Reward Hacking in Production RL | Primary experimental comparator for reward-hacking-induced misaligned generalization in a specified production-RL research setting, including reported mitigation conditions; it is not evidence of local model behavior or a general causal law. |
+
+## Summary
+
+A durable objective should be usable only through a versioned target-property contract that binds authority and affected parties to target/proxy causal assumptions, uncertainty and dissent, consumer-specific use, tampering tests, generalization limits, ontology version, expiry, reauthorization, and retirement; proxy improvement, predicted preference, reward, evaluator approval, or formal record validity alone establishes neither the right objective, moral truth, stable alignment, nor safe optimization. The subject is now integrated into the live manuscript at argument
+support. Its empirical, formal, transfer, and deployment work remains an open
+evidence program rather than an excuse to defer the concept itself.
+
+The Governed objective formation reading rule is to follow the artifacts: identify the declared
+contract, inspect the authority and version, check the complete attempt and
+failure denominator, examine the independent decision, and retain every
+residual through the handoff. When any link is absent, the correct conclusion
+is narrower authority and more explicit uncertainty—not assumed success and
+not a sweeping refutation of the idea.
+
+## Handoff
+
+**Institutions, International Coordination, and Public Legitimacy** follows. It consumes this chapter's bounded
+outputs without inheriting authority, certainty, or support that this chapter
+did not establish. The receiving chapter must preserve the identities,
+versions, unresolved conflicts, residuals, and non-claims recorded here, then
+perform its own admission checks before acting. A handoff receipt proves only
+that the packet crossed the declared interface; it does not prove that either
+chapter's mechanism is effective, complete, safe, transferable, or ready for
+release.

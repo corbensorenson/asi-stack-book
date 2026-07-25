@@ -61,6 +61,7 @@ Talos treats AI work as a labor operating system: typed jobs, deterministic cont
 - Open Research Agenda and Bibliography Plan
 - `human-factors-and-meaningful-control-in-oversight`
 - `governed-operations-incident-command-and-graceful-degradation`
+- `human-ai-communication-persuasion-and-epistemic-security` (Human-AI Communication, Persuasion, and Epistemic Security)
 
 ## Claims To Add Or Update
 

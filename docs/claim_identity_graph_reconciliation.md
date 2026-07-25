@@ -19,7 +19,7 @@ Each graph row preserves population, environment, model, intervention, outcome, 
 
 ## High-risk decisions
 
-- `kerc.broad_matched_total_system_efficiency` is a `proxy_for` the total-system KISS atom, not an exact architecture refutation. Retrospective competence review classifies it N1: the frozen implementation was inadequate, so the broader mechanism and architecture remain untested.
+- `kerc.broad_matched_total_system_efficiency` is a `proxy_for` the total-system KISS atom, not an exact architecture refutation. Its competence and N-level remain pending.
 - `kerc.protected_exact_handle_preservation` is a bounded `subclaim_of` exact latent-state separation; it does not establish general semantic, security, or architecture behavior.
 - QCSA exact-fixture claims remain subclaims or proxies under their current chapter owners; they do not promote QCSA, the integrated architecture, or any chapter core.
 - The retired Agency, Command Contracts, Governance Rights, and Unified Tribunal core IDs are bounded subclaims under their consolidated owners, not identity aliases.

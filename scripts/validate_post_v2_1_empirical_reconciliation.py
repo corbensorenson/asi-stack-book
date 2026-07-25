@@ -90,22 +90,30 @@ def validate(data: dict) -> list[str]:
     first_tranche = structural_tranche.get("first_tranche", {})
     second_tranche = structural_tranche.get("second_tranche", {})
     round_18_tranche = structural_tranche.get("round_18_breadth_completion", {})
+    no_deferral_tranche = maintenance_status.get("no_deferral_manuscript_admission", {})
     first_admitted_chapter_ids = set(first_tranche.get("candidate_ids", []))
     second_admitted_chapter_ids = set(second_tranche.get("adjudicated_candidate_ids", []))
     round_18_admitted_chapter_ids = set(round_18_tranche.get("new_chapter_ids", []))
+    no_deferral_admitted_chapter_ids = set(no_deferral_tranche.get("admitted_chapter_ids", []))
     admitted_chapter_ids = (
         first_admitted_chapter_ids
         | second_admitted_chapter_ids
         | round_18_admitted_chapter_ids
+        | no_deferral_admitted_chapter_ids
     )
     if (
         activation_truth.get("live_working_chapter_count") != live_chapter_count
         or structural_tranche.get("current_manifest_chapter_count") != live_chapter_count
+        or no_deferral_tranche.get("current_manifest_chapter_count") != live_chapter_count
+        or no_deferral_tranche.get("previous_manifest_chapter_count") != 66
+        or no_deferral_tranche.get("remaining_live_candidate_queue_count") != 0
+        or no_deferral_tranche.get("structural_freeze_for_manuscript_ideas") is not False
         or first_tranche.get("manifest_admitted_count") != len(first_admitted_chapter_ids)
         or second_tranche.get("manifest_admitted_count") != len(second_admitted_chapter_ids)
         or live_chapter_count != 55 + len(admitted_chapter_ids)
         or not admitted_chapter_ids.issubset(chapters)
         or not round_18_admitted_chapter_ids.issubset(chapters)
+        or not no_deferral_admitted_chapter_ids.issubset(chapters)
     ):
         errors.append("current live manifest disagrees with the later manifest-admitted structural tranche")
     for chapter_id, heading in CHAPTER_HEADINGS.items():
@@ -267,7 +275,7 @@ def main() -> None:
         raise SystemExit(1)
     live_chapter_count = sum(len(part.get("chapters", [])) for part in data["manifest"].get("parts", []))
     proof_manifest = data["proof_manifest"]
-    print(f"Post-v2.1 reconciliation passed: 6 bounded transitions, 14 core no-change decisions and chapter owners, 11 residual dispositions, 19 modern-source routes, preserved 54-chapter/298-target activation and authorized 55th-chapter historical lineage, {live_chapter_count} live argument-state vectors, {proof_manifest.get('proof_target_count')} current targets ({proof_manifest.get('status_counts', {}).get('implemented', 0)} implemented plus {proof_manifest.get('status_counts', {}).get('planned', 0)} planned on later manifest-admitted chapters), no theorem invented by the historical cycle, and 13 rejecting mutations.")
+    print(f"Post-v2.1 reconciliation passed: 6 bounded transitions, 14 core no-change decisions and chapter owners, 11 residual dispositions, 19 modern-source routes, preserved 54-chapter/298-target activation and authorized 55th-chapter historical lineage through the terminal no-deferral admission, {live_chapter_count} live argument-state vectors, {proof_manifest.get('proof_target_count')} current targets ({proof_manifest.get('status_counts', {}).get('implemented', 0)} implemented plus {proof_manifest.get('status_counts', {}).get('planned', 0)} planned on later manifest-admitted chapters), no theorem invented by the historical cycle, and 13 rejecting mutations.")
 
 
 if __name__ == "__main__":

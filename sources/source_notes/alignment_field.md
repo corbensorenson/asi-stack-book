@@ -42,6 +42,7 @@ The Alignment Field source family supplies the book's philosophical and normativ
 - Resource Economics and Token Budgets (Simulation Fidelity and Claim Transport section)
 - Integrated Reference Architecture
 - Open Research Agenda and Bibliography Plan
+- `governed-objective-formation-value-learning-and-goal-integrity` (Governed Objective Formation, Value Learning, and Goal Integrity)
 
 ## Claims To Add Or Update
 

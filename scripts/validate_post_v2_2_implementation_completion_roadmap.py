@@ -144,7 +144,13 @@ def semantic_errors(data: dict) -> list[str]:
         errors.append("live evidence-vector summary disagrees with current argument-state authority")
 
     qcsa_source_chapters = {chapter.get("id") for chapter in chapters if "qcsa_whitepaper" in chapter.get("source_ids", [])}
-    later_admitted_chapters = set(structural_tranche.get("first_tranche", {}).get("candidate_ids", []))
+    no_deferral_tranche = active_current_status.get("no_deferral_manuscript_admission", {})
+    later_admitted_chapters = (
+        set(structural_tranche.get("first_tranche", {}).get("candidate_ids", []))
+        | set(structural_tranche.get("second_tranche", {}).get("adjudicated_candidate_ids", []))
+        | set(structural_tranche.get("round_18_breadth_completion", {}).get("new_chapter_ids", []))
+        | set(no_deferral_tranche.get("admitted_chapter_ids", []))
+    )
     if (
         not QCSA_OWNERS.issubset(qcsa_source_chapters)
         or not (qcsa_source_chapters - QCSA_OWNERS).issubset(later_admitted_chapters)

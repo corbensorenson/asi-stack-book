@@ -31,6 +31,7 @@ HippoRAG is a comparator for knowledge-graph retrieval, Personalized PageRank, a
 
 ## Book Chapters Supported
 
+- `durable-semantic-memory-and-knowledge-lattices` (Durable Semantic Memory and Knowledge Lattices)
 - `virtual-context-abi`
 - `verification-bandwidth-and-context-adequacy`
 - `routing-heads-and-specialist-cores`

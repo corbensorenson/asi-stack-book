@@ -925,10 +925,10 @@ Across 75 atoms, the terminal ledger records 75 `blocked_after_full_attempt`.
 
 ## Handoff
 
-The next layer is dynamic context behavior. Once the stack has typed context
-objects with addresses and certificates, it needs to explain how those objects
-change over time: which events are committed, which snapshot is visible, which
-mount is readable, which branch was used, which derivatives were created, how
-taint propagates, and how deletion or declassification obligations close.
-
-That is the job of **Context Transactions, Snapshots, Mounts, and Taint**.
+The next layer is **Durable Semantic Memory and Knowledge Lattices**. Once the
+stack can materialize typed context objects with addresses and certificates, it
+needs a durable semantic substrate that preserves object and relation identity,
+ontology versions, provenance, contradiction, supersession, temporal validity,
+rights, and forgetting across restarts. The Virtual Context ABI grants no
+belief or memory authority; the durable layer must preserve every source,
+uncertainty, and consumer boundary before context transactions govern change.

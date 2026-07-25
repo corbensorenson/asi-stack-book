@@ -42,6 +42,7 @@ Aletheia frames advanced AI as truth manufacturing rather than fluent generation
 - `asi-is-a-stack-not-a-model` (ASI Is a Stack, Not a Model)
 - `the-efficient-asi-hypothesis` (The Efficient ASI Hypothesis)
 - `claim-ledgers-and-belief-revision` (Claim Ledgers and Belief Revision)
+- `scientific-discovery-and-experimental-governance` (Scientific Discovery and Experimental Governance)
 
 ## Claims To Add Or Update
 

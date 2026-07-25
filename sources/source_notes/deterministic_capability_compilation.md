@@ -193,6 +193,8 @@ approves candidates that fail under natural deployment states.
 | `governed-world-models-and-reality-grounding` | Treats world-model state, observation lineage, residuals, and re-grounding as governed capability inputs rather than implicit truth. | §§5–10, 15–18 | No closed-loop predictive-control or calibration result. |
 | `white-box-evidence-interpretability-and-activation-governance` | Routes internal evidence through versioned artifacts, causal limits, independent consumers, and non-escalating decision policy. | §§6–10, 14–18 | Internal access does not establish interpretability validity or causal faithfulness. |
 | `governed-operations-incident-command-and-graceful-degradation` | Extends recovery, residual custody, authority ceilings, and complete-state restoration into operational incidents and degraded modes. | §§9–10, 14–17, 20 | No deployed containment, failover, or effect-complete recovery result. |
+| `adversarial-machine-learning-and-model-attack-surface` | Supplies candidate-specific validation, adversarial counterexamples, authority ceilings, residual escrow, and recovery boundaries for learned capabilities. | §§7, 9–10, 14–18 | No reproduced attack, robustness benchmark, extraction-resistance result, or deployed defense. |
+| `autonomous-replication-proliferation-and-containment` | Supplies descendant capability identity, non-escalating authority, recovery, rollback, reification, and lifecycle-lineage concepts for bounded replication control. | §§6–10, 14–17, 20 | No replication system, provider test, proliferation census, recall, or end-to-end containment result. |
 
 The section-family closure ledger is
 `docs/july_2026_two_paper_mining_completeness_audit.md`. It maps every

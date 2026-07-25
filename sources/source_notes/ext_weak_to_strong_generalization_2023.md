@@ -62,6 +62,7 @@ superhuman systems.
 
 ## Book Chapters Supported
 
+- `learning-theory-generalization-and-scaling-science` (Learning Theory, Generalization, and Scaling Science)
 - `scalable-oversight-and-adversarial-ai-control` (Scalable Oversight and Adversarial AI Control)
 
 ## Claims To Add Or Update

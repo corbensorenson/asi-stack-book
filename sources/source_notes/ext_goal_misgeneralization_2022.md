@@ -36,6 +36,7 @@ This source belongs in the failure-mode and policy-optimization chapters as an e
 
 ## Book Chapters Supported
 
+- `governed-objective-formation-value-learning-and-goal-integrity` (Governed Objective Formation, Value Learning, and Goal Integrity)
 - `inner-alignment-mesa-optimization-and-learned-objective-integrity` (Inner Alignment, Mesa-Optimization, and Learned-Objective Integrity)
 - `failure-modes-of-ungoverned-intelligence` (Failure Modes of Ungoverned Intelligence)
 - `policy-optimization-and-learning-from-feedback` (Policy Optimization and Learning from Feedback)
