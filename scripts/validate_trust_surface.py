@@ -19,6 +19,9 @@ README = ROOT / "README.md"
 INDEX = ROOT / "index.qmd"
 STATUS = ROOT / "docs" / "v1_0_candidate_status.md"
 READER_AUDIT = ROOT / "docs" / "reader_continuity_audit.md"
+LIVE_VIEW_STATUS = ROOT / "docs" / "live_human_view_status_ledger.md"
+ACTIVE_EVIDENCE_CYCLE = ROOT / "docs" / "v1_x_active_evidence_cycle.md"
+PROOF_DEPTH = ROOT / "docs" / "proof_depth_classification.md"
 PUBLICATION = ROOT / "docs" / "publication_readiness.md"
 CORE_DISPOSITIONS = ROOT / "claim_decisions" / "v1_x_core_claim_dispositions.json"
 NO_PROMOTION_DIRS = [
@@ -221,10 +224,23 @@ def main() -> None:
     sources = source_count()
     dispositions = disposition_summary()
     reader_audit = read_text(READER_AUDIT)
+    live_view_status = read_text(LIVE_VIEW_STATUS)
+    active_evidence_cycle = read_text(ACTIVE_EVIDENCE_CYCLE)
+    proof_depth = read_text(PROOF_DEPTH)
     high = metric(reader_audit, "High-priority heuristic review chapters")
     medium = metric(reader_audit, "Medium-priority heuristic review chapters")
     long_paragraphs = metric(reader_audit, "Paragraphs at or above 160 words")
     active_overlays = metric(reader_audit, "Active reader overlay operations")
+    active_overlay_chapters = metric(live_view_status, "Active reader-overlay chapters")
+    selected_evidence_lanes = metric(active_evidence_cycle, "Selected chapter lanes")
+    planned_evidence_lanes = metric(active_evidence_cycle, "Planned-only chapter lanes")
+    proof_targets = metric(proof_depth, "Proof targets in manifest")
+    theorem_declarations = metric(proof_depth, "Theorem declarations classified")
+    proof_manifest = read_json(ROOT / "proofs" / "proof_manifest.json")
+    if not isinstance(proof_manifest, dict) or not isinstance(proof_manifest.get("status_counts"), dict):
+        raise SystemExit("proofs/proof_manifest.json missing status_counts.")
+    implemented_proof_targets = int(proof_manifest["status_counts"].get("implemented", -1))
+    planned_proof_targets = int(proof_manifest["status_counts"].get("planned", -1))
     no_promotion_decisions = no_promotion_decision_count()
 
     readme = read_text(README)
@@ -250,6 +266,28 @@ def main() -> None:
             dispositions=dispositions,
             no_promotion_decisions=no_promotion_decisions,
         )
+
+    readme_current_needles = [
+        f"all {chapters} working-manifest chapters",
+        "historical 55-chapter human-spine snapshot",
+        f"terminal at {chapters} chapters",
+        f"cover all {chapters} current chapters",
+        f"{active_overlays} active operations across {active_overlay_chapters} chapters",
+        f"Per-chapter core-claim disposition ledger: {chapters} current dispositions",
+        f"{selected_evidence_lanes} selected lanes",
+        (
+            f"{planned_evidence_lanes} planned-only lanes under the current "
+            f"{chapters}-chapter denominator"
+        ),
+        (
+            f"{proof_targets} proof targets "
+            f"({implemented_proof_targets} implemented; {planned_proof_targets} planned)"
+        ),
+        f"{int(theorem_declarations):,} Lean theorem declarations",
+    ]
+    for needle in readme_current_needles:
+        if needle not in readme:
+            errors.append(f"README.md missing current machine-derived truth: {needle}")
 
     for claim_id, state in EXPECTED_NON_CORE.items():
         if claim_id not in non_core_ledger:

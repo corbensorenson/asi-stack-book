@@ -13,13 +13,14 @@ This repository is the canonical Quarto source for the book, its scaffolding, va
 | Product | Best for | Start here |
 |---|---|---|
 | Narrative book | A bounded 15-chapter thesis-to-method route with the research scaffolding hidden. | [Open the narrative route](https://corbensorenson.github.io/asi-stack-book/products/narrative-book/) |
-| Architecture reference | Interfaces, invariants, failure routes, protocols, tests, proofs, and implementation horizons across all 80 working-manifest chapters. | [Open the architecture index](https://corbensorenson.github.io/asi-stack-book/products/architecture-reference/) |
+| Architecture reference | Interfaces, invariants, failure routes, protocols, tests, proofs, and implementation horizons across all 84 working-manifest chapters. | [Open the architecture index](https://corbensorenson.github.io/asi-stack-book/products/architecture-reference/) |
 | Evidence registry | Current commit/count state, claim support, sources, tests, proofs, releases, and residuals. | [Open the evidence registry](https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/) |
 
 ## Download the reader edition
 
-The public `reader-2026-07-18` edition packages the current 55-chapter human
-spine as [PDF](https://github.com/corbensorenson/asi-stack-book/releases/download/reader-2026-07-18/the-asi-stack-reader-2026-07-18.pdf),
+The current published reader release, `reader-2026-07-18`, packages a
+historical 55-chapter human-spine snapshot as
+[PDF](https://github.com/corbensorenson/asi-stack-book/releases/download/reader-2026-07-18/the-asi-stack-reader-2026-07-18.pdf),
 [EPUB](https://github.com/corbensorenson/asi-stack-book/releases/download/reader-2026-07-18/the-asi-stack-reader-2026-07-18.epub),
 and [DOCX](https://github.com/corbensorenson/asi-stack-book/releases/download/reader-2026-07-18/the-asi-stack-reader-2026-07-18.docx).
 The [release notes and exact hashes](https://github.com/corbensorenson/asi-stack-book/releases/tag/reader-2026-07-18)
@@ -31,17 +32,18 @@ The three projections share one source of truth but have different density and r
 
 The completed post-v2.1 roadmap remains historical authority at [docs/post_v2_1_residual_and_transfer_roadmap.md](docs/post_v2_1_residual_and_transfer_roadmap.md); it is not an active successor.
 
-The active roadmap now opens with an execution-ready work board: two bounded
-WIP slots and a strict next-packet sequence. A 2026-07-22 recheck measured
-71,648,034,816 free host bytes (66.73 GiB), a healthy Docker daemon, and zero
-Docker storage, so P2's frozen 50 GiB entry condition is met; the required
-thirty-environment sequential materialization is ready to run but has not
-passed. The only current book packet is the six-chapter append-only atom pack,
-followed by W3 template inheritance, White-Box depth, and the combined current
-80-chapter reader derivative. Manuscript ideas are admitted directly into their
-owning chapter or written as a new chapter when the control plane is distinct;
-only evidence execution may remain open. The shared acceptance sequence ends in validated, clean, pushed
-`main`.
+The active roadmap has two bounded WIP slots and is currently at P2: the
+governed natural repository-change admission frontier. Its selected claim has
+seven pending competence gates; the final held-out gate remains closed and the
+final denominator has not been opened. The immediate storage/materialization
+lane is below its frozen storage floor, so progress requires an exact attempt
+or failure receipt rather than an inferred pass. Structural manuscript
+admission is terminal at 84 chapters with no live candidate queue, while the
+next reader-freshness derivative must cover all 84 current chapters.
+Manuscript ideas are admitted directly into their owning chapter or written as
+a new chapter when the control plane is distinct; evidence maturity and
+derivative freshness may remain open. The shared acceptance sequence ends in
+validated, clean, pushed `main`.
 Repository authority, archive distinctions, generated/private boundaries, and
 tracked-size policy are summarized in [docs/repository_map.md](docs/repository_map.md).
 
@@ -55,7 +57,7 @@ _Current canonical metrics (generated from machine records): **84 manifest chapt
 
 **What this is not:** not a validated ASI implementation, not a deployed safety system, not a benchmark-proven architecture, and not a claim that all chapter theses are externally proven.
 
-**Auditable current state:** the inventory has 458 public-safe records; 84/84 chapters are externally positioned with 0 explicit external-baseline exceptions. All 84 chapter core claims remain at `argument`; [the core-claim disposition ledger](docs/core_claim_disposition_ledger.md) records 84 per-chapter core-claim dispositions, 22 accepted no-change transition dispositions, 62 accepted no-promotion dispositions, and 0 promoted core claims. Twenty-five narrow non-core transitions are recorded in [the non-core evidence ledger](docs/non_core_evidence_ledger.md), alongside 61 accepted `blocks_promotion` decisions and three historical `refuted` labels. The competence audit classifies all 90 accepted negative/no-change records as 1 N0, 15 N1, 74 N2, and 0 N3–N5, so no exact, broad, parent, or chapter-core refutation currently follows.
+**Auditable current state:** the inventory has 458 public-safe records; 84/84 chapters are externally positioned with 0 explicit external-baseline exceptions. All 84 chapter core claims remain at `argument`; [the core-claim disposition ledger](docs/core_claim_disposition_ledger.md) records 84 per-chapter core-claim dispositions, 22 accepted no-change transition dispositions, 62 accepted no-promotion dispositions, and 0 promoted core claims. The proof registry contains 333 proof targets (310 implemented; 23 planned) and 1,370 Lean theorem declarations; those artifacts do not by themselves promote a chapter claim. Twenty-five narrow non-core transitions are recorded in [the non-core evidence ledger](docs/non_core_evidence_ledger.md), alongside 61 accepted `blocks_promotion` decisions and three historical `refuted` labels. The competence audit classifies all 90 accepted negative/no-change records as 1 N0, 15 N1, 74 N2, and 0 N3–N5, so no exact, broad, parent, or chapter-core refutation currently follows.
 
 **Reader and source boundaries:** [Appendix C](appendices/C_claim_evidence_matrix.qmd) is the claim/support-state ledger. [Appendix G](appendices/G_corben_source_corpus.qmd) separates Corben-authored, Corben-supplied, and local-project sources from [Appendix H](appendices/H_external_sources.qmd), which holds external literature; external positioning is not exhaustive literature synthesis. [Novelty positioning](docs/contribution_novelty_ledger.md) is not proof of novelty. Human view is a convenience projection, not a reviewed reader-release manuscript; its current heuristic queue is in [the reader continuity audit](docs/reader_continuity_audit.md). By author decision, no external-human review or outreach is a prepublication gate; the preserved specialist packets may be used only after the author declares the book complete, and no independent review is claimed in [the review ledger](docs/external_review_status.md).
 
@@ -74,7 +76,7 @@ Fast audit path: [the active Evidence Competence, Transfer, and Publication Road
 - `docs/chapter_consolidation_sequence.md` records the accepted governed consolidation sequence for the 54-to-44/47 chapter-shape critique, the executed Part I 4-to-2 pilot, the executed conservative compression merge, the executed intent/contracts merge, the executed MoECOT runtime fold, the executed simulation-fidelity fold, the executed static context ABI merge, the executed verification/adversarial-review merge, the executed planning/DAG consolidation, the executed semantic-representation fold, the historical 44-chapter consolidation snapshot, and the no-support-state-change boundary. The activation manifest had 54 chapters, the distinct-interface cognitive-substrate insertion made 55, and the first structural-completeness tranche now makes 59. `docs/chapter_consolidation_release_stability_review.md` records the current `deferred_for_release` reader-work outcome for remaining unexecuted consolidation packages without authorizing additional merges or folds; `scripts/validate_chapter_consolidation_sequence.py` keeps that sequence visible from the roadmap and public surfaces. <!-- canonical-status:historical -->
 - `editions/release_profiles.json` defines live, research, reader, and audio release profiles plus content layers for the reader spine, live research scaffold, evidence matrices, machine contracts, release derivatives, and audio adaptation.
 - `scripts/build_reader_edition.py` can derive a cleaned reader-edition Quarto source tree, `reader_manifest.json`, and `reader_delta_report.md` under ignored `build/`.
-- `editions/reader_overlays/README.md` and `editions/reader_overlays/v1_0/manifest.json` define the semantic reader-overlay layer for major-version human-edition deltas that should survive regeneration without forking the live book. The current v1.0 overlay set carries 74 active operations across 30 chapters for Human view and generated reader editions only; `assets/reader-overlays.html`, `docs/reader_continuity_audit.md`, and `docs/reader_chapter_review_matrix.md` are the generated review surfaces for the exact operation set.
+- `editions/reader_overlays/README.md` and `editions/reader_overlays/v1_0/manifest.json` define the semantic reader-overlay layer for major-version human-edition deltas that should survive regeneration without forking the live book. The current v1.0 overlay set carries 75 active operations across 31 chapters for Human view and generated reader editions only; `assets/reader-overlays.html`, `docs/reader_continuity_audit.md`, and `docs/reader_chapter_review_matrix.md` are the generated review surfaces for the exact operation set.
 - `editions/reader_manuscript/v1_0/manifest.json` is the frozen historical 44-chapter curated-reader snapshot. The completed post-v2.3 cycle preserves it byte-for-byte and creates `editions/reader_manuscript/v2_0/manifest.json`, a reconciled 54-chapter successor with one exact approved local HTML archive and its own `reader_release_record.json`. That approval is not public deployment, another format, a license grant, external-human or screen-reader review, WCAG certification, or evidence movement. `scripts/validate_reader_manuscript_manifest.py` keeps curated prose subordinate to the live book's claim, evidence, proof/test, implementation, and release authority.
 - `scripts/init_curated_reader_chapter.py` can initialize a future curated reader chapter record and starter file from the generated reader baseline after review decides overlays are too small. It defaults to dry-run output and keeps release blockers active when `--write` is used.
 - `editions/reader_manuscript/v1_0/chapter_review_matrix.json` and `docs/reader_chapter_review_matrix.md` track the full 44-chapter human-reader review queue. `scripts/sync_reader_chapter_review_matrix.py --check` keeps chapter IDs, part order, live files, generated-reader files, and active overlay counts synced to `book_structure.json` while preserving review statuses, dispositions, companion-note candidates, curated-manuscript candidates, and release blockers.
@@ -169,7 +171,7 @@ Fast audit path: [the active Evidence Competence, Transfer, and Publication Road
 | [docs/defended_contribution_tracks.md](docs/defended_contribution_tracks.md) | v1.x contribution-track selection: five selected tracks, three deep-work tracks, and no chapter-core promotion. |
 | [docs/defended_contribution_prior_art_positioning.md](docs/defended_contribution_prior_art_positioning.md) | Source-noted prior-art positioning for the five defended contribution tracks; not novelty proof or support-state movement. |
 | [docs/contribution_novelty_ledger.md](docs/contribution_novelty_ledger.md) | Source-noted novelty-positioning ledger for eight signature ideas; not proof of novelty or support-state movement. |
-| [docs/core_claim_disposition_ledger.md](docs/core_claim_disposition_ledger.md) | Per-chapter core-claim disposition ledger: 60 current dispositions, 0 promoted core claims, and explicit movement paths without support-state inflation. |
+| [docs/core_claim_disposition_ledger.md](docs/core_claim_disposition_ledger.md) | Per-chapter core-claim disposition ledger: 84 current dispositions, 0 promoted core claims, and explicit movement paths without support-state inflation. |
 | [docs/evidence_laundering_prevention_case_studies.md](docs/evidence_laundering_prevention_case_studies.md) | No-promotion case studies plus one live claim-surface narrowing record for evidence-laundering prevention; preserves the remaining chapter-core demotion/refutation gap. |
 | [docs/non_core_evidence_ledger.md](docs/non_core_evidence_ledger.md) | Public ledger for 25 accepted non-core upward evidence transitions, 61 accepted `blocks_promotion` decisions, three historical `refuted` labels with N1/N2 interpretation ceilings, one historical count-surface narrowing record, and their no-chapter-core-promotion boundary. |
 | [docs/external_review_packet.md](docs/external_review_packet.md) | Public packet for independent v1.x safety, evidence, roadmap, grounding, and reader-quality review. |
@@ -178,7 +180,7 @@ Fast audit path: [the active Evidence Competence, Transfer, and Publication Road
 | [external_reviews/request_updates/full_consolidation_review_request_2026-06-29.json](external_reviews/request_updates/full_consolidation_review_request_2026-06-29.json) | Structured request-update record for the full consolidation queue review solicitation; no accepted review or merge/fold authorization is claimed. |
 | [docs/chapter_external_grounding_status.md](docs/chapter_external_grounding_status.md) | Generated 84-chapter grounding ledger tying each chapter to source-noted external comparators, explicit exceptions, and relevant Corben/local comparison lines where they exist. |
 | [docs/per_chapter_evidence_plan.md](docs/per_chapter_evidence_plan.md) | 84-chapter evidence-lane backlog used as a menu for selecting one flagship measured lane plus direct supports, not as a breadth-sweep checklist. |
-| [docs/v1_x_active_evidence_cycle.md](docs/v1_x_active_evidence_cycle.md) | Active v1.x evidence-cycle ledger: one flagship lane, two direct support lanes, forty-one planned-only lanes, and no chapter-core promotion. |
+| [docs/v1_x_active_evidence_cycle.md](docs/v1_x_active_evidence_cycle.md) | Historical v1.x evidence-cycle ledger: 3 selected lanes (one flagship and two direct supports), 81 planned-only lanes under the current 84-chapter denominator, and no chapter-core promotion. |
 | [docs/chapter_consolidation_sequence.md](docs/chapter_consolidation_sequence.md) | Full governed consolidation sequence for the 54-to-44/47 critique, with the Part I pilot, conservative compression merge, intent/contracts merge, MoECOT runtime fold, simulation-fidelity fold, static context ABI merge, and verification/adversarial-review merge and planning/DAG consolidation executed and remaining packages still decision-gated. |
 | [docs/chapter_consolidation_pilot_plan.md](docs/chapter_consolidation_pilot_plan.md) | Historical governed consolidation pilot plan for the Part I alignment/governance cluster; the pilot has since executed. |
 | [docs/chapter_consolidation_decision_review.md](docs/chapter_consolidation_decision_review.md) | Historical consolidation decision surface for the Part I pilot; the pilot has since executed with URL/history handling. |

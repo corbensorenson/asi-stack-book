@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-07-25 — GitHub README public-truth reconciliation
+
+- Reconciled the GitHub README with the current 84-chapter, 458-source working
+  book and its 333 proof targets, 310 implemented proof targets, 23 planned
+  targets, and 1,370 Lean theorem declarations.
+- Corrected the architecture-product count, current roadmap/reader-freshness
+  description, reader-overlay denominator, core-claim disposition row, and
+  planned-only evidence-lane denominator.
+- Clarified that `reader-2026-07-18` is the current published reader release
+  but represents a historical 55-chapter snapshot rather than the current
+  84-chapter live manuscript.
+- Extended the trust-surface validator so these README facts are derived from
+  machine records and fail closed when future manifest, proof, overlay, or
+  evidence-cycle counts change.
+
 ## 2026-07-25 — Full-coverage gap audit and four-owner admission
 
 - Reviewed the complete 80-chapter pre-transaction manifest and manuscript
