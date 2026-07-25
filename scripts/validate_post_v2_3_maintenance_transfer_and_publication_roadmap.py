@@ -1056,8 +1056,8 @@ def errors(data: dict) -> list[str]:
         "P6": 0,
     }
     expected_c6_dispositions = {
-        "retain": 1177,
-        "retire_duplicate": 34,
+        "retain": 1209,
+        "retire_duplicate": 2,
         "retire_narrow_projection": 63,
         "rewrite_scope_language": 1,
         "rewrite_with_stronger_model": 95,
@@ -1098,7 +1098,8 @@ def errors(data: dict) -> list[str]:
         "### C6 current-estate classification receipt — 2026-07-25",
         "all 1,370 live theorem",
         "zero P6 empirically bound results",
-        "1,177 retain",
+        "1,209 retain",
+        "two retire as duplicate",
         "95 stronger-model rewrites",
         "dependency-safe pass over that queue",
     ]:

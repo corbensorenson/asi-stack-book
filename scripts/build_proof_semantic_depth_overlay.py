@@ -350,9 +350,15 @@ def build() -> tuple[dict[str, Any], str]:
     for theorem_row in theorem_rows:
         current_ids_by_name[str(theorem_row["name"])].append(str(theorem_row["theorem_id"]))
 
-    duplicate_groups: dict[str, list[str]] = defaultdict(list)
+    # Literal theorem text is comparable for retirement only inside the same
+    # namespace/model.  The same words over module-local State/Packet types are
+    # analogous proof obligations, not interchangeable propositions.
+    literal_pattern_groups: dict[str, list[str]] = defaultdict(list)
+    duplicate_groups: dict[tuple[str, str], list[str]] = defaultdict(list)
     for row in theorem_rows:
-        duplicate_groups[statement_key(str(row["signature"]))].append(str(row["theorem_id"]))
+        key = statement_key(str(row["signature"]))
+        literal_pattern_groups[key].append(str(row["theorem_id"]))
+        duplicate_groups[(str(row["module_path"]), key)].append(str(row["theorem_id"]))
     duplicate_canonical: dict[str, str] = {}
     for theorem_ids in duplicate_groups.values():
         if len(theorem_ids) > 1:
@@ -566,6 +572,8 @@ def build() -> tuple[dict[str, Any], str]:
             "p6_is_never_inferred_from_tactic_shape_or_result_presence": True,
             "p2_requires_a_named_bounded_witness": True,
             "p3_or_higher_requires_a_named_validator_and_binding_artifact": True,
+            "cross_module_literal_similarity_never_authorizes_retirement": True,
+            "duplicate_retirement_requires_same_model_identity_or_explicit_frozen_review": True,
             "unused_or_duplicate_results_receive_retirement_dispositions": True,
             "support_state_effect": "none",
         },
@@ -579,6 +587,10 @@ def build() -> tuple[dict[str, Any], str]:
             "implementation_binding_counts": dict(sorted(binding_counts.items())),
             "witness_state_counts": dict(sorted(witness_counts.items())),
             "duplicate_group_count": sum(len(value) > 1 for value in duplicate_groups.values()),
+            "cross_module_literal_pattern_group_count": sum(
+                len({theorem_id.split("::", 1)[0] for theorem_id in value}) > 1
+                for value in literal_pattern_groups.values()
+            ),
             "support_state_effect": "none",
         },
         "records": records,
@@ -634,7 +646,8 @@ def build() -> tuple[dict[str, Any], str]:
         f"| Active semantic-owner chapters | {len(chapter_counts)} |",
         *[f"| {level} — {meaning} | {level_counts.get(level, 0)} |" for level, meaning in LEVEL_MEANINGS.items()],
         *[f"| Disposition `{key}` | {value} |" for key, value in sorted(disposition_counts.items())],
-        f"| Exact normalized duplicate groups | {overlay['summary']['duplicate_group_count']} |",
+        f"| Same-model exact normalized duplicate groups | {overlay['summary']['duplicate_group_count']} |",
+        f"| Cross-module literal pattern groups (diagnostic only) | {overlay['summary']['cross_module_literal_pattern_group_count']} |",
         "| Support-state effect | none |",
         "",
         "P6 is deliberately not inferred from an experiment file, a numeric constant, or a "

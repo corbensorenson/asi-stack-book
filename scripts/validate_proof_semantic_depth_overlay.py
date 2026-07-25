@@ -105,7 +105,11 @@ def errors(overlay: dict[str, Any], *, check_generation: bool = True) -> list[st
             if canonical is None:
                 out.append(f"{theorem_id}: duplicate retirement lacks a live canonical theorem")
             elif row.get("duplicate_kind") == "exact_normalized_statement":
-                if statement_key(str(canonical.get("current_signature", ""))) != statement_key(
+                if canonical.get("module_path") != row.get("module_path"):
+                    out.append(
+                        f"{theorem_id}: cross-module literal similarity cannot authorize retirement"
+                    )
+                elif statement_key(str(canonical.get("current_signature", ""))) != statement_key(
                     str(row.get("current_signature", ""))
                 ):
                     out.append(f"{theorem_id}: exact duplicate retirement statements differ")
@@ -219,6 +223,19 @@ def main() -> None:
     disposition["records"][0]["duplicate_of"] = "missing"
     mutations.append(("duplicate without canonical theorem", disposition))
 
+    cross_module = copy.deepcopy(overlay)
+    source = cross_module["records"][0]
+    other = next(
+        row
+        for row in cross_module["records"]
+        if row["module_path"] != source["module_path"]
+    )
+    source["disposition"] = "retire_duplicate"
+    source["duplicate_of"] = other["theorem_id"]
+    source["duplicate_kind"] = "exact_normalized_statement"
+    source["current_signature"] = other["current_signature"]
+    mutations.append(("cross-module literal duplicate laundering", cross_module))
+
     for label, candidate in mutations:
         if not errors(candidate, check_generation=False):
             failures.append(f"negative mutation accepted: {label}")
@@ -233,7 +250,7 @@ def main() -> None:
         f"{overlay['summary']['current_module_count']} theorem-bearing modules, "
         f"levels={overlay['summary']['semantic_level_counts']}, "
         f"dispositions={overlay['summary']['disposition_counts']}, "
-        "10 rejecting mutations, no support-state effect."
+        "11 rejecting mutations, no support-state effect."
     )
 
 
