@@ -14,16 +14,15 @@ _Current canonical metrics (generated from machine records): **84 manifest chapt
 | Architecture reference | Interfaces, invariants, failure routes, protocols, tests, proofs, and implementation horizons across all 84 working-manifest chapters. | [Open the architecture index](products/architecture-reference/index.html) |
 | Evidence registry | Current commit/count state, claim support, sources, tests, proofs, releases, and residuals. | [Open the evidence registry](products/evidence-registry/index.html) or [inspect the claim matrix](appendices/C_claim_evidence_matrix.qmd) |
 
-## Download the reader edition
+## Read the current book
 
-The public `reader-2026-07-18` edition packages the current 55-chapter human
-spine as [PDF](https://github.com/corbensorenson/asi-stack-book/releases/download/reader-2026-07-18/the-asi-stack-reader-2026-07-18.pdf),
-[EPUB](https://github.com/corbensorenson/asi-stack-book/releases/download/reader-2026-07-18/the-asi-stack-reader-2026-07-18.epub),
-and [DOCX](https://github.com/corbensorenson/asi-stack-book/releases/download/reader-2026-07-18/the-asi-stack-reader-2026-07-18.docx).
-The [release notes and exact hashes](https://github.com/corbensorenson/asi-stack-book/releases/tag/reader-2026-07-18)
-record the compatibility and accessibility residuals. This all-rights-reserved
-reader release is not the canonical evidence release; `v2.3.0` remains the
-latest immutable living-book release.
+This live site is the canonical current **84-chapter** book. Use
+[Human view](index.html?view=human) for the reader-facing projection or the
+[84-chapter architecture index](products/architecture-reference/index.html)
+for direct technical lookup. The generated reader pipeline currently derives
+all 84 chapters and passes the reader-spine contract. Older downloadable
+artifacts remain in the GitHub release archive, but they are not the complete
+current book and therefore are not presented here as the current edition.
 
 All three products derive from one canonical source tree; their density, navigation, artifact, and review boundaries are defined in [`docs/product_contracts.md`](docs/product_contracts.md), with executable projection details in [`docs/product_projection_artifacts.md`](docs/product_projection_artifacts.md). The [`Post-v2.3 Claim Proof, Causal Validation, and SOTA-Challenge Roadmap`](docs/post_v2_3_claim_proof_and_sota_challenge_roadmap.md) is complete with an exact [`terminal no-public-release record`](release_records/2026-07-16-post-v2-3-claim-proof-sota-roadmap-complete-no-public-release.json). The [`Post-v2.3 Evidence Competence, Transfer, and Publication Roadmap`](docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md) is the sole active successor, with machine authority in [`roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json`](roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json), an [`N0–N5 claim-bearing experiment standard`](docs/claim_bearing_experiment_competence_standard.md), and a [`complete accepted-transition identity crosswalk`](docs/claim_identity_graph_reconciliation.md). All 115 accepted transitions now resolve through 25 exact atom, 61 bounded subclaim, and 29 proxy relations with zero indirect parent support movement. The competence contract prevents weak implementations, invalid instruments, bad proxies, and underpowered tests from becoming negative evidence about an architecture. The live working tree has 84/84 chapter-core claims at `argument`, zero chapter-core promotions, zero external reproductions, and no SOTA support; the local X synopsis source is current, but its older unpublished platform draft is stale and must be refreshed before publication. `v2.3.0` remains the latest immutable public living-book release. <!-- canonical-status:historical -->
 
@@ -46,7 +45,7 @@ All three products derive from one canonical source tree; their density, navigat
 </div>
 <div>
 <strong>Tests</strong>
-<span>Twenty-one narrow non-core evidence transitions accepted; no chapter-core promotion</span>
+<span>25 narrow non-core evidence transitions accepted; no chapter-core promotion</span>
 </div>
 :::
 
@@ -207,4 +206,8 @@ Every major claim should carry a support state. The default state is `argument`.
 
 ## Living status
 
-`v2.3.0` is the latest completed immutable live/research HTML release, bound to source commit `e27661166e9105f37cb36d63b15795f80715ca24`, build/deploy runs `29234323320` and `29234640734`, and archive SHA-256 `ebb3cccb0841a15a49d7d20ee8d5c7f7dce97dac562ca05068025951274ee28c`. The completed post-v2.3 cycle adds no public version: it preserves the 54-chapter architecture, leaves all chapter-core claims at `argument`, releases one exact local 54-chapter curated HTML archive under a separate edition record, and retains both new model comparisons as protocol-failure `no_change` results. Historical `v2.2.0` remains immutable. The root site and `/latest/` are mutable.
+The mutable root site and `/latest/` are the canonical current publication
+surfaces and contain all 84 manifest chapters. Versioned tags and GitHub
+Releases are immutable historical snapshots for exact citation and
+reproduction; they do not override the current chapter count, order, source
+inventory, or claim state.

@@ -1,6 +1,6 @@
 # Three Product Contracts
 
-Last updated: 2026-07-10
+Last updated: 2026-07-25
 
 **The ASI Stack** is one canonical research source tree projected into three
 different products. Treating those products as one interface made the landing
@@ -30,7 +30,7 @@ and format-specific review plus an edition release record.
 
 The reference product answers: what are the responsibilities, interfaces,
 states, invariants, failure routes, and implementation horizons? Its generated
-54-chapter index preserves canonical order and routes to each chapter in
+84-chapter index preserves canonical order and routes to each chapter in
 AI/research view, supported by protocol schemas, implementation horizons,
 glossary terms, formal hooks, and executable test plans.
 

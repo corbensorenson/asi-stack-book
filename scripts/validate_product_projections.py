@@ -305,7 +305,12 @@ def main() -> None:
             errors.append("negative control failed: changed evidence snapshot was accepted")
 
     doc = DOC.read_text(encoding="utf-8", errors="ignore")
-    for phrase in ("15-chapter", "54-chapter", "content-addressed", "not a reviewed reader release"):
+    for phrase in (
+        f"{len(selected_ids)}-chapter",
+        f"{len(canonical)}-chapter",
+        "content-addressed",
+        "not a reviewed reader release",
+    ):
         if phrase not in doc:
             errors.append(f"{DOC.relative_to(ROOT)} missing {phrase!r}")
     if args.site is not None:
@@ -313,8 +318,10 @@ def main() -> None:
         errors.extend(validate_rendered_site(site, projection_schema))
     fail(errors)
     print(
-        "Product-projection validation passed: 15 narrative chapters, 39 reference-routed omissions, "
-        "54 reference chapters, 17 evidence routes, and 4 rejecting negative controls."
+        f"Product-projection validation passed: {len(selected_ids)} narrative chapters, "
+        f"{len(canonical) - len(selected_ids)} reference-routed omissions, "
+        f"{len(canonical)} reference chapters, {evidence['entry_count']} evidence routes, "
+        "and 4 rejecting negative controls."
     )
 
 

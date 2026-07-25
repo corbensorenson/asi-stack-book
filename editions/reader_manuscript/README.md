@@ -1,20 +1,17 @@
 # Curated Reader Manuscript
 
-This directory is the tracked home for manually edited human-reader manuscript
-work when generated reader source plus semantic overlays are no longer enough.
+This directory preserves tracked human-reader derivative snapshots. The
+canonical current reader path is generated from the live manifest with
+`scripts/build_reader_edition.py`; it currently derives all 84 chapters, then
+applies the tracked semantic overlays. No tracked historical directory is a
+current-spine authority.
 
-The current-spine successor is `v2_0/`. It contains 54/54 tracked chapter
-records and files in active manifest order, preserves 44 identities from the
-frozen v1.0 snapshot, adds the ten later chapter identities, and records zero
-initial meaning divergence because each curated body begins as the exact
-generated Human baseline. Canonical curated HTML was selected prospectively.
-Its deterministic 59-page archive is approved by
-`v2_0/reader_release_record.json` after 118 desktop/mobile browser,
-accessibility-tree, keyboard, and rendered-contrast page views; 5,432 internal
-links; 1,138 anchors; and exact archive/site comparison. That approval is only
-for the named digest-bound local HTML archive. It is not public deployment,
+`v2_0/` and the other versioned directories are immutable derivative history
+for their named source commits. Their approvals and residuals apply only to
+their digest-bound artifacts. They are not current public-book identity,
 independent external-human or screen-reader review, WCAG certification, a
-license grant, approval of EPUB/DOCX/PDF/audio, or a support-state change.
+license grant, approval of new EPUB/DOCX/PDF/audio artifacts, or a support-state
+change.
 
 Validate the v2.0 successor with:
 

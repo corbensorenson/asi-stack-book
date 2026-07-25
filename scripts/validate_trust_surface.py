@@ -31,6 +31,13 @@ NO_PROMOTION_DIRS = [
     ROOT / "evidence_transitions" / "post_v2_3",
 ]
 NON_CORE_LEDGER = ROOT / "docs" / "non_core_evidence_ledger.md"
+PRODUCT_CONTRACTS_DOC = ROOT / "docs" / "product_contracts.md"
+PRODUCT_ARTIFACTS_DOC = ROOT / "docs" / "product_projection_artifacts.md"
+PRODUCT_CONTRACTS_JSON = ROOT / "products" / "product_contracts.json"
+PUBLIC_SURFACE_INVENTORY = ROOT / "docs" / "public_status_surface_inventory.md"
+NOVELTY_LEDGER = ROOT / "docs" / "contribution_novelty_ledger.md"
+OUTLINE = ROOT / "docs" / "book_outline.md"
+READER_MANUSCRIPT_README = ROOT / "editions" / "reader_manuscript" / "README.md"
 
 EXPECTED_NON_CORE = {
     "circle-calculus-and-proof-carrying-ai-contracts.mechanism.003": "prototype-backed",
@@ -269,7 +276,8 @@ def main() -> None:
 
     readme_current_needles = [
         f"all {chapters} working-manifest chapters",
-        "historical 55-chapter human-spine snapshot",
+        f"canonical current book is the live **{chapters}-chapter** site",
+        f"generated from all {chapters} live chapters",
         f"terminal at {chapters} chapters",
         f"cover all {chapters} current chapters",
         f"{active_overlays} active operations across {active_overlay_chapters} chapters",
@@ -288,6 +296,92 @@ def main() -> None:
     for needle in readme_current_needles:
         if needle not in readme:
             errors.append(f"README.md missing current machine-derived truth: {needle}")
+
+    normalized_index = re.sub(r"\s+", " ", index)
+    for needle in (
+        f"canonical current **{chapters}-chapter** book",
+        f"currently derives all {chapters} chapters",
+        f"contain all {chapters} manifest chapters",
+        f"{len(EXPECTED_NON_CORE)} narrow non-core evidence transitions accepted",
+    ):
+        if needle not in normalized_index:
+            errors.append(f"index.qmd missing current reader/publication truth: {needle}")
+
+    obsolete_count_pattern = re.compile(
+        r"\b(?:44|54|55|59|61|66|76|80)[- ]chapter(?:s)?\b",
+        re.IGNORECASE,
+    )
+    for name, text in {"README.md": readme, "index.qmd": index}.items():
+        matches = sorted(set(obsolete_count_pattern.findall(text)))
+        if matches:
+            errors.append(
+                f"{name} exposes obsolete full-book counts on the current trust surface: "
+                + ", ".join(matches)
+            )
+
+    product_contracts_doc = read_text(PRODUCT_CONTRACTS_DOC)
+    product_artifacts_doc = read_text(PRODUCT_ARTIFACTS_DOC)
+    public_surface_inventory = read_text(PUBLIC_SURFACE_INVENTORY)
+    novelty_ledger = read_text(NOVELTY_LEDGER)
+    outline = read_text(OUTLINE)
+    reader_manuscript_readme = read_text(READER_MANUSCRIPT_README)
+    product_contracts = read_json(PRODUCT_CONTRACTS_JSON)
+    narrative_chapters = 15
+    current_surface_needles = {
+        "docs/product_contracts.md": (
+            product_contracts_doc,
+            f"{chapters}-chapter index preserves canonical order",
+        ),
+        "docs/product_projection_artifacts.md": (
+            product_artifacts_doc,
+            f"complete {chapters}-chapter lookup index",
+        ),
+        "docs/public_status_surface_inventory.md": (
+            public_surface_inventory,
+            f"active {chapters}-chapter manifest",
+        ),
+        "docs/contribution_novelty_ledger.md": (
+            novelty_ledger,
+            f"all {chapters} chapter core claims remain",
+        ),
+        "docs/book_outline.md": (
+            outline,
+            f"manifest now contains **{chapters} chapters**",
+        ),
+        "editions/reader_manuscript/README.md": (
+            reader_manuscript_readme,
+            f"currently derives all {chapters} chapters",
+        ),
+        "docs/publication_readiness.md": (
+            publication,
+            f"Coverage authority: `book_structure.json`, currently {chapters} chapters.",
+        ),
+    }
+    for name, (text_value, needle) in current_surface_needles.items():
+        if needle not in text_value:
+            errors.append(f"{name} missing current manifest truth: {needle}")
+
+    if f"other {chapters - narrative_chapters} chapters remain visible" not in product_artifacts_doc:
+        errors.append("docs/product_projection_artifacts.md has stale narrative remainder")
+
+    if not isinstance(product_contracts, dict):
+        errors.append("products/product_contracts.json must contain an object")
+    else:
+        products = product_contracts.get("products", [])
+        architecture = next(
+            (
+                product
+                for product in products
+                if isinstance(product, dict) and product.get("id") == "architecture_reference"
+            ),
+            None,
+        )
+        expected_status = (
+            f"generated_{chapters}_chapter_reference_index_available_"
+            "but_not_a_deployed_system_or_approved_release"
+        )
+        if not isinstance(architecture, dict) or architecture.get("current_status") != expected_status:
+            errors.append("products/product_contracts.json has stale architecture-reference breadth")
 
     for claim_id, state in EXPECTED_NON_CORE.items():
         if claim_id not in non_core_ledger:

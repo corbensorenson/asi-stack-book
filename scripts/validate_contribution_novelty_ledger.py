@@ -49,7 +49,6 @@ REQUIRED_SUMMARY_FRAGMENTS = [
     "Record-reality gap",
     "Human oversight degradation",
     "receipt_faithfulness_gap",
-    "all 55 chapter core claims remain",
     "historical negative labels rehabilitated without core movement",
     "does not approve reader, release, ebook, PDF, DOCX, audio",
 ]
@@ -213,6 +212,13 @@ def validate_surfaces(errors: list[str]) -> None:
     for fragment in REQUIRED_SUMMARY_FRAGMENTS:
         if fragment not in normalized_summary:
             errors.append(f"{rel(SUMMARY)} missing required fragment: {fragment}")
+    current_chapter_count = len(chapter_ids())
+    current_claim_fragment = f"all {current_chapter_count} chapter core claims remain"
+    if current_claim_fragment not in normalized_summary:
+        errors.append(
+            f"{rel(SUMMARY)} missing current manifest-derived fragment: "
+            f"{current_claim_fragment}"
+        )
 
     for path in (README, INDEX, ROADMAP):
         text = path.read_text(encoding="utf-8")

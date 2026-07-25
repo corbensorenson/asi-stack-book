@@ -2,27 +2,31 @@
 
 Working title: **The ASI Stack: A Governed Systems Architecture for Advanced AI, with ASI as the Stress Case**
 
-Status: expanded source-of-truth drafting outline, updated 2026-07-24 after the
-Round 18 depth pass and Precision Contract existing-owner manuscript integration.
+Status: expanded source-of-truth drafting outline, updated 2026-07-25 after the
+Round 18 depth pass, Precision Contract integration, and final four-owner
+full-coverage admission.
 `book_structure.json` remains the ordering source of truth; Quarto generates
 displayed chapter numbers from the manifest.
 
-The 2026-07-24 taxonomy and structural-maturity reconciliation makes **80
-chapters** the current manifest truth. It admits four distinct owners for
-dangerous-capability domains, societal misuse resilience, open-weight release,
-and content authenticity; repairs three title/content mismatches; and routes
-thirteen narrower findings into existing owners. All chapter-core claims remain
-at `argument`. The controlling decision packet is
-`docs/taxonomy_and_structural_maturity_reconciliation_2026_07_24.md`.
+The manifest now contains **84 chapters**, which is the sole current chapter
+count. The taxonomy and structural-maturity reconciliation admitted four
+distinct owners for dangerous-capability domains, societal misuse resilience,
+open-weight release, and content authenticity; the subsequent full-coverage
+pass admitted four additional owners for real-world evaluation, hardware-
+algorithm co-design, temporal reasoning, and self-modeling/metacognition. All
+chapter-core claims remain at `argument`. The controlling packets are
+`docs/taxonomy_and_structural_maturity_reconciliation_2026_07_24.md` and
+`docs/full_coverage_chapter_and_section_integration_2026_07_25.md`.
 
 Active improvement authority:
 `docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md`, with machine
 state in
 `roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json`.
-The claim-proof/SOTA predecessor is complete: all 55 live chapters and 3,745
-claim atoms have terminal dispositions, 3,698 atoms remain
-`blocked_after_full_attempt`, all 55 chapter-core claims remain at `argument`,
-and zero external reproductions or SOTA-supported claims were established. Its
+The claim-proof/SOTA predecessor is complete for its frozen historical scope:
+all registered claim atoms have terminal dispositions, the large majority
+remain `blocked_after_full_attempt`, all current chapter-core claims remain at
+`argument`, and zero external reproductions or SOTA-supported claims were
+established. Its
 terminal bookkeeping does not make every negative or no-change result a
 competent scientific test. The active roadmap applies
 `docs/claim_bearing_experiment_competence_standard.md`: exploratory or broken
@@ -45,9 +49,9 @@ proxy relations with zero indirect parent movement.
 Round 17 makes that authority operational rather than aspirational. P2 remains
 the empirical slot and its materialization entry is governed by the latest
 exact capacity and Docker receipt rather than inherited storage weather. The
-book slot remains strictly ordered: reviewed append-only atoms for all six
+book slot remains strictly ordered: reviewed append-only atoms for all
 post-baseline chapters, the W3 inheritance guard, the T1D maturity/source/atom/
-reader/inheritance artifacts, and one combined current 80-chapter reader
+reader/inheritance artifacts, and one combined current 84-chapter reader
 derivative. The owner-directed prose-completion transaction has already placed
 all accepted T1D concepts and the eight-owner Precision Contract treatment in
 the manuscript without opening protected outcomes, a third empirical lane, a

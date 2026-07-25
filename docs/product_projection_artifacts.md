@@ -1,6 +1,6 @@
 # Executable Product Projections
 
-Last updated: 2026-07-10
+Last updated: 2026-07-25
 
 The three product contracts now produce concrete, generated navigation
 artifacts rather than only describing intended audiences. They still share the
@@ -23,7 +23,7 @@ python3 scripts/build_reader_edition.py \
 ```
 
 The generated orientation is derivative editorial navigation. It adds no
-evidence and changes no support state. The other 39 chapters remain visible in
+evidence and changes no support state. The other 69 chapters remain visible in
 the architecture reference and are not rejected or deleted. The candidate is
 not a reviewed reader release; here, "reviewed" means that the final artifact
 gates have not yet been run, not that external-human review is required.
@@ -55,7 +55,7 @@ final release record or approval of EPUB, DOCX, PDF, or audio.
 
 ## Architecture reference specification
 
-The generated architecture route is a complete 54-chapter lookup index in
+The generated architecture route is a complete 84-chapter lookup index in
 canonical manifest order. Every row carries the canonical chapter and
 core-claim identity plus its assignment to one of the three defended
 contributions. Protocol schemas, implementation horizons, and the glossary

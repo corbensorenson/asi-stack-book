@@ -1,6 +1,6 @@
 # Contribution Novelty Ledger
 
-Last updated: 2026-07-13
+Last updated: 2026-07-25
 
 This ledger audits the book's signature ideas and coined terms the same way the
 non-core evidence ledger audits measured side lanes: it names the contribution
@@ -13,7 +13,7 @@ review, not external review, and not support-state movement.
 - Source of record: `docs/contribution_novelty_ledger.json`
 - Validator: `python3 scripts/validate_contribution_novelty_ledger.py`
 - Rows: 9 signature ideas
-- Chapter-core support effect: none; all 55 chapter core claims remain
+- Chapter-core support effect: none; all 84 chapter core claims remain
   `argument`.
 - Novelty claim effect: none; the ledger permits disciplined positioning, not
   defended novelty language.

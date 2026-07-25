@@ -39,15 +39,9 @@ It creates no support state or release effect and does not alter the immutable
 - Completed release roadmap: `docs/post_v2_2_implementation_completion_roadmap.md`,
   with terminal state in
   `roadmap_records/post_v2_2_implementation_completion_status.json`.
-<!-- canonical-status:historical-begin -->
-- Completed quality/reader roadmap:
-  `docs/post_v2_3_quality_floor_and_reader_completion_roadmap.md`, with terminal
-  state in
-  `roadmap_records/post_v2_3_quality_floor_and_reader_completion_status.json`;
-  its exact local 54-chapter HTML reader is separately dispositioned, it creates
-  no new public living-book release, and all 54 chapter-core claims remain at
-  `argument`.
-<!-- canonical-status:historical-end -->
+- Completed quality/reader roadmaps and their digest-bound derivative artifacts
+  remain immutable history. They do not define the live book's current breadth
+  or reader coverage.
 - Completed handoff/reader/evidence roadmap:
   `docs/post_v2_3_handoff_reader_formats_and_evidence_renewal_roadmap.md`, with
   terminal machine state in
@@ -86,31 +80,31 @@ It creates no support state or release effect and does not alter the immutable
   citation snapshots remain version-scoped and do not override that fact.
 - All 84 live chapter-core claims remain at `argument`; publication
   reconciliation creates no evidence transition or support-state promotion.
-<!-- canonical-status:historical-begin -->
-- Public closure boundary: all 54 chapter-core claims remain at `argument` in
-  the frozen activation receipt, and the authorized 55th claim is also
-  `argument` in the live manifest.
-<!-- canonical-status:historical-end -->
-- EPUB, DOCX, PDF, audio, and curated-reader editions are not v2.3.0 release
-  artifacts. The separate all-rights-reserved `reader-2026-07-18` GitHub
-  Release now publishes exact PDF, EPUB, and DOCX derivatives with tracked
-  hashes and compatibility residuals at
-  `docs/reader_release_2026_07_18.md`; it does not replace or modify the
-  canonical v2.3.0 evidence release. No audiobook is published.
+- Current closure boundary: all 84 live chapter-core claims remain at
+  `argument`.
+- The current reader-facing public surface is the live Human view over all 84
+  chapters. `python3 scripts/build_reader_edition.py --check` and
+  `python3 scripts/validate_reader_spine.py --check` derive and validate all 84
+  chapters from the current manifest.
+- No current downloadable reader artifact is claimed. Older PDF, EPUB, and DOCX
+  derivatives remain immutable in the GitHub release archive with their exact
+  manifests, hashes, and compatibility residuals, but they are not current
+  coverage and are not advertised as the current book. No audiobook is
+  published.
 
-## Public reader edition
+## Current reader surface
 
-- Release page:
-  <https://github.com/corbensorenson/asi-stack-book/releases/tag/reader-2026-07-18>
-- Exact machine manifest:
-  `editions/reader_manuscript/reader_2026_07_18/manifest.json`
-- Exact release record:
-  `release_records/2026-07-18-reader-2026-07-18-0921a924.json`
-- Public redownload verification: PDF, EPUB, and DOCX each matched the approved
-  local byte count and SHA-256 digest.
-- Preserved residuals: untagged PDF; no native-reader or assistive-technology
-  EPUB review; no Microsoft Word DOCX review; no accessibility, external-review,
-  peer-review, legal-review, or open-license claim.
+- Canonical reader-facing route:
+  <https://corbensorenson.github.io/asi-stack-book/?view=human>
+- Complete technical route:
+  <https://corbensorenson.github.io/asi-stack-book/products/architecture-reference/>
+- Coverage authority: `book_structure.json`, currently 84 chapters.
+- Generated-reader verification: 84 chapters, 89 source files, 403 live-only
+  sections removed, 56 reader scaffold terms humanized, and 75 semantic overlay
+  operations applied.
+- Downloadable-release policy: a future downloadable edition must be generated
+  from and explicitly bind all current manifest chapters before it can be
+  presented as current.
 
 ## Ready
 
@@ -160,7 +154,14 @@ It creates no support state or release effect and does not alter the immutable
 - The chapter external-grounding status ledger exists at `docs/chapter_external_grounding_status.md`; `scripts/validate_chapter_external_grounding_status.py` checks all 84 manifest chapters against source-noted external records, explicit external-baseline exceptions, and relevant Corben/local comparison lines where they exist without claiming exhaustive literature coverage, reproduced external results, or support-state promotion.
 - The Circle external receipt slice exists at `docs/circle_external_receipt_slice.md`; `scripts/validate_circle_external_receipt_slice.py` checks the tracked public-safe result summary and evidence-transition record for the bounded `circle-calculus.external_rope_receipt_replay` prototype-backed transition without rerunning the external checkout or promoting chapter core claims.
 - Audience-specific release profiles and content-layer contracts exist in `editions/release_profiles.json` for the live book, research release, reader release, and audio release.
-- `scripts/build_reader_edition.py` can derive a cleaned reader-edition Quarto source tree, `reader_manifest.json`, `READER_RELEASE_CHECKLIST.md`, `companion_notes.md`, and `reader_delta_report.md` under ignored `build/`; `scripts/build_curated_reader_edition.py --check` now verifies that the tracked curated reader-manuscript chapters assemble into a renderable local Quarto review workspace while preserving all curated reconciliation and artifact blockers, and `scripts/validate_reader_html_artifact_browser.js` can browser-check that curated HTML workspace by passing `--site`, `--manifest`, and `--report`; `editions/reader_overlays/` holds the tracked semantic reader-overlay source for major-version human-edition deltas while `reader_delta_report.md` is generated review output with a zero-active-operation note or operation digests and before/after excerpts; `editions/reader_manuscript/v1_0/chapter_review_matrix.json` and `docs/reader_chapter_review_matrix.md` track the manifest-synced 44-chapter human-reader review queue and release blockers; `editions/reader_manuscript/v1_0/companion_note_routing.json` and `docs/reader_companion_note_routing_review.md` track companion-note routing for the three dense proof/governance chapters, and `editions/reader_manuscript/v1_0/companion_notes/` now contains drafting notes for those chapters without release approval; `docs/reader_key_figure_artifact_review.md` and `scripts/validate_reader_key_figures.py` check the ten draft key-figure SVG assets, live chapter text equivalents, curated reader placements, captions, alt text, and non-claim boundaries without approving final figure art; `docs/reader_key_figure_html_probe.md` and `scripts/validate_reader_key_figure_html_probe.py` render the tracked curated reader manuscript in a temporary workspace and check the ten draft figures in rendered HTML for image refs, copied SVGs, alt text, captions, responsive classes, and non-claim boundary paragraphs without approving final figure art or a reader artifact; `docs/reader_key_figure_format_probe.md` and `scripts/validate_reader_key_figure_format_probe.py` record EPUB/DOCX/PDF package-text survival for the ten draft key figures without approving final figure art, any format artifact, or a reader release; `scripts/sync_reader_overlay_asset.py` embeds active overlays in `assets/reader-overlays.html` for the live Human view; `scripts/validate_reader_overlays.py` validates that overlay layer and generated delta report; `scripts/sync_reader_chapter_review_matrix.py --check` validates the reader-review matrix; `scripts/validate_reader_manuscript_manifest.py` validates the curated-manuscript and companion-routing controls; `scripts/validate_release_profiles.py` validates profile definitions; `scripts/validate_human_reading_paths.py` checks one Human Reading Path bridge per manifest chapter and generated-reader retention; `scripts/validate_reader_evidence_boundaries.py` checks that generated reader chapters strip raw live core-claim markers and repeated support boilerplate while preserving claim text and an inline plain-language support-state boundary; `scripts/validate_reader_spine.py` checks that the generated human-reader spine remains substantial, structurally complete, free of repeated evidence-boundary paragraph openers, and section-by-section prose-bearing after live-only scaffolding is stripped; `scripts/validate_reading_mode_toggle.py` checks the persistent toggle, shareable `?view=` parameter, live-TOC hiding, section-number hiding, raw claim-marker hiding, support-boilerplate hiding, reader-overlay payload, runtime overlay-count hooks, and assistive-status contract; `scripts/validate_live_human_view.py` checks the rendered GitHub Pages book surface after HTML render; and `scripts/validate_live_human_view_browser.js --all-chapters --all-viewports` can exercise every manifest chapter across desktop and mobile viewports in a real browser when Playwright/Chrome is available, including rendered Mermaid visibility, raw marker and support-boilerplate hiding/restoration, reader-overlay runtime operation-count processing, reading-mode control visibility, and page-overflow checks.
+- `scripts/build_reader_edition.py` derives the current all-chapter reader source,
+  manifest, checklist, companion notes, and delta report under ignored
+  `build/`. The tracked historical curated-reader workspaces retain their own
+  edition-specific review queues and blockers; they are not current coverage
+  authority. Reader overlays, Human Reading Paths, evidence-boundary checks,
+  reader-spine checks, live Human-view validation, and all-chapter browser
+  checks keep the current projection tied to `book_structure.json` without
+  claiming a downloadable release or support-state change.
 - `scripts/validate_reader_accessibility_tree.py` can run the automated Chromium accessibility-tree release-preparation probe for the ignored curated-reader HTML artifact; `docs/reader_accessibility_tree_review.md` and `editions/reader_manuscript/v1_0/accessibility_tree_manifest.json` track language, titles, H1 shape, landmarks, skip links, focus-visible styling, accessible names, image alt text, table headers, duplicate IDs, live-marker leakage, raw core-claim marker leakage, and accessibility-tree availability without clearing manual keyboard-only, screen-reader, WCAG, e-reader, audio, or reader-release blockers.
 - `scripts/validate_reader_keyboard_only_decision.py` records the current curated-reader HTML keyboard-only evidence decision; `docs/reader_keyboard_only_decision.md` and `editions/reader_manuscript/v1_0/keyboard_only_decision_manifest.json` clear only `manual_keyboard_only_review_not_completed` from the current curated HTML candidate while preserving screen-reader, WCAG, reader-release, e-reader, and audio blockers.
 - `scripts/render_reader_formats.py` can attempt selected reader-edition HTML/EPUB/DOCX/PDF renders, snapshot successful outputs under ignored `build/reader_edition/format_artifacts/`, and record actual local outcomes in `reader_render_report.json` without implying publication. `scripts/inspect_reader_format_artifacts.py` can structurally inspect local HTML/EPUB/DOCX snapshots without approving them for release, including EPUB OPF language metadata. `docs/reader_format_dry_run.md` records the local HTML/EPUB/DOCX dry-run, structural-inspection summary, EPUB metadata/source-spine probe, DOCX LibreOffice conversion probe, and PDF probe.
