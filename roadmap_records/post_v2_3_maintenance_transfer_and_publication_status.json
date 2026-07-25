@@ -171,6 +171,35 @@
       "narrative_unit_crosswalk_path": "products/narrative_unit_crosswalk.json",
       "all_84_idea_placement_gate_state": "passed_exact_84_coverage_22_unit_meaning_render_browser_and_accessibility_preparation",
       "phase2_proof_execution_allowed": true,
+      "c6_current_semantic_overlay": {
+        "state": "classified_all_1370_live_theorems_before_new_formal_expansion",
+        "overlay_path": "proofs/proof_semantic_depth_overlay.json",
+        "report_path": "docs/proof_semantic_depth_overlay.md",
+        "theorem_count": 1370,
+        "theorem_bearing_module_count": 104,
+        "semantic_owner_chapter_count": 61,
+        "semantic_level_counts": {
+          "P0": 49,
+          "P1": 800,
+          "P2": 25,
+          "P3": 319,
+          "P4": 94,
+          "P5": 83,
+          "P6": 0
+        },
+        "disposition_counts": {
+          "retain": 1177,
+          "retire_duplicate": 34,
+          "retire_narrow_projection": 63,
+          "rewrite_scope_language": 1,
+          "rewrite_with_stronger_model": 95
+        },
+        "mutation_coverage_missing_count": 0,
+        "frozen_historical_theorem_count": 1151,
+        "frozen_historical_target_count": 298,
+        "next_action": "execute_dependency_safe_rewrite_and_retirement_queue_before_new_formal_expansion",
+        "support_state_effect": "none"
+      },
       "review_path": "docs/chatgpt_pro_full_book_review_adjudication_2026_07_25.md",
       "current_role_map_path": "evidence_quality/current_chapter_role_map.json",
       "reference_chapter_count": 84,

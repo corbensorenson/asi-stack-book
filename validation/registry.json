@@ -2152,7 +2152,15 @@
     "tests/fixtures/protocol_records/optimizer_policy_card.valid.json",
     "research_backlog_records/governed_optimizer_landscape_2026_07_21.json",
     "new_paper_triage_scenarios/governed_optimizer_landscape_2026_07_21.json",
-    "scripts/register_optimizer_policy_card.py"
+    "scripts/register_optimizer_policy_card.py",
+    "scripts/build_proof_semantic_depth_overlay.py",
+    "scripts/validate_proof_semantic_depth_overlay.py",
+    "schemas/proof_semantic_depth_overlay.schema.json",
+    "proofs/proof_semantic_depth_overlay.json",
+    "docs/proof_semantic_depth_overlay.md",
+    "proofs/semantic_cluster_audits",
+    "lean/AsiStackProofs",
+    "scripts/register_proof_semantic_depth_overlay.py"
   ],
   "units": [
     {
@@ -6698,8 +6706,8 @@
       "args": [],
       "execution_tier": "deep",
       "validation_class": "proof_or_evidence_gate",
-      "input_contract": "Re-executed governed Git slice, matched baseline metrics, derived invariant suite, claim dispositions, proof manifest/adequacy/artifact audits, volatile source records, inter-stack routing, terminology refresh, and readable D–F closure audit.",
-      "output_contract": "Reject drift in bounded empirical metrics, invariant mutations/residuals, core dispositions, proof target/adequacy traceability, volatile source routing, or D–F closure boundaries.",
+      "input_contract": "Re-executed governed Git slice, matched baseline metrics, derived invariant suite, claim dispositions, proof manifest/adequacy/artifact audits, volatile source records, inter-stack routing, terminology refresh, and readable D\u2013F closure audit.",
+      "output_contract": "Reject drift in bounded empirical metrics, invariant mutations/residuals, core dispositions, proof target/adequacy traceability, volatile source routing, or D\u2013F closure boundaries.",
       "claim_scope": "Local roadmap closure for Workstreams D, E, and F at their explicitly bounded empirical, formal, and source-governance scopes.",
       "negative_controls": "validator_owned",
       "prohibited_inference": "Local closure does not prove deployed safety, general cost-effectiveness, formal runtime enforcement, novelty, exhaustive literature coverage, or independent review.",
@@ -12364,13 +12372,13 @@
         "N5 deletion",
         "false-negative rule deletion",
         "missing successor continuity",
-        "stale predecessor"
-        ,"post-review reference denominator rollback"
-        ,"post-review narrative target rollback"
-        ,"post-review calculus property deletion"
-        ,"post-review bounded-liveness deletion"
-        ,"post-review external-human gate"
-        ,"post-review role omission"
+        "stale predecessor",
+        "post-review reference denominator rollback",
+        "post-review narrative target rollback",
+        "post-review calculus property deletion",
+        "post-review bounded-liveness deletion",
+        "post-review external-human gate",
+        "post-review role omission"
       ],
       "prohibited_inference": "An active competence roadmap or installed contract is not evidence that an experiment is competent, a negative result is rehabilitated, a claim is mapped or supported, a proof is semantically adequate, or any research, reader, publication, safety, SOTA, AGI, or ASI objective is complete.",
       "contract_precision": "exact",
@@ -14036,11 +14044,64 @@
       "prohibited_inference": "The schema, fixture, or validator does not implement, train, compare, reproduce, qualify, or prove the superiority, transfer, quality, safety, support, release, AGI, or ASI value of any optimizer.",
       "contract_precision": "exact_optimizer_policy_identity_and_nonclaim_contract",
       "semantic_review_state": "checked_optimizer_identity_false_negative_and_nonauthority_boundaries"
+    },
+    {
+      "id": "validate_proof_semantic_depth_overlay.py:420",
+      "order": 420,
+      "script": "validate_proof_semantic_depth_overlay.py",
+      "args": [],
+      "execution_tier": "pr",
+      "validation_class": "proof_or_evidence_gate",
+      "input_contract": "Every theorem declaration in the live Lean estate, the frozen historical rationalization registry, all current proof targets and semantic-cluster audits, active chapter ownership, and registered validator/artifact bindings.",
+      "input_artifacts": [
+        "scripts/build_proof_semantic_depth_overlay.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "schemas/proof_semantic_depth_overlay.schema.json",
+        "proofs/proof_semantic_depth_overlay.json",
+        "docs/proof_semantic_depth_overlay.md",
+        "proofs/proof_manifest.json",
+        "proofs/proof_rationalization_registry.json",
+        "proofs/semantic_cluster_audits",
+        "lean/AsiStackProofs",
+        "validation/registry.json",
+        "book_structure.json",
+        "scripts/register_proof_semantic_depth_overlay.py"
+      ],
+      "output_contract": "Require exact live-theorem coverage with P0-P6 semantic kind, assumptions, active owners, consumers, witness or explicit absence, implementation binding, mutation evidence, maximum inference, and retain/rewrite/retire disposition; preserve the frozen 1,151-theorem/298-target baseline and reject ten overclaim or custody mutations.",
+      "output_assertions": [
+        "all live theorem declarations covered exactly once",
+        "P0-P6 semantic kinds are separate from tactic-shape classes",
+        "P2 requires a bounded witness",
+        "P3-P6 require validator-and-artifact binding",
+        "P6 requires a named empirical observation contract",
+        "every theorem names mutation coverage and an active semantic owner",
+        "rewrite/retire queue is nonempty",
+        "frozen 1151-theorem and 298-target baseline preserved",
+        "10 mutations reject",
+        "no support-state effect"
+      ],
+      "claim_scope": "Current formal-estate meaning, dependency, binding, and rationalization custody only.",
+      "negative_controls": "validator_owned_ten_coverage_owner_assumption_mutation_witness_binding_observation_consumer_support_and_duplicate_lineage_mutations",
+      "negative_control_cases": [
+        "theorem deletion",
+        "owner laundering",
+        "assumption erasure",
+        "mutation evidence erasure",
+        "unwitnessed P2",
+        "unbound P4",
+        "observation-free P6",
+        "consumer-free retention",
+        "support promotion",
+        "duplicate without canonical theorem"
+      ],
+      "prohibited_inference": "The overlay does not prove model truth, implementation correctness, deployment enforcement, empirical validity, transfer, SOTA, AGI, ASI, or any claim promotion.",
+      "contract_precision": "exact_live_theorem_semantic_depth_and_rationalization_contract",
+      "semantic_review_state": "current_c6_overlay_with_inherited_reviews_cluster_reviews_and_validator_contracts"
     }
   ],
   "summary": {
-    "required_artifact_count": 2108,
-    "unit_count": 419
+    "required_artifact_count": 2116,
+    "unit_count": 420
   },
   "non_claims": [
     "Registry coverage does not establish semantic adequacy of every validator.",

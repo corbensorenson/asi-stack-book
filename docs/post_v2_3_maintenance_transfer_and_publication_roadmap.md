@@ -1139,6 +1139,37 @@ This amendment changes planning authority only. It creates no formal result,
 natural evidence, support transition, reader release, deployment, SOTA result,
 AGI/ASI claim, license grant, or publication authorization.
 
+### C6 current-estate classification receipt — 2026-07-25
+
+C6 now has a complete current-estate classification, not merely the frozen
+historical review. The immutable historical registry remains exactly 1,151
+theorems across 298 targets. A separate current overlay in
+`proofs/proof_semantic_depth_overlay.json` classifies all 1,370 live theorem
+declarations across 104 theorem-bearing modules and maps them to 61 active
+semantic-owner chapters.
+
+The live semantic-depth distribution is 49 P0 record-shape results, 800 P1
+finite-route results, 25 P2 reachability/nonvacuity results, 319 P3
+implementation-refinement results, 94 P4 cross-component-safety results, 83 P5
+liveness/recovery results, and zero P6 empirically bound results. P6 being zero
+is intentional: the existence of an experiment file, trace, or generated
+artifact does not turn a theorem into empirical evidence.
+
+Every overlay row records its assumptions, active semantic owner, downstream
+consumer, witness or explicit witness absence, implementation binding, mutation
+evidence, maximum inference, and disposition. The resulting action queue is
+1,177 retain, 34 retire as duplicate, 63 retire as narrow projection, one
+scope-language rewrite, and 95 stronger-model rewrites. All 1,370 rows have
+mutation coverage and every retained theorem has a named consumer.
+
+This receipt completes the C6 **classification** gate. It does not claim that
+the 193 rewrite-or-retire actions have been executed, does not delete any proof,
+does not change claim support, and does not authorize new formal expansion. The
+next proof action is a dependency-safe pass over that queue, preserving narrow
+correct results until their consumers have migrated and reserving new proof
+work for conclusions consumed by a reachable implementation or the natural
+flagship.
+
 ### Continuation order
 
 This amendment does not displace P2 or create a third work-in-progress lane.

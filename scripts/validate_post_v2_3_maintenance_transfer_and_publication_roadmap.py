@@ -50,6 +50,7 @@ SOURCE_INVENTORY = ROOT / "sources/source_inventory.json"
 BOOK_MANIFEST = ROOT / "book_structure.json"
 REVIEW_ADJUDICATION = ROOT / "docs/chatgpt_pro_full_book_review_adjudication_2026_07_25.md"
 CURRENT_ROLE_MAP = ROOT / "evidence_quality/current_chapter_role_map.json"
+PROOF_SEMANTIC_DEPTH_OVERLAY = ROOT / "proofs/proof_semantic_depth_overlay.json"
 STRUCTURAL_CHAPTER_PATHS = {
     "white-box-evidence-interpretability-and-activation-governance": ROOT / "chapters/white-box-evidence-interpretability-and-activation-governance.qmd",
     "governed-world-models-and-reality-grounding": ROOT / "chapters/governed-world-models-and-reality-grounding.qmd",
@@ -192,6 +193,7 @@ def inputs() -> dict:
         "book_manifest": load(BOOK_MANIFEST),
         "review_adjudication": REVIEW_ADJUDICATION.read_text(encoding="utf-8"),
         "current_role_map": load(CURRENT_ROLE_MAP),
+        "proof_semantic_depth_overlay": load(PROOF_SEMANTIC_DEPTH_OVERLAY),
         "manuscript_completion": {
             key: path.read_text(encoding="utf-8")
             for key, path in MANUSCRIPT_COMPLETION_PATHS.items()
@@ -1042,6 +1044,66 @@ def errors(data: dict) -> list[str]:
         or convergence.get("flagship_id") != "ASI-THESEUS-FLAGSHIP-01"
     ):
         out.append("post-review convergence identity, denominator, or packet order drifted")
+    c6_overlay_status = convergence.get("c6_current_semantic_overlay", {})
+    c6_overlay = data["proof_semantic_depth_overlay"]
+    expected_c6_levels = {
+        "P0": 49,
+        "P1": 800,
+        "P2": 25,
+        "P3": 319,
+        "P4": 94,
+        "P5": 83,
+        "P6": 0,
+    }
+    expected_c6_dispositions = {
+        "retain": 1177,
+        "retire_duplicate": 34,
+        "retire_narrow_projection": 63,
+        "rewrite_scope_language": 1,
+        "rewrite_with_stronger_model": 95,
+    }
+    if (
+        c6_overlay_status.get("state")
+        != "classified_all_1370_live_theorems_before_new_formal_expansion"
+        or c6_overlay_status.get("overlay_path")
+        != "proofs/proof_semantic_depth_overlay.json"
+        or c6_overlay_status.get("report_path")
+        != "docs/proof_semantic_depth_overlay.md"
+        or c6_overlay_status.get("theorem_count") != 1370
+        or c6_overlay_status.get("theorem_bearing_module_count") != 104
+        or c6_overlay_status.get("semantic_owner_chapter_count") != 61
+        or c6_overlay_status.get("semantic_level_counts") != expected_c6_levels
+        or c6_overlay_status.get("disposition_counts")
+        != expected_c6_dispositions
+        or c6_overlay_status.get("mutation_coverage_missing_count") != 0
+        or c6_overlay_status.get("frozen_historical_theorem_count") != 1151
+        or c6_overlay_status.get("frozen_historical_target_count") != 298
+        or c6_overlay_status.get("next_action")
+        != "execute_dependency_safe_rewrite_and_retirement_queue_before_new_formal_expansion"
+        or c6_overlay_status.get("support_state_effect") != "none"
+    ):
+        out.append("C6 current semantic-overlay status drifted")
+    c6_summary = c6_overlay.get("summary", {})
+    if (
+        c6_summary.get("current_theorem_count") != 1370
+        or c6_summary.get("current_module_count") != 104
+        or c6_summary.get("semantic_owner_chapter_count") != 61
+        or c6_summary.get("semantic_level_counts") != expected_c6_levels
+        or c6_summary.get("disposition_counts") != expected_c6_dispositions
+        or any(not row.get("mutation_refs") for row in c6_overlay.get("records", []))
+        or c6_summary.get("support_state_effect") != "none"
+    ):
+        out.append("C6 status no longer matches the generated semantic-depth overlay")
+    for required_phrase in [
+        "### C6 current-estate classification receipt — 2026-07-25",
+        "all 1,370 live theorem",
+        "zero P6 empirically bound results",
+        "1,177 retain",
+        "95 stronger-model rewrites",
+        "dependency-safe pass over that queue",
+    ]:
+        if required_phrase not in data["roadmap"]:
+            out.append(f"C6 roadmap receipt lost required phrase: {required_phrase}")
     if (
         len(convergence.get("governed_transition_calculus_properties", [])) != 12
         or convergence.get("proof_depth_levels")
