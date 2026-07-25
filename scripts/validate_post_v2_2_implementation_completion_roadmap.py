@@ -199,8 +199,13 @@ def semantic_errors(data: dict) -> list[str]:
             errors.append(f"roadmap does not define {lane_id}")
 
     live_claim_identity = f"{live_chapter_count}/{live_chapter_count} chapter-core claims at `argument`"
+    current_public_identity = [
+        f"all {live_chapter_count} chapters",
+        f"{live_chapter_count}-chapter architecture index",
+        "mutable root site and `/latest/` are the canonical current publication",
+    ]
     for name, text in [("README.md", data["readme"]), ("index.qmd", data["index"])]:
-        for phrase in [NEXT_SUCCESSOR_PATH, NEXT_SUCCESSOR_STATUS_PATH, ACTIVE_CURRENT_PATH, ACTIVE_CURRENT_STATUS_PATH, "v2.3.0", "e27661166e9105f37cb36d63b15795f80715ca24", live_claim_identity]:
+        for phrase in [NEXT_SUCCESSOR_PATH, NEXT_SUCCESSOR_STATUS_PATH, ACTIVE_CURRENT_PATH, ACTIVE_CURRENT_STATUS_PATH, "v2.3.0", live_claim_identity, *current_public_identity]:
             if phrase not in text:
                 errors.append(f"{name} missing roadmap/release truth: {phrase}")
     predecessor = data["predecessor"]

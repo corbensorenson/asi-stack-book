@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the canonical post-v2.1 public release and roadmap identity."""
+"""Validate historical release custody and the current public-book identity."""
 
 from __future__ import annotations
 
@@ -203,9 +203,20 @@ def validate(data: dict[str, object]) -> list[str]:
 
     live_claim_identity = f"{live_chapter_count}/{live_chapter_count} chapter-core claims at `argument`"
     live_claim_sentence = f"All {live_chapter_count} live chapter-core claims remain at `argument`"
+    current_live_fragments = [
+        f"all {live_chapter_count} chapters",
+        f"{live_chapter_count}-chapter architecture index",
+        live_claim_identity,
+        "mutable root site and `/latest/` are the canonical current publication",
+        "Versioned tags and GitHub",
+    ]
     required_by_surface = {
-        "README.md": (str(data["readme"]), [VERSION, NEXT_SUCCESSOR, NEXT_SUCCESSOR_STATUS, ACTIVE_CURRENT, ACTIVE_CURRENT_STATUS, COMMIT, DIGEST, live_claim_identity, "root site and `/latest/` are mutable", "sole active successor"]),
-        "index.qmd": (str(data["index"]), [VERSION, NEXT_SUCCESSOR, NEXT_SUCCESSOR_STATUS, ACTIVE_CURRENT, ACTIVE_CURRENT_STATUS, COMMIT, DIGEST, live_claim_identity, "root site and `/latest/` are mutable", "sole active successor"]),
+        # The mutable public surfaces describe the current manifest. Exact
+        # historical release identity remains authoritative in the release,
+        # citation, reproducibility, and publication records below; requiring
+        # it here would make an old release masquerade as the current book.
+        "README.md": (str(data["readme"]), [VERSION, NEXT_SUCCESSOR, NEXT_SUCCESSOR_STATUS, ACTIVE_CURRENT, ACTIVE_CURRENT_STATUS, *current_live_fragments, "sole active successor"]),
+        "index.qmd": (str(data["index"]), [VERSION, NEXT_SUCCESSOR, NEXT_SUCCESSOR_STATUS, ACTIVE_CURRENT, ACTIVE_CURRENT_STATUS, *current_live_fragments, "sole active successor"]),
         "docs/publication_readiness.md": (str(data["publication"]), [VERSION, NEXT_SUCCESSOR, NEXT_SUCCESSOR_STATUS, ACTIVE_CURRENT, ACTIVE_CURRENT_STATUS, COMMIT, DIGEST, live_claim_sentence, "root site and `/latest/` are mutable", "Active canonical successor roadmap"]),
         "docs/release_reproducibility.md": (str(data["reproducibility"]), [VERSION, COMMIT, DIGEST, "root and `/latest/` are mutable", "Historical v1.0.0 citation"]),
         "docs/public_status_contract.md": (str(data["public_contract"]), [f"`active_version` currently reports" , active_version, NEXT_SUCCESSOR, NEXT_SUCCESSOR_STATUS, ACTIVE_CURRENT, ACTIVE_CURRENT_STATUS, "sole active successor", live_claim_identity, "root or `/latest/` commits remain mutable"]),
@@ -281,6 +292,18 @@ def mutation_controls(base: dict[str, object]) -> list[str]:
             row["status"] = "published"
     mutations.append(("invented format approval", invented_format))
 
+    stale_public_count = copy.deepcopy(base)
+    current_count = sum(
+        len(part.get("chapters", []))
+        for part in stale_public_count["structure"].get("parts", [])
+        if isinstance(part, dict)
+    )
+    stale_public_count["readme"] = str(stale_public_count["readme"]).replace(
+        f"all {current_count} chapters",
+        "all 55 chapters",
+    )
+    mutations.append(("stale public chapter count", stale_public_count))
+
     for name, mutated in mutations:
         if not validate(mutated):
             failures.append(f"mutation was accepted: {name}")
@@ -303,9 +326,9 @@ def main() -> None:
         if isinstance(part, dict)
     ) if isinstance(structure, dict) else 0
     print(
-        "Post-v2.1 public-truth validation passed: v2.3.0 release/commit/archive, "
+        "Post-v2.1 public-truth validation passed: historical v2.3.0 release/commit/archive custody, "
         f"completed predecessor/release/post-v2.3 roadmaps with the exact evidence-competence successor active, a frozen 54-claim activation baseline, the historical 55th-chapter expansion, and {live_chapter_count} live argument-level core claims, tag-bound rights, "
-        "mutable latest channel, optional-format boundary, and 7 rejecting mutations."
+        "current-manifest mutable publication surfaces, optional-format boundary, and 8 rejecting mutations."
     )
 
 

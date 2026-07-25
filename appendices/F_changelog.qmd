@@ -18,6 +18,11 @@
   reject obsolete full-book counts on README and landing surfaces, and check the
   product, outline, reader, novelty, publication, and status-inventory
   projections for current-count drift.
+- Repaired two historical roadmap validators that still required the immutable
+  v2.3.0 commit and archive hash on mutable current-book surfaces. They now keep
+  that identity exact in release custody while requiring README and landing-page
+  coverage to follow the current manifest; a new rejecting mutation proves that
+  an obsolete public chapter count fails the gate.
 
 ## 2026-07-25 — Full-coverage gap audit and four-owner admission
 

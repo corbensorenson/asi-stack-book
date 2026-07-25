@@ -1647,7 +1647,7 @@
     {
       "script": "validate_post_v2_1_public_truth.py",
       "args": [],
-      "input_contract": "Canonical status policy, exact v2.3.0 release record/archive row, preserved v2.2.0 historical row, root citation, rights surfaces, completed roadmap machine state, manifest/evidence vectors, current public prose, predecessor pointers, and public-truth audit.",
+      "input_contract": "Canonical status policy, exact historical v2.3.0 release record/archive row, preserved v2.2.0 historical row, root citation, rights surfaces, completed roadmap machine state, current manifest/evidence vectors, current public prose, predecessor pointers, and public-truth audit.",
       "input_artifacts": [
         "status/public_status_config.json",
         "status/versioned_release_policy.json",
@@ -1677,16 +1677,16 @@
         "roadmap_records/post_v2_3_handoff_reader_formats_and_evidence_renewal_status.json",
         "schemas/post_v2_3_handoff_reader_formats_and_evidence_renewal_status.schema.json"
       ],
-      "output_contract": "Reject stale or stale, reopened, or multiple active identities, release/commit/archive disagreement, mutable-channel laundering, wrong rights tag, optional-format invention, current-count drift, or missing historical/current routing.",
+      "output_contract": "Reject stale, reopened, or multiple active roadmap identities, historical release/commit/archive disagreement, mutable-channel laundering, wrong rights tag, optional-format invention, stale public chapter counts, or missing historical/current routing.",
       "output_assertions": [
-        "v2.3.0 release commit and archive agree",
-        "predecessor and successor roadmaps are completed with completed later successors and no active roadmap",
-        "54 core claims remain argument",
+        "historical v2.3.0 release commit and archive agree",
+        "predecessor and successor roadmaps are completed with exactly one later active successor",
+        "current manifest chapter count and argument-level core claims agree across public surfaces",
         "rights remain exact-tag bound",
-        "latest remains mutable",
+        "root and latest remain mutable current-manifest publication surfaces",
         "optional formats remain outside release scope"
       ],
-      "claim_scope": "Current public release, roadmap, citation, rights, format, and count identity only.",
+      "claim_scope": "Historical release custody plus current public-book, roadmap, citation, rights, format, and count identity only.",
       "negative_controls": "validator_owned",
       "negative_control_cases": [
         "stale version",
@@ -1694,7 +1694,8 @@
         "wrong commit",
         "false archive state",
         "wrong rights tag",
-        "invented format approval"
+        "invented format approval",
+        "stale public chapter count"
       ],
       "prohibited_inference": "Public-truth coherence does not execute the roadmap, validate chapter claims, establish model safety or transfer, approve optional formats, or provide external review.",
       "contract_precision": "exact_high_impact",
@@ -2026,7 +2027,7 @@
         "eight completed milestones",
         "twelve completed QCSA lanes",
         "nine existing owners",
-        "54 argument-state core claims",
+        "54-claim activation baseline and current manifest argument-state core claims",
         "no new chapter or format effect",
         "eight rejecting mutations"
       ],
