@@ -28,10 +28,18 @@ ARTIFACTS = [
 def main() -> None:
     path = ROOT / "validation" / "registry.json"
     registry = json.loads(path.read_text(encoding="utf-8"))
+    existing_order = next(
+        (row["order"] for row in registry["units"] if row.get("script") == SCRIPT),
+        None,
+    )
     registry["units"] = [
         row for row in registry["units"] if row.get("script") != SCRIPT
     ]
-    order = max(row["order"] for row in registry["units"]) + 1
+    order = (
+        existing_order
+        if existing_order is not None
+        else max(row["order"] for row in registry["units"]) + 1
+    )
     registry["units"].append({
         "id": f"{SCRIPT}:{order}",
         "order": order,

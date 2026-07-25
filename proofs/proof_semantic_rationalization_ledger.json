@@ -1,49 +1,44 @@
 {
-  "schema_version": "asi_stack.proof_semantic_rationalization_ledger.v1",
+  "schema_version": "asi_stack.proof_semantic_rationalization_ledger.v2",
   "as_of": "2026-07-25",
   "roadmap_lane": "C6-P0-P6-semantic-proof-rationalization",
   "state": "dependency_safe_execution_active",
-  "baseline": {
+  "classification_baseline": {
     "commit": "d0f9bda14f1253999f2c40d556d925d31e4b36a4",
     "overlay_path": "proofs/proof_semantic_depth_overlay.json",
     "overlay_sha256": "97ea98621611839c49c4056c85b52ae5a907e683ea2e8572efe642774492340a",
-    "module_path": "lean/AsiStackProofs/ScalableOversightRefinement.lean",
-    "module_sha256": "aab0b5f0795bfcc1b78af1477093591e2b609a3cdfc8c5e67d2718afac683e68",
     "live_theorem_count": 1370,
     "rewrite_or_retire_count": 161
   },
   "actions": [
     {
       "action_id": "C6-R1-scalable-oversight-same-model-duplicate",
+      "sequence": 1,
       "state": "executed",
       "action": "retire_exact_same_model_duplicate",
+      "semantic_relation": "exact_same_model_normalized_statement",
       "module_path": "lean/AsiStackProofs/ScalableOversightRefinement.lean",
+      "baseline_module_sha256": "aab0b5f0795bfcc1b78af1477093591e2b609a3cdfc8c5e67d2718afac683e68",
       "retired_theorem_id": "lean/AsiStackProofs/ScalableOversightRefinement.lean::missing_outcome_audit_blocks_high_risk_admission",
-      "retained_theorem_id": "lean/AsiStackProofs/ScalableOversightRefinement.lean::high_risk_use_without_outcome_audit_requires_audit",
+      "replacement_theorem_id": "lean/AsiStackProofs/ScalableOversightRefinement.lean::high_risk_use_without_outcome_audit_requires_audit",
       "retired_block_sha256": "4e55a51ca8417cbacc14a6c8174145f9a0d2bb7b20e68916f8f37e2c096be2e5",
-      "retained_block_sha256": "c89312268c42c474a9e1eadb87915fffafc97f5eac80e943156aa62e8e32affa",
-      "normalized_statement_sha256": "5f33523f18a28bf70e8f22e8fda6104abc74d4f4a4e39680e750fc3fc3025156",
+      "replacement_block_sha256": "c89312268c42c474a9e1eadb87915fffafc97f5eac80e943156aa62e8e32affa",
+      "retired_statement_sha256": "5f33523f18a28bf70e8f22e8fda6104abc74d4f4a4e39680e750fc3fc3025156",
+      "replacement_statement_sha256": "5f33523f18a28bf70e8f22e8fda6104abc74d4f4a4e39680e750fc3fc3025156",
       "semantic_basis": [
         "Both declarations occur in the same Lean namespace and quantify over the same module-local State, Packet, routeFor, canonicalState, and canonicalPacket definitions.",
         "Their normalized theorem statements are byte-identical after replacing only the theorem name.",
         "Both reduce the same reviewed-stage missing independent-outcome-audit packet to requestIndependentOutcomeAudit.",
         "The retired declaration has no theorem dependency consumer and no fully qualified current consumer.",
-        "The retained declaration preserves the bounded target ownership and maximum inference without changing any runtime or empirical claim."
+        "The replacement declaration preserves the bounded target ownership and maximum inference without changing any runtime or empirical claim."
       ],
       "dependency_check": {
         "same_module": true,
-        "normalized_statement_equal": true,
         "retired_theorem_dependency_refs": [],
         "retired_theorem_consumer_refs": [],
         "current_fully_qualified_consumer_refs": []
       },
-      "consumer_migration": {
-        "state": "no_theorem_consumer_migration_required_shared_target_ownership_retained",
-        "retained_target_refs": [
-          "proof-target:lean:scalable_oversight.high_risk.missing_outcome_audit_blocks_admission",
-          "proof-target:lean:scalable_oversight.use.missing_outcome_audit_requires_audit"
-        ]
-      },
+      "target_migrations": [],
       "maximum_inference_preserved": "Only the exact bounded missing-outcome-audit route consequence in the named authored Scalable Oversight refinement model.",
       "validation_refs": [
         "scripts/validate_proof_semantic_rationalization_ledger.py",
@@ -53,14 +48,116 @@
         "lean:lake-build"
       ],
       "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R2-bibliography-source-evidence-projection",
+      "sequence": 2,
+      "state": "executed",
+      "action": "retire_projection_after_counterexample_consumer_migration",
+      "semantic_relation": "premise_restatement_replaced_by_derived_counterexample_gate",
+      "module_path": "lean/AsiStackProofs/BibliographyPlan.lean",
+      "baseline_module_sha256": "56d0adce0afae19c078ca2f06839e1f5b8b07f8ce45c20942c738f9098c0a67a",
+      "retired_theorem_id": "lean/AsiStackProofs/BibliographyPlan.lean::source_derived_claim_requires_source_note_or_ingested_source_artifact",
+      "replacement_theorem_id": "lean/AsiStackProofs/BibliographyPlan.lean::source_derived_claim_without_source_record_rejected",
+      "retired_block_sha256": "1eb9fccfe52e4b1c57d375a6e467164af00f687dc073e62c77fd6cfa60b3d743",
+      "replacement_block_sha256": "7ca887e1a190030cac93d02fa2efa89940136b0b85b425bc57b9c84ae18b8ef8",
+      "retired_statement_sha256": "15b81631a3f32f926178c621b0c819f95c0dbf782bc0037ab188f7c7feeb9643",
+      "replacement_statement_sha256": "da17fc7464e257c1c0614b4cf642573d2e1b588bc18396caac02234794121486",
+      "semantic_basis": [
+        "The retired theorem directly applies SourceDerivedClaimHasIngestedSource to the same sourceDerivedClaim premise and therefore only restates the predicate body.",
+        "The replacement theorem performs contradiction, case analysis, and rewriting to reject the operationally important missing-note and missing-artifact counterexample.",
+        "Both declarations occur in the same BibliographyPlan namespace over the same SourceDerivedClaimReview record and predicate.",
+        "The retired declaration has no theorem dependency consumer and no fully qualified current consumer.",
+        "The public proof target and chapter hook now name the retained counterexample gate rather than the premise-restating projection."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:bibliography.plan.operational_invariant",
+          "old_target_text": "A source-derived claim requires a source note or equivalent ingested-source artifact.",
+          "new_target_text": "A source-derived claim with neither a source note nor an ingested artifact fails the finite source-evidence predicate.",
+          "consumer_paths": [
+            "book_structure.json",
+            "docs/book_outline.md",
+            "chapters/open-research-agenda-and-bibliography-plan.qmd",
+            "proofs/proof_manifest.json",
+            "proofs/proof_triage.json"
+          ]
+        }
+      ],
+      "maximum_inference_preserved": "Only that the authored finite predicate cannot hold for a source-derived claim record when both declared source-record surfaces are false.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_proof_artifact_audit.py",
+        "scripts/validate_outline_consistency.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R3-bibliography-chapter-assignment-projection",
+      "sequence": 3,
+      "state": "executed",
+      "action": "retire_projection_after_counterexample_consumer_migration",
+      "semantic_relation": "premise_restatement_replaced_by_derived_counterexample_gate",
+      "module_path": "lean/AsiStackProofs/BibliographyPlan.lean",
+      "baseline_module_sha256": "56d0adce0afae19c078ca2f06839e1f5b8b07f8ce45c20942c738f9098c0a67a",
+      "retired_theorem_id": "lean/AsiStackProofs/BibliographyPlan.lean::new_source_cannot_be_assigned_to_nonexistent_chapter",
+      "replacement_theorem_id": "lean/AsiStackProofs/BibliographyPlan.lean::accepted_new_source_assignment_to_nonexistent_chapter_rejected",
+      "retired_block_sha256": "fc73ba31dffec273c63faed7a37e60c5143e81bab89863bf8b51d3885d1eb03c",
+      "replacement_block_sha256": "a4ae0910ef2ec88d6ef2e888fc2e7c43d5ee18c2037e9de45406094f21422aa3",
+      "retired_statement_sha256": "5de69ceab888443a28bf8710ce3289c4801d41117d29f80f793b4d8249d36a0a",
+      "replacement_statement_sha256": "ab54a1a1bc2529a2731e596725d01b3e94d097d9891aeafefc876d60a8cc2758",
+      "semantic_basis": [
+        "The retired theorem directly applies NewSourceAssignmentValid to the same newSource and assignmentAccepted premises and therefore only restates the predicate body.",
+        "The replacement theorem performs contradiction and rewriting to reject an accepted assignment whose assignedChapterExists field is false.",
+        "Both declarations occur in the same BibliographyPlan namespace over the same NewSourceAssignmentReview record and predicate.",
+        "The retired declaration has no theorem dependency consumer and no fully qualified current consumer.",
+        "The public proof target and chapter hook now name the retained counterexample gate rather than the premise-restating projection."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:bibliography.plan.failure_blocks_promotion",
+          "old_target_text": "A new source cannot be assigned to a non-existent chapter id.",
+          "new_target_text": "An accepted new-source assignment to a nonexistent chapter fails the finite assignment predicate.",
+          "consumer_paths": [
+            "book_structure.json",
+            "docs/book_outline.md",
+            "chapters/open-research-agenda-and-bibliography-plan.qmd",
+            "proofs/proof_manifest.json",
+            "proofs/proof_triage.json"
+          ]
+        }
+      ],
+      "maximum_inference_preserved": "Only that the authored finite assignment predicate cannot hold when a new source is accepted while its declared chapter-existence field is false.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_proof_artifact_audit.py",
+        "scripts/validate_outline_consistency.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
     }
   ],
   "summary": {
-    "executed_retirement_count": 1,
-    "current_live_theorem_count": 1369,
-    "remaining_action_count": 160,
+    "executed_retirement_count": 3,
+    "current_live_theorem_count": 1367,
+    "remaining_action_count": 158,
     "remaining_action_counts": {
-      "retire_narrow_projection": 63,
+      "retire_narrow_projection": 61,
       "rewrite_scope_language": 2,
       "rewrite_with_stronger_model": 95
     },
@@ -69,8 +166,9 @@
   },
   "non_claims": [
     "Retiring a duplicate declaration does not strengthen the retained theorem.",
-    "The retained theorem remains a bounded consequence of an authored finite state machine.",
-    "This action does not establish reviewer competence, independence, calibration, useful oversight, safety, deployment, transfer, AGI, or ASI.",
+    "Retiring a predicate projection does not turn its counterexample theorem into an empirical or deployed guarantee.",
+    "The retained theorems remain bounded consequences of authored finite records and predicates.",
+    "No theorem count is treated as a success metric.",
     "No chapter-core support state, evidence transition, release state, or publication authority changes."
   ],
   "support_state_effect": "none",

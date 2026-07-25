@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/proof_semantic_rationalization_ledger.schema.json",
-  "title": "ASI Stack C6 proof semantic-rationalization execution ledger",
+  "title": "ASI Stack C6 cumulative proof semantic-rationalization ledger",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -9,7 +9,7 @@
     "as_of",
     "roadmap_lane",
     "state",
-    "baseline",
+    "classification_baseline",
     "actions",
     "summary",
     "non_claims",
@@ -18,7 +18,7 @@
   ],
   "properties": {
     "schema_version": {
-      "const": "asi_stack.proof_semantic_rationalization_ledger.v1"
+      "const": "asi_stack.proof_semantic_rationalization_ledger.v2"
     },
     "as_of": {
       "type": "string",
@@ -30,15 +30,13 @@
     "state": {
       "const": "dependency_safe_execution_active"
     },
-    "baseline": {
+    "classification_baseline": {
       "type": "object",
       "additionalProperties": false,
       "required": [
         "commit",
         "overlay_path",
         "overlay_sha256",
-        "module_path",
-        "module_sha256",
         "live_theorem_count",
         "rewrite_or_retire_count"
       ],
@@ -52,12 +50,6 @@
         "overlay_sha256": {
           "const": "97ea98621611839c49c4056c85b52ae5a907e683ea2e8572efe642774492340a"
         },
-        "module_path": {
-          "const": "lean/AsiStackProofs/ScalableOversightRefinement.lean"
-        },
-        "module_sha256": {
-          "const": "aab0b5f0795bfcc1b78af1477093591e2b609a3cdfc8c5e67d2718afac683e68"
-        },
         "live_theorem_count": {
           "const": 1370
         },
@@ -68,8 +60,8 @@
     },
     "actions": {
       "type": "array",
-      "minItems": 1,
-      "maxItems": 1,
+      "minItems": 3,
+      "maxItems": 3,
       "items": {
         "$ref": "#/$defs/action"
       }
@@ -87,17 +79,17 @@
       ],
       "properties": {
         "executed_retirement_count": {
-          "const": 1
+          "const": 3
         },
         "current_live_theorem_count": {
-          "const": 1369
+          "const": 1367
         },
         "remaining_action_count": {
-          "const": 160
+          "const": 158
         },
         "remaining_action_counts": {
           "const": {
-            "retire_narrow_projection": 63,
+            "retire_narrow_projection": 61,
             "rewrite_scope_language": 2,
             "rewrite_with_stronger_model": 95
           }
@@ -112,7 +104,7 @@
     },
     "non_claims": {
       "type": "array",
-      "minItems": 4,
+      "minItems": 5,
       "uniqueItems": true,
       "items": {
         "type": "string",
@@ -135,53 +127,112 @@
         "minLength": 1
       }
     },
+    "targetMigration": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "target_ref",
+        "old_target_text",
+        "new_target_text",
+        "consumer_paths"
+      ],
+      "properties": {
+        "target_ref": {
+          "type": "string",
+          "pattern": "^proof-target:"
+        },
+        "old_target_text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "new_target_text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "consumer_paths": {
+          "$ref": "#/$defs/stringArray"
+        }
+      }
+    },
     "action": {
       "type": "object",
       "additionalProperties": false,
       "required": [
         "action_id",
+        "sequence",
         "state",
         "action",
+        "semantic_relation",
         "module_path",
+        "baseline_module_sha256",
         "retired_theorem_id",
-        "retained_theorem_id",
+        "replacement_theorem_id",
         "retired_block_sha256",
-        "retained_block_sha256",
-        "normalized_statement_sha256",
+        "replacement_block_sha256",
+        "retired_statement_sha256",
+        "replacement_statement_sha256",
         "semantic_basis",
         "dependency_check",
-        "consumer_migration",
+        "target_migrations",
         "maximum_inference_preserved",
         "validation_refs",
         "support_state_effect"
       ],
       "properties": {
         "action_id": {
-          "const": "C6-R1-scalable-oversight-same-model-duplicate"
+          "type": "string",
+          "pattern": "^C6-R[1-9][0-9]*-"
+        },
+        "sequence": {
+          "type": "integer",
+          "minimum": 1
         },
         "state": {
           "const": "executed"
         },
         "action": {
-          "const": "retire_exact_same_model_duplicate"
+          "enum": [
+            "retire_exact_same_model_duplicate",
+            "retire_projection_after_counterexample_consumer_migration"
+          ]
+        },
+        "semantic_relation": {
+          "enum": [
+            "exact_same_model_normalized_statement",
+            "premise_restatement_replaced_by_derived_counterexample_gate"
+          ]
         },
         "module_path": {
-          "const": "lean/AsiStackProofs/ScalableOversightRefinement.lean"
+          "type": "string",
+          "pattern": "^lean/AsiStackProofs/.+\\.lean$"
+        },
+        "baseline_module_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
         },
         "retired_theorem_id": {
-          "const": "lean/AsiStackProofs/ScalableOversightRefinement.lean::missing_outcome_audit_blocks_high_risk_admission"
+          "type": "string",
+          "pattern": "^lean/AsiStackProofs/.+\\.lean::.+$"
         },
-        "retained_theorem_id": {
-          "const": "lean/AsiStackProofs/ScalableOversightRefinement.lean::high_risk_use_without_outcome_audit_requires_audit"
+        "replacement_theorem_id": {
+          "type": "string",
+          "pattern": "^lean/AsiStackProofs/.+\\.lean::.+$"
         },
         "retired_block_sha256": {
-          "const": "4e55a51ca8417cbacc14a6c8174145f9a0d2bb7b20e68916f8f37e2c096be2e5"
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
         },
-        "retained_block_sha256": {
-          "const": "c89312268c42c474a9e1eadb87915fffafc97f5eac80e943156aa62e8e32affa"
+        "replacement_block_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
         },
-        "normalized_statement_sha256": {
-          "const": "5f33523f18a28bf70e8f22e8fda6104abc74d4f4a4e39680e750fc3fc3025156"
+        "retired_statement_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "replacement_statement_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
         },
         "semantic_basis": {
           "type": "array",
@@ -197,16 +248,12 @@
           "additionalProperties": false,
           "required": [
             "same_module",
-            "normalized_statement_equal",
             "retired_theorem_dependency_refs",
             "retired_theorem_consumer_refs",
             "current_fully_qualified_consumer_refs"
           ],
           "properties": {
             "same_module": {
-              "const": true
-            },
-            "normalized_statement_equal": {
               "const": true
             },
             "retired_theorem_dependency_refs": {
@@ -220,30 +267,16 @@
             }
           }
         },
-        "consumer_migration": {
-          "type": "object",
-          "additionalProperties": false,
-          "required": [
-            "state",
-            "retained_target_refs"
-          ],
-          "properties": {
-            "state": {
-              "const": "no_theorem_consumer_migration_required_shared_target_ownership_retained"
-            },
-            "retained_target_refs": {
-              "type": "array",
-              "minItems": 2,
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "pattern": "^proof-target:"
-              }
-            }
+        "target_migrations": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/targetMigration"
           }
         },
         "maximum_inference_preserved": {
-          "const": "Only the exact bounded missing-outcome-audit route consequence in the named authored Scalable Oversight refinement model."
+          "type": "string",
+          "minLength": 1
         },
         "validation_refs": {
           "type": "array",

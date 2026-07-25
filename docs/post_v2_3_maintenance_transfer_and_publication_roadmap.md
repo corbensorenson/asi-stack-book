@@ -1006,8 +1006,8 @@ that remains safe only by never completing useful work fails the joint gate.
 
 Keep the existing syntax-level classifier, but add a semantic-depth overlay for
 every current declaration. The immutable pre-rationalization baseline contains
-1,370 declarations; the live estate contains 1,369 after the first
-dependency-safe retirement transaction:
+1,370 declarations; the live estate contains 1,367 after three
+dependency-safe retirement transactions:
 
 | Level | Required meaning |
 |---|---|
@@ -1141,18 +1141,18 @@ This amendment changes planning authority only. It creates no formal result,
 natural evidence, support transition, reader release, deployment, SOTA result,
 AGI/ASI claim, license grant, or publication authorization.
 
-### C6 current-estate classification and first execution receipt — 2026-07-25
+### C6 current-estate classification and cumulative execution receipt — 2026-07-25
 
 C6 now has a complete current-estate classification, not merely the frozen
 historical review. The immutable historical registry remains exactly 1,151
 theorems across 298 targets. The separately frozen pre-rationalization overlay
 at commit `d0f9bda14f1253999f2c40d556d925d31e4b36a4` classifies all 1,370
 baseline declarations. The current overlay in
-`proofs/proof_semantic_depth_overlay.json` classifies all 1,369 live theorem
+`proofs/proof_semantic_depth_overlay.json` classifies all 1,367 live theorem
 declarations across 104 theorem-bearing modules and maps them to 61 active
 semantic-owner chapters.
 
-The live semantic-depth distribution is 49 P0 record-shape results, 800 P1
+The live semantic-depth distribution is 48 P0 record-shape results, 799 P1
 finite-route results, 25 P2 reachability/nonvacuity results, 319 P3
 implementation-refinement results, 93 P4 cross-component-safety results, 83 P5
 liveness/recovery results, and zero P6 empirically bound results. P6 being zero
@@ -1162,12 +1162,13 @@ artifact does not turn a theorem into empirical evidence.
 Every overlay row records its assumptions, active semantic owner, downstream
 consumer, witness or explicit witness absence, implementation binding, mutation
 evidence, maximum inference, and disposition. The resulting current estate is
-1,209 retain, 63 retire as narrow projection, two scope-language rewrites, and
-95 stronger-model rewrites. All 1,369 rows have mutation coverage and every
+1,209 retain, 61 retire as narrow projection, two scope-language rewrites, and
+95 stronger-model rewrites. All 1,367 rows have mutation coverage and every
 retained theorem has a named consumer.
 
-The first dependency-safe retirement transaction is now executed and recorded
-in `proofs/proof_semantic_rationalization_ledger.json`. It removes only
+The cumulative dependency-safe retirement ledger is
+`proofs/proof_semantic_rationalization_ledger.json`. Its first transaction
+removes only
 `missing_outcome_audit_blocks_high_risk_admission` from the Scalable Oversight
 refinement module, after immutable-baseline, same-module, normalized-statement,
 dependency, consumer, and retained-target checks. Its canonical twin,
@@ -1175,9 +1176,22 @@ dependency, consumer, and retained-target checks. Its canonical twin,
 bounded finite-model conclusion. No theorem consumer required migration, no
 chapter-core support moved, and no empirical or release claim changed.
 
+The first narrow-projection tranche then retires two direct predicate
+restatements from `BibliographyPlan.lean`. The source-evidence target now points
+to `source_derived_claim_without_source_record_rejected`, which derives the
+failure of the finite predicate when both source-note and ingested-artifact
+surfaces are absent. The chapter-assignment target now points to
+`accepted_new_source_assignment_to_nonexistent_chapter_rejected`, which derives
+the failure of the finite assignment predicate for an accepted assignment to a
+missing chapter. Both retired projections had no theorem dependency or
+consumer, both replacements remain live derived counterexamples, and the
+manifest, outline, chapter, and structure records now name those retained
+gates. This is rationalization of target meaning, not a stronger empirical
+claim.
+
 This receipt completes the C6 **classification** gate and begins its
-dependency-safe execution gate. Exactly one of the original 161 actions has
-been executed; 160 rewrite-or-retire actions remain: 63 narrow-projection
+dependency-safe execution gate. Exactly three of the original 161 actions have
+been executed; 158 rewrite-or-retire actions remain: 61 narrow-projection
 retirements, two scope-language rewrites, and 95 stronger-model rewrites. The
 next proof action is a dependency-safe narrow-projection tranche, preserving
 each correct bounded result until its consumers and maximum inference are

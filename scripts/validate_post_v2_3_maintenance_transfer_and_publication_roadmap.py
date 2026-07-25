@@ -1053,8 +1053,8 @@ def errors(data: dict) -> list[str]:
     c6_overlay_status = convergence.get("c6_current_semantic_overlay", {})
     c6_overlay = data["proof_semantic_depth_overlay"]
     expected_c6_levels = {
-        "P0": 49,
-        "P1": 800,
+        "P0": 48,
+        "P1": 799,
         "P2": 25,
         "P3": 319,
         "P4": 93,
@@ -1063,13 +1063,13 @@ def errors(data: dict) -> list[str]:
     }
     expected_c6_dispositions = {
         "retain": 1209,
-        "retire_narrow_projection": 63,
+        "retire_narrow_projection": 61,
         "rewrite_scope_language": 2,
         "rewrite_with_stronger_model": 95,
     }
     if (
         c6_overlay_status.get("state")
-        != "dependency_safe_execution_active_after_one_exact_duplicate_retirement"
+        != "dependency_safe_execution_active_after_three_retirements"
         or c6_overlay_status.get("classification_baseline_commit")
         != "d0f9bda14f1253999f2c40d556d925d31e4b36a4"
         or c6_overlay_status.get("classification_baseline_theorem_count") != 1370
@@ -1079,14 +1079,14 @@ def errors(data: dict) -> list[str]:
         != "docs/proof_semantic_depth_overlay.md"
         or c6_overlay_status.get("rationalization_ledger_path")
         != "proofs/proof_semantic_rationalization_ledger.json"
-        or c6_overlay_status.get("theorem_count") != 1369
+        or c6_overlay_status.get("theorem_count") != 1367
         or c6_overlay_status.get("theorem_bearing_module_count") != 104
         or c6_overlay_status.get("semantic_owner_chapter_count") != 61
         or c6_overlay_status.get("semantic_level_counts") != expected_c6_levels
         or c6_overlay_status.get("disposition_counts")
         != expected_c6_dispositions
-        or c6_overlay_status.get("executed_retirement_count") != 1
-        or c6_overlay_status.get("remaining_action_count") != 160
+        or c6_overlay_status.get("executed_retirement_count") != 3
+        or c6_overlay_status.get("remaining_action_count") != 158
         or c6_overlay_status.get("mutation_coverage_missing_count") != 0
         or c6_overlay_status.get("frozen_historical_theorem_count") != 1151
         or c6_overlay_status.get("frozen_historical_target_count") != 298
@@ -1097,7 +1097,7 @@ def errors(data: dict) -> list[str]:
         out.append("C6 current semantic-overlay status drifted")
     c6_summary = c6_overlay.get("summary", {})
     if (
-        c6_summary.get("current_theorem_count") != 1369
+        c6_summary.get("current_theorem_count") != 1367
         or c6_summary.get("current_module_count") != 104
         or c6_summary.get("semantic_owner_chapter_count") != 61
         or c6_summary.get("semantic_level_counts") != expected_c6_levels
@@ -1109,24 +1109,24 @@ def errors(data: dict) -> list[str]:
     c6_ledger = data["proof_semantic_rationalization_ledger"]
     if (
         c6_ledger.get("state") != "dependency_safe_execution_active"
-        or c6_ledger.get("baseline", {}).get("live_theorem_count") != 1370
-        or c6_ledger.get("summary", {}).get("executed_retirement_count") != 1
-        or c6_ledger.get("summary", {}).get("current_live_theorem_count") != 1369
-        or c6_ledger.get("summary", {}).get("remaining_action_count") != 160
+        or c6_ledger.get("classification_baseline", {}).get("live_theorem_count") != 1370
+        or c6_ledger.get("summary", {}).get("executed_retirement_count") != 3
+        or c6_ledger.get("summary", {}).get("current_live_theorem_count") != 1367
+        or c6_ledger.get("summary", {}).get("remaining_action_count") != 158
         or c6_ledger.get("support_state_effect") != "none"
         or c6_ledger.get("release_effect") != "none"
     ):
         out.append("C6 semantic-rationalization transaction ledger drifted")
     for required_phrase in [
-        "### C6 current-estate classification and first execution receipt — 2026-07-25",
+        "### C6 current-estate classification and cumulative execution receipt — 2026-07-25",
         "1,370\nbaseline declarations",
-        "all 1,369 live theorem",
+        "all 1,367 live theorem",
         "zero P6 empirically bound results",
         "1,209 retain",
         "Search Substrates theorems negate different predicates",
         "95 stronger-model rewrites",
-        "first dependency-safe retirement transaction",
-        "160 rewrite-or-retire actions remain",
+        "first narrow-projection tranche",
+        "158 rewrite-or-retire actions remain",
         "`proofs/proof_semantic_rationalization_ledger.json`",
     ]:
         if required_phrase not in data["roadmap"]:
@@ -1422,7 +1422,7 @@ def errors(data: dict) -> list[str]:
         r"(\d+) unknown/mixed",
         data["proof_review"],
     )
-    expected_proof = (333, 110, 1369, 924, 230, 215)
+    expected_proof = (333, 110, 1367, 924, 228, 215)
     if not proof_match or tuple(map(int, proof_match.groups())) != expected_proof:
         out.append("proof-depth baseline drifted without roadmap reconciliation")
     if data["proof_manifest"].get("proof_target_count") != 333:

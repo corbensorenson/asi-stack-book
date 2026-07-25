@@ -3408,7 +3408,7 @@
       "chapter_title": "Open Research Agenda and Bibliography Plan",
       "tag": "lean:bibliography.plan.operational_invariant",
       "module": "AsiStackProofs.BibliographyPlan",
-      "formal_target": "A source-derived claim requires a source note or equivalent ingested-source artifact.",
+      "formal_target": "A source-derived claim with neither a source note nor an ingested artifact fails the finite source-evidence predicate.",
       "status": "implemented",
       "outline_line": 7592,
       "module_path": "lean/AsiStackProofs/BibliographyPlan.lean"
@@ -3418,7 +3418,7 @@
       "chapter_title": "Open Research Agenda and Bibliography Plan",
       "tag": "lean:bibliography.plan.failure_blocks_promotion",
       "module": "AsiStackProofs.BibliographyPlan",
-      "formal_target": "A new source cannot be assigned to a non-existent chapter id.",
+      "formal_target": "An accepted new-source assignment to a nonexistent chapter fails the finite assignment predicate.",
       "status": "implemented",
       "outline_line": 7593,
       "module_path": "lean/AsiStackProofs/BibliographyPlan.lean"

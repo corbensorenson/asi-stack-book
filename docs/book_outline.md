@@ -5993,7 +5993,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 298 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 298 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 333 proof targets, 110 Lean modules, 1369 theorem declarations, 924 derived/decomposed, 230 direct/projection, 215 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 333 proof targets, 110 Lean modules, 1367 theorem declarations, 924 derived/decomposed, 228 direct/projection, 215 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.
@@ -7581,7 +7581,7 @@ Draft deliverables:
 
 - Thirty exact source mappings, including `deterministic_capability_compilation` and `platonic_world_model`; split source inventory, source notes, and generated Corben/local, external, and author-intent appendices; and explicit citation, proof, experiment, capability-foundry, semantic-continuity, GraphRAG/HippoRAG, inaccessible-source, rejection, and blocker backlogs.
 - Implemented public-safe `research_backlog_record.valid.json` and `new_paper_triage_scenario.valid.json` fixtures plus source inventory, note, protocol, appendix, citation, and mapping validators. These validate declared record surfaces only.
-- Two Lean targets and four finite declarations enforce only that source-derived claim records need ingested source artifacts and accepted assignments need existing chapter ids.
+- Two Lean targets and two derived counterexample declarations reject source-derived claim records without ingested source artifacts and accepted assignments to nonexistent chapter ids.
 - No natural intake or closure campaign, citation-accuracy or completeness result, research-quality effect, independent reproduction, transfer, or chapter-core support effect exists.
 - Argument exit requires a prospectively frozen natural multi-researcher stream against matched strongest research workflows, injected metadata, privacy, conflict, retraction, boundary, reproduction, correction, and rot failures, joint accuracy/usefulness/burden/cost outcomes, causal ablations, independent reproduction, and heterogeneous transfer.
 
@@ -7589,8 +7589,8 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:bibliography.plan.operational_invariant` | `AsiStackProofs.BibliographyPlan` | A source-derived claim requires a source note or equivalent ingested-source artifact. | implemented |
-| `lean:bibliography.plan.failure_blocks_promotion` | `AsiStackProofs.BibliographyPlan` | A new source cannot be assigned to a non-existent chapter id. | implemented |
+| `lean:bibliography.plan.operational_invariant` | `AsiStackProofs.BibliographyPlan` | A source-derived claim with neither a source note nor an ingested artifact fails the finite source-evidence predicate. | implemented |
+| `lean:bibliography.plan.failure_blocks_promotion` | `AsiStackProofs.BibliographyPlan` | An accepted new-source assignment to a nonexistent chapter fails the finite assignment predicate. | implemented |
 
 ## Source Corpus and External Literature
 

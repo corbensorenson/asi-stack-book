@@ -3284,21 +3284,21 @@
       "tag": "lean:bibliography.plan.operational_invariant",
       "chapter_id": "open-research-agenda-and-bibliography-plan",
       "module": "AsiStackProofs.BibliographyPlan",
-      "formal_target": "A source-derived claim requires a source note or equivalent ingested-source artifact.",
+      "formal_target": "A source-derived claim with neither a source note nor an ingested artifact fails the finite source-evidence predicate.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented in AsiStackProofs.BibliographyPlan as a finite source-ingestion predicate: source-derived claims require a source note or equivalent ingested source artifact."
+      "rationale": "Implemented in AsiStackProofs.BibliographyPlan as a derived finite counterexample gate: a source-derived claim record with neither a source note nor an ingested artifact fails the authored source-evidence predicate."
     },
     {
       "tag": "lean:bibliography.plan.failure_blocks_promotion",
       "chapter_id": "open-research-agenda-and-bibliography-plan",
       "module": "AsiStackProofs.BibliographyPlan",
-      "formal_target": "A new source cannot be assigned to a non-existent chapter id.",
+      "formal_target": "An accepted new-source assignment to a nonexistent chapter fails the finite assignment predicate.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented in AsiStackProofs.BibliographyPlan as a finite source-assignment predicate: accepted new-source assignments require an existing chapter id."
+      "rationale": "Implemented in AsiStackProofs.BibliographyPlan as a derived finite counterexample gate: an accepted new-source assignment whose declared chapter does not exist fails the authored assignment predicate."
     },
     {
       "tag": "lean:military-ai-autonomous-weapons-and-strategic-stability.admission_boundary",
