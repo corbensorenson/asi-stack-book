@@ -150,14 +150,116 @@
         "lean:lake-build"
       ],
       "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R4-benchmark-readiness-projection",
+      "sequence": 4,
+      "state": "executed",
+      "action": "retire_projection_after_decision_model_consumer_migration",
+      "semantic_relation": "premise_restatement_replaced_by_derived_decision_gate",
+      "module_path": "lean/AsiStackProofs/BenchmarkRatchets.lean",
+      "baseline_module_sha256": "a8d5e6f6b70e9f55b4bba4a1e6622e07fde7d456329afaa5a1a16f684767013b",
+      "retired_theorem_id": "lean/AsiStackProofs/BenchmarkRatchets.lean::capability_promotion_requires_benchmark_evidence_and_preserved_regressions",
+      "replacement_theorem_id": "lean/AsiStackProofs/BenchmarkRatchets.lean::accepted_readiness_promotion_requires_transfer_negative_and_regression_records",
+      "retired_block_sha256": "0ea6653e40f63fc2aea2cd6b96a7ad11833e8065a61944513f65b2623f7878c9",
+      "replacement_block_sha256": "bf64963c88099020c60bbf1a6116ea055ee2a46501622f9a350cbf9b41373768",
+      "retired_statement_sha256": "251c4ccbf7f8cc92e918ead6a8fb46d125c0d9b84849e24c7624c59e66cc9b47",
+      "replacement_statement_sha256": "e6513b74ada08b53b85fb3e1926a92452c9540ef0bf95053a79a927bd629f1d1",
+      "semantic_basis": [
+        "The retired theorem directly applies CapabilityPromotionHasBenchmarkAndRegressionEvidence to the same capabilityPromotion premise and therefore only restates the predicate body.",
+        "The replacement theorem unfolds RatchetDecisionAccepted, rewrites the accepted decision to promoteReadiness, and derives the transfer-or-mutation, negative-result, and regression-record obligations from that decision branch.",
+        "Both declarations occur in the same BenchmarkRatchets namespace and the replacement belongs to the chapter's richer ratchet-decision model rather than its preliminary implication wrapper.",
+        "The retired declaration has no theorem dependency consumer and no fully qualified current consumer.",
+        "The public operational target now names the retained decision-model consequence instead of a premise-restating projection."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:benchmarks.ratchet.operational_invariant",
+          "old_target_text": "A capability promotion requires benchmark evidence and preserved regression records.",
+          "new_target_text": "An accepted readiness-promotion decision in the finite ratchet model requires transfer-or-mutation checks, preserved negative evidence, and preserved regression records.",
+          "consumer_paths": [
+            "book_structure.json",
+            "docs/book_outline.md",
+            "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
+            "proofs/proof_manifest.json",
+            "proofs/proof_triage.json"
+          ]
+        }
+      ],
+      "maximum_inference_preserved": "Only that the authored finite ratchet-decision predicate requires transfer-or-mutation checks, negative-result preservation, and regression-record preservation when an accepted decision is exactly readiness promotion.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_benchmark_antigoodhart.py",
+        "scripts/validate_benchmark_fixture_bridge.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R5-benchmark-saturation-projection",
+      "sequence": 5,
+      "state": "executed",
+      "action": "retire_projection_after_decision_model_consumer_migration",
+      "semantic_relation": "premise_restatement_replaced_by_derived_decision_gate",
+      "module_path": "lean/AsiStackProofs/BenchmarkRatchets.lean",
+      "baseline_module_sha256": "a8d5e6f6b70e9f55b4bba4a1e6622e07fde7d456329afaa5a1a16f684767013b",
+      "retired_theorem_id": "lean/AsiStackProofs/BenchmarkRatchets.lean::saturated_benchmark_alone_cannot_promote_higher_readiness",
+      "replacement_theorem_id": "lean/AsiStackProofs/BenchmarkRatchets.lean::contaminated_review_cannot_promote_readiness",
+      "retired_block_sha256": "723e37fd9faa1905ff9ddb9550bd579ddd10a89455c2542a8611f519443f6171",
+      "replacement_block_sha256": "1f43ee7538b463a2bfff684ecdf0511e6ed271003802a803bd0d74e04f879243",
+      "retired_statement_sha256": "70af4b40a7d6a2c441882d711d80ad4d50244aa64488e6c3fd34d752d56735fa",
+      "replacement_statement_sha256": "662c33423093f995fe9e6ce9a2e6220a9e590426554a4ee46751ef94d604dcc1",
+      "semantic_basis": [
+        "The retired theorem directly applies SaturatedBenchmarkAloneBlocksHigherReadinessPromotion to the same saturated and sole-evidence premises and therefore only restates the predicate body.",
+        "The replacement theorem unfolds RatchetDecisionAccepted, rewrites the decision to promoteReadiness, and derives a contradiction from the branch's no-contamination requirement and the observed contamination premise.",
+        "The richer ratchet-decision model does not currently derive a general saturation-only promotion prohibition, so the public failure target is narrowed to the contamination condition the model actually proves.",
+        "The retired declaration has no theorem dependency consumer and no fully qualified current consumer.",
+        "The public failure target now names the retained decision-model contradiction instead of preserving an unsupported saturation-only implication wrapper."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:benchmarks.ratchet.failure_blocks_promotion",
+          "old_target_text": "A saturated benchmark cannot be the sole basis for higher readiness promotion.",
+          "new_target_text": "An accepted contaminated benchmark review cannot select readiness promotion in the finite ratchet model.",
+          "consumer_paths": [
+            "book_structure.json",
+            "docs/book_outline.md",
+            "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
+            "proofs/proof_manifest.json",
+            "proofs/proof_triage.json"
+          ]
+        }
+      ],
+      "maximum_inference_preserved": "Only that an accepted review in the authored finite ratchet-decision predicate cannot simultaneously record contamination and select readiness promotion.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_benchmark_antigoodhart.py",
+        "scripts/validate_benchmark_fixture_bridge.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
     }
   ],
   "summary": {
-    "executed_retirement_count": 3,
-    "current_live_theorem_count": 1367,
-    "remaining_action_count": 158,
+    "executed_retirement_count": 5,
+    "current_live_theorem_count": 1365,
+    "remaining_action_count": 156,
     "remaining_action_counts": {
-      "retire_narrow_projection": 61,
+      "retire_narrow_projection": 59,
       "rewrite_scope_language": 2,
       "rewrite_with_stronger_model": 95
     },

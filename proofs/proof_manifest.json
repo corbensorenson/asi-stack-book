@@ -2598,7 +2598,7 @@
       "chapter_title": "Benchmark Ratchets and Anti-Goodhart Evidence",
       "tag": "lean:benchmarks.ratchet.operational_invariant",
       "module": "AsiStackProofs.BenchmarkRatchets",
-      "formal_target": "A capability promotion requires benchmark evidence and preserved regression records.",
+      "formal_target": "An accepted readiness-promotion decision in the finite ratchet model requires transfer-or-mutation checks, preserved negative evidence, and preserved regression records.",
       "status": "implemented",
       "outline_line": 6174,
       "module_path": "lean/AsiStackProofs/BenchmarkRatchets.lean"
@@ -2608,7 +2608,7 @@
       "chapter_title": "Benchmark Ratchets and Anti-Goodhart Evidence",
       "tag": "lean:benchmarks.ratchet.failure_blocks_promotion",
       "module": "AsiStackProofs.BenchmarkRatchets",
-      "formal_target": "A saturated benchmark cannot be the sole basis for higher readiness promotion.",
+      "formal_target": "An accepted contaminated benchmark review cannot select readiness promotion in the finite ratchet model.",
       "status": "implemented",
       "outline_line": 6175,
       "module_path": "lean/AsiStackProofs/BenchmarkRatchets.lean"

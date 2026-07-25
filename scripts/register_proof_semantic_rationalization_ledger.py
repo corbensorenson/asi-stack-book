@@ -18,11 +18,13 @@ ARTIFACTS = [
     "proofs/proof_rationalization_registry.json",
     "lean/AsiStackProofs/ScalableOversightRefinement.lean",
     "lean/AsiStackProofs/BibliographyPlan.lean",
+    "lean/AsiStackProofs/BenchmarkRatchets.lean",
     "proofs/proof_manifest.json",
     "proofs/proof_triage.json",
     "book_structure.json",
     "docs/book_outline.md",
     "chapters/open-research-agenda-and-bibliography-plan.qmd",
+    "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
     "roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json",
     "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md",
     "validation/registry.json",
@@ -52,40 +54,43 @@ def main() -> None:
         "execution_tier": "pr",
         "validation_class": "proof_or_evidence_gate",
         "input_contract": (
-            "One immutable 1,370-theorem baseline; three exact, ordered transactions; "
-            "the baseline Scalable Oversight and Bibliography Plan modules; one same-model "
-            "normalized duplicate pair; two premise-restating projections and their "
-            "derived counterexample replacements; the current overlay; frozen historical "
-            "registry; and reconciled target, roadmap, and status surfaces."
+            "One immutable 1,370-theorem baseline; five exact, ordered transactions; "
+            "the baseline Scalable Oversight, Bibliography Plan, and Benchmark Ratchets "
+            "modules; one same-model normalized duplicate pair; four premise-restating "
+            "projections and their derived counterexample or decision-model replacements; "
+            "the current overlay; frozen historical registry; and reconciled target, "
+            "roadmap, and status surfaces."
         ),
         "input_artifacts": ARTIFACTS + [REGISTER],
         "output_contract": (
             "Require immutable baseline and theorem-block digests, exact same-model "
             "statement identity for the duplicate, dependency-and-consumer-safe removals, "
-            "two counterexample target migrations, retained target ownership, a "
-            "1,367-theorem current estate, an exact 158-action remaining queue, and no "
-            "support or release effect."
+            "two counterexample and two decision-model target migrations, retained target "
+            "ownership, a 1,365-theorem current estate, an exact 156-action remaining "
+            "queue, and no support or release effect."
         ),
         "output_assertions": [
             "baseline commit and artifact digests exact",
             "retired and retained declarations share one authored model",
             "normalized theorem statements exact",
             "retired theorem has no theorem consumer",
-            "three retired declarations absent and all replacements live",
+            "five retired declarations absent and all replacements live",
             "two bibliography targets migrated to derived counterexample gates",
-            "1,367 current theorem declarations",
-            "158 rewrite-or-retire actions remain",
+            "two benchmark targets migrated to derived decision-model gates",
+            "1,365 current theorem declarations",
+            "156 rewrite-or-retire actions remain",
             "frozen 1,151-theorem and 298-target registry preserved",
-            "12 mutations reject",
+            "13 mutations reject",
             "no support or release effect",
         ],
         "claim_scope": (
-            "Three dependency-safe declaration retirements: one exact same-model "
-            "duplicate and two premise-restating projections with target migration."
+            "Five dependency-safe declaration retirements: one exact same-model duplicate "
+            "and four premise-restating projections with counterexample or decision-model "
+            "target migration."
         ),
         "negative_controls": (
-            "validator_owned_twelve_baseline_digest_sequence_identity_statement_dependency_"
-            "consumer_target_denominator_and_support_mutations"
+            "validator_owned_thirteen_baseline_digest_sequence_identity_statement_dependency_"
+            "consumer_relation_target_denominator_and_support_mutations"
         ),
         "negative_control_cases": [
             "baseline commit substitution",
@@ -96,6 +101,7 @@ def main() -> None:
             "dependency laundering",
             "consumer laundering",
             "target migration erasure",
+            "decision semantic laundering",
             "remaining denominator inflation",
             "support promotion",
         ],
@@ -105,7 +111,7 @@ def main() -> None:
             "deployment, transfer, safety, SOTA, AGI, ASI, or claim support."
         ),
         "contract_precision": "exact_immutable_cumulative_dependency_safe_retirement_ledger",
-        "semantic_review_state": "checked_three_c6_retirements_and_two_target_migrations",
+        "semantic_review_state": "checked_five_c6_retirements_and_four_target_migrations",
     })
     required = registry["required_artifacts"]
     for artifact in ARTIFACTS + [REGISTER]:
@@ -121,7 +127,7 @@ def main() -> None:
         encoding="utf-8",
     )
     print(
-        f"Registered cumulative proof semantic-rationalization ledger: "
+        "Registered cumulative proof semantic-rationalization ledger: "
         f"{len(registry['units'])} units, {len(required)} artifacts."
     )
 

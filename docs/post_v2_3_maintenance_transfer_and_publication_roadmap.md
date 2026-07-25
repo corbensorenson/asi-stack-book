@@ -1148,13 +1148,13 @@ historical review. The immutable historical registry remains exactly 1,151
 theorems across 298 targets. The separately frozen pre-rationalization overlay
 at commit `d0f9bda14f1253999f2c40d556d925d31e4b36a4` classifies all 1,370
 baseline declarations. The current overlay in
-`proofs/proof_semantic_depth_overlay.json` classifies all 1,367 live theorem
+`proofs/proof_semantic_depth_overlay.json` classifies all 1,365 live theorem
 declarations across 104 theorem-bearing modules and maps them to 61 active
 semantic-owner chapters.
 
-The live semantic-depth distribution is 48 P0 record-shape results, 799 P1
+The live semantic-depth distribution is 47 P0 record-shape results, 796 P1
 finite-route results, 25 P2 reachability/nonvacuity results, 319 P3
-implementation-refinement results, 93 P4 cross-component-safety results, 83 P5
+implementation-refinement results, 95 P4 cross-component-safety results, 83 P5
 liveness/recovery results, and zero P6 empirically bound results. P6 being zero
 is intentional: the existence of an experiment file, trace, or generated
 artifact does not turn a theorem into empirical evidence.
@@ -1162,8 +1162,8 @@ artifact does not turn a theorem into empirical evidence.
 Every overlay row records its assumptions, active semantic owner, downstream
 consumer, witness or explicit witness absence, implementation binding, mutation
 evidence, maximum inference, and disposition. The resulting current estate is
-1,209 retain, 61 retire as narrow projection, two scope-language rewrites, and
-95 stronger-model rewrites. All 1,367 rows have mutation coverage and every
+1,209 retain, 59 retire as narrow projection, two scope-language rewrites, and
+95 stronger-model rewrites. All 1,365 rows have mutation coverage and every
 retained theorem has a named consumer.
 
 The cumulative dependency-safe retirement ledger is
@@ -1189,9 +1189,24 @@ manifest, outline, chapter, and structure records now name those retained
 gates. This is rationalization of target meaning, not a stronger empirical
 claim.
 
+The second narrow-projection tranche retires two direct implication
+restatements from `BenchmarkRatchets.lean`. The operational target now points
+to
+`accepted_readiness_promotion_requires_transfer_negative_and_regression_records`,
+which derives three obligations from the accepted `promoteReadiness` decision
+branch. The failure target now points to
+`contaminated_review_cannot_promote_readiness`, which derives a contradiction
+between accepted readiness promotion and observed contamination. The richer
+decision predicate does not establish a general saturation-only prohibition,
+so the old saturation implication is not laundered into the new target; the
+chapter keeps saturation behavior in its synthetic anti-Goodhart harness and
+states the narrower formal boundary explicitly. Both retired declarations had
+no theorem dependency or consumer. The five canonical target surfaces and the
+six-declaration chapter inventory now name only retained consequences.
+
 This receipt completes the C6 **classification** gate and begins its
-dependency-safe execution gate. Exactly three of the original 161 actions have
-been executed; 158 rewrite-or-retire actions remain: 61 narrow-projection
+dependency-safe execution gate. Exactly five of the original 161 actions have
+been executed; 156 rewrite-or-retire actions remain: 59 narrow-projection
 retirements, two scope-language rewrites, and 95 stronger-model rewrites. The
 next proof action is a dependency-safe narrow-projection tranche, preserving
 each correct bounded result until its consumers and maximum inference are

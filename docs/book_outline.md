@@ -5993,7 +5993,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 298 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 298 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 333 proof targets, 110 Lean modules, 1367 theorem declarations, 924 derived/decomposed, 228 direct/projection, 215 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 333 proof targets, 110 Lean modules, 1365 theorem declarations, 924 derived/decomposed, 226 direct/projection, 215 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.
@@ -6138,9 +6138,9 @@ Exact current minimum: one benchmark-ratchet schema and valid fixture; one
 metric-provenance schema with one valid blocked six-project-lineage record and
 ten rejecting mutations; a synthetic anti-Goodhart harness with two valid and
 five invalid records; one persisted fixture bridge; three proof targets; and
-eight BenchmarkRatchets declarations classified as two direct projections,
-three derived finite decision cases, and three fixture-normalization
-assertions. No natural benchmark, hidden holdout, contamination audit,
+six BenchmarkRatchets declarations classified as three derived finite decision
+cases and three fixture-normalization assertions. No natural benchmark, hidden
+holdout, contamination audit,
 empirical baseline matrix, trained model or policy result, independent
 evaluator, capability/safety/readiness result, deployment, reproduction,
 transfer, unlearning result, chapter-core transition, or SOTA result exists.
@@ -6159,10 +6159,10 @@ heterogeneously. Narrow, null, proxy, refuted, contaminated, retired, and
 `blocked_after_full_attempt` outcomes are valid; scores and inventory growth
 are non-terminal.
 
-Formal audit: the eight declarations comprise two direct record projections,
-three derived finite decision cases for readiness, floor conversion, and
-contamination, and three fixed fixture-normalization assertions for the
-two-valid/five-invalid bridge. They do not prove construct validity, target
+Formal audit: the six declarations comprise three derived finite decision cases
+for readiness, floor conversion, and contamination, plus three fixed fixture-
+normalization assertions for the two-valid/five-invalid bridge. They do not
+prove construct validity, target
 capacity, metric causality, benchmark adequacy, contamination resistance,
 hidden-holdout integrity, capability, policy quality, safety, unlearning,
 deployment, reproduction, or transfer.
@@ -6171,8 +6171,8 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:benchmarks.ratchet.operational_invariant` | `AsiStackProofs.BenchmarkRatchets` | A capability promotion requires benchmark evidence and preserved regression records. | implemented |
-| `lean:benchmarks.ratchet.failure_blocks_promotion` | `AsiStackProofs.BenchmarkRatchets` | A saturated benchmark cannot be the sole basis for higher readiness promotion. | implemented |
+| `lean:benchmarks.ratchet.operational_invariant` | `AsiStackProofs.BenchmarkRatchets` | An accepted readiness-promotion decision in the finite ratchet model requires transfer-or-mutation checks, preserved negative evidence, and preserved regression records. | implemented |
+| `lean:benchmarks.ratchet.failure_blocks_promotion` | `AsiStackProofs.BenchmarkRatchets` | An accepted contaminated benchmark review cannot select readiness promotion in the finite ratchet model. | implemented |
 | `lean:benchmarks.ratchet.fixture_bridge` | `AsiStackProofs.BenchmarkRatchets` | The benchmark anti-Goodhart fixture bridge mirrors 2 valid fixtures, 5 expected-invalid controls, promotion-ready, regression-floor, missing-checks, blocked-ratchet policy, reward-as-truth, saturated-promotion, release-approval, no-support-promotion, and non-claim-boundary facts. | implemented |
 
 ### White-Box Evidence, Interpretability, and Activation Governance

@@ -35,19 +35,21 @@ EXPECTED_ACTION_IDS = [
     "C6-R1-scalable-oversight-same-model-duplicate",
     "C6-R2-bibliography-source-evidence-projection",
     "C6-R3-bibliography-chapter-assignment-projection",
+    "C6-R4-benchmark-readiness-projection",
+    "C6-R5-benchmark-saturation-projection",
 ]
 EXPECTED_LEVELS = {
-    "P0": 48,
-    "P1": 799,
+    "P0": 47,
+    "P1": 796,
     "P2": 25,
     "P3": 319,
-    "P4": 93,
+    "P4": 95,
     "P5": 83,
     "P6": 0,
 }
 EXPECTED_DISPOSITIONS = {
     "retain": 1209,
-    "retire_narrow_projection": 61,
+    "retire_narrow_projection": 59,
     "rewrite_scope_language": 2,
     "rewrite_with_stronger_model": 95,
 }
@@ -59,6 +61,24 @@ EXPECTED_TARGETS = {
     "lean:bibliography.plan.failure_blocks_promotion": (
         "An accepted new-source assignment to a nonexistent chapter fails the finite "
         "assignment predicate."
+    ),
+    "lean:benchmarks.ratchet.operational_invariant": (
+        "An accepted readiness-promotion decision in the finite ratchet model requires "
+        "transfer-or-mutation checks, preserved negative evidence, and preserved "
+        "regression records."
+    ),
+    "lean:benchmarks.ratchet.failure_blocks_promotion": (
+        "An accepted contaminated benchmark review cannot select readiness promotion "
+        "in the finite ratchet model."
+    ),
+}
+EXPECTED_RELATIONS = {
+    "retire_exact_same_model_duplicate": "exact_same_model_normalized_statement",
+    "retire_projection_after_counterexample_consumer_migration": (
+        "premise_restatement_replaced_by_derived_counterexample_gate"
+    ),
+    "retire_projection_after_decision_model_consumer_migration": (
+        "premise_restatement_replaced_by_derived_decision_gate"
     ),
 }
 
@@ -115,7 +135,7 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
     actions = ledger["actions"]
     if [row["action_id"] for row in actions] != EXPECTED_ACTION_IDS:
         out.append("action sequence or identity drifted")
-    if [row["sequence"] for row in actions] != [1, 2, 3]:
+    if [row["sequence"] for row in actions] != [1, 2, 3, 4, 5]:
         out.append("action sequence numbers drifted")
 
     try:
@@ -138,6 +158,8 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
     module_cache: dict[str, dict[str, dict[str, str]]] = {}
     module_bytes_cache: dict[str, bytes] = {}
     for action in actions:
+        if action["semantic_relation"] != EXPECTED_RELATIONS[action["action"]]:
+            out.append(f"{action['action_id']}: action and semantic relation disagree")
         module = action["module_path"]
         retired_id = action["retired_theorem_id"]
         replacement_id = action["replacement_theorem_id"]
@@ -197,13 +219,23 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
                 out.append(f"{action['action_id']}: exact duplicate statements differ")
             if action["target_migrations"] != []:
                 out.append(f"{action['action_id']}: exact duplicate invented a target migration")
-        else:
+        elif action["action"] == "retire_projection_after_counterexample_consumer_migration":
             if "exact valid" not in retired_block["block"]:
                 out.append(f"{action['action_id']}: retired theorem is not the audited projection")
             if "have " not in replacement_block["block"] or "rw [" not in replacement_block["block"]:
                 out.append(f"{action['action_id']}: replacement lacks derived counterexample steps")
             if len(action["target_migrations"]) != 1:
                 out.append(f"{action['action_id']}: projection target migration is not singular")
+        else:
+            if "exact valid" not in retired_block["block"]:
+                out.append(f"{action['action_id']}: retired theorem is not the audited projection")
+            if (
+                "unfold RatchetDecisionAccepted" not in replacement_block["block"]
+                or "rw [" not in replacement_block["block"]
+            ):
+                out.append(f"{action['action_id']}: replacement lacks decision-model derivation")
+            if len(action["target_migrations"]) != 1:
+                out.append(f"{action['action_id']}: decision target migration is not singular")
 
     current_rows = current_theorems()
     current_ids = {row["theorem_id"] for row in current_rows}
@@ -218,13 +250,13 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
 
     overlay = load(CURRENT_OVERLAY)
     summary = overlay.get("summary", {})
-    if summary.get("current_theorem_count") != 1367:
+    if summary.get("current_theorem_count") != 1365:
         out.append("current theorem denominator drifted")
     if summary.get("semantic_level_counts") != EXPECTED_LEVELS:
         out.append("current semantic-level counts drifted")
     if summary.get("disposition_counts") != EXPECTED_DISPOSITIONS:
         out.append("current disposition counts drifted")
-    if sum(value for key, value in EXPECTED_DISPOSITIONS.items() if key != "retain") != 158:
+    if sum(value for key, value in EXPECTED_DISPOSITIONS.items() if key != "retain") != 156:
         out.append("expected remaining-action denominator is internally inconsistent")
     if ledger["summary"]["remaining_action_counts"] != {
         key: value for key, value in EXPECTED_DISPOSITIONS.items() if key != "retain"
@@ -243,10 +275,19 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
     if any(row.get("depth_class") != "derived_or_decomposed" for row in bibliography_rows):
         out.append("BibliographyPlan retained a direct projection")
 
+    benchmark_rows = [
+        row
+        for row in current_rows
+        if row["module_path"] == "lean/AsiStackProofs/BenchmarkRatchets.lean"
+    ]
+    if len(benchmark_rows) != 6:
+        out.append("BenchmarkRatchets must retain exactly six derived declarations")
+    if any(row.get("depth_class") == "direct_or_projection" for row in benchmark_rows):
+        out.append("BenchmarkRatchets retained a direct projection")
+
     manifest_rows = {
         row["tag"]: row
         for row in load(MANIFEST).get("records", [])
-        if row.get("module") == "AsiStackProofs.BibliographyPlan"
     }
     for target, expected in EXPECTED_TARGETS.items():
         if manifest_rows.get(target, {}).get("formal_target") != expected:
@@ -255,15 +296,18 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
     for target, expected in EXPECTED_TARGETS.items():
         if triage_rows.get(target, {}).get("formal_target") != expected:
             out.append(f"proof triage did not migrate to the counterexample gate: {target}")
-    for path in [
-        ROOT / "book_structure.json",
-        ROOT / "docs/book_outline.md",
-        ROOT / "chapters/open-research-agenda-and-bibliography-plan.qmd",
-    ]:
-        text = path.read_text(encoding="utf-8")
-        for expected in EXPECTED_TARGETS.values():
-            if expected not in text:
-                out.append(f"{path.relative_to(ROOT)} lacks a migrated target")
+    for action in actions:
+        for migration in action["target_migrations"]:
+            expected = migration["new_target_text"]
+            for relative_path in migration["consumer_paths"]:
+                if relative_path in {
+                    "proofs/proof_manifest.json",
+                    "proofs/proof_triage.json",
+                }:
+                    continue
+                path = ROOT / relative_path
+                if expected not in path.read_text(encoding="utf-8"):
+                    out.append(f"{relative_path} lacks migrated target {migration['target_ref']}")
 
     historical = load(HISTORICAL)
     if len(historical.get("baseline_theorems", [])) != 1151:
@@ -277,17 +321,17 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
     if status.get("rationalization_ledger_path") != str(LEDGER.relative_to(ROOT)):
         out.append("status does not bind the cumulative rationalization ledger")
     if (
-        status.get("theorem_count") != 1367
-        or status.get("executed_retirement_count") != 3
-        or status.get("remaining_action_count") != 158
+        status.get("theorem_count") != 1365
+        or status.get("executed_retirement_count") != 5
+        or status.get("remaining_action_count") != 156
     ):
         out.append("status does not report the cumulative post-transaction denominator")
     roadmap = ROADMAP.read_text(encoding="utf-8")
     roadmap_flat = " ".join(roadmap.split())
     for phrase in [
-        "first narrow-projection tranche",
-        "1,367 live theorem declarations",
-        "158 rewrite-or-retire actions remain",
+        "second narrow-projection tranche",
+        "1,365 live theorem declarations",
+        "156 rewrite-or-retire actions remain",
         "`proofs/proof_semantic_rationalization_ledger.json`",
     ]:
         if phrase not in roadmap_flat:
@@ -317,7 +361,14 @@ def main() -> None:
     mutate("dependency laundering", lambda c: c["actions"][1]["dependency_check"]["retired_theorem_dependency_refs"].append("theorem:x"))
     mutate("consumer laundering", lambda c: c["actions"][2]["dependency_check"]["retired_theorem_consumer_refs"].append("theorem:x"))
     mutate("target migration erasure", lambda c: c["actions"][1].__setitem__("target_migrations", []))
-    mutate("remaining denominator inflation", lambda c: c["summary"].__setitem__("remaining_action_count", 159))
+    mutate(
+        "decision semantic laundering",
+        lambda c: c["actions"][3].__setitem__(
+            "semantic_relation",
+            "premise_restatement_replaced_by_derived_counterexample_gate",
+        ),
+    )
+    mutate("remaining denominator inflation", lambda c: c["summary"].__setitem__("remaining_action_count", 157))
     mutate("support promotion", lambda c: c.__setitem__("support_state_effect", "promotion"))
 
     for label, candidate in mutations:
@@ -329,9 +380,9 @@ def main() -> None:
             + "\n - ".join(failures)
         )
     print(
-        "Proof semantic-rationalization ledger passed: three dependency-safe "
-        "retirements, two counterexample target migrations, 1,367 live theorems, "
-        "158 actions remain, 12 rejecting mutations, no support or release effect."
+        "Proof semantic-rationalization ledger passed: five dependency-safe "
+        "retirements, four public-target migrations, 1,365 live theorems, "
+        "156 actions remain, 13 rejecting mutations, no support or release effect."
     )
 
 

@@ -60,8 +60,8 @@
     },
     "actions": {
       "type": "array",
-      "minItems": 3,
-      "maxItems": 3,
+      "minItems": 5,
+      "maxItems": 5,
       "items": {
         "$ref": "#/$defs/action"
       }
@@ -79,17 +79,17 @@
       ],
       "properties": {
         "executed_retirement_count": {
-          "const": 3
+          "const": 5
         },
         "current_live_theorem_count": {
-          "const": 1367
+          "const": 1365
         },
         "remaining_action_count": {
-          "const": 158
+          "const": 156
         },
         "remaining_action_counts": {
           "const": {
-            "retire_narrow_projection": 61,
+            "retire_narrow_projection": 59,
             "rewrite_scope_language": 2,
             "rewrite_with_stronger_model": 95
           }
@@ -193,13 +193,15 @@
         "action": {
           "enum": [
             "retire_exact_same_model_duplicate",
-            "retire_projection_after_counterexample_consumer_migration"
+            "retire_projection_after_counterexample_consumer_migration",
+            "retire_projection_after_decision_model_consumer_migration"
           ]
         },
         "semantic_relation": {
           "enum": [
             "exact_same_model_normalized_statement",
-            "premise_restatement_replaced_by_derived_counterexample_gate"
+            "premise_restatement_replaced_by_derived_counterexample_gate",
+            "premise_restatement_replaced_by_derived_decision_gate"
           ]
         },
         "module_path": {

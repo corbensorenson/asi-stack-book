@@ -14,8 +14,8 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 333 |
 | Lean modules scanned | 110 |
-| Theorem declarations classified | 1367 |
-| Direct/projection-style theorem declarations | 228 |
+| Theorem declarations classified | 1365 |
+| Direct/projection-style theorem declarations | 226 |
 | Derived/decomposed theorem declarations | 924 |
 | Unknown or mixed theorem declarations | 215 |
 | Safety-critical theorem declarations | 73 |
@@ -62,7 +62,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ArtifactStewardAgents.lean` | artifact-steward-agents-and-living-project-governance | 7 | 16 | 4 | 12 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Authority.lean` | system-boundaries-and-authority | 2 | 28 | 0 | 28 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | system-boundaries-and-authority | 2 | 12 | 0 | 4 | 8 | manual review |
-| `lean/AsiStackProofs/BenchmarkRatchets.lean` | benchmark-ratchets-and-anti-goodhart-evidence | 3 | 8 | 2 | 6 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/BenchmarkRatchets.lean` | benchmark-ratchets-and-anti-goodhart-evidence | 3 | 6 | 0 | 6 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/BibliographyPlan.lean` | open-research-agenda-and-bibliography-plan | 2 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/CapabilityThresholdRefinement.lean` | capability-thresholds-and-deployment-commitments | 8 | 12 | 8 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/CapabilityThresholds.lean` | unmapped | 0 | 8 | 0 | 8 | 0 | derived/decomposed by classifier |
@@ -329,9 +329,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | `benchmark_antigoodhart_fixture_bridge_has_expected_controls` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | `benchmark_antigoodhart_fixture_bridge_preserves_no_support_promotion` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | `benchmark_antigoodhart_fixture_bridge_valid` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/BenchmarkRatchets.lean` | `capability_promotion_requires_benchmark_evidence_and_preserved_regressions` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | `contaminated_review_cannot_promote_readiness` | derived_or_decomposed | no | uses rw, simp, unfold |
-| `lean/AsiStackProofs/BenchmarkRatchets.lean` | `saturated_benchmark_alone_cannot_promote_higher_readiness` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/BibliographyPlan.lean` | `accepted_new_source_assignment_to_nonexistent_chapter_rejected` | derived_or_decomposed | no | uses cases, have, rw |
 | `lean/AsiStackProofs/BibliographyPlan.lean` | `source_derived_claim_without_source_record_rejected` | derived_or_decomposed | no | uses cases, have, rw |
 | `lean/AsiStackProofs/CapabilityThresholdRefinement.lean` | `accepted_event_adds_one_receipt` | derived_or_decomposed | no | uses simp |

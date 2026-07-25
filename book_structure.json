@@ -21878,12 +21878,12 @@
             "A passing benchmark automatically changes routing, training, self-improvement, readiness, deployment, public wording, or support state without review and fallback.",
             "Historical prestige, leaderboard incentives, or sunk cost prevents contamination quarantine, claim narrowing, floor retirement, refutation, or instrument replacement."
           ],
-          "minimal_implementation": "The exact current minimum is one benchmark-ratchet schema and valid record fixture; one metric-provenance schema with one valid blocked six-project-lineage record and ten rejecting mutations; one synthetic anti-Goodhart harness with two valid records and five expected-invalid controls; one persisted fixture-bridge result aligned to the same two-valid/five-invalid set; three proof targets; and eight local BenchmarkRatchets declarations classified as two direct record projections, three derived finite decision cases, and three fixture-normalization assertions. No natural benchmark workload, hidden holdout, contamination audit, public-calibration budget, strong empirical baseline matrix, model or policy training run, independent evaluator, capability gain, safety result, readiness transition, deployment, reproduction, transfer, unlearning result, chapter-core transition, or SOTA result exists.",
+          "minimal_implementation": "The exact current minimum is one benchmark-ratchet schema and valid record fixture; one metric-provenance schema with one valid blocked six-project-lineage record and ten rejecting mutations; one synthetic anti-Goodhart harness with two valid records and five expected-invalid controls; one persisted fixture-bridge result aligned to the same two-valid/five-invalid set; three proof targets; and six local BenchmarkRatchets declarations classified as three derived finite decision cases and three fixture-normalization assertions. No natural benchmark workload, hidden holdout, contamination audit, public-calibration budget, strong empirical baseline matrix, model or policy training run, independent evaluator, capability gain, safety result, readiness transition, deployment, reproduction, transfer, unlearning result, chapter-core transition, or SOTA result exists.",
           "beyond_state_of_art": "The mature Benchmark Instrument and Anti-Goodhart Operating System executes natural, adversarial, temporal, hidden, and transfer workloads with versioned data and harnesses, strong matched baselines, complete selection lineage, raw checkpoint-to-output binding, independent evaluators, contamination and public-calibration budgets, causal mechanism ablations, metric meta-evaluation, uncertainty and subgroup/tail analysis, preserved floors and negative results, and complete resource, safety, privacy, rights, fallback, and maintenance cost. It reproduces decisive claims independently, tests heterogeneous transfer, propagates expiry and revocation into every consumer and release surface, and narrows, nulls, refutes, quarantines, or retires instruments and claims that fail instead of optimizing score, benchmark count, or apparent frontier motion.",
           "draft_maturity": "v0.3 manuscript draft",
           "open_evidence_gaps": [
             "All twenty-nine assigned sources now have exact passage-reviewed mappings, but source-reported memory, dataset, evaluation-framework, agent-security, self-improvement, architecture-search, dynamic-compute, coding, and unlearning results remain comparator context only.",
-            "The current implementation is two schemas, one blocked provenance record plus ten rejecting mutations, two valid and five invalid synthetic anti-Goodhart fixtures, one persisted fixture bridge, three proof targets, and eight finite declarations. It includes no natural benchmark run, hidden holdout, contamination audit, empirical baseline matrix, trained model or policy result, independent evaluator, or support transition.",
+            "The current implementation is two schemas, one blocked provenance record plus ten rejecting mutations, two valid and five invalid synthetic anti-Goodhart fixtures, one persisted fixture bridge, three proof targets, and six derived finite declarations. It includes no natural benchmark run, hidden holdout, contamination audit, empirical baseline matrix, trained model or policy result, independent evaluator, or support transition.",
             "Argument exit requires preregistered natural and adversarial workloads, construct and target-capacity validation, strong matched controls, complete selection and failure lineage, raw output binding, contamination/public-calibration controls, causal and meta-evaluation, independent reproduction, heterogeneous transfer, complete cost and rights accounting, fallback, and a claim-specific transition."
           ],
           "codex_tests": [
@@ -21928,13 +21928,13 @@
             {
               "tag": "lean:benchmarks.ratchet.operational_invariant",
               "module": "AsiStackProofs.BenchmarkRatchets",
-              "target": "A capability promotion requires benchmark evidence and preserved regression records.",
+              "target": "An accepted readiness-promotion decision in the finite ratchet model requires transfer-or-mutation checks, preserved negative evidence, and preserved regression records.",
               "status": "implemented"
             },
             {
               "tag": "lean:benchmarks.ratchet.failure_blocks_promotion",
               "module": "AsiStackProofs.BenchmarkRatchets",
-              "target": "A saturated benchmark cannot be the sole basis for higher readiness promotion.",
+              "target": "An accepted contaminated benchmark review cannot select readiness promotion in the finite ratchet model.",
               "status": "implemented"
             },
             {
