@@ -19,6 +19,7 @@ primary_sources:
   - "ext_hf_accelerate_big_model_inference_2026"
   - "ext_llama_cpp_memory_mapping_2026"
   - "ext_llm_in_flash_2024"
+  - "ext_nist_pqc_standards_2024"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -939,8 +940,42 @@ These rows keep Model-Weight Custody and Hardware Roots of Trust's manifest assi
 | `ext_llm_in_flash_2024` | Metadata-first comparator: LLM in a Flash: Efficient Large Language Model Inference with Limited Memory. Primary flash-aware inference source for on-demand parameter loading, I/O cost modeling, transfer reduction, contiguous reads, windowing, and row-column bundling. Sparse/context-adaptive loading is not an exact dense paging result. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `precision_contract` | Metadata-first comparator: The Precision Contract: A Functional Rate–Distortion Theory for Behavior-Preserving Neural Computation. Corben-authored July 2026 theoretical and systems paper replacing universal per-weight precision questions with a contract-relative functional rate-distortion problem over complete executable descriptions. It proposes representation canonicalization, protected-behavior contracts, precision fields, progressive base/residual encoding, dynamic routing, full physical and assurance-cost accounting, a Functional Precision Compiler, and scoped precision certificates. Existing chapters are upgraded first; no universal bit bound, implemented compiler, preserved-behavior result, efficiency result, certificate validity, support promotion, SOTA, AGI, or ASI claim is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_flexible_hardware_enabled_guarantees_2025` | Passage-reviewed comparator: Flexible Hardware-Enabled Guarantees for AI Compute. Motivates hardware-supported policy evidence and remote verification as possible custody controls. | A hardware guarantee can be partial, circumvented, misconfigured, obsolete, or governed by the wrong authority; no local hardware mechanism was implemented. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_nist_pqc_standards_2024` | Metadata-first comparator: Announcing Approval of Three Federal Information Processing Standards for Post-Quantum Cryptography. Official NIST announcement for FIPS 203, 204, and 205. It establishes approved algorithm standards and migration urgency, not implementation security, protocol correctness, complete inventory, or successful system migration. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
+## Post-quantum custody and cryptographic lifetime
+
+Weight confidentiality and artifact authenticity can have unusually long
+lifetimes. A stolen encrypted checkpoint may remain valuable after its current
+deployment ends; signatures on base weights, adapters, safety policies, and
+provenance may need to remain verifiable across many descendants. Custody
+records therefore include a required protection horizon and a cryptographic
+bill of materials rather than assuming the present key scheme outlives the
+artifact.
+
+The NIST post-quantum standards provide approved KEM and signature families,
+but they do not prove that a model store, KMS, HSM, measured boot chain,
+attestation service, recipient, or backup has migrated. For each artifact
+family, the custody graph records:
+
+- encryption, wrapping, signature, attestation, transport, and recovery
+  algorithms and parameters;
+- every online, offline, escrowed, recipient, device, backup, and disaster-
+  recovery key path;
+- which old signatures must remain verifiable and which artifacts require
+  re-signing, re-wrapping, or re-encryption;
+- larger key, proof, and metadata effects on loading, paging, replication, and
+  constrained devices;
+- hybrid-policy and downgrade behavior; and
+- the terminal evidence that legacy decryption or signing authority was
+  retired.
+
+Migration creates derivatives. A re-encrypted checkpoint and newly signed
+manifest join the custody graph until old copies, keys, caches, and recipients
+reach explicit dispositions. Successful loading under a new algorithm proves
+interoperability for that path, not derivative closure, extraction resistance,
+or sanitization.
+
 ## Summary
 
 Model weights are one node in a model-family asset graph that can include

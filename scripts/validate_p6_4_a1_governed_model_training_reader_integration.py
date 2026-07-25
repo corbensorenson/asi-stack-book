@@ -43,10 +43,15 @@ def errors(data: dict) -> list[str]:
 
     chapters = [chapter for part in data["structure"]["parts"] for chapter in part["chapters"]]
     ids = [chapter["id"] for chapter in chapters]
-    if len(ids) != 80 or ids.count(CHAPTER_ID) != 1:
-        out.append("80-chapter manifest or A1 uniqueness drifted")
+    if len(ids) != 84 or ids.count(CHAPTER_ID) != 1:
+        out.append("84-chapter manifest or A1 uniqueness drifted")
     a1_index = ids.index(CHAPTER_ID) if CHAPTER_ID in ids else -1
-    if a1_index < 1 or ids[a1_index - 1] != "replaceable-cognitive-substrates-beyond-transformer-monoculture" or ids[a1_index + 1] != "learning-theory-generalization-and-scaling-science":
+    if (
+        a1_index < 2
+        or ids[a1_index - 2] != "replaceable-cognitive-substrates-beyond-transformer-monoculture"
+        or ids[a1_index - 1] != "relational-dimension-compilation-and-polyadic-cognition"
+        or ids[a1_index + 1] != "learning-theory-generalization-and-scaling-science"
+    ):
         out.append("A1 Part III placement drifted")
     chapter = next((row for row in chapters if row["id"] == CHAPTER_ID), {})
     # A1 freezes the seven-source admission packet, not the chapter's maximum
@@ -84,7 +89,7 @@ def errors(data: dict) -> list[str]:
     status = data["status"]
     tranche = status["quality_uplift_program"]["structural_completeness_tranche"]
     second = tranche["second_tranche"]
-    if tranche.get("current_manifest_chapter_count") != 80 or second.get("manifest_admitted_count") != 13:
+    if tranche.get("current_manifest_chapter_count") != 84 or second.get("manifest_admitted_count") != 13:
         out.append("A1 status chapter/admission denominator drifted")
     if (
         CHAPTER_ID not in second.get("adjudicated_candidate_ids", [])
@@ -101,8 +106,8 @@ def errors(data: dict) -> list[str]:
 
     surfaces = data["surfaces"]
     fragments = {
-        "index": ["Governed training-run transaction", "all 80 working-manifest chapters", "Load-bearing reference | 32"],
-        "replaceable": ["Governed Model Training, Distributed Optimization, and Scaling takes the next"],
+        "index": ["Governed training-run transaction", "all 84 working-manifest chapters", "Load-bearing reference | 32"],
+        "replaceable": ["**Relational Dimension Compilation and Polyadic Cognition** now takes the next"],
         "integrated": ["Training candidates are transactions, not artifacts"],
         "glossary": ["Training Run Transaction", "Resume equivalence class"],
         "roadmap": ["P6.5-R16-A-six-chapter-atom-pack", "Terminal — admitted at argument support"],
@@ -173,7 +178,7 @@ def main() -> None:
     transaction = subprocess.run(["python3", "scripts/validate_training_run_transaction.py"], cwd=ROOT, capture_output=True, text=True)
     if transaction.returncode:
         raise SystemExit(transaction.stdout + transaction.stderr)
-    print("P6.4-A1 reader integration passed: terminal argument chapter, seven-source four-role packet, 2 targets/13 theorems, 5 arms/13 faults/12 competence gates unopened, 21 transaction mutations plus 9 integration mutations, 80-chapter reader reconciliation, A1 terminal under no-deferral no-queue custody and the current evidence packet, no support/release effect.")
+    print("P6.4-A1 reader integration passed: terminal argument chapter, seven-source four-role packet, 2 targets/13 theorems, 5 arms/13 faults/12 competence gates unopened, 21 transaction mutations plus 9 integration mutations, 84-chapter reader reconciliation with the later relational-dimension owner interposed, A1 terminal under no-deferral no-queue custody and the current evidence packet, no support/release effect.")
 
 
 if __name__ == "__main__":

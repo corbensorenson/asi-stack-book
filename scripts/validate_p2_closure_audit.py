@@ -20,9 +20,9 @@ STATUS = ROOT / "roadmap_records" / "post_v2_3_claim_proof_and_sota_challenge_st
 MAINTENANCE_STATUS = ROOT / "roadmap_records" / "post_v2_3_maintenance_transfer_and_publication_status.json"
 
 HISTORICAL_PROOF_TARGET_COUNT = 298
-CURRENT_PROOF_TARGET_COUNT = 329
+CURRENT_PROOF_TARGET_COUNT = 333
 CURRENT_IMPLEMENTED_TARGET_COUNT = 310
-CURRENT_PLANNED_TARGET_COUNT = 19
+CURRENT_PLANNED_TARGET_COUNT = 23
 HISTORICAL_EXPECTED_CLASSES = {
     "adequate finite-record invariant": 73,
     "useful but too narrow": 158,
@@ -34,9 +34,9 @@ HISTORICAL_EXPECTED_CLASSES = {
 CURRENT_EXPECTED_CLASSES = {
     "adequate finite-record invariant": 73,
     "useful but too narrow": 162,
-    "needs richer state-machine or review semantics": 36,
-    "needs executable tests first": 38,
-    "needs empirical or baseline tests first": 18,
+    "needs richer state-machine or review semantics": 37,
+    "needs executable tests first": 39,
+    "needs empirical or baseline tests first": 20,
     "research-agenda until artifact import": 2,
 }
 FIRST_TRANCHE_ADMITTED_CHAPTERS = {
@@ -85,17 +85,25 @@ TAXONOMY_MATURITY_ADMITTED_CHAPTERS = {
     "open-weight-release-and-post-release-control",
     "content-authenticity-watermarking-and-synthetic-media-integrity",
 }
+FULL_COVERAGE_ADMITTED_CHAPTERS = {
+    "military-ai-autonomous-weapons-and-strategic-stability",
+    "confidential-and-verifiable-ai-computation",
+    "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty",
+    "relational-dimension-compilation-and-polyadic-cognition",
+}
 ADMITTED_CHAPTERS = (
     FIRST_TRANCHE_ADMITTED_CHAPTERS
     | SECOND_TRANCHE_ADMITTED_CHAPTERS
     | ROUND_18_ADMITTED_CHAPTERS
     | NO_DEFERRAL_ADMITTED_CHAPTERS
     | TAXONOMY_MATURITY_ADMITTED_CHAPTERS
+    | FULL_COVERAGE_ADMITTED_CHAPTERS
 )
 PLANNED_CHAPTERS = (
     ROUND_18_ADMITTED_CHAPTERS
     | NO_DEFERRAL_ADMITTED_CHAPTERS
     | TAXONOMY_MATURITY_ADMITTED_CHAPTERS
+    | FULL_COVERAGE_ADMITTED_CHAPTERS
 )
 EXPECTED_RICHER = {
     "constitutional-alignment-substrate": 6,
@@ -159,6 +167,11 @@ def current_proof_errors(
         .get("structural_completeness_tranche", {})
         .get("taxonomy_and_structural_maturity_reconciliation", {})
     )
+    full_coverage_tranche = (
+        maintenance_status.get("quality_uplift_program", {})
+        .get("structural_completeness_tranche", {})
+        .get("full_coverage_gap_audit_2026_07_25", {})
+    )
     if (
         manifest.get("proof_target_count") != CURRENT_PROOF_TARGET_COUNT
         or len(current_targets) != CURRENT_PROOF_TARGET_COUNT
@@ -187,6 +200,7 @@ def current_proof_errors(
         or set(second_tranche.get("adjudicated_candidate_ids", [])) != SECOND_TRANCHE_ADMITTED_CHAPTERS
         or set(round_18_tranche.get("new_chapter_ids", [])) != ROUND_18_ADMITTED_CHAPTERS
         or set(taxonomy_tranche.get("new_chapter_ids", [])) != TAXONOMY_MATURITY_ADMITTED_CHAPTERS
+        or set(full_coverage_tranche.get("new_chapter_ids", [])) != FULL_COVERAGE_ADMITTED_CHAPTERS
         or len(planned_targets) != CURRENT_PLANNED_TARGET_COUNT
         or {row.get("chapter_id") for row in planned_targets} != PLANNED_CHAPTERS
         or planned_chapter_counts != Counter({chapter_id: 1 for chapter_id in PLANNED_CHAPTERS})

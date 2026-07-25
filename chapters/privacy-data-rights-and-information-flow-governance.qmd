@@ -15,6 +15,8 @@ primary_sources:
   - "ext_choquette_choo_label_only_mia_2021"
   - "ext_nist_differential_privacy_2025"
   - "ext_mahloujifar_fdp_audit_2025"
+  - "ext_nist_privacy_enhancing_cryptography_2026"
+  - "ext_who_neurotechnology_landscape_2025"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -465,6 +467,16 @@ frameworks specify obligations, vocabularies represent them, formal mechanisms
 bound declared threats, and attacks probe implementation or leakage. None can
 stand in for the others or promote the chapter core by citation alone.
 
+### Manifest source assignment reconciliation
+
+These rows keep Privacy, Data Rights, and Information-Flow Governance's manifest assignments visible at their recorded review boundary. Passage review does not establish local reproduction, performance, safety, deployment, or support-state movement.
+
+| Source | Intake role | Boundary |
+|---|---|---|
+| `ext_nist_privacy_enhancing_cryptography_2026` | Metadata-first comparator: Privacy-Enhancing Cryptography. NIST program material distinguishing fully homomorphic encryption, secure multiparty computation, zero-knowledge proofs, private-set intersection, and related privacy-enhancing techniques. It provides terminology and use-case context, not implementation security, usable performance, authorization, or end-to-end privacy. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_who_neurotechnology_landscape_2025` | Metadata-first comparator: Landscape analysis of the opportunities and challenges for neurotechnology in global health. WHO landscape analysis of neurotechnology opportunities, risks, governance questions, and global-health distribution. It supports a rights and equity boundary, not device efficacy, individual medical advice, or authorization for neural-data collection. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+
+<!-- manifest-source-reconciliation:end -->
 ## Prospective validation
 
 The first campaign is frozen but unexecuted. It will use an open natural text
@@ -536,6 +548,33 @@ influence, exception, and remedy under named ownership.
   freedom of expression, research, and deletion be represented across
   jurisdictions?
 
+## Neural data and inferred mental state
+
+Neural signals, physiological measurements, interaction traces, and the mental
+states inferred from them are distinct data classes. An inference about
+attention, intention, emotion, impairment, or preference is not raw access to a
+mind; it is a model output with construct, population, context, and uncertainty
+limits. Yet it can be more consequential than the signal from which it was
+derived.
+
+The information-flow record therefore tracks raw signals, features, inferred
+states, model updates, decisions, exports, and descendants separately. Consent
+to operate an assistive or health function does not authorize advertising,
+employment scoring, insurance, surveillance, unrelated training, or covert
+preference manipulation. Deletion of a device record does not establish
+deletion from backups, derived features, learned parameters, recipients, or
+decisions already made.
+
+The WHO neurotechnology landscape report motivates global-health, rights, and
+equity attention without establishing a universal legal category or device
+efficacy. Technical protections from NIST's privacy-enhancing cryptography
+program can reduce selected disclosure paths, but encrypted or distributed
+computation does not supply consent, purpose limitation, mental integrity,
+access, contest, or remedy. The
+[Human-AI Symbiosis, Neurotechnology, and Cognitive
+Sovereignty](human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.qmd)
+chapter owns the coupled human lifecycle.
+
 ## Summary
 
 Authorized access is only the beginning of privacy governance. A competent ASI
@@ -564,9 +603,11 @@ unresolved copies or influence, expiry, and owner. A consumer that cannot
 preserve those fields must deny, quarantine, or reopen review rather than
 silently accepting the artifact or action.
 
-- To **Model-Weight Custody and Hardware Roots of Trust**: carry purpose,
-  privacy, rights, descendant, and deletion obligations with every model-family
-  artifact.
+- To **Confidential and Verifiable AI Computation**: carry purpose, consent,
+  information classes, allowed disclosures, descendants, rights, deletion
+  residuals, and unsupported properties into the distrust-boundary guarantee
+  vector. Cryptographic confidentiality or execution evidence may not erase
+  these obligations.
 - To **AI Supply-Chain Integrity**: bind privacy-relevant code, data, model,
   accountant, and policy identities to provenance.
 - To **Data Engines**: execute admitted data updates and unlearning operations,

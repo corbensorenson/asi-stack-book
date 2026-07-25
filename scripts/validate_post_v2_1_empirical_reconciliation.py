@@ -90,21 +90,26 @@ def validate(data: dict) -> list[str]:
     first_tranche = structural_tranche.get("first_tranche", {})
     second_tranche = structural_tranche.get("second_tranche", {})
     round_18_tranche = structural_tranche.get("round_18_breadth_completion", {})
+    full_coverage_tranche = structural_tranche.get("full_coverage_gap_audit_2026_07_25", {})
     no_deferral_tranche = maintenance_status.get("no_deferral_manuscript_admission", {})
     first_admitted_chapter_ids = set(first_tranche.get("candidate_ids", []))
     second_admitted_chapter_ids = set(second_tranche.get("adjudicated_candidate_ids", []))
     round_18_admitted_chapter_ids = set(round_18_tranche.get("new_chapter_ids", []))
+    full_coverage_admitted_chapter_ids = set(full_coverage_tranche.get("new_chapter_ids", []))
     no_deferral_admitted_chapter_ids = set(no_deferral_tranche.get("admitted_chapter_ids", []))
     admitted_chapter_ids = (
         first_admitted_chapter_ids
         | second_admitted_chapter_ids
         | round_18_admitted_chapter_ids
+        | full_coverage_admitted_chapter_ids
         | no_deferral_admitted_chapter_ids
     )
     if (
         activation_truth.get("live_working_chapter_count") != live_chapter_count
         or structural_tranche.get("current_manifest_chapter_count") != live_chapter_count
-        or no_deferral_tranche.get("current_manifest_chapter_count") != live_chapter_count
+        or full_coverage_tranche.get("current_manifest_chapter_count") != live_chapter_count
+        or no_deferral_tranche.get("current_manifest_chapter_count")
+        != full_coverage_tranche.get("previous_manifest_chapter_count")
         or no_deferral_tranche.get("previous_manifest_chapter_count") != 66
         or no_deferral_tranche.get("remaining_live_candidate_queue_count") != 0
         or no_deferral_tranche.get("structural_freeze_for_manuscript_ideas") is not False
@@ -113,6 +118,7 @@ def validate(data: dict) -> list[str]:
         or live_chapter_count != 55 + len(admitted_chapter_ids)
         or not admitted_chapter_ids.issubset(chapters)
         or not round_18_admitted_chapter_ids.issubset(chapters)
+        or not full_coverage_admitted_chapter_ids.issubset(chapters)
         or not no_deferral_admitted_chapter_ids.issubset(chapters)
     ):
         errors.append("current live manifest disagrees with the later manifest-admitted structural tranche")

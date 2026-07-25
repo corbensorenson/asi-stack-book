@@ -59,6 +59,7 @@ vendor, model, or release is trustworthy.
 ## Book Chapters Supported
 
 - `model-weight-custody-and-hardware-roots-of-trust`
+- `confidential-and-verifiable-ai-computation`
 
 ## Claims To Add Or Update
 

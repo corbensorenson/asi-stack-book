@@ -402,12 +402,35 @@ def admitted_chapter_ids(status: dict[str, Any]) -> tuple[set[str], list[str]]:
         errors.append("round_18_breadth_completion lacks an exact frozen manifest-admitted identity set")
     else:
         admitted.update(round_18_ids)
+
+    full_coverage = tranche.get("full_coverage_gap_audit_2026_07_25", {})
+    full_coverage_ids = [str(value) for value in full_coverage.get("new_chapter_ids", [])]
+    if (
+        full_coverage.get("state") != "terminal_argument_level_manuscript_integration"
+        or len(set(full_coverage_ids)) != len(full_coverage_ids)
+        or full_coverage.get("current_manifest_chapter_count")
+        != full_coverage.get("previous_manifest_chapter_count", 0) + len(full_coverage_ids)
+        or full_coverage.get("remaining_live_candidate_queue_count") != 0
+        or full_coverage.get("structural_admission_freeze") is not False
+    ):
+        errors.append("full_coverage_gap_audit_2026_07_25 lacks an exact manifest-admitted identity set")
+    else:
+        admitted.update(full_coverage_ids)
+
     no_deferral = status.get("no_deferral_manuscript_admission", {})
     no_deferral_ids = [str(value) for value in no_deferral.get("admitted_chapter_ids", [])]
+    no_deferral_admission_count = (
+        no_deferral.get("previous_manifest_chapter_count", 0) + len(no_deferral_ids)
+    )
     if (
         no_deferral.get("state") != "terminal_argument_level_admission"
         or no_deferral.get("current_manifest_chapter_count")
-        != no_deferral.get("previous_manifest_chapter_count", 0) + len(no_deferral_ids)
+        != no_deferral_admission_count
+        or (
+            full_coverage_ids
+            and full_coverage.get("previous_manifest_chapter_count")
+            != no_deferral_admission_count
+        )
         or len(set(no_deferral_ids)) != len(no_deferral_ids)
         or no_deferral.get("remaining_live_candidate_queue_count") != 0
         or no_deferral.get("structural_freeze_for_manuscript_ideas") is not False

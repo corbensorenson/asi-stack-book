@@ -1,0 +1,433 @@
+---
+title: "Military AI, Autonomous Weapons, and Strategic Stability"
+chapter_id: "military-ai-autonomous-weapons-and-strategic-stability"
+part_id: "foundations-alignment-governance"
+status: "conceptual"
+draft_maturity: "substantive conceptual draft"
+last_updated: "2026-07-25"
+primary_sources:
+  - "ext_icrc_autonomous_weapons_ihl_2025"
+  - "ext_sipri_military_ai_nuclear_escalation_2025"
+  - "ext_singapore_consensus_2026"
+  - "ext_international_ai_safety_report_2026"
+evidence_level: "argument"
+claim_label: "Design rationale"
+open_evidence_gaps:
+  - "No operational weapon design, deployment, real-crisis test, or strategic-stability result is claimed or authorized."
+  - "The interaction-level test program remains a safe-simulation design; no doctrine-robust result exists."
+  - "Legal and policy sources bound issues and positions but do not establish one globally settled rule."
+---
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `military-ai-autonomous-weapons-and-strategic-stability` |
+| Part | Part I - Foundations, Alignment, and Governance |
+| Status | conceptual |
+| Last updated | 2026-07-25 |
+| Primary source records | `ext_icrc_autonomous_weapons_ihl_2025`, `ext_sipri_military_ai_nuclear_escalation_2025`, `ext_singapore_consensus_2026`, `ext_international_ai_safety_report_2026` |
+| Claim label | Design rationale |
+| Evidence level | argument |
+| Source loading state | Assigned ICRC, SIPRI, and international synthesis records have bounded notes; no source result is reproduced. |
+| Test state | Chapter-level tests remain planned unless Appendix E records an implemented command and result. |
+
+## Drafting guardrail
+
+This chapter remains non-operational: it supplies no targeting method, weapon
+construction detail, evasion technique, or optimization recipe. Legal and
+strategic sources identify issues and positions without authorizing a system
+or proving lawful use, meaningful human control, safety, or stability.
+
+::: {.asi-human-only}
+## Human Reading Path
+
+Approach this material as a governance map for consequential decisions, never
+as operational guidance for designing, selecting, or using weapons. [Dangerous
+Capability Domains and Misuse
+Uplift](dangerous-capability-domains-and-misuse-uplift.qmd) asks how AI changes
+an actor's effective capacity. This layer instead asks what happens when
+sensing, recommendation, command, authorization, physical effect, and
+adversary response become one coupled system.
+
+Identify the system's actual decision role first. A detector, logistics
+forecaster, recommendation tool, defensive interlock, and actuator may occupy
+different roles. Then ask whether the declared human decision maker has enough time, information,
+competence, and practical power to exercise judgment. Merely confirming a
+machine output under severe pressure is not meaningful control because an
+approval button exists.
+
+Trace ambiguity through sensor conflict, automation bias, communication loss,
+escalation, and lost diplomatic off-ramps. Precommitted abstention and safe postures
+matter because an accurate component can still make the surrounding system
+more dangerous. Public assurance must remain no broader than disclosed
+evidence permits when operational details cannot be published. Keep component
+performance, responsible command, lawful use, and strategic stability as four
+different claims with four different evidence burdens.
+:::
+
+## Problem
+
+Military AI can change sensing, targeting, command timing, warning interpretation, autonomous engagement, and adversary expectations inside already dangerous strategic systems. A model that is locally accurate can still increase catastrophe risk through compression of decision time, false confidence, interaction effects, proliferation, or loss of context-specific human judgment.
+
+The unit of analysis must therefore include people, procedures, sensors,
+communications, command relationships, legal authorities, effectors, and
+adversaries across time. A recommendation can be correct about an object yet
+wrong for the mission, late relative to a changing situation, based on a
+spoofed observation, or interpreted by an adversary as preparation for a
+larger action. Error severity also depends on what happens next: whether a
+decision can be contested, paused, reversed, communicated, investigated, or
+repaired after civilians and strategic forces are affected.
+
+## Why existing approaches are insufficient
+
+A generic dangerous-capability or misuse chapter treats risk mainly as actor uplift. It does not own command authority, target and effect constraints, legal review, false-alarm propagation, adversary adaptation, crisis instability, nuclear entanglement, or the difference between component reliability and strategic stability.
+
+Likewise, a generic autonomy scale compresses sensing, ranking,
+recommendation, authorization, selection, and actuation into one number.
+Human-in-the-loop labels then count interface presence rather than available
+time, information, competence, independence, and intervention power.
+Component testing can reveal accuracy or latency while missing automation bias,
+doctrine mismatch, reciprocal deployment, escalation through ambiguity, or
+loss of nontechnical off-ramps. Those omissions are not peripheral because
+they determine whether a nominal safeguard exists when the situation becomes
+uncertain or adversarial.
+They also obscure which institution owns correction, suspension, and remedy
+after failure.
+
+## Core Claim
+
+[military-ai-autonomous-weapons-and-strategic-stability.core, label: Design rationale, support: argument] Military AI should be governed as a command-and-interaction system: deployment requires a declared mission and legal boundary, preserved accountable human authority, bounded sensing and action, adversarial and escalation analysis, fail-safe behavior, auditable provenance, and prospective off-ramps; component benchmark gains alone establish neither lawful use nor strategic safety.
+
+## “Military AI” is not one risk class
+
+The relevant boundary is not whether a component contains machine learning. It
+is what the component is allowed to do inside a command and interaction loop.
+A logistics forecaster, maintenance anomaly detector, intelligence summarizer,
+decision-support system, defensive interceptor, targeting aid, and system that
+selects and applies force occupy different positions even if they share a
+model. Risk changes with mission, time pressure, environment, affected
+population, reversibility, communications, adversary behavior, and the
+consequence of a false positive or false negative.
+
+A single autonomy scale therefore hides the variables that matter. The minimum
+classification record should include:
+
+| Dimension | Questions |
+|---|---|
+| Decision role | Does the system sense, rank, recommend, authorize, select, plan, or actuate? |
+| Command authority | Who has legal and practical authority, and who can suspend or override? |
+| Object and effect | What can be observed or affected, with what spatial, temporal, and effect bounds? |
+| Time | Is there enough time to investigate ambiguity, contest a result, or seek another channel? |
+| Environment | Is the setting structured, civilian-dense, communications-denied, deceptive, or rapidly changing? |
+| Failure asymmetry | What follows from false alarm, missed detection, delay, abstention, or unintended activation? |
+| Interaction | How could an adversary interpret, spoof, imitate, race, or reciprocate? |
+| Escalation sensitivity | Could the system affect early warning, command and control, nuclear forces, or perceived strategic intent? |
+
+This is also why an impressive component result cannot close the system claim.
+Detection accuracy does not measure whether a commander understands
+uncertainty. Latency reduction does not show that shorter timelines are safer.
+Reliable actuation does not establish lawful target selection. An optimal
+tactical recommendation can create a disastrous reciprocal equilibrium.
+
+## Meaningful human judgment is a property of the whole decision
+
+Putting a person behind a confirmation button does not create human control.
+The person needs enough time, information, competence, authority, attention,
+and alternatives to assess the actual decision. They must know what the system
+observed, what it could not observe, what assumptions drove the recommendation,
+which constraints apply, how uncertainty and conflict were handled, and what
+happens if they abstain.
+
+The system should therefore expose an **authority envelope** rather than a
+generic human-in-the-loop label:
+
+```text
+mission and legal basis
+authorized decision role
+geographic, temporal, object, and effect bounds
+required evidence and sensor agreement
+uncertainty and abstention thresholds
+human role, competence, time, and information requirements
+communications-loss and integrity-failure posture
+override, suspension, incident, and decommission authority
+```
+
+The AI cannot expand this envelope by interpreting its own success. Learning
+that a classifier performs well in one environment does not authorize a new
+target class, geography, duration, or effect. Any expansion is a new governed
+decision with a new evidence and legal record.
+
+The ICRC's analysis is especially important here because it centers
+context-specific human judgment and the obligations that attach to the use of
+force. This book does not pretend that a technical schema resolves contested
+law. It does insist that the system make the relevant context, constraints,
+human responsibilities, and unresolved legal questions visible rather than
+burying them in an autonomy score.
+
+## Strategic stability is an interaction claim
+
+Military systems are observed by adversaries who change their own posture.
+That turns deployment into a feedback system. SIPRI's analysis of military AI
+and nuclear escalation risk identifies the right level of concern: AI can
+affect information quality, confidence, decision speed, vulnerability
+perceptions, command relationships, and the ways conventional and nuclear
+systems become entangled. None of these pathways has one fixed sign.
+
+Faster detection may create more time to respond, or it may create pressure to
+act before verification. Automation may reduce some routine human errors, or
+make correlated error propagate faster and appear more authoritative. A
+defensive system may be intended to reduce vulnerability while an adversary
+interprets it as enabling a first strike. The safety case must therefore state
+whose behavior is modeled, what each party knows, how doctrine varies, and
+which off-ramps remain.
+
+At least five loops need explicit treatment:
+
+1. **sensor loop:** spoofing, ambiguity, correlation, missingness, provenance,
+   and conflict among sources;
+2. **operator loop:** trust calibration, automation bias, workload, fatigue,
+   skill decay, and organizational pressure;
+3. **command loop:** authority, communication delay, delegation, redundancy,
+   and loss-of-contact behavior;
+4. **adversary loop:** observation, deception, countermeasure, imitation,
+   proliferation, reciprocal deployment, and misinterpretation;
+5. **strategic loop:** crisis timing, conventional–nuclear entanglement,
+   survivability beliefs, signaling, arms-race incentives, and diplomatic
+   off-ramps.
+
+A deployment claim that omits a loop is explicitly scoped to exclude it. It
+cannot quietly inherit the stronger label “strategically safe.”
+
+## Safe posture is not always “do nothing”
+
+Fail-safe behavior must be declared for the actual mission. In some defensive
+contexts, loss of function can itself create immediate harm. In other contexts,
+continued autonomous action under sensor or communications failure is the
+larger danger. The correct rule cannot be derived from one universal shutdown
+instruction.
+
+The contract instead enumerates degraded states: sensor disagreement, stale
+data, uncertain classification, broken authentication, communication loss,
+operator overload, unexpected geography, mission expiry, and platform
+integrity failure. Each state maps to bounded behavior such as abstain, hold,
+return, isolate, request another observation, transfer to a declared human
+authority, or enter a preapproved defensive mode. The behavior and rationale
+are decided prospectively and tested without exposing operational weaknesses.
+
+## Assurance under secrecy
+
+Some military evidence cannot be public. Secrecy, however, does not justify a
+public claim that is broader than what outsiders can evaluate. The assurance
+case should separate:
+
+- a public claim, threat boundary, governance structure, incident taxonomy,
+  and unsupported-properties statement;
+- restricted technical evidence reviewed by appropriately independent bodies;
+- operational detail withheld because disclosure would create a concrete
+  hazard; and
+- facts that remain unknown even to the operator.
+
+Classified evidence can support a bounded internal decision. It cannot be used
+as an all-purpose answer to public legitimacy, remedy, treaty compliance, or
+the rights of affected people. Audit access, retention, incident reporting,
+and accountability need institutional designs that survive secrecy.
+
+## Mechanism
+
+- Classify every use by mission, decision role, affected population, operating environment, command chain, reversibility, and escalation sensitivity.
+- Separate decision support, defensive automation, targeting support, and autonomous force application instead of assigning them one autonomy score.
+- Bind authorities, target and effect constraints, confidence and abstention rules, communication-loss behavior, and human confirmation requirements before operation.
+- Model interaction pathways including false alarms, compressed timelines, adversary spoofing, automation bias, proliferation, entanglement, reciprocal deployment, and crisis escalation.
+- Use red teams, safe simulations, doctrine variants, structured legal review, and fail-safe exercises without publishing operationally enabling details.
+- Require traceable sensor-to-decision provenance, post-event reconstruction, incident reporting, remedy, suspension authority, and decommissioning.
+
+```{mermaid}
+flowchart LR
+  M["Mission, law, and authority envelope"] --> O["Sensors and observation trust"]
+  O --> R["Recommendation with uncertainty"]
+  R --> J{"Meaningful human judgment?"}
+  J -- "no" --> S["Abstain or enter declared safe posture"]
+  J -- "yes" --> E["Bounded effect decision"]
+  E --> I["Adversary and escalation interaction"]
+  I --> A{"Assumptions and off-ramps still valid?"}
+  A -- "no" --> S
+  A -- "yes" --> C["Accountable command record"]
+  C --> X["Incident learning, expiry, and renewed review"]
+  X --> M
+```
+
+**How to read this strategic-interaction loop:** mission authority constrains
+what observations and recommendations may reach a real human judgment point.
+Failed judgment conditions or invalid interaction assumptions route to a
+declared safe posture. Even an authorized bounded decision remains inside
+adversary-response, command-record, incident-learning, and expiry loops.
+
+The mechanism treats abstention as an authored operational state rather than a
+missing prediction. It declares how the system behaves when communications
+fail, sensors disagree, authorization expires, confidence falls, or the
+interaction case no longer covers the situation. The safe posture may be
+monitoring, disengagement, reduced functionality, transfer to another channel,
+or suspension; its acceptability must be evaluated against the actual mission
+and affected population.
+
+It also separates internal evidence from public assurance. Restricted
+observations may justify a narrow decision for an authorized role, while the
+public record can still expose decision ownership, applicable constraints,
+incident routes, remedy, and the maximum conclusion supportable without
+revealing sensitive detail. Secrecy changes access and review design; it does
+not erase accountability or permit an unbounded safety claim.
+
+### The strategic interaction case
+
+The principal artifact is a versioned `StrategicInteractionCase`. It joins the
+authority envelope to assumptions about sensors, operators, doctrine,
+adversaries, escalation pathways, proliferation, and off-ramps. Each assumption
+has an owner, basis, uncertainty, sensitivity analysis, expiry, and trigger for
+reconsideration. Technical updates invalidate dependent parts of the case;
+doctrinal or geopolitical changes do the same.
+
+## Interfaces
+
+- Dangerous Capabilities and Misuse Uplift for actor-level capability change and information-hazard discipline
+- Human Factors and Meaningful Control for attention, authority, skill, workload, and intervention evidence
+- Security Kernel and Model Custody for command authentication, provenance, tamper evidence, and recovery
+- Institutions and Safety Cases for legal review, treaty and norm interfaces, public legitimacy, and assurance
+- Embodied Agency for physical actuation envelopes and real-time fail-safe control
+
+These interfaces form a custody chain rather than a collection of citations.
+Capability evidence cannot define command authority; command records cannot
+establish operator comprehension; a legal review cannot validate a sensor; and
+a secure actuator cannot prove a strategic interaction safe. Each owner
+exports a bounded record with version, assumptions, uncertainty, expiry, and
+residuals so downstream decisions can identify exactly which dependency
+changed.
+
+## Invariants
+
+- No system may infer its own legal authority or widen its mission, target class, geography, duration, or effect envelope.
+- Meaningful human judgment must be demonstrated for the actual decision context rather than asserted from interface presence.
+- Abstention, communication loss, sensor conflict, and integrity failure resolve to a prospectively declared safe posture.
+- Evidence about component accuracy or latency may not be promoted into a claim of lawful use, escalation control, or strategic stability.
+- Operationally sensitive detail is minimized while the public claim boundary and accountability structure remain auditable.
+
+Together these invariants preserve four separations: technical capability from
+authority, interface presence from meaningful judgment, local performance from
+system consequence, and restricted evidence from accountable public claims.
+
+## Failure modes
+
+- Automation bias converts an advisory system into de facto decision authority.
+- Decision-time compression removes deliberation, verification, or diplomatic off-ramps.
+- Spoofed, ambiguous, or correlated sensors produce confident false alarms.
+- Optimization for tactical success externalizes civilian harm, reciprocal escalation, or long-run instability.
+- Human-in-the-loop language masks ceremonial approval without time, information, competence, or power to intervene.
+- Proliferation and adversary adaptation invalidate a safety case built on unilateral assumptions.
+- Classified evidence prevents external accountability while public claims overstate assurance.
+
+### Strongest challenge and simpler baseline
+
+The strongest challenge is that adding AI may be unnecessary. A simpler
+sensor, rule-based interlock, two-person procedure, slower review path, or
+better communication and training may preserve more context and be easier to
+assure. “No AI” and “AI outside the consequential decision path” are required
+baselines.
+
+The system earns a role only if it improves a named outcome without eroding
+human judgment, legal compliance, off-ramps, or strategic stability under
+credible interaction assumptions. Where those outcomes cannot be evaluated
+safely or independently, the evidence state remains unresolved rather than
+being filled by confidence.
+
+## Minimum Viable Implementation
+
+A non-operational governance prototype with a mission and authority register, legal-review record, decision-role taxonomy, sensor-to-recommendation provenance, abstention and safe-posture rules, escalation-path scenario matrix, accountable approval log, incident schema, and suspension/decommission procedure tested only on synthetic or publicly safe scenarios.
+
+The prototype should include valid and invalid cases for expired authority,
+ambiguous mission scope, conflicting sensors, compressed decision time,
+communication loss, ceremonial human approval, adversary misinterpretation,
+and a doctrine change that invalidates earlier assumptions. An independently
+implemented checker should verify that every consequential output traces to
+the applicable case and that missing judgment conditions produce the declared
+safe posture. Results would establish only schema behavior and routing in safe
+fixtures, never weapon performance or strategic effect.
+Every run remains non-operational, isolated, and publicly safe.
+
+## Beyond the State of the Art
+
+A credible advance would link technical behavior, operator performance, command doctrine, adversary response, legal constraints, proliferation, and crisis dynamics in one falsifiable safety case, then show across independently designed safe simulations that the governed system preserves off-ramps and lowers bounded decision risk relative to human-only and automation baselines. The mature target architecture would preserve accountable suspension, audit, public claim boundaries, and renewed review as assumptions change, without operationalizing sensitive detail.
+
+Evaluation at that endpoint would vary doctrine, adversary models, sensor
+correlation, communication failure, decision time, operator workload, and
+proliferation rather than announcing one universal score. Independent teams
+would design safe scenarios and challenge both the favored system and simpler
+non-AI alternatives. Any gain would remain conditional on tested interaction
+assumptions, while unresolved legal interpretations, secrecy constraints,
+civilian-harm pathways, and strategic uncertainty would stay visible as
+decision-blocking or decision-limiting residuals.
+The comparison would also preserve affected-population denominators and
+distributional consequences.
+It would preserve rejected cases and policy disagreements for later
+reassessment.
+
+That research program is prospective. Its support remains `argument` unless
+safe interaction models, independently designed simulations, operator and
+institutional evidence, source mappings, review artifacts, and explicit
+residual records justify a narrower transition; no design target becomes
+weapon authorization or a stability result.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Decision-role classification test | Verify that sensing, recommendation, authorization, selection, and actuation cannot be collapsed into one autonomy label. | planned; not run |
+| Meaningful-judgment test | Vary time, information, workload, competence, and authority; reject nominal human control when practical intervention fails. | planned; not run |
+| False-alarm interaction test | Propagate ambiguous and correlated signals through operator, command, adversary, and strategic loops. | planned; not run |
+| Doctrine-sensitivity test | Re-evaluate conclusions across multiple plausible command and adversary assumptions. | planned; not run |
+| Off-ramp preservation test | Check whether verification, communication, contest, suspension, and diplomatic options remain under time pressure. | planned; not run |
+| Proliferation test | Model reciprocal adoption and countermeasures instead of a unilateral static baseline. | planned; not run |
+| Public-claim boundary test | Ensure restricted evidence does not produce a broader public assurance than its disclosed boundary supports. | planned; not run |
+
+Planned formalization hook:
+`lean:military-ai-autonomous-weapons-and-strategic-stability.admission_boundary`
+remains a process-contract target; it does not authorize a weapon or prove
+lawful use, meaningful human control, escalation reduction, or strategic
+stability.
+
+## Source crosswalk
+
+| Source ID | Title | Planned use |
+|---|---|---|
+| `ext_icrc_autonomous_weapons_ihl_2025` | Autonomous Weapon Systems and International Humanitarian Law: Selected Issues | Planned use from inventory/manifest: ICRC legal and policy position on autonomous weapon systems and context-specific human judgment. It is authoritative for the ICRC position, not a universally settled legal interpretation, engineering validation, or authorization to design or deploy weapons. |
+| `ext_sipri_military_ai_nuclear_escalation_2025` | The Impact of Military Artificial Intelligence on Nuclear Escalation Risk | Planned use from inventory/manifest: SIPRI analysis of pathways by which military AI may affect nuclear escalation risk through information, decision, and interaction dynamics. It motivates scenario-specific analysis and does not establish the net effect of any specific system or policy. |
+| `ext_singapore_consensus_2026` | The 2026 Singapore Consensus on Global AI Safety Research Priorities | Planned use from inventory/manifest: International 2026 technical-research-priority synthesis covering risk assessment, development, control, and societal resilience, including CBRN, cyber, psychological manipulation, malicious fine-tuning, agent monitoring, incident reporting, and defense-favoring capabilities. It is a research agenda and consensus synthesis, not evidence that any listed safeguard works or that this book's contracts are complete. |
+| `ext_international_ai_safety_report_2026` | International AI Safety Report 2026 | Planned use from inventory/manifest: International expert report synthesizing evidence on general-purpose AI capabilities, misuse, open-weight risks, safeguards, monitoring, and societal resilience. It supports risk taxonomy and uncertainty boundaries; its literature synthesis does not reproduce component studies locally or establish that any ASI Stack mechanism is effective. |
+
+## Summary
+
+Military AI is not just another capability domain. It sits inside command,
+legal, adversarial, and strategic feedback loops where accuracy and speed can
+change the behavior of every participant. The governing unit is the command
+and interaction system: mission and authority, meaningful judgment, bounded
+effects, adversarial and escalation analysis, safe postures, traceable
+provenance, off-ramps, and honest assurance under secrecy. The resulting design
+boundary neither authorizes a weapon nor
+claims that a particular deployment or policy is stabilizing.
+
+The durable discipline is to keep decision roles explicit and require every
+handoff to carry assumptions, expiry, uncertainty, and residual risk. When
+judgment conditions or interaction assumptions fail, the system must enter an
+authored safe posture rather than improvise authority. Component success can
+inform that process, but it cannot substitute for lawful command,
+accountability, or evidence about strategic consequences.
+
+## Handoff
+
+Claims in this domain are unusually easy to overstate and unusually costly to
+get wrong. Continue by formalizing the evidence labels, transition rules, and
+non-promotion discipline needed throughout the stack:
+[Evidence States and Claim Discipline](evidence-states-and-claim-discipline.qmd).
+It receives bounded mission, interaction, uncertainty, legal-boundary, and
+maximum-inference records without inheriting an operational, lawful-use,
+stability, safety, or release conclusion. Evidence custody is the next layer;
+it is not permission to act.

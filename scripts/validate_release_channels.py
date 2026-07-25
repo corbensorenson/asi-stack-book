@@ -29,7 +29,7 @@ def file_map(root: Path, excluded: set[str] | None = None) -> dict[str, str]:
     return {
         path.relative_to(root).as_posix(): digest(path)
         for path in sorted(candidate for candidate in root.rglob("*") if candidate.is_file())
-        if path.relative_to(root).parts[0] not in excluded
+        if path.relative_to(root).parts[0] not in excluded and path.name != ".DS_Store"
     }
 
 

@@ -50,7 +50,7 @@
       "const": "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md"
     },
     "snapshot_date": {
-      "const": "2026-07-24"
+      "const": "2026-07-25"
     },
     "authority": {
       "const": "Corben Sorenson"
@@ -307,8 +307,8 @@
         "structural_completeness_tranche": {
           "const": {
             "state": "no_deferral_manuscript_admission_terminal_argument_support",
-            "current_manifest_chapter_count": 80,
-            "maximum_if_all_candidates_pass": 80,
+            "current_manifest_chapter_count": 84,
+            "maximum_if_all_candidates_pass": 84,
             "planned_merge_count": 0,
             "first_tranche": {
               "state": "terminal_four_reader_chapters",
@@ -475,6 +475,41 @@
               "support_state_effect": "none",
               "release_effect": "none"
             },
+            "full_coverage_gap_audit_2026_07_25": {
+              "state": "terminal_argument_level_manuscript_integration",
+              "date": "2026-07-25",
+              "decision_path": "docs/full_coverage_gap_audit_2026_07_25.md",
+              "backlog_path": "research_backlog_records/full_coverage_gap_audit_2026_07_25.json",
+              "triage_path": "new_paper_triage_scenarios/full_coverage_gap_audit_2026_07_25.json",
+              "previous_manifest_chapter_count": 80,
+              "current_manifest_chapter_count": 84,
+              "new_chapter_ids": [
+                "military-ai-autonomous-weapons-and-strategic-stability",
+                "confidential-and-verifiable-ai-computation",
+                "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty",
+                "relational-dimension-compilation-and-polyadic-cognition"
+              ],
+              "existing_owner_section_integrations": [
+                "no_free_lunch_identifiability_and_assumption_ledger",
+                "non_silicon_substrate_families_and_full_stack_accounting",
+                "post_quantum_migration_and_crypto_agility",
+                "human_ai_complementarity_and_longitudinal_co_adaptation",
+                "infrastructure_concentration_bottlenecks_and_effective_exit",
+                "civil_liability_insurance_compensation_and_remedy",
+                "multilingual_and_culturally_grounded_intent_communication_and_evaluation",
+                "neural_data_inferred_mental_state_and_secondary_purpose_controls"
+              ],
+              "net_new_external_source_record_count": 18,
+              "remaining_live_candidate_queue_count": 0,
+              "structural_admission_freeze": false,
+              "support_state_effect": "none",
+              "release_effect": "none",
+              "non_claims": [
+                "Structural coverage does not establish mechanism correctness, empirical support, legal conclusions, cryptographic guarantees, human outcomes, military safety, SOTA, readiness, deployment, AGI, or ASI.",
+                "The active P2 empirical and reader-quality obligations remain open.",
+                "Future primary-source refreshes may produce new integration work."
+              ]
+            },
             "p2_displacement_allowed": false,
             "support_state_effect": "none",
             "release_effect": "none"
@@ -532,9 +567,9 @@
           "support_state_effect": "none"
         },
         "current_reader_freshness_packet": {
-          "state": "queued_for_current_80_chapter_derivative",
+          "state": "queued_for_current_84_chapter_derivative",
           "published_reader_2026_07_18_is_immutable_historical_release": true,
-          "current_working_manifest_chapter_count": 80,
+          "current_working_manifest_chapter_count": 84,
           "must_cover_all_current_manifest_chapters": true,
           "external_publication_required": false,
           "required_surfaces": [
@@ -771,9 +806,9 @@
           "support_state_effect": "none",
           "release_effect": "none"
         },
-        "current_manifest_chapter_count": 80,
-        "possible_count_if_both_new_candidates_pass": 80,
-        "theoretical_all_candidate_envelope_not_target": 80,
+        "current_manifest_chapter_count": 84,
+        "possible_count_if_both_new_candidates_pass": 84,
+        "theoretical_all_candidate_envelope_not_target": 84,
         "support_state_effect": "none",
         "release_effect": "none",
         "candidate_admission_superseded_by": "taxonomy_and_structural_maturity_reconciliation"
@@ -806,11 +841,11 @@
     "activation_truth": {
       "const": {
         "latest_public_living_book_release": "v2.3.0",
-        "live_working_chapter_count": 80,
+        "live_working_chapter_count": 84,
         "activation_registry_atom_count": 3730,
         "post_activation_addendum_atom_count": 15,
         "total_structured_atom_count": 3745,
-        "chapter_core_argument_count": 80,
+        "chapter_core_argument_count": 84,
         "chapter_core_promotion_count": 0,
         "activation_registry_non_argument_atom_count": 2,
         "blocked_after_full_attempt_atom_count": 3698,
@@ -828,7 +863,7 @@
         "competence_qualified_natural_non_authored_empirical_transition_count": 0,
         "external_reproduction_count": 0,
         "sota_supported_count": 0,
-        "proof_target_count": 329,
+        "proof_target_count": 333,
         "lean_module_count": 109,
         "theorem_declaration_count": 1370,
         "derived_or_decomposed_theorem_count": 924,

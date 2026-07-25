@@ -8,6 +8,7 @@ last_updated: "2026-07-24"
 primary_sources:
   - "ext_generative_ai_at_work_2025"
   - "ext_ilo_genai_jobs_index_2025"
+  - "ext_oecd_ai_infrastructure_competition_2025"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -219,6 +220,38 @@ Planned formalization hook: `lean:ai-deployment-transition-distribution-and-huma
 | `coherence_exchange` | The Coherence Exchange | Corben-authored speculative lineage connecting epistemic markets, typed labor, verification, alignment, and resource allocation. It motivates cross-layer distribution questions, but it does not measure employment, wages, welfare, concentration, transition capacity, public legitimacy, or preserved human agency. |
 | `ext_generative_ai_at_work_2025` | Generative AI at Work | Open peer-reviewed field study of a staggered generative-AI assistant introduction among 5,172 customer-support agents, reporting heterogeneous worker and productivity effects in that setting. It is a bounded deployment comparator and does not establish economy-wide employment, wages, inequality, concentration, long-run skill, or ASI-transition effects. |
 | `ext_ilo_genai_jobs_index_2025` | Generative AI and Jobs: A Refined Global Index of Occupational Exposure | ILO working paper combining task data, worker surveys, expert deliberation, and model-assisted scoring to estimate occupational exposure across countries and groups. Exposure is not realized automation, displacement, welfare, or a forecast of ASI effects, and the study is not a local reproduction. |
+
+### Manifest source assignment reconciliation
+
+These rows keep AI Deployment, Transition, Distribution, and Human Agency's manifest assignments visible at their recorded review boundary. Passage review does not establish local reproduction, performance, safety, deployment, or support-state movement.
+
+| Source | Intake role | Boundary |
+|---|---|---|
+| `ext_oecd_ai_infrastructure_competition_2025` | Metadata-first comparator: Competition in artificial intelligence infrastructure. OECD analysis of concentration, barriers to entry, vertical integration, and competition across AI infrastructure. It motivates bottleneck and exit analysis but does not adjudicate a specific market, legal violation, or optimal remedy. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+
+<!-- manifest-source-reconciliation:end -->
+## Concentration, bottlenecks, and effective exit
+
+Distribution is shaped not only by wages and prices but by control of compute,
+cloud platforms, chips, models, app stores, data, and distribution channels.
+The OECD infrastructure competition analysis motivates a deployment-level
+concentration record without deciding whether any particular firm or practice
+violates law.
+
+Every consequential rollout should report supplier concentration, vertical
+dependencies, switching and data-egress costs, interface portability, access
+to alternative compute and models, common-mode infrastructure, bargaining
+power, and who can continue the service if a provider changes price, policy,
+capability, or availability. “Multiple vendors” is not effective exit when
+they depend on the same upstream accelerator, cloud, identity system, or
+proprietary format.
+
+Concentration changes agency. Workers, customers, public agencies, and smaller
+firms may be formally free to leave while losing learned workflows, data,
+accessibility adaptations, or essential services. The transition contract
+therefore treats portability, interoperability, migration rehearsal, service
+continuity, and a funded exit path as deployment costs. Lower unit price cannot
+launder an arrangement whose practical exit and contestability disappear.
 
 ## Summary
 

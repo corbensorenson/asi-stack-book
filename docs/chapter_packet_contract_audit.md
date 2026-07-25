@@ -11,6 +11,7 @@ This generated audit checks every active chapter against the architecture-refere
 | `system-boundaries-and-authority` | pass | bounded in insufficiency section | complete packet surface |
 | `failure-modes-of-ungoverned-intelligence` | pass | bounded in insufficiency section | complete packet surface |
 | `dangerous-capability-domains-and-misuse-uplift` | pass | explicit heading | complete packet surface |
+| `military-ai-autonomous-weapons-and-strategic-stability` | pass | bounded in insufficiency section | complete packet surface |
 | `evidence-states-and-claim-discipline` | pass | bounded in insufficiency section | complete packet surface |
 | `scalable-oversight-and-adversarial-ai-control` | pass | bounded in insufficiency section | complete packet surface |
 | `human-intent-as-a-formal-input` | pass | bounded in insufficiency section | complete packet surface |
@@ -27,6 +28,7 @@ This generated audit checks every active chapter against the architecture-refere
 | `security-kernel-and-digital-scifs` | pass | bounded in insufficiency section | complete packet surface |
 | `adversarial-machine-learning-and-model-attack-surface` | pass | bounded in insufficiency section | complete packet surface |
 | `privacy-data-rights-and-information-flow-governance` | pass | explicit heading | complete packet surface |
+| `confidential-and-verifiable-ai-computation` | pass | explicit heading | complete packet surface |
 | `model-weight-custody-and-hardware-roots-of-trust` | pass | bounded in insufficiency section | complete packet surface |
 | `open-weight-release-and-post-release-control` | pass | explicit heading | complete packet surface |
 | `ai-supply-chain-integrity-and-lifecycle-provenance` | pass | bounded in insufficiency section | complete packet surface |
@@ -46,6 +48,7 @@ This generated audit checks every active chapter against the architecture-refere
 | `spinoza-verification-and-proof-carrying-claims` | pass | explicit heading | complete packet surface |
 | `labor-os-and-typed-jobs` | pass | explicit heading | complete packet surface |
 | `human-ai-organizations-delegation-and-accountability` | pass | explicit heading | complete packet surface |
+| `human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty` | pass | explicit heading | complete packet surface |
 | `ai-deployment-transition-distribution-and-human-agency` | pass | bounded in insufficiency section | complete packet surface |
 | `artifact-graphs-audit-logs-and-replay` | pass | explicit heading | complete packet surface |
 | `runtime-adapters-tool-permissions-and-human-approval` | pass | bounded in insufficiency section | complete packet surface |
@@ -55,6 +58,7 @@ This generated audit checks every active chapter against the architecture-refere
 | `procedural-memory-and-cognitive-loop-closure` | pass | explicit heading | complete packet surface |
 | `routing-heads-and-specialist-cores` | pass | bounded in insufficiency section | complete packet surface |
 | `replaceable-cognitive-substrates-beyond-transformer-monoculture` | pass | bounded in insufficiency section | complete packet surface |
+| `relational-dimension-compilation-and-polyadic-cognition` | pass | bounded in insufficiency section | complete packet surface |
 | `governed-model-training-distributed-optimization-and-scaling` | pass | explicit heading | complete packet surface |
 | `learning-theory-generalization-and-scaling-science` | pass | bounded in insufficiency section | complete packet surface |
 | `readiness-gates-residual-escrow-and-quarantine` | pass | bounded in insufficiency section | complete packet surface |
@@ -87,6 +91,6 @@ This generated audit checks every active chapter against the architecture-refere
 | `living-book-methodology` | pass | bounded in insufficiency section | complete packet surface |
 | `open-research-agenda-and-bibliography-plan` | pass | bounded in insufficiency section | complete packet surface |
 
-Summary: 80 of 80 active chapters pass; 0 remain open.
+Summary: 84 of 84 active chapters pass; 0 remain open.
 
 Non-claims: this is a structural and bounded semantic audit, not proof of prose quality, source interpretation, empirical validity, formal adequacy, deployment, safety, or independent review.

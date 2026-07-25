@@ -34,6 +34,7 @@ architecture comparison exists.
 ## Book Chapters Supported
 
 - `replaceable-cognitive-substrates-beyond-transformer-monoculture`
+- `relational-dimension-compilation-and-polyadic-cognition`
 
 ## Claims To Add Or Update
 

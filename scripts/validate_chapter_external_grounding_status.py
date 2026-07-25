@@ -90,8 +90,11 @@ def main() -> None:
             errors.append(f"{chapter_id}: candidate backlog still open.")
         if status == "missing":
             errors.append(f"{chapter_id}: missing from external-SOTA audit.")
-        if not corben_ids:
-            errors.append(f"{chapter_id}: no Corben/local source mining queue is recorded.")
+        if not corben_ids and not external_ids:
+            errors.append(
+                f"{chapter_id}: neither an external grounding record nor a "
+                "Corben/local mining queue is recorded."
+            )
 
     expected_source_noted = len(rows)
     actual_source_noted = counts.get("source-noted", 0)

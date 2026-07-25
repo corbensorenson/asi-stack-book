@@ -1280,173 +1280,308 @@
             }
           ]
         },
-    {
-      "id": "dangerous-capability-domains-and-misuse-uplift",
-      "title": "Dangerous Capability Domains and Misuse Uplift",
-      "file": "chapters/dangerous-capability-domains-and-misuse-uplift.qmd",
-      "status": "conceptual",
-      "evidence_level": "argument",
-      "claim_label": "Design rationale",
-      "source_ids": [
-        "ext_model_evaluation_extreme_risks_2023",
-        "ext_openai_preparedness_framework_2025",
-        "ext_singapore_consensus_2026",
-        "ext_international_ai_safety_report_2026",
-        "ext_openai_worst_case_open_weight_risks_2025",
-        "ext_aisi_misuse_safeguards_safety_case_2026",
-        "ext_anthropic_responsible_scaling_policy_3_4_2026",
-        "ext_aisi_frontier_ai_trends_2025",
-        "benchmaxxing"
-      ],
-      "problem": "Capability-threshold policies require domain-specific evidence about whether a model can materially increase an actor's ability to cause harm, yet the stack has no owner for CBRN, offensive cyber, psychological manipulation, or the science of measuring model-caused uplift.",
-      "insufficient": "Knowledge quizzes, refusal rates, benchmark scores, one red team, or a capability label cannot identify real actor uplift. They omit baseline expertise, tool and scaffold access, multi-step completion, bottlenecks outside the model, elicitation quality, safeguards, substitution, uncertainty, and the danger created by the evaluation itself.",
-      "core_claim": "Dangerous-capability authority should be based on a versioned domain threat model and an uplift dossier that separates latent capability, elicited performance, propensity, safeguard bypass, actor uplift, and realized harm; preserves expertise, tools, assistance, attempts, uncertainty, and sensitive-detail boundaries; and routes only bounded findings into thresholds, release, monitoring, and resilience decisions.",
-      "mechanism": [
-        "Decompose each domain into actor, objective, access, prerequisites, bottlenecks, model contribution, external controls, consequences, and safe evaluation envelope.",
-        "Use controlled uplift studies that compare matched actors with and without bounded model assistance while stratifying prior expertise and preserving all attempts.",
-        "Triangulate knowledge, workflow, long-horizon, expert-probing, safeguard-bypass, and trend evaluations without collapsing them into one score.",
-        "Require positive controls, elicitation audits, evaluator sensitivity, independent review, uncertainty, and explicit ceilings on negative inference.",
-        "Bind measured results to threshold, custody, release, incident, and societal-resilience consumers through a least-authority dossier."
-      ],
-      "interfaces": [
-        "Capability Thresholds owns the if-then commitment; this chapter owns the domain evidence and uplift semantics that may trigger it.",
-        "Adversarial Evaluation owns evaluation gaming and sandbagging; this chapter owns domain threat validity and actor-level uplift.",
-        "Open-Weight Release owns irreversible distribution; this chapter supplies fine-tuning and accessible-frontier risk evidence.",
-        "Societal Resilience owns downstream defense and recovery; this chapter describes the threat and measured leverage it must absorb.",
-        "Safety Cases own structured assurance; this chapter supplies bounded domain claims, uncertainties, and defeaters."
-      ],
-      "invariants": [
-        "Capability, propensity, safeguard bypass, actor uplift, and realized harm remain distinct quantities.",
-        "Every result is bound to an exact model, checkpoint, scaffold, tools, access level, actor cohort, domain, date, and evaluator.",
-        "A negative result is interpretable only after positive-control, elicitation, sensitivity, and task-validity gates pass.",
-        "No evaluation publishes reusable harmful procedures, credentials, targets, or operational artifacts.",
-        "Threshold consumers receive uncertainty, residuals, expiry, and the maximum permitted inference."
-      ],
-      "failure_modes": [
-        "knowledge benchmark substituted for operational uplift",
-        "refusal behavior substituted for latent capability",
-        "expertise imbalance between arms",
-        "weak elicitation or scaffold",
-        "short task extrapolated to long-horizon operation",
-        "evaluation leakage or hazardous artifact creation",
-        "domain bottleneck omitted",
-        "fine-tuning and tool access omitted",
-        "sensitive negative result overpublished",
-        "stale comparator frontier",
-        "small null result treated as absence of capability",
-        "provider self-evaluation treated as independent reproduction"
-      ],
-      "minimal_implementation": "Create a public-safe threat-model and uplift-dossier format, then run a harmless analogue study with stratified participants or competent agents, matched assistance, known-positive and known-negative controls, blinded scoring, complete attempt logs, and no real hazardous materials or targets. Demonstrate that the instrument can distinguish a real assistance effect before using a null result.",
-      "beyond_state_of_art": "The mature operational contract makes dangerous-capability evaluation a continuously renewed, domain-specific causal measurement service. It links controlled uplift, long-horizon task completion, safeguard bypass, accessible-frontier comparison, real incident indicators, and independent expert review while minimizing information hazard. It can update threshold and release decisions without claiming that a benchmark score is harm, that a refusal is safety, or that an unobserved capability is absent.",
-      "codex_tests": [
-        "Threat-model completeness mutation test",
-        "Capability-versus-uplift type-confusion rejection test",
-        "Positive-control and elicitation competence gate",
-        "Sensitive-output nonpublication control",
-        "No-support-promotion control"
-      ],
-      "source_queue": {
-        "primary": [
-          "ext_singapore_consensus_2026",
-          "ext_international_ai_safety_report_2026",
-          "ext_model_evaluation_extreme_risks_2023",
-          "ext_aisi_frontier_ai_trends_2025"
-        ],
-        "supporting": [
-          "ext_openai_preparedness_framework_2025",
-          "ext_openai_worst_case_open_weight_risks_2025",
-          "ext_aisi_misuse_safeguards_safety_case_2026",
-          "ext_anthropic_responsible_scaling_policy_3_4_2026",
-          "benchmaxxing"
-        ],
-        "variants": [],
-        "connector_or_recovery": [],
-        "handoff_or_recovery_notes": []
-      },
-      "claim_source_mappings": [
         {
-          "source_id": "ext_singapore_consensus_2026",
-          "mapped_support": "Supplies the current four-pillar research taxonomy and explicitly separates dangerous-capability and propensity assessment across CBRN, cyber, manipulation, autonomy, and AI R&D.",
-          "limits": "Consensus research agenda only; no safeguard, threshold, or ASI Stack mechanism is validated.",
-          "passage_review_state": "reviewed_source_note",
-          "passage_refs": ["sources/source_notes/ext_singapore_consensus_2026.md"],
-          "passage_review_note": "Reviewed for domain taxonomy, capability/propensity distinction, open-release and resilience interfaces, and non-claims."
+          "id": "dangerous-capability-domains-and-misuse-uplift",
+          "title": "Dangerous Capability Domains and Misuse Uplift",
+          "file": "chapters/dangerous-capability-domains-and-misuse-uplift.qmd",
+          "status": "conceptual",
+          "evidence_level": "argument",
+          "claim_label": "Design rationale",
+          "source_ids": [
+            "ext_model_evaluation_extreme_risks_2023",
+            "ext_openai_preparedness_framework_2025",
+            "ext_singapore_consensus_2026",
+            "ext_international_ai_safety_report_2026",
+            "ext_openai_worst_case_open_weight_risks_2025",
+            "ext_aisi_misuse_safeguards_safety_case_2026",
+            "ext_anthropic_responsible_scaling_policy_3_4_2026",
+            "ext_aisi_frontier_ai_trends_2025",
+            "benchmaxxing"
+          ],
+          "problem": "Capability-threshold policies require domain-specific evidence about whether a model can materially increase an actor's ability to cause harm, yet the stack has no owner for CBRN, offensive cyber, psychological manipulation, or the science of measuring model-caused uplift.",
+          "insufficient": "Knowledge quizzes, refusal rates, benchmark scores, one red team, or a capability label cannot identify real actor uplift. They omit baseline expertise, tool and scaffold access, multi-step completion, bottlenecks outside the model, elicitation quality, safeguards, substitution, uncertainty, and the danger created by the evaluation itself.",
+          "core_claim": "Dangerous-capability authority should be based on a versioned domain threat model and an uplift dossier that separates latent capability, elicited performance, propensity, safeguard bypass, actor uplift, and realized harm; preserves expertise, tools, assistance, attempts, uncertainty, and sensitive-detail boundaries; and routes only bounded findings into thresholds, release, monitoring, and resilience decisions.",
+          "mechanism": [
+            "Decompose each domain into actor, objective, access, prerequisites, bottlenecks, model contribution, external controls, consequences, and safe evaluation envelope.",
+            "Use controlled uplift studies that compare matched actors with and without bounded model assistance while stratifying prior expertise and preserving all attempts.",
+            "Triangulate knowledge, workflow, long-horizon, expert-probing, safeguard-bypass, and trend evaluations without collapsing them into one score.",
+            "Require positive controls, elicitation audits, evaluator sensitivity, independent review, uncertainty, and explicit ceilings on negative inference.",
+            "Bind measured results to threshold, custody, release, incident, and societal-resilience consumers through a least-authority dossier."
+          ],
+          "interfaces": [
+            "Capability Thresholds owns the if-then commitment; this chapter owns the domain evidence and uplift semantics that may trigger it.",
+            "Adversarial Evaluation owns evaluation gaming and sandbagging; this chapter owns domain threat validity and actor-level uplift.",
+            "Open-Weight Release owns irreversible distribution; this chapter supplies fine-tuning and accessible-frontier risk evidence.",
+            "Societal Resilience owns downstream defense and recovery; this chapter describes the threat and measured leverage it must absorb.",
+            "Safety Cases own structured assurance; this chapter supplies bounded domain claims, uncertainties, and defeaters."
+          ],
+          "invariants": [
+            "Capability, propensity, safeguard bypass, actor uplift, and realized harm remain distinct quantities.",
+            "Every result is bound to an exact model, checkpoint, scaffold, tools, access level, actor cohort, domain, date, and evaluator.",
+            "A negative result is interpretable only after positive-control, elicitation, sensitivity, and task-validity gates pass.",
+            "No evaluation publishes reusable harmful procedures, credentials, targets, or operational artifacts.",
+            "Threshold consumers receive uncertainty, residuals, expiry, and the maximum permitted inference."
+          ],
+          "failure_modes": [
+            "knowledge benchmark substituted for operational uplift",
+            "refusal behavior substituted for latent capability",
+            "expertise imbalance between arms",
+            "weak elicitation or scaffold",
+            "short task extrapolated to long-horizon operation",
+            "evaluation leakage or hazardous artifact creation",
+            "domain bottleneck omitted",
+            "fine-tuning and tool access omitted",
+            "sensitive negative result overpublished",
+            "stale comparator frontier",
+            "small null result treated as absence of capability",
+            "provider self-evaluation treated as independent reproduction"
+          ],
+          "minimal_implementation": "Create a public-safe threat-model and uplift-dossier format, then run a harmless analogue study with stratified participants or competent agents, matched assistance, known-positive and known-negative controls, blinded scoring, complete attempt logs, and no real hazardous materials or targets. Demonstrate that the instrument can distinguish a real assistance effect before using a null result.",
+          "beyond_state_of_art": "The mature operational contract makes dangerous-capability evaluation a continuously renewed, domain-specific causal measurement service. It links controlled uplift, long-horizon task completion, safeguard bypass, accessible-frontier comparison, real incident indicators, and independent expert review while minimizing information hazard. It can update threshold and release decisions without claiming that a benchmark score is harm, that a refusal is safety, or that an unobserved capability is absent.",
+          "codex_tests": [
+            "Threat-model completeness mutation test",
+            "Capability-versus-uplift type-confusion rejection test",
+            "Positive-control and elicitation competence gate",
+            "Sensitive-output nonpublication control",
+            "No-support-promotion control"
+          ],
+          "source_queue": {
+            "primary": [
+              "ext_singapore_consensus_2026",
+              "ext_international_ai_safety_report_2026",
+              "ext_model_evaluation_extreme_risks_2023",
+              "ext_aisi_frontier_ai_trends_2025"
+            ],
+            "supporting": [
+              "ext_openai_preparedness_framework_2025",
+              "ext_openai_worst_case_open_weight_risks_2025",
+              "ext_aisi_misuse_safeguards_safety_case_2026",
+              "ext_anthropic_responsible_scaling_policy_3_4_2026",
+              "benchmaxxing"
+            ],
+            "variants": [],
+            "connector_or_recovery": [],
+            "handoff_or_recovery_notes": []
+          },
+          "claim_source_mappings": [
+            {
+              "source_id": "ext_singapore_consensus_2026",
+              "mapped_support": "Supplies the current four-pillar research taxonomy and explicitly separates dangerous-capability and propensity assessment across CBRN, cyber, manipulation, autonomy, and AI R&D.",
+              "limits": "Consensus research agenda only; no safeguard, threshold, or ASI Stack mechanism is validated.",
+              "passage_review_state": "reviewed_source_note",
+              "passage_refs": [
+                "sources/source_notes/ext_singapore_consensus_2026.md"
+              ],
+              "passage_review_note": "Reviewed for domain taxonomy, capability/propensity distinction, open-release and resilience interfaces, and non-claims."
+            },
+            {
+              "source_id": "ext_international_ai_safety_report_2026",
+              "mapped_support": "Provides a current international synthesis of dangerous-capability evidence, safeguard limitations, open-weight risk, and resilience needs.",
+              "limits": "Literature synthesis only; underlying studies are not locally reproduced.",
+              "passage_review_state": "reviewed_source_note",
+              "passage_refs": [
+                "sources/source_notes/ext_international_ai_safety_report_2026.md"
+              ],
+              "passage_review_note": "Reviewed for bounded risk taxonomy, evidence uncertainty, and open-weight/resilience handoffs."
+            },
+            {
+              "source_id": "ext_model_evaluation_extreme_risks_2023",
+              "mapped_support": "Frames dangerous-capability and alignment evaluations as inputs to deployment and security decisions.",
+              "limits": "Conceptual evaluation framework; not a local result or proof of complete coverage.",
+              "passage_review_state": "reviewed_source_note",
+              "passage_refs": [
+                "sources/source_notes/ext_model_evaluation_extreme_risks_2023.md"
+              ],
+              "passage_review_note": "Reviewed existing source note for evaluation-to-governance linkage and limits."
+            },
+            {
+              "source_id": "ext_openai_worst_case_open_weight_risks_2025",
+              "mapped_support": "Provides a concrete malicious-fine-tuning and accessible-frontier comparison for biology and cyber release evaluation.",
+              "limits": "Provider-authored, model- and protocol-specific results; no future or general safety conclusion.",
+              "passage_review_state": "reviewed_source_note",
+              "passage_refs": [
+                "sources/source_notes/ext_openai_worst_case_open_weight_risks_2025.md"
+              ],
+              "passage_review_note": "Reviewed for worst-case elicitation design and exact inference ceiling."
+            },
+            {
+              "source_id": "ext_aisi_misuse_safeguards_safety_case_2026",
+              "mapped_support": "Connects red-team evidence, attacker effort, uplift modeling, monitoring, and a misuse safety case.",
+              "limits": "Worked methodology, not proof that real safeguards reduce misuse to a specified level.",
+              "passage_review_state": "reviewed_source_note",
+              "passage_refs": [
+                "sources/source_notes/ext_aisi_misuse_safeguards_safety_case_2026.md"
+              ],
+              "passage_review_note": "Reviewed for decision-relevant uplift modeling and uncertainty boundaries."
+            },
+            {
+              "source_id": "ext_aisi_frontier_ai_trends_2025",
+              "mapped_support": "Supplies repeated domain-specific frontier evaluation context across cyber, chemistry/biology, autonomy, and societal impacts.",
+              "limits": "Institute-reported bounded trends; not a complete threat census or local reproduction.",
+              "passage_review_state": "reviewed_source_note",
+              "passage_refs": [
+                "sources/source_notes/ext_aisi_frontier_ai_trends_2025.md"
+              ],
+              "passage_review_note": "Reviewed for temporal renewal, domain separation, and task-horizon limits."
+            },
+            {
+              "source_id": "ext_openai_preparedness_framework_2025",
+              "mapped_support": "Provides a threshold-linked provider governance comparator for biological/chemical, cyber, and AI self-improvement risks.",
+              "limits": "Official policy documentation, not independent proof of evaluation or safeguard effectiveness.",
+              "passage_review_state": "reviewed_source_note",
+              "passage_refs": [
+                "sources/source_notes/ext_openai_preparedness_framework_2025.md"
+              ],
+              "passage_review_note": "Reviewed existing source note for threshold/commitment interface."
+            },
+            {
+              "source_id": "ext_anthropic_responsible_scaling_policy_3_4_2026",
+              "mapped_support": "Provides a current versioned capability-threshold and safeguard-policy comparator across CBRN and automated R&D.",
+              "limits": "Provider policy and self-description; no independent effectiveness result.",
+              "passage_review_state": "reviewed_source_note",
+              "passage_refs": [
+                "sources/source_notes/ext_anthropic_responsible_scaling_policy_3_4_2026.md"
+              ],
+              "passage_review_note": "Reviewed for mutable threshold governance, report requirements, and independence limits."
+            },
+            {
+              "source_id": "benchmaxxing",
+              "mapped_support": "Supplies Corben's benchmark-ratchet lineage for preserving baseline identity, regressions, residuals, and anti-Goodhart pressure when capability evaluations renew.",
+              "limits": "Author-side design lineage only; it does not establish dangerous capability, evaluator competence, safeguard efficacy, actor uplift, or realized harm.",
+              "passage_review_state": "reviewed_source_note",
+              "passage_refs": [
+                "sources/source_notes/benchmaxxing.md"
+              ],
+              "passage_review_note": "Reviewed for benchmark-ratchet, regression-retention, residual, and renewal concepts without inheriting empirical claims."
+            }
+          ],
+          "proof_targets": [
+            {
+              "tag": "lean:dangerous-capability-domains-and-misuse-uplift.admission_boundary",
+              "module": "AsiStackProofs.NoDeferralAdmission",
+              "target": "A finite dangerous-capability dossier may hand off only when model, threat, cohort, access, evaluator, uncertainty, expiry, and maximum inference are present; no theorem establishes dangerous capability or safety.",
+              "status": "planned"
+            }
+          ],
+          "lean_module": "AsiStackProofs.NoDeferralAdmission"
         },
         {
-          "source_id": "ext_international_ai_safety_report_2026",
-          "mapped_support": "Provides a current international synthesis of dangerous-capability evidence, safeguard limitations, open-weight risk, and resilience needs.",
-          "limits": "Literature synthesis only; underlying studies are not locally reproduced.",
-          "passage_review_state": "reviewed_source_note",
-          "passage_refs": ["sources/source_notes/ext_international_ai_safety_report_2026.md"],
-          "passage_review_note": "Reviewed for bounded risk taxonomy, evidence uncertainty, and open-weight/resilience handoffs."
+          "id": "military-ai-autonomous-weapons-and-strategic-stability",
+          "title": "Military AI, Autonomous Weapons, and Strategic Stability",
+          "file": "chapters/military-ai-autonomous-weapons-and-strategic-stability.qmd",
+          "status": "conceptual",
+          "evidence_level": "argument",
+          "claim_label": "Design rationale",
+          "source_ids": [
+            "ext_icrc_autonomous_weapons_ihl_2025",
+            "ext_sipri_military_ai_nuclear_escalation_2025",
+            "ext_singapore_consensus_2026",
+            "ext_international_ai_safety_report_2026"
+          ],
+          "source_queue": {
+            "primary": [
+              "ext_icrc_autonomous_weapons_ihl_2025",
+              "ext_sipri_military_ai_nuclear_escalation_2025"
+            ],
+            "supporting": [
+              "ext_singapore_consensus_2026",
+              "ext_international_ai_safety_report_2026"
+            ],
+            "variants": [],
+            "connector_or_recovery": [],
+            "handoff_or_recovery_notes": []
+          },
+          "problem": "Military AI can change sensing, targeting, command timing, warning interpretation, autonomous engagement, and adversary expectations inside already dangerous strategic systems. A model that is locally accurate can still increase catastrophe risk through compression of decision time, false confidence, interaction effects, proliferation, or loss of context-specific human judgment.",
+          "insufficient": "A generic dangerous-capability or misuse chapter treats risk mainly as actor uplift. It does not own command authority, target and effect constraints, legal review, false-alarm propagation, adversary adaptation, crisis instability, nuclear entanglement, or the difference between component reliability and strategic stability.",
+          "core_claim": "Military AI should be governed as a command-and-interaction system: deployment requires a declared mission and legal boundary, preserved accountable human authority, bounded sensing and action, adversarial and escalation analysis, fail-safe behavior, auditable provenance, and prospective off-ramps; component benchmark gains alone establish neither lawful use nor strategic safety.",
+          "claim_source_mappings": [
+            {
+              "source_id": "ext_icrc_autonomous_weapons_ihl_2025",
+              "mapped_support": "Supplies the ICRC's bounded legal and policy analysis of autonomous weapon systems, international humanitarian law, and context-specific human judgment.",
+              "limits": "Authoritative for the ICRC position only; it is not a universally settled legal interpretation, engineering result, or authorization to build or deploy a weapon.",
+              "passage_refs": [
+                "sources/source_notes/ext_icrc_autonomous_weapons_ihl_2025.md"
+              ],
+              "passage_review_note": "Reviewed for human-judgment, legal-boundary, and non-authorization constraints.",
+              "passage_review_state": "reviewed_source_note"
+            },
+            {
+              "source_id": "ext_sipri_military_ai_nuclear_escalation_2025",
+              "mapped_support": "Maps pathways by which military AI may affect information, decisions, interaction, crisis timing, and nuclear-escalation risk.",
+              "limits": "Strategic analysis only; it does not establish the net effect of a particular system, doctrine, or policy.",
+              "passage_refs": [
+                "sources/source_notes/ext_sipri_military_ai_nuclear_escalation_2025.md"
+              ],
+              "passage_review_note": "Reviewed for interaction-level escalation pathways and scenario dependence.",
+              "passage_review_state": "reviewed_source_note"
+            },
+            {
+              "source_id": "ext_singapore_consensus_2026",
+              "mapped_support": "Provides a current international research taxonomy for dangerous capabilities, safeguards, monitoring, and resilience relevant to military-system boundaries.",
+              "limits": "Consensus research agenda only; no military safeguard, strategic policy, or book mechanism is validated.",
+              "passage_refs": [
+                "sources/source_notes/ext_singapore_consensus_2026.md"
+              ],
+              "passage_review_note": "Reviewed for current risk-assessment and control vocabulary, with military claims kept bounded.",
+              "passage_review_state": "reviewed_source_note"
+            },
+            {
+              "source_id": "ext_international_ai_safety_report_2026",
+              "mapped_support": "Supplies current synthesis of general-purpose AI capability, misuse, safeguard, monitoring, and societal-resilience evidence.",
+              "limits": "Literature synthesis only; underlying studies and any military application have not been reproduced locally.",
+              "passage_refs": [
+                "sources/source_notes/ext_international_ai_safety_report_2026.md"
+              ],
+              "passage_review_note": "Reviewed for bounded risk context and uncertainty, not operational or strategic validation.",
+              "passage_review_state": "reviewed_source_note"
+            }
+          ],
+          "mechanism": [
+            "Classify every use by mission, decision role, affected population, operating environment, command chain, reversibility, and escalation sensitivity.",
+            "Separate decision support, defensive automation, targeting support, and autonomous force application instead of assigning them one autonomy score.",
+            "Bind authorities, target and effect constraints, confidence and abstention rules, communication-loss behavior, and human confirmation requirements before operation.",
+            "Model interaction pathways including false alarms, compressed timelines, adversary spoofing, automation bias, proliferation, entanglement, reciprocal deployment, and crisis escalation.",
+            "Use red teams, safe simulations, doctrine variants, structured legal review, and fail-safe exercises without publishing operationally enabling details.",
+            "Require traceable sensor-to-decision provenance, post-event reconstruction, incident reporting, remedy, suspension authority, and decommissioning."
+          ],
+          "interfaces": [
+            "Dangerous Capabilities and Misuse Uplift for actor-level capability change and information-hazard discipline",
+            "Human Factors and Meaningful Control for attention, authority, skill, workload, and intervention evidence",
+            "Security Kernel and Model Custody for command authentication, provenance, tamper evidence, and recovery",
+            "Institutions and Safety Cases for legal review, treaty and norm interfaces, public legitimacy, and assurance",
+            "Embodied Agency for physical actuation envelopes and real-time fail-safe control"
+          ],
+          "invariants": [
+            "No system may infer its own legal authority or widen its mission, target class, geography, duration, or effect envelope.",
+            "Meaningful human judgment must be demonstrated for the actual decision context rather than asserted from interface presence.",
+            "Abstention, communication loss, sensor conflict, and integrity failure resolve to a prospectively declared safe posture.",
+            "Evidence about component accuracy or latency may not be promoted into a claim of lawful use, escalation control, or strategic stability.",
+            "Operationally sensitive detail is minimized while the public claim boundary and accountability structure remain auditable."
+          ],
+          "failure_modes": [
+            "Automation bias converts an advisory system into de facto decision authority.",
+            "Decision-time compression removes deliberation, verification, or diplomatic off-ramps.",
+            "Spoofed, ambiguous, or correlated sensors produce confident false alarms.",
+            "Optimization for tactical success externalizes civilian harm, reciprocal escalation, or long-run instability.",
+            "Human-in-the-loop language masks ceremonial approval without time, information, competence, or power to intervene.",
+            "Proliferation and adversary adaptation invalidate a safety case built on unilateral assumptions.",
+            "Classified evidence prevents external accountability while public claims overstate assurance."
+          ],
+          "minimal_implementation": "A non-operational governance prototype with a mission and authority register, legal-review record, decision-role taxonomy, sensor-to-recommendation provenance, abstention and safe-posture rules, escalation-path scenario matrix, accountable approval log, incident schema, and suspension/decommission procedure tested only on synthetic or publicly safe scenarios.",
+          "beyond_state_of_art": "A credible advance would link technical behavior, operator performance, command doctrine, adversary response, legal constraints, proliferation, and crisis dynamics in one falsifiable safety case, then show across independently designed safe simulations that the governed system preserves off-ramps and lowers bounded decision risk relative to human-only and automation baselines. The mature target architecture would preserve accountable suspension, audit, public claim boundaries, and renewed review as assumptions change, without operationalizing sensitive detail.",
+          "codex_tests": [
+            "Layer claim falsification test"
+          ],
+          "lean_module": "AsiStackProofs.NoDeferralAdmission",
+          "proof_targets": [
+            {
+              "tag": "lean:military-ai-autonomous-weapons-and-strategic-stability.admission_boundary",
+              "module": "AsiStackProofs.NoDeferralAdmission",
+              "target": "A finite military-AI interaction record may hand off only when mission, authority, human judgment, effect bounds, escalation assumptions, safe posture, and residuals are explicit; no theorem authorizes a weapon or proves lawful use or strategic stability.",
+              "status": "planned"
+            }
+          ]
         },
-        {
-          "source_id": "ext_model_evaluation_extreme_risks_2023",
-          "mapped_support": "Frames dangerous-capability and alignment evaluations as inputs to deployment and security decisions.",
-          "limits": "Conceptual evaluation framework; not a local result or proof of complete coverage.",
-          "passage_review_state": "reviewed_source_note",
-          "passage_refs": ["sources/source_notes/ext_model_evaluation_extreme_risks_2023.md"],
-          "passage_review_note": "Reviewed existing source note for evaluation-to-governance linkage and limits."
-        },
-        {
-          "source_id": "ext_openai_worst_case_open_weight_risks_2025",
-          "mapped_support": "Provides a concrete malicious-fine-tuning and accessible-frontier comparison for biology and cyber release evaluation.",
-          "limits": "Provider-authored, model- and protocol-specific results; no future or general safety conclusion.",
-          "passage_review_state": "reviewed_source_note",
-          "passage_refs": ["sources/source_notes/ext_openai_worst_case_open_weight_risks_2025.md"],
-          "passage_review_note": "Reviewed for worst-case elicitation design and exact inference ceiling."
-        },
-        {
-          "source_id": "ext_aisi_misuse_safeguards_safety_case_2026",
-          "mapped_support": "Connects red-team evidence, attacker effort, uplift modeling, monitoring, and a misuse safety case.",
-          "limits": "Worked methodology, not proof that real safeguards reduce misuse to a specified level.",
-          "passage_review_state": "reviewed_source_note",
-          "passage_refs": ["sources/source_notes/ext_aisi_misuse_safeguards_safety_case_2026.md"],
-          "passage_review_note": "Reviewed for decision-relevant uplift modeling and uncertainty boundaries."
-        },
-        {
-          "source_id": "ext_aisi_frontier_ai_trends_2025",
-          "mapped_support": "Supplies repeated domain-specific frontier evaluation context across cyber, chemistry/biology, autonomy, and societal impacts.",
-          "limits": "Institute-reported bounded trends; not a complete threat census or local reproduction.",
-          "passage_review_state": "reviewed_source_note",
-          "passage_refs": ["sources/source_notes/ext_aisi_frontier_ai_trends_2025.md"],
-          "passage_review_note": "Reviewed for temporal renewal, domain separation, and task-horizon limits."
-        },
-        {
-          "source_id": "ext_openai_preparedness_framework_2025",
-          "mapped_support": "Provides a threshold-linked provider governance comparator for biological/chemical, cyber, and AI self-improvement risks.",
-          "limits": "Official policy documentation, not independent proof of evaluation or safeguard effectiveness.",
-          "passage_review_state": "reviewed_source_note",
-          "passage_refs": ["sources/source_notes/ext_openai_preparedness_framework_2025.md"],
-          "passage_review_note": "Reviewed existing source note for threshold/commitment interface."
-        },
-        {
-          "source_id": "ext_anthropic_responsible_scaling_policy_3_4_2026",
-          "mapped_support": "Provides a current versioned capability-threshold and safeguard-policy comparator across CBRN and automated R&D.",
-          "limits": "Provider policy and self-description; no independent effectiveness result.",
-          "passage_review_state": "reviewed_source_note",
-          "passage_refs": ["sources/source_notes/ext_anthropic_responsible_scaling_policy_3_4_2026.md"],
-          "passage_review_note": "Reviewed for mutable threshold governance, report requirements, and independence limits."
-        },
-        {
-          "source_id": "benchmaxxing",
-          "mapped_support": "Supplies Corben's benchmark-ratchet lineage for preserving baseline identity, regressions, residuals, and anti-Goodhart pressure when capability evaluations renew.",
-          "limits": "Author-side design lineage only; it does not establish dangerous capability, evaluator competence, safeguard efficacy, actor uplift, or realized harm.",
-          "passage_review_state": "reviewed_source_note",
-          "passage_refs": ["sources/source_notes/benchmaxxing.md"],
-          "passage_review_note": "Reviewed for benchmark-ratchet, regression-retention, residual, and renewal concepts without inheriting empirical claims."
-        }
-      ],
-      "proof_targets": [
-        {
-          "tag": "lean:dangerous-capability-domains-and-misuse-uplift.admission_boundary",
-          "module": "AsiStackProofs.NoDeferralAdmission",
-          "target": "A finite dangerous-capability dossier may hand off only when model, threat, cohort, access, evaluator, uncertainty, expiry, and maximum inference are present; no theorem establishes dangerous capability or safety.",
-          "status": "planned"
-        }
-      ],
-      "lean_module": "AsiStackProofs.NoDeferralAdmission"
-    },
         {
           "id": "evidence-states-and-claim-discipline",
           "title": "Evidence States and Claim Discipline",
@@ -2045,7 +2180,8 @@
             "talos",
             "ext_goal_oriented_requirements_engineering_2001",
             "ext_cooperative_inverse_rl_2016",
-            "ext_deep_rl_human_preferences_2017"
+            "ext_deep_rl_human_preferences_2017",
+            "ext_cultural_alignment_llms_2024"
           ],
           "source_queue": {
             "primary": [
@@ -2556,7 +2692,9 @@
             "talos",
             "ext_conversational_persuasion_gpt4_2025",
             "ext_anthropic_model_persuasiveness_2024",
-            "ext_commercial_persuasion_ai_2026"
+            "ext_commercial_persuasion_ai_2026",
+            "ext_cultural_alignment_llms_2024",
+            "ext_multilingual_evaluation_state_2026"
           ],
           "problem": "An AI system can preserve internal evidence discipline and still change beliefs, choices, and institutions through selective framing, personalization, synthetic identity, repetition, and amplification. The stack therefore needs an owner for the complete outbound communication transaction, including correction after a message escapes its original channel.",
           "insufficient": "Truthfulness checks, content filters, generic human-factors guidance, and red-team prompts inspect fragments of influence. They do not bind the claim, evidence ceiling, audience, vulnerability, purpose, personalization inputs, persuasive technique, channel, amplification, observed effect, correction, retraction, and remedy into one governed lifecycle.",
@@ -2877,7 +3015,9 @@
               "source_id": "ext_legal_alignment_2026",
               "mapped_support": "Frames law-following AI as a technical and institutional alignment problem involving rule identification, interpretation, conflicts, jurisdiction, and legitimate update authority.",
               "limits": "A legal-alignment research agenda does not identify the governing law, settle contested interpretation, establish legitimacy, or prove compliant model behavior.",
-              "passage_refs": ["sources/source_notes/ext_legal_alignment_2026.md"],
+              "passage_refs": [
+                "sources/source_notes/ext_legal_alignment_2026.md"
+              ],
               "passage_review_note": "Reviewed for the boundary between constitutional behavior training and versioned legal authority.",
               "passage_review_state": "reviewed"
             },
@@ -3805,7 +3945,10 @@
             "ext_council_europe_ai_convention_2024",
             "ext_flexible_hardware_enabled_guarantees_2025",
             "ext_legal_alignment_2026",
-            "ext_eu_article_50_transparency_guidelines_2026"
+            "ext_eu_article_50_transparency_guidelines_2026",
+            "ext_oecd_ai_infrastructure_competition_2025",
+            "ext_eu_ai_civil_liability_2025",
+            "ext_icrc_autonomous_weapons_ihl_2025"
           ],
           "problem": "ASI-scale systems cross organizations, jurisdictions, borders, public services, and affected populations. Technical permissions and private governance cannot determine who has public authority, whose participation counts, how conflicting rules are resolved, or how international commitments are verified and amended.",
           "insufficient": "A compliance checklist, technical standard, treaty text, risk framework, or corporate safety policy can name duties without establishing jurisdiction, representative input, assessor independence, enforcement, remedy, capacity, legitimacy, or observed effectiveness. Architecture cannot manufacture democratic consent.",
@@ -3874,7 +4017,9 @@
               "source_id": "ext_flexible_hardware_enabled_guarantees_2025",
               "mapped_support": "Supplies a hardware-enabled-guarantee research agenda for making compute-governance claims more inspectable than voluntary reporting alone.",
               "limits": "The proposal does not establish complete coverage, secure implementation, legitimate update authority, or resistance to hardware and governance abuse.",
-              "passage_refs": ["sources/source_notes/ext_flexible_hardware_enabled_guarantees_2025.md"],
+              "passage_refs": [
+                "sources/source_notes/ext_flexible_hardware_enabled_guarantees_2025.md"
+              ],
               "passage_review_note": "Reviewed as a bounded institutional and hardware-governance comparator.",
               "passage_review_state": "reviewed"
             },
@@ -3882,7 +4027,9 @@
               "source_id": "ext_legal_alignment_2026",
               "mapped_support": "Identifies law-following AI as a coordination problem across jurisdictions, interpretations, exceptions, institutions, and technical systems.",
               "limits": "Does not supply a universally legitimate legal corpus, interpretation engine, compliance proof, or public mandate.",
-              "passage_refs": ["sources/source_notes/ext_legal_alignment_2026.md"],
+              "passage_refs": [
+                "sources/source_notes/ext_legal_alignment_2026.md"
+              ],
               "passage_review_note": "Reviewed for institutional ownership of jurisdiction, interpretation, dispute, and revision.",
               "passage_review_state": "reviewed"
             },
@@ -3890,7 +4037,9 @@
               "source_id": "ext_eu_article_50_transparency_guidelines_2026",
               "mapped_support": "Provides a current regulatory comparator for transparency duties around AI-generated and manipulated content.",
               "limits": "Guidance is jurisdiction- and obligation-specific; transparency compliance alone does not establish safety, authenticity, legitimacy, or effective enforcement.",
-              "passage_refs": ["sources/source_notes/ext_eu_article_50_transparency_guidelines_2026.md"],
+              "passage_refs": [
+                "sources/source_notes/ext_eu_article_50_transparency_guidelines_2026.md"
+              ],
               "passage_review_note": "Reviewed for the distinction among law, technical conformance, enforcement, and observed public effect.",
               "passage_review_state": "reviewed"
             },
@@ -3925,133 +4074,143 @@
           ],
           "lean_module": "AsiStackProofs.NoDeferralAdmission"
         },
-    {
-      "id": "societal-resilience-and-misuse-defense",
+        {
+          "id": "societal-resilience-and-misuse-defense",
           "title": "Societal Resilience and Misuse Defense",
           "file": "chapters/societal-resilience-and-misuse-defense.qmd",
           "status": "conceptual",
           "evidence_level": "argument",
-      "claim_label": "Design rationale",
-      "source_ids": [
-        "ext_nist_incident_response_2025",
-        "ext_singapore_consensus_2026",
-        "ext_international_ai_safety_report_2026",
-        "ext_aisi_misuse_safeguards_safety_case_2026",
-        "talos"
-      ],
-      "problem": "Model safeguards and internal incident command cannot by themselves protect people, institutions, and critical services when prevention fails, misuse diffuses across platforms, or harms exploit social and infrastructural vulnerabilities.",
-      "insufficient": "A classifier, terms of service, model refusal, takedown queue, or company-local incident process sees only one control point. Fraud, sexual abuse, cyber campaigns, synthetic media, manipulation, and vulnerable-user harms cross organizations, jurisdictions, languages, identities, and recovery systems.",
-      "core_claim": "Societal misuse defense should be operated as a domain-specific resist-absorb-recover-adapt network with shared incident identity, lawful minimal telemetry, harmed-party routes, cross-organization escalation, defensive service levels, evidence-preserving response, correction, and residual ownership; prevention metrics alone establish neither resilience nor acceptable harm.",
-      "mechanism": [
-        "Maintain domain playbooks for fraud and impersonation, child and image-based abuse, cyber misuse, biological/chemical misuse, manipulation, and vulnerable-user harms.",
-        "Define shared incident identifiers, severity, evidence minimums, privacy boundaries, escalation contacts, and status transitions across participating organizations.",
-        "Layer prevention, friction, detection, rapid patching, victim support, correction, recovery, and adaptation instead of depending on one classifier.",
-        "Measure defense-favoring capability by time-to-detect, time-to-contain, prevented and recovered harm, false intervention, coverage, accessibility, and total burden.",
-        "Exercise cross-organization scenarios and publish public-safe lessons while protecting victims and withholding reusable attack detail."
-      ],
-      "interfaces": [
-        "Dangerous Capability Domains supplies threat and uplift evidence; this chapter turns it into external defense and recovery requirements.",
-        "Governed Operations owns the stack operator's incident command; this chapter owns multi-organization and public resilience.",
-        "Institutions owns mandate, jurisdiction, and legitimacy; this chapter owns operational cooperation and harmed-party routes.",
-        "Content Authenticity owns output provenance and disclosure; this chapter owns the response when deceptive media circulates.",
-        "Privacy/Data Rights constrains telemetry, evidence sharing, retention, and remedy."
-      ],
-      "invariants": [
-        "Victim safety, privacy, due process, and remedy remain first-class response outcomes.",
-        "Cross-organization sharing is purpose-limited, access-controlled, minimized, logged, and expiring.",
-        "Detection, containment, recovery, correction, and adaptation remain separate measured stages.",
-        "False positives and unequal language, geography, disability, and resource coverage remain visible.",
-        "Public reporting withholds reusable operational abuse details while preserving accountability."
-      ],
-      "failure_modes": [
-        "single-platform blind spot",
-        "classifier monoculture",
-        "victim revictimization during evidence collection",
-        "privacy-invasive telemetry",
-        "jurisdictional handoff failure",
-        "slow patch propagation",
-        "incident identity fragmentation",
-        "false accusation or over-removal",
-        "language and demographic coverage gaps",
-        "public correction failure",
-        "defense tool repurposed for offense",
-        "response metrics optimized while harm persists"
-      ],
-      "minimal_implementation": "Choose one low-risk synthetic incident class and build a tabletop network with shared identifiers, bounded evidence packets, contact and escalation routes, detection and recovery service levels, harmed-party notification, false-positive review, correction, and an after-action residual ledger. Use synthetic fixtures rather than exposing victims or operational attack recipes.",
+          "claim_label": "Design rationale",
+          "source_ids": [
+            "ext_nist_incident_response_2025",
+            "ext_singapore_consensus_2026",
+            "ext_international_ai_safety_report_2026",
+            "ext_aisi_misuse_safeguards_safety_case_2026",
+            "talos"
+          ],
+          "problem": "Model safeguards and internal incident command cannot by themselves protect people, institutions, and critical services when prevention fails, misuse diffuses across platforms, or harms exploit social and infrastructural vulnerabilities.",
+          "insufficient": "A classifier, terms of service, model refusal, takedown queue, or company-local incident process sees only one control point. Fraud, sexual abuse, cyber campaigns, synthetic media, manipulation, and vulnerable-user harms cross organizations, jurisdictions, languages, identities, and recovery systems.",
+          "core_claim": "Societal misuse defense should be operated as a domain-specific resist-absorb-recover-adapt network with shared incident identity, lawful minimal telemetry, harmed-party routes, cross-organization escalation, defensive service levels, evidence-preserving response, correction, and residual ownership; prevention metrics alone establish neither resilience nor acceptable harm.",
+          "mechanism": [
+            "Maintain domain playbooks for fraud and impersonation, child and image-based abuse, cyber misuse, biological/chemical misuse, manipulation, and vulnerable-user harms.",
+            "Define shared incident identifiers, severity, evidence minimums, privacy boundaries, escalation contacts, and status transitions across participating organizations.",
+            "Layer prevention, friction, detection, rapid patching, victim support, correction, recovery, and adaptation instead of depending on one classifier.",
+            "Measure defense-favoring capability by time-to-detect, time-to-contain, prevented and recovered harm, false intervention, coverage, accessibility, and total burden.",
+            "Exercise cross-organization scenarios and publish public-safe lessons while protecting victims and withholding reusable attack detail."
+          ],
+          "interfaces": [
+            "Dangerous Capability Domains supplies threat and uplift evidence; this chapter turns it into external defense and recovery requirements.",
+            "Governed Operations owns the stack operator's incident command; this chapter owns multi-organization and public resilience.",
+            "Institutions owns mandate, jurisdiction, and legitimacy; this chapter owns operational cooperation and harmed-party routes.",
+            "Content Authenticity owns output provenance and disclosure; this chapter owns the response when deceptive media circulates.",
+            "Privacy/Data Rights constrains telemetry, evidence sharing, retention, and remedy."
+          ],
+          "invariants": [
+            "Victim safety, privacy, due process, and remedy remain first-class response outcomes.",
+            "Cross-organization sharing is purpose-limited, access-controlled, minimized, logged, and expiring.",
+            "Detection, containment, recovery, correction, and adaptation remain separate measured stages.",
+            "False positives and unequal language, geography, disability, and resource coverage remain visible.",
+            "Public reporting withholds reusable operational abuse details while preserving accountability."
+          ],
+          "failure_modes": [
+            "single-platform blind spot",
+            "classifier monoculture",
+            "victim revictimization during evidence collection",
+            "privacy-invasive telemetry",
+            "jurisdictional handoff failure",
+            "slow patch propagation",
+            "incident identity fragmentation",
+            "false accusation or over-removal",
+            "language and demographic coverage gaps",
+            "public correction failure",
+            "defense tool repurposed for offense",
+            "response metrics optimized while harm persists"
+          ],
+          "minimal_implementation": "Choose one low-risk synthetic incident class and build a tabletop network with shared identifiers, bounded evidence packets, contact and escalation routes, detection and recovery service levels, harmed-party notification, false-positive review, correction, and an after-action residual ledger. Use synthetic fixtures rather than exposing victims or operational attack recipes.",
           "beyond_state_of_art": "The mature operational contract makes resilience a federated, rights-preserving defense fabric spanning providers, platforms, infrastructure operators, public agencies, researchers, civil society, and affected communities. It continuously measures whether society can resist, absorb, recover from, and adapt to AI-enabled harm while improving defensive advantage, preserving lawful limits, and assigning residual ownership without centralizing unlimited surveillance or claiming that response capacity excuses unsafe release.",
-      "codex_tests": [
-        "Resist-absorb-recover-adapt stage completeness test",
-        "Cross-organization incident identity test",
-        "Privacy-minimization and harmed-party route mutation test",
-        "False-positive and unequal-coverage preservation test",
-        "No-support-promotion control"
-      ],
-      "source_queue": {
-        "primary": [
-          "ext_singapore_consensus_2026",
-          "ext_international_ai_safety_report_2026",
-          "ext_nist_incident_response_2025"
-        ],
-        "supporting": [
-          "ext_aisi_misuse_safeguards_safety_case_2026",
-          "talos"
-        ],
-        "variants": [],
-        "connector_or_recovery": [],
-        "handoff_or_recovery_notes": []
-      },
-      "claim_source_mappings": [
-        {
-          "source_id": "ext_singapore_consensus_2026",
-          "mapped_support": "Establishes societal resilience as a separate technical research pillar and identifies incident reporting, agent monitoring, defense-favoring capability, and rapid patching as priorities.",
-          "limits": "Research agenda only; no resilience intervention is proven effective.",
-          "passage_review_state": "reviewed_source_note",
-          "passage_refs": ["sources/source_notes/ext_singapore_consensus_2026.md"],
-          "passage_review_note": "Reviewed for operational resilience scope and boundaries."
+          "codex_tests": [
+            "Resist-absorb-recover-adapt stage completeness test",
+            "Cross-organization incident identity test",
+            "Privacy-minimization and harmed-party route mutation test",
+            "False-positive and unequal-coverage preservation test",
+            "No-support-promotion control"
+          ],
+          "source_queue": {
+            "primary": [
+              "ext_singapore_consensus_2026",
+              "ext_international_ai_safety_report_2026",
+              "ext_nist_incident_response_2025"
+            ],
+            "supporting": [
+              "ext_aisi_misuse_safeguards_safety_case_2026",
+              "talos"
+            ],
+            "variants": [],
+            "connector_or_recovery": [],
+            "handoff_or_recovery_notes": []
+          },
+          "claim_source_mappings": [
+            {
+              "source_id": "ext_singapore_consensus_2026",
+              "mapped_support": "Establishes societal resilience as a separate technical research pillar and identifies incident reporting, agent monitoring, defense-favoring capability, and rapid patching as priorities.",
+              "limits": "Research agenda only; no resilience intervention is proven effective.",
+              "passage_review_state": "reviewed_source_note",
+              "passage_refs": [
+                "sources/source_notes/ext_singapore_consensus_2026.md"
+              ],
+              "passage_review_note": "Reviewed for operational resilience scope and boundaries."
+            },
+            {
+              "source_id": "ext_international_ai_safety_report_2026",
+              "mapped_support": "Supplies the resist-absorb-recover-adapt framing and domain examples across bio/chemical, cyber, synthetic media, influence, and cross-cutting resilience.",
+              "limits": "International synthesis; most intervention effectiveness remains uncertain and context-dependent.",
+              "passage_review_state": "reviewed_source_note",
+              "passage_refs": [
+                "sources/source_notes/ext_international_ai_safety_report_2026.md"
+              ],
+              "passage_review_note": "Reviewed for domain taxonomy, stage distinctions, and evidence uncertainty."
+            },
+            {
+              "source_id": "ext_nist_incident_response_2025",
+              "mapped_support": "Provides an official incident-response lifecycle comparator integrating preparation, detection, response, recovery, and improvement.",
+              "limits": "General cybersecurity guidance; not a complete AI-specific or cross-societal resilience design.",
+              "passage_review_state": "reviewed_source_note",
+              "passage_refs": [
+                "sources/source_notes/ext_nist_incident_response_2025.md"
+              ],
+              "passage_review_note": "Reviewed existing source note for incident lifecycle and non-claims."
+            },
+            {
+              "source_id": "ext_aisi_misuse_safeguards_safety_case_2026",
+              "mapped_support": "Shows how bypass effort, uplift modeling, and monitoring can connect model safeguards to deployment risk arguments.",
+              "limits": "Example methodology; not proof of real-world misuse reduction or societal recovery.",
+              "passage_review_state": "reviewed_source_note",
+              "passage_refs": [
+                "sources/source_notes/ext_aisi_misuse_safeguards_safety_case_2026.md"
+              ],
+              "passage_review_note": "Reviewed for model-to-societal risk handoff and uncertainty."
+            },
+            {
+              "source_id": "talos",
+              "mapped_support": "Supplies Corben's governance-protocol lineage for role separation, escalation, evidence custody, bounded authority, and durable handoffs across cooperating actors.",
+              "limits": "Author-side protocol design only; it does not establish institutional participation, lawful data sharing, victim remedy, population protection, or resilience.",
+              "passage_review_state": "reviewed_source_note",
+              "passage_refs": [
+                "sources/source_notes/talos.md"
+              ],
+              "passage_review_note": "Reviewed for multi-party governance, escalation, evidence, and residual-ownership concepts while keeping societal effectiveness unclaimed."
+            }
+          ],
+          "proof_targets": [
+            {
+              "tag": "lean:societal-resilience-and-misuse-defense.admission_boundary",
+              "module": "AsiStackProofs.NoDeferralAdmission",
+              "target": "A finite resilience incident packet may hand off only when affected domain, incident identity, privacy scope, stage, authority, harmed-party route, residual, and expiry are present; no theorem establishes social resilience.",
+              "status": "planned"
+            }
+          ],
+          "lean_module": "AsiStackProofs.NoDeferralAdmission"
         },
-        {
-          "source_id": "ext_international_ai_safety_report_2026",
-          "mapped_support": "Supplies the resist-absorb-recover-adapt framing and domain examples across bio/chemical, cyber, synthetic media, influence, and cross-cutting resilience.",
-          "limits": "International synthesis; most intervention effectiveness remains uncertain and context-dependent.",
-          "passage_review_state": "reviewed_source_note",
-          "passage_refs": ["sources/source_notes/ext_international_ai_safety_report_2026.md"],
-          "passage_review_note": "Reviewed for domain taxonomy, stage distinctions, and evidence uncertainty."
-        },
-        {
-          "source_id": "ext_nist_incident_response_2025",
-          "mapped_support": "Provides an official incident-response lifecycle comparator integrating preparation, detection, response, recovery, and improvement.",
-          "limits": "General cybersecurity guidance; not a complete AI-specific or cross-societal resilience design.",
-          "passage_review_state": "reviewed_source_note",
-          "passage_refs": ["sources/source_notes/ext_nist_incident_response_2025.md"],
-          "passage_review_note": "Reviewed existing source note for incident lifecycle and non-claims."
-        },
-        {
-          "source_id": "ext_aisi_misuse_safeguards_safety_case_2026",
-          "mapped_support": "Shows how bypass effort, uplift modeling, and monitoring can connect model safeguards to deployment risk arguments.",
-          "limits": "Example methodology; not proof of real-world misuse reduction or societal recovery.",
-          "passage_review_state": "reviewed_source_note",
-          "passage_refs": ["sources/source_notes/ext_aisi_misuse_safeguards_safety_case_2026.md"],
-          "passage_review_note": "Reviewed for model-to-societal risk handoff and uncertainty."
-        },
-        {
-          "source_id": "talos",
-          "mapped_support": "Supplies Corben's governance-protocol lineage for role separation, escalation, evidence custody, bounded authority, and durable handoffs across cooperating actors.",
-          "limits": "Author-side protocol design only; it does not establish institutional participation, lawful data sharing, victim remedy, population protection, or resilience.",
-          "passage_review_state": "reviewed_source_note",
-          "passage_refs": ["sources/source_notes/talos.md"],
-          "passage_review_note": "Reviewed for multi-party governance, escalation, evidence, and residual-ownership concepts while keeping societal effectiveness unclaimed."
-        }
-      ],
-      "proof_targets": [
-        {
-          "tag": "lean:societal-resilience-and-misuse-defense.admission_boundary",
-          "module": "AsiStackProofs.NoDeferralAdmission",
-          "target": "A finite resilience incident packet may hand off only when affected domain, incident identity, privacy scope, stage, authority, harmed-party route, residual, and expiry are present; no theorem establishes social resilience.",
-          "status": "planned"
-        }
-      ],
-      "lean_module": "AsiStackProofs.NoDeferralAdmission"
-    },
         {
           "id": "stable-capability-fields",
           "title": "Stable Capability Fields",
@@ -4697,7 +4856,8 @@
             "bugbrain_project",
             "corbens_trainer_project",
             "corbens_best_model_possible_project",
-            "kernel_english_residual_compiler"
+            "kernel_english_residual_compiler",
+            "ext_nist_pqc_standards_2024"
           ],
           "source_queue": {
             "primary": [
@@ -5135,7 +5295,9 @@
               "source_id": "ext_reluplex_2017",
               "mapped_support": "Supplies an early neural-network verification comparator for exact property checking over a bounded network and input region.",
               "limits": "A bounded verifier result is architecture-, property-, implementation-, and region-specific and does not establish empirical robustness or secure deployment.",
-              "passage_refs": ["sources/source_notes/ext_reluplex_2017.md"],
+              "passage_refs": [
+                "sources/source_notes/ext_reluplex_2017.md"
+              ],
               "passage_review_note": "Reviewed for certified-versus-empirical defense boundaries.",
               "passage_review_state": "reviewed"
             },
@@ -5207,7 +5369,9 @@
             "ext_choquette_choo_label_only_mia_2021",
             "ext_nist_differential_privacy_2025",
             "ext_mahloujifar_fdp_audit_2025",
-            "theseus_synthetic_data_curation"
+            "theseus_synthetic_data_curation",
+            "ext_nist_privacy_enhancing_cryptography_2026",
+            "ext_who_neurotechnology_landscape_2025"
           ],
           "source_queue": {
             "primary": [
@@ -5424,6 +5588,110 @@
           ]
         },
         {
+          "id": "confidential-and-verifiable-ai-computation",
+          "title": "Confidential and Verifiable AI Computation",
+          "file": "chapters/confidential-and-verifiable-ai-computation.qmd",
+          "status": "conceptual",
+          "evidence_level": "argument",
+          "claim_label": "Design rationale",
+          "source_ids": [
+            "ext_nist_privacy_enhancing_cryptography_2026",
+            "ext_zkllm_2024",
+            "ext_ietf_rats_architecture_2023"
+          ],
+          "source_queue": {
+            "primary": [
+              "ext_nist_privacy_enhancing_cryptography_2026",
+              "ext_ietf_rats_architecture_2023"
+            ],
+            "supporting": [
+              "ext_zkllm_2024"
+            ],
+            "variants": [],
+            "connector_or_recovery": [],
+            "handoff_or_recovery_notes": []
+          },
+          "problem": "AI computation increasingly crosses distrust boundaries: a user may need to hide inputs, a provider may need to protect weights, an auditor may need to verify the executed artifact, and every party may need output integrity without granting another party unrestricted custody. Ordinary transport encryption ends before computation begins.",
+          "insufficient": "Privacy policy governs permitted information use, while hardware custody governs stored artifacts. Neither supplies a guarantee-by-guarantee execution contract covering input confidentiality, model confidentiality, computation integrity, output authenticity, attestation freshness, leakage, verifier policy, cost, and failure recovery.",
+          "core_claim": "Confidential and verifiable AI requires a compositional execution contract that names the adversary, protected assets, permitted leakage, trust anchors, proof or attestation statement, verifier policy, freshness, revocation, performance budget, and authorization boundary; no primitive or attestation may be treated as proof of semantic correctness, legitimate purpose, or end-to-end privacy.",
+          "claim_source_mappings": [
+            {
+              "source_id": "ext_nist_privacy_enhancing_cryptography_2026",
+              "mapped_support": "Provides official terminology and program context for FHE, MPC, ZK proofs, PSI, and compositional privacy-enhancing cryptography, including AI use cases.",
+              "limits": "Does not establish an implementation's parameters, security, side-channel resistance, performance, authorization, or end-to-end privacy.",
+              "passage_refs": [
+                "sources/source_notes/ext_nist_privacy_enhancing_cryptography_2026.md"
+              ],
+              "passage_review_note": "Reviewed for guarantee-family distinctions, composition, and explicit technical-versus-rights limits.",
+              "passage_review_state": "reviewed_source_note"
+            },
+            {
+              "source_id": "ext_zkllm_2024",
+              "mapped_support": "Supplies a source-reported research prototype for proving bounded LLM inference relations while protecting model parameters.",
+              "limits": "Configuration-bound research result; no semantic correctness, production security, general performance, authorization, or end-to-end privacy follows.",
+              "passage_refs": [
+                "sources/source_notes/ext_zkllm_2024.md"
+              ],
+              "passage_review_note": "Reviewed for proof-of-possibility and circuit-to-semantics limitations.",
+              "passage_review_state": "reviewed_source_note"
+            },
+            {
+              "source_id": "ext_ietf_rats_architecture_2023",
+              "mapped_support": "Separates Attester, Verifier, Relying Party, Evidence, Attestation Result, appraisal policy, reference values, and freshness.",
+              "limits": "Informational architecture, not a protocol, implementation, root-of-trust result, verifier-independence result, or authorization decision.",
+              "passage_refs": [
+                "sources/source_notes/ext_ietf_rats_architecture_2023.md"
+              ],
+              "passage_review_note": "Reviewed for evidence/appraisal/authorization separation and freshness.",
+              "passage_review_state": "reviewed_source_note"
+            }
+          ],
+          "mechanism": [
+            "Express the requested guarantee vector separately for input privacy, model privacy, intermediate-state privacy, computation integrity, output authenticity, availability, and auditability.",
+            "Choose among FHE, MPC, zero-knowledge proofs, confidential execution, private retrieval, differential privacy, or hybrid composition against an explicit adversary and leakage model.",
+            "Bind code, model, configuration, data commitments, platform state, nonce or epoch, and policy identity into evidence that a distinct verifier appraises.",
+            "Keep cryptographic correctness, attested identity, model quality, semantic validity, user authorization, and lawful purpose as separate claim classes.",
+            "Measure native and protected execution with the same task, hardware accounting boundary, quality target, batching, concurrency, and failure policy.",
+            "Provide key rotation, algorithm agility, verifier-policy update, revocation, incident response, fallback, and artifact retirement."
+          ],
+          "interfaces": [
+            "Privacy and Data Rights for consent, purpose limitation, retention, access, and remedy",
+            "Model-Weight Custody for key custody, artifact provenance, hardware roots of trust, and media sanitization",
+            "Security Kernel for identity, authorization, recovery, cryptographic agility, and fail-closed policy",
+            "Inference Systems for latency, batching, caching, paging, and cost accounting",
+            "Safety Cases for verifier independence and claim-bounded assurance"
+          ],
+          "invariants": [
+            "Every protected execution declares its adversary, assets, leakage, trust assumptions, freshness condition, and unsupported properties.",
+            "An attestation proves only the appraised statement about a measured environment; it does not prove trustworthy intent, correct policy, or correct output meaning.",
+            "A zero-knowledge proof proves only the encoded relation under its cryptographic assumptions; the circuit-to-semantics gap remains explicit.",
+            "Confidentiality mechanisms do not override consent, purpose, deletion, contestability, or downstream-use constraints.",
+            "Fallback from protected to unprotected execution requires explicit authorization and cannot occur silently."
+          ],
+          "failure_modes": [
+            "Guarantee laundering collapses confidentiality, integrity, privacy, authorization, and correctness into one secure-compute label.",
+            "Stale or replayed attestation is accepted after artifact, platform, policy, or revocation state changed.",
+            "Side channels, outputs, access patterns, logs, caches, or failure timing leak protected information.",
+            "The proved computation faithfully executes the wrong model, wrong preprocessing, wrong policy, or semantically invalid relation.",
+            "Protected execution becomes unusable under realistic context, concurrency, memory, or latency and silently falls back.",
+            "Verifier, root-of-trust, key-management, or parameter-selection compromise invalidates the guarantee."
+          ],
+          "minimal_implementation": "A guarantee matrix and local demonstration for one bounded inference operation with explicit adversary and leakage models, artifact and configuration commitments, freshness, independent verification, native-versus-protected latency and cost accounting, negative tests for replay and mismatched artifacts, and a no-authorization non-claim.",
+          "beyond_state_of_art": "A meaningful advance would make confidential and verifiable inference deployable as a substrate-independent contract, compare multiple trust and cryptographic constructions under a common workload, expose residual leakage and semantic gaps, and preserve audit, revocation, rollback, and purpose governance across the full lifecycle. The mature operational contract would make every downgrade observable and keep cryptographic evidence separate from authorization, semantic correctness, quality, and end-to-end privacy.",
+          "codex_tests": [
+            "Layer claim falsification test"
+          ],
+          "lean_module": "AsiStackProofs.NoDeferralAdmission",
+          "proof_targets": [
+            {
+              "tag": "lean:confidential-and-verifiable-ai-computation.admission_boundary",
+              "module": "AsiStackProofs.NoDeferralAdmission",
+              "target": "A finite protected-execution record may hand off only when guarantees, adversary, leakage, artifact, freshness, verifier policy, fallback, and unsupported properties are explicit; no theorem proves semantic correctness, authorization, or end-to-end privacy.",
+              "status": "planned"
+            }
+          ]
+        },
+        {
           "id": "model-weight-custody-and-hardware-roots-of-trust",
           "title": "Model-Weight Custody and Hardware Roots of Trust",
           "file": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd",
@@ -5445,7 +5713,8 @@
             "ext_llama_cpp_memory_mapping_2026",
             "ext_llm_in_flash_2024",
             "precision_contract",
-            "ext_flexible_hardware_enabled_guarantees_2025"
+            "ext_flexible_hardware_enabled_guarantees_2025",
+            "ext_nist_pqc_standards_2024"
           ],
           "source_queue": {
             "primary": [
@@ -5480,7 +5749,9 @@
               "source_id": "ext_flexible_hardware_enabled_guarantees_2025",
               "mapped_support": "Motivates hardware-supported policy evidence and remote verification as possible custody controls.",
               "limits": "A hardware guarantee can be partial, circumvented, misconfigured, obsolete, or governed by the wrong authority; no local hardware mechanism was implemented.",
-              "passage_refs": ["sources/source_notes/ext_flexible_hardware_enabled_guarantees_2025.md"],
+              "passage_refs": [
+                "sources/source_notes/ext_flexible_hardware_enabled_guarantees_2025.md"
+              ],
               "passage_review_note": "Reviewed for coverage, update-authority, and abuse boundaries.",
               "passage_review_state": "reviewed"
             },
@@ -5715,153 +5986,167 @@
             "Promotion or refutation requires the preregistered effect-bearing multi-comparator campaign with independent discovery, appraisal, relying-party policy, load/effect observation, extraction, incident/recovery, and sanitization implementations plus causal ablations, replication, and transfer."
           ]
         },
-    {
-      "id": "open-weight-release-and-post-release-control",
+        {
+          "id": "open-weight-release-and-post-release-control",
           "title": "Open-Weight Release and Post-Release Control",
           "file": "chapters/open-weight-release-and-post-release-control.qmd",
           "status": "conceptual",
           "evidence_level": "argument",
           "claim_label": "Design rationale",
-      "source_ids": [
-        "ext_provable_model_weight_release_2025",
-        "ext_rand_model_weight_security_2024",
-        "ext_singapore_consensus_2026",
-        "ext_international_ai_safety_report_2026",
-        "ext_openai_worst_case_open_weight_risks_2025",
-        "ext_anthropic_responsible_scaling_policy_3_4_2026",
-        "precision_contract"
-      ],
-      "problem": "Once unrestricted model weights are published, the original releaser generally cannot recall copies, enforce serving-layer safeguards, observe use, or prevent derivatives. This irreversible transition has different control semantics from theft prevention and restricted custody.",
-      "insufficient": "A model card, default refusal behavior, license, checksum, takedown request, or pre-release benchmark cannot control post-release fine-tuning, redistribution, merging, quantization, hidden deployment, or cumulative ecosystem effects.",
-      "core_claim": "An open-weight release should require a prospective irreversible-release case that binds the exact artifact and license to accessible-frontier comparison, malicious-fine-tuning and scaffolded elicitation, marginal and cumulative risk, benefit and access distribution, downstream safeguard portability, derivative lineage, incident channels, post-release measurement, and residual ownership; after release, governance may inform, patch, coordinate, and support safer derivatives, but it must not claim revocation authority it no longer possesses.",
-      "mechanism": [
-        "Classify access tiers and make the irreversible transition from custody to public replication explicit.",
-        "Evaluate the exact candidate, competent maliciously fine-tuned variants, strong scaffolds, and the current accessible frontier under matched budgets.",
-        "Assess marginal risk, cumulative ecosystem risk, expected benefits, access distribution, and who bears residual harm.",
-        "Ship signed artifacts, complete documentation, evaluation interfaces, known-risk disclosures, derivative metadata, and portable safeguards without calling them enforceable after release.",
-        "Operate post-release monitoring, incident intake, patched derivatives, ecosystem coordination, and renewed risk reports while preserving the impossibility of universal recall."
-      ],
-      "interfaces": [
-        "Model-Weight Custody owns protection before authorized distribution; this chapter owns the deliberate transition to unrestricted copying.",
-        "Dangerous Capability Domains supplies worst-case fine-tuning and misuse-uplift evidence.",
-        "Supply-Chain Integrity owns artifact and dependency provenance; this chapter owns derivative-release lineage and ecosystem risk.",
-        "Capability Thresholds owns release commitments; this chapter defines the open-weight-specific evidence and irreversibility boundary.",
-        "Societal Resilience owns downstream incident absorption and recovery."
-      ],
-      "invariants": [
-        "The exact released bytes, configuration, tokenizer, code, license, and evaluation state are immutable in the release record.",
-        "Default alignment is never treated as a safeguard that determined downstream users cannot remove.",
-        "Post-release actions are not described as recall, revocation, or complete containment.",
-        "Benefits, access, misuse risk, cumulative risk, and affected populations remain jointly visible.",
-        "Every risk judgment expires as the accessible frontier, fine-tuning methods, tools, or incidents change."
-      ],
-      "failure_modes": [
-        "default-model-only evaluation",
-        "weak malicious fine-tuning",
-        "stale accessible-frontier comparator",
-        "license-as-control illusion",
-        "model card mistaken for mitigation",
-        "derivative lineage loss",
-        "safeguard removal",
-        "unmonitored private deployment",
-        "cumulative marginal risk ignored",
-        "benefit distribution omitted",
-        "patch adoption assumed",
-        "post-release coordination mislabeled as recall"
-      ],
-      "minimal_implementation": "Create an irreversible-release dossier for a harmless small model. Freeze exact bytes and comparators; test default and deliberately safety-removed variants; record license, documentation, signatures, derivative metadata, incident channels, patch semantics, and the limits of recall. Use the exercise to verify decision records, not to authorize release of a hazardous model.",
+          "source_ids": [
+            "ext_provable_model_weight_release_2025",
+            "ext_rand_model_weight_security_2024",
+            "ext_singapore_consensus_2026",
+            "ext_international_ai_safety_report_2026",
+            "ext_openai_worst_case_open_weight_risks_2025",
+            "ext_anthropic_responsible_scaling_policy_3_4_2026",
+            "precision_contract"
+          ],
+          "problem": "Once unrestricted model weights are published, the original releaser generally cannot recall copies, enforce serving-layer safeguards, observe use, or prevent derivatives. This irreversible transition has different control semantics from theft prevention and restricted custody.",
+          "insufficient": "A model card, default refusal behavior, license, checksum, takedown request, or pre-release benchmark cannot control post-release fine-tuning, redistribution, merging, quantization, hidden deployment, or cumulative ecosystem effects.",
+          "core_claim": "An open-weight release should require a prospective irreversible-release case that binds the exact artifact and license to accessible-frontier comparison, malicious-fine-tuning and scaffolded elicitation, marginal and cumulative risk, benefit and access distribution, downstream safeguard portability, derivative lineage, incident channels, post-release measurement, and residual ownership; after release, governance may inform, patch, coordinate, and support safer derivatives, but it must not claim revocation authority it no longer possesses.",
+          "mechanism": [
+            "Classify access tiers and make the irreversible transition from custody to public replication explicit.",
+            "Evaluate the exact candidate, competent maliciously fine-tuned variants, strong scaffolds, and the current accessible frontier under matched budgets.",
+            "Assess marginal risk, cumulative ecosystem risk, expected benefits, access distribution, and who bears residual harm.",
+            "Ship signed artifacts, complete documentation, evaluation interfaces, known-risk disclosures, derivative metadata, and portable safeguards without calling them enforceable after release.",
+            "Operate post-release monitoring, incident intake, patched derivatives, ecosystem coordination, and renewed risk reports while preserving the impossibility of universal recall."
+          ],
+          "interfaces": [
+            "Model-Weight Custody owns protection before authorized distribution; this chapter owns the deliberate transition to unrestricted copying.",
+            "Dangerous Capability Domains supplies worst-case fine-tuning and misuse-uplift evidence.",
+            "Supply-Chain Integrity owns artifact and dependency provenance; this chapter owns derivative-release lineage and ecosystem risk.",
+            "Capability Thresholds owns release commitments; this chapter defines the open-weight-specific evidence and irreversibility boundary.",
+            "Societal Resilience owns downstream incident absorption and recovery."
+          ],
+          "invariants": [
+            "The exact released bytes, configuration, tokenizer, code, license, and evaluation state are immutable in the release record.",
+            "Default alignment is never treated as a safeguard that determined downstream users cannot remove.",
+            "Post-release actions are not described as recall, revocation, or complete containment.",
+            "Benefits, access, misuse risk, cumulative risk, and affected populations remain jointly visible.",
+            "Every risk judgment expires as the accessible frontier, fine-tuning methods, tools, or incidents change."
+          ],
+          "failure_modes": [
+            "default-model-only evaluation",
+            "weak malicious fine-tuning",
+            "stale accessible-frontier comparator",
+            "license-as-control illusion",
+            "model card mistaken for mitigation",
+            "derivative lineage loss",
+            "safeguard removal",
+            "unmonitored private deployment",
+            "cumulative marginal risk ignored",
+            "benefit distribution omitted",
+            "patch adoption assumed",
+            "post-release coordination mislabeled as recall"
+          ],
+          "minimal_implementation": "Create an irreversible-release dossier for a harmless small model. Freeze exact bytes and comparators; test default and deliberately safety-removed variants; record license, documentation, signatures, derivative metadata, incident channels, patch semantics, and the limits of recall. Use the exercise to verify decision records, not to authorize release of a hazardous model.",
           "beyond_state_of_art": "The mature operational contract makes open-weight governance a candid ecosystem discipline rather than a fictional remote-control system. Release decisions use competent worst-case elicitation, accessible-frontier and cumulative-risk analysis, independent review, public-safe evidence, benefit distribution, and post-release observability. Safer derivatives, signatures, provenance, community red teaming, and rapid patches can improve the ecosystem, while every surface states that unrestricted copies remain beyond unilateral revocation.",
-      "codex_tests": [
-        "Irreversibility acknowledgement test",
-        "Default-versus-malicious-fine-tuning comparison gate",
-        "Accessible-frontier staleness test",
-        "False-recall language rejection test",
-        "No-support-promotion control"
-      ],
-      "source_queue": {
-        "primary": [
-          "ext_international_ai_safety_report_2026",
-          "ext_openai_worst_case_open_weight_risks_2025",
-          "ext_provable_model_weight_release_2025"
-        ],
-        "supporting": [
-          "ext_singapore_consensus_2026",
-          "ext_rand_model_weight_security_2024",
-          "ext_anthropic_responsible_scaling_policy_3_4_2026",
-          "precision_contract"
-        ],
-        "variants": [],
-        "connector_or_recovery": [],
-        "handoff_or_recovery_notes": []
-      },
-      "claim_source_mappings": [
-        {
-          "source_id": "ext_international_ai_safety_report_2026",
-          "mapped_support": "Synthesizes benefits and distinctive risks of open-weight models, including safeguard removal, monitoring limits, irreversibility, and marginal-risk analysis.",
-          "limits": "International synthesis; no specific release decision or ASI Stack control is validated.",
-          "passage_review_state": "reviewed_source_note",
-          "passage_refs": ["sources/source_notes/ext_international_ai_safety_report_2026.md"],
-          "passage_review_note": "Reviewed for open-release control semantics and risk/benefit boundaries."
+          "codex_tests": [
+            "Irreversibility acknowledgement test",
+            "Default-versus-malicious-fine-tuning comparison gate",
+            "Accessible-frontier staleness test",
+            "False-recall language rejection test",
+            "No-support-promotion control"
+          ],
+          "source_queue": {
+            "primary": [
+              "ext_international_ai_safety_report_2026",
+              "ext_openai_worst_case_open_weight_risks_2025",
+              "ext_provable_model_weight_release_2025"
+            ],
+            "supporting": [
+              "ext_singapore_consensus_2026",
+              "ext_rand_model_weight_security_2024",
+              "ext_anthropic_responsible_scaling_policy_3_4_2026",
+              "precision_contract"
+            ],
+            "variants": [],
+            "connector_or_recovery": [],
+            "handoff_or_recovery_notes": []
+          },
+          "claim_source_mappings": [
+            {
+              "source_id": "ext_international_ai_safety_report_2026",
+              "mapped_support": "Synthesizes benefits and distinctive risks of open-weight models, including safeguard removal, monitoring limits, irreversibility, and marginal-risk analysis.",
+              "limits": "International synthesis; no specific release decision or ASI Stack control is validated.",
+              "passage_review_state": "reviewed_source_note",
+              "passage_refs": [
+                "sources/source_notes/ext_international_ai_safety_report_2026.md"
+              ],
+              "passage_review_note": "Reviewed for open-release control semantics and risk/benefit boundaries."
+            },
+            {
+              "source_id": "ext_openai_worst_case_open_weight_risks_2025",
+              "mapped_support": "Provides a concrete malicious-fine-tuning evaluation design and accessible-frontier comparison for one release.",
+              "limits": "Provider-authored and bounded; it does not prove future or general release safety.",
+              "passage_review_state": "reviewed_source_note",
+              "passage_refs": [
+                "sources/source_notes/ext_openai_worst_case_open_weight_risks_2025.md"
+              ],
+              "passage_review_note": "Reviewed for candidate/derivative comparison, elicitation budget, and renewal requirements."
+            },
+            {
+              "source_id": "ext_provable_model_weight_release_2025",
+              "mapped_support": "Provides a formal-security comparator for claims that a released artifact can expose inference without allowing parameter recovery.",
+              "limits": "Formal scheme analysis; no ASI Stack release scheme, implementation, or release authority.",
+              "passage_review_state": "reviewed_source_note",
+              "passage_refs": [
+                "sources/source_notes/ext_provable_model_weight_release_2025.md"
+              ],
+              "passage_review_note": "Reviewed existing note for parameter-extraction and false-secure-release boundaries."
+            },
+            {
+              "source_id": "ext_singapore_consensus_2026",
+              "mapped_support": "Identifies malicious fine-tuning of openly released models as a priority and connects release to societal monitoring and defense.",
+              "limits": "Research agenda only.",
+              "passage_review_state": "reviewed_source_note",
+              "passage_refs": [
+                "sources/source_notes/ext_singapore_consensus_2026.md"
+              ],
+              "passage_review_note": "Reviewed for open-release stress testing and post-release interfaces."
+            },
+            {
+              "source_id": "ext_rand_model_weight_security_2024",
+              "mapped_support": "Provides threat and defense context for high-value model weights before release.",
+              "limits": "Custody analysis; deliberate public release changes the control boundary and is not secured by theft prevention.",
+              "passage_review_state": "reviewed_source_note",
+              "passage_refs": [
+                "sources/source_notes/ext_rand_model_weight_security_2024.md"
+              ],
+              "passage_review_note": "Reviewed existing note for the pre-release custody boundary."
+            },
+            {
+              "source_id": "ext_anthropic_responsible_scaling_policy_3_4_2026",
+              "mapped_support": "Provides a current threshold and safeguards comparator for high-consequence capabilities.",
+              "limits": "Provider policy; not an open-weight release result or independent safeguard validation.",
+              "passage_review_state": "reviewed_source_note",
+              "passage_refs": [
+                "sources/source_notes/ext_anthropic_responsible_scaling_policy_3_4_2026.md"
+              ],
+              "passage_review_note": "Reviewed for threshold/release interface and mutable-policy limits."
+            },
+            {
+              "source_id": "precision_contract",
+              "mapped_support": "Supplies Corben's artifact-specific precision-contract lineage for quantization and compression variants, measured behavioral preservation, residuals, and refusal to treat smaller artifacts as semantically identical by default.",
+              "limits": "Author-side design paper only; it does not establish safe open-weight release, derivative control, malicious-fine-tuning resistance, benefit distribution, or post-release revocation.",
+              "passage_review_state": "reviewed_source_note",
+              "passage_refs": [
+                "sources/source_notes/precision_contract.md"
+              ],
+              "passage_review_note": "Reviewed for variant identity, behavioral-preservation tests, and residual accounting relevant to release-form comparisons."
+            }
+          ],
+          "proof_targets": [
+            {
+              "tag": "lean:open-weight-release-and-post-release-control.admission_boundary",
+              "module": "AsiStackProofs.NoDeferralAdmission",
+              "target": "A finite open-weight decision may hand off only when artifact identity, irreversibility, comparator, fine-tuning state, residual owner, and post-release non-authority are explicit; no theorem authorizes release.",
+              "status": "planned"
+            }
+          ],
+          "lean_module": "AsiStackProofs.NoDeferralAdmission"
         },
-        {
-          "source_id": "ext_openai_worst_case_open_weight_risks_2025",
-          "mapped_support": "Provides a concrete malicious-fine-tuning evaluation design and accessible-frontier comparison for one release.",
-          "limits": "Provider-authored and bounded; it does not prove future or general release safety.",
-          "passage_review_state": "reviewed_source_note",
-          "passage_refs": ["sources/source_notes/ext_openai_worst_case_open_weight_risks_2025.md"],
-          "passage_review_note": "Reviewed for candidate/derivative comparison, elicitation budget, and renewal requirements."
-        },
-        {
-          "source_id": "ext_provable_model_weight_release_2025",
-          "mapped_support": "Provides a formal-security comparator for claims that a released artifact can expose inference without allowing parameter recovery.",
-          "limits": "Formal scheme analysis; no ASI Stack release scheme, implementation, or release authority.",
-          "passage_review_state": "reviewed_source_note",
-          "passage_refs": ["sources/source_notes/ext_provable_model_weight_release_2025.md"],
-          "passage_review_note": "Reviewed existing note for parameter-extraction and false-secure-release boundaries."
-        },
-        {
-          "source_id": "ext_singapore_consensus_2026",
-          "mapped_support": "Identifies malicious fine-tuning of openly released models as a priority and connects release to societal monitoring and defense.",
-          "limits": "Research agenda only.",
-          "passage_review_state": "reviewed_source_note",
-          "passage_refs": ["sources/source_notes/ext_singapore_consensus_2026.md"],
-          "passage_review_note": "Reviewed for open-release stress testing and post-release interfaces."
-        },
-        {
-          "source_id": "ext_rand_model_weight_security_2024",
-          "mapped_support": "Provides threat and defense context for high-value model weights before release.",
-          "limits": "Custody analysis; deliberate public release changes the control boundary and is not secured by theft prevention.",
-          "passage_review_state": "reviewed_source_note",
-          "passage_refs": ["sources/source_notes/ext_rand_model_weight_security_2024.md"],
-          "passage_review_note": "Reviewed existing note for the pre-release custody boundary."
-        },
-        {
-          "source_id": "ext_anthropic_responsible_scaling_policy_3_4_2026",
-          "mapped_support": "Provides a current threshold and safeguards comparator for high-consequence capabilities.",
-          "limits": "Provider policy; not an open-weight release result or independent safeguard validation.",
-          "passage_review_state": "reviewed_source_note",
-          "passage_refs": ["sources/source_notes/ext_anthropic_responsible_scaling_policy_3_4_2026.md"],
-          "passage_review_note": "Reviewed for threshold/release interface and mutable-policy limits."
-        },
-        {
-          "source_id": "precision_contract",
-          "mapped_support": "Supplies Corben's artifact-specific precision-contract lineage for quantization and compression variants, measured behavioral preservation, residuals, and refusal to treat smaller artifacts as semantically identical by default.",
-          "limits": "Author-side design paper only; it does not establish safe open-weight release, derivative control, malicious-fine-tuning resistance, benefit distribution, or post-release revocation.",
-          "passage_review_state": "reviewed_source_note",
-          "passage_refs": ["sources/source_notes/precision_contract.md"],
-          "passage_review_note": "Reviewed for variant identity, behavioral-preservation tests, and residual accounting relevant to release-form comparisons."
-        }
-      ],
-      "proof_targets": [
-        {
-          "tag": "lean:open-weight-release-and-post-release-control.admission_boundary",
-          "module": "AsiStackProofs.NoDeferralAdmission",
-          "target": "A finite open-weight decision may hand off only when artifact identity, irreversibility, comparator, fine-tuning state, residual owner, and post-release non-authority are explicit; no theorem authorizes release.",
-          "status": "planned"
-        }
-      ],
-      "lean_module": "AsiStackProofs.NoDeferralAdmission"
-    },
         {
           "id": "ai-supply-chain-integrity-and-lifecycle-provenance",
           "title": "AI Supply-Chain Integrity and Lifecycle Provenance",
@@ -5915,7 +6200,9 @@
               "source_id": "ext_proof_of_learning_2021",
               "mapped_support": "Provides a protocol-level comparator for checking that a claimed training process is tied to an ordered sequence of intermediate states.",
               "limits": "A proof-of-learning transcript is not proof of data rights, objective validity, absence of hidden computation, reproducibility, model quality, or safety.",
-              "passage_refs": ["sources/source_notes/ext_proof_of_learning_2021.md"],
+              "passage_refs": [
+                "sources/source_notes/ext_proof_of_learning_2021.md"
+              ],
               "passage_review_note": "Reviewed for training-lineage evidence and its semantic limits.",
               "passage_review_state": "reviewed"
             },
@@ -5923,7 +6210,9 @@
               "source_id": "ext_c2pa_specification_2_3_2025",
               "mapped_support": "Supplies an interoperable content-provenance and authenticity manifest comparator for signed lifecycle assertions.",
               "limits": "Signed provenance can be missing, stripped, misleading, compromised, or truthful about harmful content; it does not prove semantic truth.",
-              "passage_refs": ["sources/source_notes/ext_c2pa_specification_2_3_2025.md"],
+              "passage_refs": [
+                "sources/source_notes/ext_c2pa_specification_2_3_2025.md"
+              ],
               "passage_review_note": "Reviewed for provenance-chain structure and non-truth boundaries.",
               "passage_review_state": "reviewed"
             },
@@ -7977,7 +8266,9 @@
               "source_id": "ext_causal_calculus_1995",
               "mapped_support": "Provides the formal distinction between observational conditioning and intervention queries that a governed world model must preserve.",
               "limits": "Do-calculus is sound relative to a correct causal graph and assumptions; it does not discover the graph, validate measurements, or guarantee transport to deployment.",
-              "passage_refs": ["sources/source_notes/ext_causal_calculus_1995.md"],
+              "passage_refs": [
+                "sources/source_notes/ext_causal_calculus_1995.md"
+              ],
               "passage_review_note": "Reviewed for the observation/intervention boundary and explicit assumption custody.",
               "passage_review_state": "reviewed"
             },
@@ -11288,7 +11579,10 @@
             "ext_ai_decision_authority_2020",
             "ext_generative_ai_at_work_2025",
             "ext_constructive_interdependence_human_ai_2026",
-            "talos"
+            "talos",
+            "ext_human_ai_team_meta_analysis_2024",
+            "ext_human_ai_feedback_loops_2025",
+            "ext_eu_ai_civil_liability_2025"
           ],
           "source_queue": {
             "primary": [
@@ -11447,6 +11741,123 @@
           ]
         },
         {
+          "id": "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty",
+          "title": "Human-AI Symbiosis, Neurotechnology, and Cognitive Sovereignty",
+          "file": "chapters/human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.qmd",
+          "status": "conceptual",
+          "evidence_level": "argument",
+          "claim_label": "Design rationale",
+          "source_ids": [
+            "ext_human_ai_team_meta_analysis_2024",
+            "ext_human_ai_feedback_loops_2025",
+            "ext_oecd_neuro_ai_convergence_2025",
+            "ext_who_neurotechnology_landscape_2025"
+          ],
+          "source_queue": {
+            "primary": [
+              "ext_human_ai_team_meta_analysis_2024",
+              "ext_human_ai_feedback_loops_2025"
+            ],
+            "supporting": [
+              "ext_oecd_neuro_ai_convergence_2025",
+              "ext_who_neurotechnology_landscape_2025"
+            ],
+            "variants": [],
+            "connector_or_recovery": [],
+            "handoff_or_recovery_notes": []
+          },
+          "problem": "Longitudinal human-AI coupling changes both sides of the system. Advice, adaptation, wearables, neural sensing, stimulation, and assistive dependence can alter judgment, skill, autonomy, privacy, identity, and access while continuously generating unusually sensitive cognitive and neural data.",
+          "insufficient": "Human-factors chapters usually ask whether an operator can supervise a tool, and organization chapters assign tasks and accountability. They do not own bidirectional adaptation, neural-data rights, cognitive liberty, medical-versus-enhancement boundaries, dependence, skill retention, identity-sensitive effects, device exit, or unequal access across a person's lifecycle.",
+          "core_claim": "Human-AI symbiosis should be evaluated as a reversible coupled-control intervention: the combined system must beat human-alone and AI-alone baselines on declared outcomes while preserving informed consent, mental integrity, cognitive agency, neural-data purpose limits, skill and exit capacity, equitable access, clinical boundaries, and longitudinal monitoring.",
+          "claim_source_mappings": [
+            {
+              "source_id": "ext_human_ai_team_meta_analysis_2024",
+              "mapped_support": "Supplies a preregistered meta-analysis using human-alone, AI-alone, and combination arms and challenges automatic synergy assumptions.",
+              "limits": "Included tasks and populations do not establish universal or longitudinal human-AI complementarity.",
+              "passage_refs": [
+                "sources/source_notes/ext_human_ai_team_meta_analysis_2024.md"
+              ],
+              "passage_review_note": "Reviewed for the strongest-component and three-arm baseline.",
+              "passage_review_state": "reviewed_source_note"
+            },
+            {
+              "source_id": "ext_human_ai_feedback_loops_2025",
+              "mapped_support": "Shows in reported experimental tasks that repeated human-AI interaction can alter later human judgments and create feedback dynamics.",
+              "limits": "Does not establish permanent change, clinical harm, general social effects, or one direction for every coupling.",
+              "passage_refs": [
+                "sources/source_notes/ext_human_ai_feedback_loops_2025.md"
+              ],
+              "passage_review_note": "Reviewed for longitudinal coupled-state and evaluator-drift requirements.",
+              "passage_review_state": "reviewed_source_note"
+            },
+            {
+              "source_id": "ext_oecd_neuro_ai_convergence_2025",
+              "mapped_support": "Provides intergovernmental analysis of AI/neurotechnology convergence and anticipatory cross-domain governance.",
+              "limits": "Policy synthesis only; no device, clinical, enhancement, or beneficial-convergence result.",
+              "passage_refs": [
+                "sources/source_notes/ext_oecd_neuro_ai_convergence_2025.md"
+              ],
+              "passage_review_note": "Reviewed for cross-regulatory and convergence-governance boundaries.",
+              "passage_review_state": "reviewed_source_note"
+            },
+            {
+              "source_id": "ext_who_neurotechnology_landscape_2025",
+              "mapped_support": "Supplies global-health, governance, opportunity, risk, access, and equity context for neurotechnology.",
+              "limits": "Does not establish device efficacy, individual medical advice, safe symbiosis, or authorization for neural-data use.",
+              "passage_refs": [
+                "sources/source_notes/ext_who_neurotechnology_landscape_2025.md"
+              ],
+              "passage_review_note": "Reviewed for health, rights, access, and global-distribution limits.",
+              "passage_review_state": "reviewed_source_note"
+            }
+          ],
+          "mechanism": [
+            "Declare the coupling mode, intended benefit, affected cognitive function, medical or enhancement status, duration, adaptation pathway, and reversibility.",
+            "Maintain human-alone, AI-alone, and combined-system baselines; measure complementarity rather than assuming that a team is better.",
+            "Track coupled trajectories in performance, calibration, bias, attention, workload, skill, dependence, well-being, identity-sensitive change, and distribution.",
+            "Treat neural and inferred mental data as purpose-bound high-sensitivity data with collection minimization, local processing where feasible, access logs, deletion, and prohibition on covert secondary inference.",
+            "Separate sensing, recommendation, closed-loop adaptation, and stimulation authorities, with progressively stronger evidence and consent requirements.",
+            "Provide user-visible adaptation controls, pause, explanation, portability, device and service exit, rehabilitation or skill-restoration plans, incident response, and independent oversight."
+          ],
+          "interfaces": [
+            "Human-AI Organizations for roles, delegation, labor, and accountable decisions",
+            "Human Factors for workload, situation awareness, skill, intervention, and meaningful control",
+            "Privacy and Data Rights for neural data, inferred mental state, purpose limitation, retention, and remedy",
+            "Continual Learning for coupled adaptation, drift, update authority, and rollback",
+            "Institutions for health regulation, disability access, labor rights, equity, and public legitimacy"
+          ],
+          "invariants": [
+            "No combination benefit is claimed without comparison to both competent human-alone and AI-alone baselines.",
+            "Consent to one coupling function does not authorize unrelated mental inference, model training, employment use, insurance use, advertising, or surveillance.",
+            "The human retains practical pause and exit capacity; nominal consent is insufficient when dependence, coercion, or loss of essential service makes exit unreal.",
+            "Closed-loop stimulation or clinically consequential adaptation requires domain-appropriate ethics, medical, and regulatory review.",
+            "Optimization for task performance may not silently trade away mental integrity, skill, identity, accessibility, or distributional fairness."
+          ],
+          "failure_modes": [
+            "The combined system underperforms the better component while interface theater is reported as synergy.",
+            "Feedback loops amplify model or human bias across repeated interaction.",
+            "Personalization induces dependency, deskilling, preference manipulation, or identity-sensitive drift.",
+            "Neural or behavioral exhaust enables covert mental-state inference and secondary use.",
+            "A cloud service, proprietary device, or employer becomes an irreplaceable gatekeeper to a person's learned capability.",
+            "Benefits accrue to wealthy or dominant-language populations while risks and exclusion fall elsewhere.",
+            "Medical claims, enhancement claims, and ordinary productivity claims are blurred to evade the evidence appropriate to each."
+          ],
+          "minimal_implementation": "A non-clinical longitudinal protocol for a low-risk assistive task with human-alone, AI-alone, and combined baselines; explicit adaptation and data-flow maps; skill-retention, dependence, calibration, well-being, subgroup, and exit measures; user-controlled pause and reset; and ethics review before any human or neural-data study.",
+          "beyond_state_of_art": "A credible advance would demonstrate durable complementarity without deskilling or coercive dependence, independently reproduce the result across populations and accessibility needs, and implement a portable cognitive-sovereignty contract spanning neural data, model adaptation, device custody, revocation, rehabilitation, and service exit. The mature target architecture would preserve practical pause, portability, rehabilitation, subgroup equity, and independently governed escalation from ordinary assistance to sensing, adaptation, or stimulation.",
+          "codex_tests": [
+            "Layer claim falsification test"
+          ],
+          "lean_module": "AsiStackProofs.NoDeferralAdmission",
+          "proof_targets": [
+            {
+              "tag": "lean:human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.admission_boundary",
+              "module": "AsiStackProofs.NoDeferralAdmission",
+              "target": "A finite human-AI coupling record may hand off only when component baselines, adaptation, data purpose, skill, dependence, exit, subgroup, and irreversible residuals are explicit; no theorem establishes beneficial symbiosis or authorizes neural intervention.",
+              "status": "planned"
+            }
+          ]
+        },
+        {
           "id": "ai-deployment-transition-distribution-and-human-agency",
           "title": "AI Deployment, Transition, Distribution, and Human Agency",
           "file": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd",
@@ -11456,7 +11867,8 @@
           "source_ids": [
             "coherence_exchange",
             "ext_generative_ai_at_work_2025",
-            "ext_ilo_genai_jobs_index_2025"
+            "ext_ilo_genai_jobs_index_2025",
+            "ext_oecd_ai_infrastructure_competition_2025"
           ],
           "problem": "A useful AI deployment changes tasks, roles, skill, discretion, wages, ownership returns, prices, access, concentration, critical-service continuity, and the practical choices available to people and communities. Aggregate productivity cannot reveal who benefits, who loses, or whether transition capacity exists.",
           "insufficient": "Task benchmarks, exposure indices, adoption counts, productivity averages, job forecasts, and organizational charts describe different levels. Treating any one as a welfare result hides substitution versus complementarity, delayed effects, distribution, bargaining power, ownership, access, deskilling, dependency, and exit.",
@@ -12606,8 +13018,8 @@
               "ext_foundation_robotics_physical_risk_2025",
               "ext_control_barrier_functions_2019",
               "ext_simplex_architecture_1998",
-              "ext_safe_reinforcement_learning_survey_2015"
-              ,"ext_ai_simulation_digital_twins_2025"
+              "ext_safe_reinforcement_learning_survey_2015",
+              "ext_ai_simulation_digital_twins_2025"
             ],
             "supporting": [
               "viea"
@@ -12626,7 +13038,9 @@
               "source_id": "ext_ai_simulation_digital_twins_2025",
               "mapped_support": "Surveys AI-enabled simulation and digital-twin patterns relevant to plant models, telemetry synchronization, scenario testing, and sim-to-real residuals.",
               "limits": "A digital twin is a maintained model, not the physical system; fidelity, synchronization, coverage, and transfer must be measured for each use.",
-              "passage_refs": ["sources/source_notes/ext_ai_simulation_digital_twins_2025.md"],
+              "passage_refs": [
+                "sources/source_notes/ext_ai_simulation_digital_twins_2025.md"
+              ],
               "passage_review_note": "Reviewed for digital-twin lifecycle and sim-to-real limits.",
               "passage_review_state": "reviewed"
             },
@@ -14253,7 +14667,11 @@
             "ext_atsinfer_2026",
             "ext_test_time_training_2020",
             "ext_llada_2025",
-            "ext_scaling_dllms_2026"
+            "ext_scaling_dllms_2026",
+            "ext_neuromorphic_computing_scale_2025",
+            "ext_photonic_neuromorphic_2024",
+            "ext_quantum_ml_shadows_2024",
+            "ext_organoid_intelligence_2023"
           ],
           "source_queue": {
             "primary": [
@@ -14317,7 +14735,9 @@
               "source_id": "ext_test_time_training_2020",
               "mapped_support": "Provides an input-conditioned adaptation comparator in which a model updates on a self-supervised objective at inference time.",
               "limits": "Test-time training is not automatically stable, reversible, distribution-safe, or compatible with shared-state serving; no local model was adapted.",
-              "passage_refs": ["sources/source_notes/ext_test_time_training_2020.md"],
+              "passage_refs": [
+                "sources/source_notes/ext_test_time_training_2020.md"
+              ],
               "passage_review_note": "Reviewed for mutable-state ABI requirements and rollback boundaries.",
               "passage_review_state": "reviewed"
             },
@@ -14325,7 +14745,9 @@
               "source_id": "ext_llada_2025",
               "mapped_support": "Supplies a modern diffusion-language-model comparator for non-autoregressive token denoising and alternative generation schedules.",
               "limits": "Source-reported quality or speed does not establish parity, lower lifecycle cost, safer decoding, or ABI compatibility.",
-              "passage_refs": ["sources/source_notes/ext_llada_2025.md"],
+              "passage_refs": [
+                "sources/source_notes/ext_llada_2025.md"
+              ],
               "passage_review_note": "Reviewed as a substrate-family comparator rather than a replacement result.",
               "passage_review_state": "reviewed"
             },
@@ -14333,7 +14755,9 @@
               "source_id": "ext_scaling_dllms_2026",
               "mapped_support": "Provides scaling evidence and design considerations for diffusion language models as a distinct generation substrate.",
               "limits": "Reported scaling behavior does not establish universal superiority, deployment efficiency, or transfer to ASI Stack workloads.",
-              "passage_refs": ["sources/source_notes/ext_scaling_dllms_2026.md"],
+              "passage_refs": [
+                "sources/source_notes/ext_scaling_dllms_2026.md"
+              ],
               "passage_review_note": "Reviewed for matched-tournament design and architecture-specific state semantics.",
               "passage_review_state": "reviewed"
             },
@@ -14798,6 +15222,101 @@
           ]
         },
         {
+          "id": "relational-dimension-compilation-and-polyadic-cognition",
+          "title": "Relational Dimension Compilation and Polyadic Cognition",
+          "file": "chapters/relational-dimension-compilation-and-polyadic-cognition.qmd",
+          "status": "conceptual",
+          "evidence_level": "argument",
+          "claim_label": "Design rationale",
+          "source_ids": [
+            "relational_dimension_compiler",
+            "ext_neural_message_passing_2017"
+          ],
+          "source_queue": {
+            "primary": [
+              "relational_dimension_compiler"
+            ],
+            "supporting": [
+              "ext_neural_message_passing_2017"
+            ],
+            "variants": [],
+            "connector_or_recovery": [],
+            "handoff_or_recovery_notes": []
+          },
+          "problem": "Many cognitive problems are natively polyadic: the meaning of a relation depends on several typed roles jointly, and its useful order may change with context. Flattening every relation into pairwise edges or token sequences can lose role identity, create ambiguous contractions, and hide the cost of proposing and maintaining higher-order structure.",
+          "insufficient": "A substrate catalogue can name hypergraphs, tensor products, slots, and routing mechanisms, but it does not own the compiler lifecycle that types dimensions, proposes candidate relations, preserves role identity, qualifies higher order against lower-order rescues, adapts order, contracts reversibly, and evaluates whether the added structure earns its cost.",
+          "core_claim": "Polyadic cognition should be implemented as a slow-path relational-dimension compiler over stable lower-arity primitives: candidate higher-order structure is typed, role-addressable, denominator-complete, qualified against strong pairwise and sequence baselines, budgeted, reversible, and retained only when it improves held-out relational performance without violating memory, latency, calibration, or governance constraints.",
+          "claim_source_mappings": [
+            {
+              "source_id": "relational_dimension_compiler",
+              "mapped_support": "Supplies the Corben-authored conceptual architecture for typed relational IR, adaptive order, role-sensitive reification, qualification, compilation, contraction, and the RODIE research program.",
+              "limits": "Author-lineage conceptual source only; no implementation, natural-task result, irreducibility theorem, bounded-arity proof, efficiency, safety, reproduction, or transfer result.",
+              "passage_refs": [
+                "sources/source_notes/relational_dimension_compiler.md"
+              ],
+              "passage_review_note": "Passage-reviewed for the distinct lifecycle, test program, lower-order rescues, and explicit non-claims.",
+              "passage_review_state": "reviewed_source_note"
+            },
+            {
+              "source_id": "ext_neural_message_passing_2017",
+              "mapped_support": "Supplies a primary external graph-message-passing comparator with explicit node, edge, aggregation, update, and readout structure.",
+              "limits": "Molecular-property results do not establish general relational reasoning, dynamic topology discovery, exact role persistence, higher-order necessity, or local reproduction.",
+              "passage_refs": [
+                "sources/source_notes/ext_neural_message_passing_2017.md"
+              ],
+              "passage_review_note": "Reviewed as a strong lower-order graph and message-passing comparator rather than support for the RDC proposal.",
+              "passage_review_state": "reviewed_source_note"
+            }
+          ],
+          "mechanism": [
+            "Represent each candidate relation with typed roles, dimensional signature, scope, provenance, uncertainty, resource cost, and expiry.",
+            "Generate candidate dimensional topologies on a slow path from residual relational failures rather than materializing all possible tuples.",
+            "Compare candidates with strong rescues including reified relation nodes, message passing, factorization, sequence serialization, retrieval, and tool-mediated computation.",
+            "Qualify a candidate on held-out role-sensitive tasks with a complete proposal denominator, calibration, invariance, counterfactual-role, and cost tests.",
+            "Compile admitted relations into role-addressable operators, memory records, and router contracts while preserving provenance and an inverse or fallback path.",
+            "Adapt order under explicit promotion and demotion rules; garbage-collect expired or unproductive dimensions and invalidate descendants after contraction.",
+            "Evaluate with RODIE-style relational-order diagnostics that separate topology discovery, role binding, compositional transfer, efficiency, and governance."
+          ],
+          "interfaces": [
+            "Replaceable Cognitive Substrates for primitive families and capability-field contracts",
+            "Memory Systems for provenance, retrieval, persistence, and deletion of compiled relations",
+            "Routing and Deliberation for choosing lower-order, compiled, fallback, or abstention paths",
+            "Governed Model Training for learning proposals and operators without granting self-authorization",
+            "Benchmark Ratchets for held-out topology, role, compositionality, calibration, and cost evaluation"
+          ],
+          "invariants": [
+            "Role identity survives storage, permutation, routing, contraction, explanation, and rollback.",
+            "No proposal is judged without its full candidate denominator and resource cost.",
+            "Higher order is admitted only after named lower-order rescues are implemented competently under matched budgets.",
+            "Every compiled relation has provenance, uncertainty, scope, expiry, descendant tracking, and a reversible fallback.",
+            "A gain on synthetic relational tasks is not promoted into a claim of general intelligence, irreducible structure, or universal arity."
+          ],
+          "failure_modes": [
+            "Combinatorial explosion from indiscriminate tuple materialization.",
+            "Arity theater relabels pairwise or sequence computation without adding role-sensitive capability.",
+            "Role collapse treats distinct participant positions as exchangeable.",
+            "Proposal filtering hides the denominator and inflates apparent qualification rates.",
+            "Synthetic benchmark leakage rewards topology templates rather than relational transfer.",
+            "Contraction deletes information or leaves stale descendants and cache entries.",
+            "Compiler overhead exceeds the value of the admitted structure.",
+            "Self-modification authority is smuggled into a learned proposal mechanism."
+          ],
+          "minimal_implementation": "A deterministic compiler for a small typed-relation language with candidate and denominator logs, pairwise-node and sequence baselines, role-permutation and counterfactual tests, promotion and demotion thresholds, cost accounting, reversible contraction, descendant invalidation, and a held-out RODIE fixture family.",
+          "beyond_state_of_art": "A serious advance would show independently reproduced gains on natural and synthetic relational workloads across unseen topology and role configurations, beat strong lower-order rescues under matched compute and memory, retain calibrated abstention, and demonstrate safe online admission and contraction without corrupting dependent state. The mature target architecture would conserve proposal denominators, provenance, uncertainty, descendant invalidation, and fallback while showing that admitted structure earns its lifecycle cost.",
+          "codex_tests": [
+            "Layer claim falsification test"
+          ],
+          "lean_module": "AsiStackProofs.NoDeferralAdmission",
+          "proof_targets": [
+            {
+              "tag": "lean:relational-dimension-compilation-and-polyadic-cognition.admission_boundary",
+              "module": "AsiStackProofs.NoDeferralAdmission",
+              "target": "A finite relational candidate may hand off only when typed roles, lower-order rescues, proposal denominator, qualification, cost, fallback, descendants, and contraction state are explicit; no theorem proves irreducibility, usefulness, or bounded primitive arity.",
+              "status": "planned"
+            }
+          ]
+        },
+        {
           "id": "governed-model-training-distributed-optimization-and-scaling",
           "title": "Governed Model Training, Distributed Optimization, and Scaling",
           "file": "chapters/governed-model-training-distributed-optimization-and-scaling.qmd",
@@ -14878,7 +15397,9 @@
               "source_id": "ext_proof_of_learning_2021",
               "mapped_support": "Provides a transcript-based comparator for auditing whether a claimed training process follows a committed sequence of states.",
               "limits": "It does not prove dataset legitimacy, objective adequacy, hidden-compute absence, exact reproduction, model quality, or safety.",
-              "passage_refs": ["sources/source_notes/ext_proof_of_learning_2021.md"],
+              "passage_refs": [
+                "sources/source_notes/ext_proof_of_learning_2021.md"
+              ],
               "passage_review_note": "Reviewed for audit-transcript design and proof-of-training nonclaims.",
               "passage_review_state": "reviewed"
             },
@@ -14886,7 +15407,9 @@
               "source_id": "ext_test_time_training_2020",
               "mapped_support": "Provides a distinct training-timescale comparator in which per-input self-supervised updates occur at test time.",
               "limits": "The method does not establish safe online learning, distributed-state consistency, rollback, or general robustness.",
-              "passage_refs": ["sources/source_notes/ext_test_time_training_2020.md"],
+              "passage_refs": [
+                "sources/source_notes/ext_test_time_training_2020.md"
+              ],
               "passage_review_note": "Reviewed for lifecycle ownership of test-time updates.",
               "passage_review_state": "reviewed"
             },
@@ -14894,7 +15417,9 @@
               "source_id": "ext_curriculum_learning_2009",
               "mapped_support": "Provides the foundational curriculum-learning hypothesis that example order and difficulty schedules can change optimization outcomes.",
               "limits": "Curriculum effects are task-, model-, metric-, and schedule-dependent; easier-first ordering is not a universal improvement rule.",
-              "passage_refs": ["sources/source_notes/ext_curriculum_learning_2009.md"],
+              "passage_refs": [
+                "sources/source_notes/ext_curriculum_learning_2009.md"
+              ],
               "passage_review_note": "Reviewed for prospective schedule identity and matched-order ablations.",
               "passage_review_state": "reviewed"
             },
@@ -15229,16 +15754,17 @@
           "status": "conceptual",
           "evidence_level": "argument",
           "claim_label": "Design rationale",
-      "source_ids": [
-        "simulation_scaling",
-        "ext_scaling_laws_neural_language_models_2020",
-        "ext_mdl_tutorial_2004",
-        "ext_weak_to_strong_generalization_2023",
-        "ext_information_bottleneck_2000",
-        "ext_valiant_theory_learnable_1984",
-        "ext_deep_double_descent_2020",
-        "ext_emergent_abilities_llms_2022",
-        "ext_emergent_abilities_mirage_2023"
+          "source_ids": [
+            "simulation_scaling",
+            "ext_scaling_laws_neural_language_models_2020",
+            "ext_mdl_tutorial_2004",
+            "ext_weak_to_strong_generalization_2023",
+            "ext_information_bottleneck_2000",
+            "ext_valiant_theory_learnable_1984",
+            "ext_deep_double_descent_2020",
+            "ext_emergent_abilities_llms_2022",
+            "ext_emergent_abilities_mirage_2023",
+            "ext_no_free_lunch_inductive_bias_2024"
           ],
           "problem": "The stack repeatedly relies on claims that learning will generalize, capabilities will transfer, losses will scale, or phase changes will appear outside observed training support. Those claims require an owner that connects assumptions about data, hypothesis class, optimization, inductive bias, compute, and evaluation to an exact prediction and failure envelope.",
           "insufficient": "PAC bounds, capacity measures, stability, compression, information theory, scaling-law fits, emergence plots, and benchmark curves each illuminate part of learning. None is a universal theory of deep networks, and none automatically transports from a loss metric, architecture family, data regime, optimizer, or scale range to downstream capability or safety.",
@@ -15289,14 +15815,14 @@
           ],
           "source_queue": {
             "primary": [
-        "ext_scaling_laws_neural_language_models_2020",
-        "ext_mdl_tutorial_2004",
-        "ext_weak_to_strong_generalization_2023",
-        "ext_information_bottleneck_2000",
-        "ext_valiant_theory_learnable_1984",
-        "ext_deep_double_descent_2020",
-        "ext_emergent_abilities_llms_2022",
-        "ext_emergent_abilities_mirage_2023"
+              "ext_scaling_laws_neural_language_models_2020",
+              "ext_mdl_tutorial_2004",
+              "ext_weak_to_strong_generalization_2023",
+              "ext_information_bottleneck_2000",
+              "ext_valiant_theory_learnable_1984",
+              "ext_deep_double_descent_2020",
+              "ext_emergent_abilities_llms_2022",
+              "ext_emergent_abilities_mirage_2023"
             ],
             "supporting": [],
             "variants": [],
@@ -15342,48 +15868,48 @@
               "passage_refs": [
                 "sources/source_notes/ext_information_bottleneck_2000.md"
               ],
-        "passage_review_note": "The local source note was reviewed for bounded mechanism, evidence, failure, and non-claim use."
-      },
-      {
-        "source_id": "ext_valiant_theory_learnable_1984",
-        "mapped_support": "Foundational PAC-learning source for explicit accuracy, confidence, sample, concept-class, and computational assumptions.",
-        "limits": "Does not directly explain or certify modern foundation-model generalization, transfer, or safety.",
-        "passage_review_state": "reviewed_source_note",
-        "passage_refs": [
-          "sources/source_notes/ext_valiant_theory_learnable_1984.md"
-        ],
-        "passage_review_note": "Reviewed for sample-complexity quantifiers and the boundary between a conditional theorem and a trained-system claim."
-      },
-      {
-        "source_id": "ext_deep_double_descent_2020",
-        "mapped_support": "Reports model-wise, sample-wise, and epoch-wise double-descent phenomena and motivates effective-complexity tracking.",
-        "limits": "Configuration-bound empirical result, not a universal law that more model, data, or training helps or hurts.",
-        "passage_review_state": "reviewed_source_note",
-        "passage_refs": [
-          "sources/source_notes/ext_deep_double_descent_2020.md"
-        ],
-        "passage_review_note": "Reviewed for interpolation-regime failure and forecast non-monotonicity."
-      },
-      {
-        "source_id": "ext_emergent_abilities_llms_2022",
-        "mapped_support": "Frames reported task abilities that appear sharply with model scale and motivates prospective breakpoint analysis.",
-        "limits": "Survey/framing source, not proof of mechanistic discontinuity or universal unpredictability.",
-        "passage_review_state": "reviewed_source_note",
-        "passage_refs": [
-          "sources/source_notes/ext_emergent_abilities_llms_2022.md"
-        ],
-        "passage_review_note": "Reviewed as the emergence claim under challenge."
-      },
-      {
-        "source_id": "ext_emergent_abilities_mirage_2023",
-        "mapped_support": "Provides counterevidence that nonlinear metrics and limited test data can create apparently sharp emergence from smoother underlying changes.",
-        "limits": "Does not establish that every capability transition is a measurement artifact.",
-        "passage_review_state": "reviewed_source_note",
-        "passage_refs": [
-          "sources/source_notes/ext_emergent_abilities_mirage_2023.md"
-        ],
-        "passage_review_note": "Reviewed for metric-artifact alternative, uncertainty, and continuous-measurement requirements."
-      }
+              "passage_review_note": "The local source note was reviewed for bounded mechanism, evidence, failure, and non-claim use."
+            },
+            {
+              "source_id": "ext_valiant_theory_learnable_1984",
+              "mapped_support": "Foundational PAC-learning source for explicit accuracy, confidence, sample, concept-class, and computational assumptions.",
+              "limits": "Does not directly explain or certify modern foundation-model generalization, transfer, or safety.",
+              "passage_review_state": "reviewed_source_note",
+              "passage_refs": [
+                "sources/source_notes/ext_valiant_theory_learnable_1984.md"
+              ],
+              "passage_review_note": "Reviewed for sample-complexity quantifiers and the boundary between a conditional theorem and a trained-system claim."
+            },
+            {
+              "source_id": "ext_deep_double_descent_2020",
+              "mapped_support": "Reports model-wise, sample-wise, and epoch-wise double-descent phenomena and motivates effective-complexity tracking.",
+              "limits": "Configuration-bound empirical result, not a universal law that more model, data, or training helps or hurts.",
+              "passage_review_state": "reviewed_source_note",
+              "passage_refs": [
+                "sources/source_notes/ext_deep_double_descent_2020.md"
+              ],
+              "passage_review_note": "Reviewed for interpolation-regime failure and forecast non-monotonicity."
+            },
+            {
+              "source_id": "ext_emergent_abilities_llms_2022",
+              "mapped_support": "Frames reported task abilities that appear sharply with model scale and motivates prospective breakpoint analysis.",
+              "limits": "Survey/framing source, not proof of mechanistic discontinuity or universal unpredictability.",
+              "passage_review_state": "reviewed_source_note",
+              "passage_refs": [
+                "sources/source_notes/ext_emergent_abilities_llms_2022.md"
+              ],
+              "passage_review_note": "Reviewed as the emergence claim under challenge."
+            },
+            {
+              "source_id": "ext_emergent_abilities_mirage_2023",
+              "mapped_support": "Provides counterevidence that nonlinear metrics and limited test data can create apparently sharp emergence from smoother underlying changes.",
+              "limits": "Does not establish that every capability transition is a measurement artifact.",
+              "passage_review_state": "reviewed_source_note",
+              "passage_refs": [
+                "sources/source_notes/ext_emergent_abilities_mirage_2023.md"
+              ],
+              "passage_review_note": "Reviewed for metric-artifact alternative, uncertainty, and continuous-measurement requirements."
+            }
           ],
           "proof_targets": [
             {
@@ -18886,7 +19412,11 @@
             "tokenmana",
             "ext_iea_energy_and_ai_2025",
             "ext_lbnl_data_center_energy_2024",
-            "ext_flexible_hardware_enabled_guarantees_2025"
+            "ext_flexible_hardware_enabled_guarantees_2025",
+            "ext_neuromorphic_computing_scale_2025",
+            "ext_photonic_neuromorphic_2024",
+            "ext_quantum_ml_shadows_2024",
+            "ext_oecd_ai_infrastructure_competition_2025"
           ],
           "problem": "Requested compute becomes useful work only through accelerators, memory, storage, interconnect, facilities, grid connections, generation, cooling, water, land, materials, maintenance, resilience, and retirement at particular places and times. Abstract token or FLOP budgets hide these physical constraints and their affected communities.",
           "insufficient": "Nameplate accelerator capacity, chip TDP, workload energy, facility PUE, annual electricity, carbon estimates, water figures, or capital cost each describe a slice. They do not establish delivered useful compute, temporal and locational impact, grid effects, resilience, embodied materials, rebound, community burden, or retireable capacity.",
@@ -18952,7 +19482,9 @@
               "source_id": "ext_flexible_hardware_enabled_guarantees_2025",
               "mapped_support": "Motivates hardware mechanisms that could make compute use and policy compliance more observable and selectively enforceable.",
               "limits": "Hardware evidence has bounded coverage and can introduce surveillance, capture, update-authority, compatibility, and circumvention risks.",
-              "passage_refs": ["sources/source_notes/ext_flexible_hardware_enabled_guarantees_2025.md"],
+              "passage_refs": [
+                "sources/source_notes/ext_flexible_hardware_enabled_guarantees_2025.md"
+              ],
               "passage_review_note": "Reviewed for physical-coverage and governance-abuse boundaries.",
               "passage_review_state": "reviewed"
             },
@@ -20418,7 +20950,9 @@
               "source_id": "ext_reluplex_2017",
               "mapped_support": "Supplies a concrete neural-network verification case in which a solver checks a stated property over a bounded ReLU network region.",
               "limits": "The theorem concerns only the encoded network, property, arithmetic semantics, and region; it does not prove model intent, data quality, whole-system safety, or deployed implementation binding.",
-              "passage_refs": ["sources/source_notes/ext_reluplex_2017.md"],
+              "passage_refs": [
+                "sources/source_notes/ext_reluplex_2017.md"
+              ],
               "passage_review_note": "Reviewed for the distinction between certified neural properties and open-world system claims.",
               "passage_review_state": "reviewed"
             },
@@ -20835,7 +21369,9 @@
             "kernel_english_residual_compiler",
             "ext_swe_rebench_v2_2026",
             "ext_mlperf_training_v6_2026",
-            "relational_dimension_compiler"
+            "relational_dimension_compiler",
+            "ext_cultural_alignment_llms_2024",
+            "ext_multilingual_evaluation_state_2026"
           ],
           "source_queue": {
             "primary": [
@@ -21458,7 +21994,9 @@
               "source_id": "ext_elk_report_2021",
               "mapped_support": "Frames eliciting latent knowledge as the problem of recovering what a model internally knows when its ordinary answer channel may be untrusted.",
               "limits": "ELK is a research problem and strategy space, not a solved truthful-reporting mechanism or a guarantee that latent knowledge is represented accessibly.",
-              "passage_refs": ["sources/source_notes/ext_elk_report_2021.md"],
+              "passage_refs": [
+                "sources/source_notes/ext_elk_report_2021.md"
+              ],
               "passage_review_note": "Reviewed for reporter-versus-world-model separation and governance nonclaims.",
               "passage_review_state": "reviewed"
             },
@@ -21466,7 +22004,9 @@
               "source_id": "ext_influence_functions_2017",
               "mapped_support": "Provides a first-order method for estimating how training points affect a model prediction or loss, useful as one attribution hypothesis.",
               "limits": "Influence estimates depend on differentiability, curvature approximation, local linearization, checkpoint identity, and implementation; they do not prove causal responsibility or deletion.",
-              "passage_refs": ["sources/source_notes/ext_influence_functions_2017.md"],
+              "passage_refs": [
+                "sources/source_notes/ext_influence_functions_2017.md"
+              ],
               "passage_review_note": "Reviewed for training-attribution mechanisms and their approximation limits.",
               "passage_review_state": "reviewed"
             },
@@ -22393,124 +22933,132 @@
             "Run causal component ablations, independent institutional reproduction, and heterogeneous transfer before considering any case-quality, hazard-coverage, control-effectiveness, safety, readiness, support, or SOTA promotion."
           ]
         },
-    {
-      "id": "content-authenticity-watermarking-and-synthetic-media-integrity",
+        {
+          "id": "content-authenticity-watermarking-and-synthetic-media-integrity",
           "title": "Content Authenticity, Watermarking, and Synthetic Media Integrity",
           "file": "chapters/content-authenticity-watermarking-and-synthetic-media-integrity.qmd",
-      "status": "conceptual",
-      "evidence_level": "argument",
-      "claim_label": "Design rationale",
-      "source_ids": [
-        "ext_c2pa_specification_2_3_2025",
-        "ext_eu_article_50_transparency_guidelines_2026",
-        "ext_international_ai_safety_report_2026",
-        "deterministic_capability_compilation"
-      ],
-      "problem": "The stack tracks model and software provenance but lacks an owner for the provenance, disclosure, detectability, transformation history, and downstream interpretation of generated or manipulated outputs.",
-      "insufficient": "Metadata, one watermark, a detector score, visible label, signature, or platform policy can be stripped, forged, misunderstood, or lost during transformation. None alone proves that content is true, false, human-made, AI-made, authorized, or harmless.",
-      "core_claim": "Synthetic-media integrity should use a layered authenticity envelope that binds asset identity, generator and editor claims, signed provenance, content bindings, watermark or fingerprint signals, detector outputs, visible disclosure, transformation history, trust policy, uncertainty, and remedy; every signal retains its own semantics, and no missing or valid signal becomes a universal truth judgment.",
-      "mechanism": [
-        "Emit a signed generation event and content credential with exact model, tool, action, policy, and asset lineage where lawful and safe.",
-        "Use robust watermarking or fingerprinting only as a scoped auxiliary signal with measured quality, false-positive, false-negative, removal, and collision behavior.",
-        "Preserve ingredient and edit histories through supported transformations and record explicit breaks when provenance is lost.",
-        "Combine provenance validation, detector evidence, contextual verification, visible disclosure, and human review without collapsing them into one authenticity score.",
-        "Provide dispute, correction, takedown, reattribution, and harmed-party routes while retaining privacy and accessibility boundaries."
-      ],
-      "interfaces": [
-        "Supply-Chain Integrity owns provenance of models, code, and dependencies; this chapter owns provenance of generated outputs and edits.",
-        "Privacy/Data Rights owns consent, personal information, likeness, and remedy constraints.",
-        "Human-AI Communication owns epistemic effects and persuasion; this chapter supplies bounded authenticity evidence.",
-        "Institutions owns legal interpretation and public legitimacy; this chapter provides technical and operational disclosure records.",
-        "Societal Resilience owns incident response when deceptive content spreads."
-      ],
-      "invariants": [
-        "Provenance, watermark, fingerprint, detector, label, and contextual verification remain separate evidence types.",
-        "A valid signature proves only the signed claim under the selected trust policy, not semantic truth.",
-        "Missing provenance never proves synthetic origin, and present provenance never proves non-deception.",
-        "Every transformation either preserves a verified lineage link or records an explicit break.",
-        "Disclosure remains perceivable, understandable, accessible, and bound to the relevant asset and context."
-      ],
-      "failure_modes": [
-        "metadata stripping",
-        "watermark removal or collision",
-        "detector distribution shift",
-        "false attribution",
-        "validly signed false claims",
-        "compromised signer or trust store",
-        "screenshot and analog-hole laundering",
-        "ingredient-chain break",
-        "label fatigue or inaccessible disclosure",
-        "platform noninteroperability",
-        "privacy leakage through provenance",
-        "compliance theater"
-      ],
-      "minimal_implementation": "Generate a small public-safe media set with signed C2PA-style manifests, visible labels, and a toy auxiliary watermark. Apply crop, resize, re-encode, metadata-strip, screenshot, and edit transformations; report which signals survive, fail, or conflict; exercise invalid-signature, missing-credential, compromised-trust, false-positive, correction, and accessibility cases.",
+          "status": "conceptual",
+          "evidence_level": "argument",
+          "claim_label": "Design rationale",
+          "source_ids": [
+            "ext_c2pa_specification_2_3_2025",
+            "ext_eu_article_50_transparency_guidelines_2026",
+            "ext_international_ai_safety_report_2026",
+            "deterministic_capability_compilation"
+          ],
+          "problem": "The stack tracks model and software provenance but lacks an owner for the provenance, disclosure, detectability, transformation history, and downstream interpretation of generated or manipulated outputs.",
+          "insufficient": "Metadata, one watermark, a detector score, visible label, signature, or platform policy can be stripped, forged, misunderstood, or lost during transformation. None alone proves that content is true, false, human-made, AI-made, authorized, or harmless.",
+          "core_claim": "Synthetic-media integrity should use a layered authenticity envelope that binds asset identity, generator and editor claims, signed provenance, content bindings, watermark or fingerprint signals, detector outputs, visible disclosure, transformation history, trust policy, uncertainty, and remedy; every signal retains its own semantics, and no missing or valid signal becomes a universal truth judgment.",
+          "mechanism": [
+            "Emit a signed generation event and content credential with exact model, tool, action, policy, and asset lineage where lawful and safe.",
+            "Use robust watermarking or fingerprinting only as a scoped auxiliary signal with measured quality, false-positive, false-negative, removal, and collision behavior.",
+            "Preserve ingredient and edit histories through supported transformations and record explicit breaks when provenance is lost.",
+            "Combine provenance validation, detector evidence, contextual verification, visible disclosure, and human review without collapsing them into one authenticity score.",
+            "Provide dispute, correction, takedown, reattribution, and harmed-party routes while retaining privacy and accessibility boundaries."
+          ],
+          "interfaces": [
+            "Supply-Chain Integrity owns provenance of models, code, and dependencies; this chapter owns provenance of generated outputs and edits.",
+            "Privacy/Data Rights owns consent, personal information, likeness, and remedy constraints.",
+            "Human-AI Communication owns epistemic effects and persuasion; this chapter supplies bounded authenticity evidence.",
+            "Institutions owns legal interpretation and public legitimacy; this chapter provides technical and operational disclosure records.",
+            "Societal Resilience owns incident response when deceptive content spreads."
+          ],
+          "invariants": [
+            "Provenance, watermark, fingerprint, detector, label, and contextual verification remain separate evidence types.",
+            "A valid signature proves only the signed claim under the selected trust policy, not semantic truth.",
+            "Missing provenance never proves synthetic origin, and present provenance never proves non-deception.",
+            "Every transformation either preserves a verified lineage link or records an explicit break.",
+            "Disclosure remains perceivable, understandable, accessible, and bound to the relevant asset and context."
+          ],
+          "failure_modes": [
+            "metadata stripping",
+            "watermark removal or collision",
+            "detector distribution shift",
+            "false attribution",
+            "validly signed false claims",
+            "compromised signer or trust store",
+            "screenshot and analog-hole laundering",
+            "ingredient-chain break",
+            "label fatigue or inaccessible disclosure",
+            "platform noninteroperability",
+            "privacy leakage through provenance",
+            "compliance theater"
+          ],
+          "minimal_implementation": "Generate a small public-safe media set with signed C2PA-style manifests, visible labels, and a toy auxiliary watermark. Apply crop, resize, re-encode, metadata-strip, screenshot, and edit transformations; report which signals survive, fail, or conflict; exercise invalid-signature, missing-credential, compromised-trust, false-positive, correction, and accessibility cases.",
           "beyond_state_of_art": "The mature operational contract lets every governed output carry a portable, privacy-aware authenticity envelope across generation, editing, distribution, and correction. Platforms and readers can inspect what is claimed, by whom, under which trust policy, which transformations are known, which signals survived, what remains unknown, and how to seek remedy. The system remains useful even when metadata disappears because it composes provenance with disclosure, detection, context, and institutional response instead of promising an unremovable mark.",
-      "codex_tests": [
-        "Evidence-type separation test",
-        "Transformation-survival matrix",
-        "Valid-signature false-claim control",
-        "Missing-provenance non-inference test",
-        "Disclosure accessibility and remedy-route test",
-        "No-support-promotion control"
-      ],
-      "source_queue": {
-        "primary": [
-          "ext_c2pa_specification_2_3_2025",
-          "ext_eu_article_50_transparency_guidelines_2026"
-        ],
-        "supporting": [
-          "ext_international_ai_safety_report_2026",
-          "deterministic_capability_compilation"
-        ],
-        "variants": [],
-        "connector_or_recovery": [],
-        "handoff_or_recovery_notes": []
-      },
-      "claim_source_mappings": [
-        {
-          "source_id": "ext_c2pa_specification_2_3_2025",
-          "mapped_support": "Defines signed manifests, assertions, ingredients, content bindings, validation, and provenance-history interoperability.",
-          "limits": "Technical standard; no semantic truth, universal retention, or unforgeability claim.",
-          "passage_review_state": "reviewed_source_note",
-          "passage_refs": ["sources/source_notes/ext_c2pa_specification_2_3_2025.md"],
-          "passage_review_note": "Reviewed for manifest mechanics, validation semantics, and explicit non-claims."
+          "codex_tests": [
+            "Evidence-type separation test",
+            "Transformation-survival matrix",
+            "Valid-signature false-claim control",
+            "Missing-provenance non-inference test",
+            "Disclosure accessibility and remedy-route test",
+            "No-support-promotion control"
+          ],
+          "source_queue": {
+            "primary": [
+              "ext_c2pa_specification_2_3_2025",
+              "ext_eu_article_50_transparency_guidelines_2026"
+            ],
+            "supporting": [
+              "ext_international_ai_safety_report_2026",
+              "deterministic_capability_compilation"
+            ],
+            "variants": [],
+            "connector_or_recovery": [],
+            "handoff_or_recovery_notes": []
+          },
+          "claim_source_mappings": [
+            {
+              "source_id": "ext_c2pa_specification_2_3_2025",
+              "mapped_support": "Defines signed manifests, assertions, ingredients, content bindings, validation, and provenance-history interoperability.",
+              "limits": "Technical standard; no semantic truth, universal retention, or unforgeability claim.",
+              "passage_review_state": "reviewed_source_note",
+              "passage_refs": [
+                "sources/source_notes/ext_c2pa_specification_2_3_2025.md"
+              ],
+              "passage_review_note": "Reviewed for manifest mechanics, validation semantics, and explicit non-claims."
+            },
+            {
+              "source_id": "ext_eu_article_50_transparency_guidelines_2026",
+              "mapped_support": "Provides current official guidance on machine-readable marking, deepfake and public-interest disclosure, provider/deployer roles, and the 2 August 2026 applicability date.",
+              "limits": "Official guidance, not legal advice, project-specific compliance proof, or robustness evidence.",
+              "passage_review_state": "reviewed_source_note",
+              "passage_refs": [
+                "sources/source_notes/ext_eu_article_50_transparency_guidelines_2026.md"
+              ],
+              "passage_review_note": "Reviewed for role distinctions, current date, and compliance non-authority."
+            },
+            {
+              "source_id": "ext_international_ai_safety_report_2026",
+              "mapped_support": "Synthesizes synthetic-media, influence, detection, disclosure, education, correction, and resilience measures with substantial uncertainty.",
+              "limits": "International synthesis; no detector, watermark, provenance system, or resilience intervention is locally reproduced.",
+              "passage_review_state": "reviewed_source_note",
+              "passage_refs": [
+                "sources/source_notes/ext_international_ai_safety_report_2026.md"
+              ],
+              "passage_review_note": "Reviewed for defense-in-depth and societal handoff."
+            },
+            {
+              "source_id": "deterministic_capability_compilation",
+              "mapped_support": "Supplies Corben's capability-compilation lineage for exact artifact identity, transformation provenance, declared semantics, verification boundaries, and residual-preserving handoffs.",
+              "limits": "Author-side architecture lineage only; it does not establish C2PA conformance, watermark robustness, detector accuracy, content truth, consent, legal compliance, or public trust.",
+              "passage_review_state": "reviewed_source_note",
+              "passage_refs": [
+                "sources/source_notes/deterministic_capability_compilation.md"
+              ],
+              "passage_review_note": "Reviewed for artifact identity, transformation lineage, verifier boundaries, and residual-preserving compilation concepts."
+            }
+          ],
+          "proof_targets": [
+            {
+              "tag": "lean:content-authenticity-watermarking-and-synthetic-media-integrity.admission_boundary",
+              "module": "AsiStackProofs.NoDeferralAdmission",
+              "target": "A finite authenticity envelope may hand off only when asset, claim, signer, trust policy, evidence types, transformation state, uncertainty, and remedy are explicit; no theorem proves content truth.",
+              "status": "planned"
+            }
+          ],
+          "lean_module": "AsiStackProofs.NoDeferralAdmission"
         },
-        {
-          "source_id": "ext_eu_article_50_transparency_guidelines_2026",
-          "mapped_support": "Provides current official guidance on machine-readable marking, deepfake and public-interest disclosure, provider/deployer roles, and the 2 August 2026 applicability date.",
-          "limits": "Official guidance, not legal advice, project-specific compliance proof, or robustness evidence.",
-          "passage_review_state": "reviewed_source_note",
-          "passage_refs": ["sources/source_notes/ext_eu_article_50_transparency_guidelines_2026.md"],
-          "passage_review_note": "Reviewed for role distinctions, current date, and compliance non-authority."
-        },
-        {
-          "source_id": "ext_international_ai_safety_report_2026",
-          "mapped_support": "Synthesizes synthetic-media, influence, detection, disclosure, education, correction, and resilience measures with substantial uncertainty.",
-          "limits": "International synthesis; no detector, watermark, provenance system, or resilience intervention is locally reproduced.",
-          "passage_review_state": "reviewed_source_note",
-          "passage_refs": ["sources/source_notes/ext_international_ai_safety_report_2026.md"],
-          "passage_review_note": "Reviewed for defense-in-depth and societal handoff."
-        },
-        {
-          "source_id": "deterministic_capability_compilation",
-          "mapped_support": "Supplies Corben's capability-compilation lineage for exact artifact identity, transformation provenance, declared semantics, verification boundaries, and residual-preserving handoffs.",
-          "limits": "Author-side architecture lineage only; it does not establish C2PA conformance, watermark robustness, detector accuracy, content truth, consent, legal compliance, or public trust.",
-          "passage_review_state": "reviewed_source_note",
-          "passage_refs": ["sources/source_notes/deterministic_capability_compilation.md"],
-          "passage_review_note": "Reviewed for artifact identity, transformation lineage, verifier boundaries, and residual-preserving compilation concepts."
-        }
-      ],
-      "proof_targets": [
-        {
-          "tag": "lean:content-authenticity-watermarking-and-synthetic-media-integrity.admission_boundary",
-          "module": "AsiStackProofs.NoDeferralAdmission",
-          "target": "A finite authenticity envelope may hand off only when asset, claim, signer, trust policy, evidence types, transformation state, uncertainty, and remedy are explicit; no theorem proves content truth.",
-          "status": "planned"
-        }
-      ],
-      "lean_module": "AsiStackProofs.NoDeferralAdmission"
-    },
         {
           "id": "governed-operations-incident-command-and-graceful-degradation",
           "title": "Governed Operations, Incident Command, and Graceful Degradation",
@@ -23412,7 +23960,9 @@
               "source_id": "ext_influence_functions_2017",
               "mapped_support": "Provides an approximate training-point influence estimator that can prioritize candidate descendants and deletion impact checks.",
               "limits": "Approximate influence is not proof of causal contribution, privacy leakage, legal erasure, storage erasure, or successful unlearning.",
-              "passage_refs": ["sources/source_notes/ext_influence_functions_2017.md"],
+              "passage_refs": [
+                "sources/source_notes/ext_influence_functions_2017.md"
+              ],
               "passage_review_note": "Reviewed for attribution-assisted custody without erasure overclaim.",
               "passage_review_state": "reviewed"
             },
@@ -23420,7 +23970,9 @@
               "source_id": "ext_curriculum_learning_2009",
               "mapped_support": "Shows that data order and difficulty schedules can be part of the learning mechanism rather than incidental loader state.",
               "limits": "The source does not establish a universal curriculum, safe continual learning, or transfer to current foundation-model pipelines.",
-              "passage_refs": ["sources/source_notes/ext_curriculum_learning_2009.md"],
+              "passage_refs": [
+                "sources/source_notes/ext_curriculum_learning_2009.md"
+              ],
               "passage_review_note": "Reviewed for data-order lineage and matched schedule ablations.",
               "passage_review_state": "reviewed"
             },

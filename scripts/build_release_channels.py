@@ -54,8 +54,9 @@ def main() -> None:
             shutil.rmtree(channel)
     with tempfile.TemporaryDirectory(prefix="asi-stack-latest-") as temp:
         snapshot = Path(temp) / "site"
-        shutil.copytree(site, snapshot)
-        shutil.copytree(snapshot, site / "latest")
+        ignore_metadata = shutil.ignore_patterns(".DS_Store")
+        shutil.copytree(site, snapshot, ignore=ignore_metadata)
+        shutil.copytree(snapshot, site / "latest", ignore=ignore_metadata)
     index_path = site / INDEX_REL
     index_path.parent.mkdir(parents=True, exist_ok=True)
     index_path.write_text(json.dumps(build_index(status, policy), indent=2, ensure_ascii=False) + "\n", encoding="utf-8")

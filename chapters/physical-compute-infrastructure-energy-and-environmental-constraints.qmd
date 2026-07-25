@@ -8,6 +8,10 @@ last_updated: "2026-07-24"
 primary_sources:
   - "ext_iea_energy_and_ai_2025"
   - "ext_lbnl_data_center_energy_2024"
+  - "ext_neuromorphic_computing_scale_2025"
+  - "ext_photonic_neuromorphic_2024"
+  - "ext_quantum_ml_shadows_2024"
+  - "ext_oecd_ai_infrastructure_competition_2025"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -237,8 +241,47 @@ These rows keep Physical Compute Infrastructure, Energy, and Environmental Const
 | Source | Intake role | Boundary |
 |---|---|---|
 | `ext_flexible_hardware_enabled_guarantees_2025` | Passage-reviewed comparator: Flexible Hardware-Enabled Guarantees for AI Compute. Motivates hardware mechanisms that could make compute use and policy compliance more observable and selectively enforceable. | Hardware evidence has bounded coverage and can introduce surveillance, capture, update-authority, compatibility, and circumvention risks. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_neuromorphic_computing_scale_2025` | Metadata-first comparator: Neuromorphic computing at scale. Large-scale neuromorphic systems result demonstrating event-driven hardware capabilities under reported workloads and conditions. It does not establish superiority for general AI workloads or end-to-end system cost, programmability, reliability, and governance. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_photonic_neuromorphic_2024` | Metadata-first comparator: Integrated photonic neuromorphic computing: opportunities and challenges. Review of integrated photonic neuromorphic computing opportunities and challenges. It maps device and systems tradeoffs but does not establish deployment advantage, digital replacement, or favorable full-stack energy and cost. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_quantum_ml_shadows_2024` | Metadata-first comparator: Shadows of quantum machine learning. Peer-reviewed analysis of limitations and benchmarking traps in quantum machine-learning advantage claims. It supports advantage declarations with data-loading, classical-baseline, noise, scale, and end-to-end accounting, not a claim that quantum ML is useless. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_oecd_ai_infrastructure_competition_2025` | Metadata-first comparator: Competition in artificial intelligence infrastructure. OECD analysis of concentration, barriers to entry, vertical integration, and competition across AI infrastructure. It motivates bottleneck and exit analysis but does not adjudicate a specific market, legal violation, or optimal remedy. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
+## Beyond digital accelerators: end-to-end substrate accounting
+
+Emerging substrates move rather than erase physical costs. Neuromorphic
+systems may reduce work for sparse event streams while adding encoding,
+software, and heterogeneous integration. Photonic compute may accelerate
+selected linear operations while memory, conversion, nonlinearities, thermal
+control, and packaging dominate the complete workload. Quantum proposals must
+include classical orchestration, data loading, error management, verification,
+and the best classical comparator. Analog and in-memory systems trade data
+movement for noise, calibration, endurance, and precision recovery.
+
+Accordingly, the infrastructure record adds a `substrate_boundary` covering:
+device operation, conversion, host compute, memory, storage, interconnect,
+cooling, control, yield, packaging, utilization, reliability, replacement, and
+retirement. Energy per primitive operation is never promoted into energy per
+useful governed result. A candidate advances only when quality-matched
+end-to-end work improves under the actual duty cycle and supply chain.
+
+## Concentration is a resilience variable
+
+Physical deliverability also depends on market structure. The OECD AI
+infrastructure report identifies concentration, entry barriers, and vertical
+integration across compute infrastructure as competition concerns. This
+chapter does not determine an antitrust violation. It does require the physical
+capacity packet to record vendor and geography concentration, switching cost,
+interoperability, repair and spare-part dependency, cloud and accelerator
+coupling, financing constraints, and plausible exit.
+
+Concentration can create correlated outages, policy leverage, opaque pricing,
+and an inability to replace a failed or untrusted component. Duplication alone
+is not resilience when both routes share a foundry, interconnect, cloud control
+plane, energy region, or software ecosystem. The test is common-mode closure:
+enumerate upstream dependencies until the allegedly independent alternatives
+stop converging on the same bottleneck.
+
 ## Summary
 
 A compute allocation should be physically eligible only through a workload-to-capacity contract that binds location and time, hardware and interconnect, delivered useful work, facility and grid dependencies, energy attribution, cooling and water, materials, land and community effects, metering uncertainty, resilience and degradation, maintenance, demand response, reuse, retirement, and residuals; nameplate compute, efficiency, low PUE, renewable procurement, or aggregate energy alone establishes neither availability, sustainability, community acceptability, nor lower total impact. The subject is now integrated into the live manuscript at argument

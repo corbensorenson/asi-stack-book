@@ -20,6 +20,8 @@ primary_sources:
   - "theseus_circle_transfer"
   - "reflexive_router_whitepaper"
   - "relational_dimension_compiler"
+  - "ext_cultural_alignment_llms_2024"
+  - "ext_multilingual_evaluation_state_2026"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -681,8 +683,32 @@ These rows keep Benchmark Ratchets and Anti-Goodhart Evidence's manifest assignm
 | `ext_swe_rebench_v2_2026` | Passage-reviewed comparator: SWE-rebench V2: Language-Agnostic SWE Task Collection at Scale. Adds a current multilingual natural repository-task construction funnel, full-suite executable oracle, per-instance pathology metadata, and setup/clarity ablations that expose why benchmark membership is not construct validity. | The released tasks and automated labels are not locally validated en masse; post-snapshot filtering reduces but does not eliminate contamination, and no local benchmark score is established. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_mlperf_training_v6_2026` | Metadata-first comparator: MLPerf Training v6.0. Official current measurement comparator for fixed datasets and quality targets, repeated time-to-quality, system metadata, divisions, variance, and corrected results. No MLPerf run is performed and the benchmark does not establish safety or complete run integrity. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `relational_dimension_compiler` | Passage-reviewed comparator: The Relational Dimension Compiler: Adaptive Polyadic Cognition with Bounded Computational Arity and Unbounded Semantic Structure. Adds the RODIE evaluation program: minimum relational order, exact role binding, latent topology, interventions, dynamic identity, reversible contraction, object-field coupling, branch separation, compilation reuse, proposal recall, no-regret routing, transfer, and complete lifecycle cost. | RODIE is a proposed suite with no corpus, independent evaluator, benchmark run, result, construct-validity receipt, or evidence transition. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_cultural_alignment_llms_2024` | Metadata-first comparator: Investigating Cultural Alignment of Large Language Models. Empirical study of cultural alignment patterns in selected language models and measurements. It supports explicit population, language, and instrument scope; it does not establish stable national values or a universal measure of cultural alignment. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_multilingual_evaluation_state_2026` | Metadata-first comparator: The State and Fate of Multilingual Contextual Evaluation in the NLP World. Research survey and analysis of multilingual contextual evaluation. It motivates language-by-task coverage and measurement reporting; it does not establish equivalent capability or safety across languages, dialects, or sociocultural settings. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
+## The language-by-task denominator
+
+Multilingual coverage is not the count of translated benchmark rows. A
+ratcheted evaluation records a matrix over language or dialect, task, domain,
+interaction mode, population, evaluator competence, translation provenance,
+and risk class. Every empty or low-quality cell stays visible. Macro averages
+are accompanied by the worst material cell, coverage-weighted results, and
+explicit exclusions.
+
+Translation-derived items are marked separately from naturally authored items.
+Cross-language contamination, shared source passages, cultural-instrument
+validity, script and tokenization effects, answer-format bias, and evaluator
+disagreement receive their own controls. A benchmark cannot claim cultural
+alignment by assigning one national score, and it cannot claim multilingual
+safety because a dominant-language judge approved translated outputs.
+
+The ratchet condition is claim-specific: expansion to a new language,
+community, or task reopens the evidence boundary. Improvements in high-resource
+cells cannot compensate for regression in a consequential low-resource cell
+without a prospectively justified decision rule and affected-population
+accounting.
+
 ## Summary
 
 Benchmarks are pressure surfaces, not truth machines. They become useful when every result has a run record, baseline, origin class, target-capacity check, inherited floors, retry lineage, checkpoint/output binding, residuals, regressions, anti-Goodhart checks, and a conservative support-state effect.

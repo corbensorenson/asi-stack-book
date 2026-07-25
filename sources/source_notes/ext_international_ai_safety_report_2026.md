@@ -58,6 +58,7 @@ works in every setting.
 ## Book Chapters Supported
 
 - `dangerous-capability-domains-and-misuse-uplift`
+- `military-ai-autonomous-weapons-and-strategic-stability`
 - `open-weight-release-and-post-release-control`
 - `content-authenticity-watermarking-and-synthetic-media-integrity`
 - `societal-resilience-and-misuse-defense`

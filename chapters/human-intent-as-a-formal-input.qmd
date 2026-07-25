@@ -14,6 +14,7 @@ primary_sources:
   - "ext_goal_oriented_requirements_engineering_2001"
   - "ext_cooperative_inverse_rl_2016"
   - "ext_deep_rl_human_preferences_2017"
+  - "ext_cultural_alignment_llms_2024"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -410,6 +411,33 @@ The two headline targets and intake bridge now resolve to `AsiStackProofs.Intent
 | `ext_deep_rl_human_preferences_2017` | Deep Reinforcement Learning from Human Preferences | human_feedback_learning | External comparator for communicating complex goals through preference comparisons over behavior segments. | source note available; experiment not reproduced |
 
 The crosswalk names the source family for intent contracts. The passage-reviewed mappings support stronger drafting traceability, and the external comparators position the chapter against requirements engineering, cooperative objective inference, and preference-feedback learning. None of these records promotes any claim until parser tests, authority-extraction tests, stop-condition tests, accepted evidence transitions, or stronger proof artifacts justify that movement.
+
+### Manifest source assignment reconciliation
+
+These rows keep Human Intent as a Formal Input's manifest assignments visible at their recorded review boundary. Passage review does not establish local reproduction, performance, safety, deployment, or support-state movement.
+
+| Source | Intake role | Boundary |
+|---|---|---|
+| `ext_cultural_alignment_llms_2024` | Metadata-first comparator: Investigating Cultural Alignment of Large Language Models. Empirical study of cultural alignment patterns in selected language models and measurements. It supports explicit population, language, and instrument scope; it does not establish stable national values or a universal measure of cultural alignment. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+
+<!-- manifest-source-reconciliation:end -->
+## Culture and language are part of the intent contract
+
+Intent parsing can appear semantically complete while missing culturally
+specific norms, indirect requests, politeness strategies, kinship and role
+obligations, dialect, code-switching, or the institutional meaning of a term.
+The cultural-alignment literature recorded as
+`ext_cultural_alignment_llms_2024` is evidence that these differences deserve
+measurement, not evidence that a nation or language has one stable value set.
+
+The intake record therefore declares language, locale, translation path,
+relevant community or institutional context, interpreter or accessibility
+support, and unresolved cultural ambiguity. It never infers that a demographic
+label supplies consent or authority. Where translation could materially change
+scope, affected parties, constraints, or stop conditions, the system preserves
+the original text, alternatives, translator provenance, and confirmation
+record. A high-confidence dominant-language parse cannot silently stand in for
+the user's own meaning.
 
 ## Summary
 

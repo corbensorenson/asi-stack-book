@@ -37,6 +37,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `dangerous-capability-domains-and-misuse-uplift` | Dangerous Capability Domains and Misuse Uplift | Positive-control and elicitation competence gate | planned | not run |
 | `dangerous-capability-domains-and-misuse-uplift` | Dangerous Capability Domains and Misuse Uplift | Sensitive-output nonpublication control | planned | not run |
 | `dangerous-capability-domains-and-misuse-uplift` | Dangerous Capability Domains and Misuse Uplift | No-support-promotion control | planned | not run |
+| `military-ai-autonomous-weapons-and-strategic-stability` | Military AI, Autonomous Weapons, and Strategic Stability | Layer claim falsification test | planned | not run |
 | `evidence-states-and-claim-discipline` | Evidence States and Claim Discipline | Support-state transition test | implemented | validated locally |
 | `evidence-states-and-claim-discipline` | Evidence States and Claim Discipline | Evidence transition lifecycle route | implemented | passes via Lean route theorems; no live support-state movement, reviewer-quality, evidence-bundle-completeness, source-interpretation, runtime-behavior, or support-state-promotion claim |
 | `evidence-states-and-claim-discipline` | Evidence States and Claim Discipline | Evidence bundle completeness and changelog-consistency probe | implemented | validated locally at experiments/evidence_bundle_completeness/results/2026-07-02-local.json; synthetic-record and finite-Lean bridge only; no evidence-truth, artifact-correctness, source-interpretation, release-governance, or support-state-promotion claim |
@@ -137,6 +138,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `adversarial-machine-learning-and-model-attack-surface` | Adversarial Machine Learning and the Model Attack Surface | No-support-promotion control | planned | not run |
 | `privacy-data-rights-and-information-flow-governance` | Privacy, Data Rights, and Information-Flow Governance | Information lifecycle transaction contract | implemented | authored_record_only_no_privacy_or_compliance_effect |
 | `privacy-data-rights-and-information-flow-governance` | Privacy, Data Rights, and Information-Flow Governance | Natural privacy and rights campaign | planned | prospectively_frozen_unexecuted |
+| `confidential-and-verifiable-ai-computation` | Confidential and Verifiable AI Computation | Layer claim falsification test | planned | not run |
 | `model-weight-custody-and-hardware-roots-of-trust` | Model-Weight Custody and Hardware Roots of Trust | Required invalid-attestation load block | planned | not run |
 | `model-weight-custody-and-hardware-roots-of-trust` | Model-Weight Custody and Hardware Roots of Trust | Stale-attestation and key-policy negative control | planned | not run |
 | `model-weight-custody-and-hardware-roots-of-trust` | Model-Weight Custody and Hardware Roots of Trust | Verifier-dependency and independent-observation controls | planned | not run |
@@ -275,6 +277,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `labor-os-and-typed-jobs` | Labor OS and Typed Jobs | Typed-job versioned execution and closure refinement | implemented | passes exact 2/7 delivery and 2/9 durable suites, 28 routes, seven reachable stages, and 42/42 rejecting mutations; support-state effect none; no deployed scheduler, enforcement, recovery, task-success, truth, usefulness, safety, reproduction, or transfer claim |
 | `human-ai-organizations-delegation-and-accountability` | Human-AI Organizations, Delegation, and Accountability | Decision-right and crumple-zone mutations | planned | not_run |
 | `human-ai-organizations-delegation-and-accountability` | Human-AI Organizations, Delegation, and Accountability | Competence workload and interdependence campaign | planned | not_run |
+| `human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty` | Human-AI Symbiosis, Neurotechnology, and Cognitive Sovereignty | Layer claim falsification test | planned | not run |
 | `ai-deployment-transition-distribution-and-human-agency` | AI Deployment, Transition, Distribution, and Human Agency | Contract completeness mutation test | planned | not run |
 | `ai-deployment-transition-distribution-and-human-agency` | AI Deployment, Transition, Distribution, and Human Agency | Adjacent-owner boundary substitution test | planned | not run |
 | `ai-deployment-transition-distribution-and-human-agency` | AI Deployment, Transition, Distribution, and Human Agency | Mechanism-specific failure-family test | planned | not run |
@@ -333,6 +336,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `replaceable-cognitive-substrates-beyond-transformer-monoculture` | Replaceable Cognitive Substrates: Beyond Transformer Monoculture | Matched heterogeneous-kernel tournament | candidate and strongest-comparator envelope unavailable | zero outcome runs; strongest current comparator hardware unavailable; no SOTA or core movement |
 | `replaceable-cognitive-substrates-beyond-transformer-monoculture` | Replaceable Cognitive Substrates: Beyond Transformer Monoculture | Frozen-core verified-abstraction ratchet | OneCell and verified-abstraction learner absent | defeat prediction frozen; no outcome run, reproduction, transfer, or support movement |
 | `replaceable-cognitive-substrates-beyond-transformer-monoculture` | Replaceable Cognitive Substrates: Beyond Transformer Monoculture | Governed architectural-RSI lifecycle | bounded lifecycle fixtures exist but no runnable architecture candidate | no externally reproduced candidate entered shadow, canary, rollback, retirement, or descendant invalidation |
+| `relational-dimension-compilation-and-polyadic-cognition` | Relational Dimension Compilation and Polyadic Cognition | Layer claim falsification test | planned | not run |
 | `governed-model-training-distributed-optimization-and-scaling` | Governed Model Training, Distributed Optimization, and Scaling | Training-run transaction contract | implemented | authored_record_only_no_training_effect |
 | `governed-model-training-distributed-optimization-and-scaling` | Governed Model Training, Distributed Optimization, and Scaling | Natural distributed fault campaign | planned | prospectively_frozen_unexecuted |
 | `governed-model-training-distributed-optimization-and-scaling` | Governed Model Training, Distributed Optimization, and Scaling | Independent run replay | planned | blocked_by_valid_campaign |
@@ -692,14 +696,14 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 329 |
+| Proof targets covered by triage | 333 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
 | implemented | 310 |
-| planned | 19 |
+| planned | 23 |
 
 ### Coverage by Route
 
@@ -707,4 +711,4 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 |---|---|---|---:|
 | implemented | formal-invariant | lean-candidate | 310 |
 | planned | formal-invariant | lean-candidate | 5 |
-| planned | process-contract | policy-model-first | 14 |
+| planned | process-contract | policy-model-first | 18 |

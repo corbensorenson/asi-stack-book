@@ -14,6 +14,7 @@ primary_sources:
   - "ext_deep_double_descent_2020"
   - "ext_emergent_abilities_llms_2022"
   - "ext_emergent_abilities_mirage_2023"
+  - "ext_no_free_lunch_inductive_bias_2024"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -352,6 +353,57 @@ Planned formalization hook: `lean:learning-theory-generalization-and-scaling-sci
 | `ext_deep_double_descent_2020` | Deep Double Descent | Configuration-bound evidence that generalization can be non-monotone across model, sample, and training-time regimes; not a universal larger-is-better or larger-is-worse law. |
 | `ext_emergent_abilities_llms_2022` | Emergent Abilities of Large Language Models | Frames reported sharp task changes under scaling as a forecast and measurement problem; not proof of a mechanistic phase transition. |
 | `ext_emergent_abilities_mirage_2023` | Are Emergent Abilities of Large Language Models a Mirage? | Supplies the competing metric-artifact explanation and continuous-measurement requirement; does not prove that all emergence is illusory. |
+
+### Manifest source assignment reconciliation
+
+These rows keep Learning Theory, Generalization, and Scaling Science's manifest assignments visible at their recorded review boundary. Passage review does not establish local reproduction, performance, safety, deployment, or support-state movement.
+
+| Source | Intake role | Boundary |
+|---|---|---|
+| `ext_no_free_lunch_inductive_bias_2024` | Metadata-first comparator: The No Free Lunch Theorem, Kolmogorov Complexity, and the Role of Inductive Biases in Machine Learning. ICML 2024 treatment connecting no-free-lunch limits, Kolmogorov complexity, and inductive bias. It supports explicit assumption accounting; it does not show that all learning problems are equally hard or identify the right bias for a deployment. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+
+<!-- manifest-source-reconciliation:end -->
+## No-free-lunch, identifiability, and the assumption ledger
+
+Generalization is never assumption-free. No-free-lunch results do not say that
+learning is futile; they say that averaged over sufficiently unconstrained
+problem classes, no learner has a universal advantage. Success comes from
+inductive bias: architecture, objective, data distribution, invariance,
+regularization, optimizer, retrieval, tools, or an environmental structure that
+makes some hypotheses more plausible than others. The ICML treatment recorded
+as `ext_no_free_lunch_inductive_bias_2024` reinforces why the book must state
+those biases instead of treating benchmark success as a property of learning
+in general.
+
+The same discipline applies to identifiability. Observational agreement may
+leave multiple predictors, causal structures, reward functions, latent states,
+or world models equally compatible with the data. More scale can narrow
+estimation error inside an assumed family while leaving this ambiguity intact.
+The chapter therefore adds an **assumption ledger** to every learning claim:
+
+| Ledger field | Required disclosure |
+|---|---|
+| Task and distribution | sampling process, support, shift model, and excluded cases |
+| Hypothesis bias | architecture, representation, invariance, objective, and regularization |
+| Supervision | label or feedback generator, noise, missingness, selection, and dependence |
+| Identifiability | which target is uniquely recoverable, equivalent, partial, or unresolved |
+| Compute and search | optimizer, initialization, budget, stopping rule, and selection denominator |
+| Scaling scope | observed range, functional form, uncertainty, breaks, and extrapolation horizon |
+| Intervention boundary | observational, interventional, simulated, or policy-induced evidence |
+| Failure witness | a constructed environment in which the claim should fail |
+
+A scaling law is conditional on this ledger. A representation that generalizes
+under one symmetry can fail when the symmetry is broken. An apparently emergent
+ability can change with metric resolution or prompting. A causal target can be
+unidentified even with infinite observational data. None of these limits
+negates useful empirical regularities; they prevent the regularity from being
+promoted past its assumptions.
+
+The minimum falsification test pairs every positive learning result with an
+assumption-breaking control. If performance survives, the ledger narrows the
+suspected dependency. If it fails, the result remains valuable at the bounded
+scope. “We do not know which assumption carried the gain” is an admissible
+outcome; “the model learned generally” is not.
 
 ## Summary
 

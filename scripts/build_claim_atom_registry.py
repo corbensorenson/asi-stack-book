@@ -42,6 +42,10 @@ POST_ACTIVATION_EXPANSION_IDS = {
     "societal-resilience-and-misuse-defense",
     "open-weight-release-and-post-release-control",
     "content-authenticity-watermarking-and-synthetic-media-integrity",
+    "military-ai-autonomous-weapons-and-strategic-stability",
+    "confidential-and-verifiable-ai-computation",
+    "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty",
+    "relational-dimension-compilation-and-polyadic-cognition",
 }
 POST_ACTIVATION_FORMAL_TARGETS = {"lean:corrigibility.agency.generic_countermodel_routes"}
 POST_ACTIVATION_ATOM_IDS = {
@@ -52,7 +56,32 @@ POST_ACTIVATION_ATOM_IDS = {
     "resource-economics-and-token-budgets.invariant.019",
     "resource-economics-and-token-budgets.mechanism.019",
 }
-POST_ACTIVATION_PROSE_SECTION_HEADINGS: dict[str, set[str]] = {}
+POST_ACTIVATION_PROSE_SECTION_HEADINGS: dict[str, set[str]] = {
+    "human-intent-as-a-formal-input": {
+        "Culture and language are part of the intent contract",
+    },
+    "institutions-international-coordination-and-public-legitimacy": {
+        "Competition, liability, insurance, and remedy",
+    },
+    "security-kernel-and-digital-scifs": {
+        "Cryptographic agility and post-quantum migration",
+    },
+    "model-weight-custody-and-hardware-roots-of-trust": {
+        "Post-quantum custody and cryptographic lifetime",
+    },
+    "ai-deployment-transition-distribution-and-human-agency": {
+        "Concentration, bottlenecks, and effective exit",
+    },
+    "learning-theory-generalization-and-scaling-science": {
+        "No-free-lunch, identifiability, and the assumption ledger",
+    },
+    "physical-compute-infrastructure-energy-and-environmental-constraints": {
+        "Beyond digital accelerators: end-to-end substrate accounting",
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence": {
+        "The language-by-task denominator",
+    },
+}
 
 SINGLE_ROLES = (
     ("core", "core_claim"),

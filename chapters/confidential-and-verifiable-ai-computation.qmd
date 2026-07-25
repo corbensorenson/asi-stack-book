@@ -1,0 +1,469 @@
+---
+title: "Confidential and Verifiable AI Computation"
+chapter_id: "confidential-and-verifiable-ai-computation"
+part_id: "foundations-alignment-governance"
+status: "conceptual"
+draft_maturity: "substantive conceptual draft"
+last_updated: "2026-07-25"
+primary_sources:
+  - "ext_nist_privacy_enhancing_cryptography_2026"
+  - "ext_zkllm_2024"
+  - "ext_ietf_rats_architecture_2023"
+evidence_level: "argument"
+claim_label: "Design rationale"
+open_evidence_gaps:
+  - "No protected-inference construction has been implemented or benchmarked locally."
+  - "No side-channel, leakage, verifier-independence, or compositional security result has been reproduced."
+  - "Source-reported cryptographic performance remains configuration-bound and does not move the core claim beyond argument."
+---
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `confidential-and-verifiable-ai-computation` |
+| Part | Part I - Foundations, Alignment, and Governance |
+| Status | conceptual |
+| Last updated | 2026-07-25 |
+| Primary source records | `ext_nist_privacy_enhancing_cryptography_2026`, `ext_zkllm_2024`, `ext_ietf_rats_architecture_2023` |
+| Claim label | Design rationale |
+| Evidence level | argument |
+| Source loading state | Assigned primary sources have bounded source notes; no source result is reproduced locally. |
+| Test state | Chapter-level tests remain planned unless Appendix E records an implemented command and result. |
+
+## Drafting guardrail
+
+Cryptographic and attestation terms remain scoped to named guarantees,
+adversaries, implementations, and evidence statements. No construction is
+presented as proof of semantic correctness, legitimate purpose, complete
+privacy, production security, or safe deployment.
+
+::: {.asi-human-only}
+## Human Reading Path
+
+Use this layer to separate what protected computation establishes from
+properties that still require policy, custody, testing, and judgment.
+[Privacy, Data Rights, and Information-Flow
+Governance](privacy-data-rights-and-information-flow-governance.qmd)
+establishes permitted information use. This material asks what parties can
+learn or verify when computation crosses a distrust boundary. [Model-Weight
+Custody and Hardware Roots of
+Trust](model-weight-custody-and-hardware-roots-of-trust.qmd) owns the keys,
+artifacts, measured platforms, and recovery authority.
+
+Consider a transaction: a user wants prompt confidentiality, a provider
+wants weight confidentiality, and an auditor wants evidence that an approved
+artifact ran. Attestation identifies a measured environment without proving its
+policy legitimate. A zero-knowledge proof establishes an encoded relation even
+when that relation misstates intended meaning. Outputs, timing, access
+patterns, logs, caches, and fallback may still leak.
+
+Name the adversary and assets, declare permitted leakage, choose a
+construction, state exactly what its evidence proves, and preserve revocation
+and observable failure. Compare protected execution with a competent simpler
+design under equal task, quality, context, concurrency, and lifecycle
+accounting. Treat *encrypted*, *attested*, *proved*, *authorized*,
+*semantically correct*, and *private end to end* as distinct claims requiring
+distinct evidence.
+:::
+
+## Problem
+
+AI computation increasingly crosses distrust boundaries: a user may need to hide inputs, a provider may need to protect weights, an auditor may need to verify the executed artifact, and every party may need output integrity without granting another party unrestricted custody. Ordinary transport encryption ends before computation begins.
+
+The requirements are often asymmetric and simultaneous. A hospital may trust
+its own data steward but not a cloud operator, while a model provider may trust
+neither the hospital nor the accelerator host with model weights. A regulator
+may need a verifiable statement without receiving either secret. Repeated
+queries, output content, timing, access patterns, caches, receipts, and failure
+behavior create additional leakage channels. A complete design must therefore
+state which party is protected from which observer, for which asset, during
+which lifecycle stage, and under which cryptographic or hardware assumptions.
+
+## Why existing approaches are insufficient
+
+Privacy policy governs permitted information use, while hardware custody governs stored artifacts. Neither supplies a guarantee-by-guarantee execution contract covering input confidentiality, model confidentiality, computation integrity, output authenticity, attestation freshness, leakage, verifier policy, cost, and failure recovery.
+
+Security adjectives make the gap worse. “Encrypted inference” may describe
+transport, selected tensor operations, or a fully protected execution path.
+“Attested” may identify a measured binary without validating its policy,
+inputs, dependencies, or output meaning. “Proved” may establish an arithmetic
+relation whose circuit mistranslates the intended computation. Benchmarking
+only successful, short requests can conceal concurrency collapse, key
+rotation, revocation, verifier disagreement, recovery cost, and silent fallback
+to an ordinary service precisely when protection fails.
+It can also omit setup amortization, parameter generation, dependency updates,
+side-channel review, and the burden of keeping historical receipts verifiable
+after keys, algorithms, platforms, and policies change.
+
+### Strongest objection
+
+The strongest objection is that the proposed contract over-engineers a problem that
+ordinary access control, transport encryption, organizational separation, and
+contractual accountability can solve more cheaply. That objection often wins:
+if every relevant party and platform is inside one adequately governed trust
+domain, adding FHE, MPC, zero-knowledge proofs, or remote attestation can
+increase cost and failure surface without changing the actual decision risk.
+The compositional contract is still necessary because it makes that simpler
+baseline explicit and testable. Protected execution earns admission only when
+a named distrust boundary remains, its guarantee closes that boundary under a
+declared adversary, and the measured lifecycle benefit exceeds the new
+cryptographic, hardware, verifier, recovery, and leakage costs. Otherwise the
+system should retain the simpler governed route.
+
+## Core Claim
+
+[confidential-and-verifiable-ai-computation.core, label: Design rationale, support: argument] Confidential and verifiable AI requires a compositional execution contract that names the adversary, protected assets, permitted leakage, trust anchors, proof or attestation statement, verifier policy, freshness, revocation, performance budget, and authorization boundary; no primitive or attestation may be treated as proof of semantic correctness, legitimate purpose, or end-to-end privacy.
+
+## Start with a guarantee vector, not a security adjective
+
+Suppose a hospital wants a model provider to process a record. “Run this
+securely” is underspecified. The hospital may want input confidentiality from
+the provider, the provider may want weight confidentiality from the hospital,
+both may want proof that an approved model and preprocessing pipeline ran, the
+patient may want purpose limitation, and an auditor may need enough evidence to
+reconstruct the transaction. Availability, output authenticity, deletion, and
+access-pattern leakage remain separate again.
+
+The execution contract therefore begins with a vector:
+
+| Property | Question the contract must answer | Typical mechanism family | Residual boundary |
+|---|---|---|---|
+| Input confidentiality | Who can learn prompts, records, retrieved context, or features? | FHE, MPC, confidential execution, local computation | Outputs, access patterns, timing, and logs may still leak |
+| Model confidentiality | Who can recover weights, adapters, system prompts, or proprietary preprocessing? | Confidential execution, MPC, ZK-compatible commitments, access control | Query extraction and output leakage remain |
+| Computation integrity | Was the committed function evaluated on committed inputs? | ZK proofs, authenticated computation, replicated checks | A faithful computation can encode the wrong function |
+| Platform identity | What code and configuration ran on what measured environment? | Remote attestation | The measured artifact and appraisal policy may be flawed |
+| Output authenticity | Did this result come from the named transaction and artifact? | Signatures, commitments, authenticated channels | Authentic output need not be true or safe |
+| Usage privacy | What is learned across repeated queries? | Differential privacy, rate limits, aggregation, query policy | Utility and group leakage remain |
+| Availability and recovery | What happens when protected execution fails or becomes too slow? | Redundancy, explicit fallback, checkpointing, revocation | Silent downgrade can erase every other guarantee |
+
+This table prevents **guarantee laundering**. A trusted execution environment
+can conceal memory from some platform actors without proving the model's
+semantic correctness. A zero-knowledge proof can establish an encoded relation
+without showing that the relation represents the intended policy. Fully
+homomorphic encryption can evaluate over ciphertext while leaving output
+release, key custody, purpose, and downstream use unresolved. NIST's
+privacy-enhancing cryptography program is useful precisely because it treats
+FHE, MPC, zero-knowledge proofs, and related tools as different families that
+can be composed rather than as one magic privacy layer.
+
+## Pick a construction only after declaring the distrust boundary
+
+Mechanism selection is a systems decision, not a prestige ranking.
+
+- **Local execution** removes a network counterparty from the inference path
+  but places model custody, device compromise, and resource constraints on the
+  user side.
+- **Confidential execution** can protect data and weights from portions of a
+  hosting stack and can release keys after a verifier accepts fresh
+  attestation. Its trust base includes hardware, firmware, attestation roots,
+  the measured software, and the appraisal policy.
+- **FHE** can keep selected inputs encrypted during computation, but supported
+  operations, ciphertext expansion, approximation, memory traffic, and latency
+  determine whether the workload is usable.
+- **MPC** distributes trust among parties and can protect collaborative
+  computation if the corruption and communication assumptions hold. Network
+  rounds, collusion thresholds, and availability are first-class costs.
+- **Zero-knowledge proofs** can let a prover convince a verifier that a
+  committed relation holds without revealing protected witnesses. The circuit
+  or arithmetic representation, setup assumptions, prover cost, and semantic
+  correspondence remain part of the claim.
+- **Differential privacy** constrains what output distributions reveal about
+  an individual's contribution. It does not hide the raw input while an
+  untrusted machine processes it.
+
+Hybrids are normal. For example, an attested environment can protect a model
+and generate a signed inference receipt while a privacy mechanism limits
+released aggregates. But composition can also create new leakage. A receipt
+that binds a user, prompt hash, precise time, and model version may improve
+auditability while worsening linkability. Each composition needs one threat
+model and one end-to-end data-flow review, not a stack of disconnected vendor
+claims.
+
+## Evidence is a statement appraised by a party
+
+The RATS architecture usefully separates an **Attester**, a **Verifier**, and a
+**Relying Party**. That separation belongs in the ASI stack. The machine
+producing evidence should not be allowed to declare that its own evidence is
+acceptable. The verifier evaluates evidence against reference values and an
+appraisal policy; the relying party decides what the resulting attestation
+result authorizes.
+
+A protected AI transaction should bind at least:
+
+1. the model, adapter, tokenizer, system policy, preprocessing, tool policy,
+   and relevant runtime configuration;
+2. input or data commitments appropriate to the privacy boundary;
+3. platform and software measurements where hardware attestation is used;
+4. a nonce, epoch, or challenge that prevents replay;
+5. the verifier-policy identifier and reference-value version;
+6. an output or output commitment, transaction identifier, and time window;
+7. revocation and incident state.
+
+Freshness matters because a valid statement about yesterday's software is not
+evidence about today's patched—or compromised—system. Reference values and
+verifier policies also change. A hash can remain identical while a certificate
+chain is revoked; a certificate can remain valid while the allowed model
+version has changed. Lifecycle state therefore belongs inside appraisal.
+
+## The circuit-to-semantics gap
+
+zkLLM is an important proof of possibility: its authors report bounded
+zero-knowledge proofs for large-model inference with model privacy under their
+construction and configurations. The book should use that result for what it
+is—a research prototype demonstrating that some nontrivial inference relations
+can be proved—not as evidence that arbitrary production inference is now
+cheaply, privately, and semantically verified.
+
+The verifier learns that the encoded arithmetic relation held. It still needs
+answers to harder questions:
+
+- Did the encoding match the published model architecture, numerical rules,
+  tokenizer, sampling policy, and input transformation?
+- Were approximate operations and quantization bounded in a way that preserves
+  the claimed behavior?
+- Did the proved output include every relevant tool call, retrieval, cache
+  lookup, policy check, and postprocessor?
+- Was the committed model the model the user was authorized to query?
+- Does a correct execution produce a safe, truthful, or lawful answer?
+
+These are not objections to proofs. They are the reason proof statements need
+precise names. “Inference relation \(R\) held for commitments \(x\), \(w\), and
+\(y\)” is strong and auditable. “The AI answer was verified” is usually too
+broad to be meaningful.
+
+## Cost and fallback are security properties
+
+A protected path that works only for a tiny prompt or one user is not a
+deployment result. Native and protected runs must share task inputs, model
+quality, hardware accounting, batch policy, concurrency, context length,
+failure policy, and measured scope. Report prover and verifier time separately,
+peak memory, proof or evidence size, setup and key costs, throughput, tail
+latency, energy, and failed-transaction rate.
+
+Cost can become a privacy and safety failure. Long queues reveal which
+transactions take unusual branches. Resource exhaustion can be a denial of
+service. Most dangerously, an operator may silently fall back to ordinary
+cloud inference. The contract must say whether failure causes rejection,
+reduced functionality, a different protected construction, or an explicitly
+authorized unprotected path. Users and downstream services must be able to tell
+which path produced the result.
+
+## Mechanism
+
+- Express the requested guarantee vector separately for input privacy, model privacy, intermediate-state privacy, computation integrity, output authenticity, availability, and auditability.
+- Choose among FHE, MPC, zero-knowledge proofs, confidential execution, private retrieval, differential privacy, or hybrid composition against an explicit adversary and leakage model.
+- Bind code, model, configuration, data commitments, platform state, nonce or epoch, and policy identity into evidence that a distinct verifier appraises.
+- Keep cryptographic correctness, attested identity, model quality, semantic validity, user authorization, and lawful purpose as separate claim classes.
+- Measure native and protected execution with the same task, hardware accounting boundary, quality target, batching, concurrency, and failure policy.
+- Provide key rotation, algorithm agility, verifier-policy update, revocation, incident response, fallback, and artifact retirement.
+
+```{mermaid}
+flowchart LR
+  D["Adversary, assets, and permitted leakage"] --> G["Guarantee vector"]
+  G --> P["Primitive or trusted-compute path"]
+  P --> C["Artifact, input, policy, and configuration commitments"]
+  C --> V["Independent evidence appraisal"]
+  V --> F{"Fresh, matching, and authorized?"}
+  F -- "no" --> B["Block, revoke, recover, or request explicit fallback"]
+  F -- "yes" --> O["Release bounded output and receipt"]
+  O --> L["Leakage, cost, and incident monitoring"]
+  L --> R{"Boundary or implementation changed?"}
+  R -- "yes" --> D
+  R -- "no" --> O
+```
+
+**How to read this protected-execution loop:** the distrust boundary determines
+a guarantee vector before a construction is selected. Commitments and
+independent appraisal release only a bounded statement; mismatch, staleness,
+or missing authority blocks the path. Leakage, cost, incidents, and change
+feed back into the contract instead of silently downgrading protection.
+
+Composition is handled as an intersection of scoped statements, not as an
+accumulating security score. A confidential execution environment can protect
+runtime memory while a proof binds a selected computation and an authorization
+service governs key release. The resulting claim is no stronger than the
+interfaces joining them: artifact commitments, freshness, verifier policy,
+preprocessing identity, output release, and revocation must all refer to the
+same transaction.
+
+Failure handling is part of the protection boundary. Timeouts, unsupported
+operators, memory pressure, verifier unavailability, and key-service failure
+must produce an observable state that downstream consumers can distinguish.
+An explicit fallback can be authorized for a narrower task, or the request can
+be rejected and recovered elsewhere. Quietly substituting an unprotected path
+would invalidate both the receipt and the user's information-flow decision.
+
+### A protected-execution receipt
+
+The reusable artifact is not a blanket security badge but a
+`ProtectedExecutionReceipt`:
+
+```text
+request_id
+guarantee_vector
+adversary_and_leakage_model_id
+artifact_and_configuration_commitments
+platform_or_proof_statement
+freshness_challenge_and_epoch
+verifier_policy_and_reference_values
+output_commitment
+measured_cost_and_fallback_path
+authorization_decision_reference
+revocation_and_incident_state
+unsupported_properties
+```
+
+The receipt can be public, selectively disclosed, or itself protected,
+depending on the linkage threat. Its job is to make the claim reconstructible.
+It must never contain raw secrets merely because the receipt is an audit
+artifact.
+
+## Interfaces
+
+- Privacy and Data Rights for consent, purpose limitation, retention, access, and remedy
+- Model-Weight Custody for key custody, artifact provenance, hardware roots of trust, and media sanitization
+- Security Kernel for identity, authorization, recovery, cryptographic agility, and fail-closed policy
+- Inference Systems for latency, batching, caching, paging, and cost accounting
+- Safety Cases for verifier independence and claim-bounded assurance
+
+Each interface owns a different kind of truth. Privacy supplies permitted
+purpose and rights; custody supplies artifact and key identity; the kernel
+supplies authorization and recovery; inference supplies observed resource and
+quality behavior; assurance supplies appraisal and challenge. The protected
+execution record joins their identifiers without allowing one owner to certify
+another's property or broaden the relying party's conclusion.
+That separation also preserves independent challenge, appeal, and incident
+ownership.
+No owner becomes a universal security oracle.
+
+## Invariants
+
+- Every protected execution declares its adversary, assets, leakage, trust assumptions, freshness condition, and unsupported properties.
+- An attestation proves only the appraised statement about a measured environment; it does not prove trustworthy intent, correct policy, or correct output meaning.
+- A zero-knowledge proof proves only the encoded relation under its cryptographic assumptions; the circuit-to-semantics gap remains explicit.
+- Confidentiality mechanisms do not override consent, purpose, deletion, contestability, or downstream-use constraints.
+- Fallback from protected to unprotected execution requires explicit authorization and cannot occur silently.
+
+These rules keep cryptographic validity subordinate to the complete
+transaction: the right artifact, policy, party, time, purpose, and fallback
+state must remain distinguishable even when every primitive functions as
+specified.
+
+## Failure modes
+
+- Guarantee laundering collapses confidentiality, integrity, privacy, authorization, and correctness into one secure-compute label.
+- Stale or replayed attestation is accepted after artifact, platform, policy, or revocation state changed.
+- Side channels, outputs, access patterns, logs, caches, or failure timing leak protected information.
+- The proved computation faithfully executes the wrong model, wrong preprocessing, wrong policy, or semantically invalid relation.
+- Protected execution becomes unusable under realistic context, concurrency, memory, or latency and silently falls back.
+- Verifier, root-of-trust, key-management, or parameter-selection compromise invalidates the guarantee.
+
+### Strongest challenge and simpler baseline
+
+The strongest challenge is that most deployments do not need advanced
+cryptography. A carefully isolated service with ordinary authenticated
+encryption, minimal logging, strict access control, short retention, and
+independent audit may be cheaper, easier to inspect, and safer than a complex
+protected-compute system. That is a real baseline, not a straw man.
+
+The new layer earns admission only when the distrust boundary cannot be removed
+organizationally or locally, and when the chosen construction improves a named
+guarantee without unacceptable quality, reliability, or lifecycle cost. A
+construction that adds cryptographic sophistication but enlarges the trusted
+code base, prevents recovery, or obscures policy can be a regression.
+
+## Minimum Viable Implementation
+
+A guarantee matrix and local demonstration for one bounded inference operation with explicit adversary and leakage models, artifact and configuration commitments, freshness, independent verification, native-versus-protected latency and cost accounting, negative tests for replay and mismatched artifacts, and a no-authorization non-claim.
+
+The demonstration should run valid and invalid transactions through separately
+implemented prover or attester and verifier paths. Negative controls should
+change the model, tokenizer, preprocessing, policy, nonce, epoch, relying
+party, and fallback state; each mismatch must fail closed with a
+reconstructible reason. Measurements should include quality, latency, memory,
+concurrency, setup, verification, rotation, and recovery costs. The artifact
+would show a bounded contract and evidence flow, not production security,
+complete leakage resistance, or end-to-end privacy.
+The minimum record also preserves unsuccessful attempts and unresolved
+residuals.
+
+## Beyond the State of the Art
+
+A meaningful advance would make confidential and verifiable inference deployable as a substrate-independent contract, compare multiple trust and cryptographic constructions under a common workload, expose residual leakage and semantic gaps, and preserve audit, revocation, rollback, and purpose governance across the full lifecycle. The mature operational contract would make every downgrade observable and keep cryptographic evidence separate from authorization, semantic correctness, quality, and end-to-end privacy.
+
+At that endpoint, one workload specification could exercise local execution,
+confidential hardware, multiparty computation, homomorphic computation,
+zero-knowledge verification, and hybrid paths without changing the claimed
+task or hiding different trust assumptions. Independent appraisers would
+reconstruct statements from receipts, inject stale roots and mismatched
+artifacts, inspect side channels, and measure failure recovery. Results would
+be reported by guarantee, adversary, context, concurrency, and lifecycle cost
+rather than as a universal secure-inference ranking.
+Long-duration rotation, revocation, archival verification, and dependency
+retirement would receive equal weight.
+Cross-party governance cost and usable recovery time would remain explicit
+outcomes.
+
+That operational contract remains a prospective research target. Stronger
+support would require implemented constructions, independent verifiers,
+matched workloads, leakage and lifecycle testing, reproducible artifacts, and
+claim-specific review. Until then, the prose establishes neither
+cryptographic security nor authorization, semantic validity, end-to-end
+privacy, acceptable cost, or production readiness.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Guarantee-separation test | Seed cases where confidentiality holds but authorization, freshness, or semantic correctness fails; reject any aggregate `secure=true` result. | planned; not run |
+| Replay and mismatch test | Replay evidence and substitute model, tokenizer, policy, or preprocessing commitments; the verifier must fail closed. | planned; not run |
+| Leakage inventory test | Account for outputs, access patterns, timing, logs, caches, crash dumps, receipts, and verifier metadata. | planned; not run |
+| Matched-cost test | Compare native and protected paths under equal task, quality, context, concurrency, and accounting boundaries. | planned; not run |
+| Fallback observability test | Force protected-path failure and verify that no silent unprotected downgrade occurs. | planned; not run |
+| Independent appraisal test | Implement the verifier separately from the prover and test policy/version disagreement. | planned; not run |
+
+Planned formalization hook:
+`lean:confidential-and-verifiable-ai-computation.admission_boundary` remains a
+process-contract target; it does not prove implementation security, semantic
+correctness, authorization, privacy, or acceptable deployment cost.
+
+## Source crosswalk
+
+| Source ID | Title | Planned use |
+|---|---|---|
+| `ext_nist_privacy_enhancing_cryptography_2026` | Privacy-Enhancing Cryptography | Planned use from inventory/manifest: NIST program material distinguishing fully homomorphic encryption, secure multiparty computation, zero-knowledge proofs, private-set intersection, and related privacy-enhancing techniques. It provides terminology and use-case context, not implementation security, usable performance, authorization, or end-to-end privacy. |
+| `ext_zkllm_2024` | zkLLM: Zero Knowledge Proofs for Large Language Models | Planned use from inventory/manifest: Research prototype for proving bounded LLM inference claims while hiding model parameters. Reported proof size and latency are configuration-bound and do not establish semantic correctness, authorization, side-channel security, production readiness, or end-to-end privacy. |
+| `ext_ietf_rats_architecture_2023` | Remote ATtestation procedureS (RATS) Architecture | Planned use from inventory/manifest: Primary IETF architecture and terminology comparator for Attester, Verifier, Relying Party, Evidence, Attestation Results, appraisal policies, reference values, freshness, layered environments, privacy, trust roots, and confidential-model key release. It is informational architecture, not a protocol, hardware assurance level, verifier-independence result, or local attestation deployment. |
+
+## Summary
+
+Confidential computation, verifiable computation, remote attestation, privacy,
+and authorization overlap, but they are not interchangeable. The governing
+object is a compositional execution contract: named guarantees, adversary and
+leakage models, precise evidence statements, independent appraisal, freshness,
+matched cost, observable fallback, revocation, and explicit unsupported
+properties. This is an argument-level design. No protected-inference result has
+been reproduced here.
+
+The main operational habit is to ask what exact statement a relying party may
+accept after checking a particular record. Every additional adjective needs a
+separate mechanism and residual boundary. If freshness, artifact identity,
+authorization, semantic translation, leakage accounting, or recovery is
+missing, the execution may still compute an answer, but it cannot inherit the
+stronger protected-computation claim.
+This separation makes failure diagnosable: a consumer can locate the problem
+in cryptography, platform state, artifact identity, semantic translation,
+authorization, or policy. It prevents a valid proof from laundering an invalid
+purpose and prevents a legitimate purpose from excusing unverifiable
+execution.
+
+## Handoff
+
+Execution evidence ultimately depends on keys, artifact identity, measured
+platforms, and recovery authority. Continue to
+[Model-Weight Custody and Hardware Roots of Trust](model-weight-custody-and-hardware-roots-of-trust.qmd).
+It receives exact guarantee, artifact, configuration, key, verifier, freshness,
+revocation, leakage, cost, and fallback fields. It does not inherit a claim
+that the protected computation is authorized, semantically correct, private
+end to end, or safe to release.

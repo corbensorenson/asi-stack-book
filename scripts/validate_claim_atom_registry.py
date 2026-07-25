@@ -43,6 +43,10 @@ POST_ACTIVATION_EXPANSION_IDS = {
     "societal-resilience-and-misuse-defense",
     "open-weight-release-and-post-release-control",
     "content-authenticity-watermarking-and-synthetic-media-integrity",
+    "military-ai-autonomous-weapons-and-strategic-stability",
+    "confidential-and-verifiable-ai-computation",
+    "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty",
+    "relational-dimension-compilation-and-polyadic-cognition",
 }
 POST_ACTIVATION_FORMAL_TARGETS = {"lean:corrigibility.agency.generic_countermodel_routes"}
 POST_ACTIVATION_ATOM_IDS = {

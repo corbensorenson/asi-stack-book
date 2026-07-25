@@ -761,6 +761,96 @@ owner, accepted depth residual, admitted distinct owner, research-only
 candidate, or explicit out-of-scope boundary. Raw keyword counts do not
 adjudicate completeness. Structural freeze is the default afterward.
 
+## 2026-07-25 full-coverage and owner-completion amendment
+
+This amendment supersedes the structural counts and candidate/freeze language
+above where they describe current state. The exact audit is
+`docs/full_coverage_gap_audit_2026_07_25.md`; its machine-readable intake and
+triage records are
+`research_backlog_records/full_coverage_gap_audit_2026_07_25.json` and
+`new_paper_triage_scenarios/full_coverage_gap_audit_2026_07_25.json`.
+
+The audit reviewed the complete 80-chapter pre-transaction manifest and current
+manuscript rather than treating old candidate lists or keyword counts as
+coverage truth. It found four distinct unowned lifecycles and admitted them at
+argument support:
+
+1. `military-ai-autonomous-weapons-and-strategic-stability` — the joined
+   mission, command-authority, context-specific human-judgment, physical-
+   effects, adversary-response, crisis-timing, escalation, proliferation,
+   legal-review, off-ramp, and fail-safe lifecycle;
+2. `confidential-and-verifiable-ai-computation` — execution across distrust
+   boundaries with separate input/model privacy, integrity, authenticity,
+   attestation/proof, leakage, freshness, verifier policy, cost, fallback, and
+   authorization boundaries;
+3. `human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty` —
+   longitudinal bidirectional coupling across complementarity, adaptation,
+   skill, dependence, neural and inferred mental data, stimulation, consent,
+   accessibility, cognitive sovereignty, and practical exit; and
+4. `relational-dimension-compilation-and-polyadic-cognition` — the full typed
+   relational-IR, candidate-topology, lower-order-rescue, role-persistence,
+   qualification, adaptive-order, compilation, contraction, and RODIE
+   lifecycle.
+
+The Relational Dimension Compiler admission closes a contradiction between the
+book's no-deferral policy and an obsolete Round 16 freeze statement. The source
+note had already found a distinct owner. The manifest now carries that owner;
+no implementation or empirical support is inferred.
+
+Eight narrower findings were written into existing owners in the same
+transaction:
+
+- no-free-lunch, identifiability, and an assumption ledger in Learning Theory;
+- neuromorphic, analog/in-memory, photonic, quantum, and biohybrid substrate
+  families plus end-to-end accounting in Replaceable Substrates and Physical
+  Compute;
+- post-quantum cryptographic inventory, agility, migration, and retirement in
+  Security Kernel and Model-Weight Custody;
+- three-arm complementarity and longitudinal co-adaptation in Human-AI
+  Organizations and the new Symbiosis owner;
+- infrastructure concentration, switching, common-mode bottlenecks, and
+  effective exit in Deployment, Institutions, and Physical Compute;
+- civil liability, insurance, evidence access, compensation, and remedy in
+  Institutions and Human-AI Organizations;
+- multilingual and culturally grounded intent, communication, and
+  language-by-task evaluation in Human Intent, Communication, and Benchmark
+  Ratchets; and
+- neural data, inferred mental state, derived-state deletion, and
+  secondary-purpose controls in Privacy and Symbiosis.
+
+Eighteen primary or official external-source records and bounded notes support
+the new prose. Source-reported results remain external. All four chapters and
+all section claims remain `Design rationale + argument`; no chapter-core
+support, release, legal conclusion, cryptographic guarantee, human outcome,
+military-policy result, SOTA, AGI, or ASI claim moves.
+
+The working manifest is now **84 chapters** and the source inventory is **458
+records**. No meaning-bearing idea found by this audit remains deferred.
+Artificial moral patients, model collapse, causal inference, RAG, conformal
+uncertainty, optimizer families, and other reviewed candidates stay with their
+existing substantive owners; this is a duplicate-chapter decision, not a
+rejection of those topics.
+
+### Continuation order
+
+This amendment does not displace P2 or create a third work-in-progress lane.
+After manifest, outline, appendix, claim, reader, validation, render, and public
+truth synchronization, execution returns to the existing queue:
+
+1. P2 storage-feasible materialization and four-slot competence qualification;
+2. the current 84-chapter atom, inheritance, maturity, and reader-freshness
+   reconciliation, superseding stale 66/80-chapter wording;
+3. T0–T4 Theseus flagship prerequisites and the effect-complete P5 reference;
+4. claim-specific evidence programs for the four new chapters only when they
+   pass the same competence, safety, rights, independent-evaluator,
+   denominator, reproduction, and transfer gates as every other chapter.
+
+Future coverage audits remain allowed because a living book cannot make a
+permanent completeness claim. New work must still prefer an existing owner,
+admit a chapter only for a distinct interface and failure lifecycle, integrate
+meaning immediately, and leave evidence maturity open rather than keeping
+manuscript ideas in a planning queue.
+
 ## Operating rules
 
 1. **No false-negative laundering.** A failed implementation is evidence about
@@ -2282,8 +2372,8 @@ lies.
 | M3 — Reproduction and transfer | pending | Any broadened result has independent reproduction and two prospectively selected materially different transfer settings. |
 | M4 — Semantic formal depth | completed | All six frozen clusters are terminal across 24 modules with exact dispositions, modeled state, assumptions, countermodels, consumers, mutations, semantic separations, and maximum-inference ceilings. No aggregate theorem count or finite record grants empirical support. |
 | M5 — Effect-complete reference | pending | Multi-process authority-to-effect, rollback/residual, full-state, and deletion behavior passes adversarial and recovery tests. |
-| M6 — Renewal and structural completeness | in progress | The first tranche, A1/A2, Round 18 five-chapter/seven-section breadth packet, ten-owner no-deferral transaction, four-owner taxonomy reconciliation, T1D meaning-bearing prose, and Precision Contract eight-owner manuscript integration are terminal at argument support; the working manifest is 80 and no identified manuscript idea is deferred. Optimizer, heterogeneous-memory, and inference-cache manuscript-depth amendments are also terminal at argument support; executable evidence residuals remain open. Close P2's exact attempt/materialization and replacement qualification plus the current atom, W3, maturity/source/reader/inheritance, and current-reader gates in their enforced order. Candidate-era freeze language is historical and cannot restore a deferred manuscript queue. |
-| M7 — Reader/publication disposition | in progress | PDF, EPUB, and DOCX in `reader-2026-07-18` remain immutable published artifacts with exact receipts. Close only after the current 66-chapter derived-reader packet and compatibility residuals are terminally dispositioned, all public surfaces remain synchronized, and the final main/Pages attestation succeeds; a local freshness packet does not imply external publication. |
+| M6 — Renewal and structural completeness | in progress | The first tranche, A1/A2, Round 18 five-chapter/seven-section breadth packet, ten-owner no-deferral transaction, four-owner taxonomy reconciliation, 2026-07-25 four-owner/eight-section full-coverage audit, T1D meaning-bearing prose, and Precision Contract eight-owner manuscript integration are terminal at argument support; the working manifest is 84 and no identified manuscript idea is deferred. Optimizer, heterogeneous-memory, and inference-cache manuscript-depth amendments are also terminal at argument support; executable evidence residuals remain open. Close P2's exact attempt/materialization and replacement qualification plus the current atom, W3, maturity/source/reader/inheritance, and current-reader gates in their enforced order. Candidate-era freeze language is historical and cannot restore a deferred manuscript queue. |
+| M7 — Reader/publication disposition | in progress | PDF, EPUB, and DOCX in `reader-2026-07-18` remain immutable published artifacts with exact receipts. Close only after the current 84-chapter derived-reader packet and compatibility residuals are terminally dispositioned, all public surfaces remain synchronized, and the final main/Pages attestation succeeds; a local freshness packet does not imply external publication. |
 | M8 — Successor continuity | pending | Every open item has a terminal disposition and the next exact authority is active. |
 
 ## Definition of done

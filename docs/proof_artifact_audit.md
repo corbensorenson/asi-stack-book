@@ -10,11 +10,11 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Metric | Value |
 |---|---:|
-| Proof targets audited | 329 |
-| Manifest status counts | {"implemented": 310, "planned": 19} |
-| Triage class counts | {"formal-invariant": 315, "process-contract": 14} |
+| Proof targets audited | 333 |
+| Manifest status counts | {"implemented": 310, "planned": 23} |
+| Triage class counts | {"formal-invariant": 315, "process-contract": 18} |
 | Lean modules referenced | 71 |
-| Chapters with proof targets | 80 |
+| Chapters with proof targets | 84 |
 | Validation errors | 0 |
 | Warnings | 0 |
 
@@ -124,6 +124,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `coil-attention-cyclic-memory-and-recurrence-contracts` | 2 | 2 | 0 | 0 |
 | `coilra-multicoil-rope-and-cyclic-mixers` | 2 | 2 | 0 | 0 |
 | `compact-generative-systems-and-residual-honesty` | 9 | 9 | 0 | 0 |
+| `confidential-and-verifiable-ai-computation` | 1 | 0 | 0 | 0 |
 | `constitutional-alignment-substrate` | 6 | 6 | 0 | 0 |
 | `content-authenticity-watermarking-and-synthetic-media-integrity` | 1 | 0 | 0 | 0 |
 | `context-transactions-snapshots-mounts-and-taint` | 4 | 4 | 0 | 0 |
@@ -142,6 +143,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `governed-world-models-and-reality-grounding` | 2 | 2 | 0 | 0 |
 | `human-ai-communication-persuasion-and-epistemic-security` | 1 | 0 | 0 | 0 |
 | `human-ai-organizations-delegation-and-accountability` | 1 | 0 | 0 | 0 |
+| `human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty` | 1 | 0 | 0 | 0 |
 | `human-factors-and-meaningful-control-in-oversight` | 2 | 2 | 0 | 0 |
 | `human-intent-as-a-formal-input` | 4 | 4 | 0 | 0 |
 | `inner-alignment-mesa-optimization-and-learned-objective-integrity` | 1 | 0 | 0 | 0 |
@@ -153,6 +155,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `learning-theory-generalization-and-scaling-science` | 1 | 0 | 0 | 0 |
 | `living-book-methodology` | 4 | 4 | 0 | 0 |
 | `mathematical-and-search-substrates` | 3 | 3 | 0 | 0 |
+| `military-ai-autonomous-weapons-and-strategic-stability` | 1 | 0 | 0 | 0 |
 | `model-weight-custody-and-hardware-roots-of-trust` | 8 | 8 | 0 | 0 |
 | `moral-uncertainty-and-value-conflict` | 7 | 7 | 0 | 0 |
 | `multi-agent-dynamics-collective-intelligence-and-systemic-risk` | 1 | 0 | 0 | 0 |
@@ -171,6 +174,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `rankfold-neuralfold-and-artifact-compression` | 3 | 3 | 0 | 0 |
 | `readiness-gates-residual-escrow-and-quarantine` | 3 | 3 | 0 | 0 |
 | `recursive-self-improvement-boundaries` | 3 | 3 | 0 | 0 |
+| `relational-dimension-compilation-and-polyadic-cognition` | 1 | 0 | 0 | 0 |
 | `replaceable-cognitive-substrates-beyond-transformer-monoculture` | 1 | 1 | 0 | 0 |
 | `resource-economics-and-token-budgets` | 11 | 11 | 0 | 0 |
 | `routing-heads-and-specialist-cores` | 5 | 5 | 0 | 0 |
@@ -208,6 +212,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:failure.recurrence.escalation_route` | `failure-modes-of-ungoverned-intelligence` | `AsiStackProofs.FailureModes` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:failure.taxonomy.detector_probe_bridge` | `failure-modes-of-ungoverned-intelligence` | `AsiStackProofs.FailureModes` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:dangerous-capability-domains-and-misuse-uplift.admission_boundary` | `dangerous-capability-domains-and-misuse-uplift` | `AsiStackProofs.NoDeferralAdmission` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
+| `lean:military-ai-autonomous-weapons-and-strategic-stability.admission_boundary` | `military-ai-autonomous-weapons-and-strategic-stability` | `AsiStackProofs.NoDeferralAdmission` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
 | `lean:evidence.support_state.operational_invariant` | `evidence-states-and-claim-discipline` | `AsiStackProofs.EvidenceStates` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:evidence.support_state.failure_blocks_promotion` | `evidence-states-and-claim-discipline` | `AsiStackProofs.EvidenceStates` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:evidence.support_state.transition_lifecycle_route` | `evidence-states-and-claim-discipline` | `AsiStackProofs.EvidenceStates` | triage ok; module ok; chapter tag ok; limitation ok |
@@ -263,6 +268,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:adversarial-machine-learning-and-model-attack-surface.admission_boundary` | `adversarial-machine-learning-and-model-attack-surface` | `AsiStackProofs.NoDeferralAdmission` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
 | `lean:privacy_information_flow.admission_invariants` | `privacy-data-rights-and-information-flow-governance` | `AsiStackProofs.PrivacyInformationFlow` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:privacy_information_flow.outcome_separation` | `privacy-data-rights-and-information-flow-governance` | `AsiStackProofs.PrivacyInformationFlow` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:confidential-and-verifiable-ai-computation.admission_boundary` | `confidential-and-verifiable-ai-computation` | `AsiStackProofs.NoDeferralAdmission` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
 | `lean:model_weight_custody.required.invalid_attestation_blocks_load` | `model-weight-custody-and-hardware-roots-of-trust` | `AsiStackProofs.ModelWeightCustody` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:model_weight_custody.lifecycle.complete_observed_load` | `model-weight-custody-and-hardware-roots-of-trust` | `AsiStackProofs.ModelWeightCustody` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:model_weight_custody.lifecycle.missing_lineage` | `model-weight-custody-and-hardware-roots-of-trust` | `AsiStackProofs.ModelWeightCustody` | triage ok; module ok; chapter tag ok; limitation ok |
@@ -339,6 +345,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:jobs.lifecycle.delivery_probe_fixture_bridge` | `labor-os-and-typed-jobs` | `AsiStackProofs.TypedJobRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:jobs.lifecycle.durable_lifecycle_probe_bridge` | `labor-os-and-typed-jobs` | `AsiStackProofs.TypedJobRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:human_ai_org.accountability_requires_authority` | `human-ai-organizations-delegation-and-accountability` | `AsiStackProofs.HumanAIOrganizations` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
+| `lean:human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.admission_boundary` | `human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty` | `AsiStackProofs.NoDeferralAdmission` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
 | `lean:ai-deployment-transition-distribution-and-human-agency.admission_boundary` | `ai-deployment-transition-distribution-and-human-agency` | `AsiStackProofs.NoDeferralAdmission` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
 | `lean:artifacts.graph.operational_invariant` | `artifact-graphs-audit-logs-and-replay` | `AsiStackProofs.ArtifactRealityRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:artifacts.graph.failure_blocks_promotion` | `artifact-graphs-audit-logs-and-replay` | `AsiStackProofs.ArtifactRealityRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
@@ -375,6 +382,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:moecot.runtime.operational_invariant` | `routing-heads-and-specialist-cores` | `AsiStackProofs.RoutingRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:moecot.runtime.failure_blocks_promotion` | `routing-heads-and-specialist-cores` | `AsiStackProofs.RoutingRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:cognitive_kernel.abi_trace_invariants` | `replaceable-cognitive-substrates-beyond-transformer-monoculture` | `AsiStackProofs.ReplaceableCognitiveSubstrates` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:relational-dimension-compilation-and-polyadic-cognition.admission_boundary` | `relational-dimension-compilation-and-polyadic-cognition` | `AsiStackProofs.NoDeferralAdmission` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
 | `lean:governed_training.run_admission_invariants` | `governed-model-training-distributed-optimization-and-scaling` | `AsiStackProofs.GovernedModelTraining` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:governed_training.resume_and_handoff_separation` | `governed-model-training-distributed-optimization-and-scaling` | `AsiStackProofs.GovernedModelTraining` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:learning-theory-generalization-and-scaling-science.admission_boundary` | `learning-theory-generalization-and-scaling-science` | `AsiStackProofs.NoDeferralAdmission` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |

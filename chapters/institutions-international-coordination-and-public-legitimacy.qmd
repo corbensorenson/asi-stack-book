@@ -8,6 +8,9 @@ last_updated: "2026-07-24"
 primary_sources:
   - "ext_un_global_digital_compact_2024"
   - "ext_council_europe_ai_convention_2024"
+  - "ext_oecd_ai_infrastructure_competition_2025"
+  - "ext_eu_ai_civil_liability_2025"
+  - "ext_icrc_autonomous_weapons_ihl_2025"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -241,8 +244,48 @@ These rows keep Institutions, International Coordination, and Public Legitimacy'
 | `ext_flexible_hardware_enabled_guarantees_2025` | Passage-reviewed comparator: Flexible Hardware-Enabled Guarantees for AI Compute. Supplies a hardware-enabled-guarantee research agenda for making compute-governance claims more inspectable than voluntary reporting alone. | The proposal does not establish complete coverage, secure implementation, legitimate update authority, or resistance to hardware and governance abuse. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_legal_alignment_2026` | Passage-reviewed comparator: Legal Alignment for Safe and Ethical AI. Identifies law-following AI as a coordination problem across jurisdictions, interpretations, exceptions, institutions, and technical systems. | Does not supply a universally legitimate legal corpus, interpretation engine, compliance proof, or public mandate. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_eu_article_50_transparency_guidelines_2026` | Passage-reviewed comparator: Guidelines on Transparency Obligations for Providers and Deployers of AI Systems. Provides a current regulatory comparator for transparency duties around AI-generated and manipulated content. | Guidance is jurisdiction- and obligation-specific; transparency compliance alone does not establish safety, authenticity, legitimacy, or effective enforcement. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_oecd_ai_infrastructure_competition_2025` | Metadata-first comparator: Competition in artificial intelligence infrastructure. OECD analysis of concentration, barriers to entry, vertical integration, and competition across AI infrastructure. It motivates bottleneck and exit analysis but does not adjudicate a specific market, legal violation, or optimal remedy. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_eu_ai_civil_liability_2025` | Metadata-first comparator: Artificial intelligence and civil liability. European Parliament research service study of AI and civil-liability questions. It supports explicit causation, evidence-access, insurance, compensation, and remedy analysis but is not legal advice or a globally settled liability rule. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_icrc_autonomous_weapons_ihl_2025` | Metadata-first comparator: Autonomous Weapon Systems and International Humanitarian Law: Selected Issues. ICRC legal and policy position on autonomous weapon systems and context-specific human judgment. It is authoritative for the ICRC position, not a universally settled legal interpretation, engineering validation, or authorization to design or deploy weapons. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
+## Competition, liability, insurance, and remedy
+
+Public governance is incomplete if it can issue principles but cannot prevent
+concentrated private control, assign duties, surface evidence, compensate harm,
+or restore access. Competition and liability are therefore enforcement
+interfaces, not peripheral policy topics.
+
+The institutional packet adds:
+
+- market and infrastructure boundary, concentration and vertical dependencies,
+  interoperability, switching cost, common ownership, and affected entrants;
+- duty holders across developer, deployer, operator, infrastructure provider,
+  data provider, integrator, and professional user;
+- evidentiary access, logging, disclosure, trade-secret and classified
+  boundaries, burden of proof, and preservation duties;
+- causation and contribution theories appropriate to adaptive, multi-party
+  systems without pretending the book settles applicable law;
+- insurance coverage, exclusions, capital, incident incentives, and the risk
+  that insurance becomes a compliance substitute;
+- injunction, suspension, correction, service restoration, compensation,
+  collective remedy, and long-tail monitoring; and
+- cross-border recognition, forum, enforcement, and insolvency.
+
+The OECD competition source supports the concentration and entry-barrier
+questions. The European Parliament civil-liability study supports explicit
+attention to evidence, causation, compensation, and remedy. The ICRC position
+paper supplies a domain-specific reminder: technical deployment can enter
+legal regimes with duties that cannot be replaced by a generic safety score.
+These sources are inputs to institutional design, not legal advice or proof of
+one globally legitimate regime.
+
+A remedy must be reachable by the person or community bearing harm. Complaint
+portals, audits, and fines count only if they can change behavior, repair loss,
+or stop an ongoing wrong. The chapter's legitimacy test therefore asks not
+only who participated in rulemaking, but who can compel evidence, appeal a
+decision, enforce a duty, and obtain restoration when the system fails.
+
 ## Summary
 
 Public deployment and cross-border coordination should proceed only through a versioned institutional packet that keeps jurisdiction, mandate, participation, scientific evidence, law and standards, verification, enforcement, remedy, capacity, conflict, expiry, and legitimacy residuals distinct; legal text, technical conformance, stakeholder consultation, or an international commitment alone establishes neither lawful authority, effective governance, representative legitimacy, nor safety. The subject is now integrated into the live manuscript at argument

@@ -1,0 +1,496 @@
+---
+title: "Relational Dimension Compilation and Polyadic Cognition"
+chapter_id: "relational-dimension-compilation-and-polyadic-cognition"
+part_id: "routing-compression-representation-substrates"
+status: "conceptual"
+draft_maturity: "substantive conceptual draft"
+last_updated: "2026-07-25"
+primary_sources:
+  - "relational_dimension_compiler"
+  - "ext_neural_message_passing_2017"
+evidence_level: "argument"
+claim_label: "Design rationale"
+open_evidence_gaps:
+  - "No Relational Dimension Compiler implementation or RODIE benchmark result exists."
+  - "No natural-task advantage over strong pairwise, reified-node, sequence, retrieval, or tool baselines is established."
+  - "Bounded primitive computational arity, semantic irreducibility, efficiency, and safe adaptive-order claims remain unproved."
+---
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `relational-dimension-compilation-and-polyadic-cognition` |
+| Part | Part III - Routing, Compression, Representation, and Substrates |
+| Status | conceptual |
+| Last updated | 2026-07-25 |
+| Primary source records | `relational_dimension_compiler` |
+| Claim label | Design rationale |
+| Evidence level | argument |
+| Source loading state | The Corben-authored paper and bounded source note are available; the architecture remains an unimplemented research program. |
+| Test state | Chapter-level tests remain planned unless Appendix E records an implemented command and result. |
+
+## Drafting guardrail
+
+The relational compiler remains an unimplemented architectural hypothesis.
+Higher semantic arity is not presumed irreducible, useful, efficient, or
+necessary, and a proposal mechanism never receives authority to install,
+retain, or retire production structure by itself.
+
+::: {.asi-human-only}
+## Human Reading Path
+
+Begin with [Replaceable Cognitive Substrates Beyond Transformer
+Monoculture](replaceable-cognitive-substrates-beyond-transformer-monoculture.qmd),
+then treat relational compilation as one candidate behind that interface. Its
+narrow problem is preserving typed, role-sensitive relations involving
+several participants without making the fast path combinatorial.
+Representation, qualification, compilation, routing, and retirement form one
+governed lifecycle.
+
+Keep four distinctions visible. Semantic arity is not tensor rank. A polyadic
+relation is not merely a large embedding. A learned proposal is not authority
+to install itself. An
+exchange involving giver, recipient, object, condition, and third-party action
+may lose roles when flattened into ambiguous pairwise edges, yet reifying
+those roles can add cost without helping a task.
+
+Log every candidate in a complete proposal denominator. Before admission,
+implement competent pairwise, relation-node, sequence, retrieval, tool, and
+ordinary-model rescues under matched budgets. Qualify survivors on unseen
+topologies and role permutations, then lower them without discarding
+provenance, uncertainty, abstention, or branch identity. Retirement must
+enumerate descendants and invalidate compiled artifacts and caches. Separate
+natural usefulness, calibration, latency, memory, and governance cost from
+synthetic diagnostics while keeping simpler mechanisms, rollback, and
+non-promotion in control.
+:::
+
+## Problem
+
+Many cognitive problems are natively polyadic: the meaning of a relation depends on several typed roles jointly, and its useful order may change with context. Flattening every relation into pairwise edges or token sequences can lose role identity, create ambiguous contractions, and hide the cost of proposing and maintaining higher-order structure.
+
+The difficulty is not merely storing a tuple. A useful system must determine
+when several observations jointly warrant a relation, keep asymmetric roles
+distinct, compare the proposal with cheaper representations, and preserve the
+result across retrieval, routing, explanation, update, and retirement. Sparse
+use is essential because the number of possible tuples grows rapidly with
+entities and order. An adaptive design can therefore fail by materializing too
+much structure, filtering the denominator before evaluation, or compiling a
+shortcut whose speed conceals lost provenance and changed semantics.
+
+## Why existing approaches are insufficient
+
+A substrate catalogue can name hypergraphs, tensor products, slots, and routing mechanisms, but it does not own the compiler lifecycle that types dimensions, proposes candidate relations, preserves role identity, qualifies higher order against lower-order rescues, adapts order, contracts reversibly, and evaluates whether the added structure earns its cost.
+
+Pairwise message passing and reified relation nodes can encode many seemingly
+higher-order cases, while sequence models can serialize roles and tools can
+construct explicit records. Any new architecture must beat those competent
+rescues rather than a deliberately weak baseline. Standard random splits may
+also leak topology templates, participant roles, or generator grammar, making
+memorization look like compositional transfer. Finally, reporting only admitted
+candidates hides proposal cost and false starts, so an apparently sparse
+system may have paid an unbounded search bill upstream.
+
+## Core Claim
+
+[relational-dimension-compilation-and-polyadic-cognition.core, label: Design rationale, support: argument] Polyadic cognition should be implemented as a slow-path relational-dimension compiler over stable lower-arity primitives: candidate higher-order structure is typed, role-addressable, denominator-complete, qualified against strong pairwise and sequence baselines, budgeted, reversible, and retained only when it improves held-out relational performance without violating memory, latency, calibration, or governance constraints.
+
+## What “dimension” means here
+
+The word *dimension* is overloaded. A defensible compiler keeps several axes
+separate:
+
+- **geometric dimension:** coordinates or width in a vector, tensor, manifold,
+  or state space;
+- **semantic arity:** how many typed roles jointly define a relation;
+- **primitive computational arity:** how many operands one primitive directly
+  consumes;
+- **storage arity:** whether a record is stored as an edge, reified relation
+  node, tuple, factor, program, or another structure;
+- **temporal extent:** whether the relation is instantaneous, episodic,
+  persistent, or recurrent;
+- **abstraction scale:** token, object, event, plan, organization, or world;
+- **branch identity:** which hypothesis, simulation, or counterfactual owns the
+  relation;
+- **epistemic status:** observed, inferred, proposed, contradicted, or retired;
+  and
+- **resource budget:** memory, compute, bandwidth, latency, and verification
+  cost.
+
+A ternary semantic relation does not require a ternary hardware instruction.
+It can be represented through a role-addressable relation object and evaluated
+with bounded primitives. Conversely, a high-rank tensor does not prove that the
+model represents a meaningful higher-order relation. This separation permits a
+simple fast path while allowing semantic structure to grow.
+
+Consider “Alice gave Bob the key in exchange for Carol releasing the file.”
+Pairwise edges such as `gave(Alice,key)` and `received(Bob,key)` omit the joint
+roles and exchange condition unless the relation is reified. A typed relation
+object can bind giver, recipient, object, counterparty, condition, time,
+branch, source, and uncertainty without assuming that every downstream
+operation must consume all fields at once.
+
+## The relational intermediate representation
+
+The compiler's basic record is a versioned `RelationCandidate`:
+
+```text
+candidate_id
+relation_type_and_dimensional_signature
+typed_role_bindings
+scope, time, branch, and abstraction level
+source_provenance_and_epistemic_status
+proposal_reason_and_residual_failure
+lower_order_rescues_attempted
+uncertainty_and_calibration
+memory, compute, latency, and verifier cost
+dependents, expiry, inverse, and fallback
+admission_state
+```
+
+Roles are addressed by name or type, not only position. A permutation may
+preserve a symmetric relation such as co-membership but must change an
+asymmetric relation such as donor–recipient. Missing roles remain explicit;
+they are not silently filled from the most likely completion. Branch identity
+prevents a relation believed in one counterfactual from leaking into another.
+Epistemic status prevents a proposed or simulated relation from being retrieved
+as observation.
+
+This is a compiler IR because it separates semantic intent from execution
+strategy. The same admitted relation might lower to a reified graph node,
+sparse tensor operation, factor graph, retrieved program, state-space update,
+or tool call. That makes representation replaceable while its roles,
+provenance, and governance survive.
+
+## Propose higher order only from a residual
+
+Materializing all possible \(k\)-tuples is not intelligence; it is a denial of
+service. Candidate generation therefore runs on a bounded slow path triggered
+by a named residual:
+
+- lower-order models repeatedly confuse role permutations;
+- a plan fails because a constraint applies only to a joint configuration;
+- a causal or social explanation changes when one participant role changes;
+- memory retrieves all relevant entities but cannot reconstruct their joint
+  relation;
+- a prediction remains miscalibrated after competent lower-order rescue; or
+- a recurring reasoning trace expends substantial work rebuilding the same
+  typed relation.
+
+Every trigger records the full proposal denominator. If 100,000 candidate
+relations were scored and 20 were admitted, the evaluation reports all
+100,000. Filtering away failed proposals creates a selection illusion. The
+denominator also includes compute and memory spent on proposal, not only the
+cost of the final relation.
+
+Generation can use learned models, programs, retrieval, or human input. None
+has admission authority. A learned proposer can surface a candidate; a
+separate qualification policy decides whether it enters shadow, canary, or
+active state.
+
+## Lower-order rescue comes first
+
+A distinct higher-order structure is warranted only after serious alternatives
+have been tried. Required rescues include:
+
+1. a pairwise graph with a reified relation node and typed incident roles;
+2. competent message passing or factorization;
+3. sequence serialization with role markers and adequate context;
+4. retrieval of a structured record or program;
+5. tool-mediated symbolic or database computation; and
+6. a larger or better-trained ordinary model under a matched resource budget.
+
+Many supposedly polyadic problems are representable by
+lower-arity structures. The research question is not whether representation is
+possible in principle; it is whether an explicit compiled relation improves
+generalization, role fidelity, calibration, or efficiency under the actual
+budget. If a reified node solves the task just as well and is easier to govern,
+the compiler should prefer it.
+
+The strongest challenge to this chapter is therefore reduction: bounded
+pairwise primitives plus enough latent state may be sufficient for every tested
+case. The chapter accepts that possibility. Its value then becomes a disciplined
+way to discover that higher-order compilation is unnecessary rather than a
+commitment to find a win.
+
+`ext_neural_message_passing_2017` supplies one concrete external lower-order
+comparator: learned messages, node updates, and graph readout over a supplied
+graph. Its molecular results neither validate RDC nor settle whether explicit
+polyadic structure is needed. It does make a weak pairwise baseline
+unacceptable; a fair test needs competent reified-relation and message-passing
+systems, not an intentionally impoverished graph.
+
+## Qualification and the order ladder
+
+A candidate passes through `proposed → shadow → canary → active → demoted →
+retired`. Promotion requires:
+
+- held-out topology and role configurations;
+- role-permutation, missing-role, and counterfactual-role tests;
+- comparison with all declared lower-order rescues;
+- calibration and abstention;
+- natural-task and synthetic-task separation;
+- matched memory, compute, latency, and training accounting;
+- stability across seeds and relevant distribution shifts;
+- complete proposal and failure denominators; and
+- an executable inverse or fallback plan.
+
+**Adaptive order** means the system may choose the simplest sufficient
+representation for each context. It does not mean an uncontrolled model may
+invent unbounded arity. Budgets cap proposal rate, active relations, role
+count, fan-out, dependency depth, and verifier work. Promotion policies can be
+learned only beneath hard governance limits.
+
+Useful relations can be compiled from the slow path to the fast path. The
+compiled operator carries a semantic version and conformance tests. If
+compression removes explanatory structure, the system retains a link to the
+source relation and a reconstruction path. Fast execution must not sever
+provenance.
+
+## Reversible semantic contraction
+
+Retirement is not deletion of one row. A relation may have descendants in
+memory summaries, caches, router policies, learned adapters, plans, evidence
+records, and other compiled relations. Contraction therefore:
+
+1. freezes new dependents;
+2. enumerates descendants and backups;
+3. selects a lower-order fallback or records loss of capability;
+4. invalidates or recompiles dependent artifacts;
+5. clears or versions caches and retrieval indexes;
+6. tests role and branch isolation after contraction; and
+7. records what influence cannot be removed from learned parameters.
+
+Reversibility is scoped. Restoring an earlier record does not undo downstream
+human actions or prove machine unlearning. The contraction receipt names
+storage erasure, behavioral removal, influence removal, and external effects
+separately.
+
+## RODIE: a benchmark family, not one score
+
+Relational-Order Discovery, Inference, and Evaluation should separate at least
+five capabilities:
+
+| Track | Question |
+|---|---|
+| Topology discovery | Can the system propose the needed relation without seeing its template in training? |
+| Role binding | Does it preserve asymmetric roles, missing roles, and permutation behavior? |
+| Compositional transfer | Does an admitted relation transfer across entities, domains, time, and unseen configurations? |
+| Order selection | Does the system prefer a simpler sufficient representation and abstain when no candidate qualifies? |
+| Lifecycle integrity | Can it promote, compile, demote, contract, and invalidate descendants without state corruption? |
+
+Synthetic generators permit exact topology and counterfactual controls, but
+they can reward template recognition. Natural tasks are necessary to test
+usefulness, yet their ground truth is often incomplete. Both are reported
+separately. A single aggregate “relational intelligence” score would recreate
+the very ambiguity this chapter is meant to remove.
+
+## Mechanism
+
+- Represent each candidate relation with typed roles, dimensional signature, scope, provenance, uncertainty, resource cost, and expiry.
+- Generate candidate dimensional topologies on a slow path from residual relational failures rather than materializing all possible tuples.
+- Compare candidates with strong rescues including reified relation nodes, message passing, factorization, sequence serialization, retrieval, and tool-mediated computation.
+- Qualify a candidate on held-out role-sensitive tasks with a complete proposal denominator, calibration, invariance, counterfactual-role, and cost tests.
+- Compile admitted relations into role-addressable operators, memory records, and router contracts while preserving provenance and an inverse or fallback path.
+- Adapt order under explicit promotion and demotion rules; garbage-collect expired or unproductive dimensions and invalidate descendants after contraction.
+- Evaluate with RODIE-style relational-order diagnostics that separate topology discovery, role binding, compositional transfer, efficiency, and governance.
+
+```{mermaid}
+flowchart LR
+  R["Observed residual with typed roles"] --> P["Candidate proposal and full denominator"]
+  P --> B["Competent lower-order rescue tournament"]
+  B --> Q{"Held-out gain earns added structure?"}
+  Q -- "no" --> N["Reject or retain simpler representation"]
+  Q -- "yes" --> C["Compile to bounded primitive fast path"]
+  C --> E["Execute with provenance, uncertainty, and abstention"]
+  E --> M["Monitor usefulness, cost, drift, and descendants"]
+  M --> K{"Retain, demote, or contract?"}
+  K -- "retain" --> E
+  K -- "demote or contract" --> D["Invalidate descendants, caches, and compiled artifacts"]
+  D --> N
+```
+
+**How to read this relational-compilation lifecycle:** a residual may propose
+structure but cannot install it. Every candidate remains visible while strong
+lower-order rescues compete under matched budgets. Qualified structure enters
+a bounded fast path with provenance and abstention; monitoring can retain it
+or trigger contraction with descendant and cache invalidation.
+
+The slow path owns discovery and evidence; the fast path owns only the
+qualified operation. A candidate record carries typed roles, source
+provenance, branch identity, uncertainty, scope, expiry, resource estimates,
+and its complete proposal history. Qualification checks role permutations,
+counterfactual substitutions, unseen topology, calibration, usefulness, and
+cost. Compilation must preserve those observable semantics or expose a
+fallback to deliberate reconstruction.
+
+Contraction is a governed state transition rather than ordinary garbage
+collection. Retirement identifies memories, routes, explanations, cached
+outputs, compiled operators, and learned descendants that depended on the
+relation. Reversible artifacts return to the last qualified lower-order path;
+irrecoverable influence remains in a residual ledger. No proposer, compiler,
+or runtime score can authorize its own promotion, retention, or deletion.
+
+### Separation of powers
+
+The proposer suggests; the qualifier evaluates; the governor authorizes; the
+compiler lowers; the runtime routes; the lifecycle controller demotes and
+contracts; the evidence system records denominators and residuals. These roles
+may share software in a prototype, but their records and authority remain
+separable. A high proposer score cannot authorize installation.
+
+## Interfaces
+
+- Replaceable Cognitive Substrates for primitive families and capability-field contracts
+- Memory Systems for provenance, retrieval, persistence, and deletion of compiled relations
+- Routing and Deliberation for choosing lower-order, compiled, fallback, or abstention paths
+- Governed Model Training for learning proposals and operators without granting self-authorization
+- Benchmark Ratchets for held-out topology, role, compositionality, calibration, and cost evaluation
+
+These interfaces divide representation from authority. Substrates supply
+primitive operations, memory preserves provenance and lifecycle state, routing
+selects qualified paths, training proposes changes, and evaluation tests
+transfer and cost. The compiler binds their identifiers into one candidate
+record but cannot replace their judgments. A change in any dependency expires
+the affected qualification and sends the relation back to shadow evaluation.
+Independent evidence review remains outside the compiler's control and
+optimization objective.
+Its decisions remain appealable and replayable.
+
+## Invariants
+
+- Role identity survives storage, permutation, routing, contraction, explanation, and rollback.
+- No proposal is judged without its full candidate denominator and resource cost.
+- Higher order is admitted only after named lower-order rescues are implemented competently under matched budgets.
+- Every compiled relation has provenance, uncertainty, scope, expiry, descendant tracking, and a reversible fallback.
+- A gain on synthetic relational tasks is not promoted into a claim of general intelligence, irreducible structure, or universal arity.
+
+Together these constraints make added order defeasible and inspectable:
+semantic roles survive transformations, every proposal remains countable,
+simpler rescues stay available, and retirement cannot silently strand
+dependent state.
+They also prevent silent promotion.
+All exceptions require explicit review.
+
+## Failure modes
+
+- Combinatorial explosion from indiscriminate tuple materialization.
+- Arity theater relabels pairwise or sequence computation without adding role-sensitive capability.
+- Role collapse treats distinct participant positions as exchangeable.
+- Proposal filtering hides the denominator and inflates apparent qualification rates.
+- Synthetic benchmark leakage rewards topology templates rather than relational transfer.
+- Contraction deletes information or leaves stale descendants and cache entries.
+- Compiler overhead exceeds the value of the admitted structure.
+- Self-modification authority is smuggled into a learned proposal mechanism.
+
+### When not to compile
+
+Do not compile when the relation is one-off, poorly typed, source provenance is
+weak, a lower-order rescue matches it, the evaluation denominator is
+incomplete, its context changes faster than qualification, or the inverse
+cannot be made safe. Retrieval or deliberate reconstruction may be slower but
+more honest. “Keep it stupid simple” appears here as a promotion rule: the
+system pays for structural complexity only after simpler mechanisms lose under
+matched evaluation.
+
+## Minimum Viable Implementation
+
+A deterministic compiler for a small typed-relation language with candidate and denominator logs, pairwise-node and sequence baselines, role-permutation and counterfactual tests, promotion and demotion thresholds, cost accounting, reversible contraction, descendant invalidation, and a held-out RODIE fixture family.
+
+The bounded trial includes symmetric and asymmetric roles, equivalent
+lower-order encodings, deliberately spurious higher-order candidates, unseen
+topologies, branch-confusion traps, expired provenance, and descendants in
+memory and caches. An independently written evaluator should reconstruct the
+complete proposal denominator and compare useful accuracy, calibration,
+latency, memory, compilation cost, and abstention. Passing would establish
+only compiler conformance and bounded fixture behavior; it would not establish
+irreducibility, natural-task advantage, general reasoning, or safe learned
+adaptation.
+Every fixture retains its random seed and artifact digest.
+
+## Beyond the State of the Art
+
+A serious advance would show independently reproduced gains on natural and synthetic relational workloads across unseen topology and role configurations, beat strong lower-order rescues under matched compute and memory, retain calibrated abstention, and demonstrate safe online admission and contraction without corrupting dependent state. The mature target architecture would conserve proposal denominators, provenance, uncertainty, descendant invalidation, and fallback while showing that admitted structure earns its lifecycle cost.
+
+The endpoint would combine a public typed relational language, multiple
+independent compilers, adversarially designed natural and synthetic workloads,
+and a full lifecycle ledger from proposal through contraction. Evaluations
+would hold out topology and role composition, measure discovery cost as well
+as execution cost, and compare reification, message passing, factorization,
+sequence, retrieval, tool, and ordinary-model baselines. Positive results
+would remain task- and budget-bound rather than becoming a claim that
+higher-order structure is universally necessary.
+Failures and rejected proposals would remain publishable first-class results.
+Cross-implementation disagreement would remain clearly visible rather than
+averaged away.
+
+That compiler ecosystem is a proposed destination rather than a demonstrated
+capability. Support could move only after complete-denominator implementations,
+strong rescues, held-out natural and synthetic evaluation, independent
+reproduction, full lifecycle traces, and honest resource accounting. Those
+artifacts would still support bounded task claims rather than universal
+irreducibility, general reasoning, safe self-improvement, or ASI.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Role-permutation test | Preserve symmetric roles and distinguish asymmetric roles across storage and execution. | planned; not run |
+| Lower-order rescue tournament | Compare reified pairwise, message-passing, sequence, retrieval, tool, and ordinary-model baselines under matched budgets. | planned; not run |
+| Proposal-denominator test | Log every proposed, filtered, shadowed, admitted, demoted, and failed candidate with resource cost. | planned; not run |
+| Unseen-topology test | Hold out relational structures rather than only entity values or examples. | planned; not run |
+| Branch-isolation test | Prevent simulated, counterfactual, proposed, and observed relations from crossing epistemic or branch boundaries. | planned; not run |
+| Compile-conformance test | Show that fast-path lowering preserves typed roles, outputs, uncertainty, provenance references, and abstention behavior. | planned; not run |
+| Contraction test | Retire relations, enumerate descendants, invalidate caches and compiled artifacts, and report irrecoverable influence separately. | planned; not run |
+| Natural-usefulness test | Measure relational gain, calibration, useful throughput, and governance cost on natural tasks separately from synthetic diagnostics. | planned; not run |
+
+Planned formalization hook:
+`lean:relational-dimension-compilation-and-polyadic-cognition.admission_boundary`
+remains a process-contract target; it does not prove irreducible higher-order
+structure, useful polyadic cognition, bounded primitive arity, or safe online
+self-modification.
+
+## Source crosswalk
+
+| Source ID | Title | Planned use |
+|---|---|---|
+| `relational_dimension_compiler` | The Relational Dimension Compiler: Adaptive Polyadic Cognition with Bounded Computational Arity and Unbounded Semantic Structure | Primary conceptual architecture for the typed relational IR, sparse adaptive order, role-preserving reification, qualified relation lifecycle, slow-to-fast compilation, reversible contraction, hardware lowering, and RODIE program. It supplies hypotheses and tests, not an implementation or positive result. |
+
+### Manifest source assignment reconciliation
+
+These rows keep Relational Dimension Compilation and Polyadic Cognition's manifest assignments visible at their recorded review boundary. Passage review does not establish local reproduction, performance, safety, deployment, or support-state movement.
+
+| Source | Intake role | Boundary |
+|---|---|---|
+| `ext_neural_message_passing_2017` | Metadata-first comparator: Neural Message Passing for Quantum Chemistry. Primary message-passing neural-network framework for learned computation over graph structure. Its molecular results motivate a non-token-native relational lane but do not establish general reasoning, dynamic graph memory, exact state, or local reproduction. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+
+<!-- manifest-source-reconciliation:end -->
+## Summary
+
+Relational dimension compilation is a proposal for letting semantic structure
+grow while primitive computation stays bounded and governable. Its credibility
+depends on the constraints: typed roles, explicit dimensional axes, residual-
+triggered proposals, complete denominators, strong lower-order rescues, held-
+out qualification, budgeted promotion, semantic-preserving compilation,
+reversible contraction, and disaggregated RODIE evaluation. Nothing in the
+paper or the present argument establishes that higher-order structure is irreducible,
+efficient, or useful in practice. Those are the experiments.
+
+The architectural value is conditional discipline. It supplies a place to
+test polyadic structure without assuming that additional order is progress,
+without hiding rejected proposals, and without granting a learned mechanism
+installation authority. If simpler representations win, the lifecycle returns
+to them. If higher order wins narrowly, provenance, cost, abstention, expiry,
+and contraction remain part of the admitted capability.
+
+## Handoff
+
+A compiler can propose and lower a new representation, but training determines
+which parts are learned, synchronized, checkpointed, and authorized to change.
+Continue to
+[Governed Model Training, Distributed Optimization, and Scaling](governed-model-training-distributed-optimization-and-scaling.qmd).
+It receives the typed state schema, candidate and qualification denominator,
+compiled-operator identity, optimizer eligibility, descendant graph, rollback
+path, and unsupported claims. It does not inherit a useful higher-order
+representation, trained router, safe update, scaling, or support conclusion.

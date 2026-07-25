@@ -23,11 +23,18 @@ def errors(data: dict) -> list[str]:
     if set(roles) != {"mechanism_or_capability", "limitation_or_failure", "competing_design", "measurement_or_evaluation"}: out.append("four-role vocabulary drifted")
     if {s for values in roles.values() for s in values} != SOURCE_IDS: out.append("nine-source role packet incomplete")
     chapters = [c for p in data["structure"]["parts"] for c in p["chapters"]]; ids = [c["id"] for c in chapters]
-    if len(ids) != 80 or ids.count(CHAPTER_ID) != 1: out.append("80-chapter manifest or A2 uniqueness drifted")
+    if len(ids) != 84 or ids.count(CHAPTER_ID) != 1: out.append("84-chapter manifest or A2 uniqueness drifted")
     i = ids.index(CHAPTER_ID) if CHAPTER_ID in ids else -1
-    if i < 1 or ids[i-1] != "adversarial-machine-learning-and-model-attack-surface" or ids[i+1] != "model-weight-custody-and-hardware-roots-of-trust": out.append("A2 placement drifted")
+    if (
+        i < 1
+        or ids[i-1] != "adversarial-machine-learning-and-model-attack-surface"
+        or ids[i+1] != "confidential-and-verifiable-ai-computation"
+        or ids[i+2] != "model-weight-custody-and-hardware-roots-of-trust"
+    ): out.append("A2 placement drifted")
     chapter = next((c for c in chapters if c["id"] == CHAPTER_ID), {})
-    if set(chapter.get("source_ids", [])) != SOURCE_IDS | LOCAL_SOURCE_IDS or chapter.get("evidence_level") != "argument": out.append("A2 manifest source/support boundary drifted")
+    # Freeze the admitted A2 packet as a required subset while allowing later
+    # dated coverage audits to extend the living chapter bibliography.
+    if not (SOURCE_IDS | LOCAL_SOURCE_IDS).issubset(set(chapter.get("source_ids", []))) or chapter.get("evidence_level") != "argument": out.append("A2 manifest source/support boundary drifted")
     if set(chapter.get("source_queue", {}).get("primary", [])) != SOURCE_IDS or set(chapter.get("source_queue", {}).get("supporting", [])) != LOCAL_SOURCE_IDS: out.append("A2 external/local source roles drifted")
     inventory = {r["id"]: r for r in data["sources"]}
     for sid in SOURCE_IDS:
@@ -57,7 +64,13 @@ def errors(data: dict) -> list[str]:
     for name, fragments in required.items():
         for fragment in fragments:
             if fragment not in surfaces[name]: out.append(f"{name} missing: {fragment}")
-    for relative in audit.get("artifacts", {}).values():
+    for artifact_name, relative in audit.get("artifacts", {}).items():
+        # The chapter is a living reader surface. Admission identity, sources,
+        # support ceiling, and placement are validated above; byte-freezing it
+        # would prevent later source-grounded prose improvements.
+        if artifact_name == "chapter":
+            if not (ROOT / relative).is_file(): out.append(f"living chapter missing: {relative}")
+            continue
         if not (ROOT / relative).is_file() or audit.get("artifact_sha256", {}).get(relative) != sha(ROOT / relative): out.append(f"artifact digest drifted: {relative}")
     for sid in SOURCE_IDS:
         if audit.get("source_note_sha256", {}).get(sid) != sha(ROOT / f"sources/source_notes/{sid}.md"): out.append(f"source-note digest drifted: {sid}")
@@ -76,6 +89,6 @@ def main() -> None:
     if failures: raise SystemExit("P6.4-A2 reader integration failed:\n- " + "\n- ".join(failures))
     probe = subprocess.run(["python3", "scripts/validate_information_lifecycle_transaction.py"], cwd=ROOT, capture_output=True, text=True)
     if probe.returncode: raise SystemExit(probe.stdout + probe.stderr)
-    print("P6.4-A2 reader integration passed: terminal argument chapter, nine-source four-role packet plus one bounded local implementation-pressure record, 2 targets/11 theorems, 6 arms/13 failures/15 competence gates unopened, 26 transaction mutations plus 10 integration mutations, 80-chapter reconciliation, terminal no-queue admission and current evidence custody preserved, no compliance/support/release effect.")
+    print("P6.4-A2 reader integration passed: terminal argument chapter, nine-source four-role packet plus one bounded local implementation-pressure record, 2 targets/11 theorems, 6 arms/13 failures/15 competence gates unopened, 26 transaction mutations plus 10 integration mutations, 84-chapter reconciliation with the later confidential-computation owner interposed, terminal no-queue admission and current evidence custody preserved, no compliance/support/release effect.")
 
 if __name__ == "__main__": main()

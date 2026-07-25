@@ -570,8 +570,8 @@ def errors(data: dict) -> list[str]:
     manifest_ids = {chapter.get("id") for chapter in manifest_chapters}
     first_ids = set(status["quality_uplift_program"]["structural_completeness_tranche"]["first_tranche"]["candidate_ids"])
     second_ids = set(status["quality_uplift_program"]["structural_completeness_tranche"]["second_tranche"]["candidate_ids"])
-    if len(manifest_chapters) != 80:
-        out.append(f"working manifest chapter count is {len(manifest_chapters)}, expected 80")
+    if len(manifest_chapters) != 84:
+        out.append(f"working manifest chapter count is {len(manifest_chapters)}, expected 84")
     if not first_ids.issubset(manifest_ids):
         out.append(f"first structural tranche missing manifest IDs: {sorted(first_ids - manifest_ids)}")
     if set(STRUCTURAL_CHAPTER_PATHS) != first_ids:
@@ -721,9 +721,13 @@ def errors(data: dict) -> list[str]:
     }.items():
         if surface_summary.get(field) != expected:
             out.append(f"negative-inference surface audit drift: {field}")
-    if surface_scope.get("surface_count") != rehabilitation_status.get("current_surface_count"):
+    current_live_chapters = status.get("activation_truth", {}).get("live_working_chapter_count")
+    if surface_scope.get("surface_count") != (
+        surface_scope.get("chapter_count", 0)
+        + surface_scope.get("public_and_derivative_surface_count", 0)
+    ):
         out.append("negative-inference current surface denominator drifted")
-    if surface_scope.get("chapter_count") != rehabilitation_status.get("live_chapter_surface_count"):
+    if surface_scope.get("chapter_count") != current_live_chapters:
         out.append("negative-inference live chapter denominator drifted")
     if surface_scope.get("public_and_derivative_surface_count") != 20:
         out.append("negative-inference public/derivative surface denominator drifted")
@@ -1066,8 +1070,8 @@ def errors(data: dict) -> list[str]:
     ):
         out.append("Round 16 amendment permits rewriting a historical atom denominator")
     reader_freshness = round16.get("current_reader_freshness_packet", {})
-    if reader_freshness.get("current_working_manifest_chapter_count") != 80 or reader_freshness.get("must_cover_all_current_manifest_chapters") is not True:
-        out.append("Round 16 current-reader packet does not cover the live 80-chapter manifest")
+    if reader_freshness.get("current_working_manifest_chapter_count") != 84 or reader_freshness.get("must_cover_all_current_manifest_chapters") is not True:
+        out.append("Round 16 current-reader packet does not cover the live 84-chapter manifest")
     recovery = round16.get("p2_empirical_recovery", {})
     if (
         recovery.get("state") != "below_storage_floor_exact_attempt_or_failure_receipt_required"
@@ -1228,12 +1232,12 @@ def errors(data: dict) -> list[str]:
         r"(\d+) unknown/mixed",
         data["proof_review"],
     )
-    expected_proof = (329, 110, 1370, 924, 230, 216)
+    expected_proof = (333, 110, 1370, 924, 230, 216)
     if not proof_match or tuple(map(int, proof_match.groups())) != expected_proof:
         out.append("proof-depth baseline drifted without roadmap reconciliation")
-    if data["proof_manifest"].get("proof_target_count") != 329:
-        out.append("proof manifest target count disagrees with the 310 implemented plus nineteen current planned targets")
-    if data["proof_manifest"].get("status_counts") != {"implemented": 310, "planned": 19}:
+    if data["proof_manifest"].get("proof_target_count") != 333:
+        out.append("proof manifest target count disagrees with the 310 implemented plus twenty-three current planned targets")
+    if data["proof_manifest"].get("status_counts") != {"implemented": 310, "planned": 23}:
         out.append("taxonomy-completion proof targets altered the frozen implemented-proof denominator")
 
     proof_inventory = status.get("semantic_proof_cluster_inventory", {})
@@ -1435,7 +1439,7 @@ def main() -> None:
         "90 accepted historical negatives classified as 1 N0, 15 N1, 74 N2, and 0 N3-N5; "
         "the frozen 75-surface rehabilitation snapshot including the then-live 55 chapters reconciled with zero overbroad negative language; "
         "P2 selected prospectively from five candidates; natural development preflight covers 1,117 post-snapshot tasks, 12 repositories, seven languages, and 12 image manifests; the fixed gold denominator is fully dispositioned as eight qualified and four N0 replacements across 62 verified arm logs and eight attempts; the corrected infrastructure/content boundary reinstates rank five as setup-retry-pending and keeps rank six closed; the historical 2026-07-22 capacity entry condition was met, while the 2026-07-24 observation is below the frozen floor and requires an exact attempt or failure receipt; the complete 30-candidate sequential materialization remains unpassed; Q1 D1 and Theseus Q2 D2 remain disjoint and sealed; remeasurement, qualification, construct, and heldout gates remain closed; "
-        "all six semantic proof clusters are terminally adequate at bounded scope; the historical 66-chapter Round 18 freeze remains recorded, while the superseding no-deferral and taxonomy transactions admit fourteen distinct manuscript owners into the current 80-chapter book at argument support, leave zero live candidate queue, add semantic review and current proof-triage custody, and remove structural freezing for manuscript ideas; optimizer manuscript depth is terminal while its empirical campaign remains a nonblocking evidence residual; current proof and main-attestation baselines exact; no support/release effect; "
+        "all six semantic proof clusters are terminally adequate at bounded scope; the historical 66-chapter Round 18 freeze remains recorded, while the superseding no-deferral, taxonomy, and full-coverage transactions admit eighteen distinct manuscript owners into the current 84-chapter book at argument support, leave zero live candidate queue, add semantic review and current proof-triage custody, and remove structural freezing for manuscript ideas; optimizer manuscript depth is terminal while its empirical campaign remains a nonblocking evidence residual; current proof and main-attestation baselines exact; no support/release effect; "
         f"{len(mutations)}/{len(mutations)} mutations rejected."
     )
 

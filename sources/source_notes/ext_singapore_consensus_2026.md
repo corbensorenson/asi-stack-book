@@ -59,6 +59,7 @@ domain, or that the book's proposed contracts are safe or complete.
 ## Book Chapters Supported
 
 - Primary: `dangerous-capability-domains-and-misuse-uplift`
+- Supporting: `military-ai-autonomous-weapons-and-strategic-stability`
 - Primary: `societal-resilience-and-misuse-defense`
 - Supporting: `open-weight-release-and-post-release-control`
 - Supporting: `capability-thresholds-and-deployment-commitments`

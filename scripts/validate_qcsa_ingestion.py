@@ -97,11 +97,13 @@ def validate(data: dict) -> list[str]:
     first_tranche = structural_tranche.get("first_tranche", {})
     second_tranche = structural_tranche.get("second_tranche", {})
     round_18_tranche = structural_tranche.get("round_18_breadth_completion", {})
+    full_coverage_tranche = structural_tranche.get("full_coverage_gap_audit_2026_07_25", {})
     no_deferral_tranche = maintenance_status.get("no_deferral_manuscript_admission", {})
     admitted_chapter_ids = (
         set(first_tranche.get("candidate_ids", []))
         | set(second_tranche.get("adjudicated_candidate_ids", []))
         | set(round_18_tranche.get("new_chapter_ids", []))
+        | set(full_coverage_tranche.get("new_chapter_ids", []))
         | set(no_deferral_tranche.get("admitted_chapter_ids", []))
     )
     if (
@@ -113,7 +115,9 @@ def validate(data: dict) -> list[str]:
         or structural_tranche.get("current_manifest_chapter_count") != live_chapter_count
         or first_tranche.get("manifest_admitted_count") != len(set(first_tranche.get("candidate_ids", [])))
         or second_tranche.get("manifest_admitted_count") != len(set(second_tranche.get("adjudicated_candidate_ids", [])))
-        or no_deferral_tranche.get("current_manifest_chapter_count") != live_chapter_count
+        or full_coverage_tranche.get("current_manifest_chapter_count") != live_chapter_count
+        or no_deferral_tranche.get("current_manifest_chapter_count")
+        != full_coverage_tranche.get("previous_manifest_chapter_count")
         or no_deferral_tranche.get("remaining_live_candidate_queue_count") != 0
         or not admitted_chapter_ids.issubset(record_ids)
     ):

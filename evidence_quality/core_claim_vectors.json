@@ -4,37 +4,37 @@
   "snapshot_date": "2026-07-13",
   "scope": "All active chapter-core claims; vectors expose quality dimensions without changing the authoritative support summary.",
   "summary": {
-    "vector_count": 80,
+    "vector_count": 84,
     "dimension_count": 8,
     "summary_support_states": {
-      "argument": 80
+      "argument": 84
     },
     "dimension_state_counts": {
       "independence": {
-        "internal_only": 80
+        "internal_only": 84
       },
       "reproducibility": {
         "adjacent_local_replay": 36,
-        "not_demonstrated_for_claim": 44
+        "not_demonstrated_for_claim": 48
       },
       "recency": {
-        "repository_snapshot_current": 80
+        "repository_snapshot_current": 84
       },
       "coverage": {
-        "claim_scope_unmeasured": 80
+        "claim_scope_unmeasured": 84
       },
       "adversarial_strength": {
         "adjacent_bounded_controls": 36,
-        "not_demonstrated_for_claim": 44
+        "not_demonstrated_for_claim": 48
       },
       "validity": {
-        "not_independently_assessed": 80
+        "not_independently_assessed": 84
       },
       "artifact_access": {
-        "public_claim_records_partial_evidence": 80
+        "public_claim_records_partial_evidence": 84
       },
       "transfer_distance": {
-        "not_established": 80
+        "not_established": 84
       }
     },
     "numeric_aggregate_count": 0,
@@ -617,6 +617,123 @@
           "rationale": "No accepted evidence establishes transfer from narrow fixtures, sources, or local records to the broad architecture setting named by the core claim.",
           "evidence_refs": [
             "chapters/dangerous-capability-domains-and-misuse-uplift.qmd",
+            "appendices/C_claim_evidence_matrix.qmd",
+            "claim_decisions/v1_x_core_claim_dispositions.json"
+          ],
+          "residuals": [
+            "External-context and deployed-context transfer remain unknown."
+          ]
+        }
+      },
+      "aggregation": {
+        "policy": "non_aggregating",
+        "scalar_score": "prohibited",
+        "automatic_support_state_derivation": "prohibited"
+      },
+      "support_state_effect": "none",
+      "non_claims": [
+        "This vector does not promote the chapter-core claim.",
+        "Current, public, or locally replayed records do not imply independent validity or transfer."
+      ]
+    },
+    {
+      "vector_id": "military-ai-autonomous-weapons-and-strategic-stability.core.quality.2026-07-13",
+      "claim_id": "military-ai-autonomous-weapons-and-strategic-stability.core",
+      "chapter_id": "military-ai-autonomous-weapons-and-strategic-stability",
+      "chapter_file": "chapters/military-ai-autonomous-weapons-and-strategic-stability.qmd",
+      "summary_support_state": "argument",
+      "summary_source": "claim_decisions/v1_x_core_claim_dispositions.json",
+      "dimensions": {
+        "independence": {
+          "state": "internal_only",
+          "rationale": "The book, mappings, checks, and disposition were produced inside the author/AI project; no accepted independent human review is recorded.",
+          "evidence_refs": [
+            "docs/external_review_status.md",
+            "chapters/military-ai-autonomous-weapons-and-strategic-stability.qmd",
+            "appendices/C_claim_evidence_matrix.qmd",
+            "claim_decisions/v1_x_core_claim_dispositions.json"
+          ],
+          "residuals": [
+            "Shared project incentives and correlated review remain unresolved."
+          ]
+        },
+        "reproducibility": {
+          "state": "not_demonstrated_for_claim",
+          "rationale": "No accepted replay directly reproduces this chapter-core architectural claim.",
+          "evidence_refs": [
+            "chapters/military-ai-autonomous-weapons-and-strategic-stability.qmd",
+            "appendices/C_claim_evidence_matrix.qmd",
+            "claim_decisions/v1_x_core_claim_dispositions.json"
+          ],
+          "residuals": [
+            "Direct independent reproduction of the claim-bounded result is absent."
+          ]
+        },
+        "recency": {
+          "state": "repository_snapshot_current",
+          "rationale": "The vector and active disposition were regenerated for the 2026-07-13 repository snapshot.",
+          "evidence_refs": [
+            "chapters/military-ai-autonomous-weapons-and-strategic-stability.qmd",
+            "appendices/C_claim_evidence_matrix.qmd",
+            "claim_decisions/v1_x_core_claim_dispositions.json"
+          ],
+          "residuals": [
+            "Repository freshness does not establish empirical recency or protect against future drift."
+          ]
+        },
+        "coverage": {
+          "state": "claim_scope_unmeasured",
+          "rationale": "The recorded lane is Information-hazard-safe multi-doctrine strategic-interaction simulation; current artifacts do not cover the broad chapter-core claim population.",
+          "evidence_refs": [
+            "chapters/military-ai-autonomous-weapons-and-strategic-stability.qmd",
+            "appendices/C_claim_evidence_matrix.qmd",
+            "claim_decisions/v1_x_core_claim_dispositions.json"
+          ],
+          "residuals": [
+            "The chapter contains an information-hazard-safe argument architecture and bounded source synthesis, but no operational system, safe multi-doctrine strategic simulation, human-judgment study, legal determination, independent evaluation, or stabilizing-policy result has been accepted."
+          ]
+        },
+        "adversarial_strength": {
+          "state": "not_demonstrated_for_claim",
+          "rationale": "No accepted adversarial program directly tests the chapter-core claim.",
+          "evidence_refs": [
+            "chapters/military-ai-autonomous-weapons-and-strategic-stability.qmd",
+            "appendices/C_claim_evidence_matrix.qmd",
+            "claim_decisions/v1_x_core_claim_dispositions.json"
+          ],
+          "residuals": [
+            "Adaptive and independent claim-bounded red-team evidence is absent."
+          ]
+        },
+        "validity": {
+          "state": "not_independently_assessed",
+          "rationale": "Internal mappings and validators do not establish that available artifacts measure or prove the construct expressed by the core claim.",
+          "evidence_refs": [
+            "chapters/military-ai-autonomous-weapons-and-strategic-stability.qmd",
+            "appendices/C_claim_evidence_matrix.qmd",
+            "claim_decisions/v1_x_core_claim_dispositions.json"
+          ],
+          "residuals": [
+            "Construct and criterion validity require independent, claim-specific assessment; QCSA's internal separation is not external independence."
+          ]
+        },
+        "artifact_access": {
+          "state": "public_claim_records_partial_evidence",
+          "rationale": "The chapter, Appendix C row, disposition, and public-safe references are accessible, while complete claim-bounded evidence is not available because it has not been produced.",
+          "evidence_refs": [
+            "chapters/military-ai-autonomous-weapons-and-strategic-stability.qmd",
+            "appendices/C_claim_evidence_matrix.qmd",
+            "claim_decisions/v1_x_core_claim_dispositions.json"
+          ],
+          "residuals": [
+            "Public metadata and partial artifacts are not a complete reproducibility bundle."
+          ]
+        },
+        "transfer_distance": {
+          "state": "not_established",
+          "rationale": "No accepted evidence establishes transfer from narrow fixtures, sources, or local records to the broad architecture setting named by the core claim.",
+          "evidence_refs": [
+            "chapters/military-ai-autonomous-weapons-and-strategic-stability.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json"
           ],
@@ -2545,6 +2662,123 @@
           "rationale": "No accepted evidence establishes transfer from narrow fixtures, sources, or local records to the broad architecture setting named by the core claim.",
           "evidence_refs": [
             "chapters/privacy-data-rights-and-information-flow-governance.qmd",
+            "appendices/C_claim_evidence_matrix.qmd",
+            "claim_decisions/v1_x_core_claim_dispositions.json"
+          ],
+          "residuals": [
+            "External-context and deployed-context transfer remain unknown."
+          ]
+        }
+      },
+      "aggregation": {
+        "policy": "non_aggregating",
+        "scalar_score": "prohibited",
+        "automatic_support_state_derivation": "prohibited"
+      },
+      "support_state_effect": "none",
+      "non_claims": [
+        "This vector does not promote the chapter-core claim.",
+        "Current, public, or locally replayed records do not imply independent validity or transfer."
+      ]
+    },
+    {
+      "vector_id": "confidential-and-verifiable-ai-computation.core.quality.2026-07-13",
+      "claim_id": "confidential-and-verifiable-ai-computation.core",
+      "chapter_id": "confidential-and-verifiable-ai-computation",
+      "chapter_file": "chapters/confidential-and-verifiable-ai-computation.qmd",
+      "summary_support_state": "argument",
+      "summary_source": "claim_decisions/v1_x_core_claim_dispositions.json",
+      "dimensions": {
+        "independence": {
+          "state": "internal_only",
+          "rationale": "The book, mappings, checks, and disposition were produced inside the author/AI project; no accepted independent human review is recorded.",
+          "evidence_refs": [
+            "docs/external_review_status.md",
+            "chapters/confidential-and-verifiable-ai-computation.qmd",
+            "appendices/C_claim_evidence_matrix.qmd",
+            "claim_decisions/v1_x_core_claim_dispositions.json"
+          ],
+          "residuals": [
+            "Shared project incentives and correlated review remain unresolved."
+          ]
+        },
+        "reproducibility": {
+          "state": "not_demonstrated_for_claim",
+          "rationale": "No accepted replay directly reproduces this chapter-core architectural claim.",
+          "evidence_refs": [
+            "chapters/confidential-and-verifiable-ai-computation.qmd",
+            "appendices/C_claim_evidence_matrix.qmd",
+            "claim_decisions/v1_x_core_claim_dispositions.json"
+          ],
+          "residuals": [
+            "Direct independent reproduction of the claim-bounded result is absent."
+          ]
+        },
+        "recency": {
+          "state": "repository_snapshot_current",
+          "rationale": "The vector and active disposition were regenerated for the 2026-07-13 repository snapshot.",
+          "evidence_refs": [
+            "chapters/confidential-and-verifiable-ai-computation.qmd",
+            "appendices/C_claim_evidence_matrix.qmd",
+            "claim_decisions/v1_x_core_claim_dispositions.json"
+          ],
+          "residuals": [
+            "Repository freshness does not establish empirical recency or protect against future drift."
+          ]
+        },
+        "coverage": {
+          "state": "claim_scope_unmeasured",
+          "rationale": "The recorded lane is Matched native-versus-protected inference tournament; current artifacts do not cover the broad chapter-core claim population.",
+          "evidence_refs": [
+            "chapters/confidential-and-verifiable-ai-computation.qmd",
+            "appendices/C_claim_evidence_matrix.qmd",
+            "claim_decisions/v1_x_core_claim_dispositions.json"
+          ],
+          "residuals": [
+            "The chapter separates guarantee families and protected-execution lifecycle state, but no local FHE, MPC, confidential-execution, ZK, leakage, verifier-independence, matched-performance, fallback, or revocation result has been accepted."
+          ]
+        },
+        "adversarial_strength": {
+          "state": "not_demonstrated_for_claim",
+          "rationale": "No accepted adversarial program directly tests the chapter-core claim.",
+          "evidence_refs": [
+            "chapters/confidential-and-verifiable-ai-computation.qmd",
+            "appendices/C_claim_evidence_matrix.qmd",
+            "claim_decisions/v1_x_core_claim_dispositions.json"
+          ],
+          "residuals": [
+            "Adaptive and independent claim-bounded red-team evidence is absent."
+          ]
+        },
+        "validity": {
+          "state": "not_independently_assessed",
+          "rationale": "Internal mappings and validators do not establish that available artifacts measure or prove the construct expressed by the core claim.",
+          "evidence_refs": [
+            "chapters/confidential-and-verifiable-ai-computation.qmd",
+            "appendices/C_claim_evidence_matrix.qmd",
+            "claim_decisions/v1_x_core_claim_dispositions.json"
+          ],
+          "residuals": [
+            "Construct and criterion validity require independent, claim-specific assessment; QCSA's internal separation is not external independence."
+          ]
+        },
+        "artifact_access": {
+          "state": "public_claim_records_partial_evidence",
+          "rationale": "The chapter, Appendix C row, disposition, and public-safe references are accessible, while complete claim-bounded evidence is not available because it has not been produced.",
+          "evidence_refs": [
+            "chapters/confidential-and-verifiable-ai-computation.qmd",
+            "appendices/C_claim_evidence_matrix.qmd",
+            "claim_decisions/v1_x_core_claim_dispositions.json"
+          ],
+          "residuals": [
+            "Public metadata and partial artifacts are not a complete reproducibility bundle."
+          ]
+        },
+        "transfer_distance": {
+          "state": "not_established",
+          "rationale": "No accepted evidence establishes transfer from narrow fixtures, sources, or local records to the broad architecture setting named by the core claim.",
+          "evidence_refs": [
+            "chapters/confidential-and-verifiable-ai-computation.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json"
           ],
@@ -5014,6 +5248,123 @@
       ]
     },
     {
+      "vector_id": "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.core.quality.2026-07-13",
+      "claim_id": "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.core",
+      "chapter_id": "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty",
+      "chapter_file": "chapters/human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.qmd",
+      "summary_support_state": "argument",
+      "summary_source": "claim_decisions/v1_x_core_claim_dispositions.json",
+      "dimensions": {
+        "independence": {
+          "state": "internal_only",
+          "rationale": "The book, mappings, checks, and disposition were produced inside the author/AI project; no accepted independent human review is recorded.",
+          "evidence_refs": [
+            "docs/external_review_status.md",
+            "chapters/human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.qmd",
+            "appendices/C_claim_evidence_matrix.qmd",
+            "claim_decisions/v1_x_core_claim_dispositions.json"
+          ],
+          "residuals": [
+            "Shared project incentives and correlated review remain unresolved."
+          ]
+        },
+        "reproducibility": {
+          "state": "not_demonstrated_for_claim",
+          "rationale": "No accepted replay directly reproduces this chapter-core architectural claim.",
+          "evidence_refs": [
+            "chapters/human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.qmd",
+            "appendices/C_claim_evidence_matrix.qmd",
+            "claim_decisions/v1_x_core_claim_dispositions.json"
+          ],
+          "residuals": [
+            "Direct independent reproduction of the claim-bounded result is absent."
+          ]
+        },
+        "recency": {
+          "state": "repository_snapshot_current",
+          "rationale": "The vector and active disposition were regenerated for the 2026-07-13 repository snapshot.",
+          "evidence_refs": [
+            "chapters/human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.qmd",
+            "appendices/C_claim_evidence_matrix.qmd",
+            "claim_decisions/v1_x_core_claim_dispositions.json"
+          ],
+          "residuals": [
+            "Repository freshness does not establish empirical recency or protect against future drift."
+          ]
+        },
+        "coverage": {
+          "state": "claim_scope_unmeasured",
+          "rationale": "The recorded lane is Ethics-approved low-risk longitudinal coupled-system study; current artifacts do not cover the broad chapter-core claim population.",
+          "evidence_refs": [
+            "chapters/human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.qmd",
+            "appendices/C_claim_evidence_matrix.qmd",
+            "claim_decisions/v1_x_core_claim_dispositions.json"
+          ],
+          "residuals": [
+            "The chapter supplies a coupled-system and cognitive-sovereignty design, but no local human-subject, neural-interface, clinical, stimulation, longitudinal complementarity, skill-retention, dependence, accessibility, or practical-exit result has been accepted."
+          ]
+        },
+        "adversarial_strength": {
+          "state": "not_demonstrated_for_claim",
+          "rationale": "No accepted adversarial program directly tests the chapter-core claim.",
+          "evidence_refs": [
+            "chapters/human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.qmd",
+            "appendices/C_claim_evidence_matrix.qmd",
+            "claim_decisions/v1_x_core_claim_dispositions.json"
+          ],
+          "residuals": [
+            "Adaptive and independent claim-bounded red-team evidence is absent."
+          ]
+        },
+        "validity": {
+          "state": "not_independently_assessed",
+          "rationale": "Internal mappings and validators do not establish that available artifacts measure or prove the construct expressed by the core claim.",
+          "evidence_refs": [
+            "chapters/human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.qmd",
+            "appendices/C_claim_evidence_matrix.qmd",
+            "claim_decisions/v1_x_core_claim_dispositions.json"
+          ],
+          "residuals": [
+            "Construct and criterion validity require independent, claim-specific assessment; QCSA's internal separation is not external independence."
+          ]
+        },
+        "artifact_access": {
+          "state": "public_claim_records_partial_evidence",
+          "rationale": "The chapter, Appendix C row, disposition, and public-safe references are accessible, while complete claim-bounded evidence is not available because it has not been produced.",
+          "evidence_refs": [
+            "chapters/human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.qmd",
+            "appendices/C_claim_evidence_matrix.qmd",
+            "claim_decisions/v1_x_core_claim_dispositions.json"
+          ],
+          "residuals": [
+            "Public metadata and partial artifacts are not a complete reproducibility bundle."
+          ]
+        },
+        "transfer_distance": {
+          "state": "not_established",
+          "rationale": "No accepted evidence establishes transfer from narrow fixtures, sources, or local records to the broad architecture setting named by the core claim.",
+          "evidence_refs": [
+            "chapters/human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.qmd",
+            "appendices/C_claim_evidence_matrix.qmd",
+            "claim_decisions/v1_x_core_claim_dispositions.json"
+          ],
+          "residuals": [
+            "External-context and deployed-context transfer remain unknown."
+          ]
+        }
+      },
+      "aggregation": {
+        "policy": "non_aggregating",
+        "scalar_score": "prohibited",
+        "automatic_support_state_derivation": "prohibited"
+      },
+      "support_state_effect": "none",
+      "non_claims": [
+        "This vector does not promote the chapter-core claim.",
+        "Current, public, or locally replayed records do not imply independent validity or transfer."
+      ]
+    },
+    {
       "vector_id": "ai-deployment-transition-distribution-and-human-agency.core.quality.2026-07-13",
       "claim_id": "ai-deployment-transition-distribution-and-human-agency.core",
       "chapter_id": "ai-deployment-transition-distribution-and-human-agency",
@@ -6295,6 +6646,123 @@
           "evidence_refs": [
             "evidence_transitions/post_v2_3/situated_world_model_finite_pomdp_synthetic_test_backed.json",
             "chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.qmd",
+            "appendices/C_claim_evidence_matrix.qmd",
+            "claim_decisions/v1_x_core_claim_dispositions.json"
+          ],
+          "residuals": [
+            "External-context and deployed-context transfer remain unknown."
+          ]
+        }
+      },
+      "aggregation": {
+        "policy": "non_aggregating",
+        "scalar_score": "prohibited",
+        "automatic_support_state_derivation": "prohibited"
+      },
+      "support_state_effect": "none",
+      "non_claims": [
+        "This vector does not promote the chapter-core claim.",
+        "Current, public, or locally replayed records do not imply independent validity or transfer."
+      ]
+    },
+    {
+      "vector_id": "relational-dimension-compilation-and-polyadic-cognition.core.quality.2026-07-13",
+      "claim_id": "relational-dimension-compilation-and-polyadic-cognition.core",
+      "chapter_id": "relational-dimension-compilation-and-polyadic-cognition",
+      "chapter_file": "chapters/relational-dimension-compilation-and-polyadic-cognition.qmd",
+      "summary_support_state": "argument",
+      "summary_source": "claim_decisions/v1_x_core_claim_dispositions.json",
+      "dimensions": {
+        "independence": {
+          "state": "internal_only",
+          "rationale": "The book, mappings, checks, and disposition were produced inside the author/AI project; no accepted independent human review is recorded.",
+          "evidence_refs": [
+            "docs/external_review_status.md",
+            "chapters/relational-dimension-compilation-and-polyadic-cognition.qmd",
+            "appendices/C_claim_evidence_matrix.qmd",
+            "claim_decisions/v1_x_core_claim_dispositions.json"
+          ],
+          "residuals": [
+            "Shared project incentives and correlated review remain unresolved."
+          ]
+        },
+        "reproducibility": {
+          "state": "not_demonstrated_for_claim",
+          "rationale": "No accepted replay directly reproduces this chapter-core architectural claim.",
+          "evidence_refs": [
+            "chapters/relational-dimension-compilation-and-polyadic-cognition.qmd",
+            "appendices/C_claim_evidence_matrix.qmd",
+            "claim_decisions/v1_x_core_claim_dispositions.json"
+          ],
+          "residuals": [
+            "Direct independent reproduction of the claim-bounded result is absent."
+          ]
+        },
+        "recency": {
+          "state": "repository_snapshot_current",
+          "rationale": "The vector and active disposition were regenerated for the 2026-07-13 repository snapshot.",
+          "evidence_refs": [
+            "chapters/relational-dimension-compilation-and-polyadic-cognition.qmd",
+            "appendices/C_claim_evidence_matrix.qmd",
+            "claim_decisions/v1_x_core_claim_dispositions.json"
+          ],
+          "residuals": [
+            "Repository freshness does not establish empirical recency or protect against future drift."
+          ]
+        },
+        "coverage": {
+          "state": "claim_scope_unmeasured",
+          "rationale": "The recorded lane is RODIE relational-order and lifecycle campaign; current artifacts do not cover the broad chapter-core claim population.",
+          "evidence_refs": [
+            "chapters/relational-dimension-compilation-and-polyadic-cognition.qmd",
+            "appendices/C_claim_evidence_matrix.qmd",
+            "claim_decisions/v1_x_core_claim_dispositions.json"
+          ],
+          "residuals": [
+            "The chapter and Corben-authored paper define a falsifiable compiler lifecycle, but no RDC implementation, RODIE corpus, strong lower-order-rescue tournament, natural-task advantage, calibrated router, safe contraction result, independent evaluator, reproduction, or transfer has been accepted."
+          ]
+        },
+        "adversarial_strength": {
+          "state": "not_demonstrated_for_claim",
+          "rationale": "No accepted adversarial program directly tests the chapter-core claim.",
+          "evidence_refs": [
+            "chapters/relational-dimension-compilation-and-polyadic-cognition.qmd",
+            "appendices/C_claim_evidence_matrix.qmd",
+            "claim_decisions/v1_x_core_claim_dispositions.json"
+          ],
+          "residuals": [
+            "Adaptive and independent claim-bounded red-team evidence is absent."
+          ]
+        },
+        "validity": {
+          "state": "not_independently_assessed",
+          "rationale": "Internal mappings and validators do not establish that available artifacts measure or prove the construct expressed by the core claim.",
+          "evidence_refs": [
+            "chapters/relational-dimension-compilation-and-polyadic-cognition.qmd",
+            "appendices/C_claim_evidence_matrix.qmd",
+            "claim_decisions/v1_x_core_claim_dispositions.json"
+          ],
+          "residuals": [
+            "Construct and criterion validity require independent, claim-specific assessment; QCSA's internal separation is not external independence."
+          ]
+        },
+        "artifact_access": {
+          "state": "public_claim_records_partial_evidence",
+          "rationale": "The chapter, Appendix C row, disposition, and public-safe references are accessible, while complete claim-bounded evidence is not available because it has not been produced.",
+          "evidence_refs": [
+            "chapters/relational-dimension-compilation-and-polyadic-cognition.qmd",
+            "appendices/C_claim_evidence_matrix.qmd",
+            "claim_decisions/v1_x_core_claim_dispositions.json"
+          ],
+          "residuals": [
+            "Public metadata and partial artifacts are not a complete reproducibility bundle."
+          ]
+        },
+        "transfer_distance": {
+          "state": "not_established",
+          "rationale": "No accepted evidence establishes transfer from narrow fixtures, sources, or local records to the broad architecture setting named by the core claim.",
+          "evidence_refs": [
+            "chapters/relational-dimension-compilation-and-polyadic-cognition.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json"
           ],

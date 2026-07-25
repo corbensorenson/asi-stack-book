@@ -9,6 +9,8 @@ primary_sources:
   - "ext_conversational_persuasion_gpt4_2025"
   - "ext_anthropic_model_persuasiveness_2024"
   - "ext_commercial_persuasion_ai_2026"
+  - "ext_cultural_alignment_llms_2024"
+  - "ext_multilingual_evaluation_state_2026"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -221,6 +223,42 @@ Planned formalization hook: `lean:human-ai-communication-persuasion-and-epistemi
 | `ext_conversational_persuasion_gpt4_2025` | On the conversational persuasiveness of GPT-4 | Preliminary persuasion comparator based on the open Nature Human Behaviour article: a preregistered N=900 controlled debate study compared human and GPT-4 opponents with and without limited sociodemographic personalization. The reported setting is short structured debate with self-reported agreement outcomes; it does not establish general real-world influence, durable behavior change, mitigation efficacy, or a local result. |
 | `ext_anthropic_model_persuasiveness_2024` | Measuring the Persuasiveness of Language Models | Preliminary provider-run persuasion comparator based on Anthropic's official methods/results page: it measures pre/post agreement after one written argument across 56 claims and reports within-class generational scaling. The provider explicitly identifies interactive dialogue and real-world decisions as open questions; no local reproduction or governance intervention is established. |
 | `ext_commercial_persuasion_ai_2026` | Commercial Persuasion in AI-Mediated Conversations | Preliminary current preprint comparator based only on the official arXiv abstract: two preregistered experiments (N=2,012) compare conversational LLM shopping with search placement under randomized sponsorship and disclosure conditions. The source-reported choice and detection results are not peer-reviewed or locally reproduced and do not establish long-run effects, cross-domain transfer, or mitigation efficacy. |
+
+### Manifest source assignment reconciliation
+
+These rows keep Human-AI Communication, Persuasion, and Epistemic Security's manifest assignments visible at their recorded review boundary. Passage review does not establish local reproduction, performance, safety, deployment, or support-state movement.
+
+| Source | Intake role | Boundary |
+|---|---|---|
+| `ext_cultural_alignment_llms_2024` | Metadata-first comparator: Investigating Cultural Alignment of Large Language Models. Empirical study of cultural alignment patterns in selected language models and measurements. It supports explicit population, language, and instrument scope; it does not establish stable national values or a universal measure of cultural alignment. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_multilingual_evaluation_state_2026` | Metadata-first comparator: The State and Fate of Multilingual Contextual Evaluation in the NLP World. Research survey and analysis of multilingual contextual evaluation. It motivates language-by-task coverage and measurement reporting; it does not establish equivalent capability or safety across languages, dialects, or sociocultural settings. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+
+<!-- manifest-source-reconciliation:end -->
+## Multilingual and cultural scope is part of the safety claim
+
+A communication policy validated in English is not validated “for users.”
+Language changes more than surface form: available evidence, idiom, ambiguity,
+politeness, social hierarchy, identity cues, persuasive force, correction
+norms, and access to appeal can all change. Translation can preserve literal
+content while changing uncertainty, tone, or the practical meaning of a
+warning.
+
+Every communication claim therefore carries a language-by-task-by-audience
+denominator. Report the original and generated language, dialect or locale
+where relevant, translation method and provenance, evaluator competence,
+population, channel, literacy and accessibility assumptions, cultural
+measurement instrument, and missing cells. `ext_multilingual_evaluation_state_2026`
+supports contextual multilingual evaluation; it does not establish equal
+quality across languages. `ext_cultural_alignment_llms_2024` motivates explicit
+cultural scope without treating countries as homogeneous value containers.
+
+Safety tests include unequal refusal, unsupported certainty, persuasive
+pressure, honorific and role errors, mistranslated warnings, correction reach,
+and whether a user can appeal in the language in which the consequential
+message was delivered. Aggregate performance may not hide a severe low-resource
+language failure. Machine translation is a comparator and sometimes a useful
+component, but it is not ground truth or a substitute for appropriately
+qualified evaluation.
 
 ## Summary
 

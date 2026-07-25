@@ -203,11 +203,12 @@ not this conjunction:
 - Replaceable Substrates owns ABI-neutral component replacement.
 - Procedural Memory owns consolidation of repeated successful behavior.
 
-The candidate therefore merits later chapter adjudication, but the active
-roadmap freezes all new manifest admission. Immediate work is bounded
-integration into existing owners plus a deferred candidate packet. No chapter
-path, manifest entry, proof target, or admission receipt is created during the
-freeze.
+The candidate passed chapter adjudication in the 2026-07-25 full-coverage
+audit and is now admitted as
+`relational-dimension-compilation-and-polyadic-cognition`. The chapter owns the
+joined compiler lifecycle while adjacent chapters retain their narrower jobs.
+Admission is structural only: it creates no implementation, benchmark result,
+proof of irreducibility, efficiency result, or support-state promotion.
 
 ## Claims To Add Or Update
 

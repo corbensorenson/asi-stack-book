@@ -3299,7 +3299,47 @@
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
       "rationale": "Implemented in AsiStackProofs.BibliographyPlan as a finite source-assignment predicate: accepted new-source assignments require an existing chapter id."
+    },
+    {
+      "tag": "lean:military-ai-autonomous-weapons-and-strategic-stability.admission_boundary",
+      "chapter_id": "military-ai-autonomous-weapons-and-strategic-stability",
+      "module": "AsiStackProofs.NoDeferralAdmission",
+      "formal_target": "A finite military-AI interaction record may hand off only when mission, authority, human judgment, effect bounds, escalation assumptions, safe posture, and residuals are explicit; no theorem authorizes a weapon or proves lawful use or strategic stability.",
+      "target_status": "planned",
+      "triage": "process-contract",
+      "recommended_route": "policy-model-first",
+      "rationale": "The planned boundary gives military-AI interaction claims explicit mission, authority, judgment, effect, escalation, safe-posture, and residual fields. Static fields cannot establish meaningful control, legal compliance, conflict outcomes, strategic stability, safety, or deployment authority."
+    },
+    {
+      "tag": "lean:confidential-and-verifiable-ai-computation.admission_boundary",
+      "chapter_id": "confidential-and-verifiable-ai-computation",
+      "module": "AsiStackProofs.NoDeferralAdmission",
+      "formal_target": "A finite protected-execution record may hand off only when guarantees, adversary, leakage, artifact, freshness, verifier policy, fallback, and unsupported properties are explicit; no theorem proves semantic correctness, authorization, or end-to-end privacy.",
+      "target_status": "planned",
+      "triage": "process-contract",
+      "recommended_route": "policy-model-first",
+      "rationale": "The planned boundary separates named protected-compute guarantees from adversary, leakage, artifact, freshness, verification, fallback, and unsupported-property records. It cannot establish cryptographic implementation security, semantic correctness, authorization, privacy, performance, or deployment readiness."
+    },
+    {
+      "tag": "lean:human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.admission_boundary",
+      "chapter_id": "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty",
+      "module": "AsiStackProofs.NoDeferralAdmission",
+      "formal_target": "A finite human-AI coupling record may hand off only when component baselines, adaptation, data purpose, skill, dependence, exit, subgroup, and irreversible residuals are explicit; no theorem establishes beneficial symbiosis or authorizes neural intervention.",
+      "target_status": "planned",
+      "triage": "process-contract",
+      "recommended_route": "policy-model-first",
+      "rationale": "The planned boundary makes component baselines, adaptation, purpose, skill, dependence, exit, subgroup, and irreversible human residuals explicit. It cannot establish durable complementarity, consent, clinical efficacy, cognitive sovereignty, safety, or neural-intervention authority."
+    },
+    {
+      "tag": "lean:relational-dimension-compilation-and-polyadic-cognition.admission_boundary",
+      "chapter_id": "relational-dimension-compilation-and-polyadic-cognition",
+      "module": "AsiStackProofs.NoDeferralAdmission",
+      "formal_target": "A finite relational candidate may hand off only when typed roles, lower-order rescues, proposal denominator, qualification, cost, fallback, descendants, and contraction state are explicit; no theorem proves irreducibility, usefulness, or bounded primitive arity.",
+      "target_status": "planned",
+      "triage": "process-contract",
+      "recommended_route": "policy-model-first",
+      "rationale": "The planned boundary makes roles, lower-order rescues, the complete candidate denominator, qualification, cost, fallback, descendants, and contraction state explicit. It cannot establish irreducibility, representational usefulness, bounded primitive arity, general reasoning, safe online adaptation, or ASI."
     }
   ],
-  "record_count": 329
+  "record_count": 333
 }

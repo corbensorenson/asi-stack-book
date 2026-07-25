@@ -186,7 +186,7 @@ Drafting rules:
 
 ### No-deferral admission overlay
 
-The book now contains 76 manifest chapters. The ten 2026-07-24 admissions and
+The historical 2026-07-24 tranche raised the book to 76 manifest chapters. The ten admissions and
 their exclusive jobs are:
 
 | Chapter ID | Exclusive job |
@@ -230,19 +230,37 @@ Existing owners absorb the paper as follows:
 | Benchmark Ratchets and Anti-Goodhart Evidence | Treat RODIE as an unexecuted vector instrument spanning role, order, topology, branch, contraction, intervention, and lifecycle costs | Owns instrument validity, not a favorable RDC result |
 | Resource Economics and Token Budgets | Count proposal, rejected-tuple, sparse-kernel, qualification, branch, contraction, repair, and hardware costs | Owns total cost, not semantic adequacy |
 | Integrated Reference Architecture | Carry a typed relational-complex packet through the stack with state, branch, provenance, qualification, and contraction lineage | Owns cross-layer joins, not an implemented RDC runtime |
-| Open Research Agenda and Bibliography Plan | Preserve the source intake, external-literature verification queue, and deferred chapter-boundary decision | Owns admission and closure, not automatic chapter creation |
+| Open Research Agenda and Bibliography Plan | Preserve the source intake, external-literature verification queue, and completed chapter-boundary decision | Owns admission and closure, not automatic chapter creation |
 
-The conjunction remains distinct enough for a future candidate called
-`relational-dimension-compilation-and-polyadic-cognition`: it would own the
-typed relational-complex interface, dimension system, persistent role-sensitive
-relation topology, qualification lifecycle, adaptive relational order,
-reversible semantic contraction, operator registry, and RODIE falsification
-program. The active Round 16 freeze prohibits a chapter path, manifest row,
-proof target, reader insertion, or order reservation now. After the freeze,
-admission requires independent bibliography verification plus the standard
-birth-complete atom, source-role, ownership, reader, and W3 inheritance packet.
-Until then, improve these nine owners and avoid duplicating their established
-responsibilities.
+The conjunction is now owned by
+`relational-dimension-compilation-and-polyadic-cognition`: typed relational
+interface, dimension system, persistent role-sensitive topology,
+qualification lifecycle, adaptive order, reversible contraction, operator
+registry, and the RODIE falsification program. The 2026-07-25 full-coverage
+audit admitted the chapter after the obsolete Round 16 structural freeze had
+ended. Its support remains `argument`; independent bibliography verification,
+implementation, strong lower-order rescues, complete proposal denominators,
+natural evaluation, reproduction, and transfer remain open.
+
+## Full-Coverage Admission Overlay — 2026-07-25
+
+The current manifest contains **84 chapters**. The full audit in
+`docs/full_coverage_gap_audit_2026_07_25.md` admitted four distinct owners:
+
+| Chapter | Exclusive job |
+|---|---|
+| `military-ai-autonomous-weapons-and-strategic-stability` | Command authority, context-specific human judgment, bounded force effects, adversary response, crisis timing, escalation, proliferation, legal review, off-ramps, and fail-safe posture. |
+| `confidential-and-verifiable-ai-computation` | Guarantee-separated execution across distrust boundaries: input/model privacy, integrity, authenticity, attestation/proof, leakage, freshness, verifier policy, cost, fallback, and authorization boundaries. |
+| `human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty` | Longitudinal coupling, complementarity, feedback, skill, dependence, neural and inferred mental data, stimulation, cognitive sovereignty, access, and practical exit. |
+| `relational-dimension-compilation-and-polyadic-cognition` | Typed relational IR, higher-order candidate topology, lower-order rescue, role persistence, qualification, compilation, adaptive order, contraction, and RODIE. |
+
+The same transaction integrates no-free-lunch and identifiability; non-silicon
+substrates; post-quantum migration; human-AI co-adaptation; infrastructure
+concentration; liability and remedy; multilingual and cultural evaluation; and
+neural-data and mental-inference controls into their existing owners. Those
+topics do not become duplicate chapters. All new material remains at argument
+support, and no evidence, legal, safety, deployment, SOTA, AGI, or ASI claim
+moves.
 
 ## Reader Promise
 
@@ -671,6 +689,56 @@ Lean proof targets:
 |---|---|---|---|
 | `lean:dangerous-capability-domains-and-misuse-uplift.admission_boundary` | `AsiStackProofs.NoDeferralAdmission` | A finite dangerous-capability dossier may hand off only when model, threat, cohort, access, evaluator, uncertainty, expiry, and maximum inference are present; no theorem establishes dangerous capability or safety. | planned |
 
+### Military AI, Autonomous Weapons, and Strategic Stability
+
+Stable ID: `military-ai-autonomous-weapons-and-strategic-stability`
+
+Chapter job: Govern military AI as a command-and-interaction system whose
+mission, human authority, physical effects, adversary response, legal boundary,
+crisis timing, and escalation pathways cannot be inferred from component
+accuracy or generic dangerous-capability uplift.
+
+Core claim: Military AI should be governed as a command-and-interaction system: deployment requires a declared mission and legal boundary, preserved accountable human authority, bounded sensing and action, adversarial and escalation analysis, fail-safe behavior, auditable provenance, and prospective off-ramps; component benchmark gains alone establish neither lawful use nor strategic safety.
+
+Source loading queue:
+
+| Role | Source IDs | Loading instruction |
+|---|---|---|
+| Primary legal and strategic boundaries | `ext_icrc_autonomous_weapons_ihl_2025`, `ext_sipri_military_ai_nuclear_escalation_2025` | Use the ICRC position for context-specific human-judgment and IHL issues and SIPRI for military-AI escalation pathways; neither authorizes a weapon, settles every legal question, or proves one policy stabilizing. |
+| Current risk synthesis | `ext_singapore_consensus_2026`, `ext_international_ai_safety_report_2026` | Use for current capability, safeguard, monitoring, and uncertainty context without inheriting a local result. |
+
+Draft arc:
+
+- Distinguish sensing, ranking, recommendation, authorization, selection,
+  planning, and actuation rather than using one autonomy score.
+- Bind mission, command chain, legal review, target and effect envelopes,
+  evidence thresholds, human judgment, safe posture, suspension, and
+  decommission authority before use.
+- Model sensor, operator, command, adversary, proliferation, and strategic
+  feedback loops, including false alarms and compressed decision time.
+- Preserve diplomatic and verification off-ramps; disclose a bounded public
+  assurance without operationally enabling detail.
+- Compare with human-only, rule-based, slower-review, and no-AI alternatives.
+
+Primary invariants:
+
+- The system cannot infer or expand its own mission or legal authority.
+- Human judgment must be practical for the actual context, not ceremonial.
+- Component evidence cannot become a lawful-use or strategic-stability claim.
+- Integrity failure resolves to a prospectively declared bounded posture.
+
+Failure modes to cover:
+
+- automation bias; ceremonial human approval; correlated false alarms;
+  spoofing; crisis-time compression; conventional–nuclear entanglement;
+  reciprocal deployment; proliferation; classified-evidence laundering.
+
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:military-ai-autonomous-weapons-and-strategic-stability.admission_boundary` | `AsiStackProofs.NoDeferralAdmission` | A finite military-AI interaction record may hand off only when mission, authority, human judgment, effect bounds, escalation assumptions, safe posture, and residuals are explicit; no theorem authorizes a weapon or proves lawful use or strategic stability. | planned |
+
 ### Evidence States and Claim Discipline
 
 Stable ID: `evidence-states-and-claim-discipline`
@@ -925,6 +993,8 @@ Source loading queue:
 | Supporting | `software_magic_grimoire`, `planforge`, `cognitive_compilation`, `talos` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
 | External literature variants | `ext_goal_oriented_requirements_engineering_2001`, `ext_cooperative_inverse_rl_2016`, `ext_deep_rl_human_preferences_2017` | Use as requirements-engineering, cooperative objective-uncertainty, and preference-feedback comparators; do not treat them as parser, authority-extraction, or execution evidence. |
 
+
+| Manifest assignment reconciliation | `ext_cultural_alignment_llms_2024` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: A natural-language request can mix desired outcome, preferences,
@@ -1150,7 +1220,7 @@ Source loading queue:
 | Primary | `ext_conversational_persuasion_gpt4_2025`, `ext_anthropic_model_persuasiveness_2024`, `ext_commercial_persuasion_ai_2026` | Use the assigned source notes for bounded mechanism, comparator, failure, and limitation context. Source-reported results remain distinct from local evidence. |
 
 
-| Manifest assignment reconciliation | `talos` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `talos`, `ext_cultural_alignment_llms_2024`, `ext_multilingual_evaluation_state_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: An AI system can preserve internal evidence discipline and still change beliefs, choices, and institutions through selective framing, personalization, synthetic identity, repetition, and amplification. The stack therefore needs an owner for the complete outbound communication transaction, including correction after a message escapes its original channel.
@@ -1522,7 +1592,7 @@ Source loading queue:
 | Primary | `ext_un_global_digital_compact_2024`, `ext_council_europe_ai_convention_2024` | Use the assigned source notes for bounded mechanism, comparator, failure, and limitation context. Source-reported results remain distinct from local evidence. |
 
 
-| Manifest assignment reconciliation | `coherence_exchange`, `ext_flexible_hardware_enabled_guarantees_2025`, `ext_legal_alignment_2026`, `ext_eu_article_50_transparency_guidelines_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `coherence_exchange`, `ext_flexible_hardware_enabled_guarantees_2025`, `ext_legal_alignment_2026`, `ext_eu_article_50_transparency_guidelines_2026`, `ext_oecd_ai_infrastructure_competition_2025`, `ext_eu_ai_civil_liability_2025`, `ext_icrc_autonomous_weapons_ihl_2025` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: ASI-scale systems cross organizations, jurisdictions, borders, public services, and affected populations. Technical permissions and private governance cannot determine who has public authority, whose participation counts, how conflicting rules are resolved, or how international commitments are verified and amended.
@@ -1797,7 +1867,7 @@ Source loading queue:
 
 | Pinned implementation counterexamples | `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `corbens_trainer_project`, `corbens_best_model_possible_project` | Use for contract-versus-effect, metadata-versus-enforcement, isolation, audit, revocation, root, and evaluator-independence failures; public-safe notes only, with no security support promotion. |
 
-| Manifest assignment reconciliation | `platonic_world_model`, `kernel_english_residual_compiler` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `platonic_world_model`, `kernel_english_residual_compiler`, `ext_nist_pqc_standards_2024` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: untrusted content can induce privileged information flow or effects across model, runtime, tool, operator, vendor, hardware, log, backup, and descendant trust zones.
@@ -1934,7 +2004,7 @@ Source loading queue:
 | Measurement and evaluation | `ext_nist_differential_privacy_2025`, `ext_mahloujifar_fdp_audit_2025`, `ext_eu_gdpr_2016` | Separate formal DP claims, implementation/system hazards, empirical lower-bound audits, and accountable rights receipts. A passed audit is not certification. |
 
 
-| Manifest assignment reconciliation | `theseus_synthetic_data_curation` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `theseus_synthetic_data_curation`, `ext_nist_privacy_enhancing_cryptography_2026`, `ext_who_neurotechnology_landscape_2025` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Separate authorized access, consent or other claimed authority, purpose, and
@@ -1994,6 +2064,60 @@ The formal model and authored transaction contain no personal data and do not
 establish a valid purpose, authority, complete flow, privacy guarantee, attack
 absence, fulfilled right, legal compliance, support, readiness, or release.
 
+### Confidential and Verifiable AI Computation
+
+Stable ID: `confidential-and-verifiable-ai-computation`
+
+Chapter job: Govern AI execution across distrust boundaries by separating
+input privacy, model privacy, computation integrity, platform identity, output
+authenticity, availability, auditability, and authorization instead of
+laundering them through one secure-compute label.
+
+Core claim: Confidential and verifiable AI requires a compositional execution contract that names the adversary, protected assets, permitted leakage, trust anchors, proof or attestation statement, verifier policy, freshness, revocation, performance budget, and authorization boundary; no primitive or attestation may be treated as proof of semantic correctness, legitimate purpose, or end-to-end privacy.
+
+Source loading queue:
+
+| Role | Source IDs | Loading instruction |
+|---|---|---|
+| Guarantee families | `ext_nist_privacy_enhancing_cryptography_2026` | Use for FHE, MPC, ZK, and related PEC terminology and composition; do not infer implementation security, performance, authorization, or end-to-end privacy. |
+| Verifiable inference prototype | `ext_zkllm_2024` | Use as a bounded source-reported proof-of-possibility comparator, preserving its circuit, configuration, performance, and semantic limits. |
+| Attestation architecture | `ext_ietf_rats_architecture_2023` | Use Attester, Verifier, Relying Party, Evidence, Attestation Result, appraisal, and freshness distinctions; an attestation is not a semantic or authorization proof. |
+
+Draft arc:
+
+- Start with a guarantee vector and explicit adversary, assets, leakage,
+  assumptions, unsupported properties, and performance boundary.
+- Choose local execution, confidential execution, FHE, MPC, ZK, differential
+  privacy, or a hybrid only after the distrust boundary is frozen.
+- Bind artifact, configuration, input/output commitments, freshness, verifier
+  policy, reference values, revocation, and fallback in a protected-execution
+  receipt.
+- Preserve the circuit-to-semantics gap and separate correct execution from
+  model quality, output truth, lawful purpose, and user authorization.
+- Compare native and protected paths under matched task, quality, context,
+  concurrency, hardware accounting, and failure policy.
+
+Primary invariants:
+
+- Every execution declares adversary, assets, leakage, trust, freshness, and
+  unsupported properties.
+- Attestation and proof establish only their precise appraised statements.
+- Confidentiality cannot override consent, purpose, deletion, contest, or
+  remedy.
+- Unprotected fallback cannot occur silently.
+
+Failure modes to cover:
+
+- guarantee laundering; stale or replayed evidence; side-channel and metadata
+  leakage; wrong committed artifact or policy; circuit/semantic mismatch;
+  verifier or root compromise; unusable protected path; silent downgrade.
+
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:confidential-and-verifiable-ai-computation.admission_boundary` | `AsiStackProofs.NoDeferralAdmission` | A finite protected-execution record may hand off only when guarantees, adversary, leakage, artifact, freshness, verifier policy, fallback, and unsupported properties are explicit; no theorem proves semantic correctness, authorization, or end-to-end privacy. | planned |
+
 ### Model-Weight Custody and Hardware Roots of Trust
 
 Stable ID: `model-weight-custody-and-hardware-roots-of-trust`
@@ -2014,7 +2138,7 @@ Source loading queue:
 | Variant | `ext_nvidia_confidential_model_lifecycle_2026` | Preserve vendor-specific encrypted-artifact, attestation, and key-release detail without importing cross-platform confidentiality, verifier independence, or deployment correctness. |
 
 
-| Manifest assignment reconciliation | `ext_airllm_2023`, `ext_hf_accelerate_big_model_inference_2026`, `ext_llama_cpp_memory_mapping_2026`, `ext_llm_in_flash_2024`, `ext_flexible_hardware_enabled_guarantees_2025` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `ext_airllm_2023`, `ext_hf_accelerate_big_model_inference_2026`, `ext_llama_cpp_memory_mapping_2026`, `ext_llm_in_flash_2024`, `ext_flexible_hardware_enabled_guarantees_2025`, `ext_nist_pqc_standards_2024` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: Runtime tool governance can coexist with uncontrolled optimizer
@@ -3545,7 +3669,7 @@ Source loading queue:
 | Team interaction | `ext_constructive_interdependence_human_ai_2026` | Use to distinguish task reward from whether team members actually enable one another; reported Overcooked findings are not a general cooperation result. |
 
 
-| Manifest assignment reconciliation | `talos` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `talos`, `ext_human_ai_team_meta_analysis_2024`, `ext_human_ai_feedback_loops_2025`, `ext_eu_ai_civil_liability_2025` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Separate recommendation, decision, approval, execution, veto, audit,
@@ -3579,6 +3703,59 @@ Lean proof targets:
 | `lean:human_ai_org.accountability_requires_authority` | `AsiStackProofs.HumanAIOrganizations` | A finite organizational record refuses accountability assignment when information, competence, time, or intervention authority is absent. | planned |
 
 <!-- NO-DEFERRAL-OUTLINE-ENTRY:ai-deployment-transition-distribution-and-human-agency:BEGIN -->
+### Human-AI Symbiosis, Neurotechnology, and Cognitive Sovereignty
+
+Stable ID: `human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty`
+
+Chapter job: Govern longitudinal bidirectional human-AI coupling in which
+personalization, assistive dependence, neural sensing, inferred mental state,
+or stimulation changes the human and the system across time.
+
+Core claim: Human-AI symbiosis should be evaluated as a reversible coupled-control intervention: the combined system must beat human-alone and AI-alone baselines on declared outcomes while preserving informed consent, mental integrity, cognitive agency, neural-data purpose limits, skill and exit capacity, equitable access, clinical boundaries, and longitudinal monitoring.
+
+Source loading queue:
+
+| Role | Source IDs | Loading instruction |
+|---|---|---|
+| Complementarity and feedback | `ext_human_ai_team_meta_analysis_2024`, `ext_human_ai_feedback_loops_2025` | Use for the three-arm baseline and repeated-interaction risk; do not infer universal synergy or long-term benefit. |
+| Neuro-AI governance and equity | `ext_oecd_neuro_ai_convergence_2025`, `ext_who_neurotechnology_landscape_2025` | Use for cross-domain governance, global health, access, rights, and equity context; not device efficacy, medical advice, or authorization for neural-data collection. |
+
+Draft arc:
+
+- Define the coupling mode, purpose, affected function, adaptation path,
+  medical or enhancement status, duration, reversibility, and consequence.
+- Compare competent human-alone, AI-alone, and combined systems and track
+  performance, calibration, workload, skill, dependence, well-being, subgroup
+  outcomes, and withdrawal recovery over time.
+- Escalate evidence from ordinary recommendation through persistent
+  personalization, continuous sensing, neural decoding, closed-loop
+  adaptation, and stimulation.
+- Treat raw neural signals, features, inferred states, updates, decisions, and
+  descendants as separate purpose-bound data classes.
+- Preserve pause, reset, portability, practical exit, rehabilitation,
+  accessibility, adverse-event response, and independent oversight.
+
+Primary invariants:
+
+- Combination benefit requires comparison with both component baselines.
+- Consent to one function grants no unrelated mental inference or secondary
+  use.
+- Technical rollback cannot pretend to reverse human, social, or clinical
+  effects.
+- Clinically consequential adaptation requires domain-appropriate review.
+
+Failure modes to cover:
+
+- interface theater; feedback amplification; deskilling; coercive dependence;
+  covert mental inference; vendor capture; inaccessible exit; unequal benefit;
+  medical/enhancement claim laundering.
+
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.admission_boundary` | `AsiStackProofs.NoDeferralAdmission` | A finite human-AI coupling record may hand off only when component baselines, adaptation, data purpose, skill, dependence, exit, subgroup, and irreversible residuals are explicit; no theorem establishes beneficial symbiosis or authorizes neural intervention. | planned |
+
 ### AI Deployment, Transition, Distribution, and Human Agency
 
 Stable ID: `ai-deployment-transition-distribution-and-human-agency`
@@ -3594,7 +3771,7 @@ Source loading queue:
 | Primary | `ext_generative_ai_at_work_2025`, `ext_ilo_genai_jobs_index_2025` | Use the assigned source notes for bounded mechanism, comparator, failure, and limitation context. Source-reported results remain distinct from local evidence. |
 
 
-| Manifest assignment reconciliation | `coherence_exchange` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `coherence_exchange`, `ext_oecd_ai_infrastructure_competition_2025` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: A useful AI deployment changes tasks, roles, skill, discretion, wages, ownership returns, prices, access, concentration, critical-service continuity, and the practical choices available to people and communities. Aggregate productivity cannot reveal who benefits, who loses, or whether transition capacity exists.
@@ -4373,7 +4550,7 @@ Source loading queue:
 | Mutable/external/dynamical/function/graph/program alternatives | `ext_ttt_layers_2024`, `ext_titans_2025`, `ext_kan_2024`, `ext_kan_or_mlp_fairer_comparison_2024`, `ext_neural_turing_machines_2014`, `ext_differentiable_neural_computer_2016`, `ext_liquid_time_constant_networks_2021`, `ext_neural_message_passing_2017`, `ext_dreamcoder_2020` | Use for online-state custody, fair KAN comparison, memory and topology extrapolation, continuous-time cost, relational processing, and verified abstraction tests. |
 | Hybrid composition | `ext_jamba_2024` | Use to make layer/expert/substrate composition and active-versus-total accounting explicit; do not infer a generally optimal mixture or local result. |
 
-| Manifest assignment reconciliation | `deterministic_capability_compilation`, `ext_gated_deltanet2_2026`, `ext_hyperscale_lottery_2026`, `ext_inkling_2026`, `kernel_english_residual_compiler`, `relational_dimension_compiler`, `ext_llm_in_flash_2024`, `ext_powerinfer_2024`, `ext_atsinfer_2026`, `ext_test_time_training_2020`, `ext_llada_2025`, `ext_scaling_dllms_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `deterministic_capability_compilation`, `ext_gated_deltanet2_2026`, `ext_hyperscale_lottery_2026`, `ext_inkling_2026`, `kernel_english_residual_compiler`, `relational_dimension_compiler`, `ext_llm_in_flash_2024`, `ext_powerinfer_2024`, `ext_atsinfer_2026`, `ext_test_time_training_2020`, `ext_llada_2025`, `ext_scaling_dllms_2026`, `ext_neuromorphic_computing_scale_2025`, `ext_photonic_neuromorphic_2024`, `ext_quantum_ml_shadows_2024`, `ext_organoid_intelligence_2023` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Explain why a stable stack must abstract architecture without pretending that
@@ -4457,6 +4634,64 @@ model and independently encoded 16-case Python consumer establish only finite
 ABI record semantics. They do not execute or compare real cognitive kernels,
 translate full training/runtime state, establish evaluator independence, or
 support a chapter-core promotion.
+
+### Relational Dimension Compilation and Polyadic Cognition
+
+Stable ID: `relational-dimension-compilation-and-polyadic-cognition`
+
+Chapter job: Own the lifecycle for typed role-sensitive higher-order relation
+candidates from dimensional IR and lower-order rescue through qualification,
+compilation, routing, demotion, reversible contraction, and RODIE evaluation.
+
+Core claim: Polyadic cognition should be implemented as a slow-path relational-dimension compiler over stable lower-arity primitives: candidate higher-order structure is typed, role-addressable, denominator-complete, qualified against strong pairwise and sequence baselines, budgeted, reversible, and retained only when it improves held-out relational performance without violating memory, latency, calibration, or governance constraints.
+
+Source loading queue:
+
+| Role | Source IDs | Loading instruction |
+|---|---|---|
+| Primary conceptual architecture | `relational_dimension_compiler` | Use for dimensional typing, relational IR, adaptive order, role reification, qualification, compilation, contraction, and RODIE. Treat every performance, irreducibility, bounded-arity, and safety proposition as unimplemented. |
+
+
+| Manifest assignment reconciliation | `ext_neural_message_passing_2017` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+Draft arc:
+
+- Separate geometric dimension, semantic arity, primitive computational arity,
+  storage arity, temporal extent, abstraction scale, branch, epistemic state,
+  and resource budget.
+- Represent candidates with typed roles, scope, provenance, uncertainty,
+  residual trigger, lower-order rescues, total cost, dependents, expiry, and
+  inverse.
+- Generate candidates sparsely from named residual failures and preserve the
+  complete proposal denominator.
+- Require competent pairwise/reified-node, message-passing, sequence,
+  retrieval, tool, and ordinary-model rescues under matched budgets.
+- Qualify unseen topology and roles; compile slow-to-fast only with conformance
+  and provenance; demote and contract with descendant invalidation.
+- Evaluate topology discovery, role binding, compositional transfer, order
+  selection, lifecycle integrity, calibration, useful throughput, and total
+  governance cost separately.
+
+Primary invariants:
+
+- Role identity survives permutation, storage, routing, compilation,
+  contraction, explanation, and rollback.
+- Higher order is not admitted before strong lower-order rescue.
+- Proposal and resource denominators remain complete.
+- Every relation has provenance, uncertainty, scope, expiry, descendants, and
+  fallback.
+- Synthetic gain cannot become a general-intelligence or irreducibility claim.
+
+Failure modes to cover:
+
+- combinatorial explosion; arity theater; role collapse; hidden proposal
+  denominator; template leakage; stale descendants; compilation overhead;
+  self-authorization; irreversible semantic contraction.
+
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:relational-dimension-compilation-and-polyadic-cognition.admission_boundary` | `AsiStackProofs.NoDeferralAdmission` | A finite relational candidate may hand off only when typed roles, lower-order rescues, proposal denominator, qualification, cost, fallback, descendants, and contraction state are explicit; no theorem proves irreducibility, usefulness, or bounded primitive arity. | planned |
 
 ### Governed Model Training, Distributed Optimization, and Scaling
 
@@ -4591,7 +4826,7 @@ Source loading queue:
 | Primary | `ext_scaling_laws_neural_language_models_2020`, `ext_mdl_tutorial_2004`, `ext_weak_to_strong_generalization_2023`, `ext_information_bottleneck_2000` | Use the assigned source notes for bounded mechanism, comparator, failure, and limitation context. Source-reported results remain distinct from local evidence. |
 
 
-| Manifest assignment reconciliation | `simulation_scaling`, `ext_valiant_theory_learnable_1984`, `ext_deep_double_descent_2020`, `ext_emergent_abilities_llms_2022`, `ext_emergent_abilities_mirage_2023` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `simulation_scaling`, `ext_valiant_theory_learnable_1984`, `ext_deep_double_descent_2020`, `ext_emergent_abilities_llms_2022`, `ext_emergent_abilities_mirage_2023`, `ext_no_free_lunch_inductive_bias_2024` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: The stack repeatedly relies on claims that learning will generalize, capabilities will transfer, losses will scale, or phase changes will appear outside observed training support. Those claims require an owner that connects assumptions about data, hypothesis class, optimization, inductive bias, compute, and evaluation to an exact prediction and failure envelope.
@@ -5288,7 +5523,7 @@ Source loading queue:
 | Primary | `ext_iea_energy_and_ai_2025`, `ext_lbnl_data_center_energy_2024` | Use the assigned source notes for bounded mechanism, comparator, failure, and limitation context. Source-reported results remain distinct from local evidence. |
 
 
-| Manifest assignment reconciliation | `tokenmana`, `ext_flexible_hardware_enabled_guarantees_2025` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `tokenmana`, `ext_flexible_hardware_enabled_guarantees_2025`, `ext_neuromorphic_computing_scale_2025`, `ext_photonic_neuromorphic_2024`, `ext_quantum_ml_shadows_2024`, `ext_oecd_ai_infrastructure_competition_2025` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: Requested compute becomes useful work only through accelerators, memory, storage, interconnect, facilities, grid connections, generation, cooling, water, land, materials, maintenance, resilience, and retirement at particular places and times. Abstract token or FLOP budgets hide these physical constraints and their affected communities.
@@ -5735,7 +5970,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 298 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 298 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 329 proof targets, 110 Lean modules, 1370 theorem declarations, 924 derived/decomposed, 230 direct/projection, 216 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 333 proof targets, 110 Lean modules, 1370 theorem declarations, 924 derived/decomposed, 230 direct/projection, 216 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.
@@ -5822,7 +6057,7 @@ Source loading queue:
 
 
 
-| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `ext_claw_swe_bench_2026`, `ext_muse_unlearning_2025`, `ext_unlearning_benchmarks_weak_2024`, `ext_openunlearning_2025`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `ext_swe_rebench_v2_2026`, `ext_mlperf_training_v6_2026`, `relational_dimension_compiler` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `ext_claw_swe_bench_2026`, `ext_muse_unlearning_2025`, `ext_unlearning_benchmarks_weak_2024`, `ext_openunlearning_2025`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `ext_swe_rebench_v2_2026`, `ext_mlperf_training_v6_2026`, `relational_dimension_compiler`, `ext_cultural_alignment_llms_2024`, `ext_multilingual_evaluation_state_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: The architecture needs a way to move capability claims through evidence without overfitting to fixed benchmarks.

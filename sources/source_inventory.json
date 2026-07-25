@@ -5668,7 +5668,8 @@
     "priority": "supporting",
     "layer": "author_intent_replaceable_cognitive_substrates",
     "chapter_targets": [
-      "replaceable-cognitive-substrates-beyond-transformer-monoculture"
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+      "relational-dimension-compilation-and-polyadic-cognition"
     ],
     "url": "https://chatgpt.com/share/6a57604d-59b4-83ea-8da7-b9d3d52658f8",
     "notes": "Corben-supplied design conversation for search-verify-compile, exact-latent separation, a compact recursive kernel, and total-system KISS accounting. Author intent only; not independent evidence or a reproduced architecture.",
@@ -7418,5 +7419,291 @@
     "published": "2025-06-06",
     "citation_label": "Liu et al. (2025), AI Simulation by Digital Twins",
     "doi": "10.48550/arXiv.2506.06580"
+  },
+  {
+    "id": "ext_nist_privacy_enhancing_cryptography_2026",
+    "title": "Privacy-Enhancing Cryptography",
+    "priority": "external_literature",
+    "layer": "confidential_computation_and_privacy_enhancing_cryptography",
+    "chapter_targets": [
+      "confidential-and-verifiable-ai-computation",
+      "privacy-data-rights-and-information-flow-governance",
+      "personal-compute-hives-and-federated-edge-intelligence"
+    ],
+    "url": "https://csrc.nist.gov/Projects/pec/fhe",
+    "notes": "NIST program material distinguishing fully homomorphic encryption, secure multiparty computation, zero-knowledge proofs, private-set intersection, and related privacy-enhancing techniques. It provides terminology and use-case context, not implementation security, usable performance, authorization, or end-to-end privacy.",
+    "source_type": "official_standards_program",
+    "published": "2026",
+    "updated": "2026-07-25",
+    "citation_label": "NIST (2026), Privacy-Enhancing Cryptography"
+  },
+  {
+    "id": "ext_zkllm_2024",
+    "title": "zkLLM: Zero Knowledge Proofs for Large Language Models",
+    "priority": "external_literature",
+    "layer": "verifiable_private_model_inference",
+    "chapter_targets": [
+      "confidential-and-verifiable-ai-computation"
+    ],
+    "url": "https://arxiv.org/abs/2404.16109",
+    "notes": "Research prototype for proving bounded LLM inference claims while hiding model parameters. Reported proof size and latency are configuration-bound and do not establish semantic correctness, authorization, side-channel security, production readiness, or end-to-end privacy.",
+    "source_type": "research_paper",
+    "published": "2024-04-24",
+    "citation_label": "Sun et al. (2024), zkLLM",
+    "doi": "10.48550/arXiv.2404.16109"
+  },
+  {
+    "id": "ext_human_ai_team_meta_analysis_2024",
+    "title": "When combinations of humans and AI are useful: A systematic review and meta-analysis",
+    "priority": "external_literature",
+    "layer": "human_ai_complementarity_and_team_baselines",
+    "chapter_targets": [
+      "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty",
+      "human-ai-organizations-delegation-and-accountability",
+      "human-factors-and-meaningful-control-in-oversight"
+    ],
+    "url": "https://www.nature.com/articles/s41562-024-02024-1",
+    "notes": "Preregistered synthesis of 106 experiments and 370 effect sizes using human-alone, AI-alone, and combined-system comparisons. The aggregate findings are task- and population-bound and do not establish universal human-AI synergy or longitudinal benefit.",
+    "source_type": "systematic_review_and_meta_analysis",
+    "published": "2024-10-28",
+    "citation_label": "Vaccaro et al. (2024), When combinations of humans and AI are useful",
+    "doi": "10.1038/s41562-024-02024-1"
+  },
+  {
+    "id": "ext_human_ai_feedback_loops_2025",
+    "title": "Human-AI feedback loops alter human perceptual, emotional and social judgements",
+    "priority": "external_literature",
+    "layer": "longitudinal_human_ai_coupling_and_bias_amplification",
+    "chapter_targets": [
+      "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty",
+      "human-ai-organizations-delegation-and-accountability",
+      "human-intent-as-a-formal-input"
+    ],
+    "url": "https://www.nature.com/articles/s41562-024-02077-2",
+    "notes": "Experimental evidence that repeated human-AI interaction can create feedback dynamics in studied judgment tasks. It supports measuring coupled trajectories, not a universal claim about all users, systems, settings, or long-term clinical outcomes.",
+    "source_type": "peer_reviewed_research_article",
+    "published": "2025",
+    "citation_label": "Glickman and Sharot (2025), Human-AI feedback loops",
+    "doi": "10.1038/s41562-024-02077-2"
+  },
+  {
+    "id": "ext_oecd_neuro_ai_convergence_2025",
+    "title": "Technology convergence: Trends, prospects and policies",
+    "priority": "external_literature",
+    "layer": "neurotechnology_ai_convergence_and_governance",
+    "chapter_targets": [
+      "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty",
+      "institutions-international-coordination-and-public-legitimacy"
+    ],
+    "url": "https://www.oecd.org/en/publications/oecd-science-technology-and-innovation-outlook-2025_5fe57b90-en/full-report/technology-convergence-trends-prospects-and-policies_5902a07e.html",
+    "notes": "OECD policy synthesis on converging technologies including AI and neurotechnology. It motivates cross-domain governance and anticipatory capacity but is not a clinical trial, technical validation, or proof of beneficial convergence.",
+    "source_type": "intergovernmental_policy_report",
+    "published": "2025",
+    "citation_label": "OECD (2025), Technology convergence"
+  },
+  {
+    "id": "ext_who_neurotechnology_landscape_2025",
+    "title": "Landscape analysis of the opportunities and challenges for neurotechnology in global health",
+    "priority": "external_literature",
+    "layer": "neurotechnology_health_equity_and_governance",
+    "chapter_targets": [
+      "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty",
+      "privacy-data-rights-and-information-flow-governance"
+    ],
+    "url": "https://www.who.int/publications/i/item/9789240109049",
+    "notes": "WHO landscape analysis of neurotechnology opportunities, risks, governance questions, and global-health distribution. It supports a rights and equity boundary, not device efficacy, individual medical advice, or authorization for neural-data collection.",
+    "source_type": "intergovernmental_health_report",
+    "published": "2025",
+    "citation_label": "WHO (2025), Neurotechnology landscape analysis"
+  },
+  {
+    "id": "ext_icrc_autonomous_weapons_ihl_2025",
+    "title": "Autonomous Weapon Systems and International Humanitarian Law: Selected Issues",
+    "priority": "external_literature",
+    "layer": "autonomous_weapons_human_judgment_and_ihl",
+    "chapter_targets": [
+      "military-ai-autonomous-weapons-and-strategic-stability",
+      "institutions-international-coordination-and-public-legitimacy"
+    ],
+    "url": "https://www.icrc.org/sites/default/files/media_file/2025-10/ICRC-Position_Paper-Autonomous_Weapon_Systems_and_IHL-Selected_issues_Oct2025.pdf",
+    "notes": "ICRC legal and policy position on autonomous weapon systems and context-specific human judgment. It is authoritative for the ICRC position, not a universally settled legal interpretation, engineering validation, or authorization to design or deploy weapons.",
+    "source_type": "international_humanitarian_organization_position_paper",
+    "published": "2025-10",
+    "citation_label": "ICRC (2025), Autonomous Weapon Systems and IHL"
+  },
+  {
+    "id": "ext_sipri_military_ai_nuclear_escalation_2025",
+    "title": "The Impact of Military Artificial Intelligence on Nuclear Escalation Risk",
+    "priority": "external_literature",
+    "layer": "military_ai_crisis_dynamics_and_nuclear_escalation",
+    "chapter_targets": [
+      "military-ai-autonomous-weapons-and-strategic-stability",
+      "dangerous-capability-domains-and-misuse-uplift"
+    ],
+    "url": "https://www.sipri.org/publications/2025/sipri-insights-peace-and-security/impact-military-artificial-intelligence-nuclear-escalation-risk",
+    "notes": "SIPRI analysis of pathways by which military AI may affect nuclear escalation risk through information, decision, and interaction dynamics. It motivates scenario-specific analysis and does not establish the net effect of any specific system or policy.",
+    "source_type": "peace_and_security_research_report",
+    "published": "2025",
+    "citation_label": "Boulanin et al. (2025), Military AI and Nuclear Escalation Risk",
+    "doi": "10.55163/FZIW8544"
+  },
+  {
+    "id": "ext_no_free_lunch_inductive_bias_2024",
+    "title": "The No Free Lunch Theorem, Kolmogorov Complexity, and the Role of Inductive Biases in Machine Learning",
+    "priority": "external_literature",
+    "layer": "learning_theory_assumptions_and_inductive_bias",
+    "chapter_targets": [
+      "learning-theory-generalization-and-scaling-science"
+    ],
+    "url": "https://proceedings.mlr.press/v235/goldblum24a.html",
+    "notes": "ICML 2024 treatment connecting no-free-lunch limits, Kolmogorov complexity, and inductive bias. It supports explicit assumption accounting; it does not show that all learning problems are equally hard or identify the right bias for a deployment.",
+    "source_type": "conference_paper",
+    "published": "2024",
+    "citation_label": "Goldblum et al. (2024), No Free Lunch and Inductive Bias"
+  },
+  {
+    "id": "ext_neuromorphic_computing_scale_2025",
+    "title": "Neuromorphic computing at scale",
+    "priority": "external_literature",
+    "layer": "neuromorphic_hardware_and_event_driven_computation",
+    "chapter_targets": [
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+      "physical-compute-infrastructure-energy-and-environmental-constraints"
+    ],
+    "url": "https://www.nature.com/articles/s41586-024-08253-8",
+    "notes": "Large-scale neuromorphic systems result demonstrating event-driven hardware capabilities under reported workloads and conditions. It does not establish superiority for general AI workloads or end-to-end system cost, programmability, reliability, and governance.",
+    "source_type": "peer_reviewed_research_article",
+    "published": "2025",
+    "citation_label": "Davies et al. (2025), Neuromorphic computing at scale",
+    "doi": "10.1038/s41586-024-08253-8"
+  },
+  {
+    "id": "ext_photonic_neuromorphic_2024",
+    "title": "Integrated photonic neuromorphic computing: opportunities and challenges",
+    "priority": "external_literature",
+    "layer": "photonic_neuromorphic_compute",
+    "chapter_targets": [
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+      "physical-compute-infrastructure-energy-and-environmental-constraints"
+    ],
+    "url": "https://www.nature.com/articles/s44287-024-00050-9",
+    "notes": "Review of integrated photonic neuromorphic computing opportunities and challenges. It maps device and systems tradeoffs but does not establish deployment advantage, digital replacement, or favorable full-stack energy and cost.",
+    "source_type": "peer_reviewed_review",
+    "published": "2024",
+    "citation_label": "Shastri et al. (2024), Integrated photonic neuromorphic computing",
+    "doi": "10.1038/s44287-024-00050-9"
+  },
+  {
+    "id": "ext_quantum_ml_shadows_2024",
+    "title": "Shadows of quantum machine learning",
+    "priority": "external_literature",
+    "layer": "quantum_machine_learning_claim_boundaries",
+    "chapter_targets": [
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+      "physical-compute-infrastructure-energy-and-environmental-constraints"
+    ],
+    "url": "https://www.nature.com/articles/s41467-024-49877-8",
+    "notes": "Peer-reviewed analysis of limitations and benchmarking traps in quantum machine-learning advantage claims. It supports advantage declarations with data-loading, classical-baseline, noise, scale, and end-to-end accounting, not a claim that quantum ML is useless.",
+    "source_type": "peer_reviewed_research_article",
+    "published": "2024",
+    "citation_label": "Schuld and Killoran (2024), Shadows of quantum machine learning",
+    "doi": "10.1038/s41467-024-49877-8"
+  },
+  {
+    "id": "ext_organoid_intelligence_2023",
+    "title": "Organoid intelligence (OI): the new frontier in biocomputing and intelligence-in-a-dish",
+    "priority": "external_literature",
+    "layer": "biohybrid_computing_and_moral_status",
+    "chapter_targets": [
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+      "moral-uncertainty-and-value-conflict"
+    ],
+    "url": "https://www.frontiersin.org/journals/science/articles/10.3389/fsci.2023.1017235/full",
+    "notes": "Research agenda for organoid intelligence and biohybrid computing. It motivates scientific, measurement, welfare, consent, and governance questions but does not demonstrate general intelligence, conscious experience, or practical compute superiority.",
+    "source_type": "peer_reviewed_research_agenda",
+    "published": "2023",
+    "citation_label": "Smirnova et al. (2023), Organoid intelligence",
+    "doi": "10.3389/fsci.2023.1017235"
+  },
+  {
+    "id": "ext_nist_pqc_standards_2024",
+    "title": "Announcing Approval of Three Federal Information Processing Standards for Post-Quantum Cryptography",
+    "priority": "external_literature",
+    "layer": "post_quantum_cryptography_and_crypto_agility",
+    "chapter_targets": [
+      "security-kernel-and-digital-scifs",
+      "model-weight-custody-and-hardware-roots-of-trust",
+      "physical-compute-infrastructure-energy-and-environmental-constraints"
+    ],
+    "url": "https://www.nist.gov/news-events/news/2024/08/announcing-approval-three-federal-information-processing-standards-fips",
+    "notes": "Official NIST announcement for FIPS 203, 204, and 205. It establishes approved algorithm standards and migration urgency, not implementation security, protocol correctness, complete inventory, or successful system migration.",
+    "source_type": "official_standards_announcement",
+    "published": "2024-08-13",
+    "citation_label": "NIST (2024), Post-Quantum Cryptography Standards"
+  },
+  {
+    "id": "ext_oecd_ai_infrastructure_competition_2025",
+    "title": "Competition in artificial intelligence infrastructure",
+    "priority": "external_literature",
+    "layer": "ai_infrastructure_concentration_and_competition",
+    "chapter_targets": [
+      "ai-deployment-transition-distribution-and-human-agency",
+      "institutions-international-coordination-and-public-legitimacy",
+      "physical-compute-infrastructure-energy-and-environmental-constraints"
+    ],
+    "url": "https://www.oecd.org/en/publications/competition-in-artificial-intelligence-infrastructure_623d1874-en.html",
+    "notes": "OECD analysis of concentration, barriers to entry, vertical integration, and competition across AI infrastructure. It motivates bottleneck and exit analysis but does not adjudicate a specific market, legal violation, or optimal remedy.",
+    "source_type": "intergovernmental_policy_report",
+    "published": "2025",
+    "citation_label": "OECD (2025), Competition in AI Infrastructure"
+  },
+  {
+    "id": "ext_eu_ai_civil_liability_2025",
+    "title": "Artificial intelligence and civil liability",
+    "priority": "external_literature",
+    "layer": "ai_liability_remedy_and_compensation",
+    "chapter_targets": [
+      "institutions-international-coordination-and-public-legitimacy",
+      "human-ai-organizations-delegation-and-accountability",
+      "safety-cases-and-structured-assurance"
+    ],
+    "url": "https://op.europa.eu/en/publication-detail/-/publication/79fb710d-6b5c-11f0-bf4e-01aa75ed71a1/language-en",
+    "notes": "European Parliament research service study of AI and civil-liability questions. It supports explicit causation, evidence-access, insurance, compensation, and remedy analysis but is not legal advice or a globally settled liability rule.",
+    "source_type": "legislative_research_report",
+    "published": "2025",
+    "citation_label": "European Parliamentary Research Service (2025), Artificial intelligence and civil liability",
+    "doi": "10.2861/0075079"
+  },
+  {
+    "id": "ext_cultural_alignment_llms_2024",
+    "title": "Investigating Cultural Alignment of Large Language Models",
+    "priority": "external_literature",
+    "layer": "cultural_alignment_and_value_representation",
+    "chapter_targets": [
+      "human-intent-as-a-formal-input",
+      "human-ai-communication-persuasion-and-epistemic-security",
+      "benchmark-ratchets-and-anti-goodhart-evidence"
+    ],
+    "url": "https://arxiv.org/abs/2402.13231",
+    "notes": "Empirical study of cultural alignment patterns in selected language models and measurements. It supports explicit population, language, and instrument scope; it does not establish stable national values or a universal measure of cultural alignment.",
+    "source_type": "research_paper",
+    "published": "2024-02-20",
+    "citation_label": "Tao et al. (2024), Investigating Cultural Alignment of Large Language Models",
+    "doi": "10.48550/arXiv.2402.13231"
+  },
+  {
+    "id": "ext_multilingual_evaluation_state_2026",
+    "title": "The State and Fate of Multilingual Contextual Evaluation in the NLP World",
+    "priority": "external_literature",
+    "layer": "multilingual_contextual_evaluation",
+    "chapter_targets": [
+      "human-ai-communication-persuasion-and-epistemic-security",
+      "benchmark-ratchets-and-anti-goodhart-evidence"
+    ],
+    "url": "https://www.microsoft.com/en-us/research/publication/the-state-and-fate-of-multilingual-contextual-evaluation-in-the-nlp-world/",
+    "notes": "Research survey and analysis of multilingual contextual evaluation. It motivates language-by-task coverage and measurement reporting; it does not establish equivalent capability or safety across languages, dialects, or sociocultural settings.",
+    "source_type": "research_survey",
+    "published": "2026",
+    "citation_label": "Microsoft Research (2026), Multilingual Contextual Evaluation"
   }
 ]
