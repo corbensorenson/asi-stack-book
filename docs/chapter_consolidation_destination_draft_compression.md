@@ -337,7 +337,7 @@ The MVI should include at least four negative cases:
 This MVI can justify better record discipline. It cannot justify compression
 performance, model-quality preservation, or deployment claims.
 
-### Beyond the State of the Art
+### Mature Research Target
 
 The mature endpoint is a compression control plane. In that end state,
 generators, exact repairs, residuals, compressed artifacts, semantic previews,

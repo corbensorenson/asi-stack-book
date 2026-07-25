@@ -321,7 +321,7 @@ that a real planner decomposes tasks well, predicts context demand, selects
 the right capability tier, schedules work efficiently, replans correctly, or
 executes tools safely.
 
-### Beyond the State of the Art
+### Mature Research Target
 
 The mature version is a governed scheduler and capacity allocator for
 cognitive work. It does not just draw a DAG. It turns accepted command

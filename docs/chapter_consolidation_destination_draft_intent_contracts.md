@@ -327,7 +327,7 @@ the plan graph. Passing the harness validates synthetic record discipline. It
 does not validate parser quality, prompt-injection defense, human approval
 behavior, tool-effect enforcement, or runtime execution.
 
-### Beyond the State of the Art
+### Mature Research Target
 
 The mature endpoint is a command-contract operating spine for governed work.
 Humans, planners, verifiers, job runners, policy layers, runtime adapters, and

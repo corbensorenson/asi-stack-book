@@ -343,7 +343,7 @@ prove that a real resolver can find the right context, that summaries are
 semantically faithful, that a model will use the packet correctly, or that a
 memory store enforces transactions.
 
-### Beyond the State of the Art
+### Mature Research Target
 
 The mature version is a memory syscall layer for long-horizon AI work. It is
 not a larger retrieval system. It is the interface by which planners,

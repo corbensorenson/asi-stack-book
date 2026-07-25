@@ -341,7 +341,7 @@ that theorem checkers validate the intended prose claim, that citations are
 accurate, that reviewers are independent, that verdicts are correct, or that a
 deployed AI system will follow the resulting constraints.
 
-### Beyond the State of the Art
+### Mature Research Target
 
 The mature version is a verification operating system. It does not try to
 formalize every sentence. It routes each high-value claim or artifact to the
