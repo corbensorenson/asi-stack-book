@@ -19,9 +19,9 @@ This is the current C6 overlay over every live Lean theorem declaration. It pres
 | P5 — bounded liveness, recovery, revocation, rollback, or concurrency property | 83 |
 | P6 — empirically bound semantic property with a named observation contract | 0 |
 | Disposition `retain` | 1209 |
-| Disposition `retire_duplicate` | 2 |
+| Disposition `retire_duplicate` | 1 |
 | Disposition `retire_narrow_projection` | 63 |
-| Disposition `rewrite_scope_language` | 1 |
+| Disposition `rewrite_scope_language` | 2 |
 | Disposition `rewrite_with_stronger_model` | 95 |
 | Same-model exact normalized duplicate groups | 1 |
 | Cross-module literal pattern groups (diagnostic only) | 8 |
@@ -117,7 +117,7 @@ P6 is deliberately not inferred from an experiment file, a numeric constant, or 
 | `lean/AsiStackProofs/SafetyCriticalLifecycle.lean` | 21 | P0:5, P1:7, P2:5, P3:0, P4:1, P5:3, P6:0 | retain:20, rewrite_scope_language:1 | `constitutional-alignment-substrate`, `moral-uncertainty-and-value-conflict` |
 | `lean/AsiStackProofs/ScalableOversight.lean` | 8 | P0:0, P1:2, P2:1, P3:0, P4:2, P5:3, P6:0 | retain:8 | `scalable-oversight-and-adversarial-ai-control` |
 | `lean/AsiStackProofs/ScalableOversightRefinement.lean` | 12 | P0:0, P1:0, P2:0, P3:8, P4:4, P5:0, P6:0 | retain:11, retire_duplicate:1 | `scalable-oversight-and-adversarial-ai-control` |
-| `lean/AsiStackProofs/SearchSubstrates.lean` | 11 | P0:3, P1:8, P2:0, P3:0, P4:0, P5:0, P6:0 | retain:4, retire_duplicate:1, retire_narrow_projection:5, rewrite_with_stronger_model:1 | `mathematical-and-search-substrates` |
+| `lean/AsiStackProofs/SearchSubstrates.lean` | 11 | P0:3, P1:8, P2:0, P3:0, P4:0, P5:0, P6:0 | retain:4, retire_narrow_projection:5, rewrite_scope_language:1, rewrite_with_stronger_model:1 | `mathematical-and-search-substrates` |
 | `lean/AsiStackProofs/SecurityKernel.lean` | 22 | P0:0, P1:22, P2:0, P3:0, P4:0, P5:0, P6:0 | retain:21, retire_narrow_projection:1 | `security-kernel-and-digital-scifs` |
 | `lean/AsiStackProofs/SelfImprovement.lean` | 20 | P0:0, P1:6, P2:0, P3:0, P4:7, P5:7, P6:0 | retain:20 | `recursive-self-improvement-boundaries` |
 | `lean/AsiStackProofs/SelfImprovementRefinement.lean` | 2 | P0:0, P1:0, P2:0, P3:1, P4:1, P5:0, P6:0 | retain:2 | `recursive-self-improvement-boundaries` |
@@ -243,8 +243,8 @@ These are dispositions, not deletions. Actual proof or prose removal requires a 
 | `lean/AsiStackProofs/ScalableOversightRefinement.lean::missing_outcome_audit_blocks_high_risk_admission` | P4 | `retire_duplicate` | An exact normalized current statement is already retained as lean/AsiStackProofs/ScalableOversightRefinement.lean::high_risk_use_without_outcome_audit_requires_audit. |
 | `lean/AsiStackProofs/SearchSubstrates.lean::substrate_adoption_record_includes_baseline_measured_target_and_falsification` | P0 | `retire_narrow_projection` | Disposition is carried forward from the frozen semantic review, but the current overlay recomputes scope, bindings, witnesses, and maximum inference. |
 | `lean/AsiStackProofs/SearchSubstrates.lean::substrate_without_passing_evidence_remains_non_core` | P0 | `retire_narrow_projection` | Disposition is carried forward from the frozen semantic review, but the current overlay recomputes scope, bindings, witnesses, and maximum inference. |
+| `lean/AsiStackProofs/SearchSubstrates.lean::unproven_qualified_substrate_rejected` | P1 | `rewrite_scope_language` | The theorem negates UnprovenSubstrateRemainsNonCore for an already-qualified record; its current name can sound like a direct rejection of the substrate. It is retained pending a name/scope rewrite. |
 | `lean/AsiStackProofs/SearchSubstrates.lean::qualified_substrate_requires_passing_evidence` | P1 | `retire_narrow_projection` | Disposition is carried forward from the frozen semantic review, but the current overlay recomputes scope, bindings, witnesses, and maximum inference. |
-| `lean/AsiStackProofs/SearchSubstrates.lean::qualified_substrate_without_passing_evidence_rejected` | P1 | `retire_duplicate` | The frozen semantic review identifies lean/AsiStackProofs/SearchSubstrates.lean::unproven_qualified_substrate_rejected as the retained equivalent model result. |
 | `lean/AsiStackProofs/SearchSubstrates.lean::substrate_adoption_trace_fixture_valid` | P0 | `rewrite_with_stronger_model` | Disposition is carried forward from the frozen semantic review, but the current overlay recomputes scope, bindings, witnesses, and maximum inference. |
 | `lean/AsiStackProofs/SearchSubstrates.lean::substrate_adoption_trace_rejects_axis_laundering` | P1 | `retire_narrow_projection` | Disposition is carried forward from the frozen semantic review, but the current overlay recomputes scope, bindings, witnesses, and maximum inference. |
 | `lean/AsiStackProofs/SearchSubstrates.lean::substrate_adoption_trace_preserves_no_promotion_boundary` | P1 | `retire_narrow_projection` | Disposition is carried forward from the frozen semantic review, but the current overlay recomputes scope, bindings, witnesses, and maximum inference. |

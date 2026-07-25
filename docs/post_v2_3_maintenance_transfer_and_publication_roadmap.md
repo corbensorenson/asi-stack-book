@@ -1158,8 +1158,8 @@ artifact does not turn a theorem into empirical evidence.
 Every overlay row records its assumptions, active semantic owner, downstream
 consumer, witness or explicit witness absence, implementation binding, mutation
 evidence, maximum inference, and disposition. The resulting action queue is
-1,209 retain, two retire as duplicate, 63 retire as narrow projection, one
-scope-language rewrite, and 95 stronger-model rewrites. All 1,370 rows have
+1,209 retain, one retire as duplicate, 63 retire as narrow projection, two
+scope-language rewrites, and 95 stronger-model rewrites. All 1,370 rows have
 mutation coverage and every retained theorem has a named consumer.
 
 This receipt completes the C6 **classification** gate. It does not claim that
@@ -1176,8 +1176,11 @@ namespaces, but quantified over different module-local state machines. They are
 analogous obligations, not interchangeable propositions, and remain retained.
 The classifier now treats eight cross-module literal-pattern groups as
 diagnostics only. Duplicate retirement requires same-model statement identity
-or an explicit frozen semantic-equivalence review; only two declarations meet
-that bar.
+or a current semantic confirmation of an older equivalence review; only one
+same-model redundant declaration meets that bar. A second spot-check also
+overturned one frozen semantic-duplicate disposition because the two related
+Search Substrates theorems negate different predicates. Both remain owned, and
+the misleadingly broad theorem name is routed to a scope-language rewrite.
 
 ### Continuation order
 

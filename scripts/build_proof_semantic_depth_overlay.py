@@ -62,6 +62,29 @@ STRONG_NAME_TERMS = (
     "correct", "promotion", "release",
 )
 
+# Current semantic review may overturn a frozen disposition without mutating
+# the historical registry.  Each override is theorem-specific and records why
+# the older equivalence judgment is not sufficient for current retirement.
+CURRENT_SEMANTIC_OVERRIDES = {
+    "lean/AsiStackProofs/SearchSubstrates.lean::unproven_qualified_substrate_rejected": {
+        "disposition": "rewrite_scope_language",
+        "rationale": (
+            "The theorem negates UnprovenSubstrateRemainsNonCore for an already-qualified "
+            "record; its current name can sound like a direct rejection of the substrate. "
+            "It is retained pending a name/scope rewrite."
+        ),
+    },
+    "lean/AsiStackProofs/SearchSubstrates.lean::qualified_substrate_without_passing_evidence_rejected": {
+        "disposition": "retain",
+        "rationale": (
+            "Current semantic review overturns the frozen duplicate label: this theorem "
+            "negates CoreAdoptionValid, while the proposed replacement negates "
+            "UnprovenSubstrateRemainsNonCore. The predicates are related but not "
+            "equivalent, so both bounded results remain independently owned."
+        ),
+    },
+}
+
 # Older validation-registry entries predate per-unit input_artifact indexing.
 # These explicit aliases recover only known, validator-owned module bindings;
 # they do not infer a binding from filename similarity.
@@ -447,6 +470,7 @@ def build() -> tuple[dict[str, Any], str]:
             implementation_binding = "formal_model_only"
 
         inherited = inherited_disposition(old)
+        semantic_override = CURRENT_SEMANTIC_OVERRIDES.get(theorem_id)
         duplicate_of = duplicate_canonical.get(theorem_id)
         duplicate_kind: str | None = None
         if duplicate_of and duplicate_of != theorem_id:
@@ -469,7 +493,12 @@ def build() -> tuple[dict[str, Any], str]:
             if same_module or candidates:
                 duplicate_of = sorted(same_module or candidates)[0]
                 duplicate_kind = "reviewed_semantic_duplicate"
-        if duplicate_of and duplicate_of != theorem_id:
+        if semantic_override:
+            duplicate_of = None
+            duplicate_kind = None
+            disposition = str(semantic_override["disposition"])
+            rationale = str(semantic_override["rationale"])
+        elif duplicate_of and duplicate_of != theorem_id:
             disposition = "retire_duplicate"
             if duplicate_kind == "exact_normalized_statement":
                 rationale = f"An exact normalized current statement is already retained as {duplicate_of}."
@@ -494,7 +523,9 @@ def build() -> tuple[dict[str, Any], str]:
             disposition = "retain"
             rationale = "The theorem has a named proof, theorem, validator, or semantic-cluster consumer at its bounded level."
 
-        if old and old.get("review_state") in {"semantically_reviewed", "terminally_dispositioned"}:
+        if semantic_override:
+            review_basis = "current_manual_semantic_spot_check"
+        elif old and old.get("review_state") in {"semantically_reviewed", "terminally_dispositioned"}:
             review_basis = "inherited_semantic_review_reprojected_to_current_overlay"
         elif cluster:
             review_basis = "current_module_semantic_cluster_review"
@@ -574,6 +605,7 @@ def build() -> tuple[dict[str, Any], str]:
             "p3_or_higher_requires_a_named_validator_and_binding_artifact": True,
             "cross_module_literal_similarity_never_authorizes_retirement": True,
             "duplicate_retirement_requires_same_model_identity_or_explicit_frozen_review": True,
+            "current_semantic_review_may_overturn_frozen_disposition_without_mutating_history": True,
             "unused_or_duplicate_results_receive_retirement_dispositions": True,
             "support_state_effect": "none",
         },
