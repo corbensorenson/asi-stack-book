@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-07-25 — First dependency-safe C6 proof retirement
+
+- Executed the first item in the semantic proof-rationalization queue only
+  after freezing the 1,370-theorem baseline and verifying immutable overlay and
+  module digests, same-module identity, byte-normalized statement equality,
+  theorem dependencies, theorem consumers, and retained target ownership.
+- Removed the redundant
+  `missing_outcome_audit_blocks_high_risk_admission` declaration while
+  retaining `high_risk_use_without_outcome_audit_requires_audit`, which
+  preserves the exact bounded Scalable Oversight finite-model conclusion.
+- Added a schema-bound rationalization ledger and validator with ten rejecting
+  mutations. The current estate is 1,369 declarations across 104
+  theorem-bearing modules: 49 P0, 800 P1, 25 P2, 319 P3, 93 P4, 83 P5, and
+  zero P6. The remaining queue contains 160 actions: 63 narrow-projection
+  retirements, two scope-language rewrites, and 95 stronger-model rewrites.
+- Reconciled the generated proof-depth report, formal-methods chapter, outline,
+  roadmap, status, review adjudication, and historical roadmap projection.
+  This removal does not strengthen a theorem, promote a chapter-core claim,
+  establish empirical evidence, or change release authority.
+
 ## 2026-07-25 — C1–C8 prose-first convergence and 22-unit narrative route
 
 - Moved the roadmap-only cross-cutting ideas into canonical manuscript owners:
@@ -6545,7 +6565,7 @@
 - Boundary: these artifacts prove only finite record-routing and schema shape.
   They do not admit training data, run a training loop, measure data quality,
   establish leakage absence, verify unlearning, or promote a chapter core claim.
-- Proof-depth surface synchronization: Current proof-depth snapshot: 333 proof targets, 110 Lean modules, 1370 theorem declarations, 924 derived/decomposed, 230 direct/projection, 216 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Proof-depth surface synchronization: Current proof-depth snapshot: 333 proof targets, 110 Lean modules, 1369 theorem declarations, 924 derived/decomposed, 230 direct/projection, 215 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 
 ## 2026-07-10 - Freeze the v1.0 reader candidate before active-spine expansion
 

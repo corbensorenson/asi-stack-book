@@ -1,0 +1,78 @@
+{
+  "schema_version": "asi_stack.proof_semantic_rationalization_ledger.v1",
+  "as_of": "2026-07-25",
+  "roadmap_lane": "C6-P0-P6-semantic-proof-rationalization",
+  "state": "dependency_safe_execution_active",
+  "baseline": {
+    "commit": "d0f9bda14f1253999f2c40d556d925d31e4b36a4",
+    "overlay_path": "proofs/proof_semantic_depth_overlay.json",
+    "overlay_sha256": "97ea98621611839c49c4056c85b52ae5a907e683ea2e8572efe642774492340a",
+    "module_path": "lean/AsiStackProofs/ScalableOversightRefinement.lean",
+    "module_sha256": "aab0b5f0795bfcc1b78af1477093591e2b609a3cdfc8c5e67d2718afac683e68",
+    "live_theorem_count": 1370,
+    "rewrite_or_retire_count": 161
+  },
+  "actions": [
+    {
+      "action_id": "C6-R1-scalable-oversight-same-model-duplicate",
+      "state": "executed",
+      "action": "retire_exact_same_model_duplicate",
+      "module_path": "lean/AsiStackProofs/ScalableOversightRefinement.lean",
+      "retired_theorem_id": "lean/AsiStackProofs/ScalableOversightRefinement.lean::missing_outcome_audit_blocks_high_risk_admission",
+      "retained_theorem_id": "lean/AsiStackProofs/ScalableOversightRefinement.lean::high_risk_use_without_outcome_audit_requires_audit",
+      "retired_block_sha256": "4e55a51ca8417cbacc14a6c8174145f9a0d2bb7b20e68916f8f37e2c096be2e5",
+      "retained_block_sha256": "c89312268c42c474a9e1eadb87915fffafc97f5eac80e943156aa62e8e32affa",
+      "normalized_statement_sha256": "5f33523f18a28bf70e8f22e8fda6104abc74d4f4a4e39680e750fc3fc3025156",
+      "semantic_basis": [
+        "Both declarations occur in the same Lean namespace and quantify over the same module-local State, Packet, routeFor, canonicalState, and canonicalPacket definitions.",
+        "Their normalized theorem statements are byte-identical after replacing only the theorem name.",
+        "Both reduce the same reviewed-stage missing independent-outcome-audit packet to requestIndependentOutcomeAudit.",
+        "The retired declaration has no theorem dependency consumer and no fully qualified current consumer.",
+        "The retained declaration preserves the bounded target ownership and maximum inference without changing any runtime or empirical claim."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "normalized_statement_equal": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "consumer_migration": {
+        "state": "no_theorem_consumer_migration_required_shared_target_ownership_retained",
+        "retained_target_refs": [
+          "proof-target:lean:scalable_oversight.high_risk.missing_outcome_audit_blocks_admission",
+          "proof-target:lean:scalable_oversight.use.missing_outcome_audit_requires_audit"
+        ]
+      },
+      "maximum_inference_preserved": "Only the exact bounded missing-outcome-audit route consequence in the named authored Scalable Oversight refinement model.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_scalable_oversight_refinement.py",
+        "scripts/validate_p4_c2_semantic_proof_cluster.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    }
+  ],
+  "summary": {
+    "executed_retirement_count": 1,
+    "current_live_theorem_count": 1369,
+    "remaining_action_count": 160,
+    "remaining_action_counts": {
+      "retire_narrow_projection": 63,
+      "rewrite_scope_language": 2,
+      "rewrite_with_stronger_model": 95
+    },
+    "chapter_core_support_transitions": 0,
+    "new_formal_claims": 0
+  },
+  "non_claims": [
+    "Retiring a duplicate declaration does not strengthen the retained theorem.",
+    "The retained theorem remains a bounded consequence of an authored finite state machine.",
+    "This action does not establish reviewer competence, independence, calibration, useful oversight, safety, deployment, transfer, AGI, or ASI.",
+    "No chapter-core support state, evidence transition, release state, or publication authority changes."
+  ],
+  "support_state_effect": "none",
+  "release_effect": "none"
+}

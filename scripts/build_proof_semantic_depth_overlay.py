@@ -666,8 +666,9 @@ def build() -> tuple[dict[str, Any], str]:
         "",
         "This is the current C6 overlay over every live Lean theorem declaration. "
         "It preserves the frozen 1,151-theorem historical rationalization registry and "
-        "classifies the 1,370-theorem live estate without treating tactic count or theorem "
-        "count as evidence of importance. P-levels are semantic kinds, not confidence grades.",
+        f"classifies the {len(records):,}-theorem live estate without treating tactic count "
+        "or theorem count as evidence of importance. P-levels are semantic kinds, not "
+        "confidence grades.",
         "",
         "## Summary",
         "",

@@ -49,7 +49,7 @@ def main() -> None:
             "Require exact live-theorem coverage with P0-P6 semantic kind, assumptions, "
             "active owners, consumers, witness or explicit absence, implementation binding, "
             "mutation evidence, maximum inference, and retain/rewrite/retire disposition; "
-            "preserve the frozen 1,151-theorem/298-target baseline and reject ten overclaim "
+            "preserve the frozen 1,151-theorem/298-target baseline and reject eleven overclaim "
             "or custody mutations."
         ),
         "output_assertions": [
@@ -61,7 +61,7 @@ def main() -> None:
             "every theorem names mutation coverage and an active semantic owner",
             "rewrite/retire queue is nonempty",
             "frozen 1151-theorem and 298-target baseline preserved",
-            "10 mutations reject",
+            "11 mutations reject",
             "no support-state effect",
         ],
         "claim_scope": (
@@ -69,8 +69,8 @@ def main() -> None:
             "custody only."
         ),
         "negative_controls": (
-            "validator_owned_ten_coverage_owner_assumption_mutation_witness_binding_"
-            "observation_consumer_support_and_duplicate_lineage_mutations"
+            "validator_owned_eleven_coverage_owner_assumption_mutation_witness_binding_"
+            "observation_consumer_support_duplicate_lineage_and_cross_model_mutations"
         ),
         "negative_control_cases": [
             "theorem deletion",
@@ -83,6 +83,7 @@ def main() -> None:
             "consumer-free retention",
             "support promotion",
             "duplicate without canonical theorem",
+            "cross-module literal duplicate laundering",
         ],
         "prohibited_inference": (
             "The overlay does not prove model truth, implementation correctness, deployment "

@@ -14,10 +14,10 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 333 |
 | Lean modules scanned | 110 |
-| Theorem declarations classified | 1370 |
+| Theorem declarations classified | 1369 |
 | Direct/projection-style theorem declarations | 230 |
 | Derived/decomposed theorem declarations | 924 |
-| Unknown or mixed theorem declarations | 216 |
+| Unknown or mixed theorem declarations | 215 |
 | Safety-critical theorem declarations | 73 |
 | Safety-critical direct/projection declarations | 1 |
 | Safety-critical chapter classifications present | 1/1 |
@@ -141,7 +141,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/SafetyCases.lean` | unmapped | 0 | 8 | 0 | 8 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/SafetyCriticalLifecycle.lean` | constitutional-alignment-substrate, moral-uncertainty-and-value-conflict | 8 | 21 | 1 | 9 | 11 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ScalableOversight.lean` | unmapped | 0 | 8 | 0 | 8 | 0 | derived/decomposed by classifier |
-| `lean/AsiStackProofs/ScalableOversightRefinement.lean` | scalable-oversight-and-adversarial-ai-control | 7 | 12 | 0 | 3 | 9 | manual review |
+| `lean/AsiStackProofs/ScalableOversightRefinement.lean` | scalable-oversight-and-adversarial-ai-control | 7 | 11 | 0 | 3 | 8 | manual review |
 | `lean/AsiStackProofs/SearchSubstrates.lean` | mathematical-and-search-substrates | 3 | 11 | 3 | 8 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/SecurityKernel.lean` | security-kernel-and-digital-scifs | 4 | 22 | 1 | 21 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/SelfImprovement.lean` | unmapped | 0 | 20 | 0 | 20 | 0 | derived/decomposed by classifier |
@@ -1244,7 +1244,6 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ScalableOversightRefinement.lean` | `high_risk_use_without_outcome_audit_requires_audit` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/ScalableOversightRefinement.lean` | `missing_baseline_requires_protocol_redesign` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/ScalableOversightRefinement.lean` | `missing_evidence_views_requires_access_repair` | unknown_or_mixed | no | no recognized depth pattern |
-| `lean/AsiStackProofs/ScalableOversightRefinement.lean` | `missing_outcome_audit_blocks_high_risk_admission` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/ScalableOversightRefinement.lean` | `rejected_event_preserves_state` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/ScalableOversightRefinement.lean` | `undisclosed_shared_dependencies_require_review` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/ScalableOversightRefinement.lean` | `unjustified_abstention_requires_evidence` | unknown_or_mixed | no | no recognized depth pattern |

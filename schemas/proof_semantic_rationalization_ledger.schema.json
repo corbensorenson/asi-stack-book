@@ -1,0 +1,263 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/proof_semantic_rationalization_ledger.schema.json",
+  "title": "ASI Stack C6 proof semantic-rationalization execution ledger",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "as_of",
+    "roadmap_lane",
+    "state",
+    "baseline",
+    "actions",
+    "summary",
+    "non_claims",
+    "support_state_effect",
+    "release_effect"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "asi_stack.proof_semantic_rationalization_ledger.v1"
+    },
+    "as_of": {
+      "type": "string",
+      "format": "date"
+    },
+    "roadmap_lane": {
+      "const": "C6-P0-P6-semantic-proof-rationalization"
+    },
+    "state": {
+      "const": "dependency_safe_execution_active"
+    },
+    "baseline": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "commit",
+        "overlay_path",
+        "overlay_sha256",
+        "module_path",
+        "module_sha256",
+        "live_theorem_count",
+        "rewrite_or_retire_count"
+      ],
+      "properties": {
+        "commit": {
+          "const": "d0f9bda14f1253999f2c40d556d925d31e4b36a4"
+        },
+        "overlay_path": {
+          "const": "proofs/proof_semantic_depth_overlay.json"
+        },
+        "overlay_sha256": {
+          "const": "97ea98621611839c49c4056c85b52ae5a907e683ea2e8572efe642774492340a"
+        },
+        "module_path": {
+          "const": "lean/AsiStackProofs/ScalableOversightRefinement.lean"
+        },
+        "module_sha256": {
+          "const": "aab0b5f0795bfcc1b78af1477093591e2b609a3cdfc8c5e67d2718afac683e68"
+        },
+        "live_theorem_count": {
+          "const": 1370
+        },
+        "rewrite_or_retire_count": {
+          "const": 161
+        }
+      }
+    },
+    "actions": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 1,
+      "items": {
+        "$ref": "#/$defs/action"
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "executed_retirement_count",
+        "current_live_theorem_count",
+        "remaining_action_count",
+        "remaining_action_counts",
+        "chapter_core_support_transitions",
+        "new_formal_claims"
+      ],
+      "properties": {
+        "executed_retirement_count": {
+          "const": 1
+        },
+        "current_live_theorem_count": {
+          "const": 1369
+        },
+        "remaining_action_count": {
+          "const": 160
+        },
+        "remaining_action_counts": {
+          "const": {
+            "retire_narrow_projection": 63,
+            "rewrite_scope_language": 2,
+            "rewrite_with_stronger_model": 95
+          }
+        },
+        "chapter_core_support_transitions": {
+          "const": 0
+        },
+        "new_formal_claims": {
+          "const": 0
+        }
+      }
+    },
+    "non_claims": {
+      "type": "array",
+      "minItems": 4,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "support_state_effect": {
+      "const": "none"
+    },
+    "release_effect": {
+      "const": "none"
+    }
+  },
+  "$defs": {
+    "stringArray": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "action": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "action_id",
+        "state",
+        "action",
+        "module_path",
+        "retired_theorem_id",
+        "retained_theorem_id",
+        "retired_block_sha256",
+        "retained_block_sha256",
+        "normalized_statement_sha256",
+        "semantic_basis",
+        "dependency_check",
+        "consumer_migration",
+        "maximum_inference_preserved",
+        "validation_refs",
+        "support_state_effect"
+      ],
+      "properties": {
+        "action_id": {
+          "const": "C6-R1-scalable-oversight-same-model-duplicate"
+        },
+        "state": {
+          "const": "executed"
+        },
+        "action": {
+          "const": "retire_exact_same_model_duplicate"
+        },
+        "module_path": {
+          "const": "lean/AsiStackProofs/ScalableOversightRefinement.lean"
+        },
+        "retired_theorem_id": {
+          "const": "lean/AsiStackProofs/ScalableOversightRefinement.lean::missing_outcome_audit_blocks_high_risk_admission"
+        },
+        "retained_theorem_id": {
+          "const": "lean/AsiStackProofs/ScalableOversightRefinement.lean::high_risk_use_without_outcome_audit_requires_audit"
+        },
+        "retired_block_sha256": {
+          "const": "4e55a51ca8417cbacc14a6c8174145f9a0d2bb7b20e68916f8f37e2c096be2e5"
+        },
+        "retained_block_sha256": {
+          "const": "c89312268c42c474a9e1eadb87915fffafc97f5eac80e943156aa62e8e32affa"
+        },
+        "normalized_statement_sha256": {
+          "const": "5f33523f18a28bf70e8f22e8fda6104abc74d4f4a4e39680e750fc3fc3025156"
+        },
+        "semantic_basis": {
+          "type": "array",
+          "minItems": 5,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "dependency_check": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "same_module",
+            "normalized_statement_equal",
+            "retired_theorem_dependency_refs",
+            "retired_theorem_consumer_refs",
+            "current_fully_qualified_consumer_refs"
+          ],
+          "properties": {
+            "same_module": {
+              "const": true
+            },
+            "normalized_statement_equal": {
+              "const": true
+            },
+            "retired_theorem_dependency_refs": {
+              "const": []
+            },
+            "retired_theorem_consumer_refs": {
+              "const": []
+            },
+            "current_fully_qualified_consumer_refs": {
+              "const": []
+            }
+          }
+        },
+        "consumer_migration": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "state",
+            "retained_target_refs"
+          ],
+          "properties": {
+            "state": {
+              "const": "no_theorem_consumer_migration_required_shared_target_ownership_retained"
+            },
+            "retained_target_refs": {
+              "type": "array",
+              "minItems": 2,
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "pattern": "^proof-target:"
+              }
+            }
+          }
+        },
+        "maximum_inference_preserved": {
+          "const": "Only the exact bounded missing-outcome-audit route consequence in the named authored Scalable Oversight refinement model."
+        },
+        "validation_refs": {
+          "type": "array",
+          "minItems": 5,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "support_state_effect": {
+          "const": "none"
+        }
+      }
+    }
+  }
+}

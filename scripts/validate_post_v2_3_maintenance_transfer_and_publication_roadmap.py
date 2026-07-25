@@ -51,6 +51,9 @@ BOOK_MANIFEST = ROOT / "book_structure.json"
 REVIEW_ADJUDICATION = ROOT / "docs/chatgpt_pro_full_book_review_adjudication_2026_07_25.md"
 CURRENT_ROLE_MAP = ROOT / "evidence_quality/current_chapter_role_map.json"
 PROOF_SEMANTIC_DEPTH_OVERLAY = ROOT / "proofs/proof_semantic_depth_overlay.json"
+PROOF_SEMANTIC_RATIONALIZATION_LEDGER = (
+    ROOT / "proofs/proof_semantic_rationalization_ledger.json"
+)
 STRUCTURAL_CHAPTER_PATHS = {
     "white-box-evidence-interpretability-and-activation-governance": ROOT / "chapters/white-box-evidence-interpretability-and-activation-governance.qmd",
     "governed-world-models-and-reality-grounding": ROOT / "chapters/governed-world-models-and-reality-grounding.qmd",
@@ -194,6 +197,9 @@ def inputs() -> dict:
         "review_adjudication": REVIEW_ADJUDICATION.read_text(encoding="utf-8"),
         "current_role_map": load(CURRENT_ROLE_MAP),
         "proof_semantic_depth_overlay": load(PROOF_SEMANTIC_DEPTH_OVERLAY),
+        "proof_semantic_rationalization_ledger": load(
+            PROOF_SEMANTIC_RATIONALIZATION_LEDGER
+        ),
         "manuscript_completion": {
             key: path.read_text(encoding="utf-8")
             for key, path in MANUSCRIPT_COMPLETION_PATHS.items()
@@ -1051,41 +1057,47 @@ def errors(data: dict) -> list[str]:
         "P1": 800,
         "P2": 25,
         "P3": 319,
-        "P4": 94,
+        "P4": 93,
         "P5": 83,
         "P6": 0,
     }
     expected_c6_dispositions = {
         "retain": 1209,
-        "retire_duplicate": 1,
         "retire_narrow_projection": 63,
         "rewrite_scope_language": 2,
         "rewrite_with_stronger_model": 95,
     }
     if (
         c6_overlay_status.get("state")
-        != "classified_all_1370_live_theorems_before_new_formal_expansion"
+        != "dependency_safe_execution_active_after_one_exact_duplicate_retirement"
+        or c6_overlay_status.get("classification_baseline_commit")
+        != "d0f9bda14f1253999f2c40d556d925d31e4b36a4"
+        or c6_overlay_status.get("classification_baseline_theorem_count") != 1370
         or c6_overlay_status.get("overlay_path")
         != "proofs/proof_semantic_depth_overlay.json"
         or c6_overlay_status.get("report_path")
         != "docs/proof_semantic_depth_overlay.md"
-        or c6_overlay_status.get("theorem_count") != 1370
+        or c6_overlay_status.get("rationalization_ledger_path")
+        != "proofs/proof_semantic_rationalization_ledger.json"
+        or c6_overlay_status.get("theorem_count") != 1369
         or c6_overlay_status.get("theorem_bearing_module_count") != 104
         or c6_overlay_status.get("semantic_owner_chapter_count") != 61
         or c6_overlay_status.get("semantic_level_counts") != expected_c6_levels
         or c6_overlay_status.get("disposition_counts")
         != expected_c6_dispositions
+        or c6_overlay_status.get("executed_retirement_count") != 1
+        or c6_overlay_status.get("remaining_action_count") != 160
         or c6_overlay_status.get("mutation_coverage_missing_count") != 0
         or c6_overlay_status.get("frozen_historical_theorem_count") != 1151
         or c6_overlay_status.get("frozen_historical_target_count") != 298
         or c6_overlay_status.get("next_action")
-        != "execute_dependency_safe_rewrite_and_retirement_queue_before_new_formal_expansion"
+        != "execute_dependency_safe_narrow_projection_tranche_before_new_formal_expansion"
         or c6_overlay_status.get("support_state_effect") != "none"
     ):
         out.append("C6 current semantic-overlay status drifted")
     c6_summary = c6_overlay.get("summary", {})
     if (
-        c6_summary.get("current_theorem_count") != 1370
+        c6_summary.get("current_theorem_count") != 1369
         or c6_summary.get("current_module_count") != 104
         or c6_summary.get("semantic_owner_chapter_count") != 61
         or c6_summary.get("semantic_level_counts") != expected_c6_levels
@@ -1094,15 +1106,28 @@ def errors(data: dict) -> list[str]:
         or c6_summary.get("support_state_effect") != "none"
     ):
         out.append("C6 status no longer matches the generated semantic-depth overlay")
+    c6_ledger = data["proof_semantic_rationalization_ledger"]
+    if (
+        c6_ledger.get("state") != "dependency_safe_execution_active"
+        or c6_ledger.get("baseline", {}).get("live_theorem_count") != 1370
+        or c6_ledger.get("summary", {}).get("executed_retirement_count") != 1
+        or c6_ledger.get("summary", {}).get("current_live_theorem_count") != 1369
+        or c6_ledger.get("summary", {}).get("remaining_action_count") != 160
+        or c6_ledger.get("support_state_effect") != "none"
+        or c6_ledger.get("release_effect") != "none"
+    ):
+        out.append("C6 semantic-rationalization transaction ledger drifted")
     for required_phrase in [
-        "### C6 current-estate classification receipt — 2026-07-25",
-        "all 1,370 live theorem",
+        "### C6 current-estate classification and first execution receipt — 2026-07-25",
+        "1,370\nbaseline declarations",
+        "all 1,369 live theorem",
         "zero P6 empirically bound results",
         "1,209 retain",
-        "one retire as duplicate",
         "Search Substrates theorems negate different predicates",
         "95 stronger-model rewrites",
-        "dependency-safe pass over that queue",
+        "first dependency-safe retirement transaction",
+        "160 rewrite-or-retire actions remain",
+        "`proofs/proof_semantic_rationalization_ledger.json`",
     ]:
         if required_phrase not in data["roadmap"]:
             out.append(f"C6 roadmap receipt lost required phrase: {required_phrase}")
@@ -1397,7 +1422,7 @@ def errors(data: dict) -> list[str]:
         r"(\d+) unknown/mixed",
         data["proof_review"],
     )
-    expected_proof = (333, 110, 1370, 924, 230, 216)
+    expected_proof = (333, 110, 1369, 924, 230, 215)
     if not proof_match or tuple(map(int, proof_match.groups())) != expected_proof:
         out.append("proof-depth baseline drifted without roadmap reconciliation")
     if data["proof_manifest"].get("proof_target_count") != 333:

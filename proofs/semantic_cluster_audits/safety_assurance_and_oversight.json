@@ -65,7 +65,7 @@
       "path": "lean/AsiStackProofs/ScalableOversightRefinement.lean",
       "disposition": "adequate",
       "public_target_count": 7,
-      "theorem_declaration_count": 12,
+      "theorem_declaration_count": 11,
       "plain_language_proposition": "A versioned finite oversight protocol can emit one bounded-use handoff only after exact consumer, decision, task, protocol, reviewer, evidence-view, baseline, disagreement, outcome-audit, abstention, dependency, uncertainty, residual, expiry, and authority-separation custody; material change forces descendant invalidation and a successor protocol before readmission.",
       "modeled_state": "Seven stages, fifty-eight routes, high-risk and abstention state, exact protocol identities, review and independent outcome-audit records, bounded-use and readmission counts, rejection-without-mutation, and zero support or external-effect assignment.",
       "assumptions": [
@@ -80,10 +80,11 @@
       ],
       "consumers": [
         "scripts/validate_scalable_oversight_refinement.py",
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
         "experiments/scalable_oversight_refinement/results/2026-07-15-local.json",
         "schemas/scalable_oversight_refinement.schema.json"
       ],
-      "mutation_evidence": "The independent consumer preserves 7 inherited fixtures, reaches 7 stages, covers all 58 routes, and rejects 65/65 identity, gate, abstention, dependency, replay, authority, successor, support, and effect mutations.",
+      "mutation_evidence": "The independent protocol consumer preserves 7 inherited fixtures, reaches 7 stages, covers all 58 routes, and rejects 65/65 identity, gate, abstention, dependency, replay, authority, successor, support, and effect mutations. The C6 rationalization ledger separately freezes the 12-declaration baseline, proves the retired declaration had no theorem consumer, retains its exact same-model normalized twin, and rejects 10/10 transaction mutations.",
       "maximum_inference": "Adequate for finite protocol identity, review/audit custody, bounded-use handoff, abstention escalation, authority separation, and versioned readmission semantics. It does not establish reviewer competence, independence, calibration, correctness, protocol efficacy, outcome truth, weak-to-strong generalization, debate or consultancy value, causal usefulness, safety, deployment, transfer, or support movement."
     },
     {

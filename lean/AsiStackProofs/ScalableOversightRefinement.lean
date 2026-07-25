@@ -301,11 +301,6 @@ def canonicalState (stage : Stage) : State :=
     boundedUseHandoffCount := 0, readmissionCount := 0,
     supportAssignmentCount := 0, externalEffectCount := 0 }
 
-theorem missing_outcome_audit_blocks_high_risk_admission :
-    routeFor (canonicalState .reviewed) .runOutcomeAudit
-      { canonicalPacket with independentOutcomeAuditPresent := false } =
-      .requestIndependentOutcomeAudit := by native_decide
-
 theorem missing_baseline_requires_protocol_redesign :
     routeFor (canonicalState .protocolBound) .recordReview
       { canonicalPacket with directReviewBaselinePresent := false } =

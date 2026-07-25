@@ -363,13 +363,18 @@
               "additionalProperties": false,
               "required": [
                 "state",
+                "classification_baseline_commit",
+                "classification_baseline_theorem_count",
                 "overlay_path",
                 "report_path",
+                "rationalization_ledger_path",
                 "theorem_count",
                 "theorem_bearing_module_count",
                 "semantic_owner_chapter_count",
                 "semantic_level_counts",
                 "disposition_counts",
+                "executed_retirement_count",
+                "remaining_action_count",
                 "mutation_coverage_missing_count",
                 "frozen_historical_theorem_count",
                 "frozen_historical_target_count",
@@ -378,7 +383,13 @@
               ],
               "properties": {
                 "state": {
-                  "const": "classified_all_1370_live_theorems_before_new_formal_expansion"
+                  "const": "dependency_safe_execution_active_after_one_exact_duplicate_retirement"
+                },
+                "classification_baseline_commit": {
+                  "const": "d0f9bda14f1253999f2c40d556d925d31e4b36a4"
+                },
+                "classification_baseline_theorem_count": {
+                  "const": 1370
                 },
                 "overlay_path": {
                   "const": "proofs/proof_semantic_depth_overlay.json"
@@ -386,8 +397,11 @@
                 "report_path": {
                   "const": "docs/proof_semantic_depth_overlay.md"
                 },
+                "rationalization_ledger_path": {
+                  "const": "proofs/proof_semantic_rationalization_ledger.json"
+                },
                 "theorem_count": {
-                  "const": 1370
+                  "const": 1369
                 },
                 "theorem_bearing_module_count": {
                   "const": 104
@@ -401,7 +415,7 @@
                     "P1": 800,
                     "P2": 25,
                     "P3": 319,
-                    "P4": 94,
+                    "P4": 93,
                     "P5": 83,
                     "P6": 0
                   }
@@ -409,11 +423,16 @@
                 "disposition_counts": {
                   "const": {
                     "retain": 1209,
-                    "retire_duplicate": 1,
                     "retire_narrow_projection": 63,
                     "rewrite_scope_language": 2,
                     "rewrite_with_stronger_model": 95
                   }
+                },
+                "executed_retirement_count": {
+                  "const": 1
+                },
+                "remaining_action_count": {
+                  "const": 160
                 },
                 "mutation_coverage_missing_count": {
                   "const": 0
@@ -425,7 +444,7 @@
                   "const": 298
                 },
                 "next_action": {
-                  "const": "execute_dependency_safe_rewrite_and_retirement_queue_before_new_formal_expansion"
+                  "const": "execute_dependency_safe_narrow_projection_tranche_before_new_formal_expansion"
                 },
                 "support_state_effect": {
                   "const": "none"
@@ -1079,10 +1098,10 @@
         "sota_supported_count": 0,
         "proof_target_count": 333,
         "lean_module_count": 109,
-        "theorem_declaration_count": 1370,
+        "theorem_declaration_count": 1369,
         "derived_or_decomposed_theorem_count": 924,
         "direct_or_projection_theorem_count": 230,
-        "unknown_or_mixed_theorem_count": 216,
+        "unknown_or_mixed_theorem_count": 215,
         "historical_v2_2_approved_exact_local_reader_formats": [
           "html"
         ],
