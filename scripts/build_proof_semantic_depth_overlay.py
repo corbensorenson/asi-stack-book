@@ -656,7 +656,7 @@ def build() -> tuple[dict[str, Any], str]:
     ]
     action_lines = [
         f"| `{row['theorem_id']}` | {row['semantic_level']} | `{row['disposition']}` | "
-        f"{row['disposition_rationale'].replace('|', '\\|')} |"
+        f"{row['disposition_rationale'].replace('|', '&#124;')} |"
         for row in action_rows
     ]
     report = "\n".join([
