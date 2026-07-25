@@ -26,7 +26,7 @@ python3 scripts/validate_reader_audio_script_reading_flow.py --write-manifest
 | Source mode | `generated_reader_edition` |
 | Source generator | `scripts/build_reader_edition.py` |
 | Audio profile | `audio_release` |
-| Script files | 81 |
+| Script files | 85 |
 | Implementation-horizon script status | pass |
 | Review status | review_required |
 
@@ -38,26 +38,26 @@ Required review files are generated in the ignored workspace:
 ## Audio Script Reading-Flow Review
 
 The generated script workspace now has an automated reading-flow review. It
-checks that `index.md`, `preface.md`, the 76 active chapter scripts, and the included
+checks that `index.md`, `preface.md`, the 80 active chapter scripts, and the included
 appendix scripts follow `book_structure.json` order instead of alphabetical
 filesystem order. It also checks that `chapter_markers.md` follows the same
 script order.
 
 | Metric | Value |
 |---|---:|
-| Script files checked | 81 |
+| Script files checked | 85 |
 | Front-matter scripts checked | 2 |
-| Chapter scripts checked | 76 |
+| Chapter scripts checked | 80 |
 | Appendix scripts checked | 3 |
 | Script order | matches book-structure order |
-| Ordered chapter markers | 81 ordered markers |
-| Chapter-marker timecodes | 81 `TBD` rows |
-| Narration notes | 214 narration notes |
-| Table narration notes | 89 |
-| Diagram narration notes | 103 |
+| Ordered chapter markers | 85 ordered markers |
+| Chapter-marker timecodes | 85 `TBD` rows |
+| Narration notes | 224 narration notes |
+| Table narration notes | 95 |
+| Diagram narration notes | 107 |
 | Image narration notes | 11 |
 | Code/schema narration notes | 11 |
-| Implementation-horizon chapter scripts | 76 |
+| Implementation-horizon chapter scripts | 80 |
 | Script statistics | Current digest and text statistics are recorded in the tracked audio-script probe manifest. |
 | Replacement characters | 0 |
 | Live/research marker hits | 0 |
@@ -80,8 +80,8 @@ timecoding, not an audiobook, not audio generation, and not release approval.
 
 | Material | Count |
 |---|---:|
-| Tables | 89 |
-| Mermaid diagrams | 103 |
+| Tables | 95 |
+| Mermaid diagrams | 107 |
 | Code/schema blocks | 11 |
 | Images | 11 |
 

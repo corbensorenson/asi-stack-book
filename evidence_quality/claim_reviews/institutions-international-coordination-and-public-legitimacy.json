@@ -5,7 +5,7 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd",
     "structured_atoms_reviewed": 35,
-    "prose_candidates_adjudicated": 29,
+    "prose_candidates_adjudicated": 33,
     "unowned_material_claims": 0,
     "review_note": "Reviewed the complete admitted Institutions, International Coordination, and Public Legitimacy chapter, its manifest ownership, source crosswalk, lifecycle, mechanisms, interfaces, invariants, failure inventory, minimum implementation, falsification program, test plan, summary, and handoff. Claim-bearing prose is mapped to the closest owned atom by section; layout fragments, status text, captions, and handoffs remain explicitly nonmaterial. The review preserves argument support and records no efficacy, transfer, release, SOTA, AGI, or ASI promotion."
   },
@@ -100,6 +100,12 @@
   },
   "atom_reviews": {},
   "prose_candidate_dispositions": {
+    "institutions-international-coordination-and-public-legitimacy.prose.cc92018a4c17": {"state": "duplicate_of_atom", "rationale": "The need for independently useful scrutiny elaborates the chapter's assessor-independence and verification mechanism.", "target_atom_id": "institutions-international-coordination-and-public-legitimacy.mechanism.003"},
+    "institutions-international-coordination-and-public-legitimacy.prose.532793ecccbb": {"state": "duplicate_of_atom", "rationale": "The secure-access tradeoff elaborates the chapter's assessor-independence, capture, verification, and institutional-capacity obligations.", "target_atom_id": "institutions-international-coordination-and-public-legitimacy.mechanism.003"},
+    "institutions-international-coordination-and-public-legitimacy.prose.1df2cb233e51": {"state": "duplicate_of_atom", "rationale": "Negative controls, denominator retention, and protected adverse findings operationalize the existing independent-verification mechanism.", "target_atom_id": "institutions-international-coordination-and-public-legitimacy.mechanism.003"},
+    "institutions-international-coordination-and-public-legitimacy.prose.148240e15678": {"state": "duplicate_of_atom", "rationale": "This limitation on double-blind assignment preserves the existing distinction between assessor independence, method transparency, and conflict disclosure.", "target_atom_id": "institutions-international-coordination-and-public-legitimacy.mechanism.003"},
+    "institutions-international-coordination-and-public-legitimacy.prose.f5a1b7007e11": {"state": "historical_or_source_report", "rationale": "Passage-reviewed external hardware-governance proposal retained as a possible inspectability mechanism, not local evidence of effectiveness or legitimacy."},
+    "institutions-international-coordination-and-public-legitimacy.prose.5e0ae869b812": {"state": "duplicate_of_atom", "rationale": "The audit and attestation nonclaim restates the core separation among technical evidence, safety, authority, and public legitimacy.", "target_atom_id": "institutions-international-coordination-and-public-legitimacy.core"},
     "institutions-international-coordination-and-public-legitimacy.prose.cee17ba2c3b8": {
       "state": "duplicate_of_atom",
       "rationale": "Semantically reviewed as a prose explanation or refinement of `institutions-international-coordination-and-public-legitimacy.problem.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
@@ -214,16 +220,34 @@
     "institutions-international-coordination-and-public-legitimacy.prose.d7c698d66ae4": {
       "state": "nonmaterial_explanation",
       "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "institutions-international-coordination-and-public-legitimacy.prose.1644f28bb30e": {
-      "state": "editorial_or_question",
-      "rationale": "Cross-chapter handoff instruction; the receiving owner performs its own admission checks and no independent support transition is asserted."
-    },
-    "institutions-international-coordination-and-public-legitimacy.prose.6e2a279b9dad": {
-      "state": "editorial_or_question",
-      "rationale": "Cross-chapter handoff instruction; the receiving owner performs its own admission checks and no independent support transition is asserted."
     }
   },
+  "prose_review_lineage": [
+    {
+      "retired_candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.1644f28bb30e",
+      "retired_source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:242",
+      "retired_sentence": "The receiving chapter must preserve the identities,",
+      "preserved_disposition": {
+        "state": "editorial_or_question",
+        "rationale": "Cross-chapter handoff instruction; the receiving owner performs its own admission checks and no independent support transition is asserted."
+      },
+      "retirement_reason": "The former line-wrapped handoff instruction was removed during the institutional chapter maturity rewrite and has no current replacement candidate.",
+      "replacement_candidate_ids": [],
+      "recorded_on": "2026-07-24"
+    },
+    {
+      "retired_candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.6e2a279b9dad",
+      "retired_source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:245",
+      "retired_sentence": "that the packet crossed the declared interface; it does not prove that either",
+      "preserved_disposition": {
+        "state": "editorial_or_question",
+        "rationale": "Cross-chapter handoff instruction; the receiving owner performs its own admission checks and no independent support transition is asserted."
+      },
+      "retirement_reason": "The former line-wrapped proof boundary was removed during the institutional chapter maturity rewrite and has no current replacement candidate.",
+      "replacement_candidate_ids": [],
+      "recorded_on": "2026-07-24"
+    }
+  ],
   "non_claims": [
     "Semantic review and chapter admission do not establish that the proposed mechanism works.",
     "The chapter remains at argument support until a claim-specific full attempt earns an accepted evidence transition.",

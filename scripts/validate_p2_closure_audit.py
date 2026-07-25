@@ -20,9 +20,9 @@ STATUS = ROOT / "roadmap_records" / "post_v2_3_claim_proof_and_sota_challenge_st
 MAINTENANCE_STATUS = ROOT / "roadmap_records" / "post_v2_3_maintenance_transfer_and_publication_status.json"
 
 HISTORICAL_PROOF_TARGET_COUNT = 298
-CURRENT_PROOF_TARGET_COUNT = 325
+CURRENT_PROOF_TARGET_COUNT = 329
 CURRENT_IMPLEMENTED_TARGET_COUNT = 310
-CURRENT_PLANNED_TARGET_COUNT = 15
+CURRENT_PLANNED_TARGET_COUNT = 19
 HISTORICAL_EXPECTED_CLASSES = {
     "adequate finite-record invariant": 73,
     "useful but too narrow": 158,
@@ -34,7 +34,7 @@ HISTORICAL_EXPECTED_CLASSES = {
 CURRENT_EXPECTED_CLASSES = {
     "adequate finite-record invariant": 73,
     "useful but too narrow": 162,
-    "needs richer state-machine or review semantics": 32,
+    "needs richer state-machine or review semantics": 36,
     "needs executable tests first": 38,
     "needs empirical or baseline tests first": 18,
     "research-agenda until artifact import": 2,
@@ -79,13 +79,24 @@ NO_DEFERRAL_ADMITTED_CHAPTERS = {
     "physical-compute-infrastructure-energy-and-environmental-constraints",
     "scientific-discovery-and-experimental-governance",
 }
+TAXONOMY_MATURITY_ADMITTED_CHAPTERS = {
+    "dangerous-capability-domains-and-misuse-uplift",
+    "societal-resilience-and-misuse-defense",
+    "open-weight-release-and-post-release-control",
+    "content-authenticity-watermarking-and-synthetic-media-integrity",
+}
 ADMITTED_CHAPTERS = (
     FIRST_TRANCHE_ADMITTED_CHAPTERS
     | SECOND_TRANCHE_ADMITTED_CHAPTERS
     | ROUND_18_ADMITTED_CHAPTERS
     | NO_DEFERRAL_ADMITTED_CHAPTERS
+    | TAXONOMY_MATURITY_ADMITTED_CHAPTERS
 )
-PLANNED_CHAPTERS = ROUND_18_ADMITTED_CHAPTERS | NO_DEFERRAL_ADMITTED_CHAPTERS
+PLANNED_CHAPTERS = (
+    ROUND_18_ADMITTED_CHAPTERS
+    | NO_DEFERRAL_ADMITTED_CHAPTERS
+    | TAXONOMY_MATURITY_ADMITTED_CHAPTERS
+)
 EXPECTED_RICHER = {
     "constitutional-alignment-substrate": 6,
     "moral-uncertainty-and-value-conflict": 6,
@@ -143,6 +154,11 @@ def current_proof_errors(
         .get("structural_completeness_tranche", {})
         .get("round_18_breadth_completion", {})
     )
+    taxonomy_tranche = (
+        maintenance_status.get("quality_uplift_program", {})
+        .get("structural_completeness_tranche", {})
+        .get("taxonomy_and_structural_maturity_reconciliation", {})
+    )
     if (
         manifest.get("proof_target_count") != CURRENT_PROOF_TARGET_COUNT
         or len(current_targets) != CURRENT_PROOF_TARGET_COUNT
@@ -156,7 +172,12 @@ def current_proof_errors(
         or activation_truth.get("proof_target_count") != CURRENT_PROOF_TARGET_COUNT
         or activation_truth.get("chapter_core_promotion_count") != 0
     ):
-        out.append("current proof manifest/status is not exactly 325 unique targets (310 implemented, fifteen planned) with no core promotion")
+        out.append(
+            "current proof manifest/status is not exactly "
+            f"{CURRENT_PROOF_TARGET_COUNT} unique targets "
+            f"({CURRENT_IMPLEMENTED_TARGET_COUNT} implemented, "
+            f"{CURRENT_PLANNED_TARGET_COUNT} planned) with no core promotion"
+        )
     if (
         maintenance_status.get("status") != "active"
         or maintenance_status.get("roadmap_path") != "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md"
@@ -165,11 +186,15 @@ def current_proof_errors(
         or second_tranche.get("manifest_admitted_count") != len(SECOND_TRANCHE_ADMITTED_CHAPTERS)
         or set(second_tranche.get("adjudicated_candidate_ids", [])) != SECOND_TRANCHE_ADMITTED_CHAPTERS
         or set(round_18_tranche.get("new_chapter_ids", [])) != ROUND_18_ADMITTED_CHAPTERS
+        or set(taxonomy_tranche.get("new_chapter_ids", [])) != TAXONOMY_MATURITY_ADMITTED_CHAPTERS
         or len(planned_targets) != CURRENT_PLANNED_TARGET_COUNT
         or {row.get("chapter_id") for row in planned_targets} != PLANNED_CHAPTERS
         or planned_chapter_counts != Counter({chapter_id: 1 for chapter_id in PLANNED_CHAPTERS})
     ):
-        out.append("admitted-chapter proof inventory loses tranche custody or misstates the fifteen current planned targets")
+        out.append(
+            "admitted-chapter proof inventory loses tranche custody or misstates "
+            f"the {CURRENT_PLANNED_TARGET_COUNT} current planned targets"
+        )
     triage_by_tag = {row.get("tag"): row for row in triage_records}
     if (
         triage.get("record_count") != CURRENT_PROOF_TARGET_COUNT
@@ -344,8 +369,10 @@ def main() -> None:
         raise SystemExit("P2 closure audit failed:\n - " + "\n - ".join(failures))
     print(
         "P2 closure audit passed: 1,151 baseline theorem declarations, 298 unique historical targets, "
-        "65/65 reviewed historical modules, 298/298 frozen historical adequacy routes, 325 current targets "
-        "(310 implemented and fifteen planned after the no-deferral transaction), 325/325 current adequacy classifications, "
+        "65/65 reviewed historical modules, 298/298 frozen historical adequacy routes, "
+        f"{CURRENT_PROOF_TARGET_COUNT} current targets "
+        f"({CURRENT_IMPLEMENTED_TARGET_COUNT} implemented and {CURRENT_PLANNED_TARGET_COUNT} planned), "
+        f"{CURRENT_PROOF_TARGET_COUNT}/{CURRENT_PROOF_TARGET_COUNT} current adequacy classifications, "
         f"nine semantic-model dossiers/consumers, {len(mutations) + current_mutation_count} rejecting mutations, and no support-state effect."
     )
 

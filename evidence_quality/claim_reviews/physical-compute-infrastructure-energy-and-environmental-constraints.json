@@ -5,7 +5,7 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd",
     "structured_atoms_reviewed": 34,
-    "prose_candidates_adjudicated": 27,
+    "prose_candidates_adjudicated": 29,
     "unowned_material_claims": 0,
     "review_note": "Reviewed the complete admitted Physical Compute Infrastructure, Energy, and Environmental Constraints chapter, its manifest ownership, source crosswalk, lifecycle, mechanisms, interfaces, invariants, failure inventory, minimum implementation, falsification program, test plan, summary, and handoff. Claim-bearing prose is mapped to the closest owned atom by section; layout fragments, status text, captions, and handoffs remain explicitly nonmaterial. The review preserves argument support and records no efficacy, transfer, release, SOTA, AGI, or ASI promotion."
   },
@@ -100,6 +100,8 @@
   },
   "atom_reviews": {},
   "prose_candidate_dispositions": {
+    "physical-compute-infrastructure-energy-and-environmental-constraints.prose.3f6ae24370b6": {"state": "duplicate_of_atom", "rationale": "The coverage-and-authority record operationalizes the chapter's manifest-owned metering, uncertainty, hardware, authority, and recourse obligations.", "target_atom_id": "physical-compute-infrastructure-energy-and-environmental-constraints.core"},
+    "physical-compute-infrastructure-energy-and-environmental-constraints.prose.9d203e9f2895": {"state": "duplicate_of_atom", "rationale": "The device-to-fleet nonclaim restates the chapter's denominator, scope, and transfer boundary.", "target_atom_id": "physical-compute-infrastructure-energy-and-environmental-constraints.core"},
     "physical-compute-infrastructure-energy-and-environmental-constraints.prose.0ff5063b8419": {
       "state": "duplicate_of_atom",
       "rationale": "Semantically reviewed as a prose explanation or refinement of `physical-compute-infrastructure-energy-and-environmental-constraints.problem.001` within the chapter's declared scope; it creates no separate support-bearing atom.",

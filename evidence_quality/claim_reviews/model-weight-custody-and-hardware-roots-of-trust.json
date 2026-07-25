@@ -5,7 +5,7 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd",
     "structured_atoms_reviewed": 71,
-    "prose_candidates_adjudicated": 85,
+    "prose_candidates_adjudicated": 90,
     "unowned_material_claims": 0,
     "review_note": "Reviewed the complete chapter, all nine assigned source notes and passage-mapping limits, the eight-record deterministic custody lifecycle fixture, all nine Lean declarations under eight manifest targets, all nine rejecting mutations, every manifest atom, all prose scanner candidates, the worked custody trace, flow diagram, test plan, source crosswalk, summary, and handoff. The sweep replaced file-centric custody with a threat-model-bound model-family and derivative-closure contract; separated Attester Evidence, Verifier appraisal, Attestation Result, Relying-Party authorization, key release, observed load/use effects, runtime authority, and distribution authority; added exact key lifecycle, plaintext and output-extraction exposure, role-dependency, backup/recovery, incident/revocation, effort-relative sanitization, privacy/rights, availability, cost, and irreversible-release semantics; installed strong comparators, effect-bearing workload requirements, joint metrics, causal ablations, independent replication, transfer, and explicit promotion/refutation gates; and preserved zero chapter-core support effect."
   },
@@ -156,6 +156,11 @@
     }
   },
   "prose_candidate_dispositions": {
+    "model-weight-custody-and-hardware-roots-of-trust.prose.d8b7983e595d": {"state": "historical_or_source_report", "rationale": "Passage-reviewed flexible-hardware agenda retained as an external governance comparator, not evidence that the proposed guarantees work."},
+    "model-weight-custody-and-hardware-roots-of-trust.prose.4fee41b3d637": {"state": "duplicate_of_atom", "rationale": "The hardware evidence lease is the prose-level name for the chapter's existing scoped attestation and relying-party contract.", "target_atom_id": "model-weight-custody-and-hardware-roots-of-trust.invariant.006"},
+    "model-weight-custody-and-hardware-roots-of-trust.prose.42ce7416965e": {"state": "duplicate_of_atom", "rationale": "Coverage-unknown attestation wording directly elaborates the existing scoped-attestation invariant.", "target_atom_id": "model-weight-custody-and-hardware-roots-of-trust.invariant.006"},
+    "model-weight-custody-and-hardware-roots-of-trust.prose.5d9cbba03fea": {"state": "duplicate_of_atom", "rationale": "Explicit hardware-attestation nonclaim restating the chapter's scoped evidence boundary.", "target_atom_id": "model-weight-custody-and-hardware-roots-of-trust.invariant.006"},
+    "model-weight-custody-and-hardware-roots-of-trust.prose.ce40ad57ed63": {"state": "duplicate_of_atom", "rationale": "The measured-fact-only sentence states the exact least-authority meaning already owned by the attestation invariant.", "target_atom_id": "model-weight-custody-and-hardware-roots-of-trust.invariant.006"},
     "model-weight-custody-and-hardware-roots-of-trust.prose.05e578647f74": {"state": "duplicate_of_atom", "rationale": "Restates the bounded attestation non-inference rule.", "target_atom_id": "model-weight-custody-and-hardware-roots-of-trust.invariant.006"},
     "model-weight-custody-and-hardware-roots-of-trust.prose.f81ca13b8c25": {"state": "duplicate_of_atom", "rationale": "Human-path restatement of fail-closed custody admission.", "target_atom_id": "model-weight-custody-and-hardware-roots-of-trust.invariant.001"},
     "model-weight-custody-and-hardware-roots-of-trust.prose.b3a1d4f9db23": {"state": "editorial_or_question", "rationale": "Scanner fragment from the threat-model sentence; the complete requirement is atomized."},

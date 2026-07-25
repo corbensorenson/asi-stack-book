@@ -5,7 +5,7 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/learning-theory-generalization-and-scaling-science.qmd",
     "structured_atoms_reviewed": 34,
-    "prose_candidates_adjudicated": 37,
+    "prose_candidates_adjudicated": 51,
     "unowned_material_claims": 0,
     "review_note": "Reviewed the complete admitted Learning Theory, Generalization, and Scaling Science chapter, its manifest ownership, source crosswalk, lifecycle, mechanisms, interfaces, invariants, failure inventory, minimum implementation, falsification program, test plan, summary, and handoff. Claim-bearing prose is mapped to the closest owned atom by section; layout fragments, status text, captions, and handoffs remain explicitly nonmaterial. The review preserves argument support and records no efficacy, transfer, release, SOTA, AGI, or ASI promotion."
   },
@@ -100,6 +100,20 @@
   },
   "atom_reviews": {},
   "prose_candidate_dispositions": {
+    "learning-theory-generalization-and-scaling-science.prose.3cf45e870db0": {"state": "duplicate_of_atom", "rationale": "Sample-complexity line fragment elaborating the chapter's manifest-owned learning-theory contract.", "target_atom_id": "learning-theory-generalization-and-scaling-science.core"},
+    "learning-theory-generalization-and-scaling-science.prose.50b0d4a65a15": {"state": "duplicate_of_atom", "rationale": "Foundation-model scope fragment elaborating the chapter's exact distribution, metric, and transfer contract.", "target_atom_id": "learning-theory-generalization-and-scaling-science.core"},
+    "learning-theory-generalization-and-scaling-science.prose.0fc84513da71": {"state": "duplicate_of_atom", "rationale": "The i.i.d.-to-open-world nonclaim restates the core generalization boundary.", "target_atom_id": "learning-theory-generalization-and-scaling-science.core"},
+    "learning-theory-generalization-and-scaling-science.prose.66a2c09e03cb": {"state": "duplicate_of_atom", "rationale": "Correctness, robustness, safety, and transfer fragment restating the chapter's support ceiling.", "target_atom_id": "learning-theory-generalization-and-scaling-science.core"},
+    "learning-theory-generalization-and-scaling-science.prose.36195bdd4d22": {"state": "historical_or_source_report", "rationale": "Source-grounded double-descent observation retained as an external result, not a universal or locally reproduced scaling law."},
+    "learning-theory-generalization-and-scaling-science.prose.a01c8c274b16": {"state": "duplicate_of_atom", "rationale": "Interpolation-threshold sweep guidance operationalizes the chapter's manifest-owned scaling evaluation contract.", "target_atom_id": "learning-theory-generalization-and-scaling-science.core"},
+    "learning-theory-generalization-and-scaling-science.prose.d76a642f6ee0": {"state": "duplicate_of_atom", "rationale": "Sparse-scale-point failure fragment elaborating the chapter's manifest-owned scaling-forecast failure family.", "target_atom_id": "learning-theory-generalization-and-scaling-science.core"},
+    "learning-theory-generalization-and-scaling-science.prose.abb2ee109ee4": {"state": "duplicate_of_atom", "rationale": "Cross-regime transfer nonclaim restating the chapter's exact-data and exact-metric boundary.", "target_atom_id": "learning-theory-generalization-and-scaling-science.core"},
+    "learning-theory-generalization-and-scaling-science.prose.1c3163582009": {"state": "duplicate_of_atom", "rationale": "Prospective forecast-horizon fragment operationalizes the chapter's anti-leakage and held-out-scale contract.", "target_atom_id": "learning-theory-generalization-and-scaling-science.core"},
+    "learning-theory-generalization-and-scaling-science.prose.c797e8d79493": {"state": "duplicate_of_atom", "rationale": "Emergence-label limitation elaborates the chapter's manifest-owned breakpoint adjudication rule.", "target_atom_id": "learning-theory-generalization-and-scaling-science.core"},
+    "learning-theory-generalization-and-scaling-science.prose.ced7f6379766": {"state": "duplicate_of_atom", "rationale": "Threshold-change and identifiability fragment elaborating the existing emergence evaluation alternatives.", "target_atom_id": "learning-theory-generalization-and-scaling-science.core"},
+    "learning-theory-generalization-and-scaling-science.prose.ce4c8947ff2b": {"state": "duplicate_of_atom", "rationale": "Breakpoint-model comparison fragment operationalizing the chapter's existing emergence adjudication contract.", "target_atom_id": "learning-theory-generalization-and-scaling-science.core"},
+    "learning-theory-generalization-and-scaling-science.prose.8d198e8dfead": {"state": "duplicate_of_atom", "rationale": "Metric-artifact nonclaim restating the chapter's prohibition on universal smoothness inference.", "target_atom_id": "learning-theory-generalization-and-scaling-science.core"},
+    "learning-theory-generalization-and-scaling-science.prose.4c29f66760e3": {"state": "duplicate_of_atom", "rationale": "Apparent-breakpoint nonclaim restating the separation between behavioral curves and internal-algorithm claims.", "target_atom_id": "learning-theory-generalization-and-scaling-science.core"},
     "learning-theory-generalization-and-scaling-science.prose.f333c873c1cf": {
       "state": "duplicate_of_atom",
       "rationale": "Semantically reviewed as a prose explanation or refinement of `learning-theory-generalization-and-scaling-science.problem.001` within the chapter's declared scope; it creates no separate support-bearing atom.",

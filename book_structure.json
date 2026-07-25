@@ -1295,7 +1295,8 @@
         "ext_openai_worst_case_open_weight_risks_2025",
         "ext_aisi_misuse_safeguards_safety_case_2026",
         "ext_anthropic_responsible_scaling_policy_3_4_2026",
-        "ext_aisi_frontier_ai_trends_2025"
+        "ext_aisi_frontier_ai_trends_2025",
+        "benchmaxxing"
       ],
       "problem": "Capability-threshold policies require domain-specific evidence about whether a model can materially increase an actor's ability to cause harm, yet the stack has no owner for CBRN, offensive cyber, psychological manipulation, or the science of measuring model-caused uplift.",
       "insufficient": "Knowledge quizzes, refusal rates, benchmark scores, one red team, or a capability label cannot identify real actor uplift. They omit baseline expertise, tool and scaffold access, multi-step completion, bottlenecks outside the model, elicitation quality, safeguards, substitution, uncertainty, and the danger created by the evaluation itself.",
@@ -1336,7 +1337,7 @@
         "provider self-evaluation treated as independent reproduction"
       ],
       "minimal_implementation": "Create a public-safe threat-model and uplift-dossier format, then run a harmless analogue study with stratified participants or competent agents, matched assistance, known-positive and known-negative controls, blinded scoring, complete attempt logs, and no real hazardous materials or targets. Demonstrate that the instrument can distinguish a real assistance effect before using a null result.",
-      "beyond_state_of_art": "At maturity, dangerous-capability evaluation is a continuously renewed, domain-specific causal measurement service. It links controlled uplift, long-horizon task completion, safeguard bypass, accessible-frontier comparison, real incident indicators, and independent expert review while minimizing information hazard. It can update threshold and release decisions without claiming that a benchmark score is harm, that a refusal is safety, or that an unobserved capability is absent.",
+      "beyond_state_of_art": "The mature operational contract makes dangerous-capability evaluation a continuously renewed, domain-specific causal measurement service. It links controlled uplift, long-horizon task completion, safeguard bypass, accessible-frontier comparison, real incident indicators, and independent expert review while minimizing information hazard. It can update threshold and release decisions without claiming that a benchmark score is harm, that a refusal is safety, or that an unobserved capability is absent.",
       "codex_tests": [
         "Threat-model completeness mutation test",
         "Capability-versus-uplift type-confusion rejection test",
@@ -1355,7 +1356,8 @@
           "ext_openai_preparedness_framework_2025",
           "ext_openai_worst_case_open_weight_risks_2025",
           "ext_aisi_misuse_safeguards_safety_case_2026",
-          "ext_anthropic_responsible_scaling_policy_3_4_2026"
+          "ext_anthropic_responsible_scaling_policy_3_4_2026",
+          "benchmaxxing"
         ],
         "variants": [],
         "connector_or_recovery": [],
@@ -1425,6 +1427,14 @@
           "passage_review_state": "reviewed_source_note",
           "passage_refs": ["sources/source_notes/ext_anthropic_responsible_scaling_policy_3_4_2026.md"],
           "passage_review_note": "Reviewed for mutable threshold governance, report requirements, and independence limits."
+        },
+        {
+          "source_id": "benchmaxxing",
+          "mapped_support": "Supplies Corben's benchmark-ratchet lineage for preserving baseline identity, regressions, residuals, and anti-Goodhart pressure when capability evaluations renew.",
+          "limits": "Author-side design lineage only; it does not establish dangerous capability, evaluator competence, safeguard efficacy, actor uplift, or realized harm.",
+          "passage_review_state": "reviewed_source_note",
+          "passage_refs": ["sources/source_notes/benchmaxxing.md"],
+          "passage_review_note": "Reviewed for benchmark-ratchet, regression-retention, residual, and renewal concepts without inheriting empirical claims."
         }
       ],
       "proof_targets": [
@@ -3926,7 +3936,8 @@
         "ext_nist_incident_response_2025",
         "ext_singapore_consensus_2026",
         "ext_international_ai_safety_report_2026",
-        "ext_aisi_misuse_safeguards_safety_case_2026"
+        "ext_aisi_misuse_safeguards_safety_case_2026",
+        "talos"
       ],
       "problem": "Model safeguards and internal incident command cannot by themselves protect people, institutions, and critical services when prevention fails, misuse diffuses across platforms, or harms exploit social and infrastructural vulnerabilities.",
       "insufficient": "A classifier, terms of service, model refusal, takedown queue, or company-local incident process sees only one control point. Fraud, sexual abuse, cyber campaigns, synthetic media, manipulation, and vulnerable-user harms cross organizations, jurisdictions, languages, identities, and recovery systems.",
@@ -3967,7 +3978,7 @@
         "response metrics optimized while harm persists"
       ],
       "minimal_implementation": "Choose one low-risk synthetic incident class and build a tabletop network with shared identifiers, bounded evidence packets, contact and escalation routes, detection and recovery service levels, harmed-party notification, false-positive review, correction, and an after-action residual ledger. Use synthetic fixtures rather than exposing victims or operational attack recipes.",
-      "beyond_state_of_art": "At maturity, resilience is a federated, rights-preserving defense fabric spanning providers, platforms, infrastructure operators, public agencies, researchers, civil society, and affected communities. It continuously measures whether society can resist, absorb, recover from, and adapt to AI-enabled harm while improving defensive advantage without centralizing unlimited surveillance or claiming that response capacity excuses unsafe release.",
+          "beyond_state_of_art": "The mature operational contract makes resilience a federated, rights-preserving defense fabric spanning providers, platforms, infrastructure operators, public agencies, researchers, civil society, and affected communities. It continuously measures whether society can resist, absorb, recover from, and adapt to AI-enabled harm while improving defensive advantage, preserving lawful limits, and assigning residual ownership without centralizing unlimited surveillance or claiming that response capacity excuses unsafe release.",
       "codex_tests": [
         "Resist-absorb-recover-adapt stage completeness test",
         "Cross-organization incident identity test",
@@ -3982,7 +3993,8 @@
           "ext_nist_incident_response_2025"
         ],
         "supporting": [
-          "ext_aisi_misuse_safeguards_safety_case_2026"
+          "ext_aisi_misuse_safeguards_safety_case_2026",
+          "talos"
         ],
         "variants": [],
         "connector_or_recovery": [],
@@ -4020,6 +4032,14 @@
           "passage_review_state": "reviewed_source_note",
           "passage_refs": ["sources/source_notes/ext_aisi_misuse_safeguards_safety_case_2026.md"],
           "passage_review_note": "Reviewed for model-to-societal risk handoff and uncertainty."
+        },
+        {
+          "source_id": "talos",
+          "mapped_support": "Supplies Corben's governance-protocol lineage for role separation, escalation, evidence custody, bounded authority, and durable handoffs across cooperating actors.",
+          "limits": "Author-side protocol design only; it does not establish institutional participation, lawful data sharing, victim remedy, population protection, or resilience.",
+          "passage_review_state": "reviewed_source_note",
+          "passage_refs": ["sources/source_notes/talos.md"],
+          "passage_review_note": "Reviewed for multi-party governance, escalation, evidence, and residual-ownership concepts while keeping societal effectiveness unclaimed."
         }
       ],
       "proof_targets": [
@@ -5708,7 +5728,8 @@
         "ext_singapore_consensus_2026",
         "ext_international_ai_safety_report_2026",
         "ext_openai_worst_case_open_weight_risks_2025",
-        "ext_anthropic_responsible_scaling_policy_3_4_2026"
+        "ext_anthropic_responsible_scaling_policy_3_4_2026",
+        "precision_contract"
       ],
       "problem": "Once unrestricted model weights are published, the original releaser generally cannot recall copies, enforce serving-layer safeguards, observe use, or prevent derivatives. This irreversible transition has different control semantics from theft prevention and restricted custody.",
       "insufficient": "A model card, default refusal behavior, license, checksum, takedown request, or pre-release benchmark cannot control post-release fine-tuning, redistribution, merging, quantization, hidden deployment, or cumulative ecosystem effects.",
@@ -5749,7 +5770,7 @@
         "post-release coordination mislabeled as recall"
       ],
       "minimal_implementation": "Create an irreversible-release dossier for a harmless small model. Freeze exact bytes and comparators; test default and deliberately safety-removed variants; record license, documentation, signatures, derivative metadata, incident channels, patch semantics, and the limits of recall. Use the exercise to verify decision records, not to authorize release of a hazardous model.",
-      "beyond_state_of_art": "At maturity, open-weight governance becomes a candid ecosystem contract rather than a fictional remote-control system. Release decisions use competent worst-case elicitation, accessible-frontier and cumulative-risk analysis, independent review, public-safe evidence, benefit distribution, and post-release observability. Safer derivatives, signatures, provenance, community red teaming, and rapid patches can improve the ecosystem, while every surface states that unrestricted copies remain beyond unilateral revocation.",
+          "beyond_state_of_art": "The mature operational contract makes open-weight governance a candid ecosystem discipline rather than a fictional remote-control system. Release decisions use competent worst-case elicitation, accessible-frontier and cumulative-risk analysis, independent review, public-safe evidence, benefit distribution, and post-release observability. Safer derivatives, signatures, provenance, community red teaming, and rapid patches can improve the ecosystem, while every surface states that unrestricted copies remain beyond unilateral revocation.",
       "codex_tests": [
         "Irreversibility acknowledgement test",
         "Default-versus-malicious-fine-tuning comparison gate",
@@ -5766,7 +5787,8 @@
         "supporting": [
           "ext_singapore_consensus_2026",
           "ext_rand_model_weight_security_2024",
-          "ext_anthropic_responsible_scaling_policy_3_4_2026"
+          "ext_anthropic_responsible_scaling_policy_3_4_2026",
+          "precision_contract"
         ],
         "variants": [],
         "connector_or_recovery": [],
@@ -5820,6 +5842,14 @@
           "passage_review_state": "reviewed_source_note",
           "passage_refs": ["sources/source_notes/ext_anthropic_responsible_scaling_policy_3_4_2026.md"],
           "passage_review_note": "Reviewed for threshold/release interface and mutable-policy limits."
+        },
+        {
+          "source_id": "precision_contract",
+          "mapped_support": "Supplies Corben's artifact-specific precision-contract lineage for quantization and compression variants, measured behavioral preservation, residuals, and refusal to treat smaller artifacts as semantically identical by default.",
+          "limits": "Author-side design paper only; it does not establish safe open-weight release, derivative control, malicious-fine-tuning resistance, benefit distribution, or post-release revocation.",
+          "passage_review_state": "reviewed_source_note",
+          "passage_refs": ["sources/source_notes/precision_contract.md"],
+          "passage_review_note": "Reviewed for variant identity, behavioral-preservation tests, and residual accounting relevant to release-form comparisons."
         }
       ],
       "proof_targets": [
@@ -7902,10 +7932,10 @@
             "simulation_scaling",
             "cognitive_compilation",
             "planforge",
+            "relational_dimension_compiler",
             "ext_world_models_2018",
             "ext_dreamer_v3_2025",
             "ext_v_jepa_2_2025",
-            "relational_dimension_compiler",
             "ext_toward_causal_representation_learning_2021",
             "ext_causal_calculus_1995",
             "ext_deep_ensembles_2017",
@@ -22373,7 +22403,8 @@
       "source_ids": [
         "ext_c2pa_specification_2_3_2025",
         "ext_eu_article_50_transparency_guidelines_2026",
-        "ext_international_ai_safety_report_2026"
+        "ext_international_ai_safety_report_2026",
+        "deterministic_capability_compilation"
       ],
       "problem": "The stack tracks model and software provenance but lacks an owner for the provenance, disclosure, detectability, transformation history, and downstream interpretation of generated or manipulated outputs.",
       "insufficient": "Metadata, one watermark, a detector score, visible label, signature, or platform policy can be stripped, forged, misunderstood, or lost during transformation. None alone proves that content is true, false, human-made, AI-made, authorized, or harmless.",
@@ -22414,7 +22445,7 @@
         "compliance theater"
       ],
       "minimal_implementation": "Generate a small public-safe media set with signed C2PA-style manifests, visible labels, and a toy auxiliary watermark. Apply crop, resize, re-encode, metadata-strip, screenshot, and edit transformations; report which signals survive, fail, or conflict; exercise invalid-signature, missing-credential, compromised-trust, false-positive, correction, and accessibility cases.",
-      "beyond_state_of_art": "At maturity, every governed output can carry a portable, privacy-aware authenticity envelope across generation, editing, distribution, and correction. Platforms and readers can inspect what is claimed, by whom, under which trust policy, which transformations are known, which signals survived, what remains unknown, and how to seek remedy. The system remains useful even when metadata disappears because it composes provenance with disclosure, detection, context, and institutional response instead of promising an unremovable mark.",
+          "beyond_state_of_art": "The mature operational contract lets every governed output carry a portable, privacy-aware authenticity envelope across generation, editing, distribution, and correction. Platforms and readers can inspect what is claimed, by whom, under which trust policy, which transformations are known, which signals survived, what remains unknown, and how to seek remedy. The system remains useful even when metadata disappears because it composes provenance with disclosure, detection, context, and institutional response instead of promising an unremovable mark.",
       "codex_tests": [
         "Evidence-type separation test",
         "Transformation-survival matrix",
@@ -22429,7 +22460,8 @@
           "ext_eu_article_50_transparency_guidelines_2026"
         ],
         "supporting": [
-          "ext_international_ai_safety_report_2026"
+          "ext_international_ai_safety_report_2026",
+          "deterministic_capability_compilation"
         ],
         "variants": [],
         "connector_or_recovery": [],
@@ -22459,6 +22491,14 @@
           "passage_review_state": "reviewed_source_note",
           "passage_refs": ["sources/source_notes/ext_international_ai_safety_report_2026.md"],
           "passage_review_note": "Reviewed for defense-in-depth and societal handoff."
+        },
+        {
+          "source_id": "deterministic_capability_compilation",
+          "mapped_support": "Supplies Corben's capability-compilation lineage for exact artifact identity, transformation provenance, declared semantics, verification boundaries, and residual-preserving handoffs.",
+          "limits": "Author-side architecture lineage only; it does not establish C2PA conformance, watermark robustness, detector accuracy, content truth, consent, legal compliance, or public trust.",
+          "passage_review_state": "reviewed_source_note",
+          "passage_refs": ["sources/source_notes/deterministic_capability_compilation.md"],
+          "passage_review_note": "Reviewed for artifact identity, transformation lineage, verifier boundaries, and residual-preserving compilation concepts."
         }
       ],
       "proof_targets": [

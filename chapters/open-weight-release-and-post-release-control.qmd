@@ -27,9 +27,9 @@ open_evidence_gaps:
 | Source state | passage-reviewed source notes |
 | Test state | release-dossier and mutation tests planned; no actual release authorized |
 
-Source loading state: all assigned source notes were reviewed for bounded
-mechanism, evidence, failure, and nonclaim use; external results remain
-source-reported.
+Source loading state for open-weight material: review covers current risk synthesis, malicious adaptation,
+weight-security proposals, and scaling-policy comparisons. Those findings do
+not authorize any ASI Stack release.
 
 ## Drafting guardrail
 
@@ -43,30 +43,37 @@ can later be recalled.
 ::: {.asi-human-only}
 ## Human Reading Path
 
-Weight custody asks who may access a model while the owner still controls the
+Weight custody asks who may access a model while the owner controls the
 artifact. Open-weight release asks what happens when that control is
-deliberately surrendered. The two decisions are adjacent but not equivalent.
+deliberately surrendered. The decisions are adjacent but not equivalent.
 
-Before release, an operator can deny a credential, patch a service, monitor
-requests, change a system prompt, rate-limit a user, or shut down an endpoint.
-After unrestricted publication, third parties can copy, fine-tune, merge,
-quantize, rehost, and redistribute the weights. Some will build valuable tools
-the original developer never could. Some may remove safeguards. The original
-publisher can issue better weights and warnings, but cannot assume every copy
-will update.
+Before release, an operator can deny access, patch a service, monitor requests,
+rate-limit use, or shut down an endpoint. After unrestricted publication,
+third parties can copy, fine-tune, merge, quantize, rehost, and redistribute
+the weights. Some may remove safeguards. The publisher can issue better
+weights and warnings, but cannot assume every copy will update.
 
-The governing artifact is therefore an irreversible-release case. It evaluates
-the candidate and strong adversarial derivatives against the current
-accessible frontier, accounts for benefits and cumulative risk, records what
-controls survive weight access, and defines honest post-release duties. Its
-most important field is a non-authority: no universal recall.
+An irreversible-release case compares the candidate and adversarial
+derivatives with no release, hosted inference, research access, delayed
+publication, and capability-reduced artifacts. Benefits,
+malicious fine-tuning, proliferation, downstream observability, response
+capacity, and foregone uses remain visible together.
+
+Some controls survive publication: signed official lineage, safer variants,
+incident channels, public warnings, patches, platform cooperation, and lawful
+action within a real jurisdiction. Service-side prompts, central rate limits,
+universal telemetry, and unilateral revocation of copied bytes do not. No
+release record, license, model card, signature, or future policy can promise
+universal recall of usable weights already transferred to independent
+holders.
 :::
 
 ## Problem
 
 The ASI Stack's custody chapter protects weights, keys, and loading authority.
 That is the correct owner for restricted artifacts. It becomes conceptually
-misleading once a release intentionally enables unlimited copying.
+misleading once a release intentionally enables unlimited copying across
+independent legal and technical domains.
 
 The International AI Safety Report 2026 states the asymmetric issue plainly:
 open-weight systems can support research and commercial benefit, especially
@@ -314,7 +321,8 @@ harm.
 - The accessible comparator and decision date are explicit and expiring.
 - Benefits, risks, access distribution, costs, and affected parties remain
   visible together.
-- No post-release action is called universal recall or revocation.
+- No post-release action is called universal recall or revocation, and every
+  remaining influence mechanism names its actual reach and dependency.
 
 ## Failure modes
 
@@ -353,7 +361,7 @@ Compare no release, gated research access, hosted API, delayed release, and
 full weights under the same utility and risk tasks. Record successful and
 failed variants, evaluator blind spots, time and cost, downstream
 observability, and which proposed responses still have a real enforcement
-path.
+path. Preserve the complete option comparison and residual ledger.
 
 ## Beyond the State of the Art
 
@@ -381,7 +389,11 @@ The state-of-the-art objective is calibrated release governance under genuine
 irreversibility. Success means better choices among access forms, earlier
 detection of dangerous adaptation, more useful safer alternatives, and faster
 response at acceptable cost—not a fictitious global kill switch for published
-weights.
+weights. This remains a research target until prospective natural release
+cases, competent derivative elicitation, independent review, and post-release
+measurement establish their bounded effects.
+
+Planned formalization hook: `lean:open-weight-release-and-post-release-control.admission_boundary` remains a process-contract target; it does not claim an implemented theorem.
 
 ## Codex test plan
 
@@ -405,11 +417,20 @@ weights.
 | `ext_rand_model_weight_security_2024` | pre-release weight threat and defense context | custody evidence does not survive public release |
 | `ext_anthropic_responsible_scaling_policy_3_4_2026` | threshold and safeguard-policy comparator | provider policy, not independent validation |
 
+### Manifest source assignment reconciliation
+
+These rows keep Open-Weight Release and Post-Release Control's manifest assignments visible at their recorded review boundary. Passage review does not establish local reproduction, performance, safety, deployment, or support-state movement.
+
+| Source | Intake role | Boundary |
+|---|---|---|
+| `precision_contract` | Metadata-first comparator: The Precision Contract: A Functional Rate–Distortion Theory for Behavior-Preserving Neural Computation. Corben-authored July 2026 theoretical and systems paper replacing universal per-weight precision questions with a contract-relative functional rate-distortion problem over complete executable descriptions. It proposes representation canonicalization, protected-behavior contracts, precision fields, progressive base/residual encoding, dynamic routing, full physical and assurance-cost accounting, a Functional Precision Compiler, and scoped precision certificates. Existing chapters are upgraded first; no universal bit bound, implemented compiler, preserved-behavior result, efficiency result, certificate validity, support promotion, SOTA, AGI, or ASI claim is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+
+<!-- manifest-source-reconciliation:end -->
 ## Summary
 
 Open-weight release is not simply weak custody. It is a distinct, usually
 irreversible transition that replaces direct control with evidence,
-coordination, norms, safer alternatives, and societal response. The chapter
+coordination, norms, safer alternatives, and societal response. This release layer
 preserves both sides of that trade: open weights can distribute real benefits,
 and post-release governance must never pretend it can recall every copy.
 
@@ -419,7 +440,9 @@ who gains and bears risk, what alternatives were compared, which safeguards
 remain technically enforceable, how downstream evidence will be collected,
 and who owns incidents after direct control ends. Missing answers remain
 residuals; openness, a license, or a model card cannot supply them by
-assertion.
+assertion. The decision must also retain rejected access forms, distributional
+effects, cumulative ecosystem risk, and the controls that cease to exist after
+the bytes leave custody.
 
 ## Handoff
 

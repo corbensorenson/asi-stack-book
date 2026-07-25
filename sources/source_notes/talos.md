@@ -62,6 +62,7 @@ Talos treats AI work as a labor operating system: typed jobs, deterministic cont
 - `human-factors-and-meaningful-control-in-oversight`
 - `governed-operations-incident-command-and-graceful-degradation`
 - `human-ai-communication-persuasion-and-epistemic-security` (Human-AI Communication, Persuasion, and Epistemic Security)
+- `societal-resilience-and-misuse-defense` (Societal Resilience and Misuse Defense)
 
 ## Claims To Add Or Update
 

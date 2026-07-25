@@ -55,6 +55,7 @@ Benchmaxxing frames AI development as a performance ratchet: evaluate against a 
 - `prototype-roadmap` (Prototype Roadmap)
 - `living-book-methodology` (Living Book Methodology)
 - `open-research-agenda-and-bibliography-plan` (Open Research Agenda and Bibliography Plan)
+- `dangerous-capability-domains-and-misuse-uplift` (Dangerous Capability Domains and Misuse Uplift)
 
 ## Claims To Add Or Update
 

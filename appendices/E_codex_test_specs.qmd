@@ -692,14 +692,14 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 325 |
+| Proof targets covered by triage | 329 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
 | implemented | 310 |
-| planned | 15 |
+| planned | 19 |
 
 ### Coverage by Route
 
@@ -707,4 +707,4 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 |---|---|---|---:|
 | implemented | formal-invariant | lean-candidate | 310 |
 | planned | formal-invariant | lean-candidate | 5 |
-| planned | process-contract | policy-model-first | 10 |
+| planned | process-contract | policy-model-first | 14 |

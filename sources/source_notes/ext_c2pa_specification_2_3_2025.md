@@ -1,5 +1,9 @@
 # C2PA Content Credentials Technical Specification 2.3
 
+| Field | Value |
+|---|---|
+| Source ID | `ext_c2pa_specification_2_3_2025` |
+
 ## Source identity
 
 - Source ID: `ext_c2pa_specification_2_3_2025`
@@ -16,7 +20,7 @@ Credentials can preserve a verifiable chain of claims about origin and editing
 history when producers, tools, platforms, trust stores, and viewers retain and
 validate the credential.
 
-## Mechanisms used by the book
+## Mechanisms
 
 - signed manifests and assertions;
 - content bindings that associate a manifest with an asset;
@@ -25,7 +29,7 @@ validate the credential.
 - validation status and explicit failure handling;
 - update manifests and provenance continuity through transformations.
 
-## Evidence and limitations
+## Evidence
 
 The specification establishes data structures, algorithms, and validation
 semantics. It does not prove that a depicted event happened, that a claim is
@@ -35,7 +39,7 @@ history under a trust policy, not proof of semantic truth. Missing credentials
 do not prove synthetic origin, and present credentials do not prove
 non-deception.
 
-## Failure modes surfaced
+## Failure Modes
 
 - metadata stripping or unsupported transformations;
 - broken ingredient chains;
@@ -46,15 +50,22 @@ non-deception.
 - trust-list fragmentation;
 - credential presence used as a universal authenticity score.
 
-## Chapter routing
+## Book Chapters Supported
 
 - Primary: `content-authenticity-watermarking-and-synthetic-media-integrity`
 - Supporting: `ai-supply-chain-integrity-and-lifecycle-provenance`
 
-## Open questions
+## Claims To Add Or Update
+
+- Content provenance should preserve signed claims, bindings, ingredients,
+  actions, trust policy, validation state, transformations, and explicit
+  lineage breaks.
+- Credential validity, semantic truth, consent, authorship legitimacy, and
+  harmlessness remain separate claims.
+
+## Open Questions
 
 - How should provenance survive lossy and cross-platform transformation?
 - How should systems present partial, invalid, or conflicting histories?
 - How should provenance, watermark, detector, and contextual evidence combine
   without collapsing into one brittle truth score?
-

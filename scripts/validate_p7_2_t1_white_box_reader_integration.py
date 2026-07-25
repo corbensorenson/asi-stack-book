@@ -45,6 +45,8 @@ def errors(data: dict[str, Any]) -> list[str]:
     if chapter_record is None:
         return out + ["manifest chapter missing"]
     expected_sources = audit["source_crosswalk"]["primary_external_source_ids"] + audit["source_crosswalk"]["supporting_corben_source_ids"]
+    if audit["source_crosswalk"].get("assigned_source_count") != len(expected_sources):
+        out.append("audited source denominator drifted")
     if chapter_record.get("source_ids") != audit["source_crosswalk"]["supporting_corben_source_ids"] + audit["source_crosswalk"]["primary_external_source_ids"]:
         out.append("manifest source order or denominator drifted")
     inventory_by_id = {row["id"]: row for row in data["inventory"]}
@@ -159,7 +161,7 @@ def main() -> None:
     if failures:
         raise SystemExit("P7.2-T1 reader integration failed:\n - " + "\n - ".join(failures))
     print(
-        "P7.2-T1 reader integration passed: 1 terminal argument-level chapter, 8 source "
+        "P7.2-T1 reader integration passed: 1 terminal argument-level chapter, 10 source "
         "mappings, 2 implemented public proof targets, 8 theorem declarations, 2 method "
         "families, 7 competence gates, protected outcomes closed, 12 integration mutations "
         "rejected; support effect none."

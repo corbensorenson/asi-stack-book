@@ -27,9 +27,9 @@ open_evidence_gaps:
 | Current regulatory context | EU Article 50 transparency obligations are stated by the Commission to apply from 2 August 2026, subject to scope and transition details |
 | Local evidence | architecture and planned transformation harness only |
 
-Source loading state: all assigned source notes were reviewed for bounded
-mechanism, evidence, failure, and nonclaim use; external results remain
-source-reported.
+Source loading state for authenticity material: review covers C2PA 2.3, current EU transparency guidance, and the 2026
+international risk synthesis. Standard conformance, legal interpretation, and
+measured robustness remain separate claims.
 
 ## Drafting guardrail
 
@@ -42,21 +42,28 @@ machine oracle for truth, consent, legality, or social meaning.
 ::: {.asi-human-only}
 ## Human Reading Path
 
-The book already tracks where models, code, data, and releases came from. That
-is supply-chain provenance. This chapter follows a different object: the text,
-image, audio, video, or multimodal artifact produced by a system and changed
-by later tools.
+Supply-chain provenance tracks where models, code, data, and releases came
+from. Media integrity follows a different object: the text, image, audio,
+video, or multimodal artifact produced by a system, edited by later tools, and
+distributed through channels that may strip or rewrite its evidence.
 
 Six signal families matter: signed provenance, watermarking, fingerprinting,
 statistical detection, visible disclosure, and contextual verification. Each
-answers a different question. Their errors also differ. A robust design keeps
-the signals separate, preserves transformation history, shows uncertainty, and
-offers a correction or remedy route.
+answers a different question and fails differently. A signature identifies an
+assertion without proving it true. A watermark may fail after transformation,
+a detector may misclassify unfamiliar material, and a visible label may remain
+inaccessible or detached from the asset.
 
-The reader should remember two asymmetric rules. Missing provenance does not
-prove that content is synthetic. Valid provenance does not prove that content
-is true. The useful system is an authenticity envelope that helps people and
-institutions reason better despite those limits.
+An authenticity envelope keeps those signals separate while joining identity,
+signer policy, content binding, edit history, detection, disclosure, consent,
+uncertainty, disputes, and remedy. Editing either preserves a verified link or
+creates an explicit lineage break.
+
+Two asymmetric rules govern every downstream decision. Missing provenance does
+not prove synthetic origin, and valid provenance does not prove semantic
+truth. Layered evidence improves attribution, disclosure, correction, and
+accountability only when breaks, conflicts, false positives, and inaccessible
+labels remain as visible as successful validations.
 :::
 
 ## Problem
@@ -65,6 +72,7 @@ Generative systems can create or modify media at scale, but downstream readers
 often see only the final bytes. Model identity, generation policy, edits,
 consent, source ingredients, and disclosure can disappear during export,
 re-encoding, screenshotting, platform upload, or deliberate laundering.
+That loss changes what any later observer may honestly infer.
 
 The C2PA specification supplies a concrete interoperability mechanism: signed
 manifests, assertions, ingredients, actions, content bindings, and validation.
@@ -371,7 +379,11 @@ The state-of-the-art outcome is not perfect synthetic-media detection. It is a
 degrading-honestly evidence network that improves attribution and correction,
 reduces false certainty, survives ordinary transformations at measured rates,
 and gives affected people practical contestation without creating a universal
-identity or surveillance layer.
+identity or surveillance layer. This remains a research target until
+interoperable tools, adversarial transformations, representative users, and
+real remedy pathways have been evaluated together.
+
+Planned formalization hook: `lean:content-authenticity-watermarking-and-synthetic-media-integrity.admission_boundary` remains a process-contract target; it does not claim an implemented theorem.
 
 ## Codex test plan
 
@@ -393,6 +405,15 @@ identity or surveillance layer.
 | `ext_eu_article_50_transparency_guidelines_2026` | current provider/deployer, marking, deepfake, and disclosure context | not legal advice, scope decision, or compliance proof |
 | `ext_international_ai_safety_report_2026` | synthetic-media risk, detection, disclosure, correction, education, and resilience synthesis | no local detector or intervention result |
 
+### Manifest source assignment reconciliation
+
+These rows keep Content Authenticity, Watermarking, and Synthetic Media Integrity's manifest assignments visible at their recorded review boundary. Passage review does not establish local reproduction, performance, safety, deployment, or support-state movement.
+
+| Source | Intake role | Boundary |
+|---|---|---|
+| `deterministic_capability_compilation` | Metadata-first comparator: Deterministic Capability Compilation: A Capability-Preserving Ladder from Executable Scaffolds to Governed Adaptive Agents. Corben-authored July 2026 architecture and research program for compiling executable scaffolds into contract-bound experts and linked Neural Capability Objects while retaining semantic obligation mass balance, candidate-specific translation validation, fallback, residual escrow, authority ceilings, reification, and effect-complete recovery. Existing chapters are upgraded first; no foundry implementation, learned-capability result, preservation result, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+
+<!-- manifest-source-reconciliation:end -->
 ## Summary
 
 Synthetic-media integrity is not solved by an indestructible watermark because
@@ -405,9 +426,12 @@ its coverage.
 Readers should therefore ask what exact claim was signed, how it binds to the
 asset, which edits and distribution steps remain linked, what auxiliary signal
 was measured under which threshold, who set the trust policy, what a missing
-signal means, and how a harmed person can correct the record. The chapter’s
+signal means, and how a harmed person can correct the record. The authenticity
+layer’s
 answer is layered evidence with visible breaks—not a single badge that decides
-truth, human authorship, consent, or harmlessness.
+truth, human authorship, consent, or harmlessness. It also keeps false
+attribution, inaccessible disclosure, signer compromise, and unresolved
+conflict visible to every downstream consumer.
 
 ## Handoff
 

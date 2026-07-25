@@ -203,6 +203,7 @@ behavior cannot be specified and measured competently.
 | `executable-specifications-and-lean-proof-envelope` | Treats quantization and compression as program transformations with explicit refinement obligations from reference behavior to bit-exact execution. | Finite formal refinement cannot prove evaluator adequacy, protected-property completeness, or natural-world safety. |
 | `model-weight-custody-and-hardware-roots-of-trust` | Extends derivative closure to quantized shards, codebooks, residuals, decoders, kernels, caches, and exact platform-bound identities. | Custody and identity do not prove behavioral equivalence. |
 | `the-efficient-asi-hypothesis` | Positions precision as one adaptively routed resource alongside model choice, search, context, verification, and fallback. | The paper does not establish an efficiency advantage. |
+| `open-weight-release-and-post-release-control` | Treats precision variants, residuals, decoders, and derivative artifacts as release-scope objects whose governance must survive transformation. | A precision contract does not make an irreversible public release recallable. |
 
 ## Chapter Decision
 

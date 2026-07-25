@@ -1,5 +1,9 @@
 # EU Article 50 Transparency Guidelines
 
+| Field | Value |
+|---|---|
+| Source ID | `ext_eu_article_50_transparency_guidelines_2026` |
+
 ## Source identity
 
 - Source ID: `ext_eu_article_50_transparency_guidelines_2026`
@@ -16,7 +20,7 @@ content. The Commission states that these obligations apply from 2 August
 2026, with scope, exemptions, and transitional details that must be checked
 against the exact provider, deployer, system, and content.
 
-## Mechanisms used by the book
+## Mechanisms
 
 - machine-readable marking by providers;
 - visible labeling by deployers in specified cases;
@@ -25,7 +29,7 @@ against the exact provider, deployer, system, and content.
 - evidence of compliance through appropriate technical and organizational
   measures.
 
-## Evidence and limitations
+## Evidence
 
 This is current official guidance, not legal advice. It does not establish that
 any project is within or outside scope, that C2PA or a watermark alone is
@@ -33,7 +37,7 @@ compliant, or that disclosure prevents deception. The underlying law,
 guidelines, code, and transitional measures can change and must be checked at
 decision time.
 
-## Failure modes surfaced
+## Failure Modes
 
 - treating every synthetic artifact as legally identical;
 - confusing machine-readable marking with visible disclosure;
@@ -42,15 +46,21 @@ decision time.
 - stale compliance logic after guidance changes;
 - technical marking presented as semantic truth.
 
-## Chapter routing
+## Book Chapters Supported
 
 - Primary: `content-authenticity-watermarking-and-synthetic-media-integrity`
 - Supporting: `institutions-international-coordination-and-public-legitimacy`
 
-## Open questions
+## Claims To Add Or Update
+
+- Provider marking, deployer disclosure, machine-readable evidence, visible
+  labeling, and legal scope should remain separately recorded.
+- Technical marking alone establishes neither legal compliance nor effective
+  user comprehension.
+
+## Open Questions
 
 - Which combinations of marking, labeling, and recordkeeping are adequate for
   each deployment?
 - How should cross-jurisdictional and platform transformations preserve duties?
 - What evidence demonstrates user comprehension rather than label presence?
-

@@ -513,10 +513,12 @@ decomposed the manuscript into thousands of claim atoms, reviewed every current
 chapter, rationalized the proof library, ran targeted campaigns, and reconciled
 the prose with every accepted failure and boundary.
 
-The resulting picture is not a triumphant wall of green checks. Of 3,745 current
-atoms, 3,698 remain blocked after full attempt, 36 are retained at their prior
-state, nine were narrowed, and two bounded subordinate atoms earned limited
-promotion. All 55 chapter-core claims remain at argument. <!-- claim: XA-20 -->
+The resulting picture is not a triumphant wall of green checks. In the frozen
+activation-era ledger, 3,745 atoms were adjudicated: 3,698 remained blocked
+after full attempt, 36 retained their prior state, nine were narrowed, and two
+bounded subordinate atoms earned limited promotion. The living book has since
+grown to 80 chapters, and all 80 current chapter-core claims remain at
+argument. <!-- claim: XA-20 -->
 
 That denominator is sobering and useful. Many atoms are design obligations that
 need richer implementations, causal experiments, external reproduction, or

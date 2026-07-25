@@ -38,6 +38,10 @@ POST_ACTIVATION_EXPANSION_IDS = {
     "human-ai-organizations-delegation-and-accountability",
     "multi-agent-dynamics-collective-intelligence-and-systemic-risk",
     "inner-alignment-mesa-optimization-and-learned-objective-integrity",
+    "dangerous-capability-domains-and-misuse-uplift",
+    "societal-resilience-and-misuse-defense",
+    "open-weight-release-and-post-release-control",
+    "content-authenticity-watermarking-and-synthetic-media-integrity",
 }
 POST_ACTIVATION_FORMAL_TARGETS = {"lean:corrigibility.agency.generic_countermodel_routes"}
 POST_ACTIVATION_ATOM_IDS = {

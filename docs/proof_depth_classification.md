@@ -12,7 +12,7 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 325 |
+| Proof targets in manifest | 329 |
 | Lean modules scanned | 110 |
 | Theorem declarations classified | 1370 |
 | Direct/projection-style theorem declarations | 230 |
@@ -110,7 +110,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/MoECOTRuntime.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ModelWeightCustody.lean` | model-weight-custody-and-hardware-roots-of-trust | 8 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/MultiAgentDynamics.lean` | multi-agent-dynamics-collective-intelligence-and-systemic-risk | 1 | 0 | 0 | 0 | 0 | derived/decomposed by classifier |
-| `lean/AsiStackProofs/NoDeferralAdmission.lean` | adversarial-machine-learning-and-model-attack-surface, ai-deployment-transition-distribution-and-human-agency, autonomous-replication-proliferation-and-containment, durable-semantic-memory-and-knowledge-lattices, governed-objective-formation-value-learning-and-goal-integrity, human-ai-communication-persuasion-and-epistemic-security, institutions-international-coordination-and-public-legitimacy, learning-theory-generalization-and-scaling-science, physical-compute-infrastructure-energy-and-environmental-constraints, scientific-discovery-and-experimental-governance | 10 | 0 | 0 | 0 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/NoDeferralAdmission.lean` | adversarial-machine-learning-and-model-attack-surface, ai-deployment-transition-distribution-and-human-agency, autonomous-replication-proliferation-and-containment, content-authenticity-watermarking-and-synthetic-media-integrity, dangerous-capability-domains-and-misuse-uplift, durable-semantic-memory-and-knowledge-lattices, governed-objective-formation-value-learning-and-goal-integrity, human-ai-communication-persuasion-and-epistemic-security, institutions-international-coordination-and-public-legitimacy, learning-theory-generalization-and-scaling-science, open-weight-release-and-post-release-control, physical-compute-infrastructure-energy-and-environmental-constraints, scientific-discovery-and-experimental-governance, societal-resilience-and-misuse-defense | 14 | 0 | 0 | 0 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ObservationTrust.lean` | perception-sensor-fusion-and-observation-trust | 1 | 0 | 0 | 0 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/OpenEndedImprovement.lean` | unmapped | 0 | 7 | 0 | 7 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/OpenEndedImprovementRefinement.lean` | open-ended-improvement-engines | 7 | 5 | 0 | 2 | 3 | manual review |

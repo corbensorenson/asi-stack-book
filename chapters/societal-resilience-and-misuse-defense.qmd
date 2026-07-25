@@ -27,9 +27,9 @@ open_evidence_gaps:
 | Evidence available | current international taxonomies, incident-response standard, worked misuse-safety-case method |
 | Evidence absent | deployed network, causal harm reduction, universal coverage, or public legitimacy result |
 
-Source loading state: all assigned source notes were reviewed for bounded
-mechanism, evidence, failure, and nonclaim use; external results remain
-source-reported.
+Source loading state for resilience material: review covers the current taxonomies, incident-response
+lifecycle, and worked misuse-safeguard case. None reports a deployment or
+population-protection result for this architecture.
 
 ## Drafting guardrail
 
@@ -43,22 +43,28 @@ but does not excuse, prevention.
 ::: {.asi-human-only}
 ## Human Reading Path
 
-Even a strong model safeguard will sometimes fail. Harm can also begin outside
-the model provider: a fine-tuned open model, stolen account, compromised tool,
-or ordinary non-AI method can enter the same social system. Defense therefore
-needs an outer layer.
+Even a strong model safeguard can fail under adaptive pressure, stolen access,
+distribution shift, or a new toolchain. Harm may also begin outside the model
+provider through an open derivative, compromised account, ordinary malware,
+deceptive-media workflow, or non-AI method. Defense needs an outer layer that
+continues after prevention fails and responsibility crosses organizational
+boundaries.
 
-Societal resilience has four verbs. **Resist** makes harmful action harder.
-**Absorb** keeps essential functions and support available during an incident.
-**Recover** contains damage, helps affected people, corrects records, and
-restores services. **Adapt** changes defenses, institutions, and incentives
-after learning from the event.
+Societal resilience has four verbs. **Resist** makes harmful action harder
+without denying legitimate access. **Absorb** keeps essential functions,
+trusted communication, and human support available. **Recover** contains
+damage, helps affected people, corrects records, restores services, and
+provides remedy. **Adapt** changes defenses, institutions, incentives, and
+exercises after failures and near misses.
 
-The chapter's main artifact is a federated incident envelope. It lets
-providers, platforms, infrastructure operators, public agencies, researchers,
-civil society, and affected communities refer to the same incident without
-sharing unlimited data or surrendering their own authority. Its success is
-measured in harm and recovery, not just classifier accuracy or takedown count.
+A federated incident envelope lets providers, platforms, infrastructure
+operators, public agencies, researchers, civil society, and affected
+communities refer to the same event without sharing unlimited data or
+surrendering distinct authority. It records exposure, evidence classes,
+handoffs, privacy limits, harm, recovery, burden, appeals, and residuals.
+Success means avoided and repaired harm across the real population—not merely
+classifier accuracy, takedown count, provider uptime, or a quickly closed
+internal ticket.
 :::
 
 ## Problem
@@ -335,7 +341,7 @@ inside an average response time.
 - Resistance, absorption, recovery, and adaptation retain separate measures.
 - False intervention and unequal coverage remain in every denominator.
 - Public reporting preserves accountability while withholding victim data and
-  reusable attack detail.
+  reusable attack detail, and every transfer retains a named residual owner.
 
 ## Failure modes
 
@@ -353,6 +359,8 @@ victim exclusion, jurisdiction shopping, political abuse, data hoarding,
 underreporting, duplicate incidents, incompatible severity, responder burnout,
 unfunded mandates, inaccessible support, slow correction, patch nonadoption,
 defense-tool dual use, and success metrics detached from harm.
+Correlated dependence on one provider, detector, communication channel, or
+funding source can also turn nominal federation into one brittle failure domain.
 
 ## Minimum Viable Implementation
 
@@ -400,7 +408,11 @@ The advance over conventional incident response is a continuously tested
 social control plane whose unit of success is avoided and repaired harm across
 the real exposure denominator. It remains contestable, expires stale
 authorities, and treats civil-liberties cost and institutional capacity as
-joint outcomes rather than externalities.
+joint outcomes rather than externalities. This is a research target; no current
+tabletop, source synthesis, or record-validity check demonstrates population
+protection.
+
+Planned formalization hook: `lean:societal-resilience-and-misuse-defense.admission_boundary` remains a process-contract target; it does not claim an implemented theorem.
 
 ## Codex test plan
 
@@ -422,21 +434,32 @@ joint outcomes rather than externalities.
 | `ext_nist_incident_response_2025` | preparation, detection, response, recovery, and improvement lifecycle | general cyber guidance, not complete AI societal defense |
 | `ext_aisi_misuse_safeguards_safety_case_2026` | link from safeguard bypass and uplift to deployment monitoring | example argument, not real-world harm reduction |
 
+### Manifest source assignment reconciliation
+
+These rows keep Societal Resilience and Misuse Defense's manifest assignments visible at their recorded review boundary. Passage review does not establish local reproduction, performance, safety, deployment, or support-state movement.
+
+| Source | Intake role | Boundary |
+|---|---|---|
+| `talos` | Metadata-first comparator: Talos Protocol. AI labor OS. Deterministic cognitive manufacturing, typed jobs, control planes, auditability, tool isolation. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+
+<!-- manifest-source-reconciliation:end -->
 ## Summary
 
-The stack needs an outer defense because model controls and internal incident
+An outer defense is necessary because model controls and internal incident
 command end at organizational boundaries while harms do not. Societal
 resilience joins prevention with continuity, recovery, adaptation, affected-
 party rights, and cross-organization evidence. Its unit of success is reduced
 and repaired harm under explicit coverage—not a green classifier dashboard.
 
-The chapter therefore asks not only whether an alert fired, but whether the
+This resilience layer therefore asks not only whether an alert fired, but whether the
 right organization could act, whether help reached the affected person,
 whether essential services continued, whether a false intervention was
 reversed, whether evidence was shared lawfully, and whether the next attack
 became harder. Resilience is the measured capacity to preserve and restore
 social function under adaptation, never a rhetorical license to accept
-preventable misuse.
+preventable misuse. Its evidence must include uncovered communities, delayed
+recovery, false interventions, rights burdens, and unresolved residual harm,
+not only the incidents that participating organizations successfully closed.
 
 ## Handoff
 

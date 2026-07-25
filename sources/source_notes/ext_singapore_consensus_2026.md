@@ -1,5 +1,9 @@
 # The 2026 Singapore Consensus on Global AI Safety Research Priorities
 
+| Field | Value |
+|---|---|
+| Source ID | `ext_singapore_consensus_2026` |
+
 ## Source identity
 
 - Source ID: `ext_singapore_consensus_2026`
@@ -17,7 +21,7 @@ autonomy, and AI-R&D domains; it also treats openly released models,
 multi-agent monitoring, incident reporting, and defense-favoring capabilities
 as first-class research problems.
 
-## Mechanisms and distinctions used by the book
+## Mechanisms
 
 - A threat model must name the actor, access, target, capability, propensity,
   pathway, and consequence rather than treating “dangerous capability” as one
@@ -33,7 +37,7 @@ as first-class research problems.
 - Agentic systems require identity, authentication, runtime monitoring,
   intervention, multi-agent red teaming, and incident reporting.
 
-## Evidence and limitations
+## Evidence
 
 This is a consensus research-priority synthesis produced by more than one
 hundred contributors across thirteen countries. It supplies a current taxonomy
@@ -41,7 +45,7 @@ and research agenda. It does not demonstrate that a listed safeguard works,
 that any threat threshold is calibrated, that the ASI Stack covers every
 domain, or that the book's proposed contracts are safe or complete.
 
-## Failure modes surfaced
+## Failure Modes
 
 - stale threat models;
 - benchmark capability mistaken for real-world uplift;
@@ -52,18 +56,24 @@ domain, or that the book's proposed contracts are safe or complete.
 - offensive capabilities advancing faster than defensive evaluation;
 - autonomous or multi-agent misuse escaping single-session monitoring.
 
-## Chapter routing
+## Book Chapters Supported
 
 - Primary: `dangerous-capability-domains-and-misuse-uplift`
 - Primary: `societal-resilience-and-misuse-defense`
 - Supporting: `open-weight-release-and-post-release-control`
 - Supporting: `capability-thresholds-and-deployment-commitments`
 
-## Open questions
+## Claims To Add Or Update
+
+- Dangerous capability, propensity, uplift, safeguards, control, and societal
+  resilience need distinct owners and explicit handoffs.
+- Open release and multi-agent use require malicious adaptation, runtime
+  monitoring, incident reporting, and defense-favoring capability analysis.
+
+## Open Questions
 
 - Which uplift measures remain valid across expertise levels and tool access?
 - How can high-hazard evaluations avoid creating reusable operational harm?
 - Which societal-resilience interventions transfer across languages,
   jurisdictions, and infrastructure?
 - How should defensive benefit and offensive enablement be measured jointly?
-

@@ -14,6 +14,7 @@ ADEQUACY = ROOT / "docs" / "proof_adequacy_review.md"
 MARKER_START = "<!-- NO-DEFERRAL-PROOF-ADEQUACY:START -->"
 MARKER_END = "<!-- NO-DEFERRAL-PROOF-ADEQUACY:END -->"
 CHAPTER_IDS = {
+    "dangerous-capability-domains-and-misuse-uplift",
     "human-ai-communication-persuasion-and-epistemic-security",
     "governed-objective-formation-value-learning-and-goal-integrity",
     "institutions-international-coordination-and-public-legitimacy",
@@ -24,6 +25,9 @@ CHAPTER_IDS = {
     "learning-theory-generalization-and-scaling-science",
     "physical-compute-infrastructure-energy-and-environmental-constraints",
     "scientific-discovery-and-experimental-governance",
+    "societal-resilience-and-misuse-defense",
+    "open-weight-release-and-post-release-control",
+    "content-authenticity-watermarking-and-synthetic-media-integrity",
 }
 
 

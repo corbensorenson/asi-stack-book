@@ -638,6 +638,39 @@ Lean proof targets:
 | `lean:failure.recurrence.escalation_route` | `AsiStackProofs.FailureModes` | Modeled failure recurrence and receipt review routes missing failure class, boundary, receipt, owner, containment, residual, learning path, normalization guard, review escalation, quarantine, evidence-transition, and non-claim-boundary records to explicit outcomes. | implemented |
 | `lean:failure.taxonomy.detector_probe_bridge` | `AsiStackProofs.FailureModes` | The deterministic synthetic failure-taxonomy detector probe includes authority-creep and Goodhart/evaluator-drift incidents, rejected negative controls, residual boundaries, no support-state effect, and explicit non-claim boundaries. | implemented |
 
+### Dangerous Capability Domains and Misuse Uplift
+
+Stable ID: `dangerous-capability-domains-and-misuse-uplift`
+
+Chapter job: Separate dangerous-capability measurement by domain, actor, access, task horizon, elicitation regime, safeguard state, and uplift over a realistic baseline.
+
+Core claim: Dangerous-capability authority should be based on a versioned domain threat model and an uplift dossier that separates latent capability, elicited performance, propensity, safeguard bypass, actor uplift, and realized harm; preserves expertise, tools, assistance, attempts, uncertainty, and sensitive-detail boundaries; and routes only bounded findings into thresholds, release, monitoring, and resilience decisions.
+
+Source loading queue:
+
+| Role | Source IDs | Loading instruction |
+|---|---|---|
+| Evaluation foundations | `ext_model_evaluation_extreme_risks_2023`, `ext_openai_preparedness_framework_2025` | Use for dangerous-capability evaluation structure and deployment-linked threshold practice; do not treat framework publication as a local model result. |
+| Current international synthesis | `ext_singapore_consensus_2026`, `ext_international_ai_safety_report_2026` | Use for the contemporary domain taxonomy, evidence limits, and international state of knowledge. |
+| Release and safeguard comparators | `ext_openai_worst_case_open_weight_risks_2025`, `ext_aisi_misuse_safeguards_safety_case_2026`, `ext_anthropic_responsible_scaling_policy_3_4_2026`, `ext_aisi_frontier_ai_trends_2025` | Use for open-weight threat modeling, safeguard cases, scaling-policy thresholds, and frontier trends; preserve organization-specific assumptions and dates. |
+
+
+| Manifest assignment reconciliation | `benchmaxxing` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+Draft arc:
+
+- Distinguish dangerous capability, propensity, actor uplift, safeguard bypass, and realized harm rather than compressing them into one score.
+- Define domain dossiers for CBRN, cyber, autonomy and replication, persuasion and manipulation, and AI research and development.
+- Bind every result to the exact model, access mode, scaffolding, expertise, tools, attempts, time horizon, baseline, evaluator, uncertainty, and expiry.
+- Route bounded conclusions to capability thresholds, release decisions, custody, incident monitoring, and societal-resilience owners without transferring their authority.
+- Preserve information-hazard controls and a maximum-inference field so public reporting does not reveal operational misuse recipes.
+- Require prospective evaluation, adaptive elicitation, realistic baseline comparisons, independent challenge, and temporal renewal before any argument-level claim may seek stronger support.
+
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:dangerous-capability-domains-and-misuse-uplift.admission_boundary` | `AsiStackProofs.NoDeferralAdmission` | A finite dangerous-capability dossier may hand off only when model, threat, cohort, access, evaluator, uncertainty, expiry, and maximum inference are present; no theorem establishes dangerous capability or safety. | planned |
+
 ### Evidence States and Claim Discipline
 
 Stable ID: `evidence-states-and-claim-discipline`
@@ -1533,6 +1566,39 @@ Lean proof targets:
 | `lean:institutions-international-coordination-and-public-legitimacy.admission_boundary` | `AsiStackProofs.NoDeferralAdmission` | A finite Institutions, International Coordination, and Public Legitimacy record may hand off only when identity, authority, version, required checks, and residual ownership are present; no theorem grants empirical effectiveness or release authority. | planned |
 <!-- NO-DEFERRAL-OUTLINE-ENTRY:institutions-international-coordination-and-public-legitimacy:END -->
 
+### Societal Resilience and Misuse Defense
+
+Stable ID: `societal-resilience-and-misuse-defense`
+
+Chapter job: Govern the defensive systems that resist, absorb, detect, communicate, recover from, and adapt after AI-enabled misuse at social scale.
+
+Core claim: Societal misuse defense should be operated as a domain-specific resist-absorb-recover-adapt network with shared incident identity, lawful minimal telemetry, harmed-party routes, cross-organization escalation, defensive service levels, evidence-preserving response, correction, and residual ownership; prevention metrics alone establish neither resilience nor acceptable harm.
+
+Source loading queue:
+
+| Role | Source IDs | Loading instruction |
+|---|---|---|
+| Incident lifecycle | `ext_nist_incident_response_2025` | Use for preparation, detection, response, recovery, and improvement structure; test rather than assume transfer to AI-enabled societal misuse. |
+| Current threat and resilience synthesis | `ext_singapore_consensus_2026`, `ext_international_ai_safety_report_2026` | Use for current cross-domain risks, institutional dependencies, and resilience needs while preserving uncertainty. |
+| Safeguard case comparator | `ext_aisi_misuse_safeguards_safety_case_2026` | Use for structured defense claims and their limitations; do not infer population protection from a safeguard case. |
+
+
+| Manifest assignment reconciliation | `talos` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+Draft arc:
+
+- Define resilience over exposed populations, essential institutions, time-to-detection, service continuity, recovery, adaptation, burden, and residual harm.
+- Build a layered resist-absorb-recover-adapt architecture spanning preparedness, distribution channels, detection, coordination, harmed-party support, correction, and learning.
+- Carry one incident identity across organizations while minimizing telemetry and preserving jurisdiction, civil liberties, privacy, and remedy.
+- Measure defender and attacker adaptation together; a static exercise or prevention rate cannot stand in for live resilience.
+- Route operational incidents to governed operations, systemic patterns to institutions and thresholds, and information-integrity incidents to the authenticity owner.
+- Require prospective exercises, representative cohorts, independent observers, distributional analysis, recovery outcomes, and recurrence tests before stronger support.
+
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:societal-resilience-and-misuse-defense.admission_boundary` | `AsiStackProofs.NoDeferralAdmission` | A finite resilience incident packet may hand off only when affected domain, incident identity, privacy scope, stage, authority, harmed-party route, residual, and expiry are present; no theorem establishes social resilience. | planned |
+
 ### Stable Capability Fields
 
 Stable ID: `stable-capability-fields`
@@ -2044,6 +2110,39 @@ Lean proof targets:
 | `lean:model_weight_custody.lifecycle.unobserved_load` | `AsiStackProofs.ModelWeightCustody` | A requested finite load with no independent load-observation record routes to an observation requirement. | implemented |
 | `lean:model_weight_custody.lifecycle.release_authority_laundering` | `AsiStackProofs.ModelWeightCustody` | A finite distribution request that fails to preserve the no-authority-grant boundary routes to release-laundering rejection. | implemented |
 | `lean:model_weight_custody.lifecycle.irreversible_distribution_record` | `AsiStackProofs.ModelWeightCustody` | A complete finite distribution request with preserved authority separation and acknowledged irreversibility routes to an irreversible-release record rather than execution. | implemented |
+
+### Open-Weight Release and Post-Release Control
+
+Stable ID: `open-weight-release-and-post-release-control`
+
+Chapter job: Treat deliberate release of model weights as an irreversible control-boundary change rather than an ordinary deployment.
+
+Core claim: An open-weight release should require a prospective irreversible-release case that binds the exact artifact and license to accessible-frontier comparison, malicious-fine-tuning and scaffolded elicitation, marginal and cumulative risk, benefit and access distribution, downstream safeguard portability, derivative lineage, incident channels, post-release measurement, and residual ownership; after release, governance may inform, patch, coordinate, and support safer derivatives, but it must not claim revocation authority it no longer possesses.
+
+Source loading queue:
+
+| Role | Source IDs | Loading instruction |
+|---|---|---|
+| Technical release controls | `ext_provable_model_weight_release_2025`, `ext_rand_model_weight_security_2024` | Use for technical release and weight-security mechanisms; separate demonstrated properties from governance authority. |
+| Current risk synthesis | `ext_singapore_consensus_2026`, `ext_international_ai_safety_report_2026` | Use for current open-weight benefit, misuse, proliferation, and governance findings with their stated uncertainty. |
+| Worst-case and policy comparators | `ext_openai_worst_case_open_weight_risks_2025`, `ext_anthropic_responsible_scaling_policy_3_4_2026` | Use for malicious adaptation, accessible-frontier comparison, and release-threshold practice; do not inherit organization-specific conclusions. |
+
+
+| Manifest assignment reconciliation | `precision_contract` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+Draft arc:
+
+- Distinguish API access, hosted fine-tuning, gated weights, research escrow, delayed release, and unrestricted open weights by the authority and irreversibility they create.
+- Freeze the exact artifact, license, accessible-frontier comparator, threat model, benefit case, and release alternatives before evaluation.
+- Test malicious fine-tuning, scaffolded elicitation, safeguard portability, derivative creation, redistribution, and cumulative ecosystem effects.
+- Separate pre-release custody from post-release influence: revocation may disappear even though disclosure, patching, coordination, incident support, and safer derivatives remain possible.
+- Track derivative lineage and incidents without pretending lineage is complete or that downstream actors remain controllable.
+- Require a prospective irreversible-release case, independent challenge, narrower-release comparator, expiry, and residual owner before release authority may act.
+
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:open-weight-release-and-post-release-control.admission_boundary` | `AsiStackProofs.NoDeferralAdmission` | A finite open-weight decision may hand off only when artifact identity, irreversibility, comparator, fine-tuning state, residual owner, and post-release non-authority are explicit; no theorem authorizes release. | planned |
 
 ### AI Supply-Chain Integrity and Lifecycle Provenance
 
@@ -5636,7 +5735,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 298 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 298 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 325 proof targets, 110 Lean modules, 1370 theorem declarations, 924 derived/decomposed, 230 direct/projection, 216 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 329 proof targets, 110 Lean modules, 1370 theorem declarations, 924 derived/decomposed, 230 direct/projection, 216 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.
@@ -6181,6 +6280,39 @@ Lean proof targets:
 | `lean:safety_cases.missing_independent_review.requires_review` | `AsiStackProofs.SafetyCaseRefinement` | Missing competence records, conflict disclosure, or independent review blocks reviewed status. | implemented |
 | `lean:safety_cases.unresolved_defeater.blocks_affected_release` | `AsiStackProofs.SafetyCaseRefinement` | An unresolved defeater blocks progression, while later invalidation requires cause, affected paths, and complete descendant invalidation before returning a readiness-bound case to challenge. | implemented |
 | `lean:safety_cases.case_status.cannot_authorize_release` | `AsiStackProofs.SafetyCaseRefinement` | Case status cannot assign support or an external effect, and missing separation between case status and decision authority rejects the readiness handoff. | implemented |
+
+### Content Authenticity, Watermarking, and Synthetic Media Integrity
+
+Stable ID: `content-authenticity-watermarking-and-synthetic-media-integrity`
+
+Chapter job: Keep provenance, watermark detection, semantic truth, consent, distribution, and remedy as separate claims across synthetic-media lifecycles.
+
+Core claim: Synthetic-media integrity should use a layered authenticity envelope that binds asset identity, generator and editor claims, signed provenance, content bindings, watermark or fingerprint signals, detector outputs, visible disclosure, transformation history, trust policy, uncertainty, and remedy; every signal retains its own semantics, and no missing or valid signal becomes a universal truth judgment.
+
+Source loading queue:
+
+| Role | Source IDs | Loading instruction |
+|---|---|---|
+| Provenance standard | `ext_c2pa_specification_2_3_2025` | Use for signed claims, content credentials, trust lists, bindings, and transformation lineage; a valid credential is not a truth judgment. |
+| Transparency and legal interface | `ext_eu_article_50_transparency_guidelines_2026` | Use for contemporary disclosure obligations and implementation guidance while keeping legal compliance separate from technical authenticity. |
+| Current risk synthesis | `ext_international_ai_safety_report_2026` | Use for synthetic-media risks, limits of detectors and provenance, and societal context; do not infer local effectiveness. |
+
+
+| Manifest assignment reconciliation | `deterministic_capability_compilation` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+Draft arc:
+
+- Separate origin claims, edit history, watermark presence, detector output, disclosure, semantic truth, consent, and remedy.
+- Build an authenticity envelope that carries signed provenance, content bindings, watermark and fingerprint signals, detector conditions, trust policy, transformation state, uncertainty, and affected-party routes.
+- Model stripping, laundering, re-encoding, cropping, compositing, screenshotting, key compromise, false attribution, detector shift, and missing-credential cases.
+- Preserve privacy, accessibility, key rotation, offline use, interoperability, and non-participating-tool boundaries.
+- Route platform incidents and harmed-party remedies to societal resilience and governed operations while leaving factual adjudication to the proper authority.
+- Require transformation-robust evaluations, provenance interoperability tests, adversarial removal and forgery tests, representative user studies, and remedy exercises before stronger claims.
+
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:content-authenticity-watermarking-and-synthetic-media-integrity.admission_boundary` | `AsiStackProofs.NoDeferralAdmission` | A finite authenticity envelope may hand off only when asset, claim, signer, trust policy, evidence types, transformation state, uncertainty, and remedy are explicit; no theorem proves content truth. | planned |
 
 ### Governed Operations, Incident Command, and Graceful Degradation
 
@@ -7201,74 +7333,6 @@ Lean proof targets:
 |---|---|---|---|
 | `lean:bibliography.plan.operational_invariant` | `AsiStackProofs.BibliographyPlan` | A source-derived claim requires a source note or equivalent ingested-source artifact. | implemented |
 | `lean:bibliography.plan.failure_blocks_promotion` | `AsiStackProofs.BibliographyPlan` | A new source cannot be assigned to a non-existent chapter id. | implemented |
-
-## Taxonomy completion admissions (2026-07-24)
-
-These four entries close the dangerous-capability, post-release, information-integrity, and social-resilience holes found by the 80-chapter taxonomy audit. Their location here is an outline amendment only; `book_structure.json` remains authoritative for reading order.
-
-### Dangerous Capability Domains and Misuse Uplift
-
-Stable ID: `dangerous-capability-domains-and-misuse-uplift`
-
-Chapter job: Separate dangerous-capability measurement by domain, actor, access, task horizon, and uplift over a realistic baseline.
-
-Core claim: A dangerous-capability conclusion requires a versioned domain dossier that binds the exact model, threat actor, access, baseline, task, evaluator, safeguards, uncertainty, expiry, maximum inference, and downstream authority. A source taxonomy, benchmark score, observed capability, or absence of a successful attack does not establish real-world harm or safety.
-
-Draft deliverables: Complete argument-level manuscript; domain-by-domain CBRN, cyber, autonomy, persuasion, and AI-R&D treatment; attempt denominator and misuse-uplift mechanism; explicit evaluator, safeguard, temporal-renewal, and nonclaim boundaries; source crosswalk and adjacent handoffs.
-
-Lean proof targets:
-
-| Tag | Lean module | Formal target | Status |
-|---|---|---|---|
-| `lean:dangerous-capability-domains-and-misuse-uplift.admission_boundary` | `AsiStackProofs.NoDeferralAdmission` | A finite dangerous-capability dossier may hand off only when model, threat, cohort, access, evaluator, uncertainty, expiry, and maximum inference are present; no theorem establishes dangerous capability or safety. | planned |
-
-### Societal Resilience and Misuse Defense
-
-Stable ID: `societal-resilience-and-misuse-defense`
-
-Chapter job: Govern the defensive systems that absorb, detect, communicate, recover from, and learn after AI-enabled misuse at social scale.
-
-Core claim: Resilience must be evaluated as a versioned defense portfolio across exposed population, institutions, preparedness, detection, response, recovery, burden, adaptation, and residual harm. The existence of a policy, classifier, takedown channel, incident plan, or successful exercise does not prove population protection.
-
-Draft deliverables: Complete argument-level manuscript; layered prevention-to-recovery architecture; defender/attacker adaptation loop; distributional burden and civil-liberties constraints; independent exercise design; source crosswalk and handoffs.
-
-Lean proof targets:
-
-| Tag | Lean module | Formal target | Status |
-|---|---|---|---|
-| `lean:societal-resilience-and-misuse-defense.admission_boundary` | `AsiStackProofs.NoDeferralAdmission` | A finite resilience dossier may hand off only when hazard, exposed cohort, defense layers, observed outcome, burden, expiry, and residual owner are explicit; no theorem proves social resilience. | planned |
-
-### Open-Weight Release and Post-Release Control
-
-Stable ID: `open-weight-release-and-post-release-control`
-
-Chapter job: Treat deliberate release of model weights as an irreversible control-boundary change rather than an ordinary deployment.
-
-Core claim: Open-weight release requires a prospective, artifact-specific decision packet that compares release forms, foreseeable adaptation, irreversibility, safeguards, independent evaluation, downstream observability, revocation limits, post-release response, and residual ownership. Pre-release custody or a model card cannot establish that release is safe or controllable.
-
-Draft deliverables: Complete argument-level manuscript; release-form ladder; malicious fine-tuning and proliferation model; irreversibility and post-release monitoring; strong no-release and narrower-release comparators; source crosswalk and handoffs.
-
-Lean proof targets:
-
-| Tag | Lean module | Formal target | Status |
-|---|---|---|---|
-| `lean:open-weight-release-and-post-release-control.admission_boundary` | `AsiStackProofs.NoDeferralAdmission` | A finite open-weight decision may hand off only when artifact identity, irreversibility, comparator, fine-tuning state, residual owner, and post-release non-authority are explicit; no theorem authorizes release. | planned |
-
-### Content Authenticity, Watermarking, and Synthetic-Media Integrity
-
-Stable ID: `content-authenticity-watermarking-and-synthetic-media-integrity`
-
-Chapter job: Keep provenance, watermark detection, semantic truth, consent, distribution, and remedy as separate claims across synthetic-media lifecycles.
-
-Core claim: Content-integrity governance requires an end-to-end receipt that joins generation identity, provenance, watermark and detector conditions, transformations, distribution context, affected parties, response, and residual uncertainty. A valid credential, visible label, detector score, or watermark failure proves neither truth nor origin.
-
-Draft deliverables: Complete argument-level manuscript; C2PA and watermark roles; transformation and removal attacks; source-to-channel custody; legal-transparency and platform interfaces; explicit accessibility, privacy, and nonclaim boundaries.
-
-Lean proof targets:
-
-| Tag | Lean module | Formal target | Status |
-|---|---|---|---|
-| `lean:content-authenticity-watermarking-and-synthetic-media-integrity.admission_boundary` | `AsiStackProofs.NoDeferralAdmission` | A finite content-integrity record may hand off only when asset identity, provenance, detector scope, transformation, distribution, remedy, uncertainty, and non-truth boundary are explicit; no theorem establishes authenticity or truth. | planned |
 
 ## Source Corpus and External Literature
 

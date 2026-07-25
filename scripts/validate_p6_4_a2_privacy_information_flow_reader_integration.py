@@ -23,7 +23,7 @@ def errors(data: dict) -> list[str]:
     if set(roles) != {"mechanism_or_capability", "limitation_or_failure", "competing_design", "measurement_or_evaluation"}: out.append("four-role vocabulary drifted")
     if {s for values in roles.values() for s in values} != SOURCE_IDS: out.append("nine-source role packet incomplete")
     chapters = [c for p in data["structure"]["parts"] for c in p["chapters"]]; ids = [c["id"] for c in chapters]
-    if len(ids) != 76 or ids.count(CHAPTER_ID) != 1: out.append("76-chapter manifest or A2 uniqueness drifted")
+    if len(ids) != 80 or ids.count(CHAPTER_ID) != 1: out.append("80-chapter manifest or A2 uniqueness drifted")
     i = ids.index(CHAPTER_ID) if CHAPTER_ID in ids else -1
     if i < 1 or ids[i-1] != "adversarial-machine-learning-and-model-attack-surface" or ids[i+1] != "model-weight-custody-and-hardware-roots-of-trust": out.append("A2 placement drifted")
     chapter = next((c for c in chapters if c["id"] == CHAPTER_ID), {})
@@ -76,6 +76,6 @@ def main() -> None:
     if failures: raise SystemExit("P6.4-A2 reader integration failed:\n- " + "\n- ".join(failures))
     probe = subprocess.run(["python3", "scripts/validate_information_lifecycle_transaction.py"], cwd=ROOT, capture_output=True, text=True)
     if probe.returncode: raise SystemExit(probe.stdout + probe.stderr)
-    print("P6.4-A2 reader integration passed: terminal argument chapter, nine-source four-role packet plus one bounded local implementation-pressure record, 2 targets/11 theorems, 6 arms/13 failures/15 competence gates unopened, 26 transaction mutations plus 10 integration mutations, 76-chapter reconciliation, terminal no-queue admission and current evidence custody preserved, no compliance/support/release effect.")
+    print("P6.4-A2 reader integration passed: terminal argument chapter, nine-source four-role packet plus one bounded local implementation-pressure record, 2 targets/11 theorems, 6 arms/13 failures/15 competence gates unopened, 26 transaction mutations plus 10 integration mutations, 80-chapter reconciliation, terminal no-queue admission and current evidence custody preserved, no compliance/support/release effect.")
 
 if __name__ == "__main__": main()

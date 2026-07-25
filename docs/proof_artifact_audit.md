@@ -10,11 +10,11 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Metric | Value |
 |---|---:|
-| Proof targets audited | 325 |
-| Manifest status counts | {"implemented": 310, "planned": 15} |
-| Triage class counts | {"formal-invariant": 315, "process-contract": 10} |
+| Proof targets audited | 329 |
+| Manifest status counts | {"implemented": 310, "planned": 19} |
+| Triage class counts | {"formal-invariant": 315, "process-contract": 14} |
 | Lean modules referenced | 71 |
-| Chapters with proof targets | 76 |
+| Chapters with proof targets | 80 |
 | Validation errors | 0 |
 | Warnings | 0 |
 
@@ -125,7 +125,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `coilra-multicoil-rope-and-cyclic-mixers` | 2 | 2 | 0 | 0 |
 | `compact-generative-systems-and-residual-honesty` | 9 | 9 | 0 | 0 |
 | `constitutional-alignment-substrate` | 6 | 6 | 0 | 0 |
+| `content-authenticity-watermarking-and-synthetic-media-integrity` | 1 | 0 | 0 | 0 |
 | `context-transactions-snapshots-mounts-and-taint` | 4 | 4 | 0 | 0 |
+| `dangerous-capability-domains-and-misuse-uplift` | 1 | 0 | 0 | 0 |
 | `data-engines-continual-learning-and-unlearning` | 15 | 15 | 0 | 0 |
 | `durable-semantic-memory-and-knowledge-lattices` | 1 | 0 | 0 | 0 |
 | `embodied-agency-real-time-control-and-physical-safety` | 1 | 0 | 0 | 0 |
@@ -156,6 +158,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `multi-agent-dynamics-collective-intelligence-and-systemic-risk` | 1 | 0 | 0 | 0 |
 | `open-ended-improvement-engines` | 7 | 7 | 0 | 0 |
 | `open-research-agenda-and-bibliography-plan` | 2 | 2 | 0 | 0 |
+| `open-weight-release-and-post-release-control` | 1 | 0 | 0 | 0 |
 | `perception-sensor-fusion-and-observation-trust` | 1 | 0 | 0 | 0 |
 | `personal-compute-hives-and-federated-edge-intelligence` | 6 | 6 | 0 | 0 |
 | `physical-compute-infrastructure-energy-and-environmental-constraints` | 1 | 0 | 0 | 0 |
@@ -176,6 +179,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `scalable-oversight-and-adversarial-ai-control` | 7 | 7 | 0 | 0 |
 | `scientific-discovery-and-experimental-governance` | 1 | 0 | 0 | 0 |
 | `security-kernel-and-digital-scifs` | 4 | 4 | 0 | 0 |
+| `societal-resilience-and-misuse-defense` | 1 | 0 | 0 | 0 |
 | `spinoza-verification-and-proof-carrying-claims` | 5 | 5 | 0 | 0 |
 | `stable-capability-fields` | 4 | 4 | 0 | 0 |
 | `system-boundaries-and-authority` | 4 | 4 | 0 | 0 |
@@ -203,6 +207,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:failure.invariant_violation.failure_blocks_promotion` | `failure-modes-of-ungoverned-intelligence` | `AsiStackProofs.FailureModes` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:failure.recurrence.escalation_route` | `failure-modes-of-ungoverned-intelligence` | `AsiStackProofs.FailureModes` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:failure.taxonomy.detector_probe_bridge` | `failure-modes-of-ungoverned-intelligence` | `AsiStackProofs.FailureModes` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:dangerous-capability-domains-and-misuse-uplift.admission_boundary` | `dangerous-capability-domains-and-misuse-uplift` | `AsiStackProofs.NoDeferralAdmission` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
 | `lean:evidence.support_state.operational_invariant` | `evidence-states-and-claim-discipline` | `AsiStackProofs.EvidenceStates` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:evidence.support_state.failure_blocks_promotion` | `evidence-states-and-claim-discipline` | `AsiStackProofs.EvidenceStates` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:evidence.support_state.transition_lifecycle_route` | `evidence-states-and-claim-discipline` | `AsiStackProofs.EvidenceStates` | triage ok; module ok; chapter tag ok; limitation ok |
@@ -240,6 +245,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:governance.rights.theseus_receipt_suite.fixture_bridge` | `moral-uncertainty-and-value-conflict` | `AsiStackProofs.GovernanceRights` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:governed-objective-formation-value-learning-and-goal-integrity.admission_boundary` | `governed-objective-formation-value-learning-and-goal-integrity` | `AsiStackProofs.NoDeferralAdmission` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
 | `lean:institutions-international-coordination-and-public-legitimacy.admission_boundary` | `institutions-international-coordination-and-public-legitimacy` | `AsiStackProofs.NoDeferralAdmission` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
+| `lean:societal-resilience-and-misuse-defense.admission_boundary` | `societal-resilience-and-misuse-defense` | `AsiStackProofs.NoDeferralAdmission` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
 | `lean:scf.field_identity.operational_invariant` | `stable-capability-fields` | `AsiStackProofs.StableCapabilityFields` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:scf.field_identity.failure_blocks_promotion` | `stable-capability-fields` | `AsiStackProofs.StableCapabilityFields` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:scf.lifecycle.route_envelope` | `stable-capability-fields` | `AsiStackProofs.StableCapabilityFields` | triage ok; module ok; chapter tag ok; limitation ok |
@@ -265,6 +271,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:model_weight_custody.lifecycle.unobserved_load` | `model-weight-custody-and-hardware-roots-of-trust` | `AsiStackProofs.ModelWeightCustody` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:model_weight_custody.lifecycle.release_authority_laundering` | `model-weight-custody-and-hardware-roots-of-trust` | `AsiStackProofs.ModelWeightCustody` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:model_weight_custody.lifecycle.irreversible_distribution_record` | `model-weight-custody-and-hardware-roots-of-trust` | `AsiStackProofs.ModelWeightCustody` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:open-weight-release-and-post-release-control.admission_boundary` | `open-weight-release-and-post-release-control` | `AsiStackProofs.NoDeferralAdmission` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
 | `lean:ai_supply_chain.unresolved_critical_advisory.quarantines_artifact` | `ai-supply-chain-integrity-and-lifecycle-provenance` | `AsiStackProofs.SupplyChainIntegrity` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:ai_supply_chain.complete_requested_artifact.reaches_custody_review` | `ai-supply-chain-integrity-and-lifecycle-provenance` | `AsiStackProofs.SupplyChainIntegrity` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:ai_supply_chain.missing_lineage.requires_repair` | `ai-supply-chain-integrity-and-lifecycle-provenance` | `AsiStackProofs.SupplyChainIntegrity` | triage ok; module ok; chapter tag ok; limitation ok |
@@ -460,6 +467,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:safety_cases.missing_independent_review.requires_review` | `safety-cases-and-structured-assurance` | `AsiStackProofs.SafetyCaseRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:safety_cases.unresolved_defeater.blocks_affected_release` | `safety-cases-and-structured-assurance` | `AsiStackProofs.SafetyCaseRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:safety_cases.case_status.cannot_authorize_release` | `safety-cases-and-structured-assurance` | `AsiStackProofs.SafetyCaseRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:content-authenticity-watermarking-and-synthetic-media-integrity.admission_boundary` | `content-authenticity-watermarking-and-synthetic-media-integrity` | `AsiStackProofs.NoDeferralAdmission` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
 | `lean:operations.degradation_never_widens_authority` | `governed-operations-incident-command-and-graceful-degradation` | `AsiStackProofs.GovernedOperations` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:operations.recovery_requires_complete_state` | `governed-operations-incident-command-and-graceful-degradation` | `AsiStackProofs.GovernedOperations` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:policy_optimization.update.operational_invariant` | `policy-optimization-and-learning-from-feedback` | `AsiStackProofs.PolicyOptimizationRefinement` | triage ok; module ok; chapter tag ok; limitation ok |

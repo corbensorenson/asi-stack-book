@@ -461,6 +461,7 @@ def errors(data: dict) -> list[str]:
             "readiness-gates-residual-escrow-and-quarantine",
             "executable-specifications-and-lean-proof-envelope",
             "model-weight-custody-and-hardware-roots-of-trust",
+            "open-weight-release-and-post-release-control",
             "the-efficient-asi-hypothesis",
         }
         if set(precision_inventory_rows[0].get("chapter_targets", [])) != expected_precision_targets:
@@ -1227,7 +1228,7 @@ def errors(data: dict) -> list[str]:
         r"(\d+) unknown/mixed",
         data["proof_review"],
     )
-    expected_proof = (325, 110, 1370, 924, 230, 216)
+    expected_proof = (329, 110, 1370, 924, 230, 216)
     if not proof_match or tuple(map(int, proof_match.groups())) != expected_proof:
         out.append("proof-depth baseline drifted without roadmap reconciliation")
     if data["proof_manifest"].get("proof_target_count") != 329:

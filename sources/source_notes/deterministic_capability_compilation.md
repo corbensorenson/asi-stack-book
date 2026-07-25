@@ -195,6 +195,7 @@ approves candidates that fail under natural deployment states.
 | `governed-operations-incident-command-and-graceful-degradation` | Extends recovery, residual custody, authority ceilings, and complete-state restoration into operational incidents and degraded modes. | §§9–10, 14–17, 20 | No deployed containment, failover, or effect-complete recovery result. |
 | `adversarial-machine-learning-and-model-attack-surface` | Supplies candidate-specific validation, adversarial counterexamples, authority ceilings, residual escrow, and recovery boundaries for learned capabilities. | §§7, 9–10, 14–18 | No reproduced attack, robustness benchmark, extraction-resistance result, or deployed defense. |
 | `autonomous-replication-proliferation-and-containment` | Supplies descendant capability identity, non-escalating authority, recovery, rollback, reification, and lifecycle-lineage concepts for bounded replication control. | §§6–10, 14–17, 20 | No replication system, provider test, proliferation census, recall, or end-to-end containment result. |
+| `content-authenticity-watermarking-and-synthetic-media-integrity` | Treats provenance, lineage, and verifiable transformation receipts as governed artifacts that can support authenticity claims without pretending to prove semantic truth. | §§6–10, 14, 20 | Compilation lineage does not establish that content is genuine, harmless, or correctly interpreted. |
 
 The section-family closure ledger is
 `docs/july_2026_two_paper_mining_completeness_audit.md`. It maps every

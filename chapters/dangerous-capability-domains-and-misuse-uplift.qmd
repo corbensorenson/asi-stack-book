@@ -29,9 +29,9 @@ open_evidence_gaps:
 | Evidence available | passage-reviewed source notes and an evaluation design |
 | Evidence absent | local hazardous-domain evaluation, independent reproduction, calibrated threshold, or safety result |
 
-Source loading state: all assigned source notes were reviewed for bounded
-mechanism, evidence, failure, and nonclaim use; external results remain
-source-reported.
+Source loading state for dangerous-capability material: review covers the assigned taxonomies, evaluation
+frameworks, misuse-safeguard cases, open-weight studies, and current threshold
+policies. Their reported findings remain external and model-specific.
 
 ## Drafting guardrail
 
@@ -44,24 +44,26 @@ not imported as proof that a model is dangerous, safe, or below a threshold.
 ::: {.asi-human-only}
 ## Human Reading Path
 
-A model can know dangerous facts without making a person more capable of
-causing harm. It can also appear harmless because it refuses a direct request
-while retaining capability that a different prompt, scaffold, fine-tune, or
-toolchain can elicit. The decision-relevant quantity is therefore not “does the
-model answer a quiz?” It is “how much does this exact system change what this
-actor can accomplish under these conditions?”
+A model can possess dangerous knowledge without making someone more capable
+of harm. It can also look harmless after refusing a
+direct request while the same capability remains reachable through another
+prompt, scaffold, fine-tune, toolchain, or longer interaction. The policy
+question is how much this system changes what an actor can accomplish.
 
-The chapter separates five quantities that safety discussions often blur:
-latent capability, elicited task performance, behavioral propensity, safeguard
-bypass, and actor uplift. Realized harm is a sixth quantity downstream of all
-five. Each has a different instrument and a different non-claim.
+Five quantities need names: latent capability, elicited task
+performance, behavioral propensity, safeguard bypass, and actor uplift.
+Realized harm is a sixth quantity downstream of all five. An expert receiving
+a small speedup, a novice gaining a new skill, and an autonomous system
+completing one bounded step create different threat records even when their
+benchmark scores match.
 
-The practical artifact is an uplift dossier. It freezes a domain threat model,
-actor cohorts, model and scaffold, tools, assistance, tasks, controls,
+An uplift dossier freezes the threat model, actor cohorts, unassisted and
+alternative-tool baselines, model, scaffold, tools, tasks, controls,
 elicitation budget, evaluator, uncertainty, information-hazard boundary,
-expiry, and maximum inference. That dossier can inform a capability threshold,
-release decision, or resilience plan. It cannot silently become a universal
-danger score.
+expiry, and maximum inference. Positive controls must show that the instrument
+can detect an effect before a null is interpreted. The dossier may inform a
+threshold or release decision only inside that scope; it can never become a
+portable claim that the model, actor, or world is safe.
 :::
 
 ## Problem
@@ -79,7 +81,7 @@ Report likewise separates model capabilities, safeguards, open-weight access,
 misuse, and societal resilience. These sources do not prove a specific risk,
 but they show why one generic “frontier capability” field is inadequate.
 
-The stack needs a safe owner for three questions:
+The dangerous-capability layer owns three safety-sensitive questions:
 
 1. What harm pathway is being measured?
 2. Did the model causally increase an actor's ability to traverse that pathway?
@@ -335,7 +337,8 @@ information-hazard exclusions, or inaccessible real-world steps.
 - Real targets, credentials, materials, and harmful operational artifacts stay
   outside chapter authority.
 - Expiry follows any material change in model, elicitation, access, threat,
-  comparator frontier, safeguard, or incident evidence.
+  comparator frontier, safeguard, or incident evidence, and renewal preserves
+  the superseded record.
 
 ## Failure modes
 
@@ -403,7 +406,11 @@ allows a low score in one domain to cancel a severe result in another.
 The state-of-the-art target is therefore not a larger danger leaderboard. It
 is a reproducible decision instrument that makes uncertainty, information
 hazards, capability elicitation, attacker uplift, defense effect, and expiry
-jointly inspectable while remaining safe enough to operate.
+jointly inspectable while remaining safe enough to operate. This remains a
+research target until natural-domain evaluations with competent positive
+controls and independent challenge have passed.
+
+Planned formalization hook: `lean:dangerous-capability-domains-and-misuse-uplift.admission_boundary` remains a process-contract target; it does not claim an implemented theorem.
 
 ## Codex test plan
 
@@ -429,13 +436,22 @@ jointly inspectable while remaining safe enough to operate.
 | `ext_openai_preparedness_framework_2025` | threshold-linked commitment comparator | provider policy, not independent validation |
 | `ext_anthropic_responsible_scaling_policy_3_4_2026` | current versioned threshold/safeguard comparator | mutable provider policy |
 
+### Manifest source assignment reconciliation
+
+These rows keep Dangerous Capability Domains and Misuse Uplift's manifest assignments visible at their recorded review boundary. Passage review does not establish local reproduction, performance, safety, deployment, or support-state movement.
+
+| Source | Intake role | Boundary |
+|---|---|---|
+| `benchmaxxing` | Metadata-first comparator: Benchmaxxing: The Performance Ratchet. Benchmarks as pressure surfaces, saturation -> regression, harder frontier, anti-Goodhart safeguards. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+
+<!-- manifest-source-reconciliation:end -->
 ## Summary
 
-The chapter fills the missing content beneath capability thresholds. It treats
+This capability layer fills the missing content beneath capability thresholds. It treats
 dangerous capability as a causal, domain-specific measurement problem and
 forces each result to preserve the difference between what a model can do,
 what it tends to do, what safeguards block, how much an actor improves, and
-what harm occurs. The result is an honest uplift dossier, not a universal
+what harm occurs. Their joint artifact is an honest uplift dossier, not a universal
 danger score.
 
 For readers, the practical lesson is to ask a sequence of narrower questions:

@@ -3,11 +3,11 @@
   "scanner": "modal and outcome-bearing sentence cue scan; candidates require semantic adjudication",
   "summary": {
     "chapter_count": 64,
-    "candidate_count": 3352,
+    "candidate_count": 3408,
     "review_state_counts": {
-      "duplicate_of_atom": 1491,
-      "editorial_or_question": 72,
-      "historical_or_source_report": 290,
+      "duplicate_of_atom": 1544,
+      "editorial_or_question": 71,
+      "historical_or_source_report": 294,
       "material_atom": 3,
       "nonmaterial_explanation": 1496
     }
@@ -4277,12 +4277,12 @@
       "target_atom_id": "failure-modes-of-ungoverned-intelligence.core"
     },
     {
-      "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.32f3d6a2b72f",
+      "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.ab69c20adc4b",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:617",
-      "sentence": "The handoff prevents a seeded detector pass or a polished",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:616",
+      "sentence": "Prospective failure obligations identify broad hazards but do not measure",
       "cues": [
-        "prevents"
+        "measure"
       ],
       "review_state": "editorial_or_question",
       "allowed_dispositions": [
@@ -4292,7 +4292,26 @@
         "editorial_or_question",
         "historical_or_source_report"
       ],
-      "disposition_rationale": "Handoff fragment preventing a bounded detector result from becoming a broader safety claim.",
+      "disposition_rationale": "Handoff boundary fragment; the complete hazard-to-capability ownership transfer is stated by the surrounding paragraph and creates no independent claim.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.cfcd78ccb82d",
+      "chapter_id": "failure-modes-of-ungoverned-intelligence",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:617",
+      "sentence": "whether a particular model materially helps a particular actor cause them.",
+      "cues": [
+        "cause"
+      ],
+      "review_state": "editorial_or_question",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Handoff boundary fragment distinguishing a taxonomy obligation from measured misuse uplift; it creates no independent support-bearing atom.",
       "target_atom_id": null
     },
     {
@@ -8745,9 +8764,66 @@
       "target_atom_id": "constitutional-alignment-substrate.failure_mode.009"
     },
     {
+      "candidate_id": "constitutional-alignment-substrate.prose.0cff4845ad6f",
+      "chapter_id": "constitutional-alignment-substrate",
+      "source": "chapters/constitutional-alignment-substrate.qmd:433",
+      "sentence": "A constitution for an AI system cannot simply contain the instruction “follow the law.” The relevant law depends on jurisdiction, time, system role, affected party, contractual relationship, conflicts of law, exceptions, and contested interpretation.",
+      "cues": [
+        "cannot"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "The jurisdiction- and interpretation-specific legal boundary elaborates the chapter's versioned constitutional contract and separate legal-claim lane.",
+      "target_atom_id": "constitutional-alignment-substrate.core"
+    },
+    {
+      "candidate_id": "constitutional-alignment-substrate.prose.a72653928811",
+      "chapter_id": "constitutional-alignment-substrate",
+      "source": "chapters/constitutional-alignment-substrate.qmd:435",
+      "sentence": "A legal-policy adapter may propose a rule for the present case; it cannot silently rewrite the constitution or promote one model’s interpretation into law.",
+      "cues": [
+        "cannot"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "The legal-policy adapter's non-self-authorizing role is already owned by the constitutional contract and its separate authority invariant.",
+      "target_atom_id": "constitutional-alignment-substrate.core"
+    },
+    {
+      "candidate_id": "constitutional-alignment-substrate.prose.a268eb6ac572",
+      "chapter_id": "constitutional-alignment-substrate",
+      "source": "chapters/constitutional-alignment-substrate.qmd:437",
+      "sentence": "The explicit nonclaim is equally important: a valid authority packet does not prove that the model understood the law, chose the correct interpretation, behaved lawfully, or that the governing legal regime is legitimate.",
+      "cues": [
+        "prove"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "This explicit legal nonclaim restates the core boundary against inferring interpretation quality, lawfulness, or legitimacy from a valid packet.",
+      "target_atom_id": "constitutional-alignment-substrate.core"
+    },
+    {
       "candidate_id": "constitutional-alignment-substrate.prose.a98e4a869179",
       "chapter_id": "constitutional-alignment-substrate",
-      "source": "chapters/constitutional-alignment-substrate.qmd:476",
+      "source": "chapters/constitutional-alignment-substrate.qmd:484",
       "sentence": "The campaign jointly measures hard-gate violations, unauthorized action,",
       "cues": [
         "measures"
@@ -8766,7 +8842,7 @@
     {
       "candidate_id": "constitutional-alignment-substrate.prose.5dba8e04db41",
       "chapter_id": "constitutional-alignment-substrate",
-      "source": "chapters/constitutional-alignment-substrate.qmd:488",
+      "source": "chapters/constitutional-alignment-substrate.qmd:496",
       "sentence": "Success must also survive institutional and technical disagreement.",
       "cues": [
         "must"
@@ -8785,7 +8861,7 @@
     {
       "candidate_id": "constitutional-alignment-substrate.prose.86820453a556",
       "chapter_id": "constitutional-alignment-substrate",
-      "source": "chapters/constitutional-alignment-substrate.qmd:491",
+      "source": "chapters/constitutional-alignment-substrate.qmd:499",
       "sentence": "The evidence must preserve whose interests were represented, which",
       "cues": [
         "must"
@@ -8804,7 +8880,7 @@
     {
       "candidate_id": "constitutional-alignment-substrate.prose.258c5a12ae95",
       "chapter_id": "constitutional-alignment-substrate",
-      "source": "chapters/constitutional-alignment-substrate.qmd:521",
+      "source": "chapters/constitutional-alignment-substrate.qmd:529",
       "sentence": "These Lean modules prove small finite-record properties,",
       "cues": [
         "prove"
@@ -8823,7 +8899,7 @@
     {
       "candidate_id": "constitutional-alignment-substrate.prose.920ad2d11e5c",
       "chapter_id": "constitutional-alignment-substrate",
-      "source": "chapters/constitutional-alignment-substrate.qmd:536",
+      "source": "chapters/constitutional-alignment-substrate.qmd:544",
       "sentence": "independent runtime consumer and must not be cited as a corrigibility theorem.",
       "cues": [
         "must"
@@ -8842,7 +8918,7 @@
     {
       "candidate_id": "constitutional-alignment-substrate.prose.ea6ed48512b9",
       "chapter_id": "constitutional-alignment-substrate",
-      "source": "chapters/constitutional-alignment-substrate.qmd:537",
+      "source": "chapters/constitutional-alignment-substrate.qmd:545",
       "sentence": "These hooks do not prove moral correctness, deployed alignment, human dignity,",
       "cues": [
         "prove"
@@ -8861,7 +8937,7 @@
     {
       "candidate_id": "constitutional-alignment-substrate.prose.d83a126797d2",
       "chapter_id": "constitutional-alignment-substrate",
-      "source": "chapters/constitutional-alignment-substrate.qmd:544",
+      "source": "chapters/constitutional-alignment-substrate.qmd:552",
       "sentence": "modeled protected predicate and never increase the numeric authority field;",
       "cues": [
         "increase"
@@ -8880,7 +8956,7 @@
     {
       "candidate_id": "constitutional-alignment-substrate.prose.31c21c5a9a89",
       "chapter_id": "constitutional-alignment-substrate",
-      "source": "chapters/constitutional-alignment-substrate.qmd:545",
+      "source": "chapters/constitutional-alignment-substrate.qmd:553",
       "sentence": "effect commitment requires the Boolean obligations assigned to one of five",
       "cues": [
         "requires"
@@ -8899,7 +8975,7 @@
     {
       "candidate_id": "constitutional-alignment-substrate.prose.cfa8d918f84e",
       "chapter_id": "constitutional-alignment-substrate",
-      "source": "chapters/constitutional-alignment-substrate.qmd:549",
+      "source": "chapters/constitutional-alignment-substrate.qmd:557",
       "sentence": "establishes accepted-trace preservation only inside its recorded finite model;",
       "cues": [
         "establishes"
@@ -8918,7 +8994,7 @@
     {
       "candidate_id": "constitutional-alignment-substrate.prose.523a7ffa5ff3",
       "chapter_id": "constitutional-alignment-substrate",
-      "source": "chapters/constitutional-alignment-substrate.qmd:635",
+      "source": "chapters/constitutional-alignment-substrate.qmd:644",
       "sentence": "observable behavior and authority, but it cannot identify what objective a",
       "cues": [
         "cannot"
@@ -8937,7 +9013,7 @@
     {
       "candidate_id": "constitutional-alignment-substrate.prose.c8daac279329",
       "chapter_id": "constitutional-alignment-substrate",
-      "source": "chapters/constitutional-alignment-substrate.qmd:641",
+      "source": "chapters/constitutional-alignment-substrate.qmd:650",
       "sentence": "Corrigibility cannot assume an agent that stands outside a known environment.",
       "cues": [
         "cannot"
@@ -8956,7 +9032,7 @@
     {
       "candidate_id": "constitutional-alignment-substrate.prose.d43cdb9a8a65",
       "chapter_id": "constitutional-alignment-substrate",
-      "source": "chapters/constitutional-alignment-substrate.qmd:646",
+      "source": "chapters/constitutional-alignment-substrate.qmd:655",
       "sentence": "embedded-agency comparator explains why a finite correction record cannot",
       "cues": [
         "cannot"
@@ -8975,7 +9051,7 @@
     {
       "candidate_id": "constitutional-alignment-substrate.prose.2cacfa907ab1",
       "chapter_id": "constitutional-alignment-substrate",
-      "source": "chapters/constitutional-alignment-substrate.qmd:653",
+      "source": "chapters/constitutional-alignment-substrate.qmd:662",
       "sentence": "It does not prove that hidden optimization, delegated components,",
       "cues": [
         "prove"
@@ -10804,9 +10880,124 @@
       "target_atom_id": null
     },
     {
-      "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.95b08a9d51f8",
+      "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.cc92018a4c17",
+      "chapter_id": "institutions-international-coordination-and-public-legitimacy",
+      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:147",
+      "sentence": "Independent scrutiny is necessary, but “give researchers access” is not an adequate control design.",
+      "cues": [
+        "necessary"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "The need for independently useful scrutiny elaborates the chapter's assessor-independence and verification mechanism.",
+      "target_atom_id": "institutions-international-coordination-and-public-legitimacy.mechanism.003"
+    },
+    {
+      "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.532793ecccbb",
+      "chapter_id": "institutions-international-coordination-and-public-legitimacy",
+      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:147",
+      "sentence": "Frontier systems, sensitive evaluations, model weights, user data, and incident records create conflicting needs: evaluators need enough access to find failures that the developer missed, while the governed organization must not turn review into an exfiltration path or constrain it until no adverse result can survive.",
+      "cues": [
+        "must"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "The secure-access tradeoff elaborates the chapter's assessor-independence, capture, verification, and institutional-capacity obligations.",
+      "target_atom_id": "institutions-international-coordination-and-public-legitimacy.mechanism.003"
+    },
+    {
+      "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.1df2cb233e51",
+      "chapter_id": "institutions-international-coordination-and-public-legitimacy",
+      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:149",
+      "sentence": "Evaluators must be able to run negative controls, preserve complete attempt denominators, publish adverse findings through a protected channel, and distinguish developer-provided evidence from independently observed results.",
+      "cues": [
+        "must"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Negative controls, denominator retention, and protected adverse findings operationalize the existing independent-verification mechanism.",
+      "target_atom_id": "institutions-international-coordination-and-public-legitimacy.mechanism.003"
+    },
+    {
+      "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.148240e15678",
+      "chapter_id": "institutions-international-coordination-and-public-legitimacy",
+      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:149",
+      "sentence": "Double-blind assignment can reduce some social bias, but cannot substitute for method transparency or conflict disclosure.",
+      "cues": [
+        "cannot",
+        "reduce"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "This limitation on double-blind assignment preserves the existing distinction between assessor independence, method transparency, and conflict disclosure.",
+      "target_atom_id": "institutions-international-coordination-and-public-legitimacy.mechanism.003"
+    },
+    {
+      "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.f5a1b7007e11",
+      "chapter_id": "institutions-international-coordination-and-public-legitimacy",
+      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:151",
+      "sentence": "Hardware-enabled guarantees may eventually make parts of compute use, model identity, and policy enforcement more inspectable [@ext_flexible_hardware_enabled_guarantees_2025].",
+      "cues": [
+        "guarantees"
+      ],
+      "review_state": "historical_or_source_report",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Passage-reviewed external hardware-governance proposal retained as a possible inspectability mechanism, not local evidence of effectiveness or legitimacy.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.5e0ae869b812",
       "chapter_id": "institutions-international-coordination-and-public-legitimacy",
       "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:153",
+      "sentence": "The nonclaim is strict: independent access does not make an evaluation representative, and an audit, attestation, legal opinion, or transparency filing does not prove safety or public legitimacy.",
+      "cues": [
+        "prove"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "The audit and attestation nonclaim restates the core separation among technical evidence, safety, authority, and public legitimacy.",
+      "target_atom_id": "institutions-international-coordination-and-public-legitimacy.core"
+    },
+    {
+      "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.95b08a9d51f8",
+      "chapter_id": "institutions-international-coordination-and-public-legitimacy",
+      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:163",
       "sentence": "because it prevented one hazard, while a permissive architecture cannot hide",
       "cues": [
         "cannot"
@@ -10825,7 +11016,7 @@
     {
       "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.620e415af61e",
       "chapter_id": "institutions-international-coordination-and-public-legitimacy",
-      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:156",
+      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:166",
       "sentence": "show whether correction, recovery, compensation, or withdrawal actually",
       "cues": [
         "show"
@@ -10844,7 +11035,7 @@
     {
       "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.f23b1b87ff4d",
       "chapter_id": "institutions-international-coordination-and-public-legitimacy",
-      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:163",
+      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:173",
       "sentence": "A Institutional coordination implementation should begin with an ordinary baseline and the strongest",
       "cues": [
         "should"
@@ -10863,7 +11054,7 @@
     {
       "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.b1e789afc8a0",
       "chapter_id": "institutions-international-coordination-and-public-legitimacy",
-      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:166",
+      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:176",
       "sentence": "help, retry policy, and stopping rules should be matched or reported.",
       "cues": [
         "should"
@@ -10882,7 +11073,7 @@
     {
       "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.39fbf6aadcfb",
       "chapter_id": "institutions-international-coordination-and-public-legitimacy",
-      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:167",
+      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:177",
       "sentence": "controls must show that the task and instruments can detect the intended",
       "cues": [
         "must",
@@ -10902,7 +11093,7 @@
     {
       "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.ae320bb60178",
       "chapter_id": "institutions-international-coordination-and-public-legitimacy",
-      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:174",
+      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:184",
       "sentence": "A fair Institutional coordination test must freeze the mechanism, authority, comparator set, tuning and",
       "cues": [
         "must"
@@ -10921,7 +11112,7 @@
     {
       "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.0538f7bf12b7",
       "chapter_id": "institutions-international-coordination-and-public-legitimacy",
-      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:176",
+      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:186",
       "sentence": "It must include favorable or oracle checks, mechanism-specific",
       "cues": [
         "must"
@@ -10940,7 +11131,7 @@
     {
       "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.972c55ad6e70",
       "chapter_id": "institutions-international-coordination-and-public-legitimacy",
-      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:179",
+      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:189",
       "sentence": "A weak implementation can narrow that implementation; it cannot",
       "cues": [
         "cannot"
@@ -10959,7 +11150,7 @@
     {
       "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.962fa9b76cc6",
       "chapter_id": "institutions-international-coordination-and-public-legitimacy",
-      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:184",
+      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:194",
       "sentence": "It should expose conflict, capture, missing capacity, and unenforceable promises early enough to constrain deployment while refusing the fiction that software can prove political legitimacy.",
       "cues": [
         "prove",
@@ -10979,7 +11170,7 @@
     {
       "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.a45a57738dd9",
       "chapter_id": "institutions-international-coordination-and-public-legitimacy",
-      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:197",
+      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:207",
       "sentence": "total lifecycle cost, the simpler system should be preferred.",
       "cues": [
         "should"
@@ -10998,7 +11189,7 @@
     {
       "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.d7c698d66ae4",
       "chapter_id": "institutions-international-coordination-and-public-legitimacy",
-      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:228",
+      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:249",
       "sentence": "Its empirical, formal, transfer, and deployment work remains an open",
       "cues": [
         "transfer"
@@ -11012,44 +11203,6 @@
         "historical_or_source_report"
       ],
       "disposition_rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms.",
-      "target_atom_id": null
-    },
-    {
-      "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.1644f28bb30e",
-      "chapter_id": "institutions-international-coordination-and-public-legitimacy",
-      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:242",
-      "sentence": "The receiving chapter must preserve the identities,",
-      "cues": [
-        "must"
-      ],
-      "review_state": "editorial_or_question",
-      "allowed_dispositions": [
-        "material_atom",
-        "nonmaterial_explanation",
-        "duplicate_of_atom",
-        "editorial_or_question",
-        "historical_or_source_report"
-      ],
-      "disposition_rationale": "Cross-chapter handoff instruction; the receiving owner performs its own admission checks and no independent support transition is asserted.",
-      "target_atom_id": null
-    },
-    {
-      "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.6e2a279b9dad",
-      "chapter_id": "institutions-international-coordination-and-public-legitimacy",
-      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:245",
-      "sentence": "that the packet crossed the declared interface; it does not prove that either",
-      "cues": [
-        "prove"
-      ],
-      "review_state": "editorial_or_question",
-      "allowed_dispositions": [
-        "material_atom",
-        "nonmaterial_explanation",
-        "duplicate_of_atom",
-        "editorial_or_question",
-        "historical_or_source_report"
-      ],
-      "disposition_rationale": "Cross-chapter handoff instruction; the receiving owner performs its own admission checks and no independent support transition is asserted.",
       "target_atom_id": null
     },
     {
@@ -13880,9 +14033,256 @@
       "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.mechanism.002"
     },
     {
+      "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.69729123458b",
+      "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:124",
+      "sentence": "input whose task-relevant meaning or physical state should remain stable for",
+      "cues": [
+        "should"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Line-wrapped adversarial-example definition elaborates the chapter's manifest-owned attack-surface contract.",
+      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.core"
+    },
+    {
+      "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.aa7cd9aed456",
+      "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:126",
+      "sentence": "access, transfer from a surrogate, query-only optimization, or ordinary",
+      "cues": [
+        "transfer"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Line-wrapped attack-access enumeration elaborates the chapter's manifest-owned threat-model boundary.",
+      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.core"
+    },
+    {
+      "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.84a370fdd6f3",
+      "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:132",
+      "sentence": "a concrete warning about composition: fusion can improve clean performance and",
+      "cues": [
+        "improve"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "The multimodal-fusion warning is a concrete elaboration of the chapter's system-level attack-surface obligation.",
+      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.core"
+    },
+    {
+      "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.313df588552a",
+      "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:135",
+      "sentence": "fusion is safe or unsafe in general; it shows why a system-level threat model",
+      "cues": [
+        "shows"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "This fusion nonclaim preserves the chapter's scoped threat-model boundary and adds no independent claim.",
+      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.core"
+    },
+    {
+      "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.3968f2161f3a",
+      "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:136",
+      "sentence": "must preserve modality and defense identity.",
+      "cues": [
+        "must"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Modality and defense identity are part of the exact attack configuration already owned by the chapter core.",
+      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.core"
+    },
+    {
+      "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.fe7c24c4602d",
+      "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:142",
+      "sentence": "**Explicit non-claim.** Defeating one bounded attack does not prove general",
+      "cues": [
+        "prove"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Explicit bounded-defense nonclaim restating the core prohibition on general robustness inference.",
+      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.core"
+    },
+    {
+      "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.2934fc38e629",
+      "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:143",
+      "sentence": "Finding an adversarial example does not prove that the same input",
+      "cues": [
+        "prove"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Explicit adversarial-example transfer nonclaim restating the chapter's configuration-specific evidence boundary.",
+      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.core"
+    },
+    {
+      "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.0d3e7aad6778",
+      "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:160",
+      "sentence": "proves privacy, or that behavior cloning recovers exact weights.",
+      "cues": [
+        "proves"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Extraction and privacy line fragment elaborating the existing separation among behavior, weights, and privacy claims.",
+      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.core"
+    },
+    {
+      "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.f21cf62067b9",
+      "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:172",
+      "sentence": "not prove that the model, training set, or API is confidential.",
+      "cues": [
+        "prove"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Confidentiality line fragment elaborating the existing model-extraction claim boundary.",
+      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.core"
+    },
+    {
+      "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.e1cbf36306a7",
+      "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:184",
+      "sentence": "methods, and adversarial training could improve trigger recognition.",
+      "cues": [
+        "improve"
+      ],
+      "review_state": "historical_or_source_report",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Source-grounded defense-method fragment retained as a research option, not a locally demonstrated mitigation result.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.7f0613179c4d",
+      "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:187",
+      "sentence": "does show why clean validation accuracy and post-training refusal rates are",
+      "cues": [
+        "show"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Clean-accuracy and refusal-rate limitation elaborating the manifest-owned backdoor evaluation boundary.",
+      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.core"
+    },
+    {
+      "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.f91903eed8ca",
+      "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:190",
+      "sentence": "The evaluation must include poisoned and clean utility, trigger precision and",
+      "cues": [
+        "must"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Evaluation-metric enumeration operationalizes the chapter's existing attack- and defense-specific measurement contract.",
+      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.core"
+    },
+    {
+      "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.ec9ae1e40fd8",
+      "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:191",
+      "sentence": "recall, transfer across fine-tuning, persistence under model changes,",
+      "cues": [
+        "transfer"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Line-wrapped metric continuation is part of the existing backdoor evaluation denominator, not a separate claim.",
+      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.core"
+    },
+    {
       "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.d18d74e7ec22",
       "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
-      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:118",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:206",
       "sentence": "The packet must preserve exact object and version",
       "cues": [
         "must"
@@ -13901,7 +14301,7 @@
     {
       "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.c28c8b573493",
       "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
-      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:121",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:209",
       "sentence": "or recording a dispatch does not prove that the meaning survived or that the",
       "cues": [
         "prove"
@@ -13920,7 +14320,7 @@
     {
       "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.5baa1bd83758",
       "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
-      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:135",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:223",
       "sentence": "A finite formal model may prove that an authored record follows",
       "cues": [
         "prove"
@@ -13939,7 +14339,7 @@
     {
       "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.b273b9da3c45",
       "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
-      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:136",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:224",
       "sentence": "these rules, but only implementation and outcome evidence can show that a live",
       "cues": [
         "show"
@@ -13958,7 +14358,7 @@
     {
       "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.44339638c53a",
       "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
-      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:147",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:235",
       "sentence": "The principal failure family includes evasion; training-data poisoning; clean-label poisoning; backdoors and trojans; jailbreak and safeguard bypass; model stealing; model inversion; transfer attacks; adaptive attacks; modality crossing; agent-tool attack composition; gradient masking; detector evasion; defense-caused utility collapse.",
       "cues": [
         "transfer"
@@ -13977,7 +14377,7 @@
     {
       "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.95b08a9d51f8",
       "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
-      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:153",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:241",
       "sentence": "because it prevented one hazard, while a permissive architecture cannot hide",
       "cues": [
         "cannot"
@@ -13996,7 +14396,7 @@
     {
       "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.620e415af61e",
       "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
-      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:156",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:244",
       "sentence": "show whether correction, recovery, compensation, or withdrawal actually",
       "cues": [
         "show"
@@ -14015,7 +14415,7 @@
     {
       "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.d9a787cbb513",
       "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
-      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:161",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:249",
       "sentence": "Include clean, random-noise, known-vulnerable, attack-aware, transfer, and adaptive controls; preserve query and tuning budgets; and report robustness with clean utility, false positives, recovery, latency, and residuals.",
       "cues": [
         "transfer"
@@ -14034,7 +14434,7 @@
     {
       "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.15800ce1c055",
       "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
-      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:161",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:249",
       "sentence": "No result transfers automatically to frontier models or production.",
       "cues": [
         "transfers"
@@ -14053,7 +14453,7 @@
     {
       "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.aa00e78be900",
       "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
-      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:163",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:251",
       "sentence": "A Adversarial machine learning implementation should begin with an ordinary baseline and the strongest",
       "cues": [
         "should"
@@ -14072,7 +14472,7 @@
     {
       "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.b1e789afc8a0",
       "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
-      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:166",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:254",
       "sentence": "help, retry policy, and stopping rules should be matched or reported.",
       "cues": [
         "should"
@@ -14091,7 +14491,7 @@
     {
       "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.39fbf6aadcfb",
       "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
-      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:167",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:255",
       "sentence": "controls must show that the task and instruments can detect the intended",
       "cues": [
         "must",
@@ -14111,7 +14511,7 @@
     {
       "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.2bbe8cdfdb92",
       "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
-      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:174",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:262",
       "sentence": "A fair Adversarial machine learning test must freeze the mechanism, authority, comparator set, tuning and",
       "cues": [
         "must"
@@ -14130,7 +14530,7 @@
     {
       "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.0538f7bf12b7",
       "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
-      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:176",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:264",
       "sentence": "It must include favorable or oracle checks, mechanism-specific",
       "cues": [
         "must"
@@ -14149,7 +14549,7 @@
     {
       "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.972c55ad6e70",
       "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
-      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:179",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:267",
       "sentence": "A weak implementation can narrow that implementation; it cannot",
       "cues": [
         "cannot"
@@ -14168,7 +14568,7 @@
     {
       "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.a45a57738dd9",
       "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
-      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:197",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:285",
       "sentence": "total lifecycle cost, the simpler system should be preferred.",
       "cues": [
         "should"
@@ -14187,7 +14587,7 @@
     {
       "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.d7c698d66ae4",
       "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
-      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:230",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:327",
       "sentence": "Its empirical, formal, transfer, and deployment work remains an open",
       "cues": [
         "transfer"
@@ -14206,7 +14606,7 @@
     {
       "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.1644f28bb30e",
       "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
-      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:244",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:341",
       "sentence": "The receiving chapter must preserve the identities,",
       "cues": [
         "must"
@@ -14225,7 +14625,7 @@
     {
       "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.6e2a279b9dad",
       "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
-      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:247",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:344",
       "sentence": "that the packet crossed the declared interface; it does not prove that either",
       "cues": [
         "prove"
@@ -15501,9 +15901,104 @@
       "target_atom_id": "model-weight-custody-and-hardware-roots-of-trust.mechanism.016"
     },
     {
-      "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.e90f5b03313c",
+      "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.d8b7983e595d",
+      "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:744",
+      "sentence": "The flexible-hardware-enabled-guarantees agenda extends this idea toward AI governance, where selectively programmable mechanisms could support changing assurance needs without replacing every deployed accelerator [@ext_flexible_hardware_enabled_guarantees_2025].",
+      "cues": [
+        "guarantees"
+      ],
+      "review_state": "historical_or_source_report",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Passage-reviewed flexible-hardware agenda retained as an external governance comparator, not evidence that the proposed guarantees work.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.4fee41b3d637",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
       "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:746",
+      "sentence": "The custody layer should treat such a mechanism as a **hardware evidence lease**.",
+      "cues": [
+        "should"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "The hardware evidence lease is the prose-level name for the chapter's existing scoped attestation and relying-party contract.",
+      "target_atom_id": "model-weight-custody-and-hardware-roots-of-trust.invariant.006"
+    },
+    {
+      "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.42ce7416965e",
+      "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:746",
+      "sentence": "A verifier must be able to say “device attested, coverage unknown” rather than converting a valid signature into a claim about the whole training or inference system.",
+      "cues": [
+        "must"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Coverage-unknown attestation wording directly elaborates the existing scoped-attestation invariant.",
+      "target_atom_id": "model-weight-custody-and-hardware-roots-of-trust.invariant.006"
+    },
+    {
+      "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.5d9cbba03fea",
+      "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:748",
+      "sentence": "The explicit nonclaim is that attested hardware proves neither correct model behavior nor safe use.",
+      "cues": [
+        "proves"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Explicit hardware-attestation nonclaim restating the chapter's scoped evidence boundary.",
+      "target_atom_id": "model-weight-custody-and-hardware-roots-of-trust.invariant.006"
+    },
+    {
+      "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.ce40ad57ed63",
+      "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:748",
+      "sentence": "It proves only the stated measurement or enforcement fact under a versioned trust and threat model.",
+      "cues": [
+        "proves"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "The measured-fact-only sentence states the exact least-authority meaning already owned by the attestation invariant.",
+      "target_atom_id": "model-weight-custody-and-hardware-roots-of-trust.invariant.006"
+    },
+    {
+      "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.e90f5b03313c",
+      "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:754",
       "sentence": "A custody design that can deny access but cannot recover from a false denial is",
       "cues": [
         "cannot"
@@ -15522,7 +16017,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.73a8d46d523e",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:747",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:755",
       "sentence": "Recovery must say which artifact identity is being",
       "cues": [
         "must"
@@ -15541,7 +16036,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.0d27ff0d5e79",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:759",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:767",
       "sentence": "therefore measure recovery success, recovery latency, false denial, residual",
       "cues": [
         "measure"
@@ -15560,7 +16055,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.b769b4dc70a1",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:762",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:770",
       "sentence": "Emergency access must also expire into a mandatory reconciliation that compares",
       "cues": [
         "must"
@@ -15579,7 +16074,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.ea8ab6f565e0",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:776",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:784",
       "sentence": "binds the fixture digest and theorem names, and demonstrates that invalid",
       "cues": [
         "demonstrates"
@@ -15598,7 +16093,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.dc8c8a1a73d7",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:793",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:801",
       "sentence": "The next slice must therefore stop adding fields to the same Boolean fixture",
       "cues": [
         "must"
@@ -15617,7 +16112,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.d20b782d0537",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:794",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:802",
       "sentence": "It should preregister a public-safe model-family artifact",
       "cues": [
         "should"
@@ -15636,7 +16131,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.1779474ac611",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:801",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:809",
       "sentence": "extraction beyond a public-safe artifact requires a separately authorized",
       "cues": [
         "requires"
@@ -15655,7 +16150,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.de6306c88599",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:812",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:820",
       "sentence": "effect-complete custody transaction may outperform narrower controls by",
       "cues": [
         "outperform"
@@ -15674,7 +16169,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.1d490d9f953c",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:819",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:827",
       "sentence": "The campaign must preregister a public-safe but effect-bearing model-family",
       "cues": [
         "must"
@@ -15693,7 +16188,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.0b118a3593de",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:831",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:839",
       "sentence": "Independent implementations must own asset and derivative discovery, Attester",
       "cues": [
         "must"
@@ -15712,7 +16207,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.480b6e08c16e",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:836",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:844",
       "sentence": "measures unauthorized acquisition and use; plaintext and side-channel exposure;",
       "cues": [
         "measures"
@@ -15731,7 +16226,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.416f3cab3db0",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:846",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:854",
       "sentence": "Replication and transfer span model families and",
       "cues": [
         "transfer"
@@ -15750,7 +16245,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.f7751737c34f",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:861",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:869",
       "sentence": "transfer pass the frozen joint gates.",
       "cues": [
         "transfer"
@@ -15769,7 +16264,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.ba395f62fbbe",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:893",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:901",
       "sentence": "They do not prove that an",
       "cues": [
         "prove"
@@ -15788,7 +16283,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.3b888bce6047",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:919",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:927",
       "sentence": "must not treat those nine records as nine independent demonstrations of one",
       "cues": [
         "must"
@@ -15807,7 +16302,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.140a9447d530",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:949",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:958",
       "sentence": "The current evidence proves nine finite routing declarations and eight fixture",
       "cues": [
         "proves"
@@ -15826,7 +16321,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.effbba13fd96",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:950",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:959",
       "sentence": "It neither demonstrates effective custody nor resolves whether a",
       "cues": [
         "demonstrates"
@@ -15845,7 +16340,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.2ef51a5d16c7",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:951",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:960",
       "sentence": "particular model should be used or released.",
       "cues": [
         "should"
@@ -16607,9 +17102,47 @@
       "target_atom_id": "ai-supply-chain-integrity-and-lifecycle-provenance.invariant.004"
     },
     {
+      "candidate_id": "ai-supply-chain-integrity-and-lifecycle-provenance.prose.f89913e293c3",
+      "chapter_id": "ai-supply-chain-integrity-and-lifecycle-provenance",
+      "source": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:571",
+      "sentence": "A plausible state sequence does not prove that the data were lawful, the objective was appropriate, hidden computation was absent, the run is exactly reproducible, or the model is safe.",
+      "cues": [
+        "prove"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "The proof-of-training limitation restates the core separation among plausible lineage, lawfulness, objective quality, reproducibility, and safety.",
+      "target_atom_id": "ai-supply-chain-integrity-and-lifecycle-provenance.core"
+    },
+    {
+      "candidate_id": "ai-supply-chain-integrity-and-lifecycle-provenance.prose.4e5b5498da44",
+      "chapter_id": "ai-supply-chain-integrity-and-lifecycle-provenance",
+      "source": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:573",
+      "sentence": "The explicit nonclaim is that neither a proof-of-training transcript nor a signed content manifest establishes semantic correctness, harmlessness, authorship legitimacy, or release authority.",
+      "cues": [
+        "establishes"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "The signed-manifest nonclaim restates the core rule that provenance and signatures do not establish semantic correctness, legitimacy, or authority.",
+      "target_atom_id": "ai-supply-chain-integrity-and-lifecycle-provenance.core"
+    },
+    {
       "candidate_id": "ai-supply-chain-integrity-and-lifecycle-provenance.prose.81536d28ed8c",
       "chapter_id": "ai-supply-chain-integrity-and-lifecycle-provenance",
-      "source": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:577",
+      "source": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:585",
       "sentence": "The condition must therefore be declared with the",
       "cues": [
         "must"
@@ -16628,7 +17161,7 @@
     {
       "candidate_id": "ai-supply-chain-integrity-and-lifecycle-provenance.prose.98381b5c8fd7",
       "chapter_id": "ai-supply-chain-integrity-and-lifecycle-provenance",
-      "source": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:595",
+      "source": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:603",
       "sentence": "The service-level evaluation should pair security and recovery outcomes.",
       "cues": [
         "should"
@@ -16647,7 +17180,7 @@
     {
       "candidate_id": "ai-supply-chain-integrity-and-lifecycle-provenance.prose.51ad484f8e01",
       "chapter_id": "ai-supply-chain-integrity-and-lifecycle-provenance",
-      "source": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:596",
+      "source": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:604",
       "sentence": "should measure seeded affected-path recall and precision, time to quarantine,",
       "cues": [
         "measure",
@@ -16667,7 +17200,7 @@
     {
       "candidate_id": "ai-supply-chain-integrity-and-lifecycle-provenance.prose.d12ef149b833",
       "chapter_id": "ai-supply-chain-integrity-and-lifecycle-provenance",
-      "source": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:604",
+      "source": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:612",
       "sentence": "Finally, retirement must close authority without deleting history.",
       "cues": [
         "must"
@@ -16686,7 +17219,7 @@
     {
       "candidate_id": "ai-supply-chain-integrity-and-lifecycle-provenance.prose.011dc6bd6275",
       "chapter_id": "ai-supply-chain-integrity-and-lifecycle-provenance",
-      "source": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:607",
+      "source": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:615",
       "sentence": "That distinction prevents “removed from service” from being",
       "cues": [
         "prevents"
@@ -16705,7 +17238,7 @@
     {
       "candidate_id": "ai-supply-chain-integrity-and-lifecycle-provenance.prose.c3daa8e032bf",
       "chapter_id": "ai-supply-chain-integrity-and-lifecycle-provenance",
-      "source": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:622",
+      "source": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:630",
       "sentence": "This establishes one declared graph's record, route, closure, and mutation",
       "cues": [
         "establishes"
@@ -16724,7 +17257,7 @@
     {
       "candidate_id": "ai-supply-chain-integrity-and-lifecycle-provenance.prose.6251c1911ed5",
       "chapter_id": "ai-supply-chain-integrity-and-lifecycle-provenance",
-      "source": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:631",
+      "source": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:639",
       "sentence": "The next slice must create public-safe effects rather than add Boolean fields.",
       "cues": [
         "must"
@@ -16743,7 +17276,7 @@
     {
       "candidate_id": "ai-supply-chain-integrity-and-lifecycle-provenance.prose.97d9daf67708",
       "chapter_id": "ai-supply-chain-integrity-and-lifecycle-provenance",
-      "source": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:632",
+      "source": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:640",
       "sentence": "It should use a harmless multi-artifact model/data/code package with seeded",
       "cues": [
         "should"
@@ -16762,7 +17295,7 @@
     {
       "candidate_id": "ai-supply-chain-integrity-and-lifecycle-provenance.prose.cb29752ec830",
       "chapter_id": "ai-supply-chain-integrity-and-lifecycle-provenance",
-      "source": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:637",
+      "source": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:645",
       "sentence": "affected-path calculation, and effect observation should be independently",
       "cues": [
         "should"
@@ -16781,7 +17314,7 @@
     {
       "candidate_id": "ai-supply-chain-integrity-and-lifecycle-provenance.prose.b86624103c85",
       "chapter_id": "ai-supply-chain-integrity-and-lifecycle-provenance",
-      "source": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:638",
+      "source": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:646",
       "sentence": "implemented enough that one self-authored record cannot certify itself.",
       "cues": [
         "cannot"
@@ -16800,7 +17333,7 @@
     {
       "candidate_id": "ai-supply-chain-integrity-and-lifecycle-provenance.prose.cd57b66db8da",
       "chapter_id": "ai-supply-chain-integrity-and-lifecycle-provenance",
-      "source": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:644",
+      "source": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:652",
       "sentence": "consumer lineage closely enough to measure both false and missing edges.",
       "cues": [
         "measure"
@@ -16819,7 +17352,7 @@
     {
       "candidate_id": "ai-supply-chain-integrity-and-lifecycle-provenance.prose.858963a8aa44",
       "chapter_id": "ai-supply-chain-integrity-and-lifecycle-provenance",
-      "source": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:647",
+      "source": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:655",
       "sentence": "full consumer-relative transaction may improve artifact/edge discovery,",
       "cues": [
         "improve"
@@ -16838,7 +17371,7 @@
     {
       "candidate_id": "ai-supply-chain-integrity-and-lifecycle-provenance.prose.74ee510c95c5",
       "chapter_id": "ai-supply-chain-integrity-and-lifecycle-provenance",
-      "source": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:653",
+      "source": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:661",
       "sentence": "The campaign must preregister public-safe but effect-bearing artifact families,",
       "cues": [
         "must"
@@ -16857,7 +17390,7 @@
     {
       "candidate_id": "ai-supply-chain-integrity-and-lifecycle-provenance.prose.01d3e2d3dd46",
       "chapter_id": "ai-supply-chain-integrity-and-lifecycle-provenance",
-      "source": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:666",
+      "source": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:674",
       "sentence": "Separate implementations must own artifact discovery/content verification,",
       "cues": [
         "must"
@@ -16876,7 +17409,7 @@
     {
       "candidate_id": "ai-supply-chain-integrity-and-lifecycle-provenance.prose.84db23654b11",
       "chapter_id": "ai-supply-chain-integrity-and-lifecycle-provenance",
-      "source": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:680",
+      "source": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:688",
       "sentence": "Replication and transfer span artifact, model,",
       "cues": [
         "transfer"
@@ -16895,7 +17428,7 @@
     {
       "candidate_id": "ai-supply-chain-integrity-and-lifecycle-provenance.prose.c138b4801982",
       "chapter_id": "ai-supply-chain-integrity-and-lifecycle-provenance",
-      "source": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:686",
+      "source": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:694",
       "sentence": "completeness, integrity, superior-control, effective-revocation, or transfer",
       "cues": [
         "transfer"
@@ -16914,7 +17447,7 @@
     {
       "candidate_id": "ai-supply-chain-integrity-and-lifecycle-provenance.prose.89f56e4b7798",
       "chapter_id": "ai-supply-chain-integrity-and-lifecycle-provenance",
-      "source": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:696",
+      "source": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:704",
       "sentence": "independent reproduction, and transfer pass the joint gates.",
       "cues": [
         "transfer"
@@ -16933,7 +17466,7 @@
     {
       "candidate_id": "ai-supply-chain-integrity-and-lifecycle-provenance.prose.d4dbc763e187",
       "chapter_id": "ai-supply-chain-integrity-and-lifecycle-provenance",
-      "source": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:719",
+      "source": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:727",
       "sentence": "The seven theorem declarations do not prove that an advisory is accurate, that an artifact is",
       "cues": [
         "prove"
@@ -16952,7 +17485,7 @@
     {
       "candidate_id": "ai-supply-chain-integrity-and-lifecycle-provenance.prose.29a2dbcfac89",
       "chapter_id": "ai-supply-chain-integrity-and-lifecycle-provenance",
-      "source": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:723",
+      "source": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:731",
       "sentence": "missing fields, an unresolved critical advisory, or a required unverified",
       "cues": [
         "required"
@@ -16971,7 +17504,7 @@
     {
       "candidate_id": "ai-supply-chain-integrity-and-lifecycle-provenance.prose.e5e1cf74e7ac",
       "chapter_id": "ai-supply-chain-integrity-and-lifecycle-provenance",
-      "source": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:762",
+      "source": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:772",
       "sentence": "properties one use requires, keeps assertions separate from verification and",
       "cues": [
         "requires"
@@ -16990,7 +17523,7 @@
     {
       "candidate_id": "ai-supply-chain-integrity-and-lifecycle-provenance.prose.a63e4361f8b8",
       "chapter_id": "ai-supply-chain-integrity-and-lifecycle-provenance",
-      "source": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:769",
+      "source": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:779",
       "sentence": "cannot remain ordinary by dashboard inertia.",
       "cues": [
         "cannot"
@@ -17009,7 +17542,7 @@
     {
       "candidate_id": "ai-supply-chain-integrity-and-lifecycle-provenance.prose.f0a2c7043eb9",
       "chapter_id": "ai-supply-chain-integrity-and-lifecycle-provenance",
-      "source": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:817",
+      "source": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:827",
       "sentence": "relationships, and must treat such a change as a governed transition with",
       "cues": [
         "must"
@@ -19296,9 +19829,143 @@
       "target_atom_id": "autonomous-replication-proliferation-and-containment.mechanism.003"
     },
     {
+      "candidate_id": "autonomous-replication-proliferation-and-containment.prose.c7cc3114518f",
+      "chapter_id": "autonomous-replication-proliferation-and-containment",
+      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:117",
+      "sentence": "acquisition, artifact transfer or reconstruction, identity and credential",
+      "cues": [
+        "transfer"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Line-wrapped replication-stage enumeration elaborates the chapter's manifest-owned replication contract.",
+      "target_atom_id": "autonomous-replication-proliferation-and-containment.core"
+    },
+    {
+      "candidate_id": "autonomous-replication-proliferation-and-containment.prose.584c4d9aad9d",
+      "chapter_id": "autonomous-replication-proliferation-and-containment",
+      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:155",
+      "sentence": "the system creates a new principal, provisions bounded compute, transfers a",
+      "cues": [
+        "transfers"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Line-wrapped principal, compute, and transfer sequence elaborates the existing end-to-end replication definition.",
+      "target_atom_id": "autonomous-replication-proliferation-and-containment.core"
+    },
+    {
+      "candidate_id": "autonomous-replication-proliferation-and-containment.prose.419b7bdd5ff9",
+      "chapter_id": "autonomous-replication-proliferation-and-containment",
+      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:170",
+      "sentence": "The ladder prevents two opposite errors: calling a component success",
+      "cues": [
+        "prevents"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "The replication ladder's classification rule operationalizes the chapter core and creates no separate support-bearing claim.",
+      "target_atom_id": "autonomous-replication-proliferation-and-containment.core"
+    },
+    {
+      "candidate_id": "autonomous-replication-proliferation-and-containment.prose.1274fc164d40",
+      "chapter_id": "autonomous-replication-proliferation-and-containment",
+      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:177",
+      "sentence": "scaffold it claims to measure and may teach reusable operations.",
+      "cues": [
+        "measure"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Scaffold-validity fragment elaborating the manifest-owned evaluator and transfer boundary.",
+      "target_atom_id": "autonomous-replication-proliferation-and-containment.core"
+    },
+    {
+      "candidate_id": "autonomous-replication-proliferation-and-containment.prose.ab4ffad8443e",
+      "chapter_id": "autonomous-replication-proliferation-and-containment",
+      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:181",
+      "sentence": "cannot answer a material threshold question and the environment can guarantee",
+      "cues": [
+        "cannot",
+        "guarantee"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Environment-guarantee fragment elaborating the chapter's material-threshold and validity boundary.",
+      "target_atom_id": "autonomous-replication-proliferation-and-containment.core"
+    },
+    {
+      "candidate_id": "autonomous-replication-proliferation-and-containment.prose.c33cbc0d2d82",
+      "chapter_id": "autonomous-replication-proliferation-and-containment",
+      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:191",
+      "sentence": "A successful recall in one closed environment does not prove universal",
+      "cues": [
+        "prove"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Closed-environment recall nonclaim restating the chapter's transfer and universality ceiling.",
+      "target_atom_id": "autonomous-replication-proliferation-and-containment.core"
+    },
+    {
+      "candidate_id": "autonomous-replication-proliferation-and-containment.prose.c1932b6535a1",
+      "chapter_id": "autonomous-replication-proliferation-and-containment",
+      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:192",
+      "sentence": "A failed synthetic chain cannot refute replication capability",
+      "cues": [
+        "cannot"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Synthetic-chain failure nonclaim restating the core prohibition on refuting broader replication capability from a bounded failure.",
+      "target_atom_id": "autonomous-replication-proliferation-and-containment.core"
+    },
+    {
       "candidate_id": "autonomous-replication-proliferation-and-containment.prose.d18d74e7ec22",
       "chapter_id": "autonomous-replication-proliferation-and-containment",
-      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:115",
+      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:200",
       "sentence": "The packet must preserve exact object and version",
       "cues": [
         "must"
@@ -19317,7 +19984,7 @@
     {
       "candidate_id": "autonomous-replication-proliferation-and-containment.prose.c28c8b573493",
       "chapter_id": "autonomous-replication-proliferation-and-containment",
-      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:118",
+      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:203",
       "sentence": "or recording a dispatch does not prove that the meaning survived or that the",
       "cues": [
         "prove"
@@ -19336,7 +20003,7 @@
     {
       "candidate_id": "autonomous-replication-proliferation-and-containment.prose.5baa1bd83758",
       "chapter_id": "autonomous-replication-proliferation-and-containment",
-      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:134",
+      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:219",
       "sentence": "A finite formal model may prove that an authored record follows",
       "cues": [
         "prove"
@@ -19355,7 +20022,7 @@
     {
       "candidate_id": "autonomous-replication-proliferation-and-containment.prose.b273b9da3c45",
       "chapter_id": "autonomous-replication-proliferation-and-containment",
-      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:135",
+      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:220",
       "sentence": "these rules, but only implementation and outcome evidence can show that a live",
       "cues": [
         "show"
@@ -19374,7 +20041,7 @@
     {
       "candidate_id": "autonomous-replication-proliferation-and-containment.prose.95b08a9d51f8",
       "chapter_id": "autonomous-replication-proliferation-and-containment",
-      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:152",
+      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:237",
       "sentence": "because it prevented one hazard, while a permissive architecture cannot hide",
       "cues": [
         "cannot"
@@ -19393,7 +20060,7 @@
     {
       "candidate_id": "autonomous-replication-proliferation-and-containment.prose.620e415af61e",
       "chapter_id": "autonomous-replication-proliferation-and-containment",
-      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:155",
+      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:240",
       "sentence": "show whether correction, recovery, compensation, or withdrawal actually",
       "cues": [
         "show"
@@ -19412,7 +20079,7 @@
     {
       "candidate_id": "autonomous-replication-proliferation-and-containment.prose.0d0672be8928",
       "chapter_id": "autonomous-replication-proliferation-and-containment",
-      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:163",
+      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:248",
       "sentence": "A Replication containment implementation should begin with an ordinary baseline and the strongest",
       "cues": [
         "should"
@@ -19431,7 +20098,7 @@
     {
       "candidate_id": "autonomous-replication-proliferation-and-containment.prose.b1e789afc8a0",
       "chapter_id": "autonomous-replication-proliferation-and-containment",
-      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:166",
+      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:251",
       "sentence": "help, retry policy, and stopping rules should be matched or reported.",
       "cues": [
         "should"
@@ -19450,7 +20117,7 @@
     {
       "candidate_id": "autonomous-replication-proliferation-and-containment.prose.39fbf6aadcfb",
       "chapter_id": "autonomous-replication-proliferation-and-containment",
-      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:167",
+      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:252",
       "sentence": "controls must show that the task and instruments can detect the intended",
       "cues": [
         "must",
@@ -19470,7 +20137,7 @@
     {
       "candidate_id": "autonomous-replication-proliferation-and-containment.prose.308056885e55",
       "chapter_id": "autonomous-replication-proliferation-and-containment",
-      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:174",
+      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:259",
       "sentence": "A fair Replication containment test must freeze the mechanism, authority, comparator set, tuning and",
       "cues": [
         "must"
@@ -19489,7 +20156,7 @@
     {
       "candidate_id": "autonomous-replication-proliferation-and-containment.prose.0538f7bf12b7",
       "chapter_id": "autonomous-replication-proliferation-and-containment",
-      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:176",
+      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:261",
       "sentence": "It must include favorable or oracle checks, mechanism-specific",
       "cues": [
         "must"
@@ -19508,7 +20175,7 @@
     {
       "candidate_id": "autonomous-replication-proliferation-and-containment.prose.972c55ad6e70",
       "chapter_id": "autonomous-replication-proliferation-and-containment",
-      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:179",
+      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:264",
       "sentence": "A weak implementation can narrow that implementation; it cannot",
       "cues": [
         "cannot"
@@ -19527,7 +20194,7 @@
     {
       "candidate_id": "autonomous-replication-proliferation-and-containment.prose.a45a57738dd9",
       "chapter_id": "autonomous-replication-proliferation-and-containment",
-      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:197",
+      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:282",
       "sentence": "total lifecycle cost, the simpler system should be preferred.",
       "cues": [
         "should"
@@ -19546,7 +20213,7 @@
     {
       "candidate_id": "autonomous-replication-proliferation-and-containment.prose.d7c698d66ae4",
       "chapter_id": "autonomous-replication-proliferation-and-containment",
-      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:227",
+      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:312",
       "sentence": "Its empirical, formal, transfer, and deployment work remains an open",
       "cues": [
         "transfer"
@@ -19565,7 +20232,7 @@
     {
       "candidate_id": "autonomous-replication-proliferation-and-containment.prose.1644f28bb30e",
       "chapter_id": "autonomous-replication-proliferation-and-containment",
-      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:241",
+      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:326",
       "sentence": "The receiving chapter must preserve the identities,",
       "cues": [
         "must"
@@ -19584,7 +20251,7 @@
     {
       "candidate_id": "autonomous-replication-proliferation-and-containment.prose.6e2a279b9dad",
       "chapter_id": "autonomous-replication-proliferation-and-containment",
-      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:244",
+      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:329",
       "sentence": "that the packet crossed the declared interface; it does not prove that either",
       "cues": [
         "prove"
@@ -34574,7 +35241,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.f333c873c1cf",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:45",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:49",
       "sentence": "Learning theory is most useful when it states exactly what must be true for a prediction to travel.",
       "cues": [
         "must"
@@ -34593,7 +35260,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.ee641ec15a86",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:45",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:49",
       "sentence": "Modern systems may fit training data, interpolate, grok late, improve smoothly in loss while jumping on thresholded metrics, or break an old scaling curve after an architecture change.",
       "cues": [
         "improve"
@@ -34612,7 +35279,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.08f8665ec4dc",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:45",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:49",
       "sentence": "Every theorem, empirical regularity, and forecast has a domain whose assumptions must remain attached.",
       "cues": [
         "must"
@@ -34631,7 +35298,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.dd977bc5f551",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:47",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:51",
       "sentence": "Optimization success, in-distribution generalization, distribution shift, transfer, robustness, calibration, emergence, and extrapolation are different claims.",
       "cues": [
         "transfer"
@@ -34650,7 +35317,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.90b0f40b7b08",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:49",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:53",
       "sentence": "Theory should narrow expectations and identify the next experiment, while transfer beyond the measured regime remains a hypothesis until prospective evidence earns a broader claim.",
       "cues": [
         "should",
@@ -34670,7 +35337,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.8f669cec57eb",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:54",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:58",
       "sentence": "The stack repeatedly relies on claims that learning will generalize, capabilities will transfer, losses will scale, or phase changes will appear outside observed training support.",
       "cues": [
         "scale",
@@ -34690,7 +35357,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.f743e5b515b4",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:54",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:58",
       "sentence": "Those claims require an owner that connects assumptions about data, hypothesis class, optimization, inductive bias, compute, and evaluation to an exact prediction and failure envelope.",
       "cues": [
         "require"
@@ -34709,7 +35376,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.6dda77649580",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:56",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:60",
       "sentence": "This gap matters at the scale of a stack because its output becomes another",
       "cues": [
         "scale"
@@ -34728,7 +35395,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.9a3e6a8ff12a",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:61",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:65",
       "sentence": "contract and a refusal path: it must say what counts as an admissible",
       "cues": [
         "must"
@@ -34747,7 +35414,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.0fc76be74e0f",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:67",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:71",
       "sentence": "PAC bounds, capacity measures, stability, compression, information theory, scaling-law fits, emergence plots, and benchmark curves each illuminate part of learning.",
       "cues": [
         "measures"
@@ -34766,7 +35433,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.afc9d3339a05",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:67",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:71",
       "sentence": "None is a universal theory of deep networks, and none automatically transports from a loss metric, architecture family, data regime, optimizer, or scale range to downstream capability or safety.",
       "cues": [
         "scale"
@@ -34785,7 +35452,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.e206b55bf266",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:69",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:73",
       "sentence": "Learning and scaling science must first beat a disciplined composition of the adjacent",
       "cues": [
         "must"
@@ -34804,7 +35471,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.776b655c3d7d",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:70",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:74",
       "sentence": "That alternative should win if it can preserve the same identities,",
       "cues": [
         "should"
@@ -34823,7 +35490,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.46e6021e6ba0",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:72",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:76",
       "sentence": "A dedicated owner remains necessary because the",
       "cues": [
         "necessary"
@@ -34842,7 +35509,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.0518b15b8aaf",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:74",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:78",
       "sentence": "does not imply autonomy: this owner must consume upstream records and return",
       "cues": [
         "must"
@@ -34861,7 +35528,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.311546b98be0",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:93",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:97",
       "sentence": "**What the Learning Theory, Generalization, and Scaling Science lifecycle shows:** Authority enters before execution,",
       "cues": [
         "shows"
@@ -34880,7 +35547,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.e48fae3dadef",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:100",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:104",
       "sentence": "[learning-theory-generalization-and-scaling-science.core, label: Design rationale, support: argument] A generalization, transfer, emergence, or scaling assertion should be accepted only through a dated claim contract that binds population and sampling assumptions, data support, hypothesis and algorithm, optimization and inductive bias, complexity or explanatory lens, metric, compute regime, uncertainty, breakpoint tests, held-out prediction, alternatives, and transfer boundary; a bound, fit, interpolation result, compression ratio, benchmark jump, or larger model alone establishes neither broad generalization, capability emergence, safety, nor future scale behavior.",
       "cues": [
         "establishes",
@@ -34902,7 +35569,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.05f8840e001c",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:104",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:108",
       "sentence": "For Learning Theory, Generalization, and Scaling Science, the record must name its inputs, authority, consumer, expiry, and unresolved residuals.",
       "cues": [
         "must"
@@ -34921,7 +35588,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.69531b9bde5b",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:108",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:112",
       "sentence": "**Execution.** Fit scaling relations with uncertainty, held-out scales, architecture and data identifiers, failed runs, compute accounting, breakpoint diagnostics, and prospective forecasts.",
       "cues": [
         "scales"
@@ -34940,7 +35607,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.54f8c544c331",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:112",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:116",
       "sentence": "**Closure.** Challenge transfer and compositionality under natural shift, targeted shift, new task structure, optimizer change, architecture replacement, and data contamination.",
       "cues": [
         "transfer"
@@ -34957,9 +35624,277 @@
       "target_atom_id": "learning-theory-generalization-and-scaling-science.mechanism.005"
     },
     {
+      "candidate_id": "learning-theory-generalization-and-scaling-science.prose.3cf45e870db0",
+      "chapter_id": "learning-theory-generalization-and-scaling-science",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:124",
+      "sentence": "describes how the required number of examples scales with those choices.",
+      "cues": [
+        "required",
+        "scales"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Sample-complexity line fragment elaborating the chapter's manifest-owned learning-theory contract.",
+      "target_atom_id": "learning-theory-generalization-and-scaling-science.core"
+    },
+    {
+      "candidate_id": "learning-theory-generalization-and-scaling-science.prose.50b0d4a65a15",
+      "chapter_id": "learning-theory-generalization-and-scaling-science",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:129",
+      "sentence": "For a foundation model, the practical contract must additionally identify",
+      "cues": [
+        "must"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Foundation-model scope fragment elaborating the chapter's exact distribution, metric, and transfer contract.",
+      "target_atom_id": "learning-theory-generalization-and-scaling-science.core"
+    },
+    {
+      "candidate_id": "learning-theory-generalization-and-scaling-science.prose.0fc84513da71",
+      "chapter_id": "learning-theory-generalization-and-scaling-science",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:133",
+      "sentence": "i.i.d. concept class cannot be presented as a guarantee under open-world shift.",
+      "cues": [
+        "cannot",
+        "guarantee"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "The i.i.d.-to-open-world nonclaim restates the core generalization boundary.",
+      "target_atom_id": "learning-theory-generalization-and-scaling-science.core"
+    },
+    {
+      "candidate_id": "learning-theory-generalization-and-scaling-science.prose.66a2c09e03cb",
+      "chapter_id": "learning-theory-generalization-and-scaling-science",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:144",
+      "sentence": "correctness, robustness, safety, or transfer outside its distribution and",
+      "cues": [
+        "transfer"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Correctness, robustness, safety, and transfer fragment restating the chapter's support ceiling.",
+      "target_atom_id": "learning-theory-generalization-and-scaling-science.core"
+    },
+    {
+      "candidate_id": "learning-theory-generalization-and-scaling-science.prose.36195bdd4d22",
+      "chapter_id": "learning-theory-generalization-and-scaling-science",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:151",
+      "sentence": "and sometimes improve beyond the interpolation threshold.",
+      "cues": [
+        "improve"
+      ],
+      "review_state": "historical_or_source_report",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Source-grounded double-descent observation retained as an external result, not a universal or locally reproduced scaling law.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "learning-theory-generalization-and-scaling-science.prose.a01c8c274b16",
+      "chapter_id": "learning-theory-generalization-and-scaling-science",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:158",
+      "sentence": "Scaling experiments should therefore sweep across the suspected interpolation",
+      "cues": [
+        "should"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Interpolation-threshold sweep guidance operationalizes the chapter's manifest-owned scaling evaluation contract.",
+      "target_atom_id": "learning-theory-generalization-and-scaling-science.core"
+    },
+    {
+      "candidate_id": "learning-theory-generalization-and-scaling-science.prose.d76a642f6ee0",
+      "chapter_id": "learning-theory-generalization-and-scaling-science",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:166",
+      "sentence": "**Failure mode.** Sparse scale points skip the peak and produce a confident but",
+      "cues": [
+        "scale"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Sparse-scale-point failure fragment elaborating the chapter's manifest-owned scaling-forecast failure family.",
+      "target_atom_id": "learning-theory-generalization-and-scaling-science.core"
+    },
+    {
+      "candidate_id": "learning-theory-generalization-and-scaling-science.prose.abb2ee109ee4",
+      "chapter_id": "learning-theory-generalization-and-scaling-science",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:170",
+      "sentence": "noise regime, or metric does not transfer automatically to another.",
+      "cues": [
+        "transfer"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Cross-regime transfer nonclaim restating the chapter's exact-data and exact-metric boundary.",
+      "target_atom_id": "learning-theory-generalization-and-scaling-science.core"
+    },
+    {
+      "candidate_id": "learning-theory-generalization-and-scaling-science.prose.1c3163582009",
+      "chapter_id": "learning-theory-generalization-and-scaling-science",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:205",
+      "sentence": "and forecast horizon before the held-out scales are observed.",
+      "cues": [
+        "scales"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Prospective forecast-horizon fragment operationalizes the chapter's anti-leakage and held-out-scale contract.",
+      "target_atom_id": "learning-theory-generalization-and-scaling-science.core"
+    },
+    {
+      "candidate_id": "learning-theory-generalization-and-scaling-science.prose.c797e8d79493",
+      "chapter_id": "learning-theory-generalization-and-scaling-science",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:223",
+      "sentence": "not settled by naming “emergence.” A claim should be tested under continuous",
+      "cues": [
+        "should"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Emergence-label limitation elaborates the chapter's manifest-owned breakpoint adjudication rule.",
+      "target_atom_id": "learning-theory-generalization-and-scaling-science.core"
+    },
+    {
+      "candidate_id": "learning-theory-generalization-and-scaling-science.prose.ced7f6379766",
+      "chapter_id": "learning-theory-generalization-and-scaling-science",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:227",
+      "sentence": "decision threshold changed, or whether the available data cannot distinguish",
+      "cues": [
+        "cannot"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Threshold-change and identifiability fragment elaborating the existing emergence evaluation alternatives.",
+      "target_atom_id": "learning-theory-generalization-and-scaling-science.core"
+    },
+    {
+      "candidate_id": "learning-theory-generalization-and-scaling-science.prose.ce4c8947ff2b",
+      "chapter_id": "learning-theory-generalization-and-scaling-science",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:231",
+      "sentence": "genuine-breakpoint model; score all three on held-out scales and tasks.",
+      "cues": [
+        "scales"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Breakpoint-model comparison fragment operationalizing the chapter's existing emergence adjudication contract.",
+      "target_atom_id": "learning-theory-generalization-and-scaling-science.core"
+    },
+    {
+      "candidate_id": "learning-theory-generalization-and-scaling-science.prose.8d198e8dfead",
+      "chapter_id": "learning-theory-generalization-and-scaling-science",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:236",
+      "sentence": "**Explicit non-claim.** metric artifacts do not prove that every capability is",
+      "cues": [
+        "prove"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Metric-artifact nonclaim restating the chapter's prohibition on universal smoothness inference.",
+      "target_atom_id": "learning-theory-generalization-and-scaling-science.core"
+    },
+    {
+      "candidate_id": "learning-theory-generalization-and-scaling-science.prose.4c29f66760e3",
+      "chapter_id": "learning-theory-generalization-and-scaling-science",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:237",
+      "sentence": "smooth; an apparent breakpoint does not prove a new internal algorithm.",
+      "cues": [
+        "prove"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Apparent-breakpoint nonclaim restating the separation between behavioral curves and internal-algorithm claims.",
+      "target_atom_id": "learning-theory-generalization-and-scaling-science.core"
+    },
+    {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.d18d74e7ec22",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:118",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:243",
       "sentence": "The packet must preserve exact object and version",
       "cues": [
         "must"
@@ -34978,7 +35913,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.c28c8b573493",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:121",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:246",
       "sentence": "or recording a dispatch does not prove that the meaning survived or that the",
       "cues": [
         "prove"
@@ -34997,7 +35932,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.5baa1bd83758",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:135",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:260",
       "sentence": "A finite formal model may prove that an authored record follows",
       "cues": [
         "prove"
@@ -35016,7 +35951,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.b273b9da3c45",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:136",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:261",
       "sentence": "these rules, but only implementation and outcome evidence can show that a live",
       "cues": [
         "show"
@@ -35035,7 +35970,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.95b08a9d51f8",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:153",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:278",
       "sentence": "because it prevented one hazard, while a permissive architecture cannot hide",
       "cues": [
         "cannot"
@@ -35054,7 +35989,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.620e415af61e",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:156",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:281",
       "sentence": "show whether correction, recovery, compensation, or withdrawal actually",
       "cues": [
         "show"
@@ -35073,7 +36008,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.2a49ae648aea",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:161",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:286",
       "sentence": "Freeze candidate curve families and explanatory lenses, hold out scale points and task families, record failed runs and tuning, test breakpoint alternatives, and compare prediction intervals for loss, calibration, and downstream tasks.",
       "cues": [
         "scale"
@@ -35092,7 +36027,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.f9834fe83ee7",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:163",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:288",
       "sentence": "A Learning and scaling science implementation should begin with an ordinary baseline and the strongest",
       "cues": [
         "should"
@@ -35111,7 +36046,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.b1e789afc8a0",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:166",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:291",
       "sentence": "help, retry policy, and stopping rules should be matched or reported.",
       "cues": [
         "should"
@@ -35130,7 +36065,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.39fbf6aadcfb",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:167",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:292",
       "sentence": "controls must show that the task and instruments can detect the intended",
       "cues": [
         "must",
@@ -35150,7 +36085,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.2cd424e102d0",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:174",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:299",
       "sentence": "A fair Learning and scaling science test must freeze the mechanism, authority, comparator set, tuning and",
       "cues": [
         "must"
@@ -35169,7 +36104,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.0538f7bf12b7",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:176",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:301",
       "sentence": "It must include favorable or oracle checks, mechanism-specific",
       "cues": [
         "must"
@@ -35188,7 +36123,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.972c55ad6e70",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:179",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:304",
       "sentence": "A weak implementation can narrow that implementation; it cannot",
       "cues": [
         "cannot"
@@ -35207,7 +36142,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.a45a57738dd9",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:197",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:322",
       "sentence": "total lifecycle cost, the simpler system should be preferred.",
       "cues": [
         "should"
@@ -35226,7 +36161,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.d7c698d66ae4",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:230",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:359",
       "sentence": "Its empirical, formal, transfer, and deployment work remains an open",
       "cues": [
         "transfer"
@@ -35245,7 +36180,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.1644f28bb30e",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:244",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:373",
       "sentence": "The receiving chapter must preserve the identities,",
       "cues": [
         "must"
@@ -35264,7 +36199,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.6e2a279b9dad",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:247",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:376",
       "sentence": "that the packet crossed the declared interface; it does not prove that either",
       "cues": [
         "prove"
@@ -44761,9 +45696,47 @@
       "target_atom_id": null
     },
     {
+      "candidate_id": "physical-compute-infrastructure-energy-and-environmental-constraints.prose.3f6ae24370b6",
+      "chapter_id": "physical-compute-infrastructure-energy-and-environmental-constraints",
+      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:149",
+      "sentence": "Every hardware-governance result should carry a **coverage and authority record**: device population and sampling frame, hardware and firmware versions, measured operations, excluded paths, attestation root, policy and signer versions, update mechanism, bypass assumptions, false-positive and false-negative tests, privacy impact, jurisdiction, expiry, and recourse.",
+      "cues": [
+        "should"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "The coverage-and-authority record operationalizes the chapter's manifest-owned metering, uncertainty, hardware, authority, and recourse obligations.",
+      "target_atom_id": "physical-compute-infrastructure-energy-and-environmental-constraints.core"
+    },
+    {
+      "candidate_id": "physical-compute-infrastructure-energy-and-environmental-constraints.prose.9d203e9f2895",
+      "chapter_id": "physical-compute-infrastructure-energy-and-environmental-constraints",
+      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:149",
+      "sentence": "A valid attestation from one device cannot silently stand in for a facility, supply chain, or global fleet.",
+      "cues": [
+        "cannot"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "The device-to-fleet nonclaim restates the chapter's denominator, scope, and transfer boundary.",
+      "target_atom_id": "physical-compute-infrastructure-energy-and-environmental-constraints.core"
+    },
+    {
       "candidate_id": "physical-compute-infrastructure-energy-and-environmental-constraints.prose.95b08a9d51f8",
       "chapter_id": "physical-compute-infrastructure-energy-and-environmental-constraints",
-      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:153",
+      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:161",
       "sentence": "because it prevented one hazard, while a permissive architecture cannot hide",
       "cues": [
         "cannot"
@@ -44782,7 +45755,7 @@
     {
       "candidate_id": "physical-compute-infrastructure-energy-and-environmental-constraints.prose.620e415af61e",
       "chapter_id": "physical-compute-infrastructure-energy-and-environmental-constraints",
-      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:156",
+      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:164",
       "sentence": "show whether correction, recovery, compensation, or withdrawal actually",
       "cues": [
         "show"
@@ -44801,7 +45774,7 @@
     {
       "candidate_id": "physical-compute-infrastructure-energy-and-environmental-constraints.prose.7dd9cd92d79c",
       "chapter_id": "physical-compute-infrastructure-energy-and-environmental-constraints",
-      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:161",
+      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:169",
       "sentence": "Local results do not establish frontier-facility or grid transfer.",
       "cues": [
         "transfer"
@@ -44820,7 +45793,7 @@
     {
       "candidate_id": "physical-compute-infrastructure-energy-and-environmental-constraints.prose.96576a77ae57",
       "chapter_id": "physical-compute-infrastructure-energy-and-environmental-constraints",
-      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:163",
+      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:171",
       "sentence": "A Physical compute governance implementation should begin with an ordinary baseline and the strongest",
       "cues": [
         "should"
@@ -44839,7 +45812,7 @@
     {
       "candidate_id": "physical-compute-infrastructure-energy-and-environmental-constraints.prose.b1e789afc8a0",
       "chapter_id": "physical-compute-infrastructure-energy-and-environmental-constraints",
-      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:166",
+      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:174",
       "sentence": "help, retry policy, and stopping rules should be matched or reported.",
       "cues": [
         "should"
@@ -44858,7 +45831,7 @@
     {
       "candidate_id": "physical-compute-infrastructure-energy-and-environmental-constraints.prose.39fbf6aadcfb",
       "chapter_id": "physical-compute-infrastructure-energy-and-environmental-constraints",
-      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:167",
+      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:175",
       "sentence": "controls must show that the task and instruments can detect the intended",
       "cues": [
         "must",
@@ -44878,7 +45851,7 @@
     {
       "candidate_id": "physical-compute-infrastructure-energy-and-environmental-constraints.prose.899e3e80ce03",
       "chapter_id": "physical-compute-infrastructure-energy-and-environmental-constraints",
-      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:174",
+      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:182",
       "sentence": "A fair Physical compute governance test must freeze the mechanism, authority, comparator set, tuning and",
       "cues": [
         "must"
@@ -44897,7 +45870,7 @@
     {
       "candidate_id": "physical-compute-infrastructure-energy-and-environmental-constraints.prose.0538f7bf12b7",
       "chapter_id": "physical-compute-infrastructure-energy-and-environmental-constraints",
-      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:176",
+      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:184",
       "sentence": "It must include favorable or oracle checks, mechanism-specific",
       "cues": [
         "must"
@@ -44916,7 +45889,7 @@
     {
       "candidate_id": "physical-compute-infrastructure-energy-and-environmental-constraints.prose.972c55ad6e70",
       "chapter_id": "physical-compute-infrastructure-energy-and-environmental-constraints",
-      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:179",
+      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:187",
       "sentence": "A weak implementation can narrow that implementation; it cannot",
       "cues": [
         "cannot"
@@ -44935,7 +45908,7 @@
     {
       "candidate_id": "physical-compute-infrastructure-energy-and-environmental-constraints.prose.a45a57738dd9",
       "chapter_id": "physical-compute-infrastructure-energy-and-environmental-constraints",
-      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:197",
+      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:205",
       "sentence": "total lifecycle cost, the simpler system should be preferred.",
       "cues": [
         "should"
@@ -44954,7 +45927,7 @@
     {
       "candidate_id": "physical-compute-infrastructure-energy-and-environmental-constraints.prose.d7c698d66ae4",
       "chapter_id": "physical-compute-infrastructure-energy-and-environmental-constraints",
-      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:228",
+      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:245",
       "sentence": "Its empirical, formal, transfer, and deployment work remains an open",
       "cues": [
         "transfer"
@@ -44973,7 +45946,7 @@
     {
       "candidate_id": "physical-compute-infrastructure-energy-and-environmental-constraints.prose.1644f28bb30e",
       "chapter_id": "physical-compute-infrastructure-energy-and-environmental-constraints",
-      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:242",
+      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:259",
       "sentence": "The receiving chapter must preserve the identities,",
       "cues": [
         "must"
@@ -44992,7 +45965,7 @@
     {
       "candidate_id": "physical-compute-infrastructure-energy-and-environmental-constraints.prose.6e2a279b9dad",
       "chapter_id": "physical-compute-infrastructure-energy-and-environmental-constraints",
-      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:245",
+      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:262",
       "sentence": "that the packet crossed the declared interface; it does not prove that either",
       "cues": [
         "prove"
@@ -50111,9 +51084,85 @@
       "target_atom_id": null
     },
     {
+      "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.9226c829be16",
+      "chapter_id": "executable-specifications-and-lean-proof-envelope",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:361",
+      "sentence": "Neural-network verification belongs inside the proof envelope, but it requires a different abstraction map from a Lean proof about stack records.",
+      "cues": [
+        "requires"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Neural-network verification as a distinct abstraction lane elaborates the chapter's manifest-owned formal artifact authority contract.",
+      "target_atom_id": "executable-specifications-and-lean-proof-envelope.core"
+    },
+    {
+      "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.1ea651237b1d",
+      "chapter_id": "executable-specifications-and-lean-proof-envelope",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:363",
+      "sentence": "A certificate for one region may narrow an empirical threat residual; it cannot be generalized to other inputs, checkpoints, modalities, preprocessing code, or the surrounding agent.",
+      "cues": [
+        "cannot"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Region-specific certificate scope restates the chapter's exact proposition, model, implementation, and transfer boundary.",
+      "target_atom_id": "executable-specifications-and-lean-proof-envelope.core"
+    },
+    {
+      "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.e56a9f1b4944",
+      "chapter_id": "executable-specifications-and-lean-proof-envelope",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:365",
+      "sentence": "Failure modes include unsound relaxations, floating-point mismatch, omitted preprocessing, a vacuous input region, post-certificate weight changes, unsupported operators replaced by optimistic approximations, and selecting only properties that the verifier can prove.",
+      "cues": [
+        "prove"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Verifier unsoundness and vacuity enumeration elaborates the chapter's manifest-owned formal failure families.",
+      "target_atom_id": "executable-specifications-and-lean-proof-envelope.core"
+    },
+    {
+      "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.c0ca58bf5631",
+      "chapter_id": "executable-specifications-and-lean-proof-envelope",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:365",
+      "sentence": "The explicit nonclaim is that a certified property establishes neither natural-distribution robustness nor model intent, data quality, privacy, alignment, whole-system security, or deployment safety.",
+      "cues": [
+        "establishes"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Certified-property nonclaim restates the core prohibition on laundering a bounded proof into empirical, semantic, or deployment authority.",
+      "target_atom_id": "executable-specifications-and-lean-proof-envelope.core"
+    },
+    {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.019731585677",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:377",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:385",
       "sentence": "Proof artifacts should stay linked to claims, limitation prose, generated manifests, and audit records.",
       "cues": [
         "should"
@@ -50132,7 +51181,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.b876d5f73a0c",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:398",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:406",
       "sentence": "A proof/spec receipt suite should make the envelope operational: one Lean predicate receipt, one schema-validation receipt, one process-validator receipt, one behavior-test receipt, one benchmark receipt, one external theorem reference rejected as local proof, and one semantic adequacy residual that prevents prose promotion.",
       "cues": [
         "prevents",
@@ -50152,7 +51201,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.cd98bc845926",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:426",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:434",
       "sentence": "It does not try to prove \"ASI safety\" or \"alignment\" as one grand theorem.",
       "cues": [
         "prove"
@@ -50171,7 +51220,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.88ef3d5cbbaf",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:439",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:447",
       "sentence": "The proof envelope remains a target architecture until semantic adequacy reviews, artifact audits, runtime consumers, and accepted evidence transitions show where each formal predicate can and cannot carry prose.",
       "cues": [
         "cannot",
@@ -50191,7 +51240,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.ca1662c93f10",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:447",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:455",
       "sentence": "record, current use, strongest counterclaim, required lane, terminal",
       "cues": [
         "required"
@@ -50210,7 +51259,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.689519bcb042",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:453",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:461",
       "sentence": "Load-bearing predicates must use the right model: richer transition systems,",
       "cues": [
         "must"
@@ -50229,7 +51278,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.89f8ee904e1a",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:462",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:470",
       "sentence": "Decisive claims require independent formalizations or tools when useful,",
       "cues": [
         "require"
@@ -50248,7 +51297,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.6d0189e29f28",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:464",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:472",
       "sentence": "and transfer across environments, consumers, attacks, and time.",
       "cues": [
         "transfer"
@@ -50267,7 +51316,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.d026fee560cf",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:466",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:474",
       "sentence": "load-bearing atom and declaration receives its required full attempt and",
       "cues": [
         "required"
@@ -50286,7 +51335,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.1e7f72c499d1",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:502",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:510",
       "sentence": "negative cases: non-operational targets cannot be implemented; implemented",
       "cues": [
         "cannot"
@@ -50305,7 +51354,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.5eb7295504da",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:503",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:511",
       "sentence": "targets missing a module or build are rejected; non-Lean artifacts cannot claim",
       "cues": [
         "cannot"
@@ -50324,7 +51373,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.87d30b300b27",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:506",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:514",
       "sentence": "None discovers repository artifacts, proves semantic adequacy,",
       "cues": [
         "proves"
@@ -50343,7 +51392,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.e93fbf10782a",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:507",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:515",
       "sentence": "establishes implementation refinement, checks runtime enforcement, validates",
       "cues": [
         "establishes"
@@ -50362,7 +51411,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.5a02bd745e12",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:508",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:516",
       "sentence": "external theorem applicability, proves system safety, measures capability or",
       "cues": [
         "measures",
@@ -50382,7 +51431,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.2517e88dff5d",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:509",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:517",
       "sentence": "cost, or establishes reproduction and transfer.",
       "cues": [
         "establishes",
@@ -50402,7 +51451,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.94a7a08bb0b0",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:510",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:518",
       "sentence": "must retain only consumer-bearing projections and replace load-bearing record",
       "cues": [
         "must"
@@ -50421,7 +51470,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.dba28ac28907",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:512",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:520",
       "sentence": "and empirical evidence as their actual obligations require.",
       "cues": [
         "require"
@@ -50440,7 +51489,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.cf75a864bc37",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:542",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:551",
       "sentence": "Lean proves only what Lean checks.",
       "cues": [
         "proves"
@@ -50459,7 +51508,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.a3d1eaebcae6",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:542",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:551",
       "sentence": "The living book must keep those lanes separate.",
       "cues": [
         "must"
@@ -50478,7 +51527,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.bc0c97546f06",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:546",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:555",
       "sentence": "The proof envelope should let a reader tell exactly what was proved, what was merely validated, what was tested, what was benchmarked, and what remains prose.",
       "cues": [
         "should"
@@ -50497,7 +51546,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.f970abbac7ce",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:546",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:555",
       "sentence": "Agents improving the book or the stack should learn that mechanized claims need artifacts, commands, and failure records.",
       "cues": [
         "should"
@@ -50516,7 +51565,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.30a62b688dae",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:546",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:555",
       "sentence": "Formality is useful when it reduces ambiguity and overclaiming; it is harmful when it becomes ornamental confidence.",
       "cues": [
         "reduces"
@@ -50535,7 +51584,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.de544a2f0408",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:583",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:592",
       "sentence": "It turns benchmark runs into records with baselines, residuals, regressions, saturation states, contamination boundaries, and promotion decisions so measured pressure cannot outrun preserved failures.",
       "cues": [
         "cannot"
@@ -57138,9 +58187,28 @@
       "target_atom_id": null
     },
     {
+      "candidate_id": "data-engines-continual-learning-and-unlearning.prose.d626a4168ea6",
+      "chapter_id": "data-engines-continual-learning-and-unlearning",
+      "source": "chapters/data-engines-continual-learning-and-unlearning.qmd:710",
+      "sentence": "The nonclaim is strict: exposure identity does not prove causal influence, and influence reduction does not prove behavioral forgetting, privacy protection, lawful erasure, backup deletion, or removal from distilled descendants.",
+      "cues": [
+        "prove"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "The unlearning nonclaim directly restates the chapter's separate behavioral, causal-influence, privacy, legal, storage, backup, and descendant claim axes.",
+      "target_atom_id": "data-engines-continual-learning-and-unlearning.invariant.009"
+    },
+    {
       "candidate_id": "data-engines-continual-learning-and-unlearning.prose.57cd92c90a47",
       "chapter_id": "data-engines-continual-learning-and-unlearning",
-      "source": "chapters/data-engines-continual-learning-and-unlearning.qmd:708",
+      "source": "chapters/data-engines-continual-learning-and-unlearning.qmd:716",
       "sentence": "action-conditioned predictor, so the data engine must preserve that separation:",
       "cues": [
         "must"
@@ -57159,7 +58227,7 @@
     {
       "candidate_id": "data-engines-continual-learning-and-unlearning.prose.a10a932cfa3d",
       "chapter_id": "data-engines-continual-learning-and-unlearning",
-      "source": "chapters/data-engines-continual-learning-and-unlearning.qmd:716",
+      "source": "chapters/data-engines-continual-learning-and-unlearning.qmd:724",
       "sentence": "Deletion or revocation must propagate through encoder checkpoints,",
       "cues": [
         "must"
@@ -57178,7 +58246,7 @@
     {
       "candidate_id": "data-engines-continual-learning-and-unlearning.prose.e25f3a3ed045",
       "chapter_id": "data-engines-continual-learning-and-unlearning",
-      "source": "chapters/data-engines-continual-learning-and-unlearning.qmd:762",
+      "source": "chapters/data-engines-continual-learning-and-unlearning.qmd:772",
       "sentence": "It does not show that member influence, stored rows, caches,",
       "cues": [
         "show"
@@ -57197,7 +58265,7 @@
     {
       "candidate_id": "data-engines-continual-learning-and-unlearning.prose.74a6f9988534",
       "chapter_id": "data-engines-continual-learning-and-unlearning",
-      "source": "chapters/data-engines-continual-learning-and-unlearning.qmd:832",
+      "source": "chapters/data-engines-continual-learning-and-unlearning.qmd:842",
       "sentence": "That discipline also prevents two dangerous shortcuts.",
       "cues": [
         "prevents"
@@ -57216,7 +58284,7 @@
     {
       "candidate_id": "data-engines-continual-learning-and-unlearning.prose.195641c82615",
       "chapter_id": "data-engines-continual-learning-and-unlearning",
-      "source": "chapters/data-engines-continual-learning-and-unlearning.qmd:888",
+      "source": "chapters/data-engines-continual-learning-and-unlearning.qmd:898",
       "sentence": "A valid dataset does not prove a scientific",
       "cues": [
         "prove"
@@ -57235,7 +58303,7 @@
     {
       "candidate_id": "data-engines-continual-learning-and-unlearning.prose.0118db14f1fd",
       "chapter_id": "data-engines-continual-learning-and-unlearning",
-      "source": "chapters/data-engines-continual-learning-and-unlearning.qmd:889",
+      "source": "chapters/data-engines-continual-learning-and-unlearning.qmd:899",
       "sentence": "claim; an experimental result cannot erase data rights, failed attempts, or",
       "cues": [
         "cannot"

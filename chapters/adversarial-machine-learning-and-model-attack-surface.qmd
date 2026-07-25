@@ -136,7 +136,7 @@ fusion is safe or unsafe in general; it shows why a system-level threat model
 must preserve modality and defense identity.
 
 **Failure mode.** A defense appears robust because gradients are hidden or the
-attacker is not adapted to it. Another failure is an imperceptibility metric
+attacker is not adapted to it. A mismatched imperceptibility metric is another
 that has little relation to task semantics or physical plausibility.
 
 **Explicit non-claim.** Defeating one bounded attack does not prove general

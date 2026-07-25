@@ -1,5 +1,9 @@
 # Estimating Worst-Case Frontier Risks of Open-Weight LLMs
 
+| Field | Value |
+|---|---|
+| Source ID | `ext_openai_worst_case_open_weight_risks_2025` |
+
 ## Source identity
 
 - Source ID: `ext_openai_worst_case_open_weight_risks_2025`
@@ -15,7 +19,7 @@ problem. It fine-tunes gpt-oss variants for biology and cybersecurity tasks and
 compares the resulting systems with open- and closed-weight models under the
 provider's evaluation framework.
 
-## Mechanisms used by the book
+## Mechanisms
 
 - evaluate the exact release artifact and a bounded maliciously fine-tuned
   derivative;
@@ -24,7 +28,7 @@ provider's evaluation framework.
 - separate default refusal behavior from latent capability;
 - use results as one input to a release decision, not as permanent immunity.
 
-## Evidence and limitations
+## Evidence
 
 The authors report that their maliciously fine-tuned gpt-oss variants remained
 below the tested high-capability thresholds and did not substantially advance
@@ -33,7 +37,7 @@ specific results. They do not establish resistance to future fine-tuning,
 unknown domains, different tools, distributed actors, or larger budgets. The
 book does not reproduce the experiments.
 
-## Failure modes surfaced
+## Failure Modes
 
 - evaluating only the default aligned model;
 - comparing only against obsolete open models;
@@ -42,15 +46,21 @@ book does not reproduce the experiments.
 - treating absence of threshold crossing as zero marginal risk;
 - failing to renew the analysis as the accessible frontier changes.
 
-## Chapter routing
+## Book Chapters Supported
 
 - Primary: `open-weight-release-and-post-release-control`
 - Supporting: `dangerous-capability-domains-and-misuse-uplift`
 
-## Open questions
+## Claims To Add Or Update
+
+- Open-weight review should test maliciously adapted derivatives and compare
+  them with the dated accessible frontier, not only the default aligned model.
+- A bounded non-crossing result cannot establish immunity to future methods,
+  tools, budgets, or domains.
+
+## Open Questions
 
 - How should an evaluation budget approximate capable adversaries?
 - How quickly does a release decision stale as methods and open comparators
   improve?
 - Which mitigations remain meaningful after unrestricted weight access?
-

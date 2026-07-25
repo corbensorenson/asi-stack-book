@@ -1,6 +1,6 @@
 # Canonical Public Status Contract
 
-Last updated: 2026-07-13
+Last updated: 2026-07-24
 
 This contract makes the public state of **The ASI Stack** a generated object
 instead of a collection of manually synchronized prose claims. It closes the
@@ -75,7 +75,7 @@ and 0 N3–N5. Their raw outcomes remain immutable, but none currently supports
 an exact, mechanism-level, architectural, parent, or chapter-core refutation.
 The broader prose and `blocked_after_full_attempt` audit remains active. This
 rehabilitation creates no support-state or release effect.
-The live manifest has 76/76 chapter-core claims at `argument`, zero external
+The live manifest has 80/80 chapter-core claims at `argument`, zero external
 reproductions, and no SOTA support. The local X synopsis source is current; its older unpublished platform draft is stale after the competence-language refresh and must be refreshed before publication.
 Later
 root or `/latest/` commits remain mutable and are not part of the immutable

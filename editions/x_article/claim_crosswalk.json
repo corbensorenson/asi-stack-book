@@ -215,14 +215,14 @@
     },
     {
       "id": "XA-20",
-      "summary": "The current evidence ledger has 3,745 atoms: 3,698 blocked, 36 retained, nine narrowed, two bounded subordinate promotions, and all 55 cores at argument.",
+      "summary": "The frozen activation-era ledger adjudicated 3,745 atoms—3,698 blocked, 36 retained, nine narrowed, and two bounded subordinate promotions—while all 80 current chapter cores remain at argument.",
       "claim_atom_id": "living-book-methodology.core",
       "chapter_id": "living-book-methodology",
       "support_state": "repository_audited_current_state",
       "evidence_lane": "repository_wide_claim_evidence_reconciliation",
-      "artifacts": ["experiments/p7_book_evidence_reconciliation/result.json", "docs/p7_book_evidence_reconciliation.md", "evidence_quality/claim_atom_registry.json"],
+      "artifacts": ["experiments/p7_book_evidence_reconciliation/result.json", "docs/p7_book_evidence_reconciliation.md", "evidence_quality/claim_atom_registry.json", "evidence_quality/core_claim_vectors.json"],
       "book_anchor": "chapters/living-book-methodology.qmd#core-claim",
-      "boundary": "Coverage and disposition counts are calibration metadata, not evidence that the architecture works."
+      "boundary": "The 3,745-atom disposition is an immutable activation-era denominator; the 80-core count is current. Neither count is evidence that the architecture works."
     },
     {
       "id": "XA-21",
