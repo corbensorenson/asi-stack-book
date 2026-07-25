@@ -38,6 +38,11 @@ PUBLIC_SURFACE_INVENTORY = ROOT / "docs" / "public_status_surface_inventory.md"
 NOVELTY_LEDGER = ROOT / "docs" / "contribution_novelty_ledger.md"
 OUTLINE = ROOT / "docs" / "book_outline.md"
 READER_MANUSCRIPT_README = ROOT / "editions" / "reader_manuscript" / "README.md"
+CURRENT_ROLE_MAP = ROOT / "evidence_quality" / "current_chapter_role_map.json"
+PREFACE = ROOT / "preface.qmd"
+GLOSSARY = ROOT / "appendices" / "B_glossary.qmd"
+TEST_SPECS = ROOT / "appendices" / "E_codex_test_specs.qmd"
+CHANGELOG = ROOT / "appendices" / "F_changelog.qmd"
 
 EXPECTED_NON_CORE = {
     "circle-calculus-and-proof-carrying-ai-contracts.mechanism.003": "prototype-backed",
@@ -118,11 +123,15 @@ def read_json(path: Path) -> object:
         return json.load(f)
 
 
-def chapter_count() -> int:
+def chapter_ids() -> list[str]:
     structure = read_json(ROOT / "book_structure.json")
     if not isinstance(structure, dict):
         raise SystemExit("book_structure.json must contain an object.")
-    return sum(len(part.get("chapters", [])) for part in structure.get("parts", []))
+    return [
+        str(chapter.get("chapter_id") or chapter.get("id") or "")
+        for part in structure.get("parts", [])
+        for chapter in part.get("chapters", [])
+    ]
 
 
 def source_count() -> int:
@@ -227,7 +236,8 @@ def assert_surface(
 
 def main() -> None:
     errors: list[str] = []
-    chapters = chapter_count()
+    manifest_chapter_ids = chapter_ids()
+    chapters = len(manifest_chapter_ids)
     sources = source_count()
     dispositions = disposition_summary()
     reader_audit = read_text(READER_AUDIT)
@@ -325,6 +335,11 @@ def main() -> None:
     novelty_ledger = read_text(NOVELTY_LEDGER)
     outline = read_text(OUTLINE)
     reader_manuscript_readme = read_text(READER_MANUSCRIPT_README)
+    preface = read_text(PREFACE)
+    glossary = read_text(GLOSSARY)
+    test_specs = read_text(TEST_SPECS)
+    changelog = read_text(CHANGELOG)
+    role_map = read_json(CURRENT_ROLE_MAP)
     product_contracts = read_json(PRODUCT_CONTRACTS_JSON)
     narrative_chapters = 15
     current_surface_needles = {
@@ -360,6 +375,80 @@ def main() -> None:
     for name, (text_value, needle) in current_surface_needles.items():
         if needle not in text_value:
             errors.append(f"{name} missing current manifest truth: {needle}")
+
+    if f"canonical current {chapters}-chapter living book" not in preface:
+        errors.append("preface.qmd retains stale current-book identity")
+    if (
+        "`relational-dimension-compilation-and-polyadic-cognition`" not in glossary
+        or "current distinct argument-level owner" not in glossary
+    ):
+        errors.append("Appendix B retains stale RDC ownership or deferral status")
+    missing_test_spec_ids = [
+        chapter_id
+        for chapter_id in manifest_chapter_ids
+        if f"`{chapter_id}`" not in test_specs
+    ]
+    if missing_test_spec_ids:
+        errors.append(
+            "Appendix E is missing manifest chapter IDs: "
+            + ", ".join(missing_test_spec_ids[:5])
+        )
+    if len(changelog.splitlines()) < 100 or "# Changelog" not in changelog:
+        errors.append("Appendix F is absent or implausibly empty")
+
+    if not isinstance(role_map, dict):
+        errors.append("current chapter role map must contain an object")
+    else:
+        roles = role_map.get("roles", {})
+        expected_role_counts = {
+            "thesis-bearing": 11,
+            "load-bearing-reference": 54,
+            "implementation-case": 7,
+            "speculative-research": 12,
+        }
+        if set(roles) != set(expected_role_counts):
+            errors.append("current chapter role vocabulary drifted")
+        flattened: list[str] = []
+        for role, expected_count in expected_role_counts.items():
+            values = roles.get(role, [])
+            if not isinstance(values, list) or len(values) != expected_count:
+                errors.append(f"current role map {role} count drifted")
+                continue
+            if len(values) != len(set(values)):
+                errors.append(f"current role map {role} duplicates a chapter")
+            flattened.extend(str(value) for value in values)
+        if (
+            len(flattened) != chapters
+            or len(flattened) != len(set(flattened))
+            or set(flattened) != set(manifest_chapter_ids)
+        ):
+            errors.append("current chapter roles are not an exact 84-chapter partition")
+        summary = role_map.get("summary", {})
+        if (
+            summary.get("total_count") != chapters
+            or summary.get("unassigned_count") != 0
+            or summary.get("duplicate_assignment_count") != 0
+        ):
+            errors.append("current chapter role summary disagrees with the manifest")
+        for surface_name, surface in {
+            "index.qmd": index,
+            "docs/book_outline.md": outline,
+        }.items():
+            for role_label, expected_count in (
+                ("Thesis-bearing", 11),
+                ("Load-bearing reference", 54),
+                ("Implementation case", 7),
+                ("Speculative research", 12),
+            ):
+                if f"{role_label} ({expected_count})" not in surface and (
+                    f"| {role_label} | {expected_count} |" not in surface
+                ):
+                    errors.append(
+                        f"{surface_name} missing current role count: "
+                        f"{role_label} {expected_count}"
+                    )
+            if "evidence_quality/current_chapter_role_map.json" not in surface:
+                errors.append(f"{surface_name} lacks the current role-map authority")
 
     if f"other {chapters - narrative_chapters} chapters remain visible" not in product_artifacts_doc:
         errors.append("docs/product_projection_artifacts.md has stale narrative remainder")

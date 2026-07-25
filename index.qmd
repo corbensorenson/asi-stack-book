@@ -159,15 +159,15 @@ primary job:
 | Role | Chapters | Reader contract |
 |---|---:|---|
 | Thesis-bearing | 11 | Advances a central architectural claim and states the strongest alternative, failure case, and evidence that could change it. |
-| Load-bearing reference | 32 | Owns an interface, invariant, artifact, or failure family needed to implement or audit the thesis. |
+| Load-bearing reference | 54 | Owns an interface, invariant, artifact, or failure family needed to implement or audit the thesis. |
 | Implementation case | 7 | Shows how contracts compose in artifacts, runtime effects, reference traces, prototypes, operations, or the living-book workflow. |
-| Speculative/deferred research | 11 | Preserves promising mechanisms and research programs without presenting argument-level possibilities as established architecture. |
+| Speculative research | 12 | Preserves promising mechanisms and research programs in the current book without presenting argument-level possibilities as established architecture. |
 
 ```{mermaid}
 flowchart LR
   Thesis["Thesis-bearing chapters<br/>why the architecture should exist"] --> Reference["Load-bearing reference<br/>what each boundary must own"]
   Reference --> Cases["Implementation cases<br/>how boundaries compose and fail"]
-  Reference --> Research["Speculative / deferred research<br/>what must still earn admission"]
+  Reference --> Research["Speculative research<br/>what must still earn stronger evidence"]
   Cases --> Evidence["Observed effects, residuals, and revision"]
   Research --> Evidence
   Evidence --> Thesis
@@ -176,8 +176,10 @@ flowchart LR
 The role is editorial, not evidentiary. A thesis-bearing chapter is not thereby
 proved; a reference chapter is not secondary in implementation; an
 implementation case does not imply deployment; and a speculative chapter is
-not rejected. The complete classification and its meaning-preservation checks
-are recorded in the P7.1a-W2 narrative audit.
+not rejected or deferred from the manuscript. The complete current
+classification is recorded in
+`evidence_quality/current_chapter_role_map.json`; the P7.1a-W2 audit remains
+the immutable historical baseline for its 60-chapter editorial pass.
 
 ## Reading path
 

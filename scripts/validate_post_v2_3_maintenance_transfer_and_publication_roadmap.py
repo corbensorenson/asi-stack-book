@@ -48,6 +48,8 @@ PRECISION_CONTRACT_BACKLOG = ROOT / "research_backlog_records/precision_contract
 PRECISION_CONTRACT_TRIAGE = ROOT / "new_paper_triage_scenarios/precision_contract_2026_07_24.json"
 SOURCE_INVENTORY = ROOT / "sources/source_inventory.json"
 BOOK_MANIFEST = ROOT / "book_structure.json"
+REVIEW_ADJUDICATION = ROOT / "docs/chatgpt_pro_full_book_review_adjudication_2026_07_25.md"
+CURRENT_ROLE_MAP = ROOT / "evidence_quality/current_chapter_role_map.json"
 STRUCTURAL_CHAPTER_PATHS = {
     "white-box-evidence-interpretability-and-activation-governance": ROOT / "chapters/white-box-evidence-interpretability-and-activation-governance.qmd",
     "governed-world-models-and-reality-grounding": ROOT / "chapters/governed-world-models-and-reality-grounding.qmd",
@@ -188,6 +190,8 @@ def inputs() -> dict:
         "precision_contract_triage": load(PRECISION_CONTRACT_TRIAGE),
         "source_inventory": load(SOURCE_INVENTORY),
         "book_manifest": load(BOOK_MANIFEST),
+        "review_adjudication": REVIEW_ADJUDICATION.read_text(encoding="utf-8"),
+        "current_role_map": load(CURRENT_ROLE_MAP),
         "manuscript_completion": {
             key: path.read_text(encoding="utf-8")
             for key, path in MANUSCRIPT_COMPLETION_PATHS.items()
@@ -1011,6 +1015,97 @@ def errors(data: dict) -> list[str]:
         ]
     ):
         out.append("narrative quality gate lost a required meaning-preservation control")
+    convergence = quality_program.get("post_review_convergence", {})
+    expected_convergence_order = [
+        "C0-canonical-public-truth-incident-and-regression",
+        "C1-noninheritance-thesis-and-terminology-convergence",
+        "C2-twenty-two-unit-narrative-book",
+        "C3-governed-transition-calculus",
+        "C4-developmental-intelligence-loop",
+        "C5-minimal-trusted-kernel-and-bounded-liveness",
+        "C6-p0-p6-semantic-proof-rationalization",
+        "C7-natural-governed-repository-change-flagship",
+        "C8-evidence-led-publication-and-derivative-papers",
+    ]
+    if (
+        convergence.get("state") != "active_evidence_and_narrative_convergence"
+        or convergence.get("reference_chapter_count") != 84
+        or convergence.get("narrative_unit_target") != 22
+        or convergence.get("defended_contribution_count") != 3
+        or convergence.get("packet_order") != expected_convergence_order
+        or convergence.get("flagship_id") != "ASI-THESEUS-FLAGSHIP-01"
+    ):
+        out.append("post-review convergence identity, denominator, or packet order drifted")
+    if (
+        len(convergence.get("governed_transition_calculus_properties", [])) != 12
+        or convergence.get("proof_depth_levels")
+        != [
+            "P0-record-shape",
+            "P1-finite-route",
+            "P2-reachability-and-nonvacuity",
+            "P3-implementation-refinement",
+            "P4-cross-component-safety",
+            "P5-liveness-and-recovery",
+            "P6-empirically-bound-semantics",
+        ]
+        or len(convergence.get("developmental_loop_stages", [])) != 10
+        or len(convergence.get("minimal_trusted_kernel_components", [])) != 11
+        or len(convergence.get("new_chapter_requires", [])) != 6
+    ):
+        out.append("post-review calculus, proof, developmental, kernel, or chapter-admission contract drifted")
+    if (
+        convergence.get("bounded_liveness_required") is not True
+        or convergence.get("existing_owner_first") is not True
+        or convergence.get("worthwhile_manuscript_idea_deferral_allowed") is not False
+        or convergence.get("prepublication_external_human_required") is not False
+        or convergence.get("support_state_effect") != "none"
+        or convergence.get("release_effect") != "none"
+    ):
+        out.append("post-review liveness, no-deferral, human-review, support, or release boundary drifted")
+    for heading in [
+        "### C0 — Canonical public-truth incident and regression",
+        "### C1 — Noninheritance thesis and terminology convergence",
+        "### C2 — Twenty-two-unit narrative book over the 84-module reference",
+        "### C3 — Governed Transition Calculus",
+        "### C4 — Developmental Intelligence Loop",
+        "### C5 — Minimal trusted kernel and bounded liveness",
+        "### C6 — P0–P6 semantic proof rationalization",
+        "### C7 — Natural governed repository-change flagship",
+        "### C8 — Evidence-led publication and derivative papers",
+    ]:
+        if heading not in roadmap:
+            out.append(f"post-review roadmap packet missing: {heading}")
+    review_adjudication = data["review_adjudication"]
+    for required_review_phrase in [
+        "The controlling architectural law is **noninheritance**",
+        "The existing three-contribution contract remains the right organizing surface",
+        "Prepublication specialist human review should be required.",
+        "**Rejected as a gate by author instruction.**",
+    ]:
+        if required_review_phrase not in review_adjudication:
+            out.append(f"review adjudication boundary missing: {required_review_phrase}")
+    role_map = data["current_role_map"]
+    role_assignments = [
+        chapter_id
+        for role_chapters in role_map.get("roles", {}).values()
+        for chapter_id in role_chapters
+    ]
+    role_counts = Counter(role_assignments)
+    role_summary = role_map.get("summary", {})
+    if (
+        role_map.get("manifest_chapter_count") != 84
+        or set(role_assignments) != manifest_ids
+        or len(role_assignments) != 84
+        or any(count != 1 for count in role_counts.values())
+        or role_summary.get("thesis_bearing_count") != 11
+        or role_summary.get("load_bearing_reference_count") != 54
+        or role_summary.get("implementation_case_count") != 7
+        or role_summary.get("speculative_research_count") != 12
+        or role_summary.get("total_count") != 84
+        or role_summary.get("unassigned_count") != 0
+        or role_summary.get("duplicate_assignment_count") != 0
+    ):
+        out.append("current 84-chapter role map is incomplete, duplicated, or count-inconsistent")
     first_tranche = quality_program.get("structural_completeness_tranche", {}).get("first_tranche", {})
     if first_tranche.get("state") != "terminal_four_reader_chapters":
         out.append("first structural tranche terminal state drifted")
@@ -1374,6 +1469,12 @@ def main() -> None:
     mutate("stale predecessor", lambda c: c["predecessor"].__setitem__("status", "active"))
     mutate("shared flagship identity drift", lambda c: c["status"]["quality_uplift_program"].__setitem__("shared_flagship_id", "drifted"))
     mutate("editorial meaning-preservation deletion", lambda c: c["status"]["quality_uplift_program"]["narrative_quality_gate"].__setitem__("requires_meaning_preservation_audit", False))
+    mutate("post-review reference denominator rollback", lambda c: c["status"]["quality_uplift_program"]["post_review_convergence"].__setitem__("reference_chapter_count", 61))
+    mutate("post-review narrative target rollback", lambda c: c["status"]["quality_uplift_program"]["post_review_convergence"].__setitem__("narrative_unit_target", 15))
+    mutate("post-review calculus property deletion", lambda c: c["status"]["quality_uplift_program"]["post_review_convergence"]["governed_transition_calculus_properties"].pop())
+    mutate("post-review bounded-liveness deletion", lambda c: c["status"]["quality_uplift_program"]["post_review_convergence"].__setitem__("bounded_liveness_required", False))
+    mutate("post-review external-human gate", lambda c: c["status"]["quality_uplift_program"]["post_review_convergence"].__setitem__("prepublication_external_human_required", True))
+    mutate("post-review role omission", lambda c: c["current_role_map"]["roles"]["load-bearing-reference"].pop())
     mutate("communication candidate gate weakening", lambda c: c["status"]["quality_uplift_program"]["structural_completeness_tranche"]["second_tranche"].__setitem__("communication_requires_source_ethics_and_effect_gate", False))
     mutate("institutional candidate gate weakening", lambda c: c["status"]["quality_uplift_program"]["structural_completeness_tranche"]["second_tranche"].__setitem__("institutions_require_authority_legitimacy_and_update_gate", False))
     mutate("deployment-transition candidate gate weakening", lambda c: c["status"]["quality_uplift_program"]["structural_completeness_tranche"]["second_tranche"].__setitem__("deployment_transition_requires_realized_outcome_and_distribution_gate", False))
@@ -1439,7 +1540,7 @@ def main() -> None:
         "90 accepted historical negatives classified as 1 N0, 15 N1, 74 N2, and 0 N3-N5; "
         "the frozen 75-surface rehabilitation snapshot including the then-live 55 chapters reconciled with zero overbroad negative language; "
         "P2 selected prospectively from five candidates; natural development preflight covers 1,117 post-snapshot tasks, 12 repositories, seven languages, and 12 image manifests; the fixed gold denominator is fully dispositioned as eight qualified and four N0 replacements across 62 verified arm logs and eight attempts; the corrected infrastructure/content boundary reinstates rank five as setup-retry-pending and keeps rank six closed; the historical 2026-07-22 capacity entry condition was met, while the 2026-07-24 observation is below the frozen floor and requires an exact attempt or failure receipt; the complete 30-candidate sequential materialization remains unpassed; Q1 D1 and Theseus Q2 D2 remain disjoint and sealed; remeasurement, qualification, construct, and heldout gates remain closed; "
-        "all six semantic proof clusters are terminally adequate at bounded scope; the historical 66-chapter Round 18 freeze remains recorded, while the superseding no-deferral, taxonomy, and full-coverage transactions admit eighteen distinct manuscript owners into the current 84-chapter book at argument support, leave zero live candidate queue, add semantic review and current proof-triage custody, and remove structural freezing for manuscript ideas; optimizer manuscript depth is terminal while its empirical campaign remains a nonblocking evidence residual; current proof and main-attestation baselines exact; no support/release effect; "
+        "all six semantic proof clusters are terminally adequate at bounded scope; the historical 66-chapter Round 18 freeze remains recorded, while the superseding no-deferral, taxonomy, and full-coverage transactions admit eighteen distinct manuscript owners into the current 84-chapter book at argument support, leave zero live candidate queue, add semantic review and current proof-triage custody, and remove structural freezing for manuscript ideas; the current 84-entry role partition is exact at 11 thesis, 54 load-bearing reference, 7 implementation, and 12 speculative chapters; the C0-C8 convergence amendment preserves three defended contributions, targets a 22-unit reader route, and adds shared calculus, developmental-loop, minimal-kernel, bounded-liveness, P0-P6 proof-depth, and natural-flagship work without an external-human prepublication gate; optimizer manuscript depth is terminal while its empirical campaign remains a nonblocking evidence residual; current proof and main-attestation baselines exact; no support/release effect; "
         f"{len(mutations)}/{len(mutations)} mutations rejected."
     )
 

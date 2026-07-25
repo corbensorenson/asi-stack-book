@@ -1,5 +1,5 @@
 {
-  "schema_version": "asi_stack.post_v2_3_maintenance_transfer_publication_status.v22",
+  "schema_version": "asi_stack.post_v2_3_maintenance_transfer_publication_status.v23",
   "roadmap_id": "asi-stack-post-v2-3-evidence-competence-transfer-publication-2026-07-17",
   "roadmap_path": "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md",
   "snapshot_date": "2026-07-25",
@@ -162,6 +162,88 @@
       "requires_shared_case_threading": true,
       "requires_strongest_alternative_and_simpler_baseline": true,
       "requires_meaning_preservation_audit": true
+    },
+    "post_review_convergence": {
+      "state": "active_evidence_and_narrative_convergence",
+      "review_path": "docs/chatgpt_pro_full_book_review_adjudication_2026_07_25.md",
+      "current_role_map_path": "evidence_quality/current_chapter_role_map.json",
+      "reference_chapter_count": 84,
+      "narrative_unit_target": 22,
+      "defended_contribution_count": 3,
+      "packet_order": [
+        "C0-canonical-public-truth-incident-and-regression",
+        "C1-noninheritance-thesis-and-terminology-convergence",
+        "C2-twenty-two-unit-narrative-book",
+        "C3-governed-transition-calculus",
+        "C4-developmental-intelligence-loop",
+        "C5-minimal-trusted-kernel-and-bounded-liveness",
+        "C6-p0-p6-semantic-proof-rationalization",
+        "C7-natural-governed-repository-change-flagship",
+        "C8-evidence-led-publication-and-derivative-papers"
+      ],
+      "governed_transition_calculus_properties": [
+        "authority_non_escalation",
+        "evidence_non_promotion_without_accepted_transition",
+        "context_non_authority",
+        "plan_effect_separation",
+        "receipt_observation_separation",
+        "residual_conservation",
+        "revocation_propagation",
+        "replacement_noninheritance",
+        "rollback_closure_or_explicit_unresolved_effect",
+        "bounded_liveness",
+        "cross_layer_identity_preservation",
+        "no_self_ratification"
+      ],
+      "proof_depth_levels": [
+        "P0-record-shape",
+        "P1-finite-route",
+        "P2-reachability-and-nonvacuity",
+        "P3-implementation-refinement",
+        "P4-cross-component-safety",
+        "P5-liveness-and-recovery",
+        "P6-empirically-bound-semantics"
+      ],
+      "developmental_loop_stages": [
+        "curriculum_construction",
+        "world_interaction",
+        "prediction_error",
+        "abstraction_formation",
+        "causal_intervention",
+        "memory_consolidation",
+        "proceduralization",
+        "skill_composition",
+        "quiescent_stabilization",
+        "authority_gated_promotion"
+      ],
+      "minimal_trusted_kernel_components": [
+        "identity",
+        "time",
+        "authority",
+        "policy",
+        "context_resolution",
+        "artifact_custody",
+        "observation",
+        "evaluation",
+        "sandboxing",
+        "rollback",
+        "release"
+      ],
+      "bounded_liveness_required": true,
+      "existing_owner_first": true,
+      "worthwhile_manuscript_idea_deferral_allowed": false,
+      "new_chapter_requires": [
+        "distinct_state_machine",
+        "distinct_authority_boundary",
+        "distinct_artifact",
+        "distinct_evaluator",
+        "distinct_consumer",
+        "distinct_failure_family"
+      ],
+      "flagship_id": "ASI-THESEUS-FLAGSHIP-01",
+      "prepublication_external_human_required": false,
+      "support_state_effect": "none",
+      "release_effect": "none"
     },
     "structural_completeness_tranche": {
       "state": "no_deferral_manuscript_admission_terminal_argument_support",

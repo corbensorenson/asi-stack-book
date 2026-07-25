@@ -831,6 +831,266 @@ uncertainty, optimizer families, and other reviewed candidates stay with their
 existing substantive owners; this is a duplicate-chapter decision, not a
 rejection of those topics.
 
+## 2026-07-25 evidence-and-convergence review amendment
+
+The full-book review adjudication is
+`docs/chatgpt_pro_full_book_review_adjudication_2026_07_25.md`. It accepts the
+central diagnosis that the architecture is structurally mature relative to its
+natural evidence and global narrative, while rejecting stale or unsupported
+surface claims. In particular, Appendix E already covers all 84 manifest
+chapter IDs and Appendix F is not empty. README, landing-page, product,
+reader-labeling, release-guidance, and transition-count drift were repaired in
+the 2026-07-25 public-surface reconciliation. At review time, the remaining
+confirmed public-truth defects were the stale v1.0 preface sentence, the
+deferred RDC glossary row, and the role table that accounted for only 61 of 84
+chapters; this amendment's C0 transaction repairs those three defects and adds
+regression coverage.
+
+This amendment does not create a new chapter queue, a third WIP slot, or a new
+flagship. It makes convergence around the existing three defended
+contributions binding and gives the current roadmap nine exact work packets:
+
+### C0 — Canonical public-truth incident and regression
+
+Close the real Living Book incident rather than merely editing visible prose.
+The packet must:
+
+1. repair the preface, RDC glossary status, current chapter-role projection,
+   and any remaining reader-visible obsolete identity;
+2. preserve historical release identities only on explicitly historical
+   surfaces;
+3. verify 84/84 Appendix E chapter coverage and a nonempty current changelog;
+4. create an exact 84-entry, one-role chapter map and reject missing,
+   duplicated, or non-manifest owners;
+5. preserve the current 84-chapter/458-source/25-non-core-transition public
+   contract; and
+6. retain the stale counts and release language as rejecting regression
+   fixtures rather than deleting the evidence that the incident occurred.
+
+Mutable status prose should move toward canonical generated includes. Until
+that migration is complete, validators must derive current counts from
+`book_structure.json`, the source inventory, transition records, and product
+contracts instead of embedding another hand-maintained denominator.
+
+### C1 — Noninheritance thesis and terminology convergence
+
+Make **noninheritance** the opening law that explains why a stack is required:
+capability does not grant authority; context does not become belief or
+permission; plans do not create effects; receipts do not establish reality;
+theorems do not establish runtime enforcement; replacements do not inherit
+qualification; and self-improvement proposals cannot ratify themselves.
+
+Apply three projections to every thesis-bearing narrative unit:
+
+1. a plain-language thesis;
+2. a normative engineering rule; and
+3. a machine contract with exact scope and nonclaims.
+
+Use established systems terms before private lineage labels, keep the lineage
+label second where it remains useful, and maintain a comparator/ownership map
+for every retained branded term. Rename the reader-facing **Beyond the State of
+the Art** heading to **Mature Research Target** or **What a Successful
+Implementation Would Add** while preserving machine implementation-horizon IDs
+and immutable historical artifacts.
+
+### C2 — Twenty-two-unit narrative book over the 84-module reference
+
+The current fifteen-chapter narrative projection is a candidate, not the final
+human interface. Build and review a **22-unit** narrative route while preserving
+all 84 canonical reference chapters:
+
+1. stack thesis;
+2. efficient-ASI hypothesis;
+3. authority and failure boundaries;
+4. evidence states and noninheritance;
+5. constitutional, value, and objective governance;
+6. Stable Capability Fields and replacement;
+7. intent and command contracts;
+8. planning;
+9. governed world models;
+10. cognitive compilation;
+11. Virtual Context ABI and context transactions;
+12. durable memory and procedural consolidation;
+13. verification bandwidth;
+14. claim ledgers and proof-carrying review;
+15. Labor OS and artifact graphs;
+16. runtime adapters, observation, and governed operations;
+17. routing and replaceable cognitive substrates;
+18. governed training and developmental learning;
+19. readiness, benchmarks, safety cases, and bounded liveness;
+20. resource economics and effect-complete recovery;
+21. recursive improvement, the integrated architecture, and prototype program;
+22. Living Book methodology and open challenge agenda.
+
+A unit may be a canonical chapter, a semantic overlay, or a compound
+reader-only synthesis. It may not fork claim identity or erase a canonical
+owner. Each unit must advance the governed repository-change case or clearly
+route to optional reference material. The reader route is terminal only after
+meaning-preservation, link, role, handoff, glossary, source, claim, evidence,
+browser, accessibility-preparation, and all-chapter coverage checks pass.
+
+### C3 — Governed Transition Calculus
+
+Define one small kernel shared by the chapter-specific contracts:
+
+\[
+T = (I_s, I_t, A, O, E, R, C, \tau, \Pi)
+\]
+
+where source and target identity, authority, obligations, evidence, residuals,
+consumers, expiry/revocation, and rollback/compensation/retirement remain
+separate. The first implementation belongs jointly to Executable
+Specifications, System Boundaries, Integrated Reference Architecture, and the
+protocol appendix; it does not justify a new chapter.
+
+The calculus must give exact, nonvacuous models, countermodels, mutations,
+executable consumers, and maximum inference for:
+
+1. authority non-escalation;
+2. evidence non-promotion without an accepted transition;
+3. context non-authority;
+4. plan/effect separation;
+5. receipt/observation separation;
+6. residual conservation;
+7. revocation propagation;
+8. replacement noninheritance;
+9. rollback closure or explicit unresolved effect;
+10. bounded liveness;
+11. cross-layer identity preservation; and
+12. no self-ratification of protected constitutions or evaluators.
+
+### C4 — Developmental Intelligence Loop
+
+The book must explain how the governed stack becomes more capable, not only how
+it constrains a capable component. Join existing owners into one lifecycle:
+
+`curriculum construction -> world interaction -> prediction error ->
+representation and abstraction formation -> causal intervention -> memory
+consolidation -> proceduralization -> skill composition -> quiescent
+stabilization -> readiness review -> authority-gated promotion`.
+
+Governed Model Training owns run state and optimization; World Models own
+qualified prediction and intervention; Durable Memory owns belief
+consolidation; Procedural Memory owns trace-to-skill promotion; Scientific
+Discovery owns experiment governance; Open-Ended Improvement and RSI own
+proposal and protected promotion boundaries; the Integrated Reference
+Architecture owns the joined trace. Completion requires a natural task,
+positive controls, transfer probes, counterfactual or intervention evidence,
+forgetting and regression checks, stability epochs, total cost, and an honest
+terminal outcome. More prose alone cannot close C4.
+
+### C5 — Minimal trusted kernel and bounded liveness
+
+Produce a minimum trusted-kernel map rather than relocating opacity into a
+large governance plane. For identity, time, authority, policy, context
+resolution, artifact custody, observation, evaluation, sandboxing, rollback,
+and release, record:
+
+- the minimum property that must be trusted;
+- what can be independently witnessed or mutually checked;
+- compromise and Byzantine behavior;
+- revocation and recovery behavior;
+- downstream consumers; and
+- the exact condition that forces safe hold.
+
+Bind this map to a bounded-liveness contract: every admitted task reaches a
+terminal disposition; every residual has an owner, age, escalation, and
+retirement rule; every quarantine has an exit or terminal retirement;
+review/replan loops have finite budgets; blocked work reports its minimum
+missing condition; and useful throughput, false blocking, latency, human time,
+compute, residual burden, and governance cost are measured jointly. A system
+that remains safe only by never completing useful work fails the joint gate.
+
+### C6 — P0–P6 semantic proof rationalization
+
+Keep the existing syntax-level classifier, but add a semantic-depth overlay for
+all 1,370 current declarations:
+
+| Level | Required meaning |
+|---|---|
+| P0 | schema, type, or record-shape property |
+| P1 | finite route, rejection, or preservation property |
+| P2 | reachability, witnessed execution, and nonvacuity |
+| P3 | implementation refinement or runtime-monitor binding |
+| P4 | cross-component safety, noninterference, or adversarial composition |
+| P5 | bounded liveness, recovery, revocation, or concurrency |
+| P6 | empirically bound semantic property with a named observation contract |
+
+Every theorem receives assumptions, consumer, reachable witness or explicit
+unreachability, implementation binding, mutation coverage, semantic owner,
+maximum inference, and retain/rewrite/retire disposition. Raw theorem count is
+not a headline success metric. Unused, duplicate, vacuous, or record-shape
+results remain valid at their earned level but must not borrow stronger
+language from neighboring results.
+
+### C7 — Natural governed repository-change flagship
+
+`ASI-THESEUS-FLAGSHIP-01` remains the one empirical spine. Do not create a
+parallel benchmark. Its matched comparison must include:
+
+- direct strong-agent work;
+- an ordinary agentic workflow;
+- a deterministic CI/workflow control;
+- the full governed stack; and
+- a bounded human-assisted governed route using the same declared help budget.
+
+Hold model access, repository state, task information, compute, retries,
+human-help budget, and evaluators constant where the estimand requires it.
+Freeze positive controls, competence thresholds, simpler alternatives,
+architecture-challenge thresholds, stopping rules, rescue ceilings, and
+promotion conditions before protected outcomes open.
+
+Inject prompt/source-file attacks, stale authority, scope expansion,
+insufficient or malicious tests, wrong-commit receipts, dependency drift,
+correlated verification, partial effects, code-only rollback, stale generated
+derivatives, false tool success, hidden reviewer burden, and unauthorized
+self-modification. Measure useful task success, unauthorized effects, false
+blocking, missed help, defect escape, detection and recovery time, rollback
+closure, residual burden, compute, latency, human time, context volume,
+evaluator disagreement, trace completeness, support overclaim, and total
+lifecycle cost together.
+
+### C8 — Evidence-led publication and derivative papers
+
+The three defended contributions remain:
+
+1. governed-cognition interface contracts;
+2. public claim-state transition discipline; and
+3. record/reality reconciliation and residual honesty.
+
+Routing, developmental learning, trusted-kernel minimization, bounded liveness,
+and the calculus are mechanisms or evaluation dimensions for those three, not
+five new flagship claims. After C6 and a terminal C7 result, prepare bounded
+standalone papers for the contributions and the benchmark. Do not lead with
+chapter, theorem, schema, or source counts.
+
+Independent implementation and reproduction remain required before broad
+transfer or architecture claims. Consistent with author instruction, no other
+human is a prepublication completion gate. Postpublication specialist challenge
+packets may remain available, but unfinished private review cannot block the
+book.
+
+### Convergence dependency order
+
+1. Finish C0 and attest the current public surface.
+2. Run C1, the current 84-chapter role map, and W3 rebaseline without waiting
+   for flagship outcomes.
+3. Keep P2/T0–T4 as the empirical headline; C3–C6 may build only the artifacts
+   required by that campaign and the narrative.
+4. Freeze C7 baselines, competence, challenge thresholds, injections, metrics,
+   and stopping rules before outcome opening.
+5. Run the matched natural campaign and give it an earned terminal
+   disposition.
+6. Thread the stable happy, blocked, failed, revoked, rollback, and residual
+   traces through C2.
+7. Run independent reproduction/transfer gates before broad claims.
+8. Prepare C8 derivatives and close only with exact public truth and one active
+   successor.
+
+This amendment changes planning authority only. It creates no formal result,
+natural evidence, support transition, reader release, deployment, SOTA result,
+AGI/ASI claim, license grant, or publication authorization.
+
 ### Continuation order
 
 This amendment does not displace P2 or create a third work-in-progress lane.

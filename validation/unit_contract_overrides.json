@@ -122,16 +122,28 @@
     {
       "script": "validate_trust_surface.py",
       "args": [],
-      "input_contract": "README and landing trust surfaces plus owning claim, evidence, reader, and contribution ledgers.",
+      "input_contract": "Current README, landing page, preface, glossary, outline, Appendix E/F, 84-chapter manifest and role map, plus owning claim, evidence, reader, contribution, product, and public-status ledgers.",
       "input_artifacts": [
         "README.md",
         "index.qmd",
+        "preface.qmd",
+        "appendices/B_glossary.qmd",
+        "appendices/E_chapter_evidence_summary.qmd",
+        "appendices/F_changelog.qmd",
+        "book_structure.json",
+        "docs/book_outline.md",
+        "evidence_quality/current_chapter_role_map.json",
         "docs/non_core_evidence_ledger.md",
-        "docs/reader_continuity_audit.md"
+        "docs/reader_continuity_audit.md",
+        "products/product_contracts.json",
+        "status/public_status_config.json"
       ],
-      "output_contract": "Reject missing compact public boundaries, contradictory ledger-owned facts, or inflated core support counts.",
+      "output_contract": "Reject stale chapter identity, incomplete or duplicated role ownership, missing compact public boundaries, Appendix E/F regression, contradictory ledger-owned facts, or inflated core support counts.",
       "output_assertions": [
-        "54 core claims remain argument",
+        "84 chapter-core claims remain argument",
+        "84/84 Appendix E chapter IDs present",
+        "current roles are exactly 11 thesis, 54 load-bearing reference, 7 implementation, and 12 speculative",
+        "preface and RDC glossary state are current",
         "dense transition details stay in owning ledger",
         "reader blockers remain visible"
       ],
@@ -139,7 +151,10 @@
       "negative_controls": "validator_owned",
       "negative_control_cases": [
         "core support count mismatch",
-        "missing compact non-claim"
+        "missing compact non-claim",
+        "obsolete public chapter count",
+        "chapter role omission or duplication",
+        "Appendix E/F regression"
       ],
       "prohibited_inference": "A coherent trust surface does not prove the claims summarized there.",
       "contract_precision": "exact_high_impact",

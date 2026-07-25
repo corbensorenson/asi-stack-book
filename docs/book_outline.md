@@ -22,6 +22,14 @@ Active improvement authority:
 `docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md`, with machine
 state in
 `roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json`.
+Its 2026-07-25 evidence-and-convergence amendment is grounded in
+`docs/chatgpt_pro_full_book_review_adjudication_2026_07_25.md` and executes
+C0–C8: canonical public truth, noninheritance and terminology convergence, a
+22-unit narrative route over the 84-module reference, the Governed Transition
+Calculus, a Developmental Intelligence Loop, minimal trusted-kernel and bounded
+liveness work, P0–P6 semantic proof rationalization, the existing natural
+repository-change flagship, and evidence-led derivatives. The amendment
+creates no new chapter queue and no external-human prepublication gate.
 The claim-proof/SOTA predecessor is complete for its frozen historical scope:
 all registered claim atoms have terminal dispositions, the large majority
 remain `blocked_after_full_attempt`, all current chapter-core claims remain at
@@ -102,7 +110,7 @@ Throughout the outline, `layer` means a logical responsibility and authority bou
 - Use the part-level source queue to load broad context before drafting a part.
 - Use the chapter-level source queue to load only the relevant papers for the chapter in scope.
 - Use `ASI-THESEUS-FLAGSHIP-01` as the primary reader-spine case once `T4` produces a stable joined trace. A reader-spine chapter should advance the case or be explicitly classified as optional reference material; never invent a case outcome before the evidence pack exists.
-- Preserve chapter roles—thesis-bearing, load-bearing reference, implementation case, or speculative/deferred research—during editorial compression so removing repeated prose cannot erase a unique claim, caveat, source, proof boundary, or non-claim.
+- Preserve chapter roles—thesis-bearing, load-bearing reference, implementation case, or speculative research—during editorial compression so removing repeated prose cannot erase a unique claim, caveat, source, proof boundary, or non-claim.
 - Treat primary sources as the first mining pass, supporting sources as synthesis/context, variants as version checks, and connector/recovery sources as blockers until actually loaded.
 - Do not mark a claim `source-derived` until the actual source text has been read and a source note or equivalent mined record exists.
 - Treat conversation-mined material as author intent, terminology, architecture lineage, deduplication help, and recovery guidance. It is not external evidence and should not be quoted verbatim unless explicitly approved.
@@ -113,11 +121,11 @@ Throughout the outline, `layer` means a logical responsibility and authority bou
 
 ### Current reader-role classification
 
-P7.1a-W2 assigns every manifest chapter in its historical 60-chapter scope one primary reader role;
-the current compact view extends the same vocabulary to authorized later
-chapters. The frozen machine record is
-`evidence_quality/p7_1a_w2_narrative_audit.json`. Roles guide emphasis and
-navigation only. They do
+P7.1a-W2 assigns every chapter in its historical 60-chapter scope one primary
+reader role. The current 84-entry projection is
+`evidence_quality/current_chapter_role_map.json`; the frozen W2 machine record
+remains `evidence_quality/p7_1a_w2_narrative_audit.json`. Roles guide emphasis
+and navigation only. They do
 not change claim labels, support states, chapter order, evidence lanes, or
 publication status.
 
@@ -136,7 +144,7 @@ publication status.
   `integrated-reference-architecture`,
   `project-theseus-as-report-first-implementation-reference`,
   `prototype-roadmap`, and `living-book-methodology`.
-- **Speculative/deferred research (11):** `open-ended-improvement-engines`,
+- **Speculative research (12):** `open-ended-improvement-engines`,
   `personal-compute-hives-and-federated-edge-intelligence`,
   `compact-generative-systems-and-residual-honesty`,
   `fast-generation-architectures`,
@@ -146,8 +154,9 @@ publication status.
   `circle-calculus-and-proof-carrying-ai-contracts`,
   `coil-attention-cyclic-memory-and-recurrence-contracts`,
   `coilra-multicoil-rope-and-cyclic-mixers`, and
-  `open-research-agenda-and-bibliography-plan`.
-- **Load-bearing reference (32):** every remaining manifest chapter, including
+  `open-research-agenda-and-bibliography-plan`, plus
+  `relational-dimension-compilation-and-polyadic-cognition`.
+- **Load-bearing reference (54):** every remaining manifest chapter, including
   `governed-model-training-distributed-optimization-and-scaling` and
   `privacy-data-rights-and-information-flow-governance`. Each owns
   a distinct interface, invariant, artifact, lifecycle, or failure family and

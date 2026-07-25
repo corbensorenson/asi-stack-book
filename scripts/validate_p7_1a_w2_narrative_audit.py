@@ -15,6 +15,7 @@ STRUCTURE = ROOT / "book_structure.json"
 ATOM_LEDGER = ROOT / "experiments/claim_family_terminal_coverage/results/result.json"
 INDEX = ROOT / "index.qmd"
 OUTLINE = ROOT / "docs/book_outline.md"
+CURRENT_ROLE_MAP = ROOT / "evidence_quality/current_chapter_role_map.json"
 WORD = re.compile(r"[A-Za-z0-9_`'-]+")
 CLAIM = re.compile(r"\[[^\]\n]+support:\s*[^\]\n]+\]")
 PROOF_TAG = re.compile(r"lean:[a-z0-9_.-]+")
@@ -140,12 +141,17 @@ def errors(data: dict[str, Any]) -> list[str]:
     outline = data["outline"]
     for phrase in (
         "## Chapter roles", "Thesis-bearing", "Load-bearing reference",
-        "Implementation case", "Speculative/deferred research",
+        "Implementation case", "Speculative research",
+        "evidence_quality/current_chapter_role_map.json",
         "white-box evidence, thresholds, adversarial evaluation, safety cases, and operations",
     ):
         if phrase not in index:
             out.append(f"overview surface missing: {phrase}")
-    for phrase in ("### Current reader-role classification", "P7.1a-W2 assigns every manifest chapter"):
+    for phrase in (
+        "### Current reader-role classification",
+        "P7.1a-W2 assigns every chapter in its historical 60-chapter scope",
+        "evidence_quality/current_chapter_role_map.json",
+    ):
         if phrase not in outline:
             out.append(f"outline role surface missing: {phrase}")
     for chapter_id, phrase in {
@@ -173,6 +179,7 @@ def main() -> None:
         "current_chapters": current_chapters,
         "baseline_chapters": baseline_chapters,
         "atom_ledger": load(ATOM_LEDGER),
+        "current_role_map": load(CURRENT_ROLE_MAP),
         "index": INDEX.read_text(encoding="utf-8"),
         "outline": OUTLINE.read_text(encoding="utf-8"),
     }

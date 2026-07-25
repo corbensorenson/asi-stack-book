@@ -54,6 +54,21 @@ def errors(data: dict) -> list[str]:
     ):
         out.append("A1 Part III placement drifted")
     chapter = next((row for row in chapters if row["id"] == CHAPTER_ID), {})
+    current_roles = data["current_roles"]
+    current_assignments = [
+        chapter_id
+        for role_chapters in current_roles.get("roles", {}).values()
+        for chapter_id in role_chapters
+    ]
+    current_role_summary = current_roles.get("summary", {})
+    if (
+        current_roles.get("manifest_chapter_count") != 84
+        or len(current_assignments) != 84
+        or set(current_assignments) != set(ids)
+        or current_role_summary.get("load_bearing_reference_count") != 54
+        or CHAPTER_ID not in current_roles.get("roles", {}).get("load-bearing-reference", [])
+    ):
+        out.append("A1 current 84-chapter role-map projection drifted")
     # A1 freezes the seven-source admission packet, not the chapter's maximum
     # future bibliography. Later source packets may extend the chapter provided
     # the admitted packet and its support ceiling remain intact.
@@ -106,7 +121,11 @@ def errors(data: dict) -> list[str]:
 
     surfaces = data["surfaces"]
     fragments = {
-        "index": ["Governed training-run transaction", "all 84 working-manifest chapters", "Load-bearing reference | 32"],
+        "index": [
+            "Governed training-run transaction",
+            "all 84 working-manifest chapters",
+            f"Load-bearing reference | {current_role_summary.get('load_bearing_reference_count')}",
+        ],
         "replaceable": ["**Relational Dimension Compilation and Polyadic Cognition** now takes the next"],
         "integrated": ["Training candidates are transactions, not artifacts"],
         "glossary": ["Training Run Transaction", "Resume equivalence class"],
@@ -146,6 +165,7 @@ def main() -> None:
         "proofs": load(ROOT / "proofs/proof_manifest.json"),
         "protocol": load(ROOT / "experiments/governed_model_training_argument_exit/preregistration.json"),
         "status": load(ROOT / "roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json"),
+        "current_roles": load(ROOT / "evidence_quality/current_chapter_role_map.json"),
         "surfaces": {
             "index": (ROOT / "index.qmd").read_text(),
             "replaceable": (ROOT / "chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.qmd").read_text(),

@@ -41,7 +41,7 @@
   ],
   "properties": {
     "schema_version": {
-      "const": "asi_stack.post_v2_3_maintenance_transfer_publication_status.v22"
+      "const": "asi_stack.post_v2_3_maintenance_transfer_publication_status.v23"
     },
     "roadmap_id": {
       "const": "asi-stack-post-v2-3-evidence-competence-transfer-publication-2026-07-17"
@@ -192,6 +192,7 @@
         "critical_path",
         "empirical_lanes",
         "narrative_quality_gate",
+        "post_review_convergence",
         "structural_completeness_tranche",
         "support_state_effect",
         "release_effect"
@@ -301,6 +302,119 @@
             },
             "requires_meaning_preservation_audit": {
               "const": true
+            }
+          }
+        },
+        "post_review_convergence": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "state",
+            "review_path",
+            "current_role_map_path",
+            "reference_chapter_count",
+            "narrative_unit_target",
+            "defended_contribution_count",
+            "packet_order",
+            "governed_transition_calculus_properties",
+            "proof_depth_levels",
+            "developmental_loop_stages",
+            "minimal_trusted_kernel_components",
+            "bounded_liveness_required",
+            "existing_owner_first",
+            "worthwhile_manuscript_idea_deferral_allowed",
+            "new_chapter_requires",
+            "flagship_id",
+            "prepublication_external_human_required",
+            "support_state_effect",
+            "release_effect"
+          ],
+          "properties": {
+            "state": {
+              "const": "active_evidence_and_narrative_convergence"
+            },
+            "review_path": {
+              "const": "docs/chatgpt_pro_full_book_review_adjudication_2026_07_25.md"
+            },
+            "current_role_map_path": {
+              "const": "evidence_quality/current_chapter_role_map.json"
+            },
+            "reference_chapter_count": {
+              "const": 84
+            },
+            "narrative_unit_target": {
+              "const": 22
+            },
+            "defended_contribution_count": {
+              "const": 3
+            },
+            "packet_order": {
+              "const": [
+                "C0-canonical-public-truth-incident-and-regression",
+                "C1-noninheritance-thesis-and-terminology-convergence",
+                "C2-twenty-two-unit-narrative-book",
+                "C3-governed-transition-calculus",
+                "C4-developmental-intelligence-loop",
+                "C5-minimal-trusted-kernel-and-bounded-liveness",
+                "C6-p0-p6-semantic-proof-rationalization",
+                "C7-natural-governed-repository-change-flagship",
+                "C8-evidence-led-publication-and-derivative-papers"
+              ]
+            },
+            "governed_transition_calculus_properties": {
+              "type": "array",
+              "minItems": 12,
+              "maxItems": 12,
+              "uniqueItems": true
+            },
+            "proof_depth_levels": {
+              "const": [
+                "P0-record-shape",
+                "P1-finite-route",
+                "P2-reachability-and-nonvacuity",
+                "P3-implementation-refinement",
+                "P4-cross-component-safety",
+                "P5-liveness-and-recovery",
+                "P6-empirically-bound-semantics"
+              ]
+            },
+            "developmental_loop_stages": {
+              "type": "array",
+              "minItems": 10,
+              "uniqueItems": true
+            },
+            "minimal_trusted_kernel_components": {
+              "type": "array",
+              "minItems": 11,
+              "maxItems": 11,
+              "uniqueItems": true
+            },
+            "bounded_liveness_required": {
+              "const": true
+            },
+            "existing_owner_first": {
+              "const": true
+            },
+            "worthwhile_manuscript_idea_deferral_allowed": {
+              "const": false
+            },
+            "new_chapter_requires": {
+              "type": "array",
+              "minItems": 6,
+              "maxItems": 6,
+              "uniqueItems": true
+            },
+            "flagship_id": {
+              "const": "ASI-THESEUS-FLAGSHIP-01"
+            },
+            "prepublication_external_human_required": {
+              "const": false
+            },
+            "support_state_effect": {
+              "const": "none"
+            },
+            "release_effect": {
+              "const": "none"
             }
           }
         },
