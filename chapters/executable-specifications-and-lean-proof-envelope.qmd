@@ -179,6 +179,79 @@ transfer; material change expires the lease while lineage, countermodels,
 negative results, semantic losses, unproved remainders, and residual owners
 remain visible.
 
+### Governed Transition Calculus
+
+The chapter-specific contracts share a small transition kernel. A governed
+transition is represented as
+
+\[
+T = (I_s, I_t, A, O, E, R, C, \tau, \Pi),
+\]
+
+where \(I_s\) and \(I_t\) are the exact source and target identities; \(A\) is
+the authority under which the transition is considered; \(O\) is the set of
+obligations that must be discharged; \(E\) is the evidence actually available;
+\(R\) is the residual set that survives the decision; \(C\) names the
+downstream consumers; \(\tau\) gives expiry and revocation conditions; and
+\(\Pi\) gives rollback, compensation, quarantine, supersession, or retirement
+when an exact return is impossible. This is the **Governed Transition
+Calculus**. It is a shared vocabulary and admission shape, not a new chapter,
+a universal theorem, or evidence that any runtime enforces the fields.
+
+The calculus gives twelve recurring obligations a single home:
+
+1. authority cannot escalate merely because a transition is useful;
+2. evidence cannot promote without an accepted evidence transition;
+3. context cannot become authority by being present;
+4. a plan cannot be counted as an effect;
+5. a receipt cannot replace independent observation;
+6. unresolved residuals must be conserved across handoffs;
+7. expiry and revocation must reach consumers and descendants;
+8. a replacement cannot inherit the predecessor's qualification;
+9. rollback must close the declared effect surface or retain an explicit
+   unresolved effect;
+10. admitted work needs a bounded path to completion, refusal, quarantine, or
+    retirement;
+11. identity must survive composition across specification, implementation,
+    observation, and evidence layers; and
+12. the subject of a protected change cannot solely ratify its own authority,
+    evaluator, or constitution.
+
+Different chapters instantiate different subsets and stricter fields. System
+Boundaries owns authority; Claims and Evidence owns support movement; context,
+planning, runtime, replacement, readiness, and release owners keep their own
+semantics. The calculus prevents those owners from inventing incompatible
+handoff meanings. Its first honest implementation is a record and consumer
+crosswalk. Nonvacuous models, countermodels, implementation refinement, natural
+traces, and empirical observations belong to the later evidence phase.
+
+### P0--P6 semantic-depth overlay
+
+The existing artifact classifier says what kind of artifact exists. It does not
+say how far that artifact reaches toward the intended system meaning. Every
+formal target should therefore receive a separate semantic-depth label:
+
+| Level | Earned meaning |
+|---|---|
+| P0 | Schema, type, field, or record-shape property. |
+| P1 | Finite route, rejection, conservation, or preservation property over the modeled state. |
+| P2 | Reachability with an explicit witness, executed path, and nonvacuity check. |
+| P3 | Refinement to a named implementation or binding to a runtime monitor. |
+| P4 | Cross-component safety, noninterference, or adversarial composition under stated assumptions. |
+| P5 | Bounded liveness, recovery, revocation, or concurrency behavior. |
+| P6 | Empirically bound semantic property with a named independent observation contract. |
+
+Levels are obligations, not a score that a target acquires from neighboring
+work. A P0 theorem can remain useful and correct without being “upgraded.” A
+P2 witness does not confer P3 implementation binding. P6 does not mean a
+universal empirical truth; it means that the exact proposition is connected to
+a named observation under a frozen scope. Each target eventually needs its
+assumptions, consumer, witness or explicit unreachability, implementation
+binding, mutation coverage, semantic owner, maximum inference, and
+retain/rewrite/retire disposition. During the manuscript-completion phase this
+overlay organizes the proof estate; it does not claim that the current
+declarations have already earned those labels.
+
 ### Semantic depth and implementation binding
 
 Artifact class is not enough. Two Lean-backed claims can have very different
@@ -429,7 +502,7 @@ stack, deployed enforcement proof, general implementation refinement,
 independent formal reproduction, empirical result, chapter-core transition, or
 SOTA result.
 
-## Beyond the State of the Art
+## Mature Research Target
 
 The formal-methods endpoint is a claims control plane for the whole stack. It does not try to prove "ASI safety" or "alignment" as one grand theorem. It maintains a live registry of every formal-looking promise, routes each promise to the right artifact lane, and refuses to let a passed artifact support a broader claim than it actually checks.
 

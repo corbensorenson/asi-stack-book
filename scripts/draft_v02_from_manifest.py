@@ -452,7 +452,7 @@ def build_chapter(chapter: dict, part: dict, part_index: int, chapter_index: int
     lines.append(
         "\nThe implementation should be promoted only when its evidence exists. A planned test remains planned; a proof target remains planned; a prototype claim remains unpromoted until the code, command, environment, and result are recorded."
     )
-    lines.append("\n## Beyond the State of the Art\n")
+    lines.append("\n## Mature Research Target\n")
     lines.append(chapter.get("beyond_state_of_art", "No manifest beyond-state-of-the-art statement declared yet."))
     lines.append(
         "\nTreat this endpoint as a target architecture, not a current result. It should show how the mechanism works under real workload pressure, how it composes with neighboring layers, how it fails closed, and how support-state promotion is earned instead of assumed."

@@ -359,7 +359,7 @@ The repository also now contains `treasury_policy_record.schema.json` and `event
 
 The repository also contains the Artifact steward lifecycle probe in `docs/artifact_steward_lifecycle_probe.md` and `experiments/artifact_steward_lifecycle_probe/results/2026-07-02-local.json`. The probe checks `valid_clean_release_review_proposal`, `valid_sunset_review_route`, and expected-invalid routes for `invalid_tainted_event_without_review`, `invalid_over_policy_treasury_spend`, `invalid_contribution_governance_laundering`, `invalid_unscoped_federation_contract`, `invalid_release_without_gate_evidence`, and `invalid_sunset_criteria_ordinary_work`. This is a no steward-bot, treasury-executor, event-taint-workflow, contributor-ledger, governance-runner, project-federation, release-runner, sunset-protocol, or support-state-promotion claim.
 
-## Beyond the State of the Art
+## Mature Research Target
 
 ### Argument-exit campaign
 

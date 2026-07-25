@@ -39,7 +39,7 @@ The generated reader text was read end to end for:
 - research-agenda clarity around source intake, backlog records, citation
   normalization, chapter-boundary decisions, direct citation checks, and
   non-claims;
-- presence of `Minimum Viable Implementation`, `Beyond the State of the Art`,
+- presence of `Minimum Viable Implementation`, `Mature Research Target`,
   summary, and handoff material in each chapter;
 - absence of imported-report, phase-completion, source-normalization,
   reader-release, ebook, audiobook, support-state-promotion, or v1.0-release

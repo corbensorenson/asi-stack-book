@@ -100,8 +100,6 @@
   },
   "atom_reviews": {},
   "prose_candidate_dispositions": {
-    "physical-compute-infrastructure-energy-and-environmental-constraints.prose.3f6ae24370b6": {"state": "duplicate_of_atom", "rationale": "The coverage-and-authority record operationalizes the chapter's manifest-owned metering, uncertainty, hardware, authority, and recourse obligations.", "target_atom_id": "physical-compute-infrastructure-energy-and-environmental-constraints.core"},
-    "physical-compute-infrastructure-energy-and-environmental-constraints.prose.9d203e9f2895": {"state": "duplicate_of_atom", "rationale": "The device-to-fleet nonclaim restates the chapter's denominator, scope, and transfer boundary.", "target_atom_id": "physical-compute-infrastructure-energy-and-environmental-constraints.core"},
     "physical-compute-infrastructure-energy-and-environmental-constraints.prose.0ff5063b8419": {
       "state": "duplicate_of_atom",
       "rationale": "Semantically reviewed as a prose explanation or refinement of `physical-compute-infrastructure-energy-and-environmental-constraints.problem.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
@@ -160,6 +158,16 @@
       "state": "nonmaterial_explanation",
       "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
     },
+    "physical-compute-infrastructure-energy-and-environmental-constraints.prose.3f6ae24370b6": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed as a prose explanation or refinement of `physical-compute-infrastructure-energy-and-environmental-constraints.interface.004` within the chapter's declared scope; it creates no separate support-bearing atom.",
+      "target_atom_id": "physical-compute-infrastructure-energy-and-environmental-constraints.interface.004"
+    },
+    "physical-compute-infrastructure-energy-and-environmental-constraints.prose.9d203e9f2895": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed as a prose explanation or refinement of `physical-compute-infrastructure-energy-and-environmental-constraints.interface.004` within the chapter's declared scope; it creates no separate support-bearing atom.",
+      "target_atom_id": "physical-compute-infrastructure-energy-and-environmental-constraints.interface.004"
+    },
     "physical-compute-infrastructure-energy-and-environmental-constraints.prose.95b08a9d51f8": {
       "state": "nonmaterial_explanation",
       "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
@@ -200,8 +208,8 @@
     },
     "physical-compute-infrastructure-energy-and-environmental-constraints.prose.a45a57738dd9": {
       "state": "duplicate_of_atom",
-      "rationale": "Semantically reviewed as a prose explanation or refinement of `physical-compute-infrastructure-energy-and-environmental-constraints.beyond_sota.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
-      "target_atom_id": "physical-compute-infrastructure-energy-and-environmental-constraints.beyond_sota.001"
+      "rationale": "Semantically reviewed as a prose explanation or refinement of `physical-compute-infrastructure-energy-and-environmental-constraints.invariant.004` within the chapter's declared scope; it creates no separate support-bearing atom.",
+      "target_atom_id": "physical-compute-infrastructure-energy-and-environmental-constraints.invariant.004"
     },
     "physical-compute-infrastructure-energy-and-environmental-constraints.prose.d7c698d66ae4": {
       "state": "nonmaterial_explanation",

@@ -20,7 +20,7 @@ REQUIRED_SECTIONS = [
     "## Invariants",
     "## Failure modes",
     "## Minimum Viable Implementation",
-    "## Beyond the State of the Art",
+    "## Mature Research Target",
     "## Codex test plan",
     "## Source crosswalk",
     "## Summary",
@@ -119,7 +119,7 @@ SECTION_MIN_WORDS = {
     "## Invariants": 110,
     "## Failure modes": 110,
     "## Minimum Viable Implementation": 125,
-    "## Beyond the State of the Art": 200,
+    "## Mature Research Target": 200,
     "## Summary": 130,
 }
 
@@ -140,7 +140,7 @@ SECTION_REQUIRED_PATTERNS = {
             ),
         ),
     ],
-    "## Beyond the State of the Art": [
+    "## Mature Research Target": [
         (
             "mature target state",
             re.compile(

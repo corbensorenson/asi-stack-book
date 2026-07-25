@@ -120,6 +120,17 @@ Authority is the stack's answer to the question "who may cause an effect?" VIEA 
 
 An Authority Transition Record is the mechanism that must exist before a layer can cross a boundary.
 
+This record is the authority-specific projection of the shared Governed
+Transition Calculus defined by Executable Specifications. Its source and target
+identities become the principal, source layer, and target boundary; its
+authority field becomes the ceiling, grant, delegation, expiry, and revocation
+state; and its obligations, evidence, residuals, consumers, and closure become
+the required checks, receipts, denials, downstream acknowledgements, and
+rollback or retirement path. The projection is intentionally asymmetric:
+System Boundaries may add stricter authority fields, but neither a generic
+transition record nor a complete authority tuple may claim that a real effect
+was enforced without an independently grounded effect receipt.
+
 ```{mermaid}
 flowchart LR
   A["Principal / layer"] --> B["Requested operation"]
@@ -285,7 +296,7 @@ The stronger bounded owner is now the executed grant-to-effect refinement. `AsiS
 
 The historical-project packet adds `schemas/authority_tuple_lifecycle_record.schema.json` and `python3 scripts/validate_authority_tuple_lifecycle.py`. One blocked six-project lineage record joins authority identity, domain ownership, delegation, lifecycle events, cross-domain approval, protocol/hardware-root separation, and receipts. Nine mutations attack missing tuple identity, domain ownership, target approval, scope narrowing, budget identity, trace identity, replay identity, revoked effects, and protocol-as-hardware-root claims. It remains a fixture, not deployed enforcement.
 
-## Beyond the State of the Art
+## Mature Research Target
 
 System authority needs a type system for the stack. Every model, tool, memory cell, field, artifact, human, project, and runtime route would carry explicit capability bounds so the architecture can distinguish what a component can do from what it may do.
 

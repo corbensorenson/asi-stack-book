@@ -68,16 +68,26 @@ inference-cache, T1D, and Precision Contract manuscript depth is therefore
 present at argument support; their remaining formal, executable, empirical,
 source-resolution, and reader artifacts retain the active roadmap gates.
 
-The decisive current program is `ASI-THESEUS-FLAGSHIP-01`: close Theseus's
-finite training architecture, train the frozen local seed and matched control,
-establish an honest model-only behavioral numerator, collect real multi-day
-dogfood, join one natural happy trace and one blocked/rollback trace, then run
-a matched natural governed-admission comparison with total lifecycle cost. P2
-may continue instrument and corpus preflight. Its independent `P2-Q1-D1`
-strong-worker denominator may open after P2's seven competence gates without
-waiting for Theseus; `ASI-THESEUS-Q2-D2` remains separately sealed until the
-student and joined trace are competent. T5 composes separately earned
-conclusions rather than pooled rows. The remaining book work is semantically
+The Phase 1 idea-placement and prose-convergence gate is complete.
+`docs/c1_c8_phase1_idea_placement_and_prose_audit_2026_07_25.md` records the
+ownership pass. `products/narrative_product_spine.json` now defines 22
+representative units, `products/narrative_unit_crosswalk.json` assigns every
+one of the 84 canonical chapters exactly once, and the cumulative
+repository-change trace carries the route. Noninheritance, the Governed
+Transition Calculus, the Developmental Intelligence Loop, the minimum trusted
+kernel, bounded liveness, P0–P6 semantic depth, the natural Theseus flagship,
+and contribution-owned derivatives now appear in their manuscript owners.
+The authorial meaning-preservation review, retained-lineage ownership map,
+cross-owner handoffs, synthesis figures, clean 97-page canonical render,
+desktop/mobile browser checks, and automated accessibility preparation now
+close the all-84 gate without changing a support state.
+
+The decisive current program is Phase 2 proof rationalization followed by
+competent natural evidence. `ASI-THESEUS-FLAGSHIP-01` remains the natural
+evidence spine, but protected outcomes open only after its own baselines,
+competence dossiers, independent evaluators, attack families, rescue ceilings,
+resource denominators, and stopping rules are frozen. T5 will compose
+separately earned conclusions rather than pooled rows. The remaining book work is semantically
 meaningful formal evidence, effect-complete implementation, source/instrument renewal, a
 meaning-preserving 15–25% repetition-removal target for the reader spine,
 independent reproduction and transfer, compatibility residuals, exact
@@ -161,7 +171,7 @@ publication status.
   `privacy-data-rights-and-information-flow-governance`. Each owns
   a distinct interface, invariant, artifact, lifecycle, or failure family and
   remains discoverable through the architecture-reference product even when
-  omitted from the fifteen-chapter narrative derivative.
+  routed behind one of the 22 representative narrative units.
 
 ## Historical Project Incorporation Overlay
 
@@ -296,7 +306,7 @@ Future writing runs should serve three audiences from one canonical source tree:
 
 The ordinary chapter prose is the reader-facing spine. It must still make sense after live-only headings such as `Chapter status`, `Drafting guardrail`, `Codex test plan`, `Source crosswalk`, `Claim-source mapping status`, and `Formalization hooks` are stripped. Meaning-critical caveats, uncertainty, and support-state limits belong in the spine, not only in a stripped guardrail or source-crosswalk section.
 
-Every chapter must include both `Minimum Viable Implementation` and `Beyond the State of the Art`. The minimal section defines the smallest public-safe artifact or validated slice that can start the chapter's idea honestly. The beyond-SOTA section defines the mature logical conclusion of the idea: the final product surface, operational contract, evidence flow, governance boundary, failure closure, and composition with the rest of the stack. The beyond-SOTA section is a target architecture, not a claim of current implementation; it must preserve the chapter's recorded support state until proof, test, source, benchmark, or runtime artifacts justify promotion.
+Every chapter must include both `Minimum Viable Implementation` and `Mature Research Target`. The minimal section defines the smallest public-safe artifact or validated slice that can start the chapter's idea honestly. The beyond-SOTA section defines the mature logical conclusion of the idea: the final product surface, operational contract, evidence flow, governance boundary, failure closure, and composition with the rest of the stack. The beyond-SOTA section is a target architecture, not a claim of current implementation; it must preserve the chapter's recorded support state until proof, test, source, benchmark, or runtime artifacts justify promotion.
 
 Appendix K, `Implementation Horizons`, is generated from the same manifest fields and should be used as the book-wide build-horizon map during full-book writing runs. If a chapter is added, moved, merged, or split, update `book_structure.json`, rerun `python3 scripts/sync_scaffold.py`, and confirm the appendix still shows a precise minimum slice and mature endpoint for every chapter.
 

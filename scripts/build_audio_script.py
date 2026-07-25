@@ -29,7 +29,7 @@ IMAGE_RE = re.compile(r"!\[[^\]]*\]\([^)]+\).*")
 INLINE_LINK_RE = re.compile(r"(?<!!)\[([^\]]+)\]\([^)]+\)")
 IMPLEMENTATION_HORIZON_HEADINGS = (
     "## Minimum Viable Implementation",
-    "## Beyond the State of the Art",
+    "## Mature Research Target",
 )
 
 

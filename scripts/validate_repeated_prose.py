@@ -165,7 +165,7 @@ def normalized_paragraphs(path: Path) -> list[str]:
 
 def beyond_state_body(path: Path) -> str:
     text = strip_frontmatter(path.read_text(encoding="utf-8", errors="ignore"))
-    match = re.search(r"^## Beyond the State of the Art\s*$\n(?P<body>.*?)(?=^## |\Z)", text, re.M | re.S)
+    match = re.search(r"^## Mature Research Target\s*$\n(?P<body>.*?)(?=^## |\Z)", text, re.M | re.S)
     if not match:
         return ""
     return match.group("body").strip()
@@ -224,11 +224,11 @@ def main() -> None:
         for paragraph, paths in sorted(repeats.items(), key=lambda item: (-len(item[1]), item[0])):
             print(f" - {len(paths)}x {paths}: {paragraph[:220]}")
         if formulaic_openers:
-            print(f"Formulaic Beyond the State of the Art openers found: {len(formulaic_openers)}")
+            print(f"Formulaic Mature Research Target openers found: {len(formulaic_openers)}")
             for path, opener in formulaic_openers:
                 print(f" - {path}: {opener[:220]}")
         if formulaic_phrases:
-            print(f"Formulaic Beyond the State of the Art phrases found: {len(formulaic_phrases)}")
+            print(f"Formulaic Mature Research Target phrases found: {len(formulaic_phrases)}")
             for path, phrase in formulaic_phrases:
                 print(f" - {path}: {phrase}")
         if formulaic_mvi_phrases:

@@ -310,6 +310,12 @@
           "additionalProperties": false,
           "required": [
             "state",
+            "active_work_mode",
+            "phase1_audit_path",
+            "narrative_spine_path",
+            "narrative_unit_crosswalk_path",
+            "all_84_idea_placement_gate_state",
+            "phase2_proof_execution_allowed",
             "review_path",
             "current_role_map_path",
             "reference_chapter_count",
@@ -331,7 +337,25 @@
           ],
           "properties": {
             "state": {
-              "const": "active_evidence_and_narrative_convergence"
+              "const": "phase2_active_after_all_84_gate"
+            },
+            "active_work_mode": {
+              "const": "phase2_proof_rationalization_and_natural_evidence_after_phase1_gate"
+            },
+            "phase1_audit_path": {
+              "const": "docs/c1_c8_phase1_idea_placement_and_prose_audit_2026_07_25.md"
+            },
+            "narrative_spine_path": {
+              "const": "products/narrative_product_spine.json"
+            },
+            "narrative_unit_crosswalk_path": {
+              "const": "products/narrative_unit_crosswalk.json"
+            },
+            "all_84_idea_placement_gate_state": {
+              "const": "passed_exact_84_coverage_22_unit_meaning_render_browser_and_accessibility_preparation"
+            },
+            "phase2_proof_execution_allowed": {
+              "const": true
             },
             "review_path": {
               "const": "docs/chatgpt_pro_full_book_review_adjudication_2026_07_25.md"
@@ -380,7 +404,8 @@
             },
             "developmental_loop_stages": {
               "type": "array",
-              "minItems": 10,
+              "minItems": 11,
+              "maxItems": 11,
               "uniqueItems": true
             },
             "minimal_trusted_kernel_components": {

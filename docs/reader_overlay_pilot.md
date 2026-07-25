@@ -93,19 +93,19 @@ The following reader-continuity pass added one active operation under `editions/
 
 The next reader-continuity pass added one active operation under `editions/reader_overlays/v1_0/chapters/executable-specifications-and-lean-proof-envelope.json`:
 
-- `v1_0.proof_envelope.beyond_state_reader_replace` replaces the generated-reader and live Human-view `Beyond the State of the Art` section while preserving the canonical AI/research proof-envelope target checklist.
+- `v1_0.proof_envelope.beyond_state_reader_replace` replaces the generated-reader and live Human-view `Mature Research Target` section while preserving the canonical AI/research proof-envelope target checklist.
 
 The same medium-priority reader-continuity pass added one active operation to `editions/reader_overlays/v1_0/chapters/circle-calculus-and-proof-carrying-ai-contracts.json`:
 
-- `v1_0.circle_contracts.beyond_state_reader_replace` replaces the generated-reader and live Human-view `Beyond the State of the Art` section while preserving the canonical AI/research proof-contract transport checklist.
+- `v1_0.circle_contracts.beyond_state_reader_replace` replaces the generated-reader and live Human-view `Mature Research Target` section while preserving the canonical AI/research proof-contract transport checklist.
 
 The same medium-priority reader-continuity pass added one active operation to `editions/reader_overlays/v1_0/chapters/artifact-steward-agents-and-living-project-governance.json`:
 
-- `v1_0.artifact_stewards.beyond_state_reader_replace` replaces the generated-reader and live Human-view `Beyond the State of the Art` section while preserving the canonical AI/research steward-OS target checklist.
+- `v1_0.artifact_stewards.beyond_state_reader_replace` replaces the generated-reader and live Human-view `Mature Research Target` section while preserving the canonical AI/research steward-OS target checklist.
 
 The same medium-priority reader-continuity pass added two active operations to `editions/reader_overlays/v1_0/chapters/personal-compute-hives-and-federated-edge-intelligence.json`:
 
-- `v1_0.personal_compute_hives.beyond_state_reader_replace` replaces the generated-reader and live Human-view `Beyond the State of the Art` section while preserving the canonical AI/research hive protocol checklist.
+- `v1_0.personal_compute_hives.beyond_state_reader_replace` replaces the generated-reader and live Human-view `Mature Research Target` section while preserving the canonical AI/research hive protocol checklist.
 - `v1_0.personal_compute_hives.minimum_viable_reader_replace` replaces the generated-reader and live Human-view `Minimum Viable Implementation` section while preserving the canonical AI/research minimum implementation ladder.
 
 Canonical AI/research tables and evidence surfaces remain in the chapter source. Some chapters have narrow subsection-heading anchors so overlays can target a table without replacing an entire mechanism section. AI view keeps the original live/research prose, source mappings, claim labels, support state, proof hooks, test-plan surface, and source crosswalk. Human view and generated reader editions receive the reader-only section prose through the same tracked overlay payload.

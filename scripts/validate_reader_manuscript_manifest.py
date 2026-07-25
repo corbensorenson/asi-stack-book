@@ -150,7 +150,7 @@ REQUIRED_ROUTING_RELEASE_BLOCKERS = {
 }
 REQUIRED_IMPLEMENTATION_HORIZON_HEADINGS = (
     "## Minimum Viable Implementation",
-    "## Beyond the State of the Art",
+    "## Mature Research Target",
 )
 MAX_CURATED_PROSE_PARAGRAPH_WORDS = 149
 REQUIRED_FIELDS = {
@@ -1297,11 +1297,20 @@ def validate_chapter_records(
             errors.append(f"{owner}: curated chapter file does not exist: {file_path}")
         else:
             curated_text = (ROOT / file_path).read_text(encoding="utf-8", errors="ignore")
-            for heading in REQUIRED_IMPLEMENTATION_HORIZON_HEADINGS:
-                if curated_text.count(f"\n{heading}") != 1:
-                    errors.append(
-                        f"{owner}: curated chapter must contain exactly one canonical {heading!r} heading."
-                    )
+            if curated_text.count("\n## Minimum Viable Implementation") != 1:
+                errors.append(
+                    f"{owner}: curated chapter must contain exactly one canonical "
+                    "'## Minimum Viable Implementation' heading."
+                )
+            mature_heading_count = (
+                curated_text.count("\n## Mature Research Target")
+                + curated_text.count("\n## Beyond the State of the Art")
+            )
+            if mature_heading_count != 1:
+                errors.append(
+                    f"{owner}: historical curated chapter must contain exactly one mature-target "
+                    "heading, using either its frozen legacy label or the current canonical label."
+                )
             for line_number, word_count in long_curated_prose_paragraphs(curated_text):
                 errors.append(
                     f"{owner}: curated prose paragraph in {file_path}:{line_number} "

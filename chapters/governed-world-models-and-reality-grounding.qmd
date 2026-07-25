@@ -224,6 +224,13 @@ belief state while retaining uncertainty and alternative hypotheses. The
 belief state is a defeasible input to prediction, never an unlabeled copy of
 the world.
 
+Within the Developmental Intelligence Loop, this chapter owns interaction,
+prediction error, abstraction pressure, and causal intervention records. It
+does not own memory consolidation, procedural promotion, or readiness: it
+hands versioned predictions and later reality residuals to those owners without
+letting an imagined branch become an observation or a model update become
+authority.
+
 One or more version-pinned models generate action-conditioned transition
 hypotheses. A rollout request names the current belief, intervention semantics,
 horizon, resolution, consequence class, resource budget, planner purpose, and
@@ -714,7 +721,7 @@ campaign, matched resources and baselines, uncertainty, full costs, independent
 evaluation, reproduction, and transfer; a failed toy implementation may narrow
 that implementation but cannot settle the parent architecture.
 
-## Beyond the State of the Art
+## Mature Research Target
 
 Beyond current practice lies a plural, causally testable predictive substrate
 that can revise its representations while preserving model/world disagreement,

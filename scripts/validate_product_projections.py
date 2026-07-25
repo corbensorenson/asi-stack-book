@@ -16,6 +16,7 @@ from build_product_projections import (
     CONTRIBUTIONS,
     SPINE,
     STRUCTURE,
+    UNIT_CROSSWALK,
     build_evidence,
     build_narrative,
     build_reference,
@@ -172,7 +173,7 @@ def main() -> None:
     parser.add_argument("--site", type=Path, help="also validate generated product pages inside a rendered site")
     args = parser.parse_args()
     errors: list[str] = []
-    required = [STRUCTURE, CONTRACTS, SPINE, CONTRIBUTIONS, SPINE_SCHEMA, PROJECTION_SCHEMA, DOC]
+    required = [STRUCTURE, CONTRACTS, SPINE, UNIT_CROSSWALK, CONTRIBUTIONS, SPINE_SCHEMA, PROJECTION_SCHEMA, DOC]
     for path in required:
         if not path.exists():
             errors.append(f"missing {path.relative_to(ROOT)}")
@@ -187,8 +188,26 @@ def main() -> None:
     canonical = canonical_chapters(structure)
     canonical_ids = [row["chapter_id"] for row in canonical]
     selected_ids = [row["chapter_id"] for row in spine["chapters"]]
-    if not 12 <= len(selected_ids) <= 15:
-        errors.append("narrative product must contain 12 to 15 chapters")
+    unit_crosswalk = load(UNIT_CROSSWALK)
+    units = unit_crosswalk.get("units", [])
+    if len(units) != 22 or [row.get("order") for row in units] != list(range(1, 23)):
+        errors.append("narrative unit crosswalk must contain 22 ordered units")
+    if [row.get("representative_chapter_id") for row in units] != selected_ids:
+        errors.append("narrative unit representatives do not match the narrative spine")
+    assigned_ids = [
+        chapter_id
+        for unit in units
+        for chapter_id in unit.get("chapter_ids", [])
+    ]
+    if len(assigned_ids) != len(set(assigned_ids)):
+        errors.append("narrative unit crosswalk assigns at least one chapter more than once")
+    if set(assigned_ids) != set(canonical_ids) or len(assigned_ids) != len(canonical_ids):
+        errors.append("narrative unit crosswalk does not assign all 84 canonical chapters exactly once")
+    for unit in units:
+        if unit.get("representative_chapter_id") not in unit.get("chapter_ids", []):
+            errors.append(f"{unit.get('unit_id')}: representative chapter is absent from its unit")
+    if len(selected_ids) != 22:
+        errors.append("narrative product must contain exactly 22 representative chapters")
     if selected_ids != [chapter_id for chapter_id in canonical_ids if chapter_id in set(selected_ids)]:
         errors.append("narrative product spine does not preserve canonical manifest order")
     if status["claim_state_distribution"]["support_states"] != {"argument": len(canonical)}:
@@ -262,7 +281,7 @@ def main() -> None:
         too_wide = copy.deepcopy(spine)
         extra_id = next(chapter_id for chapter_id in canonical_ids if chapter_id not in set(selected_ids))
         extra = copy.deepcopy(too_wide["chapters"][-1])
-        extra["order"] = 16
+        extra["order"] = 23
         extra["chapter_id"] = extra_id
         extra["core_claim_ref"] = f"{extra_id}.core"
         too_wide["chapters"].append(extra)
@@ -273,7 +292,7 @@ def main() -> None:
         except ValueError:
             pass
         else:
-            errors.append("negative control failed: 16-chapter narrative spine was accepted")
+            errors.append("negative control failed: 23-unit narrative spine was accepted")
 
         # Reject a missing editorial field.
         missing_field = copy.deepcopy(spine)
@@ -306,7 +325,7 @@ def main() -> None:
 
     doc = DOC.read_text(encoding="utf-8", errors="ignore")
     for phrase in (
-        f"{len(selected_ids)}-chapter",
+        f"{len(selected_ids)}-unit",
         f"{len(canonical)}-chapter",
         "content-addressed",
         "not a reviewed reader release",

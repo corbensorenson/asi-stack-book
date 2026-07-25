@@ -28,8 +28,9 @@ approve publication or establish novelty.
 4. `docs/governed_repository_change_slice.md`
 5. `docs/governed_trace_invariants.md`
 6. `docs/evidence_quality_vectors.md`
-7. The generated 15-chapter narrative candidate, its product page and manifest,
-   `docs/reader_continuity_audit.md`, and one representative curated chapter
+7. The generated 22-unit narrative candidate, its product page, manifest,
+   exact 84-chapter unit crosswalk, `docs/reader_continuity_audit.md`, and one
+   representative compound unit
 8. `chapters/asi-is-a-stack-not-a-model.qmd`
 9. `chapters/integrated-reference-architecture.qmd`
 10. `docs/v1_x_beyond_sota_roadmap.md`
@@ -39,9 +40,9 @@ approve publication or establish novelty.
 1. Can a new reader explain the book's three contributions after ten minutes?
 2. Does the narrative product read continuously, or does release/evidence
    machinery repeatedly interrupt the argument?
-3. Does the 15-chapter selection preserve the book's thesis-to-method arc, and
-   are any of the 39 reference-routed chapters essential enough to replace a
-   selected chapter? Name the replacement and tradeoff.
+3. Does the 22-unit selection preserve the book's thesis-to-method arc, and
+   does every one of the 62 reference-routed chapters have a semantically
+   appropriate unit owner? Name any rerouting and tradeoff.
 4. Are architecture-reference fields discoverable without making every
    chapter feel like a template?
 5. Does the evidence registry expose the important negative state quickly, or

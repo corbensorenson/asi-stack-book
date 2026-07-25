@@ -12,7 +12,7 @@ This repository is the canonical Quarto source for the book, its scaffolding, va
 
 | Product | Best for | Start here |
 |---|---|---|
-| Narrative book | A bounded 15-chapter thesis-to-method route with the research scaffolding hidden. | [Open the narrative route](https://corbensorenson.github.io/asi-stack-book/products/narrative-book/) |
+| Narrative book | A 22-unit thesis-to-method route over the complete 84-chapter reference, with the research scaffolding hidden. | [Open the narrative route](https://corbensorenson.github.io/asi-stack-book/products/narrative-book/) |
 | Architecture reference | Interfaces, invariants, failure routes, protocols, tests, proofs, and implementation horizons across all 84 working-manifest chapters. | [Open the architecture index](https://corbensorenson.github.io/asi-stack-book/products/architecture-reference/) |
 | Evidence registry | Current commit/count state, claim support, sources, tests, proofs, releases, and residuals. | [Open the evidence registry](https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/) |
 

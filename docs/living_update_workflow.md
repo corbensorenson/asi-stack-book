@@ -222,7 +222,7 @@ python3 scripts/build_audio_script.py
 python3 scripts/validate_reader_audio_script_probe_manifest.py
 ```
 
-3. Confirm the generated `audio_manifest.json` reports a passing implementation-horizon script status, meaning every manifest chapter script keeps both `Minimum Viable Implementation` and `Beyond the State of the Art`.
+3. Confirm the generated `audio_manifest.json` reports a passing implementation-horizon script status, meaning every manifest chapter script keeps both `Minimum Viable Implementation` and `Mature Research Target`.
 4. Review `build/audio_script/AUDIO_RELEASE_CHECKLIST.md`, `build/audio_script/companion_notes.md`, and `build/audio_script/chapter_markers.md`, then replace generated narration notes for tables, diagrams, images, code, and schemas with spoken summaries or companion-note references.
 5. Keep the pronunciation glossary current.
 6. Produce MP3, M4B, or audio-embedded EPUB only after the exact script is reviewed.

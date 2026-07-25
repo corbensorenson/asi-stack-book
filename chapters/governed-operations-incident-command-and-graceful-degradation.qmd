@@ -254,6 +254,18 @@ a missing artifact changes which service mode is reachable. Record production
 alone does not establish that a detector is accurate, a fallback works, or an
 external consequence was repaired.
 
+Bounded liveness makes that transition rule two-sided. Safe hold, quarantine,
+manual review, and degraded service are legitimate states, but none may become
+an ownerless waiting room. Every admitted task, incident, residual, and
+recovery candidate needs a finite next-review deadline and one of completion,
+refusal, compensation, quarantine transfer, retirement, or explicitly renewed
+custody. Operations therefore reports useful throughput, unsafe or
+unauthorized effects, false blocks, time to disposition, human and compute
+cost, recovery burden, and aged residuals together. The Security Kernel owns
+the minimum trust budget for those decisions; Readiness owns routability before
+ordinary use; this chapter owns whether a live service can reach an honest
+operational disposition after something goes wrong.
+
 ### The authored joined authority-to-effect case
 
 The repository now contains one deliberately bounded control case at
@@ -890,7 +902,7 @@ movement still requires an accepted evidence transition tied to the exact
 claim. A polished T4 narrative, a complete game-day report, or favorable
 latency alone cannot raise the core claim.
 
-## Beyond the State of the Art
+## Mature Research Target
 
 The mature target is a machine-checkable operational safety-case control plane
 whose live evidence constrains which deployment state, incident authority,

@@ -152,6 +152,45 @@ formal record route into model-quality evidence. No distributed ASI Stack
 training run has been executed for this interface; the present integration is
 an argument-level ownership and handoff contract.
 
+### Shared transition, development, trust, and liveness join
+
+Four cross-cutting ideas now meet in the reference trace without becoming four
+new layers. First, every material handoff can be projected through the Governed
+Transition Calculus
+\(T=(I_s,I_t,A,O,E,R,C,\tau,\Pi)\): exact source and target identity,
+authority, obligations, evidence, residuals, consumers, expiry or revocation,
+and rollback, compensation, or retirement. Each owner adds its domain fields,
+but no owner may erase these separations.
+
+Second, learned capability enters through the Developmental Intelligence Loop:
+curriculum, interaction, prediction error, abstraction, causal intervention,
+memory consolidation, proceduralization, skill composition, stabilization,
+readiness review, and authority-gated promotion. The trace preserves the
+candidate and evidence identity at every step, so “the system learned” cannot
+hide which observation, state change, regression, or gate produced the
+claim.
+
+Third, the minimum trusted kernel is an explicit trust budget over identity,
+time, authority, policy, context resolution, artifact custody, observation,
+evaluation, sandboxing, rollback, and release. Components outside that budget
+may propose or cross-check; components inside it need named compromise,
+revocation, recovery, and hold behavior. The reference trace must expose when a
+result depends on one of these properties rather than treating the governance
+plane as an infallible box.
+
+Fourth, bounded liveness gives every admitted task and residual a terminal
+route. Completion, refusal, quarantine, compensation, and retirement are
+distinct outcomes; unbounded review is not a safe success. Useful throughput,
+false blocking, latency, human time, compute, residual burden, recovery, and
+governance cost share one denominator with unsafe or unauthorized effects.
+
+Together these ideas turn the reference architecture from a catalog of modules
+into a joined lifecycle for becoming more capable while remaining
+observable, governable, recoverable, and useful. At present this is an
+argument-level integration. The later evidence phase must test whether the
+shared records bind reachable implementations and whether the joint gate
+outperforms simpler alternatives.
+
 Behavioral and white-box evidence now join the trace as distinct siblings.
 Benchmark records say what happened under a scoped instrument. An Internal
 Evidence Packet says what one method observed or changed inside one exact model,
@@ -697,7 +736,7 @@ The historical-project packet adds the smaller `name_to_effect_trace_record` con
 
 That tiny dry-run trace set now exists at fixture level: one approved flow carries stable artifact IDs from intent through plan, context, route, work order, audit log, evidence update, and SCF no-promotion review; one blocked flow fails because execution authority is missing and governance review remains required. A first actual command replay exists as a local Resource flagship validator trace with an artifact bundle, output digest, and attached blocked-path stop conditions. The governed repository-change slice now adds an executed local Git workflow with code mutation, tests, independent byte-and-behavior observation, matched baseline accounting, release/refusal decisions, exact and failed rollback, and quarantine. A live or external runtime trace remains stronger and still needs comparable records from real deployed layer handoffs.
 
-## Beyond the State of the Art
+## Mature Research Target
 
 ### Argument-exit campaign
 

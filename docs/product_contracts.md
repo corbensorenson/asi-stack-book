@@ -15,12 +15,18 @@ forbidden inference.
 ## Narrative technical book
 
 The narrative product answers: what is the architecture, why does it matter,
-and how do its pieces fit together? Its generated entry is a bounded 15-chapter
-thesis-to-method route, and each selected chapter opens in Human view. Every
+and how do its pieces fit together? Its generated entry is a 22-unit
+thesis-to-method route over the complete 84-chapter reference, and each
+representative chapter opens in Human view. Every
 selected chapter has one reader question, running example, strongest objection,
 failure story, evidence-changing condition, and canonical core-claim reference.
 It hides live status, test plans, proof-hook inventories, source crosswalks, and
 repeated support boilerplate.
+
+`products/narrative_unit_crosswalk.json` assigns every canonical chapter to
+exactly one unit. The representative chapter does not absorb the claims or
+evidence of its routed specialist owners; the crosswalk is navigation and
+coverage control.
 
 The route and Human view are convenience projections. They are not the reviewed reader release.
 A reader artifact still needs continuity, editorial, accessibility, figure,

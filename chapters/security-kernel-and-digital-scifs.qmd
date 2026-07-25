@@ -170,6 +170,81 @@ The mechanism has fifteen owned parts:
 
 The useful object is a lease plus an enforced route, not a label. A handle that appears in context is neither inert nor automatically authorized: it can be stolen, correlated, replayed, or used as an oracle. A lease should move through explicit states such as `requested`, `denied`, `scoped`, `active`, `used`, `declassified`, `committed`, `aborted`, `expired`, `revoked`, `recovered`, `compensated`, and `residual_open`. The enforced consequence of each state matters more than its name.
 
+### Minimum trusted kernel
+
+Governance does not become trustworthy by moving every decision into a larger,
+more opaque control plane. The design target is the smallest set of properties
+whose failure can invalidate the whole route, with everything else treated as
+replaceable, cross-checkable, or untrusted. The minimum trusted-kernel map is:
+
+| Kernel surface | Minimum property that must hold | Independent pressure and hold condition |
+|---|---|---|
+| Identity | Principals, artifacts, policies, builds, and targets resolve to the exact intended versions. | Content binding and mutually checked resolution; ambiguity or collision holds the transition. |
+| Time | Expiry, ordering, and freshness cannot be silently rewritten. | Independent monotonic witnesses where available; uncertain time blocks time-sensitive authority. |
+| Authority | No effect exceeds the live grant or delegation ceiling. | Enforcement-point and observer agreement; missing or stale scope denies the effect. |
+| Policy | The evaluated policy is the approved immutable version for this decision. | Signed identity and old/new dual evaluation; unresolved policy substitution holds. |
+| Context resolution | Admitted material preserves source, rights, taint, omissions, and branch identity. | Independent manifest or retrieval checks; unresolved provenance or adequacy routes to hold. |
+| Artifact custody | The object reviewed, executed, stored, and released retains one verifiable lineage. | Digest and custody challenges; mismatch quarantines every derivative. |
+| Observation | External effects can contradict a component's self-report. | Separate effect witness when material; missing coverage limits or blocks the claim. |
+| Evaluation | Protected outcomes are judged by a sufficiently independent, identified evaluator. | Correlation and sensitivity checks; captured or unqualified evaluation cannot promote. |
+| Sandboxing | The declared effect and egress boundary matches the isolation actually provided. | Escape probes and channel inventory; an unobserved material path blocks the isolation claim. |
+| Rollback | Reversal covers the declared effect surface or exposes a compensable residual. | Pre/post/restore observation; incomplete closure keeps the transaction unresolved. |
+| Release | Only the exact qualified artifact and claims reach the intended destination. | Independent artifact/reality reconciliation; any identity or approval mismatch blocks release. |
+
+Compromise is modeled per surface rather than hidden behind a “trusted” label.
+Byzantine or unavailable components can trigger cross-check, failover,
+quarantine, recovery, or safe hold; they cannot silently shrink the effect
+inventory. Revocation must invalidate dependent leases and releases, while
+irreversible downstream effects remain as residuals. This map is a trust budget
+and attack surface, not an assertion that the current repository implements a
+secure kernel.
+
+### Bounded liveness
+
+Fail-closed control is inadequate if it never completes useful work. Every
+admitted task therefore needs a finite route to `completed`, `refused`,
+`quarantined`, `compensated`, or `retired`. Every residual has an owner, age,
+escalation rule, and retirement condition. Every quarantine has an exit or
+terminal retirement. Review and replan loops have declared budgets, and a
+blocked result reports the minimum missing condition instead of emitting an
+unbounded “needs more review” status.
+
+The joint gate measures useful throughput, unauthorized or unsafe release,
+false blocking, missed help, latency, human time, compute, residual burden,
+recovery quality, and governance cost together. A kernel that reduces one
+registered harm by refusing nearly everything has learned a bounded safety
+fact, not established a useful architecture. Conversely, throughput cannot
+erase open effects or borrowed authority. Bounded liveness is therefore a
+coequal security property: it forces safety, recovery, and usefulness to meet
+on the same task denominator.
+
+```{mermaid}
+flowchart TD
+  A["Admitted task or transition"] --> K["Minimum trusted-kernel checks<br/>identity, time, authority, policy,<br/>context, custody, observation,<br/>evaluation, sandbox, rollback, release"]
+  K --> D{"Required property<br/>grounded for this route?"}
+  D -- "yes" --> E["Bounded execution"]
+  D -- "no / uncertain" --> Q["Refuse, quarantine, or safe hold"]
+  E --> O["Independent effect observation"]
+  O --> C{"Closure complete?"}
+  C -- "yes" --> T["Complete or compensated"]
+  C -- "no" --> Q
+  Q --> R["Named custodian + deadline"]
+  R --> F{"Finite disposition"}
+  F --> E
+  F --> T
+  F --> X["Retire with residual custody"]
+  T --> L["Joint ledger<br/>utility, unsafe effect, false block,<br/>latency, labor, compute, recovery, residuals"]
+  X --> L
+```
+
+**How to read the trust-and-liveness map:** The trusted kernel is a list of
+route-critical properties to minimize and pressure, not a privileged model.
+Failure or uncertainty narrows the route, but quarantine must still have a
+custodian, deadline, and finite repair, compensation, completion, or retirement
+outcome. Every terminal path reaches one joint ledger so safety cannot be
+reported without usefulness and cost, or vice versa. The figure does not claim
+that these checks are presently enforced.
+
 Keeping secret bytes out of model-visible context can remove a direct literal-disclosure path. It does not imply that the model cannot infer the secret, recover a protected fact from derivatives, abuse the authority represented by the handle, induce a tool to disclose it, or leak through another channel. This exposure constraint is bounded by a named threat model; it is not “model ignorance.”
 
 Sanitization and declassification are separate. Sanitization transforms an output; declassification authorizes a change in information-flow label for a particular destination and purpose. A fluent summary can carry semantic secrets even when no literal token survives. Evaluation must therefore measure disclosure and task utility, preserve uncertain cases, and record who or what was trusted to make the decision.
@@ -273,7 +348,7 @@ The post-v2.1 campaign is a valuable negative result. Fail-closed governance eli
 
 The minimum therefore passes only as exact synthetic record, route, mutation, and bounded outcome evidence. Chapter-core support remains unchanged.
 
-## Beyond the State of the Art
+## Mature Research Target
 
 The mature endpoint is a threat-model-bound security kernel whose authority,
 context, isolation, mediation, egress, revocation, recovery, availability, and

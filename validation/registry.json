@@ -774,6 +774,10 @@
     "appendices/J_release_editions.qmd",
     "appendices/K_implementation_horizons.qmd",
     "products/narrative_product_spine.json",
+    "products/narrative_unit_crosswalk.json",
+    "docs/c1_c8_phase1_idea_placement_and_prose_audit_2026_07_25.md",
+    "docs/c1_c8_22_unit_reader_render_review_2026_07_25.md",
+    "docs/c1_retained_lineage_comparator_and_ownership_map_2026_07_25.md",
     "schemas/narrative_product_spine.schema.json",
     "schemas/product_projection_manifest.schema.json",
     "docs/product_projection_artifacts.md",
@@ -864,6 +868,7 @@
     "experiments/semantic_contract_preservation/fixtures/invalid_target_requirement_omission.json",
     "scripts/validate_semantic_contract_preservation.py",
     "products/narrative_running_example_trace.json",
+    "scripts/build_narrative_running_example.py",
     "schemas/narrative_running_example_trace.schema.json",
     "experiments/narrative_running_example/fixtures/invalid_chapter_order.json",
     "experiments/narrative_running_example/fixtures/invalid_cumulative_reset.json",
@@ -1417,6 +1422,7 @@
     "schemas/post_v2_3_claim_proof_and_sota_challenge_status.schema.json",
     "scripts/validate_post_v2_3_claim_proof_and_sota_challenge_roadmap.py",
     "scripts/build_claim_atom_registry.py",
+    "scripts/adjudicate_c1_c8_phase1_claim_reviews.py",
     "scripts/validate_claim_atom_registry.py",
     "schemas/claim_atom_registry.schema.json",
     "schemas/prose_claim_candidate_queue.schema.json",
@@ -5587,8 +5593,8 @@
       "args": [],
       "execution_tier": "pr",
       "validation_class": "reader_artifact_gate",
-      "input_contract": "Canonical manifest/status, product and contribution contracts, 15-chapter narrative spine, reader generator/overlays, projection schemas, and repository-backed evidence routes.",
-      "output_contract": "Regenerate all three product routes and reject over-wide or out-of-order narrative selection, missing editorial jobs, omitted-reference loss, incomplete reference coverage, canonical-count drift, support promotion, or changed evidence snapshots.",
+      "input_contract": "Canonical manifest/status, product and contribution contracts, 22-unit narrative spine, exact 84-chapter unit crosswalk, reader generator/overlays, projection schemas, and repository-backed evidence routes.",
+      "output_contract": "Regenerate all three product routes and reject non-22 or out-of-order narrative selection, incomplete or duplicated unit ownership, missing editorial jobs, omitted-reference loss, incomplete reference coverage, canonical-count drift, support promotion, or changed evidence snapshots.",
       "claim_scope": "Generated product navigation, bounded reader source selection, and registry snapshot identity.",
       "negative_controls": "validator_owned",
       "prohibited_inference": "Projection consistency and snapshot identity do not establish editorial approval, independent review, runtime behavior, or claim truth.",
@@ -5597,6 +5603,7 @@
         "products/product_contracts.json",
         "products/contribution_focus_contract.json",
         "products/narrative_product_spine.json",
+        "products/narrative_unit_crosswalk.json",
         "schemas/narrative_product_spine.schema.json",
         "schemas/product_projection_manifest.schema.json",
         "scripts/build_reader_edition.py",
@@ -5604,14 +5611,15 @@
         "docs/product_projection_artifacts.md"
       ],
       "output_assertions": [
-        "15 selected narrative chapters and 69 reference-routed omissions",
+        "22 selected narrative units and 62 reference-routed chapters",
+        "84 canonical chapters assigned exactly once across the narrative units",
         "84 canonical reference chapters",
         "17 evidence routes",
         "all core support remains argument",
         "content-addressed snapshots match"
       ],
       "negative_control_cases": [
-        "16-chapter narrative",
+        "23-unit narrative",
         "missing strongest objection",
         "out-of-order selection",
         "changed evidence snapshot"
@@ -5989,14 +5997,15 @@
       "args": [],
       "execution_tier": "deep",
       "validation_class": "reader_artifact_gate",
-      "input_contract": "Fifteen-chapter narrative spine, cumulative governed repository-change trace, public trace schema, and six negative controls for order, state continuity, artifact causality, handoff, identity, and editorial promotion.",
-      "output_contract": "Accept exactly one cumulative 15-stage editorial trace and reject chapter-order drift, state reset, unknown causes, skipped handoffs, duplicate output identities, and use of editorial continuity as support or release approval.",
-      "claim_scope": "Narrative editorial continuity and running-example state for the generated 15-chapter candidate.",
+      "input_contract": "Twenty-two-unit narrative spine, generated cumulative governed repository-change trace, public trace schema, and six negative controls for order, state continuity, artifact causality, handoff, identity, and editorial promotion.",
+      "output_contract": "Accept exactly one cumulative 22-stage editorial trace and reject chapter-order drift, state reset, unknown causes, skipped handoffs, duplicate output identities, and use of editorial continuity as support or release approval.",
+      "claim_scope": "Narrative editorial continuity and running-example state for the generated 22-unit candidate.",
       "negative_controls": "fixture_owned",
       "prohibited_inference": "Editorial continuity does not prove the architecture, approve a reader release, replace final format inspection, promote a claim, or authorize deletion of reference chapters.",
       "input_artifacts": [
         "products/narrative_product_spine.json",
         "products/narrative_running_example_trace.json",
+        "scripts/build_narrative_running_example.py",
         "schemas/narrative_running_example_trace.schema.json",
         "experiments/narrative_running_example/fixtures/invalid_chapter_order.json",
         "experiments/narrative_running_example/fixtures/invalid_cumulative_reset.json",
@@ -6007,10 +6016,10 @@
         "scripts/validate_narrative_running_example.py"
       ],
       "output_assertions": [
-        "15 selected editorial contracts",
+        "22 selected editorial contracts",
         "canonical chapter order",
         "one governed repository-change scenario",
-        "16 cumulative artifact identities",
+        "23 cumulative artifact identities",
         "every consume has a prior cause",
         "every handoff targets the next selected chapter",
         "no support movement or release approval"
@@ -9284,9 +9293,10 @@
       "args": [],
       "execution_tier": "pr",
       "validation_class": "proof_or_evidence_gate",
-      "input_contract": "The 54-chapter manifest claim skeleton, all semantic-review packets, generated structured atom registry, fully adjudicated prose-only claim queue, readable registry, chapter dossiers, and completed P1 machine state.",
+      "input_contract": "The current 84-chapter manifest claim skeleton, all 64 required semantic-review packets, generated structured atom registry, fully adjudicated prose-only claim queue, readable registry, chapter dossiers, and completed P1 machine state.",
       "input_artifacts": [
         "scripts/build_claim_atom_registry.py",
+        "scripts/adjudicate_c1_c8_phase1_claim_reviews.py",
         "scripts/validate_claim_atom_registry.py",
         "book_structure.json",
         "evidence_quality/claim_atom_reviews.json",
@@ -9309,10 +9319,10 @@
       ],
       "output_contract": "Reject missing or duplicated core and subordinate coverage, noncanonical ownership, blank or tautological falsifiers, duplicate lanes, unsupported P1 promotion, stale generated artifacts, unresolved candidates laundered as P1 completion, reviewed placeholders, summary inflation, or invented support effects.",
       "output_assertions": [
-        "3730 semantically reviewed structured atoms",
-        "2886 adjudicated prose-only candidates",
-        "54 generated chapter dossiers",
-        "54 completed semantic chapter sweeps",
+        "4071 semantically reviewed structured atoms",
+        "3444 adjudicated prose-only candidates",
+        "64 generated chapter dossiers",
+        "64 completed semantic chapter sweeps",
         "P1 and M1 honestly completed",
         "no support-state effect",
         "thirteen rejecting mutations"
@@ -14029,7 +14039,7 @@
     }
   ],
   "summary": {
-    "required_artifact_count": 2102,
+    "required_artifact_count": 2108,
     "unit_count": 419
   },
   "non_claims": [

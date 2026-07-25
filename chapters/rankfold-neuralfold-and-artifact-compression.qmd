@@ -453,7 +453,7 @@ The complete current MVI is narrower than the architectural contract: one 22-fie
 
 A first tiny synthetic replay now exists for the local `rfa` CLI, but it is not the adversarial artifact-compression harness required for stronger evidence. A fuller toy corpus with ordinary prose, tables, diagrams, citations, code blocks, and provenance metadata should follow. That future harness can ask whether a candidate compressor preserves the required target, reports residuals honestly, and falls back when the probe is outside the declared envelope. Until that harness exists, artifact compression remains a design rationale with executable record-shape checks, one RAW0 replay, and one static archive-import surface only.
 
-## Beyond the State of the Art
+## Mature Research Target
 
 Artifact compression needs an admission system before compressed forms can enter the stack. It treats compressed forms as routed candidates that must earn each use case instead of inheriting the authority of the full artifact.
 

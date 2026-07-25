@@ -165,7 +165,7 @@ does not approve narration or create MP3, M4B, or audio-embedded EPUB files.
 
 Before claiming any audio artifact:
 
-- Verify that `audio_manifest.json` reports a passing implementation-horizon script status for `Minimum Viable Implementation` and `Beyond the State of the Art`.
+- Verify that `audio_manifest.json` reports a passing implementation-horizon script status for `Minimum Viable Implementation` and `Mature Research Target`.
 - Replace generated table, diagram, image, schema, proof, equation, and code narration notes with reviewed spoken summaries or companion-note references.
 - Spot-check audio against the reviewed script.
 - Verify chapter markers and metadata.

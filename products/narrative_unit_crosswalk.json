@@ -1,0 +1,254 @@
+{
+  "schema_version": "asi_stack.narrative_unit_crosswalk.v0",
+  "status": "phase_1_idea_placement_route",
+  "canonical_chapter_count": 84,
+  "narrative_unit_count": 22,
+  "assignment_rule": "Every canonical chapter belongs to exactly one reader-facing narrative unit. The representative chapter carries the unit orientation; every other chapter remains a canonical reference owner and is routed, not merged or demoted.",
+  "units": [
+    {
+      "order": 1,
+      "unit_id": "unit-01-stack-thesis",
+      "label": "Stack thesis",
+      "representative_chapter_id": "asi-is-a-stack-not-a-model",
+      "chapter_ids": ["asi-is-a-stack-not-a-model"]
+    },
+    {
+      "order": 2,
+      "unit_id": "unit-02-efficient-asi",
+      "label": "Efficient-ASI hypothesis",
+      "representative_chapter_id": "the-efficient-asi-hypothesis",
+      "chapter_ids": ["the-efficient-asi-hypothesis"]
+    },
+    {
+      "order": 3,
+      "unit_id": "unit-03-authority-and-failure",
+      "label": "Authority, security, and failure boundaries",
+      "representative_chapter_id": "system-boundaries-and-authority",
+      "chapter_ids": [
+        "system-boundaries-and-authority",
+        "failure-modes-of-ungoverned-intelligence",
+        "dangerous-capability-domains-and-misuse-uplift",
+        "military-ai-autonomous-weapons-and-strategic-stability",
+        "security-kernel-and-digital-scifs",
+        "adversarial-machine-learning-and-model-attack-surface",
+        "privacy-data-rights-and-information-flow-governance",
+        "confidential-and-verifiable-ai-computation",
+        "model-weight-custody-and-hardware-roots-of-trust",
+        "ai-supply-chain-integrity-and-lifecycle-provenance"
+      ]
+    },
+    {
+      "order": 4,
+      "unit_id": "unit-04-evidence-and-noninheritance",
+      "label": "Evidence states, oversight, and noninheritance",
+      "representative_chapter_id": "evidence-states-and-claim-discipline",
+      "chapter_ids": [
+        "evidence-states-and-claim-discipline",
+        "scalable-oversight-and-adversarial-ai-control"
+      ]
+    },
+    {
+      "order": 5,
+      "unit_id": "unit-05-constitutional-objective-governance",
+      "label": "Constitutional, value, objective, and institutional governance",
+      "representative_chapter_id": "constitutional-alignment-substrate",
+      "chapter_ids": [
+        "human-factors-and-meaningful-control-in-oversight",
+        "human-ai-communication-persuasion-and-epistemic-security",
+        "constitutional-alignment-substrate",
+        "inner-alignment-mesa-optimization-and-learned-objective-integrity",
+        "moral-uncertainty-and-value-conflict",
+        "governed-objective-formation-value-learning-and-goal-integrity",
+        "institutions-international-coordination-and-public-legitimacy",
+        "societal-resilience-and-misuse-defense"
+      ]
+    },
+    {
+      "order": 6,
+      "unit_id": "unit-06-capability-fields-and-replacement",
+      "label": "Stable Capability Fields and replacement",
+      "representative_chapter_id": "stable-capability-fields",
+      "chapter_ids": ["stable-capability-fields", "capability-replacement-and-rollback"]
+    },
+    {
+      "order": 7,
+      "unit_id": "unit-07-intent-and-command",
+      "label": "Intent and command contracts",
+      "representative_chapter_id": "intent-to-execution-contracts",
+      "chapter_ids": ["human-intent-as-a-formal-input", "intent-to-execution-contracts"]
+    },
+    {
+      "order": 8,
+      "unit_id": "unit-08-planning",
+      "label": "Planning as a control layer",
+      "representative_chapter_id": "planning-as-a-control-layer",
+      "chapter_ids": ["planning-as-a-control-layer"]
+    },
+    {
+      "order": 9,
+      "unit_id": "unit-09-world-models",
+      "label": "Perception, governed world models, and embodied reconciliation",
+      "representative_chapter_id": "governed-world-models-and-reality-grounding",
+      "chapter_ids": [
+        "perception-sensor-fusion-and-observation-trust",
+        "governed-world-models-and-reality-grounding",
+        "embodied-agency-real-time-control-and-physical-safety"
+      ]
+    },
+    {
+      "order": 10,
+      "unit_id": "unit-10-cognitive-compilation",
+      "label": "Cognitive compilation, relational cognition, and search",
+      "representative_chapter_id": "cognitive-compilation-and-semantic-ir",
+      "chapter_ids": [
+        "cognitive-compilation-and-semantic-ir",
+        "relational-dimension-compilation-and-polyadic-cognition",
+        "mathematical-and-search-substrates"
+      ]
+    },
+    {
+      "order": 11,
+      "unit_id": "unit-11-context-abi",
+      "label": "Virtual Context ABI and context transactions",
+      "representative_chapter_id": "virtual-context-abi",
+      "chapter_ids": ["virtual-context-abi", "context-transactions-snapshots-mounts-and-taint"]
+    },
+    {
+      "order": 12,
+      "unit_id": "unit-12-memory-and-consolidation",
+      "label": "Durable memory and procedural consolidation",
+      "representative_chapter_id": "durable-semantic-memory-and-knowledge-lattices",
+      "chapter_ids": [
+        "durable-semantic-memory-and-knowledge-lattices",
+        "procedural-memory-and-cognitive-loop-closure"
+      ]
+    },
+    {
+      "order": 13,
+      "unit_id": "unit-13-verification-bandwidth",
+      "label": "Verification bandwidth and context adequacy",
+      "representative_chapter_id": "verification-bandwidth-and-context-adequacy",
+      "chapter_ids": ["verification-bandwidth-and-context-adequacy"]
+    },
+    {
+      "order": 14,
+      "unit_id": "unit-14-claim-and-proof-review",
+      "label": "Claim ledgers, proof-carrying review, and formal scope",
+      "representative_chapter_id": "claim-ledgers-and-belief-revision",
+      "chapter_ids": [
+        "claim-ledgers-and-belief-revision",
+        "spinoza-verification-and-proof-carrying-claims",
+        "circle-calculus-and-proof-carrying-ai-contracts",
+        "executable-specifications-and-lean-proof-envelope",
+        "white-box-evidence-interpretability-and-activation-governance"
+      ]
+    },
+    {
+      "order": 15,
+      "unit_id": "unit-15-labor-and-artifacts",
+      "label": "Labor OS, organizations, artifact graphs, and stewardship",
+      "representative_chapter_id": "labor-os-and-typed-jobs",
+      "chapter_ids": [
+        "labor-os-and-typed-jobs",
+        "human-ai-organizations-delegation-and-accountability",
+        "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty",
+        "ai-deployment-transition-distribution-and-human-agency",
+        "artifact-graphs-audit-logs-and-replay",
+        "inter-stack-protocols-identity-and-economic-exchange",
+        "multi-agent-dynamics-collective-intelligence-and-systemic-risk",
+        "artifact-steward-agents-and-living-project-governance"
+      ]
+    },
+    {
+      "order": 16,
+      "unit_id": "unit-16-runtime-and-operations",
+      "label": "Runtime adapters, observation, incident command, and operations",
+      "representative_chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
+      "chapter_ids": [
+        "runtime-adapters-tool-permissions-and-human-approval",
+        "governed-operations-incident-command-and-graceful-degradation"
+      ]
+    },
+    {
+      "order": 17,
+      "unit_id": "unit-17-routing-and-substrates",
+      "label": "Routing and replaceable cognitive substrates",
+      "representative_chapter_id": "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+      "chapter_ids": [
+        "routing-heads-and-specialist-cores",
+        "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+        "coil-attention-cyclic-memory-and-recurrence-contracts",
+        "coilra-multicoil-rope-and-cyclic-mixers"
+      ]
+    },
+    {
+      "order": 18,
+      "unit_id": "unit-18-developmental-learning",
+      "label": "Governed training and developmental learning",
+      "representative_chapter_id": "governed-model-training-distributed-optimization-and-scaling",
+      "chapter_ids": [
+        "governed-model-training-distributed-optimization-and-scaling",
+        "learning-theory-generalization-and-scaling-science",
+        "policy-optimization-and-learning-from-feedback",
+        "data-engines-continual-learning-and-unlearning",
+        "scientific-discovery-and-experimental-governance"
+      ]
+    },
+    {
+      "order": 19,
+      "unit_id": "unit-19-readiness-and-liveness",
+      "label": "Readiness, benchmarks, safety cases, and bounded liveness",
+      "representative_chapter_id": "readiness-gates-residual-escrow-and-quarantine",
+      "chapter_ids": [
+        "open-weight-release-and-post-release-control",
+        "readiness-gates-residual-escrow-and-quarantine",
+        "benchmark-ratchets-and-anti-goodhart-evidence",
+        "capability-thresholds-and-deployment-commitments",
+        "adversarial-evaluation-sandbagging-and-training-time-deception",
+        "safety-cases-and-structured-assurance",
+        "content-authenticity-watermarking-and-synthetic-media-integrity"
+      ]
+    },
+    {
+      "order": 20,
+      "unit_id": "unit-20-resource-and-recovery-economics",
+      "label": "Resource economics, efficient inference, and effect-complete recovery",
+      "representative_chapter_id": "resource-economics-and-token-budgets",
+      "chapter_ids": [
+        "personal-compute-hives-and-federated-edge-intelligence",
+        "compact-generative-systems-and-residual-honesty",
+        "fast-generation-architectures",
+        "governed-deliberation-and-test-time-scaling",
+        "rankfold-neuralfold-and-artifact-compression",
+        "resource-economics-and-token-budgets",
+        "physical-compute-infrastructure-energy-and-environmental-constraints"
+      ]
+    },
+    {
+      "order": 21,
+      "unit_id": "unit-21-recursive-integration-and-prototype",
+      "label": "Recursive improvement, integrated architecture, and prototype program",
+      "representative_chapter_id": "integrated-reference-architecture",
+      "chapter_ids": [
+        "recursive-self-improvement-boundaries",
+        "open-ended-improvement-engines",
+        "autonomous-replication-proliferation-and-containment",
+        "integrated-reference-architecture",
+        "project-theseus-as-report-first-implementation-reference",
+        "prototype-roadmap"
+      ]
+    },
+    {
+      "order": 22,
+      "unit_id": "unit-22-living-book-and-agenda",
+      "label": "Living Book methodology and open challenge agenda",
+      "representative_chapter_id": "living-book-methodology",
+      "chapter_ids": ["living-book-methodology", "open-research-agenda-and-bibliography-plan"]
+    }
+  ],
+  "non_claims": [
+    "Unit assignment changes navigation, not canonical chapter identity or support.",
+    "A representative chapter does not absorb the claims, sources, or authority of its routed owners.",
+    "Exact 84-chapter coverage is an editorial completeness property, not evidence that the architecture is correct."
+  ]
+}

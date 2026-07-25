@@ -420,7 +420,7 @@ This generated chapter is derived from `book_structure.json` and the source inve
 
 {chapter.get('minimal_implementation', 'No manifest minimal implementation statement declared yet.')}
 
-## Beyond the State of the Art
+## Mature Research Target
 
 {chapter.get('beyond_state_of_art', 'No manifest beyond-state-of-the-art statement declared yet.')}
 

@@ -164,7 +164,13 @@
       "requires_meaning_preservation_audit": true
     },
     "post_review_convergence": {
-      "state": "active_evidence_and_narrative_convergence",
+      "state": "phase2_active_after_all_84_gate",
+      "active_work_mode": "phase2_proof_rationalization_and_natural_evidence_after_phase1_gate",
+      "phase1_audit_path": "docs/c1_c8_phase1_idea_placement_and_prose_audit_2026_07_25.md",
+      "narrative_spine_path": "products/narrative_product_spine.json",
+      "narrative_unit_crosswalk_path": "products/narrative_unit_crosswalk.json",
+      "all_84_idea_placement_gate_state": "passed_exact_84_coverage_22_unit_meaning_render_browser_and_accessibility_preparation",
+      "phase2_proof_execution_allowed": true,
       "review_path": "docs/chatgpt_pro_full_book_review_adjudication_2026_07_25.md",
       "current_role_map_path": "evidence_quality/current_chapter_role_map.json",
       "reference_chapter_count": 84,
@@ -214,6 +220,7 @@
         "proceduralization",
         "skill_composition",
         "quiescent_stabilization",
+        "readiness_review",
         "authority_gated_promotion"
       ],
       "minimal_trusted_kernel_components": [

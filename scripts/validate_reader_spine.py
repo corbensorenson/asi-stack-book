@@ -66,7 +66,7 @@ DEFAULT_REQUIRED_READER_HEADINGS = [
     "Invariants",
     "Failure modes",
     "Minimum Viable Implementation",
-    "Beyond the State of the Art",
+    "Mature Research Target",
     "Summary",
     "Handoff",
 ]
@@ -80,7 +80,7 @@ DEFAULT_MIN_SECTION_WORD_COUNTS = {
     "Invariants": 100,
     "Failure modes": 100,
     "Minimum Viable Implementation": 110,
-    "Beyond the State of the Art": 180,
+    "Mature Research Target": 180,
     "Summary": 110,
     "Handoff": 45,
 }
@@ -93,7 +93,7 @@ DEFAULT_MIN_SECTION_PROSE_PARAGRAPH_COUNTS = {
     "Invariants": 1,
     "Failure modes": 1,
     "Minimum Viable Implementation": 2,
-    "Beyond the State of the Art": 3,
+    "Mature Research Target": 3,
     "Summary": 2,
     "Handoff": 1,
 }

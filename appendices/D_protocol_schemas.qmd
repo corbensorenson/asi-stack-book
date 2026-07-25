@@ -1250,6 +1250,36 @@ authority_transition_record:
 
 This record makes boundary crossings explicit. It distinguishes a request from an authorization and gives permission class, grant lifecycle state, caller ceiling, target-required authority, delegation chain, expiry/review condition, denials, grants, effect receipts, audit references, and non-claims a durable shape.
 
+### Governed Transition projection
+
+The shared transition kernel is not a second universal wire format. Each
+domain record projects the same nine concerns into fields it can actually
+enforce or inspect:
+
+```yaml
+governed_transition_projection:
+  transition_id: string
+  source_identity_refs: []
+  target_identity_refs: []
+  authority_ref: string
+  obligation_refs: []
+  evidence_refs: []
+  residual_refs: []
+  consumer_refs: []
+  expiry_or_revocation_ref: string
+  rollback_compensation_or_retirement_ref: string
+  domain_record_type: string
+  maximum_inference: record_shape_only
+  non_claims: []
+```
+
+The projection is valid only when every reference resolves to the version used
+by the domain decision and the domain record states any stricter required
+fields. Empty evidence, residual, consumer, or closure references cannot be
+silently interpreted as success. A shape-valid projection establishes only
+joinability and missingness visibility; it does not establish premise truth,
+runtime enforcement, outcome quality, safety, or readiness.
+
 ## Failure Boundary Map
 
 ```yaml

@@ -29,9 +29,9 @@ def semantic_errors(trace: dict[str, Any], spine: dict[str, Any]) -> list[str]:
     chapters = spine.get("chapters", [])
     expected_ids = [row.get("chapter_id") for row in chapters]
     if [row.get("chapter_id") for row in steps] != expected_ids:
-        errors.append("running-example steps must match the fifteen-chapter narrative spine exactly")
-    if [row.get("order") for row in steps] != list(range(1, 16)):
-        errors.append("running-example step order must be contiguous from one through fifteen")
+        errors.append("running-example steps must match the twenty-two-unit narrative spine exactly")
+    if [row.get("order") for row in steps] != list(range(1, len(chapters) + 1)):
+        errors.append("running-example step order must be contiguous across every narrative unit")
     for chapter in chapters:
         for field in EDITORIAL_FIELDS:
             if len(str(chapter.get(field, "")).strip()) < 24:
@@ -59,8 +59,8 @@ def semantic_errors(trace: dict[str, Any], spine: dict[str, Any]) -> list[str]:
             errors.append(f"{step.get('chapter_id')}: handoff does not point to the next narrative chapter")
         produced_ever |= produces
         cumulative = expected_cumulative
-    if len(cumulative) != len(trace.get("initial_artifact_refs", [])) + 15:
-        errors.append("the fifteen-chapter narrative must accumulate one distinct artifact at every stage")
+    if len(cumulative) != len(trace.get("initial_artifact_refs", [])) + len(chapters):
+        errors.append("the narrative must accumulate one distinct artifact at every unit")
     decision = trace.get("decision", {})
     if decision.get("support_state_effect") != "none" or decision.get("release_approved") is not False:
         errors.append("editorial continuity cannot promote support or approve a reader release")
@@ -103,8 +103,9 @@ def main() -> None:
         if not any(mutation["expected_error"] in error for error in found):
             raise SystemExit(f"{path.relative_to(ROOT)} did not produce {mutation['expected_error']!r}: {found}")
     print(
-        "Narrative running-example validation passed: 15 editorial contracts, "
-        f"16 cumulative artifacts, and {len(mutations)} rejecting continuity controls."
+        f"Narrative running-example validation passed: {len(spine['chapters'])} editorial contracts, "
+        f"{len(spine['chapters']) + len(trace['initial_artifact_refs'])} cumulative artifacts, "
+        f"and {len(mutations)} rejecting continuity controls."
     )
 
 

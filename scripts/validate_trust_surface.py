@@ -34,6 +34,7 @@ NON_CORE_LEDGER = ROOT / "docs" / "non_core_evidence_ledger.md"
 PRODUCT_CONTRACTS_DOC = ROOT / "docs" / "product_contracts.md"
 PRODUCT_ARTIFACTS_DOC = ROOT / "docs" / "product_projection_artifacts.md"
 PRODUCT_CONTRACTS_JSON = ROOT / "products" / "product_contracts.json"
+NARRATIVE_SPINE = ROOT / "products" / "narrative_product_spine.json"
 PUBLIC_SURFACE_INVENTORY = ROOT / "docs" / "public_status_surface_inventory.md"
 NOVELTY_LEDGER = ROOT / "docs" / "contribution_novelty_ledger.md"
 OUTLINE = ROOT / "docs" / "book_outline.md"
@@ -341,7 +342,8 @@ def main() -> None:
     changelog = read_text(CHANGELOG)
     role_map = read_json(CURRENT_ROLE_MAP)
     product_contracts = read_json(PRODUCT_CONTRACTS_JSON)
-    narrative_chapters = 15
+    narrative_spine = read_json(NARRATIVE_SPINE)
+    narrative_chapters = len(narrative_spine.get("chapters", [])) if isinstance(narrative_spine, dict) else 0
     current_surface_needles = {
         "docs/product_contracts.md": (
             product_contracts_doc,

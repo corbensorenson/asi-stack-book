@@ -895,8 +895,9 @@ and immutable historical artifacts.
 
 ### C2 — Twenty-two-unit narrative book over the 84-module reference
 
-The current fifteen-chapter narrative projection is a candidate, not the final
-human interface. Build and review a **22-unit** narrative route while preserving
+The former fifteen-chapter narrative projection was a candidate, not the final
+human interface. The current Phase 1 transaction builds and reviews a
+**22-unit** narrative route while preserving
 all 84 canonical reference chapters:
 
 1. stack thesis;
@@ -1086,6 +1087,53 @@ book.
 7. Run independent reproduction/transfer gates before broad claims.
 8. Prepare C8 derivatives and close only with exact public truth and one active
    successor.
+
+### Phase 1 prose-first execution receipt and Phase 2 entry — 2026-07-25
+
+Phase 1 used **idea placement and narrative convergence before proof
+execution**. The C1–C8 prose transaction is recorded in
+`docs/c1_c8_phase1_idea_placement_and_prose_audit_2026_07_25.md`.
+Noninheritance, the Governed Transition Calculus, the Developmental
+Intelligence Loop, the minimum trusted kernel, bounded liveness, the P0–P6
+semantic-depth overlay, `ASI-THESEUS-FLAGSHIP-01`, and the three
+contribution-owned derivative packages now appear in their primary manuscript
+owners rather than only in this roadmap.
+
+The narrative product now has 22 representative units. The exact crosswalk in
+`products/narrative_unit_crosswalk.json` assigns all 84 canonical chapters once
+without merging their claims, and the generated cumulative repository-change
+trace carries one new artifact through every unit. Exact coverage and local
+contract validation pass. The first current candidate also renders 27 HTML
+pages and passes 54 desktop/mobile browser page-view pairs. The authorial
+compound-unit meaning review, retained-lineage ownership map, cross-owner
+links, two synthesis figures, and 54-pair automated accessibility-tree
+preparation check now pass. A clean canonical render produced 97 pages: all 84
+chapters and 11 appendices. The mature-heading reconciliation is complete: all
+84 canonical chapters and current derivative contracts use `Mature Research
+Target`.
+
+The explicit all-84 idea-placement and narrative-coherence gate is therefore
+passed. Phase 2 is now allowed, in this order:
+
+1. classify the existing formal estate with P0–P6 semantic depth, named
+   consumers, assumptions, witnesses, bindings, mutations, inference ceilings,
+   and retain/rewrite/retire dispositions;
+2. remove or rewrite vacuous, duplicate, unused, or semantically misleading
+   proof rhetoric without invalidating narrow correct results;
+3. formalize only the smallest cross-owner conclusions that a reachable
+   implementation or the flagship actually consumes;
+4. freeze the competent natural Theseus flagship prerequisites before opening
+   any protected denominator;
+5. run the matched natural campaign, retain null and inconclusive outcomes,
+   and admit a negative inference only after the full competence standard
+   passes; and
+6. prepare evidence-led derivatives only from terminal, contribution-owned
+   claim/source/artifact crosswalks.
+
+Phase 2 does not reopen an ideas-only chapter queue. New worthwhile prose still
+goes directly to its existing owner, while proof volume, theorem count, and
+experiment activity remain subordinate to the bounded conclusions readers and
+implementations actually need.
 
 This amendment changes planning authority only. It creates no formal result,
 natural evidence, support transition, reader release, deployment, SOTA result,

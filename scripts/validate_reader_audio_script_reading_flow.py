@@ -168,7 +168,7 @@ def generate_observation() -> dict[str, Any]:
             1
             for text in chapter_texts
             if "## Minimum Viable Implementation" in text
-            and "## Beyond the State of the Art" in text
+            and "## Mature Research Target" in text
         ),
         "chapter_scripts_with_evidence_boundary_phrase": sum(
             1 for text in chapter_texts if "evidence boundary" in text.lower()

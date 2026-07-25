@@ -106,6 +106,31 @@ Calling advanced AI a stack is useful only if it changes engineering
 decisions. The thesis commits the architecture to five separations that remain
 visible even when one model implements several roles.
 
+Together these separations form the book's **noninheritance law**: no useful
+property at one boundary automatically confers a different property at the
+next boundary. Capability does not confer authority; context does not confer
+belief or permission; a plan does not confer an effect; a receipt does not
+confer reality; a theorem does not confer runtime enforcement; a replacement
+does not inherit qualification; and a self-improvement proposal cannot confer
+approval on itself. The law is deliberately stronger than “use
+least privilege.” It also constrains evidence, identity, observation,
+replacement, and improvement.
+
+The thesis has three projections, each with a different job:
+
+| Projection | Canonical statement | What it may not imply |
+|---|---|---|
+| Plain-language thesis | Being good at a task does not grant permission to act, and a record of success is not the same as the world being in the claimed state. | That separating responsibilities automatically makes a system safe or useful. |
+| Normative engineering rule | At every handoff, preserve identity and require an explicit, current transition for any new authority, evidence status, effect, qualification, or release state. | That a well-formed transition record proves its premises or its enforcement. |
+| Machine contract | A consumer may admit a target state only when the exact source and target identities, authority, obligations, evidence, residuals, consumers, expiry or revocation, and recovery disposition are bound and the consumer-specific gate accepts them. | Runtime truth, empirical performance, broad safety, or support-state promotion without the corresponding observation and accepted evidence transition. |
+
+The plain projection is the reader's mnemonic, the normative projection tells
+designers what must remain separate, and the machine projection tells an
+implementation what record must cross a boundary. Repeating only the slogan
+would add vocabulary without control; exposing only the machine record would
+hide the reason the fields exist. Thesis-bearing reader units therefore carry
+all three forms while their specialist chapters own the detailed mechanisms.
+
 First, **capability is not authority**. A component may generate an excellent
 plan or discover a vulnerability without receiving permission to execute,
 deploy, conceal, or persist anything. Authority comes from an external grant
@@ -135,6 +160,14 @@ authority, or readiness of its predecessor merely because it has the same
 name. Qualification binds the candidate to the capability field it is supposed
 to preserve, the regression envelope it was tested against, and the recovery
 path available if the change fails.
+
+Two further applications close common loopholes. **A theorem is not runtime
+enforcement**: a checked proposition about a model, record, or transition
+supports only that encoded scope until a named implementation and observation
+contract connect it to reachable behavior. **A proposal is not
+ratification**: a system may help discover, draft, or evaluate changes to its
+own code, objectives, evaluators, or constitution, but it cannot be the sole
+source of the authority or evidence that approves a protected change.
 
 These commitments are logical boundaries, not a mandate for microservices.
 A monolithic model can sit behind all five contracts if the surrounding system
@@ -333,7 +366,7 @@ A passing boundary record includes at least one blocked integration path: a reas
 
 The minimum is complete only when a future editor can add a layer without renumbering chapters, hiding ownership, or silently changing support state.
 
-## Beyond the State of the Art
+## Mature Research Target
 
 The beyond-SOTA target is not a larger model, a more elaborate agent loop, or a compound-AI toolkit with a nicer diagram. Scale-first systems can improve component capability, but model weights do not carry authority ceilings, source adequacy, rollback ownership, or support-state transitions. Agent-loop systems can organize planning and tool use, but a loop is not yet a governed institution unless every action path preserves permission, evidence, residuals, and refusal. Compound and modular systems such as MRKL-style architectures show that model-plus-expert decomposition is real architecture vocabulary, but decomposition alone does not create claim ledgers, replacement transactions, or recursive-improvement boundaries.
 

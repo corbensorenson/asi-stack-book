@@ -17,6 +17,7 @@ from build_canonical_public_status import ROOT, build_status, load_json
 STRUCTURE = ROOT / "book_structure.json"
 CONTRACTS = ROOT / "products" / "product_contracts.json"
 SPINE = ROOT / "products" / "narrative_product_spine.json"
+UNIT_CROSSWALK = ROOT / "products" / "narrative_unit_crosswalk.json"
 CONTRIBUTIONS = ROOT / "products" / "contribution_focus_contract.json"
 DEFAULT_OUTPUT = ROOT / "build" / "product_projections"
 MANIFEST_SCHEMA_VERSION = "asi_stack.product_projection_manifest.v0"
@@ -154,6 +155,12 @@ def build_narrative(
     contributions: dict[str, dict[str, Any]],
 ) -> dict[str, Any]:
     by_id = {row["chapter_id"]: row for row in canonical}
+    unit_crosswalk = load_json(UNIT_CROSSWALK)
+    unit_owner_by_chapter = {
+        chapter_id: unit["representative_chapter_id"]
+        for unit in unit_crosswalk["units"]
+        for chapter_id in unit["chapter_ids"]
+    }
     selected: list[dict[str, Any]] = []
     for record in spine["chapters"]:
         row = dict(by_id[record["chapter_id"]])
@@ -167,13 +174,13 @@ def build_narrative(
     for row in canonical:
         if row["chapter_id"] in selected_ids:
             continue
-        nearest = min(selected, key=lambda owner: (abs(owner["order"] - row["order"]), owner["order"]))
+        owner_id = unit_owner_by_chapter[row["chapter_id"]]
         omitted.append({
             "chapter_id": row["chapter_id"],
             "title": row["title"],
             "canonical_order": row["order"],
             "architecture_reference_path": row["public_path"],
-            "nearest_narrative_owner": nearest["chapter_id"],
+            "nearest_narrative_owner": owner_id,
         })
     manifest = {
         "schema_version": "asi_stack.narrative_product_projection.v0",
@@ -198,7 +205,7 @@ def build_narrative(
             f'<p class="meta"><strong>Running example:</strong> {escape(row["running_example"])}</p></article>'
         )
     body = (
-        '<p class="status"><strong>Status:</strong> generated fifteen-chapter candidate route. '
+        '<p class="status"><strong>Status:</strong> generated twenty-two-unit candidate route. '
         'It is not a reviewed reader release, and the other canonical chapters remain in the architecture reference.</p>'
         '<h2>Thesis-to-method route</h2><div class="grid">' + "".join(cards) + '</div>'
         f'<h2>Reference routing</h2><p>{len(omitted)} specialized chapters remain discoverable in the architecture reference; none was deleted or demoted.</p>'

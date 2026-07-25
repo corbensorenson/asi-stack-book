@@ -11,7 +11,7 @@ REPORT = ROOT / "docs/chapter_packet_contract_audit.md"
 HEADINGS = [
     "Problem", "Why existing approaches are insufficient", "Core Claim",
     "Mechanism", "Interfaces", "Invariants", "Failure modes",
-    "Minimum Viable Implementation", "Beyond the State of the Art",
+    "Minimum Viable Implementation", "Mature Research Target",
     "Codex test plan", "Source crosswalk", "Summary", "Handoff",
 ]
 

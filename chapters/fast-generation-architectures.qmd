@@ -731,7 +731,7 @@ The selected support-lane aggregate adds drift detection across the two active s
 
 The registry should allow experimental entries such as `multi_seed_diffusion` or `hybrid_ar_diffusion_repair`, but those entries must remain unroutable or experimental until source notes and tests exist.
 
-## Beyond the State of the Art
+## Mature Research Target
 
 The mature target is a governed generation market tested on preregistered natural chat, code, retrieval, extraction, long-context, multilingual, accessibility, agentic, artifact-producing, and high-risk workloads plus adversarial quality, cache, load, verifier, drift, rights, and failure cases. It compares optimized target-model autoregression, ordinary serving, speculative decoding, multi-token and multi-head drafting, feature-level drafting, lookahead, early exit, recurrent or state-space backbones, KV-cache and batching systems, diffusion, hybrid routes, conservative slow verification, and the full controller under matched models, inputs, hardware, runtime, load, cache, evaluators, resources, retries, and time.
 

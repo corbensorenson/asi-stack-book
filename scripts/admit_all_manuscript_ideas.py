@@ -546,7 +546,7 @@ scoring, joint utility/safety/cost accounting, and explicit blocked or null
 outcomes. A weak implementation can narrow that implementation; it cannot
 refute the architectural idea.
 
-## Beyond the State of the Art
+## Mature Research Target
 
 {c["horizon"]}
 

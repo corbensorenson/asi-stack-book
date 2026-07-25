@@ -259,6 +259,79 @@ The transaction has nine stages.
    record to an independent qualification owner. Training integrity does not
    confer model merit or deployment authority.
 
+### The Developmental Intelligence Loop
+
+A governed training run explains how one candidate was produced, but not how a
+system develops progressively more reusable competence. The book's learning
+owners therefore compose into one **Developmental Intelligence Loop**:
+
+`curriculum construction -> world interaction -> prediction error ->
+representation and abstraction formation -> causal intervention -> memory
+consolidation -> proceduralization -> skill composition -> quiescent
+stabilization -> readiness review -> authority-gated promotion`.
+
+Each arrow changes the object and the authority available to it. Curriculum
+construction chooses experience without treating selection as learning.
+World interaction produces observations rather than ground truth. Prediction
+error may trigger representation change, but correlation alone cannot become a
+causal belief. Interventions distinguish hypotheses where the domain permits
+them. Durable memory consolidates qualified propositions and uncertainty;
+procedural memory converts repeatedly successful, inspectable traces into
+candidate skills. Skill composition creates a larger candidate whose failure
+surface may exceed those of its parts. Quiescent stabilization gives
+consolidation, regression, interference, and forgetting checks a period in
+which no new promotion pressure is applied. Readiness review then evaluates
+the exact candidate, and only a separate authority gate may promote it.
+
+Ownership stays distributed rather than collapsing into this chapter:
+
+| Stage | Primary owner | Required handoff |
+|---|---|---|
+| Curriculum and run execution | Governed Model Training | Frozen run identity, attempted-run denominator, full state, and candidate family. |
+| Prediction and intervention | Governed World Models | Qualified prediction, uncertainty, intervention identity, and observation boundary. |
+| Belief consolidation | Durable Semantic Memory | Provenance, confidence, contradiction, expiry, and revision route. |
+| Proceduralization and composition | Procedural Memory | Trace-to-skill lineage, preconditions, regressions, fallbacks, and retirement path. |
+| Experiment governance | Scientific Discovery | Hypothesis, intervention, controls, outcome, cost, and causal limits. |
+| Open-ended proposals | Open-Ended Improvement and Recursive Self-Improvement | Protected surfaces, evaluator independence, amendment authority, and no-self-ratification boundary. |
+| Qualification and promotion | Readiness Gates | Positive controls, transfer, forgetting, stability, residuals, recovery, and exact promotion scope. |
+| Joined lifecycle | Integrated Reference Architecture | One cross-layer trace retaining identities, refusals, failures, cost, and nonclaims. |
+
+```{mermaid}
+flowchart LR
+  C["Curriculum<br/>frozen experience policy"] --> I["Interaction<br/>versioned observation"]
+  I --> P["Prediction error<br/>model-relative residual"]
+  P --> A["Abstraction<br/>candidate representation"]
+  A --> X["Causal intervention<br/>qualified contrast"]
+  X --> M["Memory consolidation<br/>defeasible semantic object"]
+  M --> R["Proceduralization<br/>candidate reusable skill"]
+  R --> S["Skill composition<br/>new failure surface"]
+  S --> Q["Quiescent stabilization<br/>regression + forgetting"]
+  Q --> G{"Readiness review"}
+  G -- "block / narrow" --> E["Residual escrow<br/>repair, quarantine, or retire"]
+  G -- "qualified" --> H{"Independent authority gate"}
+  H -- "deny / expire" --> E
+  H -- "scoped promotion" --> U["Bounded ordinary use<br/>monitor + requalification"]
+  U --> I
+```
+
+**How to read the developmental loop:** Each arrow produces a new versioned
+object rather than upgrading one undifferentiated “intelligence” state.
+Prediction is not observation, a consolidated memory is not a procedure, a
+procedure is not a qualified route, and qualification is not effect authority.
+The return from ordinary use supplies new interaction only through monitoring
+and requalification; it does not create an automatic promotion ratchet. The
+figure is an architecture map, not evidence that the loop improves capability.
+
+This loop is the book's answer to “where does greater capability come from?”
+It treats development as governed state change rather than weight shuffling
+alone, and it permits transformers, state-space models, recurrent systems,
+symbolic components, tools, memories, or future substrates to occupy the
+stages best suited to them. The loop is presently an integrated architecture
+at argument support. A natural developmental task, positive controls, transfer
+and intervention evidence, forgetting and regression checks, stability
+epochs, total cost, and a terminal outcome are still required before it can
+support a capability claim.
+
 ### Training Run Contract
 
 The machine record should expose at least:
@@ -708,7 +781,7 @@ Test-time training moves optimization into inference [@ext_test_time_training_20
 
 The common failure is provenance theater: recording a curriculum label, witness hash, or reset flag while leaving the operative order, hidden state, or update path unmeasured. The explicit nonclaim is that none of these mechanisms establishes optimizer superiority, faithful reproduction, model quality, safety, or readiness without the corresponding observed campaign.
 
-## Beyond the State of the Art
+## Mature Research Target
 
 The mature target is a substrate-neutral training transaction whose state and
 equivalence schema is supplied by each Cognitive Kernel implementation, whose

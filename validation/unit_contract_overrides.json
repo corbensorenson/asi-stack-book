@@ -646,21 +646,23 @@
     {
       "script": "validate_product_projections.py",
       "args": [],
-      "input_contract": "Canonical manifest/status, product and contribution contracts, 15-chapter narrative spine, reader generator/overlays, projection schemas, and repository-backed evidence routes.",
+      "input_contract": "Canonical manifest/status, product and contribution contracts, 22-unit narrative spine, exact 84-chapter unit crosswalk, reader generator/overlays, projection schemas, and repository-backed evidence routes.",
       "input_artifacts": [
         "book_structure.json",
         "products/product_contracts.json",
         "products/contribution_focus_contract.json",
         "products/narrative_product_spine.json",
+        "products/narrative_unit_crosswalk.json",
         "schemas/narrative_product_spine.schema.json",
         "schemas/product_projection_manifest.schema.json",
         "scripts/build_reader_edition.py",
         "scripts/build_product_projections.py",
         "docs/product_projection_artifacts.md"
       ],
-      "output_contract": "Regenerate all three product routes and reject over-wide or out-of-order narrative selection, missing editorial jobs, omitted-reference loss, incomplete reference coverage, canonical-count drift, support promotion, or changed evidence snapshots.",
+      "output_contract": "Regenerate all three product routes and reject non-22 or out-of-order narrative selection, incomplete or duplicated unit ownership, missing editorial jobs, omitted-reference loss, incomplete reference coverage, canonical-count drift, support promotion, or changed evidence snapshots.",
       "output_assertions": [
-        "15 selected narrative chapters and 69 reference-routed omissions",
+        "22 selected narrative units and 62 reference-routed chapters",
+        "84 canonical chapters assigned exactly once across the narrative units",
         "84 canonical reference chapters",
         "17 evidence routes",
         "all core support remains argument",
@@ -669,7 +671,7 @@
       "claim_scope": "Generated product navigation, bounded reader source selection, and registry snapshot identity.",
       "negative_controls": "validator_owned",
       "negative_control_cases": [
-        "16-chapter narrative",
+        "23-unit narrative",
         "missing strongest objection",
         "out-of-order selection",
         "changed evidence snapshot"
@@ -840,10 +842,11 @@
     {
       "script": "validate_narrative_running_example.py",
       "args": [],
-      "input_contract": "Fifteen-chapter narrative spine, cumulative governed repository-change trace, public trace schema, and six negative controls for order, state continuity, artifact causality, handoff, identity, and editorial promotion.",
+      "input_contract": "Twenty-two-unit narrative spine, generated cumulative governed repository-change trace, public trace schema, and six negative controls for order, state continuity, artifact causality, handoff, identity, and editorial promotion.",
       "input_artifacts": [
         "products/narrative_product_spine.json",
         "products/narrative_running_example_trace.json",
+        "scripts/build_narrative_running_example.py",
         "schemas/narrative_running_example_trace.schema.json",
         "experiments/narrative_running_example/fixtures/invalid_chapter_order.json",
         "experiments/narrative_running_example/fixtures/invalid_cumulative_reset.json",
@@ -853,17 +856,17 @@
         "experiments/narrative_running_example/fixtures/invalid_release_promotion.json",
         "scripts/validate_narrative_running_example.py"
       ],
-      "output_contract": "Accept exactly one cumulative 15-stage editorial trace and reject chapter-order drift, state reset, unknown causes, skipped handoffs, duplicate output identities, and use of editorial continuity as support or release approval.",
+      "output_contract": "Accept exactly one cumulative 22-stage editorial trace and reject chapter-order drift, state reset, unknown causes, skipped handoffs, duplicate output identities, and use of editorial continuity as support or release approval.",
       "output_assertions": [
-        "15 selected editorial contracts",
+        "22 selected editorial contracts",
         "canonical chapter order",
         "one governed repository-change scenario",
-        "16 cumulative artifact identities",
+        "23 cumulative artifact identities",
         "every consume has a prior cause",
         "every handoff targets the next selected chapter",
         "no support movement or release approval"
       ],
-      "claim_scope": "Narrative editorial continuity and running-example state for the generated 15-chapter candidate.",
+      "claim_scope": "Narrative editorial continuity and running-example state for the generated 22-unit candidate.",
       "negative_controls": "fixture_owned",
       "negative_control_cases": [
         "chapter-order drift",

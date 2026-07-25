@@ -390,8 +390,8 @@ def load_narrative_spine(path: Path | None) -> dict[str, object] | None:
     if data.get("schema_version") != "asi_stack.narrative_product_spine.v0":
         raise ValueError(f"{resolved}: unsupported narrative spine schema_version")
     chapters = data.get("chapters")
-    if not isinstance(chapters, list) or not 12 <= len(chapters) <= 15:
-        raise ValueError(f"{resolved}: narrative spine must select 12 to 15 chapters")
+    if not isinstance(chapters, list) or len(chapters) != 22:
+        raise ValueError(f"{resolved}: narrative spine must select exactly 22 representative chapters")
     return data
 
 
@@ -1807,7 +1807,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--narrative-spine",
         type=Path,
-        help="optional 12-to-15 chapter narrative product spine; preserves canonical order",
+        help="optional 22-unit narrative product spine; preserves canonical representative-chapter order",
     )
     parser.add_argument("--check", action="store_true", help="generate into a temporary directory and verify stripped headings")
     return parser.parse_args()

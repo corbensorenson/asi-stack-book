@@ -1028,7 +1028,13 @@ def errors(data: dict) -> list[str]:
         "C8-evidence-led-publication-and-derivative-papers",
     ]
     if (
-        convergence.get("state") != "active_evidence_and_narrative_convergence"
+        convergence.get("state") != "phase2_active_after_all_84_gate"
+        or convergence.get("active_work_mode") != "phase2_proof_rationalization_and_natural_evidence_after_phase1_gate"
+        or convergence.get("phase1_audit_path") != "docs/c1_c8_phase1_idea_placement_and_prose_audit_2026_07_25.md"
+        or convergence.get("narrative_spine_path") != "products/narrative_product_spine.json"
+        or convergence.get("narrative_unit_crosswalk_path") != "products/narrative_unit_crosswalk.json"
+        or convergence.get("all_84_idea_placement_gate_state") != "passed_exact_84_coverage_22_unit_meaning_render_browser_and_accessibility_preparation"
+        or convergence.get("phase2_proof_execution_allowed") is not True
         or convergence.get("reference_chapter_count") != 84
         or convergence.get("narrative_unit_target") != 22
         or convergence.get("defended_contribution_count") != 3
@@ -1048,7 +1054,7 @@ def errors(data: dict) -> list[str]:
             "P5-liveness-and-recovery",
             "P6-empirically-bound-semantics",
         ]
-        or len(convergence.get("developmental_loop_stages", [])) != 10
+        or len(convergence.get("developmental_loop_stages", [])) != 11
         or len(convergence.get("minimal_trusted_kernel_components", [])) != 11
         or len(convergence.get("new_chapter_requires", [])) != 6
     ):
