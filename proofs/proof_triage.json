@@ -2384,11 +2384,11 @@
       "tag": "lean:circle_contracts.receipt_requires_boundary.operational_invariant",
       "chapter_id": "circle-calculus-and-proof-carrying-ai-contracts",
       "module": "AsiStackProofs.ProofCarryingContracts",
-      "formal_target": "A proof-carrying AI contract exposes theorem references, deterministic fields, and an explicit non-claim boundary before downstream use.",
+      "formal_target": "A finite proof-contract receipt missing theorem references, deterministic fields, or an explicit non-claim boundary is rejected from downstream use.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented as a local finite-record Lean predicate requiring theorem references, deterministic fields, and an explicit non-claim boundary before downstream use; it does not resolve external Circle theorem IDs."
+      "rationale": "Implemented as a finite negative case: a receipt missing theorem references, deterministic fields, or an explicit non-claim boundary cannot satisfy the local downstream-readiness predicate; it does not resolve external Circle theorem IDs."
     },
     {
       "tag": "lean:circle_contracts.consumer_gate.failure_blocks_promotion",
@@ -3094,11 +3094,11 @@
       "tag": "lean:theseus.reference.report_contract.operational_invariant",
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
       "module": "AsiStackProofs.TheseusReference",
-      "formal_target": "An implementation-reference claim names the report, config, or tool surface and does not rely on dashboard prose alone.",
+      "formal_target": "A finite implementation-reference claim that lacks both a report and a config-or-tool reference, or relies on dashboard prose alone, is rejected.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented in AsiStackProofs.TheseusReference as a finite implementation-reference predicate: reference claims require report, config, or tool surfaces and cannot rely on dashboard prose alone."
+      "rationale": "Implemented in AsiStackProofs.TheseusReference as a finite negative case: an asserted implementation reference is rejected when both report and config-or-tool surfaces are absent or when dashboard prose is the only surface."
     },
     {
       "tag": "lean:theseus.reference.gate_before_promotion.failure_blocks_promotion",

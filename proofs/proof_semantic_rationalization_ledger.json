@@ -2669,14 +2669,268 @@
         "lean:lake-build"
       ],
       "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R58-policy-admitted-record-projection",
+      "sequence": 58,
+      "state": "executed",
+      "action": "retire_unconsumed_projection",
+      "semantic_relation": "premise_restatement_removed_without_public_target_change",
+      "module_path": "lean/AsiStackProofs/PolicyOptimization.lean",
+      "baseline_module_sha256": "0b3108e7528d151e93f63774749665639def53d733085373f3ec67a22087196f",
+      "retired_theorem_id": "lean/AsiStackProofs/PolicyOptimization.lean::admitted_policy_update_records_reward_evaluation_governance_and_rollback",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "c39e69bba0fc7a9744bbf5c6144e6100b4aa4ec46d28fa48a1ec628fda75df36",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "7650b77193ac91a91e6665ba84b0da0fe57586e4d98a19f55f5ed89925eca9da",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem applies AdmittedPolicyUpdateHasGovernedRecord and returns the exact six-field conclusion already supplied by that predicate.",
+        "The immutable semantic overlay records no Lean dependency or theorem consumer for the projection.",
+        "The current public update target already belongs to PolicyOptimizationRefinement, whose reachable lifecycle binds governed scope, full training state, evaluation, adjudication, bounded consumption, rollback, and readmission.",
+        "The retirement therefore removes a redundant active declaration without presenting a different theorem as a same-model replacement.",
+        "No update quality, external effect, support transition, or release authority follows."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "The governed policy-update target remains the separately modeled reachable refinement lifecycle; removing this premise restatement changes no public inference.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_policy_optimization_refinement.py",
+        "scripts/validate_proof_artifact_audit.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R59-policy-reward-governance-projection",
+      "sequence": 59,
+      "state": "executed",
+      "action": "retire_unconsumed_projection",
+      "semantic_relation": "premise_restatement_removed_without_public_target_change",
+      "module_path": "lean/AsiStackProofs/PolicyOptimization.lean",
+      "baseline_module_sha256": "0b3108e7528d151e93f63774749665639def53d733085373f3ec67a22087196f",
+      "retired_theorem_id": "lean/AsiStackProofs/PolicyOptimization.lean::unverified_reward_or_missing_governance_gate_blocks_policy_promotion",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "7a8745c4e35d7448311a8046cfc79367ab440f38fccb926ab66b81bafe085500",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "d774b86e78506074b12334572f7c5c42bf6afc0cfdcebe8ada11c01d72c3646a",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem applies UnverifiedRewardOrMissingGovernanceBlocksPromotion and returns its assumed conclusion directly.",
+        "The immutable semantic overlay records no Lean dependency or theorem consumer for the projection.",
+        "The current public reward-boundary target already belongs to PolicyOptimizationRefinement and routes missing target evaluation, causal ablation, reward-hacking, regression, forgetting, safety, uncertainty, or independent evaluation to explicit non-accepting outcomes.",
+        "The retirement removes no reachable route and does not claim equivalence between the old predicate and the richer refinement lifecycle.",
+        "No reward validity, policy improvement, safety, support transition, or release authority follows."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "The public reward-boundary inference remains the separately modeled finite refinement route family; removing this premise restatement changes no public claim.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_policy_optimization_refinement.py",
+        "scripts/validate_proof_artifact_audit.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R60-circle-receipt-boundary-projection",
+      "sequence": 60,
+      "state": "executed",
+      "action": "retire_projection_after_public_target_narrowing",
+      "semantic_relation": "premise_restatement_retired_after_target_scope_reduction",
+      "module_path": "lean/AsiStackProofs/ProofCarryingContracts.lean",
+      "baseline_module_sha256": "dd1641b1b5df9f9c79f03c8af3dc7853b19b0fa9e47bac257e7f1c19b045aac4",
+      "retired_theorem_id": "lean/AsiStackProofs/ProofCarryingContracts.lean::downstream_ready_receipt_exposes_boundary_fields",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "06ed3cc3ba7da8f6f357d707eee84b05205db21963ab244238db098da8ce96f1",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "b60377e59906050b5b7d7d0b8e493334cf6640dfb9941ead1ea4cdfd2abc9515",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem returns ReadyForDownstreamUse unchanged because that predicate is definitionally ReceiptBoundaryComplete.",
+        "The immutable semantic overlay records no Lean dependency or theorem consumer for the projection.",
+        "The retained downstream_ready_receipt_missing_boundary_field_rejected theorem derives rejection for each missing boundary field.",
+        "The public target now states that finite negative case rather than counting definitional unpacking as an operational invariant.",
+        "The migration proves no external Circle theorem resolution, transport correctness, workload result, support transition, or deployment."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:circle_contracts.receipt_requires_boundary.operational_invariant",
+          "old_target_text": "A proof-carrying AI contract exposes theorem references, deterministic fields, and an explicit non-claim boundary before downstream use.",
+          "new_target_text": "A finite proof-contract receipt missing theorem references, deterministic fields, or an explicit non-claim boundary is rejected from downstream use.",
+          "consumer_paths": [
+            "book_structure.json",
+            "docs/book_outline.md",
+            "chapters/circle-calculus-and-proof-carrying-ai-contracts.qmd",
+            "proofs/proof_manifest.json",
+            "proofs/proof_triage.json"
+          ]
+        }
+      ],
+      "maximum_inference_preserved": "For the authored finite receipt predicate, any false theorem-reference, deterministic-field, or non-claim-boundary field prevents downstream readiness; no external proof-contract behavior follows.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_circle_contract_pack_archive.py",
+        "scripts/validate_proof_artifact_audit.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R61-circle-public-consumer-no-promotion-projection",
+      "sequence": 61,
+      "state": "executed",
+      "action": "retire_unconsumed_projection",
+      "semantic_relation": "premise_restatement_removed_without_public_target_change",
+      "module_path": "lean/AsiStackProofs/ProofCarryingContracts.lean",
+      "baseline_module_sha256": "dd1641b1b5df9f9c79f03c8af3dc7853b19b0fa9e47bac257e7f1c19b045aac4",
+      "retired_theorem_id": "lean/AsiStackProofs/ProofCarryingContracts.lean::circle_public_consumer_gate_acceptance_blocks_promotion",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "34a85731b6410bda4decd009210b729a2c22f26ad5b19d7683428a7735c11b23",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "445b7d3650d8015206af34b57bd888376cac29ef0ddd6a2be59be4f517384481",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem extracts four fields already carried by CirclePublicConsumerGateAccepted.",
+        "The immutable semantic overlay records no Lean dependency or theorem consumer for the projection.",
+        "The fixture-acceptance theorem remains live, and the retained promotion-overclaim and missing-mutation-control theorems derive explicit rejecting cases.",
+        "The public fixture target already names the fixture counts, pinned fields, blocked movement, and non-claims, so no target wording depends uniquely on this projection.",
+        "No deployed transport, chapter-core promotion, support movement, model quality, or transfer result follows."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "The exact fixture remains accepted and overclaim or missing-control records remain rejected; removing the field-extraction theorem changes no public inference.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_circle_public_replay.py",
+        "scripts/validate_circle_contract_pack_archive.py",
+        "scripts/validate_proof_artifact_audit.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R62-theseus-artifact-surface-projection",
+      "sequence": 62,
+      "state": "executed",
+      "action": "retire_projection_after_public_target_narrowing",
+      "semantic_relation": "premise_restatement_retired_after_target_scope_reduction",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "baseline_module_sha256": "a112a3cd329708c14807219a3e485d289ac472bb93f6079a2d60e6e73c63433a",
+      "retired_theorem_id": "lean/AsiStackProofs/TheseusReference.lean::implementation_reference_claim_names_report_config_or_tool_not_dashboard_only",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "44bd9122fbf20022eacd91c59c84f22df01ab0ff13c47a625b0faad91f6920a1",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "5555b7fa5b8fe5d57a0e5304adf468a15af33cf7095d7f42a9cb9295a90a4168",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem applies ImplementationReferenceClaimHasArtifactSurface and returns its exact artifact-surface conclusion.",
+        "The immutable semantic overlay records no Lean dependency or theorem consumer for the projection.",
+        "The retained implementation_reference_claim_without_artifact_surface_rejected theorem derives rejection when both artifact references are absent or dashboard prose is the only surface.",
+        "The public target now states that finite negative case rather than presenting an assumed implication as an operational invariant.",
+        "The migration proves no artifact correctness, repository truth, implementation quality, deployment, support transition, or release authority."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:theseus.reference.report_contract.operational_invariant",
+          "old_target_text": "An implementation-reference claim names the report, config, or tool surface and does not rely on dashboard prose alone.",
+          "new_target_text": "A finite implementation-reference claim that lacks both a report and a config-or-tool reference, or relies on dashboard prose alone, is rejected.",
+          "consumer_paths": [
+            "book_structure.json",
+            "docs/book_outline.md",
+            "chapters/project-theseus-as-report-first-implementation-reference.qmd",
+            "proofs/proof_manifest.json",
+            "proofs/proof_triage.json"
+          ]
+        }
+      ],
+      "maximum_inference_preserved": "For the authored finite reference-claim predicate, a claim with neither report nor config-or-tool evidence, or with dashboard-only prose, is rejected; no artifact truth or implementation quality follows.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_theseus_report.py",
+        "scripts/validate_proof_artifact_audit.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R63-theseus-gate-promotion-projection",
+      "sequence": 63,
+      "state": "executed",
+      "action": "retire_unconsumed_projection",
+      "semantic_relation": "premise_restatement_removed_without_public_target_change",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "baseline_module_sha256": "a112a3cd329708c14807219a3e485d289ac472bb93f6079a2d60e6e73c63433a",
+      "retired_theorem_id": "lean/AsiStackProofs/TheseusReference.lean::capability_or_self_evolution_promotion_blocked_without_passing_gate_reports",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "58a70cf0d810ad8582345cc5f270078eb260fc7b1e563bf72cb981ab4c324f2b",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "6e3a58fc0d302eae366981b62361348e642cb657764d04e6cf7d3c194e943db9",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem applies MissingOrFailingGateReportsBlockPromotion and returns its assumed false-promotion field.",
+        "The immutable semantic overlay records no Lean dependency or theorem consumer for the projection.",
+        "The retained accepted_promotion_with_missing_or_failing_gate_reports_rejected theorem derives the contradiction between accepted promotion and the same missing-or-failing gate conditions.",
+        "The public failure target already states that bounded rejection boundary and requires no wording change.",
+        "No gate adequacy, capability gain, self-evolution, deployment, support transition, or release authority follows."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "Within the authored finite gate predicate, an accepted promotion under missing or failing required reports is contradictory; no real gate efficacy or capability result follows.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_theseus_report.py",
+        "scripts/validate_proof_artifact_audit.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
     }
   ],
   "summary": {
-    "executed_retirement_count": 57,
-    "current_live_theorem_count": 1313,
-    "remaining_action_count": 104,
+    "executed_retirement_count": 63,
+    "current_live_theorem_count": 1307,
+    "remaining_action_count": 97,
     "remaining_action_counts": {
-      "retire_narrow_projection": 7,
       "rewrite_scope_language": 2,
       "rewrite_with_stronger_model": 95
     },

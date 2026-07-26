@@ -14,16 +14,6 @@ def ImplementationReferenceClaimHasArtifactSurface
       review.configOrToolRefPresent = true) ∧
         review.dashboardProseOnly = false
 
-theorem implementation_reference_claim_names_report_config_or_tool_not_dashboard_only
-    {review : ImplementationReferenceClaimReview} :
-    ImplementationReferenceClaimHasArtifactSurface review ->
-    review.implementationReferenceClaim = true ->
-    (review.reportRefPresent = true ∨
-      review.configOrToolRefPresent = true) ∧
-        review.dashboardProseOnly = false := by
-  intro valid referenceClaim
-  exact valid referenceClaim
-
 theorem implementation_reference_claim_without_artifact_surface_rejected
     {review : ImplementationReferenceClaimReview} :
     review.implementationReferenceClaim = true ->
@@ -64,16 +54,6 @@ def MissingOrFailingGateReportsBlockPromotion
     (review.requiredGateReportsPresent = false ∨
       review.requiredGateReportsPassing = false) ->
         review.promotionAccepted = false
-
-theorem capability_or_self_evolution_promotion_blocked_without_passing_gate_reports
-    {review : GateBeforePromotionReview} :
-    MissingOrFailingGateReportsBlockPromotion review ->
-    review.capabilityOrSelfEvolutionPromotion = true ->
-    (review.requiredGateReportsPresent = false ∨
-      review.requiredGateReportsPassing = false) ->
-    review.promotionAccepted = false := by
-  intro valid promoted missingOrFailing
-  exact valid promoted missingOrFailing
 
 theorem accepted_promotion_with_missing_or_failing_gate_reports_rejected
     {review : GateBeforePromotionReview} :

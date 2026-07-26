@@ -111,9 +111,9 @@ def main() -> None:
             "Adapters, Search Substrates, Artifact Steward Agents, Coil Attention Memory, "
             "and Cyclic Mixers, Efficiency, Failure Modes, Intent to Execution, Planning, "
             "Living Book, PlanForge, Proof Envelope, Prototype Roadmap, and Security Kernel "
-            "modules; one same-model normalized duplicate pair; fifty-six "
+            "modules; one same-model normalized duplicate pair; sixty-two "
             "premise-restating projections, twenty-two with derived "
-            "replacements, twenty-one retired after public-target narrowing, one unused projection retired without target "
+            "replacements, twenty-three retired after public-target narrowing, five unused projections retired without target "
             "change, and twelve summary projections retired after route-family validator rebinding; "
             "the current overlay; frozen historical registry; and reconciled target, "
             "roadmap, and status surfaces."
@@ -122,9 +122,9 @@ def main() -> None:
         "output_contract": (
             "Require immutable baseline and theorem-block digests, exact same-model "
             "statement identity for the duplicate, dependency-and-consumer-safe removals, "
-            "ten counterexample, five decision-model, eleven scope-narrowing, and eleven "
+            "ten counterexample, five decision-model, thirteen scope-narrowing, and eleven "
             "validator-route-family target migrations, retained or honestly replanned "
-            "target ownership, a 1,313-theorem current estate, an exact 104-action remaining "
+            "target ownership, a 1,307-theorem current estate, an exact 97-action remaining "
             "queue, meta-audit exclusion from implementation binding, and no support or "
             "release effect."
         ),
@@ -133,7 +133,7 @@ def main() -> None:
             "retired and retained declarations share one authored model",
             "normalized theorem statements exact",
             "retired theorem has no theorem consumer",
-            "fifty-seven retired declarations absent, twenty-three replacement-bound retirements, and thirty-four intentionally null replacements",
+            "sixty-three retired declarations absent, twenty-three replacement-bound retirements, and forty intentionally null replacements",
             "two bibliography targets migrated to derived counterexample gates",
             "two benchmark targets migrated to derived decision-model gates",
             "two Stable Capability Fields targets narrowed to retained derived routes",
@@ -154,16 +154,19 @@ def main() -> None:
             "Proof Envelope targets split between independent validators and retained negative cases",
             "Prototype Roadmap targets bound to retained research-only and promotion-rejection routes",
             "Security Kernel target bound to retained unauthorized and missing-permission denial routes",
+            "Circle receipt target narrowed to the retained missing-boundary rejection",
+            "Theseus artifact-surface target narrowed to the retained missing-surface rejection",
+            "Stable Capability Fields readiness lemma retained because five concrete negative cases consume it",
             "proof-custody meta-audit does not inflate semantic implementation depth",
-            "1,313 current theorem declarations",
-            "104 rewrite-or-retire actions remain",
+            "1,307 current theorem declarations",
+            "97 rewrite-or-retire actions remain",
             "frozen 1,151-theorem and 298-target registry preserved",
             "14 mutations reject",
             "no support or release effect",
         ],
         "claim_scope": (
-            "Fifty-seven dependency-safe declaration retirements: one exact same-model "
-            "duplicate and fifty-six premise-restating projections. Thirty-seven public "
+            "Sixty-three dependency-safe declaration retirements: one exact same-model "
+            "duplicate and sixty-two premise-restating projections. Thirty-nine public "
             "targets migrate to counterexample, decision-model, narrower retained-route, "
             "or honestly planned stronger-model wording; the runtime-adapter target remains "
             "implemented through its fifteen explicit route theorems."

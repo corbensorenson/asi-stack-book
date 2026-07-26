@@ -29,7 +29,7 @@ Generated from the frozen activation-baseline inventory and semantic review over
 | `retired_state_cannot_transition` | derived_or_decomposed | semantically_reviewed | retain_countermodel_or_negative_case |
 | `canary_transition_requires_evidence_and_rollback` | direct_or_projection | terminally_dispositioned | retire_projection_or_assumption_restatement |
 | `qualified_transition_requires_evidence_and_regression_floor` | direct_or_projection | terminally_dispositioned | retire_projection_or_assumption_restatement |
-| `default_transition_requires_full_readiness` | direct_or_projection | terminally_dispositioned | retire_projection_or_assumption_restatement |
+| `default_transition_requires_full_readiness` | direct_or_projection | terminally_dispositioned | retain_reusable_lemma |
 | `default_without_qualification_evidence_rejected` | derived_or_decomposed | semantically_reviewed | retain_countermodel_or_negative_case |
 | `default_without_regression_floor_rejected` | derived_or_decomposed | semantically_reviewed | retain_countermodel_or_negative_case |
 | `default_authority_expansion_rejected` | derived_or_decomposed | semantically_reviewed | retain_countermodel_or_negative_case |

@@ -2508,7 +2508,7 @@
       "chapter_title": "Circle Calculus and Proof-Carrying AI Contracts",
       "tag": "lean:circle_contracts.receipt_requires_boundary.operational_invariant",
       "module": "AsiStackProofs.ProofCarryingContracts",
-      "formal_target": "A proof-carrying AI contract exposes theorem references, deterministic fields, and an explicit non-claim boundary before downstream use.",
+      "formal_target": "A finite proof-contract receipt missing theorem references, deterministic fields, or an explicit non-claim boundary is rejected from downstream use.",
       "status": "implemented",
       "outline_line": 5752,
       "module_path": "lean/AsiStackProofs/ProofCarryingContracts.lean"
@@ -3218,7 +3218,7 @@
       "chapter_title": "Project Theseus as Report-First Implementation Reference",
       "tag": "lean:theseus.reference.report_contract.operational_invariant",
       "module": "AsiStackProofs.TheseusReference",
-      "formal_target": "An implementation-reference claim names the report, config, or tool surface and does not rely on dashboard prose alone.",
+      "formal_target": "A finite implementation-reference claim that lacks both a report and a config-or-tool reference, or relies on dashboard prose alone, is rejected.",
       "status": "implemented",
       "outline_line": 7414,
       "module_path": "lean/AsiStackProofs/TheseusReference.lean"

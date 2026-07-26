@@ -492,7 +492,7 @@
               ],
               "properties": {
                 "state": {
-                  "const": "dependency_safe_execution_active_after_fifty_seven_retirements"
+                  "const": "dependency_safe_execution_active_after_sixty_three_retirements"
                 },
                 "classification_baseline_commit": {
                   "const": "d0f9bda14f1253999f2c40d556d925d31e4b36a4"
@@ -510,7 +510,7 @@
                   "const": "proofs/proof_semantic_rationalization_ledger.json"
                 },
                 "theorem_count": {
-                  "const": 1313
+                  "const": 1307
                 },
                 "theorem_bearing_module_count": {
                   "const": 104
@@ -520,28 +520,27 @@
                 },
                 "semantic_level_counts": {
                   "const": {
-                    "P0": 39,
-                    "P1": 756,
+                    "P0": 37,
+                    "P1": 753,
                     "P2": 25,
                     "P3": 319,
                     "P4": 93,
-                    "P5": 81,
+                    "P5": 80,
                     "P6": 0
                   }
                 },
                 "disposition_counts": {
                   "const": {
-                    "retain": 1209,
-                    "retire_narrow_projection": 7,
+                    "retain": 1210,
                     "rewrite_scope_language": 2,
                     "rewrite_with_stronger_model": 95
                   }
                 },
                 "executed_retirement_count": {
-                  "const": 57
+                  "const": 63
                 },
                 "remaining_action_count": {
-                  "const": 104
+                  "const": 97
                 },
                 "mutation_coverage_missing_count": {
                   "const": 0
@@ -553,7 +552,7 @@
                   "const": 298
                 },
                 "next_action": {
-                  "const": "execute_dependency_safe_narrow_projection_tranche_before_new_formal_expansion"
+                  "const": "execute_scope_language_rewrites_before_stronger_model_expansion"
                 },
                 "support_state_effect": {
                   "const": "none"
@@ -1207,9 +1206,9 @@
         "sota_supported_count": 0,
         "proof_target_count": 333,
         "lean_module_count": 110,
-        "theorem_declaration_count": 1313,
+        "theorem_declaration_count": 1307,
         "derived_or_decomposed_theorem_count": 919,
-        "direct_or_projection_theorem_count": 179,
+        "direct_or_projection_theorem_count": 173,
         "unknown_or_mixed_theorem_count": 215,
         "historical_v2_2_approved_exact_local_reader_formats": [
           "html"

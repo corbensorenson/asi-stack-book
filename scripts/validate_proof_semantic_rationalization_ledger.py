@@ -89,19 +89,24 @@ EXPECTED_ACTION_IDS = [
     "C6-R55-prototype-phase-unlock-projection",
     "C6-R56-prototype-accepted-promotion-projection",
     "C6-R57-security-secret-authorization-projection",
+    "C6-R58-policy-admitted-record-projection",
+    "C6-R59-policy-reward-governance-projection",
+    "C6-R60-circle-receipt-boundary-projection",
+    "C6-R61-circle-public-consumer-no-promotion-projection",
+    "C6-R62-theseus-artifact-surface-projection",
+    "C6-R63-theseus-gate-promotion-projection",
 ]
 EXPECTED_LEVELS = {
-    "P0": 39,
-    "P1": 756,
+    "P0": 37,
+    "P1": 753,
     "P2": 25,
     "P3": 319,
     "P4": 93,
-    "P5": 81,
+    "P5": 80,
     "P6": 0,
 }
 EXPECTED_DISPOSITIONS = {
-    "retain": 1209,
-    "retire_narrow_projection": 7,
+    "retain": 1210,
     "rewrite_scope_language": 2,
     "rewrite_with_stronger_model": 95,
 }
@@ -280,6 +285,14 @@ EXPECTED_TARGETS = {
         "The finite authority-use route denies secret substitution when the execution "
         "boundary is unauthorized or lacks substitution permission."
     ),
+    "lean:circle_contracts.receipt_requires_boundary.operational_invariant": (
+        "A finite proof-contract receipt missing theorem references, deterministic "
+        "fields, or an explicit non-claim boundary is rejected from downstream use."
+    ),
+    "lean:theseus.reference.report_contract.operational_invariant": (
+        "A finite implementation-reference claim that lacks both a report and a "
+        "config-or-tool reference, or relies on dashboard prose alone, is rejected."
+    ),
 }
 PLANNED_TARGETS = {
     "lean:evidence.support_state.operational_invariant",
@@ -348,6 +361,8 @@ EXPECTED_MIGRATION_COUNTS = {
         "C6-R55-prototype-phase-unlock-projection",
         "C6-R56-prototype-accepted-promotion-projection",
         "C6-R57-security-secret-authorization-projection",
+        "C6-R60-circle-receipt-boundary-projection",
+        "C6-R62-theseus-artifact-surface-projection",
     })
     for action_id in EXPECTED_ACTION_IDS
 }
@@ -405,7 +420,7 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
     actions = ledger["actions"]
     if [row["action_id"] for row in actions] != EXPECTED_ACTION_IDS:
         out.append("action sequence or identity drifted")
-    if [row["sequence"] for row in actions] != list(range(1, 58)):
+    if [row["sequence"] for row in actions] != list(range(1, 64)):
         out.append("action sequence numbers drifted")
 
     try:
@@ -569,13 +584,13 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
 
     overlay = load(CURRENT_OVERLAY)
     summary = overlay.get("summary", {})
-    if summary.get("current_theorem_count") != 1313:
+    if summary.get("current_theorem_count") != 1307:
         out.append("current theorem denominator drifted")
     if summary.get("semantic_level_counts") != EXPECTED_LEVELS:
         out.append("current semantic-level counts drifted")
     if summary.get("disposition_counts") != EXPECTED_DISPOSITIONS:
         out.append("current disposition counts drifted")
-    if sum(value for key, value in EXPECTED_DISPOSITIONS.items() if key != "retain") != 104:
+    if sum(value for key, value in EXPECTED_DISPOSITIONS.items() if key != "retain") != 97:
         out.append("expected remaining-action denominator is internally inconsistent")
     if ledger["summary"]["remaining_action_counts"] != {
         key: value for key, value in EXPECTED_DISPOSITIONS.items() if key != "retain"
@@ -614,8 +629,8 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
         for row in current_rows
         if row["module_path"] == "lean/AsiStackProofs/PolicyOptimization.lean"
     ]
-    if len(policy_rows) != 16:
-        out.append("PolicyOptimization must retain exactly sixteen declarations")
+    if len(policy_rows) != 14:
+        out.append("PolicyOptimization must retain exactly fourteen declarations")
     retired_policy_names = {
         "promoted_policy_update_records_holdouts_probes_regressions_and_rollback",
         "reward_proxy_promotion_requires_target_evaluation",
@@ -918,17 +933,17 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
     if status.get("rationalization_ledger_path") != str(LEDGER.relative_to(ROOT)):
         out.append("status does not bind the cumulative rationalization ledger")
     if (
-        status.get("theorem_count") != 1313
-        or status.get("executed_retirement_count") != 57
-        or status.get("remaining_action_count") != 104
+        status.get("theorem_count") != 1307
+        or status.get("executed_retirement_count") != 63
+        or status.get("remaining_action_count") != 97
     ):
         out.append("status does not report the cumulative post-transaction denominator")
     roadmap = ROADMAP.read_text(encoding="utf-8")
     roadmap_flat = " ".join(roadmap.split())
     for phrase in [
-        "twelfth narrow-projection tranche",
-        "1,313 live theorem declarations",
-        "104 rewrite-or-retire actions remain",
+        "thirteenth narrow-projection tranche",
+        "1,307 live theorem declarations",
+        "97 rewrite-or-retire actions remain",
         "`proofs/proof_semantic_rationalization_ledger.json`",
     ]:
         if phrase not in roadmap_flat:
@@ -984,9 +999,9 @@ def main() -> None:
             + "\n - ".join(failures)
         )
     print(
-        "Proof semantic-rationalization ledger passed: fifty-seven dependency-safe "
-        "retirements, thirty-seven public-target migrations, 1,313 live theorems, "
-        "104 actions remain, 14 rejecting mutations, no support or release effect."
+        "Proof semantic-rationalization ledger passed: sixty-three dependency-safe "
+        "retirements, thirty-nine public-target migrations, 1,307 live theorems, "
+        "97 actions remain, 14 rejecting mutations, no support or release effect."
     )
 
 

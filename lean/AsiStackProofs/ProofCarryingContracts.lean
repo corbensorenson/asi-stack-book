@@ -14,15 +14,6 @@ def ReceiptBoundaryComplete (receipt : ProofContractReceipt) : Prop :=
 def ReadyForDownstreamUse (receipt : ProofContractReceipt) : Prop :=
   ReceiptBoundaryComplete receipt
 
-theorem downstream_ready_receipt_exposes_boundary_fields
-    {receipt : ProofContractReceipt} :
-    ReadyForDownstreamUse receipt ->
-      receipt.theoremRefsPresent = true ∧
-        receipt.deterministicFieldsPresent = true ∧
-          receipt.nonClaimBoundaryPresent = true := by
-  intro ready
-  exact ready
-
 theorem downstream_ready_receipt_missing_boundary_field_rejected
     {receipt : ProofContractReceipt} :
     (receipt.theoremRefsPresent = false ∨
@@ -310,21 +301,6 @@ theorem circle_public_consumer_gate_fixture_accepted :
     noChapterCorePromotion := rfl
     noDeployedTransportClaim := rfl
   }
-
-theorem circle_public_consumer_gate_acceptance_blocks_promotion
-    {fixture : CirclePublicConsumerGateFixture} :
-    CirclePublicConsumerGateAccepted fixture ->
-      fixture.supportBlocksPromotion = true ∧
-        fixture.upwardTransitionCreated = false ∧
-          fixture.chapterCorePromoted = false ∧
-            fixture.deployedTransportClaimed = false := by
-  intro accepted
-  exact ⟨
-    accepted.supportBlocksPromotion,
-    accepted.noUpwardTransition,
-    accepted.noChapterCorePromotion,
-    accepted.noDeployedTransportClaim
-  ⟩
 
 theorem circle_public_consumer_gate_promotion_overclaim_rejected
     {fixture : CirclePublicConsumerGateFixture} :

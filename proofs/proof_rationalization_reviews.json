@@ -20170,10 +20170,14 @@
     },
     "lean/AsiStackProofs/StableCapabilityFields.lean::default_transition_requires_full_readiness": {
       "review_state": "terminally_dispositioned",
-      "disposition": "retire_projection_or_assumption_restatement",
+      "disposition": "retain_reusable_lemma",
       "semantic_role": "Direct application of the DefaultTransitionReady conjunct already assumed by ScfLifecycleTransitionAllowed.",
-      "assumptions": [],
-      "excluded_effects": [],
+      "assumptions": [
+        "ScfLifecycleTransitionAllowed is the governing finite predicate, and its DefaultTransitionReady conjunct is trusted to encode the five named readiness fields for transitions whose destination is default."
+      ],
+      "excluded_effects": [
+        "The lemma does not establish that qualification evidence, regression floors, authority ceilings, rollback plans, or incident state are truthful, adequate, enforced, or observed in a deployed system."
+      ],
       "countermodel_refs": [],
       "mutation_refs": [],
       "consumer_refs": [
@@ -20183,7 +20187,7 @@
       "replacement_refs": [
         "proof-model:scf.generated-transition-suite.v1"
       ],
-      "review_rationale": "Retire the predicate restatement while retaining the five concrete default-rejection consequences."
+      "review_rationale": "Retain this reusable lemma because five concrete default-rejection consequences consume its shared readiness conclusion; inlining it five times would increase proof duplication without adding semantic depth."
     },
     "lean/AsiStackProofs/StableCapabilityFields.lean::default_without_qualification_evidence_rejected": {
       "review_state": "semantically_reviewed",

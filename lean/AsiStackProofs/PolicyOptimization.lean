@@ -20,19 +20,6 @@ def AdmittedPolicyUpdateHasGovernedRecord
             review.governanceGateRefsPresent = true ∧
               review.rollbackPlanPresent = true
 
-theorem admitted_policy_update_records_reward_evaluation_governance_and_rollback
-    {review : PolicyUpdateRecordReview} :
-    AdmittedPolicyUpdateHasGovernedRecord review ->
-    review.updateAdmitted = true ->
-    review.targetLayerRecorded = true ∧
-      review.rewardSignalRecorded = true ∧
-        review.updateConstraintRecorded = true ∧
-          review.evaluationRefsPresent = true ∧
-            review.governanceGateRefsPresent = true ∧
-              review.rollbackPlanPresent = true := by
-  intro valid admitted
-  exact valid admitted
-
 structure RewardGovernancePromotionReview where
   rewardSignalUnverified : Bool
   governanceGateMissing : Bool
@@ -44,15 +31,6 @@ def UnverifiedRewardOrMissingGovernanceBlocksPromotion
   review.rewardSignalUnverified = true ∨
     review.governanceGateMissing = true ->
       review.policyUpdatePromoted = false
-
-theorem unverified_reward_or_missing_governance_gate_blocks_policy_promotion
-    {review : RewardGovernancePromotionReview} :
-    UnverifiedRewardOrMissingGovernanceBlocksPromotion review ->
-    review.rewardSignalUnverified = true ∨
-      review.governanceGateMissing = true ->
-    review.policyUpdatePromoted = false := by
-  intro valid missingBoundary
-  exact valid missingBoundary
 
 structure PolicyPromotionEvidenceReview where
   promotionCandidate : Bool

@@ -1,5 +1,34 @@
 # Changelog
 
+## 2026-07-26 — Thirteenth narrow-projection C6 tranche
+
+- Retired the final six unconsumed premise or field restatements from
+  `PolicyOptimization.lean`, `ProofCarryingContracts.lean`, and
+  `TheseusReference.lean`. The old policy declarations were already superseded
+  at the public-target layer by the reachable Policy Optimization Refinement
+  lifecycle.
+- Narrowed the Circle receipt target to the retained missing-boundary
+  rejection and the Theseus artifact-surface target to the retained
+  missing-surface rejection. The Circle public-consumer fixture and the
+  Theseus gate-before-promotion target retain their exact fixture or derived
+  negative-case coverage without the removed field projections.
+- Reclassified `default_transition_requires_full_readiness` as a reusable
+  lemma rather than deleting it: five concrete default-rejection theorems
+  consume the shared conclusion, so inlining the same derivation five times
+  would increase duplication without increasing semantic depth.
+- The cumulative ledger now records sixty-three dependency-safe retirements
+  and thirty-nine public-target migrations. The live estate is 1,307
+  declarations: 37 P0, 753 P1, 25 P2, 319 P3, 93 P4, 80 P5, and zero P6.
+  The remaining queue contains 97 actions: two scope-language rewrites and 95
+  stronger-model rewrites.
+- Current proof-depth snapshot: 333 proof targets, 110 Lean modules, 1307
+  theorem declarations, 919 derived/decomposed, 173 direct/projection, 215
+  unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- No theorem count is treated as a success metric. No policy-quality,
+  proof-contract transport, artifact-truth, gate-adequacy, capability,
+  self-evolution, chapter-core support, release, or publication-authority
+  claim changes.
+
 ## 2026-07-26 — Twelfth narrow-projection C6 tranche
 
 - Retired eight unconsumed direct projections from `LivingBook.lean`,

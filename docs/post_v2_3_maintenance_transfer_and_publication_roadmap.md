@@ -1011,7 +1011,7 @@ that remains safe only by never completing useful work fails the joint gate.
 
 Keep the existing syntax-level classifier, but add a semantic-depth overlay for
 every current declaration. The immutable pre-rationalization baseline contains
-1,370 declarations; the live estate contains 1,313 after fifty-seven
+1,370 declarations; the live estate contains 1,307 after sixty-three
 dependency-safe retirement transactions:
 
 | Level | Required meaning |
@@ -1209,13 +1209,13 @@ historical review. The immutable historical registry remains exactly 1,151
 theorems across 298 targets. The separately frozen pre-rationalization overlay
 at commit `d0f9bda14f1253999f2c40d556d925d31e4b36a4` classifies all 1,370
 baseline declarations. The current overlay in
-`proofs/proof_semantic_depth_overlay.json` classifies all 1,313 live theorem
+`proofs/proof_semantic_depth_overlay.json` classifies all 1,307 live theorem
 declarations across 104 theorem-bearing modules and maps them to 61 active
 semantic-owner chapters.
 
-The live semantic-depth distribution is 39 P0 record-shape results, 756 P1
+The live semantic-depth distribution is 37 P0 record-shape results, 753 P1
 finite-route results, 25 P2 reachability/nonvacuity results, 319 P3
-implementation-refinement results, 93 P4 cross-component-safety results, 81 P5
+implementation-refinement results, 93 P4 cross-component-safety results, 80 P5
 liveness/recovery results, and zero P6 empirically bound results. P6 being zero
 is intentional: the existence of an experiment file, trace, or generated
 artifact does not turn a theorem into empirical evidence.
@@ -1223,8 +1223,8 @@ artifact does not turn a theorem into empirical evidence.
 Every overlay row records its assumptions, active semantic owner, downstream
 consumer, witness or explicit witness absence, implementation binding, mutation
 evidence, maximum inference, and disposition. The resulting current estate is
-1,209 retain, seven retire as narrow projection, two scope-language rewrites, and
-95 stronger-model rewrites. All 1,313 rows have mutation coverage and every
+1,210 retain, zero retire as narrow projection, two scope-language rewrites, and
+95 stronger-model rewrites. All 1,307 rows have mutation coverage and every
 retained theorem has a named consumer.
 
 The cumulative dependency-safe retirement ledger is
@@ -1420,14 +1420,33 @@ filesystem truth inside Lean, general graph acyclicity, phase completion, gate
 adequacy, runtime secret mediation, security efficacy, support transition, or
 release authority.
 
+The thirteenth narrow-projection tranche retires the final six premise or
+field restatements across `PolicyOptimization.lean`,
+`ProofCarryingContracts.lean`, and `TheseusReference.lean`. The two policy
+targets already belong to the reachable `PolicyOptimizationRefinement`
+lifecycle, so deleting their older assumed-implication projections changes no
+public meaning. The Circle receipt target now names the retained missing-field
+rejection, while the public-consumer fixture keeps its exact fixture theorem
+and two derived rejecting controls without the no-promotion field-extraction
+theorem. The Theseus artifact-surface target now names the retained
+missing-surface rejection, and its promotion target remains carried by the
+retained accepted-promotion contradiction. Fourteen Policy Optimization, eight
+Proof Carrying Contracts, and fifty-two Theseus Reference declarations remain.
+The apparent seventh retirement candidate,
+`default_transition_requires_full_readiness`, is instead reclassified as a
+reusable lemma because five concrete default-rejection theorems consume its
+shared conclusion; duplicating that derivation five times would reduce clarity
+without strengthening the model. This tranche changes no policy quality,
+proof-contract transport, artifact truth, gate adequacy, capability,
+self-evolution, support state, or release authority.
+
 This receipt completes the C6 **classification** gate and begins its
-dependency-safe execution gate. Exactly 57 of the original 161 actions have
-been executed; 104 rewrite-or-retire actions remain: seven narrow-projection
-retirements, two scope-language rewrites, and 95 stronger-model rewrites. The
-next proof action is a dependency-safe narrow-projection tranche, preserving
-each correct bounded result until its consumers and maximum inference are
-explicitly retained. New proof work remains reserved for conclusions consumed
-by a reachable implementation or the natural flagship.
+dependency-safe execution gate. Exactly 63 of the original 161 actions have
+been executed; 97 rewrite-or-retire actions remain: two scope-language
+rewrites and 95 stronger-model rewrites. The next proof action is to repair the
+two misleadingly broad theorem names or statements before beginning stronger
+reachable models. New proof work remains reserved for conclusions consumed by
+a reachable implementation or the natural flagship.
 
 An initial semantic spot-check rejected a naive retirement rule before any
 proof deletion: 33 declarations shared literal theorem text across different

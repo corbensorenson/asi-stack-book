@@ -77,7 +77,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/PrivacyInformationFlow.lean` | 2 | 11 | 0 | 5 | 1 |
 | `lean/AsiStackProofs/ProceduralMemoryRefinement.lean` | 2 | 14 | 0 | 21 | 3 |
 | `lean/AsiStackProofs/ProofCarryingClaimsRefinement.lean` | 3 | 11 | 0 | 31 | 3 |
-| `lean/AsiStackProofs/ProofCarryingContracts.lean` | 3 | 10 | 0 | 7 | 6 |
+| `lean/AsiStackProofs/ProofCarryingContracts.lean` | 3 | 8 | 0 | 7 | 6 |
 | `lean/AsiStackProofs/ProofEnvelope.lean` | 2 | 5 | 0 | 5 | 2 |
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | 3 | 9 | 0 | 4 | 3 |
 | `lean/AsiStackProofs/ReadinessRefinement.lean` | 3 | 17 | 0 | 10 | 3 |
@@ -95,7 +95,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | 4 | 18 | 0 | 16 | 5 |
 | `lean/AsiStackProofs/StackBoundaries.lean` | 3 | 9 | 0 | 13 | 7 |
 | `lean/AsiStackProofs/SupplyChainIntegrity.lean` | 6 | 7 | 0 | 1 | 1 |
-| `lean/AsiStackProofs/TheseusReference.lean` | 12 | 54 | 0 | 54 | 15 |
+| `lean/AsiStackProofs/TheseusReference.lean` | 12 | 52 | 0 | 54 | 15 |
 | `lean/AsiStackProofs/TribunalRefinement.lean` | 2 | 12 | 0 | 30 | 3 |
 | `lean/AsiStackProofs/TypedJobRefinement.lean` | 5 | 14 | 0 | 31 | 3 |
 | `lean/AsiStackProofs/ValueConflict.lean` | 2 | 21 | 0 | 9 | 4 |
