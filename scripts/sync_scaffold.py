@@ -768,6 +768,46 @@ def write_claim_matrix(structure: dict) -> None:
                 if isinstance(row, dict) and row.get("chapter_id")
             })
     chapters = flatten_chapters(structure)
+    r16a_path = ROOT / "evidence_quality" / "post_activation_six_chapter_claim_atom_addendum.json"
+    r16a = read_json(r16a_path) if r16a_path.exists() else None
+    r16a_projection = ""
+    if isinstance(r16a, dict):
+        atom_rows = r16a.get("atoms", [])
+        review_rows = {
+            row.get("chapter_id"): row
+            for row in r16a.get("chapter_reviews", [])
+            if isinstance(row, dict)
+        }
+        chapter_titles = {chapter["id"]: chapter["title"] for chapter in chapters}
+        projection_rows = []
+        for chapter_id in [row.get("chapter_id") for row in r16a.get("chapter_reviews", [])]:
+            owned = [row for row in atom_rows if row.get("chapter_id") == chapter_id]
+            roles = ", ".join(f"`{row.get('role')}`" for row in owned)
+            review = review_rows.get(chapter_id, {})
+            projection_rows.append(
+                f"| `{chapter_id}` | {qmd_escape(chapter_titles.get(chapter_id, chapter_id))} | "
+                f"{len(owned)} | {roles} | `{review.get('decision', 'missing')}` | `argument` |"
+            )
+        r16a_projection = f"""## R16-A Post-Activation Claim Organization (2026-07-26)
+
+Six chapters admitted after the frozen activation registry now have a separate,
+reviewed claim-identity projection. The packet contains
+{r16a.get('atom_count', 0)} atoms: one exact chapter core, one boundary, one
+mechanism, one failure/noninheritance rule, and one argument-exit target per
+chapter. Every atom has an owner, scope, falsifier, acceptance criterion,
+promotion ceiling, evidence-plan route, and explicit non-claims.
+
+This is organization, not evidence. All six chapter cores and all thirty atoms
+remain at `argument`; the packet moves no support or release state. It also
+leaves the historical 3,730-atom activation denominator, the current
+4,067-atom registry, and the historical 15-atom addendum unchanged. The
+machine source is
+`evidence_quality/post_activation_six_chapter_claim_atom_addendum.json`.
+
+| Chapter owner | Chapter | Reviewed atoms | Roles | Review disposition | Support |
+|---|---|---:|---|---|---|
+{chr(10).join(projection_rows)}
+"""
     total_claim_mappings = sum(len(chapter.get("claim_source_mappings", [])) for chapter in chapters)
     total_passage_reviewed = sum(
         1
@@ -929,7 +969,7 @@ Current generated coverage: {len(chapters)} chapter core claims, {total_claim_ma
 
 The current accepted non-core upward transitions are summarized in `docs/non_core_evidence_ledger.md`. They do not promote any chapter core claim above `argument`.
 
-The accepted-transition identity graph in `evidence_quality/claim_identity_graph.json` resolves all 115 accepted transition records through 25 exact atom, 61 bounded subclaim, and 29 proxy relations. Indirect relations do not move their parent atom or chapter-core support state. The competence ledger classifies all 90 accepted negative/no-change records as 1 N0, 15 N1, 74 N2, and 0 N3–N5; broader prose and historical `blocked_after_full_attempt` interpretation remains under audit.
+The accepted-transition identity graph in `evidence_quality/claim_identity_graph.json` resolves all 115 accepted transition records against 4,112 canonical atoms through 25 exact atom, 61 bounded subclaim, and 29 proxy relations. The canonical denominator is the current 4,067-atom registry plus the historical 15-atom addendum and the separate 30-atom R16-A addendum; no historical denominator is rewritten. Indirect relations do not move their parent atom or chapter-core support state. The competence ledger classifies all 90 accepted negative/no-change records as 1 N0, 15 N1, 74 N2, and 0 N3–N5; broader prose and historical `blocked_after_full_attempt` interpretation remains under audit.
 {disposition_summary}
 
 | Claim ID | Chapter ID | Claim | Claim label | Current support state | Assigned sources | Current evidence | Source-note chapter mapping | Claim-source mapping | Open gap | What would promote this |
@@ -939,6 +979,8 @@ The accepted-transition identity graph in `evidence_quality/claim_identity_graph
 {qcsa_reconciliation}
 
 {p4_reconciliation}
+
+{r16a_projection}
 
 ## Claim Labels
 

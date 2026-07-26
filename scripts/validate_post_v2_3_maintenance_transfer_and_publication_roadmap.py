@@ -25,6 +25,9 @@ X_MANIFEST = ROOT / "editions/x_article/manifest.json"
 X_RELEASE = ROOT / "release_records/2026-07-16-x-article-synopsis-ready-not-published.json"
 ATOM_REGISTRY = ROOT / "evidence_quality/claim_atom_registry.json"
 ATOM_ADDENDUM = ROOT / "evidence_quality/replaceable_cognitive_substrates_claim_atom_addendum.json"
+POST_ACTIVATION_SIX_CHAPTER_ADDENDUM = (
+    ROOT / "evidence_quality/post_activation_six_chapter_claim_atom_addendum.json"
+)
 PROOF_REVIEW = ROOT / "docs/proof_adequacy_review.md"
 PROOF_MANIFEST = ROOT / "proofs/proof_manifest.json"
 IDENTITY_GRAPH = ROOT / "evidence_quality/claim_identity_graph.json"
@@ -187,8 +190,10 @@ def transition_snapshot(atom_ids: set[str]) -> dict:
 def inputs() -> dict:
     atom_registry = load(ATOM_REGISTRY)
     atom_addendum = load(ATOM_ADDENDUM)
+    post_activation_six_chapter_addendum = load(POST_ACTIVATION_SIX_CHAPTER_ADDENDUM)
     atom_ids = {row["atom_id"] for row in atom_registry["atoms"]}
     atom_ids.update(row["id"] for row in atom_addendum["atoms"])
+    atom_ids.update(row["id"] for row in post_activation_six_chapter_addendum["atoms"])
     porcelain = git_output("status", "--porcelain=v1")
     return {
         "status": load(STATUS),
@@ -201,6 +206,7 @@ def inputs() -> dict:
         "x_release": load(X_RELEASE),
         "atom_registry": atom_registry,
         "atom_addendum": atom_addendum,
+        "post_activation_six_chapter_addendum": post_activation_six_chapter_addendum,
         "identity_graph": load(IDENTITY_GRAPH),
         "negative_rehabilitation": load(NEGATIVE_REHABILITATION),
         "negative_surface_audit": load(NEGATIVE_SURFACE_AUDIT),
@@ -374,10 +380,11 @@ def errors(data: dict) -> list[str]:
         "a toy or under-tuned experiment cannot close the protocol",
         "capacity_entry_condition_met_materialization_not_yet_run",
         "71,648,034,816",
-        "R16-A is the sole current book packet",
-        "prose scanner rows and chapter review JSON do not satisfy this packet",
+        "R16-A terminal receipt",
+        "W3 is the sole current book packet",
+        "30 reviewed atoms",
         "738 distinct repeated 12-grams",
-        "0/6 terminal packs",
+        "30/30",
         "P7.2-T1D — proof-readiness depth pack",
         "Claim-bearing chapter maturity gate",
         "adversarial-machine-learning-and-model-attack-surface",
@@ -951,8 +958,8 @@ def errors(data: dict) -> list[str]:
 
     quality_program = status.get("quality_uplift_program", {})
     execution_readiness = status.get("execution_readiness", {})
-    if execution_readiness.get("state") != "round18_breadth_terminal_evidence_first_recovery_restored":
-        out.append("execution board does not close the Round 18 breadth transaction and restore evidence-first recovery")
+    if execution_readiness.get("state") != "r16a_terminal_w3_organization_packet_ready":
+        out.append("execution board does not close R16-A and activate the W3 organization packet")
     if execution_readiness.get("headline_priority") != "P2" or execution_readiness.get("headline_priority_state") != "below_storage_floor_exact_attempt_or_failure_receipt_required":
         out.append("execution board obscures the P2 headline or the current below-floor attempt requirement")
     if execution_readiness.get("work_in_progress_limit") != 2 or execution_readiness.get("blocked_lane_consumes_work_in_progress") is not False:
@@ -963,8 +970,8 @@ def errors(data: dict) -> list[str]:
         out.append("execution board contradicts the superseding no-deferral manuscript policy")
     if execution_readiness.get("immediate_empirical_packet") != "P2-R3-storage-materialization-and-replacement-qualification":
         out.append("execution board does not make P2-R3 the operative empirical headline")
-    if execution_readiness.get("immediate_book_packet") != "P6.5-R16-A-six-chapter-atom-pack":
-        out.append("execution board does not make R16-A the sole current book packet")
+    if execution_readiness.get("immediate_book_packet") != "P7.1a-W3-admission-template-inheritance-guard":
+        out.append("execution board does not make W3 the sole current book packet after terminal R16-A")
     if execution_readiness.get("immediate_formal_packet") != "P4-terminal-no-open-formal-packet":
         out.append("execution board reopens terminal P4 formal work")
     if execution_readiness.get("maximum_concurrent_second_tranche_candidates") != 0:
@@ -973,7 +980,7 @@ def errors(data: dict) -> list[str]:
         "P2-pool-materialization-terminal-receipt",
         "P2-four-replacement-slots-qualified-and-twelve-task-denominator-restored",
         "P6.5-R16-six-chapter-claim-atom-addendum-terminal",
-        "P6.5-R16-current-sixty-six-chapter-reader-freshness-terminal",
+        "P6.5-R16-current-eighty-four-chapter-reader-freshness-terminal",
         "P7.1a-W3-admission-template-inheritance-guard-terminal",
         "P7.2-T1D-six-chapter-proof-readiness-depth-pack-terminal",
     ]
@@ -1350,16 +1357,42 @@ def errors(data: dict) -> list[str]:
         out.append("Round 16 amendment was not superseded by the no-deferral manuscript policy")
     if round16.get("post_activation_atom_pack", {}).get("chapter_ids") != expected_round16_chapters:
         out.append("Round 16 six-chapter atom-pack scope drifted")
-    if round16.get("post_activation_atom_pack", {}).get("state") != "active_zero_of_six_terminal":
-        out.append("Round 17 does not make the six-chapter atom pack the sole current book packet")
+    atom_pack = round16.get("post_activation_atom_pack", {})
+    if atom_pack.get("state") != "terminal_six_of_six_reviewed_append_only_pack":
+        out.append("R16-A six-chapter atom pack is not terminal")
     if not all(
-        round16.get("post_activation_atom_pack", {}).get(field) is True
+        atom_pack.get(field) is True
         for field in [
             "historical_3730_activation_atom_denominator_is_immutable",
             "historical_15_atom_addendum_is_immutable",
         ]
     ):
         out.append("Round 16 amendment permits rewriting a historical atom denominator")
+    required_r16a_paths = {
+        "addendum_path": "evidence_quality/post_activation_six_chapter_claim_atom_addendum.json",
+        "schema_path": "schemas/post_activation_six_chapter_claim_atom_addendum.schema.json",
+        "builder_path": "scripts/build_post_activation_six_chapter_claim_atom_addendum.py",
+        "validator_path": "scripts/validate_post_activation_six_chapter_claim_atom_addendum.py",
+    }
+    for field, relative in required_r16a_paths.items():
+        if atom_pack.get(field) != relative or not (ROOT / relative).exists():
+            out.append(f"R16-A artifact route missing or drifted: {field}")
+    if (
+        atom_pack.get("chapter_review_count") != 6
+        or atom_pack.get("atom_count") != 30
+        or atom_pack.get("identity_graph_canonical_atom_count") != 4112
+        or atom_pack.get("appendix_c_projection_complete") is not True
+        or atom_pack.get("mutation_rejection_count") != 14
+    ):
+        out.append("R16-A terminal receipt denominator or projection drifted")
+    r16a = data.get("post_activation_six_chapter_addendum", {})
+    if (
+        r16a.get("chapter_count") != 6
+        or r16a.get("atom_count") != 30
+        or r16a.get("support_state_effect") != "none"
+        or r16a.get("summary", {}).get("promoted_atom_count") != 0
+    ):
+        out.append("R16-A machine addendum is incomplete or promotional")
     reader_freshness = round16.get("current_reader_freshness_packet", {})
     if reader_freshness.get("current_working_manifest_chapter_count") != 84 or reader_freshness.get("must_cover_all_current_manifest_chapters") is not True:
         out.append("Round 16 current-reader packet does not cover the live 84-chapter manifest")
@@ -1377,6 +1410,8 @@ def errors(data: dict) -> list[str]:
     template_guard = round16.get("template_inheritance_guard", {})
     if template_guard.get("provisional_current_61_chapter_repeated_12_gram_count") != 738 or template_guard.get("provisional_current_61_chapter_maximum_spread") != 55:
         out.append("Round 17 provisional W3 diagnostic drifted")
+    if template_guard.get("state") != "active_current_84_chapter_rebaseline_required" or template_guard.get("current_live_chapter_scope") != 84:
+        out.append("W3 does not own the current 84-chapter organization rebaseline")
     optimizer_amendment = round16.get("optimizer_landscape_depth_amendment", {})
     if optimizer_amendment.get("chapter_id") != "governed-model-training-distributed-optimization-and-scaling":
         out.append("optimizer landscape lost its existing governed-training owner")
@@ -1695,6 +1730,8 @@ def main() -> None:
     mutate("obsolete structural freeze restoration", lambda c: c["status"]["execution_readiness"].__setitem__("structural_admission_freeze", True))
     mutate("A3 premature reactivation", lambda c: c["status"]["quality_uplift_program"]["structural_completeness_tranche"]["second_tranche"].__setitem__("active_candidate_id", "perception-sensor-fusion-and-observation-trust"))
     mutate("historical atom denominator rewrite", lambda c: c["status"]["round_16_evidence_first_amendment"]["post_activation_atom_pack"].__setitem__("historical_3730_activation_atom_denominator_is_immutable", False))
+    mutate("R16-A terminal atom denominator deletion", lambda c: c["status"]["round_16_evidence_first_amendment"]["post_activation_atom_pack"].__setitem__("atom_count", 29))
+    mutate("W3 current scope rollback", lambda c: c["status"]["round_16_evidence_first_amendment"]["template_inheritance_guard"].__setitem__("current_live_chapter_scope", 66))
     mutate("historical reader laundering", lambda c: c["status"]["round_16_evidence_first_amendment"]["current_reader_freshness_packet"].__setitem__("published_reader_2026_07_18_is_immutable_historical_release", False))
     mutate("future atom-at-birth deletion", lambda c: c["status"]["round_16_evidence_first_amendment"]["future_admission_contract"].__setitem__("claim_atom_pack_required_at_birth", False))
     mutate("future reader-at-birth deletion", lambda c: c["status"]["round_16_evidence_first_amendment"]["future_admission_contract"].__setitem__("reader_projection_required_at_birth", False))

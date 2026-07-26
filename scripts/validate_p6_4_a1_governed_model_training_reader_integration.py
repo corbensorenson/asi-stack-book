@@ -19,7 +19,7 @@ SOURCE_IDS = {
     "ext_pytorch_distributed_checkpoint_2026", "ext_mlperf_training_v6_2026",
 }
 LOCAL_SOURCE_IDS = {"corbens_trainer_project"}
-NEXT_PACKET = "P6.5-R16-A-six-chapter-atom-pack"
+NEXT_PACKET = "P7.1a-W3-admission-template-inheritance-guard"
 
 
 def load(path: Path) -> object:

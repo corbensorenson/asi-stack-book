@@ -7,7 +7,7 @@
   "status": "active",
   "current_priority": "P2",
   "execution_readiness": {
-    "state": "round18_breadth_terminal_evidence_first_recovery_restored",
+    "state": "r16a_terminal_w3_organization_packet_ready",
     "headline_priority": "P2",
     "headline_priority_state": "below_storage_floor_exact_attempt_or_failure_receipt_required",
     "work_in_progress_limit": 2,
@@ -15,13 +15,13 @@
     "protected_outcome_inspection_allowed": false,
     "structural_admission_freeze": false,
     "immediate_empirical_packet": "P2-R3-storage-materialization-and-replacement-qualification",
-    "immediate_book_packet": "P6.5-R16-A-six-chapter-atom-pack",
+    "immediate_book_packet": "P7.1a-W3-admission-template-inheritance-guard",
     "immediate_formal_packet": "P4-terminal-no-open-formal-packet",
     "structural_resume_requires": [
       "P2-pool-materialization-terminal-receipt",
       "P2-four-replacement-slots-qualified-and-twelve-task-denominator-restored",
       "P6.5-R16-six-chapter-claim-atom-addendum-terminal",
-      "P6.5-R16-current-sixty-six-chapter-reader-freshness-terminal",
+      "P6.5-R16-current-eighty-four-chapter-reader-freshness-terminal",
       "P7.1a-W3-admission-template-inheritance-guard-terminal",
       "P7.2-T1D-six-chapter-proof-readiness-depth-pack-terminal"
     ],
@@ -708,9 +708,18 @@
       "protected_outcomes_may_open_during_recovery": false
     },
     "post_activation_atom_pack": {
-      "state": "active_zero_of_six_terminal",
+      "state": "terminal_six_of_six_reviewed_append_only_pack",
       "historical_3730_activation_atom_denominator_is_immutable": true,
       "historical_15_atom_addendum_is_immutable": true,
+      "addendum_path": "evidence_quality/post_activation_six_chapter_claim_atom_addendum.json",
+      "schema_path": "schemas/post_activation_six_chapter_claim_atom_addendum.schema.json",
+      "builder_path": "scripts/build_post_activation_six_chapter_claim_atom_addendum.py",
+      "validator_path": "scripts/validate_post_activation_six_chapter_claim_atom_addendum.py",
+      "chapter_review_count": 6,
+      "atom_count": 30,
+      "identity_graph_canonical_atom_count": 4112,
+      "appendix_c_projection_complete": true,
+      "mutation_rejection_count": 14,
       "chapter_ids": [
         "white-box-evidence-interpretability-and-activation-governance",
         "governed-world-models-and-reality-grounding",
@@ -748,11 +757,11 @@
       ]
     },
     "template_inheritance_guard": {
-      "state": "queued_after_atom_pack",
+      "state": "active_current_84_chapter_rebaseline_required",
       "provisional_current_61_chapter_repeated_12_gram_count": 738,
       "provisional_current_61_chapter_maximum_spread": 55,
       "historical_w1_and_w2_receipts_are_immutable": true,
-      "current_live_chapter_scope": 66,
+      "current_live_chapter_scope": 84,
       "requires_reproducible_current_baseline": true,
       "rejects_high_spread_shared_prose_in_new_or_revised_chapters": true,
       "shared_method_prose_owner": "chapters/living-book-methodology.qmd"

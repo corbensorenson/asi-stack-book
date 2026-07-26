@@ -1,0 +1,276 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ASI Stack R16-A six-chapter claim-atom addendum",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "pack_id",
+    "snapshot_date",
+    "authority",
+    "activation_registry_boundary",
+    "historical_activation_atom_denominator",
+    "historical_single_chapter_addendum_atom_count",
+    "historical_denominators_rewritten",
+    "chapter_count",
+    "atom_count",
+    "atoms_per_chapter",
+    "support_state_effect",
+    "release_effect",
+    "semantic_review_state",
+    "chapter_reviews",
+    "atoms",
+    "summary",
+    "non_claims"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "asi_stack.post_activation_six_chapter_claim_atom_addendum.v1"
+    },
+    "pack_id": {
+      "const": "P6.5-R16-A-six-chapter-atom-pack-2026-07-26"
+    },
+    "snapshot_date": {
+      "const": "2026-07-26"
+    },
+    "authority": {
+      "const": "Corben Sorenson"
+    },
+    "activation_registry_boundary": {
+      "type": "string",
+      "minLength": 120
+    },
+    "historical_activation_atom_denominator": {
+      "const": 3730
+    },
+    "historical_single_chapter_addendum_atom_count": {
+      "const": 15
+    },
+    "historical_denominators_rewritten": {
+      "const": false
+    },
+    "chapter_count": {
+      "const": 6
+    },
+    "atom_count": {
+      "const": 30
+    },
+    "atoms_per_chapter": {
+      "const": 5
+    },
+    "support_state_effect": {
+      "const": "none"
+    },
+    "release_effect": {
+      "const": "none"
+    },
+    "semantic_review_state": {
+      "const": "completed"
+    },
+    "chapter_reviews": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "$ref": "#/$defs/chapterReview"
+      }
+    },
+    "atoms": {
+      "type": "array",
+      "minItems": 30,
+      "maxItems": 30,
+      "items": {
+        "$ref": "#/$defs/atom"
+      }
+    },
+    "summary": {
+      "const": {
+        "reviewed_chapter_count": 6,
+        "reviewed_atom_count": 30,
+        "core_atom_count": 6,
+        "boundary_atom_count": 6,
+        "mechanism_atom_count": 6,
+        "failure_boundary_atom_count": 6,
+        "argument_exit_atom_count": 6,
+        "promoted_atom_count": 0,
+        "pending_review_count": 0
+      }
+    },
+    "non_claims": {
+      "type": "array",
+      "minItems": 4,
+      "items": {
+        "type": "string",
+        "minLength": 40
+      }
+    }
+  },
+  "$defs": {
+    "chapterReview": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "receipt_id",
+        "chapter_id",
+        "chapter_path",
+        "chapter_sha256",
+        "claim_label",
+        "support_state",
+        "atom_ids",
+        "reviewed_surfaces",
+        "decision"
+      ],
+      "properties": {
+        "receipt_id": {
+          "type": "string",
+          "pattern": "^r16-a-.+-2026-07-26$"
+        },
+        "chapter_id": {
+          "type": "string",
+          "minLength": 10
+        },
+        "chapter_path": {
+          "type": "string",
+          "pattern": "^chapters/.+\\.qmd$"
+        },
+        "chapter_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "claim_label": {
+          "const": "Design rationale"
+        },
+        "support_state": {
+          "const": "argument"
+        },
+        "atom_ids": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 15
+          }
+        },
+        "reviewed_surfaces": {
+          "type": "array",
+          "minItems": 10,
+          "maxItems": 10,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 5
+          }
+        },
+        "decision": {
+          "const": "retain_at_argument_no_promotion"
+        }
+      }
+    },
+    "atom": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "chapter_id",
+        "chapter_title",
+        "owner",
+        "role",
+        "ordinal",
+        "claim",
+        "claim_label",
+        "support_state",
+        "scope",
+        "falsifier",
+        "acceptance_criterion",
+        "promotion_ceiling",
+        "evidence_plan_route",
+        "chapter_anchor",
+        "review_state",
+        "support_state_effect",
+        "non_claims"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 15
+        },
+        "chapter_id": {
+          "type": "string",
+          "minLength": 10
+        },
+        "chapter_title": {
+          "type": "string",
+          "minLength": 10
+        },
+        "owner": {
+          "type": "string",
+          "minLength": 10
+        },
+        "role": {
+          "enum": [
+            "core",
+            "boundary",
+            "mechanism",
+            "failure_boundary",
+            "argument_exit"
+          ]
+        },
+        "ordinal": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5
+        },
+        "claim": {
+          "type": "string",
+          "minLength": 60
+        },
+        "claim_label": {
+          "const": "Design rationale"
+        },
+        "support_state": {
+          "const": "argument"
+        },
+        "scope": {
+          "type": "string",
+          "minLength": 60
+        },
+        "falsifier": {
+          "type": "string",
+          "minLength": 80
+        },
+        "acceptance_criterion": {
+          "type": "string",
+          "minLength": 80
+        },
+        "promotion_ceiling": {
+          "const": "argument_until_claim_specific_campaign_and_accepted_evidence_transition"
+        },
+        "evidence_plan_route": {
+          "type": "string",
+          "pattern": "^docs/per_chapter_evidence_plan\\.md#.+$"
+        },
+        "chapter_anchor": {
+          "type": "string",
+          "minLength": 8
+        },
+        "review_state": {
+          "const": "reviewed"
+        },
+        "support_state_effect": {
+          "const": "none"
+        },
+        "non_claims": {
+          "type": "array",
+          "minItems": 2,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 30
+          }
+        }
+      }
+    }
+  }
+}

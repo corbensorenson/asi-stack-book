@@ -17,6 +17,7 @@ ARTIFACTS = [
     "scripts/register_claim_identity_graph.py",
     "evidence_quality/claim_atom_registry.json",
     "evidence_quality/replaceable_cognitive_substrates_claim_atom_addendum.json",
+    "evidence_quality/post_activation_six_chapter_claim_atom_addendum.json",
 ]
 
 
@@ -32,7 +33,7 @@ def main() -> None:
         "args": [],
         "execution_tier": "pr",
         "validation_class": "proof_or_evidence_gate",
-        "input_contract": "All 117 transition files; the exact 115 review-accepted denominator; 3,730 activation atoms; the 15-atom post-activation addendum; and a manually adjudicated exhaustive parent table for every non-direct campaign claim.",
+        "input_contract": "All 117 transition files; the exact 115 review-accepted denominator; the current 4,067-atom registry; the historical 15-atom addendum; the separately reviewed 30-atom R16-A addendum; and a manually adjudicated exhaustive parent table for every non-direct campaign claim.",
         "input_artifacts": ARTIFACTS,
         "output_contract": "Resolve each accepted transition through exactly one direct atom, bounded subclaim, alias, or proxy relation while preserving transition digests, scope, artifacts, non-claims, canonical owner/proposition, and zero indirect parent support movement.",
         "output_assertions": [
@@ -40,6 +41,7 @@ def main() -> None:
             "25 direct atom identities",
             "61 bounded subclaims",
             "29 proxy relations",
+            "4,112 canonical atoms across three separately versioned sources",
             "zero unresolved identities",
             "zero indirect parent support movement",
             "twelve mutations reject"

@@ -11,7 +11,7 @@ AUDIT = ROOT / "evidence_quality/p6_4_a2_privacy_information_flow_reader_integra
 SOURCE_IDS = {"ext_nist_privacy_framework_2020", "ext_eu_gdpr_2016", "ext_w3c_dpv_2024", "ext_abadi_dpsgd_2016", "ext_algospec_purpose_limitation_2024", "ext_carlini_training_data_extraction_2021", "ext_choquette_choo_label_only_mia_2021", "ext_nist_differential_privacy_2025", "ext_mahloujifar_fdp_audit_2025"}
 LOCAL_SOURCE_IDS = {"theseus_synthetic_data_curation"}
 NEXT_ID = "perception-sensor-fusion-and-observation-trust"
-NEXT_PACKET = "P6.5-R16-A-six-chapter-atom-pack"
+NEXT_PACKET = "P7.1a-W3-admission-template-inheritance-guard"
 
 def load(path: Path): return json.loads(path.read_text(encoding="utf-8"))
 def sha(path: Path): return hashlib.sha256(path.read_bytes()).hexdigest()

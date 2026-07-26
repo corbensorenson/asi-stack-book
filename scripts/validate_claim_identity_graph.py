@@ -17,7 +17,10 @@ ROOT = Path(__file__).resolve().parents[1]
 GRAPH = ROOT / "evidence_quality/claim_identity_graph.json"
 SCHEMA = ROOT / "schemas/claim_identity_graph.schema.json"
 REGISTRY = ROOT / "evidence_quality/claim_atom_registry.json"
-ADDENDUM = ROOT / "evidence_quality/replaceable_cognitive_substrates_claim_atom_addendum.json"
+ADDENDA = [
+    ROOT / "evidence_quality/replaceable_cognitive_substrates_claim_atom_addendum.json",
+    ROOT / "evidence_quality/post_activation_six_chapter_claim_atom_addendum.json",
+]
 
 
 def load(path: Path) -> dict:
@@ -35,11 +38,14 @@ def atoms() -> dict[str, tuple[str, str, str]]:
         rows[row["atom_id"]] = (
             row["chapter_id"], row["proposition"], REGISTRY.relative_to(ROOT).as_posix()
         )
-    addendum = load(ADDENDUM)
-    for row in addendum["atoms"]:
-        rows[row["id"]] = (
-            addendum["chapter_id"], row["claim"], ADDENDUM.relative_to(ROOT).as_posix()
-        )
+    for addendum_path in ADDENDA:
+        addendum = load(addendum_path)
+        for row in addendum["atoms"]:
+            rows[row["id"]] = (
+                row.get("chapter_id", addendum.get("chapter_id")),
+                row["claim"],
+                addendum_path.relative_to(ROOT).as_posix(),
+            )
     return rows
 
 

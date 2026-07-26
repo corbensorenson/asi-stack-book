@@ -1,0 +1,583 @@
+#!/usr/bin/env python3
+"""Build the reviewed R16-A claim-organization packet for six later chapters."""
+
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parents[1]
+OUT = ROOT / "evidence_quality/post_activation_six_chapter_claim_atom_addendum.json"
+EVIDENCE_PLAN = "docs/per_chapter_evidence_plan.md"
+SNAPSHOT_DATE = "2026-07-26"
+PROMOTION_CEILING = "argument_until_claim_specific_campaign_and_accepted_evidence_transition"
+
+
+CHAPTERS = [
+    {
+        "chapter_id": "white-box-evidence-interpretability-and-activation-governance",
+        "chapter_path": "chapters/white-box-evidence-interpretability-and-activation-governance.qmd",
+        "evidence_plan_route": f"{EVIDENCE_PLAN}#white-box-evidence-interpretability-and-activation-governance",
+        "atoms": [
+            {
+                "suffix": "core",
+                "role": "core",
+                "claim": None,
+                "scope": "Model-, checkpoint-, substrate-, tokenizer-, population-, capture-, method-, intervention-, comparator-, evaluator-, authority-, and time-specific internal-state evidence.",
+                "falsifier": "A reviewed activation or interpretability artifact can soundly establish the chapter's broad semantic, causal, safety, or release conclusions without the typed lineage, stability, causal, coverage, residual, and non-authority fields the claim requires.",
+                "acceptance_criterion": "A chapter-specific campaign must preserve the complete Internal Evidence Packet, pass independent-method, held-out behavioral, causal-intervention, stability, coverage, and side-effect gates, and improve a decision-relevant outcome over strong behavioral-only controls within the declared envelope.",
+                "chapter_anchor": "## Core Claim",
+                "non_claims": [
+                    "Internal access does not establish semantic truth or causal completeness.",
+                    "A successful intervention does not authorize deployment or promote the chapter core claim.",
+                ],
+            },
+            {
+                "suffix": "method-relative-evidence",
+                "role": "boundary",
+                "claim": "Extracted features, circuits, probes, labels, and attribution graphs remain method-relative hypotheses; stable identifiers and coherent explanations do not make them unique natural objects or the model's own concepts.",
+                "scope": "Probes, sparse dictionaries, circuit and attribution methods, explanation labels, replacements, thresholds, seeds, checkpoints, and neighboring model transformations.",
+                "falsifier": "A method-independent canonical feature or mechanism identity can be recovered and preserved across materially different extraction methods and model transformations without carrying the extraction assumptions or uncertainty.",
+                "acceptance_criterion": "At least two materially different methods, hard counterexamples, random-feature and behavior-only controls, and cross-checkpoint tests preserve or explicitly reject the same bounded interpretation with disagreement and reconstruction residuals retained.",
+                "chapter_anchor": "### 2. Preserve extraction assumptions",
+                "non_claims": [
+                    "Agreement between methods is not whole-model understanding.",
+                    "A semantic label is not automatically a causal mechanism.",
+                ],
+            },
+            {
+                "suffix": "predictive-causal-challenge",
+                "role": "mechanism",
+                "claim": "White-box hypotheses should face separate predictive, necessity, sufficiency, specificity, dose-response, and mediation challenges before becoming bounded causal evidence or an activation-policy candidate.",
+                "scope": "One frozen behavior family, exact model identity, held-out prompts, causal interventions, sham controls, and declared neighboring capabilities.",
+                "falsifier": "The proposed distinctions do not change admissibility or policy decisions, or a single correlational method predicts all independently observed causal and collateral outcomes as well as the joined challenge.",
+                "acceptance_criterion": "Held-out prediction plus at least two intervention semantics distinguish correlation from bounded causal contribution, preserve matched sham controls, quantify collateral effects, and route contradictory or incomplete results without authority widening.",
+                "chapter_anchor": "### 4. Demand predictive and causal challenge",
+                "non_claims": [
+                    "Necessity is not sufficiency, and either alone is not completeness.",
+                    "Causal evidence within one intervention envelope does not establish transfer.",
+                ],
+            },
+            {
+                "suffix": "policy-is-model-change",
+                "role": "failure_boundary",
+                "claim": "An activation monitor or steering rule is a new governed model component whose false positives, false negatives, collateral effects, costs, fallback, rollback, expiry, and adversarial gaming must be qualified separately from the interpretation that motivated it.",
+                "scope": "Every monitor, steering vector, activation edit, trigger policy, protected-capability set, fallback, and retirement rule proposed for operational use.",
+                "falsifier": "Interpretation evidence alone reliably predicts all operational monitor or steering outcomes, so separate policy qualification never changes a release, rollback, or retirement disposition.",
+                "acceptance_criterion": "A frozen policy candidate survives held-out efficacy, side-effect, gaming, checkpoint-drift, false-positive, false-negative, latency, rollback, and behavioral-fallback tests under independent release authority.",
+                "chapter_anchor": "### 6. Govern activation policies as model changes",
+                "non_claims": [
+                    "A monitor that works in a study is not thereby release-ready.",
+                    "White-box evidence may narrow or block authority but cannot mint it.",
+                ],
+            },
+            {
+                "suffix": "argument-exit",
+                "role": "argument_exit",
+                "claim": "White-box governance earns a retained role only where it adds reproducible, decision-relevant information or selective control beyond a tuned behavioral safety stack without unacceptable collateral effects or total lifecycle cost.",
+                "scope": "A tractable open model, one frozen behavior family, multiple checkpoints, two independent method families, behavioral and random-feature controls, and an independently implemented evaluator.",
+                "falsifier": "A strong behavior-only baseline matches detection, localization, intervention selectivity, calibration, safety, latency, and cost, or apparent white-box gains vanish under method, checkpoint, side-effect, and positive-control checks.",
+                "acceptance_criterion": "Preregistered held-out and transfer campaigns reproduce a bounded joint-frontier improvement, recover positive controls, preserve material method disagreement, and keep all broader safety, release, and transfer conclusions outside the accepted inference.",
+                "chapter_anchor": "## Competent argument-exit campaign",
+                "non_claims": [
+                    "Failure to beat the baseline does not refute all interpretability research.",
+                    "A bounded improvement does not establish general model understanding or safety.",
+                ],
+            },
+        ],
+    },
+    {
+        "chapter_id": "governed-world-models-and-reality-grounding",
+        "chapter_path": "chapters/governed-world-models-and-reality-grounding.qmd",
+        "evidence_plan_route": f"{EVIDENCE_PLAN}#governed-world-models-and-reality-grounding",
+        "atoms": [
+            {
+                "suffix": "core",
+                "role": "core",
+                "claim": None,
+                "scope": "Versioned predictive state used for planning or control under a declared observation basis, intervention, horizon, uncertainty, provenance, calibration, authority, and reconciliation lifecycle.",
+                "falsifier": "Consequential model-based planning remains sound without separating imagined branches from observations, binding prediction identity and horizon, calibrating decision-relative uncertainty, or reconciling forecasts against independently observed outcomes.",
+                "acceptance_criterion": "A natural held-out campaign shows that the governed prediction service improves task outcome or bounded risk over strong reactive, model-free, and single-model baselines while preserving observation/imagination separation, calibration, disagreement, authority, and reality residuals.",
+                "chapter_anchor": "## Core Claim",
+                "non_claims": [
+                    "A learned predictive representation is not a fact about actuality.",
+                    "Prediction quality does not itself grant effect authority.",
+                ],
+            },
+            {
+                "suffix": "observation-imagination-separation",
+                "role": "boundary",
+                "claim": "Observed state, inferred belief, and imagined branch state require distinct identities and provenance; an imagined rollout cannot write into the actual-world ledger or retroactively become an observation.",
+                "scope": "Observation admission, state estimation, rollout requests, branch-local relations, forecast records, action receipts, and post-action reconciliation.",
+                "falsifier": "A system that collapses observation, belief, and imagination preserves equally faithful provenance, error attribution, counterfactual comparison, and rollback across interventions and model updates.",
+                "acceptance_criterion": "Executable traces and rejecting mutations prevent forecast-to-observation laundering, bind every branch to its observation basis and model version, and preserve pre-action forecasts after outcomes are known.",
+                "chapter_anchor": "## Observation is not intervention",
+                "non_claims": [
+                    "A typed branch does not make its contents causally correct.",
+                    "An observation record does not guarantee sensor truth or completeness.",
+                ],
+            },
+            {
+                "suffix": "governed-rollout-contract",
+                "role": "mechanism",
+                "claim": "A consequential rollout should name its belief basis, intervention semantics, horizon, resolution, consequence class, budget, purpose, forbidden uses, uncertainty, validity domain, omissions, disagreement, and maximum influence before a separate gate admits it into planning.",
+                "scope": "Model-based planning requests and responses for bounded natural tasks with version-pinned predictive models and independent runtime authority.",
+                "falsifier": "Global validation scores or untyped rollouts yield equally calibrated and safe planning decisions across horizon, state-region, action-class, freshness, disagreement, and consequence shifts.",
+                "acceptance_criterion": "The admission gate shortens, observes, switches, defers, safely acts, or blocks in response to prospectively frozen calibration, support, freshness, diversity, and disagreement failures, and every disposition is independently reproducible.",
+                "chapter_anchor": "### Governed rollout contract",
+                "non_claims": [
+                    "A well-formed rollout is not a valid counterfactual.",
+                    "Admission into planning is not authorization to execute an effect.",
+                ],
+            },
+            {
+                "suffix": "reality-residual-noninheriting",
+                "role": "failure_boundary",
+                "claim": "Forecast error, model disagreement, stale observations, unknown dynamics, and out-of-support consequences remain separate reality residuals; model updates cannot erase them or inherit predecessor support without reviewed compatibility.",
+                "scope": "Every forecast/observation reconciliation and every checkpoint, architecture, data, quantization, or policy change affecting the world-model service.",
+                "falsifier": "Collapsing disagreement and residuals into one score, or automatically inheriting predecessor evidence, causes no missed failures, miscalibration, history rewrite, or unsafe plan admission under controlled shift.",
+                "acceptance_criterion": "Held-out shifts and checkpoint transformations trigger the declared expiries, preserve historical forecasts, expose disagreement and residuals separately, and block unsupported inheritance before consequential use.",
+                "chapter_anchor": "### Error ledgers that must not collapse",
+                "non_claims": [
+                    "Residual preservation does not solve model misspecification.",
+                    "Model diversity does not guarantee independent errors.",
+                ],
+            },
+            {
+                "suffix": "argument-exit",
+                "role": "argument_exit",
+                "claim": "The governed world-model layer is justified only if it produces calibrated decision value under partial observability and intervention while reducing consequential model error or unsafe action relative to competent simpler baselines at acceptable latency and governance cost.",
+                "scope": "Natural partially observed tasks, strong reactive and model-free agents, one-model and ensemble planners, held-out interventions, distribution shift, and at least one independently reproduced transfer setting.",
+                "falsifier": "Strong simpler baselines match the joint quality, calibration, unsafe-action, latency, and cost frontier, or the governance layer cannot detect injected stale-state, horizon, intervention, or disagreement failures.",
+                "acceptance_criterion": "Preregistered held-out results show a reproducible bounded frontier gain, calibrated uncertainty by decision and horizon, effective abstention/fallback under shift, and reality-grounded correction without support or authority laundering.",
+                "chapter_anchor": "### Competent empirical argument-exit campaign",
+                "non_claims": [
+                    "Task breadth does not establish a general causal world model.",
+                    "A bounded control result does not establish open-world safety or ASI.",
+                ],
+            },
+        ],
+    },
+    {
+        "chapter_id": "human-factors-and-meaningful-control-in-oversight",
+        "chapter_path": "chapters/human-factors-and-meaningful-control-in-oversight.qmd",
+        "evidence_plan_route": f"{EVIDENCE_PLAN}#human-factors-and-meaningful-control-in-oversight",
+        "atoms": [
+            {
+                "suffix": "core",
+                "role": "core",
+                "claim": None,
+                "scope": "Resource-bounded human oversight episodes with an identified controller, exact task and consequence class, evidence view, decision window, authority, intervention path, safe fallback, and responsibility boundary.",
+                "falsifier": "Nominal approval reliably implies informed review and effective intervention even when knowledge, authority, time, observability, workload, alternatives, or system-response evidence is absent.",
+                "acceptance_criterion": "Representative, preregistered human-subject trials show that the declared control envelope detects missing control and improves appropriate detection/intervention over strong static and ordinary interface baselines without unacceptable workload, privacy, inequity, false intervention, or throughput cost.",
+                "chapter_anchor": "## Core Claim",
+                "non_claims": [
+                    "Telemetry cannot automatically certify meaningful human control.",
+                    "A human click does not transfer system responsibility or grant missing authority.",
+                ],
+            },
+            {
+                "suffix": "necessary-not-sufficient-envelope",
+                "role": "boundary",
+                "claim": "Authority, observability, qualification, time, workload, intervention, reachable recovery, and conflict disposition are necessary fail-closed conditions for claimed control, but their conjunction is not sufficient to settle meaning, legitimacy, fairness, or responsibility.",
+                "scope": "Task-level oversight admission and routing using adjudicated operational inputs rather than personal-trait scores.",
+                "falsifier": "Removing any listed condition never changes actual intervention availability or outcome, or passing the finite conjunction validly establishes the broader normative judgment across affected contexts.",
+                "acceptance_criterion": "Positive controls and held-out episodes show each necessary condition can independently expose a real control defeater and trigger a safer route, while the output language and downstream consumers never emit a universal meaningful-control certificate.",
+                "chapter_anchor": "### The measured control envelope",
+                "non_claims": [
+                    "The envelope is not a score of a person.",
+                    "Passing necessary conditions does not establish legitimate responsibility allocation.",
+                ],
+            },
+            {
+                "suffix": "oversight-contract-and-capacity",
+                "role": "mechanism",
+                "claim": "A versioned oversight contract joined to an episode-specific capacity record should route work among proceed, clarify, add capacity, reduce autonomy, safe hold, abstain, appeal, and expiry rather than directly from system recommendation to approval.",
+                "scope": "One bounded consequential workflow with explicit roles, evidence views, task-relevant comprehension, alternatives, timing, channel health, safe state, receipts, appeal, and renewal.",
+                "falsifier": "The joined contract and capacity state does not improve routing fidelity or intervention opportunity beyond a direct approval interface and adds only delay or surveillance burden.",
+                "acceptance_criterion": "Controlled trials and route mutations show that stale evidence, overload, missing authority, incompatible representation, late intervention, failed channels, conflicts, and unsafe handoffs produce the declared non-proceed dispositions and recover only after the missing condition is repaired.",
+                "chapter_anchor": "## Mechanism",
+                "non_claims": [
+                    "A comprehension probe is not a general competence or consent test.",
+                    "A receipt records opportunity and response without making the reviewer solely responsible.",
+                ],
+            },
+            {
+                "suffix": "anti-ceremonial-and-anti-surveillance",
+                "role": "failure_boundary",
+                "claim": "Oversight must resist both ceremonial control and surveillance-based blame: it should measure task-level control conditions, preserve independent evidence and system-response receipts, and avoid default biometric, affective, keystroke, or generalized worker scoring.",
+                "scope": "Interfaces, allocation policies, performance measures, reviewer data, intervention records, organizational incentives, appeals, and post-incident responsibility.",
+                "falsifier": "Personal-state surveillance is necessary and proportionate for effective control across the target domain, or task-level and privacy-preserving alternatives cannot expose rubber-stamping, overload, mode confusion, persuasion, or ineffective stops.",
+                "acceptance_criterion": "A privacy-preserving static baseline and the measured-envelope arm are compared on defects found, appropriate interventions, false interventions, reliance calibration, throughput, workload, unequal burden, privacy intrusion, appeal, and recovery, with anti-blame and data-purpose rules enforced.",
+                "chapter_anchor": "## Strongest objection and simpler baseline",
+                "non_claims": [
+                    "Fast response or low override counts do not establish good oversight.",
+                    "Fatigue, confusion, and skill decay are system conditions, not moral defects.",
+                ],
+            },
+            {
+                "suffix": "argument-exit",
+                "role": "argument_exit",
+                "claim": "The measured control envelope should be retained only if it improves appropriate human detection and effective intervention over credible static, interface, and allocation baselines while preserving useful throughput and reducing rather than relocating governance and privacy costs.",
+                "scope": "Representative task populations, controller roles, consequence classes, system modes, workload conditions, and declared demographic/accessibility analyses under ethical human-subjects governance.",
+                "falsifier": "The static privacy-preserving baseline matches outcomes, the adaptive envelope mainly predicts clicks or agreement, benefits vanish under workload and transfer, or burdens and harms concentrate on less powerful reviewers.",
+                "acceptance_criterion": "Independent evaluation across held-out tasks and at least one transfer setting reproduces gains in defect detection, comprehension, timely intervention, and recovery without worse false intervention, workload, privacy, inequity, throughput, or responsibility laundering.",
+                "chapter_anchor": "## Empirical argument-exit lane",
+                "non_claims": [
+                    "A successful bounded trial does not establish universal meaningful control.",
+                    "Human participation does not make the surrounding AI system safe or legitimate.",
+                ],
+            },
+        ],
+    },
+    {
+        "chapter_id": "governed-operations-incident-command-and-graceful-degradation",
+        "chapter_path": "chapters/governed-operations-incident-command-and-graceful-degradation.qmd",
+        "evidence_plan_route": f"{EVIDENCE_PLAN}#governed-operations-incident-command-and-graceful-degradation",
+        "atoms": [
+            {
+                "suffix": "core",
+                "role": "core",
+                "claim": None,
+                "scope": "Exact deployed AI service envelopes, dependency graphs, mutable state, authority endpoints, incidents, degraded modes, internal and external effects, recovery candidates, and residual custody.",
+                "falsifier": "A competent operational system can reliably detect, contain, degrade, recover, and learn from AI incidents without binding command, authority, state, effects, dependency identities, recovery evidence, and unresolved residuals into a closed lifecycle.",
+                "acceptance_criterion": "Fault-injected service campaigns and incident game days show the lifecycle improves bounded harm, containment, recovery fidelity, recurrence, and useful service over stop-only, conventional SRE, and manual baselines without retained widened authority or hidden residuals.",
+                "chapter_anchor": "## Core Claim",
+                "non_claims": [
+                    "Lifecycle closure does not mean every incident is detected or every harm reversible.",
+                    "A complete record does not establish incident readiness or safe recovery.",
+                ],
+            },
+            {
+                "suffix": "effect-complete-recovery-boundary",
+                "role": "boundary",
+                "claim": "Recovery requires reconciliation of all declared internal state, replicas, descendants, credentials, and external effects; restoring code or model weights alone cannot establish rollback or normal-service eligibility.",
+                "scope": "Model, optimizer, scheduler, RNG, policy, prompt, evaluator, cache, memory, identity, data, queue, replica, descendant, credential, and external-effect state applicable to the deployed service.",
+                "falsifier": "Weight- or software-only restoration produces equivalent future behavior and effect closure across fault classes, with no missed recurrence, credential, cache, replica, descendant, or external consequence.",
+                "acceptance_criterion": "Fault injection and independent effect observation show that missing any declared applicable state class or effect disposition blocks recovery, while a fully reconciled candidate can restore service with fresh evidence and expired emergency authority.",
+                "chapter_anchor": "### Recovery and effect-complete reconciliation",
+                "non_claims": [
+                    "Declared state completeness does not prove the inventory is actually complete.",
+                    "Compensation does not make an irreversible external effect undone.",
+                ],
+            },
+            {
+                "suffix": "operational-continuity-contract",
+                "role": "mechanism",
+                "claim": "A versioned Operational Continuity Contract should make command leases, observability coverage, independent containment, degraded-mode authority, fallback qualification, effect reconciliation, recovery evidence, disclosure, decommissioning, and bounded-liveness deadlines route-changing operational inputs.",
+                "scope": "One release identity and its critical functions, impact tolerances, telemetry, incident classes, authority roles, control paths, service modes, fallback, recovery, disclosure, and retirement duties.",
+                "falsifier": "The linked artifacts never change a reachable operating state relative to ordinary documentation and therefore add governance burden without improving containment, degradation, recovery, or residual custody.",
+                "acceptance_criterion": "Executable incident traces and game days show missing, stale, conflicting, dependent, widened, incomplete, or expired fields deterministically force narrower modes, investigation, safe hold, or decommissioning until a separately authorized repair is observed.",
+                "chapter_anchor": "### The operational contract and its artifacts",
+                "non_claims": [
+                    "Artifact production does not establish detector accuracy or fallback readiness.",
+                    "Safe hold and degraded service require owned deadlines and cannot become indefinite limbo.",
+                ],
+            },
+            {
+                "suffix": "authority-monotone-degradation",
+                "role": "failure_boundary",
+                "claim": "Containment and degraded operation must not depend on the suspected component, silently widen capability or data authority, inherit correlated faults through fallback, preserve emergency power, or hide reduced service and residual risk.",
+                "scope": "Out-of-band controls, fallback dependencies, degraded model/tool/data/population/duration envelopes, operator authority, user communication, and exit criteria.",
+                "falsifier": "Cooperative containment, authority-widening degradation, or correlated fallback is as reliable and no more harmful than independent, monotone, qualified routes across the declared fault model.",
+                "acceptance_criterion": "Adversarial fault campaigns demonstrate independent containment, authority monotonicity, qualified fallback diversity, explicit mode disclosure, emergency-lease expiry, and rejection of unsafe substitutions before effect.",
+                "chapter_anchor": "### Degraded modes, failover, and manual fallback",
+                "non_claims": [
+                    "A different service name does not establish fallback independence.",
+                    "Graceful degradation does not mean preserving maximum automated throughput.",
+                ],
+            },
+            {
+                "suffix": "argument-exit",
+                "role": "argument_exit",
+                "claim": "The AI-specific operations layer earns its additional complexity only where it detects or controls identity, learning-state, authority, evaluator, cache, descendant, or external-effect failures that a tuned conventional service misses while improving the joint harm, recovery, useful-service, latency, workload, and cost frontier.",
+                "scope": "Naturalistic service incidents, preregistered fault classes, stop-only, conventional SRE, full-shutdown/manual, and proposed governed-operation arms with independent outcome and effect observation.",
+                "falsifier": "A tuned generic SRE or shutdown baseline matches or dominates detection, containment, residual harm, recovery fidelity, recurrence, useful service, and total cost, or the fault injector and observer cannot establish competence.",
+                "acceptance_criterion": "Multiple incident game days and an independent reproduction show bounded joint-frontier gains, exact attempted-incident custody, route-causal ablations, effect-complete reconciliation, and no retained widened authority, with invalid instruments classified as invalid rather than negative.",
+                "chapter_anchor": "## Empirical argument-exit lane",
+                "non_claims": [
+                    "A bounded incident result does not establish production readiness.",
+                    "Failure of an incompetent injector or observer is not evidence against the architecture.",
+                ],
+            },
+        ],
+    },
+    {
+        "chapter_id": "governed-model-training-distributed-optimization-and-scaling",
+        "chapter_path": "chapters/governed-model-training-distributed-optimization-and-scaling.qmd",
+        "evidence_plan_route": f"{EVIDENCE_PLAN}#governed-model-training-distributed-optimization-and-scaling",
+        "atoms": [
+            {
+                "suffix": "core",
+                "role": "core",
+                "claim": None,
+                "scope": "Prospectively frozen model-training runs and candidate families across architecture, data, objective, optimizer, schedule, numerical policy, topology, code, environment, attempts, state, selection, qualification, faults, and residuals.",
+                "falsifier": "Reliable model qualification, optimizer comparison, and fault recovery can be inferred from loss, completion, utilization, checkpoint load, or selected-candidate records without the complete run, attempt, state, selection, and qualification contract.",
+                "acceptance_criterion": "A natural training campaign preserves every attempt and full declared state, passes fault and resume checks, selects only on validation, opens independent qualification once, and supports only conclusions that survive matched strong baselines, seeds, costs, and transfer.",
+                "chapter_anchor": "## Core Claim",
+                "non_claims": [
+                    "A successful training run does not establish model quality or safety.",
+                    "A source-reported optimizer or scaling result does not establish local superiority.",
+                ],
+            },
+            {
+                "suffix": "full-state-transaction",
+                "role": "boundary",
+                "claim": "Training state includes parameters plus applicable gradients, optimizer, scheduler, scaler, RNGs, sampler, data cursor, topology, compiler plan, mutable architecture state, attempts, and commit metadata; checkpoint authority follows a staged transaction rather than file existence.",
+                "scope": "Single-process and distributed runs, sharded checkpoints, topology changes, fault recovery, resume equivalence classes, and candidate checkpoint families.",
+                "falsifier": "Weight-only or partially declared checkpoints reproduce uninterrupted trajectories and downstream qualification across the declared fault and topology changes with no silent drift or denominator loss.",
+                "acceptance_criterion": "Injected loss, corruption, cursor, RNG, scheduler, scaler, precision, and topology faults distinguish weight-only from full-state recovery, and staged commits reject incomplete or inconsistent candidates before resume authority.",
+                "chapter_anchor": "### Checkpoint authority is staged",
+                "non_claims": [
+                    "A complete declared checkpoint does not prove the declaration covers all causal state.",
+                    "Successful loading is not resume equivalence or candidate quality.",
+                ],
+            },
+            {
+                "suffix": "optimizer-policy-not-label",
+                "role": "mechanism",
+                "claim": "An optimizer is a coupled run policy spanning update rule, parameter grouping, hyperparameters, schedule, clipping, regularization, numerical precision, state layout, communication, topology, and stopping; family labels alone cannot support superiority claims.",
+                "scope": "AdamW and materially different first-order, factored, curvature-aware, matrix-preconditioned, orthogonalized, and method-specific alternatives under matched architecture and workload.",
+                "falsifier": "Optimizer rankings remain invariant to competent tuning, schedule, parameterization, precision, topology, memory, communication, and stopping choices, making policy-card details irrelevant.",
+                "acceptance_criterion": "A frozen Optimizer Policy Card, equal tuning opportunity, implementation positive controls, method-specific rescue rules, multiple seeds, failed-attempt custody, and joint quality/time/memory/communication/cost reporting support a bounded comparison.",
+                "chapter_anchor": "### The optimizer is a coupled run policy",
+                "non_claims": [
+                    "AdamW is a reference baseline, not a presumed universal winner.",
+                    "Muon, Shampoo, SOAP, Sophia, or any family name is not a magic performance certificate.",
+                ],
+            },
+            {
+                "suffix": "selection-and-recovery-noninheriting",
+                "role": "failure_boundary",
+                "claim": "Failed attempts, retries, candidate checkpoints, validation selection, qualification, resume state, and topology changes must remain visible; recovery success or post hoc selection cannot erase denominators or transfer support to a different run family.",
+                "scope": "All attempted runs, faults, operator interventions, checkpoint candidates, tuning stages, selection decisions, unopened qualification data, and reproduction or transfer runs.",
+                "falsifier": "Outcome-selected reporting and hidden retries yield unbiased optimizer, recovery, and scaling conclusions identical to complete-denominator, validation-only selection with independent qualification.",
+                "acceptance_criterion": "The campaign records every attempt and exclusion, prevents qualification leakage, preserves failed and repaired runs, binds selected candidates to exact state and ancestry, and rejects support inheritance across materially changed policies or topologies.",
+                "chapter_anchor": "### Checkpoint families have denominators",
+                "non_claims": [
+                    "A selected candidate does not represent the attempted-run distribution by itself.",
+                    "Fault tolerance in one equivalence class does not establish arbitrary topology transfer.",
+                ],
+            },
+            {
+                "suffix": "argument-exit",
+                "role": "argument_exit",
+                "claim": "Governed training earns an empirical conclusion only when competent natural workloads, strong tuned baselines, complete attempts, full-state faults, independent qualification, and matched lifecycle accounting distinguish faithful training, recovery, optimizer effects, and scaling behavior.",
+                "scope": "An open tractable model and natural workload, uninterrupted and distributed baselines, weight-only and full-state recovery, at least two optimizer-policy families, multiple seeds, fault timing variation, and independent reproduction.",
+                "falsifier": "The proposed transaction cannot distinguish known state corruption or weak baselines, or apparent optimizer/recovery gains vanish under competent tuning, full attempts, downstream qualification, and lifecycle cost.",
+                "acceptance_criterion": "A preregistered campaign passes all competence and positive-control gates, reports time-to-quality, equivalence distance, downstream variance, silent drift, resource and governance cost, and reproduces bounded conclusions without claiming safety, broad superiority, release, or SOTA.",
+                "chapter_anchor": "## Proof and executable evidence program",
+                "non_claims": [
+                    "A finite proof of record consistency does not establish faithful real training.",
+                    "A bounded optimizer or recovery result does not establish universal scaling laws.",
+                ],
+            },
+        ],
+    },
+    {
+        "chapter_id": "privacy-data-rights-and-information-flow-governance",
+        "chapter_path": "chapters/privacy-data-rights-and-information-flow-governance.qmd",
+        "evidence_plan_route": f"{EVIDENCE_PLAN}#privacy-data-rights-and-information-flow-governance",
+        "atoms": [
+            {
+                "suffix": "core",
+                "role": "core",
+                "claim": None,
+                "scope": "Bounded information uses across affected parties, data categories, purposes, authority and jurisdiction claims, processing, recipients, retention, derivatives, cross-user boundaries, privacy mechanisms, threats, rights, remedies, copies, influence, costs, and non-authorities.",
+                "falsifier": "Consent, access authorization, a privacy label, low observed attack rate, root-record deletion, changed behavior, a completed rights ticket, or a formal record proof is sufficient to establish the broader purpose, privacy, erasure, forgetting, influence, legal, support, or release conclusions.",
+                "acceptance_criterion": "A natural campaign preserves the complete information-lifecycle transaction, competently compares ordinary, access, minimization, formal privacy, purpose-bound, and unlearning/remediation arms, and reports utility, attacks, rights, copies, influence, costs, and legal nonclaims separately.",
+                "chapter_anchor": "## Core Claim",
+                "non_claims": [
+                    "This chapter does not determine applicable law or establish compliance.",
+                    "One privacy control or rights receipt cannot close every privacy outcome axis.",
+                ],
+            },
+            {
+                "suffix": "outcome-axis-separation",
+                "role": "boundary",
+                "claim": "Purpose compatibility, access, storage deletion, behavioral change, influence reduction, formal privacy, empirical attack resistance, rights completion, group remedy, and legal compliance are separate outcome axes with distinct mechanisms, evidence, residuals, and authorities.",
+                "scope": "Information-lifecycle records, privacy and attack evaluations, rights requests, model or retrieval derivatives, recipients, backups, descendants, jurisdictions, and affected groups.",
+                "falsifier": "A single outcome, such as root deletion or changed model behavior, reliably entails every other listed outcome across the declared systems, threats, copies, derivatives, and rights contexts.",
+                "acceptance_criterion": "Positive and negative controls independently vary the axes, downstream consumers receive only needed predicates, and no schema, proof, attack, or receipt can silently populate an unevaluated privacy, erasure, influence, rights, or legal field.",
+                "chapter_anchor": "## Invariants",
+                "non_claims": [
+                    "Storage erasure is not behavioral forgetting or influence removal.",
+                    "Formal privacy accounting is not legal compliance or universal attack resistance.",
+                ],
+            },
+            {
+                "suffix": "information-lifecycle-transaction",
+                "role": "mechanism",
+                "claim": "A staged information-lifecycle transaction should bind purpose and authority before materialization, justify minimization, map flows and derivatives, match guarantees to threats, evaluate implementations, execute rights, propagate obligations, and close each requested outcome narrowly.",
+                "scope": "One bounded application with real context or memory, audit, retrieval or training derivative, backup, recipient simulation, cross-user boundary, and access/correction/export/restriction/deletion paths.",
+                "falsifier": "An unjoined collection of privacy controls and rights tickets produces equivalent purpose enforcement, derivative closure, attack resistance, remedy execution, and residual custody without the transaction.",
+                "acceptance_criterion": "Executable routes and semantic mutations show that mismatched purpose, excess data, unknown flows, wrong adjacency/accounting, failed attacks, incomplete rights propagation, or unresolved copies and influence trigger denial, repair, quarantine, review, appeal, or owned residuals.",
+                "chapter_anchor": "### The information-lifecycle transaction",
+                "non_claims": [
+                    "Flow-graph syntax does not establish graph completeness.",
+                    "A transaction receipt does not create lawful authority or consent.",
+                ],
+            },
+            {
+                "suffix": "evaluator-competence-and-rights-closure",
+                "role": "failure_boundary",
+                "claim": "Weak attacks, broken accountants, impossible utility floors, incomplete flow graphs, and root-only deletion tests can manufacture false negatives; privacy and rights conclusions require positive controls, independent implementations, complete denominators, matched baselines, rescue steps, and derivative-aware closure.",
+                "scope": "Extraction, membership, linkage, reconstruction, cross-user, purpose-bypass, formal-accounting, empirical-audit, deletion, correction, export, restriction, recipient, backup, and influence evaluations.",
+                "falsifier": "Naive evaluators and root-only rights checks yield the same calibrated conclusions and residuals as competent attacks, independent accounting, positive controls, derivative traversal, and matched utility baselines.",
+                "acceptance_criterion": "Every attack and rights lane passes positive controls and independent checks, known derivatives and recipients receive disposition receipts, failed competence gates invalidate the campaign rather than count against the architecture, and N0-N5 ceilings govern negative inference.",
+                "chapter_anchor": "## Failure modes",
+                "non_claims": [
+                    "Failure to find leakage with a weak attack is not evidence of privacy.",
+                    "A completed root ticket does not establish descendant, backup, or influence closure.",
+                ],
+            },
+            {
+                "suffix": "argument-exit",
+                "role": "argument_exit",
+                "claim": "The privacy and data-rights layer earns bounded support only where competent mechanisms and evaluations improve purpose fidelity, minimization, privacy, rights completion, and residual custody at acceptable utility and lifecycle cost across declared threats and jurisdictions.",
+                "scope": "A natural text classification or generation workload with memory, realistic purpose labels, canaries, derivatives, recipients, rights requests, six matched mechanism arms, multiple seeds, and unopened final qualification.",
+                "falsifier": "Strong ordinary or access-control baselines match the joint utility, attack, purpose, rights, residual, latency, and cost frontier, or the campaign cannot demonstrate competent attacks, lineage, denominators, and rights propagation.",
+                "acceptance_criterion": "Independent reproduction reports utility, low-FPR attack advantage, formal and empirical privacy evidence, purpose violations, flow coverage, rights completeness and latency, residual copies and influence, and governance cost without promoting legal, total-erasure, release, or SOTA claims.",
+                "chapter_anchor": "## Prospective validation",
+                "non_claims": [
+                    "A bounded privacy result does not establish universal privacy or data rights.",
+                    "A failed mechanism-specific arm does not refute privacy governance as a whole.",
+                ],
+            },
+        ],
+    },
+]
+
+
+def load_manifest() -> dict:
+    return json.loads((ROOT / "book_structure.json").read_text(encoding="utf-8"))
+
+
+def manifest_chapters() -> dict[str, dict]:
+    return {
+        chapter["id"]: chapter
+        for part in load_manifest()["parts"]
+        for chapter in part["chapters"]
+    }
+
+
+def sha256(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def build() -> dict:
+    manifest = manifest_chapters()
+    reviews = []
+    atoms = []
+    for chapter_spec in CHAPTERS:
+        chapter_id = chapter_spec["chapter_id"]
+        chapter = manifest[chapter_id]
+        chapter_path = chapter_spec["chapter_path"]
+        atom_ids = []
+        for ordinal, spec in enumerate(chapter_spec["atoms"], start=1):
+            atom_id = f"{chapter_id}.{spec['suffix']}"
+            atom_ids.append(atom_id)
+            claim = chapter["core_claim"] if spec["role"] == "core" else spec["claim"]
+            atoms.append(
+                {
+                    "id": atom_id,
+                    "chapter_id": chapter_id,
+                    "chapter_title": chapter["title"],
+                    "owner": chapter_id,
+                    "role": spec["role"],
+                    "ordinal": ordinal,
+                    "claim": claim,
+                    "claim_label": chapter.get("claim_label", "Design rationale"),
+                    "support_state": "argument",
+                    "scope": spec["scope"],
+                    "falsifier": spec["falsifier"],
+                    "acceptance_criterion": spec["acceptance_criterion"],
+                    "promotion_ceiling": PROMOTION_CEILING,
+                    "evidence_plan_route": chapter_spec["evidence_plan_route"],
+                    "chapter_anchor": spec["chapter_anchor"],
+                    "review_state": "reviewed",
+                    "support_state_effect": "none",
+                    "non_claims": spec["non_claims"],
+                }
+            )
+        reviews.append(
+            {
+                "receipt_id": f"r16-a-{chapter_id}-2026-07-26",
+                "chapter_id": chapter_id,
+                "chapter_path": chapter_path,
+                "chapter_sha256": sha256(ROOT / chapter_path),
+                "claim_label": chapter.get("claim_label", "Design rationale"),
+                "support_state": "argument",
+                "atom_ids": atom_ids,
+                "reviewed_surfaces": [
+                    "core_claim",
+                    "ownership_boundary",
+                    "mechanism",
+                    "interfaces",
+                    "invariants",
+                    "failure_modes",
+                    "minimum_viable_implementation",
+                    "mature_research_target",
+                    "argument_exit_route",
+                    "source_crosswalk",
+                ],
+                "decision": "retain_at_argument_no_promotion",
+            }
+        )
+    return {
+        "schema_version": "asi_stack.post_activation_six_chapter_claim_atom_addendum.v1",
+        "pack_id": "P6.5-R16-A-six-chapter-atom-pack-2026-07-26",
+        "snapshot_date": SNAPSHOT_DATE,
+        "authority": "Corben Sorenson",
+        "activation_registry_boundary": "The historical 3,730-atom activation denominator and the historical 15-atom replaceable-substrates addendum remain immutable receipts. This separately versioned packet organizes six later chapters without rewriting either denominator.",
+        "historical_activation_atom_denominator": 3730,
+        "historical_single_chapter_addendum_atom_count": 15,
+        "historical_denominators_rewritten": False,
+        "chapter_count": len(CHAPTERS),
+        "atom_count": len(atoms),
+        "atoms_per_chapter": 5,
+        "support_state_effect": "none",
+        "release_effect": "none",
+        "semantic_review_state": "completed",
+        "chapter_reviews": reviews,
+        "atoms": atoms,
+        "summary": {
+            "reviewed_chapter_count": len(reviews),
+            "reviewed_atom_count": len(atoms),
+            "core_atom_count": sum(a["role"] == "core" for a in atoms),
+            "boundary_atom_count": sum(a["role"] == "boundary" for a in atoms),
+            "mechanism_atom_count": sum(a["role"] == "mechanism" for a in atoms),
+            "failure_boundary_atom_count": sum(a["role"] == "failure_boundary" for a in atoms),
+            "argument_exit_atom_count": sum(a["role"] == "argument_exit" for a in atoms),
+            "promoted_atom_count": 0,
+            "pending_review_count": 0,
+        },
+        "non_claims": [
+            "This addendum organizes propositions and owners; it does not provide new empirical, formal, executable, or external evidence.",
+            "Semantic review, a falsifier, an acceptance criterion, or an evidence-plan route does not establish proposition truth.",
+            "No atom in this packet promotes a chapter core claim, authorizes release, or establishes transfer, SOTA, AGI, or ASI.",
+            "The historical 3,730-atom activation denominator, the current 4,067-atom registry, and the historical 15-atom addendum are not rewritten by this packet.",
+        ],
+    }
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--check", action="store_true")
+    args = parser.parse_args()
+    payload = json.dumps(build(), indent=2, ensure_ascii=False) + "\n"
+    if args.check:
+        current = OUT.read_text(encoding="utf-8") if OUT.exists() else ""
+        if current != payload:
+            raise SystemExit(f"{OUT.relative_to(ROOT)} is stale; rebuild it")
+        print("R16-A six-chapter claim-atom addendum is current.")
+        return
+    OUT.write_text(payload, encoding="utf-8")
+    print(f"Wrote {OUT.relative_to(ROOT)} with 30 reviewed atoms across 6 chapters.")
+
+
+if __name__ == "__main__":
+    main()

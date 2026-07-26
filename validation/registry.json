@@ -2197,7 +2197,12 @@
     "chapters/evidence-states-and-claim-discipline.qmd",
     "lean/AsiStackProofs/EvidenceTransitionRefinement.lean",
     "lean/AsiStackProofs/EvidenceStates.lean",
-    "scripts/integrate_c6_evidence_transition_consolidation.py"
+    "scripts/integrate_c6_evidence_transition_consolidation.py",
+    "evidence_quality/post_activation_six_chapter_claim_atom_addendum.json",
+    "schemas/post_activation_six_chapter_claim_atom_addendum.schema.json",
+    "scripts/build_post_activation_six_chapter_claim_atom_addendum.py",
+    "scripts/validate_post_activation_six_chapter_claim_atom_addendum.py",
+    "scripts/register_post_activation_six_chapter_claim_atom_addendum.py"
   ],
   "units": [
     {
@@ -6749,8 +6754,8 @@
       "args": [],
       "execution_tier": "deep",
       "validation_class": "proof_or_evidence_gate",
-      "input_contract": "Re-executed governed Git slice, matched baseline metrics, derived invariant suite, claim dispositions, proof manifest/adequacy/artifact audits, volatile source records, inter-stack routing, terminology refresh, and readable D–F closure audit.",
-      "output_contract": "Reject drift in bounded empirical metrics, invariant mutations/residuals, core dispositions, proof target/adequacy traceability, volatile source routing, or D–F closure boundaries.",
+      "input_contract": "Re-executed governed Git slice, matched baseline metrics, derived invariant suite, claim dispositions, proof manifest/adequacy/artifact audits, volatile source records, inter-stack routing, terminology refresh, and readable D\u2013F closure audit.",
+      "output_contract": "Reject drift in bounded empirical metrics, invariant mutations/residuals, core dispositions, proof target/adequacy traceability, volatile source routing, or D\u2013F closure boundaries.",
       "claim_scope": "Local roadmap closure for Workstreams D, E, and F at their explicitly bounded empirical, formal, and source-governance scopes.",
       "negative_controls": "validator_owned",
       "prohibited_inference": "Local closure does not prove deployed safety, general cost-effectiveness, formal runtime enforcement, novelty, exhaustive literature coverage, or independent review.",
@@ -12287,7 +12292,7 @@
       "args": [],
       "execution_tier": "pr",
       "validation_class": "publication_gate",
-      "input_contract": "Completed claim-proof predecessor; exact no-release terminal record; active unfinished-work successor; the current 84-chapter manifest and exact 11/54/7/12 chapter-role partition; the adjudicated Pro full-book review and C0-C8 convergence amendment; exact concept-first exit receipt with eight packets, 26 prose/product anchors, and zero current roadmap-only remainder; canonical atoms and all accepted transitions with complete direct/indirect claim identity; N0-N5 negative-result rehabilitation and experiment competence; prospective P2 and ASI-THESEUS-FLAGSHIP-01 natural-evidence custody; current reader, proof, attestation, derivative, and public-truth surfaces.",
+      "input_contract": "Completed claim-proof predecessor; exact no-release terminal record; active unfinished-work successor; the current 84-chapter manifest and exact 11/54/7/12 chapter-role partition; the adjudicated Pro full-book review and C0-C8 convergence amendment; exact concept-first exit receipt with eight packets, 26 prose/product anchors, and zero current roadmap-only remainder; the terminal six-chapter/thirty-atom R16-A organization packet; canonical atoms and all accepted transitions with complete direct/indirect claim identity; N0-N5 negative-result rehabilitation and experiment competence; prospective P2 and ASI-THESEUS-FLAGSHIP-01 natural-evidence custody; current reader, proof, attestation, derivative, and public-truth surfaces.",
       "input_artifacts": [
         "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md",
         "docs/c1_c8_phase1_idea_placement_and_prose_audit_2026_07_25.md",
@@ -12308,6 +12313,10 @@
         "schemas/claim_identity_graph.schema.json",
         "docs/claim_identity_graph_reconciliation.md",
         "scripts/validate_claim_identity_graph.py",
+        "evidence_quality/post_activation_six_chapter_claim_atom_addendum.json",
+        "schemas/post_activation_six_chapter_claim_atom_addendum.schema.json",
+        "scripts/build_post_activation_six_chapter_claim_atom_addendum.py",
+        "scripts/validate_post_activation_six_chapter_claim_atom_addendum.py",
         "evidence_quality/negative_result_rehabilitation.json",
         "schemas/negative_result_rehabilitation.schema.json",
         "docs/negative_result_rehabilitation.md",
@@ -12363,7 +12372,9 @@
       "output_contract": "Reject multiple active roadmaps, stale public pointers, incomplete current chapter-role ownership, convergence packet drift, a missing or laundered concept-first exit receipt, roadmap-only idea deferral, absent exact prose/product anchors, external-human prepublication gates, invented transition identity, false-negative laundering, weakened broad-refutation gates, proof-baseline drift, false clean attestation, branch widening, conversational dependencies, and invented support/publication authority.",
       "output_assertions": [
         "P0 authority wait, P1/M1 complete, active P2/M2",
-        "115 accepted transitions with 25 direct and 90 indirect identities resolved and zero unmapped",
+        "R16-A terminal with six chapter reviews, thirty atoms, fourteen local mutations, Appendix C projection, and zero support movement",
+        "W3 active over the current 84-chapter corpus",
+        "115 accepted transitions with 25 direct and 90 indirect identities resolved against 4,112 canonical atoms and zero unmapped",
         "90 accepted negative/no-change transitions classified as 1 N0, 15 N1, 74 N2, and 0 N3-N5",
         "84 current chapters partitioned exactly as 11 thesis, 54 load-bearing reference, 7 implementation, and 12 speculative",
         "C0-C8 convergence program and 22-unit narrative target",
@@ -12387,7 +12398,7 @@
         "v2.3.0 latest public release",
         "X source current and historical platform draft stale",
         "no support or release effect",
-        "ninety-seven mutations reject"
+        "ninety-nine mutations reject"
       ],
       "claim_scope": "Roadmap continuity, experiment-competence governance, claim-identity truth, public-state maintenance, and owner-gated external actions only.",
       "negative_controls": "validator_owned_ninety_seven_competence_identity_rehabilitation_surface_p2_convergence_concept_first_role_editorial_semantic_proof_optimizer_and_attestation_mutations",
@@ -12453,7 +12464,7 @@
       "args": [],
       "execution_tier": "pr",
       "validation_class": "proof_or_evidence_gate",
-      "input_contract": "All 117 transition files; the exact 115 review-accepted denominator; 3,730 activation atoms; the 15-atom post-activation addendum; and a manually adjudicated exhaustive parent table for every non-direct campaign claim.",
+      "input_contract": "All 117 transition files; the exact 115 review-accepted denominator; the current 4,067-atom registry; the historical 15-atom addendum; the separately reviewed 30-atom R16-A addendum; and a manually adjudicated exhaustive parent table for every non-direct campaign claim.",
       "input_artifacts": [
         "evidence_quality/claim_identity_graph.json",
         "schemas/claim_identity_graph.schema.json",
@@ -12462,7 +12473,8 @@
         "scripts/validate_claim_identity_graph.py",
         "scripts/register_claim_identity_graph.py",
         "evidence_quality/claim_atom_registry.json",
-        "evidence_quality/replaceable_cognitive_substrates_claim_atom_addendum.json"
+        "evidence_quality/replaceable_cognitive_substrates_claim_atom_addendum.json",
+        "evidence_quality/post_activation_six_chapter_claim_atom_addendum.json"
       ],
       "output_contract": "Resolve each accepted transition through exactly one direct atom, bounded subclaim, alias, or proxy relation while preserving transition digests, scope, artifacts, non-claims, canonical owner/proposition, and zero indirect parent support movement.",
       "output_assertions": [
@@ -12470,6 +12482,7 @@
         "25 direct atom identities",
         "61 bounded subclaims",
         "29 proxy relations",
+        "4,112 canonical atoms across three separately versioned sources",
         "zero unresolved identities",
         "zero indirect parent support movement",
         "twelve mutations reject"
@@ -14354,11 +14367,60 @@
       "prohibited_inference": "No evidence truth, semantic projection equivalence, reviewer independence, live support decision, release readiness, deployment, capability, safety, SOTA, AGI, ASI, inherited movement, or external effect.",
       "contract_precision": "inherited",
       "semantic_review_state": "checked_projection_aware_reachable_transition_control_not_evidence_truth_or_support_authority"
+    },
+    {
+      "id": "validate_post_activation_six_chapter_claim_atom_addendum.py:423",
+      "order": 423,
+      "script": "validate_post_activation_six_chapter_claim_atom_addendum.py",
+      "args": [],
+      "execution_tier": "pr",
+      "validation_class": "proof_or_evidence_gate",
+      "input_contract": "Six exact current manifest chapters; each chapter's core claim, ownership boundary, mechanism, failure/noninheritance rule, argument-exit target, evidence-plan route, and digest-bound semantic review receipt; immutable historical atom denominators.",
+      "input_artifacts": [
+        "evidence_quality/post_activation_six_chapter_claim_atom_addendum.json",
+        "schemas/post_activation_six_chapter_claim_atom_addendum.schema.json",
+        "scripts/build_post_activation_six_chapter_claim_atom_addendum.py",
+        "scripts/validate_post_activation_six_chapter_claim_atom_addendum.py",
+        "scripts/register_post_activation_six_chapter_claim_atom_addendum.py",
+        "book_structure.json",
+        "docs/per_chapter_evidence_plan.md",
+        "appendices/C_claim_evidence_matrix.qmd"
+      ],
+      "output_contract": "Keep exactly five reviewed claim roles per chapter with stable owner, proposition, scope, falsifier, acceptance criterion, promotion ceiling, evidence route, chapter anchor, and non-claims while preserving argument support and historical denominators.",
+      "output_assertions": [
+        "6 of 6 chapter reviews complete",
+        "30 of 30 atoms reviewed",
+        "one core, boundary, mechanism, failure boundary, and argument-exit atom per chapter",
+        "exact manifest core propositions",
+        "zero support or release movement",
+        "fourteen mutations reject"
+      ],
+      "claim_scope": "Claim organization, ownership, falsification boundaries, and future evidence routing only.",
+      "negative_controls": "validator_owned_fourteen_identity_review_support_and_denominator_mutations",
+      "negative_control_cases": [
+        "chapter receipt deletion",
+        "atom deletion",
+        "duplicate atom identity",
+        "wrong owner",
+        "core proposition rewrite",
+        "chapter digest rewrite",
+        "support promotion",
+        "support movement",
+        "falsifier deletion",
+        "acceptance deletion",
+        "evidence route deletion",
+        "nonclaim deletion",
+        "historical denominator rewrite",
+        "review atom mismatch"
+      ],
+      "prohibited_inference": "Claim organization is not claim truth, proof, empirical evidence, implementation evidence, source-derived support, reproduction, transfer, safety, release, SOTA, AGI, or ASI.",
+      "contract_precision": "exact",
+      "semantic_review_state": "manual_six_chapter_core_boundary_mechanism_failure_and_argument_exit_review"
     }
   ],
   "summary": {
-    "required_artifact_count": 2153,
-    "unit_count": 422
+    "required_artifact_count": 2158,
+    "unit_count": 423
   },
   "non_claims": [
     "Registry coverage does not establish semantic adequacy of every validator.",

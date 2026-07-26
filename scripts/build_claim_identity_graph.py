@@ -14,7 +14,10 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "evidence_quality/claim_identity_graph.json"
 DOC = ROOT / "docs/claim_identity_graph_reconciliation.md"
 REGISTRY = ROOT / "evidence_quality/claim_atom_registry.json"
-ADDENDUM = ROOT / "evidence_quality/replaceable_cognitive_substrates_claim_atom_addendum.json"
+ADDENDA = [
+    ROOT / "evidence_quality/replaceable_cognitive_substrates_claim_atom_addendum.json",
+    ROOT / "evidence_quality/post_activation_six_chapter_claim_atom_addendum.json",
+]
 
 # Every non-direct identity below was semantically adjudicated against the
 # transition's scope, surfaces, artifacts, and current chapter owner. This is
@@ -164,13 +167,14 @@ def canonical_atoms() -> dict[str, dict]:
         }
         for row in registry["atoms"]
     }
-    addendum = load(ADDENDUM)
-    for row in addendum["atoms"]:
-        atoms[row["id"]] = {
-            "chapter_id": addendum["chapter_id"],
-            "proposition": row["claim"],
-            "source": ADDENDUM.relative_to(ROOT).as_posix(),
-        }
+    for addendum_path in ADDENDA:
+        addendum = load(addendum_path)
+        for row in addendum["atoms"]:
+            atoms[row["id"]] = {
+                "chapter_id": row.get("chapter_id", addendum.get("chapter_id")),
+                "proposition": row["claim"],
+                "source": addendum_path.relative_to(ROOT).as_posix(),
+            }
     return atoms
 
 
@@ -270,7 +274,7 @@ def build() -> dict:
         "source_transition_root": "evidence_transitions",
         "canonical_atom_sources": [
             REGISTRY.relative_to(ROOT).as_posix(),
-            ADDENDUM.relative_to(ROOT).as_posix(),
+            *(path.relative_to(ROOT).as_posix() for path in ADDENDA),
         ],
         "identity_policy": {
             "allowed_primary_relations": ["atom", "subclaim_of", "alias_of", "proxy_for"],
@@ -321,6 +325,8 @@ def render_doc(value: dict) -> str:
         f"{summary['relation_counts']['proxy_for']} proxy relations. Zero accepted transitions remain unmapped.",
         "",
         "This resolves ownership and traceability; it does not create evidence. An exact `atom` relation still uses the accepted-transition and registry-reconciliation process. A `subclaim_of` or `proxy_for` edge has no support-state effect on its parent. Proxy results cannot become target results without separate construct-validity evidence.",
+        "",
+        f"The canonical identity denominator is now {summary['canonical_atom_count']:,}: the immutable 4,067-atom registry, the historical 15-atom replaceable-substrates addendum, and the separately reviewed 30-atom R16-A addendum. Adding those later chapter identities changes no historical denominator and moves no support state.",
         "",
         "## Adjudication method",
         "",

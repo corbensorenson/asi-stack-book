@@ -5,7 +5,8 @@
   "source_transition_root": "evidence_transitions",
   "canonical_atom_sources": [
     "evidence_quality/claim_atom_registry.json",
-    "evidence_quality/replaceable_cognitive_substrates_claim_atom_addendum.json"
+    "evidence_quality/replaceable_cognitive_substrates_claim_atom_addendum.json",
+    "evidence_quality/post_activation_six_chapter_claim_atom_addendum.json"
   ],
   "identity_policy": {
     "allowed_primary_relations": [
@@ -23,7 +24,7 @@
   "summary": {
     "transition_file_count": 117,
     "review_accepted_transition_count": 115,
-    "canonical_atom_count": 4082,
+    "canonical_atom_count": 4112,
     "direct_atom_relation_count": 25,
     "indirect_relation_count": 90,
     "resolved_transition_count": 115,

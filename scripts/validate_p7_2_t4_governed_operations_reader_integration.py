@@ -80,8 +80,8 @@ def errors(data: dict[str, Any]) -> list[str]:
     first = status["quality_uplift_program"]["structural_completeness_tranche"]["first_tranche"]
     if first.get("state") != "terminal_four_reader_chapters" or first.get("completed_reader_chapter_count") != 4 or CHAPTER_ID not in first.get("terminal_reader_chapter_ids", []) or first.get("remaining_reader_chapter_ids") != []:
         out.append("first-tranche terminal state drifted")
-    if status["execution_readiness"].get("immediate_book_packet") != "P6.5-R16-A-six-chapter-atom-pack":
-        out.append("execution board did not preserve the current evidence packet after terminal operations integration")
+    if status["execution_readiness"].get("immediate_book_packet") != "P7.1a-W3-admission-template-inheritance-guard":
+        out.append("execution board did not advance to W3 after terminal operations integration and R16-A")
     if status["execution_readiness"].get("structural_admission_freeze") is not False:
         out.append("execution board contradicts the superseding no-deferral manuscript policy")
     for key in ("support_state_effect", "release_effect", "publication_effect"):

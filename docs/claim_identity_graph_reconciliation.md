@@ -11,6 +11,8 @@ All 115 review-accepted transitions now have exactly one primary canonical ident
 
 This resolves ownership and traceability; it does not create evidence. An exact `atom` relation still uses the accepted-transition and registry-reconciliation process. A `subclaim_of` or `proxy_for` edge has no support-state effect on its parent. Proxy results cannot become target results without separate construct-validity evidence.
 
+The canonical identity denominator is now 4,112: the immutable 4,067-atom registry, the historical 15-atom replaceable-substrates addendum, and the separately reviewed 30-atom R16-A addendum. Adding those later chapter identities changes no historical denominator and moves no support state.
+
 ## Adjudication method
 
 The 90 non-direct claims were reviewed against their transition scope, named chapter surfaces, result artifacts, limitations, non-claims, and current manifest owner. No prefix matcher, first-chapter heuristic, or automatic parent promotion was used. Retired chapter-core claims were assigned to their current consolidated owner as bounded subclaims rather than aliases, because consolidation did not prove proposition identity.
