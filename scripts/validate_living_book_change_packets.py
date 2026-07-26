@@ -15,6 +15,11 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMA_PATH = ROOT / "schemas" / "living_book_change_packet.schema.json"
 FIXTURE_DIR = ROOT / "experiments" / "living_book_change_packets" / "fixtures"
+LEAN = ROOT / "lean" / "AsiStackProofs" / "LivingBook.lean"
+REQUIRED_THEOREMS = {
+    "manifest_chapter_missing_outline_targets_or_claim_placeholders_rejected",
+    "structural_update_marked_valid_without_sync_artifacts_rejected",
+}
 
 PUBLIC_SURFACE_PACKET_TYPES = {
     "chapter_revision",
@@ -191,6 +196,11 @@ def main() -> None:
     if invalid_count != 6:
         errors.append(f"Expected exactly 6 expected-invalid fixtures, found {invalid_count}.")
 
+    lean_text = LEAN.read_text(encoding="utf-8")
+    for theorem in sorted(REQUIRED_THEOREMS):
+        if f"theorem {theorem}" not in lean_text:
+            errors.append(f"{LEAN.relative_to(ROOT)}: missing retained route theorem {theorem}.")
+
     if errors:
         for error in errors:
             print(error)
@@ -198,7 +208,8 @@ def main() -> None:
 
     print(
         "Living-book change-packet harness passed: "
-        f"{valid_count} valid fixture(s), {invalid_count} expected-invalid fixture(s)."
+        f"{valid_count} valid fixture(s), {invalid_count} expected-invalid fixture(s), "
+        f"{len(REQUIRED_THEOREMS)} retained negative-case theorem binding(s)."
     )
 
 

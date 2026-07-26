@@ -748,7 +748,7 @@
       "chapter_title": "Security Kernel and Digital SCIFs",
       "tag": "lean:security.scif.operational_invariant",
       "module": "AsiStackProofs.SecurityKernel",
-      "formal_target": "A secret handle can be substituted only inside an authorized execution boundary.",
+      "formal_target": "The finite authority-use route denies secret substitution when the execution boundary is unauthorized or lacks substitution permission.",
       "status": "implemented",
       "outline_line": 1981,
       "module_path": "lean/AsiStackProofs/SecurityKernel.lean"
@@ -1218,7 +1218,7 @@
       "chapter_title": "Planning as a Control Layer: DAGs and Intelligence Arbitrage",
       "tag": "lean:planforge.dag.operational_invariant",
       "module": "AsiStackProofs.PlanForge",
-      "formal_target": "A dispatchable plan graph is acyclic and all dependencies precede dependents.",
+      "formal_target": "For every listed dependency edge in a finite dispatchable plan record, the dependency index precedes the dependent index; the order predicate rules out self-dependency.",
       "status": "implemented",
       "outline_line": 2968,
       "module_path": "lean/AsiStackProofs/PlanForge.lean"
@@ -2578,7 +2578,7 @@
       "chapter_title": "Executable Specifications and Lean Proof Envelope",
       "tag": "lean:proofs.envelope.operational_invariant",
       "module": "AsiStackProofs.ProofEnvelope",
-      "formal_target": "A proof target marked implemented has an existing module and passes the build.",
+      "formal_target": "Independent registry and artifact validators require each implemented target to name an existing imported module, while the retained finite Lean negative case rejects an implemented target missing its module or passing build.",
       "status": "implemented",
       "outline_line": 6085,
       "module_path": "lean/AsiStackProofs/ProofEnvelope.lean"
@@ -2588,7 +2588,7 @@
       "chapter_title": "Executable Specifications and Lean Proof Envelope",
       "tag": "lean:proofs.envelope.failure_blocks_promotion",
       "module": "AsiStackProofs.ProofEnvelope",
-      "formal_target": "A proof target for a non-operational claim remains planned or blocked, not implemented.",
+      "formal_target": "The retained finite Lean route excludes implemented status for a target assumed non-operational and routed only to planned or blocked, while independent validators enforce the current registry classification.",
       "status": "implemented",
       "outline_line": 6086,
       "module_path": "lean/AsiStackProofs/ProofEnvelope.lean"
@@ -3338,7 +3338,7 @@
       "chapter_title": "Prototype Roadmap",
       "tag": "lean:roadmap.phases.operational_invariant",
       "module": "AsiStackProofs.PrototypeRoadmap",
-      "formal_target": "A roadmap phase can unlock a dependent phase only after acceptance gates pass.",
+      "formal_target": "A finite prototype-phase route with declared prerequisites but failed acceptance gates remains research-only rather than integrating.",
       "status": "implemented",
       "outline_line": 7482,
       "module_path": "lean/AsiStackProofs/PrototypeRoadmap.lean"
@@ -3348,7 +3348,7 @@
       "chapter_title": "Prototype Roadmap",
       "tag": "lean:roadmap.phases.failure_blocks_promotion",
       "module": "AsiStackProofs.PrototypeRoadmap",
-      "formal_target": "A phase milestone cannot promote a claim without evidence artifacts.",
+      "formal_target": "A finite phase-promotion request without an evidence-transition record is rejected, and a reached milestone with no evidence cannot promote.",
       "status": "implemented",
       "outline_line": 7483,
       "module_path": "lean/AsiStackProofs/PrototypeRoadmap.lean"
@@ -3368,7 +3368,7 @@
       "chapter_title": "Living Book Methodology",
       "tag": "lean:living_book.methodology.operational_invariant",
       "module": "AsiStackProofs.LivingBook",
-      "formal_target": "Every chapter in the manifest has outline proof targets and generated claim placeholders.",
+      "formal_target": "A finite manifest review with a present chapter but missing outline targets or claim placeholders is rejected.",
       "status": "implemented",
       "outline_line": 7547,
       "module_path": "lean/AsiStackProofs/LivingBook.lean"
@@ -3378,7 +3378,7 @@
       "chapter_title": "Living Book Methodology",
       "tag": "lean:living_book.methodology.failure_blocks_promotion",
       "module": "AsiStackProofs.LivingBook",
-      "formal_target": "A structural update without regenerated scaffold/proof manifest is invalid.",
+      "formal_target": "A finite structural update marked valid while either the scaffold or proof manifest is unsynchronized is rejected.",
       "status": "implemented",
       "outline_line": 7548,
       "module_path": "lean/AsiStackProofs/LivingBook.lean"

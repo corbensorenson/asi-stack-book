@@ -1978,7 +1978,7 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:security.scif.operational_invariant` | `AsiStackProofs.SecurityKernel` | A secret handle can be substituted only inside an authorized execution boundary. | implemented |
+| `lean:security.scif.operational_invariant` | `AsiStackProofs.SecurityKernel` | The finite authority-use route denies secret substitution when the execution boundary is unauthorized or lacks substitution permission. | implemented |
 | `lean:security.scif.failure_blocks_promotion` | `AsiStackProofs.SecurityKernel` | A context packet with insufficient clearance cannot enter a protected SCIF. | implemented |
 | `lean:security.scif.route_envelope` | `AsiStackProofs.SecurityKernel` | A structured authority-use review routes missing handles, inactive leases, missing approvals, unauthorized boundaries, missing substitution permission, insufficient clearance, prompt injection, missing SCIFs, unsanitized output, residual leak risk, revocation requests, and clean authorized use into explicit security-kernel outcomes. | implemented |
 | `lean:security.scif.commit_probe_bridge` | `AsiStackProofs.SecurityKernel` | A structured SCIF commit review routes secret output, handle output, missing lifecycle zeroization, overbroad context, inactive approval, missing residual boundaries, prompt-injection sanitized refusal, and clean sanitized commits into explicit outcomes matching the SCIF sanitized commit replay probe. | implemented |
@@ -2965,7 +2965,7 @@ Lean proof targets:
 | `lean:planning.control_layer.plan_graph_admission_route` | `AsiStackProofs.Planning` | Modeled plan-graph admission routes missing command-contract acceptance, decomposition, acyclicity, dependency order, authority inheritance, context demand, adequacy contracts, verification plans, dispatch gates, dispatch receipts, replanning controls, residual registers, and non-claim boundaries to explicit outcomes. | implemented |
 | `lean:planning.scheduler_state.probe_fixture_bridge` | `AsiStackProofs.Planning` | An independent finite scheduler-state consumer validates scheduler and local-repair traces plus rejecting controls, while the retained Lean plan-admission route family covers contract, decomposition, graph, authority, context, adequacy, verification, dispatch, replanning, residual, and admission branches. | implemented |
 | `lean:planning.runtime_replan.delta_audit_bridge` | `AsiStackProofs.Planning` | An independent finite runtime-replan consumer validates local-repair and blocked-authority traces plus rejecting controls, while the retained Lean delta route family rejects authority widening, stop erasure, and blocked-authority dispatch and accepts a complete bounded audit. | implemented |
-| `lean:planforge.dag.operational_invariant` | `AsiStackProofs.PlanForge` | A dispatchable plan graph is acyclic and all dependencies precede dependents. | implemented |
+| `lean:planforge.dag.operational_invariant` | `AsiStackProofs.PlanForge` | For every listed dependency edge in a finite dispatchable plan record, the dependency index precedes the dependent index; the order predicate rules out self-dependency. | implemented |
 | `lean:planforge.dag.failure_blocks_promotion` | `AsiStackProofs.PlanForge` | A node whose quality predicate fails must escalate or emit a residual. | implemented |
 
 Proof boundary: the seven public targets group thirty-one theorem declarations. The two valid-summary projections are retired, and the independent scheduler-state and runtime-replan consumers bind to the retained admission and delta route families. Several operational theorems still restate modeled assumptions, while the route theorems prove consequences over finite Boolean or enumerated branches. Index ordering is not a general proof of DAG acyclicity or dependency truth. The declarations are useful activation and regression scaffolds, but typed graph semantics, countermodels, executable planner producers, natural outcomes, causal superiority, runtime refinement, and transfer remain open.
@@ -6027,7 +6027,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 298 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 298 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 333 proof targets, 110 Lean modules, 1321 theorem declarations, 919 derived/decomposed, 187 direct/projection, 215 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 333 proof targets, 110 Lean modules, 1313 theorem declarations, 919 derived/decomposed, 179 direct/projection, 215 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.
@@ -6082,8 +6082,8 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:proofs.envelope.operational_invariant` | `AsiStackProofs.ProofEnvelope` | A proof target marked implemented has an existing module and passes the build. | implemented |
-| `lean:proofs.envelope.failure_blocks_promotion` | `AsiStackProofs.ProofEnvelope` | A proof target for a non-operational claim remains planned or blocked, not implemented. | implemented |
+| `lean:proofs.envelope.operational_invariant` | `AsiStackProofs.ProofEnvelope` | Independent registry and artifact validators require each implemented target to name an existing imported module, while the retained finite Lean negative case rejects an implemented target missing its module or passing build. | implemented |
+| `lean:proofs.envelope.failure_blocks_promotion` | `AsiStackProofs.ProofEnvelope` | The retained finite Lean route excludes implemented status for a target assumed non-operational and routed only to planned or blocked, while independent validators enforce the current registry classification. | implemented |
 
 Additional implemented theorem boundaries in `AsiStackProofs.ProofEnvelope`
 reject implemented targets missing module/build records, non-Lean artifacts
@@ -7479,8 +7479,8 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:roadmap.phases.operational_invariant` | `AsiStackProofs.PrototypeRoadmap` | A roadmap phase can unlock a dependent phase only after acceptance gates pass. | implemented |
-| `lean:roadmap.phases.failure_blocks_promotion` | `AsiStackProofs.PrototypeRoadmap` | A phase milestone cannot promote a claim without evidence artifacts. | implemented |
+| `lean:roadmap.phases.operational_invariant` | `AsiStackProofs.PrototypeRoadmap` | A finite prototype-phase route with declared prerequisites but failed acceptance gates remains research-only rather than integrating. | implemented |
+| `lean:roadmap.phases.failure_blocks_promotion` | `AsiStackProofs.PrototypeRoadmap` | A finite phase-promotion request without an evidence-transition record is rejected, and a reached milestone with no evidence cannot promote. | implemented |
 | `lean:roadmap.phases.fixture_gate_bridge` | `AsiStackProofs.PrototypeRoadmap` | A modeled prototype phase-gate fixture bridge accepts only the complete public-safe fixture summary and rejects missing non-claim boundaries while preserving no support-state promotion and no phase-completion claim. | implemented |
 
 ### Living Book Methodology
@@ -7544,8 +7544,8 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:living_book.methodology.operational_invariant` | `AsiStackProofs.LivingBook` | Every chapter in the manifest has outline proof targets and generated claim placeholders. | implemented |
-| `lean:living_book.methodology.failure_blocks_promotion` | `AsiStackProofs.LivingBook` | A structural update without regenerated scaffold/proof manifest is invalid. | implemented |
+| `lean:living_book.methodology.operational_invariant` | `AsiStackProofs.LivingBook` | A finite manifest review with a present chapter but missing outline targets or claim placeholders is rejected. | implemented |
+| `lean:living_book.methodology.failure_blocks_promotion` | `AsiStackProofs.LivingBook` | A finite structural update marked valid while either the scaffold or proof manifest is unsynchronized is rejected. | implemented |
 | `lean:living_book.methodology.change_packet_boundary` | `AsiStackProofs.LivingBook` | A public-surface change packet requires validation, changelog, support-state, non-claim, derivative-boundary, and evidence-transition discipline. | implemented |
 | `lean:living_book.methodology.reader_release_candidate_bridge` | `AsiStackProofs.LivingBook` | A current reader release-candidate route cannot treat local format evidence as approval while accessibility, audio, release-approval, or non-claim blockers remain. | implemented |
 

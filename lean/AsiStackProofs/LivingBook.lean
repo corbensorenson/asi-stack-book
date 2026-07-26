@@ -11,15 +11,6 @@ def ManifestChapterHasDraftingArtifacts (review : ChapterManifestReview) : Prop 
     review.outlineProofTargetsPresent = true ∧
       review.claimPlaceholdersGenerated = true
 
-theorem every_manifest_chapter_has_outline_targets_and_claim_placeholders
-    {review : ChapterManifestReview} :
-    ManifestChapterHasDraftingArtifacts review ->
-    review.chapterInManifest = true ->
-    review.outlineProofTargetsPresent = true ∧
-      review.claimPlaceholdersGenerated = true := by
-  intro valid inManifest
-  exact valid inManifest
-
 theorem manifest_chapter_missing_outline_targets_or_claim_placeholders_rejected
     {review : ChapterManifestReview} :
     review.chapterInManifest = true ->
@@ -51,16 +42,6 @@ def StructuralUpdateValid (review : StructuralUpdateReview) : Prop :=
     review.updateMarkedValid = true ->
       review.scaffoldRegenerated = true ∧
         review.proofManifestRegenerated = true
-
-theorem structural_update_without_regenerated_scaffold_and_proof_manifest_is_invalid
-    {review : StructuralUpdateReview} :
-    StructuralUpdateValid review ->
-    review.structuralUpdate = true ->
-    review.updateMarkedValid = true ->
-    review.scaffoldRegenerated = true ∧
-      review.proofManifestRegenerated = true := by
-  intro valid structural validUpdate
-  exact valid structural validUpdate
 
 theorem structural_update_marked_valid_without_sync_artifacts_rejected
     {review : StructuralUpdateReview} :

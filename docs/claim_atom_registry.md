@@ -9,7 +9,7 @@ This is the readable projection of `evidence_quality/claim_atom_registry.json`. 
 - Chapters: 64
 - Structured manifest atoms: 4071
 - Machine candidates awaiting semantic atom review: 0
-- Prose-only candidates awaiting materiality adjudication: 0
+- Prose-only candidates awaiting materiality adjudication: 2
 - Support-state effect: none
 
 | Role | Atoms |
@@ -91,8 +91,8 @@ This is the readable projection of `evidence_quality/claim_atom_registry.json`. 
 | Artifact Steward Agents and Living Project Governance | 78 | 0 | 0 | `evidence_quality/claim_dossiers/artifact-steward-agents-and-living-project-governance.md` |
 | Integrated Reference Architecture | 74 | 0 | 0 | `evidence_quality/claim_dossiers/integrated-reference-architecture.md` |
 | Project Theseus as Report-First Implementation Reference | 83 | 0 | 0 | `evidence_quality/claim_dossiers/project-theseus-as-report-first-implementation-reference.md` |
-| Prototype Roadmap | 74 | 0 | 0 | `evidence_quality/claim_dossiers/prototype-roadmap.md` |
-| Living Book Methodology | 75 | 0 | 0 | `evidence_quality/claim_dossiers/living-book-methodology.md` |
+| Prototype Roadmap | 74 | 0 | 1 | `evidence_quality/claim_dossiers/prototype-roadmap.md` |
+| Living Book Methodology | 75 | 0 | 1 | `evidence_quality/claim_dossiers/living-book-methodology.md` |
 | Open Research Agenda and Bibliography Plan | 73 | 0 | 0 | `evidence_quality/claim_dossiers/open-research-agenda-and-bibliography-plan.md` |
 
 ## P1 completion boundary

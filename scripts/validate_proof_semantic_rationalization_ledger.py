@@ -81,10 +81,18 @@ EXPECTED_ACTION_IDS = [
     "C6-R47-intent-handoff-summary-projection",
     "C6-R48-planning-scheduler-summary-projection",
     "C6-R49-planning-replan-summary-projection",
+    "C6-R50-living-manifest-artifact-projection",
+    "C6-R51-living-structural-sync-projection",
+    "C6-R52-planforge-dispatchable-conjunction-projection",
+    "C6-R53-proof-envelope-implemented-target-projection",
+    "C6-R54-proof-envelope-nonoperational-routing-projection",
+    "C6-R55-prototype-phase-unlock-projection",
+    "C6-R56-prototype-accepted-promotion-projection",
+    "C6-R57-security-secret-authorization-projection",
 ]
 EXPECTED_LEVELS = {
-    "P0": 42,
-    "P1": 761,
+    "P0": 39,
+    "P1": 756,
     "P2": 25,
     "P3": 319,
     "P4": 93,
@@ -93,7 +101,7 @@ EXPECTED_LEVELS = {
 }
 EXPECTED_DISPOSITIONS = {
     "retain": 1209,
-    "retire_narrow_projection": 15,
+    "retire_narrow_projection": 7,
     "rewrite_scope_language": 2,
     "rewrite_with_stronger_model": 95,
 }
@@ -237,6 +245,41 @@ EXPECTED_TARGETS = {
         "route family rejects authority widening, stop erasure, and blocked-authority "
         "dispatch and accepts a complete bounded audit."
     ),
+    "lean:living_book.methodology.operational_invariant": (
+        "A finite manifest review with a present chapter but missing outline targets "
+        "or claim placeholders is rejected."
+    ),
+    "lean:living_book.methodology.failure_blocks_promotion": (
+        "A finite structural update marked valid while either the scaffold or proof "
+        "manifest is unsynchronized is rejected."
+    ),
+    "lean:planforge.dag.operational_invariant": (
+        "For every listed dependency edge in a finite dispatchable plan record, the "
+        "dependency index precedes the dependent index; the order predicate rules out "
+        "self-dependency."
+    ),
+    "lean:proofs.envelope.operational_invariant": (
+        "Independent registry and artifact validators require each implemented target "
+        "to name an existing imported module, while the retained finite Lean negative "
+        "case rejects an implemented target missing its module or passing build."
+    ),
+    "lean:proofs.envelope.failure_blocks_promotion": (
+        "The retained finite Lean route excludes implemented status for a target assumed "
+        "non-operational and routed only to planned or blocked, while independent "
+        "validators enforce the current registry classification."
+    ),
+    "lean:roadmap.phases.operational_invariant": (
+        "A finite prototype-phase route with declared prerequisites but failed "
+        "acceptance gates remains research-only rather than integrating."
+    ),
+    "lean:roadmap.phases.failure_blocks_promotion": (
+        "A finite phase-promotion request without an evidence-transition record is "
+        "rejected, and a reached milestone with no evidence cannot promote."
+    ),
+    "lean:security.scif.operational_invariant": (
+        "The finite authority-use route denies secret substitution when the execution "
+        "boundary is unauthorized or lacks substitution permission."
+    ),
 }
 PLANNED_TARGETS = {
     "lean:evidence.support_state.operational_invariant",
@@ -297,6 +340,14 @@ EXPECTED_MIGRATION_COUNTS = {
         "C6-R47-intent-handoff-summary-projection",
         "C6-R48-planning-scheduler-summary-projection",
         "C6-R49-planning-replan-summary-projection",
+        "C6-R50-living-manifest-artifact-projection",
+        "C6-R51-living-structural-sync-projection",
+        "C6-R52-planforge-dispatchable-conjunction-projection",
+        "C6-R53-proof-envelope-implemented-target-projection",
+        "C6-R54-proof-envelope-nonoperational-routing-projection",
+        "C6-R55-prototype-phase-unlock-projection",
+        "C6-R56-prototype-accepted-promotion-projection",
+        "C6-R57-security-secret-authorization-projection",
     })
     for action_id in EXPECTED_ACTION_IDS
 }
@@ -354,7 +405,7 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
     actions = ledger["actions"]
     if [row["action_id"] for row in actions] != EXPECTED_ACTION_IDS:
         out.append("action sequence or identity drifted")
-    if [row["sequence"] for row in actions] != list(range(1, 50)):
+    if [row["sequence"] for row in actions] != list(range(1, 58)):
         out.append("action sequence numbers drifted")
 
     try:
@@ -518,13 +569,13 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
 
     overlay = load(CURRENT_OVERLAY)
     summary = overlay.get("summary", {})
-    if summary.get("current_theorem_count") != 1321:
+    if summary.get("current_theorem_count") != 1313:
         out.append("current theorem denominator drifted")
     if summary.get("semantic_level_counts") != EXPECTED_LEVELS:
         out.append("current semantic-level counts drifted")
     if summary.get("disposition_counts") != EXPECTED_DISPOSITIONS:
         out.append("current disposition counts drifted")
-    if sum(value for key, value in EXPECTED_DISPOSITIONS.items() if key != "retain") != 112:
+    if sum(value for key, value in EXPECTED_DISPOSITIONS.items() if key != "retain") != 104:
         out.append("expected remaining-action denominator is internally inconsistent")
     if ledger["summary"]["remaining_action_counts"] != {
         key: value for key, value in EXPECTED_DISPOSITIONS.items() if key != "retain"
@@ -755,6 +806,76 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
     if retired_planning_names & {row["name"] for row in planning_rows}:
         out.append("Planning retained an executed premise or summary projection")
 
+    rationalized_module_expectations = {
+        "lean/AsiStackProofs/LivingBook.lean": (
+            19,
+            {
+                "manifest_chapter_missing_outline_targets_or_claim_placeholders_rejected",
+                "structural_update_marked_valid_without_sync_artifacts_rejected",
+            },
+        ),
+        "lean/AsiStackProofs/PlanForge.lean": (
+            3,
+            {
+                "dispatchable_plan_graph_orders_member_edges",
+                "dependency_precedence_blocks_self_dependency",
+            },
+        ),
+        "lean/AsiStackProofs/ProofEnvelope.lean": (
+            5,
+            {
+                "implemented_target_missing_module_or_build_rejected",
+                "non_operational_target_not_implemented",
+            },
+        ),
+        "lean/AsiStackProofs/PrototypeRoadmap.lean": (
+            9,
+            {
+                "failed_acceptance_gates_keep_phase_research_only",
+                "phase_milestone_cannot_promote_claim_without_evidence_artifacts",
+                "support_promotion_without_evidence_transition_rejected",
+            },
+        ),
+        "lean/AsiStackProofs/SecurityKernel.lean": (
+            21,
+            {
+                "missing_secret_substitution_permission_denies_authority_use",
+                "unauthorized_boundary_denies_authority_use",
+            },
+        ),
+    }
+    for module, (expected_count, required_names) in rationalized_module_expectations.items():
+        module_rows = [row for row in current_rows if row["module_path"] == module]
+        names = {row["name"] for row in module_rows}
+        if len(module_rows) != expected_count:
+            out.append(f"{module}: expected {expected_count} retained declarations")
+        if not required_names <= names:
+            out.append(f"{module}: retained route-family binding drifted")
+        retired_names = {
+            action["retired_theorem_id"].split("::", 1)[1]
+            for action in actions
+            if action["module_path"] == module
+        }
+        if retired_names & names:
+            out.append(f"{module}: retained an executed projection")
+
+    dead_model_names = {
+        "lean/AsiStackProofs/PrototypeRoadmap.lean": {
+            "PhaseUnlockReview",
+            "PhaseUnlockValid",
+        },
+        "lean/AsiStackProofs/SecurityKernel.lean": {
+            "ExecutionBoundary",
+            "SecretHandle",
+            "SecretSubstitutionAllowed",
+        },
+    }
+    for module, names in dead_model_names.items():
+        source = (ROOT / module).read_text(encoding="utf-8")
+        for name in names:
+            if name in source:
+                out.append(f"{module}: retained dead projection model {name}")
+
     manifest_rows = {
         row["tag"]: row
         for row in load(MANIFEST).get("records", [])
@@ -797,17 +918,17 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
     if status.get("rationalization_ledger_path") != str(LEDGER.relative_to(ROOT)):
         out.append("status does not bind the cumulative rationalization ledger")
     if (
-        status.get("theorem_count") != 1321
-        or status.get("executed_retirement_count") != 49
-        or status.get("remaining_action_count") != 112
+        status.get("theorem_count") != 1313
+        or status.get("executed_retirement_count") != 57
+        or status.get("remaining_action_count") != 104
     ):
         out.append("status does not report the cumulative post-transaction denominator")
     roadmap = ROADMAP.read_text(encoding="utf-8")
     roadmap_flat = " ".join(roadmap.split())
     for phrase in [
-        "eleventh narrow-projection tranche",
-        "1,321 live theorem declarations",
-        "112 rewrite-or-retire actions remain",
+        "twelfth narrow-projection tranche",
+        "1,313 live theorem declarations",
+        "104 rewrite-or-retire actions remain",
         "`proofs/proof_semantic_rationalization_ledger.json`",
     ]:
         if phrase not in roadmap_flat:
@@ -863,9 +984,9 @@ def main() -> None:
             + "\n - ".join(failures)
         )
     print(
-        "Proof semantic-rationalization ledger passed: forty-nine dependency-safe "
-        "retirements, twenty-nine public-target migrations, 1,321 live theorems, "
-        "112 actions remain, 14 rejecting mutations, no support or release effect."
+        "Proof semantic-rationalization ledger passed: fifty-seven dependency-safe "
+        "retirements, thirty-seven public-target migrations, 1,313 live theorems, "
+        "104 actions remain, 14 rejecting mutations, no support or release effect."
     )
 
 

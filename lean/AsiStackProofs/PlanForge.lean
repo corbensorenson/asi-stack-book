@@ -20,13 +20,6 @@ def Dispatchable (graph : PlanGraph) : Prop :=
   graph.acyclicCertificate = true ∧
     DependenciesPrecede graph
 
-theorem dispatchable_plan_graph_is_index_acyclic_and_ordered
-    {graph : PlanGraph} :
-    Dispatchable graph ->
-      graph.acyclicCertificate = true ∧ DependenciesPrecede graph := by
-  intro dispatchable
-  exact dispatchable
-
 theorem dispatchable_plan_graph_orders_member_edges
     {graph : PlanGraph} {edge : DependencyEdge} :
     Dispatchable graph ->

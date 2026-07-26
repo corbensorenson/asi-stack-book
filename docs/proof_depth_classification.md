@@ -14,8 +14,8 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 333 |
 | Lean modules scanned | 110 |
-| Theorem declarations classified | 1321 |
-| Direct/projection-style theorem declarations | 187 |
+| Theorem declarations classified | 1313 |
+| Direct/projection-style theorem declarations | 179 |
 | Derived/decomposed theorem declarations | 919 |
 | Unknown or mixed theorem declarations | 215 |
 | Safety-critical theorem declarations | 73 |
@@ -106,7 +106,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/IntentToExecution.lean` | intent-to-execution-contracts | 2 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/InterStackProtocols.lean` | inter-stack-protocols-identity-and-economic-exchange | 9 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/LearnedObjectiveIntegrity.lean` | inner-alignment-mesa-optimization-and-learned-objective-integrity | 1 | 0 | 0 | 0 | 0 | derived/decomposed by classifier |
-| `lean/AsiStackProofs/LivingBook.lean` | living-book-methodology | 4 | 21 | 3 | 18 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/LivingBook.lean` | living-book-methodology | 4 | 19 | 1 | 18 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/MoECOTRuntime.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ModelWeightCustody.lean` | model-weight-custody-and-hardware-roots-of-trust | 8 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/MultiAgentDynamics.lean` | multi-agent-dynamics-collective-intelligence-and-systemic-risk | 1 | 0 | 0 | 0 | 0 | derived/decomposed by classifier |
@@ -115,7 +115,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/OpenEndedImprovement.lean` | unmapped | 0 | 7 | 0 | 7 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/OpenEndedImprovementRefinement.lean` | open-ended-improvement-engines | 7 | 5 | 0 | 2 | 3 | manual review |
 | `lean/AsiStackProofs/PersonalComputeHives.lean` | unmapped | 0 | 21 | 0 | 21 | 0 | derived/decomposed by classifier |
-| `lean/AsiStackProofs/PlanForge.lean` | planning-as-a-control-layer | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/PlanForge.lean` | planning-as-a-control-layer | 2 | 3 | 1 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Planning.lean` | planning-as-a-control-layer | 5 | 27 | 6 | 21 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/PolicyOptimization.lean` | unmapped | 0 | 16 | 4 | 12 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/PolicyOptimizationRefinement.lean` | policy-optimization-and-learning-from-feedback | 4 | 5 | 0 | 2 | 3 | manual review |
@@ -125,8 +125,8 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ProofCarryingClaims.lean` | unmapped | 0 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ProofCarryingClaimsRefinement.lean` | spinoza-verification-and-proof-carrying-claims | 3 | 11 | 7 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | circle-calculus-and-proof-carrying-ai-contracts | 3 | 10 | 3 | 7 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/ProofEnvelope.lean` | executable-specifications-and-lean-proof-envelope | 2 | 7 | 2 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/PrototypeRoadmap.lean` | prototype-roadmap | 3 | 11 | 2 | 9 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/ProofEnvelope.lean` | executable-specifications-and-lean-proof-envelope | 2 | 5 | 0 | 5 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/PrototypeRoadmap.lean` | prototype-roadmap | 3 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ReadinessGates.lean` | unmapped | 0 | 11 | 0 | 11 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ReadinessRefinement.lean` | readiness-gates-residual-escrow-and-quarantine | 3 | 17 | 13 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ReferenceArchitecture.lean` | unmapped | 0 | 5 | 0 | 5 | 0 | derived/decomposed by classifier |
@@ -143,7 +143,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ScalableOversight.lean` | unmapped | 0 | 8 | 0 | 8 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ScalableOversightRefinement.lean` | scalable-oversight-and-adversarial-ai-control | 7 | 11 | 0 | 3 | 8 | manual review |
 | `lean/AsiStackProofs/SearchSubstrates.lean` | mathematical-and-search-substrates | 3 | 6 | 0 | 6 | 0 | derived/decomposed by classifier |
-| `lean/AsiStackProofs/SecurityKernel.lean` | security-kernel-and-digital-scifs | 4 | 22 | 1 | 21 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/SecurityKernel.lean` | security-kernel-and-digital-scifs | 4 | 21 | 0 | 21 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/SelfImprovement.lean` | unmapped | 0 | 20 | 0 | 20 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/SelfImprovementRefinement.lean` | recursive-self-improvement-boundaries | 3 | 2 | 0 | 0 | 2 | manual review |
 | `lean/AsiStackProofs/SemanticRepresentation.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
@@ -787,7 +787,6 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/LivingBook.lean` | `curated_reader_blocked_candidate_fixture_routes_to_accessibility_review` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/LivingBook.lean` | `derived_artifact_equal_authority_change_packet_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/LivingBook.lean` | `derived_artifact_without_source_review_or_support_boundary_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
-| `lean/AsiStackProofs/LivingBook.lean` | `every_manifest_chapter_has_outline_targets_and_claim_placeholders` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/LivingBook.lean` | `local_reader_artifacts_do_not_clear_missing_accessibility_review` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/LivingBook.lean` | `manifest_chapter_missing_outline_targets_or_claim_placeholders_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/LivingBook.lean` | `reader_release_candidate_missing_approval_routes_to_release_approval` | derived_or_decomposed | no | uses simp, unfold |
@@ -801,7 +800,6 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/LivingBook.lean` | `reader_release_candidate_support_promotion_claim_rejected` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/LivingBook.lean` | `release_ready_without_validation_changelog_or_residuals_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/LivingBook.lean` | `structural_update_marked_valid_without_sync_artifacts_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
-| `lean/AsiStackProofs/LivingBook.lean` | `structural_update_without_regenerated_scaffold_and_proof_manifest_is_invalid` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/LivingBook.lean` | `support_promotion_without_evidence_transition_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/MoECOTRuntime.lean` | `runtime_core_promotion_missing_evidence_rejected` | derived_or_decomposed | no | uses cases, have, rw |
 | `lean/AsiStackProofs/MoECOTRuntime.lean` | `unavailable_text_only_with_promotion_above_argument_rejected` | derived_or_decomposed | no | uses contradiction, have, rw |
@@ -848,7 +846,6 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/PersonalComputeHives.lean` | `partitioned_stale_authority_with_no_mutation_quarantines` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/PersonalComputeHives.lean` | `partitioned_stale_authority_without_no_mutation_requests_evidence` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/PlanForge.lean` | `dependency_precedence_blocks_self_dependency` | derived_or_decomposed | no | uses rw, unfold |
-| `lean/AsiStackProofs/PlanForge.lean` | `dispatchable_plan_graph_is_index_acyclic_and_ordered` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/PlanForge.lean` | `dispatchable_plan_graph_orders_member_edges` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/PlanForge.lean` | `failed_quality_predicate_routes_to_escalation_or_residual` | derived_or_decomposed | no | uses cases, rw |
 | `lean/AsiStackProofs/Planning.lean` | `authority_escalation_blocks_plan_graph_admission` | derived_or_decomposed | no | uses rw, simp, unfold |
@@ -964,21 +961,17 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | `passing_replay_without_replay_artifacts_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | `promoted_downstream_claim_without_contract_ready_rejected` | derived_or_decomposed | no | uses contradiction, have, rw |
 | `lean/AsiStackProofs/ProofEnvelope.lean` | `external_theorem_without_ids_or_boundary_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
-| `lean/AsiStackProofs/ProofEnvelope.lean` | `implemented_target_has_module_and_passing_build` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ProofEnvelope.lean` | `implemented_target_missing_module_or_build_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw |
 | `lean/AsiStackProofs/ProofEnvelope.lean` | `non_lean_artifact_cannot_claim_lean_proof` | derived_or_decomposed | no | uses have, unfold |
 | `lean/AsiStackProofs/ProofEnvelope.lean` | `non_operational_target_not_implemented` | derived_or_decomposed | no | uses cases, contradiction, have, rw |
-| `lean/AsiStackProofs/ProofEnvelope.lean` | `non_operational_target_remains_planned_or_blocked` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ProofEnvelope.lean` | `support_promotion_without_transition_or_boundaries_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | `accepted_non_promoting_phase_integrates` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/PrototypeRoadmap.lean` | `accepted_phase_claim_promotion_requires_evidence_artifacts` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | `accepted_prototype_phase_gate_fixture_bridge_preserves_non_claims` | derived_or_decomposed | no | uses cases, simp, unfold |
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | `complete_prototype_phase_gate_fixture_bridge_accepts` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | `failed_acceptance_gates_keep_phase_research_only` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | `missing_non_claim_boundary_rejects_prototype_fixture_bridge` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | `missing_source_matrix_rejects_phase_route` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | `phase_milestone_cannot_promote_claim_without_evidence_artifacts` | derived_or_decomposed | no | uses cases, contradiction, have, rw |
-| `lean/AsiStackProofs/PrototypeRoadmap.lean` | `roadmap_phase_unlock_requires_passing_acceptance_gates` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | `self_improvement_without_independent_evaluator_rejected` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | `support_promotion_without_evidence_transition_rejected` | derived_or_decomposed | no | uses cases, simp |
 | `lean/AsiStackProofs/ReadinessGates.lean` | `accepted_stronger_transition_missing_required_record_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
@@ -1236,7 +1229,6 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/SecurityKernel.lean` | `scif_commit_overbroad_context_blocks_commit` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/SecurityKernel.lean` | `scif_commit_prompt_injection_routes_to_sanitized_refusal` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/SecurityKernel.lean` | `scif_commit_secret_output_blocks_commit` | derived_or_decomposed | no | uses simp, unfold |
-| `lean/AsiStackProofs/SecurityKernel.lean` | `secret_substitution_requires_authorized_boundary` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/SecurityKernel.lean` | `unauthorized_boundary_denies_authority_use` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/SecurityKernel.lean` | `unsanitized_output_routes_to_sanitization` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/SelfImprovement.lean` | `authority_boundary_delta_routes_to_review` | derived_or_decomposed | yes | uses simp, unfold |

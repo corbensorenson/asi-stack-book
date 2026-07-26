@@ -1,5 +1,35 @@
 # Changelog
 
+## 2026-07-26 — Twelfth narrow-projection C6 tranche
+
+- Retired eight unconsumed direct projections from `LivingBook.lean`,
+  `PlanForge.lean`, `ProofEnvelope.lean`, `PrototypeRoadmap.lean`, and
+  `SecurityKernel.lean`; also removed the two otherwise unused record models
+  that existed only to support the retired prototype-unlock and
+  secret-substitution projections.
+- Migrated all eight public targets to retained negative cases, explicit
+  finite route families, or independent repository validators. The PlanForge
+  target now claims listed-edge order and self-edge exclusion rather than
+  general DAG acyclicity; proof-envelope wording separates filesystem
+  inspection from Lean; and living-book, prototype, and security targets name
+  bounded rejection or denial branches rather than positive field projections.
+- Added retained-theorem bindings to the living-book, proof-artifact,
+  prototype-phase, and security-kernel validators. The cumulative ledger now
+  records fifty-seven ordered retirements and thirty-seven target migrations.
+- Added an opt-in no-sandbox flag for the installed-Chrome fallback in the
+  live Human-view browser validator. CI defaults remain unchanged; the managed
+  desktop run used the explicit flag and passed all 172 chapter/appendix,
+  desktop/mobile page-view pairs. Refreshed the audio-script reading-flow
+  manifest against the revised manuscript; all 89 scripts, 89 ordered markers,
+  and 244 narration notes remain validator-clean.
+- The live estate is 1,313 declarations: 39 P0, 756 P1, 25 P2, 319 P3, 93 P4,
+  81 P5, and zero P6. The remaining queue contains 104 actions: seven
+  narrow-projection retirements, two scope-language rewrites, and 95
+  stronger-model rewrites.
+- No chapter-core support state, manuscript-quality claim, filesystem-truth
+  claim inside Lean, graph-acyclicity result, phase-completion result, runtime
+  security claim, release state, or publication authority changes.
+
 ## 2026-07-26 — Eleventh narrow-projection C6 tranche
 
 - Retired four valid-summary projections from `FailureModes.lean`,
@@ -15,7 +45,7 @@
   42 P0, 761 P1, 25 P2, 319 P3, 93 P4, 81 P5, and zero P6. The remaining queue
   contains 112 actions: 15 narrow-projection retirements, two scope-language
   rewrites, and 95 stronger-model rewrites.
-- Current proof-depth snapshot: 333 proof targets, 110 Lean modules, 1321 theorem declarations, 919 derived/decomposed, 187 direct/projection, 215 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Current proof-depth snapshot: 333 proof targets, 110 Lean modules, 1313 theorem declarations, 919 derived/decomposed, 179 direct/projection, 215 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - No chapter-core support state, detector-quality claim, semantic-handoff
   claim, planner-quality result, deployment status, release state, or
   publication authority changes.

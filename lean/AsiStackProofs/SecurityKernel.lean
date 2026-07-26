@@ -13,28 +13,6 @@ def ClearanceLevel.rank : ClearanceLevel -> Nat
   | .restricted => 2
   | .secret => 3
 
-structure ExecutionBoundary where
-  authorized : Bool
-  permitsSecretSubstitution : Bool
-  clearance : ClearanceLevel
-deriving DecidableEq, Repr
-
-structure SecretHandle where
-  requiredClearance : ClearanceLevel
-deriving DecidableEq, Repr
-
-def SecretSubstitutionAllowed (boundary : ExecutionBoundary) (handle : SecretHandle) : Prop :=
-  boundary.authorized = true ∧
-    boundary.permitsSecretSubstitution = true ∧
-    handle.requiredClearance.rank <= boundary.clearance.rank
-
-theorem secret_substitution_requires_authorized_boundary
-    {boundary : ExecutionBoundary} {handle : SecretHandle} :
-    SecretSubstitutionAllowed boundary handle ->
-    boundary.authorized = true := by
-  intro allowed
-  exact allowed.1
-
 structure ContextPacket where
   clearance : ClearanceLevel
 deriving DecidableEq, Repr

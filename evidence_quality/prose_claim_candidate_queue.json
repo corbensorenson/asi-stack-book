@@ -3,13 +3,14 @@
   "scanner": "modal and outcome-bearing sentence cue scan; candidates require semantic adjudication",
   "summary": {
     "chapter_count": 64,
-    "candidate_count": 3443,
+    "candidate_count": 3442,
     "review_state_counts": {
       "duplicate_of_atom": 1524,
       "editorial_or_question": 71,
       "historical_or_source_report": 290,
       "material_atom": 3,
-      "nonmaterial_explanation": 1555
+      "nonmaterial_explanation": 1552,
+      "pending_materiality_adjudication": 2
     }
   },
   "candidates": [
@@ -21963,7 +21964,7 @@
     {
       "candidate_id": "planning-as-a-control-layer.prose.928295b48aad",
       "chapter_id": "planning-as-a-control-layer",
-      "source": "chapters/planning-as-a-control-layer.qmd:480",
+      "source": "chapters/planning-as-a-control-layer.qmd:484",
       "sentence": "These targets do not prove planning correctness, dependency truth, useful",
       "cues": [
         "prove"
@@ -21982,7 +21983,7 @@
     {
       "candidate_id": "planning-as-a-control-layer.prose.98689027e874",
       "chapter_id": "planning-as-a-control-layer",
-      "source": "chapters/planning-as-a-control-layer.qmd:493",
+      "source": "chapters/planning-as-a-control-layer.qmd:497",
       "sentence": "The plan node must therefore name the observation and world-model versions,",
       "cues": [
         "must"
@@ -22001,7 +22002,7 @@
     {
       "candidate_id": "planning-as-a-control-layer.prose.1cd2d5670ba1",
       "chapter_id": "planning-as-a-control-layer",
-      "source": "chapters/planning-as-a-control-layer.qmd:499",
+      "source": "chapters/planning-as-a-control-layer.qmd:503",
       "sentence": "Adoption requires a matched baseline, intervention",
       "cues": [
         "requires"
@@ -22020,7 +22021,7 @@
     {
       "candidate_id": "planning-as-a-control-layer.prose.10736586eaee",
       "chapter_id": "planning-as-a-control-layer",
-      "source": "chapters/planning-as-a-control-layer.qmd:535",
+      "source": "chapters/planning-as-a-control-layer.qmd:539",
       "sentence": "predictive control, or transfer beyond the declared interface.",
       "cues": [
         "transfer"
@@ -22039,7 +22040,7 @@
     {
       "candidate_id": "planning-as-a-control-layer.prose.fdc62448f305",
       "chapter_id": "planning-as-a-control-layer",
-      "source": "chapters/planning-as-a-control-layer.qmd:553",
+      "source": "chapters/planning-as-a-control-layer.qmd:557",
       "sentence": "paper's laboratory-access trace demonstrates the intended object flow only; it",
       "cues": [
         "demonstrates"
@@ -22058,7 +22059,7 @@
     {
       "candidate_id": "planning-as-a-control-layer.prose.4469d4dd41dc",
       "chapter_id": "planning-as-a-control-layer",
-      "source": "chapters/planning-as-a-control-layer.qmd:594",
+      "source": "chapters/planning-as-a-control-layer.qmd:598",
       "sentence": "The present fixtures and Lean modules show how selected synthetic records route",
       "cues": [
         "show"
@@ -22077,7 +22078,7 @@
     {
       "candidate_id": "planning-as-a-control-layer.prose.b02f33cd62ae",
       "chapter_id": "planning-as-a-control-layer",
-      "source": "chapters/planning-as-a-control-layer.qmd:595",
+      "source": "chapters/planning-as-a-control-layer.qmd:599",
       "sentence": "They do not show that a planner finds good decompositions, true",
       "cues": [
         "show"
@@ -22096,7 +22097,7 @@
     {
       "candidate_id": "planning-as-a-control-layer.prose.7901923176e3",
       "chapter_id": "planning-as-a-control-layer",
-      "source": "chapters/planning-as-a-control-layer.qmd:599",
+      "source": "chapters/planning-as-a-control-layer.qmd:603",
       "sentence": "ablations, reproduction, and transfer produce claim-specific evidence.",
       "cues": [
         "transfer"
@@ -22115,7 +22116,7 @@
     {
       "candidate_id": "planning-as-a-control-layer.prose.15391e775a25",
       "chapter_id": "planning-as-a-control-layer",
-      "source": "chapters/planning-as-a-control-layer.qmd:648",
+      "source": "chapters/planning-as-a-control-layer.qmd:652",
       "sentence": "predicted world is true and cannot authorize an effect.",
       "cues": [
         "cannot"
@@ -51632,7 +51633,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.cd98bc845926",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:507",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:506",
       "sentence": "It does not try to prove \"ASI safety\" or \"alignment\" as one grand theorem.",
       "cues": [
         "prove"
@@ -51651,7 +51652,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.88ef3d5cbbaf",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:520",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:519",
       "sentence": "The proof envelope remains a target architecture until semantic adequacy reviews, artifact audits, runtime consumers, and accepted evidence transitions show where each formal predicate can and cannot carry prose.",
       "cues": [
         "cannot",
@@ -51671,7 +51672,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.ca1662c93f10",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:528",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:527",
       "sentence": "record, current use, strongest counterclaim, required lane, terminal",
       "cues": [
         "required"
@@ -51690,7 +51691,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.689519bcb042",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:534",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:533",
       "sentence": "Load-bearing predicates must use the right model: richer transition systems,",
       "cues": [
         "must"
@@ -51709,7 +51710,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.89f8ee904e1a",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:543",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:542",
       "sentence": "Decisive claims require independent formalizations or tools when useful,",
       "cues": [
         "require"
@@ -51728,7 +51729,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.6d0189e29f28",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:545",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:544",
       "sentence": "and transfer across environments, consumers, attacks, and time.",
       "cues": [
         "transfer"
@@ -51747,7 +51748,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.d026fee560cf",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:547",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:546",
       "sentence": "load-bearing atom and declaration receives its required full attempt and",
       "cues": [
         "required"
@@ -51766,7 +51767,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.1e7f72c499d1",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:583",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:584",
       "sentence": "negative cases: non-operational targets cannot be implemented; implemented",
       "cues": [
         "cannot"
@@ -51785,7 +51786,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.5eb7295504da",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:584",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:585",
       "sentence": "targets missing a module or build are rejected; non-Lean artifacts cannot claim",
       "cues": [
         "cannot"
@@ -51804,7 +51805,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.87d30b300b27",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:587",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:588",
       "sentence": "None discovers repository artifacts, proves semantic adequacy,",
       "cues": [
         "proves"
@@ -51823,7 +51824,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.e93fbf10782a",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:588",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:589",
       "sentence": "establishes implementation refinement, checks runtime enforcement, validates",
       "cues": [
         "establishes"
@@ -51842,7 +51843,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.5a02bd745e12",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:589",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:590",
       "sentence": "external theorem applicability, proves system safety, measures capability or",
       "cues": [
         "measures",
@@ -51862,7 +51863,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.2517e88dff5d",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:590",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:591",
       "sentence": "cost, or establishes reproduction and transfer.",
       "cues": [
         "establishes",
@@ -51882,7 +51883,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.94a7a08bb0b0",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:591",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:592",
       "sentence": "must retain only consumer-bearing projections and replace load-bearing record",
       "cues": [
         "must"
@@ -51901,7 +51902,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.dba28ac28907",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:593",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:594",
       "sentence": "and empirical evidence as their actual obligations require.",
       "cues": [
         "require"
@@ -51920,7 +51921,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.cf75a864bc37",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:624",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:625",
       "sentence": "Lean proves only what Lean checks.",
       "cues": [
         "proves"
@@ -51939,7 +51940,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.a3d1eaebcae6",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:624",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:625",
       "sentence": "The living book must keep those lanes separate.",
       "cues": [
         "must"
@@ -51958,7 +51959,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.bc0c97546f06",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:628",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:629",
       "sentence": "The proof envelope should let a reader tell exactly what was proved, what was merely validated, what was tested, what was benchmarked, and what remains prose.",
       "cues": [
         "should"
@@ -51977,7 +51978,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.f970abbac7ce",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:628",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:629",
       "sentence": "Agents improving the book or the stack should learn that mechanized claims need artifacts, commands, and failure records.",
       "cues": [
         "should"
@@ -51996,7 +51997,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.30a62b688dae",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:628",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:629",
       "sentence": "Formality is useful when it reduces ambiguity and overclaiming; it is harmful when it becomes ornamental confidence.",
       "cues": [
         "reduces"
@@ -52015,7 +52016,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.de544a2f0408",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:665",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:666",
       "sentence": "It turns benchmark runs into records with baselines, residuals, regressions, saturation states, contamination boundaries, and promotion decisions so measured pressure cannot outrun preserved failures.",
       "cues": [
         "cannot"
@@ -64025,14 +64026,15 @@
       "target_atom_id": null
     },
     {
-      "candidate_id": "prototype-roadmap.prose.d8333eaea430",
+      "candidate_id": "prototype-roadmap.prose.107d18617b04",
       "chapter_id": "prototype-roadmap",
       "source": "chapters/prototype-roadmap.qmd:276",
-      "sentence": "The v1.x follow-through route envelope proves only record-level gates: missing source-matrix readiness rejects a phase route; self-improvement without an independent evaluator is rejected; failed acceptance gates keep a phase research-only; requested support promotion without an accepted evidence-transition record is rejected; a fully accepted non-promoting phase can route to integration; and the complete synthetic phase-gate fixture summary can be accepted while missing non-claim boundaries reject the bridge.",
+      "sentence": "The v1.x follow-through route envelope proves only record-level gates: missing source-matrix readiness rejects a phase route; self-improvement without an independent evaluator is rejected; failed acceptance gates keep a phase research-only; requested support promotion without an accepted evidence-transition record is rejected; a reached milestone with no evidence cannot promote; a fully accepted non-promoting phase can route to integration; and the complete synthetic phase-gate fixture summary can be accepted while missing non-claim boundaries reject the bridge.",
       "cues": [
+        "cannot",
         "proves"
       ],
-      "review_state": "nonmaterial_explanation",
+      "review_state": "pending_materiality_adjudication",
       "allowed_dispositions": [
         "material_atom",
         "nonmaterial_explanation",
@@ -64040,7 +64042,7 @@
         "editorial_or_question",
         "historical_or_source_report"
       ],
-      "disposition_rationale": "Semantically reviewed as bounded explanation, source report, lifecycle restatement, scanner fragment, finite-proof boundary, or explicit non-claim; material obligations are already atomized.",
+      "disposition_rationale": null,
       "target_atom_id": null
     },
     {
@@ -64889,34 +64891,14 @@
       "target_atom_id": null
     },
     {
-      "candidate_id": "living-book-methodology.prose.5e15de10d246",
+      "candidate_id": "living-book-methodology.prose.8ec5966a273c",
       "chapter_id": "living-book-methodology",
       "source": "chapters/living-book-methodology.qmd:310",
-      "sentence": "They prove only the record-level gates: a manifest chapter has outline proof targets and generated claim placeholders, a structural update marked valid requires regenerated scaffold and proof manifest, a release-ready record needs validation/changelog/residuals, a derived artifact needs source/review/support boundaries, a public-surface change packet needs validation, changelog, support-state, non-claim, derivative-boundary, and evidence-transition discipline, and a reader release candidate with local format evidence still routes to accessibility, audio, or approval review while blockers remain.",
-      "cues": [
-        "prove",
-        "requires"
-      ],
-      "review_state": "nonmaterial_explanation",
-      "allowed_dispositions": [
-        "material_atom",
-        "nonmaterial_explanation",
-        "duplicate_of_atom",
-        "editorial_or_question",
-        "historical_or_source_report"
-      ],
-      "disposition_rationale": "Semantically reviewed as bounded explanation, source report, publication-lifecycle restatement, finite-proof boundary, scanner fragment, or explicit non-claim; material obligations are already atomized.",
-      "target_atom_id": null
-    },
-    {
-      "candidate_id": "living-book-methodology.prose.8ddce62aab39",
-      "chapter_id": "living-book-methodology",
-      "source": "chapters/living-book-methodology.qmd:310",
-      "sentence": "The module proves bounded negative cases named `manifest_chapter_missing_outline_targets_or_claim_placeholders_rejected`, `structural_update_marked_valid_without_sync_artifacts_rejected`, `release_ready_without_validation_changelog_or_residuals_rejected`, `derived_artifact_without_source_review_or_support_boundary_rejected`, `change_packet_without_validation_changelog_support_or_nonclaims_rejected`, `derived_artifact_equal_authority_change_packet_rejected`, `support_promotion_without_evidence_transition_rejected`, `local_reader_artifacts_do_not_clear_missing_accessibility_review`, `reader_release_candidate_missing_audio_routes_to_audio_review`, `reader_release_candidate_missing_approval_routes_to_release_approval`, and `reader_release_candidate_support_promotion_claim_rejected`.",
+      "sentence": "The module also proves bounded negative cases named `release_ready_without_validation_changelog_or_residuals_rejected`, `derived_artifact_without_source_review_or_support_boundary_rejected`, `change_packet_without_validation_changelog_support_or_nonclaims_rejected`, `derived_artifact_equal_authority_change_packet_rejected`, `support_promotion_without_evidence_transition_rejected`, `local_reader_artifacts_do_not_clear_missing_accessibility_review`, `reader_release_candidate_missing_audio_routes_to_audio_review`, `reader_release_candidate_missing_approval_routes_to_release_approval`, and `reader_release_candidate_support_promotion_claim_rejected`.",
       "cues": [
         "proves"
       ],
-      "review_state": "nonmaterial_explanation",
+      "review_state": "pending_materiality_adjudication",
       "allowed_dispositions": [
         "material_atom",
         "nonmaterial_explanation",
@@ -64924,7 +64906,7 @@
         "editorial_or_question",
         "historical_or_source_report"
       ],
-      "disposition_rationale": "Semantically reviewed as bounded explanation, source report, publication-lifecycle restatement, finite-proof boundary, scanner fragment, or explicit non-claim; material obligations are already atomized.",
+      "disposition_rationale": null,
       "target_atom_id": null
     },
     {

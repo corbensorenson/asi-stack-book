@@ -170,9 +170,14 @@ async function launchChromium(playwright) {
   } catch (managedError) {
     for (const executablePath of candidateBrowserExecutables()) {
       try {
+        const args =
+          process.env.PLAYWRIGHT_CHROMIUM_NO_SANDBOX === "1"
+            ? ["--no-sandbox"]
+            : [];
         return await playwright.chromium.launch({
           headless: true,
           executablePath,
+          args,
         });
       } catch (_) {
         // Keep trying candidates; preserve the managed-browser error if none work.

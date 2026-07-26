@@ -2261,14 +2261,422 @@
         "lean:lake-build"
       ],
       "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R50-living-manifest-artifact-projection",
+      "sequence": 50,
+      "state": "executed",
+      "action": "retire_projection_after_validator_route_family_rebinding",
+      "semantic_relation": "summary_projection_replaced_by_route_family_validation",
+      "module_path": "lean/AsiStackProofs/LivingBook.lean",
+      "baseline_module_sha256": "755ae47235cd31179dcda34edfbe536bbdf84af397af8c72e4e7d0a788385617",
+      "retired_theorem_id": "lean/AsiStackProofs/LivingBook.lean::every_manifest_chapter_has_outline_targets_and_claim_placeholders",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "31ac5d7f9209fd438409f45d3fd8e0301cad4be24e7836f8492dadde2b2b1bb0",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "16536f597942458db14cd73592b57d6ffa5173715f03af4b8a34a4840e501252",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem accepts ManifestChapterHasDraftingArtifacts and returns its two conjuncts without deriving any manifest or generated-artifact fact.",
+        "The immutable semantic overlay records no Lean dependency or theorem consumer for the projection.",
+        "The retained theorem manifest_chapter_missing_outline_targets_or_claim_placeholders_rejected derives rejection from a present chapter and either missing artifact field.",
+        "The living-book change-packet validator now requires the retained theorem name while independent manifest and proof-sync validators inspect repository artifacts.",
+        "The public target now states the finite rejecting case and does not imply editorial completeness, source adequacy, or generated-artifact truth."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:living_book.methodology.operational_invariant",
+          "old_target_text": "Every chapter in the manifest has outline proof targets and generated claim placeholders.",
+          "new_target_text": "A finite manifest review with a present chapter but missing outline targets or claim placeholders is rejected.",
+          "consumer_paths": [
+            "book_structure.json",
+            "docs/book_outline.md",
+            "chapters/living-book-methodology.qmd",
+            "proofs/proof_manifest.json",
+            "proofs/proof_triage.json"
+          ]
+        }
+      ],
+      "maximum_inference_preserved": "For the authored finite manifest record, a present chapter with either required drafting-artifact field false cannot satisfy the record predicate; no repository completeness or manuscript-quality result follows.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_living_book_change_packets.py",
+        "scripts/validate_proof_artifact_audit.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R51-living-structural-sync-projection",
+      "sequence": 51,
+      "state": "executed",
+      "action": "retire_projection_after_validator_route_family_rebinding",
+      "semantic_relation": "summary_projection_replaced_by_route_family_validation",
+      "module_path": "lean/AsiStackProofs/LivingBook.lean",
+      "baseline_module_sha256": "755ae47235cd31179dcda34edfbe536bbdf84af397af8c72e4e7d0a788385617",
+      "retired_theorem_id": "lean/AsiStackProofs/LivingBook.lean::structural_update_without_regenerated_scaffold_and_proof_manifest_is_invalid",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "10757787aa1b7df8028ccd4202710ead174c35c42c3d834f417b292850c4d359",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "b52fb22b049dd3b79d693134cf55159679fc630bd6b395b9818a2d6dd387f4c0",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem assumes StructuralUpdateValid and projects its scaffold and proof-manifest fields without checking repository synchronization.",
+        "The immutable semantic overlay records no Lean dependency or theorem consumer for the projection.",
+        "The retained theorem structural_update_marked_valid_without_sync_artifacts_rejected derives rejection when either synchronization field is false.",
+        "The living-book change-packet validator now requires the retained theorem name while dedicated sync validators inspect current generated artifacts.",
+        "The public target now states only the finite malformed-record rejection and preserves publication-quality and filesystem-observation boundaries."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:living_book.methodology.failure_blocks_promotion",
+          "old_target_text": "A structural update without regenerated scaffold/proof manifest is invalid.",
+          "new_target_text": "A finite structural update marked valid while either the scaffold or proof manifest is unsynchronized is rejected.",
+          "consumer_paths": [
+            "book_structure.json",
+            "docs/book_outline.md",
+            "chapters/living-book-methodology.qmd",
+            "proofs/proof_manifest.json",
+            "proofs/proof_triage.json"
+          ]
+        }
+      ],
+      "maximum_inference_preserved": "For the authored finite structural-update record, a marked-valid update with either synchronization field false cannot satisfy StructuralUpdateValid; no filesystem, render, publication, or quality result follows.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_living_book_change_packets.py",
+        "scripts/validate_proof_artifact_audit.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R52-planforge-dispatchable-conjunction-projection",
+      "sequence": 52,
+      "state": "executed",
+      "action": "retire_projection_after_public_target_narrowing",
+      "semantic_relation": "premise_restatement_retired_after_target_scope_reduction",
+      "module_path": "lean/AsiStackProofs/PlanForge.lean",
+      "baseline_module_sha256": "a102b5b5ce8b2a0994a683de8271d09071748764d31b516c97c1f4c608855bfb",
+      "retired_theorem_id": "lean/AsiStackProofs/PlanForge.lean::dispatchable_plan_graph_is_index_acyclic_and_ordered",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "43305ba325828f86234648d4700c38b9c41cd78dbd52919f75880f935ddd6a56",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "4809bca0c04e89d5a29994687596c8a4ee33e0ee9ebcaf9f08011fbc7b0a3cfe",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem returns the Dispatchable conjunction exactly and derives neither graph acyclicity nor dependency truth.",
+        "The immutable semantic overlay records no Lean dependency or theorem consumer for the conjunction projection.",
+        "The retained theorem dispatchable_plan_graph_orders_member_edges specializes the authored order predicate to each listed edge.",
+        "The retained theorem dependency_precedence_blocks_self_dependency derives exclusion of a self-edge from strict index precedence.",
+        "The public target is narrowed from general acyclicity to finite listed-edge ordering and self-edge exclusion, preserving the explicit abstraction boundary."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:planforge.dag.operational_invariant",
+          "old_target_text": "A dispatchable plan graph is acyclic and all dependencies precede dependents.",
+          "new_target_text": "For every listed dependency edge in a finite dispatchable plan record, the dependency index precedes the dependent index; the order predicate rules out self-dependency.",
+          "consumer_paths": [
+            "book_structure.json",
+            "docs/book_outline.md",
+            "chapters/planning-as-a-control-layer.qmd",
+            "proofs/proof_manifest.json",
+            "proofs/proof_triage.json"
+          ]
+        }
+      ],
+      "maximum_inference_preserved": "For the authored finite PlanGraph predicate, every member edge of a Dispatchable record has strict index precedence and therefore cannot be a self-edge; general DAG acyclicity, dependency validity, and scheduler correctness do not follow.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_proof_artifact_audit.py",
+        "scripts/validate_proof_depth.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R53-proof-envelope-implemented-target-projection",
+      "sequence": 53,
+      "state": "executed",
+      "action": "retire_projection_after_validator_route_family_rebinding",
+      "semantic_relation": "summary_projection_replaced_by_route_family_validation",
+      "module_path": "lean/AsiStackProofs/ProofEnvelope.lean",
+      "baseline_module_sha256": "9c40475916fafd1204e7114d0e237c3e32efb977a18b30a7136f9d17d47fd9dc",
+      "retired_theorem_id": "lean/AsiStackProofs/ProofEnvelope.lean::implemented_target_has_module_and_passing_build",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "5147b9bfb2cdea8c06e31a665e4033b56ced2c0fb28d2b92503348639cc95db3",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "ce11108802d6ff611723a8f5f6837168865b02e99ea3bc758233a9db2f60a661",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem applies ImplementedTargetValid and projects its moduleExists and buildPassed fields without inspecting any artifact.",
+        "The immutable semantic overlay records no Lean dependency or theorem consumer for the projection.",
+        "The retained theorem implemented_target_missing_module_or_build_rejected derives rejection for either false field.",
+        "The proof-artifact audit now requires that retained theorem while independently inspecting manifest records, module paths, and root imports.",
+        "The public target states the split validator-and-negative-case evidence surface and preserves the boundary that Lean does not inspect the filesystem."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:proofs.envelope.operational_invariant",
+          "old_target_text": "A proof target marked implemented has an existing module and passes the build.",
+          "new_target_text": "Independent registry and artifact validators require each implemented target to name an existing imported module, while the retained finite Lean negative case rejects an implemented target missing its module or passing build.",
+          "consumer_paths": [
+            "book_structure.json",
+            "docs/book_outline.md",
+            "chapters/executable-specifications-and-lean-proof-envelope.qmd",
+            "proofs/proof_manifest.json",
+            "proofs/proof_triage.json"
+          ]
+        }
+      ],
+      "maximum_inference_preserved": "The repository validators inspect current target records and module/import references; the retained Lean theorem rejects an authored implemented record with a false module or build field. Neither establishes semantic adequacy or deployed refinement.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_proof_artifact_audit.py",
+        "scripts/validate_proof_depth.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R54-proof-envelope-nonoperational-routing-projection",
+      "sequence": 54,
+      "state": "executed",
+      "action": "retire_projection_after_validator_route_family_rebinding",
+      "semantic_relation": "summary_projection_replaced_by_route_family_validation",
+      "module_path": "lean/AsiStackProofs/ProofEnvelope.lean",
+      "baseline_module_sha256": "9c40475916fafd1204e7114d0e237c3e32efb977a18b30a7136f9d17d47fd9dc",
+      "retired_theorem_id": "lean/AsiStackProofs/ProofEnvelope.lean::non_operational_target_remains_planned_or_blocked",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "e136c90236810243c84fda86a39030ea935360778f99c575c91dd7252bc5414f",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "5fb6acb20f07cfe78732b52d7cbf0aa92840bc90bb35fdf468ab8d7e6f249695",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem applies NonOperationalTargetRouted and returns the planned-or-blocked disjunction without deriving a status exclusion.",
+        "The immutable semantic overlay records no Lean dependency or theorem consumer for the projection.",
+        "The retained theorem non_operational_target_not_implemented derives that implemented status contradicts either allowed routed status.",
+        "The proof manifest, triage, and artifact validators independently enforce the current registry classification and require the retained theorem name.",
+        "The public target now states the finite exclusion plus independent classification enforcement without claiming operational truth or semantic adequacy."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:proofs.envelope.failure_blocks_promotion",
+          "old_target_text": "A proof target for a non-operational claim remains planned or blocked, not implemented.",
+          "new_target_text": "The retained finite Lean route excludes implemented status for a target assumed non-operational and routed only to planned or blocked, while independent validators enforce the current registry classification.",
+          "consumer_paths": [
+            "book_structure.json",
+            "docs/book_outline.md",
+            "chapters/executable-specifications-and-lean-proof-envelope.qmd",
+            "proofs/proof_manifest.json",
+            "proofs/proof_triage.json"
+          ]
+        }
+      ],
+      "maximum_inference_preserved": "Given the authored NonOperationalTargetRouted assumption and non-operational field, the target status is not implemented; independent validators enforce only the current recorded classification, not operational truth.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_proof_artifact_audit.py",
+        "scripts/validate_proof_readiness.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R55-prototype-phase-unlock-projection",
+      "sequence": 55,
+      "state": "executed",
+      "action": "retire_projection_after_validator_route_family_rebinding",
+      "semantic_relation": "summary_projection_replaced_by_route_family_validation",
+      "module_path": "lean/AsiStackProofs/PrototypeRoadmap.lean",
+      "baseline_module_sha256": "7ca7a7370c37d8aba001cc3d9d5cd6c1590fbcb09378375320cc0edf067423ba",
+      "retired_theorem_id": "lean/AsiStackProofs/PrototypeRoadmap.lean::roadmap_phase_unlock_requires_passing_acceptance_gates",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "edc3e3d59c0a3e560c223235efb7d716b5b4955ba294787b42cb5209d38df492",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "bfee6178719a434e2b59709881701d5fea0b7c560365a320f9e94596b2e6bac3",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem projects two fields from PhaseUnlockValid and derives no phase-route decision.",
+        "The immutable semantic overlay records no Lean dependency or theorem consumer for the projection.",
+        "Its PhaseUnlockReview model is otherwise unused and is retired with the theorem rather than preserved as dead formal machinery.",
+        "The retained theorem failed_acceptance_gates_keep_phase_research_only reduces the actual finite prototype route and is required by the prototype-phase validator.",
+        "The public target now states only the modeled research-only branch and does not imply a correct roadmap graph, adequate gates, or real phase completion."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:roadmap.phases.operational_invariant",
+          "old_target_text": "A roadmap phase can unlock a dependent phase only after acceptance gates pass.",
+          "new_target_text": "A finite prototype-phase route with declared prerequisites but failed acceptance gates remains research-only rather than integrating.",
+          "consumer_paths": [
+            "book_structure.json",
+            "docs/book_outline.md",
+            "chapters/prototype-roadmap.qmd",
+            "proofs/proof_manifest.json",
+            "proofs/proof_triage.json"
+          ]
+        }
+      ],
+      "maximum_inference_preserved": "For the authored finite prototype route with prior prerequisites satisfied and acceptanceGatesPassed=false, the result is researchOnly rather than integrate; no real roadmap or gate-adequacy result follows.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_prototype_phase_gates.py",
+        "scripts/validate_proof_artifact_audit.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R56-prototype-accepted-promotion-projection",
+      "sequence": 56,
+      "state": "executed",
+      "action": "retire_projection_after_validator_route_family_rebinding",
+      "semantic_relation": "summary_projection_replaced_by_route_family_validation",
+      "module_path": "lean/AsiStackProofs/PrototypeRoadmap.lean",
+      "baseline_module_sha256": "7ca7a7370c37d8aba001cc3d9d5cd6c1590fbcb09378375320cc0edf067423ba",
+      "retired_theorem_id": "lean/AsiStackProofs/PrototypeRoadmap.lean::accepted_phase_claim_promotion_requires_evidence_artifacts",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "4086d5cee01334bd9f540180b338245f74e8f96a422ab9b3e71022566e1dc5b9",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "afd4b4b34b762dc017cbffd4b48e1446c981efe844fd5036a7bd29cd6bfe3884",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem applies PhaseMilestonePromotionValid and returns the evidenceArtifactsPresent field without deriving rejection or a route.",
+        "The immutable semantic overlay records no Lean dependency or theorem consumer for the projection.",
+        "The retained theorem phase_milestone_cannot_promote_claim_without_evidence_artifacts derives the false promotion field from a reached milestone and absent evidence.",
+        "The retained theorem support_promotion_without_evidence_transition_rejected reduces the finite prototype route, and both names are required by the prototype validator.",
+        "The public target states the two negative cases and does not imply evidence adequacy, phase completion, or a support-state transition."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:roadmap.phases.failure_blocks_promotion",
+          "old_target_text": "A phase milestone cannot promote a claim without evidence artifacts.",
+          "new_target_text": "A finite phase-promotion request without an evidence-transition record is rejected, and a reached milestone with no evidence cannot promote.",
+          "consumer_paths": [
+            "book_structure.json",
+            "docs/book_outline.md",
+            "chapters/prototype-roadmap.qmd",
+            "proofs/proof_manifest.json",
+            "proofs/proof_triage.json"
+          ]
+        }
+      ],
+      "maximum_inference_preserved": "Within the authored finite models, a reached milestone with evidenceArtifactsPresent=false forces claimPromotionAccepted=false, and a requested support promotion without an evidence-transition record routes to rejection; evidence quality and real governance effectiveness do not follow.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_prototype_phase_gates.py",
+        "scripts/validate_proof_artifact_audit.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R57-security-secret-authorization-projection",
+      "sequence": 57,
+      "state": "executed",
+      "action": "retire_projection_after_validator_route_family_rebinding",
+      "semantic_relation": "summary_projection_replaced_by_route_family_validation",
+      "module_path": "lean/AsiStackProofs/SecurityKernel.lean",
+      "baseline_module_sha256": "b505946db7f3e6231507d39a2f9210031fe2f51a5ce6f0c5b4b57984c0096d53",
+      "retired_theorem_id": "lean/AsiStackProofs/SecurityKernel.lean::secret_substitution_requires_authorized_boundary",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "18fcc6e1fd8ceab3343b4fdb7d2295737111d0e2bcb4133599e5ba3ea6601c03",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "b0d80ce42dbd0e61f3e9c66c40936296453e462cd50535bcd38f870075422af6",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem projects the authorized field directly from SecretSubstitutionAllowed and derives no authority-use route.",
+        "The immutable semantic overlay records no Lean dependency or theorem consumer for the projection.",
+        "Its ExecutionBoundary, SecretHandle, and SecretSubstitutionAllowed model is otherwise unused and is retired rather than preserved as dead proof scaffolding.",
+        "The retained unauthorized_boundary_denies_authority_use and missing_secret_substitution_permission_denies_authority_use theorems reduce the finite route and are required by the security-kernel validator.",
+        "The public target now states only those modeled denial branches and does not imply runtime substitution safety, least privilege, isolation, or secret non-disclosure."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:security.scif.operational_invariant",
+          "old_target_text": "A secret handle can be substituted only inside an authorized execution boundary.",
+          "new_target_text": "The finite authority-use route denies secret substitution when the execution boundary is unauthorized or lacks substitution permission.",
+          "consumer_paths": [
+            "book_structure.json",
+            "docs/book_outline.md",
+            "chapters/security-kernel-and-digital-scifs.qmd",
+            "proofs/proof_manifest.json",
+            "proofs/proof_triage.json"
+          ]
+        }
+      ],
+      "maximum_inference_preserved": "For the authored finite authority-use route, boundaryAuthorized=false or permitsSecretSubstitution=false routes to denyUse; no runtime mediation, isolation, non-disclosure, or security efficacy follows.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_security_kernel.py",
+        "scripts/validate_proof_artifact_audit.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
     }
   ],
   "summary": {
-    "executed_retirement_count": 49,
-    "current_live_theorem_count": 1321,
-    "remaining_action_count": 112,
+    "executed_retirement_count": 57,
+    "current_live_theorem_count": 1313,
+    "remaining_action_count": 104,
     "remaining_action_counts": {
-      "retire_narrow_projection": 15,
+      "retire_narrow_projection": 7,
       "rewrite_scope_language": 2,
       "rewrite_with_stronger_model": 95
     },

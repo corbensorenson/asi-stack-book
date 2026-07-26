@@ -1011,7 +1011,7 @@ that remains safe only by never completing useful work fails the joint gate.
 
 Keep the existing syntax-level classifier, but add a semantic-depth overlay for
 every current declaration. The immutable pre-rationalization baseline contains
-1,370 declarations; the live estate contains 1,321 after forty-nine
+1,370 declarations; the live estate contains 1,313 after fifty-seven
 dependency-safe retirement transactions:
 
 | Level | Required meaning |
@@ -1209,11 +1209,11 @@ historical review. The immutable historical registry remains exactly 1,151
 theorems across 298 targets. The separately frozen pre-rationalization overlay
 at commit `d0f9bda14f1253999f2c40d556d925d31e4b36a4` classifies all 1,370
 baseline declarations. The current overlay in
-`proofs/proof_semantic_depth_overlay.json` classifies all 1,321 live theorem
+`proofs/proof_semantic_depth_overlay.json` classifies all 1,313 live theorem
 declarations across 104 theorem-bearing modules and maps them to 61 active
 semantic-owner chapters.
 
-The live semantic-depth distribution is 42 P0 record-shape results, 761 P1
+The live semantic-depth distribution is 39 P0 record-shape results, 756 P1
 finite-route results, 25 P2 reachability/nonvacuity results, 319 P3
 implementation-refinement results, 93 P4 cross-component-safety results, 81 P5
 liveness/recovery results, and zero P6 empirically bound results. P6 being zero
@@ -1223,8 +1223,8 @@ artifact does not turn a theorem into empirical evidence.
 Every overlay row records its assumptions, active semantic owner, downstream
 consumer, witness or explicit witness absence, implementation binding, mutation
 evidence, maximum inference, and disposition. The resulting current estate is
-1,209 retain, 15 retire as narrow projection, two scope-language rewrites, and
-95 stronger-model rewrites. All 1,321 rows have mutation coverage and every
+1,209 retain, seven retire as narrow projection, two scope-language rewrites, and
+95 stronger-model rewrites. All 1,313 rows have mutation coverage and every
 retained theorem has a named consumer.
 
 The cumulative dependency-safe retirement ledger is
@@ -1403,9 +1403,26 @@ thirty-one. The transactions prove no detector quality, semantic handoff
 correctness, planner quality, scheduler optimality, deployed behavior, support
 transition, or release authority.
 
+The twelfth narrow-projection tranche retires eight unconsumed direct
+projections across `LivingBook.lean`, `PlanForge.lean`,
+`ProofEnvelope.lean`, `PrototypeRoadmap.lean`, and `SecurityKernel.lean`.
+Two otherwise unused projection-only record models are removed with their
+theorems. The eight public targets now bind to retained negative cases, explicit
+finite route families, or independent repository validators. In particular,
+the PlanForge target is narrowed from general DAG acyclicity to strict ordering
+of listed edges and exclusion of self-edges; the proof-envelope targets separate
+filesystem/registry inspection from finite Lean rejection; and the security,
+prototype, and living-book targets name modeled denial or malformed-record
+branches rather than positive field projections. Nineteen Living Book, three
+PlanForge, five Proof Envelope, nine Prototype Roadmap, and twenty-one Security
+Kernel declarations remain. These migrations prove no manuscript quality,
+filesystem truth inside Lean, general graph acyclicity, phase completion, gate
+adequacy, runtime secret mediation, security efficacy, support transition, or
+release authority.
+
 This receipt completes the C6 **classification** gate and begins its
-dependency-safe execution gate. Exactly 49 of the original 161 actions have
-been executed; 112 rewrite-or-retire actions remain: 15 narrow-projection
+dependency-safe execution gate. Exactly 57 of the original 161 actions have
+been executed; 104 rewrite-or-retire actions remain: seven narrow-projection
 retirements, two scope-language rewrites, and 95 stronger-model rewrites. The
 next proof action is a dependency-safe narrow-projection tranche, preserving
 each correct bounded result until its consumers and maximum inference are

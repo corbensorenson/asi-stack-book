@@ -4998,7 +4998,7 @@
             {
               "tag": "lean:security.scif.operational_invariant",
               "module": "AsiStackProofs.SecurityKernel",
-              "target": "A secret handle can be substituted only inside an authorized execution boundary.",
+              "target": "The finite authority-use route denies secret substitution when the execution boundary is unauthorized or lacks substitution permission.",
               "status": "implemented"
             },
             {
@@ -8064,7 +8064,7 @@
             {
               "tag": "lean:planforge.dag.operational_invariant",
               "module": "AsiStackProofs.PlanForge",
-              "target": "A dispatchable plan graph is acyclic and all dependencies precede dependents.",
+              "target": "For every listed dependency edge in a finite dispatchable plan record, the dependency index precedes the dependent index; the order predicate rules out self-dependency.",
               "status": "implemented"
             },
             {
@@ -21217,7 +21217,7 @@
             "Revocation stops at the theorem record while derived claims, releases, runtime consumers, caches, and public wording remain stale.",
             "Sunk-cost attachment to a large proof corpus prevents merging, replacing, refuting, or retiring declarations that do not constrain a real consumer."
           ],
-          "minimal_implementation": "The exact current minimum is one proof-target schema and valid fixture; one generated 298-target proof manifest; a 65-module Lean workspace whose complete build reports 68 jobs and 1,151 theorem declarations classified as 952 derived/decomposed, 187 direct/projection, and 12 unknown/mixed; one proof-readiness classification of 13 adequate finite-record, 212 useful-but-narrow, 18 richer-state-machine, 35 executable-test-first, 18 empirical-test-first, and two research-agenda targets; one wiring-only proof artifact audit; one semantic-adequacy review surface; one blocked formal-semantic-depth record with ten rejecting mutations; and seven local ProofEnvelope declarations classified as two direct projections and five derived negative cases. It provides no complete semantic formalization of the stack, deployed enforcement proof, general implementation refinement, independent formal reproduction, empirical result, chapter-core transition, or SOTA result.",
+          "minimal_implementation": "The exact current minimum is one proof-target schema and valid fixture; one generated 333-target proof manifest with 302 implemented and 31 planned targets; a 110-module Lean workspace whose complete build reports 107 jobs and 1,313 theorem declarations classified as 919 derived/decomposed, 179 direct/projection, and 215 unknown/mixed; one proof-readiness classification; one wiring-only proof artifact audit; one semantic-adequacy review surface; one blocked formal-semantic-depth record with ten rejecting mutations; and five local ProofEnvelope declarations, all derived finite negative cases after retirement of its two direct projections. The separate activation audit preserves its historical 298-target, 65-module, and 1,151-theorem baseline. This minimum provides no complete semantic formalization of the stack, deployed enforcement proof, general implementation refinement, independent formal reproduction, empirical result, chapter-core transition, or SOTA result.",
           "beyond_state_of_art": "The mature Formal Claim Admission and Proof-Rationalization Program audits every proposition, all 298 activation-baseline proof targets, and all 1,151 activation-baseline theorem declarations for semantic necessity, vacuity, reachability, assumptions, dependencies, consumers, and implementation binding. It replaces load-bearing projections with richer state-machine, temporal, concurrency, noninterference, resource, recovery, probabilistic, or refinement models where warranted; moves behavior and performance obligations to executable and empirical lanes; validates implementation relations and runtime monitors; runs countermodels, mutations, adversarial schedules, and negative controls; requires independent formalizations, tools, implementations, and evaluators for decisive claims; measures proof and governance cost; propagates expiry and revocation through every consumer and release surface; and preserves narrow, null, refuted, retired, or blocked-after-full-attempt outcomes instead of optimizing theorem counts or green builds.",
           "open_evidence_gaps": [
             "All twelve assigned sources have exact passage-reviewed mappings, but they support formalization and claim-boundary design only; no source-reported system, proof corpus, deployment, runtime, security, capability, or performance result is imported as ASI Stack evidence.",
@@ -21315,13 +21315,13 @@
             {
               "tag": "lean:proofs.envelope.operational_invariant",
               "module": "AsiStackProofs.ProofEnvelope",
-              "target": "A proof target marked implemented has an existing module and passes the build.",
+              "target": "Independent registry and artifact validators require each implemented target to name an existing imported module, while the retained finite Lean negative case rejects an implemented target missing its module or passing build.",
               "status": "implemented"
             },
             {
               "tag": "lean:proofs.envelope.failure_blocks_promotion",
               "module": "AsiStackProofs.ProofEnvelope",
-              "target": "A proof target for a non-operational claim remains planned or blocked, not implemented.",
+              "target": "The retained finite Lean route excludes implemented status for a target assumed non-operational and routed only to planned or blocked, while independent validators enforce the current registry classification.",
               "status": "implemented"
             }
           ]
@@ -26793,13 +26793,13 @@
             {
               "tag": "lean:roadmap.phases.operational_invariant",
               "module": "AsiStackProofs.PrototypeRoadmap",
-              "target": "A roadmap phase can unlock a dependent phase only after acceptance gates pass.",
+              "target": "A finite prototype-phase route with declared prerequisites but failed acceptance gates remains research-only rather than integrating.",
               "status": "implemented"
             },
             {
               "tag": "lean:roadmap.phases.failure_blocks_promotion",
               "module": "AsiStackProofs.PrototypeRoadmap",
-              "target": "A phase milestone cannot promote a claim without evidence artifacts.",
+              "target": "A finite phase-promotion request without an evidence-transition record is rejected, and a reached milestone with no evidence cannot promote.",
               "status": "implemented"
             },
             {
@@ -27218,13 +27218,13 @@
             {
               "tag": "lean:living_book.methodology.operational_invariant",
               "module": "AsiStackProofs.LivingBook",
-              "target": "Every chapter in the manifest has outline proof targets and generated claim placeholders.",
+              "target": "A finite manifest review with a present chapter but missing outline targets or claim placeholders is rejected.",
               "status": "implemented"
             },
             {
               "tag": "lean:living_book.methodology.failure_blocks_promotion",
               "module": "AsiStackProofs.LivingBook",
-              "target": "A structural update without regenerated scaffold/proof manifest is invalid.",
+              "target": "A finite structural update marked valid while either the scaffold or proof manifest is unsynchronized is rejected.",
               "status": "implemented"
             },
             {

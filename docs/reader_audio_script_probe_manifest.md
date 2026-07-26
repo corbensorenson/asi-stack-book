@@ -52,8 +52,8 @@ script order.
 | Script order | matches book-structure order |
 | Ordered chapter markers | 89 ordered markers |
 | Chapter-marker timecodes | 89 `TBD` rows |
-| Narration notes | 243 narration notes |
-| Table narration notes | 105 |
+| Narration notes | 244 narration notes |
+| Table narration notes | 106 |
 | Diagram narration notes | 113 |
 | Image narration notes | 11 |
 | Code/schema narration notes | 14 |

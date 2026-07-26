@@ -56,6 +56,9 @@ LEAN_PHRASES = [
     "PrototypePhaseGateFixtureBridgeRouteFor",
     "missing_non_claim_boundary_rejects_prototype_fixture_bridge",
     "complete_prototype_phase_gate_fixture_bridge_accepts",
+    "phase_milestone_cannot_promote_claim_without_evidence_artifacts",
+    "failed_acceptance_gates_keep_phase_research_only",
+    "support_promotion_without_evidence_transition_rejected",
 ]
 
 

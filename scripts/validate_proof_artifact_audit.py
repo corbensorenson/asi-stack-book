@@ -17,6 +17,11 @@ RATIONALIZATION = ROOT / "proofs" / "proof_rationalization_registry.json"
 ROOT_LEAN_MODULE = ROOT / "lean" / "AsiStackProofs.lean"
 APPENDIX_E = ROOT / "appendices" / "E_codex_test_specs.qmd"
 REPORT = ROOT / "docs" / "proof_artifact_audit.md"
+PROOF_ENVELOPE = ROOT / "lean" / "AsiStackProofs" / "ProofEnvelope.lean"
+REQUIRED_PROOF_ENVELOPE_THEOREMS = {
+    "implemented_target_missing_module_or_build_rejected",
+    "non_operational_target_not_implemented",
+}
 
 LIMITATION_MARKERS = [
     "does not prove",
@@ -126,6 +131,13 @@ def build_report() -> tuple[str, list[str]]:
     for record in implemented_records:
         module_target_tags[str(record.get("module_path", ""))].append(str(record.get("tag", "")))
     module_rows: list[str] = []
+
+    proof_envelope_text = PROOF_ENVELOPE.read_text(encoding="utf-8", errors="ignore")
+    for theorem in sorted(REQUIRED_PROOF_ENVELOPE_THEOREMS):
+        if f"theorem {theorem}" not in proof_envelope_text:
+            errors.append(
+                f"{PROOF_ENVELOPE.relative_to(ROOT)} is missing retained theorem {theorem}."
+            )
 
     duplicate_tags = [tag for tag, count in Counter(record.get("tag") for record in records).items() if count > 1]
     for tag in sorted(str(tag) for tag in duplicate_tags):

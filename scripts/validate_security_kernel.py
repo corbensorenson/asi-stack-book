@@ -14,6 +14,11 @@ from validate_protocol_examples import validate_value
 ROOT = Path(__file__).resolve().parents[1]
 FIXTURE_DIR = ROOT / "experiments" / "security_kernel" / "fixtures"
 SCHEMA = ROOT / "schemas" / "authority_use_receipt.schema.json"
+LEAN = ROOT / "lean" / "AsiStackProofs" / "SecurityKernel.lean"
+REQUIRED_THEOREMS = {
+    "unauthorized_boundary_denies_authority_use",
+    "missing_secret_substitution_permission_denies_authority_use",
+}
 
 REQUIRED_LIFECYCLE = {"spawn", "inject", "execute", "sanitize", "zeroize", "commit", "audit"}
 SCOPING_BAD_TERMS = {
@@ -175,9 +180,22 @@ def main() -> None:
             print(f" - {error}")
         sys.exit(1)
 
+    lean_text = LEAN.read_text(encoding="utf-8")
+    missing_theorems = [
+        theorem
+        for theorem in sorted(REQUIRED_THEOREMS)
+        if f"theorem {theorem}" not in lean_text
+    ]
+    if missing_theorems:
+        print("Security kernel harness failed:")
+        for theorem in missing_theorems:
+            print(f" - {LEAN.relative_to(ROOT)}: missing retained route theorem {theorem}.")
+        sys.exit(1)
+
     print(
         "Security kernel harness passed: "
-        f"{valid_count} valid fixture(s), {invalid_count} expected-invalid fixture(s)."
+        f"{valid_count} valid fixture(s), {invalid_count} expected-invalid fixture(s), "
+        f"{len(REQUIRED_THEOREMS)} retained authority-route theorem binding(s)."
     )
 
 
