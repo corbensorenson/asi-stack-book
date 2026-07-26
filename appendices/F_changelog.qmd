@@ -1,5 +1,32 @@
 # Changelog
 
+## 2026-07-25 — Eighth narrow-projection C6 tranche
+
+- Retired four assumption-restating declarations from
+  `ArtifactStewardAgents.lean` together with their otherwise-unused record and
+  predicate wrappers. These declarations had no theorem dependencies or
+  theorem consumers.
+- Rebound the treasury and sunset targets to retained finite lifecycle-route
+  reductions: out-of-policy spend routes to approval, and met sunset criteria
+  without an open review route to sunset review.
+- Moved the work-contract and release-gate targets to `planned` until reachable
+  decision functions derive repair or refusal from missing contract and
+  evidence fields. The chapter keeps those requirements as design contracts
+  without presenting assumed predicates as proofs.
+- Extended the cumulative ledger to thirty-eight ordered retirements and
+  eighteen public-target migrations. The current estate is 1,332 declarations:
+  45 P0, 769 P1, 25 P2, 319 P3, 93 P4, 81 P5, and zero P6. The remaining queue
+  contains 123 actions: 26 narrow-projection retirements, two scope-language
+  rewrites, and 95 stronger-model rewrites.
+- Reconciled the 333 public targets to 302 implemented and 31 planned. The
+  proof-shape audit now reports 919 derived, 198 direct, and 215 unknown
+  declaration bodies. This transaction changes no chapter-core support state,
+  executable trace outcome, empirical result, deployment status, release
+  state, or publication authority.
+- Current proof-depth snapshot: 333 proof targets, 110 Lean modules, 1332
+  theorem declarations, 919 derived/decomposed, 198 direct/projection, 215
+  unknown/mixed, and 1/1 safety-critical chapter classifications present.
+
 ## 2026-07-25 — Seventh narrow-projection C6 tranche
 
 - Retired five premise- or summary-restating declarations from

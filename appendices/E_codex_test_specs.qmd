@@ -580,7 +580,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `scientific-discovery-and-experimental-governance` | Scientific Discovery and Experimental Governance | No-support-promotion control | planned | not run |
 | `artifact-steward-agents-and-living-project-governance` | Artifact Steward Agents and Living Project Governance | Project steward manifest fixture validation | implemented | passes via protocol fixture validation |
 | `artifact-steward-agents-and-living-project-governance` | Artifact Steward Agents and Living Project Governance | Treasury policy and event-taint fixture validation | implemented | passes via protocol fixture validation |
-| `artifact-steward-agents-and-living-project-governance` | Artifact Steward Agents and Living Project Governance | Work contract authority denial test | implemented | passes via Lean build |
+| `artifact-steward-agents-and-living-project-governance` | Artifact Steward Agents and Living Project Governance | Work contract authority denial test | planned | not run; record-shape fixture only |
 | `artifact-steward-agents-and-living-project-governance` | Artifact Steward Agents and Living Project Governance | Treasury spend-cap test | implemented | passes via Lean build |
 | `artifact-steward-agents-and-living-project-governance` | Artifact Steward Agents and Living Project Governance | Untrusted event taint test | implemented | passes via Lean build |
 | `artifact-steward-agents-and-living-project-governance` | Artifact Steward Agents and Living Project Governance | Contribution ledger separation test | implemented | passes via Lean build |
@@ -588,8 +588,8 @@ No result is recorded here unless a test has actually been implemented and run.
 | `artifact-steward-agents-and-living-project-governance` | Artifact Steward Agents and Living Project Governance | Release evidence handoff test | implemented | validated locally by synthetic fixtures; no steward release run |
 | `artifact-steward-agents-and-living-project-governance` | Artifact Steward Agents and Living Project Governance | Project federation contract test | implemented | passes via Lean build |
 | `artifact-steward-agents-and-living-project-governance` | Artifact Steward Agents and Living Project Governance | Autonomy-mode transition test | implemented | passes via Lean build |
-| `artifact-steward-agents-and-living-project-governance` | Artifact Steward Agents and Living Project Governance | Release evidence gate test | implemented | passes via Lean build |
-| `artifact-steward-agents-and-living-project-governance` | Artifact Steward Agents and Living Project Governance | Sunset ordinary-work block test | implemented | passes via Lean build |
+| `artifact-steward-agents-and-living-project-governance` | Artifact Steward Agents and Living Project Governance | Release evidence gate test | planned | not run; expected-invalid lifecycle trace only |
+| `artifact-steward-agents-and-living-project-governance` | Artifact Steward Agents and Living Project Governance | Sunset ordinary-work block test | implemented | passes via deterministic lifecycle probe |
 | `artifact-steward-agents-and-living-project-governance` | Artifact Steward Agents and Living Project Governance | Artifact steward lifecycle probe | implemented | passes via deterministic public-safe lifecycle probe; no steward-bot, treasury-executor, event-taint-workflow, contributor-ledger, governance-runner, project-federation, release-runner, sunset-protocol, or support-state-promotion claim |
 | `integrated-reference-architecture` | Integrated Reference Architecture | End-to-end intent trace test | implemented | passing via `python3 scripts/validate_reference_trace.py` |
 | `integrated-reference-architecture` | Integrated Reference Architecture | Artifact continuity audit | implemented | passing via `python3 scripts/validate_reference_trace.py` |
@@ -702,13 +702,13 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Target status | Count |
 |---|---:|
-| implemented | 304 |
-| planned | 29 |
+| implemented | 302 |
+| planned | 31 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 304 |
-| planned | formal-invariant | lean-candidate | 11 |
+| implemented | formal-invariant | lean-candidate | 302 |
+| planned | formal-invariant | lean-candidate | 13 |
 | planned | process-contract | policy-model-first | 18 |

@@ -1492,14 +1492,222 @@
         "lean:lake-build"
       ],
       "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R35-artifact-steward-work-contract-projection",
+      "sequence": 35,
+      "state": "executed",
+      "action": "retire_projection_after_public_target_narrowing",
+      "semantic_relation": "premise_restatement_retired_after_target_scope_reduction",
+      "module_path": "lean/AsiStackProofs/ArtifactStewardAgents.lean",
+      "baseline_module_sha256": "23fa071313f0fcbcf790446033fd3e1ca011272a2f720c5fedaa48112ac6ec8e",
+      "retired_theorem_id": "lean/AsiStackProofs/ArtifactStewardAgents.lean::dispatched_steward_contract_records_required_boundary",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "45af1ea46c7e60a00a782d3f7880500d13723e9394bd060e3f4a7fee0f2fbd2f",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "6124046ccc5172dfd7f4d5dc82116edd6f75228c6a8d416b75ae83b833e7d201",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem returns the required-boundary conjunction already supplied by DispatchedContractHasRequiredBoundary after dispatch is assumed.",
+        "The immutable semantic overlay records no theorem dependency or theorem consumer for the projection.",
+        "The otherwise-unused work-contract record and implication predicate were removed with the theorem rather than retained as dead formal surface.",
+        "The public target is planned until a reachable steward dispatch function derives repair or refusal from missing contract boundaries.",
+        "The schema fixture remains record-shape evidence and is not presented as an equivalent formal route."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:artifact_stewards.work_contract.operational_invariant",
+          "old_target_text": "A steward-managed work contract records objective, authority, allowed tools, forbidden tools, verification requirements, budget, and non-claims before dispatch.",
+          "new_target_text": "A reachable steward dispatch model derives contract repair or refusal when objective, authority, tool, verification, budget, or non-claim boundaries are missing.",
+          "consumer_paths": [
+            "book_structure.json",
+            "docs/book_outline.md",
+            "chapters/artifact-steward-agents-and-living-project-governance.qmd",
+            "proofs/proof_manifest.json",
+            "proofs/proof_triage.json"
+          ]
+        }
+      ],
+      "maximum_inference_preserved": "The repository validates work-contract record shape, but no current Lean theorem derives dispatch repair or refusal from a reachable decision model.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_proof_artifact_audit.py",
+        "scripts/validate_artifact_steward_lifecycle_probe.py",
+        "scripts/validate_p4_c6_semantic_proof_cluster.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R36-artifact-steward-treasury-projection",
+      "sequence": 36,
+      "state": "executed",
+      "action": "retire_projection_after_decision_model_consumer_migration",
+      "semantic_relation": "premise_restatement_replaced_by_derived_decision_gate",
+      "module_path": "lean/AsiStackProofs/ArtifactStewardAgents.lean",
+      "baseline_module_sha256": "23fa071313f0fcbcf790446033fd3e1ca011272a2f720c5fedaa48112ac6ec8e",
+      "retired_theorem_id": "lean/AsiStackProofs/ArtifactStewardAgents.lean::protected_steward_action_without_approval_cannot_execute",
+      "replacement_theorem_id": "lean/AsiStackProofs/ArtifactStewardAgents.lean::treasury_spend_outside_policy_routes_to_approval",
+      "retired_block_sha256": "7d1659e959d93ffc2b9cfe0c947f8f1a49bb8264af1d9b84d44c8f063dd740c8",
+      "replacement_block_sha256": "3130c39f229323d065928ee64f82e0ad9ee4653b85fe9308765eec0ff0ce7615",
+      "retired_statement_sha256": "056a62ed632ee8fc13636c759c12206153cadf5eba80302e9c6e295133708610",
+      "replacement_statement_sha256": "d3782cc54c3994f5d77a2ac178a8e3acc8deccfa7b69c0e40ba6434c998b96ab",
+      "semantic_basis": [
+        "The retired theorem applies MissingApprovalBlocksProtectedAction to supplied protected-boundary and missing-approval premises without deriving a route.",
+        "The immutable semantic overlay records no theorem dependency or theorem consumer for the projection.",
+        "The otherwise-unused protected-action record and implication predicate were removed with the theorem.",
+        "The public target now names the retained lifecycle decision function that routes requested treasury spend outside policy to approval.",
+        "The narrower route does not retain unsupported governance-change or protected-asset execution claims."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:artifact_stewards.treasury_boundary.failure_blocks_promotion",
+          "old_target_text": "A steward action that exceeds treasury policy, changes governance rules, or touches protected assets cannot execute without explicit approval evidence.",
+          "new_target_text": "A finite steward lifecycle decision with requested treasury spend outside policy routes to approval.",
+          "consumer_paths": [
+            "book_structure.json",
+            "docs/book_outline.md",
+            "chapters/artifact-steward-agents-and-living-project-governance.qmd",
+            "proofs/proof_manifest.json",
+            "proofs/proof_triage.json"
+          ]
+        }
+      ],
+      "maximum_inference_preserved": "Under the authored finite lifecycle function, a requested treasury spend outside policy routes to approval; no live treasury, approval, governance, or protected-asset enforcement follows.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_proof_artifact_audit.py",
+        "scripts/validate_artifact_steward_lifecycle_probe.py",
+        "scripts/validate_p4_c6_semantic_proof_cluster.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R37-artifact-steward-release-projection",
+      "sequence": 37,
+      "state": "executed",
+      "action": "retire_projection_after_public_target_narrowing",
+      "semantic_relation": "premise_restatement_retired_after_target_scope_reduction",
+      "module_path": "lean/AsiStackProofs/ArtifactStewardAgents.lean",
+      "baseline_module_sha256": "23fa071313f0fcbcf790446033fd3e1ca011272a2f720c5fedaa48112ac6ec8e",
+      "retired_theorem_id": "lean/AsiStackProofs/ArtifactStewardAgents.lean::stewarded_release_publication_requires_test_evidence_changelog_residual_and_approval_records",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "9c798ba85276da5d060d4dd57e1747c6f55eb0624b1e89e849dc3ee5c214b3ac",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "678a8e462c5944763c5f577c609292d2bd959873895df51703b0f871cf7e0b5e",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem returns the release-evidence conjunction already supplied by PublishedReleaseRequiresEvidenceGate after publication is assumed.",
+        "The immutable semantic overlay records no theorem dependency or theorem consumer for the projection.",
+        "The otherwise-unused release review record and implication predicate were removed with the theorem rather than retained as dead formal surface.",
+        "The public target is planned until a reachable release decision function derives refusal from missing gate records.",
+        "The executable invalid-release trace remains protocol evidence and is not represented as a Lean replacement."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:artifact_stewards.release_gate.operational_invariant",
+          "old_target_text": "A stewarded release publication requires test, evidence, changelog, residual, and approval records.",
+          "new_target_text": "A reachable steward release model derives refusal when test, evidence, changelog, residual, or approval records are missing.",
+          "consumer_paths": [
+            "book_structure.json",
+            "docs/book_outline.md",
+            "chapters/artifact-steward-agents-and-living-project-governance.qmd",
+            "proofs/proof_manifest.json",
+            "proofs/proof_triage.json"
+          ]
+        }
+      ],
+      "maximum_inference_preserved": "The executable lifecycle trace rejects an authored invalid release record, but no current Lean theorem derives release refusal from a reachable decision model.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_proof_artifact_audit.py",
+        "scripts/validate_artifact_steward_lifecycle_probe.py",
+        "scripts/validate_p4_c6_semantic_proof_cluster.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R38-artifact-steward-sunset-projection",
+      "sequence": 38,
+      "state": "executed",
+      "action": "retire_projection_after_decision_model_consumer_migration",
+      "semantic_relation": "premise_restatement_replaced_by_derived_decision_gate",
+      "module_path": "lean/AsiStackProofs/ArtifactStewardAgents.lean",
+      "baseline_module_sha256": "23fa071313f0fcbcf790446033fd3e1ca011272a2f720c5fedaa48112ac6ec8e",
+      "retired_theorem_id": "lean/AsiStackProofs/ArtifactStewardAgents.lean::sunset_criteria_block_ordinary_work_until_review_opened",
+      "replacement_theorem_id": "lean/AsiStackProofs/ArtifactStewardAgents.lean::sunset_criteria_without_open_review_routes_to_sunset_review",
+      "retired_block_sha256": "3d96d4d3e995348cc20540cade45bc230d0b59aba73e15f0e8c8dd5e4e9f8395",
+      "replacement_block_sha256": "ce3d603895f81ad259f244e1dcc683010456d7440e5a6a12d6e9964cbde3a976",
+      "retired_statement_sha256": "a0932f74fc9db0c550ea71e986a47a9d5e2c8957e942dad940db8b3c5ee1a064",
+      "replacement_statement_sha256": "5320d232a8b140a90b899b43d5bfaeb12d55a97d2bfe67e54140e9b716f7b26c",
+      "semantic_basis": [
+        "The retired theorem applies SunsetCriteriaBlocksOrdinaryWork to supplied criteria and no-review premises without deriving a route.",
+        "The immutable semantic overlay records no theorem dependency or theorem consumer for the projection.",
+        "The otherwise-unused sunset implication record and predicate were removed with the theorem.",
+        "The public target now names the retained lifecycle decision function that routes unmet sunset-review obligations to openSunsetReview.",
+        "The executable invalid trace separately checks ordinary-work rejection; neither artifact proves a deployed steward loop."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:artifact_stewards.sunset_review.failure_blocks_promotion",
+          "old_target_text": "When sunset criteria are met, ordinary work generation is blocked until a sunset review is opened.",
+          "new_target_text": "A finite steward lifecycle decision with sunset criteria met and no open review routes to sunset review.",
+          "consumer_paths": [
+            "book_structure.json",
+            "docs/book_outline.md",
+            "chapters/artifact-steward-agents-and-living-project-governance.qmd",
+            "proofs/proof_manifest.json",
+            "proofs/proof_triage.json"
+          ]
+        }
+      ],
+      "maximum_inference_preserved": "Under the authored finite lifecycle function, sunset criteria with no open review route to sunset review; the executable trace separately rejects ordinary work, and no live steward enforcement follows.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_proof_artifact_audit.py",
+        "scripts/validate_artifact_steward_lifecycle_probe.py",
+        "scripts/validate_p4_c6_semantic_proof_cluster.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
     }
   ],
   "summary": {
-    "executed_retirement_count": 34,
-    "current_live_theorem_count": 1336,
-    "remaining_action_count": 127,
+    "executed_retirement_count": 38,
+    "current_live_theorem_count": 1332,
+    "remaining_action_count": 123,
     "remaining_action_counts": {
-      "retire_narrow_projection": 30,
+      "retire_narrow_projection": 26,
       "rewrite_scope_language": 2,
       "rewrite_with_stronger_model": 95
     },

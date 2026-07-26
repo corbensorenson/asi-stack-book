@@ -6,7 +6,7 @@
   "scope": "bounded_finite_resource_allocation_artifact_reality_stewardship_and_compression_lifecycle_semantics",
   "module_count": 4,
   "public_target_count": 31,
-  "theorem_declaration_count": 48,
+  "theorem_declaration_count": 44,
   "module_dispositions": [
     {
       "module": "AsiStackProofs.ResourceEconomicsRefinement",
@@ -63,25 +63,25 @@
       "path": "lean/AsiStackProofs/ArtifactStewardAgents.lean",
       "disposition": "adequate",
       "public_target_count": 7,
-      "theorem_declaration_count": 16,
-      "plain_language_proposition": "Finite steward decisions require scoped work contracts, protected-action approval, release records, sunset review, separated contribution ledgers, and bounded federation contracts before their authored routes permit ordinary work, publication, ledger acceptance, or dispatch.",
-      "modeled_state": "Hand-authored Boolean reviews for work contracts, protected actions, release gates, sunset, lifecycle routing, contribution ledgers, and federation dispatch, plus a two-valid/six-invalid independent lifecycle probe.",
+      "theorem_declaration_count": 12,
+      "plain_language_proposition": "Finite steward lifecycle, contribution-ledger, and federation decisions route tainted events, autonomy increases, treasury exceptions, sunset criteria, collapsed contribution scoring, missing evidence, inherited authority, and contract defects to explicit review, rejection, or dispatch outcomes.",
+      "modeled_state": "Hand-authored finite route functions for lifecycle, contribution-ledger, and federation decisions, plus a two-valid/six-invalid independent lifecycle probe. Work-contract repair and release-gate refusal remain public planned targets rather than assumption-restating theorems.",
       "assumptions": [
         "Objectives, authority, tool, budget, approval, evidence, contribution, conflict, data-class, and policy fields are truthful and complete for the reviewed action.",
         "The model does not authenticate approvals, execute tools, spend funds, allocate compensation, measure reputation, resolve conflicts, publish a release, or enforce a charter.",
         "A dispatched contract or accepted ledger does not establish agent competence, good stewardship, ownership, fair compensation, effective governance, safe autonomy, or successful work."
       ],
       "countermodels": [
-        "A protected action without explicit approval cannot execute, and an autonomy increase or over-policy spend routes to approval.",
-        "A tainted unreviewed event routes to quarantine and satisfied sunset criteria without an opened review blocks ordinary work.",
+        "An autonomy increase or over-policy spend routes to approval.",
+        "A tainted unreviewed event routes to quarantine, and satisfied sunset criteria without an opened review route to sunset review.",
         "Collapsed contribution scoring, missing credit dimensions, inherited project authority, absent work contracts, disallowed data, or missing evidence bundles prevent ledger acceptance or federation dispatch."
       ],
       "consumers": [
         "scripts/validate_artifact_steward_lifecycle_probe.py",
         "experiments/artifact_steward_lifecycle_probe/results/2026-07-02-local.json"
       ],
-      "mutation_evidence": "The independent lifecycle probe preserves two valid routes and rejects six expected-invalid controls without executing steward work or changing support; the theorem surface separately covers all seven public contracts.",
-      "maximum_inference": "Adequate for the exact finite implications and route precedence encoded by the seven steward review types. It does not establish field authenticity, agent competence, good stewardship, ownership, fair governance, effective approval, real execution, release validity, federation safety, or support movement."
+      "mutation_evidence": "The independent lifecycle probe preserves two valid routes and rejects six expected-invalid controls without executing steward work or changing support; twelve retained route theorems cover the five implemented public targets, while work-contract repair and release-gate refusal remain planned.",
+      "maximum_inference": "Adequate for the exact finite route precedence encoded by the lifecycle, contribution-ledger, and federation models and not for the two planned work-contract and release-gate decision functions. It does not establish field authenticity, agent competence, good stewardship, ownership, fair governance, effective approval, real execution, release validity, federation safety, or support movement."
     },
     {
       "module": "AsiStackProofs.ArtifactCompressionRefinement",

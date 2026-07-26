@@ -66,10 +66,14 @@ EXPECTED_ACTION_IDS = [
     "C6-R32-substrate-qualified-evidence-projection",
     "C6-R33-substrate-axis-summary-projection",
     "C6-R34-substrate-no-promotion-summary-projection",
+    "C6-R35-artifact-steward-work-contract-projection",
+    "C6-R36-artifact-steward-treasury-projection",
+    "C6-R37-artifact-steward-release-projection",
+    "C6-R38-artifact-steward-sunset-projection",
 ]
 EXPECTED_LEVELS = {
     "P0": 45,
-    "P1": 773,
+    "P1": 769,
     "P2": 25,
     "P3": 319,
     "P4": 93,
@@ -78,7 +82,7 @@ EXPECTED_LEVELS = {
 }
 EXPECTED_DISPOSITIONS = {
     "retain": 1209,
-    "retire_narrow_projection": 30,
+    "retire_narrow_projection": 26,
     "rewrite_scope_language": 2,
     "rewrite_with_stronger_model": 95,
 }
@@ -150,6 +154,23 @@ EXPECTED_TARGETS = {
         "states and eight rejected controls from exact trace inputs rather than "
         "projecting fields from a hand-authored valid-summary predicate."
     ),
+    "lean:artifact_stewards.work_contract.operational_invariant": (
+        "A reachable steward dispatch model derives contract repair or refusal when "
+        "objective, authority, tool, verification, budget, or non-claim boundaries "
+        "are missing."
+    ),
+    "lean:artifact_stewards.treasury_boundary.failure_blocks_promotion": (
+        "A finite steward lifecycle decision with requested treasury spend outside "
+        "policy routes to approval."
+    ),
+    "lean:artifact_stewards.release_gate.operational_invariant": (
+        "A reachable steward release model derives refusal when test, evidence, "
+        "changelog, residual, or approval records are missing."
+    ),
+    "lean:artifact_stewards.sunset_review.failure_blocks_promotion": (
+        "A finite steward lifecycle decision with sunset criteria met and no open "
+        "review routes to sunset review."
+    ),
 }
 PLANNED_TARGETS = {
     "lean:evidence.support_state.operational_invariant",
@@ -158,6 +179,8 @@ PLANNED_TARGETS = {
     "lean:evidence.accepted_transition.review_audit_bridge",
     "lean:evidence.claim_state.transition_bridge",
     "lean:substrates.search.adoption_trace_bridge",
+    "lean:artifact_stewards.work_contract.operational_invariant",
+    "lean:artifact_stewards.release_gate.operational_invariant",
 }
 EXPECTED_RELATIONS = {
     "retire_exact_same_model_duplicate": "exact_same_model_normalized_statement",
@@ -193,6 +216,10 @@ EXPECTED_MIGRATION_COUNTS = {
         "C6-R30-substrate-adoption-fields-projection",
         "C6-R31-substrate-non-core-projection",
         "C6-R33-substrate-axis-summary-projection",
+        "C6-R35-artifact-steward-work-contract-projection",
+        "C6-R36-artifact-steward-treasury-projection",
+        "C6-R37-artifact-steward-release-projection",
+        "C6-R38-artifact-steward-sunset-projection",
     })
     for action_id in EXPECTED_ACTION_IDS
 }
@@ -250,7 +277,7 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
     actions = ledger["actions"]
     if [row["action_id"] for row in actions] != EXPECTED_ACTION_IDS:
         out.append("action sequence or identity drifted")
-    if [row["sequence"] for row in actions] != list(range(1, 35)):
+    if [row["sequence"] for row in actions] != list(range(1, 39)):
         out.append("action sequence numbers drifted")
 
     try:
@@ -365,10 +392,15 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
         elif action["action"] == "retire_projection_after_decision_model_consumer_migration":
             if "exact valid" not in retired_block["block"]:
                 out.append(f"{action['action_id']}: retired theorem is not the audited projection")
-            if (
-                "unfold RatchetDecisionAccepted" not in replacement_block["block"]
-                or "rw [" not in replacement_block["block"]
-            ):
+            ratchet_derivation = (
+                "unfold RatchetDecisionAccepted" in replacement_block["block"]
+                and "rw [" in replacement_block["block"]
+            )
+            steward_route_derivation = (
+                "unfold StewardLifecycleRouteFor" in replacement_block["block"]
+                and "simp [" in replacement_block["block"]
+            )
+            if not (ratchet_derivation or steward_route_derivation):
                 out.append(f"{action['action_id']}: replacement lacks decision-model derivation")
         elif action["action"] in {
             "retire_projection_after_public_target_narrowing",
@@ -401,13 +433,13 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
 
     overlay = load(CURRENT_OVERLAY)
     summary = overlay.get("summary", {})
-    if summary.get("current_theorem_count") != 1336:
+    if summary.get("current_theorem_count") != 1332:
         out.append("current theorem denominator drifted")
     if summary.get("semantic_level_counts") != EXPECTED_LEVELS:
         out.append("current semantic-level counts drifted")
     if summary.get("disposition_counts") != EXPECTED_DISPOSITIONS:
         out.append("current disposition counts drifted")
-    if sum(value for key, value in EXPECTED_DISPOSITIONS.items() if key != "retain") != 127:
+    if sum(value for key, value in EXPECTED_DISPOSITIONS.items() if key != "retain") != 123:
         out.append("expected remaining-action denominator is internally inconsistent")
     if ledger["summary"]["remaining_action_counts"] != {
         key: value for key, value in EXPECTED_DISPOSITIONS.items() if key != "retain"
@@ -518,6 +550,36 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
     if retired_substrate_names & {row["name"] for row in substrate_rows}:
         out.append("SearchSubstrates retained an executed premise or summary projection")
 
+    steward_rows = [
+        row
+        for row in current_rows
+        if row["module_path"] == "lean/AsiStackProofs/ArtifactStewardAgents.lean"
+    ]
+    retired_steward_names = {
+        action["retired_theorem_id"].split("::", 1)[1]
+        for action in actions
+        if action["module_path"] == "lean/AsiStackProofs/ArtifactStewardAgents.lean"
+    }
+    if len(steward_rows) != 12:
+        out.append("ArtifactStewardAgents must retain exactly twelve route declarations")
+    if retired_steward_names & {row["name"] for row in steward_rows}:
+        out.append("ArtifactStewardAgents retained an executed premise projection")
+    steward_source = (ROOT / "lean/AsiStackProofs/ArtifactStewardAgents.lean").read_text(
+        encoding="utf-8"
+    )
+    for removed_model_name in [
+        "StewardWorkContractReview",
+        "DispatchedContractHasRequiredBoundary",
+        "StewardProtectedActionReview",
+        "MissingApprovalBlocksProtectedAction",
+        "StewardReleaseGateReview",
+        "PublishedReleaseRequiresEvidenceGate",
+        "StewardSunsetReview",
+        "SunsetCriteriaBlocksOrdinaryWork",
+    ]:
+        if removed_model_name in steward_source:
+            out.append(f"ArtifactStewardAgents retained dead projection model {removed_model_name}")
+
     manifest_rows = {
         row["tag"]: row
         for row in load(MANIFEST).get("records", [])
@@ -560,17 +622,17 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
     if status.get("rationalization_ledger_path") != str(LEDGER.relative_to(ROOT)):
         out.append("status does not bind the cumulative rationalization ledger")
     if (
-        status.get("theorem_count") != 1336
-        or status.get("executed_retirement_count") != 34
-        or status.get("remaining_action_count") != 127
+        status.get("theorem_count") != 1332
+        or status.get("executed_retirement_count") != 38
+        or status.get("remaining_action_count") != 123
     ):
         out.append("status does not report the cumulative post-transaction denominator")
     roadmap = ROADMAP.read_text(encoding="utf-8")
     roadmap_flat = " ".join(roadmap.split())
     for phrase in [
-        "seventh narrow-projection tranche",
-        "1,336 live theorem declarations",
-        "127 rewrite-or-retire actions remain",
+        "eighth narrow-projection tranche",
+        "1,332 live theorem declarations",
+        "123 rewrite-or-retire actions remain",
         "`proofs/proof_semantic_rationalization_ledger.json`",
     ]:
         if phrase not in roadmap_flat:
@@ -626,9 +688,9 @@ def main() -> None:
             + "\n - ".join(failures)
         )
     print(
-        "Proof semantic-rationalization ledger passed: thirty-four dependency-safe "
-        "retirements, fourteen public-target migrations, 1,336 live theorems, "
-        "127 actions remain, 14 rejecting mutations, no support or release effect."
+        "Proof semantic-rationalization ledger passed: thirty-eight dependency-safe "
+        "retirements, eighteen public-target migrations, 1,332 live theorems, "
+        "123 actions remain, 14 rejecting mutations, no support or release effect."
     )
 
 

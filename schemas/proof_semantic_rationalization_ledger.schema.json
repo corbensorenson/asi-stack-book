@@ -60,8 +60,8 @@
     },
     "actions": {
       "type": "array",
-      "minItems": 34,
-      "maxItems": 34,
+      "minItems": 38,
+      "maxItems": 38,
       "items": {
         "$ref": "#/$defs/action"
       }
@@ -79,17 +79,17 @@
       ],
       "properties": {
         "executed_retirement_count": {
-          "const": 34
+          "const": 38
         },
         "current_live_theorem_count": {
-          "const": 1336
+          "const": 1332
         },
         "remaining_action_count": {
-          "const": 127
+          "const": 123
         },
         "remaining_action_counts": {
           "const": {
-            "retire_narrow_projection": 30,
+            "retire_narrow_projection": 26,
             "rewrite_scope_language": 2,
             "rewrite_with_stronger_model": 95
           }

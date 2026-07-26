@@ -2171,7 +2171,8 @@
     "lean/AsiStackProofs/StableCapabilityFields.lean",
     "lean/AsiStackProofs/RuntimeAdapters.lean",
     "lean/AsiStackProofs/SearchSubstrates.lean",
-    "chapters/mathematical-and-search-substrates.qmd"
+    "chapters/mathematical-and-search-substrates.qmd",
+    "chapters/artifact-steward-agents-and-living-project-governance.qmd"
   ],
   "units": [
     {
@@ -11061,7 +11062,7 @@
       "output_assertions": [
         "1,151/1,151 activation-baseline theorem declarations and 298/298 baseline targets are reviewed and dispositioned",
         "298/298 historical proof targets remain implemented and explicitly adequacy-routed",
-        "333 current targets comprise 304 implemented and 29 planned: 23 later-chapter targets plus six ledger-authorized semantic-rationalization migrations",
+        "333 current targets comprise 302 implemented and 31 planned: 23 later-chapter targets plus eight ledger-authorized semantic-rationalization migrations",
         "the sixteen richer-semantics targets remain bounded and route to P3/P4 rather than disappearing",
         "nine required safety-critical, integration, and review-named refinement models have dossiers and registered consumers",
         "P2/M3 is completed, P3 is active, and prerequisite M2 is active without support-state movement"
@@ -13823,12 +13824,12 @@
     },
     {
       "script": "validate_p4_c6_semantic_proof_cluster.py",
-      "input_contract": "The frozen four-module resource/artifact/steward/compression cluster with 31 public targets and 48 theorem declarations.",
+      "input_contract": "The current four-module resource/artifact/steward/compression cluster with 31 public targets and 44 theorem declarations.",
       "output_contract": "Require propositions, state, assumptions, countermodels, consumers, mutation evidence, semantic separations, and ceilings; execute four consumers and reject twelve audit mutations.",
       "output_assertions": [
         "4 adequate modules",
         "31 public targets",
-        "48 theorem declarations",
+        "44 theorem declarations",
         "6 semantic separations",
         "4 consumers pass",
         "12 mutations reject",
@@ -14130,7 +14131,7 @@
       "args": [],
       "execution_tier": "pr",
       "validation_class": "proof_or_evidence_gate",
-      "input_contract": "One immutable 1,370-theorem baseline; thirty-four exact, ordered transactions; the baseline Scalable Oversight, Bibliography Plan, Benchmark Ratchets, and Policy Optimization, Stable Capability Fields, Evidence States, and Runtime Adapters, and Search Substrates modules; one same-model normalized duplicate pair; thirty-three premise-restating projections, thirteen with derived replacements, eighteen retired after public-target narrowing, one unused projection retired without target change, and one summary projection retired after route-family validator rebinding; the current overlay; frozen historical registry; and reconciled target, roadmap, and status surfaces.",
+      "input_contract": "One immutable 1,370-theorem baseline; thirty-eight exact, ordered transactions; the baseline Scalable Oversight, Bibliography Plan, Benchmark Ratchets, and Policy Optimization, Stable Capability Fields, Evidence States, and Runtime Adapters, Search Substrates, and Artifact Steward Agents modules; one same-model normalized duplicate pair; thirty-seven premise-restating projections, fifteen with derived replacements, twenty retired after public-target narrowing, one unused projection retired without target change, and one summary projection retired after route-family validator rebinding; the current overlay; frozen historical registry; and reconciled target, roadmap, and status surfaces.",
       "input_artifacts": [
         "scripts/validate_proof_semantic_rationalization_ledger.py",
         "scripts/build_proof_semantic_depth_overlay.py",
@@ -14144,11 +14145,15 @@
         "lean/AsiStackProofs/StableCapabilityFields.lean",
         "lean/AsiStackProofs/RuntimeAdapters.lean",
         "lean/AsiStackProofs/SearchSubstrates.lean",
+        "lean/AsiStackProofs/ArtifactStewardAgents.lean",
         "scripts/validate_runtime_adapter_adversarial_boundary_probe.py",
         "scripts/validate_substrate_adoption_trace.py",
+        "scripts/validate_artifact_steward_lifecycle_probe.py",
         "experiments/runtime_adapter_adversarial_boundary/results/2026-07-02-local.json",
         "experiments/substrate_adoption_trace/results/2026-07-02-local.json",
+        "experiments/artifact_steward_lifecycle_probe/results/2026-07-02-local.json",
         "docs/substrate_adoption_trace.md",
+        "docs/artifact_steward_lifecycle_probe.md",
         "proofs/proof_manifest.json",
         "proofs/proof_triage.json",
         "book_structure.json",
@@ -14157,32 +14162,34 @@
         "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
         "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd",
         "chapters/mathematical-and-search-substrates.qmd",
+        "chapters/artifact-steward-agents-and-living-project-governance.qmd",
         "roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json",
         "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md",
         "validation/registry.json",
         "scripts/register_proof_semantic_rationalization_ledger.py"
       ],
-      "output_contract": "Require immutable baseline and theorem-block digests, exact same-model statement identity for the duplicate, dependency-and-consumer-safe removals, four counterexample, two decision-model, and eight scope-narrowing target migrations, retained or honestly replanned target ownership, a 1,336-theorem current estate, an exact 127-action remaining queue, meta-audit exclusion from implementation binding, and no support or release effect.",
+      "output_contract": "Require immutable baseline and theorem-block digests, exact same-model statement identity for the duplicate, dependency-and-consumer-safe removals, four counterexample, four decision-model, and ten scope-narrowing target migrations, retained or honestly replanned target ownership, a 1,332-theorem current estate, an exact 123-action remaining queue, meta-audit exclusion from implementation binding, and no support or release effect.",
       "output_assertions": [
         "baseline commit and artifact digests exact",
         "retired and retained declarations share one authored model",
         "normalized theorem statements exact",
         "retired theorem has no theorem consumer",
-        "thirty-four retired declarations absent, fourteen replacement-bound retirements, and twenty intentionally null replacements",
+        "thirty-eight retired declarations absent, sixteen replacement-bound retirements, and twenty-two intentionally null replacements",
         "two bibliography targets migrated to derived counterexample gates",
         "two benchmark targets migrated to derived decision-model gates",
         "two Stable Capability Fields targets narrowed to retained derived routes",
         "five Evidence States targets narrowed to planned reachable or independently implemented models",
         "Runtime adapter validator bound to fifteen route theorems rather than a summary projection",
         "Search Substrates targets bound to two finite counterexamples and one honestly planned reachable route model",
+        "Artifact Steward targets bound to two retained lifecycle routes and two honestly planned reachable models",
         "proof-custody meta-audit does not inflate semantic implementation depth",
-        "1,336 current theorem declarations",
-        "127 rewrite-or-retire actions remain",
+        "1,332 current theorem declarations",
+        "123 rewrite-or-retire actions remain",
         "frozen 1,151-theorem and 298-target registry preserved",
         "14 mutations reject",
         "no support or release effect"
       ],
-      "claim_scope": "Thirty-four dependency-safe declaration retirements: one exact same-model duplicate and thirty-three premise-restating projections. Fourteen public targets migrate to counterexample, decision-model, narrower retained-route, or honestly planned stronger-model wording; the runtime-adapter target remains implemented through its fifteen explicit route theorems.",
+      "claim_scope": "Thirty-eight dependency-safe declaration retirements: one exact same-model duplicate and thirty-seven premise-restating projections. Eighteen public targets migrate to counterexample, decision-model, narrower retained-route, or honestly planned stronger-model wording; the runtime-adapter target remains implemented through its fifteen explicit route theorems.",
       "negative_controls": "validator_owned_fourteen_baseline_digest_sequence_identity_statement_dependency_consumer_relation_target_denominator_and_support_mutations",
       "negative_control_cases": [
         "baseline commit substitution",
@@ -14200,11 +14207,11 @@
       ],
       "prohibited_inference": "This transaction does not strengthen the retained finite-model theorem or establish reviewer competence, implementation correctness, useful oversight, deployment, transfer, safety, SOTA, AGI, ASI, or claim support.",
       "contract_precision": "exact_immutable_cumulative_dependency_safe_retirement_ledger",
-      "semantic_review_state": "checked_twenty_nine_c6_retirements_and_eleven_target_migrations"
+      "semantic_review_state": "checked_thirty_eight_c6_retirements_and_eighteen_target_migrations"
     }
   ],
   "summary": {
-    "required_artifact_count": 2127,
+    "required_artifact_count": 2128,
     "unit_count": 421
   },
   "non_claims": [

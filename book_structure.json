@@ -24854,7 +24854,7 @@
             "Cost and burden externalization omits maintainer attention, reviewer fatigue, affected parties, legal and tax work, privacy, security, compute, environment, recovery, and opportunity cost.",
             "Unsupported transfer generalizes local fixture routing or one project workflow across missions, communities, legal regimes, funding models, repositories, institutions, threats, or time."
           ],
-          "minimal_implementation": "Seven schema-and-fixture record families; sixteen Lean declarations derived from seven hand-authored finite predicates or route functions; one deterministic public-safe lifecycle probe with two valid routes and six expected-invalid controls; and one adjacent synthetic release evidence-and-approval handoff. No steward bot, real event intake, treasury or compute executor, contributor service, governance runner, federation harness, protected-branch action, release runner, sunset protocol, natural project workload, independent reproduction, deployment, or chapter-core support effect exists.",
+          "minimal_implementation": "Seven schema-and-fixture record families; twelve Lean declarations reducing lifecycle, contribution-ledger, and federation route functions; one deterministic public-safe lifecycle probe with two valid routes and six expected-invalid controls; and one adjacent synthetic release evidence-and-approval handoff. Work-contract dispatch and release-gate route targets remain planned rather than being represented by assumption-restating implications. No steward bot, real event intake, treasury or compute executor, contributor service, governance runner, federation harness, protected-branch action, release runner, sunset protocol, natural project workload, independent reproduction, deployment, or chapter-core support effect exists.",
           "beyond_state_of_art": "The argument-exit campaign must run natural, heterogeneous, months-long project workloads with frozen mission and authority charters and matched strong human-maintained, ordinary automation, workflow-platform, and no-steward baselines. It must exercise real tainted events and injection, scoped dispatch, protected branches and credentials, treasury and rented compute, contributor and compensation ledgers, governance proposals and capture pressure, federation, release, incident containment, effect-complete rollback, appeal, fork or exit, maintainer handoff, and genuine sunset decisions while jointly measuring useful throughput, quality, false action and blocking, maintainer burden, legitimacy, concentration, security, recovery, continuity, latency, and total cost. Independent maintainers, contributors, treasurers, security evaluators, governance institutions, projects, legal and funding regimes, and transfer environments must reproduce positive, negative, null, narrowed, blocked, and refuted outcomes. Until then the mature Artifact Steward Continuity Lease is not evidence of safe autonomy, ownership or legal authority, governance legitimacy, treasury safety, capture resistance, project quality, release readiness, deployment, transfer, or SOTA.",
           "codex_tests": [
             {
@@ -24873,17 +24873,17 @@
             },
             {
               "name": "Work contract authority denial test",
-              "purpose": "Check the finite Lean predicate that dispatched steward work contracts record objective, authority, allowed tools, forbidden tools, verification requirements, budget, and non-claims.",
-              "implementation_status": "implemented",
-              "result_status": "passes via Lean build",
-              "status": "implemented as a finite Lean predicate; no steward dispatch run"
+              "purpose": "Check a reachable steward dispatch route that repairs or refuses contracts missing objective, authority, tool, verification, budget, or non-claim boundaries.",
+              "implementation_status": "planned",
+              "result_status": "not run; record-shape fixture only",
+              "status": "reachable formal dispatch route planned; no steward dispatch run"
             },
             {
               "name": "Treasury spend-cap test",
-              "purpose": "Check the finite Lean protected-action predicate that treasury-exceeding, governance-changing, or protected-asset actions without approval evidence cannot execute.",
+              "purpose": "Check the finite Lean lifecycle route that requested treasury spend outside policy routes to approval.",
               "implementation_status": "implemented",
               "result_status": "passes via Lean build",
-              "status": "implemented as a finite Lean predicate; no treasury engine run"
+              "status": "implemented as a finite Lean lifecycle route; no treasury engine run"
             },
             {
               "name": "Untrusted event taint test",
@@ -24901,10 +24901,10 @@
             },
             {
               "name": "Sunset criteria test",
-              "purpose": "Check finite Lean sunset and lifecycle-route predicates that configured sunset criteria block ordinary work and route to sunset review when no review is open.",
+              "purpose": "Check the finite Lean lifecycle route that configured sunset criteria without an open review route to sunset review.",
               "implementation_status": "implemented",
               "result_status": "passes via Lean build",
-              "status": "implemented as finite Lean sunset and lifecycle-route predicates; no steward loop exists"
+              "status": "implemented as a finite Lean lifecycle route; no steward loop exists"
             },
             {
               "name": "Release evidence handoff test",
@@ -24929,17 +24929,17 @@
             },
             {
               "name": "Release evidence gate test",
-              "purpose": "Check the finite Lean predicate that stewarded release publication requires test, evidence, changelog, residual, and approval records.",
-              "implementation_status": "implemented",
-              "result_status": "passes via Lean build",
-              "status": "implemented as a finite Lean predicate; no release runner exists"
+              "purpose": "Check a reachable steward release route that refuses publication when test, evidence, changelog, residual, or approval records are missing.",
+              "implementation_status": "planned",
+              "result_status": "not run; expected-invalid lifecycle trace only",
+              "status": "reachable formal publication route planned; no release runner exists"
             },
             {
               "name": "Sunset ordinary-work block test",
-              "purpose": "Check the finite Lean predicate that ordinary work generation is blocked when sunset criteria are met and no sunset review has opened.",
+              "purpose": "Check the executable invalid lifecycle trace that rejects ordinary work when sunset criteria are met and no sunset review has opened.",
               "implementation_status": "implemented",
-              "result_status": "passes via Lean build",
-              "status": "implemented as a finite Lean predicate; no steward loop exists"
+              "result_status": "passes via deterministic lifecycle probe",
+              "status": "implemented as an executable invalid trace; no steward loop exists"
             },
             {
               "name": "Artifact steward lifecycle probe",
@@ -24953,25 +24953,25 @@
             {
               "tag": "lean:artifact_stewards.work_contract.operational_invariant",
               "module": "AsiStackProofs.ArtifactStewardAgents",
-              "target": "A steward-managed work contract records objective, authority, allowed tools, forbidden tools, verification requirements, budget, and non-claims before dispatch.",
-              "status": "implemented"
+              "target": "A reachable steward dispatch model derives contract repair or refusal when objective, authority, tool, verification, budget, or non-claim boundaries are missing.",
+              "status": "planned"
             },
             {
               "tag": "lean:artifact_stewards.treasury_boundary.failure_blocks_promotion",
               "module": "AsiStackProofs.ArtifactStewardAgents",
-              "target": "A steward action that exceeds treasury policy, changes governance rules, or touches protected assets cannot execute without explicit approval evidence.",
+              "target": "A finite steward lifecycle decision with requested treasury spend outside policy routes to approval.",
               "status": "implemented"
             },
             {
               "tag": "lean:artifact_stewards.release_gate.operational_invariant",
               "module": "AsiStackProofs.ArtifactStewardAgents",
-              "target": "A stewarded release publication requires test, evidence, changelog, residual, and approval records.",
-              "status": "implemented"
+              "target": "A reachable steward release model derives refusal when test, evidence, changelog, residual, or approval records are missing.",
+              "status": "planned"
             },
             {
               "tag": "lean:artifact_stewards.sunset_review.failure_blocks_promotion",
               "module": "AsiStackProofs.ArtifactStewardAgents",
-              "target": "When sunset criteria are met, ordinary work generation is blocked until a sunset review is opened.",
+              "target": "A finite steward lifecycle decision with sunset criteria met and no open review routes to sunset review.",
               "status": "implemented"
             },
             {
@@ -27817,13 +27817,13 @@
             {
               "tag": "lean:bibliography.plan.operational_invariant",
               "module": "AsiStackProofs.BibliographyPlan",
-                    "target": "A source-derived claim with neither a source note nor an ingested artifact fails the finite source-evidence predicate.",
+              "target": "A source-derived claim with neither a source note nor an ingested artifact fails the finite source-evidence predicate.",
               "status": "implemented"
             },
             {
               "tag": "lean:bibliography.plan.failure_blocks_promotion",
               "module": "AsiStackProofs.BibliographyPlan",
-                    "target": "An accepted new-source assignment to a nonexistent chapter fails the finite assignment predicate.",
+              "target": "An accepted new-source assignment to a nonexistent chapter fails the finite assignment predicate.",
               "status": "implemented"
             }
           ]
