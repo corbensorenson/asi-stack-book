@@ -306,9 +306,9 @@
     }
   ],
   "lean_verification": {
-    "command": "lake env lean AsiStackProofs/EvidenceTransitionRefinement.lean",
+    "command": "lake build AsiStackProofs.EvidenceTransitionRefinement",
     "exit_code": 0,
-    "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    "source_sha256": "a8b1c16283472e99c8bb03a4b73ceda0f9d1827596275e89de68bab89a78c091"
   },
   "support_state_effect": "none",
   "external_effect": "none",

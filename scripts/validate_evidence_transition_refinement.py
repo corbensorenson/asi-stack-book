@@ -286,7 +286,9 @@ def route_cases() -> list[dict[str, Any]]:
 
 
 def run_lean() -> dict[str, Any]:
-    command = ["lake", "env", "lean", "AsiStackProofs/EvidenceTransitionRefinement.lean"]
+    # Build the named Lake target so this check is valid in a fresh checkout
+    # where imported modules do not yet have cached `.olean` artifacts.
+    command = ["lake", "build", "AsiStackProofs.EvidenceTransitionRefinement"]
     completed = subprocess.run(
         command,
         cwd=ROOT / "lean",
@@ -299,7 +301,10 @@ def run_lean() -> dict[str, Any]:
     return {
         "command": " ".join(command),
         "exit_code": 0,
-        "output_sha256": hashlib.sha256(completed.stdout.encode()).hexdigest(),
+        # Lake's success output differs between a cold build and an up-to-date
+        # cache. Bind the receipt to the verified source instead of unstable
+        # progress text.
+        "source_sha256": hashlib.sha256(LEAN.read_bytes()).hexdigest(),
     }
 
 

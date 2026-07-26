@@ -70,11 +70,12 @@
     },
     "lean_verification": {
       "type": "object",
-      "required": ["command", "exit_code", "output_sha256"],
+      "additionalProperties": false,
+      "required": ["command", "exit_code", "source_sha256"],
       "properties": {
         "command": {"type": "string"},
         "exit_code": {"const": 0},
-        "output_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+        "source_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
       }
     },
     "support_state_effect": {"const": "none"},
