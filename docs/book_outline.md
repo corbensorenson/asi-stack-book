@@ -518,10 +518,20 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:efficiency.minimum_viable.operational_invariant` | `AsiStackProofs.Efficiency` | A route is minimum viable only when no lower-cost authorized route satisfies the required quality predicate. | implemented |
-| `lean:efficiency.minimum_viable.failure_blocks_promotion` | `AsiStackProofs.Efficiency` | A routed or compressed result with open obligations cannot be promoted without a residual record. | implemented |
+| `lean:efficiency.minimum_viable.operational_invariant` | `AsiStackProofs.Efficiency` | A listed lower-cost authorized quality-preserving candidate causes the finite minimum-viable-route predicate to fail. | implemented |
+| `lean:efficiency.minimum_viable.failure_blocks_promotion` | `AsiStackProofs.Efficiency` | A promoted result with open obligations and no residual record causes the finite residual-promotion predicate to fail. | implemented |
 | `lean:efficiency.claim_admission_lifecycle_route` | `AsiStackProofs.Efficiency` | Modeled efficiency-claim admission routes missing task contracts, quality predicates, selected routes, candidate sets, lower-cost comparisons, cost ledgers, complete visible costs, verification results, failed quality, authority bypass, residual gaps, fallback gaps, hidden-cost audit gaps, benchmark or trace gaps, negative-control gaps, evidence-transition gaps, and non-claim-boundary gaps to explicit outcomes. | implemented |
 | `lean:efficiency.route_search.probe_fixture_bridge` | `AsiStackProofs.Efficiency` | The synthetic efficiency route-search probe summary records two valid traces, six expected-invalid controls, fourteen checked candidate routes, minimum verified route selection, rejection of cheap failed quality, hidden residual, authority bypass, and compression-utility overclaim controls, hidden-cost class audit coverage, and no route-search-completeness, measured-efficiency, or support-state-promotion claim. | implemented |
+
+Proof boundary: the two assumption-restating route and residual projections are
+retired with frozen lineage. Their public targets now bind to retained finite
+negative cases that derive predicate failure from explicit lower-cost-candidate
+or missing-residual counterexamples. Twenty-four declarations remain across
+the negative cases, the efficiency-claim admission route, and the synthetic
+probe-summary bridge. None proves route-search completeness, cost-estimate
+accuracy, quality evaluation, measured efficiency, residual-burden reduction,
+benchmark performance, model quality, compression utility, or support-state
+promotion.
 
 ### System Boundaries and Authority
 
@@ -675,9 +685,19 @@ Lean proof targets:
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
 | `lean:failure.invariant_violation.operational_invariant` | `AsiStackProofs.FailureModes` | A component with a failed required invariant cannot be promoted. | implemented |
-| `lean:failure.invariant_violation.failure_blocks_promotion` | `AsiStackProofs.FailureModes` | An unbounded authority field is detected as a governance failure. | implemented |
+| `lean:failure.invariant_violation.failure_blocks_promotion` | `AsiStackProofs.FailureModes` | A finite incident whose authority exceeds its ceiling routes to explicit authority review. | implemented |
 | `lean:failure.recurrence.escalation_route` | `AsiStackProofs.FailureModes` | Modeled failure recurrence and receipt review routes missing failure class, boundary, receipt, owner, containment, residual, learning path, normalization guard, review escalation, quarantine, evidence-transition, and non-claim-boundary records to explicit outcomes. | implemented |
 | `lean:failure.taxonomy.detector_probe_bridge` | `AsiStackProofs.FailureModes` | The deterministic synthetic failure-taxonomy detector probe includes authority-creep and Goodhart/evaluator-drift incidents, rejected negative controls, residual boundaries, no support-state effect, and explicit non-claim boundaries. | implemented |
+
+Proof boundary: the direct `GovernanceFailure` field projection is retired
+with frozen lineage. The affected public target now binds to the retained
+incident-route theorem that sends an explicit authority-over-ceiling state to
+authority review. Twenty-two declarations remain across invariant rejection,
+four incident routes, recurrence handling, and the detector summary. The
+detector bridge still projects a hand-authored valid-summary predicate and
+remains queued for route-family rebinding; it cannot establish detector
+quality, runtime coverage, containment, prevention, mitigation effectiveness,
+or support movement.
 
 ### Dangerous Capability Domains and Misuse Uplift
 

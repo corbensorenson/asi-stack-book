@@ -52,9 +52,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/CyclicMixers.lean` | 2 | 5 | 0 | 5 | 5 |
 | `lean/AsiStackProofs/DataEngineLifecycleRefinement.lean` | 15 | 5 | 15 | 10 | 2 |
 | `lean/AsiStackProofs/DeliberationRefinement.lean` | 10 | 11 | 0 | 12 | 3 |
-| `lean/AsiStackProofs/Efficiency.lean` | 4 | 26 | 0 | 9 | 4 |
+| `lean/AsiStackProofs/Efficiency.lean` | 4 | 24 | 0 | 9 | 4 |
 | `lean/AsiStackProofs/EvidenceStates.lean` | 2 | 22 | 0 | 17 | 7 |
-| `lean/AsiStackProofs/FailureModes.lean` | 4 | 23 | 0 | 6 | 4 |
+| `lean/AsiStackProofs/FailureModes.lean` | 4 | 22 | 0 | 6 | 4 |
 | `lean/AsiStackProofs/FastGenerationRefinement.lean` | 5 | 17 | 0 | 12 | 3 |
 | `lean/AsiStackProofs/GovernanceRights.lean` | 1 | 7 | 0 | 11 | 3 |
 | `lean/AsiStackProofs/GovernedModelTraining.lean` | 2 | 13 | 0 | 7 | 1 |

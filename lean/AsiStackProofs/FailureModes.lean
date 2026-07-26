@@ -22,13 +22,6 @@ theorem failed_required_invariant_blocks_promotion
   rw [failed] at promoted
   cases promoted.1
 
-theorem unbounded_authority_detected_as_governance_failure
-    {component : ComponentRecord} :
-    component.authorityBounded = false ->
-    GovernanceFailure component := by
-  intro unbounded
-  exact Or.inr unbounded
-
 inductive FailureIncidentRoute where
   | ordinaryOperation
   | escalateAuthorityReview

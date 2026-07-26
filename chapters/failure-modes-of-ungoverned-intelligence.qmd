@@ -468,11 +468,21 @@ This failure-radar layer is still an architectural safety discipline. Its suppor
 | Tag | Module | Target | Status |
 |---|---|---|---|
 | `lean:failure.invariant_violation.operational_invariant` | `AsiStackProofs.FailureModes` | A component with a failed required invariant cannot be promoted. | implemented |
-| `lean:failure.invariant_violation.failure_blocks_promotion` | `AsiStackProofs.FailureModes` | An unbounded authority field is detected as a governance failure. | implemented |
+| `lean:failure.invariant_violation.failure_blocks_promotion` | `AsiStackProofs.FailureModes` | A finite incident whose authority exceeds its ceiling routes to explicit authority review. | implemented |
 | `lean:failure.recurrence.escalation_route` | `AsiStackProofs.FailureModes` | Modeled failure recurrence and receipt review routes missing failure class, boundary, receipt, owner, containment, residual, learning path, normalization guard, review escalation, quarantine, evidence-transition, and non-claim-boundary records to explicit outcomes. | implemented |
 | `lean:failure.taxonomy.detector_probe_bridge` | `AsiStackProofs.FailureModes` | The deterministic synthetic failure-taxonomy detector probe includes authority-creep and Goodhart/evaluator-drift incidents, rejected negative controls, residual boundaries, no support-state effect, and explicit non-claim boundaries. | implemented |
 
-These proof targets are implemented only over finite Lean records in `AsiStackProofs.FailureModes`. They prove that a modeled component with a failed required invariant is not promotable, that an unbounded authority field is represented as a governance failure, that four modeled incident states route to review, quarantine, frozen review, or blocked promotion, and that modeled failure recurrence records route missing class, boundary, receipt, owner, containment, residual, learning-path, normalization-guard, review, quarantine, evidence-transition, and non-claim-boundary fields to explicit outcomes. The detector-probe bridge records only that the synthetic fixture contains authority-creep and Goodhart/evaluator-drift incidents, rejected controls, residual boundaries, no support-state effect, and non-claim boundaries. Runtime scenario coverage, evaluator independence, context-pollution containment, claim-verifier quality, recurrence detection, deployed failure detection, and prevention remain executable-test obligations. These hooks do not prove runtime scenario coverage, evaluator independence, context-pollution containment, claim-verifier quality, recurrence detection, deployed failure detection, prevention, mitigation effectiveness, or chapter support-state promotion.
+These proof targets are implemented only over finite Lean records in `AsiStackProofs.FailureModes`. They prove that a modeled component with a failed required invariant is not promotable, that an explicit authority-over-ceiling incident routes to authority review, that three other modeled incident states route to quarantine, frozen review, or blocked promotion, and that modeled failure recurrence records route missing class, boundary, receipt, owner, containment, residual, learning-path, normalization-guard, review, quarantine, evidence-transition, and non-claim-boundary fields to explicit outcomes. The former direct `GovernanceFailure` field projection is retired; the public authority target now binds to the retained incident-route theorem.
+
+The module contains twenty-two declarations. The detector-probe bridge still
+records only that a hand-authored valid summary contains authority-creep and
+Goodhart/evaluator-drift incidents, rejected controls, residual boundaries, no
+support-state effect, and non-claim boundaries; it remains queued for
+route-family rebinding. Runtime scenario coverage, evaluator independence,
+context-pollution containment, claim-verifier quality, recurrence detection,
+deployed failure detection, prevention, and mitigation effectiveness remain
+executable-test obligations. These hooks do not prove those properties and do
+not promote chapter support.
 
 ## Gradual disempowerment and option-value loss
 

@@ -26,9 +26,13 @@ ARTIFACTS = [
     "lean/AsiStackProofs/ArtifactStewardAgents.lean",
     "lean/AsiStackProofs/CoilAttentionMemory.lean",
     "lean/AsiStackProofs/CyclicMixers.lean",
+    "lean/AsiStackProofs/Efficiency.lean",
+    "lean/AsiStackProofs/FailureModes.lean",
     "scripts/validate_runtime_adapter_adversarial_boundary_probe.py",
     "scripts/validate_substrate_adoption_trace.py",
     "scripts/validate_artifact_steward_lifecycle_probe.py",
+    "scripts/validate_efficiency_route_search_probe.py",
+    "scripts/validate_architecture_red_team.py",
     "experiments/runtime_adapter_adversarial_boundary/results/2026-07-02-local.json",
     "experiments/substrate_adoption_trace/results/2026-07-02-local.json",
     "experiments/artifact_steward_lifecycle_probe/results/2026-07-02-local.json",
@@ -45,6 +49,8 @@ ARTIFACTS = [
     "chapters/artifact-steward-agents-and-living-project-governance.qmd",
     "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd",
     "chapters/coilra-multicoil-rope-and-cyclic-mixers.qmd",
+    "chapters/the-efficient-asi-hypothesis.qmd",
+    "chapters/failure-modes-of-ungoverned-intelligence.qmd",
     "roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json",
     "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md",
     "validation/registry.json",
@@ -74,12 +80,12 @@ def main() -> None:
         "execution_tier": "pr",
         "validation_class": "proof_or_evidence_gate",
         "input_contract": (
-            "One immutable 1,370-theorem baseline; forty-two exact, ordered transactions; "
+            "One immutable 1,370-theorem baseline; forty-five exact, ordered transactions; "
             "the baseline Scalable Oversight, Bibliography Plan, Benchmark Ratchets, and "
             "Policy Optimization, Stable Capability Fields, Evidence States, and Runtime "
             "Adapters, Search Substrates, Artifact Steward Agents, Coil Attention Memory, "
-            "and Cyclic Mixers modules; one same-model normalized duplicate "
-            "pair; forty-one premise-restating projections, nineteen with derived "
+            "and Cyclic Mixers, Efficiency, and Failure Modes modules; one same-model normalized duplicate "
+            "pair; forty-four premise-restating projections, twenty-two with derived "
             "replacements, twenty retired after public-target narrowing, one unused projection retired without target "
             "change, and one summary projection retired after route-family validator rebinding; "
             "the current overlay; frozen historical registry; and reconciled target, "
@@ -89,9 +95,9 @@ def main() -> None:
         "output_contract": (
             "Require immutable baseline and theorem-block digests, exact same-model "
             "statement identity for the duplicate, dependency-and-consumer-safe removals, "
-            "eight counterexample, four decision-model, and ten scope-narrowing target "
-            "migrations, retained or honestly replanned target ownership, a 1,328-theorem "
-            "current estate, an exact 119-action remaining "
+            "ten counterexample, five decision-model, and ten scope-narrowing target "
+            "migrations, retained or honestly replanned target ownership, a 1,325-theorem "
+            "current estate, an exact 116-action remaining "
             "queue, meta-audit exclusion from implementation binding, and no support or "
             "release effect."
         ),
@@ -100,7 +106,7 @@ def main() -> None:
             "retired and retained declarations share one authored model",
             "normalized theorem statements exact",
             "retired theorem has no theorem consumer",
-            "forty-two retired declarations absent, twenty replacement-bound retirements, and twenty-two intentionally null replacements",
+            "forty-five retired declarations absent, twenty-three replacement-bound retirements, and twenty-two intentionally null replacements",
             "two bibliography targets migrated to derived counterexample gates",
             "two benchmark targets migrated to derived decision-model gates",
             "two Stable Capability Fields targets narrowed to retained derived routes",
@@ -110,16 +116,18 @@ def main() -> None:
             "Artifact Steward targets bound to two retained lifecycle routes and two honestly planned reachable models",
             "Coil memory targets bound to two derived finite negative cases",
             "Cyclic mixer targets bound to two derived finite negative cases",
+            "Efficiency targets bound to two derived finite negative cases",
+            "Failure Modes authority target bound to one retained finite decision route",
             "proof-custody meta-audit does not inflate semantic implementation depth",
-            "1,328 current theorem declarations",
-            "119 rewrite-or-retire actions remain",
+            "1,325 current theorem declarations",
+            "116 rewrite-or-retire actions remain",
             "frozen 1,151-theorem and 298-target registry preserved",
             "14 mutations reject",
             "no support or release effect",
         ],
         "claim_scope": (
-            "Forty-two dependency-safe declaration retirements: one exact same-model "
-            "duplicate and forty-one premise-restating projections. Twenty-two public "
+            "Forty-five dependency-safe declaration retirements: one exact same-model "
+            "duplicate and forty-four premise-restating projections. Twenty-five public "
             "targets migrate to counterexample, decision-model, narrower retained-route, "
             "or honestly planned stronger-model wording; the runtime-adapter target remains "
             "implemented through its fifteen explicit route theorems."
@@ -148,7 +156,7 @@ def main() -> None:
             "deployment, transfer, safety, SOTA, AGI, ASI, or claim support."
         ),
         "contract_precision": "exact_immutable_cumulative_dependency_safe_retirement_ledger",
-        "semantic_review_state": "checked_forty_two_c6_retirements_and_twenty_two_target_migrations",
+        "semantic_review_state": "checked_forty_five_c6_retirements_and_twenty_five_target_migrations",
     })
     required = registry["required_artifacts"]
     for artifact in ARTIFACTS + [REGISTER]:

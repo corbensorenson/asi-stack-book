@@ -576,13 +576,13 @@
             {
               "tag": "lean:efficiency.minimum_viable.operational_invariant",
               "module": "AsiStackProofs.Efficiency",
-              "target": "A route is minimum viable only when no lower-cost authorized route satisfies the required quality predicate.",
+              "target": "A listed lower-cost authorized quality-preserving candidate causes the finite minimum-viable-route predicate to fail.",
               "status": "implemented"
             },
             {
               "tag": "lean:efficiency.minimum_viable.failure_blocks_promotion",
               "module": "AsiStackProofs.Efficiency",
-              "target": "A routed or compressed result with open obligations cannot be promoted without a residual record.",
+              "target": "A promoted result with open obligations and no residual record causes the finite residual-promotion predicate to fail.",
               "status": "implemented"
             },
             {
@@ -1263,7 +1263,7 @@
             {
               "tag": "lean:failure.invariant_violation.failure_blocks_promotion",
               "module": "AsiStackProofs.FailureModes",
-              "target": "An unbounded authority field is detected as a governance failure.",
+              "target": "A finite incident whose authority exceeds its ceiling routes to explicit authority review.",
               "status": "implemented"
             },
             {

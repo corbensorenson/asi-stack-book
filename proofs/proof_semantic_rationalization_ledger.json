@@ -1904,14 +1904,167 @@
         "lean:lake-build"
       ],
       "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R43-efficiency-minimum-route-projection",
+      "sequence": 43,
+      "state": "executed",
+      "action": "retire_projection_after_counterexample_consumer_migration",
+      "semantic_relation": "premise_restatement_replaced_by_derived_counterexample_gate",
+      "module_path": "lean/AsiStackProofs/Efficiency.lean",
+      "baseline_module_sha256": "0525edcbbbea6c14fe48901b1d427047ac032e52a7acadf8e2e78a810e6c0ca0",
+      "retired_theorem_id": "lean/AsiStackProofs/Efficiency.lean::minimum_viable_route_has_no_lower_cost_authorized_quality_candidate",
+      "replacement_theorem_id": "lean/AsiStackProofs/Efficiency.lean::lower_cost_authorized_quality_candidate_rejects_minimum_viable_route",
+      "retired_block_sha256": "69e5d52223a3037a8395f0f93ba9504aa2a39f1f2ad2e6e4dac8e9b9f4352b8f",
+      "replacement_block_sha256": "3a6017fbe5b8364e4dbb8159595d238d4d8dba505c8c054af3d51866f0019673",
+      "retired_statement_sha256": "ec352dd740ba9136d662d3f64f6f03ab54a835caa40d5c0e240222f6fefdda03",
+      "replacement_statement_sha256": "c5f6a5ebaddbd9b325ca9c23d7804b0da93b48922cd4b4f141d05a99f09c3b04",
+      "semantic_basis": [
+        "The retired theorem applies MinimumViableRoute to an already supplied list-membership premise and returns the predicate consequence unchanged.",
+        "The immutable semantic overlay records no Lean dependency or theorem consumer for that projection.",
+        "The retained replacement uses the same route-comparison model and derives contradiction when a listed lower-cost authorized quality-preserving candidate is presented as compatible with the minimum-viable predicate.",
+        "The public minimum-route target now names that concrete finite counterexample rather than the premise-restating implication.",
+        "The migration proves no route-search completeness, cost-estimate accuracy, measured efficiency, or quality preservation outside the authored record."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:efficiency.minimum_viable.operational_invariant",
+          "old_target_text": "A route is minimum viable only when no lower-cost authorized route satisfies the required quality predicate.",
+          "new_target_text": "A listed lower-cost authorized quality-preserving candidate causes the finite minimum-viable-route predicate to fail.",
+          "consumer_paths": [
+            "book_structure.json",
+            "docs/book_outline.md",
+            "chapters/the-efficient-asi-hypothesis.qmd",
+            "proofs/proof_manifest.json",
+            "proofs/proof_triage.json"
+          ]
+        }
+      ],
+      "maximum_inference_preserved": "A finite list containing a lower-cost authorized candidate that satisfies the declared quality predicate cannot satisfy MinimumViableRoute; no real search or efficiency result follows.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_proof_artifact_audit.py",
+        "scripts/validate_efficiency_route_search_probe.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R44-efficiency-residual-projection",
+      "sequence": 44,
+      "state": "executed",
+      "action": "retire_projection_after_counterexample_consumer_migration",
+      "semantic_relation": "premise_restatement_replaced_by_derived_counterexample_gate",
+      "module_path": "lean/AsiStackProofs/Efficiency.lean",
+      "baseline_module_sha256": "0525edcbbbea6c14fe48901b1d427047ac032e52a7acadf8e2e78a810e6c0ca0",
+      "retired_theorem_id": "lean/AsiStackProofs/Efficiency.lean::routed_or_compressed_result_with_open_obligations_requires_residual_record",
+      "replacement_theorem_id": "lean/AsiStackProofs/Efficiency.lean::open_obligation_promotion_without_residual_record_rejected",
+      "retired_block_sha256": "915ace92a2f4932444b4b107cac3abe580854dd349baf0656d227c4beb54cc71",
+      "replacement_block_sha256": "ee383ee341d4f3808ac2b28cecee070127792f74cb217fdfe4246ee54178bf70",
+      "retired_statement_sha256": "780c36a571fd23585f46520ad441b5944c25fd30165f86933446b8c273bc3d9e",
+      "replacement_statement_sha256": "6de555b985dcae5c57509f522420a4d6c0f3f4da3390f09eee3630e0cc29cb50",
+      "semantic_basis": [
+        "The retired theorem applies OpenObligationPromotionValid to already supplied open-obligation and promotion premises and returns the predicate consequence unchanged.",
+        "The immutable semantic overlay records no Lean dependency or theorem consumer for that projection.",
+        "The retained replacement unfolds the same residual-promotion predicate and derives contradiction when promotion, open obligations, and a missing residual record coexist.",
+        "The public residual target now names that concrete finite rejection rather than the premise-restating implication.",
+        "The migration proves no residual-burden measurement, utility preservation, compression benefit, or deployed promotion control."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:efficiency.minimum_viable.failure_blocks_promotion",
+          "old_target_text": "A routed or compressed result with open obligations cannot be promoted without a residual record.",
+          "new_target_text": "A promoted result with open obligations and no residual record causes the finite residual-promotion predicate to fail.",
+          "consumer_paths": [
+            "book_structure.json",
+            "docs/book_outline.md",
+            "chapters/the-efficient-asi-hypothesis.qmd",
+            "proofs/proof_manifest.json",
+            "proofs/proof_triage.json"
+          ]
+        }
+      ],
+      "maximum_inference_preserved": "A finite record with open obligations, promotion requested, and no residual record fails OpenObligationPromotionValid; no measured residual or utility result follows.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_proof_artifact_audit.py",
+        "scripts/validate_efficiency_route_search_probe.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R45-failure-authority-projection",
+      "sequence": 45,
+      "state": "executed",
+      "action": "retire_projection_after_decision_model_consumer_migration",
+      "semantic_relation": "premise_restatement_replaced_by_derived_decision_gate",
+      "module_path": "lean/AsiStackProofs/FailureModes.lean",
+      "baseline_module_sha256": "2ddb813cf30235e86ad3a6c2beb8c0b0a57b7121f91c21c889b9450ce0401c8e",
+      "retired_theorem_id": "lean/AsiStackProofs/FailureModes.lean::unbounded_authority_detected_as_governance_failure",
+      "replacement_theorem_id": "lean/AsiStackProofs/FailureModes.lean::authority_over_ceiling_routes_to_review",
+      "retired_block_sha256": "ad383cb53c2323bbdd6967c1e99cc2d81df975e4209264cdc2771062afeb8f35",
+      "replacement_block_sha256": "b896a6ce58749155977985fba055fc5cf5c088c511127540c2eac56a42150a6d",
+      "retired_statement_sha256": "1669aafc57907d1931681ccb310586e5d1029b438600c77019aaf103b2de72ea",
+      "replacement_statement_sha256": "689a4447f3a164739bd8ce1889f29abb6403246e750f11f32fb1473340f2f68b",
+      "semantic_basis": [
+        "The retired theorem inserts an already supplied authorityBounded=false premise into the GovernanceFailure disjunction and adds no route or decision semantics.",
+        "The immutable semantic overlay records no Lean dependency or theorem consumer for that projection.",
+        "The retained replacement evaluates the finite incident decision function and routes an explicit authority-over-ceiling state to authority review.",
+        "The public authority target now names that reachable decision branch rather than a direct field-to-label projection.",
+        "The migration proves no runtime authority observation, escalation service, prevention, containment, or mitigation effectiveness."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:failure.invariant_violation.failure_blocks_promotion",
+          "old_target_text": "An unbounded authority field is detected as a governance failure.",
+          "new_target_text": "A finite incident whose authority exceeds its ceiling routes to explicit authority review.",
+          "consumer_paths": [
+            "book_structure.json",
+            "docs/book_outline.md",
+            "chapters/failure-modes-of-ungoverned-intelligence.qmd",
+            "proofs/proof_manifest.json",
+            "proofs/proof_triage.json"
+          ]
+        }
+      ],
+      "maximum_inference_preserved": "Under the authored finite incident function, authorityOverCeiling=true routes to escalateAuthorityReview; no runtime detection, review, containment, or safety effect follows.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_proof_artifact_audit.py",
+        "scripts/validate_architecture_red_team.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
     }
   ],
   "summary": {
-    "executed_retirement_count": 42,
-    "current_live_theorem_count": 1328,
-    "remaining_action_count": 119,
+    "executed_retirement_count": 45,
+    "current_live_theorem_count": 1325,
+    "remaining_action_count": 116,
     "remaining_action_counts": {
-      "retire_narrow_projection": 22,
+      "retire_narrow_projection": 19,
       "rewrite_scope_language": 2,
       "rewrite_with_stronger_model": 95
     },
