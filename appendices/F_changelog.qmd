@@ -1,5 +1,26 @@
 # Changelog
 
+## 2026-07-26 — Visible specialist-owner routing
+
+- Turned the 84-chapter narrative-unit crosswalk into an explicit reader
+  navigation layer: each of the 22 generated unit cards now lists its
+  specialist reference owners, and all 62 nonrepresentative chapters receive
+  direct Human-view links.
+- Added unit identity and complete specialist-owner metadata to the narrative
+  manifest while preserving each chapter's separate core-claim identity,
+  sources, evidence ceiling, and implementation responsibility.
+- Bound the root product-projection manifest to the exact unit-crosswalk digest
+  and strengthened validation to reject hidden, stale, missing, duplicated, or
+  misassigned owner routes.
+- Added a sixth mutation control that removes a visible specialist owner and
+  must fail. This is a concept-placement and navigation improvement only; it
+  changes no claim support, proof result, empirical result, or release
+  authority.
+- Regenerated the 27-page bounded reader and 97-page canonical HTML book. The
+  candidate passed 54 desktop/mobile browser pairs and 54 accessibility-tree
+  preparation pairs with zero failures; the complete live book passed 172
+  all-chapter/all-viewport browser pairs.
+
 ## 2026-07-26 — Three-projection narrative convergence
 
 - Upgraded the 22-unit narrative spine contract from v0 to v1 and wrote a

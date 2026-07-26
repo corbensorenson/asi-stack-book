@@ -14,6 +14,7 @@ from build_canonical_public_status import ROOT, build_status, validate_against_s
 from build_product_projections import (
     CONTRACTS,
     CONTRIBUTIONS,
+    MANIFEST_SCHEMA_VERSION,
     SPINE,
     STRUCTURE,
     UNIT_CROSSWALK,
@@ -54,7 +55,7 @@ def build_into(output: Path, status: dict) -> None:
     reference = build_reference(output, canonical, assignments)
     evidence = build_evidence(output, status)
     root = {
-        "schema_version": "asi_stack.product_projection_manifest.v0",
+        "schema_version": MANIFEST_SCHEMA_VERSION,
         "generated_from": {
             "canonical_status_id": status["status_id"],
             "source_commit": status["source_commit"],
@@ -63,6 +64,7 @@ def build_into(output: Path, status: dict) -> None:
             "structure_sha256": sha256_file(STRUCTURE),
             "contract_sha256": sha256_file(CONTRACTS),
             "narrative_spine_sha256": sha256_file(SPINE),
+            "narrative_unit_crosswalk_sha256": sha256_file(UNIT_CROSSWALK),
         },
         "products": [
             {
@@ -130,6 +132,96 @@ def narrative_projection_errors(spine: dict) -> list[str]:
     return errors
 
 
+def narrative_routing_errors(
+    narrative: dict,
+    units: list[dict],
+    canonical: list[dict],
+    html_text: str,
+) -> list[str]:
+    """Require every specialist owner to be visible under its narrative unit."""
+    errors: list[str] = []
+    canonical_by_id = {row["chapter_id"]: row for row in canonical}
+    unit_by_representative = {
+        unit["representative_chapter_id"]: unit
+        for unit in units
+    }
+    unit_by_chapter = {
+        chapter_id: unit
+        for unit in units
+        for chapter_id in unit.get("chapter_ids", [])
+    }
+    selected = narrative.get("chapters", [])
+    routed_ids: list[str] = []
+    for row in selected:
+        chapter_id = row.get("chapter_id")
+        unit = unit_by_representative.get(chapter_id)
+        if unit is None:
+            errors.append(f"{chapter_id}: narrative representative has no unit")
+            continue
+        if row.get("unit_id") != unit.get("unit_id") or row.get("unit_label") != unit.get("label"):
+            errors.append(f"{chapter_id}: narrative unit metadata does not match the crosswalk")
+        expected_ids = [
+            owner_id
+            for owner_id in unit.get("chapter_ids", [])
+            if owner_id != chapter_id
+        ]
+        owners = row.get("reference_owners", [])
+        owner_ids = [owner.get("chapter_id") for owner in owners]
+        if row.get("reference_owner_count") != len(expected_ids):
+            errors.append(f"{chapter_id}: specialist-owner count does not match the crosswalk")
+        if owner_ids != expected_ids:
+            errors.append(f"{chapter_id}: specialist-owner routes do not match crosswalk order")
+        routed_ids.extend(owner_ids)
+        for owner in owners:
+            owner_id = owner.get("chapter_id")
+            canonical_owner = canonical_by_id.get(owner_id)
+            if canonical_owner is None:
+                errors.append(f"{chapter_id}: unknown specialist owner {owner_id!r}")
+                continue
+            expected_record = {
+                "chapter_id": owner_id,
+                "title": canonical_owner["title"],
+                "canonical_order": canonical_owner["order"],
+                "core_claim_ref": canonical_owner["core_claim_ref"],
+                "architecture_reference_path": canonical_owner["public_path"],
+            }
+            if owner != expected_record:
+                errors.append(f"{chapter_id}: specialist owner {owner_id} is stale against canonical metadata")
+            if canonical_owner["title"] not in html_text:
+                errors.append(f"{chapter_id}: specialist owner {owner_id} is hidden from the narrative page")
+            if f'{canonical_owner["public_path"]}?view=human' not in html_text:
+                errors.append(f"{chapter_id}: specialist owner {owner_id} lacks a direct Human-view route")
+
+    expected_routed_ids = [
+        chapter_id
+        for unit in units
+        for chapter_id in unit.get("chapter_ids", [])
+        if chapter_id != unit.get("representative_chapter_id")
+    ]
+    if routed_ids != expected_routed_ids:
+        errors.append("narrative product does not visibly route every specialist owner exactly once")
+    if len(routed_ids) != len(set(routed_ids)):
+        errors.append("narrative product visibly routes a specialist owner more than once")
+
+    omitted = narrative.get("reference_only_chapters", [])
+    omitted_by_id = {row.get("chapter_id"): row for row in omitted}
+    if set(omitted_by_id) != set(expected_routed_ids):
+        errors.append("reference-only chapter index does not match visible specialist-owner routing")
+    for chapter_id in expected_routed_ids:
+        row = omitted_by_id.get(chapter_id)
+        unit = unit_by_chapter.get(chapter_id)
+        if row is None or unit is None:
+            continue
+        representative = unit.get("representative_chapter_id")
+        if (
+            row.get("nearest_narrative_owner") != representative
+            or row.get("unit_id") != unit.get("unit_id")
+            or row.get("unit_label") != unit.get("label")
+        ):
+            errors.append(f"{chapter_id}: reference-only unit route does not match the crosswalk")
+    return errors
+
+
 def validate_rendered_site(site: Path, projection_schema: dict) -> list[str]:
     errors: list[str] = []
     products = site / "products"
@@ -149,6 +241,7 @@ def validate_rendered_site(site: Path, projection_schema: dict) -> list[str]:
         "structure_sha256": sha256_file(STRUCTURE),
         "contract_sha256": sha256_file(CONTRACTS),
         "narrative_spine_sha256": sha256_file(SPINE),
+        "narrative_unit_crosswalk_sha256": sha256_file(UNIT_CROSSWALK),
     }
     if generated != expected_binding:
         errors.append("rendered product projection is not bound to canonical status and current source digests")
@@ -165,6 +258,18 @@ def validate_rendered_site(site: Path, projection_schema: dict) -> list[str]:
     narrative = load(narrative_path)
     reference = load(reference_path)
     evidence = load(evidence_path)
+    narrative_html = (products / "narrative-book" / "index.html").read_text(
+        encoding="utf-8",
+        errors="ignore",
+    )
+    errors.extend(
+        narrative_routing_errors(
+            narrative,
+            load(UNIT_CROSSWALK).get("units", []),
+            canonical_chapters(load(STRUCTURE)),
+            narrative_html,
+        )
+    )
     errors.extend(snapshot_errors(products, evidence))
     for row in narrative.get("chapters", []):
         if not (site / row.get("public_path", "")).is_file():
@@ -242,6 +347,11 @@ def main() -> None:
         narrative = load(output / "narrative-book" / "manifest.json")
         reference = load(output / "architecture-reference" / "manifest.json")
         evidence = load(output / "evidence-registry" / "manifest.json")
+        narrative_html = (output / "narrative-book" / "index.html").read_text(
+            encoding="utf-8",
+            errors="ignore",
+        )
+        errors.extend(narrative_routing_errors(narrative, units, canonical, narrative_html))
         if narrative.get("selected_chapter_count") != len(selected_ids):
             errors.append("narrative projection selected count mismatch")
         if narrative.get("canonical_chapter_count") != len(canonical):
@@ -354,6 +464,18 @@ def main() -> None:
         if not snapshot_errors(output, evidence):
             errors.append("negative control failed: changed evidence snapshot was accepted")
 
+        # Reject a specialist owner that exists in the crosswalk but is hidden
+        # from the narrative unit's visible route.
+        hidden_owner = copy.deepcopy(narrative)
+        unit_with_specialists = next(
+            row for row in hidden_owner["chapters"]
+            if row.get("reference_owners")
+        )
+        unit_with_specialists["reference_owners"].pop()
+        unit_with_specialists["reference_owner_count"] -= 1
+        if not narrative_routing_errors(hidden_owner, units, canonical, narrative_html):
+            errors.append("negative control failed: hidden specialist owner was accepted")
+
     doc = DOC.read_text(encoding="utf-8", errors="ignore")
     for phrase in (
         f"{len(selected_ids)}-unit",
@@ -371,8 +493,9 @@ def main() -> None:
         f"Product-projection validation passed: {len(selected_ids)} narrative chapters, "
         f"{len(selected_ids) * 3} explicit unit projections, "
         f"{len(canonical) - len(selected_ids)} reference-routed omissions, "
+        f"{len(canonical) - len(selected_ids)} visible specialist-owner routes, "
         f"{len(canonical)} reference chapters, {evidence['entry_count']} evidence routes, "
-        "and 5 rejecting negative controls."
+        "and 6 rejecting negative controls."
     )
 
 

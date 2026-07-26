@@ -12,6 +12,16 @@ accessibility-tree preparation pairs with zero failures. The addendum changes
 navigation and claim projection, not canonical claim identity, support, or
 release state.
 
+2026-07-26 routing addendum: the generated narrative product now lists all 62
+specialist reference owners under their 22 units and links each one directly
+to its Human view. The root product manifest binds the unit-crosswalk digest,
+and a sixth mutation control rejects a specialist owner hidden from the
+reader-visible route. This improves idea discoverability without merging a
+specialist claim into its representative. After this change, the bounded
+candidate again passed 54 desktop/mobile browser pairs and 54 accessibility-
+tree preparation pairs with zero failures; the complete 84-chapter live book
+passed 172 all-chapter/all-viewport page-view pairs.
+
 ## Artifact boundary
 
 The current narrative candidate was generated from
@@ -63,8 +73,8 @@ node scripts/validate_curated_reader_accessibility_tree.js \
   projections: 22 plain-language theses, 22 normative engineering rules, and
   22 bounded machine contracts with noninheritance boundaries.
 - Product validation passed 22 narrative units, all 66 unit projections, 62
-  reference-routed chapters, all 84 reference chapters, 17 evidence routes,
-  and five rejecting controls.
+  reference-routed chapters, 62 visible specialist-owner routes, all 84
+  reference chapters, 17 evidence routes, and six rejecting controls.
 - The source was also rendered as the complete canonical book from a clean
   temporary copy: 97 HTML pages, all 84 chapters, all 11 appendices, and 439
   live-only headings and matching TOC targets passed the static Human-view

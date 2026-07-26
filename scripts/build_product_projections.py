@@ -20,7 +20,7 @@ SPINE = ROOT / "products" / "narrative_product_spine.json"
 UNIT_CROSSWALK = ROOT / "products" / "narrative_unit_crosswalk.json"
 CONTRIBUTIONS = ROOT / "products" / "contribution_focus_contract.json"
 DEFAULT_OUTPUT = ROOT / "build" / "product_projections"
-MANIFEST_SCHEMA_VERSION = "asi_stack.product_projection_manifest.v0"
+MANIFEST_SCHEMA_VERSION = "asi_stack.product_projection_manifest.v1"
 
 EVIDENCE_GROUPS = [
     {
@@ -156,6 +156,15 @@ def build_narrative(
 ) -> dict[str, Any]:
     by_id = {row["chapter_id"]: row for row in canonical}
     unit_crosswalk = load_json(UNIT_CROSSWALK)
+    unit_by_representative = {
+        unit["representative_chapter_id"]: unit
+        for unit in unit_crosswalk["units"]
+    }
+    unit_by_chapter = {
+        chapter_id: unit
+        for unit in unit_crosswalk["units"]
+        for chapter_id in unit["chapter_ids"]
+    }
     unit_owner_by_chapter = {
         chapter_id: unit["representative_chapter_id"]
         for unit in unit_crosswalk["units"]
@@ -165,6 +174,23 @@ def build_narrative(
     for record in spine["chapters"]:
         row = dict(by_id[record["chapter_id"]])
         row.update(record)
+        unit = unit_by_representative[row["chapter_id"]]
+        reference_owners = []
+        for chapter_id in unit["chapter_ids"]:
+            if chapter_id == row["chapter_id"]:
+                continue
+            owner = by_id[chapter_id]
+            reference_owners.append({
+                "chapter_id": chapter_id,
+                "title": owner["title"],
+                "canonical_order": owner["order"],
+                "core_claim_ref": owner["core_claim_ref"],
+                "architecture_reference_path": owner["public_path"],
+            })
+        row["unit_id"] = unit["unit_id"]
+        row["unit_label"] = unit["label"]
+        row["reference_owner_count"] = len(reference_owners)
+        row["reference_owners"] = reference_owners
         assignment = contributions.get(row["chapter_id"], {})
         row["contribution_id"] = assignment.get("contribution_id")
         selected.append(row)
@@ -181,6 +207,8 @@ def build_narrative(
             "canonical_order": row["order"],
             "architecture_reference_path": row["public_path"],
             "nearest_narrative_owner": owner_id,
+            "unit_id": unit_by_chapter[row["chapter_id"]]["unit_id"],
+            "unit_label": unit_by_chapter[row["chapter_id"]]["label"],
         })
     manifest = {
         "schema_version": "asi_stack.narrative_product_projection.v0",
@@ -198,14 +226,44 @@ def build_narrative(
     cards = []
     for row in selected:
         link = safe_rel_link("products/narrative-book", row["public_path"]) + "?view=human"
+        reference_owner_items = "".join(
+            '<li><a href="'
+            + escape(
+                safe_rel_link(
+                    "products/narrative-book",
+                    owner["architecture_reference_path"],
+                )
+                + "?view=human"
+            )
+            + '">'
+            + escape(owner["title"])
+            + '</a> <span class="meta"><code>'
+            + escape(owner["core_claim_ref"])
+            + "</code></span></li>"
+            for owner in row["reference_owners"]
+        )
+        if reference_owner_items:
+            reference_owner_block = (
+                f'<details><summary><strong>Specialist reference owners '
+                f'({row["reference_owner_count"]})</strong></summary>'
+                f'<p class="meta">These chapters retain their own claims, sources, evidence '
+                f'ceilings, and implementation responsibilities.</p><ul>{reference_owner_items}</ul></details>'
+            )
+        else:
+            reference_owner_block = (
+                '<p class="meta"><strong>Specialist reference owners:</strong> '
+                'none; this representative is the unit’s sole canonical owner.</p>'
+            )
         cards.append(
-            f'<article class="card"><div class="meta">{row["order"]} · <code>{escape(row["core_claim_ref"])}</code></div>'
+            f'<article class="card"><div class="meta">{row["order"]} · {escape(row["unit_label"])} · '
+            f'<code>{escape(row["core_claim_ref"])}</code></div>'
             f'<h3><a href="{escape(link)}">{escape(row["title"])}</a></h3>'
             f'<p><strong>Plain-language thesis:</strong> {escape(row["plain_language_thesis"])}</p>'
             f'<p><strong>Engineering rule:</strong> {escape(row["normative_engineering_rule"])}</p>'
             f'<p class="meta"><strong>Machine contract:</strong> {escape(row["machine_contract"])}</p>'
             f'<p><strong>Question:</strong> {escape(row["reader_question"])}</p>'
-            f'<p class="meta"><strong>Running example:</strong> {escape(row["running_example"])}</p></article>'
+            f'<p class="meta"><strong>Running example:</strong> {escape(row["running_example"])}</p>'
+            f'{reference_owner_block}</article>'
         )
     body = (
         '<p class="status"><strong>Status:</strong> generated twenty-two-unit candidate route. '
@@ -358,7 +416,7 @@ def main() -> None:
         else ROOT / args.status if args.status is not None
         else None
     )
-    required_inputs = [STRUCTURE, CONTRACTS, SPINE, CONTRIBUTIONS]
+    required_inputs = [STRUCTURE, CONTRACTS, SPINE, UNIT_CROSSWALK, CONTRIBUTIONS]
     if status_path is not None:
         required_inputs.append(status_path)
     for path in required_inputs:
@@ -410,6 +468,7 @@ def main() -> None:
             "structure_sha256": sha256_file(STRUCTURE),
             "contract_sha256": sha256_file(CONTRACTS),
             "narrative_spine_sha256": sha256_file(SPINE),
+            "narrative_unit_crosswalk_sha256": sha256_file(UNIT_CROSSWALK),
         },
         "products": product_rows,
         "non_claims": [

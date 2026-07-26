@@ -31,7 +31,9 @@ repeated support boilerplate.
 `products/narrative_unit_crosswalk.json` assigns every canonical chapter to
 exactly one unit. The representative chapter does not absorb the claims or
 evidence of its routed specialist owners; the crosswalk is navigation and
-coverage control.
+coverage control. The generated narrative page makes that relationship
+reader-visible: each unit lists and directly links every specialist owner,
+while sole-owner units say so explicitly.
 
 The route and Human view are convenience projections. They are not the reviewed reader release.
 A reader artifact still needs continuity, editorial, accessibility, figure,

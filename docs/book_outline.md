@@ -77,7 +77,10 @@ repository-change trace carries the route. Narrative spine v1 gives every unit
 a separate plain-language thesis, normative engineering rule, and bounded
 machine contract with an explicit noninheritance boundary; the generated
 reader and product surfaces expose all three instead of overloading one core
-claim sentence. Noninheritance, the Governed
+claim sentence. Each unit also exposes direct Human-view links to its
+specialist owners, so the 62 nonrepresentative chapters are reader-visible
+rather than discoverable only through a machine crosswalk or the complete
+reference index. Noninheritance, the Governed
 Transition Calculus, the Developmental Intelligence Loop, the minimum trusted
 kernel, bounded liveness, P0–P6 semantic depth, the natural Theseus flagship,
 and contribution-owned derivatives now appear in their manuscript owners.
@@ -175,7 +178,8 @@ publication status.
   `privacy-data-rights-and-information-flow-governance`. Each owns
   a distinct interface, invariant, artifact, lifecycle, or failure family and
   remains discoverable through the architecture-reference product even when
-  routed behind one of the 22 representative narrative units.
+  routed under one of the 22 representative narrative units; the generated
+  narrative page now lists and directly links every such owner.
 
 ## Historical Project Incorporation Overlay
 

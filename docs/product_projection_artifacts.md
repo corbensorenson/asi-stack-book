@@ -37,9 +37,13 @@ Final-candidate continuity, repetition, accessibility, figure, and format
 gates still apply. No external-human review is a prepublication requirement.
 
 `products/narrative_unit_crosswalk.json` assigns every canonical chapter to
-exactly one unit. This changes routing, not ownership: representative chapters
-do not absorb the sources, claims, evidence, or authority of their specialist
-owners. Product validation rejects omitted or multiply assigned chapters.
+exactly one unit. The generated product page now expands each unit into its
+specialist reference-owner list and gives every one of the 62 owners a direct
+Human-view chapter link. This changes routing, not ownership: representative
+chapters do not absorb the sources, claims, evidence, or authority of their
+specialist owners. The root projection manifest binds the crosswalk digest,
+and product validation rejects omitted, hidden, stale, or multiply assigned
+owners.
 
 `products/narrative_running_example_trace.json` makes the running example
 cumulative rather than thematic. It begins with one human repository-change
@@ -109,13 +113,15 @@ the exact tested bundle; it does not rebuild product pages.
 bounded reader source in temporary workspaces. It checks canonical order,
 complete routing, all three generated orientation projections, explicit
 machine-contract noninheritance, source digests, canonical counts, and
-unchanged `argument` support. Five mutation controls reject a 23-unit
+unchanged `argument` support. Six mutation controls reject a 23-unit
 narrative, a missing machine contract, a substantial-looking machine contract
-without a noninheritance boundary, out-of-order selection, and a changed
-evidence snapshot. With `--site _site`, it also checks the
+without a noninheritance boundary, out-of-order selection, a changed evidence
+snapshot, and a specialist owner hidden from its unit. With `--site _site`, it
+also checks the
 rendered canonical-status binding, product manifests and pages, every chapter
-target, every rendered evidence route, content-addressed snapshots, and the
-presence of the product manifest inside the moving `/latest/` mirror.
+target, every visible specialist-owner link, every rendered evidence route,
+content-addressed snapshots, the current crosswalk digest, and the presence of
+the product manifest inside the moving `/latest/` mirror.
 
 These controls establish projection consistency. They are not independent
 editorial review, artifact approval, empirical architecture evidence, or a

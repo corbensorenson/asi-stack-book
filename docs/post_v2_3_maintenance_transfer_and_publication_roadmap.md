@@ -926,7 +926,12 @@ all 84 canonical reference chapters:
 A unit may be a canonical chapter, a semantic overlay, or a compound
 reader-only synthesis. It may not fork claim identity or erase a canonical
 owner. Each unit must advance the governed repository-change case or clearly
-route to optional reference material. The reader route is terminal only after
+route to optional reference material. The generated narrative entry must list
+each specialist reference owner under its assigned unit and provide a direct
+Human-view link; machine-only crosswalk membership is not sufficient
+discoverability. The root projection manifest must bind the exact crosswalk
+digest, and validation must reject a hidden, stale, duplicated, or missing
+owner. The reader route is terminal only after
 meaning-preservation, link, role, handoff, glossary, source, claim, evidence,
 browser, accessibility-preparation, and all-chapter coverage checks pass.
 

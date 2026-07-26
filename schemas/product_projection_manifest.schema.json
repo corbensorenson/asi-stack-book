@@ -7,7 +7,7 @@
   "properties": {
     "schema_version": {
       "type": "string",
-      "enum": ["asi_stack.product_projection_manifest.v0"]
+      "enum": ["asi_stack.product_projection_manifest.v1"]
     },
     "generated_from": {
       "type": "object",
@@ -18,7 +18,8 @@
         "source_count",
         "structure_sha256",
         "contract_sha256",
-        "narrative_spine_sha256"
+        "narrative_spine_sha256",
+        "narrative_unit_crosswalk_sha256"
       ],
       "properties": {
         "canonical_status_id": { "type": "string", "minLength": 1 },
@@ -27,7 +28,8 @@
         "source_count": { "type": "integer", "minimum": 0 },
         "structure_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
         "contract_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
-        "narrative_spine_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+        "narrative_spine_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "narrative_unit_crosswalk_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
       },
       "additionalProperties": false
     },
