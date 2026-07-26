@@ -339,21 +339,22 @@ The implemented fixture row validates schema consistency, the implemented Lean r
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:coil_memory.alias_boundary.operational_invariant` | `AsiStackProofs.CoilAttentionMemory` | A cyclic memory claim records residue and winding or marks aliasing as visible residual risk. | implemented |
-| `lean:coil_attention.coverage_not_quality.failure_blocks_promotion` | `AsiStackProofs.CoilAttentionMemory` | Sparse coverage or freshness facts alone cannot promote a retrieval-quality claim. | implemented |
+| `lean:coil_memory.alias_boundary.operational_invariant` | `AsiStackProofs.CoilAttentionMemory` | A reused cyclic slot with missing residue or winding and no visible alias residual fails the finite alias-boundary predicate. | implemented |
+| `lean:coil_attention.coverage_not_quality.failure_blocks_promotion` | `AsiStackProofs.CoilAttentionMemory` | A retrieval-quality record that promotes from sparse coverage and freshness while semantic-quality evidence is absent fails the finite quality-promotion predicate. | implemented |
 
-These Lean hooks are implemented as finite-record predicates over cyclic memory alias reviews, retrieval-quality promotion reviews, recurrence-admission reviews, and stale-read admission reviews. They prove only record-level gates: reused cyclic slots must record residue/winding or visible alias residuals; reused slots with missing residue/winding and no visible residual are rejected; sparse coverage plus freshness facts without semantic-quality evidence cannot promote a retrieval-quality claim; structure-only quality promotion is rejected; recurrence admission requires work-budget, exit-condition, and fallback records; and stale reads admitted as fresh require residual escrow. They do not prove retrieval quality, KV-cache behavior, sparse-attention coverage, recurrence-exit behavior, freshness performance, long-context improvement, memory savings, or learned-model quality.
+These Lean hooks are implemented as finite-record predicates over cyclic memory alias reviews, retrieval-quality promotion reviews, recurrence-admission reviews, and stale-read admission reviews. The public hooks now bind to derived negative cases rather than assumption-restating projections: reused slots with missing residue/winding and no visible residual are rejected, and structure-only retrieval-quality promotion is rejected. The module also rejects recurrence admission without work-budget, exit-condition, or fallback records and stale reads admitted as fresh without residual escrow. These results do not prove retrieval quality, KV-cache behavior, sparse-attention coverage, recurrence-exit behavior, freshness performance, long-context improvement, memory savings, or learned-model quality.
 
-The module contains six theorem declarations. Two are direct record projections
-for alias visibility and structural-only quality blocking; four are derived
-negative cases for hidden aliasing, structure-only promotion, recurrence without
-budget/exit/fallback, and stale-read admission without residual escrow. None
-proves cache semantics, cross-request isolation, coverage completeness,
-recurrence liveness, progress, fallback reachability, useful memory, retrieval,
-reasoning, latency, memory efficiency, independent reproduction, or transfer.
-Any unconsumed projection should be replaced by transition, invalidation,
-progress, liveness, noninterference, or runtime-refinement semantics rather than
-retained for its count.
+The module contains four theorem declarations, all derived negative cases for
+hidden aliasing, structure-only promotion, recurrence without
+budget/exit/fallback, and stale-read admission without residual escrow. The two
+former assumption-restating projections were retired after their public targets
+moved to the corresponding negative cases. None proves cache semantics,
+cross-request isolation, coverage completeness, recurrence liveness, progress,
+fallback reachability, useful memory, retrieval, reasoning, latency, memory
+efficiency, independent reproduction, or transfer. Future formal work should
+add transition, invalidation, progress, liveness, noninterference, or
+runtime-refinement semantics only where those obligations constrain a real
+consumer.
 
 ## Source crosswalk
 

@@ -1,5 +1,28 @@
 # Changelog
 
+## 2026-07-25 — Ninth narrow-projection C6 tranche
+
+- Retired four assumption-restating declarations across
+  `CoilAttentionMemory.lean` and `CyclicMixers.lean`. Each had no theorem
+  dependency or theorem consumer; the underlying finite records and predicates
+  remain because retained counterexample theorems use them.
+- Rebound the two cyclic-memory public targets to concrete finite rejections
+  for hidden aliasing and structure-only retrieval-quality promotion.
+- Rebound the two cyclic-mixer public targets to concrete finite rejections
+  for missing claim partitions and promotion without baselines or tradeoff
+  metrics.
+- Extended the cumulative ledger to forty-two ordered retirements and
+  twenty-two public-target migrations. The current estate is 1,328
+  declarations: 43 P0, 767 P1, 25 P2, 319 P3, 93 P4, 81 P5, and zero P6.
+  The remaining queue contains 119 actions: 22 narrow-projection retirements,
+  two scope-language rewrites, and 95 stronger-model rewrites.
+- Preserved all 333 public targets at 302 implemented and 31 planned. The
+  proof-shape audit now reports 919 derived, 194 direct, and 215 unknown
+  declaration bodies. No chapter-core support state, executable result,
+  empirical claim, deployment status, release state, or publication authority
+  changes.
+- Current proof-depth snapshot: 333 proof targets, 110 Lean modules, 1328 theorem declarations, 919 derived/decomposed, 194 direct/projection, 215 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+
 ## 2026-07-25 — Eighth narrow-projection C6 tranche
 
 - Retired four assumption-restating declarations from
@@ -23,10 +46,6 @@
   declaration bodies. This transaction changes no chapter-core support state,
   executable trace outcome, empirical result, deployment status, release
   state, or publication authority.
-- Current proof-depth snapshot: 333 proof targets, 110 Lean modules, 1332
-  theorem declarations, 919 derived/decomposed, 198 direct/projection, 215
-  unknown/mixed, and 1/1 safety-critical chapter classifications present.
-
 ## 2026-07-25 — Seventh narrow-projection C6 tranche
 
 - Retired five premise- or summary-restating declarations from

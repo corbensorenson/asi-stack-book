@@ -15,17 +15,6 @@ def StructuralClaimSeparated (review : CyclicMixerClaimReview) : Prop :=
         review.memoryClaimSeparate = true ∧
           review.parameterClaimSeparate = true
 
-theorem cyclic_mixer_claim_records_structure_separately_from_quality_runtime_memory_and_parameters
-    {review : CyclicMixerClaimReview} :
-    StructuralClaimSeparated review ->
-    review.structuralInvariantRecorded = true ∧
-      review.qualityClaimSeparate = true ∧
-        review.runtimeClaimSeparate = true ∧
-          review.memoryClaimSeparate = true ∧
-            review.parameterClaimSeparate = true := by
-  intro separated
-  exact separated
-
 theorem cyclic_mixer_claim_missing_claim_partition_rejected
     {review : CyclicMixerClaimReview} :
     (review.structuralInvariantRecorded = false ∨
@@ -77,15 +66,6 @@ def BaselinesAndTradeoffsRequired (review : CyclicSubstratePromotionReview) : Pr
   review.substratePromoted = true ->
     review.baselineRefsPresent = true ∧
       review.tradeoffMetricsRecorded = true
-
-theorem cyclic_substrate_promotion_requires_baselines_and_tradeoff_metrics
-    {review : CyclicSubstratePromotionReview} :
-    BaselinesAndTradeoffsRequired review ->
-    review.substratePromoted = true ->
-    review.baselineRefsPresent = true ∧
-      review.tradeoffMetricsRecorded = true := by
-  intro valid promoted
-  exact valid promoted
 
 theorem cyclic_substrate_promotion_without_baselines_or_tradeoffs_rejected
     {review : CyclicSubstratePromotionReview} :

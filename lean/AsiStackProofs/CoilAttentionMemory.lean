@@ -12,15 +12,6 @@ def AliasBoundaryValid (review : CyclicMemoryAliasReview) : Prop :=
     (review.residueRecorded = true ∧ review.windingRecorded = true) ∨
       review.aliasResidualVisible = true
 
-theorem cyclic_memory_claim_records_residue_and_winding_or_visible_alias_residual
-    {review : CyclicMemoryAliasReview} :
-    AliasBoundaryValid review ->
-    review.cyclicSlotReused = true ->
-    (review.residueRecorded = true ∧ review.windingRecorded = true) ∨
-      review.aliasResidualVisible = true := by
-  intro valid reused
-  exact valid reused
-
 theorem reused_cyclic_slot_without_winding_or_residual_rejected
     {review : CyclicMemoryAliasReview} :
     review.cyclicSlotReused = true ->
@@ -58,16 +49,6 @@ def CoverageFreshnessAloneBlocksQualityPromotion
     review.freshnessFact = true ->
       review.semanticQualityEvidence = false ->
         review.retrievalQualityPromoted = false
-
-theorem sparse_coverage_or_freshness_alone_cannot_promote_retrieval_quality
-    {review : RetrievalQualityPromotionReview} :
-    CoverageFreshnessAloneBlocksQualityPromotion review ->
-    review.sparseCoverageFact = true ->
-    review.freshnessFact = true ->
-    review.semanticQualityEvidence = false ->
-    review.retrievalQualityPromoted = false := by
-  intro valid sparse fresh noQualityEvidence
-  exact valid sparse fresh noQualityEvidence
 
 theorem structure_only_retrieval_quality_promotion_rejected
     {review : RetrievalQualityPromotionReview} :

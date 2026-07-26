@@ -20446,13 +20446,13 @@
             {
               "tag": "lean:coil_memory.alias_boundary.operational_invariant",
               "module": "AsiStackProofs.CoilAttentionMemory",
-              "target": "A cyclic memory claim records residue and winding or marks aliasing as visible residual risk.",
+              "target": "A reused cyclic slot with missing residue or winding and no visible alias residual fails the finite alias-boundary predicate.",
               "status": "implemented"
             },
             {
               "tag": "lean:coil_attention.coverage_not_quality.failure_blocks_promotion",
               "module": "AsiStackProofs.CoilAttentionMemory",
-              "target": "Sparse coverage or freshness facts alone cannot promote a retrieval-quality claim.",
+              "target": "A retrieval-quality record that promotes from sparse coverage and freshness while semantic-quality evidence is absent fails the finite quality-promotion predicate.",
               "status": "implemented"
             }
           ],
@@ -20754,13 +20754,13 @@
             {
               "tag": "lean:cyclic_mixers.structural_not_quality.operational_invariant",
               "module": "AsiStackProofs.CyclicMixers",
-              "target": "A cyclic mixer claim records the structural invariant separately from quality, runtime, memory, and parameter claims.",
+              "target": "A cyclic mixer review missing any structural, quality, runtime, memory, or parameter partition fails the finite structural-claim predicate.",
               "status": "implemented"
             },
             {
               "tag": "lean:cyclic_mixers.baseline_required.failure_blocks_promotion",
               "module": "AsiStackProofs.CyclicMixers",
-              "target": "A cyclic substrate cannot be promoted without ordinary baselines and recorded tradeoff metrics.",
+              "target": "A promoted cyclic substrate missing baseline references or tradeoff metrics fails the finite promotion predicate.",
               "status": "implemented"
             }
           ],

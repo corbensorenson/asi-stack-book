@@ -5794,8 +5794,8 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:coil_memory.alias_boundary.operational_invariant` | `AsiStackProofs.CoilAttentionMemory` | A cyclic memory claim records residue and winding or marks aliasing as visible residual risk. | implemented |
-| `lean:coil_attention.coverage_not_quality.failure_blocks_promotion` | `AsiStackProofs.CoilAttentionMemory` | Sparse coverage or freshness facts alone cannot promote a retrieval-quality claim. | implemented |
+| `lean:coil_memory.alias_boundary.operational_invariant` | `AsiStackProofs.CoilAttentionMemory` | A reused cyclic slot with missing residue or winding and no visible alias residual fails the finite alias-boundary predicate. | implemented |
+| `lean:coil_attention.coverage_not_quality.failure_blocks_promotion` | `AsiStackProofs.CoilAttentionMemory` | A retrieval-quality record that promotes from sparse coverage and freshness while semantic-quality evidence is absent fails the finite quality-promotion predicate. | implemented |
 
 ### CoilRA, MultiCoil RoPE, and Cyclic Mixers
 
@@ -5868,7 +5868,7 @@ Draft deliverables:
 Exact current minimum: one schema-valid evaluation record; one inherited RoPE
 structural receipt boundary; one Circle cyclic-mixer receipt with bounded
 dense-reference parity and parameter accounting; one MultiCoil phase receipt
-with finite phase and relative-shift facts; two no-change decisions; and seven
+with finite phase and relative-shift facts; two no-change decisions; and five
 finite local theorem declarations. There is no trained cyclic model, natural
 workload, matched baseline matrix, real kernel or hardware benchmark, measured
 quality/context/runtime/memory/stability benefit, independent reproduction,
@@ -5890,12 +5890,11 @@ implementations, and heterogeneous transfer. A competent result may qualify a
 narrow use, narrow/null/refute/retire a claim, or end
 `blocked_after_full_attempt`; the core remains `argument` until the gates pass.
 
-Formal audit: the seven declarations comprise two direct record projections
-(`cyclic_mixer_claim_records_structure_separately_from_quality_runtime_memory_and_parameters`
-and `cyclic_substrate_promotion_requires_baselines_and_tradeoff_metrics`) plus
-five derived finite negative cases for missing partitions, missing baselines or
-tradeoffs, alias review without winding/residuals, an incomplete packet, and a
-hardware mismatch without refusal. They prove no cyclic semantics, general
+Formal audit: the five declarations are derived finite negative cases for
+missing partitions, missing baselines or tradeoffs, alias review without
+winding/residuals, an incomplete packet, and a hardware mismatch without
+refusal. The two former assumption-restating projections were retired after
+the public targets moved to the corresponding negative cases. They prove no cyclic semantics, general
 functional equivalence, numerical stability, trained quality, context use,
 kernel behavior, runtime, memory, parameter efficiency, fallback liveness,
 reproduction, or transfer. Future useful proofs should target mechanism
@@ -5906,8 +5905,8 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:cyclic_mixers.structural_not_quality.operational_invariant` | `AsiStackProofs.CyclicMixers` | A cyclic mixer claim records the structural invariant separately from quality, runtime, memory, and parameter claims. | implemented |
-| `lean:cyclic_mixers.baseline_required.failure_blocks_promotion` | `AsiStackProofs.CyclicMixers` | A cyclic substrate cannot be promoted without ordinary baselines and recorded tradeoff metrics. | implemented |
+| `lean:cyclic_mixers.structural_not_quality.operational_invariant` | `AsiStackProofs.CyclicMixers` | A cyclic mixer review missing any structural, quality, runtime, memory, or parameter partition fails the finite structural-claim predicate. | implemented |
+| `lean:cyclic_mixers.baseline_required.failure_blocks_promotion` | `AsiStackProofs.CyclicMixers` | A promoted cyclic substrate missing baseline references or tradeoff metrics fails the finite promotion predicate. | implemented |
 
 ## Part IV - Evidence, Implementation, and the Living Book
 
@@ -5993,7 +5992,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 298 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 298 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 333 proof targets, 110 Lean modules, 1332 theorem declarations, 919 derived/decomposed, 198 direct/projection, 215 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 333 proof targets, 110 Lean modules, 1328 theorem declarations, 919 derived/decomposed, 194 direct/projection, 215 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.

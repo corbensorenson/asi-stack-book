@@ -24,6 +24,8 @@ ARTIFACTS = [
     "lean/AsiStackProofs/RuntimeAdapters.lean",
     "lean/AsiStackProofs/SearchSubstrates.lean",
     "lean/AsiStackProofs/ArtifactStewardAgents.lean",
+    "lean/AsiStackProofs/CoilAttentionMemory.lean",
+    "lean/AsiStackProofs/CyclicMixers.lean",
     "scripts/validate_runtime_adapter_adversarial_boundary_probe.py",
     "scripts/validate_substrate_adoption_trace.py",
     "scripts/validate_artifact_steward_lifecycle_probe.py",
@@ -41,6 +43,8 @@ ARTIFACTS = [
     "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd",
     "chapters/mathematical-and-search-substrates.qmd",
     "chapters/artifact-steward-agents-and-living-project-governance.qmd",
+    "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd",
+    "chapters/coilra-multicoil-rope-and-cyclic-mixers.qmd",
     "roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json",
     "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md",
     "validation/registry.json",
@@ -70,11 +74,12 @@ def main() -> None:
         "execution_tier": "pr",
         "validation_class": "proof_or_evidence_gate",
         "input_contract": (
-            "One immutable 1,370-theorem baseline; thirty-eight exact, ordered transactions; "
+            "One immutable 1,370-theorem baseline; forty-two exact, ordered transactions; "
             "the baseline Scalable Oversight, Bibliography Plan, Benchmark Ratchets, and "
             "Policy Optimization, Stable Capability Fields, Evidence States, and Runtime "
-            "Adapters, Search Substrates, and Artifact Steward Agents modules; one same-model normalized duplicate "
-            "pair; thirty-seven premise-restating projections, fifteen with derived "
+            "Adapters, Search Substrates, Artifact Steward Agents, Coil Attention Memory, "
+            "and Cyclic Mixers modules; one same-model normalized duplicate "
+            "pair; forty-one premise-restating projections, nineteen with derived "
             "replacements, twenty retired after public-target narrowing, one unused projection retired without target "
             "change, and one summary projection retired after route-family validator rebinding; "
             "the current overlay; frozen historical registry; and reconciled target, "
@@ -84,9 +89,9 @@ def main() -> None:
         "output_contract": (
             "Require immutable baseline and theorem-block digests, exact same-model "
             "statement identity for the duplicate, dependency-and-consumer-safe removals, "
-            "four counterexample, four decision-model, and ten scope-narrowing target "
-            "migrations, retained or honestly replanned target ownership, a 1,332-theorem "
-            "current estate, an exact 123-action remaining "
+            "eight counterexample, four decision-model, and ten scope-narrowing target "
+            "migrations, retained or honestly replanned target ownership, a 1,328-theorem "
+            "current estate, an exact 119-action remaining "
             "queue, meta-audit exclusion from implementation binding, and no support or "
             "release effect."
         ),
@@ -95,7 +100,7 @@ def main() -> None:
             "retired and retained declarations share one authored model",
             "normalized theorem statements exact",
             "retired theorem has no theorem consumer",
-            "thirty-eight retired declarations absent, sixteen replacement-bound retirements, and twenty-two intentionally null replacements",
+            "forty-two retired declarations absent, twenty replacement-bound retirements, and twenty-two intentionally null replacements",
             "two bibliography targets migrated to derived counterexample gates",
             "two benchmark targets migrated to derived decision-model gates",
             "two Stable Capability Fields targets narrowed to retained derived routes",
@@ -103,16 +108,18 @@ def main() -> None:
             "Runtime adapter validator bound to fifteen route theorems rather than a summary projection",
             "Search Substrates targets bound to two finite counterexamples and one honestly planned reachable route model",
             "Artifact Steward targets bound to two retained lifecycle routes and two honestly planned reachable models",
+            "Coil memory targets bound to two derived finite negative cases",
+            "Cyclic mixer targets bound to two derived finite negative cases",
             "proof-custody meta-audit does not inflate semantic implementation depth",
-            "1,332 current theorem declarations",
-            "123 rewrite-or-retire actions remain",
+            "1,328 current theorem declarations",
+            "119 rewrite-or-retire actions remain",
             "frozen 1,151-theorem and 298-target registry preserved",
             "14 mutations reject",
             "no support or release effect",
         ],
         "claim_scope": (
-            "Thirty-eight dependency-safe declaration retirements: one exact same-model "
-            "duplicate and thirty-seven premise-restating projections. Eighteen public "
+            "Forty-two dependency-safe declaration retirements: one exact same-model "
+            "duplicate and forty-one premise-restating projections. Twenty-two public "
             "targets migrate to counterexample, decision-model, narrower retained-route, "
             "or honestly planned stronger-model wording; the runtime-adapter target remains "
             "implemented through its fifteen explicit route theorems."
@@ -141,7 +148,7 @@ def main() -> None:
             "deployment, transfer, safety, SOTA, AGI, ASI, or claim support."
         ),
         "contract_precision": "exact_immutable_cumulative_dependency_safe_retirement_ledger",
-        "semantic_review_state": "checked_thirty_eight_c6_retirements_and_eighteen_target_migrations",
+        "semantic_review_state": "checked_forty_two_c6_retirements_and_twenty_two_target_migrations",
     })
     required = registry["required_artifacts"]
     for artifact in ARTIFACTS + [REGISTER]:

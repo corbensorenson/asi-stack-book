@@ -1006,7 +1006,7 @@ that remains safe only by never completing useful work fails the joint gate.
 
 Keep the existing syntax-level classifier, but add a semantic-depth overlay for
 every current declaration. The immutable pre-rationalization baseline contains
-1,370 declarations; the live estate contains 1,332 after thirty-eight
+1,370 declarations; the live estate contains 1,328 after forty-two
 dependency-safe retirement transactions:
 
 | Level | Required meaning |
@@ -1148,11 +1148,11 @@ historical review. The immutable historical registry remains exactly 1,151
 theorems across 298 targets. The separately frozen pre-rationalization overlay
 at commit `d0f9bda14f1253999f2c40d556d925d31e4b36a4` classifies all 1,370
 baseline declarations. The current overlay in
-`proofs/proof_semantic_depth_overlay.json` classifies all 1,332 live theorem
+`proofs/proof_semantic_depth_overlay.json` classifies all 1,328 live theorem
 declarations across 104 theorem-bearing modules and maps them to 61 active
 semantic-owner chapters.
 
-The live semantic-depth distribution is 45 P0 record-shape results, 769 P1
+The live semantic-depth distribution is 43 P0 record-shape results, 767 P1
 finite-route results, 25 P2 reachability/nonvacuity results, 319 P3
 implementation-refinement results, 93 P4 cross-component-safety results, 81 P5
 liveness/recovery results, and zero P6 empirically bound results. P6 being zero
@@ -1162,8 +1162,8 @@ artifact does not turn a theorem into empirical evidence.
 Every overlay row records its assumptions, active semantic owner, downstream
 consumer, witness or explicit witness absence, implementation binding, mutation
 evidence, maximum inference, and disposition. The resulting current estate is
-1,209 retain, 26 retire as narrow projection, two scope-language rewrites, and
-95 stronger-model rewrites. All 1,332 rows have mutation coverage and every
+1,209 retain, 22 retire as narrow projection, two scope-language rewrites, and
+95 stronger-model rewrites. All 1,328 rows have mutation coverage and every
 retained theorem has a named consumer.
 
 The cumulative dependency-safe retirement ledger is
@@ -1297,9 +1297,25 @@ federation functions. No steward runtime, treasury enforcement, protected
 asset isolation, release enforcement, support transition, or publication
 authority follows.
 
+The ninth narrow-projection tranche retires four assumption-restating
+declarations across `CoilAttentionMemory.lean` and `CyclicMixers.lean`.
+The cyclic-memory hooks now name retained finite counterexamples: a reused
+slot with missing residue or winding and no visible alias residual fails the
+alias-boundary predicate, and a retrieval-quality record promoted from sparse
+coverage and freshness without semantic-quality evidence fails the
+quality-promotion predicate. The cyclic-mixer hooks likewise name retained
+negative cases: a review missing any structural, quality, runtime, memory, or
+parameter partition fails the structural-claim predicate, and a promoted
+substrate missing baseline references or tradeoff metrics fails the promotion
+predicate. All four retired declarations had no theorem dependency or theorem
+consumer. Their underlying records and predicates remain because the retained
+negative cases use them. This narrows formal meaning without changing the
+chapters' architecture guidance, executable fixtures, structural receipts,
+support states, empirical results, or release authority.
+
 This receipt completes the C6 **classification** gate and begins its
-dependency-safe execution gate. Exactly 38 of the original 161 actions have
-been executed; 123 rewrite-or-retire actions remain: 26 narrow-projection
+dependency-safe execution gate. Exactly 42 of the original 161 actions have
+been executed; 119 rewrite-or-retire actions remain: 22 narrow-projection
 retirements, two scope-language rewrites, and 95 stronger-model rewrites. The
 next proof action is a dependency-safe narrow-projection tranche, preserving
 each correct bounded result until its consumers and maximum inference are

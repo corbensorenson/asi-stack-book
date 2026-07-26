@@ -2414,41 +2414,41 @@
       "tag": "lean:coil_memory.alias_boundary.operational_invariant",
       "chapter_id": "coil-attention-cyclic-memory-and-recurrence-contracts",
       "module": "AsiStackProofs.CoilAttentionMemory",
-      "formal_target": "A cyclic memory claim records residue and winding or marks aliasing as visible residual risk.",
+      "formal_target": "A reused cyclic slot with missing residue or winding and no visible alias residual fails the finite alias-boundary predicate.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented in AsiStackProofs.CoilAttentionMemory as a finite alias-boundary predicate: reused cyclic slots require residue/winding records or visible alias residuals."
+      "rationale": "Implemented in AsiStackProofs.CoilAttentionMemory as a derived finite negative case: a reused slot with missing residue or winding and no visible alias residual contradicts the alias-boundary predicate."
     },
     {
       "tag": "lean:coil_attention.coverage_not_quality.failure_blocks_promotion",
       "chapter_id": "coil-attention-cyclic-memory-and-recurrence-contracts",
       "module": "AsiStackProofs.CoilAttentionMemory",
-      "formal_target": "Sparse coverage or freshness facts alone cannot promote a retrieval-quality claim.",
+      "formal_target": "A retrieval-quality record that promotes from sparse coverage and freshness while semantic-quality evidence is absent fails the finite quality-promotion predicate.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented in AsiStackProofs.CoilAttentionMemory as a finite retrieval-quality predicate: sparse coverage and freshness facts without semantic-quality evidence cannot promote retrieval quality."
+      "rationale": "Implemented in AsiStackProofs.CoilAttentionMemory as a derived finite negative case: promoted retrieval quality with sparse coverage, freshness, and no semantic-quality evidence contradicts the quality-promotion predicate."
     },
     {
       "tag": "lean:cyclic_mixers.structural_not_quality.operational_invariant",
       "chapter_id": "coilra-multicoil-rope-and-cyclic-mixers",
       "module": "AsiStackProofs.CyclicMixers",
-      "formal_target": "A cyclic mixer claim records the structural invariant separately from quality, runtime, memory, and parameter claims.",
+      "formal_target": "A cyclic mixer review missing any structural, quality, runtime, memory, or parameter partition fails the finite structural-claim predicate.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented in AsiStackProofs.CyclicMixers as a finite claim-separation predicate: structural invariants are separated from quality, runtime, memory, and parameter claims."
+      "rationale": "Implemented in AsiStackProofs.CyclicMixers as a derived finite negative case: omission of any required structural, quality, runtime, memory, or parameter partition contradicts the structural-claim predicate."
     },
     {
       "tag": "lean:cyclic_mixers.baseline_required.failure_blocks_promotion",
       "chapter_id": "coilra-multicoil-rope-and-cyclic-mixers",
       "module": "AsiStackProofs.CyclicMixers",
-      "formal_target": "A cyclic substrate cannot be promoted without ordinary baselines and recorded tradeoff metrics.",
+      "formal_target": "A promoted cyclic substrate missing baseline references or tradeoff metrics fails the finite promotion predicate.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented in AsiStackProofs.CyclicMixers as a finite promotion predicate: promoted cyclic substrates require baseline references and tradeoff metrics."
+      "rationale": "Implemented in AsiStackProofs.CyclicMixers as a derived finite negative case: a promoted cyclic substrate missing baseline references or tradeoff metrics contradicts the promotion predicate."
     },
     {
       "tag": "lean:proofs.envelope.operational_invariant",

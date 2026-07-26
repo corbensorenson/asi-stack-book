@@ -70,10 +70,14 @@ EXPECTED_ACTION_IDS = [
     "C6-R36-artifact-steward-treasury-projection",
     "C6-R37-artifact-steward-release-projection",
     "C6-R38-artifact-steward-sunset-projection",
+    "C6-R39-coil-memory-alias-projection",
+    "C6-R40-coil-memory-quality-projection",
+    "C6-R41-cyclic-mixer-partition-projection",
+    "C6-R42-cyclic-mixer-promotion-projection",
 ]
 EXPECTED_LEVELS = {
-    "P0": 45,
-    "P1": 769,
+    "P0": 43,
+    "P1": 767,
     "P2": 25,
     "P3": 319,
     "P4": 93,
@@ -82,7 +86,7 @@ EXPECTED_LEVELS = {
 }
 EXPECTED_DISPOSITIONS = {
     "retain": 1209,
-    "retire_narrow_projection": 26,
+    "retire_narrow_projection": 22,
     "rewrite_scope_language": 2,
     "rewrite_with_stronger_model": 95,
 }
@@ -171,6 +175,23 @@ EXPECTED_TARGETS = {
         "A finite steward lifecycle decision with sunset criteria met and no open "
         "review routes to sunset review."
     ),
+    "lean:coil_memory.alias_boundary.operational_invariant": (
+        "A reused cyclic slot with missing residue or winding and no visible alias "
+        "residual fails the finite alias-boundary predicate."
+    ),
+    "lean:coil_attention.coverage_not_quality.failure_blocks_promotion": (
+        "A retrieval-quality record that promotes from sparse coverage and freshness "
+        "while semantic-quality evidence is absent fails the finite quality-promotion "
+        "predicate."
+    ),
+    "lean:cyclic_mixers.structural_not_quality.operational_invariant": (
+        "A cyclic mixer review missing any structural, quality, runtime, memory, or "
+        "parameter partition fails the finite structural-claim predicate."
+    ),
+    "lean:cyclic_mixers.baseline_required.failure_blocks_promotion": (
+        "A promoted cyclic substrate missing baseline references or tradeoff metrics "
+        "fails the finite promotion predicate."
+    ),
 }
 PLANNED_TARGETS = {
     "lean:evidence.support_state.operational_invariant",
@@ -220,6 +241,10 @@ EXPECTED_MIGRATION_COUNTS = {
         "C6-R36-artifact-steward-treasury-projection",
         "C6-R37-artifact-steward-release-projection",
         "C6-R38-artifact-steward-sunset-projection",
+        "C6-R39-coil-memory-alias-projection",
+        "C6-R40-coil-memory-quality-projection",
+        "C6-R41-cyclic-mixer-partition-projection",
+        "C6-R42-cyclic-mixer-promotion-projection",
     })
     for action_id in EXPECTED_ACTION_IDS
 }
@@ -277,7 +302,7 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
     actions = ledger["actions"]
     if [row["action_id"] for row in actions] != EXPECTED_ACTION_IDS:
         out.append("action sequence or identity drifted")
-    if [row["sequence"] for row in actions] != list(range(1, 39)):
+    if [row["sequence"] for row in actions] != list(range(1, 43)):
         out.append("action sequence numbers drifted")
 
     try:
@@ -433,13 +458,13 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
 
     overlay = load(CURRENT_OVERLAY)
     summary = overlay.get("summary", {})
-    if summary.get("current_theorem_count") != 1332:
+    if summary.get("current_theorem_count") != 1328:
         out.append("current theorem denominator drifted")
     if summary.get("semantic_level_counts") != EXPECTED_LEVELS:
         out.append("current semantic-level counts drifted")
     if summary.get("disposition_counts") != EXPECTED_DISPOSITIONS:
         out.append("current disposition counts drifted")
-    if sum(value for key, value in EXPECTED_DISPOSITIONS.items() if key != "retain") != 123:
+    if sum(value for key, value in EXPECTED_DISPOSITIONS.items() if key != "retain") != 119:
         out.append("expected remaining-action denominator is internally inconsistent")
     if ledger["summary"]["remaining_action_counts"] != {
         key: value for key, value in EXPECTED_DISPOSITIONS.items() if key != "retain"
@@ -580,6 +605,36 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
         if removed_model_name in steward_source:
             out.append(f"ArtifactStewardAgents retained dead projection model {removed_model_name}")
 
+    coil_rows = [
+        row
+        for row in current_rows
+        if row["module_path"] == "lean/AsiStackProofs/CoilAttentionMemory.lean"
+    ]
+    retired_coil_names = {
+        action["retired_theorem_id"].split("::", 1)[1]
+        for action in actions
+        if action["module_path"] == "lean/AsiStackProofs/CoilAttentionMemory.lean"
+    }
+    if len(coil_rows) != 4:
+        out.append("CoilAttentionMemory must retain exactly four derived negative cases")
+    if retired_coil_names & {row["name"] for row in coil_rows}:
+        out.append("CoilAttentionMemory retained an executed premise projection")
+
+    cyclic_rows = [
+        row
+        for row in current_rows
+        if row["module_path"] == "lean/AsiStackProofs/CyclicMixers.lean"
+    ]
+    retired_cyclic_names = {
+        action["retired_theorem_id"].split("::", 1)[1]
+        for action in actions
+        if action["module_path"] == "lean/AsiStackProofs/CyclicMixers.lean"
+    }
+    if len(cyclic_rows) != 5:
+        out.append("CyclicMixers must retain exactly five derived negative cases")
+    if retired_cyclic_names & {row["name"] for row in cyclic_rows}:
+        out.append("CyclicMixers retained an executed premise projection")
+
     manifest_rows = {
         row["tag"]: row
         for row in load(MANIFEST).get("records", [])
@@ -622,17 +677,17 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
     if status.get("rationalization_ledger_path") != str(LEDGER.relative_to(ROOT)):
         out.append("status does not bind the cumulative rationalization ledger")
     if (
-        status.get("theorem_count") != 1332
-        or status.get("executed_retirement_count") != 38
-        or status.get("remaining_action_count") != 123
+        status.get("theorem_count") != 1328
+        or status.get("executed_retirement_count") != 42
+        or status.get("remaining_action_count") != 119
     ):
         out.append("status does not report the cumulative post-transaction denominator")
     roadmap = ROADMAP.read_text(encoding="utf-8")
     roadmap_flat = " ".join(roadmap.split())
     for phrase in [
-        "eighth narrow-projection tranche",
-        "1,332 live theorem declarations",
-        "123 rewrite-or-retire actions remain",
+        "ninth narrow-projection tranche",
+        "1,328 live theorem declarations",
+        "119 rewrite-or-retire actions remain",
         "`proofs/proof_semantic_rationalization_ledger.json`",
     ]:
         if phrase not in roadmap_flat:
@@ -688,9 +743,9 @@ def main() -> None:
             + "\n - ".join(failures)
         )
     print(
-        "Proof semantic-rationalization ledger passed: thirty-eight dependency-safe "
-        "retirements, eighteen public-target migrations, 1,332 live theorems, "
-        "123 actions remain, 14 rejecting mutations, no support or release effect."
+        "Proof semantic-rationalization ledger passed: forty-two dependency-safe "
+        "retirements, twenty-two public-target migrations, 1,328 live theorems, "
+        "119 actions remain, 14 rejecting mutations, no support or release effect."
     )
 
 

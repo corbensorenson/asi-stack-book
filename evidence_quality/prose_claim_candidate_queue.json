@@ -3,13 +3,13 @@
   "scanner": "modal and outcome-bearing sentence cue scan; candidates require semantic adjudication",
   "summary": {
     "chapter_count": 64,
-    "candidate_count": 3444,
+    "candidate_count": 3439,
     "review_state_counts": {
       "duplicate_of_atom": 1525,
       "editorial_or_question": 71,
       "historical_or_source_report": 290,
       "material_atom": 3,
-      "nonmaterial_explanation": 1555
+      "nonmaterial_explanation": 1550
     }
   },
   "candidates": [
@@ -49082,33 +49082,10 @@
       "target_atom_id": null
     },
     {
-      "candidate_id": "coil-attention-cyclic-memory-and-recurrence-contracts.prose.c63eda1a004e",
+      "candidate_id": "coil-attention-cyclic-memory-and-recurrence-contracts.prose.a9b29f264b37",
       "chapter_id": "coil-attention-cyclic-memory-and-recurrence-contracts",
       "source": "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd:345",
-      "sentence": "They prove only record-level gates: reused cyclic slots must record residue/winding or visible alias residuals; reused slots with missing residue/winding and no visible residual are rejected; sparse coverage plus freshness facts without semantic-quality evidence cannot promote a retrieval-quality claim; structure-only quality promotion is rejected; recurrence admission requires work-budget, exit-condition, and fallback records; and stale reads admitted as fresh require residual escrow.",
-      "cues": [
-        "cannot",
-        "must",
-        "prove",
-        "require",
-        "requires"
-      ],
-      "review_state": "nonmaterial_explanation",
-      "allowed_dispositions": [
-        "material_atom",
-        "nonmaterial_explanation",
-        "duplicate_of_atom",
-        "editorial_or_question",
-        "historical_or_source_report"
-      ],
-      "disposition_rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom.",
-      "target_atom_id": null
-    },
-    {
-      "candidate_id": "coil-attention-cyclic-memory-and-recurrence-contracts.prose.4a749d1f9932",
-      "chapter_id": "coil-attention-cyclic-memory-and-recurrence-contracts",
-      "source": "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd:345",
-      "sentence": "They do not prove retrieval quality, KV-cache behavior, sparse-attention coverage, recurrence-exit behavior, freshness performance, long-context improvement, memory savings, or learned-model quality.",
+      "sentence": "These results do not prove retrieval quality, KV-cache behavior, sparse-attention coverage, recurrence-exit behavior, freshness performance, long-context improvement, memory savings, or learned-model quality.",
       "cues": [
         "prove"
       ],
@@ -49124,66 +49101,9 @@
       "target_atom_id": null
     },
     {
-      "candidate_id": "coil-attention-cyclic-memory-and-recurrence-contracts.prose.e26dcd203e54",
-      "chapter_id": "coil-attention-cyclic-memory-and-recurrence-contracts",
-      "source": "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd:351",
-      "sentence": "proves cache semantics, cross-request isolation, coverage completeness,",
-      "cues": [
-        "proves"
-      ],
-      "review_state": "nonmaterial_explanation",
-      "allowed_dispositions": [
-        "material_atom",
-        "nonmaterial_explanation",
-        "duplicate_of_atom",
-        "editorial_or_question",
-        "historical_or_source_report"
-      ],
-      "disposition_rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom.",
-      "target_atom_id": null
-    },
-    {
-      "candidate_id": "coil-attention-cyclic-memory-and-recurrence-contracts.prose.6f7eb7ffbe40",
-      "chapter_id": "coil-attention-cyclic-memory-and-recurrence-contracts",
-      "source": "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd:353",
-      "sentence": "reasoning, latency, memory efficiency, independent reproduction, or transfer.",
-      "cues": [
-        "transfer"
-      ],
-      "review_state": "nonmaterial_explanation",
-      "allowed_dispositions": [
-        "material_atom",
-        "nonmaterial_explanation",
-        "duplicate_of_atom",
-        "editorial_or_question",
-        "historical_or_source_report"
-      ],
-      "disposition_rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom.",
-      "target_atom_id": null
-    },
-    {
-      "candidate_id": "coil-attention-cyclic-memory-and-recurrence-contracts.prose.32ef964901e0",
-      "chapter_id": "coil-attention-cyclic-memory-and-recurrence-contracts",
-      "source": "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd:354",
-      "sentence": "Any unconsumed projection should be replaced by transition, invalidation,",
-      "cues": [
-        "should"
-      ],
-      "review_state": "nonmaterial_explanation",
-      "allowed_dispositions": [
-        "material_atom",
-        "nonmaterial_explanation",
-        "duplicate_of_atom",
-        "editorial_or_question",
-        "historical_or_source_report"
-      ],
-      "disposition_rationale": "Semantically reviewed as bounded explanation, source or fixture report, formal-surface description, or explicit non-claim; it creates no independent promoted atom.",
-      "target_atom_id": null
-    },
-    {
       "candidate_id": "coil-attention-cyclic-memory-and-recurrence-contracts.prose.aff0769852d8",
       "chapter_id": "coil-attention-cyclic-memory-and-recurrence-contracts",
-      "source": "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd:371",
+      "source": "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd:372",
       "sentence": "`coil_attention_memory` supplies alias, freshness, sparse-coverage, and recurrence-budget contracts; `circle_ai_contract_suite` supplies theorem-linked contract family context; `theseus_circle_transfer` supplies the report-only transfer boundary; and `vcm_public` ties these records back to governed context adequacy.",
       "cues": [
         "transfer"
@@ -49202,7 +49122,7 @@
     {
       "candidate_id": "coil-attention-cyclic-memory-and-recurrence-contracts.prose.79ff1e9fab98",
       "chapter_id": "coil-attention-cyclic-memory-and-recurrence-contracts",
-      "source": "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd:377",
+      "source": "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd:378",
       "sentence": "The strict Circle receipt command accepted theorem IDs `AIM-T0001`, `AIM-T0002`, `AIM-T0004`, and `AIM-T0005`, required recommendations `MEMORY-ATTACH-WINDING-ALIAS-PROVENANCE` and `MEMORY-AUDIT-FINITE-ALIAS-LOAD`, and recorded contract fingerprint `a25d841aff585b59519919cad25d89a3f76cd8ddb11fb1549d593f7f2f09c62a`.",
       "cues": [
         "required"
@@ -49221,7 +49141,7 @@
     {
       "candidate_id": "coil-attention-cyclic-memory-and-recurrence-contracts.prose.a75fb6bf70e7",
       "chapter_id": "coil-attention-cyclic-memory-and-recurrence-contracts",
-      "source": "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd:379",
+      "source": "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd:380",
       "sentence": "This receipt is useful because it shows the exact structural point: residue slot `7` is not enough without winding `2` and the alias class `[7, 15, 23, 31]`.",
       "cues": [
         "shows"
@@ -49240,7 +49160,7 @@
     {
       "candidate_id": "coil-attention-cyclic-memory-and-recurrence-contracts.prose.48af8c808d4b",
       "chapter_id": "coil-attention-cyclic-memory-and-recurrence-contracts",
-      "source": "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd:379",
+      "source": "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd:380",
       "sentence": "It does not promote any chapter core claim above `argument`, does not create a support-state transition, and does not prove retrieval quality, reasoning quality, model quality, context length, speed, memory scaling, throughput, paging correctness, deployment safety, transfer, or ASI.",
       "cues": [
         "prove",
@@ -49260,7 +49180,7 @@
     {
       "candidate_id": "coil-attention-cyclic-memory-and-recurrence-contracts.prose.9aac69dc3ee4",
       "chapter_id": "coil-attention-cyclic-memory-and-recurrence-contracts",
-      "source": "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd:385",
+      "source": "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd:386",
       "sentence": "The strict Circle receipt accepted theorem IDs `AIM-T0103`, `AIM-T0104`, and `AIM-T0149`, recorded `theorem_count=54`, required recommendations `KV-DROP-STALE-REQUEST-TOKEN` and `KV-USE-SINK-ROLLING-WINDOW-REQUEST`, and recorded contract fingerprint `bfebf150ce45d1eb124ea553bf2ba8c62008751ebec9f8600b83cc09e0526a46`.",
       "cues": [
         "required"
@@ -49279,7 +49199,7 @@
     {
       "candidate_id": "coil-attention-cyclic-memory-and-recurrence-contracts.prose.50aa4d4bdfc8",
       "chapter_id": "coil-attention-cyclic-memory-and-recurrence-contracts",
-      "source": "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd:387",
+      "source": "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd:388",
       "sentence": "It does not promote any chapter core claim above `argument`, does not create a support-state transition, and does not prove deployed KV-cache behavior, serving throughput, memory savings, paging correctness, retrieval quality, reasoning quality, model quality, context length, speed, memory scaling, deployment safety, transfer, benchmark performance, or ASI.",
       "cues": [
         "prove",
@@ -49299,7 +49219,7 @@
     {
       "candidate_id": "coil-attention-cyclic-memory-and-recurrence-contracts.prose.6ea642dce695",
       "chapter_id": "coil-attention-cyclic-memory-and-recurrence-contracts",
-      "source": "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd:393",
+      "source": "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd:394",
       "sentence": "The strict Circle receipt accepted theorem IDs `AIT-T0104` and `AIT-T0172`, recorded `theorem_count=141` in the contract-ready digest, required recommendations `SPARSE-LOCAL-FIRST-INTERVAL-REPAIR` and `SPARSE-DENSE-LOCAL-COMPLETE-FALLBACK`, and recorded contract fingerprint `c23809cef9b821b1e4f9cabf53fcac724a0757bf3f86594e1d12710fe0cd9ec1`.",
       "cues": [
         "required"
@@ -49318,7 +49238,7 @@
     {
       "candidate_id": "coil-attention-cyclic-memory-and-recurrence-contracts.prose.cad1c1c75b4c",
       "chapter_id": "coil-attention-cyclic-memory-and-recurrence-contracts",
-      "source": "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd:395",
+      "source": "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd:396",
       "sentence": "It does not promote any chapter core claim above `argument`, does not create a support-state transition, does not prove sparse-attention coverage success, and does not prove deployed sparse-attention behavior, retrieval quality, reasoning quality, long-context quality, model quality, speed, memory savings, deployment safety, transfer, benchmark performance, or ASI.",
       "cues": [
         "prove",
@@ -49338,7 +49258,7 @@
     {
       "candidate_id": "coil-attention-cyclic-memory-and-recurrence-contracts.prose.a88ead9b1d61",
       "chapter_id": "coil-attention-cyclic-memory-and-recurrence-contracts",
-      "source": "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd:401",
+      "source": "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd:402",
       "sentence": "The strict Circle receipt accepted theorem IDs `AIT-T0001`, `AIT-T0002`, `AIT-T0003`, and `AIT-T0173`, recorded `theorem_count=4`, required recommendations `FANOUT-USE-FULL-COVERAGE-STRIDE-CYCLE` and `FANOUT-AUDIT-DUPLICATE-COLLAPSED-BUDGET`, and recorded contract fingerprint `d4c878563747da9c9f1f55cd689f04e2a0a8e31ce9429a138341ec4e27ee3799`.",
       "cues": [
         "required"
@@ -49357,7 +49277,7 @@
     {
       "candidate_id": "coil-attention-cyclic-memory-and-recurrence-contracts.prose.825c40a1040c",
       "chapter_id": "coil-attention-cyclic-memory-and-recurrence-contracts",
-      "source": "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd:403",
+      "source": "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd:404",
       "sentence": "It does not promote any chapter core claim above `argument`, does not create a support-state transition, and does not prove search quality, retrieval quality, routing quality, sparse-attention quality, reasoning quality, model quality, context length, throughput, latency, runtime speed, memory savings, deployment readiness, deployment safety, transfer, benchmark performance, safety, optimal scheduling, or ASI.",
       "cues": [
         "prove",
@@ -49377,7 +49297,7 @@
     {
       "candidate_id": "coil-attention-cyclic-memory-and-recurrence-contracts.prose.5cf54ff08454",
       "chapter_id": "coil-attention-cyclic-memory-and-recurrence-contracts",
-      "source": "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd:409",
+      "source": "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd:410",
       "sentence": "The strict Circle receipt accepted theorem IDs `AIM-T0026`, `AIM-T0130`, and `AIM-T0159`, recorded `theorem_count=64`, required recommendations `RECURRENCE-USE-ACTIVE-TOKEN-WORK-SCHEDULE` and `RECURRENCE-REUSE-WHOLE-PERIOD-SHIFT`, and recorded contract fingerprint `571edd5dce4f7b64441806de323295218a3e2293b3b540dd4772ba34b9371515`.",
       "cues": [
         "required"
@@ -49396,7 +49316,7 @@
     {
       "candidate_id": "coil-attention-cyclic-memory-and-recurrence-contracts.prose.03b62c3ef1cb",
       "chapter_id": "coil-attention-cyclic-memory-and-recurrence-contracts",
-      "source": "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd:411",
+      "source": "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd:412",
       "sentence": "It does not promote any chapter core claim above `argument`, does not create a support-state transition, and does not prove deployed recurrence behavior, reasoning quality, retrieval quality, learned-memory behavior, convergence, model quality, context length, speed, memory savings, deployment safety, transfer, benchmark performance, or ASI.",
       "cues": [
         "prove",
@@ -49416,7 +49336,7 @@
     {
       "candidate_id": "coil-attention-cyclic-memory-and-recurrence-contracts.prose.3cfb7eb6c397",
       "chapter_id": "coil-attention-cyclic-memory-and-recurrence-contracts",
-      "source": "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd:415",
+      "source": "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd:416",
       "sentence": "They do not prove retrieval or reasoning quality.",
       "cues": [
         "prove"
@@ -49435,7 +49355,7 @@
     {
       "candidate_id": "coil-attention-cyclic-memory-and-recurrence-contracts.prose.413cf7adcb9b",
       "chapter_id": "coil-attention-cyclic-memory-and-recurrence-contracts",
-      "source": "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd:419",
+      "source": "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd:420",
       "sentence": "A memory contract should make the cheap fact and the hard claim impossible to confuse.",
       "cues": [
         "should"
@@ -49454,7 +49374,7 @@
     {
       "candidate_id": "coil-attention-cyclic-memory-and-recurrence-contracts.prose.e67a0fca4363",
       "chapter_id": "coil-attention-cyclic-memory-and-recurrence-contracts",
-      "source": "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd:419",
+      "source": "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd:420",
       "sentence": "The architecture should welcome cyclic memory ideas when they improve inspectability, but it should refuse to turn structure into performance mythology.",
       "cues": [
         "improve",
@@ -49474,7 +49394,7 @@
     {
       "candidate_id": "coil-attention-cyclic-memory-and-recurrence-contracts.prose.fc29e7b68940",
       "chapter_id": "coil-attention-cyclic-memory-and-recurrence-contracts",
-      "source": "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd:456",
+      "source": "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd:457",
       "sentence": "It requires ordinary baselines, diagnostics, resource costs, workload fit, and failure cases before cyclic structure can influence adoption.",
       "cues": [
         "requires"
@@ -50431,30 +50351,10 @@
       "target_atom_id": null
     },
     {
-      "candidate_id": "coilra-multicoil-rope-and-cyclic-mixers.prose.665fb47501db",
+      "candidate_id": "coilra-multicoil-rope-and-cyclic-mixers.prose.3668f2d6bad3",
       "chapter_id": "coilra-multicoil-rope-and-cyclic-mixers",
       "source": "chapters/coilra-multicoil-rope-and-cyclic-mixers.qmd:386",
-      "sentence": "They prove only the record-level gates: structural invariants are recorded separately from quality, runtime, memory, and parameter claims, and promoted cyclic substrates require baseline references plus tradeoff metrics.",
-      "cues": [
-        "prove",
-        "require"
-      ],
-      "review_state": "nonmaterial_explanation",
-      "allowed_dispositions": [
-        "material_atom",
-        "nonmaterial_explanation",
-        "duplicate_of_atom",
-        "editorial_or_question",
-        "historical_or_source_report"
-      ],
-      "disposition_rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, formal-surface description, scanner fragment, or explicit non-claim; the complete material requirement is already atomized and no independent promoted atom is created.",
-      "target_atom_id": null
-    },
-    {
-      "candidate_id": "coilra-multicoil-rope-and-cyclic-mixers.prose.f1f6018d1e40",
-      "chapter_id": "coilra-multicoil-rope-and-cyclic-mixers",
-      "source": "chapters/coilra-multicoil-rope-and-cyclic-mixers.qmd:386",
-      "sentence": "The module also now proves bounded negative cases named `cyclic_mixer_claim_missing_claim_partition_rejected`, `cyclic_substrate_promotion_without_baselines_or_tradeoffs_rejected`, `cyclic_alias_diagnostic_without_winding_or_visible_residual_rejected`, `cyclic_adoption_without_complete_tradeoff_packet_rejected`, and `hardware_mismatch_without_refusal_path_rejected`.",
+      "sentence": "The module also proves bounded negative cases for alias review without winding or visible residuals, an incomplete tradeoff packet, and hardware mismatch without a refusal path.",
       "cues": [
         "proves"
       ],
@@ -50491,7 +50391,7 @@
     {
       "candidate_id": "coilra-multicoil-rope-and-cyclic-mixers.prose.7a16ba0abbb4",
       "chapter_id": "coilra-multicoil-rope-and-cyclic-mixers",
-      "source": "chapters/coilra-multicoil-rope-and-cyclic-mixers.qmd:396",
+      "source": "chapters/coilra-multicoil-rope-and-cyclic-mixers.qmd:393",
       "sentence": "None proves cyclic mechanism semantics, functional equivalence",
       "cues": [
         "proves"
@@ -50510,7 +50410,7 @@
     {
       "candidate_id": "coilra-multicoil-rope-and-cyclic-mixers.prose.72d712d746f6",
       "chapter_id": "coilra-multicoil-rope-and-cyclic-mixers",
-      "source": "chapters/coilra-multicoil-rope-and-cyclic-mixers.qmd:399",
+      "source": "chapters/coilra-multicoil-rope-and-cyclic-mixers.qmd:396",
       "sentence": "efficiency, fallback liveness, reproduction, or transfer.",
       "cues": [
         "transfer"
@@ -50529,7 +50429,7 @@
     {
       "candidate_id": "coilra-multicoil-rope-and-cyclic-mixers.prose.7cf68587c515",
       "chapter_id": "coilra-multicoil-rope-and-cyclic-mixers",
-      "source": "chapters/coilra-multicoil-rope-and-cyclic-mixers.qmd:400",
+      "source": "chapters/coilra-multicoil-rope-and-cyclic-mixers.qmd:397",
       "sentence": "should replace unconsumed projections with mechanism semantics, numerical",
       "cues": [
         "should"
@@ -50548,7 +50448,7 @@
     {
       "candidate_id": "coilra-multicoil-rope-and-cyclic-mixers.prose.e0f35412ac44",
       "chapter_id": "coilra-multicoil-rope-and-cyclic-mixers",
-      "source": "chapters/coilra-multicoil-rope-and-cyclic-mixers.qmd:419",
+      "source": "chapters/coilra-multicoil-rope-and-cyclic-mixers.qmd:416",
       "sentence": "`coilra_multicoil_rope` supplies cyclic adapter/mixer and parameter-accounting language, `rope_position_certifier` supplies exact/discretized RoPE receipt boundaries, `circle_ai_contract_suite` supplies contract-family fields, `theseus_circle_transfer` supplies transfer non-claims, and `circle_ai_architectures` supplies the rule that cyclic structure matters only when the workload actually has it.",
       "cues": [
         "transfer"
@@ -50567,7 +50467,7 @@
     {
       "candidate_id": "coilra-multicoil-rope-and-cyclic-mixers.prose.71c2a0ee847e",
       "chapter_id": "coilra-multicoil-rope-and-cyclic-mixers",
-      "source": "chapters/coilra-multicoil-rope-and-cyclic-mixers.qmd:427",
+      "source": "chapters/coilra-multicoil-rope-and-cyclic-mixers.qmd:424",
       "sentence": "Cyclic structure should make evaluation more precise, not more permissive.",
       "cues": [
         "should"
@@ -50586,7 +50486,7 @@
     {
       "candidate_id": "coilra-multicoil-rope-and-cyclic-mixers.prose.cf79d42bdce0",
       "chapter_id": "coilra-multicoil-rope-and-cyclic-mixers",
-      "source": "chapters/coilra-multicoil-rope-and-cyclic-mixers.qmd:464",
+      "source": "chapters/coilra-multicoil-rope-and-cyclic-mixers.qmd:461",
       "sentence": "Part III ends by separating routing, compression, representation, resource, simulation, and cyclic-substrate claims from the evidence required to adopt them.",
       "cues": [
         "required"
@@ -50605,7 +50505,7 @@
     {
       "candidate_id": "coilra-multicoil-rope-and-cyclic-mixers.prose.bb5cc963c769",
       "chapter_id": "coilra-multicoil-rope-and-cyclic-mixers",
-      "source": "chapters/coilra-multicoil-rope-and-cyclic-mixers.qmd:464",
+      "source": "chapters/coilra-multicoil-rope-and-cyclic-mixers.qmd:461",
       "sentence": "It asks which narrow invariants can be formalized, which records belong in schemas, which claims need tests or benchmarks, and which attractive ideas should remain research-only until their predicates become operational.",
       "cues": [
         "should"

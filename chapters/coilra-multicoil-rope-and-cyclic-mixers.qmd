@@ -380,20 +380,17 @@ The implemented rows validate fixture/schema consistency and finite-record negat
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:cyclic_mixers.structural_not_quality.operational_invariant` | `AsiStackProofs.CyclicMixers` | A cyclic mixer claim records the structural invariant separately from quality, runtime, memory, and parameter claims. | implemented |
-| `lean:cyclic_mixers.baseline_required.failure_blocks_promotion` | `AsiStackProofs.CyclicMixers` | A cyclic substrate cannot be promoted without ordinary baselines and recorded tradeoff metrics. | implemented |
+| `lean:cyclic_mixers.structural_not_quality.operational_invariant` | `AsiStackProofs.CyclicMixers` | A cyclic mixer review missing any structural, quality, runtime, memory, or parameter partition fails the finite structural-claim predicate. | implemented |
+| `lean:cyclic_mixers.baseline_required.failure_blocks_promotion` | `AsiStackProofs.CyclicMixers` | A promoted cyclic substrate missing baseline references or tradeoff metrics fails the finite promotion predicate. | implemented |
 
-These Lean hooks are implemented as finite-record predicates over cyclic mixer claim reviews and substrate-promotion reviews. They prove only the record-level gates: structural invariants are recorded separately from quality, runtime, memory, and parameter claims, and promoted cyclic substrates require baseline references plus tradeoff metrics. The module also now proves bounded negative cases named `cyclic_mixer_claim_missing_claim_partition_rejected`, `cyclic_substrate_promotion_without_baselines_or_tradeoffs_rejected`, `cyclic_alias_diagnostic_without_winding_or_visible_residual_rejected`, `cyclic_adoption_without_complete_tradeoff_packet_rejected`, and `hardware_mismatch_without_refusal_path_rejected`. These cases reject malformed records; they do not prove CoilRA, MultiCoil RoPE, cyclic mixer quality, context length, runtime, memory, hardware-kernel behavior, deployment readiness, or parameter efficiency.
+These Lean hooks are implemented as finite-record predicates over cyclic mixer claim reviews and substrate-promotion reviews. The public hooks now bind to the derived negative cases `cyclic_mixer_claim_missing_claim_partition_rejected` and `cyclic_substrate_promotion_without_baselines_or_tradeoffs_rejected` rather than to assumption-restating projections. The module also proves bounded negative cases for alias review without winding or visible residuals, an incomplete tradeoff packet, and hardware mismatch without a refusal path. These cases reject malformed records; they do not prove CoilRA, MultiCoil RoPE, cyclic mixer quality, context length, runtime, memory, hardware-kernel behavior, deployment readiness, or parameter efficiency.
 
-The formal audit counts seven theorem declarations. Two are direct record
-projections:
-`cyclic_mixer_claim_records_structure_separately_from_quality_runtime_memory_and_parameters`
-and
-`cyclic_substrate_promotion_requires_baselines_and_tradeoff_metrics`. Five are
-derived finite negative cases covering missing claim partitions, promotion
-without baselines or tradeoffs, alias review without winding or visible
-residuals, an incomplete tradeoff packet, and hardware mismatch without a
-refusal path. None proves cyclic mechanism semantics, functional equivalence
+The formal audit counts five theorem declarations, all derived finite negative
+cases covering missing claim partitions, promotion without baselines or
+tradeoffs, alias review without winding or visible residuals, an incomplete
+tradeoff packet, and hardware mismatch without a refusal path. The two former
+assumption-restating projections were retired after their public targets moved
+to the corresponding negative cases. None proves cyclic mechanism semantics, functional equivalence
 beyond the bounded fixture, numerical stability, trained-model quality,
 context use, kernel correctness or performance, runtime, memory, parameter
 efficiency, fallback liveness, reproduction, or transfer. Future formal work

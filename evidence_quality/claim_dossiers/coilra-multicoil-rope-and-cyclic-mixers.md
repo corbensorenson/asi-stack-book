@@ -81,8 +81,8 @@ This dossier is generated from the manifest and review overlay. Inclusion is not
 | `coilra-multicoil-rope-and-cyclic-mixers.failure_mode.016` | `failure_mode` | `causal` | `semantically_reviewed` | For CoilRA, MultiCoil RoPE, and Cyclic Mixers, a material failure mode is: Fallback is stale, unavailable, underprovisioned, or silently depends on the cyclic mechanism. |
 | `coilra-multicoil-rope-and-cyclic-mixers.failure_mode.017` | `failure_mode` | `causal` | `semantically_reviewed` | For CoilRA, MultiCoil RoPE, and Cyclic Mixers, a material failure mode is: Structural or parameter wins survive despite causal ablation showing no useful mechanism-specific effect. |
 | `coilra-multicoil-rope-and-cyclic-mixers.failure_mode.018` | `failure_mode` | `causal` | `semantically_reviewed` | For CoilRA, MultiCoil RoPE, and Cyclic Mixers, a material failure mode is: Kernel and governance cost exceed benefit, but aesthetic or sunk-cost commitment prevents retirement. |
-| `coilra-multicoil-rope-and-cyclic-mixers.formal.cyclic-mixers-structural-not-quality-operational-invariant` | `formal_target` | `formal` | `semantically_reviewed` | A cyclic mixer claim records the structural invariant separately from quality, runtime, memory, and parameter claims. |
-| `coilra-multicoil-rope-and-cyclic-mixers.formal.cyclic-mixers-baseline-required-failure-blocks-promotion` | `formal_target` | `formal` | `semantically_reviewed` | A cyclic substrate cannot be promoted without ordinary baselines and recorded tradeoff metrics. |
+| `coilra-multicoil-rope-and-cyclic-mixers.formal.cyclic-mixers-structural-not-quality-operational-invariant` | `formal_target` | `formal` | `semantically_reviewed` | A cyclic mixer review missing any structural, quality, runtime, memory, or parameter partition fails the finite structural-claim predicate. |
+| `coilra-multicoil-rope-and-cyclic-mixers.formal.cyclic-mixers-baseline-required-failure-blocks-promotion` | `formal_target` | `formal` | `semantically_reviewed` | A promoted cyclic substrate missing baseline references or tradeoff metrics fails the finite promotion predicate. |
 
 ## Argument-exit state
 

@@ -43,13 +43,13 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/CapabilityThresholdRefinement.lean` | 8 | 12 | 0 | 9 | 2 |
 | `lean/AsiStackProofs/ClaimLedgerRefinement.lean` | 4 | 12 | 0 | 12 | 2 |
 | `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | 3 | 12 | 0 | 18 | 2 |
-| `lean/AsiStackProofs/CoilAttentionMemory.lean` | 2 | 6 | 0 | 4 | 4 |
+| `lean/AsiStackProofs/CoilAttentionMemory.lean` | 2 | 4 | 0 | 4 | 4 |
 | `lean/AsiStackProofs/CommandSemanticRefinement.lean` | 3 | 12 | 0 | 25 | 3 |
 | `lean/AsiStackProofs/CompactGenerationRefinement.lean` | 9 | 17 | 0 | 11 | 3 |
 | `lean/AsiStackProofs/ContextCertificateRefinement.lean` | 3 | 17 | 0 | 17 | 2 |
 | `lean/AsiStackProofs/ContextTransactionRefinement.lean` | 4 | 20 | 0 | 18 | 2 |
 | `lean/AsiStackProofs/Corrigibility.lean` | 1 | 4 | 0 | 6 | 2 |
-| `lean/AsiStackProofs/CyclicMixers.lean` | 2 | 7 | 0 | 5 | 5 |
+| `lean/AsiStackProofs/CyclicMixers.lean` | 2 | 5 | 0 | 5 | 5 |
 | `lean/AsiStackProofs/DataEngineLifecycleRefinement.lean` | 15 | 5 | 15 | 10 | 2 |
 | `lean/AsiStackProofs/DeliberationRefinement.lean` | 10 | 11 | 0 | 12 | 3 |
 | `lean/AsiStackProofs/Efficiency.lean` | 4 | 26 | 0 | 9 | 4 |

@@ -1700,14 +1700,218 @@
         "lean:lake-build"
       ],
       "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R39-coil-memory-alias-projection",
+      "sequence": 39,
+      "state": "executed",
+      "action": "retire_projection_after_counterexample_consumer_migration",
+      "semantic_relation": "premise_restatement_replaced_by_derived_counterexample_gate",
+      "module_path": "lean/AsiStackProofs/CoilAttentionMemory.lean",
+      "baseline_module_sha256": "1122a83923a499bf1ab132bee3fd937881c4c0b3f422bf75355cef22c7108efe",
+      "retired_theorem_id": "lean/AsiStackProofs/CoilAttentionMemory.lean::cyclic_memory_claim_records_residue_and_winding_or_visible_alias_residual",
+      "replacement_theorem_id": "lean/AsiStackProofs/CoilAttentionMemory.lean::reused_cyclic_slot_without_winding_or_residual_rejected",
+      "retired_block_sha256": "cf991540309448445a34e0a7913e34e5f194d7ca6c1663a60b844c4713b36626",
+      "replacement_block_sha256": "5d396098846037982a3a4d6ffff0c5834132ed3c9117528f31b9e7c0cf72af54",
+      "retired_statement_sha256": "d8ec26d248be6d279f94efb6dc115b52771b0a8b3996d0f8d9ddf24405ee3bf4",
+      "replacement_statement_sha256": "e2a892849a4379c9d010befd50b7512577a3c2c00de00fa0b51745c5e6e88eed",
+      "semantic_basis": [
+        "The retired theorem applies AliasBoundaryValid to an already supplied slot-reuse premise and returns the predicate consequence unchanged.",
+        "The immutable semantic overlay records no Lean dependency or theorem consumer for that projection.",
+        "The retained replacement unfolds the same alias-boundary predicate and derives contradiction from a reused slot with missing residue or winding and no visible residual.",
+        "The public alias-boundary target now names that concrete finite rejection rather than the broader premise-restating implication.",
+        "The migration establishes no retrieval behavior, memory quality, long-context benefit, or deployed alias detection."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:coil_memory.alias_boundary.operational_invariant",
+          "old_target_text": "A cyclic memory claim records residue and winding or marks aliasing as visible residual risk.",
+          "new_target_text": "A reused cyclic slot with missing residue or winding and no visible alias residual fails the finite alias-boundary predicate.",
+          "consumer_paths": [
+            "book_structure.json",
+            "docs/book_outline.md",
+            "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd",
+            "proofs/proof_manifest.json",
+            "proofs/proof_triage.json"
+          ]
+        }
+      ],
+      "maximum_inference_preserved": "A finite reused-slot record with missing residue or winding and no visible alias residual fails AliasBoundaryValid; this does not establish real memory behavior or retrieval quality.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_proof_artifact_audit.py",
+        "scripts/validate_cyclic_memory_contracts.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R40-coil-memory-quality-projection",
+      "sequence": 40,
+      "state": "executed",
+      "action": "retire_projection_after_counterexample_consumer_migration",
+      "semantic_relation": "premise_restatement_replaced_by_derived_counterexample_gate",
+      "module_path": "lean/AsiStackProofs/CoilAttentionMemory.lean",
+      "baseline_module_sha256": "1122a83923a499bf1ab132bee3fd937881c4c0b3f422bf75355cef22c7108efe",
+      "retired_theorem_id": "lean/AsiStackProofs/CoilAttentionMemory.lean::sparse_coverage_or_freshness_alone_cannot_promote_retrieval_quality",
+      "replacement_theorem_id": "lean/AsiStackProofs/CoilAttentionMemory.lean::structure_only_retrieval_quality_promotion_rejected",
+      "retired_block_sha256": "ba372585538f109d96801fe89f792518d39d674df0f86fcd9fadbee60091d156",
+      "replacement_block_sha256": "5069fe911598751f263e35d2e5c906da9557783fcff7c9e2faa5a36a290cd3c5",
+      "retired_statement_sha256": "cfe2c7ad9da3c366deb06b414e417d1225255cdde46867496cd145fe89ef481e",
+      "replacement_statement_sha256": "160a800d5106b40f07b904e6204a1b1130d9b7e0bb2ea0e55f8e31f7aafd8228",
+      "semantic_basis": [
+        "The retired theorem applies CoverageFreshnessAloneBlocksQualityPromotion to already supplied sparse, fresh, and no-quality-evidence premises and returns the predicate consequence unchanged.",
+        "The immutable semantic overlay records no Lean dependency or theorem consumer for that projection.",
+        "The retained replacement unfolds the same predicate and derives contradiction when retrieval quality is nevertheless marked promoted.",
+        "The public coverage-not-quality target now names that concrete finite rejection rather than a premise-restating implication.",
+        "The migration supplies no semantic-quality evidence and proves no retrieval, reasoning, or long-context outcome."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:coil_attention.coverage_not_quality.failure_blocks_promotion",
+          "old_target_text": "Sparse coverage or freshness facts alone cannot promote a retrieval-quality claim.",
+          "new_target_text": "A retrieval-quality record that promotes from sparse coverage and freshness while semantic-quality evidence is absent fails the finite quality-promotion predicate.",
+          "consumer_paths": [
+            "book_structure.json",
+            "docs/book_outline.md",
+            "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd",
+            "proofs/proof_manifest.json",
+            "proofs/proof_triage.json"
+          ]
+        }
+      ],
+      "maximum_inference_preserved": "A finite record that promotes retrieval quality from sparse coverage and freshness while semantic-quality evidence is false fails the authored promotion predicate; no real quality effect follows.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_proof_artifact_audit.py",
+        "scripts/validate_cyclic_memory_contracts.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R41-cyclic-mixer-partition-projection",
+      "sequence": 41,
+      "state": "executed",
+      "action": "retire_projection_after_counterexample_consumer_migration",
+      "semantic_relation": "premise_restatement_replaced_by_derived_counterexample_gate",
+      "module_path": "lean/AsiStackProofs/CyclicMixers.lean",
+      "baseline_module_sha256": "710523255a2bc170fcc0980b805426f33dfe8c974486ffdac4b8132cc9112696",
+      "retired_theorem_id": "lean/AsiStackProofs/CyclicMixers.lean::cyclic_mixer_claim_records_structure_separately_from_quality_runtime_memory_and_parameters",
+      "replacement_theorem_id": "lean/AsiStackProofs/CyclicMixers.lean::cyclic_mixer_claim_missing_claim_partition_rejected",
+      "retired_block_sha256": "508f322fb82fe0c5a72203293e68e0bfc39da95613d8e833e282dc81299a6c67",
+      "replacement_block_sha256": "d72a65449c10526074ba1bd90228d72d0231d21e6065dcd7b54fdbb8d3660215",
+      "retired_statement_sha256": "5c7e5830230506193a773bf113b9ddfeb80a3501bb430fde43aa482dc730de66",
+      "replacement_statement_sha256": "5aa5934a583b4c4645ed332ee980e41ffe85e3586f7d461ffe384cf7665ab222",
+      "semantic_basis": [
+        "The retired theorem returns the structural, quality, runtime, memory, and parameter conjunction already supplied by StructuralClaimSeparated.",
+        "The immutable semantic overlay records no Lean dependency or theorem consumer for that projection.",
+        "The retained replacement unfolds the same partition predicate and derives contradiction when any required claim partition is explicitly absent.",
+        "The public structural-not-quality target now names that concrete finite rejection rather than the assumption-restating conjunction.",
+        "The migration proves no cyclic-mixer quality, runtime, memory, parameter efficiency, or hardware behavior."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:cyclic_mixers.structural_not_quality.operational_invariant",
+          "old_target_text": "A cyclic mixer claim records the structural invariant separately from quality, runtime, memory, and parameter claims.",
+          "new_target_text": "A cyclic mixer review missing any structural, quality, runtime, memory, or parameter partition fails the finite structural-claim predicate.",
+          "consumer_paths": [
+            "book_structure.json",
+            "docs/book_outline.md",
+            "chapters/coilra-multicoil-rope-and-cyclic-mixers.qmd",
+            "proofs/proof_manifest.json",
+            "proofs/proof_triage.json"
+          ]
+        }
+      ],
+      "maximum_inference_preserved": "A finite cyclic-mixer review with any required claim partition marked false fails StructuralClaimSeparated; no measured mechanism or resource advantage follows.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_proof_artifact_audit.py",
+        "scripts/validate_circle_cyclic_mixer_receipt_slice.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R42-cyclic-mixer-promotion-projection",
+      "sequence": 42,
+      "state": "executed",
+      "action": "retire_projection_after_counterexample_consumer_migration",
+      "semantic_relation": "premise_restatement_replaced_by_derived_counterexample_gate",
+      "module_path": "lean/AsiStackProofs/CyclicMixers.lean",
+      "baseline_module_sha256": "710523255a2bc170fcc0980b805426f33dfe8c974486ffdac4b8132cc9112696",
+      "retired_theorem_id": "lean/AsiStackProofs/CyclicMixers.lean::cyclic_substrate_promotion_requires_baselines_and_tradeoff_metrics",
+      "replacement_theorem_id": "lean/AsiStackProofs/CyclicMixers.lean::cyclic_substrate_promotion_without_baselines_or_tradeoffs_rejected",
+      "retired_block_sha256": "567ce17dc34996b14c916b981572b79bacf56e7d5ed22359f2ac4b6bfa24d207",
+      "replacement_block_sha256": "589078caee8d61da5457d4d678fea0f2e0432058a259ea6a492c400b72798632",
+      "retired_statement_sha256": "08c67b75407b88a50449d77a792be5c8b61150498f0d38d2e8517a050eb76e11",
+      "replacement_statement_sha256": "fc2a0db2c613dfee7d49f00616f5368822eb6162e03533078b6272be56da4e47",
+      "semantic_basis": [
+        "The retired theorem applies BaselinesAndTradeoffsRequired to an already supplied promotion premise and returns the predicate consequence unchanged.",
+        "The immutable semantic overlay records no Lean dependency or theorem consumer for that projection.",
+        "The retained replacement unfolds the same promotion predicate and derives contradiction from promotion with missing baseline references or tradeoff metrics.",
+        "The public baseline-required target now names that concrete finite rejection rather than the premise-restating implication.",
+        "The migration proves no baseline competence, favorable tradeoff, adoption readiness, or deployed cyclic-substrate result."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:cyclic_mixers.baseline_required.failure_blocks_promotion",
+          "old_target_text": "A cyclic substrate cannot be promoted without ordinary baselines and recorded tradeoff metrics.",
+          "new_target_text": "A promoted cyclic substrate missing baseline references or tradeoff metrics fails the finite promotion predicate.",
+          "consumer_paths": [
+            "book_structure.json",
+            "docs/book_outline.md",
+            "chapters/coilra-multicoil-rope-and-cyclic-mixers.qmd",
+            "proofs/proof_manifest.json",
+            "proofs/proof_triage.json"
+          ]
+        }
+      ],
+      "maximum_inference_preserved": "A finite promoted record with missing baseline references or tradeoff metrics fails BaselinesAndTradeoffsRequired; no real candidate quality or adoption competence follows.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_proof_artifact_audit.py",
+        "scripts/validate_circle_cyclic_mixer_receipt_slice.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
     }
   ],
   "summary": {
-    "executed_retirement_count": 38,
-    "current_live_theorem_count": 1332,
-    "remaining_action_count": 123,
+    "executed_retirement_count": 42,
+    "current_live_theorem_count": 1328,
+    "remaining_action_count": 119,
     "remaining_action_counts": {
-      "retire_narrow_projection": 26,
+      "retire_narrow_projection": 22,
       "rewrite_scope_language": 2,
       "rewrite_with_stronger_model": 95
     },

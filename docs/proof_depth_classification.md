@@ -14,8 +14,8 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 333 |
 | Lean modules scanned | 110 |
-| Theorem declarations classified | 1332 |
-| Direct/projection-style theorem declarations | 198 |
+| Theorem declarations classified | 1328 |
+| Direct/projection-style theorem declarations | 194 |
 | Derived/decomposed theorem declarations | 919 |
 | Unknown or mixed theorem declarations | 215 |
 | Safety-critical theorem declarations | 73 |
@@ -70,7 +70,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ClaimLedgerRefinement.lean` | claim-ledgers-and-belief-revision | 4 | 12 | 0 | 5 | 7 | manual review |
 | `lean/AsiStackProofs/CognitiveCompilation.lean` | unmapped | 0 | 12 | 0 | 12 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | cognitive-compilation-and-semantic-ir | 3 | 12 | 0 | 3 | 9 | manual review |
-| `lean/AsiStackProofs/CoilAttentionMemory.lean` | coil-attention-cyclic-memory-and-recurrence-contracts | 2 | 6 | 2 | 4 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/CoilAttentionMemory.lean` | coil-attention-cyclic-memory-and-recurrence-contracts | 2 | 4 | 0 | 4 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/CommandContracts.lean` | unmapped | 0 | 5 | 0 | 5 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/CommandSemanticRefinement.lean` | intent-to-execution-contracts | 3 | 12 | 0 | 3 | 9 | manual review |
 | `lean/AsiStackProofs/CompactGenerationRefinement.lean` | compact-generative-systems-and-residual-honesty | 9 | 17 | 13 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -80,7 +80,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ContextTransactionRefinement.lean` | context-transactions-snapshots-mounts-and-taint | 4 | 20 | 0 | 4 | 16 | manual review |
 | `lean/AsiStackProofs/ContextTransactions.lean` | unmapped | 0 | 17 | 0 | 17 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/Corrigibility.lean` | constitutional-alignment-substrate | 1 | 4 | 0 | 4 | 0 | derived/decomposed by classifier |
-| `lean/AsiStackProofs/CyclicMixers.lean` | coilra-multicoil-rope-and-cyclic-mixers | 2 | 7 | 2 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/CyclicMixers.lean` | coilra-multicoil-rope-and-cyclic-mixers | 2 | 5 | 0 | 5 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/DataEngineLifecycleRefinement.lean` | data-engines-continual-learning-and-unlearning | 15 | 5 | 0 | 2 | 3 | manual review |
 | `lean/AsiStackProofs/DataEngines.lean` | unmapped | 0 | 15 | 0 | 15 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/Deliberation.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
@@ -388,10 +388,8 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | `target_substitution_at_accept_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | `validator_pass_without_preservation_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | `widened_authority_rejected` | unknown_or_mixed | no | no recognized depth pattern |
-| `lean/AsiStackProofs/CoilAttentionMemory.lean` | `cyclic_memory_claim_records_residue_and_winding_or_visible_alias_residual` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/CoilAttentionMemory.lean` | `recurrence_without_budget_exit_or_fallback_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/CoilAttentionMemory.lean` | `reused_cyclic_slot_without_winding_or_residual_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
-| `lean/AsiStackProofs/CoilAttentionMemory.lean` | `sparse_coverage_or_freshness_alone_cannot_promote_retrieval_quality` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/CoilAttentionMemory.lean` | `stale_read_admitted_as_fresh_without_residual_rejected` | derived_or_decomposed | no | uses contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/CoilAttentionMemory.lean` | `structure_only_retrieval_quality_promotion_rejected` | derived_or_decomposed | no | uses contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/CommandContracts.lean` | `accepted_hidden_override_violates_explicit_constraint_precedence` | derived_or_decomposed | no | uses cases, have, rw |
@@ -507,8 +505,6 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/CyclicMixers.lean` | `cyclic_adoption_without_complete_tradeoff_packet_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/CyclicMixers.lean` | `cyclic_alias_diagnostic_without_winding_or_visible_residual_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/CyclicMixers.lean` | `cyclic_mixer_claim_missing_claim_partition_rejected` | derived_or_decomposed | no | uses cases, contradiction, rw, unfold |
-| `lean/AsiStackProofs/CyclicMixers.lean` | `cyclic_mixer_claim_records_structure_separately_from_quality_runtime_memory_and_parameters` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
-| `lean/AsiStackProofs/CyclicMixers.lean` | `cyclic_substrate_promotion_requires_baselines_and_tradeoff_metrics` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/CyclicMixers.lean` | `cyclic_substrate_promotion_without_baselines_or_tradeoffs_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/CyclicMixers.lean` | `hardware_mismatch_without_refusal_path_rejected` | derived_or_decomposed | no | uses contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/DataEngineLifecycleRefinement.lean` | `accepted_event_increments_receipt_count` | derived_or_decomposed | no | uses simp |
