@@ -9,7 +9,7 @@ This is the readable projection of `evidence_quality/claim_atom_registry.json`. 
 - Chapters: 64
 - Structured manifest atoms: 4071
 - Machine candidates awaiting semantic atom review: 0
-- Prose-only candidates awaiting materiality adjudication: 1
+- Prose-only candidates awaiting materiality adjudication: 0
 - Support-state effect: none
 
 | Role | Atoms |
@@ -31,7 +31,7 @@ This is the readable projection of `evidence_quality/claim_atom_registry.json`. 
 | Chapter | Structured atoms | Machine candidates | Prose candidates pending | Dossier |
 |---|---:|---:|---:|---|
 | ASI Is a Stack, Not a Model | 24 | 0 | 0 | `evidence_quality/claim_dossiers/asi-is-a-stack-not-a-model.md` |
-| The Efficient ASI Hypothesis | 24 | 0 | 1 | `evidence_quality/claim_dossiers/the-efficient-asi-hypothesis.md` |
+| The Efficient ASI Hypothesis | 24 | 0 | 0 | `evidence_quality/claim_dossiers/the-efficient-asi-hypothesis.md` |
 | System Boundaries and Authority | 35 | 0 | 0 | `evidence_quality/claim_dossiers/system-boundaries-and-authority.md` |
 | Failure Modes of Ungoverned Intelligence | 32 | 0 | 0 | `evidence_quality/claim_dossiers/failure-modes-of-ungoverned-intelligence.md` |
 | Evidence States and Claim Discipline | 46 | 0 | 0 | `evidence_quality/claim_dossiers/evidence-states-and-claim-discipline.md` |
