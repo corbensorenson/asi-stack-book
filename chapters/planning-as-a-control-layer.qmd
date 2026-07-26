@@ -20,7 +20,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "All nine assigned sources are mapped and passage-reviewed at their available evidence level; `coherence_exchange` and `moecot` remain source-note/connector context, and V-JEPA 2 remains an unreproduced external MPC comparator."
-  - "The current evidence is a record-and-route scaffold: three valid and ten invalid plan-execution fixtures, two valid scheduler-state traces with seven rejecting mutations, two valid runtime-replan traces with nine rejecting mutations, two no-change transitions, and 33 theorem declarations under seven targets. It contains no planner-generated natural plan, independent decomposition oracle, measured dependency truth, context-demand prediction, selected-tier adequacy, live scheduler, observed replan benefit, or support movement."
+  - "The current evidence is a record-and-route scaffold: three valid and ten invalid plan-execution fixtures, two valid scheduler-state traces with seven rejecting mutations, two valid runtime-replan traces with nine rejecting mutations, two no-change transitions, and 31 theorem declarations under seven targets. It contains no planner-generated natural plan, independent decomposition oracle, measured dependency truth, context-demand prediction, selected-tier adequacy, live scheduler, observed replan benefit, or support movement."
   - "The next honest minimum is a preregistered natural multi-planner campaign with strong human and algorithmic/workflow baselines, hidden obligations and perturbations, complete alternative denominators, independent semantic/dependency/feasibility/outcome evaluation, observed costs and feedback, effect-tested stop/recovery, causal ablations, reproduction, and transfer."
   - "No support-state promotion is implied by this drafting pass."
   - "Campaign 5 adds one synthetic-test-backed non-core result over two finite authored partially observable environments; it does not promote this chapter core or establish a neural world model, natural-task planning, reliable shift detection, open-world transfer, or safe control."
@@ -40,7 +40,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `planforge`, `viea`, `planforge_compiler_arch`; supporting: `cognitive_compilation`, `software_magic_grimoire`, `tokenmana`, `reflexive_router_whitepaper`; connector/recovery: `moecot`, `coherence_exchange` |
 | Source loading state | source notes: `planforge`, `viea`, `cognitive_compilation`, `software_magic_grimoire`, `moecot`, `planforge_compiler_arch`, `coherence_exchange`, `tokenmana`; passage-reviewed local raw cache: `planforge`, `viea`, `cognitive_compilation`, `software_magic_grimoire`, `planforge_compiler_arch`, `tokenmana`; connector/source-note only: `moecot`, `coherence_exchange` |
-| Test state | The schema/fixture, plan-execution, scheduler-state, runtime-replan, and Lean checks pass over their exact synthetic records. Across them, seven valid records, 26 rejecting cases, two accepted no-change transitions, and 33 theorem declarations under seven targets establish record shape and finite route consequences only. No natural planner output, planner-quality result, live scheduler, observed replan benefit, cost-quality dominance, or support transition exists. |
+| Test state | The schema/fixture, plan-execution, scheduler-state, runtime-replan, and Lean checks pass over their exact synthetic records. Across them, seven valid records, 26 rejecting cases, two accepted no-change transitions, and 31 theorem declarations under seven targets establish record shape and finite route consequences only. No natural planner output, planner-quality result, live scheduler, observed replan benefit, cost-quality dominance, or support transition exists. |
 
 ## Drafting guardrail
 
@@ -377,7 +377,7 @@ The current minimum is a record-and-route scaffold:
 - two valid scheduler-state traces and seven rejecting mutations;
 - two valid runtime-replan traces and nine rejecting mutations;
 - two accepted `no_change` transitions; and
-- 33 theorem declarations grouped under seven proof targets.
+- 31 theorem declarations grouped under seven proof targets.
 
 These artifacts exercise exact shapes, declared order and cycle cases,
 lifecycle and dispatch branches, authority and stop-preservation bits,
@@ -457,15 +457,17 @@ The fixture-shape check, finite Lean predicates, and synthetic plan-execution ha
 | `lean:planning.control_layer.operational_invariant` | `AsiStackProofs.Planning` | A plan node inherits the authority ceiling of its parent contract unless governance lowers it. | implemented |
 | `lean:planning.control_layer.failure_blocks_promotion` | `AsiStackProofs.Planning` | A plan with unsatisfied required constraints cannot be dispatched. | implemented |
 | `lean:planning.control_layer.plan_graph_admission_route` | `AsiStackProofs.Planning` | Modeled plan-graph admission routes missing command-contract acceptance, decomposition, acyclicity, dependency order, authority inheritance, context demand, adequacy contracts, verification plans, dispatch gates, dispatch receipts, replanning controls, residual registers, and non-claim boundaries to explicit outcomes. | implemented |
-| `lean:planning.scheduler_state.probe_fixture_bridge` | `AsiStackProofs.Planning` | The deterministic synthetic scheduler-state probe result includes a valid scheduler trace, a local-repair trace, rejected negative controls, a cost-quality ledger boundary, no support-state effect, and an explicit non-claim boundary. | implemented |
-| `lean:planning.runtime_replan.delta_audit_bridge` | `AsiStackProofs.Planning` | The deterministic synthetic runtime-replan delta audit includes a local source-repair trace, a blocked-authority replan trace, rejected negative controls, preserved authority and stop conditions, affected-subgraph scope, context and verification deltas, residual ownership, blocked-authority no-dispatch, no support-state effect, and an explicit non-claim boundary. | implemented |
+| `lean:planning.scheduler_state.probe_fixture_bridge` | `AsiStackProofs.Planning` | An independent finite scheduler-state consumer validates scheduler and local-repair traces plus rejecting controls, while the retained Lean plan-admission route family covers contract, decomposition, graph, authority, context, adequacy, verification, dispatch, replanning, residual, and admission branches. | implemented |
+| `lean:planning.runtime_replan.delta_audit_bridge` | `AsiStackProofs.Planning` | An independent finite runtime-replan consumer validates local-repair and blocked-authority traces plus rejecting controls, while the retained Lean delta route family rejects authority widening, stop erasure, and blocked-authority dispatch and accepts a complete bounded audit. | implemented |
 | `lean:planforge.dag.operational_invariant` | `AsiStackProofs.PlanForge` | A dispatchable plan graph is acyclic and all dependencies precede dependents. | implemented |
 | `lean:planforge.dag.failure_blocks_promotion` | `AsiStackProofs.PlanForge` | A node whose quality predicate fails must escalate or emit a residual. | implemented |
 
-The seven targets group 33 theorem declarations across
+The seven targets group 31 theorem declarations across
 `AsiStackProofs.Planning` and `AsiStackProofs.PlanForge`. Their useful content
-is finite consequence and branch coverage over trusted records. Several
-operational invariants and fixture bridges restate assumptions or unfold
+is finite consequence and branch coverage over trusted records. The two former
+valid-summary projections are retired, and the independently implemented
+scheduler and replan consumers now bind to retained admission and delta route
+families. Several operational invariants still restate assumptions or unfold
 predicates; the admission and replan routes establish only the consequences of
 Boolean or enumerated fields; the index-order model is not general DAG
 acyclicity or dependency truth. These are activation scaffolds, not evidence of

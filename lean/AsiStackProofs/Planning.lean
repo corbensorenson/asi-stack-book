@@ -702,18 +702,6 @@ def SchedulerStateProbeSummaryValid
     summary.supportStateEffectNone = true ∧
     summary.nonClaimBoundary = true
 
-theorem planning_scheduler_state_probe_fixture_bridge
-    {summary : SchedulerStateProbeSummary} :
-    SchedulerStateProbeSummaryValid summary ->
-      summary.validSchedulerTracePresent = true ∧
-        summary.localRepairTracePresent = true ∧
-        summary.negativeControlsRejected = true ∧
-        summary.costQualityLedgerPresent = true ∧
-        summary.supportStateEffectNone = true ∧
-        summary.nonClaimBoundary = true := by
-  intro valid
-  exact valid
-
 inductive RuntimeReplanDeltaRoute where
   | noReplan
   | blockAuthorityWidening
@@ -878,23 +866,5 @@ def RuntimeReplanDeltaSummaryValid
                     summary.blockedAuthorityNoDispatch = true ∧
                       summary.supportStateEffectNone = true ∧
                         summary.nonClaimBoundary = true
-
-theorem planning_runtime_replan_delta_audit_bridge
-    {summary : RuntimeReplanDeltaSummary} :
-    RuntimeReplanDeltaSummaryValid summary ->
-      summary.validLocalRepairTracePresent = true ∧
-        summary.validBlockedAuthorityTracePresent = true ∧
-          summary.negativeControlsRejected = true ∧
-            summary.authorityPreserved = true ∧
-              summary.stopConditionsPreserved = true ∧
-                summary.affectedSubgraphScoped = true ∧
-                  summary.contextDeltaRecorded = true ∧
-                    summary.verificationDeltaRecorded = true ∧
-                      summary.residualsRecorded = true ∧
-                        summary.blockedAuthorityNoDispatch = true ∧
-                          summary.supportStateEffectNone = true ∧
-                            summary.nonClaimBoundary = true := by
-  intro valid
-  exact valid
 
 end AsiStackProofs.Planning

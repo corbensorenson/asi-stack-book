@@ -24,7 +24,23 @@ LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "FailureModes.lean"
 COMMAND = "python3 scripts/validate_failure_taxonomy_detector_probe.py"
 PROOF_TAG = "lean:failure.taxonomy.detector_probe_bridge"
 CODEX_TEST_NAME = "Failure taxonomy detector and mitigation-boundary probe"
-REQUIRED_THEOREMS = ["failure_taxonomy_detector_probe_bridge"]
+REQUIRED_THEOREMS = [
+    "missing_failure_class_requests_class",
+    "missing_boundary_requests_boundary",
+    "missing_receipt_requests_receipt",
+    "missing_owner_requests_owner",
+    "missing_containment_requests_containment",
+    "missing_residual_requests_residual",
+    "missing_learning_path_requests_learning_path",
+    "missing_normalization_guard_requests_guard",
+    "recurring_failure_without_review_escalates",
+    "severe_irreversible_failure_without_review_escalates",
+    "promotion_request_without_review_blocks_promotion",
+    "open_escape_path_without_quarantine_quarantines",
+    "support_promotion_without_failure_evidence_transition_requests_transition",
+    "failure_record_without_nonclaim_boundary_preserves_boundary",
+    "complete_failure_record_closes_record",
+]
 REQUIRED_NON_CLAIMS = [
     "does not prove failure detection",
     "does not prove prevention",

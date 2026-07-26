@@ -480,16 +480,4 @@ def FailureTaxonomyDetectorProbeSummaryValid
     summary.supportStateEffectNone = true ∧
     summary.nonClaimBoundary = true
 
-theorem failure_taxonomy_detector_probe_bridge
-    {summary : FailureTaxonomyDetectorProbeSummary} :
-    FailureTaxonomyDetectorProbeSummaryValid summary ->
-      summary.authorityCreepIncidentPresent = true ∧
-        summary.goodhartDriftIncidentPresent = true ∧
-        summary.negativeControlsRejected = true ∧
-        summary.residualBoundaryPresent = true ∧
-        summary.supportStateEffectNone = true ∧
-        summary.nonClaimBoundary = true := by
-  intro valid
-  exact valid
-
 end AsiStackProofs.FailureModes

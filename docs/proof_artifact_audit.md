@@ -54,7 +54,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/DeliberationRefinement.lean` | 10 | 11 | 0 | 12 | 3 |
 | `lean/AsiStackProofs/Efficiency.lean` | 4 | 24 | 0 | 9 | 4 |
 | `lean/AsiStackProofs/EvidenceStates.lean` | 2 | 22 | 0 | 17 | 7 |
-| `lean/AsiStackProofs/FailureModes.lean` | 4 | 22 | 0 | 6 | 4 |
+| `lean/AsiStackProofs/FailureModes.lean` | 4 | 21 | 0 | 6 | 4 |
 | `lean/AsiStackProofs/FastGenerationRefinement.lean` | 5 | 17 | 0 | 12 | 3 |
 | `lean/AsiStackProofs/GovernanceRights.lean` | 1 | 7 | 0 | 11 | 3 |
 | `lean/AsiStackProofs/GovernedModelTraining.lean` | 2 | 13 | 0 | 7 | 1 |
@@ -66,13 +66,13 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/IntentContracts.lean` | 1 | 20 | 0 | 2 | 2 |
 | `lean/AsiStackProofs/IntentExecutionRefinement.lean` | 2 | 12 | 0 | 8 | 2 |
 | `lean/AsiStackProofs/IntentResolutionRefinement.lean` | 3 | 12 | 0 | 10 | 2 |
-| `lean/AsiStackProofs/IntentToExecution.lean` | 2 | 10 | 0 | 2 | 2 |
+| `lean/AsiStackProofs/IntentToExecution.lean` | 2 | 9 | 0 | 2 | 2 |
 | `lean/AsiStackProofs/InterStackProtocols.lean` | 9 | 9 | 0 | 1 | 1 |
 | `lean/AsiStackProofs/LivingBook.lean` | 4 | 21 | 0 | 11 | 6 |
 | `lean/AsiStackProofs/ModelWeightCustody.lean` | 8 | 9 | 0 | 2 | 2 |
 | `lean/AsiStackProofs/OpenEndedImprovementRefinement.lean` | 7 | 5 | 7 | 10 | 2 |
 | `lean/AsiStackProofs/PlanForge.lean` | 2 | 4 | 0 | 4 | 3 |
-| `lean/AsiStackProofs/Planning.lean` | 5 | 29 | 0 | 11 | 8 |
+| `lean/AsiStackProofs/Planning.lean` | 5 | 27 | 0 | 11 | 8 |
 | `lean/AsiStackProofs/PolicyOptimizationRefinement.lean` | 4 | 5 | 0 | 10 | 2 |
 | `lean/AsiStackProofs/PrivacyInformationFlow.lean` | 2 | 11 | 0 | 5 | 1 |
 | `lean/AsiStackProofs/ProceduralMemoryRefinement.lean` | 2 | 14 | 0 | 21 | 3 |

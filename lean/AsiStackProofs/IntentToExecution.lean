@@ -234,15 +234,4 @@ def HandoffProbeSummaryValid (summary : HandoffProbeSummary) : Prop :=
     summary.supportStateEffectNone = true ∧
     summary.nonClaimBoundary = true
 
-theorem intent_execution_handoff_probe_fixture_bridge
-    {summary : HandoffProbeSummary} :
-    HandoffProbeSummaryValid summary ->
-      summary.validHandoffPathPresent = true ∧
-        summary.blockedApprovalPathPresent = true ∧
-        summary.negativeControlsRejected = true ∧
-        summary.supportStateEffectNone = true ∧
-        summary.nonClaimBoundary = true := by
-  intro valid
-  exact valid
-
 end AsiStackProofs.IntentToExecution

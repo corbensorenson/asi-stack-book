@@ -77,10 +77,14 @@ EXPECTED_ACTION_IDS = [
     "C6-R43-efficiency-minimum-route-projection",
     "C6-R44-efficiency-residual-projection",
     "C6-R45-failure-authority-projection",
+    "C6-R46-failure-detector-summary-projection",
+    "C6-R47-intent-handoff-summary-projection",
+    "C6-R48-planning-scheduler-summary-projection",
+    "C6-R49-planning-replan-summary-projection",
 ]
 EXPECTED_LEVELS = {
     "P0": 42,
-    "P1": 765,
+    "P1": 761,
     "P2": 25,
     "P3": 319,
     "P4": 93,
@@ -89,7 +93,7 @@ EXPECTED_LEVELS = {
 }
 EXPECTED_DISPOSITIONS = {
     "retain": 1209,
-    "retire_narrow_projection": 19,
+    "retire_narrow_projection": 15,
     "rewrite_scope_language": 2,
     "rewrite_with_stronger_model": 95,
 }
@@ -207,6 +211,32 @@ EXPECTED_TARGETS = {
         "A finite incident whose authority exceeds its ceiling routes to explicit "
         "authority review."
     ),
+    "lean:failure.taxonomy.detector_probe_bridge": (
+        "An independent finite incident consumer validates authority-creep and "
+        "Goodhart/evaluator-drift fixtures and rejecting controls, while the retained "
+        "Lean failure-record route family covers required-field repair, escalation, "
+        "quarantine, residual, learning, normalization, evidence-transition, non-claim, "
+        "and closure branches."
+    ),
+    "lean:intent_execution.handoff_trace.probe_fixture_bridge": (
+        "An independent finite handoff consumer validates accepted and missing-approval "
+        "traces plus rejecting controls, while the retained Lean dispatch route family "
+        "covers contract, objective, authority, override, approval, artifact, "
+        "verification, residual, and ready branches."
+    ),
+    "lean:planning.scheduler_state.probe_fixture_bridge": (
+        "An independent finite scheduler-state consumer validates scheduler and "
+        "local-repair traces plus rejecting controls, while the retained Lean "
+        "plan-admission route family covers contract, decomposition, graph, authority, "
+        "context, adequacy, verification, dispatch, replanning, residual, and admission "
+        "branches."
+    ),
+    "lean:planning.runtime_replan.delta_audit_bridge": (
+        "An independent finite runtime-replan consumer validates local-repair and "
+        "blocked-authority traces plus rejecting controls, while the retained Lean delta "
+        "route family rejects authority widening, stop erasure, and blocked-authority "
+        "dispatch and accepts a complete bounded audit."
+    ),
 }
 PLANNED_TARGETS = {
     "lean:evidence.support_state.operational_invariant",
@@ -263,6 +293,10 @@ EXPECTED_MIGRATION_COUNTS = {
         "C6-R43-efficiency-minimum-route-projection",
         "C6-R44-efficiency-residual-projection",
         "C6-R45-failure-authority-projection",
+        "C6-R46-failure-detector-summary-projection",
+        "C6-R47-intent-handoff-summary-projection",
+        "C6-R48-planning-scheduler-summary-projection",
+        "C6-R49-planning-replan-summary-projection",
     })
     for action_id in EXPECTED_ACTION_IDS
 }
@@ -320,7 +354,7 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
     actions = ledger["actions"]
     if [row["action_id"] for row in actions] != EXPECTED_ACTION_IDS:
         out.append("action sequence or identity drifted")
-    if [row["sequence"] for row in actions] != list(range(1, 46)):
+    if [row["sequence"] for row in actions] != list(range(1, 50)):
         out.append("action sequence numbers drifted")
 
     try:
@@ -484,13 +518,13 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
 
     overlay = load(CURRENT_OVERLAY)
     summary = overlay.get("summary", {})
-    if summary.get("current_theorem_count") != 1325:
+    if summary.get("current_theorem_count") != 1321:
         out.append("current theorem denominator drifted")
     if summary.get("semantic_level_counts") != EXPECTED_LEVELS:
         out.append("current semantic-level counts drifted")
     if summary.get("disposition_counts") != EXPECTED_DISPOSITIONS:
         out.append("current disposition counts drifted")
-    if sum(value for key, value in EXPECTED_DISPOSITIONS.items() if key != "retain") != 116:
+    if sum(value for key, value in EXPECTED_DISPOSITIONS.items() if key != "retain") != 112:
         out.append("expected remaining-action denominator is internally inconsistent")
     if ledger["summary"]["remaining_action_counts"] != {
         key: value for key, value in EXPECTED_DISPOSITIONS.items() if key != "retain"
@@ -686,10 +720,40 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
         for action in actions
         if action["module_path"] == "lean/AsiStackProofs/FailureModes.lean"
     }
-    if len(failure_rows) != 22:
-        out.append("FailureModes must retain exactly twenty-two declarations")
+    if len(failure_rows) != 21:
+        out.append("FailureModes must retain exactly twenty-one declarations")
     if retired_failure_names & {row["name"] for row in failure_rows}:
         out.append("FailureModes retained an executed premise projection")
+
+    intent_rows = [
+        row
+        for row in current_rows
+        if row["module_path"] == "lean/AsiStackProofs/IntentToExecution.lean"
+    ]
+    retired_intent_names = {
+        action["retired_theorem_id"].split("::", 1)[1]
+        for action in actions
+        if action["module_path"] == "lean/AsiStackProofs/IntentToExecution.lean"
+    }
+    if len(intent_rows) != 9:
+        out.append("IntentToExecution must retain exactly nine route declarations")
+    if retired_intent_names & {row["name"] for row in intent_rows}:
+        out.append("IntentToExecution retained an executed premise or summary projection")
+
+    planning_rows = [
+        row
+        for row in current_rows
+        if row["module_path"] == "lean/AsiStackProofs/Planning.lean"
+    ]
+    retired_planning_names = {
+        action["retired_theorem_id"].split("::", 1)[1]
+        for action in actions
+        if action["module_path"] == "lean/AsiStackProofs/Planning.lean"
+    }
+    if len(planning_rows) != 27:
+        out.append("Planning must retain exactly twenty-seven declarations")
+    if retired_planning_names & {row["name"] for row in planning_rows}:
+        out.append("Planning retained an executed premise or summary projection")
 
     manifest_rows = {
         row["tag"]: row
@@ -733,17 +797,17 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
     if status.get("rationalization_ledger_path") != str(LEDGER.relative_to(ROOT)):
         out.append("status does not bind the cumulative rationalization ledger")
     if (
-        status.get("theorem_count") != 1325
-        or status.get("executed_retirement_count") != 45
-        or status.get("remaining_action_count") != 116
+        status.get("theorem_count") != 1321
+        or status.get("executed_retirement_count") != 49
+        or status.get("remaining_action_count") != 112
     ):
         out.append("status does not report the cumulative post-transaction denominator")
     roadmap = ROADMAP.read_text(encoding="utf-8")
     roadmap_flat = " ".join(roadmap.split())
     for phrase in [
-        "tenth narrow-projection tranche",
-        "1,325 live theorem declarations",
-        "116 rewrite-or-retire actions remain",
+        "eleventh narrow-projection tranche",
+        "1,321 live theorem declarations",
+        "112 rewrite-or-retire actions remain",
         "`proofs/proof_semantic_rationalization_ledger.json`",
     ]:
         if phrase not in roadmap_flat:
@@ -799,9 +863,9 @@ def main() -> None:
             + "\n - ".join(failures)
         )
     print(
-        "Proof semantic-rationalization ledger passed: forty-five dependency-safe "
-        "retirements, twenty-five public-target migrations, 1,325 live theorems, "
-        "116 actions remain, 14 rejecting mutations, no support or release effect."
+        "Proof semantic-rationalization ledger passed: forty-nine dependency-safe "
+        "retirements, twenty-nine public-target migrations, 1,321 live theorems, "
+        "112 actions remain, 14 rejecting mutations, no support or release effect."
     )
 
 

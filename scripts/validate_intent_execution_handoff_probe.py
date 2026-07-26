@@ -32,7 +32,15 @@ COMMAND = "python3 scripts/validate_intent_execution_handoff_probe.py"
 PROOF_TAG = "lean:intent_execution.handoff_trace.probe_fixture_bridge"
 CODEX_TEST_NAME = "Intent-to-execution handoff probe"
 REQUIRED_THEOREMS = [
-    "intent_execution_handoff_probe_fixture_bridge",
+    "missing_contract_rejects_execution_dispatch",
+    "missing_objective_requests_execution_clarification",
+    "authority_widening_blocks_execution_dispatch",
+    "hidden_override_blocks_execution_dispatch",
+    "required_approval_missing_routes_to_approval",
+    "missing_artifacts_request_execution_clarification",
+    "missing_verification_plan_routes_to_verification",
+    "known_residual_records_execution_residual",
+    "complete_dispatch_review_is_ready",
 ]
 REQUIRED_NON_CLAIMS = [
     "does not parse natural-language intent",

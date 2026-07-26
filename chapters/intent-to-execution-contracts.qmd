@@ -611,7 +611,8 @@ The destination chapter keeps three formal lanes:
   `lean:intent_execution.contracts.operational_invariant` and
   `lean:intent_execution.contracts.failure_blocks_promotion`;
 - `AsiStackProofs.IntentToExecution` retains the general finite dispatch-route
-  envelope and deterministic handoff-probe bridge:
+  envelope, and its independent handoff consumer is bound to the nine retained
+  branch theorems rather than a valid-summary projection:
   `lean:intent_execution.contracts.dispatch_route_envelope` and
   `lean:intent_execution.handoff_trace.probe_fixture_bridge`;
 - `AsiStackProofs.CommandSemanticRefinement` owns the reachable exact-slot,
@@ -626,8 +627,11 @@ The destination chapter keeps three formal lanes:
 The merged chapter does not take over `AsiStackProofs.IntentContracts`,
 because raw intent intake remains a separate Part I chapter.
 
-Formal limitation and non-claim boundary: the two former assumption-restating
-Intent-to-Execution theorems and two projection-only Command theorems have been
+The exact handoff target is: An independent finite handoff consumer validates accepted and missing-approval traces plus rejecting controls, while the retained Lean dispatch route family covers contract, objective, authority, override, approval, artifact, verification, residual, and ready branches.
+
+Formal limitation and non-claim boundary: the three former
+assumption-restating Intent-to-Execution theorems—including the handoff
+valid-summary projection—and two projection-only Command theorems have been
 physically retired with frozen lineage.
 The reachable model proves exact finite transition consequences and its Python
 consumer checks one executed result schema. The retained priority-route and

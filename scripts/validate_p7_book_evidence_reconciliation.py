@@ -79,7 +79,7 @@ LINEAGE_LOCK_SEMANTIC_SHA256 = "7ce4f2c88b86488f78d4e0d4e7890cd89d3e76b4407984ba
 IMMUTABLE_ARTIFACT_DIGESTS = {
     "docs/p7_book_evidence_reconciliation.md": "012289e8deb94eb0dec1b72c74952340fb8e452ab872da7a953d0c0006957d24",
     "experiments/claim_family_terminal_coverage/results/result.json": "f8ef49c008ba303361235b8e5d2ff44fe907d03ba5a22cd41034acb2fee8ba27",
-    "experiments/claim_family_bundle_coverage/result.json": "0fb2b4c51427ae6249311a58c6676725d643bc2aff42d092697cfad0caf5db25",
+    "experiments/claim_family_bundle_coverage/result.json": "6e768265cab3df7f2f67167779aeec7116d1fd218f2983aba1e82dab0dd0ef5b",
     "experiments/p6_external_reproduction/results/terminal_result.json": "aefde4bf4bb095de4af3e5b7a6411ee41f4998ab549f87792feef1b6e3a26e6b",
 }
 

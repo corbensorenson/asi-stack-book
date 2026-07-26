@@ -14,8 +14,8 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 333 |
 | Lean modules scanned | 110 |
-| Theorem declarations classified | 1325 |
-| Direct/projection-style theorem declarations | 191 |
+| Theorem declarations classified | 1321 |
+| Direct/projection-style theorem declarations | 187 |
 | Derived/decomposed theorem declarations | 919 |
 | Unknown or mixed theorem declarations | 215 |
 | Safety-critical theorem declarations | 73 |
@@ -88,7 +88,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/Efficiency.lean` | the-efficient-asi-hypothesis | 4 | 24 | 0 | 24 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/EmbodiedPhysicalSafety.lean` | embodied-agency-real-time-control-and-physical-safety | 1 | 0 | 0 | 0 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/EvidenceStates.lean` | evidence-states-and-claim-discipline | 7 | 22 | 3 | 19 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/FailureModes.lean` | failure-modes-of-ungoverned-intelligence | 4 | 22 | 1 | 21 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/FailureModes.lean` | failure-modes-of-ungoverned-intelligence | 4 | 21 | 0 | 21 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/FastGeneration.lean` | unmapped | 0 | 3 | 0 | 3 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/FastGenerationRefinement.lean` | fast-generation-architectures | 5 | 17 | 12 | 3 | 2 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/GenerateVerifyRepair.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
@@ -103,7 +103,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/IntentContracts.lean` | human-intent-as-a-formal-input | 1 | 20 | 0 | 20 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/IntentExecutionRefinement.lean` | intent-to-execution-contracts | 2 | 12 | 0 | 6 | 6 | manual review |
 | `lean/AsiStackProofs/IntentResolutionRefinement.lean` | human-intent-as-a-formal-input | 3 | 12 | 0 | 4 | 8 | manual review |
-| `lean/AsiStackProofs/IntentToExecution.lean` | intent-to-execution-contracts | 2 | 10 | 1 | 9 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/IntentToExecution.lean` | intent-to-execution-contracts | 2 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/InterStackProtocols.lean` | inter-stack-protocols-identity-and-economic-exchange | 9 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/LearnedObjectiveIntegrity.lean` | inner-alignment-mesa-optimization-and-learned-objective-integrity | 1 | 0 | 0 | 0 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/LivingBook.lean` | living-book-methodology | 4 | 21 | 3 | 18 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -116,7 +116,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/OpenEndedImprovementRefinement.lean` | open-ended-improvement-engines | 7 | 5 | 0 | 2 | 3 | manual review |
 | `lean/AsiStackProofs/PersonalComputeHives.lean` | unmapped | 0 | 21 | 0 | 21 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/PlanForge.lean` | planning-as-a-control-layer | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/Planning.lean` | planning-as-a-control-layer | 5 | 29 | 8 | 21 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/Planning.lean` | planning-as-a-control-layer | 5 | 27 | 6 | 21 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/PolicyOptimization.lean` | unmapped | 0 | 16 | 4 | 12 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/PolicyOptimizationRefinement.lean` | policy-optimization-and-learning-from-feedback | 4 | 5 | 0 | 2 | 3 | manual review |
 | `lean/AsiStackProofs/PrivacyInformationFlow.lean` | privacy-data-rights-and-information-flow-governance | 2 | 11 | 0 | 3 | 8 | manual review |
@@ -590,7 +590,6 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/FailureModes.lean` | `complete_failure_record_closes_record` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/FailureModes.lean` | `failed_required_invariant_blocks_promotion` | derived_or_decomposed | no | uses cases, rw, unfold |
 | `lean/AsiStackProofs/FailureModes.lean` | `failure_record_without_nonclaim_boundary_preserves_boundary` | derived_or_decomposed | no | uses simp, unfold |
-| `lean/AsiStackProofs/FailureModes.lean` | `failure_taxonomy_detector_probe_bridge` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/FailureModes.lean` | `missing_boundary_requests_boundary` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/FailureModes.lean` | `missing_containment_requests_containment` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/FailureModes.lean` | `missing_failure_class_requests_class` | derived_or_decomposed | no | uses simp, unfold |
@@ -768,7 +767,6 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/IntentToExecution.lean` | `authority_widening_blocks_execution_dispatch` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/IntentToExecution.lean` | `complete_dispatch_review_is_ready` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/IntentToExecution.lean` | `hidden_override_blocks_execution_dispatch` | derived_or_decomposed | no | uses simp, unfold |
-| `lean/AsiStackProofs/IntentToExecution.lean` | `intent_execution_handoff_probe_fixture_bridge` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/IntentToExecution.lean` | `known_residual_records_execution_residual` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/IntentToExecution.lean` | `missing_artifacts_request_execution_clarification` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/IntentToExecution.lean` | `missing_contract_rejects_execution_dispatch` | derived_or_decomposed | no | uses simp, unfold |
@@ -866,8 +864,6 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/Planning.lean` | `missing_residual_register_blocks_new_plan_admission` | derived_or_decomposed | no | uses rw, simp, unfold |
 | `lean/AsiStackProofs/Planning.lean` | `missing_verification_plan_blocks_plan_graph_admission` | derived_or_decomposed | no | uses rw, simp, unfold |
 | `lean/AsiStackProofs/Planning.lean` | `plan_node_inherits_authority_without_governance_lowering` | derived_or_decomposed | no | uses cases, rw |
-| `lean/AsiStackProofs/Planning.lean` | `planning_runtime_replan_delta_audit_bridge` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
-| `lean/AsiStackProofs/Planning.lean` | `planning_scheduler_state_probe_fixture_bridge` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/Planning.lean` | `replanning_without_authority_preservation_blocks_admission` | derived_or_decomposed | no | uses rw, simp, unfold |
 | `lean/AsiStackProofs/Planning.lean` | `runtime_replan_delta_authority_widening_rejected` | derived_or_decomposed | no | uses rw, simp, unfold |
 | `lean/AsiStackProofs/Planning.lean` | `runtime_replan_delta_blocked_authority_dispatch_rejected` | derived_or_decomposed | no | uses rw, simp, unfold |

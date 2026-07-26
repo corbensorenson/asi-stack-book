@@ -1011,7 +1011,7 @@ that remains safe only by never completing useful work fails the joint gate.
 
 Keep the existing syntax-level classifier, but add a semantic-depth overlay for
 every current declaration. The immutable pre-rationalization baseline contains
-1,370 declarations; the live estate contains 1,325 after forty-five
+1,370 declarations; the live estate contains 1,321 after forty-nine
 dependency-safe retirement transactions:
 
 | Level | Required meaning |
@@ -1202,18 +1202,18 @@ checks, and zero-remainder ledger do not prove mechanism correctness, runtime
 enforcement, capability, usefulness, safety, transfer, SOTA, AGI, or ASI and
 do not move any support state.
 
-### C6 current-estate classification and cumulative execution receipt — 2026-07-25
+### C6 current-estate classification and cumulative execution receipt — 2026-07-26
 
 C6 now has a complete current-estate classification, not merely the frozen
 historical review. The immutable historical registry remains exactly 1,151
 theorems across 298 targets. The separately frozen pre-rationalization overlay
 at commit `d0f9bda14f1253999f2c40d556d925d31e4b36a4` classifies all 1,370
 baseline declarations. The current overlay in
-`proofs/proof_semantic_depth_overlay.json` classifies all 1,325 live theorem
+`proofs/proof_semantic_depth_overlay.json` classifies all 1,321 live theorem
 declarations across 104 theorem-bearing modules and maps them to 61 active
 semantic-owner chapters.
 
-The live semantic-depth distribution is 42 P0 record-shape results, 765 P1
+The live semantic-depth distribution is 42 P0 record-shape results, 761 P1
 finite-route results, 25 P2 reachability/nonvacuity results, 319 P3
 implementation-refinement results, 93 P4 cross-component-safety results, 81 P5
 liveness/recovery results, and zero P6 empirically bound results. P6 being zero
@@ -1223,8 +1223,8 @@ artifact does not turn a theorem into empirical evidence.
 Every overlay row records its assumptions, active semantic owner, downstream
 consumer, witness or explicit witness absence, implementation binding, mutation
 evidence, maximum inference, and disposition. The resulting current estate is
-1,209 retain, 19 retire as narrow projection, two scope-language rewrites, and
-95 stronger-model rewrites. All 1,325 rows have mutation coverage and every
+1,209 retain, 15 retire as narrow projection, two scope-language rewrites, and
+95 stronger-model rewrites. All 1,321 rows have mutation coverage and every
 retained theorem has a named consumer.
 
 The cumulative dependency-safe retirement ledger is
@@ -1383,16 +1383,29 @@ residual-promotion predicate. The failure-mode target now names the retained
 incident decision branch that routes authority over its ceiling to explicit
 authority review. All three retired declarations had no Lean dependency or
 theorem consumer. Twenty-four Efficiency declarations and twenty-two Failure
-Modes declarations remain; the latter module's detector-probe bridge is
-retained for a later route-family rebinding rather than being treated as
-equivalent to this decision theorem. These migrations prove no route-search
-completeness, measured efficiency, residual-burden reduction, runtime authority
-detection, containment, mitigation effectiveness, support transition, or
-release authority.
+Modes declarations remained at the close of that tranche. These migrations
+prove no route-search completeness, measured efficiency, residual-burden
+reduction, runtime authority detection, containment, mitigation effectiveness,
+support transition, or release authority.
+
+The eleventh narrow-projection tranche retires four valid-summary projections
+across `FailureModes.lean`, `IntentToExecution.lean`, and `Planning.lean`.
+Their independent Python consumers now bind directly to retained theorem
+families: fifteen failure-record routes, nine execution-dispatch routes,
+fourteen plan-admission routes, and four runtime-replan delta routes. The
+public targets explicitly describe this split evidence surface; they do not
+invent theorem equivalence between consumer results and route families. All
+four retired declarations merely returned assumed summary-valid conjunctions
+and had no Lean dependency or theorem consumer. Twenty-one Failure Modes, nine
+Intent-to-Execution, and twenty-seven Planning declarations remain; four
+PlanForge declarations bring the planning chapter's seven-target total to
+thirty-one. The transactions prove no detector quality, semantic handoff
+correctness, planner quality, scheduler optimality, deployed behavior, support
+transition, or release authority.
 
 This receipt completes the C6 **classification** gate and begins its
-dependency-safe execution gate. Exactly 45 of the original 161 actions have
-been executed; 116 rewrite-or-retire actions remain: 19 narrow-projection
+dependency-safe execution gate. Exactly 49 of the original 161 actions have
+been executed; 112 rewrite-or-retire actions remain: 15 narrow-projection
 retirements, two scope-language rewrites, and 95 stronger-model rewrites. The
 next proof action is a dependency-safe narrow-projection tranche, preserving
 each correct bounded result until its consumers and maximum inference are

@@ -1,6 +1,6 @@
 {
   "schema_version": "asi_stack.proof_semantic_rationalization_ledger.v3",
-  "as_of": "2026-07-25",
+  "as_of": "2026-07-26",
   "roadmap_lane": "C6-P0-P6-semantic-proof-rationalization",
   "state": "dependency_safe_execution_active",
   "classification_baseline": {
@@ -2057,14 +2057,218 @@
         "lean:lake-build"
       ],
       "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R46-failure-detector-summary-projection",
+      "sequence": 46,
+      "state": "executed",
+      "action": "retire_projection_after_validator_route_family_rebinding",
+      "semantic_relation": "summary_projection_replaced_by_route_family_validation",
+      "module_path": "lean/AsiStackProofs/FailureModes.lean",
+      "baseline_module_sha256": "2ddb813cf30235e86ad3a6c2beb8c0b0a57b7121f91c21c889b9450ce0401c8e",
+      "retired_theorem_id": "lean/AsiStackProofs/FailureModes.lean::failure_taxonomy_detector_probe_bridge",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "5e1772e821d0f282f9a94941e09c3bab4940bbe7439095d4e9c5cd6baa06ef25",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "bb10f300aa5ed415ffce396bdc01b6e70604e9771af3a0812ce329b649ab1af8",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem accepts FailureTaxonomyDetectorProbeSummaryValid and returns that same conjunction without deriving any fixture fact or decision route.",
+        "The immutable semantic overlay records no Lean dependency or theorem consumer for the summary projection.",
+        "The independent Python consumer validates exact incident fixtures and rejecting controls, while fifteen retained failure-record branch theorems cover required-field repair, escalation, quarantine, residual, learning, normalization, evidence-transition, non-claim, and closure outcomes.",
+        "The public target now states this split consumer-and-route-family evidence surface rather than implying that one summary theorem validates the probe.",
+        "The migration proves no detector accuracy, runtime observation, containment, prevention, mitigation effectiveness, evaluator independence, or support transition."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:failure.taxonomy.detector_probe_bridge",
+          "old_target_text": "The deterministic synthetic failure-taxonomy detector probe includes authority-creep and Goodhart/evaluator-drift incidents, rejected negative controls, residual boundaries, no support-state effect, and explicit non-claim boundaries.",
+          "new_target_text": "An independent finite incident consumer validates authority-creep and Goodhart/evaluator-drift fixtures and rejecting controls, while the retained Lean failure-record route family covers required-field repair, escalation, quarantine, residual, learning, normalization, evidence-transition, non-claim, and closure branches.",
+          "consumer_paths": [
+            "book_structure.json",
+            "docs/book_outline.md",
+            "chapters/failure-modes-of-ungoverned-intelligence.qmd",
+            "proofs/proof_manifest.json",
+            "proofs/proof_triage.json"
+          ]
+        }
+      ],
+      "maximum_inference_preserved": "The independent consumer accepts two exact incident fixtures and rejects seven controls; the named finite Lean route family derives its authored branch outcomes. No theorem equivalence between the consumer and route family is claimed.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_proof_artifact_audit.py",
+        "scripts/validate_failure_taxonomy_detector_probe.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R47-intent-handoff-summary-projection",
+      "sequence": 47,
+      "state": "executed",
+      "action": "retire_projection_after_validator_route_family_rebinding",
+      "semantic_relation": "summary_projection_replaced_by_route_family_validation",
+      "module_path": "lean/AsiStackProofs/IntentToExecution.lean",
+      "baseline_module_sha256": "c38a07aa6d5ebc70448928fa52e6e9f5cb6f9cbf248e3a91afa55637e1fc3397",
+      "retired_theorem_id": "lean/AsiStackProofs/IntentToExecution.lean::intent_execution_handoff_probe_fixture_bridge",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "679ff13f1d1ba7f960f22942a6e8550ed975848b2476ca9e815d0adcb8151859",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "49838ebb827686f37db69891dbf6778840603210308ead334c711a1dee8eb6c0",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem accepts HandoffProbeSummaryValid and returns that same conjunction without deriving a handoff event or dispatch outcome.",
+        "The immutable semantic overlay records no Lean dependency or theorem consumer for the summary projection.",
+        "The independent Python consumer validates accepted and missing-approval traces plus rejecting controls, while nine retained dispatch branch theorems cover contract, objective, authority, override, approval, artifact, verification, residual, and ready outcomes.",
+        "The public target now states this split consumer-and-route-family evidence surface rather than implying that one summary theorem validates the handoff probe.",
+        "The migration proves no natural-language parsing, deployed dispatch, approval-service enforcement, runtime-adapter behavior, artifact satisfaction, or support transition."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:intent_execution.handoff_trace.probe_fixture_bridge",
+          "old_target_text": "The deterministic synthetic handoff probe result includes an accepted vertical handoff path, a missing-approval blocked path, rejected negative controls, no support-state effect, and an explicit non-claim boundary.",
+          "new_target_text": "An independent finite handoff consumer validates accepted and missing-approval traces plus rejecting controls, while the retained Lean dispatch route family covers contract, objective, authority, override, approval, artifact, verification, residual, and ready branches.",
+          "consumer_paths": [
+            "book_structure.json",
+            "docs/book_outline.md",
+            "chapters/intent-to-execution-contracts.qmd",
+            "proofs/proof_manifest.json",
+            "proofs/proof_triage.json"
+          ]
+        }
+      ],
+      "maximum_inference_preserved": "The independent consumer accepts two exact handoff fixtures and rejects seven controls; the named finite Lean route family derives its authored dispatch outcomes. No theorem equivalence between the consumer and route family is claimed.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_proof_artifact_audit.py",
+        "scripts/validate_intent_execution_handoff_probe.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R48-planning-scheduler-summary-projection",
+      "sequence": 48,
+      "state": "executed",
+      "action": "retire_projection_after_validator_route_family_rebinding",
+      "semantic_relation": "summary_projection_replaced_by_route_family_validation",
+      "module_path": "lean/AsiStackProofs/Planning.lean",
+      "baseline_module_sha256": "d1ee0e0aedae3fbe478cb1003f7fc8be2a8273bbe2531638d810f33981a645a9",
+      "retired_theorem_id": "lean/AsiStackProofs/Planning.lean::planning_scheduler_state_probe_fixture_bridge",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "3d412b0fcafd474b8bd4aa8bef43f38feac9e7bdc64ae3087d001b01c01cfea4",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "c5b107a2f07576652917134ee4d1d77291c4c8692203afa5c87ed596d88bcd29",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem accepts SchedulerStateProbeSummaryValid and returns that same conjunction without deriving a scheduler trace or plan-admission outcome.",
+        "The immutable semantic overlay records no Lean dependency or theorem consumer for the summary projection.",
+        "The independent Python consumer validates scheduler and local-repair traces plus rejecting controls, while fourteen retained plan-admission branch theorems cover contract, decomposition, graph, authority, context, adequacy, verification, dispatch, replanning, residual, and admission outcomes.",
+        "The public target now states this split consumer-and-route-family evidence surface rather than implying that one summary theorem validates the scheduler probe.",
+        "The migration proves no decomposition quality, dependency truth, context-demand prediction, route adequacy, scheduler optimality, deployed replanning, or support transition."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:planning.scheduler_state.probe_fixture_bridge",
+          "old_target_text": "The deterministic synthetic scheduler-state probe result includes a valid scheduler trace, a local-repair trace, rejected negative controls, a cost-quality ledger boundary, no support-state effect, and an explicit non-claim boundary.",
+          "new_target_text": "An independent finite scheduler-state consumer validates scheduler and local-repair traces plus rejecting controls, while the retained Lean plan-admission route family covers contract, decomposition, graph, authority, context, adequacy, verification, dispatch, replanning, residual, and admission branches.",
+          "consumer_paths": [
+            "book_structure.json",
+            "docs/book_outline.md",
+            "chapters/planning-as-a-control-layer.qmd",
+            "proofs/proof_manifest.json",
+            "proofs/proof_triage.json"
+          ]
+        }
+      ],
+      "maximum_inference_preserved": "The independent consumer accepts two exact scheduler fixtures and rejects seven controls; the named finite Lean route family derives its authored plan-admission outcomes. No theorem equivalence between the consumer and route family is claimed.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_proof_artifact_audit.py",
+        "scripts/validate_planning_scheduler_state_probe.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R49-planning-replan-summary-projection",
+      "sequence": 49,
+      "state": "executed",
+      "action": "retire_projection_after_validator_route_family_rebinding",
+      "semantic_relation": "summary_projection_replaced_by_route_family_validation",
+      "module_path": "lean/AsiStackProofs/Planning.lean",
+      "baseline_module_sha256": "d1ee0e0aedae3fbe478cb1003f7fc8be2a8273bbe2531638d810f33981a645a9",
+      "retired_theorem_id": "lean/AsiStackProofs/Planning.lean::planning_runtime_replan_delta_audit_bridge",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "fd859b0f3101c6ab5cdbc808e0e77ceff6c7dd16da5e949f1e78022294ecdc5c",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "caff4e60c04f8d18a41728cad7f2da72e3e9ed9e7003170eb245b9c06abdfb73",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem accepts RuntimeReplanDeltaSummaryValid and returns that same conjunction without deriving a replan trace or route outcome.",
+        "The immutable semantic overlay records no Lean dependency or theorem consumer for the summary projection.",
+        "The independent Python consumer validates local-repair and blocked-authority traces plus rejecting controls, while four retained delta-route theorems reject authority widening, stop erasure, and blocked-authority dispatch and accept a complete bounded audit.",
+        "The public target now states this split consumer-and-route-family evidence surface rather than implying that one summary theorem validates the runtime-replan audit.",
+        "The migration proves no deployed planning, runtime scheduling, live-feedback handling, decomposition quality, route adequacy, selected-tier adequacy, or support transition."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:planning.runtime_replan.delta_audit_bridge",
+          "old_target_text": "The deterministic synthetic runtime-replan delta audit includes a local source-repair trace, a blocked-authority replan trace, rejected negative controls, preserved authority and stop conditions, affected-subgraph scope, context and verification deltas, residual ownership, blocked-authority no-dispatch, no support-state effect, and an explicit non-claim boundary.",
+          "new_target_text": "An independent finite runtime-replan consumer validates local-repair and blocked-authority traces plus rejecting controls, while the retained Lean delta route family rejects authority widening, stop erasure, and blocked-authority dispatch and accepts a complete bounded audit.",
+          "consumer_paths": [
+            "book_structure.json",
+            "docs/book_outline.md",
+            "chapters/planning-as-a-control-layer.qmd",
+            "proofs/proof_manifest.json",
+            "proofs/proof_triage.json"
+          ]
+        }
+      ],
+      "maximum_inference_preserved": "The independent consumer accepts two exact runtime-replan fixtures and rejects nine controls; the four named finite Lean theorems derive only their authored delta-route outcomes. No theorem equivalence between the consumer and route family is claimed.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_proof_artifact_audit.py",
+        "scripts/validate_planning_runtime_replan_delta.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
     }
   ],
   "summary": {
-    "executed_retirement_count": 45,
-    "current_live_theorem_count": 1325,
-    "remaining_action_count": 116,
+    "executed_retirement_count": 49,
+    "current_live_theorem_count": 1321,
+    "remaining_action_count": 112,
     "remaining_action_counts": {
-      "retire_narrow_projection": 19,
+      "retire_narrow_projection": 15,
       "rewrite_scope_language": 2,
       "rewrite_with_stronger_model": 95
     },

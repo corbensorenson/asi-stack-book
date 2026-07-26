@@ -37,7 +37,6 @@ REQUIRED_THEOREMS = [
     "runtime_replan_delta_stop_erasure_rejected",
     "runtime_replan_delta_blocked_authority_dispatch_rejected",
     "runtime_replan_delta_complete_audit_accepted",
-    "planning_runtime_replan_delta_audit_bridge",
 ]
 REQUIRED_NON_CLAIMS = [
     "does not execute a deployed planner",

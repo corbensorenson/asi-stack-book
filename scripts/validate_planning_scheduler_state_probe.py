@@ -32,7 +32,20 @@ COMMAND = "python3 scripts/validate_planning_scheduler_state_probe.py"
 PROOF_TAG = "lean:planning.scheduler_state.probe_fixture_bridge"
 CODEX_TEST_NAME = "Planning scheduler-state probe"
 REQUIRED_THEOREMS = [
-    "planning_scheduler_state_probe_fixture_bridge",
+    "missing_command_contract_blocks_plan_graph_admission",
+    "incomplete_decomposition_blocks_plan_graph_admission",
+    "cyclic_plan_graph_blocks_admission",
+    "unordered_dependencies_block_plan_graph_admission",
+    "authority_escalation_blocks_plan_graph_admission",
+    "missing_context_demand_blocks_plan_graph_admission",
+    "missing_adequacy_contract_blocks_plan_graph_admission",
+    "missing_verification_plan_blocks_plan_graph_admission",
+    "missing_dispatch_gate_blocks_plan_graph_admission",
+    "missing_dispatch_receipt_blocks_plan_graph_admission",
+    "replanning_without_authority_preservation_blocks_admission",
+    "missing_residual_register_blocks_new_plan_admission",
+    "complete_new_plan_graph_routes_to_admissible",
+    "complete_replanned_graph_routes_to_admissible",
 ]
 REQUIRED_NON_CLAIMS = [
     "does not prove decomposition quality",

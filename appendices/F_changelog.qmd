@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-07-26 — Eleventh narrow-projection C6 tranche
+
+- Retired four valid-summary projections from `FailureModes.lean`,
+  `IntentToExecution.lean`, and `Planning.lean`. Each returned an assumed
+  summary conjunction and had no Lean dependency or theorem consumer.
+- Rebound the failure-detector, execution-handoff, scheduler-state, and
+  runtime-replan validators to fifteen, nine, fourteen, and four retained
+  route theorems respectively. Public targets now state the split
+  independent-consumer and formal-route evidence boundary without claiming
+  theorem equivalence.
+- Extended the cumulative ledger to forty-nine ordered retirements and
+  twenty-nine public-target migrations. The live estate is 1,321 declarations:
+  42 P0, 761 P1, 25 P2, 319 P3, 93 P4, 81 P5, and zero P6. The remaining queue
+  contains 112 actions: 15 narrow-projection retirements, two scope-language
+  rewrites, and 95 stronger-model rewrites.
+- Current proof-depth snapshot: 333 proof targets, 110 Lean modules, 1321 theorem declarations, 919 derived/decomposed, 187 direct/projection, 215 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- No chapter-core support state, detector-quality claim, semantic-handoff
+  claim, planner-quality result, deployment status, release state, or
+  publication authority changes.
+
 ## 2026-07-26 — Concept-first exit audit and Phase 2 resumption
 
 - Replayed the C1–C8 roadmap against 26 exact prose or product anchors instead

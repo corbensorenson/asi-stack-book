@@ -18,6 +18,7 @@ TARGETS = {
 RETIRED = {
     "lean/AsiStackProofs/IntentToExecution.lean::compiled_execution_job_preserves_parent_contract_constraints",
     "lean/AsiStackProofs/IntentToExecution.lean::execution_job_without_required_approval_cannot_transition_to_running",
+    "lean/AsiStackProofs/IntentToExecution.lean::intent_execution_handoff_probe_fixture_bridge",
 }
 RETAINED = {
     "lean/AsiStackProofs/IntentToExecution.lean::missing_contract_rejects_execution_dispatch",
@@ -29,7 +30,6 @@ RETAINED = {
     "lean/AsiStackProofs/IntentToExecution.lean::missing_verification_plan_routes_to_verification",
     "lean/AsiStackProofs/IntentToExecution.lean::known_residual_records_execution_residual",
     "lean/AsiStackProofs/IntentToExecution.lean::complete_dispatch_review_is_ready",
-    "lean/AsiStackProofs/IntentToExecution.lean::intent_execution_handoff_probe_fixture_bridge",
 }
 COUNTERMODELS = [
     "experiments/governed_repository_change_slice/results/2026-07-10-local.json#scenario_results",
