@@ -194,7 +194,10 @@ def main() -> None:
 
     print(
         "Security kernel harness passed: "
-        f"{valid_count} valid fixture(s), {invalid_count} expected-invalid fixture(s), "
+        f"{valid_count} valid fixture(s), {invalid_count} expected-invalid fixture(s)."
+    )
+    print(
+        "Security kernel formal binding passed: "
         f"{len(REQUIRED_THEOREMS)} retained authority-route theorem binding(s)."
     )
 

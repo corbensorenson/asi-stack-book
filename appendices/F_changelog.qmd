@@ -16,6 +16,12 @@
 - Added retained-theorem bindings to the living-book, proof-artifact,
   prototype-phase, and security-kernel validators. The cumulative ledger now
   records fifty-seven ordered retirements and thirty-seven target migrations.
+- Reconciled the retirement through the chapter and manifest theorem counts,
+  implementation horizons, semantic-review packets, claim and proof
+  registries, negative-inference audit, X Article bindings, and public status
+  ledgers. The security harness preserves its established Phase 5 success line
+  exactly and reports the new formal binding on a separate line, so the
+  stronger check does not break its registered output contract.
 - Added an opt-in no-sandbox flag for the installed-Chrome fallback in the
   live Human-view browser validator. CI defaults remain unchanged; the managed
   desktop run used the explicit flag and passed all 172 chapter/appendix,

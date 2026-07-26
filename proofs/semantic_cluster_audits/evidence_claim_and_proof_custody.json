@@ -91,13 +91,13 @@
       "path": "lean/AsiStackProofs/ProofEnvelope.lean",
       "disposition": "reclassify",
       "public_target_count": 2,
-      "theorem_declaration_count": 7,
+      "theorem_declaration_count": 5,
       "plain_language_proposition": "Within the finite proof-envelope record, contradictions rule out implemented status when a module is missing or a build failed, non-Lean artifacts cannot be labeled Lean proofs, support promotion is invalid without an accepted transition and bounded semantic and non-claim records, and external theorem references require exact identity and scope boundaries.",
       "modeled_state": "Proof-target status with module/build flags plus artifact lane, verifier result, semantic-adequacy label, support-effect request, accepted-transition flag, consumer match, limitations, non-claims, and external theorem identity fields.",
       "assumptions": [
         "All record fields are truthful and the bounded predicates are complete for the declared admission decision.",
         "Module existence, build success, theorem semantics, external theorem identity, and consumer effects are not checked by Lean itself.",
-        "The positive implemented-target and non-operational-routing theorems are direct projections from assumed predicates."
+        "The two former direct positive projections have been retired; the retained declarations are bounded negative cases or derived countermodels over the finite record."
       ],
       "countermodels": [
         "Implemented status with a missing module or failing build contradicts ImplementedTargetValid.",
@@ -109,11 +109,11 @@
         "scripts/validate_proof_artifact_audit.py",
         "proofs/proof_manifest.json"
       ],
-      "mutation_evidence": "Repository proof-readiness and artifact-audit validators exercise the executable manifest surface; this cluster validator rejects missing module, countermodel, consumer, and maximum-inference records. There is no checked Lean-to-runtime refinement, so the positive projection theorems are reclassified rather than credited as enforcement.",
+      "mutation_evidence": "Repository proof-readiness and artifact-audit validators exercise the executable manifest surface and bind the retained bounded countermodel theorem names; this cluster validator rejects missing module, countermodel, consumer, and maximum-inference records. There is no checked Lean-to-runtime refinement, and the former positive projection theorems are retired rather than credited as enforcement.",
       "maximum_inference": "Retain only as finite proof-artifact admission countermodels and specification-layer policy. It does not establish that files exist, builds ran, theorems are true or semantically adequate, external references resolve, support transitions are enforced, consumers obey the envelope, or any empirical or safety claim holds."
     }
   ],
-  "cluster_maximum_inference": "The cluster is adequate at bounded finite custody semantics after reclassifying direct projections and non-executable proof-envelope rules. It proves no claim truth, evidence truth, verifier soundness, reviewer quality, deployed enforcement, empirical behavior, safety, transfer, SOTA, AGI, ASI, or support-state movement.",
+  "cluster_maximum_inference": "The cluster is adequate at bounded finite custody semantics after retiring the direct ProofEnvelope projections and retaining only consumed countermodels and bounded non-executable rules. It proves no claim truth, evidence truth, verifier soundness, reviewer quality, deployed enforcement, empirical behavior, safety, transfer, SOTA, AGI, ASI, or support-state movement.",
   "support_state_effect": "none",
   "release_effect": "none",
   "publication_effect": "none"
