@@ -835,13 +835,13 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:evidence.support_state.operational_invariant` | `AsiStackProofs.EvidenceStates` | Support-state transitions require the corresponding evidence artifact. | implemented |
+| `lean:evidence.support_state.operational_invariant` | `AsiStackProofs.EvidenceStates` | A reachable evidence-admission model derives state-specific artifact requirements from the requested support state and inspected evidence bundle rather than assuming the RequiredEvidence predicate. | planned |
 | `lean:evidence.support_state.failure_blocks_promotion` | `AsiStackProofs.EvidenceStates` | A claim cannot be promoted when required evidence is absent. | implemented |
 | `lean:evidence.support_state.transition_lifecycle_route` | `AsiStackProofs.EvidenceStates` | A modeled support-state transition routes no-change requests, missing records, scope gaps, support-effect gaps, missing review, missing required evidence, terminal/downgrade gaps, changelog gaps, and missing non-claim boundaries to explicit outcomes. | implemented |
-| `lean:evidence.bundle.completeness_probe_bridge` | `AsiStackProofs.EvidenceStates` | A synthetic evidence-bundle completeness probe records a no-change bundle, a blocked-promotion bundle, rejected negative controls, changelog consistency, no support-state effect, and non-claim boundaries. | implemented |
-| `lean:evidence.claim_ledger.completeness_audit_bridge` | `AsiStackProofs.EvidenceStates` | A claim-ledger completeness audit records manifest claim coverage, unique Appendix C rows, label/support matching, open gaps, promotion paths, rejected mutation controls, no support-state effect, and non-claim boundaries. | implemented |
-| `lean:evidence.accepted_transition.review_audit_bridge` | `AsiStackProofs.EvidenceStates` | An accepted-transition review audit records accepted transition presence, bounded non-core upward transitions, no chapter-core promotion, no-promotion decisions, changelog refs, rejected mutation controls, bounded support-state effects, and non-claim boundaries. | implemented |
-| `lean:evidence.claim_state.transition_bridge` | `AsiStackProofs.EvidenceStates` | A synthetic claim-state transition bridge records claim narrowing, support downgrade, terminal refutation, negative-evidence requirements, rejected mutation controls, bounded support-state effects, no live claim movement, and non-claim boundaries. | implemented |
+| `lean:evidence.bundle.completeness_probe_bridge` | `AsiStackProofs.EvidenceStates` | An independently implemented formal bridge derives the evidence-bundle probe's accepted and rejected outcomes from exact bundle inputs and audit logic rather than assuming a valid summary predicate. | planned |
+| `lean:evidence.claim_ledger.completeness_audit_bridge` | `AsiStackProofs.EvidenceStates` | An independently implemented formal bridge derives claim-ledger completeness and rejection outcomes from exact manifest and Appendix C inputs rather than assuming a valid summary predicate. | planned |
+| `lean:evidence.accepted_transition.review_audit_bridge` | `AsiStackProofs.EvidenceStates` | An independently implemented formal bridge derives accepted-transition audit outcomes from exact transition, no-promotion, changelog, and evidence inputs rather than assuming a valid summary predicate. | planned |
+| `lean:evidence.claim_state.transition_bridge` | `AsiStackProofs.EvidenceStates` | A reachable claim-state lifecycle model derives negative-evidence, no-live-movement, and non-claim conclusions from narrowing, downgrade, and refutation cases rather than projecting fields from a hand-authored summary predicate. | planned |
 
 ### Scalable Oversight and Adversarial AI Control
 
@@ -5993,7 +5993,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 298 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 298 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 333 proof targets, 110 Lean modules, 1355 theorem declarations, 924 derived/decomposed, 216 direct/projection, 215 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 333 proof targets, 110 Lean modules, 1346 theorem declarations, 921 derived/decomposed, 210 direct/projection, 215 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.

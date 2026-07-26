@@ -184,11 +184,28 @@ def validate(data: dict) -> list[str]:
     current_proof_count = proof_manifest.get("proof_target_count")
     historical_proof_count = activation.get("proof_target_count")
     planned_records = [row for row in proof_records if row.get("status") == "planned"]
+    rationalization_migration_tags = {
+        migration.get("target_ref", "").removeprefix("proof-target:")
+        for action in data["proof_rationalization"].get("actions", [])
+        if action.get("state") == "executed"
+        for migration in action.get("target_migrations", [])
+    }
     later_admitted_records = [
         row for row in proof_records if row.get("chapter_id") in admitted_chapter_ids
     ]
     later_implemented_records = [
         row for row in later_admitted_records if row.get("status") == "implemented"
+    ]
+    later_planned_records = [
+        row for row in later_admitted_records if row.get("status") == "planned"
+    ]
+    historical_planned_records = [
+        row for row in planned_records if row.get("chapter_id") not in admitted_chapter_ids
+    ]
+    authorized_rationalization_migrations = [
+        row
+        for row in historical_planned_records
+        if row.get("tag") in rationalization_migration_tags
     ]
     record_status_counts: dict[str, int] = {}
     for row in proof_records:
@@ -207,10 +224,12 @@ def validate(data: dict) -> list[str]:
         or len(later_admitted_records) != added_proof_count
         or {row.get("chapter_id") for row in later_admitted_records} != admitted_chapter_ids
         or proof_status_counts.get("implemented", 0)
-        != historical_proof_count + len(later_implemented_records)
+        != historical_proof_count
+        + len(later_implemented_records)
+        - len(authorized_rationalization_migrations)
         or proof_status_counts.get("planned", 0) != len(planned_records)
-        or len(planned_records) + len(later_implemented_records) != added_proof_count
-        or not {row.get("chapter_id") for row in planned_records}.issubset(admitted_chapter_ids)
+        or len(later_planned_records) + len(later_implemented_records) != added_proof_count
+        or len(historical_planned_records) != len(authorized_rationalization_migrations)
         or any(row.get("summary_support_state") not in (None, "argument") for row in planned_records)
     ):
         errors.append("proof/no-new-theorem boundary drifted")
@@ -241,6 +260,7 @@ def main() -> None:
         "maintenance_status": load("roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json"),
         "manifest": load("book_structure.json"), "vectors": load("evidence_quality/core_claim_vectors.json"),
         "source_inventory": load("sources/source_inventory.json"), "proof_manifest": load("proofs/proof_manifest.json"),
+        "proof_rationalization": load("proofs/proof_semantic_rationalization_ledger.json"),
         "transitions": {path.name: json.loads(path.read_text()) for path in sorted((ROOT / TRANSITION_DIR).glob("*.json"))},
         "chapter_texts": {chapter: (ROOT / f"chapters/{chapter}.qmd").read_text() for chapter in CHAPTER_HEADINGS},
         "appendix_c": (ROOT / "appendices/C_claim_evidence_matrix.qmd").read_text(),
@@ -281,7 +301,19 @@ def main() -> None:
         raise SystemExit(1)
     live_chapter_count = sum(len(part.get("chapters", [])) for part in data["manifest"].get("parts", []))
     proof_manifest = data["proof_manifest"]
-    print(f"Post-v2.1 reconciliation passed: 6 bounded transitions, 14 core no-change decisions and chapter owners, 11 residual dispositions, 19 modern-source routes, preserved 54-chapter/298-target activation and authorized 55th-chapter historical lineage through the terminal no-deferral admission, {live_chapter_count} live argument-state vectors, {proof_manifest.get('proof_target_count')} current targets ({proof_manifest.get('status_counts', {}).get('implemented', 0)} implemented plus {proof_manifest.get('status_counts', {}).get('planned', 0)} planned on later manifest-admitted chapters), no theorem invented by the historical cycle, and 13 rejecting mutations.")
+    rationalization_migration_tags = {
+        migration.get("target_ref", "").removeprefix("proof-target:")
+        for action in data["proof_rationalization"].get("actions", [])
+        if action.get("state") == "executed"
+        for migration in action.get("target_migrations", [])
+    }
+    rationalization_planned = sum(
+        1
+        for row in proof_manifest.get("records", [])
+        if row.get("status") == "planned"
+        and row.get("tag") in rationalization_migration_tags
+    )
+    print(f"Post-v2.1 reconciliation passed: 6 bounded transitions, 14 core no-change decisions and chapter owners, 11 residual dispositions, 19 modern-source routes, preserved 54-chapter/298-target activation and authorized 55th-chapter historical lineage through the terminal no-deferral admission, {live_chapter_count} live argument-state vectors, {proof_manifest.get('proof_target_count')} current targets ({proof_manifest.get('status_counts', {}).get('implemented', 0)} implemented plus {proof_manifest.get('status_counts', {}).get('planned', 0)} planned, including {rationalization_planned} explicitly authorized post-cycle semantic-rationalization migrations), no theorem invented by the historical cycle, and 13 rejecting mutations.")
 
 
 if __name__ == "__main__":

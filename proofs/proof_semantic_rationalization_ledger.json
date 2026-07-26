@@ -658,14 +658,421 @@
         "lean:lake-build"
       ],
       "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R16-evidence-support-requirement-projection",
+      "sequence": 16,
+      "state": "executed",
+      "action": "retire_projection_after_public_target_narrowing",
+      "semantic_relation": "premise_restatement_retired_after_target_scope_reduction",
+      "module_path": "lean/AsiStackProofs/EvidenceStates.lean",
+      "baseline_module_sha256": "8f58d35b26b9e2400c70bf56fb38f12c5bbb6ed1f8546bda735235eb37ee7141",
+      "retired_theorem_id": "lean/AsiStackProofs/EvidenceStates.lean::support_state_transition_requires_evidence",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "60e1aa0dbeaddaa22cf612ea1bb18632b31df076c4c104359aee808074683ff3",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "298296412ccc6190b79b20d4b1963067ba09aeff41e3ed4c4ebc598b06de6919",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem returns the RequiredEvidence conjunct already assumed inside PromotionAllowed.",
+        "No current Lean theorem depends on or consumes the projection, and no fully qualified current consumer names it.",
+        "The old operational target treated an assumption-restatement as an implemented evidence-admission invariant.",
+        "The public target is narrowed to a planned reachable model that must derive requirements from the requested state and inspected evidence bundle.",
+        "No theorem is presented as an equivalent replacement; null replacement custody records the intentional scope reduction."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:evidence.support_state.operational_invariant",
+          "old_target_text": "Support-state transitions require the corresponding evidence artifact.",
+          "new_target_text": "A reachable evidence-admission model derives state-specific artifact requirements from the requested support state and inspected evidence bundle rather than assuming the RequiredEvidence predicate.",
+          "consumer_paths": [
+            "book_structure.json",
+            "docs/book_outline.md",
+            "chapters/evidence-states-and-claim-discipline.qmd",
+            "proofs/proof_manifest.json",
+            "proofs/proof_triage.json"
+          ]
+        }
+      ],
+      "maximum_inference_preserved": "The implemented missing-evidence counterexample and lifecycle routes remain; no general evidence-admission invariant is carried forward from the retired projection.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_proof_artifact_audit.py",
+        "scripts/validate_support_state_transitions.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R17-evidence-terminal-negative-projection",
+      "sequence": 17,
+      "state": "executed",
+      "action": "retire_projection_after_public_target_narrowing",
+      "semantic_relation": "premise_restatement_retired_after_target_scope_reduction",
+      "module_path": "lean/AsiStackProofs/EvidenceStates.lean",
+      "baseline_module_sha256": "8f58d35b26b9e2400c70bf56fb38f12c5bbb6ed1f8546bda735235eb37ee7141",
+      "retired_theorem_id": "lean/AsiStackProofs/EvidenceStates.lean::accepted_terminal_transition_requires_negative_evidence",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "f8e45f8435992aada4b9724d5a3cb5b8b919588a59e56b90a256ffc44b333abd",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "85d1deb8b124ad0271c80f1b5a0b728ab319d8a705284869790f155ad472e4e0",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem returns the negativeEvidence field already assumed inside AcceptedTerminalTransition.",
+        "No current Lean theorem depends on or consumes the projection, and no fully qualified current consumer names it.",
+        "The retained terminal route cases derive explicit rejection outcomes for missing negative evidence and mismatched terminal effects.",
+        "No public target requires this isolated premise projection after the Evidence States target wording is reconciled.",
+        "No theorem is presented as an equivalent replacement; null replacement custody records the intentional scope reduction."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "Only the retained concrete terminal-route rejection cases remain public; the assumed negative-evidence field is not separately advertised as a proof result.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_proof_artifact_audit.py",
+        "scripts/validate_support_state_transitions.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R18-evidence-downgrade-negative-trigger-projection",
+      "sequence": 18,
+      "state": "executed",
+      "action": "retire_projection_after_public_target_narrowing",
+      "semantic_relation": "premise_restatement_retired_after_target_scope_reduction",
+      "module_path": "lean/AsiStackProofs/EvidenceStates.lean",
+      "baseline_module_sha256": "8f58d35b26b9e2400c70bf56fb38f12c5bbb6ed1f8546bda735235eb37ee7141",
+      "retired_theorem_id": "lean/AsiStackProofs/EvidenceStates.lean::accepted_downgrade_transition_requires_negative_evidence_and_trigger",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "714a12578f1e6de70ef493467584b2bb129a6610308ec7769df6ba387367ff82",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "6136f07b15ad8c0aa63a59a0a5495f892367d58ad3275d190b2b8697bc826ac8",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem returns the negativeEvidence and downgradeTrigger fields already assumed inside AcceptedDowngradeTransition.",
+        "No current Lean theorem depends on or consumes the projection, and no fully qualified current consumer names it.",
+        "The retained lifecycle route derives separate explicit outcomes for a missing negative-evidence record and a missing downgrade trigger.",
+        "No public target requires this isolated conjunction projection after the Evidence States target wording is reconciled.",
+        "No theorem is presented as an equivalent replacement; null replacement custody records the intentional scope reduction."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "Only the retained concrete downgrade-route rejection cases remain public; the assumed fields are not separately advertised as a proof result.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_proof_artifact_audit.py",
+        "scripts/validate_support_state_transitions.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R19-evidence-bundle-summary-projection",
+      "sequence": 19,
+      "state": "executed",
+      "action": "retire_projection_after_public_target_narrowing",
+      "semantic_relation": "premise_restatement_retired_after_target_scope_reduction",
+      "module_path": "lean/AsiStackProofs/EvidenceStates.lean",
+      "baseline_module_sha256": "8f58d35b26b9e2400c70bf56fb38f12c5bbb6ed1f8546bda735235eb37ee7141",
+      "retired_theorem_id": "lean/AsiStackProofs/EvidenceStates.lean::evidence_bundle_completeness_probe_bridge",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "3f4510e85572fa4ec6ce24159888b79524a1100b52e80c1641fc757107dea69c",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "b04d9133fe85279373215d896954860c575b58401dd27571b67fd35c3ba84158",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem returns the complete conjunction already assumed as EvidenceBundleCompletenessProbeSummaryValid.",
+        "No current Lean theorem depends on or consumes the projection, and the audit validator no longer requires its presence.",
+        "The executable audit and historical result remain preserved as runtime evidence at their original synthetic-record scope.",
+        "The public target is narrowed to a planned independently implemented input-to-outcome formal bridge rather than a valid-summary restatement.",
+        "No theorem is presented as an equivalent replacement; null replacement custody records the intentional scope reduction."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:evidence.bundle.completeness_probe_bridge",
+          "old_target_text": "A synthetic evidence-bundle completeness probe records a no-change bundle, a blocked-promotion bundle, rejected negative controls, changelog consistency, no support-state effect, and non-claim boundaries.",
+          "new_target_text": "An independently implemented formal bridge derives the evidence-bundle probe's accepted and rejected outcomes from exact bundle inputs and audit logic rather than assuming a valid summary predicate.",
+          "consumer_paths": [
+            "book_structure.json",
+            "docs/book_outline.md",
+            "chapters/evidence-states-and-claim-discipline.qmd",
+            "proofs/proof_manifest.json",
+            "proofs/proof_triage.json"
+          ]
+        }
+      ],
+      "maximum_inference_preserved": "The executable audit remains synthetic validator evidence; no Lean theorem currently binds its exact inputs and outcomes.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_proof_artifact_audit.py",
+        "scripts/validate_evidence_bundle_completeness_probe.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R20-claim-ledger-summary-projection",
+      "sequence": 20,
+      "state": "executed",
+      "action": "retire_projection_after_public_target_narrowing",
+      "semantic_relation": "premise_restatement_retired_after_target_scope_reduction",
+      "module_path": "lean/AsiStackProofs/EvidenceStates.lean",
+      "baseline_module_sha256": "8f58d35b26b9e2400c70bf56fb38f12c5bbb6ed1f8546bda735235eb37ee7141",
+      "retired_theorem_id": "lean/AsiStackProofs/EvidenceStates.lean::claim_ledger_completeness_audit_bridge",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "55cf79e7191517deb50781a8cc09c1616470d412893e8acf836873eaf8b88031",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "746245f8d0144f9506aa07183ab86c4f6573dead392731b04d36cc87f6349f92",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem returns the complete conjunction already assumed as ClaimLedgerCompletenessAuditSummaryValid.",
+        "No current Lean theorem depends on or consumes the projection, and the audit validator no longer requires its presence.",
+        "The executable Appendix C audit and historical result remain preserved at their original repository-completeness scope.",
+        "The public target is narrowed to a planned independently implemented manifest-and-ledger input-to-outcome formal bridge.",
+        "No theorem is presented as an equivalent replacement; null replacement custody records the intentional scope reduction."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:evidence.claim_ledger.completeness_audit_bridge",
+          "old_target_text": "A claim-ledger completeness audit records manifest claim coverage, unique Appendix C rows, label/support matching, open gaps, promotion paths, rejected mutation controls, no support-state effect, and non-claim boundaries.",
+          "new_target_text": "An independently implemented formal bridge derives claim-ledger completeness and rejection outcomes from exact manifest and Appendix C inputs rather than assuming a valid summary predicate.",
+          "consumer_paths": [
+            "book_structure.json",
+            "docs/book_outline.md",
+            "chapters/evidence-states-and-claim-discipline.qmd",
+            "proofs/proof_manifest.json",
+            "proofs/proof_triage.json"
+          ]
+        }
+      ],
+      "maximum_inference_preserved": "The executable audit remains repository-completeness evidence; no Lean theorem currently binds its exact manifest and Appendix C inputs.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_proof_artifact_audit.py",
+        "scripts/validate_claim_ledger_completeness_audit.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R21-accepted-transition-summary-projection",
+      "sequence": 21,
+      "state": "executed",
+      "action": "retire_projection_after_public_target_narrowing",
+      "semantic_relation": "premise_restatement_retired_after_target_scope_reduction",
+      "module_path": "lean/AsiStackProofs/EvidenceStates.lean",
+      "baseline_module_sha256": "8f58d35b26b9e2400c70bf56fb38f12c5bbb6ed1f8546bda735235eb37ee7141",
+      "retired_theorem_id": "lean/AsiStackProofs/EvidenceStates.lean::accepted_transition_review_audit_bridge",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "5a43517a21ed68a4d435ac992ac2b3526dad4b77a2b38fed1b69ac5889b9d302",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "e455f36977cb0cbd9c1dc39925c255f45deaed9a2f36954eccff14fd55f9198d",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem returns the complete conjunction already assumed as AcceptedTransitionReviewAuditSummaryValid.",
+        "No current Lean theorem depends on or consumes the projection, and the audit validator no longer requires its presence.",
+        "The executable accepted-transition audit and historical result remain preserved at their original repository-record scope.",
+        "The public target is narrowed to a planned independently implemented transition-input-to-audit-outcome formal bridge.",
+        "No theorem is presented as an equivalent replacement; null replacement custody records the intentional scope reduction."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:evidence.accepted_transition.review_audit_bridge",
+          "old_target_text": "An accepted-transition review audit records accepted transition presence, bounded non-core upward transitions, no chapter-core promotion, no-promotion decisions, changelog refs, rejected mutation controls, bounded support-state effects, and non-claim boundaries.",
+          "new_target_text": "An independently implemented formal bridge derives accepted-transition audit outcomes from exact transition, no-promotion, changelog, and evidence inputs rather than assuming a valid summary predicate.",
+          "consumer_paths": [
+            "book_structure.json",
+            "docs/book_outline.md",
+            "chapters/evidence-states-and-claim-discipline.qmd",
+            "proofs/proof_manifest.json",
+            "proofs/proof_triage.json"
+          ]
+        }
+      ],
+      "maximum_inference_preserved": "The executable audit remains repository-record evidence; no Lean theorem currently binds its exact transition and no-promotion inputs.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_proof_artifact_audit.py",
+        "scripts/validate_accepted_transition_review_audit.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R22-claim-state-negative-evidence-projection",
+      "sequence": 22,
+      "state": "executed",
+      "action": "retire_projection_after_public_target_narrowing",
+      "semantic_relation": "premise_restatement_retired_after_target_scope_reduction",
+      "module_path": "lean/AsiStackProofs/EvidenceStates.lean",
+      "baseline_module_sha256": "8f58d35b26b9e2400c70bf56fb38f12c5bbb6ed1f8546bda735235eb37ee7141",
+      "retired_theorem_id": "lean/AsiStackProofs/EvidenceStates.lean::claim_state_transition_bridge_requires_negative_evidence",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "5d2bc6619b00cf28df29666fb6556d4e1f65428377cbfbfbdcd7b85e1ddcb561",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "882c38dd3ffaebbfa533e7ee7750bb000c4623181a68df9e14b22b41ed29726e",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem extracts negativeEvidenceRequired from the already-assumed ClaimStateTransitionBridgeSummaryValid conjunction.",
+        "No current Lean theorem depends on or consumes the projection, and the bridge validator no longer requires its presence.",
+        "The executable synthetic transition audit and historical result remain preserved at their original fixture scope.",
+        "The public target is narrowed to a planned reachable lifecycle model that must derive negative-evidence and preservation conclusions from cases.",
+        "No theorem is presented as an equivalent replacement; null replacement custody records the intentional scope reduction."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:evidence.claim_state.transition_bridge",
+          "old_target_text": "A synthetic claim-state transition bridge records claim narrowing, support downgrade, terminal refutation, negative-evidence requirements, rejected mutation controls, bounded support-state effects, no live claim movement, and non-claim boundaries.",
+          "new_target_text": "A reachable claim-state lifecycle model derives negative-evidence, no-live-movement, and non-claim conclusions from narrowing, downgrade, and refutation cases rather than projecting fields from a hand-authored summary predicate.",
+          "consumer_paths": [
+            "book_structure.json",
+            "docs/book_outline.md",
+            "chapters/evidence-states-and-claim-discipline.qmd",
+            "proofs/proof_manifest.json",
+            "proofs/proof_triage.json"
+          ]
+        }
+      ],
+      "maximum_inference_preserved": "The executable synthetic audit remains fixture evidence; no Lean theorem currently derives the negative-evidence conclusion from reachable lifecycle cases.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_proof_artifact_audit.py",
+        "scripts/validate_claim_state_transition_bridge.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R23-claim-state-no-live-movement-projection",
+      "sequence": 23,
+      "state": "executed",
+      "action": "retire_projection_after_public_target_narrowing",
+      "semantic_relation": "premise_restatement_retired_after_target_scope_reduction",
+      "module_path": "lean/AsiStackProofs/EvidenceStates.lean",
+      "baseline_module_sha256": "8f58d35b26b9e2400c70bf56fb38f12c5bbb6ed1f8546bda735235eb37ee7141",
+      "retired_theorem_id": "lean/AsiStackProofs/EvidenceStates.lean::claim_state_transition_bridge_preserves_no_live_claim_movement",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "0130fb1147461764e020ee5be8a60c6c0487f7cd021eb59e387bf312982739a3",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "0d30f3e21c1506562fbe7710b8874a01593f3ddc3e182928d0058829bb33406d",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem extracts noLiveClaimMovement from the already-assumed ClaimStateTransitionBridgeSummaryValid conjunction.",
+        "No current Lean theorem depends on or consumes the projection, and the bridge validator no longer requires its presence.",
+        "The executable synthetic transition audit and historical result remain preserved at their original fixture scope.",
+        "The migrated claim-state target no longer presents a hand-authored summary field as an implemented preservation proof.",
+        "No theorem is presented as an equivalent replacement; null replacement custody records the intentional scope reduction."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "The executable synthetic audit records no live movement, but no Lean theorem currently derives that property from a reachable lifecycle.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_proof_artifact_audit.py",
+        "scripts/validate_claim_state_transition_bridge.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R24-claim-state-nonclaim-projection",
+      "sequence": 24,
+      "state": "executed",
+      "action": "retire_projection_after_public_target_narrowing",
+      "semantic_relation": "premise_restatement_retired_after_target_scope_reduction",
+      "module_path": "lean/AsiStackProofs/EvidenceStates.lean",
+      "baseline_module_sha256": "8f58d35b26b9e2400c70bf56fb38f12c5bbb6ed1f8546bda735235eb37ee7141",
+      "retired_theorem_id": "lean/AsiStackProofs/EvidenceStates.lean::claim_state_transition_bridge_preserves_nonclaim_boundary",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "2b6378d6efc8ccadcd5abe3ec987a7066151774be8c42a680443e13f567beb2c",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "4f32244c1974d43fd81985c85ae32488cb8cf0f52b45222562e6549e93943498",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem extracts nonClaimBoundary from the already-assumed ClaimStateTransitionBridgeSummaryValid conjunction.",
+        "No current Lean theorem depends on or consumes the projection, and the bridge validator no longer requires its presence.",
+        "The executable synthetic transition audit and historical result remain preserved at their original fixture scope.",
+        "The migrated claim-state target no longer presents a hand-authored summary field as an implemented non-claim proof.",
+        "No theorem is presented as an equivalent replacement; null replacement custody records the intentional scope reduction."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "The executable synthetic audit records a non-claim boundary, but no Lean theorem currently derives it from a reachable lifecycle.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_proof_artifact_audit.py",
+        "scripts/validate_claim_state_transition_bridge.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
     }
   ],
   "summary": {
-    "executed_retirement_count": 15,
-    "current_live_theorem_count": 1355,
-    "remaining_action_count": 146,
+    "executed_retirement_count": 24,
+    "current_live_theorem_count": 1346,
+    "remaining_action_count": 137,
     "remaining_action_counts": {
-      "retire_narrow_projection": 49,
+      "retire_narrow_projection": 40,
       "rewrite_scope_language": 2,
       "rewrite_with_stronger_model": 95
     },

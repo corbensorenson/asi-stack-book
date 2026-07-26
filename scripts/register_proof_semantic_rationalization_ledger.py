@@ -55,11 +55,12 @@ def main() -> None:
         "execution_tier": "pr",
         "validation_class": "proof_or_evidence_gate",
         "input_contract": (
-            "One immutable 1,370-theorem baseline; fifteen exact, ordered transactions; "
+            "One immutable 1,370-theorem baseline; twenty-four exact, ordered transactions; "
             "the baseline Scalable Oversight, Bibliography Plan, Benchmark Ratchets, and "
-            "Policy Optimization and Stable Capability Fields modules; one same-model "
-            "normalized duplicate pair; fourteen premise-restating projections, seven "
-            "with derived replacements and seven retired after public-target narrowing; "
+            "Policy Optimization, Stable Capability Fields, and Evidence States modules; "
+            "one same-model normalized duplicate pair; twenty-three premise-restating "
+            "projections, seven with derived replacements and sixteen retired after "
+            "public-target narrowing; "
             "the current overlay; frozen historical registry; and reconciled target, "
             "roadmap, and status surfaces."
         ),
@@ -67,9 +68,9 @@ def main() -> None:
         "output_contract": (
             "Require immutable baseline and theorem-block digests, exact same-model "
             "statement identity for the duplicate, dependency-and-consumer-safe removals, "
-            "two counterexample, two decision-model, and two scope-narrowing target "
-            "migrations, retained target ownership, a 1,355-theorem current estate, an "
-            "exact 146-action remaining "
+            "two counterexample, two decision-model, and seven scope-narrowing target "
+            "migrations, retained or honestly replanned target ownership, a 1,346-theorem "
+            "current estate, an exact 137-action remaining "
             "queue, and no support or release effect."
         ),
         "output_assertions": [
@@ -77,21 +78,23 @@ def main() -> None:
             "retired and retained declarations share one authored model",
             "normalized theorem statements exact",
             "retired theorem has no theorem consumer",
-            "fifteen retired declarations absent, seven replacements live, and seven scope-reduction replacements explicitly null",
+            "twenty-four retired declarations absent, seven replacements live, and sixteen scope-reduction replacements explicitly null",
             "two bibliography targets migrated to derived counterexample gates",
             "two benchmark targets migrated to derived decision-model gates",
             "two Stable Capability Fields targets narrowed to retained derived routes",
-            "1,355 current theorem declarations",
-            "146 rewrite-or-retire actions remain",
+            "five Evidence States targets narrowed to planned reachable or independently implemented models",
+            "1,346 current theorem declarations",
+            "137 rewrite-or-retire actions remain",
             "frozen 1,151-theorem and 298-target registry preserved",
             "14 mutations reject",
             "no support or release effect",
         ],
         "claim_scope": (
-            "Fifteen dependency-safe declaration retirements: one exact same-model "
-            "duplicate and fourteen premise-restating projections. Six public targets "
-            "migrate to counterexample, decision-model, or narrower retained-route "
-            "wording; seven scope-reduction actions explicitly carry no replacement."
+            "Twenty-four dependency-safe declaration retirements: one exact same-model "
+            "duplicate and twenty-three premise-restating projections. Eleven public "
+            "targets migrate to counterexample, decision-model, narrower retained-route, "
+            "or honestly planned stronger-model wording; sixteen scope-reduction actions "
+            "explicitly carry no replacement."
         ),
         "negative_controls": (
             "validator_owned_fourteen_baseline_digest_sequence_identity_statement_dependency_"
@@ -117,7 +120,7 @@ def main() -> None:
             "deployment, transfer, safety, SOTA, AGI, ASI, or claim support."
         ),
         "contract_precision": "exact_immutable_cumulative_dependency_safe_retirement_ledger",
-        "semantic_review_state": "checked_fifteen_c6_retirements_and_six_target_migrations",
+        "semantic_review_state": "checked_twenty_four_c6_retirements_and_eleven_target_migrations",
     })
     required = registry["required_artifacts"]
     for artifact in ARTIFACTS + [REGISTER]:

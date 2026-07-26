@@ -1006,7 +1006,7 @@ that remains safe only by never completing useful work fails the joint gate.
 
 Keep the existing syntax-level classifier, but add a semantic-depth overlay for
 every current declaration. The immutable pre-rationalization baseline contains
-1,370 declarations; the live estate contains 1,367 after three
+1,370 declarations; the live estate contains 1,346 after twenty-four
 dependency-safe retirement transactions:
 
 | Level | Required meaning |
@@ -1148,11 +1148,11 @@ historical review. The immutable historical registry remains exactly 1,151
 theorems across 298 targets. The separately frozen pre-rationalization overlay
 at commit `d0f9bda14f1253999f2c40d556d925d31e4b36a4` classifies all 1,370
 baseline declarations. The current overlay in
-`proofs/proof_semantic_depth_overlay.json` classifies all 1,355 live theorem
+`proofs/proof_semantic_depth_overlay.json` classifies all 1,346 live theorem
 declarations across 104 theorem-bearing modules and maps them to 61 active
 semantic-owner chapters.
 
-The live semantic-depth distribution is 47 P0 record-shape results, 780 P1
+The live semantic-depth distribution is 47 P0 record-shape results, 771 P1
 finite-route results, 25 P2 reachability/nonvacuity results, 319 P3
 implementation-refinement results, 99 P4 cross-component-safety results, 85 P5
 liveness/recovery results, and zero P6 empirically bound results. P6 being zero
@@ -1162,8 +1162,8 @@ artifact does not turn a theorem into empirical evidence.
 Every overlay row records its assumptions, active semantic owner, downstream
 consumer, witness or explicit witness absence, implementation binding, mutation
 evidence, maximum inference, and disposition. The resulting current estate is
-1,209 retain, 49 retire as narrow projection, two scope-language rewrites, and
-95 stronger-model rewrites. All 1,355 rows have mutation coverage and every
+1,209 retain, 40 retire as narrow projection, two scope-language rewrites, and
+95 stronger-model rewrites. All 1,346 rows have mutation coverage and every
 retained theorem has a named consumer.
 
 The cumulative dependency-safe retirement ledger is
@@ -1231,9 +1231,24 @@ five downstream consequences consume it. This transaction adds no formal
 claim, changes no chapter-core support state, and narrows public meaning to
 what the remaining model actually derives.
 
+The fifth narrow-projection tranche retires nine declarations from
+`EvidenceStates.lean`: three direct support/terminal/downgrade premise
+projections, three audit-summary conjunction restatements, and three
+claim-state summary-field projections. Four executable audits and their
+historical result artifacts remain current at their recorded scope; their
+validators no longer require a Lean declaration that merely unpacks an
+assumed-valid summary. Five affected public targets are now honestly
+`planned`: evidence admission must derive state-specific requirements from
+reachable inputs, and the four audit bridges must derive accepted and rejected
+outcomes from exact inputs or independently implemented audit logic. The
+retained missing-evidence counterexample and transition-lifecycle route remain
+implemented. No retired projection is replaced by an unrelated theorem, and
+no executable audit result, chapter-core support state, or historical artifact
+is erased.
+
 This receipt completes the C6 **classification** gate and begins its
-dependency-safe execution gate. Exactly 15 of the original 161 actions have
-been executed; 146 rewrite-or-retire actions remain: 49 narrow-projection
+dependency-safe execution gate. Exactly 24 of the original 161 actions have
+been executed; 137 rewrite-or-retire actions remain: 40 narrow-projection
 retirements, two scope-language rewrites, and 95 stronger-model rewrites. The
 next proof action is a dependency-safe narrow-projection tranche, preserving
 each correct bounded result until its consumers and maximum inference are

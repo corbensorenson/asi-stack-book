@@ -26,7 +26,7 @@ ARTIFACTS = [
     "book_structure.json", "chapters", "sources/source_inventory.json",
     "appendices/C_claim_evidence_matrix.qmd", "appendices/H_external_sources.qmd",
     "appendices/F_changelog.qmd", "evidence_quality/core_claim_vectors.json",
-    "proofs/proof_manifest.json",
+    "proofs/proof_manifest.json", "proofs/proof_semantic_rationalization_ledger.json",
 ]
 
 
@@ -38,13 +38,13 @@ def main() -> None:
             "id": f"validate_post_v2_1_empirical_reconciliation:{order}", "order": order,
             "execution_tier": "deep", "validation_class": "proof_or_evidence_gate",
             "script": SCRIPT, "args": [],
-            "input_contract": "Exact outcome ledger, six accepted component transitions, fourteen core decisions/chapter owners, source manifest/inventory/notes, Appendix C/H, quality vectors, eleven residuals, evidence plan, proof manifest, roadmap status, reconciliation report, and changelog.",
+            "input_contract": "Exact outcome ledger, six accepted component transitions, fourteen core decisions/chapter owners, source manifest/inventory/notes, Appendix C/H, quality vectors, eleven residuals, evidence plan, proof manifest, executed semantic-rationalization target migrations, roadmap status, reconciliation report, and changelog.",
             "input_artifacts": ARTIFACTS,
-            "output_contract": "Reject missing or positive dispositions, new chapter/proof invention, chapter/result drift, vector promotion or false independence/transfer, residual laundering, source-route erasure, generated appendix drift, or reconciliation/changelog omission.",
-            "output_assertions": ["six bounded transitions", "fourteen core no-change decisions and chapter owners", "eleven exact residual dispositions", "nineteen current external-source routes", "54 argument-state vectors", "no new chapter or Lean target", "M4 reconciliation surfaces agree"],
+            "output_contract": "Reject missing or positive dispositions, new chapter/proof invention, unauthorized implemented-to-planned migration, chapter/result drift, vector promotion or false independence/transfer, residual laundering, source-route erasure, generated appendix drift, or reconciliation/changelog omission.",
+            "output_assertions": ["six bounded transitions", "fourteen core no-change decisions and chapter owners", "eleven exact residual dispositions", "nineteen current external-source routes", "84 argument-state vectors", "no theorem invented by the historical cycle", "only ledger-authorized post-cycle target migrations", "M4 reconciliation surfaces agree"],
             "claim_scope": "Repository-wide reconciliation of the completed post-v2.1 finite local results without chapter-core support movement.",
             "negative_controls": "validator_owned",
-            "negative_control_cases": ["core promotion", "decision erasure", "transition promotion", "chapter addition", "chapter-result erasure", "vector promotion", "false independence", "residual laundering", "source-target erasure", "Appendix H erasure", "proof invention", "changelog erasure"],
+            "negative_control_cases": ["core promotion", "decision erasure", "transition promotion", "chapter addition", "chapter-result erasure", "vector promotion", "false independence", "residual laundering", "source-target erasure", "Appendix H erasure", "proof invention", "unadmitted planned proof", "changelog erasure"],
             "prohibited_inference": "Reconciliation does not establish population validity, external independence, production transfer, generated-answer utility, influence/privacy/storage erasure, external-system rollback, optional-format approval, or chapter-core promotion.",
             "contract_precision": "exact_high_impact", "semantic_review_state": "internal_contract_audit_not_independent",
         })

@@ -3,13 +3,13 @@
   "scanner": "modal and outcome-bearing sentence cue scan; candidates require semantic adjudication",
   "summary": {
     "chapter_count": 64,
-    "candidate_count": 3443,
+    "candidate_count": 3444,
     "review_state_counts": {
       "duplicate_of_atom": 1525,
       "editorial_or_question": 71,
       "historical_or_source_report": 290,
       "material_atom": 3,
-      "nonmaterial_explanation": 1554
+      "nonmaterial_explanation": 1555
     }
   },
   "candidates": [
@@ -5348,12 +5348,31 @@
       "target_atom_id": null
     },
     {
-      "candidate_id": "evidence-states-and-claim-discipline.prose.62f5c7e756b0",
+      "candidate_id": "evidence-states-and-claim-discipline.prose.652f4107ebee",
       "chapter_id": "evidence-states-and-claim-discipline",
       "source": "chapters/evidence-states-and-claim-discipline.qmd:384",
-      "sentence": "The module models `deprecated` and `refuted` as terminal support states, proves narrow terminal/downgrade guard theorems over finite records, includes a finite transition-lifecycle route envelope, and now carries fixture bridges for the evidence-bundle completeness probe, claim-ledger completeness audit, accepted-transition review audit, and claim-state transition bridge.",
+      "sentence": "The executable audits and their historical result artifacts remain valid at their original scope, but the four stronger bridges and the state-specific evidence-admission target are now honestly `planned`: they must derive outcomes from reachable input cases or independently implemented audit logic.",
       "cues": [
-        "proves"
+        "must"
+      ],
+      "review_state": "nonmaterial_explanation",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Current formalization-status explanation: executable audits remain valid while five stronger derivation targets are planned after C6 projection retirement.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "evidence-states-and-claim-discipline.prose.4dff99019c2b",
+      "chapter_id": "evidence-states-and-claim-discipline",
+      "source": "chapters/evidence-states-and-claim-discipline.qmd:384",
+      "sentence": "These hooks do not prove source truth, reviewer quality, artifact correctness, or the correctness of any live promotion, demotion, deprecation, or refutation decision.",
+      "cues": [
+        "prove"
       ],
       "review_state": "duplicate_of_atom",
       "allowed_dispositions": [
@@ -5363,8 +5382,8 @@
         "editorial_or_question",
         "historical_or_source_report"
       ],
-      "disposition_rationale": "Summary of the finite formal and synthetic bridge surfaces.",
-      "target_atom_id": "evidence-states-and-claim-discipline.formal.evidence-support-state-transition-lifecycle-route"
+      "disposition_rationale": "Explicit finite-formalization non-claim owned by the finite-record inference ceiling.",
+      "target_atom_id": "evidence-states-and-claim-discipline.invariant.008"
     },
     {
       "candidate_id": "evidence-states-and-claim-discipline.prose.aba4b9d1e039",

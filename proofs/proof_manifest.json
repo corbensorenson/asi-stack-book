@@ -3,8 +3,8 @@
   "note": "Generated from Lean proof target tables in docs/book_outline.md. Edit the outline, not this file.",
   "proof_target_count": 333,
   "status_counts": {
-    "implemented": 310,
-    "planned": 23
+    "implemented": 305,
+    "planned": 28
   },
   "chapter_counts": {
     "adversarial-evaluation-sandbagging-and-training-time-deception": 8,
@@ -268,8 +268,8 @@
       "chapter_title": "Evidence States and Claim Discipline",
       "tag": "lean:evidence.support_state.operational_invariant",
       "module": "AsiStackProofs.EvidenceStates",
-      "formal_target": "Support-state transitions require the corresponding evidence artifact.",
-      "status": "implemented",
+      "formal_target": "A reachable evidence-admission model derives state-specific artifact requirements from the requested support state and inspected evidence bundle rather than assuming the RequiredEvidence predicate.",
+      "status": "planned",
       "outline_line": 838,
       "module_path": "lean/AsiStackProofs/EvidenceStates.lean"
     },
@@ -298,8 +298,8 @@
       "chapter_title": "Evidence States and Claim Discipline",
       "tag": "lean:evidence.bundle.completeness_probe_bridge",
       "module": "AsiStackProofs.EvidenceStates",
-      "formal_target": "A synthetic evidence-bundle completeness probe records a no-change bundle, a blocked-promotion bundle, rejected negative controls, changelog consistency, no support-state effect, and non-claim boundaries.",
-      "status": "implemented",
+      "formal_target": "An independently implemented formal bridge derives the evidence-bundle probe's accepted and rejected outcomes from exact bundle inputs and audit logic rather than assuming a valid summary predicate.",
+      "status": "planned",
       "outline_line": 841,
       "module_path": "lean/AsiStackProofs/EvidenceStates.lean"
     },
@@ -308,8 +308,8 @@
       "chapter_title": "Evidence States and Claim Discipline",
       "tag": "lean:evidence.claim_ledger.completeness_audit_bridge",
       "module": "AsiStackProofs.EvidenceStates",
-      "formal_target": "A claim-ledger completeness audit records manifest claim coverage, unique Appendix C rows, label/support matching, open gaps, promotion paths, rejected mutation controls, no support-state effect, and non-claim boundaries.",
-      "status": "implemented",
+      "formal_target": "An independently implemented formal bridge derives claim-ledger completeness and rejection outcomes from exact manifest and Appendix C inputs rather than assuming a valid summary predicate.",
+      "status": "planned",
       "outline_line": 842,
       "module_path": "lean/AsiStackProofs/EvidenceStates.lean"
     },
@@ -318,8 +318,8 @@
       "chapter_title": "Evidence States and Claim Discipline",
       "tag": "lean:evidence.accepted_transition.review_audit_bridge",
       "module": "AsiStackProofs.EvidenceStates",
-      "formal_target": "An accepted-transition review audit records accepted transition presence, bounded non-core upward transitions, no chapter-core promotion, no-promotion decisions, changelog refs, rejected mutation controls, bounded support-state effects, and non-claim boundaries.",
-      "status": "implemented",
+      "formal_target": "An independently implemented formal bridge derives accepted-transition audit outcomes from exact transition, no-promotion, changelog, and evidence inputs rather than assuming a valid summary predicate.",
+      "status": "planned",
       "outline_line": 843,
       "module_path": "lean/AsiStackProofs/EvidenceStates.lean"
     },
@@ -328,8 +328,8 @@
       "chapter_title": "Evidence States and Claim Discipline",
       "tag": "lean:evidence.claim_state.transition_bridge",
       "module": "AsiStackProofs.EvidenceStates",
-      "formal_target": "A synthetic claim-state transition bridge records claim narrowing, support downgrade, terminal refutation, negative-evidence requirements, rejected mutation controls, bounded support-state effects, no live claim movement, and non-claim boundaries.",
-      "status": "implemented",
+      "formal_target": "A reachable claim-state lifecycle model derives negative-evidence, no-live-movement, and non-claim conclusions from narrowing, downgrade, and refutation cases rather than projecting fields from a hand-authored summary predicate.",
+      "status": "planned",
       "outline_line": 844,
       "module_path": "lean/AsiStackProofs/EvidenceStates.lean"
     },

@@ -1856,25 +1856,25 @@
               "name": "Evidence bundle completeness and changelog-consistency probe",
               "purpose": "Check two valid synthetic evidence bundles and seven expected-invalid controls for no-change records, blocked promotion, artifact/result refs, commands, changelog refs, limitations, non-claims, stale changelogs, fixture overclaims, and no support-state transition.",
               "implementation_status": "implemented",
-              "result_status": "validated locally at experiments/evidence_bundle_completeness/results/2026-07-02-local.json; synthetic-record and finite-Lean bridge only; no evidence-truth, artifact-correctness, source-interpretation, release-governance, or support-state-promotion claim"
+              "result_status": "validated locally at experiments/evidence_bundle_completeness/results/2026-07-02-local.json; executable audit remains current, while its premise-restating Lean summary projection is retired under C6 and the stronger formal bridge is planned; no evidence-truth, artifact-correctness, source-interpretation, release-governance, or support-state-promotion claim"
             },
             {
               "name": "Claim ledger completeness audit",
               "purpose": "Check the real Appendix C ledger against 44 manifest chapter core claims, expected labels, support states, assigned sources, open gaps, promotion paths, duplicate/stale rows, and seven expected-invalid mutation controls.",
               "implementation_status": "implemented",
-              "result_status": "validated locally at experiments/claim_ledger_completeness/results/2026-07-02-local.json; Appendix C completeness only; no claim-truth, source-interpretation, promotion-readiness, external-review-quality, or support-state-promotion claim"
+              "result_status": "validated locally at experiments/claim_ledger_completeness/results/2026-07-02-local.json; executable Appendix C audit remains current, while its premise-restating Lean summary projection is retired under C6 and the stronger formal bridge is planned; no claim-truth, source-interpretation, promotion-readiness, external-review-quality, or support-state-promotion claim"
             },
             {
               "name": "Accepted live transition review audit",
               "purpose": "Check the real accepted transition records and no-promotion ledger for review status, changelog refs, evidence packets, verification commands, limitations, reviewer-independence disclosure, non-claims, bounded non-core upward transitions, no chapter-core upward transition, and seven expected-invalid mutation controls.",
               "implementation_status": "implemented",
-              "result_status": "validated locally at experiments/accepted_transition_review/results/2026-07-02-local.json; audit of existing records only; no evidence-truth, reviewer-independence, source-interpretation, external-review-quality, new-transition-approval, or chapter-core-promotion claim"
+              "result_status": "validated locally at experiments/accepted_transition_review/results/2026-07-02-local.json; executable audit of existing records remains current, while its premise-restating Lean summary projection is retired under C6 and the stronger formal bridge is planned; no evidence-truth, reviewer-independence, source-interpretation, external-review-quality, new-transition-approval, or chapter-core-promotion claim"
             },
             {
               "name": "Claim-state transition bridge",
               "purpose": "Check synthetic claim narrowing, support downgrade, terminal refutation, negative-evidence requirements, rejected mutation controls, bounded support-state effects, no live claim movement, and non-claim boundaries.",
               "implementation_status": "implemented",
-              "result_status": "validated locally by `python3 scripts/validate_claim_state_transition_bridge.py` at experiments/claim_state_transition_bridge/results/2026-07-04-local.json; synthetic-record and finite-Lean bridge only; no live claim demotion, deprecation, refutation, reviewer-correctness, source-interpretation, deployed belief-revision, or support-state-promotion claim"
+              "result_status": "validated locally by `python3 scripts/validate_claim_state_transition_bridge.py` at experiments/claim_state_transition_bridge/results/2026-07-04-local.json; executable synthetic audit remains current, while three predicate-field Lean projections are retired under C6 and a reachable lifecycle derivation is planned; no live claim demotion, deprecation, refutation, reviewer-correctness, source-interpretation, deployed belief-revision, or support-state-promotion claim"
             },
             {
               "name": "Historical-project evidence-cell harness",
@@ -1888,8 +1888,8 @@
             {
               "tag": "lean:evidence.support_state.operational_invariant",
               "module": "AsiStackProofs.EvidenceStates",
-              "target": "Support-state transitions require the corresponding evidence artifact.",
-              "status": "implemented"
+              "target": "A reachable evidence-admission model derives state-specific artifact requirements from the requested support state and inspected evidence bundle rather than assuming the RequiredEvidence predicate.",
+              "status": "planned"
             },
             {
               "tag": "lean:evidence.support_state.failure_blocks_promotion",
@@ -1906,26 +1906,26 @@
             {
               "tag": "lean:evidence.bundle.completeness_probe_bridge",
               "module": "AsiStackProofs.EvidenceStates",
-              "target": "A synthetic evidence-bundle completeness probe records a no-change bundle, a blocked-promotion bundle, rejected negative controls, changelog consistency, no support-state effect, and non-claim boundaries.",
-              "status": "implemented"
+              "target": "An independently implemented formal bridge derives the evidence-bundle probe's accepted and rejected outcomes from exact bundle inputs and audit logic rather than assuming a valid summary predicate.",
+              "status": "planned"
             },
             {
               "tag": "lean:evidence.claim_ledger.completeness_audit_bridge",
               "module": "AsiStackProofs.EvidenceStates",
-              "target": "A claim-ledger completeness audit records manifest claim coverage, unique Appendix C rows, label/support matching, open gaps, promotion paths, rejected mutation controls, no support-state effect, and non-claim boundaries.",
-              "status": "implemented"
+              "target": "An independently implemented formal bridge derives claim-ledger completeness and rejection outcomes from exact manifest and Appendix C inputs rather than assuming a valid summary predicate.",
+              "status": "planned"
             },
             {
               "tag": "lean:evidence.accepted_transition.review_audit_bridge",
               "module": "AsiStackProofs.EvidenceStates",
-              "target": "An accepted-transition review audit records accepted transition presence, bounded non-core upward transitions, no chapter-core promotion, no-promotion decisions, changelog refs, rejected mutation controls, bounded support-state effects, and non-claim boundaries.",
-              "status": "implemented"
+              "target": "An independently implemented formal bridge derives accepted-transition audit outcomes from exact transition, no-promotion, changelog, and evidence inputs rather than assuming a valid summary predicate.",
+              "status": "planned"
             },
             {
               "tag": "lean:evidence.claim_state.transition_bridge",
               "module": "AsiStackProofs.EvidenceStates",
-              "target": "A synthetic claim-state transition bridge records claim narrowing, support downgrade, terminal refutation, negative-evidence requirements, rejected mutation controls, bounded support-state effects, no live claim movement, and non-claim boundaries.",
-              "status": "implemented"
+              "target": "A reachable claim-state lifecycle model derives negative-evidence, no-live-movement, and non-claim conclusions from narrowing, downgrade, and refutation cases rather than projecting fields from a hand-authored summary predicate.",
+              "status": "planned"
             }
           ]
         },

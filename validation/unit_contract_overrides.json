@@ -1917,7 +1917,7 @@
     {
       "script": "validate_post_v2_1_empirical_reconciliation.py",
       "args": [],
-      "input_contract": "Exact outcome ledger, six accepted component transitions, fourteen core decisions/chapter owners, source manifest/inventory/notes, Appendix C/H, quality vectors, eleven residuals, evidence plan, proof manifest, roadmap status, reconciliation report, and changelog.",
+      "input_contract": "Exact outcome ledger, six accepted component transitions, fourteen core decisions/chapter owners, source manifest/inventory/notes, Appendix C/H, quality vectors, eleven residuals, evidence plan, proof manifest, executed semantic-rationalization target migrations, roadmap status, reconciliation report, and changelog.",
       "input_artifacts": [
         "scripts/validate_post_v2_1_empirical_reconciliation.py",
         "scripts/integrate_post_v2_1_manifest_sources.py",
@@ -1937,16 +1937,18 @@
         "appendices/H_external_sources.qmd",
         "appendices/F_changelog.qmd",
         "evidence_quality/core_claim_vectors.json",
-        "proofs/proof_manifest.json"
+        "proofs/proof_manifest.json",
+        "proofs/proof_semantic_rationalization_ledger.json"
       ],
-      "output_contract": "Reject missing or positive dispositions, new chapter/proof invention, chapter/result drift, vector promotion or false independence/transfer, residual laundering, source-route erasure, generated appendix drift, or reconciliation/changelog omission.",
+      "output_contract": "Reject missing or positive dispositions, new chapter/proof invention, unauthorized implemented-to-planned migration, chapter/result drift, vector promotion or false independence/transfer, residual laundering, source-route erasure, generated appendix drift, or reconciliation/changelog omission.",
       "output_assertions": [
         "six bounded transitions",
         "fourteen core no-change decisions and chapter owners",
         "eleven exact residual dispositions",
         "nineteen current external-source routes",
-        "54 argument-state vectors",
-        "no new chapter or Lean target",
+        "84 argument-state vectors",
+        "no theorem invented by the historical cycle",
+        "only ledger-authorized post-cycle target migrations",
         "M4 reconciliation surfaces agree"
       ],
       "claim_scope": "Repository-wide reconciliation of the completed post-v2.1 finite local results without chapter-core support movement.",
@@ -1963,6 +1965,7 @@
         "source-target erasure",
         "Appendix H erasure",
         "proof invention",
+        "unadmitted planned proof",
         "changelog erasure"
       ],
       "prohibited_inference": "Reconciliation does not establish population validity, external independence, production transfer, generated-answer utility, influence/privacy/storage erasure, external-system rollback, optional-format approval, or chapter-core promotion.",
@@ -2394,7 +2397,7 @@
     {
       "script": "validate_qcsa_book_reconciliation.py",
       "args": [],
-      "input_contract": "The exact QCSA implementation/evaluation/vertical outcomes, ten non-core dispositions, nine core no-change decisions, nine existing chapter owners, source-versus-repository boundary, Appendix C overlay, evidence-plan overlay, non-aggregating quality vectors, eight residuals, changelog transaction, and 54-chapter manifest.",
+      "input_contract": "The exact QCSA implementation/evaluation/vertical outcomes, ten non-core dispositions, nine core no-change decisions, nine existing chapter owners, source-versus-repository boundary, Appendix C overlay, evidence-plan overlay, non-aggregating quality vectors, eight residuals, changelog transaction, preserved 54-chapter/298-target historical baseline, current manifest/proof truth, and executed semantic-rationalization target migrations.",
       "input_artifacts": [
         "scripts/validate_qcsa_book_reconciliation.py",
         "scripts/register_qcsa_book_reconciliation_validator.py",
@@ -2408,6 +2411,11 @@
         "claim_decisions/qcsa_reference_evaluation_dispositions.json",
         "experiments/qcsa_reference/results/evaluation_results.json",
         "experiments/qcsa_vertical_reference/results/vertical_result.json",
+        "book_structure.json",
+        "roadmap_records/post_v2_3_claim_proof_and_sota_challenge_status.json",
+        "roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json",
+        "proofs/proof_manifest.json",
+        "proofs/proof_semantic_rationalization_ledger.json",
         "chapters/cognitive-compilation-and-semantic-ir.qmd",
         "chapters/virtual-context-abi.qmd",
         "chapters/claim-ledgers-and-belief-revision.qmd",
@@ -2418,7 +2426,7 @@
         "chapters/data-engines-continual-learning-and-unlearning.qmd",
         "chapters/integrated-reference-architecture.qmd"
       ],
-      "output_contract": "Validate that all nine existing owners expose the bounded mixed result and argument-state boundary; exact matched/resource/active-question negatives remain visible; five promote recommendations remain review inputs rather than automatic transitions; all vectors preserve internal validity and unestablished transfer; eight residuals remain; no QCSA chapter or core promotion exists; reject fifteen cross-surface mutations.",
+      "output_contract": "Validate that all nine existing owners expose the bounded mixed result and argument-state boundary; exact matched/resource/active-question negatives remain visible; five promote recommendations remain review inputs rather than automatic transitions; all vectors preserve internal validity and unestablished transfer; eight residuals remain; current proof status permits only later manifest admissions or explicitly ledger-authorized semantic-rationalization migrations; no QCSA chapter or core promotion exists; reject eighteen cross-surface mutations.",
       "output_assertions": [
         "nine existing chapter owners",
         "five bounded review candidates",
@@ -2426,10 +2434,11 @@
         "two exact refutations",
         "one no-change transfer boundary",
         "eight explicit residuals",
-        "54 core claims at argument",
+        "84 core claims at argument",
+        "only authorized proof-target migrations",
         "no automatic transition",
         "no new chapter",
-        "fifteen rejecting mutations"
+        "eighteen rejecting mutations"
       ],
       "claim_scope": "Cross-book consistency of the bounded internally authored QCSA implementation, synthetic evaluation, and one local governed vertical replay.",
       "negative_controls": "validator_owned_and_surface_bound",
@@ -2448,7 +2457,10 @@
         "evidence-plan owner erasure",
         "residual erasure",
         "transfer promotion",
-        "new QCSA chapter"
+        "new QCSA chapter",
+        "proof target invention",
+        "planned proof escapes admitted chapter",
+        "claim-vector addition"
       ],
       "prohibited_inference": "The reconciliation does not establish natural-task quality, learned routing, external independence, production transfer, safety, privacy, security, universal grounding, AGI, ASI, a chapter-core promotion, or a reason to add a QCSA chapter.",
       "contract_precision": "exact_high_impact",

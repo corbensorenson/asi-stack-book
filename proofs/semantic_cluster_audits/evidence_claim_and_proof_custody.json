@@ -12,7 +12,7 @@
       "path": "lean/AsiStackProofs/EvidenceStates.lean",
       "disposition": "reclassify",
       "public_target_count": 7,
-      "theorem_declaration_count": 31,
+      "theorem_declaration_count": 22,
       "plain_language_proposition": "A versioned evidence-state request can reach an accepted bounded transition only when its claim identity, scope, declared effect, review, state-specific evidence, negative-evidence and downgrade or terminal conditions, changelog, and non-claim boundary follow the modeled route; otherwise the route names the missing obligation.",
       "modeled_state": "Nine support states, five transition effects, a transition-review record, state-specific evidence availability, terminal and downgrade semantics, and finite bridge summaries for current repository audits.",
       "assumptions": [
@@ -32,7 +32,7 @@
         "scripts/validate_claim_state_transition_bridge.py"
       ],
       "mutation_evidence": "Four independent deterministic consumers reject 7, 7, 7, and 6 declared invalid controls respectively; the cluster validator also mutates module identity, proposition, countermodels, consumers, and inference ceilings.",
-      "maximum_inference": "Adequate only as finite evidence-transition policy, route, and repository-audit bridge semantics. It does not establish evidence truth, reviewer competence or independence, source interpretation, artifact validity, open-world soundness, runtime enforcement, or support movement. The direct conjunction projection is reclassified as lineage rather than semantic evidence."
+      "maximum_inference": "Adequate only as finite evidence-transition policy and route semantics. Nine direct premise or summary-field projections are retired under C6; the executable repository audits remain validator evidence, while five stronger formal targets are planned until they derive outcomes from reachable inputs or independently implemented audit logic. The module does not establish evidence truth, reviewer competence or independence, source interpretation, artifact validity, open-world soundness, runtime enforcement, or support movement."
     },
     {
       "module": "AsiStackProofs.ClaimLedgerRefinement",

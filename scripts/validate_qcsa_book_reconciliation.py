@@ -39,6 +39,7 @@ REPORT = ROOT / "docs/qcsa_implementation_evidence_reconciliation.md"
 ACTIVE_STATUS = ROOT / "roadmap_records/post_v2_3_claim_proof_and_sota_challenge_status.json"
 MAINTENANCE_STATUS = ROOT / "roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json"
 PROOF_MANIFEST = ROOT / "proofs/proof_manifest.json"
+PROOF_RATIONALIZATION = ROOT / "proofs/proof_semantic_rationalization_ledger.json"
 HISTORICAL_55TH_CHAPTER = "replaceable-cognitive-substrates-beyond-transformer-monoculture"
 ACTIVE_MAINTENANCE_ROADMAP = "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md"
 
@@ -68,6 +69,7 @@ def snapshot() -> dict[str, Any]:
         "historical_status": load(ACTIVE_STATUS),
         "maintenance_status": load(MAINTENANCE_STATUS),
         "proof_manifest": load(PROOF_MANIFEST),
+        "proof_rationalization": load(PROOF_RATIONALIZATION),
     }
 
 
@@ -237,11 +239,28 @@ def semantic_errors(data: dict[str, Any]) -> list[str]:
         else -1
     )
     planned_records = [row for row in proof_records if row.get("status") == "planned"]
+    rationalization_migration_tags = {
+        migration.get("target_ref", "").removeprefix("proof-target:")
+        for action in data["proof_rationalization"].get("actions", [])
+        if action.get("state") == "executed"
+        for migration in action.get("target_migrations", [])
+    }
     later_admitted_records = [
         row for row in proof_records if row.get("chapter_id") in admitted_chapter_ids
     ]
     later_implemented_records = [
         row for row in later_admitted_records if row.get("status") == "implemented"
+    ]
+    later_planned_records = [
+        row for row in later_admitted_records if row.get("status") == "planned"
+    ]
+    historical_planned_records = [
+        row for row in planned_records if row.get("chapter_id") not in admitted_chapter_ids
+    ]
+    authorized_rationalization_migrations = [
+        row
+        for row in historical_planned_records
+        if row.get("tag") in rationalization_migration_tags
     ]
     if (
         current_proof_count != activation_truth.get("proof_target_count")
@@ -250,10 +269,12 @@ def semantic_errors(data: dict[str, Any]) -> list[str]:
         or len(later_admitted_records) != added_proof_count
         or {row.get("chapter_id") for row in later_admitted_records} != admitted_chapter_ids
         or proof_status_counts.get("implemented", 0)
-        != historical_proof_count + len(later_implemented_records)
+        != historical_proof_count
+        + len(later_implemented_records)
+        - len(authorized_rationalization_migrations)
         or proof_status_counts.get("planned", 0) != len(planned_records)
-        or len(planned_records) + len(later_implemented_records) != added_proof_count
-        or not {row.get("chapter_id") for row in planned_records}.issubset(admitted_chapter_ids)
+        or len(later_planned_records) + len(later_implemented_records) != added_proof_count
+        or len(historical_planned_records) != len(authorized_rationalization_migrations)
     ):
         errors.append("current proof additions escaped historical baseline or admitted chapters")
     if any(
@@ -332,7 +353,19 @@ def main() -> None:
         for part in data["structure"].get("parts", [])
     )
     proof_manifest = data["proof_manifest"]
-    print(f"QCSA book reconciliation passed: 9 existing chapter owners, 5 bounded review candidates, 2 narrowed claims, 2 exact refutations, 1 no-change transfer boundary, 8 explicit residuals, preserved 54-chapter/298-target historical baseline and authorized 55th-chapter expansion, {live_chapter_count} live core claims still at argument, {proof_manifest.get('proof_target_count')} current proof targets constrained to {proof_manifest.get('status_counts', {}).get('implemented', 0)} implemented plus {proof_manifest.get('status_counts', {}).get('planned', 0)} planned on later admitted chapters, no standalone QCSA chapter, and 18 rejecting mutations.")
+    rationalization_migration_tags = {
+        migration.get("target_ref", "").removeprefix("proof-target:")
+        for action in data["proof_rationalization"].get("actions", [])
+        if action.get("state") == "executed"
+        for migration in action.get("target_migrations", [])
+    }
+    rationalization_planned = sum(
+        1
+        for row in proof_manifest.get("records", [])
+        if row.get("status") == "planned"
+        and row.get("tag") in rationalization_migration_tags
+    )
+    print(f"QCSA book reconciliation passed: 9 existing chapter owners, 5 bounded review candidates, 2 narrowed claims, 2 exact refutations, 1 no-change transfer boundary, 8 explicit residuals, preserved 54-chapter/298-target historical baseline and authorized 55th-chapter expansion, {live_chapter_count} live core claims still at argument, {proof_manifest.get('proof_target_count')} current proof targets constrained to {proof_manifest.get('status_counts', {}).get('implemented', 0)} implemented plus {proof_manifest.get('status_counts', {}).get('planned', 0)} planned, including {rationalization_planned} explicitly authorized post-cycle semantic-rationalization migrations, no standalone QCSA chapter, and 18 rejecting mutations.")
 
 
 if __name__ == "__main__":

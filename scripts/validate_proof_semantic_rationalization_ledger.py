@@ -47,10 +47,19 @@ EXPECTED_ACTION_IDS = [
     "C6-R13-scf-qualified-readiness-projection",
     "C6-R14-scf-deprecation-notice-projection",
     "C6-R15-scf-retirement-receipt-projection",
+    "C6-R16-evidence-support-requirement-projection",
+    "C6-R17-evidence-terminal-negative-projection",
+    "C6-R18-evidence-downgrade-negative-trigger-projection",
+    "C6-R19-evidence-bundle-summary-projection",
+    "C6-R20-claim-ledger-summary-projection",
+    "C6-R21-accepted-transition-summary-projection",
+    "C6-R22-claim-state-negative-evidence-projection",
+    "C6-R23-claim-state-no-live-movement-projection",
+    "C6-R24-claim-state-nonclaim-projection",
 ]
 EXPECTED_LEVELS = {
     "P0": 47,
-    "P1": 780,
+    "P1": 771,
     "P2": 25,
     "P3": 319,
     "P4": 99,
@@ -59,7 +68,7 @@ EXPECTED_LEVELS = {
 }
 EXPECTED_DISPOSITIONS = {
     "retain": 1209,
-    "retire_narrow_projection": 49,
+    "retire_narrow_projection": 40,
     "rewrite_scope_language": 2,
     "rewrite_with_stronger_model": 95,
 }
@@ -92,6 +101,39 @@ EXPECTED_TARGETS = {
         "restart and default promotion without qualification evidence, preserved "
         "regressions, authority within ceiling, rollback readiness, or incident closure."
     ),
+    "lean:evidence.support_state.operational_invariant": (
+        "A reachable evidence-admission model derives state-specific artifact "
+        "requirements from the requested support state and inspected evidence bundle "
+        "rather than assuming the RequiredEvidence predicate."
+    ),
+    "lean:evidence.bundle.completeness_probe_bridge": (
+        "An independently implemented formal bridge derives the evidence-bundle "
+        "probe's accepted and rejected outcomes from exact bundle inputs and audit "
+        "logic rather than assuming a valid summary predicate."
+    ),
+    "lean:evidence.claim_ledger.completeness_audit_bridge": (
+        "An independently implemented formal bridge derives claim-ledger completeness "
+        "and rejection outcomes from exact manifest and Appendix C inputs rather than "
+        "assuming a valid summary predicate."
+    ),
+    "lean:evidence.accepted_transition.review_audit_bridge": (
+        "An independently implemented formal bridge derives accepted-transition audit "
+        "outcomes from exact transition, no-promotion, changelog, and evidence inputs "
+        "rather than assuming a valid summary predicate."
+    ),
+    "lean:evidence.claim_state.transition_bridge": (
+        "A reachable claim-state lifecycle model derives negative-evidence, "
+        "no-live-movement, and non-claim conclusions from narrowing, downgrade, and "
+        "refutation cases rather than projecting fields from a hand-authored summary "
+        "predicate."
+    ),
+}
+PLANNED_TARGETS = {
+    "lean:evidence.support_state.operational_invariant",
+    "lean:evidence.bundle.completeness_probe_bridge",
+    "lean:evidence.claim_ledger.completeness_audit_bridge",
+    "lean:evidence.accepted_transition.review_audit_bridge",
+    "lean:evidence.claim_state.transition_bridge",
 }
 EXPECTED_RELATIONS = {
     "retire_exact_same_model_duplicate": "exact_same_model_normalized_statement",
@@ -113,6 +155,11 @@ EXPECTED_MIGRATION_COUNTS = {
         "C6-R5-benchmark-saturation-projection",
         "C6-R9-scf-qualification-projection",
         "C6-R10-scf-identity-projection",
+        "C6-R16-evidence-support-requirement-projection",
+        "C6-R19-evidence-bundle-summary-projection",
+        "C6-R20-claim-ledger-summary-projection",
+        "C6-R21-accepted-transition-summary-projection",
+        "C6-R22-claim-state-negative-evidence-projection",
     })
     for action_id in EXPECTED_ACTION_IDS
 }
@@ -170,7 +217,7 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
     actions = ledger["actions"]
     if [row["action_id"] for row in actions] != EXPECTED_ACTION_IDS:
         out.append("action sequence or identity drifted")
-    if [row["sequence"] for row in actions] != list(range(1, 16)):
+    if [row["sequence"] for row in actions] != list(range(1, 25)):
         out.append("action sequence numbers drifted")
 
     try:
@@ -284,7 +331,10 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
         else:
             if replacement_id is not None or replacement_block is not None:
                 out.append(f"{action['action_id']}: target-scope retirement invented a replacement")
-            if "exact " not in retired_block["block"]:
+            if (
+                "exact " not in retired_block["block"]
+                and "rcases valid with" not in retired_block["block"]
+            ):
                 out.append(f"{action['action_id']}: retired theorem is not a direct projection")
 
     current_rows = current_theorems()
@@ -303,13 +353,13 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
 
     overlay = load(CURRENT_OVERLAY)
     summary = overlay.get("summary", {})
-    if summary.get("current_theorem_count") != 1355:
+    if summary.get("current_theorem_count") != 1346:
         out.append("current theorem denominator drifted")
     if summary.get("semantic_level_counts") != EXPECTED_LEVELS:
         out.append("current semantic-level counts drifted")
     if summary.get("disposition_counts") != EXPECTED_DISPOSITIONS:
         out.append("current disposition counts drifted")
-    if sum(value for key, value in EXPECTED_DISPOSITIONS.items() if key != "retain") != 146:
+    if sum(value for key, value in EXPECTED_DISPOSITIONS.items() if key != "retain") != 137:
         out.append("expected remaining-action denominator is internally inconsistent")
     if ledger["summary"]["remaining_action_counts"] != {
         key: value for key, value in EXPECTED_DISPOSITIONS.items() if key != "retain"
@@ -372,6 +422,21 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
     if retired_scf_names & {row["name"] for row in scf_rows}:
         out.append("StableCapabilityFields retained an executed narrow projection")
 
+    evidence_rows = [
+        row
+        for row in current_rows
+        if row["module_path"] == "lean/AsiStackProofs/EvidenceStates.lean"
+    ]
+    if len(evidence_rows) != 22:
+        out.append("EvidenceStates must retain exactly twenty-two declarations")
+    retired_evidence_names = {
+        action["retired_theorem_id"].split("::", 1)[1]
+        for action in actions
+        if action["module_path"] == "lean/AsiStackProofs/EvidenceStates.lean"
+    }
+    if retired_evidence_names & {row["name"] for row in evidence_rows}:
+        out.append("EvidenceStates retained an executed premise or summary projection")
+
     manifest_rows = {
         row["tag"]: row
         for row in load(MANIFEST).get("records", [])
@@ -379,10 +444,16 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
     for target, expected in EXPECTED_TARGETS.items():
         if manifest_rows.get(target, {}).get("formal_target") != expected:
             out.append(f"proof target did not migrate to the counterexample gate: {target}")
+        expected_status = "planned" if target in PLANNED_TARGETS else "implemented"
+        if manifest_rows.get(target, {}).get("status") != expected_status:
+            out.append(f"proof target status did not reconcile after migration: {target}")
     triage_rows = {row["tag"]: row for row in load(TRIAGE).get("records", [])}
     for target, expected in EXPECTED_TARGETS.items():
         if triage_rows.get(target, {}).get("formal_target") != expected:
             out.append(f"proof triage did not migrate to the counterexample gate: {target}")
+        expected_status = "planned" if target in PLANNED_TARGETS else "implemented"
+        if triage_rows.get(target, {}).get("target_status") != expected_status:
+            out.append(f"proof triage status did not reconcile after migration: {target}")
     for action in actions:
         for migration in action["target_migrations"]:
             expected = migration["new_target_text"]
@@ -408,17 +479,17 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
     if status.get("rationalization_ledger_path") != str(LEDGER.relative_to(ROOT)):
         out.append("status does not bind the cumulative rationalization ledger")
     if (
-        status.get("theorem_count") != 1355
-        or status.get("executed_retirement_count") != 15
-        or status.get("remaining_action_count") != 146
+        status.get("theorem_count") != 1346
+        or status.get("executed_retirement_count") != 24
+        or status.get("remaining_action_count") != 137
     ):
         out.append("status does not report the cumulative post-transaction denominator")
     roadmap = ROADMAP.read_text(encoding="utf-8")
     roadmap_flat = " ".join(roadmap.split())
     for phrase in [
-        "fourth narrow-projection tranche",
-        "1,355 live theorem declarations",
-        "146 rewrite-or-retire actions remain",
+        "fifth narrow-projection tranche",
+        "1,346 live theorem declarations",
+        "137 rewrite-or-retire actions remain",
         "`proofs/proof_semantic_rationalization_ledger.json`",
     ]:
         if phrase not in roadmap_flat:
@@ -455,7 +526,7 @@ def main() -> None:
             "premise_restatement_replaced_by_derived_counterexample_gate",
         ),
     )
-    mutate("remaining denominator inflation", lambda c: c["summary"].__setitem__("remaining_action_count", 157))
+    mutate("remaining denominator inflation", lambda c: c["summary"].__setitem__("remaining_action_count", 148))
     mutate("support promotion", lambda c: c.__setitem__("support_state_effect", "promotion"))
     mutate(
         "null replacement laundering",
@@ -474,9 +545,9 @@ def main() -> None:
             + "\n - ".join(failures)
         )
     print(
-        "Proof semantic-rationalization ledger passed: fifteen dependency-safe "
-        "retirements, six public-target migrations, 1,355 live theorems, "
-        "146 actions remain, 14 rejecting mutations, no support or release effect."
+        "Proof semantic-rationalization ledger passed: twenty-four dependency-safe "
+        "retirements, eleven public-target migrations, 1,346 live theorems, "
+        "137 actions remain, 14 rejecting mutations, no support or release effect."
     )
 
 

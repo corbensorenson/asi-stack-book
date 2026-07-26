@@ -12,6 +12,7 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 AUDIT = ROOT / "proofs" / "p2_closure_audit.json"
 RATIONALIZATION = ROOT / "proofs" / "proof_rationalization_registry.json"
+SEMANTIC_RATIONALIZATION = ROOT / "proofs" / "proof_semantic_rationalization_ledger.json"
 MANIFEST = ROOT / "proofs" / "proof_manifest.json"
 TRIAGE = ROOT / "proofs" / "proof_triage.json"
 ADEQUACY = ROOT / "docs" / "proof_adequacy_review.md"
@@ -21,8 +22,9 @@ MAINTENANCE_STATUS = ROOT / "roadmap_records" / "post_v2_3_maintenance_transfer_
 
 HISTORICAL_PROOF_TARGET_COUNT = 298
 CURRENT_PROOF_TARGET_COUNT = 333
-CURRENT_IMPLEMENTED_TARGET_COUNT = 310
-CURRENT_PLANNED_TARGET_COUNT = 23
+CURRENT_IMPLEMENTED_TARGET_COUNT = 305
+CURRENT_PLANNED_TARGET_COUNT = 28
+CURRENT_RATIONALIZATION_PLANNED_TARGET_COUNT = 5
 HISTORICAL_EXPECTED_CLASSES = {
     "adequate finite-record invariant": 73,
     "useful but too narrow": 158,
@@ -145,7 +147,25 @@ def current_proof_errors(
     triage_ids = [row.get("tag") for row in triage_records]
     status_counts = Counter(row.get("status") for row in current_targets)
     planned_targets = [row for row in current_targets if row.get("status") == "planned"]
-    planned_chapter_counts = Counter(row.get("chapter_id") for row in planned_targets)
+    structural_planned_targets = [
+        row for row in planned_targets if row.get("chapter_id") in PLANNED_CHAPTERS
+    ]
+    structural_planned_chapter_counts = Counter(
+        row.get("chapter_id") for row in structural_planned_targets
+    )
+    semantic_rationalization = load(SEMANTIC_RATIONALIZATION)
+    rationalization_migration_tags = {
+        migration.get("target_ref", "").removeprefix("proof-target:")
+        for action in semantic_rationalization.get("actions", [])
+        if action.get("state") == "executed"
+        for migration in action.get("target_migrations", [])
+    }
+    rationalization_planned_targets = [
+        row
+        for row in planned_targets
+        if row.get("tag") in rationalization_migration_tags
+        and row.get("chapter_id") not in PLANNED_CHAPTERS
+    ]
     activation_truth = maintenance_status.get("activation_truth", {})
     first_tranche = (
         maintenance_status.get("quality_uplift_program", {})
@@ -202,8 +222,14 @@ def current_proof_errors(
         or set(taxonomy_tranche.get("new_chapter_ids", [])) != TAXONOMY_MATURITY_ADMITTED_CHAPTERS
         or set(full_coverage_tranche.get("new_chapter_ids", [])) != FULL_COVERAGE_ADMITTED_CHAPTERS
         or len(planned_targets) != CURRENT_PLANNED_TARGET_COUNT
-        or {row.get("chapter_id") for row in planned_targets} != PLANNED_CHAPTERS
-        or planned_chapter_counts != Counter({chapter_id: 1 for chapter_id in PLANNED_CHAPTERS})
+        or len(structural_planned_targets) != len(PLANNED_CHAPTERS)
+        or {row.get("chapter_id") for row in structural_planned_targets} != PLANNED_CHAPTERS
+        or structural_planned_chapter_counts
+        != Counter({chapter_id: 1 for chapter_id in PLANNED_CHAPTERS})
+        or len(rationalization_planned_targets)
+        != CURRENT_RATIONALIZATION_PLANNED_TARGET_COUNT
+        or len(structural_planned_targets) + len(rationalization_planned_targets)
+        != len(planned_targets)
     ):
         out.append(
             "admitted-chapter proof inventory loses tranche custody or misstates "
@@ -268,14 +294,14 @@ def errors(audit: dict[str, Any]) -> list[str]:
 
     contract = status.get("proof_rationalization_contract", {})
     expected_historical_surface = {
-        "theorem_declarations": contract.get("current_live_theorem_declaration_count"),
-        "proof_targets": contract.get("current_live_proof_target_count"),
-        "missing_or_changed_baseline_theorems": contract.get("current_missing_or_changed_theorem_count"),
-        "missing_or_changed_baseline_targets": contract.get("current_missing_or_changed_target_count"),
+        "theorem_declarations": 1300,
+        "proof_targets": HISTORICAL_PROOF_TARGET_COUNT,
+        "missing_or_changed_baseline_theorems": 310,
+        "missing_or_changed_baseline_targets": 187,
         "implemented_current_targets": HISTORICAL_PROOF_TARGET_COUNT,
     }
     if audit.get("current_surface") != expected_historical_surface:
-        out.append("frozen P2 proof-surface closure counts drifted")
+        out.append("frozen P2 proof-surface closure snapshot drifted")
     if contract.get("current_live_proof_target_count") != HISTORICAL_PROOF_TARGET_COUNT:
         out.append("historical P2 status no longer preserves its 298-target closure surface")
 

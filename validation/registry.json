@@ -6714,8 +6714,8 @@
       "args": [],
       "execution_tier": "deep",
       "validation_class": "proof_or_evidence_gate",
-      "input_contract": "Re-executed governed Git slice, matched baseline metrics, derived invariant suite, claim dispositions, proof manifest/adequacy/artifact audits, volatile source records, inter-stack routing, terminology refresh, and readable D–F closure audit.",
-      "output_contract": "Reject drift in bounded empirical metrics, invariant mutations/residuals, core dispositions, proof target/adequacy traceability, volatile source routing, or D–F closure boundaries.",
+      "input_contract": "Re-executed governed Git slice, matched baseline metrics, derived invariant suite, claim dispositions, proof manifest/adequacy/artifact audits, volatile source records, inter-stack routing, terminology refresh, and readable D\u2013F closure audit.",
+      "output_contract": "Reject drift in bounded empirical metrics, invariant mutations/residuals, core dispositions, proof target/adequacy traceability, volatile source routing, or D\u2013F closure boundaries.",
       "claim_scope": "Local roadmap closure for Workstreams D, E, and F at their explicitly bounded empirical, formal, and source-governance scopes.",
       "negative_controls": "validator_owned",
       "prohibited_inference": "Local closure does not prove deployed safety, general cost-effectiveness, formal runtime enforcement, novelty, exhaustive literature coverage, or independent review.",
@@ -7409,7 +7409,7 @@
       "validation_class": "proof_or_evidence_gate",
       "script": "validate_post_v2_1_empirical_reconciliation.py",
       "args": [],
-      "input_contract": "Exact outcome ledger, six accepted component transitions, fourteen core decisions/chapter owners, source manifest/inventory/notes, Appendix C/H, quality vectors, eleven residuals, evidence plan, proof manifest, roadmap status, reconciliation report, and changelog.",
+      "input_contract": "Exact outcome ledger, six accepted component transitions, fourteen core decisions/chapter owners, source manifest/inventory/notes, Appendix C/H, quality vectors, eleven residuals, evidence plan, proof manifest, executed semantic-rationalization target migrations, roadmap status, reconciliation report, and changelog.",
       "input_artifacts": [
         "scripts/validate_post_v2_1_empirical_reconciliation.py",
         "scripts/integrate_post_v2_1_manifest_sources.py",
@@ -7429,16 +7429,18 @@
         "appendices/H_external_sources.qmd",
         "appendices/F_changelog.qmd",
         "evidence_quality/core_claim_vectors.json",
-        "proofs/proof_manifest.json"
+        "proofs/proof_manifest.json",
+        "proofs/proof_semantic_rationalization_ledger.json"
       ],
-      "output_contract": "Reject missing or positive dispositions, new chapter/proof invention, chapter/result drift, vector promotion or false independence/transfer, residual laundering, source-route erasure, generated appendix drift, or reconciliation/changelog omission.",
+      "output_contract": "Reject missing or positive dispositions, new chapter/proof invention, unauthorized implemented-to-planned migration, chapter/result drift, vector promotion or false independence/transfer, residual laundering, source-route erasure, generated appendix drift, or reconciliation/changelog omission.",
       "output_assertions": [
         "six bounded transitions",
         "fourteen core no-change decisions and chapter owners",
         "eleven exact residual dispositions",
         "nineteen current external-source routes",
-        "54 argument-state vectors",
-        "no new chapter or Lean target",
+        "84 argument-state vectors",
+        "no theorem invented by the historical cycle",
+        "only ledger-authorized post-cycle target migrations",
         "M4 reconciliation surfaces agree"
       ],
       "claim_scope": "Repository-wide reconciliation of the completed post-v2.1 finite local results without chapter-core support movement.",
@@ -7455,6 +7457,7 @@
         "source-target erasure",
         "Appendix H erasure",
         "proof invention",
+        "unadmitted planned proof",
         "changelog erasure"
       ],
       "prohibited_inference": "Reconciliation does not establish population validity, external independence, production transfer, generated-answer utility, influence/privacy/storage erasure, external-system rollback, optional-format approval, or chapter-core promotion.",
@@ -7922,7 +7925,7 @@
       "args": [],
       "execution_tier": "deep",
       "validation_class": "proof_or_evidence_gate",
-      "input_contract": "The exact QCSA implementation/evaluation/vertical outcomes, ten non-core dispositions, nine core no-change decisions, nine existing chapter owners, source-versus-repository boundary, Appendix C overlay, evidence-plan overlay, non-aggregating quality vectors, eight residuals, changelog transaction, and 54-chapter manifest.",
+      "input_contract": "The exact QCSA implementation/evaluation/vertical outcomes, ten non-core dispositions, nine core no-change decisions, nine existing chapter owners, source-versus-repository boundary, Appendix C overlay, evidence-plan overlay, non-aggregating quality vectors, eight residuals, changelog transaction, preserved 54-chapter/298-target historical baseline, current manifest/proof truth, and executed semantic-rationalization target migrations.",
       "input_artifacts": [
         "scripts/validate_qcsa_book_reconciliation.py",
         "scripts/register_qcsa_book_reconciliation_validator.py",
@@ -7936,6 +7939,11 @@
         "claim_decisions/qcsa_reference_evaluation_dispositions.json",
         "experiments/qcsa_reference/results/evaluation_results.json",
         "experiments/qcsa_vertical_reference/results/vertical_result.json",
+        "book_structure.json",
+        "roadmap_records/post_v2_3_claim_proof_and_sota_challenge_status.json",
+        "roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json",
+        "proofs/proof_manifest.json",
+        "proofs/proof_semantic_rationalization_ledger.json",
         "chapters/cognitive-compilation-and-semantic-ir.qmd",
         "chapters/virtual-context-abi.qmd",
         "chapters/claim-ledgers-and-belief-revision.qmd",
@@ -7946,7 +7954,7 @@
         "chapters/data-engines-continual-learning-and-unlearning.qmd",
         "chapters/integrated-reference-architecture.qmd"
       ],
-      "output_contract": "Validate that all nine existing owners expose the bounded mixed result and argument-state boundary; exact matched/resource/active-question negatives remain visible; five promote recommendations remain review inputs rather than automatic transitions; all vectors preserve internal validity and unestablished transfer; eight residuals remain; no QCSA chapter or core promotion exists; reject fifteen cross-surface mutations.",
+      "output_contract": "Validate that all nine existing owners expose the bounded mixed result and argument-state boundary; exact matched/resource/active-question negatives remain visible; five promote recommendations remain review inputs rather than automatic transitions; all vectors preserve internal validity and unestablished transfer; eight residuals remain; current proof status permits only later manifest admissions or explicitly ledger-authorized semantic-rationalization migrations; no QCSA chapter or core promotion exists; reject eighteen cross-surface mutations.",
       "output_assertions": [
         "nine existing chapter owners",
         "five bounded review candidates",
@@ -7954,10 +7962,11 @@
         "two exact refutations",
         "one no-change transfer boundary",
         "eight explicit residuals",
-        "54 core claims at argument",
+        "84 core claims at argument",
+        "only authorized proof-target migrations",
         "no automatic transition",
         "no new chapter",
-        "fifteen rejecting mutations"
+        "eighteen rejecting mutations"
       ],
       "claim_scope": "Cross-book consistency of the bounded internally authored QCSA implementation, synthetic evaluation, and one local governed vertical replay.",
       "negative_controls": "validator_owned_and_surface_bound",
@@ -7976,7 +7985,10 @@
         "evidence-plan owner erasure",
         "residual erasure",
         "transfer promotion",
-        "new QCSA chapter"
+        "new QCSA chapter",
+        "proof target invention",
+        "planned proof escapes admitted chapter",
+        "claim-vector addition"
       ],
       "prohibited_inference": "The reconciliation does not establish natural-task quality, learned routing, external independence, production transfer, safety, privacy, security, universal grounding, AGI, ASI, a chapter-core promotion, or a reason to add a QCSA chapter.",
       "contract_precision": "exact_high_impact",
@@ -11030,22 +11042,23 @@
       "args": [],
       "execution_tier": "pr",
       "validation_class": "proof_or_evidence_gate",
-      "input_contract": "Frozen proof rationalization, current proof manifest and triage, adequacy routes, nine safety-critical/integration/refinement dossiers and registered consumers, and canonical roadmap state.",
+      "input_contract": "Frozen P2 proof rationalization, current proof manifest and triage, executed semantic-rationalization target migrations, adequacy routes, nine safety-critical/integration/refinement dossiers and registered consumers, and canonical roadmap state.",
       "input_artifacts": [
         "scripts/validate_p2_closure_audit.py",
         "proofs/p2_closure_audit.json",
         "proofs/proof_rationalization_registry.json",
+        "proofs/proof_semantic_rationalization_ledger.json",
         "proofs/proof_manifest.json",
         "proofs/proof_triage.json",
         "docs/proof_adequacy_review.md",
         "roadmap_records/post_v2_3_claim_proof_and_sota_challenge_status.json",
         "roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json"
       ],
-      "output_contract": "Reject incomplete proof dispositions, target or adequacy-route gaps, missing semantic-model dossiers/consumers, false P2/M3 closure, and support-state laundering.",
+      "output_contract": "Reject incomplete proof dispositions, target or adequacy-route gaps, unauthorized implemented-to-planned migration, missing semantic-model dossiers/consumers, false P2/M3 closure, and support-state laundering.",
       "output_assertions": [
         "1,151/1,151 activation-baseline theorem declarations and 298/298 baseline targets are reviewed and dispositioned",
         "298/298 historical proof targets remain implemented and explicitly adequacy-routed",
-        "306 current targets comprise 302 implemented and 4 planned exactly across the two unfinished admitted chapters",
+        "333 current targets comprise 305 implemented and 28 planned: 23 later-chapter targets plus five ledger-authorized semantic-rationalization migrations",
         "the sixteen richer-semantics targets remain bounded and route to P3/P4 rather than disappearing",
         "nine required safety-critical, integration, and review-named refinement models have dossiers and registered consumers",
         "P2/M3 is completed, P3 is active, and prerequisite M2 is active without support-state movement"
@@ -14114,7 +14127,7 @@
       "args": [],
       "execution_tier": "pr",
       "validation_class": "proof_or_evidence_gate",
-      "input_contract": "One immutable 1,370-theorem baseline; fifteen exact, ordered transactions; the baseline Scalable Oversight, Bibliography Plan, Benchmark Ratchets, and Policy Optimization and Stable Capability Fields modules; one same-model normalized duplicate pair; fourteen premise-restating projections, seven with derived replacements and seven retired after public-target narrowing; the current overlay; frozen historical registry; and reconciled target, roadmap, and status surfaces.",
+      "input_contract": "One immutable 1,370-theorem baseline; twenty-four exact, ordered transactions; the baseline Scalable Oversight, Bibliography Plan, Benchmark Ratchets, and Policy Optimization, Stable Capability Fields, and Evidence States modules; one same-model normalized duplicate pair; twenty-three premise-restating projections, seven with derived replacements and sixteen retired after public-target narrowing; the current overlay; frozen historical registry; and reconciled target, roadmap, and status surfaces.",
       "input_artifacts": [
         "scripts/validate_proof_semantic_rationalization_ledger.py",
         "schemas/proof_semantic_rationalization_ledger.schema.json",
@@ -14136,23 +14149,24 @@
         "validation/registry.json",
         "scripts/register_proof_semantic_rationalization_ledger.py"
       ],
-      "output_contract": "Require immutable baseline and theorem-block digests, exact same-model statement identity for the duplicate, dependency-and-consumer-safe removals, two counterexample, two decision-model, and two scope-narrowing target migrations, retained target ownership, a 1,355-theorem current estate, an exact 146-action remaining queue, and no support or release effect.",
+      "output_contract": "Require immutable baseline and theorem-block digests, exact same-model statement identity for the duplicate, dependency-and-consumer-safe removals, two counterexample, two decision-model, and seven scope-narrowing target migrations, retained or honestly replanned target ownership, a 1,346-theorem current estate, an exact 137-action remaining queue, and no support or release effect.",
       "output_assertions": [
         "baseline commit and artifact digests exact",
         "retired and retained declarations share one authored model",
         "normalized theorem statements exact",
         "retired theorem has no theorem consumer",
-        "fifteen retired declarations absent, seven replacements live, and seven scope-reduction replacements explicitly null",
+        "twenty-four retired declarations absent, seven replacements live, and sixteen scope-reduction replacements explicitly null",
         "two bibliography targets migrated to derived counterexample gates",
         "two benchmark targets migrated to derived decision-model gates",
         "two Stable Capability Fields targets narrowed to retained derived routes",
-        "1,355 current theorem declarations",
-        "146 rewrite-or-retire actions remain",
+        "five Evidence States targets narrowed to planned reachable or independently implemented models",
+        "1,346 current theorem declarations",
+        "137 rewrite-or-retire actions remain",
         "frozen 1,151-theorem and 298-target registry preserved",
         "14 mutations reject",
         "no support or release effect"
       ],
-      "claim_scope": "Fifteen dependency-safe declaration retirements: one exact same-model duplicate and fourteen premise-restating projections. Six public targets migrate to counterexample, decision-model, or narrower retained-route wording; seven scope-reduction actions explicitly carry no replacement.",
+      "claim_scope": "Twenty-four dependency-safe declaration retirements: one exact same-model duplicate and twenty-three premise-restating projections. Eleven public targets migrate to counterexample, decision-model, narrower retained-route, or honestly planned stronger-model wording; sixteen scope-reduction actions explicitly carry no replacement.",
       "negative_controls": "validator_owned_fourteen_baseline_digest_sequence_identity_statement_dependency_consumer_relation_target_denominator_and_support_mutations",
       "negative_control_cases": [
         "baseline commit substitution",
@@ -14170,7 +14184,7 @@
       ],
       "prohibited_inference": "This transaction does not strengthen the retained finite-model theorem or establish reviewer competence, implementation correctness, useful oversight, deployment, transfer, safety, SOTA, AGI, ASI, or claim support.",
       "contract_precision": "exact_immutable_cumulative_dependency_safe_retirement_ledger",
-      "semantic_review_state": "checked_fifteen_c6_retirements_and_six_target_migrations"
+      "semantic_review_state": "checked_twenty_four_c6_retirements_and_eleven_target_migrations"
     }
   ],
   "summary": {

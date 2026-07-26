@@ -40,10 +40,10 @@ No result is recorded here unless a test has actually been implemented and run.
 | `military-ai-autonomous-weapons-and-strategic-stability` | Military AI, Autonomous Weapons, and Strategic Stability | Layer claim falsification test | planned | not run |
 | `evidence-states-and-claim-discipline` | Evidence States and Claim Discipline | Support-state transition test | implemented | validated locally |
 | `evidence-states-and-claim-discipline` | Evidence States and Claim Discipline | Evidence transition lifecycle route | implemented | passes via Lean route theorems; no live support-state movement, reviewer-quality, evidence-bundle-completeness, source-interpretation, runtime-behavior, or support-state-promotion claim |
-| `evidence-states-and-claim-discipline` | Evidence States and Claim Discipline | Evidence bundle completeness and changelog-consistency probe | implemented | validated locally at experiments/evidence_bundle_completeness/results/2026-07-02-local.json; synthetic-record and finite-Lean bridge only; no evidence-truth, artifact-correctness, source-interpretation, release-governance, or support-state-promotion claim |
-| `evidence-states-and-claim-discipline` | Evidence States and Claim Discipline | Claim ledger completeness audit | implemented | validated locally at experiments/claim_ledger_completeness/results/2026-07-02-local.json; Appendix C completeness only; no claim-truth, source-interpretation, promotion-readiness, external-review-quality, or support-state-promotion claim |
-| `evidence-states-and-claim-discipline` | Evidence States and Claim Discipline | Accepted live transition review audit | implemented | validated locally at experiments/accepted_transition_review/results/2026-07-02-local.json; audit of existing records only; no evidence-truth, reviewer-independence, source-interpretation, external-review-quality, new-transition-approval, or chapter-core-promotion claim |
-| `evidence-states-and-claim-discipline` | Evidence States and Claim Discipline | Claim-state transition bridge | implemented | validated locally by `python3 scripts/validate_claim_state_transition_bridge.py` at experiments/claim_state_transition_bridge/results/2026-07-04-local.json; synthetic-record and finite-Lean bridge only; no live claim demotion, deprecation, refutation, reviewer-correctness, source-interpretation, deployed belief-revision, or support-state-promotion claim |
+| `evidence-states-and-claim-discipline` | Evidence States and Claim Discipline | Evidence bundle completeness and changelog-consistency probe | implemented | validated locally at experiments/evidence_bundle_completeness/results/2026-07-02-local.json; executable audit remains current, while its premise-restating Lean summary projection is retired under C6 and the stronger formal bridge is planned; no evidence-truth, artifact-correctness, source-interpretation, release-governance, or support-state-promotion claim |
+| `evidence-states-and-claim-discipline` | Evidence States and Claim Discipline | Claim ledger completeness audit | implemented | validated locally at experiments/claim_ledger_completeness/results/2026-07-02-local.json; executable Appendix C audit remains current, while its premise-restating Lean summary projection is retired under C6 and the stronger formal bridge is planned; no claim-truth, source-interpretation, promotion-readiness, external-review-quality, or support-state-promotion claim |
+| `evidence-states-and-claim-discipline` | Evidence States and Claim Discipline | Accepted live transition review audit | implemented | validated locally at experiments/accepted_transition_review/results/2026-07-02-local.json; executable audit of existing records remains current, while its premise-restating Lean summary projection is retired under C6 and the stronger formal bridge is planned; no evidence-truth, reviewer-independence, source-interpretation, external-review-quality, new-transition-approval, or chapter-core-promotion claim |
+| `evidence-states-and-claim-discipline` | Evidence States and Claim Discipline | Claim-state transition bridge | implemented | validated locally by `python3 scripts/validate_claim_state_transition_bridge.py` at experiments/claim_state_transition_bridge/results/2026-07-04-local.json; executable synthetic audit remains current, while three predicate-field Lean projections are retired under C6 and a reachable lifecycle derivation is planned; no live claim demotion, deprecation, refutation, reviewer-correctness, source-interpretation, deployed belief-revision, or support-state-promotion claim |
 | `evidence-states-and-claim-discipline` | Evidence States and Claim Discipline | Historical-project evidence-cell harness | implemented | validated locally by `python3 scripts/validate_evidence_cells.py`; record semantics only; no raw-project reproduction, capability result, independent review, or support-state promotion |
 | `scalable-oversight-and-adversarial-ai-control` | Scalable Oversight and Adversarial AI Control | High-risk outcome-audit admission fixture | planned | not run |
 | `scalable-oversight-and-adversarial-ai-control` | Scalable Oversight and Adversarial AI Control | Baseline and task-envelope completeness fixture | planned | not run |
@@ -702,13 +702,13 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Target status | Count |
 |---|---:|
-| implemented | 310 |
-| planned | 23 |
+| implemented | 305 |
+| planned | 28 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 310 |
-| planned | formal-invariant | lean-candidate | 5 |
+| implemented | formal-invariant | lean-candidate | 305 |
+| planned | formal-invariant | lean-candidate | 10 |
 | planned | process-contract | policy-model-first | 18 |

@@ -14,9 +14,9 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 333 |
 | Lean modules scanned | 110 |
-| Theorem declarations classified | 1355 |
-| Direct/projection-style theorem declarations | 216 |
-| Derived/decomposed theorem declarations | 924 |
+| Theorem declarations classified | 1346 |
+| Direct/projection-style theorem declarations | 210 |
+| Derived/decomposed theorem declarations | 921 |
 | Unknown or mixed theorem declarations | 215 |
 | Safety-critical theorem declarations | 73 |
 | Safety-critical direct/projection declarations | 1 |
@@ -87,7 +87,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/DeliberationRefinement.lean` | governed-deliberation-and-test-time-scaling | 10 | 11 | 6 | 3 | 2 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Efficiency.lean` | the-efficient-asi-hypothesis | 4 | 26 | 2 | 24 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/EmbodiedPhysicalSafety.lean` | embodied-agency-real-time-control-and-physical-safety | 1 | 0 | 0 | 0 | 0 | derived/decomposed by classifier |
-| `lean/AsiStackProofs/EvidenceStates.lean` | evidence-states-and-claim-discipline | 7 | 31 | 9 | 22 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/EvidenceStates.lean` | evidence-states-and-claim-discipline | 7 | 22 | 3 | 19 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/FailureModes.lean` | failure-modes-of-ungoverned-intelligence | 4 | 23 | 2 | 21 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/FastGeneration.lean` | unmapped | 0 | 3 | 0 | 3 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/FastGenerationRefinement.lean` | fast-generation-architectures | 5 | 17 | 12 | 3 | 2 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -574,19 +574,11 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/Efficiency.lean` | `open_obligation_promotion_without_residual_record_rejected` | derived_or_decomposed | no | uses cases, have, rw |
 | `lean/AsiStackProofs/Efficiency.lean` | `promotion_request_without_efficiency_evidence_transition_requests_transition` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/Efficiency.lean` | `routed_or_compressed_result_with_open_obligations_requires_residual_record` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
-| `lean/AsiStackProofs/EvidenceStates.lean` | `accepted_downgrade_transition_requires_negative_evidence_and_trigger` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/EvidenceStates.lean` | `accepted_terminal_transition_blocks_promotion_to_new_state` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
-| `lean/AsiStackProofs/EvidenceStates.lean` | `accepted_terminal_transition_requires_negative_evidence` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
-| `lean/AsiStackProofs/EvidenceStates.lean` | `accepted_transition_review_audit_bridge` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
-| `lean/AsiStackProofs/EvidenceStates.lean` | `claim_ledger_completeness_audit_bridge` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/EvidenceStates.lean` | `claim_state_transition_bridge_fixture_valid` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/EvidenceStates.lean` | `claim_state_transition_bridge_preserves_no_live_claim_movement` | derived_or_decomposed | no | uses rcases |
-| `lean/AsiStackProofs/EvidenceStates.lean` | `claim_state_transition_bridge_preserves_nonclaim_boundary` | derived_or_decomposed | no | uses rcases |
-| `lean/AsiStackProofs/EvidenceStates.lean` | `claim_state_transition_bridge_requires_negative_evidence` | derived_or_decomposed | no | uses rcases |
 | `lean/AsiStackProofs/EvidenceStates.lean` | `complete_synthetic_test_backed_transition_accepts` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/EvidenceStates.lean` | `downward_transition_without_negative_evidence_requests_negative_evidence` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/EvidenceStates.lean` | `downward_transition_without_trigger_requests_downgrade_trigger` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/EvidenceStates.lean` | `evidence_bundle_completeness_probe_bridge` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/EvidenceStates.lean` | `mismatched_support_state_effect_blocks_transition` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/EvidenceStates.lean` | `missing_claim_record_rejects_evidence_transition` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/EvidenceStates.lean` | `missing_required_evidence_blocks_promotion` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
@@ -595,7 +587,6 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/EvidenceStates.lean` | `no_requested_transition_allows_no_change` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/EvidenceStates.lean` | `no_self_promotion` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/EvidenceStates.lean` | `source_derived_without_source_note_requests_required_evidence` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/EvidenceStates.lean` | `support_state_transition_requires_evidence` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/EvidenceStates.lean` | `synthetic_test_backed_without_test_run_requests_required_evidence` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/EvidenceStates.lean` | `terminal_effect_for_implies_terminal_state` | derived_or_decomposed | no | uses cases, simp |
 | `lean/AsiStackProofs/EvidenceStates.lean` | `terminal_refutation_with_wrong_effect_requests_terminal_effect` | derived_or_decomposed | no | uses simp |

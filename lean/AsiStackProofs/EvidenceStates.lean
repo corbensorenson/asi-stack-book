@@ -79,12 +79,6 @@ def AcceptedDowngradeTransition (record : EvidenceTransitionRecord) : Prop :=
     (And (rank record.newState < rank record.oldState)
       (And record.negativeEvidence record.downgradeTrigger))
 
-theorem support_state_transition_requires_evidence
-    {bundle : EvidenceBundle} {fromState toState : SupportState} :
-    PromotionAllowed bundle fromState toState -> RequiredEvidence toState bundle := by
-  intro allowed
-  exact allowed.2
-
 theorem missing_required_evidence_blocks_promotion
     {bundle : EvidenceBundle} {fromState toState : SupportState} :
     Not (RequiredEvidence toState bundle) -> Not (PromotionAllowed bundle fromState toState) := by
@@ -109,18 +103,6 @@ theorem terminal_state_cannot_be_promotion_target
   cases toState <;> simp [TerminalState] at terminal
   · cases fromState <;> simp [PromotionAllowed, rank] at allowed
   · cases fromState <;> simp [PromotionAllowed, rank] at allowed
-
-theorem accepted_terminal_transition_requires_negative_evidence
-    {record : EvidenceTransitionRecord} :
-    AcceptedTerminalTransition record -> record.negativeEvidence := by
-  intro accepted
-  exact accepted.2.2
-
-theorem accepted_downgrade_transition_requires_negative_evidence_and_trigger
-    {record : EvidenceTransitionRecord} :
-    AcceptedDowngradeTransition record -> And record.negativeEvidence record.downgradeTrigger := by
-  intro accepted
-  exact accepted.2.2
 
 theorem terminal_effect_for_implies_terminal_state
     {state : SupportState} {effect : TransitionEffect} :
@@ -408,18 +390,6 @@ def EvidenceBundleCompletenessProbeSummaryValid
     summary.supportStateEffectNone = true ∧
     summary.nonClaimBoundary = true
 
-theorem evidence_bundle_completeness_probe_bridge
-    {summary : EvidenceBundleCompletenessProbeSummary} :
-    EvidenceBundleCompletenessProbeSummaryValid summary ->
-      summary.noChangeBundlePresent = true ∧
-        summary.blockedPromotionBundlePresent = true ∧
-        summary.negativeControlsRejected = true ∧
-        summary.changelogConsistencyPresent = true ∧
-        summary.supportStateEffectNone = true ∧
-        summary.nonClaimBoundary = true := by
-  intro valid
-  exact valid
-
 structure ClaimLedgerCompletenessAuditSummary where
   manifestClaimsCovered : Bool
   appendixRowsUnique : Bool
@@ -442,20 +412,6 @@ def ClaimLedgerCompletenessAuditSummaryValid
     summary.supportStateEffectNone = true ∧
     summary.nonClaimBoundary = true
 
-theorem claim_ledger_completeness_audit_bridge
-    {summary : ClaimLedgerCompletenessAuditSummary} :
-    ClaimLedgerCompletenessAuditSummaryValid summary ->
-      summary.manifestClaimsCovered = true ∧
-        summary.appendixRowsUnique = true ∧
-        summary.labelSupportMatched = true ∧
-        summary.openGapPresent = true ∧
-        summary.promotionPathPresent = true ∧
-        summary.negativeControlsRejected = true ∧
-        summary.supportStateEffectNone = true ∧
-        summary.nonClaimBoundary = true := by
-  intro valid
-  exact valid
-
 structure AcceptedTransitionReviewAuditSummary where
   acceptedRecordsPresent : Bool
   boundedUpwardNonCoreOnly : Bool
@@ -477,20 +433,6 @@ def AcceptedTransitionReviewAuditSummaryValid
     summary.negativeControlsRejected = true ∧
     summary.supportStateEffectBounded = true ∧
     summary.nonClaimBoundary = true
-
-theorem accepted_transition_review_audit_bridge
-    {summary : AcceptedTransitionReviewAuditSummary} :
-    AcceptedTransitionReviewAuditSummaryValid summary ->
-      summary.acceptedRecordsPresent = true ∧
-        summary.boundedUpwardNonCoreOnly = true ∧
-        summary.coreClaimsNotPromoted = true ∧
-        summary.noPromotionDecisionsPresent = true ∧
-        summary.changelogRefsPresent = true ∧
-        summary.negativeControlsRejected = true ∧
-        summary.supportStateEffectBounded = true ∧
-        summary.nonClaimBoundary = true := by
-  intro valid
-  exact valid
 
 structure ClaimStateTransitionBridgeSummary where
   narrowingCasePresent : Bool
@@ -527,29 +469,5 @@ def claimStateTransitionBridgeFixture : ClaimStateTransitionBridgeSummary where
 theorem claim_state_transition_bridge_fixture_valid :
     ClaimStateTransitionBridgeSummaryValid claimStateTransitionBridgeFixture := by
   simp [ClaimStateTransitionBridgeSummaryValid, claimStateTransitionBridgeFixture]
-
-theorem claim_state_transition_bridge_requires_negative_evidence
-    {summary : ClaimStateTransitionBridgeSummary} :
-    ClaimStateTransitionBridgeSummaryValid summary ->
-      summary.negativeEvidenceRequired = true := by
-  intro valid
-  rcases valid with ⟨_, _, _, negativeEvidenceRequired, _, _, _, _⟩
-  exact negativeEvidenceRequired
-
-theorem claim_state_transition_bridge_preserves_no_live_claim_movement
-    {summary : ClaimStateTransitionBridgeSummary} :
-    ClaimStateTransitionBridgeSummaryValid summary ->
-      summary.noLiveClaimMovement = true := by
-  intro valid
-  rcases valid with ⟨_, _, _, _, _, _, noLiveClaimMovement, _⟩
-  exact noLiveClaimMovement
-
-theorem claim_state_transition_bridge_preserves_nonclaim_boundary
-    {summary : ClaimStateTransitionBridgeSummary} :
-    ClaimStateTransitionBridgeSummaryValid summary ->
-      summary.nonClaimBoundary = true := by
-  intro valid
-  rcases valid with ⟨_, _, _, _, _, _, _, nonClaimBoundary⟩
-  exact nonClaimBoundary
 
 end AsiStackProofs

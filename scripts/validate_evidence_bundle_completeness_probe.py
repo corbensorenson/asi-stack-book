@@ -24,7 +24,7 @@ LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "EvidenceStates.lean"
 COMMAND = "python3 scripts/validate_evidence_bundle_completeness_probe.py"
 PROOF_TAG = "lean:evidence.bundle.completeness_probe_bridge"
 CODEX_TEST_NAME = "Evidence bundle completeness and changelog-consistency probe"
-REQUIRED_THEOREMS = ["evidence_bundle_completeness_probe_bridge"]
+HISTORICAL_THEOREMS = ["evidence_bundle_completeness_probe_bridge"]
 REQUIRED_NON_CLAIMS = [
     "does not prove evidence truth",
     "does not prove source interpretation",
@@ -340,7 +340,7 @@ def build_expected_result(valid_count: int, invalid_count: int) -> dict[str, Any
         "lean_fixture_alignment": {
             "module": "AsiStackProofs.EvidenceStates",
             "proof_tag": PROOF_TAG,
-            "theorem_refs": REQUIRED_THEOREMS,
+            "theorem_refs": HISTORICAL_THEOREMS,
             "expected": {
                 "no_change_bundle_present": True,
                 "blocked_promotion_bundle_present": True,
@@ -389,16 +389,22 @@ def validate_manifest(errors: list[str]) -> None:
         return
     if CODEX_TEST_NAME.lower() not in text_blob(chapter.get("codex_tests", [])):
         errors.append(f"book_structure.json: codex_tests missing {CODEX_TEST_NAME!r}.")
-    proof_tags = {target.get("tag") for target in chapter.get("proof_targets", []) if isinstance(target, dict)}
-    if PROOF_TAG not in proof_tags:
+    proof_targets = {
+        target.get("tag"): target
+        for target in chapter.get("proof_targets", [])
+        if isinstance(target, dict)
+    }
+    if PROOF_TAG not in proof_targets:
         errors.append(f"book_structure.json: proof_targets missing {PROOF_TAG!r}.")
+    elif proof_targets[PROOF_TAG].get("status") != "planned":
+        errors.append(f"book_structure.json: {PROOF_TAG!r} must remain planned after C6 projection retirement.")
 
 
 def validate_lean(errors: list[str]) -> None:
     text = LEAN_FILE.read_text(encoding="utf-8", errors="ignore")
-    for theorem in REQUIRED_THEOREMS:
-        if not re.search(rf"\btheorem\s+{re.escape(theorem)}\b", text):
-            errors.append(f"{rel(LEAN_FILE)} missing theorem {theorem}.")
+    for theorem in HISTORICAL_THEOREMS:
+        if re.search(rf"\btheorem\s+{re.escape(theorem)}\b", text):
+            errors.append(f"{rel(LEAN_FILE)} retained retired premise-restating theorem {theorem}.")
     for field in (
         "noChangeBundlePresent",
         "blockedPromotionBundlePresent",
