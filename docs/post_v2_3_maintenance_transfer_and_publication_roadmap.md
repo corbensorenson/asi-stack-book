@@ -1112,7 +1112,11 @@ links, two synthesis figures, and 54-pair automated accessibility-tree
 preparation check now pass. A clean canonical render produced 97 pages: all 84
 chapters and 11 appendices. The mature-heading reconciliation is complete: all
 84 canonical chapters and current derivative contracts use `Mature Research
-Target`.
+Target`. The 2026-07-26 narrative-spine v1 reconciliation also gives every one
+of the 22 units a distinct plain-language thesis, normative engineering rule,
+and bounded machine contract with an explicit noninheritance boundary. The
+reader and product generators expose all three projections, while schema and
+semantic validators reject their loss or boundary weakening.
 
 The explicit all-84 idea-placement and narrative-coherence gate is therefore
 passed. Phase 2 is now allowed, in this order:

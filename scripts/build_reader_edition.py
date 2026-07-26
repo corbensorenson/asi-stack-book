@@ -387,7 +387,7 @@ def load_narrative_spine(path: Path | None) -> dict[str, object] | None:
     data = load_json(resolved)
     if not isinstance(data, dict):
         raise TypeError(f"{resolved}: narrative spine must contain an object")
-    if data.get("schema_version") != "asi_stack.narrative_product_spine.v0":
+    if data.get("schema_version") != "asi_stack.narrative_product_spine.v1":
         raise ValueError(f"{resolved}: unsupported narrative spine schema_version")
     chapters = data.get("chapters")
     if not isinstance(chapters, list) or len(chapters) != 22:
@@ -472,6 +472,12 @@ def inject_narrative_orientation(path: Path, record: dict[str, object]) -> None:
     lines = [
         "",
         "::: {.callout-note title=\"Narrative orientation\"}",
+        f"**Plain-language thesis.** {record['plain_language_thesis']}",
+        "",
+        f"**Engineering rule.** {record['normative_engineering_rule']}",
+        "",
+        f"**Machine contract.** {record['machine_contract']}",
+        "",
         f"**Question.** {record['reader_question']}",
         "",
         f"**Running example.** {record['running_example']}",

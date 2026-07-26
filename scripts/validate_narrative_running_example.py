@@ -14,6 +14,7 @@ SPINE = ROOT / "products" / "narrative_product_spine.json"
 SCHEMA = ROOT / "schemas" / "narrative_running_example_trace.schema.json"
 MUTATIONS = ROOT / "experiments" / "narrative_running_example" / "fixtures"
 EDITORIAL_FIELDS = (
+    "plain_language_thesis", "normative_engineering_rule", "machine_contract",
     "reader_question", "running_example", "strongest_objection", "failure_story",
     "evidence_that_would_change_the_conclusion", "handoff",
 )
@@ -34,8 +35,14 @@ def semantic_errors(trace: dict[str, Any], spine: dict[str, Any]) -> list[str]:
         errors.append("running-example step order must be contiguous across every narrative unit")
     for chapter in chapters:
         for field in EDITORIAL_FIELDS:
-            if len(str(chapter.get(field, "")).strip()) < 24:
+            minimum = 64 if field == "machine_contract" else 48 if field in {
+                "plain_language_thesis", "normative_engineering_rule"
+            } else 24
+            if len(str(chapter.get(field, "")).strip()) < minimum:
                 errors.append(f"{chapter.get('chapter_id')}: editorial contract field {field} is missing or too short")
+        machine_contract = str(chapter.get("machine_contract", "")).lower()
+        if "does not" not in machine_contract and "no " not in machine_contract:
+            errors.append(f"{chapter.get('chapter_id')}: machine contract lacks an explicit noninheritance boundary")
         if chapter.get("core_claim_ref") != f"{chapter.get('chapter_id')}.core":
             errors.append(f"{chapter.get('chapter_id')}: core claim reference does not match chapter identity")
         running = str(chapter.get("running_example", "")).lower()

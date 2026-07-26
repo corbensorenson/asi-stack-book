@@ -1,6 +1,6 @@
 # Three Product Contracts
 
-Last updated: 2026-07-25
+Last updated: 2026-07-26
 
 **The ASI Stack** is one canonical research source tree projected into three
 different products. Treating those products as one interface made the landing
@@ -18,8 +18,13 @@ The narrative product answers: what is the architecture, why does it matter,
 and how do its pieces fit together? Its generated entry is a 22-unit
 thesis-to-method route over the complete 84-chapter reference, and each
 representative chapter opens in Human view. Every
-selected chapter has one reader question, running example, strongest objection,
+selected chapter has three deliberately separate claim projections—a
+plain-language thesis, normative engineering rule, and bounded machine
+contract—plus one reader question, running example, strongest objection,
 failure story, evidence-changing condition, and canonical core-claim reference.
+The machine contract must carry an explicit noninheritance boundary; it cannot
+silently turn the readable thesis into stronger evidence, authority, readiness,
+or release language.
 It hides live status, test plans, proof-hook inventories, source crosswalks, and
 repeated support boilerplate.
 

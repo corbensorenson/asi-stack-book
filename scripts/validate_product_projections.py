@@ -113,6 +113,23 @@ def snapshot_errors(output: Path, evidence: dict) -> list[str]:
     return errors
 
 
+def narrative_projection_errors(spine: dict) -> list[str]:
+    errors: list[str] = []
+    projection_fields = (
+        "plain_language_thesis",
+        "normative_engineering_rule",
+        "machine_contract",
+    )
+    for record in spine.get("chapters", []):
+        for field in projection_fields:
+            if len(str(record.get(field, "")).strip()) < (64 if field == "machine_contract" else 48):
+                errors.append(f"{record.get('chapter_id')}: missing bounded narrative projection {field}")
+        machine_contract = str(record.get("machine_contract", "")).lower()
+        if "does not" not in machine_contract and "no " not in machine_contract:
+            errors.append(f"{record.get('chapter_id')}: machine contract lacks an explicit noninheritance boundary")
+    return errors
+
+
 def validate_rendered_site(site: Path, projection_schema: dict) -> list[str]:
     errors: list[str] = []
     products = site / "products"
@@ -206,6 +223,7 @@ def main() -> None:
     for unit in units:
         if unit.get("representative_chapter_id") not in unit.get("chapter_ids", []):
             errors.append(f"{unit.get('unit_id')}: representative chapter is absent from its unit")
+    errors.extend(narrative_projection_errors(spine))
     if len(selected_ids) != 22:
         errors.append("narrative product must contain exactly 22 representative chapters")
     if selected_ids != [chapter_id for chapter_id in canonical_ids if chapter_id in set(selected_ids)]:
@@ -258,6 +276,9 @@ def main() -> None:
             text = generated.read_text(encoding="utf-8") if generated.exists() else ""
             for phrase in (
                 "Narrative orientation",
+                "**Plain-language thesis.**",
+                "**Engineering rule.**",
+                "**Machine contract.**",
                 "**Question.**",
                 "**Running example.**",
                 "**Strongest objection.**",
@@ -296,9 +317,19 @@ def main() -> None:
 
         # Reject a missing editorial field.
         missing_field = copy.deepcopy(spine)
-        del missing_field["chapters"][0]["strongest_objection"]
+        del missing_field["chapters"][0]["machine_contract"]
         if not validate_against_schema(missing_field, spine_schema, "negative.missing_field"):
-            errors.append("negative control failed: missing strongest objection was accepted")
+            errors.append("negative control failed: missing machine contract was accepted")
+
+        # Reject a substantial-looking machine contract that omits the
+        # noninheritance boundary.
+        unbounded_contract = copy.deepcopy(spine)
+        unbounded_contract["chapters"][0]["machine_contract"] = (
+            "The transition record binds source identity, target identity, authority, "
+            "obligations, evidence, residuals, consumers, expiry, and recovery state."
+        )
+        if not narrative_projection_errors(unbounded_contract):
+            errors.append("negative control failed: machine contract without noninheritance was accepted")
 
         # Reject selection order that disagrees with the canonical manifest.
         wrong_order = copy.deepcopy(spine)
@@ -338,9 +369,10 @@ def main() -> None:
     fail(errors)
     print(
         f"Product-projection validation passed: {len(selected_ids)} narrative chapters, "
+        f"{len(selected_ids) * 3} explicit unit projections, "
         f"{len(canonical) - len(selected_ids)} reference-routed omissions, "
         f"{len(canonical)} reference chapters, {evidence['entry_count']} evidence routes, "
-        "and 4 rejecting negative controls."
+        "and 5 rejecting negative controls."
     )
 
 

@@ -16,7 +16,7 @@
   "properties": {
     "schema_version": {
       "type": "string",
-      "enum": ["asi_stack.narrative_product_spine.v0"]
+      "enum": ["asi_stack.narrative_product_spine.v1"]
     },
     "product_id": {
       "type": "string",
@@ -40,6 +40,9 @@
           "order",
           "chapter_id",
           "core_claim_ref",
+          "plain_language_thesis",
+          "normative_engineering_rule",
+          "machine_contract",
           "reader_question",
           "running_example",
           "strongest_objection",
@@ -51,6 +54,9 @@
           "order": { "type": "integer", "minimum": 1, "maximum": 22 },
           "chapter_id": { "type": "string", "minLength": 1 },
           "core_claim_ref": { "type": "string", "pattern": "^[a-z0-9-]+\\.core$" },
+          "plain_language_thesis": { "type": "string", "minLength": 48 },
+          "normative_engineering_rule": { "type": "string", "minLength": 48 },
+          "machine_contract": { "type": "string", "minLength": 64 },
           "reader_question": { "type": "string", "minLength": 24 },
           "running_example": { "type": "string", "minLength": 24 },
           "strongest_objection": { "type": "string", "minLength": 24 },

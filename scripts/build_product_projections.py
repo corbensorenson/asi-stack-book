@@ -201,6 +201,9 @@ def build_narrative(
         cards.append(
             f'<article class="card"><div class="meta">{row["order"]} · <code>{escape(row["core_claim_ref"])}</code></div>'
             f'<h3><a href="{escape(link)}">{escape(row["title"])}</a></h3>'
+            f'<p><strong>Plain-language thesis:</strong> {escape(row["plain_language_thesis"])}</p>'
+            f'<p><strong>Engineering rule:</strong> {escape(row["normative_engineering_rule"])}</p>'
+            f'<p class="meta"><strong>Machine contract:</strong> {escape(row["machine_contract"])}</p>'
             f'<p><strong>Question:</strong> {escape(row["reader_question"])}</p>'
             f'<p class="meta"><strong>Running example:</strong> {escape(row["running_example"])}</p></article>'
         )

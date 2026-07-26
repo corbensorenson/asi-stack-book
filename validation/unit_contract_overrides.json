@@ -659,9 +659,10 @@
         "scripts/build_product_projections.py",
         "docs/product_projection_artifacts.md"
       ],
-      "output_contract": "Regenerate all three product routes and reject non-22 or out-of-order narrative selection, incomplete or duplicated unit ownership, missing editorial jobs, omitted-reference loss, incomplete reference coverage, canonical-count drift, support promotion, or changed evidence snapshots.",
+      "output_contract": "Regenerate all three product routes and reject non-22 or out-of-order narrative selection, incomplete or duplicated unit ownership, missing plain/normative/machine projections, unbounded machine contracts, omitted-reference loss, incomplete reference coverage, canonical-count drift, support promotion, or changed evidence snapshots.",
       "output_assertions": [
         "22 selected narrative units and 62 reference-routed chapters",
+        "all 22 units expose separate plain-language, engineering-rule, and bounded machine-contract projections",
         "84 canonical chapters assigned exactly once across the narrative units",
         "84 canonical reference chapters",
         "17 evidence routes",
@@ -672,7 +673,8 @@
       "negative_controls": "validator_owned",
       "negative_control_cases": [
         "23-unit narrative",
-        "missing strongest objection",
+        "missing machine contract",
+        "machine contract without noninheritance",
         "out-of-order selection",
         "changed evidence snapshot"
       ],

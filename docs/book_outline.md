@@ -2,9 +2,9 @@
 
 Working title: **The ASI Stack: A Governed Systems Architecture for Advanced AI, with ASI as the Stress Case**
 
-Status: expanded source-of-truth drafting outline, updated 2026-07-25 after the
-Round 18 depth pass, Precision Contract integration, and final four-owner
-full-coverage admission.
+Status: expanded source-of-truth drafting outline, updated 2026-07-26 after the
+Round 18 depth pass, Precision Contract integration, final four-owner
+full-coverage admission, and 22-unit three-projection reconciliation.
 `book_structure.json` remains the ordering source of truth; Quarto generates
 displayed chapter numbers from the manifest.
 
@@ -73,7 +73,11 @@ The Phase 1 idea-placement and prose-convergence gate is complete.
 ownership pass. `products/narrative_product_spine.json` now defines 22
 representative units, `products/narrative_unit_crosswalk.json` assigns every
 one of the 84 canonical chapters exactly once, and the cumulative
-repository-change trace carries the route. Noninheritance, the Governed
+repository-change trace carries the route. Narrative spine v1 gives every unit
+a separate plain-language thesis, normative engineering rule, and bounded
+machine contract with an explicit noninheritance boundary; the generated
+reader and product surfaces expose all three instead of overloading one core
+claim sentence. Noninheritance, the Governed
 Transition Calculus, the Developmental Intelligence Loop, the minimum trusted
 kernel, bounded liveness, P0–P6 semantic depth, the natural Theseus flagship,
 and contribution-owned derivatives now appear in their manuscript owners.

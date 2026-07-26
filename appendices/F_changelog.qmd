@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-07-26 — Three-projection narrative convergence
+
+- Upgraded the 22-unit narrative spine contract from v0 to v1 and wrote a
+  separate plain-language thesis, normative engineering rule, and bounded
+  machine contract for every unit.
+- Required every machine contract to state a noninheritance boundary so a
+  readable thesis cannot silently become evidence, authority, readiness,
+  release, or task-completion language.
+- Updated the bounded reader generator and product projection to display all
+  three projections before the existing question, running example, objection,
+  failure story, and evidence-changing condition.
+- Strengthened schema, product, and cumulative-running-example validation to
+  reject missing, too-short, or noninheritance-free projections; the existing
+  22-unit/84-chapter ownership and no-promotion boundaries remain unchanged.
+- Reconciled the Phase 1 audit, active roadmap receipt, product contracts, and
+  executable projection documentation. This is a prose and interface
+  completion transaction only: it changes no chapter-core support state,
+  empirical result, proof result, release approval, or publication authority.
+
 ## 2026-07-26 — Repository and write-amplification cleanup
 
 - Reduced the public README from a project-wide operational inventory to a

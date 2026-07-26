@@ -2,6 +2,16 @@
 
 Recorded: 2026-07-25
 
+2026-07-26 addendum: narrative spine v1 adds an explicit plain-language
+thesis, normative engineering rule, and bounded machine contract to every one
+of the 22 orientations. Schema, product, and cumulative-trace validation now
+reject a missing projection or a machine contract without an explicit
+noninheritance boundary. The v1 candidate regenerated and rendered all 27 HTML
+pages, then passed all 54 desktop/mobile browser pairs and all 54 automated
+accessibility-tree preparation pairs with zero failures. The addendum changes
+navigation and claim projection, not canonical claim identity, support, or
+release state.
+
 ## Artifact boundary
 
 The current narrative candidate was generated from
@@ -49,8 +59,12 @@ node scripts/validate_curated_reader_accessibility_tree.js \
   overflow at the tested 1280-by-900 and 390-by-844 viewports.
 - Narrative contract validation passed 22 editorial contracts, 23 cumulative
   artifacts, and six rejecting continuity controls.
-- Product validation passed 22 narrative units, 62 reference-routed chapters,
-  all 84 reference chapters, 17 evidence routes, and four rejecting controls.
+- Narrative spine v1 validation additionally passed all 66 explicit unit
+  projections: 22 plain-language theses, 22 normative engineering rules, and
+  22 bounded machine contracts with noninheritance boundaries.
+- Product validation passed 22 narrative units, all 66 unit projections, 62
+  reference-routed chapters, all 84 reference chapters, 17 evidence routes,
+  and five rejecting controls.
 - The source was also rendered as the complete canonical book from a clean
   temporary copy: 97 HTML pages, all 84 chapters, all 11 appendices, and 439
   live-only headings and matching TOC targets passed the static Human-view
