@@ -52,7 +52,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/CyclicMixers.lean` | 2 | 5 | 0 | 5 | 5 |
 | `lean/AsiStackProofs/DataEngineLifecycleRefinement.lean` | 15 | 5 | 15 | 10 | 2 |
 | `lean/AsiStackProofs/DeliberationRefinement.lean` | 10 | 11 | 0 | 12 | 3 |
-| `lean/AsiStackProofs/Efficiency.lean` | 4 | 24 | 0 | 9 | 4 |
+| `lean/AsiStackProofs/Efficiency.lean` | 2 | 2 | 0 | 3 | 2 |
 | `lean/AsiStackProofs/EvidenceStates.lean` | 2 | 22 | 0 | 17 | 7 |
 | `lean/AsiStackProofs/FailureModes.lean` | 4 | 21 | 0 | 6 | 4 |
 | `lean/AsiStackProofs/FastGenerationRefinement.lean` | 5 | 17 | 0 | 12 | 3 |
@@ -83,7 +83,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/ReadinessRefinement.lean` | 3 | 17 | 0 | 10 | 3 |
 | `lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean` | 1 | 16 | 0 | 15 | 2 |
 | `lean/AsiStackProofs/Replacement.lean` | 6 | 37 | 0 | 10 | 6 |
-| `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | 11 | 9 | 11 | 5 | 2 |
+| `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | 13 | 9 | 13 | 5 | 2 |
 | `lean/AsiStackProofs/RoutingRefinement.lean` | 5 | 17 | 0 | 21 | 3 |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | 6 | 44 | 0 | 13 | 9 |
 | `lean/AsiStackProofs/SafetyCaseRefinement.lean` | 8 | 10 | 0 | 9 | 2 |
@@ -201,8 +201,8 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:stack.layer_contract.admission_lifecycle_route` | `asi-is-a-stack-not-a-model` | `AsiStackProofs.StackBoundaries` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:efficiency.minimum_viable.operational_invariant` | `the-efficient-asi-hypothesis` | `AsiStackProofs.Efficiency` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:efficiency.minimum_viable.failure_blocks_promotion` | `the-efficient-asi-hypothesis` | `AsiStackProofs.Efficiency` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:efficiency.claim_admission_lifecycle_route` | `the-efficient-asi-hypothesis` | `AsiStackProofs.Efficiency` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:efficiency.route_search.probe_fixture_bridge` | `the-efficient-asi-hypothesis` | `AsiStackProofs.Efficiency` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:efficiency.claim_admission_lifecycle_route` | `the-efficient-asi-hypothesis` | `AsiStackProofs.ResourceEconomicsRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:efficiency.route_search.probe_fixture_bridge` | `the-efficient-asi-hypothesis` | `AsiStackProofs.ResourceEconomicsRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:authority.ceiling.operational_invariant` | `system-boundaries-and-authority` | `AsiStackProofs.AuthorityEffectRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:authority.ceiling.failure_blocks_promotion` | `system-boundaries-and-authority` | `AsiStackProofs.AuthorityEffectRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:authority.lifecycle.admission_route` | `system-boundaries-and-authority` | `AsiStackProofs.Authority` | triage ok; module ok; chapter tag ok; limitation ok |

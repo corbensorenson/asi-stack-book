@@ -3,13 +3,14 @@
   "scanner": "modal and outcome-bearing sentence cue scan; candidates require semantic adjudication",
   "summary": {
     "chapter_count": 64,
-    "candidate_count": 3442,
+    "candidate_count": 3443,
     "review_state_counts": {
       "duplicate_of_atom": 1524,
       "editorial_or_question": 71,
       "historical_or_source_report": 293,
       "material_atom": 3,
-      "nonmaterial_explanation": 1551
+      "nonmaterial_explanation": 1551,
+      "pending_materiality_adjudication": 1
     }
   },
   "candidates": [
@@ -2137,9 +2138,28 @@
       "target_atom_id": null
     },
     {
+      "candidate_id": "the-efficient-asi-hypothesis.prose.d6ac0022309f",
+      "chapter_id": "the-efficient-asi-hypothesis",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:443",
+      "sentence": "they do not prove route-search completeness, cost-estimate accuracy, quality",
+      "cues": [
+        "prove"
+      ],
+      "review_state": "pending_materiality_adjudication",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": null,
+      "target_atom_id": null
+    },
+    {
       "candidate_id": "the-efficient-asi-hypothesis.prose.30ce293b7494",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:448",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:462",
       "sentence": "The crosswalk bounds efficiency claims: sources supply design language, while measured support requires route runs, baselines, costs, residuals, and negative results.",
       "cues": [
         "requires"
@@ -2158,7 +2178,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.ac04fc2564e8",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:479",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:493",
       "sentence": "It is efficient when the record shows what quality predicate it satisfied, what it cost, which alternatives were rejected, what residual remains, and what fallback is available.",
       "cues": [
         "shows"
@@ -2177,7 +2197,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.87adb383eebe",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:479",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:493",
       "sentence": "The stack may prefer a smaller model, cached proof, compressed artifact, specialist core, or generated reconstruction only when the surrounding record still shows permission, adequacy, verification burden, and rollback.",
       "cues": [
         "shows"

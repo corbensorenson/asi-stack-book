@@ -1,5 +1,29 @@
 # Changelog
 
+## 2026-07-26 — Fifteenth route-economy consolidation C6 tranche
+
+- Reorganized the Efficient ASI chapter around a clear division of labor:
+  two genuinely deductive finite invariants remain in
+  `AsiStackProofs.Efficiency`; the stronger nine-stage governed route economy
+  lives in `AsiStackProofs.ResourceEconomicsRefinement`; and the synthetic
+  route-search script independently computes its candidate outcomes.
+- Retired nineteen theorem-per-field normalizations over one authored
+  efficiency-admission checklist and three theorems over a copied probe
+  summary. The policy fields and two-valid/six-invalid/fourteen-candidate
+  result remain in the prose and executable evidence; they are no longer
+  presented as semantic proof merely because Lean normalized their literals.
+- Migrated the admission-lifecycle and route-search proof targets to the
+  reachable resource lifecycle plus independent consumer, and rewrote the
+  chapter’s formalization explanation to name exactly what is formal,
+  executable, and still open.
+- The cumulative ledger now records eighty-eight dependency-safe retirements,
+  two exact scope-language rewrites, and forty-one public-target migrations.
+  The live estate is 1,282 declarations: 35 P0, 731 P1, 25 P2, 319 P3, 93 P4,
+  79 P5, and zero P6. The remaining queue contains 70 stronger-model actions.
+- No measured-efficiency, route-search-completeness, cost-accuracy,
+  model-quality, compression-utility, deployment, transfer, support, or
+  release claim changes.
+
 ## 2026-07-26 — Fourteenth scope-and-refinement C6 tranche
 
 - Renamed two retained theorems so their public names state exactly what their
@@ -17,9 +41,7 @@
   exact scope-language rewrites, and thirty-nine public-target migrations. The
   live estate is 1,304 declarations: 35 P0, 753 P1, 25 P2, 319 P3, 93 P4, 79
   P5, and zero P6. The remaining queue contains 92 stronger-model rewrites.
-- Current proof-depth snapshot: 333 proof targets, 110 Lean modules, 1304
-  theorem declarations, 918 derived/decomposed, 171 direct/projection, 215
-  unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Current proof-depth snapshot: 333 proof targets, 110 Lean modules, 1282 theorem declarations, 896 derived/decomposed, 171 direct/projection, 215 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - No theorem count is treated as a success metric. No policy-quality,
   substrate-quality, safety-lifecycle, chapter-core support, release, or
   publication-authority claim changes.

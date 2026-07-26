@@ -3114,15 +3114,899 @@
         "lean:lake-build"
       ],
       "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R69-efficiency-no-efficiency-claim-request-stays-idle",
+      "sequence": 69,
+      "state": "executed",
+      "action": "retire_legacy_fixture_theorem_after_reachable_refinement_rebinding",
+      "semantic_relation": "legacy_fixture_statement_replaced_by_reachable_refinement_and_independent_consumer",
+      "module_path": "lean/AsiStackProofs/Efficiency.lean",
+      "baseline_module_sha256": "0525edcbbbea6c14fe48901b1d427047ac032e52a7acadf8e2e78a810e6c0ca0",
+      "retired_theorem_id": "lean/AsiStackProofs/Efficiency.lean::no_efficiency_claim_request_stays_idle",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "88e9d72f2fef6ea0f0ac64dc5248f95b722593d913707b4d17a179964302f6c8",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "a4d38e168ba7bc8ffec95eae8b4667d58afcc244798f14f447021d31c6e6cd6d",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem normalizes one edited Boolean field in a single hand-authored complete review.",
+        "The immutable semantic overlay records no Lean dependency or theorem consumer for the declaration.",
+        "The reachable ResourceEconomicsRefinement model carries identity-bound request, allocation, execution, verification, transfer, reconciliation, closure, support, and external-effect semantics.",
+        "The independent efficiency route-search consumer derives accepted and rejected outcomes from candidate eligibility, complete cost arithmetic, residuals, authority, and negative controls instead of trusting copied fields.",
+        "Retirement preserves the bounded policy and result as prose, executable evidence, and a stronger lifecycle without presenting checklist normalization as semantic proof.",
+        "No route-search completeness, cost-estimate accuracy, measured efficiency, model quality, compression utility, deployment, transfer, or support-state promotion follows."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:efficiency.claim_admission_lifecycle_route",
+          "old_target_text": "Modeled efficiency-claim admission routes missing task contracts, quality predicates, selected routes, candidate sets, lower-cost comparisons, cost ledgers, complete visible costs, verification results, failed quality, authority bypass, residual gaps, fallback gaps, hidden-cost audit gaps, benchmark or trace gaps, negative-control gaps, evidence-transition gaps, and non-claim-boundary gaps to explicit outcomes.",
+          "new_target_text": "A reachable nine-stage route-economy lifecycle requires scoped request identities, complete resource and hidden-cost accounting, protected capacity, fallback, actual spend, useful-outcome and resource-bill separation, verification, residual and recovery records, reconciliation, evidence transition, and closure without support or external-effect authority.",
+          "consumer_paths": [
+            "book_structure.json",
+            "docs/book_outline.md",
+            "chapters/the-efficient-asi-hypothesis.qmd",
+            "proofs/proof_manifest.json",
+            "proofs/proof_triage.json"
+          ]
+        }
+      ],
+      "maximum_inference_preserved": "The independent synthetic consumer still computes the bounded route outcomes, and the reachable resource lifecycle governs accounting, verification, residual, reconciliation, and authority boundaries; no empirical efficiency or complete-search result follows.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_efficiency_route_search_probe.py",
+        "scripts/validate_resource_economics_refinement.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R70-efficiency-missing-task-contract-requests-contract",
+      "sequence": 70,
+      "state": "executed",
+      "action": "retire_legacy_fixture_theorem_after_reachable_refinement_rebinding",
+      "semantic_relation": "legacy_fixture_statement_replaced_by_reachable_refinement_and_independent_consumer",
+      "module_path": "lean/AsiStackProofs/Efficiency.lean",
+      "baseline_module_sha256": "0525edcbbbea6c14fe48901b1d427047ac032e52a7acadf8e2e78a810e6c0ca0",
+      "retired_theorem_id": "lean/AsiStackProofs/Efficiency.lean::missing_task_contract_requests_contract",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "d25d6ad6588f1a711a006ac64b9ecf289c842d1ebcbab6e17d7dc4664e5ba119",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "050eb17adfb751aa0ae2ce91e82e0559d4c9c6fe6d77c1461b5213801b50066e",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem normalizes one edited Boolean field in a single hand-authored complete review.",
+        "The immutable semantic overlay records no Lean dependency or theorem consumer for the declaration.",
+        "The reachable ResourceEconomicsRefinement model carries identity-bound request, allocation, execution, verification, transfer, reconciliation, closure, support, and external-effect semantics.",
+        "The independent efficiency route-search consumer derives accepted and rejected outcomes from candidate eligibility, complete cost arithmetic, residuals, authority, and negative controls instead of trusting copied fields.",
+        "Retirement preserves the bounded policy and result as prose, executable evidence, and a stronger lifecycle without presenting checklist normalization as semantic proof.",
+        "No route-search completeness, cost-estimate accuracy, measured efficiency, model quality, compression utility, deployment, transfer, or support-state promotion follows."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "The independent synthetic consumer still computes the bounded route outcomes, and the reachable resource lifecycle governs accounting, verification, residual, reconciliation, and authority boundaries; no empirical efficiency or complete-search result follows.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_efficiency_route_search_probe.py",
+        "scripts/validate_resource_economics_refinement.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R71-efficiency-missing-quality-predicate-requests-predicate",
+      "sequence": 71,
+      "state": "executed",
+      "action": "retire_legacy_fixture_theorem_after_reachable_refinement_rebinding",
+      "semantic_relation": "legacy_fixture_statement_replaced_by_reachable_refinement_and_independent_consumer",
+      "module_path": "lean/AsiStackProofs/Efficiency.lean",
+      "baseline_module_sha256": "0525edcbbbea6c14fe48901b1d427047ac032e52a7acadf8e2e78a810e6c0ca0",
+      "retired_theorem_id": "lean/AsiStackProofs/Efficiency.lean::missing_quality_predicate_requests_predicate",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "19b74ffbc6ccb5b0a9803b7409bb261edaed741bc51227d8ce93a4aa5c9a283e",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "998d743b3d5a475d701ea722c8afd596510a9889741cb88325e6a115980cc97e",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem normalizes one edited Boolean field in a single hand-authored complete review.",
+        "The immutable semantic overlay records no Lean dependency or theorem consumer for the declaration.",
+        "The reachable ResourceEconomicsRefinement model carries identity-bound request, allocation, execution, verification, transfer, reconciliation, closure, support, and external-effect semantics.",
+        "The independent efficiency route-search consumer derives accepted and rejected outcomes from candidate eligibility, complete cost arithmetic, residuals, authority, and negative controls instead of trusting copied fields.",
+        "Retirement preserves the bounded policy and result as prose, executable evidence, and a stronger lifecycle without presenting checklist normalization as semantic proof.",
+        "No route-search completeness, cost-estimate accuracy, measured efficiency, model quality, compression utility, deployment, transfer, or support-state promotion follows."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "The independent synthetic consumer still computes the bounded route outcomes, and the reachable resource lifecycle governs accounting, verification, residual, reconciliation, and authority boundaries; no empirical efficiency or complete-search result follows.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_efficiency_route_search_probe.py",
+        "scripts/validate_resource_economics_refinement.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R72-efficiency-missing-selected-route-requests-route-record",
+      "sequence": 72,
+      "state": "executed",
+      "action": "retire_legacy_fixture_theorem_after_reachable_refinement_rebinding",
+      "semantic_relation": "legacy_fixture_statement_replaced_by_reachable_refinement_and_independent_consumer",
+      "module_path": "lean/AsiStackProofs/Efficiency.lean",
+      "baseline_module_sha256": "0525edcbbbea6c14fe48901b1d427047ac032e52a7acadf8e2e78a810e6c0ca0",
+      "retired_theorem_id": "lean/AsiStackProofs/Efficiency.lean::missing_selected_route_requests_route_record",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "979df122215b8d6f8f22a86de97d85143e5b5f77ea8a08ea48fb1cd43ddd4e61",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "1e8ee114a402eeabbc716a02a99c9ef988a6ec790d31e72236596e7a1b209212",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem normalizes one edited Boolean field in a single hand-authored complete review.",
+        "The immutable semantic overlay records no Lean dependency or theorem consumer for the declaration.",
+        "The reachable ResourceEconomicsRefinement model carries identity-bound request, allocation, execution, verification, transfer, reconciliation, closure, support, and external-effect semantics.",
+        "The independent efficiency route-search consumer derives accepted and rejected outcomes from candidate eligibility, complete cost arithmetic, residuals, authority, and negative controls instead of trusting copied fields.",
+        "Retirement preserves the bounded policy and result as prose, executable evidence, and a stronger lifecycle without presenting checklist normalization as semantic proof.",
+        "No route-search completeness, cost-estimate accuracy, measured efficiency, model quality, compression utility, deployment, transfer, or support-state promotion follows."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "The independent synthetic consumer still computes the bounded route outcomes, and the reachable resource lifecycle governs accounting, verification, residual, reconciliation, and authority boundaries; no empirical efficiency or complete-search result follows.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_efficiency_route_search_probe.py",
+        "scripts/validate_resource_economics_refinement.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R73-efficiency-missing-candidate-set-requests-candidate-set",
+      "sequence": 73,
+      "state": "executed",
+      "action": "retire_legacy_fixture_theorem_after_reachable_refinement_rebinding",
+      "semantic_relation": "legacy_fixture_statement_replaced_by_reachable_refinement_and_independent_consumer",
+      "module_path": "lean/AsiStackProofs/Efficiency.lean",
+      "baseline_module_sha256": "0525edcbbbea6c14fe48901b1d427047ac032e52a7acadf8e2e78a810e6c0ca0",
+      "retired_theorem_id": "lean/AsiStackProofs/Efficiency.lean::missing_candidate_set_requests_candidate_set",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "b534dd4eb389b2cccbde2c7a31c9f5b15fa5526c427be4c16cda7e369f7d79d2",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "a171e1d990684eb47aa348ed08741595870a37caf0aa57d0d552897a1ee285bb",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem normalizes one edited Boolean field in a single hand-authored complete review.",
+        "The immutable semantic overlay records no Lean dependency or theorem consumer for the declaration.",
+        "The reachable ResourceEconomicsRefinement model carries identity-bound request, allocation, execution, verification, transfer, reconciliation, closure, support, and external-effect semantics.",
+        "The independent efficiency route-search consumer derives accepted and rejected outcomes from candidate eligibility, complete cost arithmetic, residuals, authority, and negative controls instead of trusting copied fields.",
+        "Retirement preserves the bounded policy and result as prose, executable evidence, and a stronger lifecycle without presenting checklist normalization as semantic proof.",
+        "No route-search completeness, cost-estimate accuracy, measured efficiency, model quality, compression utility, deployment, transfer, or support-state promotion follows."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "The independent synthetic consumer still computes the bounded route outcomes, and the reachable resource lifecycle governs accounting, verification, residual, reconciliation, and authority boundaries; no empirical efficiency or complete-search result follows.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_efficiency_route_search_probe.py",
+        "scripts/validate_resource_economics_refinement.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R74-efficiency-missing-lower-cost-comparisons-requests-comparisons",
+      "sequence": 74,
+      "state": "executed",
+      "action": "retire_legacy_fixture_theorem_after_reachable_refinement_rebinding",
+      "semantic_relation": "legacy_fixture_statement_replaced_by_reachable_refinement_and_independent_consumer",
+      "module_path": "lean/AsiStackProofs/Efficiency.lean",
+      "baseline_module_sha256": "0525edcbbbea6c14fe48901b1d427047ac032e52a7acadf8e2e78a810e6c0ca0",
+      "retired_theorem_id": "lean/AsiStackProofs/Efficiency.lean::missing_lower_cost_comparisons_requests_comparisons",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "9f9cf51f7fccdbcaa8547a81f38ebf5fd0c4aa092be8ec79493ea062bff6f927",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "8a54d3741feb6430b5874da25d3a5809b4ec5d8b2ff2c03e09d067164f806780",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem normalizes one edited Boolean field in a single hand-authored complete review.",
+        "The immutable semantic overlay records no Lean dependency or theorem consumer for the declaration.",
+        "The reachable ResourceEconomicsRefinement model carries identity-bound request, allocation, execution, verification, transfer, reconciliation, closure, support, and external-effect semantics.",
+        "The independent efficiency route-search consumer derives accepted and rejected outcomes from candidate eligibility, complete cost arithmetic, residuals, authority, and negative controls instead of trusting copied fields.",
+        "Retirement preserves the bounded policy and result as prose, executable evidence, and a stronger lifecycle without presenting checklist normalization as semantic proof.",
+        "No route-search completeness, cost-estimate accuracy, measured efficiency, model quality, compression utility, deployment, transfer, or support-state promotion follows."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "The independent synthetic consumer still computes the bounded route outcomes, and the reachable resource lifecycle governs accounting, verification, residual, reconciliation, and authority boundaries; no empirical efficiency or complete-search result follows.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_efficiency_route_search_probe.py",
+        "scripts/validate_resource_economics_refinement.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R75-efficiency-missing-cost-classes-requests-cost-ledger",
+      "sequence": 75,
+      "state": "executed",
+      "action": "retire_legacy_fixture_theorem_after_reachable_refinement_rebinding",
+      "semantic_relation": "legacy_fixture_statement_replaced_by_reachable_refinement_and_independent_consumer",
+      "module_path": "lean/AsiStackProofs/Efficiency.lean",
+      "baseline_module_sha256": "0525edcbbbea6c14fe48901b1d427047ac032e52a7acadf8e2e78a810e6c0ca0",
+      "retired_theorem_id": "lean/AsiStackProofs/Efficiency.lean::missing_cost_classes_requests_cost_ledger",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "957a3de312888534f1860cec0a6b37a592e0718c18cf729ac36416a0e8882460",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "2c3e2d5f52a37e473ac7ecafa18cbfee125dd835989346b837c7e5eaae28cbb6",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem normalizes one edited Boolean field in a single hand-authored complete review.",
+        "The immutable semantic overlay records no Lean dependency or theorem consumer for the declaration.",
+        "The reachable ResourceEconomicsRefinement model carries identity-bound request, allocation, execution, verification, transfer, reconciliation, closure, support, and external-effect semantics.",
+        "The independent efficiency route-search consumer derives accepted and rejected outcomes from candidate eligibility, complete cost arithmetic, residuals, authority, and negative controls instead of trusting copied fields.",
+        "Retirement preserves the bounded policy and result as prose, executable evidence, and a stronger lifecycle without presenting checklist normalization as semantic proof.",
+        "No route-search completeness, cost-estimate accuracy, measured efficiency, model quality, compression utility, deployment, transfer, or support-state promotion follows."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "The independent synthetic consumer still computes the bounded route outcomes, and the reachable resource lifecycle governs accounting, verification, residual, reconciliation, and authority boundaries; no empirical efficiency or complete-search result follows.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_efficiency_route_search_probe.py",
+        "scripts/validate_resource_economics_refinement.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R76-efficiency-incomplete-visible-costs-request-complete-costs",
+      "sequence": 76,
+      "state": "executed",
+      "action": "retire_legacy_fixture_theorem_after_reachable_refinement_rebinding",
+      "semantic_relation": "legacy_fixture_statement_replaced_by_reachable_refinement_and_independent_consumer",
+      "module_path": "lean/AsiStackProofs/Efficiency.lean",
+      "baseline_module_sha256": "0525edcbbbea6c14fe48901b1d427047ac032e52a7acadf8e2e78a810e6c0ca0",
+      "retired_theorem_id": "lean/AsiStackProofs/Efficiency.lean::incomplete_visible_costs_request_complete_costs",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "00ac775deb4f50464005a218841508f17148f27e725a343484b0b02b93957a5b",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "e07784e57d6b23a953bb3376ddfea331ef80d1c86ea0f06fd25731ea8f192bf0",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem normalizes one edited Boolean field in a single hand-authored complete review.",
+        "The immutable semantic overlay records no Lean dependency or theorem consumer for the declaration.",
+        "The reachable ResourceEconomicsRefinement model carries identity-bound request, allocation, execution, verification, transfer, reconciliation, closure, support, and external-effect semantics.",
+        "The independent efficiency route-search consumer derives accepted and rejected outcomes from candidate eligibility, complete cost arithmetic, residuals, authority, and negative controls instead of trusting copied fields.",
+        "Retirement preserves the bounded policy and result as prose, executable evidence, and a stronger lifecycle without presenting checklist normalization as semantic proof.",
+        "No route-search completeness, cost-estimate accuracy, measured efficiency, model quality, compression utility, deployment, transfer, or support-state promotion follows."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "The independent synthetic consumer still computes the bounded route outcomes, and the reachable resource lifecycle governs accounting, verification, residual, reconciliation, and authority boundaries; no empirical efficiency or complete-search result follows.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_efficiency_route_search_probe.py",
+        "scripts/validate_resource_economics_refinement.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R77-efficiency-missing-verification-result-requests-verification",
+      "sequence": 77,
+      "state": "executed",
+      "action": "retire_legacy_fixture_theorem_after_reachable_refinement_rebinding",
+      "semantic_relation": "legacy_fixture_statement_replaced_by_reachable_refinement_and_independent_consumer",
+      "module_path": "lean/AsiStackProofs/Efficiency.lean",
+      "baseline_module_sha256": "0525edcbbbea6c14fe48901b1d427047ac032e52a7acadf8e2e78a810e6c0ca0",
+      "retired_theorem_id": "lean/AsiStackProofs/Efficiency.lean::missing_verification_result_requests_verification",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "8e7c32fa268794927fba673604e7b894527ce49dc67fada457443b3055a9b5d5",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "5cb0de0d9f8dd6943d6289bc6379a603c6f97b1a5902a4ad5ac3b8ba4bc1473b",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem normalizes one edited Boolean field in a single hand-authored complete review.",
+        "The immutable semantic overlay records no Lean dependency or theorem consumer for the declaration.",
+        "The reachable ResourceEconomicsRefinement model carries identity-bound request, allocation, execution, verification, transfer, reconciliation, closure, support, and external-effect semantics.",
+        "The independent efficiency route-search consumer derives accepted and rejected outcomes from candidate eligibility, complete cost arithmetic, residuals, authority, and negative controls instead of trusting copied fields.",
+        "Retirement preserves the bounded policy and result as prose, executable evidence, and a stronger lifecycle without presenting checklist normalization as semantic proof.",
+        "No route-search completeness, cost-estimate accuracy, measured efficiency, model quality, compression utility, deployment, transfer, or support-state promotion follows."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "The independent synthetic consumer still computes the bounded route outcomes, and the reachable resource lifecycle governs accounting, verification, residual, reconciliation, and authority boundaries; no empirical efficiency or complete-search result follows.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_efficiency_route_search_probe.py",
+        "scripts/validate_resource_economics_refinement.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R78-efficiency-failed-quality-blocks-efficiency-claim",
+      "sequence": 78,
+      "state": "executed",
+      "action": "retire_legacy_fixture_theorem_after_reachable_refinement_rebinding",
+      "semantic_relation": "legacy_fixture_statement_replaced_by_reachable_refinement_and_independent_consumer",
+      "module_path": "lean/AsiStackProofs/Efficiency.lean",
+      "baseline_module_sha256": "0525edcbbbea6c14fe48901b1d427047ac032e52a7acadf8e2e78a810e6c0ca0",
+      "retired_theorem_id": "lean/AsiStackProofs/Efficiency.lean::failed_quality_blocks_efficiency_claim",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "604dcd0d37642498867b65e9a230f84d0ba6c0c3b2cf10de7f9fd49a2db8cfc0",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "355ad8356c7779565aad51ef6eb23eb2bebef2ee6bed6e76a7e15a33f9e95eaa",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem normalizes one edited Boolean field in a single hand-authored complete review.",
+        "The immutable semantic overlay records no Lean dependency or theorem consumer for the declaration.",
+        "The reachable ResourceEconomicsRefinement model carries identity-bound request, allocation, execution, verification, transfer, reconciliation, closure, support, and external-effect semantics.",
+        "The independent efficiency route-search consumer derives accepted and rejected outcomes from candidate eligibility, complete cost arithmetic, residuals, authority, and negative controls instead of trusting copied fields.",
+        "Retirement preserves the bounded policy and result as prose, executable evidence, and a stronger lifecycle without presenting checklist normalization as semantic proof.",
+        "No route-search completeness, cost-estimate accuracy, measured efficiency, model quality, compression utility, deployment, transfer, or support-state promotion follows."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "The independent synthetic consumer still computes the bounded route outcomes, and the reachable resource lifecycle governs accounting, verification, residual, reconciliation, and authority boundaries; no empirical efficiency or complete-search result follows.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_efficiency_route_search_probe.py",
+        "scripts/validate_resource_economics_refinement.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R79-efficiency-authority-bypass-blocks-efficiency-claim",
+      "sequence": 79,
+      "state": "executed",
+      "action": "retire_legacy_fixture_theorem_after_reachable_refinement_rebinding",
+      "semantic_relation": "legacy_fixture_statement_replaced_by_reachable_refinement_and_independent_consumer",
+      "module_path": "lean/AsiStackProofs/Efficiency.lean",
+      "baseline_module_sha256": "0525edcbbbea6c14fe48901b1d427047ac032e52a7acadf8e2e78a810e6c0ca0",
+      "retired_theorem_id": "lean/AsiStackProofs/Efficiency.lean::authority_bypass_blocks_efficiency_claim",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "6879a8362a7e12a836736fc104ccf705bada4cdb28438f132249e5b3be4877da",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "faebb0590c83a581ddca58756d8e9e302d8c5de4148b9bdd246fa521f37a92e1",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem normalizes one edited Boolean field in a single hand-authored complete review.",
+        "The immutable semantic overlay records no Lean dependency or theorem consumer for the declaration.",
+        "The reachable ResourceEconomicsRefinement model carries identity-bound request, allocation, execution, verification, transfer, reconciliation, closure, support, and external-effect semantics.",
+        "The independent efficiency route-search consumer derives accepted and rejected outcomes from candidate eligibility, complete cost arithmetic, residuals, authority, and negative controls instead of trusting copied fields.",
+        "Retirement preserves the bounded policy and result as prose, executable evidence, and a stronger lifecycle without presenting checklist normalization as semantic proof.",
+        "No route-search completeness, cost-estimate accuracy, measured efficiency, model quality, compression utility, deployment, transfer, or support-state promotion follows."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "The independent synthetic consumer still computes the bounded route outcomes, and the reachable resource lifecycle governs accounting, verification, residual, reconciliation, and authority boundaries; no empirical efficiency or complete-search result follows.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_efficiency_route_search_probe.py",
+        "scripts/validate_resource_economics_refinement.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R80-efficiency-missing-residuals-request-residual-record",
+      "sequence": 80,
+      "state": "executed",
+      "action": "retire_legacy_fixture_theorem_after_reachable_refinement_rebinding",
+      "semantic_relation": "legacy_fixture_statement_replaced_by_reachable_refinement_and_independent_consumer",
+      "module_path": "lean/AsiStackProofs/Efficiency.lean",
+      "baseline_module_sha256": "0525edcbbbea6c14fe48901b1d427047ac032e52a7acadf8e2e78a810e6c0ca0",
+      "retired_theorem_id": "lean/AsiStackProofs/Efficiency.lean::missing_residuals_request_residual_record",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "ecb71a42a867d1166eb4391f15b9f1e24377600e95e12f10df9b69a35945c4a2",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "a8bd29a00fd5126bbd003961b7b2290d402a04e9e2ce1989ffcc537236396931",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem normalizes one edited Boolean field in a single hand-authored complete review.",
+        "The immutable semantic overlay records no Lean dependency or theorem consumer for the declaration.",
+        "The reachable ResourceEconomicsRefinement model carries identity-bound request, allocation, execution, verification, transfer, reconciliation, closure, support, and external-effect semantics.",
+        "The independent efficiency route-search consumer derives accepted and rejected outcomes from candidate eligibility, complete cost arithmetic, residuals, authority, and negative controls instead of trusting copied fields.",
+        "Retirement preserves the bounded policy and result as prose, executable evidence, and a stronger lifecycle without presenting checklist normalization as semantic proof.",
+        "No route-search completeness, cost-estimate accuracy, measured efficiency, model quality, compression utility, deployment, transfer, or support-state promotion follows."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "The independent synthetic consumer still computes the bounded route outcomes, and the reachable resource lifecycle governs accounting, verification, residual, reconciliation, and authority boundaries; no empirical efficiency or complete-search result follows.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_efficiency_route_search_probe.py",
+        "scripts/validate_resource_economics_refinement.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R81-efficiency-missing-fallback-route-requests-fallback",
+      "sequence": 81,
+      "state": "executed",
+      "action": "retire_legacy_fixture_theorem_after_reachable_refinement_rebinding",
+      "semantic_relation": "legacy_fixture_statement_replaced_by_reachable_refinement_and_independent_consumer",
+      "module_path": "lean/AsiStackProofs/Efficiency.lean",
+      "baseline_module_sha256": "0525edcbbbea6c14fe48901b1d427047ac032e52a7acadf8e2e78a810e6c0ca0",
+      "retired_theorem_id": "lean/AsiStackProofs/Efficiency.lean::missing_fallback_route_requests_fallback",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "154a5d77d4510c6154cfc38e28c8948ba7c5adbd3828b8f6c788c2a5b26fd45f",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "064141d4731549b79805a48dbc0fe3797d364a6c7301dcbd83b0c0deb39fc235",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem normalizes one edited Boolean field in a single hand-authored complete review.",
+        "The immutable semantic overlay records no Lean dependency or theorem consumer for the declaration.",
+        "The reachable ResourceEconomicsRefinement model carries identity-bound request, allocation, execution, verification, transfer, reconciliation, closure, support, and external-effect semantics.",
+        "The independent efficiency route-search consumer derives accepted and rejected outcomes from candidate eligibility, complete cost arithmetic, residuals, authority, and negative controls instead of trusting copied fields.",
+        "Retirement preserves the bounded policy and result as prose, executable evidence, and a stronger lifecycle without presenting checklist normalization as semantic proof.",
+        "No route-search completeness, cost-estimate accuracy, measured efficiency, model quality, compression utility, deployment, transfer, or support-state promotion follows."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "The independent synthetic consumer still computes the bounded route outcomes, and the reachable resource lifecycle governs accounting, verification, residual, reconciliation, and authority boundaries; no empirical efficiency or complete-search result follows.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_efficiency_route_search_probe.py",
+        "scripts/validate_resource_economics_refinement.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R82-efficiency-missing-hidden-cost-audit-requests-audit",
+      "sequence": 82,
+      "state": "executed",
+      "action": "retire_legacy_fixture_theorem_after_reachable_refinement_rebinding",
+      "semantic_relation": "legacy_fixture_statement_replaced_by_reachable_refinement_and_independent_consumer",
+      "module_path": "lean/AsiStackProofs/Efficiency.lean",
+      "baseline_module_sha256": "0525edcbbbea6c14fe48901b1d427047ac032e52a7acadf8e2e78a810e6c0ca0",
+      "retired_theorem_id": "lean/AsiStackProofs/Efficiency.lean::missing_hidden_cost_audit_requests_audit",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "c08f37af23ae0e009c243742c080b54494aa16e748603ad64731a4288cc4dd01",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "18d5538e3550899630fda71d3577689aadb7a81b74e070869c8d41dfc77cf7a3",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem normalizes one edited Boolean field in a single hand-authored complete review.",
+        "The immutable semantic overlay records no Lean dependency or theorem consumer for the declaration.",
+        "The reachable ResourceEconomicsRefinement model carries identity-bound request, allocation, execution, verification, transfer, reconciliation, closure, support, and external-effect semantics.",
+        "The independent efficiency route-search consumer derives accepted and rejected outcomes from candidate eligibility, complete cost arithmetic, residuals, authority, and negative controls instead of trusting copied fields.",
+        "Retirement preserves the bounded policy and result as prose, executable evidence, and a stronger lifecycle without presenting checklist normalization as semantic proof.",
+        "No route-search completeness, cost-estimate accuracy, measured efficiency, model quality, compression utility, deployment, transfer, or support-state promotion follows."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "The independent synthetic consumer still computes the bounded route outcomes, and the reachable resource lifecycle governs accounting, verification, residual, reconciliation, and authority boundaries; no empirical efficiency or complete-search result follows.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_efficiency_route_search_probe.py",
+        "scripts/validate_resource_economics_refinement.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R83-efficiency-missing-benchmark-or-trace-requests-trace",
+      "sequence": 83,
+      "state": "executed",
+      "action": "retire_legacy_fixture_theorem_after_reachable_refinement_rebinding",
+      "semantic_relation": "legacy_fixture_statement_replaced_by_reachable_refinement_and_independent_consumer",
+      "module_path": "lean/AsiStackProofs/Efficiency.lean",
+      "baseline_module_sha256": "0525edcbbbea6c14fe48901b1d427047ac032e52a7acadf8e2e78a810e6c0ca0",
+      "retired_theorem_id": "lean/AsiStackProofs/Efficiency.lean::missing_benchmark_or_trace_requests_trace",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "09e5776041935bc0dedd262ae4d18f3485b9dbd07380c2deb878c57423b7a4a9",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "2a9ea33f445b95173c8b04a018cdda193448301407caadc414acf869690b0182",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem normalizes one edited Boolean field in a single hand-authored complete review.",
+        "The immutable semantic overlay records no Lean dependency or theorem consumer for the declaration.",
+        "The reachable ResourceEconomicsRefinement model carries identity-bound request, allocation, execution, verification, transfer, reconciliation, closure, support, and external-effect semantics.",
+        "The independent efficiency route-search consumer derives accepted and rejected outcomes from candidate eligibility, complete cost arithmetic, residuals, authority, and negative controls instead of trusting copied fields.",
+        "Retirement preserves the bounded policy and result as prose, executable evidence, and a stronger lifecycle without presenting checklist normalization as semantic proof.",
+        "No route-search completeness, cost-estimate accuracy, measured efficiency, model quality, compression utility, deployment, transfer, or support-state promotion follows."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "The independent synthetic consumer still computes the bounded route outcomes, and the reachable resource lifecycle governs accounting, verification, residual, reconciliation, and authority boundaries; no empirical efficiency or complete-search result follows.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_efficiency_route_search_probe.py",
+        "scripts/validate_resource_economics_refinement.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R84-efficiency-missing-negative-controls-requests-controls",
+      "sequence": 84,
+      "state": "executed",
+      "action": "retire_legacy_fixture_theorem_after_reachable_refinement_rebinding",
+      "semantic_relation": "legacy_fixture_statement_replaced_by_reachable_refinement_and_independent_consumer",
+      "module_path": "lean/AsiStackProofs/Efficiency.lean",
+      "baseline_module_sha256": "0525edcbbbea6c14fe48901b1d427047ac032e52a7acadf8e2e78a810e6c0ca0",
+      "retired_theorem_id": "lean/AsiStackProofs/Efficiency.lean::missing_negative_controls_requests_controls",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "dfb67d144577f5720bb9899c4e600d7cb4000e65f5f8f93481ccb16253ac48fa",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "3b1398e4ccb4b5160a2116a76803b10b0e22d4048876cb5427cc1ae255f0964a",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem normalizes one edited Boolean field in a single hand-authored complete review.",
+        "The immutable semantic overlay records no Lean dependency or theorem consumer for the declaration.",
+        "The reachable ResourceEconomicsRefinement model carries identity-bound request, allocation, execution, verification, transfer, reconciliation, closure, support, and external-effect semantics.",
+        "The independent efficiency route-search consumer derives accepted and rejected outcomes from candidate eligibility, complete cost arithmetic, residuals, authority, and negative controls instead of trusting copied fields.",
+        "Retirement preserves the bounded policy and result as prose, executable evidence, and a stronger lifecycle without presenting checklist normalization as semantic proof.",
+        "No route-search completeness, cost-estimate accuracy, measured efficiency, model quality, compression utility, deployment, transfer, or support-state promotion follows."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "The independent synthetic consumer still computes the bounded route outcomes, and the reachable resource lifecycle governs accounting, verification, residual, reconciliation, and authority boundaries; no empirical efficiency or complete-search result follows.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_efficiency_route_search_probe.py",
+        "scripts/validate_resource_economics_refinement.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R85-efficiency-promotion-request-without-efficiency-evidence-transition-requests-transition",
+      "sequence": 85,
+      "state": "executed",
+      "action": "retire_legacy_fixture_theorem_after_reachable_refinement_rebinding",
+      "semantic_relation": "legacy_fixture_statement_replaced_by_reachable_refinement_and_independent_consumer",
+      "module_path": "lean/AsiStackProofs/Efficiency.lean",
+      "baseline_module_sha256": "0525edcbbbea6c14fe48901b1d427047ac032e52a7acadf8e2e78a810e6c0ca0",
+      "retired_theorem_id": "lean/AsiStackProofs/Efficiency.lean::promotion_request_without_efficiency_evidence_transition_requests_transition",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "286056be1b851e5f4bd9fda4cead5a398ba038cba629c6d7e1521f7a1711d1ee",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "c9e50caede0a03644601a1f344cb8e4a9c8de5a303fcd936b153654ebe7261c0",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem normalizes one edited Boolean field in a single hand-authored complete review.",
+        "The immutable semantic overlay records no Lean dependency or theorem consumer for the declaration.",
+        "The reachable ResourceEconomicsRefinement model carries identity-bound request, allocation, execution, verification, transfer, reconciliation, closure, support, and external-effect semantics.",
+        "The independent efficiency route-search consumer derives accepted and rejected outcomes from candidate eligibility, complete cost arithmetic, residuals, authority, and negative controls instead of trusting copied fields.",
+        "Retirement preserves the bounded policy and result as prose, executable evidence, and a stronger lifecycle without presenting checklist normalization as semantic proof.",
+        "No route-search completeness, cost-estimate accuracy, measured efficiency, model quality, compression utility, deployment, transfer, or support-state promotion follows."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "The independent synthetic consumer still computes the bounded route outcomes, and the reachable resource lifecycle governs accounting, verification, residual, reconciliation, and authority boundaries; no empirical efficiency or complete-search result follows.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_efficiency_route_search_probe.py",
+        "scripts/validate_resource_economics_refinement.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R86-efficiency-efficiency-claim-without-nonclaim-boundary-preserves-boundary",
+      "sequence": 86,
+      "state": "executed",
+      "action": "retire_legacy_fixture_theorem_after_reachable_refinement_rebinding",
+      "semantic_relation": "legacy_fixture_statement_replaced_by_reachable_refinement_and_independent_consumer",
+      "module_path": "lean/AsiStackProofs/Efficiency.lean",
+      "baseline_module_sha256": "0525edcbbbea6c14fe48901b1d427047ac032e52a7acadf8e2e78a810e6c0ca0",
+      "retired_theorem_id": "lean/AsiStackProofs/Efficiency.lean::efficiency_claim_without_nonclaim_boundary_preserves_boundary",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "d610c095a1e31870e6411d51e8ffbc224dbd7d042e6ade33830c6063cff91c50",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "1ca9ce5ed0024e959a4405ffe614be9e5180e279a862b0736439682de3b7828d",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem normalizes one edited Boolean field in a single hand-authored complete review.",
+        "The immutable semantic overlay records no Lean dependency or theorem consumer for the declaration.",
+        "The reachable ResourceEconomicsRefinement model carries identity-bound request, allocation, execution, verification, transfer, reconciliation, closure, support, and external-effect semantics.",
+        "The independent efficiency route-search consumer derives accepted and rejected outcomes from candidate eligibility, complete cost arithmetic, residuals, authority, and negative controls instead of trusting copied fields.",
+        "Retirement preserves the bounded policy and result as prose, executable evidence, and a stronger lifecycle without presenting checklist normalization as semantic proof.",
+        "No route-search completeness, cost-estimate accuracy, measured efficiency, model quality, compression utility, deployment, transfer, or support-state promotion follows."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "The independent synthetic consumer still computes the bounded route outcomes, and the reachable resource lifecycle governs accounting, verification, residual, reconciliation, and authority boundaries; no empirical efficiency or complete-search result follows.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_efficiency_route_search_probe.py",
+        "scripts/validate_resource_economics_refinement.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R87-efficiency-complete-efficiency-claim-admission-allows-claim-record",
+      "sequence": 87,
+      "state": "executed",
+      "action": "retire_legacy_fixture_theorem_after_reachable_refinement_rebinding",
+      "semantic_relation": "legacy_fixture_statement_replaced_by_reachable_refinement_and_independent_consumer",
+      "module_path": "lean/AsiStackProofs/Efficiency.lean",
+      "baseline_module_sha256": "0525edcbbbea6c14fe48901b1d427047ac032e52a7acadf8e2e78a810e6c0ca0",
+      "retired_theorem_id": "lean/AsiStackProofs/Efficiency.lean::complete_efficiency_claim_admission_allows_claim_record",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "06e4e363376ce661976c9e068ea873944abe5575ef7926e87ddbc52f66317fce",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "c68bf1a44a622b83c54ae9409f456fdca3a96d35672e6b539956ed4dffdc362f",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem normalizes one edited Boolean field in a single hand-authored complete review.",
+        "The immutable semantic overlay records no Lean dependency or theorem consumer for the declaration.",
+        "The reachable ResourceEconomicsRefinement model carries identity-bound request, allocation, execution, verification, transfer, reconciliation, closure, support, and external-effect semantics.",
+        "The independent efficiency route-search consumer derives accepted and rejected outcomes from candidate eligibility, complete cost arithmetic, residuals, authority, and negative controls instead of trusting copied fields.",
+        "Retirement preserves the bounded policy and result as prose, executable evidence, and a stronger lifecycle without presenting checklist normalization as semantic proof.",
+        "No route-search completeness, cost-estimate accuracy, measured efficiency, model quality, compression utility, deployment, transfer, or support-state promotion follows."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "The independent synthetic consumer still computes the bounded route outcomes, and the reachable resource lifecycle governs accounting, verification, residual, reconciliation, and authority boundaries; no empirical efficiency or complete-search result follows.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_efficiency_route_search_probe.py",
+        "scripts/validate_resource_economics_refinement.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R88-efficiency-efficiency-route-search-probe-fixture-valid",
+      "sequence": 88,
+      "state": "executed",
+      "action": "retire_legacy_fixture_theorem_after_reachable_refinement_rebinding",
+      "semantic_relation": "legacy_fixture_statement_replaced_by_reachable_refinement_and_independent_consumer",
+      "module_path": "lean/AsiStackProofs/Efficiency.lean",
+      "baseline_module_sha256": "0525edcbbbea6c14fe48901b1d427047ac032e52a7acadf8e2e78a810e6c0ca0",
+      "retired_theorem_id": "lean/AsiStackProofs/Efficiency.lean::efficiency_route_search_probe_fixture_valid",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "e847e0f3fd9f66bb8fff55d9b17b30b477bad1032fd998cd15794b35ebcc2bff",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "59969cd35361b27904e95c43e36baee40728bff453a8a062f5faaf61eb13b0ef",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem proves a conjunction or projection over one hand-authored summary literal.",
+        "The immutable semantic overlay records no Lean dependency or theorem consumer for the declaration.",
+        "The reachable ResourceEconomicsRefinement model carries identity-bound request, allocation, execution, verification, transfer, reconciliation, closure, support, and external-effect semantics.",
+        "The independent efficiency route-search consumer derives accepted and rejected outcomes from candidate eligibility, complete cost arithmetic, residuals, authority, and negative controls instead of trusting copied fields.",
+        "Retirement preserves the bounded policy and result as prose, executable evidence, and a stronger lifecycle without presenting checklist normalization as semantic proof.",
+        "No route-search completeness, cost-estimate accuracy, measured efficiency, model quality, compression utility, deployment, transfer, or support-state promotion follows."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:efficiency.route_search.probe_fixture_bridge",
+          "old_target_text": "The synthetic efficiency route-search probe summary records two valid traces, six expected-invalid controls, fourteen checked candidate routes, minimum verified route selection, rejection of cheap failed quality, hidden residual, authority bypass, and compression-utility overclaim controls, hidden-cost class audit coverage, and no route-search-completeness, measured-efficiency, or support-state-promotion claim.",
+          "new_target_text": "The independent synthetic route-search consumer computes two valid and six expected-invalid outcomes over fourteen candidates, while the reachable lifecycle supplies the formal cost, verification, residual, fallback, reconciliation, and no-authority boundary; neither asset is treated as measured efficiency or complete search.",
+          "consumer_paths": [
+            "book_structure.json",
+            "docs/book_outline.md",
+            "chapters/the-efficient-asi-hypothesis.qmd",
+            "proofs/proof_manifest.json",
+            "proofs/proof_triage.json"
+          ]
+        }
+      ],
+      "maximum_inference_preserved": "The independent synthetic consumer still computes the bounded route outcomes, and the reachable resource lifecycle governs accounting, verification, residual, reconciliation, and authority boundaries; no empirical efficiency or complete-search result follows.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_efficiency_route_search_probe.py",
+        "scripts/validate_resource_economics_refinement.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R89-efficiency-efficiency-route-search-probe-rejects-invalid-savings",
+      "sequence": 89,
+      "state": "executed",
+      "action": "retire_legacy_fixture_theorem_after_reachable_refinement_rebinding",
+      "semantic_relation": "legacy_fixture_statement_replaced_by_reachable_refinement_and_independent_consumer",
+      "module_path": "lean/AsiStackProofs/Efficiency.lean",
+      "baseline_module_sha256": "0525edcbbbea6c14fe48901b1d427047ac032e52a7acadf8e2e78a810e6c0ca0",
+      "retired_theorem_id": "lean/AsiStackProofs/Efficiency.lean::efficiency_route_search_probe_rejects_invalid_savings",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "c34e7cab3677c4f74fc8bd18e8e8ea8ffab868edbe75864bc7c3027a22cb517f",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "6d76c2b80e5741d623cd5c2b3468a092cb447569ed0d0677473d79bc78789ac9",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem proves a conjunction or projection over one hand-authored summary literal.",
+        "The immutable semantic overlay records no Lean dependency or theorem consumer for the declaration.",
+        "The reachable ResourceEconomicsRefinement model carries identity-bound request, allocation, execution, verification, transfer, reconciliation, closure, support, and external-effect semantics.",
+        "The independent efficiency route-search consumer derives accepted and rejected outcomes from candidate eligibility, complete cost arithmetic, residuals, authority, and negative controls instead of trusting copied fields.",
+        "Retirement preserves the bounded policy and result as prose, executable evidence, and a stronger lifecycle without presenting checklist normalization as semantic proof.",
+        "No route-search completeness, cost-estimate accuracy, measured efficiency, model quality, compression utility, deployment, transfer, or support-state promotion follows."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "The independent synthetic consumer still computes the bounded route outcomes, and the reachable resource lifecycle governs accounting, verification, residual, reconciliation, and authority boundaries; no empirical efficiency or complete-search result follows.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_efficiency_route_search_probe.py",
+        "scripts/validate_resource_economics_refinement.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R90-efficiency-efficiency-route-search-probe-preserves-no-promotion-boundary",
+      "sequence": 90,
+      "state": "executed",
+      "action": "retire_legacy_fixture_theorem_after_reachable_refinement_rebinding",
+      "semantic_relation": "legacy_fixture_statement_replaced_by_reachable_refinement_and_independent_consumer",
+      "module_path": "lean/AsiStackProofs/Efficiency.lean",
+      "baseline_module_sha256": "0525edcbbbea6c14fe48901b1d427047ac032e52a7acadf8e2e78a810e6c0ca0",
+      "retired_theorem_id": "lean/AsiStackProofs/Efficiency.lean::efficiency_route_search_probe_preserves_no_promotion_boundary",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "79ab9121061b244208386bfedb3aabc8ab5dcabda19e48b243fcb69dc6acc9b6",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "670c22fcdabb59b24bfe3332a6f70a6df5260a74a1932168d03b0d3d806464d0",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem proves a conjunction or projection over one hand-authored summary literal.",
+        "The immutable semantic overlay records no Lean dependency or theorem consumer for the declaration.",
+        "The reachable ResourceEconomicsRefinement model carries identity-bound request, allocation, execution, verification, transfer, reconciliation, closure, support, and external-effect semantics.",
+        "The independent efficiency route-search consumer derives accepted and rejected outcomes from candidate eligibility, complete cost arithmetic, residuals, authority, and negative controls instead of trusting copied fields.",
+        "Retirement preserves the bounded policy and result as prose, executable evidence, and a stronger lifecycle without presenting checklist normalization as semantic proof.",
+        "No route-search completeness, cost-estimate accuracy, measured efficiency, model quality, compression utility, deployment, transfer, or support-state promotion follows."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "The independent synthetic consumer still computes the bounded route outcomes, and the reachable resource lifecycle governs accounting, verification, residual, reconciliation, and authority boundaries; no empirical efficiency or complete-search result follows.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_efficiency_route_search_probe.py",
+        "scripts/validate_resource_economics_refinement.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
     }
   ],
   "summary": {
-    "executed_retirement_count": 66,
+    "executed_retirement_count": 88,
     "executed_scope_rewrite_count": 2,
-    "current_live_theorem_count": 1304,
-    "remaining_action_count": 92,
+    "current_live_theorem_count": 1282,
+    "remaining_action_count": 70,
     "remaining_action_counts": {
-      "rewrite_with_stronger_model": 92
+      "rewrite_with_stronger_model": 70
     },
     "chapter_core_support_transitions": 0,
     "new_formal_claims": 0

@@ -543,11 +543,11 @@
               "status": "implemented in AsiStackProofs.Efficiency; no residual-burden measurement or utility-preservation claim"
             },
             {
-              "name": "Efficiency-claim admission lifecycle route",
-              "purpose": "Check that finite efficiency-claim admission requests missing task contracts, quality predicates, selected routes, candidate sets, lower-cost comparisons, cost ledgers, complete visible costs, verification results, residual records, fallback routes, hidden-cost audits, benchmark or trace records, negative controls, evidence transitions, and non-claim boundaries before admitting the record.",
+              "name": "Governed route-economy lifecycle",
+              "purpose": "Check that a route-economy claim moves through scoped request, resource budgeting, capacity reservation, scheduling, execution, verification, transfer, spend reconciliation, and closure while preserving identities, authority ceilings, useful-outcome/resource-bill separation, residuals, recovery, evidence transitions, and non-claims.",
               "implementation_status": "implemented",
-              "result_status": "passes via Lean route theorems; no measured efficiency, route-search completeness, cost-estimate accuracy, route-quality, residual-burden, benchmark-performance, or support-promotion claim",
-              "status": "implemented in AsiStackProofs.Efficiency; no measured efficiency or route-search completeness claim"
+              "result_status": "passes via the reachable AsiStackProofs.ResourceEconomicsRefinement lifecycle and its independent 66-route, 57-rejection consumer; no measured efficiency, route-search completeness, cost-estimate accuracy, route-quality, residual-burden, benchmark-performance, or support-promotion claim",
+              "status": "implemented in AsiStackProofs.ResourceEconomicsRefinement; no measured efficiency or route-search completeness claim"
             },
             {
               "name": "Efficiency route-search probe",
@@ -571,7 +571,7 @@
               "result_status": "synthetic route-search probe rejects compression-utility overclaim and repair-burden erasure; downstream compression utility not proved"
             }
           ],
-          "lean_module": "AsiStackProofs.Efficiency",
+          "lean_module": "AsiStackProofs.Efficiency; AsiStackProofs.ResourceEconomicsRefinement",
           "proof_targets": [
             {
               "tag": "lean:efficiency.minimum_viable.operational_invariant",
@@ -587,14 +587,14 @@
             },
             {
               "tag": "lean:efficiency.claim_admission_lifecycle_route",
-              "module": "AsiStackProofs.Efficiency",
-              "target": "Modeled efficiency-claim admission routes missing task contracts, quality predicates, selected routes, candidate sets, lower-cost comparisons, cost ledgers, complete visible costs, verification results, failed quality, authority bypass, residual gaps, fallback gaps, hidden-cost audit gaps, benchmark or trace gaps, negative-control gaps, evidence-transition gaps, and non-claim-boundary gaps to explicit outcomes.",
+              "module": "AsiStackProofs.ResourceEconomicsRefinement",
+              "target": "A reachable nine-stage route-economy lifecycle requires scoped request identities, complete resource and hidden-cost accounting, protected capacity, fallback, actual spend, useful-outcome and resource-bill separation, verification, residual and recovery records, reconciliation, evidence transition, and closure without support or external-effect authority.",
               "status": "implemented"
             },
             {
               "tag": "lean:efficiency.route_search.probe_fixture_bridge",
-              "module": "AsiStackProofs.Efficiency",
-              "target": "The synthetic efficiency route-search probe summary records two valid traces, six expected-invalid controls, fourteen checked candidate routes, minimum verified route selection, rejection of cheap failed quality, hidden residual, authority bypass, and compression-utility overclaim controls, hidden-cost class audit coverage, and no route-search-completeness, measured-efficiency, or support-state-promotion claim.",
+              "module": "AsiStackProofs.ResourceEconomicsRefinement",
+              "target": "The independent synthetic route-search consumer computes two valid and six expected-invalid outcomes over fourteen candidates, while the reachable lifecycle supplies the formal cost, verification, residual, fallback, reconciliation, and no-authority boundary; neither asset is treated as measured efficiency or complete search.",
               "status": "implemented"
             }
           ]
@@ -21217,7 +21217,7 @@
             "Revocation stops at the theorem record while derived claims, releases, runtime consumers, caches, and public wording remain stale.",
             "Sunk-cost attachment to a large proof corpus prevents merging, replacing, refuting, or retiring declarations that do not constrain a real consumer."
           ],
-          "minimal_implementation": "The exact current minimum is one proof-target schema and valid fixture; one generated 333-target proof manifest with 302 implemented and 31 planned targets; a 110-module Lean workspace whose complete build reports 107 jobs and 1,304 theorem declarations classified as 918 derived/decomposed, 171 direct/projection, and 215 unknown/mixed; one proof-readiness classification; one wiring-only proof artifact audit; one semantic-adequacy review surface; one blocked formal-semantic-depth record with ten rejecting mutations; and five local ProofEnvelope declarations, all derived finite negative cases after retirement of its two direct projections. The separate activation audit preserves its historical 298-target, 65-module, and 1,151-theorem baseline. This minimum provides no complete semantic formalization of the stack, deployed enforcement proof, general implementation refinement, independent formal reproduction, empirical result, chapter-core transition, or SOTA result.",
+          "minimal_implementation": "The exact current minimum is one proof-target schema and valid fixture; one generated 333-target proof manifest with 302 implemented and 31 planned targets; a 110-module Lean workspace whose complete build reports 107 jobs and 1,282 theorem declarations classified as 896 derived/decomposed, 171 direct/projection, and 215 unknown/mixed; one proof-readiness classification; one wiring-only proof artifact audit; one semantic-adequacy review surface; one blocked formal-semantic-depth record with ten rejecting mutations; and five local ProofEnvelope declarations, all derived finite negative cases after retirement of its two direct projections. The separate activation audit preserves its historical 298-target, 65-module, and 1,151-theorem baseline. This minimum provides no complete semantic formalization of the stack, deployed enforcement proof, general implementation refinement, independent formal reproduction, empirical result, chapter-core transition, or SOTA result.",
           "beyond_state_of_art": "The mature Formal Claim Admission and Proof-Rationalization Program audits every proposition, all 298 activation-baseline proof targets, and all 1,151 activation-baseline theorem declarations for semantic necessity, vacuity, reachability, assumptions, dependencies, consumers, and implementation binding. It replaces load-bearing projections with richer state-machine, temporal, concurrency, noninterference, resource, recovery, probabilistic, or refinement models where warranted; moves behavior and performance obligations to executable and empirical lanes; validates implementation relations and runtime monitors; runs countermodels, mutations, adversarial schedules, and negative controls; requires independent formalizations, tools, implementations, and evaluators for decisive claims; measures proof and governance cost; propagates expiry and revocation through every consumer and release surface; and preserves narrow, null, refuted, retired, or blocked-after-full-attempt outcomes instead of optimizing theorem counts or green builds.",
           "open_evidence_gaps": [
             "All twelve assigned sources have exact passage-reviewed mappings, but they support formalization and claim-boundary design only; no source-reported system, proof corpus, deployment, runtime, security, capability, or performance result is imported as ASI Stack evidence.",

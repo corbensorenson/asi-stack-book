@@ -1011,7 +1011,7 @@ that remains safe only by never completing useful work fails the joint gate.
 
 Keep the existing syntax-level classifier, but add a semantic-depth overlay for
 every current declaration. The immutable pre-rationalization baseline contains
-1,370 declarations; the live estate contains 1,304 after sixty-six
+1,370 declarations; the live estate contains 1,282 after eighty-eight
 dependency-safe retirement transactions and two proposition-preserving scope
 rewrites:
 
@@ -1210,11 +1210,11 @@ historical review. The immutable historical registry remains exactly 1,151
 theorems across 298 targets. The separately frozen pre-rationalization overlay
 at commit `d0f9bda14f1253999f2c40d556d925d31e4b36a4` classifies all 1,370
 baseline declarations. The current overlay in
-`proofs/proof_semantic_depth_overlay.json` classifies all 1,304 live theorem
+`proofs/proof_semantic_depth_overlay.json` classifies all 1,282 live theorem
 declarations across 104 theorem-bearing modules and maps them to 61 active
 semantic-owner chapters.
 
-The live semantic-depth distribution is 35 P0 record-shape results, 753 P1
+The live semantic-depth distribution is 35 P0 record-shape results, 731 P1
 finite-route results, 25 P2 reachability/nonvacuity results, 319 P3
 implementation-refinement results, 93 P4 cross-component-safety results, 79 P5
 liveness/recovery results, and zero P6 empirically bound results. P6 being zero
@@ -1225,7 +1225,7 @@ Every overlay row records its assumptions, active semantic owner, downstream
 consumer, witness or explicit witness absence, implementation binding, mutation
 evidence, maximum inference, and disposition. The resulting current estate is
 1,212 retain, zero retire as narrow projection, zero pending scope-language
-rewrites, and 92 stronger-model rewrites. All 1,304 rows have mutation coverage and every
+rewrites, and 70 stronger-model rewrites. All 1,282 rows have mutation coverage and every
 retained theorem has a named consumer.
 
 The cumulative dependency-safe retirement ledger is
@@ -1468,10 +1468,33 @@ Eleven Policy Optimization declarations remain in the legacy module. No
 policy improvement, reward validity, rollback efficacy, substrate result,
 support transition, or release authority follows.
 
+The fifteenth route-economy consolidation tranche removes twenty-two weak
+declarations from `Efficiency.lean`: nineteen theorem-per-field
+normalizations over one complete admission checklist and three theorems over a
+hand-entered probe summary. None had a Lean dependency or theorem consumer.
+The two deductively meaningful efficiency invariants remain: a cheaper
+authorized quality-preserving member contradicts finite minimum-route status,
+and promotion with open obligations but no residual record contradicts the
+residual-promotion predicate.
+
+The broader admission idea is not discarded. It is reorganized under the
+reachable `ResourceEconomicsRefinement` request-to-closure lifecycle, which
+models identity custody, budgeting, protected capacity, scheduling, actual
+spend, useful-outcome/resource-bill separation, verification, residuals,
+recovery, transfer, reconciliation, closure, and rejection of support or
+external-effect authority. Its independent consumer covers all 66 routes and
+57 rejecting mutations. The separate efficiency route-search consumer still
+computes two passing traces and six expected-invalid controls over fourteen
+candidates from eligibility and cost arithmetic. The two affected public
+targets now describe this division of labor rather than treating copied
+Boolean fields as formal evidence. This consolidation establishes neither
+complete search nor accurate costs, measured efficiency, model quality,
+compression utility, deployment, transfer, or support promotion.
+
 This receipt completes the C6 **classification** gate and begins its
-dependency-safe execution gate. Exactly 68 of the original 161 actions have
-been executed: sixty-six theorem retirements and two proposition-preserving
-scope rewrites. Exactly 92 stronger-model actions remain. The next proof action
+dependency-safe execution gate. Exactly 90 of the original 161 actions have
+been executed: eighty-eight theorem retirements and two proposition-preserving
+scope rewrites. Exactly 70 stronger-model actions remain. The next proof action
 is to replace legacy fixture-validity surfaces with reachable models or
 independent consumers in semantic-value order, starting with existing
 refinement assets before creating new formal machinery. New proof work remains

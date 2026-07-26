@@ -18629,11 +18629,17 @@
       "consumer_refs": [
         "proof-target:lean:efficiency.claim_admission_lifecycle_route"
       ],
-      "runtime_consumer_refs": [],
-      "replacement_refs": [
-        "proof-model:efficiency.generated-claim-admission-route-suite.v1"
+      "runtime_consumer_refs": [
+        "scripts/validate_efficiency_route_search_probe.py",
+        "scripts/validate_resource_economics_refinement.py"
       ],
-      "review_rationale": "Replace theorem-per-fixture normalization with a general quantified route branch and generated priority/mutation conformance."
+      "replacement_refs": [
+        "proof-model:efficiency.generated-claim-admission-route-suite.v1",
+        "proof-model:resource-economics.request-to-closure-refinement.v1",
+        "lean/AsiStackProofs/ResourceEconomicsRefinement.lean",
+        "scripts/validate_efficiency_route_search_probe.py"
+      ],
+      "review_rationale": "Declaration physically retired: copied checklist or result-summary normalization is superseded by the reachable route-economy lifecycle and independently computed synthetic route outcomes."
     },
     "lean/AsiStackProofs/Efficiency.lean::missing_task_contract_requests_contract": {
       "review_state": "terminally_dispositioned",
@@ -18646,11 +18652,17 @@
       "consumer_refs": [
         "proof-target:lean:efficiency.claim_admission_lifecycle_route"
       ],
-      "runtime_consumer_refs": [],
-      "replacement_refs": [
-        "proof-model:efficiency.generated-claim-admission-route-suite.v1"
+      "runtime_consumer_refs": [
+        "scripts/validate_efficiency_route_search_probe.py",
+        "scripts/validate_resource_economics_refinement.py"
       ],
-      "review_rationale": "Replace theorem-per-fixture normalization with a general quantified route branch and generated priority/mutation conformance."
+      "replacement_refs": [
+        "proof-model:efficiency.generated-claim-admission-route-suite.v1",
+        "proof-model:resource-economics.request-to-closure-refinement.v1",
+        "lean/AsiStackProofs/ResourceEconomicsRefinement.lean",
+        "scripts/validate_efficiency_route_search_probe.py"
+      ],
+      "review_rationale": "Declaration physically retired: copied checklist or result-summary normalization is superseded by the reachable route-economy lifecycle and independently computed synthetic route outcomes."
     },
     "lean/AsiStackProofs/Efficiency.lean::missing_quality_predicate_requests_predicate": {
       "review_state": "terminally_dispositioned",
@@ -18663,11 +18675,17 @@
       "consumer_refs": [
         "proof-target:lean:efficiency.claim_admission_lifecycle_route"
       ],
-      "runtime_consumer_refs": [],
-      "replacement_refs": [
-        "proof-model:efficiency.generated-claim-admission-route-suite.v1"
+      "runtime_consumer_refs": [
+        "scripts/validate_efficiency_route_search_probe.py",
+        "scripts/validate_resource_economics_refinement.py"
       ],
-      "review_rationale": "Replace theorem-per-fixture normalization with a general quantified route branch and generated priority/mutation conformance."
+      "replacement_refs": [
+        "proof-model:efficiency.generated-claim-admission-route-suite.v1",
+        "proof-model:resource-economics.request-to-closure-refinement.v1",
+        "lean/AsiStackProofs/ResourceEconomicsRefinement.lean",
+        "scripts/validate_efficiency_route_search_probe.py"
+      ],
+      "review_rationale": "Declaration physically retired: copied checklist or result-summary normalization is superseded by the reachable route-economy lifecycle and independently computed synthetic route outcomes."
     },
     "lean/AsiStackProofs/Efficiency.lean::missing_selected_route_requests_route_record": {
       "review_state": "terminally_dispositioned",
@@ -18680,11 +18698,17 @@
       "consumer_refs": [
         "proof-target:lean:efficiency.claim_admission_lifecycle_route"
       ],
-      "runtime_consumer_refs": [],
-      "replacement_refs": [
-        "proof-model:efficiency.generated-claim-admission-route-suite.v1"
+      "runtime_consumer_refs": [
+        "scripts/validate_efficiency_route_search_probe.py",
+        "scripts/validate_resource_economics_refinement.py"
       ],
-      "review_rationale": "Replace theorem-per-fixture normalization with a general quantified route branch and generated priority/mutation conformance."
+      "replacement_refs": [
+        "proof-model:efficiency.generated-claim-admission-route-suite.v1",
+        "proof-model:resource-economics.request-to-closure-refinement.v1",
+        "lean/AsiStackProofs/ResourceEconomicsRefinement.lean",
+        "scripts/validate_efficiency_route_search_probe.py"
+      ],
+      "review_rationale": "Declaration physically retired: copied checklist or result-summary normalization is superseded by the reachable route-economy lifecycle and independently computed synthetic route outcomes."
     },
     "lean/AsiStackProofs/Efficiency.lean::missing_candidate_set_requests_candidate_set": {
       "review_state": "terminally_dispositioned",
@@ -18697,11 +18721,17 @@
       "consumer_refs": [
         "proof-target:lean:efficiency.claim_admission_lifecycle_route"
       ],
-      "runtime_consumer_refs": [],
-      "replacement_refs": [
-        "proof-model:efficiency.generated-claim-admission-route-suite.v1"
+      "runtime_consumer_refs": [
+        "scripts/validate_efficiency_route_search_probe.py",
+        "scripts/validate_resource_economics_refinement.py"
       ],
-      "review_rationale": "Replace theorem-per-fixture normalization with a general quantified route branch and generated priority/mutation conformance."
+      "replacement_refs": [
+        "proof-model:efficiency.generated-claim-admission-route-suite.v1",
+        "proof-model:resource-economics.request-to-closure-refinement.v1",
+        "lean/AsiStackProofs/ResourceEconomicsRefinement.lean",
+        "scripts/validate_efficiency_route_search_probe.py"
+      ],
+      "review_rationale": "Declaration physically retired: copied checklist or result-summary normalization is superseded by the reachable route-economy lifecycle and independently computed synthetic route outcomes."
     },
     "lean/AsiStackProofs/Efficiency.lean::missing_lower_cost_comparisons_requests_comparisons": {
       "review_state": "terminally_dispositioned",
@@ -18714,11 +18744,17 @@
       "consumer_refs": [
         "proof-target:lean:efficiency.claim_admission_lifecycle_route"
       ],
-      "runtime_consumer_refs": [],
-      "replacement_refs": [
-        "proof-model:efficiency.generated-claim-admission-route-suite.v1"
+      "runtime_consumer_refs": [
+        "scripts/validate_efficiency_route_search_probe.py",
+        "scripts/validate_resource_economics_refinement.py"
       ],
-      "review_rationale": "Replace theorem-per-fixture normalization with a general quantified route branch and generated priority/mutation conformance."
+      "replacement_refs": [
+        "proof-model:efficiency.generated-claim-admission-route-suite.v1",
+        "proof-model:resource-economics.request-to-closure-refinement.v1",
+        "lean/AsiStackProofs/ResourceEconomicsRefinement.lean",
+        "scripts/validate_efficiency_route_search_probe.py"
+      ],
+      "review_rationale": "Declaration physically retired: copied checklist or result-summary normalization is superseded by the reachable route-economy lifecycle and independently computed synthetic route outcomes."
     },
     "lean/AsiStackProofs/Efficiency.lean::missing_cost_classes_requests_cost_ledger": {
       "review_state": "terminally_dispositioned",
@@ -18731,12 +18767,18 @@
       "consumer_refs": [
         "proof-target:lean:efficiency.claim_admission_lifecycle_route"
       ],
-      "runtime_consumer_refs": [],
+      "runtime_consumer_refs": [
+        "scripts/validate_efficiency_route_search_probe.py",
+        "scripts/validate_resource_economics_refinement.py"
+      ],
       "replacement_refs": [
         "proof-model:efficiency.generated-claim-admission-route-suite.v1",
-        "proof-model:efficiency.route-selection-cost-refinement.v1"
+        "proof-model:efficiency.route-selection-cost-refinement.v1",
+        "proof-model:resource-economics.request-to-closure-refinement.v1",
+        "lean/AsiStackProofs/ResourceEconomicsRefinement.lean",
+        "scripts/validate_efficiency_route_search_probe.py"
       ],
-      "review_rationale": "Replace the literal case with generated route conformance and measured cost-ledger refinement."
+      "review_rationale": "Declaration physically retired: copied checklist or result-summary normalization is superseded by the reachable route-economy lifecycle and independently computed synthetic route outcomes."
     },
     "lean/AsiStackProofs/Efficiency.lean::incomplete_visible_costs_request_complete_costs": {
       "review_state": "terminally_dispositioned",
@@ -18749,12 +18791,18 @@
       "consumer_refs": [
         "proof-target:lean:efficiency.claim_admission_lifecycle_route"
       ],
-      "runtime_consumer_refs": [],
+      "runtime_consumer_refs": [
+        "scripts/validate_efficiency_route_search_probe.py",
+        "scripts/validate_resource_economics_refinement.py"
+      ],
       "replacement_refs": [
         "proof-model:efficiency.generated-claim-admission-route-suite.v1",
-        "proof-model:efficiency.route-selection-cost-refinement.v1"
+        "proof-model:efficiency.route-selection-cost-refinement.v1",
+        "proof-model:resource-economics.request-to-closure-refinement.v1",
+        "lean/AsiStackProofs/ResourceEconomicsRefinement.lean",
+        "scripts/validate_efficiency_route_search_probe.py"
       ],
-      "review_rationale": "Replace the literal case with generated route conformance and complete observed cost/refinement work."
+      "review_rationale": "Declaration physically retired: copied checklist or result-summary normalization is superseded by the reachable route-economy lifecycle and independently computed synthetic route outcomes."
     },
     "lean/AsiStackProofs/Efficiency.lean::missing_verification_result_requests_verification": {
       "review_state": "terminally_dispositioned",
@@ -18767,11 +18815,17 @@
       "consumer_refs": [
         "proof-target:lean:efficiency.claim_admission_lifecycle_route"
       ],
-      "runtime_consumer_refs": [],
-      "replacement_refs": [
-        "proof-model:efficiency.generated-claim-admission-route-suite.v1"
+      "runtime_consumer_refs": [
+        "scripts/validate_efficiency_route_search_probe.py",
+        "scripts/validate_resource_economics_refinement.py"
       ],
-      "review_rationale": "Replace theorem-per-fixture normalization with a general quantified route branch and generated priority/mutation conformance."
+      "replacement_refs": [
+        "proof-model:efficiency.generated-claim-admission-route-suite.v1",
+        "proof-model:resource-economics.request-to-closure-refinement.v1",
+        "lean/AsiStackProofs/ResourceEconomicsRefinement.lean",
+        "scripts/validate_efficiency_route_search_probe.py"
+      ],
+      "review_rationale": "Declaration physically retired: copied checklist or result-summary normalization is superseded by the reachable route-economy lifecycle and independently computed synthetic route outcomes."
     },
     "lean/AsiStackProofs/Efficiency.lean::failed_quality_blocks_efficiency_claim": {
       "review_state": "terminally_dispositioned",
@@ -18787,12 +18841,16 @@
         "proof-target:lean:efficiency.claim_admission_lifecycle_route"
       ],
       "runtime_consumer_refs": [
-        "scripts/validate_efficiency_route_search_probe.py"
+        "scripts/validate_efficiency_route_search_probe.py",
+        "scripts/validate_resource_economics_refinement.py"
       ],
       "replacement_refs": [
-        "proof-model:efficiency.generated-claim-admission-route-suite.v1"
+        "proof-model:efficiency.generated-claim-admission-route-suite.v1",
+        "proof-model:resource-economics.request-to-closure-refinement.v1",
+        "lean/AsiStackProofs/ResourceEconomicsRefinement.lean",
+        "scripts/validate_efficiency_route_search_probe.py"
       ],
-      "review_rationale": "Replace the literal record case with a general route and generated invalid-quality mutations; the probe remains finite synthetic evidence."
+      "review_rationale": "Declaration physically retired: copied checklist or result-summary normalization is superseded by the reachable route-economy lifecycle and independently computed synthetic route outcomes."
     },
     "lean/AsiStackProofs/Efficiency.lean::authority_bypass_blocks_efficiency_claim": {
       "review_state": "terminally_dispositioned",
@@ -18808,13 +18866,17 @@
         "proof-target:lean:efficiency.claim_admission_lifecycle_route"
       ],
       "runtime_consumer_refs": [
-        "scripts/validate_efficiency_route_search_probe.py"
+        "scripts/validate_efficiency_route_search_probe.py",
+        "scripts/validate_resource_economics_refinement.py"
       ],
       "replacement_refs": [
         "proof-model:efficiency.generated-claim-admission-route-suite.v1",
-        "proof-model:authority.effect-capability-refinement.v1"
+        "proof-model:authority.effect-capability-refinement.v1",
+        "proof-model:resource-economics.request-to-closure-refinement.v1",
+        "lean/AsiStackProofs/ResourceEconomicsRefinement.lean",
+        "scripts/validate_efficiency_route_search_probe.py"
       ],
-      "review_rationale": "Replace the literal record case with a general route, generated authority mutations, and checked authority/effect refinement."
+      "review_rationale": "Declaration physically retired: copied checklist or result-summary normalization is superseded by the reachable route-economy lifecycle and independently computed synthetic route outcomes."
     },
     "lean/AsiStackProofs/Efficiency.lean::missing_residuals_request_residual_record": {
       "review_state": "terminally_dispositioned",
@@ -18830,13 +18892,17 @@
         "proof-target:lean:efficiency.claim_admission_lifecycle_route"
       ],
       "runtime_consumer_refs": [
-        "scripts/validate_efficiency_route_search_probe.py"
+        "scripts/validate_efficiency_route_search_probe.py",
+        "scripts/validate_resource_economics_refinement.py"
       ],
       "replacement_refs": [
         "proof-model:efficiency.generated-claim-admission-route-suite.v1",
-        "proof-model:efficiency.residual-promotion-transition.v1"
+        "proof-model:efficiency.residual-promotion-transition.v1",
+        "proof-model:resource-economics.request-to-closure-refinement.v1",
+        "lean/AsiStackProofs/ResourceEconomicsRefinement.lean",
+        "scripts/validate_efficiency_route_search_probe.py"
       ],
-      "review_rationale": "Replace the literal case with a general route and reachable residual/promotion refinement."
+      "review_rationale": "Declaration physically retired: copied checklist or result-summary normalization is superseded by the reachable route-economy lifecycle and independently computed synthetic route outcomes."
     },
     "lean/AsiStackProofs/Efficiency.lean::missing_fallback_route_requests_fallback": {
       "review_state": "terminally_dispositioned",
@@ -18849,11 +18915,17 @@
       "consumer_refs": [
         "proof-target:lean:efficiency.claim_admission_lifecycle_route"
       ],
-      "runtime_consumer_refs": [],
-      "replacement_refs": [
-        "proof-model:efficiency.generated-claim-admission-route-suite.v1"
+      "runtime_consumer_refs": [
+        "scripts/validate_efficiency_route_search_probe.py",
+        "scripts/validate_resource_economics_refinement.py"
       ],
-      "review_rationale": "Replace theorem-per-fixture normalization with a general quantified route branch and generated priority/mutation conformance."
+      "replacement_refs": [
+        "proof-model:efficiency.generated-claim-admission-route-suite.v1",
+        "proof-model:resource-economics.request-to-closure-refinement.v1",
+        "lean/AsiStackProofs/ResourceEconomicsRefinement.lean",
+        "scripts/validate_efficiency_route_search_probe.py"
+      ],
+      "review_rationale": "Declaration physically retired: copied checklist or result-summary normalization is superseded by the reachable route-economy lifecycle and independently computed synthetic route outcomes."
     },
     "lean/AsiStackProofs/Efficiency.lean::missing_hidden_cost_audit_requests_audit": {
       "review_state": "terminally_dispositioned",
@@ -18869,13 +18941,17 @@
         "proof-target:lean:efficiency.claim_admission_lifecycle_route"
       ],
       "runtime_consumer_refs": [
-        "scripts/validate_efficiency_route_search_probe.py"
+        "scripts/validate_efficiency_route_search_probe.py",
+        "scripts/validate_resource_economics_refinement.py"
       ],
       "replacement_refs": [
         "proof-model:efficiency.generated-claim-admission-route-suite.v1",
-        "proof-model:efficiency.route-selection-cost-refinement.v1"
+        "proof-model:efficiency.route-selection-cost-refinement.v1",
+        "proof-model:resource-economics.request-to-closure-refinement.v1",
+        "lean/AsiStackProofs/ResourceEconomicsRefinement.lean",
+        "scripts/validate_efficiency_route_search_probe.py"
       ],
-      "review_rationale": "Replace the literal case with generated route conformance and complete cost-class observation/refinement."
+      "review_rationale": "Declaration physically retired: copied checklist or result-summary normalization is superseded by the reachable route-economy lifecycle and independently computed synthetic route outcomes."
     },
     "lean/AsiStackProofs/Efficiency.lean::missing_benchmark_or_trace_requests_trace": {
       "review_state": "terminally_dispositioned",
@@ -18888,12 +18964,18 @@
       "consumer_refs": [
         "proof-target:lean:efficiency.claim_admission_lifecycle_route"
       ],
-      "runtime_consumer_refs": [],
+      "runtime_consumer_refs": [
+        "scripts/validate_efficiency_route_search_probe.py",
+        "scripts/validate_resource_economics_refinement.py"
+      ],
       "replacement_refs": [
         "proof-model:efficiency.generated-claim-admission-route-suite.v1",
-        "proof-model:efficiency.route-selection-cost-refinement.v1"
+        "proof-model:efficiency.route-selection-cost-refinement.v1",
+        "proof-model:resource-economics.request-to-closure-refinement.v1",
+        "lean/AsiStackProofs/ResourceEconomicsRefinement.lean",
+        "scripts/validate_efficiency_route_search_probe.py"
       ],
-      "review_rationale": "Replace the literal case with generated route conformance plus matched benchmark and observed trace evidence."
+      "review_rationale": "Declaration physically retired: copied checklist or result-summary normalization is superseded by the reachable route-economy lifecycle and independently computed synthetic route outcomes."
     },
     "lean/AsiStackProofs/Efficiency.lean::missing_negative_controls_requests_controls": {
       "review_state": "terminally_dispositioned",
@@ -18909,12 +18991,16 @@
         "proof-target:lean:efficiency.claim_admission_lifecycle_route"
       ],
       "runtime_consumer_refs": [
-        "scripts/validate_efficiency_route_search_probe.py"
+        "scripts/validate_efficiency_route_search_probe.py",
+        "scripts/validate_resource_economics_refinement.py"
       ],
       "replacement_refs": [
-        "proof-model:efficiency.generated-claim-admission-route-suite.v1"
+        "proof-model:efficiency.generated-claim-admission-route-suite.v1",
+        "proof-model:resource-economics.request-to-closure-refinement.v1",
+        "lean/AsiStackProofs/ResourceEconomicsRefinement.lean",
+        "scripts/validate_efficiency_route_search_probe.py"
       ],
-      "review_rationale": "Replace the literal case with generated guard/priority mutations and negative-control conformance."
+      "review_rationale": "Declaration physically retired: copied checklist or result-summary normalization is superseded by the reachable route-economy lifecycle and independently computed synthetic route outcomes."
     },
     "lean/AsiStackProofs/Efficiency.lean::promotion_request_without_efficiency_evidence_transition_requests_transition": {
       "review_state": "terminally_dispositioned",
@@ -18927,12 +19013,18 @@
       "consumer_refs": [
         "proof-target:lean:efficiency.claim_admission_lifecycle_route"
       ],
-      "runtime_consumer_refs": [],
+      "runtime_consumer_refs": [
+        "scripts/validate_efficiency_route_search_probe.py",
+        "scripts/validate_resource_economics_refinement.py"
+      ],
       "replacement_refs": [
         "proof-model:efficiency.generated-claim-admission-route-suite.v1",
-        "proof-model:evidence-states.versioned-transition-refinement.v1"
+        "proof-model:evidence-states.versioned-transition-refinement.v1",
+        "proof-model:resource-economics.request-to-closure-refinement.v1",
+        "lean/AsiStackProofs/ResourceEconomicsRefinement.lean",
+        "scripts/validate_efficiency_route_search_probe.py"
       ],
-      "review_rationale": "Replace the literal case with a general route and reachable evidence-transition enforcement."
+      "review_rationale": "Declaration physically retired: copied checklist or result-summary normalization is superseded by the reachable route-economy lifecycle and independently computed synthetic route outcomes."
     },
     "lean/AsiStackProofs/Efficiency.lean::efficiency_claim_without_nonclaim_boundary_preserves_boundary": {
       "review_state": "terminally_dispositioned",
@@ -18945,11 +19037,17 @@
       "consumer_refs": [
         "proof-target:lean:efficiency.claim_admission_lifecycle_route"
       ],
-      "runtime_consumer_refs": [],
-      "replacement_refs": [
-        "proof-model:efficiency.generated-claim-admission-route-suite.v1"
+      "runtime_consumer_refs": [
+        "scripts/validate_efficiency_route_search_probe.py",
+        "scripts/validate_resource_economics_refinement.py"
       ],
-      "review_rationale": "Replace theorem-per-fixture normalization with a general route and checked consumer-boundary conformance."
+      "replacement_refs": [
+        "proof-model:efficiency.generated-claim-admission-route-suite.v1",
+        "proof-model:resource-economics.request-to-closure-refinement.v1",
+        "lean/AsiStackProofs/ResourceEconomicsRefinement.lean",
+        "scripts/validate_efficiency_route_search_probe.py"
+      ],
+      "review_rationale": "Declaration physically retired: copied checklist or result-summary normalization is superseded by the reachable route-economy lifecycle and independently computed synthetic route outcomes."
     },
     "lean/AsiStackProofs/Efficiency.lean::complete_efficiency_claim_admission_allows_claim_record": {
       "review_state": "terminally_dispositioned",
@@ -18962,12 +19060,18 @@
       "consumer_refs": [
         "proof-target:lean:efficiency.claim_admission_lifecycle_route"
       ],
-      "runtime_consumer_refs": [],
+      "runtime_consumer_refs": [
+        "scripts/validate_efficiency_route_search_probe.py",
+        "scripts/validate_resource_economics_refinement.py"
+      ],
       "replacement_refs": [
         "proof-model:efficiency.generated-claim-admission-route-suite.v1",
-        "proof-model:efficiency.claim-admission-result-refinement.v1"
+        "proof-model:efficiency.claim-admission-result-refinement.v1",
+        "proof-model:resource-economics.request-to-closure-refinement.v1",
+        "lean/AsiStackProofs/ResourceEconomicsRefinement.lean",
+        "scripts/validate_efficiency_route_search_probe.py"
       ],
-      "review_rationale": "Replace the literal positive constant with a general quantified admit branch and generated digest-bound result/refinement evidence."
+      "review_rationale": "Declaration physically retired: copied checklist or result-summary normalization is superseded by the reachable route-economy lifecycle and independently computed synthetic route outcomes."
     },
     "lean/AsiStackProofs/Efficiency.lean::efficiency_route_search_probe_fixture_valid": {
       "review_state": "terminally_dispositioned",
@@ -18984,12 +19088,16 @@
       ],
       "runtime_consumer_refs": [
         "scripts/validate_efficiency_route_search_probe.py",
-        "experiments/efficiency_route_search/results/2026-07-02-local.json"
+        "experiments/efficiency_route_search/results/2026-07-02-local.json",
+        "scripts/validate_resource_economics_refinement.py"
       ],
       "replacement_refs": [
-        "proof-model:efficiency.route-search-result-refinement.v1"
+        "proof-model:efficiency.route-search-result-refinement.v1",
+        "proof-model:resource-economics.request-to-closure-refinement.v1",
+        "lean/AsiStackProofs/ResourceEconomicsRefinement.lean",
+        "scripts/validate_efficiency_route_search_probe.py"
       ],
-      "review_rationale": "Preserve the validator-owned two-valid/six-invalid probe, but replace the copied Lean constants with generated digest-bound result conformance."
+      "review_rationale": "Declaration physically retired: copied checklist or result-summary normalization is superseded by the reachable route-economy lifecycle and independently computed synthetic route outcomes."
     },
     "lean/AsiStackProofs/Efficiency.lean::efficiency_route_search_probe_rejects_invalid_savings": {
       "review_state": "terminally_dispositioned",
@@ -19006,12 +19114,16 @@
       ],
       "runtime_consumer_refs": [
         "scripts/validate_efficiency_route_search_probe.py",
-        "experiments/efficiency_route_search/results/2026-07-02-local.json"
+        "experiments/efficiency_route_search/results/2026-07-02-local.json",
+        "scripts/validate_resource_economics_refinement.py"
       ],
       "replacement_refs": [
-        "proof-model:efficiency.route-search-result-refinement.v1"
+        "proof-model:efficiency.route-search-result-refinement.v1",
+        "proof-model:resource-economics.request-to-closure-refinement.v1",
+        "lean/AsiStackProofs/ResourceEconomicsRefinement.lean",
+        "scripts/validate_efficiency_route_search_probe.py"
       ],
-      "review_rationale": "Replace the copied summary proposition with generated case-level conformance to independently recomputed invalid controls."
+      "review_rationale": "Declaration physically retired: copied checklist or result-summary normalization is superseded by the reachable route-economy lifecycle and independently computed synthetic route outcomes."
     },
     "lean/AsiStackProofs/Efficiency.lean::efficiency_route_search_probe_preserves_no_promotion_boundary": {
       "review_state": "terminally_dispositioned",
@@ -19028,12 +19140,16 @@
       ],
       "runtime_consumer_refs": [
         "scripts/validate_efficiency_route_search_probe.py",
-        "experiments/efficiency_route_search/results/2026-07-02-local.json"
+        "experiments/efficiency_route_search/results/2026-07-02-local.json",
+        "scripts/validate_resource_economics_refinement.py"
       ],
       "replacement_refs": [
-        "proof-model:efficiency.route-search-result-refinement.v1"
+        "proof-model:efficiency.route-search-result-refinement.v1",
+        "proof-model:resource-economics.request-to-closure-refinement.v1",
+        "lean/AsiStackProofs/ResourceEconomicsRefinement.lean",
+        "scripts/validate_efficiency_route_search_probe.py"
       ],
-      "review_rationale": "Replace the copied boundary fields with digest-bound validator-result and consumer non-claim conformance."
+      "review_rationale": "Declaration physically retired: copied checklist or result-summary normalization is superseded by the reachable route-economy lifecycle and independently computed synthetic route outcomes."
     },
     "lean/AsiStackProofs/FailureModes.lean::failed_required_invariant_blocks_promotion": {
       "review_state": "semantically_reviewed",
@@ -39321,7 +39437,7 @@
       ],
       "review_state": "terminally_dispositioned",
       "disposition": "replace_with_stronger_model",
-      "semantic_role": "Nineteen theorem-per-fixture normalizations over one hand-authored complete efficiency-claim review.",
+      "semantic_role": "Reachable route-economy lifecycle plus independently computed bounded route-search outcomes; copied summary normalization is excluded.",
       "assumptions": [],
       "excluded_effects": [],
       "mutation_refs": [
@@ -39329,14 +39445,17 @@
       ],
       "runtime_consumer_refs": [
         "scripts/validate_efficiency_route_search_probe.py",
-        "experiments/efficiency_route_search/results/2026-07-02-local.json"
+        "experiments/efficiency_route_search/results/2026-07-02-local.json",
+        "scripts/validate_resource_economics_refinement.py"
       ],
       "replacement_refs": [
         "proof-model:efficiency.generated-claim-admission-route-suite.v1",
         "proof-model:efficiency.claim-admission-result-refinement.v1",
-        "proof-model:efficiency.route-selection-cost-refinement.v1"
+        "proof-model:efficiency.route-selection-cost-refinement.v1",
+        "proof-model:resource-economics.request-to-closure-refinement.v1",
+        "lean/AsiStackProofs/ResourceEconomicsRefinement.lean"
       ],
-      "review_rationale": "Replace literal record normalizations with general quantified branches, generated priority/guard mutations, checked producers and consumers, complete cost classes, and digest-bound result refinement."
+      "review_rationale": "Rebound from the legacy Boolean checklist and literal summary theorems to the stronger lifecycle and independent executable consumer."
     },
     "lean:efficiency.route_search.probe_fixture_bridge": {
       "dependencies": [
@@ -39348,7 +39467,7 @@
       ],
       "review_state": "terminally_dispositioned",
       "disposition": "replace_with_stronger_model",
-      "semantic_role": "Three theorems over a hand-copied summary constant for a meaningful but finite two-valid/six-invalid synthetic route-search probe.",
+      "semantic_role": "Reachable route-economy lifecycle plus independently computed bounded route-search outcomes; copied summary normalization is excluded.",
       "assumptions": [],
       "excluded_effects": [
         "Route-search completeness, cost-estimate accuracy, measured efficiency, model quality, compression utility, support movement, reproduction, and transfer are excluded."
@@ -39358,12 +39477,15 @@
       ],
       "runtime_consumer_refs": [
         "scripts/validate_efficiency_route_search_probe.py",
-        "experiments/efficiency_route_search/results/2026-07-02-local.json"
+        "experiments/efficiency_route_search/results/2026-07-02-local.json",
+        "scripts/validate_resource_economics_refinement.py"
       ],
       "replacement_refs": [
-        "proof-model:efficiency.route-search-result-refinement.v1"
+        "proof-model:efficiency.route-search-result-refinement.v1",
+        "proof-model:resource-economics.request-to-closure-refinement.v1",
+        "lean/AsiStackProofs/ResourceEconomicsRefinement.lean"
       ],
-      "review_rationale": "Preserve the validator and exact finite cases, but replace copied Lean totals/booleans with generated case-level, digest-bound conformance to the validator-owned result."
+      "review_rationale": "Rebound from the legacy Boolean checklist and literal summary theorems to the stronger lifecycle and independent executable consumer."
     },
     "lean:failure.invariant_violation.operational_invariant": {
       "dependencies": [

@@ -14,9 +14,9 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 333 |
 | Lean modules scanned | 110 |
-| Theorem declarations classified | 1304 |
+| Theorem declarations classified | 1282 |
 | Direct/projection-style theorem declarations | 171 |
-| Derived/decomposed theorem declarations | 918 |
+| Derived/decomposed theorem declarations | 896 |
 | Unknown or mixed theorem declarations | 215 |
 | Safety-critical theorem declarations | 73 |
 | Safety-critical direct/projection declarations | 1 |
@@ -85,7 +85,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/DataEngines.lean` | unmapped | 0 | 15 | 0 | 15 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/Deliberation.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/DeliberationRefinement.lean` | governed-deliberation-and-test-time-scaling | 10 | 11 | 6 | 3 | 2 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/Efficiency.lean` | the-efficient-asi-hypothesis | 4 | 24 | 0 | 24 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/Efficiency.lean` | the-efficient-asi-hypothesis | 2 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/EmbodiedPhysicalSafety.lean` | embodied-agency-real-time-control-and-physical-safety | 1 | 0 | 0 | 0 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/EvidenceStates.lean` | evidence-states-and-claim-discipline | 7 | 22 | 3 | 19 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/FailureModes.lean` | failure-modes-of-ungoverned-intelligence | 4 | 21 | 0 | 21 | 0 | derived/decomposed by classifier |
@@ -133,7 +133,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean` | replaceable-cognitive-substrates-beyond-transformer-monoculture | 1 | 16 | 0 | 11 | 5 | manual review |
 | `lean/AsiStackProofs/Replacement.lean` | capability-replacement-and-rollback | 6 | 37 | 8 | 29 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ResourceEconomics.lean` | unmapped | 0 | 14 | 0 | 11 | 3 | manual review |
-| `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | resource-economics-and-token-budgets | 11 | 9 | 0 | 1 | 8 | manual review |
+| `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | resource-economics-and-token-budgets, the-efficient-asi-hypothesis | 13 | 9 | 0 | 1 | 8 | manual review |
 | `lean/AsiStackProofs/Routing.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/RoutingRefinement.lean` | routing-heads-and-specialist-cores | 5 | 17 | 13 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | runtime-adapters-tool-permissions-and-human-approval | 6 | 44 | 0 | 44 | 0 | derived/decomposed by classifier |
@@ -540,30 +540,8 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/DeliberationRefinement.lean` | `no_verified_candidate_reaches_closed_with_residual_escrow` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/DeliberationRefinement.lean` | `raw_score_cannot_promote_selected_candidate` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/DeliberationRefinement.lean` | `verified_deliberation_lifecycle_reaches_closed_without_support_or_effect_authority` | unknown_or_mixed | no | no recognized depth pattern |
-| `lean/AsiStackProofs/Efficiency.lean` | `authority_bypass_blocks_efficiency_claim` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/Efficiency.lean` | `complete_efficiency_claim_admission_allows_claim_record` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/Efficiency.lean` | `efficiency_claim_without_nonclaim_boundary_preserves_boundary` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/Efficiency.lean` | `efficiency_route_search_probe_fixture_valid` | derived_or_decomposed | no | uses simp, unfold |
-| `lean/AsiStackProofs/Efficiency.lean` | `efficiency_route_search_probe_preserves_no_promotion_boundary` | derived_or_decomposed | no | uses simp, unfold |
-| `lean/AsiStackProofs/Efficiency.lean` | `efficiency_route_search_probe_rejects_invalid_savings` | derived_or_decomposed | no | uses simp, unfold |
-| `lean/AsiStackProofs/Efficiency.lean` | `failed_quality_blocks_efficiency_claim` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/Efficiency.lean` | `incomplete_visible_costs_request_complete_costs` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/Efficiency.lean` | `lower_cost_authorized_quality_candidate_rejects_minimum_viable_route` | derived_or_decomposed | no | uses have |
-| `lean/AsiStackProofs/Efficiency.lean` | `missing_benchmark_or_trace_requests_trace` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/Efficiency.lean` | `missing_candidate_set_requests_candidate_set` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/Efficiency.lean` | `missing_cost_classes_requests_cost_ledger` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/Efficiency.lean` | `missing_fallback_route_requests_fallback` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/Efficiency.lean` | `missing_hidden_cost_audit_requests_audit` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/Efficiency.lean` | `missing_lower_cost_comparisons_requests_comparisons` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/Efficiency.lean` | `missing_negative_controls_requests_controls` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/Efficiency.lean` | `missing_quality_predicate_requests_predicate` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/Efficiency.lean` | `missing_residuals_request_residual_record` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/Efficiency.lean` | `missing_selected_route_requests_route_record` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/Efficiency.lean` | `missing_task_contract_requests_contract` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/Efficiency.lean` | `missing_verification_result_requests_verification` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/Efficiency.lean` | `no_efficiency_claim_request_stays_idle` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/Efficiency.lean` | `open_obligation_promotion_without_residual_record_rejected` | derived_or_decomposed | no | uses cases, have, rw |
-| `lean/AsiStackProofs/Efficiency.lean` | `promotion_request_without_efficiency_evidence_transition_requests_transition` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/EvidenceStates.lean` | `accepted_terminal_transition_blocks_promotion_to_new_state` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/EvidenceStates.lean` | `claim_state_transition_bridge_fixture_valid` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/EvidenceStates.lean` | `complete_synthetic_test_backed_transition_accepts` | derived_or_decomposed | no | uses simp |

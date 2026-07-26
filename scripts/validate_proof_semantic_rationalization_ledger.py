@@ -100,10 +100,32 @@ EXPECTED_ACTION_IDS = [
     "C6-R66-policy-lease-summary-fixture-rebinding",
     "C6-R67-policy-reward-only-fixture-rebinding",
     "C6-R68-policy-rollback-fixture-rebinding",
+    "C6-R69-efficiency-no-efficiency-claim-request-stays-idle",
+    "C6-R70-efficiency-missing-task-contract-requests-contract",
+    "C6-R71-efficiency-missing-quality-predicate-requests-predicate",
+    "C6-R72-efficiency-missing-selected-route-requests-route-record",
+    "C6-R73-efficiency-missing-candidate-set-requests-candidate-set",
+    "C6-R74-efficiency-missing-lower-cost-comparisons-requests-comparisons",
+    "C6-R75-efficiency-missing-cost-classes-requests-cost-ledger",
+    "C6-R76-efficiency-incomplete-visible-costs-request-complete-costs",
+    "C6-R77-efficiency-missing-verification-result-requests-verification",
+    "C6-R78-efficiency-failed-quality-blocks-efficiency-claim",
+    "C6-R79-efficiency-authority-bypass-blocks-efficiency-claim",
+    "C6-R80-efficiency-missing-residuals-request-residual-record",
+    "C6-R81-efficiency-missing-fallback-route-requests-fallback",
+    "C6-R82-efficiency-missing-hidden-cost-audit-requests-audit",
+    "C6-R83-efficiency-missing-benchmark-or-trace-requests-trace",
+    "C6-R84-efficiency-missing-negative-controls-requests-controls",
+    "C6-R85-efficiency-promotion-request-without-efficiency-evidence-transition-requests-transition",
+    "C6-R86-efficiency-efficiency-claim-without-nonclaim-boundary-preserves-boundary",
+    "C6-R87-efficiency-complete-efficiency-claim-admission-allows-claim-record",
+    "C6-R88-efficiency-efficiency-route-search-probe-fixture-valid",
+    "C6-R89-efficiency-efficiency-route-search-probe-rejects-invalid-savings",
+    "C6-R90-efficiency-efficiency-route-search-probe-preserves-no-promotion-boundary",
 ]
 EXPECTED_LEVELS = {
     "P0": 35,
-    "P1": 753,
+    "P1": 731,
     "P2": 25,
     "P3": 319,
     "P4": 93,
@@ -112,7 +134,7 @@ EXPECTED_LEVELS = {
 }
 EXPECTED_DISPOSITIONS = {
     "retain": 1212,
-    "rewrite_with_stronger_model": 92,
+    "rewrite_with_stronger_model": 70,
 }
 EXPECTED_TARGETS = {
     "lean:bibliography.plan.operational_invariant": (
@@ -223,6 +245,20 @@ EXPECTED_TARGETS = {
     "lean:efficiency.minimum_viable.failure_blocks_promotion": (
         "A promoted result with open obligations and no residual record causes the "
         "finite residual-promotion predicate to fail."
+    ),
+    "lean:efficiency.claim_admission_lifecycle_route": (
+        "A reachable nine-stage route-economy lifecycle requires scoped request "
+        "identities, complete resource and hidden-cost accounting, protected capacity, "
+        "fallback, actual spend, useful-outcome and resource-bill separation, "
+        "verification, residual and recovery records, reconciliation, evidence "
+        "transition, and closure without support or external-effect authority."
+    ),
+    "lean:efficiency.route_search.probe_fixture_bridge": (
+        "The independent synthetic route-search consumer computes two valid and six "
+        "expected-invalid outcomes over fourteen candidates, while the reachable "
+        "lifecycle supplies the formal cost, verification, residual, fallback, "
+        "reconciliation, and no-authority boundary; neither asset is treated as "
+        "measured efficiency or complete search."
     ),
     "lean:failure.invariant_violation.failure_blocks_promotion": (
         "A finite incident whose authority exceeds its ceiling routes to explicit "
@@ -371,6 +407,8 @@ EXPECTED_MIGRATION_COUNTS = {
         "C6-R57-security-secret-authorization-projection",
         "C6-R60-circle-receipt-boundary-projection",
         "C6-R62-theseus-artifact-surface-projection",
+        "C6-R69-efficiency-no-efficiency-claim-request-stays-idle",
+        "C6-R88-efficiency-efficiency-route-search-probe-fixture-valid",
     })
     for action_id in EXPECTED_ACTION_IDS
 }
@@ -428,7 +466,7 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
     actions = ledger["actions"]
     if [row["action_id"] for row in actions] != EXPECTED_ACTION_IDS:
         out.append("action sequence or identity drifted")
-    if [row["sequence"] for row in actions] != list(range(1, 69)):
+    if [row["sequence"] for row in actions] != list(range(1, 91)):
         out.append("action sequence numbers drifted")
 
     try:
@@ -605,10 +643,12 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
         elif action["action"] == "retire_legacy_fixture_theorem_after_reachable_refinement_rebinding":
             if replacement_id is not None or replacement_block is not None:
                 out.append(f"{action['action_id']}: legacy fixture retirement invented a same-model replacement")
-            if not any(
-                ref == "scripts/validate_policy_optimization_refinement.py"
-                for ref in action["validation_refs"]
-            ):
+            expected_refinement_validator = (
+                "scripts/validate_resource_economics_refinement.py"
+                if module == "lean/AsiStackProofs/Efficiency.lean"
+                else "scripts/validate_policy_optimization_refinement.py"
+            )
+            if expected_refinement_validator not in action["validation_refs"]:
                 out.append(f"{action['action_id']}: reachable refinement validator is not bound")
         else:
             out.append(f"{action['action_id']}: unsupported action kind")
@@ -629,13 +669,13 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
 
     overlay = load(CURRENT_OVERLAY)
     summary = overlay.get("summary", {})
-    if summary.get("current_theorem_count") != 1304:
+    if summary.get("current_theorem_count") != 1282:
         out.append("current theorem denominator drifted")
     if summary.get("semantic_level_counts") != EXPECTED_LEVELS:
         out.append("current semantic-level counts drifted")
     if summary.get("disposition_counts") != EXPECTED_DISPOSITIONS:
         out.append("current disposition counts drifted")
-    if sum(value for key, value in EXPECTED_DISPOSITIONS.items() if key != "retain") != 92:
+    if sum(value for key, value in EXPECTED_DISPOSITIONS.items() if key != "retain") != 70:
         out.append("expected remaining-action denominator is internally inconsistent")
     if ledger["summary"]["remaining_action_counts"] != {
         key: value for key, value in EXPECTED_DISPOSITIONS.items() if key != "retain"
@@ -837,8 +877,8 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
         for action in actions
         if action["module_path"] == "lean/AsiStackProofs/Efficiency.lean"
     }
-    if len(efficiency_rows) != 24:
-        out.append("Efficiency must retain exactly twenty-four declarations")
+    if len(efficiency_rows) != 2:
+        out.append("Efficiency must retain exactly two derived negative invariants")
     if retired_efficiency_names & {row["name"] for row in efficiency_rows}:
         out.append("Efficiency retained an executed premise projection")
 
@@ -999,18 +1039,18 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
     if status.get("rationalization_ledger_path") != str(LEDGER.relative_to(ROOT)):
         out.append("status does not bind the cumulative rationalization ledger")
     if (
-        status.get("theorem_count") != 1304
-        or status.get("executed_retirement_count") != 66
+        status.get("theorem_count") != 1282
+        or status.get("executed_retirement_count") != 88
         or status.get("executed_scope_rewrite_count") != 2
-        or status.get("remaining_action_count") != 92
+        or status.get("remaining_action_count") != 70
     ):
         out.append("status does not report the cumulative post-transaction denominator")
     roadmap = ROADMAP.read_text(encoding="utf-8")
     roadmap_flat = " ".join(roadmap.split())
     for phrase in [
-        "fourteenth scope-and-refinement tranche",
-        "1,304 live theorem declarations",
-        "92 stronger-model actions remain",
+        "fifteenth route-economy consolidation tranche",
+        "1,282 live theorem declarations",
+        "70 stronger-model actions remain",
         "`proofs/proof_semantic_rationalization_ledger.json`",
     ]:
         if phrase not in roadmap_flat:
@@ -1083,9 +1123,9 @@ def main() -> None:
             + "\n - ".join(failures)
         )
     print(
-        "Proof semantic-rationalization ledger passed: sixty-six dependency-safe "
-        "retirements, two exact scope rewrites, thirty-nine public-target migrations, "
-        "1,304 live theorems, 92 stronger-model actions remain, 16 rejecting "
+        "Proof semantic-rationalization ledger passed: eighty-eight dependency-safe "
+        "retirements, two exact scope rewrites, forty-one public-target migrations, "
+        "1,282 live theorems, 70 stronger-model actions remain, 16 rejecting "
         "mutations, no support or release effect."
     )
 

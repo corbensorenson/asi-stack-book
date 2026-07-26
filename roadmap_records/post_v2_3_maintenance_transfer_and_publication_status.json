@@ -364,18 +364,18 @@
       "all_84_idea_placement_gate_state": "passed_exact_84_coverage_22_unit_meaning_render_browser_and_accessibility_preparation",
       "phase2_proof_execution_allowed": true,
       "c6_current_semantic_overlay": {
-          "state": "dependency_safe_execution_active_after_sixty_six_retirements_and_two_scope_rewrites",
+          "state": "dependency_safe_execution_active_after_eighty_eight_retirements_and_two_scope_rewrites",
         "classification_baseline_commit": "d0f9bda14f1253999f2c40d556d925d31e4b36a4",
         "classification_baseline_theorem_count": 1370,
         "overlay_path": "proofs/proof_semantic_depth_overlay.json",
         "report_path": "docs/proof_semantic_depth_overlay.md",
         "rationalization_ledger_path": "proofs/proof_semantic_rationalization_ledger.json",
-          "theorem_count": 1304,
+          "theorem_count": 1282,
         "theorem_bearing_module_count": 104,
         "semantic_owner_chapter_count": 61,
         "semantic_level_counts": {
             "P0": 35,
-            "P1": 753,
+            "P1": 731,
             "P2": 25,
             "P3": 319,
             "P4": 93,
@@ -384,11 +384,11 @@
         },
         "disposition_counts": {
             "retain": 1212,
-            "rewrite_with_stronger_model": 92
+            "rewrite_with_stronger_model": 70
           },
-          "executed_retirement_count": 66,
+          "executed_retirement_count": 88,
           "executed_scope_rewrite_count": 2,
-          "remaining_action_count": 92,
+          "remaining_action_count": 70,
         "mutation_coverage_missing_count": 0,
         "frozen_historical_theorem_count": 1151,
         "frozen_historical_target_count": 298,

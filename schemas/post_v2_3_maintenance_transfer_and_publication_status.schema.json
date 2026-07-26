@@ -493,7 +493,7 @@
               ],
               "properties": {
                 "state": {
-                  "const": "dependency_safe_execution_active_after_sixty_six_retirements_and_two_scope_rewrites"
+                  "const": "dependency_safe_execution_active_after_eighty_eight_retirements_and_two_scope_rewrites"
                 },
                 "classification_baseline_commit": {
                   "const": "d0f9bda14f1253999f2c40d556d925d31e4b36a4"
@@ -511,7 +511,7 @@
                   "const": "proofs/proof_semantic_rationalization_ledger.json"
                 },
                 "theorem_count": {
-                  "const": 1304
+                  "const": 1282
                 },
                 "theorem_bearing_module_count": {
                   "const": 104
@@ -522,7 +522,7 @@
                 "semantic_level_counts": {
                   "const": {
                     "P0": 35,
-                    "P1": 753,
+                    "P1": 731,
                     "P2": 25,
                     "P3": 319,
                     "P4": 93,
@@ -533,17 +533,17 @@
                 "disposition_counts": {
                   "const": {
                     "retain": 1212,
-                    "rewrite_with_stronger_model": 92
+                    "rewrite_with_stronger_model": 70
                   }
                 },
                 "executed_retirement_count": {
-                  "const": 66
+                  "const": 88
                 },
                 "executed_scope_rewrite_count": {
                   "const": 2
                 },
                 "remaining_action_count": {
-                  "const": 92
+                  "const": 70
                 },
                 "mutation_coverage_missing_count": {
                   "const": 0

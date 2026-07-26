@@ -42,7 +42,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `viea`, `rmi`, `cgs`; supporting: `rankfold_neuralfold`, `bbvca_v9`, `simulation_scaling`, `beastbrain`, `beastbrain_timeless`, `aletheia`; connector/recovery: `moecot` |
 | Source loading state | source notes: `viea`, `rmi`, `cgs`, `rankfold_neuralfold`, `bbvca_v9`, `simulation_scaling`, `beastbrain`, `beastbrain_timeless`, `aletheia`, `moecot`; passage-reviewed local raw cache: `viea`, `rmi`, `cgs`, `rankfold_neuralfold`, `bbvca_v9`, `simulation_scaling`, `beastbrain`, `beastbrain_timeless`, `aletheia`; connector-only/source-note mapped: `moecot` |
-| Test state | `costed_route_record.valid.json` passes protocol fixture validation for route state, task contract ref, outcome state, cost classes, hidden-cost checks, support-state effect, and non-claims; `AsiStackProofs.Efficiency` implements finite route-comparison and residual-promotion predicates, negative cases for lower-cost authorized quality-preserving candidates and open-obligation promotion without residual records, an efficiency-claim admission lifecycle route, and the route-search probe fixture bridge; `python3 scripts/validate_efficiency_route_search_probe.py` checks 2 synthetic route traces and 6 expected-invalid controls for minimum verified route selection, hidden-cost accounting, residual recording, utility-preserving compression boundaries, authority bypass, and negative-control presence. Route-search completeness, cost-estimate accuracy, measured efficiency, benchmark-performance, model quality, and downstream compression utility remain planned. |
+| Test state | `costed_route_record.valid.json` passes protocol fixture validation for route state, task contract ref, outcome state, cost classes, hidden-cost checks, support-state effect, and non-claims. `AsiStackProofs.Efficiency` retains two finite negative invariants: a listed cheaper eligible route defeats the minimum-viable predicate, and open-obligation promotion without a residual record is invalid. `AsiStackProofs.ResourceEconomicsRefinement` supplies the stronger nine-stage request-to-closure lifecycle, while `python3 scripts/validate_efficiency_route_search_probe.py` independently computes outcomes for 2 synthetic route traces and 6 expected-invalid controls. Route-search completeness, cost-estimate accuracy, measured efficiency, benchmark performance, model quality, and downstream compression utility remain open. |
 
 ## Drafting guardrail
 
@@ -406,7 +406,7 @@ That endpoint would outgrow both scale-only and cheap-route-only framings. Scale
 | Costed route record validation | Check that the route fixture records route state, task contract, quality predicate, authority ceiling, route candidates, selected route, rejected lower-cost routes, verification result, outcome state, cost accounting, cost classes, hidden-cost checks, residual obligations, fallback, support-state effect, and non-claims. | implemented by protocol validation; validated locally |
 | Lower-cost candidate negative case | Check that a listed lower-cost authorized route satisfying the declared quality predicate rejects the finite minimum-viable-route predicate. | implemented in `AsiStackProofs.Efficiency`; route-search completeness and cost-estimate accuracy not proved |
 | Open-obligation residual negative case | Check that a promotion candidate with open obligations and no residual record rejects the finite residual-promotion predicate. | implemented in `AsiStackProofs.Efficiency`; residual-burden measurement and utility preservation not proved |
-| Efficiency-claim admission lifecycle route | Check that finite efficiency-claim admission requests missing task contracts, quality predicates, selected routes, candidate sets, lower-cost comparisons, cost ledgers, complete visible costs, verification results, residual records, fallback routes, hidden-cost audits, benchmark or trace records, negative controls, evidence transitions, and non-claim boundaries before admitting the record. | implemented in `AsiStackProofs.Efficiency`; measured efficiency, route-search completeness, cost-estimate accuracy, route quality, residual-burden measurement, benchmark performance, and support-state promotion not proved |
+| Governed route-economy lifecycle | Check that a route-economy claim moves through scoped request, resource budgeting, capacity reservation, scheduling, execution, verification, transfer, spend reconciliation, and closure while preserving identities, authority ceilings, useful-outcome/resource-bill separation, residuals, recovery, evidence transitions, and non-claims. | implemented in `AsiStackProofs.ResourceEconomicsRefinement`; the independently implemented refinement consumer covers all 66 routes and rejects 57 non-accepting mutations; measured efficiency, route-search completeness, cost-estimate accuracy, route quality, residual-burden measurement, benchmark performance, and support-state promotion are not proved |
 | Efficiency route-search probe | Check two bounded synthetic route traces plus expected-invalid controls for lower-cost eligible omission, hidden-cost class omission, erased residuals, compression-utility overclaim, authority bypass, and missing negative controls. | implemented by `python3 scripts/validate_efficiency_route_search_probe.py`; no route-search completeness, cost-estimate accuracy, measured efficiency, model quality, compression utility, benchmark performance, or support-state claim |
 | Minimum viable route test | Check whether a lower-cost authorized route fails the declared quality predicate before a higher-cost route is selected. | partially implemented by synthetic route-search probe over finite candidate sets; route-search completeness and cost-estimate accuracy not proved |
 | Residual burden accounting test | Check that unresolved obligations remain attached to the route record instead of being hidden inside a success label. | partially implemented by synthetic route-search probe; behavioral residual-burden measurement not proved |
@@ -419,16 +419,30 @@ That endpoint would outgrow both scale-only and cheap-route-only framings. Scale
 |---|---|---|---|
 | `lean:efficiency.minimum_viable.operational_invariant` | `AsiStackProofs.Efficiency` | A listed lower-cost authorized quality-preserving candidate causes the finite minimum-viable-route predicate to fail. | implemented |
 | `lean:efficiency.minimum_viable.failure_blocks_promotion` | `AsiStackProofs.Efficiency` | A promoted result with open obligations and no residual record causes the finite residual-promotion predicate to fail. | implemented |
-| `lean:efficiency.claim_admission_lifecycle_route` | `AsiStackProofs.Efficiency` | Modeled efficiency-claim admission routes missing task contracts, quality predicates, selected routes, candidate sets, lower-cost comparisons, cost ledgers, complete visible costs, verification results, failed quality, authority bypass, residual gaps, fallback gaps, hidden-cost audit gaps, benchmark or trace gaps, negative-control gaps, evidence-transition gaps, and non-claim-boundary gaps to explicit outcomes. | implemented |
-| `lean:efficiency.route_search.probe_fixture_bridge` | `AsiStackProofs.Efficiency` | The synthetic efficiency route-search probe summary records two valid traces, six expected-invalid controls, fourteen checked candidate routes, minimum verified route selection, rejection of cheap failed quality, hidden residual, authority bypass, and compression-utility overclaim controls, hidden-cost class audit coverage, and no route-search-completeness, measured-efficiency, or support-state-promotion claim. | implemented |
+| `lean:efficiency.claim_admission_lifecycle_route` | `AsiStackProofs.ResourceEconomicsRefinement` | A reachable nine-stage route-economy lifecycle requires scoped request identities, complete resource and hidden-cost accounting, protected capacity, fallback, actual spend, useful-outcome and resource-bill separation, verification, residual and recovery records, reconciliation, evidence transition, and closure without support or external-effect authority. | implemented |
+| `lean:efficiency.route_search.probe_fixture_bridge` | `AsiStackProofs.ResourceEconomicsRefinement` | The independent synthetic route-search consumer computes two valid and six expected-invalid outcomes over fourteen candidates, while the reachable lifecycle supplies the formal cost, verification, residual, fallback, reconciliation, and no-authority boundary; neither asset is treated as measured efficiency or complete search. | implemented |
 
-These Lean hooks are implemented as finite-record predicates plus negative-case, route theorems, and a finite probe-summary bridge over route-comparison, residual-promotion, efficiency-claim admission, and synthetic route-search reviews. The public minimum-route and residual targets now bind to derived negative cases rather than premise projections: a listed lower-cost authorized quality-preserving candidate rejects the minimum-viable predicate, and open-obligation promotion without a residual record rejects the residual-promotion predicate. The admission route sends missing contract, quality, route, candidate, cost, verification, residual, fallback, hidden-cost, benchmark-or-trace, negative-control, evidence-transition, and non-claim-boundary records to explicit outcomes before admitting the finite record, while the synthetic route-search probe summary preserves its count and no-promotion boundary.
+The formal and executable responsibilities are deliberately separated.
+`AsiStackProofs.Efficiency` contains only the two small propositions for which
+the local model has real deductive content: a cheaper eligible member
+contradicts finite minimum-route status, and unrecorded open obligations
+contradict valid promotion. The previous theorem-per-Boolean admission
+checklist and three theorems over a hand-entered probe summary were retired:
+normalizing one edited fixture or restating copied result counts did not add
+semantic evidence.
 
-The module contains twenty-four declarations after retiring the two
-assumption-restating projections. None proves route-search completeness,
-cost-estimate accuracy, quality evaluation, measured efficiency,
-residual-burden measurement, benchmark performance, support-state promotion,
-model quality, or compression utility.
+The broader policy now lives with the route economy it actually governs.
+`AsiStackProofs.ResourceEconomicsRefinement` models a reachable request-to-
+closure lifecycle with identity continuity, authority rejection, protected
+capacity, direct and displaced costs, verification, useful-outcome/resource-
+bill separation, residuals, recovery, reconciliation, and closure. Its
+independent consumer exercises all 66 routes and 57 rejecting mutations. The
+efficiency route-search script separately derives its two passing traces and
+six rejected controls from candidate eligibility and cost arithmetic instead
+of trusting a Lean summary literal. Together these assets organize the idea;
+they do not prove route-search completeness, cost-estimate accuracy, quality
+evaluation, measured efficiency, residual-burden measurement, benchmark
+performance, support-state promotion, model quality, or compression utility.
 
 ## Source crosswalk
 
