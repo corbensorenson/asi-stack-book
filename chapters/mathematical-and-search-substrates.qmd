@@ -383,7 +383,7 @@ language requires separate accepted transitions.
 |---|---|---|
 | Substrate adoption record fixture validation | Validate that a candidate substrate records intended use, expected advantage, baselines, baseline obligations, negative controls, proof boundary, experiment requirements, consumer gate/policy, axis ledger, falsification condition, adoption state, routing-permission effect, fallback substrate, retirement or supersession path, support-state effect, residuals, evidence references, and non-claims. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
 | Required-field negative case | Prove that a substrate adoption record missing baseline refs, measured target, or falsification criterion rejects the finite adoption-field predicate. | implemented in `AsiStackProofs.SearchSubstrates.substrate_adoption_record_missing_required_field_rejected`; no substrate-quality claim |
-| Unproven qualified-state negative case | Prove that an unproven substrate marked qualified cannot satisfy the finite non-core-state predicate. | implemented in `AsiStackProofs.SearchSubstrates.unproven_qualified_substrate_rejected`; no core-substrate promotion claim |
+| Unproven qualified-state negative case | Prove that a record simultaneously marked qualified and lacking passing evidence contradicts the finite rule that unproven records remain in a non-core state. | implemented in `AsiStackProofs.SearchSubstrates.unproven_qualified_record_contradicts_noncore_invariant`; this rejects an inconsistent authored record, not the substrate itself and not a core-substrate promotion |
 | Qualified-without-evidence negative case | Prove that a qualified substrate with false passing-evidence rejects the finite core-adoption predicate. | implemented in `AsiStackProofs.SearchSubstrates.qualified_substrate_without_passing_evidence_rejected`; no empirical substrate result |
 | Consumer-axis negative case | Prove that consumer reliance on an unmeasured or blocked substrate axis rejects the finite consumer-axis predicate. | implemented in `AsiStackProofs.SearchSubstrates.consumer_axis_reliance_without_measurement_or_unblocked_axis_rejected`; no routing, compression, or reasoning-quality claim |
 | Canary evidence-packet negative case | Prove that canary substrate promotion missing workload, baseline, negative-control, or result-report fields rejects the finite canary-evidence predicate. | implemented in `AsiStackProofs.SearchSubstrates.canary_substrate_without_complete_evidence_packet_rejected`; no canary benchmark claim |
@@ -408,7 +408,7 @@ substrate-adoption and promotion-review fields. The first rejects an adoption
 record when at least one required field is explicitly false. The second
 rejects a qualified promotion record when passing evidence is explicitly
 false. The module also proves bounded negative cases named
-`unproven_qualified_substrate_rejected`,
+`unproven_qualified_record_contradicts_noncore_invariant`,
 `consumer_axis_reliance_without_measurement_or_unblocked_axis_rejected`, and
 `canary_substrate_without_complete_evidence_packet_rejected`. These cases
 reject malformed finite records; they do not prove that any substrate improves

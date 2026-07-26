@@ -1011,8 +1011,9 @@ that remains safe only by never completing useful work fails the joint gate.
 
 Keep the existing syntax-level classifier, but add a semantic-depth overlay for
 every current declaration. The immutable pre-rationalization baseline contains
-1,370 declarations; the live estate contains 1,307 after sixty-three
-dependency-safe retirement transactions:
+1,370 declarations; the live estate contains 1,304 after sixty-six
+dependency-safe retirement transactions and two proposition-preserving scope
+rewrites:
 
 | Level | Required meaning |
 |---|---|
@@ -1209,13 +1210,13 @@ historical review. The immutable historical registry remains exactly 1,151
 theorems across 298 targets. The separately frozen pre-rationalization overlay
 at commit `d0f9bda14f1253999f2c40d556d925d31e4b36a4` classifies all 1,370
 baseline declarations. The current overlay in
-`proofs/proof_semantic_depth_overlay.json` classifies all 1,307 live theorem
+`proofs/proof_semantic_depth_overlay.json` classifies all 1,304 live theorem
 declarations across 104 theorem-bearing modules and maps them to 61 active
 semantic-owner chapters.
 
-The live semantic-depth distribution is 37 P0 record-shape results, 753 P1
+The live semantic-depth distribution is 35 P0 record-shape results, 753 P1
 finite-route results, 25 P2 reachability/nonvacuity results, 319 P3
-implementation-refinement results, 93 P4 cross-component-safety results, 80 P5
+implementation-refinement results, 93 P4 cross-component-safety results, 79 P5
 liveness/recovery results, and zero P6 empirically bound results. P6 being zero
 is intentional: the existence of an experiment file, trace, or generated
 artifact does not turn a theorem into empirical evidence.
@@ -1223,8 +1224,8 @@ artifact does not turn a theorem into empirical evidence.
 Every overlay row records its assumptions, active semantic owner, downstream
 consumer, witness or explicit witness absence, implementation binding, mutation
 evidence, maximum inference, and disposition. The resulting current estate is
-1,210 retain, zero retire as narrow projection, two scope-language rewrites, and
-95 stronger-model rewrites. All 1,307 rows have mutation coverage and every
+1,212 retain, zero retire as narrow projection, zero pending scope-language
+rewrites, and 92 stronger-model rewrites. All 1,304 rows have mutation coverage and every
 retained theorem has a named consumer.
 
 The cumulative dependency-safe retirement ledger is
@@ -1440,13 +1441,42 @@ without strengthening the model. This tranche changes no policy quality,
 proof-contract transport, artifact truth, gate adequacy, capability,
 self-evolution, support state, or release authority.
 
+The fourteenth scope-and-refinement tranche resolves both pending
+scope-language actions and the three legacy Policy Optimization fixture
+theorems. `successful_support_promotion_was_ready` is renamed
+`accepted_promote_support_step_requires_model_promotion_ready`, preserving the
+normalized proposition while making clear that the result concerns the
+authored `step` function rather than real evidence readiness.
+`unproven_qualified_substrate_rejected` is renamed
+`unproven_qualified_record_contradicts_noncore_invariant`; the chapter now says
+explicitly that the contradiction rejects an inconsistent authored record, not
+the substrate. The semantic classifier pins both results at P1 because neither
+constructs an independent reachable witness.
+
+The legacy policy-lease fixture remains a transparent alignment record, but
+its three theorems no longer count fixture literals as proof of fixture
+validity, reward-only rejection, or rollback preservation. The deterministic
+lease consumer still computes the three rejected controls and executes the
+synthetic baseline-restoration dry run. The public proof target remains owned
+by `PolicyOptimizationRefinement`, whose two composition theorems and
+independent consumer cover seven reachable stages, all 63 routes, 73 route
+mutations, and three cross-stage mutations. This rebinding removes one
+hand-authored conjunction theorem, one Boolean projection, and one
+misclassified P5 rollback projection without weakening the recorded synthetic
+result or pretending that the dry run proves live effect-complete rollback.
+Eleven Policy Optimization declarations remain in the legacy module. No
+policy improvement, reward validity, rollback efficacy, substrate result,
+support transition, or release authority follows.
+
 This receipt completes the C6 **classification** gate and begins its
-dependency-safe execution gate. Exactly 63 of the original 161 actions have
-been executed; 97 rewrite-or-retire actions remain: two scope-language
-rewrites and 95 stronger-model rewrites. The next proof action is to repair the
-two misleadingly broad theorem names or statements before beginning stronger
-reachable models. New proof work remains reserved for conclusions consumed by
-a reachable implementation or the natural flagship.
+dependency-safe execution gate. Exactly 68 of the original 161 actions have
+been executed: sixty-six theorem retirements and two proposition-preserving
+scope rewrites. Exactly 92 stronger-model actions remain. The next proof action
+is to replace legacy fixture-validity surfaces with reachable models or
+independent consumers in semantic-value order, starting with existing
+refinement assets before creating new formal machinery. New proof work remains
+reserved for conclusions consumed by a reachable implementation or the natural
+flagship.
 
 An initial semantic spot-check rejected a naive retirement rule before any
 proof deletion: 33 declarations shared literal theorem text across different
@@ -1459,7 +1489,8 @@ same-model redundant declaration meeting that bar is the one now retired. A
 second spot-check also
 overturned one frozen semantic-duplicate disposition because the two related
 Search Substrates theorems negate different predicates. Both remain owned, and
-the misleadingly broad theorem name is routed to a scope-language rewrite.
+the former misleading theorem name now states the qualified-record
+contradiction precisely.
 
 ### Continuation order
 

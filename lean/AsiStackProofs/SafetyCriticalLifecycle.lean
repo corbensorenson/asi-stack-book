@@ -231,7 +231,7 @@ theorem successful_effect_commit_was_ready
   simp [step] at accepted
   exact accepted.1
 
-theorem successful_support_promotion_was_ready
+theorem accepted_promote_support_step_requires_model_promotion_ready
     {state next : State}
     (accepted : step state .promoteSupport = some next) :
     state.promotionReady = true := by

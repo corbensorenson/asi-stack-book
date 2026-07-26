@@ -61,7 +61,7 @@ deriving DecidableEq, Repr
 def UnprovenSubstrateRemainsNonCore (review : SubstratePromotionReview) : Prop :=
   review.passingEvidence = false -> NonCoreState review.adoptionState
 
-theorem unproven_qualified_substrate_rejected
+theorem unproven_qualified_record_contradicts_noncore_invariant
     {review : SubstratePromotionReview} :
     review.passingEvidence = false ->
     review.adoptionState = AdoptionState.qualified ->

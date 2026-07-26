@@ -28,15 +28,15 @@ ROADMAP = ROOT / "docs" / "v1_x_beyond_sota_roadmap.md"
 CHANGELOG = ROOT / "appendices" / "F_changelog.qmd"
 MANIFEST = ROOT / "book_structure.json"
 VALIDATION_REGISTRY = ROOT / "validation" / "registry.json"
-LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "PolicyOptimization.lean"
+LEGACY_LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "PolicyOptimization.lean"
+REFINEMENT_LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "PolicyOptimizationRefinement.lean"
 
 COMMAND = "python3 scripts/validate_policy_update_lease_probe.py"
 PROOF_TAG = "lean:policy_optimization.lease_probe_fixture_bridge"
 CODEX_TEST_NAME = "Policy update lease probe"
 REQUIRED_THEOREMS = [
-    "policy_update_lease_probe_fixture_valid",
-    "policy_update_lease_probe_rejects_reward_only_proxy",
-    "policy_update_lease_probe_preserves_rollback_boundary",
+    "policy_update_full_cycle_composes",
+    "policy_update_failed_evaluation_blocks_downstream_handoff",
 ]
 REQUIRED_NON_CLAIMS = [
     "does not run PPO, DPO, GRPO, RLVR, or any optimizer",
@@ -345,7 +345,7 @@ def build_expected_result() -> dict[str, Any]:
         "rollback_dry_run": rollback_dry_run,
         "policy_update_record": policy_record,
         "lean_fixture_alignment": {
-            "module": "AsiStackProofs.PolicyOptimization",
+            "module": "AsiStackProofs.PolicyOptimizationRefinement",
             "proof_tag": PROOF_TAG,
             "theorem_refs": REQUIRED_THEOREMS,
             "expected": {
@@ -416,10 +416,11 @@ def validate_manifest(errors: list[str]) -> None:
 
 
 def validate_lean(errors: list[str]) -> None:
-    text = LEAN_FILE.read_text(encoding="utf-8", errors="ignore")
+    text = REFINEMENT_LEAN_FILE.read_text(encoding="utf-8", errors="ignore")
     for theorem in REQUIRED_THEOREMS:
         if not re.search(rf"\btheorem\s+{re.escape(theorem)}\b", text):
-            errors.append(f"{rel(LEAN_FILE)} missing theorem {theorem}.")
+            errors.append(f"{rel(REFINEMENT_LEAN_FILE)} missing theorem {theorem}.")
+    legacy_text = LEGACY_LEAN_FILE.read_text(encoding="utf-8", errors="ignore")
     for field in (
         "sampleCount",
         "candidateCount",
@@ -431,8 +432,8 @@ def validate_lean(errors: list[str]) -> None:
         "supportStateEffectNone",
         "nonClaimBoundary",
     ):
-        if field not in text:
-            errors.append(f"{rel(LEAN_FILE)} missing fixture field {field}.")
+        if field not in legacy_text:
+            errors.append(f"{rel(LEGACY_LEAN_FILE)} missing fixture field {field}.")
 
 
 def validate_surfaces(errors: list[str]) -> None:

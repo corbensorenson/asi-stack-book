@@ -322,21 +322,6 @@ def policyUpdateLeaseProbeFixture : PolicyUpdateLeaseProbeSummary := {
   nonClaimBoundary := true
 }
 
-theorem policy_update_lease_probe_fixture_valid :
-    PolicyUpdateLeaseProbeValid policyUpdateLeaseProbeFixture := by
-  unfold PolicyUpdateLeaseProbeValid policyUpdateLeaseProbeFixture
-  simp
-
-theorem policy_update_lease_probe_rejects_reward_only_proxy :
-    policyUpdateLeaseProbeFixture.negativeRewardOnlyRejected = true := by
-  rfl
-
-theorem policy_update_lease_probe_preserves_rollback_boundary :
-    policyUpdateLeaseProbeFixture.rollbackDryRunPresent = true ∧
-      policyUpdateLeaseProbeFixture.supportStateEffectNone = true ∧
-        policyUpdateLeaseProbeFixture.nonClaimBoundary = true := by
-  exact And.intro rfl (And.intro rfl rfl)
-
 structure EvaluationIntegrityPromotionRecord where
   selectionContextRecorded : Bool
   independentEvaluationRecorded : Bool

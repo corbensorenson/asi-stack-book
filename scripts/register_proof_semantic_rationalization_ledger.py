@@ -18,6 +18,7 @@ ARTIFACTS = [
     "proofs/proof_semantic_depth_overlay.json",
     "proofs/proof_rationalization_registry.json",
     "lean/AsiStackProofs/ScalableOversightRefinement.lean",
+    "lean/AsiStackProofs/SafetyCriticalLifecycle.lean",
     "lean/AsiStackProofs/BibliographyPlan.lean",
     "lean/AsiStackProofs/BenchmarkRatchets.lean",
     "lean/AsiStackProofs/StableCapabilityFields.lean",
@@ -35,6 +36,8 @@ ARTIFACTS = [
     "lean/AsiStackProofs/ProofEnvelope.lean",
     "lean/AsiStackProofs/PrototypeRoadmap.lean",
     "lean/AsiStackProofs/SecurityKernel.lean",
+    "lean/AsiStackProofs/PolicyOptimization.lean",
+    "lean/AsiStackProofs/PolicyOptimizationRefinement.lean",
     "scripts/validate_runtime_adapter_adversarial_boundary_probe.py",
     "scripts/validate_substrate_adoption_trace.py",
     "scripts/validate_artifact_steward_lifecycle_probe.py",
@@ -48,6 +51,8 @@ ARTIFACTS = [
     "scripts/validate_proof_artifact_audit.py",
     "scripts/validate_prototype_phase_gates.py",
     "scripts/validate_security_kernel.py",
+    "scripts/validate_policy_update_lease_probe.py",
+    "scripts/validate_policy_optimization_refinement.py",
     "experiments/runtime_adapter_adversarial_boundary/results/2026-07-02-local.json",
     "experiments/substrate_adoption_trace/results/2026-07-02-local.json",
     "experiments/artifact_steward_lifecycle_probe/results/2026-07-02-local.json",
@@ -55,6 +60,8 @@ ARTIFACTS = [
     "experiments/intent_execution_handoff/results/2026-07-02-local.json",
     "experiments/planning_scheduler_state/results/2026-07-02-local.json",
     "experiments/planning_runtime_replan_delta/results/2026-07-02-local.json",
+    "experiments/policy_update_lease/results/2026-07-02-local.json",
+    "experiments/policy_optimization_refinement/results/2026-07-16-local.json",
     "docs/substrate_adoption_trace.md",
     "docs/artifact_steward_lifecycle_probe.md",
     "proofs/proof_manifest.json",
@@ -76,6 +83,7 @@ ARTIFACTS = [
     "chapters/prototype-roadmap.qmd",
     "chapters/living-book-methodology.qmd",
     "chapters/security-kernel-and-digital-scifs.qmd",
+    "chapters/policy-optimization-and-learning-from-feedback.qmd",
     "roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json",
     "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md",
     "validation/registry.json",
@@ -105,16 +113,18 @@ def main() -> None:
         "execution_tier": "pr",
         "validation_class": "proof_or_evidence_gate",
         "input_contract": (
-            "One immutable 1,370-theorem baseline; fifty-seven exact, ordered transactions; "
+            "One immutable 1,370-theorem baseline; sixty-eight exact, ordered transactions; "
             "the baseline Scalable Oversight, Bibliography Plan, Benchmark Ratchets, and "
             "Policy Optimization, Stable Capability Fields, Evidence States, and Runtime "
             "Adapters, Search Substrates, Artifact Steward Agents, Coil Attention Memory, "
             "and Cyclic Mixers, Efficiency, Failure Modes, Intent to Execution, Planning, "
             "Living Book, PlanForge, Proof Envelope, Prototype Roadmap, and Security Kernel "
-            "modules; one same-model normalized duplicate pair; sixty-two "
+            "modules; one same-model normalized duplicate pair; sixty-five "
             "premise-restating projections, twenty-two with derived "
             "replacements, twenty-three retired after public-target narrowing, five unused projections retired without target "
-            "change, and twelve summary projections retired after route-family validator rebinding; "
+            "change, twelve summary projections retired after route-family validator rebinding, "
+            "two proposition-preserving theorem-name scope rewrites, and three legacy "
+            "policy-lease fixture theorems retired after reachable-refinement rebinding; "
             "the current overlay; frozen historical registry; and reconciled target, "
             "roadmap, and status surfaces."
         ),
@@ -124,7 +134,7 @@ def main() -> None:
             "statement identity for the duplicate, dependency-and-consumer-safe removals, "
             "ten counterexample, five decision-model, thirteen scope-narrowing, and eleven "
             "validator-route-family target migrations, retained or honestly replanned "
-            "target ownership, a 1,307-theorem current estate, an exact 97-action remaining "
+            "target ownership, a 1,304-theorem current estate, an exact 92-action remaining "
             "queue, meta-audit exclusion from implementation binding, and no support or "
             "release effect."
         ),
@@ -133,7 +143,7 @@ def main() -> None:
             "retired and retained declarations share one authored model",
             "normalized theorem statements exact",
             "retired theorem has no theorem consumer",
-            "sixty-three retired declarations absent, twenty-three replacement-bound retirements, and forty intentionally null replacements",
+            "sixty-six retired declarations absent, twenty-five proposition-preserving or replacement-bound actions, and forty-three intentionally null replacements",
             "two bibliography targets migrated to derived counterexample gates",
             "two benchmark targets migrated to derived decision-model gates",
             "two Stable Capability Fields targets narrowed to retained derived routes",
@@ -157,22 +167,25 @@ def main() -> None:
             "Circle receipt target narrowed to the retained missing-boundary rejection",
             "Theseus artifact-surface target narrowed to the retained missing-surface rejection",
             "Stable Capability Fields readiness lemma retained because five concrete negative cases consume it",
+            "two misleading theorem names replaced without changing their normalized propositions",
+            "three legacy policy-lease fixture theorems replaced by reachable refinement and independent consumer custody",
             "proof-custody meta-audit does not inflate semantic implementation depth",
-            "1,307 current theorem declarations",
-            "97 rewrite-or-retire actions remain",
+            "1,304 current theorem declarations",
+            "92 stronger-model actions remain",
             "frozen 1,151-theorem and 298-target registry preserved",
-            "14 mutations reject",
+            "16 mutations reject",
             "no support or release effect",
         ],
         "claim_scope": (
-            "Sixty-three dependency-safe declaration retirements: one exact same-model "
-            "duplicate and sixty-two premise-restating projections. Thirty-nine public "
+            "Sixty-six dependency-safe declaration retirements: one exact same-model "
+            "duplicate, sixty-two premise-restating projections, and three legacy fixture "
+            "theorems. Two theorem names are rewritten without proposition drift. Thirty-nine public "
             "targets migrate to counterexample, decision-model, narrower retained-route, "
             "or honestly planned stronger-model wording; the runtime-adapter target remains "
             "implemented through its fifteen explicit route theorems."
         ),
         "negative_controls": (
-            "validator_owned_fourteen_baseline_digest_sequence_identity_statement_dependency_"
+            "validator_owned_sixteen_baseline_digest_sequence_identity_statement_dependency_"
             "consumer_relation_target_denominator_and_support_mutations"
         ),
         "negative_control_cases": [
@@ -186,6 +199,8 @@ def main() -> None:
             "target migration erasure",
             "decision semantic laundering",
             "null replacement laundering",
+            "scope-rewrite proposition substitution",
+            "refinement rebinding erasure",
             "remaining denominator inflation",
             "support promotion",
         ],
@@ -195,7 +210,7 @@ def main() -> None:
             "deployment, transfer, safety, SOTA, AGI, ASI, or claim support."
         ),
         "contract_precision": "exact_immutable_cumulative_dependency_safe_retirement_ledger",
-        "semantic_review_state": "checked_fifty_seven_c6_retirements_and_thirty_seven_target_migrations",
+        "semantic_review_state": "checked_sixty_six_c6_retirements_two_scope_rewrites_and_thirty_nine_target_migrations",
     })
     required = registry["required_artifacts"]
     for artifact in ARTIFACTS + [REGISTER]:

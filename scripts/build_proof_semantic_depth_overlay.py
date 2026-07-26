@@ -66,12 +66,16 @@ STRONG_NAME_TERMS = (
 # the historical registry.  Each override is theorem-specific and records why
 # the older equivalence judgment is not sufficient for current retirement.
 CURRENT_SEMANTIC_OVERRIDES = {
-    "lean/AsiStackProofs/SearchSubstrates.lean::unproven_qualified_substrate_rejected": {
-        "disposition": "rewrite_scope_language",
+    "lean/AsiStackProofs/SearchSubstrates.lean::unproven_qualified_record_contradicts_noncore_invariant": {
+        "disposition": "retain",
+        "semantic_level": "P1",
+        "classification_basis": [
+            "statement derives a finite contradiction between the qualified state and the non-core invariant"
+        ],
         "rationale": (
-            "The theorem negates UnprovenSubstrateRemainsNonCore for an already-qualified "
-            "record; its current name can sound like a direct rejection of the substrate. "
-            "It is retained pending a name/scope rewrite."
+            "The precise name now states the bounded contradiction: an authored record "
+            "cannot be both qualified without passing evidence and satisfy the rule that "
+            "unproven records remain non-core. It does not reject the substrate itself."
         ),
     },
     "lean/AsiStackProofs/SearchSubstrates.lean::qualified_substrate_without_passing_evidence_rejected": {
@@ -81,6 +85,18 @@ CURRENT_SEMANTIC_OVERRIDES = {
             "negates CoreAdoptionValid, while the proposed replacement negates "
             "UnprovenSubstrateRemainsNonCore. The predicates are related but not "
             "equivalent, so both bounded results remain independently owned."
+        ),
+    },
+    "lean/AsiStackProofs/SafetyCriticalLifecycle.lean::accepted_promote_support_step_requires_model_promotion_ready": {
+        "disposition": "retain",
+        "semantic_level": "P1",
+        "classification_basis": [
+            "statement derives a finite transition precondition but does not construct a concrete reachable witness"
+        ],
+        "rationale": (
+            "The precise name limits the result to the authored transition function: "
+            "acceptance of the promoteSupport step implies the model's promotionReady "
+            "predicate, without implying real-world readiness or support promotion."
         ),
     },
 }
@@ -481,6 +497,9 @@ def build() -> tuple[dict[str, Any], str]:
 
         inherited = inherited_disposition(old)
         semantic_override = CURRENT_SEMANTIC_OVERRIDES.get(theorem_id)
+        if semantic_override and semantic_override.get("semantic_level"):
+            level = str(semantic_override["semantic_level"])
+            basis = [str(item) for item in semantic_override["classification_basis"]]
         duplicate_of = duplicate_canonical.get(theorem_id)
         duplicate_kind: str | None = None
         if duplicate_of and duplicate_of != theorem_id:

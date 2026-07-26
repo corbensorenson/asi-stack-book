@@ -14,9 +14,9 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 333 |
 | Lean modules scanned | 110 |
-| Theorem declarations classified | 1307 |
-| Direct/projection-style theorem declarations | 173 |
-| Derived/decomposed theorem declarations | 919 |
+| Theorem declarations classified | 1304 |
+| Direct/projection-style theorem declarations | 171 |
+| Derived/decomposed theorem declarations | 918 |
 | Unknown or mixed theorem declarations | 215 |
 | Safety-critical theorem declarations | 73 |
 | Safety-critical direct/projection declarations | 1 |
@@ -117,7 +117,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/PersonalComputeHives.lean` | unmapped | 0 | 21 | 0 | 21 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/PlanForge.lean` | planning-as-a-control-layer | 2 | 3 | 1 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Planning.lean` | planning-as-a-control-layer | 5 | 27 | 6 | 21 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/PolicyOptimization.lean` | unmapped | 0 | 14 | 2 | 12 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/PolicyOptimization.lean` | unmapped | 0 | 11 | 0 | 11 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/PolicyOptimizationRefinement.lean` | policy-optimization-and-learning-from-feedback | 4 | 5 | 0 | 2 | 3 | manual review |
 | `lean/AsiStackProofs/PrivacyInformationFlow.lean` | privacy-data-rights-and-information-flow-governance | 2 | 11 | 0 | 3 | 8 | manual review |
 | `lean/AsiStackProofs/ProceduralMemory.lean` | unmapped | 0 | 14 | 0 | 14 | 0 | derived/decomposed by classifier |
@@ -884,9 +884,6 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/PolicyOptimization.lean` | `policy_promotion_without_reward_hacking_probe_routes_to_probe_review` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/PolicyOptimization.lean` | `policy_promotion_without_rollback_routes_to_rollback_review` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/PolicyOptimization.lean` | `policy_promotion_without_target_evaluation_routes_to_target_evaluation` | derived_or_decomposed | no | uses simp, unfold |
-| `lean/AsiStackProofs/PolicyOptimization.lean` | `policy_update_lease_probe_fixture_valid` | derived_or_decomposed | no | uses simp, unfold |
-| `lean/AsiStackProofs/PolicyOptimization.lean` | `policy_update_lease_probe_preserves_rollback_boundary` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
-| `lean/AsiStackProofs/PolicyOptimization.lean` | `policy_update_lease_probe_rejects_reward_only_proxy` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/PolicyOptimization.lean` | `promotion_candidate_missing_holdout_or_contamination_check_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/PolicyOptimization.lean` | `reward_proxy_without_target_evaluation_rejected` | derived_or_decomposed | no | uses contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/PolicyOptimizationRefinement.lean` | `accepted_event_increments_receipt_count` | derived_or_decomposed | no | uses simp |
@@ -1160,6 +1157,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/SafetyCases.lean` | `missing_independent_review_requires_review` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/SafetyCases.lean` | `stale_evidence_dependency_requires_repair` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/SafetyCases.lean` | `unresolved_defeater_requires_accountable_review` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/SafetyCriticalLifecycle.lean` | `accepted_promote_support_step_requires_model_promotion_ready` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/SafetyCriticalLifecycle.lean` | `alignment_complete_trace_commits` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/SafetyCriticalLifecycle.lean` | `alignment_missing_review_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/SafetyCriticalLifecycle.lean` | `authority_widening_is_rejected` | derived_or_decomposed | no | uses simp |
@@ -1177,7 +1175,6 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/SafetyCriticalLifecycle.lean` | `step_preserves_invariant` | derived_or_decomposed | no | uses constructor, rw |
 | `lean/AsiStackProofs/SafetyCriticalLifecycle.lean` | `step_preserves_protected_predicate` | derived_or_decomposed | no | uses cases, simp, subst |
 | `lean/AsiStackProofs/SafetyCriticalLifecycle.lean` | `successful_effect_commit_was_ready` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/SafetyCriticalLifecycle.lean` | `successful_support_promotion_was_ready` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/SafetyCriticalLifecycle.lean` | `support_promotion_without_receipt_and_nonclaim_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/SafetyCriticalLifecycle.lean` | `value_conflict_complete_trace_commits` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/SafetyCriticalLifecycle.lean` | `value_conflict_missing_residual_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
@@ -1205,7 +1202,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/SearchSubstrates.lean` | `qualified_substrate_without_passing_evidence_rejected` | derived_or_decomposed | no | uses contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/SearchSubstrates.lean` | `substrate_adoption_record_missing_required_field_rejected` | derived_or_decomposed | no | uses cases, contradiction, rw, unfold |
 | `lean/AsiStackProofs/SearchSubstrates.lean` | `substrate_adoption_trace_fixture_valid` | derived_or_decomposed | no | uses simp, unfold |
-| `lean/AsiStackProofs/SearchSubstrates.lean` | `unproven_qualified_substrate_rejected` | derived_or_decomposed | no | uses have, rw, simp, unfold |
+| `lean/AsiStackProofs/SearchSubstrates.lean` | `unproven_qualified_record_contradicts_noncore_invariant` | derived_or_decomposed | no | uses have, rw, simp, unfold |
 | `lean/AsiStackProofs/SecurityKernel.lean` | `clean_authorized_use_is_allowed` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/SecurityKernel.lean` | `inactive_lease_denies_authority_use` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/SecurityKernel.lean` | `insufficient_clearance_blocks_protected_scif_entry` | derived_or_decomposed | no | uses cases, contradiction, rw |

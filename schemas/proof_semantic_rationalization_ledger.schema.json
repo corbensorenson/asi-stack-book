@@ -60,8 +60,8 @@
     },
     "actions": {
       "type": "array",
-      "minItems": 63,
-      "maxItems": 63,
+      "minItems": 68,
+      "maxItems": 68,
       "items": {
         "$ref": "#/$defs/action"
       }
@@ -71,6 +71,7 @@
       "additionalProperties": false,
       "required": [
         "executed_retirement_count",
+        "executed_scope_rewrite_count",
         "current_live_theorem_count",
         "remaining_action_count",
         "remaining_action_counts",
@@ -79,18 +80,20 @@
       ],
       "properties": {
         "executed_retirement_count": {
-          "const": 63
+          "const": 66
+        },
+        "executed_scope_rewrite_count": {
+          "const": 2
         },
         "current_live_theorem_count": {
-          "const": 1307
+          "const": 1304
         },
         "remaining_action_count": {
-          "const": 97
+          "const": 92
         },
         "remaining_action_counts": {
           "const": {
-            "rewrite_scope_language": 2,
-            "rewrite_with_stronger_model": 95
+            "rewrite_with_stronger_model": 92
           }
         },
         "chapter_core_support_transitions": {
@@ -196,7 +199,9 @@
             "retire_projection_after_decision_model_consumer_migration",
             "retire_projection_after_public_target_narrowing",
             "retire_unconsumed_projection",
-            "retire_projection_after_validator_route_family_rebinding"
+            "retire_projection_after_validator_route_family_rebinding",
+            "rewrite_scope_language",
+            "retire_legacy_fixture_theorem_after_reachable_refinement_rebinding"
           ]
         },
         "semantic_relation": {
@@ -206,7 +211,9 @@
             "premise_restatement_replaced_by_derived_decision_gate",
             "premise_restatement_retired_after_target_scope_reduction",
             "premise_restatement_removed_without_public_target_change",
-            "summary_projection_replaced_by_route_family_validation"
+            "summary_projection_replaced_by_route_family_validation",
+            "statement_preserved_under_precise_theorem_name",
+            "legacy_fixture_statement_replaced_by_reachable_refinement_and_independent_consumer"
           ]
         },
         "module_path": {

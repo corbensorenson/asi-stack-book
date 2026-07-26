@@ -95,20 +95,24 @@ EXPECTED_ACTION_IDS = [
     "C6-R61-circle-public-consumer-no-promotion-projection",
     "C6-R62-theseus-artifact-surface-projection",
     "C6-R63-theseus-gate-promotion-projection",
+    "C6-R64-safety-promotion-step-scope-rewrite",
+    "C6-R65-substrate-qualified-record-scope-rewrite",
+    "C6-R66-policy-lease-summary-fixture-rebinding",
+    "C6-R67-policy-reward-only-fixture-rebinding",
+    "C6-R68-policy-rollback-fixture-rebinding",
 ]
 EXPECTED_LEVELS = {
-    "P0": 37,
+    "P0": 35,
     "P1": 753,
     "P2": 25,
     "P3": 319,
     "P4": 93,
-    "P5": 80,
+    "P5": 79,
     "P6": 0,
 }
 EXPECTED_DISPOSITIONS = {
-    "retain": 1210,
-    "rewrite_scope_language": 2,
-    "rewrite_with_stronger_model": 95,
+    "retain": 1212,
+    "rewrite_with_stronger_model": 92,
 }
 EXPECTED_TARGETS = {
     "lean:bibliography.plan.operational_invariant": (
@@ -321,6 +325,10 @@ EXPECTED_RELATIONS = {
     "retire_projection_after_validator_route_family_rebinding": (
         "summary_projection_replaced_by_route_family_validation"
     ),
+    "rewrite_scope_language": "statement_preserved_under_precise_theorem_name",
+    "retire_legacy_fixture_theorem_after_reachable_refinement_rebinding": (
+        "legacy_fixture_statement_replaced_by_reachable_refinement_and_independent_consumer"
+    ),
 }
 EXPECTED_MIGRATION_COUNTS = {
     action_id: int(action_id in {
@@ -420,7 +428,7 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
     actions = ledger["actions"]
     if [row["action_id"] for row in actions] != EXPECTED_ACTION_IDS:
         out.append("action sequence or identity drifted")
-    if [row["sequence"] for row in actions] != list(range(1, 64)):
+    if [row["sequence"] for row in actions] != list(range(1, 69)):
         out.append("action sequence numbers drifted")
 
     try:
@@ -465,12 +473,22 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
             out.append(f"{action['action_id']}: baseline module digest drifted")
         retired_name = retired_id.split("::", 1)[1]
         retired_block = module_cache[module].get(retired_name)
-        replacement_block = (
-            module_cache[module].get(replacement_id.split("::", 1)[1])
-            if replacement_id is not None
-            else None
-        )
-        if retired_block is None or (replacement_id is not None and replacement_block is None):
+        if action["action"] == "rewrite_scope_language" and replacement_id is not None:
+            current_module_blocks = theorem_blocks(
+                (ROOT / module).read_text(encoding="utf-8")
+            )
+            replacement_block = current_module_blocks.get(
+                replacement_id.split("::", 1)[1]
+            )
+        else:
+            replacement_block = (
+                module_cache[module].get(replacement_id.split("::", 1)[1])
+                if replacement_id is not None
+                else None
+            )
+        if retired_block is None or (
+            replacement_id is not None and replacement_block is None
+        ):
             out.append(f"{action['action_id']}: baseline theorem block is missing")
             continue
         if sha256_bytes(retired_block["block"].encode("utf-8")) != action["retired_block_sha256"]:
@@ -492,15 +510,27 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
                 out.append(f"{action['action_id']}: replacement statement digest drifted")
 
         retired_row = baseline_rows.get(retired_id)
-        replacement_row = baseline_rows.get(replacement_id) if replacement_id is not None else None
-        if retired_row is None or (replacement_id is not None and replacement_row is None):
+        replacement_row = (
+            baseline_rows.get(replacement_id)
+            if replacement_id is not None
+            and action["action"] != "rewrite_scope_language"
+            else None
+        )
+        if retired_row is None or (
+            replacement_id is not None
+            and action["action"] != "rewrite_scope_language"
+            and replacement_row is None
+        ):
             out.append(f"{action['action_id']}: classification baseline lacks a participant")
             continue
-        expected_disposition = (
-            "retire_duplicate"
-            if action["action"] == "retire_exact_same_model_duplicate"
-            else "retire_narrow_projection"
-        )
+        if action["action"] == "retire_exact_same_model_duplicate":
+            expected_disposition = "retire_duplicate"
+        elif action["action"] == "rewrite_scope_language":
+            expected_disposition = "rewrite_scope_language"
+        elif action["action"] == "retire_legacy_fixture_theorem_after_reachable_refinement_rebinding":
+            expected_disposition = "rewrite_with_stronger_model"
+        else:
+            expected_disposition = "retire_narrow_projection"
         if retired_row.get("disposition") != expected_disposition:
             out.append(f"{action['action_id']}: baseline retirement disposition drifted")
         if replacement_row is not None and replacement_row.get("disposition") != "retain":
@@ -565,6 +595,21 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
                 and "rcases valid with" not in retired_block["block"]
             ):
                 out.append(f"{action['action_id']}: retired theorem is not a direct projection")
+        elif action["action"] == "rewrite_scope_language":
+            if replacement_id is None or replacement_block is None:
+                out.append(f"{action['action_id']}: scope rewrite lacks a replacement")
+            elif statement_key(retired_block["signature"]) != statement_key(
+                replacement_block["signature"]
+            ):
+                out.append(f"{action['action_id']}: scope rewrite changed the proposition")
+        elif action["action"] == "retire_legacy_fixture_theorem_after_reachable_refinement_rebinding":
+            if replacement_id is not None or replacement_block is not None:
+                out.append(f"{action['action_id']}: legacy fixture retirement invented a same-model replacement")
+            if not any(
+                ref == "scripts/validate_policy_optimization_refinement.py"
+                for ref in action["validation_refs"]
+            ):
+                out.append(f"{action['action_id']}: reachable refinement validator is not bound")
         else:
             out.append(f"{action['action_id']}: unsupported action kind")
 
@@ -584,13 +629,13 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
 
     overlay = load(CURRENT_OVERLAY)
     summary = overlay.get("summary", {})
-    if summary.get("current_theorem_count") != 1307:
+    if summary.get("current_theorem_count") != 1304:
         out.append("current theorem denominator drifted")
     if summary.get("semantic_level_counts") != EXPECTED_LEVELS:
         out.append("current semantic-level counts drifted")
     if summary.get("disposition_counts") != EXPECTED_DISPOSITIONS:
         out.append("current disposition counts drifted")
-    if sum(value for key, value in EXPECTED_DISPOSITIONS.items() if key != "retain") != 97:
+    if sum(value for key, value in EXPECTED_DISPOSITIONS.items() if key != "retain") != 92:
         out.append("expected remaining-action denominator is internally inconsistent")
     if ledger["summary"]["remaining_action_counts"] != {
         key: value for key, value in EXPECTED_DISPOSITIONS.items() if key != "retain"
@@ -629,12 +674,15 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
         for row in current_rows
         if row["module_path"] == "lean/AsiStackProofs/PolicyOptimization.lean"
     ]
-    if len(policy_rows) != 14:
-        out.append("PolicyOptimization must retain exactly fourteen declarations")
+    if len(policy_rows) != 11:
+        out.append("PolicyOptimization must retain exactly eleven declarations")
     retired_policy_names = {
         "promoted_policy_update_records_holdouts_probes_regressions_and_rollback",
         "reward_proxy_promotion_requires_target_evaluation",
         "authority_expanding_policy_update_requires_approval_and_rollback",
+        "policy_update_lease_probe_fixture_valid",
+        "policy_update_lease_probe_rejects_reward_only_proxy",
+        "policy_update_lease_probe_preserves_rollback_boundary",
     }
     if retired_policy_names & {row["name"] for row in policy_rows}:
         out.append("PolicyOptimization retained an executed narrow projection")
@@ -700,6 +748,24 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
         out.append("SearchSubstrates must retain exactly six declarations")
     if retired_substrate_names & {row["name"] for row in substrate_rows}:
         out.append("SearchSubstrates retained an executed premise or summary projection")
+    substrate_names = {row["name"] for row in substrate_rows}
+    if "unproven_qualified_substrate_rejected" in substrate_names:
+        out.append("SearchSubstrates retained the misleading pre-rewrite theorem name")
+    if "unproven_qualified_record_contradicts_noncore_invariant" not in substrate_names:
+        out.append("SearchSubstrates precise qualified-record theorem is missing")
+
+    safety_rows = [
+        row
+        for row in current_rows
+        if row["module_path"] == "lean/AsiStackProofs/SafetyCriticalLifecycle.lean"
+    ]
+    safety_names = {row["name"] for row in safety_rows}
+    if len(safety_rows) != 21:
+        out.append("SafetyCriticalLifecycle must retain exactly twenty-one declarations")
+    if "successful_support_promotion_was_ready" in safety_names:
+        out.append("SafetyCriticalLifecycle retained the misleading pre-rewrite theorem name")
+    if "accepted_promote_support_step_requires_model_promotion_ready" not in safety_names:
+        out.append("SafetyCriticalLifecycle precise transition theorem is missing")
 
     steward_rows = [
         row
@@ -933,17 +999,18 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
     if status.get("rationalization_ledger_path") != str(LEDGER.relative_to(ROOT)):
         out.append("status does not bind the cumulative rationalization ledger")
     if (
-        status.get("theorem_count") != 1307
-        or status.get("executed_retirement_count") != 63
-        or status.get("remaining_action_count") != 97
+        status.get("theorem_count") != 1304
+        or status.get("executed_retirement_count") != 66
+        or status.get("executed_scope_rewrite_count") != 2
+        or status.get("remaining_action_count") != 92
     ):
         out.append("status does not report the cumulative post-transaction denominator")
     roadmap = ROADMAP.read_text(encoding="utf-8")
     roadmap_flat = " ".join(roadmap.split())
     for phrase in [
-        "thirteenth narrow-projection tranche",
-        "1,307 live theorem declarations",
-        "97 rewrite-or-retire actions remain",
+        "fourteenth scope-and-refinement tranche",
+        "1,304 live theorem declarations",
+        "92 stronger-model actions remain",
         "`proofs/proof_semantic_rationalization_ledger.json`",
     ]:
         if phrase not in roadmap_flat:
@@ -989,6 +1056,23 @@ def main() -> None:
             c["actions"][0]["replacement_theorem_id"],
         ),
     )
+    mutate(
+        "scope-rewrite proposition substitution",
+        lambda c: c["actions"][63].__setitem__(
+            "replacement_statement_sha256", "0" * 64
+        ),
+    )
+    mutate(
+        "refinement rebinding erasure",
+        lambda c: c["actions"][65].__setitem__(
+            "validation_refs",
+            [
+                ref
+                for ref in c["actions"][65]["validation_refs"]
+                if ref != "scripts/validate_policy_optimization_refinement.py"
+            ],
+        ),
+    )
 
     for label, candidate in mutations:
         if not validation_errors(candidate):
@@ -999,9 +1083,10 @@ def main() -> None:
             + "\n - ".join(failures)
         )
     print(
-        "Proof semantic-rationalization ledger passed: sixty-three dependency-safe "
-        "retirements, thirty-nine public-target migrations, 1,307 live theorems, "
-        "97 actions remain, 14 rejecting mutations, no support or release effect."
+        "Proof semantic-rationalization ledger passed: sixty-six dependency-safe "
+        "retirements, two exact scope rewrites, thirty-nine public-target migrations, "
+        "1,304 live theorems, 92 stronger-model actions remain, 16 rejecting "
+        "mutations, no support or release effect."
     )
 
 

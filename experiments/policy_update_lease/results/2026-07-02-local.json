@@ -126,12 +126,11 @@
     ]
   },
   "lean_fixture_alignment": {
-    "module": "AsiStackProofs.PolicyOptimization",
+    "module": "AsiStackProofs.PolicyOptimizationRefinement",
     "proof_tag": "lean:policy_optimization.lease_probe_fixture_bridge",
     "theorem_refs": [
-      "policy_update_lease_probe_fixture_valid",
-      "policy_update_lease_probe_rejects_reward_only_proxy",
-      "policy_update_lease_probe_preserves_rollback_boundary"
+      "policy_update_full_cycle_composes",
+      "policy_update_failed_evaluation_blocks_downstream_handoff"
     ],
     "expected": {
       "sample_count": 6,

@@ -2924,15 +2924,205 @@
         "lean:lake-build"
       ],
       "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R64-safety-promotion-step-scope-rewrite",
+      "sequence": 64,
+      "state": "executed",
+      "action": "rewrite_scope_language",
+      "semantic_relation": "statement_preserved_under_precise_theorem_name",
+      "module_path": "lean/AsiStackProofs/SafetyCriticalLifecycle.lean",
+      "baseline_module_sha256": "20414f2d184dcdb07cab806697ff4c0bb41813419c18fb4f52385bc8ebcc9c83",
+      "retired_theorem_id": "lean/AsiStackProofs/SafetyCriticalLifecycle.lean::successful_support_promotion_was_ready",
+      "replacement_theorem_id": "lean/AsiStackProofs/SafetyCriticalLifecycle.lean::accepted_promote_support_step_requires_model_promotion_ready",
+      "retired_block_sha256": "c547eaf05ceb12a63ea5a20812eee8941becaa4af36c1c3990e872416ab1e8b5",
+      "replacement_block_sha256": "aa65564d7f65f684bf92efa609227f214a21327d24856a49c6a6c461f52a06f4",
+      "retired_statement_sha256": "43937904b266cd7ca3728dbf49e7fda9ce8963521dbc4855a3403c56a3803d4d",
+      "replacement_statement_sha256": "43937904b266cd7ca3728dbf49e7fda9ce8963521dbc4855a3403c56a3803d4d",
+      "semantic_basis": [
+        "The old theorem name could be read as a claim that a real support promotion was substantively ready.",
+        "The statement proves only that an accepted promoteSupport step in the authored transition function implies the model's promotionReady Boolean.",
+        "The replacement preserves the normalized proposition byte-for-byte after theorem-name normalization.",
+        "The immutable overlay records no Lean dependency or theorem consumer for the old name, while module validators consume the transition model rather than that identifier.",
+        "The precise name preserves the finite transition consequence without implying empirical readiness, valid evidence, or an actual support transition."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "If the authored step function accepts promoteSupport, its input state's modeled promotionReady predicate was true; no real support promotion or readiness judgment follows.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_safety_critical_lifecycle.py",
+        "scripts/validate_safety_critical_lifecycle_consumer_trace.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R65-substrate-qualified-record-scope-rewrite",
+      "sequence": 65,
+      "state": "executed",
+      "action": "rewrite_scope_language",
+      "semantic_relation": "statement_preserved_under_precise_theorem_name",
+      "module_path": "lean/AsiStackProofs/SearchSubstrates.lean",
+      "baseline_module_sha256": "5c78ed08265983e91eba92b132d1bb836bdebbc21100dd082c437a22ee7d9ba4",
+      "retired_theorem_id": "lean/AsiStackProofs/SearchSubstrates.lean::unproven_qualified_substrate_rejected",
+      "replacement_theorem_id": "lean/AsiStackProofs/SearchSubstrates.lean::unproven_qualified_record_contradicts_noncore_invariant",
+      "retired_block_sha256": "5175bd706676f389e219cc649248e6fa1f3ebf783b46d9c08e290d3489a46b16",
+      "replacement_block_sha256": "a5d019b5234ebd2e4de4453b8b132235161ae9d5313936fe30773f772bc86925",
+      "retired_statement_sha256": "863725041969694ada500d0487c433a1e87e924c00428adaf166f559baa8ae61",
+      "replacement_statement_sha256": "863725041969694ada500d0487c433a1e87e924c00428adaf166f559baa8ae61",
+      "semantic_basis": [
+        "The old theorem name could sound as though the substrate itself had been empirically rejected.",
+        "The proposition instead derives a contradiction inside one authored record whose passingEvidence field is false while its adoptionState is qualified.",
+        "The replacement preserves the normalized proposition byte-for-byte after theorem-name normalization.",
+        "The immutable overlay records no Lean dependency or theorem consumer for the old name, and the chapter now names the record inconsistency explicitly.",
+        "The rewritten scope does not establish substrate quality, adoption fitness, routing performance, transfer, or refutation."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "An authored record cannot be both qualified without passing evidence and satisfy the finite invariant that unproven records remain non-core; the substrate itself is not rejected.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_substrate_adoption_trace.py",
+        "scripts/validate_proof_artifact_audit.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R66-policy-lease-summary-fixture-rebinding",
+      "sequence": 66,
+      "state": "executed",
+      "action": "retire_legacy_fixture_theorem_after_reachable_refinement_rebinding",
+      "semantic_relation": "legacy_fixture_statement_replaced_by_reachable_refinement_and_independent_consumer",
+      "module_path": "lean/AsiStackProofs/PolicyOptimization.lean",
+      "baseline_module_sha256": "0b3108e7528d151e93f63774749665639def53d733085373f3ec67a22087196f",
+      "retired_theorem_id": "lean/AsiStackProofs/PolicyOptimization.lean::policy_update_lease_probe_fixture_valid",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "79514ab4432d2ad1b71fa9b2cd19506b7590cd31042941676e1896487647d6d2",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "aef743eb8510161dcd32cc4df2104e68a0da7837a453e4d73d757d5840a909a2",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem proves that a hand-authored summary literal satisfies a conjunction of its own fields.",
+        "The immutable overlay records no Lean dependency or theorem consumer for the declaration.",
+        "The public lease-probe target already belongs to PolicyOptimizationRefinement rather than the legacy summary module.",
+        "The refinement composes seven reachable stages and an independently implemented consumer replays all 63 routes, 73 route mutations, and three cross-stage mutations while inheriting the exact six-sample/five-candidate result.",
+        "The legacy summary structure remains as a transparent alignment record, but its validity theorem no longer stands in for reachable lifecycle evidence."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "The six-sample/five-candidate probe remains an inherited synthetic result, while the implemented public target is carried by the reachable refinement and independent consumer; no policy-quality inference follows.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_policy_update_lease_probe.py",
+        "scripts/validate_policy_optimization_refinement.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R67-policy-reward-only-fixture-rebinding",
+      "sequence": 67,
+      "state": "executed",
+      "action": "retire_legacy_fixture_theorem_after_reachable_refinement_rebinding",
+      "semantic_relation": "legacy_fixture_statement_replaced_by_reachable_refinement_and_independent_consumer",
+      "module_path": "lean/AsiStackProofs/PolicyOptimization.lean",
+      "baseline_module_sha256": "0b3108e7528d151e93f63774749665639def53d733085373f3ec67a22087196f",
+      "retired_theorem_id": "lean/AsiStackProofs/PolicyOptimization.lean::policy_update_lease_probe_rejects_reward_only_proxy",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "451ff82c2a06035233f94a1fc104c9ac3a6b57446941f66f34f3e66c2056018c",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "9be793e29438511638385f8e00697d8aa527782474e720c718b131689e84b59a",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem proves only that one Boolean in the hand-authored fixture literal is true.",
+        "The immutable overlay records no Lean dependency or theorem consumer for the declaration.",
+        "The deterministic Python consumer still computes rejection of the reward-only candidate from missing target evaluation, holdout, reward-hacking, and regression conditions rather than trusting that Boolean.",
+        "PolicyOptimizationRefinement separately blocks incomplete evaluation before adjudication and bounded lease across the reachable route family.",
+        "The retirement preserves the negative control as executable evidence without presenting a fixture field as an independent formal rejection result."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "The named synthetic reward-only candidate remains rejected by the executable eligibility consumer and the reachable refinement blocks incomplete evaluation; no reward validity or policy-improvement result follows.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_policy_update_lease_probe.py",
+        "scripts/validate_policy_optimization_refinement.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R68-policy-rollback-fixture-rebinding",
+      "sequence": 68,
+      "state": "executed",
+      "action": "retire_legacy_fixture_theorem_after_reachable_refinement_rebinding",
+      "semantic_relation": "legacy_fixture_statement_replaced_by_reachable_refinement_and_independent_consumer",
+      "module_path": "lean/AsiStackProofs/PolicyOptimization.lean",
+      "baseline_module_sha256": "0b3108e7528d151e93f63774749665639def53d733085373f3ec67a22087196f",
+      "retired_theorem_id": "lean/AsiStackProofs/PolicyOptimization.lean::policy_update_lease_probe_preserves_rollback_boundary",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "0fe8f1badf1644b25a3e0ae5842396618f6b0bc476c2474835cff203c92f293b",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "381c967054e0224a91c8b6727cf2133fd9974d309b04110e1434438ac342c230",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem projects rollbackDryRunPresent, supportStateEffectNone, and nonClaimBoundary from one hand-authored fixture literal.",
+        "The immutable overlay records no Lean dependency or theorem consumer for the declaration.",
+        "The deterministic lease consumer still executes the named rollback dry run and checks restoration of the baseline policy reference.",
+        "PolicyOptimizationRefinement separately requires rollback snapshot, criterion, rehearsal, handle, descendant invalidation, ordinary-route blocking, and effect-complete rollback across reachable stages and rejected mutations.",
+        "Removing the projection prevents a fixture field from being misclassified as P5 rollback evidence while retaining the stronger finite lifecycle and executable boundary."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "The synthetic dry run restores the named baseline within the fixture, and the refinement gates readmission on authored rollback fields; no live, effect-complete runtime rollback is established.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_policy_update_lease_probe.py",
+        "scripts/validate_policy_optimization_refinement.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
     }
   ],
   "summary": {
-    "executed_retirement_count": 63,
-    "current_live_theorem_count": 1307,
-    "remaining_action_count": 97,
+    "executed_retirement_count": 66,
+    "executed_scope_rewrite_count": 2,
+    "current_live_theorem_count": 1304,
+    "remaining_action_count": 92,
     "remaining_action_counts": {
-      "rewrite_scope_language": 2,
-      "rewrite_with_stronger_model": 95
+      "rewrite_with_stronger_model": 92
     },
     "chapter_core_support_transitions": 0,
     "new_formal_claims": 0
