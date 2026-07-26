@@ -124,6 +124,34 @@ PUBLIC_SURFACES = [
     for p in ["README.md", "index.qmd", "docs/publication_readiness.md", "docs/public_status_contract.md"]
 ]
 ACTIVE_MARKER = "Status: **active canonical successor**"
+EXPECTED_CONCEPT_ANCHORS = [
+    ("C1", "C1-noninheritance-law", "chapters/asi-is-a-stack-not-a-model.qmd", "Together these separations form the book's **noninheritance law**"),
+    ("C1", "C1-three-projections", "chapters/asi-is-a-stack-not-a-model.qmd", "The thesis has three projections, each with a different job"),
+    ("C1", "C1-theorem-runtime-boundary", "chapters/asi-is-a-stack-not-a-model.qmd", "A theorem is not runtime enforcement"),
+    ("C1", "C1-proposal-ratification-boundary", "chapters/asi-is-a-stack-not-a-model.qmd", "A proposal is not ratification"),
+    ("C2", "C2-twenty-two-unit-spine", "products/narrative_product_spine.json", "A twenty-two-unit thesis-to-method route through the canonical manifest"),
+    ("C2", "C2-all-eighty-four-crosswalk", "products/narrative_unit_crosswalk.json", '"canonical_chapter_count": 84'),
+    ("C2", "C2-nonabsorption-prose", "chapters/living-book-methodology.qmd", "Narrative compression without claim absorption"),
+    ("C3", "C3-calculus-owner", "chapters/executable-specifications-and-lean-proof-envelope.qmd", "Governed Transition Calculus"),
+    ("C3", "C3-authority-projection", "chapters/system-boundaries-and-authority.qmd", "authority-specific projection of the shared Governed Transition Calculus"),
+    ("C3", "C3-joined-reference-trace", "chapters/integrated-reference-architecture.qmd", "every material handoff can be projected through the Governed Transition Calculus"),
+    ("C3", "C3-protocol-projection", "appendices/D_protocol_schemas.qmd", "Governed Transition Calculus projection"),
+    ("C4", "C4-developmental-loop-owner", "chapters/governed-model-training-distributed-optimization-and-scaling.qmd", "The Developmental Intelligence Loop"),
+    ("C4", "C4-developmental-stage-chain", "chapters/governed-model-training-distributed-optimization-and-scaling.qmd", "curriculum construction -> world interaction -> prediction error"),
+    ("C4", "C4-readiness-review-owner", "chapters/readiness-gates-residual-escrow-and-quarantine.qmd", "Within the Developmental Intelligence Loop, this chapter owns the readiness review"),
+    ("C4", "C4-joined-reference-trace", "chapters/integrated-reference-architecture.qmd", "learned capability enters through the Developmental Intelligence Loop"),
+    ("C5", "C5-trusted-kernel-owner", "chapters/security-kernel-and-digital-scifs.qmd", "Minimum trusted kernel"),
+    ("C5", "C5-bounded-liveness-owner", "chapters/security-kernel-and-digital-scifs.qmd", "Bounded liveness"),
+    ("C5", "C5-effect-boundary-projection", "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd", "effect-boundary projection of the minimum trusted kernel and bounded liveness"),
+    ("C5", "C5-economic-projection", "chapters/resource-economics-and-token-budgets.qmd", "Resource Economics owns the accounting projection of bounded liveness"),
+    ("C6", "C6-semantic-depth-owner", "chapters/executable-specifications-and-lean-proof-envelope.qmd", "P0--P6 semantic-depth overlay"),
+    ("C6", "C6-target-obligation-fields", "chapters/executable-specifications-and-lean-proof-envelope.qmd", "Each target eventually needs its assumptions, consumer, witness or explicit unreachability"),
+    ("C7", "C7-flagship-owner", "chapters/project-theseus-as-report-first-implementation-reference.qmd", "ASI-THESEUS-FLAGSHIP-01"),
+    ("C7", "C7-five-matched-routes", "chapters/project-theseus-as-report-first-implementation-reference.qmd", "Five routes answer different alternatives on the same eligible task set"),
+    ("C7", "C7-one-way-preregistration-handoff", "chapters/prototype-roadmap.qmd", "The handoff is one-way until the protected campaign is opened"),
+    ("C8", "C8-evidence-led-program", "chapters/living-book-methodology.qmd", "Evidence-led derivative program"),
+    ("C8", "C8-contribution-owned-outlines", "chapters/open-research-agenda-and-bibliography-plan.qmd", "Contribution-owned derivative outlines"),
+]
 
 
 def load(path: Path) -> dict:
@@ -1036,11 +1064,16 @@ def errors(data: dict) -> list[str]:
         "C8-evidence-led-publication-and-derivative-papers",
     ]
     if (
-        convergence.get("state") != "concept_first_continuation_after_all_84_gate"
-        or convergence.get("active_work_mode") != "phase1b_semantic_organization_and_navigability"
-        or convergence.get("current_priority") != "concept_first_semantic_organization_and_navigability"
-        or convergence.get("proof_work_priority") != "not_current_while_concept_first_continuation_is_active"
+        convergence.get("state") != "phase2_active_after_concept_first_reconciliation"
+        or convergence.get("active_work_mode")
+        != "phase2_smallest_consumed_conclusions_and_natural_evidence"
+        or convergence.get("current_priority")
+        != "phase2_proof_rationalization_then_natural_flagship"
+        or convergence.get("proof_work_priority")
+        != "current_only_for_named_consumers_after_phase1_exit"
         or convergence.get("concept_first_exit_gate") != "all_84_distinct_responsibilities_reader_visible_and_roadmap_only_idea_audit_reconciled"
+        or convergence.get("concept_first_exit_gate_state")
+        != "passed_84_responsibilities_62_specialist_routes_26_c1_c8_anchors_zero_roadmap_only_remainder"
         or convergence.get("phase1_audit_path") != "docs/c1_c8_phase1_idea_placement_and_prose_audit_2026_07_25.md"
         or convergence.get("narrative_spine_path") != "products/narrative_product_spine.json"
         or convergence.get("narrative_unit_crosswalk_path") != "products/narrative_unit_crosswalk.json"
@@ -1053,6 +1086,57 @@ def errors(data: dict) -> list[str]:
         or convergence.get("flagship_id") != "ASI-THESEUS-FLAGSHIP-01"
     ):
         out.append("post-review convergence identity, denominator, or packet order drifted")
+    concept_audit = convergence.get("concept_first_idea_audit", {})
+    concept_packets = concept_audit.get("packets", [])
+    actual_concept_anchors = [
+        (
+            packet.get("packet_id"),
+            anchor.get("anchor_id"),
+            anchor.get("owner_path"),
+            anchor.get("required_phrase"),
+        )
+        for packet in concept_packets
+        for anchor in packet.get("anchors", [])
+    ]
+    if (
+        concept_audit.get("state") != "reconciled_exact_eight_packet_anchor_set"
+        or concept_audit.get("packet_count") != 8
+        or concept_audit.get("exact_anchor_count") != len(EXPECTED_CONCEPT_ANCHORS)
+        or concept_audit.get("roadmap_only_idea_count") != 0
+        or concept_audit.get("all_structural_candidate_queues_empty") is not True
+        or concept_audit.get("support_state_effect") != "none"
+        or [packet.get("packet_id") for packet in concept_packets]
+        != [f"C{index}" for index in range(1, 9)]
+        or any(
+            packet.get("disposition") != "placed_in_existing_owners"
+            for packet in concept_packets
+        )
+        or actual_concept_anchors != EXPECTED_CONCEPT_ANCHORS
+        or len({anchor[1] for anchor in actual_concept_anchors})
+        != len(actual_concept_anchors)
+    ):
+        out.append("concept-first C1-C8 anchor audit identity or zero-remainder disposition drifted")
+    for _, anchor_id, owner_path, required_phrase in EXPECTED_CONCEPT_ANCHORS:
+        path = ROOT / owner_path
+        if not path.is_file():
+            out.append(f"concept-first anchor owner missing: {anchor_id} -> {owner_path}")
+            continue
+        normalized_owner = re.sub(
+            r"\s+", " ", path.read_text(encoding="utf-8", errors="ignore")
+        )
+        if required_phrase not in normalized_owner:
+            out.append(f"concept-first prose anchor missing: {anchor_id} -> {owner_path}")
+    phase1_audit_text = (ROOT / convergence.get("phase1_audit_path", "")).read_text(
+        encoding="utf-8", errors="ignore"
+    )
+    for phrase in [
+        "## Exact C1–C8 roadmap-only idea reconciliation",
+        "26 exact prose or product anchors",
+        "Roadmap-only remainder | `0`",
+        "all current structural candidate queues are empty",
+    ]:
+        if phrase not in phase1_audit_text:
+            out.append(f"concept-first readable audit missing: {phrase}")
     c6_overlay_status = convergence.get("c6_current_semantic_overlay", {})
     c6_overlay = data["proof_semantic_depth_overlay"]
     expected_c6_levels = {
@@ -1582,7 +1666,10 @@ def main() -> None:
     mutate("post-review calculus property deletion", lambda c: c["status"]["quality_uplift_program"]["post_review_convergence"]["governed_transition_calculus_properties"].pop())
     mutate("post-review bounded-liveness deletion", lambda c: c["status"]["quality_uplift_program"]["post_review_convergence"].__setitem__("bounded_liveness_required", False))
     mutate("post-review external-human gate", lambda c: c["status"]["quality_uplift_program"]["post_review_convergence"].__setitem__("prepublication_external_human_required", True))
-    mutate("post-review proof priority inversion", lambda c: c["status"]["quality_uplift_program"]["post_review_convergence"].__setitem__("proof_work_priority", "current"))
+    mutate("post-review proof-volume priority", lambda c: c["status"]["quality_uplift_program"]["post_review_convergence"].__setitem__("proof_work_priority", "maximize_theorem_count"))
+    mutate("concept-first exit receipt deletion", lambda c: c["status"]["quality_uplift_program"]["post_review_convergence"].__setitem__("concept_first_exit_gate_state", "pending"))
+    mutate("concept-first prose anchor deletion", lambda c: c["status"]["quality_uplift_program"]["post_review_convergence"]["concept_first_idea_audit"]["packets"][4]["anchors"].pop())
+    mutate("concept-first roadmap-only remainder laundering", lambda c: c["status"]["quality_uplift_program"]["post_review_convergence"]["concept_first_idea_audit"].__setitem__("roadmap_only_idea_count", 1))
     mutate("post-review role omission", lambda c: c["current_role_map"]["roles"]["load-bearing-reference"].pop())
     mutate("communication candidate gate weakening", lambda c: c["status"]["quality_uplift_program"]["structural_completeness_tranche"]["second_tranche"].__setitem__("communication_requires_source_ethics_and_effect_gate", False))
     mutate("institutional candidate gate weakening", lambda c: c["status"]["quality_uplift_program"]["structural_completeness_tranche"]["second_tranche"].__setitem__("institutions_require_authority_legitimacy_and_update_gate", False))

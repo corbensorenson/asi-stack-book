@@ -89,20 +89,23 @@ cross-owner handoffs, synthesis figures, clean 97-page canonical render,
 desktop/mobile browser checks, and automated accessibility preparation now
 close the all-84 gate without changing a support state.
 
-The current scheduling priority is a concept-first continuation after the
-initial all-84 gate: make each chapter's distinct responsibility and evidence
-ceiling reader-visible, reconcile any idea that still exists only in planning,
-and improve navigation before scheduling another proof tranche. Phase 2 is
-epistemically admissible because the original gate passed, but it is not the
-current work default. `ASI-THESEUS-FLAGSHIP-01` remains the later natural
-evidence spine, and protected outcomes open only after its own baselines,
-competence dossiers, independent evaluators, attack families, rescue ceilings,
-resource denominators, and stopping rules are frozen. T5 will compose
-separately earned conclusions rather than pooled rows. The remaining book work is semantically
-meaningful formal evidence, effect-complete implementation, source/instrument renewal, a
-meaning-preserving 15–25% repetition-removal target for the reader spine,
-independent reproduction and transfer, compatibility residuals, exact
-`main`-commit attestation, and owner-authorized external publication. No roadmap
+The concept-first continuation now has an exact exit receipt: all 84 chapter
+responsibilities and support ceilings are visible, all 62 specialist owners
+are routed under their narrative units, and 26 C1–C8 prose/product anchors
+leave zero accepted roadmap-only remainder. Runtime Adapters, Readiness,
+Resource Economics, and Appendix D now state their cross-owner liveness,
+developmental-review, accounting, and calculus projections explicitly. Phase 2
+therefore resumes with proof rationalization around named consumers, not proof
+volume, followed by the competent natural flagship. `ASI-THESEUS-FLAGSHIP-01`
+remains the natural evidence spine, and protected outcomes open only after its
+own baselines, competence dossiers, independent evaluators, attack families,
+rescue ceilings, resource denominators, and stopping rules are frozen. T5 will
+compose separately earned conclusions rather than pooled rows. The remaining
+book work is semantically meaningful formal evidence, effect-complete
+implementation, source/instrument renewal, a meaning-preserving 15–25%
+repetition-removal target for the reader spine, independent reproduction and
+transfer, compatibility residuals, exact `main`-commit attestation, and
+owner-authorized external publication. No roadmap
 row converts campaign-local claims into core promotions or lets proof,
 validator, source, chapter, or word counts stand in for evidence.
 

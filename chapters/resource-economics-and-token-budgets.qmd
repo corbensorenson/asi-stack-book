@@ -4,7 +4,7 @@ chapter_id: "resource-economics-and-token-budgets"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.3 claim-proof program"
-last_updated: "2026-07-23"
+last_updated: "2026-07-26"
 primary_sources:
   - "tokenmana"
   - "planforge"
@@ -64,7 +64,7 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | v0.3 claim-proof program |
-| Last updated | 2026-07-23 |
+| Last updated | 2026-07-26 |
 | Primary source records | 41 assigned records spanning local resource and simulation lineage, serving and heterogeneous-memory comparators, current provider cache contracts, exact and modular prefix reuse, disaggregated and non-prefix KV state, semantic response caching, and benchmark context |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -204,6 +204,27 @@ A budget record is not a quota override. It is the policy surface that decides w
 The budget state should therefore be an adjudication state, not just a number. A task can be `proposed`, `priced`, `underfunded`, `protected_overhead_required`, `dispatchable`, `escalated`, `deferred`, `scope_reduced`, `rejected`, or `residualized`. Those states keep verification, security, approval, replay, and human-review costs visible when local optimization pressure wants to compress them into zero.
 
 A Resource Budget Record attaches those constraints to a task, route, plan node, benchmark run, or review process. It records value, risk, capacity, cost, verification tax, serving pressure, protected gates, budget decision, escalation rule, residuals, and evidence references.
+
+### Bounded-liveness accounting
+
+Resource Economics owns the accounting projection of bounded liveness. A task
+does not satisfy the liveness contract merely because it left a queue: the
+ledger distinguishes completed, refused, quarantined, compensated, retired,
+expired, and unresolved work, and it charges retries, review loops, waiting,
+fallback, recovery, residual ageing, and displaced useful work to the route
+that created them. Each blocked record names the minimum missing condition and
+the budget or authority owner that could change it; an unowned “pending” state
+is neither safe hold nor progress.
+
+The joint comparison therefore keeps useful throughput, false blocking,
+missed help, unsafe or unauthorized effects, latency, compute, storage, energy
+where measured, human time, verification capacity, recovery quality,
+residual burden, and governance cost separate. A stop-only policy can be a
+necessary control and still lose the useful-work frontier. A fast policy can
+also lose when it externalizes repair or open effects. Economics supplies
+these denominators; Security owns the trusted-kernel properties, Readiness
+owns qualification and quarantine, Runtime and Operations own effect closure,
+and none of those owners may borrow an attractive cost result as permission.
 
 ```{mermaid}
 flowchart LR

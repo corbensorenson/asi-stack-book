@@ -3,13 +3,13 @@
   "scanner": "modal and outcome-bearing sentence cue scan; candidates require semantic adjudication",
   "summary": {
     "chapter_count": 64,
-    "candidate_count": 3439,
+    "candidate_count": 3443,
     "review_state_counts": {
       "duplicate_of_atom": 1524,
       "editorial_or_question": 71,
       "historical_or_source_report": 290,
       "material_atom": 3,
-      "nonmaterial_explanation": 1551
+      "nonmaterial_explanation": 1555
     }
   },
   "candidates": [
@@ -31458,9 +31458,66 @@
       "target_atom_id": null
     },
     {
+      "candidate_id": "runtime-adapters-tool-permissions-and-human-approval.prose.cbe1c17abc7a",
+      "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
+      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:364",
+      "sentence": "rollback are trusted only to the exact extent required to admit or close the",
+      "cues": [
+        "required"
+      ],
+      "review_state": "nonmaterial_explanation",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Line-wrapped trusted-kernel boundary fragment that explains the existing runtime core and creates no independent support-bearing claim.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "runtime-adapters-tool-permissions-and-human-approval.prose.25432f0c8ea7",
+      "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
+      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:366",
+      "sentence": "Bounded liveness requires a finite terminal",
+      "cues": [
+        "requires"
+      ],
+      "review_state": "nonmaterial_explanation",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Line-wrapped bounded-liveness explanation already governed by the chapter core and the C5 ownership crosswalk.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "runtime-adapters-tool-permissions-and-human-approval.prose.390a950060b1",
+      "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
+      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:367",
+      "sentence": "disposition and an owner for every unresolved effect, but it does not require",
+      "cues": [
+        "require"
+      ],
+      "review_state": "nonmaterial_explanation",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Continuation of the bounded-liveness explanation; it narrows unsafe retry and compensation inferences without adding an independent claim.",
+      "target_atom_id": null
+    },
+    {
       "candidate_id": "runtime-adapters-tool-permissions-and-human-approval.prose.eb83d50e7607",
       "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
-      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:376",
+      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:384",
       "sentence": "opaque handles; adapters cannot widen them.",
       "cues": [
         "cannot"
@@ -31479,7 +31536,7 @@
     {
       "candidate_id": "runtime-adapters-tool-permissions-and-human-approval.prose.abad02195382",
       "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
-      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:440",
+      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:448",
       "sentence": "A planner may request a high-impact action, but the adapter must know whether approval is missing, stale, insufficiently scoped, or contradicted by a newer policy.",
       "cues": [
         "must"
@@ -31498,7 +31555,7 @@
     {
       "candidate_id": "runtime-adapters-tool-permissions-and-human-approval.prose.7f59e43e91b3",
       "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
-      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:440",
+      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:448",
       "sentence": "A security kernel may provide an opaque handle, but the adapter must not expose the secret bytes back into model context.",
       "cues": [
         "must"
@@ -31517,7 +31574,7 @@
     {
       "candidate_id": "runtime-adapters-tool-permissions-and-human-approval.prose.feb487e23334",
       "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
-      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:440",
+      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:448",
       "sentence": "The artifact graph may store the result, but it should store the permission and approval boundary with it.",
       "cues": [
         "should"
@@ -31536,7 +31593,7 @@
     {
       "candidate_id": "runtime-adapters-tool-permissions-and-human-approval.prose.c49f56c76b4a",
       "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
-      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:472",
+      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:480",
       "sentence": "safety-relevant, financial, physical, or institutional effects require the",
       "cues": [
         "require"
@@ -31555,7 +31612,7 @@
     {
       "candidate_id": "runtime-adapters-tool-permissions-and-human-approval.prose.0d44281301bc",
       "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
-      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:473",
+      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:481",
       "sentence": "exact current approval when policy requires it.",
       "cues": [
         "requires"
@@ -31574,7 +31631,7 @@
     {
       "candidate_id": "runtime-adapters-tool-permissions-and-human-approval.prose.c7dc54d5a4d9",
       "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
-      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:477",
+      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:485",
       "sentence": "conflict, missing qualification/evidence, or visible contradiction cannot",
       "cues": [
         "cannot"
@@ -31593,7 +31650,7 @@
     {
       "candidate_id": "runtime-adapters-tool-permissions-and-human-approval.prose.eed0e6615f1c",
       "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
-      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:482",
+      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:490",
       "sentence": "Declared scope, simulation, cooperation, or process observation cannot be",
       "cues": [
         "cannot"
@@ -31612,7 +31669,7 @@
     {
       "candidate_id": "runtime-adapters-tool-permissions-and-human-approval.prose.b6a3f47c7b3c",
       "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
-      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:512",
+      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:520",
       "sentence": "The adapter boundary must preserve separation between request, approval, execution, and verification.",
       "cues": [
         "must"
@@ -31631,7 +31688,7 @@
     {
       "candidate_id": "runtime-adapters-tool-permissions-and-human-approval.prose.54c87c08a444",
       "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
-      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:512",
+      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:520",
       "sentence": "Human approval must remain scoped to the named effect, duration, input, and risk class.",
       "cues": [
         "must"
@@ -31650,7 +31707,7 @@
     {
       "candidate_id": "runtime-adapters-tool-permissions-and-human-approval.prose.9b4a6f169b48",
       "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
-      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:512",
+      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:520",
       "sentence": "If the effect is irreversible or externally visible, the record should preserve who approved it, what was known, what rollback was possible, and what residual remains.",
       "cues": [
         "should"
@@ -31669,7 +31726,7 @@
     {
       "candidate_id": "runtime-adapters-tool-permissions-and-human-approval.prose.cf683a762110",
       "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
-      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:558",
+      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:566",
       "sentence": "Irreversible deployment without rollback means a failed action cannot be repaired.",
       "cues": [
         "cannot"
@@ -31688,7 +31745,7 @@
     {
       "candidate_id": "runtime-adapters-tool-permissions-and-human-approval.prose.17758c0f7a96",
       "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
-      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:558",
+      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:566",
       "sentence": "These failures should produce effect residuals and block future route promotion.",
       "cues": [
         "should"
@@ -31707,7 +31764,7 @@
     {
       "candidate_id": "runtime-adapters-tool-permissions-and-human-approval.prose.f8eebc65b698",
       "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
-      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:560",
+      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:568",
       "sentence": "The adapter should not infer durable authority from conversational trust.",
       "cues": [
         "should"
@@ -31726,7 +31783,7 @@
     {
       "candidate_id": "runtime-adapters-tool-permissions-and-human-approval.prose.98b21012f86f",
       "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
-      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:560",
+      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:568",
       "sentence": "It should require a fresh lease or an explicit policy grant when the target, risk, cost, data exposure, or external effect changes.",
       "cues": [
         "require",
@@ -31746,7 +31803,7 @@
     {
       "candidate_id": "runtime-adapters-tool-permissions-and-human-approval.prose.6d681a990069",
       "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
-      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:564",
+      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:572",
       "sentence": "The partitioned authority fixture models the conservative response: quarantine pending sync, request a fresh authority receipt, preserve residual ownership, and require no-mutation evidence before a denied or quarantined effect can be treated as closed.",
       "cues": [
         "require"
@@ -31765,7 +31822,7 @@
     {
       "candidate_id": "runtime-adapters-tool-permissions-and-human-approval.prose.968e238d79e8",
       "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
-      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:587",
+      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:595",
       "sentence": "`AsiStackProofs.RuntimeAdapters` adds bounded permission and approval predicates showing that a valid invocation requires the parent job permission list to include the adapter capability and that a high-impact unapproved invocation is rejected.",
       "cues": [
         "requires"
@@ -31784,7 +31841,7 @@
     {
       "candidate_id": "runtime-adapters-tool-permissions-and-human-approval.prose.638953d43ccf",
       "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
-      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:593",
+      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:601",
       "sentence": "It admits scoped low-fatigue approval, routes overloaded reviewers to delay or rotation, blocks automation-bias cases with visible contradiction and no independent evidence check, rejects missing reviewer qualifications, rejects template-only rubber-stamp approvals, escalates alarm fatigue, blocks support-state promotion from approval shape, and requires non-claim boundaries.",
       "cues": [
         "requires"
@@ -31803,7 +31860,7 @@
     {
       "candidate_id": "runtime-adapters-tool-permissions-and-human-approval.prose.cbdb0e415d70",
       "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
-      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:607",
+      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:615",
       "sentence": "The argument-exit campaign must use natural public-safe and deployment-like",
       "cues": [
         "must"
@@ -31822,7 +31879,7 @@
     {
       "candidate_id": "runtime-adapters-tool-permissions-and-human-approval.prose.1eb61cf25b9a",
       "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
-      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:614",
+      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:622",
       "sentence": "Inspect-like harnesses, and the full adapter must receive matched information,",
       "cues": [
         "must"
@@ -31841,7 +31898,7 @@
     {
       "candidate_id": "runtime-adapters-tool-permissions-and-human-approval.prose.936c03bacfaa",
       "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
-      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:617",
+      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:625",
       "sentence": "Independent observers must jointly measure correct useful effects,",
       "cues": [
         "measure",
@@ -31861,7 +31918,7 @@
     {
       "candidate_id": "runtime-adapters-tool-permissions-and-human-approval.prose.5e40069332b4",
       "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
-      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:626",
+      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:634",
       "sentence": "A clean implementation must reproduce the",
       "cues": [
         "must"
@@ -31880,7 +31937,7 @@
     {
       "candidate_id": "runtime-adapters-tool-permissions-and-human-approval.prose.96d77f3b987c",
       "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
-      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:627",
+      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:635",
       "sentence": "result, and transfer must vary models, tasks, tools, targets, operating systems,",
       "cues": [
         "must",
@@ -31900,7 +31957,7 @@
     {
       "candidate_id": "runtime-adapters-tool-permissions-and-human-approval.prose.274490d7746f",
       "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
-      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:638",
+      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:646",
       "sentence": "claim attaches only to their governed composition and must survive strong",
       "cues": [
         "must"
@@ -31919,7 +31976,7 @@
     {
       "candidate_id": "runtime-adapters-tool-permissions-and-human-approval.prose.753304ab37e4",
       "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
-      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:642",
+      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:650",
       "sentence": "adapter must improve correct useful effects and containment together while",
       "cues": [
         "improve",
@@ -31939,7 +31996,7 @@
     {
       "candidate_id": "runtime-adapters-tool-permissions-and-human-approval.prose.2c2ba2fcfc14",
       "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
-      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:650",
+      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:658",
       "sentence": "capability should widen scope; removing control/data separation should raise",
       "cues": [
         "should"
@@ -31958,7 +32015,7 @@
     {
       "candidate_id": "runtime-adapters-tool-permissions-and-human-approval.prose.f28af11a0a96",
       "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
-      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:651",
+      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:659",
       "sentence": "injection success; removing reviewer-readiness checks should degrade approval",
       "cues": [
         "should"
@@ -31977,7 +32034,7 @@
     {
       "candidate_id": "runtime-adapters-tool-permissions-and-human-approval.prose.5f0a0e8d8c40",
       "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
-      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:652",
+      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:660",
       "sentence": "calibration under load; removing independent observation should raise hidden-",
       "cues": [
         "should"
@@ -31996,7 +32053,7 @@
     {
       "candidate_id": "runtime-adapters-tool-permissions-and-human-approval.prose.bee69f752470",
       "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
-      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:653",
+      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:661",
       "sentence": "effect error; removing revocation freshness should admit stale grants; removing",
       "cues": [
         "should"
@@ -32015,7 +32072,7 @@
     {
       "candidate_id": "runtime-adapters-tool-permissions-and-human-approval.prose.2325a4da24be",
       "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
-      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:654",
+      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:662",
       "sentence": "effect inventory should create false rollback.",
       "cues": [
         "should"
@@ -32034,7 +32091,7 @@
     {
       "candidate_id": "runtime-adapters-tool-permissions-and-human-approval.prose.ac529911c184",
       "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
-      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:682",
+      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:690",
       "sentence": "The remaining tests require a deployed adapter harness, real sandbox isolation, parent job permission lookup against real jobs, high-impact classification against policy, live approval decisions, live reviewer-quality checks, live effect receipts, rollback execution in target services, deployed revocation propagation, live partition traces, and secret-handle safety checks.",
       "cues": [
         "require"
@@ -32053,7 +32110,7 @@
     {
       "candidate_id": "runtime-adapters-tool-permissions-and-human-approval.prose.5243de4455ff",
       "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
-      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:703",
+      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:711",
       "sentence": "They do not prove deployed sandboxing, authority-handle mediation, actual production tool invocation, effect receipt validity, approval-service quality, reviewer correctness, deployed human-factors behavior, secret-handle safety, deployed revocation propagation, or rollback behavior in a target service.",
       "cues": [
         "prove"
@@ -32072,7 +32129,7 @@
     {
       "candidate_id": "runtime-adapters-tool-permissions-and-human-approval.prose.44b41995c5a9",
       "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
-      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:756",
+      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:764",
       "sentence": "therefore narrows the implementation burden: an adapter boundary must be",
       "cues": [
         "must"
@@ -32091,7 +32148,7 @@
     {
       "candidate_id": "runtime-adapters-tool-permissions-and-human-approval.prose.072ed796d8c4",
       "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
-      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:789",
+      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:797",
       "sentence": "The rule is that real-world effects require explicit authority.",
       "cues": [
         "require"
@@ -32110,7 +32167,7 @@
     {
       "candidate_id": "runtime-adapters-tool-permissions-and-human-approval.prose.e1d10264e714",
       "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
-      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:795",
+      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:803",
       "sentence": "effect observers, clean reproduction, real effects, and heterogeneous transfer",
       "cues": [
         "transfer"
@@ -32129,7 +32186,7 @@
     {
       "candidate_id": "runtime-adapters-tool-permissions-and-human-approval.prose.eeb6bb32aab8",
       "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
-      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:797",
+      "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:805",
       "sentence": "subclaim; it does not prove adapter safety.",
       "cues": [
         "prove"
@@ -36713,7 +36770,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.c36f27018054",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:148",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:158",
       "sentence": "after a released service enters an incident; it cannot retroactively turn an",
       "cues": [
         "cannot"
@@ -36732,7 +36789,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.c2085c437f51",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:182",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:192",
       "sentence": "adversarial campaigns with causal ablation, reproduction, and transfer.",
       "cues": [
         "transfer"
@@ -36751,7 +36808,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.00660f0968ae",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:201",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:211",
       "sentence": "Those inputs answer different questions and should not be collapsed into one readiness score.",
       "cues": [
         "should"
@@ -36770,7 +36827,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.e64742e03128",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:201",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:211",
       "sentence": "Regression preservation asks what must remain true after change.",
       "cues": [
         "must"
@@ -36789,7 +36846,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.d1850f93c626",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:201",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:211",
       "sentence": "Residual escrow asks what is still unresolved and who must carry it.",
       "cues": [
         "must"
@@ -36808,7 +36865,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.6113eb8a8ddb",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:201",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:211",
       "sentence": "A target can improve on new work while failing its old floor, or pass every measured case while a required check was never attempted.",
       "cues": [
         "improve",
@@ -36828,7 +36885,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.75740c2aa8f7",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:201",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:211",
       "sentence": "The lifecycle must preserve both distinctions before it changes routability.",
       "cues": [
         "must"
@@ -36847,7 +36904,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.66509af5c964",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:205",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:215",
       "sentence": "These fields prevent three attractive substitutions: not applicable for not attempted, skipped for passed, and waived for satisfied.",
       "cues": [
         "prevent"
@@ -36866,7 +36923,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.4b9e149dde60",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:205",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:215",
       "sentence": "A required applicable check can support readiness only when it was attempted, passed, and carries fresh evidence.",
       "cues": [
         "required"
@@ -36885,7 +36942,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.7768cc78f8c5",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:207",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:217",
       "sentence": "When a required check fails or an upstream artifact becomes stale, quarantined, revoked, or unknown, the promotion lease invalidates and containment must stay the same or tighten.",
       "cues": [
         "must",
@@ -36905,7 +36962,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.293bbac26e01",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:222",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:232",
       "sentence": "Failure, missingness, waiver, expiry, or upstream invalidation routes to a named quarantine closure and cannot add ordinary routes.",
       "cues": [
         "cannot"
@@ -36924,7 +36981,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.c5bbeb62e7aa",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:226",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:236",
       "sentence": "Neither synthetic trace demonstrates a deployed readiness engine, live router enforcement, or current module readiness.",
       "cues": [
         "demonstrates"
@@ -36943,7 +37000,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.8754a5fa7659",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:228",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:238",
       "sentence": "Regression preservation protects a floor that should not be lost while the frontier moves.",
       "cues": [
         "should"
@@ -36962,7 +37019,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.d44207c429b8",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:232",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:242",
       "sentence": "It is the mechanism that prevents unresolved cases from being laundered away during promotion, merge, split, retirement, or retraining.",
       "cues": [
         "prevents"
@@ -36981,7 +37038,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.9718c82914fc",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:232",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:242",
       "sentence": "Inherited residuals are especially important: a renamed, wrapped, split, or merged target must carry old residuals forward unless a separate record retires them.",
       "cues": [
         "must"
@@ -37000,7 +37057,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.eb3e641c4c5b",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:239",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:249",
       "sentence": "blocked elsewhere; one average score cannot erase that partition.",
       "cues": [
         "cannot"
@@ -37019,7 +37076,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.306ba1c47c5e",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:244",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:254",
       "sentence": "specification disputes, shield exceptions, transfer gaps, verifier unknowns,",
       "cues": [
         "transfer"
@@ -37038,7 +37095,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.931da17dd39f",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:247",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:257",
       "sentence": "residual dominates the base behavior, the verifier cannot distinguish a",
       "cues": [
         "cannot"
@@ -37057,7 +37114,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.abdc3243e046",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:266",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:276",
       "sentence": "Readmission requires the failed or changed predicates to be re-evaluated and",
       "cues": [
         "requires"
@@ -37076,7 +37133,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.6e5756737bc2",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:268",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:278",
       "sentence": "slice cannot erase a different failure, and an average-quality recovery cannot",
       "cues": [
         "cannot"
@@ -37095,7 +37152,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.de338f413dfa",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:280",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:290",
       "sentence": "Routing consumes route permissions but cannot promote or widen them.",
       "cues": [
         "cannot"
@@ -37114,7 +37171,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.c49cfce0b2e2",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:282",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:292",
       "sentence": "transfer evidence but do not authorize use.",
       "cues": [
         "transfer"
@@ -37133,7 +37190,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.cdb443c01a4f",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:336",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:346",
       "sentence": "The lifecycle states should be explicit enough for routers and auditors to consume: draft, shadow, canary, qualified, default, diagnostic-only, quarantined, retired, and superseded.",
       "cues": [
         "should"
@@ -37152,7 +37209,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.e3ac2a315168",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:336",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:346",
       "sentence": "The exact names can vary, but ordinary execution must not depend on prose interpretation of a benchmark note.",
       "cues": [
         "must"
@@ -37171,7 +37228,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.941b12a07efa",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:345",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:355",
       "sentence": "Every required check records applicability, attempt, result, evidence,",
       "cues": [
         "required"
@@ -37190,7 +37247,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.f3e86d545cc6",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:348",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:358",
       "sentence": "A waiver records who accepted which risk for which scope and time; it cannot",
       "cues": [
         "cannot"
@@ -37209,7 +37266,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.a31da4adfbd2",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:349",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:359",
       "sentence": "substitute for evidence required by a stronger state.",
       "cues": [
         "required"
@@ -37228,7 +37285,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.91ff115675ea",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:352",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:362",
       "sentence": "Frontier gain cannot erase floors, failed cases, negative controls,",
       "cues": [
         "cannot"
@@ -37247,7 +37304,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.b2329b12cd1e",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:368",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:378",
       "sentence": "affected descendants until a new gate establishes recovery.",
       "cues": [
         "establishes"
@@ -37266,7 +37323,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.771d9af9343b",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:371",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:381",
       "sentence": "Rollback or compensation readiness requires prospective authority, complete",
       "cues": [
         "requires"
@@ -37285,7 +37342,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.314af3743969",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:373",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:383",
       "sentence": "Retired and superseded targets cannot regain ordinary routes without new",
       "cues": [
         "cannot"
@@ -37304,7 +37361,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.e7d4b3fa1c51",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:380",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:390",
       "sentence": "The strongest operational invariant is negative: a failed readiness predicate must not be converted into a success by renaming the target, changing the benchmark scope, or hiding residuals in prose.",
       "cues": [
         "must"
@@ -37323,7 +37380,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.fc725535df62",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:382",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:392",
       "sentence": "It cannot become more routable by losing records.",
       "cues": [
         "cannot"
@@ -37342,7 +37399,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.8c4042319ebc",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:420",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:430",
       "sentence": "Premature promotion should create a rollback or quarantine transaction.",
       "cues": [
         "should"
@@ -37361,7 +37418,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.aef25c3f03a6",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:420",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:430",
       "sentence": "Residual hiding should create a belief-revision or tribunal-review issue.",
       "cues": [
         "should"
@@ -37380,7 +37437,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.4f1347c0a4ed",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:420",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:430",
       "sentence": "Regression after merge should preserve the old floor as a regression benchmark.",
       "cues": [
         "should"
@@ -37399,7 +37456,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.7e2248af4848",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:420",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:430",
       "sentence": "Stale gate reuse should block promotion until the relevant checks are rerun.",
       "cues": [
         "should"
@@ -37418,7 +37475,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.097504d2e36e",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:420",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:430",
       "sentence": "Over-quarantine should be reviewed because excessive blockage can hide the difference between unsafe execution and safe diagnostic use.",
       "cues": [
         "should"
@@ -37437,7 +37494,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.79f9108ed2a7",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:437",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:447",
       "sentence": "Passing validation leaves module readiness unproved; it gives the book a public, executable contract for what a readiness decision must name before stronger tests exist.",
       "cues": [
         "must"
@@ -37456,7 +37513,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.bcd64eda0c37",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:439",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:449",
       "sentence": "One quarantined six-project lineage record makes a skipped required artifact-manifest check, a failed benchmark floor, a not-applicable hardware-root check, an invalidated promotion dependency, tighter routes, quarantine ownership, descendant closure, and rerun disposition explicit.",
       "cues": [
         "required"
@@ -37475,7 +37532,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.9c3ccc238d06",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:456",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:466",
       "sentence": "A lifecycle trace should exercise gate semantics while leaving module quality unclaimed: draft to shadow, shadow to canary, canary rejected by inherited residual escrow, quarantined for ordinary routing but allowed for diagnostic replay, and later superseded after regression-floor preservation.",
       "cues": [
         "should"
@@ -37494,7 +37551,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.e98577aba6bd",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:471",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:481",
       "sentence": "It is the mechanism that lets the architecture improve without confusing novelty, benchmark wins, or source-reported success with permission for ordinary use.",
       "cues": [
         "improve"
@@ -37513,7 +37570,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.b89d29fb8822",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:475",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:485",
       "sentence": "Gate evidence, floor evidence, frontier evidence, regression results, inherited residuals, promotion blockers, closure conditions, review refs, and next review triggers remain separate so a module can improve on the frontier without losing the floor.",
       "cues": [
         "improve"
@@ -37532,7 +37589,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.0f8a6eb8c0f6",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:479",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:489",
       "sentence": "Readiness remains at `argument` until promotion, demotion, quarantine, escrow, stale-gate replay, and reroute traces show that unready capability is contained and that residual burden follows the route instead of disappearing from the ledger.",
       "cues": [
         "show"
@@ -37551,7 +37608,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.0f977dea6aaa",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:481",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:491",
       "sentence": "The argument-exit campaign must use natural and adversarial lifecycle events,",
       "cues": [
         "must"
@@ -37570,7 +37627,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.2c392e8a2082",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:486",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:496",
       "sentence": "should include multiple strong current models, specialists, tools, procedures,",
       "cues": [
         "should"
@@ -37589,7 +37646,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.ad514cd8289d",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:494",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:504",
       "sentence": "Prospectively fixed interventions must remove check completeness, freshness,",
       "cues": [
         "must"
@@ -37608,7 +37665,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.a5e6bff5baa9",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:498",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:508",
       "sentence": "Any claimed benefit must survive independent",
       "cues": [
         "must"
@@ -37627,7 +37684,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.176aac24f5e4",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:499",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:509",
       "sentence": "implementation and evaluation plus transfer across models, tasks, tools,",
       "cues": [
         "transfer"
@@ -37646,7 +37703,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.0f784c5c8ad8",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:523",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:533",
       "sentence": "Remaining tests require a deployed lifecycle checker, live",
       "cues": [
         "require"
@@ -37665,7 +37722,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.2c6e41c379bb",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:526",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:536",
       "sentence": "terminal-state governance, runtime replay, and heterogeneous transfer.",
       "cues": [
         "transfer"
@@ -37684,7 +37741,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.cefdd10399ca",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:535",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:545",
       "sentence": "It does not calibrate a deployed gate, establish prevalence, prove residual",
       "cues": [
         "prove"
@@ -37703,7 +37760,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.51a67e1d7bb1",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:551",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:561",
       "sentence": "classification prevents theorem count or the bridge from standing in for",
       "cues": [
         "prevents"
@@ -37722,7 +37779,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.855b67d86e3c",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:553",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:563",
       "sentence": "not prove benchmark quality, evaluator adequacy, residual storage, transition",
       "cues": [
         "prove"
@@ -37741,7 +37798,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.b729dbeca648",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:555",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:565",
       "sentence": "replay, current module readiness, or transfer.",
       "cues": [
         "transfer"
@@ -37760,7 +37817,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.3fa2b72fe3e6",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:589",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:599",
       "sentence": "`d2343540`; neither establishes deployment readiness or model quality.",
       "cues": [
         "establishes"
@@ -37779,7 +37836,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.a7a4bbf5f282",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:609",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:619",
       "sentence": "The governed program shows why “safe” and “ready” cannot be synonyms: it",
       "cues": [
         "cannot",
@@ -37799,7 +37856,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.1e9a1986dc26",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:623",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:633",
       "sentence": "A readiness gate must not treat that",
       "cues": [
         "must"
@@ -37818,7 +37875,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.1832ca7d388a",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:630",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:640",
       "sentence": "on 6/6 cases, retained all required residual IDs, released 3/3 clean controls,",
       "cues": [
         "required"
@@ -37837,7 +37894,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.5054aac1cab3",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:635",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:645",
       "sentence": "readiness lesson: a correct stop/release boundary cannot compensate for a",
       "cues": [
         "cannot"
@@ -37856,7 +37913,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.153797836c88",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:657",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:667",
       "sentence": "These results sharpen what readiness must reject.",
       "cues": [
         "must"
@@ -37875,7 +37932,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.62783737bb23",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:657",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:667",
       "sentence": "They do not show that the",
       "cues": [
         "show"
@@ -37894,7 +37951,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.6aedb59c2b5f",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:658",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:668",
       "sentence": "proposed lifecycle improves useful safe operation.",
       "cues": [
         "improves"
@@ -37913,7 +37970,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.6ad07e4c86d3",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:660",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:670",
       "sentence": "A concrete runtime reference must then record enough detail for this routing and readiness discipline to become operational evidence.",
       "cues": [
         "must"
@@ -37932,7 +37989,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.93524d4e4584",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:662",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:672",
       "sentence": "That runtime reference must publish the same evidence shape the gate expects: route decisions, specialist states, replay links, benchmark or regression records, residuals, and promotion blockers.",
       "cues": [
         "must"
@@ -37951,7 +38008,7 @@
     {
       "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.72b7317d945b",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:664",
+      "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:674",
       "sentence": "A readiness decision should still be understandable after the module changes",
       "cues": [
         "should"
@@ -43664,9 +43721,28 @@
       "target_atom_id": "resource-economics-and-token-budgets.core"
     },
     {
-      "candidate_id": "resource-economics-and-token-budgets.prose.9dd4319efb3e",
+      "candidate_id": "resource-economics-and-token-budgets.prose.5d3fc2bdf888",
       "chapter_id": "resource-economics-and-token-budgets",
       "source": "chapters/resource-economics-and-token-budgets.qmd:223",
+      "sentence": "necessary control and still lose the useful-work frontier.",
+      "cues": [
+        "necessary"
+      ],
+      "review_state": "nonmaterial_explanation",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Line-wrapped useful-work-frontier explanation already governed by the chapter core; it adds no independent support-bearing claim.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "resource-economics-and-token-budgets.prose.9dd4319efb3e",
+      "chapter_id": "resource-economics-and-token-budgets",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:244",
       "sentence": "**What the budget adequacy gate shows:** Budget adequacy is checked after risk, capacity, cost, verification tax, serving pressure, and protected gates are visible.",
       "cues": [
         "shows"
@@ -43685,7 +43761,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.6b6f00d410b4",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:223",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:244",
       "sentence": "If the gates cannot stay intact, the correct route is escalation, deferral, scope reduction, rejection, or residual accounting rather than quiet quality degradation.",
       "cues": [
         "cannot"
@@ -43704,7 +43780,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.2c5b1a2bd7eb",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:231",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:252",
       "sentence": "Verification tax: the extra cost required to trust the output.",
       "cues": [
         "required"
@@ -43723,7 +43799,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.342c3a253cfe",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:232",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:253",
       "sentence": "Protected overhead: security handles, Digital SCIFs, approval, replay, rollback, audit, and human review that policy requires.",
       "cues": [
         "requires"
@@ -43742,7 +43818,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.c6755b37a7d9",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:234",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:255",
       "sentence": "Safety gates: checks that cannot be disabled by budget pressure.",
       "cues": [
         "cannot"
@@ -43761,7 +43837,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.4062b4ee1729",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:237",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:258",
       "sentence": "High-risk tasks should either pay the verification cost or route to escalation.",
       "cues": [
         "should"
@@ -43780,7 +43856,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.44eef5842b74",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:241",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:262",
       "sentence": "The budget record should also carry a displaced-cost section.",
       "cues": [
         "should"
@@ -43799,7 +43875,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.673dbbfd4516",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:241",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:262",
       "sentence": "They become residual costs until a cost-quality test or evidence packet shows the displacement is harmless for the specific risk class.",
       "cues": [
         "shows"
@@ -43818,7 +43894,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.e93a7bb77c81",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:245",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:266",
       "sentence": "A simulated, synthetic, benchmark, or scenario result may travel only as far as its contract permits: declared scope, fidelity standard, temporal semantics, demand estimate, resource bill, capacity bottlenecks, omitted variables, approximation liberties, instrumentation effects, observed-result boundary, supported-claim boundary, transfer decision, residual risks, and non-claims.",
       "cues": [
         "transfer"
@@ -43837,7 +43913,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.d3b25db9c773",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:247",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:268",
       "sentence": "Those records should be paired whenever a budget, benchmark, safety rehearsal, or synthetic environment is used as evidence.",
       "cues": [
         "should"
@@ -43856,7 +43932,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.102f56b91e22",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:249",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:270",
       "sentence": "Simulation contracts should follow the same discipline.",
       "cues": [
         "should"
@@ -43875,7 +43951,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.14c8f2a3fa9e",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:249",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:270",
       "sentence": "Name the preserved structure, omitted physics, resource cost, instrumentation effect, and transfer boundary before a result is allowed to support a broader claim.",
       "cues": [
         "transfer"
@@ -43894,7 +43970,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.5378accc4d29",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:264",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:285",
       "sentence": "It moves only after scope, fidelity, temporal semantics, resources, bottlenecks, omissions, and transfer are explicit.",
       "cues": [
         "transfer"
@@ -43913,7 +43989,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.837089a17cd5",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:264",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:285",
       "sentence": "Failed transfer is still useful: it becomes a downgrade, residual, reduced-scope test, or blocked claim rather than hidden evidence inflation.",
       "cues": [
         "transfer"
@@ -43932,7 +44008,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.491173ed6b34",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:266",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:287",
       "sentence": "Simulation Fidelity and Physical Constraints should be restored as a standalone chapter if public-safe artifacts create a distinct evidence lane: a feasibility calculator, physical-computation audit, simulation benchmark with negative controls, executable simulator evidence tied to a `Simulation Contract Record`, or independent external review showing that the simulation contract is too central to remain a section inside resource economics.",
       "cues": [
         "should"
@@ -43951,7 +44027,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.2c9d1d4cb42c",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:281",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:302",
       "sentence": "A useful ledger must retain qualified coverage, useful outcome",
       "cues": [
         "must"
@@ -43970,7 +44046,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.a2d9fb88dba1",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:287",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:308",
       "sentence": "chapter treats it only as a view over non-collapsible measures.",
       "cues": [
         "measures"
@@ -43989,7 +44065,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.0356dc89b2ff",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:291",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:312",
       "sentence": "discarded governance has not demonstrated minimum sufficient compute.",
       "cues": [
         "sufficient"
@@ -44008,7 +44084,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.aae378a02133",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:304",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:325",
       "sentence": "that never considers the required relation has not reached the same quality",
       "cues": [
         "required"
@@ -44027,7 +44103,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.fffc49df2889",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:336",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:357",
       "sentence": "**latency** — how long a required transfer delays a dependent operation; and",
       "cues": [
         "required",
@@ -44047,7 +44123,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.34c720c4d5f2",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:342",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:363",
       "sentence": "lose on small random reads, thermal throttling, or host-to-device transfer.",
       "cues": [
         "transfer"
@@ -44066,7 +44142,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.a4b91128c123",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:343",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:364",
       "sentence": "large host-memory cache can reduce reads while displacing other applications.",
       "cues": [
         "reduce"
@@ -44085,7 +44161,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.10f77ff7f51e",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:363",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:384",
       "sentence": "decompression or dequantization, CPU copies, PCIe transfer, synchronization,",
       "cues": [
         "transfer"
@@ -44104,7 +44180,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.833692cb2aea",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:366",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:387",
       "sentence": "must add predictor execution, misses, cold fallback, quality loss, and",
       "cues": [
         "must"
@@ -44123,7 +44199,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.848e5b1b8255",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:373",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:394",
       "sentence": "Storage specifications usually foreground large sequential transfers.",
       "cues": [
         "transfers"
@@ -44142,7 +44218,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.e4428896ea13",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:381",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:402",
       "sentence": "Operating-system page cache is valuable, but it must be named as RAM residency.",
       "cues": [
         "must"
@@ -44161,7 +44237,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.133ad0892bce",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:383",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:404",
       "sentence": "includes open, mapping, page-fault, integrity, and initial transfer costs.",
       "cues": [
         "transfer"
@@ -44180,7 +44256,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.2df5e5f6fe46",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:384",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:405",
       "sentence": "warm run may measure host-RAM-backed execution even when the file lives on SSD.",
       "cues": [
         "measure"
@@ -44199,7 +44275,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.43f4140d7dc8",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:385",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:406",
       "sentence": "Steady state should report how much of the model, KV, and converted artifact",
       "cues": [
         "should"
@@ -44218,7 +44294,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.47b9349fe656",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:387",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:408",
       "sentence": "or explicit cache control can clarify the mechanism, but should not be treated",
       "cues": [
         "should"
@@ -44237,7 +44313,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.845f0537c239",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:398",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:419",
       "sentence": "requires the original, a converted copy, and scratch, advertising only the",
       "cues": [
         "requires"
@@ -44256,7 +44332,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.1377eb5f194d",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:406",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:427",
       "sentence": "The route should therefore report prefetch precision and recall, late-fetch",
       "cues": [
         "should"
@@ -44275,7 +44351,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.e01ca2807fc0",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:416",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:437",
       "sentence": "or cache churn are different, and a wear proxy should distinguish them.",
       "cues": [
         "should"
@@ -44294,7 +44370,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.36fea5f9aec9",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:417",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:438",
       "sentence": "short experiment cannot establish lifetime reliability, but it can at least",
       "cues": [
         "cannot"
@@ -44313,7 +44389,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.0acc79165f9d",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:423",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:444",
       "sentence": "Heterogeneous-memory routes should be plotted on a joint frontier:",
       "cues": [
         "should"
@@ -44332,7 +44408,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.82ab0cbf5658",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:441",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:462",
       "sentence": "This is also why source-reported speedups do not transfer automatically.",
       "cues": [
         "transfer"
@@ -44351,7 +44427,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.4cd834d95047",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:445",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:466",
       "sentence": "The ASI Stack should adopt a method only after its own measured",
       "cues": [
         "should"
@@ -44370,7 +44446,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.d5271f6494c5",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:446",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:467",
       "sentence": "bundle shows a better qualified-useful frontier for a named consumer—not merely",
       "cues": [
         "shows"
@@ -44389,7 +44465,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.926b84a78b46",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:462",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:483",
       "sentence": "\\(C_l\\) lookup, transfer, validation, eviction, and governance cost.",
       "cues": [
         "transfer"
@@ -44408,7 +44484,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.87a3f88bd7ff",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:491",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:512",
       "sentence": "The official contracts inspected on 2026-07-23 show why the ledger needs",
       "cues": [
         "show"
@@ -44427,7 +44503,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.0db53d1d4c56",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:506",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:527",
       "sentence": "prefill while consuming CPU hashing, DRAM or SSD capacity, network transfer,",
       "cues": [
         "transfer"
@@ -44446,7 +44522,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.d7eeb3d6bbc4",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:533",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:554",
       "sentence": "lookup and transfer; cache lifetime; output generation; verification and",
       "cues": [
         "transfer"
@@ -44465,7 +44541,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.dace4c3c3542",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:546",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:567",
       "sentence": "cache-build, hashing, lookup, transfer, storage-time, eviction,",
       "cues": [
         "transfer"
@@ -44484,7 +44560,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.d7ae406f6973",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:560",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:581",
       "sentence": "local recomputation wins when transfer or validation dominates.",
       "cues": [
         "transfer"
@@ -44503,7 +44579,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.5a0653ebfc29",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:579",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:600",
       "sentence": "the opportunity cost of memory occupied by codebooks, scales, residuals, or a",
       "cues": [
         "scales"
@@ -44522,7 +44598,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.9bcb6f9c6d2e",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:584",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:605",
       "sentence": "in storage and expensive in random I/O; a higher-precision kernel may reduce",
       "cues": [
         "reduce"
@@ -44541,7 +44617,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.26597e8fa397",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:649",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:670",
       "sentence": "A proposed improvement should say whether it saves tokens, verifier time, human review, memory, or latency, and whether those savings preserve quality and protected gates.",
       "cues": [
         "should"
@@ -44560,7 +44636,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.595a930fba81",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:651",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:672",
       "sentence": "They can block wasteful architecture churn, but they can also block supposedly efficient changes that reduce the verifier, security kernel, rollback, or human-review budget below the risk class.",
       "cues": [
         "reduce"
@@ -44579,7 +44655,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.082456ccb72f",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:656",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:677",
       "sentence": "High-risk work receives required verification and review or routes to reduction, escalation, deferral, fallback, or refusal.",
       "cues": [
         "required"
@@ -44598,7 +44674,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.e0f3469ed0bd",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:664",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:685",
       "sentence": "Low-risk volume cannot consume protected verifier or reviewer capacity reserved for blocked high-risk work.",
       "cues": [
         "cannot"
@@ -44617,7 +44693,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.65f3efc363d2",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:666",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:687",
       "sentence": "Simulation scope, fidelity, temporal semantics, resources, bottlenecks, omissions, instrumentation, and transfer are prospective.",
       "cues": [
         "transfer"
@@ -44636,7 +44712,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.ac7d69aceec5",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:667",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:688",
       "sentence": "Synthetic results do not transfer beyond their declared support boundary by default.",
       "cues": [
         "transfer"
@@ -44655,7 +44731,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.09a678d1c94b",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:671",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:692",
       "sentence": "Support changes require an accepted transition for the exact claim and scope.",
       "cues": [
         "require"
@@ -44674,7 +44750,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.1d45b43da9cf",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:672",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:693",
       "sentence": "Every shortfall, variance, overload, protected-capacity conflict, failed transfer, and undisclosed cost has an owner and reopening condition.",
       "cues": [
         "transfer"
@@ -44693,7 +44769,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.b8140443d8b7",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:676",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:697",
       "sentence": "Budgets can force escalation or deferral, but they cannot erase the requirement.",
       "cues": [
         "cannot"
@@ -44712,7 +44788,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.ffc94c7d8cf3",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:693",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:714",
       "sentence": "Sandbox-to-world transfer occurs without fidelity, resource, instrumentation, and rights contracts.",
       "cues": [
         "transfer"
@@ -44731,7 +44807,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.e8bc53d97424",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:699",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:720",
       "sentence": "Cost-cut verification should block or escalate.",
       "cues": [
         "should"
@@ -44750,7 +44826,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.368b7a54b64d",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:699",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:720",
       "sentence": "Load synchronization should trigger capacity smoothing or scheduling changes.",
       "cues": [
         "should"
@@ -44769,7 +44845,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.3ee0ebf35532",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:699",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:720",
       "sentence": "Resource hoarding should be visible in the ledger.",
       "cues": [
         "should"
@@ -44788,7 +44864,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.47af695cd307",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:699",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:720",
       "sentence": "Human repair burden should count as cost.",
       "cues": [
         "should"
@@ -44807,7 +44883,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.a15a56850bc9",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:699",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:720",
       "sentence": "Speculative market language should remain optional until executable records and tests exist.",
       "cues": [
         "should"
@@ -44826,7 +44902,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.21337d1d04bf",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:701",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:722",
       "sentence": "The budget record should count those displaced costs as residuals rather than letting the route appear efficient.",
       "cues": [
         "should"
@@ -44845,7 +44921,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.319e1e3c29ca",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:707",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:728",
       "sentence": "The repository fixture records contract version, claim class, scope, fidelity state, temporal semantics, assumptions, demand, resource bill, bottlenecks, omitted variables, approximation liberties, instrumentation effects, supported and observed-result boundaries, transfer decision, support-state effect, failure behavior, residual risks, evidence references, and non-claims.",
       "cues": [
         "transfer"
@@ -44864,7 +44940,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.aa7d5b6621c5",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:709",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:730",
       "sentence": "These are finite repository, timing, and accounting results—not deployed scheduling, real verification-tax measurement, economic optimality, production stability, human productivity, model quality, welfare, physical feasibility, or open-world transfer.",
       "cues": [
         "transfer"
@@ -44883,7 +44959,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.c683ceec497d",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:711",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:732",
       "sentence": "The simulation-transfer boundary harness checks synthetic contract wrappers for declared fidelity, resource bills, bottlenecks, omitted variables, approximation liberties, instrumentation effects, transfer decisions, residual or downgrade behavior, and support-state non-promotion.",
       "cues": [
         "transfer"
@@ -44902,7 +44978,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.75f392debb95",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:713",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:734",
       "sentence": "The simulation-contract fixture and transfer harness do not establish feasibility or open-world transfer.",
       "cues": [
         "transfer"
@@ -44921,7 +44997,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.3b0fd1dde579",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:717",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:738",
       "sentence": "A first budget ledger shows the rejected route alongside the chosen route, because hidden savings are not governed savings.",
       "cues": [
         "shows"
@@ -44940,7 +45016,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.bb261f38b3e8",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:717",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:738",
       "sentence": "The first simulation-transfer fixture suite now covers one unit-invariant transfer, one benchmark result downgraded to reduced scope, one scenario-only blocker, and expected-invalid cases for missing fidelity, unbounded world transfer, missing resource bills, missing bottleneck residuals, ignored instrumentation, and support-state promotion.",
       "cues": [
         "transfer"
@@ -44959,7 +45035,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.3efb0228e9c9",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:725",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:746",
       "sentence": "The fixture shows two modeled cases where full-cost",
       "cues": [
         "shows"
@@ -44978,7 +45054,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.aacb7a6d9baf",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:727",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:748",
       "sentence": "It does not measure real verification tax, prove deployed scheduler",
       "cues": [
         "measure",
@@ -44998,7 +45074,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.4bd41581e21e",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:728",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:749",
       "sentence": "behavior, prove economic optimality, promote the Resource Economics chapter",
       "cues": [
         "prove"
@@ -45017,7 +45093,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.22f8fbbec0f7",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:735",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:756",
       "sentence": "Cognition has a budget, but the budget cannot delete verification tax, protected overhead, review capacity, rollback cost, security cost, or residual burden.",
       "cues": [
         "cannot"
@@ -45036,7 +45112,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.66b2eb4a62b9",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:737",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:758",
       "sentence": "Planning allocates budget and defers or scopes work, routing chooses costed specialists, runtime adapters report actual spend, evidence measures cost-quality tradeoffs, serving infrastructure reports KV-cache and throughput economics without promoting quality claims, and governance protects gates that budgets cannot erase.",
       "cues": [
         "cannot",
@@ -45056,7 +45132,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.445248c6799f",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:739",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:760",
       "sentence": "Verification cost-cutting, load-synchronized degradation, low-value resource hoarding, protected-overhead deletion, review-capacity capture, token optimization that increases human repair, and aggregate-throughput overclaim become blocked dispatches, escalations, residual-cost records, or budget-policy updates.",
       "cues": [
         "increases"
@@ -45075,7 +45151,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.57abc4280e78",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:741",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:762",
       "sentence": "Synthetic worlds, unit simulators, benchmark environments, safety rehearsals, and scenario models can be used aggressively, but their outputs travel only through a contract that names scope, fidelity, resources, omissions, instrumentation, and transfer.",
       "cues": [
         "transfer"
@@ -45094,7 +45170,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.d195b8e2e933",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:741",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:762",
       "sentence": "Failed transfers reduce claim scope, missing bottlenecks become residuals, instrumentation costs force downgrades, and approximate worlds stay useful for narrow tests instead of becoming borrowed reality.",
       "cues": [
         "reduce",
@@ -45114,7 +45190,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.f6bf1df7cfb7",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:743",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:764",
       "sentence": "Resource economics should remain `argument` until budget ledgers, verification-budget checks, load/friction tests, value-of-computation comparisons, scarce-resource scheduler traces, rejected-saving records, simulation-fidelity declarations, physical-constraint reviews, transfer checks, and negative simulation results show that resource discipline improves the stack without hiding risk.",
       "cues": [
         "improves",
@@ -45136,7 +45212,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.6db4bdcf545b",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:745",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:766",
       "sentence": "It measures useful accepted throughput, unsafe release, false refusal, missed help, fairness, queue and tail latency, compute, memory, network, energy, tool and reviewer use, governance work, displaced work, incidents, recovery, and residuals together.",
       "cues": [
         "measures"
@@ -45155,7 +45231,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.afb68e68caa0",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:745",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:766",
       "sentence": "Independent schedulers, meters, evaluators, simulators, and organizations must reproduce predicted signatures, followed by transfer across workloads, models, hardware, prices, organizations, rights regimes, attacks, updates, and time.",
       "cues": [
         "must",
@@ -45175,7 +45251,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.96cb5b38e3dd",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:750",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:771",
       "sentence": "required defect IDs, but every defect extractor omitted requested-check IDs and",
       "cues": [
         "required"
@@ -45194,7 +45270,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.46df4c752377",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:754",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:775",
       "sentence": "budget record must price admissible checks and escalation work rather than count",
       "cues": [
         "must"
@@ -45213,7 +45289,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.81fb25d8c911",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:789",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:810",
       "sentence": "The implemented rows validate fixture/schema consistency, deterministic record-accounting behavior, toy capacity traces, deterministic workflow traces, local command replay, CI publication metadata, finite serving-memory separation, and synthetic simulation-transfer boundaries only.",
       "cues": [
         "transfer"
@@ -45232,7 +45308,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.7a15c3fd9365",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:789",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:810",
       "sentence": "The remaining rows require deployed scheduler behavior, live risk-policy checks, a real load model, KV-cache or serving-memory measurement, physical-feasibility review, measured simulation outputs, resource estimates, and human review harnesses; they are not reported results.",
       "cues": [
         "require"
@@ -45251,7 +45327,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.9f3f69a1f190",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:789",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:810",
       "sentence": "Future resource-economics or simulation-audit tests should link to the command, fixture, environment notes, assumptions, and result summary, and Appendix E should be regenerated or updated accordingly.",
       "cues": [
         "should"
@@ -45270,7 +45346,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.704d72bf7b8b",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:809",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:830",
       "sentence": "These Lean hooks are implemented as finite-record predicates and negative-case theorems over required gates, risk class, verification-budget sufficiency, budget decision fields, costed-route fixture eligibility, capacity-smoothing reviewer traces, finite load-smoothing workload summaries, serving-memory separation, aggregate flagship replay accounting, simulation claim fields, and declared support levels.",
       "cues": [
         "required"
@@ -45289,7 +45365,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.7668a70e2fe6",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:809",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:830",
       "sentence": "They prove only record-level gates: required safety and verification gates cannot be disabled, a disabled required safety gate rejects the preservation predicate, high-risk work with insufficient verification budget must route away from ordinary dispatch, a high-risk insufficient-budget dispatch rejects the validity predicate, the four-route costed selector bridge rejects the failed-verification and hidden-residual controls while proving the bounded transform route is lowest-cost among modeled eligible routes, and the finite selector-state replay ends with the selected route after seeing two eligible routes and two cheaper rejected controls.",
       "cues": [
         "cannot",
@@ -45311,7 +45387,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.aeee4fb06e86",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:809",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:830",
       "sentence": "The finite serving-memory guard requires KV-cache budget, batching scope, and single-request verified-output separation for aggregate throughput claims, and rejects throughput-to-quality overclaims.",
       "cues": [
         "requires"
@@ -45330,7 +45406,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.cbd594eb3cee",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:809",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:830",
       "sentence": "Simulation claims used as evidence include scope/fidelity/resource fields, simulation evidence without declared scope is invalid, promoted experiment results cannot exceed declared fidelity support, and fidelity overclaim rejects promotion validity.",
       "cues": [
         "cannot"
@@ -45349,7 +45425,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.1326f5ef8e24",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:809",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:830",
       "sentence": "The costed-route, workflow, load-stability, aggregate flagship, and Theseus import validators now require the tracked result records to expose their Python/Lean fixture-equivalence fields: route constructors, per-route costs and eligibility booleans, selector-trace expectations, workflow summary fields, finite workload summary fields, aggregate replay counts, export format and field counts, checked theorem names, expected-invalid control names, and no-promotion boundaries.",
       "cues": [
         "require"
@@ -45368,7 +45444,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.88518878d784",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:809",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:830",
       "sentence": "They do not prove real load stability, economic optimality, welfare effects, scheduler quality, KV-cache behavior, serving throughput, single-request quality, TokenMana performance, reviewer-capacity optimization, protected-overhead adequacy, displaced-cost measurement, physical feasibility, simulator adequacy, RLDS dataset correctness, Minari dataset quality, external physics assumptions, clean live Theseus replay, or open-world transfer.",
       "cues": [
         "prove",
@@ -45388,7 +45464,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.bf2cbb67da23",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:811",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:832",
       "sentence": "The semantic audit must retain only declarations with a named claim consumer, classify direct predicate/projection consequences separately from derived negatives and authored fixture-summary bridges, and replace any assumption-restating or unconsumed count proof with stronger transition, trace, conservation, liveness, countermodel, or runtime-refinement semantics.",
       "cues": [
         "must"
@@ -45407,7 +45483,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.2fbe36c935e2",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:811",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:832",
       "sentence": "None of the current declarations proves scheduler optimality, real load stability, welfare, serving quality, simulator adequacy, physical feasibility, or transfer.",
       "cues": [
         "proves",
@@ -45427,7 +45503,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.d34985968bce",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:835",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:856",
       "sentence": "Campaign 6 demonstrates why token count is not the budget.",
       "cues": [
         "demonstrates"
@@ -45446,7 +45522,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.28ddb24d2eca",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:891",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:912",
       "sentence": "Its outcomes show why compute totals",
       "cues": [
         "show"
@@ -45465,7 +45541,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.b9f531d3983f",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:892",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:913",
       "sentence": "must be joined to utility: the governed arm's safety gain accompanies only",
       "cues": [
         "must"
@@ -45484,7 +45560,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.2245ef90354b",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:920",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:941",
       "sentence": "throughput nor unsafe-release reduction is estimable, so the campaign cannot",
       "cues": [
         "cannot"
@@ -45503,7 +45579,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.7e0e37b37bcd",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:942",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:963",
       "sentence": "This establishes a bounded local governance-policy effect, but not an economic",
       "cues": [
         "establishes"
@@ -45522,7 +45598,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.3b623ec81253",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:943",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:964",
       "sentence": "The primary gate did not require a latency, energy, dollar, human-",
       "cues": [
         "require"
@@ -45541,7 +45617,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.0abcfb64c08d",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:953",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:974",
       "sentence": "A system that cannot account for tokens, verification, latency, human review, risk, fidelity, transfer limits, and quality cannot honestly claim efficiency.",
       "cues": [
         "cannot",
@@ -45561,7 +45637,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.ab8162931b44",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:955",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:976",
       "sentence": "Simulation pressure becomes an explicit record so synthetic success cannot outrun scope, fidelity, resources, omissions, or transfer.",
       "cues": [
         "cannot",
@@ -45581,7 +45657,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.ee610cc56d17",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:959",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:980",
       "sentence": "A system may not call itself more efficient by moving verification, security, or human repair cost out of sight.",
       "cues": [
         "more efficient"
@@ -45600,7 +45676,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.5fb9400c6762",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:999",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:1020",
       "sentence": "required place and time through hardware, memory, network, power, cooling,",
       "cues": [
         "required"

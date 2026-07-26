@@ -4,7 +4,7 @@ chapter_id: "runtime-adapters-tool-permissions-and-human-approval"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 claim-proof program"
-last_updated: "2026-07-16"
+last_updated: "2026-07-26"
 primary_sources:
   - "talos"
   - "viea"
@@ -49,7 +49,7 @@ open_evidence_gaps:
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
 | Manuscript maturity | v0.3 claim-proof program |
-| Last updated | 2026-07-14 |
+| Last updated | 2026-07-26 |
 | Primary source records | all twenty-six assigned architecture, operator, human-factors, distributed-systems, security-evaluation, historical-project, recovery, QCSA, and Reflexive Router mappings |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -358,6 +358,14 @@ and `unknown_outcome`. Retry is permitted only when the original attempt and
 observed effect state make duplication safe. Every committed or indeterminate
 path returns an effect receipt and feeds the typed result packet, Chronicle,
 artifact graph, residual ledger, and incident monitor.
+
+This is the effect-boundary projection of the minimum trusted kernel and
+bounded liveness. Identity, authority, policy, observation, sandboxing, and
+rollback are trusted only to the exact extent required to admit or close the
+effect; their failures route to denial, unknown outcome, quarantine,
+compensation, or incident custody. Bounded liveness requires a finite terminal
+disposition and an owner for every unresolved effect, but it does not require
+unsafe retries or pretend that compensation restored the prior world.
 
 This kernel is a proposed authority boundary, not a claim that the repository
 implements production enforcement. The source contains no deployed adapter,

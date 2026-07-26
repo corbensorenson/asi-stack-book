@@ -1250,7 +1250,7 @@ authority_transition_record:
 
 This record makes boundary crossings explicit. It distinguishes a request from an authorization and gives permission class, grant lifecycle state, caller ceiling, target-required authority, delegation chain, expiry/review condition, denials, grants, effect receipts, audit references, and non-claims a durable shape.
 
-### Governed Transition projection
+### Governed Transition Calculus projection
 
 The shared transition kernel is not a second universal wire format. Each
 domain record projects the same nine concerns into fields it can actually

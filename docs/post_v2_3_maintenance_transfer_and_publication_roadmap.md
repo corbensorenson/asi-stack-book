@@ -1173,6 +1173,35 @@ contributions, support states, proof results, and empirical gates remain
 unchanged. Phase 2 proof execution is still logically allowed, but it is not
 the current scheduling default and may not displace this concept-first pass.
 
+### Concept-first exit receipt and Phase 2 resumption — 2026-07-26
+
+The continuation's three exit conditions now pass. The complete architecture
+reference exposes all 84 responsibilities and support ceilings; the narrative
+units expose all 62 specialist owners; and the C1–C8 audit binds 26 exact prose
+or product anchors across the canonical owners with zero roadmap-only
+remainder. The structural-completeness, taxonomy, Round 18, and full-coverage
+records retain zero live candidate queue. Runtime Adapters now states the
+effect-boundary trusted-kernel/liveness projection, Readiness states its exact
+Developmental Intelligence Loop stage, Resource Economics states the joint
+bounded-liveness accounting projection, and Appendix D names the calculus
+projection explicitly.
+
+Phase 2 therefore resumes under the original dependency order. Its first
+formal action is not proof expansion: rationalize the existing estate around
+named consumers, retain useful narrow results at their earned P0–P6 level, and
+rewrite or retire vacuous, duplicate, unused, or misleading rhetoric. Add a
+new formal result only when a reachable implementation or the frozen flagship
+consumes the smallest conclusion. The natural Theseus flagship remains the
+empirical spine and may open protected outcomes only after its competence,
+baseline, evaluator, attack, rescue, resource, and stopping contracts freeze.
+New worthwhile prose still goes directly to its existing owner and reopens the
+concept-placement audit when necessary.
+
+This transition moves planning priority only. The 26 anchors, green product
+checks, and zero-remainder ledger do not prove mechanism correctness, runtime
+enforcement, capability, usefulness, safety, transfer, SOTA, AGI, or ASI and
+do not move any support state.
+
 ### C6 current-estate classification and cumulative execution receipt — 2026-07-25
 
 C6 now has a complete current-estate classification, not merely the frozen

@@ -124,3 +124,42 @@ under the assigned unit and in the complete architecture reference. Validation
 must reject responsibility drift and support inflation. Proof expansion remains
 nonpriority until this reader-visible responsibility audit and any newly found
 roadmap-only prose debt are reconciled.
+
+## Exact C1–C8 roadmap-only idea reconciliation
+
+The continuation now uses 26 exact prose or product anchors rather than
+inferring placement from chapter titles or this audit's summary table. The
+machine status records each anchor's packet, stable ID, canonical owner path,
+and required phrase; the roadmap validator normalizes line wrapping, checks the
+owner surface directly, rejects a deleted anchor, and rejects any nonzero
+roadmap-only remainder.
+
+| Packet | Exact owned surfaces checked | Reconciliation result |
+|---|---|---|
+| C1 | Stack thesis: noninheritance law, three projections, theorem/runtime boundary, proposal/ratification boundary | Present in `asi-is-a-stack-not-a-model`; no new owner needed. |
+| C2 | Twenty-two-unit spine, exact 84-chapter crosswalk, narrative compression without claim absorption | Present in the narrative products and Living Book Methodology; all 62 specialist routes retain separate responsibility and support. |
+| C3 | Calculus owner, authority projection, joined reference trace, protocol projection | Present in Executable Specifications, System Boundaries, Integrated Reference Architecture, and Appendix D. |
+| C4 | Developmental-loop owner, eleven-stage chain, readiness-review owner, joined reference trace | Present in Governed Model Training and Integrated Reference; Readiness now explicitly owns the post-stabilization review without owning authority-gated promotion. |
+| C5 | Trusted-kernel owner, bounded-liveness owner, effect-boundary projection, economic projection | Present in Security Kernel; Runtime now owns finite effect custody and Resource Economics now owns the joint liveness/cost denominator without inheriting safety authority. |
+| C6 | P0--P6 semantic-depth owner and per-target obligation fields | Present in Executable Specifications; classification does not promote any theorem or chapter. |
+| C7 | Flagship owner, five matched routes, one-way preregistration handoff | Present in Project Theseus and Prototype Roadmap; no outcome is opened or implied. |
+| C8 | Evidence-led derivative program and contribution-owned outlines | Present in Living Book Methodology and Open Research Agenda; outlines remain organizational until their evidence gates pass. |
+
+| Reconciliation metric | Value |
+|---|---|
+| Canonical chapter responsibilities visible | `84` |
+| Narrative representatives | `22` |
+| Specialist owners visibly routed | `62` |
+| C1–C8 packets | `8` |
+| Exact prose or product anchors | `26` |
+| Roadmap-only remainder | `0` |
+| Support-state movement | `none` |
+
+The broader structural admission records agree with this finite packet audit:
+all current structural candidate queues are empty, every admitted chapter has a
+canonical owner, and the no-deferral policy remains active. “Zero remainder”
+means that every accepted C1–C8 or admitted structural idea presently named by
+the authoritative roadmap has a prose or product owner. It does not claim that
+future research cannot discover a new idea, that every mechanism is correct,
+or that prose placement supplies formal, empirical, deployment, transfer, or
+publication evidence.

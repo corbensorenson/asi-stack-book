@@ -314,6 +314,8 @@
             "current_priority",
             "proof_work_priority",
             "concept_first_exit_gate",
+            "concept_first_exit_gate_state",
+            "concept_first_idea_audit",
             "phase1_audit_path",
             "narrative_spine_path",
             "narrative_unit_crosswalk_path",
@@ -341,19 +343,114 @@
           ],
           "properties": {
             "state": {
-              "const": "concept_first_continuation_after_all_84_gate"
+              "const": "phase2_active_after_concept_first_reconciliation"
             },
             "active_work_mode": {
-              "const": "phase1b_semantic_organization_and_navigability"
+              "const": "phase2_smallest_consumed_conclusions_and_natural_evidence"
             },
             "current_priority": {
-              "const": "concept_first_semantic_organization_and_navigability"
+              "const": "phase2_proof_rationalization_then_natural_flagship"
             },
             "proof_work_priority": {
-              "const": "not_current_while_concept_first_continuation_is_active"
+              "const": "current_only_for_named_consumers_after_phase1_exit"
             },
             "concept_first_exit_gate": {
               "const": "all_84_distinct_responsibilities_reader_visible_and_roadmap_only_idea_audit_reconciled"
+            },
+            "concept_first_exit_gate_state": {
+              "const": "passed_84_responsibilities_62_specialist_routes_26_c1_c8_anchors_zero_roadmap_only_remainder"
+            },
+            "concept_first_idea_audit": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "state",
+                "packet_count",
+                "exact_anchor_count",
+                "roadmap_only_idea_count",
+                "all_structural_candidate_queues_empty",
+                "packets",
+                "support_state_effect"
+              ],
+              "properties": {
+                "state": {
+                  "const": "reconciled_exact_eight_packet_anchor_set"
+                },
+                "packet_count": {
+                  "const": 8
+                },
+                "exact_anchor_count": {
+                  "const": 26
+                },
+                "roadmap_only_idea_count": {
+                  "const": 0
+                },
+                "all_structural_candidate_queues_empty": {
+                  "const": true
+                },
+                "packets": {
+                  "type": "array",
+                  "minItems": 8,
+                  "maxItems": 8,
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "packet_id",
+                      "disposition",
+                      "anchors"
+                    ],
+                    "properties": {
+                      "packet_id": {
+                        "enum": [
+                          "C1",
+                          "C2",
+                          "C3",
+                          "C4",
+                          "C5",
+                          "C6",
+                          "C7",
+                          "C8"
+                        ]
+                      },
+                      "disposition": {
+                        "const": "placed_in_existing_owners"
+                      },
+                      "anchors": {
+                        "type": "array",
+                        "minItems": 2,
+                        "maxItems": 4,
+                        "items": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "anchor_id",
+                            "owner_path",
+                            "required_phrase"
+                          ],
+                          "properties": {
+                            "anchor_id": {
+                              "type": "string",
+                              "pattern": "^C[1-8]-[a-z0-9-]+$"
+                            },
+                            "owner_path": {
+                              "type": "string",
+                              "pattern": "^(chapters|appendices|products)/.+\\.(qmd|json)$"
+                            },
+                            "required_phrase": {
+                              "type": "string",
+                              "minLength": 12
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "support_state_effect": {
+                  "const": "none"
+                }
+              }
             },
             "phase1_audit_path": {
               "const": "docs/c1_c8_phase1_idea_placement_and_prose_audit_2026_07_25.md"
