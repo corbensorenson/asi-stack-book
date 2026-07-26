@@ -769,9 +769,7 @@
     "module": "AsiStackProofs.SearchSubstrates",
     "proof_tag": "lean:substrates.search.adoption_trace_bridge",
     "theorem_refs": [
-      "substrate_adoption_trace_fixture_valid",
-      "substrate_adoption_trace_rejects_axis_laundering",
-      "substrate_adoption_trace_preserves_no_promotion_boundary"
+      "substrate_adoption_trace_fixture_valid"
     ],
     "expected": {
       "valid_trace_count": 4,

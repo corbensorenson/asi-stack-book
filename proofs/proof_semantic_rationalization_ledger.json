@@ -1263,14 +1263,243 @@
         "lean:lake-build"
       ],
       "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R30-substrate-adoption-fields-projection",
+      "sequence": 30,
+      "state": "executed",
+      "action": "retire_projection_after_counterexample_consumer_migration",
+      "semantic_relation": "premise_restatement_replaced_by_derived_counterexample_gate",
+      "module_path": "lean/AsiStackProofs/SearchSubstrates.lean",
+      "baseline_module_sha256": "5c78ed08265983e91eba92b132d1bb836bdebbc21100dd082c437a22ee7d9ba4",
+      "retired_theorem_id": "lean/AsiStackProofs/SearchSubstrates.lean::substrate_adoption_record_includes_baseline_measured_target_and_falsification",
+      "replacement_theorem_id": "lean/AsiStackProofs/SearchSubstrates.lean::substrate_adoption_record_missing_required_field_rejected",
+      "retired_block_sha256": "58c2b9ed91827f584df6950e44f84720155695ce8e2515f7a7d8e253c9908fd6",
+      "replacement_block_sha256": "17bbe76bc191a76738f53c9d5a80779a5a5ce902b63878989cc48277f06d1c38",
+      "retired_statement_sha256": "9a32d44f5c6873599fbe92237de6389d654ad73d8f48391a8a1f3989fe182c0f",
+      "replacement_statement_sha256": "e13bf799b32dfd16d7ff83ff205c4b4073d91343599277d7948a1473abced2ff",
+      "semantic_basis": [
+        "The retired theorem returns the AdoptionFieldsComplete conjunction already supplied as its premise.",
+        "The immutable semantic overlay records no Lean dependency or theorem consumer for that projection.",
+        "The retained replacement unfolds the predicate and derives contradiction for an explicitly missing baseline reference, measured target, or falsification criterion.",
+        "The public operational target now names that rejecting finite-record case instead of treating record-field projection as proof depth.",
+        "The migration establishes no substrate quality, workload benefit, adoption decision, or runtime behavior."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:substrates.search.operational_invariant",
+          "old_target_text": "A substrate adoption record includes baseline, measured target, and falsification criterion.",
+          "new_target_text": "A substrate adoption record missing a baseline reference, measured target, or falsification criterion fails the finite adoption-fields predicate.",
+          "consumer_paths": [
+            "book_structure.json",
+            "docs/book_outline.md",
+            "chapters/mathematical-and-search-substrates.qmd",
+            "proofs/proof_manifest.json",
+            "proofs/proof_triage.json"
+          ]
+        }
+      ],
+      "maximum_inference_preserved": "An explicitly incomplete finite substrate-adoption record fails AdoptionFieldsComplete; this does not show that a complete record describes a useful or safe substrate.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_proof_artifact_audit.py",
+        "scripts/validate_substrate_adoption_trace.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R31-substrate-non-core-projection",
+      "sequence": 31,
+      "state": "executed",
+      "action": "retire_projection_after_counterexample_consumer_migration",
+      "semantic_relation": "premise_restatement_replaced_by_derived_counterexample_gate",
+      "module_path": "lean/AsiStackProofs/SearchSubstrates.lean",
+      "baseline_module_sha256": "5c78ed08265983e91eba92b132d1bb836bdebbc21100dd082c437a22ee7d9ba4",
+      "retired_theorem_id": "lean/AsiStackProofs/SearchSubstrates.lean::substrate_without_passing_evidence_remains_non_core",
+      "replacement_theorem_id": "lean/AsiStackProofs/SearchSubstrates.lean::qualified_substrate_without_passing_evidence_rejected",
+      "retired_block_sha256": "aab40964010436fb942796d6b57b984facf927eeac137884e55462235267a3a9",
+      "replacement_block_sha256": "fed8406fd17750cdca5ca3ab15e34fef59c574dabb57d2325033315d38151804",
+      "retired_statement_sha256": "8060cbe0be4c6e0953cf24b44a1eaeb5bcc1aa594a88bb9752d59c603bbbe6d4",
+      "replacement_statement_sha256": "916a67120bb29f6b401aaab886b6c0366e22883fb0f794638ee18d048817d688",
+      "semantic_basis": [
+        "The retired theorem applies the UnprovenSubstrateRemainsNonCore premise to a supplied no-evidence premise without adding a route or contradiction.",
+        "The immutable semantic overlay records no Lean dependency or theorem consumer for that projection.",
+        "The retained replacement unfolds CoreAdoptionValid and derives contradiction for a record that is simultaneously qualified and explicitly lacks passing evidence.",
+        "The public failure target now names that concrete finite rejection instead of the broader premise-restating implication.",
+        "The migration establishes no empirical evidence threshold, adoption competence, safe fallback, or substrate performance."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:substrates.search.failure_blocks_promotion",
+          "old_target_text": "A substrate without passing evidence remains non-core.",
+          "new_target_text": "A substrate record marked qualified without passing evidence fails the finite core-adoption predicate.",
+          "consumer_paths": [
+            "book_structure.json",
+            "docs/book_outline.md",
+            "chapters/mathematical-and-search-substrates.qmd",
+            "proofs/proof_manifest.json",
+            "proofs/proof_triage.json"
+          ]
+        }
+      ],
+      "maximum_inference_preserved": "A finite record marked qualified while passingEvidence is false fails CoreAdoptionValid; this does not prove that a real governance process blocks an unproven substrate.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_proof_artifact_audit.py",
+        "scripts/validate_substrate_adoption_trace.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R32-substrate-qualified-evidence-projection",
+      "sequence": 32,
+      "state": "executed",
+      "action": "retire_projection_after_counterexample_consumer_migration",
+      "semantic_relation": "premise_restatement_replaced_by_derived_counterexample_gate",
+      "module_path": "lean/AsiStackProofs/SearchSubstrates.lean",
+      "baseline_module_sha256": "5c78ed08265983e91eba92b132d1bb836bdebbc21100dd082c437a22ee7d9ba4",
+      "retired_theorem_id": "lean/AsiStackProofs/SearchSubstrates.lean::qualified_substrate_requires_passing_evidence",
+      "replacement_theorem_id": "lean/AsiStackProofs/SearchSubstrates.lean::qualified_substrate_without_passing_evidence_rejected",
+      "retired_block_sha256": "3a129a49eb32313128e11cf9fd9bd4fd701f1c2d53341cab8ef95b4b83056888",
+      "replacement_block_sha256": "fed8406fd17750cdca5ca3ab15e34fef59c574dabb57d2325033315d38151804",
+      "retired_statement_sha256": "4f6cc5e20a23dd6861df031317a7afe6e450bd464340bea2318c1f5a0341e3f6",
+      "replacement_statement_sha256": "916a67120bb29f6b401aaab886b6c0366e22883fb0f794638ee18d048817d688",
+      "semantic_basis": [
+        "The retired theorem returns the consequence already encoded by CoreAdoptionValid when qualification is supplied.",
+        "The immutable semantic overlay records no Lean dependency or theorem consumer for that projection.",
+        "The retained replacement uses the same authored model but derives a contradiction from an explicitly qualified record with false passing evidence.",
+        "No public target depended on this extra pass-through theorem name, so the retirement requires no target migration.",
+        "The retained negative case remains a finite predicate result and does not establish evidence quality or real adoption behavior."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "The finite model rejects qualified-without-evidence records; it does not establish how evidence is produced, evaluated, or enforced.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_proof_artifact_audit.py",
+        "scripts/validate_substrate_adoption_trace.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R33-substrate-axis-summary-projection",
+      "sequence": 33,
+      "state": "executed",
+      "action": "retire_projection_after_public_target_narrowing",
+      "semantic_relation": "premise_restatement_retired_after_target_scope_reduction",
+      "module_path": "lean/AsiStackProofs/SearchSubstrates.lean",
+      "baseline_module_sha256": "5c78ed08265983e91eba92b132d1bb836bdebbc21100dd082c437a22ee7d9ba4",
+      "retired_theorem_id": "lean/AsiStackProofs/SearchSubstrates.lean::substrate_adoption_trace_rejects_axis_laundering",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "241fd643450c7b9086b8707a7aba97cc27f9fd444c64d5c4ab333044397230fc",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "4e8c767fee5d8b4b7d5f00c87823469df8a234baf54859c98492547e40410e50",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem unpacks theorem-spillover and unmeasured-axis flags from SubstrateAdoptionTraceValid after those flags were already assumed true.",
+        "The immutable semantic overlay records no Lean dependency or theorem consumer for that projection.",
+        "The executable Python trace still evaluates four valid records and eight expected-invalid controls from their concrete fields.",
+        "The public formal target is now planned until a reachable Lean route model independently derives accepted and rejected outcomes from exact inputs.",
+        "A null replacement prevents the executable validator or fixed fixture from being misrepresented as an equivalent formal derivation."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:substrates.search.adoption_trace_bridge",
+          "old_target_text": "A synthetic substrate-adoption trace admits exploratory, structural-only, consumer-blocked, and retired/refuted states while rejecting missing baselines, theorem spillover, failed-control promotion, unmeasured-axis routing, missing fallback, and support-promotion overclaim.",
+          "new_target_text": "A reachable formal substrate-adoption route model derives the four accepted states and eight rejected controls from exact trace inputs rather than projecting fields from a hand-authored valid-summary predicate.",
+          "consumer_paths": [
+            "book_structure.json",
+            "docs/book_outline.md",
+            "chapters/mathematical-and-search-substrates.qmd",
+            "proofs/proof_manifest.json",
+            "proofs/proof_triage.json"
+          ]
+        }
+      ],
+      "maximum_inference_preserved": "The executable trace still rejects its authored invalid records; no Lean theorem currently derives those route outcomes from the exact trace inputs.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_proof_artifact_audit.py",
+        "scripts/validate_substrate_adoption_trace.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R34-substrate-no-promotion-summary-projection",
+      "sequence": 34,
+      "state": "executed",
+      "action": "retire_projection_after_public_target_narrowing",
+      "semantic_relation": "premise_restatement_retired_after_target_scope_reduction",
+      "module_path": "lean/AsiStackProofs/SearchSubstrates.lean",
+      "baseline_module_sha256": "5c78ed08265983e91eba92b132d1bb836bdebbc21100dd082c437a22ee7d9ba4",
+      "retired_theorem_id": "lean/AsiStackProofs/SearchSubstrates.lean::substrate_adoption_trace_preserves_no_promotion_boundary",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "780264537108abd811989c9d4e49755e55052fc7f576ed1be987b09f5b79a082",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "f01e68c978b3d7072cf589234951600ed1dd30908e2e14cae434962b740a14f6",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem unpacks failed-promotion, fallback, support-effect, and non-claim flags from SubstrateAdoptionTraceValid after those flags were already assumed true.",
+        "The immutable semantic overlay records no Lean dependency or theorem consumer for that projection.",
+        "The executable trace and historical result remain intact at their protocol-test scope.",
+        "The public bridge was already narrowed by the preceding transaction to a planned reachable route model, so a second textual migration would be redundant.",
+        "No replacement theorem is invented for a fixed-summary projection that added no independently derived route behavior."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "The executable validator continues to record no support-state effect and requires fallback and non-claim fields; this is not a formal proof of a reachable adoption route.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_proof_artifact_audit.py",
+        "scripts/validate_substrate_adoption_trace.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
     }
   ],
   "summary": {
-    "executed_retirement_count": 29,
-    "current_live_theorem_count": 1341,
-    "remaining_action_count": 132,
+    "executed_retirement_count": 34,
+    "current_live_theorem_count": 1336,
+    "remaining_action_count": 127,
     "remaining_action_counts": {
-      "retire_narrow_projection": 35,
+      "retire_narrow_projection": 30,
       "rewrite_scope_language": 2,
       "rewrite_with_stronger_model": 95
     },

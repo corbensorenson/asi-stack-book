@@ -61,10 +61,15 @@ EXPECTED_ACTION_IDS = [
     "C6-R27-runtime-adapter-lease-scope-projection",
     "C6-R28-runtime-adapter-rollback-projection",
     "C6-R29-runtime-adapter-adversarial-summary-projection",
+    "C6-R30-substrate-adoption-fields-projection",
+    "C6-R31-substrate-non-core-projection",
+    "C6-R32-substrate-qualified-evidence-projection",
+    "C6-R33-substrate-axis-summary-projection",
+    "C6-R34-substrate-no-promotion-summary-projection",
 ]
 EXPECTED_LEVELS = {
-    "P0": 47,
-    "P1": 776,
+    "P0": 45,
+    "P1": 773,
     "P2": 25,
     "P3": 319,
     "P4": 93,
@@ -73,7 +78,7 @@ EXPECTED_LEVELS = {
 }
 EXPECTED_DISPOSITIONS = {
     "retain": 1209,
-    "retire_narrow_projection": 35,
+    "retire_narrow_projection": 30,
     "rewrite_scope_language": 2,
     "rewrite_with_stronger_model": 95,
 }
@@ -132,6 +137,19 @@ EXPECTED_TARGETS = {
         "refutation cases rather than projecting fields from a hand-authored summary "
         "predicate."
     ),
+    "lean:substrates.search.operational_invariant": (
+        "A substrate adoption record missing a baseline reference, measured target, "
+        "or falsification criterion fails the finite adoption-fields predicate."
+    ),
+    "lean:substrates.search.failure_blocks_promotion": (
+        "A substrate record marked qualified without passing evidence fails the finite "
+        "core-adoption predicate."
+    ),
+    "lean:substrates.search.adoption_trace_bridge": (
+        "A reachable formal substrate-adoption route model derives the four accepted "
+        "states and eight rejected controls from exact trace inputs rather than "
+        "projecting fields from a hand-authored valid-summary predicate."
+    ),
 }
 PLANNED_TARGETS = {
     "lean:evidence.support_state.operational_invariant",
@@ -139,6 +157,7 @@ PLANNED_TARGETS = {
     "lean:evidence.claim_ledger.completeness_audit_bridge",
     "lean:evidence.accepted_transition.review_audit_bridge",
     "lean:evidence.claim_state.transition_bridge",
+    "lean:substrates.search.adoption_trace_bridge",
 }
 EXPECTED_RELATIONS = {
     "retire_exact_same_model_duplicate": "exact_same_model_normalized_statement",
@@ -171,6 +190,9 @@ EXPECTED_MIGRATION_COUNTS = {
         "C6-R20-claim-ledger-summary-projection",
         "C6-R21-accepted-transition-summary-projection",
         "C6-R22-claim-state-negative-evidence-projection",
+        "C6-R30-substrate-adoption-fields-projection",
+        "C6-R31-substrate-non-core-projection",
+        "C6-R33-substrate-axis-summary-projection",
     })
     for action_id in EXPECTED_ACTION_IDS
 }
@@ -228,7 +250,7 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
     actions = ledger["actions"]
     if [row["action_id"] for row in actions] != EXPECTED_ACTION_IDS:
         out.append("action sequence or identity drifted")
-    if [row["sequence"] for row in actions] != list(range(1, 30)):
+    if [row["sequence"] for row in actions] != list(range(1, 35)):
         out.append("action sequence numbers drifted")
 
     try:
@@ -333,9 +355,12 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
             ):
                 out.append(f"{action['action_id']}: exact duplicate statements differ")
         elif action["action"] == "retire_projection_after_counterexample_consumer_migration":
-            if "exact valid" not in retired_block["block"]:
+            if "exact " not in retired_block["block"]:
                 out.append(f"{action['action_id']}: retired theorem is not the audited projection")
-            if "have " not in replacement_block["block"] or "rw [" not in replacement_block["block"]:
+            if (
+                "rw [" not in replacement_block["block"]
+                or not any(token in replacement_block["block"] for token in ("have ", "cases ", "rcases "))
+            ):
                 out.append(f"{action['action_id']}: replacement lacks derived counterexample steps")
         elif action["action"] == "retire_projection_after_decision_model_consumer_migration":
             if "exact valid" not in retired_block["block"]:
@@ -376,13 +401,13 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
 
     overlay = load(CURRENT_OVERLAY)
     summary = overlay.get("summary", {})
-    if summary.get("current_theorem_count") != 1341:
+    if summary.get("current_theorem_count") != 1336:
         out.append("current theorem denominator drifted")
     if summary.get("semantic_level_counts") != EXPECTED_LEVELS:
         out.append("current semantic-level counts drifted")
     if summary.get("disposition_counts") != EXPECTED_DISPOSITIONS:
         out.append("current disposition counts drifted")
-    if sum(value for key, value in EXPECTED_DISPOSITIONS.items() if key != "retain") != 132:
+    if sum(value for key, value in EXPECTED_DISPOSITIONS.items() if key != "retain") != 127:
         out.append("expected remaining-action denominator is internally inconsistent")
     if ledger["summary"]["remaining_action_counts"] != {
         key: value for key, value in EXPECTED_DISPOSITIONS.items() if key != "retain"
@@ -478,6 +503,21 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
     if retired_runtime_names & {row["name"] for row in runtime_rows}:
         out.append("RuntimeAdapters retained an executed premise or summary projection")
 
+    substrate_rows = [
+        row
+        for row in current_rows
+        if row["module_path"] == "lean/AsiStackProofs/SearchSubstrates.lean"
+    ]
+    retired_substrate_names = {
+        action["retired_theorem_id"].split("::", 1)[1]
+        for action in actions
+        if action["module_path"] == "lean/AsiStackProofs/SearchSubstrates.lean"
+    }
+    if len(substrate_rows) != 6:
+        out.append("SearchSubstrates must retain exactly six declarations")
+    if retired_substrate_names & {row["name"] for row in substrate_rows}:
+        out.append("SearchSubstrates retained an executed premise or summary projection")
+
     manifest_rows = {
         row["tag"]: row
         for row in load(MANIFEST).get("records", [])
@@ -520,17 +560,17 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
     if status.get("rationalization_ledger_path") != str(LEDGER.relative_to(ROOT)):
         out.append("status does not bind the cumulative rationalization ledger")
     if (
-        status.get("theorem_count") != 1341
-        or status.get("executed_retirement_count") != 29
-        or status.get("remaining_action_count") != 132
+        status.get("theorem_count") != 1336
+        or status.get("executed_retirement_count") != 34
+        or status.get("remaining_action_count") != 127
     ):
         out.append("status does not report the cumulative post-transaction denominator")
     roadmap = ROADMAP.read_text(encoding="utf-8")
     roadmap_flat = " ".join(roadmap.split())
     for phrase in [
-        "sixth narrow-projection tranche",
-        "1,341 live theorem declarations",
-        "132 rewrite-or-retire actions remain",
+        "seventh narrow-projection tranche",
+        "1,336 live theorem declarations",
+        "127 rewrite-or-retire actions remain",
         "`proofs/proof_semantic_rationalization_ledger.json`",
     ]:
         if phrase not in roadmap_flat:
@@ -586,9 +626,9 @@ def main() -> None:
             + "\n - ".join(failures)
         )
     print(
-        "Proof semantic-rationalization ledger passed: twenty-nine dependency-safe "
-        "retirements, eleven public-target migrations, 1,341 live theorems, "
-        "132 actions remain, 14 rejecting mutations, no support or release effect."
+        "Proof semantic-rationalization ledger passed: thirty-four dependency-safe "
+        "retirements, fourteen public-target migrations, 1,336 live theorems, "
+        "127 actions remain, 14 rejecting mutations, no support or release effect."
     )
 
 

@@ -54,3 +54,9 @@ routing quality, compression quality, model quality, runtime performance, or
 downstream task quality, does not validate Circle, CoilMoECOT, Mamba, TreeLLM,
 or Theseus substrate adoption, and does not create an evidence transition or
 chapter-core support promotion.
+
+The Python validator derives its accept/reject outcomes from the concrete trace
+records. The current Lean fixture proves only that an authored summary has its
+authored values. The stronger public formal bridge remains planned until a
+reachable Lean route model independently derives the four accepting and eight
+rejecting outcomes from exact inputs.

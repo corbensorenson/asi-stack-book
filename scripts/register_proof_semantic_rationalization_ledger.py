@@ -22,8 +22,12 @@ ARTIFACTS = [
     "lean/AsiStackProofs/BenchmarkRatchets.lean",
     "lean/AsiStackProofs/StableCapabilityFields.lean",
     "lean/AsiStackProofs/RuntimeAdapters.lean",
+    "lean/AsiStackProofs/SearchSubstrates.lean",
     "scripts/validate_runtime_adapter_adversarial_boundary_probe.py",
+    "scripts/validate_substrate_adoption_trace.py",
     "experiments/runtime_adapter_adversarial_boundary/results/2026-07-02-local.json",
+    "experiments/substrate_adoption_trace/results/2026-07-02-local.json",
+    "docs/substrate_adoption_trace.md",
     "proofs/proof_manifest.json",
     "proofs/proof_triage.json",
     "book_structure.json",
@@ -31,6 +35,7 @@ ARTIFACTS = [
     "chapters/open-research-agenda-and-bibliography-plan.qmd",
     "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
     "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd",
+    "chapters/mathematical-and-search-substrates.qmd",
     "roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json",
     "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md",
     "validation/registry.json",
@@ -60,12 +65,12 @@ def main() -> None:
         "execution_tier": "pr",
         "validation_class": "proof_or_evidence_gate",
         "input_contract": (
-            "One immutable 1,370-theorem baseline; twenty-nine exact, ordered transactions; "
+            "One immutable 1,370-theorem baseline; thirty-four exact, ordered transactions; "
             "the baseline Scalable Oversight, Bibliography Plan, Benchmark Ratchets, and "
             "Policy Optimization, Stable Capability Fields, Evidence States, and Runtime "
-            "Adapters modules; one same-model normalized duplicate pair; twenty-eight "
-            "premise-restating projections, ten with derived replacements, sixteen retired "
-            "after public-target narrowing, one unused projection retired without target "
+            "Adapters, and Search Substrates modules; one same-model normalized duplicate "
+            "pair; thirty-three premise-restating projections, thirteen with derived "
+            "replacements, eighteen retired after public-target narrowing, one unused projection retired without target "
             "change, and one summary projection retired after route-family validator rebinding; "
             "the current overlay; frozen historical registry; and reconciled target, "
             "roadmap, and status surfaces."
@@ -74,9 +79,9 @@ def main() -> None:
         "output_contract": (
             "Require immutable baseline and theorem-block digests, exact same-model "
             "statement identity for the duplicate, dependency-and-consumer-safe removals, "
-            "two counterexample, two decision-model, and seven scope-narrowing target "
-            "migrations, retained or honestly replanned target ownership, a 1,341-theorem "
-            "current estate, an exact 132-action remaining "
+            "four counterexample, two decision-model, and eight scope-narrowing target "
+            "migrations, retained or honestly replanned target ownership, a 1,336-theorem "
+            "current estate, an exact 127-action remaining "
             "queue, meta-audit exclusion from implementation binding, and no support or "
             "release effect."
         ),
@@ -85,22 +90,23 @@ def main() -> None:
             "retired and retained declarations share one authored model",
             "normalized theorem statements exact",
             "retired theorem has no theorem consumer",
-            "twenty-nine retired declarations absent, ten derived replacements live, and eighteen intentionally null replacements",
+            "thirty-four retired declarations absent, fourteen replacement-bound retirements, and twenty intentionally null replacements",
             "two bibliography targets migrated to derived counterexample gates",
             "two benchmark targets migrated to derived decision-model gates",
             "two Stable Capability Fields targets narrowed to retained derived routes",
             "five Evidence States targets narrowed to planned reachable or independently implemented models",
             "Runtime adapter validator bound to fifteen route theorems rather than a summary projection",
+            "Search Substrates targets bound to two finite counterexamples and one honestly planned reachable route model",
             "proof-custody meta-audit does not inflate semantic implementation depth",
-            "1,341 current theorem declarations",
-            "132 rewrite-or-retire actions remain",
+            "1,336 current theorem declarations",
+            "127 rewrite-or-retire actions remain",
             "frozen 1,151-theorem and 298-target registry preserved",
             "14 mutations reject",
             "no support or release effect",
         ],
         "claim_scope": (
-            "Twenty-nine dependency-safe declaration retirements: one exact same-model "
-            "duplicate and twenty-eight premise-restating projections. Eleven public "
+            "Thirty-four dependency-safe declaration retirements: one exact same-model "
+            "duplicate and thirty-three premise-restating projections. Fourteen public "
             "targets migrate to counterexample, decision-model, narrower retained-route, "
             "or honestly planned stronger-model wording; the runtime-adapter target remains "
             "implemented through its fifteen explicit route theorems."

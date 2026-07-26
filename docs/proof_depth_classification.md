@@ -14,9 +14,9 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 333 |
 | Lean modules scanned | 110 |
-| Theorem declarations classified | 1341 |
-| Direct/projection-style theorem declarations | 205 |
-| Derived/decomposed theorem declarations | 921 |
+| Theorem declarations classified | 1336 |
+| Direct/projection-style theorem declarations | 202 |
+| Derived/decomposed theorem declarations | 919 |
 | Unknown or mixed theorem declarations | 215 |
 | Safety-critical theorem declarations | 73 |
 | Safety-critical direct/projection declarations | 1 |
@@ -142,7 +142,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/SafetyCriticalLifecycle.lean` | constitutional-alignment-substrate, moral-uncertainty-and-value-conflict | 8 | 21 | 1 | 9 | 11 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ScalableOversight.lean` | unmapped | 0 | 8 | 0 | 8 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ScalableOversightRefinement.lean` | scalable-oversight-and-adversarial-ai-control | 7 | 11 | 0 | 3 | 8 | manual review |
-| `lean/AsiStackProofs/SearchSubstrates.lean` | mathematical-and-search-substrates | 3 | 11 | 3 | 8 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/SearchSubstrates.lean` | mathematical-and-search-substrates | 3 | 6 | 0 | 6 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/SecurityKernel.lean` | security-kernel-and-digital-scifs | 4 | 22 | 1 | 21 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/SelfImprovement.lean` | unmapped | 0 | 20 | 0 | 20 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/SelfImprovementRefinement.lean` | recursive-self-improvement-boundaries | 3 | 2 | 0 | 0 | 2 | manual review |
@@ -1228,14 +1228,9 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ScalableOversightRefinement.lean` | `unjustified_abstention_requires_evidence` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/SearchSubstrates.lean` | `canary_substrate_without_complete_evidence_packet_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/SearchSubstrates.lean` | `consumer_axis_reliance_without_measurement_or_unblocked_axis_rejected` | derived_or_decomposed | no | uses contradiction, have, rw, unfold |
-| `lean/AsiStackProofs/SearchSubstrates.lean` | `qualified_substrate_requires_passing_evidence` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/SearchSubstrates.lean` | `qualified_substrate_without_passing_evidence_rejected` | derived_or_decomposed | no | uses contradiction, have, rw, unfold |
-| `lean/AsiStackProofs/SearchSubstrates.lean` | `substrate_adoption_record_includes_baseline_measured_target_and_falsification` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/SearchSubstrates.lean` | `substrate_adoption_record_missing_required_field_rejected` | derived_or_decomposed | no | uses cases, contradiction, rw, unfold |
 | `lean/AsiStackProofs/SearchSubstrates.lean` | `substrate_adoption_trace_fixture_valid` | derived_or_decomposed | no | uses simp, unfold |
-| `lean/AsiStackProofs/SearchSubstrates.lean` | `substrate_adoption_trace_preserves_no_promotion_boundary` | derived_or_decomposed | no | uses rcases, unfold |
-| `lean/AsiStackProofs/SearchSubstrates.lean` | `substrate_adoption_trace_rejects_axis_laundering` | derived_or_decomposed | no | uses rcases, unfold |
-| `lean/AsiStackProofs/SearchSubstrates.lean` | `substrate_without_passing_evidence_remains_non_core` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/SearchSubstrates.lean` | `unproven_qualified_substrate_rejected` | derived_or_decomposed | no | uses have, rw, simp, unfold |
 | `lean/AsiStackProofs/SecurityKernel.lean` | `clean_authorized_use_is_allowed` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/SecurityKernel.lean` | `inactive_lease_denies_authority_use` | derived_or_decomposed | no | uses simp, unfold |

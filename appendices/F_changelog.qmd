@@ -1,5 +1,27 @@
 # Changelog
 
+## 2026-07-25 — Seventh narrow-projection C6 tranche
+
+- Retired five premise- or summary-restating declarations from
+  `SearchSubstrates.lean`: three pass-through consequences of adoption
+  predicates and two projections from an assumed-valid trace summary.
+- Rebound the operational and failure targets to retained finite
+  counterexamples for missing adoption fields and qualified-without-evidence
+  records.
+- Preserved the executable four-valid/eight-invalid substrate-adoption trace
+  and its historical result, while moving
+  `lean:substrates.search.adoption_trace_bridge` to `planned` until a reachable
+  Lean route model derives outcomes from exact inputs. A fixed summary fixture
+  is no longer presented as that derivation.
+- Extended the cumulative ledger to thirty-four ordered retirements and
+  fourteen public-target migrations. The current estate is 1,336 declarations:
+  45 P0, 773 P1, 25 P2, 319 P3, 93 P4, 81 P5, and zero P6. The remaining queue
+  contains 127 actions: 30 narrow-projection retirements, two scope-language
+  rewrites, and 95 stronger-model rewrites.
+- Reconciled the 333 public targets to 304 implemented and 29 planned without
+  changing any chapter-core support state, executable trace outcome, empirical
+  result, deployment status, release state, or publication authority.
+
 ## 2026-07-25 — Sixth narrow-projection C6 tranche
 
 - Retired five premise- or summary-restating declarations from
@@ -111,7 +133,7 @@
   P5, and zero P6. The remaining queue contains 156 actions: 59 narrow-
   projection retirements, two scope-language rewrites, and 95 stronger-model
   rewrites.
-- Current proof-depth snapshot: 333 proof targets, 110 Lean modules, 1341 theorem declarations, 921 derived/decomposed, 205 direct/projection, 215 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Current proof-depth snapshot: 333 proof targets, 110 Lean modules, 1336 theorem declarations, 919 derived/decomposed, 202 direct/projection, 215 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - Reconciled the structure, outline, chapter formal boundary, proof manifest,
   triage, implementation-horizon inventory, roadmap, machine status, schema,
   and validators. The transaction changes no benchmark result, support state,

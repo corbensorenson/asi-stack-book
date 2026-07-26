@@ -11,15 +11,6 @@ def AdoptionFieldsComplete (record : SubstrateAdoptionRecord) : Prop :=
     record.measuredTargetDeclared = true ∧
       record.falsificationCriterionDeclared = true
 
-theorem substrate_adoption_record_includes_baseline_measured_target_and_falsification
-    {record : SubstrateAdoptionRecord} :
-    AdoptionFieldsComplete record ->
-    record.baselineRefsPresent = true ∧
-      record.measuredTargetDeclared = true ∧
-        record.falsificationCriterionDeclared = true := by
-  intro complete
-  exact complete
-
 theorem substrate_adoption_record_missing_required_field_rejected
     {record : SubstrateAdoptionRecord} :
     (record.baselineRefsPresent = false ∨
@@ -70,14 +61,6 @@ deriving DecidableEq, Repr
 def UnprovenSubstrateRemainsNonCore (review : SubstratePromotionReview) : Prop :=
   review.passingEvidence = false -> NonCoreState review.adoptionState
 
-theorem substrate_without_passing_evidence_remains_non_core
-    {review : SubstratePromotionReview} :
-    UnprovenSubstrateRemainsNonCore review ->
-    review.passingEvidence = false ->
-      NonCoreState review.adoptionState := by
-  intro valid noEvidence
-  exact valid noEvidence
-
 theorem unproven_qualified_substrate_rejected
     {review : SubstratePromotionReview} :
     review.passingEvidence = false ->
@@ -91,14 +74,6 @@ theorem unproven_qualified_substrate_rejected
 
 def CoreAdoptionValid (review : SubstratePromotionReview) : Prop :=
   review.adoptionState = AdoptionState.qualified -> review.passingEvidence = true
-
-theorem qualified_substrate_requires_passing_evidence
-    {review : SubstratePromotionReview} :
-    CoreAdoptionValid review ->
-    review.adoptionState = AdoptionState.qualified ->
-      review.passingEvidence = true := by
-  intro valid qualified
-  exact valid qualified
 
 theorem qualified_substrate_without_passing_evidence_rejected
     {review : SubstratePromotionReview} :
@@ -239,54 +214,5 @@ theorem substrate_adoption_trace_fixture_valid :
     SubstrateAdoptionTraceValid substrateAdoptionTraceFixture := by
   unfold SubstrateAdoptionTraceValid substrateAdoptionTraceFixture
   simp
-
-theorem substrate_adoption_trace_rejects_axis_laundering
-    {summary : SubstrateAdoptionTraceSummary} :
-    SubstrateAdoptionTraceValid summary ->
-      summary.theoremSpilloverRejected = true ∧
-        summary.unmeasuredAxisAllowedRejected = true := by
-  intro valid
-  unfold SubstrateAdoptionTraceValid at valid
-  rcases valid with ⟨_,
-    _,
-    _,
-    _,
-    _,
-    _,
-    _,
-    theoremSpilloverRejected,
-    _,
-    unmeasuredAxisAllowedRejected,
-    _,
-    _,
-    _⟩
-  exact ⟨theoremSpilloverRejected, unmeasuredAxisAllowedRejected⟩
-
-theorem substrate_adoption_trace_preserves_no_promotion_boundary
-    {summary : SubstrateAdoptionTraceSummary} :
-    SubstrateAdoptionTraceValid summary ->
-      summary.failedNegativeControlPromotionRejected = true ∧
-        summary.fallbackRequired = true ∧
-          summary.supportStateEffectNone = true ∧
-            summary.nonClaimBoundary = true := by
-  intro valid
-  unfold SubstrateAdoptionTraceValid at valid
-  rcases valid with ⟨_,
-    _,
-    _,
-    _,
-    _,
-    _,
-    _,
-    _,
-    failedNegativeControlPromotionRejected,
-    _,
-    fallbackRequired,
-    supportStateEffectNone,
-    nonClaimBoundary⟩
-  exact ⟨failedNegativeControlPromotionRejected,
-    fallbackRequired,
-    supportStateEffectNone,
-    nonClaimBoundary⟩
 
 end AsiStackProofs.SearchSubstrates

@@ -33,8 +33,6 @@ PROOF_TAG = "lean:substrates.search.adoption_trace_bridge"
 CODEX_TEST_NAME = "Substrate adoption trace"
 REQUIRED_THEOREMS = [
     "substrate_adoption_trace_fixture_valid",
-    "substrate_adoption_trace_rejects_axis_laundering",
-    "substrate_adoption_trace_preserves_no_promotion_boundary",
 ]
 REQUIRED_NON_CLAIMS = [
     "does not run a substrate A/B test",

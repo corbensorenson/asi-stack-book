@@ -319,7 +319,7 @@ The Substrate adoption trace is now the next minimum executable form. It records
 The trace makes optionality executable before any substrate becomes load-bearing. It still does not run a substrate A/B test, representation-efficiency test, search-quality test, routing-quality test, compression-quality test, Circle sidecar, CoilMoECOT run, Mamba comparison, TreeLLM implementation, or Theseus transfer consumer.
 
 The exact minimum therefore comprises one schema-valid record, four valid
-synthetic states, eight expected-invalid controls, and eleven theorem
+synthetic states, eight expected-invalid controls, and six live theorem
 declarations in `AsiStackProofs.SearchSubstrates`. It contains no implemented
 candidate substrate, learned model, kernel comparison, natural workload,
 measured benefit, independent reproduction, transfer result, or accepted
@@ -387,7 +387,7 @@ language requires separate accepted transitions.
 | Qualified-without-evidence negative case | Prove that a qualified substrate with false passing-evidence rejects the finite core-adoption predicate. | implemented in `AsiStackProofs.SearchSubstrates.qualified_substrate_without_passing_evidence_rejected`; no empirical substrate result |
 | Consumer-axis negative case | Prove that consumer reliance on an unmeasured or blocked substrate axis rejects the finite consumer-axis predicate. | implemented in `AsiStackProofs.SearchSubstrates.consumer_axis_reliance_without_measurement_or_unblocked_axis_rejected`; no routing, compression, or reasoning-quality claim |
 | Canary evidence-packet negative case | Prove that canary substrate promotion missing workload, baseline, negative-control, or result-report fields rejects the finite canary-evidence predicate. | implemented in `AsiStackProofs.SearchSubstrates.canary_substrate_without_complete_evidence_packet_rejected`; no canary benchmark claim |
-| Substrate adoption trace | Validate exploratory registration, structural-only receipt boundaries, consumer-axis blocking, negative-control retirement/refutation, fallback preservation, and no-promotion boundaries with expected-invalid controls for missing baseline, missing falsification, theorem spillover, unmeasured-axis routing, failed-control promotion, missing fallback, support overclaim, and missing non-claims. | implemented via `python3 scripts/validate_substrate_adoption_trace.py`, `lean:substrates.search.adoption_trace_bridge`, and `AsiStackProofs.SearchSubstrates.substrate_adoption_trace_fixture_valid`; no substrate A/B test, substrate adoption, model-quality result, runtime result, support-state transition, or chapter-core promotion |
+| Substrate adoption trace | Validate exploratory registration, structural-only receipt boundaries, consumer-axis blocking, negative-control retirement/refutation, fallback preservation, and no-promotion boundaries with expected-invalid controls for missing baseline, missing falsification, theorem spillover, unmeasured-axis routing, failed-control promotion, missing fallback, support overclaim, and missing non-claims. | executable trace implemented via `python3 scripts/validate_substrate_adoption_trace.py`; formal route bridge planned because the current Lean fixture proves only its authored summary values; no substrate A/B test, substrate adoption, model-quality result, runtime result, support-state transition, or chapter-core promotion |
 | Baseline comparison test | Check that adoption records name ordinary baselines before quality claims. | planned; not run |
 | Representation efficiency test | Check whether a substrate improves a bounded representation task against a baseline. | planned; not run |
 | Falsification review | Check that the record names what would count against adoption. | planned; not run |
@@ -399,19 +399,33 @@ The implemented rows validate fixture/schema consistency and finite-record negat
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:substrates.search.operational_invariant` | `AsiStackProofs.SearchSubstrates` | A substrate adoption record includes baseline, measured target, and falsification criterion. | implemented |
-| `lean:substrates.search.failure_blocks_promotion` | `AsiStackProofs.SearchSubstrates` | A substrate without passing evidence remains non-core. | implemented |
+| `lean:substrates.search.operational_invariant` | `AsiStackProofs.SearchSubstrates` | A substrate adoption record missing a baseline reference, measured target, or falsification criterion fails the finite adoption-fields predicate. | implemented |
+| `lean:substrates.search.failure_blocks_promotion` | `AsiStackProofs.SearchSubstrates` | A substrate record marked qualified without passing evidence fails the finite core-adoption predicate. | implemented |
+| `lean:substrates.search.adoption_trace_bridge` | `AsiStackProofs.SearchSubstrates` | A reachable formal substrate-adoption route model derives the four accepted states and eight rejected controls from exact trace inputs rather than projecting fields from a hand-authored valid-summary predicate. | planned |
 
-These Lean hooks are implemented as finite-record predicates over substrate-adoption and promotion-review fields. They prove only that the record exposes baseline, measured-target, and falsification fields, and that a substrate without passing evidence remains in a non-core state. The module also now proves bounded negative cases named `substrate_adoption_record_missing_required_field_rejected`, `unproven_qualified_substrate_rejected`, `qualified_substrate_without_passing_evidence_rejected`, `consumer_axis_reliance_without_measurement_or_unblocked_axis_rejected`, and `canary_substrate_without_complete_evidence_packet_rejected`. These cases reject malformed substrate-adoption records; they do not prove that any substrate improves search, routing, compression, representation, long-context behavior, runtime, verifier burden, or model quality.
+The two implemented Lean hooks are finite-record rejection results over
+substrate-adoption and promotion-review fields. The first rejects an adoption
+record when at least one required field is explicitly false. The second
+rejects a qualified promotion record when passing evidence is explicitly
+false. The module also proves bounded negative cases named
+`unproven_qualified_substrate_rejected`,
+`consumer_axis_reliance_without_measurement_or_unblocked_axis_rejected`, and
+`canary_substrate_without_complete_evidence_packet_rejected`. These cases
+reject malformed finite records; they do not prove that any substrate improves
+search, routing, compression, representation, long-context behavior, runtime,
+verifier burden, or model quality.
 
-The module contains eleven theorem declarations. Three are direct predicate or
-projection consequences: the required-field projection, the non-core
-projection, and the qualified-evidence projection. Five are derived finite
-negative cases over missing fields, unproven qualification, qualified-without-
-evidence, unsupported consumer axes, and incomplete canary packets. Three are
-authored finite trace-fixture consequences: the fixture-validity theorem, the
-axis-laundering rejection projection, and the no-promotion-boundary projection.
-This audit classification is not a proof-quality promotion. None proves a
+The module now contains six theorem declarations. Five are derived finite
+negative cases over missing fields, unproven qualification,
+qualified-without-evidence, unsupported consumer axes, and incomplete canary
+packets. One proves that a hand-authored trace-summary fixture satisfies the
+predicate whose values were authored into that fixture. The seventh C6
+rationalization tranche retired five pass-through or summary projections
+instead of treating theorem count as progress. The trace executable and its
+historical result remain useful protocol tests, but the public formal bridge is
+planned until a reachable model independently derives the four accepting and
+eight rejecting outcomes from exact inputs. This audit classification is not a
+proof-quality promotion. None proves a
 semantic correspondence between a mathematical substrate and an executable
 implementation, search completeness or optimality, representation fidelity,
 model quality, speed, memory efficiency, safe fallback, liveness, recovery,

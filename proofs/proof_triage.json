@@ -2354,31 +2354,31 @@
       "tag": "lean:substrates.search.operational_invariant",
       "chapter_id": "mathematical-and-search-substrates",
       "module": "AsiStackProofs.SearchSubstrates",
-      "formal_target": "A substrate adoption record includes baseline, measured target, and falsification criterion.",
+      "formal_target": "A substrate adoption record missing a baseline reference, measured target, or falsification criterion fails the finite adoption-fields predicate.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented in AsiStackProofs.SearchSubstrates as a finite record-field predicate: substrate adoption records expose baseline, measured-target, and falsification fields before adoption claims are reviewed."
+      "rationale": "Implemented in AsiStackProofs.SearchSubstrates as a finite negative case: an adoption record with an explicitly missing baseline reference, measured target, or falsification criterion fails AdoptionFieldsComplete."
     },
     {
       "tag": "lean:substrates.search.failure_blocks_promotion",
       "chapter_id": "mathematical-and-search-substrates",
       "module": "AsiStackProofs.SearchSubstrates",
-      "formal_target": "A substrate without passing evidence remains non-core.",
+      "formal_target": "A substrate record marked qualified without passing evidence fails the finite core-adoption predicate.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented in AsiStackProofs.SearchSubstrates as a finite promotion predicate: a substrate without passing evidence remains in a non-core adoption state."
+      "rationale": "Implemented in AsiStackProofs.SearchSubstrates as a finite negative case: a record marked qualified while passingEvidence is false fails CoreAdoptionValid."
     },
     {
       "tag": "lean:substrates.search.adoption_trace_bridge",
       "chapter_id": "mathematical-and-search-substrates",
       "module": "AsiStackProofs.SearchSubstrates",
-      "formal_target": "A synthetic substrate-adoption trace admits exploratory, structural-only, consumer-blocked, and retired/refuted states while rejecting missing baselines, theorem spillover, failed-control promotion, unmeasured-axis routing, missing fallback, and support-promotion overclaim.",
-      "target_status": "implemented",
+      "formal_target": "A reachable formal substrate-adoption route model derives the four accepted states and eight rejected controls from exact trace inputs rather than projecting fields from a hand-authored valid-summary predicate.",
+      "target_status": "planned",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented in AsiStackProofs.SearchSubstrates as a finite trace-summary fixture bridge over the substrate-adoption trace: it accepts the modeled exploratory, structural-only, blocked, and retired/refuted states while preserving axis-laundering rejection, fallback requirements, non-claim boundaries, and no support-state promotion."
+      "rationale": "Planned as a reachable formal route model over exact trace inputs. The executable validator remains implemented, but the current Lean fixture only proves values authored into a valid-summary record and therefore does not independently derive the four accepting and eight rejecting outcomes."
     },
     {
       "tag": "lean:circle_contracts.receipt_requires_boundary.operational_invariant",
