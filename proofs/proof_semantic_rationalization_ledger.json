@@ -1065,14 +1065,212 @@
         "lean:lake-build"
       ],
       "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R25-runtime-adapter-permission-projection",
+      "sequence": 25,
+      "state": "executed",
+      "action": "retire_unconsumed_projection",
+      "semantic_relation": "premise_restatement_removed_without_public_target_change",
+      "module_path": "lean/AsiStackProofs/RuntimeAdapters.lean",
+      "baseline_module_sha256": "96608ad6f892d7ee81c272ffd9b5bcf49936dd078ff341a5fefa9a98abf0a941",
+      "retired_theorem_id": "lean/AsiStackProofs/RuntimeAdapters.lean::valid_invocation_has_required_permission",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "13eaf2f1d5cb0f94efce55707335d64fc3e1adac3c44ad40fe9908e4ec4e8829",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "e8e9556979efdc04a78dc5a1d353294a4ec24f343d7c69c6d4597ab9e372209b",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem restates InvocationPermissionValid, which is definitionally PermissionIncluded, as direct list membership.",
+        "The immutable semantic overlay records no theorem dependency or theorem consumer for this declaration.",
+        "The retained invocation_without_parent_permission_rejected theorem directly unfolds both predicates and preserves the substantive missing-permission rejection result.",
+        "No public proof target depends on the removed theorem name or requires target narrowing.",
+        "No theorem is presented as an equivalent replacement; null replacement custody records removal of an unused projection."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "The finite model still proves that a missing parent permission contradicts a valid invocation; it does not prove deployed permission lookup or enforcement.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_proof_artifact_audit.py",
+        "scripts/validate_runtime_adapter_permissions.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R26-runtime-adapter-approval-projection",
+      "sequence": 26,
+      "state": "executed",
+      "action": "retire_projection_after_counterexample_consumer_migration",
+      "semantic_relation": "premise_restatement_replaced_by_derived_counterexample_gate",
+      "module_path": "lean/AsiStackProofs/RuntimeAdapters.lean",
+      "baseline_module_sha256": "96608ad6f892d7ee81c272ffd9b5bcf49936dd078ff341a5fefa9a98abf0a941",
+      "retired_theorem_id": "lean/AsiStackProofs/RuntimeAdapters.lean::high_impact_adapter_without_approval_is_rejected",
+      "replacement_theorem_id": "lean/AsiStackProofs/RuntimeAdapters.lean::high_impact_adapter_without_approval_cannot_be_unrejected",
+      "retired_block_sha256": "fd8c62e539d17a78f25e2f688fa601d145af080f8c669dcd0ab2ded4f0a68394",
+      "replacement_block_sha256": "f4b0bedf046771c7f18025f2b6bd9b5f30d167f5ca2b0dddf1fa80cfac865350",
+      "retired_statement_sha256": "01e104fdd5cd2d27a05c1fc0267737aebc161820e72fe98172a0edfc36c83950",
+      "replacement_statement_sha256": "78113d4d163bea66568308fddcf6920c4d3356eddb7c89202c2e28fd562d84ad",
+      "semantic_basis": [
+        "The retired theorem applies the ApprovalRejectionValid premise without adding a case split, witness, or contradiction.",
+        "Its only immutable-baseline theorem consumer is the retained cannot-be-unrejected counterexample theorem.",
+        "That consumer now applies ApprovalRejectionValid directly and derives a contradiction when rejected is simultaneously false.",
+        "The public operational and failure targets remain supported by the retained approval rejection route and counterexample family.",
+        "The migration removes one pass-through name without weakening the finite high-impact approval-bypass rejection result."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [
+          "lean/AsiStackProofs/RuntimeAdapters.lean::high_impact_adapter_without_approval_cannot_be_unrejected"
+        ],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "The finite predicate still rejects the contradictory state in which a high-impact, unapproved invocation is marked unrejected; it does not establish live approval-service behavior.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_proof_artifact_audit.py",
+        "scripts/validate_runtime_adapter_permissions.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R27-runtime-adapter-lease-scope-projection",
+      "sequence": 27,
+      "state": "executed",
+      "action": "retire_projection_after_counterexample_consumer_migration",
+      "semantic_relation": "premise_restatement_replaced_by_derived_counterexample_gate",
+      "module_path": "lean/AsiStackProofs/RuntimeAdapters.lean",
+      "baseline_module_sha256": "96608ad6f892d7ee81c272ffd9b5bcf49936dd078ff341a5fefa9a98abf0a941",
+      "retired_theorem_id": "lean/AsiStackProofs/RuntimeAdapters.lean::valid_leased_invocation_has_active_scoped_sandbox",
+      "replacement_theorem_id": "lean/AsiStackProofs/RuntimeAdapters.lean::expired_effect_lease_rejected",
+      "retired_block_sha256": "f25cfb50b8d6058b9571b45e1e1413c9e20feca3b45f0bd4d5165312493d2fd7",
+      "replacement_block_sha256": "d0c43fc1dcb926caeba2aabb90198135e16f078b2bdbffd7f9aaee82ad1aaf7a",
+      "retired_statement_sha256": "f90616b39a6a88a42d0172974a5a799ecde9db96d7b28388ee77caa059895e6b",
+      "replacement_statement_sha256": "0855f7b2690c7c3ba515ec977da3527cd165002ac84ee0e5ef07e41ba9cce5f9",
+      "semantic_basis": [
+        "The retired theorem projects the LeaseScopesInvocation half of LeasedInvocationValid without deriving a new condition.",
+        "Its three immutable-baseline consumers are the mismatched, expired, and unsandboxed lease rejection theorems.",
+        "All three consumers now inspect the lease-scope conjunction directly and preserve their contradiction-based rejection results.",
+        "The retained route model separately covers mismatched, expired, revoked, unsandboxed, and over-ceiling lease states.",
+        "The migration removes a shared pass-through helper without narrowing any public runtime-adapter target."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [
+          "lean/AsiStackProofs/RuntimeAdapters.lean::expired_effect_lease_rejected",
+          "lean/AsiStackProofs/RuntimeAdapters.lean::mismatched_effect_lease_rejected",
+          "lean/AsiStackProofs/RuntimeAdapters.lean::unsandboxed_effect_lease_rejected"
+        ],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "The finite model still rejects mismatched, expired, and unsandboxed leases and retains broader route-level lease controls; it does not prove deployed sandbox isolation or lease enforcement.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_proof_artifact_audit.py",
+        "scripts/validate_runtime_adapter_permissions.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R28-runtime-adapter-rollback-projection",
+      "sequence": 28,
+      "state": "executed",
+      "action": "retire_projection_after_counterexample_consumer_migration",
+      "semantic_relation": "premise_restatement_replaced_by_derived_counterexample_gate",
+      "module_path": "lean/AsiStackProofs/RuntimeAdapters.lean",
+      "baseline_module_sha256": "96608ad6f892d7ee81c272ffd9b5bcf49936dd078ff341a5fefa9a98abf0a941",
+      "retired_theorem_id": "lean/AsiStackProofs/RuntimeAdapters.lean::high_impact_rollback_required_without_handle_is_rejected",
+      "replacement_theorem_id": "lean/AsiStackProofs/RuntimeAdapters.lean::rollback_required_without_handle_cannot_be_unrejected",
+      "retired_block_sha256": "7b290df9b8c97d2b5f00cd637b2ec0059eed146deff29f6fdd53de1fd175b50c",
+      "replacement_block_sha256": "94e69a2906673f913ba4d2058faa51552b234ae2e8511e275cac5eec3b743a70",
+      "retired_statement_sha256": "1c35cccd01d37a4fab5a2ee385c272994578296b979a5349df264eec43e2263d",
+      "replacement_statement_sha256": "00a529e00037df272584c641bb0e2b789f7fd7297efb8d7fb407b15708ce928f",
+      "semantic_basis": [
+        "The retired theorem applies the RollbackObligationValid premise without adding a case split, witness, or contradiction.",
+        "Its only immutable-baseline theorem consumer is the retained cannot-be-unrejected counterexample theorem.",
+        "That consumer now applies RollbackObligationValid directly and derives a contradiction when rejected is simultaneously false.",
+        "The broader runtime route and effect-replay theorem families retain missing-handle, missing-receipt, and inexact-rollback rejection cases.",
+        "The migration removes one pass-through name without narrowing any public runtime-adapter target."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [
+          "lean/AsiStackProofs/RuntimeAdapters.lean::rollback_required_without_handle_cannot_be_unrejected"
+        ],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "The finite model still rejects a high-impact rollback-required invocation that lacks a handle but claims to be unrejected; it does not establish effect-complete rollback in a live service.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_proof_artifact_audit.py",
+        "scripts/validate_runtime_adapter_effect_probe.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R29-runtime-adapter-adversarial-summary-projection",
+      "sequence": 29,
+      "state": "executed",
+      "action": "retire_projection_after_validator_route_family_rebinding",
+      "semantic_relation": "summary_projection_replaced_by_route_family_validation",
+      "module_path": "lean/AsiStackProofs/RuntimeAdapters.lean",
+      "baseline_module_sha256": "96608ad6f892d7ee81c272ffd9b5bcf49936dd078ff341a5fefa9a98abf0a941",
+      "retired_theorem_id": "lean/AsiStackProofs/RuntimeAdapters.lean::runtime_adapter_adversarial_boundary_probe_bridge",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "f87c2ddd173a9816e3246d30cdf9444a65e0a596a97006f55a89f5ff759b5970",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "b123767dc81098ae36e77ceca8e6f0d272d75c46554db90c1727d76e2fd1ccaf",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired bridge returns the complete conjunction already assumed as RuntimeAdapterAdversarialProbeFixtureValid.",
+        "The immutable semantic overlay records no Lean theorem consumer for the summary projection.",
+        "The adversarial validator now binds the public target to fifteen named route theorems: thirteen rejecting boundary cases and two accepted dispatch cases.",
+        "The chapter target already describes those modeled routes, so its scope and implemented status remain accurate without textual migration.",
+        "No single theorem is presented as a replacement for the route family; null replacement custody prevents an invented equivalence."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "The finite route family still distinguishes thirteen explicit rejection conditions from complete low- and high-impact dispatch records; it does not establish deployed adapter, sandbox, approval, secret, rollback, or policy behavior.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_proof_artifact_audit.py",
+        "scripts/validate_runtime_adapter_adversarial_boundary_probe.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
     }
   ],
   "summary": {
-    "executed_retirement_count": 24,
-    "current_live_theorem_count": 1346,
-    "remaining_action_count": 137,
+    "executed_retirement_count": 29,
+    "current_live_theorem_count": 1341,
+    "remaining_action_count": 132,
     "remaining_action_counts": {
-      "retire_narrow_projection": 40,
+      "retire_narrow_projection": 35,
       "rewrite_scope_language": 2,
       "rewrite_with_stronger_model": 95
     },

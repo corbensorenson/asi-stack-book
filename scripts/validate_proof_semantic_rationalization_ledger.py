@@ -15,7 +15,7 @@ from typing import Any
 import jsonschema
 
 from build_proof_rationalization_registry import current_theorems, normalize
-from build_proof_semantic_depth_overlay import statement_key, theorem_graph
+from build_proof_semantic_depth_overlay import statement_key, theorem_graph, validation_index
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -56,19 +56,24 @@ EXPECTED_ACTION_IDS = [
     "C6-R22-claim-state-negative-evidence-projection",
     "C6-R23-claim-state-no-live-movement-projection",
     "C6-R24-claim-state-nonclaim-projection",
+    "C6-R25-runtime-adapter-permission-projection",
+    "C6-R26-runtime-adapter-approval-projection",
+    "C6-R27-runtime-adapter-lease-scope-projection",
+    "C6-R28-runtime-adapter-rollback-projection",
+    "C6-R29-runtime-adapter-adversarial-summary-projection",
 ]
 EXPECTED_LEVELS = {
     "P0": 47,
-    "P1": 771,
+    "P1": 776,
     "P2": 25,
     "P3": 319,
-    "P4": 99,
-    "P5": 85,
+    "P4": 93,
+    "P5": 81,
     "P6": 0,
 }
 EXPECTED_DISPOSITIONS = {
     "retain": 1209,
-    "retire_narrow_projection": 40,
+    "retire_narrow_projection": 35,
     "rewrite_scope_language": 2,
     "rewrite_with_stronger_model": 95,
 }
@@ -146,6 +151,12 @@ EXPECTED_RELATIONS = {
     "retire_projection_after_public_target_narrowing": (
         "premise_restatement_retired_after_target_scope_reduction"
     ),
+    "retire_unconsumed_projection": (
+        "premise_restatement_removed_without_public_target_change"
+    ),
+    "retire_projection_after_validator_route_family_rebinding": (
+        "summary_projection_replaced_by_route_family_validation"
+    ),
 }
 EXPECTED_MIGRATION_COUNTS = {
     action_id: int(action_id in {
@@ -217,7 +228,7 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
     actions = ledger["actions"]
     if [row["action_id"] for row in actions] != EXPECTED_ACTION_IDS:
         out.append("action sequence or identity drifted")
-    if [row["sequence"] for row in actions] != list(range(1, 25)):
+    if [row["sequence"] for row in actions] != list(range(1, 30)):
         out.append("action sequence numbers drifted")
 
     try:
@@ -302,10 +313,16 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
             out.append(f"{action['action_id']}: baseline retirement disposition drifted")
         if replacement_row is not None and replacement_row.get("disposition") != "retain":
             out.append(f"{action['action_id']}: replacement was not retained at baseline")
+        if action["dependency_check"]["retired_theorem_dependency_refs"] != retired_row.get(
+            "theorem_dependency_refs"
+        ):
+            out.append(f"{action['action_id']}: baseline dependency custody drifted")
         if retired_row.get("theorem_dependency_refs") != []:
             out.append(f"{action['action_id']}: retired theorem had theorem dependencies")
-        if retired_row.get("theorem_consumer_refs") != []:
-            out.append(f"{action['action_id']}: retired theorem had theorem consumers")
+        if action["dependency_check"]["retired_theorem_consumer_refs"] != retired_row.get(
+            "theorem_consumer_refs"
+        ):
+            out.append(f"{action['action_id']}: baseline consumer custody drifted")
 
         if len(action["target_migrations"]) != EXPECTED_MIGRATION_COUNTS[action["action_id"]]:
             out.append(f"{action['action_id']}: target migration count drifted")
@@ -328,14 +345,20 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
                 or "rw [" not in replacement_block["block"]
             ):
                 out.append(f"{action['action_id']}: replacement lacks decision-model derivation")
-        else:
+        elif action["action"] in {
+            "retire_projection_after_public_target_narrowing",
+            "retire_unconsumed_projection",
+            "retire_projection_after_validator_route_family_rebinding",
+        }:
             if replacement_id is not None or replacement_block is not None:
-                out.append(f"{action['action_id']}: target-scope retirement invented a replacement")
+                out.append(f"{action['action_id']}: null-replacement retirement invented a replacement")
             if (
                 "exact " not in retired_block["block"]
                 and "rcases valid with" not in retired_block["block"]
             ):
                 out.append(f"{action['action_id']}: retired theorem is not a direct projection")
+        else:
+            out.append(f"{action['action_id']}: unsupported action kind")
 
     current_rows = current_theorems()
     current_ids = {row["theorem_id"] for row in current_rows}
@@ -353,13 +376,13 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
 
     overlay = load(CURRENT_OVERLAY)
     summary = overlay.get("summary", {})
-    if summary.get("current_theorem_count") != 1346:
+    if summary.get("current_theorem_count") != 1341:
         out.append("current theorem denominator drifted")
     if summary.get("semantic_level_counts") != EXPECTED_LEVELS:
         out.append("current semantic-level counts drifted")
     if summary.get("disposition_counts") != EXPECTED_DISPOSITIONS:
         out.append("current disposition counts drifted")
-    if sum(value for key, value in EXPECTED_DISPOSITIONS.items() if key != "retain") != 137:
+    if sum(value for key, value in EXPECTED_DISPOSITIONS.items() if key != "retain") != 132:
         out.append("expected remaining-action denominator is internally inconsistent")
     if ledger["summary"]["remaining_action_counts"] != {
         key: value for key, value in EXPECTED_DISPOSITIONS.items() if key != "retain"
@@ -367,6 +390,11 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
         out.append("ledger remaining-action family counts drifted")
     if summary.get("duplicate_group_count") != 0:
         out.append("same-model exact duplicate group remains")
+    meta_validator_ref = "scripts/validate_proof_semantic_rationalization_ledger.py"
+    binding_index = validation_index()
+    for module in {action["module_path"] for action in actions}:
+        if meta_validator_ref in binding_index.get(module, {}).get("validator_refs", []):
+            out.append(f"{module}: proof-custody meta-audit inflated implementation binding")
 
     bibliography_rows = [
         row
@@ -437,6 +465,19 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
     if retired_evidence_names & {row["name"] for row in evidence_rows}:
         out.append("EvidenceStates retained an executed premise or summary projection")
 
+    runtime_rows = [
+        row
+        for row in current_rows
+        if row["module_path"] == "lean/AsiStackProofs/RuntimeAdapters.lean"
+    ]
+    retired_runtime_names = {
+        action["retired_theorem_id"].split("::", 1)[1]
+        for action in actions
+        if action["module_path"] == "lean/AsiStackProofs/RuntimeAdapters.lean"
+    }
+    if retired_runtime_names & {row["name"] for row in runtime_rows}:
+        out.append("RuntimeAdapters retained an executed premise or summary projection")
+
     manifest_rows = {
         row["tag"]: row
         for row in load(MANIFEST).get("records", [])
@@ -479,17 +520,17 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
     if status.get("rationalization_ledger_path") != str(LEDGER.relative_to(ROOT)):
         out.append("status does not bind the cumulative rationalization ledger")
     if (
-        status.get("theorem_count") != 1346
-        or status.get("executed_retirement_count") != 24
-        or status.get("remaining_action_count") != 137
+        status.get("theorem_count") != 1341
+        or status.get("executed_retirement_count") != 29
+        or status.get("remaining_action_count") != 132
     ):
         out.append("status does not report the cumulative post-transaction denominator")
     roadmap = ROADMAP.read_text(encoding="utf-8")
     roadmap_flat = " ".join(roadmap.split())
     for phrase in [
-        "fifth narrow-projection tranche",
-        "1,346 live theorem declarations",
-        "137 rewrite-or-retire actions remain",
+        "sixth narrow-projection tranche",
+        "1,341 live theorem declarations",
+        "132 rewrite-or-retire actions remain",
         "`proofs/proof_semantic_rationalization_ledger.json`",
     ]:
         if phrase not in roadmap_flat:
@@ -545,9 +586,9 @@ def main() -> None:
             + "\n - ".join(failures)
         )
     print(
-        "Proof semantic-rationalization ledger passed: twenty-four dependency-safe "
-        "retirements, eleven public-target migrations, 1,346 live theorems, "
-        "137 actions remain, 14 rejecting mutations, no support or release effect."
+        "Proof semantic-rationalization ledger passed: twenty-nine dependency-safe "
+        "retirements, eleven public-target migrations, 1,341 live theorems, "
+        "132 actions remain, 14 rejecting mutations, no support or release effect."
     )
 
 

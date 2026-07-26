@@ -47,7 +47,6 @@ REQUIRED_THEOREMS = [
     "adapter_adversarial_missing_non_claim_boundary_rejected",
     "adapter_adversarial_low_impact_dispatch_accepted",
     "adapter_adversarial_high_impact_dispatch_accepted",
-    "runtime_adapter_adversarial_boundary_probe_bridge",
 ]
 REQUIRED_NON_CLAIMS = [
     "does not execute a deployed adapter",

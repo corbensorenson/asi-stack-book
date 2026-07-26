@@ -1729,7 +1729,7 @@ def errors(data: dict) -> list[str]:
         if phrase.casefold() not in data["verification_bandwidth_dossier"].casefold(): out.append(f"verification-bandwidth dossier missing adequacy boundary: {phrase}")
 
     expected_claim_ledger_contract = {
-        "current_missing_or_changed_theorem_count":319,
+        "current_missing_or_changed_theorem_count":329,
         "current_missing_or_changed_target_count":192,
         "current_live_theorem_declaration_count":1300,
         "current_live_proof_target_count":298,

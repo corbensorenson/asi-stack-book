@@ -203,7 +203,7 @@ deepen*, on a floor that already passes the book's own gates.
 
 ## 23. Runtime Adapters, Tool Permissions, and Human Approval
 **Tier: A− idea, narrow proof coverage (highest-priority *coverage* gap in the book).** "Capability firewall for external effects… the stack's narrow waist for action" (human) is an excellent, correct framing of the single most safety-critical boundary. Well-tested, well-anchored.
-- **What's there is good, not weak:** its 4 theorems are real and sound — `valid_invocation_has_required_permission`, `invocation_without_parent_permission_rejected`, `high_impact_adapter_without_approval_is_rejected`, and its negative case. So this is *not* a vacuous-proof problem.
+- **Historical note:** this review originally counted four early permission/approval declarations as equally substantive. The later semantic-depth audit retired the two direct premise projections and retained the rejection/counterexample behavior; the chapter now carries substantially broader route, lease, rollback, authority, replay, revocation, and adversarial coverage.
 - **Weakness:** **4 theorems is too few scenarios for the exact boundary where AI touches the world.** This is *the* place the book should carry the *broadest* adversarial coverage — effect-lease scoping and expiry, authority non-escalation at the adapter, rollback-obligation, confused-deputy at the tool boundary, sandbox-escape refusal — and it currently has the fewest cases. If any chapter gets Authority-caliber (28) *coverage* next, it is this one.
 - **Actions:** **HIGH PRIORITY** — expand the proof *surface* (more adversarial scenarios and negative cases), matching coverage to safety role; the existing theorems are a good foundation to build on, not a rewrite target.
 

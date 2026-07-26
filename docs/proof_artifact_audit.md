@@ -85,7 +85,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/Replacement.lean` | 6 | 37 | 0 | 10 | 6 |
 | `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | 11 | 9 | 11 | 5 | 2 |
 | `lean/AsiStackProofs/RoutingRefinement.lean` | 5 | 17 | 0 | 21 | 3 |
-| `lean/AsiStackProofs/RuntimeAdapters.lean` | 6 | 49 | 0 | 13 | 9 |
+| `lean/AsiStackProofs/RuntimeAdapters.lean` | 6 | 44 | 0 | 13 | 9 |
 | `lean/AsiStackProofs/SafetyCaseRefinement.lean` | 8 | 10 | 0 | 9 | 2 |
 | `lean/AsiStackProofs/SafetyCriticalLifecycle.lean` | 8 | 21 | 0 | 20 | 2 |
 | `lean/AsiStackProofs/ScalableOversightRefinement.lean` | 7 | 11 | 0 | 8 | 2 |

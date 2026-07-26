@@ -1,5 +1,31 @@
 # Changelog
 
+## 2026-07-25 — Sixth narrow-projection C6 tranche
+
+- Retired five premise- or summary-restating declarations from
+  `RuntimeAdapters.lean`: one unused permission projection, three pass-through
+  approval/lease/rollback projections, and one adversarial valid-summary
+  projection.
+- Rebound the retained rejection theorems directly to their underlying
+  approval, lease-scope, and rollback predicates. The missing-approval,
+  mismatched/expired/unsandboxed-lease, and missing-rollback-handle
+  contradiction results remain live.
+- Rebound the Runtime adapter adversarial boundary validator to fifteen named
+  Lean route theorems—thirteen rejection cases and two accepted dispatch
+  cases—instead of a theorem that unpacked an assumed-valid fixture summary.
+  The existing public target remains implemented at its finite-route scope.
+- Excluded the cumulative proof-custody validator from semantic implementation
+  binding. Merely inventorying a Lean module for a meta-audit no longer raises
+  all its theorems to P3–P5; this corrects ten previously inflated Benchmark
+  Ratchets and Stable Capability Fields rows without changing their statements.
+- Extended the cumulative ledger to twenty-nine ordered retirements and eleven
+  public-target migrations. The current estate is 1,341 declarations: 47 P0,
+  776 P1, 25 P2, 319 P3, 93 P4, 81 P5, and zero P6. The remaining queue
+  contains 132 actions: 35 narrow-projection retirements, two scope-language
+  rewrites, and 95 stronger-model rewrites.
+- This transaction changes no chapter-core support state, empirical result,
+  deployment status, release state, or publication authority.
+
 ## 2026-07-25 — Fifth narrow-projection C6 tranche
 
 - Retired nine premise- or summary-restating declarations from
@@ -85,7 +111,7 @@
   P5, and zero P6. The remaining queue contains 156 actions: 59 narrow-
   projection retirements, two scope-language rewrites, and 95 stronger-model
   rewrites.
-- Current proof-depth snapshot: 333 proof targets, 110 Lean modules, 1346 theorem declarations, 921 derived/decomposed, 210 direct/projection, 215 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Current proof-depth snapshot: 333 proof targets, 110 Lean modules, 1341 theorem declarations, 921 derived/decomposed, 205 direct/projection, 215 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - Reconciled the structure, outline, chapter formal boundary, proof manifest,
   triage, implementation-horizon inventory, roadmap, machine status, schema,
   and validators. The transaction changes no benchmark result, support state,

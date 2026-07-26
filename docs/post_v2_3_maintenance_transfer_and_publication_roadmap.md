@@ -2,7 +2,7 @@
 
 Status: **active canonical successor**  
 Activated: 2026-07-16  
-Substantively revised: 2026-07-24
+Substantively revised: 2026-07-25
 Authority: Corben Sorenson  
 Machine status: `roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json`  
 Experiment authority: `docs/claim_bearing_experiment_competence_standard.md`
@@ -1006,7 +1006,7 @@ that remains safe only by never completing useful work fails the joint gate.
 
 Keep the existing syntax-level classifier, but add a semantic-depth overlay for
 every current declaration. The immutable pre-rationalization baseline contains
-1,370 declarations; the live estate contains 1,346 after twenty-four
+1,370 declarations; the live estate contains 1,341 after twenty-nine
 dependency-safe retirement transactions:
 
 | Level | Required meaning |
@@ -1148,13 +1148,13 @@ historical review. The immutable historical registry remains exactly 1,151
 theorems across 298 targets. The separately frozen pre-rationalization overlay
 at commit `d0f9bda14f1253999f2c40d556d925d31e4b36a4` classifies all 1,370
 baseline declarations. The current overlay in
-`proofs/proof_semantic_depth_overlay.json` classifies all 1,346 live theorem
+`proofs/proof_semantic_depth_overlay.json` classifies all 1,341 live theorem
 declarations across 104 theorem-bearing modules and maps them to 61 active
 semantic-owner chapters.
 
-The live semantic-depth distribution is 47 P0 record-shape results, 771 P1
+The live semantic-depth distribution is 47 P0 record-shape results, 776 P1
 finite-route results, 25 P2 reachability/nonvacuity results, 319 P3
-implementation-refinement results, 99 P4 cross-component-safety results, 85 P5
+implementation-refinement results, 93 P4 cross-component-safety results, 81 P5
 liveness/recovery results, and zero P6 empirically bound results. P6 being zero
 is intentional: the existence of an experiment file, trace, or generated
 artifact does not turn a theorem into empirical evidence.
@@ -1162,8 +1162,8 @@ artifact does not turn a theorem into empirical evidence.
 Every overlay row records its assumptions, active semantic owner, downstream
 consumer, witness or explicit witness absence, implementation binding, mutation
 evidence, maximum inference, and disposition. The resulting current estate is
-1,209 retain, 40 retire as narrow projection, two scope-language rewrites, and
-95 stronger-model rewrites. All 1,346 rows have mutation coverage and every
+1,209 retain, 35 retire as narrow projection, two scope-language rewrites, and
+95 stronger-model rewrites. All 1,341 rows have mutation coverage and every
 retained theorem has a named consumer.
 
 The cumulative dependency-safe retirement ledger is
@@ -1246,9 +1246,29 @@ implemented. No retired projection is replaced by an unrelated theorem, and
 no executable audit result, chapter-core support state, or historical artifact
 is erased.
 
+The sixth narrow-projection tranche retires five declarations from
+`RuntimeAdapters.lean`. One unused permission projection had no theorem
+consumer. Three approval, lease-scope, and rollback projections were used only
+as pass-through helpers; their retained rejection theorems now apply the
+underlying predicates directly, so the contradiction and negative-case
+conclusions remain without the extra theorem names. The adversarial-boundary
+validator no longer treats a hand-authored valid-summary conjunction as a
+formal bridge: its implemented public target is carried by fifteen named route
+theorems covering thirteen rejection cases and two complete dispatch cases.
+The target wording and status therefore remain unchanged. This transaction
+also excludes the cumulative proof-custody validator from semantic
+implementation binding: a meta-audit that inventories a module cannot make
+every theorem in that module P3–P5. This corrects ten previously inflated
+Benchmark Ratchets and Stable Capability Fields classifications without
+changing their statements. This correction and the theorem retirements
+preserve the wider permission, approval, lease, rollback, authority,
+confused-deputy, sandbox, receipt, replay, revocation, and adversarial route
+families while claiming no deployed enforcement, sandbox isolation, approval
+service, rollback service, or runtime safety.
+
 This receipt completes the C6 **classification** gate and begins its
-dependency-safe execution gate. Exactly 24 of the original 161 actions have
-been executed; 137 rewrite-or-retire actions remain: 40 narrow-projection
+dependency-safe execution gate. Exactly 29 of the original 161 actions have
+been executed; 132 rewrite-or-retire actions remain: 35 narrow-projection
 retirements, two scope-language rewrites, and 95 stronger-model rewrites. The
 next proof action is a dependency-safe narrow-projection tranche, preserving
 each correct bounded result until its consumers and maximum inference are

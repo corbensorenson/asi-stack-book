@@ -121,6 +121,14 @@ LEGACY_VALIDATOR_ALIASES = {
     "lean/AsiStackProofs/SupplyChainIntegrity.lean": {"validate_supply_chain_affected_paths.py"},
 }
 
+# Meta-audits inspect proof custody and repository consistency. They are not
+# implementations of every theorem in the Lean modules they inventory, and
+# therefore must not raise those theorems' semantic implementation-binding
+# level merely because the module is an audit input.
+META_AUDIT_VALIDATORS = {
+    "validate_proof_semantic_rationalization_ledger.py",
+}
+
 
 def load(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
@@ -214,6 +222,8 @@ def validation_index() -> dict[str, dict[str, Any]]:
         artifacts = [str(item) for item in unit.get("input_artifacts", [])]
         modules = [item for item in artifacts if item.startswith("lean/AsiStackProofs/") and item.endswith(".lean")]
         script_name = str(unit.get("script", ""))
+        if script_name in META_AUDIT_VALIDATORS:
+            continue
         modules.extend(
             module
             for module, aliases in LEGACY_VALIDATOR_ALIASES.items()

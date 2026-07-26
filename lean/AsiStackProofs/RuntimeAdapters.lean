@@ -27,13 +27,6 @@ def InvocationPermissionValid
     (job : ParentJob) (invocation : AdapterInvocation) : Prop :=
   PermissionIncluded job invocation
 
-theorem valid_invocation_has_required_permission
-    {job : ParentJob} {invocation : AdapterInvocation} :
-    InvocationPermissionValid job invocation ->
-    invocation.capability ∈ job.permissions := by
-  intro valid
-  exact valid
-
 theorem invocation_without_parent_permission_rejected
     {job : ParentJob} {invocation : AdapterInvocation} :
     invocation.capability ∉ job.permissions ->
@@ -48,15 +41,6 @@ def ApprovalRejectionValid (invocation : AdapterInvocation) : Prop :=
     invocation.approvalRecorded = false ->
       invocation.rejected = true
 
-theorem high_impact_adapter_without_approval_is_rejected
-    {invocation : AdapterInvocation} :
-    ApprovalRejectionValid invocation ->
-    invocation.highImpact = true ->
-    invocation.approvalRecorded = false ->
-    invocation.rejected = true := by
-  intro valid highImpact missingApproval
-  exact valid highImpact missingApproval
-
 theorem high_impact_adapter_without_approval_cannot_be_unrejected
     {invocation : AdapterInvocation} :
     invocation.highImpact = true ->
@@ -64,9 +48,7 @@ theorem high_impact_adapter_without_approval_cannot_be_unrejected
         invocation.rejected = false ->
           ¬ ApprovalRejectionValid invocation := by
   intro highImpact missingApproval notRejected valid
-  have rejected :=
-    high_impact_adapter_without_approval_is_rejected
-      valid highImpact missingApproval
+  have rejected := valid highImpact missingApproval
   rw [notRejected] at rejected
   contradiction
 
@@ -83,17 +65,6 @@ def LeasedInvocationValid
   InvocationPermissionValid job invocation ∧
     LeaseScopesInvocation lease invocation
 
-theorem valid_leased_invocation_has_active_scoped_sandbox
-    {job : ParentJob}
-    {invocation : AdapterInvocation}
-    {lease : EffectLease} :
-    LeasedInvocationValid job invocation lease ->
-      lease.capability = invocation.capability ∧
-        lease.active = true ∧
-          lease.sandboxed = true := by
-  intro valid
-  exact valid.right
-
 theorem mismatched_effect_lease_rejected
     {job : ParentJob}
     {invocation : AdapterInvocation}
@@ -101,7 +72,7 @@ theorem mismatched_effect_lease_rejected
     lease.capability ≠ invocation.capability ->
       ¬ LeasedInvocationValid job invocation lease := by
   intro mismatch valid
-  have scope := valid_leased_invocation_has_active_scoped_sandbox valid
+  have scope := valid.right
   exact mismatch scope.left
 
 theorem expired_effect_lease_rejected
@@ -111,7 +82,7 @@ theorem expired_effect_lease_rejected
     lease.active = false ->
       ¬ LeasedInvocationValid job invocation lease := by
   intro expired valid
-  have scope := valid_leased_invocation_has_active_scoped_sandbox valid
+  have scope := valid.right
   have activeTrue := scope.right.left
   rw [expired] at activeTrue
   cases activeTrue
@@ -123,7 +94,7 @@ theorem unsandboxed_effect_lease_rejected
     lease.sandboxed = false ->
       ¬ LeasedInvocationValid job invocation lease := by
   intro unsandboxed valid
-  have scope := valid_leased_invocation_has_active_scoped_sandbox valid
+  have scope := valid.right
   have sandboxTrue := scope.right.right
   rw [unsandboxed] at sandboxTrue
   cases sandboxTrue
@@ -135,16 +106,6 @@ def RollbackObligationValid
       lease.rollbackHandleRecorded = false ->
         invocation.rejected = true
 
-theorem high_impact_rollback_required_without_handle_is_rejected
-    {lease : EffectLease} {invocation : AdapterInvocation} :
-    RollbackObligationValid lease invocation ->
-      invocation.highImpact = true ->
-        lease.rollbackRequired = true ->
-          lease.rollbackHandleRecorded = false ->
-            invocation.rejected = true := by
-  intro valid highImpact rollbackRequired missingRollbackHandle
-  exact valid highImpact rollbackRequired missingRollbackHandle
-
 theorem rollback_required_without_handle_cannot_be_unrejected
     {lease : EffectLease} {invocation : AdapterInvocation} :
     invocation.highImpact = true ->
@@ -153,9 +114,7 @@ theorem rollback_required_without_handle_cannot_be_unrejected
           invocation.rejected = false ->
             ¬ RollbackObligationValid lease invocation := by
   intro highImpact rollbackRequired missingRollbackHandle notRejected valid
-  have rejected :=
-    high_impact_rollback_required_without_handle_is_rejected
-      valid highImpact rollbackRequired missingRollbackHandle
+  have rejected := valid highImpact rollbackRequired missingRollbackHandle
   rw [notRejected] at rejected
   contradiction
 
@@ -1223,19 +1182,6 @@ def RuntimeAdapterAdversarialProbeFixtureValid
           fixture.secretAndSandboxBoundaries = true ∧
             fixture.supportStateEffectNone = true ∧
               fixture.nonClaimBoundary = true
-
-theorem runtime_adapter_adversarial_boundary_probe_bridge
-    {fixture : RuntimeAdapterAdversarialProbeFixture} :
-    RuntimeAdapterAdversarialProbeFixtureValid fixture ->
-      fixture.lowImpactDispatchAccepted = true ∧
-        fixture.highImpactDispatchAccepted = true ∧
-          fixture.negativeControlsRejected = true ∧
-            fixture.authorityAndApprovalBoundaries = true ∧
-              fixture.secretAndSandboxBoundaries = true ∧
-                fixture.supportStateEffectNone = true ∧
-                  fixture.nonClaimBoundary = true := by
-  intro valid
-  exact valid
 
 structure HumanOversightDegradationFixtureSummary where
   scopedApprovalAccepted : Bool
