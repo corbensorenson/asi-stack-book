@@ -659,13 +659,13 @@
         "scripts/build_product_projections.py",
         "docs/product_projection_artifacts.md"
       ],
-      "output_contract": "Regenerate all three product routes and reject non-22 or out-of-order narrative selection, incomplete or duplicated unit ownership, hidden or stale specialist-owner routes, missing plain/normative/machine projections, unbounded machine contracts, omitted-reference loss, incomplete reference coverage, canonical-count drift, support promotion, changed evidence snapshots, or a stale unit-crosswalk digest.",
+      "output_contract": "Regenerate all three product routes and reject non-22 or out-of-order narrative selection, incomplete or duplicated unit ownership, hidden or stale specialist-owner routes, stale distinct responsibilities, support inflation, missing plain/normative/machine projections, unbounded machine contracts, omitted-reference loss, incomplete reference coverage, canonical-count drift, support promotion, changed evidence snapshots, or a stale unit-crosswalk digest.",
       "output_assertions": [
         "22 selected narrative units and 62 reference-routed chapters",
-        "62 specialist owners visibly linked under their assigned narrative units",
+        "62 specialist owners visibly linked under their assigned narrative units with canonical distinct responsibilities and support ceilings",
         "all 22 units expose separate plain-language, engineering-rule, and bounded machine-contract projections",
         "84 canonical chapters assigned exactly once across the narrative units",
-        "84 canonical reference chapters",
+        "84 canonical reference chapters with distinct responsibilities, claim identities, labels, and support ceilings",
         "17 evidence routes",
         "all core support remains argument",
         "content-addressed snapshots and the narrative-unit crosswalk digest match"
@@ -678,7 +678,9 @@
         "machine contract without noninheritance",
         "out-of-order selection",
         "changed evidence snapshot",
-        "hidden specialist owner"
+        "hidden specialist owner",
+        "stale specialist responsibility",
+        "inflated specialist support state"
       ],
       "prohibited_inference": "Projection consistency and snapshot identity do not establish editorial approval, independent review, runtime behavior, or claim truth.",
       "contract_precision": "exact_high_impact",

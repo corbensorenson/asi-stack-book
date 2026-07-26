@@ -164,8 +164,11 @@
       "requires_meaning_preservation_audit": true
     },
     "post_review_convergence": {
-      "state": "phase2_active_after_all_84_gate",
-      "active_work_mode": "phase2_proof_rationalization_and_natural_evidence_after_phase1_gate",
+      "state": "concept_first_continuation_after_all_84_gate",
+      "active_work_mode": "phase1b_semantic_organization_and_navigability",
+      "current_priority": "concept_first_semantic_organization_and_navigability",
+      "proof_work_priority": "not_current_while_concept_first_continuation_is_active",
+      "concept_first_exit_gate": "all_84_distinct_responsibilities_reader_visible_and_roadmap_only_idea_audit_reconciled",
       "phase1_audit_path": "docs/c1_c8_phase1_idea_placement_and_prose_audit_2026_07_25.md",
       "narrative_spine_path": "products/narrative_product_spine.json",
       "narrative_unit_crosswalk_path": "products/narrative_unit_crosswalk.json",

@@ -107,3 +107,20 @@ state. Phase 1 is closed. Phase 2 may now rationalize existing proof material,
 retire vacuity or duplication, bind only the smallest conclusions that named
 consumers need, and execute competent natural evidence without reopening
 protected outcomes before their preregistration boundary.
+
+## Concept-first continuation — 2026-07-26
+
+The initial C1–C8 gate remains passed; this continuation does not erase its
+receipt or claim that the earlier audit failed. It changes scheduling priority.
+Phase 2 work is allowed by the gate but is not the current default while the
+book receives another semantic-organization pass.
+
+The continuation requires every one of the 84 canonical chapters to expose its
+distinct responsibility, claim identity, claim label, and current support
+ceiling through the reader-facing product graph. The 22 representatives still
+orient their units; the other 62 owners now need more than a title and link.
+Their canonical core responsibilities and `argument` ceilings must be visible
+under the assigned unit and in the complete architecture reference. Validation
+must reject responsibility drift and support inflation. Proof expansion remains
+nonpriority until this reader-visible responsibility audit and any newly found
+roadmap-only prose debt are reconciled.

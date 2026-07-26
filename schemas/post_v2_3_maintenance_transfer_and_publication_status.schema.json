@@ -311,6 +311,9 @@
           "required": [
             "state",
             "active_work_mode",
+            "current_priority",
+            "proof_work_priority",
+            "concept_first_exit_gate",
             "phase1_audit_path",
             "narrative_spine_path",
             "narrative_unit_crosswalk_path",
@@ -338,10 +341,19 @@
           ],
           "properties": {
             "state": {
-              "const": "phase2_active_after_all_84_gate"
+              "const": "concept_first_continuation_after_all_84_gate"
             },
             "active_work_mode": {
-              "const": "phase2_proof_rationalization_and_natural_evidence_after_phase1_gate"
+              "const": "phase1b_semantic_organization_and_navigability"
+            },
+            "current_priority": {
+              "const": "concept_first_semantic_organization_and_navigability"
+            },
+            "proof_work_priority": {
+              "const": "not_current_while_concept_first_continuation_is_active"
+            },
+            "concept_first_exit_gate": {
+              "const": "all_84_distinct_responsibilities_reader_visible_and_roadmap_only_idea_audit_reconciled"
             },
             "phase1_audit_path": {
               "const": "docs/c1_c8_phase1_idea_placement_and_prose_audit_2026_07_25.md"

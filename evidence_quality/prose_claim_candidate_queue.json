@@ -3,13 +3,13 @@
   "scanner": "modal and outcome-bearing sentence cue scan; candidates require semantic adjudication",
   "summary": {
     "chapter_count": 64,
-    "candidate_count": 3437,
+    "candidate_count": 3439,
     "review_state_counts": {
       "duplicate_of_atom": 1524,
       "editorial_or_question": 71,
       "historical_or_source_report": 290,
       "material_atom": 3,
-      "nonmaterial_explanation": 1549
+      "nonmaterial_explanation": 1551
     }
   },
   "candidates": [
@@ -64468,9 +64468,47 @@
       "target_atom_id": null
     },
     {
+      "candidate_id": "living-book-methodology.prose.f4dce059d7a0",
+      "chapter_id": "living-book-methodology",
+      "source": "chapters/living-book-methodology.qmd:192",
+      "sentence": "Generated products must bind the canonical structure and unit crosswalk, and",
+      "cues": [
+        "must"
+      ],
+      "review_state": "nonmaterial_explanation",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "First line-wrapped fragment of the narrative-projection validation rule. It describes repository projection hygiene already governed by the product contracts and does not assert an independent architecture or evidence claim.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "living-book-methodology.prose.f1df32158fdf",
+      "chapter_id": "living-book-methodology",
+      "source": "chapters/living-book-methodology.qmd:193",
+      "sentence": "validation must reject missing owners, stale responsibility prose, duplicate",
+      "cues": [
+        "must"
+      ],
+      "review_state": "nonmaterial_explanation",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Second line-wrapped fragment of the narrative-projection validation rule. It enumerates failure conditions for the generated reader route and does not promote any specialist claim or support state.",
+      "target_atom_id": null
+    },
+    {
       "candidate_id": "living-book-methodology.prose.bd6c53f58c0c",
       "chapter_id": "living-book-methodology",
-      "source": "chapters/living-book-methodology.qmd:166",
+      "source": "chapters/living-book-methodology.qmd:199",
       "sentence": "The book may eventually support several smaller publications, but they must be",
       "cues": [
         "must"
@@ -64489,7 +64527,7 @@
     {
       "candidate_id": "living-book-methodology.prose.b88b299ecf7c",
       "chapter_id": "living-book-methodology",
-      "source": "chapters/living-book-methodology.qmd:176",
+      "source": "chapters/living-book-methodology.qmd:209",
       "sentence": "receipts, dashboards, rollback claims, and public surfaces require",
       "cues": [
         "require"
@@ -64508,7 +64546,7 @@
     {
       "candidate_id": "living-book-methodology.prose.712b647647d2",
       "chapter_id": "living-book-methodology",
-      "source": "chapters/living-book-methodology.qmd:191",
+      "source": "chapters/living-book-methodology.qmd:224",
       "sentence": "proof audit and natural flagship outcome required by their claims.",
       "cues": [
         "required"
@@ -64527,7 +64565,7 @@
     {
       "candidate_id": "living-book-methodology.prose.4f0c3311ff23",
       "chapter_id": "living-book-methodology",
-      "source": "chapters/living-book-methodology.qmd:214",
+      "source": "chapters/living-book-methodology.qmd:247",
       "sentence": "**What the living book ratchet shows:** The living-book loop treats sources, notes, drafts, claims, proofs, validation, release, editions, and residuals as one publication ratchet.",
       "cues": [
         "shows"
@@ -64546,7 +64584,7 @@
     {
       "candidate_id": "living-book-methodology.prose.e1f0407cf020",
       "chapter_id": "living-book-methodology",
-      "source": "chapters/living-book-methodology.qmd:216",
+      "source": "chapters/living-book-methodology.qmd:249",
       "sentence": "Repeated maintenance work should become scripts, validators, schemas, or proof modules.",
       "cues": [
         "should"
@@ -64565,7 +64603,7 @@
     {
       "candidate_id": "living-book-methodology.prose.6f6958a43f45",
       "chapter_id": "living-book-methodology",
-      "source": "chapters/living-book-methodology.qmd:218",
+      "source": "chapters/living-book-methodology.qmd:251",
       "sentence": "When an AI agent writes from the outline, the outline should behave like a build plan.",
       "cues": [
         "should"
@@ -64584,7 +64622,7 @@
     {
       "candidate_id": "living-book-methodology.prose.47fb273c9115",
       "chapter_id": "living-book-methodology",
-      "source": "chapters/living-book-methodology.qmd:226",
+      "source": "chapters/living-book-methodology.qmd:259",
       "sentence": "The eighteen invariants require exact transaction scope; canonical-source primacy; stable identities; zero fabricated source, proof, test, render, review, or publication claims; lane separation; complete material-claim records; accepted evidence transitions only; explicit proof scope and consumers; generated-projection synchronization; typed derivative boundaries; distinct generation, review, approval, deployment, observation, archive, and publication states; retained negative and unpublished outcomes; correction propagation; commit-bound release identity; visible living versus immutable versus local truth; joint quality, failure, burden, and cost; exactly one active successor roadmap; and a strict boundary around what green validation or polished prose can prove.",
       "cues": [
         "prove",
@@ -64604,7 +64642,7 @@
     {
       "candidate_id": "living-book-methodology.prose.9eab34e1d866",
       "chapter_id": "living-book-methodology",
-      "source": "chapters/living-book-methodology.qmd:230",
+      "source": "chapters/living-book-methodology.qmd:263",
       "sentence": "The named falsifiers are canonical/projection inversion; manifest-outline-chapter-proof drift; source laundering; claim laundering; proof theater; validation theater; release laundering; derivative equality; derivative drift; latest-release overwrite; stale public truth; editorial automation that smooths uncertainty; accessibility theater; rights or provenance drift; correction failure; maintenance bloat; successor discontinuity; and unsupported transfer.",
       "cues": [
         "transfer"
@@ -64623,7 +64661,7 @@
     {
       "candidate_id": "living-book-methodology.prose.a529f09c2cba",
       "chapter_id": "living-book-methodology",
-      "source": "chapters/living-book-methodology.qmd:230",
+      "source": "chapters/living-book-methodology.qmd:263",
       "sentence": "Each failure must create a blocking validator, correction, erratum, residual, downgrade, reverted derivative, revoked release, archived supersession, or successor work item.",
       "cues": [
         "must"
@@ -64642,7 +64680,7 @@
     {
       "candidate_id": "living-book-methodology.prose.bfd5b43597d8",
       "chapter_id": "living-book-methodology",
-      "source": "chapters/living-book-methodology.qmd:238",
+      "source": "chapters/living-book-methodology.qmd:271",
       "sentence": "Source interpretation, editorial quality, accessibility approval, chapter truth, reader or audio approval, external reproduction, transfer, and a chapter-core support effect remain outside their scope.",
       "cues": [
         "transfer"
@@ -64661,7 +64699,7 @@
     {
       "candidate_id": "living-book-methodology.prose.0ec8460d1e84",
       "chapter_id": "living-book-methodology",
-      "source": "chapters/living-book-methodology.qmd:242",
+      "source": "chapters/living-book-methodology.qmd:275",
       "sentence": "The mature argument-exit campaign must follow a prospectively frozen stream of natural substantive updates: new sources, conflicts, promotion and refutation, proof retirement, schema changes, figures, accessibility fixes, corrections, rollbacks, releases, reader derivatives, and successor handoffs performed by multiple independent human and AI maintainers.",
       "cues": [
         "must"
@@ -64680,7 +64718,7 @@
     {
       "candidate_id": "living-book-methodology.prose.4a386bde378a",
       "chapter_id": "living-book-methodology",
-      "source": "chapters/living-book-methodology.qmd:242",
+      "source": "chapters/living-book-methodology.qmd:275",
       "sentence": "It must compare the Evidence-Preserving Publication Transaction with matched static manuscript, wiki, ordinary Git repository, literate-programming, executable-book, docs-as-code, and strongest conventional scholarly publishing workflows under equal content, tooling, time, and review opportunity.",
       "cues": [
         "must"
@@ -64699,7 +64737,7 @@
     {
       "candidate_id": "living-book-methodology.prose.00a03624f3da",
       "chapter_id": "living-book-methodology",
-      "source": "chapters/living-book-methodology.qmd:244",
+      "source": "chapters/living-book-methodology.qmd:277",
       "sentence": "The campaign must inject source revocation, citation error, claim drift, proof bloat, validator weakness, rights conflict, derivative drift, release mismatch, deployment failure, errata, and handoff loss.",
       "cues": [
         "must"
@@ -64718,7 +64756,7 @@
     {
       "candidate_id": "living-book-methodology.prose.cef5771ba861",
       "chapter_id": "living-book-methodology",
-      "source": "chapters/living-book-methodology.qmd:244",
+      "source": "chapters/living-book-methodology.qmd:277",
       "sentence": "It must jointly measure claim accuracy and calibration, source and proof traceability, error detection, correction latency, reproducibility, rollback, accessibility, reader comprehension, editorial quality, maintenance burden, reviewer time, compute, storage, hosting, opportunity cost, and total cost.",
       "cues": [
         "measure",
@@ -64738,7 +64776,7 @@
     {
       "candidate_id": "living-book-methodology.prose.b369cf853acf",
       "chapter_id": "living-book-methodology",
-      "source": "chapters/living-book-methodology.qmd:246",
+      "source": "chapters/living-book-methodology.qmd:279",
       "sentence": "Independent maintainers, editors, accessibility reviewers, readers, repositories, institutions, formats, hosting systems, and domains must reproduce and transfer positive, negative, null, narrowed, blocked, and refuted outcomes.",
       "cues": [
         "must",
@@ -64758,7 +64796,7 @@
     {
       "candidate_id": "living-book-methodology.prose.cd45e2b5a0f4",
       "chapter_id": "living-book-methodology",
-      "source": "chapters/living-book-methodology.qmd:246",
+      "source": "chapters/living-book-methodology.qmd:279",
       "sentence": "Until then the transaction remains a target architecture, not proof of superior scholarship, editorial quality, accessibility, reader value, governance effectiveness, external reproducibility, transfer, or SOTA publishing.",
       "cues": [
         "transfer"
@@ -64777,7 +64815,7 @@
     {
       "candidate_id": "living-book-methodology.prose.5e15de10d246",
       "chapter_id": "living-book-methodology",
-      "source": "chapters/living-book-methodology.qmd:277",
+      "source": "chapters/living-book-methodology.qmd:310",
       "sentence": "They prove only the record-level gates: a manifest chapter has outline proof targets and generated claim placeholders, a structural update marked valid requires regenerated scaffold and proof manifest, a release-ready record needs validation/changelog/residuals, a derived artifact needs source/review/support boundaries, a public-surface change packet needs validation, changelog, support-state, non-claim, derivative-boundary, and evidence-transition discipline, and a reader release candidate with local format evidence still routes to accessibility, audio, or approval review while blockers remain.",
       "cues": [
         "prove",
@@ -64797,7 +64835,7 @@
     {
       "candidate_id": "living-book-methodology.prose.8ddce62aab39",
       "chapter_id": "living-book-methodology",
-      "source": "chapters/living-book-methodology.qmd:277",
+      "source": "chapters/living-book-methodology.qmd:310",
       "sentence": "The module proves bounded negative cases named `manifest_chapter_missing_outline_targets_or_claim_placeholders_rejected`, `structural_update_marked_valid_without_sync_artifacts_rejected`, `release_ready_without_validation_changelog_or_residuals_rejected`, `derived_artifact_without_source_review_or_support_boundary_rejected`, `change_packet_without_validation_changelog_support_or_nonclaims_rejected`, `derived_artifact_equal_authority_change_packet_rejected`, `support_promotion_without_evidence_transition_rejected`, `local_reader_artifacts_do_not_clear_missing_accessibility_review`, `reader_release_candidate_missing_audio_routes_to_audio_review`, `reader_release_candidate_missing_approval_routes_to_release_approval`, and `reader_release_candidate_support_promotion_claim_rejected`.",
       "cues": [
         "proves"
@@ -64816,7 +64854,7 @@
     {
       "candidate_id": "living-book-methodology.prose.bd3e62131945",
       "chapter_id": "living-book-methodology",
-      "source": "chapters/living-book-methodology.qmd:277",
+      "source": "chapters/living-book-methodology.qmd:310",
       "sentence": "These cases reject malformed maintenance/release records; they do not prove manuscript quality, source-to-claim completeness, editorial judgment, GitHub Pages availability, reader artifact approval, audio artifact approval, future-agent correctness, or support-state promotion.",
       "cues": [
         "prove"
@@ -64835,7 +64873,7 @@
     {
       "candidate_id": "living-book-methodology.prose.3429569c56ea",
       "chapter_id": "living-book-methodology",
-      "source": "chapters/living-book-methodology.qmd:281",
+      "source": "chapters/living-book-methodology.qmd:314",
       "sentence": "None proves that the records are semantically truthful, that the validators are adequate, that prose is correct or readable, that accessibility or editorial review succeeds, that a public site is continuously available, or that the method improves scholarship, maintenance, governance, reproduction, or transfer.",
       "cues": [
         "improves",
@@ -64856,7 +64894,7 @@
     {
       "candidate_id": "living-book-methodology.prose.187c9f775df0",
       "chapter_id": "living-book-methodology",
-      "source": "chapters/living-book-methodology.qmd:303",
+      "source": "chapters/living-book-methodology.qmd:336",
       "sentence": "These sources guide the method; local validation artifacts show repository hygiene.",
       "cues": [
         "show"
@@ -64875,7 +64913,7 @@
     {
       "candidate_id": "living-book-methodology.prose.230ca9d822fa",
       "chapter_id": "living-book-methodology",
-      "source": "chapters/living-book-methodology.qmd:332",
+      "source": "chapters/living-book-methodology.qmd:365",
       "sentence": "validator establishes only that the declared bounded attempt survived its",
       "cues": [
         "establishes"
@@ -64894,7 +64932,7 @@
     {
       "candidate_id": "living-book-methodology.prose.112b3d0ef1d3",
       "chapter_id": "living-book-methodology",
-      "source": "chapters/living-book-methodology.qmd:333",
+      "source": "chapters/living-book-methodology.qmd:366",
       "sentence": "It cannot fill an atom's missing lane, promote a chapter",
       "cues": [
         "cannot"
@@ -64913,7 +64951,7 @@
     {
       "candidate_id": "living-book-methodology.prose.26c9a1b4e35c",
       "chapter_id": "living-book-methodology",
-      "source": "chapters/living-book-methodology.qmd:334",
+      "source": "chapters/living-book-methodology.qmd:367",
       "sentence": "core, imply transfer, or turn a fixture, theorem count, source count, or nearby",
       "cues": [
         "transfer"
@@ -64932,7 +64970,7 @@
     {
       "candidate_id": "living-book-methodology.prose.d563383da3e3",
       "chapter_id": "living-book-methodology",
-      "source": "chapters/living-book-methodology.qmd:338",
+      "source": "chapters/living-book-methodology.qmd:371",
       "sentence": "cannot be widened beyond its recorded scope.",
       "cues": [
         "cannot"
@@ -64951,7 +64989,7 @@
     {
       "candidate_id": "living-book-methodology.prose.8e3feeaa6c1c",
       "chapter_id": "living-book-methodology",
-      "source": "chapters/living-book-methodology.qmd:342",
+      "source": "chapters/living-book-methodology.qmd:375",
       "sentence": "field semantics, or inference rule must change this contract, the terminal",
       "cues": [
         "must"
@@ -64970,7 +65008,7 @@
     {
       "candidate_id": "living-book-methodology.prose.d7e1d923291e",
       "chapter_id": "living-book-methodology",
-      "source": "chapters/living-book-methodology.qmd:348",
+      "source": "chapters/living-book-methodology.qmd:381",
       "sentence": "Living Book Methodology defines how this project improves without losing its memory.",
       "cues": [
         "improves"
@@ -64989,7 +65027,7 @@
     {
       "candidate_id": "living-book-methodology.prose.6bce4b8cad50",
       "chapter_id": "living-book-methodology",
-      "source": "chapters/living-book-methodology.qmd:350",
+      "source": "chapters/living-book-methodology.qmd:383",
       "sentence": "If The ASI Stack cannot manage its own source queues, claim states, proofs, tests, reader editions, audio derivatives, and releases, then it has not earned the right to describe governed recursive improvement.",
       "cues": [
         "cannot"
@@ -65008,7 +65046,7 @@
     {
       "candidate_id": "living-book-methodology.prose.6b9bd5d9dedd",
       "chapter_id": "living-book-methodology",
-      "source": "chapters/living-book-methodology.qmd:352",
+      "source": "chapters/living-book-methodology.qmd:385",
       "sentence": "A future agent should be able to resume the book from the repository state, not from private memory.",
       "cues": [
         "should"
@@ -65027,7 +65065,7 @@
     {
       "candidate_id": "living-book-methodology.prose.df7cb32e24fb",
       "chapter_id": "living-book-methodology",
-      "source": "chapters/living-book-methodology.qmd:352",
+      "source": "chapters/living-book-methodology.qmd:385",
       "sentence": "If the repo cannot explain what to load, what to change, what to validate, what to publish, and what remains blocked, the living-book layer is not yet alive enough.",
       "cues": [
         "cannot"
@@ -65046,7 +65084,7 @@
     {
       "candidate_id": "living-book-methodology.prose.c5c93471f3ea",
       "chapter_id": "living-book-methodology",
-      "source": "chapters/living-book-methodology.qmd:389",
+      "source": "chapters/living-book-methodology.qmd:422",
       "sentence": "A living methodology needs a backlog that tells future work what to read, mine, test, prove, normalize, import, reproduce, defer, or reject.",
       "cues": [
         "prove"

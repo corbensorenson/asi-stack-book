@@ -39,11 +39,13 @@ gates still apply. No external-human review is a prepublication requirement.
 `products/narrative_unit_crosswalk.json` assigns every canonical chapter to
 exactly one unit. The generated product page now expands each unit into its
 specialist reference-owner list and gives every one of the 62 owners a direct
-Human-view chapter link. This changes routing, not ownership: representative
+Human-view chapter link. Each route also states the owner's canonical distinct
+responsibility, claim identity, claim label, and current support ceiling. This
+changes routing, not ownership: representative
 chapters do not absorb the sources, claims, evidence, or authority of their
 specialist owners. The root projection manifest binds the crosswalk digest,
-and product validation rejects omitted, hidden, stale, or multiply assigned
-owners.
+and product validation rejects omitted, hidden, stale, support-inflated, or
+multiply assigned owners.
 
 `products/narrative_running_example_trace.json` makes the running example
 cumulative rather than thematic. It begins with one human repository-change
@@ -79,10 +81,11 @@ work.
 
 The generated architecture route is a complete 84-chapter lookup index in
 canonical manifest order. Every row carries the canonical chapter and
-core-claim identity plus its assignment to one of the three defended
-contributions. Protocol schemas, implementation horizons, and the glossary
-remain supporting routes. Completeness of the index does not establish a
-deployed implementation or architecture quality.
+core-claim identity, distinct responsibility, claim label, support ceiling,
+and assignment to one of the three defended contributions. Protocol schemas,
+implementation horizons, and the glossary remain supporting routes.
+Completeness of the index does not establish a deployed implementation or
+architecture quality.
 
 ## Evidence, proof, and release registry
 
@@ -113,11 +116,11 @@ the exact tested bundle; it does not rebuild product pages.
 bounded reader source in temporary workspaces. It checks canonical order,
 complete routing, all three generated orientation projections, explicit
 machine-contract noninheritance, source digests, canonical counts, and
-unchanged `argument` support. Six mutation controls reject a 23-unit
+unchanged `argument` support. Eight mutation controls reject a 23-unit
 narrative, a missing machine contract, a substantial-looking machine contract
 without a noninheritance boundary, out-of-order selection, a changed evidence
-snapshot, and a specialist owner hidden from its unit. With `--site _site`, it
-also checks the
+snapshot, a specialist owner hidden from its unit, a stale responsibility, and
+an inflated support state. With `--site _site`, it also checks the
 rendered canonical-status binding, product manifests and pages, every chapter
 target, every visible specialist-owner link, every rendered evidence route,
 content-addressed snapshots, the current crosswalk digest, and the presence of

@@ -108,6 +108,9 @@ def canonical_chapters(structure: dict[str, Any]) -> list[dict[str, Any]]:
                 "source_file": source_file,
                 "public_path": str(Path(source_file).with_suffix(".html")),
                 "core_claim_ref": f"{chapter_id}.core",
+                "core_claim": str(chapter.get("core_claim", "")),
+                "claim_label": str(chapter.get("claim_label", "")),
+                "support_state": str(chapter.get("evidence_level", "")),
             })
     return rows
 
@@ -185,6 +188,9 @@ def build_narrative(
                 "title": owner["title"],
                 "canonical_order": owner["order"],
                 "core_claim_ref": owner["core_claim_ref"],
+                "distinct_responsibility": owner["core_claim"],
+                "claim_label": owner["claim_label"],
+                "support_state": owner["support_state"],
                 "architecture_reference_path": owner["public_path"],
             })
         row["unit_id"] = unit["unit_id"]
@@ -209,9 +215,12 @@ def build_narrative(
             "nearest_narrative_owner": owner_id,
             "unit_id": unit_by_chapter[row["chapter_id"]]["unit_id"],
             "unit_label": unit_by_chapter[row["chapter_id"]]["label"],
+            "distinct_responsibility": row["core_claim"],
+            "claim_label": row["claim_label"],
+            "support_state": row["support_state"],
         })
     manifest = {
-        "schema_version": "asi_stack.narrative_product_projection.v0",
+        "schema_version": "asi_stack.narrative_product_projection.v1",
         "status": spine["status"],
         "selected_chapter_count": len(selected),
         "canonical_chapter_count": len(canonical),
@@ -237,9 +246,15 @@ def build_narrative(
             )
             + '">'
             + escape(owner["title"])
-            + '</a> <span class="meta"><code>'
+            + '</a><br><span class="meta"><strong>Distinct responsibility:</strong> '
+            + escape(owner["distinct_responsibility"])
+            + '<br><code>'
             + escape(owner["core_claim_ref"])
-            + "</code></span></li>"
+            + "</code> · "
+            + escape(owner["claim_label"])
+            + " at <code>"
+            + escape(owner["support_state"])
+            + "</code> support</span></li>"
             for owner in row["reference_owners"]
         )
         if reference_owner_items:
@@ -319,7 +334,10 @@ def build_reference(
             cards.append(
                 f'<article class="card"><div class="meta">{row["order"]} · {escape(str(row.get("contribution_role") or ""))}</div>'
                 f'<h3><a href="{escape(link)}">{escape(row["title"])}</a></h3>'
-                f'<p class="meta"><code>{escape(row["core_claim_ref"])}</code><br>{escape(str(row.get("contribution_id") or ""))}</p></article>'
+                f'<details><summary>Distinct responsibility</summary><p>{escape(row["core_claim"])}</p></details>'
+                f'<p class="meta"><code>{escape(row["core_claim_ref"])}</code> · '
+                f'{escape(row["claim_label"])} at <code>{escape(row["support_state"])}</code> support'
+                f'<br>{escape(str(row.get("contribution_id") or ""))}</p></article>'
             )
         sections.append(f"<h2>{escape(part)}</h2><div class=\"grid\">{''.join(cards)}</div>")
     body = (

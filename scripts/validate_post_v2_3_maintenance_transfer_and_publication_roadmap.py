@@ -1036,8 +1036,11 @@ def errors(data: dict) -> list[str]:
         "C8-evidence-led-publication-and-derivative-papers",
     ]
     if (
-        convergence.get("state") != "phase2_active_after_all_84_gate"
-        or convergence.get("active_work_mode") != "phase2_proof_rationalization_and_natural_evidence_after_phase1_gate"
+        convergence.get("state") != "concept_first_continuation_after_all_84_gate"
+        or convergence.get("active_work_mode") != "phase1b_semantic_organization_and_navigability"
+        or convergence.get("current_priority") != "concept_first_semantic_organization_and_navigability"
+        or convergence.get("proof_work_priority") != "not_current_while_concept_first_continuation_is_active"
+        or convergence.get("concept_first_exit_gate") != "all_84_distinct_responsibilities_reader_visible_and_roadmap_only_idea_audit_reconciled"
         or convergence.get("phase1_audit_path") != "docs/c1_c8_phase1_idea_placement_and_prose_audit_2026_07_25.md"
         or convergence.get("narrative_spine_path") != "products/narrative_product_spine.json"
         or convergence.get("narrative_unit_crosswalk_path") != "products/narrative_unit_crosswalk.json"
@@ -1579,6 +1582,7 @@ def main() -> None:
     mutate("post-review calculus property deletion", lambda c: c["status"]["quality_uplift_program"]["post_review_convergence"]["governed_transition_calculus_properties"].pop())
     mutate("post-review bounded-liveness deletion", lambda c: c["status"]["quality_uplift_program"]["post_review_convergence"].__setitem__("bounded_liveness_required", False))
     mutate("post-review external-human gate", lambda c: c["status"]["quality_uplift_program"]["post_review_convergence"].__setitem__("prepublication_external_human_required", True))
+    mutate("post-review proof priority inversion", lambda c: c["status"]["quality_uplift_program"]["post_review_convergence"].__setitem__("proof_work_priority", "current"))
     mutate("post-review role omission", lambda c: c["current_role_map"]["roles"]["load-bearing-reference"].pop())
     mutate("communication candidate gate weakening", lambda c: c["status"]["quality_uplift_program"]["structural_completeness_tranche"]["second_tranche"].__setitem__("communication_requires_source_ethics_and_effect_gate", False))
     mutate("institutional candidate gate weakening", lambda c: c["status"]["quality_uplift_program"]["structural_completeness_tranche"]["second_tranche"].__setitem__("institutions_require_authority_legitimacy_and_update_gate", False))

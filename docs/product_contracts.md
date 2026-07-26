@@ -32,8 +32,9 @@ repeated support boilerplate.
 exactly one unit. The representative chapter does not absorb the claims or
 evidence of its routed specialist owners; the crosswalk is navigation and
 coverage control. The generated narrative page makes that relationship
-reader-visible: each unit lists and directly links every specialist owner,
-while sole-owner units say so explicitly.
+reader-visible: each unit lists and directly links every specialist owner and
+states that owner's distinct responsibility, claim identity, claim label, and
+support ceiling, while sole-owner units say so explicitly.
 
 The route and Human view are convenience projections. They are not the reviewed reader release.
 A reader artifact still needs continuity, editorial, accessibility, figure,

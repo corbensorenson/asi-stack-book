@@ -4,7 +4,7 @@ chapter_id: "living-book-methodology"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.3 semantically audited manuscript"
-last_updated: "2026-07-16"
+last_updated: "2026-07-26"
 primary_sources:
   - "benchmaxxing"
   - "viea"
@@ -40,7 +40,7 @@ open_evidence_gaps:
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
 | Manuscript maturity | v0.3 semantically audited manuscript |
-| Last updated | 2026-07-15 |
+| Last updated | 2026-07-26 |
 | Primary source records | `benchmaxxing`, `viea`, `bugbrain`, `cognitive_loop_closure`, `moecot`, `moecot_md`, `road_to_agi`, `ext_openunlearning_2025`, `ext_literate_programming_1984`, `ext_jupyter_book_docs`, `ext_quarto_books_docs`, `ext_nist_ai_rmf_1_0_2023`, `ext_frontier_ai_regulation_2023`, `ext_helm_2022`, `ext_livebench_2024`, `ext_benchmark_contamination_2023` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -160,6 +160,39 @@ failures or opening parallel definitions of current work.
 Every terminal state therefore remains inspectable by its named consumers.
 
 Quarto renders the book, but canonical structure, claim authority, proof scope, release identity, and derivative boundaries live in separate records. That separation is the rollback handle: a polished output can be rebuilt or withdrawn without rewriting what the source, claim, proof, or approval state actually was.
+
+### Narrative compression without claim absorption
+
+A broad technical book needs more than one useful reading density. The
+complete architecture reference preserves all canonical owners, but forcing a
+new reader through every specialist mechanism before the central thesis is
+visible creates a different kind of information loss. The narrative product
+therefore groups chapters into thematic units and chooses one representative
+chapter to orient each unit. Representation is a navigation role, not a
+transfer of claim ownership.
+
+The unit boundary preserves four identities for every specialist: its distinct
+responsibility, core-claim identifier, claim label, and current support
+ceiling. A direct route returns the reader to the complete chapter. The
+representative may explain how those responsibilities compose, but it may not
+inherit their sources, evidence, authority, implementation burden, or
+conclusions. Conversely, omission from the short path does not demote,
+deprecate, merge, or reject a specialist owner.
+
+| Reader projection object | What it owns | What it cannot absorb |
+|---|---|---|
+| Narrative unit | One conceptual question, orientation, running example, objection, failure story, and handoff. | The separate claims or evidence of its member chapters. |
+| Representative chapter | The unit's plain-language thesis, normative engineering rule, and bounded machine contract. | Specialist mechanisms merely because it introduces their shared context. |
+| Specialist owner | One distinct responsibility, claim identity, evidence ceiling, interfaces, failures, and implementation target. | The representative's orientation role or another specialist's claim. |
+| Architecture reference | Complete canonical lookup and technical density across every owner. | Evidence that the architecture is correct, deployed, or sufficiently complete. |
+
+This makes editorial compression reversible. A reader can expand from the
+unit orientation to the exact owner without guessing which chapter contains
+the mechanism or whether the short route changed its evidentiary status.
+Generated products must bind the canonical structure and unit crosswalk, and
+validation must reject missing owners, stale responsibility prose, duplicate
+assignment, broken links, or support inflation. A smoother narrative is useful
+only if it remains an honest projection of the full responsibility graph.
 
 ### Evidence-led derivative program
 

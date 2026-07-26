@@ -1150,6 +1150,29 @@ This amendment changes planning authority only. It creates no formal result,
 natural evidence, support transition, reader release, deployment, SOTA result,
 AGI/ASI claim, license grant, or publication authorization.
 
+### Concept-first scheduling continuation — 2026-07-26
+
+The initial all-84 Phase 1 gate remains a valid historical receipt, and Phase 2
+remains admissible under the dependency order above. The current user-authorized
+priority is nevertheless concept placement, semantic organization, and
+navigability—not another theorem-retirement or proof-expansion tranche.
+
+This continuation has three exit conditions:
+
+1. every canonical chapter exposes its distinct responsibility, claim identity,
+   claim label, and current support ceiling in the complete architecture
+   reference;
+2. every one of the 62 nonrepresentative chapters exposes the same responsibility
+   and evidence boundary under its assigned narrative unit rather than only a
+   title or machine-manifest membership; and
+3. a roadmap-only idea audit either places each worthwhile concept in an existing
+   prose owner or records why the existing owner already contains it.
+
+The original 22-unit orientations, 84-chapter ownership, three defended
+contributions, support states, proof results, and empirical gates remain
+unchanged. Phase 2 proof execution is still logically allowed, but it is not
+the current scheduling default and may not displace this concept-first pass.
+
 ### C6 current-estate classification and cumulative execution receipt — 2026-07-25
 
 C6 now has a complete current-estate classification, not merely the frozen

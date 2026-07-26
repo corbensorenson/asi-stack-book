@@ -5620,7 +5620,7 @@
       "execution_tier": "pr",
       "validation_class": "reader_artifact_gate",
       "input_contract": "Canonical manifest/status, product and contribution contracts, 22-unit narrative spine, exact 84-chapter unit crosswalk, reader generator/overlays, projection schemas, and repository-backed evidence routes.",
-      "output_contract": "Regenerate all three product routes and reject non-22 or out-of-order narrative selection, incomplete or duplicated unit ownership, hidden or stale specialist-owner routes, missing plain/normative/machine projections, unbounded machine contracts, omitted-reference loss, incomplete reference coverage, canonical-count drift, support promotion, changed evidence snapshots, or a stale unit-crosswalk digest.",
+      "output_contract": "Regenerate all three product routes and reject non-22 or out-of-order narrative selection, incomplete or duplicated unit ownership, hidden or stale specialist-owner routes, stale distinct responsibilities, support inflation, missing plain/normative/machine projections, unbounded machine contracts, omitted-reference loss, incomplete reference coverage, canonical-count drift, support promotion, changed evidence snapshots, or a stale unit-crosswalk digest.",
       "claim_scope": "Generated product navigation, bounded reader source selection, and registry snapshot identity.",
       "negative_controls": "validator_owned",
       "prohibited_inference": "Projection consistency and snapshot identity do not establish editorial approval, independent review, runtime behavior, or claim truth.",
@@ -5638,10 +5638,10 @@
       ],
       "output_assertions": [
         "22 selected narrative units and 62 reference-routed chapters",
-        "62 specialist owners visibly linked under their assigned narrative units",
+        "62 specialist owners visibly linked under their assigned narrative units with canonical distinct responsibilities and support ceilings",
         "all 22 units expose separate plain-language, engineering-rule, and bounded machine-contract projections",
         "84 canonical chapters assigned exactly once across the narrative units",
-        "84 canonical reference chapters",
+        "84 canonical reference chapters with distinct responsibilities, claim identities, labels, and support ceilings",
         "17 evidence routes",
         "all core support remains argument",
         "content-addressed snapshots and the narrative-unit crosswalk digest match"
@@ -5652,7 +5652,9 @@
         "machine contract without noninheritance",
         "out-of-order selection",
         "changed evidence snapshot",
-        "hidden specialist owner"
+        "hidden specialist owner",
+        "stale specialist responsibility",
+        "inflated specialist support state"
       ],
       "contract_precision": "exact_high_impact",
       "semantic_review_state": "internal_contract_audit_not_independent"

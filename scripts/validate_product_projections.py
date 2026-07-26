@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import copy
 import hashlib
+from html import escape
 import json
 from pathlib import Path
 import tempfile
@@ -183,12 +184,17 @@ def narrative_routing_errors(
                 "title": canonical_owner["title"],
                 "canonical_order": canonical_owner["order"],
                 "core_claim_ref": canonical_owner["core_claim_ref"],
+                "distinct_responsibility": canonical_owner["core_claim"],
+                "claim_label": canonical_owner["claim_label"],
+                "support_state": canonical_owner["support_state"],
                 "architecture_reference_path": canonical_owner["public_path"],
             }
             if owner != expected_record:
                 errors.append(f"{chapter_id}: specialist owner {owner_id} is stale against canonical metadata")
             if canonical_owner["title"] not in html_text:
                 errors.append(f"{chapter_id}: specialist owner {owner_id} is hidden from the narrative page")
+            if escape(canonical_owner["core_claim"]) not in html_text:
+                errors.append(f"{chapter_id}: specialist owner {owner_id} lacks a visible distinct responsibility")
             if f'{canonical_owner["public_path"]}?view=human' not in html_text:
                 errors.append(f"{chapter_id}: specialist owner {owner_id} lacks a direct Human-view route")
 
@@ -219,6 +225,28 @@ def narrative_routing_errors(
             or row.get("unit_label") != unit.get("label")
         ):
             errors.append(f"{chapter_id}: reference-only unit route does not match the crosswalk")
+    return errors
+
+
+def reference_responsibility_errors(
+    reference: dict,
+    canonical: list[dict],
+    html_text: str,
+) -> list[str]:
+    """Require the complete reference to expose canonical responsibility and support."""
+    errors: list[str] = []
+    rows = reference.get("chapters", [])
+    if len(rows) != len(canonical):
+        return ["architecture reference responsibility denominator does not match canonical chapters"]
+    fields = ("chapter_id", "title", "core_claim_ref", "core_claim", "claim_label", "support_state")
+    for row, expected in zip(rows, canonical):
+        for field in fields:
+            if row.get(field) != expected.get(field):
+                errors.append(f"{expected['chapter_id']}: architecture reference has stale {field}")
+        if escape(expected["core_claim"]) not in html_text:
+            errors.append(f"{expected['chapter_id']}: architecture reference hides its distinct responsibility")
+        if expected["support_state"] not in html_text:
+            errors.append(f"{expected['chapter_id']}: architecture reference hides its support state")
     return errors
 
 
@@ -262,12 +290,23 @@ def validate_rendered_site(site: Path, projection_schema: dict) -> list[str]:
         encoding="utf-8",
         errors="ignore",
     )
+    reference_html = (products / "architecture-reference" / "index.html").read_text(
+        encoding="utf-8",
+        errors="ignore",
+    )
     errors.extend(
         narrative_routing_errors(
             narrative,
             load(UNIT_CROSSWALK).get("units", []),
             canonical_chapters(load(STRUCTURE)),
             narrative_html,
+        )
+    )
+    errors.extend(
+        reference_responsibility_errors(
+            reference,
+            canonical_chapters(load(STRUCTURE)),
+            reference_html,
         )
     )
     errors.extend(snapshot_errors(products, evidence))
@@ -351,7 +390,12 @@ def main() -> None:
             encoding="utf-8",
             errors="ignore",
         )
+        reference_html = (output / "architecture-reference" / "index.html").read_text(
+            encoding="utf-8",
+            errors="ignore",
+        )
         errors.extend(narrative_routing_errors(narrative, units, canonical, narrative_html))
+        errors.extend(reference_responsibility_errors(reference, canonical, reference_html))
         if narrative.get("selected_chapter_count") != len(selected_ids):
             errors.append("narrative projection selected count mismatch")
         if narrative.get("canonical_chapter_count") != len(canonical):
@@ -476,6 +520,21 @@ def main() -> None:
         if not narrative_routing_errors(hidden_owner, units, canonical, narrative_html):
             errors.append("negative control failed: hidden specialist owner was accepted")
 
+        # Reject a responsibility summary that drifts from its canonical
+        # chapter owner even when the link and claim identity remain present.
+        stale_responsibility = copy.deepcopy(narrative)
+        stale_responsibility["chapters"][2]["reference_owners"][0]["distinct_responsibility"] = (
+            "A generic chapter responsibility that no longer matches the canonical owner."
+        )
+        if not narrative_routing_errors(stale_responsibility, units, canonical, narrative_html):
+            errors.append("negative control failed: stale specialist responsibility was accepted")
+
+        # Reject support inflation in a reader-facing specialist route.
+        inflated_support = copy.deepcopy(narrative)
+        inflated_support["chapters"][2]["reference_owners"][0]["support_state"] = "empirical-test-backed"
+        if not narrative_routing_errors(inflated_support, units, canonical, narrative_html):
+            errors.append("negative control failed: inflated specialist support state was accepted")
+
     doc = DOC.read_text(encoding="utf-8", errors="ignore")
     for phrase in (
         f"{len(selected_ids)}-unit",
@@ -495,7 +554,7 @@ def main() -> None:
         f"{len(canonical) - len(selected_ids)} reference-routed omissions, "
         f"{len(canonical) - len(selected_ids)} visible specialist-owner routes, "
         f"{len(canonical)} reference chapters, {evidence['entry_count']} evidence routes, "
-        "and 6 rejecting negative controls."
+        "and 8 rejecting negative controls."
     )
 
 

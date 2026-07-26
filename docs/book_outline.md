@@ -89,9 +89,13 @@ cross-owner handoffs, synthesis figures, clean 97-page canonical render,
 desktop/mobile browser checks, and automated accessibility preparation now
 close the all-84 gate without changing a support state.
 
-The decisive current program is Phase 2 proof rationalization followed by
-competent natural evidence. `ASI-THESEUS-FLAGSHIP-01` remains the natural
-evidence spine, but protected outcomes open only after its own baselines,
+The current scheduling priority is a concept-first continuation after the
+initial all-84 gate: make each chapter's distinct responsibility and evidence
+ceiling reader-visible, reconcile any idea that still exists only in planning,
+and improve navigation before scheduling another proof tranche. Phase 2 is
+epistemically admissible because the original gate passed, but it is not the
+current work default. `ASI-THESEUS-FLAGSHIP-01` remains the later natural
+evidence spine, and protected outcomes open only after its own baselines,
 competence dossiers, independent evaluators, attack families, rescue ceilings,
 resource denominators, and stopping rules are frozen. T5 will compose
 separately earned conclusions rather than pooled rows. The remaining book work is semantically
@@ -7503,6 +7507,7 @@ Draft arc:
 - Mechanism: Ingest through explicit provenance and permission; separate source report, author intent, synthesis, experiment, proof, editorial judgment, and open questions; atomize material claims with falsifiers and evidence ceilings.
 - Mechanism: Issue a typed change packet; regenerate scaffold, proof manifest, appendices, metrics, projections, status, and release records from canonical inputs; run surface-appropriate semantic, executable, rights, accessibility, render, browser, release, and deployment checks.
 - Mechanism: Keep AI/research, Human view, reader, HTML, DOCX, EPUB, PDF, companion, article, image, and audio outputs as typed derivatives; separate generation, inspection, approval, deployment, observation, archive, and publication; promote only by accepted evidence transition.
+- Mechanism: Compress the 84-chapter responsibility graph into 22 narrative units without claim absorption: representatives own orientation, specialists retain distinct responsibility, claim identity, label, evidence ceiling, and direct canonical routes, and the architecture reference retains complete technical density.
 - Mechanism: Preserve every terminal result; propagate corrections, downgrades, proof retirement, failed tests, rights changes, release revocation, and derivative drift; monitor quality, freshness, debt, accessibility, residuals, burden, and cost; hand exactly one active roadmap to the successor.
 - Interfaces: Twelve exact joins cover human authority; sources; canonical book graph; claim/evidence control; proof and executable artifacts; version and release identity; public Quarto projection; typed derivatives; validation and attestation; continuous work and handoff; external comparators; and downstream consumers.
 
