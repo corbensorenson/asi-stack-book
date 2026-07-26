@@ -92,7 +92,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/SearchSubstrates.lean` | 3 | 11 | 0 | 8 | 5 |
 | `lean/AsiStackProofs/SecurityKernel.lean` | 4 | 22 | 0 | 5 | 6 |
 | `lean/AsiStackProofs/SelfImprovementRefinement.lean` | 3 | 2 | 3 | 10 | 2 |
-| `lean/AsiStackProofs/StableCapabilityFields.lean` | 4 | 25 | 0 | 16 | 5 |
+| `lean/AsiStackProofs/StableCapabilityFields.lean` | 4 | 18 | 0 | 16 | 5 |
 | `lean/AsiStackProofs/StackBoundaries.lean` | 3 | 9 | 0 | 13 | 7 |
 | `lean/AsiStackProofs/SupplyChainIntegrity.lean` | 6 | 7 | 0 | 1 | 1 |
 | `lean/AsiStackProofs/TheseusReference.lean` | 12 | 54 | 0 | 54 | 15 |

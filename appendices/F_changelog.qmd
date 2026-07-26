@@ -1,5 +1,27 @@
 # Changelog
 
+## 2026-07-25 — Fourth narrow-projection C6 tranche
+
+- Retired seven direct predicate and conjunction projections from
+  `StableCapabilityFields.lean` after confirming that each had no theorem
+  dependency or consumer. Retained
+  `default_transition_requires_full_readiness` because five downstream
+  consequences consume it.
+- Narrowed the field-identity target to the retained mismatch-to-rejection
+  route and the lifecycle-envelope target to retained review routes and
+  explicit unsafe-transition rejections. Five targetless projections retired
+  without inventing target ownership.
+- Upgraded the cumulative ledger to fifteen ordered actions and six public-
+  target migrations. Scope-reduction actions carry explicit null replacements,
+  preventing an unrelated theorem from being presented as a substitute for
+  wording that was deliberately dropped.
+- Reconciled the current estate at 1,355 declarations: 47 P0, 780 P1, 25 P2,
+  319 P3, 99 P4, 85 P5, and zero P6. The remaining queue contains 146 actions:
+  49 narrow-projection retirements, two scope-language rewrites, and 95
+  stronger-model rewrites.
+- The transaction adds no formal claim and changes no support state, empirical
+  result, chapter-core claim, deployment status, or release authority.
+
 ## 2026-07-25 — Third narrow-projection C6 tranche
 
 - Retired three premise-restating declarations from
@@ -40,7 +62,7 @@
   P5, and zero P6. The remaining queue contains 156 actions: 59 narrow-
   projection retirements, two scope-language rewrites, and 95 stronger-model
   rewrites.
-- Current proof-depth snapshot: 333 proof targets, 110 Lean modules, 1362 theorem declarations, 924 derived/decomposed, 223 direct/projection, 215 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Current proof-depth snapshot: 333 proof targets, 110 Lean modules, 1355 theorem declarations, 924 derived/decomposed, 216 direct/projection, 215 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - Reconciled the structure, outline, chapter formal boundary, proof manifest,
   triage, implementation-horizon inventory, roadmap, machine status, schema,
   and validators. The transaction changes no benchmark result, support state,

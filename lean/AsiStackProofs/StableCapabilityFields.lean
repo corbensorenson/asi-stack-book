@@ -32,13 +32,6 @@ def ReplacementAllowed (field : StableCapabilityField) (candidate : Implementati
     (candidate.requestedAuthority.rank <= field.authorityCeiling.rank ∨
       candidate.governanceGrant = true)
 
-theorem replacement_requires_field_qualification
-    {field : StableCapabilityField} {candidate : ImplementationCandidate} :
-    ReplacementAllowed field candidate ->
-    candidate.satisfiesQualification = true := by
-  intro allowed
-  exact allowed.1
-
 theorem authority_expanding_replacement_without_grant_rejected
     {field : StableCapabilityField} {candidate : ImplementationCandidate} :
     field.authorityCeiling.rank < candidate.requestedAuthority.rank ->
@@ -285,20 +278,6 @@ def ScfLifecycleTransitionAllowed
               DeprecationTransitionReady transition ∧
                 RetirementTransitionReady transition
 
-theorem allowed_transition_preserves_field_identity
-    {transition : ScfLifecycleTransition} :
-    ScfLifecycleTransitionAllowed transition ->
-      transition.fieldIdentityPreserved = true := by
-  intro allowed
-  exact allowed.right.left
-
-theorem allowed_transition_must_be_forward_or_quarantine
-    {transition : ScfLifecycleTransition} :
-    ScfLifecycleTransitionAllowed transition ->
-      ForwardLifecycleStep transition := by
-  intro allowed
-  exact allowed.left
-
 theorem retired_state_cannot_transition
     {transition : ScfLifecycleTransition} :
     transition.fromState = ScfLifecycleState.retired ->
@@ -306,24 +285,6 @@ theorem retired_state_cannot_transition
   intro retiredFrom allowed
   have notRetired := allowed.right.right.left
   exact notRetired retiredFrom
-
-theorem canary_transition_requires_evidence_and_rollback
-    {transition : ScfLifecycleTransition} :
-    ScfLifecycleTransitionAllowed transition ->
-      transition.toState = ScfLifecycleState.canary ->
-        transition.qualificationEvidencePresent = true ∧
-          transition.rollbackReady = true := by
-  intro allowed toCanary
-  exact allowed.right.right.right.left toCanary
-
-theorem qualified_transition_requires_evidence_and_regression_floor
-    {transition : ScfLifecycleTransition} :
-    ScfLifecycleTransitionAllowed transition ->
-      transition.toState = ScfLifecycleState.qualified ->
-        transition.qualificationEvidencePresent = true ∧
-          transition.regressionFloorPreserved = true := by
-  intro allowed toQualified
-  exact allowed.right.right.right.right.left toQualified
 
 theorem default_transition_requires_full_readiness
     {transition : ScfLifecycleTransition} :
@@ -390,22 +351,6 @@ theorem default_with_open_incident_rejected
   have noIncident := ready.right.right.right.right
   rw [incidentOpen] at noIncident
   cases noIncident
-
-theorem deprecated_transition_requires_notice
-    {transition : ScfLifecycleTransition} :
-    ScfLifecycleTransitionAllowed transition ->
-      transition.toState = ScfLifecycleState.deprecated ->
-        transition.deprecationNoticePresent = true := by
-  intro allowed toDeprecated
-  exact allowed.right.right.right.right.right.right.left toDeprecated
-
-theorem retirement_transition_requires_receipt
-    {transition : ScfLifecycleTransition} :
-    ScfLifecycleTransitionAllowed transition ->
-      transition.toState = ScfLifecycleState.retired ->
-        transition.retirementReceiptPresent = true := by
-  intro allowed toRetired
-  exact allowed.right.right.right.right.right.right.right toRetired
 
 structure ScfLifecycleTraceProbeSummary where
   validTraces : Nat

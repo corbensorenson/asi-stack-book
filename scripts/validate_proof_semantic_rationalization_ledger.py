@@ -40,19 +40,26 @@ EXPECTED_ACTION_IDS = [
     "C6-R6-policy-promotion-evidence-projection",
     "C6-R7-policy-reward-proxy-projection",
     "C6-R8-policy-authority-expansion-projection",
+    "C6-R9-scf-qualification-projection",
+    "C6-R10-scf-identity-projection",
+    "C6-R11-scf-forward-route-projection",
+    "C6-R12-scf-canary-readiness-projection",
+    "C6-R13-scf-qualified-readiness-projection",
+    "C6-R14-scf-deprecation-notice-projection",
+    "C6-R15-scf-retirement-receipt-projection",
 ]
 EXPECTED_LEVELS = {
     "P0": 47,
-    "P1": 795,
+    "P1": 780,
     "P2": 25,
     "P3": 319,
-    "P4": 95,
-    "P5": 81,
+    "P4": 99,
+    "P5": 85,
     "P6": 0,
 }
 EXPECTED_DISPOSITIONS = {
     "retain": 1209,
-    "retire_narrow_projection": 56,
+    "retire_narrow_projection": 49,
     "rewrite_scope_language": 2,
     "rewrite_with_stronger_model": 95,
 }
@@ -74,6 +81,17 @@ EXPECTED_TARGETS = {
         "An accepted contaminated benchmark review cannot select readiness promotion "
         "in the finite ratchet model."
     ),
+    "lean:scf.field_identity.operational_invariant": (
+        "A lifecycle review with a mismatched field identity routes to explicit "
+        "replacement rejection."
+    ),
+    "lean:scf.lifecycle.route_envelope": (
+        "A structured SCF lifecycle review routes identity mismatch, missing evidence, "
+        "stale leases, evaluator capture, authority expansion, and open incidents to "
+        "explicit nondefault outcomes; the finite transition predicate rejects retired "
+        "restart and default promotion without qualification evidence, preserved "
+        "regressions, authority within ceiling, rollback readiness, or incident closure."
+    ),
 }
 EXPECTED_RELATIONS = {
     "retire_exact_same_model_duplicate": "exact_same_model_normalized_statement",
@@ -83,6 +101,20 @@ EXPECTED_RELATIONS = {
     "retire_projection_after_decision_model_consumer_migration": (
         "premise_restatement_replaced_by_derived_decision_gate"
     ),
+    "retire_projection_after_public_target_narrowing": (
+        "premise_restatement_retired_after_target_scope_reduction"
+    ),
+}
+EXPECTED_MIGRATION_COUNTS = {
+    action_id: int(action_id in {
+        "C6-R2-bibliography-source-evidence-projection",
+        "C6-R3-bibliography-chapter-assignment-projection",
+        "C6-R4-benchmark-readiness-projection",
+        "C6-R5-benchmark-saturation-projection",
+        "C6-R9-scf-qualification-projection",
+        "C6-R10-scf-identity-projection",
+    })
+    for action_id in EXPECTED_ACTION_IDS
 }
 
 
@@ -138,7 +170,7 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
     actions = ledger["actions"]
     if [row["action_id"] for row in actions] != EXPECTED_ACTION_IDS:
         out.append("action sequence or identity drifted")
-    if [row["sequence"] for row in actions] != list(range(1, 9)):
+    if [row["sequence"] for row in actions] != list(range(1, 16)):
         out.append("action sequence numbers drifted")
 
     try:
@@ -166,7 +198,10 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
         module = action["module_path"]
         retired_id = action["retired_theorem_id"]
         replacement_id = action["replacement_theorem_id"]
-        if retired_id.split("::", 1)[0] != module or replacement_id.split("::", 1)[0] != module:
+        if retired_id.split("::", 1)[0] != module:
+            out.append(f"{action['action_id']}: participants are not bound to one module")
+            continue
+        if replacement_id is not None and replacement_id.split("::", 1)[0] != module:
             out.append(f"{action['action_id']}: participants are not bound to one module")
             continue
         if module not in module_cache:
@@ -179,26 +214,36 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
         if sha256_bytes(module_bytes_cache[module]) != action["baseline_module_sha256"]:
             out.append(f"{action['action_id']}: baseline module digest drifted")
         retired_name = retired_id.split("::", 1)[1]
-        replacement_name = replacement_id.split("::", 1)[1]
         retired_block = module_cache[module].get(retired_name)
-        replacement_block = module_cache[module].get(replacement_name)
-        if retired_block is None or replacement_block is None:
+        replacement_block = (
+            module_cache[module].get(replacement_id.split("::", 1)[1])
+            if replacement_id is not None
+            else None
+        )
+        if retired_block is None or (replacement_id is not None and replacement_block is None):
             out.append(f"{action['action_id']}: baseline theorem block is missing")
             continue
         if sha256_bytes(retired_block["block"].encode("utf-8")) != action["retired_block_sha256"]:
             out.append(f"{action['action_id']}: retired block digest drifted")
-        if sha256_bytes(replacement_block["block"].encode("utf-8")) != action[
-            "replacement_block_sha256"
-        ]:
-            out.append(f"{action['action_id']}: replacement block digest drifted")
         if retired_block["statement_sha256"] != action["retired_statement_sha256"]:
             out.append(f"{action['action_id']}: retired statement digest drifted")
-        if replacement_block["statement_sha256"] != action["replacement_statement_sha256"]:
-            out.append(f"{action['action_id']}: replacement statement digest drifted")
+        if replacement_id is None:
+            if (
+                action["replacement_block_sha256"] is not None
+                or action["replacement_statement_sha256"] is not None
+            ):
+                out.append(f"{action['action_id']}: null replacement carries replacement digests")
+        else:
+            if sha256_bytes(replacement_block["block"].encode("utf-8")) != action[
+                "replacement_block_sha256"
+            ]:
+                out.append(f"{action['action_id']}: replacement block digest drifted")
+            if replacement_block["statement_sha256"] != action["replacement_statement_sha256"]:
+                out.append(f"{action['action_id']}: replacement statement digest drifted")
 
         retired_row = baseline_rows.get(retired_id)
-        replacement_row = baseline_rows.get(replacement_id)
-        if retired_row is None or replacement_row is None:
+        replacement_row = baseline_rows.get(replacement_id) if replacement_id is not None else None
+        if retired_row is None or (replacement_id is not None and replacement_row is None):
             out.append(f"{action['action_id']}: classification baseline lacks a participant")
             continue
         expected_disposition = (
@@ -208,32 +253,27 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
         )
         if retired_row.get("disposition") != expected_disposition:
             out.append(f"{action['action_id']}: baseline retirement disposition drifted")
-        if replacement_row.get("disposition") != "retain":
+        if replacement_row is not None and replacement_row.get("disposition") != "retain":
             out.append(f"{action['action_id']}: replacement was not retained at baseline")
         if retired_row.get("theorem_dependency_refs") != []:
             out.append(f"{action['action_id']}: retired theorem had theorem dependencies")
         if retired_row.get("theorem_consumer_refs") != []:
             out.append(f"{action['action_id']}: retired theorem had theorem consumers")
 
+        if len(action["target_migrations"]) != EXPECTED_MIGRATION_COUNTS[action["action_id"]]:
+            out.append(f"{action['action_id']}: target migration count drifted")
+
         if action["action"] == "retire_exact_same_model_duplicate":
             if statement_key(retired_block["signature"]) != statement_key(
                 replacement_block["signature"]
             ):
                 out.append(f"{action['action_id']}: exact duplicate statements differ")
-            if action["target_migrations"] != []:
-                out.append(f"{action['action_id']}: exact duplicate invented a target migration")
         elif action["action"] == "retire_projection_after_counterexample_consumer_migration":
             if "exact valid" not in retired_block["block"]:
                 out.append(f"{action['action_id']}: retired theorem is not the audited projection")
             if "have " not in replacement_block["block"] or "rw [" not in replacement_block["block"]:
                 out.append(f"{action['action_id']}: replacement lacks derived counterexample steps")
-            expected_migration_count = 1 if retired_row.get("candidate_target_refs") else 0
-            if len(action["target_migrations"]) != expected_migration_count:
-                out.append(
-                    f"{action['action_id']}: target migration count does not match "
-                    "baseline target ownership"
-                )
-        else:
+        elif action["action"] == "retire_projection_after_decision_model_consumer_migration":
             if "exact valid" not in retired_block["block"]:
                 out.append(f"{action['action_id']}: retired theorem is not the audited projection")
             if (
@@ -241,8 +281,11 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
                 or "rw [" not in replacement_block["block"]
             ):
                 out.append(f"{action['action_id']}: replacement lacks decision-model derivation")
-            if len(action["target_migrations"]) != 1:
-                out.append(f"{action['action_id']}: decision target migration is not singular")
+        else:
+            if replacement_id is not None or replacement_block is not None:
+                out.append(f"{action['action_id']}: target-scope retirement invented a replacement")
+            if "exact " not in retired_block["block"]:
+                out.append(f"{action['action_id']}: retired theorem is not a direct projection")
 
     current_rows = current_theorems()
     current_ids = {row["theorem_id"] for row in current_rows}
@@ -250,20 +293,23 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
     for action in actions:
         if action["retired_theorem_id"] in current_ids:
             out.append(f"{action['action_id']}: retired theorem remains live")
-        if action["replacement_theorem_id"] not in current_ids:
+        if (
+            action["replacement_theorem_id"] is not None
+            and action["replacement_theorem_id"] not in current_ids
+        ):
             out.append(f"{action['action_id']}: replacement theorem is not live")
         if current_consumers.get(action["retired_theorem_id"], []):
             out.append(f"{action['action_id']}: retired theorem has a current Lean consumer")
 
     overlay = load(CURRENT_OVERLAY)
     summary = overlay.get("summary", {})
-    if summary.get("current_theorem_count") != 1362:
+    if summary.get("current_theorem_count") != 1355:
         out.append("current theorem denominator drifted")
     if summary.get("semantic_level_counts") != EXPECTED_LEVELS:
         out.append("current semantic-level counts drifted")
     if summary.get("disposition_counts") != EXPECTED_DISPOSITIONS:
         out.append("current disposition counts drifted")
-    if sum(value for key, value in EXPECTED_DISPOSITIONS.items() if key != "retain") != 153:
+    if sum(value for key, value in EXPECTED_DISPOSITIONS.items() if key != "retain") != 146:
         out.append("expected remaining-action denominator is internally inconsistent")
     if ledger["summary"]["remaining_action_counts"] != {
         key: value for key, value in EXPECTED_DISPOSITIONS.items() if key != "retain"
@@ -307,6 +353,25 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
     if retired_policy_names & {row["name"] for row in policy_rows}:
         out.append("PolicyOptimization retained an executed narrow projection")
 
+    scf_rows = [
+        row
+        for row in current_rows
+        if row["module_path"] == "lean/AsiStackProofs/StableCapabilityFields.lean"
+    ]
+    if len(scf_rows) != 18:
+        out.append("StableCapabilityFields must retain exactly eighteen declarations")
+    retired_scf_names = {
+        "replacement_requires_field_qualification",
+        "allowed_transition_preserves_field_identity",
+        "allowed_transition_must_be_forward_or_quarantine",
+        "canary_transition_requires_evidence_and_rollback",
+        "qualified_transition_requires_evidence_and_regression_floor",
+        "deprecated_transition_requires_notice",
+        "retirement_transition_requires_receipt",
+    }
+    if retired_scf_names & {row["name"] for row in scf_rows}:
+        out.append("StableCapabilityFields retained an executed narrow projection")
+
     manifest_rows = {
         row["tag"]: row
         for row in load(MANIFEST).get("records", [])
@@ -343,17 +408,17 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
     if status.get("rationalization_ledger_path") != str(LEDGER.relative_to(ROOT)):
         out.append("status does not bind the cumulative rationalization ledger")
     if (
-        status.get("theorem_count") != 1362
-        or status.get("executed_retirement_count") != 8
-        or status.get("remaining_action_count") != 153
+        status.get("theorem_count") != 1355
+        or status.get("executed_retirement_count") != 15
+        or status.get("remaining_action_count") != 146
     ):
         out.append("status does not report the cumulative post-transaction denominator")
     roadmap = ROADMAP.read_text(encoding="utf-8")
     roadmap_flat = " ".join(roadmap.split())
     for phrase in [
-        "third narrow-projection tranche",
-        "1,362 live theorem declarations",
-        "153 rewrite-or-retire actions remain",
+        "fourth narrow-projection tranche",
+        "1,355 live theorem declarations",
+        "146 rewrite-or-retire actions remain",
         "`proofs/proof_semantic_rationalization_ledger.json`",
     ]:
         if phrase not in roadmap_flat:
@@ -392,6 +457,13 @@ def main() -> None:
     )
     mutate("remaining denominator inflation", lambda c: c["summary"].__setitem__("remaining_action_count", 157))
     mutate("support promotion", lambda c: c.__setitem__("support_state_effect", "promotion"))
+    mutate(
+        "null replacement laundering",
+        lambda c: c["actions"][10].__setitem__(
+            "replacement_theorem_id",
+            c["actions"][0]["replacement_theorem_id"],
+        ),
+    )
 
     for label, candidate in mutations:
         if not validation_errors(candidate):
@@ -402,9 +474,9 @@ def main() -> None:
             + "\n - ".join(failures)
         )
     print(
-        "Proof semantic-rationalization ledger passed: eight dependency-safe "
-        "retirements, four public-target migrations, 1,362 live theorems, "
-        "153 actions remain, 13 rejecting mutations, no support or release effect."
+        "Proof semantic-rationalization ledger passed: fifteen dependency-safe "
+        "retirements, six public-target migrations, 1,355 live theorems, "
+        "146 actions remain, 14 rejecting mutations, no support or release effect."
     )
 
 

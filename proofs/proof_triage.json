@@ -554,7 +554,7 @@
       "tag": "lean:scf.field_identity.operational_invariant",
       "chapter_id": "stable-capability-fields",
       "module": "AsiStackProofs.StableCapabilityFields",
-      "formal_target": "An implementation can replace another only if it satisfies the field qualification predicate.",
+      "formal_target": "A lifecycle review with a mismatched field identity routes to explicit replacement rejection.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
@@ -574,11 +574,11 @@
       "tag": "lean:scf.lifecycle.route_envelope",
       "chapter_id": "stable-capability-fields",
       "module": "AsiStackProofs.StableCapabilityFields",
-      "formal_target": "A structured SCF lifecycle review and finite lifecycle-state transition relation route identity mismatch, missing evidence, stale leases, evaluator capture, authority expansion, open incidents, missing rollback, missing regression preservation, missing deprecation notice, and missing retirement receipt away from default or terminal promotion.",
+      "formal_target": "A structured SCF lifecycle review routes identity mismatch, missing evidence, stale leases, evaluator capture, authority expansion, and open incidents to explicit nondefault outcomes; the finite transition predicate rejects retired restart and default promotion without qualification evidence, preserved regressions, authority within ceiling, rollback readiness, or incident closure.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented in AsiStackProofs.StableCapabilityFields as finite lifecycle-review routing plus a lifecycle-state transition predicate over shadow, canary, qualified, default, deprecated, retired, and quarantined records with derived negative cases for missing evidence, regression floor, authority ceiling, rollback readiness, incident closure, deprecation notice, and retirement receipt."
+      "rationale": "Implemented in AsiStackProofs.StableCapabilityFields as finite lifecycle-review routing plus retained derived rejection cases for retired restart and default promotion with missing evidence, regression floor, authority ceiling, rollback readiness, or incident closure. Direct projections for general forward-path, identity-preservation, canary, qualified, deprecation-notice, and retirement-receipt fields were retired and are not represented by this narrower target."
     },
     {
       "tag": "lean:scf.lifecycle.trace_fixture_bridge",

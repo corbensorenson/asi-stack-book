@@ -1,5 +1,5 @@
 {
-  "schema_version": "asi_stack.proof_semantic_rationalization_ledger.v2",
+  "schema_version": "asi_stack.proof_semantic_rationalization_ledger.v3",
   "as_of": "2026-07-25",
   "roadmap_lane": "C6-P0-P6-semantic-proof-rationalization",
   "state": "dependency_safe_execution_active",
@@ -366,14 +366,306 @@
         "lean:lake-build"
       ],
       "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R9-scf-qualification-projection",
+      "sequence": 9,
+      "state": "executed",
+      "action": "retire_projection_after_public_target_narrowing",
+      "semantic_relation": "premise_restatement_retired_after_target_scope_reduction",
+      "module_path": "lean/AsiStackProofs/StableCapabilityFields.lean",
+      "baseline_module_sha256": "bf7d3e054e09f6a8956247e77c5042f8dc68933b86fe3bffbcb73bfbd5a7cb90",
+      "retired_theorem_id": "lean/AsiStackProofs/StableCapabilityFields.lean::replacement_requires_field_qualification",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "e91f83103519fa3eafe95a83dd6cedb52e6bc845166e1a463bf94d6a704a16a1",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "39ef16e860a2611ded1c9d7effcded566697f1ed5c2b92c8fdf3a015184debf6",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem returns the qualification conjunct already assumed inside ReplacementAllowed and therefore only restates the predicate body.",
+        "No current theorem depends on or consumes the projection, and no fully qualified current consumer names it.",
+        "The old operational target depended on that assumption-restatement and is not preserved under a stronger-sounding name.",
+        "The operational target is narrowed to the retained derived lifecycle-review route that sends field-identity mismatch to explicit rejection.",
+        "No theorem is presented as an equivalent replacement; null replacement custody records the intentional scope reduction."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:scf.field_identity.operational_invariant",
+          "old_target_text": "An implementation can replace another only if it satisfies the field qualification predicate.",
+          "new_target_text": "A lifecycle review with a mismatched field identity routes to explicit replacement rejection.",
+          "consumer_paths": [
+            "book_structure.json",
+            "docs/book_outline.md",
+            "chapters/stable-capability-fields.qmd",
+            "proofs/proof_manifest.json",
+            "proofs/proof_triage.json"
+          ]
+        }
+      ],
+      "maximum_inference_preserved": "Only the retained derived lifecycle-review consequence that an explicit field-identity mismatch selects the finite rejectReplacement route.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_proof_artifact_audit.py",
+        "scripts/validate_scf_lifecycle_trace.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R10-scf-identity-projection",
+      "sequence": 10,
+      "state": "executed",
+      "action": "retire_projection_after_public_target_narrowing",
+      "semantic_relation": "premise_restatement_retired_after_target_scope_reduction",
+      "module_path": "lean/AsiStackProofs/StableCapabilityFields.lean",
+      "baseline_module_sha256": "bf7d3e054e09f6a8956247e77c5042f8dc68933b86fe3bffbcb73bfbd5a7cb90",
+      "retired_theorem_id": "lean/AsiStackProofs/StableCapabilityFields.lean::allowed_transition_preserves_field_identity",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "6e005fcf599603118c2ab74d88ea173e9167828411213f39009ec1554394c80c",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "184e92759c37083e2ccc2989165f8f80559e2bb585bdfb285ee1fe9e48596279",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem returns the TransitionIdentityPreserved conjunct already assumed inside ScfLifecycleTransitionAllowed.",
+        "No current theorem depends on or consumes the projection, and no fully qualified current consumer names it.",
+        "The lifecycle target previously combined this projection with derived review routes and rejection cases.",
+        "The target is narrowed to only the retained nondefault review routes and explicit transition rejections, dropping the general identity-preservation claim.",
+        "No theorem is presented as an equivalent replacement; null replacement custody records the intentional scope reduction."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:scf.lifecycle.route_envelope",
+          "old_target_text": "A structured SCF lifecycle review and finite lifecycle-state transition relation route identity mismatch, missing evidence, stale leases, evaluator capture, authority expansion, open incidents, missing rollback, missing regression preservation, missing deprecation notice, and missing retirement receipt away from default or terminal promotion.",
+          "new_target_text": "A structured SCF lifecycle review routes identity mismatch, missing evidence, stale leases, evaluator capture, authority expansion, and open incidents to explicit nondefault outcomes; the finite transition predicate rejects retired restart and default promotion without qualification evidence, preserved regressions, authority within ceiling, rollback readiness, or incident closure.",
+          "consumer_paths": [
+            "book_structure.json",
+            "docs/book_outline.md",
+            "chapters/stable-capability-fields.qmd",
+            "proofs/proof_manifest.json",
+            "proofs/proof_triage.json"
+          ]
+        }
+      ],
+      "maximum_inference_preserved": "Only the listed retained lifecycle-review routes and explicit retired/default transition rejection cases in the authored finite SCF models.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_proof_artifact_audit.py",
+        "scripts/validate_scf_lifecycle_trace.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R11-scf-forward-route-projection",
+      "sequence": 11,
+      "state": "executed",
+      "action": "retire_projection_after_public_target_narrowing",
+      "semantic_relation": "premise_restatement_retired_after_target_scope_reduction",
+      "module_path": "lean/AsiStackProofs/StableCapabilityFields.lean",
+      "baseline_module_sha256": "bf7d3e054e09f6a8956247e77c5042f8dc68933b86fe3bffbcb73bfbd5a7cb90",
+      "retired_theorem_id": "lean/AsiStackProofs/StableCapabilityFields.lean::allowed_transition_must_be_forward_or_quarantine",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "d9cdc0842d722f198e5751ca977a0df1035d4ccd7ff7c3fc8d47f9e4bd8563bf",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "b47b2cd9e2b5ea2ee6d127d7e8969e278e4cc5b7f5225b3842b353763d3eb07e",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem returns the ForwardLifecycleStep conjunct already assumed inside ScfLifecycleTransitionAllowed.",
+        "No current theorem depends on or consumes the projection, and no fully qualified current consumer names it.",
+        "The migrated lifecycle target no longer claims a general forward-or-quarantine theorem.",
+        "Retained target coverage is limited to explicit review routes and concrete retired/default rejection cases.",
+        "No theorem is presented as an equivalent replacement; null replacement custody records the intentional scope reduction."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "No general forward-or-quarantine conclusion is carried forward as a theorem claim; only the narrower retained routes and rejections remain public.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_proof_artifact_audit.py",
+        "scripts/validate_scf_lifecycle_trace.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R12-scf-canary-readiness-projection",
+      "sequence": 12,
+      "state": "executed",
+      "action": "retire_projection_after_public_target_narrowing",
+      "semantic_relation": "premise_restatement_retired_after_target_scope_reduction",
+      "module_path": "lean/AsiStackProofs/StableCapabilityFields.lean",
+      "baseline_module_sha256": "bf7d3e054e09f6a8956247e77c5042f8dc68933b86fe3bffbcb73bfbd5a7cb90",
+      "retired_theorem_id": "lean/AsiStackProofs/StableCapabilityFields.lean::canary_transition_requires_evidence_and_rollback",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "f12469fb68f2d2124d801c05c116eacf9ccf1e438fd1cc3c118d9874948d91a7",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "6a32d5fb672dfb222eef35cfdbe7436138ed3297bd4a6cb1d1d7d089e090bb71",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem applies the CanaryTransitionReady implication already assumed inside ScfLifecycleTransitionAllowed.",
+        "No current theorem depends on or consumes the projection, and no fully qualified current consumer names it.",
+        "The migrated lifecycle target does not retain a canary-readiness theorem claim.",
+        "Default-promotion rejection remains covered by independently retained derived contradiction theorems.",
+        "No theorem is presented as an equivalent replacement; null replacement custody records the intentional scope reduction."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "No canary-readiness conclusion is carried forward as a theorem claim; the authored predicate remains a model definition only.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_proof_artifact_audit.py",
+        "scripts/validate_scf_lifecycle_trace.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R13-scf-qualified-readiness-projection",
+      "sequence": 13,
+      "state": "executed",
+      "action": "retire_projection_after_public_target_narrowing",
+      "semantic_relation": "premise_restatement_retired_after_target_scope_reduction",
+      "module_path": "lean/AsiStackProofs/StableCapabilityFields.lean",
+      "baseline_module_sha256": "bf7d3e054e09f6a8956247e77c5042f8dc68933b86fe3bffbcb73bfbd5a7cb90",
+      "retired_theorem_id": "lean/AsiStackProofs/StableCapabilityFields.lean::qualified_transition_requires_evidence_and_regression_floor",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "c5ccbf0816c23be8b72a68fee83742ef70caaa8731b242264627fd454188651a",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "98c6dfe759dc0c3f7343d6c4b321f0fb0ea827b5ec24e7517cf399a4aeaff88e",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem applies the QualifiedTransitionReady implication already assumed inside ScfLifecycleTransitionAllowed.",
+        "No current theorem depends on or consumes the projection, and no fully qualified current consumer names it.",
+        "The migrated lifecycle target does not retain a qualified-readiness theorem claim.",
+        "Missing-regression rejection for default promotion remains covered by a retained derived contradiction theorem.",
+        "No theorem is presented as an equivalent replacement; null replacement custody records the intentional scope reduction."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "No qualified-readiness conclusion is carried forward as a theorem claim; only the narrower default-promotion rejection remains public.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_proof_artifact_audit.py",
+        "scripts/validate_scf_lifecycle_trace.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R14-scf-deprecation-notice-projection",
+      "sequence": 14,
+      "state": "executed",
+      "action": "retire_projection_after_public_target_narrowing",
+      "semantic_relation": "premise_restatement_retired_after_target_scope_reduction",
+      "module_path": "lean/AsiStackProofs/StableCapabilityFields.lean",
+      "baseline_module_sha256": "bf7d3e054e09f6a8956247e77c5042f8dc68933b86fe3bffbcb73bfbd5a7cb90",
+      "retired_theorem_id": "lean/AsiStackProofs/StableCapabilityFields.lean::deprecated_transition_requires_notice",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "61305a2823e956d59a2625c9996ed2100207ff21a9aa931184a700a0ce0e72ec",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "8d17461b9ace83acc91c63c8a761d2e308d30aecbc73d22d9f1c8ff6b1816b4c",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem applies the DeprecationTransitionReady implication already assumed inside ScfLifecycleTransitionAllowed.",
+        "No current theorem depends on or consumes the projection, and no fully qualified current consumer names it.",
+        "The migrated lifecycle target explicitly drops the deprecation-notice theorem claim.",
+        "The lifecycle predicate may retain the authored notice field without that field projection being presented as a proof result.",
+        "No theorem is presented as an equivalent replacement; null replacement custody records the intentional scope reduction."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "No deprecation-notice conclusion is carried forward as a theorem claim; the field remains only in the finite model definition.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_proof_artifact_audit.py",
+        "scripts/validate_scf_lifecycle_trace.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R15-scf-retirement-receipt-projection",
+      "sequence": 15,
+      "state": "executed",
+      "action": "retire_projection_after_public_target_narrowing",
+      "semantic_relation": "premise_restatement_retired_after_target_scope_reduction",
+      "module_path": "lean/AsiStackProofs/StableCapabilityFields.lean",
+      "baseline_module_sha256": "bf7d3e054e09f6a8956247e77c5042f8dc68933b86fe3bffbcb73bfbd5a7cb90",
+      "retired_theorem_id": "lean/AsiStackProofs/StableCapabilityFields.lean::retirement_transition_requires_receipt",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "c9158aa2f7400c91409426df302b2800536d48e0de400901c551a04396617488",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "3e7bee14e3071e8f3e256382d957052622d7cc87469273be2ffa625fb6b42355",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem applies the RetirementTransitionReady implication already assumed inside ScfLifecycleTransitionAllowed.",
+        "No current theorem depends on or consumes the projection, and no fully qualified current consumer names it.",
+        "The migrated lifecycle target explicitly drops the retirement-receipt theorem claim.",
+        "The lifecycle predicate may retain the authored receipt field without that field projection being presented as a proof result.",
+        "No theorem is presented as an equivalent replacement; null replacement custody records the intentional scope reduction."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "No retirement-receipt conclusion is carried forward as a theorem claim; the field remains only in the finite model definition.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_proof_artifact_audit.py",
+        "scripts/validate_scf_lifecycle_trace.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
     }
   ],
   "summary": {
-    "executed_retirement_count": 8,
-    "current_live_theorem_count": 1362,
-    "remaining_action_count": 153,
+    "executed_retirement_count": 15,
+    "current_live_theorem_count": 1355,
+    "remaining_action_count": 146,
     "remaining_action_counts": {
-      "retire_narrow_projection": 56,
+      "retire_narrow_projection": 49,
       "rewrite_scope_language": 2,
       "rewrite_with_stronger_model": 95
     },

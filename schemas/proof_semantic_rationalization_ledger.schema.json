@@ -18,7 +18,7 @@
   ],
   "properties": {
     "schema_version": {
-      "const": "asi_stack.proof_semantic_rationalization_ledger.v2"
+      "const": "asi_stack.proof_semantic_rationalization_ledger.v3"
     },
     "as_of": {
       "type": "string",
@@ -60,8 +60,8 @@
     },
     "actions": {
       "type": "array",
-      "minItems": 8,
-      "maxItems": 8,
+      "minItems": 15,
+      "maxItems": 15,
       "items": {
         "$ref": "#/$defs/action"
       }
@@ -79,17 +79,17 @@
       ],
       "properties": {
         "executed_retirement_count": {
-          "const": 8
+          "const": 15
         },
         "current_live_theorem_count": {
-          "const": 1362
+          "const": 1355
         },
         "remaining_action_count": {
-          "const": 153
+          "const": 146
         },
         "remaining_action_counts": {
           "const": {
-            "retire_narrow_projection": 56,
+            "retire_narrow_projection": 49,
             "rewrite_scope_language": 2,
             "rewrite_with_stronger_model": 95
           }
@@ -194,14 +194,16 @@
           "enum": [
             "retire_exact_same_model_duplicate",
             "retire_projection_after_counterexample_consumer_migration",
-            "retire_projection_after_decision_model_consumer_migration"
+            "retire_projection_after_decision_model_consumer_migration",
+            "retire_projection_after_public_target_narrowing"
           ]
         },
         "semantic_relation": {
           "enum": [
             "exact_same_model_normalized_statement",
             "premise_restatement_replaced_by_derived_counterexample_gate",
-            "premise_restatement_replaced_by_derived_decision_gate"
+            "premise_restatement_replaced_by_derived_decision_gate",
+            "premise_restatement_retired_after_target_scope_reduction"
           ]
         },
         "module_path": {
@@ -217,7 +219,10 @@
           "pattern": "^lean/AsiStackProofs/.+\\.lean::.+$"
         },
         "replacement_theorem_id": {
-          "type": "string",
+          "type": [
+            "string",
+            "null"
+          ],
           "pattern": "^lean/AsiStackProofs/.+\\.lean::.+$"
         },
         "retired_block_sha256": {
@@ -225,7 +230,10 @@
           "pattern": "^[0-9a-f]{64}$"
         },
         "replacement_block_sha256": {
-          "type": "string",
+          "type": [
+            "string",
+            "null"
+          ],
           "pattern": "^[0-9a-f]{64}$"
         },
         "retired_statement_sha256": {
@@ -233,7 +241,10 @@
           "pattern": "^[0-9a-f]{64}$"
         },
         "replacement_statement_sha256": {
-          "type": "string",
+          "type": [
+            "string",
+            "null"
+          ],
           "pattern": "^[0-9a-f]{64}$"
         },
         "semantic_basis": {

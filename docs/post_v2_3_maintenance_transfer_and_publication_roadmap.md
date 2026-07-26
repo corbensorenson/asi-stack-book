@@ -1148,13 +1148,13 @@ historical review. The immutable historical registry remains exactly 1,151
 theorems across 298 targets. The separately frozen pre-rationalization overlay
 at commit `d0f9bda14f1253999f2c40d556d925d31e4b36a4` classifies all 1,370
 baseline declarations. The current overlay in
-`proofs/proof_semantic_depth_overlay.json` classifies all 1,362 live theorem
+`proofs/proof_semantic_depth_overlay.json` classifies all 1,355 live theorem
 declarations across 104 theorem-bearing modules and maps them to 61 active
 semantic-owner chapters.
 
-The live semantic-depth distribution is 47 P0 record-shape results, 795 P1
+The live semantic-depth distribution is 47 P0 record-shape results, 780 P1
 finite-route results, 25 P2 reachability/nonvacuity results, 319 P3
-implementation-refinement results, 95 P4 cross-component-safety results, 81 P5
+implementation-refinement results, 99 P4 cross-component-safety results, 85 P5
 liveness/recovery results, and zero P6 empirically bound results. P6 being zero
 is intentional: the existence of an experiment file, trace, or generated
 artifact does not turn a theorem into empirical evidence.
@@ -1162,8 +1162,8 @@ artifact does not turn a theorem into empirical evidence.
 Every overlay row records its assumptions, active semantic owner, downstream
 consumer, witness or explicit witness absence, implementation binding, mutation
 evidence, maximum inference, and disposition. The resulting current estate is
-1,209 retain, 56 retire as narrow projection, two scope-language rewrites, and
-95 stronger-model rewrites. All 1,362 rows have mutation coverage and every
+1,209 retain, 49 retire as narrow projection, two scope-language rewrites, and
+95 stronger-model rewrites. All 1,355 rows have mutation coverage and every
 retained theorem has a named consumer.
 
 The cumulative dependency-safe retirement ledger is
@@ -1218,9 +1218,22 @@ Lean dependency, theorem consumer, fully qualified current consumer, or proof
 target, so the transaction invents no public target migration and changes no
 chapter claim.
 
+The fourth narrow-projection tranche retires seven direct field and lifecycle
+predicate projections from `StableCapabilityFields.lean`. Two public targets
+were broader than the model's retained derived routes: field identity now names
+the mismatch-to-rejection route, and the lifecycle envelope now names the
+review routes plus explicit retired-restart and default-readiness rejections.
+The other five retired projections owned no public target or theorem consumer.
+The ledger records a null replacement for each scope-reduction retirement
+instead of pretending that an unrelated theorem proves dropped wording. The
+retained `default_transition_requires_full_readiness` theorem remains because
+five downstream consequences consume it. This transaction adds no formal
+claim, changes no chapter-core support state, and narrows public meaning to
+what the remaining model actually derives.
+
 This receipt completes the C6 **classification** gate and begins its
-dependency-safe execution gate. Exactly eight of the original 161 actions have
-been executed; 153 rewrite-or-retire actions remain: 56 narrow-projection
+dependency-safe execution gate. Exactly 15 of the original 161 actions have
+been executed; 146 rewrite-or-retire actions remain: 49 narrow-projection
 retirements, two scope-language rewrites, and 95 stronger-model rewrites. The
 next proof action is a dependency-safe narrow-projection tranche, preserving
 each correct bounded result until its consumers and maximum inference are
