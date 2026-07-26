@@ -252,14 +252,128 @@
         "lean:lake-build"
       ],
       "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R6-policy-promotion-evidence-projection",
+      "sequence": 6,
+      "state": "executed",
+      "action": "retire_projection_after_counterexample_consumer_migration",
+      "semantic_relation": "premise_restatement_replaced_by_derived_counterexample_gate",
+      "module_path": "lean/AsiStackProofs/PolicyOptimization.lean",
+      "baseline_module_sha256": "0b3108e7528d151e93f63774749665639def53d733085373f3ec67a22087196f",
+      "retired_theorem_id": "lean/AsiStackProofs/PolicyOptimization.lean::promoted_policy_update_records_holdouts_probes_regressions_and_rollback",
+      "replacement_theorem_id": "lean/AsiStackProofs/PolicyOptimization.lean::promotion_candidate_missing_holdout_or_contamination_check_rejected",
+      "retired_block_sha256": "9b2e457f49cb164e086e4305a66d432245018b6f0a98c5083e2aaccd612c7cda",
+      "replacement_block_sha256": "260563e8ffca9a14ca8bfa4c1e90ba9df6f7db9f6fd9fe34c0410bf7f13a59c3",
+      "retired_statement_sha256": "3ffc35453d1cacb75d26adfdee1c30d2458761f67a477d3716a494315bab021e",
+      "replacement_statement_sha256": "1d954a7a8b4c4161e8464a2438559f19b5b364aac47cc18b7aa57deebe30c5cd",
+      "semantic_basis": [
+        "The retired theorem applies PolicyPromotionEvidenceValid to the same promotionCandidate premise and therefore only restates the predicate body.",
+        "The retained theorem unfolds both policy-promotion predicates and derives contradiction for the operationally important missing-holdout or missing-contamination-check cases.",
+        "Both declarations occur in the same PolicyOptimization namespace over the same PolicyPromotionEvidenceReview record and predicates.",
+        "The retired declaration has no theorem dependency, theorem consumer, fully qualified current consumer, or proof-target ownership.",
+        "No public target migration is invented; the retained counterexample only preserves the authored finite-model rejection boundary."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "Only that a declared promotion candidate with either a missing holdout reference or a missing contamination check cannot satisfy the authored finite policy-promotion evidence predicate.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_proof_artifact_audit.py",
+        "scripts/validate_policy_update_lease_probe.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R7-policy-reward-proxy-projection",
+      "sequence": 7,
+      "state": "executed",
+      "action": "retire_projection_after_counterexample_consumer_migration",
+      "semantic_relation": "premise_restatement_replaced_by_derived_counterexample_gate",
+      "module_path": "lean/AsiStackProofs/PolicyOptimization.lean",
+      "baseline_module_sha256": "0b3108e7528d151e93f63774749665639def53d733085373f3ec67a22087196f",
+      "retired_theorem_id": "lean/AsiStackProofs/PolicyOptimization.lean::reward_proxy_promotion_requires_target_evaluation",
+      "replacement_theorem_id": "lean/AsiStackProofs/PolicyOptimization.lean::reward_proxy_without_target_evaluation_rejected",
+      "retired_block_sha256": "89e7aee321a83b604269e4e31ac1c17d697550595a09ee4a77d0a8a400c054b2",
+      "replacement_block_sha256": "ce68df6a01a4bbb71568ee699d34a85988d42a0e5c3bf53553f3686176d9ac70",
+      "retired_statement_sha256": "90a94e4db811d98446d1c829a5d535f3cb4e182ed029c507ac93435cbdbf902e",
+      "replacement_statement_sha256": "97ba0751c0b85f55d9a4a06d63162413c280c6c436a9c037ed7cd88b661ae10d",
+      "semantic_basis": [
+        "The retired theorem applies RewardProxyPromotionValid to the same proxy-improvement, sole-evidence, and promotion premises and therefore only restates the predicate body.",
+        "The retained theorem unfolds the reward-proxy predicate and derives contradiction when the same candidate lacks target-evaluation evidence.",
+        "Both declarations occur in the same PolicyOptimization namespace over the same RewardProxyReview record and predicate.",
+        "The retired declaration has no theorem dependency, theorem consumer, fully qualified current consumer, or proof-target ownership.",
+        "No public target migration is invented; the retained counterexample preserves only the explicit reward-proxy rejection boundary."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "Only that a reward-proxy improvement used as sole promotion evidence cannot satisfy the authored finite predicate when target-evaluation evidence is explicitly absent.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_proof_artifact_audit.py",
+        "scripts/validate_policy_update_lease_probe.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R8-policy-authority-expansion-projection",
+      "sequence": 8,
+      "state": "executed",
+      "action": "retire_projection_after_counterexample_consumer_migration",
+      "semantic_relation": "premise_restatement_replaced_by_derived_counterexample_gate",
+      "module_path": "lean/AsiStackProofs/PolicyOptimization.lean",
+      "baseline_module_sha256": "0b3108e7528d151e93f63774749665639def53d733085373f3ec67a22087196f",
+      "retired_theorem_id": "lean/AsiStackProofs/PolicyOptimization.lean::authority_expanding_policy_update_requires_approval_and_rollback",
+      "replacement_theorem_id": "lean/AsiStackProofs/PolicyOptimization.lean::authority_expanding_policy_update_without_approval_or_rollback_rejected",
+      "retired_block_sha256": "4e365924ea3d68ef600406e27f73a7dcc560cc666c459f16d3c49fa798587f2c",
+      "replacement_block_sha256": "07cfbb9c004382dda0bdf52ac7ec04da69b5ffa034465f603ab043cf3833096f",
+      "retired_statement_sha256": "4d78826a37a915380f041194270db4780cabca007a561554a1887bf7d9ec54d0",
+      "replacement_statement_sha256": "b613aaa7986e5f407dc7f236a4329343db22cbe3b0689c3c609966852d85ed67",
+      "semantic_basis": [
+        "The retired theorem applies AuthorityExpandingPolicyUpdateValid to the same authority-expansion and promotion premises and therefore only restates the predicate body.",
+        "The retained theorem unfolds the same validity predicate and derives contradiction for missing governance approval or missing rollback.",
+        "Both declarations occur in the same PolicyOptimization namespace over the same AuthorityExpandingPolicyReview record and predicate.",
+        "The retired declaration has no theorem dependency, theorem consumer, fully qualified current consumer, or proof-target ownership.",
+        "No public target migration is invented; the retained counterexample preserves only the explicit authority-and-rollback rejection boundary."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "Only that an authority-expanding policy promotion cannot satisfy the authored finite validity predicate when governance approval or rollback is explicitly absent.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_proof_artifact_audit.py",
+        "scripts/validate_policy_update_lease_probe.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
     }
   ],
   "summary": {
-    "executed_retirement_count": 5,
-    "current_live_theorem_count": 1365,
-    "remaining_action_count": 156,
+    "executed_retirement_count": 8,
+    "current_live_theorem_count": 1362,
+    "remaining_action_count": 153,
     "remaining_action_counts": {
-      "retire_narrow_projection": 59,
+      "retire_narrow_projection": 56,
       "rewrite_scope_language": 2,
       "rewrite_with_stronger_model": 95
     },

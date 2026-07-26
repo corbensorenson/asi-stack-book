@@ -75,18 +75,6 @@ def PolicyPromotionEvidenceValid
     (review : PolicyPromotionEvidenceReview) : Prop :=
   review.promotionCandidate = true -> PolicyPromotionEvidenceComplete review
 
-theorem promoted_policy_update_records_holdouts_probes_regressions_and_rollback
-    {review : PolicyPromotionEvidenceReview} :
-    PolicyPromotionEvidenceValid review ->
-    review.promotionCandidate = true ->
-    review.holdoutRefsPresent = true ∧
-      review.contaminationCheckPresent = true ∧
-        review.rewardHackingProbePresent = true ∧
-          review.regressionRefsPresent = true ∧
-            review.rollbackPlanPresent = true := by
-  intro valid promoted
-  exact valid promoted
-
 theorem promotion_candidate_missing_holdout_or_contamination_check_rejected
     {review : PolicyPromotionEvidenceReview} :
     review.promotionCandidate = true ->
@@ -122,16 +110,6 @@ def RewardProxyPromotionValid (review : RewardProxyReview) : Prop :=
       review.promotionCandidate = true ->
         review.targetEvaluationRefsPresent = true
 
-theorem reward_proxy_promotion_requires_target_evaluation
-    {review : RewardProxyReview} :
-    RewardProxyPromotionValid review ->
-    review.rewardProxyImproved = true ->
-    review.rewardUsedAsSoleEvidence = true ->
-    review.promotionCandidate = true ->
-    review.targetEvaluationRefsPresent = true := by
-  intro valid proxyImproved soleEvidence promoted
-  exact valid proxyImproved soleEvidence promoted
-
 theorem reward_proxy_without_target_evaluation_rejected
     {review : RewardProxyReview} :
     review.rewardProxyImproved = true ->
@@ -158,16 +136,6 @@ def AuthorityExpandingPolicyUpdateValid
     review.promotionCandidate = true ->
       review.governanceApprovalPresent = true ∧
         review.rollbackPlanPresent = true
-
-theorem authority_expanding_policy_update_requires_approval_and_rollback
-    {review : AuthorityExpandingPolicyReview} :
-    AuthorityExpandingPolicyUpdateValid review ->
-    review.authorityExpanded = true ->
-    review.promotionCandidate = true ->
-    review.governanceApprovalPresent = true ∧
-      review.rollbackPlanPresent = true := by
-  intro valid expanded promoted
-  exact valid expanded promoted
 
 theorem authority_expanding_policy_update_without_approval_or_rollback_rejected
     {review : AuthorityExpandingPolicyReview} :

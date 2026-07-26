@@ -14,8 +14,8 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 333 |
 | Lean modules scanned | 110 |
-| Theorem declarations classified | 1365 |
-| Direct/projection-style theorem declarations | 226 |
+| Theorem declarations classified | 1362 |
+| Direct/projection-style theorem declarations | 223 |
 | Derived/decomposed theorem declarations | 924 |
 | Unknown or mixed theorem declarations | 215 |
 | Safety-critical theorem declarations | 73 |
@@ -117,7 +117,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/PersonalComputeHives.lean` | unmapped | 0 | 21 | 0 | 21 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/PlanForge.lean` | planning-as-a-control-layer | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Planning.lean` | planning-as-a-control-layer | 5 | 29 | 8 | 21 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/PolicyOptimization.lean` | unmapped | 0 | 19 | 7 | 12 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/PolicyOptimization.lean` | unmapped | 0 | 16 | 4 | 12 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/PolicyOptimizationRefinement.lean` | policy-optimization-and-learning-from-feedback | 4 | 5 | 0 | 2 | 3 | manual review |
 | `lean/AsiStackProofs/PrivacyInformationFlow.lean` | privacy-data-rights-and-information-flow-governance | 2 | 11 | 0 | 3 | 8 | manual review |
 | `lean/AsiStackProofs/ProceduralMemory.lean` | unmapped | 0 | 14 | 0 | 14 | 0 | derived/decomposed by classifier |
@@ -903,7 +903,6 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/Planning.lean` | `valid_plan_control_record_preserves_non_claim_boundary` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/Planning.lean` | `valid_replanned_plan_preserves_control_residuals` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/PolicyOptimization.lean` | `admitted_policy_update_records_reward_evaluation_governance_and_rollback` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
-| `lean/AsiStackProofs/PolicyOptimization.lean` | `authority_expanding_policy_update_requires_approval_and_rollback` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/PolicyOptimization.lean` | `authority_expanding_policy_update_without_approval_or_rollback_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/PolicyOptimization.lean` | `inadmissible_feedback_rejects_policy_promotion` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/PolicyOptimization.lean` | `missing_selection_context_or_independent_evaluation_blocks_promotion` | derived_or_decomposed | no | uses rcases, simp |
@@ -916,9 +915,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/PolicyOptimization.lean` | `policy_update_lease_probe_fixture_valid` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/PolicyOptimization.lean` | `policy_update_lease_probe_preserves_rollback_boundary` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/PolicyOptimization.lean` | `policy_update_lease_probe_rejects_reward_only_proxy` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
-| `lean/AsiStackProofs/PolicyOptimization.lean` | `promoted_policy_update_records_holdouts_probes_regressions_and_rollback` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/PolicyOptimization.lean` | `promotion_candidate_missing_holdout_or_contamination_check_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
-| `lean/AsiStackProofs/PolicyOptimization.lean` | `reward_proxy_promotion_requires_target_evaluation` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/PolicyOptimization.lean` | `reward_proxy_without_target_evaluation_rejected` | derived_or_decomposed | no | uses contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/PolicyOptimization.lean` | `unverified_reward_or_missing_governance_gate_blocks_policy_promotion` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/PolicyOptimizationRefinement.lean` | `accepted_event_increments_receipt_count` | derived_or_decomposed | no | uses simp |

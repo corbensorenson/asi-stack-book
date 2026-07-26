@@ -383,7 +383,7 @@
               ],
               "properties": {
                 "state": {
-                  "const": "dependency_safe_execution_active_after_five_retirements"
+                  "const": "dependency_safe_execution_active_after_eight_retirements"
                 },
                 "classification_baseline_commit": {
                   "const": "d0f9bda14f1253999f2c40d556d925d31e4b36a4"
@@ -401,7 +401,7 @@
                   "const": "proofs/proof_semantic_rationalization_ledger.json"
                 },
                 "theorem_count": {
-                  "const": 1365
+                  "const": 1362
                 },
                 "theorem_bearing_module_count": {
                   "const": 104
@@ -412,27 +412,27 @@
                 "semantic_level_counts": {
                   "const": {
                     "P0": 47,
-                    "P1": 796,
+                    "P1": 795,
                     "P2": 25,
                     "P3": 319,
                     "P4": 95,
-                    "P5": 83,
+                    "P5": 81,
                     "P6": 0
                   }
                 },
                 "disposition_counts": {
                   "const": {
                     "retain": 1209,
-                    "retire_narrow_projection": 59,
+                    "retire_narrow_projection": 56,
                     "rewrite_scope_language": 2,
                     "rewrite_with_stronger_model": 95
                   }
                 },
                 "executed_retirement_count": {
-                  "const": 5
+                  "const": 8
                 },
                 "remaining_action_count": {
-                  "const": 156
+                  "const": 153
                 },
                 "mutation_coverage_missing_count": {
                   "const": 0
@@ -1098,9 +1098,9 @@
         "sota_supported_count": 0,
         "proof_target_count": 333,
         "lean_module_count": 109,
-        "theorem_declaration_count": 1365,
+        "theorem_declaration_count": 1362,
         "derived_or_decomposed_theorem_count": 924,
-        "direct_or_projection_theorem_count": 226,
+        "direct_or_projection_theorem_count": 223,
         "unknown_or_mixed_theorem_count": 215,
         "historical_v2_2_approved_exact_local_reader_formats": [
           "html"

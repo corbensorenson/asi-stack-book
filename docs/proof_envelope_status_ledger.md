@@ -15,9 +15,9 @@ It does **not** add proof targets, prove semantic adequacy, promote support stat
 | Planned proof targets | 23 |
 | Lean modules referenced | 71 |
 | Chapters with proof targets | 84 |
-| Theorem declarations classified | 1365 |
+| Theorem declarations classified | 1362 |
 | Derived/decomposed theorem declarations | 924 |
-| Direct/projection-style theorem declarations | 226 |
+| Direct/projection-style theorem declarations | 223 |
 | Unknown or mixed theorem declarations | 215 |
 | Safety-critical theorem declarations | 73 |
 | Safety-critical chapter classifications present | 1/1 |

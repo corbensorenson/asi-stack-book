@@ -54,9 +54,9 @@ def main() -> None:
         "execution_tier": "pr",
         "validation_class": "proof_or_evidence_gate",
         "input_contract": (
-            "One immutable 1,370-theorem baseline; five exact, ordered transactions; "
-            "the baseline Scalable Oversight, Bibliography Plan, and Benchmark Ratchets "
-            "modules; one same-model normalized duplicate pair; four premise-restating "
+            "One immutable 1,370-theorem baseline; eight exact, ordered transactions; "
+            "the baseline Scalable Oversight, Bibliography Plan, Benchmark Ratchets, and "
+            "Policy Optimization modules; one same-model normalized duplicate pair; seven premise-restating "
             "projections and their derived counterexample or decision-model replacements; "
             "the current overlay; frozen historical registry; and reconciled target, "
             "roadmap, and status surfaces."
@@ -66,7 +66,7 @@ def main() -> None:
             "Require immutable baseline and theorem-block digests, exact same-model "
             "statement identity for the duplicate, dependency-and-consumer-safe removals, "
             "two counterexample and two decision-model target migrations, retained target "
-            "ownership, a 1,365-theorem current estate, an exact 156-action remaining "
+            "ownership, a 1,362-theorem current estate, an exact 153-action remaining "
             "queue, and no support or release effect."
         ),
         "output_assertions": [
@@ -74,19 +74,20 @@ def main() -> None:
             "retired and retained declarations share one authored model",
             "normalized theorem statements exact",
             "retired theorem has no theorem consumer",
-            "five retired declarations absent and all replacements live",
+            "eight retired declarations absent and all replacements live",
             "two bibliography targets migrated to derived counterexample gates",
             "two benchmark targets migrated to derived decision-model gates",
-            "1,365 current theorem declarations",
-            "156 rewrite-or-retire actions remain",
+            "1,362 current theorem declarations",
+            "153 rewrite-or-retire actions remain",
             "frozen 1,151-theorem and 298-target registry preserved",
             "13 mutations reject",
             "no support or release effect",
         ],
         "claim_scope": (
-            "Five dependency-safe declaration retirements: one exact same-model duplicate "
-            "and four premise-restating projections with counterexample or decision-model "
-            "target migration."
+            "Eight dependency-safe declaration retirements: one exact same-model duplicate "
+            "and seven premise-restating projections. Four public targets migrate to "
+            "counterexample or decision-model gates; three targetless Policy Optimization "
+            "projections retire without inventing target ownership."
         ),
         "negative_controls": (
             "validator_owned_thirteen_baseline_digest_sequence_identity_statement_dependency_"

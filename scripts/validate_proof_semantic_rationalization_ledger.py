@@ -37,19 +37,22 @@ EXPECTED_ACTION_IDS = [
     "C6-R3-bibliography-chapter-assignment-projection",
     "C6-R4-benchmark-readiness-projection",
     "C6-R5-benchmark-saturation-projection",
+    "C6-R6-policy-promotion-evidence-projection",
+    "C6-R7-policy-reward-proxy-projection",
+    "C6-R8-policy-authority-expansion-projection",
 ]
 EXPECTED_LEVELS = {
     "P0": 47,
-    "P1": 796,
+    "P1": 795,
     "P2": 25,
     "P3": 319,
     "P4": 95,
-    "P5": 83,
+    "P5": 81,
     "P6": 0,
 }
 EXPECTED_DISPOSITIONS = {
     "retain": 1209,
-    "retire_narrow_projection": 59,
+    "retire_narrow_projection": 56,
     "rewrite_scope_language": 2,
     "rewrite_with_stronger_model": 95,
 }
@@ -135,7 +138,7 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
     actions = ledger["actions"]
     if [row["action_id"] for row in actions] != EXPECTED_ACTION_IDS:
         out.append("action sequence or identity drifted")
-    if [row["sequence"] for row in actions] != [1, 2, 3, 4, 5]:
+    if [row["sequence"] for row in actions] != list(range(1, 9)):
         out.append("action sequence numbers drifted")
 
     try:
@@ -224,8 +227,12 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
                 out.append(f"{action['action_id']}: retired theorem is not the audited projection")
             if "have " not in replacement_block["block"] or "rw [" not in replacement_block["block"]:
                 out.append(f"{action['action_id']}: replacement lacks derived counterexample steps")
-            if len(action["target_migrations"]) != 1:
-                out.append(f"{action['action_id']}: projection target migration is not singular")
+            expected_migration_count = 1 if retired_row.get("candidate_target_refs") else 0
+            if len(action["target_migrations"]) != expected_migration_count:
+                out.append(
+                    f"{action['action_id']}: target migration count does not match "
+                    "baseline target ownership"
+                )
         else:
             if "exact valid" not in retired_block["block"]:
                 out.append(f"{action['action_id']}: retired theorem is not the audited projection")
@@ -250,13 +257,13 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
 
     overlay = load(CURRENT_OVERLAY)
     summary = overlay.get("summary", {})
-    if summary.get("current_theorem_count") != 1365:
+    if summary.get("current_theorem_count") != 1362:
         out.append("current theorem denominator drifted")
     if summary.get("semantic_level_counts") != EXPECTED_LEVELS:
         out.append("current semantic-level counts drifted")
     if summary.get("disposition_counts") != EXPECTED_DISPOSITIONS:
         out.append("current disposition counts drifted")
-    if sum(value for key, value in EXPECTED_DISPOSITIONS.items() if key != "retain") != 156:
+    if sum(value for key, value in EXPECTED_DISPOSITIONS.items() if key != "retain") != 153:
         out.append("expected remaining-action denominator is internally inconsistent")
     if ledger["summary"]["remaining_action_counts"] != {
         key: value for key, value in EXPECTED_DISPOSITIONS.items() if key != "retain"
@@ -284,6 +291,21 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
         out.append("BenchmarkRatchets must retain exactly six derived declarations")
     if any(row.get("depth_class") == "direct_or_projection" for row in benchmark_rows):
         out.append("BenchmarkRatchets retained a direct projection")
+
+    policy_rows = [
+        row
+        for row in current_rows
+        if row["module_path"] == "lean/AsiStackProofs/PolicyOptimization.lean"
+    ]
+    if len(policy_rows) != 16:
+        out.append("PolicyOptimization must retain exactly sixteen declarations")
+    retired_policy_names = {
+        "promoted_policy_update_records_holdouts_probes_regressions_and_rollback",
+        "reward_proxy_promotion_requires_target_evaluation",
+        "authority_expanding_policy_update_requires_approval_and_rollback",
+    }
+    if retired_policy_names & {row["name"] for row in policy_rows}:
+        out.append("PolicyOptimization retained an executed narrow projection")
 
     manifest_rows = {
         row["tag"]: row
@@ -321,17 +343,17 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
     if status.get("rationalization_ledger_path") != str(LEDGER.relative_to(ROOT)):
         out.append("status does not bind the cumulative rationalization ledger")
     if (
-        status.get("theorem_count") != 1365
-        or status.get("executed_retirement_count") != 5
-        or status.get("remaining_action_count") != 156
+        status.get("theorem_count") != 1362
+        or status.get("executed_retirement_count") != 8
+        or status.get("remaining_action_count") != 153
     ):
         out.append("status does not report the cumulative post-transaction denominator")
     roadmap = ROADMAP.read_text(encoding="utf-8")
     roadmap_flat = " ".join(roadmap.split())
     for phrase in [
-        "second narrow-projection tranche",
-        "1,365 live theorem declarations",
-        "156 rewrite-or-retire actions remain",
+        "third narrow-projection tranche",
+        "1,362 live theorem declarations",
+        "153 rewrite-or-retire actions remain",
         "`proofs/proof_semantic_rationalization_ledger.json`",
     ]:
         if phrase not in roadmap_flat:
@@ -380,9 +402,9 @@ def main() -> None:
             + "\n - ".join(failures)
         )
     print(
-        "Proof semantic-rationalization ledger passed: five dependency-safe "
-        "retirements, four public-target migrations, 1,365 live theorems, "
-        "156 actions remain, 13 rejecting mutations, no support or release effect."
+        "Proof semantic-rationalization ledger passed: eight dependency-safe "
+        "retirements, four public-target migrations, 1,362 live theorems, "
+        "153 actions remain, 13 rejecting mutations, no support or release effect."
     )
 
 
