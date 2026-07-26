@@ -27,7 +27,6 @@ OUTLINE = ROOT / "docs" / "book_outline.md"
 ROADMAP = ROOT / "docs" / "v1_x_beyond_sota_roadmap.md"
 LIVE_CHAPTER = ROOT / "chapters" / "security-kernel-and-digital-scifs.qmd"
 READER_CHAPTER = ROOT / "editions" / "reader_manuscript" / "v1_0" / "chapters" / "security-kernel-and-digital-scifs.qmd"
-README = ROOT / "README.md"
 PUBLICATION = ROOT / "docs" / "publication_readiness.md"
 STATUS = ROOT / "docs" / "test_harness_status_ledger.md"
 
@@ -141,7 +140,7 @@ def require_no_effects(scenario: dict[str, Any], owner: str, errors: list[str]) 
 
 def main() -> None:
     errors: list[str] = []
-    paths = (RESULT, DOC, STRUCTURE, OUTLINE, ROADMAP, LIVE_CHAPTER, READER_CHAPTER, README, PUBLICATION, STATUS)
+    paths = (RESULT, DOC, STRUCTURE, OUTLINE, ROADMAP, LIVE_CHAPTER, READER_CHAPTER, PUBLICATION, STATUS)
     for path in paths:
         if not path.exists():
             errors.append(f"Missing {rel(path)}.")
@@ -246,7 +245,6 @@ def main() -> None:
         (rel(ROADMAP), ROADMAP),
         (rel(LIVE_CHAPTER), LIVE_CHAPTER),
         (rel(READER_CHAPTER), READER_CHAPTER),
-        (rel(README), README),
         (rel(PUBLICATION), PUBLICATION),
         (rel(STATUS), STATUS),
     ):

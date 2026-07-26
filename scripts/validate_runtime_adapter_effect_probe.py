@@ -32,7 +32,6 @@ READER_CHAPTER = (
     / "chapters"
     / "runtime-adapters-tool-permissions-and-human-approval.qmd"
 )
-README = ROOT / "README.md"
 PUBLICATION = ROOT / "docs" / "publication_readiness.md"
 STATUS = ROOT / "docs" / "test_harness_status_ledger.md"
 
@@ -110,7 +109,7 @@ def require_sha(value: Any, owner: str, errors: list[str]) -> None:
 
 def main() -> None:
     errors: list[str] = []
-    paths = (RESULT, DOC, STRUCTURE, OUTLINE, ROADMAP, LIVE_CHAPTER, READER_CHAPTER, README, PUBLICATION, STATUS)
+    paths = (RESULT, DOC, STRUCTURE, OUTLINE, ROADMAP, LIVE_CHAPTER, READER_CHAPTER, PUBLICATION, STATUS)
     for path in paths:
         if not path.exists():
             errors.append(f"Missing {rel(path)}.")
@@ -213,7 +212,6 @@ def main() -> None:
         (rel(ROADMAP), ROADMAP),
         (rel(LIVE_CHAPTER), LIVE_CHAPTER),
         (rel(READER_CHAPTER), READER_CHAPTER),
-        (rel(README), README),
         (rel(PUBLICATION), PUBLICATION),
         (rel(STATUS), STATUS),
     ):

@@ -30,6 +30,8 @@ Operating rules:
 - Keep raw/private source exports out of the public repository unless publication is explicitly approved.
 - When an active roadmap closes, activate its exact successor in the same transaction and reconcile every public roadmap pointer; a living-book closure with zero or multiple active successor roadmaps is invalid.
 - Maintain the evidence-faithful X Article synopsis under `docs/x_article_synopsis_contract.md`: at most 9,999 words, canonical live-book link first, exact 5:2 header, claim crosswalk, release-triggered staleness checks, and no external publication without Corben's explicit authorization.
+- Update an existing canonical owner instead of creating a one-off report or status file. A new tracked artifact requires a durable role, a named consumer, and a lifecycle class in `docs/repository_map.md`; transient diagnostics belong in ignored `build/` or `/tmp`.
+- Minimize write amplification: use targeted checks while drafting, batch full validation, and remove regenerated output after review. Ordinary work is HTML-first; EPUB, PDF, DOCX, e-reader, and audio generation is reserved for an explicitly approved major-version release gate.
 
 For maintenance and writing runs:
 1. Load the relevant part/chapter source queue from `docs/book_outline.md`.

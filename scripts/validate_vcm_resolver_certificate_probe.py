@@ -25,7 +25,6 @@ OUTLINE = ROOT / "docs" / "book_outline.md"
 ROADMAP = ROOT / "docs" / "v1_x_beyond_sota_roadmap.md"
 LIVE_CHAPTER = ROOT / "chapters" / "virtual-context-abi.qmd"
 READER_CHAPTER = ROOT / "editions" / "reader_manuscript" / "v1_0" / "chapters" / "virtual-context-abi.qmd"
-README = ROOT / "README.md"
 PUBLICATION = ROOT / "docs" / "publication_readiness.md"
 STATUS = ROOT / "docs" / "test_harness_status_ledger.md"
 
@@ -168,7 +167,7 @@ def require_no_overclaim_effects(scenario: dict[str, Any], owner: str, errors: l
 
 def main() -> None:
     errors: list[str] = []
-    paths = (RESULT, DOC, STRUCTURE, OUTLINE, ROADMAP, LIVE_CHAPTER, READER_CHAPTER, README, PUBLICATION, STATUS)
+    paths = (RESULT, DOC, STRUCTURE, OUTLINE, ROADMAP, LIVE_CHAPTER, READER_CHAPTER, PUBLICATION, STATUS)
     for path in paths:
         if not path.exists():
             errors.append(f"Missing {rel(path)}.")
@@ -272,7 +271,6 @@ def main() -> None:
         (rel(OUTLINE), OUTLINE),
         (rel(ROADMAP), ROADMAP),
         (rel(LIVE_CHAPTER), LIVE_CHAPTER),
-        (rel(README), README),
         (rel(PUBLICATION), PUBLICATION),
         (rel(STATUS), STATUS),
     ):

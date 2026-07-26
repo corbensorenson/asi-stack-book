@@ -50,7 +50,6 @@ FORBIDDEN = [
 ]
 
 REQUIRED = {
-    "README.md": ["1 N0, 15 N1, 74 N2, and 0 N3–N5"],
     "index.qmd": ["1 N0, 15 N1, 74 N2, and 0 N3–N5"],
     "docs/non_core_evidence_ledger.md": [
         "2 N2 and 1 N1",

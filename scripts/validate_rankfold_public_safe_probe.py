@@ -24,7 +24,6 @@ READER_CHAPTER = (
     / "chapters"
     / "rankfold-neuralfold-and-artifact-compression.qmd"
 )
-README = ROOT / "README.md"
 PUBLICATION = ROOT / "docs" / "publication_readiness.md"
 DECISION = ROOT / "evidence_transitions" / "v1_x_measured" / "rankfold_public_safe_replay_probe_no_change.json"
 
@@ -155,7 +154,7 @@ def fail(errors: list[str]) -> None:
 
 def main() -> None:
     errors: list[str] = []
-    paths = (RESULT, DOC, STRUCTURE, OUTLINE, ROADMAP, LIVE_CHAPTER, READER_CHAPTER, README, PUBLICATION, DECISION)
+    paths = (RESULT, DOC, STRUCTURE, OUTLINE, ROADMAP, LIVE_CHAPTER, READER_CHAPTER, PUBLICATION, DECISION)
     for path in paths:
         if not path.exists():
             errors.append(f"Missing {rel(path)}.")
@@ -251,7 +250,6 @@ def main() -> None:
         (rel(OUTLINE), OUTLINE),
         (rel(ROADMAP), ROADMAP),
         (rel(LIVE_CHAPTER), LIVE_CHAPTER),
-        (rel(README), README),
         (rel(PUBLICATION), PUBLICATION),
     ):
         require_fragments(owner, path.read_text(encoding="utf-8"), SURFACE_FRAGMENTS, errors)

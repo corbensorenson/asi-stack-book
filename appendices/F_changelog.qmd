@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-07-26 — Repository and write-amplification cleanup
+
+- Reduced the public README from a project-wide operational inventory to a
+  concise product, trust, canonical-owner, local-work, and rights entrypoint.
+- Replaced the per-file repository-map inventory with authority, lifecycle,
+  write-discipline, and common-workflow contracts.
+- Removed eight orphaned P2 Markdown diagnoses whose governed JSON evidence
+  remains canonical and whose prior text remains recoverable from Git history.
+- Decoupled public-surface validators from historical reader, consolidation,
+  and release-preparation file lists while retaining canonical trust,
+  evidence-boundary, roadmap, and repository-health checks.
+- Added a durable low-write policy to the contributor, agent, living-update,
+  and release-edition instructions: update canonical owners, keep transient
+  diagnostics ignored, batch expensive validation, and reserve EPUB, PDF,
+  DOCX, e-reader, and audio generation for approved major-version gates.
+- No manuscript claim, source assignment, proof result, support state,
+  experiment result, or release status changed.
+
 ## 2026-07-25 — Ninth narrow-projection C6 tranche
 
 - Retired four assumption-restating declarations across

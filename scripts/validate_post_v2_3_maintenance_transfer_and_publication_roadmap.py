@@ -1487,6 +1487,8 @@ def errors(data: dict) -> list[str]:
     for path, text in data["public"].items():
         if "post_v2_3_maintenance_transfer_and_publication_roadmap.md" not in text:
             out.append(f"{path} lacks the active successor pointer")
+    for path in ("docs/publication_readiness.md", "docs/public_status_contract.md"):
+        text = data["public"][path]
         if "post_v2_3_claim_proof_and_sota_challenge_roadmap.md" not in text:
             out.append(f"{path} lacks predecessor history")
         if "v2.3.0" not in text:

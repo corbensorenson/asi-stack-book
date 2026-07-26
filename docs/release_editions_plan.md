@@ -1,5 +1,16 @@
 # Release Editions Plan
 
+## Release cadence
+
+The project is HTML-first between major versions. EPUB, PDF, DOCX, e-reader,
+audio-script, audiobook, and audio-embedded EPUB work begins only after an
+explicitly approved major-version content freeze. Minor manuscript, source,
+proof, evidence, and site changes do not regenerate these derivatives.
+
+Historical derivative receipts remain historical facts; they do not create a
+standing obligation to rerender. This rule avoids repeated output that will be
+overwritten by the next content edit and keeps effort focused on the book.
+
 Last updated: 2026-06-28
 
 The living book is the canonical architecture, evidence, source, proof, schema, and release-control source. Major-version editions begin as derived artifacts for different audiences. Once the normal reader manuscript needs sustained prose editing, it may become a curated parallel derivative source for human reading, but it is not an equal authority: claims, support states, source boundaries, proof/test status, implementation horizons, and release records remain governed by the live book.

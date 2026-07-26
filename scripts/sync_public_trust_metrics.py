@@ -43,6 +43,11 @@ def replace_once(text: str, pattern: str, replacement: str, path: Path) -> str:
     return updated
 
 
+def replace_optional(text: str, pattern: str, replacement: str) -> str:
+    """Update legacy detail when present without making it a public-surface requirement."""
+    return re.sub(pattern, replacement, text, count=1)
+
+
 def chapter_count() -> int:
     structure = read_json(STRUCTURE)
     if not isinstance(structure, dict):
@@ -228,7 +233,7 @@ def sync_public_trust_metrics() -> None:
     readme = readme_path.read_text(encoding="utf-8")
     readme = replace_once(
         readme,
-        r"the inventory has \d+ public-safe records; \d+/\d+ chapters are externally positioned",
+        r"[Tt]he inventory has \d+ public-safe records; \d+/\d+ chapters are externally positioned",
         f"the inventory has {sources} public-safe records; {externally_positioned}/{chapters} chapters are externally positioned",
         readme_path,
     )
@@ -238,29 +243,25 @@ def sync_public_trust_metrics() -> None:
         f"All {chapters} chapter core claims remain at `argument`; [the core-claim disposition ledger](docs/core_claim_disposition_ledger.md) records {disposition_chapters} per-chapter core-claim dispositions, {transitions} accepted no-change transition dispositions, {no_promotions} accepted no-promotion dispositions",
         readme_path,
     )
-    readme = replace_once(
+    readme = replace_optional(
         readme,
         r"all \d+ chapter core claims, derived from `docs/per_chapter_evidence_plan\.md`",
         f"all {chapters} chapter core claims, derived from `docs/per_chapter_evidence_plan.md`",
-        readme_path,
     )
-    readme = replace_once(
+    readme = replace_optional(
         readme,
         r"\d+ of \d+ chapters currently have in-prose `ext_\*` positioning",
         f"{externally_positioned} of {chapters} chapters currently have in-prose `ext_*` positioning",
-        readme_path,
     )
-    readme = replace_once(
+    readme = replace_optional(
         readme,
         r"turn that placement audit into a \d+-chapter grounding ledger: all \d+ chapters have source-noted external positioning records",
         f"turn that placement audit into a {chapters}-chapter grounding ledger: all {externally_positioned} chapters have source-noted external positioning records",
-        readme_path,
     )
-    readme = replace_once(
+    readme = replace_optional(
         readme,
         r"All \d+ chapters now carry a `\.asi-human-only` Human Reading Path bridge",
         f"All {chapters} chapters now carry a `.asi-human-only` Human Reading Path bridge",
-        readme_path,
     )
     readme_path.write_text(readme, encoding="utf-8")
 

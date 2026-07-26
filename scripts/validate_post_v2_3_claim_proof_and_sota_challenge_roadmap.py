@@ -2514,14 +2514,23 @@ def errors(data: dict) -> list[str]:
     live_claim_sentence = f"All {live_chapter_count} live chapter-core claims remain at `argument`"
     for path, body in data["public"].items():
         body_normalized = " ".join(body.split())
-        for phrase in [ROADMAP, STATUS, SUCCESSOR, SUCCESSOR_STATUS, "v2.3.0"]:
+        for phrase in [SUCCESSOR, SUCCESSOR_STATUS]:
             if phrase.casefold() not in body_normalized.casefold():
-                out.append(f"{path} missing terminal/successor roadmap truth: {phrase}")
-        live_phrase = live_claim_sentence if path == "docs/publication_readiness.md" else live_claim_identity
+                out.append(f"{path} missing active-successor roadmap truth: {phrase}")
+        if path == "README.md":
+            live_phrase = f"All {live_chapter_count} chapter core claims remain at `argument`"
+        elif path == "docs/publication_readiness.md":
+            live_phrase = live_claim_sentence
+        else:
+            live_phrase = live_claim_identity
         if live_phrase.casefold() not in body_normalized.casefold():
             out.append(f"{path} missing current active-maintenance claim identity: {live_phrase}")
         if "No successor roadmap is active" in body:
             out.append(f"{path} retains obsolete no-successor language")
+    historical_surface = " ".join(data["public"]["docs/publication_readiness.md"].split())
+    for phrase in [ROADMAP, STATUS, "v2.3.0"]:
+        if phrase.casefold() not in historical_surface.casefold():
+            out.append(f"publication readiness missing terminal predecessor truth: {phrase}")
     for name, body in [("living workflow", data["workflow"]), ("master prompt", data["master"])]:
         for phrase in ["same transaction", "active successor"]:
             if phrase.casefold() not in body.casefold():
@@ -2571,7 +2580,7 @@ def main() -> None:
     mutations.append(("successor continuity removal", no_continuity))
 
     stale_public = copy.deepcopy(base)
-    stale_public["public"]["README.md"] = stale_public["public"]["README.md"].replace(ROADMAP, PREDECESSOR)
+    stale_public["public"]["README.md"] = stale_public["public"]["README.md"].replace(SUCCESSOR, PREDECESSOR)
     mutations.append(("stale public pointer", stale_public))
 
     live_chapter_count = len(chapters(base["structure"]))

@@ -145,9 +145,15 @@ Do not mark claims as source-derived or test-backed until the source has actuall
 3. Extract only public-safe author intent, terminology, architecture lineage, deduplication decisions, and recovery tasks.
 4. Update `docs/book_outline.md`, `book_structure.json`, appendices, or docs only when the mined context changes the future writing plan.
 5. Do not quote private conversation wording verbatim or mark claims as source-derived from conversation context.
-6. Record a public-safe ingestion report under `docs/` and update the changelog.
+6. Update the source inventory, outline, roadmap, or existing ingestion ledger that owns the result, then update the changelog. Create a standalone public-safe ingestion report only when a validator, evidence transition, or governance decision consumes it.
 
 ## Prepare a Major-Version Reader Edition
+
+This workflow is dormant during ordinary manuscript work. Do not render EPUB,
+PDF, DOCX, e-reader, or audio derivatives for minor content changes or routine
+validation. Open it only after the active roadmap records an approved
+major-version content freeze; until then, use the live HTML/Human view and spend
+work on manuscript quality, sources, proofs, and executable evidence.
 
 The live book remains the canonical source. Reader, research, and audio editions are derived from a tagged live-book state.
 

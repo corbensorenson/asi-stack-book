@@ -73,13 +73,9 @@ REQUIRED_FULL_PACKET_STRINGS = [
 
 PUBLIC_SURFACE_REFS = [
     ("README.md", "docs/external_review_status.md"),
-    ("README.md", "docs/chapter_consolidation_full_review_packet.md"),
-    ("README.md", "external_reviews/request_updates/full_consolidation_review_request_2026-06-29.json"),
     ("index.qmd", "docs/external_review_status.md"),
     ("docs/publication_readiness.md", "docs/external_review_status.md"),
     ("docs/publication_readiness.md", "docs/chapter_consolidation_full_review_packet.md"),
-    ("docs/repository_map.md", "docs/external_review_packet.md"),
-    ("docs/repository_map.md", "docs/chapter_consolidation_full_review_packet.md"),
 ]
 
 FORBIDDEN_STRINGS = [

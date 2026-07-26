@@ -1438,8 +1438,6 @@ def validate_docs_reference_manifest(errors: list[str]) -> None:
         ROOT / "editions" / "README.md": "editions/reader_manuscript/",
         ROOT / "docs" / "release_editions_plan.md": "editions/reader_manuscript/v1_0/manifest.json",
         ROOT / "docs" / "major_version_release_runbook.md": "python3 scripts/validate_reader_manuscript_manifest.py",
-        ROOT / "README.md": "scripts/validate_reader_manuscript_manifest.py",
-        ROOT / "docs" / "repository_map.md": "scripts/sync_reader_chapter_review_matrix.py --check",
     }
     for path, needle in required_mentions.items():
         text = path.read_text(encoding="utf-8", errors="ignore")

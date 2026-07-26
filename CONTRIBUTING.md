@@ -11,6 +11,9 @@ Issues and pull requests may be closed without incorporation during this phase. 
 - Treat `docs/book_outline.md` as the source of truth for full-book drafting and Lean proof scope.
 - Treat `docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md` as the sole active execution roadmap and `docs/repository_map.md` as the repository authority/storage map; historical roadmaps remain lineage, not competing work queues.
 - Keep book work on `main`. Put new artifacts under their governed directory rather than the repository root, and do not track `build/`, `_site/`, `.quarto/`, private intake, or local caches.
+- Do not create one-off progress reports, review notes, validator receipts, or per-run summaries when an existing roadmap, ledger, changelog, or machine record owns the state. New tracked files require a durable role, a named consumer, and a lifecycle class from `docs/repository_map.md`.
+- Keep transient diagnostics in ignored `build/` or `/tmp`, batch expensive checks, and delete generated output after its active review is complete. This is both repository hygiene and a deliberate reduction in local write amplification.
+- Keep ordinary work HTML-first. Do not render EPUB, PDF, DOCX, e-reader, or audio derivatives until an explicitly approved major-version release gate is open.
 - Do not publish private raw source exports.
 - Do not fabricate source content, citations, proof results, benchmark results, or test results.
 - Keep speculative claims explicitly labeled.

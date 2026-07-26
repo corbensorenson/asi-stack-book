@@ -74,7 +74,6 @@ EXPECTED_NON_CORE = {
 }
 
 REQUIRED_LINKS = [
-    "docs/v1_0_candidate_status.md",
     "docs/core_claim_disposition_ledger.md",
     "docs/non_core_evidence_ledger.md",
     "docs/contribution_novelty_ledger.md",
@@ -82,9 +81,7 @@ REQUIRED_LINKS = [
     "appendices/G_corben_source_corpus.qmd",
     "appendices/H_external_sources.qmd",
     "docs/external_review_status.md",
-    "docs/reader_continuity_audit.md",
-    "docs/v1_x_beyond_sota_roadmap.md",
-    "docs/product_contracts.md",
+    "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md",
 ]
 
 REQUIRED_NON_CLAIMS = [
@@ -286,23 +283,9 @@ def main() -> None:
         )
 
     readme_current_needles = [
-        f"all {chapters} working-manifest chapters",
         f"canonical current book is the live **{chapters}-chapter** site",
-        f"generated from all {chapters} live chapters",
-        f"terminal at {chapters} chapters",
-        f"cover all {chapters} current chapters",
-        f"{active_overlays} active operations across {active_overlay_chapters} chapters",
-        f"Per-chapter core-claim disposition ledger: {chapters} current dispositions",
-        f"{selected_evidence_lanes} selected lanes",
-        (
-            f"{planned_evidence_lanes} planned-only lanes under the current "
-            f"{chapters}-chapter denominator"
-        ),
-        (
-            f"{proof_targets} proof targets "
-            f"({implemented_proof_targets} implemented; {planned_proof_targets} planned)"
-        ),
-        f"{int(theorem_declarations):,} Lean theorem declarations",
+        f"{chapters}/{chapters} chapters are externally positioned",
+        f"{chapters} chapter core claims remain at `argument`",
     ]
     for needle in readme_current_needles:
         if needle not in readme:
