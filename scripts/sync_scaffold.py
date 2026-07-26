@@ -996,7 +996,7 @@ The minimum viable implementation column is not a claim that the implementation 
 
 Current generated coverage: {total} chapter implementation horizons.
 
-{chr(10).join(sections)}
+{chr(10).join(sections).rstrip()}
 """
     (ROOT / "appendices" / "K_implementation_horizons.qmd").write_text(text, encoding="utf-8")
 
