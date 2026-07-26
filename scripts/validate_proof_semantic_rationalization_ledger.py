@@ -122,19 +122,35 @@ EXPECTED_ACTION_IDS = [
     "C6-R88-efficiency-efficiency-route-search-probe-fixture-valid",
     "C6-R89-efficiency-efficiency-route-search-probe-rejects-invalid-savings",
     "C6-R90-efficiency-efficiency-route-search-probe-preserves-no-promotion-boundary",
+    "C6-R91-evidence-no-requested-transition-allows-no-change",
+    "C6-R92-evidence-missing-claim-record-rejects-evidence-transition",
+    "C6-R93-evidence-missing-scope-boundary-requests-scope-boundary",
+    "C6-R94-evidence-missing-support-state-effect-requests-effect-record",
+    "C6-R95-evidence-mismatched-support-state-effect-blocks-transition",
+    "C6-R96-evidence-upward-transition-without-review-requests-review",
+    "C6-R97-evidence-source-derived-without-source-note-requests-required-evidence",
+    "C6-R98-evidence-synthetic-test-backed-without-test-run-requests-required-evidence",
+    "C6-R99-evidence-downward-transition-without-negative-evidence-requests-negative-evidence",
+    "C6-R100-evidence-downward-transition-without-trigger-requests-downgrade-trigger",
+    "C6-R101-evidence-terminal-refutation-with-wrong-effect-requests-terminal-effect",
+    "C6-R102-evidence-terminal-refutation-without-negative-evidence-requests-negative-evidence",
+    "C6-R103-evidence-terminal-refutation-without-changelog-requests-changelog",
+    "C6-R104-evidence-transition-without-nonclaims-preserves-nonclaim-boundary",
+    "C6-R105-evidence-complete-synthetic-test-backed-transition-accepts",
+    "C6-R106-evidence-claim-state-transition-bridge-fixture-valid",
 ]
 EXPECTED_LEVELS = {
     "P0": 35,
-    "P1": 731,
+    "P1": 712,
     "P2": 25,
-    "P3": 319,
-    "P4": 93,
-    "P5": 79,
+    "P3": 323,
+    "P4": 94,
+    "P5": 83,
     "P6": 0,
 }
 EXPECTED_DISPOSITIONS = {
-    "retain": 1212,
-    "rewrite_with_stronger_model": 70,
+    "retain": 1218,
+    "rewrite_with_stronger_model": 54,
 }
 EXPECTED_TARGETS = {
     "lean:bibliography.plan.operational_invariant": (
@@ -166,30 +182,16 @@ EXPECTED_TARGETS = {
         "regressions, authority within ceiling, rollback readiness, or incident closure."
     ),
     "lean:evidence.support_state.operational_invariant": (
-        "A reachable evidence-admission model derives state-specific artifact "
-        "requirements from the requested support state and inspected evidence bundle "
-        "rather than assuming the RequiredEvidence predicate."
+        "A reachable lifecycle freezes exact atom and proposition/obligation/predicate "
+        "projections, derives non-aggregating target evidence, preserves negative "
+        "evidence and non-claims, and cannot assign support, move related claims, or "
+        "create external effects."
     ),
-    "lean:evidence.bundle.completeness_probe_bridge": (
-        "An independently implemented formal bridge derives the evidence-bundle "
-        "probe's accepted and rejected outcomes from exact bundle inputs and audit "
-        "logic rather than assuming a valid summary predicate."
-    ),
-    "lean:evidence.claim_ledger.completeness_audit_bridge": (
-        "An independently implemented formal bridge derives claim-ledger completeness "
-        "and rejection outcomes from exact manifest and Appendix C inputs rather than "
-        "assuming a valid summary predicate."
-    ),
-    "lean:evidence.accepted_transition.review_audit_bridge": (
-        "An independently implemented formal bridge derives accepted-transition audit "
-        "outcomes from exact transition, no-promotion, changelog, and evidence inputs "
-        "rather than assuming a valid summary predicate."
-    ),
-    "lean:evidence.claim_state.transition_bridge": (
-        "A reachable claim-state lifecycle model derives negative-evidence, "
-        "no-live-movement, and non-claim conclusions from narrowing, downgrade, and "
-        "refutation cases rather than projecting fields from a hand-authored summary "
-        "predicate."
+    "lean:evidence.support_state.transition_lifecycle_route": (
+        "Six reachable stages preserve three claim projections and route state-specific "
+        "evidence, adverse-transition, review, decision, handoff, replay, substitution, "
+        "and authority failures to explicit outcomes; an independent consumer reaches "
+        "every declared route."
     ),
     "lean:substrates.search.operational_invariant": (
         "A substrate adoption record missing a baseline reference, measured target, "
@@ -335,11 +337,6 @@ EXPECTED_TARGETS = {
     ),
 }
 PLANNED_TARGETS = {
-    "lean:evidence.support_state.operational_invariant",
-    "lean:evidence.bundle.completeness_probe_bridge",
-    "lean:evidence.claim_ledger.completeness_audit_bridge",
-    "lean:evidence.accepted_transition.review_audit_bridge",
-    "lean:evidence.claim_state.transition_bridge",
     "lean:substrates.search.adoption_trace_bridge",
     "lean:artifact_stewards.work_contract.operational_invariant",
     "lean:artifact_stewards.release_gate.operational_invariant",
@@ -367,7 +364,10 @@ EXPECTED_RELATIONS = {
     ),
 }
 EXPECTED_MIGRATION_COUNTS = {
-    action_id: int(action_id in {
+    action_id: (
+        6
+        if action_id == "C6-R91-evidence-no-requested-transition-allows-no-change"
+        else int(action_id in {
         "C6-R2-bibliography-source-evidence-projection",
         "C6-R3-bibliography-chapter-assignment-projection",
         "C6-R4-benchmark-readiness-projection",
@@ -409,7 +409,8 @@ EXPECTED_MIGRATION_COUNTS = {
         "C6-R62-theseus-artifact-surface-projection",
         "C6-R69-efficiency-no-efficiency-claim-request-stays-idle",
         "C6-R88-efficiency-efficiency-route-search-probe-fixture-valid",
-    })
+        })
+    )
     for action_id in EXPECTED_ACTION_IDS
 }
 
@@ -466,7 +467,7 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
     actions = ledger["actions"]
     if [row["action_id"] for row in actions] != EXPECTED_ACTION_IDS:
         out.append("action sequence or identity drifted")
-    if [row["sequence"] for row in actions] != list(range(1, 91)):
+    if [row["sequence"] for row in actions] != list(range(1, 107)):
         out.append("action sequence numbers drifted")
 
     try:
@@ -646,7 +647,11 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
             expected_refinement_validator = (
                 "scripts/validate_resource_economics_refinement.py"
                 if module == "lean/AsiStackProofs/Efficiency.lean"
-                else "scripts/validate_policy_optimization_refinement.py"
+                else (
+                    "scripts/validate_evidence_transition_refinement.py"
+                    if module == "lean/AsiStackProofs/EvidenceStates.lean"
+                    else "scripts/validate_policy_optimization_refinement.py"
+                )
             )
             if expected_refinement_validator not in action["validation_refs"]:
                 out.append(f"{action['action_id']}: reachable refinement validator is not bound")
@@ -669,13 +674,13 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
 
     overlay = load(CURRENT_OVERLAY)
     summary = overlay.get("summary", {})
-    if summary.get("current_theorem_count") != 1282:
+    if summary.get("current_theorem_count") != 1272:
         out.append("current theorem denominator drifted")
     if summary.get("semantic_level_counts") != EXPECTED_LEVELS:
         out.append("current semantic-level counts drifted")
     if summary.get("disposition_counts") != EXPECTED_DISPOSITIONS:
         out.append("current disposition counts drifted")
-    if sum(value for key, value in EXPECTED_DISPOSITIONS.items() if key != "retain") != 70:
+    if sum(value for key, value in EXPECTED_DISPOSITIONS.items() if key != "retain") != 54:
         out.append("expected remaining-action denominator is internally inconsistent")
     if ledger["summary"]["remaining_action_counts"] != {
         key: value for key, value in EXPECTED_DISPOSITIONS.items() if key != "retain"
@@ -751,8 +756,8 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
         for row in current_rows
         if row["module_path"] == "lean/AsiStackProofs/EvidenceStates.lean"
     ]
-    if len(evidence_rows) != 22:
-        out.append("EvidenceStates must retain exactly twenty-two declarations")
+    if len(evidence_rows) != 6:
+        out.append("EvidenceStates must retain exactly six foundational declarations")
     retired_evidence_names = {
         action["retired_theorem_id"].split("::", 1)[1]
         for action in actions
@@ -1039,18 +1044,18 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
     if status.get("rationalization_ledger_path") != str(LEDGER.relative_to(ROOT)):
         out.append("status does not bind the cumulative rationalization ledger")
     if (
-        status.get("theorem_count") != 1282
-        or status.get("executed_retirement_count") != 88
+        status.get("theorem_count") != 1272
+        or status.get("executed_retirement_count") != 104
         or status.get("executed_scope_rewrite_count") != 2
-        or status.get("remaining_action_count") != 70
+        or status.get("remaining_action_count") != 54
     ):
         out.append("status does not report the cumulative post-transaction denominator")
     roadmap = ROADMAP.read_text(encoding="utf-8")
     roadmap_flat = " ".join(roadmap.split())
     for phrase in [
-        "fifteenth route-economy consolidation tranche",
-        "1,282 live theorem declarations",
-        "70 stronger-model actions remain",
+        "sixteenth evidence-transition consolidation tranche",
+        "1,272 live theorem declarations",
+        "54 stronger-model actions remain",
         "`proofs/proof_semantic_rationalization_ledger.json`",
     ]:
         if phrase not in roadmap_flat:
@@ -1123,9 +1128,9 @@ def main() -> None:
             + "\n - ".join(failures)
         )
     print(
-        "Proof semantic-rationalization ledger passed: eighty-eight dependency-safe "
-        "retirements, two exact scope rewrites, forty-one public-target migrations, "
-        "1,282 live theorems, 70 stronger-model actions remain, 16 rejecting "
+        "Proof semantic-rationalization ledger passed: 104 dependency-safe "
+        "retirements, two exact scope rewrites, forty-seven public-target migrations, "
+        "1,272 live theorems, 54 stronger-model actions remain, 16 rejecting "
         "mutations, no support or release effect."
     )
 

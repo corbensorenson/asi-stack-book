@@ -12,12 +12,12 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 333 |
-| Lean modules scanned | 110 |
-| Theorem declarations classified | 1282 |
+| Proof targets in manifest | 329 |
+| Lean modules scanned | 111 |
+| Theorem declarations classified | 1272 |
 | Direct/projection-style theorem declarations | 171 |
-| Derived/decomposed theorem declarations | 896 |
-| Unknown or mixed theorem declarations | 215 |
+| Derived/decomposed theorem declarations | 882 |
+| Unknown or mixed theorem declarations | 219 |
 | Safety-critical theorem declarations | 73 |
 | Safety-critical direct/projection declarations | 1 |
 | Safety-critical chapter classifications present | 1/1 |
@@ -87,7 +87,8 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/DeliberationRefinement.lean` | governed-deliberation-and-test-time-scaling | 10 | 11 | 6 | 3 | 2 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Efficiency.lean` | the-efficient-asi-hypothesis | 2 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/EmbodiedPhysicalSafety.lean` | embodied-agency-real-time-control-and-physical-safety | 1 | 0 | 0 | 0 | 0 | derived/decomposed by classifier |
-| `lean/AsiStackProofs/EvidenceStates.lean` | evidence-states-and-claim-discipline | 7 | 22 | 3 | 19 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/EvidenceStates.lean` | evidence-states-and-claim-discipline | 1 | 6 | 3 | 3 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/EvidenceTransitionRefinement.lean` | evidence-states-and-claim-discipline | 2 | 6 | 0 | 2 | 4 | manual review |
 | `lean/AsiStackProofs/FailureModes.lean` | failure-modes-of-ungoverned-intelligence | 4 | 21 | 0 | 21 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/FastGeneration.lean` | unmapped | 0 | 3 | 0 | 3 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/FastGenerationRefinement.lean` | fast-generation-architectures | 5 | 17 | 12 | 3 | 2 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -543,27 +544,17 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/Efficiency.lean` | `lower_cost_authorized_quality_candidate_rejects_minimum_viable_route` | derived_or_decomposed | no | uses have |
 | `lean/AsiStackProofs/Efficiency.lean` | `open_obligation_promotion_without_residual_record_rejected` | derived_or_decomposed | no | uses cases, have, rw |
 | `lean/AsiStackProofs/EvidenceStates.lean` | `accepted_terminal_transition_blocks_promotion_to_new_state` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
-| `lean/AsiStackProofs/EvidenceStates.lean` | `claim_state_transition_bridge_fixture_valid` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/EvidenceStates.lean` | `complete_synthetic_test_backed_transition_accepts` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/EvidenceStates.lean` | `downward_transition_without_negative_evidence_requests_negative_evidence` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/EvidenceStates.lean` | `downward_transition_without_trigger_requests_downgrade_trigger` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/EvidenceStates.lean` | `mismatched_support_state_effect_blocks_transition` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/EvidenceStates.lean` | `missing_claim_record_rejects_evidence_transition` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/EvidenceStates.lean` | `missing_required_evidence_blocks_promotion` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
-| `lean/AsiStackProofs/EvidenceStates.lean` | `missing_scope_boundary_requests_scope_boundary` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/EvidenceStates.lean` | `missing_support_state_effect_requests_effect_record` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/EvidenceStates.lean` | `no_requested_transition_allows_no_change` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/EvidenceStates.lean` | `no_self_promotion` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
-| `lean/AsiStackProofs/EvidenceStates.lean` | `source_derived_without_source_note_requests_required_evidence` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/EvidenceStates.lean` | `synthetic_test_backed_without_test_run_requests_required_evidence` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/EvidenceStates.lean` | `terminal_effect_for_implies_terminal_state` | derived_or_decomposed | no | uses cases, simp |
-| `lean/AsiStackProofs/EvidenceStates.lean` | `terminal_refutation_with_wrong_effect_requests_terminal_effect` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/EvidenceStates.lean` | `terminal_refutation_without_changelog_requests_changelog` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/EvidenceStates.lean` | `terminal_refutation_without_negative_evidence_requests_negative_evidence` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/EvidenceStates.lean` | `terminal_state_cannot_be_promotion_target` | derived_or_decomposed | no | uses cases, simp |
-| `lean/AsiStackProofs/EvidenceStates.lean` | `transition_without_nonclaims_preserves_nonclaim_boundary` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/EvidenceStates.lean` | `unsupported_can_promote_to_argument` | derived_or_decomposed | no | uses constructor |
-| `lean/AsiStackProofs/EvidenceStates.lean` | `upward_transition_without_review_requests_review` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/EvidenceTransitionRefinement.lean` | `adverse_transition_without_negative_evidence_cannot_bind` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/EvidenceTransitionRefinement.lean` | `authority_or_inheritance_request_never_accepts` | derived_or_decomposed | no | uses by_cases, simp |
+| `lean/AsiStackProofs/EvidenceTransitionRefinement.lean` | `complete_transition_reaches_bounded_handoff` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/EvidenceTransitionRefinement.lean` | `projection_substitution_never_accepts` | derived_or_decomposed | no | uses by_cases, simp |
+| `lean/AsiStackProofs/EvidenceTransitionRefinement.lean` | `target_evidence_is_state_specific` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/EvidenceTransitionRefinement.lean` | `terminal_label_requires_matching_intent` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/FailureModes.lean` | `authority_over_ceiling_routes_to_review` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/FailureModes.lean` | `complete_failure_record_closes_record` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/FailureModes.lean` | `failed_required_invariant_blocks_promotion` | derived_or_decomposed | no | uses cases, rw, unfold |

@@ -173,12 +173,12 @@
     {
       "tag": "lean:evidence.support_state.operational_invariant",
       "chapter_id": "evidence-states-and-claim-discipline",
-      "module": "AsiStackProofs.EvidenceStates",
-      "formal_target": "A reachable evidence-admission model derives state-specific artifact requirements from the requested support state and inspected evidence bundle rather than assuming the RequiredEvidence predicate.",
-      "target_status": "planned",
+      "module": "AsiStackProofs.EvidenceTransitionRefinement",
+      "formal_target": "A reachable lifecycle freezes exact atom and proposition/obligation/predicate projections, derives non-aggregating target evidence, preserves negative evidence and non-claims, and cannot assign support, move related claims, or create external effects.",
+      "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+      "rationale": "Implemented by the projection-aware reachable lifecycle and independent all-route consumer; the foundational blocker remains a narrow deductive fact. No evidence truth or support movement follows."
     },
     {
       "tag": "lean:evidence.support_state.failure_blocks_promotion",
@@ -188,57 +188,17 @@
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+      "rationale": "Implemented by the projection-aware reachable lifecycle and independent all-route consumer; the foundational blocker remains a narrow deductive fact. No evidence truth or support movement follows."
     },
     {
       "tag": "lean:evidence.support_state.transition_lifecycle_route",
       "chapter_id": "evidence-states-and-claim-discipline",
-      "module": "AsiStackProofs.EvidenceStates",
-      "formal_target": "A modeled support-state transition routes no-change requests, missing records, scope gaps, support-effect gaps, missing review, missing required evidence, terminal/downgrade gaps, changelog gaps, and missing non-claim boundaries to explicit outcomes.",
+      "module": "AsiStackProofs.EvidenceTransitionRefinement",
+      "formal_target": "Six reachable stages preserve three claim projections and route state-specific evidence, adverse-transition, review, decision, handoff, replay, substitution, and authority failures to explicit outcomes; an independent consumer reaches every declared route.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented in AsiStackProofs.EvidenceStates as a finite transition-lifecycle route function and derived route theorems for no-change requests, missing claim records, scope-boundary gaps, support-effect gaps, support-effect mismatches, review gaps, missing required evidence, missing negative evidence, downgrade-trigger gaps, terminal-effect mismatches, missing changelog refs, missing non-claim boundaries, and complete transition acceptance."
-    },
-    {
-      "tag": "lean:evidence.bundle.completeness_probe_bridge",
-      "chapter_id": "evidence-states-and-claim-discipline",
-      "module": "AsiStackProofs.EvidenceStates",
-      "formal_target": "An independently implemented formal bridge derives the evidence-bundle probe's accepted and rejected outcomes from exact bundle inputs and audit logic rather than assuming a valid summary predicate.",
-      "target_status": "planned",
-      "triage": "formal-invariant",
-      "recommended_route": "lean-candidate",
-      "rationale": "The executable audit and historical result remain current, but C6 retired the Lean declaration that only unpacked an assumed-valid summary. Reimplementation must derive accepted and rejected outcomes from exact bundle inputs and independently implemented audit logic."
-    },
-    {
-      "tag": "lean:evidence.claim_ledger.completeness_audit_bridge",
-      "chapter_id": "evidence-states-and-claim-discipline",
-      "module": "AsiStackProofs.EvidenceStates",
-      "formal_target": "An independently implemented formal bridge derives claim-ledger completeness and rejection outcomes from exact manifest and Appendix C inputs rather than assuming a valid summary predicate.",
-      "target_status": "planned",
-      "triage": "formal-invariant",
-      "recommended_route": "lean-candidate",
-      "rationale": "The executable Appendix C audit and historical result remain current, but C6 retired the Lean declaration that only unpacked an assumed-valid summary. Reimplementation must derive completeness and rejection outcomes from exact manifest and ledger inputs."
-    },
-    {
-      "tag": "lean:evidence.accepted_transition.review_audit_bridge",
-      "chapter_id": "evidence-states-and-claim-discipline",
-      "module": "AsiStackProofs.EvidenceStates",
-      "formal_target": "An independently implemented formal bridge derives accepted-transition audit outcomes from exact transition, no-promotion, changelog, and evidence inputs rather than assuming a valid summary predicate.",
-      "target_status": "planned",
-      "triage": "formal-invariant",
-      "recommended_route": "lean-candidate",
-      "rationale": "The executable accepted-transition audit and historical result remain current, but C6 retired the Lean declaration that only unpacked an assumed-valid summary. Reimplementation must derive outcomes from exact transition, no-promotion, changelog, and evidence inputs."
-    },
-    {
-      "tag": "lean:evidence.claim_state.transition_bridge",
-      "chapter_id": "evidence-states-and-claim-discipline",
-      "module": "AsiStackProofs.EvidenceStates",
-      "formal_target": "A reachable claim-state lifecycle model derives negative-evidence, no-live-movement, and non-claim conclusions from narrowing, downgrade, and refutation cases rather than projecting fields from a hand-authored summary predicate.",
-      "target_status": "planned",
-      "triage": "formal-invariant",
-      "recommended_route": "lean-candidate",
-      "rationale": "The executable synthetic audit and historical result remain current, but C6 retired three Lean declarations that only projected fields from an assumed-valid summary. Reimplementation must derive negative-evidence and preservation conclusions from reachable lifecycle cases."
+      "rationale": "Implemented by the projection-aware reachable lifecycle and independent all-route consumer; the foundational blocker remains a narrow deductive fact. No evidence truth or support movement follows."
     },
     {
       "tag": "lean:scalable_oversight.high_risk.missing_outcome_audit_blocks_admission",
@@ -3341,5 +3301,5 @@
       "rationale": "The planned boundary makes roles, lower-order rescues, the complete candidate denominator, qualification, cost, fallback, descendants, and contraction state explicit. It cannot establish irreducibility, representational usefulness, bounded primitive arity, general reasoning, safe online adaptation, or ASI."
     }
   ],
-  "record_count": 333
+  "record_count": 329
 }

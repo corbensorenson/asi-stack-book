@@ -1847,34 +1847,35 @@
               "status": "implemented by support-state transition harness; synthetic fixture validation only"
             },
             {
-              "name": "Evidence transition lifecycle route",
-              "purpose": "Check that modeled evidence-transition requests route no-change, missing claim record, scope-boundary gaps, support-effect gaps, support-effect mismatch, review gaps, missing required evidence, missing negative evidence, downgrade-trigger gaps, terminal-effect mismatch, missing changelog refs, missing non-claim boundaries, and complete transitions to explicit finite outcomes.",
+              "name": "Projection-aware evidence-transition refinement",
+              "purpose": "Check a six-stage reachable lifecycle for exact atom and three claim-projection bindings, non-aggregating target evidence, adverse-transition burden, review, decision, ledger handoff, acknowledgment, replay, substitution, and authority boundaries.",
               "implementation_status": "implemented",
-              "result_status": "passes via Lean route theorems; no live support-state movement, reviewer-quality, evidence-bundle-completeness, source-interpretation, runtime-behavior, or support-state-promotion claim"
+              "result_status": "validated locally at experiments/evidence_transition_refinement/results/2026-07-26-local.json; all 35 declared routes reached by an independent consumer; support, inheritance, and external effect none",
+              "status": "implemented by reachable Lean refinement and independent Python consumer; no evidence truth, live support movement, inherited movement, release decision, or external effect"
             },
             {
               "name": "Evidence bundle completeness and changelog-consistency probe",
               "purpose": "Check two valid synthetic evidence bundles and seven expected-invalid controls for no-change records, blocked promotion, artifact/result refs, commands, changelog refs, limitations, non-claims, stale changelogs, fixture overclaims, and no support-state transition.",
               "implementation_status": "implemented",
-              "result_status": "validated locally at experiments/evidence_bundle_completeness/results/2026-07-02-local.json; executable audit remains current, while its premise-restating Lean summary projection is retired under C6 and the stronger formal bridge is planned; no evidence-truth, artifact-correctness, source-interpretation, release-governance, or support-state-promotion claim"
+              "result_status": "validated locally at experiments/evidence_bundle_completeness/results/2026-07-02-local.json; bounded executable consumer retained at its recorded scope; no generic Lean mirror or support-state movement claim; bounded executable consumer retained at its recorded scope; no generic Lean mirror or support-state movement claim; bounded executable consumer retained at its recorded scope; no generic Lean mirror or support-state movement claim; bounded executable consumer retained at its recorded scope; no generic Lean mirror or support-state movement claim; bounded executable consumer retained at its recorded scope; no generic Lean mirror or support-state movement claim; bounded executable consumer retained at its recorded scope; no generic Lean mirror or support-state movement claim"
             },
             {
               "name": "Claim ledger completeness audit",
               "purpose": "Check the real Appendix C ledger against 44 manifest chapter core claims, expected labels, support states, assigned sources, open gaps, promotion paths, duplicate/stale rows, and seven expected-invalid mutation controls.",
               "implementation_status": "implemented",
-              "result_status": "validated locally at experiments/claim_ledger_completeness/results/2026-07-02-local.json; executable Appendix C audit remains current, while its premise-restating Lean summary projection is retired under C6 and the stronger formal bridge is planned; no claim-truth, source-interpretation, promotion-readiness, external-review-quality, or support-state-promotion claim"
+              "result_status": "validated locally at experiments/claim_ledger_completeness/results/2026-07-02-local.json; bounded executable consumer retained at its recorded scope; no generic Lean mirror or support-state movement claim; bounded executable consumer retained at its recorded scope; no generic Lean mirror or support-state movement claim; bounded executable consumer retained at its recorded scope; no generic Lean mirror or support-state movement claim; bounded executable consumer retained at its recorded scope; no generic Lean mirror or support-state movement claim; bounded executable consumer retained at its recorded scope; no generic Lean mirror or support-state movement claim; bounded executable consumer retained at its recorded scope; no generic Lean mirror or support-state movement claim"
             },
             {
               "name": "Accepted live transition review audit",
               "purpose": "Check the real accepted transition records and no-promotion ledger for review status, changelog refs, evidence packets, verification commands, limitations, reviewer-independence disclosure, non-claims, bounded non-core upward transitions, no chapter-core upward transition, and seven expected-invalid mutation controls.",
               "implementation_status": "implemented",
-              "result_status": "validated locally at experiments/accepted_transition_review/results/2026-07-02-local.json; executable audit of existing records remains current, while its premise-restating Lean summary projection is retired under C6 and the stronger formal bridge is planned; no evidence-truth, reviewer-independence, source-interpretation, external-review-quality, new-transition-approval, or chapter-core-promotion claim"
+              "result_status": "validated locally at experiments/accepted_transition_review/results/2026-07-02-local.json; bounded executable consumer retained at its recorded scope; no generic Lean mirror or support-state movement claim; bounded executable consumer retained at its recorded scope; no generic Lean mirror or support-state movement claim; bounded executable consumer retained at its recorded scope; no generic Lean mirror or support-state movement claim; bounded executable consumer retained at its recorded scope; no generic Lean mirror or support-state movement claim; bounded executable consumer retained at its recorded scope; no generic Lean mirror or support-state movement claim; bounded executable consumer retained at its recorded scope; no generic Lean mirror or support-state movement claim"
             },
             {
               "name": "Claim-state transition bridge",
               "purpose": "Check synthetic claim narrowing, support downgrade, terminal refutation, negative-evidence requirements, rejected mutation controls, bounded support-state effects, no live claim movement, and non-claim boundaries.",
               "implementation_status": "implemented",
-              "result_status": "validated locally by `python3 scripts/validate_claim_state_transition_bridge.py` at experiments/claim_state_transition_bridge/results/2026-07-04-local.json; executable synthetic audit remains current, while three predicate-field Lean projections are retired under C6 and a reachable lifecycle derivation is planned; no live claim demotion, deprecation, refutation, reviewer-correctness, source-interpretation, deployed belief-revision, or support-state-promotion claim"
+              "result_status": "validated locally by `python3 scripts/validate_claim_state_transition_bridge.py` at experiments/claim_state_transition_bridge/results/2026-07-04-local.json; bounded executable consumer retained at its recorded scope; no generic Lean mirror or support-state movement claim; bounded executable consumer retained at its recorded scope; no generic Lean mirror or support-state movement claim; bounded executable consumer retained at its recorded scope; no generic Lean mirror or support-state movement claim; bounded executable consumer retained at its recorded scope; no generic Lean mirror or support-state movement claim; bounded executable consumer retained at its recorded scope; no generic Lean mirror or support-state movement claim; bounded executable consumer retained at its recorded scope; no generic Lean mirror or support-state movement claim"
             },
             {
               "name": "Historical-project evidence-cell harness",
@@ -1887,9 +1888,9 @@
           "proof_targets": [
             {
               "tag": "lean:evidence.support_state.operational_invariant",
-              "module": "AsiStackProofs.EvidenceStates",
-              "target": "A reachable evidence-admission model derives state-specific artifact requirements from the requested support state and inspected evidence bundle rather than assuming the RequiredEvidence predicate.",
-              "status": "planned"
+              "module": "AsiStackProofs.EvidenceTransitionRefinement",
+              "target": "A reachable lifecycle freezes exact atom and proposition/obligation/predicate projections, derives non-aggregating target evidence, preserves negative evidence and non-claims, and cannot assign support, move related claims, or create external effects.",
+              "status": "implemented"
             },
             {
               "tag": "lean:evidence.support_state.failure_blocks_promotion",
@@ -1899,33 +1900,9 @@
             },
             {
               "tag": "lean:evidence.support_state.transition_lifecycle_route",
-              "module": "AsiStackProofs.EvidenceStates",
-              "target": "A modeled support-state transition routes no-change requests, missing records, scope gaps, support-effect gaps, missing review, missing required evidence, terminal/downgrade gaps, changelog gaps, and missing non-claim boundaries to explicit outcomes.",
+              "module": "AsiStackProofs.EvidenceTransitionRefinement",
+              "target": "Six reachable stages preserve three claim projections and route state-specific evidence, adverse-transition, review, decision, handoff, replay, substitution, and authority failures to explicit outcomes; an independent consumer reaches every declared route.",
               "status": "implemented"
-            },
-            {
-              "tag": "lean:evidence.bundle.completeness_probe_bridge",
-              "module": "AsiStackProofs.EvidenceStates",
-              "target": "An independently implemented formal bridge derives the evidence-bundle probe's accepted and rejected outcomes from exact bundle inputs and audit logic rather than assuming a valid summary predicate.",
-              "status": "planned"
-            },
-            {
-              "tag": "lean:evidence.claim_ledger.completeness_audit_bridge",
-              "module": "AsiStackProofs.EvidenceStates",
-              "target": "An independently implemented formal bridge derives claim-ledger completeness and rejection outcomes from exact manifest and Appendix C inputs rather than assuming a valid summary predicate.",
-              "status": "planned"
-            },
-            {
-              "tag": "lean:evidence.accepted_transition.review_audit_bridge",
-              "module": "AsiStackProofs.EvidenceStates",
-              "target": "An independently implemented formal bridge derives accepted-transition audit outcomes from exact transition, no-promotion, changelog, and evidence inputs rather than assuming a valid summary predicate.",
-              "status": "planned"
-            },
-            {
-              "tag": "lean:evidence.claim_state.transition_bridge",
-              "module": "AsiStackProofs.EvidenceStates",
-              "target": "A reachable claim-state lifecycle model derives negative-evidence, no-live-movement, and non-claim conclusions from narrowing, downgrade, and refutation cases rather than projecting fields from a hand-authored summary predicate.",
-              "status": "planned"
             }
           ]
         },
@@ -21217,7 +21194,7 @@
             "Revocation stops at the theorem record while derived claims, releases, runtime consumers, caches, and public wording remain stale.",
             "Sunk-cost attachment to a large proof corpus prevents merging, replacing, refuting, or retiring declarations that do not constrain a real consumer."
           ],
-          "minimal_implementation": "The exact current minimum is one proof-target schema and valid fixture; one generated 333-target proof manifest with 302 implemented and 31 planned targets; a 110-module Lean workspace whose complete build reports 107 jobs and 1,282 theorem declarations classified as 896 derived/decomposed, 171 direct/projection, and 215 unknown/mixed; one proof-readiness classification; one wiring-only proof artifact audit; one semantic-adequacy review surface; one blocked formal-semantic-depth record with ten rejecting mutations; and five local ProofEnvelope declarations, all derived finite negative cases after retirement of its two direct projections. The separate activation audit preserves its historical 298-target, 65-module, and 1,151-theorem baseline. This minimum provides no complete semantic formalization of the stack, deployed enforcement proof, general implementation refinement, independent formal reproduction, empirical result, chapter-core transition, or SOTA result.",
+          "minimal_implementation": "The exact current minimum is one proof-target schema and valid fixture; one generated 329-target proof manifest with 303 implemented and 26 planned targets; a 111-module Lean workspace with 1,272 theorem declarations classified as 882 derived/decomposed, 171 direct/projection, and 219 unknown/mixed; one proof-readiness classification; one wiring-only proof artifact audit; one semantic-adequacy review surface; one blocked formal-semantic-depth record with ten rejecting mutations; and five local ProofEnvelope declarations, all derived finite negative cases after retirement of its two direct projections. The separate activation audit preserves its historical 298-target, 65-module, and 1,151-theorem baseline. This minimum provides no complete semantic formalization of the stack, deployed enforcement proof, general implementation refinement, independent formal reproduction, empirical result, chapter-core transition, or SOTA result.",
           "beyond_state_of_art": "The mature Formal Claim Admission and Proof-Rationalization Program audits every proposition, all 298 activation-baseline proof targets, and all 1,151 activation-baseline theorem declarations for semantic necessity, vacuity, reachability, assumptions, dependencies, consumers, and implementation binding. It replaces load-bearing projections with richer state-machine, temporal, concurrency, noninterference, resource, recovery, probabilistic, or refinement models where warranted; moves behavior and performance obligations to executable and empirical lanes; validates implementation relations and runtime monitors; runs countermodels, mutations, adversarial schedules, and negative controls; requires independent formalizations, tools, implementations, and evaluators for decisive claims; measures proof and governance cost; propagates expiry and revocation through every consumer and release surface; and preserves narrow, null, refuted, retired, or blocked-after-full-attempt outcomes instead of optimizing theorem counts or green builds.",
           "open_evidence_gaps": [
             "All twelve assigned sources have exact passage-reviewed mappings, but they support formalization and claim-boundary design only; no source-reported system, proof corpus, deployment, runtime, security, capability, or performance result is imported as ASI Stack evidence.",

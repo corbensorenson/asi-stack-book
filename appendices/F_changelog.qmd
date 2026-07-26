@@ -1,5 +1,32 @@
 # Changelog
 
+## 2026-07-26 — Sixteenth evidence-transition consolidation C6 tranche
+
+- Rewrote the Evidence States formal boundary around a reachable six-stage
+  transition lifecycle: freeze the exact atom and its proposition, obligation,
+  and machine-predicate projections; bind non-aggregating target evidence;
+  review; decide; hand off to the claim ledger; and acknowledge.
+- Retired sixteen theorem-per-fixture normalizations and removed their dead
+  checklist and literal-summary scaffolding. Six narrow foundational
+  deductions remain in `AsiStackProofs.EvidenceStates`; the stronger lifecycle
+  lives in `AsiStackProofs.EvidenceTransitionRefinement`.
+- Added an independently implemented consumer that reaches all 35 declared
+  routes, including 35 rejecting mutation cases for identity substitution,
+  missing evidence, adverse-transition burden, review and dissent, decision
+  residuals, replay, inherited parent or descendant movement, support
+  assignment, and external-effect laundering.
+- Consolidated seven public formal targets into three honest targets: two
+  implemented lifecycle boundaries and the retained missing-evidence blocker.
+  Four repository-specific audits remain executable consumers at their
+  historical scope instead of becoming copied formal-summary tasks.
+- The cumulative ledger now records 104 dependency-safe retirements, two exact
+  scope-language rewrites, and forty-seven public-target migrations. The live
+  estate is 1,272 declarations: 35 P0, 712 P1, 25 P2, 323 P3, 94 P4, 83 P5,
+  and zero P6. The remaining queue contains 54 stronger-model actions.
+- No evidence truth, semantic equivalence, reviewer independence, live support
+  movement, inherited movement, release, capability, safety, or external-
+  effect claim changes.
+
 ## 2026-07-26 — Fifteenth route-economy consolidation C6 tranche
 
 - Reorganized the Efficient ASI chapter around a clear division of labor:
@@ -41,7 +68,7 @@
   exact scope-language rewrites, and thirty-nine public-target migrations. The
   live estate is 1,304 declarations: 35 P0, 753 P1, 25 P2, 319 P3, 93 P4, 79
   P5, and zero P6. The remaining queue contains 92 stronger-model rewrites.
-- Current proof-depth snapshot: 333 proof targets, 110 Lean modules, 1282 theorem declarations, 896 derived/decomposed, 171 direct/projection, 215 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Current proof-depth snapshot: 329 proof targets, 111 Lean modules, 1272 theorem declarations, 882 derived/decomposed, 171 direct/projection, 219 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - No theorem count is treated as a success metric. No policy-quality,
   substrate-quality, safety-lifecycle, chapter-core support, release, or
   publication-authority claim changes.

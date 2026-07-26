@@ -2190,7 +2190,14 @@
     "lean/AsiStackProofs/SecurityKernel.lean",
     "chapters/executable-specifications-and-lean-proof-envelope.qmd",
     "chapters/prototype-roadmap.qmd",
-    "scripts/integrate_c6_efficiency_route_economy_consolidation.py"
+    "scripts/integrate_c6_efficiency_route_economy_consolidation.py",
+    "scripts/validate_evidence_transition_refinement.py",
+    "schemas/evidence_transition_refinement.schema.json",
+    "experiments/evidence_transition_refinement/results/2026-07-26-local.json",
+    "chapters/evidence-states-and-claim-discipline.qmd",
+    "lean/AsiStackProofs/EvidenceTransitionRefinement.lean",
+    "lean/AsiStackProofs/EvidenceStates.lean",
+    "scripts/integrate_c6_evidence_transition_consolidation.py"
   ],
   "units": [
     {
@@ -9375,7 +9382,7 @@
       ],
       "output_contract": "Reject missing or duplicated core and subordinate coverage, noncanonical ownership, blank or tautological falsifiers, duplicate lanes, unsupported P1 promotion, stale generated artifacts, unresolved candidates laundered as P1 completion, reviewed placeholders, summary inflation, or invented support effects.",
       "output_assertions": [
-        "4071 semantically reviewed structured atoms",
+        "4067 semantically reviewed structured atoms",
         "3444 adjudicated prose-only candidates",
         "64 generated chapter dossiers",
         "64 completed semantic chapter sweeps",
@@ -11086,7 +11093,7 @@
       "output_assertions": [
         "1,151/1,151 activation-baseline theorem declarations and 298/298 baseline targets are reviewed and dispositioned",
         "298/298 historical proof targets remain implemented and explicitly adequacy-routed",
-        "333 current targets comprise 302 implemented and 31 planned: 23 later-chapter targets plus eight ledger-authorized semantic-rationalization migrations",
+        "329 current targets comprise 303 implemented and 26 planned: 23 later-chapter targets plus three ledger-authorized semantic-rationalization migrations",
         "the sixteen richer-semantics targets remain bounded and route to P3/P4 rather than disappearing",
         "nine required safety-critical, integration, and review-named refinement models have dossiers and registered consumers",
         "P2/M3 is completed, P3 is active, and prerequisite M2 is active without support-state movement"
@@ -14161,7 +14168,7 @@
       "args": [],
       "execution_tier": "pr",
       "validation_class": "proof_or_evidence_gate",
-      "input_contract": "One immutable 1,370-theorem baseline; ninety exact, ordered transactions; the baseline Scalable Oversight, Bibliography Plan, Benchmark Ratchets, and Policy Optimization, Stable Capability Fields, Evidence States, and Runtime Adapters, Search Substrates, Artifact Steward Agents, Coil Attention Memory, and Cyclic Mixers, Efficiency, Failure Modes, Intent to Execution, Planning, Living Book, PlanForge, Proof Envelope, Prototype Roadmap, and Security Kernel modules; one same-model normalized duplicate pair; sixty-five premise-restating projections, twenty-two with derived replacements, twenty-three retired after public-target narrowing, five unused projections retired without target change, twelve summary projections retired after route-family validator rebinding, two proposition-preserving theorem-name scope rewrites, three legacy policy-lease fixture theorems, and twenty-two legacy efficiency checklist or result-summary theorems retired after reachable-refinement rebinding; the current overlay; frozen historical registry; and reconciled target, roadmap, and status surfaces.",
+      "input_contract": "One immutable 1,370-theorem baseline; 106 exact, ordered transactions; the baseline Scalable Oversight, Bibliography Plan, Benchmark Ratchets, and Policy Optimization, Stable Capability Fields, Evidence States, and Runtime Adapters, Search Substrates, Artifact Steward Agents, Coil Attention Memory, and Cyclic Mixers, Efficiency, Failure Modes, Intent to Execution, Planning, Living Book, PlanForge, Proof Envelope, Prototype Roadmap, and Security Kernel modules; one same-model normalized duplicate pair; sixty-five premise-restating projections, twenty-two with derived replacements, twenty-three retired after public-target narrowing, five unused projections retired without target change, twelve summary projections retired after route-family validator rebinding, two proposition-preserving theorem-name scope rewrites, three legacy policy-lease fixture theorems, and twenty-two legacy efficiency checklist or result-summary theorems and sixteen legacy evidence-transition fixture theorems retired after reachable-refinement rebinding; the current overlay; frozen historical registry; and reconciled target, roadmap, and status surfaces.",
       "input_artifacts": [
         "scripts/validate_proof_semantic_rationalization_ledger.py",
         "scripts/build_proof_semantic_depth_overlay.py",
@@ -14191,6 +14198,7 @@
         "lean/AsiStackProofs/PolicyOptimization.lean",
         "lean/AsiStackProofs/PolicyOptimizationRefinement.lean",
         "lean/AsiStackProofs/ResourceEconomicsRefinement.lean",
+        "lean/AsiStackProofs/EvidenceTransitionRefinement.lean",
         "scripts/validate_runtime_adapter_adversarial_boundary_probe.py",
         "scripts/validate_substrate_adoption_trace.py",
         "scripts/validate_artifact_steward_lifecycle_probe.py",
@@ -14207,7 +14215,9 @@
         "scripts/validate_policy_update_lease_probe.py",
         "scripts/validate_policy_optimization_refinement.py",
         "scripts/validate_resource_economics_refinement.py",
+        "scripts/validate_evidence_transition_refinement.py",
         "scripts/integrate_c6_efficiency_route_economy_consolidation.py",
+        "scripts/integrate_c6_evidence_transition_consolidation.py",
         "experiments/runtime_adapter_adversarial_boundary/results/2026-07-02-local.json",
         "experiments/substrate_adoption_trace/results/2026-07-02-local.json",
         "experiments/artifact_steward_lifecycle_probe/results/2026-07-02-local.json",
@@ -14217,6 +14227,7 @@
         "experiments/planning_runtime_replan_delta/results/2026-07-02-local.json",
         "experiments/policy_update_lease/results/2026-07-02-local.json",
         "experiments/policy_optimization_refinement/results/2026-07-16-local.json",
+        "experiments/evidence_transition_refinement/results/2026-07-26-local.json",
         "docs/substrate_adoption_trace.md",
         "docs/artifact_steward_lifecycle_probe.md",
         "proofs/proof_manifest.json",
@@ -14244,17 +14255,17 @@
         "validation/registry.json",
         "scripts/register_proof_semantic_rationalization_ledger.py"
       ],
-      "output_contract": "Require immutable baseline and theorem-block digests, exact same-model statement identity for the duplicate, dependency-and-consumer-safe removals, ten counterexample, five decision-model, thirteen scope-narrowing, and eleven validator-route-family target migrations, retained or honestly replanned target ownership, a 1,282-theorem current estate, an exact 70-action remaining queue, meta-audit exclusion from implementation binding, and no support or release effect.",
+      "output_contract": "Require immutable baseline and theorem-block digests, exact same-model statement identity for the duplicate, dependency-and-consumer-safe removals, ten counterexample, five decision-model, thirteen scope-narrowing, and eleven validator-route-family target migrations, retained or honestly replanned target ownership, a 1,272-theorem current estate, an exact 54-action remaining queue, meta-audit exclusion from implementation binding, and no support or release effect.",
       "output_assertions": [
         "baseline commit and artifact digests exact",
         "retired and retained declarations share one authored model",
         "normalized theorem statements exact",
         "retired theorem has no theorem consumer",
-        "eighty-eight retired declarations absent, twenty-five proposition-preserving or replacement-bound actions, and sixty-five intentionally null replacements",
+        "104 retired declarations absent, twenty-five proposition-preserving or replacement-bound actions, and eighty-one intentionally null replacements",
         "two bibliography targets migrated to derived counterexample gates",
         "two benchmark targets migrated to derived decision-model gates",
         "two Stable Capability Fields targets narrowed to retained derived routes",
-        "five Evidence States targets narrowed to planned reachable or independently implemented models",
+        "seven Evidence States targets consolidated into two reachable lifecycle targets and one retained foundational blocker",
         "Runtime adapter validator bound to fifteen route theorems rather than a summary projection",
         "Search Substrates targets bound to two finite counterexamples and one honestly planned reachable route model",
         "Artifact Steward targets bound to two retained lifecycle routes and two honestly planned reachable models",
@@ -14277,14 +14288,15 @@
         "two misleading theorem names replaced without changing their normalized propositions",
         "three legacy policy-lease fixture theorems replaced by reachable refinement and independent consumer custody",
         "twenty-two legacy efficiency checklist and summary theorems replaced by reachable route-economy and independent consumer custody",
+        "sixteen legacy evidence-transition fixture theorems replaced by projection-aware reachable lifecycle and independent consumer custody",
         "proof-custody meta-audit does not inflate semantic implementation depth",
-        "1,282 current theorem declarations",
-        "70 stronger-model actions remain",
+        "1,272 current theorem declarations",
+        "54 stronger-model actions remain",
         "frozen 1,151-theorem and 298-target registry preserved",
         "16 mutations reject",
         "no support or release effect"
       ],
-      "claim_scope": "Eighty-eight dependency-safe declaration retirements: one exact same-model duplicate, sixty-two premise-restating projections, and twenty-five legacy fixture or checklist theorems. Two theorem names are rewritten without proposition drift. Forty-one public targets migrate to counterexample, decision-model, narrower retained-route, or honestly planned stronger-model wording; the runtime-adapter target remains implemented through its fifteen explicit route theorems.",
+      "claim_scope": "104 dependency-safe declaration retirements: one exact same-model duplicate, sixty-two premise-restating projections, and twenty-five legacy fixture or checklist theorems plus sixteen evidence-transition fixture theorems. Two theorem names are rewritten without proposition drift. Forty-seven public targets migrate to counterexample, decision-model, narrower retained-route, or honestly planned stronger-model wording; the runtime-adapter target remains implemented through its fifteen explicit route theorems.",
       "negative_controls": "validator_owned_sixteen_baseline_digest_sequence_identity_statement_dependency_consumer_relation_target_denominator_and_support_mutations",
       "negative_control_cases": [
         "baseline commit substitution",
@@ -14304,12 +14316,49 @@
       ],
       "prohibited_inference": "This transaction does not strengthen the retained finite-model theorem or establish reviewer competence, implementation correctness, useful oversight, deployment, transfer, safety, SOTA, AGI, ASI, or claim support.",
       "contract_precision": "exact_immutable_cumulative_dependency_safe_retirement_ledger",
-      "semantic_review_state": "checked_eighty_eight_c6_retirements_two_scope_rewrites_and_forty_one_target_migrations"
+      "semantic_review_state": "checked_one_hundred_four_c6_retirements_two_scope_rewrites_and_forty_seven_target_migrations"
+    },
+    {
+      "id": "validate_evidence_transition_refinement.py:422",
+      "order": 422,
+      "script": "validate_evidence_transition_refinement.py",
+      "args": [],
+      "execution_tier": "deep",
+      "validation_class": "proof_or_evidence_gate",
+      "input_contract": "Projection-aware six-stage evidence-transition lifecycle, independent route consumer, result schema, bounded result, chapter interpretation, foundational support-state facts, and exact claim-ledger handoff boundary.",
+      "input_artifacts": [
+        "scripts/validate_evidence_transition_refinement.py",
+        "schemas/evidence_transition_refinement.schema.json",
+        "experiments/evidence_transition_refinement/results/2026-07-26-local.json",
+        "chapters/evidence-states-and-claim-discipline.qmd",
+        "lean/AsiStackProofs/EvidenceTransitionRefinement.lean",
+        "lean/AsiStackProofs/EvidenceStates.lean",
+        "lean/AsiStackProofs/ClaimLedgerRefinement.lean"
+      ],
+      "output_contract": "Reject atom, projection, state-category, event, target-evidence, adverse-transition, review, decision, handoff, acknowledgment, inheritance, support, and external-effect failures while reaching every declared route.",
+      "output_assertions": [
+        "six reachable stages",
+        "35 declared and reached routes",
+        "35 rejecting mutation cases",
+        "three exact claim projections",
+        "eight non-aggregating evidence dimensions",
+        "support, inheritance, and external effect none"
+      ],
+      "claim_scope": "One finite authored evidence-transition policy and independent local route consumer; repository audits retain their own historical scopes.",
+      "negative_controls": "validator_owned_evidence_transition_route_mutations",
+      "negative_control_cases": [
+        "atom, proposition, obligation, predicate, state, or event substitution",
+        "missing target evidence, adverse-transition burden, review, dissent, limitations, residuals, changelog, handoff, or acknowledgment",
+        "support assignment, inherited parent or descendant movement, or external-effect laundering"
+      ],
+      "prohibited_inference": "No evidence truth, semantic projection equivalence, reviewer independence, live support decision, release readiness, deployment, capability, safety, SOTA, AGI, ASI, inherited movement, or external effect.",
+      "contract_precision": "inherited",
+      "semantic_review_state": "checked_projection_aware_reachable_transition_control_not_evidence_truth_or_support_authority"
     }
   ],
   "summary": {
-    "required_artifact_count": 2146,
-    "unit_count": 421
+    "required_artifact_count": 2153,
+    "unit_count": 422
   },
   "non_claims": [
     "Registry coverage does not establish semantic adequacy of every validator.",

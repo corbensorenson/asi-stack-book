@@ -10,10 +10,10 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Metric | Value |
 |---|---:|
-| Proof targets audited | 333 |
-| Manifest status counts | {"implemented": 302, "planned": 31} |
-| Triage class counts | {"formal-invariant": 315, "process-contract": 18} |
-| Lean modules referenced | 71 |
+| Proof targets audited | 329 |
+| Manifest status counts | {"implemented": 303, "planned": 26} |
+| Triage class counts | {"formal-invariant": 311, "process-contract": 18} |
+| Lean modules referenced | 72 |
 | Chapters with proof targets | 84 |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -53,7 +53,8 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/DataEngineLifecycleRefinement.lean` | 15 | 5 | 15 | 10 | 2 |
 | `lean/AsiStackProofs/DeliberationRefinement.lean` | 10 | 11 | 0 | 12 | 3 |
 | `lean/AsiStackProofs/Efficiency.lean` | 2 | 2 | 0 | 3 | 2 |
-| `lean/AsiStackProofs/EvidenceStates.lean` | 2 | 22 | 0 | 17 | 7 |
+| `lean/AsiStackProofs/EvidenceStates.lean` | 1 | 6 | 0 | 7 | 2 |
+| `lean/AsiStackProofs/EvidenceTransitionRefinement.lean` | 2 | 6 | 0 | 8 | 2 |
 | `lean/AsiStackProofs/FailureModes.lean` | 4 | 21 | 0 | 6 | 4 |
 | `lean/AsiStackProofs/FastGenerationRefinement.lean` | 5 | 17 | 0 | 12 | 3 |
 | `lean/AsiStackProofs/GovernanceRights.lean` | 1 | 7 | 0 | 11 | 3 |
@@ -132,7 +133,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `data-engines-continual-learning-and-unlearning` | 15 | 15 | 0 | 0 |
 | `durable-semantic-memory-and-knowledge-lattices` | 1 | 0 | 0 | 0 |
 | `embodied-agency-real-time-control-and-physical-safety` | 1 | 0 | 0 | 0 |
-| `evidence-states-and-claim-discipline` | 7 | 2 | 0 | 0 |
+| `evidence-states-and-claim-discipline` | 3 | 3 | 0 | 0 |
 | `executable-specifications-and-lean-proof-envelope` | 2 | 2 | 0 | 0 |
 | `failure-modes-of-ungoverned-intelligence` | 4 | 4 | 0 | 0 |
 | `fast-generation-architectures` | 5 | 5 | 0 | 0 |
@@ -213,13 +214,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:failure.taxonomy.detector_probe_bridge` | `failure-modes-of-ungoverned-intelligence` | `AsiStackProofs.FailureModes` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:dangerous-capability-domains-and-misuse-uplift.admission_boundary` | `dangerous-capability-domains-and-misuse-uplift` | `AsiStackProofs.NoDeferralAdmission` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
 | `lean:military-ai-autonomous-weapons-and-strategic-stability.admission_boundary` | `military-ai-autonomous-weapons-and-strategic-stability` | `AsiStackProofs.NoDeferralAdmission` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
-| `lean:evidence.support_state.operational_invariant` | `evidence-states-and-claim-discipline` | `AsiStackProofs.EvidenceStates` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
+| `lean:evidence.support_state.operational_invariant` | `evidence-states-and-claim-discipline` | `AsiStackProofs.EvidenceTransitionRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:evidence.support_state.failure_blocks_promotion` | `evidence-states-and-claim-discipline` | `AsiStackProofs.EvidenceStates` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:evidence.support_state.transition_lifecycle_route` | `evidence-states-and-claim-discipline` | `AsiStackProofs.EvidenceStates` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:evidence.bundle.completeness_probe_bridge` | `evidence-states-and-claim-discipline` | `AsiStackProofs.EvidenceStates` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
-| `lean:evidence.claim_ledger.completeness_audit_bridge` | `evidence-states-and-claim-discipline` | `AsiStackProofs.EvidenceStates` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
-| `lean:evidence.accepted_transition.review_audit_bridge` | `evidence-states-and-claim-discipline` | `AsiStackProofs.EvidenceStates` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
-| `lean:evidence.claim_state.transition_bridge` | `evidence-states-and-claim-discipline` | `AsiStackProofs.EvidenceStates` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
+| `lean:evidence.support_state.transition_lifecycle_route` | `evidence-states-and-claim-discipline` | `AsiStackProofs.EvidenceTransitionRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:scalable_oversight.high_risk.missing_outcome_audit_blocks_admission` | `scalable-oversight-and-adversarial-ai-control` | `AsiStackProofs.ScalableOversightRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:scalable_oversight.use.complete_bounded_admission` | `scalable-oversight-and-adversarial-ai-control` | `AsiStackProofs.ScalableOversightRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:scalable_oversight.use.missing_evidence_views_requires_repair` | `scalable-oversight-and-adversarial-ai-control` | `AsiStackProofs.ScalableOversightRefinement` | triage ok; module ok; chapter tag ok; limitation ok |

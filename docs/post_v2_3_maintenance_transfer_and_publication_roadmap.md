@@ -215,7 +215,7 @@ proceeds.
 | Existing-owner paging packet — prose terminal; policy and empirical work deferred | `P6.6-heterogeneous-inference-memory-and-speculative-paging` | Reader-facing source integration was expressly commissioned and completed 2026-07-23; schema, validator, planner, hardware characterization, and empirical work retain the ordinary post-gate entry condition | Maintain the six completed manuscript integrations and source reconciliation. Later implement and validate the heterogeneous-memory policy and run only competent, matched, hardware-characterized paging experiments. Preserve exact/approximate, throughput/latency, and source/local evidence boundaries. No new chapter. |
 | Existing-owner inference-cache packet — prose terminal; receipt and empirical work deferred | `P6.7-inference-cache-reuse-and-honest-pricing` | Reader-facing source integration was expressly commissioned and completed 2026-07-23; no new chapter or support movement | Maintain the three coordinated manuscript integrations and nine-source packet. Later implement the cache-reuse receipt and run separate exact-prefix and semantic-response campaigns under the ordinary post-gate entry condition. Preserve KV-versus-output, exact-versus-semantic, hit-versus-useful-outcome, and provider-contract-versus-local-evidence boundaries. |
 | Existing-owner functional-precision packet — source and prose terminal; evidence work queued | `P6.8-functional-precision-and-behavior-preserving-computation` | Source intake and the eight-owner manuscript integration are complete; schemas, validators, source resolution, and empirical work retain ordinary gates; no new chapter or support movement | Maintain the integrated Precision Contract treatment led by RankFold/NeuralFold. Preserve representation invariance, protected behavior, complete executable and physical-cost accounting, progressive residual precision, routed fallback, certificate scope, and program-transformation proof limits. Reconsider a standalone chapter only if a dated post-integration coherence audit finds a genuinely unowned lifecycle. |
-| Formal slot — terminal | `P4-terminal-no-open-formal-packet` | All six frozen clusters terminal across 24 modules | Maintain the terminal audits and their consumers; open no new proof packet unless a dated, machine-validated amendment names the claim consumer, countermodel, and maximum inference. |
+| Formal slot — terminal | `P4-terminal-no-open-formal-packet` | All six frozen clusters terminal across 25 modules | Maintain the terminal audits and their consumers; open no new proof packet unless a dated, machine-validated amendment names the claim consumer, countermodel, and maximum inference. |
 | Empirical headline — below entry floor, exact receipt next | `P2-R3-storage-materialization-and-replacement-qualification` | Re-measure at run start; the 2026-07-24 observation was about 21.3 GiB available and Docker inspection lacked socket permission; every setup action remains inside the approved Docker-scoped protocol | First, an exact command-bound attempt or failure receipt. Then thirty sealed candidate recipes and receipts; terminal pool materialization; four competently qualified replacements restoring the fixed twelve-task denominator; rank progression only under the frozen amendment; zero protected-content leakage. No deletion of non-Docker user data is authorized. |
 | First structural tranche — terminal | White-Box, World Models, Human Factors, and Governed Operations are terminal at argument support | Four exact integration packets preserve owners, sources, formal ceilings, protocols, reader handoffs, and no-promotion boundaries | Maintenance only; no reopened chapter packet without a dated machine-validated defect. |
 | No-deferral manuscript transaction — terminal at argument support; evidence follow-up open | All ten formerly deferred distinct owners are admitted | Ten complete argument-level chapters, one new NIST source record/note, source crosswalks, evidence-plan rows, no-promotion decisions, handoffs, outline/roadmap reconciliation, and 76-chapter manifest truth | No manuscript idea remains in a candidate queue. All 76 chapter cores remain at `argument`; implementation, empirical, formal, reproduction, transfer, and deployment residuals remain open. |
@@ -1011,7 +1011,7 @@ that remains safe only by never completing useful work fails the joint gate.
 
 Keep the existing syntax-level classifier, but add a semantic-depth overlay for
 every current declaration. The immutable pre-rationalization baseline contains
-1,370 declarations; the live estate contains 1,282 after eighty-eight
+1,370 declarations; the live estate contains 1,272 after 104
 dependency-safe retirement transactions and two proposition-preserving scope
 rewrites:
 
@@ -1210,13 +1210,13 @@ historical review. The immutable historical registry remains exactly 1,151
 theorems across 298 targets. The separately frozen pre-rationalization overlay
 at commit `d0f9bda14f1253999f2c40d556d925d31e4b36a4` classifies all 1,370
 baseline declarations. The current overlay in
-`proofs/proof_semantic_depth_overlay.json` classifies all 1,282 live theorem
-declarations across 104 theorem-bearing modules and maps them to 61 active
+`proofs/proof_semantic_depth_overlay.json` classifies all 1,272 live theorem
+declarations across 105 theorem-bearing modules and maps them to 61 active
 semantic-owner chapters.
 
-The live semantic-depth distribution is 35 P0 record-shape results, 731 P1
-finite-route results, 25 P2 reachability/nonvacuity results, 319 P3
-implementation-refinement results, 93 P4 cross-component-safety results, 79 P5
+The live semantic-depth distribution is 35 P0 record-shape results, 712 P1
+finite-route results, 25 P2 reachability/nonvacuity results, 323 P3
+implementation-refinement results, 94 P4 cross-component-safety results, 83 P5
 liveness/recovery results, and zero P6 empirically bound results. P6 being zero
 is intentional: the existence of an experiment file, trace, or generated
 artifact does not turn a theorem into empirical evidence.
@@ -1224,8 +1224,8 @@ artifact does not turn a theorem into empirical evidence.
 Every overlay row records its assumptions, active semantic owner, downstream
 consumer, witness or explicit witness absence, implementation binding, mutation
 evidence, maximum inference, and disposition. The resulting current estate is
-1,212 retain, zero retire as narrow projection, zero pending scope-language
-rewrites, and 70 stronger-model rewrites. All 1,282 rows have mutation coverage and every
+1,218 retain, zero retire as narrow projection, zero pending scope-language
+rewrites, and 54 stronger-model rewrites. All 1,272 rows have mutation coverage and every
 retained theorem has a named consumer.
 
 The cumulative dependency-safe retirement ledger is
@@ -1491,10 +1491,32 @@ Boolean fields as formal evidence. This consolidation establishes neither
 complete search nor accurate costs, measured efficiency, model quality,
 compression utility, deployment, transfer, or support promotion.
 
+The sixteenth evidence-transition consolidation tranche removes sixteen weak
+fixture-normalization theorems from `EvidenceStates.lean` while preserving its
+six narrow deductive facts about required evidence, self-promotion, terminal
+states, and terminal effects. The retired declarations normalized one edited
+field of a hand-authored complete review or projected one literal summary; none
+had a theorem dependency or exercised consumer.
+
+The replacement `EvidenceTransitionRefinement` is a reachable six-stage
+lifecycle. It freezes the exact claim atom plus reader proposition, normative
+obligation, and machine-predicate projections; binds target-specific evidence
+without reducing heterogeneous support categories to a scalar ladder; carries
+negative evidence, downgrade triggers, supersession, independent review,
+dissent, limitations, residuals, changelog identity, ledger handoff, and
+acknowledgment; and rejects replay, identity substitution, direct support
+assignment, inherited parent or descendant movement, and external effects. An
+independent consumer reaches all 35 declared routes with natural positive and
+mutation cases. Seven former public targets are consolidated into three:
+the two implemented lifecycle boundaries and the retained foundational
+missing-evidence blocker. Four repository-specific audit mirrors are removed
+from the formal queue because their executable consumers already preserve the
+honest scope; copied formal summaries would add ceremony, not evidence.
+
 This receipt completes the C6 **classification** gate and begins its
-dependency-safe execution gate. Exactly 90 of the original 161 actions have
-been executed: eighty-eight theorem retirements and two proposition-preserving
-scope rewrites. Exactly 70 stronger-model actions remain. The next proof action
+dependency-safe execution gate. Exactly 106 of the original 161 actions have
+been executed: 104 theorem retirements and two proposition-preserving
+scope rewrites. Exactly 54 stronger-model actions remain. The next proof action
 is to replace legacy fixture-validity surfaces with reachable models or
 independent consumers in semantic-value order, starting with existing
 refinement assets before creating new formal machinery. New proof work remains
@@ -3054,7 +3076,7 @@ lies.
 | M1 — Negative-result rehabilitation | completed | All 90 accepted negative/no-change transitions are classified (1 N0, 15 N1, 74 N2, zero N3–N5), and the frozen 75-surface snapshot including the then-live 55 chapters preserves the resulting ceilings. |
 | M2 — Competent natural empirical result | in progress | A high-value natural, non-authored campaign passes every competence gate and ends with a bounded positive, negative, or inconclusive disposition. |
 | M3 — Reproduction and transfer | pending | Any broadened result has independent reproduction and two prospectively selected materially different transfer settings. |
-| M4 — Semantic formal depth | completed | All six frozen clusters are terminal across 24 modules with exact dispositions, modeled state, assumptions, countermodels, consumers, mutations, semantic separations, and maximum-inference ceilings. No aggregate theorem count or finite record grants empirical support. |
+| M4 — Semantic formal depth | completed | All six frozen clusters are terminal across 25 modules with exact dispositions, modeled state, assumptions, countermodels, consumers, mutations, semantic separations, and maximum-inference ceilings. No aggregate theorem count or finite record grants empirical support. |
 | M5 — Effect-complete reference | pending | Multi-process authority-to-effect, rollback/residual, full-state, and deletion behavior passes adversarial and recovery tests. |
 | M6 — Renewal and structural completeness | in progress | The first tranche, A1/A2, Round 18 five-chapter/seven-section breadth packet, ten-owner no-deferral transaction, four-owner taxonomy reconciliation, 2026-07-25 four-owner/eight-section full-coverage audit, T1D meaning-bearing prose, and Precision Contract eight-owner manuscript integration are terminal at argument support; the working manifest is 84 and no identified manuscript idea is deferred. Optimizer, heterogeneous-memory, and inference-cache manuscript-depth amendments are also terminal at argument support; executable evidence residuals remain open. Close P2's exact attempt/materialization and replacement qualification plus the current atom, W3, maturity/source/reader/inheritance, and current-reader gates in their enforced order. Candidate-era freeze language is historical and cannot restore a deferred manuscript queue. |
 | M7 — Reader/publication disposition | in progress | PDF, EPUB, and DOCX in `reader-2026-07-18` remain immutable published artifacts with exact receipts. Close only after the current 84-chapter derived-reader packet and compatibility residuals are terminally dispositioned, all public surfaces remain synchronized, and the final main/Pages attestation succeeds; a local freshness packet does not imply external publication. |

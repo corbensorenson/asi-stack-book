@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://asi-stack.example/schemas/evidence_transition_refinement.schema.json",
+  "title": "Evidence transition refinement result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "result_id",
+    "recorded_date",
+    "command",
+    "model",
+    "route_cases",
+    "lean_verification",
+    "support_state_effect",
+    "external_effect",
+    "residuals",
+    "non_claims"
+  ],
+  "properties": {
+    "schema_version": {"const": "asi_stack.evidence_transition_refinement.result.v1"},
+    "result_id": {"type": "string", "minLength": 1},
+    "recorded_date": {"type": "string", "format": "date"},
+    "command": {"type": "string", "minLength": 1},
+    "model": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "lean_module",
+        "stage_count",
+        "route_count",
+        "reached_route_count",
+        "route_case_count",
+        "rejected_mutation_count",
+        "projection_count",
+        "evidence_dimension_count",
+        "support_assignment_count",
+        "parent_or_descendant_movement_count",
+        "external_effect_count"
+      ],
+      "properties": {
+        "lean_module": {"type": "string"},
+        "stage_count": {"const": 6},
+        "route_count": {"type": "integer", "minimum": 1},
+        "reached_route_count": {"type": "integer", "minimum": 1},
+        "route_case_count": {"type": "integer", "minimum": 1},
+        "rejected_mutation_count": {"type": "integer", "minimum": 1},
+        "projection_count": {"const": 3},
+        "evidence_dimension_count": {"const": 8},
+        "support_assignment_count": {"const": 0},
+        "parent_or_descendant_movement_count": {"const": 0},
+        "external_effect_count": {"const": 0}
+      }
+    },
+    "route_cases": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["case_id", "stage", "expected_route", "actual_route", "accepted"],
+        "properties": {
+          "case_id": {"type": "string"},
+          "stage": {"type": "string"},
+          "expected_route": {"type": "string"},
+          "actual_route": {"type": "string"},
+          "accepted": {"type": "boolean"}
+        }
+      }
+    },
+    "lean_verification": {
+      "type": "object",
+      "required": ["command", "exit_code", "output_sha256"],
+      "properties": {
+        "command": {"type": "string"},
+        "exit_code": {"const": 0},
+        "output_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "support_state_effect": {"const": "none"},
+    "external_effect": {"const": "none"},
+    "residuals": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "non_claims": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+  }
+}

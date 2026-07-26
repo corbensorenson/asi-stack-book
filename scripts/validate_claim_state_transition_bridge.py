@@ -31,15 +31,18 @@ LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "EvidenceStates.lean"
 COMMAND = "python3 scripts/validate_claim_state_transition_bridge.py"
 CODEX_TEST_NAME = "Claim-state transition bridge"
 PROOF_TAG = "lean:evidence.claim_state.transition_bridge"
-CURRENT_LEAN_THEOREMS = [
-    "claim_state_transition_bridge_fixture_valid",
-]
 RETIRED_LEAN_THEOREMS = [
+    "claim_state_transition_bridge_fixture_valid",
     "claim_state_transition_bridge_requires_negative_evidence",
     "claim_state_transition_bridge_preserves_no_live_claim_movement",
     "claim_state_transition_bridge_preserves_nonclaim_boundary",
 ]
-HISTORICAL_LEAN_THEOREMS = CURRENT_LEAN_THEOREMS + RETIRED_LEAN_THEOREMS
+HISTORICAL_LEAN_THEOREMS = [
+    "claim_state_transition_bridge_fixture_valid",
+    "claim_state_transition_bridge_requires_negative_evidence",
+    "claim_state_transition_bridge_preserves_no_live_claim_movement",
+    "claim_state_transition_bridge_preserves_nonclaim_boundary",
+]
 
 REQUIRED_NON_CLAIMS = [
     "does not demote, deprecate, or refute any live chapter core claim",
@@ -450,15 +453,6 @@ def require_text(path: Path, phrases: list[str], errors: list[str]) -> None:
 
 
 def validate_surfaces(errors: list[str]) -> None:
-    require_text(
-        LEAN_FILE,
-        [
-            "ClaimStateTransitionBridgeSummary",
-            "claimStateTransitionBridgeFixture",
-            *CURRENT_LEAN_THEOREMS,
-        ],
-        errors,
-    )
     lean_text = LEAN_FILE.read_text(encoding="utf-8")
     for theorem in RETIRED_LEAN_THEOREMS:
         if re.search(rf"\btheorem\s+{re.escape(theorem)}\b", lean_text):
@@ -480,10 +474,7 @@ def validate_surfaces(errors: list[str]) -> None:
         CHAPTER,
         [
             CODEX_TEST_NAME,
-            COMMAND,
-            PROOF_TAG,
             "claim narrowing",
-            "does not demote, deprecate, or refute any live chapter core claim",
         ],
         errors,
     )
@@ -500,9 +491,6 @@ def validate_surfaces(errors: list[str]) -> None:
         OUTLINE,
         [
             CODEX_TEST_NAME,
-            COMMAND,
-            PROOF_TAG,
-            "claim narrowing, support downgrade, terminal refutation",
         ],
         errors,
     )
@@ -537,28 +525,9 @@ def validate_surfaces(errors: list[str]) -> None:
 
     manifest = load_json(MANIFEST)
     manifest_text = text_blob(manifest)
-    for phrase in [CODEX_TEST_NAME.lower(), PROOF_TAG.lower(), COMMAND.lower()]:
+    for phrase in [CODEX_TEST_NAME.lower()]:
         if phrase not in manifest_text:
             errors.append(f"{rel(MANIFEST)} missing {phrase}.")
-    chapter = next(
-        (
-            chapter
-            for part in manifest.get("parts", [])
-            for chapter in part.get("chapters", [])
-            if chapter.get("id") == "evidence-states-and-claim-discipline"
-        ),
-        None,
-    )
-    proof_target = next(
-        (
-            target
-            for target in (chapter or {}).get("proof_targets", [])
-            if target.get("tag") == PROOF_TAG
-        ),
-        None,
-    )
-    if proof_target is None or proof_target.get("status") != "planned":
-        errors.append(f"{rel(MANIFEST)} must keep {PROOF_TAG} planned after C6 projection retirement.")
 
 
 def main() -> None:

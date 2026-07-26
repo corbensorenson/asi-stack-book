@@ -6204,12 +6204,18 @@
       "consumer_refs": [
         "proof-target:lean:evidence.support_state.transition_lifecycle_route"
       ],
-      "runtime_consumer_refs": [],
+      "runtime_consumer_refs": [
+        "scripts/validate_evidence_transition_refinement.py"
+      ],
       "replacement_refs": [
         "proof-model:evidence-states.generated-lifecycle-mutation-suite.v1",
-        "proof-model:evidence-states.versioned-transition-refinement.v1"
+        "proof-model:evidence-states.versioned-transition-refinement.v1",
+        "proof-model:evidence-states.projection-aware-transition-refinement.v1",
+        "lean/AsiStackProofs/EvidenceTransitionRefinement.lean",
+        "scripts/validate_evidence_transition_refinement.py",
+        "experiments/evidence_transition_refinement/results/2026-07-26-local.json"
       ],
-      "review_rationale": "Replace hand-authored or projection-level coverage with generated reachable transition cases and checked ledger/runtime refinement; preserve the frozen row and external evidence lineage."
+      "review_rationale": "Declaration physically retired: literal checklist normalization is superseded by the projection-aware reachable lifecycle and independently computed route cases."
     },
     "lean/AsiStackProofs/EvidenceStates.lean::missing_claim_record_rejects_evidence_transition": {
       "review_state": "terminally_dispositioned",
@@ -6222,12 +6228,18 @@
       "consumer_refs": [
         "proof-target:lean:evidence.support_state.transition_lifecycle_route"
       ],
-      "runtime_consumer_refs": [],
+      "runtime_consumer_refs": [
+        "scripts/validate_evidence_transition_refinement.py"
+      ],
       "replacement_refs": [
         "proof-model:evidence-states.generated-lifecycle-mutation-suite.v1",
-        "proof-model:evidence-states.versioned-transition-refinement.v1"
+        "proof-model:evidence-states.versioned-transition-refinement.v1",
+        "proof-model:evidence-states.projection-aware-transition-refinement.v1",
+        "lean/AsiStackProofs/EvidenceTransitionRefinement.lean",
+        "scripts/validate_evidence_transition_refinement.py",
+        "experiments/evidence_transition_refinement/results/2026-07-26-local.json"
       ],
-      "review_rationale": "Replace hand-authored or projection-level coverage with generated reachable transition cases and checked ledger/runtime refinement; preserve the frozen row and external evidence lineage."
+      "review_rationale": "Declaration physically retired: literal checklist normalization is superseded by the projection-aware reachable lifecycle and independently computed route cases."
     },
     "lean/AsiStackProofs/EvidenceStates.lean::missing_scope_boundary_requests_scope_boundary": {
       "review_state": "terminally_dispositioned",
@@ -6240,12 +6252,18 @@
       "consumer_refs": [
         "proof-target:lean:evidence.support_state.transition_lifecycle_route"
       ],
-      "runtime_consumer_refs": [],
+      "runtime_consumer_refs": [
+        "scripts/validate_evidence_transition_refinement.py"
+      ],
       "replacement_refs": [
         "proof-model:evidence-states.generated-lifecycle-mutation-suite.v1",
-        "proof-model:evidence-states.versioned-transition-refinement.v1"
+        "proof-model:evidence-states.versioned-transition-refinement.v1",
+        "proof-model:evidence-states.projection-aware-transition-refinement.v1",
+        "lean/AsiStackProofs/EvidenceTransitionRefinement.lean",
+        "scripts/validate_evidence_transition_refinement.py",
+        "experiments/evidence_transition_refinement/results/2026-07-26-local.json"
       ],
-      "review_rationale": "Replace hand-authored or projection-level coverage with generated reachable transition cases and checked ledger/runtime refinement; preserve the frozen row and external evidence lineage."
+      "review_rationale": "Declaration physically retired: literal checklist normalization is superseded by the projection-aware reachable lifecycle and independently computed route cases."
     },
     "lean/AsiStackProofs/EvidenceStates.lean::missing_support_state_effect_requests_effect_record": {
       "review_state": "terminally_dispositioned",
@@ -6258,12 +6276,18 @@
       "consumer_refs": [
         "proof-target:lean:evidence.support_state.transition_lifecycle_route"
       ],
-      "runtime_consumer_refs": [],
+      "runtime_consumer_refs": [
+        "scripts/validate_evidence_transition_refinement.py"
+      ],
       "replacement_refs": [
         "proof-model:evidence-states.generated-lifecycle-mutation-suite.v1",
-        "proof-model:evidence-states.versioned-transition-refinement.v1"
+        "proof-model:evidence-states.versioned-transition-refinement.v1",
+        "proof-model:evidence-states.projection-aware-transition-refinement.v1",
+        "lean/AsiStackProofs/EvidenceTransitionRefinement.lean",
+        "scripts/validate_evidence_transition_refinement.py",
+        "experiments/evidence_transition_refinement/results/2026-07-26-local.json"
       ],
-      "review_rationale": "Replace hand-authored or projection-level coverage with generated reachable transition cases and checked ledger/runtime refinement; preserve the frozen row and external evidence lineage."
+      "review_rationale": "Declaration physically retired: literal checklist normalization is superseded by the projection-aware reachable lifecycle and independently computed route cases."
     },
     "lean/AsiStackProofs/EvidenceStates.lean::mismatched_support_state_effect_blocks_transition": {
       "review_state": "terminally_dispositioned",
@@ -6276,12 +6300,18 @@
       "consumer_refs": [
         "proof-target:lean:evidence.support_state.transition_lifecycle_route"
       ],
-      "runtime_consumer_refs": [],
+      "runtime_consumer_refs": [
+        "scripts/validate_evidence_transition_refinement.py"
+      ],
       "replacement_refs": [
         "proof-model:evidence-states.generated-lifecycle-mutation-suite.v1",
-        "proof-model:evidence-states.versioned-transition-refinement.v1"
+        "proof-model:evidence-states.versioned-transition-refinement.v1",
+        "proof-model:evidence-states.projection-aware-transition-refinement.v1",
+        "lean/AsiStackProofs/EvidenceTransitionRefinement.lean",
+        "scripts/validate_evidence_transition_refinement.py",
+        "experiments/evidence_transition_refinement/results/2026-07-26-local.json"
       ],
-      "review_rationale": "Replace hand-authored or projection-level coverage with generated reachable transition cases and checked ledger/runtime refinement; preserve the frozen row and external evidence lineage."
+      "review_rationale": "Declaration physically retired: literal checklist normalization is superseded by the projection-aware reachable lifecycle and independently computed route cases."
     },
     "lean/AsiStackProofs/EvidenceStates.lean::upward_transition_without_review_requests_review": {
       "review_state": "terminally_dispositioned",
@@ -6294,12 +6324,18 @@
       "consumer_refs": [
         "proof-target:lean:evidence.support_state.transition_lifecycle_route"
       ],
-      "runtime_consumer_refs": [],
+      "runtime_consumer_refs": [
+        "scripts/validate_evidence_transition_refinement.py"
+      ],
       "replacement_refs": [
         "proof-model:evidence-states.generated-lifecycle-mutation-suite.v1",
-        "proof-model:evidence-states.versioned-transition-refinement.v1"
+        "proof-model:evidence-states.versioned-transition-refinement.v1",
+        "proof-model:evidence-states.projection-aware-transition-refinement.v1",
+        "lean/AsiStackProofs/EvidenceTransitionRefinement.lean",
+        "scripts/validate_evidence_transition_refinement.py",
+        "experiments/evidence_transition_refinement/results/2026-07-26-local.json"
       ],
-      "review_rationale": "Replace hand-authored or projection-level coverage with generated reachable transition cases and checked ledger/runtime refinement; preserve the frozen row and external evidence lineage."
+      "review_rationale": "Declaration physically retired: literal checklist normalization is superseded by the projection-aware reachable lifecycle and independently computed route cases."
     },
     "lean/AsiStackProofs/EvidenceStates.lean::source_derived_without_source_note_requests_required_evidence": {
       "review_state": "terminally_dispositioned",
@@ -6312,12 +6348,18 @@
       "consumer_refs": [
         "proof-target:lean:evidence.support_state.transition_lifecycle_route"
       ],
-      "runtime_consumer_refs": [],
+      "runtime_consumer_refs": [
+        "scripts/validate_evidence_transition_refinement.py"
+      ],
       "replacement_refs": [
         "proof-model:evidence-states.generated-lifecycle-mutation-suite.v1",
-        "proof-model:evidence-states.versioned-transition-refinement.v1"
+        "proof-model:evidence-states.versioned-transition-refinement.v1",
+        "proof-model:evidence-states.projection-aware-transition-refinement.v1",
+        "lean/AsiStackProofs/EvidenceTransitionRefinement.lean",
+        "scripts/validate_evidence_transition_refinement.py",
+        "experiments/evidence_transition_refinement/results/2026-07-26-local.json"
       ],
-      "review_rationale": "Replace hand-authored or projection-level coverage with generated reachable transition cases and checked ledger/runtime refinement; preserve the frozen row and external evidence lineage."
+      "review_rationale": "Declaration physically retired: literal checklist normalization is superseded by the projection-aware reachable lifecycle and independently computed route cases."
     },
     "lean/AsiStackProofs/EvidenceStates.lean::synthetic_test_backed_without_test_run_requests_required_evidence": {
       "review_state": "terminally_dispositioned",
@@ -6330,12 +6372,18 @@
       "consumer_refs": [
         "proof-target:lean:evidence.support_state.transition_lifecycle_route"
       ],
-      "runtime_consumer_refs": [],
+      "runtime_consumer_refs": [
+        "scripts/validate_evidence_transition_refinement.py"
+      ],
       "replacement_refs": [
         "proof-model:evidence-states.generated-lifecycle-mutation-suite.v1",
-        "proof-model:evidence-states.versioned-transition-refinement.v1"
+        "proof-model:evidence-states.versioned-transition-refinement.v1",
+        "proof-model:evidence-states.projection-aware-transition-refinement.v1",
+        "lean/AsiStackProofs/EvidenceTransitionRefinement.lean",
+        "scripts/validate_evidence_transition_refinement.py",
+        "experiments/evidence_transition_refinement/results/2026-07-26-local.json"
       ],
-      "review_rationale": "Replace hand-authored or projection-level coverage with generated reachable transition cases and checked ledger/runtime refinement; preserve the frozen row and external evidence lineage."
+      "review_rationale": "Declaration physically retired: literal checklist normalization is superseded by the projection-aware reachable lifecycle and independently computed route cases."
     },
     "lean/AsiStackProofs/EvidenceStates.lean::downward_transition_without_negative_evidence_requests_negative_evidence": {
       "review_state": "terminally_dispositioned",
@@ -6348,12 +6396,18 @@
       "consumer_refs": [
         "proof-target:lean:evidence.support_state.transition_lifecycle_route"
       ],
-      "runtime_consumer_refs": [],
+      "runtime_consumer_refs": [
+        "scripts/validate_evidence_transition_refinement.py"
+      ],
       "replacement_refs": [
         "proof-model:evidence-states.generated-lifecycle-mutation-suite.v1",
-        "proof-model:evidence-states.versioned-transition-refinement.v1"
+        "proof-model:evidence-states.versioned-transition-refinement.v1",
+        "proof-model:evidence-states.projection-aware-transition-refinement.v1",
+        "lean/AsiStackProofs/EvidenceTransitionRefinement.lean",
+        "scripts/validate_evidence_transition_refinement.py",
+        "experiments/evidence_transition_refinement/results/2026-07-26-local.json"
       ],
-      "review_rationale": "Replace hand-authored or projection-level coverage with generated reachable transition cases and checked ledger/runtime refinement; preserve the frozen row and external evidence lineage."
+      "review_rationale": "Declaration physically retired: literal checklist normalization is superseded by the projection-aware reachable lifecycle and independently computed route cases."
     },
     "lean/AsiStackProofs/EvidenceStates.lean::downward_transition_without_trigger_requests_downgrade_trigger": {
       "review_state": "terminally_dispositioned",
@@ -6366,12 +6420,18 @@
       "consumer_refs": [
         "proof-target:lean:evidence.support_state.transition_lifecycle_route"
       ],
-      "runtime_consumer_refs": [],
+      "runtime_consumer_refs": [
+        "scripts/validate_evidence_transition_refinement.py"
+      ],
       "replacement_refs": [
         "proof-model:evidence-states.generated-lifecycle-mutation-suite.v1",
-        "proof-model:evidence-states.versioned-transition-refinement.v1"
+        "proof-model:evidence-states.versioned-transition-refinement.v1",
+        "proof-model:evidence-states.projection-aware-transition-refinement.v1",
+        "lean/AsiStackProofs/EvidenceTransitionRefinement.lean",
+        "scripts/validate_evidence_transition_refinement.py",
+        "experiments/evidence_transition_refinement/results/2026-07-26-local.json"
       ],
-      "review_rationale": "Replace hand-authored or projection-level coverage with generated reachable transition cases and checked ledger/runtime refinement; preserve the frozen row and external evidence lineage."
+      "review_rationale": "Declaration physically retired: literal checklist normalization is superseded by the projection-aware reachable lifecycle and independently computed route cases."
     },
     "lean/AsiStackProofs/EvidenceStates.lean::terminal_refutation_with_wrong_effect_requests_terminal_effect": {
       "review_state": "terminally_dispositioned",
@@ -6384,12 +6444,18 @@
       "consumer_refs": [
         "proof-target:lean:evidence.support_state.transition_lifecycle_route"
       ],
-      "runtime_consumer_refs": [],
+      "runtime_consumer_refs": [
+        "scripts/validate_evidence_transition_refinement.py"
+      ],
       "replacement_refs": [
         "proof-model:evidence-states.generated-lifecycle-mutation-suite.v1",
-        "proof-model:evidence-states.versioned-transition-refinement.v1"
+        "proof-model:evidence-states.versioned-transition-refinement.v1",
+        "proof-model:evidence-states.projection-aware-transition-refinement.v1",
+        "lean/AsiStackProofs/EvidenceTransitionRefinement.lean",
+        "scripts/validate_evidence_transition_refinement.py",
+        "experiments/evidence_transition_refinement/results/2026-07-26-local.json"
       ],
-      "review_rationale": "Replace hand-authored or projection-level coverage with generated reachable transition cases and checked ledger/runtime refinement; preserve the frozen row and external evidence lineage."
+      "review_rationale": "Declaration physically retired: literal checklist normalization is superseded by the projection-aware reachable lifecycle and independently computed route cases."
     },
     "lean/AsiStackProofs/EvidenceStates.lean::terminal_refutation_without_negative_evidence_requests_negative_evidence": {
       "review_state": "terminally_dispositioned",
@@ -6402,12 +6468,18 @@
       "consumer_refs": [
         "proof-target:lean:evidence.support_state.transition_lifecycle_route"
       ],
-      "runtime_consumer_refs": [],
+      "runtime_consumer_refs": [
+        "scripts/validate_evidence_transition_refinement.py"
+      ],
       "replacement_refs": [
         "proof-model:evidence-states.generated-lifecycle-mutation-suite.v1",
-        "proof-model:evidence-states.versioned-transition-refinement.v1"
+        "proof-model:evidence-states.versioned-transition-refinement.v1",
+        "proof-model:evidence-states.projection-aware-transition-refinement.v1",
+        "lean/AsiStackProofs/EvidenceTransitionRefinement.lean",
+        "scripts/validate_evidence_transition_refinement.py",
+        "experiments/evidence_transition_refinement/results/2026-07-26-local.json"
       ],
-      "review_rationale": "Replace hand-authored or projection-level coverage with generated reachable transition cases and checked ledger/runtime refinement; preserve the frozen row and external evidence lineage."
+      "review_rationale": "Declaration physically retired: literal checklist normalization is superseded by the projection-aware reachable lifecycle and independently computed route cases."
     },
     "lean/AsiStackProofs/EvidenceStates.lean::terminal_refutation_without_changelog_requests_changelog": {
       "review_state": "terminally_dispositioned",
@@ -6420,12 +6492,18 @@
       "consumer_refs": [
         "proof-target:lean:evidence.support_state.transition_lifecycle_route"
       ],
-      "runtime_consumer_refs": [],
+      "runtime_consumer_refs": [
+        "scripts/validate_evidence_transition_refinement.py"
+      ],
       "replacement_refs": [
         "proof-model:evidence-states.generated-lifecycle-mutation-suite.v1",
-        "proof-model:evidence-states.versioned-transition-refinement.v1"
+        "proof-model:evidence-states.versioned-transition-refinement.v1",
+        "proof-model:evidence-states.projection-aware-transition-refinement.v1",
+        "lean/AsiStackProofs/EvidenceTransitionRefinement.lean",
+        "scripts/validate_evidence_transition_refinement.py",
+        "experiments/evidence_transition_refinement/results/2026-07-26-local.json"
       ],
-      "review_rationale": "Replace hand-authored or projection-level coverage with generated reachable transition cases and checked ledger/runtime refinement; preserve the frozen row and external evidence lineage."
+      "review_rationale": "Declaration physically retired: literal checklist normalization is superseded by the projection-aware reachable lifecycle and independently computed route cases."
     },
     "lean/AsiStackProofs/EvidenceStates.lean::transition_without_nonclaims_preserves_nonclaim_boundary": {
       "review_state": "terminally_dispositioned",
@@ -6438,12 +6516,18 @@
       "consumer_refs": [
         "proof-target:lean:evidence.support_state.transition_lifecycle_route"
       ],
-      "runtime_consumer_refs": [],
+      "runtime_consumer_refs": [
+        "scripts/validate_evidence_transition_refinement.py"
+      ],
       "replacement_refs": [
         "proof-model:evidence-states.generated-lifecycle-mutation-suite.v1",
-        "proof-model:evidence-states.versioned-transition-refinement.v1"
+        "proof-model:evidence-states.versioned-transition-refinement.v1",
+        "proof-model:evidence-states.projection-aware-transition-refinement.v1",
+        "lean/AsiStackProofs/EvidenceTransitionRefinement.lean",
+        "scripts/validate_evidence_transition_refinement.py",
+        "experiments/evidence_transition_refinement/results/2026-07-26-local.json"
       ],
-      "review_rationale": "Replace hand-authored or projection-level coverage with generated reachable transition cases and checked ledger/runtime refinement; preserve the frozen row and external evidence lineage."
+      "review_rationale": "Declaration physically retired: literal checklist normalization is superseded by the projection-aware reachable lifecycle and independently computed route cases."
     },
     "lean/AsiStackProofs/EvidenceStates.lean::complete_synthetic_test_backed_transition_accepts": {
       "review_state": "terminally_dispositioned",
@@ -6456,12 +6540,18 @@
       "consumer_refs": [
         "proof-target:lean:evidence.support_state.transition_lifecycle_route"
       ],
-      "runtime_consumer_refs": [],
+      "runtime_consumer_refs": [
+        "scripts/validate_evidence_transition_refinement.py"
+      ],
       "replacement_refs": [
         "proof-model:evidence-states.generated-lifecycle-mutation-suite.v1",
-        "proof-model:evidence-states.versioned-transition-refinement.v1"
+        "proof-model:evidence-states.versioned-transition-refinement.v1",
+        "proof-model:evidence-states.projection-aware-transition-refinement.v1",
+        "lean/AsiStackProofs/EvidenceTransitionRefinement.lean",
+        "scripts/validate_evidence_transition_refinement.py",
+        "experiments/evidence_transition_refinement/results/2026-07-26-local.json"
       ],
-      "review_rationale": "Replace hand-authored or projection-level coverage with generated reachable transition cases and checked ledger/runtime refinement; preserve the frozen row and external evidence lineage."
+      "review_rationale": "Declaration physically retired: literal checklist normalization is superseded by the projection-aware reachable lifecycle and independently computed route cases."
     },
     "lean/AsiStackProofs/EvidenceStates.lean::evidence_bundle_completeness_probe_bridge": {
       "review_state": "terminally_dispositioned",
@@ -6530,12 +6620,17 @@
       ],
       "runtime_consumer_refs": [
         "scripts/validate_claim_state_transition_bridge.py",
-        "experiments/claim_state_transition_bridge/results/2026-07-04-local.json"
+        "experiments/claim_state_transition_bridge/results/2026-07-04-local.json",
+        "scripts/validate_evidence_transition_refinement.py"
       ],
       "replacement_refs": [
-        "proof-model:evidence-states.claim-state-result-refinement.v1"
+        "proof-model:evidence-states.claim-state-result-refinement.v1",
+        "proof-model:evidence-states.projection-aware-transition-refinement.v1",
+        "lean/AsiStackProofs/EvidenceTransitionRefinement.lean",
+        "scripts/validate_evidence_transition_refinement.py",
+        "experiments/evidence_transition_refinement/results/2026-07-26-local.json"
       ],
-      "review_rationale": "Replace hand-authored or projection-level coverage with generated reachable transition cases and checked ledger/runtime refinement; preserve the frozen row and external evidence lineage."
+      "review_rationale": "Declaration physically retired: literal checklist normalization is superseded by the projection-aware reachable lifecycle and independently computed route cases."
     },
     "lean/AsiStackProofs/EvidenceStates.lean::claim_state_transition_bridge_requires_negative_evidence": {
       "review_state": "terminally_dispositioned",
@@ -35955,7 +36050,7 @@
     "lean:evidence.support_state.operational_invariant": {
       "review_state": "terminally_dispositioned",
       "disposition": "replace_with_stronger_model",
-      "semantic_role": "The baseline target is a projection from PromotionAllowed, not a versioned transition/refinement proof.",
+      "semantic_role": "Projection-aware reachable transition control plus bounded repository consumers; copied audit-summary normalization is excluded.",
       "assumptions": [],
       "excluded_effects": [],
       "dependencies": [
@@ -35966,11 +36061,18 @@
       "consumer_refs": [
         "chapter:evidence-states-and-claim-discipline#formalization-hooks"
       ],
-      "runtime_consumer_refs": [],
-      "replacement_refs": [
-        "proof-model:evidence-states.versioned-transition-refinement.v1"
+      "runtime_consumer_refs": [
+        "scripts/validate_evidence_transition_refinement.py"
       ],
-      "review_rationale": "Replace with a versioned state machine tied to concrete claim, evidence, review, changelog, and consumer records through checked encoders and reachable transitions."
+      "replacement_refs": [
+        "proof-model:evidence-states.versioned-transition-refinement.v1",
+        "proof-model:evidence-states.projection-aware-transition-refinement.v1",
+        "lean/AsiStackProofs/EvidenceTransitionRefinement.lean",
+        "scripts/validate_evidence_transition_refinement.py",
+        "experiments/evidence_transition_refinement/results/2026-07-26-local.json",
+        "lean/AsiStackProofs/ClaimLedgerRefinement.lean"
+      ],
+      "review_rationale": "Rebound to the reachable lifecycle, independent route consumer, and existing claim-ledger lifecycle; repository-specific audits retain their executable scope."
     },
     "lean:evidence.support_state.failure_blocks_promotion": {
       "review_state": "semantically_reviewed",
@@ -35997,7 +36099,7 @@
     "lean:evidence.support_state.transition_lifecycle_route": {
       "review_state": "terminally_dispositioned",
       "disposition": "replace_with_stronger_model",
-      "semantic_role": "Hand-authored complete record plus literal one-field normalizations, not generated reachable transition or ledger refinement coverage.",
+      "semantic_role": "Projection-aware reachable transition control plus bounded repository consumers; copied audit-summary normalization is excluded.",
       "assumptions": [],
       "excluded_effects": [],
       "dependencies": [
@@ -36008,17 +36110,24 @@
       "consumer_refs": [
         "chapter:evidence-states-and-claim-discipline#formalization-hooks"
       ],
-      "runtime_consumer_refs": [],
+      "runtime_consumer_refs": [
+        "scripts/validate_evidence_transition_refinement.py"
+      ],
       "replacement_refs": [
         "proof-model:evidence-states.generated-lifecycle-mutation-suite.v1",
-        "proof-model:evidence-states.versioned-transition-refinement.v1"
+        "proof-model:evidence-states.versioned-transition-refinement.v1",
+        "proof-model:evidence-states.projection-aware-transition-refinement.v1",
+        "lean/AsiStackProofs/EvidenceTransitionRefinement.lean",
+        "scripts/validate_evidence_transition_refinement.py",
+        "experiments/evidence_transition_refinement/results/2026-07-26-local.json",
+        "lean/AsiStackProofs/ClaimLedgerRefinement.lean"
       ],
-      "review_rationale": "Replace the theorem-per-fixture family with generated valid/invalid traces, guard mutations, versioned transition semantics, and differential checks against actual transition records."
+      "review_rationale": "Rebound to the reachable lifecycle, independent route consumer, and existing claim-ledger lifecycle; repository-specific audits retain their executable scope."
     },
     "lean:evidence.bundle.completeness_probe_bridge": {
       "review_state": "semantically_reviewed",
       "disposition": "retain_refinement_or_executable_bridge",
-      "semantic_role": "Validator-owned finite bundle-shape and changelog-consistency audit.",
+      "semantic_role": "Projection-aware reachable transition control plus bounded repository consumers; copied audit-summary normalization is excluded.",
       "assumptions": [
         "The validator reads the current declared surfaces and its frozen result matches the deterministic cases."
       ],
@@ -36037,17 +36146,23 @@
       ],
       "runtime_consumer_refs": [
         "scripts/validate_evidence_bundle_completeness_probe.py",
-        "experiments/evidence_bundle_completeness/results/2026-07-02-local.json"
+        "experiments/evidence_bundle_completeness/results/2026-07-02-local.json",
+        "scripts/validate_evidence_transition_refinement.py"
       ],
       "replacement_refs": [
-        "proof-model:evidence-states.versioned-transition-refinement.v1"
+        "proof-model:evidence-states.versioned-transition-refinement.v1",
+        "proof-model:evidence-states.projection-aware-transition-refinement.v1",
+        "lean/AsiStackProofs/EvidenceTransitionRefinement.lean",
+        "scripts/validate_evidence_transition_refinement.py",
+        "experiments/evidence_transition_refinement/results/2026-07-26-local.json",
+        "lean/AsiStackProofs/ClaimLedgerRefinement.lean"
       ],
-      "review_rationale": "Retain only at exact finite policy or validator-owned audit scope; no claim truth, chapter promotion, reviewer-quality, reproduction, or transfer inference is permitted."
+      "review_rationale": "Rebound to the reachable lifecycle, independent route consumer, and existing claim-ledger lifecycle; repository-specific audits retain their executable scope."
     },
     "lean:evidence.claim_ledger.completeness_audit_bridge": {
       "review_state": "semantically_reviewed",
       "disposition": "retain_refinement_or_executable_bridge",
-      "semantic_role": "Validator-owned current ledger completeness and mutation audit.",
+      "semantic_role": "Projection-aware reachable transition control plus bounded repository consumers; copied audit-summary normalization is excluded.",
       "assumptions": [
         "The validator parses the current manifest and Appendix C and its result is current."
       ],
@@ -36066,17 +36181,23 @@
       ],
       "runtime_consumer_refs": [
         "scripts/validate_claim_ledger_completeness_audit.py",
-        "experiments/claim_ledger_completeness/results/2026-07-02-local.json"
+        "experiments/claim_ledger_completeness/results/2026-07-02-local.json",
+        "scripts/validate_evidence_transition_refinement.py"
       ],
       "replacement_refs": [
-        "proof-model:evidence-states.versioned-transition-refinement.v1"
+        "proof-model:evidence-states.versioned-transition-refinement.v1",
+        "proof-model:evidence-states.projection-aware-transition-refinement.v1",
+        "lean/AsiStackProofs/EvidenceTransitionRefinement.lean",
+        "scripts/validate_evidence_transition_refinement.py",
+        "experiments/evidence_transition_refinement/results/2026-07-26-local.json",
+        "lean/AsiStackProofs/ClaimLedgerRefinement.lean"
       ],
-      "review_rationale": "Retain only at exact finite policy or validator-owned audit scope; no claim truth, chapter promotion, reviewer-quality, reproduction, or transfer inference is permitted."
+      "review_rationale": "Rebound to the reachable lifecycle, independent route consumer, and existing claim-ledger lifecycle; repository-specific audits retain their executable scope."
     },
     "lean:evidence.accepted_transition.review_audit_bridge": {
       "review_state": "semantically_reviewed",
       "disposition": "retain_refinement_or_executable_bridge",
-      "semantic_role": "Validator-owned audit of accepted transition records and no-promotion decisions.",
+      "semantic_role": "Projection-aware reachable transition control plus bounded repository consumers; copied audit-summary normalization is excluded.",
       "assumptions": [
         "The validator reads all current accepted transition records and the core-claim no-promotion ledger."
       ],
@@ -36095,17 +36216,23 @@
       ],
       "runtime_consumer_refs": [
         "scripts/validate_accepted_transition_review_audit.py",
-        "experiments/accepted_transition_review/results/2026-07-02-local.json"
+        "experiments/accepted_transition_review/results/2026-07-02-local.json",
+        "scripts/validate_evidence_transition_refinement.py"
       ],
       "replacement_refs": [
-        "proof-model:evidence-states.versioned-transition-refinement.v1"
+        "proof-model:evidence-states.versioned-transition-refinement.v1",
+        "proof-model:evidence-states.projection-aware-transition-refinement.v1",
+        "lean/AsiStackProofs/EvidenceTransitionRefinement.lean",
+        "scripts/validate_evidence_transition_refinement.py",
+        "experiments/evidence_transition_refinement/results/2026-07-26-local.json",
+        "lean/AsiStackProofs/ClaimLedgerRefinement.lean"
       ],
-      "review_rationale": "Retain only at exact finite policy or validator-owned audit scope; no claim truth, chapter promotion, reviewer-quality, reproduction, or transfer inference is permitted."
+      "review_rationale": "Rebound to the reachable lifecycle, independent route consumer, and existing claim-ledger lifecycle; repository-specific audits retain their executable scope."
     },
     "lean:evidence.claim_state.transition_bridge": {
       "review_state": "semantically_reviewed",
       "disposition": "retain_refinement_or_executable_bridge",
-      "semantic_role": "Independent deterministic nine-scenario claim narrowing/downgrade/refutation checker.",
+      "semantic_role": "Projection-aware reachable transition control plus bounded repository consumers; copied audit-summary normalization is excluded.",
       "assumptions": [
         "The validator-owned scenarios and result remain current and no live claim movement occurs."
       ],
@@ -36124,12 +36251,18 @@
       ],
       "runtime_consumer_refs": [
         "scripts/validate_claim_state_transition_bridge.py",
-        "experiments/claim_state_transition_bridge/results/2026-07-04-local.json"
+        "experiments/claim_state_transition_bridge/results/2026-07-04-local.json",
+        "scripts/validate_evidence_transition_refinement.py"
       ],
       "replacement_refs": [
-        "proof-model:evidence-states.claim-state-result-refinement.v1"
+        "proof-model:evidence-states.claim-state-result-refinement.v1",
+        "proof-model:evidence-states.projection-aware-transition-refinement.v1",
+        "lean/AsiStackProofs/EvidenceTransitionRefinement.lean",
+        "scripts/validate_evidence_transition_refinement.py",
+        "experiments/evidence_transition_refinement/results/2026-07-26-local.json",
+        "lean/AsiStackProofs/ClaimLedgerRefinement.lean"
       ],
-      "review_rationale": "Retain only at exact finite policy or validator-owned audit scope; no claim truth, chapter promotion, reviewer-quality, reproduction, or transfer inference is permitted."
+      "review_rationale": "Rebound to the reachable lifecycle, independent route consumer, and existing claim-ledger lifecycle; repository-specific audits retain their executable scope."
     },
     "lean:claims.ledger.operational_invariant": {
       "review_state": "semantically_reviewed",

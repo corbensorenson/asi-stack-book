@@ -21,10 +21,10 @@ STATUS = ROOT / "roadmap_records" / "post_v2_3_claim_proof_and_sota_challenge_st
 MAINTENANCE_STATUS = ROOT / "roadmap_records" / "post_v2_3_maintenance_transfer_and_publication_status.json"
 
 HISTORICAL_PROOF_TARGET_COUNT = 298
-CURRENT_PROOF_TARGET_COUNT = 333
-CURRENT_IMPLEMENTED_TARGET_COUNT = 302
-CURRENT_PLANNED_TARGET_COUNT = 31
-CURRENT_RATIONALIZATION_PLANNED_TARGET_COUNT = 8
+CURRENT_PROOF_TARGET_COUNT = 329
+CURRENT_IMPLEMENTED_TARGET_COUNT = 303
+CURRENT_PLANNED_TARGET_COUNT = 26
+CURRENT_RATIONALIZATION_PLANNED_TARGET_COUNT = 3
 HISTORICAL_EXPECTED_CLASSES = {
     "adequate finite-record invariant": 73,
     "useful but too narrow": 158,
@@ -34,8 +34,8 @@ HISTORICAL_EXPECTED_CLASSES = {
     "research-agenda until artifact import": 2,
 }
 CURRENT_EXPECTED_CLASSES = {
-    "adequate finite-record invariant": 73,
-    "useful but too narrow": 162,
+    "adequate finite-record invariant": 70,
+    "useful but too narrow": 161,
     "needs richer state-machine or review semantics": 37,
     "needs executable tests first": 39,
     "needs empirical or baseline tests first": 20,
@@ -302,7 +302,10 @@ def errors(audit: dict[str, Any]) -> list[str]:
     }
     if audit.get("current_surface") != expected_historical_surface:
         out.append("frozen P2 proof-surface closure snapshot drifted")
-    if contract.get("current_live_proof_target_count") != HISTORICAL_PROOF_TARGET_COUNT:
+    if (
+        contract.get("baseline_proof_target_count") != HISTORICAL_PROOF_TARGET_COUNT
+        or contract.get("closure_adequacy_routed_target_count") != HISTORICAL_PROOF_TARGET_COUNT
+    ):
         out.append("historical P2 status no longer preserves its 298-target closure surface")
 
     routes = audit.get("adequacy_routes", [])

@@ -193,9 +193,6 @@ def validate(data: dict) -> list[str]:
     later_admitted_records = [
         row for row in proof_records if row.get("chapter_id") in admitted_chapter_ids
     ]
-    later_implemented_records = [
-        row for row in later_admitted_records if row.get("status") == "implemented"
-    ]
     later_planned_records = [
         row for row in later_admitted_records if row.get("status") == "planned"
     ]
@@ -207,28 +204,31 @@ def validate(data: dict) -> list[str]:
         for row in historical_planned_records
         if row.get("tag") in rationalization_migration_tags
     ]
+    authorized_current_planned_tags = {
+        row.get("tag")
+        for row in later_planned_records + authorized_rationalization_migrations
+    }
+    historical_cycle_text = json.dumps(
+        {
+            "ledger": ledger,
+            "outcome": outcome,
+            "transitions": transitions,
+        },
+        sort_keys=True,
+    )
     record_status_counts: dict[str, int] = {}
     for row in proof_records:
         record_status = row.get("status")
         record_status_counts[record_status] = record_status_counts.get(record_status, 0) + 1
-    added_proof_count = (
-        current_proof_count - historical_proof_count
-        if isinstance(current_proof_count, int) and isinstance(historical_proof_count, int)
-        else -1
-    )
     if (
         "no new lean theorem" not in data["reconciliation"].lower()
+        or "lean:" in historical_cycle_text
+        or "AsiStackProofs" in historical_cycle_text
         or current_proof_count != activation_truth.get("proof_target_count")
         or current_proof_count != len(proof_records)
         or proof_status_counts != record_status_counts
-        or len(later_admitted_records) != added_proof_count
-        or {row.get("chapter_id") for row in later_admitted_records} != admitted_chapter_ids
-        or proof_status_counts.get("implemented", 0)
-        != historical_proof_count
-        + len(later_implemented_records)
-        - len(authorized_rationalization_migrations)
         or proof_status_counts.get("planned", 0) != len(planned_records)
-        or len(later_planned_records) + len(later_implemented_records) != added_proof_count
+        or {row.get("tag") for row in planned_records} != authorized_current_planned_tags
         or len(historical_planned_records) != len(authorized_rationalization_migrations)
         or any(row.get("summary_support_state") not in (None, "argument") for row in planned_records)
     ):

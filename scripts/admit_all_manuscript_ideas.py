@@ -795,7 +795,7 @@ if __name__ == "__main__":
         "all_chapter_core_support_states": "argument",
         "chapter_core_support_state_effect": "none",
         "current_semantically_reviewed_chapter_count": 64,
-        "current_structured_atom_count": 4071,
+        "current_structured_atom_count": 4067,
     }
     roadmap_status.get("execution_readiness", {})["structural_admission_freeze"] = False
     activation = roadmap_status.get("activation_truth", {})

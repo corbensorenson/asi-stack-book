@@ -3,13 +3,13 @@
   "scanner": "modal and outcome-bearing sentence cue scan; candidates require semantic adjudication",
   "summary": {
     "chapter_count": 64,
-    "candidate_count": 3443,
+    "candidate_count": 3444,
     "review_state_counts": {
       "duplicate_of_atom": 1524,
       "editorial_or_question": 71,
-      "historical_or_source_report": 293,
+      "historical_or_source_report": 295,
       "material_atom": 3,
-      "nonmaterial_explanation": 1552
+      "nonmaterial_explanation": 1551
     }
   },
   "candidates": [
@@ -4428,9 +4428,47 @@
       "target_atom_id": null
     },
     {
+      "candidate_id": "evidence-states-and-claim-discipline.prose.338d16c66977",
+      "chapter_id": "evidence-states-and-claim-discipline",
+      "source": "chapters/evidence-states-and-claim-discipline.qmd:55",
+      "sentence": "The lifecycle then binds evidence and roles, checks target-specific evidence without scalar aggregation, requires negative evidence and supersession lineage for narrowing or terminal movement, records independent review and dissent, decides with limitations and residuals, and hands a bounded recommendation to the claim ledger.",
+      "cues": [
+        "requires"
+      ],
+      "review_state": "historical_or_source_report",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Status, drafting-boundary, or source-crosswalk statement reporting scope rather than introducing an independently promoted material claim.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "evidence-states-and-claim-discipline.prose.ba80b5f6dbb1",
+      "chapter_id": "evidence-states-and-claim-discipline",
+      "source": "chapters/evidence-states-and-claim-discipline.qmd:55",
+      "sentence": "It cannot assign support, move a parent or descendant claim, approve release, or create an external effect.",
+      "cues": [
+        "cannot"
+      ],
+      "review_state": "historical_or_source_report",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Status, drafting-boundary, or source-crosswalk statement reporting scope rather than introducing an independently promoted material claim.",
+      "target_atom_id": null
+    },
+    {
       "candidate_id": "evidence-states-and-claim-discipline.prose.ee880b690c25",
       "chapter_id": "evidence-states-and-claim-discipline",
-      "source": "chapters/evidence-states-and-claim-discipline.qmd:56",
+      "source": "chapters/evidence-states-and-claim-discipline.qmd:60",
       "sentence": "The evidence layer makes a simple promise: a claim's wording, label, and support state should not drift apart.",
       "cues": [
         "should"
@@ -4449,7 +4487,7 @@
     {
       "candidate_id": "evidence-states-and-claim-discipline.prose.e0772da682f5",
       "chapter_id": "evidence-states-and-claim-discipline",
-      "source": "chapters/evidence-states-and-claim-discipline.qmd:58",
+      "source": "chapters/evidence-states-and-claim-discipline.qmd:62",
       "sentence": "The manuscript can improve every day, but clearer prose must not silently become stronger evidence.",
       "cues": [
         "improve",
@@ -4469,7 +4507,7 @@
     {
       "candidate_id": "evidence-states-and-claim-discipline.prose.fe1a08622d16",
       "chapter_id": "evidence-states-and-claim-discipline",
-      "source": "chapters/evidence-states-and-claim-discipline.qmd:58",
+      "source": "chapters/evidence-states-and-claim-discipline.qmd:62",
       "sentence": "If a claim is only an argument, it should read as an argument.",
       "cues": [
         "should"
@@ -4488,7 +4526,7 @@
     {
       "candidate_id": "evidence-states-and-claim-discipline.prose.5d9dc25546b5",
       "chapter_id": "evidence-states-and-claim-discipline",
-      "source": "chapters/evidence-states-and-claim-discipline.qmd:58",
+      "source": "chapters/evidence-states-and-claim-discipline.qmd:62",
       "sentence": "If later evidence raises it, the record must move with it, so the reader can distinguish better exposition from stronger support.",
       "cues": [
         "must"
@@ -4507,7 +4545,7 @@
     {
       "candidate_id": "evidence-states-and-claim-discipline.prose.ebf1a3ae2b96",
       "chapter_id": "evidence-states-and-claim-discipline",
-      "source": "chapters/evidence-states-and-claim-discipline.qmd:58",
+      "source": "chapters/evidence-states-and-claim-discipline.qmd:62",
       "sentence": "Better wording should invite better testing, not smuggle in stronger certainty.",
       "cues": [
         "should"
@@ -4526,7 +4564,7 @@
     {
       "candidate_id": "evidence-states-and-claim-discipline.prose.c2b9a5b9c25e",
       "chapter_id": "evidence-states-and-claim-discipline",
-      "source": "chapters/evidence-states-and-claim-discipline.qmd:69",
+      "source": "chapters/evidence-states-and-claim-discipline.qmd:73",
       "sentence": "Each important claim must say what kind of claim it is and what currently supports it.",
       "cues": [
         "must"
@@ -4545,7 +4583,7 @@
     {
       "candidate_id": "evidence-states-and-claim-discipline.prose.e3e41c1b8219",
       "chapter_id": "evidence-states-and-claim-discipline",
-      "source": "chapters/evidence-states-and-claim-discipline.qmd:69",
+      "source": "chapters/evidence-states-and-claim-discipline.qmd:73",
       "sentence": "None of those automatically proves the others, and none should borrow confidence from the reader's trust in the surrounding prose.",
       "cues": [
         "proves",
@@ -4565,7 +4603,7 @@
     {
       "candidate_id": "evidence-states-and-claim-discipline.prose.d5173fc17e07",
       "chapter_id": "evidence-states-and-claim-discipline",
-      "source": "chapters/evidence-states-and-claim-discipline.qmd:79",
+      "source": "chapters/evidence-states-and-claim-discipline.qmd:83",
       "sentence": "A citation can show lineage, motivation, terminology, contradiction, or external context; it does not automatically support the exact claim being made.",
       "cues": [
         "show"
@@ -4584,7 +4622,7 @@
     {
       "candidate_id": "evidence-states-and-claim-discipline.prose.afecc407d149",
       "chapter_id": "evidence-states-and-claim-discipline",
-      "source": "chapters/evidence-states-and-claim-discipline.qmd:79",
+      "source": "chapters/evidence-states-and-claim-discipline.qmd:83",
       "sentence": "Spinoza adds the claim graph and downgrade discipline: failed verification must block or lower confidence.",
       "cues": [
         "must"
@@ -4603,7 +4641,7 @@
     {
       "candidate_id": "evidence-states-and-claim-discipline.prose.50b00c27974f",
       "chapter_id": "evidence-states-and-claim-discipline",
-      "source": "chapters/evidence-states-and-claim-discipline.qmd:83",
+      "source": "chapters/evidence-states-and-claim-discipline.qmd:87",
       "sentence": "Model cards (`ext_model_cards_2019`) and datasheets (`ext_datasheets_datasets_2021`) show why structured documentation needs intended-use, provenance, limitation, and maintenance boundaries.",
       "cues": [
         "show"
@@ -4622,7 +4660,7 @@
     {
       "candidate_id": "evidence-states-and-claim-discipline.prose.08ea07e31af9",
       "chapter_id": "evidence-states-and-claim-discipline",
-      "source": "chapters/evidence-states-and-claim-discipline.qmd:83",
+      "source": "chapters/evidence-states-and-claim-discipline.qmd:87",
       "sentence": "The ML reproducibility-program account (`ext_ml_reproducibility_program_2021`) shows why commands, artifacts, code review, checklists, and reviewer-readable claims matter.",
       "cues": [
         "shows"
@@ -4641,7 +4679,7 @@
     {
       "candidate_id": "evidence-states-and-claim-discipline.prose.edffb3a0c9c6",
       "chapter_id": "evidence-states-and-claim-discipline",
-      "source": "chapters/evidence-states-and-claim-discipline.qmd:83",
+      "source": "chapters/evidence-states-and-claim-discipline.qmd:87",
       "sentence": "Proof-carrying code (`ext_proof_carrying_code_1997`) shows the older formal-methods pattern of pairing an artifact with machine-checkable evidence for a declared policy.",
       "cues": [
         "shows"
@@ -4660,7 +4698,7 @@
     {
       "candidate_id": "evidence-states-and-claim-discipline.prose.257b64b0ede8",
       "chapter_id": "evidence-states-and-claim-discipline",
-      "source": "chapters/evidence-states-and-claim-discipline.qmd:87",
+      "source": "chapters/evidence-states-and-claim-discipline.qmd:91",
       "sentence": "If a claim moves from `argument` to `source-derived`, the transition should name the source note and the mapped claim.",
       "cues": [
         "should"
@@ -4679,7 +4717,7 @@
     {
       "candidate_id": "evidence-states-and-claim-discipline.prose.b30d033c9d56",
       "chapter_id": "evidence-states-and-claim-discipline",
-      "source": "chapters/evidence-states-and-claim-discipline.qmd:87",
+      "source": "chapters/evidence-states-and-claim-discipline.qmd:91",
       "sentence": "If it moves to `synthetic-test-backed`, it should name the fixture, command, environment, and result.",
       "cues": [
         "should"
@@ -4698,7 +4736,7 @@
     {
       "candidate_id": "evidence-states-and-claim-discipline.prose.f86136725d2e",
       "chapter_id": "evidence-states-and-claim-discipline",
-      "source": "chapters/evidence-states-and-claim-discipline.qmd:87",
+      "source": "chapters/evidence-states-and-claim-discipline.qmd:91",
       "sentence": "If a test fails, the failure should remain visible rather than disappearing into the next draft.",
       "cues": [
         "should"
@@ -4717,7 +4755,7 @@
     {
       "candidate_id": "evidence-states-and-claim-discipline.prose.8627f2b42b53",
       "chapter_id": "evidence-states-and-claim-discipline",
-      "source": "chapters/evidence-states-and-claim-discipline.qmd:93",
+      "source": "chapters/evidence-states-and-claim-discipline.qmd:97",
       "sentence": "[evidence-states-and-claim-discipline.core, label: Design rationale, support: argument] Each material claim should have a stable identity, versioned text and scope, claim label, support state, non-aggregating evidence-quality vector, and transition ledger; upward movement is allowed only through an accepted claim-specific transition whose artifacts and evidence roles meet declared gates, while contradiction, failed verification, missing support, and scope mismatch remain eligible to narrow, downgrade, refute, or deprecate the claim.",
       "cues": [
         "should"
@@ -4736,7 +4774,7 @@
     {
       "candidate_id": "evidence-states-and-claim-discipline.prose.4a1dbc62f7cb",
       "chapter_id": "evidence-states-and-claim-discipline",
-      "source": "chapters/evidence-states-and-claim-discipline.qmd:95",
+      "source": "chapters/evidence-states-and-claim-discipline.qmd:99",
       "sentence": "Promotion still requires an accepted evidence transition with evidence whose method, independence, causal effect, and scope match the claim.",
       "cues": [
         "requires"
@@ -4755,7 +4793,7 @@
     {
       "candidate_id": "evidence-states-and-claim-discipline.prose.6b597c490644",
       "chapter_id": "evidence-states-and-claim-discipline",
-      "source": "chapters/evidence-states-and-claim-discipline.qmd:115",
+      "source": "chapters/evidence-states-and-claim-discipline.qmd:119",
       "sentence": "A promotion requires a recorded transition with an exact claim mapping, evidence artifact, command or review reference, scope boundary, blockers, downgrade triggers, and non-claims.",
       "cues": [
         "requires"
@@ -4774,7 +4812,7 @@
     {
       "candidate_id": "evidence-states-and-claim-discipline.prose.3007b34b577d",
       "chapter_id": "evidence-states-and-claim-discipline",
-      "source": "chapters/evidence-states-and-claim-discipline.qmd:144",
+      "source": "chapters/evidence-states-and-claim-discipline.qmd:148",
       "sentence": "Test-backed movement requires an evidence bundle with the command, environment, result, limitations, and negative or inconclusive results where they exist.",
       "cues": [
         "requires"
@@ -4793,7 +4831,7 @@
     {
       "candidate_id": "evidence-states-and-claim-discipline.prose.cf9c8fc73fcf",
       "chapter_id": "evidence-states-and-claim-discipline",
-      "source": "chapters/evidence-states-and-claim-discipline.qmd:146",
+      "source": "chapters/evidence-states-and-claim-discipline.qmd:150",
       "sentence": "It also carries the evidence-readiness state and the next evidence required before review.",
       "cues": [
         "required"
@@ -4812,7 +4850,7 @@
     {
       "candidate_id": "evidence-states-and-claim-discipline.prose.23b40d820f6a",
       "chapter_id": "evidence-states-and-claim-discipline",
-      "source": "chapters/evidence-states-and-claim-discipline.qmd:146",
+      "source": "chapters/evidence-states-and-claim-discipline.qmd:150",
       "sentence": "A shape-valid fixture can show that the record is well formed; it cannot accept the transition for the reader.",
       "cues": [
         "cannot",
@@ -4832,7 +4870,7 @@
     {
       "candidate_id": "evidence-states-and-claim-discipline.prose.1a23c01f1edb",
       "chapter_id": "evidence-states-and-claim-discipline",
-      "source": "chapters/evidence-states-and-claim-discipline.qmd:148",
+      "source": "chapters/evidence-states-and-claim-discipline.qmd:152",
       "sentence": "It lets the book say that degraded review should be routed, not that a human approval record proves reviewer correctness or deployed approval-service quality.",
       "cues": [
         "proves",
@@ -4852,7 +4890,7 @@
     {
       "candidate_id": "evidence-states-and-claim-discipline.prose.99ff19e63f55",
       "chapter_id": "evidence-states-and-claim-discipline",
-      "source": "chapters/evidence-states-and-claim-discipline.qmd:150",
+      "source": "chapters/evidence-states-and-claim-discipline.qmd:154",
       "sentence": "The QCSA adjudication is a worked example of why a result file cannot carry one",
       "cues": [
         "cannot"
@@ -4871,7 +4909,7 @@
     {
       "candidate_id": "evidence-states-and-claim-discipline.prose.e289184856e6",
       "chapter_id": "evidence-states-and-claim-discipline",
-      "source": "chapters/evidence-states-and-claim-discipline.qmd:162",
+      "source": "chapters/evidence-states-and-claim-discipline.qmd:166",
       "sentence": "The record must say which model and layer were inspected, which behavior or mechanism was in scope, which intervention or analysis produced the artifact, which counterexamples or negative controls were checked, and which broader safety, capability, deployment, or model-quality claims remain unsupported.",
       "cues": [
         "must"
@@ -4890,7 +4928,7 @@
     {
       "candidate_id": "evidence-states-and-claim-discipline.prose.df8a19405cb0",
       "chapter_id": "evidence-states-and-claim-discipline",
-      "source": "chapters/evidence-states-and-claim-discipline.qmd:164",
+      "source": "chapters/evidence-states-and-claim-discipline.qmd:168",
       "sentence": "It is the information that prevents the stack from ratcheting in the wrong direction.",
       "cues": [
         "prevents"
@@ -4909,7 +4947,7 @@
     {
       "candidate_id": "evidence-states-and-claim-discipline.prose.b21b1721e431",
       "chapter_id": "evidence-states-and-claim-discipline",
-      "source": "chapters/evidence-states-and-claim-discipline.qmd:166",
+      "source": "chapters/evidence-states-and-claim-discipline.qmd:170",
       "sentence": "Promotion should therefore be treated as a burden, not a reward.",
       "cues": [
         "should"
@@ -4928,7 +4966,7 @@
     {
       "candidate_id": "evidence-states-and-claim-discipline.prose.3006a5f7bf1c",
       "chapter_id": "evidence-states-and-claim-discipline",
-      "source": "chapters/evidence-states-and-claim-discipline.qmd:166",
+      "source": "chapters/evidence-states-and-claim-discipline.qmd:170",
       "sentence": "Downgrade requires less ceremony: contradiction, missing support, scope mismatch, or failed verification is enough to move a claim downward or into residual status.",
       "cues": [
         "requires"
@@ -4947,7 +4985,7 @@
     {
       "candidate_id": "evidence-states-and-claim-discipline.prose.b0c69e3ed6f6",
       "chapter_id": "evidence-states-and-claim-discipline",
-      "source": "chapters/evidence-states-and-claim-discipline.qmd:172",
+      "source": "chapters/evidence-states-and-claim-discipline.qmd:176",
       "sentence": "Corben's Trainer separately shows that typed runs, content-addressed artifacts, and promotion records can coexist with null seed/code identity and promotions whose inputs were later quarantined.",
       "cues": [
         "shows"
@@ -4966,7 +5004,7 @@
     {
       "candidate_id": "evidence-states-and-claim-discipline.prose.830dbea57f4f",
       "chapter_id": "evidence-states-and-claim-discipline",
-      "source": "chapters/evidence-states-and-claim-discipline.qmd:178",
+      "source": "chapters/evidence-states-and-claim-discipline.qmd:182",
       "sentence": "A metric on an adaptor or helper component cannot support returned-answer capability when the runtime bypasses it.",
       "cues": [
         "cannot"
@@ -4985,7 +5023,7 @@
     {
       "candidate_id": "evidence-states-and-claim-discipline.prose.683c55ce13aa",
       "chapter_id": "evidence-states-and-claim-discipline",
-      "source": "chapters/evidence-states-and-claim-discipline.qmd:179",
+      "source": "chapters/evidence-states-and-claim-discipline.qmd:183",
       "sentence": "Missing evidence cannot default to passed, independent, hardware-observed, or real.",
       "cues": [
         "cannot"
@@ -5004,7 +5042,7 @@
     {
       "candidate_id": "evidence-states-and-claim-discipline.prose.43156b4c3303",
       "chapter_id": "evidence-states-and-claim-discipline",
-      "source": "chapters/evidence-states-and-claim-discipline.qmd:186",
+      "source": "chapters/evidence-states-and-claim-discipline.qmd:190",
       "sentence": "records both surfaces so a well-formed lineage graph cannot silently become a",
       "cues": [
         "cannot"
@@ -5023,7 +5061,7 @@
     {
       "candidate_id": "evidence-states-and-claim-discipline.prose.309a16fa1732",
       "chapter_id": "evidence-states-and-claim-discipline",
-      "source": "chapters/evidence-states-and-claim-discipline.qmd:205",
+      "source": "chapters/evidence-states-and-claim-discipline.qmd:209",
       "sentence": "It records only distinctions capable of changing a transition decision, requires artifact references for positive causal links, and permits an exact blocker instead of demanding fabricated completeness.",
       "cues": [
         "requires"
@@ -5042,7 +5080,7 @@
     {
       "candidate_id": "evidence-states-and-claim-discipline.prose.6612f855d008",
       "chapter_id": "evidence-states-and-claim-discipline",
-      "source": "chapters/evidence-states-and-claim-discipline.qmd:205",
+      "source": "chapters/evidence-states-and-claim-discipline.qmd:209",
       "sentence": "If a simpler baseline reaches the same claim decision without a field, that field should be removed.",
       "cues": [
         "should"
@@ -5061,7 +5099,7 @@
     {
       "candidate_id": "evidence-states-and-claim-discipline.prose.e902b193dfc6",
       "chapter_id": "evidence-states-and-claim-discipline",
-      "source": "chapters/evidence-states-and-claim-discipline.qmd:275",
+      "source": "chapters/evidence-states-and-claim-discipline.qmd:279",
       "sentence": "Evidence roles must stay separate: lineage, motivation, terminology, direct support, contradiction, failed support, reproduced result, source-reported result, local fixture, formal predicate, mechanistic interpretability artifact, and empirical measurement.",
       "cues": [
         "must"
@@ -5080,7 +5118,7 @@
     {
       "candidate_id": "evidence-states-and-claim-discipline.prose.095cb5811945",
       "chapter_id": "evidence-states-and-claim-discipline",
-      "source": "chapters/evidence-states-and-claim-discipline.qmd:288",
+      "source": "chapters/evidence-states-and-claim-discipline.qmd:292",
       "sentence": "Asymmetry is the strongest evidence-state rule: support can move up only when the required artifact exists, but support can move down whenever contradiction, failure, missing evidence, or scope mismatch is found.",
       "cues": [
         "required"
@@ -5099,7 +5137,7 @@
     {
       "candidate_id": "evidence-states-and-claim-discipline.prose.1c5f45ab80b1",
       "chapter_id": "evidence-states-and-claim-discipline",
-      "source": "chapters/evidence-states-and-claim-discipline.qmd:288",
+      "source": "chapters/evidence-states-and-claim-discipline.qmd:292",
       "sentence": "Appendix C deliberately remains conservative after source-note coverage improves because source notes are necessary context, not automatic claim promotion.",
       "cues": [
         "improves",
@@ -5119,7 +5157,7 @@
     {
       "candidate_id": "evidence-states-and-claim-discipline.prose.eddc8640815d",
       "chapter_id": "evidence-states-and-claim-discipline",
-      "source": "chapters/evidence-states-and-claim-discipline.qmd:290",
+      "source": "chapters/evidence-states-and-claim-discipline.qmd:294",
       "sentence": "A claim cannot inherit broader scope from a nearby chapter, source family, proof module, or benchmark run unless the evidence transition explicitly names that broader scope and its residual risks.",
       "cues": [
         "cannot"
@@ -5138,7 +5176,7 @@
     {
       "candidate_id": "evidence-states-and-claim-discipline.prose.b12816e68cc3",
       "chapter_id": "evidence-states-and-claim-discipline",
-      "source": "chapters/evidence-states-and-claim-discipline.qmd:293",
+      "source": "chapters/evidence-states-and-claim-discipline.qmd:297",
       "sentence": "Recency cannot cancel dependence, reproducibility cannot cancel invalidity,",
       "cues": [
         "cannot"
@@ -5157,7 +5195,7 @@
     {
       "candidate_id": "evidence-states-and-claim-discipline.prose.39075c55b40b",
       "chapter_id": "evidence-states-and-claim-discipline",
-      "source": "chapters/evidence-states-and-claim-discipline.qmd:294",
+      "source": "chapters/evidence-states-and-claim-discipline.qmd:298",
       "sentence": "artifact access cannot cancel a missing causal link, and adversarial strength",
       "cues": [
         "cannot"
@@ -5176,7 +5214,7 @@
     {
       "candidate_id": "evidence-states-and-claim-discipline.prose.8f5159b83cdd",
       "chapter_id": "evidence-states-and-claim-discipline",
-      "source": "chapters/evidence-states-and-claim-discipline.qmd:295",
+      "source": "chapters/evidence-states-and-claim-discipline.qmd:299",
       "sentence": "cannot cancel testing the wrong construct.",
       "cues": [
         "cannot"
@@ -5195,7 +5233,7 @@
     {
       "candidate_id": "evidence-states-and-claim-discipline.prose.c8a458e886e8",
       "chapter_id": "evidence-states-and-claim-discipline",
-      "source": "chapters/evidence-states-and-claim-discipline.qmd:319",
+      "source": "chapters/evidence-states-and-claim-discipline.qmd:323",
       "sentence": "Proof laundering happens when a small formal invariant is rhetorically expanded into a whole-system guarantee.",
       "cues": [
         "guarantee"
@@ -5214,7 +5252,7 @@
     {
       "candidate_id": "evidence-states-and-claim-discipline.prose.eb8b80c5eab2",
       "chapter_id": "evidence-states-and-claim-discipline",
-      "source": "chapters/evidence-states-and-claim-discipline.qmd:321",
+      "source": "chapters/evidence-states-and-claim-discipline.qmd:325",
       "sentence": "A revision improves prose by removing caveats, failed attempts, or open gaps while leaving the support state unchanged.",
       "cues": [
         "improves"
@@ -5233,7 +5271,7 @@
     {
       "candidate_id": "evidence-states-and-claim-discipline.prose.e6fa0a769c6c",
       "chapter_id": "evidence-states-and-claim-discipline",
-      "source": "chapters/evidence-states-and-claim-discipline.qmd:335",
+      "source": "chapters/evidence-states-and-claim-discipline.qmd:339",
       "sentence": "It does not reproduce the projects, establish that their source notes are complete, prove model capability, or move the core claim.",
       "cues": [
         "prove"
@@ -5250,29 +5288,9 @@
       "target_atom_id": null
     },
     {
-      "candidate_id": "evidence-states-and-claim-discipline.prose.70e1c782fc12",
-      "chapter_id": "evidence-states-and-claim-discipline",
-      "source": "chapters/evidence-states-and-claim-discipline.qmd:337",
-      "sentence": "The Lean module proves narrow support-state invariants in this repository, including that terminal states are not promotion targets, that a finite transition-lifecycle route sends missing claim records and transition gaps to explicit modeled outcomes, and that the claim-state transition bridge fixture requires negative evidence, keeps live core claims unchanged, and preserves non-claim boundaries.",
-      "cues": [
-        "proves",
-        "requires"
-      ],
-      "review_state": "duplicate_of_atom",
-      "allowed_dispositions": [
-        "material_atom",
-        "nonmaterial_explanation",
-        "duplicate_of_atom",
-        "editorial_or_question",
-        "historical_or_source_report"
-      ],
-      "disposition_rationale": "Detailed prose summary of the finite transition lifecycle and negative-evidence bridge.",
-      "target_atom_id": "evidence-states-and-claim-discipline.formal.evidence-support-state-transition-lifecycle-route"
-    },
-    {
       "candidate_id": "evidence-states-and-claim-discipline.prose.3c8efc6dacd1",
       "chapter_id": "evidence-states-and-claim-discipline",
-      "source": "chapters/evidence-states-and-claim-discipline.qmd:350",
+      "source": "chapters/evidence-states-and-claim-discipline.qmd:354",
       "sentence": "notes are necessary but not sufficient for source-derived movement, and test-",
       "cues": [
         "necessary",
@@ -5292,7 +5310,7 @@
     {
       "candidate_id": "evidence-states-and-claim-discipline.prose.234110a9a419",
       "chapter_id": "evidence-states-and-claim-discipline",
-      "source": "chapters/evidence-states-and-claim-discipline.qmd:351",
+      "source": "chapters/evidence-states-and-claim-discipline.qmd:355",
       "sentence": "backed movement requires claim-specific bundles that keep negative, null, and",
       "cues": [
         "requires"
@@ -5311,7 +5329,7 @@
     {
       "candidate_id": "evidence-states-and-claim-discipline.prose.76f34d7b3524",
       "chapter_id": "evidence-states-and-claim-discipline",
-      "source": "chapters/evidence-states-and-claim-discipline.qmd:356",
+      "source": "chapters/evidence-states-and-claim-discipline.qmd:360",
       "sentence": "Its support stays at `argument` until claim-transition records, passage-reviewed source notes, evidence-bundle fixtures, citation-laundering checks, proof-scope audits, and changelog-linked reviews demonstrate that labels move only when their artifacts justify movement.",
       "cues": [
         "demonstrate"
@@ -5328,14 +5346,14 @@
       "target_atom_id": null
     },
     {
-      "candidate_id": "evidence-states-and-claim-discipline.prose.652f4107ebee",
+      "candidate_id": "evidence-states-and-claim-discipline.prose.b322f9a74c57",
       "chapter_id": "evidence-states-and-claim-discipline",
       "source": "chapters/evidence-states-and-claim-discipline.qmd:384",
-      "sentence": "The executable audits and their historical result artifacts remain valid at their original scope, but the four stronger bridges and the state-specific evidence-admission target are now honestly `planned`: they must derive outcomes from reachable input cases or independently implemented audit logic.",
+      "sentence": "The new lifecycle proves the reusable control boundary and the independent consumer challenges every route.",
       "cues": [
-        "must"
+        "proves"
       ],
-      "review_state": "nonmaterial_explanation",
+      "review_state": "duplicate_of_atom",
       "allowed_dispositions": [
         "material_atom",
         "nonmaterial_explanation",
@@ -5343,14 +5361,14 @@
         "editorial_or_question",
         "historical_or_source_report"
       ],
-      "disposition_rationale": "Current formalization-status explanation: executable audits remain valid while five stronger derivation targets are planned after C6 projection retirement.",
-      "target_atom_id": null
+      "disposition_rationale": "Semantically reviewed as a prose explanation or refinement of `evidence-states-and-claim-discipline.beyond_sota.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
+      "target_atom_id": "evidence-states-and-claim-discipline.beyond_sota.001"
     },
     {
-      "candidate_id": "evidence-states-and-claim-discipline.prose.4dff99019c2b",
+      "candidate_id": "evidence-states-and-claim-discipline.prose.a0ceb167a1d1",
       "chapter_id": "evidence-states-and-claim-discipline",
       "source": "chapters/evidence-states-and-claim-discipline.qmd:384",
-      "sentence": "These hooks do not prove source truth, reviewer quality, artifact correctness, or the correctness of any live promotion, demotion, deprecation, or refutation decision.",
+      "sentence": "These formal results do not prove source truth, semantic equivalence of the three projections, reviewer quality, artifact correctness, or the correctness of a live support decision.",
       "cues": [
         "prove"
       ],
@@ -5362,8 +5380,8 @@
         "editorial_or_question",
         "historical_or_source_report"
       ],
-      "disposition_rationale": "Explicit finite-formalization non-claim owned by the finite-record inference ceiling.",
-      "target_atom_id": "evidence-states-and-claim-discipline.invariant.008"
+      "disposition_rationale": "Semantically reviewed as a prose explanation or refinement of `evidence-states-and-claim-discipline.beyond_sota.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
+      "target_atom_id": "evidence-states-and-claim-discipline.beyond_sota.001"
     },
     {
       "candidate_id": "evidence-states-and-claim-discipline.prose.aba4b9d1e039",
@@ -51651,7 +51669,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.cd98bc845926",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:506",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:505",
       "sentence": "It does not try to prove \"ASI safety\" or \"alignment\" as one grand theorem.",
       "cues": [
         "prove"
@@ -51670,7 +51688,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.88ef3d5cbbaf",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:519",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:518",
       "sentence": "The proof envelope remains a target architecture until semantic adequacy reviews, artifact audits, runtime consumers, and accepted evidence transitions show where each formal predicate can and cannot carry prose.",
       "cues": [
         "cannot",
@@ -51690,7 +51708,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.ca1662c93f10",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:527",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:526",
       "sentence": "record, current use, strongest counterclaim, required lane, terminal",
       "cues": [
         "required"
@@ -51709,7 +51727,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.689519bcb042",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:533",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:532",
       "sentence": "Load-bearing predicates must use the right model: richer transition systems,",
       "cues": [
         "must"
@@ -51728,7 +51746,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.89f8ee904e1a",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:542",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:541",
       "sentence": "Decisive claims require independent formalizations or tools when useful,",
       "cues": [
         "require"
@@ -51747,7 +51765,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.6d0189e29f28",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:544",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:543",
       "sentence": "and transfer across environments, consumers, attacks, and time.",
       "cues": [
         "transfer"
@@ -51766,7 +51784,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.d026fee560cf",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:546",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:545",
       "sentence": "load-bearing atom and declaration receives its required full attempt and",
       "cues": [
         "required"
@@ -51785,7 +51803,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.1e7f72c499d1",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:584",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:583",
       "sentence": "negative cases: non-operational targets cannot be implemented; implemented",
       "cues": [
         "cannot"
@@ -51804,7 +51822,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.5eb7295504da",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:585",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:584",
       "sentence": "targets missing a module or build are rejected; non-Lean artifacts cannot claim",
       "cues": [
         "cannot"
@@ -51823,7 +51841,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.87d30b300b27",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:588",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:587",
       "sentence": "None discovers repository artifacts, proves semantic adequacy,",
       "cues": [
         "proves"
@@ -51842,7 +51860,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.e93fbf10782a",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:589",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:588",
       "sentence": "establishes implementation refinement, checks runtime enforcement, validates",
       "cues": [
         "establishes"
@@ -51861,7 +51879,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.5a02bd745e12",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:590",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:589",
       "sentence": "external theorem applicability, proves system safety, measures capability or",
       "cues": [
         "measures",
@@ -51881,7 +51899,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.2517e88dff5d",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:591",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:590",
       "sentence": "cost, or establishes reproduction and transfer.",
       "cues": [
         "establishes",
@@ -51901,7 +51919,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.94a7a08bb0b0",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:592",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:591",
       "sentence": "must retain only consumer-bearing projections and replace load-bearing record",
       "cues": [
         "must"
@@ -51920,7 +51938,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.dba28ac28907",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:594",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:593",
       "sentence": "and empirical evidence as their actual obligations require.",
       "cues": [
         "require"
@@ -51939,7 +51957,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.cf75a864bc37",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:625",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:624",
       "sentence": "Lean proves only what Lean checks.",
       "cues": [
         "proves"
@@ -51958,7 +51976,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.a3d1eaebcae6",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:625",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:624",
       "sentence": "The living book must keep those lanes separate.",
       "cues": [
         "must"
@@ -51977,7 +51995,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.bc0c97546f06",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:629",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:628",
       "sentence": "The proof envelope should let a reader tell exactly what was proved, what was merely validated, what was tested, what was benchmarked, and what remains prose.",
       "cues": [
         "should"
@@ -51996,7 +52014,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.f970abbac7ce",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:629",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:628",
       "sentence": "Agents improving the book or the stack should learn that mechanized claims need artifacts, commands, and failure records.",
       "cues": [
         "should"
@@ -52015,7 +52033,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.30a62b688dae",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:629",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:628",
       "sentence": "Formality is useful when it reduces ambiguity and overclaiming; it is harmful when it becomes ornamental confidence.",
       "cues": [
         "reduces"
@@ -52034,7 +52052,7 @@
     {
       "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.de544a2f0408",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:666",
+      "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:665",
       "sentence": "It turns benchmark runs into records with baselines, residuals, regressions, saturation states, contamination boundaries, and promotion decisions so measured pressure cannot outrun preserved failures.",
       "cues": [
         "cannot"

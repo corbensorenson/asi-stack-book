@@ -1,0 +1,325 @@
+{
+  "schema_version": "asi_stack.evidence_transition_refinement.result.v1",
+  "result_id": "2026-07-26-evidence-transition-refinement",
+  "recorded_date": "2026-07-26",
+  "command": "python3 scripts/validate_evidence_transition_refinement.py",
+  "model": {
+    "lean_module": "lean/AsiStackProofs/EvidenceTransitionRefinement.lean",
+    "stage_count": 6,
+    "route_count": 35,
+    "reached_route_count": 35,
+    "route_case_count": 41,
+    "rejected_mutation_count": 35,
+    "projection_count": 3,
+    "evidence_dimension_count": 8,
+    "support_assignment_count": 0,
+    "parent_or_descendant_movement_count": 0,
+    "external_effect_count": 0
+  },
+  "route_cases": [
+    {
+      "case_id": "wrong-stage",
+      "stage": "requested",
+      "expected_route": "rejectWrongStage",
+      "actual_route": "rejectWrongStage",
+      "accepted": false
+    },
+    {
+      "case_id": "atom-substitution",
+      "stage": "requested",
+      "expected_route": "rejectAtomSubstitution",
+      "actual_route": "rejectAtomSubstitution",
+      "accepted": false
+    },
+    {
+      "case_id": "proposition-substitution",
+      "stage": "requested",
+      "expected_route": "rejectProjectionSubstitution",
+      "actual_route": "rejectProjectionSubstitution",
+      "accepted": false
+    },
+    {
+      "case_id": "obligation-substitution",
+      "stage": "requested",
+      "expected_route": "rejectProjectionSubstitution",
+      "actual_route": "rejectProjectionSubstitution",
+      "accepted": false
+    },
+    {
+      "case_id": "predicate-substitution",
+      "stage": "requested",
+      "expected_route": "rejectProjectionSubstitution",
+      "actual_route": "rejectProjectionSubstitution",
+      "accepted": false
+    },
+    {
+      "case_id": "state-substitution",
+      "stage": "requested",
+      "expected_route": "rejectStateCategorySubstitution",
+      "actual_route": "rejectStateCategorySubstitution",
+      "accepted": false
+    },
+    {
+      "case_id": "event-replay",
+      "stage": "requested",
+      "expected_route": "rejectEventReplay",
+      "actual_route": "rejectEventReplay",
+      "accepted": false
+    },
+    {
+      "case_id": "support_assignment_requested",
+      "stage": "requested",
+      "expected_route": "rejectAuthorityLeak",
+      "actual_route": "rejectAuthorityLeak",
+      "accepted": false
+    },
+    {
+      "case_id": "external_effect_requested",
+      "stage": "requested",
+      "expected_route": "rejectAuthorityLeak",
+      "actual_route": "rejectAuthorityLeak",
+      "accepted": false
+    },
+    {
+      "case_id": "parent_movement_requested",
+      "stage": "requested",
+      "expected_route": "rejectAuthorityLeak",
+      "actual_route": "rejectAuthorityLeak",
+      "accepted": false
+    },
+    {
+      "case_id": "descendant_movement_requested",
+      "stage": "requested",
+      "expected_route": "rejectAuthorityLeak",
+      "actual_route": "rejectAuthorityLeak",
+      "accepted": false
+    },
+    {
+      "case_id": "terminal-intent-mismatch",
+      "stage": "requested",
+      "expected_route": "rejectStateCategorySubstitution",
+      "actual_route": "rejectStateCategorySubstitution",
+      "accepted": false
+    },
+    {
+      "case_id": "requested-scope",
+      "stage": "requested",
+      "expected_route": "requestScope",
+      "actual_route": "requestScope",
+      "accepted": false
+    },
+    {
+      "case_id": "requested-assumptions",
+      "stage": "requested",
+      "expected_route": "requestAssumptions",
+      "actual_route": "requestAssumptions",
+      "accepted": false
+    },
+    {
+      "case_id": "requested-non_claims",
+      "stage": "requested",
+      "expected_route": "requestNonClaims",
+      "actual_route": "requestNonClaims",
+      "accepted": false
+    },
+    {
+      "case_id": "requested-dependencies",
+      "stage": "requested",
+      "expected_route": "requestDependencies",
+      "actual_route": "requestDependencies",
+      "accepted": false
+    },
+    {
+      "case_id": "requested-accepted",
+      "stage": "requested",
+      "expected_route": "acceptProjectionFreeze",
+      "actual_route": "acceptProjectionFreeze",
+      "accepted": true
+    },
+    {
+      "case_id": "evidence-evidence_refs",
+      "stage": "projectionsFrozen",
+      "expected_route": "requestEvidenceRefs",
+      "actual_route": "requestEvidenceRefs",
+      "accepted": false
+    },
+    {
+      "case_id": "evidence-evidence_roles",
+      "stage": "projectionsFrozen",
+      "expected_route": "requestEvidenceRoles",
+      "actual_route": "requestEvidenceRoles",
+      "accepted": false
+    },
+    {
+      "case_id": "evidence-artifact_bindings",
+      "stage": "projectionsFrozen",
+      "expected_route": "requestArtifactBindings",
+      "actual_route": "requestArtifactBindings",
+      "accepted": false
+    },
+    {
+      "case_id": "target-sourceDerived",
+      "stage": "projectionsFrozen",
+      "expected_route": "requestSourceGrounding",
+      "actual_route": "requestSourceGrounding",
+      "accepted": false
+    },
+    {
+      "case_id": "target-prototypeBacked",
+      "stage": "projectionsFrozen",
+      "expected_route": "requestPrototypeInspection",
+      "actual_route": "requestPrototypeInspection",
+      "accepted": false
+    },
+    {
+      "case_id": "target-syntheticTestBacked",
+      "stage": "projectionsFrozen",
+      "expected_route": "requestSyntheticValidation",
+      "actual_route": "requestSyntheticValidation",
+      "accepted": false
+    },
+    {
+      "case_id": "target-empiricalTestBacked",
+      "stage": "projectionsFrozen",
+      "expected_route": "requestEmpiricalValidation",
+      "actual_route": "requestEmpiricalValidation",
+      "accepted": false
+    },
+    {
+      "case_id": "target-externalLiteratureBacked",
+      "stage": "projectionsFrozen",
+      "expected_route": "requestExternalLiterature",
+      "actual_route": "requestExternalLiterature",
+      "accepted": false
+    },
+    {
+      "case_id": "adverse-negative_evidence",
+      "stage": "projectionsFrozen",
+      "expected_route": "requestNegativeEvidence",
+      "actual_route": "requestNegativeEvidence",
+      "accepted": false
+    },
+    {
+      "case_id": "adverse-downgrade_trigger",
+      "stage": "projectionsFrozen",
+      "expected_route": "requestDowngradeTrigger",
+      "actual_route": "requestDowngradeTrigger",
+      "accepted": false
+    },
+    {
+      "case_id": "adverse-supersession_lineage",
+      "stage": "projectionsFrozen",
+      "expected_route": "requestSupersessionLineage",
+      "actual_route": "requestSupersessionLineage",
+      "accepted": false
+    },
+    {
+      "case_id": "evidence-accepted",
+      "stage": "projectionsFrozen",
+      "expected_route": "acceptEvidenceBinding",
+      "actual_route": "acceptEvidenceBinding",
+      "accepted": true
+    },
+    {
+      "case_id": "review-independent_review",
+      "stage": "evidenceBound",
+      "expected_route": "requestIndependentReview",
+      "actual_route": "requestIndependentReview",
+      "accepted": false
+    },
+    {
+      "case_id": "review-projection_alignment",
+      "stage": "evidenceBound",
+      "expected_route": "requestProjectionAlignment",
+      "actual_route": "requestProjectionAlignment",
+      "accepted": false
+    },
+    {
+      "case_id": "review-dissent",
+      "stage": "evidenceBound",
+      "expected_route": "requestDissent",
+      "actual_route": "requestDissent",
+      "accepted": false
+    },
+    {
+      "case_id": "review-accepted",
+      "stage": "evidenceBound",
+      "expected_route": "acceptReview",
+      "actual_route": "acceptReview",
+      "accepted": true
+    },
+    {
+      "case_id": "decision-limitations",
+      "stage": "reviewed",
+      "expected_route": "requestLimitations",
+      "actual_route": "requestLimitations",
+      "accepted": false
+    },
+    {
+      "case_id": "decision-residuals",
+      "stage": "reviewed",
+      "expected_route": "requestResiduals",
+      "actual_route": "requestResiduals",
+      "accepted": false
+    },
+    {
+      "case_id": "decision-changelog",
+      "stage": "reviewed",
+      "expected_route": "requestChangelog",
+      "actual_route": "requestChangelog",
+      "accepted": false
+    },
+    {
+      "case_id": "decision-accepted",
+      "stage": "reviewed",
+      "expected_route": "acceptDecision",
+      "actual_route": "acceptDecision",
+      "accepted": true
+    },
+    {
+      "case_id": "handoff-missing",
+      "stage": "decided",
+      "expected_route": "requestLedgerHandoff",
+      "actual_route": "requestLedgerHandoff",
+      "accepted": false
+    },
+    {
+      "case_id": "handoff-accepted",
+      "stage": "decided",
+      "expected_route": "acceptHandoff",
+      "actual_route": "acceptHandoff",
+      "accepted": true
+    },
+    {
+      "case_id": "ack-missing",
+      "stage": "handedOff",
+      "expected_route": "requestAcknowledgment",
+      "actual_route": "requestAcknowledgment",
+      "accepted": false
+    },
+    {
+      "case_id": "ack-accepted",
+      "stage": "handedOff",
+      "expected_route": "acceptAcknowledgment",
+      "actual_route": "acceptAcknowledgment",
+      "accepted": true
+    }
+  ],
+  "lean_verification": {
+    "command": "lake env lean AsiStackProofs/EvidenceTransitionRefinement.lean",
+    "exit_code": 0,
+    "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "support_state_effect": "none",
+  "external_effect": "none",
+  "residuals": [
+    "Finite authored lifecycle only; it does not establish that evidence is true, sufficient, independent, current, representative, or causally complete.",
+    "The three projections are digest-bound identities; their semantic equivalence still requires review and cannot be inferred from matching hashes.",
+    "Support states remain heterogeneous public summaries beside a non-aggregating evidence vector; the model establishes no total ordering or automatic promotion.",
+    "The handoff is a bounded recommendation to the claim ledger, not a support assignment, parent or descendant update, release decision, or external action."
+  ],
+  "non_claims": [
+    "no claim truth, evidence truth, reviewer independence, model capability, safety, release readiness, deployment, AGI, ASI, support assignment, inherited movement, or external effect",
+    "no inference from route coverage or green validation to open-world completeness or adequate real-world evidence"
+  ]
+}

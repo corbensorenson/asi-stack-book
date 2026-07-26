@@ -14,6 +14,7 @@ STATUS = ROOT / "roadmap_records/post_v2_3_maintenance_transfer_and_publication_
 MANIFEST = ROOT / "proofs/proof_manifest.json"
 EXPECTED_MODULES = [
     "AsiStackProofs.EvidenceStates",
+    "AsiStackProofs.EvidenceTransitionRefinement",
     "AsiStackProofs.ClaimLedgerRefinement",
     "AsiStackProofs.ProofCarryingClaimsRefinement",
     "AsiStackProofs.ProofEnvelope",
@@ -36,7 +37,7 @@ def errors(data: dict) -> list[str]:
     manifest_records = data["manifest"].get("records", [])
     if audit.get("state") != "adequate" or audit.get("scope") != "bounded_finite_custody_semantics":
         out.append("cluster state or scope drifted")
-    if [row.get("module") for row in rows] != EXPECTED_MODULES or audit.get("module_count") != 4:
+    if [row.get("module") for row in rows] != EXPECTED_MODULES or audit.get("module_count") != 5:
         out.append("module denominator or order drifted")
     if status_cluster is None or status_cluster.get("state") != "adequate" or status_cluster.get("modules") != EXPECTED_MODULES:
         out.append("machine status does not record the terminal adequate cluster")
@@ -130,8 +131,8 @@ def main() -> None:
     if failures:
         raise SystemExit("P4-C1 semantic proof cluster failed:\n - " + "\n - ".join(failures))
     print(
-        "P4-C1 semantic proof cluster passed: 4 modules, 16 public targets, "
-        "2 adequate and 2 reclassified dispositions, 6 executable checks, "
+        "P4-C1 semantic proof cluster passed: 5 modules, 12 public targets, "
+        "3 adequate and 2 reclassified dispositions, 6 executable checks, "
         f"{len(mutations)} cluster mutations rejected, support effect none."
     )
 

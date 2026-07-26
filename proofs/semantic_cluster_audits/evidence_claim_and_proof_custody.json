@@ -4,35 +4,59 @@
   "packet_id": "P4-C1-evidence-claim-and-proof-custody-semantic-audit",
   "state": "adequate",
   "scope": "bounded_finite_custody_semantics",
-  "module_count": 4,
-  "public_target_count": 16,
+  "module_count": 5,
+  "public_target_count": 12,
   "module_dispositions": [
     {
       "module": "AsiStackProofs.EvidenceStates",
       "path": "lean/AsiStackProofs/EvidenceStates.lean",
       "disposition": "reclassify",
-      "public_target_count": 7,
-      "theorem_declaration_count": 22,
-      "plain_language_proposition": "A versioned evidence-state request can reach an accepted bounded transition only when its claim identity, scope, declared effect, review, state-specific evidence, negative-evidence and downgrade or terminal conditions, changelog, and non-claim boundary follow the modeled route; otherwise the route names the missing obligation.",
-      "modeled_state": "Nine support states, five transition effects, a transition-review record, state-specific evidence availability, terminal and downgrade semantics, and finite bridge summaries for current repository audits.",
+      "public_target_count": 1,
+      "theorem_declaration_count": 6,
+      "plain_language_proposition": "Within the foundational finite support-state vocabulary, missing target-specific evidence blocks the authored promotion predicate, self-promotion is impossible, and terminal targets remain outside promotion.",
+      "modeled_state": "Nine support-state labels, five transition effects, five propositional evidence fields, one legacy finite rank helper, terminal-state semantics, and narrow promotion predicates.",
       "assumptions": [
-        "Record fields, evidence references, review status, and state labels are truthful inputs.",
-        "The route priority and RequiredEvidence mapping are complete for the declared finite policy.",
-        "The Lean model does not inspect artifact content or execute the external audits it summarizes."
+        "The propositional evidence fields and state labels are truthful inputs.",
+        "RequiredEvidence is complete only for the declared finite vocabulary.",
+        "The legacy rank helper is not used to claim a total epistemic ordering among heterogeneous evidence categories."
       ],
       "countermodels": [
-        "An upward transition without accepted review routes to requestAcceptedReview.",
-        "A synthetic-test-backed request without a test run routes to requestRequiredEvidence.",
-        "A downward or terminal transition without negative evidence, trigger, matching effect, changelog, or non-claim boundary is rejected or narrowed."
+        "A target whose RequiredEvidence proposition is false cannot satisfy PromotionAllowed.",
+        "No state can promote to itself because the finite rank relation is irreflexive.",
+        "Deprecated and refuted targets cannot satisfy the authored promotion predicate."
       ],
       "consumers": [
-        "scripts/validate_evidence_bundle_completeness_probe.py",
-        "scripts/validate_claim_ledger_completeness_audit.py",
-        "scripts/validate_accepted_transition_review_audit.py",
-        "scripts/validate_claim_state_transition_bridge.py"
+        "lean/AsiStackProofs/EvidenceTransitionRefinement.lean",
+        "scripts/validate_evidence_transition_refinement.py"
       ],
-      "mutation_evidence": "Four independent deterministic consumers reject 7, 7, 7, and 6 declared invalid controls respectively; the cluster validator also mutates module identity, proposition, countermodels, consumers, and inference ceilings.",
-      "maximum_inference": "Adequate only as finite evidence-transition policy and route semantics. Nine direct premise or summary-field projections are retired under C6; the executable repository audits remain validator evidence, while five stronger formal targets are planned until they derive outcomes from reachable inputs or independently implemented audit logic. The module does not establish evidence truth, reviewer competence or independence, source interpretation, artifact validity, open-world soundness, runtime enforcement, or support movement."
+      "mutation_evidence": "The projection-aware consumer supplies target-evidence and authority mutations; the cluster validator mutates module identity, proposition, countermodels, consumers, and inference ceilings.",
+      "maximum_inference": "Retain only as a narrow foundational vocabulary and deductive blocker. It does not establish a total confidence ladder, evidence truth, reviewer competence, source interpretation, artifact validity, open-world soundness, runtime enforcement, or support movement."
+    },
+    {
+      "module": "AsiStackProofs.EvidenceTransitionRefinement",
+      "path": "lean/AsiStackProofs/EvidenceTransitionRefinement.lean",
+      "disposition": "adequate",
+      "public_target_count": 2,
+      "theorem_declaration_count": 6,
+      "plain_language_proposition": "A claim-specific transition can reach bounded ledger handoff only through exact atom and proposition/obligation/predicate custody, target-specific non-aggregating evidence, adverse-transition burden, review, dissent, limitations, residuals, and changelog records, without direct support, inherited movement, or external-effect authority.",
+      "modeled_state": "Six reachable stages, thirty-five routes, exact atom and three-projection digests, heterogeneous target-evidence dimensions, adverse-transition semantics, review, decision, handoff, acknowledgment, and explicit authority exclusions.",
+      "assumptions": [
+        "Digests, evidence fields, review records, and intent labels are truthful inputs.",
+        "Digest equality does not itself establish semantic equivalence among the three projections.",
+        "The route ordering is the declared finite policy for one claim-specific transition."
+      ],
+      "countermodels": [
+        "Atom or projection substitution, event replay, terminal-intent mismatch, and state substitution are rejected.",
+        "Missing target evidence or adverse-transition negative evidence, trigger, and supersession records block evidence binding.",
+        "Support assignment, parent or descendant movement, and external-effect requests never reach an accepted route."
+      ],
+      "consumers": [
+        "scripts/validate_evidence_transition_refinement.py",
+        "experiments/evidence_transition_refinement/results/2026-07-26-local.json",
+        "chapters/evidence-states-and-claim-discipline.qmd"
+      ],
+      "mutation_evidence": "The independent consumer reaches all 35 declared routes, including 35 rejecting identity, evidence, review, decision, handoff, replay, inheritance, support, and effect cases.",
+      "maximum_inference": "Adequate for the represented finite projection-aware transition-control boundary. It does not establish evidence truth, projection equivalence, reviewer independence, a correct live support decision, inherited movement, release readiness, or external effects."
     },
     {
       "module": "AsiStackProofs.ClaimLedgerRefinement",

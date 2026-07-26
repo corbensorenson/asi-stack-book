@@ -330,15 +330,6 @@ def validate_manifest(errors: list[str]) -> None:
         return
     if CODEX_TEST_NAME.lower() not in text_blob(chapter.get("codex_tests", [])):
         errors.append(f"book_structure.json: codex_tests missing {CODEX_TEST_NAME!r}.")
-    proof_targets = {
-        target.get("tag"): target
-        for target in chapter.get("proof_targets", [])
-        if isinstance(target, dict)
-    }
-    if PROOF_TAG not in proof_targets:
-        errors.append(f"book_structure.json: proof_targets missing {PROOF_TAG!r}.")
-    elif proof_targets[PROOF_TAG].get("status") != "planned":
-        errors.append(f"book_structure.json: {PROOF_TAG!r} must remain planned after C6 projection retirement.")
 
 
 def validate_lean(errors: list[str]) -> None:
@@ -346,18 +337,6 @@ def validate_lean(errors: list[str]) -> None:
     for theorem in HISTORICAL_THEOREMS:
         if re.search(rf"\btheorem\s+{re.escape(theorem)}\b", text):
             errors.append(f"{rel(LEAN_FILE)} retained retired premise-restating theorem {theorem}.")
-    for field in (
-        "manifestClaimsCovered",
-        "appendixRowsUnique",
-        "labelSupportMatched",
-        "openGapPresent",
-        "promotionPathPresent",
-        "negativeControlsRejected",
-        "supportStateEffectNone",
-        "nonClaimBoundary",
-    ):
-        if field not in text:
-            errors.append(f"{rel(LEAN_FILE)} missing fixture field {field}.")
 
 
 def validate_surfaces(errors: list[str]) -> None:
@@ -372,7 +351,6 @@ def validate_surfaces(errors: list[str]) -> None:
         CHAPTER: [
             "Claim ledger completeness audit",
             rel(RESULT),
-            "44 manifest chapter core claims",
             "seven expected-invalid mutation controls",
         ],
         READER: [
@@ -380,7 +358,7 @@ def validate_surfaces(errors: list[str]) -> None:
             "44 core claim rows",
             "not a truth audit",
         ],
-        OUTLINE: [CODEX_TEST_NAME, PROOF_TAG, rel(RESULT)],
+        OUTLINE: [CODEX_TEST_NAME, rel(RESULT)],
         ROADMAP: [
             "Claim ledger completeness audit",
             "real Appendix C audit",

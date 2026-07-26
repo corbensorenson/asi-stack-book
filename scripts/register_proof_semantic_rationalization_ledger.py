@@ -39,6 +39,7 @@ ARTIFACTS = [
     "lean/AsiStackProofs/PolicyOptimization.lean",
     "lean/AsiStackProofs/PolicyOptimizationRefinement.lean",
     "lean/AsiStackProofs/ResourceEconomicsRefinement.lean",
+    "lean/AsiStackProofs/EvidenceTransitionRefinement.lean",
     "scripts/validate_runtime_adapter_adversarial_boundary_probe.py",
     "scripts/validate_substrate_adoption_trace.py",
     "scripts/validate_artifact_steward_lifecycle_probe.py",
@@ -55,7 +56,9 @@ ARTIFACTS = [
     "scripts/validate_policy_update_lease_probe.py",
     "scripts/validate_policy_optimization_refinement.py",
     "scripts/validate_resource_economics_refinement.py",
+    "scripts/validate_evidence_transition_refinement.py",
     "scripts/integrate_c6_efficiency_route_economy_consolidation.py",
+    "scripts/integrate_c6_evidence_transition_consolidation.py",
     "experiments/runtime_adapter_adversarial_boundary/results/2026-07-02-local.json",
     "experiments/substrate_adoption_trace/results/2026-07-02-local.json",
     "experiments/artifact_steward_lifecycle_probe/results/2026-07-02-local.json",
@@ -65,6 +68,7 @@ ARTIFACTS = [
     "experiments/planning_runtime_replan_delta/results/2026-07-02-local.json",
     "experiments/policy_update_lease/results/2026-07-02-local.json",
     "experiments/policy_optimization_refinement/results/2026-07-16-local.json",
+    "experiments/evidence_transition_refinement/results/2026-07-26-local.json",
     "docs/substrate_adoption_trace.md",
     "docs/artifact_steward_lifecycle_probe.md",
     "proofs/proof_manifest.json",
@@ -116,7 +120,7 @@ def main() -> None:
         "execution_tier": "pr",
         "validation_class": "proof_or_evidence_gate",
         "input_contract": (
-            "One immutable 1,370-theorem baseline; ninety exact, ordered transactions; "
+            "One immutable 1,370-theorem baseline; 106 exact, ordered transactions; "
             "the baseline Scalable Oversight, Bibliography Plan, Benchmark Ratchets, and "
             "Policy Optimization, Stable Capability Fields, Evidence States, and Runtime "
             "Adapters, Search Substrates, Artifact Steward Agents, Coil Attention Memory, "
@@ -128,7 +132,8 @@ def main() -> None:
             "change, twelve summary projections retired after route-family validator rebinding, "
             "two proposition-preserving theorem-name scope rewrites, three legacy "
             "policy-lease fixture theorems, and twenty-two legacy efficiency checklist "
-            "or result-summary theorems retired after reachable-refinement rebinding; "
+            "or result-summary theorems and sixteen legacy evidence-transition fixture "
+            "theorems retired after reachable-refinement rebinding; "
             "the current overlay; frozen historical registry; and reconciled target, "
             "roadmap, and status surfaces."
         ),
@@ -138,7 +143,7 @@ def main() -> None:
             "statement identity for the duplicate, dependency-and-consumer-safe removals, "
             "ten counterexample, five decision-model, thirteen scope-narrowing, and eleven "
             "validator-route-family target migrations, retained or honestly replanned "
-            "target ownership, a 1,282-theorem current estate, an exact 70-action remaining "
+            "target ownership, a 1,272-theorem current estate, an exact 54-action remaining "
             "queue, meta-audit exclusion from implementation binding, and no support or "
             "release effect."
         ),
@@ -147,11 +152,11 @@ def main() -> None:
             "retired and retained declarations share one authored model",
             "normalized theorem statements exact",
             "retired theorem has no theorem consumer",
-            "eighty-eight retired declarations absent, twenty-five proposition-preserving or replacement-bound actions, and sixty-five intentionally null replacements",
+            "104 retired declarations absent, twenty-five proposition-preserving or replacement-bound actions, and eighty-one intentionally null replacements",
             "two bibliography targets migrated to derived counterexample gates",
             "two benchmark targets migrated to derived decision-model gates",
             "two Stable Capability Fields targets narrowed to retained derived routes",
-            "five Evidence States targets narrowed to planned reachable or independently implemented models",
+            "seven Evidence States targets consolidated into two reachable lifecycle targets and one retained foundational blocker",
             "Runtime adapter validator bound to fifteen route theorems rather than a summary projection",
             "Search Substrates targets bound to two finite counterexamples and one honestly planned reachable route model",
             "Artifact Steward targets bound to two retained lifecycle routes and two honestly planned reachable models",
@@ -174,17 +179,18 @@ def main() -> None:
             "two misleading theorem names replaced without changing their normalized propositions",
             "three legacy policy-lease fixture theorems replaced by reachable refinement and independent consumer custody",
             "twenty-two legacy efficiency checklist and summary theorems replaced by reachable route-economy and independent consumer custody",
+            "sixteen legacy evidence-transition fixture theorems replaced by projection-aware reachable lifecycle and independent consumer custody",
             "proof-custody meta-audit does not inflate semantic implementation depth",
-            "1,282 current theorem declarations",
-            "70 stronger-model actions remain",
+            "1,272 current theorem declarations",
+            "54 stronger-model actions remain",
             "frozen 1,151-theorem and 298-target registry preserved",
             "16 mutations reject",
             "no support or release effect",
         ],
         "claim_scope": (
-            "Eighty-eight dependency-safe declaration retirements: one exact same-model "
+            "104 dependency-safe declaration retirements: one exact same-model "
             "duplicate, sixty-two premise-restating projections, and twenty-five legacy fixture "
-            "or checklist theorems. Two theorem names are rewritten without proposition drift. Forty-one public "
+            "or checklist theorems plus sixteen evidence-transition fixture theorems. Two theorem names are rewritten without proposition drift. Forty-seven public "
             "targets migrate to counterexample, decision-model, narrower retained-route, "
             "or honestly planned stronger-model wording; the runtime-adapter target remains "
             "implemented through its fifteen explicit route theorems."
@@ -215,7 +221,7 @@ def main() -> None:
             "deployment, transfer, safety, SOTA, AGI, ASI, or claim support."
         ),
         "contract_precision": "exact_immutable_cumulative_dependency_safe_retirement_ledger",
-        "semantic_review_state": "checked_eighty_eight_c6_retirements_two_scope_rewrites_and_forty_one_target_migrations",
+        "semantic_review_state": "checked_one_hundred_four_c6_retirements_two_scope_rewrites_and_forty_seven_target_migrations",
     })
     required = registry["required_artifacts"]
     for artifact in ARTIFACTS + [REGISTER]:

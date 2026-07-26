@@ -690,7 +690,7 @@
         {
           "target_ref": "proof-target:lean:evidence.support_state.operational_invariant",
           "old_target_text": "Support-state transitions require the corresponding evidence artifact.",
-          "new_target_text": "A reachable evidence-admission model derives state-specific artifact requirements from the requested support state and inspected evidence bundle rather than assuming the RequiredEvidence predicate.",
+          "new_target_text": "A reachable lifecycle freezes exact atom and proposition/obligation/predicate projections, derives non-aggregating target evidence, preserves negative evidence and non-claims, and cannot assign support, move related claims, or create external effects.",
           "consumer_paths": [
             "book_structure.json",
             "docs/book_outline.md",
@@ -817,7 +817,7 @@
         {
           "target_ref": "proof-target:lean:evidence.bundle.completeness_probe_bridge",
           "old_target_text": "A synthetic evidence-bundle completeness probe records a no-change bundle, a blocked-promotion bundle, rejected negative controls, changelog consistency, no support-state effect, and non-claim boundaries.",
-          "new_target_text": "An independently implemented formal bridge derives the evidence-bundle probe's accepted and rejected outcomes from exact bundle inputs and audit logic rather than assuming a valid summary predicate.",
+          "new_target_text": "Six reachable stages preserve three claim projections and route state-specific evidence, adverse-transition, review, decision, handoff, replay, substitution, and authority failures to explicit outcomes; an independent consumer reaches every declared route.",
           "consumer_paths": [
             "book_structure.json",
             "docs/book_outline.md",
@@ -868,7 +868,7 @@
         {
           "target_ref": "proof-target:lean:evidence.claim_ledger.completeness_audit_bridge",
           "old_target_text": "A claim-ledger completeness audit records manifest claim coverage, unique Appendix C rows, label/support matching, open gaps, promotion paths, rejected mutation controls, no support-state effect, and non-claim boundaries.",
-          "new_target_text": "An independently implemented formal bridge derives claim-ledger completeness and rejection outcomes from exact manifest and Appendix C inputs rather than assuming a valid summary predicate.",
+          "new_target_text": "Six reachable stages preserve three claim projections and route state-specific evidence, adverse-transition, review, decision, handoff, replay, substitution, and authority failures to explicit outcomes; an independent consumer reaches every declared route.",
           "consumer_paths": [
             "book_structure.json",
             "docs/book_outline.md",
@@ -919,7 +919,7 @@
         {
           "target_ref": "proof-target:lean:evidence.accepted_transition.review_audit_bridge",
           "old_target_text": "An accepted-transition review audit records accepted transition presence, bounded non-core upward transitions, no chapter-core promotion, no-promotion decisions, changelog refs, rejected mutation controls, bounded support-state effects, and non-claim boundaries.",
-          "new_target_text": "An independently implemented formal bridge derives accepted-transition audit outcomes from exact transition, no-promotion, changelog, and evidence inputs rather than assuming a valid summary predicate.",
+          "new_target_text": "Six reachable stages preserve three claim projections and route state-specific evidence, adverse-transition, review, decision, handoff, replay, substitution, and authority failures to explicit outcomes; an independent consumer reaches every declared route.",
           "consumer_paths": [
             "book_structure.json",
             "docs/book_outline.md",
@@ -970,7 +970,7 @@
         {
           "target_ref": "proof-target:lean:evidence.claim_state.transition_bridge",
           "old_target_text": "A synthetic claim-state transition bridge records claim narrowing, support downgrade, terminal refutation, negative-evidence requirements, rejected mutation controls, bounded support-state effects, no live claim movement, and non-claim boundaries.",
-          "new_target_text": "A reachable claim-state lifecycle model derives negative-evidence, no-live-movement, and non-claim conclusions from narrowing, downgrade, and refutation cases rather than projecting fields from a hand-authored summary predicate.",
+          "new_target_text": "Six reachable stages preserve three claim projections and route state-specific evidence, adverse-transition, review, decision, handoff, replay, substitution, and authority failures to explicit outcomes; an independent consumer reaches every declared route.",
           "consumer_paths": [
             "book_structure.json",
             "docs/book_outline.md",
@@ -3998,15 +3998,728 @@
         "lean:lake-build"
       ],
       "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R91-evidence-no-requested-transition-allows-no-change",
+      "sequence": 91,
+      "state": "executed",
+      "action": "retire_legacy_fixture_theorem_after_reachable_refinement_rebinding",
+      "semantic_relation": "legacy_fixture_statement_replaced_by_reachable_refinement_and_independent_consumer",
+      "module_path": "lean/AsiStackProofs/EvidenceStates.lean",
+      "baseline_module_sha256": "8f58d35b26b9e2400c70bf56fb38f12c5bbb6ed1f8546bda735235eb37ee7141",
+      "retired_theorem_id": "lean/AsiStackProofs/EvidenceStates.lean::no_requested_transition_allows_no_change",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "57cfb47ac128773bfe76ec53ba55262d3aed7d9c743234da2e8240077fb07d82",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "d8ca79898ff8ae961b73ef1cf90be63500e0ab2e69fbbc709d67955e381daf77",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem normalizes one hand-authored review mutation or literal summary projection.",
+        "The immutable semantic overlay records no theorem dependency or exercised consumer for the declaration.",
+        "The replacement lifecycle is reachable across six stages and preserves exact atom, proposition, obligation, and predicate identities.",
+        "Target evidence is selected by category without treating heterogeneous support states as a scalar ladder.",
+        "Adverse transitions preserve negative evidence, triggers, supersession, dissent, limitations, residuals, and changelog duties.",
+        "An independent executable consumer reaches all declared routes and mutation outcomes without trusting a copied valid summary.",
+        "The lifecycle emits only a bounded ledger handoff and has no support, parent, descendant, release, or external-effect authority."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:evidence.support_state.operational_invariant",
+          "old_target_text": "A reachable evidence-admission model derives state-specific artifact requirements from the requested support state and inspected evidence bundle rather than assuming the RequiredEvidence predicate.",
+          "new_target_text": "A reachable lifecycle freezes exact atom and proposition/obligation/predicate projections, derives non-aggregating target evidence, preserves negative evidence and non-claims, and cannot assign support, move related claims, or create external effects.",
+          "consumer_paths": [
+            "book_structure.json",
+            "docs/book_outline.md",
+            "chapters/evidence-states-and-claim-discipline.qmd",
+            "proofs/proof_manifest.json",
+            "proofs/proof_triage.json"
+          ]
+        },
+        {
+          "target_ref": "proof-target:lean:evidence.support_state.transition_lifecycle_route",
+          "old_target_text": "A modeled support-state transition routes no-change requests, missing records, scope gaps, support-effect gaps, missing review, missing required evidence, terminal/downgrade gaps, changelog gaps, and missing non-claim boundaries to explicit outcomes.",
+          "new_target_text": "Six reachable stages preserve three claim projections and route state-specific evidence, adverse-transition, review, decision, handoff, replay, substitution, and authority failures to explicit outcomes; an independent consumer reaches every declared route.",
+          "consumer_paths": [
+            "book_structure.json",
+            "docs/book_outline.md",
+            "chapters/evidence-states-and-claim-discipline.qmd",
+            "proofs/proof_manifest.json",
+            "proofs/proof_triage.json"
+          ]
+        },
+        {
+          "target_ref": "proof-target:lean:evidence.bundle.completeness_probe_bridge",
+          "old_target_text": "An independently implemented formal bridge derives the evidence-bundle probe's accepted and rejected outcomes from exact bundle inputs and audit logic rather than assuming a valid summary predicate.",
+          "new_target_text": "Six reachable stages preserve three claim projections and route state-specific evidence, adverse-transition, review, decision, handoff, replay, substitution, and authority failures to explicit outcomes; an independent consumer reaches every declared route.",
+          "consumer_paths": [
+            "book_structure.json",
+            "docs/book_outline.md",
+            "chapters/evidence-states-and-claim-discipline.qmd",
+            "proofs/proof_manifest.json",
+            "proofs/proof_triage.json"
+          ]
+        },
+        {
+          "target_ref": "proof-target:lean:evidence.claim_ledger.completeness_audit_bridge",
+          "old_target_text": "An independently implemented formal bridge derives claim-ledger completeness and rejection outcomes from exact manifest and Appendix C inputs rather than assuming a valid summary predicate.",
+          "new_target_text": "Six reachable stages preserve three claim projections and route state-specific evidence, adverse-transition, review, decision, handoff, replay, substitution, and authority failures to explicit outcomes; an independent consumer reaches every declared route.",
+          "consumer_paths": [
+            "book_structure.json",
+            "docs/book_outline.md",
+            "chapters/evidence-states-and-claim-discipline.qmd",
+            "proofs/proof_manifest.json",
+            "proofs/proof_triage.json"
+          ]
+        },
+        {
+          "target_ref": "proof-target:lean:evidence.accepted_transition.review_audit_bridge",
+          "old_target_text": "An independently implemented formal bridge derives accepted-transition audit outcomes from exact transition, no-promotion, changelog, and evidence inputs rather than assuming a valid summary predicate.",
+          "new_target_text": "Six reachable stages preserve three claim projections and route state-specific evidence, adverse-transition, review, decision, handoff, replay, substitution, and authority failures to explicit outcomes; an independent consumer reaches every declared route.",
+          "consumer_paths": [
+            "book_structure.json",
+            "docs/book_outline.md",
+            "chapters/evidence-states-and-claim-discipline.qmd",
+            "proofs/proof_manifest.json",
+            "proofs/proof_triage.json"
+          ]
+        },
+        {
+          "target_ref": "proof-target:lean:evidence.claim_state.transition_bridge",
+          "old_target_text": "A reachable claim-state lifecycle model derives negative-evidence, no-live-movement, and non-claim conclusions from narrowing, downgrade, and refutation cases rather than projecting fields from a hand-authored summary predicate.",
+          "new_target_text": "Six reachable stages preserve three claim projections and route state-specific evidence, adverse-transition, review, decision, handoff, replay, substitution, and authority failures to explicit outcomes; an independent consumer reaches every declared route.",
+          "consumer_paths": [
+            "book_structure.json",
+            "docs/book_outline.md",
+            "chapters/evidence-states-and-claim-discipline.qmd",
+            "proofs/proof_manifest.json",
+            "proofs/proof_triage.json"
+          ]
+        }
+      ],
+      "maximum_inference_preserved": "The replacement establishes the finite identity-bound transition-control boundary and independent route coverage; it does not establish evidence truth, semantic projection equivalence, reviewer independence, a correct live decision, support movement, inheritance, release, or external effect.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_evidence_transition_refinement.py",
+        "experiments/evidence_transition_refinement/results/2026-07-26-local.json",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R92-evidence-missing-claim-record-rejects-evidence-transition",
+      "sequence": 92,
+      "state": "executed",
+      "action": "retire_legacy_fixture_theorem_after_reachable_refinement_rebinding",
+      "semantic_relation": "legacy_fixture_statement_replaced_by_reachable_refinement_and_independent_consumer",
+      "module_path": "lean/AsiStackProofs/EvidenceStates.lean",
+      "baseline_module_sha256": "8f58d35b26b9e2400c70bf56fb38f12c5bbb6ed1f8546bda735235eb37ee7141",
+      "retired_theorem_id": "lean/AsiStackProofs/EvidenceStates.lean::missing_claim_record_rejects_evidence_transition",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "ef7a81eb2f20db8656e2a7d9346120bc6016e2c2565290d0aaaea0ebcf6e5bd9",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "d25e32a959e6456fe687de2ca74a1a62574a8157864418164dd87ad90602c955",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem normalizes one hand-authored review mutation or literal summary projection.",
+        "The immutable semantic overlay records no theorem dependency or exercised consumer for the declaration.",
+        "The replacement lifecycle is reachable across six stages and preserves exact atom, proposition, obligation, and predicate identities.",
+        "Target evidence is selected by category without treating heterogeneous support states as a scalar ladder.",
+        "Adverse transitions preserve negative evidence, triggers, supersession, dissent, limitations, residuals, and changelog duties.",
+        "An independent executable consumer reaches all declared routes and mutation outcomes without trusting a copied valid summary.",
+        "The lifecycle emits only a bounded ledger handoff and has no support, parent, descendant, release, or external-effect authority."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "The replacement establishes the finite identity-bound transition-control boundary and independent route coverage; it does not establish evidence truth, semantic projection equivalence, reviewer independence, a correct live decision, support movement, inheritance, release, or external effect.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_evidence_transition_refinement.py",
+        "experiments/evidence_transition_refinement/results/2026-07-26-local.json",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R93-evidence-missing-scope-boundary-requests-scope-boundary",
+      "sequence": 93,
+      "state": "executed",
+      "action": "retire_legacy_fixture_theorem_after_reachable_refinement_rebinding",
+      "semantic_relation": "legacy_fixture_statement_replaced_by_reachable_refinement_and_independent_consumer",
+      "module_path": "lean/AsiStackProofs/EvidenceStates.lean",
+      "baseline_module_sha256": "8f58d35b26b9e2400c70bf56fb38f12c5bbb6ed1f8546bda735235eb37ee7141",
+      "retired_theorem_id": "lean/AsiStackProofs/EvidenceStates.lean::missing_scope_boundary_requests_scope_boundary",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "b21109667c8dd9783922ae099ab483d512620a4b5e12d0e3a2d0021d092197ec",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "196de321092869e5517029f6ef2e819ddcae2911c3616b787840fb9127e1e2db",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem normalizes one hand-authored review mutation or literal summary projection.",
+        "The immutable semantic overlay records no theorem dependency or exercised consumer for the declaration.",
+        "The replacement lifecycle is reachable across six stages and preserves exact atom, proposition, obligation, and predicate identities.",
+        "Target evidence is selected by category without treating heterogeneous support states as a scalar ladder.",
+        "Adverse transitions preserve negative evidence, triggers, supersession, dissent, limitations, residuals, and changelog duties.",
+        "An independent executable consumer reaches all declared routes and mutation outcomes without trusting a copied valid summary.",
+        "The lifecycle emits only a bounded ledger handoff and has no support, parent, descendant, release, or external-effect authority."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "The replacement establishes the finite identity-bound transition-control boundary and independent route coverage; it does not establish evidence truth, semantic projection equivalence, reviewer independence, a correct live decision, support movement, inheritance, release, or external effect.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_evidence_transition_refinement.py",
+        "experiments/evidence_transition_refinement/results/2026-07-26-local.json",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R94-evidence-missing-support-state-effect-requests-effect-record",
+      "sequence": 94,
+      "state": "executed",
+      "action": "retire_legacy_fixture_theorem_after_reachable_refinement_rebinding",
+      "semantic_relation": "legacy_fixture_statement_replaced_by_reachable_refinement_and_independent_consumer",
+      "module_path": "lean/AsiStackProofs/EvidenceStates.lean",
+      "baseline_module_sha256": "8f58d35b26b9e2400c70bf56fb38f12c5bbb6ed1f8546bda735235eb37ee7141",
+      "retired_theorem_id": "lean/AsiStackProofs/EvidenceStates.lean::missing_support_state_effect_requests_effect_record",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "542b11109ef810034705b84eaf40fb065062ffb8e2252194b5dc44bd225fc7fe",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "e454301497904b29ca27ebd49ced6d58d9099e29f397d1c2e088eb38cf6e06cb",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem normalizes one hand-authored review mutation or literal summary projection.",
+        "The immutable semantic overlay records no theorem dependency or exercised consumer for the declaration.",
+        "The replacement lifecycle is reachable across six stages and preserves exact atom, proposition, obligation, and predicate identities.",
+        "Target evidence is selected by category without treating heterogeneous support states as a scalar ladder.",
+        "Adverse transitions preserve negative evidence, triggers, supersession, dissent, limitations, residuals, and changelog duties.",
+        "An independent executable consumer reaches all declared routes and mutation outcomes without trusting a copied valid summary.",
+        "The lifecycle emits only a bounded ledger handoff and has no support, parent, descendant, release, or external-effect authority."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "The replacement establishes the finite identity-bound transition-control boundary and independent route coverage; it does not establish evidence truth, semantic projection equivalence, reviewer independence, a correct live decision, support movement, inheritance, release, or external effect.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_evidence_transition_refinement.py",
+        "experiments/evidence_transition_refinement/results/2026-07-26-local.json",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R95-evidence-mismatched-support-state-effect-blocks-transition",
+      "sequence": 95,
+      "state": "executed",
+      "action": "retire_legacy_fixture_theorem_after_reachable_refinement_rebinding",
+      "semantic_relation": "legacy_fixture_statement_replaced_by_reachable_refinement_and_independent_consumer",
+      "module_path": "lean/AsiStackProofs/EvidenceStates.lean",
+      "baseline_module_sha256": "8f58d35b26b9e2400c70bf56fb38f12c5bbb6ed1f8546bda735235eb37ee7141",
+      "retired_theorem_id": "lean/AsiStackProofs/EvidenceStates.lean::mismatched_support_state_effect_blocks_transition",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "a7c7c37bce0db776d177fa10df657a3b3b5e36a7c8f6b8d714070cf70d20f3aa",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "5e26a4f8a76f99375534a9e2d177a7ec98b71ca88801e22320e9cd3a72ac3c62",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem normalizes one hand-authored review mutation or literal summary projection.",
+        "The immutable semantic overlay records no theorem dependency or exercised consumer for the declaration.",
+        "The replacement lifecycle is reachable across six stages and preserves exact atom, proposition, obligation, and predicate identities.",
+        "Target evidence is selected by category without treating heterogeneous support states as a scalar ladder.",
+        "Adverse transitions preserve negative evidence, triggers, supersession, dissent, limitations, residuals, and changelog duties.",
+        "An independent executable consumer reaches all declared routes and mutation outcomes without trusting a copied valid summary.",
+        "The lifecycle emits only a bounded ledger handoff and has no support, parent, descendant, release, or external-effect authority."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "The replacement establishes the finite identity-bound transition-control boundary and independent route coverage; it does not establish evidence truth, semantic projection equivalence, reviewer independence, a correct live decision, support movement, inheritance, release, or external effect.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_evidence_transition_refinement.py",
+        "experiments/evidence_transition_refinement/results/2026-07-26-local.json",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R96-evidence-upward-transition-without-review-requests-review",
+      "sequence": 96,
+      "state": "executed",
+      "action": "retire_legacy_fixture_theorem_after_reachable_refinement_rebinding",
+      "semantic_relation": "legacy_fixture_statement_replaced_by_reachable_refinement_and_independent_consumer",
+      "module_path": "lean/AsiStackProofs/EvidenceStates.lean",
+      "baseline_module_sha256": "8f58d35b26b9e2400c70bf56fb38f12c5bbb6ed1f8546bda735235eb37ee7141",
+      "retired_theorem_id": "lean/AsiStackProofs/EvidenceStates.lean::upward_transition_without_review_requests_review",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "76aad6c39c8968e5b86145997b8083ae9e75565db8defae3fba3c3df6889a81b",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "71b39e78fc46ff48ebe2b75a6c485d95319d8bf2c36e1963631474266cf5ff5b",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem normalizes one hand-authored review mutation or literal summary projection.",
+        "The immutable semantic overlay records no theorem dependency or exercised consumer for the declaration.",
+        "The replacement lifecycle is reachable across six stages and preserves exact atom, proposition, obligation, and predicate identities.",
+        "Target evidence is selected by category without treating heterogeneous support states as a scalar ladder.",
+        "Adverse transitions preserve negative evidence, triggers, supersession, dissent, limitations, residuals, and changelog duties.",
+        "An independent executable consumer reaches all declared routes and mutation outcomes without trusting a copied valid summary.",
+        "The lifecycle emits only a bounded ledger handoff and has no support, parent, descendant, release, or external-effect authority."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "The replacement establishes the finite identity-bound transition-control boundary and independent route coverage; it does not establish evidence truth, semantic projection equivalence, reviewer independence, a correct live decision, support movement, inheritance, release, or external effect.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_evidence_transition_refinement.py",
+        "experiments/evidence_transition_refinement/results/2026-07-26-local.json",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R97-evidence-source-derived-without-source-note-requests-required-evidence",
+      "sequence": 97,
+      "state": "executed",
+      "action": "retire_legacy_fixture_theorem_after_reachable_refinement_rebinding",
+      "semantic_relation": "legacy_fixture_statement_replaced_by_reachable_refinement_and_independent_consumer",
+      "module_path": "lean/AsiStackProofs/EvidenceStates.lean",
+      "baseline_module_sha256": "8f58d35b26b9e2400c70bf56fb38f12c5bbb6ed1f8546bda735235eb37ee7141",
+      "retired_theorem_id": "lean/AsiStackProofs/EvidenceStates.lean::source_derived_without_source_note_requests_required_evidence",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "70a6da7e0f43747e7837a6695e07b78e7517d7db59688121e7878fb056e9418b",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "6c19c2001584306fa41d51745b3c3fb32d89ed2504e32c5b30fea14fc2e94218",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem normalizes one hand-authored review mutation or literal summary projection.",
+        "The immutable semantic overlay records no theorem dependency or exercised consumer for the declaration.",
+        "The replacement lifecycle is reachable across six stages and preserves exact atom, proposition, obligation, and predicate identities.",
+        "Target evidence is selected by category without treating heterogeneous support states as a scalar ladder.",
+        "Adverse transitions preserve negative evidence, triggers, supersession, dissent, limitations, residuals, and changelog duties.",
+        "An independent executable consumer reaches all declared routes and mutation outcomes without trusting a copied valid summary.",
+        "The lifecycle emits only a bounded ledger handoff and has no support, parent, descendant, release, or external-effect authority."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "The replacement establishes the finite identity-bound transition-control boundary and independent route coverage; it does not establish evidence truth, semantic projection equivalence, reviewer independence, a correct live decision, support movement, inheritance, release, or external effect.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_evidence_transition_refinement.py",
+        "experiments/evidence_transition_refinement/results/2026-07-26-local.json",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R98-evidence-synthetic-test-backed-without-test-run-requests-required-evidence",
+      "sequence": 98,
+      "state": "executed",
+      "action": "retire_legacy_fixture_theorem_after_reachable_refinement_rebinding",
+      "semantic_relation": "legacy_fixture_statement_replaced_by_reachable_refinement_and_independent_consumer",
+      "module_path": "lean/AsiStackProofs/EvidenceStates.lean",
+      "baseline_module_sha256": "8f58d35b26b9e2400c70bf56fb38f12c5bbb6ed1f8546bda735235eb37ee7141",
+      "retired_theorem_id": "lean/AsiStackProofs/EvidenceStates.lean::synthetic_test_backed_without_test_run_requests_required_evidence",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "86e57d1f7e888782afd27ce5a12184029ade20196bfb803f03f16d198db89e2a",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "c9e9bdf97ec61cc5da1a1d93564a294cd9d83c80516e58250a6c3827dc490733",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem normalizes one hand-authored review mutation or literal summary projection.",
+        "The immutable semantic overlay records no theorem dependency or exercised consumer for the declaration.",
+        "The replacement lifecycle is reachable across six stages and preserves exact atom, proposition, obligation, and predicate identities.",
+        "Target evidence is selected by category without treating heterogeneous support states as a scalar ladder.",
+        "Adverse transitions preserve negative evidence, triggers, supersession, dissent, limitations, residuals, and changelog duties.",
+        "An independent executable consumer reaches all declared routes and mutation outcomes without trusting a copied valid summary.",
+        "The lifecycle emits only a bounded ledger handoff and has no support, parent, descendant, release, or external-effect authority."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "The replacement establishes the finite identity-bound transition-control boundary and independent route coverage; it does not establish evidence truth, semantic projection equivalence, reviewer independence, a correct live decision, support movement, inheritance, release, or external effect.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_evidence_transition_refinement.py",
+        "experiments/evidence_transition_refinement/results/2026-07-26-local.json",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R99-evidence-downward-transition-without-negative-evidence-requests-negative-evidence",
+      "sequence": 99,
+      "state": "executed",
+      "action": "retire_legacy_fixture_theorem_after_reachable_refinement_rebinding",
+      "semantic_relation": "legacy_fixture_statement_replaced_by_reachable_refinement_and_independent_consumer",
+      "module_path": "lean/AsiStackProofs/EvidenceStates.lean",
+      "baseline_module_sha256": "8f58d35b26b9e2400c70bf56fb38f12c5bbb6ed1f8546bda735235eb37ee7141",
+      "retired_theorem_id": "lean/AsiStackProofs/EvidenceStates.lean::downward_transition_without_negative_evidence_requests_negative_evidence",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "1d9c3ed4f2d7548f24038a9920118a8e43b427f9e4e664903d255c3be0e03ef2",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "f89c390ee93ed884ad95463ff6a364b1a81dd24c9561e048577ce7032b860226",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem normalizes one hand-authored review mutation or literal summary projection.",
+        "The immutable semantic overlay records no theorem dependency or exercised consumer for the declaration.",
+        "The replacement lifecycle is reachable across six stages and preserves exact atom, proposition, obligation, and predicate identities.",
+        "Target evidence is selected by category without treating heterogeneous support states as a scalar ladder.",
+        "Adverse transitions preserve negative evidence, triggers, supersession, dissent, limitations, residuals, and changelog duties.",
+        "An independent executable consumer reaches all declared routes and mutation outcomes without trusting a copied valid summary.",
+        "The lifecycle emits only a bounded ledger handoff and has no support, parent, descendant, release, or external-effect authority."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "The replacement establishes the finite identity-bound transition-control boundary and independent route coverage; it does not establish evidence truth, semantic projection equivalence, reviewer independence, a correct live decision, support movement, inheritance, release, or external effect.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_evidence_transition_refinement.py",
+        "experiments/evidence_transition_refinement/results/2026-07-26-local.json",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R100-evidence-downward-transition-without-trigger-requests-downgrade-trigger",
+      "sequence": 100,
+      "state": "executed",
+      "action": "retire_legacy_fixture_theorem_after_reachable_refinement_rebinding",
+      "semantic_relation": "legacy_fixture_statement_replaced_by_reachable_refinement_and_independent_consumer",
+      "module_path": "lean/AsiStackProofs/EvidenceStates.lean",
+      "baseline_module_sha256": "8f58d35b26b9e2400c70bf56fb38f12c5bbb6ed1f8546bda735235eb37ee7141",
+      "retired_theorem_id": "lean/AsiStackProofs/EvidenceStates.lean::downward_transition_without_trigger_requests_downgrade_trigger",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "daf6e31f2af8f39c22ca6316c21833305517edfd89c2cc5e1ef69c1e10cb32e2",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "39b6eaeab52b574e3ef822ba18b476b991b01ca72e95f218701d02e90c2cbd0a",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem normalizes one hand-authored review mutation or literal summary projection.",
+        "The immutable semantic overlay records no theorem dependency or exercised consumer for the declaration.",
+        "The replacement lifecycle is reachable across six stages and preserves exact atom, proposition, obligation, and predicate identities.",
+        "Target evidence is selected by category without treating heterogeneous support states as a scalar ladder.",
+        "Adverse transitions preserve negative evidence, triggers, supersession, dissent, limitations, residuals, and changelog duties.",
+        "An independent executable consumer reaches all declared routes and mutation outcomes without trusting a copied valid summary.",
+        "The lifecycle emits only a bounded ledger handoff and has no support, parent, descendant, release, or external-effect authority."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "The replacement establishes the finite identity-bound transition-control boundary and independent route coverage; it does not establish evidence truth, semantic projection equivalence, reviewer independence, a correct live decision, support movement, inheritance, release, or external effect.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_evidence_transition_refinement.py",
+        "experiments/evidence_transition_refinement/results/2026-07-26-local.json",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R101-evidence-terminal-refutation-with-wrong-effect-requests-terminal-effect",
+      "sequence": 101,
+      "state": "executed",
+      "action": "retire_legacy_fixture_theorem_after_reachable_refinement_rebinding",
+      "semantic_relation": "legacy_fixture_statement_replaced_by_reachable_refinement_and_independent_consumer",
+      "module_path": "lean/AsiStackProofs/EvidenceStates.lean",
+      "baseline_module_sha256": "8f58d35b26b9e2400c70bf56fb38f12c5bbb6ed1f8546bda735235eb37ee7141",
+      "retired_theorem_id": "lean/AsiStackProofs/EvidenceStates.lean::terminal_refutation_with_wrong_effect_requests_terminal_effect",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "62c5a4b9ee47cd675bc84d9065bce98df053488d3d451b95b1b9e6ad018d4759",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "5edbeca333714874dc7349dbe7116a439d17f3e245c146df107eff30b2c22e23",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem normalizes one hand-authored review mutation or literal summary projection.",
+        "The immutable semantic overlay records no theorem dependency or exercised consumer for the declaration.",
+        "The replacement lifecycle is reachable across six stages and preserves exact atom, proposition, obligation, and predicate identities.",
+        "Target evidence is selected by category without treating heterogeneous support states as a scalar ladder.",
+        "Adverse transitions preserve negative evidence, triggers, supersession, dissent, limitations, residuals, and changelog duties.",
+        "An independent executable consumer reaches all declared routes and mutation outcomes without trusting a copied valid summary.",
+        "The lifecycle emits only a bounded ledger handoff and has no support, parent, descendant, release, or external-effect authority."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "The replacement establishes the finite identity-bound transition-control boundary and independent route coverage; it does not establish evidence truth, semantic projection equivalence, reviewer independence, a correct live decision, support movement, inheritance, release, or external effect.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_evidence_transition_refinement.py",
+        "experiments/evidence_transition_refinement/results/2026-07-26-local.json",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R102-evidence-terminal-refutation-without-negative-evidence-requests-negative-evidence",
+      "sequence": 102,
+      "state": "executed",
+      "action": "retire_legacy_fixture_theorem_after_reachable_refinement_rebinding",
+      "semantic_relation": "legacy_fixture_statement_replaced_by_reachable_refinement_and_independent_consumer",
+      "module_path": "lean/AsiStackProofs/EvidenceStates.lean",
+      "baseline_module_sha256": "8f58d35b26b9e2400c70bf56fb38f12c5bbb6ed1f8546bda735235eb37ee7141",
+      "retired_theorem_id": "lean/AsiStackProofs/EvidenceStates.lean::terminal_refutation_without_negative_evidence_requests_negative_evidence",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "74067f4c4487d9a6f4332b7d10607051676aa4000c1065d67cb191109108c72e",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "bf18e5747a2c635bafafb80d0ab1a98ce80169d103d0053ef2c0b71b39be4661",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem normalizes one hand-authored review mutation or literal summary projection.",
+        "The immutable semantic overlay records no theorem dependency or exercised consumer for the declaration.",
+        "The replacement lifecycle is reachable across six stages and preserves exact atom, proposition, obligation, and predicate identities.",
+        "Target evidence is selected by category without treating heterogeneous support states as a scalar ladder.",
+        "Adverse transitions preserve negative evidence, triggers, supersession, dissent, limitations, residuals, and changelog duties.",
+        "An independent executable consumer reaches all declared routes and mutation outcomes without trusting a copied valid summary.",
+        "The lifecycle emits only a bounded ledger handoff and has no support, parent, descendant, release, or external-effect authority."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "The replacement establishes the finite identity-bound transition-control boundary and independent route coverage; it does not establish evidence truth, semantic projection equivalence, reviewer independence, a correct live decision, support movement, inheritance, release, or external effect.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_evidence_transition_refinement.py",
+        "experiments/evidence_transition_refinement/results/2026-07-26-local.json",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R103-evidence-terminal-refutation-without-changelog-requests-changelog",
+      "sequence": 103,
+      "state": "executed",
+      "action": "retire_legacy_fixture_theorem_after_reachable_refinement_rebinding",
+      "semantic_relation": "legacy_fixture_statement_replaced_by_reachable_refinement_and_independent_consumer",
+      "module_path": "lean/AsiStackProofs/EvidenceStates.lean",
+      "baseline_module_sha256": "8f58d35b26b9e2400c70bf56fb38f12c5bbb6ed1f8546bda735235eb37ee7141",
+      "retired_theorem_id": "lean/AsiStackProofs/EvidenceStates.lean::terminal_refutation_without_changelog_requests_changelog",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "aedc45deed2172068ae9db20742d89b103d1c9e79dbcef0b8433c99151380572",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "7731cec53ef9ef1ab2c4749d99be06a461bac8698836b91cfb856a3167af45b5",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem normalizes one hand-authored review mutation or literal summary projection.",
+        "The immutable semantic overlay records no theorem dependency or exercised consumer for the declaration.",
+        "The replacement lifecycle is reachable across six stages and preserves exact atom, proposition, obligation, and predicate identities.",
+        "Target evidence is selected by category without treating heterogeneous support states as a scalar ladder.",
+        "Adverse transitions preserve negative evidence, triggers, supersession, dissent, limitations, residuals, and changelog duties.",
+        "An independent executable consumer reaches all declared routes and mutation outcomes without trusting a copied valid summary.",
+        "The lifecycle emits only a bounded ledger handoff and has no support, parent, descendant, release, or external-effect authority."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "The replacement establishes the finite identity-bound transition-control boundary and independent route coverage; it does not establish evidence truth, semantic projection equivalence, reviewer independence, a correct live decision, support movement, inheritance, release, or external effect.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_evidence_transition_refinement.py",
+        "experiments/evidence_transition_refinement/results/2026-07-26-local.json",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R104-evidence-transition-without-nonclaims-preserves-nonclaim-boundary",
+      "sequence": 104,
+      "state": "executed",
+      "action": "retire_legacy_fixture_theorem_after_reachable_refinement_rebinding",
+      "semantic_relation": "legacy_fixture_statement_replaced_by_reachable_refinement_and_independent_consumer",
+      "module_path": "lean/AsiStackProofs/EvidenceStates.lean",
+      "baseline_module_sha256": "8f58d35b26b9e2400c70bf56fb38f12c5bbb6ed1f8546bda735235eb37ee7141",
+      "retired_theorem_id": "lean/AsiStackProofs/EvidenceStates.lean::transition_without_nonclaims_preserves_nonclaim_boundary",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "ed0580e704b3ba0070b5fad48bc1ac5f9e25178b6ba87e6d3496d2cf0bbd5e61",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "6358825b934f864cb609df985e2916f38cdf84139161e39b6683f4cbc2d100c3",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem normalizes one hand-authored review mutation or literal summary projection.",
+        "The immutable semantic overlay records no theorem dependency or exercised consumer for the declaration.",
+        "The replacement lifecycle is reachable across six stages and preserves exact atom, proposition, obligation, and predicate identities.",
+        "Target evidence is selected by category without treating heterogeneous support states as a scalar ladder.",
+        "Adverse transitions preserve negative evidence, triggers, supersession, dissent, limitations, residuals, and changelog duties.",
+        "An independent executable consumer reaches all declared routes and mutation outcomes without trusting a copied valid summary.",
+        "The lifecycle emits only a bounded ledger handoff and has no support, parent, descendant, release, or external-effect authority."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "The replacement establishes the finite identity-bound transition-control boundary and independent route coverage; it does not establish evidence truth, semantic projection equivalence, reviewer independence, a correct live decision, support movement, inheritance, release, or external effect.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_evidence_transition_refinement.py",
+        "experiments/evidence_transition_refinement/results/2026-07-26-local.json",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R105-evidence-complete-synthetic-test-backed-transition-accepts",
+      "sequence": 105,
+      "state": "executed",
+      "action": "retire_legacy_fixture_theorem_after_reachable_refinement_rebinding",
+      "semantic_relation": "legacy_fixture_statement_replaced_by_reachable_refinement_and_independent_consumer",
+      "module_path": "lean/AsiStackProofs/EvidenceStates.lean",
+      "baseline_module_sha256": "8f58d35b26b9e2400c70bf56fb38f12c5bbb6ed1f8546bda735235eb37ee7141",
+      "retired_theorem_id": "lean/AsiStackProofs/EvidenceStates.lean::complete_synthetic_test_backed_transition_accepts",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "b999fd8b01a6fa763860bcf2cb5d64a53de47648cc65fcf824b70c24721fd02c",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "98f8749c07a70a99af953025c9837e9dcf11477f0a1aba853cbedf6a66745995",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem normalizes one hand-authored review mutation or literal summary projection.",
+        "The immutable semantic overlay records no theorem dependency or exercised consumer for the declaration.",
+        "The replacement lifecycle is reachable across six stages and preserves exact atom, proposition, obligation, and predicate identities.",
+        "Target evidence is selected by category without treating heterogeneous support states as a scalar ladder.",
+        "Adverse transitions preserve negative evidence, triggers, supersession, dissent, limitations, residuals, and changelog duties.",
+        "An independent executable consumer reaches all declared routes and mutation outcomes without trusting a copied valid summary.",
+        "The lifecycle emits only a bounded ledger handoff and has no support, parent, descendant, release, or external-effect authority."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "The replacement establishes the finite identity-bound transition-control boundary and independent route coverage; it does not establish evidence truth, semantic projection equivalence, reviewer independence, a correct live decision, support movement, inheritance, release, or external effect.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_evidence_transition_refinement.py",
+        "experiments/evidence_transition_refinement/results/2026-07-26-local.json",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R106-evidence-claim-state-transition-bridge-fixture-valid",
+      "sequence": 106,
+      "state": "executed",
+      "action": "retire_legacy_fixture_theorem_after_reachable_refinement_rebinding",
+      "semantic_relation": "legacy_fixture_statement_replaced_by_reachable_refinement_and_independent_consumer",
+      "module_path": "lean/AsiStackProofs/EvidenceStates.lean",
+      "baseline_module_sha256": "8f58d35b26b9e2400c70bf56fb38f12c5bbb6ed1f8546bda735235eb37ee7141",
+      "retired_theorem_id": "lean/AsiStackProofs/EvidenceStates.lean::claim_state_transition_bridge_fixture_valid",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "93eef77cdf041f7f0ddf298f30c5daac07d60426d5f6b6c8d55cab107f6bf3ea",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "603b035ee6dd2e5e570552791768437d7c3ef944ab94f9aace3438310ea2e235",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem normalizes one hand-authored review mutation or literal summary projection.",
+        "The immutable semantic overlay records no theorem dependency or exercised consumer for the declaration.",
+        "The replacement lifecycle is reachable across six stages and preserves exact atom, proposition, obligation, and predicate identities.",
+        "Target evidence is selected by category without treating heterogeneous support states as a scalar ladder.",
+        "Adverse transitions preserve negative evidence, triggers, supersession, dissent, limitations, residuals, and changelog duties.",
+        "An independent executable consumer reaches all declared routes and mutation outcomes without trusting a copied valid summary.",
+        "The lifecycle emits only a bounded ledger handoff and has no support, parent, descendant, release, or external-effect authority."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "The replacement establishes the finite identity-bound transition-control boundary and independent route coverage; it does not establish evidence truth, semantic projection equivalence, reviewer independence, a correct live decision, support movement, inheritance, release, or external effect.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_evidence_transition_refinement.py",
+        "experiments/evidence_transition_refinement/results/2026-07-26-local.json",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
     }
   ],
   "summary": {
-    "executed_retirement_count": 88,
+    "executed_retirement_count": 104,
     "executed_scope_rewrite_count": 2,
-    "current_live_theorem_count": 1282,
-    "remaining_action_count": 70,
+    "current_live_theorem_count": 1272,
+    "remaining_action_count": 54,
     "remaining_action_counts": {
-      "rewrite_with_stronger_model": 70
+      "rewrite_with_stronger_model": 54
     },
     "chapter_core_support_transitions": 0,
     "new_formal_claims": 0
