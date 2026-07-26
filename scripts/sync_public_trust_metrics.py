@@ -234,7 +234,7 @@ def sync_public_trust_metrics() -> None:
     readme = replace_once(
         readme,
         r"[Tt]he inventory has \d+ public-safe records; \d+/\d+ chapters are externally positioned",
-        f"the inventory has {sources} public-safe records; {externally_positioned}/{chapters} chapters are externally positioned",
+        f"The inventory has {sources} public-safe records; {externally_positioned}/{chapters} chapters are externally positioned",
         readme_path,
     )
     readme = replace_once(
