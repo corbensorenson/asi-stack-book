@@ -154,12 +154,17 @@ def errors(data: dict) -> list[str]:
             out.append(f"completion declaration missing: {phrase}")
     for path, body in data["public"].items():
         body_normalized = " ".join(body.split())
-        for phrase in [ACTIVE_SUCCESSOR, ACTIVE_SUCCESSOR_STATUS, ACTIVE_CURRENT, ACTIVE_CURRENT_STATUS, "v2.3.0"]:
+        roadmap_phrases = (
+            [ACTIVE_CURRENT, ACTIVE_CURRENT_STATUS, "v2.3.0"]
+            if path == "README.md"
+            else [ACTIVE_SUCCESSOR, ACTIVE_SUCCESSOR_STATUS, ACTIVE_CURRENT, ACTIVE_CURRENT_STATUS, "v2.3.0"]
+        )
+        for phrase in roadmap_phrases:
             if phrase.casefold() not in body_normalized.casefold():
                 out.append(f"{path} missing terminal public truth: {phrase}")
         live_claim_phrase = (
             f"All {live_chapter_count} live chapter-core claims remain at `argument`"
-            if path == "docs/publication_readiness.md"
+            if path in {"README.md", "docs/publication_readiness.md"}
             else f"{live_argument_count}/{live_chapter_count} chapter-core claims at `argument`"
         )
         if live_claim_phrase not in body and live_claim_phrase not in body_normalized:

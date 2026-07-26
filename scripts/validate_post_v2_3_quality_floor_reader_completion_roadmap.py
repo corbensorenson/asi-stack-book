@@ -391,8 +391,17 @@ def semantic_errors(data: dict) -> list[str]:
             errors.append(f"roadmap does not identify target chapter: {name}")
 
     current_claim_ratio = f"{live_argument_count}/{live_chapter_count} chapter-core claims at `argument`"
+    readme_requirements = [
+        ACTIVE_CURRENT_ROADMAP_PATH,
+        ACTIVE_CURRENT_STATUS_PATH,
+        "v2.3.0",
+        f"All {live_chapter_count} live chapter-core claims remain at `argument`",
+    ]
+    normalized_readme = " ".join(data["readme"].split())
+    for phrase in readme_requirements:
+        if phrase not in data["readme"] and phrase not in normalized_readme:
+            errors.append(f"README.md missing active roadmap truth: {phrase}")
     surface_requirements = {
-        "README.md": (data["readme"], current_claim_ratio),
         "index.qmd": (data["index"], current_claim_ratio),
         "docs/publication_readiness.md": (
             data["publication"],

@@ -210,7 +210,7 @@ def assert_surface(
         f"{chapters}/{chapters} chapters",
         "externally positioned",
         "0 explicit external-baseline exceptions",
-        "Twenty-five narrow non-core transitions are recorded in",
+        "25 accepted non-core upward evidence transitions are recorded in",
         f"alongside {no_promotion_decisions} accepted `blocks_promotion` decisions",
         "Choose the product you need",
     ]

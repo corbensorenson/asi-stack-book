@@ -215,7 +215,19 @@ def validate(data: dict[str, object]) -> list[str]:
         # historical release identity remains authoritative in the release,
         # citation, reproducibility, and publication records below; requiring
         # it here would make an old release masquerade as the current book.
-        "README.md": (str(data["readme"]), [VERSION, NEXT_SUCCESSOR, NEXT_SUCCESSOR_STATUS, ACTIVE_CURRENT, ACTIVE_CURRENT_STATUS, *current_live_fragments, "sole active successor"]),
+        "README.md": (
+            str(data["readme"]),
+            [
+                VERSION,
+                ACTIVE_CURRENT,
+                ACTIVE_CURRENT_STATUS,
+                f"all {live_chapter_count} manifest chapters",
+                live_claim_sentence,
+                "mutable root site and `/latest/` are the canonical current publication",
+                "Versioned tags and GitHub Release assets are immutable historical snapshots",
+                "sole active roadmap",
+            ],
+        ),
         "index.qmd": (str(data["index"]), [VERSION, NEXT_SUCCESSOR, NEXT_SUCCESSOR_STATUS, ACTIVE_CURRENT, ACTIVE_CURRENT_STATUS, *current_live_fragments, "sole active successor"]),
         "docs/publication_readiness.md": (str(data["publication"]), [VERSION, NEXT_SUCCESSOR, NEXT_SUCCESSOR_STATUS, ACTIVE_CURRENT, ACTIVE_CURRENT_STATUS, COMMIT, DIGEST, live_claim_sentence, "root site and `/latest/` are mutable", "Active canonical successor roadmap"]),
         "docs/release_reproducibility.md": (str(data["reproducibility"]), [VERSION, COMMIT, DIGEST, "root and `/latest/` are mutable", "Historical v1.0.0 citation"]),
@@ -299,8 +311,8 @@ def mutation_controls(base: dict[str, object]) -> list[str]:
         if isinstance(part, dict)
     )
     stale_public_count["readme"] = str(stale_public_count["readme"]).replace(
-        f"all {current_count} chapters",
-        "all 55 chapters",
+        f"all {current_count} manifest chapters",
+        "all 55 manifest chapters",
     )
     mutations.append(("stale public chapter count", stale_public_count))
 

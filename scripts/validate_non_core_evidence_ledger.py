@@ -317,7 +317,7 @@ def main() -> None:
 
     surface_counts = [
         ("README.md", readme, "25 accepted non-core upward evidence transitions"),
-        ("index.qmd", index, "Twenty-five narrow non-core transitions are recorded in"),
+        ("index.qmd", index, "25 accepted non-core upward evidence transitions are recorded in"),
     ]
     for name, text, required in surface_counts:
         if required.lower() not in text.lower():

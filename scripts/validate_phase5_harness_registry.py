@@ -31,11 +31,11 @@ REQUIRED_FIELDS = {
     "primary_chapters",
     "non_claims",
 }
-PUBLIC_SURFACES = [
+DETAILED_PUBLIC_SURFACES = [
     ROOT / "docs" / "test_harness_status_ledger.md",
     ROOT / "docs" / "v1_0_roadmap.md",
-    ROOT / "README.md",
 ]
+COMPACT_PUBLIC_SURFACES = [ROOT / "README.md", ROOT / "docs" / "repository_map.md"]
 STATUS = ROOT / "docs" / "v1_0_candidate_status.md"
 
 
@@ -122,7 +122,7 @@ def validate_entry(entry: dict[str, Any], chapter_ids: set[str], shared_text: di
     if entry["command"] not in appendix_text:
         errors.append(f"{entry_id}: {entry['command']} is missing from Appendix E.")
 
-    for surface in PUBLIC_SURFACES:
+    for surface in DETAILED_PUBLIC_SURFACES:
         if entry["command"] not in shared_text[surface]:
             errors.append(f"{entry_id}: {entry['command']} is missing from {rel(surface)}.")
 
@@ -155,9 +155,21 @@ def main() -> None:
         ROOT / "validation" / "registry.json",
         ROOT / "appendices" / "E_codex_test_specs.qmd",
         STATUS,
-        *PUBLIC_SURFACES,
+        *DETAILED_PUBLIC_SURFACES,
+        *COMPACT_PUBLIC_SURFACES,
     ]
     shared_text = {path: path.read_text(encoding="utf-8", errors="ignore") for path in shared_paths}
+
+    compact_entrypoints = [
+        "experiments/phase5_harness_registry.json",
+        "docs/test_harness_status_ledger.md",
+        "scripts/validate_phase5_harness_registry.py",
+        "scripts/run_phase5_harnesses.py",
+    ]
+    for surface in COMPACT_PUBLIC_SURFACES:
+        for fragment in compact_entrypoints:
+            if fragment not in shared_text[surface]:
+                errors.append(f"{rel(surface)} missing compact Phase 5 harness entrypoint: {fragment}")
 
     status_text = shared_text[STATUS]
     for fragment in (

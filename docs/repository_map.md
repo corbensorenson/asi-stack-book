@@ -47,8 +47,12 @@ Prefer targeted checks during drafting. Run the full HTML render when manuscript
 |---|---|
 | Add, move, merge, or remove a chapter | Edit `book_structure.json`, run `python3 scripts/sync_scaffold.py`, then repair affected handoffs. |
 | Change proof scope | Edit the Lean target table in `docs/book_outline.md`, then run `python3 scripts/sync_proof_manifest.py`. |
-| Add a source | Update `sources/source_inventory.json`; add a source note only after reviewing the source. |
+| Add a source | Update `sources/source_inventory.json`; add a source note only after reviewing the source; regenerate `docs/chapter_external_grounding_status.md` when chapter coverage changes. |
 | Change support state | Add or revise the governed transition/decision record; regenerate Appendix C. |
+| Audit defended-contribution prior art | Review `docs/defended_contribution_prior_art_positioning.md`, then run `scripts/validate_defended_contribution_prior_art.py`. Positioning is not proof of novelty. |
+| Audit evidence-laundering defenses | Review `docs/evidence_laundering_prevention_case_studies.md`, then run `scripts/validate_evidence_laundering_case_studies.py`. Passing preserves case-study boundaries; it does not promote a claim. |
+| Audit historical chapter consolidation | Use `docs/chapter_consolidation_sequence.md` and `docs/chapter_consolidation_url_history_policy.md` as public entrypoints; run `scripts/validate_chapter_consolidation_sequence.py` for the complete retained history. |
+| Inspect or run the Phase 5 harness set | Use `experiments/phase5_harness_registry.json` and `docs/test_harness_status_ledger.md` as the canonical registry and public summary; check them with `scripts/validate_phase5_harness_registry.py` and execute them through `scripts/run_phase5_harnesses.py`. |
 | Revise human prose | Edit the chapter's human path or governed reader overlay while preserving evidence boundaries. |
 | Prepare a major release | Follow `docs/major_version_release_runbook.md` only after the roadmap opens that gate. |
 | Validate ordinary work | Run targeted validators, `python3 scripts/validate_book.py`, and HTML rendering when the public book changed. |

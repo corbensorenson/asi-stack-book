@@ -169,10 +169,19 @@ def errors(data: dict) -> list[str]:
     live_claim_identity = f"{live_chapter_count}/{live_chapter_count} chapter-core claims at `argument`"
     live_claim_sentence = f"All {live_chapter_count} live chapter-core claims remain at `argument`"
     for path, text in data["public_surfaces"].items():
-        for phrase in [ACTIVE_SUCCESSOR, ACTIVE_SUCCESSOR_STATUS, ACTIVE_CURRENT, ACTIVE_CURRENT_STATUS, "v2.3.0"]:
+        roadmap_phrases = (
+            [ACTIVE_CURRENT, ACTIVE_CURRENT_STATUS, "v2.3.0"]
+            if path == "README.md"
+            else [ACTIVE_SUCCESSOR, ACTIVE_SUCCESSOR_STATUS, ACTIVE_CURRENT, ACTIVE_CURRENT_STATUS, "v2.3.0"]
+        )
+        for phrase in roadmap_phrases:
             if phrase not in text:
                 out.append(f"{path} missing terminal public truth: {phrase}")
-        live_phrase = live_claim_sentence if path == "docs/publication_readiness.md" else live_claim_identity
+        live_phrase = (
+            live_claim_sentence
+            if path in {"README.md", "docs/publication_readiness.md"}
+            else live_claim_identity
+        )
         if live_phrase not in text:
             out.append(f"{path} missing current live claim identity: {live_phrase}")
     return out

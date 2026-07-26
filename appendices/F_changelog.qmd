@@ -11,6 +11,14 @@
 - Decoupled public-surface validators from historical reader, consolidation,
   and release-preparation file lists while retaining canonical trust,
   evidence-boundary, roadmap, and repository-health checks.
+- Reconciled the compact README with the deep historical-roadmap validators:
+  it now names the sole active roadmap, mutable current publication, latest
+  immutable release, exact-tag rights boundary, and canonical Phase 5 harness
+  entrypoints without restoring per-roadmap or per-command inventories.
+- Refreshed the proof-envelope and negative-inference generated ledgers after
+  the public-surface cleanup; all 104 current inference surfaces, including
+  84/84 chapters, retain zero forbidden overbroad phrases or missing
+  rehabilitation boundaries.
 - Added a durable low-write policy to the contributor, agent, living-update,
   and release-edition instructions: update canonical owners, keep transient
   diagnostics ignored, batch expensive validation, and reserve EPUB, PDF,

@@ -857,6 +857,12 @@ PUBLIC_REFERENCES = (
     "scripts/validate_chapter_consolidation_sequence.py",
 )
 
+PUBLIC_ENTRYPOINT_REFERENCES = (
+    "docs/chapter_consolidation_sequence.md",
+    "docs/chapter_consolidation_url_history_policy.md",
+    "scripts/validate_chapter_consolidation_sequence.py",
+)
+
 RELEASE_STABILITY_REQUIRED_FRAGMENTS = (
     "Chapter Consolidation Release-Stability Review",
     "Decision: defer any remaining unexecuted consolidation packages",
@@ -1502,11 +1508,16 @@ def main() -> None:
         }:
             errors.append(f"Release-stability review does not mention deferred chapter `{chapter_id}`.")
 
-    for path in (ROADMAP, README, PUBLICATION, REPOSITORY_MAP):
+    for path in (ROADMAP, PUBLICATION):
         text = read_text(path)
         for reference in PUBLIC_REFERENCES:
             if reference not in text:
                 errors.append(f"{path.relative_to(ROOT)} missing public reference to {reference}")
+    for path in (README, REPOSITORY_MAP):
+        text = read_text(path)
+        for reference in PUBLIC_ENTRYPOINT_REFERENCES:
+            if reference not in text:
+                errors.append(f"{path.relative_to(ROOT)} missing public entrypoint reference to {reference}")
 
     if errors:
         print("Chapter consolidation sequence validation failed:")

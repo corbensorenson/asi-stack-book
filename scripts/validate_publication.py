@@ -255,12 +255,12 @@ def main() -> None:
             f"{source_count} public-safe records",
             f"{chapter_count}/{chapter_count} chapters externally positioned",
             "0 explicit external-baseline exceptions",
-            "Twenty-five narrow non-core transitions are recorded in",
+            "The 25 accepted non-core upward evidence transitions are recorded in",
         ],
         "README.md": [
             f"{chapter_count}/{chapter_count} chapters are externally positioned",
             "0 explicit external-baseline exceptions",
-            "Twenty-five narrow non-core transitions are recorded in",
+            "The 25 accepted non-core upward evidence transitions are recorded in",
         ],
         "docs/publication_readiness.md": [
             f"{chapter_count} of {chapter_count} chapters currently have in-prose `ext_*` positioning",

@@ -204,10 +204,28 @@ def semantic_errors(data: dict) -> list[str]:
         f"{live_chapter_count}-chapter architecture index",
         "mutable root site and `/latest/` are the canonical current publication",
     ]
-    for name, text in [("README.md", data["readme"]), ("index.qmd", data["index"])]:
-        for phrase in [NEXT_SUCCESSOR_PATH, NEXT_SUCCESSOR_STATUS_PATH, ACTIVE_CURRENT_PATH, ACTIVE_CURRENT_STATUS_PATH, "v2.3.0", live_claim_identity, *current_public_identity]:
-            if phrase not in text:
-                errors.append(f"{name} missing roadmap/release truth: {phrase}")
+    readme_requirements = [
+        ACTIVE_CURRENT_PATH,
+        ACTIVE_CURRENT_STATUS_PATH,
+        "v2.3.0",
+        f"All {live_chapter_count} live chapter-core claims remain at `argument`",
+        f"all {live_chapter_count} manifest chapters",
+        "mutable root site and `/latest/` are the canonical current publication",
+    ]
+    for phrase in readme_requirements:
+        if phrase not in data["readme"]:
+            errors.append(f"README.md missing roadmap/release truth: {phrase}")
+    for phrase in [
+        NEXT_SUCCESSOR_PATH,
+        NEXT_SUCCESSOR_STATUS_PATH,
+        ACTIVE_CURRENT_PATH,
+        ACTIVE_CURRENT_STATUS_PATH,
+        "v2.3.0",
+        live_claim_identity,
+        *current_public_identity,
+    ]:
+        if phrase not in data["index"]:
+            errors.append(f"index.qmd missing roadmap/release truth: {phrase}")
     predecessor = data["predecessor"]
     if "Status: completed 2026-07-11" not in predecessor:
         errors.append("predecessor roadmap lost completed status")
