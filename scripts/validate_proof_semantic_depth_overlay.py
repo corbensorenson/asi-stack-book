@@ -25,6 +25,7 @@ from build_proof_semantic_depth_overlay import (
 
 SCHEMA = ROOT / "schemas" / "proof_semantic_depth_overlay.schema.json"
 HISTORICAL = ROOT / "proofs" / "proof_rationalization_registry.json"
+RATIONALIZATION_LEDGER = ROOT / "proofs" / "proof_semantic_rationalization_ledger.json"
 ALLOWED_LEVELS = set(LEVEL_MEANINGS)
 HIGH_LEVELS = {"P3", "P4", "P5", "P6"}
 REWRITE_OR_RETIRE = {
@@ -145,7 +146,14 @@ def errors(overlay: dict[str, Any], *, check_generation: bool = True) -> list[st
         if summary.get(key) != value:
             out.append(f"summary drift: {key}")
     if not any(row.get("disposition") in REWRITE_OR_RETIRE for row in rows):
-        out.append("overlay rationalizes nothing: rewrite/retire queue is empty")
+        ledger = load(RATIONALIZATION_LEDGER)
+        if (
+            ledger.get("state") != "dependency_safe_execution_complete"
+            or ledger.get("summary", {}).get("remaining_action_count") != 0
+        ):
+            out.append(
+                "empty rewrite/retire queue lacks a terminal rationalization ledger"
+            )
     if level_counts.get("P6", 0) and not all(
         row.get("empirical_observation_contract_refs")
         for row in rows if row.get("semantic_level") == "P6"

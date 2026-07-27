@@ -35,7 +35,14 @@ LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "RuntimeAdapters.lean"
 
 COMMAND = "python3 scripts/validate_human_oversight_degradation.py"
 CODEX_TEST_NAME = "Human oversight degradation fixture"
-LEAN_THEOREM = "human_oversight_degradation_fixture_bridge"
+PROOF_TAG = "lean:runtime.adapters.human_oversight_degradation_fixture_bridge"
+RETIRED_FIXTURE_THEOREM = "human_oversight_degradation_fixture_bridge"
+REQUIRED_THEOREMS = [
+    "high_impact_without_scoped_approval_routes_to_approval",
+    "confused_deputy_attempt_rejected_by_adapter_route",
+    "missing_effect_receipt_blocks_adapter_dispatch",
+    "support_effect_or_repo_write_preserves_no_promotion_boundary",
+]
 EXPECTED_VALID = {
     "valid_scoped_restored_reviewer_approval",
     "valid_fatigue_routed_to_reviewer_rotation",
@@ -210,7 +217,7 @@ def build_result(packet: dict[str, Any], errors: list[str]) -> dict[str, Any]:
         "trace_summary": summary,
         "lean_fixture_alignment": {
             "module": "AsiStackProofs.RuntimeAdapters",
-            "theorem_refs": [LEAN_THEOREM],
+            "theorem_refs": REQUIRED_THEOREMS,
             "expected": summary,
         },
         "support_state_effect": "none",
@@ -300,7 +307,7 @@ def validate_surfaces(errors: list[str]) -> None:
                 "Implemented human-oversight degradation fixture",
                 COMMAND,
                 rel(RESULT),
-                LEAN_THEOREM,
+                PROOF_TAG,
             ],
         ),
         rel(ROADMAP): (
@@ -342,7 +349,6 @@ def validate_surfaces(errors: list[str]) -> None:
             [
                 "HumanOversightDegradationFixtureSummary",
                 "humanOversightDegradationFixtureSummary",
-                LEAN_THEOREM,
             ],
         ),
     }
@@ -427,8 +433,14 @@ def validate_ledger_json(errors: list[str]) -> None:
 
 def validate_lean_shape(errors: list[str]) -> None:
     text = LEAN_FILE.read_text(encoding="utf-8")
-    if not re.search(rf"theorem\s+{re.escape(LEAN_THEOREM)}\b", text):
-        errors.append(f"{rel(LEAN_FILE)} missing theorem {LEAN_THEOREM}.")
+    for theorem in REQUIRED_THEOREMS:
+        if not re.search(rf"\btheorem\s+{re.escape(theorem)}\b", text):
+            errors.append(f"{rel(LEAN_FILE)} missing theorem {theorem}.")
+    if re.search(rf"\btheorem\s+{re.escape(RETIRED_FIXTURE_THEOREM)}\b", text):
+        errors.append(
+            f"{rel(LEAN_FILE)} must keep copied fixture theorem "
+            f"{RETIRED_FIXTURE_THEOREM} retired."
+        )
     for field in (
         "scopedApprovalAccepted",
         "fatigueRoutedToRotation",

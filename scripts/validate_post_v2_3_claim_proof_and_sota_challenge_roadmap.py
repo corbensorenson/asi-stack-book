@@ -1729,9 +1729,9 @@ def errors(data: dict) -> list[str]:
         if phrase.casefold() not in data["verification_bandwidth_dossier"].casefold(): out.append(f"verification-bandwidth dossier missing adequacy boundary: {phrase}")
 
     expected_claim_ledger_contract = {
-        "current_missing_or_changed_theorem_count":450,
-        "current_missing_or_changed_target_count":233,
-        "current_live_theorem_declaration_count":1227,
+        "current_missing_or_changed_theorem_count":459,
+        "current_missing_or_changed_target_count":237,
+        "current_live_theorem_declaration_count":1219,
         "current_live_proof_target_count":320,
         "claim_ledger_model_path":"lean/AsiStackProofs/ClaimLedgerRefinement.lean",
         "claim_ledger_dossier_path":CLAIM_LEDGER_DOSSIER,

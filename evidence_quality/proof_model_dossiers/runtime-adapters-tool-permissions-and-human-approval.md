@@ -65,7 +65,7 @@ Generated from the frozen activation-baseline inventory and semantic review over
 | `revocation_route_missing_receipt_requests_effect_receipt` | derived_or_decomposed | semantically_reviewed | retain_countermodel_or_negative_case |
 | `complete_revocation_route_dispatches` | derived_or_decomposed | semantically_reviewed | retain_reusable_lemma |
 | `runtime_adapter_adversarial_boundary_probe_bridge` | direct_or_projection | terminally_dispositioned | retire_projection_or_assumption_restatement |
-| `human_oversight_degradation_fixture_bridge` | derived_or_decomposed | terminally_dispositioned | replace_with_stronger_model |
+| `human_oversight_degradation_fixture_bridge` | derived_or_decomposed | terminally_dispositioned | retire_projection_or_assumption_restatement |
 
 ## Required closure
 

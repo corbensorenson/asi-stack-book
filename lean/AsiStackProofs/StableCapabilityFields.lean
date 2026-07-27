@@ -398,11 +398,6 @@ def scfLifecycleTraceProbeFixture : ScfLifecycleTraceProbeSummary :=
     noSupportStatePromotion := true
   }
 
-theorem scf_lifecycle_trace_probe_fixture_valid :
-    ScfLifecycleTraceProbeValid scfLifecycleTraceProbeFixture := by
-  unfold ScfLifecycleTraceProbeValid scfLifecycleTraceProbeFixture
-  simp
-
 def ScfLifecycleTraceProbeRejectsUnsafeTransitions
     (summary : ScfLifecycleTraceProbeSummary) : Prop :=
   summary.invalidControls = 6 ->
@@ -412,25 +407,10 @@ def ScfLifecycleTraceProbeRejectsUnsafeTransitions
       summary.retiredRestartRejected = true ∧
       summary.terminalNoticeAndReceiptRequired = true
 
-theorem scf_lifecycle_trace_probe_rejects_unsafe_transitions :
-    ScfLifecycleTraceProbeRejectsUnsafeTransitions
-      scfLifecycleTraceProbeFixture := by
-  unfold ScfLifecycleTraceProbeRejectsUnsafeTransitions
-    scfLifecycleTraceProbeFixture
-  intro _
-  simp
-
 def ScfLifecycleTraceProbePreservesNoPromotionBoundary
     (summary : ScfLifecycleTraceProbeSummary) : Prop :=
   summary.noDeployedRouteValidationClaim = true ∧
     summary.noRollbackExecutionClaim = true ∧
     summary.noSupportStatePromotion = true
-
-theorem scf_lifecycle_trace_probe_preserves_no_promotion_boundary :
-    ScfLifecycleTraceProbePreservesNoPromotionBoundary
-      scfLifecycleTraceProbeFixture := by
-  unfold ScfLifecycleTraceProbePreservesNoPromotionBoundary
-    scfLifecycleTraceProbeFixture
-  simp
 
 end AsiStackProofs.StableCapabilityFields

@@ -1230,11 +1230,4 @@ def HumanOversightDegradationFixtureValid
                       summary.supportStateEffectNone = true ∧
                         summary.chapterCoreSupportEffectNone = true
 
-theorem human_oversight_degradation_fixture_bridge :
-    HumanOversightDegradationFixtureValid
-      humanOversightDegradationFixtureSummary := by
-  unfold HumanOversightDegradationFixtureValid
-  unfold humanOversightDegradationFixtureSummary
-  simp
-
 end AsiStackProofs.RuntimeAdapters

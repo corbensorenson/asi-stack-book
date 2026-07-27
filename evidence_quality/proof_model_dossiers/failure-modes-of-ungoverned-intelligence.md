@@ -36,7 +36,7 @@ Generated from the frozen activation-baseline inventory and semantic review over
 | `open_escape_path_without_quarantine_quarantines` | derived_or_decomposed | semantically_reviewed | retain_countermodel_or_negative_case |
 | `support_promotion_without_failure_evidence_transition_requests_transition` | derived_or_decomposed | semantically_reviewed | retain_countermodel_or_negative_case |
 | `failure_record_without_nonclaim_boundary_preserves_boundary` | derived_or_decomposed | semantically_reviewed | retain_load_bearing_semantic |
-| `complete_failure_record_closes_record` | derived_or_decomposed | terminally_dispositioned | replace_with_stronger_model |
+| `complete_failure_record_closes_record` | derived_or_decomposed | terminally_dispositioned | retire_projection_or_assumption_restatement |
 | `failure_taxonomy_detector_probe_bridge` | direct_or_projection | terminally_dispositioned | retire_projection_or_assumption_restatement |
 
 ## Required closure

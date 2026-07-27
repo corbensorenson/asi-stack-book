@@ -19,9 +19,9 @@ Generated from the frozen activation-baseline inventory and semantic review over
 | `accepted_readiness_promotion_requires_transfer_negative_and_regression_records` | derived_or_decomposed | semantically_reviewed | retain_load_bearing_semantic |
 | `accepted_saturated_floor_requires_regression_records` | derived_or_decomposed | semantically_reviewed | retain_load_bearing_semantic |
 | `contaminated_review_cannot_promote_readiness` | derived_or_decomposed | semantically_reviewed | retain_load_bearing_semantic |
-| `benchmark_antigoodhart_fixture_bridge_valid` | derived_or_decomposed | terminally_dispositioned | replace_with_stronger_model |
-| `benchmark_antigoodhart_fixture_bridge_has_expected_controls` | derived_or_decomposed | terminally_dispositioned | replace_with_stronger_model |
-| `benchmark_antigoodhart_fixture_bridge_preserves_no_support_promotion` | derived_or_decomposed | terminally_dispositioned | replace_with_stronger_model |
+| `benchmark_antigoodhart_fixture_bridge_valid` | derived_or_decomposed | terminally_dispositioned | retire_projection_or_assumption_restatement |
+| `benchmark_antigoodhart_fixture_bridge_has_expected_controls` | derived_or_decomposed | terminally_dispositioned | retire_projection_or_assumption_restatement |
+| `benchmark_antigoodhart_fixture_bridge_preserves_no_support_promotion` | derived_or_decomposed | terminally_dispositioned | retire_projection_or_assumption_restatement |
 
 ## Required closure
 

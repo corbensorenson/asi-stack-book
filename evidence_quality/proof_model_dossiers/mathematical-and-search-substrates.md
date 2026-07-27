@@ -22,7 +22,7 @@ Generated from the frozen activation-baseline inventory and semantic review over
 | `qualified_substrate_without_passing_evidence_rejected` | derived_or_decomposed | terminally_dispositioned | merge_duplicate |
 | `consumer_axis_reliance_without_measurement_or_unblocked_axis_rejected` | derived_or_decomposed | semantically_reviewed | retain_countermodel_or_negative_case |
 | `canary_substrate_without_complete_evidence_packet_rejected` | derived_or_decomposed | semantically_reviewed | retain_countermodel_or_negative_case |
-| `substrate_adoption_trace_fixture_valid` | derived_or_decomposed | terminally_dispositioned | replace_with_stronger_model |
+| `substrate_adoption_trace_fixture_valid` | derived_or_decomposed | terminally_dispositioned | retire_projection_or_assumption_restatement |
 | `substrate_adoption_trace_rejects_axis_laundering` | derived_or_decomposed | terminally_dispositioned | retire_projection_or_assumption_restatement |
 | `substrate_adoption_trace_preserves_no_promotion_boundary` | derived_or_decomposed | terminally_dispositioned | retire_projection_or_assumption_restatement |
 

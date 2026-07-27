@@ -469,16 +469,17 @@ This failure-radar layer is still an architectural safety discipline. Its suppor
 |---|---|---|---|
 | `lean:failure.invariant_violation.operational_invariant` | `AsiStackProofs.FailureModes` | A component with a failed required invariant cannot be promoted. | implemented |
 | `lean:failure.invariant_violation.failure_blocks_promotion` | `AsiStackProofs.FailureModes` | A finite incident whose authority exceeds its ceiling routes to explicit authority review. | implemented |
-| `lean:failure.recurrence.escalation_route` | `AsiStackProofs.FailureModes` | Modeled failure recurrence and receipt review routes missing failure class, boundary, receipt, owner, containment, residual, learning path, normalization guard, review escalation, quarantine, evidence-transition, and non-claim-boundary records to explicit outcomes. | implemented |
+| `lean:failure.recurrence.escalation_route` | `AsiStackProofs.FailureModes` | If the finite failure-recurrence router returns closeFailureRecord, every required failure, class, boundary, receipt, owner, containment, residual, learning, normalization, and non-claim field is true and no earlier recurrence, severe-irreversible, unreviewed-promotion, unquarantined-escape, or missing-evidence-transition branch applies. | implemented |
 | `lean:failure.taxonomy.detector_probe_bridge` | `AsiStackProofs.FailureModes` | An independent finite incident consumer validates authority-creep and Goodhart/evaluator-drift fixtures and rejecting controls, while the retained Lean failure-record route family covers required-field repair, escalation, quarantine, residual, learning, normalization, evidence-transition, non-claim, and closure branches. | implemented |
 
-These proof targets are implemented only over finite Lean records in `AsiStackProofs.FailureModes`. They prove that a modeled component with a failed required invariant is not promotable, that an explicit authority-over-ceiling incident routes to authority review, that three other modeled incident states route to quarantine, frozen review, or blocked promotion, and that modeled failure recurrence records route missing class, boundary, receipt, owner, containment, residual, learning-path, normalization-guard, review, quarantine, evidence-transition, and non-claim-boundary fields to explicit outcomes. The former direct `GovernanceFailure` field projection is retired; the public authority target now binds to the retained incident-route theorem.
+These proof targets are implemented only over finite Lean records in `AsiStackProofs.FailureModes`. They prove that a modeled component with a failed required invariant is not promotable, that an explicit authority-over-ceiling incident routes to authority review, that three other modeled incident states route to quarantine, frozen review, or blocked promotion, and that modeled failure recurrence records route missing class, boundary, receipt, owner, containment, residual, learning-path, normalization-guard, review, quarantine, evidence-transition, and non-claim-boundary fields to explicit outcomes. The close-state result is now an input-general inverse: returning `closeFailureRecord` entails every required field and excludes every earlier guard, rather than merely normalizing an authored all-green constant. The former direct `GovernanceFailure` field projection is retired; the public authority target now binds to the retained incident-route theorem.
 
 The module contains twenty-one declarations. The former detector-probe summary
 projection is retired. The independent Python consumer now carries exact
-fixture validation, and it is bound to the retained fifteen-theorem
-failure-record route family rather than to a theorem that merely returned an
-assumed conjunction. Runtime scenario coverage, evaluator independence,
+fixture validation, and it is bound to the retained sixteen-theorem
+failure-record route family, including the quantified close-route inverse,
+rather than to a theorem that merely normalized an authored witness. Runtime
+scenario coverage, evaluator independence,
 context-pollution containment, claim-verifier quality, recurrence detection,
 deployed failure detection, prevention, and mitigation effectiveness remain
 executable-test obligations. These hooks do not prove those properties and do

@@ -769,7 +769,11 @@
     "module": "AsiStackProofs.SearchSubstrates",
     "proof_tag": "lean:substrates.search.adoption_trace_bridge",
     "theorem_refs": [
-      "substrate_adoption_trace_fixture_valid"
+      "substrate_adoption_record_missing_required_field_rejected",
+      "unproven_qualified_record_contradicts_noncore_invariant",
+      "qualified_substrate_without_passing_evidence_rejected",
+      "consumer_axis_reliance_without_measurement_or_unblocked_axis_rejected",
+      "canary_substrate_without_complete_evidence_packet_rejected"
     ],
     "expected": {
       "valid_trace_count": 4,

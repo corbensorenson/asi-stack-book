@@ -37,9 +37,9 @@ Generated from the frozen activation-baseline inventory and semantic review over
 | `default_with_open_incident_rejected` | derived_or_decomposed | semantically_reviewed | retain_countermodel_or_negative_case |
 | `deprecated_transition_requires_notice` | direct_or_projection | terminally_dispositioned | retire_projection_or_assumption_restatement |
 | `retirement_transition_requires_receipt` | direct_or_projection | terminally_dispositioned | retire_projection_or_assumption_restatement |
-| `scf_lifecycle_trace_probe_fixture_valid` | derived_or_decomposed | terminally_dispositioned | replace_with_stronger_model |
-| `scf_lifecycle_trace_probe_rejects_unsafe_transitions` | derived_or_decomposed | terminally_dispositioned | replace_with_stronger_model |
-| `scf_lifecycle_trace_probe_preserves_no_promotion_boundary` | derived_or_decomposed | terminally_dispositioned | replace_with_stronger_model |
+| `scf_lifecycle_trace_probe_fixture_valid` | derived_or_decomposed | terminally_dispositioned | retire_projection_or_assumption_restatement |
+| `scf_lifecycle_trace_probe_rejects_unsafe_transitions` | derived_or_decomposed | terminally_dispositioned | retire_projection_or_assumption_restatement |
+| `scf_lifecycle_trace_probe_preserves_no_promotion_boundary` | derived_or_decomposed | terminally_dispositioned | retire_projection_or_assumption_restatement |
 
 ## Required closure
 

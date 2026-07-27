@@ -5,7 +5,7 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/failure-modes-of-ungoverned-intelligence.qmd",
     "structured_atoms_reviewed": 32,
-    "prose_candidates_adjudicated": 69,
+    "prose_candidates_adjudicated": 70,
     "unowned_material_claims": 0,
     "review_note": "Reviewed the complete chapter, manifest semantics, tables and diagrams, all four formal targets, every scanner candidate, and unscanned taxonomy bullets. The sweep replaced a dramatic risk list with a versioned Failure Boundary Map; separated named risk, observed event, detection, containment, and mitigation; added explicit unmapped-event, evaluator-independence, negative-evidence, recurrence, ownership-transfer, and revalidation obligations; expanded six prose-only failure obligations into manifest ownership; and preserved zero support-state effect."
   },
@@ -296,7 +296,12 @@
     "failure-modes-of-ungoverned-intelligence.prose.3d458a7a2ac7": {"state": "duplicate_of_atom", "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.", "target_atom_id": "failure-modes-of-ungoverned-intelligence.core"},
     "failure-modes-of-ungoverned-intelligence.prose.aa253d98e6e8": {"state": "duplicate_of_atom", "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.", "target_atom_id": "failure-modes-of-ungoverned-intelligence.core"},
     "failure-modes-of-ungoverned-intelligence.prose.6737d4cee4fa": {"state": "duplicate_of_atom", "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.", "target_atom_id": "failure-modes-of-ungoverned-intelligence.core"},
-    "failure-modes-of-ungoverned-intelligence.prose.7a6b8e699a80": {"state": "historical_or_source_report", "rationale": "Bounded source, measurement, or explicit non-claim report; it adds no independent load-bearing atom."}
+    "failure-modes-of-ungoverned-intelligence.prose.7a6b8e699a80": {"state": "historical_or_source_report", "rationale": "Bounded source, measurement, or explicit non-claim report; it adds no independent load-bearing atom."},
+    "failure-modes-of-ungoverned-intelligence.prose.23e67ca05ff1": {
+      "state": "duplicate_of_atom",
+      "rationale": "Explains the completed input-general inverse theorem and its improvement over the retired authored-constant normalization; the formal target already owns the claim.",
+      "target_atom_id": "failure-modes-of-ungoverned-intelligence.formal.failure-recurrence-escalation-route"
+    }
   },
   "prose_review_lineage": [
     {

@@ -456,11 +456,110 @@ theorem failure_record_without_nonclaim_boundary_preserves_boundary
     learning, guard, noRecurrence, notSevere, noPromotion, noEscape,
     noSupportPromotion, missingNonClaim]
 
-theorem complete_failure_record_closes_record :
-    FailureRecurrenceRouteFor completeFailureRecurrenceReview =
-      FailureRecurrenceRoute.closeFailureRecord := by
-  unfold FailureRecurrenceRouteFor completeFailureRecurrenceReview
-  simp
+theorem failure_route_close_implies_complete_required_record
+    {review : FailureRecurrenceReview} :
+    FailureRecurrenceRouteFor review =
+        FailureRecurrenceRoute.closeFailureRecord ->
+      review.failureRecorded = true ∧
+      review.failureClassRecorded = true ∧
+      review.boundaryRecorded = true ∧
+      review.receiptRecorded = true ∧
+      review.ownerRecorded = true ∧
+      review.containmentRecorded = true ∧
+      review.residualRecorded = true ∧
+      review.learningPathRecorded = true ∧
+      review.normalizationGuardRecorded = true ∧
+      ¬ (review.recurrenceObserved = true ∧ review.reviewRecorded = false) ∧
+      ¬ (review.severityHigh = true ∧ review.reversible = false ∧
+          review.reviewRecorded = false) ∧
+      ¬ (review.promotionRequested = true ∧ review.reviewRecorded = false) ∧
+      ¬ (review.escapePathOpen = true ∧ review.quarantineRecorded = false) ∧
+      ¬ (review.supportPromotionRequested = true ∧
+          review.evidenceTransitionRecorded = false) ∧
+      review.nonClaimBoundaryRecorded = true := by
+  intro closeRoute
+  have boolTrue {b : Bool} (notFalse : ¬ b = false) : b = true := by
+    cases b <;> simp_all
+  by_cases failureMissing : review.failureRecorded = false
+  · simp [FailureRecurrenceRouteFor, failureMissing] at closeRoute
+  have failure := boolTrue failureMissing
+  by_cases classMissing : review.failureClassRecorded = false
+  · simp [FailureRecurrenceRouteFor, failure, classMissing] at closeRoute
+  have failureClass := boolTrue classMissing
+  by_cases boundaryMissing : review.boundaryRecorded = false
+  · simp [FailureRecurrenceRouteFor, failure, failureClass, boundaryMissing] at closeRoute
+  have boundary := boolTrue boundaryMissing
+  by_cases receiptMissing : review.receiptRecorded = false
+  · simp [FailureRecurrenceRouteFor, failure, failureClass, boundary,
+      receiptMissing] at closeRoute
+  have receipt := boolTrue receiptMissing
+  by_cases ownerMissing : review.ownerRecorded = false
+  · simp [FailureRecurrenceRouteFor, failure, failureClass, boundary, receipt,
+      ownerMissing] at closeRoute
+  have owner := boolTrue ownerMissing
+  by_cases containmentMissing : review.containmentRecorded = false
+  · simp [FailureRecurrenceRouteFor, failure, failureClass, boundary, receipt,
+      owner, containmentMissing] at closeRoute
+  have containment := boolTrue containmentMissing
+  by_cases residualMissing : review.residualRecorded = false
+  · simp [FailureRecurrenceRouteFor, failure, failureClass, boundary, receipt,
+      owner, containment, residualMissing] at closeRoute
+  have residual := boolTrue residualMissing
+  by_cases learningMissing : review.learningPathRecorded = false
+  · simp [FailureRecurrenceRouteFor, failure, failureClass, boundary, receipt,
+      owner, containment, residual, learningMissing] at closeRoute
+  have learning := boolTrue learningMissing
+  by_cases guardMissing : review.normalizationGuardRecorded = false
+  · simp [FailureRecurrenceRouteFor, failure, failureClass, boundary, receipt,
+      owner, containment, residual, learning, guardMissing] at closeRoute
+  have guard := boolTrue guardMissing
+  by_cases recurrenceEscalates :
+      review.recurrenceObserved = true ∧ review.reviewRecorded = false
+  · simp [FailureRecurrenceRouteFor, failure, failureClass, boundary, receipt,
+      owner, containment, residual, learning, guard, recurrenceEscalates] at closeRoute
+  by_cases severeEscalates :
+      review.severityHigh = true ∧ review.reversible = false ∧
+        review.reviewRecorded = false
+  · rcases severeEscalates with ⟨severity, irreversible, noReview⟩
+    have noRecurrence : ¬ review.recurrenceObserved = true := by
+      intro recurrence
+      exact recurrenceEscalates ⟨recurrence, noReview⟩
+    simp [FailureRecurrenceRouteFor, failure, failureClass, boundary, receipt,
+      owner, containment, residual, learning, guard, noRecurrence, severity,
+      irreversible, noReview] at closeRoute
+  by_cases promotionBlocks :
+      review.promotionRequested = true ∧ review.reviewRecorded = false
+  · rcases promotionBlocks with ⟨promotion, noReview⟩
+    have noRecurrence : ¬ review.recurrenceObserved = true := by
+      intro recurrence
+      exact recurrenceEscalates ⟨recurrence, noReview⟩
+    have noSevereIrreversible :
+        ¬ (review.severityHigh = true ∧ review.reversible = false) := by
+      intro severeIrreversible
+      exact severeEscalates ⟨severeIrreversible.1, severeIrreversible.2, noReview⟩
+    simp [FailureRecurrenceRouteFor, failure, failureClass, boundary, receipt,
+      owner, containment, residual, learning, guard, noRecurrence,
+      noSevereIrreversible, promotion, noReview] at closeRoute
+  by_cases escapeQuarantines :
+      review.escapePathOpen = true ∧ review.quarantineRecorded = false
+  · simp [FailureRecurrenceRouteFor, failure, failureClass, boundary, receipt,
+      owner, containment, residual, learning, guard, recurrenceEscalates,
+      severeEscalates, promotionBlocks, escapeQuarantines] at closeRoute
+  by_cases transitionMissing :
+      review.supportPromotionRequested = true ∧
+        review.evidenceTransitionRecorded = false
+  · simp [FailureRecurrenceRouteFor, failure, failureClass, boundary, receipt,
+      owner, containment, residual, learning, guard, recurrenceEscalates,
+      severeEscalates, promotionBlocks, escapeQuarantines, transitionMissing] at closeRoute
+  by_cases nonClaimMissing : review.nonClaimBoundaryRecorded = false
+  · simp [FailureRecurrenceRouteFor, failure, failureClass, boundary, receipt,
+      owner, containment, residual, learning, guard, recurrenceEscalates,
+      severeEscalates, promotionBlocks, escapeQuarantines, transitionMissing,
+      nonClaimMissing] at closeRoute
+  have nonClaim := boolTrue nonClaimMissing
+  exact ⟨failure, failureClass, boundary, receipt, owner, containment, residual,
+    learning, guard, recurrenceEscalates, severeEscalates, promotionBlocks,
+    escapeQuarantines, transitionMissing, nonClaim⟩
 
 structure FailureTaxonomyDetectorProbeSummary where
   authorityCreepIncidentPresent : Bool

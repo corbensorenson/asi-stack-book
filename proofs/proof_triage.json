@@ -144,11 +144,11 @@
       "tag": "lean:failure.recurrence.escalation_route",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
       "module": "AsiStackProofs.FailureModes",
-      "formal_target": "Modeled failure recurrence and receipt review routes missing failure class, boundary, receipt, owner, containment, residual, learning path, normalization guard, review escalation, quarantine, evidence-transition, and non-claim-boundary records to explicit outcomes.",
+      "formal_target": "If the finite failure-recurrence router returns closeFailureRecord, every required failure, class, boundary, receipt, owner, containment, residual, learning, normalization, and non-claim field is true and no earlier recurrence, severe-irreversible, unreviewed-promotion, unquarantined-escape, or missing-evidence-transition branch applies.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented in AsiStackProofs.FailureModes as a finite recurrence and failure-receipt route over explicit failure class, boundary, receipt, owner, containment, residual, learning-path, normalization-guard, review, quarantine, evidence-transition, and non-claim-boundary records; it does not prove runtime scenario coverage, evaluator independence, context containment, claim-verifier quality, recurrence detection, deployed failure detection, or support-state promotion."
+      "rationale": "C6 final rationalization keeps executable outcomes separate from formal route properties and replaces the authored close-state fixture with a quantified inverse; no copied summary is counted as formal evidence."
     },
     {
       "tag": "lean:failure.taxonomy.detector_probe_bridge",
@@ -544,11 +544,11 @@
       "tag": "lean:scf.lifecycle.trace_fixture_bridge",
       "chapter_id": "stable-capability-fields",
       "module": "AsiStackProofs.StableCapabilityFields",
-      "formal_target": "The synthetic SCF lifecycle trace summary records two valid traces, six expected-invalid controls, forward lifecycle coverage, incident quarantine coverage, unsafe-transition rejection, and no deployed-route-validation, rollback-execution, or support-state-promotion claim.",
+      "formal_target": "An independent SCF lifecycle consumer computes two valid traces and six rejected controls; separately, retained quantified lifecycle theorems route identity, evidence, lease, evaluator, authority, incident, transition, and retirement failures. Executable totals and no-promotion flags are not copied into Lean.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented in AsiStackProofs.StableCapabilityFields as a finite summary bridge for python3 scripts/validate_scf_lifecycle_trace.py; the bridge records trace counts, forward and quarantine coverage, negative controls, and explicit no-promotion boundaries."
+      "rationale": "C6 final rationalization keeps executable outcomes separate from formal route properties and replaces the authored close-state fixture with a quantified inverse; no copied summary is counted as formal evidence."
     },
     {
       "tag": "lean:replacement.transaction.operational_invariant",
@@ -1604,11 +1604,11 @@
       "tag": "lean:runtime.adapters.human_oversight_degradation_fixture_bridge",
       "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
       "module": "AsiStackProofs.RuntimeAdapters",
-      "formal_target": "A modeled human-oversight degradation fixture accepts scoped low-fatigue approval, routes overloaded reviewers to delay or rotation, blocks automation-bias cases, and rejects missing qualifications, rubber-stamped approvals, alarm-fatigue acceptance, support-state promotion, and missing non-claim boundaries.",
+      "formal_target": "An independent human-oversight consumer computes low-fatigue, overload, automation-bias, and invalid-control outcomes; separately, retained runtime-adapter route theorems govern permission, approval, lease, sandbox, rollback, receipt, and revocation boundaries. Lean does not formalize reviewer cognition or copy the consumer summary.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented in AsiStackProofs.RuntimeAdapters as a finite fixture-summary bridge over the human oversight degradation fixture: it preserves the accepted scoped-approval, reviewer-rotation, automation-bias blocking, rubber-stamp rejection, alarm-fatigue escalation, no-support-state, and non-claim boundaries without claiming reviewer correctness or deployed approval-service behavior."
+      "rationale": "C6 final rationalization keeps executable outcomes separate from formal route properties and replaces the authored close-state fixture with a quantified inverse; no copied summary is counted as formal evidence."
     },
     {
       "tag": "lean:embodiment.missing_safety_state_blocks_control",
@@ -2454,11 +2454,11 @@
       "tag": "lean:benchmarks.ratchet.fixture_bridge",
       "chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
       "module": "AsiStackProofs.BenchmarkRatchets",
-      "formal_target": "The benchmark anti-Goodhart fixture bridge mirrors 2 valid fixtures, 5 expected-invalid controls, promotion-ready, regression-floor, missing-checks, blocked-ratchet policy, reward-as-truth, saturated-promotion, release-approval, no-support-promotion, and non-claim-boundary facts.",
+      "formal_target": "An independent benchmark anti-Goodhart consumer computes two valid fixtures and five rejected controls; separately, retained quantified ratchet theorems require clean transfer-or-mutation checks, negative-evidence preservation, and regression records and reject contaminated promotion. Executable totals are not imported into Lean.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented in AsiStackProofs.BenchmarkRatchets as a finite fixture-summary mirror for the benchmark anti-Goodhart harness: it records positive/negative synthetic controls and no-support-promotion boundaries only, without proving empirical benchmark quality, hidden-holdout integrity, policy-training quality, steward execution, release safety, Theseus benchmark practice, or chapter-core support movement."
+      "rationale": "C6 final rationalization keeps executable outcomes separate from formal route properties and replaces the authored close-state fixture with a quantified inverse; no copied summary is counted as formal evidence."
     },
     {
       "tag": "lean:white_box.evidence_never_grants_authority",

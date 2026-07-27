@@ -40,6 +40,11 @@ COMMAND = "python3 scripts/validate_benchmark_fixture_bridge.py"
 PROOF_TAG = "lean:benchmarks.ratchet.fixture_bridge"
 CODEX_TEST_NAME = "Benchmark anti-Goodhart fixture bridge"
 REQUIRED_THEOREMS = [
+    "accepted_readiness_promotion_requires_transfer_negative_and_regression_records",
+    "accepted_saturated_floor_requires_regression_records",
+    "contaminated_review_cannot_promote_readiness",
+]
+RETIRED_FIXTURE_THEOREMS = [
     "benchmark_antigoodhart_fixture_bridge_valid",
     "benchmark_antigoodhart_fixture_bridge_has_expected_controls",
     "benchmark_antigoodhart_fixture_bridge_preserves_no_support_promotion",
@@ -189,7 +194,7 @@ def build_expected_result(summary: dict[str, Any]) -> dict[str, Any]:
         "command": COMMAND,
         "input_fixture_dir": rel(FIXTURE_DIR),
         "result_kind": "synthetic_cross_record_fixture_bridge",
-        "proof_bridge_type": "Python/Lean finite fixture-summary equivalence",
+        "proof_bridge_type": "independent executable fixture with separate quantified Lean decision consequences",
         **summary,
         "lean_fixture_alignment": {
             "module": "AsiStackProofs.BenchmarkRatchets",
@@ -259,8 +264,11 @@ def validate_lean_fixture(errors: list[str]) -> None:
                 f"must be {expected_text}."
             )
     for theorem in REQUIRED_THEOREMS:
-        if theorem not in text:
+        if not re.search(rf"\btheorem\s+{re.escape(theorem)}\b", text):
             errors.append(f"{rel(LEAN_FIXTURE)} missing theorem {theorem}.")
+    for theorem in RETIRED_FIXTURE_THEOREMS:
+        if re.search(rf"\btheorem\s+{re.escape(theorem)}\b", text):
+            errors.append(f"{rel(LEAN_FIXTURE)} must keep copied fixture theorem {theorem} retired.")
 
 
 def manifest_contains_bridge(errors: list[str]) -> None:
@@ -295,7 +303,7 @@ def validate_surfaces(errors: list[str]) -> None:
             COMMAND,
             rel(RESULT),
             "2 valid fixture(s), 5 expected-invalid fixture(s)",
-            "Python/Lean finite fixture-summary equivalence",
+            "independent executable fixture with separate quantified Lean decision consequences",
         ],
         CHAPTER: [
             COMMAND,
@@ -356,7 +364,7 @@ def main() -> None:
         "Benchmark fixture bridge validation passed: "
         f"{summary['valid_fixture_count']} valid fixture(s), "
         f"{summary['expected_invalid_fixture_count']} expected-invalid fixture(s), "
-        "Lean fixture bridge aligned."
+        "executable fixture and quantified Lean decision boundary aligned."
     )
 
 

@@ -1034,7 +1034,7 @@ that remains safe only by never completing useful work fails the joint gate.
 
 Keep the existing syntax-level classifier, but add a semantic-depth overlay for
 every current declaration. The immutable pre-rationalization baseline contains
-1,370 declarations; the live estate contains 1,227 after 149
+1,370 declarations; the live estate contains 1,219 after 157
 dependency-safe retirement transactions and two proposition-preserving scope
 rewrites:
 
@@ -1233,11 +1233,11 @@ historical review. The immutable historical registry remains exactly 1,151
 theorems across 298 targets. The separately frozen pre-rationalization overlay
 at commit `d0f9bda14f1253999f2c40d556d925d31e4b36a4` classifies all 1,370
 baseline declarations. The current overlay in
-`proofs/proof_semantic_depth_overlay.json` classifies all 1,227 live theorem
+`proofs/proof_semantic_depth_overlay.json` classifies all 1,219 live theorem
 declarations across 105 theorem-bearing modules and maps them to 61 active
 semantic-owner chapters.
 
-The live semantic-depth distribution is 23 P0 record-shape results, 679 P1
+The live semantic-depth distribution is 19 P0 record-shape results, 675 P1
 finite-route results, 25 P2 reachability/nonvacuity results, 323 P3
 implementation-refinement results, 94 P4 cross-component-safety results, 83 P5
 liveness/recovery results, and zero P6 empirically bound results. P6 being zero
@@ -1247,8 +1247,8 @@ artifact does not turn a theorem into empirical evidence.
 Every overlay row records its assumptions, active semantic owner, downstream
 consumer, witness or explicit witness absence, implementation binding, mutation
 evidence, maximum inference, and disposition. The resulting current estate is
-1,218 retain, zero retire as narrow projection, zero pending scope-language
-rewrites, and nine stronger-model rewrites. All 1,227 rows have mutation coverage and every
+1,219 retain, zero retire as narrow projection, zero pending scope-language
+rewrites, and zero stronger-model actions remaining. All 1,219 rows have mutation coverage and every
 retained theorem has a named consumer.
 
 The cumulative dependency-safe retirement ledger is
@@ -1536,14 +1536,14 @@ missing-evidence blocker. Four repository-specific audit mirrors are removed
 from the formal queue because their executable consumers already preserve the
 honest scope; copied formal summaries would add ceremony, not evidence.
 
-This receipt completes the C6 **classification** gate and advances its
-dependency-safe execution gate. Exactly 151 of the original 161 actions have
-been executed: 149 theorem retirements and two proposition-preserving
-scope rewrites. Exactly nine stronger-model actions remain. The next proof
-action is to retire eight Benchmark/Runtime/Search/Stable-Capability summary
-mirrors, followed by the one audited Failure Modes inverse-route property. New
-proof work remains reserved for conclusions consumed by a reachable
-implementation or the natural flagship.
+This receipt completes both the C6 **classification** and dependency-safe
+execution gates. All 160 approved actions are terminal: 157 theorem
+retirements, two proposition-preserving scope rewrites, and one quantified
+inverse-route replacement. The apparent 161st baseline candidate was the
+separately recorded false-duplicate disposition that semantic review correctly
+overturned and retained. Zero stronger-model actions remain. New proof work is
+reserved for conclusions consumed by a reachable implementation or the natural
+flagship.
 
 The 2026-07-26 terminal residual triage in
 `proofs/c6_remaining_stronger_model_audit.json` now removes ambiguity from
@@ -1563,7 +1563,7 @@ Failure Modes inverse rewrite. This audit creates no theorem retirement,
 formal result, empirical evidence, support movement, or release effect by
 itself.
 
-The first two residual execution tranches are terminal. The Living Book's
+All four residual execution tranches are terminal. The Living Book's
 authored blocked-reader constant and reflexive theorem were retired because
 the retained input-general accessibility route strictly subsumes that witness,
 with nine adjacent route theorems and the independent reader-release consumer
@@ -1576,8 +1576,15 @@ second tranche physically retired 43 copied Project Theseus repository-import
 summary theorems and nine formal mirror targets. Their independent validators
 and immutable results remain authoritative executable evidence, while the
 Theseus module retains its eleven reusable policy and report-bundle theorems.
-The live estate is therefore 1,227 theorems, with 149 retirements, two exact
-scope rewrites, and nine stronger-model actions remaining.
+The third tranche retired eight hand-copied Benchmark, Runtime Adapter, Search
+Substrate, and Stable Capability Field summary mirrors while preserving their
+independent executable validators and distinct quantified route families. The
+fourth replaced the authored all-green Failure Modes witness with the quantified
+`failure_route_close_implies_complete_required_record` inverse: a close result
+requires every earlier required field and excludes every earlier route guard.
+The live estate is therefore 1,219 theorems, with 157 retirements, two exact
+scope rewrites, one stronger inverse-route replacement, and zero C6 actions
+remaining.
 
 An initial semantic spot-check rejected a naive retirement rule before any
 proof deletion: 33 declarations shared literal theorem text across different

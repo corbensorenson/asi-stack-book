@@ -210,9 +210,4 @@ def substrateAdoptionTraceFixture : SubstrateAdoptionTraceSummary := {
   nonClaimBoundary := true
 }
 
-theorem substrate_adoption_trace_fixture_valid :
-    SubstrateAdoptionTraceValid substrateAdoptionTraceFixture := by
-  unfold SubstrateAdoptionTraceValid substrateAdoptionTraceFixture
-  simp
-
 end AsiStackProofs.SearchSubstrates

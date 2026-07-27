@@ -60,6 +60,7 @@ ARTIFACTS = [
     "scripts/integrate_c6_efficiency_route_economy_consolidation.py",
     "scripts/integrate_c6_evidence_transition_consolidation.py",
     "scripts/integrate_c6_theseus_repository_mirror_retirements.py",
+    "scripts/integrate_c6_final_stronger_model_actions.py",
     "scripts/validate_retired_theseus_formal_mirrors.py",
     "proofs/c6_remaining_stronger_model_audit.json",
     "lean/AsiStackProofs/TheseusReference.lean",
@@ -148,7 +149,10 @@ def main() -> None:
             "or result-summary theorems, sixteen legacy evidence-transition fixture "
             "theorems retired after reachable-refinement rebinding, two redundant "
             "authored fixture witnesses, and 43 Project Theseus repository-import "
-            "summary mirrors retired while their executable receipts remain; "
+            "summary mirrors retired while their executable receipts remain; eight "
+            "remaining summary mirrors retired while executable consumers and route "
+            "models remain separate; one authored close-state witness replaced by a "
+            "quantified inverse-route theorem; "
             "the current overlay; frozen historical registry; and reconciled target, "
             "roadmap, and status surfaces."
         ),
@@ -158,8 +162,8 @@ def main() -> None:
             "statement identity for the duplicate, dependency-and-consumer-safe removals, "
             "ten counterexample, five decision-model, thirteen scope-narrowing, eleven "
             "validator-route-family migrations, and 43 formal-target-to-executable-only "
-            "migrations, retained or honestly replanned target ownership, a 1,227-theorem "
-            "current estate, an exact nine-action remaining "
+            "migrations, retained or honestly replanned target ownership, a 1,219-theorem "
+            "current estate, a terminal zero-action remaining "
             "queue, meta-audit exclusion from implementation binding, and no support or "
             "release effect."
         ),
@@ -168,7 +172,7 @@ def main() -> None:
             "retired and retained declarations share one authored model",
             "normalized theorem statements exact",
             "retired theorem has no theorem consumer",
-            "149 retired declarations absent, twenty-five proposition-preserving or replacement-bound actions, and 126 intentionally null replacements",
+            "157 retired declarations absent, twenty-six proposition-preserving or replacement-bound actions, and 134 intentionally null replacements",
             "two bibliography targets migrated to derived counterexample gates",
             "two benchmark targets migrated to derived decision-model gates",
             "two Stable Capability Fields targets narrowed to retained derived routes",
@@ -197,19 +201,23 @@ def main() -> None:
             "twenty-two legacy efficiency checklist and summary theorems replaced by reachable route-economy and independent consumer custody",
             "sixteen legacy evidence-transition fixture theorems replaced by projection-aware reachable lifecycle and independent consumer custody",
             "forty-three Project Theseus repository-import summary mirrors and nine formal targets retired while executable validators and result receipts remain",
+            "eight hand-copied fixture-summary mirrors retired while executable validators and quantified route families remain separate",
+            "the authored Failure Modes close witness replaced by one quantified inverse-route theorem",
             "proof-custody meta-audit does not inflate semantic implementation depth",
-            "1,227 current theorem declarations",
-            "nine stronger-model actions remain",
+            "1,219 current theorem declarations",
+            "zero stronger-model actions remain",
             "frozen 1,151-theorem and 298-target registry preserved",
             "16 mutations reject",
             "no support or release effect",
         ],
         "claim_scope": (
-            "149 dependency-safe declaration retirements: one exact same-model "
+            "157 dependency-safe declaration retirements: one exact same-model "
             "duplicate, sixty-two premise-restating projections, and twenty-five legacy fixture "
             "or checklist theorems, sixteen evidence-transition fixture theorems, two "
             "redundant authored witnesses, and 43 copied Project Theseus repository "
-            "summaries. Two theorem names are rewritten without proposition drift. Ninety public "
+            "summaries, plus eight remaining summary mirrors. Two theorem names are "
+            "rewritten without proposition drift and one authored close-state witness is "
+            "replaced by a quantified inverse route. Ninety-four public "
             "targets migrate to counterexample, decision-model, narrower retained-route, "
             "or honestly planned stronger-model wording; the runtime-adapter target remains "
             "implemented through its fifteen explicit route theorems."

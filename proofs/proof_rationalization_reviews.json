@@ -5527,7 +5527,7 @@
     },
     "lean/AsiStackProofs/RuntimeAdapters.lean::human_oversight_degradation_fixture_bridge": {
       "review_state": "terminally_dispositioned",
-      "disposition": "replace_with_stronger_model",
+      "disposition": "retire_projection_or_assumption_restatement",
       "semantic_role": "Hard-coded all-true summary rather than refinement from validated human-oversight records.",
       "assumptions": [],
       "excluded_effects": [],
@@ -5543,7 +5543,7 @@
       "replacement_refs": [
         "proof-model:runtime-adapters.human-oversight-result-refinement.v1"
       ],
-      "review_rationale": "Replace the literal constant proof with generated or parsed result conformance plus route-level mutations; retain the external fixture only as finite synthetic evidence."
+      "review_rationale": "Declaration physically retired: it copied a hand-authored executable summary into Lean despite having no dependency or theorem consumer. The executable validator and retained route model remain separate."
     },
     "lean/AsiStackProofs/SecurityKernel.lean::secret_substitution_requires_authorized_boundary": {
       "review_state": "terminally_dispositioned",
@@ -19749,7 +19749,7 @@
     },
     "lean/AsiStackProofs/FailureModes.lean::complete_failure_record_closes_record": {
       "review_state": "terminally_dispositioned",
-      "disposition": "replace_with_stronger_model",
+      "disposition": "retire_projection_or_assumption_restatement",
       "semantic_role": "Normalization of the hand-authored completeFailureRecurrenceReview constant.",
       "assumptions": [],
       "excluded_effects": [],
@@ -19761,9 +19761,10 @@
       "runtime_consumer_refs": [],
       "replacement_refs": [
         "proof-model:failure-modes.generated-recurrence-route-suite.v1",
-        "proof-model:failure-modes.recurrence-result-refinement.v1"
+        "proof-model:failure-modes.recurrence-result-refinement.v1",
+        "lean/AsiStackProofs/FailureModes.lean::failure_route_close_implies_complete_required_record"
       ],
-      "review_rationale": "Replace the literal positive witness with a general quantified close branch and generated digest-bound route/result conformance."
+      "review_rationale": "The authored all-green witness is physically retired and replaced by a quantified inverse theorem over arbitrary recurrence-review inputs."
     },
     "lean/AsiStackProofs/FailureModes.lean::failure_taxonomy_detector_probe_bridge": {
       "review_state": "terminally_dispositioned",
@@ -20563,7 +20564,7 @@
     },
     "lean/AsiStackProofs/StableCapabilityFields.lean::scf_lifecycle_trace_probe_fixture_valid": {
       "review_state": "terminally_dispositioned",
-      "disposition": "replace_with_stronger_model",
+      "disposition": "retire_projection_or_assumption_restatement",
       "semantic_role": "Normalization of a hand-copied ScfLifecycleTraceProbeSummary constant.",
       "assumptions": [],
       "excluded_effects": [],
@@ -20581,11 +20582,11 @@
       "replacement_refs": [
         "proof-model:scf.lifecycle-trace-result-refinement.v1"
       ],
-      "review_rationale": "Preserve the validator but replace copied totals/booleans with generated digest-bound result conformance."
+      "review_rationale": "Declaration physically retired: it copied a hand-authored executable summary into Lean despite having no dependency or theorem consumer. The executable validator and retained route model remain separate."
     },
     "lean/AsiStackProofs/StableCapabilityFields.lean::scf_lifecycle_trace_probe_rejects_unsafe_transitions": {
       "review_state": "terminally_dispositioned",
-      "disposition": "replace_with_stronger_model",
+      "disposition": "retire_projection_or_assumption_restatement",
       "semantic_role": "Proposition over the same hand-copied trace-summary constant.",
       "assumptions": [],
       "excluded_effects": [],
@@ -20603,11 +20604,11 @@
       "replacement_refs": [
         "proof-model:scf.lifecycle-trace-result-refinement.v1"
       ],
-      "review_rationale": "Replace copied summary facts with generated case-level conformance to validator-owned negative controls."
+      "review_rationale": "Declaration physically retired: it copied a hand-authored executable summary into Lean despite having no dependency or theorem consumer. The executable validator and retained route model remain separate."
     },
     "lean/AsiStackProofs/StableCapabilityFields.lean::scf_lifecycle_trace_probe_preserves_no_promotion_boundary": {
       "review_state": "terminally_dispositioned",
-      "disposition": "replace_with_stronger_model",
+      "disposition": "retire_projection_or_assumption_restatement",
       "semantic_role": "Three field equalities over the same hand-copied trace-summary constant.",
       "assumptions": [],
       "excluded_effects": [],
@@ -20625,7 +20626,7 @@
       "replacement_refs": [
         "proof-model:scf.lifecycle-trace-result-refinement.v1"
       ],
-      "review_rationale": "Replace copied non-claim fields with digest-bound validator-result and consumer-boundary conformance."
+      "review_rationale": "Declaration physically retired: it copied a hand-authored executable summary into Lean despite having no dependency or theorem consumer. The executable validator and retained route model remain separate."
     },
     "lean/AsiStackProofs/ModelWeightCustody.lean::required_invalid_attestation_blocks_requested_load": {
       "review_state": "semantically_reviewed",
@@ -29237,7 +29238,7 @@
     },
     "lean/AsiStackProofs/SearchSubstrates.lean::substrate_adoption_trace_fixture_valid": {
       "review_state": "terminally_dispositioned",
-      "disposition": "replace_with_stronger_model",
+      "disposition": "retire_projection_or_assumption_restatement",
       "semantic_role": "Validity witness over counts and flags copied into a hard-coded adoption-trace summary.",
       "assumptions": [],
       "excluded_effects": [],
@@ -29256,7 +29257,7 @@
       "replacement_refs": [
         "proof-model:search-substrates.generated-adoption-trace-conformance.v1"
       ],
-      "review_rationale": "Preserve frozen lineage and replace, merge, or retire this active proof surface."
+      "review_rationale": "Declaration physically retired: it copied a hand-authored executable summary into Lean despite having no dependency or theorem consumer. The executable validator and retained route model remain separate."
     },
     "lean/AsiStackProofs/SearchSubstrates.lean::substrate_adoption_trace_rejects_axis_laundering": {
       "review_state": "terminally_dispositioned",
@@ -30041,7 +30042,7 @@
     },
     "lean/AsiStackProofs/BenchmarkRatchets.lean::benchmark_antigoodhart_fixture_bridge_valid": {
       "review_state": "terminally_dispositioned",
-      "disposition": "replace_with_stronger_model",
+      "disposition": "retire_projection_or_assumption_restatement",
       "semantic_role": "Validity witness over counts and flags copied into the hard-coded anti-Goodhart summary.",
       "assumptions": [],
       "excluded_effects": [],
@@ -30060,11 +30061,11 @@
       "replacement_refs": [
         "proof-model:benchmark-ratchets.generated-antigoodhart-conformance.v1"
       ],
-      "review_rationale": "Retire or replace the active proof surface while preserving frozen lineage and adjacent evidence."
+      "review_rationale": "Declaration physically retired: it copied a hand-authored executable summary into Lean despite having no dependency or theorem consumer. The executable validator and retained route model remain separate."
     },
     "lean/AsiStackProofs/BenchmarkRatchets.lean::benchmark_antigoodhart_fixture_bridge_has_expected_controls": {
       "review_state": "terminally_dispositioned",
-      "disposition": "replace_with_stronger_model",
+      "disposition": "retire_projection_or_assumption_restatement",
       "semantic_role": "Normalization of five rejection flags copied into the hard-coded anti-Goodhart summary.",
       "assumptions": [],
       "excluded_effects": [],
@@ -30083,11 +30084,11 @@
       "replacement_refs": [
         "proof-model:benchmark-ratchets.generated-antigoodhart-conformance.v1"
       ],
-      "review_rationale": "Retire or replace the active proof surface while preserving frozen lineage and adjacent evidence."
+      "review_rationale": "Declaration physically retired: it copied a hand-authored executable summary into Lean despite having no dependency or theorem consumer. The executable validator and retained route model remain separate."
     },
     "lean/AsiStackProofs/BenchmarkRatchets.lean::benchmark_antigoodhart_fixture_bridge_preserves_no_support_promotion": {
       "review_state": "terminally_dispositioned",
-      "disposition": "replace_with_stronger_model",
+      "disposition": "retire_projection_or_assumption_restatement",
       "semantic_role": "Normalization of copied no-support and non-claim flags.",
       "assumptions": [],
       "excluded_effects": [],
@@ -30106,7 +30107,7 @@
       "replacement_refs": [
         "proof-model:benchmark-ratchets.generated-antigoodhart-conformance.v1"
       ],
-      "review_rationale": "Retire or replace the active proof surface while preserving frozen lineage and adjacent evidence."
+      "review_rationale": "Declaration physically retired: it copied a hand-authored executable summary into Lean despite having no dependency or theorem consumer. The executable validator and retained route model remain separate."
     },
     "lean/AsiStackProofs/CapabilityThresholds.lean::crossed_threshold_without_verified_safeguards_blocks_release": {
       "review_state": "semantically_reviewed",
@@ -36173,7 +36174,7 @@
       "replacement_refs": [
         "proof-model:runtime-adapters.human-oversight-result-refinement.v1"
       ],
-      "review_rationale": "Preserve the ten-case fixture but replace the literal Lean summary with generated result conformance and explicit route semantics."
+      "review_rationale": "C6 final rationalization separates executable fixture results from formal route properties; the failure close branch is now supported by a quantified inverse rather than an authored positive fixture."
     },
     "lean:security.scif.operational_invariant": {
       "review_state": "terminally_dispositioned",
@@ -39919,9 +39920,10 @@
       "replacement_refs": [
         "proof-model:failure-modes.generated-recurrence-route-suite.v1",
         "proof-model:failure-modes.recurrence-result-refinement.v1",
-        "proof-model:failure-modes.causal-mitigation-update.v1"
+        "proof-model:failure-modes.causal-mitigation-update.v1",
+        "lean/AsiStackProofs/FailureModes.lean::failure_route_close_implies_complete_required_record"
       ],
-      "review_rationale": "Retain the general route family at exact finite record scope; generate guard/priority mutations and require causal mitigation evidence for recurrence-reduction claims."
+      "review_rationale": "C6 final rationalization separates executable fixture results from formal route properties; the failure close branch is now supported by a quantified inverse rather than an authored positive fixture."
     },
     "lean:failure.taxonomy.detector_probe_bridge": {
       "dependencies": [
@@ -40333,7 +40335,7 @@
       "replacement_refs": [
         "proof-model:scf.lifecycle-trace-result-refinement.v1"
       ],
-      "review_rationale": "Retain the external trace checker at exact synthetic scope while replacing hand-copied Lean totals and booleans with generated digest-bound conformance."
+      "review_rationale": "C6 final rationalization separates executable fixture results from formal route properties; the failure close branch is now supported by a quantified inverse rather than an authored positive fixture."
     },
     "lean:model_weight_custody.required.invalid_attestation_blocks_load": {
       "dependencies": [
@@ -43537,7 +43539,7 @@
       "replacement_refs": [
         "proof-model:benchmark-ratchets.generated-antigoodhart-conformance.v1"
       ],
-      "review_rationale": "Retain only the genuine finite contradiction or validator-owned fixture at exact scope."
+      "review_rationale": "C6 final rationalization separates executable fixture results from formal route properties; the failure close branch is now supported by a quantified inverse rather than an authored positive fixture."
     },
     "lean:capability_thresholds.crossed.missing_verified_safeguards_blocks_release": {
       "dependencies": [

@@ -32,8 +32,13 @@ COMMAND = "python3 scripts/validate_substrate_adoption_trace.py"
 PROOF_TAG = "lean:substrates.search.adoption_trace_bridge"
 CODEX_TEST_NAME = "Substrate adoption trace"
 REQUIRED_THEOREMS = [
-    "substrate_adoption_trace_fixture_valid",
+    "substrate_adoption_record_missing_required_field_rejected",
+    "unproven_qualified_record_contradicts_noncore_invariant",
+    "qualified_substrate_without_passing_evidence_rejected",
+    "consumer_axis_reliance_without_measurement_or_unblocked_axis_rejected",
+    "canary_substrate_without_complete_evidence_packet_rejected",
 ]
+RETIRED_FIXTURE_THEOREM = "substrate_adoption_trace_fixture_valid"
 REQUIRED_NON_CLAIMS = [
     "does not run a substrate A/B test",
     "does not prove representation efficiency, search quality, routing quality, compression quality, model quality, or runtime performance",
@@ -436,6 +441,11 @@ def validate_lean(errors: list[str]) -> None:
     for theorem in REQUIRED_THEOREMS:
         if f"theorem {theorem}" not in text:
             errors.append(f"{rel(LEAN_FILE)} missing theorem {theorem}.")
+    if re.search(rf"\btheorem\s+{re.escape(RETIRED_FIXTURE_THEOREM)}\b", text):
+        errors.append(
+            f"{rel(LEAN_FILE)} must keep copied fixture theorem "
+            f"{RETIRED_FIXTURE_THEOREM} retired."
+        )
 
 
 def require_text(path: Path, snippets: list[str], errors: list[str]) -> None:

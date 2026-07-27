@@ -14,9 +14,9 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 320 |
 | Lean modules scanned | 111 |
-| Theorem declarations classified | 1227 |
+| Theorem declarations classified | 1219 |
 | Direct/projection-style theorem declarations | 169 |
-| Derived/decomposed theorem declarations | 839 |
+| Derived/decomposed theorem declarations | 831 |
 | Unknown or mixed theorem declarations | 219 |
 | Safety-critical theorem declarations | 73 |
 | Safety-critical direct/projection declarations | 1 |
@@ -62,7 +62,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ArtifactStewardAgents.lean` | artifact-steward-agents-and-living-project-governance | 7 | 12 | 0 | 12 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/Authority.lean` | system-boundaries-and-authority | 2 | 28 | 0 | 28 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | system-boundaries-and-authority | 2 | 12 | 0 | 4 | 8 | manual review |
-| `lean/AsiStackProofs/BenchmarkRatchets.lean` | benchmark-ratchets-and-anti-goodhart-evidence | 3 | 6 | 0 | 6 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/BenchmarkRatchets.lean` | benchmark-ratchets-and-anti-goodhart-evidence | 3 | 3 | 0 | 3 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/BibliographyPlan.lean` | open-research-agenda-and-bibliography-plan | 2 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/CapabilityThresholdRefinement.lean` | capability-thresholds-and-deployment-commitments | 8 | 12 | 8 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/CapabilityThresholds.lean` | unmapped | 0 | 8 | 0 | 8 | 0 | derived/decomposed by classifier |
@@ -137,19 +137,19 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | resource-economics-and-token-budgets, the-efficient-asi-hypothesis | 13 | 9 | 0 | 1 | 8 | manual review |
 | `lean/AsiStackProofs/Routing.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/RoutingRefinement.lean` | routing-heads-and-specialist-cores | 5 | 17 | 13 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/RuntimeAdapters.lean` | runtime-adapters-tool-permissions-and-human-approval | 6 | 44 | 0 | 44 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/RuntimeAdapters.lean` | runtime-adapters-tool-permissions-and-human-approval | 6 | 43 | 0 | 43 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/SafetyCaseRefinement.lean` | safety-cases-and-structured-assurance | 8 | 10 | 6 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/SafetyCases.lean` | unmapped | 0 | 8 | 0 | 8 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/SafetyCriticalLifecycle.lean` | constitutional-alignment-substrate, moral-uncertainty-and-value-conflict | 8 | 21 | 1 | 9 | 11 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ScalableOversight.lean` | unmapped | 0 | 8 | 0 | 8 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ScalableOversightRefinement.lean` | scalable-oversight-and-adversarial-ai-control | 7 | 11 | 0 | 3 | 8 | manual review |
-| `lean/AsiStackProofs/SearchSubstrates.lean` | mathematical-and-search-substrates | 3 | 6 | 0 | 6 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/SearchSubstrates.lean` | mathematical-and-search-substrates | 3 | 5 | 0 | 5 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/SecurityKernel.lean` | security-kernel-and-digital-scifs | 4 | 21 | 0 | 21 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/SelfImprovement.lean` | unmapped | 0 | 20 | 0 | 20 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/SelfImprovementRefinement.lean` | recursive-self-improvement-boundaries | 3 | 2 | 0 | 0 | 2 | manual review |
 | `lean/AsiStackProofs/SemanticRepresentation.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/SimulationFidelity.lean` | unmapped | 0 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
-| `lean/AsiStackProofs/StableCapabilityFields.lean` | stable-capability-fields | 4 | 18 | 1 | 17 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/StableCapabilityFields.lean` | stable-capability-fields | 4 | 15 | 1 | 14 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/StackBoundaries.lean` | asi-is-a-stack-not-a-model | 3 | 9 | 1 | 4 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/SupplyChainIntegrity.lean` | ai-supply-chain-integrity-and-lifecycle-provenance | 6 | 7 | 0 | 7 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/TheseusReference.lean` | project-theseus-as-report-first-implementation-reference | 3 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
@@ -323,9 +323,6 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | `stale_epoch_dispatch_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | `accepted_readiness_promotion_requires_transfer_negative_and_regression_records` | derived_or_decomposed | no | uses rw, unfold |
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | `accepted_saturated_floor_requires_regression_records` | derived_or_decomposed | no | uses rw, unfold |
-| `lean/AsiStackProofs/BenchmarkRatchets.lean` | `benchmark_antigoodhart_fixture_bridge_has_expected_controls` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/BenchmarkRatchets.lean` | `benchmark_antigoodhart_fixture_bridge_preserves_no_support_promotion` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/BenchmarkRatchets.lean` | `benchmark_antigoodhart_fixture_bridge_valid` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | `contaminated_review_cannot_promote_readiness` | derived_or_decomposed | no | uses rw, simp, unfold |
 | `lean/AsiStackProofs/BibliographyPlan.lean` | `accepted_new_source_assignment_to_nonexistent_chapter_rejected` | derived_or_decomposed | no | uses cases, have, rw |
 | `lean/AsiStackProofs/BibliographyPlan.lean` | `source_derived_claim_without_source_record_rejected` | derived_or_decomposed | no | uses cases, have, rw |
@@ -556,9 +553,9 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/EvidenceTransitionRefinement.lean` | `target_evidence_is_state_specific` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/EvidenceTransitionRefinement.lean` | `terminal_label_requires_matching_intent` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/FailureModes.lean` | `authority_over_ceiling_routes_to_review` | derived_or_decomposed | no | uses simp, unfold |
-| `lean/AsiStackProofs/FailureModes.lean` | `complete_failure_record_closes_record` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/FailureModes.lean` | `failed_required_invariant_blocks_promotion` | derived_or_decomposed | no | uses cases, rw, unfold |
 | `lean/AsiStackProofs/FailureModes.lean` | `failure_record_without_nonclaim_boundary_preserves_boundary` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/FailureModes.lean` | `failure_route_close_implies_complete_required_record` | derived_or_decomposed | no | uses by_cases, cases, have, rcases, simp |
 | `lean/AsiStackProofs/FailureModes.lean` | `missing_boundary_requests_boundary` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/FailureModes.lean` | `missing_containment_requests_containment` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/FailureModes.lean` | `missing_failure_class_requests_class` | derived_or_decomposed | no | uses simp, unfold |
@@ -1085,7 +1082,6 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | `expired_effect_lease_rejected` | derived_or_decomposed | no | uses cases, have, rw |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | `high_impact_adapter_without_approval_cannot_be_unrejected` | derived_or_decomposed | no | uses contradiction, have, rw |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | `high_impact_without_scoped_approval_routes_to_approval` | derived_or_decomposed | no | uses simp, unfold |
-| `lean/AsiStackProofs/RuntimeAdapters.lean` | `human_oversight_degradation_fixture_bridge` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | `invocation_without_parent_permission_rejected` | derived_or_decomposed | no | uses contradiction, unfold |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | `lease_authority_ceiling_blocks_adapter_dispatch` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | `mismatched_effect_lease_rejected` | derived_or_decomposed | no | uses have |
@@ -1168,7 +1164,6 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/SearchSubstrates.lean` | `consumer_axis_reliance_without_measurement_or_unblocked_axis_rejected` | derived_or_decomposed | no | uses contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/SearchSubstrates.lean` | `qualified_substrate_without_passing_evidence_rejected` | derived_or_decomposed | no | uses contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/SearchSubstrates.lean` | `substrate_adoption_record_missing_required_field_rejected` | derived_or_decomposed | no | uses cases, contradiction, rw, unfold |
-| `lean/AsiStackProofs/SearchSubstrates.lean` | `substrate_adoption_trace_fixture_valid` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/SearchSubstrates.lean` | `unproven_qualified_record_contradicts_noncore_invariant` | derived_or_decomposed | no | uses have, rw, simp, unfold |
 | `lean/AsiStackProofs/SecurityKernel.lean` | `clean_authorized_use_is_allowed` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/SecurityKernel.lean` | `inactive_lease_denies_authority_use` | derived_or_decomposed | no | uses simp, unfold |
@@ -1238,9 +1233,6 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | `missing_evidence_requires_requalification` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | `open_incident_requires_rollback` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | `retired_state_cannot_transition` | derived_or_decomposed | no | uses have |
-| `lean/AsiStackProofs/StableCapabilityFields.lean` | `scf_lifecycle_trace_probe_fixture_valid` | derived_or_decomposed | no | uses simp, unfold |
-| `lean/AsiStackProofs/StableCapabilityFields.lean` | `scf_lifecycle_trace_probe_preserves_no_promotion_boundary` | derived_or_decomposed | no | uses simp, unfold |
-| `lean/AsiStackProofs/StableCapabilityFields.lean` | `scf_lifecycle_trace_probe_rejects_unsafe_transitions` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | `stale_qualification_lease_requires_requalification` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/StackBoundaries.lean` | `accepted_authorization_respects_caller_ceiling` | derived_or_decomposed | no | uses omega, simp, split, unfold |
 | `lean/AsiStackProofs/StackBoundaries.lean` | `accepted_effect_requires_live_grant_and_dispatch` | derived_or_decomposed | no | uses simp, split, unfold |

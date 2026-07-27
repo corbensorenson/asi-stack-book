@@ -2237,7 +2237,8 @@
     "scripts/register_c6_remaining_stronger_model_audit.py",
     "scripts/integrate_c6_theseus_repository_mirror_retirements.py",
     "scripts/validate_retired_theseus_formal_mirrors.py",
-    "lean/AsiStackProofs/TheseusReference.lean"
+    "lean/AsiStackProofs/TheseusReference.lean",
+    "scripts/integrate_c6_final_stronger_model_actions.py"
   ],
   "units": [
     {
@@ -6789,8 +6790,8 @@
       "args": [],
       "execution_tier": "deep",
       "validation_class": "proof_or_evidence_gate",
-      "input_contract": "Re-executed governed Git slice, matched baseline metrics, derived invariant suite, claim dispositions, proof manifest/adequacy/artifact audits, volatile source records, inter-stack routing, terminology refresh, and readable D–F closure audit.",
-      "output_contract": "Reject drift in bounded empirical metrics, invariant mutations/residuals, core dispositions, proof target/adequacy traceability, volatile source routing, or D–F closure boundaries.",
+      "input_contract": "Re-executed governed Git slice, matched baseline metrics, derived invariant suite, claim dispositions, proof manifest/adequacy/artifact audits, volatile source records, inter-stack routing, terminology refresh, and readable D\u2013F closure audit.",
+      "output_contract": "Reject drift in bounded empirical metrics, invariant mutations/residuals, core dispositions, proof target/adequacy traceability, volatile source routing, or D\u2013F closure boundaries.",
       "claim_scope": "Local roadmap closure for Workstreams D, E, and F at their explicitly bounded empirical, formal, and source-governance scopes.",
       "negative_controls": "validator_owned",
       "prohibited_inference": "Local closure does not prove deployed safety, general cost-effectiveness, formal runtime enforcement, novelty, exhaustive literature coverage, or independent review.",
@@ -14171,6 +14172,7 @@
         "docs/proof_semantic_depth_overlay.md",
         "proofs/proof_manifest.json",
         "proofs/proof_rationalization_registry.json",
+        "proofs/proof_semantic_rationalization_ledger.json",
         "proofs/semantic_cluster_audits",
         "lean/AsiStackProofs",
         "validation/registry.json",
@@ -14185,7 +14187,7 @@
         "P3-P6 require validator-and-artifact binding",
         "P6 requires a named empirical observation contract",
         "every theorem names mutation coverage and an active semantic owner",
-        "rewrite/retire queue is nonempty",
+        "rewrite/retire queue is nonempty or the cumulative ledger is terminal with zero remaining actions",
         "frozen 1151-theorem and 298-target baseline preserved",
         "11 mutations reject",
         "no support-state effect"
@@ -14216,7 +14218,7 @@
       "args": [],
       "execution_tier": "pr",
       "validation_class": "proof_or_evidence_gate",
-      "input_contract": "One immutable 1,370-theorem baseline; 151 exact, ordered transactions; the baseline Scalable Oversight, Bibliography Plan, Benchmark Ratchets, and Policy Optimization, Stable Capability Fields, Evidence States, and Runtime Adapters, Search Substrates, Artifact Steward Agents, Coil Attention Memory, and Cyclic Mixers, Efficiency, Failure Modes, Intent to Execution, Planning, Living Book, PlanForge, Proof Envelope, Prototype Roadmap, and Security Kernel modules; one same-model normalized duplicate pair; sixty-five premise-restating projections, twenty-two with derived replacements, twenty-three retired after public-target narrowing, five unused projections retired without target change, twelve summary projections retired after route-family validator rebinding, two proposition-preserving theorem-name scope rewrites, three legacy policy-lease fixture theorems, and twenty-two legacy efficiency checklist or result-summary theorems, sixteen legacy evidence-transition fixture theorems retired after reachable-refinement rebinding, two redundant authored fixture witnesses, and 43 Project Theseus repository-import summary mirrors retired while their executable receipts remain; the current overlay; frozen historical registry; and reconciled target, roadmap, and status surfaces.",
+      "input_contract": "One immutable 1,370-theorem baseline; 151 exact, ordered transactions; the baseline Scalable Oversight, Bibliography Plan, Benchmark Ratchets, and Policy Optimization, Stable Capability Fields, Evidence States, and Runtime Adapters, Search Substrates, Artifact Steward Agents, Coil Attention Memory, and Cyclic Mixers, Efficiency, Failure Modes, Intent to Execution, Planning, Living Book, PlanForge, Proof Envelope, Prototype Roadmap, and Security Kernel modules; one same-model normalized duplicate pair; sixty-five premise-restating projections, twenty-two with derived replacements, twenty-three retired after public-target narrowing, five unused projections retired without target change, twelve summary projections retired after route-family validator rebinding, two proposition-preserving theorem-name scope rewrites, three legacy policy-lease fixture theorems, and twenty-two legacy efficiency checklist or result-summary theorems, sixteen legacy evidence-transition fixture theorems retired after reachable-refinement rebinding, two redundant authored fixture witnesses, and 43 Project Theseus repository-import summary mirrors retired while their executable receipts remain; eight remaining summary mirrors retired while executable consumers and route models remain separate; one authored close-state witness replaced by a quantified inverse-route theorem; the current overlay; frozen historical registry; and reconciled target, roadmap, and status surfaces.",
       "input_artifacts": [
         "scripts/validate_proof_semantic_rationalization_ledger.py",
         "scripts/build_proof_semantic_depth_overlay.py",
@@ -14267,6 +14269,7 @@
         "scripts/integrate_c6_efficiency_route_economy_consolidation.py",
         "scripts/integrate_c6_evidence_transition_consolidation.py",
         "scripts/integrate_c6_theseus_repository_mirror_retirements.py",
+        "scripts/integrate_c6_final_stronger_model_actions.py",
         "scripts/validate_retired_theseus_formal_mirrors.py",
         "proofs/c6_remaining_stronger_model_audit.json",
         "lean/AsiStackProofs/TheseusReference.lean",
@@ -14316,13 +14319,13 @@
         "validation/registry.json",
         "scripts/register_proof_semantic_rationalization_ledger.py"
       ],
-      "output_contract": "Require immutable baseline and theorem-block digests, exact same-model statement identity for the duplicate, dependency-and-consumer-safe removals, ten counterexample, five decision-model, thirteen scope-narrowing, eleven validator-route-family migrations, and 43 formal-target-to-executable-only migrations, retained or honestly replanned target ownership, a 1,227-theorem current estate, an exact nine-action remaining queue, meta-audit exclusion from implementation binding, and no support or release effect.",
+      "output_contract": "Require immutable baseline and theorem-block digests, exact same-model statement identity for the duplicate, dependency-and-consumer-safe removals, ten counterexample, five decision-model, thirteen scope-narrowing, eleven validator-route-family migrations, and 43 formal-target-to-executable-only migrations, retained or honestly replanned target ownership, a 1,219-theorem current estate, a terminal zero-action remaining queue, meta-audit exclusion from implementation binding, and no support or release effect.",
       "output_assertions": [
         "baseline commit and artifact digests exact",
         "retired and retained declarations share one authored model",
         "normalized theorem statements exact",
         "retired theorem has no theorem consumer",
-        "149 retired declarations absent, twenty-five proposition-preserving or replacement-bound actions, and 126 intentionally null replacements",
+        "157 retired declarations absent, twenty-six proposition-preserving or replacement-bound actions, and 134 intentionally null replacements",
         "two bibliography targets migrated to derived counterexample gates",
         "two benchmark targets migrated to derived decision-model gates",
         "two Stable Capability Fields targets narrowed to retained derived routes",
@@ -14351,14 +14354,16 @@
         "twenty-two legacy efficiency checklist and summary theorems replaced by reachable route-economy and independent consumer custody",
         "sixteen legacy evidence-transition fixture theorems replaced by projection-aware reachable lifecycle and independent consumer custody",
         "forty-three Project Theseus repository-import summary mirrors and nine formal targets retired while executable validators and result receipts remain",
+        "eight hand-copied fixture-summary mirrors retired while executable validators and quantified route families remain separate",
+        "the authored Failure Modes close witness replaced by one quantified inverse-route theorem",
         "proof-custody meta-audit does not inflate semantic implementation depth",
-        "1,227 current theorem declarations",
-        "nine stronger-model actions remain",
+        "1,219 current theorem declarations",
+        "zero stronger-model actions remain",
         "frozen 1,151-theorem and 298-target registry preserved",
         "16 mutations reject",
         "no support or release effect"
       ],
-      "claim_scope": "149 dependency-safe declaration retirements: one exact same-model duplicate, sixty-two premise-restating projections, and twenty-five legacy fixture or checklist theorems, sixteen evidence-transition fixture theorems, two redundant authored witnesses, and 43 copied Project Theseus repository summaries. Two theorem names are rewritten without proposition drift. Ninety public targets migrate to counterexample, decision-model, narrower retained-route, or honestly planned stronger-model wording; the runtime-adapter target remains implemented through its fifteen explicit route theorems.",
+      "claim_scope": "157 dependency-safe declaration retirements: one exact same-model duplicate, sixty-two premise-restating projections, and twenty-five legacy fixture or checklist theorems, sixteen evidence-transition fixture theorems, two redundant authored witnesses, and 43 copied Project Theseus repository summaries, plus eight remaining summary mirrors. Two theorem names are rewritten without proposition drift and one authored close-state witness is replaced by a quantified inverse route. Ninety-four public targets migrate to counterexample, decision-model, narrower retained-route, or honestly planned stronger-model wording; the runtime-adapter target remains implemented through its fifteen explicit route theorems.",
       "negative_controls": "validator_owned_sixteen_baseline_digest_sequence_identity_statement_dependency_consumer_relation_target_denominator_and_support_mutations",
       "negative_control_cases": [
         "baseline commit substitution",
@@ -14682,7 +14687,7 @@
     }
   ],
   "summary": {
-    "required_artifact_count": 2193,
+    "required_artifact_count": 2194,
     "unit_count": 428
   },
   "non_claims": [

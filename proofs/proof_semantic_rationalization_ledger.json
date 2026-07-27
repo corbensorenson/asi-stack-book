@@ -2,7 +2,7 @@
   "schema_version": "asi_stack.proof_semantic_rationalization_ledger.v3",
   "as_of": "2026-07-26",
   "roadmap_lane": "C6-P0-P6-semantic-proof-rationalization",
-  "state": "dependency_safe_execution_active",
+  "state": "dependency_safe_execution_complete",
   "classification_baseline": {
     "commit": "d0f9bda14f1253999f2c40d556d925d31e4b36a4",
     "overlay_path": "proofs/proof_semantic_depth_overlay.json",
@@ -6810,19 +6810,430 @@
         "lean:lake-build"
       ],
       "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R152-retire-summary-fixture-mirror-benchmark-antigoodhart-fixture-bridge-has-expected-controls",
+      "state": "executed",
+      "action": "retire_summary_fixture_mirror",
+      "semantic_relation": "summary_fixture_mirror_retired_keep_executable_and_route_evidence_separate",
+      "sequence": 152,
+      "module_path": "lean/AsiStackProofs/BenchmarkRatchets.lean",
+      "baseline_module_sha256": "a8d5e6f6b70e9f55b4bba4a1e6622e07fde7d456329afaa5a1a16f684767013b",
+      "retired_theorem_id": "lean/AsiStackProofs/BenchmarkRatchets.lean::benchmark_antigoodhart_fixture_bridge_has_expected_controls",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "5db28fe1f2ba1529a2d567c7d7f97dc7870e5d5c5462d83a2a18ba4b42335446",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "e4f807f4e1305574e1333ddb24466380aa768bf3fe0ec97ab69cf6b64483deb1",
+      "replacement_statement_sha256": null,
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "support_state_effect": "none",
+      "semantic_basis": [
+        "The declaration normalizes a hand-authored Boolean/count summary. Preserve the independent executable result and any reachable route or counterexample family; do not replace the mirror with another copied summary theorem.",
+        "The immutable semantic audit records no Lean dependency and no theorem consumer.",
+        "The independent executable validator and result remain at their exact finite scope.",
+        "Retained route or rejection theorems remain separate from executable counts and flags.",
+        "No replacement summary theorem, support transition, or empirical inference is created."
+      ],
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:benchmarks.ratchet.fixture_bridge",
+          "old_target_text": "The benchmark anti-Goodhart fixture bridge mirrors 2 valid fixtures, 5 expected-invalid controls, promotion-ready, regression-floor, missing-checks, blocked-ratchet policy, reward-as-truth, saturated-promotion, release-approval, no-support-promotion, and non-claim-boundary facts.",
+          "new_target_text": "An independent benchmark anti-Goodhart consumer computes two valid fixtures and five rejected controls; separately, retained quantified ratchet theorems require clean transfer-or-mutation checks, negative-evidence preservation, and regression records and reject contaminated promotion. Executable totals are not imported into Lean.",
+          "consumer_paths": [
+            "book_structure.json",
+            "docs/book_outline.md",
+            "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
+            "proofs/proof_manifest.json",
+            "proofs/proof_triage.json"
+          ]
+        }
+      ],
+      "maximum_inference_preserved": "Only the retained formal route properties and separately labeled executable fixture results survive; neither evidence surface inherits the other.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_c6_remaining_stronger_model_audit.py",
+        "experiments/benchmark_antigoodhart/results/2026-07-02-fixture-bridge.json",
+        "scripts/validate_benchmark_antigoodhart.py",
+        "scripts/validate_benchmark_fixture_bridge.py",
+        "lean:lake-build"
+      ]
+    },
+    {
+      "action_id": "C6-R153-retire-summary-fixture-mirror-benchmark-antigoodhart-fixture-bridge-preserves-no-support-promotion",
+      "state": "executed",
+      "action": "retire_summary_fixture_mirror",
+      "semantic_relation": "summary_fixture_mirror_retired_keep_executable_and_route_evidence_separate",
+      "sequence": 153,
+      "module_path": "lean/AsiStackProofs/BenchmarkRatchets.lean",
+      "baseline_module_sha256": "a8d5e6f6b70e9f55b4bba4a1e6622e07fde7d456329afaa5a1a16f684767013b",
+      "retired_theorem_id": "lean/AsiStackProofs/BenchmarkRatchets.lean::benchmark_antigoodhart_fixture_bridge_preserves_no_support_promotion",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "596cba0cefa974e03844169ac63211b2f9fb21cab50f2d891083a128505da752",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "b158b0752413828b9d05906f4bfefd9b87fde466f444608bd8409f71859b84e3",
+      "replacement_statement_sha256": null,
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "support_state_effect": "none",
+      "semantic_basis": [
+        "The declaration normalizes a hand-authored Boolean/count summary. Preserve the independent executable result and any reachable route or counterexample family; do not replace the mirror with another copied summary theorem.",
+        "The immutable semantic audit records no Lean dependency and no theorem consumer.",
+        "The independent executable validator and result remain at their exact finite scope.",
+        "Retained route or rejection theorems remain separate from executable counts and flags.",
+        "No replacement summary theorem, support transition, or empirical inference is created."
+      ],
+      "target_migrations": [],
+      "maximum_inference_preserved": "Only the retained formal route properties and separately labeled executable fixture results survive; neither evidence surface inherits the other.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_c6_remaining_stronger_model_audit.py",
+        "experiments/benchmark_antigoodhart/results/2026-07-02-fixture-bridge.json",
+        "scripts/validate_benchmark_antigoodhart.py",
+        "scripts/validate_benchmark_fixture_bridge.py",
+        "lean:lake-build"
+      ]
+    },
+    {
+      "action_id": "C6-R154-retire-summary-fixture-mirror-benchmark-antigoodhart-fixture-bridge-valid",
+      "state": "executed",
+      "action": "retire_summary_fixture_mirror",
+      "semantic_relation": "summary_fixture_mirror_retired_keep_executable_and_route_evidence_separate",
+      "sequence": 154,
+      "module_path": "lean/AsiStackProofs/BenchmarkRatchets.lean",
+      "baseline_module_sha256": "a8d5e6f6b70e9f55b4bba4a1e6622e07fde7d456329afaa5a1a16f684767013b",
+      "retired_theorem_id": "lean/AsiStackProofs/BenchmarkRatchets.lean::benchmark_antigoodhart_fixture_bridge_valid",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "25afd18bf3b17318ce1892b0e7e081907abecdf67cf4024f6b88d848a774d5ce",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "83f4d69cc671c5f969b61d045093ccaf9bf437150496024eaee9d1d5f24989b8",
+      "replacement_statement_sha256": null,
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "support_state_effect": "none",
+      "semantic_basis": [
+        "The declaration normalizes a hand-authored Boolean/count summary. Preserve the independent executable result and any reachable route or counterexample family; do not replace the mirror with another copied summary theorem.",
+        "The immutable semantic audit records no Lean dependency and no theorem consumer.",
+        "The independent executable validator and result remain at their exact finite scope.",
+        "Retained route or rejection theorems remain separate from executable counts and flags.",
+        "No replacement summary theorem, support transition, or empirical inference is created."
+      ],
+      "target_migrations": [],
+      "maximum_inference_preserved": "Only the retained formal route properties and separately labeled executable fixture results survive; neither evidence surface inherits the other.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_c6_remaining_stronger_model_audit.py",
+        "experiments/benchmark_antigoodhart/results/2026-07-02-fixture-bridge.json",
+        "scripts/validate_benchmark_antigoodhart.py",
+        "scripts/validate_benchmark_fixture_bridge.py",
+        "lean:lake-build"
+      ]
+    },
+    {
+      "action_id": "C6-R155-retire-summary-fixture-mirror-human-oversight-degradation-fixture-bridge",
+      "state": "executed",
+      "action": "retire_summary_fixture_mirror",
+      "semantic_relation": "summary_fixture_mirror_retired_keep_executable_and_route_evidence_separate",
+      "sequence": 155,
+      "module_path": "lean/AsiStackProofs/RuntimeAdapters.lean",
+      "baseline_module_sha256": "96608ad6f892d7ee81c272ffd9b5bcf49936dd078ff341a5fefa9a98abf0a941",
+      "retired_theorem_id": "lean/AsiStackProofs/RuntimeAdapters.lean::human_oversight_degradation_fixture_bridge",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "14ab4a29198ac5258296cc0b08e7877c9fff4f04dc1c340196f0c922153d5f77",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "0a67486c1f3c080c40d5b7ef8d7f79ab8b922bc2f75fa3858bee1d5155dc3535",
+      "replacement_statement_sha256": null,
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "support_state_effect": "none",
+      "semantic_basis": [
+        "The declaration normalizes a hand-authored Boolean/count summary. Preserve the independent executable result and any reachable route or counterexample family; do not replace the mirror with another copied summary theorem.",
+        "The immutable semantic audit records no Lean dependency and no theorem consumer.",
+        "The independent executable validator and result remain at their exact finite scope.",
+        "Retained route or rejection theorems remain separate from executable counts and flags.",
+        "No replacement summary theorem, support transition, or empirical inference is created."
+      ],
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:runtime.adapters.human_oversight_degradation_fixture_bridge",
+          "old_target_text": "A modeled human-oversight degradation fixture accepts scoped low-fatigue approval, routes overloaded reviewers to delay or rotation, blocks automation-bias cases, and rejects missing qualifications, rubber-stamped approvals, alarm-fatigue acceptance, support-state promotion, and missing non-claim boundaries.",
+          "new_target_text": "An independent human-oversight consumer computes low-fatigue, overload, automation-bias, and invalid-control outcomes; separately, retained runtime-adapter route theorems govern permission, approval, lease, sandbox, rollback, receipt, and revocation boundaries. Lean does not formalize reviewer cognition or copy the consumer summary.",
+          "consumer_paths": [
+            "book_structure.json",
+            "docs/book_outline.md",
+            "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd",
+            "proofs/proof_manifest.json",
+            "proofs/proof_triage.json"
+          ]
+        }
+      ],
+      "maximum_inference_preserved": "Only the retained formal route properties and separately labeled executable fixture results survive; neither evidence surface inherits the other.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_c6_remaining_stronger_model_audit.py",
+        "experiments/human_oversight_degradation/results/2026-07-03-local.json",
+        "scripts/validate_human_oversight_degradation.py",
+        "scripts/validate_runtime_adapter_adversarial_boundary_probe.py",
+        "scripts/validate_runtime_adapter_effect_probe.py",
+        "scripts/validate_runtime_adapter_permissions.py",
+        "lean:lake-build"
+      ]
+    },
+    {
+      "action_id": "C6-R156-retire-summary-fixture-mirror-substrate-adoption-trace-fixture-valid",
+      "state": "executed",
+      "action": "retire_summary_fixture_mirror",
+      "semantic_relation": "summary_fixture_mirror_retired_keep_executable_and_route_evidence_separate",
+      "sequence": 156,
+      "module_path": "lean/AsiStackProofs/SearchSubstrates.lean",
+      "baseline_module_sha256": "5c78ed08265983e91eba92b132d1bb836bdebbc21100dd082c437a22ee7d9ba4",
+      "retired_theorem_id": "lean/AsiStackProofs/SearchSubstrates.lean::substrate_adoption_trace_fixture_valid",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "cb8860ee6f0062edbbfa0dbc6fcb55cfa1605b813ccbbf2089fedb08fd783df4",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "df284be6575b8ba5047a35b389faa6194f2a89b53d2314be8f1fe18a453860c2",
+      "replacement_statement_sha256": null,
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "support_state_effect": "none",
+      "semantic_basis": [
+        "The declaration normalizes a hand-authored Boolean/count summary. Preserve the independent executable result and any reachable route or counterexample family; do not replace the mirror with another copied summary theorem.",
+        "The immutable semantic audit records no Lean dependency and no theorem consumer.",
+        "The independent executable validator and result remain at their exact finite scope.",
+        "Retained route or rejection theorems remain separate from executable counts and flags.",
+        "No replacement summary theorem, support transition, or empirical inference is created."
+      ],
+      "target_migrations": [],
+      "maximum_inference_preserved": "Only the retained formal route properties and separately labeled executable fixture results survive; neither evidence surface inherits the other.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_c6_remaining_stronger_model_audit.py",
+        "experiments/substrate_adoption_trace/results/2026-07-02-local.json",
+        "scripts/validate_substrate_adoption_trace.py",
+        "lean:lake-build"
+      ]
+    },
+    {
+      "action_id": "C6-R157-retire-summary-fixture-mirror-scf-lifecycle-trace-probe-fixture-valid",
+      "state": "executed",
+      "action": "retire_summary_fixture_mirror",
+      "semantic_relation": "summary_fixture_mirror_retired_keep_executable_and_route_evidence_separate",
+      "sequence": 157,
+      "module_path": "lean/AsiStackProofs/StableCapabilityFields.lean",
+      "baseline_module_sha256": "bf7d3e054e09f6a8956247e77c5042f8dc68933b86fe3bffbcb73bfbd5a7cb90",
+      "retired_theorem_id": "lean/AsiStackProofs/StableCapabilityFields.lean::scf_lifecycle_trace_probe_fixture_valid",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "7ab902652a0c6ac45bf053c9f819da44a96fb55c93118edc6d2f6615442e82aa",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "3e474475d43468ca2d105a3215e5670c2a1003e95385c8a50de5263b4560cc89",
+      "replacement_statement_sha256": null,
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "support_state_effect": "none",
+      "semantic_basis": [
+        "The declaration normalizes a hand-authored Boolean/count summary. Preserve the independent executable result and any reachable route or counterexample family; do not replace the mirror with another copied summary theorem.",
+        "The immutable semantic audit records no Lean dependency and no theorem consumer.",
+        "The independent executable validator and result remain at their exact finite scope.",
+        "Retained route or rejection theorems remain separate from executable counts and flags.",
+        "No replacement summary theorem, support transition, or empirical inference is created."
+      ],
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:scf.lifecycle.trace_fixture_bridge",
+          "old_target_text": "The synthetic SCF lifecycle trace summary records two valid traces, six expected-invalid controls, forward lifecycle coverage, incident quarantine coverage, unsafe-transition rejection, and no deployed-route-validation, rollback-execution, or support-state-promotion claim.",
+          "new_target_text": "An independent SCF lifecycle consumer computes two valid traces and six rejected controls; separately, retained quantified lifecycle theorems route identity, evidence, lease, evaluator, authority, incident, transition, and retirement failures. Executable totals and no-promotion flags are not copied into Lean.",
+          "consumer_paths": [
+            "book_structure.json",
+            "docs/book_outline.md",
+            "chapters/stable-capability-fields.qmd",
+            "proofs/proof_manifest.json",
+            "proofs/proof_triage.json"
+          ]
+        }
+      ],
+      "maximum_inference_preserved": "Only the retained formal route properties and separately labeled executable fixture results survive; neither evidence surface inherits the other.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_c6_remaining_stronger_model_audit.py",
+        "experiments/scf_lifecycle_trace/results/2026-07-02-local.json",
+        "scripts/validate_scf_lifecycle_trace.py",
+        "scripts/validate_stable_capability_fields.py",
+        "lean:lake-build"
+      ]
+    },
+    {
+      "action_id": "C6-R158-retire-summary-fixture-mirror-scf-lifecycle-trace-probe-preserves-no-promotion-boundary",
+      "state": "executed",
+      "action": "retire_summary_fixture_mirror",
+      "semantic_relation": "summary_fixture_mirror_retired_keep_executable_and_route_evidence_separate",
+      "sequence": 158,
+      "module_path": "lean/AsiStackProofs/StableCapabilityFields.lean",
+      "baseline_module_sha256": "bf7d3e054e09f6a8956247e77c5042f8dc68933b86fe3bffbcb73bfbd5a7cb90",
+      "retired_theorem_id": "lean/AsiStackProofs/StableCapabilityFields.lean::scf_lifecycle_trace_probe_preserves_no_promotion_boundary",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "dcb19465363aa2aced23da28ca2ee1533f4445f4a69ea7734516b368f1949e79",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "11c522215e81cca9eb33673ae88282abf3af7112be0668126f0831f3d2c9d875",
+      "replacement_statement_sha256": null,
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "support_state_effect": "none",
+      "semantic_basis": [
+        "The declaration normalizes a hand-authored Boolean/count summary. Preserve the independent executable result and any reachable route or counterexample family; do not replace the mirror with another copied summary theorem.",
+        "The immutable semantic audit records no Lean dependency and no theorem consumer.",
+        "The independent executable validator and result remain at their exact finite scope.",
+        "Retained route or rejection theorems remain separate from executable counts and flags.",
+        "No replacement summary theorem, support transition, or empirical inference is created."
+      ],
+      "target_migrations": [],
+      "maximum_inference_preserved": "Only the retained formal route properties and separately labeled executable fixture results survive; neither evidence surface inherits the other.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_c6_remaining_stronger_model_audit.py",
+        "experiments/scf_lifecycle_trace/results/2026-07-02-local.json",
+        "scripts/validate_scf_lifecycle_trace.py",
+        "scripts/validate_stable_capability_fields.py",
+        "lean:lake-build"
+      ]
+    },
+    {
+      "action_id": "C6-R159-retire-summary-fixture-mirror-scf-lifecycle-trace-probe-rejects-unsafe-transitions",
+      "state": "executed",
+      "action": "retire_summary_fixture_mirror",
+      "semantic_relation": "summary_fixture_mirror_retired_keep_executable_and_route_evidence_separate",
+      "sequence": 159,
+      "module_path": "lean/AsiStackProofs/StableCapabilityFields.lean",
+      "baseline_module_sha256": "bf7d3e054e09f6a8956247e77c5042f8dc68933b86fe3bffbcb73bfbd5a7cb90",
+      "retired_theorem_id": "lean/AsiStackProofs/StableCapabilityFields.lean::scf_lifecycle_trace_probe_rejects_unsafe_transitions",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "5040fe329c59aa107d0da35e61e11c88380a552f0bd9ac527e8612b11c6c2328",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "d6fd93aa0d1400b9b618ad86857c3bc3ecf137a279baf10dc3e91600a857995f",
+      "replacement_statement_sha256": null,
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "support_state_effect": "none",
+      "semantic_basis": [
+        "The declaration normalizes a hand-authored Boolean/count summary. Preserve the independent executable result and any reachable route or counterexample family; do not replace the mirror with another copied summary theorem.",
+        "The immutable semantic audit records no Lean dependency and no theorem consumer.",
+        "The independent executable validator and result remain at their exact finite scope.",
+        "Retained route or rejection theorems remain separate from executable counts and flags.",
+        "No replacement summary theorem, support transition, or empirical inference is created."
+      ],
+      "target_migrations": [],
+      "maximum_inference_preserved": "Only the retained formal route properties and separately labeled executable fixture results survive; neither evidence surface inherits the other.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_c6_remaining_stronger_model_audit.py",
+        "experiments/scf_lifecycle_trace/results/2026-07-02-local.json",
+        "scripts/validate_scf_lifecycle_trace.py",
+        "scripts/validate_stable_capability_fields.py",
+        "lean:lake-build"
+      ]
+    },
+    {
+      "action_id": "C6-R160-rewrite-complete-failure-record-as-inverse-route-property",
+      "state": "executed",
+      "action": "rewrite_as_inverse_route_property",
+      "semantic_relation": "authored_fixture_witness_replaced_by_quantified_inverse_route_property",
+      "sequence": 160,
+      "module_path": "lean/AsiStackProofs/FailureModes.lean",
+      "baseline_module_sha256": "2ddb813cf30235e86ad3a6c2beb8c0b0a57b7121f91c21c889b9450ce0401c8e",
+      "retired_theorem_id": "lean/AsiStackProofs/FailureModes.lean::complete_failure_record_closes_record",
+      "replacement_theorem_id": "lean/AsiStackProofs/FailureModes.lean::failure_route_close_implies_complete_required_record",
+      "retired_block_sha256": "f2a930a3c25a2e25f87d1a3e43f315a24b8a0b9d71f44a31c22c6529737796ec",
+      "replacement_block_sha256": "bba053973fbc7a0216df70ea362e6433c490d27261cf2b74931566860d728052",
+      "retired_statement_sha256": "1431ac1c5309ace29c8fd957e4635d7c6aac4e6a5e3e25f092b3b52dc3db28c0",
+      "replacement_statement_sha256": "1ce08863fbfdb86dc9832fdb5f779f77d5e4e4ea0d1e182f72c53b210362ac28",
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "support_state_effect": "none",
+      "semantic_basis": [
+        "Replace the authored all-green witness with an input-general inverse: if FailureRecurrenceRouteFor returns closeFailureRecord, every earlier required field and non-claim boundary must have passed.",
+        "The authored all-green constant no longer supplies the positive proof witness.",
+        "The replacement quantifies over every FailureRecurrenceReview input.",
+        "A close result implies all required record fields and excludes every earlier route guard.",
+        "The proposition establishes only the finite router inverse and creates no runtime bridge."
+      ],
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:failure.recurrence.escalation_route",
+          "old_target_text": "Modeled failure recurrence and receipt review routes missing failure class, boundary, receipt, owner, containment, residual, learning path, normalization guard, review escalation, quarantine, evidence-transition, and non-claim-boundary records to explicit outcomes.",
+          "new_target_text": "If the finite failure-recurrence router returns closeFailureRecord, every required failure, class, boundary, receipt, owner, containment, residual, learning, normalization, and non-claim field is true and no earlier recurrence, severe-irreversible, unreviewed-promotion, unquarantined-escape, or missing-evidence-transition branch applies.",
+          "consumer_paths": [
+            "book_structure.json",
+            "docs/book_outline.md",
+            "chapters/failure-modes-of-ungoverned-intelligence.qmd",
+            "proofs/proof_manifest.json",
+            "proofs/proof_triage.json"
+          ]
+        }
+      ],
+      "maximum_inference_preserved": "The finite router cannot report close unless its required record fields pass and no earlier modeled guard applies; this does not prove runtime detection, record truth, containment effectiveness, or deployment safety.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "scripts/validate_c6_remaining_stronger_model_audit.py",
+        "scripts/validate_architecture_red_team.py",
+        "lean:lake-build"
+      ]
     }
   ],
   "summary": {
-    "executed_retirement_count": 149,
+    "executed_retirement_count": 157,
     "executed_scope_rewrite_count": 2,
-    "current_live_theorem_count": 1227,
-    "remaining_action_count": 9,
+    "current_live_theorem_count": 1219,
+    "remaining_action_count": 0,
     "remaining_action_counts": {
-      "retire_without_replacement": 8,
-      "rewrite_as_inverse_route_property": 1
+      "retire_without_replacement": 0,
+      "rewrite_as_inverse_route_property": 0
     },
     "chapter_core_support_transitions": 0,
-    "new_formal_claims": 0
+    "new_formal_claims": 1
   },
   "non_claims": [
     "Retiring a duplicate declaration does not strengthen the retained theorem.",

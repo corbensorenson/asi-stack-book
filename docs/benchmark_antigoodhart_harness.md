@@ -50,12 +50,15 @@ Benchmark anti-Goodhart harness passed: 2 valid fixture(s), 5 expected-invalid f
 The result record is
 `experiments/benchmark_antigoodhart/results/2026-06-28-local.md`.
 
-The 2026-07-02 fixture bridge passes as a Python/Lean finite fixture-summary equivalence check. It records 2 valid fixture(s), 5 expected-invalid
+The 2026-07-02 fixture bridge passes as an independent executable fixture with separate quantified Lean decision consequences. It records 2 valid fixture(s), 5 expected-invalid
 fixture(s), one promotion-ready synthetic path, one saturated-regression-floor
 path, and expected-invalid controls for missing anti-Goodhart checks, blocked
 ratchet policy promotion, reward-as-truth confusion, saturated promotion, and
 release without approval. The result record is
 `experiments/benchmark_antigoodhart/results/2026-07-02-fixture-bridge.json`.
+Lean does not import those authored totals. Its retained theorems instead state
+input-general decision obligations for readiness promotion, saturated
+regression floors, and contaminated-review rejection.
 
 ## Boundary
 

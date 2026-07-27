@@ -155,9 +155,23 @@ EXPECTED_ACTION_IDS.extend(
         start=109,
     )
 )
+EXPECTED_ACTION_IDS.extend(
+    f"C6-R{sequence}-retire-summary-fixture-mirror-{record['name'].replace('_', '-')}"
+    for sequence, record in enumerate(
+        (
+            row
+            for row in _residual_audit["records"]
+            if row.get("recommended_action") == "retire_summary_fixture_mirror"
+        ),
+        start=152,
+    )
+)
+EXPECTED_ACTION_IDS.append(
+    "C6-R160-rewrite-complete-failure-record-as-inverse-route-property"
+)
 EXPECTED_LEVELS = {
-    "P0": 23,
-    "P1": 679,
+    "P0": 19,
+    "P1": 675,
     "P2": 25,
     "P3": 323,
     "P4": 94,
@@ -165,8 +179,7 @@ EXPECTED_LEVELS = {
     "P6": 0,
 }
 EXPECTED_DISPOSITIONS = {
-    "retain": 1218,
-    "rewrite_with_stronger_model": 9,
+    "retain": 1219,
 }
 EXPECTED_TARGETS = {
     "lean:bibliography.plan.operational_invariant": (
@@ -384,6 +397,12 @@ EXPECTED_RELATIONS = {
     "retire_repository_import_fixture_mirror": (
         "copied_repository_summary_rebound_to_executable_validator_and_immutable_result"
     ),
+    "retire_summary_fixture_mirror": (
+        "summary_fixture_mirror_retired_keep_executable_and_route_evidence_separate"
+    ),
+    "rewrite_as_inverse_route_property": (
+        "authored_fixture_witness_replaced_by_quantified_inverse_route_property"
+    ),
 }
 EXPECTED_MIGRATION_COUNTS = {
     action_id: (
@@ -439,6 +458,13 @@ EXPECTED_MIGRATION_COUNTS = {
     )
     for action_id in EXPECTED_ACTION_IDS
 }
+for action_id in {
+    "C6-R152-retire-summary-fixture-mirror-benchmark-antigoodhart-fixture-bridge-has-expected-controls",
+    "C6-R155-retire-summary-fixture-mirror-human-oversight-degradation-fixture-bridge",
+    "C6-R157-retire-summary-fixture-mirror-scf-lifecycle-trace-probe-fixture-valid",
+    "C6-R160-rewrite-complete-failure-record-as-inverse-route-property",
+}:
+    EXPECTED_MIGRATION_COUNTS[action_id] = 1
 
 
 def load(path: Path) -> Any:
@@ -493,7 +519,7 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
     actions = ledger["actions"]
     if [row["action_id"] for row in actions] != EXPECTED_ACTION_IDS:
         out.append("action sequence or identity drifted")
-    if [row["sequence"] for row in actions] != list(range(1, 152)):
+    if [row["sequence"] for row in actions] != list(range(1, 161)):
         out.append("action sequence numbers drifted")
 
     try:
@@ -538,7 +564,10 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
             out.append(f"{action['action_id']}: baseline module digest drifted")
         retired_name = retired_id.split("::", 1)[1]
         retired_block = module_cache[module].get(retired_name)
-        if action["action"] == "rewrite_scope_language" and replacement_id is not None:
+        if action["action"] in {
+            "rewrite_scope_language",
+            "rewrite_as_inverse_route_property",
+        } and replacement_id is not None:
             current_module_blocks = theorem_blocks(
                 (ROOT / module).read_text(encoding="utf-8")
             )
@@ -578,12 +607,18 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
         replacement_row = (
             baseline_rows.get(replacement_id)
             if replacement_id is not None
-            and action["action"] != "rewrite_scope_language"
+            and action["action"] not in {
+                "rewrite_scope_language",
+                "rewrite_as_inverse_route_property",
+            }
             else None
         )
         if retired_row is None or (
             replacement_id is not None
-            and action["action"] != "rewrite_scope_language"
+            and action["action"] not in {
+                "rewrite_scope_language",
+                "rewrite_as_inverse_route_property",
+            }
             and replacement_row is None
         ):
             out.append(f"{action['action_id']}: classification baseline lacks a participant")
@@ -596,6 +631,8 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
             "retire_legacy_fixture_theorem_after_reachable_refinement_rebinding",
             "retire_redundant_authored_fixture_witness",
             "retire_repository_import_fixture_mirror",
+            "retire_summary_fixture_mirror",
+            "rewrite_as_inverse_route_property",
         }:
             expected_disposition = "rewrite_with_stronger_model"
         else:
@@ -709,6 +746,31 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
                 out.append(
                     f"{action['action_id']}: Project Theseus executable validator is not bound"
                 )
+        elif action["action"] == "retire_summary_fixture_mirror":
+            if replacement_id is not None or replacement_block is not None:
+                out.append(
+                    f"{action['action_id']}: summary mirror retirement invented a replacement theorem"
+                )
+            if not any(
+                ref.startswith("scripts/validate_") and ref.endswith(".py")
+                for ref in action["validation_refs"]
+                if ref != "scripts/validate_proof_semantic_rationalization_ledger.py"
+            ):
+                out.append(
+                    f"{action['action_id']}: independent executable validator is not bound"
+                )
+        elif action["action"] == "rewrite_as_inverse_route_property":
+            if replacement_id is None or replacement_block is None:
+                out.append(f"{action['action_id']}: inverse route rewrite lacks replacement")
+            elif (
+                "FailureRecurrenceRouteFor review" not in replacement_block["signature"]
+                or "closeFailureRecord" not in replacement_block["signature"]
+                or "nonClaimBoundaryRecorded = true" not in replacement_block["signature"]
+                or "by_cases" not in replacement_block["block"]
+            ):
+                out.append(
+                    f"{action['action_id']}: replacement is not the quantified close-route inverse"
+                )
         else:
             out.append(f"{action['action_id']}: unsupported action kind")
 
@@ -728,17 +790,17 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
 
     overlay = load(CURRENT_OVERLAY)
     summary = overlay.get("summary", {})
-    if summary.get("current_theorem_count") != 1227:
+    if summary.get("current_theorem_count") != 1219:
         out.append("current theorem denominator drifted")
     if summary.get("semantic_level_counts") != EXPECTED_LEVELS:
         out.append("current semantic-level counts drifted")
     if summary.get("disposition_counts") != EXPECTED_DISPOSITIONS:
         out.append("current disposition counts drifted")
-    if sum(value for key, value in EXPECTED_DISPOSITIONS.items() if key != "retain") != 9:
+    if sum(value for key, value in EXPECTED_DISPOSITIONS.items() if key != "retain") != 0:
         out.append("expected remaining-action denominator is internally inconsistent")
     if ledger["summary"]["remaining_action_counts"] != {
-        "retire_without_replacement": 8,
-        "rewrite_as_inverse_route_property": 1,
+        "retire_without_replacement": 0,
+        "rewrite_as_inverse_route_property": 0,
     }:
         out.append("ledger remaining-action family counts drifted")
     if summary.get("duplicate_group_count") != 0:
@@ -764,8 +826,8 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
         for row in current_rows
         if row["module_path"] == "lean/AsiStackProofs/BenchmarkRatchets.lean"
     ]
-    if len(benchmark_rows) != 6:
-        out.append("BenchmarkRatchets must retain exactly six derived declarations")
+    if len(benchmark_rows) != 3:
+        out.append("BenchmarkRatchets must retain exactly three derived declarations")
     if any(row.get("depth_class") == "direct_or_projection" for row in benchmark_rows):
         out.append("BenchmarkRatchets retained a direct projection")
 
@@ -792,8 +854,8 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
         for row in current_rows
         if row["module_path"] == "lean/AsiStackProofs/StableCapabilityFields.lean"
     ]
-    if len(scf_rows) != 18:
-        out.append("StableCapabilityFields must retain exactly eighteen declarations")
+    if len(scf_rows) != 15:
+        out.append("StableCapabilityFields must retain exactly fifteen declarations")
     retired_scf_names = {
         "replacement_requires_field_qualification",
         "allowed_transition_preserves_field_identity",
@@ -802,6 +864,9 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
         "qualified_transition_requires_evidence_and_regression_floor",
         "deprecated_transition_requires_notice",
         "retirement_transition_requires_receipt",
+        "scf_lifecycle_trace_probe_fixture_valid",
+        "scf_lifecycle_trace_probe_preserves_no_promotion_boundary",
+        "scf_lifecycle_trace_probe_rejects_unsafe_transitions",
     }
     if retired_scf_names & {row["name"] for row in scf_rows}:
         out.append("StableCapabilityFields retained an executed narrow projection")
@@ -844,8 +909,8 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
         for action in actions
         if action["module_path"] == "lean/AsiStackProofs/SearchSubstrates.lean"
     }
-    if len(substrate_rows) != 6:
-        out.append("SearchSubstrates must retain exactly six declarations")
+    if len(substrate_rows) != 5:
+        out.append("SearchSubstrates must retain exactly five declarations")
     if retired_substrate_names & {row["name"] for row in substrate_rows}:
         out.append("SearchSubstrates retained an executed premise or summary projection")
     substrate_names = {row["name"] for row in substrate_rows}
@@ -1099,18 +1164,18 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
     if status.get("rationalization_ledger_path") != str(LEDGER.relative_to(ROOT)):
         out.append("status does not bind the cumulative rationalization ledger")
     if (
-        status.get("theorem_count") != 1227
-        or status.get("executed_retirement_count") != 149
+        status.get("theorem_count") != 1219
+        or status.get("executed_retirement_count") != 157
         or status.get("executed_scope_rewrite_count") != 2
-        or status.get("remaining_action_count") != 9
+        or status.get("remaining_action_count") != 0
     ):
         out.append("status does not report the cumulative post-transaction denominator")
     roadmap = ROADMAP.read_text(encoding="utf-8")
     roadmap_flat = " ".join(roadmap.split())
     for phrase in [
-        "sixteenth evidence-transition consolidation tranche",
-        "1,227 live theorem declarations",
-        "nine stronger-model actions remain",
+        "fourth replaced the authored all-green Failure Modes witness",
+        "1,219 live theorem declarations",
+        "zero C6 actions remaining",
         "`proofs/proof_semantic_rationalization_ledger.json`",
     ]:
         if phrase not in roadmap_flat:
@@ -1183,9 +1248,9 @@ def main() -> None:
             + "\n - ".join(failures)
         )
     print(
-        "Proof semantic-rationalization ledger passed: 149 dependency-safe "
-        "retirements, two exact scope rewrites, ninety public-target migrations, "
-        "1,227 live theorems, nine stronger-model actions remain, 16 rejecting "
+        "Proof semantic-rationalization ledger passed: 157 dependency-safe "
+        "retirements, two exact scope rewrites, ninety-four public-target migrations, "
+        "1,219 live theorems, zero stronger-model actions remain, 16 rejecting "
         "mutations, no support or release effect."
     )
 

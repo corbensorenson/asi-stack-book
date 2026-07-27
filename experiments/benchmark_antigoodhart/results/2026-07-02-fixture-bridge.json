@@ -5,7 +5,7 @@
   "command": "python3 scripts/validate_benchmark_fixture_bridge.py",
   "input_fixture_dir": "experiments/benchmark_antigoodhart/fixtures",
   "result_kind": "synthetic_cross_record_fixture_bridge",
-  "proof_bridge_type": "Python/Lean finite fixture-summary equivalence",
+  "proof_bridge_type": "independent executable fixture with separate quantified Lean decision consequences",
   "valid_fixture_count": 2,
   "expected_invalid_fixture_count": 5,
   "valid_scenarios": [
@@ -39,9 +39,9 @@
     "module": "AsiStackProofs.BenchmarkRatchets",
     "proof_tag": "lean:benchmarks.ratchet.fixture_bridge",
     "theorem_refs": [
-      "benchmark_antigoodhart_fixture_bridge_valid",
-      "benchmark_antigoodhart_fixture_bridge_has_expected_controls",
-      "benchmark_antigoodhart_fixture_bridge_preserves_no_support_promotion"
+      "accepted_readiness_promotion_requires_transfer_negative_and_regression_records",
+      "accepted_saturated_floor_requires_regression_records",
+      "contaminated_review_cannot_promote_readiness"
     ],
     "expected": {
       "valid_fixture_count": 2,

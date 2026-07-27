@@ -710,7 +710,7 @@ Lean proof targets:
 |---|---|---|---|
 | `lean:failure.invariant_violation.operational_invariant` | `AsiStackProofs.FailureModes` | A component with a failed required invariant cannot be promoted. | implemented |
 | `lean:failure.invariant_violation.failure_blocks_promotion` | `AsiStackProofs.FailureModes` | A finite incident whose authority exceeds its ceiling routes to explicit authority review. | implemented |
-| `lean:failure.recurrence.escalation_route` | `AsiStackProofs.FailureModes` | Modeled failure recurrence and receipt review routes missing failure class, boundary, receipt, owner, containment, residual, learning path, normalization guard, review escalation, quarantine, evidence-transition, and non-claim-boundary records to explicit outcomes. | implemented |
+| `lean:failure.recurrence.escalation_route` | `AsiStackProofs.FailureModes` | If the finite failure-recurrence router returns closeFailureRecord, every required failure, class, boundary, receipt, owner, containment, residual, learning, normalization, and non-claim field is true and no earlier recurrence, severe-irreversible, unreviewed-promotion, unquarantined-escape, or missing-evidence-transition branch applies. | implemented |
 | `lean:failure.taxonomy.detector_probe_bridge` | `AsiStackProofs.FailureModes` | An independent finite incident consumer validates authority-creep and Goodhart/evaluator-drift fixtures and rejecting controls, while the retained Lean failure-record route family covers required-field repair, escalation, quarantine, residual, learning, normalization, evidence-transition, non-claim, and closure branches. | implemented |
 
 Proof boundary: the direct `GovernanceFailure` field projection is retired
@@ -1819,7 +1819,7 @@ Lean proof targets:
 | `lean:scf.field_identity.operational_invariant` | `AsiStackProofs.StableCapabilityFields` | A lifecycle review with a mismatched field identity routes to explicit replacement rejection. | implemented |
 | `lean:scf.field_identity.failure_blocks_promotion` | `AsiStackProofs.StableCapabilityFields` | A replacement that expands authority without a governance grant is rejected. | implemented |
 | `lean:scf.lifecycle.route_envelope` | `AsiStackProofs.StableCapabilityFields` | A structured SCF lifecycle review routes identity mismatch, missing evidence, stale leases, evaluator capture, authority expansion, and open incidents to explicit nondefault outcomes; the finite transition predicate rejects retired restart and default promotion without qualification evidence, preserved regressions, authority within ceiling, rollback readiness, or incident closure. | implemented |
-| `lean:scf.lifecycle.trace_fixture_bridge` | `AsiStackProofs.StableCapabilityFields` | The synthetic SCF lifecycle trace summary records two valid traces, six expected-invalid controls, forward lifecycle coverage, incident quarantine coverage, unsafe-transition rejection, and no deployed-route-validation, rollback-execution, or support-state-promotion claim. | implemented |
+| `lean:scf.lifecycle.trace_fixture_bridge` | `AsiStackProofs.StableCapabilityFields` | An independent SCF lifecycle consumer computes two valid traces and six rejected controls; separately, retained quantified lifecycle theorems route identity, evidence, lease, evaluator, authority, incident, transition, and retirement failures. Executable totals and no-promotion flags are not copied into Lean. | implemented |
 
 ### Capability Replacement and Rollback
 
@@ -4166,7 +4166,7 @@ Lean proof targets:
 | `lean:runtime.adapters.effect_replay_fixture_bridge` | `AsiStackProofs.RuntimeAdapters` | A modeled runtime-adapter effect replay routes missing permission, expired approval, missing no-mutation evidence, inexact rollback, missing receipts, repository/network side effects, and support-state effects away from accepted replay while admitting a public-safe rollback-exact replay. | implemented |
 | `lean:runtime.adapters.adversarial_boundary_probe_bridge` | `AsiStackProofs.RuntimeAdapters` | A modeled runtime-adapter adversarial boundary review routes confused-deputy parent mismatches, authority ceiling overruns, approval scope mismatch, expired approval, sandbox escape, secret materialization, missing rollback, missing receipts, missing audits, support-state effects, and missing non-claim boundaries away from dispatch while admitting complete low-impact and scoped high-impact records. | implemented |
 | `lean:runtime.adapters.revocation_route_bridge` | `AsiStackProofs.RuntimeAdapters` | A modeled runtime-adapter revocation review routes revoked approvals, revoked leases, and revoked authority receipts away from dispatch unless no-mutation denial evidence exists, while complete non-revoked records preserve receipt, audit, support-state, and non-claim boundaries. | implemented |
-| `lean:runtime.adapters.human_oversight_degradation_fixture_bridge` | `AsiStackProofs.RuntimeAdapters` | A modeled human-oversight degradation fixture accepts scoped low-fatigue approval, routes overloaded reviewers to delay or rotation, blocks automation-bias cases, and rejects missing qualifications, rubber-stamped approvals, alarm-fatigue acceptance, support-state promotion, and missing non-claim boundaries. | implemented |
+| `lean:runtime.adapters.human_oversight_degradation_fixture_bridge` | `AsiStackProofs.RuntimeAdapters` | An independent human-oversight consumer computes low-fatigue, overload, automation-bias, and invalid-control outcomes; separately, retained runtime-adapter route theorems govern permission, approval, lease, sandbox, rollback, receipt, and revocation boundaries. Lean does not formalize reviewer cognition or copy the consumer summary. | implemented |
 
 Cross-chapter partitioned-authority proof note: the partitioned-authority fixture is implemented under `AsiStackProofs.PersonalComputeHives` as `lean:personal_hives.partitioned_authority.fixture_bridge`, not duplicated in the Runtime Adapters proof table. It keeps the hives/runtime grant-effect boundary synchronized while preserving no deployed partition tolerance, distributed consensus, availability, revocation propagation, runtime adapter enforcement, support-state promotion, or chapter-core promotion.
 
@@ -5673,7 +5673,7 @@ Failure modes to cover:
 
 Draft deliverables:
 
-- A precise Substrate Adoption Lease and eighteen-stage lifecycle; the current minimum remains one schema-valid record, four valid synthetic states, eight rejected mutations, and eleven finite theorem declarations, with no implemented candidate benefit.
+- A precise Substrate Adoption Lease and eighteen-stage lifecycle; the current minimum remains one schema-valid record, four valid synthetic states, eight rejected mutations, and five retained input-general finite theorem declarations, with no implemented candidate benefit.
 - Implemented repository-level fixture: `substrate_adoption_record.valid.json` validates substrate-adoption record shape, baseline obligations, consumer gate/policy, axis ledger, routing-permission effect, fallback substrate, retirement/supersession path, support-state effect, and non-claims only; no A/B run, representation-efficiency benchmark, CoilMoECOT benchmark, or Circle substrate-adoption build exists yet. The separate external rope receipt slice does not validate substrate adoption.
 - Implemented Codex test: Substrate adoption trace. `python3 scripts/validate_substrate_adoption_trace.py` validates four synthetic substrate-adoption trace states (`valid_exploratory_registration`, `valid_structural_only_receipt`, `valid_consumer_axis_blocked`, and `valid_negative_control_retirement`) plus eight expected-invalid controls for missing baseline, missing falsification condition, theorem spillover, unmeasured-axis routing, failed-control promotion, missing fallback, support-promotion overclaim, and missing non-claim boundary. This is no substrate A/B test, representation-efficiency result, search-quality result, routing-quality result, compression-quality result, model-quality result, runtime result, Circle/CoilMoECOT/Mamba/TreeLLM/Theseus adoption validation, support-state transition, or chapter-core promotion claim.
 - Planned Codex test: Baseline comparison test.
@@ -6032,7 +6032,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 298 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 298 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 320 proof targets, 111 Lean modules, 1227 theorem declarations, 839 derived/decomposed, 169 direct/projection, 219 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 320 proof targets, 111 Lean modules, 1219 theorem declarations, 831 derived/decomposed, 169 direct/projection, 219 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.
@@ -6176,9 +6176,10 @@ Draft deliverables:
 Exact current minimum: one benchmark-ratchet schema and valid fixture; one
 metric-provenance schema with one valid blocked six-project-lineage record and
 ten rejecting mutations; a synthetic anti-Goodhart harness with two valid and
-five invalid records; one persisted fixture bridge; three proof targets; and
-six BenchmarkRatchets declarations classified as three derived finite decision
-cases and three fixture-normalization assertions. No natural benchmark, hidden
+five invalid records; one persisted executable fixture result; three proof
+targets; and three BenchmarkRatchets declarations proving input-general finite
+decision consequences. Executable fixture totals are not copied into Lean. No
+natural benchmark, hidden
 holdout, contamination audit,
 empirical baseline matrix, trained model or policy result, independent
 evaluator, capability/safety/readiness result, deployment, reproduction,
@@ -6212,7 +6213,7 @@ Lean proof targets:
 |---|---|---|---|
 | `lean:benchmarks.ratchet.operational_invariant` | `AsiStackProofs.BenchmarkRatchets` | An accepted readiness-promotion decision in the finite ratchet model requires transfer-or-mutation checks, preserved negative evidence, and preserved regression records. | implemented |
 | `lean:benchmarks.ratchet.failure_blocks_promotion` | `AsiStackProofs.BenchmarkRatchets` | An accepted contaminated benchmark review cannot select readiness promotion in the finite ratchet model. | implemented |
-| `lean:benchmarks.ratchet.fixture_bridge` | `AsiStackProofs.BenchmarkRatchets` | The benchmark anti-Goodhart fixture bridge mirrors 2 valid fixtures, 5 expected-invalid controls, promotion-ready, regression-floor, missing-checks, blocked-ratchet policy, reward-as-truth, saturated-promotion, release-approval, no-support-promotion, and non-claim-boundary facts. | implemented |
+| `lean:benchmarks.ratchet.fixture_bridge` | `AsiStackProofs.BenchmarkRatchets` | An independent benchmark anti-Goodhart consumer computes two valid fixtures and five rejected controls; separately, retained quantified ratchet theorems require clean transfer-or-mutation checks, negative-evidence preservation, and regression records and reject contaminated promotion. Executable totals are not imported into Lean. | implemented |
 
 ### White-Box Evidence, Interpretability, and Activation Governance
 
