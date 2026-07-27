@@ -1451,10 +1451,11 @@ def errors(data: dict) -> list[str]:
         or template_guard.get("current_copied_diagram_and_test_spread") != 0
         or template_guard.get("repaired_chapter_count") != 10
         or template_guard.get("baseline_prose_candidate_count") != 3444
-        or template_guard.get("current_prose_candidate_count") != 3380
-        or template_guard.get("retired_inherited_prose_candidate_count") != 241
-        or template_guard.get("added_domain_specific_prose_candidate_count") != 177
-        or template_guard.get("structured_atom_count_before_and_after") != 4067
+        or template_guard.get("current_prose_candidate_count") != 3381
+        or template_guard.get("retired_inherited_prose_candidate_count") != 242
+        or template_guard.get("added_domain_specific_prose_candidate_count") != 179
+        or template_guard.get("baseline_structured_atom_count") != 4067
+        or template_guard.get("current_structured_atom_count") != 4058
         or template_guard.get("pending_prose_candidate_count") != 0
         or template_guard.get("affected_semantic_review_chapter_count") != 11
         or template_guard.get("copied_scaffold_fixture_rejected") is not True
@@ -1480,8 +1481,8 @@ def errors(data: dict) -> list[str]:
         or w3.get("corpus", {}).get("manifest_chapter_count") != 84
         or w3.get("measurements", {}).get("editorial_narrative", {}).get("baseline", {}).get("distinct_repeated_12_grams") != 812
         or w3.get("measurements", {}).get("editorial_narrative", {}).get("current", {}).get("distinct_repeated_12_grams") != 0
-        or w3.get("claim_review_reconciliation", {}).get("retired_inherited_prose_candidate_count") != 241
-        or w3.get("claim_review_reconciliation", {}).get("added_domain_specific_prose_candidate_count") != 177
+        or w3.get("claim_review_reconciliation", {}).get("retired_inherited_prose_candidate_count") != 242
+        or w3.get("claim_review_reconciliation", {}).get("added_domain_specific_prose_candidate_count") != 179
         or w3.get("claim_review_reconciliation", {}).get("current_pending_prose_candidate_count") != 0
         or w3.get("meaning_custody", {}).get("chapter_core_support_movements") != 0
     ):
