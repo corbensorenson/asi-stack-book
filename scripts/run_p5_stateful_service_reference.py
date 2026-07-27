@@ -73,7 +73,7 @@ def run_git(*args: str) -> bytes:
 
 
 def attest_source(commit: str) -> dict[str, Any]:
-    run_git("cat-file", "-e", f"{commit}^{{commit}}")
+    commit = run_git("rev-parse", f"{commit}^{{commit}}").decode().strip()
     digests: dict[str, str] = {}
     for relative in SOURCE_FILES:
         committed = run_git("show", f"{commit}:{relative}")
