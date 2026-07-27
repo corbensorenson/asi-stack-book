@@ -1,0 +1,78 @@
+{
+  "schema_version": "asi_stack.effect_complete_service_cases.v1",
+  "system_id": "p5-effect-complete-stateful-service-001",
+  "design_owner": "P5-effect-complete-reference",
+  "source_case": "T4-governed-operations-joined-authority-to-effect-trace",
+  "service_boundary": {
+    "model": "two-parameter linear predictor trained by bias-corrected Adam",
+    "learning_state": [
+      "model",
+      "optimizer",
+      "scheduler",
+      "rng",
+      "cache",
+      "backup",
+      "derived_artifacts",
+      "descendants",
+      "credentials"
+    ],
+    "effect_adapter": "HTTP client with a durable outbox",
+    "external_effect_system": "separate HTTP process with a separate SQLite ledger",
+    "observer": "separate process using the external system's read interface"
+  },
+  "cases": [
+    {
+      "id": "actual-learning-state-mutation",
+      "obligation": "A real optimizer update changes declared model and learning state and improves its frozen authored training objective."
+    },
+    {
+      "id": "artifact-only-rollback-rejected",
+      "obligation": "Restoring weights alone is detected as incomplete because optimizer, scheduler, RNG, cache, backup, derived, descendant, and credential state remain outside the authorized checkpoint."
+    },
+    {
+      "id": "crash-restart-full-state-recovery",
+      "obligation": "A trainer crash after state mutation but before acknowledgement is recovered by a new process from the checkpoint selected before mutation."
+    },
+    {
+      "id": "partition-outbox-exactly-once",
+      "obligation": "An unavailable external effect service leaves one owned outbox item; retry after recovery creates one external effect and a duplicate retry creates no second effect."
+    },
+    {
+      "id": "revoked-credential-effect-rejected",
+      "obligation": "The external effect service rejects a stale credential after epoch revocation and records no effect."
+    },
+    {
+      "id": "weight-and-environment-custody-tamper-rejected",
+      "obligation": "Startup custody rejects independently injected model-weight and dependency-lock drift before inference or effect release."
+    },
+    {
+      "id": "independent-observation-and-source-attestation",
+      "obligation": "A separate observer process reads the committed external effect while the service receipt binds the exact source commit and source-file digests."
+    }
+  ],
+  "competence_boundary": {
+    "positive_controls": [
+      "the frozen linear task is learnable by the implemented optimizer",
+      "the external sink accepts a current scoped credential",
+      "the independent observer can read an accepted effect"
+    ],
+    "negative_controls": [
+      "model-only rollback",
+      "unavailable effect service",
+      "duplicate effect retry",
+      "revoked credential",
+      "tampered model weight",
+      "tampered dependency lock"
+    ],
+    "held_out_outcomes": false,
+    "reason": "This is a lifecycle-mechanism reference slice, not a capability or comparative empirical campaign."
+  },
+  "non_claims": [
+    "The authored linear task is a lifecycle positive control, not a natural-task usefulness result or a model-capability benchmark.",
+    "The HTTP effect service runs on localhost and does not establish open-network, distributed-consensus, Byzantine, cloud, or production behavior.",
+    "The independent observer is separately executed but remains repository-authored; it is not an independent external reproduction.",
+    "Exact local restore does not establish semantic recovery for a large model, privacy repair, causal unlearning, external storage erasure, legal compliance, or reversal of human consequences.",
+    "Commit and digest custody establish identity for the declared local files, not a complete software supply-chain guarantee.",
+    "Passing cases do not establish production safety, useful governed throughput, transfer, SOTA, AGI, ASI, chapter-core support promotion, deployment, or release authority."
+  ]
+}
