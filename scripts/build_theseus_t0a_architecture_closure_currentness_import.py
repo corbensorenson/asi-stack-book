@@ -20,17 +20,18 @@ DOC = ROOT / "docs/theseus_t0a_architecture_closure_currentness_import.md"
 
 def build() -> dict:
     return {
-        "schema_version": "asi_stack.theseus_t0a_architecture_closure_currentness_import.v1",
-        "import_id": "theseus-t0a-architecture-closure-currentness-2026-07-27-d5b99128",
-        "observed_utc": "2026-07-27T10:08:45Z",
+        "schema_version": "asi_stack.theseus_t0a_architecture_closure_currentness_import.v2",
+        "import_id": "theseus-t0a-architecture-closure-currentness-2026-07-27-0700fdb0",
+        "observed_utc": "2026-07-27T11:35:03Z",
         "source_authority": {
             "project": "Project Theseus / Theseus-Hive",
             "owner": "Corben Sorenson",
             "source_kind": "local_author_owned_implementation_reference",
             "branch": "main",
-            "commit": "d5b99128395f6af5a34b731ba024305d2e44433c",
+            "commit": "0700fdb0d61f6e84e8f765a889a9b2107da0784b",
             "worktree_clean": True,
-            "ahead_of_origin_main_commit_count": 53,
+            "ahead_of_origin_main_commit_count": 0,
+            "published_on_origin_main": True,
             "source_project_mutations": 0,
             "network_calls": 0,
             "external_inference_calls": 0,
@@ -53,7 +54,7 @@ def build() -> dict:
             },
             {
                 "path": "reports/pretraining_factorized_bakeoff.json",
-                "sha256": "b7c84562337cbea6641dcef82ec71c3ef384adf740c7a80873907080c5d0f4e6",
+                "sha256": "cba6a1d09919eae9bd653a8619fdfce4a76c482762464193cb700779e74cb29d",
                 "bytes": 5587,
             },
             {
@@ -71,6 +72,56 @@ def build() -> dict:
                 "sha256": "3a347abe77866a8f9e9665bdb4b2fed26c34445561497102ea313145add1b1b2",
                 "bytes": 8704,
             },
+            {
+                "path": "configs/project_manifest_registry.json",
+                "sha256": "40853038521351fea6e1873a7fb5ea2732dea8148663ec720dd5cb69ff357f58",
+                "bytes": 520627,
+            },
+            {
+                "path": "reports/accelerator_replay/optimizer_matched_adequacy_guard.json",
+                "sha256": "66bb7e6b3413284d651b845b9ab547c79bf758c4f3874cbe5e4a9100b97f74f3",
+                "bytes": 953,
+            },
+            {
+                "path": "reports/replay_safety/00.json",
+                "sha256": "72c6322c053e089adcd5539e59ba534ada252d6a3e1d4188386c23a6886eb961",
+                "bytes": 33180,
+            },
+            {
+                "path": "reports/replay_safety/01.json",
+                "sha256": "e925d575268116d82bf16571a769cc1ffbf09f86a9cb7252308a6c1ed8ca2027",
+                "bytes": 30271,
+            },
+            {
+                "path": "reports/replay_safety/02.json",
+                "sha256": "71b30334b96101570ae3f8eaf015fd7079b94839a22fab0ea7027e2645cc0678",
+                "bytes": 7270,
+            },
+            {
+                "path": "reports/replay_safety/03.json",
+                "sha256": "3cb8e95609914d2f40db6c74628844914392c046e935c8ec46319aaf8bd0453d",
+                "bytes": 3595,
+            },
+            {
+                "path": "reports/replay_safety/04.json",
+                "sha256": "2a786cc7a93b2c5137dd809913eadb8e95e4d30cae168697f7068717c73d2467",
+                "bytes": 2833,
+            },
+            {
+                "path": "reports/replay_safety/05.json",
+                "sha256": "ba65d9dd096157e28f31edd2ec941e1e9fc2c2fc7ba0599e3ebfdeddae98514a",
+                "bytes": 2889,
+            },
+            {
+                "path": "reports/replay_safety/06.json",
+                "sha256": "888f10e5f626ac68c4d2f478c7b049974e4cf1d274ee90fc066964a53fddc021",
+                "bytes": 31140,
+            },
+            {
+                "path": "roadmap.md",
+                "sha256": "3738a5fbb90df70307e757fc1faa9433ad4daa4ad2de78f89b4b7bf444a92736",
+                "bytes": 242945,
+            },
         ],
         "historical_t0_package": {
             "created_utc": "2026-07-26T14:17:19.993860Z",
@@ -78,8 +129,8 @@ def build() -> dict:
             "trigger_state": "GREEN",
             "disposition": "architecture_frozen_training_not_started",
             "artifact_count": 123,
-            "unchanged_artifact_count": 104,
-            "changed_artifact_count": 19,
+            "unchanged_artifact_count": 102,
+            "changed_artifact_count": 21,
             "missing_artifact_count": 0,
             "current_for_source_commit": False,
             "role": "immutable_historical_control_only",
@@ -94,31 +145,48 @@ def build() -> dict:
             "factorized_bakeoff_trigger_state": "GREEN",
             "factorized_bakeoff_disposition": "factorized_architecture_selected_training_not_started",
             "acceleration_selector_trigger_state": "GREEN",
+            "project_registry_trigger_state": "GREEN",
+            "project_registry_blocker_count": 0,
+            "cpu_governance_replay_requested_count": 7,
+            "cpu_governance_replay_passed_count": 7,
+            "cpu_governance_replay_complete": True,
+            "accelerator_replay_requested_count": 14,
+            "accelerator_replay_valid_count": 13,
+            "accelerator_replay_invalid_count": 1,
+            "invalid_accelerator_shard_id": "optimizer_matched_adequacy",
+            "invalid_accelerator_child_started": False,
+            "invalid_accelerator_fault": "host_memory_preflight_failed:available_mib=5093.1:required_mib=5120.0",
             "architecture_package_current": False,
             "remaining_blockers": [
-                "run the guarded replacement independent replay against the current source tree",
+                "run the unchanged guarded optimizer-matched accelerator replay after the declared 5120 MiB launch reserve is naturally available",
                 "publish a replacement content-addressed architecture-freeze package binding the current artifacts",
-                "rerun the broader pre-training readiness gate against the current 84-chapter ASI Stack after the replacement package exists",
             ],
+            "post_t0a_pretraining_prerequisite": "rerun the broader pre-training readiness gate against the current 84-chapter ASI Stack after the replacement package exists",
         },
         "observation_receipts": [
             {
-                "command": "python3 $THESEUS_ROOT/scripts/pretraining_architecture_freeze.py --out $TMPDIR/theseus_pretraining_architecture_freeze_2026_07_27.json",
+                "command": "python3 scripts/pretraining_architecture_freeze.py --execute-replays",
                 "exit_code": 1,
-                "result": "independent_replay_required",
-                "interpretation": "expected fail-closed dry-run result; no replay or source mutation occurred",
+                "result": "seven_cpu_governance_replays_passed_then_freeze_refused_for_one_invalid_accelerator_receipt",
+                "interpretation": "partial replay custody only; the replacement package was not written",
             },
             {
-                "command": "python3 $THESEUS_ROOT/scripts/roadmap_implementation_gate.py --gate --out $TMPDIR/gate.json --markdown-out $TMPDIR/gate.md --crosswalk-out $TMPDIR/crosswalk.json --ai-book-root $AI_BOOK_ROOT",
+                "command": "runtime/venvs/mlx-0.32.0-py312/bin/python scripts/host_resource_safety.py --policy configs/optimizer_matched_adequacy_guard.json -- runtime/venvs/mlx-0.32.0-py312/bin/python scripts/optimizer_matched_adequacy.py --execute",
                 "exit_code": 1,
-                "result": "source_side_report_write_forbidden_by_ai_book_workspace_boundary",
-                "interpretation": "environmental observation only; not a Theseus architecture or behavior result",
+                "result": "host_memory_preflight_refused_before_child_start",
+                "interpretation": "available memory 5093.1 MiB was below the declared 5120 MiB launch reserve; this is a safety refusal, not architecture counterevidence",
+            },
+            {
+                "command": "python3 scripts/theseus_project_registry.py --gate",
+                "exit_code": 0,
+                "result": "GREEN_zero_blockers",
+                "interpretation": "the exact replacement binding repair restored registry and cleanup-queue custody without adding a waiver",
             },
         ],
         "book_disposition": {
-            "prior_state": "single_T0_in_progress_row_conflated_historical_and_successor_freezes",
-            "new_state": "historical_T0_complete_successor_T0A_active_T1_blocked_by_T0A",
-            "next_legal_action": "guarded replacement replay and current content-addressed package publication in Theseus",
+            "prior_state": "T0A_active_before_guarded_replay_attempt",
+            "new_state": "T0A_active_with_7_of_7_cpu_replays_green_13_of_14_accelerator_receipts_valid_and_replacement_freeze_unpublished",
+            "next_legal_action": "run only the unchanged guarded optimizer-matched shard when its declared launch reserve is naturally available, then publish the replacement package",
             "protected_outcomes_opened": 0,
             "support_state_effect": "none",
             "release_effect": "none",
@@ -138,11 +206,15 @@ def build() -> dict:
             "source_commit_substitution",
             "dirty_worktree_erasure",
             "remote_divergence_erasure",
+            "origin_main_publication_erasure",
             "changed_artifact_denominator_shrink",
             "stale_package_marked_current",
             "T0A_marked_complete",
             "T1_unblocked",
-            "independent_replay_failure_erasure",
+            "cpu_replay_failure_invention",
+            "accelerator_denominator_shrink",
+            "invalid_accelerator_receipt_erasure",
+            "accelerator_child_start_invention",
             "protected_outcome_invention",
             "private_payload_copy",
             "support_promotion",
@@ -152,7 +224,8 @@ def build() -> dict:
             "This is a public-safe implementation-reference currentness handoff, not a training or capability result.",
             "A GREEN historical package and GREEN factorized bakeoff do not make the changed current source tree training-ready.",
             "The import does not establish model quality, useful behavior, training success, optimizer superiority, safety, deployment, transfer, AGI, ASI, or SOTA.",
-            "The failed dry-run and workspace-boundary observations are not negative evidence about the architecture.",
+            "The no-child memory preflight refusal is not negative evidence about the optimizer or architecture.",
+            "Seven CPU/governance passes and thirteen valid accelerator receipts do not make a fourteen-receipt freeze complete.",
             "No chapter-core or non-core support state changes.",
         ],
     }
@@ -166,15 +239,16 @@ def validate(actual: dict, expected: dict) -> list[str]:
     if (
         authority.get("branch") != "main"
         or authority.get("worktree_clean") is not True
-        or authority.get("ahead_of_origin_main_commit_count") != 53
+        or authority.get("ahead_of_origin_main_commit_count") != 0
+        or authority.get("published_on_origin_main") is not True
         or authority.get("source_project_mutations") != 0
     ):
         errors.append("source authority or remote-divergence custody drifted")
     old = actual.get("historical_t0_package", {})
     if (
         old.get("artifact_count") != 123
-        or old.get("unchanged_artifact_count") != 104
-        or old.get("changed_artifact_count") != 19
+        or old.get("unchanged_artifact_count") != 102
+        or old.get("changed_artifact_count") != 21
         or old.get("missing_artifact_count") != 0
         or old.get("current_for_source_commit") is not False
         or old.get("role") != "immutable_historical_control_only"
@@ -185,15 +259,28 @@ def validate(actual: dict, expected: dict) -> list[str]:
         current.get("t0_state") != "complete"
         or current.get("t0a_state") != "active"
         or current.get("t1_state") != "blocked_by_T0A"
+        or current.get("project_registry_trigger_state") != "GREEN"
+        or current.get("project_registry_blocker_count") != 0
+        or current.get("cpu_governance_replay_requested_count") != 7
+        or current.get("cpu_governance_replay_passed_count") != 7
+        or current.get("cpu_governance_replay_complete") is not True
+        or current.get("accelerator_replay_requested_count") != 14
+        or current.get("accelerator_replay_valid_count") != 13
+        or current.get("accelerator_replay_invalid_count") != 1
+        or current.get("invalid_accelerator_shard_id") != "optimizer_matched_adequacy"
+        or current.get("invalid_accelerator_child_started") is not False
         or current.get("architecture_package_current") is not False
-        or len(current.get("remaining_blockers", [])) != 3
+        or len(current.get("remaining_blockers", [])) != 2
     ):
         errors.append("T0/T0A/T1 dependency state drifted")
     receipts = actual.get("observation_receipts", [])
     if (
-        len(receipts) != 2
-        or receipts[0].get("result") != "independent_replay_required"
-        or any(row.get("exit_code") != 1 for row in receipts)
+        len(receipts) != 3
+        or receipts[0].get("result")
+        != "seven_cpu_governance_replays_passed_then_freeze_refused_for_one_invalid_accelerator_receipt"
+        or receipts[1].get("result") != "host_memory_preflight_refused_before_child_start"
+        or receipts[2].get("result") != "GREEN_zero_blockers"
+        or [row.get("exit_code") for row in receipts] != [1, 1, 0]
     ):
         errors.append("fail-closed observation receipts drifted")
     disposition = actual.get("book_disposition", {})
@@ -206,7 +293,7 @@ def validate(actual: dict, expected: dict) -> list[str]:
     safety = actual.get("public_safety", {})
     if any(safety.get(key) for key in safety):
         errors.append("public-safety boundary failed")
-    if len(actual.get("negative_controls", [])) != 12:
+    if len(actual.get("negative_controls", [])) != 16:
         errors.append("negative-control denominator drifted")
     return errors
 
@@ -219,9 +306,9 @@ def render(record: dict) -> str:
 
 Observed on 2026-07-27 from clean Project Theseus `main` at
 `{authority['commit']}`. The local branch was {authority['ahead_of_origin_main_commit_count']}
-commits ahead of `origin/main`; this import records the exact local
-author-owned implementation state and does not imply that the source repository
-has published those commits.
+commits ahead of `origin/main`, and the observed commit is published on
+`origin/main`. This import records that exact clean author-owned implementation
+state.
 
 ## Dependency correction
 
@@ -243,20 +330,25 @@ current training authority.
 The finite docket is closed to untriggered architecture expansion. The matched
 factorized bakeoff is GREEN with disposition
 `{current['factorized_bakeoff_disposition']}`, and the acceleration selector is
-GREEN. Those records organize the selected route and scoped exclusions; they
-do not substitute for the current content-addressed package.
+GREEN. The exact replacement binding repair leaves the project registry GREEN
+with zero blockers. All `{current['cpu_governance_replay_requested_count']}`
+CPU/governance replays are current and green. Of
+`{current['accelerator_replay_requested_count']}` selected accelerator receipts,
+`{current['accelerator_replay_valid_count']}` validate. Those records organize
+the selected route and scoped exclusions; they do not substitute for the
+current content-addressed package.
 
 ## Remaining T0A work
 
-1. Run the guarded replacement independent replay against the current tree.
+1. Run the unchanged guarded optimizer-matched accelerator shard when the
+   declared 5,120 MiB launch reserve is naturally available.
 2. Publish the replacement content-addressed architecture-freeze package.
-3. Re-run the broader readiness gate against the current 84-chapter ASI Stack.
 
-A dry-run without `--execute-replays` failed closed with
-`independent_replay_required`, as designed. The attempted roadmap-gate
-observation also stopped at the AI-book workspace boundary because the Theseus
-gate refreshes source-side reports. Neither result is architecture
-counterevidence.
+The remaining shard was refused before child start at 5,093.1 MiB available
+memory because its contract requires 5,120 MiB before launch. This preserves
+host safety and is not optimizer or architecture counterevidence, but it also
+does not complete the replay. After `T0A`, the broader readiness gate must be
+rerun against the current 84-chapter ASI Stack before `T1`.
 
 ## Boundary
 
@@ -289,12 +381,16 @@ def main() -> None:
     mutations = [
         ("commit", lambda x: x["source_authority"].__setitem__("commit", "0" * 40)),
         ("dirty", lambda x: x["source_authority"].__setitem__("worktree_clean", False)),
-        ("remote divergence", lambda x: x["source_authority"].__setitem__("ahead_of_origin_main_commit_count", 0)),
+        ("remote divergence", lambda x: x["source_authority"].__setitem__("ahead_of_origin_main_commit_count", 1)),
+        ("origin publication", lambda x: x["source_authority"].__setitem__("published_on_origin_main", False)),
         ("artifact denominator", lambda x: x["historical_t0_package"].__setitem__("changed_artifact_count", 0)),
         ("stale package current", lambda x: x["historical_t0_package"].__setitem__("current_for_source_commit", True)),
         ("T0A complete", lambda x: x["current_t0a_state"].__setitem__("t0a_state", "complete")),
         ("T1 unblocked", lambda x: x["current_t0a_state"].__setitem__("t1_state", "ready")),
-        ("replay erasure", lambda x: x["observation_receipts"][0].__setitem__("result", "passed")),
+        ("cpu replay failure", lambda x: x["current_t0a_state"].__setitem__("cpu_governance_replay_passed_count", 6)),
+        ("accelerator denominator", lambda x: x["current_t0a_state"].__setitem__("accelerator_replay_requested_count", 13)),
+        ("invalid accelerator erasure", lambda x: x["current_t0a_state"].__setitem__("accelerator_replay_invalid_count", 0)),
+        ("child start invention", lambda x: x["current_t0a_state"].__setitem__("invalid_accelerator_child_started", True)),
         ("outcome invention", lambda x: x["book_disposition"].__setitem__("protected_outcomes_opened", 1)),
         ("private copy", lambda x: x["public_safety"].__setitem__("private_payloads_copied", 1)),
         ("support promotion", lambda x: x["book_disposition"].__setitem__("support_state_effect", "prototype-backed")),
@@ -309,8 +405,9 @@ def main() -> None:
         raise SystemExit("Theseus T0A currentness import failed:\n - " + "\n - ".join(errors))
     print(
         "Theseus T0A currentness import passed: T0 complete, T0A active, "
-        "T1 blocked; 104/123 frozen artifacts unchanged, 19 changed, "
-        "zero outcomes/support/release movement, 12 rejecting controls."
+        "T1 blocked; 102/123 frozen artifacts unchanged, 21 changed; "
+        "7/7 CPU replays green, 13/14 accelerator receipts valid, "
+        "zero outcomes/support/release movement, 16 rejecting controls."
     )
 
 

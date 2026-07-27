@@ -1,15 +1,34 @@
 # Changelog
 
+## 2026-07-27 — Theseus T0A guarded-replay custody update
+
+- Published the exact Project Theseus `main` checkpoint `0700fdb0` to
+  `origin/main`, eliminating the prior 53-commit local/remote divergence.
+- Repaired ten stale content bindings without adding a waiver; the project
+  registry is GREEN with zero blockers and complete cleanup-queue custody.
+- Banked 7/7 current CPU/governance replay receipts and preserved 13/14 valid
+  accelerator receipts. The remaining optimizer-matched shard was refused
+  before child start because 5,093.1 MiB available memory was below its
+  declared 5,120 MiB launch reserve.
+- Updated the content-addressed comparison to 102 unchanged, 21 changed, and
+  zero missing artifacts out of the historical 123. The old package remains an
+  immutable control; the replacement package remains unpublished.
+- Expanded the registered public-safe currentness validator to sixteen
+  rejecting mutations covering origin publication, replay denominators,
+  failed-shard preservation, and child-start honesty. No training, held-out
+  outcome, support movement, release movement, or capability claim occurred.
+
 ## 2026-07-27 — Theseus T0/T0A architecture-currentness reconciliation
 
 - Replaced the book's compressed single-`T0` critical-path row with the exact
   source-owned dependency: historical `T0` complete, successor `T0A` active,
   and `T1` blocked by `T0A`.
-- Added a public-safe, digest-bound currentness import from clean local Theseus
-  `main` at `d5b99128`, while disclosing that the source branch was 53 commits
-  ahead of its remote and making no claim that those commits were published.
+- Added the initial public-safe, digest-bound currentness import from clean
+  local Theseus `main` at `d5b99128`; the later custody update above supersedes
+  its local/remote publication state.
 - Compared the historical 123-artifact architecture package with the current
-  tree: 104 artifacts were unchanged, 19 changed, and none were missing. The
+  tree: 104 artifacts were unchanged, 19 changed, and none were missing at
+  that snapshot. The later custody update above supersedes those counts. The
   old GREEN package remains an immutable control but cannot supply current
   training authority.
 - Recorded the GREEN factorized selection and acceleration selector, the
@@ -18,7 +37,7 @@
   readiness gate against the 84-chapter book.
 - Threaded the correction through the Project Theseus chapter, Prototype
   Roadmap, canonical roadmap, machine status/schema, and a registered
-  validator with twelve rejecting mutations. No training, protected outcome,
+  validator with twelve rejecting mutations in its initial form. No training, protected outcome,
   model output, support transition, release transition, or capability claim
   occurred.
 

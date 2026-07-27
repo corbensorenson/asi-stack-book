@@ -190,6 +190,7 @@
         "shared_flagship_id",
         "shared_research_question",
         "critical_path",
+        "t0a_currentness",
         "empirical_lanes",
         "narrative_quality_gate",
         "post_review_convergence",
@@ -239,6 +240,90 @@
             }
           ],
           "items": false
+        },
+        "t0a_currentness": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "source_commit",
+            "source_branch",
+            "published_on_origin_main",
+            "historical_artifact_count",
+            "historical_unchanged_artifact_count",
+            "historical_changed_artifact_count",
+            "historical_missing_artifact_count",
+            "cpu_governance_replay_passed_count",
+            "cpu_governance_replay_requested_count",
+            "accelerator_replay_valid_count",
+            "accelerator_replay_requested_count",
+            "remaining_shard",
+            "remaining_shard_child_started",
+            "remaining_shard_fault",
+            "replacement_package_current",
+            "next_legal_action",
+            "protected_outcomes_opened",
+            "support_state_effect",
+            "release_effect"
+          ],
+          "properties": {
+            "source_commit": {
+              "const": "0700fdb0d61f6e84e8f765a889a9b2107da0784b"
+            },
+            "source_branch": {
+              "const": "main"
+            },
+            "published_on_origin_main": {
+              "const": true
+            },
+            "historical_artifact_count": {
+              "const": 123
+            },
+            "historical_unchanged_artifact_count": {
+              "const": 102
+            },
+            "historical_changed_artifact_count": {
+              "const": 21
+            },
+            "historical_missing_artifact_count": {
+              "const": 0
+            },
+            "cpu_governance_replay_passed_count": {
+              "const": 7
+            },
+            "cpu_governance_replay_requested_count": {
+              "const": 7
+            },
+            "accelerator_replay_valid_count": {
+              "const": 13
+            },
+            "accelerator_replay_requested_count": {
+              "const": 14
+            },
+            "remaining_shard": {
+              "const": "optimizer_matched_adequacy"
+            },
+            "remaining_shard_child_started": {
+              "const": false
+            },
+            "remaining_shard_fault": {
+              "const": "host_memory_preflight_failed:available_mib=5093.1:required_mib=5120.0"
+            },
+            "replacement_package_current": {
+              "const": false
+            },
+            "next_legal_action": {
+              "const": "run only the unchanged guarded optimizer-matched shard when its declared launch reserve is naturally available, then publish the replacement content-addressed package"
+            },
+            "protected_outcomes_opened": {
+              "const": 0
+            },
+            "support_state_effect": {
+              "const": "none"
+            },
+            "release_effect": {
+              "const": "none"
+            }
+          }
         },
         "empirical_lanes": {
           "type": "object",

@@ -134,6 +134,27 @@
         "purpose": "synthesize a public-safe book case and require separate reproduction and transfer for broader claims"
       }
     ],
+    "t0a_currentness": {
+      "source_commit": "0700fdb0d61f6e84e8f765a889a9b2107da0784b",
+      "source_branch": "main",
+      "published_on_origin_main": true,
+      "historical_artifact_count": 123,
+      "historical_unchanged_artifact_count": 102,
+      "historical_changed_artifact_count": 21,
+      "historical_missing_artifact_count": 0,
+      "cpu_governance_replay_passed_count": 7,
+      "cpu_governance_replay_requested_count": 7,
+      "accelerator_replay_valid_count": 13,
+      "accelerator_replay_requested_count": 14,
+      "remaining_shard": "optimizer_matched_adequacy",
+      "remaining_shard_child_started": false,
+      "remaining_shard_fault": "host_memory_preflight_failed:available_mib=5093.1:required_mib=5120.0",
+      "replacement_package_current": false,
+      "next_legal_action": "run only the unchanged guarded optimizer-matched shard when its declared launch reserve is naturally available, then publish the replacement content-addressed package",
+      "protected_outcomes_opened": 0,
+      "support_state_effect": "none",
+      "release_effect": "none"
+    },
     "empirical_lanes": {
       "q1_governed_admission": {
         "question_id": "Q1",

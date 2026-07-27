@@ -1028,6 +1028,30 @@ def errors(data: dict) -> list[str]:
         out.append("shared quality flagship identity drifted")
     if [row.get("id") for row in critical_path] != ["T0", "T0A", "T1", "T2", "T3", "T4", "T5", "T6"]:
         out.append("shared quality critical path must preserve historical T0, successor T0A, then T1 through T6")
+    t0a_currentness = quality_program.get("t0a_currentness", {})
+    expected_t0a_currentness = {
+        "source_commit": "0700fdb0d61f6e84e8f765a889a9b2107da0784b",
+        "source_branch": "main",
+        "published_on_origin_main": True,
+        "historical_artifact_count": 123,
+        "historical_unchanged_artifact_count": 102,
+        "historical_changed_artifact_count": 21,
+        "historical_missing_artifact_count": 0,
+        "cpu_governance_replay_passed_count": 7,
+        "cpu_governance_replay_requested_count": 7,
+        "accelerator_replay_valid_count": 13,
+        "accelerator_replay_requested_count": 14,
+        "remaining_shard": "optimizer_matched_adequacy",
+        "remaining_shard_child_started": False,
+        "remaining_shard_fault": "host_memory_preflight_failed:available_mib=5093.1:required_mib=5120.0",
+        "replacement_package_current": False,
+        "next_legal_action": "run only the unchanged guarded optimizer-matched shard when its declared launch reserve is naturally available, then publish the replacement content-addressed package",
+        "protected_outcomes_opened": 0,
+        "support_state_effect": "none",
+        "release_effect": "none",
+    }
+    if t0a_currentness != expected_t0a_currentness:
+        out.append("T0A currentness custody record drifted from the published partial replay state")
     if quality_program.get("support_state_effect") != "none" or quality_program.get("release_effect") != "none":
         out.append("quality roadmap laundered support or release state")
     empirical_lanes = quality_program.get("empirical_lanes", {})
@@ -1785,6 +1809,13 @@ def main() -> None:
     mutate("missing successor continuity", lambda c: c["status"].__setitem__("closure_requires_active_successor", False))
     mutate("stale predecessor", lambda c: c["predecessor"].__setitem__("status", "active"))
     mutate("shared flagship identity drift", lambda c: c["status"]["quality_uplift_program"].__setitem__("shared_flagship_id", "drifted"))
+    mutate("T0A source commit drift", lambda c: c["status"]["quality_uplift_program"]["t0a_currentness"].__setitem__("source_commit", "0" * 40))
+    mutate("T0A origin publication erasure", lambda c: c["status"]["quality_uplift_program"]["t0a_currentness"].__setitem__("published_on_origin_main", False))
+    mutate("T0A CPU replay denominator drift", lambda c: c["status"]["quality_uplift_program"]["t0a_currentness"].__setitem__("cpu_governance_replay_passed_count", 6))
+    mutate("T0A accelerator denominator shrink", lambda c: c["status"]["quality_uplift_program"]["t0a_currentness"].__setitem__("accelerator_replay_requested_count", 13))
+    mutate("T0A failed shard erasure", lambda c: c["status"]["quality_uplift_program"]["t0a_currentness"].__setitem__("accelerator_replay_valid_count", 14))
+    mutate("T0A child start invention", lambda c: c["status"]["quality_uplift_program"]["t0a_currentness"].__setitem__("remaining_shard_child_started", True))
+    mutate("T0A replacement freeze laundering", lambda c: c["status"]["quality_uplift_program"]["t0a_currentness"].__setitem__("replacement_package_current", True))
     mutate("editorial meaning-preservation deletion", lambda c: c["status"]["quality_uplift_program"]["narrative_quality_gate"].__setitem__("requires_meaning_preservation_audit", False))
     mutate("post-review reference denominator rollback", lambda c: c["status"]["quality_uplift_program"]["post_review_convergence"].__setitem__("reference_chapter_count", 61))
     mutate("post-review narrative target rollback", lambda c: c["status"]["quality_uplift_program"]["post_review_convergence"].__setitem__("narrative_unit_target", 15))

@@ -414,15 +414,21 @@ payloads, and support states may not.
 | `T6` — Synthesis and challenge | P3 + P7 | A public-safe evidence pack updates only the exact affected atoms and reader case; any broader language waits for separate reproduction and two transfer settings. |
 
 The 2026-07-27 public-safe currentness handoff resolves a previously compressed
-dependency. Project Theseus `main` at `d5b99128` reports `T0` complete, `T0A`
-active, and `T1` blocked by `T0A`. Its July 26 historical freeze bound 123
-artifacts; direct digest comparison found 104 unchanged, 19 changed, and none
-missing. The historical package therefore remains an immutable control but is
-not current training authority. The finite factorized selection and
-acceleration selector are GREEN, so the legal next action is not another open
-architecture-idea cycle: it is the guarded replacement replay, publication of
-the current content-addressed package, and then the broader readiness gate
-against the 84-chapter book. The exact sanitized receipt is
+dependency. Project Theseus `main` at published commit `0700fdb0` reports `T0`
+complete, `T0A` active, and `T1` blocked by `T0A`. Its July 26 historical
+freeze bound 123 artifacts; direct digest comparison now finds 102 unchanged,
+21 changed, and none missing. The historical package therefore remains an
+immutable control but is not current training authority. The finite factorized
+selection, acceleration selector, and project registry are GREEN. All 7
+CPU/governance replays are current and green, while 13 of 14 selected
+accelerator receipts validate. The remaining optimizer-matched shard was
+refused before child start at 5,093.1 MiB available against its declared
+5,120 MiB launch reserve. That safety refusal is not architecture
+counterevidence and does not close `T0A`. The legal next action is not another
+open architecture-idea cycle: run only that unchanged guarded shard when its
+reserve is naturally available, publish the replacement content-addressed
+package, and then rerun the broader readiness gate against the 84-chapter
+book. The exact sanitized receipt is
 `docs/theseus_t0a_architecture_closure_currentness_import.md`. No training,
 held-out outcome, support movement, or efficacy inference follows from this
 currentness reconciliation.

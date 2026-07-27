@@ -1,10 +1,10 @@
 # Project Theseus T0A architecture-closure currentness import
 
 Observed on 2026-07-27 from clean Project Theseus `main` at
-`d5b99128395f6af5a34b731ba024305d2e44433c`. The local branch was 53
-commits ahead of `origin/main`; this import records the exact local
-author-owned implementation state and does not imply that the source repository
-has published those commits.
+`0700fdb0d61f6e84e8f765a889a9b2107da0784b`. The local branch was 0
+commits ahead of `origin/main`, and the observed commit is published on
+`origin/main`. This import records that exact clean author-owned implementation
+state.
 
 ## Dependency correction
 
@@ -16,7 +16,7 @@ has published those commits.
 
 The 2026-07-26 package recorded `123` artifacts. Direct
 digest comparison against the observed source tree found
-`104` unchanged, `19`
+`102` unchanged, `21`
 changed, and `0` missing. Its GREEN state and
 identity `sha256:9d7dc30b378067c0a254fdca21ef54e3c5469af63c748d3cc49e1f427b251cce` therefore remain historical facts, not
 current training authority.
@@ -26,20 +26,25 @@ current training authority.
 The finite docket is closed to untriggered architecture expansion. The matched
 factorized bakeoff is GREEN with disposition
 `factorized_architecture_selected_training_not_started`, and the acceleration selector is
-GREEN. Those records organize the selected route and scoped exclusions; they
-do not substitute for the current content-addressed package.
+GREEN. The exact replacement binding repair leaves the project registry GREEN
+with zero blockers. All `7`
+CPU/governance replays are current and green. Of
+`14` selected accelerator receipts,
+`13` validate. Those records organize
+the selected route and scoped exclusions; they do not substitute for the
+current content-addressed package.
 
 ## Remaining T0A work
 
-1. Run the guarded replacement independent replay against the current tree.
+1. Run the unchanged guarded optimizer-matched accelerator shard when the
+   declared 5,120 MiB launch reserve is naturally available.
 2. Publish the replacement content-addressed architecture-freeze package.
-3. Re-run the broader readiness gate against the current 84-chapter ASI Stack.
 
-A dry-run without `--execute-replays` failed closed with
-`independent_replay_required`, as designed. The attempted roadmap-gate
-observation also stopped at the AI-book workspace boundary because the Theseus
-gate refreshes source-side reports. Neither result is architecture
-counterevidence.
+The remaining shard was refused before child start at 5,093.1 MiB available
+memory because its contract requires 5,120 MiB before launch. This preserves
+host safety and is not optimizer or architecture counterevidence, but it also
+does not complete the replay. After `T0A`, the broader readiness gate must be
+rerun against the current 84-chapter ASI Stack before `T1`.
 
 ## Boundary
 

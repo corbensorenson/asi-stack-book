@@ -1,15 +1,16 @@
 {
-  "schema_version": "asi_stack.theseus_t0a_architecture_closure_currentness_import.v1",
-  "import_id": "theseus-t0a-architecture-closure-currentness-2026-07-27-d5b99128",
-  "observed_utc": "2026-07-27T10:08:45Z",
+  "schema_version": "asi_stack.theseus_t0a_architecture_closure_currentness_import.v2",
+  "import_id": "theseus-t0a-architecture-closure-currentness-2026-07-27-0700fdb0",
+  "observed_utc": "2026-07-27T11:35:03Z",
   "source_authority": {
     "project": "Project Theseus / Theseus-Hive",
     "owner": "Corben Sorenson",
     "source_kind": "local_author_owned_implementation_reference",
     "branch": "main",
-    "commit": "d5b99128395f6af5a34b731ba024305d2e44433c",
+    "commit": "0700fdb0d61f6e84e8f765a889a9b2107da0784b",
     "worktree_clean": true,
-    "ahead_of_origin_main_commit_count": 53,
+    "ahead_of_origin_main_commit_count": 0,
+    "published_on_origin_main": true,
     "source_project_mutations": 0,
     "network_calls": 0,
     "external_inference_calls": 0
@@ -32,7 +33,7 @@
     },
     {
       "path": "reports/pretraining_factorized_bakeoff.json",
-      "sha256": "b7c84562337cbea6641dcef82ec71c3ef384adf740c7a80873907080c5d0f4e6",
+      "sha256": "cba6a1d09919eae9bd653a8619fdfce4a76c482762464193cb700779e74cb29d",
       "bytes": 5587
     },
     {
@@ -49,6 +50,56 @@
       "path": "reports/training_acceleration_final_selector.json",
       "sha256": "3a347abe77866a8f9e9665bdb4b2fed26c34445561497102ea313145add1b1b2",
       "bytes": 8704
+    },
+    {
+      "path": "configs/project_manifest_registry.json",
+      "sha256": "40853038521351fea6e1873a7fb5ea2732dea8148663ec720dd5cb69ff357f58",
+      "bytes": 520627
+    },
+    {
+      "path": "reports/accelerator_replay/optimizer_matched_adequacy_guard.json",
+      "sha256": "66bb7e6b3413284d651b845b9ab547c79bf758c4f3874cbe5e4a9100b97f74f3",
+      "bytes": 953
+    },
+    {
+      "path": "reports/replay_safety/00.json",
+      "sha256": "72c6322c053e089adcd5539e59ba534ada252d6a3e1d4188386c23a6886eb961",
+      "bytes": 33180
+    },
+    {
+      "path": "reports/replay_safety/01.json",
+      "sha256": "e925d575268116d82bf16571a769cc1ffbf09f86a9cb7252308a6c1ed8ca2027",
+      "bytes": 30271
+    },
+    {
+      "path": "reports/replay_safety/02.json",
+      "sha256": "71b30334b96101570ae3f8eaf015fd7079b94839a22fab0ea7027e2645cc0678",
+      "bytes": 7270
+    },
+    {
+      "path": "reports/replay_safety/03.json",
+      "sha256": "3cb8e95609914d2f40db6c74628844914392c046e935c8ec46319aaf8bd0453d",
+      "bytes": 3595
+    },
+    {
+      "path": "reports/replay_safety/04.json",
+      "sha256": "2a786cc7a93b2c5137dd809913eadb8e95e4d30cae168697f7068717c73d2467",
+      "bytes": 2833
+    },
+    {
+      "path": "reports/replay_safety/05.json",
+      "sha256": "ba65d9dd096157e28f31edd2ec941e1e9fc2c2fc7ba0599e3ebfdeddae98514a",
+      "bytes": 2889
+    },
+    {
+      "path": "reports/replay_safety/06.json",
+      "sha256": "888f10e5f626ac68c4d2f478c7b049974e4cf1d274ee90fc066964a53fddc021",
+      "bytes": 31140
+    },
+    {
+      "path": "roadmap.md",
+      "sha256": "3738a5fbb90df70307e757fc1faa9433ad4daa4ad2de78f89b4b7bf444a92736",
+      "bytes": 242945
     }
   ],
   "historical_t0_package": {
@@ -57,8 +108,8 @@
     "trigger_state": "GREEN",
     "disposition": "architecture_frozen_training_not_started",
     "artifact_count": 123,
-    "unchanged_artifact_count": 104,
-    "changed_artifact_count": 19,
+    "unchanged_artifact_count": 102,
+    "changed_artifact_count": 21,
     "missing_artifact_count": 0,
     "current_for_source_commit": false,
     "role": "immutable_historical_control_only"
@@ -73,31 +124,48 @@
     "factorized_bakeoff_trigger_state": "GREEN",
     "factorized_bakeoff_disposition": "factorized_architecture_selected_training_not_started",
     "acceleration_selector_trigger_state": "GREEN",
+    "project_registry_trigger_state": "GREEN",
+    "project_registry_blocker_count": 0,
+    "cpu_governance_replay_requested_count": 7,
+    "cpu_governance_replay_passed_count": 7,
+    "cpu_governance_replay_complete": true,
+    "accelerator_replay_requested_count": 14,
+    "accelerator_replay_valid_count": 13,
+    "accelerator_replay_invalid_count": 1,
+    "invalid_accelerator_shard_id": "optimizer_matched_adequacy",
+    "invalid_accelerator_child_started": false,
+    "invalid_accelerator_fault": "host_memory_preflight_failed:available_mib=5093.1:required_mib=5120.0",
     "architecture_package_current": false,
     "remaining_blockers": [
-      "run the guarded replacement independent replay against the current source tree",
-      "publish a replacement content-addressed architecture-freeze package binding the current artifacts",
-      "rerun the broader pre-training readiness gate against the current 84-chapter ASI Stack after the replacement package exists"
-    ]
+      "run the unchanged guarded optimizer-matched accelerator replay after the declared 5120 MiB launch reserve is naturally available",
+      "publish a replacement content-addressed architecture-freeze package binding the current artifacts"
+    ],
+    "post_t0a_pretraining_prerequisite": "rerun the broader pre-training readiness gate against the current 84-chapter ASI Stack after the replacement package exists"
   },
   "observation_receipts": [
     {
-      "command": "python3 $THESEUS_ROOT/scripts/pretraining_architecture_freeze.py --out $TMPDIR/theseus_pretraining_architecture_freeze_2026_07_27.json",
+      "command": "python3 scripts/pretraining_architecture_freeze.py --execute-replays",
       "exit_code": 1,
-      "result": "independent_replay_required",
-      "interpretation": "expected fail-closed dry-run result; no replay or source mutation occurred"
+      "result": "seven_cpu_governance_replays_passed_then_freeze_refused_for_one_invalid_accelerator_receipt",
+      "interpretation": "partial replay custody only; the replacement package was not written"
     },
     {
-      "command": "python3 $THESEUS_ROOT/scripts/roadmap_implementation_gate.py --gate --out $TMPDIR/gate.json --markdown-out $TMPDIR/gate.md --crosswalk-out $TMPDIR/crosswalk.json --ai-book-root $AI_BOOK_ROOT",
+      "command": "runtime/venvs/mlx-0.32.0-py312/bin/python scripts/host_resource_safety.py --policy configs/optimizer_matched_adequacy_guard.json -- runtime/venvs/mlx-0.32.0-py312/bin/python scripts/optimizer_matched_adequacy.py --execute",
       "exit_code": 1,
-      "result": "source_side_report_write_forbidden_by_ai_book_workspace_boundary",
-      "interpretation": "environmental observation only; not a Theseus architecture or behavior result"
+      "result": "host_memory_preflight_refused_before_child_start",
+      "interpretation": "available memory 5093.1 MiB was below the declared 5120 MiB launch reserve; this is a safety refusal, not architecture counterevidence"
+    },
+    {
+      "command": "python3 scripts/theseus_project_registry.py --gate",
+      "exit_code": 0,
+      "result": "GREEN_zero_blockers",
+      "interpretation": "the exact replacement binding repair restored registry and cleanup-queue custody without adding a waiver"
     }
   ],
   "book_disposition": {
-    "prior_state": "single_T0_in_progress_row_conflated_historical_and_successor_freezes",
-    "new_state": "historical_T0_complete_successor_T0A_active_T1_blocked_by_T0A",
-    "next_legal_action": "guarded replacement replay and current content-addressed package publication in Theseus",
+    "prior_state": "T0A_active_before_guarded_replay_attempt",
+    "new_state": "T0A_active_with_7_of_7_cpu_replays_green_13_of_14_accelerator_receipts_valid_and_replacement_freeze_unpublished",
+    "next_legal_action": "run only the unchanged guarded optimizer-matched shard when its declared launch reserve is naturally available, then publish the replacement package",
     "protected_outcomes_opened": 0,
     "support_state_effect": "none",
     "release_effect": "none"
@@ -117,11 +185,15 @@
     "source_commit_substitution",
     "dirty_worktree_erasure",
     "remote_divergence_erasure",
+    "origin_main_publication_erasure",
     "changed_artifact_denominator_shrink",
     "stale_package_marked_current",
     "T0A_marked_complete",
     "T1_unblocked",
-    "independent_replay_failure_erasure",
+    "cpu_replay_failure_invention",
+    "accelerator_denominator_shrink",
+    "invalid_accelerator_receipt_erasure",
+    "accelerator_child_start_invention",
     "protected_outcome_invention",
     "private_payload_copy",
     "support_promotion",
@@ -131,7 +203,8 @@
     "This is a public-safe implementation-reference currentness handoff, not a training or capability result.",
     "A GREEN historical package and GREEN factorized bakeoff do not make the changed current source tree training-ready.",
     "The import does not establish model quality, useful behavior, training success, optimizer superiority, safety, deployment, transfer, AGI, ASI, or SOTA.",
-    "The failed dry-run and workspace-boundary observations are not negative evidence about the architecture.",
+    "The no-child memory preflight refusal is not negative evidence about the optimizer or architecture.",
+    "Seven CPU/governance passes and thirteen valid accelerator receipts do not make a fourteen-receipt freeze complete.",
     "No chapter-core or non-core support state changes."
   ]
 }
