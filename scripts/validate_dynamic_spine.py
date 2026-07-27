@@ -87,6 +87,19 @@ def run(workspace: Path, *args: str) -> str:
     return result.stdout
 
 
+def clone_or_copy(source: str, destination: str) -> str:
+    """Use an APFS copy-on-write clone when available, then fall back safely."""
+    clone = subprocess.run(
+        ["cp", "-c", "-p", source, destination],
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL,
+        check=False,
+    )
+    if clone.returncode == 0:
+        return destination
+    return shutil.copy2(source, destination)
+
+
 def snapshot(workspace: Path) -> dict[Path, str]:
     result: dict[Path, str] = {}
     for relative in GENERATED_PATHS:
@@ -218,6 +231,7 @@ def main() -> None:
                 ROOT,
                 workspace,
                 ignore=shutil.ignore_patterns(*IGNORED_COPY_NAMES),
+                copy_function=clone_or_copy,
             )
             run(workspace, "scripts/sync_scaffold.py")
             baseline = snapshot(workspace)

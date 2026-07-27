@@ -1,0 +1,48 @@
+---
+title: "Synthetic Copied Scaffold"
+source_ids:
+  - fixture_source
+---
+
+# Synthetic Copied Scaffold
+
+[Synthetic copied scaffold core claim — support: argument]
+
+The [shared lifecycle method](../../../chapters/living-book-methodology.qmd#shared-chapter-lifecycle-method)
+is the declared common owner.
+
+```{mermaid}
+flowchart LR
+  A["Declared purpose and bounded authority"] --> B["Versioned chapter-specific contract"]
+  B["Versioned chapter-specific contract"] --> C["Admission and boundary checks"]
+  C["Admission and boundary checks"] --> D["Execute with complete lineage and denominators"]
+  D["Execute with complete lineage and denominators"] --> E["Observe outcomes, costs, and residuals"]
+  E["Observe outcomes, costs, and residuals"] --> F{"Independent checks pass?"}
+  F -- "no" --> G["Quarantine, narrow, correct, or stop"]
+  F -- "yes" --> H["Versioned bounded handoff"]
+```
+
+## Interfaces and ownership boundary
+
+The chapter says that it owns a distinct control plane, but it does not identify
+the object or decision that neighboring owners cannot preserve.
+
+## Evidence and falsification program
+
+A fair test must freeze the mechanism, authority, comparator set, tuning and
+rescue budgets, metrics, stopping rule, and protected holdout before outcomes
+are visible.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Contract completeness | Reject missing identity, authority, scope, version, consumer, residual, or expiry fields. | planned |
+| Boundary mutation | Substitute an adjacent owner's authority and require rejection. | planned |
+| Failure-family mutation | Inject at least one mechanism-specific failure and preserve the full attempt denominator. | planned |
+| No-promotion control | Ensure prose, schemas, fixtures, and source-reported results cannot promote the chapter core claim. | planned |
+
+## Handoff
+
+The next chapter consumes this chapter's bounded outputs without inheriting
+authority, certainty, or support that this chapter did not establish.

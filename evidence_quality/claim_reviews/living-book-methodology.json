@@ -5,9 +5,9 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/living-book-methodology.qmd",
     "structured_atoms_reviewed": 75,
-    "prose_candidates_adjudicated": 51,
+    "prose_candidates_adjudicated": 63,
     "unowned_material_claims": 0,
-    "review_note": "Reviewed the complete chapter, all sixteen exact source mappings, four proof targets, nineteen retained Lean declarations, release and change-packet fixtures, reader bridge, every manifest atom, and every prose candidate. Made the Evidence-Preserving Publication Transaction the distinct owner; expanded 18/12/18/18; preserved repository hygiene without chapter-core effect; and froze the natural independent multi-maintainer matched-workflow reproduction and transfer campaign. The 2026-07-25 C1–C8 reconciliation, 2026-07-26 narrative-compression addition, and projection retirement classify scanner-only fragments and bounded formal summaries without changing support state. The 2026-07-25 C1–C8 reconciliation classifies new scanner-only line-wrap fragments as nonmaterial and changes no support state."
+    "review_note": "Re-reviewed the complete Living Book Methodology chapter on 2026-07-26 after W3 centralized the shared lifecycle and inheritance boundary. Twelve new sentences refine existing method, invariant, failure-mode, and mature-campaign atoms; no new material atom, support, release, or publication movement was introduced."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
@@ -16,7 +16,7 @@
       "environment": "Sixteen mappings; release-record fixture; three valid/six invalid change packets; blocked reader candidate plus three valid and five invalid routes; synchronized publication surfaces; four targets; nineteen retained finite declarations. No manuscript-quality, accessibility-approval, reader-value, external-reproduction, or transfer result.",
       "model": "Evidence-Preserving Publication Transaction over canonical source, provenance, lane separation, claim and proof scope, change packets, regeneration, validation, typed derivatives, release identity, correction, successor continuity, and expiry.",
       "authority": "Owns publication-state integrity only; author intent, source truth, claim evidence, editorial quality, accessibility approval, rights, release approval, external publication, and reader judgment remain separate.",
-      "time": "Reviewed through 2026-07-15; material source, claim, proof, validation, rights, audience, format, release policy, consumer, environment, or time changes expire affected transactions.",
+      "time": "Semantic review current through 2026-07-26; material changes to evidence, authority, population, model, environment, ontology, or consumer require reauthorization.",
       "artifact": "Chapter, manifest, sixteen mappings, release/change/reader fixtures and validators, publication surfaces, four targets, nineteen retained declarations, semantic review, and future campaign."
     },
     "current_disposition": "retain_argument_with_repository_release_and_derivative_discipline_no_core_effect",
@@ -133,11 +133,53 @@
     }
   },
   "prose_candidate_dispositions": {
-    "living-book-methodology.prose.7987ec8fba3e": {
+    "living-book-methodology.prose.00a03624f3da": {
       "state": "nonmaterial_explanation",
       "rationale": "Semantically reviewed as bounded explanation, source report, publication-lifecycle restatement, finite-proof boundary, scanner fragment, or explicit non-claim; material obligations are already atomized."
     },
+    "living-book-methodology.prose.04fdf88e2836": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after W3 as a no-cross-promotion refinement of `living-book-methodology.invariant.007`; it creates no separate support-bearing atom.",
+      "target_atom_id": "living-book-methodology.invariant.007"
+    },
+    "living-book-methodology.prose.08bd4b5c97b7": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Line-wrapped reader explanation already governed by structured chapter atoms; it adds no independent material claim."
+    },
+    "living-book-methodology.prose.0ec8460d1e84": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source report, publication-lifecycle restatement, finite-proof boundary, scanner fragment, or explicit non-claim; material obligations are already atomized."
+    },
+    "living-book-methodology.prose.112b3d0ef1d3": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explicit non-claim preventing a validator from filling evidence lanes or promoting a core claim."
+    },
     "living-book-methodology.prose.14093e41ae10": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source report, publication-lifecycle restatement, finite-proof boundary, scanner fragment, or explicit non-claim; material obligations are already atomized."
+    },
+    "living-book-methodology.prose.187c9f775df0": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source report, publication-lifecycle restatement, finite-proof boundary, scanner fragment, or explicit non-claim; material obligations are already atomized."
+    },
+    "living-book-methodology.prose.1b65d91e10b1": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source report, publication-lifecycle restatement, finite-proof boundary, scanner fragment, or explicit non-claim; material obligations are already atomized."
+    },
+    "living-book-methodology.prose.1c7f15838ef9": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after W3 as a authority and support ceiling of `living-book-methodology.invariant.004`; it creates no separate support-bearing atom.",
+      "target_atom_id": "living-book-methodology.invariant.004"
+    },
+    "living-book-methodology.prose.230ca9d822fa": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Line-wrapped statement of the validator's already atomized bounded-attempt ceiling."
+    },
+    "living-book-methodology.prose.26c9a1b4e35c": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Continuation of the existing anti-laundering boundary for counts and nearby artifacts."
+    },
+    "living-book-methodology.prose.2d25faf2085a": {
       "state": "nonmaterial_explanation",
       "rationale": "Semantically reviewed as bounded explanation, source report, publication-lifecycle restatement, finite-proof boundary, scanner fragment, or explicit non-claim; material obligations are already atomized."
     },
@@ -145,35 +187,16 @@
       "state": "nonmaterial_explanation",
       "rationale": "Semantically reviewed as bounded explanation, source report, publication-lifecycle restatement, finite-proof boundary, scanner fragment, or explicit non-claim; material obligations are already atomized."
     },
-    "living-book-methodology.prose.ada0b1762aff": {
+    "living-book-methodology.prose.3429569c56ea": {
       "state": "nonmaterial_explanation",
       "rationale": "Semantically reviewed as bounded explanation, source report, publication-lifecycle restatement, finite-proof boundary, scanner fragment, or explicit non-claim; material obligations are already atomized."
     },
-    "living-book-methodology.prose.b216b873d961": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Semantically reviewed as bounded explanation, source report, publication-lifecycle restatement, finite-proof boundary, scanner fragment, or explicit non-claim; material obligations are already atomized."
+    "living-book-methodology.prose.3633c5503703": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after W3 as a chapter-specific evidence-plan requirement of `living-book-methodology.beyond_sota.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "living-book-methodology.beyond_sota.001"
     },
-    "living-book-methodology.prose.9369b19b8091": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Semantically reviewed as bounded explanation, source report, publication-lifecycle restatement, finite-proof boundary, scanner fragment, or explicit non-claim; material obligations are already atomized."
-    },
-    "living-book-methodology.prose.c27c795b1ebf": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Semantically reviewed as bounded explanation, source report, publication-lifecycle restatement, finite-proof boundary, scanner fragment, or explicit non-claim; material obligations are already atomized."
-    },
-    "living-book-methodology.prose.b419cad6e80d": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Semantically reviewed as bounded explanation, source report, publication-lifecycle restatement, finite-proof boundary, scanner fragment, or explicit non-claim; material obligations are already atomized."
-    },
-    "living-book-methodology.prose.fef318b53b35": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Semantically reviewed as bounded explanation, source report, publication-lifecycle restatement, finite-proof boundary, scanner fragment, or explicit non-claim; material obligations are already atomized."
-    },
-    "living-book-methodology.prose.b5a22dd34e72": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Semantically reviewed as bounded explanation, source report, publication-lifecycle restatement, finite-proof boundary, scanner fragment, or explicit non-claim; material obligations are already atomized."
-    },
-    "living-book-methodology.prose.5545dde9bf47": {
+    "living-book-methodology.prose.3c82952fe41e": {
       "state": "nonmaterial_explanation",
       "rationale": "Semantically reviewed as bounded explanation, source report, publication-lifecycle restatement, finite-proof boundary, scanner fragment, or explicit non-claim; material obligations are already atomized."
     },
@@ -185,15 +208,16 @@
       "state": "nonmaterial_explanation",
       "rationale": "Semantically reviewed as bounded explanation, source report, publication-lifecycle restatement, finite-proof boundary, scanner fragment, or explicit non-claim; material obligations are already atomized."
     },
-    "living-book-methodology.prose.2d25faf2085a": {
+    "living-book-methodology.prose.47fb273c9115": {
       "state": "nonmaterial_explanation",
       "rationale": "Semantically reviewed as bounded explanation, source report, publication-lifecycle restatement, finite-proof boundary, scanner fragment, or explicit non-claim; material obligations are already atomized."
     },
-    "living-book-methodology.prose.1b65d91e10b1": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Semantically reviewed as bounded explanation, source report, publication-lifecycle restatement, finite-proof boundary, scanner fragment, or explicit non-claim; material obligations are already atomized."
+    "living-book-methodology.prose.48739898ae37": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after W3 as a change-packet ownership requirement of `living-book-methodology.mechanism.008`; it creates no separate support-bearing atom.",
+      "target_atom_id": "living-book-methodology.mechanism.008"
     },
-    "living-book-methodology.prose.3c82952fe41e": {
+    "living-book-methodology.prose.4a386bde378a": {
       "state": "nonmaterial_explanation",
       "rationale": "Semantically reviewed as bounded explanation, source report, publication-lifecycle restatement, finite-proof boundary, scanner fragment, or explicit non-claim; material obligations are already atomized."
     },
@@ -201,17 +225,65 @@
       "state": "nonmaterial_explanation",
       "rationale": "Semantically reviewed as bounded explanation, source report, publication-lifecycle restatement, finite-proof boundary, scanner fragment, or explicit non-claim; material obligations are already atomized."
     },
-    "living-book-methodology.prose.e1f0407cf020": {
+    "living-book-methodology.prose.5545dde9bf47": {
       "state": "nonmaterial_explanation",
       "rationale": "Semantically reviewed as bounded explanation, source report, publication-lifecycle restatement, finite-proof boundary, scanner fragment, or explicit non-claim; material obligations are already atomized."
+    },
+    "living-book-methodology.prose.65f814f02dfd": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after W3 as a schema/reality separation of `living-book-methodology.invariant.018`; it creates no separate support-bearing atom.",
+      "target_atom_id": "living-book-methodology.invariant.018"
+    },
+    "living-book-methodology.prose.6b9bd5d9dedd": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source report, publication-lifecycle restatement, finite-proof boundary, scanner fragment, or explicit non-claim; material obligations are already atomized."
+    },
+    "living-book-methodology.prose.6bce4b8cad50": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source report, publication-lifecycle restatement, finite-proof boundary, scanner fragment, or explicit non-claim; material obligations are already atomized."
+    },
+    "living-book-methodology.prose.6ef70d70f5d7": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after W3 as a anti-template-bloat rule of `living-book-methodology.failure_mode.016`; it creates no separate support-bearing atom.",
+      "target_atom_id": "living-book-methodology.failure_mode.016"
     },
     "living-book-methodology.prose.6f6958a43f45": {
       "state": "nonmaterial_explanation",
       "rationale": "Semantically reviewed as bounded explanation, source report, publication-lifecycle restatement, finite-proof boundary, scanner fragment, or explicit non-claim; material obligations are already atomized."
     },
-    "living-book-methodology.prose.47fb273c9115": {
+    "living-book-methodology.prose.712b647647d2": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Incomplete line-wrap fragment introduced by the C1\u2013C8 Phase 1 prose integration. Its complete proposition is already bounded by the chapter's reviewed structured atoms and creates no independent support-bearing claim."
+    },
+    "living-book-methodology.prose.735d66a025a9": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after W3 as a chapter-specific handoff requirement of `living-book-methodology.mechanism.008`; it creates no separate support-bearing atom.",
+      "target_atom_id": "living-book-methodology.mechanism.008"
+    },
+    "living-book-methodology.prose.7987ec8fba3e": {
       "state": "nonmaterial_explanation",
       "rationale": "Semantically reviewed as bounded explanation, source report, publication-lifecycle restatement, finite-proof boundary, scanner fragment, or explicit non-claim; material obligations are already atomized."
+    },
+    "living-book-methodology.prose.7ef667267184": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Line-wrapped reader explanation already governed by structured chapter atoms; it adds no independent material claim."
+    },
+    "living-book-methodology.prose.8e3feeaa6c1c": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Fragment of the change-control rule for evidence field semantics and inference rules."
+    },
+    "living-book-methodology.prose.8ec5966a273c": {
+      "state": "historical_or_source_report",
+      "rationale": "Enumerates retained bounded negative-case declarations after projection retirement; it reports formal coverage and does not establish manuscript quality, release approval, accessibility, or a support-state transition."
+    },
+    "living-book-methodology.prose.9369b19b8091": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source report, publication-lifecycle restatement, finite-proof boundary, scanner fragment, or explicit non-claim; material obligations are already atomized."
+    },
+    "living-book-methodology.prose.9d9bd52c4f40": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after W3 as a chapter-specific diagram requirement of `living-book-methodology.mechanism.008`; it creates no separate support-bearing atom.",
+      "target_atom_id": "living-book-methodology.mechanism.008"
     },
     "living-book-methodology.prose.9eab34e1d866": {
       "state": "nonmaterial_explanation",
@@ -221,19 +293,16 @@
       "state": "nonmaterial_explanation",
       "rationale": "Semantically reviewed as bounded explanation, source report, publication-lifecycle restatement, finite-proof boundary, scanner fragment, or explicit non-claim; material obligations are already atomized."
     },
-    "living-book-methodology.prose.0ec8460d1e84": {
+    "living-book-methodology.prose.ada0b1762aff": {
       "state": "nonmaterial_explanation",
       "rationale": "Semantically reviewed as bounded explanation, source report, publication-lifecycle restatement, finite-proof boundary, scanner fragment, or explicit non-claim; material obligations are already atomized."
     },
-    "living-book-methodology.prose.4a386bde378a": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Semantically reviewed as bounded explanation, source report, publication-lifecycle restatement, finite-proof boundary, scanner fragment, or explicit non-claim; material obligations are already atomized."
+    "living-book-methodology.prose.b10f33b4d106": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after W3 as a prospective inheritance rejection rule of `living-book-methodology.failure_mode.016`; it creates no separate support-bearing atom.",
+      "target_atom_id": "living-book-methodology.failure_mode.016"
     },
-    "living-book-methodology.prose.00a03624f3da": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Semantically reviewed as bounded explanation, source report, publication-lifecycle restatement, finite-proof boundary, scanner fragment, or explicit non-claim; material obligations are already atomized."
-    },
-    "living-book-methodology.prose.cef5771ba861": {
+    "living-book-methodology.prose.b216b873d961": {
       "state": "nonmaterial_explanation",
       "rationale": "Semantically reviewed as bounded explanation, source report, publication-lifecycle restatement, finite-proof boundary, scanner fragment, or explicit non-claim; material obligations are already atomized."
     },
@@ -241,35 +310,46 @@
       "state": "nonmaterial_explanation",
       "rationale": "Semantically reviewed as bounded explanation, source report, publication-lifecycle restatement, finite-proof boundary, scanner fragment, or explicit non-claim; material obligations are already atomized."
     },
-    "living-book-methodology.prose.cd45e2b5a0f4": {
+    "living-book-methodology.prose.b419cad6e80d": {
       "state": "nonmaterial_explanation",
       "rationale": "Semantically reviewed as bounded explanation, source report, publication-lifecycle restatement, finite-proof boundary, scanner fragment, or explicit non-claim; material obligations are already atomized."
+    },
+    "living-book-methodology.prose.b449a943326e": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after W3 as a shared lifecycle authority ceiling of `living-book-methodology.invariant.004`; it creates no separate support-bearing atom.",
+      "target_atom_id": "living-book-methodology.invariant.004"
+    },
+    "living-book-methodology.prose.b5a22dd34e72": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source report, publication-lifecycle restatement, finite-proof boundary, scanner fragment, or explicit non-claim; material obligations are already atomized."
+    },
+    "living-book-methodology.prose.b88b299ecf7c": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Incomplete line-wrap fragment introduced by the C1\u2013C8 Phase 1 prose integration. Its complete proposition is already bounded by the chapter's reviewed structured atoms and creates no independent support-bearing claim."
+    },
+    "living-book-methodology.prose.b8bf858f856f": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Line-wrapped reader explanation already governed by structured chapter atoms; it adds no independent material claim."
+    },
+    "living-book-methodology.prose.bd23a17cca34": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after W3 as a local object and boundary requirement of `living-book-methodology.mechanism.008`; it creates no separate support-bearing atom.",
+      "target_atom_id": "living-book-methodology.mechanism.008"
     },
     "living-book-methodology.prose.bd3e62131945": {
       "state": "nonmaterial_explanation",
       "rationale": "Semantically reviewed as bounded explanation, source report, publication-lifecycle restatement, finite-proof boundary, scanner fragment, or explicit non-claim; material obligations are already atomized."
     },
-    "living-book-methodology.prose.3429569c56ea": {
+    "living-book-methodology.prose.bd6c53f58c0c": {
       "state": "nonmaterial_explanation",
-      "rationale": "Semantically reviewed as bounded explanation, source report, publication-lifecycle restatement, finite-proof boundary, scanner fragment, or explicit non-claim; material obligations are already atomized."
+      "rationale": "Incomplete line-wrap fragment introduced by the C1\u2013C8 Phase 1 prose integration. Its complete proposition is already bounded by the chapter's reviewed structured atoms and creates no independent support-bearing claim."
     },
-    "living-book-methodology.prose.187c9f775df0": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Semantically reviewed as bounded explanation, source report, publication-lifecycle restatement, finite-proof boundary, scanner fragment, or explicit non-claim; material obligations are already atomized."
+    "living-book-methodology.prose.bfd5b43597d8": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates the finite publication artifact ceiling.",
+      "target_atom_id": "living-book-methodology.minimum.001"
     },
-    "living-book-methodology.prose.d7e1d923291e": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Semantically reviewed as bounded explanation, source report, publication-lifecycle restatement, finite-proof boundary, scanner fragment, or explicit non-claim; material obligations are already atomized."
-    },
-    "living-book-methodology.prose.6bce4b8cad50": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Semantically reviewed as bounded explanation, source report, publication-lifecycle restatement, finite-proof boundary, scanner fragment, or explicit non-claim; material obligations are already atomized."
-    },
-    "living-book-methodology.prose.6b9bd5d9dedd": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Semantically reviewed as bounded explanation, source report, publication-lifecycle restatement, finite-proof boundary, scanner fragment, or explicit non-claim; material obligations are already atomized."
-    },
-    "living-book-methodology.prose.df7cb32e24fb": {
+    "living-book-methodology.prose.c27c795b1ebf": {
       "state": "nonmaterial_explanation",
       "rationale": "Semantically reviewed as bounded explanation, source report, publication-lifecycle restatement, finite-proof boundary, scanner fragment, or explicit non-claim; material obligations are already atomized."
     },
@@ -277,66 +357,46 @@
       "state": "nonmaterial_explanation",
       "rationale": "Semantically reviewed as bounded explanation, source report, publication-lifecycle restatement, finite-proof boundary, scanner fragment, or explicit non-claim; material obligations are already atomized."
     },
-    "living-book-methodology.prose.08bd4b5c97b7": {
+    "living-book-methodology.prose.cd45e2b5a0f4": {
       "state": "nonmaterial_explanation",
-      "rationale": "Line-wrapped reader explanation already governed by structured chapter atoms; it adds no independent material claim."
+      "rationale": "Semantically reviewed as bounded explanation, source report, publication-lifecycle restatement, finite-proof boundary, scanner fragment, or explicit non-claim; material obligations are already atomized."
     },
-    "living-book-methodology.prose.7ef667267184": {
+    "living-book-methodology.prose.cef5771ba861": {
       "state": "nonmaterial_explanation",
-      "rationale": "Line-wrapped reader explanation already governed by structured chapter atoms; it adds no independent material claim."
-    },
-    "living-book-methodology.prose.b8bf858f856f": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrapped reader explanation already governed by structured chapter atoms; it adds no independent material claim."
-    },
-    "living-book-methodology.prose.bfd5b43597d8": {
-      "state": "duplicate_of_atom",
-      "rationale": "Restates the finite publication artifact ceiling.",
-      "target_atom_id": "living-book-methodology.minimum.001"
-    },
-    "living-book-methodology.prose.230ca9d822fa": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrapped statement of the validator's already atomized bounded-attempt ceiling."
-    },
-    "living-book-methodology.prose.112b3d0ef1d3": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Explicit non-claim preventing a validator from filling evidence lanes or promoting a core claim."
-    },
-    "living-book-methodology.prose.26c9a1b4e35c": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Continuation of the existing anti-laundering boundary for counts and nearby artifacts."
+      "rationale": "Semantically reviewed as bounded explanation, source report, publication-lifecycle restatement, finite-proof boundary, scanner fragment, or explicit non-claim; material obligations are already atomized."
     },
     "living-book-methodology.prose.d563383da3e3": {
       "state": "nonmaterial_explanation",
       "rationale": "Fragment of the recorded-scope non-widening rule."
     },
-    "living-book-methodology.prose.8e3feeaa6c1c": {
+    "living-book-methodology.prose.d7e1d923291e": {
       "state": "nonmaterial_explanation",
-      "rationale": "Fragment of the change-control rule for evidence field semantics and inference rules."
+      "rationale": "Semantically reviewed as bounded explanation, source report, publication-lifecycle restatement, finite-proof boundary, scanner fragment, or explicit non-claim; material obligations are already atomized."
     },
-    "living-book-methodology.prose.bd6c53f58c0c": {
+    "living-book-methodology.prose.df7cb32e24fb": {
       "state": "nonmaterial_explanation",
-      "rationale": "Incomplete line-wrap fragment introduced by the C1–C8 Phase 1 prose integration. Its complete proposition is already bounded by the chapter's reviewed structured atoms and creates no independent support-bearing claim."
+      "rationale": "Semantically reviewed as bounded explanation, source report, publication-lifecycle restatement, finite-proof boundary, scanner fragment, or explicit non-claim; material obligations are already atomized."
     },
-    "living-book-methodology.prose.b88b299ecf7c": {
+    "living-book-methodology.prose.e1f0407cf020": {
       "state": "nonmaterial_explanation",
-      "rationale": "Incomplete line-wrap fragment introduced by the C1–C8 Phase 1 prose integration. Its complete proposition is already bounded by the chapter's reviewed structured atoms and creates no independent support-bearing claim."
-    },
-    "living-book-methodology.prose.712b647647d2": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Incomplete line-wrap fragment introduced by the C1–C8 Phase 1 prose integration. Its complete proposition is already bounded by the chapter's reviewed structured atoms and creates no independent support-bearing claim."
-    },
-    "living-book-methodology.prose.f4dce059d7a0": {
-      "state": "nonmaterial_explanation",
-      "rationale": "First line-wrapped fragment of the narrative-projection validation rule. It describes repository projection hygiene already governed by the product contracts and does not assert an independent architecture or evidence claim."
+      "rationale": "Semantically reviewed as bounded explanation, source report, publication-lifecycle restatement, finite-proof boundary, scanner fragment, or explicit non-claim; material obligations are already atomized."
     },
     "living-book-methodology.prose.f1df32158fdf": {
       "state": "nonmaterial_explanation",
       "rationale": "Second line-wrapped fragment of the narrative-projection validation rule. It enumerates failure conditions for the generated reader route and does not promote any specialist claim or support state."
     },
-    "living-book-methodology.prose.8ec5966a273c": {
-      "state": "historical_or_source_report",
-      "rationale": "Enumerates retained bounded negative-case declarations after projection retirement; it reports formal coverage and does not establish manuscript quality, release approval, accessibility, or a support-state transition."
+    "living-book-methodology.prose.f4dce059d7a0": {
+      "state": "nonmaterial_explanation",
+      "rationale": "First line-wrapped fragment of the narrative-projection validation rule. It describes repository projection hygiene already governed by the product contracts and does not assert an independent architecture or evidence claim."
+    },
+    "living-book-methodology.prose.fe0c37ae3798": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after W3 as a formal-model scope ceiling of `living-book-methodology.invariant.008`; it creates no separate support-bearing atom.",
+      "target_atom_id": "living-book-methodology.invariant.008"
+    },
+    "living-book-methodology.prose.fef318b53b35": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source report, publication-lifecycle restatement, finite-proof boundary, scanner fragment, or explicit non-claim; material obligations are already atomized."
     }
   },
   "prose_review_lineage": [

@@ -5,9 +5,9 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd",
     "structured_atoms_reviewed": 35,
-    "prose_candidates_adjudicated": 31,
+    "prose_candidates_adjudicated": 22,
     "unowned_material_claims": 0,
-    "review_note": "Reviewed the complete admitted AI Deployment, Transition, Distribution, and Human Agency chapter, its manifest ownership, source crosswalk, lifecycle, mechanisms, interfaces, invariants, failure inventory, minimum implementation, falsification program, test plan, summary, and handoff. Claim-bearing prose is mapped to the closest owned atom by section; layout fragments, status text, captions, and handoffs remain explicitly nonmaterial. The review preserves argument support and records no efficacy, transfer, release, SOTA, AGI, or ASI promotion."
+    "review_note": "Re-reviewed the complete W3-rewritten and reader-depth-completed Ai Deployment Transition Distribution And Human Agency chapter on 2026-07-26. All 22 current prose candidates are adjudicated as owned refinements, bounded explanations, source reports, or cross-chapter handoffs. No unowned material claim, atom proposition, support, release, or publication movement was introduced."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
@@ -16,7 +16,7 @@
       "environment": "The authored ASI Stack interfaces, future controlled fixtures, and prospectively frozen natural or adversarial workloads; production deployment and open-world transfer remain unestablished.",
       "model": "Model- and substrate-agnostic contract design at argument support; any implementation claim must name exact models, checkpoints, policies, prompts, tools, data, and evaluators.",
       "authority": "`ai-deployment-transition-distribution-and-human-agency` owns its bounded decision contract; adjacent chapters retain their own authority, and neither prose nor a passing record can widen an action grant.",
-      "time": "Semantic review current through 2026-07-24; material changes to evidence, authority, population, model, environment, ontology, or consumer require reauthorization.",
+      "time": "Semantic review current through 2026-07-26; material changes to evidence, authority, population, model, environment, ontology, or consumer require reauthorization.",
       "artifact": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd, its manifest record, source crosswalk (the chapter source packet), claim dossier, and future versioned implementation/evaluation receipts."
     },
     "assumptions": [
@@ -100,85 +100,85 @@
   },
   "atom_reviews": {},
   "prose_candidate_dispositions": {
-    "ai-deployment-transition-distribution-and-human-agency.prose.65e4145e31ce": {
-      "state": "duplicate_of_atom",
-      "rationale": "Semantically reviewed as a prose explanation or refinement of `ai-deployment-transition-distribution-and-human-agency.problem.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
-      "target_atom_id": "ai-deployment-transition-distribution-and-human-agency.problem.001"
-    },
     "ai-deployment-transition-distribution-and-human-agency.prose.1bc8605c546a": {
       "state": "duplicate_of_atom",
       "rationale": "Semantically reviewed as a prose explanation or refinement of `ai-deployment-transition-distribution-and-human-agency.problem.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
       "target_atom_id": "ai-deployment-transition-distribution-and-human-agency.problem.001"
     },
-    "ai-deployment-transition-distribution-and-human-agency.prose.eb178512112b": {
+    "ai-deployment-transition-distribution-and-human-agency.prose.35cb082ca5ac": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed as a prose explanation or refinement of `ai-deployment-transition-distribution-and-human-agency.minimum.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
+      "target_atom_id": "ai-deployment-transition-distribution-and-human-agency.minimum.001"
+    },
+    "ai-deployment-transition-distribution-and-human-agency.prose.62b2dd6cd694": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after the W3 depth repair as a chapter-specific refinement of `ai-deployment-transition-distribution-and-human-agency.beyond_sota.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "ai-deployment-transition-distribution-and-human-agency.beyond_sota.001"
+    },
+    "ai-deployment-transition-distribution-and-human-agency.prose.63c080ca6d87": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after W3 as a chapter-specific invariant synthesis of `ai-deployment-transition-distribution-and-human-agency.invariant.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "ai-deployment-transition-distribution-and-human-agency.invariant.001"
+    },
+    "ai-deployment-transition-distribution-and-human-agency.prose.65e4145e31ce": {
       "state": "duplicate_of_atom",
       "rationale": "Semantically reviewed as a prose explanation or refinement of `ai-deployment-transition-distribution-and-human-agency.problem.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
       "target_atom_id": "ai-deployment-transition-distribution-and-human-agency.problem.001"
     },
-    "ai-deployment-transition-distribution-and-human-agency.prose.6dda77649580": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "ai-deployment-transition-distribution-and-human-agency.prose.9a3e6a8ff12a": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "ai-deployment-transition-distribution-and-human-agency.prose.05522dfc95a2": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "ai-deployment-transition-distribution-and-human-agency.prose.776b655c3d7d": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "ai-deployment-transition-distribution-and-human-agency.prose.46e6021e6ba0": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "ai-deployment-transition-distribution-and-human-agency.prose.0518b15b8aaf": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "ai-deployment-transition-distribution-and-human-agency.prose.a6f32690ec8e": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "ai-deployment-transition-distribution-and-human-agency.prose.d9cce7eb4215": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "ai-deployment-transition-distribution-and-human-agency.prose.ddf819cf0daa": {
+    "ai-deployment-transition-distribution-and-human-agency.prose.686cc26558c2": {
       "state": "duplicate_of_atom",
-      "rationale": "Semantically reviewed as a prose explanation or refinement of `ai-deployment-transition-distribution-and-human-agency.mechanism.004` within the chapter's declared scope; it creates no separate support-bearing atom.",
-      "target_atom_id": "ai-deployment-transition-distribution-and-human-agency.mechanism.004"
+      "rationale": "Semantically reviewed after the W3 depth repair as a chapter-specific refinement of `ai-deployment-transition-distribution-and-human-agency.invariant.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "ai-deployment-transition-distribution-and-human-agency.invariant.001"
     },
-    "ai-deployment-transition-distribution-and-human-agency.prose.d18d74e7ec22": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "ai-deployment-transition-distribution-and-human-agency.prose.c28c8b573493": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "ai-deployment-transition-distribution-and-human-agency.prose.5baa1bd83758": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "ai-deployment-transition-distribution-and-human-agency.prose.b273b9da3c45": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "ai-deployment-transition-distribution-and-human-agency.prose.95b08a9d51f8": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "ai-deployment-transition-distribution-and-human-agency.prose.620e415af61e": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "ai-deployment-transition-distribution-and-human-agency.prose.35cb082ca5ac": {
+    "ai-deployment-transition-distribution-and-human-agency.prose.714dc212f996": {
       "state": "duplicate_of_atom",
-      "rationale": "Semantically reviewed as a prose explanation or refinement of `ai-deployment-transition-distribution-and-human-agency.minimum.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
+      "rationale": "Semantically reviewed after W3 as a chapter-specific mature-target refinement of `ai-deployment-transition-distribution-and-human-agency.beyond_sota.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "ai-deployment-transition-distribution-and-human-agency.beyond_sota.001"
+    },
+    "ai-deployment-transition-distribution-and-human-agency.prose.7b5eba673b2c": {
+      "state": "nonmaterial_explanation",
+      "rationale": "W3 domain-specific diagram walkthrough; its material boundary remains represented by the chapter's structured atoms."
+    },
+    "ai-deployment-transition-distribution-and-human-agency.prose.7ea8b4fd8aa8": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after W3 as a chapter-specific evaluation and positive-control refinement of `ai-deployment-transition-distribution-and-human-agency.minimum.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "ai-deployment-transition-distribution-and-human-agency.minimum.001"
+    },
+    "ai-deployment-transition-distribution-and-human-agency.prose.88b1cbd8ed44": {
+      "state": "editorial_or_question",
+      "rationale": "Cross-chapter handoff instruction; the receiving owner performs its own admission and no independent support conclusion is created."
+    },
+    "ai-deployment-transition-distribution-and-human-agency.prose.9a7dcb2fcef8": {
+      "state": "editorial_or_question",
+      "rationale": "Cross-chapter handoff instruction; the receiving owner performs its own admission and no independent support conclusion is created."
+    },
+    "ai-deployment-transition-distribution-and-human-agency.prose.9e0ef00df3f0": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after W3 as a chapter-specific argument-exit campaign refinement of `ai-deployment-transition-distribution-and-human-agency.beyond_sota.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "ai-deployment-transition-distribution-and-human-agency.beyond_sota.001"
+    },
+    "ai-deployment-transition-distribution-and-human-agency.prose.6c6897aae50f": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after W3 as a chapter-specific chapter summary of `ai-deployment-transition-distribution-and-human-agency.core`; it creates no separate support-bearing atom.",
+      "target_atom_id": "ai-deployment-transition-distribution-and-human-agency.core"
+    },
+    "ai-deployment-transition-distribution-and-human-agency.prose.b7885716b0f7": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after the W3 depth repair as a chapter-specific refinement of `ai-deployment-transition-distribution-and-human-agency.minimum.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "ai-deployment-transition-distribution-and-human-agency.minimum.001"
+    },
+    "ai-deployment-transition-distribution-and-human-agency.prose.c5fb8565af6e": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Formalization-scope caption that narrows a planned finite record target and expressly denies live efficacy, safety, or transfer inference."
+    },
+    "ai-deployment-transition-distribution-and-human-agency.prose.cc9798bfe7fd": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after the W3 depth repair as a chapter-specific refinement of `ai-deployment-transition-distribution-and-human-agency.mechanism.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "ai-deployment-transition-distribution-and-human-agency.mechanism.001"
+    },
+    "ai-deployment-transition-distribution-and-human-agency.prose.cd2a6004ba6f": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after W3 as a chapter-specific evaluation and positive-control refinement of `ai-deployment-transition-distribution-and-human-agency.minimum.001`; it creates no separate support-bearing atom.",
       "target_atom_id": "ai-deployment-transition-distribution-and-human-agency.minimum.001"
     },
     "ai-deployment-transition-distribution-and-human-agency.prose.d7f36665c381": {
@@ -186,52 +186,24 @@
       "rationale": "Semantically reviewed as a prose explanation or refinement of `ai-deployment-transition-distribution-and-human-agency.minimum.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
       "target_atom_id": "ai-deployment-transition-distribution-and-human-agency.minimum.001"
     },
-    "ai-deployment-transition-distribution-and-human-agency.prose.42b06f07148c": {
+    "ai-deployment-transition-distribution-and-human-agency.prose.d9cce7eb4215": {
       "state": "nonmaterial_explanation",
       "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
     },
-    "ai-deployment-transition-distribution-and-human-agency.prose.b1e789afc8a0": {
+    "ai-deployment-transition-distribution-and-human-agency.prose.eb178512112b": {
       "state": "duplicate_of_atom",
-      "rationale": "Semantically reviewed as a prose explanation or refinement of `ai-deployment-transition-distribution-and-human-agency.minimum.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
-      "target_atom_id": "ai-deployment-transition-distribution-and-human-agency.minimum.001"
+      "rationale": "Semantically reviewed as a prose explanation or refinement of `ai-deployment-transition-distribution-and-human-agency.problem.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
+      "target_atom_id": "ai-deployment-transition-distribution-and-human-agency.problem.001"
     },
-    "ai-deployment-transition-distribution-and-human-agency.prose.39fbf6aadcfb": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "ai-deployment-transition-distribution-and-human-agency.prose.00ecbbf0ae2b": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "ai-deployment-transition-distribution-and-human-agency.prose.0538f7bf12b7": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "ai-deployment-transition-distribution-and-human-agency.prose.972c55ad6e70": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "ai-deployment-transition-distribution-and-human-agency.prose.e30ece2f73e4": {
+    "ai-deployment-transition-distribution-and-human-agency.prose.ee5ca329d754": {
       "state": "duplicate_of_atom",
-      "rationale": "Semantically reviewed as a prose explanation or refinement of `ai-deployment-transition-distribution-and-human-agency.beyond_sota.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
+      "rationale": "Semantically reviewed after the W3 depth repair as a chapter-specific refinement of `ai-deployment-transition-distribution-and-human-agency.failure_mode.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "ai-deployment-transition-distribution-and-human-agency.failure_mode.001"
+    },
+    "ai-deployment-transition-distribution-and-human-agency.prose.9c82351f57d7": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed as the argument-support boundary for the mature transition-governance target; it creates no separate support-bearing atom.",
       "target_atom_id": "ai-deployment-transition-distribution-and-human-agency.beyond_sota.001"
-    },
-    "ai-deployment-transition-distribution-and-human-agency.prose.a45a57738dd9": {
-      "state": "duplicate_of_atom",
-      "rationale": "Semantically reviewed as a prose explanation or refinement of `ai-deployment-transition-distribution-and-human-agency.minimum.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
-      "target_atom_id": "ai-deployment-transition-distribution-and-human-agency.minimum.001"
-    },
-    "ai-deployment-transition-distribution-and-human-agency.prose.d7c698d66ae4": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "ai-deployment-transition-distribution-and-human-agency.prose.1644f28bb30e": {
-      "state": "editorial_or_question",
-      "rationale": "Cross-chapter handoff instruction; the receiving owner performs its own admission checks and no independent support transition is asserted."
-    },
-    "ai-deployment-transition-distribution-and-human-agency.prose.6e2a279b9dad": {
-      "state": "editorial_or_question",
-      "rationale": "Cross-chapter handoff instruction; the receiving owner performs its own admission checks and no independent support transition is asserted."
     }
   },
   "non_claims": [

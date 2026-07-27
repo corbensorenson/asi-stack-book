@@ -35,10 +35,7 @@ open_evidence_gaps:
 
 ## Drafting guardrail
 
-Communication governance owns a distinct control plane, not proof that the control plane
-works. Its source crosswalk supports definitions, mechanisms, failure examples,
-and comparison targets. The design remains at **argument** support until a
-separate accepted evidence transition says otherwise.
+This chapter owns the outbound influence transaction, including amplification and correction after a message leaves its original context. It does not infer epistemic safety from factual fragments, user consent, fluency, disclosure, or a persuasive outcome.
 
 ::: {.asi-human-only}
 ## Human Reading Path
@@ -52,49 +49,42 @@ Upstream evidence limits what may be said, while human-factors and privacy findi
 
 ## Problem
 
+The difficulty is not limited to false statements. A system may quote accurate
+facts while choosing a comparison class, emotional register, disclosure order,
+or repetition pattern that predictably changes a person's decision. The same
+message can be ordinary advice for one audience and coercive pressure for
+another because dependency, urgency, literacy, language, and the ability to
+leave the interaction change the intervention.
+
 An AI system can preserve internal evidence discipline and still change beliefs, choices, and institutions through selective framing, personalization, synthetic identity, repetition, and amplification. The stack therefore needs an owner for the complete outbound communication transaction, including correction after a message escapes its original channel.
 
-This gap matters at the scale of a stack because its output becomes another
-layer's input. If the owner is absent, `calibrated-sounding misinformation` or
-`selective framing` can be normalized before a downstream layer sees it.
-The downstream consumer may possess a valid local record while acting on a
-broken upstream assumption. An explicit owner therefore needs both a positive
-contract and a refusal path: it must say what counts as an admissible
-transition, what remains unresolved, who may consume the result, and when a
-material change forces reauthorization.
+Without this owner, evidence discipline can end at generation while targeting, framing, repetition, synthetic identity, channel amplification, downstream reach, and correction remain ungoverned. The [shared lifecycle method](living-book-methodology.qmd#shared-chapter-lifecycle-method) supplies custody; communication governance binds audience, influence method, channel, exposure, and remedy.
 
 ## Why existing approaches are insufficient
 
 Truthfulness checks, content filters, generic human-factors guidance, and red-team prompts inspect fragments of influence. They do not bind the claim, evidence ceiling, audience, vulnerability, purpose, personalization inputs, persuasive technique, channel, amplification, observed effect, correction, retraction, and remedy into one governed lifecycle.
 
-Communication governance must first beat a disciplined composition of the adjacent
-owners. That alternative should win if it can preserve the same identities,
-authority, lifecycle state, failure distinctions, and residuals without
-overloading their primary jobs. A dedicated owner remains necessary because the
-handoffs listed below otherwise leave a missing end-to-end decision. Separation
-does not imply autonomy: this owner must consume upstream records and return
-bounded outputs to downstream owners rather than becoming a new unreviewable
-center of authority.
+Human Intent, Evidence States, authenticity controls, privacy, and platform policy form the strongest simpler composition. It wins if their join preserves audience vulnerability, persuasion method, personalization, amplification, exposure, cultural and language scope, belief or action effects, correction reach, and practical appeal.
+
+The strongest objection is paternalism: an influence ledger risks turning disputed judgments about persuasion into centralized censorship, so refusal, transparency, contestability, and appeal remain separate.
 
 ```{mermaid}
 flowchart LR
-  A["Declared purpose and bounded authority"] --> B["Versioned chapter-specific contract"]
-  B["Versioned chapter-specific contract"] --> C["Admission and boundary checks"]
-  C["Admission and boundary checks"] --> D["Execute with complete lineage and denominators"]
-  D["Execute with complete lineage and denominators"] --> E["Observe outcomes, costs, and residuals"]
-  E["Observe outcomes, costs, and residuals"] --> F{"Independent checks pass?"}
-  F -- "no" --> G["Quarantine, narrow, correct, or stop"]
-  F -- "yes" --> H["Versioned bounded handoff"]
-  G -- "repair and reauthorize" --> B
-  H -- "material change" --> B
-  B -. "expiry or revocation" .-> G
-  E -. "residual feedback" .-> B
+  C["Claim, evidence state, uncertainty, and speaker identity"] --> A["Audience, language, vulnerability, and purpose"]
+  A --> I["Influence method, personalization, framing, and disclosure"]
+  I --> H["Channel, repetition, amplification, and synthetic identity"]
+  H --> O["Observed exposure, belief, choice, and institutional effects"]
+  O --> D{"Delivery remains inside epistemic and autonomy bounds?"}
+  D -- "no" --> R["Stop amplification, correct, notify, appeal, and preserve residuals"]
+  D -- "yes" --> L["Bounded delivery lease with expiry"]
+  L --> M["Monitor reach, downstream reuse, and correction debt"]
+  M --> X{"Expiry, audience, and channel still match?"}
+  X -- "no" --> R
+  R -. "repair" .-> C
 ```
 
-**What the Human-AI Communication, Persuasion, and Epistemic Security lifecycle shows:** Authority enters before execution,
-chapter-specific state remains versioned, and a failed independent check returns
-the system to correction or quarantine. A successful check grants only the
-bounded downstream handoff; it does not erase residuals or promote its core claim.
+**What this communication-governance diagram shows:** a delivery lease tied to an audience and channel moves. Truth status, consent, persuasion success, and platform reach remain separate fields rather than one communication-quality score.
+
 
 ## Core Claim
 
@@ -102,25 +92,50 @@ bounded downstream handoff; it does not erase residuals or promote its core clai
 
 ## Mechanism
 
-**Contract.** Compile a communication packet from claim identity, maximum warranted inference, uncertainty, audience class, purpose, protected or denied personalization attributes, persuasive technique, channel, disclosure, and amplification ceiling. This stage is recorded as a versioned decision rather than an invisible implementation detail. For Human-AI Communication, Persuasion, and Epistemic Security, the record must name its inputs, authority, consumer, expiry, and unresolved residuals. A later stage may narrow the decision, but it may not silently broaden the earlier grant or reinterpret a missing field as success.
+The unit of control is a communication episode rather than a string. An episode
+begins with the claim packet and intended purpose, includes every material
+choice about audience selection and presentation, and remains open while known
+copies can still produce consequential effects. This lets the system ask a
+question that ordinary content moderation misses: whether an individually
+acceptable message becomes unacceptable when personalized, repeated, or routed
+through a high-leverage channel.
 
-**Admission.** Run audience-risk and autonomy checks before delivery. Vulnerability, dependency, power asymmetry, urgency, and inability to exit narrow the permitted technique and scale. This stage is recorded as a versioned decision rather than an invisible implementation detail. For Human-AI Communication, Persuasion, and Epistemic Security, the record must name its inputs, authority, consumer, expiry, and unresolved residuals. A later stage may narrow the decision, but it may not silently broaden the earlier grant or reinterpret a missing field as success.
+The packet carries a technique vocabulary. Explanation, recommendation,
+negotiation, warning, emotional reassurance, social proof, scarcity framing,
+authority cues, and calls to action are recorded separately because their risk
+depends on purpose and audience. Personalization fields distinguish information
+needed to answer the request from attributes used only to increase compliance.
+A denied field cannot re-enter indirectly through embeddings, inferred
+proxies, retrieved history, or a downstream campaign tool.
 
-**Execution.** Attach provenance, sponsorship, synthetic-identity disclosure, expiry, and a machine-readable correction address to every consequential message and known derivative. This stage is recorded as a versioned decision rather than an invisible implementation detail. For Human-AI Communication, Persuasion, and Epistemic Security, the record must name its inputs, authority, consumer, expiry, and unresolved residuals. A later stage may narrow the decision, but it may not silently broaden the earlier grant or reinterpret a missing field as success.
+Delivery is governed by an exposure budget and a correction graph. The budget
+names eligible recipients, channels, repetition limits, sponsorship, and
+expiry; the graph records each controlled copy and the best available route to
+its recipients. When a material claim changes, repair is evaluated as a
+coverage problem: who plausibly relied on the original, which copies remain
+reachable, what corrective form is comprehensible in that channel, and which
+unreachable descendants remain an explicit residual.
 
-**Observation.** Measure outcomes without treating belief change as success: retain comprehension, factual calibration, autonomy, disagreement, disparate effects, complaints, corrections, and downstream copies. This stage is recorded as a versioned decision rather than an invisible implementation detail. For Human-AI Communication, Persuasion, and Epistemic Security, the record must name its inputs, authority, consumer, expiry, and unresolved residuals. A later stage may narrow the decision, but it may not silently broaden the earlier grant or reinterpret a missing field as success.
+**Contract.** Compile a communication packet from claim identity, maximum warranted inference, uncertainty, audience class, purpose, protected or denied personalization attributes, persuasive technique, channel, disclosure, and amplification ceiling.
 
-**Closure.** Support pause, retraction, counter-message, recipient notification, and remedy while recording unreachable descendants as residuals rather than declaring completion. This stage is recorded as a versioned decision rather than an invisible implementation detail. For Human-AI Communication, Persuasion, and Epistemic Security, the record must name its inputs, authority, consumer, expiry, and unresolved residuals. A later stage may narrow the decision, but it may not silently broaden the earlier grant or reinterpret a missing field as success.
+**Admission.** Run audience-risk and autonomy checks before delivery. Vulnerability, dependency, power asymmetry, urgency, and inability to exit narrow the permitted technique and scale.
+
+**Execution.** Attach provenance, sponsorship, synthetic-identity disclosure, expiry, and a machine-readable correction address to every consequential message and known derivative.
+
+**Observation.** Measure outcomes without treating belief change as success: retain comprehension, factual calibration, autonomy, disagreement, disparate effects, complaints, corrections, and downstream copies.
+
+**Closure.** Support pause, retraction, counter-message, recipient notification, and remedy while recording unreachable descendants as residuals rather than declaring completion.
 
 ## Interfaces
 
-Communication governance is useful only when its boundaries are sharper than neighboring owners.
-Each interface below therefore names what the adjacent owner keeps and what
-crosses the boundary. The packet must preserve exact object and version
-identity, authority, support state, expiry, residuals, and consumer. A receiving
-layer may reject or narrow it. Merely serializing the fields, passing a schema,
-or recording a dispatch does not prove that the meaning survived or that the
-receiving layer is competent.
+The interface contract prevents convenient substitutions. A privacy approval
+does not approve a manipulative use of lawful data; an authenticity mark does
+not make the marked message honest; a claim ledger does not authorize
+amplification; and a platform delivery receipt does not show comprehension.
+Each upstream owner returns its bounded fact, while this layer owns the joined
+influence decision and the post-delivery obligation.
+
+Evidence States supplies claim support; Human Intent supplies purpose; Privacy governs personal data; authenticity owners govern provenance signals; institutions and platforms govern channels. This chapter owns how those inputs become a consequential influence event and how correction follows its actual reach.
 
 - Claim Ledgers provide the evidence ceiling; they do not authorize persuasion.
 - Human Factors supplies control-capacity and vulnerability findings; this chapter governs outbound influence.
@@ -129,13 +144,12 @@ receiving layer is competent.
 
 ## Invariants
 
-For Communication governance, the following invariants are admission conditions rather than aspirations. They must
-hold across retries, replacements, cached results, branches, migrations,
-partial failures, and human intervention. When the implementation cannot
-establish an invariant, the result is a named residual or blocked route—not a
-default value. A finite formal model may prove that an authored record follows
-these rules, but only implementation and outcome evidence can show that a live
-system actually enforces them.
+These invariants also apply to derived media and delegated agents. A summary,
+translation, voice rendering, avatar, advertisement, or agent-authored follow-up
+must retain the parent claim ceiling, sponsorship, audience restriction,
+expiry, and correction address unless a stricter child packet is issued.
+
+The [shared lifecycle method](living-book-methodology.qmd#shared-chapter-lifecycle-method) requires claim status, speaker identity, audience, method, channel, amplification, expiry, and correction to remain joined. Consent to receive is not consent to manipulation, and factuality cannot erase framing or distribution effects.
 
 - Outbound language may not be stronger than the supporting evidence packet.
 - Personalization may not use denied attributes or exploit a known vulnerability.
@@ -145,75 +159,69 @@ system actually enforces them.
 
 ## Failure modes
 
-The principal failure family includes calibrated-sounding misinformation; selective framing; sycophancy; emotional manipulation; vulnerability microtargeting; dark patterns; parasocial dependence; authority laundering; provenance stripping; amplification cascades; belief lock-in; correction failure; retraction evasion. These are not presumed
-exhaustive. New substrates, deployment settings, populations, and adversaries
-reopen the failure inventory and may narrow authority immediately.
+Two subtle failures deserve separate probes. **Method laundering** describes a
+pipeline that labels pressure as personalization or engagement while optimizing
+the same behavioral endpoint. **Correction theater** describes a visible
+retraction that reaches few of the people exposed to the original. Both can
+produce excellent compliance logs unless the evaluator preserves technique,
+exposure, reliance, and descendant reach.
 
-Communication governance detection also has its own false-positive and false-negative costs.
-An architecture that blocks every useful route is not vindicated merely
-because it prevented one hazard, while a permissive architecture cannot hide
-unsafe attempts inside an average utility score. Evaluation must preserve the
-full denominator, distinguish mechanism failure from instrument failure, and
-show whether correction, recovery, compensation, or withdrawal actually
-reached the affected state.
+The principal failure family includes calibrated-sounding misinformation; selective framing; sycophancy; emotional manipulation; vulnerability microtargeting; dark patterns; parasocial dependence; authority laundering; provenance stripping; amplification cascades; belief lock-in; correction failure; retraction evasion.
+
+Evaluation must measure exposure, comprehension, calibration, autonomy, correction reach, and heterogeneous effects rather than persuasive success alone. Positive controls include known misleading frames and channel-amplification faults; language and cultural transfer are separate tests, not assumed from English performance.
 
 ## Minimum Viable Implementation
 
+A practical proxy can start with three consequence classes: ordinary
+conversation, consequential individual advice, and population-scale influence.
+Only the latter two require a complete packet, and higher scale progressively
+disables vulnerable-trait targeting, synthetic identity, undisclosed
+sponsorship, and open-ended repetition. This keeps the first implementation
+usable while exposing where the policy changes behavior.
+
 A useful first implementation is a communication-packet schema plus a delivery proxy that rejects evidence overstatement, denied personalization, undisclosed sponsorship, unbounded amplification, missing expiry, and unreachable correction routes. A benign held-out study can compare neutral assistance, bounded personalization, disclosure, and correction variants while measuring comprehension and autonomy as well as persuasion. It must not optimize vulnerable users or treat short-horizon self-report as durable welfare.
 
-A Communication governance implementation should begin with an ordinary baseline and the strongest
-credible competing design, not only an intentionally weak comparator.
-Engineering and tuning budgets, information access, model capability, human
-help, retry policy, and stopping rules should be matched or reported. Positive
-controls must show that the task and instruments can detect the intended
-mechanism before a null or negative outcome is interpreted. Every result
-remains bounded to the tested population, environment, model, implementation,
-and evaluator.
+The minimum study uses benign consequential messages with frozen audiences, languages, channels, disclosure policies, and correction mechanisms. It compares ordinary generation, factuality-only checks, static disclosure, and the communication packet on comprehension, calibration, reliance, autonomy, reach, correction, burden, and latency.
 
 ## Evidence and falsification program
 
-A fair Communication governance test must freeze the mechanism, authority, comparator set, tuning and
-rescue budgets, metrics, stopping rule, and protected holdout before outcomes
-are visible. It must include favorable or oracle checks, mechanism-specific
-ablations, positive and negative controls, complete attempts, independent
-scoring, joint utility/safety/cost accounting, and explicit blocked or null
-outcomes. A weak implementation can narrow that implementation; it cannot
-refute the architectural idea.
+Argument exit requires preregistered communication studies with realistic audience and channel variation, matched message quality, persuasion and nonpersuasion controls, independent outcome measurement, multilingual and cultural challenge, amplification accounting, delayed correction, appeal, and privacy review. No bounded study establishes universal autonomy or legitimacy.
 
 ## Mature Research Target
 
-The stronger architecture is a provenance-preserving influence control plane: claims remain coupled to their evidence ceiling across channels, audience effects update future authority, and corrections traverse the same distribution graph as the original message. This is a design target, not evidence that manipulation is solved.
+Communication governance eventually becomes a cross-channel influence
+accounting service. It can follow a claim through chat, generated documents,
+voice, agents, advertising systems, social feeds, and institutional notices
+without assuming that identifiers or audiences remain stable. It represents
+uncertain reach explicitly and supports privacy-preserving aggregate exposure
+measurement where recipient-level logging would create a worse risk.
 
-At maturity, the Communication governance contract becomes a replaceable service
-behind stable interfaces. New models, algorithms, institutions, storage
-systems, and hardware can enter through declared adapters while the surrounding
-stack continues to enforce the same authority and evidence ceilings. This is
-architectural extensibility, not a claim that one implementation has discovered
-the final mechanism.
+The research target includes causal challenge, not only policy inspection.
+Matched messages hold factual content constant while varying framing,
+personalization, identity, repetition, and channel; delayed measurements test
+calibration, reliance, autonomy, and correction. Independent evaluators look
+for effects on people who disagree, disengage, use assistive technology, or
+receive the message in a language and culture absent from policy tuning.
 
-For Communication governance, the decisive standard is joint performance. The mature design must improve
-useful outcomes or decision quality while keeping unsafe release, false
-refusal, missed help, latency, resource use, human burden, and unresolved
-residuals visible. If a simpler system achieves the same bounded result at lower
-total lifecycle cost, the simpler system should be preferred. If no competent
-test exists yet, the end state remains a falsifiable target rather than a
-marketing conclusion.
+No mature system should claim to compute a universal manipulation score.
+Instead it should expose the relevant facts, deny clearly disallowed methods,
+route hard cases to accountable authority, and preserve appeal. Its success is
+bounded: fewer evidence-overstated or autonomy-eroding deliveries, better
+correction coverage, and more inspectable residuals under named populations
+and channels.
 
-The Communication governance target also remains reversible. Operators need a declared way to narrow,
-replace, migrate, or retire the mechanism while preserving affected records and
-obligations. Architectural permanence without demonstrated benefit would be a
-failure of governance, not evidence of maturity.
+The mature layer treats communication as an inspectable influence process from evidence to audience response and correction. It can narrow targeting, refuse manipulative methods, constrain amplification, preserve provenance, and repair escaped messages without pretending that a policy can settle every cultural or political judgment.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
-| Contract completeness | Reject missing identity, authority, scope, version, consumer, residual, or expiry fields. | planned |
-| Boundary mutation | Substitute an adjacent owner's authority and require rejection. | planned |
-| Failure-family mutation | Inject at least one mechanism-specific failure and preserve the full attempt denominator. | planned |
-| No-promotion control | Ensure prose, schemas, fixtures, and source-reported results cannot promote the chapter core claim. | planned |
+| Truth/influence separation | Hold factual content fixed while changing framing, personalization, repetition, and synthetic identity. | planned |
+| Audience and language transfer | Require separate calibration for language, culture, vulnerability, and accessibility conditions. | planned |
+| Amplification custody | Reject delivery when the actual channel or repetition exceeds the authorized exposure envelope. | planned |
+| Correction reach | Measure whether notices and repairs reach the affected audience rather than merely being published. | planned |
 
-Planned formalization hook: `lean:human-ai-communication-persuasion-and-epistemic-security.admission_boundary` remains a process-contract target; it does not claim an implemented theorem.
+Planned formalization route: `lean:human-ai-communication-persuasion-and-epistemic-security.admission_boundary` covers only the finite admission record for human ai communication persuasion and epistemic security; it cannot establish whether human ai communication persuasion and epistemic security works safely or transfers.
 
 ## Source crosswalk
 
@@ -262,24 +270,25 @@ qualified evaluation.
 
 ## Summary
 
-Consequential AI communication should be eligible for delivery only through an evidence-bounded communication packet whose audience, influence method, amplification authority, provenance, expiry, correction reach, and observed effects remain inspectable; fluent text, factual fragments, user consent, or a successful persuasion score alone establishes neither epistemic safety, autonomy, legitimacy, durable benefit, nor release readiness. The subject is now integrated into the live manuscript at argument
-support. Its empirical, formal, transfer, and deployment work remains an open
-evidence program rather than an excuse to defer the concept itself.
+Human-AI communication is an intervention lifecycle, not merely a generation
+quality problem. The governing packet joins what the system may claim with why
+it is speaking, whom it is addressing, which influence techniques it uses, how
+personalization was obtained, how far delivery may propagate, and how the
+result can be challenged or repaired.
 
-The Communication governance reading rule is to follow the artifacts: identify the declared
-contract, inspect the authority and version, check the complete attempt and
-failure denominator, examine the independent decision, and retain every
-residual through the handoff. When any link is absent, the correct conclusion
-is narrower authority and more explicit uncertainty—not assumed success and
-not a sweeping refutation of the idea.
+This decomposition prevents four common category errors: factuality becoming
+permission to persuade, consent to receive becoming consent to manipulation,
+delivery becoming evidence of understanding, and publication of a correction
+becoming evidence of repair. The system earns only a bounded delivery lease,
+and that lease remains accountable to observed exposure and affected people.
+
+Communication governance begins where text generation ends. It keeps claim evidence, audience, influence method, personalization, identity, channel, amplification, exposure, observed effects, correction, appeal, and expiry visible so fluent or factual language cannot acquire unlimited social authority.
 
 ## Handoff
 
-**Constitutional Alignment: Agency, Dignity, and Corrigibility** follows. It consumes this chapter's bounded
-outputs without inheriting authority, certainty, or support that this chapter
-did not establish. The receiving chapter must preserve the identities,
-versions, unresolved conflicts, residuals, and non-claims recorded here, then
-perform its own admission checks before acting. A handoff receipt proves only
-that the packet crossed the declared interface; it does not prove that either
-chapter's mechanism is effective, complete, safe, transferable, or ready for
-release.
+**Constitutional Alignment: Agency, Dignity, and Corrigibility** receives the
+episode's protected-interest conflicts, denied influence methods, appeal
+requirements, and unresolved autonomy residuals. It must decide which
+constitutional ceilings bind future communication without treating a
+persuasion score, disclosure, or user agreement as proof that dignity and
+agency were preserved.

@@ -5,9 +5,9 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/learning-theory-generalization-and-scaling-science.qmd",
     "structured_atoms_reviewed": 34,
-    "prose_candidates_adjudicated": 51,
+    "prose_candidates_adjudicated": 45,
     "unowned_material_claims": 0,
-    "review_note": "Reviewed the complete admitted Learning Theory, Generalization, and Scaling Science chapter, its manifest ownership, source crosswalk, lifecycle, mechanisms, interfaces, invariants, failure inventory, minimum implementation, falsification program, test plan, summary, and handoff. Claim-bearing prose is mapped to the closest owned atom by section; layout fragments, status text, captions, and handoffs remain explicitly nonmaterial. The review preserves argument support and records no efficacy, transfer, release, SOTA, AGI, or ASI promotion."
+    "review_note": "Re-reviewed the complete W3-rewritten and reader-depth-completed Learning Theory Generalization And Scaling Science chapter on 2026-07-26. All 45 current prose candidates are adjudicated as owned refinements, bounded explanations, source reports, or cross-chapter handoffs. No unowned material claim, atom proposition, support, release, or publication movement was introduced."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
@@ -16,7 +16,7 @@
       "environment": "The authored ASI Stack interfaces, future controlled fixtures, and prospectively frozen natural or adversarial workloads; production deployment and open-world transfer remain unestablished.",
       "model": "Model- and substrate-agnostic contract design at argument support; any implementation claim must name exact models, checkpoints, policies, prompts, tools, data, and evaluators.",
       "authority": "`learning-theory-generalization-and-scaling-science` owns its bounded decision contract; adjacent chapters retain their own authority, and neither prose nor a passing record can widen an action grant.",
-      "time": "Semantic review current through 2026-07-24; material changes to evidence, authority, population, model, environment, ontology, or consumer require reauthorization.",
+      "time": "Semantic review current through 2026-07-26; material changes to evidence, authority, population, model, environment, ontology, or consumer require reauthorization.",
       "artifact": "chapters/learning-theory-generalization-and-scaling-science.qmd, its manifest record, source crosswalk (the chapter source packet), claim dossier, and future versioned implementation/evaluation receipts."
     },
     "assumptions": [
@@ -100,22 +100,114 @@
   },
   "atom_reviews": {},
   "prose_candidate_dispositions": {
-    "learning-theory-generalization-and-scaling-science.prose.f333c873c1cf": {
-      "state": "duplicate_of_atom",
-      "rationale": "Semantically reviewed as a prose explanation or refinement of `learning-theory-generalization-and-scaling-science.problem.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
-      "target_atom_id": "learning-theory-generalization-and-scaling-science.problem.001"
-    },
-    "learning-theory-generalization-and-scaling-science.prose.ee641ec15a86": {
-      "state": "duplicate_of_atom",
-      "rationale": "Semantically reviewed as a prose explanation or refinement of `learning-theory-generalization-and-scaling-science.problem.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
-      "target_atom_id": "learning-theory-generalization-and-scaling-science.problem.001"
-    },
     "learning-theory-generalization-and-scaling-science.prose.08f8665ec4dc": {
       "state": "duplicate_of_atom",
       "rationale": "Semantically reviewed as a prose explanation or refinement of `learning-theory-generalization-and-scaling-science.problem.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
       "target_atom_id": "learning-theory-generalization-and-scaling-science.problem.001"
     },
-    "learning-theory-generalization-and-scaling-science.prose.dd977bc5f551": {
+    "learning-theory-generalization-and-scaling-science.prose.0aebb2ca8980": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after W3 as a chapter-specific stronger-alternative or ownership-boundary refinement of `learning-theory-generalization-and-scaling-science.insufficiency.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "learning-theory-generalization-and-scaling-science.insufficiency.001"
+    },
+    "learning-theory-generalization-and-scaling-science.prose.0fc76be74e0f": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed as a prose explanation or refinement of `learning-theory-generalization-and-scaling-science.insufficiency.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
+      "target_atom_id": "learning-theory-generalization-and-scaling-science.insufficiency.001"
+    },
+    "learning-theory-generalization-and-scaling-science.prose.0fc84513da71": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed as a prose explanation or refinement of `learning-theory-generalization-and-scaling-science.mechanism.005` within the chapter's declared scope; it creates no separate support-bearing atom.",
+      "target_atom_id": "learning-theory-generalization-and-scaling-science.mechanism.005"
+    },
+    "learning-theory-generalization-and-scaling-science.prose.10f5e131a70f": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after W3 as a chapter-specific scope guardrail of `learning-theory-generalization-and-scaling-science.core`; it creates no separate support-bearing atom.",
+      "target_atom_id": "learning-theory-generalization-and-scaling-science.core"
+    },
+    "learning-theory-generalization-and-scaling-science.prose.1acfbb1c6d17": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after the W3 depth repair as a chapter-specific refinement of `learning-theory-generalization-and-scaling-science.beyond_sota.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "learning-theory-generalization-and-scaling-science.beyond_sota.001"
+    },
+    "learning-theory-generalization-and-scaling-science.prose.1c3163582009": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed as a prose explanation or refinement of `learning-theory-generalization-and-scaling-science.mechanism.003` within the chapter's declared scope; it creates no separate support-bearing atom.",
+      "target_atom_id": "learning-theory-generalization-and-scaling-science.mechanism.003"
+    },
+    "learning-theory-generalization-and-scaling-science.prose.26dcb492aef3": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after W3 as a chapter-specific invariant synthesis of `learning-theory-generalization-and-scaling-science.invariant.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "learning-theory-generalization-and-scaling-science.invariant.001"
+    },
+    "learning-theory-generalization-and-scaling-science.prose.26dff41cdcbc": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after W3 as a chapter-specific evaluation and positive-control refinement of `learning-theory-generalization-and-scaling-science.minimum.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "learning-theory-generalization-and-scaling-science.minimum.001"
+    },
+    "learning-theory-generalization-and-scaling-science.prose.2a49ae648aea": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed as a prose explanation or refinement of `learning-theory-generalization-and-scaling-science.minimum.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
+      "target_atom_id": "learning-theory-generalization-and-scaling-science.minimum.001"
+    },
+    "learning-theory-generalization-and-scaling-science.prose.36195bdd4d22": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed as a prose explanation or refinement of `learning-theory-generalization-and-scaling-science.mechanism.002` within the chapter's declared scope; it creates no separate support-bearing atom.",
+      "target_atom_id": "learning-theory-generalization-and-scaling-science.mechanism.002"
+    },
+    "learning-theory-generalization-and-scaling-science.prose.3cf45e870db0": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed as a prose explanation or refinement of `learning-theory-generalization-and-scaling-science.mechanism.003` within the chapter's declared scope; it creates no separate support-bearing atom.",
+      "target_atom_id": "learning-theory-generalization-and-scaling-science.mechanism.003"
+    },
+    "learning-theory-generalization-and-scaling-science.prose.3e13e373c99f": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after W3 as a chapter-specific stronger-alternative or ownership-boundary refinement of `learning-theory-generalization-and-scaling-science.insufficiency.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "learning-theory-generalization-and-scaling-science.insufficiency.001"
+    },
+    "learning-theory-generalization-and-scaling-science.prose.4c29f66760e3": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed as a prose explanation or refinement of `learning-theory-generalization-and-scaling-science.mechanism.004` within the chapter's declared scope; it creates no separate support-bearing atom.",
+      "target_atom_id": "learning-theory-generalization-and-scaling-science.mechanism.004"
+    },
+    "learning-theory-generalization-and-scaling-science.prose.4d6375611e87": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after the W3 depth repair as a chapter-specific refinement of `learning-theory-generalization-and-scaling-science.beyond_sota.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "learning-theory-generalization-and-scaling-science.beyond_sota.001"
+    },
+    "learning-theory-generalization-and-scaling-science.prose.50b0d4a65a15": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
+    },
+    "learning-theory-generalization-and-scaling-science.prose.54f8c544c331": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed as a prose explanation or refinement of `learning-theory-generalization-and-scaling-science.mechanism.005` within the chapter's declared scope; it creates no separate support-bearing atom.",
+      "target_atom_id": "learning-theory-generalization-and-scaling-science.mechanism.005"
+    },
+    "learning-theory-generalization-and-scaling-science.prose.66a2c09e03cb": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
+    },
+    "learning-theory-generalization-and-scaling-science.prose.68cd692a529d": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after the W3 depth repair as a chapter-specific refinement of `learning-theory-generalization-and-scaling-science.beyond_sota.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "learning-theory-generalization-and-scaling-science.beyond_sota.001"
+    },
+    "learning-theory-generalization-and-scaling-science.prose.69531b9bde5b": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed as a prose explanation or refinement of `learning-theory-generalization-and-scaling-science.mechanism.003` within the chapter's declared scope; it creates no separate support-bearing atom.",
+      "target_atom_id": "learning-theory-generalization-and-scaling-science.mechanism.003"
+    },
+    "learning-theory-generalization-and-scaling-science.prose.706cc8b030c9": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after the W3 depth repair as a chapter-specific refinement of `learning-theory-generalization-and-scaling-science.beyond_sota.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "learning-theory-generalization-and-scaling-science.beyond_sota.001"
+    },
+    "learning-theory-generalization-and-scaling-science.prose.8d198e8dfead": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
+    },
+    "learning-theory-generalization-and-scaling-science.prose.8f669cec57eb": {
       "state": "duplicate_of_atom",
       "rationale": "Semantically reviewed as a prose explanation or refinement of `learning-theory-generalization-and-scaling-science.problem.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
       "target_atom_id": "learning-theory-generalization-and-scaling-science.problem.001"
@@ -125,7 +217,95 @@
       "rationale": "Semantically reviewed as a prose explanation or refinement of `learning-theory-generalization-and-scaling-science.problem.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
       "target_atom_id": "learning-theory-generalization-and-scaling-science.problem.001"
     },
-    "learning-theory-generalization-and-scaling-science.prose.8f669cec57eb": {
+    "learning-theory-generalization-and-scaling-science.prose.932a76315cd7": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after W3 as a chapter-specific argument-exit campaign refinement of `learning-theory-generalization-and-scaling-science.beyond_sota.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "learning-theory-generalization-and-scaling-science.beyond_sota.001"
+    },
+    "learning-theory-generalization-and-scaling-science.prose.97a3e999b24a": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after W3 as a chapter-specific evaluation and positive-control refinement of `learning-theory-generalization-and-scaling-science.minimum.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "learning-theory-generalization-and-scaling-science.minimum.001"
+    },
+    "learning-theory-generalization-and-scaling-science.prose.a01c8c274b16": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
+    },
+    "learning-theory-generalization-and-scaling-science.prose.dce3227e0a8f": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after W3 as a chapter-specific chapter summary of `learning-theory-generalization-and-scaling-science.core`; it creates no separate support-bearing atom.",
+      "target_atom_id": "learning-theory-generalization-and-scaling-science.core"
+    },
+    "learning-theory-generalization-and-scaling-science.prose.abb2ee109ee4": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed as a prose explanation or refinement of `learning-theory-generalization-and-scaling-science.mechanism.004` within the chapter's declared scope; it creates no separate support-bearing atom.",
+      "target_atom_id": "learning-theory-generalization-and-scaling-science.mechanism.004"
+    },
+    "learning-theory-generalization-and-scaling-science.prose.afc9d3339a05": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed as a prose explanation or refinement of `learning-theory-generalization-and-scaling-science.insufficiency.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
+      "target_atom_id": "learning-theory-generalization-and-scaling-science.insufficiency.001"
+    },
+    "learning-theory-generalization-and-scaling-science.prose.b0c9d2d83c1d": {
+      "state": "nonmaterial_explanation",
+      "rationale": "W3 domain-specific diagram walkthrough; its material boundary remains represented by the chapter's structured atoms."
+    },
+    "learning-theory-generalization-and-scaling-science.prose.bf98b29439b4": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after the W3 depth repair as a chapter-specific refinement of `learning-theory-generalization-and-scaling-science.minimum.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "learning-theory-generalization-and-scaling-science.minimum.001"
+    },
+    "learning-theory-generalization-and-scaling-science.prose.c797e8d79493": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
+    },
+    "learning-theory-generalization-and-scaling-science.prose.c8d6b0c168c5": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Formalization-scope caption that narrows a planned finite record target and expressly denies live efficacy, safety, or transfer inference."
+    },
+    "learning-theory-generalization-and-scaling-science.prose.ce4c8947ff2b": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed as a prose explanation or refinement of `learning-theory-generalization-and-scaling-science.mechanism.003` within the chapter's declared scope; it creates no separate support-bearing atom.",
+      "target_atom_id": "learning-theory-generalization-and-scaling-science.mechanism.003"
+    },
+    "learning-theory-generalization-and-scaling-science.prose.ced7f6379766": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
+    },
+    "learning-theory-generalization-and-scaling-science.prose.d76a642f6ee0": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
+    },
+    "learning-theory-generalization-and-scaling-science.prose.d81471708d9b": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after W3 as a chapter-specific mature-target refinement of `learning-theory-generalization-and-scaling-science.beyond_sota.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "learning-theory-generalization-and-scaling-science.beyond_sota.001"
+    },
+    "learning-theory-generalization-and-scaling-science.prose.dd977bc5f551": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed as a prose explanation or refinement of `learning-theory-generalization-and-scaling-science.problem.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
+      "target_atom_id": "learning-theory-generalization-and-scaling-science.problem.001"
+    },
+    "learning-theory-generalization-and-scaling-science.prose.e3f84310e420": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after the W3 depth repair as a chapter-specific refinement of `learning-theory-generalization-and-scaling-science.core`; it creates no separate support-bearing atom.",
+      "target_atom_id": "learning-theory-generalization-and-scaling-science.core"
+    },
+    "learning-theory-generalization-and-scaling-science.prose.e48fae3dadef": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
+    },
+    "learning-theory-generalization-and-scaling-science.prose.ee641ec15a86": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed as a prose explanation or refinement of `learning-theory-generalization-and-scaling-science.problem.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
+      "target_atom_id": "learning-theory-generalization-and-scaling-science.problem.001"
+    },
+    "learning-theory-generalization-and-scaling-science.prose.eee218d0073e": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after the W3 depth repair as a chapter-specific refinement of `learning-theory-generalization-and-scaling-science.beyond_sota.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "learning-theory-generalization-and-scaling-science.beyond_sota.001"
+    },
+    "learning-theory-generalization-and-scaling-science.prose.f333c873c1cf": {
       "state": "duplicate_of_atom",
       "rationale": "Semantically reviewed as a prose explanation or refinement of `learning-theory-generalization-and-scaling-science.problem.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
       "target_atom_id": "learning-theory-generalization-and-scaling-science.problem.001"
@@ -134,197 +314,6 @@
       "state": "duplicate_of_atom",
       "rationale": "Semantically reviewed as a prose explanation or refinement of `learning-theory-generalization-and-scaling-science.problem.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
       "target_atom_id": "learning-theory-generalization-and-scaling-science.problem.001"
-    },
-    "learning-theory-generalization-and-scaling-science.prose.6dda77649580": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "learning-theory-generalization-and-scaling-science.prose.9a3e6a8ff12a": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "learning-theory-generalization-and-scaling-science.prose.0fc76be74e0f": {
-      "state": "duplicate_of_atom",
-      "rationale": "Semantically reviewed as a prose explanation or refinement of `learning-theory-generalization-and-scaling-science.insufficiency.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
-      "target_atom_id": "learning-theory-generalization-and-scaling-science.insufficiency.001"
-    },
-    "learning-theory-generalization-and-scaling-science.prose.afc9d3339a05": {
-      "state": "duplicate_of_atom",
-      "rationale": "Semantically reviewed as a prose explanation or refinement of `learning-theory-generalization-and-scaling-science.insufficiency.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
-      "target_atom_id": "learning-theory-generalization-and-scaling-science.insufficiency.001"
-    },
-    "learning-theory-generalization-and-scaling-science.prose.e206b55bf266": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "learning-theory-generalization-and-scaling-science.prose.776b655c3d7d": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "learning-theory-generalization-and-scaling-science.prose.46e6021e6ba0": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "learning-theory-generalization-and-scaling-science.prose.0518b15b8aaf": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "learning-theory-generalization-and-scaling-science.prose.311546b98be0": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "learning-theory-generalization-and-scaling-science.prose.e48fae3dadef": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "learning-theory-generalization-and-scaling-science.prose.05f8840e001c": {
-      "state": "duplicate_of_atom",
-      "rationale": "Semantically reviewed as a prose explanation or refinement of `learning-theory-generalization-and-scaling-science.mechanism.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
-      "target_atom_id": "learning-theory-generalization-and-scaling-science.mechanism.001"
-    },
-    "learning-theory-generalization-and-scaling-science.prose.69531b9bde5b": {
-      "state": "duplicate_of_atom",
-      "rationale": "Semantically reviewed as a prose explanation or refinement of `learning-theory-generalization-and-scaling-science.mechanism.003` within the chapter's declared scope; it creates no separate support-bearing atom.",
-      "target_atom_id": "learning-theory-generalization-and-scaling-science.mechanism.003"
-    },
-    "learning-theory-generalization-and-scaling-science.prose.54f8c544c331": {
-      "state": "duplicate_of_atom",
-      "rationale": "Semantically reviewed as a prose explanation or refinement of `learning-theory-generalization-and-scaling-science.mechanism.005` within the chapter's declared scope; it creates no separate support-bearing atom.",
-      "target_atom_id": "learning-theory-generalization-and-scaling-science.mechanism.005"
-    },
-    "learning-theory-generalization-and-scaling-science.prose.3cf45e870db0": {
-      "state": "duplicate_of_atom",
-      "rationale": "Semantically reviewed as a prose explanation or refinement of `learning-theory-generalization-and-scaling-science.mechanism.003` within the chapter's declared scope; it creates no separate support-bearing atom.",
-      "target_atom_id": "learning-theory-generalization-and-scaling-science.mechanism.003"
-    },
-    "learning-theory-generalization-and-scaling-science.prose.50b0d4a65a15": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "learning-theory-generalization-and-scaling-science.prose.0fc84513da71": {
-      "state": "duplicate_of_atom",
-      "rationale": "Semantically reviewed as a prose explanation or refinement of `learning-theory-generalization-and-scaling-science.mechanism.005` within the chapter's declared scope; it creates no separate support-bearing atom.",
-      "target_atom_id": "learning-theory-generalization-and-scaling-science.mechanism.005"
-    },
-    "learning-theory-generalization-and-scaling-science.prose.66a2c09e03cb": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "learning-theory-generalization-and-scaling-science.prose.36195bdd4d22": {
-      "state": "duplicate_of_atom",
-      "rationale": "Semantically reviewed as a prose explanation or refinement of `learning-theory-generalization-and-scaling-science.mechanism.002` within the chapter's declared scope; it creates no separate support-bearing atom.",
-      "target_atom_id": "learning-theory-generalization-and-scaling-science.mechanism.002"
-    },
-    "learning-theory-generalization-and-scaling-science.prose.a01c8c274b16": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "learning-theory-generalization-and-scaling-science.prose.d76a642f6ee0": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "learning-theory-generalization-and-scaling-science.prose.abb2ee109ee4": {
-      "state": "duplicate_of_atom",
-      "rationale": "Semantically reviewed as a prose explanation or refinement of `learning-theory-generalization-and-scaling-science.mechanism.004` within the chapter's declared scope; it creates no separate support-bearing atom.",
-      "target_atom_id": "learning-theory-generalization-and-scaling-science.mechanism.004"
-    },
-    "learning-theory-generalization-and-scaling-science.prose.1c3163582009": {
-      "state": "duplicate_of_atom",
-      "rationale": "Semantically reviewed as a prose explanation or refinement of `learning-theory-generalization-and-scaling-science.mechanism.003` within the chapter's declared scope; it creates no separate support-bearing atom.",
-      "target_atom_id": "learning-theory-generalization-and-scaling-science.mechanism.003"
-    },
-    "learning-theory-generalization-and-scaling-science.prose.c797e8d79493": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "learning-theory-generalization-and-scaling-science.prose.ced7f6379766": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "learning-theory-generalization-and-scaling-science.prose.ce4c8947ff2b": {
-      "state": "duplicate_of_atom",
-      "rationale": "Semantically reviewed as a prose explanation or refinement of `learning-theory-generalization-and-scaling-science.mechanism.003` within the chapter's declared scope; it creates no separate support-bearing atom.",
-      "target_atom_id": "learning-theory-generalization-and-scaling-science.mechanism.003"
-    },
-    "learning-theory-generalization-and-scaling-science.prose.8d198e8dfead": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "learning-theory-generalization-and-scaling-science.prose.4c29f66760e3": {
-      "state": "duplicate_of_atom",
-      "rationale": "Semantically reviewed as a prose explanation or refinement of `learning-theory-generalization-and-scaling-science.mechanism.004` within the chapter's declared scope; it creates no separate support-bearing atom.",
-      "target_atom_id": "learning-theory-generalization-and-scaling-science.mechanism.004"
-    },
-    "learning-theory-generalization-and-scaling-science.prose.d18d74e7ec22": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "learning-theory-generalization-and-scaling-science.prose.c28c8b573493": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "learning-theory-generalization-and-scaling-science.prose.5baa1bd83758": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "learning-theory-generalization-and-scaling-science.prose.b273b9da3c45": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "learning-theory-generalization-and-scaling-science.prose.95b08a9d51f8": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "learning-theory-generalization-and-scaling-science.prose.620e415af61e": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "learning-theory-generalization-and-scaling-science.prose.2a49ae648aea": {
-      "state": "duplicate_of_atom",
-      "rationale": "Semantically reviewed as a prose explanation or refinement of `learning-theory-generalization-and-scaling-science.minimum.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
-      "target_atom_id": "learning-theory-generalization-and-scaling-science.minimum.001"
-    },
-    "learning-theory-generalization-and-scaling-science.prose.f9834fe83ee7": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "learning-theory-generalization-and-scaling-science.prose.b1e789afc8a0": {
-      "state": "duplicate_of_atom",
-      "rationale": "Semantically reviewed as a prose explanation or refinement of `learning-theory-generalization-and-scaling-science.minimum.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
-      "target_atom_id": "learning-theory-generalization-and-scaling-science.minimum.001"
-    },
-    "learning-theory-generalization-and-scaling-science.prose.39fbf6aadcfb": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "learning-theory-generalization-and-scaling-science.prose.2cd424e102d0": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "learning-theory-generalization-and-scaling-science.prose.0538f7bf12b7": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "learning-theory-generalization-and-scaling-science.prose.972c55ad6e70": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "learning-theory-generalization-and-scaling-science.prose.a45a57738dd9": {
-      "state": "duplicate_of_atom",
-      "rationale": "Semantically reviewed as a prose explanation or refinement of `learning-theory-generalization-and-scaling-science.core` within the chapter's declared scope; it creates no separate support-bearing atom.",
-      "target_atom_id": "learning-theory-generalization-and-scaling-science.core"
-    },
-    "learning-theory-generalization-and-scaling-science.prose.d7c698d66ae4": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "learning-theory-generalization-and-scaling-science.prose.1644f28bb30e": {
-      "state": "editorial_or_question",
-      "rationale": "Cross-chapter handoff instruction; the receiving owner performs its own admission checks and no independent support transition is asserted."
-    },
-    "learning-theory-generalization-and-scaling-science.prose.6e2a279b9dad": {
-      "state": "editorial_or_question",
-      "rationale": "Cross-chapter handoff instruction; the receiving owner performs its own admission checks and no independent support transition is asserted."
     }
   },
   "non_claims": [

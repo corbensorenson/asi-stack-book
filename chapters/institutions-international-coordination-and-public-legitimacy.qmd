@@ -35,10 +35,7 @@ open_evidence_gaps:
 
 ## Drafting guardrail
 
-Institutional coordination owns a distinct control plane, not proof that the control plane
-works. Its source crosswalk supports definitions, mechanisms, failure examples,
-and comparison targets. The design remains at **argument** support until a
-separate accepted evidence transition says otherwise.
+This chapter owns institutional authority, coordination, enforcement, and remedy across jurisdictions and affected publics. It does not infer legitimacy from a signed agreement, legal text, technical conformance, expert review, stakeholder consultation, or a functioning coordination mechanism.
 
 ::: {.asi-human-only}
 ## Human Reading Path
@@ -52,50 +49,48 @@ The lifecycle runs from stakeholder and jurisdiction mapping through negotiation
 
 ## Problem
 
+The same system can be privately authorized, technically controlled, legally
+permitted in one jurisdiction, prohibited in another, and still illegitimate
+to the people bearing its risks. ASI governance must represent these states
+without collapsing them into a single approval bit. It must also survive
+strategic actors who benefit from weak verification, fragmented enforcement,
+or the inability of affected communities to obtain evidence and remedy.
+
 ASI-scale systems cross organizations, jurisdictions, borders, public services, and affected populations. Technical permissions and private governance cannot determine who has public authority, whose participation counts, how conflicting rules are resolved, or how international commitments are verified and amended.
 Those questions remain unavoidable.
 
-This gap matters at the scale of a stack because its output becomes another
-layer's input. If the owner is absent, `regulatory capture` or
-`forum shopping` can be normalized before a downstream layer sees it.
-The downstream consumer may possess a valid local record while acting on a
-broken upstream assumption. An explicit owner therefore needs both a positive
-contract and a refusal path: it must say what counts as an admissible
-transition, what remains unresolved, who may consume the result, and when a
-material change forces reauthorization.
+Without an institutional owner, technical controls and evidence can be complete while mandate, jurisdiction, representation, enforcement, capacity, remedy, and cross-border conflict remain undefined. The [shared lifecycle method](living-book-methodology.qmd#shared-chapter-lifecycle-method) supplies transaction custody; the institutional layer supplies public authority and contestability.
 
 ## Why existing approaches are insufficient
 
+A framework may describe good process while lacking any actor with the
+resources or independence to inspect compliance. A treaty may be enforceable
+between signatories yet omit downstream communities. A participation process
+may count attendees while giving them no agenda power, evidence access, or
+appeal. These are different failures and require separate fields rather than a
+single governance-maturity score.
+
 A compliance checklist, technical standard, treaty text, risk framework, or corporate safety policy can name duties without establishing jurisdiction, representative input, assessor independence, enforcement, remedy, capacity, legitimacy, or observed effectiveness. Architecture cannot manufacture democratic consent.
 
-Institutional coordination must first beat a disciplined composition of the adjacent
-owners. That alternative should win if it can preserve the same identities,
-authority, lifecycle state, failure distinctions, and residuals without
-overloading their primary jobs. A dedicated owner remains necessary because the
-handoffs listed below otherwise leave a missing end-to-end decision. Separation
-does not imply autonomy: this owner must consume upstream records and return
-bounded outputs to downstream owners rather than becoming a new unreviewable
-center of authority.
+Constitutional Alignment, governance rights, standards, safety cases, and inter-stack protocols form the strongest technical composition. It wins if it can also preserve jurisdiction, mandate, participation, representation, verification access, enforcement asymmetry, remedy, capacity, conflict, exit, and legitimacy residuals.
 
 ```{mermaid}
 flowchart LR
-  A["Declared purpose and bounded authority"] --> B["Versioned chapter-specific contract"]
-  B["Versioned chapter-specific contract"] --> C["Admission and boundary checks"]
-  C["Admission and boundary checks"] --> D["Execute with complete lineage and denominators"]
-  D["Execute with complete lineage and denominators"] --> E["Observe outcomes, costs, and residuals"]
-  E["Observe outcomes, costs, and residuals"] --> F{"Independent checks pass?"}
-  F -- "no" --> G["Quarantine, narrow, correct, or stop"]
-  F -- "yes" --> H["Versioned bounded handoff"]
-  G -- "repair and reauthorize" --> B
-  H -- "material change" --> B
-  B -. "expiry or revocation" .-> G
-  E -. "residual feedback" .-> B
+  J["Jurisdiction, mandate, affected publics, and standing"] --> P["Participation, evidence, law, and standards"]
+  P --> C["Coordination instrument with duties and verification"]
+  C --> V["Independent-enough access, monitoring, and dispute process"]
+  V --> E{"Compliance, capacity, and legitimacy conditions hold?"}
+  E -- "no" --> R["Remedy, escalation, renegotiation, suspension, or exit"]
+  E -- "yes" --> O["Bounded institutional authorization"]
+  O --> A["Audit enforcement, distribution, and public outcomes"]
+  A -. "expiry, conflict, or capture" .-> J
+  R --> S["Publish unresolved conflicts and remedy status"]
+  S --> Q{"Accountable authority restored?"}
+  Q -- "yes" --> J
 ```
 
-**What the Institutions, International Coordination, and Public Legitimacy lifecycle shows:** Authority enters before execution,
-chapter-specific state remains versioned, and a failed independent check returns
-the system to correction or quarantine. A successful check grants only the
-bounded downstream handoff; it does not erase residuals or promote its core claim.
+**What this institutional-authorization diagram shows:** a jurisdiction- and mandate-specific authorization moves. Scientific evidence, legal compliance, standards conformance, participation, and legitimacy remain distinct inputs and residuals.
+
 
 ## Core Claim
 
@@ -103,25 +98,54 @@ bounded downstream handoff; it does not erase residuals or promote its core clai
 
 ## Mechanism
 
-**Contract.** Map jurisdiction, mandate, standing, affected publics, representation, excluded groups, and conflicts before treating an institution as an authority. This stage is recorded as a versioned decision rather than an invisible implementation detail. For Institutions, International Coordination, and Public Legitimacy, the record must name its inputs, authority, consumer, expiry, and unresolved residuals. A later stage may narrow the decision, but it may not silently broaden the earlier grant or reinterpret a missing field as success.
+The institutional packet begins with a public-authority map. It names the legal
+or delegated basis for action, territorial and subject-matter jurisdiction,
+duty holders, affected publics, rights holders, beneficiaries, excluded
+groups, and forums with standing to contest the decision. Claims of
+representation include their selection process and limitations. This prevents
+a technically competent sponsor from presenting itself as the universal
+principal.
 
-**Admission.** Join public reasons and scientific evidence to a versioned law-policy-standard crosswalk without collapsing these different sources of legitimacy. This stage is recorded as a versioned decision rather than an invisible implementation detail. For Institutions, International Coordination, and Public Legitimacy, the record must name its inputs, authority, consumer, expiry, and unresolved residuals. A later stage may narrow the decision, but it may not silently broaden the earlier grant or reinterpret a missing field as success.
+Coordination instruments compile obligations into testable commitments.
+Prohibitions, thresholds, reporting duties, access rights, financing,
+assistance, incident notification, and remedy are attached to responsible
+actors, deadlines, evidence routes, and consequences for noncompliance.
+Confidentiality and security constraints are represented as scoped access
+controls, not excuses for unverifiable assurance. International packets also
+record reciprocity, capacity asymmetry, forum choice, withdrawal, and the risk
+of regulatory arbitrage.
 
-**Execution.** Define cross-border commitments with named verification, assessor independence, noncompliance handling, enforcement, dispute, remedy, amendment, and withdrawal paths. This stage is recorded as a versioned decision rather than an invisible implementation detail. For Institutions, International Coordination, and Public Legitimacy, the record must name its inputs, authority, consumer, expiry, and unresolved residuals. A later stage may narrow the decision, but it may not silently broaden the earlier grant or reinterpret a missing field as success.
+Observation joins three ledgers that must remain separate: technical
+conformance, institutional performance, and legitimacy. Technical evidence
+asks whether a system met a requirement; performance asks whether monitoring,
+enforcement, and remedies worked; legitimacy asks whether authority and
+participation remain defensible to affected people. A packet may pass one
+ledger and fail another. Renewal requires an explicit decision that considers
+all three and publishes unresolved residuals within lawful disclosure bounds.
+The renewal record also states whose challenge could still change the outcome,
+which evidence remains inaccessible, and which population lacks an effective
+representative or remedy.
 
-**Observation.** Track institutional capacity, distributional effects, emergency authority, exceptions, capture indicators, and unresolved conflicts through deployment. This stage is recorded as a versioned decision rather than an invisible implementation detail. For Institutions, International Coordination, and Public Legitimacy, the record must name its inputs, authority, consumer, expiry, and unresolved residuals. A later stage may narrow the decision, but it may not silently broaden the earlier grant or reinterpret a missing field as success.
+**Contract.** Map jurisdiction, mandate, standing, affected publics, representation, excluded groups, and conflicts before treating an institution as an authority.
 
-**Closure.** Reopen the packet when evidence, jurisdiction, representation, law, system capability, or affected populations materially change. This stage is recorded as a versioned decision rather than an invisible implementation detail. For Institutions, International Coordination, and Public Legitimacy, the record must name its inputs, authority, consumer, expiry, and unresolved residuals. A later stage may narrow the decision, but it may not silently broaden the earlier grant or reinterpret a missing field as success.
+**Admission.** Join public reasons and scientific evidence to a versioned law-policy-standard crosswalk without collapsing these different sources of legitimacy.
+
+**Execution.** Define cross-border commitments with named verification, assessor independence, noncompliance handling, enforcement, dispute, remedy, amendment, and withdrawal paths.
+
+**Observation.** Track institutional capacity, distributional effects, emergency authority, exceptions, capture indicators, and unresolved conflicts through deployment.
+
+**Closure.** Reopen the packet when evidence, jurisdiction, representation, law, system capability, or affected populations materially change.
 
 ## Interfaces
 
-Institutional coordination is useful only when its boundaries are sharper than neighboring owners.
-Each interface below therefore names what the adjacent owner keeps and what
-crosses the boundary. The packet must preserve exact object and version
-identity, authority, support state, expiry, residuals, and consumer. A receiving
-layer may reject or narrow it. Merely serializing the fields, passing a schema,
-or recording a dispatch does not prove that the meaning survived or that the
-receiving layer is competent.
+The boundary with technical governance is deliberately asymmetric. Safety
+cases, evaluations, logs, and capability thresholds can trigger institutional
+duties and narrow available choices, but they cannot appoint the decision
+maker. Conversely, an institution can authorize a bounded action only within
+the technical safety and rights constraints it actually controls; mandate does
+not make an unsafe effect safe.
+
+Constitutions and rights define protected constraints; safety cases and thresholds supply technical evidence; inter-stack protocols supply coordination machinery. This chapter owns mandate, jurisdiction, participation, verification access, enforcement, remedy, capacity, and public legitimacy.
 
 - Moral Uncertainty retains contested values; institutions decide only within a claimed mandate.
 - System Boundaries enforces technical grants; this chapter asks whether the grantor has public authority.
@@ -131,13 +155,13 @@ receiving layer is competent.
 
 ## Invariants
 
-For Institutional coordination, the following invariants are admission conditions rather than aspirations. They must
-hold across retries, replacements, cached results, branches, migrations,
-partial failures, and human intervention. When the implementation cannot
-establish an invariant, the result is a named residual or blocked route—not a
-default value. A finite formal model may prove that an authored record follows
-these rules, but only implementation and outcome evidence can show that a live
-system actually enforces them.
+Every institutional status is versioned by jurisdiction, mandate, system
+identity, capability envelope, affected population, and time. A commitment
+cannot be copied to a materially different deployment or successor institution
+without a new authorization and verification decision. Unresolved conflict is
+preserved as state, not rewritten as consensus.
+
+Applying the [shared lifecycle method](living-book-methodology.qmd#shared-chapter-lifecycle-method), no actor may turn technical competence into public mandate, participation cannot be reduced to notice, enforcement and remedy must remain reachable, and cross-border conflict cannot disappear inside one aggregate status.
 
 - Technical conformance, legal validity, political authority, scientific consensus, public legitimacy, and observed effectiveness remain separate claims.
 - Affected and excluded populations remain visible in the denominator.
@@ -157,75 +181,74 @@ The mechanism fails through sponsor veto, cherry-picked evaluators, unsafe discl
 
 ## Failure modes
 
-The principal failure family includes regulatory capture; forum shopping; race-to-the-bottom deployment; standards laundering; treaty theater; unverifiable commitments; enforcement asymmetry; participation without power; affected-public omission; capacity inequality; panel capture; fragmented jurisdiction; inaccessible remedy; permanent emergency powers. These are not presumed
-exhaustive. New substrates, deployment settings, populations, and adversaries
-reopen the failure inventory and may narrow authority immediately.
+The evaluation program must look for **institutional theater**: duties that
+exist on paper but lack budgets, evidence access, sanctions, or remedy. It must
+also probe capture through assessor dependence, revolving-door incentives,
+forum shopping, emergency exceptions, selective transparency, and standards
+written by incumbents. A clean compliance sample under cooperative disclosure
+cannot clear these adversarial governance conditions.
 
-Institutional coordination detection also has its own false-positive and false-negative costs.
-An architecture that blocks every useful route is not vindicated merely
-because it prevented one hazard, while a permissive architecture cannot hide
-unsafe attempts inside an average utility score. Evaluation must preserve the
-full denominator, distinguish mechanism failure from instrument failure, and
-show whether correction, recovery, compensation, or withdrawal actually
-reached the affected state.
+The principal failure family includes regulatory capture; forum shopping; race-to-the-bottom deployment; standards laundering; treaty theater; unverifiable commitments; enforcement asymmetry; participation without power; affected-public omission; capacity inequality; panel capture; fragmented jurisdiction; inaccessible remedy; permanent emergency powers.
+
+Evaluation must examine capture, forum shopping, verification asymmetry, weak-state capacity, excluded publics, unequal enforcement, remedy failure, and strategic defection. A coordination mechanism that blocks everything or advantages incumbents cannot count as successful merely because commitments are recorded.
 
 ## Minimum Viable Implementation
 
+The first software artifact can be a commitment registry that links each duty
+to a named authority, subject, evidence item, verifier, deadline,
+noncompliance route, appeal forum, and remedy. A public projection exposes
+non-sensitive status and residuals, while a protected evidence room records
+reviewer access and sponsor interference. Tabletop exercises then test
+jurisdiction conflict, missing capacity, captured assessment, late incident
+notice, contested evidence, and failed remedy.
+
 Build a jurisdiction-and-commitment packet and test it on public-record cases and adversarial multi-jurisdiction tabletop exercises containing conflicting rules, missing participation, assessor conflicts, evidence revision, incidents, noncompliance, and remedy requests. The exercise can test record completeness and conflict routing, not legal compliance, public trust, or geopolitical stability.
 
-A Institutional coordination implementation should begin with an ordinary baseline and the strongest
-credible competing design, not only an intentionally weak comparator.
-Engineering and tuning budgets, information access, model capability, human
-help, retry policy, and stopping rules should be matched or reported. Positive
-controls must show that the task and instruments can detect the intended
-mechanism before a null or negative outcome is interpreted. Every result
-remains bounded to the tested population, environment, model, implementation,
-and evaluator.
+The minimum implementation is a tabletop and public-record exercise over one bounded cross-organizational risk: map jurisdictions and affected parties, compare status quo and coordination instruments, test verification and disclosure access, inject defection and capture, and exercise dispute, remedy, suspension, and exit.
 
 ## Evidence and falsification program
 
-A fair Institutional coordination test must freeze the mechanism, authority, comparator set, tuning and
-rescue budgets, metrics, stopping rule, and protected holdout before outcomes
-are visible. It must include favorable or oracle checks, mechanism-specific
-ablations, positive and negative controls, complete attempts, independent
-scoring, joint utility/safety/cost accounting, and explicit blocked or null
-outcomes. A weak implementation can narrow that implementation; it cannot
-refute the architectural idea.
+Argument exit requires comparative institutional case studies or live bounded pilots with prospectively named mandates, affected publics, verification methods, enforcement paths, capacity constraints, distributional outcomes, remedies, and failure injections. Technical and legal evaluators remain distinct, and one jurisdiction cannot establish global legitimacy.
 
 ## Mature Research Target
 
-The target is an updateable institutional interface between technical systems and legitimate public authority. It should expose conflict, capture, missing capacity, and unenforceable promises early enough to constrain deployment while refusing the fiction that software can prove political legitimacy.
+The institutional endpoint supports interoperable public commitments without
+assuming a single world government or a universal legal vocabulary. Local and
+international institutions can publish machine-readable duties, exchange
+bounded evidence, recognize or contest one another's decisions, and trace
+which system effects remain outside effective jurisdiction. Capacity-building
+and financing obligations are first-class because rules that only wealthy
+actors can verify are not equivalent governance.
 
-At maturity, the Institutional coordination contract becomes a replaceable service
-behind stable interfaces. New models, algorithms, institutions, storage
-systems, and hardware can enter through declared adapters while the surrounding
-stack continues to enforce the same authority and evidence ceilings. This is
-architectural extensibility, not a claim that one implementation has discovered
-the final mechanism.
+The research program combines institutional case analysis, adversarial
+tabletops, implementation studies, and longitudinal outcome measurement.
+Comparators include voluntary standards, domestic licensing, sector-specific
+regulation, treaty-style commitments, mutual recognition, and independent
+assurance. Outcomes distinguish compliance, time to detection, enforcement
+consistency, remedy reach, burden distribution, strategic substitution, public
+contestability, and the survival of emergency powers after their trigger ends.
 
-For Institutional coordination, the decisive standard is joint performance. The mature design must improve
-useful outcomes or decision quality while keeping unsafe release, false
-refusal, missed help, latency, resource use, human burden, and unresolved
-residuals visible. If a simpler system achieves the same bounded result at lower
-total lifecycle cost, the simpler system should be preferred. If no competent
-test exists yet, the end state remains a falsifiable target rather than a
-marketing conclusion.
+The target remains politically modest. It cannot compute legitimate authority
+or eliminate conflict. It can make claimed authority, participation,
+verification access, enforcement capacity, and remedy concrete enough to
+challenge. A mature packet shows both where collective authorization exists
+and where the ASI stack must abstain because no accountable institution can
+presently carry the decision.
 
-The Institutional coordination target also remains reversible. Operators need a declared way to narrow,
-replace, migrate, or retire the mechanism while preserving affected records and
-obligations. Architectural permanence without demonstrated benefit would be a
-failure of governance, not evidence of maturity.
+The mature layer lets institutions coordinate shared AI risks while remaining contestable, capacity-aware, and reversible. It joins scientific evidence to lawful and publicly accountable action without allowing standards, private infrastructure, or a concentrated technical elite to become a substitute government.
+
+No current result establishes that endpoint. Institutional support remains bounded until adversarial cases demonstrate verification access, enforceable remedy, capacity across unequal jurisdictions, and durable public contestability.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
-| Contract completeness | Reject missing identity, authority, scope, version, consumer, residual, or expiry fields. | planned |
-| Boundary mutation | Substitute an adjacent owner's authority and require rejection. | planned |
-| Failure-family mutation | Inject at least one mechanism-specific failure and preserve the full attempt denominator. | planned |
-| No-promotion control | Ensure prose, schemas, fixtures, and source-reported results cannot promote the chapter core claim. | planned |
+| Mandate and jurisdiction | Reject a technically competent actor that lacks authority over the affected domain or population. | planned |
+| Participation and standing | Inject excluded affected parties and verify notice alone cannot satisfy the route. | planned |
+| Verification asymmetry | Test whether less-resourced parties can inspect, challenge, and appeal the evidence used against them. | planned |
+| Defection and remedy | Exercise noncompliance, capture, suspension, compensation, renegotiation, and lawful exit. | planned |
 
-Planned formalization hook: `lean:institutions-international-coordination-and-public-legitimacy.admission_boundary` remains a process-contract target; it does not claim an implemented theorem.
+Planned formalization route: `lean:institutions-international-coordination-and-public-legitimacy.admission_boundary` covers only the finite admission record for institutions international coordination and public legitimacy; it cannot establish whether institutions international coordination and public legitimacy works safely or transfers.
 
 ## Source crosswalk
 
@@ -288,24 +311,25 @@ decision, enforce a duty, and obtain restoration when the system fails.
 
 ## Summary
 
-Public deployment and cross-border coordination should proceed only through a versioned institutional packet that keeps jurisdiction, mandate, participation, scientific evidence, law and standards, verification, enforcement, remedy, capacity, conflict, expiry, and legitimacy residuals distinct; legal text, technical conformance, stakeholder consultation, or an international commitment alone establishes neither lawful authority, effective governance, representative legitimacy, nor safety. The subject is now integrated into the live manuscript at argument
-support. Its empirical, formal, transfer, and deployment work remains an open
-evidence program rather than an excuse to defer the concept itself.
+Institutional governance answers questions that architecture alone cannot:
+who may authorize public risk, which jurisdiction applies, who represents
+affected people, what evidence an independent reviewer can inspect, how duties
+are enforced, and how people obtain repair. These questions become typed,
+versioned records rather than prose surrounding a technical approval.
 
-The Institutional coordination reading rule is to follow the artifacts: identify the declared
-contract, inspect the authority and version, check the complete attempt and
-failure denominator, examine the independent decision, and retain every
-residual through the handoff. When any link is absent, the correct conclusion
-is narrower authority and more explicit uncertainty—not assumed success and
-not a sweeping refutation of the idea.
+Keeping authority, law, science, conformance, effectiveness, and legitimacy
+separate is the central safeguard. A packet can therefore expose lawful but
+ineffective regulation, technically sound but unauthorized control, or
+well-intentioned coordination that excludes those bearing harm. Renewal
+depends on evidence and contestability, not institutional self-certification.
+
+Institutional governance is the layer that converts bounded evidence into contestable collective action. It keeps mandate, jurisdiction, participation, science, law, standards, verification, enforcement, capacity, remedy, conflict, expiry, and legitimacy separate so coordination does not become either technical theater or unaccountable rule.
 
 ## Handoff
 
-Institutions can authorize and coordinate rules, but they do not make society
-robust to actors that evade them. **Societal Resilience and Misuse Defense**
-follows by receiving jurisdiction, standing, public mandate, independent-
-access rules, enforcement gaps, cross-border commitments, affected
-populations, and remedy obligations. It must build prevention, detection,
-response, recovery, and adaptation around those constraints without inheriting
-a claim that the institution is legitimate, the commitment is effective, or
-the exposed population is protected.
+**Societal Resilience and Misuse Defense** receives bounded institutional
+duties, service commitments, escalation channels, disclosure constraints, and
+remedy routes. It does not inherit proof that institutions are legitimate or
+effective; resilience must observe whether those commitments resist, absorb,
+recover from, and learn after real stress across differently resourced
+communities.

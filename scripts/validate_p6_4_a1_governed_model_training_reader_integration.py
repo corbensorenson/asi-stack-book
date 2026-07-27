@@ -19,7 +19,7 @@ SOURCE_IDS = {
     "ext_pytorch_distributed_checkpoint_2026", "ext_mlperf_training_v6_2026",
 }
 LOCAL_SOURCE_IDS = {"corbens_trainer_project"}
-NEXT_PACKET = "P7.1a-W3-admission-template-inheritance-guard"
+FORBIDDEN_ROLLBACK_PACKET = "P6.4-A1-governed-model-training-distributed-optimization-and-scaling-adjudication"
 
 
 def load(path: Path) -> object:
@@ -115,9 +115,13 @@ def errors(data: dict) -> list[str]:
         second.get("active_candidate_id") is not None
         or second.get("next_queued_candidate_id") is not None
         or second.get("admission_state") != "all_distinct_owners_admitted_no_live_candidate_queue"
-        or status["execution_readiness"].get("immediate_book_packet") != NEXT_PACKET
     ):
-        out.append("A1 terminal custody did not preserve terminal no-queue admission and the current evidence packet")
+        out.append("A1 terminal custody did not preserve terminal no-queue admission")
+    inheritance = status["round_16_evidence_first_amendment"].get("template_inheritance_guard", {})
+    if inheritance.get("state") != "terminal_current_84_chapter_inheritance_guard":
+        out.append("A1 terminal custody did not preserve the completed W3 inheritance gate")
+    if status["execution_readiness"].get("immediate_book_packet") == FORBIDDEN_ROLLBACK_PACKET:
+        out.append("A1 was incorrectly reopened after its terminal admission")
 
     surfaces = data["surfaces"]
     fragments = {

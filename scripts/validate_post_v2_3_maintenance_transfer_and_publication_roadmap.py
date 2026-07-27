@@ -28,6 +28,7 @@ ATOM_ADDENDUM = ROOT / "evidence_quality/replaceable_cognitive_substrates_claim_
 POST_ACTIVATION_SIX_CHAPTER_ADDENDUM = (
     ROOT / "evidence_quality/post_activation_six_chapter_claim_atom_addendum.json"
 )
+P7_1A_W3_INHERITANCE_GUARD = ROOT / "evidence_quality/p7_1a_w3_inheritance_guard.json"
 PROOF_REVIEW = ROOT / "docs/proof_adequacy_review.md"
 PROOF_MANIFEST = ROOT / "proofs/proof_manifest.json"
 IDENTITY_GRAPH = ROOT / "evidence_quality/claim_identity_graph.json"
@@ -207,6 +208,7 @@ def inputs() -> dict:
         "atom_registry": atom_registry,
         "atom_addendum": atom_addendum,
         "post_activation_six_chapter_addendum": post_activation_six_chapter_addendum,
+        "p7_1a_w3_inheritance_guard": load(P7_1A_W3_INHERITANCE_GUARD),
         "identity_graph": load(IDENTITY_GRAPH),
         "negative_rehabilitation": load(NEGATIVE_REHABILITATION),
         "negative_surface_audit": load(NEGATIVE_SURFACE_AUDIT),
@@ -381,9 +383,10 @@ def errors(data: dict) -> list[str]:
         "capacity_entry_condition_met_materialization_not_yet_run",
         "71,648,034,816",
         "R16-A terminal receipt",
-        "W3 is the sole current book packet",
+        "P7.2-T1D is the sole current book packet",
+        "812→0 repeated 12-grams",
+        "R16-C terminal receipt",
         "30 reviewed atoms",
-        "738 distinct repeated 12-grams",
         "30/30",
         "P7.2-T1D — proof-readiness depth pack",
         "Claim-bearing chapter maturity gate",
@@ -958,8 +961,8 @@ def errors(data: dict) -> list[str]:
 
     quality_program = status.get("quality_uplift_program", {})
     execution_readiness = status.get("execution_readiness", {})
-    if execution_readiness.get("state") != "r16a_terminal_w3_organization_packet_ready":
-        out.append("execution board does not close R16-A and activate the W3 organization packet")
+    if execution_readiness.get("state") != "w3_terminal_t1d_maturity_packet_ready":
+        out.append("execution board does not close W3 and activate the T1D maturity packet")
     if execution_readiness.get("headline_priority") != "P2" or execution_readiness.get("headline_priority_state") != "below_storage_floor_exact_attempt_or_failure_receipt_required":
         out.append("execution board obscures the P2 headline or the current below-floor attempt requirement")
     if execution_readiness.get("work_in_progress_limit") != 2 or execution_readiness.get("blocked_lane_consumes_work_in_progress") is not False:
@@ -970,8 +973,8 @@ def errors(data: dict) -> list[str]:
         out.append("execution board contradicts the superseding no-deferral manuscript policy")
     if execution_readiness.get("immediate_empirical_packet") != "P2-R3-storage-materialization-and-replacement-qualification":
         out.append("execution board does not make P2-R3 the operative empirical headline")
-    if execution_readiness.get("immediate_book_packet") != "P7.1a-W3-admission-template-inheritance-guard":
-        out.append("execution board does not make W3 the sole current book packet after terminal R16-A")
+    if execution_readiness.get("immediate_book_packet") != "P7.2-T1D-proof-readiness-depth-pack":
+        out.append("execution board does not make T1D the sole current book packet after terminal W3")
     if execution_readiness.get("immediate_formal_packet") != "P4-terminal-no-open-formal-packet":
         out.append("execution board reopens terminal P4 formal work")
     if execution_readiness.get("maximum_concurrent_second_tranche_candidates") != 0:
@@ -1410,8 +1413,53 @@ def errors(data: dict) -> list[str]:
     template_guard = round16.get("template_inheritance_guard", {})
     if template_guard.get("provisional_current_61_chapter_repeated_12_gram_count") != 738 or template_guard.get("provisional_current_61_chapter_maximum_spread") != 55:
         out.append("Round 17 provisional W3 diagnostic drifted")
-    if template_guard.get("state") != "active_current_84_chapter_rebaseline_required" or template_guard.get("current_live_chapter_scope") != 84:
-        out.append("W3 does not own the current 84-chapter organization rebaseline")
+    if (
+        template_guard.get("state") != "terminal_current_84_chapter_inheritance_guard"
+        or template_guard.get("current_live_chapter_scope") != 84
+        or template_guard.get("requires_reproducible_current_baseline") is not False
+        or template_guard.get("baseline_editorial_repeated_12_gram_count") != 812
+        or template_guard.get("current_editorial_repeated_12_gram_count") != 0
+        or template_guard.get("baseline_editorial_maximum_spread") != 14
+        or template_guard.get("current_editorial_maximum_spread") != 0
+        or template_guard.get("baseline_copied_diagram_and_test_spread") != 10
+        or template_guard.get("current_copied_diagram_and_test_spread") != 0
+        or template_guard.get("repaired_chapter_count") != 10
+        or template_guard.get("baseline_prose_candidate_count") != 3444
+        or template_guard.get("current_prose_candidate_count") != 3380
+        or template_guard.get("retired_inherited_prose_candidate_count") != 241
+        or template_guard.get("added_domain_specific_prose_candidate_count") != 177
+        or template_guard.get("structured_atom_count_before_and_after") != 4067
+        or template_guard.get("pending_prose_candidate_count") != 0
+        or template_guard.get("affected_semantic_review_chapter_count") != 11
+        or template_guard.get("copied_scaffold_fixture_rejected") is not True
+        or template_guard.get("distinct_chapter_fixture_accepted") is not True
+        or template_guard.get("mutation_rejection_count") != 18
+        or template_guard.get("meaning_custody_deletion_count") != 0
+        or template_guard.get("support_state_effect") != "none"
+        or template_guard.get("release_effect") != "none"
+    ):
+        out.append("W3 terminal current-84 inheritance receipt drifted")
+    for field, relative in {
+        "artifact_path": "evidence_quality/p7_1a_w3_inheritance_guard.json",
+        "report_path": "docs/p7_1a_w3_inheritance_guard.md",
+        "schema_path": "schemas/p7_1a_w3_inheritance_guard.schema.json",
+        "builder_path": "scripts/build_p7_1a_w3_inheritance_guard.py",
+        "validator_path": "scripts/validate_p7_1a_w3_inheritance_guard.py",
+    }.items():
+        if template_guard.get(field) != relative or not (ROOT / relative).exists():
+            out.append(f"W3 terminal artifact path drifted: {field}")
+    w3 = data.get("p7_1a_w3_inheritance_guard", {})
+    if (
+        w3.get("state") != "terminal_complete"
+        or w3.get("corpus", {}).get("manifest_chapter_count") != 84
+        or w3.get("measurements", {}).get("editorial_narrative", {}).get("baseline", {}).get("distinct_repeated_12_grams") != 812
+        or w3.get("measurements", {}).get("editorial_narrative", {}).get("current", {}).get("distinct_repeated_12_grams") != 0
+        or w3.get("claim_review_reconciliation", {}).get("retired_inherited_prose_candidate_count") != 241
+        or w3.get("claim_review_reconciliation", {}).get("added_domain_specific_prose_candidate_count") != 177
+        or w3.get("claim_review_reconciliation", {}).get("current_pending_prose_candidate_count") != 0
+        or w3.get("meaning_custody", {}).get("chapter_core_support_movements") != 0
+    ):
+        out.append("W3 machine artifact is incomplete or promotional")
     optimizer_amendment = round16.get("optimizer_landscape_depth_amendment", {})
     if optimizer_amendment.get("chapter_id") != "governed-model-training-distributed-optimization-and-scaling":
         out.append("optimizer landscape lost its existing governed-training owner")

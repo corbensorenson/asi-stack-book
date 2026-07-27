@@ -5,9 +5,9 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/autonomous-replication-proliferation-and-containment.qmd",
     "structured_atoms_reviewed": 32,
-    "prose_candidates_adjudicated": 36,
+    "prose_candidates_adjudicated": 30,
     "unowned_material_claims": 0,
-    "review_note": "Reviewed the complete admitted Autonomous Replication, Proliferation, and Containment chapter, its manifest ownership, source crosswalk, lifecycle, mechanisms, interfaces, invariants, failure inventory, minimum implementation, falsification program, test plan, summary, and handoff. Claim-bearing prose is mapped to the closest owned atom by section; layout fragments, status text, captions, and handoffs remain explicitly nonmaterial. The review preserves argument support and records no efficacy, transfer, release, SOTA, AGI, or ASI promotion."
+    "review_note": "Re-reviewed the complete W3-rewritten and reader-depth-completed Autonomous Replication Proliferation And Containment chapter on 2026-07-26. All 30 current prose candidates are adjudicated as owned refinements, bounded explanations, source reports, or cross-chapter handoffs. No unowned material claim, atom proposition, support, release, or publication movement was introduced."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
@@ -16,7 +16,7 @@
       "environment": "The authored ASI Stack interfaces, future controlled fixtures, and prospectively frozen natural or adversarial workloads; production deployment and open-world transfer remain unestablished.",
       "model": "Model- and substrate-agnostic contract design at argument support; any implementation claim must name exact models, checkpoints, policies, prompts, tools, data, and evaluators.",
       "authority": "`autonomous-replication-proliferation-and-containment` owns its bounded decision contract; adjacent chapters retain their own authority, and neither prose nor a passing record can widen an action grant.",
-      "time": "Semantic review current through 2026-07-24; material changes to evidence, authority, population, model, environment, ontology, or consumer require reauthorization.",
+      "time": "Semantic review current through 2026-07-26; material changes to evidence, authority, population, model, environment, ontology, or consumer require reauthorization.",
       "artifact": "chapters/autonomous-replication-proliferation-and-containment.qmd, its manifest record, source crosswalk (the chapter source packet), claim dossier, and future versioned implementation/evaluation receipts."
     },
     "assumptions": [
@@ -100,6 +100,86 @@
   },
   "atom_reviews": {},
   "prose_candidate_dispositions": {
+    "autonomous-replication-proliferation-and-containment.prose.081d7662e880": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after W3 as a chapter-specific argument-exit campaign refinement of `autonomous-replication-proliferation-and-containment.beyond_sota.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "autonomous-replication-proliferation-and-containment.beyond_sota.001"
+    },
+    "autonomous-replication-proliferation-and-containment.prose.0c94f618b1d8": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed as a prose explanation or refinement of `autonomous-replication-proliferation-and-containment.problem.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
+      "target_atom_id": "autonomous-replication-proliferation-and-containment.problem.001"
+    },
+    "autonomous-replication-proliferation-and-containment.prose.1274fc164d40": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed as a prose explanation or refinement of `autonomous-replication-proliferation-and-containment.mechanism.003` within the chapter's declared scope; it creates no separate support-bearing atom.",
+      "target_atom_id": "autonomous-replication-proliferation-and-containment.mechanism.003"
+    },
+    "autonomous-replication-proliferation-and-containment.prose.14b205c5b331": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after the W3 depth repair as a chapter-specific refinement of `autonomous-replication-proliferation-and-containment.beyond_sota.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "autonomous-replication-proliferation-and-containment.beyond_sota.001"
+    },
+    "autonomous-replication-proliferation-and-containment.prose.1b3d0b48c2cc": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after the W3 depth repair as a chapter-specific refinement of `autonomous-replication-proliferation-and-containment.problem.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "autonomous-replication-proliferation-and-containment.problem.001"
+    },
+    "autonomous-replication-proliferation-and-containment.prose.419b7bdd5ff9": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
+    },
+    "autonomous-replication-proliferation-and-containment.prose.49ed3a781930": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after the W3 depth repair as a chapter-specific refinement of `autonomous-replication-proliferation-and-containment.interface.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "autonomous-replication-proliferation-and-containment.interface.001"
+    },
+    "autonomous-replication-proliferation-and-containment.prose.5269426f2a88": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after the W3 depth repair as a chapter-specific refinement of `autonomous-replication-proliferation-and-containment.core`; it creates no separate support-bearing atom.",
+      "target_atom_id": "autonomous-replication-proliferation-and-containment.core"
+    },
+    "autonomous-replication-proliferation-and-containment.prose.54e1249e7b27": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after W3 as a chapter-specific evaluation and positive-control refinement of `autonomous-replication-proliferation-and-containment.minimum.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "autonomous-replication-proliferation-and-containment.minimum.001"
+    },
+    "autonomous-replication-proliferation-and-containment.prose.584c4d9aad9d": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
+    },
+    "autonomous-replication-proliferation-and-containment.prose.6272ae90aaf7": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after the W3 depth repair as a chapter-specific refinement of `autonomous-replication-proliferation-and-containment.core`; it creates no separate support-bearing atom.",
+      "target_atom_id": "autonomous-replication-proliferation-and-containment.core"
+    },
+    "autonomous-replication-proliferation-and-containment.prose.7dbf823163b7": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Formalization-scope caption that narrows a planned finite record target and expressly denies live efficacy, safety, or transfer inference."
+    },
+    "autonomous-replication-proliferation-and-containment.prose.7f475d2c895c": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after the W3 depth repair as a chapter-specific refinement of `autonomous-replication-proliferation-and-containment.minimum.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "autonomous-replication-proliferation-and-containment.minimum.001"
+    },
+    "autonomous-replication-proliferation-and-containment.prose.9425ecdd1a87": {
+      "state": "nonmaterial_explanation",
+      "rationale": "W3 domain-specific diagram walkthrough; its material boundary remains represented by the chapter's structured atoms."
+    },
+    "autonomous-replication-proliferation-and-containment.prose.972fe2b77d10": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after W3 as a chapter-specific evaluation and positive-control refinement of `autonomous-replication-proliferation-and-containment.minimum.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "autonomous-replication-proliferation-and-containment.minimum.001"
+    },
+    "autonomous-replication-proliferation-and-containment.prose.ab4ffad8443e": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
+    },
+    "autonomous-replication-proliferation-and-containment.prose.b48cbf14ac93": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after the W3 depth repair as a chapter-specific refinement of `autonomous-replication-proliferation-and-containment.minimum.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "autonomous-replication-proliferation-and-containment.minimum.001"
+    },
     "autonomous-replication-proliferation-and-containment.prose.b48fb6e3bab9": {
       "state": "duplicate_of_atom",
       "rationale": "Semantically reviewed as a prose explanation or refinement of `autonomous-replication-proliferation-and-containment.problem.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
@@ -110,36 +190,7 @@
       "rationale": "Semantically reviewed as a prose explanation or refinement of `autonomous-replication-proliferation-and-containment.problem.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
       "target_atom_id": "autonomous-replication-proliferation-and-containment.problem.001"
     },
-    "autonomous-replication-proliferation-and-containment.prose.0c94f618b1d8": {
-      "state": "duplicate_of_atom",
-      "rationale": "Semantically reviewed as a prose explanation or refinement of `autonomous-replication-proliferation-and-containment.problem.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
-      "target_atom_id": "autonomous-replication-proliferation-and-containment.problem.001"
-    },
-    "autonomous-replication-proliferation-and-containment.prose.6dda77649580": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "autonomous-replication-proliferation-and-containment.prose.9a3e6a8ff12a": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "autonomous-replication-proliferation-and-containment.prose.7df69e1f5acf": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "autonomous-replication-proliferation-and-containment.prose.776b655c3d7d": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "autonomous-replication-proliferation-and-containment.prose.46e6021e6ba0": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "autonomous-replication-proliferation-and-containment.prose.0518b15b8aaf": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "autonomous-replication-proliferation-and-containment.prose.11b4e5484d68": {
+    "autonomous-replication-proliferation-and-containment.prose.c1932b6535a1": {
       "state": "nonmaterial_explanation",
       "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
     },
@@ -147,110 +198,47 @@
       "state": "nonmaterial_explanation",
       "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
     },
-    "autonomous-replication-proliferation-and-containment.prose.ddffab9a707d": {
+    "autonomous-replication-proliferation-and-containment.prose.c33cbc0d2d82": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
+    },
+    "autonomous-replication-proliferation-and-containment.prose.c7cc3114518f": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
+    },
+    "autonomous-replication-proliferation-and-containment.prose.ca60a25165f5": {
       "state": "duplicate_of_atom",
-      "rationale": "Semantically reviewed as a prose explanation or refinement of `autonomous-replication-proliferation-and-containment.mechanism.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
-      "target_atom_id": "autonomous-replication-proliferation-and-containment.mechanism.001"
+      "rationale": "Semantically reviewed after the W3 depth repair as a chapter-specific refinement of `autonomous-replication-proliferation-and-containment.interface.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "autonomous-replication-proliferation-and-containment.interface.001"
+    },
+    "autonomous-replication-proliferation-and-containment.prose.ce277f08efdc": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after the W3 depth repair as a chapter-specific refinement of `autonomous-replication-proliferation-and-containment.problem.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "autonomous-replication-proliferation-and-containment.problem.001"
+    },
+    "autonomous-replication-proliferation-and-containment.prose.d29b554545c5": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after the W3 depth repair as a chapter-specific refinement of `autonomous-replication-proliferation-and-containment.invariant.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "autonomous-replication-proliferation-and-containment.invariant.001"
     },
     "autonomous-replication-proliferation-and-containment.prose.fd4ada54c66d": {
       "state": "duplicate_of_atom",
       "rationale": "Semantically reviewed as a prose explanation or refinement of `autonomous-replication-proliferation-and-containment.mechanism.003` within the chapter's declared scope; it creates no separate support-bearing atom.",
       "target_atom_id": "autonomous-replication-proliferation-and-containment.mechanism.003"
     },
-    "autonomous-replication-proliferation-and-containment.prose.c7cc3114518f": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "autonomous-replication-proliferation-and-containment.prose.584c4d9aad9d": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "autonomous-replication-proliferation-and-containment.prose.419b7bdd5ff9": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "autonomous-replication-proliferation-and-containment.prose.1274fc164d40": {
+    "autonomous-replication-proliferation-and-containment.prose.ff4dacc12be1": {
       "state": "duplicate_of_atom",
-      "rationale": "Semantically reviewed as a prose explanation or refinement of `autonomous-replication-proliferation-and-containment.mechanism.003` within the chapter's declared scope; it creates no separate support-bearing atom.",
-      "target_atom_id": "autonomous-replication-proliferation-and-containment.mechanism.003"
-    },
-    "autonomous-replication-proliferation-and-containment.prose.ab4ffad8443e": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "autonomous-replication-proliferation-and-containment.prose.c33cbc0d2d82": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "autonomous-replication-proliferation-and-containment.prose.c1932b6535a1": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "autonomous-replication-proliferation-and-containment.prose.d18d74e7ec22": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "autonomous-replication-proliferation-and-containment.prose.c28c8b573493": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "autonomous-replication-proliferation-and-containment.prose.5baa1bd83758": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "autonomous-replication-proliferation-and-containment.prose.b273b9da3c45": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "autonomous-replication-proliferation-and-containment.prose.95b08a9d51f8": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "autonomous-replication-proliferation-and-containment.prose.620e415af61e": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "autonomous-replication-proliferation-and-containment.prose.0d0672be8928": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "autonomous-replication-proliferation-and-containment.prose.b1e789afc8a0": {
-      "state": "duplicate_of_atom",
-      "rationale": "Semantically reviewed as a prose explanation or refinement of `autonomous-replication-proliferation-and-containment.minimum.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
+      "rationale": "Semantically reviewed after the W3 depth repair as a chapter-specific refinement of `autonomous-replication-proliferation-and-containment.minimum.001`; it creates no separate support-bearing atom.",
       "target_atom_id": "autonomous-replication-proliferation-and-containment.minimum.001"
     },
-    "autonomous-replication-proliferation-and-containment.prose.39fbf6aadcfb": {
+    "autonomous-replication-proliferation-and-containment.prose.c870701c9fd1": {
       "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
+      "rationale": "Explicit current-result boundary for the mature containment target; it narrows the surrounding proposal and creates no new material proposition."
     },
-    "autonomous-replication-proliferation-and-containment.prose.308056885e55": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "autonomous-replication-proliferation-and-containment.prose.0538f7bf12b7": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "autonomous-replication-proliferation-and-containment.prose.972c55ad6e70": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "autonomous-replication-proliferation-and-containment.prose.a45a57738dd9": {
+    "autonomous-replication-proliferation-and-containment.prose.6c4a32c49915": {
       "state": "duplicate_of_atom",
-      "rationale": "Semantically reviewed as a prose explanation or refinement of `autonomous-replication-proliferation-and-containment.interface.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
-      "target_atom_id": "autonomous-replication-proliferation-and-containment.interface.001"
-    },
-    "autonomous-replication-proliferation-and-containment.prose.d7c698d66ae4": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "autonomous-replication-proliferation-and-containment.prose.1644f28bb30e": {
-      "state": "editorial_or_question",
-      "rationale": "Cross-chapter handoff instruction; the receiving owner performs its own admission checks and no independent support transition is asserted."
-    },
-    "autonomous-replication-proliferation-and-containment.prose.6e2a279b9dad": {
-      "state": "editorial_or_question",
-      "rationale": "Cross-chapter handoff instruction; the receiving owner performs its own admission checks and no independent support transition is asserted."
+      "rationale": "Semantically reviewed as the argument-exit gate for the mature containment target; it creates no separate support-bearing atom.",
+      "target_atom_id": "autonomous-replication-proliferation-and-containment.beyond_sota.001"
     }
   },
   "non_claims": [

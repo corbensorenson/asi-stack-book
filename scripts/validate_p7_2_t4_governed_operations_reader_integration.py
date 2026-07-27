@@ -80,8 +80,11 @@ def errors(data: dict[str, Any]) -> list[str]:
     first = status["quality_uplift_program"]["structural_completeness_tranche"]["first_tranche"]
     if first.get("state") != "terminal_four_reader_chapters" or first.get("completed_reader_chapter_count") != 4 or CHAPTER_ID not in first.get("terminal_reader_chapter_ids", []) or first.get("remaining_reader_chapter_ids") != []:
         out.append("first-tranche terminal state drifted")
-    if status["execution_readiness"].get("immediate_book_packet") != "P7.1a-W3-admission-template-inheritance-guard":
-        out.append("execution board did not advance to W3 after terminal operations integration and R16-A")
+    inheritance = status["round_16_evidence_first_amendment"].get("template_inheritance_guard", {})
+    if inheritance.get("state") != "terminal_current_84_chapter_inheritance_guard":
+        out.append("W3 inheritance guard is not terminal after operations integration and R16-A")
+    if status["execution_readiness"].get("immediate_book_packet") == "P6.4-A3-perception-sensor-fusion-and-observation-trust-adjudication":
+        out.append("execution board prematurely activated A3 instead of preserving the prose-first maturity sequence")
     if status["execution_readiness"].get("structural_admission_freeze") is not False:
         out.append("execution board contradicts the superseding no-deferral manuscript policy")
     for key in ("support_state_effect", "release_effect", "publication_effect"):

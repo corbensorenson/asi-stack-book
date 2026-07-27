@@ -1,0 +1,295 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://theasistack.com/schemas/p7_1a_w3_inheritance_guard.schema.json",
+  "title": "P7.1a W3 Admission-Template Inheritance Guard",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "packet_id",
+    "state",
+    "baseline_commit",
+    "corpus",
+    "thresholds_frozen_before_edits",
+    "measurements",
+    "widest_block_dispositions",
+    "centralized_contract",
+    "semantic_diff_review",
+    "claim_review_reconciliation",
+    "meaning_custody",
+    "prospective_guard",
+    "support_state_effect",
+    "release_effect",
+    "publication_effect"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "asi_stack.p7_1a_w3_inheritance_guard.v1"
+    },
+    "packet_id": {
+      "const": "P7.1a-W3-admission-template-inheritance-guard"
+    },
+    "state": {
+      "const": "terminal_complete"
+    },
+    "baseline_commit": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "corpus": {
+      "type": "object",
+      "required": [
+        "manifest_chapter_count",
+        "chapter_ids",
+        "normalization",
+        "token_pattern",
+        "editorial_projection_excludes"
+      ],
+      "properties": {
+        "manifest_chapter_count": {
+          "const": 84
+        },
+        "chapter_ids": {
+          "type": "array",
+          "minItems": 84,
+          "maxItems": 84,
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "thresholds_frozen_before_edits": {
+      "type": "object",
+      "required": [
+        "n_gram_size",
+        "minimum_chapter_spread",
+        "exact_block_minimum_word_tokens",
+        "exact_block_minimum_chapter_spread",
+        "prospective_copied_scaffold_rejects_at"
+      ],
+      "properties": {
+        "n_gram_size": {
+          "const": 12
+        },
+        "minimum_chapter_spread": {
+          "const": 8
+        },
+        "exact_block_minimum_word_tokens": {
+          "const": 24
+        },
+        "exact_block_minimum_chapter_spread": {
+          "const": 5
+        }
+      },
+      "additionalProperties": true
+    },
+    "measurements": {
+      "type": "object",
+      "required": [
+        "raw_complete_qmd",
+        "editorial_narrative",
+        "exact_editorial_blocks",
+        "mermaid_fingerprints",
+        "codex_test_table_fingerprints"
+      ],
+      "additionalProperties": true
+    },
+    "widest_block_dispositions": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "required": [
+          "class",
+          "owner",
+          "disposition"
+        ]
+      }
+    },
+    "centralized_contract": {
+      "type": "object",
+      "required": [
+        "chapter_id",
+        "anchor",
+        "path",
+        "repaired_chapter_ids"
+      ],
+      "properties": {
+        "chapter_id": {
+          "const": "living-book-methodology"
+        },
+        "anchor": {
+          "const": "shared-chapter-lifecycle-method"
+        },
+        "path": {
+          "const": "chapters/living-book-methodology.qmd"
+        },
+        "repaired_chapter_ids": {
+          "type": "array",
+          "minItems": 10,
+          "maxItems": 10,
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "semantic_diff_review": {
+      "type": "array",
+      "minItems": 10,
+      "maxItems": 10,
+      "items": {
+        "type": "object",
+        "required": [
+          "chapter_id",
+          "baseline_sha256",
+          "current_sha256",
+          "methodology_link_present",
+          "common_diagram_removed",
+          "common_test_scaffold_removed",
+          "missing_meaning_atoms",
+          "support_state_movement"
+        ]
+      }
+    },
+    "claim_review_reconciliation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "baseline_prose_candidate_count",
+        "current_prose_candidate_count",
+        "unchanged_prose_candidate_count",
+        "retired_inherited_prose_candidate_count",
+        "added_domain_specific_prose_candidate_count",
+        "baseline_structured_atom_count",
+        "current_structured_atom_count",
+        "current_pending_prose_candidate_count",
+        "completed_semantic_chapter_sweep_count",
+        "affected_review_chapter_count",
+        "new_material_atom_count",
+        "support_state_effect"
+      ],
+      "properties": {
+        "baseline_prose_candidate_count": {
+          "const": 3444
+        },
+        "current_prose_candidate_count": {
+          "const": 3380
+        },
+        "unchanged_prose_candidate_count": {
+          "const": 3203
+        },
+        "retired_inherited_prose_candidate_count": {
+          "const": 241
+        },
+        "added_domain_specific_prose_candidate_count": {
+          "const": 177
+        },
+        "baseline_structured_atom_count": {
+          "const": 4067
+        },
+        "current_structured_atom_count": {
+          "const": 4067
+        },
+        "current_pending_prose_candidate_count": {
+          "const": 0
+        },
+        "completed_semantic_chapter_sweep_count": {
+          "const": 64
+        },
+        "affected_review_chapter_count": {
+          "const": 11
+        },
+        "new_material_atom_count": {
+          "const": 0
+        },
+        "support_state_effect": {
+          "const": "none"
+        }
+      }
+    },
+    "meaning_custody": {
+      "type": "object",
+      "required": [
+        "unique_claim_markers_deleted",
+        "assigned_source_ids_deleted",
+        "equations_deleted",
+        "proof_tags_deleted",
+        "protocol_or_schema_refs_deleted",
+        "chapter_core_support_movements",
+        "generated_projection_owners_preserved"
+      ],
+      "properties": {
+        "unique_claim_markers_deleted": {
+          "const": 0
+        },
+        "assigned_source_ids_deleted": {
+          "const": 0
+        },
+        "equations_deleted": {
+          "const": 0
+        },
+        "proof_tags_deleted": {
+          "const": 0
+        },
+        "protocol_or_schema_refs_deleted": {
+          "const": 0
+        },
+        "chapter_core_support_movements": {
+          "const": 0
+        },
+        "generated_projection_owners_preserved": {
+          "const": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "prospective_guard": {
+      "type": "object",
+      "required": [
+        "validator",
+        "schema",
+        "copied_scaffold_fixture",
+        "distinct_chapter_fixture",
+        "copied_scaffold_fixture_disposition",
+        "distinct_chapter_fixture_disposition",
+        "negative_mutations_rejected"
+      ],
+      "properties": {
+        "validator": {
+          "const": "scripts/validate_p7_1a_w3_inheritance_guard.py"
+        },
+        "schema": {
+          "const": "schemas/p7_1a_w3_inheritance_guard.schema.json"
+        },
+        "copied_scaffold_fixture": {
+          "const": "tests/fixtures/p7_1a_w3_inheritance_guard/copied_scaffold.qmd"
+        },
+        "distinct_chapter_fixture": {
+          "const": "tests/fixtures/p7_1a_w3_inheritance_guard/distinct_chapter.qmd"
+        },
+        "copied_scaffold_fixture_disposition": {
+          "const": "rejected"
+        },
+        "distinct_chapter_fixture_disposition": {
+          "const": "accepted"
+        },
+        "negative_mutations_rejected": {
+          "const": 18
+        }
+      },
+      "additionalProperties": false
+    },
+    "support_state_effect": {
+      "const": "none"
+    },
+    "release_effect": {
+      "const": "none"
+    },
+    "publication_effect": {
+      "const": "none"
+    }
+  }
+}

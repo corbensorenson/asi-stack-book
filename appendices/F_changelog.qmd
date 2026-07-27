@@ -1,5 +1,39 @@
 # Changelog
 
+## 2026-07-26 — W3 chapter-template inheritance guard
+
+- Closed the exact current-84-chapter W3 organization packet without reopening
+  the historical 55-chapter W1 or 60-chapter W2 receipts.
+- Froze Unicode NFKC normalization, the declared tokenizer, 12-token n-grams,
+  and an eight-chapter spread threshold at pre-edit commit
+  `99457770390a4af4848b9e43656907cfe099fd75`. Reader-facing repeated
+  12-grams moved from 812 to zero; copied Mermaid and Codex-test fingerprints
+  moved from a maximum spread of ten chapters to zero.
+- Centralized the shared lifecycle, authority-custody, evidence-ceiling, and
+  inheritance rule in Living Book Methodology. Replaced one inherited scaffold
+  across ten chapters with domain-specific problems, diagrams, interfaces,
+  invariants, failure evaluation, evidence plans, tests, summaries, and
+  handoffs.
+- The all-tier reader gate then caught eight repaired chapters below the
+  established section-depth floor. Deepened all ten repaired chapters with
+  domain-specific mechanisms and research targets instead of weakening that
+  gate; all 84 chapters now pass with a minimum stripped reader spine of 1,871
+  words.
+- Added a deterministic audit artifact, report, JSON Schema, registered
+  validator, copied-scaffold negative fixture, distinct-chapter positive
+  fixture, ten semantic-diff receipts, and eighteen rejecting mutations.
+  Reconciled eleven chapter-review packets: 241 inherited prose-candidate IDs
+  retired into 177 domain-specific dispositions, all 4,067 structured atoms
+  remain, and zero prose candidates are pending. Claims, source assignments,
+  equations, proof tags, protocol references, chapter-core support, release
+  state, and publication state did not move.
+- Made the disposable dynamic-spine check use copy-on-write clones where the
+  filesystem supports them, with a normal-copy fallback. Updated three
+  historical integration validators to bind terminal W3 custody while allowing
+  the active book pointer to advance, instead of freezing “W3 is next” forever.
+- Advanced the active book packet to P7.2-T1D maturity/source/atom/reader
+  reconciliation; the combined current-reader derivative remains last.
+
 ## 2026-07-26 — R16-A six-chapter claim organization
 
 - Closed the active R16-A prose-first organization packet for White-Box

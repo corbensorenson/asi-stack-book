@@ -36,10 +36,7 @@ open_evidence_gaps:
 
 ## Drafting guardrail
 
-Physical compute governance owns a distinct control plane, not proof that the control plane
-works. Its source crosswalk supports definitions, mechanisms, failure examples,
-and comparison targets. The design remains at **argument** support until a
-separate accepted evidence transition says otherwise.
+This chapter owns the physical eligibility of compute, including dependencies and external burdens from chip to community. It does not infer available or sustainable service from nameplate FLOPs, accelerator efficiency, PUE, renewable procurement, or aggregate energy alone.
 
 ::: {.asi-human-only}
 ## Human Reading Path
@@ -53,49 +50,41 @@ The lifecycle spans planning and siting, procurement, construction, commissionin
 
 ## Problem
 
+Physical bottlenecks do more than raise cost. They determine which training
+runs can finish, which models can serve within latency bounds, where degraded
+modes appear, and who bears local land, water, grid, labor, and supply-chain
+burdens. Capacity plans that ignore location and time can promise compute that
+is nominally purchased but operationally unavailable or socially contested.
+
 Requested compute becomes useful work only through accelerators, memory, storage, interconnect, facilities, grid connections, generation, cooling, water, land, materials, maintenance, resilience, and retirement at particular places and times. Abstract token or FLOP budgets hide these physical constraints and their affected communities.
 
-This gap matters at the scale of a stack because its output becomes another
-layer's input. If the owner is absent, `stranded capacity` or
-`interconnect bottlenecks` can be normalized before a downstream layer sees it.
-The downstream consumer may possess a valid local record while acting on a
-broken upstream assumption. An explicit owner therefore needs both a positive
-contract and a refusal path: it must say what counts as an admissible
-transition, what remains unresolved, who may consume the result, and when a
-material change forces reauthorization.
+Without a physical owner, model and serving budgets omit grid constraints, cooling and water, interconnect, maintenance, materials, land, community effects, concentration, and degraded operation. The [shared lifecycle method](living-book-methodology.qmd#shared-chapter-lifecycle-method) supplies custody; infrastructure governance supplies the workload-to-capacity and impact boundary.
 
 ## Why existing approaches are insufficient
 
 Nameplate accelerator capacity, chip TDP, workload energy, facility PUE, annual electricity, carbon estimates, water figures, or capital cost each describe a slice. They do not establish delivered useful compute, temporal and locational impact, grid effects, resilience, embodied materials, rebound, community burden, or retireable capacity.
 
-Physical compute governance must first beat a disciplined composition of the adjacent
-owners. That alternative should win if it can preserve the same identities,
-authority, lifecycle state, failure distinctions, and residuals without
-overloading their primary jobs. A dedicated owner remains necessary because the
-handoffs listed below otherwise leave a missing end-to-end decision. Separation
-does not imply autonomy: this owner must consume upstream records and return
-bounded outputs to downstream owners rather than becoming a new unreviewable
-center of authority.
+Resource Economics, hardware roots of trust, distributed training, and supply-chain governance are the strongest alternative composition. It wins if their join can attribute delivered useful work, facility and grid dependencies, water and cooling, embodied materials, land and community effects, resilience, maintenance, demand response, reuse, and retirement.
+
+The strongest objection is accounting paralysis: comprehensive physical attribution risks false precision, duplicated reporting, and stalled scheduling, so materiality thresholds, uncertainty, measurement cost, and decision relevance remain explicit.
 
 ```{mermaid}
 flowchart LR
-  A["Declared purpose and bounded authority"] --> B["Versioned chapter-specific contract"]
-  B["Versioned chapter-specific contract"] --> C["Admission and boundary checks"]
-  C["Admission and boundary checks"] --> D["Execute with complete lineage and denominators"]
-  D["Execute with complete lineage and denominators"] --> E["Observe outcomes, costs, and residuals"]
-  E["Observe outcomes, costs, and residuals"] --> F{"Independent checks pass?"}
-  F -- "no" --> G["Quarantine, narrow, correct, or stop"]
-  F -- "yes" --> H["Versioned bounded handoff"]
-  G -- "repair and reauthorize" --> B
-  H -- "material change" --> B
-  B -. "expiry or revocation" .-> G
-  E -. "residual feedback" .-> B
+  W["Workload, quality target, location, and service window"] --> H["Hardware, memory, network, facility, and metering identity"]
+  H --> P["Power, cooling, water, grid, and demand-response state"]
+  P --> E["Materials, land, community, supply-chain, and retirement effects"]
+  E --> S{"Useful service and impact ceilings both hold?"}
+  S -- "no" --> D["Degrade, defer, migrate, curtail, repair, or deny"]
+  S -- "yes" --> A["Bounded physical-capacity lease"]
+  D --> R["Record unmet service and displaced physical burden"]
+  A --> M["Meter delivered useful work and local impacts"]
+  M -. "impact drift or infrastructure failure" .-> W
+  A --> O["Observe reliability, rebound, concentration, and residuals"]
+  O -. "load or infrastructure change" .-> W
 ```
 
-**What the Physical Compute Infrastructure, Energy, and Environmental Constraints lifecycle shows:** Authority enters before execution,
-chapter-specific state remains versioned, and a failed independent check returns
-the system to correction or quarantine. A successful check grants only the
-bounded downstream handoff; it does not erase residuals or promote its core claim.
+**What this physical-capacity diagram shows:** a time- and place-specific physical-capacity lease moves. Nameplate compute and facility averages never substitute for delivered useful work or complete impact accounting.
+
 
 ## Core Claim
 
@@ -103,25 +92,51 @@ bounded downstream handoff; it does not erase residuals or promote its core clai
 
 ## Mechanism
 
-**Contract.** Compile workload requirements into time- and location-specific accelerator, memory, storage, network, reliability, latency, and scheduling envelopes. This stage is recorded as a versioned decision rather than an invisible implementation detail. For Physical Compute Infrastructure, Energy, and Environmental Constraints, the record must name its inputs, authority, consumer, expiry, and unresolved residuals. A later stage may narrow the decision, but it may not silently broaden the earlier grant or reinterpret a missing field as success.
+The workload-to-capacity compiler translates a model request into a physical
+bill of requirements. It includes useful-output and quality targets, precision,
+memory residency and traffic, interconnect topology, storage and checkpoint
+behavior, latency window, uptime, geographic constraints, and acceptable
+degradation. Candidate placements are evaluated against measured rather than
+nameplate availability, including maintenance, contention, yield, and
+communication overhead.
 
-**Admission.** Reconcile requested, nameplate, available, delivered, and useful compute with workload, host, rack, facility, and grid meters plus uncertainty and allocation rules. This stage is recorded as a versioned decision rather than an invisible implementation detail. For Physical Compute Infrastructure, Energy, and Environmental Constraints, the record must name its inputs, authority, consumer, expiry, and unresolved residuals. A later stage may narrow the decision, but it may not silently broaden the earlier grant or reinterpret a missing field as success.
+Attribution follows causal meters and allocation rules. Device and host power,
+rack and facility overhead, cooling, water, backup generation, grid import,
+curtailment, and embodied components remain separate rows with time, location,
+uncertainty, and denominator. Shared infrastructure is allocated using an
+explicit method that can be challenged. Renewable contracts and annual
+averages are reported as procurement facts, not automatically as the marginal
+impact of a workload at its operating hour.
 
-**Execution.** Track power, temporal matching, congestion, generation, backup, cooling, water, land, materials, maintenance, spares, community effects, and supply dependencies. This stage is recorded as a versioned decision rather than an invisible implementation detail. For Physical Compute Infrastructure, Energy, and Environmental Constraints, the record must name its inputs, authority, consumer, expiry, and unresolved residuals. A later stage may narrow the decision, but it may not silently broaden the earlier grant or reinterpret a missing field as success.
+The scheduler co-optimizes service and physical constraints without reducing
+them to one opaque score. It may defer a flexible run, move it to a qualified
+site, lower precision within a validated quality envelope, reduce batch or
+replica count, enter a safe degraded service, or deny execution. Each choice
+records effects on output quality, latency, reliability, cost, energy, water,
+emissions assumptions, and community constraints. Rebound and induced demand
+are evaluated after efficiency changes. Every accepted placement therefore
+carries both a service lease and an impact obligation through retirement.
 
-**Observation.** Use authority-narrowing degradation, placement, demand response, failover, and interruption plans when thermal, water, network, power, or component limits bind. This stage is recorded as a versioned decision rather than an invisible implementation detail. For Physical Compute Infrastructure, Energy, and Environmental Constraints, the record must name its inputs, authority, consumer, expiry, and unresolved residuals. A later stage may narrow the decision, but it may not silently broaden the earlier grant or reinterpret a missing field as success.
+**Contract.** Compile workload requirements into time- and location-specific accelerator, memory, storage, network, reliability, latency, and scheduling envelopes.
 
-**Closure.** Close the lifecycle through reuse, recycling, weight and data destruction, decommissioning, stranded-capacity accounting, and unresolved environmental or community residuals. This stage is recorded as a versioned decision rather than an invisible implementation detail. For Physical Compute Infrastructure, Energy, and Environmental Constraints, the record must name its inputs, authority, consumer, expiry, and unresolved residuals. A later stage may narrow the decision, but it may not silently broaden the earlier grant or reinterpret a missing field as success.
+**Admission.** Reconcile requested, nameplate, available, delivered, and useful compute with workload, host, rack, facility, and grid meters plus uncertainty and allocation rules.
+
+**Execution.** Track power, temporal matching, congestion, generation, backup, cooling, water, land, materials, maintenance, spares, community effects, and supply dependencies.
+
+**Observation.** Use authority-narrowing degradation, placement, demand response, failover, and interruption plans when thermal, water, network, power, or component limits bind.
+
+**Closure.** Close the lifecycle through reuse, recycling, weight and data destruction, decommissioning, stranded-capacity accounting, and unresolved environmental or community residuals.
 
 ## Interfaces
 
-Physical compute governance is useful only when its boundaries are sharper than neighboring owners.
-Each interface below therefore names what the adjacent owner keeps and what
-crosses the boundary. The packet must preserve exact object and version
-identity, authority, support state, expiry, residuals, and consumer. A receiving
-layer may reject or narrow it. Merely serializing the fields, passing a schema,
-or recording a dispatch does not prove that the meaning survived or that the
-receiving layer is competent.
+The physical layer returns both capacity and constraint receipts. Training
+receives the topology and failure envelope it must honor; serving receives
+latency, availability, and degradation limits; Resource Economics receives
+measured marginal and total costs; Operations receives correlated failure and
+recovery dependencies. None may replace those receipts with an abstract token
+budget once physical execution begins.
+
+Training and serving owners supply workload and quality targets; Resource Economics supplies allocation choices; supply-chain and hardware-root owners supply provenance and trust. This chapter owns physical capacity, metering, infrastructure dependencies, environmental and community effects, and degraded-service routes.
 
 - Resource Economics decides abstract allocation; this chapter establishes physical deliverability and externalities.
 - Governed Training owns run fidelity and topology; infrastructure supplies the measured physical substrate.
@@ -132,13 +147,12 @@ Dependencies remain explicit.
 
 ## Invariants
 
-For Physical compute governance, the following invariants are admission conditions rather than aspirations. They must
-hold across retries, replacements, cached results, branches, migrations,
-partial failures, and human intervention. When the implementation cannot
-establish an invariant, the result is a named residual or blocked route—not a
-default value. A finite formal model may prove that an authored record follows
-these rules, but only implementation and outcome evidence can show that a live
-system actually enforces them.
+Physical claims are configuration claims. Hardware model, firmware, precision,
+software stack, utilization, workload, facility, grid region, time window, and
+measurement method remain attached. A result can be normalized for comparison,
+but normalization never removes the original denominator or uncertainty.
+
+Applying the [shared lifecycle method](living-book-methodology.qmd#shared-chapter-lifecycle-method), delivered useful work stays distinct from nameplate capacity, operational and embodied burdens remain separate, averages cannot erase temporal or local constraints, and degradation cannot silently violate quality or authority.
 
 - Requested, nameplate, available, delivered, and useful compute remain distinct.
 - Workload energy, facility overhead, grid effects, and embodied impact remain separately attributable.
@@ -156,75 +170,72 @@ Failure modes include uninstrumented fallback hardware, counterfeit or downgrade
 
 ## Failure modes
 
-The principal failure family includes stranded capacity; interconnect bottlenecks; grid-queue mismatch; temporal carbon laundering; cooling exhaustion; water stress; correlated site failure; backup-emission hiding; rebound; material omission; e-waste; community externalization; metering opacity; retirement without data destruction. These are not presumed
-exhaustive. New substrates, deployment settings, populations, and adversaries
-reopen the failure inventory and may narrow authority immediately.
+Boundary selection is a major attack surface for favorable accounting.
+Excluding host preprocessing, idle reserves, failed runs, checkpoint traffic,
+water scarcity, backup generation, construction, or retired equipment can make
+the same workload appear efficient. The evaluation therefore includes a
+boundary-sensitivity table and identifies which conclusion reverses when a
+plausible excluded burden is restored.
 
-Physical compute governance detection also has its own false-positive and false-negative costs.
-An architecture that blocks every useful route is not vindicated merely
-because it prevented one hazard, while a permissive architecture cannot hide
-unsafe attempts inside an average utility score. Evaluation must preserve the
-full denominator, distinguish mechanism failure from instrument failure, and
-show whether correction, recovery, compensation, or withdrawal actually
-reached the affected state.
+The principal failure family includes stranded capacity; interconnect bottlenecks; grid-queue mismatch; temporal carbon laundering; cooling exhaustion; water stress; correlated site failure; backup-emission hiding; rebound; material omission; e-waste; community externalization; metering opacity; retirement without data destruction.
+
+Evaluation must include metering uncertainty, peak and marginal conditions, outage and thermal faults, rebound effects, common-mode suppliers, maintenance, and local distribution of burdens. A low facility metric is not a positive control for total impact or service resilience.
 
 ## Minimum Viable Implementation
 
+Begin with a workload small enough to repeat across several configurations but
+large enough for memory and communication behavior to matter. Calibrate host
+power measurement against idle and known-load controls, verify software
+counters, and record warm-up, failed runs, and cooling assumptions. Fault
+injections test thermal throttling, storage slowdown, network loss, power
+limits, and failover while quality and authority ceilings remain active.
+
 Instrument matched public workloads on local hardware across precision, batching, placement, memory pressure, and scheduler variants. Reconcile software counters with host power and resource records, inject thermal, network, storage, and failover constraints, and report useful work, latency, energy, peak power, bottlenecks, metering error, availability, cost, and residuals. Local results do not establish frontier-facility or grid transfer.
 
-A Physical compute governance implementation should begin with an ordinary baseline and the strongest
-credible competing design, not only an intentionally weak comparator.
-Engineering and tuning budgets, information access, model capability, human
-help, retry policy, and stopping rules should be matched or reported. Positive
-controls must show that the task and instruments can detect the intended
-mechanism before a null or negative outcome is interpreted. Every result
-remains bounded to the tested population, environment, model, implementation,
-and evaluator.
+The minimum planner joins one measured workload to hardware, memory, network, facility, grid, cooling, water, and carbon data over time. It compares unconstrained placement with impact- and resilience-aware placement under matched quality, latency, and service-level requirements.
 
 ## Evidence and falsification program
 
-A fair Physical compute governance test must freeze the mechanism, authority, comparator set, tuning and
-rescue budgets, metrics, stopping rule, and protected holdout before outcomes
-are visible. It must include favorable or oracle checks, mechanism-specific
-ablations, positive and negative controls, complete attempts, independent
-scoring, joint utility/safety/cost accounting, and explicit blocked or null
-outcomes. A weak implementation can narrow that implementation; it cannot
-refute the architectural idea.
+Argument exit requires hardware- and facility-characterized workloads across multiple time and location conditions, complete metering and uncertainty, matched useful-output quality, outage and degradation tests, operational and embodied accounting, rebound analysis, and independent impact review. Transfer to other grids, facilities, or substrates remains open.
 
 ## Mature Research Target
 
-The target is a physically truthful compute control plane in which architecture and scheduling choices respond to real capacity, environmental limits, resilience, and retirement obligations. It turns infrastructure from an invisible assumption into a governed layer without asserting one universal impact metric.
+The mature layer maintains a continuously updated physical twin of workloads,
+fleets, facilities, grids, cooling and water systems, supply dependencies, and
+retirement obligations. It does not pretend the twin is reality: meter
+coverage, model error, forecast uncertainty, and unobserved community effects
+remain explicit. Scheduling decisions can be replayed against alternative
+quality, resilience, and impact policies.
 
-At maturity, the Physical compute governance contract becomes a replaceable service
-behind stable interfaces. New models, algorithms, institutions, storage
-systems, and hardware can enter through declared adapters while the surrounding
-stack continues to enforce the same authority and evidence ceilings. This is
-architectural extensibility, not a claim that one implementation has discovered
-the final mechanism.
+Research compares unconstrained throughput scheduling, cost-only placement,
+carbon-aware scheduling, water- and grid-aware scheduling, and the full
+governed capacity contract under matched useful output and reliability.
+Campaigns span hardware generations, memory pressure, interconnect regimes,
+locations, seasons, failure events, and emerging substrates. Outcomes include
+useful work, tail latency, availability, peak demand, energy, water, modeled
+emissions, embodied allocation, maintenance, concentration, and total cost.
 
-For Physical compute governance, the decisive standard is joint performance. The mature design must improve
-useful outcomes or decision quality while keeping unsafe release, false
-refusal, missed help, latency, resource use, human burden, and unresolved
-residuals visible. If a simpler system achieves the same bounded result at lower
-total lifecycle cost, the simpler system should be preferred. If no competent
-test exists yet, the end state remains a falsifiable target rather than a
-marketing conclusion.
+The endpoint is accountable sufficiency, not maximum compute. The layer should
+show which workloads are physically feasible, which can wait or degrade, which
+burdens move between communities or supply chains, and which capacity is
+stranded or must be retired. When meters or impact models are too weak for the
+decision, it narrows authority instead of presenting precision it does not
+possess.
 
-The Physical compute governance target also remains reversible. Operators need a declared way to narrow,
-replace, migrate, or retire the mechanism while preserving affected records and
-obligations. Architectural permanence without demonstrated benefit would be a
-failure of governance, not evidence of maturity.
+The mature physical layer treats compute as a geographically and temporally constrained service whose energy, water, materials, land, labor, community, and concentration effects are first-class. It can move, defer, degrade, repair, reuse, or retire workloads without hiding cost outside the model bill.
+
+The support state remains at argument until multi-site, multi-season campaigns reconcile useful work with metering uncertainty, grid response, water and material burdens, failure recovery, rebound, and affected-community outcomes.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
-| Contract completeness | Reject missing identity, authority, scope, version, consumer, residual, or expiry fields. | planned |
-| Boundary mutation | Substitute an adjacent owner's authority and require rejection. | planned |
-| Failure-family mutation | Inject at least one mechanism-specific failure and preserve the full attempt denominator. | planned |
-| No-promotion control | Ensure prose, schemas, fixtures, and source-reported results cannot promote the chapter core claim. | planned |
+| Delivered-work accounting | Reject nameplate FLOPs or accelerator efficiency without matched useful output and end-to-end service cost. | planned |
+| Temporal and local impact | Distinguish average, marginal, peak, location, water-stress, and grid-congestion conditions. | planned |
+| Failure and degradation | Inject power, cooling, network, and supplier faults and verify quality and authority ceilings remain visible. | planned |
+| Embodied and retirement boundary | Preserve materials, construction, maintenance, reuse, e-waste, and community residuals. | planned |
 
-Planned formalization hook: `lean:physical-compute-infrastructure-energy-and-environmental-constraints.admission_boundary` remains a process-contract target; it does not claim an implemented theorem.
+Planned formalization route: `lean:physical-compute-infrastructure-energy-and-environmental-constraints.admission_boundary` covers only the finite admission record for physical compute infrastructure energy and environmental constraints; it cannot establish whether physical compute infrastructure energy and environmental constraints works safely or transfers.
 
 ## Source crosswalk
 
@@ -284,24 +295,24 @@ stop converging on the same bottleneck.
 
 ## Summary
 
-A compute allocation should be physically eligible only through a workload-to-capacity contract that binds location and time, hardware and interconnect, delivered useful work, facility and grid dependencies, energy attribution, cooling and water, materials, land and community effects, metering uncertainty, resilience and degradation, maintenance, demand response, reuse, retirement, and residuals; nameplate compute, efficiency, low PUE, renewable procurement, or aggregate energy alone establishes neither availability, sustainability, community acceptability, nor lower total impact. The subject is now integrated into the live manuscript at argument
-support. Its empirical, formal, transfer, and deployment work remains an open
-evidence program rather than an excuse to defer the concept itself.
+Physical compute governance connects a requested result to the complete system
+needed to deliver it: chips, memory, interconnect, storage, software,
+facilities, power, cooling, water, land, materials, labor, maintenance, grids,
+suppliers, communities, and retirement. Every measurement retains its
+configuration, time, location, allocation method, and uncertainty.
 
-The Physical compute governance reading rule is to follow the artifacts: identify the declared
-contract, inspect the authority and version, check the complete attempt and
-failure denominator, examine the independent decision, and retain every
-residual through the handoff. When any link is absent, the correct conclusion
-is narrower authority and more explicit uncertainty—not assumed success and
-not a sweeping refutation of the idea.
+This view separates nameplate capacity from useful output and efficiency from
+total effect. It enables scheduling, degradation, demand response, failover,
+repair, reuse, and denial decisions that keep quality and authority visible
+while exposing environmental burdens, correlated dependencies, concentration,
+and rebound instead of exporting them beyond the compute budget.
+
+AI compute is a physical system before it is a token price. Infrastructure governance joins workload quality to hardware, memory, networks, facilities, grids, cooling, water, materials, land, communities, resilience, maintenance, demand response, concentration, reuse, and retirement so efficiency cannot hide displaced burdens.
 
 ## Handoff
 
-**Mathematical and Search Substrates** follows. It consumes this chapter's bounded
-outputs without inheriting authority, certainty, or support that this chapter
-did not establish. The receiving chapter must preserve the identities,
-versions, unresolved conflicts, residuals, and non-claims recorded here, then
-perform its own admission checks before acting. A handoff receipt proves only
-that the packet crossed the declared interface; it does not prove that either
-chapter's mechanism is effective, complete, safe, transferable, or ready for
-release.
+**Mathematical and Search Substrates** receives a bounded physical-cost and
+availability envelope for candidate computation. It does not inherit
+permission to ignore memory traffic, infrastructure effects, reliability,
+measurement uncertainty, or the fact that a mathematically elegant route may
+be physically worse when implemented end to end.

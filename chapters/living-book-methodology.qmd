@@ -376,6 +376,41 @@ field semantics, or inference rule must change this contract, the terminal
 ledger, and their validators together rather than silently altering boilerplate
 across dozens of chapters.
 
+### Shared lifecycle method and inheritance boundary {#shared-chapter-lifecycle-method}
+
+Many stack components obey the same abstract discipline: bind identity and
+authority before use; admit only a scoped, versioned contract; preserve inputs,
+attempts, state changes, effects, and residuals; observe through a method that
+cannot grant its own authority; and either hand off a bounded result or return
+to correction, quarantine, expiry, or retirement. That discipline belongs
+here. A chapter should not restate it as if a generic lifecycle were its
+mechanism.
+
+The local chapter instead has four jobs. It must name the object that moves,
+the distinctions that cannot collapse, the adjacent owners and authority
+changes at each interface, and the failure or observation that changes the
+route. Its diagram must expose that subject-specific state machine. Its test
+plan must attack the chapter's own construct, instrument, noninheritance, and
+recovery boundaries. Its handoff must say what exact artifact crosses to the
+next owner and what does not cross with it.
+
+Shared evidence rules are equally narrow. A source table records bounded use,
+not local reproduction. A schema-valid record proves shape, not the truth of
+its fields. A finite formal model proves only the modeled proposition under its
+assumptions. A completed fixture, proof, source review, or handoff cannot
+promote another claim, grant authority, establish transfer, or erase a
+residual. Chapters link this rule and state their unique application rather
+than copying a universal disclaimer.
+
+This is a prospective inheritance guard, not a ban on common vocabulary.
+Terms, field names, and links may repeat when they preserve a real shared
+interface. Long prose, disposition tables, diagrams, and test matrices may
+repeat only when identity is itself the claim and an explicit owner says why.
+A new or substantially revised chapter that copies a neighboring scaffold
+must be rejected until it supplies distinct claims, sources, boundaries,
+evidence plans, diagrams, and handoff semantics. Editorial variation alone is
+not enough; the test is distinct responsibility.
+
 ## Summary
 
 Living Book Methodology defines how this project improves without losing its memory. Paired with Evidence States, it is the book's methodological contribution: a claim-aware, source-aware, proof-aware, release-aware way for a technical book to change. The method is not "keep editing until it feels better." It is: ingest sources honestly, revise chapters through stable IDs, track support states, mechanize what can be mechanized, validate the public render, and preserve the residuals.

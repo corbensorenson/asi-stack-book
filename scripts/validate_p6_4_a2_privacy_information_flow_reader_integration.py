@@ -56,8 +56,12 @@ def errors(data: dict) -> list[str]:
         or second.get("active_candidate_id") is not None
         or second.get("next_queued_candidate_id") is not None
         or second.get("admission_state") != "all_distinct_owners_admitted_no_live_candidate_queue"
-        or data["status"]["execution_readiness"].get("immediate_book_packet") != NEXT_PACKET
-    ): out.append("A2 status did not preserve terminal no-queue admission and the current evidence packet")
+    ): out.append("A2 status did not preserve terminal no-queue admission")
+    inheritance = data["status"]["round_16_evidence_first_amendment"].get("template_inheritance_guard", {})
+    if inheritance.get("state") != "terminal_current_84_chapter_inheritance_guard":
+        out.append("A2 status did not preserve the completed W3 inheritance gate")
+    if data["status"]["execution_readiness"].get("immediate_book_packet") == "P6.4-A2-reopened":
+        out.append("A2 was incorrectly reopened after its terminal admission")
     if second.get("terminal_candidate_dispositions", {}).get(CHAPTER_ID) != "admitted_terminal_argument_reader_chapter": out.append("A2 terminal disposition missing")
     surfaces = data["surfaces"]
     required = {"index": ["Purpose-bounded information use and data rights"], "glossary": ["Information Lifecycle Transaction", "Purpose Lease"], "outline": ["### Privacy, Data Rights, and Information-Flow Governance"], "roadmap": [NEXT_PACKET, "P6.4-A1 and P6.4-A2"], "security": ["Privacy, Data Rights, and Information-Flow Governance takes the next boundary"], "custody": ["already constrained by Privacy, Data Rights"]}

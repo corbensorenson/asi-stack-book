@@ -5,9 +5,9 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd",
     "structured_atoms_reviewed": 33,
-    "prose_candidates_adjudicated": 31,
+    "prose_candidates_adjudicated": 26,
     "unowned_material_claims": 0,
-    "review_note": "Reviewed the complete admitted Human-AI Communication, Persuasion, and Epistemic Security chapter, its manifest ownership, source crosswalk, lifecycle, mechanisms, interfaces, invariants, failure inventory, minimum implementation, falsification program, test plan, summary, and handoff. Claim-bearing prose is mapped to the closest owned atom by section; layout fragments, status text, captions, and handoffs remain explicitly nonmaterial. The review preserves argument support and records no efficacy, transfer, release, SOTA, AGI, or ASI promotion."
+    "review_note": "Re-reviewed the complete W3-rewritten and reader-depth-completed Human Ai Communication Persuasion And Epistemic Security chapter on 2026-07-26. All 26 current prose candidates are adjudicated as owned refinements, bounded explanations, source reports, or cross-chapter handoffs. No unowned material claim, atom proposition, support, release, or publication movement was introduced."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
@@ -16,7 +16,7 @@
       "environment": "The authored ASI Stack interfaces, future controlled fixtures, and prospectively frozen natural or adversarial workloads; production deployment and open-world transfer remain unestablished.",
       "model": "Model- and substrate-agnostic contract design at argument support; any implementation claim must name exact models, checkpoints, policies, prompts, tools, data, and evaluators.",
       "authority": "`human-ai-communication-persuasion-and-epistemic-security` owns its bounded decision contract; adjacent chapters retain their own authority, and neither prose nor a passing record can widen an action grant.",
-      "time": "Semantic review current through 2026-07-24; material changes to evidence, authority, population, model, environment, ontology, or consumer require reauthorization.",
+      "time": "Semantic review current through 2026-07-26; material changes to evidence, authority, population, model, environment, ontology, or consumer require reauthorization.",
       "artifact": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd, its manifest record, source crosswalk (the chapter source packet), claim dossier, and future versioned implementation/evaluation receipts."
     },
     "assumptions": [
@@ -100,138 +100,132 @@
   },
   "atom_reviews": {},
   "prose_candidate_dispositions": {
-    "human-ai-communication-persuasion-and-epistemic-security.prose.5aee6da00a19": {
-      "state": "duplicate_of_atom",
-      "rationale": "Semantically reviewed as a prose explanation or refinement of `human-ai-communication-persuasion-and-epistemic-security.problem.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
-      "target_atom_id": "human-ai-communication-persuasion-and-epistemic-security.problem.001"
-    },
-    "human-ai-communication-persuasion-and-epistemic-security.prose.c1ac47f74aae": {
-      "state": "duplicate_of_atom",
-      "rationale": "Semantically reviewed as a prose explanation or refinement of `human-ai-communication-persuasion-and-epistemic-security.problem.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
-      "target_atom_id": "human-ai-communication-persuasion-and-epistemic-security.problem.001"
-    },
     "human-ai-communication-persuasion-and-epistemic-security.prose.0de291cfa965": {
       "state": "duplicate_of_atom",
       "rationale": "Semantically reviewed as a prose explanation or refinement of `human-ai-communication-persuasion-and-epistemic-security.problem.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
       "target_atom_id": "human-ai-communication-persuasion-and-epistemic-security.problem.001"
     },
-    "human-ai-communication-persuasion-and-epistemic-security.prose.6dda77649580": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "human-ai-communication-persuasion-and-epistemic-security.prose.9a3e6a8ff12a": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "human-ai-communication-persuasion-and-epistemic-security.prose.ea21ce21e26b": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "human-ai-communication-persuasion-and-epistemic-security.prose.776b655c3d7d": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "human-ai-communication-persuasion-and-epistemic-security.prose.46e6021e6ba0": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "human-ai-communication-persuasion-and-epistemic-security.prose.0518b15b8aaf": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "human-ai-communication-persuasion-and-epistemic-security.prose.fc17d909aa0a": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "human-ai-communication-persuasion-and-epistemic-security.prose.c50693a0a05a": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "human-ai-communication-persuasion-and-epistemic-security.prose.1edb37152332": {
+    "human-ai-communication-persuasion-and-epistemic-security.prose.165c6afc5d96": {
       "state": "duplicate_of_atom",
-      "rationale": "Semantically reviewed as a prose explanation or refinement of `human-ai-communication-persuasion-and-epistemic-security.mechanism.003` within the chapter's declared scope; it creates no separate support-bearing atom.",
-      "target_atom_id": "human-ai-communication-persuasion-and-epistemic-security.mechanism.003"
+      "rationale": "Semantically reviewed after the W3 depth repair as a chapter-specific refinement of `human-ai-communication-persuasion-and-epistemic-security.beyond_sota.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "human-ai-communication-persuasion-and-epistemic-security.beyond_sota.001"
     },
-    "human-ai-communication-persuasion-and-epistemic-security.prose.af47f77d7031": {
+    "human-ai-communication-persuasion-and-epistemic-security.prose.1def349a2b43": {
       "state": "duplicate_of_atom",
-      "rationale": "Semantically reviewed as a prose explanation or refinement of `human-ai-communication-persuasion-and-epistemic-security.mechanism.002` within the chapter's declared scope; it creates no separate support-bearing atom.",
-      "target_atom_id": "human-ai-communication-persuasion-and-epistemic-security.mechanism.002"
+      "rationale": "Semantically reviewed after the W3 depth repair as a chapter-specific refinement of `human-ai-communication-persuasion-and-epistemic-security.interface.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "human-ai-communication-persuasion-and-epistemic-security.interface.001"
     },
-    "human-ai-communication-persuasion-and-epistemic-security.prose.5da6acc1811f": {
+    "human-ai-communication-persuasion-and-epistemic-security.prose.1fc98810b4ad": {
       "state": "duplicate_of_atom",
-      "rationale": "Semantically reviewed as a prose explanation or refinement of `human-ai-communication-persuasion-and-epistemic-security.mechanism.004` within the chapter's declared scope; it creates no separate support-bearing atom.",
-      "target_atom_id": "human-ai-communication-persuasion-and-epistemic-security.mechanism.004"
-    },
-    "human-ai-communication-persuasion-and-epistemic-security.prose.d18d74e7ec22": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "human-ai-communication-persuasion-and-epistemic-security.prose.c28c8b573493": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "human-ai-communication-persuasion-and-epistemic-security.prose.5baa1bd83758": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "human-ai-communication-persuasion-and-epistemic-security.prose.b273b9da3c45": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "human-ai-communication-persuasion-and-epistemic-security.prose.95b08a9d51f8": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "human-ai-communication-persuasion-and-epistemic-security.prose.620e415af61e": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
+      "rationale": "Semantically reviewed after the W3 depth repair as a chapter-specific refinement of `human-ai-communication-persuasion-and-epistemic-security.interface.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "human-ai-communication-persuasion-and-epistemic-security.interface.001"
     },
     "human-ai-communication-persuasion-and-epistemic-security.prose.202e8819f93a": {
       "state": "duplicate_of_atom",
       "rationale": "Semantically reviewed as a prose explanation or refinement of `human-ai-communication-persuasion-and-epistemic-security.minimum.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
       "target_atom_id": "human-ai-communication-persuasion-and-epistemic-security.minimum.001"
     },
-    "human-ai-communication-persuasion-and-epistemic-security.prose.209e6942247d": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "human-ai-communication-persuasion-and-epistemic-security.prose.b1e789afc8a0": {
+    "human-ai-communication-persuasion-and-epistemic-security.prose.37e6813b5a2b": {
       "state": "duplicate_of_atom",
-      "rationale": "Semantically reviewed as a prose explanation or refinement of `human-ai-communication-persuasion-and-epistemic-security.minimum.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
+      "rationale": "Semantically reviewed after W3 as a chapter-specific chapter summary of `human-ai-communication-persuasion-and-epistemic-security.core`; it creates no separate support-bearing atom.",
+      "target_atom_id": "human-ai-communication-persuasion-and-epistemic-security.core"
+    },
+    "human-ai-communication-persuasion-and-epistemic-security.prose.3bed148ea270": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after W3 as a chapter-specific argument-exit campaign refinement of `human-ai-communication-persuasion-and-epistemic-security.beyond_sota.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "human-ai-communication-persuasion-and-epistemic-security.beyond_sota.001"
+    },
+    "human-ai-communication-persuasion-and-epistemic-security.prose.4bf31c4e3fe6": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after the W3 depth repair as a chapter-specific refinement of `human-ai-communication-persuasion-and-epistemic-security.mechanism.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "human-ai-communication-persuasion-and-epistemic-security.mechanism.001"
+    },
+    "human-ai-communication-persuasion-and-epistemic-security.prose.507d8be3d152": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after W3 as a chapter-specific evaluation and positive-control refinement of `human-ai-communication-persuasion-and-epistemic-security.minimum.001`; it creates no separate support-bearing atom.",
       "target_atom_id": "human-ai-communication-persuasion-and-epistemic-security.minimum.001"
     },
-    "human-ai-communication-persuasion-and-epistemic-security.prose.39fbf6aadcfb": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
+    "human-ai-communication-persuasion-and-epistemic-security.prose.519ef25cac4c": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after W3 as a chapter-specific evaluation and positive-control refinement of `human-ai-communication-persuasion-and-epistemic-security.minimum.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "human-ai-communication-persuasion-and-epistemic-security.minimum.001"
     },
-    "human-ai-communication-persuasion-and-epistemic-security.prose.5a76f9808ee2": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
+    "human-ai-communication-persuasion-and-epistemic-security.prose.55abae1d76bb": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after the W3 depth repair as a chapter-specific refinement of `human-ai-communication-persuasion-and-epistemic-security.invariant.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "human-ai-communication-persuasion-and-epistemic-security.invariant.001"
     },
-    "human-ai-communication-persuasion-and-epistemic-security.prose.0538f7bf12b7": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "human-ai-communication-persuasion-and-epistemic-security.prose.972c55ad6e70": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "human-ai-communication-persuasion-and-epistemic-security.prose.a45a57738dd9": {
+    "human-ai-communication-persuasion-and-epistemic-security.prose.5aee6da00a19": {
       "state": "duplicate_of_atom",
       "rationale": "Semantically reviewed as a prose explanation or refinement of `human-ai-communication-persuasion-and-epistemic-security.problem.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
       "target_atom_id": "human-ai-communication-persuasion-and-epistemic-security.problem.001"
     },
-    "human-ai-communication-persuasion-and-epistemic-security.prose.d7c698d66ae4": {
+    "human-ai-communication-persuasion-and-epistemic-security.prose.5da6acc1811f": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed as a prose explanation or refinement of `human-ai-communication-persuasion-and-epistemic-security.mechanism.004` within the chapter's declared scope; it creates no separate support-bearing atom.",
+      "target_atom_id": "human-ai-communication-persuasion-and-epistemic-security.mechanism.004"
+    },
+    "human-ai-communication-persuasion-and-epistemic-security.prose.5ed7a6ddf341": {
+      "state": "nonmaterial_explanation",
+      "rationale": "W3 domain-specific diagram walkthrough; its material boundary remains represented by the chapter's structured atoms."
+    },
+    "human-ai-communication-persuasion-and-epistemic-security.prose.6e99eb7b399c": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after the W3 depth repair as a chapter-specific refinement of `human-ai-communication-persuasion-and-epistemic-security.beyond_sota.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "human-ai-communication-persuasion-and-epistemic-security.beyond_sota.001"
+    },
+    "human-ai-communication-persuasion-and-epistemic-security.prose.7418f818321a": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after the W3 depth repair as a chapter-specific refinement of `human-ai-communication-persuasion-and-epistemic-security.mechanism.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "human-ai-communication-persuasion-and-epistemic-security.mechanism.001"
+    },
+    "human-ai-communication-persuasion-and-epistemic-security.prose.775134461f70": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after W3 as a chapter-specific invariant synthesis of `human-ai-communication-persuasion-and-epistemic-security.invariant.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "human-ai-communication-persuasion-and-epistemic-security.invariant.001"
+    },
+    "human-ai-communication-persuasion-and-epistemic-security.prose.92d0e560347e": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after the W3 depth repair as a chapter-specific refinement of `human-ai-communication-persuasion-and-epistemic-security.minimum.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "human-ai-communication-persuasion-and-epistemic-security.minimum.001"
+    },
+    "human-ai-communication-persuasion-and-epistemic-security.prose.a85df25452f8": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after W3 as a chapter-specific argument-exit campaign refinement of `human-ai-communication-persuasion-and-epistemic-security.beyond_sota.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "human-ai-communication-persuasion-and-epistemic-security.beyond_sota.001"
+    },
+    "human-ai-communication-persuasion-and-epistemic-security.prose.ad239a41c15b": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after the W3 depth repair as a chapter-specific refinement of `human-ai-communication-persuasion-and-epistemic-security.minimum.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "human-ai-communication-persuasion-and-epistemic-security.minimum.001"
+    },
+    "human-ai-communication-persuasion-and-epistemic-security.prose.af47f77d7031": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed as a prose explanation or refinement of `human-ai-communication-persuasion-and-epistemic-security.mechanism.002` within the chapter's declared scope; it creates no separate support-bearing atom.",
+      "target_atom_id": "human-ai-communication-persuasion-and-epistemic-security.mechanism.002"
+    },
+    "human-ai-communication-persuasion-and-epistemic-security.prose.bd7acc7e71a5": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after W3 as a chapter-specific invariant synthesis of `human-ai-communication-persuasion-and-epistemic-security.invariant.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "human-ai-communication-persuasion-and-epistemic-security.invariant.001"
+    },
+    "human-ai-communication-persuasion-and-epistemic-security.prose.c1ac47f74aae": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed as a prose explanation or refinement of `human-ai-communication-persuasion-and-epistemic-security.problem.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
+      "target_atom_id": "human-ai-communication-persuasion-and-epistemic-security.problem.001"
+    },
+    "human-ai-communication-persuasion-and-epistemic-security.prose.c50693a0a05a": {
       "state": "nonmaterial_explanation",
       "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
     },
-    "human-ai-communication-persuasion-and-epistemic-security.prose.1644f28bb30e": {
-      "state": "editorial_or_question",
-      "rationale": "Cross-chapter handoff instruction; the receiving owner performs its own admission checks and no independent support transition is asserted."
+    "human-ai-communication-persuasion-and-epistemic-security.prose.d2702758bb8a": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after the W3 depth repair as a chapter-specific refinement of `human-ai-communication-persuasion-and-epistemic-security.core`; it creates no separate support-bearing atom.",
+      "target_atom_id": "human-ai-communication-persuasion-and-epistemic-security.core"
     },
-    "human-ai-communication-persuasion-and-epistemic-security.prose.6e2a279b9dad": {
-      "state": "editorial_or_question",
-      "rationale": "Cross-chapter handoff instruction; the receiving owner performs its own admission checks and no independent support transition is asserted."
+    "human-ai-communication-persuasion-and-epistemic-security.prose.e1018c31d077": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Formalization-scope caption that narrows a planned finite record target and expressly denies live efficacy, safety, or transfer inference."
     }
   },
   "non_claims": [

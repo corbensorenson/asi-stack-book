@@ -5,9 +5,9 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/durable-semantic-memory-and-knowledge-lattices.qmd",
     "structured_atoms_reviewed": 36,
-    "prose_candidates_adjudicated": 29,
+    "prose_candidates_adjudicated": 17,
     "unowned_material_claims": 0,
-    "review_note": "Reviewed the complete admitted Durable Semantic Memory and Knowledge Lattices chapter, its manifest ownership, source crosswalk, lifecycle, mechanisms, interfaces, invariants, failure inventory, minimum implementation, falsification program, test plan, summary, and handoff. Claim-bearing prose is mapped to the closest owned atom by section; layout fragments, status text, captions, and handoffs remain explicitly nonmaterial. The review preserves argument support and records no efficacy, transfer, release, SOTA, AGI, or ASI promotion."
+    "review_note": "Re-reviewed the complete W3-rewritten and reader-depth-completed Durable Semantic Memory And Knowledge Lattices chapter on 2026-07-26. All 17 current prose candidates are adjudicated as owned refinements, bounded explanations, source reports, or cross-chapter handoffs. No unowned material claim, atom proposition, support, release, or publication movement was introduced."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
@@ -16,7 +16,7 @@
       "environment": "The authored ASI Stack interfaces, future controlled fixtures, and prospectively frozen natural or adversarial workloads; production deployment and open-world transfer remain unestablished.",
       "model": "Model- and substrate-agnostic contract design at argument support; any implementation claim must name exact models, checkpoints, policies, prompts, tools, data, and evaluators.",
       "authority": "`durable-semantic-memory-and-knowledge-lattices` owns its bounded decision contract; adjacent chapters retain their own authority, and neither prose nor a passing record can widen an action grant.",
-      "time": "Semantic review current through 2026-07-24; material changes to evidence, authority, population, model, environment, ontology, or consumer require reauthorization.",
+      "time": "Semantic review current through 2026-07-26; material changes to evidence, authority, population, model, environment, ontology, or consumer require reauthorization.",
       "artifact": "chapters/durable-semantic-memory-and-knowledge-lattices.qmd, its manifest record, source crosswalk (the chapter source packet), claim dossier, and future versioned implementation/evaluation receipts."
     },
     "assumptions": [
@@ -100,128 +100,87 @@
   },
   "atom_reviews": {},
   "prose_candidate_dispositions": {
-    "durable-semantic-memory-and-knowledge-lattices.prose.9934798db458": {
-      "state": "duplicate_of_atom",
-      "rationale": "Semantically reviewed as a prose explanation or refinement of `durable-semantic-memory-and-knowledge-lattices.problem.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
-      "target_atom_id": "durable-semantic-memory-and-knowledge-lattices.problem.001"
-    },
     "durable-semantic-memory-and-knowledge-lattices.prose.12e880920892": {
       "state": "duplicate_of_atom",
       "rationale": "Semantically reviewed as a prose explanation or refinement of `durable-semantic-memory-and-knowledge-lattices.problem.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
       "target_atom_id": "durable-semantic-memory-and-knowledge-lattices.problem.001"
     },
-    "durable-semantic-memory-and-knowledge-lattices.prose.6dda77649580": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "durable-semantic-memory-and-knowledge-lattices.prose.9a3e6a8ff12a": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "durable-semantic-memory-and-knowledge-lattices.prose.940144347761": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "durable-semantic-memory-and-knowledge-lattices.prose.776b655c3d7d": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "durable-semantic-memory-and-knowledge-lattices.prose.46e6021e6ba0": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "durable-semantic-memory-and-knowledge-lattices.prose.0518b15b8aaf": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "durable-semantic-memory-and-knowledge-lattices.prose.5195393a5dbc": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
+    "durable-semantic-memory-and-knowledge-lattices.prose.30b167cf71fa": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after W3 as a chapter-specific evaluation and positive-control refinement of `durable-semantic-memory-and-knowledge-lattices.minimum.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "durable-semantic-memory-and-knowledge-lattices.minimum.001"
     },
     "durable-semantic-memory-and-knowledge-lattices.prose.3a9404bc3cd3": {
       "state": "nonmaterial_explanation",
       "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
     },
-    "durable-semantic-memory-and-knowledge-lattices.prose.a95f44752b0e": {
+    "durable-semantic-memory-and-knowledge-lattices.prose.40f10968d604": {
       "state": "duplicate_of_atom",
-      "rationale": "Semantically reviewed as a prose explanation or refinement of `durable-semantic-memory-and-knowledge-lattices.mechanism.003` within the chapter's declared scope; it creates no separate support-bearing atom.",
-      "target_atom_id": "durable-semantic-memory-and-knowledge-lattices.mechanism.003"
+      "rationale": "Semantically reviewed after the W3 depth repair as a chapter-specific refinement of `durable-semantic-memory-and-knowledge-lattices.beyond_sota.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "durable-semantic-memory-and-knowledge-lattices.beyond_sota.001"
     },
-    "durable-semantic-memory-and-knowledge-lattices.prose.d18d74e7ec22": {
+    "durable-semantic-memory-and-knowledge-lattices.prose.45a7623b36a4": {
       "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
+      "rationale": "W3 domain-specific diagram walkthrough; its material boundary remains represented by the chapter's structured atoms."
     },
-    "durable-semantic-memory-and-knowledge-lattices.prose.c28c8b573493": {
+    "durable-semantic-memory-and-knowledge-lattices.prose.646e1bafbb91": {
       "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
+      "rationale": "Formalization-scope caption that narrows a planned finite record target and expressly denies live efficacy, safety, or transfer inference."
     },
-    "durable-semantic-memory-and-knowledge-lattices.prose.5baa1bd83758": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
+    "durable-semantic-memory-and-knowledge-lattices.prose.9934798db458": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed as a prose explanation or refinement of `durable-semantic-memory-and-knowledge-lattices.problem.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
+      "target_atom_id": "durable-semantic-memory-and-knowledge-lattices.problem.001"
     },
-    "durable-semantic-memory-and-knowledge-lattices.prose.b273b9da3c45": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
+    "durable-semantic-memory-and-knowledge-lattices.prose.b0aa24da8be8": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after the W3 depth repair as a chapter-specific refinement of `durable-semantic-memory-and-knowledge-lattices.failure_mode.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "durable-semantic-memory-and-knowledge-lattices.failure_mode.001"
     },
-    "durable-semantic-memory-and-knowledge-lattices.prose.95b08a9d51f8": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
+    "durable-semantic-memory-and-knowledge-lattices.prose.c30bd3db9633": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after W3 as a chapter-specific argument-exit campaign refinement of `durable-semantic-memory-and-knowledge-lattices.beyond_sota.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "durable-semantic-memory-and-knowledge-lattices.beyond_sota.001"
     },
-    "durable-semantic-memory-and-knowledge-lattices.prose.620e415af61e": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
+    "durable-semantic-memory-and-knowledge-lattices.prose.c6f9a7a8d586": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after the W3 depth repair as a chapter-specific refinement of `durable-semantic-memory-and-knowledge-lattices.interface.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "durable-semantic-memory-and-knowledge-lattices.interface.001"
+    },
+    "durable-semantic-memory-and-knowledge-lattices.prose.ccd523d430be": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after the W3 depth repair as a chapter-specific refinement of `durable-semantic-memory-and-knowledge-lattices.mechanism.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "durable-semantic-memory-and-knowledge-lattices.mechanism.001"
+    },
+    "durable-semantic-memory-and-knowledge-lattices.prose.d45751408908": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after W3 as a chapter-specific invariant synthesis of `durable-semantic-memory-and-knowledge-lattices.invariant.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "durable-semantic-memory-and-knowledge-lattices.invariant.001"
+    },
+    "durable-semantic-memory-and-knowledge-lattices.prose.df8539e09676": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after the W3 depth repair as a chapter-specific refinement of `durable-semantic-memory-and-knowledge-lattices.problem.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "durable-semantic-memory-and-knowledge-lattices.problem.001"
+    },
+    "durable-semantic-memory-and-knowledge-lattices.prose.e183ffff7d45": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after W3 as a chapter-specific evaluation and positive-control refinement of `durable-semantic-memory-and-knowledge-lattices.minimum.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "durable-semantic-memory-and-knowledge-lattices.minimum.001"
+    },
+    "durable-semantic-memory-and-knowledge-lattices.prose.f8078079d9f4": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after the W3 depth repair as a chapter-specific refinement of `durable-semantic-memory-and-knowledge-lattices.minimum.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "durable-semantic-memory-and-knowledge-lattices.minimum.001"
     },
     "durable-semantic-memory-and-knowledge-lattices.prose.fea6ec05ba16": {
       "state": "duplicate_of_atom",
       "rationale": "Semantically reviewed as a prose explanation or refinement of `durable-semantic-memory-and-knowledge-lattices.minimum.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
       "target_atom_id": "durable-semantic-memory-and-knowledge-lattices.minimum.001"
     },
-    "durable-semantic-memory-and-knowledge-lattices.prose.4c40c6cb2c7d": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "durable-semantic-memory-and-knowledge-lattices.prose.b1e789afc8a0": {
+    "durable-semantic-memory-and-knowledge-lattices.prose.d5a2067e56f4": {
       "state": "duplicate_of_atom",
-      "rationale": "Semantically reviewed as a prose explanation or refinement of `durable-semantic-memory-and-knowledge-lattices.minimum.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
-      "target_atom_id": "durable-semantic-memory-and-knowledge-lattices.minimum.001"
-    },
-    "durable-semantic-memory-and-knowledge-lattices.prose.39fbf6aadcfb": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "durable-semantic-memory-and-knowledge-lattices.prose.cc0f4929810f": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "durable-semantic-memory-and-knowledge-lattices.prose.0538f7bf12b7": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "durable-semantic-memory-and-knowledge-lattices.prose.972c55ad6e70": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "durable-semantic-memory-and-knowledge-lattices.prose.441324683220": {
-      "state": "duplicate_of_atom",
-      "rationale": "Semantically reviewed as a prose explanation or refinement of `durable-semantic-memory-and-knowledge-lattices.insufficiency.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
-      "target_atom_id": "durable-semantic-memory-and-knowledge-lattices.insufficiency.001"
-    },
-    "durable-semantic-memory-and-knowledge-lattices.prose.a45a57738dd9": {
-      "state": "duplicate_of_atom",
-      "rationale": "Semantically reviewed as a prose explanation or refinement of `durable-semantic-memory-and-knowledge-lattices.core` within the chapter's declared scope; it creates no separate support-bearing atom.",
-      "target_atom_id": "durable-semantic-memory-and-knowledge-lattices.core"
-    },
-    "durable-semantic-memory-and-knowledge-lattices.prose.d7c698d66ae4": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "durable-semantic-memory-and-knowledge-lattices.prose.1644f28bb30e": {
-      "state": "editorial_or_question",
-      "rationale": "Cross-chapter handoff instruction; the receiving owner performs its own admission checks and no independent support transition is asserted."
-    },
-    "durable-semantic-memory-and-knowledge-lattices.prose.6e2a279b9dad": {
-      "state": "editorial_or_question",
-      "rationale": "Cross-chapter handoff instruction; the receiving owner performs its own admission checks and no independent support transition is asserted."
+      "rationale": "Semantically reviewed as the argument-support boundary for the mature semantic-memory target; it creates no separate support-bearing atom.",
+      "target_atom_id": "durable-semantic-memory-and-knowledge-lattices.beyond_sota.001"
     }
   },
   "non_claims": [

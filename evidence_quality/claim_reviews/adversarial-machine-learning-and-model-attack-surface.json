@@ -5,9 +5,9 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd",
     "structured_atoms_reviewed": 34,
-    "prose_candidates_adjudicated": 45,
+    "prose_candidates_adjudicated": 41,
     "unowned_material_claims": 0,
-    "review_note": "Reviewed the complete admitted Adversarial Machine Learning and the Model Attack Surface chapter, its manifest ownership, source crosswalk, lifecycle, mechanisms, interfaces, invariants, failure inventory, minimum implementation, falsification program, test plan, summary, and handoff. Claim-bearing prose is mapped to the closest owned atom by section; layout fragments, status text, captions, and handoffs remain explicitly nonmaterial. The review preserves argument support and records no efficacy, transfer, release, SOTA, AGI, or ASI promotion."
+    "review_note": "Re-reviewed the complete W3-rewritten and reader-depth-completed Adversarial Machine Learning And Model Attack Surface chapter on 2026-07-26. All 41 current prose candidates are adjudicated as owned refinements, bounded explanations, source reports, or cross-chapter handoffs. No unowned material claim, atom proposition, support, release, or publication movement was introduced."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
@@ -16,7 +16,7 @@
       "environment": "The authored ASI Stack interfaces, future controlled fixtures, and prospectively frozen natural or adversarial workloads; production deployment and open-world transfer remain unestablished.",
       "model": "Model- and substrate-agnostic contract design at argument support; any implementation claim must name exact models, checkpoints, policies, prompts, tools, data, and evaluators.",
       "authority": "`adversarial-machine-learning-and-model-attack-surface` owns its bounded decision contract; adjacent chapters retain their own authority, and neither prose nor a passing record can widen an action grant.",
-      "time": "Semantic review current through 2026-07-24; material changes to evidence, authority, population, model, environment, ontology, or consumer require reauthorization.",
+      "time": "Semantic review current through 2026-07-26; material changes to evidence, authority, population, model, environment, ontology, or consumer require reauthorization.",
       "artifact": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd, its manifest record, source crosswalk (the chapter source packet), claim dossier, and future versioned implementation/evaluation receipts."
     },
     "assumptions": [
@@ -100,72 +100,31 @@
   },
   "atom_reviews": {},
   "prose_candidate_dispositions": {
-    "adversarial-machine-learning-and-model-attack-surface.prose.38aafe85431f": {
+    "adversarial-machine-learning-and-model-attack-surface.prose.01ff6d7bba67": {
       "state": "duplicate_of_atom",
-      "rationale": "Semantically reviewed as a prose explanation or refinement of `adversarial-machine-learning-and-model-attack-surface.problem.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
-      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.problem.001"
+      "rationale": "Semantically reviewed after W3 as a chapter-specific budget-freeze implementation detail of `adversarial-machine-learning-and-model-attack-surface.minimum.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.minimum.001"
     },
-    "adversarial-machine-learning-and-model-attack-surface.prose.6dda77649580": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "adversarial-machine-learning-and-model-attack-surface.prose.9a3e6a8ff12a": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "adversarial-machine-learning-and-model-attack-surface.prose.594f83ec5f47": {
-      "state": "duplicate_of_atom",
-      "rationale": "Semantically reviewed as a prose explanation or refinement of `adversarial-machine-learning-and-model-attack-surface.insufficiency.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
-      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.insufficiency.001"
-    },
-    "adversarial-machine-learning-and-model-attack-surface.prose.ce4eca412179": {
-      "state": "duplicate_of_atom",
-      "rationale": "Semantically reviewed as a prose explanation or refinement of `adversarial-machine-learning-and-model-attack-surface.insufficiency.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
-      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.insufficiency.001"
-    },
-    "adversarial-machine-learning-and-model-attack-surface.prose.2b3a40906cfe": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "adversarial-machine-learning-and-model-attack-surface.prose.776b655c3d7d": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "adversarial-machine-learning-and-model-attack-surface.prose.46e6021e6ba0": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "adversarial-machine-learning-and-model-attack-surface.prose.0518b15b8aaf": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "adversarial-machine-learning-and-model-attack-surface.prose.a15451964cb6": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "adversarial-machine-learning-and-model-attack-surface.prose.8cc172440802": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "adversarial-machine-learning-and-model-attack-surface.prose.ee4720f39063": {
+    "adversarial-machine-learning-and-model-attack-surface.prose.0d3e7aad6778": {
       "state": "duplicate_of_atom",
       "rationale": "Semantically reviewed as a prose explanation or refinement of `adversarial-machine-learning-and-model-attack-surface.mechanism.005` within the chapter's declared scope; it creates no separate support-bearing atom.",
       "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.mechanism.005"
     },
-    "adversarial-machine-learning-and-model-attack-surface.prose.746838bc88b5": {
+    "adversarial-machine-learning-and-model-attack-surface.prose.14960230798d": {
+      "state": "nonmaterial_explanation",
+      "rationale": "W3 domain-specific diagram caption; the bounded disposition remains represented by the chapter's structured core, mechanism, and invariant atoms."
+    },
+    "adversarial-machine-learning-and-model-attack-surface.prose.15800ce1c055": {
       "state": "duplicate_of_atom",
-      "rationale": "Semantically reviewed as a prose explanation or refinement of `adversarial-machine-learning-and-model-attack-surface.mechanism.002` within the chapter's declared scope; it creates no separate support-bearing atom.",
-      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.mechanism.002"
+      "rationale": "Semantically reviewed as a prose explanation or refinement of `adversarial-machine-learning-and-model-attack-surface.minimum.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
+      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.minimum.001"
     },
-    "adversarial-machine-learning-and-model-attack-surface.prose.69729123458b": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
+    "adversarial-machine-learning-and-model-attack-surface.prose.21114d878644": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after the W3 depth repair as a chapter-specific refinement of `adversarial-machine-learning-and-model-attack-surface.beyond_sota.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.beyond_sota.001"
     },
-    "adversarial-machine-learning-and-model-attack-surface.prose.aa7cd9aed456": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "adversarial-machine-learning-and-model-attack-surface.prose.84a370fdd6f3": {
+    "adversarial-machine-learning-and-model-attack-surface.prose.2934fc38e629": {
       "state": "nonmaterial_explanation",
       "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
     },
@@ -173,126 +132,164 @@
       "state": "nonmaterial_explanation",
       "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
     },
+    "adversarial-machine-learning-and-model-attack-surface.prose.38aafe85431f": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed as a prose explanation or refinement of `adversarial-machine-learning-and-model-attack-surface.problem.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
+      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.problem.001"
+    },
     "adversarial-machine-learning-and-model-attack-surface.prose.3968f2161f3a": {
       "state": "duplicate_of_atom",
       "rationale": "Semantically reviewed as a prose explanation or refinement of `adversarial-machine-learning-and-model-attack-surface.mechanism.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
       "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.mechanism.001"
-    },
-    "adversarial-machine-learning-and-model-attack-surface.prose.fe7c24c4602d": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "adversarial-machine-learning-and-model-attack-surface.prose.2934fc38e629": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "adversarial-machine-learning-and-model-attack-surface.prose.0d3e7aad6778": {
-      "state": "duplicate_of_atom",
-      "rationale": "Semantically reviewed as a prose explanation or refinement of `adversarial-machine-learning-and-model-attack-surface.mechanism.005` within the chapter's declared scope; it creates no separate support-bearing atom.",
-      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.mechanism.005"
-    },
-    "adversarial-machine-learning-and-model-attack-surface.prose.f21cf62067b9": {
-      "state": "duplicate_of_atom",
-      "rationale": "Semantically reviewed as a prose explanation or refinement of `adversarial-machine-learning-and-model-attack-surface.mechanism.004` within the chapter's declared scope; it creates no separate support-bearing atom.",
-      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.mechanism.004"
-    },
-    "adversarial-machine-learning-and-model-attack-surface.prose.e1cbf36306a7": {
-      "state": "duplicate_of_atom",
-      "rationale": "Semantically reviewed as a prose explanation or refinement of `adversarial-machine-learning-and-model-attack-surface.mechanism.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
-      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.mechanism.001"
-    },
-    "adversarial-machine-learning-and-model-attack-surface.prose.7f0613179c4d": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "adversarial-machine-learning-and-model-attack-surface.prose.f91903eed8ca": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "adversarial-machine-learning-and-model-attack-surface.prose.ec9ae1e40fd8": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "adversarial-machine-learning-and-model-attack-surface.prose.d18d74e7ec22": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "adversarial-machine-learning-and-model-attack-surface.prose.c28c8b573493": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "adversarial-machine-learning-and-model-attack-surface.prose.5baa1bd83758": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "adversarial-machine-learning-and-model-attack-surface.prose.b273b9da3c45": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
     },
     "adversarial-machine-learning-and-model-attack-surface.prose.44339638c53a": {
       "state": "duplicate_of_atom",
       "rationale": "Semantically reviewed as a prose explanation or refinement of `adversarial-machine-learning-and-model-attack-surface.failure_mode.014` within the chapter's declared scope; it creates no separate support-bearing atom.",
       "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.failure_mode.014"
     },
-    "adversarial-machine-learning-and-model-attack-surface.prose.95b08a9d51f8": {
+    "adversarial-machine-learning-and-model-attack-surface.prose.4daffe437c80": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after W3 as a chapter-specific ownership-gap explanation of `adversarial-machine-learning-and-model-attack-surface.problem.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.problem.001"
+    },
+    "adversarial-machine-learning-and-model-attack-surface.prose.4f9b7f789be4": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after W3 as a chapter-specific interface-ownership synthesis of `adversarial-machine-learning-and-model-attack-surface.interface.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.interface.001"
+    },
+    "adversarial-machine-learning-and-model-attack-surface.prose.51d3eacac971": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after the W3 depth repair as a chapter-specific refinement of `adversarial-machine-learning-and-model-attack-surface.beyond_sota.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.beyond_sota.001"
+    },
+    "adversarial-machine-learning-and-model-attack-surface.prose.53cfe988ee7c": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after the W3 depth repair as a chapter-specific refinement of `adversarial-machine-learning-and-model-attack-surface.core`; it creates no separate support-bearing atom.",
+      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.core"
+    },
+    "adversarial-machine-learning-and-model-attack-surface.prose.594f83ec5f47": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed as a prose explanation or refinement of `adversarial-machine-learning-and-model-attack-surface.insufficiency.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
+      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.insufficiency.001"
+    },
+    "adversarial-machine-learning-and-model-attack-surface.prose.64d20aa1d35f": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after the W3 depth repair as a chapter-specific refinement of `adversarial-machine-learning-and-model-attack-surface.interface.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.interface.001"
+    },
+    "adversarial-machine-learning-and-model-attack-surface.prose.65396fe18ae1": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after the W3 depth repair as a chapter-specific refinement of `adversarial-machine-learning-and-model-attack-surface.minimum.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.minimum.001"
+    },
+    "adversarial-machine-learning-and-model-attack-surface.prose.69729123458b": {
       "state": "nonmaterial_explanation",
       "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
     },
-    "adversarial-machine-learning-and-model-attack-surface.prose.620e415af61e": {
+    "adversarial-machine-learning-and-model-attack-surface.prose.6b5976d48740": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after the W3 depth repair as a chapter-specific refinement of `adversarial-machine-learning-and-model-attack-surface.minimum.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.minimum.001"
+    },
+    "adversarial-machine-learning-and-model-attack-surface.prose.70ac0734fd98": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after W3 as a chapter-specific argument-exit campaign refinement of `adversarial-machine-learning-and-model-attack-surface.beyond_sota.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.beyond_sota.001"
+    },
+    "adversarial-machine-learning-and-model-attack-surface.prose.713f95f3b189": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after the W3 depth repair as a chapter-specific refinement of `adversarial-machine-learning-and-model-attack-surface.interface.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.interface.001"
+    },
+    "adversarial-machine-learning-and-model-attack-surface.prose.746838bc88b5": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed as a prose explanation or refinement of `adversarial-machine-learning-and-model-attack-surface.mechanism.002` within the chapter's declared scope; it creates no separate support-bearing atom.",
+      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.mechanism.002"
+    },
+    "adversarial-machine-learning-and-model-attack-surface.prose.7f0613179c4d": {
       "state": "nonmaterial_explanation",
       "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
+    },
+    "adversarial-machine-learning-and-model-attack-surface.prose.84a370fdd6f3": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
+    },
+    "adversarial-machine-learning-and-model-attack-surface.prose.85ff0f996f56": {
+      "state": "editorial_or_question",
+      "rationale": "Cross-chapter privacy handoff instruction; the receiving owner performs its own admission and no privacy or support conclusion is created."
+    },
+    "adversarial-machine-learning-and-model-attack-surface.prose.8ba48b2d7233": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Formalization-scope caption that narrows the existing planned admission-boundary target and expressly denies runtime, safety, and transfer inference."
+    },
+    "adversarial-machine-learning-and-model-attack-surface.prose.8cc172440802": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
+    },
+    "adversarial-machine-learning-and-model-attack-surface.prose.aa7cd9aed456": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
+    },
+    "adversarial-machine-learning-and-model-attack-surface.prose.bdbcbeff0e47": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after the W3 depth repair as a chapter-specific refinement of `adversarial-machine-learning-and-model-attack-surface.failure_mode.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.failure_mode.001"
+    },
+    "adversarial-machine-learning-and-model-attack-surface.prose.ce4eca412179": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed as a prose explanation or refinement of `adversarial-machine-learning-and-model-attack-surface.insufficiency.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
+      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.insufficiency.001"
+    },
+    "adversarial-machine-learning-and-model-attack-surface.prose.d71c0fc24438": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Second sentence of the W3 domain-specific diagram walkthrough; it preserves fields already owned by structured mechanism and invariant atoms."
     },
     "adversarial-machine-learning-and-model-attack-surface.prose.d9a787cbb513": {
       "state": "duplicate_of_atom",
       "rationale": "Semantically reviewed as a prose explanation or refinement of `adversarial-machine-learning-and-model-attack-surface.minimum.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
       "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.minimum.001"
     },
-    "adversarial-machine-learning-and-model-attack-surface.prose.15800ce1c055": {
+    "adversarial-machine-learning-and-model-attack-surface.prose.e1cbf36306a7": {
       "state": "duplicate_of_atom",
-      "rationale": "Semantically reviewed as a prose explanation or refinement of `adversarial-machine-learning-and-model-attack-surface.minimum.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
+      "rationale": "Semantically reviewed as a prose explanation or refinement of `adversarial-machine-learning-and-model-attack-surface.mechanism.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
+      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.mechanism.001"
+    },
+    "adversarial-machine-learning-and-model-attack-surface.prose.e534f85cf527": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after W3 as a chapter-specific joint evaluation-metric refinement of `adversarial-machine-learning-and-model-attack-surface.minimum.001`; it creates no separate support-bearing atom.",
       "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.minimum.001"
     },
-    "adversarial-machine-learning-and-model-attack-surface.prose.aa00e78be900": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "adversarial-machine-learning-and-model-attack-surface.prose.b1e789afc8a0": {
+    "adversarial-machine-learning-and-model-attack-surface.prose.e99094874e2a": {
       "state": "duplicate_of_atom",
-      "rationale": "Semantically reviewed as a prose explanation or refinement of `adversarial-machine-learning-and-model-attack-surface.minimum.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
-      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.minimum.001"
+      "rationale": "Semantically reviewed after W3 as a chapter-specific positive-control and null-result ceiling of `adversarial-machine-learning-and-model-attack-surface.invariant.004`; it creates no separate support-bearing atom.",
+      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.invariant.004"
     },
-    "adversarial-machine-learning-and-model-attack-surface.prose.39fbf6aadcfb": {
+    "adversarial-machine-learning-and-model-attack-surface.prose.ec9ae1e40fd8": {
       "state": "nonmaterial_explanation",
       "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
     },
-    "adversarial-machine-learning-and-model-attack-surface.prose.2bbe8cdfdb92": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "adversarial-machine-learning-and-model-attack-surface.prose.0538f7bf12b7": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "adversarial-machine-learning-and-model-attack-surface.prose.972c55ad6e70": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "adversarial-machine-learning-and-model-attack-surface.prose.a45a57738dd9": {
+    "adversarial-machine-learning-and-model-attack-surface.prose.f21cf62067b9": {
       "state": "duplicate_of_atom",
-      "rationale": "Semantically reviewed as a prose explanation or refinement of `adversarial-machine-learning-and-model-attack-surface.invariant.003` within the chapter's declared scope; it creates no separate support-bearing atom.",
+      "rationale": "Semantically reviewed as a prose explanation or refinement of `adversarial-machine-learning-and-model-attack-surface.mechanism.004` within the chapter's declared scope; it creates no separate support-bearing atom.",
+      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.mechanism.004"
+    },
+    "adversarial-machine-learning-and-model-attack-surface.prose.8a8b1c841ae4": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after W3 as a chapter-specific stronger-composition replacement condition of `adversarial-machine-learning-and-model-attack-surface.insufficiency.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.insufficiency.001"
+    },
+    "adversarial-machine-learning-and-model-attack-surface.prose.f91903eed8ca": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
+    },
+    "adversarial-machine-learning-and-model-attack-surface.prose.fa1e845f931e": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after W3 as a chapter-specific security-invariant synthesis of `adversarial-machine-learning-and-model-attack-surface.invariant.003`; it creates no separate support-bearing atom.",
       "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.invariant.003"
     },
-    "adversarial-machine-learning-and-model-attack-surface.prose.d7c698d66ae4": {
+    "adversarial-machine-learning-and-model-attack-surface.prose.fe7c24c4602d": {
       "state": "nonmaterial_explanation",
       "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "adversarial-machine-learning-and-model-attack-surface.prose.1644f28bb30e": {
-      "state": "editorial_or_question",
-      "rationale": "Cross-chapter handoff instruction; the receiving owner performs its own admission checks and no independent support transition is asserted."
-    },
-    "adversarial-machine-learning-and-model-attack-surface.prose.6e2a279b9dad": {
-      "state": "editorial_or_question",
-      "rationale": "Cross-chapter handoff instruction; the receiving owner performs its own admission checks and no independent support transition is asserted."
     }
   },
   "non_claims": [

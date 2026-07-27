@@ -58,9 +58,16 @@ Round 17 makes that authority operational rather than aspirational. P2 remains
 the empirical slot and its materialization entry is governed by the latest
 exact capacity and Docker receipt rather than inherited storage weather. The
 book slot remains strictly ordered: reviewed append-only atoms for all
-post-baseline chapters, the W3 inheritance guard, the T1D maturity/source/atom/
-reader/inheritance artifacts, and one combined current 84-chapter reader
-derivative. The owner-directed prose-completion transaction has already placed
+post-baseline chapters and the W3 inheritance guard are terminal; the T1D
+maturity/source/atom/reader/inheritance artifacts are current; one combined
+84-chapter reader derivative follows. W3 freezes the exact pre-edit
+84-chapter NFKC/12-gram baseline, centralizes the shared lifecycle method, moves
+reader-facing repetition at spread eight from 812 to zero, removes the copied
+ten-chapter diagram and test-table fingerprints, and prospectively rejects the
+tracked copied scaffold. Its semantic queue retires 241 inherited prose IDs,
+adjudicates 177 domain-specific replacements, preserves all 4,067 structured
+atoms, and leaves zero pending candidates without moving support. The owner-directed
+prose-completion transaction has already placed
 all accepted T1D concepts and the eight-owner Precision Contract treatment in
 the manuscript without opening protected outcomes, a third empirical lane, a
 new chapter, or support movement. Optimizer, heterogeneous-memory,

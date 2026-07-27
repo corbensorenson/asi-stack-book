@@ -5,9 +5,9 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/governed-objective-formation-value-learning-and-goal-integrity.qmd",
     "structured_atoms_reviewed": 35,
-    "prose_candidates_adjudicated": 27,
+    "prose_candidates_adjudicated": 18,
     "unowned_material_claims": 0,
-    "review_note": "Reviewed the complete admitted Governed Objective Formation, Value Learning, and Goal Integrity chapter, its manifest ownership, source crosswalk, lifecycle, mechanisms, interfaces, invariants, failure inventory, minimum implementation, falsification program, test plan, summary, and handoff. Claim-bearing prose is mapped to the closest owned atom by section; layout fragments, status text, captions, and handoffs remain explicitly nonmaterial. The review preserves argument support and records no efficacy, transfer, release, SOTA, AGI, or ASI promotion."
+    "review_note": "Re-reviewed the complete W3-rewritten and reader-depth-completed Governed Objective Formation Value Learning And Goal Integrity chapter on 2026-07-26. All 18 current prose candidates are adjudicated as owned refinements, bounded explanations, source reports, or cross-chapter handoffs. No unowned material claim, atom proposition, support, release, or publication movement was introduced."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
@@ -16,7 +16,7 @@
       "environment": "The authored ASI Stack interfaces, future controlled fixtures, and prospectively frozen natural or adversarial workloads; production deployment and open-world transfer remain unestablished.",
       "model": "Model- and substrate-agnostic contract design at argument support; any implementation claim must name exact models, checkpoints, policies, prompts, tools, data, and evaluators.",
       "authority": "`governed-objective-formation-value-learning-and-goal-integrity` owns its bounded decision contract; adjacent chapters retain their own authority, and neither prose nor a passing record can widen an action grant.",
-      "time": "Semantic review current through 2026-07-24; material changes to evidence, authority, population, model, environment, ontology, or consumer require reauthorization.",
+      "time": "Semantic review current through 2026-07-26; material changes to evidence, authority, population, model, environment, ontology, or consumer require reauthorization.",
       "artifact": "chapters/governed-objective-formation-value-learning-and-goal-integrity.qmd, its manifest record, source crosswalk (the chapter source packet), claim dossier, and future versioned implementation/evaluation receipts."
     },
     "assumptions": [
@@ -100,118 +100,91 @@
   },
   "atom_reviews": {},
   "prose_candidate_dispositions": {
+    "governed-objective-formation-value-learning-and-goal-integrity.prose.0395632cd4b9": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after W3 as a chapter-specific argument-exit campaign refinement of `governed-objective-formation-value-learning-and-goal-integrity.beyond_sota.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "governed-objective-formation-value-learning-and-goal-integrity.beyond_sota.001"
+    },
+    "governed-objective-formation-value-learning-and-goal-integrity.prose.123ada7acd3e": {
+      "state": "editorial_or_question",
+      "rationale": "Cross-chapter handoff instruction; the receiving owner performs its own admission and no independent support conclusion is created."
+    },
     "governed-objective-formation-value-learning-and-goal-integrity.prose.25ecc3d694ee": {
       "state": "duplicate_of_atom",
       "rationale": "Semantically reviewed as a prose explanation or refinement of `governed-objective-formation-value-learning-and-goal-integrity.problem.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
       "target_atom_id": "governed-objective-formation-value-learning-and-goal-integrity.problem.001"
     },
-    "governed-objective-formation-value-learning-and-goal-integrity.prose.6dda77649580": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
+    "governed-objective-formation-value-learning-and-goal-integrity.prose.2b64eb2969ab": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after the W3 depth repair as a chapter-specific refinement of `governed-objective-formation-value-learning-and-goal-integrity.failure_mode.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "governed-objective-formation-value-learning-and-goal-integrity.failure_mode.001"
     },
-    "governed-objective-formation-value-learning-and-goal-integrity.prose.9a3e6a8ff12a": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
+    "governed-objective-formation-value-learning-and-goal-integrity.prose.37269d17f8e1": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after the W3 depth repair as a chapter-specific refinement of `governed-objective-formation-value-learning-and-goal-integrity.beyond_sota.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "governed-objective-formation-value-learning-and-goal-integrity.beyond_sota.001"
     },
-    "governed-objective-formation-value-learning-and-goal-integrity.prose.3aaf2864d763": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
+    "governed-objective-formation-value-learning-and-goal-integrity.prose.47ac629372e5": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after the W3 depth repair as a chapter-specific refinement of `governed-objective-formation-value-learning-and-goal-integrity.core`; it creates no separate support-bearing atom.",
+      "target_atom_id": "governed-objective-formation-value-learning-and-goal-integrity.core"
     },
-    "governed-objective-formation-value-learning-and-goal-integrity.prose.776b655c3d7d": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
+    "governed-objective-formation-value-learning-and-goal-integrity.prose.4b66d73a65d2": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after W3 as a chapter-specific evaluation and positive-control refinement of `governed-objective-formation-value-learning-and-goal-integrity.minimum.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "governed-objective-formation-value-learning-and-goal-integrity.minimum.001"
     },
-    "governed-objective-formation-value-learning-and-goal-integrity.prose.46e6021e6ba0": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
+    "governed-objective-formation-value-learning-and-goal-integrity.prose.4ec37a9c1043": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after W3 as a chapter-specific evaluation and positive-control refinement of `governed-objective-formation-value-learning-and-goal-integrity.minimum.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "governed-objective-formation-value-learning-and-goal-integrity.minimum.001"
     },
-    "governed-objective-formation-value-learning-and-goal-integrity.prose.0518b15b8aaf": {
+    "governed-objective-formation-value-learning-and-goal-integrity.prose.55b927a3a3f8": {
       "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
+      "rationale": "Formalization-scope caption that narrows a planned finite record target and expressly denies live efficacy, safety, or transfer inference."
     },
-    "governed-objective-formation-value-learning-and-goal-integrity.prose.078c51a45f29": {
+    "governed-objective-formation-value-learning-and-goal-integrity.prose.5a964e07e1aa": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after W3 as a chapter-specific chapter summary of `governed-objective-formation-value-learning-and-goal-integrity.core`; it creates no separate support-bearing atom.",
+      "target_atom_id": "governed-objective-formation-value-learning-and-goal-integrity.core"
+    },
+    "governed-objective-formation-value-learning-and-goal-integrity.prose.6e4e80371048": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after W3 as a chapter-specific invariant synthesis of `governed-objective-formation-value-learning-and-goal-integrity.invariant.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "governed-objective-formation-value-learning-and-goal-integrity.invariant.001"
+    },
+    "governed-objective-formation-value-learning-and-goal-integrity.prose.79903399f99b": {
       "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
+      "rationale": "W3 domain-specific diagram walkthrough; its material boundary remains represented by the chapter's structured atoms."
+    },
+    "governed-objective-formation-value-learning-and-goal-integrity.prose.8a9534915c9d": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after W3 as a chapter-specific mature-target refinement of `governed-objective-formation-value-learning-and-goal-integrity.beyond_sota.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "governed-objective-formation-value-learning-and-goal-integrity.beyond_sota.001"
+    },
+    "governed-objective-formation-value-learning-and-goal-integrity.prose.9a4ed7b5e92a": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed after the W3 depth repair as a chapter-specific refinement of `governed-objective-formation-value-learning-and-goal-integrity.failure_mode.001`; it creates no separate support-bearing atom.",
+      "target_atom_id": "governed-objective-formation-value-learning-and-goal-integrity.failure_mode.001"
     },
     "governed-objective-formation-value-learning-and-goal-integrity.prose.bcabf975a06e": {
       "state": "nonmaterial_explanation",
       "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "governed-objective-formation-value-learning-and-goal-integrity.prose.a796169c7784": {
-      "state": "duplicate_of_atom",
-      "rationale": "Semantically reviewed as a prose explanation or refinement of `governed-objective-formation-value-learning-and-goal-integrity.mechanism.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
-      "target_atom_id": "governed-objective-formation-value-learning-and-goal-integrity.mechanism.001"
     },
     "governed-objective-formation-value-learning-and-goal-integrity.prose.bd9ba7e7b8b4": {
       "state": "duplicate_of_atom",
       "rationale": "Semantically reviewed as a prose explanation or refinement of `governed-objective-formation-value-learning-and-goal-integrity.mechanism.005` within the chapter's declared scope; it creates no separate support-bearing atom.",
       "target_atom_id": "governed-objective-formation-value-learning-and-goal-integrity.mechanism.005"
     },
-    "governed-objective-formation-value-learning-and-goal-integrity.prose.d18d74e7ec22": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "governed-objective-formation-value-learning-and-goal-integrity.prose.c28c8b573493": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "governed-objective-formation-value-learning-and-goal-integrity.prose.5baa1bd83758": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "governed-objective-formation-value-learning-and-goal-integrity.prose.b273b9da3c45": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "governed-objective-formation-value-learning-and-goal-integrity.prose.95b08a9d51f8": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "governed-objective-formation-value-learning-and-goal-integrity.prose.620e415af61e": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "governed-objective-formation-value-learning-and-goal-integrity.prose.7a51d09f9451": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "governed-objective-formation-value-learning-and-goal-integrity.prose.b1e789afc8a0": {
+    "governed-objective-formation-value-learning-and-goal-integrity.prose.f0497196278d": {
       "state": "duplicate_of_atom",
-      "rationale": "Semantically reviewed as a prose explanation or refinement of `governed-objective-formation-value-learning-and-goal-integrity.minimum.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
+      "rationale": "Semantically reviewed after the W3 depth repair as a chapter-specific refinement of `governed-objective-formation-value-learning-and-goal-integrity.minimum.001`; it creates no separate support-bearing atom.",
       "target_atom_id": "governed-objective-formation-value-learning-and-goal-integrity.minimum.001"
     },
-    "governed-objective-formation-value-learning-and-goal-integrity.prose.39fbf6aadcfb": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "governed-objective-formation-value-learning-and-goal-integrity.prose.11a9a576411b": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "governed-objective-formation-value-learning-and-goal-integrity.prose.0538f7bf12b7": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "governed-objective-formation-value-learning-and-goal-integrity.prose.972c55ad6e70": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "governed-objective-formation-value-learning-and-goal-integrity.prose.a45a57738dd9": {
+    "governed-objective-formation-value-learning-and-goal-integrity.prose.d5c40c19e02a": {
       "state": "duplicate_of_atom",
-      "rationale": "Semantically reviewed as a prose explanation or refinement of `governed-objective-formation-value-learning-and-goal-integrity.invariant.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
-      "target_atom_id": "governed-objective-formation-value-learning-and-goal-integrity.invariant.001"
-    },
-    "governed-objective-formation-value-learning-and-goal-integrity.prose.d7c698d66ae4": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
-    },
-    "governed-objective-formation-value-learning-and-goal-integrity.prose.1644f28bb30e": {
-      "state": "editorial_or_question",
-      "rationale": "Cross-chapter handoff instruction; the receiving owner performs its own admission checks and no independent support transition is asserted."
-    },
-    "governed-objective-formation-value-learning-and-goal-integrity.prose.6e2a279b9dad": {
-      "state": "editorial_or_question",
-      "rationale": "Cross-chapter handoff instruction; the receiving owner performs its own admission checks and no independent support transition is asserted."
+      "rationale": "Semantically reviewed as an explicit argument-support boundary for the mature objective-service target; it creates no separate support-bearing atom.",
+      "target_atom_id": "governed-objective-formation-value-learning-and-goal-integrity.beyond_sota.001"
     }
   },
   "non_claims": [

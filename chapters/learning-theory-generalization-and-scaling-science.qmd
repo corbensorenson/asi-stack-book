@@ -39,10 +39,7 @@ open_evidence_gaps:
 
 ## Drafting guardrail
 
-Learning and scaling science owns a distinct control plane, not proof that the control plane
-works. Its source crosswalk supports definitions, mechanisms, failure examples,
-and comparison targets. The design remains at **argument** support until a
-separate accepted evidence transition says otherwise.
+This chapter owns the assumptions and predictive burden behind generalization, transfer, emergence, and scaling claims. It does not turn a fitted curve, asymptotic bound, interpolation result, compression ratio, benchmark jump, or larger model into a universal forecast.
 
 ::: {.asi-human-only}
 ## Human Reading Path
@@ -56,49 +53,39 @@ The lifecycle runs from regime definition through experimental design, curve fit
 
 ## Problem
 
+The central risk is not that every forecast is wrong, but that a useful local
+regularity is promoted beyond the assumptions that made it useful. Scaling can
+change the optimizer's reachable solutions, the data mixture, the effective
+hypothesis class, and the evaluation itself. A curve fitted across nominal
+model sizes may therefore confound several scientific interventions at once.
+
 The stack repeatedly relies on claims that learning will generalize, capabilities will transfer, losses will scale, or phase changes will appear outside observed training support. Those claims require an owner that connects assumptions about data, hypothesis class, optimization, inductive bias, compute, and evaluation to an exact prediction and failure envelope.
 
-This gap matters at the scale of a stack because its output becomes another
-layer's input. If the owner is absent, `vacuous bounds` or
-`distribution laundering` can be normalized before a downstream layer sees it.
-The downstream consumer may possess a valid local record while acting on a
-broken upstream assumption. An explicit owner therefore needs both a positive
-contract and a refusal path: it must say what counts as an admissible
-transition, what remains unresolved, who may consume the result, and when a
-material change forces reauthorization.
+Without this owner, empirical curves, learning-theory bounds, benchmark thresholds, and scaling narratives can each look authoritative while their populations, algorithms, metrics, compute regimes, alternatives, and prediction horizons differ. The [shared lifecycle method](living-book-methodology.qmd#shared-chapter-lifecycle-method) supplies custody; scaling science supplies the assumption ledger and forecast registry.
 
 ## Why existing approaches are insufficient
 
 PAC bounds, capacity measures, stability, compression, information theory, scaling-law fits, emergence plots, and benchmark curves each illuminate part of learning. None is a universal theory of deep networks, and none automatically transports from a loss metric, architecture family, data regime, optimizer, or scale range to downstream capability or safety.
 
-Learning and scaling science must first beat a disciplined composition of the adjacent
-owners. That alternative should win if it can preserve the same identities,
-authority, lifecycle state, failure distinctions, and residuals without
-overloading their primary jobs. A dedicated owner remains necessary because the
-handoffs listed below otherwise leave a missing end-to-end decision. Separation
-does not imply autonomy: this owner must consume upstream records and return
-bounded outputs to downstream owners rather than becoming a new unreviewable
-center of authority.
+Benchmark Ratchets, Resource Economics, optimizer studies, and ordinary statistical review are the strongest alternative composition. It wins if it can preserve quantifiers, data support, hypothesis class, algorithm and optimization bias, metric transformations, breakpoint alternatives, held-out forecasts, and transfer boundaries without this owner.
 
 ```{mermaid}
 flowchart LR
-  A["Declared purpose and bounded authority"] --> B["Versioned chapter-specific contract"]
-  B["Versioned chapter-specific contract"] --> C["Admission and boundary checks"]
-  C["Admission and boundary checks"] --> D["Execute with complete lineage and denominators"]
-  D["Execute with complete lineage and denominators"] --> E["Observe outcomes, costs, and residuals"]
-  E["Observe outcomes, costs, and residuals"] --> F{"Independent checks pass?"}
-  F -- "no" --> G["Quarantine, narrow, correct, or stop"]
-  F -- "yes" --> H["Versioned bounded handoff"]
-  G -- "repair and reauthorize" --> B
-  H -- "material change" --> B
-  B -. "expiry or revocation" .-> G
-  E -. "residual feedback" .-> B
+  Q["Claim and exposed quantifiers"] --> A["Population, sample, hypothesis, algorithm, and metric assumptions"]
+  A --> M["Bound, fit, MDL lens, or emergence hypothesis"]
+  M --> F["Prospective forecast over scale or distribution"]
+  F --> H["Held-out model sizes, tasks, compute regimes, and shifts"]
+  H --> C{"Calibration and alternatives survive?"}
+  C -- "no" --> N["Narrow, reparameterize, split regimes, or retire"]
+  C -- "yes" --> R["Bounded generalization or scaling record"]
+  N --> E["Record failed forecast and alternative explanation"]
+  R --> D["Bind decision use, uncertainty, and transfer limit"]
+  D -. "forecast miss or new substrate" .-> Q
+  R -. "new regime" .-> Q
 ```
 
-**What the Learning Theory, Generalization, and Scaling Science lifecycle shows:** Authority enters before execution,
-chapter-specific state remains versioned, and a failed independent check returns
-the system to correction or quarantine. A successful check grants only the
-bounded downstream handoff; it does not erase residuals or promote its core claim.
+**What this scaling-science diagram shows:** an assumption-bound prediction moves. A retrospective fit or threshold crossing cannot cross as evidence for future scale, broad transfer, or an underlying phase transition.
+
 
 ## Core Claim
 
@@ -106,15 +93,15 @@ bounded downstream handoff; it does not erase residuals or promote its core clai
 
 ## Mechanism
 
-**Contract.** State the population, sampling process, shift model, hypothesis family, learning algorithm, optimization path, inductive bias, metric, and consumer before making a generalization claim. This stage is recorded as a versioned decision rather than an invisible implementation detail. For Learning Theory, Generalization, and Scaling Science, the record must name its inputs, authority, consumer, expiry, and unresolved residuals. A later stage may narrow the decision, but it may not silently broaden the earlier grant or reinterpret a missing field as success.
+**Contract.** State the population, sampling process, shift model, hypothesis family, learning algorithm, optimization path, inductive bias, metric, and consumer before making a generalization claim.
 
-**Admission.** Use multiple explanatory lenses—capacity and complexity, stability, compression and MDL, information, margins, implicit bias, interpolation, and benign-overfitting hypotheses—without laundering one into another. This stage is recorded as a versioned decision rather than an invisible implementation detail. For Learning Theory, Generalization, and Scaling Science, the record must name its inputs, authority, consumer, expiry, and unresolved residuals. A later stage may narrow the decision, but it may not silently broaden the earlier grant or reinterpret a missing field as success.
+**Admission.** Use multiple explanatory lenses—capacity and complexity, stability, compression and MDL, information, margins, implicit bias, interpolation, and benign-overfitting hypotheses—without laundering one into another.
 
-**Execution.** Fit scaling relations with uncertainty, held-out scales, architecture and data identifiers, failed runs, compute accounting, breakpoint diagnostics, and prospective forecasts. This stage is recorded as a versioned decision rather than an invisible implementation detail. For Learning Theory, Generalization, and Scaling Science, the record must name its inputs, authority, consumer, expiry, and unresolved residuals. A later stage may narrow the decision, but it may not silently broaden the earlier grant or reinterpret a missing field as success.
+**Execution.** Fit scaling relations with uncertainty, held-out scales, architecture and data identifiers, failed runs, compute accounting, breakpoint diagnostics, and prospective forecasts.
 
-**Observation.** Distinguish smooth underlying performance from thresholded metrics and test whether apparent emergence survives metric, prompting, sampling, and denominator changes. This stage is recorded as a versioned decision rather than an invisible implementation detail. For Learning Theory, Generalization, and Scaling Science, the record must name its inputs, authority, consumer, expiry, and unresolved residuals. A later stage may narrow the decision, but it may not silently broaden the earlier grant or reinterpret a missing field as success.
+**Observation.** Distinguish smooth underlying performance from thresholded metrics and test whether apparent emergence survives metric, prompting, sampling, and denominator changes.
 
-**Closure.** Challenge transfer and compositionality under natural shift, targeted shift, new task structure, optimizer change, architecture replacement, and data contamination. This stage is recorded as a versioned decision rather than an invisible implementation detail. For Learning Theory, Generalization, and Scaling Science, the record must name its inputs, authority, consumer, expiry, and unresolved residuals. A later stage may narrow the decision, but it may not silently broaden the earlier grant or reinterpret a missing field as success.
+**Closure.** Challenge transfer and compositionality under natural shift, targeted shift, new task structure, optimizer change, architecture replacement, and data contamination.
 
 ### Sample complexity: expose the quantifiers before quoting the bound
 
@@ -239,13 +226,14 @@ smooth; an apparent breakpoint does not prove a new internal algorithm.
 
 ## Interfaces
 
-Learning and scaling science is useful only when its boundaries are sharper than neighboring owners.
-Each interface below therefore names what the adjacent owner keeps and what
-crosses the boundary. The packet must preserve exact object and version
-identity, authority, support state, expiry, residuals, and consumer. A receiving
-layer may reject or narrow it. Merely serializing the fields, passing a schema,
-or recording a dispatch does not prove that the meaning survived or that the
-receiving layer is competent.
+Every interface is a claim translation. Training records expose what was run;
+benchmarks expose measurements under a protocol; resource accounting exposes
+the consumed compute and data; architecture owners expose changes in inductive
+bias. The forecast registry joins these inputs but returns only a dated
+prediction with an interval and domain, never permission to allocate resources
+or deploy.
+
+Optimizers and training systems supply algorithms and run records; benchmarks supply measured outcomes; Resource Economics supplies compute and physical cost; capability thresholds consume bounded forecasts. This chapter owns the assumptions and prediction tests that connect them.
 
 - Governed Model Training owns faithful run execution; this chapter interprets what the resulting learning may generalize.
 - Efficient ASI owns resource hypotheses; scaling science supplies bounded predictions, not resource authority.
@@ -254,13 +242,13 @@ receiving layer is competent.
 
 ## Invariants
 
-For Learning and scaling science, the following invariants are admission conditions rather than aspirations. They must
-hold across retries, replacements, cached results, branches, migrations,
-partial failures, and human intervention. When the implementation cannot
-establish an invariant, the result is a named residual or blocked route—not a
-default value. A finite formal model may prove that an authored record follows
-these rules, but only implementation and outcome evidence can show that a live
-system actually enforces them.
+Failed and censored runs remain part of the scientific denominator. Changing a
+prompt, metric, data filter, optimizer, stopping rule, or model family creates a
+new regime unless the forecast contract explicitly modeled that change.
+Uncertainty expands rather than disappears when the extrapolation crosses an
+unsupported regime boundary.
+
+Under the [shared lifecycle method](living-book-methodology.qmd#shared-chapter-lifecycle-method), quantifiers remain explicit, interpolation is not transfer, metric transformation cannot manufacture emergence, retrospective fit is not prospective prediction, and each new scale or distribution can invalidate the record.
 
 - Every claim names its distribution, metric, algorithm, architecture, scale range, and uncertainty.
 - Training fit, in-distribution generalization, transfer, compositionality, and safety remain distinct.
@@ -270,75 +258,69 @@ system actually enforces them.
 
 ## Failure modes
 
-The principal failure family includes vacuous bounds; distribution laundering; test contamination; post-hoc curve fitting; breakpoint omission; metric-threshold emergence; architecture-regime shift; optimizer confounding; double-descent surprise; grokking misread as magic; compression-as-understanding; loss-to-capability substitution; credit-assignment ambiguity; failed-run censoring. These are not presumed
-exhaustive. New substrates, deployment settings, populations, and adversaries
-reopen the failure inventory and may narrow authority immediately.
+Curve fitting can also leak the future through hyperparameter selection,
+architecture iteration, benchmark reuse, or informal knowledge of larger
+runs. A nominally held-out point is not prospective if those decisions used
+its neighborhood. The registry records what was known when the forecast was
+frozen and distinguishes a clean forecast from retrospective reconstruction.
 
-Learning and scaling science detection also has its own false-positive and false-negative costs.
-An architecture that blocks every useful route is not vindicated merely
-because it prevented one hazard, while a permissive architecture cannot hide
-unsafe attempts inside an average utility score. Evaluation must preserve the
-full denominator, distinguish mechanism failure from instrument failure, and
-show whether correction, recovery, compensation, or withdrawal actually
-reached the affected state.
+The principal failure family includes vacuous bounds; distribution laundering; test contamination; post-hoc curve fitting; breakpoint omission; metric-threshold emergence; architecture-regime shift; optimizer confounding; double-descent surprise; grokking misread as magic; compression-as-understanding; loss-to-capability substitution; credit-assignment ambiguity; failed-run censoring.
+
+Evaluation must compare multiple plausible functional forms and simpler baselines, reserve future scales or tasks, expose selection and correction, and measure calibration as well as point error. Positive controls use synthetic regimes with known breakpoints; an underpowered scale range cannot refute discontinuity or generalization mechanisms.
 
 ## Minimum Viable Implementation
 
+The notebook should emit an immutable forecast card before opening each held-out
+point. The card names candidate models, priors or fitting rules, training runs
+eligible for the fit, uncertainty method, metric transformations, prediction
+intervals, break criteria, and how abstention is scored. A replay mode verifies
+that the frozen inputs reproduce the forecast and that later corrections do
+not overwrite the original.
+
 Create a claim-contract and forecasting notebook over several public small-model runs. Freeze candidate curve families and explanatory lenses, hold out scale points and task families, record failed runs and tuning, test breakpoint alternatives, and compare prediction intervals for loss, calibration, and downstream tasks. The result can evaluate local forecast discipline, not establish a universal law.
 
-A Learning and scaling science implementation should begin with an ordinary baseline and the strongest
-credible competing design, not only an intentionally weak comparator.
-Engineering and tuning budgets, information access, model capability, human
-help, retry policy, and stopping rules should be matched or reported. Positive
-controls must show that the task and instruments can detect the intended
-mechanism before a null or negative outcome is interpreted. Every result
-remains bounded to the tested population, environment, model, implementation,
-and evaluator.
+The minimum registry freezes competing curve families, compute and data accounting, metric transformations, breakpoint tests, and held-out model sizes or tasks before final outcomes. It reports forecast error, interval coverage, rank stability, correction, and total experimentation cost.
 
 ## Evidence and falsification program
 
-A fair Learning and scaling science test must freeze the mechanism, authority, comparator set, tuning and
-rescue budgets, metrics, stopping rule, and protected holdout before outcomes
-are visible. It must include favorable or oracle checks, mechanism-specific
-ablations, positive and negative controls, complete attempts, independent
-scoring, joint utility/safety/cost accounting, and explicit blocked or null
-outcomes. A weak implementation can narrow that implementation; it cannot
-refute the architectural idea.
+Argument exit requires repeated prospective forecasts across model families, task families, compute regimes, and distribution shifts, with preregistered alternatives, held-out scales, calibration, breakpoint sensitivity, and independent reanalysis. The result supports only the stated population, algorithm, metric, and horizon.
 
 ## Mature Research Target
 
-The stronger chapter makes learning theory operational inside a replaceable stack: each theory and scaling law carries its assumptions, diagnostics, expiration conditions, and consumers. Better theories can replace weaker ones without turning provisional extrapolation into architecture dogma.
+A mature scaling science is a portfolio of competing, prospectively scored
+models rather than one canonical curve. It connects mechanistic hypotheses,
+learning-theory assumptions, empirical fits, resource models, and natural
+shift tests to a common forecast ledger. Models gain or lose weight through
+calibration across new scales, tasks, data regimes, optimizers, and
+architectures, while failed predictions remain visible.
 
-At maturity, the Learning and scaling science contract becomes a replaceable service
-behind stable interfaces. New models, algorithms, institutions, storage
-systems, and hardware can enter through declared adapters while the surrounding
-stack continues to enforce the same authority and evidence ceilings. This is
-architectural extensibility, not a claim that one implementation has discovered
-the final mechanism.
+The research target makes interventions informative. Instead of changing
+model size, data quality, optimizer, architecture, and post-training together,
+campaigns isolate or factorially vary the suspected causes. Continuous and
+thresholded metrics, in-distribution and transfer tasks, average and subgroup
+performance, and loss and capability outcomes are scored separately. Known
+synthetic breakpoints and smooth regimes verify that the analysis can recover
+both kinds of behavior.
 
-For Learning and scaling science, the decisive standard is joint performance. The mature design must improve
-useful outcomes or decision quality while keeping unsafe release, false
-refusal, missed help, latency, resource use, human burden, and unresolved
-residuals visible. If a simpler system achieves the same bounded result at lower
-total lifecycle cost, the simpler system should be preferred. If no competent
-test exists yet, the end state remains a falsifiable target rather than a
-marketing conclusion.
+Its decision value is judged against simpler heuristics: latest-run
+extrapolation, constant elasticity, nearest-neighbor scale, or no forecast.
+Useful science should improve interval coverage, resource planning, experiment
+selection, and early detection of regime change without overstating future
+capability or safety. When alternatives remain indistinguishable, the mature
+answer is a wider interval or a targeted next experiment.
 
-The Learning and scaling science target also remains reversible. Operators need a declared way to narrow,
-replace, migrate, or retire the mechanism while preserving affected records and
-obligations. Architectural permanence without demonstrated benefit would be a
-failure of governance, not evidence of maturity.
+A mature scaling science says not merely that performance rose, but which assumptions generated a forecast, where it failed, what changed at the boundary, and how much confidence survives transfer. It guides resource and safety decisions while remaining easy to falsify and retire.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
-| Contract completeness | Reject missing identity, authority, scope, version, consumer, residual, or expiry fields. | planned |
-| Boundary mutation | Substitute an adjacent owner's authority and require rejection. | planned |
-| Failure-family mutation | Inject at least one mechanism-specific failure and preserve the full attempt denominator. | planned |
-| No-promotion control | Ensure prose, schemas, fixtures, and source-reported results cannot promote the chapter core claim. | planned |
+| Quantifier exposure | Reject a bound or generalization claim whose population, sample, hypothesis, algorithm, or probability statement is missing. | planned |
+| Metric-emergence control | Apply monotone and nonlinear metric transforms and distinguish threshold artifacts from behavioral discontinuities. | planned |
+| Prospective scale holdout | Freeze competing curves before opening larger models, tasks, or compute regimes. | planned |
+| Alternative and correction ledger | Preserve failed fits, selected forms, breakpoint searches, and forecast revisions in the denominator. | planned |
 
-Planned formalization hook: `lean:learning-theory-generalization-and-scaling-science.admission_boundary` remains a process-contract target; it does not claim an implemented theorem.
+Planned formalization route: `lean:learning-theory-generalization-and-scaling-science.admission_boundary` covers only the finite admission record for learning theory generalization and scaling science; it cannot establish whether learning theory generalization and scaling science works safely or transfers.
 
 ## Source crosswalk
 
@@ -407,24 +389,25 @@ outcome; “the model learned generally” is not.
 
 ## Summary
 
-A generalization, transfer, emergence, or scaling assertion should be accepted only through a dated claim contract that binds population and sampling assumptions, data support, hypothesis and algorithm, optimization and inductive bias, complexity or explanatory lens, metric, compute regime, uncertainty, breakpoint tests, held-out prediction, alternatives, and transfer boundary; a bound, fit, interpolation result, compression ratio, benchmark jump, or larger model alone establishes neither broad generalization, capability emergence, safety, nor future scale behavior. The subject is now integrated into the live manuscript at argument
-support. Its empirical, formal, transfer, and deployment work remains an open
-evidence program rather than an excuse to defer the concept itself.
+Learning claims become decision-relevant only when their quantifiers,
+population, data support, learner, optimizer, architecture, metric, resource
+regime, uncertainty, alternatives, and prediction horizon remain attached.
+Bounds, compression, interpolation behavior, scaling fits, and apparent
+emergence are complementary lenses with different assumptions and failure
+modes.
 
-The Learning and scaling science reading rule is to follow the artifacts: identify the declared
-contract, inspect the authority and version, check the complete attempt and
-failure denominator, examine the independent decision, and retain every
-residual through the handoff. When any link is absent, the correct conclusion
-is narrower authority and more explicit uncertainty—not assumed success and
-not a sweeping refutation of the idea.
+The forecast registry changes the culture from explaining yesterday's curve to
+risking a prediction about tomorrow's held-out point. It preserves failed runs,
+selection decisions, breakpoint alternatives, metric transformations, and
+corrections, allowing transfer to broaden only through prospective evidence
+across materially different regimes.
+
+Learning theory and scaling science are valuable when they make assumptions and predictions easier to challenge. The forecast discipline keeps bounds, fits, simplicity lenses, interpolation, emergence, compute, metrics, uncertainty, alternatives, and transfer limits visible so retrospective regularity cannot become destiny or acquire unwarranted authority over future architectures and safety decisions.
 
 ## Handoff
 
-**Readiness Gates, Residual Escrow, and Quarantine** follows. It consumes this chapter's bounded
-outputs without inheriting authority, certainty, or support that this chapter
-did not establish. The receiving chapter must preserve the identities,
-versions, unresolved conflicts, residuals, and non-claims recorded here, then
-perform its own admission checks before acting. A handoff receipt proves only
-that the packet crossed the declared interface; it does not prove that either
-chapter's mechanism is effective, complete, safe, transferable, or ready for
-release.
+**Readiness Gates, Residual Escrow, and Quarantine** receives only the
+forecast's exact population, algorithm, metric, compute regime, interval,
+calibration, expiry, and unresolved alternatives. Readiness must not treat the
+forecast as a measured capability, a threshold crossing, authority to deploy,
+or a substitute for a direct evaluation when that evaluation is feasible.

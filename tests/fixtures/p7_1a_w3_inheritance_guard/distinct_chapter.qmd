@@ -1,0 +1,62 @@
+---
+title: "Synthetic Distinct Queue-Pressure Owner"
+source_ids:
+  - fixture_queueing_primary
+  - fixture_backpressure_reference
+---
+
+# Synthetic Distinct Queue-Pressure Owner
+
+[Queue-pressure admission must preserve age, priority, cancellation, and
+downstream capacity as separate state — support: argument]
+
+The common custody rule comes from the
+[shared lifecycle method](../../../chapters/living-book-methodology.qmd#shared-chapter-lifecycle-method).
+This fixture owns the narrower decision of whether a queued job may consume a
+specific capacity lease without starving older work or hiding cancellation.
+
+```{mermaid}
+flowchart LR
+  Q["Job, age, priority, and cancellation state"] --> C["Capacity and downstream-pressure snapshot"]
+  C --> A{"Lease admissible without starvation?"}
+  A -- "no" --> W["Wait, shed, or return a named capacity residual"]
+  A -- "yes" --> L["Issue expiring capacity lease"]
+  L --> O["Observe service, cancellation, and queue-age effects"]
+  O -. "pressure drift" .-> C
+```
+
+## Interfaces and ownership boundary
+
+The scheduler owns ordering policy; the resource owner owns physical capacity.
+This chapter owns only the joined admission record. It cannot create
+capacity, rewrite priority, or treat an empty queue as evidence of fair service.
+
+## Evidence and falsification program
+
+Compare the joined admission rule with FIFO, strict priority, and weighted-fair
+queueing under frozen arrival traces. Report useful throughput, tail wait,
+starvation, cancellation latency, rejected work, resource cost, and every
+unfinished job. Reject the idea if a simpler baseline dominates without
+discarding a protected class or hiding overload.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Starvation witness | Inject a sustained high-priority stream and require the protected age bound to remain visible. | planned |
+| Cancellation race | Cancel before and after lease issue and require exactly one terminal disposition. | planned |
+| Capacity drift | Shrink downstream capacity and require lease expiry or reauthorization. | planned |
+| Simpler-baseline challenge | Prefer FIFO or weighted fairness when it preserves the same guarantees at lower cost. | planned |
+
+## Source crosswalk
+
+- `fixture_queueing_primary` defines the synthetic queue state and starvation
+  challenge; it supplies no empirical result.
+- `fixture_backpressure_reference` motivates the capacity signal; it supplies no
+  authority or production claim.
+
+## Handoff
+
+The execution owner receives the exact lease, queue-state digest, expiry,
+cancellation rule, and unresolved capacity residual. It must not infer job
+correctness, resource sufficiency, or permission beyond that lease.

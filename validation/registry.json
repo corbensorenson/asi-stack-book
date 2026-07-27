@@ -2202,7 +2202,15 @@
     "schemas/post_activation_six_chapter_claim_atom_addendum.schema.json",
     "scripts/build_post_activation_six_chapter_claim_atom_addendum.py",
     "scripts/validate_post_activation_six_chapter_claim_atom_addendum.py",
-    "scripts/register_post_activation_six_chapter_claim_atom_addendum.py"
+    "scripts/register_post_activation_six_chapter_claim_atom_addendum.py",
+    "evidence_quality/p7_1a_w3_inheritance_guard.json",
+    "schemas/p7_1a_w3_inheritance_guard.schema.json",
+    "docs/p7_1a_w3_inheritance_guard.md",
+    "scripts/build_p7_1a_w3_inheritance_guard.py",
+    "scripts/validate_p7_1a_w3_inheritance_guard.py",
+    "scripts/register_p7_1a_w3_inheritance_guard.py",
+    "tests/fixtures/p7_1a_w3_inheritance_guard/copied_scaffold.qmd",
+    "tests/fixtures/p7_1a_w3_inheritance_guard/distinct_chapter.qmd"
   ],
   "units": [
     {
@@ -14416,11 +14424,56 @@
       "prohibited_inference": "Claim organization is not claim truth, proof, empirical evidence, implementation evidence, source-derived support, reproduction, transfer, safety, release, SOTA, AGI, or ASI.",
       "contract_precision": "exact",
       "semantic_review_state": "manual_six_chapter_core_boundary_mechanism_failure_and_argument_exit_review"
+    },
+    {
+      "id": "validate_p7_1a_w3_inheritance_guard.py:424",
+      "order": 424,
+      "script": "validate_p7_1a_w3_inheritance_guard.py",
+      "args": [],
+      "execution_tier": "pr",
+      "validation_class": "proof_or_evidence_gate",
+      "input_contract": "Exact 84-chapter manifest at immutable pre-edit commit 99457770390a4af4848b9e43656907cfe099fd75 and current worktree; NFKC tokenization; raw, editorial, diagram, and Codex-test projections; ten semantic-diff reviews; copied and distinct fixtures.",
+      "input_artifacts": [
+        "evidence_quality/p7_1a_w3_inheritance_guard.json",
+        "schemas/p7_1a_w3_inheritance_guard.schema.json",
+        "docs/p7_1a_w3_inheritance_guard.md",
+        "scripts/build_p7_1a_w3_inheritance_guard.py",
+        "scripts/validate_p7_1a_w3_inheritance_guard.py",
+        "scripts/register_p7_1a_w3_inheritance_guard.py",
+        "tests/fixtures/p7_1a_w3_inheritance_guard/copied_scaffold.qmd",
+        "tests/fixtures/p7_1a_w3_inheritance_guard/distinct_chapter.qmd",
+        "chapters/living-book-methodology.qmd",
+        "book_structure.json",
+        "evidence_quality/claim_atom_registry.json",
+        "evidence_quality/prose_claim_candidate_queue.json",
+        "evidence_quality/claim_atom_reviews.json"
+      ],
+      "output_contract": "Centralize shared lifecycle prose once, preserve chapter-specific claims/sources/boundaries/evidence plans, report generated projections separately, and reject future copied chapter scaffolds.",
+      "output_assertions": [
+        "84 exact manifest chapters before and after",
+        "editorial repeated 12-grams at spread eight fall 812 to zero",
+        "copied diagram and Codex-test maximum spread fall ten to zero",
+        "ten chapter-specific repairs retain meaning custody",
+        "241 inherited prose IDs retire into 177 reviewed domain-specific replacements with 4,067 atoms unchanged and zero pending candidates",
+        "copied fixture rejects and distinct fixture accepts",
+        "eighteen mutations reject",
+        "support, release, and publication effects none"
+      ],
+      "claim_scope": "Editorial ownership, distinctness, and admission-time inheritance control only.",
+      "negative_controls": "tracked_copied_scaffold_fixture_plus_validator_owned_eighteen_mutations",
+      "negative_control_cases": [
+        "copied lifecycle diagram and generic disposition table",
+        "missing unique claim, sources, boundary, evidence plan, diagram, tests, or handoff",
+        "threshold, denominator, fingerprint, custody, support, or publication mutation"
+      ],
+      "prohibited_inference": "Reduced repetition and schema-valid distinctness do not establish claim truth, empirical evidence, formal proof, implementation efficacy, safety, transfer, SOTA, AGI, ASI, release, or publication.",
+      "contract_precision": "exact",
+      "semantic_review_state": "manual_ten_chapter_claim_source_boundary_and_support_preservation_review"
     }
   ],
   "summary": {
-    "required_artifact_count": 2158,
-    "unit_count": 423
+    "required_artifact_count": 2166,
+    "unit_count": 424
   },
   "non_claims": [
     "Registry coverage does not establish semantic adequacy of every validator.",
