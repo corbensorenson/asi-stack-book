@@ -1,5 +1,27 @@
 # Changelog
 
+## 2026-07-27 — Theseus T0/T0A architecture-currentness reconciliation
+
+- Replaced the book's compressed single-`T0` critical-path row with the exact
+  source-owned dependency: historical `T0` complete, successor `T0A` active,
+  and `T1` blocked by `T0A`.
+- Added a public-safe, digest-bound currentness import from clean local Theseus
+  `main` at `d5b99128`, while disclosing that the source branch was 53 commits
+  ahead of its remote and making no claim that those commits were published.
+- Compared the historical 123-artifact architecture package with the current
+  tree: 104 artifacts were unchanged, 19 changed, and none were missing. The
+  old GREEN package remains an immutable control but cannot supply current
+  training authority.
+- Recorded the GREEN factorized selection and acceleration selector, the
+  fail-closed independent-replay requirement, and the exact three-step T0A
+  exit: guarded replay, replacement content-addressed freeze, then the broader
+  readiness gate against the 84-chapter book.
+- Threaded the correction through the Project Theseus chapter, Prototype
+  Roadmap, canonical roadmap, machine status/schema, and a registered
+  validator with twelve rejecting mutations. No training, protected outcome,
+  model output, support transition, release transition, or capability claim
+  occurred.
+
 ## 2026-07-27 — P2-R3a current infrastructure entry receipt
 
 - Executed a second immutable P2 entry preflight from source commit

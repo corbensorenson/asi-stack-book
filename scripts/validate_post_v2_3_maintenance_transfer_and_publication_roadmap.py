@@ -1026,8 +1026,8 @@ def errors(data: dict) -> list[str]:
     critical_path = quality_program.get("critical_path", [])
     if quality_program.get("shared_flagship_id") != "ASI-THESEUS-FLAGSHIP-01":
         out.append("shared quality flagship identity drifted")
-    if [row.get("id") for row in critical_path] != [f"T{i}" for i in range(7)]:
-        out.append("shared quality critical path must be exactly T0 through T6")
+    if [row.get("id") for row in critical_path] != ["T0", "T0A", "T1", "T2", "T3", "T4", "T5", "T6"]:
+        out.append("shared quality critical path must preserve historical T0, successor T0A, then T1 through T6")
     if quality_program.get("support_state_effect") != "none" or quality_program.get("release_effect") != "none":
         out.append("quality roadmap laundered support or release state")
     empirical_lanes = quality_program.get("empirical_lanes", {})

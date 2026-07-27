@@ -404,13 +404,28 @@ payloads, and support states may not.
 
 | Gate | Primary owner | Book exit condition |
 |---|---|---|
-| `T0` — Finite architecture closure | Theseus | The campaign architecture is faithfully implemented or explicitly excluded with an adequacy-scoped disposition; the book records no efficacy claim. |
+| `T0` — Historical architecture control | Theseus | The prior independently replayed 57M package remains immutable and usable only as a historical control; later source changes cannot inherit its training authority. |
+| `T0A` — Successor finite architecture closure | Theseus | The closed successor docket is faithfully implemented or explicitly excluded with an adequacy-scoped disposition, independently replayed, and published as a replacement content-addressed freeze; the book records no efficacy claim. |
 | `T1` — Frozen neural-seed campaign | Theseus | Training lineage is immutable and no architecture choice is tuned from held-out outcomes. |
 | `T2` — Honest behavioral numerator | Theseus + P2 competence review | At least one student arm produces nonzero model-only, source-disjoint functional behavior, or the exact regime receives only the negative scope it earned. |
 | `T3` — Real daily use | Theseus dogfood lane | At least one week or five distinct days of real use preserve accepted, missed, ignored, corrected, completed, failed, and abstained outcomes with component attribution. |
 | `T4` — Joined governed vertical | P5 + Theseus | One natural happy path and one blocked or rollback path join intent through observed effect and terminal outcome without orphan, stale projection, or learned-credit laundering. |
 | `T5` — Matched causal flagship | P2 + P5 | Independently frozen Q1 admission and Q2 student results are composed without shared-denominator or support leakage, with independent evaluation, uncertainty, weak tails, fair rescue, and total lifecycle cost. |
 | `T6` — Synthesis and challenge | P3 + P7 | A public-safe evidence pack updates only the exact affected atoms and reader case; any broader language waits for separate reproduction and two transfer settings. |
+
+The 2026-07-27 public-safe currentness handoff resolves a previously compressed
+dependency. Project Theseus `main` at `d5b99128` reports `T0` complete, `T0A`
+active, and `T1` blocked by `T0A`. Its July 26 historical freeze bound 123
+artifacts; direct digest comparison found 104 unchanged, 19 changed, and none
+missing. The historical package therefore remains an immutable control but is
+not current training authority. The finite factorized selection and
+acceleration selector are GREEN, so the legal next action is not another open
+architecture-idea cycle: it is the guarded replacement replay, publication of
+the current content-addressed package, and then the broader readiness gate
+against the 84-chapter book. The exact sanitized receipt is
+`docs/theseus_t0a_architecture_closure_currentness_import.md`. No training,
+held-out outcome, support movement, or efficacy inference follows from this
+currentness reconciliation.
 
 P2 may continue corpus, evaluator, construct, resource, and comparator preflight
 before `T2`. Assisted-product success may support usefulness at `T3`, but
@@ -1132,7 +1147,7 @@ book.
 1. Finish C0 and attest the current public surface.
 2. Preserve the terminal C1, current 84-chapter role map, and W3 inheritance
    receipts without waiting for flagship outcomes.
-3. Keep P2/T0–T4 as the empirical headline; C3–C6 may build only the artifacts
+3. Keep P2/T0A–T4 as the empirical headline; C3–C6 may build only the artifacts
    required by that campaign and the narrative.
 4. Freeze C7 baselines, competence, challenge thresholds, injections, metrics,
    and stopping rules before outcome opening.
@@ -1634,7 +1649,7 @@ truth synchronization, execution returns to the existing queue:
 1. P2 storage-feasible materialization and four-slot competence qualification;
 2. the current 84-chapter atom, inheritance, maturity, and reader-freshness
    reconciliation, superseding stale 66/80-chapter wording;
-3. T0–T4 Theseus flagship prerequisites and the effect-complete P5 reference;
+3. T0A–T4 Theseus flagship prerequisites and the effect-complete P5 reference;
 4. claim-specific evidence programs for the four new chapters only when they
    pass the same competence, safety, rights, independent-evaluator,
    denominator, reproduction, and transfer gates as every other chapter.
@@ -3072,7 +3087,8 @@ feasible protocol and four-slot replacement qualification remain its unblocking
 path. `P2-Q1-D1` stays closed until
 P2's own competence dossier passes, then may open for the Q1 strong-worker
 arms. The disjoint `ASI-THESEUS-Q2-D2` stays closed through `T2`–`T4`; D1
-outcomes cannot tune it. `T0` through `T5` are the primary causal sequence for
+outcomes cannot tune it. Historical `T0`, successor `T0A`, and then `T1`
+through `T5` are the primary causal sequence for
 the composed flagship. P4 and the P6.5 book-organization lane are terminal.
 The terminal Round 18 breadth transaction is historical; subsequent admitted
 and reconciled owners bring the current manifest to 84 chapters, all
@@ -3122,7 +3138,8 @@ is not a debugging interface.
    task outcome. Once the seven competence gates
    pass, open only `P2-Q1-D1` without waiting for Theseus gates `T2`–`T4`;
    keep `ASI-THESEUS-Q2-D2` disjoint and outcome-sealed.
-3. **Shared flagship prerequisites (`T0`–`T4`).** Reconcile the exact Theseus
+3. **Shared flagship prerequisites (`T0A`–`T4`).** Preserve historical `T0`,
+   then reconcile the exact successor Theseus
    architecture freeze, behavior-positive student, real-use record, and joined
    happy/blocked trace before `ASI-THESEUS-Q2-D2` opens. Cross-repository
    handoff moves artifacts and maximum inference, never outcomes, rows, or

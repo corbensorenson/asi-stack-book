@@ -74,15 +74,23 @@
     "critical_path": [
       {
         "id": "T0",
-        "state": "in_progress",
+        "state": "complete",
         "depends_on": [],
-        "purpose": "close or explicitly exclude every training-invalidating architecture item and freeze an independently replayed package"
+        "purpose": "preserve the prior independently replayed 57M architecture package as an immutable historical control"
+      },
+      {
+        "id": "T0A",
+        "state": "active",
+        "depends_on": [
+          "T0"
+        ],
+        "purpose": "independently replay the finite successor architecture docket and publish a replacement content-addressed freeze over the current source tree"
       },
       {
         "id": "T1",
-        "state": "blocked_by_T0",
+        "state": "blocked_by_T0A",
         "depends_on": [
-          "T0"
+          "T0A"
         ],
         "purpose": "train the frozen neural seed and matched dense control with immutable lineage"
       },

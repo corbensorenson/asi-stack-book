@@ -2240,7 +2240,11 @@
     "lean/AsiStackProofs/TheseusReference.lean",
     "scripts/integrate_c6_final_stronger_model_actions.py",
     "experiments/p2_governed_repository_admission/infrastructure_materialization/attempts/2026-07-27-r3a-002/result.json",
-    "docs/p2_r3a_capacity_and_docker_preflight_2026_07_27.md"
+    "docs/p2_r3a_capacity_and_docker_preflight_2026_07_27.md",
+    "scripts/build_theseus_t0a_architecture_closure_currentness_import.py",
+    "scripts/validate_theseus_t0a_architecture_closure_currentness_import.py",
+    "experiments/theseus_t0a_architecture_closure_currentness_import/results/2026-07-27-local.json",
+    "docs/theseus_t0a_architecture_closure_currentness_import.md"
   ],
   "units": [
     {
@@ -6792,8 +6796,8 @@
       "args": [],
       "execution_tier": "deep",
       "validation_class": "proof_or_evidence_gate",
-      "input_contract": "Re-executed governed Git slice, matched baseline metrics, derived invariant suite, claim dispositions, proof manifest/adequacy/artifact audits, volatile source records, inter-stack routing, terminology refresh, and readable D\u2013F closure audit.",
-      "output_contract": "Reject drift in bounded empirical metrics, invariant mutations/residuals, core dispositions, proof target/adequacy traceability, volatile source routing, or D\u2013F closure boundaries.",
+      "input_contract": "Re-executed governed Git slice, matched baseline metrics, derived invariant suite, claim dispositions, proof manifest/adequacy/artifact audits, volatile source records, inter-stack routing, terminology refresh, and readable D–F closure audit.",
+      "output_contract": "Reject drift in bounded empirical metrics, invariant mutations/residuals, core dispositions, proof target/adequacy traceability, volatile source routing, or D–F closure boundaries.",
       "claim_scope": "Local roadmap closure for Workstreams D, E, and F at their explicitly bounded empirical, formal, and source-governance scopes.",
       "negative_controls": "validator_owned",
       "prohibited_inference": "Local closure does not prove deployed safety, general cost-effectiveness, formal runtime enforcement, novelty, exhaustive literature coverage, or independent review.",
@@ -14688,11 +14692,57 @@
       "prohibited_inference": "The audit does not retire proofs, validate implementations, establish empirical evidence, or move support, release, SOTA, AGI, or ASI claims.",
       "contract_precision": "exact",
       "semantic_review_state": "all_remaining_stronger_model_actions_dependency_consumer_and_scope_reviewed"
+    },
+    {
+      "id": "validate_theseus_t0a_architecture_closure_currentness_import:429",
+      "order": 429,
+      "script": "validate_theseus_t0a_architecture_closure_currentness_import.py",
+      "args": [],
+      "execution_tier": "deep",
+      "validation_class": "proof_or_evidence_gate",
+      "input_contract": "One clean local-authority Project Theseus main snapshot, seven exact file digests, historical 123-artifact T0 package currentness comparison, explicit T0/T0A/T1 states, two fail-closed observation receipts, public-safety filter, and no outcome/support/release effect.",
+      "input_artifacts": [
+        "scripts/build_theseus_t0a_architecture_closure_currentness_import.py",
+        "scripts/validate_theseus_t0a_architecture_closure_currentness_import.py",
+        "experiments/theseus_t0a_architecture_closure_currentness_import/results/2026-07-27-local.json",
+        "docs/theseus_t0a_architecture_closure_currentness_import.md"
+      ],
+      "output_contract": "Reject source-authority drift, remote-divergence erasure, historical-package denominator shrinkage, stale-package currentness laundering, premature T0A/T1 progression, replay-failure erasure, protected-outcome invention, private copying, support promotion, or release promotion.",
+      "output_assertions": [
+        "clean d5b99128 local main authority",
+        "53 commits ahead of origin/main disclosed",
+        "T0 complete",
+        "T0A active",
+        "T1 blocked by T0A",
+        "104 of 123 historical package artifacts unchanged",
+        "19 changed and zero missing",
+        "zero protected outcomes/support/release movement",
+        "twelve rejecting mutations"
+      ],
+      "claim_scope": "Exact sanitized cross-repository dependency and architecture-freeze currentness observation only.",
+      "negative_controls": "validator_owned_and_import_bound",
+      "negative_control_cases": [
+        "source commit substitution",
+        "dirty-worktree erasure",
+        "remote-divergence erasure",
+        "changed-artifact denominator shrink",
+        "stale package marked current",
+        "T0A marked complete",
+        "T1 unblocked",
+        "independent-replay failure erasure",
+        "protected-outcome invention",
+        "private-payload copy",
+        "support promotion",
+        "release promotion"
+      ],
+      "prohibited_inference": "The currentness handoff does not establish training readiness, model behavior, capability, useful throughput, safety, deployment, transfer, AGI, ASI, SOTA, or any support movement.",
+      "contract_precision": "exact",
+      "semantic_review_state": "internal_public_safe_cross_repository_currentness_audit_not_independent"
     }
   ],
   "summary": {
-    "required_artifact_count": 2196,
-    "unit_count": 428
+    "required_artifact_count": 2200,
+    "unit_count": 429
   },
   "non_claims": [
     "Registry coverage does not establish semantic adequacy of every validator.",

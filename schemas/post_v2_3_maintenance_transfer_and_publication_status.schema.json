@@ -210,11 +210,14 @@
         },
         "critical_path": {
           "type": "array",
-          "minItems": 7,
-          "maxItems": 7,
+          "minItems": 8,
+          "maxItems": 8,
           "prefixItems": [
             {
               "$ref": "#/$defs/T0"
+            },
+            {
+              "$ref": "#/$defs/T0A"
             },
             {
               "$ref": "#/$defs/T1"
@@ -2616,7 +2619,7 @@
       "properties": {
         "id": {
           "type": "string",
-          "pattern": "^T[0-6]$"
+          "pattern": "^T(?:0A|[0-6])$"
         },
         "state": {
           "type": "string",
@@ -2627,7 +2630,7 @@
           "uniqueItems": true,
           "items": {
             "type": "string",
-            "pattern": "^T[0-6]$"
+            "pattern": "^T(?:0A|[0-6])$"
           }
         },
         "purpose": {
@@ -2647,10 +2650,32 @@
               "const": "T0"
             },
             "state": {
-              "const": "in_progress"
+              "const": "complete"
             },
             "depends_on": {
               "const": []
+            }
+          }
+        }
+      ]
+    },
+    "T0A": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/criticalPathRow"
+        },
+        {
+          "properties": {
+            "id": {
+              "const": "T0A"
+            },
+            "state": {
+              "const": "active"
+            },
+            "depends_on": {
+              "const": [
+                "T0"
+              ]
             }
           }
         }
@@ -2667,11 +2692,11 @@
               "const": "T1"
             },
             "state": {
-              "const": "blocked_by_T0"
+              "const": "blocked_by_T0A"
             },
             "depends_on": {
               "const": [
-                "T0"
+                "T0A"
               ]
             }
           }

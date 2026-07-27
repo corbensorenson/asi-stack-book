@@ -1,0 +1,137 @@
+{
+  "schema_version": "asi_stack.theseus_t0a_architecture_closure_currentness_import.v1",
+  "import_id": "theseus-t0a-architecture-closure-currentness-2026-07-27-d5b99128",
+  "observed_utc": "2026-07-27T10:08:45Z",
+  "source_authority": {
+    "project": "Project Theseus / Theseus-Hive",
+    "owner": "Corben Sorenson",
+    "source_kind": "local_author_owned_implementation_reference",
+    "branch": "main",
+    "commit": "d5b99128395f6af5a34b731ba024305d2e44433c",
+    "worktree_clean": true,
+    "ahead_of_origin_main_commit_count": 53,
+    "source_project_mutations": 0,
+    "network_calls": 0,
+    "external_inference_calls": 0
+  },
+  "frozen_source_files": [
+    {
+      "path": "configs/roadmap_implementation_matrix.json",
+      "sha256": "3a3ee6037d915a50df9eeb1dfbdabdb512e943e404a4918095c071946cc32417",
+      "bytes": 926634
+    },
+    {
+      "path": "configs/pretraining_architecture_freeze.json",
+      "sha256": "27bc33c30cdce630912b53eb543160ac2bfc8636780aa6280b6166c8aa06e57e",
+      "bytes": 26935
+    },
+    {
+      "path": "reports/pretraining_architecture_freeze_package.json",
+      "sha256": "12217a2969e950622882f43d3a801a80e3d0c49da6250f520ca084ed7dfaa8c0",
+      "bytes": 171879
+    },
+    {
+      "path": "reports/pretraining_factorized_bakeoff.json",
+      "sha256": "b7c84562337cbea6641dcef82ec71c3ef384adf740c7a80873907080c5d0f4e6",
+      "bytes": 5587
+    },
+    {
+      "path": "configs/pretraining_architecture_candidates.json",
+      "sha256": "83701918935f22d9b9dd0d5e4fa8d7b5c4391eab047c83fffdad78fe6ba66c29",
+      "bytes": 34861
+    },
+    {
+      "path": "configs/training_acceleration_final_selector.json",
+      "sha256": "c0fdb87d5f777b98649403f7fb7eb7d5ede962f4a4487894461324ee35ffa593",
+      "bytes": 2561
+    },
+    {
+      "path": "reports/training_acceleration_final_selector.json",
+      "sha256": "3a347abe77866a8f9e9665bdb4b2fed26c34445561497102ea313145add1b1b2",
+      "bytes": 8704
+    }
+  ],
+  "historical_t0_package": {
+    "created_utc": "2026-07-26T14:17:19.993860Z",
+    "package_identity": "sha256:9d7dc30b378067c0a254fdca21ef54e3c5469af63c748d3cc49e1f427b251cce",
+    "trigger_state": "GREEN",
+    "disposition": "architecture_frozen_training_not_started",
+    "artifact_count": 123,
+    "unchanged_artifact_count": 104,
+    "changed_artifact_count": 19,
+    "missing_artifact_count": 0,
+    "current_for_source_commit": false,
+    "role": "immutable_historical_control_only"
+  },
+  "current_t0a_state": {
+    "t0_state": "complete",
+    "t0a_state": "active",
+    "t1_state": "blocked_by_T0A",
+    "strict_architecture_first_enforcement": true,
+    "training_authority_state": "denied_until_finite_docket_and_freeze_package_are_green",
+    "finite_docket_closed_to_untriggered_new_architecture_families": true,
+    "factorized_bakeoff_trigger_state": "GREEN",
+    "factorized_bakeoff_disposition": "factorized_architecture_selected_training_not_started",
+    "acceleration_selector_trigger_state": "GREEN",
+    "architecture_package_current": false,
+    "remaining_blockers": [
+      "run the guarded replacement independent replay against the current source tree",
+      "publish a replacement content-addressed architecture-freeze package binding the current artifacts",
+      "rerun the broader pre-training readiness gate against the current 84-chapter ASI Stack after the replacement package exists"
+    ]
+  },
+  "observation_receipts": [
+    {
+      "command": "python3 $THESEUS_ROOT/scripts/pretraining_architecture_freeze.py --out $TMPDIR/theseus_pretraining_architecture_freeze_2026_07_27.json",
+      "exit_code": 1,
+      "result": "independent_replay_required",
+      "interpretation": "expected fail-closed dry-run result; no replay or source mutation occurred"
+    },
+    {
+      "command": "python3 $THESEUS_ROOT/scripts/roadmap_implementation_gate.py --gate --out $TMPDIR/gate.json --markdown-out $TMPDIR/gate.md --crosswalk-out $TMPDIR/crosswalk.json --ai-book-root $AI_BOOK_ROOT",
+      "exit_code": 1,
+      "result": "source_side_report_write_forbidden_by_ai_book_workspace_boundary",
+      "interpretation": "environmental observation only; not a Theseus architecture or behavior result"
+    }
+  ],
+  "book_disposition": {
+    "prior_state": "single_T0_in_progress_row_conflated_historical_and_successor_freezes",
+    "new_state": "historical_T0_complete_successor_T0A_active_T1_blocked_by_T0A",
+    "next_legal_action": "guarded replacement replay and current content-addressed package publication in Theseus",
+    "protected_outcomes_opened": 0,
+    "support_state_effect": "none",
+    "release_effect": "none"
+  },
+  "public_safety": {
+    "raw_gate_copied": false,
+    "raw_crosswalk_copied": false,
+    "private_payloads_copied": 0,
+    "training_rows_copied": 0,
+    "prompts_copied": 0,
+    "solutions_copied": 0,
+    "checkpoints_copied": 0,
+    "held_out_outcomes_copied": 0,
+    "restricted_paths_copied": 0
+  },
+  "negative_controls": [
+    "source_commit_substitution",
+    "dirty_worktree_erasure",
+    "remote_divergence_erasure",
+    "changed_artifact_denominator_shrink",
+    "stale_package_marked_current",
+    "T0A_marked_complete",
+    "T1_unblocked",
+    "independent_replay_failure_erasure",
+    "protected_outcome_invention",
+    "private_payload_copy",
+    "support_promotion",
+    "release_promotion"
+  ],
+  "non_claims": [
+    "This is a public-safe implementation-reference currentness handoff, not a training or capability result.",
+    "A GREEN historical package and GREEN factorized bakeoff do not make the changed current source tree training-ready.",
+    "The import does not establish model quality, useful behavior, training success, optimizer superiority, safety, deployment, transfer, AGI, ASI, or SOTA.",
+    "The failed dry-run and workspace-boundary observations are not negative evidence about the architecture.",
+    "No chapter-core or non-core support state changes."
+  ]
+}
