@@ -3,8 +3,8 @@ title: "White-Box Evidence, Interpretability, and Activation Governance"
 chapter_id: "white-box-evidence-interpretability-and-activation-governance"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
-draft_maturity: "v0.4 integrated reader chapter"
-last_updated: "2026-07-19"
+draft_maturity: "v0.5 source-role and method-comparison integrated reader chapter"
+last_updated: "2026-07-26"
 primary_sources:
   - "deterministic_capability_compilation"
   - "kernel_english_residual_compiler"
@@ -14,6 +14,10 @@ primary_sources:
   - "ext_monosemanticity_2023"
   - "ext_scaling_sparse_autoencoders_2024"
   - "ext_circuit_tracing_2025"
+  - "ext_probe_control_tasks_2019"
+  - "ext_interpretability_illusion_bert_2021"
+  - "ext_saebench_2025"
+  - "ext_sae_benchmark_reliability_2026"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -29,12 +33,12 @@ open_evidence_gaps:
 | Chapter ID | `white-box-evidence-interpretability-and-activation-governance` |
 | Part | Part IV — Evidence, Implementation, and the Living Book |
 | Status | conceptual |
-| Manuscript maturity | v0.4 integrated reader chapter |
-| Last updated | 2026-07-19 |
-| Primary source records | `deterministic_capability_compilation`, `kernel_english_residual_compiler`, `qcsa_whitepaper`, `platonic_world_model`, `ext_transformer_circuits_2021`, `ext_monosemanticity_2023`, `ext_scaling_sparse_autoencoders_2024`, `ext_circuit_tracing_2025` |
+| Manuscript maturity | v0.5 source-role and method-comparison integrated reader chapter |
+| Last updated | 2026-07-26 |
+| Primary source records | Four Corben architecture sources plus ten external method, challenge, and measurement comparators; see the source crosswalk below. |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source loading state | All assigned records have inventory entries and source notes; external results remain source-reported. |
+| Source loading state | All fourteen assigned records have inventory entries and source notes; external results remain source-reported. |
 | Test state | The packet schema, record-shape fixture, independent semantic validator, twelve negative mutations, and two public Lean targets are implemented. The claim-bearing campaign is protocol-ready and resource-isolated, not executed; no model-internal outcome or support transition exists. |
 
 ## Drafting guardrail
@@ -294,7 +298,12 @@ regularization, data, negative controls, and probe capacity. A powerful probe
 may learn a task from weak traces; a linear probe may miss information
 available nonlinearly. Selectivity controls, label permutations, matched random
 features, held-out concepts, and interventions are needed before performance
-becomes mechanism evidence.
+becomes mechanism evidence. Hewitt and Liang's control-task method makes the
+core confound explicit: a probe that predicts the target and a randomized
+word-type mapping may be demonstrating its own memorization capacity rather
+than a simple property of the representation. Report target accuracy and
+control accuracy together; do not let a slightly higher target score hide much
+lower selectivity.
 
 **Sparse autoencoders and dictionary learning** approximate activations with a
 learned feature dictionary and sparse codes. The record includes training
@@ -304,6 +313,14 @@ stability, feature splitting and merging, and coverage of the target behavior.
 A named or apparently monosemantic feature is an interpretation hypothesis.
 Readable exemplars do not prove that it causes the behavior, exhausts the
 concept, or survives model change.
+
+The same extractor can support a convincing but distribution-bound story.
+Bolukbasi et al. held a BERT direction fixed and found that its apparently
+coherent top-activating examples changed across corpora. The governance lesson
+is not that every direction is meaningless. It is that global, dataset-level,
+and local interpretations are competing constructs until materially different
+corpora and deployment-relevant shifts distinguish them. A random same-corpus
+split can preserve the very geometry that produced the illusion.
 
 **Circuit and attribution methods** propose a computational subgraph, path, or
 set of components relevant to an output. Local linearity, patching
@@ -328,6 +345,65 @@ mechanistically chosen adversarial examples have different semantics. The
 record asks whether predicted behavior changed, unrelated capabilities moved,
 redundant paths compensated, the intervention was on-distribution, and an
 independently implemented evaluator agreed.
+
+### Comparative method matrix
+
+No method occupies every rung of the evidence ladder. The selection rule begins
+with the question and admits the cheapest competent instrument; it does not
+begin with a favored visualization.
+
+| Method family | Directly observes or estimates | Strong comparator or control | Characteristic residual | Maximum pre-causal inference |
+|---|---|---|---|---|
+| Diagnostic probe | Information decodable by a specified probe family from a specified activation | Control task, label permutation, simple and regularized probes, matched random features | Probe learning, leakage, layer/token selection, nonlinear miss | The named information is decodable by this instrument in this distribution |
+| Exemplar or automated label | A compact hypothesis about inputs associated with a unit or feature | Blinded counterexamples, alternate labels, multiple corpora, human and independent-model review | Selection bias, dataset geometry, anthropomorphic or overly broad labels | The label predicts selected held-out activations within its tested envelope |
+| Sparse dictionary / SAE | A reconstruction of activations through learned sparse coordinates | Raw-neuron, PCA/ICA, supervised dictionary, architecture, width, sparsity, seed, and checkpoint sweeps | Dead latents, absorption, splitting, merging, missed nonlinear structure | The extractor supplies a useful coordinate system under stated reconstruction and sparsity conditions |
+| Circuit / attribution graph | A method-relative subgraph or path relevant to an output | Behavioral baseline, random or frequency-matched graph, alternate decomposition, reconstruction check | Omitted paths, replacement-model error, off-distribution patching | The proposed components predict or reconstruct the scoped behavior under the extraction assumptions |
+| Causal intervention | Change in behavior after ablation, patching, replacement, or steering | Sham and off-target interventions, dose response, mediation alternatives, protected-capability tests | Broad damage, redundant paths, unnatural states, evaluator blindness | A scoped necessity, sufficiency, specificity, or mediation result for the exact intervention |
+| Activation policy | A monitored or modified model component used in operation | Behavior-only control, abstention, independent safety path, rollback and retirement drill | Gaming, false alarms, latency, privacy exposure, drift, collateral capability change | A bounded operational decision after independent qualification—not general understanding |
+
+Sparse-autoencoder comparisons need an additional measurement discipline.
+SAEBench demonstrates why reconstruction at a chosen sparsity cannot stand in
+for concept detection, interpretability, disentanglement, or downstream
+intervention behavior, and why those dimensions should not be averaged into
+one global score. Its practitioner guidance motivates width and sparsity sweeps
+with directly comparable baselines. Chanin's later reliability audit then
+challenges constituent metrics through independent reseeds, training-trajectory
+discrimination, synthetic ground truth, degraded controls, and an oracle. These
+results are complementary: use a multi-dimensional benchmark, and require each
+dimension to prove that it can distinguish the cases it is asked to rank.
+
+### Evidence ladder and stop rules
+
+The white-box ladder is deliberately noninheritant. Passing a lower rung does
+not imply the next one.
+
+1. **Decodability:** a specified instrument extracts a signal beyond matched
+   controls.
+2. **Stability:** the signal survives seeds, batches, checkpoints, annotators,
+   and appropriate method variation.
+3. **Reconstruction:** the extracted representation preserves the relevant
+   activation or behavior with its residual visible.
+4. **Semantic construct validity:** positive, negative, convergent,
+   discriminant, and cross-distribution tests support the named concept over
+   plausible alternatives.
+5. **Causal necessity or sufficiency:** a controlled intervention moves the
+   target outcome in the predicted direction.
+6. **Mediation and specificity:** the proposed path explains the effect better
+   than alternatives while sparing off-target and protected capabilities.
+7. **Cross-distribution transfer:** the result survives the material
+   environments, populations, model changes, and opportunities named in the
+   claim.
+8. **Intervention utility:** the method improves a bounded diagnosis or action
+   against a strong behavior-only baseline after collateral and total cost.
+9. **Policy authority:** an independent owner admits a versioned monitor or
+   intervention with expiry, fallback, rollback, and a narrow authority ceiling.
+
+A failed probe, SAE metric, circuit extractor, or intervention stops at the
+instrument, implementation, construct, or exact-mechanism level established by
+its controls. It cannot become a broad negative result about information,
+features, interpretability, or model safety. Conversely, a clean lower-rung
+positive remains diagnostic until the causal, transfer, utility, and authority
+rungs are separately earned.
 
 The strongest result is a scoped chain: seeded mechanisms are recovered;
 plausible alternatives are distinguished; held-out behavior or failure is
@@ -650,6 +726,10 @@ scope claimed and an accepted evidence transition records that movement.
 | `ext_monosemanticity_2023` | Dictionary-learning route for extracting more interpretable features | Source-reported feature examples do not establish a canonical semantic basis, causal completeness, or local reproduction |
 | `ext_scaling_sparse_autoencoders_2024` | Scalable sparse-autoencoder training and evaluation comparator, including reconstruction/sparsity and dead-latent concerns | Scaling a feature extractor does not establish semantic faithfulness, causal coverage, safety, or transfer |
 | `ext_circuit_tracing_2025` | Replacement-model attribution graphs, perturbation validation, and reconstruction-error boundary | Source-reported graph results do not establish whole-model understanding, safe steering, or local reproduction |
+| `ext_probe_control_tasks_2019` | Control tasks and selectivity for separating probe performance from a probe family's capacity to memorize | ELMo linguistic-probe results do not establish a universal control task, causal use of decoded information, or a local result |
+| `ext_interpretability_illusion_bert_2021` | Cross-dataset challenge and the distinction among global, dataset-level, and local concept structure | A BERT sentence-embedding case does not show that every feature is illusory or that causal interpretations cannot transfer |
+| `ext_saebench_2025` | Multi-metric SAE comparison across reconstruction, concept detection, interpretability, disentanglement, and downstream uses | Standardization and source-reported rankings do not make every metric reliable or establish semantic and causal faithfulness |
+| `ext_sae_benchmark_reliability_2026` | Reseed, discriminability, synthetic-ground-truth, degraded-control, and oracle audit of selected SAE metrics | Metric- and setting-scoped counterevidence cannot refute SAEs, SAEBench as a whole, or interpretability as a field |
 | `deterministic_capability_compilation` | Candidate-specific validation, residual escrow, authority ceilings, and reification boundaries for learned capability objects | Corben-authored design program; no foundry implementation or preservation result is inherited |
 | `kernel_english_residual_compiler` | Protected objects, explicit residuals, round-trip checks, and versioned migration as internal-evidence design analogies | Corben-authored proposal; no efficiency, fidelity, or model-internal result is inherited |
 | `qcsa_whitepaper` | Stable semantic identity and evidence-bearing hypergraph concepts for versioned feature/circuit records | Existing local QCSA results do not test mechanistic interpretability and cannot promote this chapter |
@@ -668,7 +748,7 @@ These rows keep White-Box Evidence, Interpretability, and Activation Governance'
 ## Current evidence and non-claims
 
 The repository currently contains a manifest packet, this integrated reader
-chapter, eight source mappings, `schemas/white_box_evidence_packet.schema.json`,
+chapter, fourteen source mappings, `schemas/white_box_evidence_packet.schema.json`,
 one explicitly expired record-shape fixture, an independently implemented
 semantic validator, a checked finite Lean routing model, and a prospectively
 frozen argument-exit protocol. It contains no

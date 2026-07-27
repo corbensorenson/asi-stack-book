@@ -2210,7 +2210,13 @@
     "scripts/validate_p7_1a_w3_inheritance_guard.py",
     "scripts/register_p7_1a_w3_inheritance_guard.py",
     "tests/fixtures/p7_1a_w3_inheritance_guard/copied_scaffold.qmd",
-    "tests/fixtures/p7_1a_w3_inheritance_guard/distinct_chapter.qmd"
+    "tests/fixtures/p7_1a_w3_inheritance_guard/distinct_chapter.qmd",
+    "evidence_quality/p7_2_t1d_six_chapter_maturity.json",
+    "schemas/p7_2_t1d_six_chapter_maturity.schema.json",
+    "docs/p7_2_t1d_six_chapter_maturity_and_source_role_review_2026_07_26.md",
+    "scripts/build_p7_2_t1d_six_chapter_maturity.py",
+    "scripts/validate_p7_2_t1d_six_chapter_maturity.py",
+    "scripts/register_p7_2_t1d_six_chapter_maturity.py"
   ],
   "units": [
     {
@@ -14469,11 +14475,48 @@
       "prohibited_inference": "Reduced repetition and schema-valid distinctness do not establish claim truth, empirical evidence, formal proof, implementation efficacy, safety, transfer, SOTA, AGI, ASI, release, or publication.",
       "contract_precision": "exact",
       "semantic_review_state": "manual_ten_chapter_claim_source_boundary_and_support_preservation_review"
+    },
+    {
+      "id": "validate_p7_2_t1d_six_chapter_maturity.py:425",
+      "order": 425,
+      "script": "validate_p7_2_t1d_six_chapter_maturity.py",
+      "args": [],
+      "execution_tier": "pr",
+      "validation_class": "proof_or_evidence_gate",
+      "input_contract": "Six exact current chapters, their six-condition manuscript-maturity locations, passage-reviewed source roles, applicable claim identities, four existing-owner repairs, reader projections, and chapter-specific prose anchors.",
+      "input_artifacts": [
+        "evidence_quality/p7_2_t1d_six_chapter_maturity.json",
+        "schemas/p7_2_t1d_six_chapter_maturity.schema.json",
+        "docs/p7_2_t1d_six_chapter_maturity_and_source_role_review_2026_07_26.md",
+        "scripts/build_p7_2_t1d_six_chapter_maturity.py",
+        "scripts/validate_p7_2_t1d_six_chapter_maturity.py",
+        "scripts/register_p7_2_t1d_six_chapter_maturity.py",
+        "book_structure.json",
+        "sources/source_inventory.json",
+        "appendices/C_claim_evidence_matrix.qmd",
+        "appendices/H_external_sources.qmd"
+      ],
+      "output_contract": "Record manuscript maturity for competent implementation and a fair test while preserving residuals, noninheritance, current-reader follow-up, and zero support movement.",
+      "output_assertions": [
+        "6 of 6 chapter maturity records complete",
+        "36 of 36 condition decisions passed for manuscript maturity",
+        "12 of 12 chapter-specific anchors have one corpus owner",
+        "4 of 4 existing-owner repairs present",
+        "5 of 5 White-Box source receipts current",
+        "10 applicable atom identities reconciled",
+        "18 mutations reject",
+        "zero support, release, or publication movement"
+      ],
+      "claim_scope": "Idea placement, source-role engagement, reader organization, and future implementation/test specification only.",
+      "negative_controls": "validator_owned_eighteen_scope_source_identity_reader_residual_and_authority_mutations",
+      "prohibited_inference": "Manuscript maturity is not proof, empirical evidence, reproduction, mechanism success or failure, transfer, safety, readiness, release, SOTA, AGI, or ASI.",
+      "contract_precision": "exact",
+      "semantic_review_state": "manual_six_chapter_field_challenge_mechanism_failure_source_and_reader_review"
     }
   ],
   "summary": {
-    "required_artifact_count": 2166,
-    "unit_count": 424
+    "required_artifact_count": 2172,
+    "unit_count": 425
   },
   "non_claims": [
     "Registry coverage does not establish semantic adequacy of every validator.",

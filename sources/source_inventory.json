@@ -1,5 +1,72 @@
 [
   {
+    "id": "ext_probe_control_tasks_2019",
+    "title": "Designing and Interpreting Probes with Control Tasks",
+    "priority": "external_literature",
+    "layer": "mechanistic_interpretability",
+    "chapter_targets": [
+      "white-box-evidence-interpretability-and-activation-governance"
+    ],
+    "url": "https://aclanthology.org/D19-1275/",
+    "notes": "Primary probe-method comparator for control tasks and selectivity: a probe must be evaluated against its capacity to learn control labels rather than treating linguistic-task accuracy as representation evidence. The source studies ELMo linguistic probes; it does not establish a universal probe test, causal use of decoded information, model safety, or an ASI Stack result.",
+    "source_type": "conference_paper",
+    "published": "2019-11-01",
+    "updated": "2019-11-01",
+    "citation_label": "Hewitt and Liang (2019), Designing and Interpreting Probes with Control Tasks",
+    "doi": "10.18653/v1/D19-1275"
+  },
+  {
+    "id": "ext_interpretability_illusion_bert_2021",
+    "title": "An Interpretability Illusion for BERT",
+    "priority": "external_literature",
+    "layer": "mechanistic_interpretability",
+    "chapter_targets": [
+      "white-box-evidence-interpretability-and-activation-governance"
+    ],
+    "url": "https://arxiv.org/abs/2104.07143",
+    "notes": "Primary cross-dataset construct-validity challenge showing that apparently coherent neuron or direction interpretations can change across corpora because datasets occupy different regions of representation space. The BERT sentence-embedding result does not prove that all features are illusory, that causal methods fail, or that the finding transfers unchanged to other models and modalities.",
+    "source_type": "preprint",
+    "arxiv_id": "2104.07143",
+    "published": "2021-04-14",
+    "updated": "2021-04-14",
+    "citation_label": "Bolukbasi et al. (2021), An Interpretability Illusion for BERT",
+    "doi": "10.48550/arXiv.2104.07143"
+  },
+  {
+    "id": "ext_saebench_2025",
+    "title": "SAEBench: A Comprehensive Benchmark for Sparse Autoencoders in Language Model Interpretability",
+    "priority": "external_literature",
+    "layer": "mechanistic_interpretability",
+    "chapter_targets": [
+      "white-box-evidence-interpretability-and-activation-governance"
+    ],
+    "url": "https://arxiv.org/abs/2503.09532",
+    "notes": "Primary multi-metric SAE comparator spanning concept detection, automated interpretability, reconstruction, feature disentanglement, and downstream tasks. It reports that sparsity-fidelity rankings do not reliably predict other metrics and that one global score would obscure tradeoffs; its studied models, methods, metrics, and source-reported results do not establish semantic or causal faithfulness.",
+    "source_type": "conference_paper",
+    "arxiv_id": "2503.09532",
+    "published": "2025-03-12",
+    "updated": "2025-06-04",
+    "citation_label": "Karvonen et al. (2025), SAEBench",
+    "doi": "10.48550/arXiv.2503.09532"
+  },
+  {
+    "id": "ext_sae_benchmark_reliability_2026",
+    "title": "Are Sparse Autoencoder Benchmarks Reliable?",
+    "priority": "external_literature",
+    "layer": "mechanistic_interpretability",
+    "chapter_targets": [
+      "white-box-evidence-interpretability-and-activation-governance"
+    ],
+    "url": "https://arxiv.org/abs/2605.18229",
+    "notes": "Primary 2026 audit of selected SAEBench metrics through reseed noise, training-trajectory discriminability, and synthetic ground-truth correlation. It reports material reliability problems for TPP and SCR at canonical settings and weaker-than-assumed discrimination elsewhere. This is metric- and setting-scoped counterevidence, not a refutation of sparse autoencoders, interpretability, or every SAEBench task.",
+    "source_type": "preprint",
+    "arxiv_id": "2605.18229",
+    "published": "2026-05-18",
+    "updated": "2026-05-18",
+    "citation_label": "Chanin (2026), Are Sparse Autoencoder Benchmarks Reliable?",
+    "doi": "10.48550/arXiv.2605.18229"
+  },
+  {
     "id": "ext_constructive_interdependence_human_ai_2026",
     "title": "Who Is Helping Whom? Analyzing Inter-Dependencies to Evaluate Cooperation in Human-AI Teaming",
     "priority": "external_literature",

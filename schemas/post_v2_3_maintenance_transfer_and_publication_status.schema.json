@@ -86,7 +86,7 @@
       ],
       "properties": {
         "state": {
-          "const": "w3_terminal_t1d_maturity_packet_ready"
+          "const": "t1d_terminal_current_reader_freshness_ready"
         },
         "headline_priority": {
           "const": "P2"
@@ -110,7 +110,7 @@
           "const": "P2-R3-storage-materialization-and-replacement-qualification"
         },
         "immediate_book_packet": {
-          "const": "P7.2-T1D-proof-readiness-depth-pack"
+          "const": "P6.5-R16-B-current-reader-freshness"
         },
         "immediate_formal_packet": {
           "const": "P4-terminal-no-open-formal-packet"
@@ -920,7 +920,7 @@
           "support_state_effect": "none"
         },
         "current_reader_freshness_packet": {
-          "state": "queued_for_current_84_chapter_derivative",
+          "state": "active_current_84_chapter_derivative",
           "published_reader_2026_07_18_is_immutable_historical_release": true,
           "current_working_manifest_chapter_count": 84,
           "must_cover_all_current_manifest_chapters": true,
@@ -1068,7 +1068,7 @@
     },
     "post_round_18_depth_and_coverage_amendment": {
       "const": {
-        "state": "depth_packet_active_candidates_admitted_by_no_deferral_policy",
+        "state": "depth_packet_terminal_candidates_admitted_by_no_deferral_policy",
         "review_path": "docs/post_round_18_depth_and_coverage_review_reconciliation_2026_07_24.md",
         "p2_displacement_allowed": false,
         "structural_admission_freeze": false,
@@ -1082,7 +1082,7 @@
         ],
         "depth_packet": {
           "id": "P7.2-T1D-proof-readiness-depth-pack",
-          "state": "meaning_bearing_prose_complete_maturity_artifacts_queued_after_R16_A_and_W3",
+          "state": "terminal_manuscript_maturity_source_atom_reader_and_inheritance_reconciled",
           "chapter_ids": [
             "inner-alignment-mesa-optimization-and-learned-objective-integrity",
             "multi-agent-dynamics-collective-intelligence-and-systemic-risk",

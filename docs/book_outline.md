@@ -59,8 +59,8 @@ the empirical slot and its materialization entry is governed by the latest
 exact capacity and Docker receipt rather than inherited storage weather. The
 book slot remains strictly ordered: reviewed append-only atoms for all
 post-baseline chapters and the W3 inheritance guard are terminal; the T1D
-maturity/source/atom/reader/inheritance artifacts are current; one combined
-84-chapter reader derivative follows. W3 freezes the exact pre-edit
+maturity/source/atom/reader/inheritance packet is terminal; one combined
+84-chapter reader derivative is the current book packet. W3 freezes the exact pre-edit
 84-chapter NFKC/12-gram baseline, centralizes the shared lifecycle method, moves
 reader-facing repetition at spread eight from 812 to zero, removes the copied
 ten-chapter diagram and test-table fingerprints, and prospectively rejects the
@@ -72,8 +72,10 @@ all accepted T1D concepts and the eight-owner Precision Contract treatment in
 the manuscript without opening protected outcomes, a third empirical lane, a
 new chapter, or support movement. Optimizer, heterogeneous-memory,
 inference-cache, T1D, and Precision Contract manuscript depth is therefore
-present at argument support; their remaining formal, executable, empirical,
-source-resolution, and reader artifacts retain the active roadmap gates.
+present at argument support. T1D's source-role, maturity, inheritance, atom,
+and reader-surface reconciliation is also terminal; remaining formal,
+executable, empirical, source-resolution, and current-reader work retains the
+active roadmap gates.
 
 The Phase 1 idea-placement and prose-convergence gate is complete.
 `docs/c1_c8_phase1_idea_placement_and_prose_audit_2026_07_25.md` records the
@@ -6225,11 +6227,10 @@ Source loading queue:
 
 | Role | Source IDs | Loading instruction |
 |---|---|---|
-| Primary | `ext_transformer_circuits_2021`, `ext_monosemanticity_2023`, `ext_scaling_sparse_autoencoders_2024`, `ext_circuit_tracing_2025` | Read for mechanistic frameworks, sparse features, scaling, interventions, and stated limits; do not infer completeness or cross-model transfer. |
+| Primary | `ext_transformer_circuits_2021`, `ext_monosemanticity_2023`, `ext_scaling_sparse_autoencoders_2024`, `ext_circuit_tracing_2025`, `ext_probe_control_tasks_2019`, `ext_interpretability_illusion_bert_2021`, `ext_saebench_2025`, `ext_sae_benchmark_reliability_2026`, `ext_elk_report_2021`, `ext_influence_functions_2017` | Read for mechanistic frameworks, probe selectivity, cross-dataset construct challenge, sparse features, multi-metric comparison, benchmark reliability, interventions, latent knowledge, attribution, and stated limits; do not infer completeness or cross-model transfer. |
 | Supporting | `deterministic_capability_compilation`, `kernel_english_residual_compiler`, `qcsa_whitepaper`, `platonic_world_model` | Use for evidence contracts, residual accounting, substrate plurality, and representation hypotheses; local sources provide no interpretability result. |
 
 
-| Manifest assignment reconciliation | `ext_elk_report_2021`, `ext_influence_functions_2017` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: behavior tests reveal outputs but not necessarily mechanisms, while
@@ -6250,6 +6251,9 @@ Draft arc:
 - Mechanism: measure reconstruction loss, dead and split/merged features,
   superposition, missed pathways, side effects, unexplained residual, method
   disagreement, and checkpoint drift; labels retain examples and counterexamples.
+- Comparison: use the chapter's method matrix and noninheritant evidence ladder
+  to keep decodability, stability, reconstruction, semantic validity, causal
+  challenge, transfer, intervention utility, and policy authority separate.
 - Interfaces: model and activation registries provide identity and access;
   Evaluation and Safety Cases may consume scoped evidence; Capability Thresholds
   and Readiness retain decision authority; evidence may trigger scrutiny or
@@ -7560,7 +7564,8 @@ Structural-completeness queue (2026-07-19):
 and records four first-tranche manifest entries—white-box evidence and
 activation governance, governed world models and reality grounding, human
 factors and meaningful oversight, and governed operations/incident command.
-The working manifest contains 59 entries. White-Box Evidence is terminally
+That historical working manifest contained 59 entries; the current manifest
+contains 84. White-Box Evidence is terminally
 integrated as an argument-level reader chapter with its packet, formal route,
 resource-isolated claim-bearing protocol, source crosswalk, and non-claim
 boundary complete; its empirical campaign remains deliberately unexecuted and

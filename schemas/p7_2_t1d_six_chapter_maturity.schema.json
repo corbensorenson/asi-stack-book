@@ -1,0 +1,210 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://theasistack.com/schemas/p7_2_t1d_six_chapter_maturity.schema.json",
+  "title": "ASI Stack P7.2-T1D Six-Chapter Manuscript Maturity Receipt",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "packet_id",
+    "snapshot_date",
+    "state",
+    "maturity_definition",
+    "word_count_is_acceptance_gate",
+    "chapter_count",
+    "condition_count",
+    "chapter_records",
+    "accepted_existing_owner_repairs",
+    "white_box_source_packet",
+    "chapter_specific_inheritance_audit",
+    "atom_reconciliation",
+    "reader_reconciliation",
+    "non_claims",
+    "support_state_effect",
+    "release_effect",
+    "publication_effect"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "asi_stack.p7_2_t1d_six_chapter_maturity.v1"
+    },
+    "packet_id": {
+      "const": "P7.2-T1D-six-chapter-proof-readiness-depth-pack-2026-07-26"
+    },
+    "snapshot_date": {
+      "const": "2026-07-26"
+    },
+    "state": {
+      "const": "terminal_manuscript_maturity_no_support_movement"
+    },
+    "maturity_definition": {
+      "type": "string",
+      "minLength": 80
+    },
+    "word_count_is_acceptance_gate": {
+      "const": false
+    },
+    "chapter_count": {
+      "const": 6
+    },
+    "condition_count": {
+      "const": 6
+    },
+    "chapter_records": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "required": [
+          "chapter_id",
+          "chapter_path",
+          "chapter_sha256",
+          "claim_label",
+          "support_state",
+          "maturity_conditions",
+          "source_roles",
+          "source_note_paths",
+          "claim_atom_ids",
+          "reader_projection",
+          "chapter_specificity_evidence",
+          "residuals",
+          "maximum_next_inference",
+          "support_state_effect"
+        ],
+        "properties": {
+          "chapter_id": {
+            "type": "string"
+          },
+          "chapter_path": {
+            "type": "string"
+          },
+          "chapter_sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "claim_label": {
+            "const": "Design rationale"
+          },
+          "support_state": {
+            "const": "argument"
+          },
+          "maturity_conditions": {
+            "type": "object",
+            "minProperties": 6,
+            "maxProperties": 6,
+            "additionalProperties": {
+              "type": "object",
+              "required": [
+                "status",
+                "chapter_locations"
+              ],
+              "properties": {
+                "status": {
+                  "const": "passed_for_manuscript_maturity"
+                },
+                "chapter_locations": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "type": "string",
+                    "minLength": 3
+                  }
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "source_roles": {
+            "type": "object",
+            "minProperties": 4,
+            "maxProperties": 4,
+            "additionalProperties": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "source_note_paths": {
+            "type": "array",
+            "minItems": 4,
+            "uniqueItems": true,
+            "items": {
+              "type": "string"
+            }
+          },
+          "claim_atom_ids": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 5,
+            "uniqueItems": true,
+            "items": {
+              "type": "string"
+            }
+          },
+          "reader_projection": {
+            "type": "object"
+          },
+          "chapter_specificity_evidence": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "residuals": {
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "type": "string",
+              "minLength": 40
+            }
+          },
+          "maximum_next_inference": {
+            "const": "competent_implementation_and_fair_test_design_only"
+          },
+          "support_state_effect": {
+            "const": "none"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "accepted_existing_owner_repairs": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4
+    },
+    "white_box_source_packet": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5
+    },
+    "chapter_specific_inheritance_audit": {
+      "type": "object"
+    },
+    "atom_reconciliation": {
+      "type": "object"
+    },
+    "reader_reconciliation": {
+      "type": "object"
+    },
+    "non_claims": {
+      "type": "array",
+      "minItems": 5,
+      "items": {
+        "type": "string"
+      }
+    },
+    "support_state_effect": {
+      "const": "none"
+    },
+    "release_effect": {
+      "const": "none"
+    },
+    "publication_effect": {
+      "const": "none"
+    }
+  }
+}

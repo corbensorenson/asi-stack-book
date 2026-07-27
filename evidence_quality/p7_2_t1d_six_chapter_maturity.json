@@ -1,0 +1,810 @@
+{
+  "schema_version": "asi_stack.p7_2_t1d_six_chapter_maturity.v1",
+  "packet_id": "P7.2-T1D-six-chapter-proof-readiness-depth-pack-2026-07-26",
+  "snapshot_date": "2026-07-26",
+  "state": "terminal_manuscript_maturity_no_support_movement",
+  "maturity_definition": "Specified enough for competent implementation and a fair test; not proved, empirically supported, qualified, or promoted.",
+  "word_count_is_acceptance_gate": false,
+  "chapter_count": 6,
+  "condition_count": 6,
+  "chapter_records": [
+    {
+      "chapter_id": "inner-alignment-mesa-optimization-and-learned-objective-integrity",
+      "chapter_path": "chapters/inner-alignment-mesa-optimization-and-learned-objective-integrity.qmd",
+      "chapter_sha256": "59f862ccd15ccb80f3e4e53ca271261e36601009ae1dc52519f29f8ed1bfdad2",
+      "claim_label": "Design rationale",
+      "support_state": "argument",
+      "maturity_conditions": {
+        "field_decomposition": {
+          "status": "passed_for_manuscript_maturity",
+          "chapter_locations": [
+            "## Problem",
+            "### Exclusive job and adjacent boundaries",
+            "### Deceptive alignment, training games, and gradient hacking"
+          ]
+        },
+        "strongest_challenge": {
+          "status": "passed_for_manuscript_maturity",
+          "chapter_locations": [
+            "## Why existing approaches are insufficient",
+            "### Strongest objection"
+          ]
+        },
+        "implementation_determination": {
+          "status": "passed_for_manuscript_maturity",
+          "chapter_locations": [
+            "## Mechanism",
+            "## Interfaces",
+            "## Minimum Viable Implementation"
+          ]
+        },
+        "failure_and_nonclaim_envelope": {
+          "status": "passed_for_manuscript_maturity",
+          "chapter_locations": [
+            "## Invariants",
+            "## Failure modes",
+            "## Codex test plan"
+          ]
+        },
+        "literature_engagement_by_role": {
+          "status": "passed_for_manuscript_maturity",
+          "chapter_locations": [
+            "## Source crosswalk"
+          ]
+        },
+        "territory_sized_reader_value": {
+          "status": "passed_for_manuscript_maturity",
+          "chapter_locations": [
+            "## Human Reading Path",
+            "## Summary",
+            "## Handoff"
+          ]
+        }
+      },
+      "source_roles": {
+        "mechanism_or_capability": [
+          "ext_learned_optimization_risks_2019",
+          "ext_sleeper_agents_2024"
+        ],
+        "limitation_or_failure": [
+          "ext_goal_misgeneralization_2022",
+          "ext_emergent_misalignment_reward_hacking_2025"
+        ],
+        "competing_design_or_simpler_baseline": [
+          "ext_optimal_policies_power_2019",
+          "alignment_field"
+        ],
+        "measurement_or_evaluation": [
+          "ext_sleeper_agents_2024",
+          "ext_emergent_misalignment_reward_hacking_2025"
+        ]
+      },
+      "source_note_paths": [
+        "sources/source_notes/alignment_field.md",
+        "sources/source_notes/ext_emergent_misalignment_reward_hacking_2025.md",
+        "sources/source_notes/ext_goal_misgeneralization_2022.md",
+        "sources/source_notes/ext_learned_optimization_risks_2019.md",
+        "sources/source_notes/ext_optimal_policies_power_2019.md",
+        "sources/source_notes/ext_sleeper_agents_2024.md"
+      ],
+      "claim_atom_ids": [
+        "inner-alignment-mesa-optimization-and-learned-objective-integrity.core"
+      ],
+      "reader_projection": {
+        "human_path": "chapters/inner-alignment-mesa-optimization-and-learned-objective-integrity.qmd#human-reading-path",
+        "summary": "chapters/inner-alignment-mesa-optimization-and-learned-objective-integrity.qmd#summary",
+        "handoff": "chapters/inner-alignment-mesa-optimization-and-learned-objective-integrity.qmd#handoff",
+        "source_crosswalk": "chapters/inner-alignment-mesa-optimization-and-learned-objective-integrity.qmd#source-crosswalk",
+        "claim_matrix_atom_ids": [
+          "inner-alignment-mesa-optimization-and-learned-objective-integrity.core"
+        ],
+        "outline_surface": "docs/book_outline.md"
+      },
+      "chapter_specificity_evidence": [
+        {
+          "anchor": "Deceptive alignment, training games, and gradient hacking",
+          "corpus_owner_count": 1,
+          "owner": "inner-alignment-mesa-optimization-and-learned-objective-integrity"
+        },
+        {
+          "anchor": "The mechanism therefore produces a scoped evidence case",
+          "corpus_owner_count": 1,
+          "owner": "inner-alignment-mesa-optimization-and-learned-objective-integrity"
+        }
+      ],
+      "residuals": [
+        "No local learner has been shown to contain a mesa-objective, deceptive policy, training game, gradient hacking, or sleeper mechanism.",
+        "Behavioral equivalence, capability, opportunity, and competing explanations remain unresolved until a competent campaign distinguishes them."
+      ],
+      "maximum_next_inference": "competent_implementation_and_fair_test_design_only",
+      "support_state_effect": "none"
+    },
+    {
+      "chapter_id": "multi-agent-dynamics-collective-intelligence-and-systemic-risk",
+      "chapter_path": "chapters/multi-agent-dynamics-collective-intelligence-and-systemic-risk.qmd",
+      "chapter_sha256": "2010b193b1b73704f0228db0d896ea4e76bf249bd2a3254ec38434e220240abf",
+      "claim_label": "Design rationale",
+      "support_state": "argument",
+      "maturity_conditions": {
+        "field_decomposition": {
+          "status": "passed_for_manuscript_maturity",
+          "chapter_locations": [
+            "## Problem",
+            "### Exclusive job and adjacent boundaries",
+            "### Strategic foundations: games, bargaining, choice, and adaptation"
+          ]
+        },
+        "strongest_challenge": {
+          "status": "passed_for_manuscript_maturity",
+          "chapter_locations": [
+            "## Why existing approaches are insufficient",
+            "### Strongest objection"
+          ]
+        },
+        "implementation_determination": {
+          "status": "passed_for_manuscript_maturity",
+          "chapter_locations": [
+            "## Mechanism",
+            "## Interfaces",
+            "## Minimum Viable Implementation"
+          ]
+        },
+        "failure_and_nonclaim_envelope": {
+          "status": "passed_for_manuscript_maturity",
+          "chapter_locations": [
+            "## Invariants",
+            "## Failure modes",
+            "## Codex test plan"
+          ]
+        },
+        "literature_engagement_by_role": {
+          "status": "passed_for_manuscript_maturity",
+          "chapter_locations": [
+            "## Source crosswalk"
+          ]
+        },
+        "territory_sized_reader_value": {
+          "status": "passed_for_manuscript_maturity",
+          "chapter_locations": [
+            "## Human Reading Path",
+            "## Summary",
+            "## Handoff"
+          ]
+        }
+      },
+      "source_roles": {
+        "mechanism_or_capability": [
+          "ext_cooperative_ai_foundations_2023",
+          "ext_functional_decision_theory_2017"
+        ],
+        "limitation_or_failure": [
+          "ext_multi_agent_risks_2025",
+          "ext_gradual_disempowerment_2025"
+        ],
+        "competing_design_or_simpler_baseline": [
+          "ext_functional_decision_theory_2017",
+          "coherence_exchange"
+        ],
+        "measurement_or_evaluation": [
+          "ext_constructive_interdependence_human_ai_2026",
+          "ext_multi_agent_risks_2025"
+        ]
+      },
+      "source_note_paths": [
+        "sources/source_notes/coherence_exchange.md",
+        "sources/source_notes/ext_constructive_interdependence_human_ai_2026.md",
+        "sources/source_notes/ext_cooperative_ai_foundations_2023.md",
+        "sources/source_notes/ext_functional_decision_theory_2017.md",
+        "sources/source_notes/ext_gradual_disempowerment_2025.md",
+        "sources/source_notes/ext_multi_agent_risks_2025.md"
+      ],
+      "claim_atom_ids": [
+        "multi-agent-dynamics-collective-intelligence-and-systemic-risk.core"
+      ],
+      "reader_projection": {
+        "human_path": "chapters/multi-agent-dynamics-collective-intelligence-and-systemic-risk.qmd#human-reading-path",
+        "summary": "chapters/multi-agent-dynamics-collective-intelligence-and-systemic-risk.qmd#summary",
+        "handoff": "chapters/multi-agent-dynamics-collective-intelligence-and-systemic-risk.qmd#handoff",
+        "source_crosswalk": "chapters/multi-agent-dynamics-collective-intelligence-and-systemic-risk.qmd#source-crosswalk",
+        "claim_matrix_atom_ids": [
+          "multi-agent-dynamics-collective-intelligence-and-systemic-risk.core"
+        ],
+        "outline_surface": "docs/book_outline.md"
+      },
+      "chapter_specificity_evidence": [
+        {
+          "anchor": "Strategic foundations: games, bargaining, choice, and adaptation",
+          "corpus_owner_count": 1,
+          "owner": "multi-agent-dynamics-collective-intelligence-and-systemic-risk"
+        },
+        {
+          "anchor": "A cartel or race to the bottom can be stable.",
+          "corpus_owner_count": 1,
+          "owner": "multi-agent-dynamics-collective-intelligence-and-systemic-risk"
+        }
+      ],
+      "residuals": [
+        "No local population campaign establishes cooperation, collusion, bargaining quality, equilibrium selection, or gradual disempowerment.",
+        "Synthetic-agent results cannot transfer to institutions or affected populations without separately qualified environments and outcome measures."
+      ],
+      "maximum_next_inference": "competent_implementation_and_fair_test_design_only",
+      "support_state_effect": "none"
+    },
+    {
+      "chapter_id": "perception-sensor-fusion-and-observation-trust",
+      "chapter_path": "chapters/perception-sensor-fusion-and-observation-trust.qmd",
+      "chapter_sha256": "4e8cd211a743b54c8a47db2df0c49c47946da1c5c4be8c76563bc8747fc4b1d7",
+      "claim_label": "Design rationale",
+      "support_state": "argument",
+      "maturity_conditions": {
+        "field_decomposition": {
+          "status": "passed_for_manuscript_maturity",
+          "chapter_locations": [
+            "## Problem",
+            "### Exclusive job and adjacent boundaries",
+            "### Bayesian state estimation and concrete fusion regimes"
+          ]
+        },
+        "strongest_challenge": {
+          "status": "passed_for_manuscript_maturity",
+          "chapter_locations": [
+            "## Why existing approaches are insufficient",
+            "### Strongest objection"
+          ]
+        },
+        "implementation_determination": {
+          "status": "passed_for_manuscript_maturity",
+          "chapter_locations": [
+            "## Mechanism",
+            "## Interfaces",
+            "## Minimum Viable Implementation"
+          ]
+        },
+        "failure_and_nonclaim_envelope": {
+          "status": "passed_for_manuscript_maturity",
+          "chapter_locations": [
+            "## Invariants",
+            "## Failure modes",
+            "## Codex test plan"
+          ]
+        },
+        "literature_engagement_by_role": {
+          "status": "passed_for_manuscript_maturity",
+          "chapter_locations": [
+            "## Source crosswalk"
+          ]
+        },
+        "territory_sized_reader_value": {
+          "status": "passed_for_manuscript_maturity",
+          "chapter_locations": [
+            "## Human Reading Path",
+            "## Summary",
+            "## Handoff"
+          ]
+        }
+      },
+      "source_roles": {
+        "mechanism_or_capability": [
+          "ext_imagebind_2023",
+          "ext_multimodal_machine_learning_taxonomy_2019"
+        ],
+        "limitation_or_failure": [
+          "ext_3d_detection_corruptions_2023",
+          "ext_adversarial_sensor_fusion_2022"
+        ],
+        "competing_design_or_simpler_baseline": [
+          "ext_multimodal_machine_learning_taxonomy_2019",
+          "platonic_world_model"
+        ],
+        "measurement_or_evaluation": [
+          "ext_3d_detection_corruptions_2023",
+          "ext_adversarial_sensor_fusion_2022"
+        ]
+      },
+      "source_note_paths": [
+        "sources/source_notes/ext_3d_detection_corruptions_2023.md",
+        "sources/source_notes/ext_adversarial_sensor_fusion_2022.md",
+        "sources/source_notes/ext_imagebind_2023.md",
+        "sources/source_notes/ext_multimodal_machine_learning_taxonomy_2019.md",
+        "sources/source_notes/platonic_world_model.md"
+      ],
+      "claim_atom_ids": [
+        "perception-sensor-fusion-and-observation-trust.core"
+      ],
+      "reader_projection": {
+        "human_path": "chapters/perception-sensor-fusion-and-observation-trust.qmd#human-reading-path",
+        "summary": "chapters/perception-sensor-fusion-and-observation-trust.qmd#summary",
+        "handoff": "chapters/perception-sensor-fusion-and-observation-trust.qmd#handoff",
+        "source_crosswalk": "chapters/perception-sensor-fusion-and-observation-trust.qmd#source-crosswalk",
+        "claim_matrix_atom_ids": [
+          "perception-sensor-fusion-and-observation-trust.core"
+        ],
+        "outline_surface": "docs/book_outline.md"
+      },
+      "chapter_specificity_evidence": [
+        {
+          "anchor": "Bayesian state estimation and concrete fusion regimes",
+          "corpus_owner_count": 1,
+          "owner": "perception-sensor-fusion-and-observation-trust"
+        },
+        {
+          "anchor": "Fusion must model correlation.",
+          "corpus_owner_count": 1,
+          "owner": "perception-sensor-fusion-and-observation-trust"
+        }
+      ],
+      "residuals": [
+        "No local sensor-fusion system has demonstrated calibrated observation trust under natural corruption, adversarial attack, timing faults, or common-mode dependence.",
+        "A shared embedding or fused estimate is not open-world truth and cannot inherit execution authority."
+      ],
+      "maximum_next_inference": "competent_implementation_and_fair_test_design_only",
+      "support_state_effect": "none"
+    },
+    {
+      "chapter_id": "embodied-agency-real-time-control-and-physical-safety",
+      "chapter_path": "chapters/embodied-agency-real-time-control-and-physical-safety.qmd",
+      "chapter_sha256": "1106769c9028ab26d3952f517610b8635e752309abc7059f98bda5fca5f36f7e",
+      "claim_label": "Design rationale",
+      "support_state": "argument",
+      "maturity_conditions": {
+        "field_decomposition": {
+          "status": "passed_for_manuscript_maturity",
+          "chapter_locations": [
+            "## Problem",
+            "### Exclusive job and adjacent boundaries",
+            "### Hybrid control, timing evidence, and sim-to-real limits"
+          ]
+        },
+        "strongest_challenge": {
+          "status": "passed_for_manuscript_maturity",
+          "chapter_locations": [
+            "## Why existing approaches are insufficient",
+            "### Strongest objection"
+          ]
+        },
+        "implementation_determination": {
+          "status": "passed_for_manuscript_maturity",
+          "chapter_locations": [
+            "## Mechanism",
+            "## Interfaces",
+            "## Minimum Viable Implementation"
+          ]
+        },
+        "failure_and_nonclaim_envelope": {
+          "status": "passed_for_manuscript_maturity",
+          "chapter_locations": [
+            "## Invariants",
+            "## Failure modes",
+            "## Codex test plan"
+          ]
+        },
+        "literature_engagement_by_role": {
+          "status": "passed_for_manuscript_maturity",
+          "chapter_locations": [
+            "## Source crosswalk"
+          ]
+        },
+        "territory_sized_reader_value": {
+          "status": "passed_for_manuscript_maturity",
+          "chapter_locations": [
+            "## Human Reading Path",
+            "## Summary",
+            "## Handoff"
+          ]
+        }
+      },
+      "source_roles": {
+        "mechanism_or_capability": [
+          "ext_gemini_robotics_2025",
+          "ext_control_barrier_functions_2019"
+        ],
+        "limitation_or_failure": [
+          "ext_foundation_robotics_physical_risk_2025",
+          "ext_safe_reinforcement_learning_survey_2015"
+        ],
+        "competing_design_or_simpler_baseline": [
+          "ext_simplex_architecture_1998",
+          "ext_control_barrier_functions_2019"
+        ],
+        "measurement_or_evaluation": [
+          "ext_ai_simulation_digital_twins_2025",
+          "ext_foundation_robotics_physical_risk_2025"
+        ]
+      },
+      "source_note_paths": [
+        "sources/source_notes/ext_ai_simulation_digital_twins_2025.md",
+        "sources/source_notes/ext_control_barrier_functions_2019.md",
+        "sources/source_notes/ext_foundation_robotics_physical_risk_2025.md",
+        "sources/source_notes/ext_gemini_robotics_2025.md",
+        "sources/source_notes/ext_safe_reinforcement_learning_survey_2015.md",
+        "sources/source_notes/ext_simplex_architecture_1998.md"
+      ],
+      "claim_atom_ids": [
+        "embodied-agency-real-time-control-and-physical-safety.core"
+      ],
+      "reader_projection": {
+        "human_path": "chapters/embodied-agency-real-time-control-and-physical-safety.qmd#human-reading-path",
+        "summary": "chapters/embodied-agency-real-time-control-and-physical-safety.qmd#summary",
+        "handoff": "chapters/embodied-agency-real-time-control-and-physical-safety.qmd#handoff",
+        "source_crosswalk": "chapters/embodied-agency-real-time-control-and-physical-safety.qmd#source-crosswalk",
+        "claim_matrix_atom_ids": [
+          "embodied-agency-real-time-control-and-physical-safety.core"
+        ],
+        "outline_surface": "docs/book_outline.md"
+      },
+      "chapter_specificity_evidence": [
+        {
+          "anchor": "Hybrid control, timing evidence, and sim-to-real limits",
+          "corpus_owner_count": 1,
+          "owner": "embodied-agency-real-time-control-and-physical-safety"
+        },
+        {
+          "anchor": "Software rollback never implies reversal of physical effects.",
+          "corpus_owner_count": 1,
+          "owner": "embodied-agency-real-time-control-and-physical-safety"
+        }
+      ],
+      "residuals": [
+        "No plant, robot, independent stop path, real-time controller, or physical rollback route has been exercised by this repository.",
+        "Simulation and digital-twin evidence cannot establish hardware timing, contact safety, irreversible-effect recovery, or deployment readiness."
+      ],
+      "maximum_next_inference": "competent_implementation_and_fair_test_design_only",
+      "support_state_effect": "none"
+    },
+    {
+      "chapter_id": "human-ai-organizations-delegation-and-accountability",
+      "chapter_path": "chapters/human-ai-organizations-delegation-and-accountability.qmd",
+      "chapter_sha256": "f2bd23615c9c8f486c57d1c1876f3fa03d5d8766c9a8cbf48b0b34b1ed2090ac",
+      "claim_label": "Design rationale",
+      "support_state": "argument",
+      "maturity_conditions": {
+        "field_decomposition": {
+          "status": "passed_for_manuscript_maturity",
+          "chapter_locations": [
+            "## Problem",
+            "### Exclusive job and adjacent boundaries",
+            "### Organizational transition: tasks, jobs, power, and public capacity"
+          ]
+        },
+        "strongest_challenge": {
+          "status": "passed_for_manuscript_maturity",
+          "chapter_locations": [
+            "## Why existing approaches are insufficient",
+            "### Strongest objection"
+          ]
+        },
+        "implementation_determination": {
+          "status": "passed_for_manuscript_maturity",
+          "chapter_locations": [
+            "## Mechanism",
+            "## Interfaces",
+            "## Minimum Viable Implementation"
+          ]
+        },
+        "failure_and_nonclaim_envelope": {
+          "status": "passed_for_manuscript_maturity",
+          "chapter_locations": [
+            "## Invariants",
+            "## Failure modes",
+            "## Codex test plan"
+          ]
+        },
+        "literature_engagement_by_role": {
+          "status": "passed_for_manuscript_maturity",
+          "chapter_locations": [
+            "## Source crosswalk"
+          ]
+        },
+        "territory_sized_reader_value": {
+          "status": "passed_for_manuscript_maturity",
+          "chapter_locations": [
+            "## Human Reading Path",
+            "## Summary",
+            "## Handoff"
+          ]
+        }
+      },
+      "source_roles": {
+        "mechanism_or_capability": [
+          "ext_ai_decision_authority_2020",
+          "ext_nist_ai_rmf_1_0_2023"
+        ],
+        "limitation_or_failure": [
+          "ext_moral_crumple_zones_2019",
+          "ext_human_ai_feedback_loops_2025"
+        ],
+        "competing_design_or_simpler_baseline": [
+          "talos",
+          "ext_ai_decision_authority_2020"
+        ],
+        "measurement_or_evaluation": [
+          "ext_generative_ai_at_work_2025",
+          "ext_constructive_interdependence_human_ai_2026",
+          "ext_human_ai_team_meta_analysis_2024"
+        ]
+      },
+      "source_note_paths": [
+        "sources/source_notes/ext_ai_decision_authority_2020.md",
+        "sources/source_notes/ext_constructive_interdependence_human_ai_2026.md",
+        "sources/source_notes/ext_generative_ai_at_work_2025.md",
+        "sources/source_notes/ext_human_ai_feedback_loops_2025.md",
+        "sources/source_notes/ext_human_ai_team_meta_analysis_2024.md",
+        "sources/source_notes/ext_moral_crumple_zones_2019.md",
+        "sources/source_notes/ext_nist_ai_rmf_1_0_2023.md",
+        "sources/source_notes/talos.md"
+      ],
+      "claim_atom_ids": [
+        "human-ai-organizations-delegation-and-accountability.core"
+      ],
+      "reader_projection": {
+        "human_path": "chapters/human-ai-organizations-delegation-and-accountability.qmd#human-reading-path",
+        "summary": "chapters/human-ai-organizations-delegation-and-accountability.qmd#summary",
+        "handoff": "chapters/human-ai-organizations-delegation-and-accountability.qmd#handoff",
+        "source_crosswalk": "chapters/human-ai-organizations-delegation-and-accountability.qmd#source-crosswalk",
+        "claim_matrix_atom_ids": [
+          "human-ai-organizations-delegation-and-accountability.core"
+        ],
+        "outline_surface": "docs/book_outline.md"
+      },
+      "chapter_specificity_evidence": [
+        {
+          "anchor": "Organizational transition: tasks, jobs, power, and public capacity",
+          "corpus_owner_count": 1,
+          "owner": "human-ai-organizations-delegation-and-accountability"
+        },
+        {
+          "anchor": "responsible for a decision they could not inspect, change, stop, or appeal.",
+          "corpus_owner_count": 1,
+          "owner": "human-ai-organizations-delegation-and-accountability"
+        }
+      ],
+      "residuals": [
+        "No local organization study establishes productivity, legitimacy, accountability, skill, distribution, diffusion, liability, or public-capacity outcomes.",
+        "Task-level results do not license job-, organization-, sector-, or economy-wide inference."
+      ],
+      "maximum_next_inference": "competent_implementation_and_fair_test_design_only",
+      "support_state_effect": "none"
+    },
+    {
+      "chapter_id": "white-box-evidence-interpretability-and-activation-governance",
+      "chapter_path": "chapters/white-box-evidence-interpretability-and-activation-governance.qmd",
+      "chapter_sha256": "70373ee45fd1ef9e2fd2ea31a1175284ee7cdcff4a93e8df14e66a0982e275c5",
+      "claim_label": "Design rationale",
+      "support_state": "argument",
+      "maturity_conditions": {
+        "field_decomposition": {
+          "status": "passed_for_manuscript_maturity",
+          "chapter_locations": [
+            "## Problem",
+            "## Ownership boundaries",
+            "## Why this boundary earns a chapter",
+            "### Comparative method matrix"
+          ]
+        },
+        "strongest_challenge": {
+          "status": "passed_for_manuscript_maturity",
+          "chapter_locations": [
+            "## Why existing approaches are insufficient",
+            "## Strongest objection"
+          ]
+        },
+        "implementation_determination": {
+          "status": "passed_for_manuscript_maturity",
+          "chapter_locations": [
+            "## Mechanism",
+            "## Interfaces",
+            "## Minimum Viable Implementation"
+          ]
+        },
+        "failure_and_nonclaim_envelope": {
+          "status": "passed_for_manuscript_maturity",
+          "chapter_locations": [
+            "## Invariants",
+            "## Failure modes",
+            "## Codex test plan"
+          ]
+        },
+        "literature_engagement_by_role": {
+          "status": "passed_for_manuscript_maturity",
+          "chapter_locations": [
+            "## Source crosswalk"
+          ]
+        },
+        "territory_sized_reader_value": {
+          "status": "passed_for_manuscript_maturity",
+          "chapter_locations": [
+            "## Human Reading Path",
+            "## Summary",
+            "## Handoff"
+          ]
+        }
+      },
+      "source_roles": {
+        "mechanism_or_capability": [
+          "ext_transformer_circuits_2021",
+          "ext_scaling_sparse_autoencoders_2024",
+          "ext_circuit_tracing_2025"
+        ],
+        "limitation_or_failure": [
+          "ext_interpretability_illusion_bert_2021",
+          "ext_sae_benchmark_reliability_2026"
+        ],
+        "competing_design_or_simpler_baseline": [
+          "ext_probe_control_tasks_2019",
+          "ext_elk_report_2021"
+        ],
+        "measurement_or_evaluation": [
+          "ext_saebench_2025",
+          "ext_sae_benchmark_reliability_2026"
+        ]
+      },
+      "source_note_paths": [
+        "sources/source_notes/ext_circuit_tracing_2025.md",
+        "sources/source_notes/ext_elk_report_2021.md",
+        "sources/source_notes/ext_interpretability_illusion_bert_2021.md",
+        "sources/source_notes/ext_probe_control_tasks_2019.md",
+        "sources/source_notes/ext_sae_benchmark_reliability_2026.md",
+        "sources/source_notes/ext_saebench_2025.md",
+        "sources/source_notes/ext_scaling_sparse_autoencoders_2024.md",
+        "sources/source_notes/ext_transformer_circuits_2021.md"
+      ],
+      "claim_atom_ids": [
+        "white-box-evidence-interpretability-and-activation-governance.core",
+        "white-box-evidence-interpretability-and-activation-governance.method-relative-evidence",
+        "white-box-evidence-interpretability-and-activation-governance.predictive-causal-challenge",
+        "white-box-evidence-interpretability-and-activation-governance.policy-is-model-change",
+        "white-box-evidence-interpretability-and-activation-governance.argument-exit"
+      ],
+      "reader_projection": {
+        "human_path": "chapters/white-box-evidence-interpretability-and-activation-governance.qmd#human-reading-path",
+        "summary": "chapters/white-box-evidence-interpretability-and-activation-governance.qmd#summary",
+        "handoff": "chapters/white-box-evidence-interpretability-and-activation-governance.qmd#handoff",
+        "source_crosswalk": "chapters/white-box-evidence-interpretability-and-activation-governance.qmd#source-crosswalk",
+        "claim_matrix_atom_ids": [
+          "white-box-evidence-interpretability-and-activation-governance.core",
+          "white-box-evidence-interpretability-and-activation-governance.method-relative-evidence",
+          "white-box-evidence-interpretability-and-activation-governance.predictive-causal-challenge",
+          "white-box-evidence-interpretability-and-activation-governance.policy-is-model-change",
+          "white-box-evidence-interpretability-and-activation-governance.argument-exit"
+        ],
+        "outline_surface": "docs/book_outline.md"
+      },
+      "chapter_specificity_evidence": [
+        {
+          "anchor": "Comparative method matrix",
+          "corpus_owner_count": 1,
+          "owner": "white-box-evidence-interpretability-and-activation-governance"
+        },
+        {
+          "anchor": "The white-box ladder is deliberately noninheritant.",
+          "corpus_owner_count": 1,
+          "owner": "white-box-evidence-interpretability-and-activation-governance"
+        }
+      ],
+      "residuals": [
+        "No probe, sparse autoencoder, circuit, causal intervention, activation monitor, or steering policy has been run in this repository.",
+        "Decodability, semantic validity, causal use, transfer, intervention utility, and policy authority remain separate unearned rungs."
+      ],
+      "maximum_next_inference": "competent_implementation_and_fair_test_design_only",
+      "support_state_effect": "none"
+    }
+  ],
+  "accepted_existing_owner_repairs": [
+    {
+      "topic": "uncertainty_decomposition",
+      "chapter_id": "governed-world-models-and-reality-grounding",
+      "path": "chapters/governed-world-models-and-reality-grounding.qmd",
+      "anchor": "Four uncertainty families receive separate fields and remedies:",
+      "chapter_sha256": "7d980e1a5020e96438933e60528accc6cf71a40f2134daef58f72b2635f75912",
+      "state": "meaning_bearing_prose_present",
+      "support_state_effect": "none"
+    },
+    {
+      "topic": "refinement_and_dependent_types",
+      "chapter_id": "executable-specifications-and-lean-proof-envelope",
+      "path": "chapters/executable-specifications-and-lean-proof-envelope.qmd",
+      "anchor": "### Refinement types, dependent types, and proof-carrying data",
+      "chapter_sha256": "611829535780c559367338fb501e2a5e9a3b8e2ff0f3caf113ced783ca900ac3",
+      "state": "meaning_bearing_prose_present",
+      "support_state_effect": "none"
+    },
+    {
+      "topic": "synthetic_data_and_self_play_generation",
+      "chapter_id": "data-engines-continual-learning-and-unlearning",
+      "path": "chapters/data-engines-continual-learning-and-unlearning.qmd",
+      "anchor": "### Governed synthetic-data and self-play lifecycle",
+      "chapter_sha256": "7161a9a235f23046cb0b7aa47094d3f3109116d2a739f3bef55642c62c2e6010",
+      "state": "meaning_bearing_prose_present",
+      "support_state_effect": "none"
+    },
+    {
+      "topic": "human_explanation_generation",
+      "chapter_id": "human-factors-and-meaningful-control-in-oversight",
+      "path": "chapters/human-factors-and-meaningful-control-in-oversight.qmd",
+      "anchor": "### Explanation generation as a governed translation",
+      "chapter_sha256": "cb2d389178f3a9d3d07c8914812bd28c12196ef4245a0ed5f2599e78bf5be434",
+      "state": "meaning_bearing_prose_present",
+      "support_state_effect": "none"
+    }
+  ],
+  "white_box_source_packet": [
+    {
+      "source_id": "ext_probe_control_tasks_2019",
+      "inventory_url": "https://aclanthology.org/D19-1275/",
+      "source_note_path": "sources/source_notes/ext_probe_control_tasks_2019.md",
+      "source_note_sha256": "a4f164bb783177723f24ae9c07a9488214148eac4ee579df72f92be499897acb",
+      "freshness_date": "2019-11-01",
+      "local_reproduction": "none",
+      "authority": "external_comparator_only"
+    },
+    {
+      "source_id": "ext_interpretability_illusion_bert_2021",
+      "inventory_url": "https://arxiv.org/abs/2104.07143",
+      "source_note_path": "sources/source_notes/ext_interpretability_illusion_bert_2021.md",
+      "source_note_sha256": "2fc7a92f1690c94eb5281d46cba218dd4b9db667040df4a42dee786986add414",
+      "freshness_date": "2021-04-14",
+      "local_reproduction": "none",
+      "authority": "external_comparator_only"
+    },
+    {
+      "source_id": "ext_scaling_sparse_autoencoders_2024",
+      "inventory_url": "https://arxiv.org/abs/2406.04093",
+      "source_note_path": "sources/source_notes/ext_scaling_sparse_autoencoders_2024.md",
+      "source_note_sha256": "fcb326ffc75bd8152f1122c6dc067a2d094e06ce774203bb7c915d6779499d39",
+      "freshness_date": "2024-06-06",
+      "local_reproduction": "none",
+      "authority": "external_comparator_only"
+    },
+    {
+      "source_id": "ext_saebench_2025",
+      "inventory_url": "https://arxiv.org/abs/2503.09532",
+      "source_note_path": "sources/source_notes/ext_saebench_2025.md",
+      "source_note_sha256": "cf55d236c44a0d5ebd8b9da1fb0c46bce685970835447c23eb84d64fdc3f0a3c",
+      "freshness_date": "2025-06-04",
+      "local_reproduction": "none",
+      "authority": "external_comparator_only"
+    },
+    {
+      "source_id": "ext_sae_benchmark_reliability_2026",
+      "inventory_url": "https://arxiv.org/abs/2605.18229",
+      "source_note_path": "sources/source_notes/ext_sae_benchmark_reliability_2026.md",
+      "source_note_sha256": "b8aa7afefce3a015bf1877e55fcce4c9d7e01245bd443fca4dc17e912eb947e4",
+      "freshness_date": "2026-05-18",
+      "local_reproduction": "none",
+      "authority": "external_comparator_only"
+    }
+  ],
+  "chapter_specific_inheritance_audit": {
+    "method": "two manually selected domain-bearing anchors per chapter must have exactly one owner across the current 84-chapter corpus",
+    "chapter_count": 6,
+    "anchor_count": 12,
+    "collisions": 0
+  },
+  "atom_reconciliation": {
+    "source_packets": [
+      "evidence_quality/round_18_breadth_completion_claim_atoms.json",
+      "evidence_quality/post_activation_six_chapter_claim_atom_addendum.json"
+    ],
+    "chapter_count": 6,
+    "atom_count": 10,
+    "new_material_atoms": 0,
+    "support_state_effect": "none"
+  },
+  "reader_reconciliation": {
+    "all_six_have_human_path_summary_handoff_and_source_crosswalk": true,
+    "outline_surface": "docs/book_outline.md",
+    "claim_matrix_surface": "appendices/C_claim_evidence_matrix.qmd",
+    "external_source_surface": "appendices/H_external_sources.qmd",
+    "current_reader_derivative_required_after_packet": true
+  },
+  "non_claims": [
+    "Manuscript maturity is not proof, empirical support, implementation success, reproduction, transfer, safety, readiness, release, SOTA, AGI, or ASI.",
+    "Source-role coverage does not establish that a cited result is correct or locally reproduced.",
+    "A passed maturity condition does not guarantee that a future implementation is competent.",
+    "A failed future method may support only the exact instrument, implementation, construct, or mechanism inference earned by its controls.",
+    "No prose, source, atom, reader, schema, validator, fixture, or maturity record moves support."
+  ],
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "publication_effect": "none"
+}

@@ -21938,6 +21938,10 @@
             "ext_monosemanticity_2023",
             "ext_scaling_sparse_autoencoders_2024",
             "ext_circuit_tracing_2025",
+            "ext_probe_control_tasks_2019",
+            "ext_interpretability_illusion_bert_2021",
+            "ext_saebench_2025",
+            "ext_sae_benchmark_reliability_2026",
             "ext_elk_report_2021",
             "ext_influence_functions_2017"
           ],
@@ -21947,6 +21951,10 @@
               "ext_monosemanticity_2023",
               "ext_scaling_sparse_autoencoders_2024",
               "ext_circuit_tracing_2025",
+              "ext_probe_control_tasks_2019",
+              "ext_interpretability_illusion_bert_2021",
+              "ext_saebench_2025",
+              "ext_sae_benchmark_reliability_2026",
               "ext_elk_report_2021",
               "ext_influence_functions_2017"
             ],
@@ -22065,6 +22073,46 @@
                 "sources/source_notes/ext_circuit_tracing_2025.md"
               ],
               "passage_review_note": "Reviewed source note; bounded to reported interventions and examples.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_probe_control_tasks_2019",
+              "mapped_support": "Supplies matched control tasks and probe selectivity for distinguishing representation evidence from probe memorization capacity.",
+              "limits": "The ELMo linguistic-probe experiments do not establish a universal control task, causal use of decoded information, model safety, or local reproduction.",
+              "passage_refs": [
+                "sources/source_notes/ext_probe_control_tasks_2019.md"
+              ],
+              "passage_review_note": "Reviewed the primary paper at Sections 1–2, the reported probe-family comparisons, and the conclusion; retained the method and scope boundaries.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_interpretability_illusion_bert_2021",
+              "mapped_support": "Supplies cross-dataset construct challenge and the distinction among global, dataset-level, and local representation structure.",
+              "limits": "The BERT sentence-embedding case does not show that every feature is illusory, that causal methods fail, or that the result transfers unchanged.",
+              "passage_refs": [
+                "sources/source_notes/ext_interpretability_illusion_bert_2021.md"
+              ],
+              "passage_review_note": "Reviewed the primary paper at Sections 1 and 3–5, including datasets, annotations, results, geometry, and the concept-direction taxonomy.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_saebench_2025",
+              "mapped_support": "Supplies a standardized multi-metric SAE comparison spanning reconstruction, concept detection, interpretability, disentanglement, and downstream intervention uses.",
+              "limits": "Source-reported metric breadth and architecture rankings do not establish that every metric is reliable or that an SAE is semantically or causally faithful.",
+              "passage_refs": [
+                "sources/source_notes/ext_saebench_2025.md"
+              ],
+              "passage_review_note": "Reviewed the primary paper at Sections 1 and 3–6, including metric definitions, practitioner guidance, scale comparisons, and limitations.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_sae_benchmark_reliability_2026",
+              "mapped_support": "Supplies a reliability audit based on independent reseeds, training-trajectory discriminability, synthetic ground truth, degraded controls, and an oracle.",
+              "limits": "The audit is limited to selected metrics and settings and cannot refute SAEs, SAEBench as a whole, interpretability, or model-internal evidence.",
+              "passage_refs": [
+                "sources/source_notes/ext_sae_benchmark_reliability_2026.md"
+              ],
+              "passage_review_note": "Reviewed the primary paper at Sections 1–5 and 7, including noise, discrimination, synthetic validity, controls, recommendations, and limitations.",
               "passage_review_state": "reviewed"
             }
           ],

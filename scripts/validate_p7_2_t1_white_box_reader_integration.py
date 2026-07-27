@@ -161,7 +161,7 @@ def main() -> None:
     if failures:
         raise SystemExit("P7.2-T1 reader integration failed:\n - " + "\n - ".join(failures))
     print(
-        "P7.2-T1 reader integration passed: 1 terminal argument-level chapter, 10 source "
+        "P7.2-T1 reader integration passed: 1 terminal argument-level chapter, 14 source "
         "mappings, 2 implemented public proof targets, 8 theorem declarations, 2 method "
         "families, 7 competence gates, protected outcomes closed, 12 integration mutations "
         "rejected; support effect none."
