@@ -59,6 +59,19 @@ ARTIFACTS = [
     "scripts/validate_evidence_transition_refinement.py",
     "scripts/integrate_c6_efficiency_route_economy_consolidation.py",
     "scripts/integrate_c6_evidence_transition_consolidation.py",
+    "scripts/integrate_c6_theseus_repository_mirror_retirements.py",
+    "scripts/validate_retired_theseus_formal_mirrors.py",
+    "proofs/c6_remaining_stronger_model_audit.json",
+    "lean/AsiStackProofs/TheseusReference.lean",
+    "scripts/validate_theseus_public_task_bundle_import.py",
+    "scripts/validate_theseus_fast_support_lane.py",
+    "scripts/validate_theseus_artifact_retention_replay_import.py",
+    "scripts/validate_theseus_module_definition_of_done_import.py",
+    "scripts/validate_theseus_project_registry_import.py",
+    "scripts/validate_theseus_assistant_reference_trace_import.py",
+    "scripts/validate_theseus_accelerator_parity_manifest_import.py",
+    "scripts/validate_theseus_book_crosswalk_import.py",
+    "scripts/validate_theseus_work_board_import.py",
     "experiments/runtime_adapter_adversarial_boundary/results/2026-07-02-local.json",
     "experiments/substrate_adoption_trace/results/2026-07-02-local.json",
     "experiments/artifact_steward_lifecycle_probe/results/2026-07-02-local.json",
@@ -120,7 +133,7 @@ def main() -> None:
         "execution_tier": "pr",
         "validation_class": "proof_or_evidence_gate",
         "input_contract": (
-            "One immutable 1,370-theorem baseline; 106 exact, ordered transactions; "
+            "One immutable 1,370-theorem baseline; 151 exact, ordered transactions; "
             "the baseline Scalable Oversight, Bibliography Plan, Benchmark Ratchets, and "
             "Policy Optimization, Stable Capability Fields, Evidence States, and Runtime "
             "Adapters, Search Substrates, Artifact Steward Agents, Coil Attention Memory, "
@@ -132,8 +145,10 @@ def main() -> None:
             "change, twelve summary projections retired after route-family validator rebinding, "
             "two proposition-preserving theorem-name scope rewrites, three legacy "
             "policy-lease fixture theorems, and twenty-two legacy efficiency checklist "
-            "or result-summary theorems and sixteen legacy evidence-transition fixture "
-            "theorems retired after reachable-refinement rebinding; "
+            "or result-summary theorems, sixteen legacy evidence-transition fixture "
+            "theorems retired after reachable-refinement rebinding, two redundant "
+            "authored fixture witnesses, and 43 Project Theseus repository-import "
+            "summary mirrors retired while their executable receipts remain; "
             "the current overlay; frozen historical registry; and reconciled target, "
             "roadmap, and status surfaces."
         ),
@@ -141,9 +156,10 @@ def main() -> None:
         "output_contract": (
             "Require immutable baseline and theorem-block digests, exact same-model "
             "statement identity for the duplicate, dependency-and-consumer-safe removals, "
-            "ten counterexample, five decision-model, thirteen scope-narrowing, and eleven "
-            "validator-route-family target migrations, retained or honestly replanned "
-            "target ownership, a 1,272-theorem current estate, an exact 54-action remaining "
+            "ten counterexample, five decision-model, thirteen scope-narrowing, eleven "
+            "validator-route-family migrations, and 43 formal-target-to-executable-only "
+            "migrations, retained or honestly replanned target ownership, a 1,227-theorem "
+            "current estate, an exact nine-action remaining "
             "queue, meta-audit exclusion from implementation binding, and no support or "
             "release effect."
         ),
@@ -152,7 +168,7 @@ def main() -> None:
             "retired and retained declarations share one authored model",
             "normalized theorem statements exact",
             "retired theorem has no theorem consumer",
-            "104 retired declarations absent, twenty-five proposition-preserving or replacement-bound actions, and eighty-one intentionally null replacements",
+            "149 retired declarations absent, twenty-five proposition-preserving or replacement-bound actions, and 126 intentionally null replacements",
             "two bibliography targets migrated to derived counterexample gates",
             "two benchmark targets migrated to derived decision-model gates",
             "two Stable Capability Fields targets narrowed to retained derived routes",
@@ -180,17 +196,20 @@ def main() -> None:
             "three legacy policy-lease fixture theorems replaced by reachable refinement and independent consumer custody",
             "twenty-two legacy efficiency checklist and summary theorems replaced by reachable route-economy and independent consumer custody",
             "sixteen legacy evidence-transition fixture theorems replaced by projection-aware reachable lifecycle and independent consumer custody",
+            "forty-three Project Theseus repository-import summary mirrors and nine formal targets retired while executable validators and result receipts remain",
             "proof-custody meta-audit does not inflate semantic implementation depth",
-            "1,272 current theorem declarations",
-            "54 stronger-model actions remain",
+            "1,227 current theorem declarations",
+            "nine stronger-model actions remain",
             "frozen 1,151-theorem and 298-target registry preserved",
             "16 mutations reject",
             "no support or release effect",
         ],
         "claim_scope": (
-            "104 dependency-safe declaration retirements: one exact same-model "
+            "149 dependency-safe declaration retirements: one exact same-model "
             "duplicate, sixty-two premise-restating projections, and twenty-five legacy fixture "
-            "or checklist theorems plus sixteen evidence-transition fixture theorems. Two theorem names are rewritten without proposition drift. Forty-seven public "
+            "or checklist theorems, sixteen evidence-transition fixture theorems, two "
+            "redundant authored witnesses, and 43 copied Project Theseus repository "
+            "summaries. Two theorem names are rewritten without proposition drift. Ninety public "
             "targets migrate to counterexample, decision-model, narrower retained-route, "
             "or honestly planned stronger-model wording; the runtime-adapter target remains "
             "implemented through its fifteen explicit route theorems."
@@ -221,7 +240,7 @@ def main() -> None:
             "deployment, transfer, safety, SOTA, AGI, ASI, or claim support."
         ),
         "contract_precision": "exact_immutable_cumulative_dependency_safe_retirement_ledger",
-        "semantic_review_state": "checked_one_hundred_four_c6_retirements_two_scope_rewrites_and_forty_seven_target_migrations",
+        "semantic_review_state": "checked_one_hundred_forty_nine_c6_retirements_two_scope_rewrites_and_ninety_target_migrations",
     })
     required = registry["required_artifacts"]
     for artifact in ARTIFACTS + [REGISTER]:

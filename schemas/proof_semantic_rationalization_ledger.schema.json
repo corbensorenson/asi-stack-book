@@ -61,7 +61,7 @@
     "actions": {
       "type": "array",
       "minItems": 90,
-      "maxItems": 108,
+      "maxItems": 151,
       "items": {
         "$ref": "#/$defs/action"
       }
@@ -80,20 +80,20 @@
       ],
       "properties": {
         "executed_retirement_count": {
-        "const": 106
+        "const": 149
         },
         "executed_scope_rewrite_count": {
           "const": 2
         },
         "current_live_theorem_count": {
-        "const": 1270
+        "const": 1227
         },
         "remaining_action_count": {
-        "const": 52
+        "const": 9
         },
         "remaining_action_counts": {
           "const": {
-          "retire_without_replacement": 51,
+          "retire_without_replacement": 8,
           "rewrite_as_inverse_route_property": 1
           }
         },
@@ -203,7 +203,8 @@
             "retire_projection_after_validator_route_family_rebinding",
             "rewrite_scope_language",
             "retire_legacy_fixture_theorem_after_reachable_refinement_rebinding",
-            "retire_redundant_authored_fixture_witness"
+            "retire_redundant_authored_fixture_witness",
+            "retire_repository_import_fixture_mirror"
           ]
         },
         "semantic_relation": {
@@ -216,7 +217,8 @@
             "summary_projection_replaced_by_route_family_validation",
             "statement_preserved_under_precise_theorem_name",
             "legacy_fixture_statement_replaced_by_reachable_refinement_and_independent_consumer",
-            "fixture_witness_subsumed_or_rebound_to_quantified_results_and_independent_consumer"
+            "fixture_witness_subsumed_or_rebound_to_quantified_results_and_independent_consumer",
+            "copied_repository_summary_rebound_to_executable_validator_and_immutable_result"
           ]
         },
         "module_path": {

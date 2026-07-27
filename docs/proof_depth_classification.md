@@ -12,11 +12,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 329 |
+| Proof targets in manifest | 320 |
 | Lean modules scanned | 111 |
-| Theorem declarations classified | 1270 |
+| Theorem declarations classified | 1227 |
 | Direct/projection-style theorem declarations | 169 |
-| Derived/decomposed theorem declarations | 882 |
+| Derived/decomposed theorem declarations | 839 |
 | Unknown or mixed theorem declarations | 219 |
 | Safety-critical theorem declarations | 73 |
 | Safety-critical direct/projection declarations | 1 |
@@ -152,7 +152,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | stable-capability-fields | 4 | 18 | 1 | 17 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/StackBoundaries.lean` | asi-is-a-stack-not-a-model | 3 | 9 | 1 | 4 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/SupplyChainIntegrity.lean` | ai-supply-chain-integrity-and-lifecycle-provenance | 6 | 7 | 0 | 7 | 0 | derived/decomposed by classifier |
-| `lean/AsiStackProofs/TheseusReference.lean` | project-theseus-as-report-first-implementation-reference | 12 | 52 | 0 | 52 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/TheseusReference.lean` | project-theseus-as-report-first-implementation-reference | 3 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/Tribunal.lean` | unmapped | 0 | 3 | 0 | 3 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/TribunalRefinement.lean` | spinoza-verification-and-proof-carrying-claims | 2 | 12 | 8 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/TypedJobRefinement.lean` | labor-os-and-typed-jobs | 5 | 14 | 10 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -1267,49 +1267,6 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/TheseusReference.lean` | `imported_report_bundle_missing_required_artifact_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/TheseusReference.lean` | `public_theseus_artifact_with_private_payload_or_support_overclaim_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/TheseusReference.lean` | `replay_ready_without_replay_boundary_artifacts_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
-| `lean/AsiStackProofs/TheseusReference.lean` | `theseus_accelerator_parity_manifest_import_core_promotion_rejected` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/TheseusReference.lean` | `theseus_accelerator_parity_manifest_import_fixture_valid` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/TheseusReference.lean` | `theseus_accelerator_parity_manifest_import_full_parity_overclaim_rejected` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/TheseusReference.lean` | `theseus_accelerator_parity_manifest_import_model_promotion_overclaim_rejected` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/TheseusReference.lean` | `theseus_accelerator_parity_manifest_import_production_routing_overclaim_rejected` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/TheseusReference.lean` | `theseus_artifact_retention_replay_import_core_promotion_rejected` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/TheseusReference.lean` | `theseus_artifact_retention_replay_import_fixture_valid` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/TheseusReference.lean` | `theseus_artifact_retention_replay_import_hash_mismatch_rejected` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/TheseusReference.lean` | `theseus_assistant_reference_trace_import_clean_replay_overclaim_rejected` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/TheseusReference.lean` | `theseus_assistant_reference_trace_import_core_promotion_rejected` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/TheseusReference.lean` | `theseus_assistant_reference_trace_import_fixture_valid` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/TheseusReference.lean` | `theseus_assistant_reference_trace_import_model_quality_overclaim_rejected` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/TheseusReference.lean` | `theseus_assistant_reference_trace_import_private_payload_rejected` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/TheseusReference.lean` | `theseus_assistant_reference_trace_import_requires_all_hops` | derived_or_decomposed | no | uses cases, unfold |
-| `lean/AsiStackProofs/TheseusReference.lean` | `theseus_book_crosswalk_import_clean_replay_overclaim_rejected` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/TheseusReference.lean` | `theseus_book_crosswalk_import_core_promotion_rejected` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/TheseusReference.lean` | `theseus_book_crosswalk_import_fixture_valid` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/TheseusReference.lean` | `theseus_book_crosswalk_import_pointer_only_preserves_argument` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/TheseusReference.lean` | `theseus_book_crosswalk_import_public_safety_failure_rejected` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/TheseusReference.lean` | `theseus_book_crosswalk_import_source_sync_failure_rejected` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/TheseusReference.lean` | `theseus_fast_support_aggregate_carries_task_and_control_counts` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/TheseusReference.lean` | `theseus_fast_support_aggregate_clean_replay_overclaim_rejected` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/TheseusReference.lean` | `theseus_fast_support_aggregate_fixture_valid` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/TheseusReference.lean` | `theseus_fast_support_aggregate_preserves_no_promotion` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/TheseusReference.lean` | `theseus_module_definition_of_done_import_capability_overclaim_rejected` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/TheseusReference.lean` | `theseus_module_definition_of_done_import_core_promotion_rejected` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/TheseusReference.lean` | `theseus_module_definition_of_done_import_fixture_valid` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/TheseusReference.lean` | `theseus_project_registry_import_clean_replay_overclaim_rejected` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/TheseusReference.lean` | `theseus_project_registry_import_core_promotion_rejected` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/TheseusReference.lean` | `theseus_project_registry_import_fixture_valid` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/TheseusReference.lean` | `theseus_project_registry_import_private_payload_rejected` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/TheseusReference.lean` | `theseus_project_registry_import_unregistered_sources_rejected` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/TheseusReference.lean` | `theseus_public_task_bundle_import_clean_replay_overclaim_rejected` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/TheseusReference.lean` | `theseus_public_task_bundle_import_fixture_gates_complete` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/TheseusReference.lean` | `theseus_public_task_bundle_import_fixture_preserves_no_promotion_boundary` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/TheseusReference.lean` | `theseus_public_task_bundle_import_fixture_public_safe` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/TheseusReference.lean` | `theseus_public_task_bundle_import_fixture_valid` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/TheseusReference.lean` | `theseus_work_board_import_clean_replay_overclaim_rejected` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/TheseusReference.lean` | `theseus_work_board_import_core_promotion_rejected` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/TheseusReference.lean` | `theseus_work_board_import_fixture_valid` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/TheseusReference.lean` | `theseus_work_board_import_private_payload_rejected` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/TheseusReference.lean` | `theseus_work_board_import_public_training_rows_rejected` | derived_or_decomposed | no | uses simp |
-| `lean/AsiStackProofs/TheseusReference.lean` | `theseus_work_board_import_stale_snapshot_blocks_currentness` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/Tribunal.lean` | `accepted_prior_review_reuse_without_unchanged_evidence_guard_rejected` | derived_or_decomposed | no | uses contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/Tribunal.lean` | `action_verdict_without_actions_or_constraints_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/Tribunal.lean` | `high_risk_accepted_verdict_without_probes_or_independence_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |

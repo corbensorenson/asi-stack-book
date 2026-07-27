@@ -141,9 +141,23 @@ EXPECTED_ACTION_IDS = [
     "C6-R107-retire-curated-reader-blocked-candidate-fixture-routes-to-accessibility-review",
     "C6-R108-retire-circle-public-consumer-gate-fixture-accepted",
 ]
+_residual_audit = json.loads(
+    (ROOT / "proofs" / "c6_remaining_stronger_model_audit.json").read_text(encoding="utf-8")
+)
+EXPECTED_ACTION_IDS.extend(
+    f"C6-R{sequence}-retire-theseus-repository-mirror-{record['name'].replace('_', '-')}"
+    for sequence, record in enumerate(
+        (
+            row
+            for row in _residual_audit["records"]
+            if row.get("recommended_action") == "retire_repository_fixture_mirror"
+        ),
+        start=109,
+    )
+)
 EXPECTED_LEVELS = {
-    "P0": 34,
-    "P1": 711,
+    "P0": 23,
+    "P1": 679,
     "P2": 25,
     "P3": 323,
     "P4": 94,
@@ -152,7 +166,7 @@ EXPECTED_LEVELS = {
 }
 EXPECTED_DISPOSITIONS = {
     "retain": 1218,
-    "rewrite_with_stronger_model": 52,
+    "rewrite_with_stronger_model": 9,
 }
 EXPECTED_TARGETS = {
     "lean:bibliography.plan.operational_invariant": (
@@ -367,12 +381,18 @@ EXPECTED_RELATIONS = {
     "retire_redundant_authored_fixture_witness": (
         "fixture_witness_subsumed_or_rebound_to_quantified_results_and_independent_consumer"
     ),
+    "retire_repository_import_fixture_mirror": (
+        "copied_repository_summary_rebound_to_executable_validator_and_immutable_result"
+    ),
 }
 EXPECTED_MIGRATION_COUNTS = {
     action_id: (
         6
         if action_id == "C6-R91-evidence-no-requested-transition-allows-no-change"
-        else int(action_id in {
+        else (
+            1
+            if action_id.startswith("C6-R") and "-retire-theseus-repository-mirror-" in action_id
+            else int(action_id in {
         "C6-R2-bibliography-source-evidence-projection",
         "C6-R3-bibliography-chapter-assignment-projection",
         "C6-R4-benchmark-readiness-projection",
@@ -414,7 +434,8 @@ EXPECTED_MIGRATION_COUNTS = {
         "C6-R62-theseus-artifact-surface-projection",
         "C6-R69-efficiency-no-efficiency-claim-request-stays-idle",
         "C6-R88-efficiency-efficiency-route-search-probe-fixture-valid",
-        })
+            })
+        )
     )
     for action_id in EXPECTED_ACTION_IDS
 }
@@ -472,7 +493,7 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
     actions = ledger["actions"]
     if [row["action_id"] for row in actions] != EXPECTED_ACTION_IDS:
         out.append("action sequence or identity drifted")
-    if [row["sequence"] for row in actions] != list(range(1, 109)):
+    if [row["sequence"] for row in actions] != list(range(1, 152)):
         out.append("action sequence numbers drifted")
 
     try:
@@ -574,6 +595,7 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
         elif action["action"] in {
             "retire_legacy_fixture_theorem_after_reachable_refinement_rebinding",
             "retire_redundant_authored_fixture_witness",
+            "retire_repository_import_fixture_mirror",
         }:
             expected_disposition = "rewrite_with_stronger_model"
         else:
@@ -675,6 +697,18 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
                 out.append(
                     f"{action['action_id']}: independent executable consumer is not bound"
                 )
+        elif action["action"] == "retire_repository_import_fixture_mirror":
+            if replacement_id is not None or replacement_block is not None:
+                out.append(
+                    f"{action['action_id']}: repository mirror retirement invented a replacement theorem"
+                )
+            if not any(
+                ref.startswith("scripts/validate_theseus_") and ref.endswith(".py")
+                for ref in action["validation_refs"]
+            ):
+                out.append(
+                    f"{action['action_id']}: Project Theseus executable validator is not bound"
+                )
         else:
             out.append(f"{action['action_id']}: unsupported action kind")
 
@@ -694,16 +728,16 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
 
     overlay = load(CURRENT_OVERLAY)
     summary = overlay.get("summary", {})
-    if summary.get("current_theorem_count") != 1270:
+    if summary.get("current_theorem_count") != 1227:
         out.append("current theorem denominator drifted")
     if summary.get("semantic_level_counts") != EXPECTED_LEVELS:
         out.append("current semantic-level counts drifted")
     if summary.get("disposition_counts") != EXPECTED_DISPOSITIONS:
         out.append("current disposition counts drifted")
-    if sum(value for key, value in EXPECTED_DISPOSITIONS.items() if key != "retain") != 52:
+    if sum(value for key, value in EXPECTED_DISPOSITIONS.items() if key != "retain") != 9:
         out.append("expected remaining-action denominator is internally inconsistent")
     if ledger["summary"]["remaining_action_counts"] != {
-        "retire_without_replacement": 51,
+        "retire_without_replacement": 8,
         "rewrite_as_inverse_route_property": 1,
     }:
         out.append("ledger remaining-action family counts drifted")
@@ -1065,18 +1099,18 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
     if status.get("rationalization_ledger_path") != str(LEDGER.relative_to(ROOT)):
         out.append("status does not bind the cumulative rationalization ledger")
     if (
-        status.get("theorem_count") != 1270
-        or status.get("executed_retirement_count") != 106
+        status.get("theorem_count") != 1227
+        or status.get("executed_retirement_count") != 149
         or status.get("executed_scope_rewrite_count") != 2
-        or status.get("remaining_action_count") != 52
+        or status.get("remaining_action_count") != 9
     ):
         out.append("status does not report the cumulative post-transaction denominator")
     roadmap = ROADMAP.read_text(encoding="utf-8")
     roadmap_flat = " ".join(roadmap.split())
     for phrase in [
         "sixteenth evidence-transition consolidation tranche",
-        "1,270 live theorem declarations",
-        "52 stronger-model actions remain",
+        "1,227 live theorem declarations",
+        "nine stronger-model actions remain",
         "`proofs/proof_semantic_rationalization_ledger.json`",
     ]:
         if phrase not in roadmap_flat:
@@ -1149,9 +1183,9 @@ def main() -> None:
             + "\n - ".join(failures)
         )
     print(
-        "Proof semantic-rationalization ledger passed: 106 dependency-safe "
-        "retirements, two exact scope rewrites, forty-seven public-target migrations, "
-        "1,270 live theorems, 52 stronger-model actions remain, 16 rejecting "
+        "Proof semantic-rationalization ledger passed: 149 dependency-safe "
+        "retirements, two exact scope rewrites, ninety public-target migrations, "
+        "1,227 live theorems, nine stronger-model actions remain, 16 rejecting "
         "mutations, no support or release effect."
     )
 

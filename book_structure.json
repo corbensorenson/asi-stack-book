@@ -26164,60 +26164,6 @@
               "module": "AsiStackProofs.TheseusReference",
               "target": "A public-safe Theseus report-bundle audit fixture is accepted only when bundle components, replay-readiness rows, crosswalk rows, gate mappings, work-board contract fields, visible artifact gaps, intervention-ladder ordering, and no-promotion boundaries are complete.",
               "status": "implemented"
-            },
-            {
-              "tag": "lean:theseus.reference.public_task_bundle_import.fixture_bridge",
-              "module": "AsiStackProofs.TheseusReference",
-              "target": "A public-safe Theseus public task-bundle import fixture is accepted only when source reports, metadata-only public task boundaries, zero public training rows, zero exported prompts/tests/solutions/traces/scores/candidate code, operator and benchmark gates, visible artifact gaps, no clean-live-replay claim, and no-promotion boundaries are complete.",
-              "status": "implemented"
-            },
-            {
-              "tag": "lean:theseus.reference.fast_support_aggregate.fixture_bridge",
-              "module": "AsiStackProofs.TheseusReference",
-              "target": "The selected Theseus/Fast support-lane aggregate carries 4 command replays, 16 tracked artifacts, 68 public task records, 14 expected-invalid or rejected controls, 2 accepted no-promotion decisions, the four included support surfaces, and explicit no-clean-live-replay, no-model-quality, no-generation-speed, no-useful-solution-model, no-chapter-core-promotion, and no-support-state-promotion boundaries.",
-              "status": "implemented"
-            },
-            {
-              "tag": "lean:theseus.reference.artifact_retention_replay_import.fixture_bridge",
-              "module": "AsiStackProofs.TheseusReference",
-              "target": "A sanitized Project Theseus artifact-retention replay import fixture records exact-hash retained-artifact replay, public-safe redaction, zero public training rows, zero external inference calls, required record counts, and rejects hash mismatch or chapter-core promotion overclaim.",
-              "status": "implemented"
-            },
-            {
-              "tag": "lean:theseus.reference.module_definition_of_done_import.fixture_bridge",
-              "module": "AsiStackProofs.TheseusReference",
-              "target": "A sanitized Project Theseus module definition-of-done import fixture records a GREEN gate, 22 ready module records, 0 hard gaps, 0 warnings, source-backlog routing, public-safety boundaries, and rejects chapter-core promotion or capability overclaim.",
-              "status": "implemented"
-            },
-            {
-              "tag": "lean:theseus.reference.project_registry_import.fixture_bridge",
-              "module": "AsiStackProofs.TheseusReference",
-              "target": "A sanitized Project Theseus project-registry import fixture records 5,662 registered paths, 24 owned lifecycle surfaces, complete registry coverage, zero unregistered active sources, zero stale or missing report outputs, zero generated source artifacts, zero registry-governance violations, public-safety boundaries, and rejects unregistered-source, clean-live-replay, private-payload, and chapter-core-promotion overclaims.",
-              "status": "implemented"
-            },
-            {
-              "tag": "lean:theseus.reference.assistant_reference_trace_import.fixture_bridge",
-              "module": "AsiStackProofs.TheseusReference",
-              "target": "A sanitized Project Theseus assistant reference-trace import fixture records 19 required trace record types, 27/27 gates, 2,203 route-validator view records, 12 selected VCM pages, zero public training rows, zero external inference calls, public-safety boundaries, and rejects missing-hop, private-payload, clean-live-replay, model-quality, benchmark-headline, and chapter-core-promotion overclaims.",
-              "status": "implemented"
-            },
-            {
-              "tag": "lean:theseus.reference.accelerator_parity_manifest_import.fixture_bridge",
-              "module": "AsiStackProofs.TheseusReference",
-              "target": "A sanitized Project Theseus accelerator parity manifest import fixture records 7 surfaces, 7 MLX report summaries, 4 Metal report summaries, 4 artifact manifests, 4 scheduler-canary surfaces, zero hard failures, zero public training rows, zero external inference calls, no teacher use, locked model promotion and production routing, public-safety boundaries, and rejects full-parity, production-routing, model-promotion, and chapter-core-promotion overclaims.",
-              "status": "implemented"
-            },
-            {
-              "tag": "lean:theseus.reference.book_crosswalk.pointer_boundary",
-              "module": "AsiStackProofs.TheseusReference",
-              "target": "A sanitized Project Theseus book-to-Theseus crosswalk import fixture records trigger state `GREEN`, 53 public-safe pointer rows, 20 backlog cards, 134 source-sync review decisions, public-safety boundaries, and rejects source-sync failure, public-safety failure, clean-live-replay overclaim, and chapter-core-promotion overclaim.",
-              "status": "implemented"
-            },
-            {
-              "tag": "lean:theseus.reference.work_board_import.metadata_boundary",
-              "module": "AsiStackProofs.TheseusReference",
-              "target": "A sanitized Project Theseus work-board metadata import fixture records 130 durable task rows, 412 event rows, 133 evidence rows, five SQLite tables, stale-snapshot currentness blocking, public-safety boundaries, and rejects clean-live-replay, private-payload, public-training-row, and chapter-core-promotion overclaims.",
-              "status": "implemented"
             }
           ]
         },

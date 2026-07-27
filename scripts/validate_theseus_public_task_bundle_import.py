@@ -10,6 +10,8 @@ import re
 import sys
 from typing import Any
 
+from validate_retired_theseus_formal_mirrors import validate_retired_formal_mirror
+
 
 ROOT = Path(__file__).resolve().parents[1]
 VALID_FIXTURE = ROOT / "experiments" / "theseus_public_task_bundle_import" / "fixtures" / "valid" / "public_task_bundle_import.valid.json"
@@ -413,10 +415,9 @@ def validate_surfaces(errors: list[str]) -> None:
         for phrase in SURFACE_PHRASES:
             if phrase not in text:
                 errors.append(f"{label} missing phrase {phrase!r}.")
-    lean_text = LEAN.read_text(encoding="utf-8", errors="ignore")
-    for theorem in LEAN_THEOREMS:
-        if theorem not in lean_text:
-            errors.append(f"{rel(LEAN)} missing theorem {theorem}.")
+    validate_retired_formal_mirror(
+        "lean:theseus.reference.public_task_bundle_import.fixture_bridge", errors
+    )
 
 
 def main() -> None:

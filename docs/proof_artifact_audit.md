@@ -10,9 +10,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Metric | Value |
 |---|---:|
-| Proof targets audited | 329 |
-| Manifest status counts | {"implemented": 303, "planned": 26} |
-| Triage class counts | {"formal-invariant": 311, "process-contract": 18} |
+| Proof targets audited | 320 |
+| Manifest status counts | {"implemented": 294, "planned": 26} |
+| Triage class counts | {"formal-invariant": 302, "process-contract": 18} |
 | Lean modules referenced | 72 |
 | Chapters with proof targets | 84 |
 | Validation errors | 0 |
@@ -96,7 +96,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | 4 | 18 | 0 | 16 | 5 |
 | `lean/AsiStackProofs/StackBoundaries.lean` | 3 | 9 | 0 | 13 | 7 |
 | `lean/AsiStackProofs/SupplyChainIntegrity.lean` | 6 | 7 | 0 | 1 | 1 |
-| `lean/AsiStackProofs/TheseusReference.lean` | 12 | 52 | 0 | 54 | 15 |
+| `lean/AsiStackProofs/TheseusReference.lean` | 3 | 9 | 0 | 8 | 6 |
 | `lean/AsiStackProofs/TribunalRefinement.lean` | 2 | 12 | 0 | 30 | 3 |
 | `lean/AsiStackProofs/TypedJobRefinement.lean` | 5 | 14 | 0 | 31 | 3 |
 | `lean/AsiStackProofs/ValueConflict.lean` | 2 | 21 | 0 | 9 | 4 |
@@ -170,7 +170,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `policy-optimization-and-learning-from-feedback` | 4 | 4 | 0 | 0 |
 | `privacy-data-rights-and-information-flow-governance` | 2 | 2 | 0 | 0 |
 | `procedural-memory-and-cognitive-loop-closure` | 2 | 2 | 0 | 0 |
-| `project-theseus-as-report-first-implementation-reference` | 12 | 12 | 0 | 0 |
+| `project-theseus-as-report-first-implementation-reference` | 3 | 3 | 0 | 0 |
 | `prototype-roadmap` | 3 | 3 | 0 | 0 |
 | `rankfold-neuralfold-and-artifact-compression` | 3 | 3 | 0 | 0 |
 | `readiness-gates-residual-escrow-and-quarantine` | 3 | 3 | 0 | 0 |
@@ -508,15 +508,6 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:theseus.reference.report_contract.operational_invariant` | `project-theseus-as-report-first-implementation-reference` | `AsiStackProofs.TheseusReference` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:theseus.reference.gate_before_promotion.failure_blocks_promotion` | `project-theseus-as-report-first-implementation-reference` | `AsiStackProofs.TheseusReference` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:theseus.reference.report_bundle_audit.fixture_bridge` | `project-theseus-as-report-first-implementation-reference` | `AsiStackProofs.TheseusReference` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:theseus.reference.public_task_bundle_import.fixture_bridge` | `project-theseus-as-report-first-implementation-reference` | `AsiStackProofs.TheseusReference` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:theseus.reference.fast_support_aggregate.fixture_bridge` | `project-theseus-as-report-first-implementation-reference` | `AsiStackProofs.TheseusReference` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:theseus.reference.artifact_retention_replay_import.fixture_bridge` | `project-theseus-as-report-first-implementation-reference` | `AsiStackProofs.TheseusReference` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:theseus.reference.module_definition_of_done_import.fixture_bridge` | `project-theseus-as-report-first-implementation-reference` | `AsiStackProofs.TheseusReference` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:theseus.reference.project_registry_import.fixture_bridge` | `project-theseus-as-report-first-implementation-reference` | `AsiStackProofs.TheseusReference` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:theseus.reference.assistant_reference_trace_import.fixture_bridge` | `project-theseus-as-report-first-implementation-reference` | `AsiStackProofs.TheseusReference` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:theseus.reference.accelerator_parity_manifest_import.fixture_bridge` | `project-theseus-as-report-first-implementation-reference` | `AsiStackProofs.TheseusReference` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:theseus.reference.book_crosswalk.pointer_boundary` | `project-theseus-as-report-first-implementation-reference` | `AsiStackProofs.TheseusReference` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:theseus.reference.work_board_import.metadata_boundary` | `project-theseus-as-report-first-implementation-reference` | `AsiStackProofs.TheseusReference` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:roadmap.phases.operational_invariant` | `prototype-roadmap` | `AsiStackProofs.PrototypeRoadmap` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:roadmap.phases.failure_blocks_promotion` | `prototype-roadmap` | `AsiStackProofs.PrototypeRoadmap` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:roadmap.phases.fixture_gate_bridge` | `prototype-roadmap` | `AsiStackProofs.PrototypeRoadmap` | triage ok; module ok; chapter tag ok; limitation ok |

@@ -10,6 +10,8 @@ import sys
 from pathlib import Path
 from typing import Any
 
+from validate_retired_theseus_formal_mirrors import validate_retired_formal_mirror
+
 
 ROOT = Path(__file__).resolve().parents[1]
 VALID_FIXTURE = (
@@ -373,15 +375,7 @@ def validate_surfaces(errors: list[str]) -> None:
         [CLAIM_ID, "prototype-backed", rel(VALID_FIXTURE), COMMAND],
         errors,
     )
-    require_text(
-        LEAN_FILE,
-        [
-            "TheseusArtifactRetentionReplayImportSummary",
-            "theseusArtifactRetentionReplayImportFixture",
-            *LEAN_THEOREMS,
-        ],
-        errors,
-    )
+    validate_retired_formal_mirror(PROOF_TAG, errors)
     for path in (CHAPTER, READER_CHAPTER, OUTLINE):
         require_text(
             path,

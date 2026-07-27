@@ -10,6 +10,8 @@ import sys
 from pathlib import Path
 from typing import Any
 
+from validate_retired_theseus_formal_mirrors import validate_retired_formal_mirror
+
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = ROOT / "experiments" / "theseus_assistant_reference_trace_import"
@@ -552,7 +554,6 @@ def validate_surfaces(errors: list[str]) -> None:
         ],
         ACTIVE_CYCLE: [
             "assistant reference-trace import",
-            "lean:theseus.reference.assistant_reference_trace_import.fixture_bridge",
             "19 narrow non-core upward transitions",
         ],
         ROADMAP: [
@@ -573,7 +574,6 @@ def validate_surfaces(errors: list[str]) -> None:
         ],
         OUTLINE: [
             "Theseus assistant reference-trace import validation",
-            PROOF_TAG,
         ],
         APPENDIX_E: [
             "Theseus assistant reference-trace import validation",
@@ -587,7 +587,6 @@ def validate_surfaces(errors: list[str]) -> None:
             "scripts/validate_theseus_assistant_reference_trace_import.py",
             '"script": "validate_theseus_assistant_reference_trace_import.py"',
         ],
-        LEAN_FILE: [*EXPECTED_THEOREMS],
     }
     for path, fragments in required_fragments.items():
         if not path.exists():
@@ -601,18 +600,17 @@ def validate_surfaces(errors: list[str]) -> None:
     manifest_text = MANIFEST.read_text(encoding="utf-8", errors="ignore") if MANIFEST.exists() else ""
     for fragment in (
         "Theseus assistant reference-trace import validation",
-        PROOF_TAG,
-        "A sanitized Project Theseus assistant reference-trace import fixture",
     ):
         if fragment not in manifest_text:
             errors.append(f"{rel(MANIFEST)} missing required fragment {fragment!r}.")
 
     proof_text = PROOF_MANIFEST.read_text(encoding="utf-8", errors="ignore") if PROOF_MANIFEST.exists() else ""
-    if PROOF_TAG not in proof_text:
-        errors.append(f"{rel(PROOF_MANIFEST)} missing {PROOF_TAG}.")
+    if PROOF_TAG in proof_text:
+        errors.append(f"{rel(PROOF_MANIFEST)} still exposes retired target {PROOF_TAG}.")
     triage_text = PROOF_TRIAGE.read_text(encoding="utf-8", errors="ignore") if PROOF_TRIAGE.exists() else ""
-    if PROOF_TAG not in triage_text:
-        errors.append(f"{rel(PROOF_TRIAGE)} missing {PROOF_TAG}.")
+    if PROOF_TAG in triage_text:
+        errors.append(f"{rel(PROOF_TRIAGE)} still exposes retired target {PROOF_TAG}.")
+    validate_retired_formal_mirror(PROOF_TAG, errors)
 
 
 def main() -> None:

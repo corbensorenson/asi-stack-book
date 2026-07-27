@@ -3,13 +3,13 @@
   "scanner": "modal and outcome-bearing sentence cue scan; candidates require semantic adjudication",
   "summary": {
     "chapter_count": 64,
-    "candidate_count": 3380,
+    "candidate_count": 3381,
     "review_state_counts": {
       "duplicate_of_atom": 1639,
       "editorial_or_question": 59,
       "historical_or_source_report": 295,
       "material_atom": 3,
-      "nonmaterial_explanation": 1384
+      "nonmaterial_explanation": 1385
     }
   },
   "candidates": [
@@ -61673,13 +61673,12 @@
       "target_atom_id": null
     },
     {
-      "candidate_id": "project-theseus-as-report-first-implementation-reference.prose.481b9ff679b2",
+      "candidate_id": "project-theseus-as-report-first-implementation-reference.prose.a0c6bdf57a52",
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:374",
-      "sentence": "None directly projects empirical data into a theorem, proves the imported reports true, or establishes clean live replay, current runtime state, model quality, capability, generation speed, benchmark performance, route quality, production routing, deployment, safety, self-evolution, external reproduction, transfer, or the chapter core.",
+      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:363",
+      "sentence": "These formal hooks do not prove report truth, clean live replay, current runtime state, model quality, benchmark superiority, capability, safety, deployment, transfer, AGI, ASI, or chapter-core support.",
       "cues": [
-        "establishes",
-        "proves",
+        "prove",
         "transfer"
       ],
       "review_state": "nonmaterial_explanation",
@@ -61690,13 +61689,33 @@
         "editorial_or_question",
         "historical_or_source_report"
       ],
-      "disposition_rationale": "Semantically reviewed as the explicit formal-proof non-claim; the finite proof boundary is already atomized and no empirical projection is asserted.",
+      "disposition_rationale": "Explicit formal-proof non-claim that narrows three retained finite targets; the chapter's structured proof-target atoms already carry the material boundaries.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "project-theseus-as-report-first-implementation-reference.prose.ecd3e06068ad",
+      "chapter_id": "project-theseus-as-report-first-implementation-reference",
+      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:367",
+      "sentence": "This change reduces proof ceremony; it does not weaken a claimed theorem, promote support, or establish live Theseus behavior, capability, quality, safety, deployment, transfer, AGI, ASI, or SOTA.",
+      "cues": [
+        "reduces",
+        "transfer"
+      ],
+      "review_state": "nonmaterial_explanation",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Semantic-rationalization receipt and explicit non-claim; it reports no new system capability, evidence transition, or support-bearing proposition.",
       "target_atom_id": null
     },
     {
       "candidate_id": "project-theseus-as-report-first-implementation-reference.prose.73252f45d3b2",
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:391",
+      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:384",
       "sentence": "The whitepaper supplies the RMI/report-first frame, the plan compiler supplies goal-to-contract machinery, the self-evolution source supplies intervention-gate discipline, the architecture gate supplies readiness boundaries plus static digest-verified architecture and generation-mode imports, the operator OS supplies work-board and node-control surfaces, and the Circle transfer source supplies structural fixture non-claims.",
       "cues": [
         "transfer"
@@ -61715,7 +61734,7 @@
     {
       "candidate_id": "project-theseus-as-report-first-implementation-reference.prose.2058397a7ae3",
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:406",
+      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:399",
       "sentence": "The first static architecture-gate report import shows how one readiness report can be mirrored safely, the static generation-mode import shows how a negative promotion decision can be mirrored without copying private workloads, and the public task-bundle import shows how a richer run summary can preserve 64 public BigCodeBench metadata-only tasks, 0 public training rows, 0 task-level regressions, residuals, and artifact gaps without turning calibration into capability evidence.",
       "cues": [
         "shows"
@@ -61734,7 +61753,7 @@
     {
       "candidate_id": "project-theseus-as-report-first-implementation-reference.prose.51cf7ad064dd",
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:408",
+      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:401",
       "sentence": "Theseus shows what kind of implementation evidence the stack should want, while keeping the public book honest about what it actually has.",
       "cues": [
         "should",
@@ -61754,7 +61773,7 @@
     {
       "candidate_id": "project-theseus-as-report-first-implementation-reference.prose.e98481cc2cd9",
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:445",
+      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:438",
       "sentence": "Theseus shows what report-first implementation evidence should look like, but a build program still needs dependency order and refusal points before autonomy grows.",
       "cues": [
         "should",

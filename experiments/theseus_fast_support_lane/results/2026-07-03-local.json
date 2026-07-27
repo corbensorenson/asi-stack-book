@@ -60,11 +60,11 @@
   ],
   "pass": true,
   "record_kind": "theseus_fast_support_lane",
-  "recorded_at_utc": "2026-07-26T15:22:56Z",
+  "recorded_at_utc": "2026-07-27T06:30:21Z",
   "replay_commands": [
     {
       "command": "python3 scripts/validate_theseus_generation_mode_import.py",
-      "elapsed_ms": 36.492,
+      "elapsed_ms": 34.544,
       "evidence_surface": "Project Theseus public-safe generation-mode import plus Fast Generation Lean bridge",
       "exit_code": 0,
       "id": "theseus_generation_mode_import",
@@ -75,7 +75,7 @@
     },
     {
       "command": "python3 scripts/validate_theseus_support_replay_probe.py",
-      "elapsed_ms": 109.535,
+      "elapsed_ms": 117.669,
       "evidence_surface": "ASI-side replay of the two Project Theseus static import validators",
       "exit_code": 0,
       "id": "theseus_support_replay_probe",
@@ -86,7 +86,7 @@
     },
     {
       "command": "python3 scripts/validate_theseus_public_task_bundle_import.py",
-      "elapsed_ms": 43.8,
+      "elapsed_ms": 47.59,
       "evidence_surface": "bounded Project Theseus public task-bundle import and no-promotion decision",
       "exit_code": 0,
       "id": "theseus_public_task_bundle_import",
@@ -97,7 +97,7 @@
     },
     {
       "command": "python3 scripts/validate_fast_generation_task_bundle.py",
-      "elapsed_ms": 34.353,
+      "elapsed_ms": 35.065,
       "evidence_surface": "local Fast Generation public-safe task bundle and no-promotion decision",
       "exit_code": 0,
       "id": "fast_generation_task_bundle",
@@ -181,10 +181,10 @@
       "sha256": "720fbb7a468ef9c788b91de431bd9f12fa0733104f6c55877076b87821156321"
     },
     {
-      "bytes": 69470,
-      "lines": 1791,
+      "bytes": 20047,
+      "lines": 473,
       "path": "lean/AsiStackProofs/TheseusReference.lean",
-      "sha256": "a5db5310b8c11a02ec8d092dc60c1efb5b1a517eaa0d93e7769d65a6897b79d3"
+      "sha256": "c3da9520b747b29d31eef0fd2ea008a884d00279f417a93b8c88697ee4cb1945"
     },
     {
       "bytes": 19016,
@@ -199,10 +199,10 @@
       "sha256": "9e68a75c43e97203da6e1776605029ea10279774af656f656e1cc60fa4ffc21c"
     },
     {
-      "bytes": 19866,
-      "lines": 462,
+      "bytes": 19868,
+      "lines": 463,
       "path": "scripts/validate_theseus_public_task_bundle_import.py",
-      "sha256": "06708a8d42a1b2dff74951e67ad0d49ded50c986ed94c60c1570c85ef0ac61af"
+      "sha256": "b228841e9b2ac8897676d7b7c013ecdbcc2308267bf763e6f6899dba708d4cb2"
     },
     {
       "bytes": 11496,

@@ -9,6 +9,8 @@ import sys
 from pathlib import Path
 from typing import Any
 
+from validate_retired_theseus_formal_mirrors import validate_retired_formal_mirror
+
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = ROOT / "experiments" / "theseus_project_registry_import"
@@ -311,24 +313,7 @@ def validate_transition(errors: list[str]) -> dict[str, Any]:
 
 
 def validate_lean(errors: list[str]) -> None:
-    text = LEAN_FILE.read_text(encoding="utf-8", errors="ignore")
-    for theorem in EXPECTED_THEOREMS:
-        if not re.search(rf"\btheorem\s+{re.escape(theorem)}\b", text):
-            errors.append(f"{rel(LEAN_FILE)} missing theorem {theorem}.")
-    for field in (
-        "entryCount",
-        "registeredPathCount",
-        "surfaceCount",
-        "coverageComplete",
-        "unregisteredActiveSources",
-        "unclassifiedDuplicateFamilies",
-        "registryGovernanceViolations",
-        "generatedSourceArtifacts",
-        "cleanLiveReplayClaimed",
-        "chapterCorePromotion",
-    ):
-        if field not in text:
-            errors.append(f"{rel(LEAN_FILE)} missing project-registry field {field}.")
+    validate_retired_formal_mirror(PROOF_TAG, errors)
 
 
 def validate_surfaces(errors: list[str]) -> None:
@@ -357,7 +342,6 @@ def validate_surfaces(errors: list[str]) -> None:
             "Theseus project-registry import",
             COMMAND,
             CLAIM_ID,
-            PROOF_TAG,
         ],
         ROADMAP: [
             "project-registry import",

@@ -19,6 +19,10 @@
     {
       "script": "scripts/validate_reflexive_router_source_intake.py",
       "reason": "Local source-intake validator requires the ignored private/raw Markdown and DOCX source forms; the public-safe source note, exact intake decision, dispatch fixture, roadmap contract, and raw-publication boundary are covered by tracked validators."
+    },
+    {
+      "script": "scripts/validate_retired_theseus_formal_mirrors.py",
+      "reason": "Shared validation library imported by nine registered Project Theseus executable validators; it has no standalone command surface and is exercised whenever any of those validators checks theorem retirement, ledger custody, and stale-target absence."
     }
   ]
 }

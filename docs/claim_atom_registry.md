@@ -7,7 +7,7 @@ This is the readable projection of `evidence_quality/claim_atom_registry.json`. 
 ## Coverage summary
 
 - Chapters: 64
-- Structured manifest atoms: 4067
+- Structured manifest atoms: 4058
 - Machine candidates awaiting semantic atom review: 0
 - Prose-only candidates awaiting materiality adjudication: 0
 - Support-state effect: none
@@ -17,7 +17,7 @@ This is the readable projection of `evidence_quality/claim_atom_registry.json`. 
 | `beyond_sota` | 64 |
 | `core` | 64 |
 | `failure_mode` | 1031 |
-| `formal_target` | 302 |
+| `formal_target` | 293 |
 | `insufficiency` | 64 |
 | `interface` | 603 |
 | `invariant` | 902 |
@@ -90,7 +90,7 @@ This is the readable projection of `evidence_quality/claim_atom_registry.json`. 
 | Scientific Discovery and Experimental Governance | 33 | 0 | 0 | `evidence_quality/claim_dossiers/scientific-discovery-and-experimental-governance.md` |
 | Artifact Steward Agents and Living Project Governance | 78 | 0 | 0 | `evidence_quality/claim_dossiers/artifact-steward-agents-and-living-project-governance.md` |
 | Integrated Reference Architecture | 74 | 0 | 0 | `evidence_quality/claim_dossiers/integrated-reference-architecture.md` |
-| Project Theseus as Report-First Implementation Reference | 83 | 0 | 0 | `evidence_quality/claim_dossiers/project-theseus-as-report-first-implementation-reference.md` |
+| Project Theseus as Report-First Implementation Reference | 74 | 0 | 0 | `evidence_quality/claim_dossiers/project-theseus-as-report-first-implementation-reference.md` |
 | Prototype Roadmap | 74 | 0 | 0 | `evidence_quality/claim_dossiers/prototype-roadmap.md` |
 | Living Book Methodology | 75 | 0 | 0 | `evidence_quality/claim_dossiers/living-book-methodology.md` |
 | Open Research Agenda and Bibliography Plan | 73 | 0 | 0 | `evidence_quality/claim_dossiers/open-research-agenda-and-bibliography-plan.md` |

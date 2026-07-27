@@ -4789,15 +4789,2036 @@
         "lean:lake-build"
       ],
       "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R109-retire-theseus-repository-mirror-theseus-accelerator-parity-manifest-import-core-promotion-rejected",
+      "sequence": 109,
+      "state": "executed",
+      "action": "retire_repository_import_fixture_mirror",
+      "semantic_relation": "copied_repository_summary_rebound_to_executable_validator_and_immutable_result",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "baseline_module_sha256": "a112a3cd329708c14807219a3e485d289ac472bb93f6079a2d60e6e73c63433a",
+      "retired_theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_accelerator_parity_manifest_import_core_promotion_rejected",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "ab0c1387f2694ecbd3d0acf70bd006191e2e0b9ab8158e45d94af8daff353f11",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "a5e80b51d5eb58c90e63c6c86a4c7c19c37bb9a1f038ee63445bb47f6f941448",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+        "The frozen audit reports zero Lean dependencies and zero theorem consumers.",
+        "The repository validator checks the source artifact, deterministic result, controls, and claim boundary directly.",
+        "The associated formal target is removed rather than pretending executable evidence is a theorem.",
+        "The historical result remains unchanged and no support-state or release transition is created."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:theseus.reference.accelerator_parity_manifest_import.fixture_bridge",
+          "old_target_text": "A sanitized Project Theseus accelerator parity manifest import fixture records 7 surfaces, 7 MLX report summaries, 4 Metal report summaries, 4 artifact manifests, 4 scheduler-canary surfaces, zero hard failures, zero public training rows, zero external inference calls, no teacher use, locked model promotion and production routing, public-safety boundaries, and rejects full-parity, production-routing, model-promotion, and chapter-core-promotion overclaims.",
+          "new_target_text": "Executable-only bounded import claim; the copied formal mirror is retired.",
+          "consumer_paths": []
+        }
+      ],
+      "maximum_inference_preserved": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "validation_refs": [
+        "scripts/validate_theseus_accelerator_parity_manifest_import.py",
+        "scripts/validate_theseus_report.py",
+        "proofs/c6_remaining_stronger_model_audit.json",
+        "scripts/validate_retired_theseus_formal_mirrors.py",
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R110-retire-theseus-repository-mirror-theseus-accelerator-parity-manifest-import-fixture-valid",
+      "sequence": 110,
+      "state": "executed",
+      "action": "retire_repository_import_fixture_mirror",
+      "semantic_relation": "copied_repository_summary_rebound_to_executable_validator_and_immutable_result",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "baseline_module_sha256": "a112a3cd329708c14807219a3e485d289ac472bb93f6079a2d60e6e73c63433a",
+      "retired_theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_accelerator_parity_manifest_import_fixture_valid",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "da8469d434fc077148d90c12add1b81ddbe1e836d7627e09c7100636f2ca370a",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "bb0d92aebafe5f23549ac545126a062a66af8169e79358c9b4a78f73db32ec5a",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+        "The frozen audit reports zero Lean dependencies and zero theorem consumers.",
+        "The repository validator checks the source artifact, deterministic result, controls, and claim boundary directly.",
+        "The associated formal target is removed rather than pretending executable evidence is a theorem.",
+        "The historical result remains unchanged and no support-state or release transition is created."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:theseus.reference.accelerator_parity_manifest_import.fixture_bridge",
+          "old_target_text": "A sanitized Project Theseus accelerator parity manifest import fixture records 7 surfaces, 7 MLX report summaries, 4 Metal report summaries, 4 artifact manifests, 4 scheduler-canary surfaces, zero hard failures, zero public training rows, zero external inference calls, no teacher use, locked model promotion and production routing, public-safety boundaries, and rejects full-parity, production-routing, model-promotion, and chapter-core-promotion overclaims.",
+          "new_target_text": "Executable-only bounded import claim; the copied formal mirror is retired.",
+          "consumer_paths": []
+        }
+      ],
+      "maximum_inference_preserved": "Only the declared type, record-shape, equality, or projection fact in the Lean model.",
+      "validation_refs": [
+        "scripts/validate_theseus_accelerator_parity_manifest_import.py",
+        "scripts/validate_theseus_report.py",
+        "proofs/c6_remaining_stronger_model_audit.json",
+        "scripts/validate_retired_theseus_formal_mirrors.py",
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R111-retire-theseus-repository-mirror-theseus-accelerator-parity-manifest-import-full-parity-overclaim-rejected",
+      "sequence": 111,
+      "state": "executed",
+      "action": "retire_repository_import_fixture_mirror",
+      "semantic_relation": "copied_repository_summary_rebound_to_executable_validator_and_immutable_result",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "baseline_module_sha256": "a112a3cd329708c14807219a3e485d289ac472bb93f6079a2d60e6e73c63433a",
+      "retired_theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_accelerator_parity_manifest_import_full_parity_overclaim_rejected",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "a2511fc52b4ba4acec71a669b7846d958ee8f9b1d15ec457259b8f20093e6a44",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "90795aa83d416669839777a10598ae8242e7ff1a90aea9152a3ca74be99a2003",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+        "The frozen audit reports zero Lean dependencies and zero theorem consumers.",
+        "The repository validator checks the source artifact, deterministic result, controls, and claim boundary directly.",
+        "The associated formal target is removed rather than pretending executable evidence is a theorem.",
+        "The historical result remains unchanged and no support-state or release transition is created."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:theseus.reference.accelerator_parity_manifest_import.fixture_bridge",
+          "old_target_text": "A sanitized Project Theseus accelerator parity manifest import fixture records 7 surfaces, 7 MLX report summaries, 4 Metal report summaries, 4 artifact manifests, 4 scheduler-canary surfaces, zero hard failures, zero public training rows, zero external inference calls, no teacher use, locked model promotion and production routing, public-safety boundaries, and rejects full-parity, production-routing, model-promotion, and chapter-core-promotion overclaims.",
+          "new_target_text": "Executable-only bounded import claim; the copied formal mirror is retired.",
+          "consumer_paths": []
+        }
+      ],
+      "maximum_inference_preserved": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "validation_refs": [
+        "scripts/validate_theseus_accelerator_parity_manifest_import.py",
+        "scripts/validate_theseus_report.py",
+        "proofs/c6_remaining_stronger_model_audit.json",
+        "scripts/validate_retired_theseus_formal_mirrors.py",
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R112-retire-theseus-repository-mirror-theseus-accelerator-parity-manifest-import-model-promotion-overclaim-rejected",
+      "sequence": 112,
+      "state": "executed",
+      "action": "retire_repository_import_fixture_mirror",
+      "semantic_relation": "copied_repository_summary_rebound_to_executable_validator_and_immutable_result",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "baseline_module_sha256": "a112a3cd329708c14807219a3e485d289ac472bb93f6079a2d60e6e73c63433a",
+      "retired_theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_accelerator_parity_manifest_import_model_promotion_overclaim_rejected",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "0e377bcdd62318c0a14842174ce6e39b98b3ff6af0fda435a60099c41e5eb26b",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "3c76fae834b55ff156a405b29708232bb893c55078f88376a3546fce85d2f885",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+        "The frozen audit reports zero Lean dependencies and zero theorem consumers.",
+        "The repository validator checks the source artifact, deterministic result, controls, and claim boundary directly.",
+        "The associated formal target is removed rather than pretending executable evidence is a theorem.",
+        "The historical result remains unchanged and no support-state or release transition is created."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:theseus.reference.accelerator_parity_manifest_import.fixture_bridge",
+          "old_target_text": "A sanitized Project Theseus accelerator parity manifest import fixture records 7 surfaces, 7 MLX report summaries, 4 Metal report summaries, 4 artifact manifests, 4 scheduler-canary surfaces, zero hard failures, zero public training rows, zero external inference calls, no teacher use, locked model promotion and production routing, public-safety boundaries, and rejects full-parity, production-routing, model-promotion, and chapter-core-promotion overclaims.",
+          "new_target_text": "Executable-only bounded import claim; the copied formal mirror is retired.",
+          "consumer_paths": []
+        }
+      ],
+      "maximum_inference_preserved": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "validation_refs": [
+        "scripts/validate_theseus_accelerator_parity_manifest_import.py",
+        "scripts/validate_theseus_report.py",
+        "proofs/c6_remaining_stronger_model_audit.json",
+        "scripts/validate_retired_theseus_formal_mirrors.py",
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R113-retire-theseus-repository-mirror-theseus-accelerator-parity-manifest-import-production-routing-overclaim-rejected",
+      "sequence": 113,
+      "state": "executed",
+      "action": "retire_repository_import_fixture_mirror",
+      "semantic_relation": "copied_repository_summary_rebound_to_executable_validator_and_immutable_result",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "baseline_module_sha256": "a112a3cd329708c14807219a3e485d289ac472bb93f6079a2d60e6e73c63433a",
+      "retired_theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_accelerator_parity_manifest_import_production_routing_overclaim_rejected",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "7fda82822c4099ca4aab57bf126757800f2f41abacbb6977c2959161e0e112cf",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "543f37958df036bf0ea076ca0c1b3a0ee073cc6380103af9264603f8644ba1f3",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+        "The frozen audit reports zero Lean dependencies and zero theorem consumers.",
+        "The repository validator checks the source artifact, deterministic result, controls, and claim boundary directly.",
+        "The associated formal target is removed rather than pretending executable evidence is a theorem.",
+        "The historical result remains unchanged and no support-state or release transition is created."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:theseus.reference.accelerator_parity_manifest_import.fixture_bridge",
+          "old_target_text": "A sanitized Project Theseus accelerator parity manifest import fixture records 7 surfaces, 7 MLX report summaries, 4 Metal report summaries, 4 artifact manifests, 4 scheduler-canary surfaces, zero hard failures, zero public training rows, zero external inference calls, no teacher use, locked model promotion and production routing, public-safety boundaries, and rejects full-parity, production-routing, model-promotion, and chapter-core-promotion overclaims.",
+          "new_target_text": "Executable-only bounded import claim; the copied formal mirror is retired.",
+          "consumer_paths": []
+        }
+      ],
+      "maximum_inference_preserved": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "validation_refs": [
+        "scripts/validate_theseus_accelerator_parity_manifest_import.py",
+        "scripts/validate_theseus_report.py",
+        "proofs/c6_remaining_stronger_model_audit.json",
+        "scripts/validate_retired_theseus_formal_mirrors.py",
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R114-retire-theseus-repository-mirror-theseus-artifact-retention-replay-import-core-promotion-rejected",
+      "sequence": 114,
+      "state": "executed",
+      "action": "retire_repository_import_fixture_mirror",
+      "semantic_relation": "copied_repository_summary_rebound_to_executable_validator_and_immutable_result",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "baseline_module_sha256": "a112a3cd329708c14807219a3e485d289ac472bb93f6079a2d60e6e73c63433a",
+      "retired_theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_artifact_retention_replay_import_core_promotion_rejected",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "e25a76c89315036b5d9fdec6f3f7aab95a2833445b72d49187577c515b93adf7",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "4f85a428cad2070c9108e4dabc227fdd180c44b9369b9970564a22fdf0596664",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+        "The frozen audit reports zero Lean dependencies and zero theorem consumers.",
+        "The repository validator checks the source artifact, deterministic result, controls, and claim boundary directly.",
+        "The associated formal target is removed rather than pretending executable evidence is a theorem.",
+        "The historical result remains unchanged and no support-state or release transition is created."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:theseus.reference.artifact_retention_replay_import.fixture_bridge",
+          "old_target_text": "A sanitized Project Theseus artifact-retention replay import fixture records exact-hash retained-artifact replay, public-safe redaction, zero public training rows, zero external inference calls, required record counts, and rejects hash mismatch or chapter-core promotion overclaim.",
+          "new_target_text": "Executable-only bounded import claim; the copied formal mirror is retired.",
+          "consumer_paths": []
+        }
+      ],
+      "maximum_inference_preserved": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "validation_refs": [
+        "scripts/validate_theseus_artifact_retention_replay_import.py",
+        "scripts/validate_theseus_report.py",
+        "proofs/c6_remaining_stronger_model_audit.json",
+        "scripts/validate_retired_theseus_formal_mirrors.py",
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R115-retire-theseus-repository-mirror-theseus-artifact-retention-replay-import-fixture-valid",
+      "sequence": 115,
+      "state": "executed",
+      "action": "retire_repository_import_fixture_mirror",
+      "semantic_relation": "copied_repository_summary_rebound_to_executable_validator_and_immutable_result",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "baseline_module_sha256": "a112a3cd329708c14807219a3e485d289ac472bb93f6079a2d60e6e73c63433a",
+      "retired_theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_artifact_retention_replay_import_fixture_valid",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "f249f60a291cc3bf6f7a689c696325b68fda36d8e40f578806ec70ea7c1a032e",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "f0f41291d8811bdff5f4efb1ab363acbdb953161bfcb2b30f46fec59d1bc6351",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+        "The frozen audit reports zero Lean dependencies and zero theorem consumers.",
+        "The repository validator checks the source artifact, deterministic result, controls, and claim boundary directly.",
+        "The associated formal target is removed rather than pretending executable evidence is a theorem.",
+        "The historical result remains unchanged and no support-state or release transition is created."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:theseus.reference.artifact_retention_replay_import.fixture_bridge",
+          "old_target_text": "A sanitized Project Theseus artifact-retention replay import fixture records exact-hash retained-artifact replay, public-safe redaction, zero public training rows, zero external inference calls, required record counts, and rejects hash mismatch or chapter-core promotion overclaim.",
+          "new_target_text": "Executable-only bounded import claim; the copied formal mirror is retired.",
+          "consumer_paths": []
+        }
+      ],
+      "maximum_inference_preserved": "Only the declared type, record-shape, equality, or projection fact in the Lean model.",
+      "validation_refs": [
+        "scripts/validate_theseus_artifact_retention_replay_import.py",
+        "scripts/validate_theseus_report.py",
+        "proofs/c6_remaining_stronger_model_audit.json",
+        "scripts/validate_retired_theseus_formal_mirrors.py",
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R116-retire-theseus-repository-mirror-theseus-artifact-retention-replay-import-hash-mismatch-rejected",
+      "sequence": 116,
+      "state": "executed",
+      "action": "retire_repository_import_fixture_mirror",
+      "semantic_relation": "copied_repository_summary_rebound_to_executable_validator_and_immutable_result",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "baseline_module_sha256": "a112a3cd329708c14807219a3e485d289ac472bb93f6079a2d60e6e73c63433a",
+      "retired_theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_artifact_retention_replay_import_hash_mismatch_rejected",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "03a6792fe7d35cb3aa3748598aa484978cdf2e5d341e64a17ba2056b289d3cc1",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "fa5e9e9c70f5f1da82946b74bc32d128a5c0a7245bcf4554abc0e5562abac659",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+        "The frozen audit reports zero Lean dependencies and zero theorem consumers.",
+        "The repository validator checks the source artifact, deterministic result, controls, and claim boundary directly.",
+        "The associated formal target is removed rather than pretending executable evidence is a theorem.",
+        "The historical result remains unchanged and no support-state or release transition is created."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:theseus.reference.artifact_retention_replay_import.fixture_bridge",
+          "old_target_text": "A sanitized Project Theseus artifact-retention replay import fixture records exact-hash retained-artifact replay, public-safe redaction, zero public training rows, zero external inference calls, required record counts, and rejects hash mismatch or chapter-core promotion overclaim.",
+          "new_target_text": "Executable-only bounded import claim; the copied formal mirror is retired.",
+          "consumer_paths": []
+        }
+      ],
+      "maximum_inference_preserved": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "validation_refs": [
+        "scripts/validate_theseus_artifact_retention_replay_import.py",
+        "scripts/validate_theseus_report.py",
+        "proofs/c6_remaining_stronger_model_audit.json",
+        "scripts/validate_retired_theseus_formal_mirrors.py",
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R117-retire-theseus-repository-mirror-theseus-assistant-reference-trace-import-clean-replay-overclaim-rejected",
+      "sequence": 117,
+      "state": "executed",
+      "action": "retire_repository_import_fixture_mirror",
+      "semantic_relation": "copied_repository_summary_rebound_to_executable_validator_and_immutable_result",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "baseline_module_sha256": "a112a3cd329708c14807219a3e485d289ac472bb93f6079a2d60e6e73c63433a",
+      "retired_theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_assistant_reference_trace_import_clean_replay_overclaim_rejected",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "38fad1a8066635827704f4a5ab7c623733f3ab1beb3b20d0561ff539834df3b3",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "3709f3b781564cb358b82dac7e561d93ffbb500da0c7007c042579b5c2fe41fa",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+        "The frozen audit reports zero Lean dependencies and zero theorem consumers.",
+        "The repository validator checks the source artifact, deterministic result, controls, and claim boundary directly.",
+        "The associated formal target is removed rather than pretending executable evidence is a theorem.",
+        "The historical result remains unchanged and no support-state or release transition is created."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:theseus.reference.assistant_reference_trace_import.fixture_bridge",
+          "old_target_text": "A sanitized Project Theseus assistant reference-trace import fixture records 19 required trace record types, 27/27 gates, 2,203 route-validator view records, 12 selected VCM pages, zero public training rows, zero external inference calls, public-safety boundaries, and rejects missing-hop, private-payload, clean-live-replay, model-quality, benchmark-headline, and chapter-core-promotion overclaims.",
+          "new_target_text": "Executable-only bounded import claim; the copied formal mirror is retired.",
+          "consumer_paths": []
+        }
+      ],
+      "maximum_inference_preserved": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "validation_refs": [
+        "scripts/validate_theseus_assistant_reference_trace_import.py",
+        "scripts/validate_theseus_report.py",
+        "proofs/c6_remaining_stronger_model_audit.json",
+        "scripts/validate_retired_theseus_formal_mirrors.py",
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R118-retire-theseus-repository-mirror-theseus-assistant-reference-trace-import-core-promotion-rejected",
+      "sequence": 118,
+      "state": "executed",
+      "action": "retire_repository_import_fixture_mirror",
+      "semantic_relation": "copied_repository_summary_rebound_to_executable_validator_and_immutable_result",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "baseline_module_sha256": "a112a3cd329708c14807219a3e485d289ac472bb93f6079a2d60e6e73c63433a",
+      "retired_theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_assistant_reference_trace_import_core_promotion_rejected",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "77f9c57065a6b92e80af1fb804609cfc714ef9920a464994c6781521d6712f88",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "506db9179213cf169a3db1bd72522b9329d365df9e0730b0366457bed0c6bf5d",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+        "The frozen audit reports zero Lean dependencies and zero theorem consumers.",
+        "The repository validator checks the source artifact, deterministic result, controls, and claim boundary directly.",
+        "The associated formal target is removed rather than pretending executable evidence is a theorem.",
+        "The historical result remains unchanged and no support-state or release transition is created."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:theseus.reference.assistant_reference_trace_import.fixture_bridge",
+          "old_target_text": "A sanitized Project Theseus assistant reference-trace import fixture records 19 required trace record types, 27/27 gates, 2,203 route-validator view records, 12 selected VCM pages, zero public training rows, zero external inference calls, public-safety boundaries, and rejects missing-hop, private-payload, clean-live-replay, model-quality, benchmark-headline, and chapter-core-promotion overclaims.",
+          "new_target_text": "Executable-only bounded import claim; the copied formal mirror is retired.",
+          "consumer_paths": []
+        }
+      ],
+      "maximum_inference_preserved": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "validation_refs": [
+        "scripts/validate_theseus_assistant_reference_trace_import.py",
+        "scripts/validate_theseus_report.py",
+        "proofs/c6_remaining_stronger_model_audit.json",
+        "scripts/validate_retired_theseus_formal_mirrors.py",
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R119-retire-theseus-repository-mirror-theseus-assistant-reference-trace-import-fixture-valid",
+      "sequence": 119,
+      "state": "executed",
+      "action": "retire_repository_import_fixture_mirror",
+      "semantic_relation": "copied_repository_summary_rebound_to_executable_validator_and_immutable_result",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "baseline_module_sha256": "a112a3cd329708c14807219a3e485d289ac472bb93f6079a2d60e6e73c63433a",
+      "retired_theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_assistant_reference_trace_import_fixture_valid",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "c66cd7c652c2ab5f7a8950c7a17704614340cb69742bd0d4a1fec3948376580b",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "438fa0117d9c10babb214bb50de0a5eab723b335e97d9ded28e12b1834ee96ce",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+        "The frozen audit reports zero Lean dependencies and zero theorem consumers.",
+        "The repository validator checks the source artifact, deterministic result, controls, and claim boundary directly.",
+        "The associated formal target is removed rather than pretending executable evidence is a theorem.",
+        "The historical result remains unchanged and no support-state or release transition is created."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:theseus.reference.assistant_reference_trace_import.fixture_bridge",
+          "old_target_text": "A sanitized Project Theseus assistant reference-trace import fixture records 19 required trace record types, 27/27 gates, 2,203 route-validator view records, 12 selected VCM pages, zero public training rows, zero external inference calls, public-safety boundaries, and rejects missing-hop, private-payload, clean-live-replay, model-quality, benchmark-headline, and chapter-core-promotion overclaims.",
+          "new_target_text": "Executable-only bounded import claim; the copied formal mirror is retired.",
+          "consumer_paths": []
+        }
+      ],
+      "maximum_inference_preserved": "Only the declared type, record-shape, equality, or projection fact in the Lean model.",
+      "validation_refs": [
+        "scripts/validate_theseus_assistant_reference_trace_import.py",
+        "scripts/validate_theseus_report.py",
+        "proofs/c6_remaining_stronger_model_audit.json",
+        "scripts/validate_retired_theseus_formal_mirrors.py",
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R120-retire-theseus-repository-mirror-theseus-assistant-reference-trace-import-model-quality-overclaim-rejected",
+      "sequence": 120,
+      "state": "executed",
+      "action": "retire_repository_import_fixture_mirror",
+      "semantic_relation": "copied_repository_summary_rebound_to_executable_validator_and_immutable_result",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "baseline_module_sha256": "a112a3cd329708c14807219a3e485d289ac472bb93f6079a2d60e6e73c63433a",
+      "retired_theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_assistant_reference_trace_import_model_quality_overclaim_rejected",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "d39fbf1439ae7252c9593a12bc63f92e61ecfecc3d8637cd55ec9552f78d02c4",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "99d3d31c81405cc5efdd624bf8b8bb8b888304a065dca4e44e623d8af803f3f7",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+        "The frozen audit reports zero Lean dependencies and zero theorem consumers.",
+        "The repository validator checks the source artifact, deterministic result, controls, and claim boundary directly.",
+        "The associated formal target is removed rather than pretending executable evidence is a theorem.",
+        "The historical result remains unchanged and no support-state or release transition is created."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:theseus.reference.assistant_reference_trace_import.fixture_bridge",
+          "old_target_text": "A sanitized Project Theseus assistant reference-trace import fixture records 19 required trace record types, 27/27 gates, 2,203 route-validator view records, 12 selected VCM pages, zero public training rows, zero external inference calls, public-safety boundaries, and rejects missing-hop, private-payload, clean-live-replay, model-quality, benchmark-headline, and chapter-core-promotion overclaims.",
+          "new_target_text": "Executable-only bounded import claim; the copied formal mirror is retired.",
+          "consumer_paths": []
+        }
+      ],
+      "maximum_inference_preserved": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "validation_refs": [
+        "scripts/validate_theseus_assistant_reference_trace_import.py",
+        "scripts/validate_theseus_report.py",
+        "proofs/c6_remaining_stronger_model_audit.json",
+        "scripts/validate_retired_theseus_formal_mirrors.py",
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R121-retire-theseus-repository-mirror-theseus-assistant-reference-trace-import-private-payload-rejected",
+      "sequence": 121,
+      "state": "executed",
+      "action": "retire_repository_import_fixture_mirror",
+      "semantic_relation": "copied_repository_summary_rebound_to_executable_validator_and_immutable_result",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "baseline_module_sha256": "a112a3cd329708c14807219a3e485d289ac472bb93f6079a2d60e6e73c63433a",
+      "retired_theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_assistant_reference_trace_import_private_payload_rejected",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "a317feacb307af6909ca72878e91e636f795bcb990224c38e58622bd81404a39",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "a0f3a31520048d24dfc9ae16c7bf88d696570d7b5495ccc86b1edb140a8dabf4",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+        "The frozen audit reports zero Lean dependencies and zero theorem consumers.",
+        "The repository validator checks the source artifact, deterministic result, controls, and claim boundary directly.",
+        "The associated formal target is removed rather than pretending executable evidence is a theorem.",
+        "The historical result remains unchanged and no support-state or release transition is created."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:theseus.reference.assistant_reference_trace_import.fixture_bridge",
+          "old_target_text": "A sanitized Project Theseus assistant reference-trace import fixture records 19 required trace record types, 27/27 gates, 2,203 route-validator view records, 12 selected VCM pages, zero public training rows, zero external inference calls, public-safety boundaries, and rejects missing-hop, private-payload, clean-live-replay, model-quality, benchmark-headline, and chapter-core-promotion overclaims.",
+          "new_target_text": "Executable-only bounded import claim; the copied formal mirror is retired.",
+          "consumer_paths": []
+        }
+      ],
+      "maximum_inference_preserved": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "validation_refs": [
+        "scripts/validate_theseus_assistant_reference_trace_import.py",
+        "scripts/validate_theseus_report.py",
+        "proofs/c6_remaining_stronger_model_audit.json",
+        "scripts/validate_retired_theseus_formal_mirrors.py",
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R122-retire-theseus-repository-mirror-theseus-assistant-reference-trace-import-requires-all-hops",
+      "sequence": 122,
+      "state": "executed",
+      "action": "retire_repository_import_fixture_mirror",
+      "semantic_relation": "copied_repository_summary_rebound_to_executable_validator_and_immutable_result",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "baseline_module_sha256": "a112a3cd329708c14807219a3e485d289ac472bb93f6079a2d60e6e73c63433a",
+      "retired_theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_assistant_reference_trace_import_requires_all_hops",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "3b9a90680b1340b8e91e8496f3a8770d667b35983de82e81a9c39d4bca9d93d9",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "70612bb3fc5048c04851c2dacacaea073972a22d6902f17446409648d0a132b3",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+        "The frozen audit reports zero Lean dependencies and zero theorem consumers.",
+        "The repository validator checks the source artifact, deterministic result, controls, and claim boundary directly.",
+        "The associated formal target is removed rather than pretending executable evidence is a theorem.",
+        "The historical result remains unchanged and no support-state or release transition is created."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:theseus.reference.assistant_reference_trace_import.fixture_bridge",
+          "old_target_text": "A sanitized Project Theseus assistant reference-trace import fixture records 19 required trace record types, 27/27 gates, 2,203 route-validator view records, 12 selected VCM pages, zero public training rows, zero external inference calls, public-safety boundaries, and rejects missing-hop, private-payload, clean-live-replay, model-quality, benchmark-headline, and chapter-core-promotion overclaims.",
+          "new_target_text": "Executable-only bounded import claim; the copied formal mirror is retired.",
+          "consumer_paths": []
+        }
+      ],
+      "maximum_inference_preserved": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "validation_refs": [
+        "scripts/validate_theseus_assistant_reference_trace_import.py",
+        "scripts/validate_theseus_report.py",
+        "proofs/c6_remaining_stronger_model_audit.json",
+        "scripts/validate_retired_theseus_formal_mirrors.py",
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R123-retire-theseus-repository-mirror-theseus-book-crosswalk-import-clean-replay-overclaim-rejected",
+      "sequence": 123,
+      "state": "executed",
+      "action": "retire_repository_import_fixture_mirror",
+      "semantic_relation": "copied_repository_summary_rebound_to_executable_validator_and_immutable_result",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "baseline_module_sha256": "a112a3cd329708c14807219a3e485d289ac472bb93f6079a2d60e6e73c63433a",
+      "retired_theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_book_crosswalk_import_clean_replay_overclaim_rejected",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "ff2ed5ba382dc94b5184d070c5da2a13d55e9153b3501aa70b6e9048b1f80195",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "45009b5163a0f0628e07135a6de8732de412516c060a9df0e7990f2fbe178033",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+        "The frozen audit reports zero Lean dependencies and zero theorem consumers.",
+        "The repository validator checks the source artifact, deterministic result, controls, and claim boundary directly.",
+        "The associated formal target is removed rather than pretending executable evidence is a theorem.",
+        "The historical result remains unchanged and no support-state or release transition is created."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:theseus.reference.book_crosswalk.pointer_boundary",
+          "old_target_text": "A sanitized Project Theseus book-to-Theseus crosswalk import fixture records trigger state `GREEN`, 53 public-safe pointer rows, 20 backlog cards, 134 source-sync review decisions, public-safety boundaries, and rejects source-sync failure, public-safety failure, clean-live-replay overclaim, and chapter-core-promotion overclaim.",
+          "new_target_text": "Executable-only bounded import claim; the copied formal mirror is retired.",
+          "consumer_paths": []
+        }
+      ],
+      "maximum_inference_preserved": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "validation_refs": [
+        "scripts/validate_theseus_book_crosswalk_import.py",
+        "scripts/validate_theseus_report.py",
+        "proofs/c6_remaining_stronger_model_audit.json",
+        "scripts/validate_retired_theseus_formal_mirrors.py",
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R124-retire-theseus-repository-mirror-theseus-book-crosswalk-import-core-promotion-rejected",
+      "sequence": 124,
+      "state": "executed",
+      "action": "retire_repository_import_fixture_mirror",
+      "semantic_relation": "copied_repository_summary_rebound_to_executable_validator_and_immutable_result",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "baseline_module_sha256": "a112a3cd329708c14807219a3e485d289ac472bb93f6079a2d60e6e73c63433a",
+      "retired_theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_book_crosswalk_import_core_promotion_rejected",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "d9a627651961c6430cb03b936df45089d9195753bead7fef04dcf6fb6039a294",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "fc4ba99eb6fdbbaad2d8e17e10ff4938e6eadcd23cf82c018781290a5158a895",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+        "The frozen audit reports zero Lean dependencies and zero theorem consumers.",
+        "The repository validator checks the source artifact, deterministic result, controls, and claim boundary directly.",
+        "The associated formal target is removed rather than pretending executable evidence is a theorem.",
+        "The historical result remains unchanged and no support-state or release transition is created."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:theseus.reference.book_crosswalk.pointer_boundary",
+          "old_target_text": "A sanitized Project Theseus book-to-Theseus crosswalk import fixture records trigger state `GREEN`, 53 public-safe pointer rows, 20 backlog cards, 134 source-sync review decisions, public-safety boundaries, and rejects source-sync failure, public-safety failure, clean-live-replay overclaim, and chapter-core-promotion overclaim.",
+          "new_target_text": "Executable-only bounded import claim; the copied formal mirror is retired.",
+          "consumer_paths": []
+        }
+      ],
+      "maximum_inference_preserved": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "validation_refs": [
+        "scripts/validate_theseus_book_crosswalk_import.py",
+        "scripts/validate_theseus_report.py",
+        "proofs/c6_remaining_stronger_model_audit.json",
+        "scripts/validate_retired_theseus_formal_mirrors.py",
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R125-retire-theseus-repository-mirror-theseus-book-crosswalk-import-fixture-valid",
+      "sequence": 125,
+      "state": "executed",
+      "action": "retire_repository_import_fixture_mirror",
+      "semantic_relation": "copied_repository_summary_rebound_to_executable_validator_and_immutable_result",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "baseline_module_sha256": "a112a3cd329708c14807219a3e485d289ac472bb93f6079a2d60e6e73c63433a",
+      "retired_theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_book_crosswalk_import_fixture_valid",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "d3f64b14a5e87931c04d4519cccb8db43c4a28147a119f5d2122b1e92d0b95de",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "e1ef1e2e2371b6852929647686dcc55deaa877b007013e044f63a5c4df226cf0",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+        "The frozen audit reports zero Lean dependencies and zero theorem consumers.",
+        "The repository validator checks the source artifact, deterministic result, controls, and claim boundary directly.",
+        "The associated formal target is removed rather than pretending executable evidence is a theorem.",
+        "The historical result remains unchanged and no support-state or release transition is created."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:theseus.reference.book_crosswalk.pointer_boundary",
+          "old_target_text": "A sanitized Project Theseus book-to-Theseus crosswalk import fixture records trigger state `GREEN`, 53 public-safe pointer rows, 20 backlog cards, 134 source-sync review decisions, public-safety boundaries, and rejects source-sync failure, public-safety failure, clean-live-replay overclaim, and chapter-core-promotion overclaim.",
+          "new_target_text": "Executable-only bounded import claim; the copied formal mirror is retired.",
+          "consumer_paths": []
+        }
+      ],
+      "maximum_inference_preserved": "Only the declared type, record-shape, equality, or projection fact in the Lean model.",
+      "validation_refs": [
+        "scripts/validate_theseus_book_crosswalk_import.py",
+        "scripts/validate_theseus_report.py",
+        "proofs/c6_remaining_stronger_model_audit.json",
+        "scripts/validate_retired_theseus_formal_mirrors.py",
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R126-retire-theseus-repository-mirror-theseus-book-crosswalk-import-pointer-only-preserves-argument",
+      "sequence": 126,
+      "state": "executed",
+      "action": "retire_repository_import_fixture_mirror",
+      "semantic_relation": "copied_repository_summary_rebound_to_executable_validator_and_immutable_result",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "baseline_module_sha256": "a112a3cd329708c14807219a3e485d289ac472bb93f6079a2d60e6e73c63433a",
+      "retired_theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_book_crosswalk_import_pointer_only_preserves_argument",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "a582a36caceec5a6bc6b5860ee91ed04f061123bd78f3d9f3a2bbb097b3df0f5",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "b989364c03bfc8b835e5ceb76155eb9e3b4ba57d1358284a1951753c5a888f09",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+        "The frozen audit reports zero Lean dependencies and zero theorem consumers.",
+        "The repository validator checks the source artifact, deterministic result, controls, and claim boundary directly.",
+        "The associated formal target is removed rather than pretending executable evidence is a theorem.",
+        "The historical result remains unchanged and no support-state or release transition is created."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:theseus.reference.book_crosswalk.pointer_boundary",
+          "old_target_text": "A sanitized Project Theseus book-to-Theseus crosswalk import fixture records trigger state `GREEN`, 53 public-safe pointer rows, 20 backlog cards, 134 source-sync review decisions, public-safety boundaries, and rejects source-sync failure, public-safety failure, clean-live-replay overclaim, and chapter-core-promotion overclaim.",
+          "new_target_text": "Executable-only bounded import claim; the copied formal mirror is retired.",
+          "consumer_paths": []
+        }
+      ],
+      "maximum_inference_preserved": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "validation_refs": [
+        "scripts/validate_theseus_book_crosswalk_import.py",
+        "scripts/validate_theseus_report.py",
+        "proofs/c6_remaining_stronger_model_audit.json",
+        "scripts/validate_retired_theseus_formal_mirrors.py",
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R127-retire-theseus-repository-mirror-theseus-book-crosswalk-import-public-safety-failure-rejected",
+      "sequence": 127,
+      "state": "executed",
+      "action": "retire_repository_import_fixture_mirror",
+      "semantic_relation": "copied_repository_summary_rebound_to_executable_validator_and_immutable_result",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "baseline_module_sha256": "a112a3cd329708c14807219a3e485d289ac472bb93f6079a2d60e6e73c63433a",
+      "retired_theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_book_crosswalk_import_public_safety_failure_rejected",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "ee2dce4bf80330c4158f1aa7e342eb04b849d682502d0a00239ef840b6de6867",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "3e4fa3fde6dfd454472d270058b9f4534d652797e84982e8db6c29c1ef2ec4e2",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+        "The frozen audit reports zero Lean dependencies and zero theorem consumers.",
+        "The repository validator checks the source artifact, deterministic result, controls, and claim boundary directly.",
+        "The associated formal target is removed rather than pretending executable evidence is a theorem.",
+        "The historical result remains unchanged and no support-state or release transition is created."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:theseus.reference.book_crosswalk.pointer_boundary",
+          "old_target_text": "A sanitized Project Theseus book-to-Theseus crosswalk import fixture records trigger state `GREEN`, 53 public-safe pointer rows, 20 backlog cards, 134 source-sync review decisions, public-safety boundaries, and rejects source-sync failure, public-safety failure, clean-live-replay overclaim, and chapter-core-promotion overclaim.",
+          "new_target_text": "Executable-only bounded import claim; the copied formal mirror is retired.",
+          "consumer_paths": []
+        }
+      ],
+      "maximum_inference_preserved": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "validation_refs": [
+        "scripts/validate_theseus_book_crosswalk_import.py",
+        "scripts/validate_theseus_report.py",
+        "proofs/c6_remaining_stronger_model_audit.json",
+        "scripts/validate_retired_theseus_formal_mirrors.py",
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R128-retire-theseus-repository-mirror-theseus-book-crosswalk-import-source-sync-failure-rejected",
+      "sequence": 128,
+      "state": "executed",
+      "action": "retire_repository_import_fixture_mirror",
+      "semantic_relation": "copied_repository_summary_rebound_to_executable_validator_and_immutable_result",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "baseline_module_sha256": "a112a3cd329708c14807219a3e485d289ac472bb93f6079a2d60e6e73c63433a",
+      "retired_theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_book_crosswalk_import_source_sync_failure_rejected",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "efcae4e4add7ba895b30abc8746fe9ce1fe0768b62595d99e6424692b74e8055",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "d227ac04831b197fc66f61e0def72984dfd1fc2ff91c1b6aa4a11e5cea2c8fa8",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+        "The frozen audit reports zero Lean dependencies and zero theorem consumers.",
+        "The repository validator checks the source artifact, deterministic result, controls, and claim boundary directly.",
+        "The associated formal target is removed rather than pretending executable evidence is a theorem.",
+        "The historical result remains unchanged and no support-state or release transition is created."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:theseus.reference.book_crosswalk.pointer_boundary",
+          "old_target_text": "A sanitized Project Theseus book-to-Theseus crosswalk import fixture records trigger state `GREEN`, 53 public-safe pointer rows, 20 backlog cards, 134 source-sync review decisions, public-safety boundaries, and rejects source-sync failure, public-safety failure, clean-live-replay overclaim, and chapter-core-promotion overclaim.",
+          "new_target_text": "Executable-only bounded import claim; the copied formal mirror is retired.",
+          "consumer_paths": []
+        }
+      ],
+      "maximum_inference_preserved": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "validation_refs": [
+        "scripts/validate_theseus_book_crosswalk_import.py",
+        "scripts/validate_theseus_report.py",
+        "proofs/c6_remaining_stronger_model_audit.json",
+        "scripts/validate_retired_theseus_formal_mirrors.py",
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R129-retire-theseus-repository-mirror-theseus-fast-support-aggregate-carries-task-and-control-counts",
+      "sequence": 129,
+      "state": "executed",
+      "action": "retire_repository_import_fixture_mirror",
+      "semantic_relation": "copied_repository_summary_rebound_to_executable_validator_and_immutable_result",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "baseline_module_sha256": "a112a3cd329708c14807219a3e485d289ac472bb93f6079a2d60e6e73c63433a",
+      "retired_theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_fast_support_aggregate_carries_task_and_control_counts",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "2d964b45b098cf7d30e6eb86b4e37a222aeb4151e2caab9b61361e485982b785",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "d06d7d2dca435c7c73c7a89b1c958f5def0d792fce8213b4f7b4df7b45f50f09",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+        "The frozen audit reports zero Lean dependencies and zero theorem consumers.",
+        "The repository validator checks the source artifact, deterministic result, controls, and claim boundary directly.",
+        "The associated formal target is removed rather than pretending executable evidence is a theorem.",
+        "The historical result remains unchanged and no support-state or release transition is created."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:theseus.reference.fast_support_aggregate.fixture_bridge",
+          "old_target_text": "The selected Theseus/Fast support-lane aggregate carries 4 command replays, 16 tracked artifacts, 68 public task records, 14 expected-invalid or rejected controls, 2 accepted no-promotion decisions, the four included support surfaces, and explicit no-clean-live-replay, no-model-quality, no-generation-speed, no-useful-solution-model, no-chapter-core-promotion, and no-support-state-promotion boundaries.",
+          "new_target_text": "Executable-only bounded import claim; the copied formal mirror is retired.",
+          "consumer_paths": []
+        }
+      ],
+      "maximum_inference_preserved": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "validation_refs": [
+        "scripts/validate_theseus_fast_support_lane.py",
+        "scripts/validate_theseus_report.py",
+        "proofs/c6_remaining_stronger_model_audit.json",
+        "scripts/validate_retired_theseus_formal_mirrors.py",
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R130-retire-theseus-repository-mirror-theseus-fast-support-aggregate-clean-replay-overclaim-rejected",
+      "sequence": 130,
+      "state": "executed",
+      "action": "retire_repository_import_fixture_mirror",
+      "semantic_relation": "copied_repository_summary_rebound_to_executable_validator_and_immutable_result",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "baseline_module_sha256": "a112a3cd329708c14807219a3e485d289ac472bb93f6079a2d60e6e73c63433a",
+      "retired_theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_fast_support_aggregate_clean_replay_overclaim_rejected",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "3907670295f927b8e27f1723f1972a2e94b58391801c69a307b511184f24dd56",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "4870c7495bd9032984a736a81726751b3ac98b086fa150ee8c59353343ea8f80",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+        "The frozen audit reports zero Lean dependencies and zero theorem consumers.",
+        "The repository validator checks the source artifact, deterministic result, controls, and claim boundary directly.",
+        "The associated formal target is removed rather than pretending executable evidence is a theorem.",
+        "The historical result remains unchanged and no support-state or release transition is created."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:theseus.reference.fast_support_aggregate.fixture_bridge",
+          "old_target_text": "The selected Theseus/Fast support-lane aggregate carries 4 command replays, 16 tracked artifacts, 68 public task records, 14 expected-invalid or rejected controls, 2 accepted no-promotion decisions, the four included support surfaces, and explicit no-clean-live-replay, no-model-quality, no-generation-speed, no-useful-solution-model, no-chapter-core-promotion, and no-support-state-promotion boundaries.",
+          "new_target_text": "Executable-only bounded import claim; the copied formal mirror is retired.",
+          "consumer_paths": []
+        }
+      ],
+      "maximum_inference_preserved": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "validation_refs": [
+        "scripts/validate_theseus_fast_support_lane.py",
+        "scripts/validate_theseus_report.py",
+        "proofs/c6_remaining_stronger_model_audit.json",
+        "scripts/validate_retired_theseus_formal_mirrors.py",
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R131-retire-theseus-repository-mirror-theseus-fast-support-aggregate-fixture-valid",
+      "sequence": 131,
+      "state": "executed",
+      "action": "retire_repository_import_fixture_mirror",
+      "semantic_relation": "copied_repository_summary_rebound_to_executable_validator_and_immutable_result",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "baseline_module_sha256": "a112a3cd329708c14807219a3e485d289ac472bb93f6079a2d60e6e73c63433a",
+      "retired_theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_fast_support_aggregate_fixture_valid",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "89d80275a46c3fc5d8dab0bcfbc0428cea63b3c4575ab72968f7cfddbd5a7755",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "5b6dc3d3f689d95c956c5e05cbc78954995f89412b46b000bd1caae403004fd2",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+        "The frozen audit reports zero Lean dependencies and zero theorem consumers.",
+        "The repository validator checks the source artifact, deterministic result, controls, and claim boundary directly.",
+        "The associated formal target is removed rather than pretending executable evidence is a theorem.",
+        "The historical result remains unchanged and no support-state or release transition is created."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:theseus.reference.fast_support_aggregate.fixture_bridge",
+          "old_target_text": "The selected Theseus/Fast support-lane aggregate carries 4 command replays, 16 tracked artifacts, 68 public task records, 14 expected-invalid or rejected controls, 2 accepted no-promotion decisions, the four included support surfaces, and explicit no-clean-live-replay, no-model-quality, no-generation-speed, no-useful-solution-model, no-chapter-core-promotion, and no-support-state-promotion boundaries.",
+          "new_target_text": "Executable-only bounded import claim; the copied formal mirror is retired.",
+          "consumer_paths": []
+        }
+      ],
+      "maximum_inference_preserved": "Only the declared type, record-shape, equality, or projection fact in the Lean model.",
+      "validation_refs": [
+        "scripts/validate_theseus_fast_support_lane.py",
+        "scripts/validate_theseus_report.py",
+        "proofs/c6_remaining_stronger_model_audit.json",
+        "scripts/validate_retired_theseus_formal_mirrors.py",
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R132-retire-theseus-repository-mirror-theseus-fast-support-aggregate-preserves-no-promotion",
+      "sequence": 132,
+      "state": "executed",
+      "action": "retire_repository_import_fixture_mirror",
+      "semantic_relation": "copied_repository_summary_rebound_to_executable_validator_and_immutable_result",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "baseline_module_sha256": "a112a3cd329708c14807219a3e485d289ac472bb93f6079a2d60e6e73c63433a",
+      "retired_theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_fast_support_aggregate_preserves_no_promotion",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "391c1e9a65efb458fdda5c9b7060da75a49bea42a6398ea3fda8cc70561f34e0",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "1e2a6d0da575e6f321743b78eda63ff000771a2ff1172a74b97aee64eb6ecc97",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+        "The frozen audit reports zero Lean dependencies and zero theorem consumers.",
+        "The repository validator checks the source artifact, deterministic result, controls, and claim boundary directly.",
+        "The associated formal target is removed rather than pretending executable evidence is a theorem.",
+        "The historical result remains unchanged and no support-state or release transition is created."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:theseus.reference.fast_support_aggregate.fixture_bridge",
+          "old_target_text": "The selected Theseus/Fast support-lane aggregate carries 4 command replays, 16 tracked artifacts, 68 public task records, 14 expected-invalid or rejected controls, 2 accepted no-promotion decisions, the four included support surfaces, and explicit no-clean-live-replay, no-model-quality, no-generation-speed, no-useful-solution-model, no-chapter-core-promotion, and no-support-state-promotion boundaries.",
+          "new_target_text": "Executable-only bounded import claim; the copied formal mirror is retired.",
+          "consumer_paths": []
+        }
+      ],
+      "maximum_inference_preserved": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "validation_refs": [
+        "scripts/validate_theseus_fast_support_lane.py",
+        "scripts/validate_theseus_report.py",
+        "proofs/c6_remaining_stronger_model_audit.json",
+        "scripts/validate_retired_theseus_formal_mirrors.py",
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R133-retire-theseus-repository-mirror-theseus-module-definition-of-done-import-capability-overclaim-rejected",
+      "sequence": 133,
+      "state": "executed",
+      "action": "retire_repository_import_fixture_mirror",
+      "semantic_relation": "copied_repository_summary_rebound_to_executable_validator_and_immutable_result",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "baseline_module_sha256": "a112a3cd329708c14807219a3e485d289ac472bb93f6079a2d60e6e73c63433a",
+      "retired_theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_module_definition_of_done_import_capability_overclaim_rejected",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "a9231160144cdd1e1856634b33ee0c435a899a6542fca668f9b7a1fb956cd909",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "76a8df11526cf94b7331c01802d3f159643030dc3b525cf79a658544a2d838e5",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+        "The frozen audit reports zero Lean dependencies and zero theorem consumers.",
+        "The repository validator checks the source artifact, deterministic result, controls, and claim boundary directly.",
+        "The associated formal target is removed rather than pretending executable evidence is a theorem.",
+        "The historical result remains unchanged and no support-state or release transition is created."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:theseus.reference.module_definition_of_done_import.fixture_bridge",
+          "old_target_text": "A sanitized Project Theseus module definition-of-done import fixture records a GREEN gate, 22 ready module records, 0 hard gaps, 0 warnings, source-backlog routing, public-safety boundaries, and rejects chapter-core promotion or capability overclaim.",
+          "new_target_text": "Executable-only bounded import claim; the copied formal mirror is retired.",
+          "consumer_paths": []
+        }
+      ],
+      "maximum_inference_preserved": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "validation_refs": [
+        "scripts/validate_theseus_module_definition_of_done_import.py",
+        "scripts/validate_theseus_report.py",
+        "proofs/c6_remaining_stronger_model_audit.json",
+        "scripts/validate_retired_theseus_formal_mirrors.py",
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R134-retire-theseus-repository-mirror-theseus-module-definition-of-done-import-core-promotion-rejected",
+      "sequence": 134,
+      "state": "executed",
+      "action": "retire_repository_import_fixture_mirror",
+      "semantic_relation": "copied_repository_summary_rebound_to_executable_validator_and_immutable_result",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "baseline_module_sha256": "a112a3cd329708c14807219a3e485d289ac472bb93f6079a2d60e6e73c63433a",
+      "retired_theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_module_definition_of_done_import_core_promotion_rejected",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "88ed9bf60b90f48738b0ff231f5f300952f10650222088a9e36444902accdf7e",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "7e2cbe717ef08524531dd49a1c3c82c3531ac9fb7bdb11bfb4ab2dc5073866cd",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+        "The frozen audit reports zero Lean dependencies and zero theorem consumers.",
+        "The repository validator checks the source artifact, deterministic result, controls, and claim boundary directly.",
+        "The associated formal target is removed rather than pretending executable evidence is a theorem.",
+        "The historical result remains unchanged and no support-state or release transition is created."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:theseus.reference.module_definition_of_done_import.fixture_bridge",
+          "old_target_text": "A sanitized Project Theseus module definition-of-done import fixture records a GREEN gate, 22 ready module records, 0 hard gaps, 0 warnings, source-backlog routing, public-safety boundaries, and rejects chapter-core promotion or capability overclaim.",
+          "new_target_text": "Executable-only bounded import claim; the copied formal mirror is retired.",
+          "consumer_paths": []
+        }
+      ],
+      "maximum_inference_preserved": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "validation_refs": [
+        "scripts/validate_theseus_module_definition_of_done_import.py",
+        "scripts/validate_theseus_report.py",
+        "proofs/c6_remaining_stronger_model_audit.json",
+        "scripts/validate_retired_theseus_formal_mirrors.py",
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R135-retire-theseus-repository-mirror-theseus-module-definition-of-done-import-fixture-valid",
+      "sequence": 135,
+      "state": "executed",
+      "action": "retire_repository_import_fixture_mirror",
+      "semantic_relation": "copied_repository_summary_rebound_to_executable_validator_and_immutable_result",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "baseline_module_sha256": "a112a3cd329708c14807219a3e485d289ac472bb93f6079a2d60e6e73c63433a",
+      "retired_theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_module_definition_of_done_import_fixture_valid",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "b1744f1780b7d761d09e233700fee973ad3740a57e1f1b32c6fdb06df810a977",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "30fcec8ef6d33076dddf5b89d152c3b6291baff12c4621745f201d29593cba3b",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+        "The frozen audit reports zero Lean dependencies and zero theorem consumers.",
+        "The repository validator checks the source artifact, deterministic result, controls, and claim boundary directly.",
+        "The associated formal target is removed rather than pretending executable evidence is a theorem.",
+        "The historical result remains unchanged and no support-state or release transition is created."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:theseus.reference.module_definition_of_done_import.fixture_bridge",
+          "old_target_text": "A sanitized Project Theseus module definition-of-done import fixture records a GREEN gate, 22 ready module records, 0 hard gaps, 0 warnings, source-backlog routing, public-safety boundaries, and rejects chapter-core promotion or capability overclaim.",
+          "new_target_text": "Executable-only bounded import claim; the copied formal mirror is retired.",
+          "consumer_paths": []
+        }
+      ],
+      "maximum_inference_preserved": "Only the declared type, record-shape, equality, or projection fact in the Lean model.",
+      "validation_refs": [
+        "scripts/validate_theseus_module_definition_of_done_import.py",
+        "scripts/validate_theseus_report.py",
+        "proofs/c6_remaining_stronger_model_audit.json",
+        "scripts/validate_retired_theseus_formal_mirrors.py",
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R136-retire-theseus-repository-mirror-theseus-project-registry-import-clean-replay-overclaim-rejected",
+      "sequence": 136,
+      "state": "executed",
+      "action": "retire_repository_import_fixture_mirror",
+      "semantic_relation": "copied_repository_summary_rebound_to_executable_validator_and_immutable_result",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "baseline_module_sha256": "a112a3cd329708c14807219a3e485d289ac472bb93f6079a2d60e6e73c63433a",
+      "retired_theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_project_registry_import_clean_replay_overclaim_rejected",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "aea9cd788918d291dc29d6131084ce3d89682979203969702be4c2db23c5fc43",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "6b460b665b387223fda1e43745844a349e29744d1194b1a6b8707ff87a1eecba",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+        "The frozen audit reports zero Lean dependencies and zero theorem consumers.",
+        "The repository validator checks the source artifact, deterministic result, controls, and claim boundary directly.",
+        "The associated formal target is removed rather than pretending executable evidence is a theorem.",
+        "The historical result remains unchanged and no support-state or release transition is created."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:theseus.reference.project_registry_import.fixture_bridge",
+          "old_target_text": "A sanitized Project Theseus project-registry import fixture records 5,662 registered paths, 24 owned lifecycle surfaces, complete registry coverage, zero unregistered active sources, zero stale or missing report outputs, zero generated source artifacts, zero registry-governance violations, public-safety boundaries, and rejects unregistered-source, clean-live-replay, private-payload, and chapter-core-promotion overclaims.",
+          "new_target_text": "Executable-only bounded import claim; the copied formal mirror is retired.",
+          "consumer_paths": []
+        }
+      ],
+      "maximum_inference_preserved": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "validation_refs": [
+        "scripts/validate_theseus_project_registry_import.py",
+        "scripts/validate_theseus_report.py",
+        "proofs/c6_remaining_stronger_model_audit.json",
+        "scripts/validate_retired_theseus_formal_mirrors.py",
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R137-retire-theseus-repository-mirror-theseus-project-registry-import-core-promotion-rejected",
+      "sequence": 137,
+      "state": "executed",
+      "action": "retire_repository_import_fixture_mirror",
+      "semantic_relation": "copied_repository_summary_rebound_to_executable_validator_and_immutable_result",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "baseline_module_sha256": "a112a3cd329708c14807219a3e485d289ac472bb93f6079a2d60e6e73c63433a",
+      "retired_theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_project_registry_import_core_promotion_rejected",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "a97751bb9b64926ec6e2ad7df6292a2d8e7524b23426b8d68bcf5edac63c23c0",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "036b406b1ede2e3901ccbabe042edc94c999b81a6ec0e442c30e0fb0bfc9b0e7",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+        "The frozen audit reports zero Lean dependencies and zero theorem consumers.",
+        "The repository validator checks the source artifact, deterministic result, controls, and claim boundary directly.",
+        "The associated formal target is removed rather than pretending executable evidence is a theorem.",
+        "The historical result remains unchanged and no support-state or release transition is created."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:theseus.reference.project_registry_import.fixture_bridge",
+          "old_target_text": "A sanitized Project Theseus project-registry import fixture records 5,662 registered paths, 24 owned lifecycle surfaces, complete registry coverage, zero unregistered active sources, zero stale or missing report outputs, zero generated source artifacts, zero registry-governance violations, public-safety boundaries, and rejects unregistered-source, clean-live-replay, private-payload, and chapter-core-promotion overclaims.",
+          "new_target_text": "Executable-only bounded import claim; the copied formal mirror is retired.",
+          "consumer_paths": []
+        }
+      ],
+      "maximum_inference_preserved": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "validation_refs": [
+        "scripts/validate_theseus_project_registry_import.py",
+        "scripts/validate_theseus_report.py",
+        "proofs/c6_remaining_stronger_model_audit.json",
+        "scripts/validate_retired_theseus_formal_mirrors.py",
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R138-retire-theseus-repository-mirror-theseus-project-registry-import-fixture-valid",
+      "sequence": 138,
+      "state": "executed",
+      "action": "retire_repository_import_fixture_mirror",
+      "semantic_relation": "copied_repository_summary_rebound_to_executable_validator_and_immutable_result",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "baseline_module_sha256": "a112a3cd329708c14807219a3e485d289ac472bb93f6079a2d60e6e73c63433a",
+      "retired_theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_project_registry_import_fixture_valid",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "292f335b354e61cf032d89b843e683e66b7e6f2d23cc7621e22d078537fded30",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "4a2b6bffdb30c87529fb0011139b2b81a2aa3c5aea015fe4b87f895db2e3c630",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+        "The frozen audit reports zero Lean dependencies and zero theorem consumers.",
+        "The repository validator checks the source artifact, deterministic result, controls, and claim boundary directly.",
+        "The associated formal target is removed rather than pretending executable evidence is a theorem.",
+        "The historical result remains unchanged and no support-state or release transition is created."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:theseus.reference.project_registry_import.fixture_bridge",
+          "old_target_text": "A sanitized Project Theseus project-registry import fixture records 5,662 registered paths, 24 owned lifecycle surfaces, complete registry coverage, zero unregistered active sources, zero stale or missing report outputs, zero generated source artifacts, zero registry-governance violations, public-safety boundaries, and rejects unregistered-source, clean-live-replay, private-payload, and chapter-core-promotion overclaims.",
+          "new_target_text": "Executable-only bounded import claim; the copied formal mirror is retired.",
+          "consumer_paths": []
+        }
+      ],
+      "maximum_inference_preserved": "Only the declared type, record-shape, equality, or projection fact in the Lean model.",
+      "validation_refs": [
+        "scripts/validate_theseus_project_registry_import.py",
+        "scripts/validate_theseus_report.py",
+        "proofs/c6_remaining_stronger_model_audit.json",
+        "scripts/validate_retired_theseus_formal_mirrors.py",
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R139-retire-theseus-repository-mirror-theseus-project-registry-import-private-payload-rejected",
+      "sequence": 139,
+      "state": "executed",
+      "action": "retire_repository_import_fixture_mirror",
+      "semantic_relation": "copied_repository_summary_rebound_to_executable_validator_and_immutable_result",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "baseline_module_sha256": "a112a3cd329708c14807219a3e485d289ac472bb93f6079a2d60e6e73c63433a",
+      "retired_theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_project_registry_import_private_payload_rejected",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "407ab4827f9ace89a5280d5f9ac69dc03fcb5fc0c51a52b996bb3b6f4c668194",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "84aa244224f9f4ff27abcc28bc54669823a2fb4dcd94d0f6b34fb9e1b6474015",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+        "The frozen audit reports zero Lean dependencies and zero theorem consumers.",
+        "The repository validator checks the source artifact, deterministic result, controls, and claim boundary directly.",
+        "The associated formal target is removed rather than pretending executable evidence is a theorem.",
+        "The historical result remains unchanged and no support-state or release transition is created."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:theseus.reference.project_registry_import.fixture_bridge",
+          "old_target_text": "A sanitized Project Theseus project-registry import fixture records 5,662 registered paths, 24 owned lifecycle surfaces, complete registry coverage, zero unregistered active sources, zero stale or missing report outputs, zero generated source artifacts, zero registry-governance violations, public-safety boundaries, and rejects unregistered-source, clean-live-replay, private-payload, and chapter-core-promotion overclaims.",
+          "new_target_text": "Executable-only bounded import claim; the copied formal mirror is retired.",
+          "consumer_paths": []
+        }
+      ],
+      "maximum_inference_preserved": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "validation_refs": [
+        "scripts/validate_theseus_project_registry_import.py",
+        "scripts/validate_theseus_report.py",
+        "proofs/c6_remaining_stronger_model_audit.json",
+        "scripts/validate_retired_theseus_formal_mirrors.py",
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R140-retire-theseus-repository-mirror-theseus-project-registry-import-unregistered-sources-rejected",
+      "sequence": 140,
+      "state": "executed",
+      "action": "retire_repository_import_fixture_mirror",
+      "semantic_relation": "copied_repository_summary_rebound_to_executable_validator_and_immutable_result",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "baseline_module_sha256": "a112a3cd329708c14807219a3e485d289ac472bb93f6079a2d60e6e73c63433a",
+      "retired_theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_project_registry_import_unregistered_sources_rejected",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "ac7dcb5f0230bd5339ca1d65452b1285da995b2bb8681b28e30b2b08b02f4551",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "6bb430bf7ac273dd1e2bdaa22ca85f4b8f91613f01110b6f67d465e4638acad6",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+        "The frozen audit reports zero Lean dependencies and zero theorem consumers.",
+        "The repository validator checks the source artifact, deterministic result, controls, and claim boundary directly.",
+        "The associated formal target is removed rather than pretending executable evidence is a theorem.",
+        "The historical result remains unchanged and no support-state or release transition is created."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:theseus.reference.project_registry_import.fixture_bridge",
+          "old_target_text": "A sanitized Project Theseus project-registry import fixture records 5,662 registered paths, 24 owned lifecycle surfaces, complete registry coverage, zero unregistered active sources, zero stale or missing report outputs, zero generated source artifacts, zero registry-governance violations, public-safety boundaries, and rejects unregistered-source, clean-live-replay, private-payload, and chapter-core-promotion overclaims.",
+          "new_target_text": "Executable-only bounded import claim; the copied formal mirror is retired.",
+          "consumer_paths": []
+        }
+      ],
+      "maximum_inference_preserved": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "validation_refs": [
+        "scripts/validate_theseus_project_registry_import.py",
+        "scripts/validate_theseus_report.py",
+        "proofs/c6_remaining_stronger_model_audit.json",
+        "scripts/validate_retired_theseus_formal_mirrors.py",
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R141-retire-theseus-repository-mirror-theseus-public-task-bundle-import-clean-replay-overclaim-rejected",
+      "sequence": 141,
+      "state": "executed",
+      "action": "retire_repository_import_fixture_mirror",
+      "semantic_relation": "copied_repository_summary_rebound_to_executable_validator_and_immutable_result",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "baseline_module_sha256": "a112a3cd329708c14807219a3e485d289ac472bb93f6079a2d60e6e73c63433a",
+      "retired_theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_public_task_bundle_import_clean_replay_overclaim_rejected",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "5c368c302cf9bfabac170e5d3d1ff709ed85f0fb7d89e69b0058dc4bc0f8fd3e",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "0b43ce69e653119e3ea158507939416c037c8100d83561a5d87d418cb090f1c3",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+        "The frozen audit reports zero Lean dependencies and zero theorem consumers.",
+        "The repository validator checks the source artifact, deterministic result, controls, and claim boundary directly.",
+        "The associated formal target is removed rather than pretending executable evidence is a theorem.",
+        "The historical result remains unchanged and no support-state or release transition is created."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:theseus.reference.public_task_bundle_import.fixture_bridge",
+          "old_target_text": "A public-safe Theseus public task-bundle import fixture is accepted only when source reports, metadata-only public task boundaries, zero public training rows, zero exported prompts/tests/solutions/traces/scores/candidate code, operator and benchmark gates, visible artifact gaps, no clean-live-replay claim, and no-promotion boundaries are complete.",
+          "new_target_text": "Executable-only bounded import claim; the copied formal mirror is retired.",
+          "consumer_paths": []
+        }
+      ],
+      "maximum_inference_preserved": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "validation_refs": [
+        "scripts/validate_theseus_public_task_bundle_import.py",
+        "scripts/validate_theseus_report.py",
+        "proofs/c6_remaining_stronger_model_audit.json",
+        "scripts/validate_retired_theseus_formal_mirrors.py",
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R142-retire-theseus-repository-mirror-theseus-public-task-bundle-import-fixture-gates-complete",
+      "sequence": 142,
+      "state": "executed",
+      "action": "retire_repository_import_fixture_mirror",
+      "semantic_relation": "copied_repository_summary_rebound_to_executable_validator_and_immutable_result",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "baseline_module_sha256": "a112a3cd329708c14807219a3e485d289ac472bb93f6079a2d60e6e73c63433a",
+      "retired_theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_public_task_bundle_import_fixture_gates_complete",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "050454447d85afd359a8a1143fae3c8e3580b47c7c59e6a2342aeb295885a995",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "1832b1341feabbe108c2a0116a054d7eba6422953c128fa741060ef50516d6ff",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+        "The frozen audit reports zero Lean dependencies and zero theorem consumers.",
+        "The repository validator checks the source artifact, deterministic result, controls, and claim boundary directly.",
+        "The associated formal target is removed rather than pretending executable evidence is a theorem.",
+        "The historical result remains unchanged and no support-state or release transition is created."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:theseus.reference.public_task_bundle_import.fixture_bridge",
+          "old_target_text": "A public-safe Theseus public task-bundle import fixture is accepted only when source reports, metadata-only public task boundaries, zero public training rows, zero exported prompts/tests/solutions/traces/scores/candidate code, operator and benchmark gates, visible artifact gaps, no clean-live-replay claim, and no-promotion boundaries are complete.",
+          "new_target_text": "Executable-only bounded import claim; the copied formal mirror is retired.",
+          "consumer_paths": []
+        }
+      ],
+      "maximum_inference_preserved": "Only the declared type, record-shape, equality, or projection fact in the Lean model.",
+      "validation_refs": [
+        "scripts/validate_theseus_public_task_bundle_import.py",
+        "scripts/validate_theseus_report.py",
+        "proofs/c6_remaining_stronger_model_audit.json",
+        "scripts/validate_retired_theseus_formal_mirrors.py",
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R143-retire-theseus-repository-mirror-theseus-public-task-bundle-import-fixture-preserves-no-promotion-boundary",
+      "sequence": 143,
+      "state": "executed",
+      "action": "retire_repository_import_fixture_mirror",
+      "semantic_relation": "copied_repository_summary_rebound_to_executable_validator_and_immutable_result",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "baseline_module_sha256": "a112a3cd329708c14807219a3e485d289ac472bb93f6079a2d60e6e73c63433a",
+      "retired_theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_public_task_bundle_import_fixture_preserves_no_promotion_boundary",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "bbd94200b74526da8fd4573335c5bc1c8eb816da2b24b460f159a579461a7dc1",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "2374716189f4f961040ffccba8a40db994c4e4930dc428597d622b63c140ecc6",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+        "The frozen audit reports zero Lean dependencies and zero theorem consumers.",
+        "The repository validator checks the source artifact, deterministic result, controls, and claim boundary directly.",
+        "The associated formal target is removed rather than pretending executable evidence is a theorem.",
+        "The historical result remains unchanged and no support-state or release transition is created."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:theseus.reference.public_task_bundle_import.fixture_bridge",
+          "old_target_text": "A public-safe Theseus public task-bundle import fixture is accepted only when source reports, metadata-only public task boundaries, zero public training rows, zero exported prompts/tests/solutions/traces/scores/candidate code, operator and benchmark gates, visible artifact gaps, no clean-live-replay claim, and no-promotion boundaries are complete.",
+          "new_target_text": "Executable-only bounded import claim; the copied formal mirror is retired.",
+          "consumer_paths": []
+        }
+      ],
+      "maximum_inference_preserved": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "validation_refs": [
+        "scripts/validate_theseus_public_task_bundle_import.py",
+        "scripts/validate_theseus_report.py",
+        "proofs/c6_remaining_stronger_model_audit.json",
+        "scripts/validate_retired_theseus_formal_mirrors.py",
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R144-retire-theseus-repository-mirror-theseus-public-task-bundle-import-fixture-public-safe",
+      "sequence": 144,
+      "state": "executed",
+      "action": "retire_repository_import_fixture_mirror",
+      "semantic_relation": "copied_repository_summary_rebound_to_executable_validator_and_immutable_result",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "baseline_module_sha256": "a112a3cd329708c14807219a3e485d289ac472bb93f6079a2d60e6e73c63433a",
+      "retired_theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_public_task_bundle_import_fixture_public_safe",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "ce286138a512f812f99658c7d240859f2e8de149c09a4c919746480993dd7221",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "bfbe29f146a0878b5ae841da28dffbbb83114bcd3efab3ee693c4bfeae4f2c36",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+        "The frozen audit reports zero Lean dependencies and zero theorem consumers.",
+        "The repository validator checks the source artifact, deterministic result, controls, and claim boundary directly.",
+        "The associated formal target is removed rather than pretending executable evidence is a theorem.",
+        "The historical result remains unchanged and no support-state or release transition is created."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:theseus.reference.public_task_bundle_import.fixture_bridge",
+          "old_target_text": "A public-safe Theseus public task-bundle import fixture is accepted only when source reports, metadata-only public task boundaries, zero public training rows, zero exported prompts/tests/solutions/traces/scores/candidate code, operator and benchmark gates, visible artifact gaps, no clean-live-replay claim, and no-promotion boundaries are complete.",
+          "new_target_text": "Executable-only bounded import claim; the copied formal mirror is retired.",
+          "consumer_paths": []
+        }
+      ],
+      "maximum_inference_preserved": "Only the declared type, record-shape, equality, or projection fact in the Lean model.",
+      "validation_refs": [
+        "scripts/validate_theseus_public_task_bundle_import.py",
+        "scripts/validate_theseus_report.py",
+        "proofs/c6_remaining_stronger_model_audit.json",
+        "scripts/validate_retired_theseus_formal_mirrors.py",
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R145-retire-theseus-repository-mirror-theseus-public-task-bundle-import-fixture-valid",
+      "sequence": 145,
+      "state": "executed",
+      "action": "retire_repository_import_fixture_mirror",
+      "semantic_relation": "copied_repository_summary_rebound_to_executable_validator_and_immutable_result",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "baseline_module_sha256": "a112a3cd329708c14807219a3e485d289ac472bb93f6079a2d60e6e73c63433a",
+      "retired_theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_public_task_bundle_import_fixture_valid",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "5907a67370790af9e09612abea2feb7adb9b7fb125f9b6ef2c055d7f2ed37b6d",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "2b2755c78f7b9c6456fd54b6dfce9973583c6bd0c1cfc839471e52c49b0e3e3f",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+        "The frozen audit reports zero Lean dependencies and zero theorem consumers.",
+        "The repository validator checks the source artifact, deterministic result, controls, and claim boundary directly.",
+        "The associated formal target is removed rather than pretending executable evidence is a theorem.",
+        "The historical result remains unchanged and no support-state or release transition is created."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:theseus.reference.public_task_bundle_import.fixture_bridge",
+          "old_target_text": "A public-safe Theseus public task-bundle import fixture is accepted only when source reports, metadata-only public task boundaries, zero public training rows, zero exported prompts/tests/solutions/traces/scores/candidate code, operator and benchmark gates, visible artifact gaps, no clean-live-replay claim, and no-promotion boundaries are complete.",
+          "new_target_text": "Executable-only bounded import claim; the copied formal mirror is retired.",
+          "consumer_paths": []
+        }
+      ],
+      "maximum_inference_preserved": "Only the declared type, record-shape, equality, or projection fact in the Lean model.",
+      "validation_refs": [
+        "scripts/validate_theseus_public_task_bundle_import.py",
+        "scripts/validate_theseus_report.py",
+        "proofs/c6_remaining_stronger_model_audit.json",
+        "scripts/validate_retired_theseus_formal_mirrors.py",
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R146-retire-theseus-repository-mirror-theseus-work-board-import-clean-replay-overclaim-rejected",
+      "sequence": 146,
+      "state": "executed",
+      "action": "retire_repository_import_fixture_mirror",
+      "semantic_relation": "copied_repository_summary_rebound_to_executable_validator_and_immutable_result",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "baseline_module_sha256": "a112a3cd329708c14807219a3e485d289ac472bb93f6079a2d60e6e73c63433a",
+      "retired_theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_work_board_import_clean_replay_overclaim_rejected",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "94f3da495b3381cf4253456c2ac1070b73604584ebb2c6b3a4bf1eac43e143b1",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "711d5b88480a056c3edcc7fa0ecacf2d68020fdb58d5342dbd5de36eefaf085d",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+        "The frozen audit reports zero Lean dependencies and zero theorem consumers.",
+        "The repository validator checks the source artifact, deterministic result, controls, and claim boundary directly.",
+        "The associated formal target is removed rather than pretending executable evidence is a theorem.",
+        "The historical result remains unchanged and no support-state or release transition is created."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:theseus.reference.work_board_import.metadata_boundary",
+          "old_target_text": "A sanitized Project Theseus work-board metadata import fixture records 130 durable task rows, 412 event rows, 133 evidence rows, five SQLite tables, stale-snapshot currentness blocking, public-safety boundaries, and rejects clean-live-replay, private-payload, public-training-row, and chapter-core-promotion overclaims.",
+          "new_target_text": "Executable-only bounded import claim; the copied formal mirror is retired.",
+          "consumer_paths": []
+        }
+      ],
+      "maximum_inference_preserved": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "validation_refs": [
+        "scripts/validate_theseus_report.py",
+        "scripts/validate_theseus_work_board_import.py",
+        "proofs/c6_remaining_stronger_model_audit.json",
+        "scripts/validate_retired_theseus_formal_mirrors.py",
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R147-retire-theseus-repository-mirror-theseus-work-board-import-core-promotion-rejected",
+      "sequence": 147,
+      "state": "executed",
+      "action": "retire_repository_import_fixture_mirror",
+      "semantic_relation": "copied_repository_summary_rebound_to_executable_validator_and_immutable_result",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "baseline_module_sha256": "a112a3cd329708c14807219a3e485d289ac472bb93f6079a2d60e6e73c63433a",
+      "retired_theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_work_board_import_core_promotion_rejected",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "534e34632d7392e47f09ce018a014f379ea862f76b04f49fd5cd012c7a6aa9d3",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "acb202e50174cbecc545288a982e8d29d5aa5c39214e1431e668928797a6534c",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+        "The frozen audit reports zero Lean dependencies and zero theorem consumers.",
+        "The repository validator checks the source artifact, deterministic result, controls, and claim boundary directly.",
+        "The associated formal target is removed rather than pretending executable evidence is a theorem.",
+        "The historical result remains unchanged and no support-state or release transition is created."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:theseus.reference.work_board_import.metadata_boundary",
+          "old_target_text": "A sanitized Project Theseus work-board metadata import fixture records 130 durable task rows, 412 event rows, 133 evidence rows, five SQLite tables, stale-snapshot currentness blocking, public-safety boundaries, and rejects clean-live-replay, private-payload, public-training-row, and chapter-core-promotion overclaims.",
+          "new_target_text": "Executable-only bounded import claim; the copied formal mirror is retired.",
+          "consumer_paths": []
+        }
+      ],
+      "maximum_inference_preserved": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "validation_refs": [
+        "scripts/validate_theseus_report.py",
+        "scripts/validate_theseus_work_board_import.py",
+        "proofs/c6_remaining_stronger_model_audit.json",
+        "scripts/validate_retired_theseus_formal_mirrors.py",
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R148-retire-theseus-repository-mirror-theseus-work-board-import-fixture-valid",
+      "sequence": 148,
+      "state": "executed",
+      "action": "retire_repository_import_fixture_mirror",
+      "semantic_relation": "copied_repository_summary_rebound_to_executable_validator_and_immutable_result",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "baseline_module_sha256": "a112a3cd329708c14807219a3e485d289ac472bb93f6079a2d60e6e73c63433a",
+      "retired_theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_work_board_import_fixture_valid",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "d439d2ab6fd2d48b4d39af28769fda57c492e8b4336ac0e656ccdf13a8f31e3a",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "3ada67dd14452eed0af34943c19bc68d38055012de16c4b78175dfe097cee207",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+        "The frozen audit reports zero Lean dependencies and zero theorem consumers.",
+        "The repository validator checks the source artifact, deterministic result, controls, and claim boundary directly.",
+        "The associated formal target is removed rather than pretending executable evidence is a theorem.",
+        "The historical result remains unchanged and no support-state or release transition is created."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:theseus.reference.work_board_import.metadata_boundary",
+          "old_target_text": "A sanitized Project Theseus work-board metadata import fixture records 130 durable task rows, 412 event rows, 133 evidence rows, five SQLite tables, stale-snapshot currentness blocking, public-safety boundaries, and rejects clean-live-replay, private-payload, public-training-row, and chapter-core-promotion overclaims.",
+          "new_target_text": "Executable-only bounded import claim; the copied formal mirror is retired.",
+          "consumer_paths": []
+        }
+      ],
+      "maximum_inference_preserved": "Only the declared type, record-shape, equality, or projection fact in the Lean model.",
+      "validation_refs": [
+        "scripts/validate_theseus_report.py",
+        "scripts/validate_theseus_work_board_import.py",
+        "proofs/c6_remaining_stronger_model_audit.json",
+        "scripts/validate_retired_theseus_formal_mirrors.py",
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R149-retire-theseus-repository-mirror-theseus-work-board-import-private-payload-rejected",
+      "sequence": 149,
+      "state": "executed",
+      "action": "retire_repository_import_fixture_mirror",
+      "semantic_relation": "copied_repository_summary_rebound_to_executable_validator_and_immutable_result",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "baseline_module_sha256": "a112a3cd329708c14807219a3e485d289ac472bb93f6079a2d60e6e73c63433a",
+      "retired_theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_work_board_import_private_payload_rejected",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "a6c5894ade7bd7cb079d6ce53f35c94e11dc281f3a17a03e96aec9c4c20e11fd",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "1ee29d55caa354becad4038deaa1f5775ef0378da8da1d5b7d9fa2f87cc39bcc",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+        "The frozen audit reports zero Lean dependencies and zero theorem consumers.",
+        "The repository validator checks the source artifact, deterministic result, controls, and claim boundary directly.",
+        "The associated formal target is removed rather than pretending executable evidence is a theorem.",
+        "The historical result remains unchanged and no support-state or release transition is created."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:theseus.reference.work_board_import.metadata_boundary",
+          "old_target_text": "A sanitized Project Theseus work-board metadata import fixture records 130 durable task rows, 412 event rows, 133 evidence rows, five SQLite tables, stale-snapshot currentness blocking, public-safety boundaries, and rejects clean-live-replay, private-payload, public-training-row, and chapter-core-promotion overclaims.",
+          "new_target_text": "Executable-only bounded import claim; the copied formal mirror is retired.",
+          "consumer_paths": []
+        }
+      ],
+      "maximum_inference_preserved": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "validation_refs": [
+        "scripts/validate_theseus_report.py",
+        "scripts/validate_theseus_work_board_import.py",
+        "proofs/c6_remaining_stronger_model_audit.json",
+        "scripts/validate_retired_theseus_formal_mirrors.py",
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R150-retire-theseus-repository-mirror-theseus-work-board-import-public-training-rows-rejected",
+      "sequence": 150,
+      "state": "executed",
+      "action": "retire_repository_import_fixture_mirror",
+      "semantic_relation": "copied_repository_summary_rebound_to_executable_validator_and_immutable_result",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "baseline_module_sha256": "a112a3cd329708c14807219a3e485d289ac472bb93f6079a2d60e6e73c63433a",
+      "retired_theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_work_board_import_public_training_rows_rejected",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "bf49fef837af7ade1bffeebb52ccf100e9b2691027e9f3f957c53b68b1d728b8",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "a998e99ad9373a92a15167e78f5e87ee72a30b20778ec01799815ecbdafcf53f",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+        "The frozen audit reports zero Lean dependencies and zero theorem consumers.",
+        "The repository validator checks the source artifact, deterministic result, controls, and claim boundary directly.",
+        "The associated formal target is removed rather than pretending executable evidence is a theorem.",
+        "The historical result remains unchanged and no support-state or release transition is created."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:theseus.reference.work_board_import.metadata_boundary",
+          "old_target_text": "A sanitized Project Theseus work-board metadata import fixture records 130 durable task rows, 412 event rows, 133 evidence rows, five SQLite tables, stale-snapshot currentness blocking, public-safety boundaries, and rejects clean-live-replay, private-payload, public-training-row, and chapter-core-promotion overclaims.",
+          "new_target_text": "Executable-only bounded import claim; the copied formal mirror is retired.",
+          "consumer_paths": []
+        }
+      ],
+      "maximum_inference_preserved": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "validation_refs": [
+        "scripts/validate_theseus_report.py",
+        "scripts/validate_theseus_work_board_import.py",
+        "proofs/c6_remaining_stronger_model_audit.json",
+        "scripts/validate_retired_theseus_formal_mirrors.py",
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R151-retire-theseus-repository-mirror-theseus-work-board-import-stale-snapshot-blocks-currentness",
+      "sequence": 151,
+      "state": "executed",
+      "action": "retire_repository_import_fixture_mirror",
+      "semantic_relation": "copied_repository_summary_rebound_to_executable_validator_and_immutable_result",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "baseline_module_sha256": "a112a3cd329708c14807219a3e485d289ac472bb93f6079a2d60e6e73c63433a",
+      "retired_theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_work_board_import_stale_snapshot_blocks_currentness",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "8c2fbe87987081f97eb206a7814a619ac213e0abf8c16375e3cddc7dae23f720",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "287d2074e75fb89d490fd2806287d0e8d91f7dafdfdabc207f0c2cf1404b3dae",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+        "The frozen audit reports zero Lean dependencies and zero theorem consumers.",
+        "The repository validator checks the source artifact, deterministic result, controls, and claim boundary directly.",
+        "The associated formal target is removed rather than pretending executable evidence is a theorem.",
+        "The historical result remains unchanged and no support-state or release transition is created."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [
+        {
+          "target_ref": "proof-target:lean:theseus.reference.work_board_import.metadata_boundary",
+          "old_target_text": "A sanitized Project Theseus work-board metadata import fixture records 130 durable task rows, 412 event rows, 133 evidence rows, five SQLite tables, stale-snapshot currentness blocking, public-safety boundaries, and rejects clean-live-replay, private-payload, public-training-row, and chapter-core-promotion overclaims.",
+          "new_target_text": "Executable-only bounded import claim; the copied formal mirror is retired.",
+          "consumer_paths": []
+        }
+      ],
+      "maximum_inference_preserved": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "validation_refs": [
+        "scripts/validate_theseus_report.py",
+        "scripts/validate_theseus_work_board_import.py",
+        "proofs/c6_remaining_stronger_model_audit.json",
+        "scripts/validate_retired_theseus_formal_mirrors.py",
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
     }
   ],
   "summary": {
-    "executed_retirement_count": 106,
+    "executed_retirement_count": 149,
     "executed_scope_rewrite_count": 2,
-    "current_live_theorem_count": 1270,
-    "remaining_action_count": 52,
+    "current_live_theorem_count": 1227,
+    "remaining_action_count": 9,
     "remaining_action_counts": {
-      "retire_without_replacement": 51,
+      "retire_without_replacement": 8,
       "rewrite_as_inverse_route_property": 1
     },
     "chapter_core_support_transitions": 0,

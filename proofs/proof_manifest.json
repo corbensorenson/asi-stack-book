@@ -1,9 +1,9 @@
 {
   "generated_from": "docs/book_outline.md",
   "note": "Generated from Lean proof target tables in docs/book_outline.md. Edit the outline, not this file.",
-  "proof_target_count": 329,
+  "proof_target_count": 320,
   "status_counts": {
-    "implemented": 303,
+    "implemented": 294,
     "planned": 26
   },
   "chapter_counts": {
@@ -69,7 +69,7 @@
     "policy-optimization-and-learning-from-feedback": 4,
     "privacy-data-rights-and-information-flow-governance": 2,
     "procedural-memory-and-cognitive-loop-closure": 2,
-    "project-theseus-as-report-first-implementation-reference": 12,
+    "project-theseus-as-report-first-implementation-reference": 3,
     "prototype-roadmap": 3,
     "rankfold-neuralfold-and-artifact-compression": 3,
     "readiness-gates-residual-escrow-and-quarantine": 3,
@@ -3204,103 +3204,13 @@
       "module_path": "lean/AsiStackProofs/TheseusReference.lean"
     },
     {
-      "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "chapter_title": "Project Theseus as Report-First Implementation Reference",
-      "tag": "lean:theseus.reference.public_task_bundle_import.fixture_bridge",
-      "module": "AsiStackProofs.TheseusReference",
-      "formal_target": "A public-safe Theseus public task-bundle import fixture is accepted only when source reports, metadata-only public task boundaries, zero public training rows, zero exported prompts/tests/solutions/traces/scores/candidate code, operator and benchmark gates, visible artifact gaps, no clean-live-replay claim, and no-promotion boundaries are complete.",
-      "status": "implemented",
-      "outline_line": 7423,
-      "module_path": "lean/AsiStackProofs/TheseusReference.lean"
-    },
-    {
-      "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "chapter_title": "Project Theseus as Report-First Implementation Reference",
-      "tag": "lean:theseus.reference.fast_support_aggregate.fixture_bridge",
-      "module": "AsiStackProofs.TheseusReference",
-      "formal_target": "The selected Theseus/Fast support-lane aggregate carries 4 command replays, 16 tracked artifacts, 68 public task records, 14 expected-invalid or rejected controls, 2 accepted no-promotion decisions, the four included support surfaces, and explicit no-clean-live-replay, no-model-quality, no-generation-speed, no-useful-solution-model, no-chapter-core-promotion, and no-support-state-promotion boundaries.",
-      "status": "implemented",
-      "outline_line": 7424,
-      "module_path": "lean/AsiStackProofs/TheseusReference.lean"
-    },
-    {
-      "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "chapter_title": "Project Theseus as Report-First Implementation Reference",
-      "tag": "lean:theseus.reference.artifact_retention_replay_import.fixture_bridge",
-      "module": "AsiStackProofs.TheseusReference",
-      "formal_target": "A sanitized Project Theseus artifact-retention replay import fixture records exact-hash retained-artifact replay, public-safe redaction, zero public training rows, zero external inference calls, required record counts, and rejects hash mismatch or chapter-core promotion overclaim.",
-      "status": "implemented",
-      "outline_line": 7425,
-      "module_path": "lean/AsiStackProofs/TheseusReference.lean"
-    },
-    {
-      "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "chapter_title": "Project Theseus as Report-First Implementation Reference",
-      "tag": "lean:theseus.reference.module_definition_of_done_import.fixture_bridge",
-      "module": "AsiStackProofs.TheseusReference",
-      "formal_target": "A sanitized Project Theseus module definition-of-done import fixture records a GREEN gate, 22 ready module records, 0 hard gaps, 0 warnings, source-backlog routing, public-safety boundaries, and rejects chapter-core promotion or capability overclaim.",
-      "status": "implemented",
-      "outline_line": 7426,
-      "module_path": "lean/AsiStackProofs/TheseusReference.lean"
-    },
-    {
-      "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "chapter_title": "Project Theseus as Report-First Implementation Reference",
-      "tag": "lean:theseus.reference.project_registry_import.fixture_bridge",
-      "module": "AsiStackProofs.TheseusReference",
-      "formal_target": "A sanitized Project Theseus project-registry import fixture records 5,662 registered paths, 24 owned lifecycle surfaces, complete registry coverage, zero unregistered active sources, zero stale or missing report outputs, zero generated source artifacts, zero registry-governance violations, public-safety boundaries, and rejects unregistered-source, clean-live-replay, private-payload, and chapter-core-promotion overclaims.",
-      "status": "implemented",
-      "outline_line": 7427,
-      "module_path": "lean/AsiStackProofs/TheseusReference.lean"
-    },
-    {
-      "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "chapter_title": "Project Theseus as Report-First Implementation Reference",
-      "tag": "lean:theseus.reference.assistant_reference_trace_import.fixture_bridge",
-      "module": "AsiStackProofs.TheseusReference",
-      "formal_target": "A sanitized Project Theseus assistant reference-trace import fixture records 19 required trace record types, 27/27 gates, 2,203 route-validator view records, 12 selected VCM pages, zero public training rows, zero external inference calls, public-safety boundaries, and rejects missing-hop, private-payload, clean-live-replay, model-quality, benchmark-headline, and chapter-core-promotion overclaims.",
-      "status": "implemented",
-      "outline_line": 7428,
-      "module_path": "lean/AsiStackProofs/TheseusReference.lean"
-    },
-    {
-      "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "chapter_title": "Project Theseus as Report-First Implementation Reference",
-      "tag": "lean:theseus.reference.accelerator_parity_manifest_import.fixture_bridge",
-      "module": "AsiStackProofs.TheseusReference",
-      "formal_target": "A sanitized Project Theseus accelerator parity manifest import fixture records 7 surfaces, 7 MLX report summaries, 4 Metal report summaries, 4 artifact manifests, 4 scheduler-canary surfaces, zero hard failures, zero public training rows, zero external inference calls, no teacher use, locked model promotion and production routing, public-safety boundaries, and rejects full-parity, production-routing, model-promotion, and chapter-core-promotion overclaims.",
-      "status": "implemented",
-      "outline_line": 7429,
-      "module_path": "lean/AsiStackProofs/TheseusReference.lean"
-    },
-    {
-      "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "chapter_title": "Project Theseus as Report-First Implementation Reference",
-      "tag": "lean:theseus.reference.book_crosswalk.pointer_boundary",
-      "module": "AsiStackProofs.TheseusReference",
-      "formal_target": "A sanitized Project Theseus book-to-Theseus crosswalk import fixture records trigger state `GREEN`, 53 public-safe pointer rows, 20 backlog cards, 134 source-sync review decisions, public-safety boundaries, and rejects source-sync failure, public-safety failure, clean-live-replay overclaim, and chapter-core-promotion overclaim.",
-      "status": "implemented",
-      "outline_line": 7430,
-      "module_path": "lean/AsiStackProofs/TheseusReference.lean"
-    },
-    {
-      "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "chapter_title": "Project Theseus as Report-First Implementation Reference",
-      "tag": "lean:theseus.reference.work_board_import.metadata_boundary",
-      "module": "AsiStackProofs.TheseusReference",
-      "formal_target": "A sanitized Project Theseus work-board metadata import fixture records 130 durable task rows, 412 event rows, 133 evidence rows, five SQLite tables, stale-snapshot currentness blocking, public-safety boundaries, and rejects clean-live-replay, private-payload, public-training-row, and chapter-core-promotion overclaims.",
-      "status": "implemented",
-      "outline_line": 7431,
-      "module_path": "lean/AsiStackProofs/TheseusReference.lean"
-    },
-    {
       "chapter_id": "prototype-roadmap",
       "chapter_title": "Prototype Roadmap",
       "tag": "lean:roadmap.phases.operational_invariant",
       "module": "AsiStackProofs.PrototypeRoadmap",
       "formal_target": "A finite prototype-phase route with declared prerequisites but failed acceptance gates remains research-only rather than integrating.",
       "status": "implemented",
-      "outline_line": 7488,
+      "outline_line": 7481,
       "module_path": "lean/AsiStackProofs/PrototypeRoadmap.lean"
     },
     {
@@ -3310,7 +3220,7 @@
       "module": "AsiStackProofs.PrototypeRoadmap",
       "formal_target": "A finite phase-promotion request without an evidence-transition record is rejected, and a reached milestone with no evidence cannot promote.",
       "status": "implemented",
-      "outline_line": 7489,
+      "outline_line": 7482,
       "module_path": "lean/AsiStackProofs/PrototypeRoadmap.lean"
     },
     {
@@ -3320,7 +3230,7 @@
       "module": "AsiStackProofs.PrototypeRoadmap",
       "formal_target": "A modeled prototype phase-gate fixture bridge accepts only the complete public-safe fixture summary and rejects missing non-claim boundaries while preserving no support-state promotion and no phase-completion claim.",
       "status": "implemented",
-      "outline_line": 7490,
+      "outline_line": 7483,
       "module_path": "lean/AsiStackProofs/PrototypeRoadmap.lean"
     },
     {
@@ -3330,7 +3240,7 @@
       "module": "AsiStackProofs.LivingBook",
       "formal_target": "A finite manifest review with a present chapter but missing outline targets or claim placeholders is rejected.",
       "status": "implemented",
-      "outline_line": 7553,
+      "outline_line": 7546,
       "module_path": "lean/AsiStackProofs/LivingBook.lean"
     },
     {
@@ -3340,7 +3250,7 @@
       "module": "AsiStackProofs.LivingBook",
       "formal_target": "A finite structural update marked valid while either the scaffold or proof manifest is unsynchronized is rejected.",
       "status": "implemented",
-      "outline_line": 7554,
+      "outline_line": 7547,
       "module_path": "lean/AsiStackProofs/LivingBook.lean"
     },
     {
@@ -3350,7 +3260,7 @@
       "module": "AsiStackProofs.LivingBook",
       "formal_target": "A public-surface change packet requires validation, changelog, support-state, non-claim, derivative-boundary, and evidence-transition discipline.",
       "status": "implemented",
-      "outline_line": 7555,
+      "outline_line": 7548,
       "module_path": "lean/AsiStackProofs/LivingBook.lean"
     },
     {
@@ -3360,7 +3270,7 @@
       "module": "AsiStackProofs.LivingBook",
       "formal_target": "A current reader release-candidate route cannot treat local format evidence as approval while accessibility, audio, release-approval, or non-claim blockers remain.",
       "status": "implemented",
-      "outline_line": 7556,
+      "outline_line": 7549,
       "module_path": "lean/AsiStackProofs/LivingBook.lean"
     },
     {
@@ -3370,7 +3280,7 @@
       "module": "AsiStackProofs.BibliographyPlan",
       "formal_target": "A source-derived claim with neither a source note nor an ingested artifact fails the finite source-evidence predicate.",
       "status": "implemented",
-      "outline_line": 7637,
+      "outline_line": 7630,
       "module_path": "lean/AsiStackProofs/BibliographyPlan.lean"
     },
     {
@@ -3380,7 +3290,7 @@
       "module": "AsiStackProofs.BibliographyPlan",
       "formal_target": "An accepted new-source assignment to a nonexistent chapter fails the finite assignment predicate.",
       "status": "implemented",
-      "outline_line": 7638,
+      "outline_line": 7631,
       "module_path": "lean/AsiStackProofs/BibliographyPlan.lean"
     }
   ]

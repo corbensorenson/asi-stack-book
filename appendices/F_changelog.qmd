@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-07-27 — C6 Theseus repository-mirror retirement
+
+- Physically retired 43 copied Project Theseus repository-import summary
+  theorems and their mirror-only definitions after the frozen residual audit
+  confirmed zero Lean dependencies and zero theorem consumers.
+- Removed nine associated formal targets while preserving all nine independent
+  executable validators, their imported artifacts, negative controls,
+  non-claim boundaries, and historical result receipts.
+- Changed current validators to enforce the retirement ledger and absence of
+  stale targets instead of requiring copied theorem names. The reusable
+  implementation-reference, gate-before-promotion, and report-bundle audit
+  targets remain in `AsiStackProofs.TheseusReference`.
+- Reconciled the manuscript, outline, proof manifest, adequacy review,
+  semantic overlay, claim atoms, roadmap status, and generated proof reports.
+  The live estate now contains 1,227 theorems and 320 formal targets; the
+  cumulative ledger records 149 retirements, two scope rewrites, and nine
+  remaining stronger-model actions. No claim support or release state moved.
+
 ## 2026-07-26 — Cross-host P2 receipt validation
 
 - Corrected the P2-R3a validator to compare the immutable `df` command against
@@ -248,7 +266,7 @@
   exact scope-language rewrites, and thirty-nine public-target migrations. The
   live estate is 1,304 declarations: 35 P0, 753 P1, 25 P2, 319 P3, 93 P4, 79
   P5, and zero P6. The remaining queue contains 92 stronger-model rewrites.
-- Current proof-depth snapshot: 329 proof targets, 111 Lean modules, 1270 theorem declarations, 882 derived/decomposed, 169 direct/projection, 219 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Current proof-depth snapshot: 320 proof targets, 111 Lean modules, 1227 theorem declarations, 839 derived/decomposed, 169 direct/projection, 219 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - No theorem count is treated as a success metric. No policy-quality,
   substrate-quality, safety-lifecycle, chapter-core support, release, or
   publication-authority claim changes.

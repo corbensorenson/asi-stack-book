@@ -7,6 +7,8 @@ import re
 import sys
 from typing import Any
 
+from validate_retired_theseus_formal_mirrors import validate_retired_formal_mirror
+
 from run_theseus_fast_support_lane import (
     LANE_ID,
     NON_CLAIMS,
@@ -41,7 +43,6 @@ LEAN_THEOREMS = [
 SURFACE_PHRASES = [
     LANE_ID,
     "python3 scripts/validate_theseus_fast_support_lane.py",
-    "theseusFastSupportAggregateFixture",
     "68 public task records",
     "14 expected-invalid or rejected controls",
     "does not prove clean live Project Theseus replay",
@@ -160,7 +161,7 @@ def validate_tracked_artifacts(record: dict[str, Any], errors: list[str]) -> Non
             errors.append(f"{owner}: sha256 must be a SHA-256 hex digest.")
 
 
-def validate_lean_alignment(record: dict[str, Any], errors: list[str]) -> None:
+def validate_historical_lean_alignment(record: dict[str, Any], errors: list[str]) -> None:
     alignment = record.get("aggregate_lean_alignment")
     if not isinstance(alignment, dict):
         errors.append(f"{rel(RESULT)}: aggregate_lean_alignment must be an object.")
@@ -175,22 +176,9 @@ def validate_lean_alignment(record: dict[str, Any], errors: list[str]) -> None:
     for key, value in expected.items():
         if alignment.get(key) != value:
             errors.append(f"{rel(RESULT)}: aggregate_lean_alignment.{key} must be {value!r}.")
-    lean_text = LEAN.read_text(encoding="utf-8", errors="ignore")
-    for fragment in (
-        "structure TheseusFastSupportAggregateSummary",
-        "def theseusFastSupportAggregateFixture",
-        "supportLaneCount := 2",
-        "commandReplayCount := 4",
-        "trackedArtifactCount := 16",
-        "publicTaskCount := 68",
-        "expectedInvalidOrRejectedControlCount := 14",
-        "noPromotionDecisionCount := 2",
-    ):
-        if fragment not in lean_text:
-            errors.append(f"{rel(LEAN)} missing Lean aggregate fragment {fragment!r}.")
-    for theorem in LEAN_THEOREMS:
-        if theorem not in lean_text:
-            errors.append(f"{rel(LEAN)} missing theorem {theorem}.")
+    validate_retired_formal_mirror(
+        "lean:theseus.reference.fast_support_aggregate.fixture_bridge", errors
+    )
 
 
 def validate_surfaces(errors: list[str]) -> None:
@@ -223,7 +211,7 @@ def main() -> None:
     validate_record_shape(value, errors)
     validate_replay_commands(value, errors)
     validate_tracked_artifacts(value, errors)
-    validate_lean_alignment(value, errors)
+    validate_historical_lean_alignment(value, errors)
     validate_surfaces(errors)
     if errors:
         fail(errors)
