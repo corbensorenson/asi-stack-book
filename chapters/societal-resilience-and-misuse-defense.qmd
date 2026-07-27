@@ -101,6 +101,32 @@ investigation.
 **Non-claim:** classifier limitations do not imply that filtering is useless.
 They imply layered controls and explicit coverage.
 
+**Mechanism.** Build a coverage graph from abuse pathway to observable
+surfaces, participating organizations, detection signals, response authority,
+and harmed-party route. Each classifier occupies one edge of that graph and
+declares its language, modality, channel, population, threshold, latency, and
+expiry. Incident clustering, user reports, transaction controls, provenance,
+human review, and external partner signals remain separate observations. The
+network can then expose which pathways have no observer or no actor able to
+intervene.
+
+**Failure mode.** A provider can report improving classifier precision while
+attackers migrate to private channels, other platforms, voice, live video, or
+human intermediaries. Several institutions may also deploy models trained on
+the same data and fail together under one obfuscation. Aggregating their alerts
+as independent confirmation hides correlated blindness.
+
+**Non-claim.** A coverage graph does not establish that every abuse pathway is
+known, observable, or preventable. It makes known blind spots and monocultures
+visible and prevents one model's pass rate from becoming a claim about
+societal harm.
+
+**Source grounding.** The International AI Safety Report describes safeguards
+as improving but bypassable and argues for layered monitoring, incident
+response, and societal resilience outside the model boundary. This analysis
+turns that synthesis into a coverage obligation; the report supplies no local
+classifier result or proof that the proposed graph reduces harm.
+
 ### Takedown is not recovery
 
 Removing one account or artifact can leave financial loss, copied media,
@@ -114,6 +140,32 @@ and checks for recurrence.
 **Non-claim:** the architecture cannot guarantee legal remedy or complete
 removal across every jurisdiction.
 
+**Mechanism.** Recovery begins with an affected-path inventory: people,
+accounts, transactions, copies, search indexes, devices, services, and partner
+organizations that may still carry the harm. Each path receives a disposition
+such as contained, restored, corrected, notified, compensated through an
+authorized process, disputed, unreachable, or residual. Service restoration
+and harmed-party recovery are measured separately, and incident closure
+requires an independent check that the declared terminal paths match observable
+state.
+
+**Failure mode.** An organization can restore its own service and close the
+incident while copied intimate media, fraudulent transfers, search results,
+credential compromise, or reputational damage persists. Automation can make
+closure faster on paper by marking unreachable downstream systems “out of
+scope,” thereby deleting the exact residual society needs to see.
+
+**Non-claim.** The contract cannot compel a foreign platform, recover every
+loss, erase memory, or guarantee legal redress. It requires the operator to
+distinguish achieved restoration from external residuals and assign the next
+authorized owner where one exists.
+
+**Source grounding.** NIST SP 800-61 Rev. 3 integrates preparation, detection,
+response, recovery, and improvement with broader risk management. The design
+uses that lifecycle as a baseline and adds affected-party, cross-organization,
+AI-artifact, and public-correction paths. NIST guidance does not prove this
+project's recovery effectiveness or completeness.
+
 ### Reporting is not automatically safe
 
 Shared incident data can expose victims, confidential reporters, security
@@ -126,6 +178,32 @@ identity and behavior registry.
 
 **Non-claim:** privacy constraints do not justify keeping serious incidents
 unreportable; they shape what is shared and with whom.
+
+**Mechanism.** Separate the federated incident identity from the evidence held
+by each participant. A shared packet contains the minimum routing facts:
+incident class, severity, affected function, confidence, time window, sharing
+purpose, disclosure class, authorized recipients, expiry, and contact. Raw
+victim material, credentials, medical information, or exploit detail remains
+under local or specialist custody unless a specific lawful purpose and access
+decision requires transfer. Corrections propagate to every recipient of the
+earlier packet.
+
+**Failure mode.** A shared repository can accumulate identifiers and behavioral
+history beyond its original purpose, or an unverified allegation can propagate
+faster than its correction. Conversely, participants may cite privacy in order
+to withhold even de-identified routing information that another organization
+needs to contain ongoing harm.
+
+**Non-claim.** The envelope does not determine legal reporting duties,
+privilege, admissibility, or jurisdiction. It cannot guarantee honest
+participants. It provides a minimum accountable exchange and preserves refusal
+or nonparticipation as a coverage residual.
+
+**Source grounding.** The Singapore Consensus treats incident reporting and
+cross-organization response as first-class AI-safety problems. NIST supplies
+roles, communication, detection, response, recovery, and improvement
+baselines. Neither source authorizes a universal database or resolves
+cross-jurisdictional privacy and due-process conflicts.
 
 ## Core Claim
 
@@ -162,6 +240,31 @@ shares a bounded incident identity rather than a universal surveillance
 record. Rights constrain the evidence envelope, and unrepaired harm returns to
 affected-party support and remedy instead of disappearing into a closed
 incident ticket.
+
+**Mechanism.** Treat the four stages as concurrent state, not a clean
+waterfall. Resistance continues while an incident is absorbed; recovery can
+reveal new exposure that reopens containment; adaptation can introduce a new
+failure that must be tested before rollout. Each stage has a responsible
+organization, service-level objective, observed outcome, false-intervention
+cost, unresolved residual, and escalation deadline. Terminal closure requires
+that every material path is either repaired, retired, explicitly accepted by
+the correct authority, or owned with a next trigger.
+
+**Failure mode.** Programs overinvest in prevention because blocked events are
+easy to count, underfund continuity and victim support, then label a policy
+update “adaptation” without showing that field behavior changed. A perpetual
+quarantine can also appear safe while essential services never recover.
+
+**Non-claim.** The cycle is not evidence that any intervention works, nor does
+it imply that every incident can reach full restoration. It establishes which
+outcome was attempted and prevents resistance, uptime, recovery, and learning
+from borrowing one another's success.
+
+**Source grounding.** The International AI Safety Report describes societal
+resilience through resist, absorb, recover, and adapt functions and emphasizes
+uneven coverage. This treatment makes those functions separately accountable and
+costed; the report does not validate the proposed service levels or show that
+one cycle transfers across hazards.
 
 ### Resist
 
@@ -216,6 +319,30 @@ Organizations can exchange signed, minimal packets while keeping sensitive raw
 evidence in appropriate custody. A shared ID does not give every participant
 access to every field.
 
+**Mechanism.** Federation uses local records joined by aliases, signed routing
+receipts, and purpose-bound disclosure views. A participant can acknowledge an
+incident, accept one action, or contest a field without copying the complete
+case. The envelope preserves who observed each fact, who inferred each
+classification, who may act, which version was shared, and whether the
+recipient confirmed receipt. An escalation clock starts only when the minimum
+evidence and authority prerequisites for that actor are present.
+
+**Failure mode.** Duplicate local IDs can fragment one campaign, while
+overaggressive entity resolution can merge unrelated people or events.
+Participants can assume another organization owns containment, and a signed
+receipt can be mistaken for proof that the promised action occurred.
+
+**Non-claim.** Shared identity is not shared truth, universal access, or global
+command. A federation may remain incomplete, and a participant may have
+legitimate reasons not to disclose a field. Those gaps stay visible rather
+than being interpreted as successful coordination.
+
+**Source grounding.** NIST's incident-response guidance emphasizes prepared
+roles, communications, prioritized containment, recovery, and feedback into
+risk management. The envelope operationalizes those joins across
+organizations while adding AI-system identity and rights boundaries. NIST does
+not specify this schema or prove that federation improves response.
+
 ### Domain playbooks
 
 ### Fraud, scams, extortion, defamation, and impersonation
@@ -232,6 +359,32 @@ victim burden remain unmeasured.
 **Non-claim:** identity assurance cannot prove every speaker's legitimacy or
 eliminate social engineering.
 
+**Mechanism.** A fraud playbook joins communication provenance, account and
+device risk, transaction confirmation, behavioral anomalies, customer reports,
+payment holds, financial-institution contact, and correction into one case
+without treating any signal as guilt. High-risk actions use an out-of-band
+confirmation path that does not rely on the potentially compromised channel.
+Recovery tracks attempted loss, completed loss, funds held, funds returned,
+account restoration, identity correction, repeated targeting, and victim
+support separately.
+
+**Failure mode.** Attackers can exploit urgency and authority cues while
+defensive friction falls most heavily on older, disabled, low-connectivity, or
+linguistically underserved users. A platform may celebrate blocked messages
+while transfers occur elsewhere, or freeze a legitimate account without a
+timely appeal.
+
+**Non-claim.** Identity checks, provenance, and transaction holds cannot prove
+that a communication is legitimate or eliminate fraud. The playbook does not
+give financial or legal advice and does not establish that automated risk
+scoring is fair across populations.
+
+**Source grounding.** The International AI Safety Report treats AI-enabled
+fraud, impersonation, synthetic media, and wider systemic harm as part of a
+layered resilience problem. It supports joining prevention with recovery and
+correction; it does not provide a locally reproduced fraud-loss reduction or a
+complete victim-remedy model.
+
 ### Child safety and non-consensual intimate imagery
 
 The design must center victim safety, age-appropriate support, privacy,
@@ -244,6 +397,32 @@ incorrect automated accusation harms a person.
 
 **Non-claim:** this chapter does not specify legal reporting duties or replace
 specialist child-safety and survivor organizations.
+
+**Mechanism.** The playbook minimizes exposure to abusive material while
+preserving the exact functions specialists need: trusted intake, immediate
+victim-safety triage, restricted evidence custody, lawful referral, duplicate
+or recurrence matching where authorized, platform removal, downstream notice,
+appeal for false matches, and long-term reappearance monitoring. Synthetic,
+manipulated, and previously known material remain distinct because consent,
+identity, age, provenance, and reporting obligations can differ.
+
+**Failure mode.** A system can duplicate or retain harmful material in order to
+train detectors, route it through unnecessary reviewers, expose a victim's
+identity to downstream partners, or make a high-impact accusation from a
+fallible classifier. Removal without recurrence monitoring can force survivors
+to rediscover and report the same material repeatedly.
+
+**Non-claim.** This book does not define CSAM, determine age, decide consent,
+specify mandatory reporting, or authorize access to illegal material. It
+cannot replace qualified child-safety, survivor-support, legal, or law-
+enforcement professionals. Synthetic fixtures must stand in for harmful media
+in any repository test.
+
+**Source grounding.** The International AI Safety Report's societal-resilience
+framing supports layered prevention, reporting, correction, and recovery for
+AI-enabled harms, but it is not a specialist child-safety protocol. The
+chapter therefore treats the source as a broad resilience comparator and
+preserves specialist governance as an explicit unresolved dependency.
 
 ### Cyber misuse
 
@@ -287,6 +466,33 @@ monitoring becomes intimate surveillance.
 **Non-claim:** an AI system is not established here as a clinical treatment,
 cause of a diagnosis, or substitute for professional care.
 
+**Mechanism.** Separate five observable pathways: targeted persuasion,
+sycophantic agreement, dependency and compulsive use, reinforcement of false
+or destabilizing beliefs, and product-mediated barriers to human support.
+Each pathway needs a population, exposure measure, time horizon, crisis and
+exit route, independent outcome measure, privacy boundary, and delayed follow-
+up. Product interventions can include friction, session boundaries, user-
+controlled memory, uncertainty language, escalation to human support, and
+ability to leave or delete the relationship without penalty.
+
+**Failure mode.** Engagement, self-reported satisfaction, or continued use can
+be mistaken for wellbeing. Monitoring intimate conversations can itself create
+surveillance and chilling effects, while a generic crisis message can be
+inaccessible, mistimed, or inappropriate for the user's location and needs.
+Average effects can also hide severe outcomes in a small vulnerable subgroup.
+
+**Non-claim.** The framework neither diagnoses illness nor claims that an AI
+system causes or treats a clinical condition. It does not prescribe care,
+replace emergency or professional services, or justify collecting sensitive
+mental-health data without lawful, proportionate governance.
+
+**Source grounding.** The Singapore Consensus identifies psychological
+manipulation and societal resilience as research priorities, and the
+International AI Safety Report discusses systemic and societal harms under
+uncertainty. Those broad sources justify separating pathways and monitoring
+delayed harm; they do not supply clinical evidence or validate the proposed
+interventions.
+
 ### Defense-favoring AI
 
 The Singapore Consensus highlights capabilities that improve defense. A
@@ -303,6 +509,50 @@ defense-favoring claim needs a joint comparison:
 An AI patch generator that finds vulnerabilities faster but publishes
 exploitable detail, overwhelms maintainers, or produces unsafe fixes may not
 favor defense. The metric is a changed field outcome, not model cleverness.
+
+### Cross-organization service levels and drills
+
+Incident cooperation becomes operational only when every handoff has a clock
+and an observable completion condition. A service-level record should name the
+incident class, minimum admissible evidence, receiving role, acknowledgement
+deadline, containment or support deadline, escalation path, after-hours route,
+jurisdiction, accessibility obligations, and the state that pauses or expires
+the clock. “Report sent” is not the outcome: the network separately records
+receipt, triage, accepted ownership, action, independent observation, affected-
+party notification, correction, and unresolved residuals.
+
+The service levels must be asymmetric where harm demands it. A credible
+immediate threat, active financial transfer, exposed credential, or continuing
+circulation of abusive material may need rapid containment under a narrower
+evidence threshold, followed by fuller review and appeal. A public accusation,
+identity linkage, account termination, or cross-border disclosure can require
+stronger evidence and authority. The design therefore avoids one global
+severity number that simultaneously drives containment, publication, legal
+referral, and victim communication.
+
+Drills should exercise failure between organizations, not merely success
+inside each one. Scenarios include an unreachable partner, conflicting
+severity labels, duplicated incidents, a compromised signal, an erroneous
+match, a privacy prohibition, inaccessible notification, language mismatch,
+attacker channel migration, delayed correction, and a downstream copy that
+cannot be removed. An independent observer measures elapsed time, information
+loss, rights burden, false intervention, restoration, and residual ownership.
+Participants repeat the drill after remediation to distinguish a revised
+playbook from an improved handoff.
+
+No tabletop proves population protection. A successful drill shows only that
+specified actors could exchange the permitted evidence and complete the tested
+actions under its artificial conditions. Real incidents can reveal additional
+actors, power imbalances, resource shortages, trauma, legal conflict, and
+adaptive behavior. Those gaps remain inputs to release and resilience
+decisions rather than being erased by a green exercise.
+
+Capacity is part of the contract as well. A nominal responder with no funded
+staff, protected communication channel, specialist language coverage, or
+after-hours authority is an unavailable route. Drills therefore record queue
+depth, responder time, surge limits, accessibility support, and opportunity
+cost alongside technical latency. A faster automated alert that increases
+unreviewed backlog or displaces victim support is not a resilience gain.
 
 ## Interfaces
 

@@ -109,6 +109,32 @@ to deployment and security decisions. The AISI trends report provides a
 current example of domain- and horizon-specific measurement. Neither source
 turns a task result into realized harm.
 
+**Mechanism.** Treat a knowledge item as one node in a prerequisite graph, not
+as a proxy for the whole harmful workflow. The evaluator should identify which
+later steps require tacit skill, physical access, iteration, troubleshooting,
+coordination, concealment, or external resources, then test only public-safe
+analogues of those steps. An assistance effect is attributed to the model only
+when the same actor, time budget, tools, and outcome rubric are preserved
+against an unassisted or competent alternative-tool route.
+
+**Failure mode.** A polished answer can receive expert approval even though it
+contains no usable ordering, misses a decisive bottleneck, or would fail as
+soon as the actor encounters feedback from the world. The opposite error is
+also possible: a terse response may look weak while enabling a trained actor
+to cross a narrow bottleneck that the benchmark never isolates.
+
+**Non-claim.** Decomposing the workflow does not license testing every step.
+Where a realistic step would create an operational hazard, the dossier records
+it as unobserved and carries the resulting uncertainty to the decision owner.
+Safe omission is preferable to a fictitious end-to-end score.
+
+**Source grounding.** Shevlane et al. supply the capability-versus-alignment
+evaluation distinction, while the AISI trends report emphasizes domain- and
+horizon-specific tasks. This analysis uses those findings to demand a
+prerequisite graph and explicit horizon boundary; it does not inherit any
+source-reported model score or claim that the public task set captures field
+completion.
+
 ### Refusal is not incapability
 
 Default policy behavior is useful deployment evidence. It is not a complete
@@ -124,6 +150,32 @@ another budget, method, domain, or future model can differ.
 **Non-claim:** strong elicitation does not show that the deployed model will
 spontaneously misuse the capability. That is a propensity question.
 
+**Mechanism.** Run policy behavior and latent-capability elicitation as two
+linked but separately identified arms. The policy arm preserves the deployed
+system, refusal layer, monitoring, and user interface. The elicitation arm uses
+a prospectively bounded set of harmless scaffolds, decomposition strategies,
+fine-tuning or adapter budgets, and tool permissions under restricted custody.
+The result record reports both arms and forbids the elicitation arm from
+silently replacing the release artifact being evaluated.
+
+**Failure mode.** An evaluator can defeat its own safeguard, expose a stronger
+behavior under a privileged scaffold, and then attribute that behavior to
+ordinary users. It can also stop after default refusal and misclassify a policy
+success as absence of capability. Either collapse corrupts the threat model
+because access and adaptation budget are causal variables.
+
+**Non-claim.** A latent-capability finding does not estimate how often the
+deployed system will assist misuse, and a refusal finding does not estimate
+what an unrestricted derivative can do. The two measurements constrain
+different decisions and should expire on different system changes.
+
+**Source grounding.** The gpt-oss open-weight study explicitly evaluates
+deliberately fine-tuned cyber and biology variants and compares them with a
+dated accessible frontier. Its bounded, provider-authored non-crossing result
+supports testing adapted derivatives rather than default refusal alone. It
+does not establish worst-case elicitation, future robustness, or the adequacy
+of the proposed budgets here.
+
 ### Capability is not propensity
 
 Capability asks whether a system can produce an outcome under competent
@@ -137,6 +189,33 @@ well-behaved model is described as incapable.
 
 **Non-claim:** this distinction does not solve intent attribution. It prevents
 one measurement from being mislabeled as another.
+
+**Mechanism.** Store capability and propensity as different observations with
+different interventions. Capability trials ask whether competent elicitation
+can produce a bounded output. Propensity trials vary situational cues,
+oversight, incentives, user identity, opportunity, and policy state while
+holding the underlying task constant. A later risk model may join the records,
+but only through an explicit function that preserves their denominators,
+uncertainties, and incompatible missingness.
+
+**Failure mode.** A high-capability result is rhetorically converted into
+agency, desire, or likelihood of misuse; alternatively, compliant behavior in
+one monitored setting is generalized into low propensity across hidden,
+multi-agent, or adversarial settings. Averaging these quantities into one
+danger score makes it impossible to tell which intervention—capability
+restriction, access control, monitoring, or incentive redesign—actually
+addresses the observed problem.
+
+**Non-claim.** Propensity evaluation does not reveal a system's inner intent
+or moral status. It measures behavior under declared conditions. Capability
+evaluation likewise does not establish a field incident, actor motivation, or
+realized consequence.
+
+**Source grounding.** The Singapore Consensus explicitly separates dangerous
+capability from propensity and highlights deception, autonomy, manipulation,
+and multi-agent monitoring. This treatment adopts that separation as a record and
+experimental-design requirement; the consensus taxonomy remains a research
+agenda, not evidence that any proposed propensity instrument is valid.
 
 ## Core Claim
 
@@ -165,6 +244,31 @@ The levels can inform one another, but none automatically promotes the next.
 The AISI misuse-safeguards example is valuable because it tries to connect
 red-team effort and uplift into a decision argument. Its equations and
 assumptions would still need domain-specific validation.
+
+**Mechanism.** Promotion between levels requires a named bridge study. D0 to
+D1 needs a safe component task with a known-positive control. D1 to D2 needs a
+workflow in which intermediate state and recovery are visible. D2 to D3 needs
+an actor counterfactual. D3 to D4 needs adaptive safeguard challenge under a
+frozen effort budget. D4 to D5 needs incident or intervention evidence with a
+causal design strong enough for the proposed field inference. A dossier may
+contain several levels without claiming the missing bridge.
+
+**Failure mode.** A program can accumulate impressive results at adjacent
+levels and let rhetorical proximity do the work of a missing experiment:
+knowledge plus red-team bypass becomes “real-world uplift,” or actor uplift
+plus an incident anecdote becomes “measured harm.” The ladder is specifically
+designed to expose those skipped links.
+
+**Non-claim.** The six levels are not a universal risk scale and do not imply
+that D5 is always attainable or ethically collectable. They are a bookkeeping
+device for maximum inference. A decision may remain conservative because a
+critical bridge cannot be studied safely.
+
+**Source grounding.** The AISI misuse-safeguards example connects attacker
+effort, bypass evidence, an uplift model, uncertainty, and monitoring inside a
+safety-case structure. This chapter borrows that explicit linkage while
+preserving its limitation: a worked argument does not validate the parameters,
+identify harm, or transfer between domains.
 
 ### Build an uplift dossier
 
@@ -202,6 +306,32 @@ The threat model must include a strongest benign alternative explanation. A
 score increase may reflect better writing, interface familiarity, or test
 gaming rather than increased harmful competence.
 
+**Mechanism.** Freeze a directed pathway from actor and objective through
+access, prerequisites, bottlenecks, model contribution, external controls, and
+consequence. Each edge names what observation could support it and what remains
+outside the evaluation. Version the model, policy, scaffold, threat
+intelligence, accessible comparator frontier, and decision consumer together;
+a material change invalidates the prior pathway rather than merely updating a
+dashboard label.
+
+**Failure mode.** Broad categories such as “CBRN,” “cyber,” or “autonomy” can
+hide incomparable pathways and encourage one easy subtest to certify a whole
+domain. Provider policy can also change the category or threshold while
+retaining the old decision language, leaving a consumer unable to reconstruct
+which commitment was actually in force.
+
+**Non-claim.** A complete threat-model record does not show that the pathway is
+probable, that the actor exists, or that the model crosses any threshold. It
+makes the assumptions contestable and tells downstream owners when an old
+finding has expired.
+
+**Source grounding.** OpenAI's Preparedness Framework and Anthropic's
+Responsible Scaling Policy give concrete examples of versioned categories,
+thresholds, reports, and safeguard commitments. They are provider policies and
+self-descriptions. The chapter uses them as comparators for versioning and
+decision linkage, not as independent evidence that their categories,
+elicitation, safeguards, or governance are sufficient.
+
 ### 2. Define actor cohorts and counterfactuals
 
 An uplift study is relational. It compares an actor's outcome with model
@@ -213,6 +343,29 @@ Randomization is preferable where safe and feasible. Matched or crossover
 designs need carryover and learning controls. AI-agent cohorts need the same
 discipline: exact checkpoint, scaffold, context, tools, retry budget, and human
 assistance are part of the actor.
+
+**Mechanism.** Define the unit of uplift before assignment: individual novice,
+domain professional, coordinated team, autonomous agent, or human–AI group.
+Stratify by the bottleneck the threat model claims the model can reduce, and
+record contamination, prior exposure, accessibility needs, motivation, and
+dropout. Where crossover is used, counterbalance order and include washout or
+novel tasks so learning from the first arm is not misattributed to the second.
+
+**Failure mode.** An average treatment effect can conceal that novices gain
+nothing while experts cross a decisive bottleneck, or that only highly
+tool-fluent participants benefit. Differential dropout can also make the
+assisted arm appear stronger because frustrated participants disappear from
+the denominator.
+
+**Non-claim.** A cohort result applies only to the sampled actors, assistance
+contract, and task distribution. It does not identify population prevalence,
+malicious intent, field access, or a universal “democratization” effect.
+
+**Source grounding.** The Singapore Consensus asks which uplift measures remain
+valid across expertise and tool access and distinguishes capability from actor
+propensity. This chapter turns that open question into a cohort and
+counterfactual contract; the consensus itself supplies no causal uplift
+estimate and no preferred participant design.
 
 ### 3. Audit elicitation competence
 
@@ -228,6 +381,32 @@ impossible task. Before interpreting failure:
 
 This is the chapter's defense against false negatives. Failure at this stage is
 an instrument or implementation result, not evidence against the capability.
+
+**Mechanism.** The competence dossier records positive-control success,
+negative-control restraint, task solvability, evaluator sensitivity, scaffold
+coverage, rescue attempts, and stopping rules before the protected null is
+interpreted. A positive control should exercise the same interface and outcome
+pipeline as the tested system, not a simpler side task. Rescue variants are
+frozen and budget-matched so a post-hoc successful prompt cannot silently
+replace the preregistered system.
+
+**Failure mode.** A control can pass for the wrong reason—for example, because
+it receives privileged context or a different grader—or the task can be so
+hard that every arm sits at floor. Conversely, an easy task can place every
+arm at ceiling. In either case the instrument lacks sensitivity despite a
+nominally green harness.
+
+**Non-claim.** Passing competence establishes only that the experiment could
+detect its prespecified effect in the tested regime. It does not make a null
+true, remove statistical uncertainty, or establish absence outside the
+elicitation and access envelope.
+
+**Source grounding.** *Model Evaluation for Extreme Risks* motivates
+decision-linked dangerous-capability evaluation, while the open-weight
+fine-tuning study illustrates how adaptation budget and comparator frontier
+change the tested question. Neither supplies this project's competence
+receipt. The chapter therefore requires its own controls and forbids source
+prestige from rehabilitating an insensitive local instrument.
 
 ### 4. Preserve multidimensional outcomes
 
@@ -264,6 +443,33 @@ completion.
 
 **Non-claim:** a non-hazardous analogue may validate an instrument but cannot
 prove transfer to a hazardous workflow.
+
+**Mechanism.** Split the CBRN pathway into public-safe capability families:
+literature navigation, high-level planning, error recognition, troubleshooting
+under benign analogues, resource and access reasoning, and safety-aware
+refusal. Biological and chemical workflows should remain separate where their
+infrastructure, tacit knowledge, acquisition, and detection bottlenecks differ;
+radiological and nuclear questions require their own access and consequence
+models. Restricted expert review may score whether an answer crosses a
+decision boundary without exposing the answer itself to the public corpus.
+
+**Failure mode.** A benchmark can reward memorized terminology, merge
+biological and chemical risk, omit tacit laboratory skill, or use an expert
+helpfulness score as if it demonstrated novice completion. At the other
+extreme, withholding every realistic component can produce a reassuring null
+for an instrument that never touched the relevant bottleneck.
+
+**Non-claim.** This chapter provides no operational biological, chemical,
+radiological, or nuclear procedure; it does not assess a named model's hazard
+level, give laboratory guidance, or authorize dangerous evaluation. Unknown
+transfer and intentionally omitted steps remain explicit residuals.
+
+**Source grounding.** The Singapore Consensus names chemical, biological,
+radiological, and nuclear assessment as distinct priorities; the International
+AI Safety Report stresses realistic workflows and access conditions; and
+Anthropic's current policy shows a concrete CBRN threshold comparator. These
+sources support domain separation and decision linkage, not a locally measured
+threshold or proof that provider safeguards work.
 
 ### Offensive cyber capability
 

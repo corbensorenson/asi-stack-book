@@ -2260,7 +2260,18 @@
     "experiments/p5_natural_publication_service_trace/results/2026-07-27-development.json",
     "schemas/p5_natural_publication_service_trace.schema.json",
     "scripts/validate_p5_natural_publication_service_trace.py",
-    "docs/p5_natural_publication_service_development_trace.md"
+    "docs/p5_natural_publication_service_development_trace.md",
+    "evidence_quality/round20_four_chapter_claim_atom_addendum.json",
+    "schemas/round20_four_chapter_claim_atom_addendum.schema.json",
+    "scripts/build_round20_four_chapter_claim_atom_addendum.py",
+    "scripts/validate_round20_four_chapter_claim_atom_addendum.py",
+    "scripts/register_round20_chapter_substance_validators.py",
+    "evidence_quality/chapter_substance_contract.json",
+    "schemas/chapter_substance_contract.schema.json",
+    "scripts/build_chapter_substance_contract.py",
+    "scripts/validate_chapter_substance_contract.py",
+    "evidence_quality/taxonomy_completion_claim_atoms_2026_07_24.json",
+    "evidence_quality/round_18_breadth_completion_claim_atoms.json"
   ],
   "units": [
     {
@@ -14904,11 +14915,100 @@
       "prohibited_inference": "The trace does not establish governed-operations efficacy, effect-complete rollback, production AI safety, unsafe-release or false-blocking rates, causal benefit, held-out natural-task performance, independent reproduction, transfer, SOTA, AGI, ASI, chapter-core support, or a new release decision.",
       "contract_precision": "exact",
       "semantic_review_state": "retrospective_natural_happy_path_development_observation_only"
+    },
+    {
+      "id": "validate_round20_four_chapter_claim_atom_addendum.py:433",
+      "order": 433,
+      "script": "validate_round20_four_chapter_claim_atom_addendum.py",
+      "args": [],
+      "execution_tier": "pr",
+      "validation_class": "proof_or_evidence_gate",
+      "input_contract": "The exact four current-manifest chapters not covered by the frozen base registry or prior addenda; five bounded manuscript-responsibility atoms per chapter; immutable prior atom custody.",
+      "input_artifacts": [
+        "evidence_quality/round20_four_chapter_claim_atom_addendum.json",
+        "schemas/round20_four_chapter_claim_atom_addendum.schema.json",
+        "scripts/build_round20_four_chapter_claim_atom_addendum.py",
+        "scripts/validate_round20_four_chapter_claim_atom_addendum.py",
+        "scripts/register_round20_chapter_substance_validators.py",
+        "book_structure.json"
+      ],
+      "output_contract": "Keep one core, boundary, mechanism, failure-boundary, and argument-exit atom for each of the four exact owners without rewriting historical packets or moving support.",
+      "output_assertions": [
+        "four exact manifest owners",
+        "twenty bounded atoms",
+        "five distinct roles per owner",
+        "zero support or release movement",
+        "eight mutations reject"
+      ],
+      "claim_scope": "Append-only manuscript responsibility, ownership, falsification boundaries, and evidence routing for four chapters.",
+      "negative_controls": "validator_owned_eight_identity_role_scope_and_support_mutations",
+      "negative_control_cases": [
+        "chapter deletion",
+        "atom deletion",
+        "duplicate atom identity",
+        "wrong owner",
+        "role denominator drift",
+        "falsifier deletion",
+        "support promotion",
+        "release movement"
+      ],
+      "prohibited_inference": "Atom coverage is not claim truth, proof, empirical evidence, implementation evidence, safety, release authority, SOTA, AGI, or ASI.",
+      "contract_precision": "exact",
+      "semantic_review_state": "manual_four_owner_core_boundary_mechanism_failure_and_exit_review"
+    },
+    {
+      "id": "validate_chapter_substance_contract.py:434",
+      "order": 434,
+      "script": "validate_chapter_substance_contract.py",
+      "args": [],
+      "execution_tier": "pr",
+      "validation_class": "proof_or_evidence_gate",
+      "input_contract": "The exact frozen 84-chapter manifest, the complete append-only atom-source set, current chapter text, and named concept contracts for the active Round 20 prose-repair tranche.",
+      "input_artifacts": [
+        "evidence_quality/chapter_substance_contract.json",
+        "schemas/chapter_substance_contract.schema.json",
+        "scripts/build_chapter_substance_contract.py",
+        "scripts/validate_chapter_substance_contract.py",
+        "scripts/register_round20_chapter_substance_validators.py",
+        "evidence_quality/claim_atom_registry.json",
+        "evidence_quality/replaceable_cognitive_substrates_claim_atom_addendum.json",
+        "evidence_quality/post_activation_six_chapter_claim_atom_addendum.json",
+        "evidence_quality/taxonomy_completion_claim_atoms_2026_07_24.json",
+        "evidence_quality/round_18_breadth_completion_claim_atoms.json",
+        "evidence_quality/round20_four_chapter_claim_atom_addendum.json",
+        "book_structure.json"
+      ],
+      "output_contract": "Preserve 84/84 atom ownership and require every active named concept section to carry a mechanism, failure mode, explicit non-claim, declared-source engagement, and minimum substantive span while keeping raw word count diagnostic and manual semantic review mandatory.",
+      "output_assertions": [
+        "manifest frozen at 84 chapters",
+        "84 of 84 chapters have an exact atom source",
+        "24 of 24 active priority concepts pass",
+        "word count is diagnostic rather than an acceptance claim",
+        "manual semantic review remains required",
+        "ten mutations reject"
+      ],
+      "claim_scope": "Editorial chapter substance, named-concept fidelity, and atom custody only.",
+      "negative_controls": "validator_owned_ten_denominator_atom_concept_source_review_and_support_mutations",
+      "negative_control_cases": [
+        "chapter deletion",
+        "manifest freeze widening",
+        "word trigger weakening",
+        "atom source deletion",
+        "concept deletion",
+        "concept word laundering",
+        "source grounding deletion",
+        "manual review bypass",
+        "chapter growth authorization",
+        "support promotion"
+      ],
+      "prohibited_inference": "Passing structure, labels, or word counts does not establish semantic quality, claim truth, empirical support, proof, safety, release, SOTA, AGI, or ASI.",
+      "contract_precision": "exact",
+      "semantic_review_state": "manual_priority_concept_and_remaining_thin_chapter_review_required"
     }
   ],
   "summary": {
-    "required_artifact_count": 2216,
-    "unit_count": 432
+    "required_artifact_count": 2227,
+    "unit_count": 434
   },
   "non_claims": [
     "Registry coverage does not establish semantic adequacy of every validator.",

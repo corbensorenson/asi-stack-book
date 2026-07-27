@@ -216,6 +216,7 @@ proceeds.
 | Existing-owner paging packet — prose terminal; policy and empirical work deferred | `P6.6-heterogeneous-inference-memory-and-speculative-paging` | Reader-facing source integration was expressly commissioned and completed 2026-07-23; schema, validator, planner, hardware characterization, and empirical work retain the ordinary post-gate entry condition | Maintain the six completed manuscript integrations and source reconciliation. Later implement and validate the heterogeneous-memory policy and run only competent, matched, hardware-characterized paging experiments. Preserve exact/approximate, throughput/latency, and source/local evidence boundaries. No new chapter. |
 | Existing-owner inference-cache packet — prose terminal; receipt and empirical work deferred | `P6.7-inference-cache-reuse-and-honest-pricing` | Reader-facing source integration was expressly commissioned and completed 2026-07-23; no new chapter or support movement | Maintain the three coordinated manuscript integrations and nine-source packet. Later implement the cache-reuse receipt and run separate exact-prefix and semantic-response campaigns under the ordinary post-gate entry condition. Preserve KV-versus-output, exact-versus-semantic, hit-versus-useful-outcome, and provider-contract-versus-local-evidence boundaries. |
 | Existing-owner functional-precision packet — source and prose terminal; evidence work queued | `P6.8-functional-precision-and-behavior-preserving-computation` | Source intake and the eight-owner manuscript integration are complete; schemas, validators, source resolution, and empirical work retain ordinary gates; no new chapter or support movement | Maintain the integrated Precision Contract treatment led by RankFold/NeuralFold. Preserve representation invariance, protected behavior, complete executable and physical-cost accounting, progressive residual precision, routed fallback, certificate scope, and program-transformation proof limits. Reconsider a standalone chapter only if a dated post-integration coherence audit finds a genuinely unowned lifecycle. |
+| Existing-book depth recovery — active, first priority tranche terminal | `P6.9-R20-chapter-substance-and-concept-fidelity` | The 84-chapter manifest is frozen; unified atom custody must stay 84/84; chapter expansion follows a named concept manifest and manual semantic review | Preserve the completed Dangerous Capability, Content Authenticity, and Societal Resilience repairs and their 24/24 passing active concept contracts. Burn down the remaining twenty diagnostic-thin owners in chapter-specific tranches. Treat 5,000 words as a triage trigger, never evidence or an acceptance claim. Admit no new chapter until the queue is zero or every remaining short-reference exception is dated and justified. |
 | Formal slot — C6 residual triage terminal; dependency-safe execution active | `C6-remaining-stronger-model-rationalization` | The original 54-action residual estate had zero Lean dependencies and zero theorem consumers; two redundant witnesses and 43 Theseus repository-import mirrors are retired, leaving nine actions: eight summary-mirror retirements and one inverse-route rewrite | Retire the eight Benchmark/Runtime/Search/Stable-Capability summary mirrors next, then implement the Failure Modes inverse property. Rebuild the overlay and ledger after every tranche, with no support or release movement. |
 | Empirical headline — exact N0 entry receipt; materialization blocked | `P2-R3-storage-materialization-and-replacement-qualification` | `P2-R3a-002` measured 23.87 GiB free against the 50 GiB floor and no reachable Docker daemon; restore both gates and write a new immutable preflight before any pull | Then thirty sealed candidate recipes and receipts; terminal pool materialization; four competently qualified replacements restoring the fixed twelve-task denominator; rank progression only under the frozen amendment; zero protected-content leakage. No deletion of non-Docker user data is authorized. |
 | First structural tranche — terminal | White-Box, World Models, Human Factors, and Governed Operations are terminal at argument support | Four exact integration packets preserve owners, sources, formal ceilings, protocols, reader handoffs, and no-promotion boundaries | Maintenance only; no reopened chapter packet without a dated machine-validated defect. |
@@ -3011,6 +3012,87 @@ They may not displace P2, consume a third WIP slot, open protected outcomes,
 activate Candidate N/O research, or move support. The standalone-chapter
 contingency remains inactive pending a dated post-integration coherence audit.
 
+### P6.9 — Round 20 chapter substance and concept fidelity
+
+**Status:** active; first three-chapter prose tranche complete, twenty-chapter
+diagnostic queue remains. The controlling adjudication is
+`docs/round_20_depth_and_substance_reconciliation_2026_07_27.md`.
+
+**Adjudicated baseline.** The review's concrete keyword omissions are stale
+against current `main`: Dangerous Capability contains explicit CBRN and
+biological/chemical treatment; Content Authenticity contains deepfake and
+current EU Article 50 treatment; and Societal Resilience contains fraud,
+child-safety, incident-reporting, cyber, bio/chemical, manipulation, and
+mental-health routes. Its inheritance statistic is also stale: the
+authoritative W3 packet reports **812→0 repeated 12-grams** over the
+reader-facing/editorial surface and **1,921→936** over the broader raw-QMD
+diagnostic.
+
+The atom critique was directionally useful but used the frozen base registry
+without all separately versioned addenda. Unified pre-repair coverage was
+80/84, not 64/84. The four genuinely uncovered owners were Military AI,
+Confidential and Verifiable AI Computation, Human–AI Symbiosis, and Relational
+Dimension Compilation. The append-only Round 20 packet gives each one a core,
+boundary, mechanism, failure-boundary, and argument-exit atom. Unified
+current-manifest atom custody is now **84/84**, with no historical rewrite and
+no support movement.
+
+**Accepted depth problem.** Before repair, 23 of 84 tracked chapters were below
+the 5,000-word raw-QMD diagnostic trigger; the median was 6,982. Word count
+cannot prove clarity or depth, but that distribution exposed a real cluster of
+underdeveloped owners. The missing editorial control was a named
+concept-by-concept gate, not a higher global word target.
+
+Every active concept manifest must therefore name:
+
+1. the concept and canonical owner;
+2. the mechanism or causal/operational route;
+3. the failure mode and strongest relevant challenge;
+4. an explicit non-claim;
+5. the contribution and limit of sources already declared by the chapter;
+6. the adjacent-owner handoff and reader decision value; and
+7. a chapter-specific semantic reviewer disposition.
+
+The mechanical gate requires a named section, at least 150 words, and separate
+`Mechanism`, `Failure mode`, `Non-claim`, and `Source grounding` statements.
+Those checks reject obvious placeholders; they do not certify semantic
+adequacy. Manual review remains binding. Padding, repeated stack admissions,
+generic governance language, source-count inflation, and moving prose between
+files cannot close a concept.
+
+**First tranche.** Dangerous Capability Domains and Misuse Uplift, Content
+Authenticity, Watermarking, and Synthetic-Media Integrity, and Societal
+Resilience and Misuse Defense now contain substantive treatment for all 24
+named priority concepts. Each exceeds the diagnostic trigger; 24/24 concept
+contracts pass; all source engagement stays inside the declared queues; and no
+claim support, release, safety, legal, or deployment conclusion moves. This
+reduces the diagnostic-thin queue from 23 to 20.
+
+**Remaining order.** Begin with Scientific Discovery, Governed Objective
+Formation, Durable Semantic Memory, AI Deployment and Transition, Autonomous
+Replication, and Human–AI Communication. Continue in ascending diagnostic
+order unless an explicit coherence dependency justifies a different tranche.
+For every owner: read its complete current prose and source notes, write the
+concept manifest, deepen mechanisms/failures/nonclaims/source engagement,
+review ownership and duplication, rebuild the contract, render, and record the
+disposition. A chapter may remain below the trigger only through a dated,
+chapter-specific short-reference exception explaining why compactness improves
+the reader route.
+
+**Chapter-count policy.** Freeze the manifest at 84. A new chapter is not an
+escape from thin prose. Structural admission remains closed until the
+twenty-chapter queue is zero or terminally justified and all 84 owners retain
+exact atom custody. A later owner may enter only through the roadmap's full
+distinct-owner, source, competence, birth-artifact, reader-value, and
+non-displacement gate.
+
+**Exit.** P6.9 is terminal only when
+`evidence_quality/chapter_substance_contract.json` reports 84 exact owners,
+84/84 atom coverage, zero unjustified diagnostic-thin chapters, every active
+concept contract passing, and a manual semantic disposition for every repaired
+chapter. Passing this editorial program still establishes no empirical,
+formal, safety, release, SOTA, AGI, or ASI result.
+
 ## P7 — Reader remediation and owner-authorized publication
 
 The first Round 15 publication transaction is complete. The
@@ -3289,6 +3371,12 @@ is not a debugging interface.
    the cited external literature before Appendix H use, and do not activate the
    standalone-chapter contingency unless a post-integration coherence audit
    demonstrates a distinct unowned lifecycle.
+   Preserve the P6.9 84-chapter freeze and 84/84 unified atom custody. Continue
+   the active twenty-chapter prose-depth queue through named concept manifests,
+   mechanism/failure/nonclaim/source-grounding gates, and manual semantic
+   review. Treat the 5,000-word threshold as diagnostic only; do not reopen
+   structural admission or claim book-depth completion while an unjustified
+   thin owner remains.
    The Round 18 bounded breadth packet is terminal at argument support and the
    structural freeze is restored. The remaining seven P6.4 candidates and
    post-Round-18 Candidates N/O have no active queue position. N/O source and

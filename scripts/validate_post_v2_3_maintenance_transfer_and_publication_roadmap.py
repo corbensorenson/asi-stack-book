@@ -48,6 +48,9 @@ STRUCTURAL_RESEARCH = ROOT / "docs/structural_completeness_chapter_research_2026
 STRUCTURAL_GAP_AUDIT = ROOT / "docs/structural_completeness_gap_audit_2026_07_19.md"
 OPTIMIZER_RESEARCH = ROOT / "docs/optimizer_landscape_chapter_research_2026_07_21.md"
 POST_ROUND_18_DEPTH_REVIEW = ROOT / "docs/post_round_18_depth_and_coverage_review_reconciliation_2026_07_24.md"
+ROUND_20_DEPTH_RECONCILIATION = ROOT / "docs/round_20_depth_and_substance_reconciliation_2026_07_27.md"
+ROUND_20_CHAPTER_SUBSTANCE = ROOT / "evidence_quality/chapter_substance_contract.json"
+ROUND_20_FOUR_CHAPTER_ATOMS = ROOT / "evidence_quality/round20_four_chapter_claim_atom_addendum.json"
 PRECISION_CONTRACT_RECONCILIATION = ROOT / "docs/precision_contract_source_reconciliation_2026_07_24.md"
 PRECISION_CONTRACT_SOURCE_NOTE = ROOT / "sources/source_notes/precision_contract.md"
 PRECISION_CONTRACT_BACKLOG = ROOT / "research_backlog_records/precision_contract_2026_07_24.json"
@@ -228,6 +231,9 @@ def inputs() -> dict:
         "structural_gap_audit": STRUCTURAL_GAP_AUDIT.read_text(encoding="utf-8"),
         "optimizer_research": OPTIMIZER_RESEARCH.read_text(encoding="utf-8"),
         "post_round_18_depth_review": POST_ROUND_18_DEPTH_REVIEW.read_text(encoding="utf-8"),
+        "round_20_depth_reconciliation": ROUND_20_DEPTH_RECONCILIATION.read_text(encoding="utf-8"),
+        "round_20_chapter_substance": load(ROUND_20_CHAPTER_SUBSTANCE),
+        "round_20_four_chapter_atoms": load(ROUND_20_FOUR_CHAPTER_ATOMS),
         "precision_contract_reconciliation": PRECISION_CONTRACT_RECONCILIATION.read_text(encoding="utf-8"),
         "precision_contract_source_note": PRECISION_CONTRACT_SOURCE_NOTE.read_text(encoding="utf-8"),
         "precision_contract_backlog": load(PRECISION_CONTRACT_BACKLOG),
@@ -306,6 +312,7 @@ def errors(data: dict) -> list[str]:
         "### P6.4-R18 — terminal bounded conceptual-completeness packet",
         "### P6.5 — Round 16 post-activation integration debt",
         "### P6.8 — Functional precision and behavior-preserving computation",
+        "### P6.9 — Round 20 chapter substance and concept fidelity",
         "## P7 — Reader remediation and owner-authorized publication",
         "## P8 — Closure, residual ownership, and successor continuity",
         "## Execution order and decision rules",
@@ -405,6 +412,10 @@ def errors(data: dict) -> list[str]:
         "The paper's 49 references are an author-supplied research map, not automatic Appendix H records",
         "A naïve quantizer",
         "may not displace P2",
+        "P6.9-R20-chapter-substance-and-concept-fidelity",
+        "84/84 unified atom custody",
+        "twenty-chapter prose-depth queue",
+        "5,000-word threshold as diagnostic only",
     ]:
         if phrase.casefold() not in roadmap_normalized:
             out.append(f"roadmap governing boundary missing: {phrase}")
@@ -431,6 +442,78 @@ def errors(data: dict) -> list[str]:
     ]:
         if phrase.casefold() not in depth_review_normalized:
             out.append(f"post-Round-18 depth-review boundary missing: {phrase}")
+
+    round_20 = status.get("round_20_chapter_substance_recovery", {})
+    substance = data["round_20_chapter_substance"]
+    substance_summary = substance.get("summary", {})
+    round_20_atoms = data["round_20_four_chapter_atoms"]
+    expected_round_20_queue = [
+        "scientific-discovery-and-experimental-governance",
+        "governed-objective-formation-value-learning-and-goal-integrity",
+        "durable-semantic-memory-and-knowledge-lattices",
+        "ai-deployment-transition-distribution-and-human-agency",
+        "autonomous-replication-proliferation-and-containment",
+        "human-ai-communication-persuasion-and-epistemic-security",
+        "adversarial-machine-learning-and-model-attack-surface",
+        "open-weight-release-and-post-release-control",
+        "physical-compute-infrastructure-energy-and-environmental-constraints",
+        "institutions-international-coordination-and-public-legitimacy",
+        "multi-agent-dynamics-collective-intelligence-and-systemic-risk",
+        "military-ai-autonomous-weapons-and-strategic-stability",
+        "perception-sensor-fusion-and-observation-trust",
+        "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty",
+        "relational-dimension-compilation-and-polyadic-cognition",
+        "learning-theory-generalization-and-scaling-science",
+        "confidential-and-verifiable-ai-computation",
+        "embodied-agency-real-time-control-and-physical-safety",
+        "inner-alignment-mesa-optimization-and-learned-objective-integrity",
+        "human-ai-organizations-delegation-and-accountability",
+    ]
+    if (
+        round_20.get("state") != "active_first_priority_tranche_complete"
+        or round_20.get("manifest_chapter_count_freeze") != 84
+        or round_20.get("word_trigger") != 5000
+        or round_20.get("word_trigger_is_acceptance_or_evidence_gate") is not False
+        or round_20.get("baseline_thin_chapter_count") != 23
+        or round_20.get("current_thin_chapter_count") != 20
+        or round_20.get("priority_concept_count") != 24
+        or round_20.get("priority_concepts_passing") != 24
+        or round_20.get("current_unified_atom_covered_chapter_count") != 84
+        or round_20.get("remaining_thin_queue") != expected_round_20_queue
+        or round_20.get("manual_semantic_review_required") is not True
+        or round_20.get("support_state_effect") != "none"
+        or round_20.get("release_effect") != "none"
+    ):
+        out.append("Round 20 chapter-substance recovery identity or active queue drifted")
+    if (
+        substance.get("manifest_chapter_count_freeze") != 84
+        or substance_summary.get("thin_chapter_count") != 20
+        or substance_summary.get("atom_covered_chapter_count") != 84
+        or substance_summary.get("atom_uncovered_chapter_count") != 0
+        or substance_summary.get("active_concept_count") != 24
+        or substance_summary.get("active_concepts_passing_count") != 24
+        or substance.get("manual_semantic_review_required") is not True
+        or substance.get("support_state_effect") != "none"
+    ):
+        out.append("Round 20 chapter-substance contract drifted from the active first tranche")
+    if (
+        round_20_atoms.get("chapter_count") != 4
+        or round_20_atoms.get("atom_count") != 20
+        or round_20_atoms.get("support_state_effect") != "none"
+        or round_20_atoms.get("release_effect") != "none"
+    ):
+        out.append("Round 20 four-chapter atom packet drifted")
+    round_20_text = re.sub(
+        r"\s+", " ", data["round_20_depth_reconciliation"]
+    ).casefold()
+    for phrase in [
+        "the chapter count is frozen at 84",
+        "word count is a triage signal, not an acceptance test",
+        "unified current-manifest atom coverage is now 84/84",
+        "first priority tranche complete, twenty-chapter depth queue active",
+    ]:
+        if phrase.casefold() not in round_20_text:
+            out.append(f"Round 20 reconciliation boundary missing: {phrase}")
 
     precision_reconciliation_normalized = re.sub(
         r"\s+", " ", data["precision_contract_reconciliation"]
@@ -1973,6 +2056,14 @@ def main() -> None:
     mutate("post-Round-18 candidate research premature activation", lambda c: c["status"]["post_round_18_depth_and_coverage_amendment"].__setitem__("candidate_research_active", True))
     mutate("post-Round-18 candidate premature admission", lambda c: c["status"]["post_round_18_depth_and_coverage_amendment"]["research_candidates"][0].__setitem__("admission_state", "manifest_admitted"))
     mutate("post-Round-18 word-count gate", lambda c: c["status"]["post_round_18_depth_and_coverage_amendment"]["depth_packet"].__setitem__("word_count_is_acceptance_gate", True))
+    mutate("Round 20 chapter-count widening", lambda c: c["status"]["round_20_chapter_substance_recovery"].__setitem__("manifest_chapter_count_freeze", 85))
+    mutate("Round 20 false depth closure", lambda c: c["status"]["round_20_chapter_substance_recovery"].__setitem__("state", "complete"))
+    mutate("Round 20 word-count laundering", lambda c: c["status"]["round_20_chapter_substance_recovery"].__setitem__("word_trigger_is_acceptance_or_evidence_gate", True))
+    mutate("Round 20 atom coverage rollback", lambda c: c["round_20_chapter_substance"]["summary"].__setitem__("atom_covered_chapter_count", 83))
+    mutate("Round 20 concept pass laundering", lambda c: c["round_20_chapter_substance"]["summary"].__setitem__("active_concepts_passing_count", 23))
+    mutate("Round 20 manual review bypass", lambda c: c["status"]["round_20_chapter_substance_recovery"].__setitem__("manual_semantic_review_required", False))
+    mutate("Round 20 thin queue deletion", lambda c: c["status"]["round_20_chapter_substance_recovery"]["remaining_thin_queue"].pop())
+    mutate("Round 20 support promotion", lambda c: c["status"]["round_20_chapter_substance_recovery"].__setitem__("support_state_effect", "promoted"))
     mutate("Precision Contract premature chapter authorization", lambda c: c["status"]["post_round_18_depth_and_coverage_amendment"]["precision_contract_source_amendment"].__setitem__("new_chapter_allowed_now", True))
     mutate("Precision Contract contingency activation", lambda c: c["status"]["post_round_18_depth_and_coverage_amendment"]["precision_contract_source_amendment"].__setitem__("contingency_is_active_candidate", True))
     mutate("Precision Contract P2 displacement", lambda c: c["status"]["post_round_18_depth_and_coverage_amendment"]["precision_contract_source_amendment"].__setitem__("p2_displacement_allowed", True))

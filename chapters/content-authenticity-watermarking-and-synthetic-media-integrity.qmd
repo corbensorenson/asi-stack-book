@@ -102,6 +102,32 @@ human authorship, consent, or harmlessness.
 concrete. Its strength is inspectable claim lineage; its limit is that claims
 remain claims.
 
+**Mechanism.** A provenance verifier resolves the asset's active manifest,
+checks the content binding, validates the signature and certificate chain under
+a named trust policy, evaluates timestamps and revocation state, reconstructs
+ingredient and action links, and returns typed findings for each assertion.
+The viewer must be able to distinguish “signature valid,” “signer trusted for
+this claim type,” “asset binding intact,” and “history complete enough for this
+use.” Collapsing those results into one badge destroys the reason provenance is
+auditable.
+
+**Failure mode.** A legitimate production key can sign a misleading assertion,
+a platform can trust a root that another institution rejects, or a later edit
+can remain cryptographically linked while changing the meaning readers care
+about. Cached validation can also survive key revocation and keep a stale green
+label visible on derivative copies.
+
+**Non-claim.** A valid C2PA-style chain does not establish that a photographed
+event occurred, that every ingredient was disclosed, that a depicted person
+consented, or that the signer had legitimate authority to make the claim. It
+is evidence about attributed statements and transformations under a policy.
+
+**Source grounding.** C2PA 2.3 specifies manifests, assertions, ingredients,
+actions, content bindings, validation status, update manifests, and trust-chain
+processing. This analysis uses that concrete record model and its explicit
+failure semantics. It does not infer ecosystem adoption, honest signers,
+complete histories, or semantic truth from specification conformance.
+
 ### Watermarking
 
 A watermark embeds a signal in generated content. Useful properties include
@@ -115,6 +141,32 @@ adaptive optimization removes or forges the mark.
 **Non-claim:** failure to detect a watermark does not prove human origin;
 successful detection does not identify every editing step or establish truth.
 
+**Mechanism.** A watermark claim must bind the embedding algorithm, key or key
+class, payload semantics, model and version, media type, expected channel,
+detection threshold, calibration population, quality budget, and revocation
+policy. Robustness is reported as a transformation-conditioned curve rather
+than “survives editing.” The test matrix includes benign operations,
+distribution-platform processing, adaptive removal, mark copying, key
+compromise, and unmarked controls, with payload recovery separated from simple
+mark detection.
+
+**Failure mode.** A system can optimize average detectability while imposing
+visible artifacts on minority languages or media styles, or it can survive
+compression but fail under a common crop, remix, dub, or paraphrase. A copied
+mark can falsely implicate a generator, and a public detector can become the
+objective against which an adaptive remover trains.
+
+**Non-claim.** No watermark is treated as universal, indestructible, or
+mandatory for every modality. A mark provides one scoped signal; absence is
+ordinary when content predates the system, passes through an unsupported
+channel, or is produced by a different generator.
+
+**Source grounding.** The International AI Safety Report places watermarking
+inside a layered synthetic-media defense that also includes provenance,
+detection, disclosure, education, correction, and institutional recovery. It
+supports the composition requirement, not a local robustness number or a
+finding that watermarking reduces deception in representative users.
+
 ### Fingerprinting
 
 Fingerprints associate an artifact or generator with a learned or computed
@@ -126,6 +178,31 @@ the fingerprint; a shared base model creates ambiguous attribution.
 
 **Non-claim:** similarity is not custody lineage unless a signed or otherwise
 verified chain provides it.
+
+**Mechanism.** A fingerprint record states what object is being attributed:
+exact file, near duplicate, generator family, model checkpoint, editing
+pipeline, or campaign cluster. It freezes the feature extractor, reference
+corpus, matching rule, threshold, open-set policy, and evaluation date.
+Attribution must include alternative candidates and an “unknown” route;
+nearest-known is not equivalent to known origin. Operational use should
+preserve the original similarity evidence so a challenged decision can be
+replayed after the reference set changes.
+
+**Failure mode.** A shared base model, common codec, stock template, or
+platform post-processing can dominate the signal and create confident but
+spurious attribution. Fine-tuning or model updates can move the generator away
+from its stored profile, while campaign clustering can accidentally merge
+unrelated creators who use the same tool.
+
+**Non-claim.** Fingerprinting does not establish authorship, intent, custody,
+consent, or truth. Even accurate generator-family attribution cannot show
+which person invoked the system or which edits occurred after generation.
+
+**Source grounding.** The International AI Safety Report treats detection and
+attribution as incomplete, distribution-sensitive defenses rather than truth
+oracles. This treatment extends that boundary to fingerprint identity and
+open-set refusal; the report supplies no endorsed fingerprint algorithm and no
+local false-attribution rate.
 
 ### Statistical detection
 
@@ -139,6 +216,33 @@ synthetic content; an adaptive generator trains against the detector.
 **Non-claim:** a detector probability is not a fact about authorship, and it
 must not silently become a disciplinary or legal decision.
 
+**Mechanism.** Detector evaluation begins by specifying the decision
+population: modality, language, genre, generator families, human author groups,
+compression channels, prevalence, and date. Calibration, discrimination, and
+abstention are reported separately. Thresholds are decision-specific because a
+content-moderation queue and an accusation against a person have radically
+different false-positive costs. The production record retains model version,
+input rendition, score, threshold, uncertainty, and the human or contextual
+evidence used after the score.
+
+**Failure mode.** A balanced benchmark can hide the low base rate of synthetic
+content in a real population, turning a respectable false-positive rate into
+many more false accusations than true detections. Generator updates,
+translation, post-editing, or adversarial paraphrase can invalidate
+calibration. Reviewers may then anchor on the numerical score even when the
+model is out of scope.
+
+**Non-claim.** Statistical detection cannot certify human authorship, identify
+a generator absent a validated attribution task, or replace corroboration. A
+score may justify routing to review; it cannot by itself justify punishment,
+removal, or public labeling.
+
+**Source grounding.** The International AI Safety Report emphasizes that
+synthetic-media safeguards remain bypassable and incompletely tested and that
+detection must be combined with wider resilience measures. This design adopts
+that uncertainty and layered-use boundary; it does not import any
+source-reported detector performance as a current capability.
+
 ### Visible disclosure
 
 Labels communicate generation or manipulation to people. They require
@@ -151,11 +255,62 @@ checkbox while users remain misled.
 **Non-claim:** disclosure does not eliminate manipulation or establish
 informed understanding.
 
+**Mechanism.** A disclosure contract records the exact statement shown, actor
+responsible for displaying it, placement, duration, language, modality,
+accessibility representation, asset or region bound by the label, and
+conditions under which the label survives embedding or redistribution. Test
+comprehension with representative users, including whether they can explain
+what was generated or manipulated and what the label does *not* establish.
+Machine-readable marking and human-visible disclosure remain separate fields
+because different actors may own them.
+
+**Failure mode.** A generic “AI used” notice can obscure whether the entire
+asset, one component, or a trivial edit was synthetic. Labels can vanish below
+the fold, during screen-reader navigation, or after a platform embed. Repeated
+warnings can also produce fatigue while a dramatic badge overstates certainty.
+
+**Non-claim.** Label presence does not prove comprehension, prevent deception,
+or satisfy a legal duty. The correct statement, placement, and responsible
+actor depend on the exact system, content, use, jurisdiction, and current
+rules.
+
+**Source grounding.** The European Commission's Article 50 guidance
+distinguishes provider marking from deployer disclosure and identifies
+deepfakes and specified public-interest text as particular cases. This analysis
+uses that role separation and action-time versioning. The guidance is not
+legal advice for this project and does not demonstrate that any label changes
+user belief.
+
 ### Contextual verification
 
 Journalistic verification, source corroboration, reverse search, chronology,
 location, witness evidence, and domain expertise remain essential. Provenance
 can strengthen that work but cannot replace it.
+
+**Mechanism.** Contextual verification constructs competing explanations for
+the asset and seeks independent evidence that is not produced by the same
+generator, signer, platform, or detector. The record can include source
+contact, earlier renditions, geolocation and chronology, physical constraints,
+known event footage, witness testimony, editorial judgment, and unresolved
+conflicts. Each conclusion names which checks were actually performed and
+which would still change it.
+
+**Failure mode.** Several apparently independent signals may share one upstream
+source: news articles quote the same post, reverse-search indexes derivatives
+of the same upload, and a platform detector consumes provenance supplied by
+the platform. Counting those as corroboration converts correlated repetition
+into false confidence.
+
+**Non-claim.** Contextual verification does not guarantee truth or eliminate
+editorial error. It supplies a challenge path when technical signals are
+missing, conflicting, or compromised and should preserve an unknown outcome
+when the independent record is insufficient.
+
+**Source grounding.** The International AI Safety Report places education,
+correction, provenance, disclosure, and detection inside a broader resilience
+response. This treatment interprets that synthesis as a requirement for
+independent contextual checks; the report does not certify any newsroom,
+platform, or verifier as complete or unbiased.
 
 ## Core Claim
 
@@ -228,6 +383,32 @@ Platforms may issue a new manifest that names the prior asset as an ingredient;
 they must not claim the original signer authorized later edits unless the chain
 says so.
 
+**Mechanism.** Every transformation produces a new rendition identity and one
+of four dispositions: verified preservation, verified derivation, explicit
+lineage break, or unresolved relationship. The transformer records its action,
+input binding, output binding, retained assertions, newly asserted claims, and
+validation result. For composite media, region- or ingredient-level lineage
+prevents one valid component from laundering the whole output. For analog
+capture or screenshot, a new claim may point to a probabilistic or manually
+reviewed predecessor, but never recreates the missing cryptographic link.
+
+**Failure mode.** Platforms can silently normalize, strip, or regenerate media
+while presenting the original badge; editors can import a credentialed asset
+and imply that the source signer endorsed the composite. Unsupported tools can
+also drop history without making the break visible, leaving downstream users
+to mistake absence for human origin.
+
+**Non-claim.** A complete transformation ledger does not establish consent,
+truth, or legitimacy of the edits. An explicit break is not a determination
+that content is fake; it is an honest statement that the prior technical chain
+no longer supports the requested inference.
+
+**Source grounding.** C2PA 2.3 defines ingredient and action histories, content
+bindings, update manifests, and validation states. Those mechanisms ground the
+four-disposition model. The specification does not prove that ordinary tools
+retain metadata, that cross-platform chains interoperate, or that users
+understand lineage breaks.
+
 ### Trust policy and validation
 
 A viewer needs a trust policy: which roots, signers, algorithms, timestamps,
@@ -260,6 +441,59 @@ transitional details. The architecture should therefore expose:
 The system must recheck official law and guidance at action time. This chapter
 does not decide legal scope, give legal advice, or claim that C2PA, a watermark,
 or a label alone satisfies any obligation.
+
+**Mechanism.** Treat regulatory classification as a versioned decision record
+rather than a boolean compliance field. It binds provider, deployer, system,
+content class, jurisdiction, relevant legal text and guidance version,
+machine-readable marking, visible disclosure, asserted exception or
+transition, reviewer authority, evidence, expiry, and remedy. A changed role,
+distribution channel, guidance version, or content use reopens the decision.
+Technical components report facts into that record but cannot decide scope.
+
+**Failure mode.** One organization can copy a provider's marking receipt into a
+deployer's disclosure obligation, or treat a valid C2PA credential as proof
+that a label is accessible and legally adequate. Static compliance logic can
+also survive the date on which new obligations begin or guidance changes.
+
+**Non-claim.** The architecture does not state that this book, a model, a
+platform, or an individual asset falls within Article 50; it gives no legal
+advice and makes no compliance determination. It preserves the distinctions a
+qualified decision maker needs.
+
+**Source grounding.** The Commission's July 2026 guidance states that Article
+50 transparency obligations apply from 2 August 2026 and distinguishes
+provider and deployer responsibilities, machine-readable marking, deepfake
+disclosure, and specified public-interest text. The chapter records that
+current official context while requiring action-time rechecking and preserving
+scope, exemption, transition, and legal-authority uncertainty.
+
+### Conflict resolution and remedy
+
+Authenticity systems are most important when their signals disagree. A valid
+manifest may coexist with a failed watermark, a detector may flag an asset
+whose provenance is absent, or a platform may display a label after the signer
+has been revoked. The decision record should preserve each observation,
+timestamp, trust policy, and affected rendition rather than overwrite the
+conflict with a majority vote. Low-stakes presentation can show uncertainty;
+high-impact removal, accusation, or legal escalation requires a separately
+authorized review route with an opportunity to challenge the evidence.
+
+Correction is also a lineage event. A platform that changes attribution,
+removes a false label, restores an asset, or publishes a clarification should
+issue a new decision record linked to the superseded one. Cached labels,
+search results, content-delivery copies, archives, and downstream partners need
+an affected-path notification with expiry and residual ownership. “Corrected
+at source” is not complete when a harmful or accusatory derivative remains
+visible elsewhere.
+
+Remedy must match the type of failure. A creator falsely labeled as synthetic
+needs prompt contestation and restoration; a person depicted without consent
+needs privacy and likeness routes; a news audience misled by a validly signed
+false claim needs correction and contextual evidence; a compromised signer
+requires trust-store invalidation and re-evaluation. The authenticity envelope
+routes these cases but does not decide damages, criminal liability, platform
+policy, or legal rights. Its job is to keep the technical evidence, decision,
+correction, downstream propagation, and unresolved harm joinable.
 
 ### Privacy, consent, and accessibility
 

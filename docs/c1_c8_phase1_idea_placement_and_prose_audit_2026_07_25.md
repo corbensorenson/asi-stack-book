@@ -163,3 +163,25 @@ the authoritative roadmap has a prose or product owner. It does not claim that
 future research cannot discover a new idea, that every mechanism is correct,
 or that prose placement supplies formal, empirical, deployment, transfer, or
 publication evidence.
+
+## Round 20 prose-depth continuation — 2026-07-27
+
+The C1–C8 placement gate remains historically passed, but placement is not
+depth. A complete current-manuscript diagnostic found 23 chapters below the
+5,000-word triage trigger. Round 20 therefore reopens prose-first scheduling
+without reopening the 84-chapter structure or retracting the exact placement
+receipt.
+
+The first priority tranche deepened Dangerous Capability Domains, Content
+Authenticity, and Societal Resilience. Their 24 named concepts now separately
+state mechanism, failure mode, non-claim, and declared-source grounding, and
+all three chapters exceed the diagnostic trigger. A separately versioned
+20-atom addendum closes the four genuine current-manifest atom gaps, making
+unified custody 84/84. Neither result moves support.
+
+Twenty diagnostic-thin chapters remain. They are now the active Phase 1
+continuation under
+`docs/round_20_depth_and_substance_reconciliation_2026_07_27.md`. Proof
+expansion remains secondary while those owners receive chapter-specific
+concept manifests and semantic review. Word count schedules attention; it
+does not certify substance, evidence, proof, safety, or completion.

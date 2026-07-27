@@ -750,6 +750,8 @@ Draft arc:
 - Preserve information-hazard controls and a maximum-inference field so public reporting does not reveal operational misuse recipes.
 - Require prospective evaluation, adaptive elicitation, realistic baseline comparisons, independent challenge, and temporal renewal before any argument-level claim may seek stronger support.
 
+Round 20 substance contract: the eight named concept owners are knowledge versus completion, refusal versus capability, capability versus propensity, the six-level evidence ladder, threat-model freeze, actor cohorts and counterfactuals, elicitation competence, and the CBRN/biological/chemical program. Each now carries its own mechanism, failure mode, explicit non-claim, and source-specific contribution and limit. The complete chapter is above the diagnostic depth trigger; this is an editorial receipt with no support movement.
+
 Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
@@ -1724,6 +1726,8 @@ Draft arc:
 - Measure defender and attacker adaptation together; a static exercise or prevention rate cannot stand in for live resilience.
 - Route operational incidents to governed operations, systemic patterns to institutions and thresholds, and information-integrity incidents to the authenticity owner.
 - Require prospective exercises, representative cohorts, independent observers, distributional analysis, recovery outcomes, and recurrence tests before stronger support.
+
+Round 20 substance contract: the eight named concept owners are classifier coverage, recovery beyond takedown, rights-preserving incident reporting, the resist-absorb-recover-adapt contract, the federated incident envelope, fraud/scams/impersonation, child safety and NCII, and manipulation/mental-health/parasocial harms. Each now carries its own mechanism, failure mode, explicit non-claim, and source-specific contribution and limit. The complete chapter is above the diagnostic depth trigger; this is an editorial receipt with no support movement.
 
 Lean proof targets:
 
@@ -6628,6 +6632,8 @@ Draft arc:
 - Preserve privacy, accessibility, key rotation, offline use, interoperability, and non-participating-tool boundaries.
 - Route platform incidents and harmed-party remedies to societal resilience and governed operations while leaving factual adjudication to the proper authority.
 - Require transformation-robust evaluations, provenance interoperability tests, adversarial removal and forgery tests, representative user studies, and remedy exercises before stronger claims.
+
+Round 20 substance contract: the eight named concept owners are signed provenance, watermarking, fingerprinting, statistical detection, visible disclosure, contextual verification, transformation lineage, and the EU Article 50 interface. Each now carries its own mechanism, failure mode, explicit non-claim, and source-specific contribution and limit. The complete chapter is above the diagnostic depth trigger; this is an editorial receipt with no support movement.
 
 Lean proof targets:
 

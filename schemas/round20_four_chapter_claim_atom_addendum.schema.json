@@ -1,0 +1,239 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/round20_four_chapter_claim_atom_addendum.schema.json",
+  "title": "Round 20 Four-Chapter Claim-Atom Addendum",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "packet_id",
+    "recorded_date",
+    "chapter_count",
+    "atoms_per_chapter",
+    "atom_count",
+    "chapter_ids",
+    "atoms",
+    "chapter_reviews",
+    "historical_atom_sources_rewritten",
+    "support_state_effect",
+    "release_effect",
+    "non_claims"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "asi_stack.round20_four_chapter_claim_atom_addendum.v1"
+    },
+    "packet_id": {
+      "const": "P6.9-R20-four-chapter-atom-at-birth-repair"
+    },
+    "recorded_date": {
+      "const": "2026-07-27"
+    },
+    "chapter_count": {
+      "const": 4
+    },
+    "atoms_per_chapter": {
+      "const": 5
+    },
+    "atom_count": {
+      "const": 20
+    },
+    "chapter_ids": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "atoms": {
+      "type": "array",
+      "minItems": 20,
+      "maxItems": 20,
+      "items": {
+        "$ref": "#/$defs/atom"
+      }
+    },
+    "chapter_reviews": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "$ref": "#/$defs/review"
+      }
+    },
+    "historical_atom_sources_rewritten": {
+      "const": false
+    },
+    "support_state_effect": {
+      "const": "none"
+    },
+    "release_effect": {
+      "const": "none"
+    },
+    "non_claims": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "string",
+        "minLength": 20
+      }
+    }
+  },
+  "$defs": {
+    "atom": {
+      "type": "object",
+      "required": [
+        "id",
+        "chapter_id",
+        "role",
+        "proposition",
+        "scope",
+        "assumptions",
+        "counterclaim",
+        "falsifier",
+        "required_evidence_lanes",
+        "contrary_evidence",
+        "acceptance_criterion",
+        "narrowing_criterion",
+        "refutation_criterion",
+        "deprecation_criterion",
+        "promotion_ceiling",
+        "owner",
+        "support_state",
+        "support_state_effect",
+        "non_claims"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 4
+        },
+        "chapter_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "role": {
+          "enum": [
+            "core",
+            "boundary",
+            "mechanism",
+            "failure_boundary",
+            "argument_exit"
+          ]
+        },
+        "proposition": {
+          "type": "string",
+          "minLength": 80
+        },
+        "scope": {
+          "type": "string",
+          "minLength": 80
+        },
+        "assumptions": {
+          "type": "array",
+          "minItems": 3,
+          "items": {
+            "type": "string",
+            "minLength": 20
+          }
+        },
+        "counterclaim": {
+          "type": "string",
+          "minLength": 40
+        },
+        "falsifier": {
+          "type": "string",
+          "minLength": 60
+        },
+        "required_evidence_lanes": {
+          "type": "array",
+          "minItems": 6,
+          "items": {
+            "type": "string",
+            "minLength": 10
+          }
+        },
+        "contrary_evidence": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "acceptance_criterion": {
+          "type": "string",
+          "minLength": 60
+        },
+        "narrowing_criterion": {
+          "type": "string",
+          "minLength": 60
+        },
+        "refutation_criterion": {
+          "type": "string",
+          "minLength": 60
+        },
+        "deprecation_criterion": {
+          "type": "string",
+          "minLength": 60
+        },
+        "promotion_ceiling": {
+          "type": "string",
+          "minLength": 40
+        },
+        "owner": {
+          "type": "string",
+          "minLength": 1
+        },
+        "support_state": {
+          "const": "argument"
+        },
+        "support_state_effect": {
+          "const": "none"
+        },
+        "non_claims": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "string",
+            "minLength": 20
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "review": {
+      "type": "object",
+      "required": [
+        "chapter_id",
+        "atom_ids",
+        "semantic_review_state",
+        "support_state_effect"
+      ],
+      "properties": {
+        "chapter_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "atom_ids": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 4
+          }
+        },
+        "semantic_review_state": {
+          "const": "reviewed_against_manifest_owned_contract"
+        },
+        "support_state_effect": {
+          "const": "none"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
