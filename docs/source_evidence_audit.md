@@ -11,12 +11,12 @@ It does **not** quote or publish raw private source passages. It also does **not
 | Metric | Value |
 |---|---:|
 | Chapters audited | 84 |
-| Assigned source/chapter pairs | 1206 |
-| Exact claim-source mappings | 1029 |
+| Assigned source/chapter pairs | 1210 |
+| Exact claim-source mappings | 1033 |
 | Unmapped assigned pairs | 177 |
-| Source notes present for assigned pairs | 1206 |
-| Source notes listing assigned chapter | 1206 |
-| Passage-reviewed mappings recorded | 960 |
+| Source notes present for assigned pairs | 1210 |
+| Source notes listing assigned chapter | 1210 |
+| Passage-reviewed mappings recorded | 964 |
 | Support-state counts | {"argument": 84} |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -102,7 +102,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `coilra-multicoil-rope-and-cyclic-mixers` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
 | `executable-specifications-and-lean-proof-envelope` | 14 | 13 | 14 | 14 | 13 | argument | passage review required before source-derived promotion |
 | `benchmark-ratchets-and-anti-goodhart-evidence` | 38 | 31 | 38 | 38 | 31 | argument | passage review required before source-derived promotion |
-| `white-box-evidence-interpretability-and-activation-governance` | 10 | 10 | 10 | 10 | 10 | argument | eligible for support review |
+| `white-box-evidence-interpretability-and-activation-governance` | 14 | 14 | 14 | 14 | 14 | argument | eligible for support review |
 | `capability-thresholds-and-deployment-commitments` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
 | `adversarial-evaluation-sandbagging-and-training-time-deception` | 10 | 10 | 10 | 10 | 10 | argument | eligible for support review |
 | `safety-cases-and-structured-assurance` | 4 | 4 | 4 | 4 | 4 | argument | eligible for support review |
@@ -503,6 +503,10 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_monosemanticity_2023` | 1 | yes |
 | `ext_scaling_sparse_autoencoders_2024` | 1 | yes |
 | `ext_circuit_tracing_2025` | 1 | yes |
+| `ext_probe_control_tasks_2019` | 1 | yes |
+| `ext_interpretability_illusion_bert_2021` | 1 | yes |
+| `ext_saebench_2025` | 1 | yes |
+| `ext_sae_benchmark_reliability_2026` | 1 | yes |
 | `ext_elk_report_2021` | 1 | yes |
 | `ext_metr_time_horizons_2025` | 1 | yes |
 | `ext_anthropic_rsp_2026` | 1 | yes |
@@ -1531,6 +1535,10 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `white-box-evidence-interpretability-and-activation-governance.core` | `white-box-evidence-interpretability-and-activation-governance` | `ext_monosemanticity_2023` | mapped | note present | chapter listed | passage-reviewed |
 | `white-box-evidence-interpretability-and-activation-governance.core` | `white-box-evidence-interpretability-and-activation-governance` | `ext_scaling_sparse_autoencoders_2024` | mapped | note present | chapter listed | passage-reviewed |
 | `white-box-evidence-interpretability-and-activation-governance.core` | `white-box-evidence-interpretability-and-activation-governance` | `ext_circuit_tracing_2025` | mapped | note present | chapter listed | passage-reviewed |
+| `white-box-evidence-interpretability-and-activation-governance.core` | `white-box-evidence-interpretability-and-activation-governance` | `ext_probe_control_tasks_2019` | mapped | note present | chapter listed | passage-reviewed |
+| `white-box-evidence-interpretability-and-activation-governance.core` | `white-box-evidence-interpretability-and-activation-governance` | `ext_interpretability_illusion_bert_2021` | mapped | note present | chapter listed | passage-reviewed |
+| `white-box-evidence-interpretability-and-activation-governance.core` | `white-box-evidence-interpretability-and-activation-governance` | `ext_saebench_2025` | mapped | note present | chapter listed | passage-reviewed |
+| `white-box-evidence-interpretability-and-activation-governance.core` | `white-box-evidence-interpretability-and-activation-governance` | `ext_sae_benchmark_reliability_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `white-box-evidence-interpretability-and-activation-governance.core` | `white-box-evidence-interpretability-and-activation-governance` | `ext_elk_report_2021` | mapped | note present | chapter listed | passage-reviewed |
 | `white-box-evidence-interpretability-and-activation-governance.core` | `white-box-evidence-interpretability-and-activation-governance` | `ext_influence_functions_2017` | mapped | note present | chapter listed | passage-reviewed |
 | `capability-thresholds-and-deployment-commitments.core` | `capability-thresholds-and-deployment-commitments` | `ext_metr_time_horizons_2025` | mapped | note present | chapter listed | passage-reviewed |

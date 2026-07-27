@@ -1,0 +1,121 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://theasistack.com/schemas/r16_b_current_reader_freshness.schema.json",
+  "title": "ASI Stack R16-B Current 84-Chapter Reader Freshness",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "packet_id",
+    "created",
+    "state",
+    "source_snapshot",
+    "derivation",
+    "chapter_records",
+    "reader_surfaces",
+    "historical_release",
+    "format_dispositions",
+    "freshness_checks",
+    "non_claims",
+    "support_state_effect",
+    "release_effect",
+    "publication_effect"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "asi_stack.r16_b_current_reader_freshness.v1"
+    },
+    "packet_id": {
+      "const": "P6.5-R16-B-current-84-chapter-reader-freshness-2026-07-26"
+    },
+    "created": {
+      "const": "2026-07-26"
+    },
+    "state": {
+      "const": "terminal_local_source_freshness_formats_deferred"
+    },
+    "source_snapshot": {
+      "type": "object",
+      "properties": {
+        "source_content_commit": {
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        "chapter_count": {
+          "const": 84
+        },
+        "chapter_ids": {
+          "type": "array",
+          "minItems": 84,
+          "maxItems": 84,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "source_content_commit",
+        "book_structure_sha256",
+        "chapter_count",
+        "chapter_ids",
+        "chapter_ids_sha256"
+      ]
+    },
+    "derivation": {
+      "type": "object"
+    },
+    "chapter_records": {
+      "type": "array",
+      "minItems": 84,
+      "maxItems": 84,
+      "items": {
+        "type": "object",
+        "required": [
+          "chapter_id",
+          "title",
+          "part_id",
+          "manifest_order",
+          "source_path",
+          "source_sha256",
+          "reader_projection_sha256",
+          "reader_projection_word_count",
+          "role",
+          "narrative_unit_id",
+          "human_path_ref",
+          "summary_ref",
+          "handoff_ref",
+          "next_chapter_id",
+          "claim_support_state",
+          "materialization_state"
+        ]
+      }
+    },
+    "reader_surfaces": {
+      "type": "object",
+      "minProperties": 8
+    },
+    "historical_release": {
+      "type": "object"
+    },
+    "format_dispositions": {
+      "type": "object",
+      "minProperties": 6
+    },
+    "freshness_checks": {
+      "type": "object",
+      "additionalProperties": {
+        "const": true
+      }
+    },
+    "non_claims": {
+      "type": "array",
+      "minItems": 5
+    },
+    "support_state_effect": {
+      "const": "none"
+    },
+    "release_effect": {
+      "const": "none"
+    },
+    "publication_effect": {
+      "const": "none"
+    }
+  },
+  "additionalProperties": false
+}

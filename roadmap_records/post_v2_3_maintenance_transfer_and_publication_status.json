@@ -7,7 +7,7 @@
   "status": "active",
   "current_priority": "P2",
   "execution_readiness": {
-    "state": "t1d_terminal_current_reader_freshness_ready",
+    "state": "phase_one_book_organization_terminal_p2_evidence_ready",
     "headline_priority": "P2",
     "headline_priority_state": "below_storage_floor_exact_attempt_or_failure_receipt_required",
     "work_in_progress_limit": 2,
@@ -15,7 +15,7 @@
     "protected_outcome_inspection_allowed": false,
     "structural_admission_freeze": false,
     "immediate_empirical_packet": "P2-R3-storage-materialization-and-replacement-qualification",
-    "immediate_book_packet": "P6.5-R16-B-current-reader-freshness",
+    "immediate_book_packet": "P6.5-terminal-no-open-book-organization-packet",
     "immediate_formal_packet": "P4-terminal-no-open-formal-packet",
     "structural_resume_requires": [
       "P2-pool-materialization-terminal-receipt",
@@ -740,11 +740,24 @@
       "support_state_effect": "none"
     },
     "current_reader_freshness_packet": {
-      "state": "active_current_84_chapter_derivative",
+      "state": "terminal_local_source_freshness_formats_deferred",
       "published_reader_2026_07_18_is_immutable_historical_release": true,
       "current_working_manifest_chapter_count": 84,
       "must_cover_all_current_manifest_chapters": true,
       "external_publication_required": false,
+      "source_content_commit": "56563e1b2b64405e2e944c521bf4df9f29eba6e6",
+      "artifact_path": "editions/reader_manuscript/reader_2026_07_26/manifest.json",
+      "report_path": "editions/reader_manuscript/reader_2026_07_26/freshness_report.md",
+      "schema_path": "schemas/r16_b_current_reader_freshness.schema.json",
+      "builder_path": "scripts/build_r16_b_current_reader_freshness.py",
+      "validator_path": "scripts/validate_r16_b_current_reader_freshness.py",
+      "chapter_projection_count": 84,
+      "narrative_unit_count": 22,
+      "reader_surface_count": 8,
+      "mutation_rejection_count": 16,
+      "virtual_qmd_terminal": true,
+      "unreviewed_format_count_deferred": 5,
+      "source_duplication_avoided": true,
       "required_surfaces": [
         "opening_map",
         "chapter_role_classification",
@@ -754,7 +767,10 @@
         "source_appendix",
         "claim_evidence_projection",
         "final_synthesis"
-      ]
+      ],
+      "support_state_effect": "none",
+      "release_effect": "none",
+      "publication_effect": "none"
     },
     "template_inheritance_guard": {
       "state": "terminal_current_84_chapter_inheritance_guard",

@@ -1,5 +1,31 @@
 # Changelog
 
+## 2026-07-26 — R16-B current 84-chapter reader freshness
+
+- Closed Phase 1 book organization with a content-addressed current-reader
+  derivative from exact source commit
+  `56563e1b2b64405e2e944c521bf4df9f29eba6e6`.
+- Bound all 84 manifest chapters, all 22 narrative units, and the exact
+  11 thesis-bearing / 54 load-bearing-reference / 7 implementation-case / 12
+  speculative-research role partition. Every chapter has a source digest,
+  deterministic reader-projection digest, Human Reading Path, Summary,
+  Handoff, narrative-unit owner, and next-chapter identity.
+- Bound eight required reader surfaces: opening map, chapter-role
+  classification, narrative route, overview, glossary, external-source
+  appendix, claim/evidence projection, and final synthesis.
+- Preserved `reader-2026-07-18` as immutable 55-chapter publication history.
+  The current virtual QMD projection is terminal at local source freshness;
+  HTML, PDF, EPUB, DOCX, and audio remain explicitly deferred for their own
+  render, navigation, accessibility, visual, or listening review.
+- Added the deterministic builder, machine manifest, human receipt, JSON
+  Schema, registered validator, and sixteen rejecting mutations. The packet
+  avoids a duplicate 84-chapter tracked source tree and moves no claim support,
+  release, or publication authority.
+- Marked M6 structural completeness complete and returned the execution
+  headline to P2 evidence work. There is no open book-organization packet;
+  future proof or empirical work must consume the organized claims rather than
+  manufacture progress from proof count.
+
 ## 2026-07-26 — T1D six-chapter manuscript maturity and White-Box depth
 
 - Closed the prose-first T1D packet for Inner Alignment, Multi-Agent Dynamics,

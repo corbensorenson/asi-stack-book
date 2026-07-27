@@ -211,7 +211,7 @@ proceeds.
 | Existing-book integration — terminal | `P6.5-R16-A-six-chapter-atom-pack` | Completed 2026-07-26 | Thirty reviewed atoms across six chapters, six digest-bound review receipts, a separate schema and validator, identity-graph reconciliation to 4,112 canonical atoms, Appendix C projection, fourteen rejecting mutations, and zero support movement. |
 | Existing-book integration — terminal | `P7.1a-W3-admission-template-inheritance-guard` | Completed 2026-07-26 | Exact 84-chapter NFKC audit; reader-facing repeated 12-grams at spread eight reduced 812→0; copied diagram/test spread 10→0; shared lifecycle method centralized; ten chapter diffs plus eleven semantic-review reconciliations; 241 retired inherited prose IDs replaced by 177 domain-specific dispositions with 4,067 atoms unchanged and zero pending; copied fixture rejected, distinct fixture accepted; eighteen mutations; zero meaning or support movement. |
 | Existing-book integration — terminal | `P7.2-T1D-proof-readiness-depth-pack` | Completed 2026-07-26 | Six maturity records, 36 condition decisions, 12 chapter-specific anchors, four existing-owner repairs, five White-Box source receipts, ten applicable claim identities, eighteen rejecting mutations, and zero support movement. |
-| Existing-book integration — now | `P6.5-R16-B-current-reader-freshness` | R16-A, W3, and T1D are terminal | Derive one current 84-chapter reader packet after the meaning-bearing edits, preserving the historical `reader-2026-07-18` release. |
+| Existing-book integration — terminal | `P6.5-R16-B-current-reader-freshness` | Completed 2026-07-26 from exact source commit `56563e1b2b64405e2e944c521bf4df9f29eba6e6` | Content-addressed virtual QMD projections for all 84 chapters; all 22 narrative units and eight reader surfaces bound; 11/54/7/12 role partition preserved; historical `reader-2026-07-18` manifest immutable; five unreviewed formats honestly deferred; sixteen mutations; zero support, release, or publication movement. |
 | Existing-owner paging packet — prose terminal; policy and empirical work deferred | `P6.6-heterogeneous-inference-memory-and-speculative-paging` | Reader-facing source integration was expressly commissioned and completed 2026-07-23; schema, validator, planner, hardware characterization, and empirical work retain the ordinary post-gate entry condition | Maintain the six completed manuscript integrations and source reconciliation. Later implement and validate the heterogeneous-memory policy and run only competent, matched, hardware-characterized paging experiments. Preserve exact/approximate, throughput/latency, and source/local evidence boundaries. No new chapter. |
 | Existing-owner inference-cache packet — prose terminal; receipt and empirical work deferred | `P6.7-inference-cache-reuse-and-honest-pricing` | Reader-facing source integration was expressly commissioned and completed 2026-07-23; no new chapter or support movement | Maintain the three coordinated manuscript integrations and nine-source packet. Later implement the cache-reuse receipt and run separate exact-prefix and semantic-response campaigns under the ordinary post-gate entry condition. Preserve KV-versus-output, exact-versus-semantic, hit-versus-useful-outcome, and provider-contract-versus-local-evidence boundaries. |
 | Existing-owner functional-precision packet — source and prose terminal; evidence work queued | `P6.8-functional-precision-and-behavior-preserving-computation` | Source intake and the eight-owner manuscript integration are complete; schemas, validators, source resolution, and empirical work retain ordinary gates; no new chapter or support movement | Maintain the integrated Precision Contract treatment led by RankFold/NeuralFold. Preserve representation invariance, protected behavior, complete executable and physical-cost accounting, progressive residual precision, routed fallback, certificate scope, and program-transformation proof limits. Reconsider a standalone chapter only if a dated post-integration coherence audit finds a genuinely unowned lifecycle. |
@@ -511,11 +511,11 @@ debt from behaving like an interchangeable menu.
 |---|---|---|
 | P2 did not move for a third cycle | **Accepted.** | P2-R3 takes the empirical slot immediately. At run start, record exact host and Docker state; then execute or build the content-sealed thirty-candidate sequential materializer. A book packet may run in parallel but may not consume, postpone, or replace the empirical slot. |
 | The capacity blocker may have cleared | **Accepted with an important boundary.** | The 2026-07-22 diagnostic recorded `71,648,034,816` free bytes, above the frozen `53,687,091,200`-byte floor, with Docker available and reporting zero retained images, containers, volumes, and build cache. This changes P2 from `blocked_pending_authorized_capacity_change` to `capacity_entry_condition_met_materialization_not_yet_run`. It is permission to attempt the frozen protocol, not a materialization pass, task result, or support movement. |
-| Work after the freeze again preferred source/prose deepening | **Accepted; sequence advanced.** | R16-A, W3, and P7.2-T1D are terminal. R16-B is the sole current book packet so the derivative reflects the completed meaning-bearing edits. No unrelated proof-count expansion or evidence campaign may displace this organization lane. |
+| Work after the freeze again preferred source/prose deepening | **Accepted and closed for the identified Phase 1 organization scope.** | R16-A, W3, P7.2-T1D, and R16-B are terminal. The current 84-chapter manuscript now has exact role, claim, source, handoff, narrative-unit, and reader-freshness custody. There is no open book-organization packet; the roadmap returns to P2 evidence work without treating theorem count as progress. |
 | Six admitted chapters still lack claim atoms | **Accepted and closed by the R16-A terminal receipt.** | `evidence_quality/post_activation_six_chapter_claim_atom_addendum.json` now contains 30 reviewed atoms and six digest-bound chapter receipts. Its schema, builder, validator, identity-graph projection, Appendix C projection, and fourteen negative mutations preserve both historical denominators and move no support. |
 | W3 is absent and repetition may be rising | **Guard criticism accepted and closed.** | The historical `d6f6e62d7` 61-chapter receipt remains history. The terminal W3 artifact reproduces the exact current pre-edit 84-chapter baseline at `99457770390a4af4848b9e43656907cfe099fd75`, records raw and editorial projections separately, centralizes the lifecycle method, preserves ten chapters' meaning custody, and prospectively rejects the tracked copied scaffold. |
 | White-Box depth was twice deferred | **Accepted and closed by T1D.** | The chapter now includes the comparative method matrix and noninheritant evidence ladder. The probe-control, interpretability-illusion, SAE-scaling, SAEBench, and SAE-reliability records are inventoried, passage-noted, mapped, and bounded; the 2026 reliability audit remains metric- and setting-scoped counterevidence rather than a field-wide negative. |
-| Optimizer work was the only commissioned item substantially closed | **Accepted.** | Treat R16-E's source/prose/policy-contract depth amendment as terminal at argument support. Its shared atom and reader obligations are completed through R16-A/R16-B. A future matched optimizer campaign remains evidence work but is not another manuscript-depth gate and may not displace P2. |
+| Optimizer work was the only commissioned item substantially closed | **Accepted.** | Treat R16-E's source/prose/policy-contract depth amendment as terminal at argument support. Its shared atom and reader obligations are completed through R16-A/R16-B. A future matched optimizer campaign remains evidence work, not another manuscript-depth gate. |
 
 ### Enforced next-action sequence
 
@@ -542,10 +542,12 @@ Two slots may operate, but each slot has exactly one eligible packet:
    existing-owner repairs, applicable atoms, reader projections, appendices,
    chapter-specific inheritance evidence, and validator agree without support
    movement.
-6. **Book slot — R16-B, active:** build and validate the combined current 84-chapter
-   reader-freshness packet from the post-edit state. Existing per-chapter
-   reader integration receipts are inputs, not a substitute for this combined
-   derivative.
+6. **Book slot — R16-B terminal receipt:** the content-addressed derivative
+   reproduces all 84 frozen-commit chapter projections, all 22 narrative
+   units, the exact 11/54/7/12 role partition, and eight required reader
+   surfaces. It preserves the historical reader manifest, avoids a duplicate
+   84-chapter source tree, defers five unreviewed formats explicitly, rejects
+   sixteen mutations, and moves no support, release, or publication state.
 
 The sequence may move past a packet only when its validator, negative controls,
 status projection, changelog, clean `main` commit, and exact residual record
@@ -600,7 +602,7 @@ frozen entry conditions hold, or an exact command-bound failure receipt. The
 2026-07-24 observation is below the 50-GiB floor and Docker inspection lacked
 socket permission; those facts are blockers to record and resolve, not license
 for another prose packet. The older six-chapter atom pack and W3 are terminal;
-the six-chapter T1D depth pack is terminal and current-reader freshness remains open. The
+the six-chapter T1D depth pack and current-reader freshness packet are terminal. The
 five Round 18 chapters do not
 increase that atom debt because their birth atoms and reader projection ship
 inside this transaction.
@@ -2289,8 +2291,8 @@ patienthood determination.
 ### P6.5 — Round 16 post-activation integration debt
 
 This is the ordered existing-book organization lane. Its subpackets are not
-interchangeable: R16-A, W3, and P7.2-T1D are terminal; R16-B
-derives from the resulting 84-chapter state. R16-E's
+interchangeable: R16-A, W3, P7.2-T1D, and R16-B are terminal. R16-B
+derives from the resulting exact 84-chapter state. R16-E's
 manuscript-depth amendment is terminal. This lane repairs the six older
 post-baseline chapters; the five Round 18 chapters have separate birth atoms
 and cannot be backdated into that historical denominator.
@@ -2318,14 +2320,26 @@ registry, the immutable historical 15-atom addendum, and this separate
 changes no claim support, release state, historical 3,730-atom activation
 receipt, current registry, or historical 15-atom addendum.
 
-**R16-B — current-reader freshness (active).** Preserve
-`reader-2026-07-18` as an immutable published release. Produce a new local
-derived-reader packet from the current 84-chapter manifest and record the exact
-source commit, chapter list, projection rules, artifact digests or an honest
-format-specific deferred disposition. It must include every current chapter in
-the opening map, chapter-role map, adjacent handoffs, overview, glossary,
-source appendix, claim/evidence projection, and final synthesis. This is a
-freshness and derivation receipt, not publication authority.
+**R16-B terminal receipt — current-reader freshness (completed
+2026-07-26).** The packet binds exact source commit
+`56563e1b2b64405e2e944c521bf4df9f29eba6e6`, all 84 chapter identities and
+digests, all 22 narrative units, and the exact 11 thesis / 54 reference / 7
+implementation / 12 speculative role partition. Its deterministic projection
+removes only YAML metadata and explicitly machine-only fenced blocks; it
+preserves prose, tables, diagrams, source boundaries, non-claims, tests,
+summaries, and handoffs. Eight reader surfaces—opening map, role map,
+narrative route, overview, glossary, source appendix, claim/evidence
+projection, and final synthesis—are independently content-addressed.
+
+The transaction stores one manifest and report instead of copying the 84
+canonical chapters into another tracked tree. The historical
+`reader-2026-07-18` manifest is digest-bound as immutable publication history.
+Virtual QMD is terminal at source freshness; HTML, PDF, EPUB, DOCX, and audio
+are explicitly deferred because each needs separate render, navigation,
+accessibility, visual, or listening review. Sixteen rejecting mutations cover
+identity, digest, role, narrative route, reader surfaces, historical custody,
+format laundering, source duplication, and authority movement. This is a
+freshness and organization receipt, not publication authority or claim proof.
 
 **R16-C terminal receipt — admission-template inheritance guard (completed
 2026-07-26).** W1's 55-chapter and W2's 60-chapter receipts remain terminal for
@@ -2971,15 +2985,14 @@ path. `P2-Q1-D1` stays closed until
 P2's own competence dossier passes, then may open for the Q1 strong-worker
 arms. The disjoint `ASI-THESEUS-Q2-D2` stays closed through `T2`–`T4`; D1
 outcomes cannot tune it. `T0` through `T5` are the primary causal sequence for
-the composed flagship. P4 remains terminal and P6 may continue beside that
-sequence only through the bounded P6.5 integration-debt packet; the terminal
-Round 18 breadth packet changes the current manifest to 66 and P6.4 admissions
-are frozen again. P5 may design the joined reference
+the composed flagship. P4 and the P6.5 book-organization lane are terminal.
+The terminal Round 18 breadth transaction is historical; subsequent admitted
+and reconciled owners bring the current manifest to 84 chapters, all
+represented by the R16-B reader-freshness packet. P5 may design the joined reference
 boundary before `T4`, but may not substitute fixtures for the natural
 vertical. P3 opens only after `T5` and exact access predicates are true. P7
-preserves current published artifacts now, runs only R16-A, W3, the T1D
-six-chapter depth pack, and the bounded current-reader freshness derivative in
-that order during the structural freeze, and executes the P7.1b narrative
+preserves current published artifacts now; its R16-A, W3, T1D, and R16-B
+organization sequence is terminal, while P7.1b narrative
 synthesis after `T4`; external actions still require explicit action-time
 authority. Candidate N/O research cannot become manifest work before the
 material P2 and terminal T1D gates. P8 closes every checkpoint.
@@ -3100,8 +3113,8 @@ lies.
 | M3 — Reproduction and transfer | pending | Any broadened result has independent reproduction and two prospectively selected materially different transfer settings. |
 | M4 — Semantic formal depth | completed | All six frozen clusters are terminal across 25 modules with exact dispositions, modeled state, assumptions, countermodels, consumers, mutations, semantic separations, and maximum-inference ceilings. No aggregate theorem count or finite record grants empirical support. |
 | M5 — Effect-complete reference | pending | Multi-process authority-to-effect, rollback/residual, full-state, and deletion behavior passes adversarial and recovery tests. |
-| M6 — Renewal and structural completeness | in progress | The first tranche, A1/A2, Round 18 five-chapter/seven-section breadth packet, ten-owner no-deferral transaction, four-owner taxonomy reconciliation, 2026-07-25 four-owner/eight-section full-coverage audit, terminal T1D six-chapter maturity/source/reader packet, Precision Contract eight-owner manuscript integration, R16-A six-chapter/thirty-atom organization packet, and W3 84-chapter inheritance guard are terminal at argument support; the working manifest is 84 and no identified manuscript idea is deferred. Optimizer, heterogeneous-memory, and inference-cache manuscript-depth amendments are also terminal at argument support; executable evidence residuals remain open. Close the current-reader gate; P2 remains an independent empirical lane and cannot displace the prose-first organization schedule. Candidate-era freeze language is historical and cannot restore a deferred manuscript queue. |
-| M7 — Reader/publication disposition | in progress | PDF, EPUB, and DOCX in `reader-2026-07-18` remain immutable published artifacts with exact receipts. Close only after the current 84-chapter derived-reader packet and compatibility residuals are terminally dispositioned, all public surfaces remain synchronized, and the final main/Pages attestation succeeds; a local freshness packet does not imply external publication. |
+| M6 — Renewal and structural completeness | completed | The first tranche, A1/A2, Round 18 breadth packet, ten-owner no-deferral transaction, four-owner taxonomy reconciliation, 2026-07-25 full-coverage audit, T1D six-chapter maturity/source/reader packet, Precision Contract integration, R16-A six-chapter/thirty-atom organization packet, W3 84-chapter inheritance guard, and R16-B 84-chapter reader-freshness derivative are terminal at their declared argument or organization scope. The manifest is 84; no identified manuscript idea is deferred. Optimizer, heterogeneous-memory, and inference-cache manuscript depth is in the book; executable evidence residuals remain ordinary Phase 2 work. |
+| M7 — Reader/publication disposition | in progress | PDF, EPUB, and DOCX in `reader-2026-07-18` remain immutable published artifacts with exact receipts. The current 84-chapter source-fresh virtual QMD derivative is terminal; HTML, PDF, EPUB, DOCX, and audio are explicitly deferred pending format-specific QA rather than fabricated. Close M7 after public surfaces synchronize and the exact final `main`/Pages attestation succeeds; local source freshness does not imply a new external reader release. |
 | M8 — Successor continuity | pending | Every open item has a terminal disposition and the next exact authority is active. |
 
 ## Definition of done

@@ -2216,7 +2216,13 @@
     "docs/p7_2_t1d_six_chapter_maturity_and_source_role_review_2026_07_26.md",
     "scripts/build_p7_2_t1d_six_chapter_maturity.py",
     "scripts/validate_p7_2_t1d_six_chapter_maturity.py",
-    "scripts/register_p7_2_t1d_six_chapter_maturity.py"
+    "scripts/register_p7_2_t1d_six_chapter_maturity.py",
+    "editions/reader_manuscript/reader_2026_07_26/manifest.json",
+    "editions/reader_manuscript/reader_2026_07_26/freshness_report.md",
+    "schemas/r16_b_current_reader_freshness.schema.json",
+    "scripts/build_r16_b_current_reader_freshness.py",
+    "scripts/validate_r16_b_current_reader_freshness.py",
+    "scripts/register_r16_b_current_reader_freshness.py"
   ],
   "units": [
     {
@@ -6768,8 +6774,8 @@
       "args": [],
       "execution_tier": "deep",
       "validation_class": "proof_or_evidence_gate",
-      "input_contract": "Re-executed governed Git slice, matched baseline metrics, derived invariant suite, claim dispositions, proof manifest/adequacy/artifact audits, volatile source records, inter-stack routing, terminology refresh, and readable D\u2013F closure audit.",
-      "output_contract": "Reject drift in bounded empirical metrics, invariant mutations/residuals, core dispositions, proof target/adequacy traceability, volatile source routing, or D\u2013F closure boundaries.",
+      "input_contract": "Re-executed governed Git slice, matched baseline metrics, derived invariant suite, claim dispositions, proof manifest/adequacy/artifact audits, volatile source records, inter-stack routing, terminology refresh, and readable D–F closure audit.",
+      "output_contract": "Reject drift in bounded empirical metrics, invariant mutations/residuals, core dispositions, proof target/adequacy traceability, volatile source routing, or D–F closure boundaries.",
       "claim_scope": "Local roadmap closure for Workstreams D, E, and F at their explicitly bounded empirical, formal, and source-governance scopes.",
       "negative_controls": "validator_owned",
       "prohibited_inference": "Local closure does not prove deployed safety, general cost-effectiveness, formal runtime enforcement, novelty, exhaustive literature coverage, or independent review.",
@@ -14512,11 +14518,48 @@
       "prohibited_inference": "Manuscript maturity is not proof, empirical evidence, reproduction, mechanism success or failure, transfer, safety, readiness, release, SOTA, AGI, or ASI.",
       "contract_precision": "exact",
       "semantic_review_state": "manual_six_chapter_field_challenge_mechanism_failure_source_and_reader_review"
+    },
+    {
+      "id": "validate_r16_b_current_reader_freshness.py:426",
+      "order": 426,
+      "script": "validate_r16_b_current_reader_freshness.py",
+      "args": [],
+      "execution_tier": "pr",
+      "validation_class": "proof_or_evidence_gate",
+      "input_contract": "One exact source commit containing 84 unique manifest chapters, the exact role partition and 22-unit route, eight reader surfaces, and the immutable historical reader manifest.",
+      "input_artifacts": [
+        "editions/reader_manuscript/reader_2026_07_26/manifest.json",
+        "editions/reader_manuscript/reader_2026_07_26/freshness_report.md",
+        "schemas/r16_b_current_reader_freshness.schema.json",
+        "scripts/build_r16_b_current_reader_freshness.py",
+        "scripts/validate_r16_b_current_reader_freshness.py",
+        "scripts/register_r16_b_current_reader_freshness.py",
+        "book_structure.json",
+        "evidence_quality/current_chapter_role_map.json",
+        "products/narrative_unit_crosswalk.json",
+        "editions/reader_manuscript/reader_2026_07_18/manifest.json"
+      ],
+      "output_contract": "Content-address all current reader projections and routing without copying the canonical manuscript, rewriting history, fabricating unreviewed formats, or moving support or release authority.",
+      "output_assertions": [
+        "84 of 84 frozen-commit chapter projections reproduce",
+        "22 of 22 narrative units are represented",
+        "chapter-role partition remains 11/54/7/12",
+        "8 of 8 required reader surfaces reproduce",
+        "reader-2026-07-18 manifest identity and digest remain immutable",
+        "HTML, PDF, EPUB, DOCX, and audio are honestly deferred",
+        "16 scope, identity, digest, format, and authority mutations reject",
+        "zero support, release, or publication movement"
+      ],
+      "claim_scope": "Current manuscript reader-source freshness, organization, reproducibility, and handoff completeness only.",
+      "negative_controls": "validator_owned_sixteen_identity_digest_route_surface_history_format_and_authority_mutations",
+      "prohibited_inference": "Reader freshness is not publication, format QA, accessibility review, source correctness, claim proof, empirical support, safety, readiness, release, SOTA, AGI, or ASI.",
+      "contract_precision": "exact",
+      "semantic_review_state": "manual_current_reader_route_surface_history_and_format_disposition_review"
     }
   ],
   "summary": {
-    "required_artifact_count": 2172,
-    "unit_count": 425
+    "required_artifact_count": 2178,
+    "unit_count": 426
   },
   "non_claims": [
     "Registry coverage does not establish semantic adequacy of every validator.",

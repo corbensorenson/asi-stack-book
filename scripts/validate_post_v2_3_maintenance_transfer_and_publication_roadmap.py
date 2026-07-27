@@ -383,7 +383,7 @@ def errors(data: dict) -> list[str]:
         "capacity_entry_condition_met_materialization_not_yet_run",
         "71,648,034,816",
         "R16-A terminal receipt",
-        "P7.2-T1D is the sole current book packet",
+        "There is no open book-organization packet",
         "812→0 repeated 12-grams",
         "R16-C terminal receipt",
         "30 reviewed atoms",
@@ -961,8 +961,8 @@ def errors(data: dict) -> list[str]:
 
     quality_program = status.get("quality_uplift_program", {})
     execution_readiness = status.get("execution_readiness", {})
-    if execution_readiness.get("state") != "w3_terminal_t1d_maturity_packet_ready":
-        out.append("execution board does not close W3 and activate the T1D maturity packet")
+    if execution_readiness.get("state") != "phase_one_book_organization_terminal_p2_evidence_ready":
+        out.append("execution board does not close Phase 1 book organization and activate P2 evidence work")
     if execution_readiness.get("headline_priority") != "P2" or execution_readiness.get("headline_priority_state") != "below_storage_floor_exact_attempt_or_failure_receipt_required":
         out.append("execution board obscures the P2 headline or the current below-floor attempt requirement")
     if execution_readiness.get("work_in_progress_limit") != 2 or execution_readiness.get("blocked_lane_consumes_work_in_progress") is not False:
@@ -973,8 +973,8 @@ def errors(data: dict) -> list[str]:
         out.append("execution board contradicts the superseding no-deferral manuscript policy")
     if execution_readiness.get("immediate_empirical_packet") != "P2-R3-storage-materialization-and-replacement-qualification":
         out.append("execution board does not make P2-R3 the operative empirical headline")
-    if execution_readiness.get("immediate_book_packet") != "P7.2-T1D-proof-readiness-depth-pack":
-        out.append("execution board does not make T1D the sole current book packet after terminal W3")
+    if execution_readiness.get("immediate_book_packet") != "P6.5-terminal-no-open-book-organization-packet":
+        out.append("execution board invents an open book-organization packet after terminal R16-B")
     if execution_readiness.get("immediate_formal_packet") != "P4-terminal-no-open-formal-packet":
         out.append("execution board reopens terminal P4 formal work")
     if execution_readiness.get("maximum_concurrent_second_tranche_candidates") != 0:
@@ -1399,6 +1399,32 @@ def errors(data: dict) -> list[str]:
     reader_freshness = round16.get("current_reader_freshness_packet", {})
     if reader_freshness.get("current_working_manifest_chapter_count") != 84 or reader_freshness.get("must_cover_all_current_manifest_chapters") is not True:
         out.append("Round 16 current-reader packet does not cover the live 84-chapter manifest")
+    expected_reader_receipt = {
+        "state": "terminal_local_source_freshness_formats_deferred",
+        "source_content_commit": "56563e1b2b64405e2e944c521bf4df9f29eba6e6",
+        "artifact_path": "editions/reader_manuscript/reader_2026_07_26/manifest.json",
+        "report_path": "editions/reader_manuscript/reader_2026_07_26/freshness_report.md",
+        "schema_path": "schemas/r16_b_current_reader_freshness.schema.json",
+        "builder_path": "scripts/build_r16_b_current_reader_freshness.py",
+        "validator_path": "scripts/validate_r16_b_current_reader_freshness.py",
+        "chapter_projection_count": 84,
+        "narrative_unit_count": 22,
+        "reader_surface_count": 8,
+        "mutation_rejection_count": 16,
+        "virtual_qmd_terminal": True,
+        "unreviewed_format_count_deferred": 5,
+        "source_duplication_avoided": True,
+        "support_state_effect": "none",
+        "release_effect": "none",
+        "publication_effect": "none",
+    }
+    for field, expected in expected_reader_receipt.items():
+        if reader_freshness.get(field) != expected:
+            out.append(f"R16-B terminal receipt drifted: {field}")
+    for field in ("artifact_path", "report_path", "schema_path", "builder_path", "validator_path"):
+        path = reader_freshness.get(field)
+        if not isinstance(path, str) or not (ROOT / path).is_file():
+            out.append(f"R16-B terminal artifact missing: {field}")
     recovery = round16.get("p2_empirical_recovery", {})
     if (
         recovery.get("state") != "below_storage_floor_exact_attempt_or_failure_receipt_required"
@@ -1781,6 +1807,8 @@ def main() -> None:
     mutate("R16-A terminal atom denominator deletion", lambda c: c["status"]["round_16_evidence_first_amendment"]["post_activation_atom_pack"].__setitem__("atom_count", 29))
     mutate("W3 current scope rollback", lambda c: c["status"]["round_16_evidence_first_amendment"]["template_inheritance_guard"].__setitem__("current_live_chapter_scope", 66))
     mutate("historical reader laundering", lambda c: c["status"]["round_16_evidence_first_amendment"]["current_reader_freshness_packet"].__setitem__("published_reader_2026_07_18_is_immutable_historical_release", False))
+    mutate("R16-B projection denominator rollback", lambda c: c["status"]["round_16_evidence_first_amendment"]["current_reader_freshness_packet"].__setitem__("chapter_projection_count", 83))
+    mutate("R16-B unreviewed format laundering", lambda c: c["status"]["round_16_evidence_first_amendment"]["current_reader_freshness_packet"].__setitem__("unreviewed_format_count_deferred", 0))
     mutate("future atom-at-birth deletion", lambda c: c["status"]["round_16_evidence_first_amendment"]["future_admission_contract"].__setitem__("claim_atom_pack_required_at_birth", False))
     mutate("future reader-at-birth deletion", lambda c: c["status"]["round_16_evidence_first_amendment"]["future_admission_contract"].__setitem__("reader_projection_required_at_birth", False))
     mutate("future admission cadence expansion", lambda c: c["status"]["round_16_evidence_first_amendment"]["future_admission_contract"].__setitem__("maximum_new_chapters_per_empirical_checkpoint", 9))
@@ -1807,7 +1835,7 @@ def main() -> None:
     mutate("P2 pre-content rank skipping", lambda c: c["status"]["p2_sequential_materialization_contract"].__setitem__("pre_content_failure_may_skip_or_burn_rank", True))
     mutate("P2 post-content replay", lambda c: c["status"]["p2_sequential_materialization_contract"].__setitem__("post_content_replay_allowed", True))
     mutate("semantic proof cluster deletion", lambda c: c["status"]["semantic_proof_cluster_inventory"]["clusters"].pop())
-    mutate("P7 next packet rollback", lambda c: c["status"]["execution_readiness"].__setitem__("immediate_book_packet", "P7.2-T1-white-box-evidence-interpretability-and-activation-governance"))
+    mutate("book organization reopening", lambda c: c["status"]["execution_readiness"].__setitem__("immediate_book_packet", "P7.2-T1-white-box-evidence-interpretability-and-activation-governance"))
     mutate("P4 next packet rollback", lambda c: c["status"]["execution_readiness"].__setitem__("immediate_formal_packet", "P4-C3-authority-effect-rollback-and-corrigibility-semantic-audit"))
     mutate("first-tranche terminal count rollback", lambda c: c["status"]["quality_uplift_program"]["structural_completeness_tranche"]["first_tranche"].__setitem__("completed_reader_chapter_count", 1))
     mutate("T1/T2/T3 terminal identity deletion", lambda c: c["status"]["quality_uplift_program"]["structural_completeness_tranche"]["first_tranche"].__setitem__("terminal_reader_chapter_ids", []))
