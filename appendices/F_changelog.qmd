@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-07-26 — Cross-host P2 receipt validation
+
+- Corrected the P2-R3a validator to compare the immutable `df` command against
+  the receipt's recorded absolute measurement path, not the validator's current
+  checkout path.
+- Preserved the exact command-order and output-digest checks, then exercised a
+  Linux-checkout path simulation. This is a validator portability repair only;
+  the immutable attempt, N0 disposition, capacity result, support state, and
+  release state are unchanged.
+
 ## 2026-07-26 — C6 remaining stronger-model triage
 
 - Audited all 54 declarations still marked `rewrite_with_stronger_model`

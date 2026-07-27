@@ -83,12 +83,15 @@ def failures(record: dict, *, inspect_files: bool = True) -> list[str]:
     out.extend(message for passed, message in checks if not passed)
 
     receipts = record.get("command_receipts", [])
+    recorded_path = host.get("measured_path")
     expected_commands = [
-        ["df", "-k", str(ROOT)],
+        ["df", "-k", recorded_path],
         ["docker", "version", "--format", "{{json .}}"],
         ["docker", "info", "--format", "{{json .}}"],
         ["docker", "system", "df", "--format", "{{json .}}"],
     ]
+    if not isinstance(recorded_path, str) or not Path(recorded_path).is_absolute():
+        out.append("recorded measurement path is not absolute")
     if [row.get("argv") for row in receipts] != expected_commands:
         out.append("diagnostic command set or order drifted")
     for index, row in enumerate(receipts):
