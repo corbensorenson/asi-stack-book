@@ -274,7 +274,7 @@ def errors(data: dict) -> list[str]:
         or no_deferral.get("structural_freeze_for_manuscript_ideas") is not False
         or no_deferral.get("all_chapter_core_support_states") != "argument"
         or no_deferral.get("current_semantically_reviewed_chapter_count") != 68
-        or no_deferral.get("current_structured_atom_count") != 4067
+        or no_deferral.get("current_structured_atom_count") != 4058
     ):
         out.append("no-deferral manuscript admission state drifted")
 
