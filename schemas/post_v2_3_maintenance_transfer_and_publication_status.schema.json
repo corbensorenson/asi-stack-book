@@ -258,21 +258,13 @@
             "accelerator_replay_valid_count",
             "accelerator_replay_requested_count",
             "remaining_shard",
-            "remaining_shard_child_started",
-            "remaining_shard_fault",
-        "remaining_shard_initial_reclaimable_available_mib",
-        "remaining_shard_minimum_reclaimable_available_mib",
-        "remaining_shard_fault_reclaimable_available_mib",
-        "remaining_shard_attempt_launch_reserve_mib",
-        "remaining_shard_live_reserve_mib",
-        "remaining_shard_maximum_inferred_unified_memory_mib",
-        "remaining_shard_maximum_process_rss_mib",
-        "remaining_shard_maximum_swapout_growth_mib",
-        "launch_calibration_qualification_authority",
-        "launch_calibration_minimum_safety_margin_mib",
-        "launch_calibration_required_floor_mib",
-        "prospective_launch_reserve_mib",
-        "launch_calibration_rejecting_controls_passed",
+            "prior_live_reserve_calibration",
+            "latest_guarded_retry",
+            "launch_calibration_qualification_authority",
+            "launch_calibration_minimum_safety_margin_mib",
+            "launch_calibration_required_floor_mib",
+            "prospective_launch_reserve_mib",
+            "launch_calibration_rejecting_controls_passed",
             "replacement_package_current",
             "next_legal_action",
             "protected_outcomes_opened",
@@ -280,8 +272,8 @@
             "release_effect"
           ],
           "properties": {
-        "source_commit": {
-          "const": "653401de663ad1d089be7d8d25903a113632e997"
+            "source_commit": {
+              "const": "9e545cf167f22b0bbda6f914a67d022d7b8c6b81"
             },
             "source_branch": {
               "const": "main"
@@ -292,11 +284,11 @@
             "historical_artifact_count": {
               "const": 123
             },
-        "historical_unchanged_artifact_count": {
-          "const": 99
-        },
-        "historical_changed_artifact_count": {
-          "const": 24
+            "historical_unchanged_artifact_count": {
+              "const": 99
+            },
+            "historical_changed_artifact_count": {
+              "const": 24
             },
             "historical_missing_artifact_count": {
               "const": 0
@@ -316,56 +308,134 @@
             "remaining_shard": {
               "const": "optimizer_matched_adequacy"
             },
-            "remaining_shard_child_started": {
+            "prior_live_reserve_calibration": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "source_commit",
+                "child_started",
+                "fault",
+                "initial_reclaimable_available_mib",
+                "minimum_reclaimable_available_mib",
+                "fault_reclaimable_available_mib",
+                "attempt_launch_reserve_mib",
+                "live_reserve_mib",
+                "maximum_inferred_unified_memory_mib",
+                "maximum_process_rss_mib",
+                "maximum_swapout_growth_mib",
+                "qualification_authority",
+                "evidence_role"
+              ],
+              "properties": {
+                "source_commit": {
+                  "const": "653401de663ad1d089be7d8d25903a113632e997"
+                },
+                "child_started": {
+                  "const": true
+                },
+                "fault": {
+                  "const": "host_memory_reserve_breached"
+                },
+                "initial_reclaimable_available_mib": {
+                  "const": 5216.328
+                },
+                "minimum_reclaimable_available_mib": {
+                  "const": 3686.562
+                },
+                "fault_reclaimable_available_mib": {
+                  "const": 3708.391
+                },
+                "attempt_launch_reserve_mib": {
+                  "const": 5120.0
+                },
+                "live_reserve_mib": {
+                  "const": 4096.0
+                },
+                "maximum_inferred_unified_memory_mib": {
+                  "const": 1529.766
+                },
+                "maximum_process_rss_mib": {
+                  "const": 231.75
+                },
+                "maximum_swapout_growth_mib": {
+                  "const": 0.0
+                },
+                "qualification_authority": {
+                  "const": false
+                },
+                "evidence_role": {
+                  "const": "calibration_only"
+                }
+              }
+            },
+            "latest_guarded_retry": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "source_commit",
+                "child_started",
+                "fault",
+                "available_reclaimable_mib",
+                "required_launch_reserve_mib",
+                "live_reserve_mib",
+                "returncode",
+                "terminated_by_guard",
+                "qualification_authority",
+                "evidence_role"
+              ],
+              "properties": {
+                "source_commit": {
+                  "const": "9e545cf167f22b0bbda6f914a67d022d7b8c6b81"
+                },
+                "child_started": {
+                  "const": false
+                },
+                "fault": {
+                  "const": "host_memory_preflight_failed"
+                },
+                "available_reclaimable_mib": {
+                  "const": 3874.8
+                },
+                "required_launch_reserve_mib": {
+                  "const": 6144.0
+                },
+                "live_reserve_mib": {
+                  "const": 4096.0
+                },
+                "returncode": {
+                  "type": "null"
+                },
+                "terminated_by_guard": {
+                  "const": false
+                },
+                "qualification_authority": {
+                  "const": false
+                },
+                "evidence_role": {
+                  "const": "latest_exact_preflight_stop"
+                }
+              }
+            },
+            "launch_calibration_qualification_authority": {
+              "const": false
+            },
+            "launch_calibration_minimum_safety_margin_mib": {
+              "const": 512.0
+            },
+            "launch_calibration_required_floor_mib": {
+              "const": 6137.766
+            },
+            "prospective_launch_reserve_mib": {
+              "const": 6144.0
+            },
+            "launch_calibration_rejecting_controls_passed": {
               "const": true
             },
-            "remaining_shard_fault": {
-              "const": "host_memory_reserve_breached"
-            },
-            "remaining_shard_initial_reclaimable_available_mib": {
-              "const": 5216.328
-            },
-            "remaining_shard_minimum_reclaimable_available_mib": {
-              "const": 3686.562
-            },
-        "remaining_shard_fault_reclaimable_available_mib": {
-          "const": 3708.391
-        },
-        "remaining_shard_attempt_launch_reserve_mib": {
-          "const": 5120.0
-        },
-        "remaining_shard_live_reserve_mib": {
-          "const": 4096.0
-            },
-            "remaining_shard_maximum_inferred_unified_memory_mib": {
-              "const": 1529.766
-            },
-            "remaining_shard_maximum_process_rss_mib": {
-              "const": 231.75
-            },
-        "remaining_shard_maximum_swapout_growth_mib": {
-          "const": 0.0
-        },
-        "launch_calibration_qualification_authority": {
-          "const": false
-        },
-        "launch_calibration_minimum_safety_margin_mib": {
-          "const": 512.0
-        },
-        "launch_calibration_required_floor_mib": {
-          "const": 6137.766
-        },
-        "prospective_launch_reserve_mib": {
-          "const": 6144.0
-        },
-        "launch_calibration_rejecting_controls_passed": {
-          "const": true
-        },
             "replacement_package_current": {
               "const": false
             },
-        "next_legal_action": {
-          "const": "run only the same guarded optimizer-matched workload when the corrected 6144 MiB launch reserve is naturally available while preserving its 4096 MiB live reserve, then publish the replacement content-addressed package"
+            "next_legal_action": {
+              "const": "run only the same guarded optimizer-matched workload when its exact guard observes at least the corrected 6144 MiB launch reserve while preserving the 4096 MiB live reserve; a generic memory percentage is not launch authority; then publish the replacement content-addressed package"
             },
             "protected_outcomes_opened": {
               "const": 0
@@ -1123,9 +1193,9 @@
           "current_copied_diagram_and_test_spread": 0,
           "repaired_chapter_count": 10,
           "baseline_prose_candidate_count": 3444,
-          "current_prose_candidate_count": 3387,
+          "current_prose_candidate_count": 3388,
           "retired_inherited_prose_candidate_count": 247,
-          "added_domain_specific_prose_candidate_count": 190,
+          "added_domain_specific_prose_candidate_count": 191,
           "baseline_structured_atom_count": 4067,
           "current_structured_atom_count": 4058,
           "pending_prose_candidate_count": 0,

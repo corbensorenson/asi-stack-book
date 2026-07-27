@@ -19,7 +19,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "The 2026-07-27 T0/T0A currentness import records clean published Theseus `main` at `653401de`, separates completed historical T0 from active successor T0A, finds 24 changed artifacts in the historical 123-artifact freeze, records 7/7 current CPU/governance replays and 13/14 valid accelerator receipts, preserves the final optimizer-matched shard's guarded live-memory-reserve stop, and binds that failed attempt as non-qualifying calibration evidence for a prospective 6,144 MiB launch floor. It does not establish a successful replay, current replacement freeze, training readiness, or T1 authority."
+  - "The 2026-07-27 T0/T0A currentness import records clean published Theseus `main` at `9e545cf1`, separates completed historical T0 from active successor T0A, finds 24 changed artifacts in the historical 123-artifact freeze, and records 7/7 current CPU/governance replays and 13/14 valid accelerator receipts. It preserves the prior optimizer-matched shard's guarded live-memory-reserve stop as non-qualifying calibration evidence for a prospective 6,144 MiB launch floor, then records the latest exact preflight observation: 3,874.8 MiB was available, below that floor, so the child did not start and no model result exists. It does not establish a successful replay, current replacement freeze, training readiness, or T1 authority."
   - "Appendix C records passage-reviewed mappings for all ten assigned sources: six pinned Project Theseus sources and four external reporting or reproducibility comparators. The chapter core remains argument because documentation lineage and bounded imports do not establish current runtime, capability, safety, deployment, reproduction, or transfer."
   - "The theseus_report_crosswalk_record fixture validates schema/example consistency and AsiStackProofs.TheseusReference implements finite record predicates plus bounded negative cases for dashboard-only claims, missing/failing gate promotion, incomplete report bundles, replay-readiness gaps, and public-artifact support overclaim; the separate Project Theseus static architecture-gate and generation-mode imports validate public-safe digest-verified report fixtures, the Theseus support replay probe reruns those ASI-side validators with command-output and artifact digests, `scripts/validate_theseus_report_bundle_audit.py` validates a public-safe report-bundle audit fixture with replay-readiness, crosswalk, gate-mapping, work-board, artifact-gap, and intervention-ladder controls, `scripts/validate_theseus_artifact_retention_replay_import.py` validates one sanitized artifact-retention replay import as a bounded non-core `prototype-backed` transition, `scripts/validate_theseus_module_definition_of_done_import.py` validates a sanitized Theseus module definition-of-done gate import with 22 of 22 major module records ready, `scripts/validate_theseus_project_registry_import.py` validates a sanitized Theseus project-registry import with 5,662 registered paths, `scripts/validate_theseus_accelerator_parity_manifest_import.py` validates a sanitized accelerator parity manifest import with 7 of 7 surfaces, 7 MLX report summaries, 4 Metal report summaries, and no full parity, production-routing, model-promotion, or chapter-core claim, `scripts/validate_theseus_book_crosswalk_import.py` validates a sanitized book-to-Theseus crosswalk import with 53 public-safe pointer rows and no support-state promotion, and `scripts/validate_theseus_concrete_evidence_surface.py` keeps those concrete facts visible in public surfaces and the outline. No clean live Theseus report bundle, benchmark environment, current work-board state, transfer-lane consumer, deployed residual-ledger storage, deployed artifact-graph behavior, full CUDA, MLX, or Metal parity, production scheduler routing, model-quality result, module-capability result, deployment result, self-evolution safety result, or external review has been rerun or proven."
   - "Source-noted external reporting and reproducibility comparators now position the report-first boundary against model cards, dataset datasheets, AI service FactSheets, and ML reproducibility programs; none of those external sources has been implemented or reproduced for Theseus in this repository."
@@ -75,23 +75,30 @@ The architecture-freeze handoff makes that distinction concrete. The
 2026-07-27 public-safe import separates a completed historical `T0` package
 from the active successor `T0A` closure. The old package remains a useful
 immutable control, but 24 of its 123 bound artifacts differ from the current
-clean, published Theseus `main` tree at `653401de`; it therefore supplies no
+clean, published Theseus `main` tree at `9e545cf1`; it therefore supplies no
 authority for the successor campaign. The current implementation records a
 GREEN factorized selection, acceleration selector, and project registry, plus
 7/7 current CPU/governance replays and 13/14 valid accelerator receipts. The
-remaining optimizer-matched accelerator shard passed its former 5,120 MiB
-launch reserve and started, but the external guard stopped it after reclaimable memory
+prior optimizer-matched accelerator attempt passed its former 5,120 MiB launch
+reserve and started, but the external guard stopped it after reclaimable memory
 fell to 3,708.391 MiB below its declared 4,096 MiB live reserve. Maximum
 inferred unified memory was 1,529.766 MiB, maximum process RSS was 231.75 MiB,
-and swapout growth was zero. That is a safety result, not a negative optimizer
-or architecture result and not completion. The failed attempt now has
-calibration authority only: the 4,096 MiB live reserve plus the 1,529.766 MiB
-observed peak plus a 512 MiB safety margin requires 6,137.766 MiB, rounded up
-to a prospective 6,144 MiB launch floor. Rejecting controls prevent lowering
-that floor or treating the failed receipt as qualification. `T1` remains
-blocked until the same workload passes under that corrected guard, a replacement
-content-addressed freeze is published, and the broader readiness gate is rerun
-against the current 84-chapter book.
+and swapout growth was zero. That safety stop remains calibration evidence,
+not a negative optimizer or architecture result and not completion: the
+4,096 MiB live reserve plus the 1,529.766 MiB observed peak plus a 512 MiB
+safety margin requires 6,137.766 MiB, rounded up to a prospective 6,144 MiB
+launch floor. On the latest exact retry, the guard observed only 3,874.8 MiB
+available against that 6,144 MiB floor. The child therefore did not start,
+was not terminated by the guard, returned no exit code, and produced no
+optimizer, architecture, training, or capability observation. Rejecting
+controls preserve both events without collapsing them into one story: they
+reject erasing the earlier child start, inventing a child start or sufficient
+memory for the latest preflight, lowering the floor, or treating either receipt
+as qualification. `T1` remains blocked until the same exact guard itself
+observes at least 6,144 MiB, the unchanged workload passes while preserving the
+4,096 MiB live reserve, a replacement content-addressed freeze is published,
+and the broader readiness gate is rerun against the current 84-chapter book.
+A generic host-memory percentage is not launch authority.
 This is exactly what report-first discipline is for: preserve useful completed
 work, refuse stale authority inheritance, and name the smallest remaining
 transaction without turning currentness into capability evidence.

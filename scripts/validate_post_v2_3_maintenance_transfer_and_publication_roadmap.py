@@ -1033,7 +1033,7 @@ def errors(data: dict) -> list[str]:
         out.append("shared quality critical path must preserve historical T0, successor T0A, then T1 through T6")
     t0a_currentness = quality_program.get("t0a_currentness", {})
     expected_t0a_currentness = {
-        "source_commit": "653401de663ad1d089be7d8d25903a113632e997",
+        "source_commit": "9e545cf167f22b0bbda6f914a67d022d7b8c6b81",
         "source_branch": "main",
         "published_on_origin_main": True,
         "historical_artifact_count": 123,
@@ -1045,23 +1045,40 @@ def errors(data: dict) -> list[str]:
         "accelerator_replay_valid_count": 13,
         "accelerator_replay_requested_count": 14,
         "remaining_shard": "optimizer_matched_adequacy",
-        "remaining_shard_child_started": True,
-        "remaining_shard_fault": "host_memory_reserve_breached",
-        "remaining_shard_initial_reclaimable_available_mib": 5216.328,
-        "remaining_shard_minimum_reclaimable_available_mib": 3686.562,
-        "remaining_shard_fault_reclaimable_available_mib": 3708.391,
-        "remaining_shard_attempt_launch_reserve_mib": 5120.0,
-        "remaining_shard_live_reserve_mib": 4096.0,
-        "remaining_shard_maximum_inferred_unified_memory_mib": 1529.766,
-        "remaining_shard_maximum_process_rss_mib": 231.75,
-        "remaining_shard_maximum_swapout_growth_mib": 0.0,
+        "prior_live_reserve_calibration": {
+            "source_commit": "653401de663ad1d089be7d8d25903a113632e997",
+            "child_started": True,
+            "fault": "host_memory_reserve_breached",
+            "initial_reclaimable_available_mib": 5216.328,
+            "minimum_reclaimable_available_mib": 3686.562,
+            "fault_reclaimable_available_mib": 3708.391,
+            "attempt_launch_reserve_mib": 5120.0,
+            "live_reserve_mib": 4096.0,
+            "maximum_inferred_unified_memory_mib": 1529.766,
+            "maximum_process_rss_mib": 231.75,
+            "maximum_swapout_growth_mib": 0.0,
+            "qualification_authority": False,
+            "evidence_role": "calibration_only",
+        },
+        "latest_guarded_retry": {
+            "source_commit": "9e545cf167f22b0bbda6f914a67d022d7b8c6b81",
+            "child_started": False,
+            "fault": "host_memory_preflight_failed",
+            "available_reclaimable_mib": 3874.8,
+            "required_launch_reserve_mib": 6144.0,
+            "live_reserve_mib": 4096.0,
+            "returncode": None,
+            "terminated_by_guard": False,
+            "qualification_authority": False,
+            "evidence_role": "latest_exact_preflight_stop",
+        },
         "launch_calibration_qualification_authority": False,
         "launch_calibration_minimum_safety_margin_mib": 512.0,
         "launch_calibration_required_floor_mib": 6137.766,
         "prospective_launch_reserve_mib": 6144.0,
         "launch_calibration_rejecting_controls_passed": True,
         "replacement_package_current": False,
-        "next_legal_action": "run only the same guarded optimizer-matched workload when the corrected 6144 MiB launch reserve is naturally available while preserving its 4096 MiB live reserve, then publish the replacement content-addressed package",
+        "next_legal_action": "run only the same guarded optimizer-matched workload when its exact guard observes at least the corrected 6144 MiB launch reserve while preserving the 4096 MiB live reserve; a generic memory percentage is not launch authority; then publish the replacement content-addressed package",
         "protected_outcomes_opened": 0,
         "support_state_effect": "none",
         "release_effect": "none",
@@ -1499,9 +1516,9 @@ def errors(data: dict) -> list[str]:
         or template_guard.get("current_copied_diagram_and_test_spread") != 0
         or template_guard.get("repaired_chapter_count") != 10
         or template_guard.get("baseline_prose_candidate_count") != 3444
-        or template_guard.get("current_prose_candidate_count") != 3387
+        or template_guard.get("current_prose_candidate_count") != 3388
         or template_guard.get("retired_inherited_prose_candidate_count") != 247
-        or template_guard.get("added_domain_specific_prose_candidate_count") != 190
+        or template_guard.get("added_domain_specific_prose_candidate_count") != 191
         or template_guard.get("baseline_structured_atom_count") != 4067
         or template_guard.get("current_structured_atom_count") != 4058
         or template_guard.get("pending_prose_candidate_count") != 0
@@ -1530,7 +1547,7 @@ def errors(data: dict) -> list[str]:
         or w3.get("measurements", {}).get("editorial_narrative", {}).get("baseline", {}).get("distinct_repeated_12_grams") != 812
         or w3.get("measurements", {}).get("editorial_narrative", {}).get("current", {}).get("distinct_repeated_12_grams") != 0
         or w3.get("claim_review_reconciliation", {}).get("retired_inherited_prose_candidate_count") != 247
-        or w3.get("claim_review_reconciliation", {}).get("added_domain_specific_prose_candidate_count") != 190
+        or w3.get("claim_review_reconciliation", {}).get("added_domain_specific_prose_candidate_count") != 191
         or w3.get("claim_review_reconciliation", {}).get("current_pending_prose_candidate_count") != 0
         or w3.get("meaning_custody", {}).get("chapter_core_support_movements") != 0
     ):
@@ -1866,7 +1883,9 @@ def main() -> None:
     mutate("T0A CPU replay denominator drift", lambda c: c["status"]["quality_uplift_program"]["t0a_currentness"].__setitem__("cpu_governance_replay_passed_count", 6))
     mutate("T0A accelerator denominator shrink", lambda c: c["status"]["quality_uplift_program"]["t0a_currentness"].__setitem__("accelerator_replay_requested_count", 13))
     mutate("T0A failed shard erasure", lambda c: c["status"]["quality_uplift_program"]["t0a_currentness"].__setitem__("accelerator_replay_valid_count", 14))
-    mutate("T0A child start erasure", lambda c: c["status"]["quality_uplift_program"]["t0a_currentness"].__setitem__("remaining_shard_child_started", False))
+    mutate("T0A prior calibration child start erasure", lambda c: c["status"]["quality_uplift_program"]["t0a_currentness"]["prior_live_reserve_calibration"].__setitem__("child_started", False))
+    mutate("T0A latest retry child start invention", lambda c: c["status"]["quality_uplift_program"]["t0a_currentness"]["latest_guarded_retry"].__setitem__("child_started", True))
+    mutate("T0A latest retry available-memory invention", lambda c: c["status"]["quality_uplift_program"]["t0a_currentness"]["latest_guarded_retry"].__setitem__("available_reclaimable_mib", 6144.0))
     mutate("T0A replacement freeze laundering", lambda c: c["status"]["quality_uplift_program"]["t0a_currentness"].__setitem__("replacement_package_current", True))
     mutate("editorial meaning-preservation deletion", lambda c: c["status"]["quality_uplift_program"]["narrative_quality_gate"].__setitem__("requires_meaning_preservation_audit", False))
     mutate("post-review reference denominator rollback", lambda c: c["status"]["quality_uplift_program"]["post_review_convergence"].__setitem__("reference_chapter_count", 61))

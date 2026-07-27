@@ -44,6 +44,23 @@
   deletion is not influence removal, privacy repair, or external erasure; no
   natural-task, support, release, deployment, AGI, or ASI claim follows.
 
+## 2026-07-27 — Theseus T0A corrected-floor exact preflight stop
+
+- Retried only the unchanged optimizer-matched shard under the corrected exact
+  launch guard and published clean Theseus `main` at `9e545cf1`.
+- The exact guard observed 3,874.8 MiB available against the required
+  6,144 MiB launch reserve, so the child did not start, was not later
+  guard-terminated, returned no exit code, and produced no model result.
+- Preserved the prior child-started live-reserve stop separately as
+  calibration-only evidence. Machine validation now rejects erasing that
+  earlier start, inventing a start or enough memory for the latest preflight,
+  lowering the launch floor, or promoting either receipt to qualification.
+- `T0A` remains active, `T1` remains blocked, and the accelerator denominator
+  remains 13/14. The next retry is legal only when the exact guard itself
+  observes at least 6,144 MiB; a generic memory percentage is not authority.
+- No optimizer, architecture, training, behavior, capability, support, or
+  release result was opened.
+
 ## 2026-07-27 — Theseus optimizer launch-contract calibration
 
 - Corrected the remaining optimizer-matched shard's prospective launch floor
