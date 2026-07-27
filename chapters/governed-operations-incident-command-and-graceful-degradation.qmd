@@ -4,7 +4,7 @@ chapter_id: "governed-operations-incident-command-and-graceful-degradation"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.4 integrated reader chapter"
-last_updated: "2026-07-19"
+last_updated: "2026-07-27"
 primary_sources:
   - "scf"
   - "deterministic_capability_compilation"
@@ -18,7 +18,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "The implemented authored control case covers eleven declared state classes, descendants, authority narrowing, an unknown external effect, and safe hold, but no effect-complete runtime rollback harness or natural incident has run."
+  - "The authored control case and the bounded P5 local multi-process slice now cover declared state, descendants, authority narrowing, observation, rollback, compensation, and safe hold; no natural service incident, operator game day, network partition, open-world effect inventory, or deployed recovery has run."
   - "No adversarial game-day evidence yet calibrates severity and recovery thresholds."
   - "NIST incident-response transfer to autonomous AI has not been independently validated."
   - "The schema, fixture, independent consumer, mutations, and Lean model establish finite declared-record consequences only; they do not establish detector quality, inventory completeness, effect reversal, fallback usefulness, or recovery efficacy."
@@ -32,12 +32,12 @@ open_evidence_gaps:
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
 | Manuscript maturity | v0.4 integrated reader chapter |
-| Last updated | 2026-07-19 |
+| Last updated | 2026-07-27 |
 | Primary source records | `scf`, `deterministic_capability_compilation`, `theseus_operator_os`, `viea`, `talos`, `platonic_world_model`, `ext_nist_ai_rmf_1_0_2023`, `ext_nist_deployed_ai_monitoring_2026`, `ext_nist_incident_response_2025` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source loading state | Source notes are available for all nine assigned records, and the manifest records claim-level mappings and limits. The three NIST records are external comparators; the six Corben/local records contribute architecture or implementation lineage, not independent incident-performance evidence. |
-| Test state | The governed-operations packet schema, authored safe-hold fixture, independent route consumer, completed positive recovery control, and eighteen rejecting mutations are implemented. The four-arm natural-service campaign is protocol-ready but unexecuted; no flagship T4 trace, natural incident, game day, or external reproduction is recorded. |
+| Test state | The governed-operations packet schema, authored safe-hold fixture, independent route consumer, completed positive recovery control, and eighteen rejecting mutations are implemented. The P5 local slice adds 8/8 real-subprocess authority/effect/recovery cases with exact bounded receipts. The four-arm natural-service campaign is protocol-ready but unexecuted; no flagship T4 trace, natural incident, operator game day, partition fault, deployment, or external reproduction is recorded. |
 | Formal state | Both public targets are implemented in `AsiStackProofs.GovernedOperations` through thirteen theorem declarations. Their maximum inference is finite declared-record routing only. |
 
 ## Drafting guardrail
@@ -811,11 +811,24 @@ backup, unsafe output, human capacity exhaustion, an uncooperative component,
 and a rollback that appears successful while a credential, cache, descendant,
 or external effect remains changed.
 
-No such complete slice is recorded in this repository. The current minimum is
-therefore a build target, not a prototype-backed claim. A schema or deterministic
-fixture could establish only that records validate and routes are reachable.
-It could not establish monitor quality, incident performance, safe
-degradation, usable fallback, effect reversal, or recovery.
+The P5 local reference now supplies a deliberately narrower executable subset.
+Across eight deterministic cases, real subprocesses share a durable
+SQLite/WAL ledger, two workers test idempotent concurrent effect creation,
+revocation and scope escape fail before effect, an independent observer finds
+an orphan left by a crashing worker, exact local rollback removes reversible
+effects, and compensation preserves the history of an irreversible append.
+It also restores nine prospectively frozen state classes byte-exactly and
+propagates local cohort deletion across five declared storage surfaces.
+
+That result closes neither this minimum nor the chapter claim. The sandbox is
+not a model-serving system; its bytes are not live model or optimizer state;
+it has no natural tasks, operator, manual fallback, network partition,
+Byzantine service, cloud credential, third-party effect, or deployment
+attestation. It establishes that the exact local lifecycle can execute and
+recover under the named cases. It does not establish monitor quality, incident
+performance, safe degradation, usable fallback, complete effect discovery, or
+production recovery. Exact receipts and boundaries are in
+`docs/p5_effect_complete_reference_report.md`.
 
 ## Empirical argument-exit lane
 
@@ -942,7 +955,7 @@ adequacy nor operational safety by themselves.
 | Test | Purpose | Status |
 |---|---|---|
 | Governed operations control-contract suite | Mutate deployment/command identity, five authority dimensions, eleven declared state classes, external effects, freshness, verifier separation, emergency expiry, fallback, and authority requests. The authored safe-hold fixture and completed positive control establish record sensitivity only. | implemented; 18 rejecting mutations |
-| Effect-complete rollback runtime suite | Mutate model, optimizer, scheduler, random state, cache, memory, backup, credential, replica, descendant, and external-effect state in a multi-process service and verify observed restoration or disposition. | planned; not run |
+| Effect-complete rollback runtime suite | Mutate model, optimizer, scheduler, random state, cache, memory, backup, credential, replica, descendant, and external-effect state in a multi-process service and verify observed restoration or disposition. | bounded local P5 subset implemented by `python3 scripts/validate_p5_effect_complete_reference.py`: 8/8 deterministic cases with real subprocesses, nine local state classes, observed filesystem effects, exact rollback or compensation, and local descendant deletion; no model-serving service, replica/network partition, natural incident, operator, or deployment |
 | Incident command game-day matrix | Inject ambiguous, compound, detector-degrading, authority-conflicting, dependency-correlated, and operator-overload failures; measure detection, command resolution, containment, recovery, harm, latency, burden, and cost. Claim-bearing use requires the competence dossier, positive controls, matched baselines, sealed outcomes, independent evaluation, uncertainty, and fair rescue specified above. | planned; not run |
 | Graceful-degradation dominance test | Compare qualified degraded routes with stop-only, generic-SRE, full shutdown/manual work, and normal operation on safe useful throughput, reversibility, workload, false blocking, and governance cost. Retain a degraded route only where it improves the joint frontier; availability alone is not success. | planned; not run |
 | T4 joined-trace integration check | Once T4 exists, verify that one natural happy path and one blocked or rollback path preserve identity, command, effect, outcome, residual, and credit boundaries. The trace is a prospective case and integration check, not a held-out campaign or support transition. | blocked; T4 does not yet exist |

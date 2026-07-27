@@ -1,0 +1,234 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "P5 effect-complete local reference result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "result_id",
+    "system_id",
+    "case_design_sha256",
+    "case_count",
+    "passed_case_count",
+    "process_roles",
+    "durable_ledger",
+    "effect_accounting",
+    "full_state",
+    "deletion_axes",
+    "receipts",
+    "support_state_effect",
+    "release_effect",
+    "maximum_inference",
+    "non_claims"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "asi_stack.effect_complete_reference_result.v1"
+    },
+    "result_id": {
+      "const": "p5-effect-complete-reference-local-2026-07-27"
+    },
+    "system_id": {
+      "const": "p5-effect-complete-reference-local-001"
+    },
+    "case_design_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "case_count": {
+      "const": 8
+    },
+    "passed_case_count": {
+      "const": 8
+    },
+    "process_roles": {
+      "type": "array",
+      "minItems": 4,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "authority",
+          "executor",
+          "observer",
+          "recovery",
+          "custodian"
+        ]
+      }
+    },
+    "durable_ledger": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "backend",
+        "journal_mode",
+        "event_count",
+        "unique_event_identity",
+        "concurrent_writer_process_count"
+      ],
+      "properties": {
+        "backend": {
+          "const": "sqlite"
+        },
+        "journal_mode": {
+          "const": "wal"
+        },
+        "event_count": {
+          "type": "integer",
+          "minimum": 19
+        },
+        "unique_event_identity": {
+          "const": true
+        },
+        "concurrent_writer_process_count": {
+          "const": 2
+        }
+      }
+    },
+    "effect_accounting": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "authorized_effects",
+        "independently_observed_effects",
+        "duplicate_effects_prevented",
+        "revoked_or_out_of_scope_attempts_rejected",
+        "crash_recoveries",
+        "exact_rollbacks",
+        "compensated_irreversible_effects",
+        "open_unowned_effects"
+      ],
+      "properties": {
+        "authorized_effects": {
+          "const": 4
+        },
+        "independently_observed_effects": {
+          "const": 4
+        },
+        "duplicate_effects_prevented": {
+          "const": 1
+        },
+        "revoked_or_out_of_scope_attempts_rejected": {
+          "const": 2
+        },
+        "crash_recoveries": {
+          "const": 1
+        },
+        "exact_rollbacks": {
+          "const": 2
+        },
+        "compensated_irreversible_effects": {
+          "const": 1
+        },
+        "open_unowned_effects": {
+          "const": 0
+        }
+      }
+    },
+    "full_state": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "checkpoint_selected_before_mutation",
+        "state_class_count",
+        "restored_state_class_count",
+        "byte_exact_restore"
+      ],
+      "properties": {
+        "checkpoint_selected_before_mutation": {
+          "const": true
+        },
+        "state_class_count": {
+          "const": 9
+        },
+        "restored_state_class_count": {
+          "const": 9
+        },
+        "byte_exact_restore": {
+          "const": true
+        }
+      }
+    },
+    "deletion_axes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "local_storage_surfaces_declared",
+        "local_storage_surfaces_removed",
+        "behavioral_change",
+        "causal_influence_reduction",
+        "privacy_leakage_reduction",
+        "external_storage_erasure"
+      ],
+      "properties": {
+        "local_storage_surfaces_declared": {
+          "const": 5
+        },
+        "local_storage_surfaces_removed": {
+          "const": 5
+        },
+        "behavioral_change": {
+          "const": "not_tested"
+        },
+        "causal_influence_reduction": {
+          "const": "not_tested"
+        },
+        "privacy_leakage_reduction": {
+          "const": "not_tested"
+        },
+        "external_storage_erasure": {
+          "const": "not_established"
+        }
+      }
+    },
+    "receipts": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "case_id",
+          "passed",
+          "terminal_disposition",
+          "observations"
+        ],
+        "properties": {
+          "case_id": {
+            "type": "string"
+          },
+          "passed": {
+            "const": true
+          },
+          "terminal_disposition": {
+            "type": "string"
+          },
+          "observations": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "support_state_effect": {
+      "const": "none"
+    },
+    "release_effect": {
+      "const": "none"
+    },
+    "maximum_inference": {
+      "type": "string",
+      "minLength": 80
+    },
+    "non_claims": {
+      "type": "array",
+      "minItems": 4,
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

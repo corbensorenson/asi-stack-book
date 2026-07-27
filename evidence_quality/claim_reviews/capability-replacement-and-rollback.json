@@ -5,7 +5,7 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/capability-replacement-and-rollback.qmd",
     "structured_atoms_reviewed": 59,
-    "prose_candidates_adjudicated": 49,
+    "prose_candidates_adjudicated": 50,
     "unowned_material_claims": 0,
     "review_note": "Reviewed the complete chapter, all twelve assigned source notes and mapping limits, the public replacement schema and 5-valid/9-invalid corpus, selected readiness/residual checks, the six-step 2-valid/3-invalid transaction trace and four identity-sequence controls, the 2-valid/6-invalid intent bridge, all 37 Lean theorem declarations grouped under six manifest targets, the post-v2.1 15-by-24-surface update result and six checkpoint disagreements, the 32/36 rollback and 2/36 useful-release negative result, the later 12/12 nine-surface harness restoration with twelve omitted-surface controls and zero model candidates, every manifest atom, every prose scanner candidate, diagrams, test plan, source crosswalk, summary, and handoff. The sweep replaced generic evidence-gated swapping with a prospective state-and-effect transaction; separated field identity from change class, checkpoint authority from hindsight selection, artifact restoration from state/service/behavior/privacy/rights/external recovery, canary exposure from commit, monitor silence from success, rollback from compensation, local digest equality from production transfer, and safety gates from useful improvement; promoted full inventory and effect ownership, isolated exposure, evaluator/monitor dependencies, outcome delay, partial commit, descendant closure, irreversibility, negative/null outcome retention, joint useful-safety-cost-recovery evaluation, and strong comparator/ablation/transfer requirements into manifest ownership; and preserved zero chapter-core support effect."
   },
@@ -801,14 +801,20 @@
       "state": "nonmaterial_explanation",
       "rationale": "Exact schema-validator result scope."
     },
-    "capability-replacement-and-rollback.prose.f150774bf700": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Exact combined evidence non-claim."
-    },
-    "capability-replacement-and-rollback.prose.86b7ba801e7e": {
+    "capability-replacement-and-rollback.prose.a9e38c50eb7d": {
       "state": "duplicate_of_atom",
-      "rationale": "Next real-candidate program is owned by the beyond-SOTA target.",
-      "target_atom_id": "capability-replacement-and-rollback.beyond_sota.001"
+      "rationale": "The separation of exact reversal, compensation, and residual history refines the minimum executable replacement transaction.",
+      "target_atom_id": "capability-replacement-and-rollback.minimum.001"
+    },
+    "capability-replacement-and-rollback.prose.cc796d2279ca": {
+      "state": "duplicate_of_atom",
+      "rationale": "The next real-state campaign remains owned by the minimum executable replacement transaction.",
+      "target_atom_id": "capability-replacement-and-rollback.minimum.001"
+    },
+    "capability-replacement-and-rollback.prose.f349b79a4a39": {
+      "state": "duplicate_of_atom",
+      "rationale": "Explicit evidence ceiling for the local P5 slice refines the minimum implementation without creating a separate claim.",
+      "target_atom_id": "capability-replacement-and-rollback.minimum.001"
     },
     "capability-replacement-and-rollback.prose.8d73181d6654": {
       "state": "duplicate_of_atom",
@@ -871,6 +877,35 @@
     }
   },
   "prose_review_lineage": [
+    {
+      "retired_candidate_id": "capability-replacement-and-rollback.prose.86b7ba801e7e",
+      "retired_source": "chapters/capability-replacement-and-rollback.qmd:324",
+      "retired_sentence": "The next executable slice should replace synthetic transaction content with one real stateful, side-effecting field: frozen prior and candidate runtimes; exact dependency/environment locks; a prospective checkpoint; independently implemented evaluator and monitor; delayed outcomes; state/cache/data migration; one downstream consumer and descendant; an irreversible-effect control; rehearsed reverse migration and compensation; and strong conventional rollout baselines.",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "Next real-candidate program is owned by the beyond-SOTA target.",
+        "target_atom_id": "capability-replacement-and-rollback.beyond_sota.001"
+      },
+      "retirement_reason": "The sentence was narrowed after the bounded local P5 state-and-effect lifecycle was implemented; the replacement preserves the real-candidate residual while removing work that is no longer pending.",
+      "replacement_candidate_ids": [
+        "capability-replacement-and-rollback.prose.cc796d2279ca"
+      ],
+      "recorded_on": "2026-07-27"
+    },
+    {
+      "retired_candidate_id": "capability-replacement-and-rollback.prose.f150774bf700",
+      "retired_source": "chapters/capability-replacement-and-rollback.qmd:316",
+      "retired_sentence": "They do not establish complete semantic or external-effect recovery, monitor/evaluator validity, production replacement, useful governed throughput, acceptable cost, heterogeneous transfer, or chapter-core support.",
+      "preserved_disposition": {
+        "state": "nonmaterial_explanation",
+        "rationale": "Exact combined evidence non-claim."
+      },
+      "retirement_reason": "The sentence was refreshed to bind the new local P5 record while preserving the same evidence ceiling.",
+      "replacement_candidate_ids": [
+        "capability-replacement-and-rollback.prose.f349b79a4a39"
+      ],
+      "recorded_on": "2026-07-27"
+    },
     {
       "retired_candidate_id": "capability-replacement-and-rollback.prose.07b26a7532b3",
       "retired_source": "chapters/capability-replacement-and-rollback.qmd:255",

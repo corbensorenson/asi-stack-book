@@ -1,0 +1,131 @@
+{
+  "schema_version": "asi_stack.effect_complete_reference_result.v1",
+  "result_id": "p5-effect-complete-reference-local-2026-07-27",
+  "system_id": "p5-effect-complete-reference-local-001",
+  "case_design_sha256": "818dd004e14787216842227e93ee1cb76f20ec39d595d1e6b354ec88ee236e7b",
+  "case_count": 8,
+  "passed_case_count": 8,
+  "process_roles": [
+    "authority",
+    "executor",
+    "observer",
+    "recovery",
+    "custodian"
+  ],
+  "durable_ledger": {
+    "backend": "sqlite",
+    "journal_mode": "wal",
+    "event_count": 19,
+    "unique_event_identity": true,
+    "concurrent_writer_process_count": 2
+  },
+  "effect_accounting": {
+    "authorized_effects": 4,
+    "independently_observed_effects": 4,
+    "duplicate_effects_prevented": 1,
+    "revoked_or_out_of_scope_attempts_rejected": 2,
+    "crash_recoveries": 1,
+    "exact_rollbacks": 2,
+    "compensated_irreversible_effects": 1,
+    "open_unowned_effects": 0
+  },
+  "full_state": {
+    "checkpoint_selected_before_mutation": true,
+    "state_class_count": 9,
+    "restored_state_class_count": 9,
+    "byte_exact_restore": true
+  },
+  "deletion_axes": {
+    "local_storage_surfaces_declared": 5,
+    "local_storage_surfaces_removed": 5,
+    "behavioral_change": "not_tested",
+    "causal_influence_reduction": "not_tested",
+    "privacy_leakage_reduction": "not_tested",
+    "external_storage_erasure": "not_established"
+  },
+  "receipts": [
+    {
+      "case_id": "nominal-observe-exact-rollback",
+      "passed": true,
+      "terminal_disposition": "exact_rollback",
+      "observations": [
+        "effect digest observed by separate role",
+        "pre-effect absence restored"
+      ]
+    },
+    {
+      "case_id": "concurrent-idempotent-effect",
+      "passed": true,
+      "terminal_disposition": "acknowledged",
+      "observations": [
+        "two subprocess writers",
+        "one materialization and one duplicate prevention"
+      ]
+    },
+    {
+      "case_id": "revocation-defeats-stale-cache",
+      "passed": true,
+      "terminal_disposition": "rejected_revoked",
+      "observations": [
+        "stale epoch rejected",
+        "no external effect created"
+      ]
+    },
+    {
+      "case_id": "crash-after-effect-before-receipt",
+      "passed": true,
+      "terminal_disposition": "crash_recovered_exactly",
+      "observations": [
+        "worker exited before commit receipt",
+        "observer found orphan",
+        "recovery restored absence"
+      ]
+    },
+    {
+      "case_id": "irreversible-effect-compensation",
+      "passed": true,
+      "terminal_disposition": "compensated_with_irreversible_history",
+      "observations": [
+        "original history remains",
+        "compensation recorded",
+        "residual explicitly classified"
+      ]
+    },
+    {
+      "case_id": "prospective-full-state-checkpoint",
+      "passed": true,
+      "terminal_disposition": "full_state_restored",
+      "observations": [
+        "checkpoint authority selected before mutation",
+        "nine state classes restored byte-exactly"
+      ]
+    },
+    {
+      "case_id": "descendant-aware-deletion",
+      "passed": true,
+      "terminal_disposition": "local_storage_surfaces_removed",
+      "observations": [
+        "five declared local surfaces removed",
+        "behavioral, influence, privacy, and external-erasure axes left unclaimed"
+      ]
+    },
+    {
+      "case_id": "scope-escape-rejected",
+      "passed": true,
+      "terminal_disposition": "rejected_scope_mismatch",
+      "observations": [
+        "case-bound scope mismatch rejected",
+        "no external effect created"
+      ]
+    }
+  ],
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "maximum_inference": "Eight deterministic local cases show that this exact Python/SQLite/filesystem reference slice can coordinate real subprocesses, case-scoped authority, observation, idempotency, revocation, crash recovery, exact local restoration, compensation, full-state custody, and descendant-aware local deletion under the frozen case design.",
+  "non_claims": [
+    "The cases use a contained local filesystem and SQLite ledger, not a deployed AI service or open network.",
+    "The state payloads are deterministic bytes, not trained model, optimizer, scheduler, or production cache state.",
+    "Local observation and deletion do not establish complete external-effect discovery, causal influence removal, privacy repair, legal compliance, or storage erasure outside the sandbox.",
+    "Passing cases do not establish usefulness, production safety, transfer, SOTA, AGI, ASI, support promotion, or release authority."
+  ]
+}

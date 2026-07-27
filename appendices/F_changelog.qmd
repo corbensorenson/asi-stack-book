@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-07-27 — P5 local multi-process effect-complete reference
+
+- Added an eight-case P5 runtime slice with real subprocesses, a durable
+  SQLite/WAL ledger, scoped authority, revocation, concurrent idempotency,
+  independent filesystem observation, crash-orphan recovery, exact local
+  rollback, irreversible-effect compensation, prospective checkpoint
+  authority, nine-class full-state restoration, and five-surface
+  descendant-aware local deletion.
+- Added a fresh-replay validator, result schema, bounded report, and deep
+  registry unit. The validator reruns the whole slice in a new temporary
+  directory and requires exact equality with the tracked receipt.
+- Integrated the result into Integrated Reference Architecture, Governed
+  Operations, Capability Replacement and Rollback, and Data Engines,
+  Continual Learning, and Unlearning. P5/M5 now read `in progress`.
+- Kept the result at its earned scope: deterministic local state is not live
+  model state; filesystem observation is not complete effect discovery; local
+  deletion is not influence removal, privacy repair, or external erasure; no
+  natural-task, support, release, deployment, AGI, or ASI claim follows.
+
 ## 2026-07-27 — Theseus optimizer launch-contract calibration
 
 - Corrected the remaining optimizer-matched shard's prospective launch floor

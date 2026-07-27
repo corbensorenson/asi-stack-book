@@ -1,0 +1,57 @@
+{
+  "schema_version": "asi_stack.effect_complete_reference_cases.v1",
+  "system_id": "p5-effect-complete-reference-local-001",
+  "design_owner": "P5-effect-complete-reference",
+  "source_case": "T4-governed-operations-joined-authority-to-effect-trace",
+  "state_classes": [
+    "model",
+    "optimizer",
+    "scheduler",
+    "rng",
+    "cache",
+    "backup",
+    "derived_artifacts",
+    "descendants",
+    "credentials"
+  ],
+  "cases": [
+    {
+      "id": "nominal-observe-exact-rollback",
+      "obligation": "An authorized reversible effect is independently observed and restored exactly."
+    },
+    {
+      "id": "concurrent-idempotent-effect",
+      "obligation": "Concurrent workers sharing one idempotency key create one effect and one duplicate rejection."
+    },
+    {
+      "id": "revocation-defeats-stale-cache",
+      "obligation": "A cached credential from a revoked epoch cannot create an effect."
+    },
+    {
+      "id": "crash-after-effect-before-receipt",
+      "obligation": "Recovery discovers and removes an effect left by a worker crash before ledger acknowledgement."
+    },
+    {
+      "id": "irreversible-effect-compensation",
+      "obligation": "An append-only effect is compensated and retained as an explicit irreversible history residual."
+    },
+    {
+      "id": "prospective-full-state-checkpoint",
+      "obligation": "Nine declared state classes restore byte-exactly from a checkpoint selected before mutation."
+    },
+    {
+      "id": "descendant-aware-deletion",
+      "obligation": "Primary, cache, backup, derived, and descendant storage copies are removed while behavioral, influence, and privacy claims remain separate."
+    },
+    {
+      "id": "scope-escape-rejected",
+      "obligation": "A valid credential cannot write outside its exact case-bound effect scope."
+    }
+  ],
+  "non_claims": [
+    "The cases use a contained local filesystem and SQLite ledger, not a deployed AI service or open network.",
+    "The state payloads are deterministic bytes, not trained model, optimizer, scheduler, or production cache state.",
+    "Local observation and deletion do not establish complete external-effect discovery, causal influence removal, privacy repair, legal compliance, or storage erasure outside the sandbox.",
+    "Passing cases do not establish usefulness, production safety, transfer, SOTA, AGI, ASI, support promotion, or release authority."
+  ]
+}

@@ -2102,6 +2102,28 @@ Use the P2 competence standard for any performance or safety conclusion drawn
 from the reference system. Schema conformance and clean traces are necessary
 mechanism evidence, not proof of usefulness or real-world governance efficacy.
 
+### P5 local multi-process vertical-slice checkpoint — 2026-07-27
+
+The first bounded P5 runtime slice is terminal at its exact local scope.
+`scripts/run_p5_effect_complete_reference.py` executes eight frozen cases
+through real subprocesses, a durable SQLite/WAL ledger, and contained
+filesystem effects. It records one concurrent idempotency race, two rejected
+authority attempts, four independently observed effects, two exact local
+rollbacks including one crash-orphan recovery, one compensated irreversible
+history, a prospectively selected nine-class full-state checkpoint and
+byte-exact restore, and a five-surface descendant-aware local deletion.
+`scripts/validate_p5_effect_complete_reference.py` reruns the system in a new
+temporary directory and requires exact result equality.
+
+This moves P5 and M5 from `pending` to `in_progress`; it does not complete
+either. The next competent slice must bind the lifecycle to a frozen service
+with actual model and learning state, restart and partition faults,
+independently observed external effects, supply-chain and model-weight custody,
+and commit-bound deployment attestation. The local result establishes no
+natural-task usefulness, production safety, complete effect discovery,
+distributed or Byzantine correctness, causal unlearning, privacy repair,
+external erasure, support transition, or release authority.
+
 ## P6 — Evidence, instrument, and source renewal
 
 Run a dated primary-source and official-comparator sweep at least quarterly and
@@ -3229,7 +3251,7 @@ lies.
 | M2 — Competent natural empirical result | in progress | A high-value natural, non-authored campaign passes every competence gate and ends with a bounded positive, negative, or inconclusive disposition. |
 | M3 — Reproduction and transfer | pending | Any broadened result has independent reproduction and two prospectively selected materially different transfer settings. |
 | M4 — Semantic formal depth | completed | All six frozen clusters are terminal across 25 modules with exact dispositions, modeled state, assumptions, countermodels, consumers, mutations, semantic separations, and maximum-inference ceilings. No aggregate theorem count or finite record grants empirical support. |
-| M5 — Effect-complete reference | pending | Multi-process authority-to-effect, rollback/residual, full-state, and deletion behavior passes adversarial and recovery tests. |
+| M5 — Effect-complete reference | in progress | The first eight-case local multi-process slice now exercises durable authority-to-effect, revocation, idempotency, crash recovery, rollback/compensation, nine-class full-state restore, and five-surface local deletion. Actual model/service state, partition faults, open-world effects, weight custody, and deployment attestation remain. |
 | M6 — Renewal and structural completeness | completed | The first tranche, A1/A2, Round 18 breadth packet, ten-owner no-deferral transaction, four-owner taxonomy reconciliation, 2026-07-25 full-coverage audit, T1D six-chapter maturity/source/reader packet, Precision Contract integration, R16-A six-chapter/thirty-atom organization packet, W3 84-chapter inheritance guard, and R16-B 84-chapter reader-freshness derivative are terminal at their declared argument or organization scope. The manifest is 84; no identified manuscript idea is deferred. Optimizer, heterogeneous-memory, and inference-cache manuscript depth is in the book; executable evidence residuals remain ordinary Phase 2 work. |
 | M7 — Reader/publication disposition | in progress | PDF, EPUB, and DOCX in `reader-2026-07-18` remain immutable published artifacts with exact receipts. The current 84-chapter source-fresh virtual QMD derivative is terminal; HTML, PDF, EPUB, DOCX, and audio are explicitly deferred pending format-specific QA rather than fabricated. Close M7 after public surfaces synchronize and the exact final `main`/Pages attestation succeeds; local source freshness does not imply a new external reader release. |
 | M8 — Successor continuity | pending | Every open item has a terminal disposition and the next exact authority is active. |

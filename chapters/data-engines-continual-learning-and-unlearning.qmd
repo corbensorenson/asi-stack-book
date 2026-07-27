@@ -4,7 +4,7 @@ chapter_id: "data-engines-continual-learning-and-unlearning"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.3 manuscript draft"
-last_updated: "2026-07-16"
+last_updated: "2026-07-27"
 primary_sources:
   - "ext_bourtoule_machine_unlearning_2021"
   - "ext_shumailov_model_collapse_2023"
@@ -28,12 +28,12 @@ open_evidence_gaps:
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
 | Manuscript maturity | v0.3 manuscript draft |
-| Last updated | 2026-07-16 |
+| Last updated | 2026-07-27 |
 | Primary source records | 11 assigned, 11 passage-reviewed mappings, including SISA, model-collapse and accumulation work, Theseus, W3C PROV-O, Croissant, MUSE, OpenUnlearning, the benchmark critique, QCSA, and V-JEPA 2 |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source loading state | Four reviewed source notes: three primary-paper records and one pinned Theseus implementation-reference record. No source code, dataset, training run, or reported result was imported. |
-| Test state | The receipt probe validates four intake routes. P3 trained small PyTorch policies over three seeds and five arms and restored 24 declared surfaces in 15/15 transactions. M7 preserved two instrument failures, then ran one adequate 870-record, five-seed, seven-arm structured-fusion campaign: deletion-aware retraining reached 0.9767 deletion accuracy, approximate unlearning moved 0.0122 toward that comparator and reduced one membership-attack advantage by 0.0251, 35/35 transactions restored the declared 24-surface digest, and local deletion/lineage receipts retained remote, storage, legal, and external-descendant residuals. The core remains `argument`; this is not language-model unlearning, privacy, complete erasure, transfer, or production evidence. |
+| Test state | The receipt probe validates four intake routes. P3 and M7 preserve their bounded update/unlearning results and failures. The P5 local slice now restores nine prospectively frozen state classes byte-exactly and removes one cohort from five declared local storage surfaces while recording behavior, influence, and privacy as untested and external erasure as unestablished. The core remains `argument`; this is not language-model unlearning, causal influence removal, privacy repair, complete erasure, transfer, or production evidence. |
 
 ## Drafting guardrail
 
@@ -606,6 +606,18 @@ The result proves authored custody and transition consequences only: every
 right, check, inventory, rollback receipt, deletion status, propagation claim,
 monitor, and invalidation remains trusted input, and exact rollback remains
 limited to prospectively declared local surfaces.
+
+The P5 multi-process reference adds one executable deletion and recovery
+projection without promoting the chapter claim. It selects checkpoint
+authority before mutation and restores nine local state classes byte-exactly,
+including model, optimizer, scheduler, RNG, cache, backup, derived-artifact,
+descendant, and credential payloads. A separate custodian removes a declared
+cohort from primary, cache, backup, derived, and descendant storage surfaces.
+The result deliberately records behavioral change, causal influence reduction,
+and privacy leakage reduction as `not_tested`, and external storage erasure as
+`not_established`. This is the claim-axis separation the lease requires, but
+the payloads are deterministic local bytes rather than learned state and the
+sandbox cannot observe external copies.
 
 ## Mature Research Target
 

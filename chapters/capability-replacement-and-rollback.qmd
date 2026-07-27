@@ -4,7 +4,7 @@ chapter_id: "capability-replacement-and-rollback"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.3 proof-program manuscript"
-last_updated: "2026-07-16"
+last_updated: "2026-07-27"
 primary_sources:
   - "scf"
   - "rmi"
@@ -37,14 +37,14 @@ open_evidence_gaps:
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
 | Manuscript maturity | v0.3 proof-program manuscript |
-| Last updated | 2026-07-14 |
+| Last updated | 2026-07-27 |
 | Primary source records | `scf`, `rmi`, `benchmaxxing`, `cognitive_loop_closure`, `talos`, `moecot`, `ext_corrigibility_2015`, `ext_argo_rollouts_docs`, `ext_feature_toggles_fowler`, `ext_google_cloud_mlops_cd`, `ext_kubernetes_deployments_docs`, `ext_txfs_2018` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `scf`, `rmi`, `benchmaxxing`; supporting: `cognitive_loop_closure`, `talos`; external variants: corrigibility, Argo Rollouts, feature toggles, Google Cloud MLOps, Kubernetes Deployments, TxFS; connector/recovery: `moecot` |
 | Source loading state | all twelve source notes reviewed and manifest-mapped; local raw passages reviewed for `scf`, `rmi`, `benchmaxxing`, `cognitive_loop_closure`, and `talos`; `moecot` mapped from its durable source note; six external comparators mapped through reviewed notes |
 | Source mapping review | 12/12 assigned sources have bounded mappings; no source reproduction or support promotion follows. |
-| Test state | synthetic: 5/9 transaction records, selected readiness/residual gates, six-step 2-valid/3-invalid transaction trace plus 4 sequence controls, 2-valid/6-invalid intent bridge; formal: 37 theorem declarations under 6 targets; bounded outcomes: 15/15 P3 and 35/35 M7 exact local 24-surface rollback transactions, 32/36 attack-control rollback with 2/36 useful release, and 12/12 nine-surface harness probes with all model calls failing before candidate creation. M7 also preserves retained research evidence, an unacknowledged remote replica, and unerased descendants, so no general, semantic, privacy, external-effect, or production recovery claim follows. |
+| Test state | synthetic and formal baselines remain unchanged. Bounded outcomes include 15/15 P3 and 35/35 M7 exact local 24-surface rollback transactions, 32/36 attack-control rollback with 2/36 useful release, and 12/12 nine-surface harness probes with all model calls failing before candidate creation. The P5 local slice adds 8/8 real-subprocess cases spanning observed effects, crash recovery, exact rollback, compensation, revocation, full-state restore, and descendant deletion. No useful replacement, semantic recovery, real model-state recovery, privacy repair, external erasure, or production transfer follows. |
 
 ## Drafting guardrail
 
@@ -279,9 +279,18 @@ Third, `AsiStackProofs.Replacement` contains 37 theorem declarations under six m
 
 Fourth, the repository has bounded outcome evidence and negative results. The post-v2.1 update campaign prospectively tracked 24 model, optimizer, scheduler, RNG, cache, checkpoint, backup, and descendant surfaces. All 15 seed-arm transactions returned that inventory to its exact pre-update digest, and six arms exposed a disagreement between prospectively authorized and final checkpoints. But no eligible challenger reached the registered utility-gain threshold. A separate governed-work campaign achieved exact rollback in only 32/36 attack controls and useful release in only 2/36 cases, below both gates. The later governance-tax harness restored nine declared surfaces in 12/12 local probes and rejected twelve omitted-surface controls, but every paired model call failed before a task candidate existed.
 
-The supported conclusion is narrow: prospective inventories can make local rollback equality testable, and the current programs expose both inventory success and usefulness/recovery failure. They do not establish complete semantic or external-effect recovery, monitor/evaluator validity, production replacement, useful governed throughput, acceptable cost, heterogeneous transfer, or chapter-core support.
+Fifth, the P5 multi-process slice binds recovery to observed effects rather
+than to state records alone. Eight local cases include one independently
+observed exact rollback, one recovered crash orphan, one compensated
+append-only history, two rejected authority attempts, one concurrent
+idempotency race, one nine-class prospectively authorized restore, and one
+five-surface descendant deletion. The harness uses real subprocesses and a
+durable ledger, but its state is deterministic local data rather than a trained
+model or production service.
 
-The next executable slice should replace synthetic transaction content with one real stateful, side-effecting field: frozen prior and candidate runtimes; exact dependency/environment locks; a prospective checkpoint; independently implemented evaluator and monitor; delayed outcomes; state/cache/data migration; one downstream consumer and descendant; an irreversible-effect control; rehearsed reverse migration and compensation; and strong conventional rollout baselines. It must report usefulness, unsafe release, rollback coverage, recovery time, privacy/rights effects, cost, and residuals jointly.
+The supported conclusion is narrow: prospective inventories can make local rollback equality testable, and the current programs expose both inventory success and usefulness/recovery failure. The new slice also shows that exact reversal, compensation, and residual history can remain separate in one executable local lifecycle. These records do not establish complete semantic or external-effect recovery, monitor/evaluator validity, production replacement, useful governed throughput, acceptable cost, heterogeneous transfer, or chapter-core support.
+
+The next executable slice should replace the deterministic state payloads with one real stateful, side-effecting field: frozen prior and candidate runtimes; exact dependency/environment locks; a prospective checkpoint over actual learning state; independently implemented evaluator and monitor; delayed outcomes; state/cache/data migration; one downstream consumer and descendant; an irreversible-effect control; rehearsed reverse migration and compensation; and strong conventional rollout baselines. It must report usefulness, unsafe release, rollback coverage, recovery time, privacy/rights effects, cost, and residuals jointly.
 
 ## Mature Research Target
 

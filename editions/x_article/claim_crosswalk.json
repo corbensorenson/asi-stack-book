@@ -99,7 +99,7 @@
       "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
       "support_state": "argument",
       "evidence_lane": "formal_finite_model_plus_observed_local_effect_trace",
-      "artifacts": ["chapters/runtime-adapters-tool-permissions-and-human-approval.qmd", "experiments/p3_integrated_slices/results/2026-07-16-local.json"],
+      "artifacts": ["chapters/runtime-adapters-tool-permissions-and-human-approval.qmd", "experiments/p3_integrated_slices/results/2026-07-16-local.json", "experiments/effect_complete_reference/results/2026-07-27-local.json"],
       "book_anchor": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd#core-claim",
       "boundary": "Local trace coverage does not prove production authorization, distributed execution, or hidden-effect exclusion."
     },
@@ -110,7 +110,7 @@
       "chapter_id": "capability-replacement-and-rollback",
       "support_state": "argument",
       "evidence_lane": "formal_lifecycle_model_plus_local_effect_trace",
-      "artifacts": ["chapters/capability-replacement-and-rollback.qmd", "experiments/p3_integrated_slices/results/2026-07-16-local.json"],
+      "artifacts": ["chapters/capability-replacement-and-rollback.qmd", "experiments/p3_integrated_slices/results/2026-07-16-local.json", "experiments/effect_complete_reference/results/2026-07-27-local.json", "docs/p5_effect_complete_reference_report.md"],
       "book_anchor": "chapters/capability-replacement-and-rollback.qmd#core-claim",
       "boundary": "No effect-complete rollback across arbitrary external descendants is established."
     },
@@ -165,7 +165,7 @@
       "chapter_id": "data-engines-continual-learning-and-unlearning",
       "support_state": "argument_narrowed_after_full_attempt",
       "evidence_lane": "multi_seed_controlled_local_update_unlearning_campaign",
-      "artifacts": ["chapters/data-engines-continual-learning-and-unlearning.qmd", "experiments/p4_update_unlearning_v3/results/confirmatory_result.json", "evidence_transitions/post_v2_3/update_unlearning_claim_narrowed_after_full_attempt.json"],
+      "artifacts": ["chapters/data-engines-continual-learning-and-unlearning.qmd", "experiments/p4_update_unlearning_v3/results/confirmatory_result.json", "evidence_transitions/post_v2_3/update_unlearning_claim_narrowed_after_full_attempt.json", "experiments/effect_complete_reference/results/2026-07-27-local.json"],
       "book_anchor": "chapters/data-engines-continual-learning-and-unlearning.qmd#core-claim",
       "boundary": "The broad unlearning interpretation was narrowed; total storage erasure and external-descendant closure were false."
     },
@@ -231,7 +231,7 @@
       "chapter_id": "integrated-reference-architecture",
       "support_state": "argument_with_bounded_local_prototype_evidence",
       "evidence_lane": "integrated_local_executable_trace_and_mutation_testing",
-      "artifacts": ["chapters/integrated-reference-architecture.qmd", "experiments/p3_integrated_slices/results/2026-07-16-local.json", "docs/p3_integrated_executable_slices.md"],
+      "artifacts": ["chapters/integrated-reference-architecture.qmd", "experiments/p3_integrated_slices/results/2026-07-16-local.json", "docs/p3_integrated_executable_slices.md", "experiments/effect_complete_reference/results/2026-07-27-local.json", "docs/p5_effect_complete_reference_report.md"],
       "book_anchor": "chapters/integrated-reference-architecture.qmd#core-claim",
       "boundary": "The local slice is not distributed, production-secure, generally capable, or transfer evidence."
     },
@@ -253,7 +253,7 @@
       "chapter_id": "open-research-agenda-and-bibliography-plan",
       "support_state": "argument_and_open_research_residual",
       "evidence_lane": "terminal_gap_ledger_and_external_reproduction_attempt",
-      "artifacts": ["chapters/open-research-agenda-and-bibliography-plan.qmd", "experiments/p6_external_reproduction/results/terminal_result.json", "docs/claim_family_terminal_coverage.md"],
+      "artifacts": ["chapters/open-research-agenda-and-bibliography-plan.qmd", "experiments/p6_external_reproduction/results/terminal_result.json", "docs/claim_family_terminal_coverage.md", "experiments/effect_complete_reference/results/2026-07-27-local.json", "docs/p5_effect_complete_reference_report.md"],
       "book_anchor": "chapters/open-research-agenda-and-bibliography-plan.qmd#core-claim",
       "boundary": "These are open obligations, not evidence that the missing capabilities will be achieved."
     },

@@ -4,7 +4,7 @@ chapter_id: "integrated-reference-architecture"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.3 manuscript draft"
-last_updated: "2026-07-22"
+last_updated: "2026-07-27"
 primary_sources:
   - "viea"
   - "scf"
@@ -54,13 +54,13 @@ open_evidence_gaps:
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
 | Manuscript maturity | v0.3 manuscript draft |
-| Last updated | 2026-07-22 |
+| Last updated | 2026-07-27 |
 | Primary source records | 36 assigned records with 32 exact passage-reviewed mappings spanning the stack sources, local implementation lineage, external comparators, and a typed relational-complex integration packet |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `viea`, `scf`, `vcm_public`, `planforge`, `talos`, `spinoza`, `octopus_router`, `rmi`, `benchmaxxing`; supporting: `alignment_field`, `cgs`, `cognitive_loop_closure`, `project_theseus_whitepaper`, `theseus_plan_compiler`, `theseus_self_evolution_system`, `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer`, `reflexive_router_whitepaper`, `relational_dimension_compiler`; connector/recovery: `moecot`, `vcm_editable` |
 | Source loading state | source notes: `viea`, `scf`, `vcm_public`, `planforge`, `talos`, `spinoza`, `octopus_router`, `rmi`, `benchmaxxing`, `alignment_field`, `cgs`, `cognitive_loop_closure`, `moecot`, `vcm_editable`, `project_theseus_whitepaper`, `theseus_plan_compiler`, `theseus_self_evolution_system`, `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer`; raw cache: `viea`, `scf`, `vcm_public`, `planforge`, `talos`, `spinoza`, `octopus_router`, `rmi`, `benchmaxxing`, `alignment_field`, `cgs`, `cognitive_loop_closure`; connector/recovery: `moecot`, `vcm_editable` |
-| Test state | `reference_trace_record.valid.json` passes repository-level protocol fixture validation with trace state, execution boundary, parent artifacts, authority/evidence/residual deltas, promotion blockers, source refs, support-state effect, and non-claims; `python3 scripts/validate_reference_trace.py` checks 2 valid and 6 expected-invalid deterministic reference-trace fixtures; `AsiStackProofs.ReferenceArchitecture` implements finite handoff-artifact and governance-gate trace predicates. No integrated runtime trace, live artifact-continuity audit, deployed authority stop-condition checker, or runtime replay exists. |
+| Test state | Existing finite trace, schema-refinement, and logical-concurrency consumers remain bounded. The P5 slice now runs 8/8 local cases through real subprocesses, a durable SQLite/WAL ledger, concurrent idempotency, revocation/scope rejection, effect observation, crash recovery, exact rollback or compensation, nine-class full-state restore, and five-surface local deletion. No deployed multi-service trace, live model state, network partition, open-world effect discovery, natural workload, or support promotion exists. |
 
 ## Drafting guardrail
 
@@ -891,6 +891,34 @@ acknowledgement, compensation, and residualization. Twelve additional semantic
 mutations reject. This closes the finite logical-time consumer placeholder, not
 distributed transport retry, partition recovery, scheduler fairness, deployed
 adapter enforcement, or complete effect discovery.
+
+### P5 local multi-process reference slice
+
+The P5 reference now crosses one implementation boundary that the logical-time
+consumer could not cross. A frozen eight-case harness runs real subprocesses
+against a durable SQLite/WAL ledger and a contained filesystem effect boundary.
+Two executor processes race on one idempotency key and materialize one effect;
+a separate observer reads effect digests; revoked and out-of-scope credentials
+create no effect; recovery discovers and removes an orphan left by a worker
+that crashed before recording its commit; and an append-only effect is
+compensated without pretending its history disappeared.
+
+The same slice freezes checkpoint authority before mutation and restores nine
+declared state classes—model, optimizer, scheduler, RNG, cache, backup,
+derived artifacts, descendants, and credentials—byte-exactly. A separate
+custodian removes one cohort from five declared local storage surfaces while
+leaving behavioral change, causal influence reduction, privacy leakage
+reduction, and external storage erasure explicitly unestablished. Fresh
+validation reruns the whole system in a new temporary directory and requires
+the result to match the tracked receipt exactly.
+
+This is bounded implementation evidence for the exact local reference slice,
+not whole-stack or deployment evidence. SQLite on one host does not establish
+partition or Byzantine behavior; deterministic state bytes are not live model
+or learning state; filesystem observation is not complete effect discovery;
+and local deletion is not causal unlearning, privacy repair, or erasure outside
+the sandbox. The owning result and scope are recorded in
+`docs/p5_effect_complete_reference_report.md`.
 
 When the trace kernel works, a future implementation could be evaluated by trace quality before anyone argues about intelligence. If the run cannot show parentage, authority, evidence, residuals, and stops, it has not instantiated this architecture. The integration trace kernel remains a target architecture until real trace harnesses, blocked-path tests, artifact-continuity audits, authority stop-condition checks, and accepted evidence transitions show that the layers compose under pressure.
 

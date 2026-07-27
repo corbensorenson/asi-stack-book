@@ -1122,9 +1122,9 @@
           "current_copied_diagram_and_test_spread": 0,
           "repaired_chapter_count": 10,
           "baseline_prose_candidate_count": 3444,
-          "current_prose_candidate_count": 3383,
-          "retired_inherited_prose_candidate_count": 244,
-          "added_domain_specific_prose_candidate_count": 183,
+          "current_prose_candidate_count": 3386,
+          "retired_inherited_prose_candidate_count": 246,
+          "added_domain_specific_prose_candidate_count": 188,
           "baseline_structured_atom_count": 4067,
           "current_structured_atom_count": 4058,
           "pending_prose_candidate_count": 0,
@@ -2343,7 +2343,7 @@
           "$ref": "#/$defs/inProgressP4"
         },
         {
-          "$ref": "#/$defs/pendingPriority"
+          "$ref": "#/$defs/inProgressP5"
         },
         {
           "$ref": "#/$defs/inProgressP6"
@@ -2378,7 +2378,7 @@
           "$ref": "#/$defs/inProgressM4"
         },
         {
-          "$ref": "#/$defs/pendingMilestone"
+          "$ref": "#/$defs/inProgressM5"
         },
         {
           "$ref": "#/$defs/inProgressM6"
@@ -3051,6 +3051,23 @@
         }
       ]
     },
+    "inProgressP5": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/row"
+        },
+        {
+          "properties": {
+            "id": {
+              "const": "P5"
+            },
+            "state": {
+              "const": "in_progress"
+            }
+          }
+        }
+      ]
+    },
     "inProgressP7": {
       "allOf": [
         {
@@ -3182,6 +3199,23 @@
             },
             "state": {
               "const": "pending"
+            }
+          }
+        }
+      ]
+    },
+    "inProgressM5": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/row"
+        },
+        {
+          "properties": {
+            "id": {
+              "const": "M5"
+            },
+            "state": {
+              "const": "in_progress"
             }
           }
         }

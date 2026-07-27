@@ -236,6 +236,15 @@ reject several boundary violations. They are source-anchored local fixtures,
 not a distributed transaction system, production authorization service, or
 proof that hidden effects cannot occur.
 
+The first P5 runtime slice now goes one step further. Eight frozen cases use
+real subprocesses and a durable local ledger to test concurrent idempotency,
+revocation, exact scope, independent effect observation, crash-orphan recovery,
+exact local rollback, irreversible compensation, nine-class state restoration,
+and descendant-aware local deletion. The result is still a contained local
+system: deterministic bytes are not live model state, filesystem observation
+is not complete effect discovery, and local deletion is not causal unlearning,
+privacy repair, or erasure outside the sandbox.
+
 ## 8. Rollback is a result, not a button
 
 AI governance often assumes that bad changes can simply be rolled back. That
@@ -596,12 +605,14 @@ implementations of strong comparators, adequate hardware, preregistered
 protocols, and external artifact replay. Until then, “state of the art” is a
 question, not a label.
 
-The architecture also needs effect-complete systems work: real identity and
-credential handling, durable ledgers, concurrent transactions, revocation,
-deletion across descendants, rollback verification, incident response, and
-hardware-rooted custody. The models need real capability qualification under
-distribution shift. The evidence system needs calibrated evaluators that are
-not merely correlated with the models they judge. <!-- claim: XA-23 -->
+The architecture now has a bounded local effect-complete vertical slice, but
+still needs the hard systems work: bind the lifecycle to a frozen service with
+actual model and learning state, process restart and network-partition faults,
+independently observed external effects, real identity and credential handling,
+supply-chain and model-weight custody, operators, and commit-bound deployment
+attestation. The models need real capability qualification under distribution
+shift. The evidence system needs calibrated evaluators that are not merely
+correlated with the models they judge. <!-- claim: XA-23 -->
 
 For learning, the project needs full-state update lineage and stronger causal
 unlearning tests. For routing, it needs larger ambiguous natural-task corpora,

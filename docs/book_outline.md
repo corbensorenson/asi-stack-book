@@ -1895,6 +1895,11 @@ Draft deliverables:
 - Implemented Codex test: Capability replacement trace probe, via `python3 scripts/validate_capability_replacement_trace_probe.py` over `experiments/capability_replacement_trace/results/2026-07-02-local.json`; the deterministic trace records a baseline implementation, non-default canary, monitor-triggered rollback, rollback dry run, residuals, expected-invalid controls for authority widening, failed regression, and missing rollback, an identity-sequence bridge, and no support-state promotion.
 - Implemented Codex test: Capability replacement identity sequence bridge, via `python3 scripts/validate_capability_replacement_trace_probe.py` over `experiments/capability_replacement_trace/results/2026-07-02-local.json`; the trace preserves one field identity across canary and rollback, blocks default promotion after monitor failure, restores the prior implementation, preserves the authority envelope, keeps a residual owner, rejects four sequence controls for identity drift, monitor-failed defaulting, rollback-prior mismatch, and missing residual owner, and records no support-state promotion. This is a deterministic synthetic sequence only, not deployed replacement, production rollback, regression-suite quality, or monitor-quality evidence.
 - Implemented Codex test: Intent-governed replacement bridge, via `python3 scripts/validate_intent_governed_replacement_bridge.py` over `experiments/intent_governed_replacement_bridge/results/2026-07-02-local.json`; the synthetic bridge records two valid bridge traces and six expected-invalid controls for command authority into replacement admission, default-without-approval blocking, authority-widening rejection, stop-condition-erasure rejection, rollback-owner requirement, and support-promotion overclaim. This is no natural-language parser, deployed dispatcher, approval-service, replacement execution, production rollback, monitor-quality, regression-suite-quality, support-state-promotion, or evidence-transition claim.
+- Implemented P5 local multi-process slice: one eight-case real-subprocess
+  harness separates exact restoration, crash-orphan recovery, irreversible
+  compensation, revocation/scope rejection, full-state custody, and descendant
+  deletion. Deterministic local bytes do not establish useful replacement,
+  semantic recovery, real model-state recovery, or production transfer.
 - Implemented proof-backed check: finite replacement transaction and lifecycle route proof for missing artifacts, identity mismatch, authority expansion, evaluator capture, stale evidence, failed regression floors, missing canary scope, failed canaries, missing monitor windows, monitor incidents, missing rollback handles, missing rollback receipts, failed rollback dry runs, unowned irreversible effects, missing residual owners, deprecation/retirement gaps, and missing non-claim boundaries; this is structured-record coverage only, not deployed replacement execution.
 - Next real slice: one stateful side-effecting field with locked prior/candidate runtimes, prospective checkpoint, independent evaluator and delayed monitor, migration, one downstream consumer and descendant, irreversible control, rehearsed recovery/compensation, strong rollout baselines, joint usefulness/unsafe-release/recovery/privacy-rights/cost metrics, ablations, replication, and transfer.
 
@@ -6694,6 +6699,11 @@ Draft deliverables:
   data, credentials, replicas, descendants, backups, and external effects;
   inject ambiguous, compound, correlated, and detector-degrading incidents;
   compare graceful degradation with shutdown and ordinary operation.
+- Implemented P5 local multi-process slice: the bounded reference exercises
+  durable authority-to-effect custody, revocation, idempotent concurrency,
+  effect observation, crash recovery, exact rollback, compensation, full-state
+  restore, and descendant-aware local deletion. It lacks a natural service,
+  operators, manual fallback, network partitions, and deployment attestation.
 - Planned argument-exit campaign: fault-injected reference service, strong SRE
   and incident-response baselines, preregistered severity and recovery rules,
   full denominators, operator load, useful throughput, residual harm, latency,
@@ -6933,6 +6943,10 @@ Draft deliverables:
   load data, train a model, detect semantic contamination, or verify deletion.
 - Data-admission lifecycle probe result:
   `experiments/data_admission_receipt_probe/results/2026-07-10-local.json`.
+- Implemented P5 projection: prospectively restore nine declared local state
+  classes and remove one cohort from five local storage surfaces while
+  recording behavioral change, causal influence reduction, and privacy
+  reduction as untested and external storage erasure as unestablished.
 - Completed preregistered P3 local campaign over three seeds, five arms, 24
   declared state surfaces, prospective checkpoint authority, and 15 exact
   rollback transactions; its update disposition is `no_change` and its
@@ -7290,6 +7304,12 @@ Draft deliverables:
 - Implemented Codex test: Actual command replay trace as a local Resource flagship validator replay with command output digest, tracked artifact bundle, and blocked-path stop-condition attachment only; no live runtime integration, external replay, model-quality result, benchmark result, or support-state promotion exists.
 - Implemented Codex test: Governed cross-stack trace invariants test derives authority monotonicity, revocation-before-effect with tie precedence, evidence-transition integrity, residual conservation, causal order, and four mutation controls from the executed local repository-change log; finite local trace only.
 - Implemented Codex test: Integrated cross-layer trace consumer replays eighteen source-anchored finite cases across approved completion, pre-effect quarantine, exact rollback, and failed-rollback quarantine; four paths and thirty-five events are accepted, fourteen invalid paths and fifteen mutations are rejected, and support effect remains none. This is not a checked live-schema encoder, distributed replay, deployment, or support promotion.
+- Implemented P5 local multi-process slice: eight frozen cases now run through
+  real subprocesses, a durable SQLite/WAL ledger, scoped authority, concurrent
+  idempotency, crash recovery, exact local rollback or compensation, a
+  nine-class prospective full-state restore, and five-surface local deletion.
+  This is bounded local implementation evidence, not deployed whole-stack,
+  usefulness, safety, unlearning, privacy, or support evidence.
 - Exact current minimum: one schema/fixture, three valid and six invalid trace
   fixtures, one thirteen-artifact validator replay, one blocked lineage plus
   eight mutations, a nine-scenario/eight-attack repository slice with baseline
@@ -7297,7 +7317,8 @@ Draft deliverables:
   invariant extraction with four mutations, an eighteen-case/fifteen-mutation
   integrated transition consumer, a nine-scenario/twenty-mutation checked
   governed-result schema refinement, a sixteen-case/twelve-mutation independent
-  concurrent effect-ledger consumer, and the stronger partial Lean trace model; no model
+  concurrent effect-ledger consumer, an eight-case real-subprocess P5 local
+  effect/recovery slice, and the stronger partial Lean trace model; no model
   planning/generation, deployed services, production enforcement, independent
   evaluator, natural workload, reproduction, transfer, deployment, or core
   effect exists.
