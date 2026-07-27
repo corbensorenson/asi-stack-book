@@ -1030,12 +1030,12 @@ def errors(data: dict) -> list[str]:
         out.append("shared quality critical path must preserve historical T0, successor T0A, then T1 through T6")
     t0a_currentness = quality_program.get("t0a_currentness", {})
     expected_t0a_currentness = {
-        "source_commit": "24955417161e40587bb9eec7b091618d96e370ba",
+        "source_commit": "653401de663ad1d089be7d8d25903a113632e997",
         "source_branch": "main",
         "published_on_origin_main": True,
         "historical_artifact_count": 123,
-        "historical_unchanged_artifact_count": 102,
-        "historical_changed_artifact_count": 21,
+        "historical_unchanged_artifact_count": 99,
+        "historical_changed_artifact_count": 24,
         "historical_missing_artifact_count": 0,
         "cpu_governance_replay_passed_count": 7,
         "cpu_governance_replay_requested_count": 7,
@@ -1047,12 +1047,18 @@ def errors(data: dict) -> list[str]:
         "remaining_shard_initial_reclaimable_available_mib": 5216.328,
         "remaining_shard_minimum_reclaimable_available_mib": 3686.562,
         "remaining_shard_fault_reclaimable_available_mib": 3708.391,
+        "remaining_shard_attempt_launch_reserve_mib": 5120.0,
         "remaining_shard_live_reserve_mib": 4096.0,
         "remaining_shard_maximum_inferred_unified_memory_mib": 1529.766,
         "remaining_shard_maximum_process_rss_mib": 231.75,
         "remaining_shard_maximum_swapout_growth_mib": 0.0,
+        "launch_calibration_qualification_authority": False,
+        "launch_calibration_minimum_safety_margin_mib": 512.0,
+        "launch_calibration_required_floor_mib": 6137.766,
+        "prospective_launch_reserve_mib": 6144.0,
+        "launch_calibration_rejecting_controls_passed": True,
         "replacement_package_current": False,
-        "next_legal_action": "run only the unchanged guarded optimizer-matched shard in a quiescent host window that preserves its launch and live reserves, then publish the replacement content-addressed package",
+        "next_legal_action": "run only the same guarded optimizer-matched workload when the corrected 6144 MiB launch reserve is naturally available while preserving its 4096 MiB live reserve, then publish the replacement content-addressed package",
         "protected_outcomes_opened": 0,
         "support_state_effect": "none",
         "release_effect": "none",
@@ -1490,9 +1496,9 @@ def errors(data: dict) -> list[str]:
         or template_guard.get("current_copied_diagram_and_test_spread") != 0
         or template_guard.get("repaired_chapter_count") != 10
         or template_guard.get("baseline_prose_candidate_count") != 3444
-        or template_guard.get("current_prose_candidate_count") != 3382
+        or template_guard.get("current_prose_candidate_count") != 3383
         or template_guard.get("retired_inherited_prose_candidate_count") != 244
-        or template_guard.get("added_domain_specific_prose_candidate_count") != 182
+        or template_guard.get("added_domain_specific_prose_candidate_count") != 183
         or template_guard.get("baseline_structured_atom_count") != 4067
         or template_guard.get("current_structured_atom_count") != 4058
         or template_guard.get("pending_prose_candidate_count") != 0
@@ -1521,7 +1527,7 @@ def errors(data: dict) -> list[str]:
         or w3.get("measurements", {}).get("editorial_narrative", {}).get("baseline", {}).get("distinct_repeated_12_grams") != 812
         or w3.get("measurements", {}).get("editorial_narrative", {}).get("current", {}).get("distinct_repeated_12_grams") != 0
         or w3.get("claim_review_reconciliation", {}).get("retired_inherited_prose_candidate_count") != 244
-        or w3.get("claim_review_reconciliation", {}).get("added_domain_specific_prose_candidate_count") != 182
+        or w3.get("claim_review_reconciliation", {}).get("added_domain_specific_prose_candidate_count") != 183
         or w3.get("claim_review_reconciliation", {}).get("current_pending_prose_candidate_count") != 0
         or w3.get("meaning_custody", {}).get("chapter_core_support_movements") != 0
     ):

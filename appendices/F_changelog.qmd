@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-07-27 — Theseus optimizer launch-contract calibration
+
+- Corrected the remaining optimizer-matched shard's prospective launch floor
+  from 5,120 MiB to 6,144 MiB. The bound derives from the 4,096 MiB live
+  reserve plus the prior attempt's 1,529.766 MiB maximum inferred
+  unified-memory demand plus a 512 MiB safety margin: 6,137.766 MiB, rounded
+  up to 6,144 MiB.
+- Bound the stopped receipt as calibration authority only. Machine validation
+  now rejects both lowering the prospective floor and treating that failed
+  receipt as qualification.
+- Published clean Theseus `main` at `653401de`; 7/7 CPU/governance replays
+  remain green and 13/14 accelerator receipts remain valid. The historical
+  123-artifact package now compares as 99 unchanged, 24 changed, and zero
+  missing.
+- The corrected host reserve was not naturally available, so the shard was not
+  retried. No training, held-out outcome, optimizer result, architecture
+  counterevidence, support transition, release transition, or capability claim
+  was opened.
+
 ## 2026-07-27 — Theseus T0A guarded live-reserve stop
 
 - Retried only the unchanged optimizer-matched accelerator shard after the

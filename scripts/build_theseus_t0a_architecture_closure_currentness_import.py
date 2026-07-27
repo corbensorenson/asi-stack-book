@@ -20,15 +20,15 @@ DOC = ROOT / "docs/theseus_t0a_architecture_closure_currentness_import.md"
 
 def build() -> dict:
     return {
-        "schema_version": "asi_stack.theseus_t0a_architecture_closure_currentness_import.v3",
-        "import_id": "theseus-t0a-architecture-closure-currentness-2026-07-27-24955417",
-        "observed_utc": "2026-07-27T12:22:52Z",
+        "schema_version": "asi_stack.theseus_t0a_architecture_closure_currentness_import.v4",
+        "import_id": "theseus-t0a-architecture-closure-currentness-2026-07-27-653401de",
+        "observed_utc": "2026-07-27T12:52:14Z",
         "source_authority": {
             "project": "Project Theseus / Theseus-Hive",
             "owner": "Corben Sorenson",
             "source_kind": "local_author_owned_implementation_reference",
             "branch": "main",
-            "commit": "24955417161e40587bb9eec7b091618d96e370ba",
+            "commit": "653401de663ad1d089be7d8d25903a113632e997",
             "worktree_clean": True,
             "ahead_of_origin_main_commit_count": 0,
             "published_on_origin_main": True,
@@ -44,8 +44,18 @@ def build() -> dict:
             },
             {
                 "path": "configs/pretraining_architecture_freeze.json",
-                "sha256": "27bc33c30cdce630912b53eb543160ac2bfc8636780aa6280b6166c8aa06e57e",
-                "bytes": 26935,
+                "sha256": "357c459aff0b3000828abc24750649ebecb0f7dd3a7a08dbcddd95f7ce7b17dc",
+                "bytes": 27593,
+            },
+            {
+                "path": "scripts/pretraining_architecture_freeze.py",
+                "sha256": "645944d5746bd9687db6e28d2236df7ba8dca620f80dcccf95664cba53435453",
+                "bytes": 35502,
+            },
+            {
+                "path": "tests/test_pretraining_architecture_freeze.py",
+                "sha256": "684d910bc558b8d32b7354c6c441e4ae0cf249a5420caecd74c5e6c520c0d18f",
+                "bytes": 27601,
             },
             {
                 "path": "reports/pretraining_architecture_freeze_package.json",
@@ -119,8 +129,8 @@ def build() -> dict:
             },
             {
                 "path": "roadmap.md",
-                "sha256": "6fdaa33f1e63551f376917c867ed63efb434caf1a211da624a1fb9d181d11425",
-                "bytes": 243460,
+                "sha256": "1cc9b6115fa19f68d15aa2cf4b6566610e093271c8281093fcb14af8ce4199ba",
+                "bytes": 244072,
             },
         ],
         "historical_t0_package": {
@@ -129,8 +139,8 @@ def build() -> dict:
             "trigger_state": "GREEN",
             "disposition": "architecture_frozen_training_not_started",
             "artifact_count": 123,
-            "unchanged_artifact_count": 102,
-            "changed_artifact_count": 21,
+            "unchanged_artifact_count": 99,
+            "changed_artifact_count": 24,
             "missing_artifact_count": 0,
             "current_for_source_commit": False,
             "role": "immutable_historical_control_only",
@@ -159,13 +169,19 @@ def build() -> dict:
             "invalid_accelerator_initial_reclaimable_available_mib": 5216.328,
             "invalid_accelerator_minimum_reclaimable_available_mib": 3686.562,
             "invalid_accelerator_fault_reclaimable_available_mib": 3708.391,
+            "invalid_accelerator_attempt_launch_reserve_mib": 5120.0,
             "invalid_accelerator_live_reserve_mib": 4096.0,
             "invalid_accelerator_maximum_inferred_unified_memory_mib": 1529.766,
             "invalid_accelerator_maximum_process_rss_mib": 231.75,
             "invalid_accelerator_maximum_swapout_growth_mib": 0.0,
+            "launch_calibration_qualification_authority": False,
+            "launch_calibration_minimum_safety_margin_mib": 512.0,
+            "launch_calibration_required_floor_mib": 6137.766,
+            "prospective_launch_reserve_mib": 6144.0,
+            "launch_calibration_rejecting_controls_passed": True,
             "architecture_package_current": False,
             "remaining_blockers": [
-                "run the unchanged guarded optimizer-matched accelerator replay in a quiescent host window that preserves both the 5120 MiB launch reserve and the 4096 MiB live reserve",
+                "run the same guarded optimizer-matched workload only when the corrected prospective 6144 MiB launch reserve is naturally available while preserving the 4096 MiB live reserve",
                 "publish a replacement content-addressed architecture-freeze package binding the current artifacts",
             ],
             "post_t0a_pretraining_prerequisite": "rerun the broader pre-training readiness gate against the current 84-chapter ASI Stack after the replacement package exists",
@@ -181,7 +197,13 @@ def build() -> dict:
                 "command": "python3 scripts/pretraining_architecture_freeze.py --run-accelerator-shards --accelerator-shard optimizer_matched_adequacy",
                 "exit_code": 2,
                 "result": "child_started_then_host_memory_live_reserve_breached",
-                "interpretation": "the 5120 MiB launch reserve passed, but the external guard stopped the child after reclaimable memory fell below the 4096 MiB live reserve; maximum inferred unified memory was 1529.766 MiB, maximum process RSS was 231.75 MiB, and swapout growth was zero",
+                "interpretation": "the former 5120 MiB launch reserve passed, but the external guard stopped the child after reclaimable memory fell below the 4096 MiB live reserve; maximum inferred unified memory was 1529.766 MiB, maximum process RSS was 231.75 MiB, and swapout growth was zero",
+            },
+            {
+                "command": "python3 -m pytest -q tests/test_pretraining_architecture_freeze.py tests/test_host_resource_safety.py",
+                "exit_code": 0,
+                "result": "36_passed_including_launch_calibration_rejecting_controls",
+                "interpretation": "the prospective 6144 MiB launch floor is machine-bound to the 4096 MiB live reserve, 1529.766 MiB observed peak, and 512 MiB margin; lowering the floor or granting the failed receipt qualification authority is rejected",
             },
             {
                 "command": "python3 scripts/theseus_project_registry.py --gate",
@@ -192,8 +214,8 @@ def build() -> dict:
         ],
         "book_disposition": {
             "prior_state": "T0A_active_before_guarded_replay_attempt",
-            "new_state": "T0A_active_with_7_of_7_cpu_replays_green_13_of_14_accelerator_receipts_valid_latest_shard_stopped_by_live_memory_guard_and_replacement_freeze_unpublished",
-            "next_legal_action": "run only the unchanged guarded optimizer-matched shard in a quiescent host window that preserves its launch and live reserves, then publish the replacement package",
+            "new_state": "T0A_active_with_7_of_7_cpu_replays_green_13_of_14_accelerator_receipts_valid_latest_shard_stop_bound_as_nonqualifying_launch_calibration_and_replacement_freeze_unpublished",
+            "next_legal_action": "run only the same guarded optimizer-matched workload when the corrected 6144 MiB launch reserve is naturally available while preserving its 4096 MiB live reserve, then publish the replacement package",
             "protected_outcomes_opened": 0,
             "support_state_effect": "none",
             "release_effect": "none",
@@ -222,6 +244,8 @@ def build() -> dict:
             "accelerator_denominator_shrink",
             "invalid_accelerator_receipt_erasure",
             "accelerator_child_start_erasure",
+            "prospective_launch_floor_regression",
+            "failed_receipt_qualification_authority_elevation",
             "protected_outcome_invention",
             "private_payload_copy",
             "support_promotion",
@@ -232,6 +256,7 @@ def build() -> dict:
             "A GREEN historical package and GREEN factorized bakeoff do not make the changed current source tree training-ready.",
             "The import does not establish model quality, useful behavior, training success, optimizer superiority, safety, deployment, transfer, AGI, ASI, or SOTA.",
             "The runtime memory-reserve stop is not negative evidence about the optimizer or architecture.",
+            "The measured launch calibration is a prospective resource-safety contract, not a successful replay or optimizer result.",
             "Seven CPU/governance passes and thirteen valid accelerator receipts do not make a fourteen-receipt freeze complete.",
             "No chapter-core or non-core support state changes.",
         ],
@@ -254,8 +279,8 @@ def validate(actual: dict, expected: dict) -> list[str]:
     old = actual.get("historical_t0_package", {})
     if (
         old.get("artifact_count") != 123
-        or old.get("unchanged_artifact_count") != 102
-        or old.get("changed_artifact_count") != 21
+        or old.get("unchanged_artifact_count") != 99
+        or old.get("changed_artifact_count") != 24
         or old.get("missing_artifact_count") != 0
         or old.get("current_for_source_commit") is not False
         or old.get("role") != "immutable_historical_control_only"
@@ -277,20 +302,28 @@ def validate(actual: dict, expected: dict) -> list[str]:
         or current.get("invalid_accelerator_shard_id") != "optimizer_matched_adequacy"
         or current.get("invalid_accelerator_child_started") is not True
         or current.get("invalid_accelerator_fault") != "host_memory_reserve_breached"
+        or current.get("invalid_accelerator_attempt_launch_reserve_mib") != 5120.0
         or current.get("invalid_accelerator_live_reserve_mib") != 4096.0
         or current.get("invalid_accelerator_maximum_swapout_growth_mib") != 0.0
+        or current.get("launch_calibration_qualification_authority") is not False
+        or current.get("launch_calibration_minimum_safety_margin_mib") != 512.0
+        or current.get("launch_calibration_required_floor_mib") != 6137.766
+        or current.get("prospective_launch_reserve_mib") != 6144.0
+        or current.get("launch_calibration_rejecting_controls_passed") is not True
         or current.get("architecture_package_current") is not False
         or len(current.get("remaining_blockers", [])) != 2
     ):
         errors.append("T0/T0A/T1 dependency state drifted")
     receipts = actual.get("observation_receipts", [])
     if (
-        len(receipts) != 3
+        len(receipts) != 4
         or receipts[0].get("result")
         != "seven_cpu_governance_replays_passed_then_freeze_refused_for_one_invalid_accelerator_receipt"
         or receipts[1].get("result") != "child_started_then_host_memory_live_reserve_breached"
-        or receipts[2].get("result") != "GREEN_zero_blockers"
-        or [row.get("exit_code") for row in receipts] != [1, 2, 0]
+        or receipts[2].get("result")
+        != "36_passed_including_launch_calibration_rejecting_controls"
+        or receipts[3].get("result") != "GREEN_zero_blockers"
+        or [row.get("exit_code") for row in receipts] != [1, 2, 0, 0]
     ):
         errors.append("fail-closed observation receipts drifted")
     disposition = actual.get("book_disposition", {})
@@ -303,7 +336,7 @@ def validate(actual: dict, expected: dict) -> list[str]:
     safety = actual.get("public_safety", {})
     if any(safety.get(key) for key in safety):
         errors.append("public-safety boundary failed")
-    if len(actual.get("negative_controls", [])) != 16:
+    if len(actual.get("negative_controls", [])) != 18:
         errors.append("negative-control denominator drifted")
     return errors
 
@@ -350,19 +383,22 @@ current content-addressed package.
 
 ## Remaining T0A work
 
-1. Run the unchanged guarded optimizer-matched accelerator shard in a quiescent
-   host window that preserves both its 5,120 MiB launch reserve and 4,096 MiB
-   live reserve.
+1. Run the same guarded optimizer-matched workload only when the corrected
+   6,144 MiB prospective launch reserve is naturally available while preserving
+   the 4,096 MiB live reserve.
 2. Publish the replacement content-addressed architecture-freeze package.
 
-The latest remaining-shard attempt passed its 5,120 MiB launch reserve and
-started. The external guard stopped it after reclaimable memory fell to
+The latest remaining-shard attempt passed its former 5,120 MiB launch reserve
+and started. The external guard stopped it after reclaimable memory fell to
 3,708.391 MiB, below the declared 4,096 MiB live reserve. Maximum inferred
 unified memory was 1,529.766 MiB, maximum process RSS was 231.75 MiB, and
 swapout growth was zero. This preserves host safety and is not optimizer or
-architecture counterevidence, but it also does not complete the replay. After
-`T0A`, the broader readiness gate must be rerun against the current 84-chapter
-ASI Stack before `T1`.
+architecture counterevidence, but it also does not complete the replay. The
+failed attempt now has calibration authority only: 4,096 + 1,529.766 + 512 =
+6,137.766 MiB, rounded up to a prospective 6,144 MiB launch floor. Rejecting
+controls prevent lowering that floor or treating the failed receipt as
+qualification. After `T0A`, the broader readiness gate must be rerun against
+the current 84-chapter ASI Stack before `T1`.
 
 ## Boundary
 
@@ -405,6 +441,8 @@ def main() -> None:
         ("accelerator denominator", lambda x: x["current_t0a_state"].__setitem__("accelerator_replay_requested_count", 13)),
         ("invalid accelerator erasure", lambda x: x["current_t0a_state"].__setitem__("accelerator_replay_invalid_count", 0)),
         ("child start erasure", lambda x: x["current_t0a_state"].__setitem__("invalid_accelerator_child_started", False)),
+        ("launch floor regression", lambda x: x["current_t0a_state"].__setitem__("prospective_launch_reserve_mib", 5120.0)),
+        ("calibration authority elevation", lambda x: x["current_t0a_state"].__setitem__("launch_calibration_qualification_authority", True)),
         ("outcome invention", lambda x: x["book_disposition"].__setitem__("protected_outcomes_opened", 1)),
         ("private copy", lambda x: x["public_safety"].__setitem__("private_payloads_copied", 1)),
         ("support promotion", lambda x: x["book_disposition"].__setitem__("support_state_effect", "prototype-backed")),
@@ -417,11 +455,15 @@ def main() -> None:
             errors.append(f"negative mutation accepted: {label}")
     if errors:
         raise SystemExit("Theseus T0A currentness import failed:\n - " + "\n - ".join(errors))
+    historical = expected["historical_t0_package"]
     print(
         "Theseus T0A currentness import passed: T0 complete, T0A active, "
-        "T1 blocked; 102/123 frozen artifacts unchanged, 21 changed; "
+        f"T1 blocked; {historical['unchanged_artifact_count']}/"
+        f"{historical['artifact_count']} frozen artifacts unchanged, "
+        f"{historical['changed_artifact_count']} changed; "
         "7/7 CPU replays green, 13/14 accelerator receipts valid, "
-        "zero outcomes/support/release movement, 16 rejecting controls."
+        f"zero outcomes/support/release movement, "
+        f"{len(expected['negative_controls'])} rejecting controls."
     )
 
 

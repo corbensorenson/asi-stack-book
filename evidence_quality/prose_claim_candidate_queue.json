@@ -3,11 +3,11 @@
   "scanner": "modal and outcome-bearing sentence cue scan; candidates require semantic adjudication",
   "summary": {
     "chapter_count": 64,
-    "candidate_count": 3382,
+    "candidate_count": 3383,
     "review_state_counts": {
       "duplicate_of_atom": 1640,
       "editorial_or_question": 59,
-      "historical_or_source_report": 295,
+      "historical_or_source_report": 296,
       "material_atom": 3,
       "nonmaterial_explanation": 1385
     }
@@ -60843,9 +60843,28 @@
       "target_atom_id": null
     },
     {
+      "candidate_id": "project-theseus-as-report-first-implementation-reference.prose.98cc71c66930",
+      "chapter_id": "project-theseus-as-report-first-implementation-reference",
+      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:89",
+      "sentence": "observed peak plus a 512 MiB safety margin requires 6,137.766 MiB, rounded up",
+      "cues": [
+        "requires"
+      ],
+      "review_state": "historical_or_source_report",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Reports the exact arithmetic used by the published Theseus resource-safety calibration. It has calibration authority only, is machine-bound in the currentness packet, and does not establish replay success, optimizer quality, architecture evidence, training readiness, or chapter-core support.",
+      "target_atom_id": null
+    },
+    {
       "candidate_id": "project-theseus-as-report-first-implementation-reference.prose.7c59f5270b33",
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:97",
+      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:101",
       "sentence": "Dashboards and summaries are especially risky because they can hide the run record that should carry the claim.",
       "cues": [
         "should"
@@ -60864,7 +60883,7 @@
     {
       "candidate_id": "project-theseus-as-report-first-implementation-reference.prose.379495dd2a3e",
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:103",
+      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:107",
       "sentence": "Model cards (`ext_model_cards_2019`), dataset datasheets (`ext_datasheets_datasets_2021`), AI service FactSheets (`ext_factsheets_ai_services_2019`), and the NeurIPS/JMLR reproducibility-program account (`ext_ml_reproducibility_program_2021`) show adjacent disciplines for structured disclosure, provenance, intended use, artifact review, and reproducibility checklists.",
       "cues": [
         "show"
@@ -60883,7 +60902,7 @@
     {
       "candidate_id": "project-theseus-as-report-first-implementation-reference.prose.650e4661d1a9",
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:107",
+      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:111",
       "sentence": "No GREEN gate, complete registry, module card, pointer row, metadata snapshot, parity manifest, command replay, fixture, theorem, or sanitized import alone establishes current runtime truth, clean live replay, model quality, capability, benchmark validity, safety, deployment, support, transfer, AGI, ASI, or SOTA.",
       "cues": [
         "establishes",
@@ -60903,7 +60922,7 @@
     {
       "candidate_id": "project-theseus-as-report-first-implementation-reference.prose.fad8370c5cbc",
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:128",
+      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:132",
       "sentence": "The Project Theseus reference should show the machine where the repository can show it safely.",
       "cues": [
         "should",
@@ -60923,7 +60942,7 @@
     {
       "candidate_id": "project-theseus-as-report-first-implementation-reference.prose.da2dcdef22a7",
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:138",
+      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:142",
       "sentence": "It does not prove clean live Project Theseus replay, deployed residual-ledger storage, deployed artifact-graph behavior, model quality, benchmark performance, generation speed, safety, alignment, transfer, deployment readiness, ASI, or chapter-core promotion.",
       "cues": [
         "prove",
@@ -60943,7 +60962,7 @@
     {
       "candidate_id": "project-theseus-as-report-first-implementation-reference.prose.ba4a4ada2eaa",
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:140",
+      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:144",
       "sentence": "It does not prove clean live Project Theseus replay, module capability, deployed Theseus behavior, model quality, benchmark performance, safety, alignment, transfer, deployment readiness, ASI, or chapter-core promotion.",
       "cues": [
         "prove",
@@ -60963,7 +60982,7 @@
     {
       "candidate_id": "project-theseus-as-report-first-implementation-reference.prose.ebae490729f5",
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:142",
+      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:146",
       "sentence": "It does not prove clean live Project Theseus replay, deployment, model quality, generation speed, self-evolution safety, alignment, transfer, deployment readiness, ASI, or chapter-core promotion.",
       "cues": [
         "prove",
@@ -60983,7 +61002,7 @@
     {
       "candidate_id": "project-theseus-as-report-first-implementation-reference.prose.9384f3a937a1",
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:144",
+      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:148",
       "sentence": "The accepted no-promotion decision `evidence_transitions/v1_x_measured/theseus_book_crosswalk_import_no_change.json` keeps `project-theseus-as-report-first-implementation-reference.book_to_theseus_crosswalk_pointer` at `argument`; it does not prove clean live Project Theseus replay, deployment, model quality, self-evolution safety, artifact truth for referenced rows, ASI, or chapter-core promotion.",
       "cues": [
         "prove"
@@ -61002,7 +61021,7 @@
     {
       "candidate_id": "project-theseus-as-report-first-implementation-reference.prose.66d7f37ed3f0",
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:146",
+      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:150",
       "sentence": "Its accepted no-promotion decision `evidence_transitions/v1_x_measured/theseus_work_board_import_no_change.json` keeps `project-theseus-as-report-first-implementation-reference.work_board_currentness_import` at `argument`; it is a stale snapshot and does not prove clean live Project Theseus replay, current board state, current dashboard state, deployment, model quality, unattended safety, self-evolution safety, ASI, support-state promotion, or chapter-core promotion.",
       "cues": [
         "prove"
@@ -61021,7 +61040,7 @@
     {
       "candidate_id": "project-theseus-as-report-first-implementation-reference.prose.ed17d520b5de",
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:148",
+      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:152",
       "sentence": "It does not prove clean live Project Theseus replay, current runtime state, route quality, private verifier quality, model quality, benchmark superiority, useful-solution-per-second improvement, safety, alignment, transfer, ASI, support-state promotion, or chapter-core promotion.",
       "cues": [
         "prove",
@@ -61041,7 +61060,7 @@
     {
       "candidate_id": "project-theseus-as-report-first-implementation-reference.prose.164d7ab8d75a",
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:150",
+      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:154",
       "sentence": "It does not prove full CUDA, MLX, or Metal parity, production scheduler routing, model promotion, benchmark performance, model quality, clean live Project Theseus replay, safety, alignment, transfer, ASI, support-state promotion, or chapter-core promotion.",
       "cues": [
         "prove",
@@ -61061,7 +61080,7 @@
     {
       "candidate_id": "project-theseus-as-report-first-implementation-reference.prose.335fdde74821",
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:152",
+      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:156",
       "sentence": "It does not establish Project Theseus state after that commit, whole-system replay, learned-model quality, benchmark superiority, training success, deployment readiness, distributed operation, safety, alignment, transfer, AGI, ASI, release readiness, support-state promotion, or chapter-core promotion.",
       "cues": [
         "transfer"
@@ -61080,7 +61099,7 @@
     {
       "candidate_id": "project-theseus-as-report-first-implementation-reference.prose.c801b0722373",
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:154",
+      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:158",
       "sentence": "They do not rerun Project Theseus as a whole, prove deployed Theseus runtime behavior, prove full accelerator parity, prove production scheduler routing, prove model promotion, prove generation speed, prove useful-solution-per-second improvement, prove model quality, prove routing quality, prove benchmark quality, prove safety, prove alignment, prove transfer, prove ASI, or create a chapter-core support-state transition.",
       "cues": [
         "prove",
@@ -61100,7 +61119,7 @@
     {
       "candidate_id": "project-theseus-as-report-first-implementation-reference.prose.a7c1725b58e6",
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:169",
+      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:173",
       "sentence": "The packet prevents this implementation story from becoming evidence laundering.",
       "cues": [
         "prevents"
@@ -61119,7 +61138,7 @@
     {
       "candidate_id": "project-theseus-as-report-first-implementation-reference.prose.3a61f13183b5",
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:171",
+      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:175",
       "sentence": "Each phase must leave a consumer-visible receipt rather than merely advancing a",
       "cues": [
         "must"
@@ -61138,7 +61157,7 @@
     {
       "candidate_id": "project-theseus-as-report-first-implementation-reference.prose.6b729f969e67",
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:199",
+      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:203",
       "sentence": "**What the Theseus report loop shows:** The Theseus loop is report-first: pressure becomes contracts, routes, work, reports, gate review, residuals, and the smallest next intervention.",
       "cues": [
         "shows"
@@ -61157,7 +61176,7 @@
     {
       "candidate_id": "project-theseus-as-report-first-implementation-reference.prose.a2c1ef339553",
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:199",
+      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:203",
       "sentence": "The Circle transfer lane can contribute structural receipts, but the claim-boundary ledger blocks quality, speed, context, or ASI claims without workload evidence.",
       "cues": [
         "transfer"
@@ -61176,7 +61195,7 @@
     {
       "candidate_id": "project-theseus-as-report-first-implementation-reference.prose.5d413543ff18",
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:201",
+      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:205",
       "sentence": "Operationally, the layer should produce artifacts that can be inspected without rerunning the whole cognition path.",
       "cues": [
         "should"
@@ -61195,7 +61214,7 @@
     {
       "candidate_id": "project-theseus-as-report-first-implementation-reference.prose.4a5db3ad1b87",
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:201",
+      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:205",
       "sentence": "A downstream reader should be able to distinguish source-note lineage, imported reports, reproduced runs, missing artifacts, and public non-claims.",
       "cues": [
         "should"
@@ -61214,7 +61233,7 @@
     {
       "candidate_id": "project-theseus-as-report-first-implementation-reference.prose.bf91a7b5f9ad",
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:203",
+      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:207",
       "sentence": "Imported reports can show what a local system recorded.",
       "cues": [
         "show"
@@ -61233,7 +61252,7 @@
     {
       "candidate_id": "project-theseus-as-report-first-implementation-reference.prose.e5de41d0f3f7",
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:203",
+      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:207",
       "sentence": "Public non-claims prevent readers and future agents from treating a local implementation reference as a general capability result.",
       "cues": [
         "prevent"
@@ -61252,7 +61271,7 @@
     {
       "candidate_id": "project-theseus-as-report-first-implementation-reference.prose.aaf1af3283c3",
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:240",
+      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:244",
       "sentence": "and evaluator access are matched wherever the estimand requires them.",
       "cues": [
         "requires"
@@ -61271,7 +61290,7 @@
     {
       "candidate_id": "project-theseus-as-report-first-implementation-reference.prose.127363d934bc",
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:244",
+      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:248",
       "sentence": "perform the ordinary task competently cannot turn its refusals into evidence",
       "cues": [
         "cannot"
@@ -61290,7 +61309,7 @@
     {
       "candidate_id": "project-theseus-as-report-first-implementation-reference.prose.b05297ec0959",
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:261",
+      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:265",
       "sentence": "this section freezes the research question, alternatives, attacks, and measures",
       "cues": [
         "measures"
@@ -61309,7 +61328,7 @@
     {
       "candidate_id": "project-theseus-as-report-first-implementation-reference.prose.b2e1f4b394bb",
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:283",
+      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:287",
       "sentence": "A report generator can supply a digest but cannot",
       "cues": [
         "cannot"
@@ -61328,7 +61347,7 @@
     {
       "candidate_id": "project-theseus-as-report-first-implementation-reference.prose.3f54ed4c4613",
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:284",
+      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:288",
       "sentence": "declare support; a readiness gate can block a route but cannot prove model",
       "cues": [
         "cannot",
@@ -61348,7 +61367,7 @@
     {
       "candidate_id": "project-theseus-as-report-first-implementation-reference.prose.a86a3d15dca0",
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:285",
+      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:289",
       "sentence": "quality; a publication surface can disclose an accepted packet but cannot make",
       "cues": [
         "cannot"
@@ -61367,7 +61386,7 @@
     {
       "candidate_id": "project-theseus-as-report-first-implementation-reference.prose.86d257302f95",
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:295",
+      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:299",
       "sentence": "Current-state claims require current artifacts or clean bounded replay; historical imports never become current runtime truth.",
       "cues": [
         "require"
@@ -61386,7 +61405,7 @@
     {
       "candidate_id": "project-theseus-as-report-first-implementation-reference.prose.7eef1da6cb5d",
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:299",
+      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:303",
       "sentence": "Sanitization proves only compliance with the declared public boundary.",
       "cues": [
         "proves"
@@ -61405,7 +61424,7 @@
     {
       "candidate_id": "project-theseus-as-report-first-implementation-reference.prose.7d827cf05d39",
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:304",
+      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:308",
       "sentence": "Gates are necessary only within their declared scope and never sufficient for chapter-core support.",
       "cues": [
         "necessary",
@@ -61425,7 +61444,7 @@
     {
       "candidate_id": "project-theseus-as-report-first-implementation-reference.prose.7d357dc3e270",
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:305",
+      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:309",
       "sentence": "Bundle shape requires goal and work contracts, plan artifact, gate, residual, lineage, replay state, review, publication boundary, and non-claims.",
       "cues": [
         "requires"
@@ -61444,7 +61463,7 @@
     {
       "candidate_id": "project-theseus-as-report-first-implementation-reference.prose.a5ed75d5a92c",
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:315",
+      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:319",
       "sentence": "Versioned invalidation must reach each consumer",
       "cues": [
         "must"
@@ -61463,7 +61482,7 @@
     {
       "candidate_id": "project-theseus-as-report-first-implementation-reference.prose.9c8868d68008",
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:332",
+      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:336",
       "sentence": "What is absent is equally important: no clean live whole-project replay, current work-board or runtime proof, model-quality or capability result, benchmark-validity or useful-throughput result, production routing, deployment, safety result, chapter-core support effect, independent reproduction, or transfer exists.",
       "cues": [
         "transfer"
@@ -61482,7 +61501,7 @@
     {
       "candidate_id": "project-theseus-as-report-first-implementation-reference.prose.25f8b784bd2a",
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:332",
+      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:336",
       "sentence": "The minimum implementation therefore proves that selected report facts can be represented, bounded, replayed in narrow cases, and prevented from overclaiming—not that Project Theseus works as a complete intelligent system.",
       "cues": [
         "proves"
@@ -61501,7 +61520,7 @@
     {
       "candidate_id": "project-theseus-as-report-first-implementation-reference.prose.676f91906f97",
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:336",
+      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:340",
       "sentence": "The mature end state must begin from a pinned, public-safe Project Theseus release or report bundle.",
       "cues": [
         "must"
@@ -61520,7 +61539,7 @@
     {
       "candidate_id": "project-theseus-as-report-first-implementation-reference.prose.62bdfac8b04f",
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:336",
+      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:340",
       "sentence": "Its argument-exit campaign requires an independent implementer to perform a clean-room replay from documented commands, environment definitions, dependency locks, input boundaries, artifact digests, current board and registry snapshots, permissions, and retained failures.",
       "cues": [
         "requires"
@@ -61539,7 +61558,7 @@
     {
       "candidate_id": "project-theseus-as-report-first-implementation-reference.prose.db367da48bf6",
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:336",
+      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:340",
       "sentence": "A successful replay must show the same exact revision before and after, distinguish generated outputs from source mutations, and preserve every negative, stale, missing, blocked, and no-promotion row.",
       "cues": [
         "must",
@@ -61559,7 +61578,7 @@
     {
       "candidate_id": "project-theseus-as-report-first-implementation-reference.prose.bb6dabc74d77",
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:338",
+      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:342",
       "sentence": "The campaign must then leave report-shape validation behind.",
       "cues": [
         "must"
@@ -61578,7 +61597,7 @@
     {
       "candidate_id": "project-theseus-as-report-first-implementation-reference.prose.2ee51d64f4d0",
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:338",
+      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:342",
       "sentence": "It must run natural workloads and matched ordinary baselines through actual model, routing, training, tool, benchmark, resource, operator, rollback, and self-evolution paths.",
       "cues": [
         "must"
@@ -61597,7 +61616,7 @@
     {
       "candidate_id": "project-theseus-as-report-first-implementation-reference.prose.b4fa8725416a",
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:338",
+      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:342",
       "sentence": "It must disclose teacher and external-inference use and jointly measure useful throughput, quality, unsafe or false promotion, false blocking, currentness, safety, failures, latency, compute, storage, review burden, recovery, residuals, and total cost.",
       "cues": [
         "measure",
@@ -61617,7 +61636,7 @@
     {
       "candidate_id": "project-theseus-as-report-first-implementation-reference.prose.5cfb5cd51ace",
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:338",
+      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:342",
       "sentence": "Named attacks must test staleness, digest and environment drift, private-payload pressure, gate and dashboard laundering, missing artifacts, benchmark headline pressure, negative-result retention, revocation, and correction propagation.",
       "cues": [
         "must"
@@ -61636,7 +61655,7 @@
     {
       "candidate_id": "project-theseus-as-report-first-implementation-reference.prose.64ba6a0f0bb1",
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:340",
+      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:344",
       "sentence": "Independent implementers, operators, artifact reviewers, evaluators, institutions, infrastructures, legal regimes, and transfer settings must reproduce positive, negative, null, narrowed, blocked, and refuted outcomes over time.",
       "cues": [
         "must",
@@ -61656,7 +61675,7 @@
     {
       "candidate_id": "project-theseus-as-report-first-implementation-reference.prose.0072866fc4d1",
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:340",
+      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:344",
       "sentence": "Until then, the Implementation-Reference Evidence Packet is not proof of current Theseus behavior, capability, model quality, benchmark superiority, safety, deployment, transfer, AGI, ASI, or SOTA.",
       "cues": [
         "transfer"
@@ -61675,7 +61694,7 @@
     {
       "candidate_id": "project-theseus-as-report-first-implementation-reference.prose.c3cd2622e2d7",
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:373",
+      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:377",
       "sentence": "Any stronger support movement would require a broader replay package, archived public task-bundle fixture, current work-board artifacts, environment notes, publication permissions, and a separate accepted evidence transition.",
       "cues": [
         "require"
@@ -61694,7 +61713,7 @@
     {
       "candidate_id": "project-theseus-as-report-first-implementation-reference.prose.a0c6bdf57a52",
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:385",
+      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:389",
       "sentence": "These formal hooks do not prove report truth, clean live replay, current runtime state, model quality, benchmark superiority, capability, safety, deployment, transfer, AGI, ASI, or chapter-core support.",
       "cues": [
         "prove",
@@ -61714,7 +61733,7 @@
     {
       "candidate_id": "project-theseus-as-report-first-implementation-reference.prose.ecd3e06068ad",
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:389",
+      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:393",
       "sentence": "This change reduces proof ceremony; it does not weaken a claimed theorem, promote support, or establish live Theseus behavior, capability, quality, safety, deployment, transfer, AGI, ASI, or SOTA.",
       "cues": [
         "reduces",
@@ -61734,7 +61753,7 @@
     {
       "candidate_id": "project-theseus-as-report-first-implementation-reference.prose.73252f45d3b2",
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:406",
+      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:410",
       "sentence": "The whitepaper supplies the RMI/report-first frame, the plan compiler supplies goal-to-contract machinery, the self-evolution source supplies intervention-gate discipline, the architecture gate supplies readiness boundaries plus static digest-verified architecture and generation-mode imports, the operator OS supplies work-board and node-control surfaces, and the Circle transfer source supplies structural fixture non-claims.",
       "cues": [
         "transfer"
@@ -61753,7 +61772,7 @@
     {
       "candidate_id": "project-theseus-as-report-first-implementation-reference.prose.2058397a7ae3",
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:421",
+      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:425",
       "sentence": "The first static architecture-gate report import shows how one readiness report can be mirrored safely, the static generation-mode import shows how a negative promotion decision can be mirrored without copying private workloads, and the public task-bundle import shows how a richer run summary can preserve 64 public BigCodeBench metadata-only tasks, 0 public training rows, 0 task-level regressions, residuals, and artifact gaps without turning calibration into capability evidence.",
       "cues": [
         "shows"
@@ -61772,7 +61791,7 @@
     {
       "candidate_id": "project-theseus-as-report-first-implementation-reference.prose.51cf7ad064dd",
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:423",
+      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:427",
       "sentence": "Theseus shows what kind of implementation evidence the stack should want, while keeping the public book honest about what it actually has.",
       "cues": [
         "should",
@@ -61792,7 +61811,7 @@
     {
       "candidate_id": "project-theseus-as-report-first-implementation-reference.prose.e98481cc2cd9",
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:460",
+      "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:464",
       "sentence": "Theseus shows what report-first implementation evidence should look like, but a build program still needs dependency order and refusal points before autonomy grows.",
       "cues": [
         "should",
