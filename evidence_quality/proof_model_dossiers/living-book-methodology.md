@@ -25,7 +25,7 @@ Generated from the frozen activation-baseline inventory and semantic review over
 | `change_packet_without_validation_changelog_support_or_nonclaims_rejected` | derived_or_decomposed | semantically_reviewed | retain_countermodel_or_negative_case |
 | `derived_artifact_equal_authority_change_packet_rejected` | derived_or_decomposed | semantically_reviewed | retain_countermodel_or_negative_case |
 | `support_promotion_without_evidence_transition_rejected` | derived_or_decomposed | semantically_reviewed | retain_countermodel_or_negative_case |
-| `curated_reader_blocked_candidate_fixture_routes_to_accessibility_review` | direct_or_projection | terminally_dispositioned | replace_with_stronger_model |
+| `curated_reader_blocked_candidate_fixture_routes_to_accessibility_review` | direct_or_projection | terminally_dispositioned | retire_projection_or_assumption_restatement |
 | `local_reader_artifacts_do_not_clear_missing_accessibility_review` | derived_or_decomposed | semantically_reviewed | retain_load_bearing_semantic |
 | `reader_release_candidate_missing_screen_reader_routes_to_accessibility_review` | derived_or_decomposed | semantically_reviewed | retain_load_bearing_semantic |
 | `reader_release_candidate_missing_wcag_routes_to_accessibility_review` | derived_or_decomposed | semantically_reviewed | retain_load_bearing_semantic |

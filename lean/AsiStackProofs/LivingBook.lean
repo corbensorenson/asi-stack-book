@@ -377,38 +377,6 @@ def ReaderReleaseCandidateRouteFor
   else
     ReaderReleaseCandidateRoute.approveRelease
 
-def curatedReaderBlockedCandidateFixture : ReaderReleaseCandidateReview := {
-  htmlRendered := true,
-  epubRendered := true,
-  docxRendered := true,
-  pdfRendered := true,
-  htmlBrowserReviewed := true,
-  epubApplicationReviewed := true,
-  docxApplicationReviewed := true,
-  pdfPageReviewed := true,
-  finalFigureReviewed := true,
-  chapterReconciliationApproved := true,
-  keyboardOnlyReviewed := true,
-  accessibilityTreeReviewed := true,
-  screenReaderReviewed := false,
-  wcagConformanceReviewed := false,
-  audioFilesGenerated := false,
-  audioListeningReviewed := false,
-  chapterMarkersTimecoded := false,
-  audioEmbeddedEpubChecked := false,
-  audioReleaseRecordCreated := false,
-  readerReleaseApprovalRecorded := false,
-  approvedEditionReleaseRecordCreated := false,
-  chapterSupportPromotionClaimed := false,
-  nonClaimsRecorded := true,
-  releaseBlockersRecorded := true
-}
-
-theorem curated_reader_blocked_candidate_fixture_routes_to_accessibility_review :
-    ReaderReleaseCandidateRouteFor curatedReaderBlockedCandidateFixture =
-      ReaderReleaseCandidateRoute.requestAccessibilityReview := by
-  rfl
-
 theorem local_reader_artifacts_do_not_clear_missing_accessibility_review
     {review : ReaderReleaseCandidateReview} :
     review.chapterSupportPromotionClaimed = false ->

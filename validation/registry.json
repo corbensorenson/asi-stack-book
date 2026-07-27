@@ -2222,7 +2222,19 @@
     "schemas/r16_b_current_reader_freshness.schema.json",
     "scripts/build_r16_b_current_reader_freshness.py",
     "scripts/validate_r16_b_current_reader_freshness.py",
-    "scripts/register_r16_b_current_reader_freshness.py"
+    "scripts/register_r16_b_current_reader_freshness.py",
+    "experiments/p2_governed_repository_admission/infrastructure_materialization/attempts/2026-07-26-r3a-001/result.json",
+    "schemas/p2_r3a_capacity_preflight.schema.json",
+    "docs/p2_r3a_capacity_and_docker_preflight_2026_07_26.md",
+    "scripts/run_p2_r3a_capacity_preflight.py",
+    "scripts/validate_p2_r3a_capacity_preflight.py",
+    "scripts/register_p2_r3a_capacity_preflight.py",
+    "proofs/c6_remaining_stronger_model_audit.json",
+    "docs/c6_remaining_stronger_model_audit_2026_07_26.md",
+    "schemas/c6_remaining_stronger_model_audit.schema.json",
+    "scripts/build_c6_remaining_stronger_model_audit.py",
+    "scripts/validate_c6_remaining_stronger_model_audit.py",
+    "scripts/register_c6_remaining_stronger_model_audit.py"
   ],
   "units": [
     {
@@ -6774,8 +6786,8 @@
       "args": [],
       "execution_tier": "deep",
       "validation_class": "proof_or_evidence_gate",
-      "input_contract": "Re-executed governed Git slice, matched baseline metrics, derived invariant suite, claim dispositions, proof manifest/adequacy/artifact audits, volatile source records, inter-stack routing, terminology refresh, and readable D–F closure audit.",
-      "output_contract": "Reject drift in bounded empirical metrics, invariant mutations/residuals, core dispositions, proof target/adequacy traceability, volatile source routing, or D–F closure boundaries.",
+      "input_contract": "Re-executed governed Git slice, matched baseline metrics, derived invariant suite, claim dispositions, proof manifest/adequacy/artifact audits, volatile source records, inter-stack routing, terminology refresh, and readable D\u2013F closure audit.",
+      "output_contract": "Reject drift in bounded empirical metrics, invariant mutations/residuals, core dispositions, proof target/adequacy traceability, volatile source routing, or D\u2013F closure boundaries.",
       "claim_scope": "Local roadmap closure for Workstreams D, E, and F at their explicitly bounded empirical, formal, and source-governance scopes.",
       "negative_controls": "validator_owned",
       "prohibited_inference": "Local closure does not prove deployed safety, general cost-effectiveness, formal runtime enforcement, novelty, exhaustive literature coverage, or independent review.",
@@ -14555,11 +14567,106 @@
       "prohibited_inference": "Reader freshness is not publication, format QA, accessibility review, source correctness, claim proof, empirical support, safety, readiness, release, SOTA, AGI, or ASI.",
       "contract_precision": "exact",
       "semantic_review_state": "manual_current_reader_route_surface_history_and_format_disposition_review"
+    },
+    {
+      "id": "validate_p2_r3a_capacity_preflight.py:427",
+      "order": 427,
+      "script": "validate_p2_r3a_capacity_preflight.py",
+      "args": [],
+      "execution_tier": "pr",
+      "validation_class": "proof_or_evidence_gate",
+      "input_contract": "Exact host-free-byte and Docker-daemon diagnostics bound to the frozen 30-candidate queue and 50 GiB resource floor before protected content opens.",
+      "input_artifacts": [
+        "experiments/p2_governed_repository_admission/infrastructure_materialization/attempts/2026-07-26-r3a-001/result.json",
+        "schemas/p2_r3a_capacity_preflight.schema.json",
+        "docs/p2_r3a_capacity_and_docker_preflight_2026_07_26.md",
+        "scripts/run_p2_r3a_capacity_preflight.py",
+        "scripts/validate_p2_r3a_capacity_preflight.py",
+        "scripts/register_p2_r3a_capacity_preflight.py",
+        "evidence_quality/p2_resource_ceiling.json",
+        "experiments/p2_governed_repository_admission/corpus/replacement_queue.json"
+      ],
+      "output_contract": "Admit pool materialization only when host and daemon gates both pass; otherwise retain an immutable N0 receipt with no candidate, support, or release effect.",
+      "output_assertions": [
+        "30-candidate denominator retained",
+        "50 GiB floor derived from frozen resource ceiling",
+        "four exact command receipts digest-bound",
+        "no image pull or dependency materialization",
+        "no protected content or outcome opened",
+        "N0 and no support/release movement",
+        "ten mutations reject"
+      ],
+      "claim_scope": "Infrastructure entry competence only; the receipt neither materializes the pool nor tests governed repository admission.",
+      "negative_controls": "validator_owned_floor_shortfall_entry_materialization_content_inference_support_command_queue_and_docker_knowledge_mutations",
+      "negative_control_cases": [
+        "floor pass forged",
+        "shortfall forged",
+        "entry pass forged",
+        "materialization forged",
+        "content opened",
+        "N-level inflated",
+        "support promoted",
+        "command output edited",
+        "queue shrank",
+        "Docker knowledge forged"
+      ],
+      "prohibited_inference": "Capacity or daemon failure does not establish or refute model competence, governed admission, usefulness, safety, transfer, SOTA, AGI, or ASI.",
+      "contract_precision": "exact",
+      "semantic_review_state": "capacity_daemon_queue_custody_and_noninference_boundaries_reviewed"
+    },
+    {
+      "id": "validate_c6_remaining_stronger_model_audit.py:428",
+      "order": 428,
+      "script": "validate_c6_remaining_stronger_model_audit.py",
+      "args": [],
+      "execution_tier": "pr",
+      "validation_class": "proof_or_evidence_gate",
+      "input_contract": "All current rewrite_with_stronger_model declarations from the digest-bound semantic overlay, with exact Lean dependency, theorem-consumer, executable-consumer, owner, level, and inference metadata.",
+      "input_artifacts": [
+        "proofs/c6_remaining_stronger_model_audit.json",
+        "docs/c6_remaining_stronger_model_audit_2026_07_26.md",
+        "schemas/c6_remaining_stronger_model_audit.schema.json",
+        "scripts/build_c6_remaining_stronger_model_audit.py",
+        "scripts/validate_c6_remaining_stronger_model_audit.py",
+        "scripts/register_c6_remaining_stronger_model_audit.py",
+        "proofs/proof_semantic_depth_overlay.json"
+      ],
+      "output_contract": "Terminally triage every remaining action without theorem-count incentives: retire summary mirrors, preserve independent evidence at its own scope, and authorize only one smallest inverse route property.",
+      "output_assertions": [
+        "54 exact actions",
+        "53 retire without replacement",
+        "one inverse route rewrite",
+        "43 Theseus mirrors",
+        "zero Lean dependencies",
+        "zero theorem consumers",
+        "historical results immutable",
+        "no support or release movement",
+        "twelve mutations reject"
+      ],
+      "claim_scope": "Proof-estate triage only; physical execution remains pending and creates no empirical evidence.",
+      "negative_controls": "validator_owned_coverage_identity_dependency_consumer_replacement_support_release_inverse_theseus_digest_and_count_mutations",
+      "negative_control_cases": [
+        "drop action",
+        "duplicate identity",
+        "hide dependency",
+        "hide consumer",
+        "replacement bloat",
+        "support promotion",
+        "packet promotion",
+        "release effect",
+        "wrong inverse",
+        "wrong Theseus action",
+        "overlay digest drift",
+        "count drift"
+      ],
+      "prohibited_inference": "The audit does not retire proofs, validate implementations, establish empirical evidence, or move support, release, SOTA, AGI, or ASI claims.",
+      "contract_precision": "exact",
+      "semantic_review_state": "all_remaining_stronger_model_actions_dependency_consumer_and_scope_reviewed"
     }
   ],
   "summary": {
-    "required_artifact_count": 2178,
-    "unit_count": 426
+    "required_artifact_count": 2190,
+    "unit_count": 428
   },
   "non_claims": [
     "Registry coverage does not establish semantic adequacy of every validator.",

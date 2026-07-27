@@ -1,0 +1,1329 @@
+{
+  "schema_version": "asi_stack.c6_remaining_stronger_model_audit.v1",
+  "as_of": "2026-07-26",
+  "state": "terminal_triage_execution_pending",
+  "roadmap_lane": "C6-P0-P6-semantic-proof-rationalization",
+  "source_overlay": {
+    "commit": "9349d519130f37c86f319cd94147e57e3848b819",
+    "path": "proofs/proof_semantic_depth_overlay.json",
+    "sha256": "9d5f2c373fcb3f50d4e04cd1d77e7ca28e4d2b17345666b9374d0a161f7278fe",
+    "live_theorem_count": 1272,
+    "pending_stronger_model_count": 54
+  },
+  "decision_policy": {
+    "fixture_or_summary_literal_is_formal_evidence": false,
+    "executable_validator_becomes_lean_proof": false,
+    "retirement_requires_no_lean_dependency_or_theorem_consumer": true,
+    "replacement_theorem_requires_reachable_consumer_or_smallest_shared_conclusion": true,
+    "historical_results_remain_immutable": true,
+    "support_moves_from_rationalization": false
+  },
+  "summary": {
+    "record_count": 54,
+    "retire_without_replacement_count": 53,
+    "rewrite_as_inverse_route_property_count": 1,
+    "module_count": 8,
+    "action_counts": {
+      "retire_redundant_fixture_witness": 2,
+      "retire_repository_fixture_mirror": 43,
+      "retire_summary_fixture_mirror": 8,
+      "rewrite_as_inverse_route_property": 1
+    },
+    "module_counts": {
+      "lean/AsiStackProofs/BenchmarkRatchets.lean": 3,
+      "lean/AsiStackProofs/FailureModes.lean": 1,
+      "lean/AsiStackProofs/LivingBook.lean": 1,
+      "lean/AsiStackProofs/ProofCarryingContracts.lean": 1,
+      "lean/AsiStackProofs/RuntimeAdapters.lean": 1,
+      "lean/AsiStackProofs/SearchSubstrates.lean": 1,
+      "lean/AsiStackProofs/StableCapabilityFields.lean": 3,
+      "lean/AsiStackProofs/TheseusReference.lean": 43
+    },
+    "theorem_dependency_count": 0,
+    "theorem_consumer_count": 0,
+    "new_formal_claim_count": 1
+  },
+  "execution_order": [
+    {
+      "tranche": 1,
+      "scope": "Unambiguously redundant Living Book and Circle fixture witnesses",
+      "rule": "Retire only after rebinding to already retained universal/rejection theorems and independent consumers."
+    },
+    {
+      "tranche": 2,
+      "scope": "Forty-three Theseus repository-import mirror declarations",
+      "rule": "Remove copied Lean summaries and nine formal mirror targets while preserving immutable import results and executable validators."
+    },
+    {
+      "tranche": 3,
+      "scope": "Benchmark, Runtime Adapter, Search Substrate, and Stable Capability Field summary mirrors",
+      "rule": "Retain route theorems and executable results as separate evidence surfaces; add no replacement summary theorem."
+    },
+    {
+      "tranche": 4,
+      "scope": "Failure Modes close-record witness",
+      "rule": "Prove only the inverse route property consumed by the failure-record lifecycle; retire the authored all-green fixture."
+    }
+  ],
+  "records": [
+    {
+      "theorem_id": "lean/AsiStackProofs/LivingBook.lean::curated_reader_blocked_candidate_fixture_routes_to_accessibility_review",
+      "module_path": "lean/AsiStackProofs/LivingBook.lean",
+      "name": "curated_reader_blocked_candidate_fixture_routes_to_accessibility_review",
+      "semantic_owner_ids": [
+        "living-book-methodology"
+      ],
+      "current_semantic_level": "P1",
+      "current_syntax_depth_class": "direct_or_projection",
+      "theorem_dependency_refs": [],
+      "theorem_consumer_refs": [],
+      "executable_or_result_refs": [
+        "scripts/validate_living_book_change_packets.py",
+        "scripts/validate_reader_release_candidate_bridge.py"
+      ],
+      "current_maximum_inference": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "recommended_action": "retire_redundant_fixture_witness",
+      "recommended_action_rationale": "The exact blocked fixture is subsumed by the adjacent universal theorem that any locally complete candidate with incomplete accessibility review routes to accessibility review.",
+      "target_treatment": "rebind_to_existing_universal_route_theorem",
+      "execution_tranche": 1,
+      "new_formal_claim_required": false,
+      "support_state_effect": "none"
+    },
+    {
+      "theorem_id": "lean/AsiStackProofs/ProofCarryingContracts.lean::circle_public_consumer_gate_fixture_accepted",
+      "module_path": "lean/AsiStackProofs/ProofCarryingContracts.lean",
+      "name": "circle_public_consumer_gate_fixture_accepted",
+      "semantic_owner_ids": [
+        "circle-calculus-and-proof-carrying-ai-contracts"
+      ],
+      "current_semantic_level": "P0",
+      "current_syntax_depth_class": "direct_or_projection",
+      "theorem_dependency_refs": [],
+      "theorem_consumer_refs": [],
+      "executable_or_result_refs": [
+        "experiments/circle_contract_pack_archive/results/2026-07-05-local.json",
+        "scripts/validate_circle_contract_pack_archive.py",
+        "scripts/validate_circle_public_replay.py"
+      ],
+      "current_maximum_inference": "Only the declared type, record-shape, equality, or projection fact in the Lean model.",
+      "recommended_action": "retire_redundant_fixture_witness",
+      "recommended_action_rationale": "The accepted fixture is literal field construction. Retain the quantified overclaim and missing-control rejection theorems plus the independent replay validator; no replacement positive theorem is needed.",
+      "target_treatment": "rebind_to_retained_rejection_family_and_executable_replay",
+      "execution_tranche": 1,
+      "new_formal_claim_required": false,
+      "support_state_effect": "none"
+    },
+    {
+      "theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_accelerator_parity_manifest_import_core_promotion_rejected",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "name": "theseus_accelerator_parity_manifest_import_core_promotion_rejected",
+      "semantic_owner_ids": [
+        "project-theseus-as-report-first-implementation-reference"
+      ],
+      "current_semantic_level": "P1",
+      "current_syntax_depth_class": "derived_or_decomposed",
+      "theorem_dependency_refs": [],
+      "theorem_consumer_refs": [],
+      "executable_or_result_refs": [
+        "scripts/validate_theseus_accelerator_parity_manifest_import.py",
+        "scripts/validate_theseus_report.py"
+      ],
+      "current_maximum_inference": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "recommended_action": "retire_repository_fixture_mirror",
+      "recommended_action_rationale": "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+      "target_treatment": "remove_lean_mirror_keep_executable_import_claim",
+      "execution_tranche": 2,
+      "new_formal_claim_required": false,
+      "support_state_effect": "none"
+    },
+    {
+      "theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_accelerator_parity_manifest_import_fixture_valid",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "name": "theseus_accelerator_parity_manifest_import_fixture_valid",
+      "semantic_owner_ids": [
+        "project-theseus-as-report-first-implementation-reference"
+      ],
+      "current_semantic_level": "P0",
+      "current_syntax_depth_class": "derived_or_decomposed",
+      "theorem_dependency_refs": [],
+      "theorem_consumer_refs": [],
+      "executable_or_result_refs": [
+        "scripts/validate_theseus_accelerator_parity_manifest_import.py",
+        "scripts/validate_theseus_report.py"
+      ],
+      "current_maximum_inference": "Only the declared type, record-shape, equality, or projection fact in the Lean model.",
+      "recommended_action": "retire_repository_fixture_mirror",
+      "recommended_action_rationale": "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+      "target_treatment": "remove_lean_mirror_keep_executable_import_claim",
+      "execution_tranche": 2,
+      "new_formal_claim_required": false,
+      "support_state_effect": "none"
+    },
+    {
+      "theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_accelerator_parity_manifest_import_full_parity_overclaim_rejected",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "name": "theseus_accelerator_parity_manifest_import_full_parity_overclaim_rejected",
+      "semantic_owner_ids": [
+        "project-theseus-as-report-first-implementation-reference"
+      ],
+      "current_semantic_level": "P1",
+      "current_syntax_depth_class": "derived_or_decomposed",
+      "theorem_dependency_refs": [],
+      "theorem_consumer_refs": [],
+      "executable_or_result_refs": [
+        "scripts/validate_theseus_accelerator_parity_manifest_import.py",
+        "scripts/validate_theseus_report.py"
+      ],
+      "current_maximum_inference": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "recommended_action": "retire_repository_fixture_mirror",
+      "recommended_action_rationale": "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+      "target_treatment": "remove_lean_mirror_keep_executable_import_claim",
+      "execution_tranche": 2,
+      "new_formal_claim_required": false,
+      "support_state_effect": "none"
+    },
+    {
+      "theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_accelerator_parity_manifest_import_model_promotion_overclaim_rejected",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "name": "theseus_accelerator_parity_manifest_import_model_promotion_overclaim_rejected",
+      "semantic_owner_ids": [
+        "project-theseus-as-report-first-implementation-reference"
+      ],
+      "current_semantic_level": "P1",
+      "current_syntax_depth_class": "derived_or_decomposed",
+      "theorem_dependency_refs": [],
+      "theorem_consumer_refs": [],
+      "executable_or_result_refs": [
+        "scripts/validate_theseus_accelerator_parity_manifest_import.py",
+        "scripts/validate_theseus_report.py"
+      ],
+      "current_maximum_inference": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "recommended_action": "retire_repository_fixture_mirror",
+      "recommended_action_rationale": "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+      "target_treatment": "remove_lean_mirror_keep_executable_import_claim",
+      "execution_tranche": 2,
+      "new_formal_claim_required": false,
+      "support_state_effect": "none"
+    },
+    {
+      "theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_accelerator_parity_manifest_import_production_routing_overclaim_rejected",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "name": "theseus_accelerator_parity_manifest_import_production_routing_overclaim_rejected",
+      "semantic_owner_ids": [
+        "project-theseus-as-report-first-implementation-reference"
+      ],
+      "current_semantic_level": "P1",
+      "current_syntax_depth_class": "derived_or_decomposed",
+      "theorem_dependency_refs": [],
+      "theorem_consumer_refs": [],
+      "executable_or_result_refs": [
+        "scripts/validate_theseus_accelerator_parity_manifest_import.py",
+        "scripts/validate_theseus_report.py"
+      ],
+      "current_maximum_inference": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "recommended_action": "retire_repository_fixture_mirror",
+      "recommended_action_rationale": "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+      "target_treatment": "remove_lean_mirror_keep_executable_import_claim",
+      "execution_tranche": 2,
+      "new_formal_claim_required": false,
+      "support_state_effect": "none"
+    },
+    {
+      "theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_artifact_retention_replay_import_core_promotion_rejected",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "name": "theseus_artifact_retention_replay_import_core_promotion_rejected",
+      "semantic_owner_ids": [
+        "project-theseus-as-report-first-implementation-reference"
+      ],
+      "current_semantic_level": "P1",
+      "current_syntax_depth_class": "derived_or_decomposed",
+      "theorem_dependency_refs": [],
+      "theorem_consumer_refs": [],
+      "executable_or_result_refs": [
+        "scripts/validate_theseus_artifact_retention_replay_import.py",
+        "scripts/validate_theseus_report.py"
+      ],
+      "current_maximum_inference": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "recommended_action": "retire_repository_fixture_mirror",
+      "recommended_action_rationale": "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+      "target_treatment": "remove_lean_mirror_keep_executable_import_claim",
+      "execution_tranche": 2,
+      "new_formal_claim_required": false,
+      "support_state_effect": "none"
+    },
+    {
+      "theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_artifact_retention_replay_import_fixture_valid",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "name": "theseus_artifact_retention_replay_import_fixture_valid",
+      "semantic_owner_ids": [
+        "project-theseus-as-report-first-implementation-reference"
+      ],
+      "current_semantic_level": "P0",
+      "current_syntax_depth_class": "derived_or_decomposed",
+      "theorem_dependency_refs": [],
+      "theorem_consumer_refs": [],
+      "executable_or_result_refs": [
+        "scripts/validate_theseus_artifact_retention_replay_import.py",
+        "scripts/validate_theseus_report.py"
+      ],
+      "current_maximum_inference": "Only the declared type, record-shape, equality, or projection fact in the Lean model.",
+      "recommended_action": "retire_repository_fixture_mirror",
+      "recommended_action_rationale": "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+      "target_treatment": "remove_lean_mirror_keep_executable_import_claim",
+      "execution_tranche": 2,
+      "new_formal_claim_required": false,
+      "support_state_effect": "none"
+    },
+    {
+      "theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_artifact_retention_replay_import_hash_mismatch_rejected",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "name": "theseus_artifact_retention_replay_import_hash_mismatch_rejected",
+      "semantic_owner_ids": [
+        "project-theseus-as-report-first-implementation-reference"
+      ],
+      "current_semantic_level": "P1",
+      "current_syntax_depth_class": "derived_or_decomposed",
+      "theorem_dependency_refs": [],
+      "theorem_consumer_refs": [],
+      "executable_or_result_refs": [
+        "scripts/validate_theseus_artifact_retention_replay_import.py",
+        "scripts/validate_theseus_report.py"
+      ],
+      "current_maximum_inference": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "recommended_action": "retire_repository_fixture_mirror",
+      "recommended_action_rationale": "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+      "target_treatment": "remove_lean_mirror_keep_executable_import_claim",
+      "execution_tranche": 2,
+      "new_formal_claim_required": false,
+      "support_state_effect": "none"
+    },
+    {
+      "theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_assistant_reference_trace_import_clean_replay_overclaim_rejected",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "name": "theseus_assistant_reference_trace_import_clean_replay_overclaim_rejected",
+      "semantic_owner_ids": [
+        "project-theseus-as-report-first-implementation-reference"
+      ],
+      "current_semantic_level": "P1",
+      "current_syntax_depth_class": "derived_or_decomposed",
+      "theorem_dependency_refs": [],
+      "theorem_consumer_refs": [],
+      "executable_or_result_refs": [
+        "scripts/validate_theseus_assistant_reference_trace_import.py",
+        "scripts/validate_theseus_report.py"
+      ],
+      "current_maximum_inference": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "recommended_action": "retire_repository_fixture_mirror",
+      "recommended_action_rationale": "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+      "target_treatment": "remove_lean_mirror_keep_executable_import_claim",
+      "execution_tranche": 2,
+      "new_formal_claim_required": false,
+      "support_state_effect": "none"
+    },
+    {
+      "theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_assistant_reference_trace_import_core_promotion_rejected",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "name": "theseus_assistant_reference_trace_import_core_promotion_rejected",
+      "semantic_owner_ids": [
+        "project-theseus-as-report-first-implementation-reference"
+      ],
+      "current_semantic_level": "P1",
+      "current_syntax_depth_class": "derived_or_decomposed",
+      "theorem_dependency_refs": [],
+      "theorem_consumer_refs": [],
+      "executable_or_result_refs": [
+        "scripts/validate_theseus_assistant_reference_trace_import.py",
+        "scripts/validate_theseus_report.py"
+      ],
+      "current_maximum_inference": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "recommended_action": "retire_repository_fixture_mirror",
+      "recommended_action_rationale": "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+      "target_treatment": "remove_lean_mirror_keep_executable_import_claim",
+      "execution_tranche": 2,
+      "new_formal_claim_required": false,
+      "support_state_effect": "none"
+    },
+    {
+      "theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_assistant_reference_trace_import_fixture_valid",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "name": "theseus_assistant_reference_trace_import_fixture_valid",
+      "semantic_owner_ids": [
+        "project-theseus-as-report-first-implementation-reference"
+      ],
+      "current_semantic_level": "P0",
+      "current_syntax_depth_class": "derived_or_decomposed",
+      "theorem_dependency_refs": [],
+      "theorem_consumer_refs": [],
+      "executable_or_result_refs": [
+        "scripts/validate_theseus_assistant_reference_trace_import.py",
+        "scripts/validate_theseus_report.py"
+      ],
+      "current_maximum_inference": "Only the declared type, record-shape, equality, or projection fact in the Lean model.",
+      "recommended_action": "retire_repository_fixture_mirror",
+      "recommended_action_rationale": "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+      "target_treatment": "remove_lean_mirror_keep_executable_import_claim",
+      "execution_tranche": 2,
+      "new_formal_claim_required": false,
+      "support_state_effect": "none"
+    },
+    {
+      "theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_assistant_reference_trace_import_model_quality_overclaim_rejected",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "name": "theseus_assistant_reference_trace_import_model_quality_overclaim_rejected",
+      "semantic_owner_ids": [
+        "project-theseus-as-report-first-implementation-reference"
+      ],
+      "current_semantic_level": "P1",
+      "current_syntax_depth_class": "derived_or_decomposed",
+      "theorem_dependency_refs": [],
+      "theorem_consumer_refs": [],
+      "executable_or_result_refs": [
+        "scripts/validate_theseus_assistant_reference_trace_import.py",
+        "scripts/validate_theseus_report.py"
+      ],
+      "current_maximum_inference": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "recommended_action": "retire_repository_fixture_mirror",
+      "recommended_action_rationale": "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+      "target_treatment": "remove_lean_mirror_keep_executable_import_claim",
+      "execution_tranche": 2,
+      "new_formal_claim_required": false,
+      "support_state_effect": "none"
+    },
+    {
+      "theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_assistant_reference_trace_import_private_payload_rejected",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "name": "theseus_assistant_reference_trace_import_private_payload_rejected",
+      "semantic_owner_ids": [
+        "project-theseus-as-report-first-implementation-reference"
+      ],
+      "current_semantic_level": "P1",
+      "current_syntax_depth_class": "derived_or_decomposed",
+      "theorem_dependency_refs": [],
+      "theorem_consumer_refs": [],
+      "executable_or_result_refs": [
+        "scripts/validate_theseus_assistant_reference_trace_import.py",
+        "scripts/validate_theseus_report.py"
+      ],
+      "current_maximum_inference": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "recommended_action": "retire_repository_fixture_mirror",
+      "recommended_action_rationale": "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+      "target_treatment": "remove_lean_mirror_keep_executable_import_claim",
+      "execution_tranche": 2,
+      "new_formal_claim_required": false,
+      "support_state_effect": "none"
+    },
+    {
+      "theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_assistant_reference_trace_import_requires_all_hops",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "name": "theseus_assistant_reference_trace_import_requires_all_hops",
+      "semantic_owner_ids": [
+        "project-theseus-as-report-first-implementation-reference"
+      ],
+      "current_semantic_level": "P1",
+      "current_syntax_depth_class": "derived_or_decomposed",
+      "theorem_dependency_refs": [],
+      "theorem_consumer_refs": [],
+      "executable_or_result_refs": [
+        "scripts/validate_theseus_assistant_reference_trace_import.py",
+        "scripts/validate_theseus_report.py"
+      ],
+      "current_maximum_inference": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "recommended_action": "retire_repository_fixture_mirror",
+      "recommended_action_rationale": "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+      "target_treatment": "remove_lean_mirror_keep_executable_import_claim",
+      "execution_tranche": 2,
+      "new_formal_claim_required": false,
+      "support_state_effect": "none"
+    },
+    {
+      "theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_book_crosswalk_import_clean_replay_overclaim_rejected",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "name": "theseus_book_crosswalk_import_clean_replay_overclaim_rejected",
+      "semantic_owner_ids": [
+        "project-theseus-as-report-first-implementation-reference"
+      ],
+      "current_semantic_level": "P1",
+      "current_syntax_depth_class": "derived_or_decomposed",
+      "theorem_dependency_refs": [],
+      "theorem_consumer_refs": [],
+      "executable_or_result_refs": [
+        "scripts/validate_theseus_book_crosswalk_import.py",
+        "scripts/validate_theseus_report.py"
+      ],
+      "current_maximum_inference": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "recommended_action": "retire_repository_fixture_mirror",
+      "recommended_action_rationale": "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+      "target_treatment": "remove_lean_mirror_keep_executable_import_claim",
+      "execution_tranche": 2,
+      "new_formal_claim_required": false,
+      "support_state_effect": "none"
+    },
+    {
+      "theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_book_crosswalk_import_core_promotion_rejected",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "name": "theseus_book_crosswalk_import_core_promotion_rejected",
+      "semantic_owner_ids": [
+        "project-theseus-as-report-first-implementation-reference"
+      ],
+      "current_semantic_level": "P1",
+      "current_syntax_depth_class": "derived_or_decomposed",
+      "theorem_dependency_refs": [],
+      "theorem_consumer_refs": [],
+      "executable_or_result_refs": [
+        "scripts/validate_theseus_book_crosswalk_import.py",
+        "scripts/validate_theseus_report.py"
+      ],
+      "current_maximum_inference": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "recommended_action": "retire_repository_fixture_mirror",
+      "recommended_action_rationale": "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+      "target_treatment": "remove_lean_mirror_keep_executable_import_claim",
+      "execution_tranche": 2,
+      "new_formal_claim_required": false,
+      "support_state_effect": "none"
+    },
+    {
+      "theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_book_crosswalk_import_fixture_valid",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "name": "theseus_book_crosswalk_import_fixture_valid",
+      "semantic_owner_ids": [
+        "project-theseus-as-report-first-implementation-reference"
+      ],
+      "current_semantic_level": "P0",
+      "current_syntax_depth_class": "derived_or_decomposed",
+      "theorem_dependency_refs": [],
+      "theorem_consumer_refs": [],
+      "executable_or_result_refs": [
+        "scripts/validate_theseus_book_crosswalk_import.py",
+        "scripts/validate_theseus_report.py"
+      ],
+      "current_maximum_inference": "Only the declared type, record-shape, equality, or projection fact in the Lean model.",
+      "recommended_action": "retire_repository_fixture_mirror",
+      "recommended_action_rationale": "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+      "target_treatment": "remove_lean_mirror_keep_executable_import_claim",
+      "execution_tranche": 2,
+      "new_formal_claim_required": false,
+      "support_state_effect": "none"
+    },
+    {
+      "theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_book_crosswalk_import_pointer_only_preserves_argument",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "name": "theseus_book_crosswalk_import_pointer_only_preserves_argument",
+      "semantic_owner_ids": [
+        "project-theseus-as-report-first-implementation-reference"
+      ],
+      "current_semantic_level": "P1",
+      "current_syntax_depth_class": "derived_or_decomposed",
+      "theorem_dependency_refs": [],
+      "theorem_consumer_refs": [],
+      "executable_or_result_refs": [
+        "scripts/validate_theseus_book_crosswalk_import.py",
+        "scripts/validate_theseus_report.py"
+      ],
+      "current_maximum_inference": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "recommended_action": "retire_repository_fixture_mirror",
+      "recommended_action_rationale": "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+      "target_treatment": "remove_lean_mirror_keep_executable_import_claim",
+      "execution_tranche": 2,
+      "new_formal_claim_required": false,
+      "support_state_effect": "none"
+    },
+    {
+      "theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_book_crosswalk_import_public_safety_failure_rejected",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "name": "theseus_book_crosswalk_import_public_safety_failure_rejected",
+      "semantic_owner_ids": [
+        "project-theseus-as-report-first-implementation-reference"
+      ],
+      "current_semantic_level": "P1",
+      "current_syntax_depth_class": "derived_or_decomposed",
+      "theorem_dependency_refs": [],
+      "theorem_consumer_refs": [],
+      "executable_or_result_refs": [
+        "scripts/validate_theseus_book_crosswalk_import.py",
+        "scripts/validate_theseus_report.py"
+      ],
+      "current_maximum_inference": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "recommended_action": "retire_repository_fixture_mirror",
+      "recommended_action_rationale": "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+      "target_treatment": "remove_lean_mirror_keep_executable_import_claim",
+      "execution_tranche": 2,
+      "new_formal_claim_required": false,
+      "support_state_effect": "none"
+    },
+    {
+      "theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_book_crosswalk_import_source_sync_failure_rejected",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "name": "theseus_book_crosswalk_import_source_sync_failure_rejected",
+      "semantic_owner_ids": [
+        "project-theseus-as-report-first-implementation-reference"
+      ],
+      "current_semantic_level": "P1",
+      "current_syntax_depth_class": "derived_or_decomposed",
+      "theorem_dependency_refs": [],
+      "theorem_consumer_refs": [],
+      "executable_or_result_refs": [
+        "scripts/validate_theseus_book_crosswalk_import.py",
+        "scripts/validate_theseus_report.py"
+      ],
+      "current_maximum_inference": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "recommended_action": "retire_repository_fixture_mirror",
+      "recommended_action_rationale": "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+      "target_treatment": "remove_lean_mirror_keep_executable_import_claim",
+      "execution_tranche": 2,
+      "new_formal_claim_required": false,
+      "support_state_effect": "none"
+    },
+    {
+      "theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_fast_support_aggregate_carries_task_and_control_counts",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "name": "theseus_fast_support_aggregate_carries_task_and_control_counts",
+      "semantic_owner_ids": [
+        "project-theseus-as-report-first-implementation-reference"
+      ],
+      "current_semantic_level": "P1",
+      "current_syntax_depth_class": "derived_or_decomposed",
+      "theorem_dependency_refs": [],
+      "theorem_consumer_refs": [],
+      "executable_or_result_refs": [
+        "scripts/validate_theseus_fast_support_lane.py",
+        "scripts/validate_theseus_report.py"
+      ],
+      "current_maximum_inference": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "recommended_action": "retire_repository_fixture_mirror",
+      "recommended_action_rationale": "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+      "target_treatment": "remove_lean_mirror_keep_executable_import_claim",
+      "execution_tranche": 2,
+      "new_formal_claim_required": false,
+      "support_state_effect": "none"
+    },
+    {
+      "theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_fast_support_aggregate_clean_replay_overclaim_rejected",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "name": "theseus_fast_support_aggregate_clean_replay_overclaim_rejected",
+      "semantic_owner_ids": [
+        "project-theseus-as-report-first-implementation-reference"
+      ],
+      "current_semantic_level": "P1",
+      "current_syntax_depth_class": "derived_or_decomposed",
+      "theorem_dependency_refs": [],
+      "theorem_consumer_refs": [],
+      "executable_or_result_refs": [
+        "scripts/validate_theseus_fast_support_lane.py",
+        "scripts/validate_theseus_report.py"
+      ],
+      "current_maximum_inference": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "recommended_action": "retire_repository_fixture_mirror",
+      "recommended_action_rationale": "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+      "target_treatment": "remove_lean_mirror_keep_executable_import_claim",
+      "execution_tranche": 2,
+      "new_formal_claim_required": false,
+      "support_state_effect": "none"
+    },
+    {
+      "theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_fast_support_aggregate_fixture_valid",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "name": "theseus_fast_support_aggregate_fixture_valid",
+      "semantic_owner_ids": [
+        "project-theseus-as-report-first-implementation-reference"
+      ],
+      "current_semantic_level": "P0",
+      "current_syntax_depth_class": "derived_or_decomposed",
+      "theorem_dependency_refs": [],
+      "theorem_consumer_refs": [],
+      "executable_or_result_refs": [
+        "scripts/validate_theseus_fast_support_lane.py",
+        "scripts/validate_theseus_report.py"
+      ],
+      "current_maximum_inference": "Only the declared type, record-shape, equality, or projection fact in the Lean model.",
+      "recommended_action": "retire_repository_fixture_mirror",
+      "recommended_action_rationale": "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+      "target_treatment": "remove_lean_mirror_keep_executable_import_claim",
+      "execution_tranche": 2,
+      "new_formal_claim_required": false,
+      "support_state_effect": "none"
+    },
+    {
+      "theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_fast_support_aggregate_preserves_no_promotion",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "name": "theseus_fast_support_aggregate_preserves_no_promotion",
+      "semantic_owner_ids": [
+        "project-theseus-as-report-first-implementation-reference"
+      ],
+      "current_semantic_level": "P1",
+      "current_syntax_depth_class": "derived_or_decomposed",
+      "theorem_dependency_refs": [],
+      "theorem_consumer_refs": [],
+      "executable_or_result_refs": [
+        "scripts/validate_theseus_fast_support_lane.py",
+        "scripts/validate_theseus_report.py"
+      ],
+      "current_maximum_inference": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "recommended_action": "retire_repository_fixture_mirror",
+      "recommended_action_rationale": "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+      "target_treatment": "remove_lean_mirror_keep_executable_import_claim",
+      "execution_tranche": 2,
+      "new_formal_claim_required": false,
+      "support_state_effect": "none"
+    },
+    {
+      "theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_module_definition_of_done_import_capability_overclaim_rejected",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "name": "theseus_module_definition_of_done_import_capability_overclaim_rejected",
+      "semantic_owner_ids": [
+        "project-theseus-as-report-first-implementation-reference"
+      ],
+      "current_semantic_level": "P1",
+      "current_syntax_depth_class": "derived_or_decomposed",
+      "theorem_dependency_refs": [],
+      "theorem_consumer_refs": [],
+      "executable_or_result_refs": [
+        "scripts/validate_theseus_module_definition_of_done_import.py",
+        "scripts/validate_theseus_report.py"
+      ],
+      "current_maximum_inference": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "recommended_action": "retire_repository_fixture_mirror",
+      "recommended_action_rationale": "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+      "target_treatment": "remove_lean_mirror_keep_executable_import_claim",
+      "execution_tranche": 2,
+      "new_formal_claim_required": false,
+      "support_state_effect": "none"
+    },
+    {
+      "theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_module_definition_of_done_import_core_promotion_rejected",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "name": "theseus_module_definition_of_done_import_core_promotion_rejected",
+      "semantic_owner_ids": [
+        "project-theseus-as-report-first-implementation-reference"
+      ],
+      "current_semantic_level": "P1",
+      "current_syntax_depth_class": "derived_or_decomposed",
+      "theorem_dependency_refs": [],
+      "theorem_consumer_refs": [],
+      "executable_or_result_refs": [
+        "scripts/validate_theseus_module_definition_of_done_import.py",
+        "scripts/validate_theseus_report.py"
+      ],
+      "current_maximum_inference": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "recommended_action": "retire_repository_fixture_mirror",
+      "recommended_action_rationale": "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+      "target_treatment": "remove_lean_mirror_keep_executable_import_claim",
+      "execution_tranche": 2,
+      "new_formal_claim_required": false,
+      "support_state_effect": "none"
+    },
+    {
+      "theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_module_definition_of_done_import_fixture_valid",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "name": "theseus_module_definition_of_done_import_fixture_valid",
+      "semantic_owner_ids": [
+        "project-theseus-as-report-first-implementation-reference"
+      ],
+      "current_semantic_level": "P0",
+      "current_syntax_depth_class": "derived_or_decomposed",
+      "theorem_dependency_refs": [],
+      "theorem_consumer_refs": [],
+      "executable_or_result_refs": [
+        "scripts/validate_theseus_module_definition_of_done_import.py",
+        "scripts/validate_theseus_report.py"
+      ],
+      "current_maximum_inference": "Only the declared type, record-shape, equality, or projection fact in the Lean model.",
+      "recommended_action": "retire_repository_fixture_mirror",
+      "recommended_action_rationale": "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+      "target_treatment": "remove_lean_mirror_keep_executable_import_claim",
+      "execution_tranche": 2,
+      "new_formal_claim_required": false,
+      "support_state_effect": "none"
+    },
+    {
+      "theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_project_registry_import_clean_replay_overclaim_rejected",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "name": "theseus_project_registry_import_clean_replay_overclaim_rejected",
+      "semantic_owner_ids": [
+        "project-theseus-as-report-first-implementation-reference"
+      ],
+      "current_semantic_level": "P1",
+      "current_syntax_depth_class": "derived_or_decomposed",
+      "theorem_dependency_refs": [],
+      "theorem_consumer_refs": [],
+      "executable_or_result_refs": [
+        "scripts/validate_theseus_project_registry_import.py",
+        "scripts/validate_theseus_report.py"
+      ],
+      "current_maximum_inference": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "recommended_action": "retire_repository_fixture_mirror",
+      "recommended_action_rationale": "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+      "target_treatment": "remove_lean_mirror_keep_executable_import_claim",
+      "execution_tranche": 2,
+      "new_formal_claim_required": false,
+      "support_state_effect": "none"
+    },
+    {
+      "theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_project_registry_import_core_promotion_rejected",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "name": "theseus_project_registry_import_core_promotion_rejected",
+      "semantic_owner_ids": [
+        "project-theseus-as-report-first-implementation-reference"
+      ],
+      "current_semantic_level": "P1",
+      "current_syntax_depth_class": "derived_or_decomposed",
+      "theorem_dependency_refs": [],
+      "theorem_consumer_refs": [],
+      "executable_or_result_refs": [
+        "scripts/validate_theseus_project_registry_import.py",
+        "scripts/validate_theseus_report.py"
+      ],
+      "current_maximum_inference": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "recommended_action": "retire_repository_fixture_mirror",
+      "recommended_action_rationale": "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+      "target_treatment": "remove_lean_mirror_keep_executable_import_claim",
+      "execution_tranche": 2,
+      "new_formal_claim_required": false,
+      "support_state_effect": "none"
+    },
+    {
+      "theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_project_registry_import_fixture_valid",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "name": "theseus_project_registry_import_fixture_valid",
+      "semantic_owner_ids": [
+        "project-theseus-as-report-first-implementation-reference"
+      ],
+      "current_semantic_level": "P0",
+      "current_syntax_depth_class": "derived_or_decomposed",
+      "theorem_dependency_refs": [],
+      "theorem_consumer_refs": [],
+      "executable_or_result_refs": [
+        "scripts/validate_theseus_project_registry_import.py",
+        "scripts/validate_theseus_report.py"
+      ],
+      "current_maximum_inference": "Only the declared type, record-shape, equality, or projection fact in the Lean model.",
+      "recommended_action": "retire_repository_fixture_mirror",
+      "recommended_action_rationale": "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+      "target_treatment": "remove_lean_mirror_keep_executable_import_claim",
+      "execution_tranche": 2,
+      "new_formal_claim_required": false,
+      "support_state_effect": "none"
+    },
+    {
+      "theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_project_registry_import_private_payload_rejected",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "name": "theseus_project_registry_import_private_payload_rejected",
+      "semantic_owner_ids": [
+        "project-theseus-as-report-first-implementation-reference"
+      ],
+      "current_semantic_level": "P1",
+      "current_syntax_depth_class": "derived_or_decomposed",
+      "theorem_dependency_refs": [],
+      "theorem_consumer_refs": [],
+      "executable_or_result_refs": [
+        "scripts/validate_theseus_project_registry_import.py",
+        "scripts/validate_theseus_report.py"
+      ],
+      "current_maximum_inference": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "recommended_action": "retire_repository_fixture_mirror",
+      "recommended_action_rationale": "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+      "target_treatment": "remove_lean_mirror_keep_executable_import_claim",
+      "execution_tranche": 2,
+      "new_formal_claim_required": false,
+      "support_state_effect": "none"
+    },
+    {
+      "theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_project_registry_import_unregistered_sources_rejected",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "name": "theseus_project_registry_import_unregistered_sources_rejected",
+      "semantic_owner_ids": [
+        "project-theseus-as-report-first-implementation-reference"
+      ],
+      "current_semantic_level": "P1",
+      "current_syntax_depth_class": "derived_or_decomposed",
+      "theorem_dependency_refs": [],
+      "theorem_consumer_refs": [],
+      "executable_or_result_refs": [
+        "scripts/validate_theseus_project_registry_import.py",
+        "scripts/validate_theseus_report.py"
+      ],
+      "current_maximum_inference": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "recommended_action": "retire_repository_fixture_mirror",
+      "recommended_action_rationale": "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+      "target_treatment": "remove_lean_mirror_keep_executable_import_claim",
+      "execution_tranche": 2,
+      "new_formal_claim_required": false,
+      "support_state_effect": "none"
+    },
+    {
+      "theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_public_task_bundle_import_clean_replay_overclaim_rejected",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "name": "theseus_public_task_bundle_import_clean_replay_overclaim_rejected",
+      "semantic_owner_ids": [
+        "project-theseus-as-report-first-implementation-reference"
+      ],
+      "current_semantic_level": "P1",
+      "current_syntax_depth_class": "derived_or_decomposed",
+      "theorem_dependency_refs": [],
+      "theorem_consumer_refs": [],
+      "executable_or_result_refs": [
+        "scripts/validate_theseus_public_task_bundle_import.py",
+        "scripts/validate_theseus_report.py"
+      ],
+      "current_maximum_inference": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "recommended_action": "retire_repository_fixture_mirror",
+      "recommended_action_rationale": "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+      "target_treatment": "remove_lean_mirror_keep_executable_import_claim",
+      "execution_tranche": 2,
+      "new_formal_claim_required": false,
+      "support_state_effect": "none"
+    },
+    {
+      "theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_public_task_bundle_import_fixture_gates_complete",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "name": "theseus_public_task_bundle_import_fixture_gates_complete",
+      "semantic_owner_ids": [
+        "project-theseus-as-report-first-implementation-reference"
+      ],
+      "current_semantic_level": "P0",
+      "current_syntax_depth_class": "derived_or_decomposed",
+      "theorem_dependency_refs": [],
+      "theorem_consumer_refs": [],
+      "executable_or_result_refs": [
+        "scripts/validate_theseus_public_task_bundle_import.py",
+        "scripts/validate_theseus_report.py"
+      ],
+      "current_maximum_inference": "Only the declared type, record-shape, equality, or projection fact in the Lean model.",
+      "recommended_action": "retire_repository_fixture_mirror",
+      "recommended_action_rationale": "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+      "target_treatment": "remove_lean_mirror_keep_executable_import_claim",
+      "execution_tranche": 2,
+      "new_formal_claim_required": false,
+      "support_state_effect": "none"
+    },
+    {
+      "theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_public_task_bundle_import_fixture_preserves_no_promotion_boundary",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "name": "theseus_public_task_bundle_import_fixture_preserves_no_promotion_boundary",
+      "semantic_owner_ids": [
+        "project-theseus-as-report-first-implementation-reference"
+      ],
+      "current_semantic_level": "P1",
+      "current_syntax_depth_class": "derived_or_decomposed",
+      "theorem_dependency_refs": [],
+      "theorem_consumer_refs": [],
+      "executable_or_result_refs": [
+        "scripts/validate_theseus_public_task_bundle_import.py",
+        "scripts/validate_theseus_report.py"
+      ],
+      "current_maximum_inference": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "recommended_action": "retire_repository_fixture_mirror",
+      "recommended_action_rationale": "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+      "target_treatment": "remove_lean_mirror_keep_executable_import_claim",
+      "execution_tranche": 2,
+      "new_formal_claim_required": false,
+      "support_state_effect": "none"
+    },
+    {
+      "theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_public_task_bundle_import_fixture_public_safe",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "name": "theseus_public_task_bundle_import_fixture_public_safe",
+      "semantic_owner_ids": [
+        "project-theseus-as-report-first-implementation-reference"
+      ],
+      "current_semantic_level": "P0",
+      "current_syntax_depth_class": "derived_or_decomposed",
+      "theorem_dependency_refs": [],
+      "theorem_consumer_refs": [],
+      "executable_or_result_refs": [
+        "scripts/validate_theseus_public_task_bundle_import.py",
+        "scripts/validate_theseus_report.py"
+      ],
+      "current_maximum_inference": "Only the declared type, record-shape, equality, or projection fact in the Lean model.",
+      "recommended_action": "retire_repository_fixture_mirror",
+      "recommended_action_rationale": "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+      "target_treatment": "remove_lean_mirror_keep_executable_import_claim",
+      "execution_tranche": 2,
+      "new_formal_claim_required": false,
+      "support_state_effect": "none"
+    },
+    {
+      "theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_public_task_bundle_import_fixture_valid",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "name": "theseus_public_task_bundle_import_fixture_valid",
+      "semantic_owner_ids": [
+        "project-theseus-as-report-first-implementation-reference"
+      ],
+      "current_semantic_level": "P0",
+      "current_syntax_depth_class": "derived_or_decomposed",
+      "theorem_dependency_refs": [],
+      "theorem_consumer_refs": [],
+      "executable_or_result_refs": [
+        "scripts/validate_theseus_public_task_bundle_import.py",
+        "scripts/validate_theseus_report.py"
+      ],
+      "current_maximum_inference": "Only the declared type, record-shape, equality, or projection fact in the Lean model.",
+      "recommended_action": "retire_repository_fixture_mirror",
+      "recommended_action_rationale": "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+      "target_treatment": "remove_lean_mirror_keep_executable_import_claim",
+      "execution_tranche": 2,
+      "new_formal_claim_required": false,
+      "support_state_effect": "none"
+    },
+    {
+      "theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_work_board_import_clean_replay_overclaim_rejected",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "name": "theseus_work_board_import_clean_replay_overclaim_rejected",
+      "semantic_owner_ids": [
+        "project-theseus-as-report-first-implementation-reference"
+      ],
+      "current_semantic_level": "P1",
+      "current_syntax_depth_class": "derived_or_decomposed",
+      "theorem_dependency_refs": [],
+      "theorem_consumer_refs": [],
+      "executable_or_result_refs": [
+        "scripts/validate_theseus_report.py",
+        "scripts/validate_theseus_work_board_import.py"
+      ],
+      "current_maximum_inference": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "recommended_action": "retire_repository_fixture_mirror",
+      "recommended_action_rationale": "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+      "target_treatment": "remove_lean_mirror_keep_executable_import_claim",
+      "execution_tranche": 2,
+      "new_formal_claim_required": false,
+      "support_state_effect": "none"
+    },
+    {
+      "theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_work_board_import_core_promotion_rejected",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "name": "theseus_work_board_import_core_promotion_rejected",
+      "semantic_owner_ids": [
+        "project-theseus-as-report-first-implementation-reference"
+      ],
+      "current_semantic_level": "P1",
+      "current_syntax_depth_class": "derived_or_decomposed",
+      "theorem_dependency_refs": [],
+      "theorem_consumer_refs": [],
+      "executable_or_result_refs": [
+        "scripts/validate_theseus_report.py",
+        "scripts/validate_theseus_work_board_import.py"
+      ],
+      "current_maximum_inference": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "recommended_action": "retire_repository_fixture_mirror",
+      "recommended_action_rationale": "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+      "target_treatment": "remove_lean_mirror_keep_executable_import_claim",
+      "execution_tranche": 2,
+      "new_formal_claim_required": false,
+      "support_state_effect": "none"
+    },
+    {
+      "theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_work_board_import_fixture_valid",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "name": "theseus_work_board_import_fixture_valid",
+      "semantic_owner_ids": [
+        "project-theseus-as-report-first-implementation-reference"
+      ],
+      "current_semantic_level": "P0",
+      "current_syntax_depth_class": "derived_or_decomposed",
+      "theorem_dependency_refs": [],
+      "theorem_consumer_refs": [],
+      "executable_or_result_refs": [
+        "scripts/validate_theseus_report.py",
+        "scripts/validate_theseus_work_board_import.py"
+      ],
+      "current_maximum_inference": "Only the declared type, record-shape, equality, or projection fact in the Lean model.",
+      "recommended_action": "retire_repository_fixture_mirror",
+      "recommended_action_rationale": "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+      "target_treatment": "remove_lean_mirror_keep_executable_import_claim",
+      "execution_tranche": 2,
+      "new_formal_claim_required": false,
+      "support_state_effect": "none"
+    },
+    {
+      "theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_work_board_import_private_payload_rejected",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "name": "theseus_work_board_import_private_payload_rejected",
+      "semantic_owner_ids": [
+        "project-theseus-as-report-first-implementation-reference"
+      ],
+      "current_semantic_level": "P1",
+      "current_syntax_depth_class": "derived_or_decomposed",
+      "theorem_dependency_refs": [],
+      "theorem_consumer_refs": [],
+      "executable_or_result_refs": [
+        "scripts/validate_theseus_report.py",
+        "scripts/validate_theseus_work_board_import.py"
+      ],
+      "current_maximum_inference": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "recommended_action": "retire_repository_fixture_mirror",
+      "recommended_action_rationale": "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+      "target_treatment": "remove_lean_mirror_keep_executable_import_claim",
+      "execution_tranche": 2,
+      "new_formal_claim_required": false,
+      "support_state_effect": "none"
+    },
+    {
+      "theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_work_board_import_public_training_rows_rejected",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "name": "theseus_work_board_import_public_training_rows_rejected",
+      "semantic_owner_ids": [
+        "project-theseus-as-report-first-implementation-reference"
+      ],
+      "current_semantic_level": "P1",
+      "current_syntax_depth_class": "derived_or_decomposed",
+      "theorem_dependency_refs": [],
+      "theorem_consumer_refs": [],
+      "executable_or_result_refs": [
+        "scripts/validate_theseus_report.py",
+        "scripts/validate_theseus_work_board_import.py"
+      ],
+      "current_maximum_inference": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "recommended_action": "retire_repository_fixture_mirror",
+      "recommended_action_rationale": "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+      "target_treatment": "remove_lean_mirror_keep_executable_import_claim",
+      "execution_tranche": 2,
+      "new_formal_claim_required": false,
+      "support_state_effect": "none"
+    },
+    {
+      "theorem_id": "lean/AsiStackProofs/TheseusReference.lean::theseus_work_board_import_stale_snapshot_blocks_currentness",
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean",
+      "name": "theseus_work_board_import_stale_snapshot_blocks_currentness",
+      "semantic_owner_ids": [
+        "project-theseus-as-report-first-implementation-reference"
+      ],
+      "current_semantic_level": "P1",
+      "current_syntax_depth_class": "derived_or_decomposed",
+      "theorem_dependency_refs": [],
+      "theorem_consumer_refs": [],
+      "executable_or_result_refs": [
+        "scripts/validate_theseus_report.py",
+        "scripts/validate_theseus_work_board_import.py"
+      ],
+      "current_maximum_inference": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "recommended_action": "retire_repository_fixture_mirror",
+      "recommended_action_rationale": "The declaration proves a hand-authored sanitized import summary. Preserve the independent repository validator and immutable import result, but remove the copied Lean mirror and its formal-target status.",
+      "target_treatment": "remove_lean_mirror_keep_executable_import_claim",
+      "execution_tranche": 2,
+      "new_formal_claim_required": false,
+      "support_state_effect": "none"
+    },
+    {
+      "theorem_id": "lean/AsiStackProofs/BenchmarkRatchets.lean::benchmark_antigoodhart_fixture_bridge_has_expected_controls",
+      "module_path": "lean/AsiStackProofs/BenchmarkRatchets.lean",
+      "name": "benchmark_antigoodhart_fixture_bridge_has_expected_controls",
+      "semantic_owner_ids": [
+        "benchmark-ratchets-and-anti-goodhart-evidence"
+      ],
+      "current_semantic_level": "P1",
+      "current_syntax_depth_class": "derived_or_decomposed",
+      "theorem_dependency_refs": [],
+      "theorem_consumer_refs": [],
+      "executable_or_result_refs": [
+        "experiments/benchmark_antigoodhart/results/2026-07-02-fixture-bridge.json",
+        "scripts/validate_benchmark_antigoodhart.py",
+        "scripts/validate_benchmark_fixture_bridge.py"
+      ],
+      "current_maximum_inference": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "recommended_action": "retire_summary_fixture_mirror",
+      "recommended_action_rationale": "The declaration normalizes a hand-authored Boolean/count summary. Preserve the independent executable result and any reachable route or counterexample family; do not replace the mirror with another copied summary theorem.",
+      "target_treatment": "remove_lean_mirror_keep_executable_and_route_evidence_separate",
+      "execution_tranche": 3,
+      "new_formal_claim_required": false,
+      "support_state_effect": "none"
+    },
+    {
+      "theorem_id": "lean/AsiStackProofs/BenchmarkRatchets.lean::benchmark_antigoodhart_fixture_bridge_preserves_no_support_promotion",
+      "module_path": "lean/AsiStackProofs/BenchmarkRatchets.lean",
+      "name": "benchmark_antigoodhart_fixture_bridge_preserves_no_support_promotion",
+      "semantic_owner_ids": [
+        "benchmark-ratchets-and-anti-goodhart-evidence"
+      ],
+      "current_semantic_level": "P1",
+      "current_syntax_depth_class": "derived_or_decomposed",
+      "theorem_dependency_refs": [],
+      "theorem_consumer_refs": [],
+      "executable_or_result_refs": [
+        "experiments/benchmark_antigoodhart/results/2026-07-02-fixture-bridge.json",
+        "scripts/validate_benchmark_antigoodhart.py",
+        "scripts/validate_benchmark_fixture_bridge.py"
+      ],
+      "current_maximum_inference": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "recommended_action": "retire_summary_fixture_mirror",
+      "recommended_action_rationale": "The declaration normalizes a hand-authored Boolean/count summary. Preserve the independent executable result and any reachable route or counterexample family; do not replace the mirror with another copied summary theorem.",
+      "target_treatment": "remove_lean_mirror_keep_executable_and_route_evidence_separate",
+      "execution_tranche": 3,
+      "new_formal_claim_required": false,
+      "support_state_effect": "none"
+    },
+    {
+      "theorem_id": "lean/AsiStackProofs/BenchmarkRatchets.lean::benchmark_antigoodhart_fixture_bridge_valid",
+      "module_path": "lean/AsiStackProofs/BenchmarkRatchets.lean",
+      "name": "benchmark_antigoodhart_fixture_bridge_valid",
+      "semantic_owner_ids": [
+        "benchmark-ratchets-and-anti-goodhart-evidence"
+      ],
+      "current_semantic_level": "P0",
+      "current_syntax_depth_class": "derived_or_decomposed",
+      "theorem_dependency_refs": [],
+      "theorem_consumer_refs": [],
+      "executable_or_result_refs": [
+        "experiments/benchmark_antigoodhart/results/2026-07-02-fixture-bridge.json",
+        "scripts/validate_benchmark_antigoodhart.py",
+        "scripts/validate_benchmark_fixture_bridge.py"
+      ],
+      "current_maximum_inference": "Only the declared type, record-shape, equality, or projection fact in the Lean model.",
+      "recommended_action": "retire_summary_fixture_mirror",
+      "recommended_action_rationale": "The declaration normalizes a hand-authored Boolean/count summary. Preserve the independent executable result and any reachable route or counterexample family; do not replace the mirror with another copied summary theorem.",
+      "target_treatment": "remove_lean_mirror_keep_executable_and_route_evidence_separate",
+      "execution_tranche": 3,
+      "new_formal_claim_required": false,
+      "support_state_effect": "none"
+    },
+    {
+      "theorem_id": "lean/AsiStackProofs/RuntimeAdapters.lean::human_oversight_degradation_fixture_bridge",
+      "module_path": "lean/AsiStackProofs/RuntimeAdapters.lean",
+      "name": "human_oversight_degradation_fixture_bridge",
+      "semantic_owner_ids": [
+        "runtime-adapters-tool-permissions-and-human-approval"
+      ],
+      "current_semantic_level": "P0",
+      "current_syntax_depth_class": "derived_or_decomposed",
+      "theorem_dependency_refs": [],
+      "theorem_consumer_refs": [],
+      "executable_or_result_refs": [
+        "experiments/human_oversight_degradation/results/2026-07-03-local.json",
+        "scripts/validate_human_oversight_degradation.py",
+        "scripts/validate_runtime_adapter_adversarial_boundary_probe.py",
+        "scripts/validate_runtime_adapter_effect_probe.py",
+        "scripts/validate_runtime_adapter_permissions.py"
+      ],
+      "current_maximum_inference": "Only the declared type, record-shape, equality, or projection fact in the Lean model.",
+      "recommended_action": "retire_summary_fixture_mirror",
+      "recommended_action_rationale": "The declaration normalizes a hand-authored Boolean/count summary. Preserve the independent executable result and any reachable route or counterexample family; do not replace the mirror with another copied summary theorem.",
+      "target_treatment": "remove_lean_mirror_keep_executable_and_route_evidence_separate",
+      "execution_tranche": 3,
+      "new_formal_claim_required": false,
+      "support_state_effect": "none"
+    },
+    {
+      "theorem_id": "lean/AsiStackProofs/SearchSubstrates.lean::substrate_adoption_trace_fixture_valid",
+      "module_path": "lean/AsiStackProofs/SearchSubstrates.lean",
+      "name": "substrate_adoption_trace_fixture_valid",
+      "semantic_owner_ids": [
+        "mathematical-and-search-substrates"
+      ],
+      "current_semantic_level": "P0",
+      "current_syntax_depth_class": "derived_or_decomposed",
+      "theorem_dependency_refs": [],
+      "theorem_consumer_refs": [],
+      "executable_or_result_refs": [
+        "experiments/substrate_adoption_trace/results/2026-07-02-local.json",
+        "scripts/validate_substrate_adoption_trace.py"
+      ],
+      "current_maximum_inference": "Only the declared type, record-shape, equality, or projection fact in the Lean model.",
+      "recommended_action": "retire_summary_fixture_mirror",
+      "recommended_action_rationale": "The declaration normalizes a hand-authored Boolean/count summary. Preserve the independent executable result and any reachable route or counterexample family; do not replace the mirror with another copied summary theorem.",
+      "target_treatment": "remove_lean_mirror_keep_executable_and_route_evidence_separate",
+      "execution_tranche": 3,
+      "new_formal_claim_required": false,
+      "support_state_effect": "none"
+    },
+    {
+      "theorem_id": "lean/AsiStackProofs/StableCapabilityFields.lean::scf_lifecycle_trace_probe_fixture_valid",
+      "module_path": "lean/AsiStackProofs/StableCapabilityFields.lean",
+      "name": "scf_lifecycle_trace_probe_fixture_valid",
+      "semantic_owner_ids": [
+        "stable-capability-fields"
+      ],
+      "current_semantic_level": "P0",
+      "current_syntax_depth_class": "derived_or_decomposed",
+      "theorem_dependency_refs": [],
+      "theorem_consumer_refs": [],
+      "executable_or_result_refs": [
+        "experiments/scf_lifecycle_trace/results/2026-07-02-local.json",
+        "scripts/validate_scf_lifecycle_trace.py",
+        "scripts/validate_stable_capability_fields.py"
+      ],
+      "current_maximum_inference": "Only the declared type, record-shape, equality, or projection fact in the Lean model.",
+      "recommended_action": "retire_summary_fixture_mirror",
+      "recommended_action_rationale": "The declaration normalizes a hand-authored Boolean/count summary. Preserve the independent executable result and any reachable route or counterexample family; do not replace the mirror with another copied summary theorem.",
+      "target_treatment": "remove_lean_mirror_keep_executable_and_route_evidence_separate",
+      "execution_tranche": 3,
+      "new_formal_claim_required": false,
+      "support_state_effect": "none"
+    },
+    {
+      "theorem_id": "lean/AsiStackProofs/StableCapabilityFields.lean::scf_lifecycle_trace_probe_preserves_no_promotion_boundary",
+      "module_path": "lean/AsiStackProofs/StableCapabilityFields.lean",
+      "name": "scf_lifecycle_trace_probe_preserves_no_promotion_boundary",
+      "semantic_owner_ids": [
+        "stable-capability-fields"
+      ],
+      "current_semantic_level": "P1",
+      "current_syntax_depth_class": "derived_or_decomposed",
+      "theorem_dependency_refs": [],
+      "theorem_consumer_refs": [],
+      "executable_or_result_refs": [
+        "experiments/scf_lifecycle_trace/results/2026-07-02-local.json",
+        "scripts/validate_scf_lifecycle_trace.py",
+        "scripts/validate_stable_capability_fields.py"
+      ],
+      "current_maximum_inference": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "recommended_action": "retire_summary_fixture_mirror",
+      "recommended_action_rationale": "The declaration normalizes a hand-authored Boolean/count summary. Preserve the independent executable result and any reachable route or counterexample family; do not replace the mirror with another copied summary theorem.",
+      "target_treatment": "remove_lean_mirror_keep_executable_and_route_evidence_separate",
+      "execution_tranche": 3,
+      "new_formal_claim_required": false,
+      "support_state_effect": "none"
+    },
+    {
+      "theorem_id": "lean/AsiStackProofs/StableCapabilityFields.lean::scf_lifecycle_trace_probe_rejects_unsafe_transitions",
+      "module_path": "lean/AsiStackProofs/StableCapabilityFields.lean",
+      "name": "scf_lifecycle_trace_probe_rejects_unsafe_transitions",
+      "semantic_owner_ids": [
+        "stable-capability-fields"
+      ],
+      "current_semantic_level": "P1",
+      "current_syntax_depth_class": "derived_or_decomposed",
+      "theorem_dependency_refs": [],
+      "theorem_consumer_refs": [],
+      "executable_or_result_refs": [
+        "experiments/scf_lifecycle_trace/results/2026-07-02-local.json",
+        "scripts/validate_scf_lifecycle_trace.py",
+        "scripts/validate_stable_capability_fields.py"
+      ],
+      "current_maximum_inference": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "recommended_action": "retire_summary_fixture_mirror",
+      "recommended_action_rationale": "The declaration normalizes a hand-authored Boolean/count summary. Preserve the independent executable result and any reachable route or counterexample family; do not replace the mirror with another copied summary theorem.",
+      "target_treatment": "remove_lean_mirror_keep_executable_and_route_evidence_separate",
+      "execution_tranche": 3,
+      "new_formal_claim_required": false,
+      "support_state_effect": "none"
+    },
+    {
+      "theorem_id": "lean/AsiStackProofs/FailureModes.lean::complete_failure_record_closes_record",
+      "module_path": "lean/AsiStackProofs/FailureModes.lean",
+      "name": "complete_failure_record_closes_record",
+      "semantic_owner_ids": [
+        "failure-modes-of-ungoverned-intelligence"
+      ],
+      "current_semantic_level": "P1",
+      "current_syntax_depth_class": "derived_or_decomposed",
+      "theorem_dependency_refs": [],
+      "theorem_consumer_refs": [],
+      "executable_or_result_refs": [
+        "scripts/validate_architecture_red_team.py"
+      ],
+      "current_maximum_inference": "Only the declared finite route, rejection, or preservation result under the theorem premises.",
+      "recommended_action": "rewrite_as_inverse_route_property",
+      "recommended_action_rationale": "Replace the authored all-green witness with an input-general inverse: if FailureRecurrenceRouteFor returns closeFailureRecord, every earlier required field and non-claim boundary must have passed.",
+      "target_treatment": "retain_target_after_proposition_rewrite_and_consumer_review",
+      "execution_tranche": 4,
+      "new_formal_claim_required": true,
+      "support_state_effect": "none"
+    }
+  ],
+  "non_claims": [
+    "This audit does not itself retire a theorem or change a proof target.",
+    "An executable validator is not a Lean proof and a Lean theorem is not empirical evidence.",
+    "Dependency-free means no current Lean dependency or theorem consumer, not that the surrounding idea is unimportant.",
+    "Rationalization moves no chapter-core support, release state, empirical result, SOTA claim, AGI claim, or ASI claim."
+  ],
+  "support_state_effect": "none",
+  "release_effect": "none"
+}

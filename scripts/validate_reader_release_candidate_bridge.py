@@ -32,7 +32,7 @@ LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "LivingBook.lean"
 COMMAND = "python3 scripts/validate_reader_release_candidate_bridge.py"
 CODEX_TEST_NAME = "Reader release-candidate bridge"
 PROOF_TAG = "lean:living_book.methodology.reader_release_candidate_bridge"
-LEAN_THEOREMS = [
+HISTORICAL_LEAN_THEOREMS = [
     "curated_reader_blocked_candidate_fixture_routes_to_accessibility_review",
     "local_reader_artifacts_do_not_clear_missing_accessibility_review",
     "reader_release_candidate_missing_screen_reader_routes_to_accessibility_review",
@@ -45,6 +45,7 @@ LEAN_THEOREMS = [
     "reader_release_candidate_missing_approved_record_routes_to_release_approval",
     "reader_release_candidate_support_promotion_claim_rejected",
 ]
+CURRENT_LEAN_THEOREMS = HISTORICAL_LEAN_THEOREMS[1:]
 REQUIRED_NON_CLAIMS = [
     "does not approve curated reader HTML, EPUB, DOCX, PDF, e-reader, audio, MP3, M4B, or audio-embedded EPUB artifacts",
     "does not publish a reader artifact to GitHub Pages or an external archive",
@@ -583,7 +584,7 @@ def build_result(errors: list[str]) -> dict[str, Any]:
         "lean_fixture_alignment": {
             "module": "AsiStackProofs.LivingBook",
             "proof_tag": PROOF_TAG,
-            "theorem_refs": LEAN_THEOREMS,
+            "theorem_refs": HISTORICAL_LEAN_THEOREMS,
             "expected": {
                 "actual_candidate_route": "request_accessibility_review",
                 "audio_missing_route": "request_audio_artifact_review",
@@ -625,7 +626,7 @@ def validate_record(record: dict[str, Any], errors: list[str]) -> None:
     else:
         if alignment.get("proof_tag") != PROOF_TAG:
             errors.append(f"{rel(RESULT)} lean proof tag mismatch.")
-        if alignment.get("theorem_refs") != LEAN_THEOREMS:
+        if alignment.get("theorem_refs") != HISTORICAL_LEAN_THEOREMS:
             errors.append(f"{rel(RESULT)} theorem refs mismatch.")
     if record.get("support_state_effect") != "none":
         errors.append(f"{rel(RESULT)} support_state_effect must remain none.")
@@ -651,11 +652,15 @@ def validate_surfaces(errors: list[str]) -> None:
         LEAN_FILE,
         [
             "ReaderReleaseCandidateReview",
-            "curatedReaderBlockedCandidateFixture",
-            *LEAN_THEOREMS,
+            *CURRENT_LEAN_THEOREMS,
         ],
         errors,
     )
+    lean_text = LEAN_FILE.read_text(encoding="utf-8")
+    if "curated_reader_blocked_candidate_fixture_routes_to_accessibility_review" in lean_text:
+        errors.append(
+            f"{rel(LEAN_FILE)} restored the retired authored-fixture theorem."
+        )
     require_text(
         DOC,
         [

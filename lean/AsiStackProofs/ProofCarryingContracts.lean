@@ -267,41 +267,6 @@ structure CirclePublicConsumerGateAccepted
   noChapterCorePromotion : fixture.chapterCorePromoted = false
   noDeployedTransportClaim : fixture.deployedTransportClaimed = false
 
-def circlePublicConsumerGateFixture : CirclePublicConsumerGateFixture where
-  validReceiptCount := 1
-  expectedInvalidControlCount := 4
-  requiredTheoremCount := 7
-  digestPinned := true
-  theoremIdsPinned := true
-  deterministicFieldsPinned := true
-  digestMismatchRejected := true
-  missingTheoremRejected := true
-  staleContractRejected := true
-  unsupportedTransferRejected := true
-  supportBlocksPromotion := true
-  upwardTransitionCreated := false
-  chapterCorePromoted := false
-  deployedTransportClaimed := false
-
-theorem circle_public_consumer_gate_fixture_accepted :
-    CirclePublicConsumerGateAccepted circlePublicConsumerGateFixture := by
-  exact {
-    oneValidReceipt := rfl
-    fourInvalidControls := rfl
-    sevenRequiredTheorems := rfl
-    digestPinned := rfl
-    theoremIdsPinned := rfl
-    deterministicFieldsPinned := rfl
-    digestMismatchRejected := rfl
-    missingTheoremRejected := rfl
-    staleContractRejected := rfl
-    unsupportedTransferRejected := rfl
-    supportBlocksPromotion := rfl
-    noUpwardTransition := rfl
-    noChapterCorePromotion := rfl
-    noDeployedTransportClaim := rfl
-  }
-
 theorem circle_public_consumer_gate_promotion_overclaim_rejected
     {fixture : CirclePublicConsumerGateFixture} :
     (fixture.upwardTransitionCreated = true ∨

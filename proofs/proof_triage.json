@@ -2364,11 +2364,11 @@
       "tag": "lean:circle_contracts.public_consumer_gate.fixture_bridge",
       "chapter_id": "circle-calculus-and-proof-carrying-ai-contracts",
       "module": "AsiStackProofs.ProofCarryingContracts",
-      "formal_target": "The public Circle consumer-gate fixture records one valid receipt, four rejected mutation controls, seven required theorem IDs, pinned digest fields, blocked support movement, no chapter-core promotion, and no deployed-transport claim.",
+      "formal_target": "Any record satisfying the finite Circle public-consumer acceptance contract loses acceptance when promotion/deployed-transport overclaims or required mutation-control rejections are present; an independent replay validator separately computes one valid receipt and four invalid controls.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented in AsiStackProofs.ProofCarryingContracts as a finite fixture bridge for the public ASI-side Circle consumer gate: it records one accepted receipt, four rejected mutation controls, seven required theorem IDs, pinned digest fields, blocks promotion, and preserves no upward transition, no chapter-core promotion, and no deployed proof-contract transport claim."
+      "rationale": "Quantified Lean rejection consequences and the independent executable replay are kept as distinct evidence surfaces; the authored positive fixture witness is retired."
     },
     {
       "tag": "lean:coil_memory.alias_boundary.operational_invariant",

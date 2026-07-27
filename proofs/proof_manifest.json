@@ -2488,7 +2488,7 @@
       "chapter_title": "Circle Calculus and Proof-Carrying AI Contracts",
       "tag": "lean:circle_contracts.public_consumer_gate.fixture_bridge",
       "module": "AsiStackProofs.ProofCarryingContracts",
-      "formal_target": "The public Circle consumer-gate fixture records one valid receipt, four rejected mutation controls, seven required theorem IDs, pinned digest fields, blocked support movement, no chapter-core promotion, and no deployed-transport claim.",
+      "formal_target": "Any record satisfying the finite Circle public-consumer acceptance contract loses acceptance when promotion/deployed-transport overclaims or required mutation-control rejections are present; an independent replay validator separately computes one valid receipt and four invalid controls.",
       "status": "implemented",
       "outline_line": 5758,
       "module_path": "lean/AsiStackProofs/ProofCarryingContracts.lean"

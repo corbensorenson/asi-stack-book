@@ -123,7 +123,7 @@ def failures(record: dict, *, inspect_files: bool = True) -> list[str]:
             "minimum_host_free_bytes_before_task"
         ]:
             out.append("frozen host floor drifted")
-        doc = DOC.read_text(encoding="utf-8")
+        doc = " ".join(DOC.read_text(encoding="utf-8").split())
         for phrase in [
             "No protected task content was opened",
             "N0 infrastructure disposition",

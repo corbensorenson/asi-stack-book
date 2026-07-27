@@ -20,7 +20,7 @@ Generated from the frozen activation-baseline inventory and semantic review over
 | `promoted_downstream_claim_without_contract_ready_rejected` | derived_or_decomposed | semantically_reviewed | retain_countermodel_or_negative_case |
 | `consumer_gate_acceptance_with_stale_or_unsupported_receipt_rejected` | derived_or_decomposed | semantically_reviewed | retain_countermodel_or_negative_case |
 | `passing_replay_without_replay_artifacts_rejected` | derived_or_decomposed | semantically_reviewed | retain_countermodel_or_negative_case |
-| `circle_public_consumer_gate_fixture_accepted` | direct_or_projection | terminally_dispositioned | replace_with_stronger_model |
+| `circle_public_consumer_gate_fixture_accepted` | direct_or_projection | terminally_dispositioned | retire_projection_or_assumption_restatement |
 | `circle_public_consumer_gate_acceptance_blocks_promotion` | direct_or_projection | terminally_dispositioned | retire_projection_or_assumption_restatement |
 | `circle_public_consumer_gate_promotion_overclaim_rejected` | derived_or_decomposed | semantically_reviewed | retain_countermodel_or_negative_case |
 | `circle_public_consumer_gate_missing_mutation_control_rejected` | derived_or_decomposed | semantically_reviewed | retain_countermodel_or_negative_case |

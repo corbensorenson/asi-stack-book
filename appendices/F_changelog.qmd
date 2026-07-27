@@ -1,5 +1,60 @@
 # Changelog
 
+## 2026-07-26 — C6 remaining stronger-model triage
+
+- Audited all 54 declarations still marked `rewrite_with_stronger_model`
+  against the current semantic overlay, named owners, formal targets,
+  executable consumers, Lean dependencies, and theorem consumers.
+- Confirmed that all 54 have zero Lean dependencies and zero theorem consumers.
+  Assigned 53 fixture or summary mirrors to retirement without replacement,
+  preserving independent executable validators and immutable results at their
+  own scope rather than relabeling them as formal proofs.
+- Reserved exactly one new proposition: replace the Failure Modes authored
+  all-green witness with an input-general inverse route property showing what
+  must be true when the lifecycle returns `closeFailureRecord`.
+- Isolated 43 of the retirements in `TheseusReference.lean`: sanitized
+  repository-import summaries remain useful executable receipts, but copied
+  Boolean/count summaries should not remain formal proof targets.
+- Added a deterministic builder, machine audit, human report, JSON Schema,
+  registered validator, exact four-tranche execution order, and twelve
+  rejecting mutations. The audit does not itself retire a theorem and moves no
+  claim support or release state.
+
+### First dependency-safe execution tranche
+
+- Retired the Living Book authored blocked-reader fixture constant and its
+  reflexive route theorem. The retained input-general accessibility theorem,
+  nine adjacent route cases, and independent reader-release validator preserve
+  the actual boundary.
+- Retired the Circle public-consumer all-green fixture constant and acceptance
+  theorem. Retained quantified rejection theorems for promotion/deployed-
+  transport overclaim and missing mutation controls, plus the independent
+  public replay validator.
+- Reworded the Circle formal target to describe the split formal/executable
+  evidence instead of presenting copied fixture counts as proof. Lean builds
+  with 1,270 live declarations; the cumulative C6 ledger now records 106
+  retirements, two proposition-preserving scope rewrites, and 52 residual
+  actions.
+
+## 2026-07-26 — P2-R3a exact infrastructure entry receipt
+
+- Executed the roadmap's required command-bound P2 entry preflight from source
+  commit `9349d519130f37c86f319cd94147e57e3848b819`.
+- Measured `10,894,745,600` available host bytes (10.15 GiB) against the frozen
+  `53,687,091,200`-byte (50 GiB) floor. The Docker client was present, but a
+  live daemon was not established: version and storage diagnostics returned
+  `EOF`, while the daemon-info diagnostic reached its bounded timeout.
+- Retained an immutable, digest-bound receipt for the resource contract,
+  30-candidate queue, four exact diagnostic transcripts, decision arithmetic,
+  and unblock trigger.
+- Opened no image, dependency environment, protected task content, test
+  identity, patch, task command, evaluator judgment, model output, or outcome.
+  The result is N0 infrastructure evidence, burns no rank, and moves no claim
+  support or release state.
+- Kept deletion authority limited to Docker objects. No Docker reclamation was
+  attempted because the daemon and reclaimable-byte state were unavailable;
+  non-Docker user data remains outside the protocol.
+
 ## 2026-07-26 — R16-B current 84-chapter reader freshness
 
 - Closed Phase 1 book organization with a content-addressed current-reader

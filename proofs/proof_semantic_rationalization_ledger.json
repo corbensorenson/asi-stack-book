@@ -4711,15 +4711,94 @@
         "lean:lake-build"
       ],
       "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R107-retire-curated-reader-blocked-candidate-fixture-routes-to-accessibility-review",
+      "sequence": 107,
+      "state": "executed",
+      "action": "retire_redundant_authored_fixture_witness",
+      "semantic_relation": "fixture_witness_subsumed_or_rebound_to_quantified_results_and_independent_consumer",
+      "module_path": "lean/AsiStackProofs/LivingBook.lean",
+      "baseline_module_sha256": "755ae47235cd31179dcda34edfbe536bbdf84af397af8c72e4e7d0a788385617",
+      "retired_theorem_id": "lean/AsiStackProofs/LivingBook.lean::curated_reader_blocked_candidate_fixture_routes_to_accessibility_review",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "f20ba7a82f322baa2d6c14e7942a00adf255f9b54ba9b69cb7db4ec831d7e49b",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "873621067edeb393f2ad367e3239bfbc47413cac4db417f3510f7434cc6fcd7f",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem reduces one authored blocked-candidate constant by reflexivity.",
+        "The adjacent retained theorem proves the same route for every locally complete candidate whose accessibility review is incomplete.",
+        "Nine further retained route theorems cover missing screen-reader, WCAG, audio, approval, and support-promotion cases.",
+        "The deterministic reader-release consumer preserves the historical fixture result and eleven invalid controls without becoming a Lean proof.",
+        "The public target remains implemented by the retained universal route family and independent consumer."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "The retained family establishes only finite reader-candidate routing under declared predicates; it does not approve, publish, or validate any reader format.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "lean/AsiStackProofs/LivingBook.lean::local_reader_artifacts_do_not_clear_missing_accessibility_review",
+        "scripts/validate_reader_release_candidate_bridge.py",
+        "experiments/reader_release_candidate_bridge/results/2026-07-05-local.json",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "action_id": "C6-R108-retire-circle-public-consumer-gate-fixture-accepted",
+      "sequence": 108,
+      "state": "executed",
+      "action": "retire_redundant_authored_fixture_witness",
+      "semantic_relation": "fixture_witness_subsumed_or_rebound_to_quantified_results_and_independent_consumer",
+      "module_path": "lean/AsiStackProofs/ProofCarryingContracts.lean",
+      "baseline_module_sha256": "dd1641b1b5df9f9c79f03c8af3dc7853b19b0fa9e47bac257e7f1c19b045aac4",
+      "retired_theorem_id": "lean/AsiStackProofs/ProofCarryingContracts.lean::circle_public_consumer_gate_fixture_accepted",
+      "replacement_theorem_id": null,
+      "retired_block_sha256": "b9eb6d22c9cd865e72e0c9ec22f71f5bb78849cbf398335ee467adc601814d65",
+      "replacement_block_sha256": null,
+      "retired_statement_sha256": "97c68dea45cbef5b142b84f4cd5c8d70ba33dd1d3c3a5a7c625c6f828aa127c4",
+      "replacement_statement_sha256": null,
+      "semantic_basis": [
+        "The retired theorem proves acceptance of a hand-authored all-green fixture by field reflexivity.",
+        "The two retained quantified theorems reject promotion, chapter-core, deployed-transport, and missing-control overclaims for any allegedly accepted fixture.",
+        "The independent consumer computes the one valid receipt and four invalid controls from public replay inputs.",
+        "Keeping executable counts and quantified rejection facts separate is stronger evidence hygiene than copying the consumer summary into Lean.",
+        "The public target is narrowed to the retained quantified rejection consequences and separately labeled replay result."
+      ],
+      "dependency_check": {
+        "same_module": true,
+        "retired_theorem_dependency_refs": [],
+        "retired_theorem_consumer_refs": [],
+        "current_fully_qualified_consumer_refs": []
+      },
+      "target_migrations": [],
+      "maximum_inference_preserved": "The retained split surface establishes finite rejection consequences and an independent deterministic replay; it does not prove Circle transport, external theorem truth, workload benefit, deployment, or support movement.",
+      "validation_refs": [
+        "scripts/validate_proof_semantic_rationalization_ledger.py",
+        "scripts/validate_proof_semantic_depth_overlay.py",
+        "lean/AsiStackProofs/ProofCarryingContracts.lean::circle_public_consumer_gate_promotion_overclaim_rejected",
+        "lean/AsiStackProofs/ProofCarryingContracts.lean::circle_public_consumer_gate_missing_mutation_control_rejected",
+        "scripts/validate_circle_public_replay.py",
+        "lean:lake-build"
+      ],
+      "support_state_effect": "none"
     }
   ],
   "summary": {
-    "executed_retirement_count": 104,
+    "executed_retirement_count": 106,
     "executed_scope_rewrite_count": 2,
-    "current_live_theorem_count": 1272,
-    "remaining_action_count": 54,
+    "current_live_theorem_count": 1270,
+    "remaining_action_count": 52,
     "remaining_action_counts": {
-      "rewrite_with_stronger_model": 54
+      "retire_without_replacement": 51,
+      "rewrite_as_inverse_route_property": 1
     },
     "chapter_core_support_transitions": 0,
     "new_formal_claims": 0

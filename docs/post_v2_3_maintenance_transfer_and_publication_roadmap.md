@@ -188,15 +188,16 @@ mapped, and the new owners received birth atoms and reader handoffs. This was a
 sequencing decision, not evidence that the Round 16 criticism lacked force.
 The structural window is therefore closed again.
 
-P2 is once more the scientific headline, but its capacity entry condition is no
-longer assumed from the 2026-07-22 observation. The 2026-07-24 host observation
-reports `22,337,556` available 1-KiB blocks (about 21.3 GiB), below the frozen
-50-GiB floor; Docker-state inspection returned a permission error at the local
-socket. Neither observation is a task outcome. The first empirical action is a
-commit-bound capacity and Docker receipt followed by the exact frozen
-materialization command when its entry conditions hold, or an exact failure
-receipt naming the attempted command, exit state, and blocker. More prose
-cannot substitute for that attempt.
+P2 is once more the scientific headline. The exact 2026-07-26
+`P2-R3a-001` receipt supersedes transient capacity observations for current
+scheduling: the host had `10,894,745,600` available bytes against the frozen
+`53,687,091,200`-byte floor, while the installed Docker client could not reach
+a live daemon. The four exact diagnostic commands, outputs, digests, exits, and
+timeout are committed without opening task content. This is an N0
+infrastructure disposition, not a task result. The next empirical action is a
+new immutable entry receipt after both gates are restored; only a passing
+receipt may launch the exact frozen materializer. More prose or proof count
+cannot substitute for that action.
 
 **Work-in-progress limit:** at most two evidence or maturity packets may be active: one
 existing-book integration packet and one empirical/formal packet. A blocked
@@ -215,8 +216,8 @@ proceeds.
 | Existing-owner paging packet — prose terminal; policy and empirical work deferred | `P6.6-heterogeneous-inference-memory-and-speculative-paging` | Reader-facing source integration was expressly commissioned and completed 2026-07-23; schema, validator, planner, hardware characterization, and empirical work retain the ordinary post-gate entry condition | Maintain the six completed manuscript integrations and source reconciliation. Later implement and validate the heterogeneous-memory policy and run only competent, matched, hardware-characterized paging experiments. Preserve exact/approximate, throughput/latency, and source/local evidence boundaries. No new chapter. |
 | Existing-owner inference-cache packet — prose terminal; receipt and empirical work deferred | `P6.7-inference-cache-reuse-and-honest-pricing` | Reader-facing source integration was expressly commissioned and completed 2026-07-23; no new chapter or support movement | Maintain the three coordinated manuscript integrations and nine-source packet. Later implement the cache-reuse receipt and run separate exact-prefix and semantic-response campaigns under the ordinary post-gate entry condition. Preserve KV-versus-output, exact-versus-semantic, hit-versus-useful-outcome, and provider-contract-versus-local-evidence boundaries. |
 | Existing-owner functional-precision packet — source and prose terminal; evidence work queued | `P6.8-functional-precision-and-behavior-preserving-computation` | Source intake and the eight-owner manuscript integration are complete; schemas, validators, source resolution, and empirical work retain ordinary gates; no new chapter or support movement | Maintain the integrated Precision Contract treatment led by RankFold/NeuralFold. Preserve representation invariance, protected behavior, complete executable and physical-cost accounting, progressive residual precision, routed fallback, certificate scope, and program-transformation proof limits. Reconsider a standalone chapter only if a dated post-integration coherence audit finds a genuinely unowned lifecycle. |
-| Formal slot — terminal | `P4-terminal-no-open-formal-packet` | All six frozen clusters terminal across 25 modules | Maintain the terminal audits and their consumers; open no new proof packet unless a dated, machine-validated amendment names the claim consumer, countermodel, and maximum inference. |
-| Empirical headline — below entry floor, exact receipt next | `P2-R3-storage-materialization-and-replacement-qualification` | Re-measure at run start; the 2026-07-24 observation was about 21.3 GiB available and Docker inspection lacked socket permission; every setup action remains inside the approved Docker-scoped protocol | First, an exact command-bound attempt or failure receipt. Then thirty sealed candidate recipes and receipts; terminal pool materialization; four competently qualified replacements restoring the fixed twelve-task denominator; rank progression only under the frozen amendment; zero protected-content leakage. No deletion of non-Docker user data is authorized. |
+| Formal slot — C6 residual triage terminal; dependency-safe execution queued | `C6-remaining-stronger-model-rationalization` | The exact 54-action residual estate has zero Lean dependencies and zero theorem consumers; the machine audit assigns 53 retire-without-replacement actions and one inverse-route rewrite | Execute four dependency-safe tranches, preserve independent executable evidence without relabeling it as Lean proof, add only the Failure Modes inverse property, rebuild the overlay and ledger after each tranche, and move no support or release state. |
+| Empirical headline — exact N0 entry receipt; materialization blocked | `P2-R3-storage-materialization-and-replacement-qualification` | `P2-R3a-001` measured 10.15 GiB free against the 50 GiB floor and no reachable Docker daemon; restore both gates and write a new immutable preflight before any pull | Then thirty sealed candidate recipes and receipts; terminal pool materialization; four competently qualified replacements restoring the fixed twelve-task denominator; rank progression only under the frozen amendment; zero protected-content leakage. No deletion of non-Docker user data is authorized. |
 | First structural tranche — terminal | White-Box, World Models, Human Factors, and Governed Operations are terminal at argument support | Four exact integration packets preserve owners, sources, formal ceilings, protocols, reader handoffs, and no-promotion boundaries | Maintenance only; no reopened chapter packet without a dated machine-validated defect. |
 | No-deferral manuscript transaction — terminal at argument support; evidence follow-up open | All ten formerly deferred distinct owners are admitted | Ten complete argument-level chapters, one new NIST source record/note, source crosswalks, evidence-plan rows, no-promotion decisions, handoffs, outline/roadmap reconciliation, and 76-chapter manifest truth | No manuscript idea remains in a candidate queue. All 76 chapter cores remain at `argument`; implementation, empirical, formal, reproduction, transfer, and deployment residuals remain open. |
 | Taxonomy and structural-maturity transaction — terminal at argument support | Four unowned danger/release/integrity/resilience lifecycles plus the accepted existing-owner depth repairs | Four complete non-template chapters, three title/content repairs, thirteen section-scale integrations, 21 net-new external sources, source/claim wiring, outline and roadmap reconciliation, and 80-chapter manifest truth | No identified manuscript idea remains deferred. All 80 chapter cores remain at `argument`; the shared flagship, independent evaluation, reproduction, transfer, and publication attestation remain open. |
@@ -548,6 +549,27 @@ Two slots may operate, but each slot has exactly one eligible packet:
    surfaces. It preserves the historical reader manifest, avoids a duplicate
    84-chapter source tree, defers five unreviewed formats explicitly, rejects
    sixteen mutations, and moves no support, release, or publication state.
+
+### P2-R3a exact capacity and Docker receipt — 2026-07-26
+
+The first enforced empirical action is complete at its exact admissible scope.
+Attempt `2026-07-26-r3a-001`, bound to source commit
+`9349d519130f37c86f319cd94147e57e3848b819`, measured
+`10,894,745,600` available host bytes against the frozen
+`53,687,091,200`-byte floor. The Docker client was installed, but
+`docker version` returned `EOF`, `docker info` timed out after 30 seconds, and
+`docker system df` returned `retrieving disk usage: EOF`. Docker-reclaimable
+bytes are therefore unknown and no reclamation was attempted.
+
+The immutable result binds the resource contract and all 30 frozen candidates
+by digest and retains four exact command transcripts. It records zero image
+pulls, zero dependency materializations, zero protected-content reads, zero
+candidate outcomes, N0, and no support or release movement. Neither rank 5 nor
+rank 6 advances. The empirical slot is blocked until a later exact receipt
+shows at least 50 GiB free and a reachable Docker daemon; a passing receipt
+then launches the content-sealed sequential materializer. The parallel formal
+slot may continue dependency-safe rationalization, but cannot be reported as
+P2 movement.
 
 The sequence may move past a packet only when its validator, negative controls,
 status projection, changelog, clean `main` commit, and exact residual record
@@ -1211,11 +1233,11 @@ historical review. The immutable historical registry remains exactly 1,151
 theorems across 298 targets. The separately frozen pre-rationalization overlay
 at commit `d0f9bda14f1253999f2c40d556d925d31e4b36a4` classifies all 1,370
 baseline declarations. The current overlay in
-`proofs/proof_semantic_depth_overlay.json` classifies all 1,272 live theorem
+`proofs/proof_semantic_depth_overlay.json` classifies all 1,270 live theorem
 declarations across 105 theorem-bearing modules and maps them to 61 active
 semantic-owner chapters.
 
-The live semantic-depth distribution is 35 P0 record-shape results, 712 P1
+The live semantic-depth distribution is 34 P0 record-shape results, 711 P1
 finite-route results, 25 P2 reachability/nonvacuity results, 323 P3
 implementation-refinement results, 94 P4 cross-component-safety results, 83 P5
 liveness/recovery results, and zero P6 empirically bound results. P6 being zero
@@ -1226,7 +1248,7 @@ Every overlay row records its assumptions, active semantic owner, downstream
 consumer, witness or explicit witness absence, implementation binding, mutation
 evidence, maximum inference, and disposition. The resulting current estate is
 1,218 retain, zero retire as narrow projection, zero pending scope-language
-rewrites, and 54 stronger-model rewrites. All 1,272 rows have mutation coverage and every
+rewrites, and 52 stronger-model rewrites. All 1,270 rows have mutation coverage and every
 retained theorem has a named consumer.
 
 The cumulative dependency-safe retirement ledger is
@@ -1515,14 +1537,44 @@ from the formal queue because their executable consumers already preserve the
 honest scope; copied formal summaries would add ceremony, not evidence.
 
 This receipt completes the C6 **classification** gate and begins its
-dependency-safe execution gate. Exactly 106 of the original 161 actions have
-been executed: 104 theorem retirements and two proposition-preserving
-scope rewrites. Exactly 54 stronger-model actions remain. The next proof action
+dependency-safe execution gate. Exactly 108 of the original 161 actions have
+been executed: 106 theorem retirements and two proposition-preserving
+scope rewrites. Exactly 52 stronger-model actions remain. The next proof action
 is to replace legacy fixture-validity surfaces with reachable models or
 independent consumers in semantic-value order, starting with existing
 refinement assets before creating new formal machinery. New proof work remains
 reserved for conclusions consumed by a reachable implementation or the natural
 flagship.
+
+The 2026-07-26 terminal residual triage in
+`proofs/c6_remaining_stronger_model_audit.json` now removes ambiguity from
+those 54 actions. All 54 have zero Lean dependencies and zero theorem
+consumers. Fifty-three are hand-authored fixture or summary mirrors and are
+assigned physical retirement without a replacement theorem; their independent
+executable validators, immutable results, and any retained reachable route or
+rejection families remain separate evidence surfaces. The sole rewrite is
+`complete_failure_record_closes_record`: replace its authored all-green
+witness with one input-general inverse property showing that a
+`closeFailureRecord` route implies satisfaction of every earlier required
+field and non-claim boundary. Execution proceeds in four tranches: the
+unambiguously redundant Living Book and Circle witnesses; 43 Theseus
+repository-import mirrors and nine associated formal mirror targets; the
+Benchmark/Runtime/Search/Stable-Capability summary mirrors; then the single
+Failure Modes inverse rewrite. This audit creates no theorem retirement,
+formal result, empirical evidence, support movement, or release effect by
+itself.
+
+The first residual execution tranche is also terminal. The Living Book's
+authored blocked-reader constant and reflexive theorem were retired because
+the retained input-general accessibility route strictly subsumes that witness,
+with nine adjacent route theorems and the independent reader-release consumer
+preserving the wider boundary. Circle's authored all-green public-consumer
+fixture theorem was retired while its two quantified overclaim/missing-control
+rejections and independent replay consumer remain. The Circle target now states
+that split evidence surface instead of claiming the copied fixture summary as
+formal evidence. Historical deterministic results remain unchanged. The live
+estate is therefore 1,270 theorems, with 106 retirements, two exact scope
+rewrites, and 52 stronger-model actions remaining.
 
 An initial semantic spot-check rejected a naive retirement rule before any
 proof deletion: 33 declarations shared literal theorem text across different
