@@ -1,0 +1,157 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/p2_r3a_capacity_preflight.schema.json",
+  "title": "P2-R3a capacity and Docker entry preflight",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "attempt_id",
+    "recorded_at_utc",
+    "state",
+    "claim_id",
+    "scope",
+    "source_commit",
+    "inputs",
+    "host_capacity",
+    "docker",
+    "command_receipts",
+    "decision",
+    "negative_inference_level",
+    "support_state_effect",
+    "release_effect",
+    "non_claims"
+  ],
+  "properties": {
+    "schema_version": {"const": "asi_stack.p2_r3a_capacity_preflight.v1"},
+    "attempt_id": {"type": "string", "pattern": "^20[0-9]{2}-[0-9]{2}-[0-9]{2}-r3a-[0-9]{3}$"},
+    "recorded_at_utc": {"type": "string", "format": "date-time"},
+    "state": {"enum": ["blocked_before_materialization", "entry_gate_pass_materialization_not_started"]},
+    "claim_id": {"const": "p2.governed_natural_repository_change_admission_joint_frontier"},
+    "scope": {"const": "host_capacity_and_docker_daemon_entry_preflight_only"},
+    "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "inputs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "resource_ceiling_path",
+        "resource_ceiling_sha256",
+        "replacement_queue_path",
+        "replacement_queue_sha256",
+        "frozen_candidate_count"
+      ],
+      "properties": {
+        "resource_ceiling_path": {"const": "evidence_quality/p2_resource_ceiling.json"},
+        "resource_ceiling_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "replacement_queue_path": {"const": "experiments/p2_governed_repository_admission/corpus/replacement_queue.json"},
+        "replacement_queue_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "frozen_candidate_count": {"const": 30}
+      }
+    },
+    "host_capacity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "measured_path",
+        "total_bytes",
+        "used_bytes",
+        "available_bytes",
+        "minimum_required_bytes",
+        "shortfall_bytes",
+        "floor_pass"
+      ],
+      "properties": {
+        "measured_path": {"type": "string", "minLength": 1},
+        "total_bytes": {"type": "integer", "minimum": 1},
+        "used_bytes": {"type": "integer", "minimum": 0},
+        "available_bytes": {"type": "integer", "minimum": 0},
+        "minimum_required_bytes": {"type": "integer", "minimum": 1},
+        "shortfall_bytes": {"type": "integer", "minimum": 0},
+        "floor_pass": {"type": "boolean"}
+      }
+    },
+    "docker": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "daemon_reachable",
+        "all_diagnostic_commands_exit_zero",
+        "reclaimable_bytes_known",
+        "reclamation_attempted",
+        "reclamation_authorized_scope"
+      ],
+      "properties": {
+        "daemon_reachable": {"type": "boolean"},
+        "all_diagnostic_commands_exit_zero": {"type": "boolean"},
+        "reclaimable_bytes_known": {"type": "boolean"},
+        "reclamation_attempted": {"const": false},
+        "reclamation_authorized_scope": {"const": "docker_objects_only"}
+      }
+    },
+    "command_receipts": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "argv",
+          "shell_display",
+          "started_at_utc",
+          "ended_at_utc",
+          "wall_seconds",
+          "timeout_seconds",
+          "timed_out",
+          "exit_code",
+          "stdout",
+          "stderr",
+          "stdout_sha256",
+          "stderr_sha256"
+        ],
+        "properties": {
+          "argv": {"type": "array", "minItems": 2, "items": {"type": "string"}},
+          "shell_display": {"type": "string", "minLength": 1},
+          "started_at_utc": {"type": "string", "format": "date-time"},
+          "ended_at_utc": {"type": "string", "format": "date-time"},
+          "wall_seconds": {"type": "number", "minimum": 0},
+          "timeout_seconds": {"type": "integer", "minimum": 1},
+          "timed_out": {"type": "boolean"},
+          "exit_code": {"type": "integer"},
+          "stdout": {"type": "string"},
+          "stderr": {"type": "string"},
+          "stdout_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "stderr_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+        }
+      }
+    },
+    "decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "entry_gate_pass",
+        "blockers",
+        "pool_materialization_started",
+        "candidate_image_pull_started",
+        "dependency_materialization_started",
+        "protected_task_content_opened",
+        "candidate_outcome_opened",
+        "next_legal_action"
+      ],
+      "properties": {
+        "entry_gate_pass": {"type": "boolean"},
+        "blockers": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+        "pool_materialization_started": {"const": false},
+        "candidate_image_pull_started": {"const": false},
+        "dependency_materialization_started": {"const": false},
+        "protected_task_content_opened": {"const": false},
+        "candidate_outcome_opened": {"const": false},
+        "next_legal_action": {"type": "string", "minLength": 1}
+      }
+    },
+    "negative_inference_level": {"const": "N0"},
+    "support_state_effect": {"const": "none"},
+    "release_effect": {"const": "none"},
+    "non_claims": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 1}}
+  }
+}
