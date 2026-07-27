@@ -177,6 +177,7 @@
         "attested_branch",
         "source_file_count",
         "source_files_match_commit",
+        "source_file_sha256",
         "model_weight_digest_bound",
         "dependency_lock_digest_bound",
         "weight_tamper_rejected",
@@ -197,6 +198,14 @@
         },
         "source_files_match_commit": {
           "const": true
+        },
+        "source_file_sha256": {
+          "type": "object",
+          "minProperties": 3,
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          }
         },
         "model_weight_digest_bound": {
           "const": true
