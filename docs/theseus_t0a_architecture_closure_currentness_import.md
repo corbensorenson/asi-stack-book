@@ -1,7 +1,7 @@
 # Project Theseus T0A architecture-closure currentness import
 
 Observed on 2026-07-27 from clean Project Theseus `main` at
-`0700fdb0d61f6e84e8f765a889a9b2107da0784b`. The local branch was 0
+`24955417161e40587bb9eec7b091618d96e370ba`. The local branch was 0
 commits ahead of `origin/main`, and the observed commit is published on
 `origin/main`. This import records that exact clean author-owned implementation
 state.
@@ -36,15 +36,19 @@ current content-addressed package.
 
 ## Remaining T0A work
 
-1. Run the unchanged guarded optimizer-matched accelerator shard when the
-   declared 5,120 MiB launch reserve is naturally available.
+1. Run the unchanged guarded optimizer-matched accelerator shard in a quiescent
+   host window that preserves both its 5,120 MiB launch reserve and 4,096 MiB
+   live reserve.
 2. Publish the replacement content-addressed architecture-freeze package.
 
-The remaining shard was refused before child start at 5,093.1 MiB available
-memory because its contract requires 5,120 MiB before launch. This preserves
-host safety and is not optimizer or architecture counterevidence, but it also
-does not complete the replay. After `T0A`, the broader readiness gate must be
-rerun against the current 84-chapter ASI Stack before `T1`.
+The latest remaining-shard attempt passed its 5,120 MiB launch reserve and
+started. The external guard stopped it after reclaimable memory fell to
+3,708.391 MiB, below the declared 4,096 MiB live reserve. Maximum inferred
+unified memory was 1,529.766 MiB, maximum process RSS was 231.75 MiB, and
+swapout growth was zero. This preserves host safety and is not optimizer or
+architecture counterevidence, but it also does not complete the replay. After
+`T0A`, the broader readiness gate must be rerun against the current 84-chapter
+ASI Stack before `T1`.
 
 ## Boundary
 

@@ -1030,7 +1030,7 @@ def errors(data: dict) -> list[str]:
         out.append("shared quality critical path must preserve historical T0, successor T0A, then T1 through T6")
     t0a_currentness = quality_program.get("t0a_currentness", {})
     expected_t0a_currentness = {
-        "source_commit": "0700fdb0d61f6e84e8f765a889a9b2107da0784b",
+        "source_commit": "24955417161e40587bb9eec7b091618d96e370ba",
         "source_branch": "main",
         "published_on_origin_main": True,
         "historical_artifact_count": 123,
@@ -1042,10 +1042,17 @@ def errors(data: dict) -> list[str]:
         "accelerator_replay_valid_count": 13,
         "accelerator_replay_requested_count": 14,
         "remaining_shard": "optimizer_matched_adequacy",
-        "remaining_shard_child_started": False,
-        "remaining_shard_fault": "host_memory_preflight_failed:available_mib=5093.1:required_mib=5120.0",
+        "remaining_shard_child_started": True,
+        "remaining_shard_fault": "host_memory_reserve_breached",
+        "remaining_shard_initial_reclaimable_available_mib": 5216.328,
+        "remaining_shard_minimum_reclaimable_available_mib": 3686.562,
+        "remaining_shard_fault_reclaimable_available_mib": 3708.391,
+        "remaining_shard_live_reserve_mib": 4096.0,
+        "remaining_shard_maximum_inferred_unified_memory_mib": 1529.766,
+        "remaining_shard_maximum_process_rss_mib": 231.75,
+        "remaining_shard_maximum_swapout_growth_mib": 0.0,
         "replacement_package_current": False,
-        "next_legal_action": "run only the unchanged guarded optimizer-matched shard when its declared launch reserve is naturally available, then publish the replacement content-addressed package",
+        "next_legal_action": "run only the unchanged guarded optimizer-matched shard in a quiescent host window that preserves its launch and live reserves, then publish the replacement content-addressed package",
         "protected_outcomes_opened": 0,
         "support_state_effect": "none",
         "release_effect": "none",
@@ -1814,7 +1821,7 @@ def main() -> None:
     mutate("T0A CPU replay denominator drift", lambda c: c["status"]["quality_uplift_program"]["t0a_currentness"].__setitem__("cpu_governance_replay_passed_count", 6))
     mutate("T0A accelerator denominator shrink", lambda c: c["status"]["quality_uplift_program"]["t0a_currentness"].__setitem__("accelerator_replay_requested_count", 13))
     mutate("T0A failed shard erasure", lambda c: c["status"]["quality_uplift_program"]["t0a_currentness"].__setitem__("accelerator_replay_valid_count", 14))
-    mutate("T0A child start invention", lambda c: c["status"]["quality_uplift_program"]["t0a_currentness"].__setitem__("remaining_shard_child_started", True))
+    mutate("T0A child start erasure", lambda c: c["status"]["quality_uplift_program"]["t0a_currentness"].__setitem__("remaining_shard_child_started", False))
     mutate("T0A replacement freeze laundering", lambda c: c["status"]["quality_uplift_program"]["t0a_currentness"].__setitem__("replacement_package_current", True))
     mutate("editorial meaning-preservation deletion", lambda c: c["status"]["quality_uplift_program"]["narrative_quality_gate"].__setitem__("requires_meaning_preservation_audit", False))
     mutate("post-review reference denominator rollback", lambda c: c["status"]["quality_uplift_program"]["post_review_convergence"].__setitem__("reference_chapter_count", 61))

@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026-07-27 — Theseus T0A guarded live-reserve stop
+
+- Retried only the unchanged optimizer-matched accelerator shard after the
+  declared 5,120 MiB launch reserve became naturally available.
+- The child started, but the external guard stopped it after reclaimable
+  memory fell to 3,708.391 MiB below the 4,096 MiB live reserve. Maximum
+  inferred unified memory was 1,529.766 MiB, maximum process RSS was
+  231.75 MiB, and swapout growth was zero.
+- Published exact Theseus `main` checkpoint `24955417` and updated the book's
+  public-safe currentness import, machine status, roadmap, outline, and owning
+  chapters. The final accelerator denominator remains 13/14 and the
+  replacement architecture package remains unpublished.
+- The stop demonstrates guard operation only. It is not negative evidence
+  about the optimizer or architecture and opens no training, held-out outcome,
+  support, release, or capability claim.
+
 ## 2026-07-27 — Theseus T0A guarded-replay custody update
 
 - Published the exact Project Theseus `main` checkpoint `0700fdb0` to
@@ -15,7 +31,8 @@
   immutable control; the replacement package remains unpublished.
 - Expanded the registered public-safe currentness validator to sixteen
   rejecting mutations covering origin publication, replay denominators,
-  failed-shard preservation, and child-start honesty. No training, held-out
+  failed-shard preservation, and child-start honesty. The later live-reserve
+  stop above supersedes this checkpoint's no-child observation. No training, held-out
   outcome, support movement, release movement, or capability claim occurred.
 
 ## 2026-07-27 — Theseus T0/T0A architecture-currentness reconciliation

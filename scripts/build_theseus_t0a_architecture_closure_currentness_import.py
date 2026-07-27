@@ -20,15 +20,15 @@ DOC = ROOT / "docs/theseus_t0a_architecture_closure_currentness_import.md"
 
 def build() -> dict:
     return {
-        "schema_version": "asi_stack.theseus_t0a_architecture_closure_currentness_import.v2",
-        "import_id": "theseus-t0a-architecture-closure-currentness-2026-07-27-0700fdb0",
-        "observed_utc": "2026-07-27T11:35:03Z",
+        "schema_version": "asi_stack.theseus_t0a_architecture_closure_currentness_import.v3",
+        "import_id": "theseus-t0a-architecture-closure-currentness-2026-07-27-24955417",
+        "observed_utc": "2026-07-27T12:22:52Z",
         "source_authority": {
             "project": "Project Theseus / Theseus-Hive",
             "owner": "Corben Sorenson",
             "source_kind": "local_author_owned_implementation_reference",
             "branch": "main",
-            "commit": "0700fdb0d61f6e84e8f765a889a9b2107da0784b",
+            "commit": "24955417161e40587bb9eec7b091618d96e370ba",
             "worktree_clean": True,
             "ahead_of_origin_main_commit_count": 0,
             "published_on_origin_main": True,
@@ -79,8 +79,8 @@ def build() -> dict:
             },
             {
                 "path": "reports/accelerator_replay/optimizer_matched_adequacy_guard.json",
-                "sha256": "66bb7e6b3413284d651b845b9ab547c79bf758c4f3874cbe5e4a9100b97f74f3",
-                "bytes": 953,
+                "sha256": "d3147b20511f2af530c609930ee5756c011e54b0bbcae894979c85bac799859a",
+                "bytes": 27715,
             },
             {
                 "path": "reports/replay_safety/00.json",
@@ -119,8 +119,8 @@ def build() -> dict:
             },
             {
                 "path": "roadmap.md",
-                "sha256": "3738a5fbb90df70307e757fc1faa9433ad4daa4ad2de78f89b4b7bf444a92736",
-                "bytes": 242945,
+                "sha256": "6fdaa33f1e63551f376917c867ed63efb434caf1a211da624a1fb9d181d11425",
+                "bytes": 243460,
             },
         ],
         "historical_t0_package": {
@@ -154,11 +154,18 @@ def build() -> dict:
             "accelerator_replay_valid_count": 13,
             "accelerator_replay_invalid_count": 1,
             "invalid_accelerator_shard_id": "optimizer_matched_adequacy",
-            "invalid_accelerator_child_started": False,
-            "invalid_accelerator_fault": "host_memory_preflight_failed:available_mib=5093.1:required_mib=5120.0",
+            "invalid_accelerator_child_started": True,
+            "invalid_accelerator_fault": "host_memory_reserve_breached",
+            "invalid_accelerator_initial_reclaimable_available_mib": 5216.328,
+            "invalid_accelerator_minimum_reclaimable_available_mib": 3686.562,
+            "invalid_accelerator_fault_reclaimable_available_mib": 3708.391,
+            "invalid_accelerator_live_reserve_mib": 4096.0,
+            "invalid_accelerator_maximum_inferred_unified_memory_mib": 1529.766,
+            "invalid_accelerator_maximum_process_rss_mib": 231.75,
+            "invalid_accelerator_maximum_swapout_growth_mib": 0.0,
             "architecture_package_current": False,
             "remaining_blockers": [
-                "run the unchanged guarded optimizer-matched accelerator replay after the declared 5120 MiB launch reserve is naturally available",
+                "run the unchanged guarded optimizer-matched accelerator replay in a quiescent host window that preserves both the 5120 MiB launch reserve and the 4096 MiB live reserve",
                 "publish a replacement content-addressed architecture-freeze package binding the current artifacts",
             ],
             "post_t0a_pretraining_prerequisite": "rerun the broader pre-training readiness gate against the current 84-chapter ASI Stack after the replacement package exists",
@@ -171,10 +178,10 @@ def build() -> dict:
                 "interpretation": "partial replay custody only; the replacement package was not written",
             },
             {
-                "command": "runtime/venvs/mlx-0.32.0-py312/bin/python scripts/host_resource_safety.py --policy configs/optimizer_matched_adequacy_guard.json -- runtime/venvs/mlx-0.32.0-py312/bin/python scripts/optimizer_matched_adequacy.py --execute",
-                "exit_code": 1,
-                "result": "host_memory_preflight_refused_before_child_start",
-                "interpretation": "available memory 5093.1 MiB was below the declared 5120 MiB launch reserve; this is a safety refusal, not architecture counterevidence",
+                "command": "python3 scripts/pretraining_architecture_freeze.py --run-accelerator-shards --accelerator-shard optimizer_matched_adequacy",
+                "exit_code": 2,
+                "result": "child_started_then_host_memory_live_reserve_breached",
+                "interpretation": "the 5120 MiB launch reserve passed, but the external guard stopped the child after reclaimable memory fell below the 4096 MiB live reserve; maximum inferred unified memory was 1529.766 MiB, maximum process RSS was 231.75 MiB, and swapout growth was zero",
             },
             {
                 "command": "python3 scripts/theseus_project_registry.py --gate",
@@ -185,8 +192,8 @@ def build() -> dict:
         ],
         "book_disposition": {
             "prior_state": "T0A_active_before_guarded_replay_attempt",
-            "new_state": "T0A_active_with_7_of_7_cpu_replays_green_13_of_14_accelerator_receipts_valid_and_replacement_freeze_unpublished",
-            "next_legal_action": "run only the unchanged guarded optimizer-matched shard when its declared launch reserve is naturally available, then publish the replacement package",
+            "new_state": "T0A_active_with_7_of_7_cpu_replays_green_13_of_14_accelerator_receipts_valid_latest_shard_stopped_by_live_memory_guard_and_replacement_freeze_unpublished",
+            "next_legal_action": "run only the unchanged guarded optimizer-matched shard in a quiescent host window that preserves its launch and live reserves, then publish the replacement package",
             "protected_outcomes_opened": 0,
             "support_state_effect": "none",
             "release_effect": "none",
@@ -214,7 +221,7 @@ def build() -> dict:
             "cpu_replay_failure_invention",
             "accelerator_denominator_shrink",
             "invalid_accelerator_receipt_erasure",
-            "accelerator_child_start_invention",
+            "accelerator_child_start_erasure",
             "protected_outcome_invention",
             "private_payload_copy",
             "support_promotion",
@@ -224,7 +231,7 @@ def build() -> dict:
             "This is a public-safe implementation-reference currentness handoff, not a training or capability result.",
             "A GREEN historical package and GREEN factorized bakeoff do not make the changed current source tree training-ready.",
             "The import does not establish model quality, useful behavior, training success, optimizer superiority, safety, deployment, transfer, AGI, ASI, or SOTA.",
-            "The no-child memory preflight refusal is not negative evidence about the optimizer or architecture.",
+            "The runtime memory-reserve stop is not negative evidence about the optimizer or architecture.",
             "Seven CPU/governance passes and thirteen valid accelerator receipts do not make a fourteen-receipt freeze complete.",
             "No chapter-core or non-core support state changes.",
         ],
@@ -268,7 +275,10 @@ def validate(actual: dict, expected: dict) -> list[str]:
         or current.get("accelerator_replay_valid_count") != 13
         or current.get("accelerator_replay_invalid_count") != 1
         or current.get("invalid_accelerator_shard_id") != "optimizer_matched_adequacy"
-        or current.get("invalid_accelerator_child_started") is not False
+        or current.get("invalid_accelerator_child_started") is not True
+        or current.get("invalid_accelerator_fault") != "host_memory_reserve_breached"
+        or current.get("invalid_accelerator_live_reserve_mib") != 4096.0
+        or current.get("invalid_accelerator_maximum_swapout_growth_mib") != 0.0
         or current.get("architecture_package_current") is not False
         or len(current.get("remaining_blockers", [])) != 2
     ):
@@ -278,9 +288,9 @@ def validate(actual: dict, expected: dict) -> list[str]:
         len(receipts) != 3
         or receipts[0].get("result")
         != "seven_cpu_governance_replays_passed_then_freeze_refused_for_one_invalid_accelerator_receipt"
-        or receipts[1].get("result") != "host_memory_preflight_refused_before_child_start"
+        or receipts[1].get("result") != "child_started_then_host_memory_live_reserve_breached"
         or receipts[2].get("result") != "GREEN_zero_blockers"
-        or [row.get("exit_code") for row in receipts] != [1, 1, 0]
+        or [row.get("exit_code") for row in receipts] != [1, 2, 0]
     ):
         errors.append("fail-closed observation receipts drifted")
     disposition = actual.get("book_disposition", {})
@@ -340,15 +350,19 @@ current content-addressed package.
 
 ## Remaining T0A work
 
-1. Run the unchanged guarded optimizer-matched accelerator shard when the
-   declared 5,120 MiB launch reserve is naturally available.
+1. Run the unchanged guarded optimizer-matched accelerator shard in a quiescent
+   host window that preserves both its 5,120 MiB launch reserve and 4,096 MiB
+   live reserve.
 2. Publish the replacement content-addressed architecture-freeze package.
 
-The remaining shard was refused before child start at 5,093.1 MiB available
-memory because its contract requires 5,120 MiB before launch. This preserves
-host safety and is not optimizer or architecture counterevidence, but it also
-does not complete the replay. After `T0A`, the broader readiness gate must be
-rerun against the current 84-chapter ASI Stack before `T1`.
+The latest remaining-shard attempt passed its 5,120 MiB launch reserve and
+started. The external guard stopped it after reclaimable memory fell to
+3,708.391 MiB, below the declared 4,096 MiB live reserve. Maximum inferred
+unified memory was 1,529.766 MiB, maximum process RSS was 231.75 MiB, and
+swapout growth was zero. This preserves host safety and is not optimizer or
+architecture counterevidence, but it also does not complete the replay. After
+`T0A`, the broader readiness gate must be rerun against the current 84-chapter
+ASI Stack before `T1`.
 
 ## Boundary
 
@@ -390,7 +404,7 @@ def main() -> None:
         ("cpu replay failure", lambda x: x["current_t0a_state"].__setitem__("cpu_governance_replay_passed_count", 6)),
         ("accelerator denominator", lambda x: x["current_t0a_state"].__setitem__("accelerator_replay_requested_count", 13)),
         ("invalid accelerator erasure", lambda x: x["current_t0a_state"].__setitem__("accelerator_replay_invalid_count", 0)),
-        ("child start invention", lambda x: x["current_t0a_state"].__setitem__("invalid_accelerator_child_started", True)),
+        ("child start erasure", lambda x: x["current_t0a_state"].__setitem__("invalid_accelerator_child_started", False)),
         ("outcome invention", lambda x: x["book_disposition"].__setitem__("protected_outcomes_opened", 1)),
         ("private copy", lambda x: x["public_safety"].__setitem__("private_payloads_copied", 1)),
         ("support promotion", lambda x: x["book_disposition"].__setitem__("support_state_effect", "prototype-backed")),
