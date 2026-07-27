@@ -12,22 +12,38 @@ from jsonschema import Draft202012Validator, FormatChecker
 
 
 ROOT = Path(__file__).resolve().parents[1]
-ATTEMPT = (
-    ROOT
-    / "experiments/p2_governed_repository_admission/infrastructure_materialization/attempts"
-    / "2026-07-26-r3a-001/result.json"
-)
+ATTEMPTS = [
+    (
+        "2026-07-26-r3a-001",
+        ROOT
+        / "experiments/p2_governed_repository_admission/infrastructure_materialization/attempts"
+        / "2026-07-26-r3a-001/result.json",
+        ROOT / "docs/p2_r3a_capacity_and_docker_preflight_2026_07_26.md",
+    ),
+    (
+        "2026-07-27-r3a-002",
+        ROOT
+        / "experiments/p2_governed_repository_admission/infrastructure_materialization/attempts"
+        / "2026-07-27-r3a-002/result.json",
+        ROOT / "docs/p2_r3a_capacity_and_docker_preflight_2026_07_27.md",
+    ),
+]
 SCHEMA = ROOT / "schemas/p2_r3a_capacity_preflight.schema.json"
 RESOURCE = ROOT / "evidence_quality/p2_resource_ceiling.json"
 QUEUE = ROOT / "experiments/p2_governed_repository_admission/corpus/replacement_queue.json"
-DOC = ROOT / "docs/p2_r3a_capacity_and_docker_preflight_2026_07_26.md"
 
 
 def sha256_bytes(value: bytes) -> str:
     return hashlib.sha256(value).hexdigest()
 
 
-def failures(record: dict, *, inspect_files: bool = True) -> list[str]:
+def failures(
+    record: dict,
+    *,
+    expected_attempt_id: str,
+    doc_path: Path,
+    inspect_files: bool = True,
+) -> list[str]:
     out: list[str] = []
     schema = json.loads(SCHEMA.read_text(encoding="utf-8"))
     for error in Draft202012Validator(
@@ -44,7 +60,7 @@ def failures(record: dict, *, inspect_files: bool = True) -> list[str]:
     expected_docker_pass = docker.get("daemon_reachable") is True
     expected_entry = expected_floor_pass and expected_docker_pass
     checks = [
-        (record.get("attempt_id") == "2026-07-26-r3a-001", "attempt identity drifted"),
+        (record.get("attempt_id") == expected_attempt_id, "attempt identity drifted"),
         (host.get("floor_pass") == expected_floor_pass, "host floor decision is inconsistent"),
         (
             host.get("shortfall_bytes")
@@ -126,7 +142,7 @@ def failures(record: dict, *, inspect_files: bool = True) -> list[str]:
             "minimum_host_free_bytes_before_task"
         ]:
             out.append("frozen host floor drifted")
-        doc = " ".join(DOC.read_text(encoding="utf-8").split())
+        doc = " ".join(doc_path.read_text(encoding="utf-8").split())
         for phrase in [
             "No protected task content was opened",
             "N0 infrastructure disposition",
@@ -140,33 +156,50 @@ def failures(record: dict, *, inspect_files: bool = True) -> list[str]:
 
 
 def main() -> None:
-    record = json.loads(ATTEMPT.read_text(encoding="utf-8"))
-    out = failures(record)
-    mutations: list[tuple[str, dict]] = []
+    out: list[str] = []
+    mutation_count = 0
+    for attempt_id, attempt_path, doc_path in ATTEMPTS:
+        record = json.loads(attempt_path.read_text(encoding="utf-8"))
+        out.extend(
+            f"{attempt_id}: {message}"
+            for message in failures(
+                record,
+                expected_attempt_id=attempt_id,
+                doc_path=doc_path,
+            )
+        )
+        mutations: list[tuple[str, dict]] = []
 
-    def add(label: str, edit) -> None:
-        candidate = copy.deepcopy(record)
-        edit(candidate)
-        mutations.append((label, candidate))
+        def add(label: str, edit) -> None:
+            candidate = copy.deepcopy(record)
+            edit(candidate)
+            mutations.append((label, candidate))
 
-    add("floor pass forged", lambda r: r["host_capacity"].__setitem__("floor_pass", True))
-    add("shortfall forged", lambda r: r["host_capacity"].__setitem__("shortfall_bytes", 0))
-    add("entry pass forged", lambda r: r["decision"].__setitem__("entry_gate_pass", True))
-    add("materialization forged", lambda r: r["decision"].__setitem__("pool_materialization_started", True))
-    add("content opened", lambda r: r["decision"].__setitem__("protected_task_content_opened", True))
-    add("N-level inflated", lambda r: r.__setitem__("negative_inference_level", "N2"))
-    add("support promoted", lambda r: r.__setitem__("support_state_effect", "promotion"))
-    add("command output edited", lambda r: r["command_receipts"][0].__setitem__("stdout", "edited"))
-    add("queue shrank", lambda r: r["inputs"].__setitem__("frozen_candidate_count", 29))
-    add("Docker knowledge forged", lambda r: r["docker"].__setitem__("reclaimable_bytes_known", True))
-    for label, candidate in mutations:
-        if not failures(candidate, inspect_files=False):
-            out.append(f"negative mutation accepted: {label}")
+        add("floor pass forged", lambda r: r["host_capacity"].__setitem__("floor_pass", True))
+        add("shortfall forged", lambda r: r["host_capacity"].__setitem__("shortfall_bytes", 0))
+        add("entry pass forged", lambda r: r["decision"].__setitem__("entry_gate_pass", True))
+        add("materialization forged", lambda r: r["decision"].__setitem__("pool_materialization_started", True))
+        add("content opened", lambda r: r["decision"].__setitem__("protected_task_content_opened", True))
+        add("N-level inflated", lambda r: r.__setitem__("negative_inference_level", "N2"))
+        add("support promoted", lambda r: r.__setitem__("support_state_effect", "promotion"))
+        add("command output edited", lambda r: r["command_receipts"][0].__setitem__("stdout", "edited"))
+        add("queue shrank", lambda r: r["inputs"].__setitem__("frozen_candidate_count", 29))
+        add("Docker knowledge forged", lambda r: r["docker"].__setitem__("reclaimable_bytes_known", True))
+        mutation_count += len(mutations)
+        for label, candidate in mutations:
+            if not failures(
+                candidate,
+                expected_attempt_id=attempt_id,
+                doc_path=doc_path,
+                inspect_files=False,
+            ):
+                out.append(f"{attempt_id}: negative mutation accepted: {label}")
     if out:
         raise SystemExit("P2-R3a capacity preflight failed:\n - " + "\n - ".join(out))
     print(
-        "P2-R3a capacity preflight passed: exact entry decision, 30-candidate "
-        "custody, N0 boundary, and 10/10 mutations rejected."
+        f"P2-R3a capacity preflight passed: {len(ATTEMPTS)} immutable receipts, "
+        "exact entry decisions, 30-candidate custody, N0 boundaries, and "
+        f"{mutation_count}/{mutation_count} mutations rejected."
     )
 
 

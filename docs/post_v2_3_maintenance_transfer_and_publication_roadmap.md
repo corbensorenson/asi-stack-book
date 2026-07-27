@@ -188,12 +188,12 @@ mapped, and the new owners received birth atoms and reader handoffs. This was a
 sequencing decision, not evidence that the Round 16 criticism lacked force.
 The structural window is therefore closed again.
 
-P2 is once more the scientific headline. The exact 2026-07-26
-`P2-R3a-001` receipt supersedes transient capacity observations for current
-scheduling: the host had `10,894,745,600` available bytes against the frozen
-`53,687,091,200`-byte floor, while the installed Docker client could not reach
-a live daemon. The four exact diagnostic commands, outputs, digests, exits, and
-timeout are committed without opening task content. This is an N0
+P2 is once more the scientific headline. The exact 2026-07-27
+`P2-R3a-002` receipt supersedes transient capacity observations for current
+scheduling: the host had `25,627,230,208` available bytes against the frozen
+`53,687,091,200`-byte floor, while direct Docker diagnostics again failed to
+establish a live daemon. The four exact diagnostic commands, outputs, digests,
+exits, and timeout are committed without opening task content. This is an N0
 infrastructure disposition, not a task result. The next empirical action is a
 new immutable entry receipt after both gates are restored; only a passing
 receipt may launch the exact frozen materializer. More prose or proof count
@@ -217,7 +217,7 @@ proceeds.
 | Existing-owner inference-cache packet — prose terminal; receipt and empirical work deferred | `P6.7-inference-cache-reuse-and-honest-pricing` | Reader-facing source integration was expressly commissioned and completed 2026-07-23; no new chapter or support movement | Maintain the three coordinated manuscript integrations and nine-source packet. Later implement the cache-reuse receipt and run separate exact-prefix and semantic-response campaigns under the ordinary post-gate entry condition. Preserve KV-versus-output, exact-versus-semantic, hit-versus-useful-outcome, and provider-contract-versus-local-evidence boundaries. |
 | Existing-owner functional-precision packet — source and prose terminal; evidence work queued | `P6.8-functional-precision-and-behavior-preserving-computation` | Source intake and the eight-owner manuscript integration are complete; schemas, validators, source resolution, and empirical work retain ordinary gates; no new chapter or support movement | Maintain the integrated Precision Contract treatment led by RankFold/NeuralFold. Preserve representation invariance, protected behavior, complete executable and physical-cost accounting, progressive residual precision, routed fallback, certificate scope, and program-transformation proof limits. Reconsider a standalone chapter only if a dated post-integration coherence audit finds a genuinely unowned lifecycle. |
 | Formal slot — C6 residual triage terminal; dependency-safe execution active | `C6-remaining-stronger-model-rationalization` | The original 54-action residual estate had zero Lean dependencies and zero theorem consumers; two redundant witnesses and 43 Theseus repository-import mirrors are retired, leaving nine actions: eight summary-mirror retirements and one inverse-route rewrite | Retire the eight Benchmark/Runtime/Search/Stable-Capability summary mirrors next, then implement the Failure Modes inverse property. Rebuild the overlay and ledger after every tranche, with no support or release movement. |
-| Empirical headline — exact N0 entry receipt; materialization blocked | `P2-R3-storage-materialization-and-replacement-qualification` | `P2-R3a-001` measured 10.15 GiB free against the 50 GiB floor and no reachable Docker daemon; restore both gates and write a new immutable preflight before any pull | Then thirty sealed candidate recipes and receipts; terminal pool materialization; four competently qualified replacements restoring the fixed twelve-task denominator; rank progression only under the frozen amendment; zero protected-content leakage. No deletion of non-Docker user data is authorized. |
+| Empirical headline — exact N0 entry receipt; materialization blocked | `P2-R3-storage-materialization-and-replacement-qualification` | `P2-R3a-002` measured 23.87 GiB free against the 50 GiB floor and no reachable Docker daemon; restore both gates and write a new immutable preflight before any pull | Then thirty sealed candidate recipes and receipts; terminal pool materialization; four competently qualified replacements restoring the fixed twelve-task denominator; rank progression only under the frozen amendment; zero protected-content leakage. No deletion of non-Docker user data is authorized. |
 | First structural tranche — terminal | White-Box, World Models, Human Factors, and Governed Operations are terminal at argument support | Four exact integration packets preserve owners, sources, formal ceilings, protocols, reader handoffs, and no-promotion boundaries | Maintenance only; no reopened chapter packet without a dated machine-validated defect. |
 | No-deferral manuscript transaction — terminal at argument support; evidence follow-up open | All ten formerly deferred distinct owners are admitted | Ten complete argument-level chapters, one new NIST source record/note, source crosswalks, evidence-plan rows, no-promotion decisions, handoffs, outline/roadmap reconciliation, and 76-chapter manifest truth | No manuscript idea remains in a candidate queue. All 76 chapter cores remain at `argument`; implementation, empirical, formal, reproduction, transfer, and deployment residuals remain open. |
 | Taxonomy and structural-maturity transaction — terminal at argument support | Four unowned danger/release/integrity/resilience lifecycles plus the accepted existing-owner depth repairs | Four complete non-template chapters, three title/content repairs, thirteen section-scale integrations, 21 net-new external sources, source/claim wiring, outline and roadmap reconciliation, and 80-chapter manifest truth | No identified manuscript idea remains deferred. All 80 chapter cores remain at `argument`; the shared flagship, independent evaluation, reproduction, transfer, and publication attestation remain open. |
@@ -570,6 +570,31 @@ shows at least 50 GiB free and a reachable Docker daemon; a passing receipt
 then launches the content-sealed sequential materializer. The parallel formal
 slot may continue dependency-safe rationalization, but cannot be reported as
 P2 movement.
+
+### P2-R3a exact capacity and Docker receipt — 2026-07-27
+
+The next exact preflight is also complete at its admissible scope. Attempt
+`2026-07-27-r3a-002`, bound to source commit
+`2aae71bf83909298f4c5ebd5c6a819f687ba772e`, measured
+`25,627,230,208` available host bytes against the unchanged
+`53,687,091,200`-byte floor. Direct Docker diagnostics established that the
+client was installed but the daemon was not usable: `docker version` returned
+`EOF`, `docker info` reached its 30-second timeout, and `docker system df`
+returned `retrieving disk usage: EOF`.
+
+The immutable result binds the same resource contract and all 30 frozen
+candidates by digest. It records zero image pulls, zero dependency
+materializations, zero protected-content reads, zero candidate outcomes, N0,
+and no support or release movement. It does not erase the 2026-07-26 history
+and it does not count as a candidate attempt. The higher available-byte
+observation improves the measured shortfall from `42,792,345,600` to
+`28,059,860,992` bytes but still fails the frozen floor. No Docker reclamation
+was attempted because the daemon and reclaimable-byte measurement remained
+unavailable; no deletion of non-Docker user data is authorized.
+
+The empirical slot remains infrastructure-blocked. Its exact unblock trigger
+is unchanged: a later receipt must show at least 50 GiB free and a reachable
+Docker daemon before the content-sealed sequential materializer may start.
 
 The sequence may move past a packet only when its validator, negative controls,
 status projection, changelog, clean `main` commit, and exact residual record
@@ -3040,8 +3065,9 @@ authority activates in the same transaction.
 
 P0 remains continuous. P1 is complete and its N0–N5 ceilings remain binding.
 P2 preflight is active and below its frozen storage floor at the latest
-observation; the next action is the exact capacity/Docker receipt plus
-materialization attempt or exact command-bound failure record. The storage-
+2026-07-27 exact observation; its required command-bound failure record is
+committed, and the next action is a new exact capacity/Docker receipt after
+both infrastructure gates are restored. The storage-
 feasible protocol and four-slot replacement qualification remain its unblocking
 path. `P2-Q1-D1` stays closed until
 P2's own competence dossier passes, then may open for the Q1 strong-worker

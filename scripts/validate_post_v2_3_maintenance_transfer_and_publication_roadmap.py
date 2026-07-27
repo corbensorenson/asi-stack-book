@@ -963,7 +963,7 @@ def errors(data: dict) -> list[str]:
     execution_readiness = status.get("execution_readiness", {})
     if execution_readiness.get("state") != "phase_one_book_organization_terminal_p2_evidence_ready":
         out.append("execution board does not close Phase 1 book organization and activate P2 evidence work")
-    if execution_readiness.get("headline_priority") != "P2" or execution_readiness.get("headline_priority_state") != "below_storage_floor_exact_attempt_or_failure_receipt_required":
+    if execution_readiness.get("headline_priority") != "P2" or execution_readiness.get("headline_priority_state") != "latest_exact_preflight_failed_capacity_and_docker_restore_both_before_retry":
         out.append("execution board obscures the P2 headline or the current below-floor attempt requirement")
     if execution_readiness.get("work_in_progress_limit") != 2 or execution_readiness.get("blocked_lane_consumes_work_in_progress") is not False:
         out.append("execution board lost its bounded WIP or blocked-lane rule")
@@ -1426,15 +1426,24 @@ def errors(data: dict) -> list[str]:
             out.append(f"R16-B terminal artifact missing: {field}")
     recovery = round16.get("p2_empirical_recovery", {})
     if (
-        recovery.get("state") != "below_storage_floor_exact_attempt_or_failure_receipt_required"
+        recovery.get("state") != "latest_exact_preflight_failed_capacity_and_docker_restore_both_before_retry"
         or recovery.get("observed_host_free_bytes_2026_07_22") != 71648034816
         or recovery.get("docker_daemon_available_2026_07_22") is not True
         or recovery.get("docker_storage_zero_2026_07_22") is not True
         or recovery.get("observed_host_available_1k_blocks_2026_07_24") != 22337556
         or recovery.get("observed_host_available_bytes_2026_07_24") != 22873657344
         or recovery.get("docker_inspection_state_2026_07_24") != "permission_denied_local_socket"
+        or recovery.get("latest_preflight_attempt_id") != "2026-07-27-r3a-002"
+        or recovery.get("latest_preflight_source_commit") != "2aae71bf83909298f4c5ebd5c6a819f687ba772e"
+        or recovery.get("observed_host_available_bytes_2026_07_27") != 25627230208
+        or recovery.get("observed_host_shortfall_bytes_2026_07_27") != 28059860992
+        or recovery.get("docker_daemon_available_2026_07_27") is not False
     ):
         out.append("P2 historical or current capacity truth drifted")
+    for field in ("latest_preflight_receipt_path", "latest_preflight_human_receipt_path"):
+        relative = recovery.get(field)
+        if not isinstance(relative, str) or not (ROOT / relative).is_file():
+            out.append(f"P2 latest preflight artifact missing: {field}")
     template_guard = round16.get("template_inheritance_guard", {})
     if template_guard.get("provisional_current_61_chapter_repeated_12_gram_count") != 738 or template_guard.get("provisional_current_61_chapter_maximum_spread") != 55:
         out.append("Round 17 provisional W3 diagnostic drifted")
@@ -1523,7 +1532,7 @@ def errors(data: dict) -> list[str]:
 
     p2_execution = status.get("p2_replacement_execution", {})
     execution_expected = {
-        "state": "capacity_floor_met_pool_materialization_not_run_rank5_setup_retry_pending_rank6_closed",
+        "state": "latest_capacity_and_docker_entry_failed_pool_materialization_not_run_rank5_setup_retry_pending_rank6_closed",
         "independent_evaluator_calibration_case_count": 32,
         "rank_one_task_spec_opened_count": 4,
         "unique_candidate_task_spec_opened_count": 5,
@@ -1601,6 +1610,7 @@ def errors(data: dict) -> list[str]:
 
     materialization = status.get("p2_sequential_materialization_contract", {})
     materialization_expected = {
+        "state": "latest_entry_failed_pending_capacity_and_docker_recovery_before_complete_pool_recipe_and_receipt_set",
         "candidate_count": 30,
         "complete_pool_recipe_set_required_before_rank_opening": True,
         "task_content_must_remain_closed_during_materialization": True,
@@ -1854,7 +1864,7 @@ def main() -> None:
         "25 direct and 90 indirect identities resolved with zero unmapped; N0-N5 competence contract active and historical rehabilitation complete; "
         "90 accepted historical negatives classified as 1 N0, 15 N1, 74 N2, and 0 N3-N5; "
         "the frozen 75-surface rehabilitation snapshot including the then-live 55 chapters reconciled with zero overbroad negative language; "
-        "P2 selected prospectively from five candidates; natural development preflight covers 1,117 post-snapshot tasks, 12 repositories, seven languages, and 12 image manifests; the fixed gold denominator is fully dispositioned as eight qualified and four N0 replacements across 62 verified arm logs and eight attempts; the corrected infrastructure/content boundary reinstates rank five as setup-retry-pending and keeps rank six closed; the historical 2026-07-22 capacity entry condition was met, while the 2026-07-24 observation is below the frozen floor and requires an exact attempt or failure receipt; the complete 30-candidate sequential materialization remains unpassed; Q1 D1 and Theseus Q2 D2 remain disjoint and sealed; remeasurement, qualification, construct, and heldout gates remain closed; "
+        "P2 selected prospectively from five candidates; natural development preflight covers 1,117 post-snapshot tasks, 12 repositories, seven languages, and 12 image manifests; the fixed gold denominator is fully dispositioned as eight qualified and four N0 replacements across 62 verified arm logs and eight attempts; the corrected infrastructure/content boundary reinstates rank five as setup-retry-pending and keeps rank six closed; the historical 2026-07-22 capacity entry condition was met, while the exact 2026-07-27 receipt confirms both a below-floor host and unreachable Docker daemon without opening protected content; the complete 30-candidate sequential materialization remains unpassed; Q1 D1 and Theseus Q2 D2 remain disjoint and sealed; remeasurement, qualification, construct, and heldout gates remain closed; "
         "all six semantic proof clusters are terminally adequate at bounded scope; the historical 66-chapter Round 18 freeze remains recorded, while the superseding no-deferral, taxonomy, and full-coverage transactions admit eighteen distinct manuscript owners into the current 84-chapter book at argument support, leave zero live candidate queue, add semantic review and current proof-triage custody, and remove structural freezing for manuscript ideas; the current 84-entry role partition is exact at 11 thesis, 54 load-bearing reference, 7 implementation, and 12 speculative chapters; the C0-C8 convergence amendment preserves three defended contributions, targets a 22-unit reader route, and adds shared calculus, developmental-loop, minimal-kernel, bounded-liveness, P0-P6 proof-depth, and natural-flagship work without an external-human prepublication gate; optimizer manuscript depth is terminal while its empirical campaign remains a nonblocking evidence residual; current proof and main-attestation baselines exact; no support/release effect; "
         f"{len(mutations)}/{len(mutations)} mutations rejected."
     )

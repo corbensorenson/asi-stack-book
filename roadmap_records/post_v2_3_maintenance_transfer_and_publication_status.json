@@ -9,7 +9,7 @@
   "execution_readiness": {
     "state": "phase_one_book_organization_terminal_p2_evidence_ready",
     "headline_priority": "P2",
-    "headline_priority_state": "below_storage_floor_exact_attempt_or_failure_receipt_required",
+    "headline_priority_state": "latest_exact_preflight_failed_capacity_and_docker_restore_both_before_retry",
     "work_in_progress_limit": 2,
     "blocked_lane_consumes_work_in_progress": false,
     "protected_outcome_inspection_allowed": false,
@@ -692,13 +692,20 @@
     "structural_admission_freeze": false,
     "paused_candidate_id": null,
     "p2_empirical_recovery": {
-      "state": "below_storage_floor_exact_attempt_or_failure_receipt_required",
+      "state": "latest_exact_preflight_failed_capacity_and_docker_restore_both_before_retry",
       "observed_host_free_bytes_2026_07_22": 71648034816,
       "docker_daemon_available_2026_07_22": true,
       "docker_storage_zero_2026_07_22": true,
       "observed_host_available_1k_blocks_2026_07_24": 22337556,
       "observed_host_available_bytes_2026_07_24": 22873657344,
       "docker_inspection_state_2026_07_24": "permission_denied_local_socket",
+      "latest_preflight_attempt_id": "2026-07-27-r3a-002",
+      "latest_preflight_source_commit": "2aae71bf83909298f4c5ebd5c6a819f687ba772e",
+      "observed_host_available_bytes_2026_07_27": 25627230208,
+      "observed_host_shortfall_bytes_2026_07_27": 28059860992,
+      "docker_daemon_available_2026_07_27": false,
+      "latest_preflight_receipt_path": "experiments/p2_governed_repository_admission/infrastructure_materialization/attempts/2026-07-27-r3a-002/result.json",
+      "latest_preflight_human_receipt_path": "docs/p2_r3a_capacity_and_docker_preflight_2026_07_27.md",
       "minimum_host_free_bytes": 53687091200,
       "non_docker_user_data_deletion_allowed": false,
       "materialization_recipe_and_receipt_count_required": 30,
@@ -1234,7 +1241,7 @@
     "release_effect": "none"
   },
   "p2_replacement_execution": {
-    "state": "capacity_floor_met_pool_materialization_not_run_rank5_setup_retry_pending_rank6_closed",
+    "state": "latest_capacity_and_docker_entry_failed_pool_materialization_not_run_rank5_setup_retry_pending_rank6_closed",
     "independent_evaluator_calibration_case_count": 32,
     "rank_one_task_spec_opened_count": 4,
     "unique_candidate_task_spec_opened_count": 5,
@@ -1288,7 +1295,7 @@
     "release_effect": "none"
   },
   "p2_sequential_materialization_contract": {
-    "state": "capacity_entry_condition_met_pending_complete_pool_recipe_and_receipt_set",
+    "state": "latest_entry_failed_pending_capacity_and_docker_recovery_before_complete_pool_recipe_and_receipt_set",
     "candidate_count": 30,
     "complete_pool_recipe_set_required_before_rank_opening": true,
     "task_content_must_remain_closed_during_materialization": true,

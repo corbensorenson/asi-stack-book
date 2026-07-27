@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-07-27 — P2-R3a current infrastructure entry receipt
+
+- Executed a second immutable P2 entry preflight from source commit
+  `2aae71bf83909298f4c5ebd5c6a819f687ba772e`, with direct Docker-daemon
+  access rather than inheriting the earlier sandbox-local socket observation.
+- Measured `25,627,230,208` available host bytes (23.87 GiB) against the frozen
+  `53,687,091,200`-byte (50 GiB) floor, leaving a
+  `28,059,860,992`-byte shortfall. Docker version and storage diagnostics
+  returned `EOF`, and daemon info reached its bounded timeout.
+- Added a human receipt and extended the registered validator across both
+  immutable attempts, including 20/20 rejecting mutations, exact command
+  digests, frozen 30-candidate custody, and cross-host path handling.
+- Reconciled the roadmap and machine status to the latest exact observation.
+  No image pull, dependency materialization, protected task content, candidate
+  outcome, support movement, release movement, Docker reclamation, or
+  non-Docker deletion occurred. The next legal P2 action still requires both
+  the 50 GiB floor and a reachable daemon.
+
 ## 2026-07-27 — C6 Theseus repository-mirror retirement
 
 - Physically retired 43 copied Project Theseus repository-import summary

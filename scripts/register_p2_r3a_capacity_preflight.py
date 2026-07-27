@@ -10,8 +10,10 @@ REGISTRY = ROOT / "validation/registry.json"
 SCRIPT = "validate_p2_r3a_capacity_preflight.py"
 ARTIFACTS = [
     "experiments/p2_governed_repository_admission/infrastructure_materialization/attempts/2026-07-26-r3a-001/result.json",
+    "experiments/p2_governed_repository_admission/infrastructure_materialization/attempts/2026-07-27-r3a-002/result.json",
     "schemas/p2_r3a_capacity_preflight.schema.json",
     "docs/p2_r3a_capacity_and_docker_preflight_2026_07_26.md",
+    "docs/p2_r3a_capacity_and_docker_preflight_2026_07_27.md",
     "scripts/run_p2_r3a_capacity_preflight.py",
     "scripts/validate_p2_r3a_capacity_preflight.py",
     "scripts/register_p2_r3a_capacity_preflight.py",
@@ -47,10 +49,10 @@ def main() -> None:
                 "no image pull or dependency materialization",
                 "no protected content or outcome opened",
                 "N0 and no support/release movement",
-                "ten mutations reject",
+                "twenty mutations reject across two immutable receipts",
             ],
             "claim_scope": "Infrastructure entry competence only; the receipt neither materializes the pool nor tests governed repository admission.",
-            "negative_controls": "validator_owned_floor_shortfall_entry_materialization_content_inference_support_command_queue_and_docker_knowledge_mutations",
+            "negative_controls": "two_receipt_validator_owned_floor_shortfall_entry_materialization_content_inference_support_command_queue_and_docker_knowledge_mutations",
             "negative_control_cases": [
                 "floor pass forged",
                 "shortfall forged",
