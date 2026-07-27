@@ -216,7 +216,7 @@ proceeds.
 | Existing-owner paging packet — prose terminal; policy and empirical work deferred | `P6.6-heterogeneous-inference-memory-and-speculative-paging` | Reader-facing source integration was expressly commissioned and completed 2026-07-23; schema, validator, planner, hardware characterization, and empirical work retain the ordinary post-gate entry condition | Maintain the six completed manuscript integrations and source reconciliation. Later implement and validate the heterogeneous-memory policy and run only competent, matched, hardware-characterized paging experiments. Preserve exact/approximate, throughput/latency, and source/local evidence boundaries. No new chapter. |
 | Existing-owner inference-cache packet — prose terminal; receipt and empirical work deferred | `P6.7-inference-cache-reuse-and-honest-pricing` | Reader-facing source integration was expressly commissioned and completed 2026-07-23; no new chapter or support movement | Maintain the three coordinated manuscript integrations and nine-source packet. Later implement the cache-reuse receipt and run separate exact-prefix and semantic-response campaigns under the ordinary post-gate entry condition. Preserve KV-versus-output, exact-versus-semantic, hit-versus-useful-outcome, and provider-contract-versus-local-evidence boundaries. |
 | Existing-owner functional-precision packet — source and prose terminal; evidence work queued | `P6.8-functional-precision-and-behavior-preserving-computation` | Source intake and the eight-owner manuscript integration are complete; schemas, validators, source resolution, and empirical work retain ordinary gates; no new chapter or support movement | Maintain the integrated Precision Contract treatment led by RankFold/NeuralFold. Preserve representation invariance, protected behavior, complete executable and physical-cost accounting, progressive residual precision, routed fallback, certificate scope, and program-transformation proof limits. Reconsider a standalone chapter only if a dated post-integration coherence audit finds a genuinely unowned lifecycle. |
-| Formal slot — C6 residual triage terminal; dependency-safe execution queued | `C6-remaining-stronger-model-rationalization` | The exact 54-action residual estate has zero Lean dependencies and zero theorem consumers; the machine audit assigns 53 retire-without-replacement actions and one inverse-route rewrite | Execute four dependency-safe tranches, preserve independent executable evidence without relabeling it as Lean proof, add only the Failure Modes inverse property, rebuild the overlay and ledger after each tranche, and move no support or release state. |
+| Formal slot — C6 residual triage terminal; dependency-safe execution active | `C6-remaining-stronger-model-rationalization` | The original 54-action residual estate had zero Lean dependencies and zero theorem consumers; the first two redundant witnesses are retired, leaving 52 actions: 51 retire-without-replacement actions and one inverse-route rewrite | Retire the 43 Theseus repository-import mirrors next while preserving their executable import receipts; then complete the remaining summary-mirror tranche and the Failure Modes inverse property. Rebuild the overlay and ledger after every tranche, with no support or release movement. |
 | Empirical headline — exact N0 entry receipt; materialization blocked | `P2-R3-storage-materialization-and-replacement-qualification` | `P2-R3a-001` measured 10.15 GiB free against the 50 GiB floor and no reachable Docker daemon; restore both gates and write a new immutable preflight before any pull | Then thirty sealed candidate recipes and receipts; terminal pool materialization; four competently qualified replacements restoring the fixed twelve-task denominator; rank progression only under the frozen amendment; zero protected-content leakage. No deletion of non-Docker user data is authorized. |
 | First structural tranche — terminal | White-Box, World Models, Human Factors, and Governed Operations are terminal at argument support | Four exact integration packets preserve owners, sources, formal ceilings, protocols, reader handoffs, and no-promotion boundaries | Maintenance only; no reopened chapter packet without a dated machine-validated defect. |
 | No-deferral manuscript transaction — terminal at argument support; evidence follow-up open | All ten formerly deferred distinct owners are admitted | Ten complete argument-level chapters, one new NIST source record/note, source crosswalks, evidence-plan rows, no-promotion decisions, handoffs, outline/roadmap reconciliation, and 76-chapter manifest truth | No manuscript idea remains in a candidate queue. All 76 chapter cores remain at `argument`; implementation, empirical, formal, reproduction, transfer, and deployment residuals remain open. |
@@ -1034,7 +1034,7 @@ that remains safe only by never completing useful work fails the joint gate.
 
 Keep the existing syntax-level classifier, but add a semantic-depth overlay for
 every current declaration. The immutable pre-rationalization baseline contains
-1,370 declarations; the live estate contains 1,272 after 104
+1,370 declarations; the live estate contains 1,270 after 106
 dependency-safe retirement transactions and two proposition-preserving scope
 rewrites:
 
@@ -1540,11 +1540,10 @@ This receipt completes the C6 **classification** gate and begins its
 dependency-safe execution gate. Exactly 108 of the original 161 actions have
 been executed: 106 theorem retirements and two proposition-preserving
 scope rewrites. Exactly 52 stronger-model actions remain. The next proof action
-is to replace legacy fixture-validity surfaces with reachable models or
-independent consumers in semantic-value order, starting with existing
-refinement assets before creating new formal machinery. New proof work remains
-reserved for conclusions consumed by a reachable implementation or the natural
-flagship.
+is to retire the 43 Theseus repository-import mirrors while preserving their
+independent executable import receipts. New proof work remains reserved for the
+one audited inverse-route property and conclusions consumed by a reachable
+implementation or the natural flagship.
 
 The 2026-07-26 terminal residual triage in
 `proofs/c6_remaining_stronger_model_audit.json` now removes ambiguity from

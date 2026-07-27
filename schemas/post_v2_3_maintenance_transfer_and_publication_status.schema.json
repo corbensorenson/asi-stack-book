@@ -493,7 +493,7 @@
               ],
               "properties": {
                 "state": {
-                  "const": "dependency_safe_execution_active_after_one_hundred_four_retirements_and_two_scope_rewrites"
+                  "const": "dependency_safe_execution_active_after_one_hundred_six_retirements_and_two_scope_rewrites"
                 },
                 "classification_baseline_commit": {
                   "const": "d0f9bda14f1253999f2c40d556d925d31e4b36a4"
@@ -511,7 +511,7 @@
                   "const": "proofs/proof_semantic_rationalization_ledger.json"
                 },
                 "theorem_count": {
-                  "const": 1272
+                  "const": 1270
                 },
                 "theorem_bearing_module_count": {
                   "const": 105
@@ -521,8 +521,8 @@
                 },
                 "semantic_level_counts": {
                   "const": {
-                    "P0": 35,
-                    "P1": 712,
+                    "P0": 34,
+                    "P1": 711,
                     "P2": 25,
                     "P3": 323,
                     "P4": 94,
@@ -533,17 +533,17 @@
                 "disposition_counts": {
                   "const": {
                     "retain": 1218,
-                    "rewrite_with_stronger_model": 54
+                    "rewrite_with_stronger_model": 52
                   }
                 },
                 "executed_retirement_count": {
-                  "const": 104
+                  "const": 106
                 },
                 "executed_scope_rewrite_count": {
                   "const": 2
                 },
                 "remaining_action_count": {
-                  "const": 54
+                  "const": 52
                 },
                 "mutation_coverage_missing_count": {
                   "const": 0
@@ -555,7 +555,7 @@
                   "const": 298
                 },
                 "next_action": {
-                  "const": "replace_legacy_fixture_theorems_with_reachable_models_and_independent_consumers_in_semantic_value_order"
+                  "const": "retire_forty_three_theseus_repository_import_mirrors_while_preserving_executable_import_receipts"
                 },
                 "support_state_effect": {
                   "const": "none"

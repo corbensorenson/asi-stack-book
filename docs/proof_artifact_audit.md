@@ -69,7 +69,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/IntentResolutionRefinement.lean` | 3 | 12 | 0 | 10 | 2 |
 | `lean/AsiStackProofs/IntentToExecution.lean` | 2 | 9 | 0 | 2 | 2 |
 | `lean/AsiStackProofs/InterStackProtocols.lean` | 9 | 9 | 0 | 1 | 1 |
-| `lean/AsiStackProofs/LivingBook.lean` | 4 | 19 | 0 | 11 | 6 |
+| `lean/AsiStackProofs/LivingBook.lean` | 4 | 18 | 0 | 10 | 6 |
 | `lean/AsiStackProofs/ModelWeightCustody.lean` | 8 | 9 | 0 | 2 | 2 |
 | `lean/AsiStackProofs/OpenEndedImprovementRefinement.lean` | 7 | 5 | 7 | 10 | 2 |
 | `lean/AsiStackProofs/PlanForge.lean` | 2 | 3 | 0 | 4 | 3 |
@@ -78,7 +78,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/PrivacyInformationFlow.lean` | 2 | 11 | 0 | 5 | 1 |
 | `lean/AsiStackProofs/ProceduralMemoryRefinement.lean` | 2 | 14 | 0 | 21 | 3 |
 | `lean/AsiStackProofs/ProofCarryingClaimsRefinement.lean` | 3 | 11 | 0 | 31 | 3 |
-| `lean/AsiStackProofs/ProofCarryingContracts.lean` | 3 | 8 | 0 | 7 | 6 |
+| `lean/AsiStackProofs/ProofCarryingContracts.lean` | 3 | 7 | 0 | 6 | 6 |
 | `lean/AsiStackProofs/ProofEnvelope.lean` | 2 | 5 | 0 | 5 | 2 |
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | 3 | 9 | 0 | 4 | 3 |
 | `lean/AsiStackProofs/ReadinessRefinement.lean` | 3 | 17 | 0 | 10 | 3 |

@@ -14,8 +14,8 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 329 |
 | Lean modules scanned | 111 |
-| Theorem declarations classified | 1272 |
-| Direct/projection-style theorem declarations | 171 |
+| Theorem declarations classified | 1270 |
+| Direct/projection-style theorem declarations | 169 |
 | Derived/decomposed theorem declarations | 882 |
 | Unknown or mixed theorem declarations | 219 |
 | Safety-critical theorem declarations | 73 |
@@ -107,7 +107,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/IntentToExecution.lean` | intent-to-execution-contracts | 2 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/InterStackProtocols.lean` | inter-stack-protocols-identity-and-economic-exchange | 9 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/LearnedObjectiveIntegrity.lean` | inner-alignment-mesa-optimization-and-learned-objective-integrity | 1 | 0 | 0 | 0 | 0 | derived/decomposed by classifier |
-| `lean/AsiStackProofs/LivingBook.lean` | living-book-methodology | 4 | 19 | 1 | 18 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/LivingBook.lean` | living-book-methodology | 4 | 18 | 0 | 18 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/MoECOTRuntime.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ModelWeightCustody.lean` | model-weight-custody-and-hardware-roots-of-trust | 8 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/MultiAgentDynamics.lean` | multi-agent-dynamics-collective-intelligence-and-systemic-risk | 1 | 0 | 0 | 0 | 0 | derived/decomposed by classifier |
@@ -125,7 +125,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ProceduralMemoryRefinement.lean` | procedural-memory-and-cognitive-loop-closure | 2 | 14 | 10 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ProofCarryingClaims.lean` | unmapped | 0 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ProofCarryingClaimsRefinement.lean` | spinoza-verification-and-proof-carrying-claims | 3 | 11 | 7 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/ProofCarryingContracts.lean` | circle-calculus-and-proof-carrying-ai-contracts | 3 | 8 | 1 | 7 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/ProofCarryingContracts.lean` | circle-calculus-and-proof-carrying-ai-contracts | 3 | 7 | 0 | 7 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ProofEnvelope.lean` | executable-specifications-and-lean-proof-envelope | 2 | 5 | 0 | 5 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | prototype-roadmap | 3 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ReadinessGates.lean` | unmapped | 0 | 11 | 0 | 11 | 0 | derived/decomposed by classifier |
@@ -753,7 +753,6 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/InterStackProtocols.lean` | `revoked_credential_denies_dispatch` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/LivingBook.lean` | `change_packet_public_surface_records_required_boundaries` | derived_or_decomposed | no | uses cases, have |
 | `lean/AsiStackProofs/LivingBook.lean` | `change_packet_without_validation_changelog_support_or_nonclaims_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw |
-| `lean/AsiStackProofs/LivingBook.lean` | `curated_reader_blocked_candidate_fixture_routes_to_accessibility_review` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/LivingBook.lean` | `derived_artifact_equal_authority_change_packet_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/LivingBook.lean` | `derived_artifact_without_source_review_or_support_boundary_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/LivingBook.lean` | `local_reader_artifacts_do_not_clear_missing_accessibility_review` | derived_or_decomposed | no | uses simp, unfold |
@@ -914,7 +913,6 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ProofCarryingClaimsRefinement.lean` | `passed_execution_without_artifact_refs_is_rejected` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ProofCarryingClaimsRefinement.lean` | `support_assignment_request_is_authority_leak` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ProofCarryingClaimsRefinement.lean` | `unverified_pass_is_blocked_before_adjudication` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
-| `lean/AsiStackProofs/ProofCarryingContracts.lean` | `circle_public_consumer_gate_fixture_accepted` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | `circle_public_consumer_gate_missing_mutation_control_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw |
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | `circle_public_consumer_gate_promotion_overclaim_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw |
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | `consumer_gate_acceptance_with_stale_or_unsupported_receipt_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
