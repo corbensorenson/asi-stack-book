@@ -25,7 +25,8 @@ open_evidence_gaps:
   - "Current synthetic evidence is exact but narrow: 5 valid / 9 expected-invalid transaction records; selected readiness/residual blockers; a six-step trace with 2 valid transactions, 3 transaction controls, and 4 identity-sequence controls; an intent bridge with 2 valid / 6 expected-invalid traces; and 37 Lean theorem declarations under six targets."
   - "The post-v2.1 update campaign achieved 15/15 exact restoration over its declared 24-surface local inventory and exposed six best/final checkpoint disagreements, but no eligible challenger met the registered utility-gain gate. The governed-work campaign achieved only 32/36 exact attack-control rollback and 2/36 useful release; both are promotion-blocking negative results, not evidence of general rollback."
   - "The later governance-tax harness restored nine declared surfaces in 12/12 local probes and rejected twelve omitted-surface controls, but every paired model call failed before a candidate existed. It validates harness inventory discipline only."
-  - "No deployed route switch, real state migration, independently validated monitor, external-effect reversal, useful governed replacement, production recovery, heterogeneous transfer, or chapter-core promotion is established."
+  - "The second P5 slice executes 7/7 commit-bound local service cases with an actual linear model and Adam state, rejects weights-only rollback, restores nine classes after a trainer crash, survives one localhost partition through an owned outbox, delivers one idempotent external effect, rejects a stale credential and two custody mutations, and exposes the effect to a separate observer process. The authored task, localhost boundary, and repository-authored observer do not establish natural usefulness or deployment."
+  - "No deployed route switch, natural state migration, independently validated monitor, delayed or open-world effect reversal, useful governed replacement, production recovery, heterogeneous transfer, or chapter-core promotion is established."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -44,7 +45,7 @@ open_evidence_gaps:
 | Source queue | primary: `scf`, `rmi`, `benchmaxxing`; supporting: `cognitive_loop_closure`, `talos`; external variants: corrigibility, Argo Rollouts, feature toggles, Google Cloud MLOps, Kubernetes Deployments, TxFS; connector/recovery: `moecot` |
 | Source loading state | all twelve source notes reviewed and manifest-mapped; local raw passages reviewed for `scf`, `rmi`, `benchmaxxing`, `cognitive_loop_closure`, and `talos`; `moecot` mapped from its durable source note; six external comparators mapped through reviewed notes |
 | Source mapping review | 12/12 assigned sources have bounded mappings; no source reproduction or support promotion follows. |
-| Test state | synthetic and formal baselines remain unchanged. Bounded outcomes include 15/15 P3 and 35/35 M7 exact local 24-surface rollback transactions, 32/36 attack-control rollback with 2/36 useful release, and 12/12 nine-surface harness probes with all model calls failing before candidate creation. The P5 local slice adds 8/8 real-subprocess cases spanning observed effects, crash recovery, exact rollback, compensation, revocation, full-state restore, and descendant deletion. No useful replacement, semantic recovery, real model-state recovery, privacy repair, external erasure, or production transfer follows. |
+| Test state | Synthetic and formal baselines remain unchanged. Bounded outcomes include 15/15 P3 and 35/35 M7 exact local 24-surface rollback transactions, 32/36 attack-control rollback with 2/36 useful release, and 12/12 nine-surface harness probes with all model calls failing before candidate creation. The first P5 slice adds 8/8 real-subprocess state/effect cases. The second adds 7/7 commit-bound local service cases: actual model/Adam mutation, weights-only rollback rejection, nine-class crash/restart recovery, partition/outbox retry, one exactly-once external effect, stale-credential rejection, custody-tamper rejection, and separate-process observation. No natural usefulness, large-model semantic recovery, privacy repair, remote erasure, production deployment, or transfer follows. |
 
 ## Drafting guardrail
 
@@ -288,9 +289,30 @@ five-surface descendant deletion. The harness uses real subprocesses and a
 durable ledger, but its state is deterministic local data rather than a trained
 model or production service.
 
-The supported conclusion is narrow: prospective inventories can make local rollback equality testable, and the current programs expose both inventory success and usefulness/recovery failure. The new slice also shows that exact reversal, compensation, and residual history can remain separate in one executable local lifecycle. These records do not establish complete semantic or external-effect recovery, monitor/evaluator validity, production replacement, useful governed throughput, acceptable cost, heterogeneous transfer, or chapter-core support.
+Sixth, the stateful-service slice replaces the first slice's byte placeholders
+with a small actual learning boundary. A two-parameter predictor and
+bias-corrected Adam mutate model, optimizer, scheduler, RNG, cache, backup,
+derived-artifact, descendant, and credential state. A weights-only restore
+leaves eight classes mismatched and is rejected. After the trainer exits
+between mutation and acknowledgement, a new process restores all nine classes
+and the prior prediction exactly. A separate HTTP effect service then turns
+one unavailable-service attempt into an owned outbox item, accepts one retry,
+deduplicates the next, rejects a stale credential, and exposes the accepted
+effect to a separate observer process. Model and dependency byte mutations
+also fail the prospective custody manifest.
 
-The next executable slice should replace the deterministic state payloads with one real stateful, side-effecting field: frozen prior and candidate runtimes; exact dependency/environment locks; a prospective checkpoint over actual learning state; independently implemented evaluator and monitor; delayed outcomes; state/cache/data migration; one downstream consumer and descendant; an irreversible-effect control; rehearsed reverse migration and compensation; and strong conventional rollout baselines. It must report usefulness, unsafe release, rollback coverage, recovery time, privacy/rights effects, cost, and residuals jointly.
+The supported conclusion is narrow: prospective inventories can make local rollback equality testable, and the current programs expose both inventory success and usefulness/recovery failure. The two P5 slices additionally show that exact reversal, compensation, residual history, actual learning state, restart recovery, pending external effects, idempotent retry, and custody checks can remain separate in executable local lifecycles. These records do not establish complete semantic or open-world effect recovery, monitor/evaluator validity, production replacement, useful governed throughput, acceptable cost, heterogeneous transfer, or chapter-core support.
+
+The next executable slice should move from the authored local positive control
+to one frozen natural stateful field with strong conventional rollout
+baselines, a separately owned evaluator and monitor, delayed outcomes,
+state/cache/data migration, more than one external dependency, replica and
+partition recovery, one downstream consumer and descendant, an
+irreversible-effect control, rehearsed reverse migration and compensation, and
+model-weight custody rooted outside the service process. It must report
+usefulness, unsafe release, false blocking, rollback coverage, recovery time,
+privacy/rights effects, latency, compute, operator time, and residual burden
+jointly.
 
 ## Mature Research Target
 

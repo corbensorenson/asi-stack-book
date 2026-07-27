@@ -40,6 +40,7 @@ P2_GOLD = ROOT / "evidence_quality/p2_gold_preflight_diagnosis.json"
 P2_POLICY = ROOT / "evidence_quality/p2_task_qualification_and_replacement_policy.json"
 P2_RESOURCE = ROOT / "evidence_quality/p2_resource_ceiling.json"
 P2_REPLACEMENT_QUEUE = ROOT / "experiments/p2_governed_repository_admission/corpus/replacement_queue.json"
+P5_STATEFUL_RESULT = ROOT / "experiments/effect_complete_service/results/2026-07-27-local.json"
 READER_MANIFEST = ROOT / "editions/reader_manuscript/reader_2026_07_18/manifest.json"
 READER_RELEASE_RECORD = ROOT / "release_records/2026-07-18-reader-2026-07-18-0921a924.json"
 STRUCTURAL_RESEARCH = ROOT / "docs/structural_completeness_chapter_research_2026_07_19.md"
@@ -218,6 +219,7 @@ def inputs() -> dict:
         "p2_policy": load(P2_POLICY),
         "p2_resource": load(P2_RESOURCE),
         "p2_replacement_queue": load(P2_REPLACEMENT_QUEUE),
+        "p5_stateful_result": load(P5_STATEFUL_RESULT),
         "reader_manifest": load(READER_MANIFEST),
         "reader_release_record": load(READER_RELEASE_RECORD),
         "structural_research": STRUCTURAL_RESEARCH.read_text(encoding="utf-8"),
@@ -296,6 +298,7 @@ def errors(data: dict) -> list[str]:
         "## P3 — Independent reproduction, transfer, and SOTA challenge",
         "## P4 — Semantically meaningful formal evidence",
         "## P5 — Effect-complete governed reference system",
+        "### P5 stateful-service vertical-slice checkpoint — 2026-07-27",
         "## P6 — Evidence, instrument, and source renewal",
         "### P6.4-R18 — terminal bounded conceptual-completeness packet",
         "### P6.5 — Round 16 post-activation integration debt",
@@ -1496,9 +1499,9 @@ def errors(data: dict) -> list[str]:
         or template_guard.get("current_copied_diagram_and_test_spread") != 0
         or template_guard.get("repaired_chapter_count") != 10
         or template_guard.get("baseline_prose_candidate_count") != 3444
-        or template_guard.get("current_prose_candidate_count") != 3386
-        or template_guard.get("retired_inherited_prose_candidate_count") != 246
-        or template_guard.get("added_domain_specific_prose_candidate_count") != 188
+        or template_guard.get("current_prose_candidate_count") != 3387
+        or template_guard.get("retired_inherited_prose_candidate_count") != 247
+        or template_guard.get("added_domain_specific_prose_candidate_count") != 190
         or template_guard.get("baseline_structured_atom_count") != 4067
         or template_guard.get("current_structured_atom_count") != 4058
         or template_guard.get("pending_prose_candidate_count") != 0
@@ -1526,8 +1529,8 @@ def errors(data: dict) -> list[str]:
         or w3.get("corpus", {}).get("manifest_chapter_count") != 84
         or w3.get("measurements", {}).get("editorial_narrative", {}).get("baseline", {}).get("distinct_repeated_12_grams") != 812
         or w3.get("measurements", {}).get("editorial_narrative", {}).get("current", {}).get("distinct_repeated_12_grams") != 0
-        or w3.get("claim_review_reconciliation", {}).get("retired_inherited_prose_candidate_count") != 246
-        or w3.get("claim_review_reconciliation", {}).get("added_domain_specific_prose_candidate_count") != 188
+        or w3.get("claim_review_reconciliation", {}).get("retired_inherited_prose_candidate_count") != 247
+        or w3.get("claim_review_reconciliation", {}).get("added_domain_specific_prose_candidate_count") != 190
         or w3.get("claim_review_reconciliation", {}).get("current_pending_prose_candidate_count") != 0
         or w3.get("meaning_custody", {}).get("chapter_core_support_movements") != 0
     ):
@@ -1710,6 +1713,42 @@ def errors(data: dict) -> list[str]:
         out.append("semantic proof inventory terminal state drifted")
     if len(proof_clusters) != 6 or any(row.get("state") != "adequate" for row in proof_clusters):
         out.append("P4-C1 through P4-C6 lack terminal adequate bounded-scope dispositions")
+
+    p5 = status.get("p5_effect_complete_reference", {})
+    p5_service = p5.get("stateful_service_slice", {})
+    p5_result = data["p5_stateful_result"]
+    if p5.get("state") != (
+        "in_progress_two_bounded_local_slices_terminal_at_exact_scope"
+    ):
+        out.append("P5 two-slice status drifted")
+    if (
+        p5_service.get("source_commit")
+        != p5_result.get("custody", {}).get("attested_source_commit")
+        or p5_service.get("case_count") != p5_result.get("case_count")
+        or p5_service.get("passed_case_count") != p5_result.get("passed_case_count")
+        or p5_service.get("loss_before")
+        != p5_result.get("learning_state", {}).get("loss_before")
+        or p5_service.get("loss_after")
+        != p5_result.get("learning_state", {}).get("loss_after")
+        or p5_service.get("weights_only_rollback_rejected")
+        != p5_result.get("rollback", {}).get("artifact_only_control_rejected")
+        or p5_service.get("restored_state_class_count")
+        != p5_result.get("rollback", {}).get("restored_state_class_count")
+        or p5_service.get("accepted_external_effect_count")
+        != p5_result.get("external_effect", {}).get("accepted_effect_count")
+        or p5_service.get("revoked_effect_count")
+        != p5_result.get("external_effect", {}).get("revoked_effect_count")
+        or p5_service.get("attestation_scope")
+        != "local_source_and_runtime_identity_not_deployment"
+    ):
+        out.append("P5 stateful-service result and roadmap status diverged")
+    if (
+        p5.get("support_state_effect") != "none"
+        or p5.get("release_effect") != "none"
+        or p5_result.get("support_state_effect") != "none"
+        or p5_result.get("release_effect") != "none"
+    ):
+        out.append("P5 stateful-service slice laundered support or release state")
 
     expected_ids = [f"P{i}" for i in range(9)]
     if [row.get("id") for row in status.get("priorities", [])] != expected_ids:

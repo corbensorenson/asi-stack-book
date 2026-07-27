@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""Reconcile prose-scanner fragments introduced by the C1–C8 Phase 1 pass.
+"""Reconcile bounded prose additions in already reviewed chapter owners.
 
-The substantive additions refine already reviewed chapter owners. The
-conservative scanner also emits incomplete line-wrap fragments. This script
-records those fragments as nonmaterial explanations and updates completed sweep
-counts without creating, promoting, or refuting a support-bearing claim.
+The C1–C8 pass and later P5 stateful-service integration refine already
+reviewed chapter owners. The conservative scanner also emits incomplete
+line-wrap fragments. This script records those fragments as nonmaterial
+explanations and updates completed sweep counts without creating, promoting, or
+refuting a support-bearing claim.
 """
 
 from __future__ import annotations
@@ -26,6 +27,9 @@ CHAPTER_IDS = {
     "readiness-gates-residual-escrow-and-quarantine",
     "executable-specifications-and-lean-proof-envelope",
     "integrated-reference-architecture",
+    "capability-replacement-and-rollback",
+    "data-engines-continual-learning-and-unlearning",
+    "model-weight-custody-and-hardware-roots-of-trust",
     "project-theseus-as-report-first-implementation-reference",
     "living-book-methodology",
 }
@@ -72,8 +76,8 @@ def main() -> None:
             dispositions[candidate_id] = {
                 "state": "nonmaterial_explanation",
                 "rationale": (
-                    "Incomplete line-wrap fragment introduced by the C1–C8 "
-                    "Phase 1 prose integration. Its complete proposition is "
+                    "Incomplete line-wrap fragment introduced by bounded "
+                    "integration prose. Its complete proposition is "
                     "already bounded by the chapter's reviewed structured "
                     "atoms and creates no independent support-bearing claim."
                 ),

@@ -2250,7 +2250,13 @@
     "schemas/effect_complete_reference_result.schema.json",
     "scripts/run_p5_effect_complete_reference.py",
     "scripts/validate_p5_effect_complete_reference.py",
-    "docs/p5_effect_complete_reference_report.md"
+    "docs/p5_effect_complete_reference_report.md",
+    "experiments/effect_complete_service/cases.json",
+    "experiments/effect_complete_service/results/2026-07-27-local.json",
+    "schemas/effect_complete_service_result.schema.json",
+    "scripts/run_p5_stateful_service_reference.py",
+    "scripts/validate_p5_stateful_service_reference.py",
+    "docs/p5_stateful_service_reference_report.md"
   ],
   "units": [
     {
@@ -12340,7 +12346,7 @@
       "args": [],
       "execution_tier": "pr",
       "validation_class": "publication_gate",
-      "input_contract": "Completed claim-proof predecessor; exact no-release terminal record; active unfinished-work successor; the current 84-chapter manifest and exact 11/54/7/12 chapter-role partition; the adjudicated Pro full-book review and C0-C8 convergence amendment; exact concept-first exit receipt with eight packets, 26 prose/product anchors, and zero current roadmap-only remainder; the terminal six-chapter/thirty-atom R16-A organization packet; canonical atoms and all accepted transitions with complete direct/indirect claim identity; N0-N5 negative-result rehabilitation and experiment competence; prospective P2 and ASI-THESEUS-FLAGSHIP-01 natural-evidence custody; current reader, proof, attestation, derivative, and public-truth surfaces.",
+      "input_contract": "Completed claim-proof predecessor; exact no-release terminal record; active unfinished-work successor; the current 84-chapter manifest and exact 11/54/7/12 chapter-role partition; the adjudicated Pro full-book review and C0-C8 convergence amendment; exact concept-first exit receipt with eight packets, 26 prose/product anchors, and zero current roadmap-only remainder; the terminal six-chapter/thirty-atom R16-A organization packet; canonical atoms and all accepted transitions with complete direct/indirect claim identity; N0-N5 negative-result rehabilitation and experiment competence; prospective P2 and ASI-THESEUS-FLAGSHIP-01 natural-evidence custody; two bounded P5 reference slices including the commit-bound seven-case stateful-service receipt; current reader, proof, attestation, derivative, and public-truth surfaces.",
       "input_artifacts": [
         "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md",
         "docs/c1_c8_phase1_idea_placement_and_prose_audit_2026_07_25.md",
@@ -12398,6 +12404,8 @@
         "docs/p2_replacement_queue.md",
         "scripts/build_p2_replacement_queue.py",
         "scripts/validate_p2_replacement_queue.py",
+        "experiments/effect_complete_service/results/2026-07-27-local.json",
+        "docs/p5_stateful_service_reference_report.md",
         "roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json",
         "schemas/post_v2_3_maintenance_transfer_and_publication_status.schema.json",
         "scripts/validate_post_v2_3_maintenance_transfer_and_publication_roadmap.py",
@@ -12440,6 +12448,7 @@
         "metadata-only queue contains 30 unique repositories while candidate content remains unopened",
         "construct and resource gates pending with heldout closed",
         "all six semantic proof clusters terminal at bounded adequate scope",
+        "P5 status binds the seven-case stateful-service receipt with actual learning state, weights-only rejection, crash/restart, localhost partition/outbox, external observation, custody controls, and no support/release effect",
         "N0-N5 competence contract",
         "current proof snapshot",
         "main-only stale attestation truth",
@@ -14796,11 +14805,57 @@
       "prohibited_inference": "The local slice does not establish deployed enforcement, complete effect discovery, distributed or Byzantine correctness, real model-state recovery, privacy repair, causal unlearning, external erasure, usefulness, safety, transfer, SOTA, AGI, ASI, chapter-core support, or release authority.",
       "contract_precision": "exact",
       "semantic_review_state": "bounded_real_multiprocess_local_vertical_slice_not_deployed"
+    },
+    {
+      "id": "validate_p5_stateful_service_reference:431",
+      "order": 431,
+      "script": "validate_p5_stateful_service_reference.py",
+      "args": [],
+      "execution_tier": "deep",
+      "validation_class": "behavioral_fixture",
+      "input_contract": "Frozen seven-case service design, commit-bound Python source, actual linear-model and Adam learning state, prospective nine-class checkpoint, separate localhost HTTP effect process and SQLite ledger, durable outbox, and independent observer process.",
+      "input_artifacts": [
+        "experiments/effect_complete_service/cases.json",
+        "experiments/effect_complete_service/results/2026-07-27-local.json",
+        "schemas/effect_complete_service_result.schema.json",
+        "scripts/run_p5_stateful_service_reference.py",
+        "scripts/validate_p5_stateful_service_reference.py",
+        "docs/p5_stateful_service_reference_report.md"
+      ],
+      "output_contract": "Freshly replay all cases and reject learning-control, full-state, restart, partition, idempotency, revocation, custody, observation, claim-boundary, schema, source-identity, or receipt drift.",
+      "output_assertions": [
+        "seven of seven bounded service cases pass",
+        "actual model and Adam state improve the authored positive control",
+        "all nine state classes mutate",
+        "weights-only rollback is rejected",
+        "a new process restores nine classes and prior prediction exactly",
+        "one partitioned effect remains in an owned outbox",
+        "retry produces exactly one external effect",
+        "duplicate and revoked retries produce no additional effect",
+        "weight and dependency tampering are rejected",
+        "a separate observer process reads the effect",
+        "source identity binds an exact commit on main",
+        "no support-state or release effect"
+      ],
+      "claim_scope": "The exact authored scalar-model, Python/stdlib, localhost HTTP, SQLite, and local-filesystem service lifecycle at the attested commit.",
+      "negative_controls": "weights_only_restore_partition_duplicate_revocation_weight_tamper_dependency_tamper_and_deployment_claim_boundary",
+      "negative_control_cases": [
+        "weights-only rollback",
+        "unavailable external service",
+        "duplicate effect retry",
+        "revoked credential",
+        "tampered model weights",
+        "tampered dependency lock",
+        "local source attestation presented as deployment"
+      ],
+      "prohibited_inference": "The slice does not establish natural-task usefulness, large-model semantic recovery, production or open-network correctness, distributed consensus, Byzantine tolerance, privacy repair, causal unlearning, external erasure, legal compliance, independent external reproduction, transfer, SOTA, AGI, ASI, chapter-core support, deployment, or release.",
+      "contract_precision": "exact",
+      "semantic_review_state": "bounded_stateful_local_service_mechanism_not_natural_or_deployed"
     }
   ],
   "summary": {
-    "required_artifact_count": 2206,
-    "unit_count": 430
+    "required_artifact_count": 2212,
+    "unit_count": 431
   },
   "non_claims": [
     "Registry coverage does not establish semantic adequacy of every validator.",

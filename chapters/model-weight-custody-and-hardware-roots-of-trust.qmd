@@ -4,7 +4,7 @@ chapter_id: "model-weight-custody-and-hardware-roots-of-trust"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.3 semantically reviewed proof-contract draft"
-last_updated: "2026-07-23"
+last_updated: "2026-07-27"
 primary_sources:
   - "ext_rand_model_weight_security_2024"
   - "ext_nist_confidential_computing_2026"
@@ -26,6 +26,7 @@ open_evidence_gaps:
   - "The original nine assigned source notes have reviewed manifest mappings; four heterogeneous-memory records now add metadata-first custody context. No external comparator has been locally reproduced and CCA is private author-lineage context rather than independent corroboration."
   - "Current evidence is exactly eight deterministic Boolean custody records, nine Lean theorem declarations under eight manifest targets, and nine rejecting mutations with support_state_effect=none; no real model-family asset, derivative closure, key, KMS/HSM, TEE, root, Evidence, Attestation Result, verifier, relying-party policy, plaintext load, extraction, revocation, recovery, sanitization, recipient release, privacy, availability, or security metric has been exercised."
   - "No local result establishes custody completeness, hardware or vendor trustworthiness, weight confidentiality, extraction resistance, key-management correctness, sanitization, recall, release desirability, model safety, readiness, authority, or ASI."
+  - "The P5 stateful-service slice binds one actual local model artifact and one stdlib dependency lock to exact digests at a frozen source commit and rejects one-byte drift in each. This is process-local integrity checking, not hardware-rooted attestation, confidentiality, extraction resistance, transitive supply-chain completeness, or deployed custody."
   - "Promotion or refutation requires the preregistered effect-bearing multi-comparator campaign with independent discovery, appraisal, relying-party policy, load/effect observation, extraction, incident/recovery, and sanitization implementations plus causal ablations, replication, and transfer."
 ---
 
@@ -36,13 +37,13 @@ open_evidence_gaps:
 | Chapter ID | `model-weight-custody-and-hardware-roots-of-trust` |
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
-| Last updated | 2026-07-23 |
+| Last updated | 2026-07-27 |
 | Manuscript maturity | v0.3 semantically reviewed proof-contract draft |
 | Primary source records | 13 assignments: nine reviewed custody mappings plus four metadata-first heterogeneous-memory implementation or paper comparators |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source loading state | 13 assigned sources / 9 reviewed mappings; four paging records add shard, mapping, conversion, and storage-lifecycle drafting context without implying conformance or efficacy. |
-| Test state | Exact finite boundary: 8 deterministic routes, 9 Lean declarations under 8 targets, and 9 rejecting mutations. No hardware, encrypted artifact, key service, attestation procedure, plaintext load, extraction, revocation propagation, recovery, sanitization, or release effect was exercised. |
+| Test state | Exact finite boundary: 8 deterministic routes, 9 Lean declarations under 8 targets, and 9 rejecting mutations. The P5 stateful-service slice additionally digest-binds one actual local model artifact, one stdlib dependency lock, and three source files to an exact commit on `main`, then rejects one-byte weight and lock drift. No hardware root, encrypted artifact, key service, remote attestation, extraction test, sanitization, recipient release, production deployment, or confidentiality claim follows. |
 
 ## Drafting guardrail
 
@@ -790,7 +791,17 @@ does not exercise the newly specified derivative-closure, key-lifecycle,
 plaintext, extraction, incident-propagation, recovery, sanitization,
 privacy/rights, availability, or cost predicates.
 
-No real weight, derivative closure, key, KMS or HSM, TEE, root, Evidence,
+The P5 stateful-service slice adds a separate process-local integrity bridge.
+It binds one actual trained scalar-model file, one stdlib environment lock, and
+the runner, case design, and result schema to exact digests at a source commit
+on `main`. One-byte model and environment mutations are independently injected
+and rejected before the modeled effect release. This demonstrates digest
+custody for those exact declared files. It does not authenticate the machine,
+root the decision in hardware, cover transitive build inputs, protect
+plaintext, or establish confidentiality, extraction resistance, remote
+attestation, deployment, or release.
+
+No protected real weight, derivative closure, key, KMS or HSM, TEE, root, Evidence,
 Attestation Result, Verifier, reference value, endorsement, Relying-Party
 decision, plaintext load, extraction attempt, revocation propagation, recovery,
 sanitization, recipient release, privacy impact, availability result, or

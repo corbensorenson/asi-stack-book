@@ -899,7 +899,7 @@ all section claims remain `Design rationale + argument`; no chapter-core
 support, release, legal conclusion, cryptographic guarantee, human outcome,
 military-policy result, SOTA, AGI, or ASI claim moves.
 
-The working manifest is now **84 chapters** and the source inventory is **458
+The working manifest is now **84 chapters** and the source inventory is **462
 records**. No meaning-bearing idea found by this audit remains deferred.
 Artificial moral patients, model collapse, causal inference, RAG, conformal
 uncertainty, optimizer families, and other reviewed candidates stay with their
@@ -937,7 +937,7 @@ The packet must:
 3. verify 84/84 Appendix E chapter coverage and a nonempty current changelog;
 4. create an exact 84-entry, one-role chapter map and reject missing,
    duplicated, or non-manifest owners;
-5. preserve the current 84-chapter/458-source/25-non-core-transition public
+5. preserve the current 84-chapter/462-source/25-non-core-transition public
    contract; and
 6. retain the stale counts and release language as rejecting regression
    fixtures rather than deleting the evidence that the incident occurred.
@@ -2124,6 +2124,44 @@ natural-task usefulness, production safety, complete effect discovery,
 distributed or Byzantine correctness, causal unlearning, privacy repair,
 external erasure, support transition, or release authority.
 
+### P5 stateful-service vertical-slice checkpoint — 2026-07-27
+
+The second bounded P5 slice is terminal at its exact local service scope.
+`scripts/run_p5_stateful_service_reference.py` binds the frozen case design,
+runner, and result schema to source commit
+`88d9cc8979460636587fddbf826d62455907c42c` on `main`, then executes seven
+cases through separately launched trainer, recovery, inference, external
+effect, and observer processes.
+
+The service replaces deterministic model placeholders with a two-parameter
+predictor and bias-corrected Adam. Twenty-four optimizer steps improve the
+authored positive-control objective from mean squared error `6.935` to
+`1.18797138562` while mutating all nine declared state classes. Copying back
+weights alone leaves eight classes mismatched and is rejected. After the
+trainer exits with code `17` between mutation and acknowledgement, a new
+process restores model, optimizer, scheduler, RNG, cache, backup,
+derived-artifact, descendant, and credential state byte-exactly and reproduces
+the prior prediction.
+
+A separate localhost HTTP effect service owns a separate SQLite ledger. One
+unavailable-service attempt remains in an owned outbox; retry after recovery
+creates one effect; a duplicate retry creates no second effect; a stale token
+creates none; and a separately executed observer reads the accepted payload.
+One-byte model-weight and dependency-lock mutations each fail custody before
+effect release. `scripts/validate_p5_stateful_service_reference.py` reruns the
+seven cases in a new workspace and requires exact result equality.
+
+This advances P5/M5 but does not complete them. The task is authored rather
+than natural, the predictor is not a strong model, the partition is
+localhost-only, the observer is repository-authored, and the source receipt is
+explicitly local identity custody rather than deployment attestation. The next
+slice must use a frozen natural stateful service with strong rollout controls,
+a separately owned evaluator and monitor, delayed outcomes, multiple external
+dependencies, replica/partition recovery, externally rooted model custody, and
+joint usefulness, unsafe-release, false-blocking, latency, recovery, operator,
+compute, and residual metrics. No support transition or release authority
+follows.
+
 ## P6 — Evidence, instrument, and source renewal
 
 Run a dated primary-source and official-comparator sweep at least quarterly and
@@ -3246,12 +3284,12 @@ lies.
 
 | Milestone | State | Completion condition |
 |---|---|---|
-| M0 — Truth and identity control | in progress | Identity is complete and clean pushed/build/deploy checkpoint `12d987bded2e504f5ec677df06c4fcdb281b1fdd` is attested; close only after this roadmap revision and every later evidence checkpoint receive their own clean commit-bound custody and public-state reconciliation. |
+| M0 — Truth and identity control | in progress | Identity is complete and clean pushed/build/deploy checkpoint `8e2b5a2e2001010522721aabfd1f669998d87f09` is the latest attested public ancestor before this P5 service transaction; close only after this transaction and every later evidence checkpoint receive their own clean commit-bound custody and public-state reconciliation. |
 | M1 — Negative-result rehabilitation | completed | All 90 accepted negative/no-change transitions are classified (1 N0, 15 N1, 74 N2, zero N3–N5), and the frozen 75-surface snapshot including the then-live 55 chapters preserves the resulting ceilings. |
 | M2 — Competent natural empirical result | in progress | A high-value natural, non-authored campaign passes every competence gate and ends with a bounded positive, negative, or inconclusive disposition. |
 | M3 — Reproduction and transfer | pending | Any broadened result has independent reproduction and two prospectively selected materially different transfer settings. |
 | M4 — Semantic formal depth | completed | All six frozen clusters are terminal across 25 modules with exact dispositions, modeled state, assumptions, countermodels, consumers, mutations, semantic separations, and maximum-inference ceilings. No aggregate theorem count or finite record grants empirical support. |
-| M5 — Effect-complete reference | in progress | The first eight-case local multi-process slice now exercises durable authority-to-effect, revocation, idempotency, crash recovery, rollback/compensation, nine-class full-state restore, and five-surface local deletion. Actual model/service state, partition faults, open-world effects, weight custody, and deployment attestation remain. |
+| M5 — Effect-complete reference | in progress | The first eight-case slice exercises durable authority-to-effect, revocation, idempotency, crash recovery, rollback/compensation, nine-class restore, and local deletion. The seven-case successor adds actual model/Adam state, a weights-only rejecting control, full-state crash/restart recovery, one localhost partition with owned outbox and exactly-once external effect, stale-credential rejection, source/weight/environment custody, and separate-process observation. Natural usefulness, strong models, distributed replicas/partitions, delayed/open-world effects, externally rooted custody, independent reproduction, and deployment attestation remain. |
 | M6 — Renewal and structural completeness | completed | The first tranche, A1/A2, Round 18 breadth packet, ten-owner no-deferral transaction, four-owner taxonomy reconciliation, 2026-07-25 full-coverage audit, T1D six-chapter maturity/source/reader packet, Precision Contract integration, R16-A six-chapter/thirty-atom organization packet, W3 84-chapter inheritance guard, and R16-B 84-chapter reader-freshness derivative are terminal at their declared argument or organization scope. The manifest is 84; no identified manuscript idea is deferred. Optimizer, heterogeneous-memory, and inference-cache manuscript depth is in the book; executable evidence residuals remain ordinary Phase 2 work. |
 | M7 — Reader/publication disposition | in progress | PDF, EPUB, and DOCX in `reader-2026-07-18` remain immutable published artifacts with exact receipts. The current 84-chapter source-fresh virtual QMD derivative is terminal; HTML, PDF, EPUB, DOCX, and audio are explicitly deferred pending format-specific QA rather than fabricated. Close M7 after public surfaces synchronize and the exact final `main`/Pages attestation succeeds; local source freshness does not imply a new external reader release. |
 | M8 — Successor continuity | pending | Every open item has a terminal disposition and the next exact authority is active. |

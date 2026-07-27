@@ -1,5 +1,30 @@
 # Changelog
 
+## 2026-07-27 — P5 stateful-service recovery and effect boundary
+
+- Froze a seven-case P5 service design and implementation at exact `main`
+  commit `88d9cc8979460636587fddbf826d62455907c42c` before producing its
+  tracked receipt.
+- Replaced deterministic model-state placeholders with a two-parameter
+  predictor and bias-corrected Adam. Twenty-four steps improved the authored
+  positive-control objective while mutating all nine declared learning-state
+  classes; a weights-only rollback left eight mismatches and was rejected.
+- Exercised a trainer crash before acknowledgement, a new-process byte-exact
+  nine-class restore, exact prior-prediction recovery, a durable outbox across
+  one localhost partition, exactly-once retry into a separately hosted SQLite
+  effect ledger, stale-credential rejection, model/environment custody-tamper
+  controls, and observation through a separate process.
+- Added the result schema, fresh-replay validator, bounded report, registry
+  unit, roadmap/status custody, and prose integration across Capability
+  Replacement, Integrated Reference Architecture, Governed Operations, Data
+  Engines, and Model-Weight Custody.
+- Preserved the earned boundary: the task is authored, the model is a lifecycle
+  positive control, the partition is localhost-only, the observer remains
+  repository-authored, and the commit receipt is local identity custody rather
+  than deployment attestation. P5/M5 remain `in progress`; no support, release,
+  production, natural-usefulness, external-reproduction, AGI, or ASI claim
+  follows.
+
 ## 2026-07-27 — P5 local multi-process effect-complete reference
 
 - Added an eight-case P5 runtime slice with real subprocesses, a durable

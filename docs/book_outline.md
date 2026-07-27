@@ -1900,8 +1900,24 @@ Draft deliverables:
   compensation, revocation/scope rejection, full-state custody, and descendant
   deletion. Deterministic local bytes do not establish useful replacement,
   semantic recovery, real model-state recovery, or production transfer.
+- Implemented P5 stateful-service successor: seven commit-bound local cases
+  replace deterministic model placeholders with a real scalar predictor and
+  Adam state; reject weights-only rollback; restore nine classes and the prior
+  prediction after a trainer crash; carry one owned outbox item across a
+  localhost partition; deliver one idempotent external effect; reject stale
+  credentials, weight drift, and dependency drift; and expose the effect to a
+  separate observer process. The authored task, localhost boundary, and
+  repository-authored observer establish no natural usefulness, deployment,
+  external reproduction, or support movement.
 - Implemented proof-backed check: finite replacement transaction and lifecycle route proof for missing artifacts, identity mismatch, authority expansion, evaluator capture, stale evidence, failed regression floors, missing canary scope, failed canaries, missing monitor windows, monitor incidents, missing rollback handles, missing rollback receipts, failed rollback dry runs, unowned irreversible effects, missing residual owners, deprecation/retirement gaps, and missing non-claim boundaries; this is structured-record coverage only, not deployed replacement execution.
-- Next real slice: one stateful side-effecting field with locked prior/candidate runtimes, prospective checkpoint, independent evaluator and delayed monitor, migration, one downstream consumer and descendant, irreversible control, rehearsed recovery/compensation, strong rollout baselines, joint usefulness/unsafe-release/recovery/privacy-rights/cost metrics, ablations, replication, and transfer.
+- Next real slice: one natural stateful field with locked prior/candidate
+  runtimes, a separately owned evaluator and delayed monitor, multiple external
+  dependencies, replica and partition recovery, migration, one downstream
+  consumer and descendant, irreversible control, rehearsed
+  recovery/compensation, externalized weight custody, strong rollout
+  baselines, joint usefulness/unsafe-release/false-blocking/recovery/privacy-
+  rights/latency/compute/operator-time/residual metrics, ablations,
+  replication, and transfer.
 
 Lean proof targets:
 
@@ -6704,6 +6720,12 @@ Draft deliverables:
   effect observation, crash recovery, exact rollback, compensation, full-state
   restore, and descendant-aware local deletion. It lacks a natural service,
   operators, manual fallback, network partitions, and deployment attestation.
+- Implemented P5 stateful-service successor: 7/7 local cases exercise actual
+  model and Adam mutation, weights-only rollback rejection, nine-class
+  crash/restart recovery, a durable outbox across one localhost partition, one
+  exactly-once external effect, stale-token and custody-tamper rejection, and
+  separate-process observation. It still lacks a natural incident, independent
+  monitor or operator, distributed replicas, delayed harm, and deployment.
 - Planned argument-exit campaign: fault-injected reference service, strong SRE
   and incident-response baselines, preregistered severity and recovery rules,
   full denominators, operator load, useful throughput, residual harm, latency,
@@ -7310,6 +7332,13 @@ Draft deliverables:
   nine-class prospective full-state restore, and five-surface local deletion.
   This is bounded local implementation evidence, not deployed whole-stack,
   usefulness, safety, unlearning, privacy, or support evidence.
+- Implemented P5 stateful-service successor: seven frozen cases bind actual
+  model/Adam state, a prospective nine-class checkpoint, crash/restart
+  recovery, a partitioned durable outbox, a separately hosted and observed
+  external effect, revocation, weight/environment custody mutations, and exact
+  source commit identity. This is local mechanism evidence, not natural
+  whole-stack, distributed, production, external-reproduction, or support
+  evidence.
 - Exact current minimum: one schema/fixture, three valid and six invalid trace
   fixtures, one thirteen-artifact validator replay, one blocked lineage plus
   eight mutations, a nine-scenario/eight-attack repository slice with baseline
@@ -7321,7 +7350,9 @@ Draft deliverables:
   effect/recovery slice, and the stronger partial Lean trace model; no model
   planning/generation, deployed services, production enforcement, independent
   evaluator, natural workload, reproduction, transfer, deployment, or core
-  effect exists.
+  effect exists. The successor stateful-service slice adds seven cases with
+  actual learning state and a localhost external-effect boundary without
+  changing that claim ceiling.
 - Argument exit: natural heterogeneous independently operated services; matched
   direct, monolithic, workflow, service-composition, and no-governance
   baselines; semantic/authority/state/effect/receipt/evaluator/evidence/residual/

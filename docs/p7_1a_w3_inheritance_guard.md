@@ -27,8 +27,8 @@ fingerprinted separately so those exclusions cannot hide copied structure.
 
 All ten repaired chapters retain their manifest source assignments, claim
 markers, equations, proof tags, protocol/schema references, evidence level, and
-claim label. The semantic queue retires 246 inherited prose-candidate IDs,
-adjudicates 188 domain-specific replacements against existing owned atoms,
+claim label. The semantic queue retires 247 inherited prose-candidate IDs,
+adjudicates 190 domain-specific replacements against existing owned atoms,
 preserves all 4,058 structured atoms, and leaves zero pending prose candidates.
 The packet changes no support, release, or publication state.
 

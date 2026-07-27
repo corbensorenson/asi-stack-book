@@ -5,9 +5,9 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/capability-replacement-and-rollback.qmd",
     "structured_atoms_reviewed": 59,
-    "prose_candidates_adjudicated": 50,
+    "prose_candidates_adjudicated": 49,
     "unowned_material_claims": 0,
-    "review_note": "Reviewed the complete chapter, all twelve assigned source notes and mapping limits, the public replacement schema and 5-valid/9-invalid corpus, selected readiness/residual checks, the six-step 2-valid/3-invalid transaction trace and four identity-sequence controls, the 2-valid/6-invalid intent bridge, all 37 Lean theorem declarations grouped under six manifest targets, the post-v2.1 15-by-24-surface update result and six checkpoint disagreements, the 32/36 rollback and 2/36 useful-release negative result, the later 12/12 nine-surface harness restoration with twelve omitted-surface controls and zero model candidates, every manifest atom, every prose scanner candidate, diagrams, test plan, source crosswalk, summary, and handoff. The sweep replaced generic evidence-gated swapping with a prospective state-and-effect transaction; separated field identity from change class, checkpoint authority from hindsight selection, artifact restoration from state/service/behavior/privacy/rights/external recovery, canary exposure from commit, monitor silence from success, rollback from compensation, local digest equality from production transfer, and safety gates from useful improvement; promoted full inventory and effect ownership, isolated exposure, evaluator/monitor dependencies, outcome delay, partial commit, descendant closure, irreversibility, negative/null outcome retention, joint useful-safety-cost-recovery evaluation, and strong comparator/ablation/transfer requirements into manifest ownership; and preserved zero chapter-core support effect."
+    "review_note": "Reviewed the complete chapter, all twelve assigned source notes and mapping limits, the public replacement schema and 5-valid/9-invalid corpus, selected readiness/residual checks, the six-step 2-valid/3-invalid transaction trace and four identity-sequence controls, the 2-valid/6-invalid intent bridge, all 37 Lean theorem declarations grouped under six manifest targets, the post-v2.1 15-by-24-surface update result and six checkpoint disagreements, the 32/36 rollback and 2/36 useful-release negative result, the later 12/12 nine-surface harness restoration with twelve omitted-surface controls and zero model candidates, every manifest atom, every prose scanner candidate, diagrams, test plan, source crosswalk, summary, and handoff. The sweep replaced generic evidence-gated swapping with a prospective state-and-effect transaction; separated field identity from change class, checkpoint authority from hindsight selection, artifact restoration from state/service/behavior/privacy/rights/external recovery, canary exposure from commit, monitor silence from success, rollback from compensation, local digest equality from production transfer, and safety gates from useful improvement; promoted full inventory and effect ownership, isolated exposure, evaluator/monitor dependencies, outcome delay, partial commit, descendant closure, irreversibility, negative/null outcome retention, joint useful-safety-cost-recovery evaluation, and strong comparator/ablation/transfer requirements into manifest ownership; and preserved zero chapter-core support effect. The 2026-07-25 C1–C8 reconciliation classifies new scanner-only line-wrap fragments as nonmaterial and changes no support state."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
@@ -427,8 +427,16 @@
       "acceptance_criteria": [
         "Exercise the exact proposition with valid and rejecting transactions, content locks, independent-enough observation, affected-consumer assertions, recovery/effect receipts, residual owners, and no inference beyond frozen field, candidate, environment, consumer, use, evaluator, monitor, authority, inventory, objective, and epoch."
       ],
-      "reproduction": {"command": "python3 scripts/validate_p5_terminal_batch.py", "environment_lock": "Bounded local replacement and M7 update/unlearning records, 2026-07-16", "artifact_digest": "experiments/p5_terminal_batch/results/result.json", "evaluator_identity": "separate local P5 terminal-batch evaluator"},
-      "residual": {"owner": "capability-replacement-and-rollback", "next_unblocking_condition": "Execute service restart and external compensation with independent effect observation and open-world inventory pressure."}
+      "reproduction": {
+        "command": "python3 scripts/validate_p5_terminal_batch.py",
+        "environment_lock": "Bounded local replacement and M7 update/unlearning records, 2026-07-16",
+        "artifact_digest": "experiments/p5_terminal_batch/results/result.json",
+        "evaluator_identity": "separate local P5 terminal-batch evaluator"
+      },
+      "residual": {
+        "owner": "capability-replacement-and-rollback",
+        "next_unblocking_condition": "Execute service restart and external compensation with independent effect observation and open-world inventory pressure."
+      }
     },
     "capability-replacement-and-rollback.invariant.012": {
       "proposition_type": "formal",
@@ -801,26 +809,6 @@
       "state": "nonmaterial_explanation",
       "rationale": "Exact schema-validator result scope."
     },
-    "capability-replacement-and-rollback.prose.a9e38c50eb7d": {
-      "state": "duplicate_of_atom",
-      "rationale": "The separation of exact reversal, compensation, and residual history refines the minimum executable replacement transaction.",
-      "target_atom_id": "capability-replacement-and-rollback.minimum.001"
-    },
-    "capability-replacement-and-rollback.prose.cc796d2279ca": {
-      "state": "duplicate_of_atom",
-      "rationale": "The next real-state campaign remains owned by the minimum executable replacement transaction.",
-      "target_atom_id": "capability-replacement-and-rollback.minimum.001"
-    },
-    "capability-replacement-and-rollback.prose.f349b79a4a39": {
-      "state": "duplicate_of_atom",
-      "rationale": "Explicit evidence ceiling for the local P5 slice refines the minimum implementation without creating a separate claim.",
-      "target_atom_id": "capability-replacement-and-rollback.minimum.001"
-    },
-    "capability-replacement-and-rollback.prose.8d73181d6654": {
-      "state": "duplicate_of_atom",
-      "rationale": "Joint metric obligation owned by the beyond-SOTA target.",
-      "target_atom_id": "capability-replacement-and-rollback.beyond_sota.001"
-    },
     "capability-replacement-and-rollback.prose.e952fb8e2c91": {
       "state": "duplicate_of_atom",
       "rationale": "Transfer dimensions owned by beyond-SOTA target.",
@@ -874,6 +862,18 @@
       "state": "duplicate_of_atom",
       "rationale": "Reader explanation that transaction invariants apply across the full lifecycle.",
       "target_atom_id": "capability-replacement-and-rollback.core"
+    },
+    "capability-replacement-and-rollback.prose.041da22607db": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Incomplete line-wrap fragment introduced by bounded integration prose. Its complete proposition is already bounded by the chapter's reviewed structured atoms and creates no independent support-bearing claim."
+    },
+    "capability-replacement-and-rollback.prose.b4feb5e68cbf": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Incomplete line-wrap fragment introduced by bounded integration prose. Its complete proposition is already bounded by the chapter's reviewed structured atoms and creates no independent support-bearing claim."
+    },
+    "capability-replacement-and-rollback.prose.5e32d63be1bc": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Incomplete line-wrap fragment introduced by bounded integration prose. Its complete proposition is already bounded by the chapter's reviewed structured atoms and creates no independent support-bearing claim."
     }
   },
   "prose_review_lineage": [
@@ -888,7 +888,7 @@
       },
       "retirement_reason": "The sentence was narrowed after the bounded local P5 state-and-effect lifecycle was implemented; the replacement preserves the real-candidate residual while removing work that is no longer pending.",
       "replacement_candidate_ids": [
-        "capability-replacement-and-rollback.prose.cc796d2279ca"
+        "capability-replacement-and-rollback.prose.5e32d63be1bc"
       ],
       "recorded_on": "2026-07-27"
     },
@@ -902,7 +902,7 @@
       },
       "retirement_reason": "The sentence was refreshed to bind the new local P5 record while preserving the same evidence ceiling.",
       "replacement_candidate_ids": [
-        "capability-replacement-and-rollback.prose.f349b79a4a39"
+        "capability-replacement-and-rollback.prose.b4feb5e68cbf"
       ],
       "recorded_on": "2026-07-27"
     },

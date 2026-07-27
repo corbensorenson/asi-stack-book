@@ -60,7 +60,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `viea`, `scf`, `vcm_public`, `planforge`, `talos`, `spinoza`, `octopus_router`, `rmi`, `benchmaxxing`; supporting: `alignment_field`, `cgs`, `cognitive_loop_closure`, `project_theseus_whitepaper`, `theseus_plan_compiler`, `theseus_self_evolution_system`, `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer`, `reflexive_router_whitepaper`, `relational_dimension_compiler`; connector/recovery: `moecot`, `vcm_editable` |
 | Source loading state | source notes: `viea`, `scf`, `vcm_public`, `planforge`, `talos`, `spinoza`, `octopus_router`, `rmi`, `benchmaxxing`, `alignment_field`, `cgs`, `cognitive_loop_closure`, `moecot`, `vcm_editable`, `project_theseus_whitepaper`, `theseus_plan_compiler`, `theseus_self_evolution_system`, `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer`; raw cache: `viea`, `scf`, `vcm_public`, `planforge`, `talos`, `spinoza`, `octopus_router`, `rmi`, `benchmaxxing`, `alignment_field`, `cgs`, `cognitive_loop_closure`; connector/recovery: `moecot`, `vcm_editable` |
-| Test state | Existing finite trace, schema-refinement, and logical-concurrency consumers remain bounded. The P5 slice now runs 8/8 local cases through real subprocesses, a durable SQLite/WAL ledger, concurrent idempotency, revocation/scope rejection, effect observation, crash recovery, exact rollback or compensation, nine-class full-state restore, and five-surface local deletion. No deployed multi-service trace, live model state, network partition, open-world effect discovery, natural workload, or support promotion exists. |
+| Test state | Existing finite trace, schema-refinement, and logical-concurrency consumers remain bounded. The first P5 slice runs 8/8 local state/effect cases. Its successor runs 7/7 commit-bound service cases with actual model/Adam state, weights-only rollback rejection, nine-class crash/restart recovery, an owned outbox across a localhost partition, one exactly-once external effect, stale-credential and custody-tamper rejection, and separate-process observation. No deployed multi-service trace, natural workload, distributed partition, open-world effect discovery, external reproduction, or support promotion exists. |
 
 ## Drafting guardrail
 
@@ -919,6 +919,31 @@ or learning state; filesystem observation is not complete effect discovery;
 and local deletion is not causal unlearning, privacy repair, or erasure outside
 the sandbox. The owning result and scope are recorded in
 `docs/p5_effect_complete_reference_report.md`.
+
+### P5 stateful-service successor
+
+The successor slice replaces deterministic model-state payloads with an actual
+two-parameter predictor and bias-corrected Adam update. The checkpoint selected
+before mutation binds nine state classes. Copying back only the weights leaves
+eight classes inconsistent and is rejected. When the trainer process exits
+after mutation but before acknowledgement, a separate restart process restores
+all nine classes byte-exactly and reproduces the prior prediction.
+
+The effect boundary is also no longer a coordinator-owned file. A separate
+HTTP process owns a separate SQLite ledger. During a localhost partition, one
+effect remains pending in a durable owned outbox; after recovery, the first
+retry commits one effect and the second is deduplicated. A stale credential
+cannot add another effect, and a separately executed observer reads the
+accepted payload through the sink's read interface. Source, weight, and
+environment identities are digest-bound, with model and lock tampering used as
+rejecting controls.
+
+This is still a local, authored mechanism slice. The tiny training task is a
+positive control, not natural usefulness. A localhost outage is not
+distributed partition tolerance; a separate repository-authored process is
+not external reproduction; and source digests are not deployment or complete
+supply-chain attestation. The exact result and remaining boundary are recorded
+in `docs/p5_stateful_service_reference_report.md`.
 
 When the trace kernel works, a future implementation could be evaluated by trace quality before anyone argues about intelligence. If the run cannot show parentage, authority, evidence, residuals, and stops, it has not instantiated this architecture. The integration trace kernel remains a target architecture until real trace harnesses, blocked-path tests, artifact-continuity audits, authority stop-condition checks, and accepted evidence transitions show that the layers compose under pressure.
 

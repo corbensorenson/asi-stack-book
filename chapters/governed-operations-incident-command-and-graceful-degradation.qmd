@@ -18,7 +18,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "The authored control case and the bounded P5 local multi-process slice now cover declared state, descendants, authority narrowing, observation, rollback, compensation, and safe hold; no natural service incident, operator game day, network partition, open-world effect inventory, or deployed recovery has run."
+  - "The authored control case and two bounded P5 local slices now cover declared state, actual model/Adam mutation, descendants, authority narrowing, observation, weights-only rollback rejection, full-state crash/restart recovery, compensation, an owned outbox across one localhost partition, exactly-once retry, and safe hold. No natural service incident, operator game day, distributed partition, open-world effect inventory, or deployed recovery has run."
   - "No adversarial game-day evidence yet calibrates severity and recovery thresholds."
   - "NIST incident-response transfer to autonomous AI has not been independently validated."
   - "The schema, fixture, independent consumer, mutations, and Lean model establish finite declared-record consequences only; they do not establish detector quality, inventory completeness, effect reversal, fallback usefulness, or recovery efficacy."
@@ -37,7 +37,7 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source loading state | Source notes are available for all nine assigned records, and the manifest records claim-level mappings and limits. The three NIST records are external comparators; the six Corben/local records contribute architecture or implementation lineage, not independent incident-performance evidence. |
-| Test state | The governed-operations packet schema, authored safe-hold fixture, independent route consumer, completed positive recovery control, and eighteen rejecting mutations are implemented. The P5 local slice adds 8/8 real-subprocess authority/effect/recovery cases with exact bounded receipts. The four-arm natural-service campaign is protocol-ready but unexecuted; no flagship T4 trace, natural incident, operator game day, partition fault, deployment, or external reproduction is recorded. |
+| Test state | The governed-operations packet schema, authored safe-hold fixture, independent route consumer, completed positive recovery control, and eighteen rejecting mutations are implemented. The first P5 slice adds 8/8 real-subprocess authority/effect/recovery cases. The second adds 7/7 commit-bound service cases with actual learning state, weights-only rollback rejection, crash/restart restoration, localhost partition/outbox retry, one external effect, stale-credential and custody-tamper rejection, and separate-process observation. The natural-service campaign remains unexecuted; no flagship T4 trace, natural incident, operator game day, distributed partition, deployment, or external reproduction is recorded. |
 | Formal state | Both public targets are implemented in `AsiStackProofs.GovernedOperations` through thirteen theorem declarations. Their maximum inference is finite declared-record routing only. |
 
 ## Drafting guardrail
@@ -830,6 +830,22 @@ performance, safe degradation, usable fallback, complete effect discovery, or
 production recovery. Exact receipts and boundaries are in
 `docs/p5_effect_complete_reference_report.md`.
 
+The stateful successor crosses the next local boundary. Its trainer mutates an
+actual model and Adam state, then crashes before acknowledgement. A new process
+restores model, optimizer, scheduler, RNG, cache, backup, derived-artifact,
+descendant, and credential state from the prospectively selected checkpoint.
+The weights-only negative control leaves eight mismatches, so a green model
+digest cannot masquerade as recovered service state. A separate HTTP effect
+service exercises one unavailable-service interval, durable outbox ownership,
+exactly-once retry, stale-token rejection, and observation from another
+process.
+
+This still does not close the operational minimum. The task is authored, the
+partition is localhost-only, no real operator or independent monitor makes a
+decision, no delayed harm appears, and the source-bound receipt is explicitly
+not a production deployment attestation. The owned record is
+`docs/p5_stateful_service_reference_report.md`.
+
 ## Empirical argument-exit lane
 
 The core claim leaves `argument` only through a prospective, claim-bearing
@@ -955,7 +971,7 @@ adequacy nor operational safety by themselves.
 | Test | Purpose | Status |
 |---|---|---|
 | Governed operations control-contract suite | Mutate deployment/command identity, five authority dimensions, eleven declared state classes, external effects, freshness, verifier separation, emergency expiry, fallback, and authority requests. The authored safe-hold fixture and completed positive control establish record sensitivity only. | implemented; 18 rejecting mutations |
-| Effect-complete rollback runtime suite | Mutate model, optimizer, scheduler, random state, cache, memory, backup, credential, replica, descendant, and external-effect state in a multi-process service and verify observed restoration or disposition. | bounded local P5 subset implemented by `python3 scripts/validate_p5_effect_complete_reference.py`: 8/8 deterministic cases with real subprocesses, nine local state classes, observed filesystem effects, exact rollback or compensation, and local descendant deletion; no model-serving service, replica/network partition, natural incident, operator, or deployment |
+| Effect-complete rollback runtime suite | Mutate model, optimizer, scheduler, random state, cache, memory, backup, credential, replica, descendant, and external-effect state in a multi-process service and verify observed restoration or disposition. | two bounded local P5 subsets implemented: `validate_p5_effect_complete_reference.py` passes 8/8 state/effect cases; `validate_p5_stateful_service_reference.py` passes 7/7 actual model/Adam, weights-only control, crash/restart, localhost partition/outbox, exactly-once external effect, revocation, custody-tamper, and observer cases. No natural incident, distributed replica recovery, operator game day, external reproduction, or deployment follows. |
 | Incident command game-day matrix | Inject ambiguous, compound, detector-degrading, authority-conflicting, dependency-correlated, and operator-overload failures; measure detection, command resolution, containment, recovery, harm, latency, burden, and cost. Claim-bearing use requires the competence dossier, positive controls, matched baselines, sealed outcomes, independent evaluation, uncertainty, and fair rescue specified above. | planned; not run |
 | Graceful-degradation dominance test | Compare qualified degraded routes with stop-only, generic-SRE, full shutdown/manual work, and normal operation on safe useful throughput, reversibility, workload, false blocking, and governance cost. Retain a degraded route only where it improves the joint frontier; availability alone is not success. | planned; not run |
 | T4 joined-trace integration check | Once T4 exists, verify that one natural happy path and one blocked or rollback path preserve identity, command, effect, outcome, residual, and credit boundaries. The trace is a prospective case and integration check, not a held-out campaign or support transition. | blocked; T4 does not yet exist |

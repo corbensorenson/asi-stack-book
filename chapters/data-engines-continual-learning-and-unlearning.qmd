@@ -33,7 +33,7 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source loading state | Four reviewed source notes: three primary-paper records and one pinned Theseus implementation-reference record. No source code, dataset, training run, or reported result was imported. |
-| Test state | The receipt probe validates four intake routes. P3 and M7 preserve their bounded update/unlearning results and failures. The P5 local slice now restores nine prospectively frozen state classes byte-exactly and removes one cohort from five declared local storage surfaces while recording behavior, influence, and privacy as untested and external erasure as unestablished. The core remains `argument`; this is not language-model unlearning, causal influence removal, privacy repair, complete erasure, transfer, or production evidence. |
+| Test state | The receipt probe validates four intake routes. P3 and M7 preserve their bounded update/unlearning results and failures. The first P5 slice restores nine prospectively frozen classes and removes one cohort from five declared local storage surfaces. The second mutates actual model/Adam learning state, rejects weights-only recovery, and restores nine classes after a crash. Neither tests deletion, forgetting, influence, privacy, rights, or external erasure; the core remains `argument`. |
 
 ## Drafting guardrail
 
@@ -618,6 +618,18 @@ and privacy leakage reduction as `not_tested`, and external storage erasure as
 `not_established`. This is the claim-axis separation the lease requires, but
 the payloads are deterministic local bytes rather than learned state and the
 sandbox cannot observe external copies.
+
+The stateful-service successor removes one limitation and preserves the claim
+partition. Its nine-class checkpoint contains a real two-parameter model,
+bias-corrected Adam moments, scheduler step, deterministic RNG state, prediction
+cache, backup identity, evaluation artifact, descendant adapter, and credential
+record. Training changes all nine; a model-only restore leaves eight
+inconsistent; a new process restores all nine from prospective authority and
+recovers the prior prediction exactly. This establishes that full-state
+custody can bind actual learning state in this small local service. It does not
+run a deletion request, measure forgetting or retained influence, reduce
+privacy leakage, erase remote copies, or establish trajectory equivalence for
+a large model.
 
 ## Mature Research Target
 

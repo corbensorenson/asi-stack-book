@@ -28,6 +28,7 @@
     "p2_resource_ceiling",
     "p2_sequential_materialization_contract",
     "semantic_proof_cluster_inventory",
+    "p5_effect_complete_reference",
     "attestation",
     "reader_release_receipt",
     "priorities",
@@ -1122,9 +1123,9 @@
           "current_copied_diagram_and_test_spread": 0,
           "repaired_chapter_count": 10,
           "baseline_prose_candidate_count": 3444,
-          "current_prose_candidate_count": 3386,
-          "retired_inherited_prose_candidate_count": 246,
-          "added_domain_specific_prose_candidate_count": 188,
+          "current_prose_candidate_count": 3387,
+          "retired_inherited_prose_candidate_count": 247,
+          "added_domain_specific_prose_candidate_count": 190,
           "baseline_structured_atom_count": 4067,
           "current_structured_atom_count": 4058,
           "pending_prose_candidate_count": 0,
@@ -2218,6 +2219,47 @@
         }
       }
     },
+    "p5_effect_complete_reference": {
+      "const": {
+        "state": "in_progress_two_bounded_local_slices_terminal_at_exact_scope",
+        "first_slice": {
+          "result_path": "experiments/effect_complete_reference/results/2026-07-27-local.json",
+          "report_path": "docs/p5_effect_complete_reference_report.md",
+          "case_count": 8,
+          "passed_case_count": 8,
+          "boundary": "real_subprocess_sqlite_wal_and_local_filesystem_with_deterministic_state_payloads"
+        },
+        "stateful_service_slice": {
+          "source_commit": "88d9cc8979460636587fddbf826d62455907c42c",
+          "source_branch": "main",
+          "result_path": "experiments/effect_complete_service/results/2026-07-27-local.json",
+          "report_path": "docs/p5_stateful_service_reference_report.md",
+          "case_count": 7,
+          "passed_case_count": 7,
+          "learning_state_class_count": 9,
+          "mutated_learning_state_class_count": 9,
+          "training_steps": 24,
+          "loss_before": 6.935,
+          "loss_after": 1.18797138562,
+          "weights_only_rollback_rejected": true,
+          "crash_exit_code": 17,
+          "restored_state_class_count": 9,
+          "restored_prediction_exact": true,
+          "localhost_partition_failed_closed": true,
+          "owned_outbox_count_during_partition": 1,
+          "accepted_external_effect_count": 1,
+          "duplicate_retry_count": 1,
+          "revoked_effect_count": 0,
+          "independent_observer_process": true,
+          "weight_tamper_rejected": true,
+          "dependency_tamper_rejected": true,
+          "attestation_scope": "local_source_and_runtime_identity_not_deployment"
+        },
+        "next_action": "execute_one_frozen_natural_stateful_service_with_strong_rollout_controls_separately_owned_evaluator_and_monitor_delayed_outcomes_multiple_external_dependencies_replica_partition_recovery_externally_rooted_weight_custody_and_joint_usefulness_safety_latency_recovery_operator_compute_and_residual_metrics",
+        "support_state_effect": "none",
+        "release_effect": "none"
+      }
+    },
     "attestation": {
       "type": "object",
       "additionalProperties": false,
@@ -2239,7 +2281,7 @@
           "const": false
         },
         "attested_head": {
-          "const": "12d987bded2e504f5ec677df06c4fcdb281b1fdd"
+          "const": "8e2b5a2e2001010522721aabfd1f669998d87f09"
         },
         "state": {
           "const": "pushed_deployed_clean_ancestral_checkpoint"

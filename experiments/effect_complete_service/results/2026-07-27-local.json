@@ -1,0 +1,142 @@
+{
+  "schema_version": "asi_stack.effect_complete_service_result.v1",
+  "result_id": "p5-effect-complete-stateful-service-2026-07-27",
+  "system_id": "p5-effect-complete-stateful-service-001",
+  "case_design_sha256": "4cf064490059cc61b666a5334fb4015a8b9a100f844ecbf2f2c746abaef1745c",
+  "case_count": 7,
+  "passed_case_count": 7,
+  "process_roles": [
+    "checkpoint_authority",
+    "trainer",
+    "restart_supervisor",
+    "inference_service",
+    "effect_adapter",
+    "external_effect_service",
+    "independent_observer"
+  ],
+  "learning_state": {
+    "state_class_count": 9,
+    "mutated_state_class_count": 9,
+    "training_steps": 24,
+    "loss_before": 6.935,
+    "loss_after": 1.18797138562,
+    "positive_control_passed": true
+  },
+  "rollback": {
+    "checkpoint_selected_before_mutation": true,
+    "artifact_only_control_rejected": true,
+    "artifact_only_mismatched_state_classes": 8,
+    "crash_exit_code": 17,
+    "restart_process_used": true,
+    "restored_state_class_count": 9,
+    "byte_exact_restore": true,
+    "restored_prediction_exact": true
+  },
+  "external_effect": {
+    "partition_attempt_failed_closed": true,
+    "owned_outbox_count_during_partition": 1,
+    "accepted_effect_count": 1,
+    "duplicate_retry_count": 1,
+    "revoked_attempt_count": 1,
+    "revoked_effect_count": 0,
+    "independent_observer_process": true,
+    "observer_digest_match": true,
+    "open_unowned_effects": 0
+  },
+  "custody": {
+    "attested_source_commit": "88d9cc8979460636587fddbf826d62455907c42c",
+    "attested_branch": "main",
+    "source_file_count": 3,
+    "source_files_match_commit": true,
+    "source_file_sha256": {
+      "experiments/effect_complete_service/cases.json": "4cf064490059cc61b666a5334fb4015a8b9a100f844ecbf2f2c746abaef1745c",
+      "schemas/effect_complete_service_result.schema.json": "62dc9c168c028e8b637317f54aff999da4586df52b3d8d2c294643ca805ee99b",
+      "scripts/run_p5_stateful_service_reference.py": "0d1d77f42c65a45de7fda67ff44007dc69794c5a70adce1e432a139a1987d7b4"
+    },
+    "model_weight_digest_bound": true,
+    "dependency_lock_digest_bound": true,
+    "weight_tamper_rejected": true,
+    "dependency_tamper_rejected": true,
+    "attestation_scope": "local_source_and_runtime_identity_not_deployment"
+  },
+  "receipts": [
+    {
+      "case_id": "actual-learning-state-mutation",
+      "passed": true,
+      "terminal_disposition": "bounded_learning_positive_control_passed",
+      "observations": [
+        "bias-corrected Adam updated a real two-parameter predictor",
+        "all nine declared state classes changed",
+        "the frozen authored objective improved"
+      ]
+    },
+    {
+      "case_id": "artifact-only-rollback-rejected",
+      "passed": true,
+      "terminal_disposition": "incomplete_restore_rejected",
+      "observations": [
+        "weights alone matched the checkpoint",
+        "8 non-model classes still differed"
+      ]
+    },
+    {
+      "case_id": "crash-restart-full-state-recovery",
+      "passed": true,
+      "terminal_disposition": "new_process_restored_prospective_checkpoint",
+      "observations": [
+        "trainer exited after mutation and before acknowledgement",
+        "a separate restart process restored nine classes byte-exactly",
+        "restored inference matched the prior prediction exactly"
+      ]
+    },
+    {
+      "case_id": "partition-outbox-exactly-once",
+      "passed": true,
+      "terminal_disposition": "partition_recovered_exactly_once",
+      "observations": [
+        "unavailable sink left one durable owned outbox item",
+        "retry after recovery created one external effect",
+        "duplicate retry created no second effect"
+      ]
+    },
+    {
+      "case_id": "revoked-credential-effect-rejected",
+      "passed": true,
+      "terminal_disposition": "revoked_effect_rejected",
+      "observations": [
+        "stale token received an explicit rejection",
+        "no revoked effect entered the external ledger"
+      ]
+    },
+    {
+      "case_id": "weight-and-environment-custody-tamper-rejected",
+      "passed": true,
+      "terminal_disposition": "custody_drift_rejected_before_release",
+      "observations": [
+        "model-weight byte drift failed the frozen digest",
+        "dependency-lock byte drift failed the frozen digest"
+      ]
+    },
+    {
+      "case_id": "independent-observation-and-source-attestation",
+      "passed": true,
+      "terminal_disposition": "effect_observed_and_source_identity_bound",
+      "observations": [
+        "a separately executed observer read the external sink",
+        "observer payload digest matched the released payload",
+        "source files matched an exact commit on main"
+      ]
+    }
+  ],
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "maximum_inference": "Seven deterministic local cases show that this exact commit-bound Python service slice can mutate and restore actual model and Adam learning state, reject weights-only recovery, recover a crashed trainer in a new process, retain an owned outbox during a localhost partition, deliver one idempotent external effect, reject a revoked credential, detect weight and environment drift, and expose the effect to a separately executed observer.",
+  "non_claims": [
+    "The authored linear task is a lifecycle positive control, not a natural-task usefulness result or a model-capability benchmark.",
+    "The HTTP effect service runs on localhost and does not establish open-network, distributed-consensus, Byzantine, cloud, or production behavior.",
+    "The independent observer is separately executed but remains repository-authored; it is not an independent external reproduction.",
+    "Exact local restore does not establish semantic recovery for a large model, privacy repair, causal unlearning, external storage erasure, legal compliance, or reversal of human consequences.",
+    "Commit and digest custody establish identity for the declared local files, not a complete software supply-chain guarantee.",
+    "Passing cases do not establish production safety, useful governed throughput, transfer, SOTA, AGI, ASI, chapter-core support promotion, deployment, or release authority."
+  ]
+}
