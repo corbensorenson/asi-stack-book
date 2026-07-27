@@ -2166,6 +2166,45 @@ joint usefulness, unsafe-release, false-blocking, latency, recovery, operator,
 compute, and residual metrics. No support transition or release authority
 follows.
 
+### P5 natural publication-service development checkpoint — 2026-07-27
+
+The first natural operational happy path for P5 is now recorded at its exact
+development scope. Ordinary maintained-book work—not a task authored to test
+P5—produced source commit
+`5575d3cbf5f9dd9edfec8548c4279728b0da3995` on `main`. GitHub Actions build
+run `30287899588` executed the deep registry, Lean build, clean HTML render,
+canonical-status checks, Human-view checks, and tested-artifact construction.
+It uploaded a 28,389,505-byte artifact named with the complete source SHA and
+digest
+`sha256:84700830e2f110e1b4406dc1dbc3976b0b2cecc9020455040706d128c3741dc2`.
+
+Separate workflow run `30288922224` downloaded that tested artifact, verified
+the same source commit, deployed it without rebuilding, and then ran a
+separate post-deploy job that crawled the public canonical status and chapter
+graph. The deployment reached a successful external status 873 seconds after
+the source commit; the post-deploy monitor completed after 893 seconds. This
+is a real source-to-build-to-artifact-to-public-effect-to-observation chain
+across hosted workflow, artifact-storage, and Pages-serving boundaries.
+
+The checkpoint is deliberately **outcome-aware and retrospective**: its result
+was known before the trace contract was frozen. It is therefore a development
+observation, not a held-out case, claim-bearing campaign, safety result,
+rollback result, causal comparison, independent reproduction, support
+transition, or new release decision. The post-deploy monitor is a separate
+process path but not separately owned or institutionally independent. No
+fault, rollback, compensation, replica conflict, partition, delayed harm,
+unsafe-release opportunity, false-blocking denominator, operator-time measure,
+or hosted-compute measure was exercised.
+
+The durable machine record is
+`experiments/p5_natural_publication_service_trace/results/2026-07-27-development.json`;
+the reader boundary is
+`docs/p5_natural_publication_service_development_trace.md`. P5/M5 remain
+`in_progress`. The next claim-bearing transaction must freeze its natural work
+population, fault envelope, matched controls, evaluator, monitor, metrics, and
+stopping rules before outcomes are visible, while preserving the exact
+identity joins learned from this happy path.
+
 ## P6 — Evidence, instrument, and source renewal
 
 Run a dated primary-source and official-comparator sweep at least quarterly and
@@ -3227,8 +3266,10 @@ is not a debugging interface.
 5. **Effect-complete reference (`P5`).** Design against the `T4` joined trace:
    durable identity, scoped authority, concurrent ledgers, observed effects,
    exact rollback or compensation, crash recovery, full learning state,
-   revocation, and descendant-aware deletion. Implementation volume follows
-   the case; it does not precede it.
+   revocation, and descendant-aware deletion. Preserve the natural publication
+   development trace's source/tested-artifact/no-rebuild deployment/public-
+   monitor joins, but never place its outcome-aware happy path in a held-out
+   denominator. Implementation volume follows the case; it does not precede it.
 6. **Evidence, instrument, and structural renewal (`P6`).** Keep primary comparators,
    evaluator sensitivity, false-negative controls, alternative substrates,
    governed update/unlearning, Deterministic Capability Compilation, and the
@@ -3288,12 +3329,12 @@ lies.
 
 | Milestone | State | Completion condition |
 |---|---|---|
-| M0 — Truth and identity control | in progress | Identity is complete and clean pushed/build/deploy checkpoint `8e2b5a2e2001010522721aabfd1f669998d87f09` is the latest attested public ancestor before this P5 service transaction; close only after this transaction and every later evidence checkpoint receive their own clean commit-bound custody and public-state reconciliation. |
+| M0 — Truth and identity control | in progress | Clean pushed/build/deploy checkpoint `5575d3cbf5f9dd9edfec8548c4279728b0da3995` is the latest commit-bound public checkpoint captured by the P5 natural development trace; close only after this transaction and every later evidence checkpoint receive their own clean custody and public-state reconciliation. |
 | M1 — Negative-result rehabilitation | completed | All 90 accepted negative/no-change transitions are classified (1 N0, 15 N1, 74 N2, zero N3–N5), and the frozen 75-surface snapshot including the then-live 55 chapters preserves the resulting ceilings. |
 | M2 — Competent natural empirical result | in progress | A high-value natural, non-authored campaign passes every competence gate and ends with a bounded positive, negative, or inconclusive disposition. |
 | M3 — Reproduction and transfer | pending | Any broadened result has independent reproduction and two prospectively selected materially different transfer settings. |
 | M4 — Semantic formal depth | completed | All six frozen clusters are terminal across 25 modules with exact dispositions, modeled state, assumptions, countermodels, consumers, mutations, semantic separations, and maximum-inference ceilings. No aggregate theorem count or finite record grants empirical support. |
-| M5 — Effect-complete reference | in progress | The first eight-case slice exercises durable authority-to-effect, revocation, idempotency, crash recovery, rollback/compensation, nine-class restore, and local deletion. The seven-case successor adds actual model/Adam state, a weights-only rejecting control, full-state crash/restart recovery, one localhost partition with owned outbox and exactly-once external effect, stale-credential rejection, source/weight/environment custody, and separate-process observation. Natural usefulness, strong models, distributed replicas/partitions, delayed/open-world effects, externally rooted custody, independent reproduction, and deployment attestation remain. |
+| M5 — Effect-complete reference | in progress | The first eight-case slice exercises durable authority-to-effect, revocation, idempotency, crash recovery, rollback/compensation, nine-class restore, and local deletion. The seven-case successor adds actual model/Adam state, a weights-only rejecting control, full-state crash/restart recovery, one localhost partition with owned outbox and exactly-once external effect, stale-credential rejection, source/weight/environment custody, and separate-process observation. One outcome-aware natural publication happy path now preserves source, tested artifact, no-rebuild deploy, public effect, and post-deploy monitoring across hosted services, but supplies no fault, rollback, safety denominator, matched control, or support movement. Natural AI-service usefulness, strong models, distributed replicas/partitions, delayed/open-world effects, externally rooted model custody, independent reproduction, and prospective claim-bearing deployment evidence remain. |
 | M6 — Renewal and structural completeness | completed | The first tranche, A1/A2, Round 18 breadth packet, ten-owner no-deferral transaction, four-owner taxonomy reconciliation, 2026-07-25 full-coverage audit, T1D six-chapter maturity/source/reader packet, Precision Contract integration, R16-A six-chapter/thirty-atom organization packet, W3 84-chapter inheritance guard, and R16-B 84-chapter reader-freshness derivative are terminal at their declared argument or organization scope. The manifest is 84; no identified manuscript idea is deferred. Optimizer, heterogeneous-memory, and inference-cache manuscript depth is in the book; executable evidence residuals remain ordinary Phase 2 work. |
 | M7 — Reader/publication disposition | in progress | PDF, EPUB, and DOCX in `reader-2026-07-18` remain immutable published artifacts with exact receipts. The current 84-chapter source-fresh virtual QMD derivative is terminal; HTML, PDF, EPUB, DOCX, and audio are explicitly deferred pending format-specific QA rather than fabricated. Close M7 after public surfaces synchronize and the exact final `main`/Pages attestation succeeds; local source freshness does not imply a new external reader release. |
 | M8 — Successor continuity | pending | Every open item has a terminal disposition and the next exact authority is active. |

@@ -1,0 +1,198 @@
+{
+  "schema_version": "asi_stack.p5_natural_publication_service_trace.v1",
+  "trace_id": "p5-natural-publication-service-development-2026-07-27-5575d3cbf",
+  "recorded_date": "2026-07-27",
+  "campaign_role": "retrospective_natural_happy_path_development_observation",
+  "classification": {
+    "natural_operational_work": true,
+    "work_authored_to_test_p5": false,
+    "outcome_known_before_trace_freeze": true,
+    "prospective": false,
+    "claim_bearing": false,
+    "eligible_for_held_out_denominator": false,
+    "eligible_for_support_transition": false,
+    "eligible_for_release_decision": false
+  },
+  "service": {
+    "repository": "corbensorenson/asi-stack-book",
+    "branch": "main",
+    "source_commit": "5575d3cbf5f9dd9edfec8548c4279728b0da3995",
+    "source_commit_time": "2026-07-27T17:08:03Z",
+    "source_commit_subject": "Reconcile guarded Theseus T0A preflight",
+    "work_item": "Publish the maintained book after reconciling the guarded Theseus T0A preflight.",
+    "public_url": "https://corbensorenson.github.io/asi-stack-book/",
+    "external_service_boundaries": [
+      "GitHub Actions hosted workflow execution",
+      "GitHub Actions artifact storage and transfer",
+      "GitHub Pages deployment and public HTTPS serving"
+    ]
+  },
+  "build_receipt": {
+    "run_id": 30287899588,
+    "run_url": "https://github.com/corbensorenson/asi-stack-book/actions/runs/30287899588",
+    "workflow_name": "Build tested Pages artifact",
+    "event": "push",
+    "run_attempt": 1,
+    "head_branch": "main",
+    "head_sha": "5575d3cbf5f9dd9edfec8548c4279728b0da3995",
+    "status": "completed",
+    "conclusion": "success",
+    "created_at": "2026-07-27T17:08:15Z",
+    "started_at": "2026-07-27T17:08:15Z",
+    "updated_at": "2026-07-27T17:22:04Z",
+    "job": {
+      "job_id": 90050140229,
+      "name": "build",
+      "started_at": "2026-07-27T17:08:23Z",
+      "completed_at": "2026-07-27T17:22:03Z",
+      "conclusion": "success"
+    },
+    "required_steps": [
+      {
+        "name": "Run deep validation tier",
+        "started_at": "2026-07-27T17:09:34Z",
+        "completed_at": "2026-07-27T17:16:38Z",
+        "conclusion": "success"
+      },
+      {
+        "name": "Build Lean proofs",
+        "started_at": "2026-07-27T17:16:38Z",
+        "completed_at": "2026-07-27T17:17:49Z",
+        "conclusion": "success"
+      },
+      {
+        "name": "Render clean HTML",
+        "started_at": "2026-07-27T17:17:49Z",
+        "completed_at": "2026-07-27T17:21:48Z",
+        "conclusion": "success"
+      },
+      {
+        "name": "Build and validate canonical public status",
+        "started_at": "2026-07-27T17:21:48Z",
+        "completed_at": "2026-07-27T17:21:51Z",
+        "conclusion": "success"
+      },
+      {
+        "name": "Validate live Human view",
+        "started_at": "2026-07-27T17:21:51Z",
+        "completed_at": "2026-07-27T17:21:57Z",
+        "conclusion": "success"
+      },
+      {
+        "name": "Browser-smoke live Human view",
+        "started_at": "2026-07-27T17:21:57Z",
+        "completed_at": "2026-07-27T17:21:57Z",
+        "conclusion": "success"
+      },
+      {
+        "name": "Build and verify tested artifact",
+        "started_at": "2026-07-27T17:21:57Z",
+        "completed_at": "2026-07-27T17:21:57Z",
+        "conclusion": "success"
+      },
+      {
+        "name": "Upload commit-bound tested artifact",
+        "started_at": "2026-07-27T17:21:57Z",
+        "completed_at": "2026-07-27T17:22:01Z",
+        "conclusion": "success"
+      }
+    ],
+    "artifact": {
+      "artifact_id": 8661958792,
+      "name": "pages-tested-5575d3cbf5f9dd9edfec8548c4279728b0da3995",
+      "size_in_bytes": 28389505,
+      "digest": "sha256:84700830e2f110e1b4406dc1dbc3976b0b2cecc9020455040706d128c3741dc2",
+      "created_at": "2026-07-27T17:22:01Z",
+      "expires_at": "2026-08-10T17:21:57Z",
+      "expired_at_capture": false
+    }
+  },
+  "deploy_receipt": {
+    "run_id": 30288922224,
+    "run_url": "https://github.com/corbensorenson/asi-stack-book/actions/runs/30288922224",
+    "workflow_name": "Deploy tested Quarto site",
+    "event": "workflow_run",
+    "run_attempt": 1,
+    "head_branch": "main",
+    "head_sha": "5575d3cbf5f9dd9edfec8548c4279728b0da3995",
+    "status": "completed",
+    "conclusion": "success",
+    "started_at": "2026-07-27T17:22:06Z",
+    "completed_at": "2026-07-27T17:22:56Z",
+    "deployment": {
+      "deployment_id": 5626866545,
+      "environment": "github-pages",
+      "status": "success",
+      "status_recorded_at": "2026-07-27T17:22:36Z",
+      "environment_url": "https://corbensorenson.github.io/asi-stack-book/"
+    },
+    "deploy_job": {
+      "job_id": 90053569494,
+      "started_at": "2026-07-27T17:22:10Z",
+      "completed_at": "2026-07-27T17:22:35Z",
+      "conclusion": "success",
+      "downloaded_artifact_from_build_run": 30287899588,
+      "verified_expected_commit": "5575d3cbf5f9dd9edfec8548c4279728b0da3995",
+      "rebuilt_site": false
+    },
+    "post_deploy_monitor": {
+      "job_id": 90053690401,
+      "name": "Attest deployed Pages site",
+      "started_at": "2026-07-27T17:22:37Z",
+      "completed_at": "2026-07-27T17:22:56Z",
+      "conclusion": "success",
+      "observation_route": "separate GitHub Actions job crawling the deployed status and chapter graph",
+      "crawl_step_started_at": "2026-07-27T17:22:45Z",
+      "crawl_step_completed_at": "2026-07-27T17:22:54Z",
+      "institutionally_independent": false
+    }
+  },
+  "observed_outcome": {
+    "public_effect": "The tested commit became the public GitHub Pages site and its canonical status and chapter graph passed a post-deploy crawl.",
+    "commit_to_deployment_status_seconds": 873,
+    "commit_to_post_deploy_monitor_completion_seconds": 893,
+    "build_job_seconds": 820,
+    "deep_validation_seconds": 424,
+    "lean_build_seconds": 71,
+    "html_render_seconds": 239,
+    "deploy_job_seconds": 25,
+    "post_deploy_monitor_job_seconds": 19,
+    "post_deploy_crawl_seconds": 9
+  },
+  "measurement_coverage": {
+    "useful_outcome_observed": "public currentness and graph consistency only",
+    "unsafe_release_rate_measured": false,
+    "false_blocking_rate_measured": false,
+    "user_task_quality_measured": false,
+    "rollback_or_compensation_exercised": false,
+    "incident_or_fault_exercised": false,
+    "replica_or_partition_recovery_exercised": false,
+    "operator_time_measured": false,
+    "hosted_compute_measured": false,
+    "delayed_harm_window_observed": false,
+    "independent_external_reproduction": false
+  },
+  "residuals": [
+    "This is one happy path observed after its outcome was known, not a prospective campaign.",
+    "The post-deploy monitor is a separate process path but not a separately owned evaluator or independent institution.",
+    "No fault, rollback, compensation, replica conflict, network partition, delayed harm, or unsafe-release opportunity was exercised.",
+    "The public site is a moving service; the receipt binds only the named commit and observation interval.",
+    "Artifact expiry limits later replay from GitHub artifact storage, although source and workflow history remain.",
+    "Operator time and hosted compute consumption were not instrumented.",
+    "A successful crawl tests declared publication invariants, not the truth or usefulness of every page."
+  ],
+  "non_claims": [
+    "does not establish governed operations efficacy",
+    "does not establish effect-complete rollback",
+    "does not establish production AI service safety",
+    "does not estimate unsafe release or false blocking",
+    "does not supply a held-out natural-task denominator",
+    "does not supply a matched baseline or causal comparison",
+    "does not count as independent external reproduction",
+    "does not promote any chapter-core claim",
+    "does not create a support-state transition",
+    "does not grant a new release decision"
+  ],
+  "support_state_effect": "none",
+  "record_policy_effect": "none"
+}

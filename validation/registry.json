@@ -2256,7 +2256,11 @@
     "schemas/effect_complete_service_result.schema.json",
     "scripts/run_p5_stateful_service_reference.py",
     "scripts/validate_p5_stateful_service_reference.py",
-    "docs/p5_stateful_service_reference_report.md"
+    "docs/p5_stateful_service_reference_report.md",
+    "experiments/p5_natural_publication_service_trace/results/2026-07-27-development.json",
+    "schemas/p5_natural_publication_service_trace.schema.json",
+    "scripts/validate_p5_natural_publication_service_trace.py",
+    "docs/p5_natural_publication_service_development_trace.md"
   ],
   "units": [
     {
@@ -6808,8 +6812,8 @@
       "args": [],
       "execution_tier": "deep",
       "validation_class": "proof_or_evidence_gate",
-      "input_contract": "Re-executed governed Git slice, matched baseline metrics, derived invariant suite, claim dispositions, proof manifest/adequacy/artifact audits, volatile source records, inter-stack routing, terminology refresh, and readable D–F closure audit.",
-      "output_contract": "Reject drift in bounded empirical metrics, invariant mutations/residuals, core dispositions, proof target/adequacy traceability, volatile source routing, or D–F closure boundaries.",
+      "input_contract": "Re-executed governed Git slice, matched baseline metrics, derived invariant suite, claim dispositions, proof manifest/adequacy/artifact audits, volatile source records, inter-stack routing, terminology refresh, and readable D\u2013F closure audit.",
+      "output_contract": "Reject drift in bounded empirical metrics, invariant mutations/residuals, core dispositions, proof target/adequacy traceability, volatile source routing, or D\u2013F closure boundaries.",
       "claim_scope": "Local roadmap closure for Workstreams D, E, and F at their explicitly bounded empirical, formal, and source-governance scopes.",
       "negative_controls": "validator_owned",
       "prohibited_inference": "Local closure does not prove deployed safety, general cost-effectiveness, formal runtime enforcement, novelty, exhaustive literature coverage, or independent review.",
@@ -14854,11 +14858,57 @@
       "prohibited_inference": "The slice does not establish natural-task usefulness, large-model semantic recovery, production or open-network correctness, distributed consensus, Byzantine tolerance, privacy repair, causal unlearning, external erasure, legal compliance, independent external reproduction, transfer, SOTA, AGI, ASI, chapter-core support, deployment, or release.",
       "contract_precision": "exact",
       "semantic_review_state": "bounded_stateful_local_service_mechanism_not_natural_or_deployed"
+    },
+    {
+      "id": "validate_p5_natural_publication_service_trace:432",
+      "order": 432,
+      "script": "validate_p5_natural_publication_service_trace.py",
+      "args": [],
+      "execution_tier": "deep",
+      "validation_class": "proof_or_evidence_gate",
+      "input_contract": "Tracked GitHub API observations for one ordinary maintained-book change, exact source/build/artifact/deploy/public-monitor identity joins, receipt-derived latency, explicit measurement coverage, and outcome-aware development-only classification.",
+      "input_artifacts": [
+        "experiments/p5_natural_publication_service_trace/results/2026-07-27-development.json",
+        "schemas/p5_natural_publication_service_trace.schema.json",
+        "scripts/validate_p5_natural_publication_service_trace.py",
+        "docs/p5_natural_publication_service_development_trace.md"
+      ],
+      "output_contract": "Reject SHA, workflow, artifact, no-rebuild, monitor, duration, measurement-coverage, independence, held-out, support, or release-decision laundering while preserving the natural happy path only as retrospective development evidence.",
+      "output_assertions": [
+        "source, build, deploy, artifact, and public monitor share exact custody",
+        "the deploy workflow consumes the tested artifact without rebuilding",
+        "receipt-derived latency fields are exact",
+        "the post-deploy monitor is separate but not institutionally independent",
+        "unmeasured safety, blocking, operator, compute, and rollback outcomes stay false",
+        "the trace is outcome-aware and ineligible for a held-out denominator",
+        "thirteen semantic mutations reject",
+        "no support-state or release-decision effect"
+      ],
+      "claim_scope": "One retrospective natural happy path for the public ASI Stack publication service at source commit 5575d3cbf5f9dd9edfec8548c4279728b0da3995.",
+      "negative_controls": "sha_build_deploy_artifact_rebuild_monitor_prospectivity_heldout_measurement_independence_support_and_release_laundering",
+      "negative_control_cases": [
+        "source SHA mismatch",
+        "build SHA mismatch",
+        "deploy SHA mismatch",
+        "failed build",
+        "artifact digest mismatch",
+        "deploy rebuild",
+        "missing monitor",
+        "prospective laundering",
+        "held-out laundering",
+        "unsafe-release measurement invention",
+        "institutional-independence laundering",
+        "support promotion",
+        "release-decision promotion"
+      ],
+      "prohibited_inference": "The trace does not establish governed-operations efficacy, effect-complete rollback, production AI safety, unsafe-release or false-blocking rates, causal benefit, held-out natural-task performance, independent reproduction, transfer, SOTA, AGI, ASI, chapter-core support, or a new release decision.",
+      "contract_precision": "exact",
+      "semantic_review_state": "retrospective_natural_happy_path_development_observation_only"
     }
   ],
   "summary": {
-    "required_artifact_count": 2212,
-    "unit_count": 431
+    "required_artifact_count": 2216,
+    "unit_count": 432
   },
   "non_claims": [
     "Registry coverage does not establish semantic adequacy of every validator.",

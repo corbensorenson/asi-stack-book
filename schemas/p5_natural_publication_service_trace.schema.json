@@ -1,0 +1,349 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/p5_natural_publication_service_trace.schema.json",
+  "title": "P5 natural publication-service development trace",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "trace_id",
+    "recorded_date",
+    "campaign_role",
+    "classification",
+    "service",
+    "build_receipt",
+    "deploy_receipt",
+    "observed_outcome",
+    "measurement_coverage",
+    "residuals",
+    "non_claims",
+    "support_state_effect",
+    "record_policy_effect"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "asi_stack.p5_natural_publication_service_trace.v1"
+    },
+    "trace_id": {
+      "type": "string",
+      "minLength": 20
+    },
+    "recorded_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "campaign_role": {
+      "const": "retrospective_natural_happy_path_development_observation"
+    },
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "natural_operational_work",
+        "work_authored_to_test_p5",
+        "outcome_known_before_trace_freeze",
+        "prospective",
+        "claim_bearing",
+        "eligible_for_held_out_denominator",
+        "eligible_for_support_transition",
+        "eligible_for_release_decision"
+      ],
+      "properties": {
+        "natural_operational_work": { "const": true },
+        "work_authored_to_test_p5": { "const": false },
+        "outcome_known_before_trace_freeze": { "const": true },
+        "prospective": { "const": false },
+        "claim_bearing": { "const": false },
+        "eligible_for_held_out_denominator": { "const": false },
+        "eligible_for_support_transition": { "const": false },
+        "eligible_for_release_decision": { "const": false }
+      }
+    },
+    "service": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "repository",
+        "branch",
+        "source_commit",
+        "source_commit_time",
+        "source_commit_subject",
+        "work_item",
+        "public_url",
+        "external_service_boundaries"
+      ],
+      "properties": {
+        "repository": { "const": "corbensorenson/asi-stack-book" },
+        "branch": { "const": "main" },
+        "source_commit": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+        "source_commit_time": { "type": "string", "format": "date-time" },
+        "source_commit_subject": { "type": "string", "minLength": 1 },
+        "work_item": { "type": "string", "minLength": 1 },
+        "public_url": { "type": "string", "format": "uri" },
+        "external_service_boundaries": {
+          "type": "array",
+          "minItems": 3,
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "build_receipt": { "$ref": "#/$defs/workflowReceipt" },
+    "deploy_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "run_id",
+        "run_url",
+        "workflow_name",
+        "event",
+        "run_attempt",
+        "head_branch",
+        "head_sha",
+        "status",
+        "conclusion",
+        "started_at",
+        "completed_at",
+        "deployment",
+        "deploy_job",
+        "post_deploy_monitor"
+      ],
+      "properties": {
+        "run_id": { "type": "integer", "minimum": 1 },
+        "run_url": { "type": "string", "format": "uri" },
+        "workflow_name": { "const": "Deploy tested Quarto site" },
+        "event": { "const": "workflow_run" },
+        "run_attempt": { "const": 1 },
+        "head_branch": { "const": "main" },
+        "head_sha": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+        "status": { "const": "completed" },
+        "conclusion": { "const": "success" },
+        "started_at": { "type": "string", "format": "date-time" },
+        "completed_at": { "type": "string", "format": "date-time" },
+        "deployment": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "deployment_id",
+            "environment",
+            "status",
+            "status_recorded_at",
+            "environment_url"
+          ],
+          "properties": {
+            "deployment_id": { "type": "integer", "minimum": 1 },
+            "environment": { "const": "github-pages" },
+            "status": { "const": "success" },
+            "status_recorded_at": { "type": "string", "format": "date-time" },
+            "environment_url": { "type": "string", "format": "uri" }
+          }
+        },
+        "deploy_job": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "job_id",
+            "started_at",
+            "completed_at",
+            "conclusion",
+            "downloaded_artifact_from_build_run",
+            "verified_expected_commit",
+            "rebuilt_site"
+          ],
+          "properties": {
+            "job_id": { "type": "integer", "minimum": 1 },
+            "started_at": { "type": "string", "format": "date-time" },
+            "completed_at": { "type": "string", "format": "date-time" },
+            "conclusion": { "const": "success" },
+            "downloaded_artifact_from_build_run": { "type": "integer", "minimum": 1 },
+            "verified_expected_commit": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+            "rebuilt_site": { "const": false }
+          }
+        },
+        "post_deploy_monitor": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "job_id",
+            "name",
+            "started_at",
+            "completed_at",
+            "conclusion",
+            "observation_route",
+            "crawl_step_started_at",
+            "crawl_step_completed_at",
+            "institutionally_independent"
+          ],
+          "properties": {
+            "job_id": { "type": "integer", "minimum": 1 },
+            "name": { "const": "Attest deployed Pages site" },
+            "started_at": { "type": "string", "format": "date-time" },
+            "completed_at": { "type": "string", "format": "date-time" },
+            "conclusion": { "const": "success" },
+            "observation_route": { "type": "string", "minLength": 1 },
+            "crawl_step_started_at": { "type": "string", "format": "date-time" },
+            "crawl_step_completed_at": { "type": "string", "format": "date-time" },
+            "institutionally_independent": { "const": false }
+          }
+        }
+      }
+    },
+    "observed_outcome": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "public_effect",
+        "commit_to_deployment_status_seconds",
+        "commit_to_post_deploy_monitor_completion_seconds",
+        "build_job_seconds",
+        "deep_validation_seconds",
+        "lean_build_seconds",
+        "html_render_seconds",
+        "deploy_job_seconds",
+        "post_deploy_monitor_job_seconds",
+        "post_deploy_crawl_seconds"
+      ],
+      "properties": {
+        "public_effect": { "type": "string", "minLength": 1 },
+        "commit_to_deployment_status_seconds": { "type": "integer", "minimum": 0 },
+        "commit_to_post_deploy_monitor_completion_seconds": { "type": "integer", "minimum": 0 },
+        "build_job_seconds": { "type": "integer", "minimum": 0 },
+        "deep_validation_seconds": { "type": "integer", "minimum": 0 },
+        "lean_build_seconds": { "type": "integer", "minimum": 0 },
+        "html_render_seconds": { "type": "integer", "minimum": 0 },
+        "deploy_job_seconds": { "type": "integer", "minimum": 0 },
+        "post_deploy_monitor_job_seconds": { "type": "integer", "minimum": 0 },
+        "post_deploy_crawl_seconds": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "measurement_coverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "useful_outcome_observed",
+        "unsafe_release_rate_measured",
+        "false_blocking_rate_measured",
+        "user_task_quality_measured",
+        "rollback_or_compensation_exercised",
+        "incident_or_fault_exercised",
+        "replica_or_partition_recovery_exercised",
+        "operator_time_measured",
+        "hosted_compute_measured",
+        "delayed_harm_window_observed",
+        "independent_external_reproduction"
+      ],
+      "properties": {
+        "useful_outcome_observed": { "type": "string", "minLength": 1 },
+        "unsafe_release_rate_measured": { "const": false },
+        "false_blocking_rate_measured": { "const": false },
+        "user_task_quality_measured": { "const": false },
+        "rollback_or_compensation_exercised": { "const": false },
+        "incident_or_fault_exercised": { "const": false },
+        "replica_or_partition_recovery_exercised": { "const": false },
+        "operator_time_measured": { "const": false },
+        "hosted_compute_measured": { "const": false },
+        "delayed_harm_window_observed": { "const": false },
+        "independent_external_reproduction": { "const": false }
+      }
+    },
+    "residuals": {
+      "type": "array",
+      "minItems": 7,
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "non_claims": {
+      "type": "array",
+      "minItems": 10,
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "support_state_effect": { "const": "none" },
+    "record_policy_effect": { "const": "none" }
+  },
+  "$defs": {
+    "workflowReceipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "run_id",
+        "run_url",
+        "workflow_name",
+        "event",
+        "run_attempt",
+        "head_branch",
+        "head_sha",
+        "status",
+        "conclusion",
+        "created_at",
+        "started_at",
+        "updated_at",
+        "job",
+        "required_steps",
+        "artifact"
+      ],
+      "properties": {
+        "run_id": { "type": "integer", "minimum": 1 },
+        "run_url": { "type": "string", "format": "uri" },
+        "workflow_name": { "const": "Build tested Pages artifact" },
+        "event": { "const": "push" },
+        "run_attempt": { "const": 1 },
+        "head_branch": { "const": "main" },
+        "head_sha": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+        "status": { "const": "completed" },
+        "conclusion": { "const": "success" },
+        "created_at": { "type": "string", "format": "date-time" },
+        "started_at": { "type": "string", "format": "date-time" },
+        "updated_at": { "type": "string", "format": "date-time" },
+        "job": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["job_id", "name", "started_at", "completed_at", "conclusion"],
+          "properties": {
+            "job_id": { "type": "integer", "minimum": 1 },
+            "name": { "const": "build" },
+            "started_at": { "type": "string", "format": "date-time" },
+            "completed_at": { "type": "string", "format": "date-time" },
+            "conclusion": { "const": "success" }
+          }
+        },
+        "required_steps": {
+          "type": "array",
+          "minItems": 8,
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["name", "started_at", "completed_at", "conclusion"],
+            "properties": {
+              "name": { "type": "string", "minLength": 1 },
+              "started_at": { "type": "string", "format": "date-time" },
+              "completed_at": { "type": "string", "format": "date-time" },
+              "conclusion": { "const": "success" }
+            }
+          }
+        },
+        "artifact": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "artifact_id",
+            "name",
+            "size_in_bytes",
+            "digest",
+            "created_at",
+            "expires_at",
+            "expired_at_capture"
+          ],
+          "properties": {
+            "artifact_id": { "type": "integer", "minimum": 1 },
+            "name": { "type": "string", "minLength": 1 },
+            "size_in_bytes": { "type": "integer", "minimum": 1 },
+            "digest": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+            "created_at": { "type": "string", "format": "date-time" },
+            "expires_at": { "type": "string", "format": "date-time" },
+            "expired_at_capture": { "const": false }
+          }
+        }
+      }
+    }
+  }
+}

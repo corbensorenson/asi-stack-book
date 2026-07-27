@@ -41,6 +41,7 @@ P2_POLICY = ROOT / "evidence_quality/p2_task_qualification_and_replacement_polic
 P2_RESOURCE = ROOT / "evidence_quality/p2_resource_ceiling.json"
 P2_REPLACEMENT_QUEUE = ROOT / "experiments/p2_governed_repository_admission/corpus/replacement_queue.json"
 P5_STATEFUL_RESULT = ROOT / "experiments/effect_complete_service/results/2026-07-27-local.json"
+P5_NATURAL_TRACE = ROOT / "experiments/p5_natural_publication_service_trace/results/2026-07-27-development.json"
 READER_MANIFEST = ROOT / "editions/reader_manuscript/reader_2026_07_18/manifest.json"
 READER_RELEASE_RECORD = ROOT / "release_records/2026-07-18-reader-2026-07-18-0921a924.json"
 STRUCTURAL_RESEARCH = ROOT / "docs/structural_completeness_chapter_research_2026_07_19.md"
@@ -220,6 +221,7 @@ def inputs() -> dict:
         "p2_resource": load(P2_RESOURCE),
         "p2_replacement_queue": load(P2_REPLACEMENT_QUEUE),
         "p5_stateful_result": load(P5_STATEFUL_RESULT),
+        "p5_natural_trace": load(P5_NATURAL_TRACE),
         "reader_manifest": load(READER_MANIFEST),
         "reader_release_record": load(READER_RELEASE_RECORD),
         "structural_research": STRUCTURAL_RESEARCH.read_text(encoding="utf-8"),
@@ -299,6 +301,7 @@ def errors(data: dict) -> list[str]:
         "## P4 — Semantically meaningful formal evidence",
         "## P5 — Effect-complete governed reference system",
         "### P5 stateful-service vertical-slice checkpoint — 2026-07-27",
+        "### P5 natural publication-service development checkpoint — 2026-07-27",
         "## P6 — Evidence, instrument, and source renewal",
         "### P6.4-R18 — terminal bounded conceptual-completeness packet",
         "### P6.5 — Round 16 post-activation integration debt",
@@ -1735,9 +1738,9 @@ def errors(data: dict) -> list[str]:
     p5_service = p5.get("stateful_service_slice", {})
     p5_result = data["p5_stateful_result"]
     if p5.get("state") != (
-        "in_progress_two_bounded_local_slices_terminal_at_exact_scope"
+        "in_progress_two_bounded_local_slices_and_one_natural_development_trace_terminal_at_exact_scope"
     ):
-        out.append("P5 two-slice status drifted")
+        out.append("P5 two-slice plus natural-development-trace status drifted")
     if (
         p5_service.get("source_commit")
         != p5_result.get("custody", {}).get("attested_source_commit")
@@ -1766,6 +1769,45 @@ def errors(data: dict) -> list[str]:
         or p5_result.get("release_effect") != "none"
     ):
         out.append("P5 stateful-service slice laundered support or release state")
+
+    p5_natural = p5.get("natural_publication_service_development_trace", {})
+    p5_trace = data["p5_natural_trace"]
+    if (
+        p5_natural.get("source_commit")
+        != p5_trace.get("service", {}).get("source_commit")
+        or p5_natural.get("trace_path")
+        != "experiments/p5_natural_publication_service_trace/results/2026-07-27-development.json"
+        or p5_natural.get("build_run_id")
+        != p5_trace.get("build_receipt", {}).get("run_id")
+        or p5_natural.get("deploy_run_id")
+        != p5_trace.get("deploy_receipt", {}).get("run_id")
+        or p5_natural.get("artifact_id")
+        != p5_trace.get("build_receipt", {}).get("artifact", {}).get("artifact_id")
+        or p5_natural.get("artifact_digest")
+        != p5_trace.get("build_receipt", {}).get("artifact", {}).get("digest")
+        or p5_natural.get("deployment_id")
+        != p5_trace.get("deploy_receipt", {}).get("deployment", {}).get("deployment_id")
+        or p5_natural.get("source_to_deployment_status_seconds")
+        != p5_trace.get("observed_outcome", {}).get(
+            "commit_to_deployment_status_seconds"
+        )
+        or p5_natural.get("source_to_monitor_completion_seconds")
+        != p5_trace.get("observed_outcome", {}).get(
+            "commit_to_post_deploy_monitor_completion_seconds"
+        )
+        or p5_natural.get("classification") != p5_trace.get("campaign_role")
+    ):
+        out.append("P5 natural publication trace and roadmap status diverged")
+    if (
+        p5_natural.get("eligible_for_held_out_denominator") is not False
+        or p5_natural.get("claim_bearing") is not False
+        or p5_natural.get("institutionally_independent") is not False
+        or p5_trace.get("classification", {}).get("outcome_known_before_trace_freeze")
+        is not True
+        or p5_trace.get("support_state_effect") != "none"
+        or p5_trace.get("record_policy_effect") != "none"
+    ):
+        out.append("P5 natural publication development trace laundered evidence authority")
 
     expected_ids = [f"P{i}" for i in range(9)]
     if [row.get("id") for row in status.get("priorities", [])] != expected_ids:

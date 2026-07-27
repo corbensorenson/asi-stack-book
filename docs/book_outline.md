@@ -6726,6 +6726,14 @@ Draft deliverables:
   exactly-once external effect, stale-token and custody-tamper rejection, and
   separate-process observation. It still lacks a natural incident, independent
   monitor or operator, distributed replicas, delayed harm, and deployment.
+- Implemented natural publication-service development trace: GitHub Actions
+  build run `30287899588` binds ordinary maintained-book work to an exact
+  tested artifact; a separate workflow verifies the same commit, deploys
+  without rebuilding, and uses a separate post-deploy job to crawl the public
+  status and chapter graph. Because the successful outcome was known before
+  the trace contract was frozen, this is an outcome-aware development example,
+  not held-out evidence, a rollback result, an independent reproduction, or a
+  support transition.
 - Planned argument-exit campaign: fault-injected reference service, strong SRE
   and incident-response baselines, preregistered severity and recovery rules,
   full denominators, operator load, useful throughput, residual harm, latency,
