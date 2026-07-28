@@ -1,0 +1,178 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "P6.9 Raw Scaffold Ownership Audit",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "audit_id",
+    "recorded_date",
+    "state",
+    "scope",
+    "w3_binding",
+    "widest_block_records",
+    "summary",
+    "negative_control",
+    "support_state_effect",
+    "release_effect",
+    "non_claims"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "asi_stack.p6_9_raw_scaffold_ownership_audit.v1"
+    },
+    "audit_id": {
+      "const": "P6.9-R21-raw-scaffold-ownership-audit"
+    },
+    "recorded_date": {
+      "const": "2026-07-28"
+    },
+    "state": {
+      "const": "terminal_complete"
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "manifest_chapter_count",
+        "manifest_path",
+        "chapter_corpus_sha256",
+        "normalization",
+        "token_pattern",
+        "n_gram_size",
+        "minimum_chapter_spread",
+        "classification_scope"
+      ],
+      "properties": {
+        "manifest_chapter_count": { "const": 84 },
+        "manifest_path": { "const": "book_structure.json" },
+        "chapter_corpus_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "normalization": { "type": "string", "minLength": 1 },
+        "token_pattern": { "type": "string", "minLength": 1 },
+        "n_gram_size": { "const": 12 },
+        "minimum_chapter_spread": { "const": 8 },
+        "classification_scope": { "type": "string", "minLength": 1 }
+      }
+    },
+    "w3_binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "sha256",
+        "raw_repeated_12_gram_count",
+        "raw_maximum_chapter_spread",
+        "reader_facing_repeated_12_gram_count",
+        "reader_facing_maximum_chapter_spread"
+      ],
+      "properties": {
+        "path": { "const": "evidence_quality/p7_1a_w3_inheritance_guard.json" },
+        "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "raw_repeated_12_gram_count": { "type": "integer", "minimum": 0 },
+        "raw_maximum_chapter_spread": { "type": "integer", "minimum": 0 },
+        "reader_facing_repeated_12_gram_count": { "const": 0 },
+        "reader_facing_maximum_chapter_spread": { "const": 0 }
+      }
+    },
+    "widest_block_records": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "sha256",
+          "normalized_text",
+          "word_tokens",
+          "chapter_spread",
+          "chapter_ids",
+          "chapter_ids_sha256",
+          "reader_visible",
+          "generated",
+          "structured",
+          "source_only",
+          "owner",
+          "regeneration_path",
+          "semantic_purpose",
+          "disposition",
+          "rationale"
+        ],
+        "properties": {
+          "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+          "normalized_text": { "type": "string", "minLength": 1 },
+          "word_tokens": { "const": 12 },
+          "chapter_spread": { "type": "integer", "minimum": 8 },
+          "chapter_ids": {
+            "type": "array",
+            "minItems": 8,
+            "uniqueItems": true,
+            "items": { "type": "string", "minLength": 1 }
+          },
+          "chapter_ids_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+          "reader_visible": { "type": "boolean" },
+          "generated": { "type": "boolean" },
+          "structured": { "type": "boolean" },
+          "source_only": { "type": "boolean" },
+          "owner": { "type": "string", "minLength": 1 },
+          "regeneration_path": { "type": "string", "minLength": 1 },
+          "semantic_purpose": { "type": "string", "minLength": 1 },
+          "disposition": {
+            "enum": [
+              "centralize",
+              "generate",
+              "rewrite_domain_specific",
+              "retain_with_reason",
+              "unjustified"
+            ]
+          },
+          "rationale": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "widest_block_count",
+        "classified_block_count",
+        "generated_source_reconciliation_block_count",
+        "reader_visible_widest_block_count",
+        "unjustified_widest_block_count",
+        "exit_condition",
+        "exit_passed"
+      ],
+      "properties": {
+        "widest_block_count": { "type": "integer", "minimum": 1 },
+        "classified_block_count": { "type": "integer", "minimum": 0 },
+        "generated_source_reconciliation_block_count": { "type": "integer", "minimum": 0 },
+        "reader_visible_widest_block_count": { "type": "integer", "minimum": 0 },
+        "unjustified_widest_block_count": { "const": 0 },
+        "exit_condition": { "const": "zero_unjustified_widest_spread_blocks" },
+        "exit_passed": { "const": true }
+      }
+    },
+    "negative_control": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "fixture",
+        "validator",
+        "copied_reader_facing_prose_disposition",
+        "purpose"
+      ],
+      "properties": {
+        "fixture": { "const": "tests/fixtures/p7_1a_w3_inheritance_guard/copied_scaffold.qmd" },
+        "validator": { "const": "scripts/validate_p7_1a_w3_inheritance_guard.py" },
+        "copied_reader_facing_prose_disposition": { "const": "rejected" },
+        "purpose": { "type": "string", "minLength": 1 }
+      }
+    },
+    "support_state_effect": { "const": "none" },
+    "release_effect": { "const": "none" },
+    "non_claims": {
+      "type": "array",
+      "minItems": 3,
+      "items": { "type": "string", "minLength": 1 }
+    }
+  }
+}

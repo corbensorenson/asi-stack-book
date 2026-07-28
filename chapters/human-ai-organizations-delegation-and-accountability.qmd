@@ -3,8 +3,8 @@ title: "Human-AI Organizations, Delegation, and Accountability"
 chapter_id: "human-ai-organizations-delegation-and-accountability"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
-draft_maturity: "v0.1 integrated argument chapter"
-last_updated: "2026-07-24"
+draft_maturity: "v0.3 concept-complete argument-level manuscript"
+last_updated: "2026-07-28"
 primary_sources:
   - "ext_nist_ai_rmf_1_0_2023"
   - "ext_moral_crumple_zones_2019"
@@ -29,7 +29,7 @@ open_evidence_gaps:
 | Chapter ID | `human-ai-organizations-delegation-and-accountability` |
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
-| Manuscript maturity | v0.1 integrated argument chapter |
+| Manuscript maturity | v0.3 concept-complete argument-level manuscript |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source loading state | Five external records cover risk-governance roles, moral crumple zones, decision-authority incentives, field productivity heterogeneity, and constructive interdependence. |
@@ -216,6 +216,274 @@ Succession and dissolution are ordinary lifecycle states. The organization
 must transfer role identity, credentials, pending appeals, evidence, benefits,
 liabilities, learned procedures, affected-party notices, and residuals when a
 person leaves, a model changes, a vendor fails, or the institution closes.
+
+## Concept-by-concept organizational contract
+
+The eight concepts below divide the chapter's composite organizational claim
+into decisions that can fail independently. They define the manuscript's
+editorial responsibilities; no organizational intervention or legal conclusion
+is implied.
+
+### Charter, mandate, and affected-party standing
+
+An organization needs an explicit reason to exist before it allocates work.
+The charter states the mandate, prohibited ends, lifespan, jurisdictional
+assumptions, funding and ownership interests, affected populations, and who may
+change or terminate the arrangement. Affected-party standing is not equivalent
+to employment or system access: customers, patients, residents, families,
+competitors, and future workers can bear consequences without holding an
+account. The contract records how those groups are identified, represented,
+notified, heard, and connected to appeal and remedy.
+
+**Mechanism.** Version the charter with its authorizing institution and map
+each decision class to intended beneficiaries, burdened groups, excluded
+populations, participation routes, prohibited effects, review date, and
+termination authority. Changes to purpose or affected-party scope invalidate
+delegation derived from the earlier charter.
+
+**Failure mode.** Mission drift lets a workflow optimized for one purpose
+quietly become surveillance, discipline, eligibility screening, or cost
+cutting. A nominal consultation can omit people with less bargaining power,
+while an institution treats legal access or technical feasibility as social
+authorization.
+
+**Non-claim.** A complete charter does not establish consent, legitimacy,
+lawfulness, representativeness, or that the chosen mandate is morally correct.
+Those judgments remain with constitutional, moral, legal, and public-
+institution owners.
+
+**Source grounding.** `ext_nist_ai_rmf_1_0_2023` contributes lifecycle context,
+roles, and risk-governance functions but no certified organization design.
+`talos` supplies typed-work and explicit-contract lineage as a speculative
+system design; it does not establish stakeholder standing or institutional
+authority.
+
+### Actor, role, competence, workload, and accessibility state
+
+A role title is not operational capacity. The actor registry binds every human,
+AI, team, vendor, and institution to the exact role it can perform, the
+information it receives, required competence, current training, workload,
+availability, accessibility needs, conflicts, and maintenance state. Human and
+AI competence are versioned differently: a model update can invalidate an AI
+role, while fatigue, turnover, deskilling, task novelty, or inaccessible
+interfaces can invalidate a human control path.
+
+**Mechanism.** For each role and decision class, define prospective competence
+tests, maximum concurrent burden, time-to-intervene, accessible control
+interfaces, required context, substitution rules, and expiry. Runtime
+admission checks current state rather than trusting the organization chart. A
+failed check routes to reassignment, training, slower work, narrower
+automation, or suspension.
+
+**Failure mode.** Role-label laundering names a reviewer who lacks time,
+information, skill, language access, physical access, or power to intervene.
+Workload aggregation can make individually plausible approvals collectively
+impossible, and automation can erode the unaided competence needed during
+failure or withdrawal.
+
+**Non-claim.** Passing an authored competence field does not prove real
+competence, accessibility, vigilance, or human control. Synthetic role fixtures
+cannot substitute for ethically reviewed observations of people.
+
+**Source grounding.** `ext_ai_decision_authority_2020` shows in a bounded model
+that authority allocation can change human information-acquisition and AI-
+reliability incentives. `ext_generative_ai_at_work_2025` reports heterogeneous
+effects in one customer-support deployment. Neither supplies universal
+competence thresholds or a longitudinal workforce result.
+
+### Decision rights and meaningful intervention capacity
+
+“Human in the loop” hides several different rights. For each consequential
+decision, the organization must say who may frame options, recommend, select,
+approve, execute, veto, pause, audit, appeal, remedy, and change policy.
+Information access and timing accompany those rights: an actor cannot
+meaningfully stop a decision after the effect is irreversible or review
+evidence they cannot inspect. Decision rights can be distributed, but the
+distribution must preserve a reachable owner for the outcome.
+
+**Mechanism.** Compile a typed decision-right graph from charter and role state.
+Trace every effect path backward to proposal, authorization, execution,
+intervention, review, and remedy nodes; require current competence, information,
+time, and practical authority at each mandatory human control point. Exercise
+stop and appeal paths with seeded cases before consequential use.
+
+**Failure mode.** Rubber-stamp review gives a person a binary approval under
+time pressure after the model has framed every option. Accountability diffusion
+splits decisions into many steps so that no actor can see or own the whole
+outcome. An AI-generated assessment can also become its own nominally
+independent approval.
+
+**Non-claim.** A connected graph does not establish that the decision is
+legitimate, wise, lawful, or safe. It records and tests organizational
+reachability; Human Factors still owns whether controls are usable in practice.
+
+**Source grounding.** `ext_moral_crumple_zones_2019` motivates matching
+responsibility to actual control but provides no complete remedy.
+`ext_nist_ai_rmf_1_0_2023` provides governance-role vocabulary without
+certifying the graph, and `talos` contributes typed execution lineage rather
+than evidence of meaningful human intervention.
+
+### Delegation, subdelegation, expiry, and revocation
+
+Delegation changes who may decide; routing changes who performs a task. They
+are not the same operation. A delegation lease names principal, delegate,
+decision class, purpose, scope, duration, consequence ceiling, permitted
+subdelegation, required review, model and tool identity, revocation authority,
+and reversion path. The lease is re-evaluated when workload, competence,
+purpose, model, vendor, or institutional conditions change.
+
+**Mechanism.** Make every delegation edge explicit and depth-bounded. A runtime
+check resolves the complete chain to an accountable principal, verifies
+non-expiry and non-expansion, and rejects hidden replacement or subdelegation.
+Revocation stops new effects, reconciles work already in flight, restores a
+qualified fallback, and preserves affected appeals and residuals.
+
+**Failure mode.** Delegation laundering treats an API call, vendor service, or
+secondary agent as implementation detail even though it exercises independent
+judgment. Temporary assistance becomes an automation ratchet when the human
+fallback loses skill or staffing. Revocation theater disables one route while
+copies, queues, credentials, cached decisions, or downstream agents continue.
+
+**Non-claim.** An expiring lease does not guarantee enforceable revocation,
+complete rollback, or lawful delegation. It also does not authorize a broader
+purpose or permit the delegate to create its own successor authority.
+
+**Source grounding.** `ext_ai_decision_authority_2020` supplies an
+incentive-aware authority-allocation comparator, not a deployed delegation
+control. `talos` supplies typed job, contract, replay, and approval lineage;
+its architecture is not evidence that revocation or subdelegation control
+works.
+
+### Separation of duties, conflicts, incentives, and benefits
+
+An actor that generates, evaluates, authorizes, executes, and closes the same
+consequential action can hide errors and optimize the evidence used to judge
+it. Separation of duties creates independent-enough challenge where
+consequence warrants it. Independence is not just a different username: shared
+models, prompts, data, vendors, reporting lines, incentives, and performance
+metrics can make nominally separate roles one failure domain. Benefits and
+burdens must be visible because they shape which failures an organization is
+motivated to notice.
+
+**Mechanism.** For each decision class, compile prohibited role combinations
+and a dependency graph among generators, evaluators, approvers, operators, and
+auditors. Record financial, career, vendor, model, data, and metric conflicts;
+who receives productivity gains; who absorbs review, error, surveillance, and
+remedy costs; and which independent route can reopen the decision.
+
+**Failure mode.** Self-approval, evaluator capture, and shared blind spots make
+paper separation ineffective. A manager can optimize average throughput while
+workers or affected minorities bear errors, or a vendor can validate the same
+model from which it earns revenue. Excessive separation can also create delay
+and responsibility diffusion without better challenge.
+
+**Non-claim.** More reviewers are not automatically more independent, fair, or
+effective. The contract does not determine just compensation, lawful conflicts,
+or legitimate benefit distribution.
+
+**Source grounding.** `ext_nist_ai_rmf_1_0_2023` supports explicit governance
+roles. `ext_generative_ai_at_work_2025` provides bounded evidence that workplace
+effects can be heterogeneous. `ext_eu_ai_civil_liability_2025` adds a
+jurisdiction-specific institutional comparator; none proves this separation
+design.
+
+### Longitudinal contribution, skill, dependence, and burden
+
+Task reward and short-run productivity cannot describe an organization. A
+combined system may outperform a human while underperforming the AI alone, or
+it may succeed because one participant repairs the other's errors under rising
+burden. Repeated interaction can change skill, trust, judgment, dependence,
+workload, bargaining position, and the ability to recover after tool loss.
+Those trajectories need shared populations, time points, and attrition
+denominators.
+
+**Mechanism.** Compare human or team alone, the AI-operated process when
+legitimate, the combined process, and relevant conventional workflow
+alternatives. Track useful quality, contribution, constructive
+interdependence, review and rework, unaided and assisted competence,
+calibration, workload, autonomy, accessibility, benefit, harm, withdrawal
+recovery, turnover, and who is missing from later measurements.
+
+**Failure mode.** Synergy laundering compares the team only with the human,
+while productivity laundering treats output as welfare. Short studies can miss
+deskilling and lock-in; survivorship can exclude people who leave; a dependence
+metric can be optimized even when dependence reduces human option value.
+
+**Non-claim.** The chapter does not assert universal complementarity, harmful
+co-adaptation, durable skill change, or economy-wide labor effects. Synthetic
+humans remain debugging fixtures rather than participant evidence.
+
+**Source grounding.** `ext_human_ai_team_meta_analysis_2024` motivates the
+three-arm strongest-component comparison. `ext_constructive_interdependence_human_ai_2026`
+adds a study-specific cooperation measure, while
+`ext_human_ai_feedback_loops_2025` motivates longitudinal coupled-state
+tracking. Their tasks and populations bound every inference.
+
+### Accountability, causation, evidence access, and remedy
+
+Accountability begins before failure by aligning prospective authority with
+the capacity to know and intervene. After harm, it requires more than finding
+the nearest human: preserve evidence about design, deployment, delegation,
+model and policy changes, review, actual effects, institutional decisions, and
+who controlled each route. Affected parties need an identifiable entity,
+usable evidence access, timely appeal, correction, compensation or other
+remedy, and a route that remains available when organizations disagree.
+
+**Mechanism.** Compile an accountability map from the decision-right and
+delegation graphs, then join it to effect and incident lineage. Flag
+responsibility assigned without matching information, competence, time, or
+control. Preserve contestable causation hypotheses, disclosure and privacy
+limits, insurer or compensation routes, appeal status, remedy execution, and
+unresolved ownership instead of generating an automatic fault verdict.
+
+**Failure mode.** A moral crumple zone makes a proximate worker absorb blame
+for system-level choices. Technical logs can be withheld, selectively framed,
+or mistaken for legal causation. Formal appeal can be too slow, expensive,
+inaccessible, retaliatory, or powerless to alter the effect.
+
+**Non-claim.** The organizational record is not legal advice, a liability
+judgment, a proof of causation, or evidence that remedy is adequate. Legal and
+institutional authorities retain those decisions.
+
+**Source grounding.** `ext_moral_crumple_zones_2019` supplies the
+responsibility-without-control failure. `ext_eu_ai_civil_liability_2025`
+describes a European policy space involving responsible operators, evidence,
+causation, insurance, and remedy. Neither is a universal legal rule or a tested
+ASI Stack accountability intervention.
+
+### Succession, dissolution, continuity, and residual custody
+
+Human-AI organizations change even when their tasks do not. People leave,
+models and vendors are replaced, institutions merge, contracts expire, and
+systems are deliberately retired. Succession transfers a live organizational
+role; dissolution closes the arrangement. Neither transition may erase pending
+decisions, appeals, evidence, benefits, liabilities, learned procedures,
+credentials, affected-party notices, or harms that outlive the technical
+system.
+
+**Mechanism.** Before succession, requalify the replacement actor, model, tool,
+and institution; migrate only compatible authority; rotate credentials; notify
+affected parties; and preserve prior decision lineage. Before dissolution,
+stop or transfer work, reconcile effects and queues, preserve required
+records, fund or assign pending remedies, restore practical alternatives, and
+name every residual owner and review trigger. Unowned obligations block clean
+closure.
+
+**Failure mode.** Model replacement inherits stale competence and delegation,
+vendor failure strands appeals and evidence, or a dissolved entity abandons
+remedy. Technical rollback can be institutionally impossible after layoffs,
+deskilling, procurement lock-in, or public-capacity loss. Over-retention can
+also violate privacy or rights.
+
+**Non-claim.** A succession receipt does not prove equivalent competence,
+continuity, complete erasure, or that affected parties have been made whole.
+The book has not exercised organizational dissolution.
+
+**Source grounding.** `ext_nist_ai_rmf_1_0_2023` motivates lifecycle
+governance, and `talos` contributes artifact, replay, and residual-custody
+lineage. `ext_human_ai_feedback_loops_2025` supports treating dependence and
+human state as longitudinal variables. None establishes successful succession,
+dissolution, or recovery here.
 
 ### Organizational transition: tasks, jobs, power, and public capacity
 

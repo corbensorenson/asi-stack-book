@@ -1441,6 +1441,16 @@ Lean proof targets:
 
 Stable ID: `inner-alignment-mesa-optimization-and-learned-objective-integrity`
 
+Round 21 concept-completion disposition: terminal editorial completion at the
+current exact chapter digest. Outer target versus actual learning signal,
+behaviorally equivalent policies, internal optimization versus heuristics,
+capability-preserving goal shift, evaluation awareness and conditional
+deception, independent evidence lanes, mitigation removal versus concealment,
+and deployment opportunity/expiry/descendant custody each have a mechanism,
+failure, non-claim, bounded source role, owner handoff, and claim-addressable
+atom mapping. The disposition has no support-state effect, and any later prose
+change requires a new semantic review. Word count remains diagnostic only.
+
 Chapter job: Own the defeasible case about what a learned policy may be
 optimizing under distribution shift, without inferring objective identity from
 training reward, behavioral compliance, interpretability output, or one
@@ -3786,6 +3796,16 @@ Lean proof targets:
 ### Human-AI Organizations, Delegation, and Accountability
 
 Stable ID: `human-ai-organizations-delegation-and-accountability`
+
+Round 21 concept-completion disposition: terminal editorial completion at the
+current exact chapter digest. Charter and affected-party standing, operational
+role capacity, decision rights and intervention, bounded delegation,
+separation of duties and incentives, longitudinal contribution and dependence,
+accountability and remedy, and succession/dissolution custody each have a
+mechanism, failure, non-claim, bounded source role, owner handoff, and
+claim-addressable atom mapping. The disposition has no support-state effect,
+and any later prose change requires a new semantic review. Word count remains
+diagnostic only.
 
 Chapter job: Own the meso-level allocation of decision rights, review duties,
 learning obligations, liability, incentives, and recovery across mixed human-AI

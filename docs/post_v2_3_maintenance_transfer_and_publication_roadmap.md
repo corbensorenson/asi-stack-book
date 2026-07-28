@@ -216,7 +216,7 @@ proceeds.
 | Existing-owner paging packet — prose terminal; policy and empirical work deferred | `P6.6-heterogeneous-inference-memory-and-speculative-paging` | Reader-facing source integration was expressly commissioned and completed 2026-07-23; schema, validator, planner, hardware characterization, and empirical work retain the ordinary post-gate entry condition | Maintain the six completed manuscript integrations and source reconciliation. Later implement and validate the heterogeneous-memory policy and run only competent, matched, hardware-characterized paging experiments. Preserve exact/approximate, throughput/latency, and source/local evidence boundaries. No new chapter. |
 | Existing-owner inference-cache packet — prose terminal; receipt and empirical work deferred | `P6.7-inference-cache-reuse-and-honest-pricing` | Reader-facing source integration was expressly commissioned and completed 2026-07-23; no new chapter or support movement | Maintain the three coordinated manuscript integrations and nine-source packet. Later implement the cache-reuse receipt and run separate exact-prefix and semantic-response campaigns under the ordinary post-gate entry condition. Preserve KV-versus-output, exact-versus-semantic, hit-versus-useful-outcome, and provider-contract-versus-local-evidence boundaries. |
 | Existing-owner functional-precision packet — source and prose terminal; evidence work queued | `P6.8-functional-precision-and-behavior-preserving-computation` | Source intake and the eight-owner manuscript integration are complete; schemas, validators, source resolution, and empirical work retain ordinary gates; no new chapter or support movement | Maintain the integrated Precision Contract treatment led by RankFold/NeuralFold. Preserve representation invariance, protected behavior, complete executable and physical-cost accounting, progressive residual precision, routed fallback, certificate scope, and program-transformation proof limits. Reconsider a standalone chapter only if a dated post-integration coherence audit finds a genuinely unowned lifecycle. |
-| Existing-book depth recovery — active, first twenty-one owners concept-complete | `P6.9-R21-concept-complete-depth-and-atom-adequacy` | The 84-chapter manifest is frozen; unified atom custody must stay 84/84; completion requires a named concept manifest plus a digest-bound semantic disposition, while word and atom counts remain diagnostic only | Preserve the twenty-one completed owners at their reviewed digests. Complete the remaining two owners as the final concept-completion tranche recorded in status. Make every material concept claim-addressable, audit raw scaffold ownership separately from reader-facing W3, and emit an exact proof/evidence handoff before closing the depth phase. |
+| Existing-book depth recovery — terminal | `P6.9-R21-concept-complete-depth-and-atom-adequacy` | The 84-chapter manifest is frozen; unified atom custody must stay 84/84; completion requires a named concept manifest plus a digest-bound semantic disposition, while word and atom counts remain diagnostic only | Preserve all twenty-three completed owners and 184 concepts at their reviewed digests. The raw-scaffold audit owns all 21 widest blocks with zero reader-visible or unjustified blocks; the exact 23-chapter/184-concept proof/evidence handoff is terminal. Reopen only after digest drift or an explicit successor amendment. |
 | Formal slot — C6 residual triage terminal; dependency-safe execution active | `C6-remaining-stronger-model-rationalization` | The original 54-action residual estate had zero Lean dependencies and zero theorem consumers; two redundant witnesses and 43 Theseus repository-import mirrors are retired, leaving nine actions: eight summary-mirror retirements and one inverse-route rewrite | Retire the eight Benchmark/Runtime/Search/Stable-Capability summary mirrors next, then implement the Failure Modes inverse property. Rebuild the overlay and ledger after every tranche, with no support or release movement. |
 | Empirical headline — exact N0 entry receipt; materialization blocked | `P2-R3-storage-materialization-and-replacement-qualification` | `P2-R3a-002` measured 23.87 GiB free against the 50 GiB floor and no reachable Docker daemon; restore both gates and write a new immutable preflight before any pull | Then thirty sealed candidate recipes and receipts; terminal pool materialization; four competently qualified replacements restoring the fixed twelve-task denominator; rank progression only under the frozen amendment; zero protected-content leakage. No deletion of non-Docker user data is authorized. |
 | First structural tranche — terminal | White-Box, World Models, Human Factors, and Governed Operations are terminal at argument support | Four exact integration packets preserve owners, sources, formal ceilings, protocols, reader handoffs, and no-promotion boundaries | Maintenance only; no reopened chapter packet without a dated machine-validated defect. |
@@ -3014,9 +3014,11 @@ contingency remains inactive pending a dated post-integration coherence audit.
 
 ### P6.9 — Round 20 chapter substance and concept fidelity
 
-**Status:** active; first three-chapter prose tranche complete, contract
-hardened by the Round 21 amendment, and a twenty-chapter diagnostic queue
-remains. The baseline adjudication is
+**Status:** terminal. All twenty-three queued owners are concept-complete at
+184/184 passing concepts and current reviewed digests. The raw-scaffold audit
+and exact proof/evidence handoff are terminal. Eighteen chapters remain below
+the diagnostic word trigger, but that separate diagnostic is not an
+acceptance, evidence, or reopening gate. The baseline adjudication is
 `docs/round_20_depth_and_substance_reconciliation_2026_07_27.md`; the current
 completion authority is
 `docs/round_21_depth_contract_and_atom_adequacy_adjudication_2026_07_28.md`.
@@ -3028,7 +3030,7 @@ current EU Article 50 treatment; and Societal Resilience contains fraud,
 child-safety, incident-reporting, cyber, bio/chemical, manipulation, and
 mental-health routes. Its inheritance statistic is also stale: the
 authoritative W3 packet reports **812→0 repeated 12-grams** over the
-reader-facing/editorial surface and **1,921→936** over the broader raw-QMD
+reader-facing/editorial surface and **1,921→925** over the broader raw-QMD
 diagnostic.
 
 The atom critique was directionally useful but used the frozen base registry
@@ -3115,27 +3117,29 @@ twenty-one current semantic reviews, twenty diagnostically thin chapters, and
 two owners awaiting concept completion. No support, release, safety,
 deployment, SOTA, AGI, or ASI conclusion moved.
 
-**Remaining order and throughput.** Preserve Perception and Observation
-Trust, Human–AI Symbiosis, Relational Dimension Compilation, Learning Theory,
-Confidential and Verifiable Computation, and Embodied Agency as terminal
-fourth-tranche owners. Complete Inner Alignment and Human–AI Organizations as
-the final tranche. Continue in ascending diagnostic order unless an explicit
-coherence dependency justifies a different order. Report throughput only as
-concept manifests receiving current digest-bound semantic dispositions—not as
-chapters touched, cycles consumed, headings added, or words written.
-For every owner: read its complete current prose and source notes, write the
-concept manifest, deepen mechanisms/failures/nonclaims/source engagement,
-review ownership and duplication, rebuild the contract, render, and record the
-disposition. A concept-complete chapter may remain below the trigger when its
-semantic disposition explains why the compact route is sufficient; that is a
-review rationale, not a short-word-count waiver.
+**Final tranche.** Inner Alignment and Human–AI Organizations now add the final
+16/16 passing owner-specific concept contracts and two current exact-digest
+semantic dispositions. Inner Alignment separates target, actual learning
+signal, policy, compatible objective hypotheses, internal optimization,
+capable goal shift, evaluation awareness, evidence independence, mitigation
+hiding, opportunity, expiry, and descendant custody. Human–AI Organizations
+separates charter and standing, operational role capacity, decision rights,
+delegation, duty separation, incentives, longitudinal contribution and
+dependence, accountability and remedy, and succession or dissolution. Their
+sources retain exact conceptual, constructed, empirical, formal, framework,
+jurisdictional, and authorial ceilings. The contract therefore reports
+twenty-three concept-complete chapters, 184/184 passing concepts, twenty-three
+current semantic reviews, eighteen diagnostically thin chapters, and an empty
+concept-completion queue. No support, release, safety, deployment, SOTA, AGI,
+or ASI conclusion moved.
 
-The Round 21 concept families through the fourth tranche have now been
-reconciled against complete chapters and declared source queues. Their terminal
-editorial dispositions are recorded in the contract; they remain invalidated
-by any later prose digest change until reviewed again. The final two owners
-must receive the same chapter-specific treatment rather than inheriting an
-earlier tranche's headings or prose as a shared template.
+**Terminal preservation order and throughput.** Preserve all twenty-three repaired owners
+at their reviewed digests. Throughput remains digest-bound concept
+dispositions, not chapters touched, cycles consumed, headings added, or words
+written. Any later prose edit invalidates the affected semantic disposition.
+The concept queue is closed. Reopening requires digest drift or an explicit
+successor amendment; crossing the diagnostic word trigger cannot reopen or
+re-close it.
 
 **Atom adequacy.** Unified owner coverage remains 84/84, but a presence bit is
 not adequate decomposition. The current low-count diagnostic contains nineteen
@@ -3147,15 +3151,19 @@ and consumer handoff, or record a many-to-one justification showing that
 independent falsification and promotion are preserved. Split only where claims
 can mature or fail independently.
 
-**Raw scaffold ownership.** Preserve W3's terminal reader-facing result:
+**Raw scaffold ownership — terminal.** Preserve W3's terminal reader-facing result:
 repeated editorial 12-grams, exact editorial blocks, repeated diagrams, and
 repeated Codex-test tables are all zero at their frozen thresholds. The current
 raw-QMD diagnostic is 925 repeated 12-grams with maximum spread 64, not the
-review's stale 1,117 / 82-of-84 result. Before P6.9 closes, classify every
-widest raw block by exact fingerprint, visibility, generated/structured state,
-owner, regeneration path, semantic purpose, and one of `centralize`,
-`generate`, `rewrite_domain_specific`, or `retain_with_reason`. Exit requires
-zero unjustified widest-spread blocks, not zero necessary generated repetition.
+review's stale 1,117 / 82-of-84 result.
+`evidence_quality/p6_9_raw_scaffold_ownership_audit.json` classifies all
+**21** maximum-spread fingerprints by exact normalized-text digest and exact
+64-chapter-set digest. All 21 occur only inside generated manifest-source
+reconciliation projections owned by
+`scripts/sync_chapter_source_crosswalks.py`; zero are reader-visible and zero
+are unjustified. The copied reader-facing scaffold fixture still rejects.
+Necessary generated repetition remains distinct from inherited reader prose.
+The terminal exit result is **zero unjustified widest raw blocks**.
 
 **Chapter-count policy.** Freeze the manifest at 84. A new chapter is not an
 escape from thin prose. Structural admission remains closed until the
@@ -3164,18 +3172,22 @@ all 84 owners retain exact atom custody. A later owner may enter only through th
 distinct-owner, source, competence, birth-artifact, reader-value, and
 non-displacement gate.
 
-**Evidence handoff and exit.** P6.9 is terminal only when
+**Evidence handoff and exit — terminal.**
 `evidence_quality/chapter_substance_contract.json` reports 84 exact owners and
 84/84 atom custody; every queued owner has a terminal concept
 disposition; every accepted repair has a current digest-bound semantic
 review; every material concept is atom-addressable or has a justified
 many-to-one mapping; the raw-scaffold audit has no unjustified widest block;
-and W3 remains terminal. Then emit a handoff preserving exact chapter,
-concept, atom, source, falsifier, evidence lane, maximum inference, and
-unresolved-challenge identities for the later proof/evidence phase. Crossing a
-word threshold or increasing an atom count cannot close the lane. Passing this
-editorial program still establishes no empirical, formal, safety, release,
-SOTA, AGI, or ASI result.
+and W3 remains terminal.
+`evidence_quality/p6_9_proof_evidence_handoff.json` now preserves exact
+chapter, concept, atom, source, falsifier, evidence-lane, maximum-inference,
+and unresolved-challenge identities for **184 concepts across 23 exact current
+chapter digests**, with zero missing identities. The packet is deterministic,
+schema-validated, raw-audit- and W3-bound, and registered as a PR gate. It
+activates no campaign and moves no support or release state. These receipts
+close P6.9; a word-threshold or atom-count change cannot substitute for them.
+Passing this editorial program still establishes no empirical, formal, safety,
+release, SOTA, AGI, or ASI result.
 
 ## P7 — Reader remediation and owner-authorized publication
 
@@ -3455,16 +3467,15 @@ is not a debugging interface.
    the cited external literature before Appendix H use, and do not activate the
    standalone-chapter contingency unless a post-integration coherence audit
    demonstrates a distinct unowned lifecycle.
-   Preserve the P6.9 84-chapter freeze and 84/84 unified atom custody. Continue
-   the active two-owner concept-completion queue while retaining the
-   separate twenty-chapter diagnostic-thin list. Use named concept manifests,
-   mechanism/failure/nonclaim/source-grounding gates, and digest-bound semantic
-   review. Preserve the completed twenty-one owners at their reviewed digests,
-   complete the final two-owner tranche recorded in status, and measure throughput in
+   Preserve terminal P6.9: the 84-chapter freeze, 84/84 unified atom custody,
+   twenty-three reviewed owners, 184/184 concepts, the exact 21-fingerprint
+   raw-scaffold ownership audit, and the exact 23-chapter/184-concept
+   proof/evidence handoff. Retain the separate
+   eighteen-chapter diagnostic-thin list. Preserve the twenty-three
+   concept-complete owners at their reviewed digests and measure throughput in
    concept-complete dispositions. Treat the 5,000-word threshold and raw atom
-   counts as diagnostics only. Complete claim-addressable atom and raw-scaffold
-   ownership audits, then write the exact proof/evidence handoff; do not reopen
-   structural admission or claim book-depth completion before those gates pass.
+   counts as diagnostics only. Reopen the lane only after digest drift or an
+   explicit successor amendment; do not treat editorial completion as proof.
    The Round 18 bounded breadth packet is terminal at argument support and the
    structural freeze is restored. The remaining seven P6.4 candidates and
    post-Round-18 Candidates N/O have no active queue position. N/O source and

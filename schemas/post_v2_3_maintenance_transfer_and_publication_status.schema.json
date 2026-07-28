@@ -1432,7 +1432,7 @@
     "round_20_chapter_substance_recovery": {
       "const": {
         "id": "P6.9-R21-concept-complete-depth-and-atom-adequacy",
-        "state": "active_fourth_tranche_reviewed_contract_hardened",
+        "state": "terminal_concept_raw_scaffold_and_handoff_complete",
         "review_reconciliation_path": "docs/round_20_depth_and_substance_reconciliation_2026_07_27.md",
         "round_21_adjudication_path": "docs/round_21_depth_contract_and_atom_adequacy_adjudication_2026_07_28.md",
         "chapter_substance_contract_path": "evidence_quality/chapter_substance_contract.json",
@@ -1443,10 +1443,10 @@
         "word_trigger_is_acceptance_or_evidence_gate": false,
         "baseline_thin_chapter_count": 23,
         "baseline_median_word_count": 6982,
-        "current_thin_chapter_count": 20,
-        "priority_chapter_count": 21,
-        "priority_concept_count": 168,
-        "priority_concepts_passing": 168,
+        "current_thin_chapter_count": 18,
+        "priority_chapter_count": 23,
+        "priority_concept_count": 184,
+        "priority_concepts_passing": 184,
         "priority_chapters": [
           "dangerous-capability-domains-and-misuse-uplift",
           "content-authenticity-watermarking-and-synthetic-media-integrity",
@@ -1468,7 +1468,9 @@
           "relational-dimension-compilation-and-polyadic-cognition",
           "learning-theory-generalization-and-scaling-science",
           "confidential-and-verifiable-ai-computation",
-          "embodied-agency-real-time-control-and-physical-safety"
+          "embodied-agency-real-time-control-and-physical-safety",
+          "inner-alignment-mesa-optimization-and-learned-objective-integrity",
+          "human-ai-organizations-delegation-and-accountability"
         ],
         "pre_repair_unified_atom_covered_chapter_count": 80,
         "pre_repair_uncovered_chapter_count": 4,
@@ -1492,14 +1494,9 @@
           "relational-dimension-compilation-and-polyadic-cognition",
           "learning-theory-generalization-and-scaling-science",
           "confidential-and-verifiable-ai-computation",
-          "embodied-agency-real-time-control-and-physical-safety",
-          "inner-alignment-mesa-optimization-and-learned-objective-integrity",
-          "human-ai-organizations-delegation-and-accountability"
+          "embodied-agency-real-time-control-and-physical-safety"
         ],
-        "remaining_concept_completion_queue": [
-          "inner-alignment-mesa-optimization-and-learned-objective-integrity",
-          "human-ai-organizations-delegation-and-accountability"
-        ],
+        "remaining_concept_completion_queue": [],
         "required_concept_elements": [
           "mechanism",
           "failure_mode",
@@ -1507,12 +1504,9 @@
           "source_grounding"
         ],
         "completion_authority": "named_concept_contract_plus_current_digest_bound_semantic_disposition",
-        "current_digest_bound_semantic_review_count": 21,
-        "next_priority_batch_size": 2,
-        "next_priority_batch": [
-          "inner-alignment-mesa-optimization-and-learned-objective-integrity",
-          "human-ai-organizations-delegation-and-accountability"
-        ],
+        "current_digest_bound_semantic_review_count": 23,
+        "next_priority_batch_size": 0,
+        "next_priority_batch": [],
         "throughput_unit": "concept_complete_digest_bound_semantic_dispositions",
         "low_atom_count_diagnostic_chapter_count": 19,
         "single_atom_diagnostic_chapter_count": 9,
@@ -1524,6 +1518,12 @@
         "raw_qmd_maximum_chapter_spread": 64,
         "raw_scaffold_audit_required": true,
         "raw_scaffold_exit": "zero_unjustified_widest_spread_blocks",
+        "raw_scaffold_audit_path": "evidence_quality/p6_9_raw_scaffold_ownership_audit.json",
+        "raw_scaffold_audit_state": "terminal_complete",
+        "raw_scaffold_widest_block_count": 21,
+        "raw_scaffold_generated_owned_block_count": 21,
+        "raw_scaffold_reader_visible_block_count": 0,
+        "raw_scaffold_unjustified_block_count": 0,
         "evidence_handoff_requires": [
           "chapter_identity",
           "concept_identity",
@@ -1534,6 +1534,12 @@
           "maximum_inference",
           "unresolved_challenge"
         ],
+        "evidence_handoff_path": "evidence_quality/p6_9_proof_evidence_handoff.json",
+        "evidence_handoff_state": "terminal_complete",
+        "evidence_handoff_chapter_count": 23,
+        "evidence_handoff_concept_count": 184,
+        "evidence_handoff_missing_identity_count": 0,
+        "p6_9_terminal": true,
         "manual_semantic_review_required": true,
         "short_reference_exception_requires_dated_chapter_specific_justification": true,
         "support_state_effect": "none",

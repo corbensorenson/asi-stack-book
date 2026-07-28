@@ -237,6 +237,26 @@ CONCEPT_SPECS: dict[str, list[dict[str, Any]]] = {
         {"concept_id": "digital-twin-sim-real", "heading": "Evidence", "source_ids": ["ext_ai_simulation_digital_twins_2025"]},
         {"concept_id": "incident-recovery-recommissioning", "heading": "Digital twins and sim-to-real custody", "source_ids": ["ext_foundation_robotics_physical_risk_2025", "ext_simplex_architecture_1998", "ext_ai_simulation_digital_twins_2025"]},
     ],
+    "inner-alignment-mesa-optimization-and-learned-objective-integrity": [
+        {"concept_id": "target-signal-policy-hypothesis", "heading": "Outer target, learning signal, policy, and objective hypothesis", "source_ids": ["ext_learned_optimization_risks_2019", "ext_goal_misgeneralization_2022", "alignment_field"]},
+        {"concept_id": "behavioral-equivalence-interventions", "heading": "Behaviorally equivalent policies and separating interventions", "source_ids": ["ext_goal_misgeneralization_2022", "ext_sleeper_agents_2024"]},
+        {"concept_id": "optimizer-versus-heuristic", "heading": "Internal optimization versus heuristic competence", "source_ids": ["ext_learned_optimization_risks_2019", "alignment_field"]},
+        {"concept_id": "capability-preserving-goal-shift", "heading": "Goal generalization under capability-preserving shift", "source_ids": ["ext_goal_misgeneralization_2022", "ext_emergent_misalignment_reward_hacking_2025"]},
+        {"concept_id": "evaluation-awareness-deception", "heading": "Evaluation awareness, training games, and conditional deception", "source_ids": ["ext_sleeper_agents_2024", "ext_emergent_misalignment_reward_hacking_2025"]},
+        {"concept_id": "independent-evidence-lanes", "heading": "Independent behavioral, causal, training-process, and white-box evidence", "source_ids": ["ext_learned_optimization_risks_2019", "ext_sleeper_agents_2024"]},
+        {"concept_id": "mitigation-removal-concealment", "heading": "Mitigation removal, concealment, and capability damage", "source_ids": ["ext_sleeper_agents_2024", "ext_emergent_misalignment_reward_hacking_2025"]},
+        {"concept_id": "opportunity-power-expiry-descendants", "heading": "Deployment opportunity, power indicators, expiry, and descendants", "source_ids": ["ext_optimal_policies_power_2019", "alignment_field"]},
+    ],
+    "human-ai-organizations-delegation-and-accountability": [
+        {"concept_id": "charter-standing", "heading": "Charter, mandate, and affected-party standing", "source_ids": ["ext_nist_ai_rmf_1_0_2023", "talos"]},
+        {"concept_id": "role-capacity-state", "heading": "Actor, role, competence, workload, and accessibility state", "source_ids": ["ext_ai_decision_authority_2020", "ext_generative_ai_at_work_2025"]},
+        {"concept_id": "decision-rights-intervention", "heading": "Decision rights and meaningful intervention capacity", "source_ids": ["ext_moral_crumple_zones_2019", "ext_nist_ai_rmf_1_0_2023", "talos"]},
+        {"concept_id": "delegation-lifecycle", "heading": "Delegation, subdelegation, expiry, and revocation", "source_ids": ["ext_ai_decision_authority_2020", "talos"]},
+        {"concept_id": "duties-conflicts-benefits", "heading": "Separation of duties, conflicts, incentives, and benefits", "source_ids": ["ext_nist_ai_rmf_1_0_2023", "ext_generative_ai_at_work_2025", "ext_eu_ai_civil_liability_2025"]},
+        {"concept_id": "longitudinal-contribution-dependence", "heading": "Longitudinal contribution, skill, dependence, and burden", "source_ids": ["ext_human_ai_team_meta_analysis_2024", "ext_constructive_interdependence_human_ai_2026", "ext_human_ai_feedback_loops_2025"]},
+        {"concept_id": "accountability-causation-remedy", "heading": "Accountability, causation, evidence access, and remedy", "source_ids": ["ext_moral_crumple_zones_2019", "ext_eu_ai_civil_liability_2025"]},
+        {"concept_id": "succession-dissolution-custody", "heading": "Succession, dissolution, continuity, and residual custody", "source_ids": ["ext_nist_ai_rmf_1_0_2023", "talos", "ext_human_ai_feedback_loops_2025"]},
+    ],
 }
 
 CONCEPT_ATOM_MAPPINGS: dict[str, dict[str, dict[str, Any]]] = {
@@ -386,6 +406,8 @@ for _chapter_id in {
 for _chapter_id in {
     "perception-sensor-fusion-and-observation-trust",
     "embodied-agency-real-time-control-and-physical-safety",
+    "inner-alignment-mesa-optimization-and-learned-objective-integrity",
+    "human-ai-organizations-delegation-and-accountability",
 }:
     CONCEPT_ATOM_MAPPINGS[_chapter_id] = {
         _spec["concept_id"]: {
@@ -735,6 +757,30 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
             "the eight concepts distinguish plant and hazard identity, observation-to-control separation, timing and reachability, advanced and fallback control, barriers and interlocks, learning authority, twin fidelity, and incident recommissioning",
             "robotics capability, physical-risk survey, barrier, Simplex, safe-RL, digital-twin, and VIEA sources remain reported, survey, formal-framework, architectural, or authorial comparators rather than a local physical-safety result",
             "the chapter preserves latency, shared-defect, infeasibility, exploration, simulator exploitation, independent stop, incident evidence, latent damage, safe-hold, and no consequential-plant claim",
+        ],
+        "support_state_effect": "none",
+    },
+    "inner-alignment-mesa-optimization-and-learned-objective-integrity": {
+        "reviewed_sha256": "a75ea8e57aff7c752142f0342f189cbe43091bac57198accea566e0511533482",
+        "reviewed_date": "2026-07-28",
+        "reviewer_role": "codex_editorial_semantic_review",
+        "disposition": SEMANTIC_REVIEW_DISPOSITION,
+        "review_basis": [
+            "the eight concepts preserve outer target, actual signal, policy, compatible objective hypotheses, internal optimization, capable goal shift, evaluation awareness, evidence independence, mitigation hiding, opportunity, expiry, and descendants without collapsing behavior into objective identity",
+            "learned-optimization, goal-misgeneralization, Sleeper Agents, reward-hacking misalignment, power-seeking, and Alignment Field sources retain conceptual, construction, environment, model, formal-assumption, and authorial-lineage ceilings rather than becoming a local inner-alignment result",
+            "the chapter preserves competence and opportunity controls, sealed separating interventions, alternative explanations, removal-versus-concealment denominators, full-state rollback residuals, descendant invalidation, and argument-only support",
+        ],
+        "support_state_effect": "none",
+    },
+    "human-ai-organizations-delegation-and-accountability": {
+        "reviewed_sha256": "6ae69f4b62ad9bb8c808408c864df115e8df5dcdce1bd3f84f7ce9753d026088",
+        "reviewed_date": "2026-07-28",
+        "reviewer_role": "codex_editorial_semantic_review",
+        "disposition": SEMANTIC_REVIEW_DISPOSITION,
+        "review_basis": [
+            "the eight concepts distinguish charter and standing, operational role capacity, decision rights, bounded delegation, duty separation, incentives, longitudinal contribution and dependence, accountability and remedy, and succession or dissolution",
+            "NIST, moral-crumple-zone analysis, authority-allocation theory, workplace evidence, constructive interdependence, teaming synthesis, feedback-loop experiments, EU liability analysis, and Talos remain framework, conceptual, model, setting, metric, population, jurisdiction, or authorial comparators rather than proof of one superior or legitimate organization",
+            "the chapter preserves affected nonusers, practical intervention, workload and accessibility, strongest-component baselines, attrition, evidence access, legal non-claims, unowned-residual closure blocks, and argument-only support",
         ],
         "support_state_effect": "none",
     },

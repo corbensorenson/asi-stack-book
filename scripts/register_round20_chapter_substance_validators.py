@@ -86,14 +86,14 @@ UNITS = [
         "output_assertions": [
             "manifest frozen at 84 chapters",
             "84 of 84 chapters have an exact atom source",
-            "24 of 24 active priority concepts pass",
-            "three of three semantic reviews bind the current chapter digests",
+            "184 of 184 active priority concepts pass",
+            "twenty-three of twenty-three semantic reviews bind the current chapter digests",
             "word count remains independent from concept completion",
             "atom-count parity is not an acceptance target",
-            "twelve mutations reject",
+            "fourteen mutations reject",
             "one low-word-count concept-completion positive control passes",
         ],
-        "negative_controls": "validator_owned_twelve_rejecting_mutations_plus_one_word_independence_positive_control",
+        "negative_controls": "validator_owned_fourteen_rejecting_mutations_plus_one_word_independence_positive_control",
         "negative_control_cases": [
             "chapter deletion",
             "manifest freeze widening",
@@ -115,7 +115,7 @@ UNITS = [
             "Passing structure, labels, or word counts does not establish semantic quality, "
             "claim truth, empirical support, proof, safety, release, SOTA, AGI, or ASI."
         ),
-        "semantic_review_state": "three_current_digest_bound_reviews_and_remaining_twenty_owner_reviews_required",
+        "semantic_review_state": "twenty_three_current_digest_bound_reviews_and_zero_remaining_owner_reviews",
     },
 ]
 

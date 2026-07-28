@@ -52,6 +52,8 @@ ROUND_20_DEPTH_RECONCILIATION = ROOT / "docs/round_20_depth_and_substance_reconc
 ROUND_21_DEPTH_ADJUDICATION = ROOT / "docs/round_21_depth_contract_and_atom_adequacy_adjudication_2026_07_28.md"
 ROUND_20_CHAPTER_SUBSTANCE = ROOT / "evidence_quality/chapter_substance_contract.json"
 ROUND_20_FOUR_CHAPTER_ATOMS = ROOT / "evidence_quality/round20_four_chapter_claim_atom_addendum.json"
+P6_9_RAW_SCAFFOLD_AUDIT = ROOT / "evidence_quality/p6_9_raw_scaffold_ownership_audit.json"
+P6_9_PROOF_EVIDENCE_HANDOFF = ROOT / "evidence_quality/p6_9_proof_evidence_handoff.json"
 PRECISION_CONTRACT_RECONCILIATION = ROOT / "docs/precision_contract_source_reconciliation_2026_07_24.md"
 PRECISION_CONTRACT_SOURCE_NOTE = ROOT / "sources/source_notes/precision_contract.md"
 PRECISION_CONTRACT_BACKLOG = ROOT / "research_backlog_records/precision_contract_2026_07_24.json"
@@ -236,6 +238,8 @@ def inputs() -> dict:
         "round_21_depth_adjudication": ROUND_21_DEPTH_ADJUDICATION.read_text(encoding="utf-8"),
         "round_20_chapter_substance": load(ROUND_20_CHAPTER_SUBSTANCE),
         "round_20_four_chapter_atoms": load(ROUND_20_FOUR_CHAPTER_ATOMS),
+        "p6_9_raw_scaffold_audit": load(P6_9_RAW_SCAFFOLD_AUDIT),
+        "p6_9_proof_evidence_handoff": load(P6_9_PROOF_EVIDENCE_HANDOFF),
         "precision_contract_reconciliation": PRECISION_CONTRACT_RECONCILIATION.read_text(encoding="utf-8"),
         "precision_contract_source_note": PRECISION_CONTRACT_SOURCE_NOTE.read_text(encoding="utf-8"),
         "precision_contract_backlog": load(PRECISION_CONTRACT_BACKLOG),
@@ -416,10 +420,10 @@ def errors(data: dict) -> list[str]:
         "may not displace P2",
         "P6.9-R21-concept-complete-depth-and-atom-adequacy",
         "84/84 unified atom custody",
-        "separate twenty-chapter diagnostic-thin list",
+        "separate eighteen-chapter diagnostic-thin list",
         "diagnostics only",
         "digest-bound semantic",
-        "zero unjustified widest-spread blocks",
+        "zero unjustified widest raw blocks",
     ]:
         if phrase.casefold() not in roadmap_normalized:
             out.append(f"roadmap governing boundary missing: {phrase}")
@@ -470,28 +474,26 @@ def errors(data: dict) -> list[str]:
         "learning-theory-generalization-and-scaling-science",
         "confidential-and-verifiable-ai-computation",
         "embodied-agency-real-time-control-and-physical-safety",
-        "inner-alignment-mesa-optimization-and-learned-objective-integrity",
-        "human-ai-organizations-delegation-and-accountability",
     ]
-    expected_round_20_remaining = expected_round_20_diagnostic_thin[18:]
+    expected_round_20_remaining = []
     if (
         round_20.get("id") != "P6.9-R21-concept-complete-depth-and-atom-adequacy"
-        or round_20.get("state") != "active_fourth_tranche_reviewed_contract_hardened"
+        or round_20.get("state") != "terminal_concept_raw_scaffold_and_handoff_complete"
         or round_20.get("manifest_chapter_count_freeze") != 84
         or round_20.get("word_trigger") != 5000
         or round_20.get("word_trigger_is_acceptance_or_evidence_gate") is not False
         or round_20.get("baseline_thin_chapter_count") != 23
-        or round_20.get("current_thin_chapter_count") != 20
-        or round_20.get("priority_chapter_count") != 21
-        or round_20.get("priority_concept_count") != 168
-        or round_20.get("priority_concepts_passing") != 168
+        or round_20.get("current_thin_chapter_count") != 18
+        or round_20.get("priority_chapter_count") != 23
+        or round_20.get("priority_concept_count") != 184
+        or round_20.get("priority_concepts_passing") != 184
         or round_20.get("current_unified_atom_covered_chapter_count") != 84
         or round_20.get("diagnostic_thin_chapters") != expected_round_20_diagnostic_thin
         or round_20.get("remaining_concept_completion_queue") != expected_round_20_remaining
         or round_20.get("completion_authority")
         != "named_concept_contract_plus_current_digest_bound_semantic_disposition"
-        or round_20.get("current_digest_bound_semantic_review_count") != 21
-        or round_20.get("next_priority_batch_size") != 2
+        or round_20.get("current_digest_bound_semantic_review_count") != 23
+        or round_20.get("next_priority_batch_size") != 0
         or round_20.get("next_priority_batch") != expected_round_20_remaining
         or round_20.get("throughput_unit")
         != "concept_complete_digest_bound_semantic_dispositions"
@@ -503,28 +505,76 @@ def errors(data: dict) -> list[str]:
         or round_20.get("raw_qmd_maximum_chapter_spread") != 64
         or round_20.get("raw_scaffold_audit_required") is not True
         or round_20.get("raw_scaffold_exit") != "zero_unjustified_widest_spread_blocks"
+        or round_20.get("raw_scaffold_audit_path")
+        != "evidence_quality/p6_9_raw_scaffold_ownership_audit.json"
+        or round_20.get("raw_scaffold_audit_state") != "terminal_complete"
+        or round_20.get("raw_scaffold_widest_block_count") != 21
+        or round_20.get("raw_scaffold_generated_owned_block_count") != 21
+        or round_20.get("raw_scaffold_reader_visible_block_count") != 0
+        or round_20.get("raw_scaffold_unjustified_block_count") != 0
         or len(round_20.get("evidence_handoff_requires", [])) != 8
+        or round_20.get("evidence_handoff_path")
+        != "evidence_quality/p6_9_proof_evidence_handoff.json"
+        or round_20.get("evidence_handoff_state") != "terminal_complete"
+        or round_20.get("evidence_handoff_chapter_count") != 23
+        or round_20.get("evidence_handoff_concept_count") != 184
+        or round_20.get("evidence_handoff_missing_identity_count") != 0
+        or round_20.get("p6_9_terminal") is not True
         or round_20.get("manual_semantic_review_required") is not True
         or round_20.get("support_state_effect") != "none"
         or round_20.get("release_effect") != "none"
     ):
-        out.append("Round 20 chapter-substance recovery identity or active queue drifted")
+        out.append("Round 20 chapter-substance terminal identity or receipt drifted")
+    raw_audit = data["p6_9_raw_scaffold_audit"]
+    if (
+        raw_audit.get("state") != "terminal_complete"
+        or raw_audit.get("summary", {}).get("widest_block_count") != 21
+        or raw_audit.get("summary", {}).get(
+            "generated_source_reconciliation_block_count"
+        )
+        != 21
+        or raw_audit.get("summary", {}).get("reader_visible_widest_block_count") != 0
+        or raw_audit.get("summary", {}).get("unjustified_widest_block_count") != 0
+        or raw_audit.get("summary", {}).get("exit_passed") is not True
+    ):
+        out.append("P6.9 raw-scaffold terminal receipt drifted")
+    handoff = data["p6_9_proof_evidence_handoff"]
+    if (
+        handoff.get("state") != "terminal_complete"
+        or handoff.get("summary", {}).get("chapter_count") != 23
+        or handoff.get("summary", {}).get("concept_count") != 184
+        or handoff.get("summary", {}).get("concepts_with_source_identity_count")
+        != 184
+        or handoff.get("summary", {}).get("concepts_with_atom_identity_count")
+        != 184
+        or handoff.get("summary", {}).get("concepts_with_falsifier_count") != 184
+        or handoff.get("summary", {}).get("concepts_with_evidence_lane_count") != 184
+        or handoff.get("summary", {}).get("concepts_with_maximum_inference_count")
+        != 184
+        or handoff.get("summary", {}).get(
+            "concepts_with_unresolved_challenge_count"
+        )
+        != 184
+        or handoff.get("summary", {}).get("missing_handoff_identity_count") != 0
+        or handoff.get("support_state_effect") != "none"
+    ):
+        out.append("P6.9 proof/evidence handoff terminal receipt drifted")
     if (
         substance.get("manifest_chapter_count_freeze") != 84
-        or substance_summary.get("thin_chapter_count") != 20
+        or substance_summary.get("thin_chapter_count") != 18
         or substance_summary.get("atom_covered_chapter_count") != 84
         or substance_summary.get("atom_uncovered_chapter_count") != 0
-        or substance_summary.get("active_concept_count") != 168
-        or substance_summary.get("active_concepts_passing_count") != 168
-        or substance_summary.get("concept_complete_semantic_reviewed_chapter_count") != 21
-        or substance_summary.get("current_semantic_review_count") != 21
+        or substance_summary.get("active_concept_count") != 184
+        or substance_summary.get("active_concepts_passing_count") != 184
+        or substance_summary.get("concept_complete_semantic_reviewed_chapter_count") != 23
+        or substance_summary.get("current_semantic_review_count") != 23
         or substance_summary.get("low_atom_count_diagnostic_chapter_count") != 19
         or substance_summary.get("atom_count_is_acceptance_target") is not False
         or substance_summary.get("word_trigger_is_completion_gate") is not False
         or substance.get("manual_semantic_review_required") is not True
         or substance.get("support_state_effect") != "none"
     ):
-        out.append("Round 20 chapter-substance contract drifted from the active fourth tranche")
+        out.append("Round 20 chapter-substance contract drifted from the terminal concept queue")
     if (
         round_20_atoms.get("chapter_count") != 4
         or round_20_atoms.get("atom_count") != 20
@@ -2100,19 +2150,22 @@ def main() -> None:
     mutate("post-Round-18 candidate premature admission", lambda c: c["status"]["post_round_18_depth_and_coverage_amendment"]["research_candidates"][0].__setitem__("admission_state", "manifest_admitted"))
     mutate("post-Round-18 word-count gate", lambda c: c["status"]["post_round_18_depth_and_coverage_amendment"]["depth_packet"].__setitem__("word_count_is_acceptance_gate", True))
     mutate("Round 20 chapter-count widening", lambda c: c["status"]["round_20_chapter_substance_recovery"].__setitem__("manifest_chapter_count_freeze", 85))
-    mutate("Round 20 false depth closure", lambda c: c["status"]["round_20_chapter_substance_recovery"].__setitem__("state", "complete"))
+    mutate("Round 20 terminal-state laundering", lambda c: c["status"]["round_20_chapter_substance_recovery"].__setitem__("state", "active"))
     mutate("Round 20 word-count laundering", lambda c: c["status"]["round_20_chapter_substance_recovery"].__setitem__("word_trigger_is_acceptance_or_evidence_gate", True))
     mutate("Round 20 atom coverage rollback", lambda c: c["round_20_chapter_substance"]["summary"].__setitem__("atom_covered_chapter_count", 83))
     mutate("Round 20 concept pass laundering", lambda c: c["round_20_chapter_substance"]["summary"].__setitem__("active_concepts_passing_count", 71))
     mutate("Round 21 semantic review denominator laundering", lambda c: c["status"]["round_20_chapter_substance_recovery"].__setitem__("current_digest_bound_semantic_review_count", 8))
     mutate("Round 21 word-count completion laundering", lambda c: c["round_20_chapter_substance"]["summary"].__setitem__("word_trigger_is_completion_gate", True))
     mutate("Round 21 atom-count target laundering", lambda c: c["status"]["round_20_chapter_substance_recovery"].__setitem__("atom_count_parity_is_acceptance_target", True))
-    mutate("Round 21 next-batch denominator deletion", lambda c: c["status"]["round_20_chapter_substance_recovery"]["next_priority_batch"].pop())
+    mutate("Round 21 next-batch false reopening", lambda c: c["status"]["round_20_chapter_substance_recovery"]["next_priority_batch"].append("false-owner"))
     mutate("Round 21 raw-scaffold audit bypass", lambda c: c["status"]["round_20_chapter_substance_recovery"].__setitem__("raw_scaffold_audit_required", False))
+    mutate("Round 21 raw-scaffold unjustified-block laundering", lambda c: c["p6_9_raw_scaffold_audit"]["summary"].__setitem__("unjustified_widest_block_count", 1))
     mutate("Round 21 evidence handoff truncation", lambda c: c["status"]["round_20_chapter_substance_recovery"]["evidence_handoff_requires"].pop())
+    mutate("Round 21 evidence handoff identity laundering", lambda c: c["p6_9_proof_evidence_handoff"]["summary"].__setitem__("missing_handoff_identity_count", 1))
+    mutate("Round 21 terminal flag deletion", lambda c: c["status"]["round_20_chapter_substance_recovery"].__setitem__("p6_9_terminal", False))
     mutate("Round 20 manual review bypass", lambda c: c["status"]["round_20_chapter_substance_recovery"].__setitem__("manual_semantic_review_required", False))
     mutate("Round 20 diagnostic thin list deletion", lambda c: c["status"]["round_20_chapter_substance_recovery"]["diagnostic_thin_chapters"].pop())
-    mutate("Round 21 concept-completion queue deletion", lambda c: c["status"]["round_20_chapter_substance_recovery"]["remaining_concept_completion_queue"].pop())
+    mutate("Round 21 concept-completion queue false reopening", lambda c: c["status"]["round_20_chapter_substance_recovery"]["remaining_concept_completion_queue"].append("false-owner"))
     mutate("Round 20 support promotion", lambda c: c["status"]["round_20_chapter_substance_recovery"].__setitem__("support_state_effect", "promoted"))
     mutate("Precision Contract premature chapter authorization", lambda c: c["status"]["post_round_18_depth_and_coverage_amendment"]["precision_contract_source_amendment"].__setitem__("new_chapter_allowed_now", True))
     mutate("Precision Contract contingency activation", lambda c: c["status"]["post_round_18_depth_and_coverage_amendment"]["precision_contract_source_amendment"].__setitem__("contingency_is_active_candidate", True))

@@ -87,6 +87,31 @@ decision value. The semantic reviewer must explicitly reject padding,
 duplicated admissions, generic governance prose, title-only coverage, and
 source-count inflation.
 
+#### Execution receipt through the final tranche
+
+The concept-completion queue is now terminal. Four six-owner tranches and one
+final two-owner tranche produced 184/184 passing concept contracts across 23
+owners, each with a current exact-digest semantic disposition. The final
+tranche completes:
+
+| Owner | Terminal concept families |
+|---|---|
+| Inner Alignment | outer target/signal/policy/hypothesis separation; behaviorally equivalent policies and separating interventions; internal optimization versus heuristic competence; capability-preserving goal shift; evaluation awareness and conditional deception; independent evidence lanes; mitigation removal versus concealment; deployment opportunity, power, expiry, and descendants |
+| Human–AI Organizations | charter and affected-party standing; actor/role operational capacity; decision rights and meaningful intervention; delegation lifecycle; separation of duties, conflicts, incentives, and benefits; longitudinal contribution and dependence; accountability, evidence access, and remedy; succession, dissolution, and residual custody |
+
+Both chapters retain argument support. Their source-specific conceptual,
+constructed, empirical, formal, framework, jurisdictional, and authorial
+boundaries remain explicit. Their one composite Round-18 core atom is reused
+through an explicit many-to-one rationale because all eight concepts remain
+inside the same bounded proposition and promotion ceiling; no duplicate atoms
+were manufactured to create numerical parity. The final chapters happen to
+cross the 5,000-word diagnostic trigger after substantive treatment, but that
+fact has no acceptance or evidence effect.
+
+Concept completion alone did not close P6.9. The separately owned
+raw-scaffold audit and exact proof/evidence handoff below now supply the
+remaining exit receipts.
+
 ### 2. Claim-addressable atom adequacy
 
 The current unified custody result remains 84/84, but nineteen chapters have
@@ -128,10 +153,37 @@ exact digest and its material claims are atom-addressable. The handoff packet
 must preserve the chapter, concept, atom, source, falsifier, evidence lane,
 maximum inference, and unresolved challenge identities.
 
-P6.9 does not close merely because all chapters cross 5,000 words. It closes
-when the twenty queued owners have terminal concept dispositions, all accepted
+P6.9 does not close merely because chapters cross 5,000 words. It closes
+when all twenty-three queued owners have terminal concept dispositions, all accepted
 repairs have current digest-bound reviews, every material concept is
 atom-addressable or has a justified many-to-one mapping, the raw-scaffold
 ownership audit has no unjustified block, W3 remains terminal, and the exact
 proof/evidence handoff is written. No empirical, formal, safety, release, SOTA,
 AGI, or ASI conclusion follows.
+
+### Terminal raw-scaffold and handoff receipt
+
+`evidence_quality/p6_9_raw_scaffold_ownership_audit.json` fingerprints every
+12-token block at the current raw-QMD maximum spread. It records **21/21** as
+generated manifest-source reconciliation projections owned by
+`scripts/sync_chapter_source_crosswalks.py`, with zero reader-visible and zero
+unjustified blocks. Each record binds the normalized-text digest, exact
+64-chapter set and digest, visibility, generation and structure state,
+regeneration path, purpose, disposition, and rationale. The terminal W3 result
+remains zero repeated reader-facing 12-grams, and the copied reader-facing
+scaffold negative fixture remains rejected.
+
+`evidence_quality/p6_9_proof_evidence_handoff.json` transfers **184** reviewed
+concepts across **23** exact current chapter digests. Every concept retains
+chapter, concept, atom, source, falsifier, future evidence-lane and route,
+maximum-inference, and unresolved-challenge identity. The packet is bound to
+the exact chapter-substance contract, raw-scaffold receipt, and W3 receipt;
+its missing-identity count is zero. Both new validators are registered as PR
+gates and reject state, denominator, digest, identity, ownership, exit, and
+support laundering.
+
+P6.9 is therefore terminal. The eighteen chapters below the 5,000-word
+diagnostic trigger remain a diagnostic list, not an unfinished editorial
+queue. Later prose digest drift or an explicit successor amendment may reopen
+the affected scope. The terminal receipts activate no proof or empirical
+campaign and move no support or release state.
