@@ -1,12 +1,14 @@
 {
-  "schema_version": "asi_stack.chapter_substance_contract.v1",
-  "contract_id": "P6.9-R20-chapter-substance-and-concept-fidelity",
-  "recorded_date": "2026-07-27",
+  "schema_version": "asi_stack.chapter_substance_contract.v2",
+  "contract_id": "P6.9-R21-concept-complete-depth-and-atom-adequacy",
+  "recorded_date": "2026-07-28",
   "manifest_path": "book_structure.json",
   "manifest_chapter_count_freeze": 84,
   "word_count_method": "Unicode text split on whitespace over the complete tracked QMD; diagnostic trigger only",
   "word_trigger": 5000,
-  "concept_contract_rule": "An active concept section must be named, contain at least 150 words, and separately state mechanism, failure mode, non-claim, and source grounding. Passing remains editorial preparation, not semantic certification or evidence.",
+  "concept_contract_rule": "An active concept section must be named, contain at least 150 words, and separately state mechanism, failure mode, non-claim, and source grounding. Completion additionally requires a digest-bound chapter-specific semantic review. The diagnostic word trigger does not participate in concept completion, and passing remains editorial preparation rather than evidence.",
+  "semantic_review_rule": "A semantic disposition is valid only for the exact reviewed chapter SHA-256, must give chapter-specific review reasons, and has no support-state effect. Regeneration cannot renew or synthesize that disposition after prose changes.",
+  "atom_adequacy_rule": "Atom count is diagnostic only. Each material claim-bearing concept must have a bounded atom with an owner, proposition, scope, falsifier, promotion ceiling, evidence route, and non-claims, or an explicit many-to-one ownership justification. Matching legacy atom counts is prohibited as an acceptance target.",
   "atom_source_paths": [
     "evidence_quality/claim_atom_registry.json",
     "evidence_quality/replaceable_cognitive_substrates_claim_atom_addendum.json",
@@ -124,7 +126,8 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "the-efficient-asi-hypothesis",
@@ -234,7 +237,8 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "system-boundaries-and-authority",
@@ -388,7 +392,8 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
@@ -530,7 +535,8 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "dangerous-capability-domains-and-misuse-uplift",
@@ -539,7 +545,7 @@
       "sha256": "ac1d4f76782a429696fcb13dbb11407695d5686780f8bfe89e31bf33e2407579",
       "word_count": 5003,
       "word_trigger": 5000,
-      "depth_state": "active_priority_concept_contract",
+      "depth_state": "concept_contract_complete_semantic_reviewed",
       "short_reference_exception": false,
       "short_reference_justification": null,
       "atom_refs": [
@@ -730,7 +736,19 @@
           ],
           "source_ids_declared_by_chapter": true
         }
-      ]
+      ],
+      "semantic_review": {
+        "reviewed_sha256": "ac1d4f76782a429696fcb13dbb11407695d5686780f8bfe89e31bf33e2407579",
+        "reviewed_date": "2026-07-27",
+        "reviewer_role": "codex_editorial_semantic_review",
+        "disposition": "accepted_for_editorial_substance_no_evidence_effect",
+        "review_basis": [
+          "all eight named concepts explain a domain-specific mechanism and failure boundary",
+          "source contributions and limits remain inside the chapter's declared queue",
+          "the chapter states explicit non-claims and preserves adjacent-owner handoffs"
+        ],
+        "support_state_effect": "none"
+      }
     },
     {
       "chapter_id": "military-ai-autonomous-weapons-and-strategic-stability",
@@ -764,7 +782,8 @@
           "source_path": "evidence_quality/round20_four_chapter_claim_atom_addendum.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "evidence-states-and-claim-discipline",
@@ -946,7 +965,8 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "scalable-oversight-and-adversarial-ai-control",
@@ -1140,7 +1160,8 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "human-intent-as-a-formal-input",
@@ -1334,7 +1355,8 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "human-factors-and-meaningful-control-in-oversight",
@@ -1368,7 +1390,8 @@
           "source_path": "evidence_quality/post_activation_six_chapter_claim_atom_addendum.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "human-ai-communication-persuasion-and-epistemic-security",
@@ -1514,7 +1537,8 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "constitutional-alignment-substrate",
@@ -1732,7 +1756,8 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "inner-alignment-mesa-optimization-and-learned-objective-integrity",
@@ -1750,7 +1775,8 @@
           "source_path": "evidence_quality/round_18_breadth_completion_claim_atoms.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "moral-uncertainty-and-value-conflict",
@@ -1996,7 +2022,8 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "governed-objective-formation-value-learning-and-goal-integrity",
@@ -2150,7 +2177,8 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "institutions-international-coordination-and-public-legitimacy",
@@ -2304,7 +2332,8 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "societal-resilience-and-misuse-defense",
@@ -2313,7 +2342,7 @@
       "sha256": "e1df999b3a234884fc3a54f34bf851f7ccb42fd5d3061fbeca942634e006caae",
       "word_count": 5017,
       "word_trigger": 5000,
-      "depth_state": "active_priority_concept_contract",
+      "depth_state": "concept_contract_complete_semantic_reviewed",
       "short_reference_exception": false,
       "short_reference_justification": null,
       "atom_refs": [
@@ -2501,7 +2530,19 @@
           ],
           "source_ids_declared_by_chapter": true
         }
-      ]
+      ],
+      "semantic_review": {
+        "reviewed_sha256": "e1df999b3a234884fc3a54f34bf851f7ccb42fd5d3061fbeca942634e006caae",
+        "reviewed_date": "2026-07-27",
+        "reviewer_role": "codex_editorial_semantic_review",
+        "disposition": "accepted_for_editorial_substance_no_evidence_effect",
+        "review_basis": [
+          "all eight named concepts explain resist, absorb, recover, and adapt mechanisms across distinct harm families",
+          "federated reporting and recovery limits are explicit and rights-preserving",
+          "the chapter states domain-specific failures, non-claims, source limits, and owner handoffs"
+        ],
+        "support_state_effect": "none"
+      }
     },
     {
       "chapter_id": "stable-capability-fields",
@@ -2731,7 +2772,8 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "capability-replacement-and-rollback",
@@ -2981,7 +3023,8 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "security-kernel-and-digital-scifs",
@@ -3259,7 +3302,8 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
@@ -3409,7 +3453,8 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "privacy-data-rights-and-information-flow-governance",
@@ -3443,7 +3488,8 @@
           "source_path": "evidence_quality/post_activation_six_chapter_claim_atom_addendum.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "confidential-and-verifiable-ai-computation",
@@ -3477,7 +3523,8 @@
           "source_path": "evidence_quality/round20_four_chapter_claim_atom_addendum.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
@@ -3775,7 +3822,8 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "open-weight-release-and-post-release-control",
@@ -3793,7 +3841,8 @@
           "source_path": "evidence_quality/taxonomy_completion_claim_atoms_2026_07_24.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "ai-supply-chain-integrity-and-lifecycle-provenance",
@@ -4083,7 +4132,8 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "recursive-self-improvement-boundaries",
@@ -4389,7 +4439,8 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "open-ended-improvement-engines",
@@ -4727,7 +4778,8 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "autonomous-replication-proliferation-and-containment",
@@ -4869,7 +4921,8 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "intent-to-execution-contracts",
@@ -5187,7 +5240,8 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "perception-sensor-fusion-and-observation-trust",
@@ -5205,7 +5259,8 @@
           "source_path": "evidence_quality/round_18_breadth_completion_claim_atoms.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "planning-as-a-control-layer",
@@ -5523,7 +5578,8 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "governed-world-models-and-reality-grounding",
@@ -5557,7 +5613,8 @@
           "source_path": "evidence_quality/post_activation_six_chapter_claim_atom_addendum.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "cognitive-compilation-and-semantic-ir",
@@ -5859,7 +5916,8 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "virtual-context-abi",
@@ -6173,7 +6231,8 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "durable-semantic-memory-and-knowledge-lattices",
@@ -6331,7 +6390,8 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "context-transactions-snapshots-mounts-and-taint",
@@ -6637,7 +6697,8 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "verification-bandwidth-and-context-adequacy",
@@ -6943,7 +7004,8 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "claim-ledgers-and-belief-revision",
@@ -7249,7 +7311,8 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "spinoza-verification-and-proof-carrying-claims",
@@ -7567,7 +7630,8 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "labor-os-and-typed-jobs",
@@ -7885,7 +7949,8 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "human-ai-organizations-delegation-and-accountability",
@@ -7903,7 +7968,8 @@
           "source_path": "evidence_quality/round_18_breadth_completion_claim_atoms.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty",
@@ -7937,7 +8003,8 @@
           "source_path": "evidence_quality/round20_four_chapter_claim_atom_addendum.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "ai-deployment-transition-distribution-and-human-agency",
@@ -8091,7 +8158,8 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "artifact-graphs-audit-logs-and-replay",
@@ -8429,7 +8497,8 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
@@ -8751,7 +8820,8 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "embodied-agency-real-time-control-and-physical-safety",
@@ -8769,7 +8839,8 @@
           "source_path": "evidence_quality/round_18_breadth_completion_claim_atoms.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
@@ -9103,7 +9174,8 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "multi-agent-dynamics-collective-intelligence-and-systemic-risk",
@@ -9121,7 +9193,8 @@
           "source_path": "evidence_quality/round_18_breadth_completion_claim_atoms.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "procedural-memory-and-cognitive-loop-closure",
@@ -9427,7 +9500,8 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "routing-heads-and-specialist-cores",
@@ -9745,7 +9819,8 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "replaceable-cognitive-substrates-beyond-transformer-monoculture",
@@ -9819,7 +9894,8 @@
           "source_path": "evidence_quality/replaceable_cognitive_substrates_claim_atom_addendum.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "relational-dimension-compilation-and-polyadic-cognition",
@@ -9853,7 +9929,8 @@
           "source_path": "evidence_quality/round20_four_chapter_claim_atom_addendum.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "governed-model-training-distributed-optimization-and-scaling",
@@ -9887,7 +9964,8 @@
           "source_path": "evidence_quality/post_activation_six_chapter_claim_atom_addendum.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "learning-theory-generalization-and-scaling-science",
@@ -10037,7 +10115,8 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
@@ -10347,7 +10426,8 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "personal-compute-hives-and-federated-edge-intelligence",
@@ -10669,7 +10749,8 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "compact-generative-systems-and-residual-honesty",
@@ -11003,7 +11084,8 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "fast-generation-architectures",
@@ -11321,7 +11403,8 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "governed-deliberation-and-test-time-scaling",
@@ -11659,7 +11742,8 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
@@ -11969,7 +12053,8 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "resource-economics-and-token-budgets",
@@ -12311,7 +12396,8 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "physical-compute-infrastructure-energy-and-environmental-constraints",
@@ -12461,7 +12547,8 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "mathematical-and-search-substrates",
@@ -12771,7 +12858,8 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "circle-calculus-and-proof-carrying-ai-contracts",
@@ -13081,7 +13169,8 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "coil-attention-cyclic-memory-and-recurrence-contracts",
@@ -13387,7 +13476,8 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "coilra-multicoil-rope-and-cyclic-mixers",
@@ -13693,7 +13783,8 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
@@ -13999,7 +14090,8 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
@@ -14309,7 +14401,8 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "white-box-evidence-interpretability-and-activation-governance",
@@ -14343,7 +14436,8 @@
           "source_path": "evidence_quality/post_activation_six_chapter_claim_atom_addendum.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "capability-thresholds-and-deployment-commitments",
@@ -14673,7 +14767,8 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
@@ -15003,7 +15098,8 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "safety-cases-and-structured-assurance",
@@ -15333,7 +15429,8 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "content-authenticity-watermarking-and-synthetic-media-integrity",
@@ -15342,7 +15439,7 @@
       "sha256": "4e59c1fc56973e12cbe09d764aedcbabda51322d18e83e3142f526d46fa8b8e3",
       "word_count": 5012,
       "word_trigger": 5000,
-      "depth_state": "active_priority_concept_contract",
+      "depth_state": "concept_contract_complete_semantic_reviewed",
       "short_reference_exception": false,
       "short_reference_justification": null,
       "atom_refs": [
@@ -15528,7 +15625,19 @@
           ],
           "source_ids_declared_by_chapter": true
         }
-      ]
+      ],
+      "semantic_review": {
+        "reviewed_sha256": "4e59c1fc56973e12cbe09d764aedcbabda51322d18e83e3142f526d46fa8b8e3",
+        "reviewed_date": "2026-07-27",
+        "reviewer_role": "codex_editorial_semantic_review",
+        "disposition": "accepted_for_editorial_substance_no_evidence_effect",
+        "review_basis": [
+          "all eight named concepts distinguish provenance, watermark, fingerprint, detection, disclosure, and verification roles",
+          "transformation lineage and Article 50 limits are explicit rather than inferred from keyword presence",
+          "the chapter states failure modes, non-claims, and adjacent-owner handoffs without evidence promotion"
+        ],
+        "support_state_effect": "none"
+      }
     },
     {
       "chapter_id": "governed-operations-incident-command-and-graceful-degradation",
@@ -15562,7 +15671,8 @@
           "source_path": "evidence_quality/post_activation_six_chapter_claim_atom_addendum.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "policy-optimization-and-learning-from-feedback",
@@ -15876,7 +15986,8 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "data-engines-continual-learning-and-unlearning",
@@ -16234,7 +16345,8 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "scientific-discovery-and-experimental-governance",
@@ -16380,7 +16492,8 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "artifact-steward-agents-and-living-project-governance",
@@ -16706,7 +16819,8 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "integrated-reference-architecture",
@@ -17016,7 +17130,8 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
@@ -17326,7 +17441,8 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "prototype-roadmap",
@@ -17636,7 +17752,8 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "living-book-methodology",
@@ -17950,7 +18067,8 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     },
     {
       "chapter_id": "open-research-agenda-and-bibliography-plan",
@@ -18256,19 +18374,25 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": []
+      "concept_contracts": [],
+      "semantic_review": null
     }
   ],
   "summary": {
     "chapter_count": 84,
     "thin_chapter_count": 20,
-    "active_priority_chapter_count": 3,
+    "contracted_chapter_count": 3,
+    "concept_complete_semantic_reviewed_chapter_count": 3,
     "queued_thin_chapter_count": 20,
     "word_trigger_clear_chapter_count": 64,
     "atom_covered_chapter_count": 84,
     "atom_uncovered_chapter_count": 0,
     "active_concept_count": 24,
     "active_concepts_passing_count": 24,
+    "current_semantic_review_count": 3,
+    "low_atom_count_diagnostic_chapter_count": 19,
+    "atom_count_is_acceptance_target": false,
+    "word_trigger_is_completion_gate": false,
     "support_state_effect": "none"
   },
   "manual_semantic_review_required": true,
@@ -18277,7 +18401,9 @@
   "release_effect": "none",
   "non_claims": [
     "Word count is a triage signal, not a quality score or proof of depth.",
-    "Required labels and section length cannot establish semantic adequacy; manual review remains required.",
+    "Crossing 5,000 words is neither necessary nor sufficient for concept completion.",
+    "Required labels and section length cannot establish semantic adequacy; a digest-bound review remains required.",
+    "Atom-count parity with older chapters is not a quality target.",
     "Atom coverage records responsibility and falsifiability, not truth or evidence maturity.",
     "No chapter-core, safety, performance, deployment, SOTA, AGI, ASI, publication, or release claim follows."
   ]

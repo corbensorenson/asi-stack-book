@@ -12,6 +12,8 @@
     "word_count_method",
     "word_trigger",
     "concept_contract_rule",
+    "semantic_review_rule",
+    "atom_adequacy_rule",
     "atom_source_paths",
     "chapter_records",
     "summary",
@@ -23,13 +25,13 @@
   ],
   "properties": {
     "schema_version": {
-      "const": "asi_stack.chapter_substance_contract.v1"
+      "const": "asi_stack.chapter_substance_contract.v2"
     },
     "contract_id": {
-      "const": "P6.9-R20-chapter-substance-and-concept-fidelity"
+      "const": "P6.9-R21-concept-complete-depth-and-atom-adequacy"
     },
     "recorded_date": {
-      "const": "2026-07-27"
+      "const": "2026-07-28"
     },
     "manifest_path": {
       "const": "book_structure.json"
@@ -47,6 +49,14 @@
     "concept_contract_rule": {
       "type": "string",
       "minLength": 120
+    },
+    "semantic_review_rule": {
+      "type": "string",
+      "minLength": 120
+    },
+    "atom_adequacy_rule": {
+      "type": "string",
+      "minLength": 180
     },
     "atom_source_paths": {
       "type": "array",
@@ -104,6 +114,46 @@
         "source_path": {
           "type": "string",
           "minLength": 10
+        }
+      },
+      "additionalProperties": false
+    },
+    "semantic_review": {
+      "type": "object",
+      "required": [
+        "reviewed_sha256",
+        "reviewed_date",
+        "reviewer_role",
+        "disposition",
+        "review_basis",
+        "support_state_effect"
+      ],
+      "properties": {
+        "reviewed_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "reviewed_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "reviewer_role": {
+          "const": "codex_editorial_semantic_review"
+        },
+        "disposition": {
+          "const": "accepted_for_editorial_substance_no_evidence_effect"
+        },
+        "review_basis": {
+          "type": "array",
+          "minItems": 3,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 40
+          }
+        },
+        "support_state_effect": {
+          "const": "none"
         }
       },
       "additionalProperties": false
@@ -182,7 +232,8 @@
         "short_reference_exception",
         "short_reference_justification",
         "atom_refs",
-        "concept_contracts"
+        "concept_contracts",
+        "semantic_review"
       ],
       "properties": {
         "chapter_id": {
@@ -211,6 +262,7 @@
         "depth_state": {
           "enum": [
             "active_priority_concept_contract",
+            "concept_contract_complete_semantic_reviewed",
             "queued_thin_chapter_for_manual_concept_contract",
             "word_trigger_clear_semantic_certification_not_implied"
           ]
@@ -233,6 +285,16 @@
           "items": {
             "$ref": "#/$defs/concept"
           }
+        },
+        "semantic_review": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/semantic_review"
+            },
+            {
+              "type": "null"
+            }
+          ]
         }
       },
       "additionalProperties": false
@@ -242,13 +304,18 @@
       "required": [
         "chapter_count",
         "thin_chapter_count",
-        "active_priority_chapter_count",
+        "contracted_chapter_count",
+        "concept_complete_semantic_reviewed_chapter_count",
         "queued_thin_chapter_count",
         "word_trigger_clear_chapter_count",
         "atom_covered_chapter_count",
         "atom_uncovered_chapter_count",
         "active_concept_count",
         "active_concepts_passing_count",
+        "current_semantic_review_count",
+        "low_atom_count_diagnostic_chapter_count",
+        "atom_count_is_acceptance_target",
+        "word_trigger_is_completion_gate",
         "support_state_effect"
       ],
       "properties": {
@@ -260,7 +327,10 @@
           "minimum": 0,
           "maximum": 84
         },
-        "active_priority_chapter_count": {
+        "contracted_chapter_count": {
+          "const": 3
+        },
+        "concept_complete_semantic_reviewed_chapter_count": {
           "const": 3
         },
         "queued_thin_chapter_count": {
@@ -284,6 +354,18 @@
         },
         "active_concepts_passing_count": {
           "const": 24
+        },
+        "current_semantic_review_count": {
+          "const": 3
+        },
+        "low_atom_count_diagnostic_chapter_count": {
+          "const": 19
+        },
+        "atom_count_is_acceptance_target": {
+          "const": false
+        },
+        "word_trigger_is_completion_gate": {
+          "const": false
         },
         "support_state_effect": {
           "const": "none"

@@ -15,6 +15,7 @@ STRUCTURE = ROOT / "book_structure.json"
 OUTPUT = ROOT / "evidence_quality/chapter_substance_contract.json"
 WORD_TRIGGER = 5000
 MANIFEST_FREEZE = 84
+SEMANTIC_REVIEW_DISPOSITION = "accepted_for_editorial_substance_no_evidence_effect"
 
 ATOM_SOURCES = [
     ROOT / "evidence_quality/claim_atom_registry.json",
@@ -59,6 +60,48 @@ CONCEPT_SPECS: dict[str, list[dict[str, Any]]] = {
 }
 
 REQUIRED_ELEMENTS = ["**Mechanism.**", "**Failure mode.**", "**Non-claim.**", "**Source grounding.**"]
+
+# These receipts are intentionally static. Regeneration does not renew a review:
+# any substantive chapter edit changes its digest and requires a new semantic
+# disposition before the chapter can remain concept-complete.
+SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
+    "dangerous-capability-domains-and-misuse-uplift": {
+        "reviewed_sha256": "ac1d4f76782a429696fcb13dbb11407695d5686780f8bfe89e31bf33e2407579",
+        "reviewed_date": "2026-07-27",
+        "reviewer_role": "codex_editorial_semantic_review",
+        "disposition": SEMANTIC_REVIEW_DISPOSITION,
+        "review_basis": [
+            "all eight named concepts explain a domain-specific mechanism and failure boundary",
+            "source contributions and limits remain inside the chapter's declared queue",
+            "the chapter states explicit non-claims and preserves adjacent-owner handoffs",
+        ],
+        "support_state_effect": "none",
+    },
+    "content-authenticity-watermarking-and-synthetic-media-integrity": {
+        "reviewed_sha256": "4e59c1fc56973e12cbe09d764aedcbabda51322d18e83e3142f526d46fa8b8e3",
+        "reviewed_date": "2026-07-27",
+        "reviewer_role": "codex_editorial_semantic_review",
+        "disposition": SEMANTIC_REVIEW_DISPOSITION,
+        "review_basis": [
+            "all eight named concepts distinguish provenance, watermark, fingerprint, detection, disclosure, and verification roles",
+            "transformation lineage and Article 50 limits are explicit rather than inferred from keyword presence",
+            "the chapter states failure modes, non-claims, and adjacent-owner handoffs without evidence promotion",
+        ],
+        "support_state_effect": "none",
+    },
+    "societal-resilience-and-misuse-defense": {
+        "reviewed_sha256": "e1df999b3a234884fc3a54f34bf851f7ccb42fd5d3061fbeca942634e006caae",
+        "reviewed_date": "2026-07-27",
+        "reviewer_role": "codex_editorial_semantic_review",
+        "disposition": SEMANTIC_REVIEW_DISPOSITION,
+        "review_basis": [
+            "all eight named concepts explain resist, absorb, recover, and adapt mechanisms across distinct harm families",
+            "federated reporting and recovery limits are explicit and rights-preserving",
+            "the chapter states domain-specific failures, non-claims, source limits, and owner handoffs",
+        ],
+        "support_state_effect": "none",
+    },
+}
 
 
 def load(path: Path) -> Any:
@@ -145,7 +188,21 @@ def build() -> dict[str, Any]:
                     ),
                 }
             )
-        if specs:
+        review = SEMANTIC_REVIEWS.get(chapter["id"])
+        concept_mechanics_pass = bool(specs) and all(
+            concept["observed_section_words"] >= concept["minimum_section_words"]
+            and set(concept["observed_elements"]) == set(concept["required_elements"])
+            and concept["source_ids_declared_by_chapter"]
+            for concept in concepts
+        )
+        review_is_current = bool(
+            review
+            and review["reviewed_sha256"] == sha256(path)
+            and review["disposition"] == SEMANTIC_REVIEW_DISPOSITION
+        )
+        if specs and concept_mechanics_pass and review_is_current:
+            state = "concept_contract_complete_semantic_reviewed"
+        elif specs:
             state = "active_priority_concept_contract"
         elif word_count < WORD_TRIGGER:
             state = "queued_thin_chapter_for_manual_concept_contract"
@@ -164,15 +221,16 @@ def build() -> dict[str, Any]:
                 "short_reference_justification": None,
                 "atom_refs": coverage.get(chapter["id"], []),
                 "concept_contracts": concepts,
+                "semantic_review": review,
             }
         )
     thin = [row for row in records if row["word_count"] < WORD_TRIGGER]
-    active = [row for row in records if row["depth_state"] == "active_priority_concept_contract"]
-    all_concepts = [concept for row in active for concept in row["concept_contracts"]]
+    contracted = [row for row in records if row["concept_contracts"]]
+    all_concepts = [concept for row in contracted for concept in row["concept_contracts"]]
     return {
-        "schema_version": "asi_stack.chapter_substance_contract.v1",
-        "contract_id": "P6.9-R20-chapter-substance-and-concept-fidelity",
-        "recorded_date": "2026-07-27",
+        "schema_version": "asi_stack.chapter_substance_contract.v2",
+        "contract_id": "P6.9-R21-concept-complete-depth-and-atom-adequacy",
+        "recorded_date": "2026-07-28",
         "manifest_path": "book_structure.json",
         "manifest_chapter_count_freeze": MANIFEST_FREEZE,
         "word_count_method": "Unicode text split on whitespace over the complete tracked QMD; diagnostic trigger only",
@@ -180,14 +238,31 @@ def build() -> dict[str, Any]:
         "concept_contract_rule": (
             "An active concept section must be named, contain at least 150 words, "
             "and separately state mechanism, failure mode, non-claim, and source grounding. "
-            "Passing remains editorial preparation, not semantic certification or evidence."
+            "Completion additionally requires a digest-bound chapter-specific semantic review. "
+            "The diagnostic word trigger does not participate in concept completion, and passing "
+            "remains editorial preparation rather than evidence."
+        ),
+        "semantic_review_rule": (
+            "A semantic disposition is valid only for the exact reviewed chapter SHA-256, "
+            "must give chapter-specific review reasons, and has no support-state effect. "
+            "Regeneration cannot renew or synthesize that disposition after prose changes."
+        ),
+        "atom_adequacy_rule": (
+            "Atom count is diagnostic only. Each material claim-bearing concept must have a "
+            "bounded atom with an owner, proposition, scope, falsifier, promotion ceiling, "
+            "evidence route, and non-claims, or an explicit many-to-one ownership justification. "
+            "Matching legacy atom counts is prohibited as an acceptance target."
         ),
         "atom_source_paths": [path.relative_to(ROOT).as_posix() for path in ATOM_SOURCES],
         "chapter_records": records,
         "summary": {
             "chapter_count": len(records),
             "thin_chapter_count": len(thin),
-            "active_priority_chapter_count": len(active),
+            "contracted_chapter_count": len(contracted),
+            "concept_complete_semantic_reviewed_chapter_count": sum(
+                row["depth_state"] == "concept_contract_complete_semantic_reviewed"
+                for row in records
+            ),
             "queued_thin_chapter_count": sum(
                 row["depth_state"] == "queued_thin_chapter_for_manual_concept_contract"
                 for row in records
@@ -204,6 +279,16 @@ def build() -> dict[str, Any]:
                 and concept["source_ids_declared_by_chapter"]
                 for concept in all_concepts
             ),
+            "current_semantic_review_count": sum(
+                bool(row["semantic_review"])
+                and row["semantic_review"]["reviewed_sha256"] == row["sha256"]
+                for row in contracted
+            ),
+            "low_atom_count_diagnostic_chapter_count": sum(
+                len(row["atom_refs"]) <= 5 for row in records
+            ),
+            "atom_count_is_acceptance_target": False,
+            "word_trigger_is_completion_gate": False,
             "support_state_effect": "none",
         },
         "manual_semantic_review_required": True,
@@ -212,7 +297,9 @@ def build() -> dict[str, Any]:
         "release_effect": "none",
         "non_claims": [
             "Word count is a triage signal, not a quality score or proof of depth.",
-            "Required labels and section length cannot establish semantic adequacy; manual review remains required.",
+            "Crossing 5,000 words is neither necessary nor sufficient for concept completion.",
+            "Required labels and section length cannot establish semantic adequacy; a digest-bound review remains required.",
+            "Atom-count parity with older chapters is not a quality target.",
             "Atom coverage records responsibility and falsifiability, not truth or evidence maturity.",
             "No chapter-core, safety, performance, deployment, SOTA, AGI, ASI, publication, or release claim follows.",
         ],

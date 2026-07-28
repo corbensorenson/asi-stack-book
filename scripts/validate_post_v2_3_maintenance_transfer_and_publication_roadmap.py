@@ -49,6 +49,7 @@ STRUCTURAL_GAP_AUDIT = ROOT / "docs/structural_completeness_gap_audit_2026_07_19
 OPTIMIZER_RESEARCH = ROOT / "docs/optimizer_landscape_chapter_research_2026_07_21.md"
 POST_ROUND_18_DEPTH_REVIEW = ROOT / "docs/post_round_18_depth_and_coverage_review_reconciliation_2026_07_24.md"
 ROUND_20_DEPTH_RECONCILIATION = ROOT / "docs/round_20_depth_and_substance_reconciliation_2026_07_27.md"
+ROUND_21_DEPTH_ADJUDICATION = ROOT / "docs/round_21_depth_contract_and_atom_adequacy_adjudication_2026_07_28.md"
 ROUND_20_CHAPTER_SUBSTANCE = ROOT / "evidence_quality/chapter_substance_contract.json"
 ROUND_20_FOUR_CHAPTER_ATOMS = ROOT / "evidence_quality/round20_four_chapter_claim_atom_addendum.json"
 PRECISION_CONTRACT_RECONCILIATION = ROOT / "docs/precision_contract_source_reconciliation_2026_07_24.md"
@@ -232,6 +233,7 @@ def inputs() -> dict:
         "optimizer_research": OPTIMIZER_RESEARCH.read_text(encoding="utf-8"),
         "post_round_18_depth_review": POST_ROUND_18_DEPTH_REVIEW.read_text(encoding="utf-8"),
         "round_20_depth_reconciliation": ROUND_20_DEPTH_RECONCILIATION.read_text(encoding="utf-8"),
+        "round_21_depth_adjudication": ROUND_21_DEPTH_ADJUDICATION.read_text(encoding="utf-8"),
         "round_20_chapter_substance": load(ROUND_20_CHAPTER_SUBSTANCE),
         "round_20_four_chapter_atoms": load(ROUND_20_FOUR_CHAPTER_ATOMS),
         "precision_contract_reconciliation": PRECISION_CONTRACT_RECONCILIATION.read_text(encoding="utf-8"),
@@ -412,10 +414,12 @@ def errors(data: dict) -> list[str]:
         "The paper's 49 references are an author-supplied research map, not automatic Appendix H records",
         "A naïve quantizer",
         "may not displace P2",
-        "P6.9-R20-chapter-substance-and-concept-fidelity",
+        "P6.9-R21-concept-complete-depth-and-atom-adequacy",
         "84/84 unified atom custody",
         "twenty-chapter prose-depth queue",
-        "5,000-word threshold as diagnostic only",
+        "diagnostics only",
+        "digest-bound semantic",
+        "zero unjustified widest-spread blocks",
     ]:
         if phrase.casefold() not in roadmap_normalized:
             out.append(f"roadmap governing boundary missing: {phrase}")
@@ -470,7 +474,8 @@ def errors(data: dict) -> list[str]:
         "human-ai-organizations-delegation-and-accountability",
     ]
     if (
-        round_20.get("state") != "active_first_priority_tranche_complete"
+        round_20.get("id") != "P6.9-R21-concept-complete-depth-and-atom-adequacy"
+        or round_20.get("state") != "active_first_tranche_reviewed_contract_hardened"
         or round_20.get("manifest_chapter_count_freeze") != 84
         or round_20.get("word_trigger") != 5000
         or round_20.get("word_trigger_is_acceptance_or_evidence_gate") is not False
@@ -480,6 +485,22 @@ def errors(data: dict) -> list[str]:
         or round_20.get("priority_concepts_passing") != 24
         or round_20.get("current_unified_atom_covered_chapter_count") != 84
         or round_20.get("remaining_thin_queue") != expected_round_20_queue
+        or round_20.get("completion_authority")
+        != "named_concept_contract_plus_current_digest_bound_semantic_disposition"
+        or round_20.get("current_digest_bound_semantic_review_count") != 3
+        or round_20.get("next_priority_batch_size") != 6
+        or round_20.get("next_priority_batch") != expected_round_20_queue[:6]
+        or round_20.get("throughput_unit")
+        != "concept_complete_digest_bound_semantic_dispositions"
+        or round_20.get("low_atom_count_diagnostic_chapter_count") != 19
+        or round_20.get("single_atom_diagnostic_chapter_count") != 9
+        or round_20.get("atom_count_parity_is_acceptance_target") is not False
+        or round_20.get("reader_facing_w3_repeated_12_grams") != 0
+        or round_20.get("raw_qmd_repeated_12_grams") != 936
+        or round_20.get("raw_qmd_maximum_chapter_spread") != 64
+        or round_20.get("raw_scaffold_audit_required") is not True
+        or round_20.get("raw_scaffold_exit") != "zero_unjustified_widest_spread_blocks"
+        or len(round_20.get("evidence_handoff_requires", [])) != 8
         or round_20.get("manual_semantic_review_required") is not True
         or round_20.get("support_state_effect") != "none"
         or round_20.get("release_effect") != "none"
@@ -492,6 +513,11 @@ def errors(data: dict) -> list[str]:
         or substance_summary.get("atom_uncovered_chapter_count") != 0
         or substance_summary.get("active_concept_count") != 24
         or substance_summary.get("active_concepts_passing_count") != 24
+        or substance_summary.get("concept_complete_semantic_reviewed_chapter_count") != 3
+        or substance_summary.get("current_semantic_review_count") != 3
+        or substance_summary.get("low_atom_count_diagnostic_chapter_count") != 19
+        or substance_summary.get("atom_count_is_acceptance_target") is not False
+        or substance_summary.get("word_trigger_is_completion_gate") is not False
         or substance.get("manual_semantic_review_required") is not True
         or substance.get("support_state_effect") != "none"
     ):
@@ -514,6 +540,20 @@ def errors(data: dict) -> list[str]:
     ]:
         if phrase.casefold() not in round_20_text:
             out.append(f"Round 20 reconciliation boundary missing: {phrase}")
+
+    round_21_text = re.sub(
+        r"\s+", " ", data["round_21_depth_adjudication"]
+    ).casefold()
+    for phrase in [
+        "crossing 5,000 words is neither necessary nor sufficient",
+        "digest-bound, semantically reviewed concept manifests",
+        "nineteen chapters have five or fewer atom references",
+        "matching legacy atom counts is prohibited as an acceptance target",
+        "zero unjustified widest-spread raw blocks",
+        "clean evidence handoff",
+    ]:
+        if phrase.casefold() not in round_21_text:
+            out.append(f"Round 21 depth-contract boundary missing: {phrase}")
 
     precision_reconciliation_normalized = re.sub(
         r"\s+", " ", data["precision_contract_reconciliation"]
@@ -2061,6 +2101,12 @@ def main() -> None:
     mutate("Round 20 word-count laundering", lambda c: c["status"]["round_20_chapter_substance_recovery"].__setitem__("word_trigger_is_acceptance_or_evidence_gate", True))
     mutate("Round 20 atom coverage rollback", lambda c: c["round_20_chapter_substance"]["summary"].__setitem__("atom_covered_chapter_count", 83))
     mutate("Round 20 concept pass laundering", lambda c: c["round_20_chapter_substance"]["summary"].__setitem__("active_concepts_passing_count", 23))
+    mutate("Round 21 semantic review denominator laundering", lambda c: c["status"]["round_20_chapter_substance_recovery"].__setitem__("current_digest_bound_semantic_review_count", 2))
+    mutate("Round 21 word-count completion laundering", lambda c: c["round_20_chapter_substance"]["summary"].__setitem__("word_trigger_is_completion_gate", True))
+    mutate("Round 21 atom-count target laundering", lambda c: c["status"]["round_20_chapter_substance_recovery"].__setitem__("atom_count_parity_is_acceptance_target", True))
+    mutate("Round 21 next-batch denominator deletion", lambda c: c["status"]["round_20_chapter_substance_recovery"]["next_priority_batch"].pop())
+    mutate("Round 21 raw-scaffold audit bypass", lambda c: c["status"]["round_20_chapter_substance_recovery"].__setitem__("raw_scaffold_audit_required", False))
+    mutate("Round 21 evidence handoff truncation", lambda c: c["status"]["round_20_chapter_substance_recovery"]["evidence_handoff_requires"].pop())
     mutate("Round 20 manual review bypass", lambda c: c["status"]["round_20_chapter_substance_recovery"].__setitem__("manual_semantic_review_required", False))
     mutate("Round 20 thin queue deletion", lambda c: c["status"]["round_20_chapter_substance_recovery"]["remaining_thin_queue"].pop())
     mutate("Round 20 support promotion", lambda c: c["status"]["round_20_chapter_substance_recovery"].__setitem__("support_state_effect", "promoted"))

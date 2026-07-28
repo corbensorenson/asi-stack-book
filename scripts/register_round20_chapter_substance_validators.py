@@ -60,8 +60,8 @@ UNITS = [
         "script": "validate_chapter_substance_contract.py",
         "input_contract": (
             "The exact frozen 84-chapter manifest, the complete append-only atom-source "
-            "set, current chapter text, and named concept contracts for the active Round "
-            "20 prose-repair tranche."
+            "set, current chapter text, named concept contracts, and static digest-bound "
+            "semantic dispositions for the Round 21-hardened prose-repair tranche."
         ),
         "input_artifacts": [
             "evidence_quality/chapter_substance_contract.json",
@@ -80,18 +80,20 @@ UNITS = [
         "output_contract": (
             "Preserve 84/84 atom ownership and require every active named concept section "
             "to carry a mechanism, failure mode, explicit non-claim, declared-source "
-            "engagement, and minimum substantive span while keeping raw word count "
-            "diagnostic and manual semantic review mandatory."
+            "engagement, minimum substantive span, and an exact-digest semantic review "
+            "while keeping raw word count and atom counts diagnostic."
         ),
         "output_assertions": [
             "manifest frozen at 84 chapters",
             "84 of 84 chapters have an exact atom source",
             "24 of 24 active priority concepts pass",
-            "word count is diagnostic rather than an acceptance claim",
-            "manual semantic review remains required",
-            "ten mutations reject",
+            "three of three semantic reviews bind the current chapter digests",
+            "word count remains independent from concept completion",
+            "atom-count parity is not an acceptance target",
+            "twelve mutations reject",
+            "one low-word-count concept-completion positive control passes",
         ],
-        "negative_controls": "validator_owned_ten_denominator_atom_concept_source_review_and_support_mutations",
+        "negative_controls": "validator_owned_twelve_rejecting_mutations_plus_one_word_independence_positive_control",
         "negative_control_cases": [
             "chapter deletion",
             "manifest freeze widening",
@@ -100,6 +102,8 @@ UNITS = [
             "concept deletion",
             "concept word laundering",
             "source grounding deletion",
+            "semantic review deletion",
+            "semantic review digest drift",
             "manual review bypass",
             "chapter growth authorization",
             "support promotion",
@@ -111,7 +115,7 @@ UNITS = [
             "Passing structure, labels, or word counts does not establish semantic quality, "
             "claim truth, empirical support, proof, safety, release, SOTA, AGI, or ASI."
         ),
-        "semantic_review_state": "manual_priority_concept_and_remaining_thin_chapter_review_required",
+        "semantic_review_state": "three_current_digest_bound_reviews_and_remaining_twenty_owner_reviews_required",
     },
 ]
 

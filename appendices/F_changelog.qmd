@@ -1,5 +1,30 @@
 # Changelog
 
+## 2026-07-28 — Round 21 concept-completion and atom-adequacy amendment
+
+- Adjudicated the Round 21 review against current `main`, retaining the
+  twenty-owner depth, claim-addressability, and evidence-handoff concerns while
+  rejecting corrected keyword omissions and stale `1,117` / `82-of-84`
+  inheritance measurements.
+- Removed the validator contradiction that made the 5,000-word diagnostic
+  trigger an implicit completion gate. Concept completion now requires the
+  named concept roles plus a chapter-specific semantic disposition bound to
+  the exact QMD SHA-256.
+- Preserved three current Round 20 semantic reviews and added a direct positive
+  control proving that moving a reviewed chapter below 5,000 diagnostic words
+  does not invalidate its concept mechanics; stale digests and missing concept
+  roles still reject.
+- Froze a six-owner next tranche with owner-specific preliminary concept
+  families and changed throughput accounting from words or chapters touched
+  to concept-complete, digest-bound semantic dispositions.
+- Added a claim-addressable atom rule: each material concept needs a bounded
+  atom or an explicit many-to-one justification, while legacy atom-count parity
+  is prohibited as an acceptance target.
+- Split reader-facing W3 from raw-QMD scaffold ownership. The roadmap now
+  requires zero unjustified widest-spread raw blocks and an exact
+  chapter/concept/atom/source/falsifier/evidence handoff before the depth lane
+  can close. No support or release state moved.
+
 ## 2026-07-27 — Round 20 chapter-substance recovery
 
 - Adjudicated the Round 20 review against current `main`, rejecting stale
