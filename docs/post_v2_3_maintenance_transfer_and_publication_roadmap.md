@@ -2206,6 +2206,74 @@ population, fault envelope, matched controls, evaluator, monitor, metrics, and
 stopping rules before outcomes are visible, while preserving the exact
 identity joins learned from this happy path.
 
+### P5 prospective natural stateful-service campaign freeze — 2026-07-28
+
+The next P5 campaign is now frozen before any eligible task content or
+protected outcome has been opened. The existing campaign identity,
+`governed-operations-natural-service-campaign-001`, is the sole authority; no
+parallel P5 preregistration may silently change its denominator. The machine
+contract is
+`experiments/governed_operations_argument_exit/preregistration.json`, its
+schema is
+`schemas/governed_operations_campaign_preregistration.schema.json`, and the
+reader decision is
+`docs/p5_natural_stateful_service_campaign_preregistration.md`.
+
+The natural unit is an independently necessary ASI Stack maintenance task
+admitted after the freeze commit. Fifteen future tasks belong to development;
+forty protected tasks—eight across each of five maintenance families—form the
+final denominator. Tasks invented for the experiment, previously solved
+tasks, tasks needing another human participant, and tasks whose acceptance
+criteria appear after outcomes are ineligible. Consecutive eligible tasks are
+content-addressed and assigned by a frozen seed. No final task may enter P2 Q1
+or Q2, reuse a development task, or be removed after protected output exists.
+
+Five matched arms prevent an easy or naive comparison: direct model tooling,
+stop-only, competent generic SRE, proposal plus separately implemented
+acceptance, and governed operations. Every arm receives the same task, fault,
+local Qwen3-8B snapshot, prompt/tool/context budget, sandbox, and wall-clock
+ceiling. Engineering effort is matched during development. Experimental
+worktrees and dependency adapters cannot push, publish, deploy, message a
+third party, or widen authority; any later public effect is a separate
+owner-authorized transaction and is not a campaign outcome.
+
+The frozen fault envelope has twelve classes, including crash-after-mutation,
+intent/effect partition, replica conflict, custody drift, credential
+revocation, stale memory, correlated dependency loss, monitor corruption,
+incomplete rollback, irreversible effect, and operator-capacity failure.
+Fourteen state classes cover model, optimizer, scheduler, RNG, prompt/policy,
+cache, retrieval memory, ledgers, outbox, credentials, replicas, backups,
+derived artifacts, and descendants. Checkpoint authority is the last
+content-addressed, fully reconciled pre-fault checkpoint. Weights-only restore
+is forbidden.
+
+A masked, read-only evaluator and a separate delayed monitor are
+implementation-separated from the mechanism, but explicitly not
+institutionally independent. At least twenty-four known-answer calibration
+cases, six positive controls, ten adversarial controls, seven fair-rescue
+steps, mechanism activation traces, a favorable upper bound, and competent
+alternative implementations must pass before protected opening. A failure of
+these gates closes the instrument or implementation; it cannot be narrated as
+a negative architecture result.
+
+The co-primary outcomes are safe-useful completion, unsafe effect release,
+false blocking, and qualified recovery. No scalar may hide a co-primary harm.
+Timing, quality, residuals, evidence completeness, recurrence, operator work,
+tokens, tool calls, CPU, memory, storage, network, service loss, and
+development/rehearsal burden remain jointly visible. Recovery counts only
+after full-state and external-effect reconciliation, fresh useful and safety
+acceptance, qualified fallback, delayed monitoring, and emergency-authority
+expiry.
+
+This freeze advances design custody only. Natural tasks run, fault injections,
+operators recruited, support movement, release authority, and empirical result
+all remain zero or `none`. The campaign cannot substitute for the Theseus T4
+joined trace or unlock T5. The next legal action is implementation and
+development qualification of all arms, adapters, evaluator, monitor,
+calibration suite, full-state recovery, and registered preflight. Development
+task content stays closed until those surfaces pass; final content remains
+closed until competence, precision, resource, and custody gates all pass.
+
 ## P6 — Evidence, instrument, and source renewal
 
 Run a dated primary-source and official-comparator sweep at least quarterly and

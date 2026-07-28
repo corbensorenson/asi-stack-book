@@ -2282,7 +2282,11 @@
     "docs/p6_9_proof_evidence_handoff.md",
     "schemas/p6_9_proof_evidence_handoff.schema.json",
     "scripts/build_p6_9_proof_evidence_handoff.py",
-    "scripts/validate_p6_9_proof_evidence_handoff.py"
+    "scripts/validate_p6_9_proof_evidence_handoff.py",
+    "schemas/governed_operations_campaign_preregistration.schema.json",
+    "docs/p5_natural_stateful_service_campaign_preregistration.md",
+    "docs/repository_map.md",
+    "scripts/register_p5_natural_stateful_service_campaign.py"
   ],
   "units": [
     {
@@ -12372,7 +12376,7 @@
       "args": [],
       "execution_tier": "pr",
       "validation_class": "publication_gate",
-      "input_contract": "Completed claim-proof predecessor; exact no-release terminal record; active unfinished-work successor; the current 84-chapter manifest and exact 11/54/7/12 chapter-role partition; the adjudicated Pro full-book review and C0-C8 convergence amendment; exact concept-first exit receipt with eight packets, 26 prose/product anchors, and zero current roadmap-only remainder; the terminal six-chapter/thirty-atom R16-A organization packet; canonical atoms and all accepted transitions with complete direct/indirect claim identity; N0-N5 negative-result rehabilitation and experiment competence; prospective P2 and ASI-THESEUS-FLAGSHIP-01 natural-evidence custody; two bounded P5 reference slices including the commit-bound seven-case stateful-service receipt; current reader, proof, attestation, derivative, and public-truth surfaces.",
+      "input_contract": "Completed claim-proof predecessor; exact no-release terminal record; active unfinished-work successor; the current 84-chapter manifest and exact 11/54/7/12 chapter-role partition; the adjudicated Pro full-book review and C0-C8 convergence amendment; exact concept-first exit receipt with eight packets, 26 prose/product anchors, and zero current roadmap-only remainder; the terminal six-chapter/thirty-atom R16-A organization packet; canonical atoms and all accepted transitions with complete direct/indirect claim identity; N0-N5 negative-result rehabilitation and experiment competence; prospective P2 and ASI-THESEUS-FLAGSHIP-01 natural-evidence custody; two bounded P5 reference slices, one retrospective natural happy path, and the prospectively frozen five-arm/forty-task P5 natural-service campaign with protected outcomes closed; current reader, proof, attestation, derivative, and public-truth surfaces.",
       "input_artifacts": [
         "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md",
         "docs/c1_c8_phase1_idea_placement_and_prose_audit_2026_07_25.md",
@@ -12432,6 +12436,10 @@
         "scripts/validate_p2_replacement_queue.py",
         "experiments/effect_complete_service/results/2026-07-27-local.json",
         "docs/p5_stateful_service_reference_report.md",
+        "experiments/governed_operations_argument_exit/preregistration.json",
+        "schemas/governed_operations_campaign_preregistration.schema.json",
+        "docs/p5_natural_stateful_service_campaign_preregistration.md",
+        "scripts/validate_governed_operations_control_contract.py",
         "roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json",
         "schemas/post_v2_3_maintenance_transfer_and_publication_status.schema.json",
         "scripts/validate_post_v2_3_maintenance_transfer_and_publication_roadmap.py",
@@ -12474,17 +12482,16 @@
         "metadata-only queue contains 30 unique repositories while candidate content remains unopened",
         "construct and resource gates pending with heldout closed",
         "all six semantic proof clusters terminal at bounded adequate scope",
-        "P5 status binds the seven-case stateful-service receipt with actual learning state, weights-only rejection, crash/restart, localhost partition/outbox, external observation, custody controls, and no support/release effect",
+        "P5 status binds two bounded slices, one retrospective natural happy path, and one prospectively frozen five-arm/forty-task natural-service campaign with 12 faults, 14 state classes, separate evaluator/monitor, full costs, protected outcomes closed, and no T4/support/release effect",
         "N0-N5 competence contract",
         "current proof snapshot",
         "main-only stale attestation truth",
         "v2.3.0 latest public release",
         "X source current and historical platform draft stale",
-        "no support or release effect",
-        "ninety-nine mutations reject"
+        "no support or release effect"
       ],
       "claim_scope": "Roadmap continuity, experiment-competence governance, claim-identity truth, public-state maintenance, and owner-gated external actions only.",
-      "negative_controls": "validator_owned_ninety_seven_competence_identity_rehabilitation_surface_p2_convergence_concept_first_role_editorial_semantic_proof_optimizer_and_attestation_mutations",
+      "negative_controls": "validator_owned_one_hundred_thirty_four_competence_identity_rehabilitation_surface_p2_p5_convergence_concept_first_role_editorial_semantic_proof_optimizer_and_attestation_mutations",
       "negative_control_cases": [
         "false publication",
         "support laundering",
@@ -12511,6 +12518,12 @@
         "P2 replacement queue repository reuse",
         "P2 resource premature pass",
         "P2 resource claim laundering",
+        "P5 protected task opening",
+        "P5 denominator shrink",
+        "P5 strong baseline deletion",
+        "P5 public-effect widening",
+        "P5 independence invention",
+        "P5 T4 substitution laundering",
         "optimizer duplicate chapter authorization",
         "optimizer coupled-policy deletion",
         "optimizer unmatched tuning",
@@ -13857,20 +13870,22 @@
     },
     {
       "script": "validate_governed_operations_control_contract.py",
-      "input_contract": "One authored identity-bound authority-to-effect control case, an eleven-class declared state inventory, a prospective unexecuted four-arm natural-service campaign, and a finite authority/recovery model.",
-      "output_contract": "Require five-dimensional authority narrowing, independent containment, exact state/effect reconciliation, fresh independent acceptance, qualified fallback, emergency expiry, thirteen Lean declarations, one completed development positive control, and eighteen rejecting mutations.",
+      "input_contract": "One authored identity-bound authority-to-effect control case, an eleven-class packet state inventory, a prospectively frozen unexecuted five-arm/forty-task natural-service campaign with fourteen campaign state classes, and a finite authority/recovery model.",
+      "output_contract": "Require five-dimensional authority narrowing, independent containment, exact state/effect reconciliation, fresh independent acceptance, qualified fallback, emergency expiry, thirteen Lean declarations, one completed development positive control, a sealed natural-task population, strong matched baseline, separate evaluator/monitor, and eighteen packet plus fifteen campaign rejecting mutations.",
       "output_assertions": [
         "1 authored safe-hold case",
         "5 authority dimensions narrow",
-        "11 state classes",
-        "4 campaign arms",
+        "11 packet state classes",
+        "14 campaign state classes",
+        "5 campaign arms",
+        "40 heldout tasks unopened",
         "9 competence gates",
         "13 Lean declarations",
-        "18 mutations reject",
+        "33 mutations reject",
         "support/release/publication none"
       ],
       "claim_scope": "Governed-operations packet shape and finite degradation/recovery route semantics only.",
-      "negative_controls": "validator_owned_eighteen_identity_authority_containment_state_effect_acceptance_expiry_fallback_source_and_authority_mutations",
+      "negative_controls": "validator_owned_thirty_three_packet_and_campaign_identity_authority_containment_state_effect_acceptance_expiry_fallback_source_custody_denominator_matching_independence_and_non_authority_mutations",
       "negative_control_cases": [
         "five authority widenings",
         "identity deletion",
@@ -13881,6 +13896,12 @@
         "dependent verifier",
         "active emergency lease",
         "fallback loss",
+        "task or outcome opening",
+        "denominator shrink",
+        "strong baseline deletion",
+        "public-effect widening",
+        "independence invention",
+        "T4 laundering",
         "support and release laundering"
       ],
       "prohibited_inference": "The authored case and finite model do not establish natural incident behavior, detector quality, inventory completeness, effect reversal, fallback usefulness, recovery efficacy, safety, transfer, deployment, support, release, publication, AGI, or ASI.",
@@ -13899,19 +13920,29 @@
         "lean/AsiStackProofs/GovernedOperations.lean",
         "lean/AsiStackProofs.lean",
         "chapters/governed-operations-incident-command-and-graceful-degradation.qmd",
-        "scripts/register_p7_2_t4_and_p4_c6_tranche.py"
+        "scripts/register_p7_2_t4_and_p4_c6_tranche.py",
+        "schemas/governed_operations_campaign_preregistration.schema.json",
+        "docs/p5_natural_stateful_service_campaign_preregistration.md",
+        "docs/p7_2_t4_governed_operations_reader_integration.md",
+        "evidence_quality/p7_2_t4_governed_operations_reader_integration.json",
+        "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md",
+        "roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json",
+        "docs/repository_map.md",
+        "appendices/F_changelog.qmd",
+        "scripts/register_p5_natural_stateful_service_campaign.py"
       ]
     },
     {
       "script": "validate_p7_2_t4_governed_operations_reader_integration.py",
-      "input_contract": "The admitted Operations chapter, nine exact source mappings, two implemented targets, one authored safe-hold case, one closed campaign, and adjacent reader surfaces.",
-      "output_contract": "Bind exact artifact digests, preserve source/proof/campaign/flagship denominators, require reader handoffs and synthesis, close the four-chapter first tranche, advance to one second-tranche adjudication, and reject thirteen integration mutations.",
+      "input_contract": "The admitted Operations chapter, nine exact source mappings, two implemented targets, one authored safe-hold case, one prospectively frozen five-arm/forty-task campaign with protected outcomes closed, and adjacent reader surfaces.",
+      "output_contract": "Bind exact artifact digests, preserve source/proof/campaign/flagship denominators, require reader handoffs and synthesis, keep the four-chapter first tranche terminal, and reject thirteen integration mutations.",
       "output_assertions": [
         "4 first-tranche chapters terminal",
         "9 source mappings",
         "2 implemented targets",
         "13 Lean declarations",
         "authored case not flagship T4",
+        "5 arms and 40 protected tasks frozen",
         "0 natural incidents",
         "13 integration mutations reject",
         "support effect none"
@@ -13952,7 +13983,14 @@
         "chapters/safety-cases-and-structured-assurance.qmd",
         "chapters/policy-optimization-and-learning-from-feedback.qmd",
         "chapters/integrated-reference-architecture.qmd",
-        "scripts/register_p7_2_t4_and_p4_c6_tranche.py"
+        "scripts/register_p7_2_t4_and_p4_c6_tranche.py",
+        "experiments/governed_operations_argument_exit/preregistration.json",
+        "schemas/governed_operations_campaign_preregistration.schema.json",
+        "docs/p5_natural_stateful_service_campaign_preregistration.md",
+        "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md",
+        "docs/repository_map.md",
+        "appendices/F_changelog.qmd",
+        "scripts/register_p5_natural_stateful_service_campaign.py"
       ]
     },
     {
@@ -15126,7 +15164,7 @@
     }
   ],
   "summary": {
-    "required_artifact_count": 2238,
+    "required_artifact_count": 2242,
     "unit_count": 436
   },
   "non_claims": [

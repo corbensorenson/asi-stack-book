@@ -1,0 +1,341 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://asi-stack.local/schemas/governed_operations_campaign_preregistration.schema.json",
+  "title": "Governed operations natural-service campaign preregistration",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "schema_version",
+    "campaign_id",
+    "frozen_date",
+    "state",
+    "claim",
+    "maximum_positive_inference",
+    "maximum_negative_level",
+    "service",
+    "population",
+    "arms",
+    "matching",
+    "fault_envelope",
+    "state_inventory",
+    "checkpoint_authority",
+    "evaluator_and_monitor",
+    "competence_gates",
+    "positive_controls",
+    "adversarial_controls",
+    "fair_rescue_steps",
+    "outcomes",
+    "analysis",
+    "heldout",
+    "execution",
+    "transition_rules",
+    "resource_gate",
+    "support_state_effect",
+    "release_effect"
+  ],
+  "properties": {
+    "$schema": {
+      "const": "../../schemas/governed_operations_campaign_preregistration.schema.json"
+    },
+    "schema_version": {
+      "const": "asi_stack.governed_operations_argument_exit.v2"
+    },
+    "campaign_id": {
+      "const": "governed-operations-natural-service-campaign-001"
+    },
+    "frozen_date": {
+      "const": "2026-07-28"
+    },
+    "state": {
+      "const": "prospectively_frozen_outcomes_closed_implementation_and_development_pending"
+    },
+    "claim": {
+      "type": "string",
+      "minLength": 120
+    },
+    "maximum_positive_inference": {
+      "type": "string",
+      "minLength": 120
+    },
+    "maximum_negative_level": {
+      "const": "N3_exact"
+    },
+    "service": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "service_id",
+        "natural_unit",
+        "task_families",
+        "effect_boundary",
+        "external_dependencies",
+        "model_custody"
+      ],
+      "properties": {
+        "service_id": {
+          "const": "asi-stack-natural-repository-maintenance-v1"
+        },
+        "natural_unit": {
+          "type": "string",
+          "minLength": 100
+        },
+        "task_families": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 20
+          }
+        },
+        "effect_boundary": {
+          "type": "string",
+          "minLength": 160
+        },
+        "external_dependencies": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 15
+          }
+        },
+        "model_custody": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "implementation",
+            "repository",
+            "snapshot_commit",
+            "thinking",
+            "temperature",
+            "retry_count",
+            "maximum_new_tokens",
+            "file_sha256"
+          ],
+          "properties": {
+            "implementation": {
+              "const": "mlx_lm.generate 0.29.1"
+            },
+            "repository": {
+              "const": "mlx-community/Qwen3-8B-4bit"
+            },
+            "snapshot_commit": {
+              "const": "545dc4251c05440727734bcd94334791f6ab0192"
+            },
+            "thinking": {
+              "const": false
+            },
+            "temperature": {
+              "const": 0.0
+            },
+            "retry_count": {
+              "const": 0
+            },
+            "maximum_new_tokens": {
+              "const": 6000
+            },
+            "file_sha256": {
+              "type": "object",
+              "minProperties": 4,
+              "additionalProperties": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              }
+            }
+          }
+        }
+      }
+    },
+    "population": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "intake_opens_after_freeze_commit",
+        "inclusion",
+        "exclusion",
+        "development_task_count",
+        "heldout_task_count",
+        "heldout_tasks_per_family",
+        "sampling",
+        "assignment_seed",
+        "task_content_opened",
+        "protected_outcomes_opened"
+      ],
+      "properties": {
+        "intake_opens_after_freeze_commit": {
+          "const": true
+        },
+        "inclusion": {
+          "type": "array",
+          "minItems": 5,
+          "items": {
+            "type": "string",
+            "minLength": 30
+          }
+        },
+        "exclusion": {
+          "type": "array",
+          "minItems": 5,
+          "items": {
+            "type": "string",
+            "minLength": 20
+          }
+        },
+        "development_task_count": {
+          "const": 15
+        },
+        "heldout_task_count": {
+          "const": 40
+        },
+        "heldout_tasks_per_family": {
+          "const": 8
+        },
+        "sampling": {
+          "type": "string",
+          "minLength": 150
+        },
+        "assignment_seed": {
+          "const": 20260728
+        },
+        "task_content_opened": {
+          "const": 0
+        },
+        "protected_outcomes_opened": {
+          "const": false
+        }
+      }
+    },
+    "arms": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "role",
+          "contract"
+        ],
+        "properties": {
+          "id": {
+            "enum": [
+              "direct_model_tooling",
+              "stop_only",
+              "competent_generic_sre",
+              "proposal_plus_independent_acceptance",
+              "governed_operations"
+            ]
+          },
+          "role": {
+            "type": "string",
+            "minLength": 15
+          },
+          "contract": {
+            "type": "string",
+            "minLength": 80
+          }
+        }
+      }
+    },
+    "matching": {
+      "type": "object"
+    },
+    "fault_envelope": {
+      "type": "array",
+      "minItems": 12,
+      "maxItems": 12,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 25
+      }
+    },
+    "state_inventory": {
+      "type": "array",
+      "minItems": 14,
+      "maxItems": 14,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 3
+      }
+    },
+    "checkpoint_authority": {
+      "type": "object"
+    },
+    "evaluator_and_monitor": {
+      "type": "object"
+    },
+    "competence_gates": {
+      "type": "array",
+      "minItems": 9,
+      "maxItems": 9,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 25
+      }
+    },
+    "positive_controls": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 15
+      }
+    },
+    "adversarial_controls": {
+      "type": "array",
+      "minItems": 10,
+      "maxItems": 10,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 20
+      }
+    },
+    "fair_rescue_steps": {
+      "type": "array",
+      "minItems": 7,
+      "maxItems": 7,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 25
+      }
+    },
+    "outcomes": {
+      "type": "object"
+    },
+    "analysis": {
+      "type": "object"
+    },
+    "heldout": {
+      "type": "object"
+    },
+    "execution": {
+      "type": "object"
+    },
+    "transition_rules": {
+      "type": "object"
+    },
+    "resource_gate": {
+      "type": "string",
+      "minLength": 150
+    },
+    "support_state_effect": {
+      "const": "none"
+    },
+    "release_effect": {
+      "const": "none"
+    }
+  }
+}

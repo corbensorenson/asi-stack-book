@@ -42,6 +42,7 @@ P2_RESOURCE = ROOT / "evidence_quality/p2_resource_ceiling.json"
 P2_REPLACEMENT_QUEUE = ROOT / "experiments/p2_governed_repository_admission/corpus/replacement_queue.json"
 P5_STATEFUL_RESULT = ROOT / "experiments/effect_complete_service/results/2026-07-27-local.json"
 P5_NATURAL_TRACE = ROOT / "experiments/p5_natural_publication_service_trace/results/2026-07-27-development.json"
+P5_NATURAL_CAMPAIGN = ROOT / "experiments/governed_operations_argument_exit/preregistration.json"
 READER_MANIFEST = ROOT / "editions/reader_manuscript/reader_2026_07_18/manifest.json"
 READER_RELEASE_RECORD = ROOT / "release_records/2026-07-18-reader-2026-07-18-0921a924.json"
 STRUCTURAL_RESEARCH = ROOT / "docs/structural_completeness_chapter_research_2026_07_19.md"
@@ -228,6 +229,7 @@ def inputs() -> dict:
         "p2_replacement_queue": load(P2_REPLACEMENT_QUEUE),
         "p5_stateful_result": load(P5_STATEFUL_RESULT),
         "p5_natural_trace": load(P5_NATURAL_TRACE),
+        "p5_natural_campaign": load(P5_NATURAL_CAMPAIGN),
         "reader_manifest": load(READER_MANIFEST),
         "reader_release_record": load(READER_RELEASE_RECORD),
         "structural_research": STRUCTURAL_RESEARCH.read_text(encoding="utf-8"),
@@ -314,6 +316,7 @@ def errors(data: dict) -> list[str]:
         "## P5 — Effect-complete governed reference system",
         "### P5 stateful-service vertical-slice checkpoint — 2026-07-27",
         "### P5 natural publication-service development checkpoint — 2026-07-27",
+        "### P5 prospective natural stateful-service campaign freeze — 2026-07-28",
         "## P6 — Evidence, instrument, and source renewal",
         "### P6.4-R18 — terminal bounded conceptual-completeness packet",
         "### P6.5 — Round 16 post-activation integration debt",
@@ -1913,10 +1916,8 @@ def errors(data: dict) -> list[str]:
     p5 = status.get("p5_effect_complete_reference", {})
     p5_service = p5.get("stateful_service_slice", {})
     p5_result = data["p5_stateful_result"]
-    if p5.get("state") != (
-        "in_progress_two_bounded_local_slices_and_one_natural_development_trace_terminal_at_exact_scope"
-    ):
-        out.append("P5 two-slice plus natural-development-trace status drifted")
+    if p5.get("state") != "in_progress_prospective_natural_campaign_frozen_outcomes_closed":
+        out.append("P5 prospective natural-campaign state drifted")
     if (
         p5_service.get("source_commit")
         != p5_result.get("custody", {}).get("attested_source_commit")
@@ -1984,6 +1985,75 @@ def errors(data: dict) -> list[str]:
         or p5_trace.get("record_policy_effect") != "none"
     ):
         out.append("P5 natural publication development trace laundered evidence authority")
+
+    p5_campaign = p5.get("prospective_natural_stateful_campaign", {})
+    campaign = data["p5_natural_campaign"]
+    if (
+        p5_campaign.get("campaign_id") != campaign.get("campaign_id")
+        or p5_campaign.get("protocol_path")
+        != "experiments/governed_operations_argument_exit/preregistration.json"
+        or p5_campaign.get("report_path")
+        != "docs/p5_natural_stateful_service_campaign_preregistration.md"
+        or p5_campaign.get("schema_path")
+        != "schemas/governed_operations_campaign_preregistration.schema.json"
+        or p5_campaign.get("state") != campaign.get("state")
+        or p5_campaign.get("frozen_date") != campaign.get("frozen_date")
+        or p5_campaign.get("service_id") != campaign.get("service", {}).get("service_id")
+        or p5_campaign.get("model_repository")
+        != campaign.get("service", {}).get("model_custody", {}).get("repository")
+        or p5_campaign.get("model_snapshot_commit")
+        != campaign.get("service", {}).get("model_custody", {}).get("snapshot_commit")
+        or p5_campaign.get("arm_count") != len(campaign.get("arms", []))
+        or p5_campaign.get("task_family_count")
+        != len(campaign.get("service", {}).get("task_families", []))
+        or p5_campaign.get("development_task_count")
+        != campaign.get("population", {}).get("development_task_count")
+        or p5_campaign.get("heldout_task_count")
+        != campaign.get("population", {}).get("heldout_task_count")
+        or p5_campaign.get("fault_class_count") != len(campaign.get("fault_envelope", []))
+        or p5_campaign.get("state_class_count") != len(campaign.get("state_inventory", []))
+        or p5_campaign.get("external_dependency_count")
+        != len(campaign.get("service", {}).get("external_dependencies", []))
+        or p5_campaign.get("competence_gate_count")
+        != len(campaign.get("competence_gates", []))
+        or p5_campaign.get("positive_control_count")
+        != len(campaign.get("positive_controls", []))
+        or p5_campaign.get("adversarial_control_count")
+        != len(campaign.get("adversarial_controls", []))
+        or p5_campaign.get("fair_rescue_step_count")
+        != len(campaign.get("fair_rescue_steps", []))
+        or p5_campaign.get("co_primary_outcome_count")
+        != len(campaign.get("outcomes", {}).get("co_primary", []))
+        or p5_campaign.get("secondary_outcome_count")
+        != len(campaign.get("outcomes", {}).get("secondary", []))
+        or p5_campaign.get("cost_metric_count")
+        != len(campaign.get("outcomes", {}).get("costs", []))
+        or p5_campaign.get("task_content_opened")
+        != campaign.get("population", {}).get("task_content_opened")
+        or p5_campaign.get("protected_outcomes_opened")
+        != campaign.get("heldout", {}).get("protected_outcomes_opened")
+        or p5_campaign.get("institutionally_independent")
+        != campaign.get("evaluator_and_monitor", {}).get("institutionally_independent")
+        or p5_campaign.get("t4_substitution_allowed")
+        != campaign.get("heldout", {}).get("t4_substitution_allowed")
+        or p5_campaign.get("public_effects_during_trials")
+        != campaign.get("matching", {}).get("public_effects_during_trials")
+    ):
+        out.append("P5 prospective natural campaign and roadmap status diverged")
+    if (
+        p5_campaign.get("task_content_opened") != 0
+        or p5_campaign.get("protected_outcomes_opened") is not False
+        or p5_campaign.get("institutionally_independent") is not False
+        or p5_campaign.get("t4_substitution_allowed") is not False
+        or p5_campaign.get("public_effects_during_trials") is not False
+        or campaign.get("execution", {}).get("natural_tasks_run") != 0
+        or campaign.get("execution", {}).get("fault_injections_run") != 0
+        or campaign.get("execution", {}).get("operators_recruited") != 0
+        or campaign.get("execution", {}).get("empirical_result") != "none"
+        or campaign.get("support_state_effect") != "none"
+        or campaign.get("release_effect") != "none"
+    ):
+        out.append("P5 prospective campaign opened outcomes or laundered authority")
 
     expected_ids = [f"P{i}" for i in range(9)]
     if [row.get("id") for row in status.get("priorities", [])] != expected_ids:
@@ -2088,6 +2158,12 @@ def main() -> None:
     mutate("P2 rank-six reopening", lambda c: c["status"]["p2_replacement_execution"].__setitem__("rank6_authorized", True))
     mutate("P2 resource premature pass", lambda c: c["p2_resource"]["qualification_state"].__setitem__("resource_gate_passed", True))
     mutate("P2 resource claim laundering", lambda c: c["p2_resource"]["campaign_ceilings"].__setitem__("resource_exhaustion_effect", "claim_failure"))
+    mutate("P5 protected task opening", lambda c: c["p5_natural_campaign"]["population"].__setitem__("task_content_opened", 1))
+    mutate("P5 heldout denominator shrink", lambda c: c["p5_natural_campaign"]["population"].__setitem__("heldout_task_count", 20))
+    mutate("P5 strong baseline deletion", lambda c: c["p5_natural_campaign"]["arms"].pop(2))
+    mutate("P5 public effect widening", lambda c: c["p5_natural_campaign"]["matching"].__setitem__("public_effects_during_trials", True))
+    mutate("P5 institutional independence invention", lambda c: c["p5_natural_campaign"]["evaluator_and_monitor"].__setitem__("institutionally_independent", True))
+    mutate("P5 T4 substitution laundering", lambda c: c["p5_natural_campaign"]["heldout"].__setitem__("t4_substitution_allowed", True))
     mutate("false self-referential attestation", lambda c: c["status"]["attestation"].__setitem__("state", "commit_bound_clean"))
     mutate("branch permission", lambda c: c["status"]["attestation"].__setitem__("branches_allowed_for_book_work", True))
     mutate("reader publication laundering", lambda c: c["reader_manifest"].__setitem__("release_state", "candidate"))

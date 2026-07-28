@@ -64,8 +64,8 @@ def errors(data: dict[str, Any]) -> list[str]:
     if record.get("fixture_degradation_route") != "accept_degraded" or record.get("fixture_recovery_route") != "safe_hold" or record.get("declared_state_class_count") != 11 or record.get("semantic_mutations_rejected") != 18 or record.get("natural_incidents_observed") != 0:
         out.append("record contract denominator or route drifted")
     lane = audit["claim_bearing_empirical_lane"]
-    expected_lane = {"arm_count": 4, "competence_gate_count": 9, "positive_control_count": 5, "adversarial_control_count": 8, "rescue_step_count": 6, "joint_outcome_count": 13, "natural_tasks_run": 0, "fault_injections_run": 0, "operators_recruited": 0}
-    if lane.get("state") != "protocol_ready_resource_and_environment_authority_required_not_executed" or any(lane.get(key) != value for key, value in expected_lane.items()):
+    expected_lane = {"arm_count": 5, "competence_gate_count": 9, "positive_control_count": 6, "adversarial_control_count": 10, "rescue_step_count": 7, "joint_outcome_count": 13, "campaign_state_class_count": 14, "fault_class_count": 12, "development_task_count": 15, "heldout_task_count": 40, "natural_tasks_run": 0, "fault_injections_run": 0, "operators_recruited": 0}
+    if lane.get("state") != "prospectively_frozen_outcomes_closed_implementation_and_development_pending" or any(lane.get(key) != value for key, value in expected_lane.items()):
         out.append("empirical lane state or denominator drifted")
     if lane.get("protected_outcomes_opened") is not False or lane.get("p2_q1_q2_overlap_allowed") is not False or lane.get("p2_displacement_allowed") is not False or lane.get("empirical_result") != "none":
         out.append("empirical custody drifted")
@@ -122,7 +122,7 @@ def main() -> None:
     contract = subprocess.run([sys.executable, "scripts/validate_governed_operations_control_contract.py"], cwd=ROOT, text=True, capture_output=True)
     if contract.returncode: failures.append((contract.stdout + contract.stderr).strip())
     if failures: raise SystemExit("P7.2-T4 reader integration failed:\n - " + "\n - ".join(failures))
-    print("P7.2-T4 reader integration passed: first tranche terminal at 4 argument-level chapters, 9 source mappings, 2 implemented targets, 13 Lean declarations, authored safe hold, 4-arm campaign unexecuted, flagship separate, 13 integration mutations rejected; support/release/publication none.")
+    print("P7.2-T4 reader integration passed: first tranche terminal at 4 argument-level chapters, 9 source mappings, 2 implemented targets, 13 Lean declarations, authored safe hold, prospectively frozen 5-arm/40-task campaign unexecuted, flagship separate, 13 integration mutations rejected; support/release/publication none.")
 
 
 if __name__ == "__main__":

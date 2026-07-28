@@ -49,14 +49,18 @@
   },
   "claim_bearing_empirical_lane": {
     "protocol_path": "experiments/governed_operations_argument_exit/preregistration.json",
-    "protocol_sha256": "5ba99796b4e0121dd992bcfb63356aad7a8a1dab3f00dc32f19039b60173be7c",
-    "state": "protocol_ready_resource_and_environment_authority_required_not_executed",
-    "arm_count": 4,
+    "protocol_sha256": "0a9b3cdb146870e269bc7f84b1f79be6621a86161629a2b57b5a87641f0fb85e",
+    "state": "prospectively_frozen_outcomes_closed_implementation_and_development_pending",
+    "arm_count": 5,
     "competence_gate_count": 9,
-    "positive_control_count": 5,
-    "adversarial_control_count": 8,
-    "rescue_step_count": 6,
+    "positive_control_count": 6,
+    "adversarial_control_count": 10,
+    "rescue_step_count": 7,
     "joint_outcome_count": 13,
+    "campaign_state_class_count": 14,
+    "fault_class_count": 12,
+    "development_task_count": 15,
+    "heldout_task_count": 40,
     "maximum_negative_level": "N3_exact",
     "natural_tasks_run": 0,
     "fault_injections_run": 0,
@@ -89,5 +93,5 @@
   "support_state_effect": "none",
   "release_effect": "none",
   "publication_effect": "none",
-  "residual_owner": "Governed Operations owns the unexecuted matched natural-service campaign and effect-complete multi-process runtime harness. The Theseus flagship program separately owns T4 natural happy and blocked/rollback traces; neither may borrow P2/Q1/Q2 denominators or support."
+  "residual_owner": "Governed Operations owns implementation, calibration, development, and the still-sealed final denominator for the frozen five-arm natural-service campaign plus the effect-complete multi-process runtime harness. The Theseus flagship program separately owns T4 natural happy and blocked/rollback traces; neither may borrow P2/Q1/Q2 denominators or support."
 }

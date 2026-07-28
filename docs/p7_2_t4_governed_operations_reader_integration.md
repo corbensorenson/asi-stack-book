@@ -35,11 +35,15 @@ emergency lease. These are finite semantics, not operational evidence.
 
 ## Empirical and flagship separation
 
-The four-arm natural-service protocol is ready but unexecuted. It freezes nine
-competence gates, five positive controls, eight adversarial controls, six rescue
-steps, thirteen joint outcomes, matched stop-only and competent generic-SRE
-baselines, and an N3 exact negative ceiling. No natural task, fault injection,
-or operator has entered the campaign, and protected outcomes remain closed.
+The natural-service protocol is now prospectively frozen but unexecuted. Five
+matched arms include an ordinary floor, stop-only, competent generic SRE,
+proposal plus separate acceptance, and governed operations. The campaign binds
+one exact local model snapshot, five natural task families, fifteen development
+tasks, forty protected tasks, twelve fault classes, fourteen state classes,
+nine competence gates, six positive controls, ten adversarial controls, seven
+rescue steps, thirteen joint outcomes, full lifecycle costs, and an N3 exact
+negative ceiling. No natural task, fault injection, or operator has entered the
+campaign, and protected task content and outcomes remain closed.
 
 The authored packet is not Theseus flagship `T4`. The flagship still waits for
 T2 and T3 and separately owns one natural happy trace and one natural blocked or

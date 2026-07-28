@@ -11,6 +11,7 @@ from jsonschema import Draft202012Validator, FormatChecker
 
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMA = ROOT / "schemas/governed_operations_control_packet.schema.json"
+CAMPAIGN_SCHEMA = ROOT / "schemas/governed_operations_campaign_preregistration.schema.json"
 FIXTURE = ROOT / "tests/fixtures/protocol_records/governed_operations_control_packet.valid.json"
 PROTOCOL = ROOT / "experiments/governed_operations_argument_exit/preregistration.json"
 LEAN = ROOT / "lean/AsiStackProofs/GovernedOperations.lean"
@@ -81,6 +82,11 @@ def errors(packet: dict[str, Any], protocol: dict[str, Any], *, validate_schema:
     if validate_schema:
         schema_errors = sorted(Draft202012Validator(load(SCHEMA), format_checker=FormatChecker()).iter_errors(packet), key=lambda err: list(err.path))
         out.extend(f"schema: {error.message}" for error in schema_errors)
+        protocol_schema_errors = sorted(
+            Draft202012Validator(load(CAMPAIGN_SCHEMA)).iter_errors(protocol),
+            key=lambda err: list(err.path),
+        )
+        out.extend(f"campaign schema: {error.message}" for error in protocol_schema_errors)
     if set(packet.get("source_ids", [])) != SOURCES:
         out.append("source denominator drifted")
     expected = packet.get("expected_routes", {})
@@ -90,14 +96,91 @@ def errors(packet: dict[str, Any], protocol: dict[str, Any], *, validate_schema:
         out.append("recovery route mismatch")
     if expected.get("degradation") != "accept_degraded" or expected.get("recovery") != "safe_hold":
         out.append("authored joined-case disposition drifted")
-    if protocol.get("state") != "protocol_ready_resource_and_environment_authority_required_not_executed" or protocol.get("maximum_negative_level") != "N3_exact":
+    if (
+        protocol.get("state")
+        != "prospectively_frozen_outcomes_closed_implementation_and_development_pending"
+        or protocol.get("maximum_negative_level") != "N3_exact"
+    ):
         out.append("protocol state or negative ceiling drifted")
-    expected_counts = {"arms": 4, "competence_gates": 9, "positive_controls": 5, "adversarial_controls": 8, "fair_rescue_steps": 6, "joint_outcomes": 13}
+    expected_counts = {
+        "arms": 5,
+        "competence_gates": 9,
+        "positive_controls": 6,
+        "adversarial_controls": 10,
+        "fair_rescue_steps": 7,
+    }
     if any(len(protocol.get(key, [])) != count for key, count in expected_counts.items()):
         out.append("protocol denominator drifted")
+    expected_arm_ids = [
+        "direct_model_tooling",
+        "stop_only",
+        "competent_generic_sre",
+        "proposal_plus_independent_acceptance",
+        "governed_operations",
+    ]
+    if [arm.get("id") for arm in protocol.get("arms", [])] != expected_arm_ids:
+        out.append("campaign arm identities or order drifted")
+    population = protocol.get("population", {})
+    if (
+        population.get("development_task_count") != 15
+        or population.get("heldout_task_count") != 40
+        or population.get("heldout_tasks_per_family") != 8
+        or population.get("task_content_opened") != 0
+        or population.get("protected_outcomes_opened") is not False
+    ):
+        out.append("natural-task population or custody drifted")
+    service = protocol.get("service", {})
+    custody = service.get("model_custody", {})
+    if (
+        service.get("service_id") != "asi-stack-natural-repository-maintenance-v1"
+        or len(service.get("task_families", [])) != 5
+        or len(service.get("external_dependencies", [])) != 5
+        or custody.get("repository") != "mlx-community/Qwen3-8B-4bit"
+        or custody.get("snapshot_commit") != "545dc4251c05440727734bcd94334791f6ab0192"
+        or custody.get("implementation") != "mlx_lm.generate 0.29.1"
+        or len(custody.get("file_sha256", {})) != 4
+    ):
+        out.append("natural service or externally rooted model custody drifted")
+    matching = protocol.get("matching", {})
+    if (
+        matching.get("all_five_arms_receive_same_task_and_fault") is not True
+        or matching.get("same_model_snapshot_prompt_budget_tools_context_and_wall_clock")
+        is not True
+        or matching.get("arm_labels_blinded_from_evaluator") is not True
+        or matching.get("public_effects_during_trials") is not False
+    ):
+        out.append("matched-arm or public-effect boundary drifted")
+    evaluator = protocol.get("evaluator_and_monitor", {})
+    if (
+        evaluator.get("institutionally_independent") is not False
+        or evaluator.get("independent_environment_truth") is not True
+        or evaluator.get("calibration_minimum_cases") != 24
+        or len(evaluator.get("calibration_requirements", [])) != 6
+    ):
+        out.append("evaluator independence or calibration boundary drifted")
+    if len(protocol.get("fault_envelope", [])) != 12 or len(protocol.get("state_inventory", [])) != 14:
+        out.append("fault envelope or full-state inventory drifted")
+    outcomes = protocol.get("outcomes", {})
+    analysis = protocol.get("analysis", {})
+    if (
+        len(outcomes.get("co_primary", [])) != 4
+        or len(outcomes.get("secondary", [])) != 9
+        or len(outcomes.get("costs", [])) != 11
+        or outcomes.get("no_scalar_score_may_hide_a_co_primary_harm") is not True
+        or analysis.get("primary_comparison") != "governed_operations_vs_competent_generic_sre"
+        or analysis.get("minimum_heldout_blocks") != 40
+    ):
+        out.append("joint outcome, cost, or analysis contract drifted")
     heldout = protocol.get("heldout", {})
     execution = protocol.get("execution", {})
-    if heldout.get("protected_outcomes_opened") is not False or heldout.get("p2_q1_q2_denominator_overlap_allowed") is not False or heldout.get("p2_displacement_allowed") is not False:
+    if (
+        heldout.get("protected_outcomes_opened") is not False
+        or heldout.get("outcome_aware_changes_allowed") is not False
+        or heldout.get("single_opening_after_all_gates") is not True
+        or heldout.get("p2_q1_q2_denominator_overlap_allowed") is not False
+        or heldout.get("p2_displacement_allowed") is not False
+        or heldout.get("t4_substitution_allowed") is not False
+    ):
         out.append("held-out or P2 isolation drifted")
     if any(execution.get(key) != 0 for key in ("natural_tasks_run", "fault_injections_run", "operators_recruited")) or execution.get("empirical_result") != "none":
         out.append("unearned empirical execution recorded")
@@ -150,9 +233,32 @@ def main() -> None:
         mutation(candidate)
         if not set(errors(candidate, protocol)) - baseline:
             failures.append(f"negative mutation accepted: {label}")
+    protocol_mutations = [
+        ("open task content", lambda p: p["population"].__setitem__("task_content_opened", 1)),
+        ("open protected outcomes", lambda p: p["heldout"].__setitem__("protected_outcomes_opened", True)),
+        ("shrink denominator", lambda p: p["population"].__setitem__("heldout_task_count", 20)),
+        ("drop strong baseline", lambda p: p["arms"].pop(2)),
+        ("unmatch model", lambda p: p["matching"].__setitem__("same_model_snapshot_prompt_budget_tools_context_and_wall_clock", False)),
+        ("allow public effect", lambda p: p["matching"].__setitem__("public_effects_during_trials", True)),
+        ("invent institutional independence", lambda p: p["evaluator_and_monitor"].__setitem__("institutionally_independent", True)),
+        ("drop calibration", lambda p: p["evaluator_and_monitor"].__setitem__("calibration_minimum_cases", 0)),
+        ("drop fault", lambda p: p["fault_envelope"].pop()),
+        ("drop state class", lambda p: p["state_inventory"].pop()),
+        ("hide co-primary harm", lambda p: p["outcomes"].__setitem__("no_scalar_score_may_hide_a_co_primary_harm", False)),
+        ("permit T4 substitution", lambda p: p["heldout"].__setitem__("t4_substitution_allowed", True)),
+        ("invent execution", lambda p: p["execution"].__setitem__("natural_tasks_run", 1)),
+        ("launder support", lambda p: p.__setitem__("support_state_effect", "promoted")),
+        ("launder release", lambda p: p.__setitem__("release_effect", "authorized")),
+    ]
+    baseline = set(errors(packet, protocol))
+    for label, mutation in protocol_mutations:
+        candidate_protocol = copy.deepcopy(protocol)
+        mutation(candidate_protocol)
+        if not set(errors(packet, candidate_protocol)) - baseline:
+            failures.append(f"campaign negative mutation accepted: {label}")
     if failures:
         raise SystemExit("Governed operations control contract failed:\n - " + "\n - ".join(failures))
-    print("Governed operations control contract passed: authored joined case, narrowed degradation accepted, unknown external effect held safe, completed positive recovery control accepted, 11 state classes, 18 mutations rejected, 13 Lean declarations; no natural incidents or support/release/publication authority.")
+    print("Governed operations control contract passed: authored joined case, narrowed degradation accepted, unknown external effect held safe, completed positive recovery control accepted, 11 packet state classes, prospectively frozen 5-arm/40-task natural campaign with 14 campaign state classes, 18 packet plus 15 campaign mutations rejected, 13 Lean declarations; protected outcomes closed and no support/release/publication authority.")
 
 
 if __name__ == "__main__":
