@@ -2179,6 +2179,8 @@ absence, fulfilled right, legal compliance, support, readiness, or release.
 
 Stable ID: `confidential-and-verifiable-ai-computation`
 
+Concept-completion state (2026-07-28): eight owner-specific mechanisms are written and exact-digest reviewed at argument support; confidentiality, integrity, attestation, leakage, and end-to-end authorization guarantees remain unproved.
+
 Chapter job: Govern AI execution across distrust boundaries by separating
 input privacy, model privacy, computation integrity, platform identity, output
 authenticity, availability, auditability, and authorization instead of
@@ -2898,6 +2900,8 @@ Proof boundary: the three assumption-restating Intent-to-Execution declarations,
 ### Perception, Sensor Fusion, and Observation Trust
 
 Stable ID: `perception-sensor-fusion-and-observation-trust`
+
+Concept-completion state (2026-07-28): eight owner-specific mechanisms are written and exact-digest reviewed at argument support; observation correctness, corruption tolerance, calibration, and deployed safety remain unproved.
 
 Chapter job: Own the transition from heterogeneous raw signals to an admitted
 observation, preserving sensor identity, time, calibration, missingness,
@@ -3838,6 +3842,8 @@ Lean proof targets:
 
 Stable ID: `human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty`
 
+Concept-completion state (2026-07-28): eight owner-specific mechanisms are written and exact-digest reviewed at argument support; beneficial complementarity, neural intervention safety, equity, and durable exit remain unproved.
+
 Chapter job: Govern longitudinal bidirectional human-AI coupling in which
 personalization, assistive dependence, neural sensing, inferred mental state,
 or stimulation changes the human and the system across time.
@@ -4251,6 +4257,8 @@ Cross-chapter partitioned-authority proof note: the partitioned-authority fixtur
 ### Embodied Agency, Real-Time Control, and Physical Safety
 
 Stable ID: `embodied-agency-real-time-control-and-physical-safety`
+
+Concept-completion state (2026-07-28): eight owner-specific mechanisms are written and exact-digest reviewed at argument support; controller stability, sim-to-real transfer, intervention efficacy, and deployed physical safety remain unproved.
 
 Chapter job: Own the transition from an authorized decision to deadline-bound
 physical actuation under uncertain dynamics, independent interlocks, fallback
@@ -4781,6 +4789,8 @@ support a chapter-core promotion.
 
 Stable ID: `relational-dimension-compilation-and-polyadic-cognition`
 
+Concept-completion state (2026-07-28): eight owner-specific mechanisms are written and exact-digest reviewed at argument support; relational irreducibility, useful higher-order structure, transfer, and primitive-arity sufficiency remain unproved.
+
 Chapter job: Own the lifecycle for typed role-sensitive higher-order relation
 candidates from dimensional IR and lower-order rescue through qualification,
 compilation, routing, demotion, reversible contraction, and RODIE evaluation.
@@ -4956,6 +4966,8 @@ support, readiness, release, transfer, SOTA, AGI, or ASI claim.
 ### Learning Theory, Generalization, and Scaling Science
 
 Stable ID: `learning-theory-generalization-and-scaling-science`
+
+Concept-completion state (2026-07-28): eight owner-specific mechanisms are written and exact-digest reviewed at argument support; generalization, transfer, scaling forecasts, emergence, and regime-change predictions remain unproved.
 
 Chapter job: The stack repeatedly relies on claims that learning will generalize, capabilities will transfer, losses will scale, or phase changes will appear outside observed training support. Those claims require an owner that connects assumptions about data, hypothesis class, optimization, inductive bias, compute, and evaluation to an exact prediction and failure envelope.
 

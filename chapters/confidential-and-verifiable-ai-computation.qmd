@@ -3,8 +3,8 @@ title: "Confidential and Verifiable AI Computation"
 chapter_id: "confidential-and-verifiable-ai-computation"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
-draft_maturity: "substantive conceptual draft"
-last_updated: "2026-07-25"
+draft_maturity: "v0.3 concept-complete argument-level manuscript"
+last_updated: "2026-07-28"
 primary_sources:
   - "ext_nist_privacy_enhancing_cryptography_2026"
   - "ext_zkllm_2024"
@@ -117,6 +117,8 @@ system should retain the simpler governed route.
 
 ## Start with a guarantee vector, not a security adjective
 
+**Mechanism.** Declare the adversary, protected assets, permitted leakage, trust assumptions, availability need, unsupported properties, and separate guarantees for inputs, weights, intermediates, execution, outputs, and audit before choosing technology. **Failure mode.** “Private” or “secure” can collapse mutually different confidentiality, integrity, authenticity, and authorization claims. **Non-claim.** A complete guarantee vector proves none of its entries. **Source grounding.** NIST’s privacy-enhancing cryptography program supplies distinct primitive families and composition pressure, not implementation assurance.
+
 Suppose a hospital wants a model provider to process a record. “Run this
 securely” is underspecified. The hospital may want input confidentiality from
 the provider, the provider may want weight confidentiality from the hospital,
@@ -148,6 +150,8 @@ FHE, MPC, zero-knowledge proofs, and related tools as different families that
 can be composed rather than as one magic privacy layer.
 
 ## Pick a construction only after declaring the distrust boundary
+
+**Mechanism.** Select local execution, confidential hardware, FHE, MPC, zero knowledge, differential privacy, private retrieval, or a hybrid by matching its trust and leakage model to the declared boundary. **Failure mode.** A fashionable primitive can protect the wrong asset, shift trust to an undeclared party, or compose into weaker end-to-end behavior. **Non-claim.** Construction selection is not a security proof or policy authorization. **Source grounding.** NIST provides family-level terminology; zkLLM is one configuration-bound proof-of-possibility comparator.
 
 Mechanism selection is a systems decision, not a prestige ranking.
 
@@ -182,6 +186,8 @@ claims.
 
 ## Evidence is a statement appraised by a party
 
+**Mechanism.** Bind model, code, preprocessing, configuration, parameters, input and output commitments, platform state, and policy identity into the statement that is evidenced or proved. **Failure mode.** A valid proof can execute the wrong artifact or omit behavior performed outside the committed relation. **Non-claim.** Artifact binding does not establish model quality, output truth, or legitimate purpose. **Source grounding.** zkLLM motivates model and inference commitments within a bounded circuit; no general artifact-binding implementation is reproduced here.
+
 The RATS architecture usefully separates an **Attester**, a **Verifier**, and a
 **Relying Party**. That separation belongs in the ASI stack. The machine
 producing evidence should not be allowed to declare that its own evidence is
@@ -207,6 +213,8 @@ chain is revoked; a certificate can remain valid while the allowed model
 version has changed. Lifecycle state therefore belongs inside appraisal.
 
 ## The circuit-to-semantics gap
+
+**Mechanism.** Keep Attester, Target Environment, Attesting Environment, Verifier, Relying Party, endorsements, reference values, evidence, appraisal policy, and authorization action as separate identities and receipts. **Failure mode.** Collapsing roles lets a vendor assertion become its own independent authorization. **Non-claim.** An Attestation Result is not proof of trustworthy intent, semantic correctness, or verifier independence. **Source grounding.** RFC 9334 supplies this informational architecture; it is not a deployed protocol or local root-of-trust result.
 
 zkLLM is an important proof of possibility: its authors report bounded
 zero-knowledge proofs for large-model inference with model privacy under their
@@ -234,6 +242,8 @@ broad to be meaningful.
 
 ## Cost and fallback are security properties
 
+**Mechanism.** Bind freshness through nonce, timestamp, or epoch; record reference-value and policy versions; and make revocation, rotation, reappraisal, and replay rejection explicit. **Failure mode.** Stale evidence can remain cryptographically valid after firmware, artifact, workload, verifier policy, or compromise state changes. **Non-claim.** Fresh evidence does not establish current semantic correctness or lawful use. **Source grounding.** RATS provides freshness and appraisal distinctions; this chapter has produced no attestation evidence.
+
 A protected path that works only for a tiny prompt or one user is not a
 deployment result. Native and protected runs must share task inputs, model
 quality, hardware accounting, batch policy, concurrency, context length,
@@ -250,6 +260,8 @@ authorized unprotected path. Users and downstream services must be able to tell
 which path produced the result.
 
 ## Mechanism
+
+**Mechanism.** Maintain a semantic correspondence review from intended operation through preprocessing, quantization, circuit or measured environment, committed inputs and outputs, and the consumer’s interpretation. **Failure mode.** The encoded relation may be satisfied exactly while implementing the wrong preprocessing, approximation, policy, or meaning. **Non-claim.** Reviewing correspondence does not prove equivalence for all inputs. **Source grounding.** zkLLM makes the configuration-bounded circuit relation concrete; its reported result does not close the circuit-to-semantics gap.
 
 - Express the requested guarantee vector separately for input privacy, model privacy, intermediate-state privacy, computation integrity, output authenticity, availability, and auditability.
 - Choose among FHE, MPC, zero-knowledge proofs, confidential execution, private retrieval, differential privacy, or hybrid composition against an explicit adversary and leakage model.
@@ -295,6 +307,8 @@ be rejected and recovered elsewhere. Quietly substituting an unprotected path
 would invalidate both the receipt and the user's information-flow decision.
 
 ### A protected-execution receipt
+
+**Mechanism.** Account for outputs, access patterns, timing, memory traffic, failures, logs, caches, proofs, metadata, verifier queries, and composition with neighboring services as explicit leakage channels. Preserve the attacker’s observation surface and measurement method in the receipt rather than writing “encrypted” as a terminal verdict. **Failure mode.** Inputs or weights can remain hidden while outputs, repeated queries, page faults, timing, or operational metadata reveal protected information; a proof system can also enlarge denial-of-service or traffic-analysis surfaces. **Non-claim.** Enumerating leakage does not measure it, prove side-channel resistance, or establish end-to-end privacy. **Source grounding.** NIST warns that primitive families expose different leakage and trust assumptions, RATS notes sensitive evidence, and zkLLM reports bounded costs. None supplies a local side-channel evaluation, so this remains design rationale.
 
 The reusable artifact is not a blanket security badge but a
 `ProtectedExecutionReceipt`:
@@ -351,6 +365,8 @@ state must remain distinguishable even when every primitive functions as
 specified.
 
 ## Failure modes
+
+**Mechanism.** Compare protected and native paths under the same task, quality target, context, concurrency, hardware boundary, batching, failure policy, and total operator cost; authorize any downgrade separately and make it observable and expiring. **Failure mode.** An unusable protected path can silently fall back, or unmatched accounting can hide quality loss and verifier burden. **Non-claim.** Feasible latency does not prove security, and costly protection is not automatically safer. **Source grounding.** zkLLM supplies source-reported performance pressure; no local protected-execution benchmark has run.
 
 - Guarantee laundering collapses confidentiality, integrity, privacy, authorization, and correctness into one secure-compute label.
 - Stale or replayed attestation is accepted after artifact, platform, policy, or revocation state changed.

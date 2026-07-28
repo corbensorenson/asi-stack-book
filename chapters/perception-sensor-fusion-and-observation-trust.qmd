@@ -3,8 +3,8 @@ title: "Perception, Sensor Fusion, and Observation Trust"
 chapter_id: "perception-sensor-fusion-and-observation-trust"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
-draft_maturity: "v0.1 integrated argument chapter"
-last_updated: "2026-07-24"
+draft_maturity: "v0.3 concept-complete argument-level manuscript"
+last_updated: "2026-07-28"
 primary_sources:
   - "ext_multimodal_machine_learning_taxonomy_2019"
   - "ext_imagebind_2023"
@@ -64,6 +64,8 @@ whose assumptions and unresolved disagreement remain visible to every consumer.
 
 ## Problem
 
+**Mechanism.** Compile every sensing request into a task-relative observation need that names the consumer, consequence class, required variables, deadline, acceptable uncertainty, and maximum authority. **Failure mode.** A generic perception request can return plausible objects while omitting the quantity or timing the decision actually needs. **Non-claim.** Naming the need does not make any sensor accurate or authorize an action. **Source grounding.** The multimodal taxonomy and Gemini Robotics motivate distinct perception operations and embodied consumers, but the admission contract remains ASI Stack design rationale.
+
 Planning, world modeling, and control depend on observations, yet most AI
 architecture diagrams begin after perception has already compressed the world
 into convenient tokens, objects, or embeddings. That omission hides some of
@@ -115,6 +117,8 @@ tracking without rewriting what the system believed earlier.
 
 ## Why existing approaches are insufficient
 
+**Mechanism.** Keep sensor identity, calibration, pose, preprocessing, model version, and operating envelope attached to every measurement and invalidate descendants when any of them changes materially. **Failure mode.** Clean benchmark accuracy or a new encoder can conceal calibration drift, wrong geometry, or an expired sensor-to-world transform. **Non-claim.** Complete identity metadata is not proof of calibration or field reliability. **Source grounding.** The 3D-corruption and sensor-fusion studies expose configuration sensitivity; neither reproduces the proposed lifecycle control.
+
 **A high benchmark score is not an observation contract.** Accuracy averages
 over a dataset and scoring rule. It does not state which sensor version,
 environment, corruption, class tail, latency, or consequence the score covers.
@@ -164,6 +168,8 @@ environmental truth, causal grounding, physical safety, support, readiness,
 release, transfer, nor SOTA.
 
 ## Mechanism
+
+**Mechanism.** Preserve event time, acquisition time, processing time, pose time, and delivery time separately, then align channels only inside declared tolerance and uncertainty envelopes. **Failure mode.** A spatially plausible fusion can join measurements from different physical moments and manufacture agreement. **Non-claim.** Clock synchronization does not establish semantic correspondence or causal grounding. **Source grounding.** The multimodal taxonomy supports separating alignment from fusion, while the remaining timing and pose requirements are engineering proposals awaiting a natural campaign.
 
 1. **Compile the observation need.** The task declares which entities,
    attributes, spatial region, time horizon, precision, recall, and consequence
@@ -293,6 +299,8 @@ ObservationContract {
 
 ## Interfaces
 
+**Mechanism.** Represent each channel as its own hypothesis packet with measurement, uncertainty, coverage, missingness, transformation history, and alternative explanations before any shared representation is admitted. **Failure mode.** Early collapse can turn absence into negative evidence or make a dominant modality overwrite a rarer but decisive signal. **Non-claim.** Multiple packets do not imply independent evidence. **Source grounding.** ImageBind supplies a shared-embedding comparator and the taxonomy supplies missing-pair questions; neither establishes trustworthy hypothesis management.
+
 Command Contracts supply required evidence and consequence classes. Sensor
 adapters supply measurements and identity. Security supplies integrity and
 attack state. The observation layer returns bounded hypotheses to World Models
@@ -318,6 +326,8 @@ and returns observed outcomes, clock failures, replacements, and repair state.
 
 ## Invariants
 
+**Mechanism.** Estimate dependence explicitly and retain disagreement after fusion, distinguishing redundant agreement, complementary evidence, contradiction, and unresolved plurality. **Failure mode.** Correlated channels or a shared hub encoder can inflate confidence, while averaging can erase the very conflict that should trigger abstention. **Non-claim.** Dependence accounting does not prove that the surviving hypothesis is true. **Source grounding.** ImageBind and the adversarial sensor-fusion study motivate hub bias and cross-channel externalities; local calibration remains untested.
+
 The invariant set protects the observation's meaning while it crosses models,
 planners, controllers, storage, and later review. A downstream consumer may
 narrow a record for its task, but it may not erase missingness, manufacture
@@ -342,6 +352,8 @@ authority.
 
 ## Evidence
 
+**Mechanism.** Challenge the observation path with named natural corruptions, joint-channel attacks, missing modalities, distribution shift, and known-vulnerable positive controls, reporting calibration and downstream decision harm rather than accuracy alone. **Failure mode.** An easy or incomplete corruption suite can create a false-negative robustness result. **Non-claim.** Passing the suite would remain sensor-, environment-, severity-, and task-specific. **Source grounding.** The 3D corruption benchmark and camera–LiDAR attack study provide bounded external families, not local robustness evidence.
+
 The current evidence is external and architectural. The multimodal taxonomy
 separates operations; ImageBind supplies a modern shared-representation
 comparator; the 3D corruption work supplies natural degradation tests; the
@@ -362,6 +374,8 @@ operator cost. A failed positive control or inactive route makes a null result
 instrument-inadequate, not evidence against perception governance.
 
 ## Failure modes
+
+**Mechanism.** Route stale, unsupported, contradictory, integrity-failing, or undercovered observations to active sensing, degraded mode, abstention, review, or safe hold under separately bounded sensing authority. **Failure mode.** Active perception can itself consume privacy, energy, time, or physical risk, and a degraded route can silently become ordinary operation. **Non-claim.** A safe-hold route does not establish that it is reachable or sufficient. **Source grounding.** Gemini Robotics provides embodied capability pressure; active-observation governance is not a reported source result.
 
 - sensor spoofing or poisoning;
 - calibration, pose, clock, or synchronization drift;
@@ -388,6 +402,8 @@ can exploit known sensor blind spots. Each case retains an owner, affected
 consumers, invalidation scope, and safe degradation route.
 
 ## Minimum Viable Implementation
+
+**Mechanism.** Issue an expiring observation lease that binds the admitted variables, provenance, freshness, uncertainty, permitted consumers, prohibited uses, fallback, and reconciliation rule for later evidence. **Failure mode.** Cached or replayed observations can outlive calibration, environment, or model changes and retain authority after their basis expires. **Non-claim.** A validated lease schema is not an observation-trust result. **Source grounding.** The Platonic World Model contributes authorial lineage for versioned grounding and revisable state; it supplies no empirical sensing evidence.
 
 Build a two- or three-modality observation service with immutable sensor
 identity, clock and calibration checks, per-channel hypotheses, a dependence-

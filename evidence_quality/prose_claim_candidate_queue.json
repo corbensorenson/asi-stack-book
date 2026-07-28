@@ -3,9 +3,9 @@
   "scanner": "modal and outcome-bearing sentence cue scan; candidates require semantic adjudication",
   "summary": {
     "chapter_count": 64,
-    "candidate_count": 3530,
+    "candidate_count": 3538,
     "review_state_counts": {
-      "duplicate_of_atom": 1754,
+      "duplicate_of_atom": 1762,
       "editorial_or_question": 59,
       "historical_or_source_report": 321,
       "material_atom": 3,
@@ -36870,9 +36870,47 @@
       "target_atom_id": "learning-theory-generalization-and-scaling-science.problem.001"
     },
     {
+      "candidate_id": "learning-theory-generalization-and-scaling-science.prose.e4f53ba3da60",
+      "chapter_id": "learning-theory-generalization-and-scaling-science",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:56",
+      "sentence": "**Mechanism.** Bind every generalization, transfer, emergence, or scaling statement to a dated claim contract naming population, sampling process, data support, hypothesis family, algorithm, optimization path, metric, compute regime, uncertainty, alternatives, consumer, and expiry.",
+      "cues": [
+        "transfer"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "P6.9 exact-digest semantic review maps this `claim-contract-assumptions` proposition to the existing owner atom `learning-theory-generalization-and-scaling-science.core`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "learning-theory-generalization-and-scaling-science.core"
+    },
+    {
+      "candidate_id": "learning-theory-generalization-and-scaling-science.prose.09124deb6898",
+      "chapter_id": "learning-theory-generalization-and-scaling-science",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:56",
+      "sentence": "**Failure mode.** An attractive result can silently travel to a different distribution, architecture, scale, or consequence.",
+      "cues": [
+        "scale"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "P6.9 exact-digest semantic review maps this `claim-contract-assumptions` proposition to the existing owner atom `learning-theory-generalization-and-scaling-science.core`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "learning-theory-generalization-and-scaling-science.core"
+    },
+    {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.8f669cec57eb",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:62",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:64",
       "sentence": "The stack repeatedly relies on claims that learning will generalize, capabilities will transfer, losses will scale, or phase changes will appear outside observed training support.",
       "cues": [
         "scale",
@@ -36892,7 +36930,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.f743e5b515b4",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:62",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:64",
       "sentence": "Those claims require an owner that connects assumptions about data, hypothesis class, optimization, inductive bias, compute, and evaluation to an exact prediction and failure envelope.",
       "cues": [
         "require"
@@ -36909,9 +36947,28 @@
       "target_atom_id": "learning-theory-generalization-and-scaling-science.problem.001"
     },
     {
+      "candidate_id": "learning-theory-generalization-and-scaling-science.prose.67e25a185e50",
+      "chapter_id": "learning-theory-generalization-and-scaling-science",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:70",
+      "sentence": "**Failure mode.** Asymptotic or average guarantees can become practical, adaptive, rare-event, or safety claims after their assumptions disappear.",
+      "cues": [
+        "guarantees"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "P6.9 exact-digest semantic review maps this `conditional-generalization-bounds` proposition to the existing owner atom `learning-theory-generalization-and-scaling-science.mechanism.001`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "learning-theory-generalization-and-scaling-science.mechanism.001"
+    },
+    {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.0fc76be74e0f",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:68",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:72",
       "sentence": "PAC bounds, capacity measures, stability, compression, information theory, scaling-law fits, emergence plots, and benchmark curves each illuminate part of learning.",
       "cues": [
         "measures"
@@ -36930,7 +36987,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.afc9d3339a05",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:68",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:72",
       "sentence": "None is a universal theory of deep networks, and none automatically transports from a loss metric, architecture family, data regime, optimizer, or scale range to downstream capability or safety.",
       "cues": [
         "scale"
@@ -36949,7 +37006,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.0aebb2ca8980",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:70",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:74",
       "sentence": "It wins if it can preserve quantifiers, data support, hypothesis class, algorithm and optimization bias, metric transformations, breakpoint alternatives, held-out forecasts, and transfer boundaries without this owner.",
       "cues": [
         "transfer"
@@ -36968,7 +37025,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.b0c9d2d83c1d",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:87",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:91",
       "sentence": "**What this scaling-science diagram shows:** an assumption-bound prediction moves.",
       "cues": [
         "shows"
@@ -36987,7 +37044,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.3e13e373c99f",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:87",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:91",
       "sentence": "A retrospective fit or threshold crossing cannot cross as evidence for future scale, broad transfer, or an underlying phase transition.",
       "cues": [
         "cannot",
@@ -37008,7 +37065,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.e48fae3dadef",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:92",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:96",
       "sentence": "[learning-theory-generalization-and-scaling-science.core, label: Design rationale, support: argument] A generalization, transfer, emergence, or scaling assertion should be accepted only through a dated claim contract that binds population and sampling assumptions, data support, hypothesis and algorithm, optimization and inductive bias, complexity or explanatory lens, metric, compute regime, uncertainty, breakpoint tests, held-out prediction, alternatives, and transfer boundary; a bound, fit, interpolation result, compression ratio, benchmark jump, or larger model alone establishes neither broad generalization, capability emergence, safety, nor future scale behavior.",
       "cues": [
         "establishes",
@@ -37028,9 +37085,28 @@
       "target_atom_id": null
     },
     {
-      "candidate_id": "learning-theory-generalization-and-scaling-science.prose.69531b9bde5b",
+      "candidate_id": "learning-theory-generalization-and-scaling-science.prose.d10f88082716",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
       "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:100",
+      "sentence": "**Failure mode.** “No free lunch” can become empty skepticism, while one observed preference can be mistaken for robust transfer.",
+      "cues": [
+        "transfer"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "P6.9 exact-digest semantic review maps this `inductive-bias-identifiability` proposition to the existing owner atom `learning-theory-generalization-and-scaling-science.mechanism.002`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "learning-theory-generalization-and-scaling-science.mechanism.002"
+    },
+    {
+      "candidate_id": "learning-theory-generalization-and-scaling-science.prose.69531b9bde5b",
+      "chapter_id": "learning-theory-generalization-and-scaling-science",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:106",
       "sentence": "**Execution.** Fit scaling relations with uncertainty, held-out scales, architecture and data identifiers, failed runs, compute accounting, breakpoint diagnostics, and prospective forecasts.",
       "cues": [
         "scales"
@@ -37049,7 +37125,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.54f8c544c331",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:104",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:110",
       "sentence": "**Closure.** Challenge transfer and compositionality under natural shift, targeted shift, new task structure, optimizer change, architecture replacement, and data contamination.",
       "cues": [
         "transfer"
@@ -37068,7 +37144,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.3cf45e870db0",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:112",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:120",
       "sentence": "describes how the required number of examples scales with those choices.",
       "cues": [
         "required",
@@ -37088,7 +37164,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.50b0d4a65a15",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:117",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:125",
       "sentence": "For a foundation model, the practical contract must additionally identify",
       "cues": [
         "must"
@@ -37107,7 +37183,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.0fc84513da71",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:121",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:129",
       "sentence": "i.i.d. concept class cannot be presented as a guarantee under open-world shift.",
       "cues": [
         "cannot",
@@ -37127,7 +37203,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.66a2c09e03cb",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:132",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:140",
       "sentence": "correctness, robustness, safety, or transfer outside its distribution and",
       "cues": [
         "transfer"
@@ -37146,7 +37222,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.36195bdd4d22",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:139",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:149",
       "sentence": "and sometimes improve beyond the interpolation threshold.",
       "cues": [
         "improve"
@@ -37165,7 +37241,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.a01c8c274b16",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:146",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:156",
       "sentence": "Scaling experiments should therefore sweep across the suspected interpolation",
       "cues": [
         "should"
@@ -37184,7 +37260,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.d76a642f6ee0",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:154",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:164",
       "sentence": "**Failure mode.** Sparse scale points skip the peak and produce a confident but",
       "cues": [
         "scale"
@@ -37203,7 +37279,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.abb2ee109ee4",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:158",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:168",
       "sentence": "noise regime, or metric does not transfer automatically to another.",
       "cues": [
         "transfer"
@@ -37220,9 +37296,28 @@
       "target_atom_id": "learning-theory-generalization-and-scaling-science.mechanism.004"
     },
     {
+      "candidate_id": "learning-theory-generalization-and-scaling-science.prose.741dd498866e",
+      "chapter_id": "learning-theory-generalization-and-scaling-science",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:172",
+      "sentence": "**Mechanism.** Register prospective scaling forecasts with exact model, data, optimizer, metric, hardware accounting, fit range, candidate curve families, uncertainty, breakpoints, held-out scales, and scoring rules.",
+      "cues": [
+        "scales"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "P6.9 exact-digest semantic review maps this `scaling-forecast-registry` proposition to the existing owner atom `learning-theory-generalization-and-scaling-science.mechanism.003`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "learning-theory-generalization-and-scaling-science.mechanism.003"
+    },
+    {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.1c3163582009",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:193",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:207",
       "sentence": "and forecast horizon before the held-out scales are observed.",
       "cues": [
         "scales"
@@ -37239,9 +37334,66 @@
       "target_atom_id": "learning-theory-generalization-and-scaling-science.mechanism.003"
     },
     {
+      "candidate_id": "learning-theory-generalization-and-scaling-science.prose.8e2d6e7ac923",
+      "chapter_id": "learning-theory-generalization-and-scaling-science",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:219",
+      "sentence": "**Mechanism.** Challenge transfer under natural and targeted distribution shift, new task structure, weak supervision, architecture replacement, optimizer change, data contamination, and resource constraints, with source-domain and target-domain denominators kept separate.",
+      "cues": [
+        "transfer"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "P6.9 exact-digest semantic review maps this `transfer-regime-change` proposition to the existing owner atom `learning-theory-generalization-and-scaling-science.mechanism.005`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "learning-theory-generalization-and-scaling-science.mechanism.005"
+    },
+    {
+      "candidate_id": "learning-theory-generalization-and-scaling-science.prose.30cb95f11ff0",
+      "chapter_id": "learning-theory-generalization-and-scaling-science",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:219",
+      "sentence": "**Failure mode.** Shared pretraining, leaked labels, easy target metrics, or one model family can simulate transfer.",
+      "cues": [
+        "transfer"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "P6.9 exact-digest semantic review maps this `transfer-regime-change` proposition to the existing owner atom `learning-theory-generalization-and-scaling-science.invariant.002`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "learning-theory-generalization-and-scaling-science.invariant.002"
+    },
+    {
+      "candidate_id": "learning-theory-generalization-and-scaling-science.prose.f768cd47e96b",
+      "chapter_id": "learning-theory-generalization-and-scaling-science",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:219",
+      "sentence": "**Source grounding.** The weak-to-strong paper is a bounded proof of concept; the broader transfer contract remains untested.",
+      "cues": [
+        "transfer"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "P6.9 exact-digest semantic review maps this `transfer-regime-change` proposition to the existing owner atom `learning-theory-generalization-and-scaling-science.invariant.002`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "learning-theory-generalization-and-scaling-science.invariant.002"
+    },
+    {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.c797e8d79493",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:211",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:227",
       "sentence": "not settled by naming “emergence.” A claim should be tested under continuous",
       "cues": [
         "should"
@@ -37260,7 +37412,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.ced7f6379766",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:215",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:231",
       "sentence": "decision threshold changed, or whether the available data cannot distinguish",
       "cues": [
         "cannot"
@@ -37279,7 +37431,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.ce4c8947ff2b",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:219",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:235",
       "sentence": "genuine-breakpoint model; score all three on held-out scales and tasks.",
       "cues": [
         "scales"
@@ -37298,7 +37450,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.8d198e8dfead",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:224",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:240",
       "sentence": "**Explicit non-claim.** metric artifacts do not prove that every capability is",
       "cues": [
         "prove"
@@ -37317,7 +37469,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.4c29f66760e3",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:225",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:241",
       "sentence": "smooth; an apparent breakpoint does not prove a new internal algorithm.",
       "cues": [
         "prove"
@@ -37336,7 +37488,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.26dcb492aef3",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:251",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:267",
       "sentence": "Under the , quantifiers remain explicit, interpolation is not transfer, metric transformation cannot manufacture emergence, retrospective fit is not prospective prediction, and each new scale or distribution can invalidate the record.",
       "cues": [
         "cannot",
@@ -37357,7 +37509,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.26dff41cdcbc",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:269",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:285",
       "sentence": "Evaluation must compare multiple plausible functional forms and simpler baselines, reserve future scales or tasks, expose selection and correction, and measure calibration as well as point error.",
       "cues": [
         "measure",
@@ -37378,7 +37530,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.97a3e999b24a",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:269",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:285",
       "sentence": "Positive controls use synthetic regimes with known breakpoints; an underpowered scale range cannot refute discontinuity or generalization mechanisms.",
       "cues": [
         "cannot",
@@ -37398,7 +37550,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.bf98b29439b4",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:273",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:289",
       "sentence": "The notebook should emit an immutable forecast card before opening each held-out",
       "cues": [
         "should"
@@ -37417,7 +37569,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.2a49ae648aea",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:280",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:296",
       "sentence": "Freeze candidate curve families and explanatory lenses, hold out scale points and task families, record failed runs and tuning, test breakpoint alternatives, and compare prediction intervals for loss, calibration, and downstream tasks.",
       "cues": [
         "scale"
@@ -37436,7 +37588,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.932a76315cd7",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:286",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:302",
       "sentence": "Argument exit requires repeated prospective forecasts across model families, task families, compute regimes, and distribution shifts, with preregistered alternatives, held-out scales, calibration, breakpoint sensitivity, and independent reanalysis.",
       "cues": [
         "requires",
@@ -37456,7 +37608,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.706cc8b030c9",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:294",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:310",
       "sentence": "calibration across new scales, tasks, data regimes, optimizers, and",
       "cues": [
         "scales"
@@ -37475,7 +37627,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.4d6375611e87",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:299",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:315",
       "sentence": "campaigns isolate or factorially vary the suspected causes.",
       "cues": [
         "causes"
@@ -37494,7 +37646,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.1acfbb1c6d17",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:300",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:316",
       "sentence": "thresholded metrics, in-distribution and transfer tasks, average and subgroup",
       "cues": [
         "transfer"
@@ -37513,7 +37665,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.eee218d0073e",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:306",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:322",
       "sentence": "extrapolation, constant elasticity, nearest-neighbor scale, or no forecast.",
       "cues": [
         "scale"
@@ -37532,7 +37684,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.68cd692a529d",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:307",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:323",
       "sentence": "Useful science should improve interval coverage, resource planning, experiment",
       "cues": [
         "improve",
@@ -37552,7 +37704,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.d81471708d9b",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:312",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:328",
       "sentence": "A mature scaling science says not merely that performance rose, but which assumptions generated a forecast, where it failed, what changed at the boundary, and how much confidence survives transfer.",
       "cues": [
         "transfer"
@@ -37571,7 +37723,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.c8d6b0c168c5",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:323",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:339",
       "sentence": "Planned formalization route: `lean:learning-theory-generalization-and-scaling-science.admission_boundary` covers only the finite admission record for learning theory generalization and scaling science; it cannot establish whether learning theory generalization and scaling science works safely or transfers.",
       "cues": [
         "cannot",
@@ -37591,7 +37743,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.e3f84310e420",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:402",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:418",
       "sentence": "corrections, allowing transfer to broaden only through prospective evidence",
       "cues": [
         "transfer"
@@ -37610,7 +37762,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.dce3227e0a8f",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:405",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:421",
       "sentence": "The forecast discipline keeps bounds, fits, simplicity lenses, interpolation, emergence, compute, metrics, uncertainty, alternatives, and transfer limits visible so retrospective regularity cannot become destiny or acquire unwarranted authority over future architectures and safety decisions.",
       "cues": [
         "cannot",

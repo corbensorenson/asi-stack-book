@@ -3,8 +3,8 @@ title: "Relational Dimension Compilation and Polyadic Cognition"
 chapter_id: "relational-dimension-compilation-and-polyadic-cognition"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
-draft_maturity: "substantive conceptual draft"
-last_updated: "2026-07-25"
+draft_maturity: "v0.3 concept-complete argument-level manuscript"
+last_updated: "2026-07-28"
 primary_sources:
   - "relational_dimension_compiler"
   - "ext_neural_message_passing_2017"
@@ -98,6 +98,8 @@ system may have paid an unbounded search bill upstream.
 
 ## What “dimension” means here
 
+**Mechanism.** Type geometric dimension, semantic arity, primitive computational arity, storage arity, temporal extent, abstraction scale, branch, epistemic state, and resource budget as distinct axes before compiling a relation. **Failure mode.** Calling all of them “dimension” lets a representational rewrite masquerade as a new capability or hides a costly storage topology behind semantic language. **Non-claim.** A clean type system does not establish that higher-order structure is necessary or useful. **Source grounding.** The Relational Dimension Compiler supplies this authorial distinction; no external result validates it.
+
 The word *dimension* is overloaded. A defensible compiler keeps several axes
 separate:
 
@@ -133,6 +135,8 @@ operation must consume all fields at once.
 
 ## The relational intermediate representation
 
+**Mechanism.** Give every candidate a stable identity, typed participant roles, scope, provenance, uncertainty, branch, expiry, dependents, lower-order alternatives, total cost, and inverse or fallback. **Failure mode.** Untyped tuples can preserve participants while swapping roles, leak simulated state into actual state, or lose provenance after caching and routing. **Non-claim.** An inspectable relational IR is not proof of truth, causality, grounding, or explanation. **Source grounding.** The compiler paper defines the proposed record family; neural message passing supplies a lower-order graph comparator rather than validation.
+
 The compiler's basic record is a versioned `RelationCandidate`:
 
 ```text
@@ -165,6 +169,8 @@ provenance, and governance survive.
 
 ## Propose higher order only from a residual
 
+**Mechanism.** Generate a sparse higher-order candidate only from a named failure left by admitted lower-order routes, and retain the complete proposal, rejection, retry, and resource denominator. **Failure mode.** A privileged proposer can hide discarded candidates or materialize combinatorial tuples until one fits the benchmark. **Non-claim.** Residual-triggered proposal does not prove proposal recall or irreducibility. **Source grounding.** Candidate-denominator and residual-trigger concepts come from the Corben-authored compiler source and remain unimplemented.
+
 Materializing all possible \(k\)-tuples is not intelligence; it is a denial of
 service. Candidate generation therefore runs on a bounded slow path triggered
 by a named residual:
@@ -190,6 +196,8 @@ separate qualification policy decides whether it enters shadow, canary, or
 active state.
 
 ## Lower-order rescue comes first
+
+**Mechanism.** Before admitting higher order, implement competent reified-relation nodes, message passing, factorization, sequence serialization, retrieval, tools, and ordinary-model rescues under matched information and budgets. **Failure mode.** Weak baselines create arity theater: the proposed representation wins because alternatives were denied tuning, context, or equivalent role information. **Non-claim.** A failed rescue does not prove that pairwise computation cannot represent the relation. **Source grounding.** Neural message passing is a serious external comparator; its molecular results do not settle general relational reasoning.
 
 A distinct higher-order structure is warranted only after serious alternatives
 have been tried. Required rescues include:
@@ -223,6 +231,8 @@ systems, not an intentionally impoverished graph.
 
 ## Qualification and the order ladder
 
+**Mechanism.** Qualify candidates on held-out topology, unseen role assignments, counterfactual-role swaps, compositional transfer, calibration, abstention, and total lifecycle cost, while preserving every attempted order. **Failure mode.** Template leakage, sparse scale points, or post-hoc order selection can turn memorized schemas into apparent structural discovery. **Non-claim.** Passing synthetic qualification would not establish world truth, general intelligence, or a universal arity bound. **Source grounding.** RODIE and the order ladder are proposed in the compiler source; no corpus or result exists here.
+
 A candidate passes through `proposed → shadow → canary → active → demoted →
 retired`. Promotion requires:
 
@@ -250,6 +260,8 @@ provenance.
 
 ## Reversible semantic contraction
 
+**Mechanism.** Compile an admitted slow relation into an operator only after conformance replay preserves roles, branch, provenance, uncertainty, outputs, and fallback against the qualified route. **Failure mode.** A fast specialist can drift from the source relation, erase exceptions, or become an unreviewed authority because its output is cheaper. **Non-claim.** Conformance on recorded cases does not prove semantic equivalence on future inputs. **Source grounding.** The compiled-specialist certificate is an authorial design artifact, not measured acceleration or correctness.
+
 Retirement is not deletion of one row. A relation may have descendants in
 memory summaries, caches, router policies, learned adapters, plans, evidence
 records, and other compiled relations. Contraction therefore:
@@ -269,6 +281,8 @@ separately.
 
 ## RODIE: a benchmark family, not one score
 
+**Mechanism.** Adapt order through explicit promotion, demotion, expiry, and contraction transactions that invalidate descendants, caches, certificates, and compiled operators when their parent changes. **Failure mode.** Online order growth can become self-authorized ontology expansion, while contraction can strand stale descendants or delete needed distinctions. **Non-claim.** Reversible records do not show that recovery is complete or affordable. **Source grounding.** Lifecycle and contraction requirements come from the Relational Dimension Compiler and remain test proposals.
+
 Relational-Order Discovery, Inference, and Evaluation should separate at least
 five capabilities:
 
@@ -287,6 +301,8 @@ separately. A single aggregate “relational intelligence” score would recreat
 the very ambiguity this chapter is meant to remove.
 
 ## Mechanism
+
+**Mechanism.** Evaluate RODIE as a vector: proposal recall, topology discovery, role binding, counterfactual sensitivity, transfer, order selection, calibration, useful throughput, memory, latency, data movement, governance cost, and rollback integrity. **Failure mode.** A single aggregate can hide proposal burden, role collapse, abstention failure, or hardware costs from irregular sparse state. **Non-claim.** A favorable vector on authored fixtures would not prove natural-task value or architectural superiority. **Source grounding.** RODIE is Corben-authored research design; message-passing evidence only defines one comparison family.
 
 - Represent each candidate relation with typed roles, dimensional signature, scope, provenance, uncertainty, resource cost, and expiry.
 - Generate candidate dimensional topologies on a slow path from residual relational failures rather than materializing all possible tuples.

@@ -3,8 +3,8 @@ title: "Embodied Agency, Real-Time Control, and Physical Safety"
 chapter_id: "embodied-agency-real-time-control-and-physical-safety"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
-draft_maturity: "v0.1 integrated argument chapter"
-last_updated: "2026-07-24"
+draft_maturity: "v0.3 concept-complete argument-level manuscript"
+last_updated: "2026-07-28"
 primary_sources:
   - "ext_gemini_robotics_2025"
   - "ext_foundation_robotics_physical_risk_2025"
@@ -64,6 +64,8 @@ irreversible, who must inspect it, and which evidence expired.
 
 ## Problem
 
+**Mechanism.** Freeze the plant, task, environment, people and assets at risk, hazard set, consequence severity, operating region, authority envelope, and stop conditions before granting motion. **Failure mode.** A semantic task label can hide force, speed, energy, contact, workspace, and bystander consequences. **Non-claim.** A hazard inventory does not establish completeness or safety. **Source grounding.** The physical-risk survey and Gemini Robotics motivate lifecycle and generalist-control pressure; neither validates this envelope.
+
 The transition from “move the object” to motor commands is not an ordinary tool
 call. The controller must repeatedly estimate state, produce commands before a
 deadline, respect dynamics and contacts, detect hazards, and preserve a
@@ -112,6 +114,8 @@ separate path can switch to a baseline controller or stop. Physical effects and
 irreversible residuals remain visible.
 
 ## Why existing approaches are insufficient
+
+**Mechanism.** Keep observation admission, world-state estimation, planning, control choice, safety filtering, actuation, and effect observation as separate receipts with bounded authority. **Failure mode.** A confident perception or language-model plan can bypass timing and plant checks by appearing semantically correct. **Non-claim.** Separation does not prove the interfaces are correctly implemented or independent. **Source grounding.** Gemini Robotics provides embodied capability context, while control and Simplex sources motivate downstream control boundaries.
 
 **A model policy is not a real-time controller.** A large model can reason about
 an action while missing the response period, jitter, actuator limits, or
@@ -162,6 +166,8 @@ readiness, release, transfer, nor SOTA.
 
 ## Mechanism
 
+**Mechanism.** Bind dynamics model, state estimate, uncertainty, reachable set, control period, sensing and compute latency, jitter, actuator lag, saturation, braking distance, and deadline misses into each control lease. **Failure mode.** A mathematically admissible command can become unsafe when executed late or under the wrong plant model. **Non-claim.** Timing accounting does not prove reachability estimates or real-time schedulability. **Source grounding.** Control-barrier-function literature exposes model and timing assumptions; no local physical theorem or timing campaign is claimed.
+
 1. **Freeze the plant identity.** Bind embodiment, payload, workspace, firmware,
    actuators, sensors, power, communication, maintenance state, and environment.
 2. **Compile the action.** Convert a semantic request into a trajectory or
@@ -211,6 +217,8 @@ unresolved harm. Recovery means reaching and verifying an acceptable physical
 condition, not loading an old checkpoint.
 
 ### Hybrid control, timing evidence, and sim-to-real limits
+
+**Mechanism.** Separate an advanced controller from a simpler safety controller, monitor the approach to the safe-set boundary, and switch early enough that the fallback remains reachable under worst-case delay. **Failure mode.** Shared defects, late switching, oscillation, or an unavailable fallback can turn the monitor into theater. **Non-claim.** A Simplex-style architecture does not prove the baseline controller safe for the actual plant. **Source grounding.** The Simplex source supplies the architectural comparator; this stack has not reproduced its guarantees.
 
 Embodied intelligence is a hybrid system: discrete modes such as
 *deliberate*, *execute*, *degrade*, *hold*, *stop*, and *recover* contain
@@ -281,6 +289,8 @@ PhysicalControlLease {
 
 ## Interfaces
 
+**Mechanism.** Layer barrier functions, shields, interlocks, geofences, rate and force limits, collision monitors, and independent emergency stop so each states its model, coverage, reaction time, and infeasibility route. **Failure mode.** Constraints can conflict, omit the real hazard, or push the system into an unmodeled state. **Non-claim.** Multiple controls do not establish independent defense in depth. **Source grounding.** Barrier-function and safe-RL sources define bounded control approaches; neither validates their composition here.
+
 The chapter receives an authorized symbolic action, an observation contract,
 and a world-model prediction. It returns a bounded control lease and effect
 trace to Runtime Adapters, Operations, Claim Ledgers, and Capability
@@ -305,6 +315,8 @@ claims in distinct lanes. Privacy and Rights govern sensing and recording
 around people.
 
 ## Invariants
+
+**Mechanism.** Give exploration, online learning, adaptation, and controller replacement narrower authority than ordinary bounded control, with shadow evaluation, rollback state, novelty limits, and human-clearable stops. **Failure mode.** Learning can visit unsafe states before competence, alter the safety model, or inherit deployment authority from training success. **Non-claim.** Constrained learning is not proof of safe exploration or transfer. **Source grounding.** The safe-RL survey separates learning-time and deployment-time questions; local efficacy remains untested.
 
 Physical invariants must survive the exact moment when the advanced route is
 wrong, late, disconnected, or unable to observe the plant. They keep a
@@ -331,6 +343,8 @@ the world.
 
 ## Evidence
 
+**Mechanism.** Treat a digital twin as a versioned hypothesis with synchronized plant identity, fidelity envelope, latency, coverage, discrepancy tests, scenario provenance, and expiry after plant, environment, or controller change. **Failure mode.** Simulator exploitation, stale synchronization, and policy–twin co-adaptation can make simulated safety anti-predictive in the field. **Non-claim.** A twin label or simulated success does not establish physical faithfulness. **Source grounding.** The digital-twin review supplies lifecycle concepts; it reports no local sim-to-real guarantee.
+
 The sources provide complementary pieces: Gemini Robotics illustrates the
 generalist capability frontier; the physical-risk survey broadens the threat
 model; barrier functions supply conditional safety-set enforcement; Simplex
@@ -356,6 +370,8 @@ cost. Human-proximity work requires separate ethics and safety authority and is
 not implied by hardware success.
 
 ## Digital twins and sim-to-real custody
+
+**Mechanism.** After anomaly or incident, preserve commands, observations, timing, effects, controller and model versions, stop behavior, damage and near misses, recovery actions, independent inspection, and recommissioning criteria; keep the system degraded or quarantined until the physical state and fallback are requalified. **Failure mode.** Resetting software can erase causal evidence while latent damage, calibration drift, or unreachable stopping behavior persists. **Non-claim.** Incident closure or successful restart is not proof of restored safety, and this book has not operated a consequential plant. **Source grounding.** The physical-risk survey motivates pre-, during-, and post-incident phases; Simplex, barrier, safe-RL, and digital-twin sources provide bounded comparators only. The recommissioning transaction is ASI Stack design rationale pending a low-energy natural campaign.
 
 A digital twin is useful when it is treated as a versioned, synchronized model of a particular physical system—not as a more convenient reality. AI-enabled twins can fuse telemetry, simulation, learned residuals, maintenance history, and scenario generation to support diagnosis and control design [@ext_ai_simulation_digital_twins_2025]. Their value depends on fidelity at the states, contacts, faults, humans, and time scales relevant to the proposed action.
 

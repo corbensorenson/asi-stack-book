@@ -473,33 +473,33 @@ def errors(data: dict) -> list[str]:
         "inner-alignment-mesa-optimization-and-learned-objective-integrity",
         "human-ai-organizations-delegation-and-accountability",
     ]
-    expected_round_20_remaining = expected_round_20_diagnostic_thin[12:]
+    expected_round_20_remaining = expected_round_20_diagnostic_thin[18:]
     if (
         round_20.get("id") != "P6.9-R21-concept-complete-depth-and-atom-adequacy"
-        or round_20.get("state") != "active_third_tranche_reviewed_contract_hardened"
+        or round_20.get("state") != "active_fourth_tranche_reviewed_contract_hardened"
         or round_20.get("manifest_chapter_count_freeze") != 84
         or round_20.get("word_trigger") != 5000
         or round_20.get("word_trigger_is_acceptance_or_evidence_gate") is not False
         or round_20.get("baseline_thin_chapter_count") != 23
         or round_20.get("current_thin_chapter_count") != 20
-        or round_20.get("priority_chapter_count") != 15
-        or round_20.get("priority_concept_count") != 120
-        or round_20.get("priority_concepts_passing") != 120
+        or round_20.get("priority_chapter_count") != 21
+        or round_20.get("priority_concept_count") != 168
+        or round_20.get("priority_concepts_passing") != 168
         or round_20.get("current_unified_atom_covered_chapter_count") != 84
         or round_20.get("diagnostic_thin_chapters") != expected_round_20_diagnostic_thin
         or round_20.get("remaining_concept_completion_queue") != expected_round_20_remaining
         or round_20.get("completion_authority")
         != "named_concept_contract_plus_current_digest_bound_semantic_disposition"
-        or round_20.get("current_digest_bound_semantic_review_count") != 15
-        or round_20.get("next_priority_batch_size") != 6
-        or round_20.get("next_priority_batch") != expected_round_20_remaining[:6]
+        or round_20.get("current_digest_bound_semantic_review_count") != 21
+        or round_20.get("next_priority_batch_size") != 2
+        or round_20.get("next_priority_batch") != expected_round_20_remaining
         or round_20.get("throughput_unit")
         != "concept_complete_digest_bound_semantic_dispositions"
         or round_20.get("low_atom_count_diagnostic_chapter_count") != 19
         or round_20.get("single_atom_diagnostic_chapter_count") != 9
         or round_20.get("atom_count_parity_is_acceptance_target") is not False
         or round_20.get("reader_facing_w3_repeated_12_grams") != 0
-        or round_20.get("raw_qmd_repeated_12_grams") != 923
+        or round_20.get("raw_qmd_repeated_12_grams") != 925
         or round_20.get("raw_qmd_maximum_chapter_spread") != 64
         or round_20.get("raw_scaffold_audit_required") is not True
         or round_20.get("raw_scaffold_exit") != "zero_unjustified_widest_spread_blocks"
@@ -514,17 +514,17 @@ def errors(data: dict) -> list[str]:
         or substance_summary.get("thin_chapter_count") != 20
         or substance_summary.get("atom_covered_chapter_count") != 84
         or substance_summary.get("atom_uncovered_chapter_count") != 0
-        or substance_summary.get("active_concept_count") != 120
-        or substance_summary.get("active_concepts_passing_count") != 120
-        or substance_summary.get("concept_complete_semantic_reviewed_chapter_count") != 15
-        or substance_summary.get("current_semantic_review_count") != 15
+        or substance_summary.get("active_concept_count") != 168
+        or substance_summary.get("active_concepts_passing_count") != 168
+        or substance_summary.get("concept_complete_semantic_reviewed_chapter_count") != 21
+        or substance_summary.get("current_semantic_review_count") != 21
         or substance_summary.get("low_atom_count_diagnostic_chapter_count") != 19
         or substance_summary.get("atom_count_is_acceptance_target") is not False
         or substance_summary.get("word_trigger_is_completion_gate") is not False
         or substance.get("manual_semantic_review_required") is not True
         or substance.get("support_state_effect") != "none"
     ):
-        out.append("Round 20 chapter-substance contract drifted from the active third tranche")
+        out.append("Round 20 chapter-substance contract drifted from the active fourth tranche")
     if (
         round_20_atoms.get("chapter_count") != 4
         or round_20_atoms.get("atom_count") != 20
@@ -1645,9 +1645,9 @@ def errors(data: dict) -> list[str]:
         or template_guard.get("current_copied_diagram_and_test_spread") != 0
         or template_guard.get("repaired_chapter_count") != 10
         or template_guard.get("baseline_prose_candidate_count") != 3444
-        or template_guard.get("current_prose_candidate_count") != 3530
+        or template_guard.get("current_prose_candidate_count") != 3538
         or template_guard.get("retired_inherited_prose_candidate_count") != 247
-        or template_guard.get("added_domain_specific_prose_candidate_count") != 333
+        or template_guard.get("added_domain_specific_prose_candidate_count") != 341
         or template_guard.get("baseline_structured_atom_count") != 4067
         or template_guard.get("current_structured_atom_count") != 4058
         or template_guard.get("pending_prose_candidate_count") != 0
@@ -1676,7 +1676,7 @@ def errors(data: dict) -> list[str]:
         or w3.get("measurements", {}).get("editorial_narrative", {}).get("baseline", {}).get("distinct_repeated_12_grams") != 812
         or w3.get("measurements", {}).get("editorial_narrative", {}).get("current", {}).get("distinct_repeated_12_grams") != 0
         or w3.get("claim_review_reconciliation", {}).get("retired_inherited_prose_candidate_count") != 247
-        or w3.get("claim_review_reconciliation", {}).get("added_domain_specific_prose_candidate_count") != 333
+        or w3.get("claim_review_reconciliation", {}).get("added_domain_specific_prose_candidate_count") != 341
         or w3.get("claim_review_reconciliation", {}).get("current_pending_prose_candidate_count") != 0
         or w3.get("meaning_custody", {}).get("chapter_core_support_movements") != 0
     ):

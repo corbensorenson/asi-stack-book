@@ -177,6 +177,66 @@ CONCEPT_SPECS: dict[str, list[dict[str, Any]]] = {
         {"concept_id": "strategic-stability-off-ramps", "heading": "Strategic stability, off-ramps, and timeline compression", "source_ids": ["ext_sipri_military_ai_nuclear_escalation_2025"]},
         {"concept_id": "secrecy-review-decommission", "heading": "Secrecy, independent review, accountability, and decommission", "source_ids": ["ext_icrc_autonomous_weapons_ihl_2025", "ext_sipri_military_ai_nuclear_escalation_2025"]},
     ],
+    "perception-sensor-fusion-and-observation-trust": [
+        {"concept_id": "observation-need-authority", "heading": "Problem", "source_ids": ["ext_multimodal_machine_learning_taxonomy_2019", "ext_gemini_robotics_2025"]},
+        {"concept_id": "sensor-identity-calibration", "heading": "Why existing approaches are insufficient", "source_ids": ["ext_3d_detection_corruptions_2023", "ext_adversarial_sensor_fusion_2022"]},
+        {"concept_id": "time-pose-alignment", "heading": "Mechanism", "source_ids": ["ext_multimodal_machine_learning_taxonomy_2019"]},
+        {"concept_id": "channel-hypotheses-missingness", "heading": "Interfaces", "source_ids": ["ext_imagebind_2023", "ext_multimodal_machine_learning_taxonomy_2019"]},
+        {"concept_id": "dependence-disagreement-fusion", "heading": "Invariants", "source_ids": ["ext_imagebind_2023", "ext_adversarial_sensor_fusion_2022"]},
+        {"concept_id": "corruption-shift-integrity", "heading": "Evidence", "source_ids": ["ext_3d_detection_corruptions_2023", "ext_adversarial_sensor_fusion_2022"]},
+        {"concept_id": "active-observation-degradation", "heading": "Failure modes", "source_ids": ["ext_gemini_robotics_2025"]},
+        {"concept_id": "observation-lease-reconciliation", "heading": "Minimum Viable Implementation", "source_ids": ["platonic_world_model"]},
+    ],
+    "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty": [
+        {"concept_id": "coupled-trajectory-state", "heading": "Symbiosis is a trajectory, not a product category", "source_ids": ["ext_human_ai_feedback_loops_2025"]},
+        {"concept_id": "three-arm-complementarity", "heading": "The three-arm baseline", "source_ids": ["ext_human_ai_team_meta_analysis_2024"]},
+        {"concept_id": "bidirectional-adaptation", "heading": "A coupling ladder", "source_ids": ["ext_human_ai_feedback_loops_2025", "ext_who_neurotechnology_landscape_2025"]},
+        {"concept_id": "skill-dependence-calibration", "heading": "Cognitive sovereignty", "source_ids": ["ext_human_ai_team_meta_analysis_2024", "ext_human_ai_feedback_loops_2025"]},
+        {"concept_id": "neural-data-purpose-inference", "heading": "Neural data is not self-interpreting", "source_ids": ["ext_who_neurotechnology_landscape_2025"]},
+        {"concept_id": "intervention-consent-boundary", "heading": "Reversibility has a human side", "source_ids": ["ext_oecd_neuro_ai_convergence_2025", "ext_who_neurotechnology_landscape_2025"]},
+        {"concept_id": "exit-and-human-recovery", "heading": "Mechanism", "source_ids": ["ext_human_ai_feedback_loops_2025"]},
+        {"concept_id": "equity-longitudinal-remedy", "heading": "Minimum Viable Implementation", "source_ids": ["ext_human_ai_team_meta_analysis_2024", "ext_oecd_neuro_ai_convergence_2025", "ext_who_neurotechnology_landscape_2025"]},
+    ],
+    "relational-dimension-compilation-and-polyadic-cognition": [
+        {"concept_id": "dimension-type-separation", "heading": "What “dimension” means here", "source_ids": ["relational_dimension_compiler"]},
+        {"concept_id": "typed-role-relational-ir", "heading": "The relational intermediate representation", "source_ids": ["relational_dimension_compiler", "ext_neural_message_passing_2017"]},
+        {"concept_id": "residual-proposal-denominator", "heading": "Propose higher order only from a residual", "source_ids": ["relational_dimension_compiler"]},
+        {"concept_id": "lower-order-rescue", "heading": "Lower-order rescue comes first", "source_ids": ["relational_dimension_compiler", "ext_neural_message_passing_2017"]},
+        {"concept_id": "qualification-order-ladder", "heading": "Qualification and the order ladder", "source_ids": ["relational_dimension_compiler"]},
+        {"concept_id": "compilation-conformance", "heading": "Reversible semantic contraction", "source_ids": ["relational_dimension_compiler"]},
+        {"concept_id": "adaptive-order-contraction", "heading": "RODIE: a benchmark family, not one score", "source_ids": ["relational_dimension_compiler"]},
+        {"concept_id": "rodie-joint-evaluation", "heading": "Mechanism", "source_ids": ["relational_dimension_compiler", "ext_neural_message_passing_2017"]},
+    ],
+    "learning-theory-generalization-and-scaling-science": [
+        {"concept_id": "claim-contract-assumptions", "heading": "Problem", "source_ids": ["ext_valiant_theory_learnable_1984", "ext_scaling_laws_neural_language_models_2020"]},
+        {"concept_id": "conditional-generalization-bounds", "heading": "Why existing approaches are insufficient", "source_ids": ["ext_valiant_theory_learnable_1984"]},
+        {"concept_id": "inductive-bias-identifiability", "heading": "Mechanism", "source_ids": ["ext_no_free_lunch_inductive_bias_2024"]},
+        {"concept_id": "compression-information-lenses", "heading": "Sample complexity: expose the quantifiers before quoting the bound", "source_ids": ["ext_mdl_tutorial_2004", "ext_information_bottleneck_2000"]},
+        {"concept_id": "interpolation-double-descent", "heading": "Interpolation and double descent: capacity is not a monotone risk dial", "source_ids": ["ext_deep_double_descent_2020"]},
+        {"concept_id": "scaling-forecast-registry", "heading": "MDL and Kolmogorov-style simplicity: an explanatory lens, not an oracle", "source_ids": ["ext_scaling_laws_neural_language_models_2020"]},
+        {"concept_id": "emergence-measurement", "heading": "Scaling laws: forecast registries instead of retrospective straight lines", "source_ids": ["ext_emergent_abilities_llms_2022", "ext_emergent_abilities_mirage_2023"]},
+        {"concept_id": "transfer-regime-change", "heading": "Emergence: distinguish a system transition from a measurement threshold", "source_ids": ["ext_weak_to_strong_generalization_2023", "ext_no_free_lunch_inductive_bias_2024"]},
+    ],
+    "confidential-and-verifiable-ai-computation": [
+        {"concept_id": "guarantee-vector-adversary", "heading": "Start with a guarantee vector, not a security adjective", "source_ids": ["ext_nist_privacy_enhancing_cryptography_2026"]},
+        {"concept_id": "construction-selection-composition", "heading": "Pick a construction only after declaring the distrust boundary", "source_ids": ["ext_nist_privacy_enhancing_cryptography_2026", "ext_zkllm_2024"]},
+        {"concept_id": "artifact-configuration-binding", "heading": "Evidence is a statement appraised by a party", "source_ids": ["ext_zkllm_2024"]},
+        {"concept_id": "attestation-role-separation", "heading": "The circuit-to-semantics gap", "source_ids": ["ext_ietf_rats_architecture_2023"]},
+        {"concept_id": "freshness-revocation-replay", "heading": "Cost and fallback are security properties", "source_ids": ["ext_ietf_rats_architecture_2023"]},
+        {"concept_id": "circuit-semantics-correspondence", "heading": "Mechanism", "source_ids": ["ext_zkllm_2024"]},
+        {"concept_id": "leakage-side-channels-metadata", "heading": "A protected-execution receipt", "source_ids": ["ext_nist_privacy_enhancing_cryptography_2026", "ext_ietf_rats_architecture_2023", "ext_zkllm_2024"]},
+        {"concept_id": "cost-fallback-downgrade", "heading": "Failure modes", "source_ids": ["ext_zkllm_2024"]},
+    ],
+    "embodied-agency-real-time-control-and-physical-safety": [
+        {"concept_id": "plant-task-hazard-envelope", "heading": "Problem", "source_ids": ["ext_foundation_robotics_physical_risk_2025", "ext_gemini_robotics_2025"]},
+        {"concept_id": "observation-control-separation", "heading": "Why existing approaches are insufficient", "source_ids": ["ext_gemini_robotics_2025", "ext_simplex_architecture_1998"]},
+        {"concept_id": "timing-dynamics-reachability", "heading": "Mechanism", "source_ids": ["ext_control_barrier_functions_2019"]},
+        {"concept_id": "advanced-baseline-controller-switching", "heading": "Hybrid control, timing evidence, and sim-to-real limits", "source_ids": ["ext_simplex_architecture_1998"]},
+        {"concept_id": "barrier-shield-interlock", "heading": "Interfaces", "source_ids": ["ext_control_barrier_functions_2019", "ext_safe_reinforcement_learning_survey_2015"]},
+        {"concept_id": "exploration-learning-authority", "heading": "Invariants", "source_ids": ["ext_safe_reinforcement_learning_survey_2015"]},
+        {"concept_id": "digital-twin-sim-real", "heading": "Evidence", "source_ids": ["ext_ai_simulation_digital_twins_2025"]},
+        {"concept_id": "incident-recovery-recommissioning", "heading": "Digital twins and sim-to-real custody", "source_ids": ["ext_foundation_robotics_physical_risk_2025", "ext_simplex_architecture_1998", "ext_ai_simulation_digital_twins_2025"]},
+    ],
 }
 
 CONCEPT_ATOM_MAPPINGS: dict[str, dict[str, dict[str, Any]]] = {
@@ -321,6 +381,104 @@ for _chapter_id in {
         }
         for _spec in CONCEPT_SPECS[_chapter_id]
     }
+
+# These Round-18 owners were admitted with one intentionally composite core atom.
+for _chapter_id in {
+    "perception-sensor-fusion-and-observation-trust",
+    "embodied-agency-real-time-control-and-physical-safety",
+}:
+    CONCEPT_ATOM_MAPPINGS[_chapter_id] = {
+        _spec["concept_id"]: {
+            "atom_ids": [f"{_chapter_id}.core"],
+            "rationale": (
+                "The existing Round-18 chapter-core atom intentionally owns the "
+                f"bounded {_spec['concept_id']} proposition with its scope, falsifier, "
+                "promotion ceiling, and non-claims; splitting solely for count parity "
+                "would duplicate rather than clarify the current claim identity."
+            ),
+        }
+        for _spec in CONCEPT_SPECS[_chapter_id]
+    }
+
+_five_atom_routes = {
+    "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty": {
+        "coupled-trajectory-state": "mechanism",
+        "three-arm-complementarity": "core",
+        "bidirectional-adaptation": "mechanism",
+        "skill-dependence-calibration": "failure_boundary",
+        "neural-data-purpose-inference": "boundary",
+        "intervention-consent-boundary": "boundary",
+        "exit-and-human-recovery": "argument_exit",
+        "equity-longitudinal-remedy": "failure_boundary",
+    },
+    "relational-dimension-compilation-and-polyadic-cognition": {
+        "dimension-type-separation": "boundary",
+        "typed-role-relational-ir": "mechanism",
+        "residual-proposal-denominator": "mechanism",
+        "lower-order-rescue": "boundary",
+        "qualification-order-ladder": "core",
+        "compilation-conformance": "mechanism",
+        "adaptive-order-contraction": "failure_boundary",
+        "rodie-joint-evaluation": "argument_exit",
+    },
+    "confidential-and-verifiable-ai-computation": {
+        "guarantee-vector-adversary": "core",
+        "construction-selection-composition": "boundary",
+        "artifact-configuration-binding": "mechanism",
+        "attestation-role-separation": "boundary",
+        "freshness-revocation-replay": "mechanism",
+        "circuit-semantics-correspondence": "mechanism",
+        "leakage-side-channels-metadata": "failure_boundary",
+        "cost-fallback-downgrade": "argument_exit",
+    },
+}
+for _chapter_id, _routes in _five_atom_routes.items():
+    CONCEPT_ATOM_MAPPINGS[_chapter_id] = {
+        _concept_id: {
+            "atom_ids": [f"{_chapter_id}.{_suffix}"],
+            "rationale": (
+                f"The existing {_suffix.replace('_', '-')} atom is the bounded owner "
+                f"for {_concept_id}; the mapping preserves independent failure and "
+                "promotion ceilings without manufacturing a duplicate atom."
+            ),
+        }
+        for _concept_id, _suffix in _routes.items()
+    }
+
+CONCEPT_ATOM_MAPPINGS["learning-theory-generalization-and-scaling-science"] = {
+    "claim-contract-assumptions": {
+        "atom_ids": ["learning-theory-generalization-and-scaling-science.core"],
+        "rationale": "The chapter core already owns the dated, assumption-bound learning-claim contract and its inference ceiling.",
+    },
+    "conditional-generalization-bounds": {
+        "atom_ids": ["learning-theory-generalization-and-scaling-science.mechanism.001", "learning-theory-generalization-and-scaling-science.invariant.001"],
+        "rationale": "The population-and-algorithm mechanism plus exact-scope invariant own conditional generalization statements.",
+    },
+    "inductive-bias-identifiability": {
+        "atom_ids": ["learning-theory-generalization-and-scaling-science.mechanism.002"],
+        "rationale": "The multiple-lens mechanism owns explicit inductive-bias and alternative-explanation custody.",
+    },
+    "compression-information-lenses": {
+        "atom_ids": ["learning-theory-generalization-and-scaling-science.mechanism.002", "learning-theory-generalization-and-scaling-science.failure_mode.011"],
+        "rationale": "The explanatory-lens mechanism and compression-as-understanding failure preserve this bounded comparison.",
+    },
+    "interpolation-double-descent": {
+        "atom_ids": ["learning-theory-generalization-and-scaling-science.failure_mode.008", "learning-theory-generalization-and-scaling-science.invariant.005"],
+        "rationale": "The double-descent failure atom and prospective-forecast ceiling own non-monotone regime risk.",
+    },
+    "scaling-forecast-registry": {
+        "atom_ids": ["learning-theory-generalization-and-scaling-science.mechanism.003", "learning-theory-generalization-and-scaling-science.invariant.005"],
+        "rationale": "The scaling-fit mechanism and forecast-until-checked invariant own prospective registry discipline.",
+    },
+    "emergence-measurement": {
+        "atom_ids": ["learning-theory-generalization-and-scaling-science.mechanism.004", "learning-theory-generalization-and-scaling-science.invariant.004"],
+        "rationale": "The emergence-artifact mechanism and metric-retest invariant own competing transition explanations.",
+    },
+    "transfer-regime-change": {
+        "atom_ids": ["learning-theory-generalization-and-scaling-science.mechanism.005", "learning-theory-generalization-and-scaling-science.invariant.002"],
+        "rationale": "The transfer-challenge mechanism and claim-separation invariant own architecture and distribution regime changes.",
+    },
+}
 
 REQUIRED_ELEMENTS = ["**Mechanism.**", "**Failure mode.**", "**Non-claim.**", "**Source grounding.**"]
 
@@ -505,6 +663,78 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
             "the eight concepts distinguish decision role, mission authority, meaningful judgment, observation trust, safe posture, reciprocal adaptation, strategic off-ramps, and accountable decommissioning",
             "ICRC and SIPRI remain mandate-specific official-position and scenario-analysis sources; the international reports add context without becoming legal advice, prediction, or technical validation",
             "the chapter preserves compressed timelines, base-rate failures, adversary response, secrecy limits, independent challenge, decommissioning residuals, and argument-only support",
+        ],
+        "support_state_effect": "none",
+    },
+    "perception-sensor-fusion-and-observation-trust": {
+        "reviewed_sha256": "d2b199d42c24e39be96ab3fe1935f291f45569f91b1230f74bb2251fad3e5417",
+        "reviewed_date": "2026-07-28",
+        "reviewer_role": "codex_editorial_semantic_review",
+        "disposition": SEMANTIC_REVIEW_DISPOSITION,
+        "review_basis": [
+            "the eight concepts preserve task-relative observation need, exact sensor identity, time and pose, channel hypotheses, dependence, corruption, active sensing, and expiring observation authority as separate lifecycle obligations",
+            "multimodal, ImageBind, corruption, sensor-fusion, robotics, and Platonic World Model sources remain survey, reported comparator, benchmark, attack-study, capability, or authorial lineage rather than local observation-trust evidence",
+            "the chapter retains missingness, common-mode error, positive controls, active-sensing risk, safe hold, reconciliation, adjacent-owner authority, and argument-only support",
+        ],
+        "support_state_effect": "none",
+    },
+    "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty": {
+        "reviewed_sha256": "73aa3426379c6f0057eebf4efd8ecf890505eb63fe54694fcbe2b73c9cc929fa",
+        "reviewed_date": "2026-07-28",
+        "reviewer_role": "codex_editorial_semantic_review",
+        "disposition": SEMANTIC_REVIEW_DISPOSITION,
+        "review_basis": [
+            "the eight concepts distinguish coupled trajectories, strongest-component complementarity, bidirectional adaptation, skill and dependence, neural inference, intervention authority, practical exit, and longitudinal equity or remedy",
+            "the team meta-analysis, feedback-loop study, OECD convergence work, and WHO landscape retain task, population, study-duration, policy, clinical, and modality ceilings and do not become beneficial-symbiosis or neural-intervention evidence",
+            "the chapter preserves consent renewal, three-arm baselines, unaided recovery, attrition, inferred-data rights, clinical boundaries, irreversible residuals, and argument-only support",
+        ],
+        "support_state_effect": "none",
+    },
+    "relational-dimension-compilation-and-polyadic-cognition": {
+        "reviewed_sha256": "b3155703d9cdbc0689b309f26223f4e92858f93af4f88bf5802b7c413abaa05c",
+        "reviewed_date": "2026-07-28",
+        "reviewer_role": "codex_editorial_semantic_review",
+        "disposition": SEMANTIC_REVIEW_DISPOSITION,
+        "review_basis": [
+            "the eight concepts keep dimensional typing, role-sensitive IR, residual proposal, complete denominators, lower-order rescue, qualification, compilation, contraction, and vector evaluation semantically distinct",
+            "the Corben-authored compiler remains an unimplemented architecture and message passing remains a bounded molecular graph comparator rather than proof of higher-order necessity, irreducibility, natural-task value, or efficient compilation",
+            "the chapter preserves role identity, proposal recall uncertainty, matched rescue budgets, unseen topology, conformance limits, descendant invalidation, hardware cost, and argument-only support",
+        ],
+        "support_state_effect": "none",
+    },
+    "learning-theory-generalization-and-scaling-science": {
+        "reviewed_sha256": "10e43f2a5ab74407596136bc3ff6e55a2f4bb95ee9eb78229bf136db479ea4d3",
+        "reviewed_date": "2026-07-28",
+        "reviewer_role": "codex_editorial_semantic_review",
+        "disposition": SEMANTIC_REVIEW_DISPOSITION,
+        "review_basis": [
+            "the eight concepts separate claim assumptions, conditional bounds, inductive bias, compression and information lenses, interpolation, scaling forecasts, emergence measurement, and transfer under regime change",
+            "PAC, MDL, information bottleneck, scaling-law, double-descent, emergence, weak-to-strong, and no-free-lunch sources remain conditional, theoretical, empirical, model-family, task, or explanatory comparators rather than a universal learning theory",
+            "the chapter preserves failed runs, quantifiers, alternative explanations, prospective forecasts, uncertainty, metric artifacts, architecture and optimizer expiry, and no transfer or safety promotion",
+        ],
+        "support_state_effect": "none",
+    },
+    "confidential-and-verifiable-ai-computation": {
+        "reviewed_sha256": "25c4389bf52c0da42fb7271fe920a70b123e82db04ca2761625e660492558673",
+        "reviewed_date": "2026-07-28",
+        "reviewer_role": "codex_editorial_semantic_review",
+        "disposition": SEMANTIC_REVIEW_DISPOSITION,
+        "review_basis": [
+            "the eight concepts separate guarantee vectors, construction choice, artifact binding, attestation roles, freshness, semantic correspondence, leakage, and cost-visible downgrade",
+            "NIST privacy-enhancing cryptography, zkLLM, and RFC 9334 remain program context, a configuration-bound prototype, and informational architecture rather than local security, performance, root, verifier-independence, or authorization evidence",
+            "the chapter preserves adversary and leakage models, circuit-to-semantics gaps, replay, composition, side channels, matched native baselines, explicit fallback, and argument-only support",
+        ],
+        "support_state_effect": "none",
+    },
+    "embodied-agency-real-time-control-and-physical-safety": {
+        "reviewed_sha256": "cd18047b33ed06a16a8de2c21ecc094a02bba276a61a3009cb562ff2b2f8dc19",
+        "reviewed_date": "2026-07-28",
+        "reviewer_role": "codex_editorial_semantic_review",
+        "disposition": SEMANTIC_REVIEW_DISPOSITION,
+        "review_basis": [
+            "the eight concepts distinguish plant and hazard identity, observation-to-control separation, timing and reachability, advanced and fallback control, barriers and interlocks, learning authority, twin fidelity, and incident recommissioning",
+            "robotics capability, physical-risk survey, barrier, Simplex, safe-RL, digital-twin, and VIEA sources remain reported, survey, formal-framework, architectural, or authorial comparators rather than a local physical-safety result",
+            "the chapter preserves latency, shared-defect, infeasibility, exploration, simulator exploitation, independent stop, incident evidence, latent damage, safe-hold, and no consequential-plant claim",
         ],
         "support_state_effect": "none",
     },

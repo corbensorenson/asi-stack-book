@@ -30,6 +30,7 @@ CONTRACTED_REVIEW_CHAPTERS = {
     "adversarial-machine-learning-and-model-attack-surface",
     "physical-compute-infrastructure-energy-and-environmental-constraints",
     "institutions-international-coordination-and-public-legitimacy",
+    "learning-theory-generalization-and-scaling-science",
 }
 TOKEN_STOP = {
     "a", "an", "and", "are", "as", "at", "be", "by", "can", "for", "from",

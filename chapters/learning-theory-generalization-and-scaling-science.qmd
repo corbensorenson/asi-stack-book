@@ -3,8 +3,8 @@ title: "Learning Theory, Generalization, and Scaling Science"
 chapter_id: "learning-theory-generalization-and-scaling-science"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
-draft_maturity: "v0.2 complete argument-level manuscript"
-last_updated: "2026-07-24"
+draft_maturity: "v0.3 concept-complete argument-level manuscript"
+last_updated: "2026-07-28"
 primary_sources:
   - "ext_scaling_laws_neural_language_models_2020"
   - "ext_mdl_tutorial_2004"
@@ -53,6 +53,8 @@ The lifecycle runs from regime definition through experimental design, curve fit
 
 ## Problem
 
+**Mechanism.** Bind every generalization, transfer, emergence, or scaling statement to a dated claim contract naming population, sampling process, data support, hypothesis family, algorithm, optimization path, metric, compute regime, uncertainty, alternatives, consumer, and expiry. **Failure mode.** An attractive result can silently travel to a different distribution, architecture, scale, or consequence. **Non-claim.** Contract completeness does not make the forecast true. **Source grounding.** PAC, scaling, MDL, information, and emergence sources motivate distinct fields; none supplies a universal contract.
+
 The central risk is not that every forecast is wrong, but that a useful local
 regularity is promoted beyond the assumptions that made it useful. Scaling can
 change the optimizer's reachable solutions, the data mixture, the effective
@@ -64,6 +66,8 @@ The stack repeatedly relies on claims that learning will generalize, capabilitie
 Without this owner, empirical curves, learning-theory bounds, benchmark thresholds, and scaling narratives can each look authoritative while their populations, algorithms, metrics, compute regimes, alternatives, and prediction horizons differ. The [shared lifecycle method](living-book-methodology.qmd#shared-chapter-lifecycle-method) supplies custody; scaling science supplies the assumption ledger and forecast registry.
 
 ## Why existing approaches are insufficient
+
+**Mechanism.** Treat a bound as a conditional implication whose quantifiers, hypothesis class, loss, confidence, sample process, computational assumptions, and tail behavior remain visible beside the result. **Failure mode.** Asymptotic or average guarantees can become practical, adaptive, rare-event, or safety claims after their assumptions disappear. **Non-claim.** A correct theorem does not certify a trained foundation model. **Source grounding.** Valiant supplies foundational conditional structure; modern-system applicability remains an open empirical and formal question.
 
 PAC bounds, capacity measures, stability, compression, information theory, scaling-law fits, emergence plots, and benchmark curves each illuminate part of learning. None is a universal theory of deep networks, and none automatically transports from a loss metric, architecture family, data regime, optimizer, or scale range to downstream capability or safety.
 
@@ -93,6 +97,8 @@ flowchart LR
 
 ## Mechanism
 
+**Mechanism.** Maintain an assumption and identifiability ledger that names the inductive biases introduced by data, architecture, optimizer, parameterization, augmentation, objective, tools, and evaluation. Compare alternative explanations that agree on observed data but diverge under shift. **Failure mode.** “No free lunch” can become empty skepticism, while one observed preference can be mistaken for robust transfer. **Non-claim.** Naming bias does not identify its causal contribution. **Source grounding.** The no-free-lunch note frames explicit assumptions and limits, not a solved theory.
+
 **Contract.** State the population, sampling process, shift model, hypothesis family, learning algorithm, optimization path, inductive bias, metric, and consumer before making a generalization claim.
 
 **Admission.** Use multiple explanatory lenses—capacity and complexity, stability, compression and MDL, information, margins, implicit bias, interpolation, and benign-overfitting hypotheses—without laundering one into another.
@@ -104,6 +110,8 @@ flowchart LR
 **Closure.** Challenge transfer and compositionality under natural shift, targeted shift, new task structure, optimizer change, architecture replacement, and data contamination.
 
 ### Sample complexity: expose the quantifiers before quoting the bound
+
+**Mechanism.** Use compression, MDL, information bottlenecks, stability, margins, and capacity as separate explanatory lenses, each with its coding scheme, target variable, residual burden, and downstream verification cost. **Failure mode.** Complexity can be moved into prompts, tools, human labor, or an evaluator, and the chosen relevance variable can omit safety-critical information. **Non-claim.** Short descriptions or compressed representations are not understanding, truth, or generalization certificates. **Source grounding.** MDL and information-bottleneck sources provide bounded vocabulary; no local scorer or objective has been validated.
 
 In a probably-approximately-correct framing, a learning statement has the
 shape “with probability at least \(1-\delta\), the learned hypothesis has error
@@ -134,6 +142,8 @@ hypothesis assumptions.
 
 ### Interpolation and double descent: capacity is not a monotone risk dial
 
+**Mechanism.** Sweep effective complexity, sample size, and training duration densely enough to locate interpolation and non-monotone regions, retaining all failed runs and matched train/test curves. **Failure mode.** Sparse endpoints, nominal parameter counts, or censored failures can manufacture a smooth monotone story. **Non-claim.** Observing double descent in one configuration does not make it universal or causal. **Source grounding.** Deep Double Descent supplies configuration-bound empirical pressure; this chapter has not reproduced it.
+
 Classical bias-variance intuition often predicts a U-shaped test-error curve as
 capacity grows. Modern overparameterized systems can interpolate training data
 and sometimes improve beyond the interpolation threshold. Nakkiran et al.
@@ -159,6 +169,8 @@ noise regime, or metric does not transfer automatically to another.
 
 ### MDL and Kolmogorov-style simplicity: an explanatory lens, not an oracle
 
+**Mechanism.** Register prospective scaling forecasts with exact model, data, optimizer, metric, hardware accounting, fit range, candidate curve families, uncertainty, breakpoints, held-out scales, and scoring rules. **Failure mode.** Retrospective fitting and excluded failed runs can make nearly any curve appear predictive. **Non-claim.** A loss forecast does not automatically predict capability, risk, cost, or safety. **Source grounding.** Neural scaling laws supply source-reported power-law behavior within their regime; the registry is an untested governance design.
+
 Minimum Description Length trades the cost of describing a model against the
 cost of describing residual data under that model. Kolmogorov complexity
 supplies an idealized notion of shortest description but is not generally
@@ -182,6 +194,8 @@ code, not proof of semantic understanding or generalization.
 
 ### Scaling laws: forecast registries instead of retrospective straight lines
 
+**Mechanism.** Test apparent emergence with continuous and probabilistic metrics, denser checkpoints, uncertainty intervals, prompt and sampling variants, contamination controls, and prospective breakpoint predictions. **Failure mode.** Exact-match thresholds, floors, small samples, and retrospective task choice can create cliffs or hide consequential crossings. **Non-claim.** Showing a metric artifact in one task does not refute every phase transition. **Source grounding.** Emergent Abilities and the Mirage critique provide competing source-bounded interpretations, not a settled general law.
+
 Kaplan et al. report power-law relations between cross-entropy loss, model
 size, data, and compute for the studied model family and regime. Such fits can
 support resource planning when their domains, uncertainty, and held-out
@@ -201,6 +215,8 @@ bar while failed runs and hyperparameter changes disappear.
 behavior.
 
 ### Emergence: distinguish a system transition from a measurement threshold
+
+**Mechanism.** Challenge transfer under natural and targeted distribution shift, new task structure, weak supervision, architecture replacement, optimizer change, data contamination, and resource constraints, with source-domain and target-domain denominators kept separate. **Failure mode.** Shared pretraining, leaked labels, easy target metrics, or one model family can simulate transfer. **Non-claim.** Weak-to-strong improvement does not establish honest elicitation, alignment, or superhuman oversight. **Source grounding.** The weak-to-strong paper is a bounded proof of concept; the broader transfer contract remains untested.
 
 Wei et al. organize abilities reported as absent in smaller language models and
 present in larger ones. Schaeffer et al. provide a direct competing
