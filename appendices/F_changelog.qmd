@@ -1,5 +1,27 @@
 # Changelog
 
+## 2026-07-28 — Round 21 six-owner concept-completion tranche
+
+- Materially completed the eight named concept families in each of Scientific
+  Discovery, Governed Objective Formation, Durable Semantic Memory, AI
+  Deployment and Transition, Autonomous Replication, and Human–AI
+  Communication: 48 new owner-specific sections now state mechanisms, failure
+  modes, non-claims, and bounded source roles.
+- Bound all 48 concepts to existing claim-addressable owner atoms with explicit
+  many-to-one rationales where a composite proposition already owns the
+  concept. No atoms were added to imitate historical count distributions.
+- Hardened the substance builder, schema, and validator so a concept must have
+  an in-owner atom mapping and ownership rationale in addition to its prose and
+  source checks. The contract now passes 72/72 concepts across nine exact-digest
+  semantic reviews and 14/14 rejecting mutations.
+- Separated the twenty-chapter diagnostic-thin list from the fourteen-owner
+  remaining concept-completion queue. All six newly completed chapters remain
+  below the diagnostic word trigger without losing their terminal editorial
+  dispositions.
+- Advanced the roadmap to the next six owners while keeping the 84-chapter
+  freeze, 84/84 atom custody, raw-scaffold audit, proof/evidence handoff,
+  argument-only support, and no-release boundary unchanged.
+
 ## 2026-07-28 — Round 21 concept-completion and atom-adequacy amendment
 
 - Adjudicated the Round 21 review against current `main`, retaining the

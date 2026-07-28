@@ -1273,14 +1273,14 @@ Lean proof targets:
 
 Stable ID: `human-ai-communication-persuasion-and-epistemic-security`
 
-Round 21 concept-completion queue: reconcile assistance versus persuasion,
-epistemic provenance, audience vulnerability, personalization and
-manipulation, consent and contestability, multilingual and cultural validity,
-uncertainty and disclosure, and intervention/outcome measurement against the
-complete chapter and declared source queue. Each retained concept needs a
-mechanism, failure, non-claim, source contribution and limit, owner handoff,
-reader decision value, claim-addressable atom or justified many-to-one map, and
-an exact-digest semantic disposition. Word count is diagnostic only.
+Round 21 concept-completion disposition: terminal editorial completion at the
+current exact chapter digest. Assistance versus persuasion, epistemic
+provenance, audience vulnerability, personalization and manipulation, consent
+and contestability, multilingual and cultural validity, uncertainty and
+disclosure, and intervention/outcome measurement each have a mechanism,
+failure, non-claim, bounded source role, owner handoff, and claim-addressable
+atom mapping. The disposition has no support-state effect, and any later prose
+change requires a new semantic review. Word count remains diagnostic only.
 
 Chapter job: An AI system can preserve internal evidence discipline and still change beliefs, choices, and institutions through selective framing, personalization, synthetic identity, repetition, and amplification. The stack therefore needs an owner for the complete outbound communication transaction, including correction after a message escapes its original channel.
 
@@ -1594,14 +1594,14 @@ Lean proof targets:
 
 Stable ID: `governed-objective-formation-value-learning-and-goal-integrity`
 
-Round 21 concept-completion queue: reconcile preferences versus values,
-uncertainty and pluralism, corrigibility, goal drift and integrity,
-proxy/reward failure, authority to revise objectives, conflict adjudication,
-and update/rollback/refusal against the complete chapter and declared source
-queue. Each retained concept needs a mechanism, failure, non-claim, source
-contribution and limit, owner handoff, reader decision value,
-claim-addressable atom or justified many-to-one map, and an exact-digest
-semantic disposition. Word count is diagnostic only.
+Round 21 concept-completion disposition: terminal editorial completion at the
+current exact chapter digest. Preferences versus values, uncertainty and
+pluralism, corrigibility, goal drift and integrity, proxy/reward failure,
+objective-revision authority, conflict adjudication, and effect-visible
+update/rollback/refusal each have a mechanism, failure, non-claim, bounded
+source role, owner handoff, and claim-addressable atom mapping. The disposition
+has no support-state effect, and any later prose change requires a new semantic
+review. Word count remains diagnostic only.
 
 Chapter job: The stack has owners for requests, constitutions, value conflict, optimization, planning, and self-improvement, but those layers presuppose an operational objective they do not create. Without a positive objective-formation lifecycle, a temporary request, learned preference estimate, or convenient metric can silently become a durable goal.
 
@@ -2726,14 +2726,14 @@ Part source loading queue:
 
 Stable ID: `autonomous-replication-proliferation-and-containment`
 
-Round 21 concept-completion queue: reconcile the replication capability
-ladder, resource acquisition, identity and lineage, authorization boundaries,
+Round 21 concept-completion disposition: terminal editorial completion at the
+current exact chapter digest. The replication capability ladder, synthetic
+resource acquisition, parent/descendant lineage, authorization noninheritance,
 proliferation pathways, containment as a competing mechanism, shutdown and
-revocation, and elicitation/evaluation competence against the complete chapter
-and declared source queue. Each retained concept needs a mechanism, failure,
-non-claim, source contribution and limit, owner handoff, reader decision
-value, claim-addressable atom or justified many-to-one map, and an exact-digest
-semantic disposition. Word count is diagnostic only.
+recall, and elicitation/evaluator competence each have a mechanism, failure,
+non-claim, bounded source role, owner handoff, and claim-addressable atom
+mapping. The disposition has no support-state effect, and any later prose
+change requires a new semantic review. Word count remains diagnostic only.
 
 Chapter job: Replication is a composed lifecycle: obtaining resources, copying or reconstructing code and weights, creating identities and credentials, provisioning compute, deploying descendants, persisting, adapting, recruiting help, and resisting recall. The weak links can improve independently, so no adjacent chapter owns the end-to-end chain.
 
@@ -3285,14 +3285,14 @@ Proof boundary: the six public targets group 61 live declarations across two ret
 
 Stable ID: `durable-semantic-memory-and-knowledge-lattices`
 
-Round 21 concept-completion queue: reconcile semantic identity and provenance,
-write admission, consolidation, contradiction and belief revision, retrieval
-and context assembly, retention and forgetting, poisoning and taint, and
-lineage/rollback/descendant repair against the complete chapter and declared
-source queue. Each retained concept needs a mechanism, failure, non-claim,
-source contribution and limit, owner handoff, reader decision value,
-claim-addressable atom or justified many-to-one map, and an exact-digest
-semantic disposition. Word count is diagnostic only.
+Round 21 concept-completion disposition: terminal editorial completion at the
+current exact chapter digest. Semantic identity and provenance, write
+admission, consolidation, contradiction and belief revision, retrieval and
+context assembly, retention and forgetting, poisoning and taint, and
+lineage/rollback/descendant repair each have a mechanism, failure, non-claim,
+bounded source role, owner handoff, and claim-addressable atom mapping. The
+disposition has no support-state effect, and any later prose change requires a
+new semantic review. Word count remains diagnostic only.
 
 Chapter job: Long-lived AI systems need semantic objects that survive restarts, support graph and associative retrieval, evolve across ontology versions, preserve provenance, merge and retract conflicting assertions, forget under policy, and remain distinguishable from transient context and model weights.
 
@@ -3883,14 +3883,14 @@ Lean proof targets:
 
 Stable ID: `ai-deployment-transition-distribution-and-human-agency`
 
-Round 21 concept-completion queue: reconcile distribution of gains and burdens,
-labor transition, human agency and meaningful choice, access and concentration,
+Round 21 concept-completion disposition: terminal editorial completion at the
+current exact chapter digest. Distribution of gains and burdens, labor
+transition, human agency and meaningful choice, access and concentration,
 exit/fork/contestability, capability and skill preservation, monitoring and
-correction, and institutional transition authority against the complete
-chapter and declared source queue. Each retained concept needs a mechanism,
-failure, non-claim, source contribution and limit, owner handoff, reader
-decision value, claim-addressable atom or justified many-to-one map, and an
-exact-digest semantic disposition. Word count is diagnostic only.
+correction, and institutional transition authority each have a mechanism,
+failure, non-claim, bounded source role, owner handoff, and claim-addressable
+atom mapping. The disposition has no support-state effect, and any later prose
+change requires a new semantic review. Word count remains diagnostic only.
 
 Chapter job: A useful AI deployment changes tasks, roles, skill, discretion, wages, ownership returns, prices, access, concentration, critical-service continuity, and the practical choices available to people and communities. Aggregate productivity cannot reveal who benefits, who loses, or whether transition capacity exists.
 
@@ -7104,14 +7104,14 @@ Lean proof targets:
 
 Stable ID: `scientific-discovery-and-experimental-governance`
 
-Round 21 concept-completion queue: reconcile hypothesis and experiment
-provenance, closed-loop laboratory authority, discovery versus benchmark
-success, reproducibility and replication, negative and null results, dual-use
-review, resource allocation, and human scientific judgment against the
-complete chapter and declared source queue. Each retained concept needs a
-mechanism, failure, non-claim, source contribution and limit, owner handoff,
-reader decision value, claim-addressable atom or justified many-to-one map,
-and an exact-digest semantic disposition. Word count is diagnostic only.
+Round 21 concept-completion disposition: terminal editorial completion at the
+current exact chapter digest. Hypothesis and experiment provenance, closed-loop
+laboratory authority, discovery versus benchmark success, reproducibility and
+replication, negative and null results, dual-use review, resource allocation,
+and human scientific judgment each have a mechanism, failure, non-claim,
+bounded source role, owner handoff, and claim-addressable atom mapping. The
+disposition has no support-state effect, and any later prose change requires a
+new semantic review. Word count remains diagnostic only.
 
 Chapter job: AI-assisted science closes a loop from research objective and hypothesis through design, simulation or instrument control, measurement, analysis, causal or statistical claim, replication, dual-use review, and evidence handoff. Generic planning and tool use do not preserve the epistemic controls of that full loop.
 

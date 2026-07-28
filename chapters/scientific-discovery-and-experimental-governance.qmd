@@ -3,8 +3,8 @@ title: "Scientific Discovery and Experimental Governance"
 chapter_id: "scientific-discovery-and-experimental-governance"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
-draft_maturity: "v0.2 complete argument-level manuscript"
-last_updated: "2026-07-24"
+draft_maturity: "v0.3 concept-complete argument-level manuscript"
+last_updated: "2026-07-28"
 primary_sources:
   - "ext_autonomous_lab_materials_2023"
 evidence_level: "argument"
@@ -22,8 +22,8 @@ open_evidence_gaps:
 | Chapter ID | `scientific-discovery-and-experimental-governance` |
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
-| Manuscript maturity | v0.2 complete argument-level manuscript |
-| Last updated | 2026-07-24 |
+| Manuscript maturity | v0.3 concept-complete argument-level manuscript |
+| Last updated | 2026-07-28 |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source loading state | Assigned source notes support mechanism and boundary discussion; all reported outcomes remain source-reported. |
@@ -132,6 +132,88 @@ authority, or convert exploratory novelty into a supported conclusion.
 **Observation.** Require positive, negative, null, contamination, drift, and analysis-robustness controls plus independent reanalysis and, where feasible, replication.
 
 **Closure.** Route dangerous hypotheses, protocols, materials, capabilities, and disclosures through dual-use review and retain withheld details and unresolved risks as explicit residuals.
+
+## Concept-completion ledger
+
+### Hypothesis and experiment provenance
+
+**Mechanism.** Give every hypothesis a stable identity and ancestry graph linking the motivating observation, prior work, model or human proposer, competing explanations, search procedure, and the exact protocol versions that tested it. Record whether a branch was exploratory or confirmatory when it was created, not after its result was known. Generated variants remain siblings with separate attempt records; a later edit creates a descendant rather than silently replacing the earlier question. This makes novelty, independence, and outcome-conditioned revision inspectable.
+
+**Failure mode.** A pipeline can generate thousands of candidates, test only convenient ones, repair protocols after partial results, and publish the winner as though it had been specified in advance. Provenance can also become decorative if aliases hide duplicate hypotheses or if the same model both proposes and “independently” verifies a result.
+
+**Non-claim.** Complete ancestry does not make a hypothesis important, original, causal, or true. It establishes custody of the search and test history only.
+
+**Source grounding.** `aletheia` motivates claim-native dossiers, explicit unknowns, and verification lineage. `ext_autonomous_lab_materials_2023` supplies a bounded corrected case in which target identity, training overlap, attempted syntheses, and later reinterpretation materially affect what may be said. Neither source establishes that this provenance design improves discovery in a local campaign.
+
+### Closed-loop laboratory authority
+
+**Mechanism.** Split the laboratory loop into independently leased roles: hypothesis proposal, protocol authorization, instrument or simulator control, measurement, analysis, and claim adjudication. An instrument lease names operating envelope, calibration state, samples, controls, permitted adaptations, physical hazards, human interventions, and a stop authority outside the agent. Feedback may select the next permitted experiment, but it cannot expand the lease, reinterpret an observation as truth, or expose protected outcomes to a frozen confirmatory branch.
+
+**Failure mode.** “Autonomy” can conceal extensive technician rescue, unrestricted parameter changes, a classifier that certifies its own output, or active learning that optimizes around a drifting instrument. Conversely, an unrealistically brittle wrapper can manufacture a false negative by preventing competent recovery that the protocol allowed.
+
+**Non-claim.** Completing a robotic workflow demonstrates neither scientific autonomy nor safe laboratory operation beyond the named equipment, materials, intervention budget, and environment.
+
+**Source grounding.** `ext_autonomous_lab_materials_2023` describes a materials-specific loop joining computation, literature-derived models, robotics, X-ray characterization, and active learning. Its correction also shows why instrument and identification outputs require review. `aletheia` contributes separation between evidence authority and execution authority; neither supplies a reproduced laboratory control plane here.
+
+### Discovery versus benchmark success
+
+**Mechanism.** Compile a discovery claim from several separately scored objects: target definition, prior-art boundary, prediction, experimental realization, identification confidence, causal explanation, novelty to a platform, novelty to a field, and independent reproduction. Benchmark metrics such as yield, hit rate, or time-to-result remain operational observations. Promotion requires the claim compiler to select the narrowest supported discovery predicate and expose every denominator, including screened targets, attempted protocols, inconclusive identifications, and previously known items.
+
+**Failure mode.** A system can optimize an easy proxy—recovering database entries, matching a platform’s “new” set, or producing classifier-positive samples—while being credited with new science. Test contamination, flexible target definitions, and undisclosed human curation can make a discovery benchmark look stronger than the underlying epistemic result.
+
+**Non-claim.** High benchmark performance, a successful synthesis, or a novel model output does not by itself establish scientific novelty, explanation, causality, or general discovery competence.
+
+**Source grounding.** The corrected `ext_autonomous_lab_materials_2023` record distinguishes 57 targets, 36 confirmed realizations, four later-inconclusive identifications, and novelty relative to a prediction platform rather than necessarily to science. `aletheia` supports bounded claim compilation. These sources motivate the distinction but do not validate a general discovery metric.
+
+### Reproducibility and replication
+
+**Mechanism.** Treat computational replay, same-laboratory repetition, method replication, and independent conceptual replication as different evidence routes. A reproducibility packet contains raw observations, protocol and code versions, instrument calibration, environments, exclusions, randomization, stopping, analysis families, and operator interventions. A replication contract prospectively states which elements must be held equivalent, which differences create independence, what result range counts as consistent, and how disagreement changes the claim rather than forcing consensus.
+
+**Failure mode.** Byte-identical replay can reproduce a shared bias; a nominally independent laboratory can reuse the same contaminated data, model, reagent, or analysis code; and a failed replication can be dismissed post hoc by changing the target construct. The opposite error treats any difference as refutation despite insufficient power or failed positive controls.
+
+**Non-claim.** One successful replay or replication does not establish broad reproducibility, transfer across domains, or correctness of the original causal interpretation.
+
+**Source grounding.** `aletheia` motivates replayable claim dossiers and retained contradiction. The correction history in `ext_autonomous_lab_materials_2023` demonstrates why later reanalysis must remain connected to the original denominator. Neither source supplies an independent replication of the chapter’s proposed mechanism, so the support state remains argument.
+
+### Negative and null results
+
+**Mechanism.** Preserve every authorized attempt, including null, negative, contaminated, interrupted, and inconclusive outcomes, under a frozen denominator. The record distinguishes absence of the target effect from instrument incapacity, insufficient power, protocol deviation, failed manipulation, and safety termination. Known-null and known-effect controls calibrate the pipeline; publication and memory interfaces must make negative evidence retrievable without letting a high-volume generator bury it beneath successful-looking variants.
+
+**Failure mode.** Selective stopping, outcome-dependent exclusions, silent retries, and “cleanup” of inconclusive identifications turn search volume into apparent certainty. A weak instrument can also yield a false negative that is mistakenly used to reject an idea, while an overpowered analysis can label negligible effects important.
+
+**Non-claim.** A null result is not proof of no effect outside the tested sensitivity, population, protocol, and time window. A failed implementation is not evidence against the underlying architecture unless competence and positive controls passed.
+
+**Source grounding.** `ext_autonomous_lab_materials_2023` provides a concrete corrected denominator with failed and inconclusive targets that must not disappear. `aletheia` motivates preserving aporea and rejected claims. The sources do not establish publication-bias mitigation or local null-result handling.
+
+### Dual-use review and information hazards
+
+**Mechanism.** Run dual-use review at question selection, protocol authorization, execution, artifact custody, claim drafting, and disclosure. The review packet separates scientific validity from who may perform an experiment or receive operational detail. It records hazard class, plausible misuse pathway, required expertise and resources, affected populations, safer abstraction, access tier, monitoring, expiry, appeal, and residual knowledge that cannot be recalled. Withholding an operational recipe does not erase the existence or evidential status of the result.
+
+**Failure mode.** Review performed only at publication misses dangerous tool calls, materials, code, or intermediate artifacts created earlier. A vague safety label can suppress benign work without a falsifiable threat model, while a truth-seeking mandate can be abused to publish reusable harmful instructions.
+
+**Non-claim.** Dual-use review does not prove safety, eliminate misuse, or authorize secret adjudicators to alter scientific conclusions. It governs execution and disclosure within a named threat model.
+
+**Source grounding.** `aletheia` contributes constitutional export boundaries, source-bounded review, and separation of verification from action authority. `ext_autonomous_lab_materials_2023` is a benign materials case and supplies no general dual-use safeguard evidence; it shows only why integrated laboratory capability makes lifecycle review relevant.
+
+### Resource allocation and search governance
+
+**Mechanism.** Allocate experimental resources through a portfolio record that names expected information gain, decision relevance, cost, opportunity cost, safety burden, neglected alternatives, replication reserve, and stopping conditions. Search systems may propose large candidate sets, but an independent budget owner preserves diversity among hypotheses and funds calibration, negative controls, and replication rather than rewarding only short-term positive yield. Adaptive allocation remains exploratory unless its update rule and outcome access were prospectively authorized.
+
+**Failure mode.** A generator can monopolize compute or laboratory time with easily scored hypotheses, starve disconfirming work, and optimize publication count rather than knowledge. Cost-blind governance can make every claim prohibitively slow; yield-only governance can conceal failed attempts and discourage replication. Resource asymmetry can also make the proposed method appear superior to weaker baselines.
+
+**Non-claim.** A rational-looking budget or high information-gain estimate does not establish that the chosen scientific questions are socially valuable, morally legitimate, or globally optimal.
+
+**Source grounding.** `aletheia` motivates routing by uncertainty, risk, ambiguity, and historical failure while warning about verification latency. `ext_autonomous_lab_materials_2023` demonstrates active selection inside one bounded synthesis workflow. Neither source validates the proposed portfolio rule or its societal priorities.
+
+### Human scientific judgment and accountable handoff
+
+**Mechanism.** Preserve named human roles for question legitimacy, protocol authorization, interpretation challenge, dual-use disposition, and correction without treating a signature as epistemic proof. Reviewers receive the full attempt and intervention record, can inspect model-generated alternatives, record disagreement, request independent reanalysis, and narrow or reject the claim. Automation must report when it lacks a competent instrument, when protected outcomes leaked, and when a decision exceeded the reviewer’s available time or expertise.
+
+**Failure mode.** Human-in-the-loop theater asks a reviewer to approve a polished conclusion after the search history has been compressed away. Automation bias, authority gradients, alert overload, and correlated model-written analyses can make nominal independence meaningless. Conversely, requiring manual approval for every benign step can destroy the throughput being evaluated and shift work into unlogged channels.
+
+**Non-claim.** Human approval does not make an experiment correct, safe, representative, or legitimate. The claim is that accountable roles and inspectable dissent preserve a correction path.
+
+**Source grounding.** `aletheia` supplies adversarial review, explicit unknowns, and separate evidence authority. The corrected `ext_autonomous_lab_materials_2023` history illustrates the value of later human reanalysis but does not prove that this governance arrangement prevents error or scales to autonomous science.
 
 ## Interfaces
 

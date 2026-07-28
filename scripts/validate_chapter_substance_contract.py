@@ -44,6 +44,14 @@ def concept_errors(row: dict, specs: list[dict]) -> list[str]:
             out.append(
                 f"{chapter_id}/{concept.get('concept_id')}: source grounding is outside the chapter queue"
             )
+        if not concept.get("atom_ids") or not concept.get("atom_ids_available_to_chapter"):
+            out.append(
+                f"{chapter_id}/{concept.get('concept_id')}: claim-addressable atom ownership is missing or foreign"
+            )
+        if not concept.get("atom_ownership_rationale"):
+            out.append(
+                f"{chapter_id}/{concept.get('concept_id')}: many-to-one atom ownership rationale is missing"
+            )
     review = row.get("semantic_review")
     if not isinstance(review, dict):
         out.append(f"{chapter_id}: digest-bound semantic review is missing")
@@ -109,6 +117,8 @@ def main() -> None:
     reject("concept deletion", lambda c: c["chapter_records"][4]["concept_contracts"].pop())
     reject("concept word laundering", lambda c: c["chapter_records"][4]["concept_contracts"][0].__setitem__("observed_section_words", 1))
     reject("source grounding deletion", lambda c: c["chapter_records"][4]["concept_contracts"][0].__setitem__("source_ids_declared_by_chapter", False))
+    reject("concept atom mapping deletion", lambda c: c["chapter_records"][4]["concept_contracts"][0].__setitem__("atom_ids", []))
+    reject("concept atom ownership laundering", lambda c: c["chapter_records"][4]["concept_contracts"][0].__setitem__("atom_ownership_rationale", None))
     reject("semantic review deletion", lambda c: c["chapter_records"][4].__setitem__("semantic_review", None))
     reject("semantic review digest drift", lambda c: c["chapter_records"][4]["semantic_review"].__setitem__("reviewed_sha256", "0" * 64))
     reject("manual review bypass", lambda c: c.__setitem__("manual_semantic_review_required", False))

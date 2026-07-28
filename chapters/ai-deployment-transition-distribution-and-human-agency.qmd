@@ -3,8 +3,8 @@ title: "AI Deployment, Transition, Distribution, and Human Agency"
 chapter_id: "ai-deployment-transition-distribution-and-human-agency"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
-draft_maturity: "v0.2 complete argument-level manuscript"
-last_updated: "2026-07-24"
+draft_maturity: "v0.3 concept-complete argument-level manuscript"
+last_updated: "2026-07-28"
 primary_sources:
   - "ext_generative_ai_at_work_2025"
   - "ext_ilo_genai_jobs_index_2025"
@@ -24,8 +24,8 @@ open_evidence_gaps:
 | Chapter ID | `ai-deployment-transition-distribution-and-human-agency` |
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
-| Manuscript maturity | v0.2 complete argument-level manuscript |
-| Last updated | 2026-07-24 |
+| Manuscript maturity | v0.3 concept-complete argument-level manuscript |
+| Last updated | 2026-07-28 |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source loading state | Assigned source notes support mechanism and boundary discussion; all reported outcomes remain source-reported. |
@@ -125,6 +125,88 @@ of treating launch as an irreversible success declaration.
 **Observation.** Fund training, redeployment, income and service continuity, accessibility, contestability, and remedy as deployment costs rather than externalities.
 
 **Closure.** Use staged rollout and delayed follow-up to narrow, pause, redesign, compensate, or withdraw when transition capacity or observed outcomes fail.
+
+## Concept-completion ledger
+
+### Distribution of gains and burdens
+
+**Mechanism.** Build a distribution ledger before rollout that names workers, customers, owners, suppliers, contractors, data and knowledge contributors, regions, public services, and excluded or future entrants. For each cohort, track quality, time, workload, compensation, prices, access, errors, surveillance, transition cost, and ownership returns over declared horizons. Aggregate benefit is reported beside subgroup outcomes and uncompensated contributions; a positive total cannot close an unresolved burden.
+
+**Failure mode.** Average productivity can hide wage suppression, shifted error work, inaccessible services, uncompensated expertise, or gains captured by owners and infrastructure providers. Narrow accounting can also double-count benefits or treat ordinary process improvements as AI effects. An overbroad ledger may become costly without changing a decision.
+
+**Non-claim.** Distributional visibility does not establish a uniquely fair allocation, causal attribution, economy-wide welfare, or entitlement to deploy.
+
+**Source grounding.** `ext_generative_ai_at_work_2025` supplies bounded worker-level productivity and heterogeneous-effect evidence in one customer-support setting. `ext_ilo_genai_jobs_index_2025` supplies heterogeneous exposure mapping, not realized outcomes. `coherence_exchange` motivates value/accounting and contestability as authorial design lineage. None proves broad distributional benefit.
+
+### Labor transition from tasks to durable capability
+
+**Mechanism.** Trace exposure to actual adoption, task change, role redesign, employment, skill acquisition or loss, workload, bargaining power, wages, and delayed mobility as separate transitions. A deployment contract funds training, protected learning time, redeployment, income continuity, and a non-AI comparator that receives equal process-improvement attention. It records whether assistance complements workers, substitutes for tasks, changes hiring, or transfers tacit expertise into firm assets.
+
+**Failure mode.** Occupational exposure can be mislabeled displacement, a short productivity gain can be called durable upskilling, and survivor bias can omit people who leave. Management pressure can make “voluntary” adoption coercive. Conversely, a study can manufacture a negative result by withholding adequate training from the AI-assisted group.
+
+**Non-claim.** One task or workplace cannot establish general employment, wage, skill, or macroeconomic effects, and exposure estimates are not forecasts.
+
+**Source grounding.** `ext_ilo_genai_jobs_index_2025` explicitly separates task exposure from realized automation and reports cross-group variation. `ext_generative_ai_at_work_2025` reports heterogeneous productivity effects within a specific firm and workflow. Neither establishes long-run labor transition or an ASI-era conclusion.
+
+### Human agency and meaningful choice
+
+**Mechanism.** Measure agency through practical options: the ability to understand a decision, exercise discretion, refuse AI mediation without retaliation, contest an output, reach a human with authority, select an alternative, and recover from error. The record includes power asymmetry, essential-service dependency, surveillance, workload targets, accessibility, and the cost of dissent. Nominal approval counts only when the person retains a usable path to say no.
+
+**Failure mode.** Ceremonial human review can coexist with quotas, ranking systems, or service designs that make disagreement costly. A checkbox can stand in for consent, while automation removes the skills needed to overrule it. Paternalistic governance can also deny people useful tools in the name of preserving a choice they did not want.
+
+**Non-claim.** More human clicks do not prove agency, dignity, welfare, informed consent, or better decisions.
+
+**Source grounding.** `coherence_exchange` motivates fork, exit, audit, and contestability as speculative governance interfaces. `ext_generative_ai_at_work_2025` examines bounded work-experience outcomes but does not validate meaningful-control mechanisms. `ext_ilo_genai_jobs_index_2025` identifies heterogeneous exposure without measuring individual agency.
+
+### Access, concentration, and bottleneck power
+
+**Mechanism.** Map control over chips, fabrication, cloud, energy, networks, models, data, app distribution, identity, and contractual interfaces. Record supplier concentration, upstream common dependencies, pricing and capacity terms, vertical integration, switching cost, data egress, portability tests, and whether smaller organizations or regions can obtain a functionally adequate alternative. A deployment lease treats migration capacity and service continuity as first-class costs.
+
+**Failure mode.** Several branded vendors may rely on the same upstream accelerator or cloud, making apparent competition brittle. Technical interoperability can exist on paper while data, capital, power, talent, or contracts prevent migration. Concentration metrics can also be overread as proof of illegality or as evidence that fragmentation is always safer.
+
+**Non-claim.** This map does not define a legal market, prove anticompetitive conduct, select an optimal industrial policy, or show that decentralization improves every outcome.
+
+**Source grounding.** `ext_oecd_ai_infrastructure_competition_2025` maps the AI infrastructure supply chain, barriers, vertical relationships, and policy concerns with time- and jurisdiction-specific limits. `coherence_exchange` adds authorial fork/exit framing. No source adjudicates a particular provider or validates the chapter’s portability gate.
+
+### Exit, fork, and contestability
+
+**Mechanism.** Define effective exit as a rehearsed transition of data, workflows, identities, interfaces, accessibility adaptations, audit history, and essential-service obligations to a viable alternative. Fork rights specify which artifacts and governance state may move; contestability supplies notice, explanation, evidence access, appeal, remedy, and an authority able to change the result. Exit tests include provider withdrawal, price change, policy change, degraded quality, and a disputed automated decision.
+
+**Failure mode.** A downloadable file can masquerade as portability when proprietary formats, learned workflows, or upstream dependencies remain stranded. Formal appeal can be useless if it is slow, inaccessible, or lacks remedial power. Mandatory portability can also expose sensitive data or undermine legitimate integrity controls.
+
+**Non-claim.** A successful rehearsal does not establish competitive markets, complete independence, lawful entitlement to every artifact, or freedom from all switching cost.
+
+**Source grounding.** `coherence_exchange` supplies fork, exit, audit, and contestability as governance design lineage, not tested institutional economics. `ext_oecd_ai_infrastructure_competition_2025` grounds the distinction between technical compatibility and practical substitutability. Neither proves that the proposed exit contract restores agency.
+
+### Capability and skill preservation
+
+**Mechanism.** Identify human and organizational capabilities that must survive deployment: diagnosis, exception handling, domain judgment, maintenance, teaching, emergency operation, and supplier migration. Preserve them through deliberate practice, rotation, fallback drills, documentation, apprenticeship, and periodic unaided performance checks. Skill measures separate short-term output assistance from learning, dependency, and the ability to recover after tool withdrawal.
+
+**Failure mode.** A system can raise immediate throughput while eroding the judgment needed to detect its errors or operate during outages. Unaided testing can become punitive surveillance, and preserving obsolete tasks can waste effort or deny workers access to genuinely useful augmentation. Weak training can then be blamed on the idea rather than implementation quality.
+
+**Non-claim.** Preserved benchmark performance does not prove meaningful expertise, worker wellbeing, labor-market mobility, or that every displaced skill should be retained.
+
+**Source grounding.** `ext_generative_ai_at_work_2025` motivates separate analysis of productivity, worker experience, learning, and heterogeneity in one workplace. `ext_ilo_genai_jobs_index_2025` motivates task-level exposure rather than job-level simplification. Neither supplies long-run skill-retention evidence or validates these drills.
+
+### Monitoring, correction, and reachable remedy
+
+**Mechanism.** Keep the transition lease open through delayed observation. Independent monitors track adoption and nonadoption cohorts, subgroup outcomes, complaints, service failures, concentration changes, attrition, and late dependency. Threshold breaches trigger funded actions—training, compensation, accessibility repair, scope reduction, pause, supplier migration, or withdrawal—and closure requires evidence that the remedy reached the affected state, not merely that it was announced.
+
+**Failure mode.** Short follow-up can miss deskilling, wage effects, induced demand, or concentration. Complaint systems can exclude precarious workers and inaccessible users, while management-selected metrics suppress harms. A rigid threshold can also pause beneficial service because of noisy data or a comparator deprived of ordinary improvements.
+
+**Non-claim.** Monitoring does not itself repair harm, prove causal attribution, or guarantee that every affected person can be found and restored.
+
+**Source grounding.** `ext_generative_ai_at_work_2025` offers a bounded field-study comparator and heterogeneous outcomes, not a general remedy system. `ext_ilo_genai_jobs_index_2025` helps define prospective affected cohorts. `ext_oecd_ai_infrastructure_competition_2025` motivates monitoring of evolving bottlenecks. No source validates effect-complete remedy here.
+
+### Institutional transition authority
+
+**Mechanism.** Assign decision rights for proposal, worker and community participation, staged authorization, pause, compensation, appeal, emergency continuity, and final retirement. Authority scales with consequence and is separated from vendor, model, and local performance evaluator. The institution records its jurisdiction, affected-party representation, evidence standard, conflicts of interest, expiry, and the residuals it cannot remedy. Urgent beneficial deployment can use narrower temporary leases without deleting later review.
+
+**Failure mode.** Vendor self-certification can turn commercial incentives into public authority; consultation can be ceremonial; and transition bureaucracy can entrench incumbents able to absorb compliance cost. Diffuse authority can leave no actor able to stop a harmful rollout or fund repair, while centralized authority can suppress local choice.
+
+**Non-claim.** A procedurally valid institution does not guarantee legitimacy, fairness, competence, democratic consent, or an optimal pace of adoption.
+
+**Source grounding.** `coherence_exchange` motivates contestable governance but remains speculative authorial lineage. `ext_oecd_ai_infrastructure_competition_2025` supplies institutionally grounded market and policy analysis without selecting an optimal remedy. `ext_generative_ai_at_work_2025` and `ext_ilo_genai_jobs_index_2025` provide bounded evidence inputs, not transition authority.
 
 ## Interfaces
 

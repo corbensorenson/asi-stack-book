@@ -3,8 +3,8 @@ title: "Durable Semantic Memory and Knowledge Lattices"
 chapter_id: "durable-semantic-memory-and-knowledge-lattices"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
-draft_maturity: "v0.2 complete argument-level manuscript"
-last_updated: "2026-07-24"
+draft_maturity: "v0.3 concept-complete argument-level manuscript"
+last_updated: "2026-07-28"
 primary_sources:
   - "ext_graphrag_2024"
   - "ext_hipporag_2024"
@@ -25,8 +25,8 @@ open_evidence_gaps:
 | Chapter ID | `durable-semantic-memory-and-knowledge-lattices` |
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
-| Manuscript maturity | v0.2 complete argument-level manuscript |
-| Last updated | 2026-07-24 |
+| Manuscript maturity | v0.3 concept-complete argument-level manuscript |
+| Last updated | 2026-07-28 |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source loading state | Assigned source notes support mechanism and boundary discussion; all reported outcomes remain source-reported. |
@@ -134,6 +134,88 @@ proposal may act.
 **Observation.** Combine exact, vector, graph, associative, temporal, and learned navigation under a retrieval plan that records which objects were actually used.
 
 **Closure.** Consolidate, compact, expire, forget, and recover transactionally, separating storage erasure, retrieval suppression, behavioral forgetting, influence, privacy, and backup state.
+
+## Concept-completion ledger
+
+### Semantic identity and provenance
+
+**Mechanism.** Assign a stable opaque identity to each admitted entity, event, claim, relation, procedure, and source object independently of its name, embedding, graph location, summary, or physical storage address. Every assertion links to the occurrence that produced it, the transformation that normalized it, its ontology version, evidence ceiling, authority, temporal scope, and known aliases or collisions. Derived summaries and learned states remain children, so a representation can be rebuilt without silently changing the referent.
+
+**Failure mode.** Similarity can merge different people or events, while synonym drift can split one object into incompatible duplicates. A popular summary can become the apparent source after its parents expire, and an address migration can retarget consumers to a different object while preserving a familiar label.
+
+**Non-claim.** Stable identity and complete provenance do not establish that the object exists as described, that an assertion is true, or that every real-world referent has been uniquely resolved.
+
+**Source grounding.** `qcsa_whitepaper` supplies the separation among semantic object identity, plural virtual addresses, evidence-bearing graph state, and physical routes. `ext_graphrag_2024` and `ext_hipporag_2024` provide graph-derived retrieval comparators whose generated structures remain fallible. No source establishes local identity accuracy or truth.
+
+### Write admission and memory authority
+
+**Mechanism.** Route every proposed write through an admission packet that identifies the writer, source, purpose, consumer scope, support state, rights, retention policy, ontology, expected conflicts, and rollback path. Observation, user statement, model inference, external claim, and administrative rule enter as different types. A high retrieval score or model confidence cannot grant write authority. Rejected writes and unresolved collisions remain recorded so repeated proposals cannot bypass the original reason for denial.
+
+**Failure mode.** Conversational memory can convert a transient guess into a durable fact, an agent can poison shared state through repeated self-citation, or a tool result can be stored without the conditions under which it was observed. Excessively rigid admission can instead discard useful provisional information and force consumers into private, unaudited caches.
+
+**Non-claim.** Admission means the record is eligible to persist under a named contract; it does not promote belief, consent, decision authority, or evidential truth.
+
+**Source grounding.** `ext_mem0_2025` motivates extraction and consolidation as explicit long-term-memory operations while leaving correctness, privacy, and poisoning open. `qcsa_whitepaper` contributes certificates with provenance, authority ceilings, permitted uses, and residuals. Neither source validates this admission policy.
+
+### Consolidation and compaction
+
+**Mechanism.** Consolidate related events only through a versioned transformation that lists covered parents, retained disagreements, omitted detail, temporal assumptions, rights intersection, reconstruction route, and consumers allowed to use the derivative. Compaction may replace hot representations or indexes for efficiency, but the durable event lineage and invalidation edges remain. Learned memory checkpoints carry training inputs, update rule, optimizer state where relevant, and a route back to exact records rather than becoming an uninspectable canonical truth.
+
+**Failure mode.** Summaries can smooth contradictions, community labels can invent consensus, and compression can discard the detail needed to correct a downstream decision. A snapshot may preserve semantic content while losing deletion duties or may resurrect retracted relations after recovery. Keeping every byte forever creates a different failure through cost and privacy exposure.
+
+**Non-claim.** A compact representation that answers a benchmark correctly is not necessarily faithful, complete, reversible, private, or safe for every consumer.
+
+**Source grounding.** `ext_graphrag_2024` motivates graph and community-summary derivatives; `ext_mem0_2025` motivates consolidation under latency and token constraints; `ext_titans_2025` motivates mutable learned memory. `qcsa_whitepaper` supplies residual- and migration-aware compression boundaries. None proves lossless consolidation here.
+
+### Contradiction and belief revision
+
+**Mechanism.** Represent contradiction, support, supersession, retraction, equivalence, and unresolved plurality as typed edges rather than overwriting a current value. Temporal validity separates “was true then” from “is supported now,” and a claim-ledger interface determines belief state while memory preserves the underlying objects. Consumers request a purpose- and time-bounded view that includes material alternatives and receive invalidation when later evidence changes an object they used.
+
+**Failure mode.** Last-write-wins can erase history; majority retrieval can suppress a rare correct correction; and a generated synthesis can combine mutually exclusive claims into a fluent false compromise. The opposite failure sends every historical contradiction to every consumer, overwhelming useful retrieval and encouraging them to ignore provenance.
+
+**Non-claim.** Preserving disagreement does not decide which assertion is true, guarantee calibrated belief revision, or make a contradiction resolvable with available evidence.
+
+**Source grounding.** `qcsa_whitepaper` explicitly separates propositions, evidence, provenance, belief state, contradiction, and permitted use. `ext_graphrag_2024` and `ext_hipporag_2024` motivate graph traversal but do not supply governed belief revision. The chapter’s event-sourced revision design remains an argument, not a reproduced result.
+
+### Retrieval and context assembly
+
+**Mechanism.** Compile retrieval as a plan over exact identity, semantic similarity, graph relations, time, rights, support, task purpose, and cost. Each candidate carries the route that found it and each denial records the failed filter. Context assembly selects a bounded set with provenance, contradictions, expiry, and residual uncertainty, then records which objects the model actually received and which were cited or used downstream. Learned navigation remains a replaceable proposal mechanism behind this contract.
+
+**Failure mode.** Vector similarity can return a plausible but wrong entity; graph centrality can amplify popular misinformation; a long context can contain the answer without the model using it; and a global summary can omit local evidence. Evaluation can hide these failures by using static corpora, LLM judges, or queries that saturate across all methods.
+
+**Non-claim.** Retrieval recall, answer accuracy, graph connectivity, or context length does not prove durable memory truth, causal use, safe authority, or general task adequacy.
+
+**Source grounding.** `ext_graphrag_2024`, `ext_hipporag_2024`, and `ext_mem0_2025` provide distinct graph, associative, and conversational retrieval comparators. `qcsa_whitepaper` contributes active, consumer-scoped semantic addressing. Their reported results are not local reproductions and do not establish this joined plan’s advantage.
+
+### Retention, forgetting, and deletion
+
+**Mechanism.** Model retention as separate authorities over storage, retrieval, use, training influence, behavioral expression, privacy, backups, and legal or audit preservation. A deletion event identifies the object, purpose, affected derivatives, indexes, caches, checkpoints, backups, and consumers; each returns a disposition and residual. Tombstones and minimal accountability records may remain where authorized so a forbidden object is not silently reintroduced, while content access is removed according to the governing duty.
+
+**Failure mode.** Deleting one database row can leave embeddings, summaries, caches, model influence, and backups active. Conversely, claiming complete erasure may conflict with audit obligations, while an overbroad tombstone can reveal that sensitive content existed. Behavioral absence on a probe can be mistaken for influence or storage erasure.
+
+**Non-claim.** Retrieval suppression does not prove storage deletion, model unlearning, privacy repair, causal influence removal, or irrecoverability from every descendant.
+
+**Source grounding.** `ext_mem0_2025` makes memory extraction and consolidation operationally salient but does not establish deletion completeness. `ext_titans_2025` raises mutable neural-memory custody and rollback duties. `qcsa_whitepaper` supplies lifecycle and descendant concepts while explicitly not proving forgetting or erasure.
+
+### Poisoning, taint, and semantic quarantine
+
+**Mechanism.** Attach taint to a source, transformation, object, relation, index, or learned checkpoint and propagate it through known dependencies. Admission tests inject alias collisions, adversarial relations, stale epochs, forged provenance, and repeated self-citation. Suspect objects move to a quarantine view where authorized reviewers can compare clean parents, re-resolve identities, rebuild indexes, and issue descendant invalidations without deleting the forensic trail.
+
+**Failure mode.** A poisoned memory can become more trusted through repetition, graph centrality, or model-generated summaries. Rebuilding an index from tainted snapshots can resurrect the attack; indiscriminate taint propagation can quarantine most of the store and create denial of service. A detector tuned to obvious corruptions can give false confidence against subtle semantic poisoning.
+
+**Non-claim.** Passing a finite poisoning suite does not prove adversarial robustness, source honesty, or safe operation against novel attacks.
+
+**Source grounding.** `qcsa_whitepaper` identifies alias-driven privilege escalation, atlas poisoning, route disagreement, and stale-epoch failures. `ext_graphrag_2024`, `ext_hipporag_2024`, and `ext_mem0_2025` motivate derived graph and retrieval layers whose poisoning behavior is not established by their source notes. No local defense efficacy is claimed.
+
+### Lineage, rollback, restart, and descendant repair
+
+**Mechanism.** Checkpoint the event log, current semantic view, indexes, ontology mappings, rights state, learned-memory state, caches, RNG or update state where applicable, and outstanding consumer receipts under one authority. Restart replay must either reproduce the governed view or enumerate every nondeterministic and lossy difference. A correction walks the descendant graph to summaries, embeddings, contexts, plans, and decisions; rollback restores an authorized consistent state and replays later admissible events.
+
+**Failure mode.** Restoring only the database can leave stale indexes and caches active, while restoring a snapshot can resurrect deleted content or old rights. A syntactically successful rollback may not repair downstream decisions already made. Replaying a learned memory without optimizer or update state can produce an apparently equivalent but semantically different system.
+
+**Non-claim.** Byte-equivalent restart does not establish semantic truth, and administrative rollback does not reverse external effects or prove every descendant repaired.
+
+**Source grounding.** `qcsa_whitepaper` supplies immutable epochs, migration records, compatibility, rollback, and explicit residuals. `ext_titans_2025` motivates custody of mutable neural state. The other retrieval comparators do not establish restart equivalence; the proposed full-state repair path remains untested.
 
 ## Interfaces
 

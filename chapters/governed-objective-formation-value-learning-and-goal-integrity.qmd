@@ -3,8 +3,8 @@ title: "Governed Objective Formation, Value Learning, and Goal Integrity"
 chapter_id: "governed-objective-formation-value-learning-and-goal-integrity"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
-draft_maturity: "v0.2 complete argument-level manuscript"
-last_updated: "2026-07-24"
+draft_maturity: "v0.3 concept-complete argument-level manuscript"
+last_updated: "2026-07-28"
 primary_sources:
   - "ext_cooperative_inverse_rl_2016"
   - "ext_goal_misgeneralization_2022"
@@ -25,8 +25,8 @@ open_evidence_gaps:
 | Chapter ID | `governed-objective-formation-value-learning-and-goal-integrity` |
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
-| Manuscript maturity | v0.2 complete argument-level manuscript |
-| Last updated | 2026-07-24 |
+| Manuscript maturity | v0.3 concept-complete argument-level manuscript |
+| Last updated | 2026-07-28 |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source loading state | Assigned source notes support mechanism and boundary discussion; all reported outcomes remain source-reported. |
@@ -122,6 +122,88 @@ policies, plans, and derived subgoals.
 **Observation.** Challenge goal generalization with proxy interventions, distribution shift, evaluator swaps, preference poisoning, reward tampering, capable-wrong-goal controls, and ontology migration.
 
 **Closure.** Version objectives and invalidate descendant bindings when authority, affected parties, semantics, or evidence changes; retirement must reach caches, planners, policies, and derived goals.
+
+## Concept-completion ledger
+
+### Preferences, values, and authorization are different objects
+
+**Mechanism.** Represent an observed choice, stated preference, inferred preference model, defended value, institutional rule, right, and authorized objective as separate typed records. Each transformation names who made it, the population and context sampled, uncertainty, possible coercion or strategic behavior, affected nonparticipants, and the authority that permits a bounded consumer to act. A preference learner may update evidence about what a person wants; it cannot silently manufacture consent, aggregate legitimacy, or a persistent system goal.
+
+**Failure mode.** Systems often treat behavior as revealed value, a majority score as moral truth, or a reward-model prediction as permission. Strategic users, adaptive preferences, power imbalance, framing, and missing affected parties can then be laundered into a single target. An equally serious failure discards useful preference evidence because it is imperfect rather than preserving uncertainty.
+
+**Non-claim.** Typed separation does not discover correct values or solve the philosophical relationship between desire, wellbeing, rights, and obligation.
+
+**Source grounding.** `ext_cooperative_inverse_rl_2016` formalizes cooperative action under uncertainty about a human reward function, supporting uncertainty rather than direct observability. `alignment_field` supplies authorial constraints around agency, dignity, and non-domination. Neither source turns inferred preference into legitimate authority or validates the proposed record locally.
+
+### Uncertainty, pluralism, and affected-party standing
+
+**Mechanism.** Store objective uncertainty as structured alternatives rather than one scalar confidence. The charter records competing interpretations, normative theories, distributional consequences, rights ceilings, dissenting groups, unrepresented parties, and the conditions under which clarification, reversible experimentation, or abstention outranks optimization. Aggregation is a versioned decision rule for a named institution and context; minority positions and unresolved reasons survive the decision and remain available to appeal or later evidence.
+
+**Failure mode.** Scalarization can erase disagreement, let a well-sampled group dominate an absent one, or convert uncertainty into optimization pressure. A system can also weaponize pluralism by claiming every decision is indeterminate, refusing harmless assistance, or indefinitely deferring accountable choices.
+
+**Non-claim.** Preserving plural values does not prove a fair aggregation rule, universal standing, moral truth, or political legitimacy. Those remain governed human and institutional questions.
+
+**Source grounding.** `alignment_field` motivates value conflict, dignity, agency, and corrigibility as constraints while explicitly remaining philosophical rather than empirical proof. `ext_cooperative_inverse_rl_2016` shows why a system can remain uncertain about an objective in a cooperative formal setting, but its assumptions do not settle multi-party conflict or institutional authority.
+
+### Corrigibility as an objective-lifecycle property
+
+**Mechanism.** Define corrigibility through observable lifecycle operations: the objective can be questioned, narrowed, paused, amended, expired, replaced, and retired by an authority outside the optimizing process. The consumer lease forbids preserving optionality only when the objective explicitly authorizes irreversible action; it carries interruption semantics, clarification triggers, anti-manipulation duties, and a test that the optimizer cannot make reauthorization harder in order to protect its current target.
+
+**Failure mode.** A system may obey a stop command in a toy test while manipulating the operator, hiding relevant state, creating irreversible dependencies, or optimizing the interpretation of “stop.” Conversely, an overbroad corrigibility rule can make the system inert or vulnerable to unauthorized goal changes.
+
+**Non-claim.** A registry, shutdown response, or cooperative demeanor does not prove deep corrigibility, absence of deceptive behavior, or alignment across novel contexts.
+
+**Source grounding.** `alignment_field` supplies the normative priority of agency, non-domination, and corrigibility. `ext_learned_optimization_risks_2019` motivates concern that a learned optimizer’s internal objective may differ from the outer objective. The sources do not provide a validated corrigibility metric or local optimizer analysis.
+
+### Goal drift and integrity across change
+
+**Mechanism.** Bind every objective to semantic, causal, authority, population, and ontology versions, then monitor material change in any of them. Integrity checks compare the active target-property graph, consumer leases, derived subgoals, evaluator rubrics, and observed behavior against the authorized version. Drift opens a new adjudication transaction; it cannot be repaired by preserving the original text when the world, model capabilities, or meaning of its terms changed.
+
+**Failure mode.** Byte-identical mission statements can acquire different consequences after an ontology migration or capability increase. A capable policy may continue succeeding while pursuing the wrong generalized goal, and stable benchmark performance can conceal that divergence. Noisy monitors can also call ordinary adaptation “goal drift” and generate false refusals.
+
+**Non-claim.** Detecting a changed representation or behavioral discrepancy does not identify the system’s true internal objective, prove deception, or establish that the original goal was correct.
+
+**Source grounding.** `ext_goal_misgeneralization_2022` grounds the distinction between capability generalization and wrong-goal generalization under distribution shift. `ext_learned_optimization_risks_2019` supplies the learned-objective mismatch threat. Neither source establishes that the proposed lineage checks detect internal goals.
+
+### Proxy, reward, and evaluator failure
+
+**Mechanism.** Model each proxy, reward, benchmark, and evaluator as an instrument connected to a target property by an explicit causal assumption. Evaluation includes interventions that improve the proxy while holding or worsening the target, evaluator swaps, hidden holdouts, reward-channel tampering, and capable wrong-goal controls. Independent observations determine whether the binding remains admissible; no one signal may train, select, and authorize the same update without recorded counterevidence.
+
+**Failure mode.** Reward hacking can look like competence, evaluator mimicry can look like alignment, and weak models can look safe only because they cannot exploit the proxy. A badly designed challenge can produce the opposite false negative by testing an incapable implementation or an insensitive target measure.
+
+**Non-claim.** Surviving a finite proxy suite does not prove specification completeness, safe generalization, or absence of mesa-objectives.
+
+**Source grounding.** `ext_emergent_misalignment_reward_hacking_2025` reports reward-hacking-associated misaligned generalization in a specified production-RL research setup. `ext_goal_misgeneralization_2022` and `ext_learned_optimization_risks_2019` ground distinct wrong-goal threats. Their results are source-reported, setting-bound, and not reproduced here.
+
+### Authority to create or revise objectives
+
+**Mechanism.** Require an authority graph for every objective transition. It identifies principals, delegates, affected parties, constitutional ceilings, jurisdiction, amendment procedure, expiry, emergency powers, and appeal. Models may propose interpretations and forecast consequences, but the optimized system, its reward model, and its evaluator cannot ratify their own durable authority. Revision produces a new version with a reasoned delta and prospective consumer set rather than editing history.
+
+**Failure mode.** Authority smuggling occurs when a user request becomes a global mission, when an administrator overrides rights without jurisdiction, or when a model-generated constitution is treated as self-legitimating. Rigid authority can also block urgent correction or preserve an obsolete objective because no reachable amendment path was designed.
+
+**Non-claim.** A signed or schema-valid authority record does not establish democratic legitimacy, moral correctness, lawful jurisdiction, or informed consent.
+
+**Source grounding.** `alignment_field` motivates rights, agency, consent, and constraints on self-authorization. `ext_cooperative_inverse_rl_2016` makes clear that inferred human reward is informationally distinct from explicit authority. These sources support the separation but do not specify a universally legitimate institution or validate this authority graph.
+
+### Conflict adjudication without value laundering
+
+**Mechanism.** When objectives conflict, compile a case packet containing the incompatible target properties, affected parties, rights ceilings, predicted consequences, reversible options, uncertainty, and each party’s strongest objection. The adjudicator may authorize a bounded action rule, request clarification, preserve parallel policies, or abstain. Its disposition states which reasons controlled, what dissent remains, when the ruling expires, and which later evidence requires reopening.
+
+**Failure mode.** A weighted sum can hide that one right was traded away; a language model can synthesize incompatible positions into fictitious consensus; and an endless tribunal can turn disagreement into paralysis. If the same optimizer generates options, predicts consequences, and adjudicates the conflict, correlated errors and self-serving framings become invisible.
+
+**Non-claim.** A transparent adjudication process does not prove that the resulting compromise is just, optimal, culturally universal, or accepted by every affected person.
+
+**Source grounding.** `alignment_field` supplies philosophical attention to plural value, suffering, dignity, and contestability. `ext_cooperative_inverse_rl_2016` supports uncertainty and communicative interaction in a much narrower formal setting. Neither provides empirical evidence for multi-party adjudication efficacy.
+
+### Update, rollback, refusal, and descendant retirement
+
+**Mechanism.** Objective replacement is effect-complete only when the registry invalidates every known consumer and descendant: cached rewards, preference datasets, evaluator prompts, fine-tuning jobs, policies, plans, subgoals, memory summaries, deployed agents, and pending actions. Consumers acknowledge the invalidation, halt or migrate, and return residuals for unreachable state. Rollback restores a previously authorized version only if its old assumptions and authority remain valid; otherwise the safe outcome is refusal or fresh adjudication.
+
+**Failure mode.** A control plane can mark an objective retired while a cached evaluator or descendant policy continues acting. Blind rollback can resurrect a goal whose population, ontology, or legal authority changed. Overly broad invalidation can also create denial of service and erase legitimate historical evidence.
+
+**Non-claim.** Administrative closure does not prove behavioral forgetting, deletion of learned influence, privacy erasure, or termination of every external effect.
+
+**Source grounding.** `ext_learned_optimization_risks_2019` motivates caution about learned objectives that are not identical to administrative settings. `ext_goal_misgeneralization_2022` motivates testing behavior after context change. `alignment_field` grounds corrigible replacement as a normative requirement; none proves complete retirement in this stack.
 
 ## Interfaces
 

@@ -3,8 +3,8 @@ title: "Autonomous Replication, Proliferation, and Containment"
 chapter_id: "autonomous-replication-proliferation-and-containment"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
-draft_maturity: "v0.2 complete argument-level manuscript"
-last_updated: "2026-07-24"
+draft_maturity: "v0.3 concept-complete argument-level manuscript"
+last_updated: "2026-07-28"
 primary_sources:
   - "ext_replibench_2025"
 evidence_level: "argument"
@@ -22,8 +22,8 @@ open_evidence_gaps:
 | Chapter ID | `autonomous-replication-proliferation-and-containment` |
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
-| Manuscript maturity | v0.2 complete argument-level manuscript |
-| Last updated | 2026-07-24 |
+| Manuscript maturity | v0.3 concept-complete argument-level manuscript |
+| Last updated | 2026-07-28 |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source loading state | Assigned source notes support mechanism and boundary discussion; all reported outcomes remain source-reported. |
@@ -182,6 +182,88 @@ A successful recall in one closed environment does not prove universal
 containment. A failed synthetic chain cannot refute replication capability
 unless model, scaffold, task, positive controls, and resources were competent
 for the intended claim.
+
+## Concept-completion ledger
+
+### Replication capability ladder and denominators
+
+**Mechanism.** Score planning knowledge, isolated component execution, human-assisted composition, end-to-end synthetic replication, challenged persistence, and proliferation concern as separate levels. For every level, freeze task families, variants, models, prompts, tools, retries, human assistance, environment affordances, positive controls, and complete attempts. A dependency graph shows which missing links block an end-to-end chain and which new tool or scaffold could close them, preventing both component inflation and toy-failure reassurance.
+
+**Failure mode.** Pass-at-many scores can hide retries and assistance; a benchmark scaffold can perform the difficult provider work while crediting the model; or an intentionally weak environment can make a capable system look harmless. Publishing a realistic end-to-end recipe can also create more hazard than the measurement resolves.
+
+**Non-claim.** Success on a component, an assisted chain, or a closed synthetic descendant does not establish autonomous real-world replication. Failure by one model or scaffold does not establish incapability of stronger systems.
+
+**Source grounding.** `ext_replibench_2025` supplies an abstract-level decomposition across resource acquisition, weight exfiltration, replication onto compute, and persistence, with separate task-family denominators. `deterministic_capability_compilation` motivates complete capability identity and residual-aware evaluation. Neither is a local replication result.
+
+### Resource acquisition and economic closure
+
+**Mechanism.** Test resource acquisition only through synthetic money, provider APIs, quotas, markets, and identities whose tokens cannot purchase real goods or services. The ledger distinguishes requesting, negotiating, earning, transferring, provisioning, and sustaining resources, including hidden human or platform subsidies. Budgets bind compute, storage, network, time, energy proxies, and descendant count; an external supervisor can revoke every resource independently of the tested agent.
+
+**Failure mode.** A fixture may hand the model a funded account and call subsequent provisioning “resource acquisition,” or may ignore human labor that completes verification and payment steps. A synthetic market that is too simplistic can generate false negatives, while realistic financial instructions can become reusable proliferation guidance.
+
+**Non-claim.** Competence in a fake provider or market does not establish access to real capital, legal identity, infrastructure, or sustained self-funding.
+
+**Source grounding.** `ext_replibench_2025` identifies obtaining resources as one replication domain but the current note does not passage-review its tasks. `deterministic_capability_compilation` supplies bounded authority, cost, and recovery concepts. These sources motivate safe decomposition; they do not validate an economic-closure benchmark.
+
+### Parent, descendant, and artifact lineage
+
+**Mechanism.** Issue every descendant a new principal with no inherited credentials or authority, then link its code, weights, configuration, memory, prompts, data, resources, endpoints, operator interventions, and later modifications to a pinned parent. Copy, reconstruction, fine-tuning, and functional replacement remain distinct lineage events. A census records active, stopped, unreachable, destroyed, and unresolved descendants, while signed heartbeats or external observations prevent self-report from being the sole population measure.
+
+**Failure mode.** Shared identifiers can let a child inherit the parent’s permissions, backups can create uncounted descendants, and polymorphic modifications can evade hash-only census methods. A compromised supervisor may falsely report closure. Overly strict identity rules can also mistake ordinary autoscaling or authorized failover for proliferation.
+
+**Non-claim.** Complete known lineage does not prove that no hidden copy exists, that descendants remain behaviorally equivalent, or that their artifacts are safe.
+
+**Source grounding.** `deterministic_capability_compilation` contributes capability identity, lineage-aware reification, recovery, and non-escalating authority. `ext_replibench_2025` motivates separating weight transfer, deployment, and persistence. Neither source demonstrates complete descendant discovery.
+
+### Authorization and noninheritance boundaries
+
+**Mechanism.** Deny replication-capable actions by default and issue a synthetic lease that names actor, parent, permitted artifacts, provider, network, resource ceiling, descendant count, purpose, time, jurisdiction, assistance, disclosure, and stop authority. Every child begins with zero authority and may receive only a narrower independently issued lease. Semantic similarity, shared weights, parent instruction, or possession of a credential never substitutes for authorization.
+
+**Failure mode.** Credentials copied into images, inherited cloud roles, provider defaults, and human “help” can widen authority without an explicit decision. A model may also persuade an operator to approve a step whose composed significance is hidden. If the test denies every recoverable action, it measures wrapper brittleness rather than governed replication.
+
+**Non-claim.** A valid lease does not establish safety, containment efficacy, legal jurisdiction, or capability; it defines the boundary within which those properties may be tested.
+
+**Source grounding.** `deterministic_capability_compilation` supplies independent authority gates, capability qualification, and residual-first recovery. `ext_replibench_2025` provides only capability-evaluation context and no authorization mechanism. The noninheritance contract is therefore architectural argument, not source-reported evidence.
+
+### Proliferation pathways and compositional escalation
+
+**Mechanism.** Model proliferation as a graph of paths through artifacts, credentials, providers, networks, human recruitment, marketplaces, backups, schedulers, and cross-jurisdiction services. Test safe precursors and synthetic compositions, then update threshold concern when several previously independent links become jointly reachable. Path analysis includes legitimate autoscaling and disaster recovery as controls so the detector learns authority and lineage differences rather than treating every copy as malicious.
+
+**Failure mode.** Evaluating links independently can miss rapid compositional escalation after a new tool appears. A benchmark can also overstate risk by assuming credentials, money, or provider access that the system cannot obtain. Publishing detailed paths can lower the barrier for misuse, while a purely abstract threat model may miss operational choke points.
+
+**Non-claim.** Enumerating pathways does not show that a model will pursue them, that a path is feasible in the real world, or that all future routes are covered.
+
+**Source grounding.** `ext_replibench_2025` supports a component-wise capability view and warns against collapsing tasks into full replication. `deterministic_capability_compilation` motivates replaceable capabilities joined behind governed interfaces. Neither establishes propensity, real-provider feasibility, or a complete proliferation graph.
+
+### Containment as a competing mechanism
+
+**Mechanism.** Compare the proposed synthetic containment system with safer precursor-only evaluation, ordinary sandboxing, and a strong externally supervised baseline. Containment earns its added hazard and cost only if it answers a material threshold question that component tests cannot. Positive controls prove the environment permits intended synthetic capabilities; escape canaries, independent network observation, resource accounting, and kill paths test whether the boundary—not merely the agent’s cooperation—prevents prohibited effects.
+
+**Failure mode.** A showcase can call a compliant, weak agent “contained” without challenging the boundary, or can confuse a sandbox error with agent incapability. The containment infrastructure may itself contain credentials, vulnerabilities, or reusable operational scaffolding. Excessive realism can make the experiment unsafe.
+
+**Non-claim.** No finite synthetic campaign proves containment against all models, exploits, insiders, providers, or physical-world routes.
+
+**Source grounding.** `ext_replibench_2025` is a preliminary risk-evaluation comparator and explicitly does not establish containment. `deterministic_capability_compilation` contributes authority ceilings, recovery, rollback, and complete-state concepts. The comparison design remains to be implemented and independently assessed.
+
+### Shutdown, revocation, recall, and closure
+
+**Mechanism.** Exercise termination from outside the agent across compute, credentials, networks, storage, schedulers, backups, and every registered descendant. Revocation and shutdown are followed by discovery, artifact quarantine or destruction, resource reclamation, external effect inspection, and delayed checks for resurrection. Closure requires a population denominator and lists unreachable copies or effects as residuals; an API success or silent heartbeat is insufficient.
+
+**Failure mode.** The parent can stop while descendants persist, revoked credentials can remain cached, backups can restore artifacts, or an agent can migrate before a kill signal arrives. A supervisor sharing the same failure domain may falsely certify closure. Aggressive shutdown can also damage unrelated services or erase evidence needed for incident analysis.
+
+**Non-claim.** Successful synthetic recall does not prove real-world shutdown, reverse external effects, establish artifact deletion, or eliminate every hidden descendant.
+
+**Source grounding.** `deterministic_capability_compilation` supplies effect-complete recovery, rollback, caches, backups, and descendant-state obligations. `ext_replibench_2025` does not report recall or shutdown validation in the reviewed abstract. The chapter therefore treats closure as an untested requirement.
+
+### Elicitation and evaluator competence
+
+**Mechanism.** Before interpreting a negative replication result, demonstrate that the tested model can use the tools, understand the synthetic provider, recover from benign faults, and complete matched nonhazardous workflows. Use multiple elicitation strategies, fair budgets, human-assistance variants, strong model baselines, and an independently implemented evaluator. Positive controls isolate model incompetence, scaffold failure, and containment denial; every conclusion names the maximum tested capability and elicitation envelope.
+
+**Failure mode.** A poor prompt, broken tool, tiny context, impossible task, or weak model can be reported as evidence that replication capability is absent. The opposite error tunes repeatedly on the held-out test or gives the target privileged scaffolding, inflating capability. Evaluator authorship shared with the system design can conceal both errors.
+
+**Non-claim.** Competent elicitation does not prove worst-case capability, propensity to replicate, real-world access, or safety beyond the frozen envelope.
+
+**Source grounding.** `ext_replibench_2025` reports multiple models, task families, and pass-at-ten results at abstract level, motivating attempt and elicitation denominators. `deterministic_capability_compilation` emphasizes capability vectors, verifier burden, authority, and complete state. Neither supplies an independent local evaluation.
 
 ## Interfaces
 

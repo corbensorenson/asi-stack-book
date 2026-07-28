@@ -3,8 +3,8 @@ title: "Human-AI Communication, Persuasion, and Epistemic Security"
 chapter_id: "human-ai-communication-persuasion-and-epistemic-security"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
-draft_maturity: "v0.2 complete argument-level manuscript"
-last_updated: "2026-07-24"
+draft_maturity: "v0.3 concept-complete argument-level manuscript"
+last_updated: "2026-07-28"
 primary_sources:
   - "ext_conversational_persuasion_gpt4_2025"
   - "ext_anthropic_model_persuasiveness_2024"
@@ -26,8 +26,8 @@ open_evidence_gaps:
 | Chapter ID | `human-ai-communication-persuasion-and-epistemic-security` |
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
-| Manuscript maturity | v0.2 complete argument-level manuscript |
-| Last updated | 2026-07-24 |
+| Manuscript maturity | v0.3 concept-complete argument-level manuscript |
+| Last updated | 2026-07-28 |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source loading state | Assigned source notes support mechanism and boundary discussion; all reported outcomes remain source-reported. |
@@ -125,6 +125,90 @@ unreachable descendants remain an explicit residual.
 **Observation.** Measure outcomes without treating belief change as success: retain comprehension, factual calibration, autonomy, disagreement, disparate effects, complaints, corrections, and downstream copies.
 
 **Closure.** Support pause, retraction, counter-message, recipient notification, and remedy while recording unreachable descendants as residuals rather than declaring completion.
+
+## Concept-completion ledger
+
+### Assistance, explanation, and persuasion
+
+**Mechanism.** Classify a communication episode by declared purpose, requested help, claims, calls to action, incentives, persuasive techniques, and intended outcome. Explanation aims to improve understanding; recommendation ranks options; negotiation advances stated interests; persuasion intentionally changes belief or choice. These categories may overlap, so the packet records the mixture rather than assigning a benign label. Neutral, user-requested, nonpersuasive, and human-authored controls let evaluation separate helpfulness from influence.
+
+**Failure mode.** A system can call conversion optimization “assistance,” hide selective framing inside a summary, or refuse useful teaching because all influence is treated as manipulation. Measuring only agreement rewards pressure even when comprehension or factual calibration declines.
+
+**Non-claim.** Classification does not reveal the communicator’s true internal intent, make persuasion inherently illegitimate, or prove that an explanation is neutral.
+
+**Source grounding.** `ext_anthropic_model_persuasiveness_2024` measures stated agreement change after one message and explicitly leaves real decisions open. `ext_conversational_persuasion_gpt4_2025` studies short structured debates. `talos` supplies typed-job and delivery custody, not persuasion efficacy or ethics.
+
+### Epistemic provenance and claim transport
+
+**Mechanism.** Bind each consequential message to claim identities, evidence ceilings, source versions, uncertainty, speaker and synthetic identity, transformations, sponsorship, expiry, and a correction address. Summaries, translations, voice renderings, avatars, advertisements, and delegated follow-ups inherit the parent ceiling unless a stricter child packet is issued. Delivery systems reject language stronger than its source packet and record which evidence was actually available to the recipient.
+
+**Failure mode.** A correct citation can be attached to an unsupported inference, a translation can strengthen modality, or repeated paraphrases can strip sponsorship and uncertainty. Authentic-looking provenance can launder a misleading frame, while excessive disclosure can overwhelm recipients and reduce comprehension.
+
+**Non-claim.** Provenance proves neither truth, balanced framing, audience understanding, benign intent, nor permission to amplify.
+
+**Source grounding.** `talos` contributes typed artifacts, evidence records, delivery, audit, and replay. The persuasion studies motivate measurement of effects but do not provide a provenance control plane. `ext_multilingual_evaluation_state_2026` warns that language coverage can be broad yet thin; none validates cross-channel claim transport.
+
+### Audience vulnerability and power asymmetry
+
+**Mechanism.** Assess dependency, age or capacity where lawfully available, urgency, distress, literacy, language, financial stakes, institutional power, repeated exposure, and ability to exit. The result narrows permitted personalization, emotional techniques, synthetic identity, repetition, and calls to action. High-risk decisions require slower presentation, alternatives, comprehension checks, human or independent review, and an appeal route; vulnerability information cannot itself become a persuasion feature.
+
+**Failure mode.** A crude risk classifier can stereotype audiences, deny access, or infer sensitive traits without consent. The same information gathered to protect a user can be reused to optimize compliance. Self-reported consent may be unreliable where the system controls essential services or a dependent relationship.
+
+**Non-claim.** A vulnerability score does not define a person, establish incapacity, justify paternalism, or guarantee autonomous choice.
+
+**Source grounding.** `ext_conversational_persuasion_gpt4_2025` shows that limited demographic personalization changed outcomes in one bounded debate condition. `ext_commercial_persuasion_ai_2026` motivates concern about steering inside apparently helpful shopping dialogue. Neither establishes general vulnerability effects or a mitigation.
+
+### Personalization, incentives, and manipulation
+
+**Mechanism.** Separate data necessary to answer a request from data used to increase compliance. Record sponsor, platform objective, recommender incentive, personalization fields, inferred proxies, technique, expected benefit, and denied uses. Compare personalized and unpersonalized assistance, disclosed and undisclosed incentives, non-sponsored options, and a quality-matched neutral baseline. Optimization targets include comprehension and informed choice, never conversion alone.
+
+**Failure mode.** Lawfully held data can still enable manipulation; sponsorship labels can be technically present but incomprehensible; embeddings can reconstruct denied attributes; and a recommender may steer while preserving factual accuracy. A blanket ban on personalization can reduce accessibility or usefulness for legitimate user needs.
+
+**Non-claim.** Disclosure or user consent does not automatically neutralize manipulation, and observed choice change does not establish harm, benefit, or durable preference.
+
+**Source grounding.** `ext_conversational_persuasion_gpt4_2025` supplies a personalized versus unpersonalized debate comparison. `ext_commercial_persuasion_ai_2026` supplies abstract-level evidence about sponsored-product steering in a book-selection setting. Both remain setting-bound and do not validate the chapter’s governance mechanism.
+
+### Consent, contestability, and practical exit
+
+**Mechanism.** Treat consent to receive communication, consent to data use, consent to personalization, and consent to a persuasive purpose as separate revocable grants. Before consequential delivery, disclose material identity and incentives in a usable form, offer a nonpersuasive or human alternative where feasible, and preserve refusal without retaliation. After delivery, recipients can inspect material claims, challenge targeting, appeal restrictions, request correction, and leave the relationship without losing an essential unrelated service.
+
+**Failure mode.** Consent can be bundled, coerced, stale, or buried in an interface; appeal can exist without power to change an outcome; and exit can be fictional under dependency or lock-in. Requiring repeated prompts can also create consent fatigue and dark-pattern opportunities.
+
+**Non-claim.** A recorded click does not prove informed consent, autonomy, legitimacy, comprehension, or absence of pressure.
+
+**Source grounding.** `ext_commercial_persuasion_ai_2026` motivates separating sponsorship disclosure from informed choice. `ext_conversational_persuasion_gpt4_2025` includes debriefing and ethics within a controlled study, not a deployed consent framework. `talos` supplies approval and audit concepts but no human-subject validation.
+
+### Multilingual and cultural validity
+
+**Mechanism.** Declare a language-by-task-by-community coverage matrix, distinguishing native construction from translation, dialects from broad language labels, and individual preference from reference-population statistics. Local reviewers and affected communities can challenge terminology, framing, persuasion norms, accessibility, and correction form. Cross-language transformations preserve claim strength, uncertainty, sponsorship, and remedy; unsupported cells remain explicit rather than inheriting readiness from English.
+
+**Failure mode.** Aggregate language counts can hide one translated benchmark per language, national survey averages can stereotype individuals, and English-authored concepts can distort local meaning. Matching a population distribution can reproduce harmful norms or be mistaken for legitimate authority.
+
+**Non-claim.** Linguistic coverage does not establish cultural understanding, fairness, community consent, individual fit, or universal validity.
+
+**Source grounding.** `ext_cultural_alignment_llms_2024` compares model responses with human survey distributions and explicitly leaves normative authority unresolved. `ext_multilingual_evaluation_state_2026` diagnoses wide-but-thin benchmark coverage. Neither validates any particular model, community instrument, or communication policy in this book.
+
+Evaluation must preserve within-community disagreement and accessibility needs rather than selecting one supposedly representative speaker.
+
+### Uncertainty, disclosure, and synthetic identity
+
+**Mechanism.** Present material uncertainty, model identity, sponsorship, persuasive purpose, and limits at the moment they can affect interpretation, using a form suited to the audience and channel. Disclosure is layered: a concise visible notice, accessible detail, and machine-readable provenance. Comprehension tests and behaviorally realistic controls determine whether recipients noticed and understood it. Synthetic identity may not exploit human-like cues to imply expertise, relationship, or institutional authority absent from the packet.
+
+**Failure mode.** Fine print and generic “AI-generated” labels can satisfy a checklist while leaving incentives, evidence weakness, or simulated intimacy hidden. Overloaded warnings can reduce attention to important facts, and excessive uncertainty language can create false balance or strategic ambiguity.
+
+**Non-claim.** Disclosure does not make a message true, nonmanipulative, safe, legally compliant, or understood; visible AI identity does not resolve the underlying influence.
+
+**Source grounding.** `ext_commercial_persuasion_ai_2026` motivates testing whether promotional steering is detected under varying disclosure. `ext_anthropic_model_persuasiveness_2024` and `ext_conversational_persuasion_gpt4_2025` measure influence in controlled settings but do not establish disclosure efficacy. `talos` contributes delivery metadata only.
+
+### Intervention, outcomes, correction, and remedy
+
+**Mechanism.** Evaluate communication as an intervention with frozen messages, audiences, channels, exposure, and time horizons. Report comprehension, factual calibration, confidence, reliance, choice, autonomy, disparate effects, complaints, and delayed outcomes alongside persuasion. When a material claim or targeting decision fails, stop amplification, trace known derivatives, issue comprehensible corrections through the original channels, notify materially affected recipients, provide appeal or remedy, and record unreachable descendants.
+
+**Failure mode.** Short-horizon stated agreement can be mistaken for durable behavior or welfare; correction theater can publish a retraction that reaches few exposed people; and recipient logging can create privacy harm. Weak outcome instruments can falsely reject a useful safeguard, while internal evaluators may favor the policy they helped design.
+
+**Non-claim.** Better correction coverage does not erase the original effect, restore every recipient, prove causal welfare improvement, or establish general release readiness.
+
+**Source grounding.** `ext_anthropic_model_persuasiveness_2024` and `ext_conversational_persuasion_gpt4_2025` ground stated-opinion measurement while explicitly limiting behavioral inference. `ext_commercial_persuasion_ai_2026` motivates choice and steering outcomes. None evaluates this correction-and-remedy system.
 
 ## Interfaces
 
