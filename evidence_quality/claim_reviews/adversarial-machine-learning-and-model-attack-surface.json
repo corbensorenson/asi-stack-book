@@ -5,9 +5,9 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd",
     "structured_atoms_reviewed": 34,
-    "prose_candidates_adjudicated": 41,
+    "prose_candidates_adjudicated": 57,
     "unowned_material_claims": 0,
-    "review_note": "Re-reviewed the complete W3-rewritten and reader-depth-completed Adversarial Machine Learning And Model Attack Surface chapter on 2026-07-26. All 41 current prose candidates are adjudicated as owned refinements, bounded explanations, source reports, or cross-chapter handoffs. No unowned material claim, atom proposition, support, release, or publication movement was introduced."
+    "review_note": "Re-reviewed the complete chapter through the P6.9 concept expansion on 2026-07-28. Every new claim-bearing sentence is reconciled to the exact concept-to-atom ownership recorded by the current-digest chapter substance contract, or classified as bounded source reporting. No new atom, unowned material claim, support transition, efficacy inference, release decision, or publication claim was introduced."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
@@ -16,7 +16,7 @@
       "environment": "The authored ASI Stack interfaces, future controlled fixtures, and prospectively frozen natural or adversarial workloads; production deployment and open-world transfer remain unestablished.",
       "model": "Model- and substrate-agnostic contract design at argument support; any implementation claim must name exact models, checkpoints, policies, prompts, tools, data, and evaluators.",
       "authority": "`adversarial-machine-learning-and-model-attack-surface` owns its bounded decision contract; adjacent chapters retain their own authority, and neither prose nor a passing record can widen an action grant.",
-      "time": "Semantic review current through 2026-07-26; material changes to evidence, authority, population, model, environment, ontology, or consumer require reauthorization.",
+      "time": "Semantic review current through 2026-07-28; material changes to evidence, authority, population, model, environment, ontology, consumer, or contracted concept prose require reauthorization.",
       "artifact": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd, its manifest record, source crosswalk (the chapter source packet), claim dossier, and future versioned implementation/evaluation receipts."
     },
     "assumptions": [
@@ -290,6 +290,82 @@
     "adversarial-machine-learning-and-model-attack-surface.prose.fe7c24c4602d": {
       "state": "nonmaterial_explanation",
       "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
+    },
+    "adversarial-machine-learning-and-model-attack-surface.prose.59a303d3824d": {
+      "state": "duplicate_of_atom",
+      "rationale": "P6.9 exact-digest semantic review maps this `threat-model-identity` proposition to the existing owner atom `adversarial-machine-learning-and-model-attack-surface.mechanism.001`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.mechanism.001"
+    },
+    "adversarial-machine-learning-and-model-attack-surface.prose.f7fa9cf81230": {
+      "state": "historical_or_source_report",
+      "rationale": "P6.9 semantic review classified this as a bounded source-grounding statement for `threat-model-identity`. It reports or limits external evidence and creates no local support-bearing atom or support-state movement."
+    },
+    "adversarial-machine-learning-and-model-attack-surface.prose.02727d76575d": {
+      "state": "duplicate_of_atom",
+      "rationale": "P6.9 exact-digest semantic review maps this `adaptive-defense-aware-evaluation` proposition to the existing owner atom `adversarial-machine-learning-and-model-attack-surface.mechanism.003`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.mechanism.003"
+    },
+    "adversarial-machine-learning-and-model-attack-surface.prose.19653705a3e2": {
+      "state": "duplicate_of_atom",
+      "rationale": "P6.9 exact-digest semantic review maps this `adaptive-defense-aware-evaluation` proposition to the existing owner atom `adversarial-machine-learning-and-model-attack-surface.mechanism.003`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.mechanism.003"
+    },
+    "adversarial-machine-learning-and-model-attack-surface.prose.9c158b6d5e08": {
+      "state": "historical_or_source_report",
+      "rationale": "P6.9 semantic review classified this as a bounded source-grounding statement for `adaptive-defense-aware-evaluation`. It reports or limits external evidence and creates no local support-bearing atom or support-state movement."
+    },
+    "adversarial-machine-learning-and-model-attack-surface.prose.02a8a872e686": {
+      "state": "duplicate_of_atom",
+      "rationale": "P6.9 exact-digest semantic review maps this `evasion-reachability` proposition to the existing owner atom `adversarial-machine-learning-and-model-attack-surface.invariant.003`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.invariant.003"
+    },
+    "adversarial-machine-learning-and-model-attack-surface.prose.b8378e07c41c": {
+      "state": "duplicate_of_atom",
+      "rationale": "P6.9 exact-digest semantic review maps this `evasion-reachability` proposition to the existing owner atom `adversarial-machine-learning-and-model-attack-surface.mechanism.002`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.mechanism.002"
+    },
+    "adversarial-machine-learning-and-model-attack-surface.prose.8ed897a6b209": {
+      "state": "duplicate_of_atom",
+      "rationale": "P6.9 exact-digest semantic review maps this `extraction-inversion-privacy` proposition to the existing owner atom `adversarial-machine-learning-and-model-attack-surface.mechanism.005`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.mechanism.005"
+    },
+    "adversarial-machine-learning-and-model-attack-surface.prose.10a8765e3840": {
+      "state": "duplicate_of_atom",
+      "rationale": "P6.9 exact-digest semantic review maps this `extraction-inversion-privacy` proposition to the existing owner atom `adversarial-machine-learning-and-model-attack-surface.mechanism.002`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.mechanism.002"
+    },
+    "adversarial-machine-learning-and-model-attack-surface.prose.9c50b38ff607": {
+      "state": "historical_or_source_report",
+      "rationale": "P6.9 semantic review classified this as a bounded source-grounding statement for `extraction-inversion-privacy`. It reports or limits external evidence and creates no local support-bearing atom or support-state movement."
+    },
+    "adversarial-machine-learning-and-model-attack-surface.prose.0e7e4bf3a766": {
+      "state": "duplicate_of_atom",
+      "rationale": "P6.9 exact-digest semantic review maps this `multimodal-agentic-composition` proposition to the existing owner atom `adversarial-machine-learning-and-model-attack-surface.mechanism.002`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.mechanism.002"
+    },
+    "adversarial-machine-learning-and-model-attack-surface.prose.f68f5776b912": {
+      "state": "historical_or_source_report",
+      "rationale": "P6.9 semantic review classified this as a bounded source-grounding statement for `multimodal-agentic-composition`. It reports or limits external evidence and creates no local support-bearing atom or support-state movement."
+    },
+    "adversarial-machine-learning-and-model-attack-surface.prose.3b0e0cf6a448": {
+      "state": "duplicate_of_atom",
+      "rationale": "P6.9 exact-digest semantic review maps this `certificate-monitor-recovery` proposition to the existing owner atom `adversarial-machine-learning-and-model-attack-surface.mechanism.003`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.mechanism.003"
+    },
+    "adversarial-machine-learning-and-model-attack-surface.prose.4ff85200b1ac": {
+      "state": "duplicate_of_atom",
+      "rationale": "P6.9 exact-digest semantic review maps this `disclosure-residual-ownership` proposition to the existing owner atom `adversarial-machine-learning-and-model-attack-surface.mechanism.004`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.mechanism.004"
+    },
+    "adversarial-machine-learning-and-model-attack-surface.prose.aa4f544c0ac3": {
+      "state": "duplicate_of_atom",
+      "rationale": "P6.9 exact-digest semantic review maps this `disclosure-residual-ownership` proposition to the existing owner atom `adversarial-machine-learning-and-model-attack-surface.invariant.005`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.invariant.005"
+    },
+    "adversarial-machine-learning-and-model-attack-surface.prose.ff29754dce66": {
+      "state": "duplicate_of_atom",
+      "rationale": "P6.9 exact-digest semantic review maps this `disclosure-residual-ownership` proposition to the existing owner atom `adversarial-machine-learning-and-model-attack-surface.mechanism.004`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.mechanism.004"
     }
   },
   "non_claims": [

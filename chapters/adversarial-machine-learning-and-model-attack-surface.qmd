@@ -3,8 +3,8 @@ title: "Adversarial Machine Learning and the Model Attack Surface"
 chapter_id: "adversarial-machine-learning-and-model-attack-surface"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
-draft_maturity: "v0.2 complete argument-level manuscript"
-last_updated: "2026-07-24"
+draft_maturity: "v0.3 concept-complete argument-level manuscript"
+last_updated: "2026-07-28"
 primary_sources:
   - "ext_nist_adversarial_ml_2024"
   - "ext_sleeper_agents_2024"
@@ -185,6 +185,88 @@ survives, or adversarial training teaches the model a better trigger detector.
 **Explicit non-claim.** Failure to discover a backdoor is not evidence that no
 backdoor exists; a constructed backdoor is not evidence of natural deceptive
 alignment.
+
+## Concept-completion ledger
+
+### Threat-model identity and lifecycle reopening
+
+**Mechanism.** Give each attack claim a stable threat-model identity containing the exact model and weights, preprocessing and postprocessing, exposed interfaces, attacker knowledge, access, budget, objective, targeted population, deployment context, and observation window. Link that identity to training data, adapters, retrieval stores, tools, sensors, and downstream actuators. A patch, fine-tune, new tool, changed access tier, or discovered dependency creates a descendant threat model and automatically reopens affected conclusions; it never silently inherits “secure.”
+
+**Failure mode.** A red team can test a chat endpoint under one prompt policy while the deployed agent has tools, memory, images, or higher query volume. Conversely, a finding against an obsolete snapshot can be reported as a permanent property of every descendant. Either mismatch destroys actionability.
+
+**Non-claim.** A complete threat model does not show that all attacks were found or that the modeled attacker is realistic.
+
+**Source grounding.** `ext_nist_adversarial_ml_2024` supplies a lifecycle taxonomy for evasion, poisoning, privacy, and abuse, but taxonomy coverage is not robustness evidence. `ext_sleeper_agents_2024` shows why post-training changes can preserve a constructed conditional behavior; it does not establish natural deception.
+
+### Adaptive attacks and defense-aware evaluation
+
+**Mechanism.** Evaluate a defense against attackers who know the defense class and can adapt within a prospectively fixed budget. The packet records white-, gray-, and black-box access, gradients or substitute models, query and wall-clock budgets, restarts, search families, transfer attempts, stochastic seeds, and defender-side tuning. Positive controls must demonstrate that the harness breaks known-vulnerable variants. A rescue ladder may strengthen both attack and defense implementations, but every change creates a dated stage rather than replacing the original result.
+
+**Failure mode.** Gradient masking, nondifferentiable wrappers, rate limits, or weak attack code can manufacture apparent robustness. The opposite error grants the attacker unlimited resources or forbidden knowledge and calls any theoretical reachability a practical exploit.
+
+**Non-claim.** Surviving the named adaptive suite is not a certificate against untested attacks, budgets, or deployments.
+
+**Source grounding.** `ext_nist_adversarial_ml_2024` motivates attacker-capability and lifecycle distinctions. `ext_reluplex_2017` demonstrates property-specific verification for bounded ReLU networks, not general model safety or an adaptive empirical result in this project.
+
+### Evasion and semantic or physical reachability
+
+**Mechanism.** Separate mathematical perturbation sets from reachable changes in the operational world. For each evasion case, record the allowed transformation, semantic-preservation test, acquisition chain, environmental variability, sensor synchronization, human perceptibility, fabrication constraints, and downstream effect. Digital, over-the-air, physical, and supply-chain injection are different routes. Robustness is reported jointly with clean utility, abstention, latency, subgroup effects, and transfer across environments.
+
+**Failure mode.** An imperceptible norm-bounded image perturbation can be mistaken for a realizable physical attack; a physically plausible object can be tested only in a favorable pose. Multimodal systems may reject each isolated perturbation while accepting a synchronized cross-sensor inconsistency.
+
+**Non-claim.** Failure inside an abstract perturbation ball does not prove field exploitability, and success on a laboratory scene does not establish general physical transfer.
+
+**Source grounding.** `ext_adversarial_sensor_fusion_2022` provides a paper-scoped camera–LiDAR attack case that motivates cross-sensor reachability. It does not validate every fusion stack or generalize to arbitrary modalities. `ext_nist_adversarial_ml_2024` supplies the broader evasion taxonomy.
+
+### Poisoning, backdoors, and descendant repair
+
+**Mechanism.** Track candidate contamination through data collection, labeling, preference feedback, retrieval corpora, pretraining, fine-tuning, adapters, evaluation feedback, and model descendants. A repair case names the suspected material, trigger family, affected checkpoints, removal or reweighting action, retraining boundary, clean-utility cost, trigger-search coverage, and descendants that remain exposed. Known-trigger removal, family-level search, and causal lineage checks receive separate dispositions.
+
+**Failure mode.** Deleting a visible trigger may leave correlated features or contaminated descendants; adversarial training can teach more reliable trigger recognition. A weak scan can also accuse benign rare behavior, causing destructive retraining without causal evidence.
+
+**Non-claim.** Constructing or removing one backdoor does not establish the prevalence of naturally acquired deception, complete unlearning, or safety of sibling checkpoints.
+
+**Source grounding.** `ext_sleeper_agents_2024` is a constructed proof-of-concept showing persistence through several safety-training methods and a possible adversarial-training hazard. Its scope does not support claims about natural deception or all models. `ext_nist_adversarial_ml_2024` locates poisoning and backdoors in the wider lifecycle.
+
+### Extraction, inversion, and privacy handoff
+
+**Mechanism.** Decompose confidentiality attacks into model replication, training-example extraction, attribute or membership inference, system-prompt recovery, and secret retrieval. Record the protected information class, attacker access, query budget, base rate, duplicate status, exposure criterion, false-positive cost, and harmed subject. Confirmed findings create a bounded handoff to privacy, incident response, custody, and remediation owners; aggregate memorization scores cannot substitute for affected-record accounting.
+
+**Failure mode.** Verbatim recovery of public duplicates may be presented as private-data extraction, while rare sensitive outputs are hidden by averages. Membership tests can look accurate under artificial class balance and fail at deployment base rates. A model clone may reproduce behavior without recovering weights.
+
+**Non-claim.** A GPT-2 extraction result does not imply every model leaks training data, and a failed extraction attempt does not prove privacy.
+
+**Source grounding.** `ext_carlini_training_data_extraction_2021` establishes a bounded extraction method and empirical result for GPT-2-family models. It motivates attack design and duplicate-sensitive reporting, not universal leakage. `ext_nist_adversarial_ml_2024` supplies the privacy-attack taxonomy.
+
+### Multimodal and agentic attack composition
+
+**Mechanism.** Model attacks as paths across prompts, retrieved content, images, audio, sensors, memory, tools, other agents, and actuators. The evaluator tests isolated components and composed paths, including low-severity steps that jointly cross a permission or safety boundary. Every path names required attacker footholds, trust transitions, synchronization, persistence, observable effects, and where detection or least authority can sever it. Tool actions are evaluated under real schemas and permissions, not narrated simulations. Composition results also retain the independently observed success rate of every prerequisite step.
+
+**Failure mode.** Component benchmarks can all pass while an image injects instructions into a planner, retrieved text poisons memory, or one agent launders an instruction for another. Conversely, allowing impossible permissions or fabricated tool success creates a sensational but unreachable chain.
+
+**Non-claim.** Enumerating attack paths is not evidence that they are reachable, exhaustive, or equally important.
+
+**Source grounding.** `ext_adversarial_sensor_fusion_2022` motivates composed cross-modal effects in one camera–LiDAR setting. `ext_nist_adversarial_ml_2024` provides attack-stage vocabulary. Neither source establishes the proposed agentic composition evaluator.
+
+### Certificates, monitoring, and recovery as non-substitutes
+
+**Mechanism.** Maintain three distinct assurance objects. A certificate binds a property, model, input region, assumptions, and verifier. Monitoring binds observable signals, thresholds, miss and false-alarm estimates, response authority, and coverage gaps. Recovery binds a detected condition to containment, rollback, credential rotation, data or model repair, validation, and return-to-service criteria. The release case states which attack classes each object addresses and which remain uncovered.
+
+**Failure mode.** A local robustness certificate can be marketed as whole-system security; monitoring can detect only what its sensors expose; rollback can restore a checkpoint that shares the same poison or leaked secret. Combining their scores can conceal a common blind spot.
+
+**Non-claim.** Verification, monitoring, and recovery do not replace one another, and their coexistence does not prove defense in depth unless independence and coverage are shown.
+
+**Source grounding.** `ext_reluplex_2017` supports bounded property verification for certain ReLU networks. `ext_nist_adversarial_ml_2024` motivates lifecycle defenses. Neither validates this three-object architecture or any local recovery claim.
+
+### Disclosure, safe experimentation, and residual ownership
+
+**Mechanism.** Before testing or disclosing an exploit, record authorization, target ownership, isolation, data and tool boundaries, stop conditions, exploit custody, notification route, remediation window, publication tier, and residual knowledge that cannot be recalled. Findings retain reproducibility detail for qualified reviewers while public descriptions use the least operational detail needed for accountability. A named owner tracks patch availability, adoption, exposed descendants, and expiry of temporary restrictions.
+
+**Failure mode.** Unbounded red teaming can harm real users or create a reusable exploit; overbroad secrecy can prevent independent scrutiny and leave affected parties uninformed. A patch announcement can close the ticket while copied weights, forks, or downstream services remain vulnerable.
+
+**Non-claim.** Responsible disclosure does not erase the vulnerability, guarantee patch adoption, or grant unilateral authority to suppress research.
+
+**Source grounding.** `ext_nist_adversarial_ml_2024` provides risk-management and lifecycle context, not a universal disclosure rule. The other chapter sources establish bounded attack examples only. The disclosure mechanism and residual-ownership requirements remain design rationale pending operational evidence.
 
 ## Interfaces
 

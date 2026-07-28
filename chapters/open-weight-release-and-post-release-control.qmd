@@ -3,8 +3,8 @@ title: "Open-Weight Release and Post-Release Control"
 chapter_id: "open-weight-release-and-post-release-control"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
-draft_maturity: "v0.2 complete argument-level manuscript"
-last_updated: "2026-07-24"
+draft_maturity: "v0.3 concept-complete argument-level manuscript"
+last_updated: "2026-07-28"
 primary_sources:
   - "ext_international_ai_safety_report_2026"
   - "ext_openai_worst_case_open_weight_risks_2025"
@@ -283,6 +283,88 @@ residual.
 Update the release case when incidents, new fine-tuning methods, frontier
 models, tools, or defenses change the analysis. Do not rewrite the historical
 decision; append a dated reassessment.
+
+## Concept-completion ledger
+
+### Access-tier option set
+
+**Mechanism.** Treat release as a choice among named access tiers rather than a binary open/closed label: private evaluation, hosted API, qualified access, gated download, delayed release, weight release with or without training artifacts, and unrestricted redistribution. Each tier specifies recipients, identity checks, artifacts, interfaces, logging, modification rights, revocation reality, monitoring, cost, appeal, and expiry. The decision packet compares all feasible tiers against the same capability, misuse, benefit, equity, and operational assumptions. It records rejected options and the evidence that could reopen them.
+
+**Failure mode.** A team may compare unrestricted weights only with permanent secrecy, making its preferred option look inevitable. “Open” can also conceal license, compute, identity, or geography barriers, while “API” can conceal broad behavioral access and weak monitoring.
+
+**Non-claim.** Naming access tiers does not show that a tier is enforceable, fair, safe, or superior.
+
+**Source grounding.** `ext_rand_model_weight_security_2024` and `ext_singapore_consensus_2026` motivate differentiated access and governance options. They do not select a categorical release rule for this book.
+
+### Exact artifact and derivative identity
+
+**Mechanism.** Bind a release decision to hashes and manifests for weights, architecture, tokenizer, code, adapters, optimizer state, data documentation, evaluation artifacts, and intended licenses. Record which combinations reproduce the assessed behavior and what users may fine-tune, merge, quantize, distill, or redistribute. Derivatives receive lineage identities and fresh assessments when capability, safeguards, or access materially change. Official support status is separate from technical ancestry. Unknown combinations remain unassessed rather than inheriting the nearest artifact’s conclusions.
+
+**Failure mode.** A “model release” can omit the tokenizer or safety adapter that produced the evaluated behavior, or downstream merges can inherit the original safety description despite removing its controls. Conversely, harmless packaging changes can trigger meaningless reassessment.
+
+**Non-claim.** Provenance does not control copied artifacts, guarantee license compliance, or establish behavioral equivalence.
+
+**Source grounding.** `ext_provable_model_weight_release_2025` motivates artifact-specific release reasoning and residual control limits. `ext_rand_model_weight_security_2024` supplies a security-oriented account of weight access. Neither proves derivative tracking at ecosystem scale.
+
+### Malicious adaptation and evaluator competence
+
+**Mechanism.** Evaluate whether a capable adversary can fine-tune, merge, scaffold, prompt, or tool-enable the released artifact to increase a specified harm. Prospectively fix attacker resources and compare a competent adaptation suite with positive controls, multiple seeds, realistic compute, and fair rescue stages. Report uplift over accessible alternatives, clean utility, attack success, costs, and failure to instantiate the threat. Independent challenge may narrow a conclusion but cannot convert an underpowered test into reassurance.
+
+**Failure mode.** Naive fine-tuning, weak prompts, or artificial refusal wrappers can manufacture a false negative. Unlimited optimization and privileged data can create an irrelevant worst case. Evaluating only the base model ignores the object users can actually construct.
+
+**Non-claim.** Failure under the tested adaptation budget does not prove that malicious adaptation is impossible; successful adaptation does not establish likely real-world misuse.
+
+**Source grounding.** `ext_openai_worst_case_open_weight_risks_2025` and `ext_anthropic_responsible_scaling_policy_3_4_2026` provide provider-specific risk and threshold comparators. `ext_international_ai_safety_report_2026` synthesizes broader uncertainty. None constitutes an independent local evaluation.
+
+### Accessible-frontier comparison and expiry
+
+**Mechanism.** Estimate the capability a relevant actor can already obtain through public weights, APIs, local training, theft, or substitutes, with dates, prices, access friction, jurisdictions, and task-specific competence. The release case measures marginal uplift over that accessible frontier rather than over no access. Every comparison expires when models, prices, safeguards, or actor resources change; reopening preserves the original decision and appends a new one. Actor cohorts retain separate frontiers because expertise, capital, identity, and legal access differ.
+
+**Failure mode.** Comparing a release to an obsolete weak baseline inflates marginal danger, while assuming every actor already has the frontier understates access friction and reliability. A general benchmark can miss the exact hazardous workflow.
+
+**Non-claim.** Frontier parity on selected tasks does not prove equal risk, equal usability, or no cumulative ecosystem effect. It remains actor-, task-, date-, and access-specific.
+
+**Source grounding.** `ext_rand_model_weight_security_2024`, `ext_international_ai_safety_report_2026`, and `ext_singapore_consensus_2026` motivate contextual comparison and periodic reassessment. Their conclusions remain report- and time-scoped.
+
+### Marginal and cumulative ecosystem risk
+
+**Mechanism.** Maintain separate ledgers for the release’s marginal effect and the cumulative state it helps create. The marginal ledger estimates new actors, reduced cost or expertise, reliability uplift, and newly reachable misuse. The cumulative ledger tracks copies, forks, compatible tooling, fine-tunes, normalization, concentration or diffusion, shared vulnerabilities, and lost response options. Decisions expose uncertainty and avoid subtracting diffuse benefits from concentrated catastrophic harms through one opaque score. Sensitivity analyses show which uncertain assumptions reverse the disposition.
+
+**Failure mode.** A release can appear harmless because comparable artifacts exist while still accelerating tooling and normalization; cumulative rhetoric can also attribute the entire ecosystem to one artifact. Double-counting descendants exaggerates both harms and benefits.
+
+**Non-claim.** A nonzero cumulative contribution does not prove that withholding one release changes the eventual frontier.
+
+**Source grounding.** `ext_provable_model_weight_release_2025` foregrounds irreversible information release and residual control. `ext_international_ai_safety_report_2026` provides a broad risk synthesis. Neither supplies a causal estimate for a particular future ecosystem.
+
+### Benefit and access distribution
+
+**Mechanism.** Specify claimed benefits by beneficiary, pathway, artifact, time horizon, and counterfactual: research reproducibility, local adaptation, competition, education, privacy-preserving local use, language coverage, audit, or resilience. Measure who can actually use the release given compute, expertise, bandwidth, disability, language, and legal constraints, and who bears externalities. Compare benefits across access tiers and preserve dissent rather than reducing distribution to total downloads. Unobserved beneficiaries and displaced costs remain explicit unknowns.
+
+**Failure mode.** Nominal openness may chiefly benefit well-capitalized actors; hosted access may widen usability while centralizing surveillance and discretion. Anecdotes about innovation can be treated as guaranteed social value, while speculative harms erase legitimate access interests.
+
+**Non-claim.** Broad availability is not equivalent to equitable benefit, and a documented benefit does not automatically outweigh severe risk. Distributional comparisons preserve both gains and burdens.
+
+**Source grounding.** `ext_singapore_consensus_2026` and `ext_international_ai_safety_report_2026` provide governance and public-interest context. They do not quantify the distributional effects of this project’s proposed tiers.
+
+### Controls that survive copying
+
+**Mechanism.** Separate controls embedded in the copied artifact from controls that require a provider. Local documentation, signed manifests, tamper-evident provenance, safety tooling, evaluator suites, and optional update channels can travel with weights; identity gates, server-side monitoring, rate limits, and remote revocation generally cannot. For every control, record dependency, bypass cost, adoption incentive, failure visibility, update authority, and the exact residual after redistribution. Challenge tests remove each dependency to verify which protection actually survives.
+
+**Failure mode.** A release case may credit API-only safeguards to downloadable weights or describe a license as a technical barrier. Embedded controls may be stripped, while mandatory update channels recreate centralized authority and new compromise risks.
+
+**Non-claim.** A control that survives copying is not necessarily hard to bypass, legitimate, adopted, or effective. Survival is only one dependency property.
+
+**Source grounding.** `ext_provable_model_weight_release_2025` and `ext_rand_model_weight_security_2024` motivate reasoning about controls after weight access. Provider policies such as `ext_anthropic_responsible_scaling_policy_3_4_2026` remain organization-specific comparators, not universal enforcement evidence.
+
+### Derivative incidents, patch adoption, and irreversible residuals
+
+**Mechanism.** Operate a post-release registry for verified incidents, affected hashes and descendants, exploit prerequisites, patch or mitigation identity, notification, adoption observations, unsupported forks, and unresolved harms. Reassessment can recommend a new artifact, withdraw endorsement, narrow documentation, or coordinate defensive indicators, but it must state what cannot be recalled. Public status distinguishes “patched upstream,” “adoption observed,” and “ecosystem exposure resolved.” Reporting uncertainty and known blind channels accompany every incident-rate denominator.
+
+**Failure mode.** Upstream remediation can be reported as universal closure while old copies remain usable. Incident collection can become surveillance or suppress legitimate forks; absent reports can be mistaken for absent harm.
+
+**Non-claim.** Post-release response does not recreate pre-release control, guarantee notification reach, or prove that unobserved derivatives are safe. Silence is not evidence of ecosystem closure or patch adoption.
+
+**Source grounding.** `ext_provable_model_weight_release_2025` motivates irreversible residual accounting. `ext_singapore_consensus_2026` and `ext_international_ai_safety_report_2026` support coordination and review as policy considerations, not demonstrated global incident control.
 
 ## Interfaces
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Reconcile Round-21 concept prose with its reviewed claim-atom ownership.
+"""Reconcile P6.9 concept prose with its reviewed claim-atom ownership.
 
-The Round-21 chapter-substance contract already records an exact semantic
+The P6.9 chapter-substance contract already records an exact semantic
 review for every new concept section and maps each concept to one or more
 existing claim atoms. This migration projects that reviewed ownership into the
 older P1 prose-candidate review packets. It does not create atoms, change
@@ -20,13 +20,16 @@ ROOT = Path(__file__).resolve().parents[1]
 CONTRACT_PATH = ROOT / "evidence_quality/chapter_substance_contract.json"
 QUEUE_PATH = ROOT / "evidence_quality/prose_claim_candidate_queue.json"
 REVIEW_DIR = ROOT / "evidence_quality/claim_reviews"
-ROUND_21_CHAPTERS = {
+CONTRACTED_REVIEW_CHAPTERS = {
     "scientific-discovery-and-experimental-governance",
     "governed-objective-formation-value-learning-and-goal-integrity",
     "durable-semantic-memory-and-knowledge-lattices",
     "ai-deployment-transition-distribution-and-human-agency",
     "autonomous-replication-proliferation-and-containment",
     "human-ai-communication-persuasion-and-epistemic-security",
+    "adversarial-machine-learning-and-model-attack-surface",
+    "physical-compute-infrastructure-energy-and-environmental-constraints",
+    "institutions-international-coordination-and-public-legitimacy",
 }
 TOKEN_STOP = {
     "a", "an", "and", "are", "as", "at", "be", "by", "can", "for", "from",
@@ -99,14 +102,14 @@ def main() -> None:
     records = {
         row["chapter_id"]: row
         for row in contract["chapter_records"]
-        if row["chapter_id"] in ROUND_21_CHAPTERS
+        if row["chapter_id"] in CONTRACTED_REVIEW_CHAPTERS
     }
-    if set(records) != ROUND_21_CHAPTERS:
-        missing = sorted(ROUND_21_CHAPTERS - set(records))
-        raise SystemExit(f"Round-21 contract records missing: {missing}")
+    if set(records) != CONTRACTED_REVIEW_CHAPTERS:
+        missing = sorted(CONTRACTED_REVIEW_CHAPTERS - set(records))
+        raise SystemExit(f"P6.9 contract records missing: {missing}")
 
     candidates_by_chapter: dict[str, list[dict[str, Any]]] = {
-        chapter_id: [] for chapter_id in ROUND_21_CHAPTERS
+        chapter_id: [] for chapter_id in CONTRACTED_REVIEW_CHAPTERS
     }
     for candidate in queue["candidates"]:
         chapter_id = candidate["chapter_id"]
@@ -114,7 +117,7 @@ def main() -> None:
             candidates_by_chapter[chapter_id].append(candidate)
 
     reconciled = 0
-    for chapter_id in sorted(ROUND_21_CHAPTERS):
+    for chapter_id in sorted(CONTRACTED_REVIEW_CHAPTERS):
         record = records[chapter_id]
         chapter_path = ROOT / record["path"]
         lines = chapter_path.read_text(encoding="utf-8").splitlines()
@@ -136,7 +139,7 @@ def main() -> None:
             if concept is None:
                 raise SystemExit(
                     f"{candidate['candidate_id']}: new candidate is outside a "
-                    f"Round-21 concept section ({heading!r})"
+                    f"P6.9 concept section ({heading!r})"
                 )
             atom_ids = list(concept["atom_ids"])
             if not atom_ids or any(atom_id not in propositions for atom_id in atom_ids):
@@ -148,7 +151,7 @@ def main() -> None:
                 disposition = {
                     "state": "historical_or_source_report",
                     "rationale": (
-                        "Round-21 semantic review classified this as a bounded "
+                        "P6.9 semantic review classified this as a bounded "
                         f"source-grounding statement for `{concept['concept_id']}`. "
                         "It reports or limits external evidence and creates no local "
                         "support-bearing atom or support-state movement."
@@ -163,7 +166,7 @@ def main() -> None:
                 disposition = {
                     "state": "duplicate_of_atom",
                     "rationale": (
-                        "Round-21 exact-digest semantic review maps this "
+                        "P6.9 exact-digest semantic review maps this "
                         f"`{concept['concept_id']}` proposition to the existing "
                         f"owner atom `{target}`; it creates no additional atom and "
                         "does not change support state."
@@ -177,7 +180,7 @@ def main() -> None:
             candidates_by_chapter[chapter_id]
         )
         packet["semantic_sweep"]["review_note"] = (
-            "Re-reviewed the complete chapter through the Round-21 concept expansion "
+            "Re-reviewed the complete chapter through the P6.9 concept expansion "
             "on 2026-07-28. Every new claim-bearing sentence is reconciled to the "
             "exact concept-to-atom ownership recorded by the current-digest chapter "
             "substance contract, or classified as bounded source reporting. No new "
@@ -192,8 +195,8 @@ def main() -> None:
         dump(packet_path, packet)
 
     print(
-        f"Reconciled {reconciled} Round-21 prose candidates across "
-        f"{len(ROUND_21_CHAPTERS)} chapter review packets."
+        f"Reconciled {reconciled} P6.9 prose candidates across "
+        f"{len(CONTRACTED_REVIEW_CHAPTERS)} chapter review packets."
     )
 
 

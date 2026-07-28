@@ -3,8 +3,8 @@ title: "Physical Compute Infrastructure, Energy, and Environmental Constraints"
 chapter_id: "physical-compute-infrastructure-energy-and-environmental-constraints"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
-draft_maturity: "v0.2 complete argument-level manuscript"
-last_updated: "2026-07-24"
+draft_maturity: "v0.3 concept-complete argument-level manuscript"
+last_updated: "2026-07-28"
 primary_sources:
   - "ext_iea_energy_and_ai_2025"
   - "ext_lbnl_data_center_energy_2024"
@@ -126,6 +126,88 @@ carries both a service lease and an impact obligation through retirement.
 **Observation.** Use authority-narrowing degradation, placement, demand response, failover, and interruption plans when thermal, water, network, power, or component limits bind.
 
 **Closure.** Close the lifecycle through reuse, recycling, weight and data destruction, decommissioning, stranded-capacity accounting, and unresolved environmental or community residuals.
+
+## Concept-completion ledger
+
+### Useful compute versus nameplate capacity
+
+**Mechanism.** Maintain distinct identities for accelerator nameplate performance, installed capacity, schedulable capacity, delivered operations, and useful workload progress. A workload receipt binds model, precision, sparsity, sequence and batch shape, parallelism, compiler, utilization, retries, checkpoint overhead, and quality threshold to time and location. Capacity planning uses the bottlenecked useful-compute envelope, while comparisons disclose both numerator and denominator. Failed and interrupted runs stay inside total resource accounting.
+
+**Failure mode.** Peak FLOP/s can be sold as available training capacity despite memory stalls, network contention, failures, or unusable precision. Utilization can be inflated with work that does not advance the target. The reverse error treats a low average as intrinsic hardware incapacity when scheduling is at fault.
+
+**Non-claim.** A useful-compute receipt does not establish scientific value, optimal architecture, or environmental efficiency. It only reconciles delivered resources with bounded progress.
+
+**Source grounding.** `ext_iea_energy_and_ai_2025` and `ext_lbnl_data_center_energy_2024` motivate workload-sensitive infrastructure accounting, but their scenario and national estimates are not local facility measurements.
+
+### Memory, interconnect, and storage bottlenecks
+
+**Mechanism.** Compile every workload into accelerator compute, high-bandwidth memory capacity and bandwidth, host memory, fabric bandwidth and latency, storage throughput and endurance, checkpoint size, and failure-recovery requirements. Measure time and energy by phase so paging, recomputation, sharding, quantization, and topology changes expose their quality and reliability tradeoffs. Admission tests the full data path rather than checking only accelerator count. Tail behavior and contention are measured under representative concurrency.
+
+**Failure mode.** A nominally compute-rich cluster can idle on collectives or data loading; aggressive paging can turn SSD endurance and tail latency into hidden constraints. A synthetic kernel may fit while the real optimizer state, cache, or checkpoints do not.
+
+**Non-claim.** Removing one bottleneck does not prove end-to-end speedup or lower total resource use. Another phase may become limiting or induce more demand.
+
+**Source grounding.** `ext_lbnl_data_center_energy_2024` supplies system-level data-center context, not a benchmark of this stack. `ext_iea_energy_and_ai_2025` motivates considering AI workload growth; the detailed compiler remains a design requirement.
+
+### Temporal and local energy and grid causality
+
+**Mechanism.** Join facility meters to time- and location-matched grid conditions, contracts, congestion, marginal generation assumptions, transmission limits, storage, curtailment, and backup operation. Report energy, demand, and emissions under multiple allocation methods, preserving uncertainty and contractual versus physical claims. Flexible workloads receive explicit deadlines, interruption budgets, quality bounds, and counterfactual schedules so demand response is measured rather than presumed. Counterfactual grid responses remain model assumptions, never metered facts.
+
+**Failure mode.** Annual renewable matching can obscure high-emission hours or local congestion; marginal emissions can be presented as exact despite model uncertainty. Shifting a job may move rather than reduce load, and backup generators can disappear from the accounting.
+
+**Non-claim.** A certificate or annual match does not prove hour-by-hour zero-carbon operation or grid benefit. Contractual accounting and physical causality remain separate, uncertain claims with different evidence routes.
+
+**Source grounding.** `ext_iea_energy_and_ai_2025` provides global and scenario-level energy context; `ext_lbnl_data_center_energy_2024` provides United States data-center estimates. Neither establishes site-specific causality.
+
+### Cooling, water, land, and community constraints
+
+**Mechanism.** Treat cooling mode, water source and consumptive use, temperature, humidity, drought status, discharge, noise, land, tax and labor effects, emergency services, and affected communities as admission constraints with named authorities. Record operational and embodied impacts, local baselines, seasonal peaks, distribution across populations, consultation, grievance, mitigation, and remedy. A placement can be technically efficient and still be denied for a binding local constraint. Alternative sites are compared without exporting an unrecorded burden elsewhere.
+
+**Failure mode.** Global efficiency ratios can hide seasonal water stress or neighborhood burdens. “Water positive” portfolio claims can offset harm far from the affected watershed. Community consultation after construction cannot establish prior consent or fair distribution.
+
+**Non-claim.** Reporting water or land use does not establish acceptability, causation of every local change, or legitimate authorization. Affected communities retain independent standing, challenge, and remedy.
+
+**Source grounding.** `ext_iea_energy_and_ai_2025` and `ext_lbnl_data_center_energy_2024` motivate resource and infrastructure accounting but do not adjudicate any community’s claims.
+
+### Embodied materials, supply chains, and retirement
+
+**Mechanism.** Extend the infrastructure ledger from fabrication through transport, construction, maintenance, spares, reuse, recycling, destruction, and retirement. Components carry supplier, material, jurisdiction, labor, embodied-impact, repairability, expected life, failure, and downstream disposition fields. Allocation rules separate one-time construction, shared infrastructure, replacement, and workload-attributed burdens. Decommissioning closes data and weight custody alongside physical waste and stranded assets. Supplier unknowns, recycled-content uncertainty, and secondary-market leakage remain visible residuals.
+
+**Failure mode.** Operational power improvements can shift burden into frequent accelerator replacement, fabrication water, critical minerals, or e-waste. Vendor averages can conceal high-impact suppliers; double-counting shared facilities can exaggerate embodied totals.
+
+**Non-claim.** A lifecycle inventory is not proof of ethical sourcing, complete traceability, or causal attribution to one model. Supplier claims retain their uncertainty, exclusions, audit limits, possible conflicts, unknown tiers, changing ownership, missing records, and revisions.
+
+**Source grounding.** `ext_iea_energy_and_ai_2025` supplies infrastructure-growth context. `ext_oecd_ai_infrastructure_competition_2025` motivates supply and concentration analysis; it is market-, time-, and jurisdiction-specific.
+
+### Demand response, degradation, and resilience
+
+**Mechanism.** Define a service ladder before shortages: delay flexible training, reduce replicas or batch size, use a validated lower precision, shed noncritical inference, migrate within data and latency constraints, enter a safe degraded mode, or stop. Each step has trigger, authority, maximum duration, quality floor, fairness check, state-preservation plan, recovery test, and cost. Correlated grid, network, cooling, and component failures are exercised jointly. Exercises include failed recovery and repeated shortage, not only clean failover.
+
+**Failure mode.** Flexibility can be claimed from workloads that miss deadlines, corrupt state, or shift service loss onto vulnerable users. Failover sites can share the same grid, network, supplier, or software fault. Repeated degradation may become the unacknowledged normal service.
+
+**Non-claim.** A demand-response plan does not prove available capacity, reliable failover, or socially acceptable interruption.
+
+**Source grounding.** `ext_iea_energy_and_ai_2025` motivates flexible demand as an option, not a demonstrated local benefit. `ext_lbnl_data_center_energy_2024` supplies system context rather than resilience evidence.
+
+### Metering, allocation, uncertainty, and rebound
+
+**Mechanism.** Publish meter boundaries, sampling, calibration, missing-data treatment, power-usage allocation, emissions factors, water definitions, hardware amortization, uncertainty intervals, and workload denominators. Report marginal and total impacts separately. After an efficiency change, track utilization, model size, demand, cost, and shifted work long enough to detect rebound; never infer total reduction from per-token improvement alone. Revisions preserve the prior estimate and explain every denominator change.
+
+**Failure mode.** Facility totals can be divided by tokens while omitting idle capacity, failed runs, networking, or water. Provider estimates may be irreproducible. Lower unit cost can increase total consumption, while a short observation window reports only the initial saving.
+
+**Non-claim.** Better energy or cost intensity does not imply lower total environmental burden. Total demand, shifted burdens, and rebound require their own observation window and denominator.
+
+**Source grounding.** `ext_lbnl_data_center_energy_2024` demonstrates explicit national estimation methods and uncertainty; `ext_iea_energy_and_ai_2025` supplies scenarios. Neither validates this project’s meters or rebound estimate.
+
+### Hardware guarantees, coverage, and concentration
+
+**Mechanism.** Express hardware-enabled controls as property-and-coverage contracts: root of trust, measured component and firmware, attestation verifier, key and update authority, tolerated bypasses, covered operators, failure recovery, appeal, and decommissioning. Evaluate whether controls reduce a named risk without creating single-vendor dependence, surveillance, exclusion, or systemic failure. Concentration analysis covers accelerators, fabs, cloud, energy, networking, and verification authorities. Each guarantee names uncovered legacy and off-grid paths.
+
+**Failure mode.** A signed measurement can attest a compromised or insufficient policy; update authority can become a universal control point. Concentration may improve coordination while amplifying common-mode failure or coercion. Market share alone cannot establish abuse or resilience.
+
+**Non-claim.** Attestation is not behavioral safety, and concentration is not by itself illegality or harm. Both remain bounded inputs to a wider decision.
+
+**Source grounding.** `ext_flexible_hardware_enabled_guarantees_2025` is a design proposal whose root, update, coverage, and legitimacy questions remain open. `ext_oecd_ai_infrastructure_competition_2025` supplies bounded competition context, not a legal conclusion.
 
 ## Interfaces
 

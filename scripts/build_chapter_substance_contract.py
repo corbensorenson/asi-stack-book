@@ -117,6 +117,66 @@ CONCEPT_SPECS: dict[str, list[dict[str, Any]]] = {
         {"concept_id": "uncertainty-disclosure-identity", "heading": "Uncertainty, disclosure, and synthetic identity", "source_ids": ["talos", "ext_conversational_persuasion_gpt4_2025", "ext_anthropic_model_persuasiveness_2024", "ext_commercial_persuasion_ai_2026"]},
         {"concept_id": "intervention-outcomes-remedy", "heading": "Intervention, outcomes, correction, and remedy", "source_ids": ["ext_conversational_persuasion_gpt4_2025", "ext_anthropic_model_persuasiveness_2024", "ext_commercial_persuasion_ai_2026"]},
     ],
+    "adversarial-machine-learning-and-model-attack-surface": [
+        {"concept_id": "threat-model-identity", "heading": "Threat-model identity and lifecycle reopening", "source_ids": ["ext_nist_adversarial_ml_2024", "ext_sleeper_agents_2024"]},
+        {"concept_id": "adaptive-defense-aware-evaluation", "heading": "Adaptive attacks and defense-aware evaluation", "source_ids": ["ext_nist_adversarial_ml_2024", "ext_reluplex_2017"]},
+        {"concept_id": "evasion-reachability", "heading": "Evasion and semantic or physical reachability", "source_ids": ["ext_adversarial_sensor_fusion_2022", "ext_nist_adversarial_ml_2024"]},
+        {"concept_id": "poisoning-backdoor-repair", "heading": "Poisoning, backdoors, and descendant repair", "source_ids": ["ext_sleeper_agents_2024", "ext_nist_adversarial_ml_2024"]},
+        {"concept_id": "extraction-inversion-privacy", "heading": "Extraction, inversion, and privacy handoff", "source_ids": ["ext_carlini_training_data_extraction_2021", "ext_nist_adversarial_ml_2024"]},
+        {"concept_id": "multimodal-agentic-composition", "heading": "Multimodal and agentic attack composition", "source_ids": ["ext_adversarial_sensor_fusion_2022", "ext_nist_adversarial_ml_2024"]},
+        {"concept_id": "certificate-monitor-recovery", "heading": "Certificates, monitoring, and recovery as non-substitutes", "source_ids": ["ext_reluplex_2017", "ext_nist_adversarial_ml_2024"]},
+        {"concept_id": "disclosure-residual-ownership", "heading": "Disclosure, safe experimentation, and residual ownership", "source_ids": ["ext_nist_adversarial_ml_2024"]},
+    ],
+    "open-weight-release-and-post-release-control": [
+        {"concept_id": "access-tier-option-set", "heading": "Access-tier option set", "source_ids": ["ext_rand_model_weight_security_2024", "ext_singapore_consensus_2026"]},
+        {"concept_id": "artifact-derivative-identity", "heading": "Exact artifact and derivative identity", "source_ids": ["ext_provable_model_weight_release_2025", "ext_rand_model_weight_security_2024"]},
+        {"concept_id": "malicious-adaptation", "heading": "Malicious adaptation and evaluator competence", "source_ids": ["ext_openai_worst_case_open_weight_risks_2025", "ext_anthropic_responsible_scaling_policy_3_4_2026", "ext_international_ai_safety_report_2026"]},
+        {"concept_id": "accessible-frontier", "heading": "Accessible-frontier comparison and expiry", "source_ids": ["ext_rand_model_weight_security_2024", "ext_international_ai_safety_report_2026", "ext_singapore_consensus_2026"]},
+        {"concept_id": "marginal-cumulative-risk", "heading": "Marginal and cumulative ecosystem risk", "source_ids": ["ext_provable_model_weight_release_2025", "ext_international_ai_safety_report_2026"]},
+        {"concept_id": "benefit-access-distribution", "heading": "Benefit and access distribution", "source_ids": ["ext_singapore_consensus_2026", "ext_international_ai_safety_report_2026"]},
+        {"concept_id": "copy-surviving-controls", "heading": "Controls that survive copying", "source_ids": ["ext_provable_model_weight_release_2025", "ext_rand_model_weight_security_2024", "ext_anthropic_responsible_scaling_policy_3_4_2026"]},
+        {"concept_id": "derivative-incident-residual", "heading": "Derivative incidents, patch adoption, and irreversible residuals", "source_ids": ["ext_provable_model_weight_release_2025", "ext_singapore_consensus_2026", "ext_international_ai_safety_report_2026"]},
+    ],
+    "physical-compute-infrastructure-energy-and-environmental-constraints": [
+        {"concept_id": "useful-versus-nameplate", "heading": "Useful compute versus nameplate capacity", "source_ids": ["ext_iea_energy_and_ai_2025", "ext_lbnl_data_center_energy_2024"]},
+        {"concept_id": "memory-interconnect-storage", "heading": "Memory, interconnect, and storage bottlenecks", "source_ids": ["ext_lbnl_data_center_energy_2024", "ext_iea_energy_and_ai_2025"]},
+        {"concept_id": "temporal-local-energy", "heading": "Temporal and local energy and grid causality", "source_ids": ["ext_iea_energy_and_ai_2025", "ext_lbnl_data_center_energy_2024"]},
+        {"concept_id": "cooling-water-land-community", "heading": "Cooling, water, land, and community constraints", "source_ids": ["ext_iea_energy_and_ai_2025", "ext_lbnl_data_center_energy_2024"]},
+        {"concept_id": "embodied-supply-retirement", "heading": "Embodied materials, supply chains, and retirement", "source_ids": ["ext_iea_energy_and_ai_2025", "ext_oecd_ai_infrastructure_competition_2025"]},
+        {"concept_id": "demand-response-resilience", "heading": "Demand response, degradation, and resilience", "source_ids": ["ext_iea_energy_and_ai_2025", "ext_lbnl_data_center_energy_2024"]},
+        {"concept_id": "metering-allocation-rebound", "heading": "Metering, allocation, uncertainty, and rebound", "source_ids": ["ext_lbnl_data_center_energy_2024", "ext_iea_energy_and_ai_2025"]},
+        {"concept_id": "hardware-guarantees-concentration", "heading": "Hardware guarantees, coverage, and concentration", "source_ids": ["ext_flexible_hardware_enabled_guarantees_2025", "ext_oecd_ai_infrastructure_competition_2025"]},
+    ],
+    "institutions-international-coordination-and-public-legitimacy": [
+        {"concept_id": "mandate-jurisdiction-force", "heading": "Mandate, jurisdiction, and legal force", "source_ids": ["ext_un_global_digital_compact_2024", "ext_council_europe_ai_convention_2024"]},
+        {"concept_id": "publics-representation-standing", "heading": "Affected publics, representation, and standing", "source_ids": ["ext_un_global_digital_compact_2024", "ext_council_europe_ai_convention_2024"]},
+        {"concept_id": "science-law-standards", "heading": "Science, law, standards, and conformance", "source_ids": ["ext_eu_article_50_transparency_guidelines_2026", "ext_legal_alignment_2026"]},
+        {"concept_id": "verification-independence", "heading": "Verification independence and access", "source_ids": ["ext_flexible_hardware_enabled_guarantees_2025", "ext_un_global_digital_compact_2024", "ext_council_europe_ai_convention_2024"]},
+        {"concept_id": "cross-border-enforcement", "heading": "Cross-border commitment, defection, and enforcement", "source_ids": ["ext_un_global_digital_compact_2024", "ext_council_europe_ai_convention_2024"]},
+        {"concept_id": "capacity-inequality", "heading": "Capacity inequality and financing", "source_ids": ["ext_oecd_ai_infrastructure_competition_2025", "ext_un_global_digital_compact_2024"]},
+        {"concept_id": "capture-emergency-expiry", "heading": "Capture, emergency authority, and expiry", "source_ids": ["ext_council_europe_ai_convention_2024", "ext_un_global_digital_compact_2024"]},
+        {"concept_id": "remedy-liability-competition", "heading": "Remedy, liability, insurance, and competition", "source_ids": ["ext_eu_ai_civil_liability_2025", "ext_oecd_ai_infrastructure_competition_2025", "ext_icrc_autonomous_weapons_ihl_2025"]},
+    ],
+    "multi-agent-dynamics-collective-intelligence-and-systemic-risk": [
+        {"concept_id": "population-identity-diversity", "heading": "Population identity, copies, and effective diversity", "source_ids": ["ext_multi_agent_risks_2025", "ext_cooperative_ai_foundations_2023"]},
+        {"concept_id": "multiplex-graphs", "heading": "Multiplex interaction and dependency graphs", "source_ids": ["ext_multi_agent_risks_2025", "ext_cooperative_ai_foundations_2023"]},
+        {"concept_id": "cooperation-collusion-intelligence", "heading": "Cooperation, collusion, and collective intelligence", "source_ids": ["ext_cooperative_ai_foundations_2023", "ext_multi_agent_risks_2025"]},
+        {"concept_id": "incentives-commitments-externalities", "heading": "Incentives, commitments, bargaining, and externalities", "source_ids": ["ext_cooperative_ai_foundations_2023", "ext_multi_agent_risks_2025"]},
+        {"concept_id": "decision-theory-disagreement", "heading": "Decision-theory disagreement", "source_ids": ["ext_functional_decision_theory_2017", "ext_cooperative_ai_foundations_2023"]},
+        {"concept_id": "learning-nonstationarity-selection", "heading": "Learning, nonstationarity, selection, and emergent objectives", "source_ids": ["ext_multi_agent_risks_2025", "ext_cooperative_ai_foundations_2023"]},
+        {"concept_id": "systemic-risk-cascades", "heading": "Concentration, cascades, and common-mode systemic risk", "source_ids": ["ext_multi_agent_risks_2025", "ext_gradual_disempowerment_2025"]},
+        {"concept_id": "human-influence-disempowerment", "heading": "Human influence, disempowerment, and intervention displacement", "source_ids": ["ext_gradual_disempowerment_2025", "ext_constructive_interdependence_human_ai_2026"]},
+    ],
+    "military-ai-autonomous-weapons-and-strategic-stability": [
+        {"concept_id": "use-case-decision-role", "heading": "Use-case and decision-role taxonomy", "source_ids": ["ext_icrc_autonomous_weapons_ihl_2025", "ext_sipri_military_ai_nuclear_escalation_2025"]},
+        {"concept_id": "mission-authority-effect", "heading": "Mission, authority, and effect envelope", "source_ids": ["ext_icrc_autonomous_weapons_ihl_2025"]},
+        {"concept_id": "meaningful-human-judgment", "heading": "Meaningful human judgment conditions", "source_ids": ["ext_icrc_autonomous_weapons_ihl_2025"]},
+        {"concept_id": "observation-trust", "heading": "Observation trust, false alarms, and provenance", "source_ids": ["ext_sipri_military_ai_nuclear_escalation_2025"]},
+        {"concept_id": "safe-posture", "heading": "Safe posture, communication loss, and degradation", "source_ids": ["ext_icrc_autonomous_weapons_ihl_2025", "ext_sipri_military_ai_nuclear_escalation_2025"]},
+        {"concept_id": "adversary-response-proliferation", "heading": "Adversary response, proliferation, and reciprocal dynamics", "source_ids": ["ext_sipri_military_ai_nuclear_escalation_2025", "ext_singapore_consensus_2026", "ext_international_ai_safety_report_2026"]},
+        {"concept_id": "strategic-stability-off-ramps", "heading": "Strategic stability, off-ramps, and timeline compression", "source_ids": ["ext_sipri_military_ai_nuclear_escalation_2025"]},
+        {"concept_id": "secrecy-review-decommission", "heading": "Secrecy, independent review, accountability, and decommission", "source_ids": ["ext_icrc_autonomous_weapons_ihl_2025", "ext_sipri_military_ai_nuclear_escalation_2025"]},
+    ],
 }
 
 CONCEPT_ATOM_MAPPINGS: dict[str, dict[str, dict[str, Any]]] = {
@@ -180,6 +240,46 @@ CONCEPT_ATOM_MAPPINGS: dict[str, dict[str, dict[str, Any]]] = {
         "uncertainty-disclosure-identity": {"atom_ids": ["human-ai-communication-persuasion-and-epistemic-security.mechanism.003", "human-ai-communication-persuasion-and-epistemic-security.invariant.004"], "rationale": "Provenance, sponsorship, synthetic identity, and visible uncertainty are already one delivery contract."},
         "intervention-outcomes-remedy": {"atom_ids": ["human-ai-communication-persuasion-and-epistemic-security.mechanism.004", "human-ai-communication-persuasion-and-epistemic-security.mechanism.005"], "rationale": "Outcome observation and effect-visible correction jointly own intervention and remedy."},
     },
+    "adversarial-machine-learning-and-model-attack-surface": {
+        "threat-model-identity": {"atom_ids": ["adversarial-machine-learning-and-model-attack-surface.mechanism.001", "adversarial-machine-learning-and-model-attack-surface.invariant.001"], "rationale": "The versioned threat-model mechanism and exact-identity invariant jointly own lifecycle reopening."},
+        "adaptive-defense-aware-evaluation": {"atom_ids": ["adversarial-machine-learning-and-model-attack-surface.mechanism.003", "adversarial-machine-learning-and-model-attack-surface.invariant.002"], "rationale": "Adaptive evaluation and defense-aware attacker competence are explicit existing owners."},
+        "evasion-reachability": {"atom_ids": ["adversarial-machine-learning-and-model-attack-surface.mechanism.002", "adversarial-machine-learning-and-model-attack-surface.invariant.003"], "rationale": "Separate attack lanes and joint utility reporting own bounded evasion reachability."},
+        "poisoning-backdoor-repair": {"atom_ids": ["adversarial-machine-learning-and-model-attack-surface.mechanism.002", "adversarial-machine-learning-and-model-attack-surface.mechanism.004"], "rationale": "The poisoning/backdoor lane and retained repair lineage own descendant repair."},
+        "extraction-inversion-privacy": {"atom_ids": ["adversarial-machine-learning-and-model-attack-surface.mechanism.002", "adversarial-machine-learning-and-model-attack-surface.mechanism.005"], "rationale": "The privacy attack lanes and bounded privacy handoff jointly own this concept."},
+        "multimodal-agentic-composition": {"atom_ids": ["adversarial-machine-learning-and-model-attack-surface.mechanism.002"], "rationale": "The explicit multimodal and agentic attack-lane atom owns composed attack evaluation."},
+        "certificate-monitor-recovery": {"atom_ids": ["adversarial-machine-learning-and-model-attack-surface.mechanism.003", "adversarial-machine-learning-and-model-attack-surface.invariant.003"], "rationale": "The defense-separation mechanism and joint-metric invariant own non-substitution."},
+        "disclosure-residual-ownership": {"atom_ids": ["adversarial-machine-learning-and-model-attack-surface.mechanism.004", "adversarial-machine-learning-and-model-attack-surface.invariant.005"], "rationale": "Retained disclosure lineage and the no-real-target authority ceiling own safe experimentation and residuals."},
+    },
+    "physical-compute-infrastructure-energy-and-environmental-constraints": {
+        "useful-versus-nameplate": {"atom_ids": ["physical-compute-infrastructure-energy-and-environmental-constraints.mechanism.002", "physical-compute-infrastructure-energy-and-environmental-constraints.invariant.001"], "rationale": "Meter reconciliation and distinct compute identities jointly own useful capacity."},
+        "memory-interconnect-storage": {"atom_ids": ["physical-compute-infrastructure-energy-and-environmental-constraints.mechanism.001"], "rationale": "The workload envelope atom explicitly owns accelerator, memory, storage, network, latency, and reliability bottlenecks."},
+        "temporal-local-energy": {"atom_ids": ["physical-compute-infrastructure-energy-and-environmental-constraints.mechanism.003", "physical-compute-infrastructure-energy-and-environmental-constraints.invariant.003"], "rationale": "Physical execution tracking and time-location uncertainty jointly own grid claims."},
+        "cooling-water-land-community": {"atom_ids": ["physical-compute-infrastructure-energy-and-environmental-constraints.mechanism.003"], "rationale": "The execution atom explicitly owns cooling, water, land, and community effects."},
+        "embodied-supply-retirement": {"atom_ids": ["physical-compute-infrastructure-energy-and-environmental-constraints.mechanism.003", "physical-compute-infrastructure-energy-and-environmental-constraints.mechanism.005"], "rationale": "Material supply tracking and lifecycle closure jointly own embodied and retirement burdens."},
+        "demand-response-resilience": {"atom_ids": ["physical-compute-infrastructure-energy-and-environmental-constraints.mechanism.004", "physical-compute-infrastructure-energy-and-environmental-constraints.invariant.005"], "rationale": "Degradation and demand-response plans plus authority narrowing own resilience."},
+        "metering-allocation-rebound": {"atom_ids": ["physical-compute-infrastructure-energy-and-environmental-constraints.mechanism.002", "physical-compute-infrastructure-energy-and-environmental-constraints.invariant.004"], "rationale": "Meter allocation and the denominator requirement jointly own rebound-bounded reporting."},
+        "hardware-guarantees-concentration": {"atom_ids": ["physical-compute-infrastructure-energy-and-environmental-constraints.core", "physical-compute-infrastructure-energy-and-environmental-constraints.mechanism.003"], "rationale": "The bounded physical decision contract and supply-dependency ledger own hardware coverage and concentration without creating a legal claim."},
+    },
+    "institutions-international-coordination-and-public-legitimacy": {
+        "mandate-jurisdiction-force": {"atom_ids": ["institutions-international-coordination-and-public-legitimacy.mechanism.001", "institutions-international-coordination-and-public-legitimacy.invariant.001"], "rationale": "Mandate mapping and separation of legal, political, scientific, and legitimacy claims own legal force."},
+        "publics-representation-standing": {"atom_ids": ["institutions-international-coordination-and-public-legitimacy.mechanism.001", "institutions-international-coordination-and-public-legitimacy.invariant.002"], "rationale": "Standing and representation mapping plus denominator visibility own affected publics."},
+        "science-law-standards": {"atom_ids": ["institutions-international-coordination-and-public-legitimacy.mechanism.002", "institutions-international-coordination-and-public-legitimacy.invariant.001"], "rationale": "The versioned crosswalk and claim-separation invariant own non-collapsing conformance."},
+        "verification-independence": {"atom_ids": ["institutions-international-coordination-and-public-legitimacy.mechanism.003"], "rationale": "The commitment mechanism explicitly owns verification and assessor independence."},
+        "cross-border-enforcement": {"atom_ids": ["institutions-international-coordination-and-public-legitimacy.mechanism.003", "institutions-international-coordination-and-public-legitimacy.invariant.003"], "rationale": "Cross-border commitment design and named enforcement/remedy requirements own this concept."},
+        "capacity-inequality": {"atom_ids": ["institutions-international-coordination-and-public-legitimacy.mechanism.004"], "rationale": "The deployment observation atom owns capacity and distributional effects."},
+        "capture-emergency-expiry": {"atom_ids": ["institutions-international-coordination-and-public-legitimacy.mechanism.004", "institutions-international-coordination-and-public-legitimacy.invariant.005"], "rationale": "Capture monitoring and expiry review jointly own emergency authority."},
+        "remedy-liability-competition": {"atom_ids": ["institutions-international-coordination-and-public-legitimacy.mechanism.003", "institutions-international-coordination-and-public-legitimacy.invariant.003"], "rationale": "Named remedy and enforcement paths own the institutional handoff while legal and competition conclusions remain bounded."},
+    },
+    "military-ai-autonomous-weapons-and-strategic-stability": {
+        "use-case-decision-role": {"atom_ids": ["military-ai-autonomous-weapons-and-strategic-stability.core"], "rationale": "The core strategic interaction contract owns bounded use-case and decision-role identity."},
+        "mission-authority-effect": {"atom_ids": ["military-ai-autonomous-weapons-and-strategic-stability.mechanism"], "rationale": "The mechanism atom owns the mission, authority, observation, posture, and strategic case."},
+        "meaningful-human-judgment": {"atom_ids": ["military-ai-autonomous-weapons-and-strategic-stability.boundary"], "rationale": "The boundary atom preserves human judgment, legal review, and adjacent technical authority."},
+        "observation-trust": {"atom_ids": ["military-ai-autonomous-weapons-and-strategic-stability.mechanism"], "rationale": "Observation trust is an explicit component of the existing strategic mechanism."},
+        "safe-posture": {"atom_ids": ["military-ai-autonomous-weapons-and-strategic-stability.failure_boundary"], "rationale": "The failure-boundary atom owns communication loss, degraded posture, and maximum inference."},
+        "adversary-response-proliferation": {"atom_ids": ["military-ai-autonomous-weapons-and-strategic-stability.mechanism", "military-ai-autonomous-weapons-and-strategic-stability.failure_boundary"], "rationale": "Strategic assumptions and bounded failure analysis own adversary response."},
+        "strategic-stability-off-ramps": {"atom_ids": ["military-ai-autonomous-weapons-and-strategic-stability.mechanism", "military-ai-autonomous-weapons-and-strategic-stability.argument_exit"], "rationale": "The strategic case and argument-exit atom own off-ramps and proof handoff."},
+        "secrecy-review-decommission": {"atom_ids": ["military-ai-autonomous-weapons-and-strategic-stability.boundary", "military-ai-autonomous-weapons-and-strategic-stability.argument_exit"], "rationale": "Authority separation and the handoff ceiling own review, accountability, and closure."},
+    },
 }
 
 # The first three Round-21 owners were already represented by one intentionally
@@ -198,6 +298,25 @@ for _chapter_id in {
                 f"the bounded {_spec['concept_id']} concept together with its scope, "
                 "falsifier, evidence route, promotion ceiling, and non-claims; a "
                 "duplicate atom would create count parity without a new proposition."
+            ),
+        }
+        for _spec in CONCEPT_SPECS[_chapter_id]
+    }
+
+# These post-activation owners each have one intentionally composite core atom.
+# Keep the explicit many-to-one mapping rather than inventing atom-count parity.
+for _chapter_id in {
+    "open-weight-release-and-post-release-control",
+    "multi-agent-dynamics-collective-intelligence-and-systemic-risk",
+}:
+    CONCEPT_ATOM_MAPPINGS[_chapter_id] = {
+        _spec["concept_id"]: {
+            "atom_ids": [f"{_chapter_id}.core"],
+            "rationale": (
+                "The existing post-activation chapter-core atom intentionally owns "
+                f"the bounded {_spec['concept_id']} proposition and its evidence "
+                "ceiling; splitting it solely for count parity would create duplicate "
+                "claim identities."
             ),
         }
         for _spec in CONCEPT_SPECS[_chapter_id]
@@ -314,6 +433,78 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
             "the eight concepts distinguish assistance, epistemic provenance, vulnerability, personalization, consent, cultural and linguistic scope, disclosure, and effect-visible correction",
             "the persuasion studies, commercial-influence preprint, multilingual and cultural evaluations, and Talos lineage stay within their exact populations, measures, review depths, and non-reproduced source boundaries",
             "the chapter jointly preserves helpfulness, comprehension, autonomy, persuasion, privacy, delayed outcomes, correction reach, practical appeal, unsupported language cells, and argument-only support",
+        ],
+        "support_state_effect": "none",
+    },
+    "adversarial-machine-learning-and-model-attack-surface": {
+        "reviewed_sha256": "f07ca47caf039614432e3e04fd081f254e1380a38c3d193479deb76d98be5c60",
+        "reviewed_date": "2026-07-28",
+        "reviewer_role": "codex_editorial_semantic_review",
+        "disposition": SEMANTIC_REVIEW_DISPOSITION,
+        "review_basis": [
+            "the eight concepts distinguish threat identity, adaptive evaluation, reachable evasion, poisoning repair, confidentiality attacks, composed attack paths, non-substitutable defenses, and safe disclosure",
+            "NIST, Sleeper Agents, GPT-2 extraction, camera-LiDAR attack, and Reluplex remain inside their taxonomy, constructed, model-family, modality, and property-specific boundaries",
+            "the chapter preserves attacker competence, positive controls, clean utility, false-negative ceilings, safe authority, residual ownership, and argument-only support",
+        ],
+        "support_state_effect": "none",
+    },
+    "open-weight-release-and-post-release-control": {
+        "reviewed_sha256": "e3036a2b89b49be3b8729338bfcc92fb00672632e7392e0dde947b0a7fec4c7a",
+        "reviewed_date": "2026-07-28",
+        "reviewer_role": "codex_editorial_semantic_review",
+        "disposition": SEMANTIC_REVIEW_DISPOSITION,
+        "review_basis": [
+            "the eight concepts distinguish access options, artifact and derivative identity, competent malicious adaptation, accessible-frontier expiry, marginal and cumulative risk, benefit distribution, controls after copying, and irreversible incident residuals",
+            "provider, policy, security, consensus, and international-report sources remain scoped comparators and do not become a categorical release decision or independent local evaluation",
+            "the chapter preserves fair rescue, exact artifact custody, ecosystem uncertainty, non-adoption, derivative exposure, and argument-only support",
+        ],
+        "support_state_effect": "none",
+    },
+    "physical-compute-infrastructure-energy-and-environmental-constraints": {
+        "reviewed_sha256": "93c3e0e439438480a1fc5dc0385064fd754cb29658d09a28c350116fddcbf068",
+        "reviewed_date": "2026-07-28",
+        "reviewer_role": "codex_editorial_semantic_review",
+        "disposition": SEMANTIC_REVIEW_DISPOSITION,
+        "review_basis": [
+            "the eight concepts distinguish useful compute, bottleneck topology, temporal grid effects, local cooling and community constraints, embodied lifecycle, degradation, metering and rebound, and hardware-control concentration",
+            "IEA, LBNL, hardware-guarantee, and OECD sources remain scenario, national-method, design-proposal, and market-specific evidence rather than local facility measurement or legal adjudication",
+            "the chapter preserves denominators, time and location, uncertainty, distribution, correlated failure, total versus marginal effects, and argument-only support",
+        ],
+        "support_state_effect": "none",
+    },
+    "institutions-international-coordination-and-public-legitimacy": {
+        "reviewed_sha256": "1650ae6f5ef4f1ebcfa2ff3392d5fe82fb8d3fab9b2a5da44f0251bfbc06e357",
+        "reviewed_date": "2026-07-28",
+        "reviewer_role": "codex_editorial_semantic_review",
+        "disposition": SEMANTIC_REVIEW_DISPOSITION,
+        "review_basis": [
+            "the eight concepts keep mandate, affected publics, scientific and legal crosswalks, verification access, cross-border enforcement, capacity, capture and emergency expiry, and remedy or competition distinct",
+            "UN, Council of Europe, EU, legal-alignment, hardware, OECD, and ICRC sources remain institution-, jurisdiction-, mandate-, and time-scoped comparators rather than compliance or legitimacy proof",
+            "the chapter preserves excluded populations, conflicting jurisdiction, assessor dependence, withdrawal, financing, appeal, irreversible harm, and argument-only support",
+        ],
+        "support_state_effect": "none",
+    },
+    "multi-agent-dynamics-collective-intelligence-and-systemic-risk": {
+        "reviewed_sha256": "7a05e18d529a8787d806b7faa6830f555540960c043a671a6d32261da15954a2",
+        "reviewed_date": "2026-07-28",
+        "reviewer_role": "codex_editorial_semantic_review",
+        "disposition": SEMANTIC_REVIEW_DISPOSITION,
+        "review_basis": [
+            "the eight concepts distinguish population identity, multiplex dependency, cooperation and collusion, strategic incentives, decision-theory disagreement, nonstationary learning, systemic cascades, and human influence",
+            "multi-agent risk, cooperative AI, gradual disempowerment, constructive interdependence, and functional decision-theory sources remain taxonomic, agenda, conceptual, study-specific, or normative rather than predictions or universal solutions",
+            "the chapter preserves effective diversity, affected nonparticipants, externalities, alternative theories, false-negative defenses, intervention displacement, and argument-only support",
+        ],
+        "support_state_effect": "none",
+    },
+    "military-ai-autonomous-weapons-and-strategic-stability": {
+        "reviewed_sha256": "1db4ba582a54dd4729eb978aa8f79345bb84f7fb1c5f8bafb1962c098561724e",
+        "reviewed_date": "2026-07-28",
+        "reviewer_role": "codex_editorial_semantic_review",
+        "disposition": SEMANTIC_REVIEW_DISPOSITION,
+        "review_basis": [
+            "the eight concepts distinguish decision role, mission authority, meaningful judgment, observation trust, safe posture, reciprocal adaptation, strategic off-ramps, and accountable decommissioning",
+            "ICRC and SIPRI remain mandate-specific official-position and scenario-analysis sources; the international reports add context without becoming legal advice, prediction, or technical validation",
+            "the chapter preserves compressed timelines, base-rate failures, adversary response, secrecy limits, independent challenge, decommissioning residuals, and argument-only support",
         ],
         "support_state_effect": "none",
     },

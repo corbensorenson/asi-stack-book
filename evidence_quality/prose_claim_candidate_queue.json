@@ -3,11 +3,11 @@
   "scanner": "modal and outcome-bearing sentence cue scan; candidates require semantic adjudication",
   "summary": {
     "chapter_count": 64,
-    "candidate_count": 3483,
+    "candidate_count": 3530,
     "review_state_counts": {
-      "duplicate_of_atom": 1713,
+      "duplicate_of_atom": 1754,
       "editorial_or_question": 59,
-      "historical_or_source_report": 315,
+      "historical_or_source_report": 321,
       "material_atom": 3,
       "nonmaterial_explanation": 1393
     }
@@ -11282,9 +11282,332 @@
       "target_atom_id": "institutions-international-coordination-and-public-legitimacy.mechanism.001"
     },
     {
-      "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.21dc7cddcc30",
+      "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.62feee3c821c",
       "chapter_id": "institutions-international-coordination-and-public-legitimacy",
       "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:143",
+      "sentence": "**Mechanism.** Before an institution can authorize, require, prohibit, inspect, or sanction, compile its source of authority, jurisdiction, subject, object, territorial and extraterritorial reach, delegation chain, conflicts, review route, expiry, and legal force.",
+      "cues": [
+        "require"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "P6.9 exact-digest semantic review maps this `mandate-jurisdiction-force` proposition to the existing owner atom `institutions-international-coordination-and-public-legitimacy.mechanism.001`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "institutions-international-coordination-and-public-legitimacy.mechanism.001"
+    },
+    {
+      "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.797866e48511",
+      "chapter_id": "institutions-international-coordination-and-public-legitimacy",
+      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:157",
+      "sentence": "A majority position cannot erase protected rights or excluded groups, including future ones.",
+      "cues": [
+        "cannot"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "P6.9 exact-digest semantic review maps this `publics-representation-standing` proposition to the existing owner atom `institutions-international-coordination-and-public-legitimacy.mechanism.001`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "institutions-international-coordination-and-public-legitimacy.mechanism.001"
+    },
+    {
+      "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.01e3a7fa107b",
+      "chapter_id": "institutions-international-coordination-and-public-legitimacy",
+      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:163",
+      "sentence": "Updates preserve historical versions and cannot silently turn a voluntary benchmark into law or a legal threshold into scientific truth.",
+      "cues": [
+        "cannot"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "P6.9 exact-digest semantic review maps this `science-law-standards` proposition to the existing owner atom `institutions-international-coordination-and-public-legitimacy.invariant.001`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "institutions-international-coordination-and-public-legitimacy.invariant.001"
+    },
+    {
+      "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.d47a153b91d1",
+      "chapter_id": "institutions-international-coordination-and-public-legitimacy",
+      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:167",
+      "sentence": "**Non-claim.** Conformance with a standard does not prove safety, rights protection, legal compliance in every jurisdiction, or legitimacy.",
+      "cues": [
+        "prove"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "P6.9 exact-digest semantic review maps this `science-law-standards` proposition to the existing owner atom `institutions-international-coordination-and-public-legitimacy.invariant.001`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "institutions-international-coordination-and-public-legitimacy.invariant.001"
+    },
+    {
+      "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.7376bc6a4b3c",
+      "chapter_id": "institutions-international-coordination-and-public-legitimacy",
+      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:177",
+      "sentence": "**Non-claim.** Independent review does not guarantee competence, complete access, unbiased judgment, or system safety.",
+      "cues": [
+        "guarantee"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "P6.9 exact-digest semantic review maps this `verification-independence` proposition to the existing owner atom `institutions-international-coordination-and-public-legitimacy.mechanism.003`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "institutions-international-coordination-and-public-legitimacy.mechanism.003"
+    },
+    {
+      "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.c7d50e577e9e",
+      "chapter_id": "institutions-international-coordination-and-public-legitimacy",
+      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:177",
+      "sentence": "It provides a challenge route whose own limitations require inspection and disclosure.",
+      "cues": [
+        "require"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "P6.9 exact-digest semantic review maps this `verification-independence` proposition to the existing owner atom `institutions-international-coordination-and-public-legitimacy.mechanism.003`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "institutions-international-coordination-and-public-legitimacy.mechanism.003"
+    },
+    {
+      "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.cf6d5d127176",
+      "chapter_id": "institutions-international-coordination-and-public-legitimacy",
+      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:187",
+      "sentence": "**Non-claim.** Agreement, signature, or verification access does not prove compliance, effectiveness, stability, or fairness.",
+      "cues": [
+        "prove"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "P6.9 exact-digest semantic review maps this `cross-border-enforcement` proposition to the existing owner atom `institutions-international-coordination-and-public-legitimacy.invariant.003`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "institutions-international-coordination-and-public-legitimacy.invariant.003"
+    },
+    {
+      "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.4c83e9188199",
+      "chapter_id": "institutions-international-coordination-and-public-legitimacy",
+      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:187",
+      "sentence": "Observed implementation and remedy must be established separately over relevant time, populations, jurisdictions, institutions, enforcement paths, disputes, and withdrawals.",
+      "cues": [
+        "must"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "P6.9 exact-digest semantic review maps this `cross-border-enforcement` proposition to the existing owner atom `institutions-international-coordination-and-public-legitimacy.mechanism.003`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "institutions-international-coordination-and-public-legitimacy.mechanism.003"
+    },
+    {
+      "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.d92fa4c96439",
+      "chapter_id": "institutions-international-coordination-and-public-legitimacy",
+      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:189",
+      "sentence": "They do not demonstrate enforcement of a global ASI regime.",
+      "cues": [
+        "demonstrate"
+      ],
+      "review_state": "historical_or_source_report",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "P6.9 semantic review classified this as a bounded source-grounding statement for `cross-border-enforcement`. It reports or limits external evidence and creates no local support-bearing atom or support-state movement.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.e779777597b7",
+      "chapter_id": "institutions-international-coordination-and-public-legitimacy",
+      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:193",
+      "sentence": "**Mechanism.** Treat regulatory, scientific, compute, legal, diplomatic, and civil-society capacity as required infrastructure.",
+      "cues": [
+        "required"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "P6.9 exact-digest semantic review maps this `capacity-inequality` proposition to the existing owner atom `institutions-international-coordination-and-public-legitimacy.mechanism.004`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "institutions-international-coordination-and-public-legitimacy.mechanism.004"
+    },
+    {
+      "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.7e172e67c66d",
+      "chapter_id": "institutions-international-coordination-and-public-legitimacy",
+      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:193",
+      "sentence": "Mutual recognition requires competence and rights baselines, while technical assistance preserves local priority setting and data sovereignty.",
+      "cues": [
+        "requires"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "P6.9 exact-digest semantic review maps this `capacity-inequality` proposition to the existing owner atom `institutions-international-coordination-and-public-legitimacy.mechanism.004`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "institutions-international-coordination-and-public-legitimacy.mechanism.004"
+    },
+    {
+      "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.962fd984998b",
+      "chapter_id": "institutions-international-coordination-and-public-legitimacy",
+      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:203",
+      "sentence": "Emergency powers require a named trigger, bounded scope, least-authority action, independent review, public reasons where lawful, automatic expiry, renewal burden, and restoration of ordinary process.",
+      "cues": [
+        "require"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "P6.9 exact-digest semantic review maps this `capture-emergency-expiry` proposition to the existing owner atom `institutions-international-coordination-and-public-legitimacy.invariant.005`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "institutions-international-coordination-and-public-legitimacy.invariant.005"
+    },
+    {
+      "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.5621793e690f",
+      "chapter_id": "institutions-international-coordination-and-public-legitimacy",
+      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:203",
+      "sentence": "Capture allegations require evidence, response, and appeal.",
+      "cues": [
+        "require"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "P6.9 exact-digest semantic review maps this `capture-emergency-expiry` proposition to the existing owner atom `institutions-international-coordination-and-public-legitimacy.mechanism.004`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "institutions-international-coordination-and-public-legitimacy.mechanism.004"
+    },
+    {
+      "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.fb3818e6fc3e",
+      "chapter_id": "institutions-international-coordination-and-public-legitimacy",
+      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:207",
+      "sentence": "**Non-claim.** A capture indicator does not prove corruption, and an emergency does not authorize unlimited action.",
+      "cues": [
+        "prove"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "P6.9 exact-digest semantic review maps this `capture-emergency-expiry` proposition to the existing owner atom `institutions-international-coordination-and-public-legitimacy.mechanism.004`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "institutions-international-coordination-and-public-legitimacy.mechanism.004"
+    },
+    {
+      "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.1b613e9d7843",
+      "chapter_id": "institutions-international-coordination-and-public-legitimacy",
+      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:207",
+      "sentence": "Both require evidence, proportional response, review, contestability, expiry, and restoration of ordinary authority and process.",
+      "cues": [
+        "require"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "P6.9 exact-digest semantic review maps this `capture-emergency-expiry` proposition to the existing owner atom `institutions-international-coordination-and-public-legitimacy.invariant.005`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "institutions-international-coordination-and-public-legitimacy.invariant.005"
+    },
+    {
+      "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.7e35df211645",
+      "chapter_id": "institutions-international-coordination-and-public-legitimacy",
+      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:213",
+      "sentence": "Record insolvency, jurisdictional gaps, contractual waivers, and harms that money cannot repair.",
+      "cues": [
+        "cannot"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "P6.9 exact-digest semantic review maps this `remedy-liability-competition` proposition to the existing owner atom `institutions-international-coordination-and-public-legitimacy.mechanism.003`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "institutions-international-coordination-and-public-legitimacy.mechanism.003"
+    },
+    {
+      "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.e6e0f7b0907b",
+      "chapter_id": "institutions-international-coordination-and-public-legitimacy",
+      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:215",
+      "sentence": "Competition rhetoric can weaken necessary safety controls, while compliance costs can become an incumbent moat.",
+      "cues": [
+        "necessary"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "P6.9 exact-digest semantic review maps this `remedy-liability-competition` proposition to the existing owner atom `institutions-international-coordination-and-public-legitimacy.mechanism.003`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "institutions-international-coordination-and-public-legitimacy.mechanism.003"
+    },
+    {
+      "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.21dc7cddcc30",
+      "chapter_id": "institutions-international-coordination-and-public-legitimacy",
+      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:225",
       "sentence": "duties and narrow available choices, but they cannot appoint the decision",
       "cues": [
         "cannot"
@@ -11303,7 +11626,7 @@
     {
       "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.9ea3fd006ec3",
       "chapter_id": "institutions-international-coordination-and-public-legitimacy",
-      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:160",
+      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:242",
       "sentence": "cannot be copied to a materially different deployment or successor institution",
       "cues": [
         "cannot"
@@ -11322,7 +11645,7 @@
     {
       "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.408e1a12e5fb",
       "chapter_id": "institutions-international-coordination-and-public-legitimacy",
-      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:164",
+      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:246",
       "sentence": "Applying the , no actor may turn technical competence into public mandate, participation cannot be reduced to notice, enforcement and remedy must remain reachable, and cross-border conflict cannot disappear inside one aggregate status.",
       "cues": [
         "cannot",
@@ -11342,7 +11665,7 @@
     {
       "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.cc92018a4c17",
       "chapter_id": "institutions-international-coordination-and-public-legitimacy",
-      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:174",
+      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:256",
       "sentence": "Independent scrutiny is necessary, but “give researchers access” is not an adequate control design.",
       "cues": [
         "necessary"
@@ -11361,7 +11684,7 @@
     {
       "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.532793ecccbb",
       "chapter_id": "institutions-international-coordination-and-public-legitimacy",
-      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:174",
+      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:256",
       "sentence": "Frontier systems, sensitive evaluations, model weights, user data, and incident records create conflicting needs: evaluators need enough access to find failures that the developer missed, while the governed organization must not turn review into an exfiltration path or constrain it until no adverse result can survive.",
       "cues": [
         "must"
@@ -11380,7 +11703,7 @@
     {
       "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.1df2cb233e51",
       "chapter_id": "institutions-international-coordination-and-public-legitimacy",
-      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:176",
+      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:258",
       "sentence": "Evaluators must be able to run negative controls, preserve complete attempt denominators, publish adverse findings through a protected channel, and distinguish developer-provided evidence from independently observed results.",
       "cues": [
         "must"
@@ -11399,7 +11722,7 @@
     {
       "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.148240e15678",
       "chapter_id": "institutions-international-coordination-and-public-legitimacy",
-      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:176",
+      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:258",
       "sentence": "Double-blind assignment can reduce some social bias, but cannot substitute for method transparency or conflict disclosure.",
       "cues": [
         "cannot",
@@ -11419,7 +11742,7 @@
     {
       "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.f5a1b7007e11",
       "chapter_id": "institutions-international-coordination-and-public-legitimacy",
-      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:178",
+      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:260",
       "sentence": "Hardware-enabled guarantees may eventually make parts of compute use, model identity, and policy enforcement more inspectable [@ext_flexible_hardware_enabled_guarantees_2025].",
       "cues": [
         "guarantees"
@@ -11438,7 +11761,7 @@
     {
       "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.5e0ae869b812",
       "chapter_id": "institutions-international-coordination-and-public-legitimacy",
-      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:180",
+      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:262",
       "sentence": "The nonclaim is strict: independent access does not make an evaluation representative, and an audit, attestation, legal opinion, or transparency filing does not prove safety or public legitimacy.",
       "cues": [
         "prove"
@@ -11457,7 +11780,7 @@
     {
       "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.433617cf1c0b",
       "chapter_id": "institutions-international-coordination-and-public-legitimacy",
-      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:184",
+      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:266",
       "sentence": "The evaluation program must look for **institutional theater**: duties that",
       "cues": [
         "must"
@@ -11476,7 +11799,7 @@
     {
       "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.465dc62f8e13",
       "chapter_id": "institutions-international-coordination-and-public-legitimacy",
-      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:189",
+      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:271",
       "sentence": "cannot clear these adversarial governance conditions.",
       "cues": [
         "cannot"
@@ -11495,7 +11818,7 @@
     {
       "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.b8b14733a7cf",
       "chapter_id": "institutions-international-coordination-and-public-legitimacy",
-      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:193",
+      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:275",
       "sentence": "Evaluation must examine capture, forum shopping, verification asymmetry, weak-state capacity, excluded publics, unequal enforcement, remedy failure, and strategic defection.",
       "cues": [
         "must"
@@ -11514,7 +11837,7 @@
     {
       "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.2076328c9c25",
       "chapter_id": "institutions-international-coordination-and-public-legitimacy",
-      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:193",
+      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:275",
       "sentence": "A coordination mechanism that blocks everything or advantages incumbents cannot count as successful merely because commitments are recorded.",
       "cues": [
         "cannot"
@@ -11533,7 +11856,7 @@
     {
       "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.e92aa8155c65",
       "chapter_id": "institutions-international-coordination-and-public-legitimacy",
-      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:211",
+      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:293",
       "sentence": "Argument exit requires comparative institutional case studies or live bounded pilots with prospectively named mandates, affected publics, verification methods, enforcement paths, capacity constraints, distributional outcomes, remedies, and failure injections.",
       "cues": [
         "requires"
@@ -11552,7 +11875,7 @@
     {
       "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.e848de03fb38",
       "chapter_id": "institutions-international-coordination-and-public-legitimacy",
-      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:211",
+      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:293",
       "sentence": "Technical and legal evaluators remain distinct, and one jurisdiction cannot establish global legitimacy.",
       "cues": [
         "cannot"
@@ -11571,7 +11894,7 @@
     {
       "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.8465354dc845",
       "chapter_id": "institutions-international-coordination-and-public-legitimacy",
-      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:234",
+      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:316",
       "sentence": "A mature packet shows both where collective authorization exists",
       "cues": [
         "shows"
@@ -11590,7 +11913,7 @@
     {
       "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.3f6c38c07cb9",
       "chapter_id": "institutions-international-coordination-and-public-legitimacy",
-      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:235",
+      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:317",
       "sentence": "and where the ASI stack must abstain because no accountable institution can",
       "cues": [
         "must"
@@ -11609,7 +11932,7 @@
     {
       "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.784132fab839",
       "chapter_id": "institutions-international-coordination-and-public-legitimacy",
-      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:240",
+      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:322",
       "sentence": "No current result establishes that endpoint.",
       "cues": [
         "establishes"
@@ -11628,7 +11951,7 @@
     {
       "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.f03ab927c421",
       "chapter_id": "institutions-international-coordination-and-public-legitimacy",
-      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:240",
+      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:322",
       "sentence": "Institutional support remains bounded until adversarial cases demonstrate verification access, enforceable remedy, capacity across unequal jurisdictions, and durable public contestability.",
       "cues": [
         "demonstrate"
@@ -11647,7 +11970,7 @@
     {
       "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.d093c4b13cbe",
       "chapter_id": "institutions-international-coordination-and-public-legitimacy",
-      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:251",
+      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:333",
       "sentence": "Planned formalization route: `lean:institutions-international-coordination-and-public-legitimacy.admission_boundary` covers only the finite admission record for institutions international coordination and public legitimacy; it cannot establish whether institutions international coordination and public legitimacy works safely or transfers.",
       "cues": [
         "cannot",
@@ -11667,7 +11990,7 @@
     {
       "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.6562991629b1",
       "chapter_id": "institutions-international-coordination-and-public-legitimacy",
-      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:314",
+      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:396",
       "sentence": "Institutional governance answers questions that architecture alone cannot:",
       "cues": [
         "cannot"
@@ -11686,7 +12009,7 @@
     {
       "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.7a96eb7f8b83",
       "chapter_id": "institutions-international-coordination-and-public-legitimacy",
-      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:333",
+      "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:415",
       "sentence": "effective; resilience must observe whether those commitments resist, absorb,",
       "cues": [
         "must"
@@ -14777,9 +15100,315 @@
       "target_atom_id": null
     },
     {
+      "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.59a303d3824d",
+      "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:197",
+      "sentence": "**Non-claim.** A complete threat model does not show that all attacks were found or that the modeled attacker is realistic.",
+      "cues": [
+        "show"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "P6.9 exact-digest semantic review maps this `threat-model-identity` proposition to the existing owner atom `adversarial-machine-learning-and-model-attack-surface.mechanism.001`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.mechanism.001"
+    },
+    {
+      "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.f7fa9cf81230",
+      "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:199",
+      "sentence": "`ext_sleeper_agents_2024` shows why post-training changes can preserve a constructed conditional behavior; it does not establish natural deception.",
+      "cues": [
+        "shows"
+      ],
+      "review_state": "historical_or_source_report",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "P6.9 semantic review classified this as a bounded source-grounding statement for `threat-model-identity`. It reports or limits external evidence and creates no local support-bearing atom or support-state movement.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.02727d76575d",
+      "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:203",
+      "sentence": "The packet records white-, gray-, and black-box access, gradients or substitute models, query and wall-clock budgets, restarts, search families, transfer attempts, stochastic seeds, and defender-side tuning.",
+      "cues": [
+        "transfer"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "P6.9 exact-digest semantic review maps this `adaptive-defense-aware-evaluation` proposition to the existing owner atom `adversarial-machine-learning-and-model-attack-surface.mechanism.003`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.mechanism.003"
+    },
+    {
+      "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.19653705a3e2",
+      "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:203",
+      "sentence": "Positive controls must demonstrate that the harness breaks known-vulnerable variants.",
+      "cues": [
+        "demonstrate",
+        "must"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "P6.9 exact-digest semantic review maps this `adaptive-defense-aware-evaluation` proposition to the existing owner atom `adversarial-machine-learning-and-model-attack-surface.mechanism.003`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.mechanism.003"
+    },
+    {
+      "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.9c158b6d5e08",
+      "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:209",
+      "sentence": "`ext_reluplex_2017` demonstrates property-specific verification for bounded ReLU networks, not general model safety or an adaptive empirical result in this project.",
+      "cues": [
+        "demonstrates"
+      ],
+      "review_state": "historical_or_source_report",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "P6.9 semantic review classified this as a bounded source-grounding statement for `adaptive-defense-aware-evaluation`. It reports or limits external evidence and creates no local support-bearing atom or support-state movement.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.02a8a872e686",
+      "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:213",
+      "sentence": "Robustness is reported jointly with clean utility, abstention, latency, subgroup effects, and transfer across environments.",
+      "cues": [
+        "transfer"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "P6.9 exact-digest semantic review maps this `evasion-reachability` proposition to the existing owner atom `adversarial-machine-learning-and-model-attack-surface.invariant.003`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.invariant.003"
+    },
+    {
+      "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.b8378e07c41c",
+      "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:217",
+      "sentence": "**Non-claim.** Failure inside an abstract perturbation ball does not prove field exploitability, and success on a laboratory scene does not establish general physical transfer.",
+      "cues": [
+        "prove",
+        "transfer"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "P6.9 exact-digest semantic review maps this `evasion-reachability` proposition to the existing owner atom `adversarial-machine-learning-and-model-attack-surface.mechanism.002`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.mechanism.002"
+    },
+    {
+      "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.8ed897a6b209",
+      "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:233",
+      "sentence": "Confirmed findings create a bounded handoff to privacy, incident response, custody, and remediation owners; aggregate memorization scores cannot substitute for affected-record accounting.",
+      "cues": [
+        "cannot"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "P6.9 exact-digest semantic review maps this `extraction-inversion-privacy` proposition to the existing owner atom `adversarial-machine-learning-and-model-attack-surface.mechanism.005`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.mechanism.005"
+    },
+    {
+      "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.10a8765e3840",
+      "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:237",
+      "sentence": "**Non-claim.** A GPT-2 extraction result does not imply every model leaks training data, and a failed extraction attempt does not prove privacy.",
+      "cues": [
+        "prove"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "P6.9 exact-digest semantic review maps this `extraction-inversion-privacy` proposition to the existing owner atom `adversarial-machine-learning-and-model-attack-surface.mechanism.002`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.mechanism.002"
+    },
+    {
+      "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.9c50b38ff607",
+      "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:239",
+      "sentence": "**Source grounding.** `ext_carlini_training_data_extraction_2021` establishes a bounded extraction method and empirical result for GPT-2-family models.",
+      "cues": [
+        "establishes"
+      ],
+      "review_state": "historical_or_source_report",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "P6.9 semantic review classified this as a bounded source-grounding statement for `extraction-inversion-privacy`. It reports or limits external evidence and creates no local support-bearing atom or support-state movement.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.0e7e4bf3a766",
+      "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:243",
+      "sentence": "Every path names required attacker footholds, trust transitions, synchronization, persistence, observable effects, and where detection or least authority can sever it.",
+      "cues": [
+        "required"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "P6.9 exact-digest semantic review maps this `multimodal-agentic-composition` proposition to the existing owner atom `adversarial-machine-learning-and-model-attack-surface.mechanism.002`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.mechanism.002"
+    },
+    {
+      "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.f68f5776b912",
+      "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:249",
+      "sentence": "Neither source establishes the proposed agentic composition evaluator.",
+      "cues": [
+        "establishes"
+      ],
+      "review_state": "historical_or_source_report",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "P6.9 semantic review classified this as a bounded source-grounding statement for `multimodal-agentic-composition`. It reports or limits external evidence and creates no local support-bearing atom or support-state movement.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.3b0e0cf6a448",
+      "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:257",
+      "sentence": "**Non-claim.** Verification, monitoring, and recovery do not replace one another, and their coexistence does not prove defense in depth unless independence and coverage are shown.",
+      "cues": [
+        "prove"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "P6.9 exact-digest semantic review maps this `certificate-monitor-recovery` proposition to the existing owner atom `adversarial-machine-learning-and-model-attack-surface.mechanism.003`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.mechanism.003"
+    },
+    {
+      "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.4ff85200b1ac",
+      "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:263",
+      "sentence": "**Mechanism.** Before testing or disclosing an exploit, record authorization, target ownership, isolation, data and tool boundaries, stop conditions, exploit custody, notification route, remediation window, publication tier, and residual knowledge that cannot be recalled.",
+      "cues": [
+        "cannot"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "P6.9 exact-digest semantic review maps this `disclosure-residual-ownership` proposition to the existing owner atom `adversarial-machine-learning-and-model-attack-surface.mechanism.004`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.mechanism.004"
+    },
+    {
+      "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.aa4f544c0ac3",
+      "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:265",
+      "sentence": "**Failure mode.** Unbounded red teaming can harm real users or create a reusable exploit; overbroad secrecy can prevent independent scrutiny and leave affected parties uninformed.",
+      "cues": [
+        "prevent"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "P6.9 exact-digest semantic review maps this `disclosure-residual-ownership` proposition to the existing owner atom `adversarial-machine-learning-and-model-attack-surface.invariant.005`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.invariant.005"
+    },
+    {
+      "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.ff29754dce66",
+      "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:267",
+      "sentence": "**Non-claim.** Responsible disclosure does not erase the vulnerability, guarantee patch adoption, or grant unilateral authority to suppress research.",
+      "cues": [
+        "guarantee"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "P6.9 exact-digest semantic review maps this `disclosure-residual-ownership` proposition to the existing owner atom `adversarial-machine-learning-and-model-attack-surface.mechanism.004`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.mechanism.004"
+    },
+    {
       "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.713f95f3b189",
       "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
-      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:191",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:273",
       "sentence": "The interface must carry enough detail for downstream action. “Attack found” is",
       "cues": [
         "must"
@@ -14798,7 +15427,7 @@
     {
       "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.64d20aa1d35f",
       "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
-      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:192",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:274",
       "sentence": "not sufficient: incident response needs the affected artifact and reachable",
       "cues": [
         "sufficient"
@@ -14817,7 +15446,7 @@
     {
       "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.4f9b7f789be4",
       "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
-      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:198",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:280",
       "sentence": "The model-threat contract consumes exact build and deployment identity from Supply-Chain and Weight Custody, but it alone owns attacker knowledge, objective, budget, adaptation, transfer, observed effect, and defense tradeoffs.",
       "cues": [
         "transfer"
@@ -14836,7 +15465,7 @@
     {
       "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.fa1e845f931e",
       "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
-      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:207",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:289",
       "sentence": "These security invariants apply the to adversarial interaction: attacker state cannot be erased, attack failure cannot become robustness, and a defense cannot hide capability damage or threat-model escape.",
       "cues": [
         "cannot"
@@ -14855,7 +15484,7 @@
     {
       "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.bdbcbeff0e47",
       "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
-      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:220",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:302",
       "sentence": "Conversely, an unconstrained attack can demonstrate a",
       "cues": [
         "demonstrate"
@@ -14874,7 +15503,7 @@
     {
       "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.44339638c53a",
       "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
-      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:224",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:306",
       "sentence": "The principal failure family includes evasion; training-data poisoning; clean-label poisoning; backdoors and trojans; jailbreak and safeguard bypass; model stealing; model inversion; transfer attacks; adaptive attacks; modality crossing; agent-tool attack composition; gradient masking; detector evasion; defense-caused utility collapse.",
       "cues": [
         "transfer"
@@ -14893,7 +15522,7 @@
     {
       "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.e534f85cf527",
       "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
-      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:226",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:308",
       "sentence": "Evaluation must therefore pair attack success with attacker adaptation, clean and protected utility, false alarms, coverage, transfer, and recovery.",
       "cues": [
         "must",
@@ -14913,7 +15542,7 @@
     {
       "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.e99094874e2a",
       "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
-      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:226",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:308",
       "sentence": "Positive controls must demonstrate that the harness can recover known vulnerabilities; a null result from an underpowered attack narrows only that attempt.",
       "cues": [
         "demonstrate",
@@ -14933,7 +15562,7 @@
     {
       "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.6b5976d48740",
       "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
-      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:230",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:312",
       "sentence": "The harness should make attack competence visible before it interprets a null.",
       "cues": [
         "should"
@@ -14952,7 +15581,7 @@
     {
       "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.65396fe18ae1",
       "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
-      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:233",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:315",
       "sentence": "baselines; a defense-aware attack checks masking; and a recovery control proves",
       "cues": [
         "proves"
@@ -14971,7 +15600,7 @@
     {
       "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.d9a787cbb513",
       "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
-      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:238",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:320",
       "sentence": "Include clean, random-noise, known-vulnerable, attack-aware, transfer, and adaptive controls; preserve query and tuning budgets; and report robustness with clean utility, false positives, recovery, latency, and residuals.",
       "cues": [
         "transfer"
@@ -14990,7 +15619,7 @@
     {
       "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.15800ce1c055",
       "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
-      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:238",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:320",
       "sentence": "No result transfers automatically to frontier models or production.",
       "cues": [
         "transfers"
@@ -15009,7 +15638,7 @@
     {
       "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.01ff6d7bba67",
       "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
-      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:240",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:322",
       "sentence": "Budgets, access, restarts, transfer targets, utility metrics, and disclosure boundaries are frozen before the final challenge set is opened.",
       "cues": [
         "transfer"
@@ -15028,7 +15657,7 @@
     {
       "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.70ac0734fd98",
       "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
-      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:246",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:328",
       "sentence": "Each campaign must include known-vulnerability positive controls, adaptive and transfer attacks, matched defense tuning, clean and protected utility, detector calibration, independent replay, recovery tests, and complete attack denominators.",
       "cues": [
         "must",
@@ -15048,7 +15677,7 @@
     {
       "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.21114d878644",
       "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
-      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:254",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:336",
       "sentence": "denominator cannot be curated after results are known.",
       "cues": [
         "cannot"
@@ -15067,7 +15696,7 @@
     {
       "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.51d3eacac971",
       "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
-      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:268",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:350",
       "sentence": "failures earlier, reduces reachable harm, and supports recovery beyond strong",
       "cues": [
         "reduces"
@@ -15086,7 +15715,7 @@
     {
       "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.8ba48b2d7233",
       "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
-      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:284",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:366",
       "sentence": "Planned formalization route: `lean:adversarial-machine-learning-and-model-attack-surface.admission_boundary` covers only the finite admission record for adversarial machine learning and model attack surface; it cannot establish whether adversarial machine learning and model attack surface works safely or transfers.",
       "cues": [
         "cannot",
@@ -15106,7 +15735,7 @@
     {
       "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.53cfe988ee7c",
       "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
-      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:315",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:397",
       "sentence": "transfer challenges, utility measurement, recovery, disclosure custody, and",
       "cues": [
         "transfer"
@@ -15125,7 +15754,7 @@
     {
       "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.85ff0f996f56",
       "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
-      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:323",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:405",
       "sentence": "It does not inherit a privacy violation, compliance conclusion, or authority to process data; it must apply its own information-lifecycle and rights tests.",
       "cues": [
         "must"
@@ -46327,9 +46956,275 @@
       "target_atom_id": "physical-compute-infrastructure-energy-and-environmental-constraints.mechanism.001"
     },
     {
+      "candidate_id": "physical-compute-infrastructure-energy-and-environmental-constraints.prose.d58033553eb8",
+      "chapter_id": "physical-compute-infrastructure-energy-and-environmental-constraints",
+      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:144",
+      "sentence": "Measure time and energy by phase so paging, recomputation, sharding, quantization, and topology changes expose their quality and reliability tradeoffs.",
+      "cues": [
+        "measure"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "P6.9 exact-digest semantic review maps this `memory-interconnect-storage` proposition to the existing owner atom `physical-compute-infrastructure-energy-and-environmental-constraints.mechanism.001`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "physical-compute-infrastructure-energy-and-environmental-constraints.mechanism.001"
+    },
+    {
+      "candidate_id": "physical-compute-infrastructure-energy-and-environmental-constraints.prose.1c78b3ebd3e3",
+      "chapter_id": "physical-compute-infrastructure-energy-and-environmental-constraints",
+      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:148",
+      "sentence": "**Non-claim.** Removing one bottleneck does not prove end-to-end speedup or lower total resource use.",
+      "cues": [
+        "prove"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "P6.9 exact-digest semantic review maps this `memory-interconnect-storage` proposition to the existing owner atom `physical-compute-infrastructure-energy-and-environmental-constraints.mechanism.001`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "physical-compute-infrastructure-energy-and-environmental-constraints.mechanism.001"
+    },
+    {
+      "candidate_id": "physical-compute-infrastructure-energy-and-environmental-constraints.prose.0e77a30a7bd0",
+      "chapter_id": "physical-compute-infrastructure-energy-and-environmental-constraints",
+      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:156",
+      "sentence": "Shifting a job may move rather than reduce load, and backup generators can disappear from the accounting.",
+      "cues": [
+        "reduce"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "P6.9 exact-digest semantic review maps this `temporal-local-energy` proposition to the existing owner atom `physical-compute-infrastructure-energy-and-environmental-constraints.mechanism.003`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "physical-compute-infrastructure-energy-and-environmental-constraints.mechanism.003"
+    },
+    {
+      "candidate_id": "physical-compute-infrastructure-energy-and-environmental-constraints.prose.29fec6fe9e2e",
+      "chapter_id": "physical-compute-infrastructure-energy-and-environmental-constraints",
+      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:158",
+      "sentence": "**Non-claim.** A certificate or annual match does not prove hour-by-hour zero-carbon operation or grid benefit.",
+      "cues": [
+        "prove"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "P6.9 exact-digest semantic review maps this `temporal-local-energy` proposition to the existing owner atom `physical-compute-infrastructure-energy-and-environmental-constraints.mechanism.003`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "physical-compute-infrastructure-energy-and-environmental-constraints.mechanism.003"
+    },
+    {
+      "candidate_id": "physical-compute-infrastructure-energy-and-environmental-constraints.prose.31af744ceeb0",
+      "chapter_id": "physical-compute-infrastructure-energy-and-environmental-constraints",
+      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:166",
+      "sentence": "Community consultation after construction cannot establish prior consent or fair distribution.",
+      "cues": [
+        "cannot"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "P6.9 exact-digest semantic review maps this `cooling-water-land-community` proposition to the existing owner atom `physical-compute-infrastructure-energy-and-environmental-constraints.mechanism.003`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "physical-compute-infrastructure-energy-and-environmental-constraints.mechanism.003"
+    },
+    {
+      "candidate_id": "physical-compute-infrastructure-energy-and-environmental-constraints.prose.710d68391020",
+      "chapter_id": "physical-compute-infrastructure-energy-and-environmental-constraints",
+      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:184",
+      "sentence": "**Mechanism.** Define a service ladder before shortages: delay flexible training, reduce replicas or batch size, use a validated lower precision, shed noncritical inference, migrate within data and latency constraints, enter a safe degraded mode, or stop.",
+      "cues": [
+        "reduce"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "P6.9 exact-digest semantic review maps this `demand-response-resilience` proposition to the existing owner atom `physical-compute-infrastructure-energy-and-environmental-constraints.invariant.005`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "physical-compute-infrastructure-energy-and-environmental-constraints.invariant.005"
+    },
+    {
+      "candidate_id": "physical-compute-infrastructure-energy-and-environmental-constraints.prose.03d24b0da853",
+      "chapter_id": "physical-compute-infrastructure-energy-and-environmental-constraints",
+      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:188",
+      "sentence": "**Non-claim.** A demand-response plan does not prove available capacity, reliable failover, or socially acceptable interruption.",
+      "cues": [
+        "prove"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "P6.9 exact-digest semantic review maps this `demand-response-resilience` proposition to the existing owner atom `physical-compute-infrastructure-energy-and-environmental-constraints.mechanism.004`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "physical-compute-infrastructure-energy-and-environmental-constraints.mechanism.004"
+    },
+    {
+      "candidate_id": "physical-compute-infrastructure-energy-and-environmental-constraints.prose.81d414758929",
+      "chapter_id": "physical-compute-infrastructure-energy-and-environmental-constraints",
+      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:196",
+      "sentence": "Lower unit cost can increase total consumption, while a short observation window reports only the initial saving.",
+      "cues": [
+        "increase"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "P6.9 exact-digest semantic review maps this `metering-allocation-rebound` proposition to the existing owner atom `physical-compute-infrastructure-energy-and-environmental-constraints.invariant.004`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "physical-compute-infrastructure-energy-and-environmental-constraints.invariant.004"
+    },
+    {
+      "candidate_id": "physical-compute-infrastructure-energy-and-environmental-constraints.prose.92b774d69e17",
+      "chapter_id": "physical-compute-infrastructure-energy-and-environmental-constraints",
+      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:198",
+      "sentence": "Total demand, shifted burdens, and rebound require their own observation window and denominator.",
+      "cues": [
+        "require"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "P6.9 exact-digest semantic review maps this `metering-allocation-rebound` proposition to the existing owner atom `physical-compute-infrastructure-energy-and-environmental-constraints.invariant.004`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "physical-compute-infrastructure-energy-and-environmental-constraints.invariant.004"
+    },
+    {
+      "candidate_id": "physical-compute-infrastructure-energy-and-environmental-constraints.prose.04966b94f1ec",
+      "chapter_id": "physical-compute-infrastructure-energy-and-environmental-constraints",
+      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:200",
+      "sentence": "**Source grounding.** `ext_lbnl_data_center_energy_2024` demonstrates explicit national estimation methods and uncertainty; `ext_iea_energy_and_ai_2025` supplies scenarios.",
+      "cues": [
+        "demonstrates"
+      ],
+      "review_state": "historical_or_source_report",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "P6.9 semantic review classified this as a bounded source-grounding statement for `metering-allocation-rebound`. It reports or limits external evidence and creates no local support-bearing atom or support-state movement.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "physical-compute-infrastructure-energy-and-environmental-constraints.prose.be2a61c875c8",
+      "chapter_id": "physical-compute-infrastructure-energy-and-environmental-constraints",
+      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:204",
+      "sentence": "Evaluate whether controls reduce a named risk without creating single-vendor dependence, surveillance, exclusion, or systemic failure.",
+      "cues": [
+        "reduce"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "P6.9 exact-digest semantic review maps this `hardware-guarantees-concentration` proposition to the existing owner atom `physical-compute-infrastructure-energy-and-environmental-constraints.mechanism.003`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "physical-compute-infrastructure-energy-and-environmental-constraints.mechanism.003"
+    },
+    {
+      "candidate_id": "physical-compute-infrastructure-energy-and-environmental-constraints.prose.01545e2f7013",
+      "chapter_id": "physical-compute-infrastructure-energy-and-environmental-constraints",
+      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:204",
+      "sentence": "Each guarantee names uncovered legacy and off-grid paths.",
+      "cues": [
+        "guarantee"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "P6.9 exact-digest semantic review maps this `hardware-guarantees-concentration` proposition to the existing owner atom `physical-compute-infrastructure-energy-and-environmental-constraints.core`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "physical-compute-infrastructure-energy-and-environmental-constraints.core"
+    },
+    {
+      "candidate_id": "physical-compute-infrastructure-energy-and-environmental-constraints.prose.a0481fb0ccb8",
+      "chapter_id": "physical-compute-infrastructure-energy-and-environmental-constraints",
+      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:206",
+      "sentence": "Concentration may improve coordination while amplifying common-mode failure or coercion.",
+      "cues": [
+        "improve"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "P6.9 exact-digest semantic review maps this `hardware-guarantees-concentration` proposition to the existing owner atom `physical-compute-infrastructure-energy-and-environmental-constraints.mechanism.003`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "physical-compute-infrastructure-energy-and-environmental-constraints.mechanism.003"
+    },
+    {
+      "candidate_id": "physical-compute-infrastructure-energy-and-environmental-constraints.prose.b50367c624e6",
+      "chapter_id": "physical-compute-infrastructure-energy-and-environmental-constraints",
+      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:206",
+      "sentence": "Market share alone cannot establish abuse or resilience.",
+      "cues": [
+        "cannot"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "P6.9 exact-digest semantic review maps this `hardware-guarantees-concentration` proposition to the existing owner atom `physical-compute-infrastructure-energy-and-environmental-constraints.core`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "physical-compute-infrastructure-energy-and-environmental-constraints.core"
+    },
+    {
       "candidate_id": "physical-compute-infrastructure-energy-and-environmental-constraints.prose.8efc44e85c1b",
       "chapter_id": "physical-compute-infrastructure-energy-and-environmental-constraints",
-      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:133",
+      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:215",
       "sentence": "receives the topology and failure envelope it must honor; serving receives",
       "cues": [
         "must"
@@ -46348,7 +47243,7 @@
     {
       "candidate_id": "physical-compute-infrastructure-energy-and-environmental-constraints.prose.adc11396a42d",
       "chapter_id": "physical-compute-infrastructure-energy-and-environmental-constraints",
-      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:155",
+      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:237",
       "sentence": "Applying the , delivered useful work stays distinct from nameplate capacity, operational and embodied burdens remain separate, averages cannot erase temporal or local constraints, and degradation cannot silently violate quality or authority.",
       "cues": [
         "cannot"
@@ -46367,7 +47262,7 @@
     {
       "candidate_id": "physical-compute-infrastructure-energy-and-environmental-constraints.prose.3f6ae24370b6",
       "chapter_id": "physical-compute-infrastructure-energy-and-environmental-constraints",
-      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:167",
+      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:249",
       "sentence": "Every hardware-governance result should carry a **coverage and authority record**: device population and sampling frame, hardware and firmware versions, measured operations, excluded paths, attestation root, policy and signer versions, update mechanism, bypass assumptions, false-positive and false-negative tests, privacy impact, jurisdiction, expiry, and recourse.",
       "cues": [
         "should"
@@ -46386,7 +47281,7 @@
     {
       "candidate_id": "physical-compute-infrastructure-energy-and-environmental-constraints.prose.9d203e9f2895",
       "chapter_id": "physical-compute-infrastructure-energy-and-environmental-constraints",
-      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:167",
+      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:249",
       "sentence": "A valid attestation from one device cannot silently stand in for a facility, supply chain, or global fleet.",
       "cues": [
         "cannot"
@@ -46405,7 +47300,7 @@
     {
       "candidate_id": "physical-compute-infrastructure-energy-and-environmental-constraints.prose.ab34735ab1de",
       "chapter_id": "physical-compute-infrastructure-energy-and-environmental-constraints",
-      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:182",
+      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:264",
       "sentence": "Evaluation must include metering uncertainty, peak and marginal conditions, outage and thermal faults, rebound effects, common-mode suppliers, maintenance, and local distribution of burdens.",
       "cues": [
         "must"
@@ -46424,7 +47319,7 @@
     {
       "candidate_id": "physical-compute-infrastructure-energy-and-environmental-constraints.prose.7dd9cd92d79c",
       "chapter_id": "physical-compute-infrastructure-energy-and-environmental-constraints",
-      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:193",
+      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:275",
       "sentence": "Local results do not establish frontier-facility or grid transfer.",
       "cues": [
         "transfer"
@@ -46443,7 +47338,7 @@
     {
       "candidate_id": "physical-compute-infrastructure-energy-and-environmental-constraints.prose.7ebcab93ed98",
       "chapter_id": "physical-compute-infrastructure-energy-and-environmental-constraints",
-      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:199",
+      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:281",
       "sentence": "Argument exit requires hardware- and facility-characterized workloads across multiple time and location conditions, complete metering and uncertainty, matched useful-output quality, outage and degradation tests, operational and embodied accounting, rebound analysis, and independent impact review.",
       "cues": [
         "requires"
@@ -46462,7 +47357,7 @@
     {
       "candidate_id": "physical-compute-infrastructure-energy-and-environmental-constraints.prose.30222f4ce7c7",
       "chapter_id": "physical-compute-infrastructure-energy-and-environmental-constraints",
-      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:199",
+      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:281",
       "sentence": "Transfer to other grids, facilities, or substrates remains open.",
       "cues": [
         "transfer"
@@ -46481,7 +47376,7 @@
     {
       "candidate_id": "physical-compute-infrastructure-energy-and-environmental-constraints.prose.5dc23e3a722b",
       "chapter_id": "physical-compute-infrastructure-energy-and-environmental-constraints",
-      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:219",
+      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:301",
       "sentence": "show which workloads are physically feasible, which can wait or degrade, which",
       "cues": [
         "show"
@@ -46500,7 +47395,7 @@
     {
       "candidate_id": "physical-compute-infrastructure-energy-and-environmental-constraints.prose.4b47aad5e3d5",
       "chapter_id": "physical-compute-infrastructure-energy-and-environmental-constraints",
-      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:238",
+      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:320",
       "sentence": "Planned formalization route: `lean:physical-compute-infrastructure-energy-and-environmental-constraints.admission_boundary` covers only the finite admission record for physical compute infrastructure energy and environmental constraints; it cannot establish whether physical compute infrastructure energy and environmental constraints works safely or transfers.",
       "cues": [
         "cannot",
@@ -46520,7 +47415,7 @@
     {
       "candidate_id": "physical-compute-infrastructure-energy-and-environmental-constraints.prose.b6b4e37dcb7d",
       "chapter_id": "physical-compute-infrastructure-energy-and-environmental-constraints",
-      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:310",
+      "source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:392",
       "sentence": "Infrastructure governance joins workload quality to hardware, memory, networks, facilities, grids, cooling, water, materials, land, communities, resilience, maintenance, demand response, concentration, reuse, and retirement so efficiency cannot hide displaced burdens.",
       "cues": [
         "cannot"

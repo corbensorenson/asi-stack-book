@@ -762,6 +762,8 @@ Lean proof targets:
 
 Stable ID: `military-ai-autonomous-weapons-and-strategic-stability`
 
+Concept-completion state (2026-07-28): eight owner-specific mechanisms are written and exact-digest reviewed at argument support; proof, empirical, transfer, and deployment evidence remain open.
+
 Chapter job: Govern military AI as a command-and-interaction system whose
 mission, human authority, physical effects, adversary response, legal boundary,
 crisis timing, and escalation pathways cannot be inferred from component
@@ -1663,6 +1665,8 @@ Lean proof targets:
 
 Stable ID: `institutions-international-coordination-and-public-legitimacy`
 
+Concept-completion state (2026-07-28): eight owner-specific mechanisms are written and exact-digest reviewed at argument support; legitimacy, compliance, effectiveness, and transfer remain unproved.
+
 Chapter job: ASI-scale systems cross organizations, jurisdictions, borders, public services, and affected populations. Technical permissions and private governance cannot determine who has public authority, whose participation counts, how conflicting rules are resolved, or how international commitments are verified and amended.
 
 Core claim: Public deployment and cross-border coordination should proceed only through a versioned institutional packet that keeps jurisdiction, mandate, participation, scientific evidence, law and standards, verification, enforcement, remedy, capacity, conflict, expiry, and legitimacy residuals distinct; legal text, technical conformance, stakeholder consultation, or an international commitment alone establishes neither lawful authority, effective governance, representative legitimacy, nor safety.
@@ -2035,6 +2039,8 @@ Lean proof targets:
 
 Stable ID: `adversarial-machine-learning-and-model-attack-surface`
 
+Concept-completion state (2026-07-28): eight owner-specific mechanisms are written and exact-digest reviewed at argument support; robustness, defense efficacy, and deployment security remain unproved.
+
 Chapter job: A learned artifact creates attack surfaces that ordinary application security does not fully own. Attackers can shape training data, perturb inference inputs, implant triggers, adapt to defenses, steal behavior through queries, infer sensitive properties, or exploit multimodal and agentic pathways while the surrounding software remains nominally secure.
 
 Core claim: A learned model should receive security authority only through a versioned model-threat contract and attack/defense ledger that binds checkpoint identity, lifecycle stage, attacker knowledge and capability, surface, budget, objective, adaptation, transfer, observed effect, detection, mitigation, utility cost, recovery, residual, and disclosure; clean accuracy, attack failure, benchmark robustness, red-team coverage, or formal certification alone establishes neither general robustness nor secure deployment.
@@ -2343,6 +2349,8 @@ Lean proof targets:
 ### Open-Weight Release and Post-Release Control
 
 Stable ID: `open-weight-release-and-post-release-control`
+
+Concept-completion state (2026-07-28): eight owner-specific mechanisms are written and exact-digest reviewed at argument support; no categorical release decision or post-copy control claim follows.
 
 Chapter job: Treat deliberate release of model weights as an irreversible control-boundary change rather than an ordinary deployment.
 
@@ -4414,6 +4422,8 @@ Lean proof targets:
 
 Stable ID: `multi-agent-dynamics-collective-intelligence-and-systemic-risk`
 
+Concept-completion state (2026-07-28): eight owner-specific mechanisms are written and exact-digest reviewed at argument support; population-level causality, stability, and intervention efficacy remain open.
+
 Chapter job: Own population-level behavior among heterogeneous agents whose
 pairwise exchanges may be valid while incentives, commitments, coalitions,
 collusion, cascades, correlated failure, and aggregate human influence remain
@@ -5644,6 +5654,8 @@ Lean proof targets:
 ### Physical Compute Infrastructure, Energy, and Environmental Constraints
 
 Stable ID: `physical-compute-infrastructure-energy-and-environmental-constraints`
+
+Concept-completion state (2026-07-28): eight owner-specific mechanisms are written and exact-digest reviewed at argument support; local facility, grid, community, and lifecycle effects remain unmeasured.
 
 Chapter job: Requested compute becomes useful work only through accelerators, memory, storage, interconnect, facilities, grid connections, generation, cooling, water, land, materials, maintenance, resilience, and retirement at particular places and times. Abstract token or FLOP budgets hide these physical constraints and their affected communities.
 

@@ -3,8 +3,8 @@ title: "Multi-Agent Dynamics, Collective Intelligence, and Systemic Risk"
 chapter_id: "multi-agent-dynamics-collective-intelligence-and-systemic-risk"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
-draft_maturity: "v0.1 integrated argument chapter"
-last_updated: "2026-07-24"
+draft_maturity: "v0.3 concept-complete argument-level manuscript"
+last_updated: "2026-07-28"
 primary_sources:
   - "ext_multi_agent_risks_2025"
   - "ext_cooperative_ai_foundations_2023"
@@ -299,6 +299,88 @@ MultiAgentPopulationContract {
   lifecycle_cost_residuals_and_non_authorities
 }
 ```
+
+## Concept-completion ledger
+
+### Population identity, copies, and effective diversity
+
+**Mechanism.** Build a versioned population registry linking each agent instance to model, checkpoint, prompt and policy, memory, tools, organization, operator, resources, replicas, and replacement history. Distinguish nominal agent count from effective diversity using shared training, providers, infrastructure, objectives, evaluators, and failure ancestry. Entry, exit, copying, merging, delegation, and self-modification create explicit population events rather than silent denominator changes. Unobserved and unaffiliated agents remain estimated population strata.
+
+**Failure mode.** A thousand copies of one model can be mistaken for a diverse collective, while differently branded agents may share the same upstream failure. Hidden replacements make longitudinal behavior incomparable; aliases can double-count one actor.
+
+**Non-claim.** A complete registry does not reveal private internal states, prove independence, or make the population controllable. It only bounds the identities that were observed.
+
+**Source grounding.** `ext_multi_agent_risks_2025` motivates population-level risk categories but was initially ingested from abstract-level evidence and remains scope-limited. `ext_cooperative_ai_foundations_2023` motivates cooperation research, not this registry’s effectiveness.
+
+### Multiplex interaction and dependency graphs
+
+**Mechanism.** Represent communication, payment, resource, information, trust, control, competition, and shared-infrastructure links as separate graph layers with time, direction, capacity, observability, and authority. Record human participants and affected nonparticipants. Simulations and live monitoring preserve graph uncertainty and test interventions against displaced paths, because blocking one channel may move coordination to another. Graph snapshots preserve sampling boundaries and missing-edge assumptions.
+
+**Failure mode.** A message graph can miss shared models, vendors, markets, or sensors that create common behavior without communication. Static centrality can misidentify influence in a changing game. Observability limited to one platform can turn absence of edges into false independence.
+
+**Non-claim.** A graph is not a complete causal model, and network position alone does not prove collusion, power, or responsibility. Missing edges and hidden common causes may dominate the result or reverse attribution.
+
+**Source grounding.** `ext_multi_agent_risks_2025` and `ext_cooperative_ai_foundations_2023` motivate interaction-level analysis. Neither validates a universal multiplex topology or its causal interpretation.
+
+### Cooperation, collusion, and collective intelligence
+
+**Mechanism.** Classify joint behavior by objective, affected parties, authorization, information sharing, exclusion, welfare distribution, and counterfactual outcome. Measure task performance, error correction, diversity, robustness, bargaining surplus, externalities, and human option value together. Cooperation among agents that improves a benchmark but excludes people or coordinates market power is not credited as unqualified collective intelligence. Classification uncertainty and contested welfare judgments remain explicit.
+
+**Failure mode.** The same coordination signal can represent beneficial teamwork, tacit collusion, shared bias, or ordinary response to public information. Aggregate performance can hide minority harm and common-mode error; forced diversity can reduce competence without adding independence.
+
+**Non-claim.** Coordination is neither inherently good nor bad, and higher group performance does not establish legitimacy or general intelligence. Benefits remain task-, population-, institution-, and time-bounded, with externalities reported separately.
+
+**Source grounding.** `ext_cooperative_ai_foundations_2023` supplies a research agenda for cooperative intelligence. `ext_multi_agent_risks_2025` supplies a bounded risk taxonomy. Neither provides a complete normative classifier.
+
+### Incentives, commitments, bargaining, and externalities
+
+**Mechanism.** Specify agents, feasible actions, information, resources, payoffs, commitments, enforcement, bargaining protocol, outside options, affected third parties, and time horizon. Evaluate mechanisms under strategic misreporting, coalition formation, entry, exit, and changes in power. Commitments are receipts with verifier and breach consequences, not natural-language promises. Welfare reports preserve distribution and uncompensated externalities. Alternative payoff models and bounded-rational policies receive sensitivity tests.
+
+**Failure mode.** Agents can game a reward or audit, bargain over harms borne by outsiders, or exploit unverifiable commitments. A mechanism tuned to one equilibrium may create worse equilibria after learning. Simulated rationality assumptions can make human or bounded-agent behavior look anomalous.
+
+**Non-claim.** Equilibrium existence, incentive compatibility under assumptions, or a signed commitment does not establish justice, stability, or real-world compliance. Assumption failure or actor change reopens the disposition.
+
+**Source grounding.** `ext_cooperative_ai_foundations_2023` motivates cooperative-game and mechanism questions. `ext_multi_agent_risks_2025` motivates collusion and conflict risks. The proposed contract is not empirically validated.
+
+### Decision-theory disagreement
+
+**Mechanism.** Make each agent’s causal model, logical-dependence assumptions, counterfactual semantics, evidential policy, commitment treatment, and uncertainty visible when they affect joint action. Run disputed cases through multiple decision theories and a nonstrategic reference where possible. A governance rule selects an action within authority while preserving disagreement and sensitivity; no agent may present its preferred theory as a settled fact. Operational relevance and decision stakes determine review depth.
+
+**Failure mode.** Agents using different counterfactuals can mispredict one another, enter commitment races, or cooperate in simulations but defect in deployment. A benchmark can encode one theory’s preferred answer as ground truth. Exotic examples may dominate design despite weak operational relevance.
+
+**Non-claim.** Functional decision theory is a normative proposal; it does not establish universal correctness or empirical superiority. Benchmark agreement cannot settle the normative dispute.
+
+**Source grounding.** `ext_functional_decision_theory_2017` grounds the existence of a serious alternative to standard causal reasoning. `ext_cooperative_ai_foundations_2023` motivates multi-agent decision problems. Neither resolves the disagreement.
+
+### Learning, nonstationarity, selection, and emergent objectives
+
+**Mechanism.** Track policy updates, opponent models, population selection, replication, replacement, communication protocols, and environment changes across episodes. Freeze held-out interaction families and evaluate transient, converged, and post-intervention behavior. Separate learned coordination from shared initialization and external orchestration. Rescue stages improve competence symmetrically; failures count against a concept only after positive controls and implementation gates pass. Attempt denominators retain unstable, interrupted, and collapsed populations.
+
+**Failure mode.** Stationary evaluation can miss arms races, collusion learned after deployment, or objective drift under selection. Short runs can manufacture false negatives; overtraining on the evaluator can manufacture stable-looking cooperation. Removing one agent can change the game rather than isolate its causal contribution.
+
+**Non-claim.** Emergent behavior does not imply consciousness, a unitary collective objective, inevitability, or transfer beyond the tested population. Mechanisms require separate causal tests.
+
+**Source grounding.** `ext_multi_agent_risks_2025` motivates emergent and systemic hazards. `ext_cooperative_ai_foundations_2023` motivates learning for cooperation. Neither is local evidence for the proposed longitudinal evaluator.
+
+### Concentration, cascades, and common-mode systemic risk
+
+**Mechanism.** Join dependency topology to exposure, correlated failure, liquidity or capacity buffers, recovery time, substitution, and human fallback. Stress shared models, clouds, data, protocols, markets, and governance authorities under plausible shocks. Report local failure, cascade reach, tail loss, recovery, and intervention displacement separately. Concentration is evaluated as both coordination capacity and correlated-risk amplification. Scenario probability and consequence uncertainty are never collapsed.
+
+**Failure mode.** Independent-looking agents can fail together because of one model update or provider; a local safety intervention can push activity into less observable channels. Conversely, worst-case fully connected simulations can exaggerate cascade risk and ignore substitution.
+
+**Non-claim.** Concentration, correlation, or a simulated cascade does not by itself prove real-world systemic failure or illegality. Stress scenarios bound possibilities, not frequencies, causes, legal conclusions, or expected losses.
+
+**Source grounding.** `ext_multi_agent_risks_2025` motivates systemic-risk analysis. `ext_gradual_disempowerment_2025` gives a conceptual account of accumulating human loss of influence, not a forecast or causal measurement.
+
+### Human influence, disempowerment, and intervention displacement
+
+**Mechanism.** Measure human agenda setting, information access, veto and exit, appeal, skill retention, resource ownership, institutional authority, and ability to form alternatives over time. Evaluate whether agent cooperation changes these indicators even when aggregate welfare or output rises. Every intervention records who gains control, which behavior migrates, and whether short-term safety reduces long-term human option value. Cohort-level indicators prevent aggregate influence from hiding exclusion.
+
+**Failure mode.** Humans may retain ceremonial approval while agents and organizations determine the feasible menu. Productivity gains can mask gradual loss of bargaining power; abrupt shutdown can transfer coordination to unaccountable actors. Proxy measures of “human control” can reward frequent clicks without real influence.
+
+**Non-claim.** Declining indicators do not prove inevitable human disempowerment, and interdependence does not establish equal power or moral legitimacy.
+
+**Source grounding.** `ext_gradual_disempowerment_2025` is a conceptual argument, not a prediction. `ext_constructive_interdependence_human_ai_2026` supplies one specific empirical framing of human–AI interdependence, not a universal metric or governance solution.
 
 ## Interfaces
 

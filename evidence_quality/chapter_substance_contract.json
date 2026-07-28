@@ -794,10 +794,10 @@
       "chapter_id": "military-ai-autonomous-weapons-and-strategic-stability",
       "chapter_title": "Military AI, Autonomous Weapons, and Strategic Stability",
       "path": "chapters/military-ai-autonomous-weapons-and-strategic-stability.qmd",
-      "sha256": "2fbebb2a2f5f1bb2c53641e7a6a46c9fcdd456cfafaeff860dd008c31c12d96e",
-      "word_count": 3560,
+      "sha256": "1db4ba582a54dd4729eb978aa8f79345bb84f7fb1c5f8bafb1962c098561724e",
+      "word_count": 4825,
       "word_trigger": 5000,
-      "depth_state": "queued_thin_chapter_for_manual_concept_contract",
+      "depth_state": "concept_contract_complete_semantic_reviewed",
       "short_reference_exception": false,
       "short_reference_justification": null,
       "atom_refs": [
@@ -822,8 +822,244 @@
           "source_path": "evidence_quality/round20_four_chapter_claim_atom_addendum.json"
         }
       ],
-      "concept_contracts": [],
-      "semantic_review": null
+      "concept_contracts": [
+        {
+          "concept_id": "use-case-decision-role",
+          "heading": "Use-case and decision-role taxonomy",
+          "source_ids": [
+            "ext_icrc_autonomous_weapons_ihl_2025",
+            "ext_sipri_military_ai_nuclear_escalation_2025"
+          ],
+          "atom_ids": [
+            "military-ai-autonomous-weapons-and-strategic-stability.core"
+          ],
+          "atom_ownership_rationale": "The core strategic interaction contract owns bounded use-case and decision-role identity.",
+          "minimum_section_words": 150,
+          "required_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "observed_section_words": 151,
+          "observed_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "source_ids_declared_by_chapter": true,
+          "atom_ids_available_to_chapter": true
+        },
+        {
+          "concept_id": "mission-authority-effect",
+          "heading": "Mission, authority, and effect envelope",
+          "source_ids": [
+            "ext_icrc_autonomous_weapons_ihl_2025"
+          ],
+          "atom_ids": [
+            "military-ai-autonomous-weapons-and-strategic-stability.mechanism"
+          ],
+          "atom_ownership_rationale": "The mechanism atom owns the mission, authority, observation, posture, and strategic case.",
+          "minimum_section_words": 150,
+          "required_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "observed_section_words": 152,
+          "observed_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "source_ids_declared_by_chapter": true,
+          "atom_ids_available_to_chapter": true
+        },
+        {
+          "concept_id": "meaningful-human-judgment",
+          "heading": "Meaningful human judgment conditions",
+          "source_ids": [
+            "ext_icrc_autonomous_weapons_ihl_2025"
+          ],
+          "atom_ids": [
+            "military-ai-autonomous-weapons-and-strategic-stability.boundary"
+          ],
+          "atom_ownership_rationale": "The boundary atom preserves human judgment, legal review, and adjacent technical authority.",
+          "minimum_section_words": 150,
+          "required_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "observed_section_words": 151,
+          "observed_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "source_ids_declared_by_chapter": true,
+          "atom_ids_available_to_chapter": true
+        },
+        {
+          "concept_id": "observation-trust",
+          "heading": "Observation trust, false alarms, and provenance",
+          "source_ids": [
+            "ext_sipri_military_ai_nuclear_escalation_2025"
+          ],
+          "atom_ids": [
+            "military-ai-autonomous-weapons-and-strategic-stability.mechanism"
+          ],
+          "atom_ownership_rationale": "Observation trust is an explicit component of the existing strategic mechanism.",
+          "minimum_section_words": 150,
+          "required_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "observed_section_words": 151,
+          "observed_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "source_ids_declared_by_chapter": true,
+          "atom_ids_available_to_chapter": true
+        },
+        {
+          "concept_id": "safe-posture",
+          "heading": "Safe posture, communication loss, and degradation",
+          "source_ids": [
+            "ext_icrc_autonomous_weapons_ihl_2025",
+            "ext_sipri_military_ai_nuclear_escalation_2025"
+          ],
+          "atom_ids": [
+            "military-ai-autonomous-weapons-and-strategic-stability.failure_boundary"
+          ],
+          "atom_ownership_rationale": "The failure-boundary atom owns communication loss, degraded posture, and maximum inference.",
+          "minimum_section_words": 150,
+          "required_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "observed_section_words": 151,
+          "observed_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "source_ids_declared_by_chapter": true,
+          "atom_ids_available_to_chapter": true
+        },
+        {
+          "concept_id": "adversary-response-proliferation",
+          "heading": "Adversary response, proliferation, and reciprocal dynamics",
+          "source_ids": [
+            "ext_sipri_military_ai_nuclear_escalation_2025",
+            "ext_singapore_consensus_2026",
+            "ext_international_ai_safety_report_2026"
+          ],
+          "atom_ids": [
+            "military-ai-autonomous-weapons-and-strategic-stability.mechanism",
+            "military-ai-autonomous-weapons-and-strategic-stability.failure_boundary"
+          ],
+          "atom_ownership_rationale": "Strategic assumptions and bounded failure analysis own adversary response.",
+          "minimum_section_words": 150,
+          "required_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "observed_section_words": 150,
+          "observed_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "source_ids_declared_by_chapter": true,
+          "atom_ids_available_to_chapter": true
+        },
+        {
+          "concept_id": "strategic-stability-off-ramps",
+          "heading": "Strategic stability, off-ramps, and timeline compression",
+          "source_ids": [
+            "ext_sipri_military_ai_nuclear_escalation_2025"
+          ],
+          "atom_ids": [
+            "military-ai-autonomous-weapons-and-strategic-stability.mechanism",
+            "military-ai-autonomous-weapons-and-strategic-stability.argument_exit"
+          ],
+          "atom_ownership_rationale": "The strategic case and argument-exit atom own off-ramps and proof handoff.",
+          "minimum_section_words": 150,
+          "required_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "observed_section_words": 151,
+          "observed_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "source_ids_declared_by_chapter": true,
+          "atom_ids_available_to_chapter": true
+        },
+        {
+          "concept_id": "secrecy-review-decommission",
+          "heading": "Secrecy, independent review, accountability, and decommission",
+          "source_ids": [
+            "ext_icrc_autonomous_weapons_ihl_2025",
+            "ext_sipri_military_ai_nuclear_escalation_2025"
+          ],
+          "atom_ids": [
+            "military-ai-autonomous-weapons-and-strategic-stability.boundary",
+            "military-ai-autonomous-weapons-and-strategic-stability.argument_exit"
+          ],
+          "atom_ownership_rationale": "Authority separation and the handoff ceiling own review, accountability, and closure.",
+          "minimum_section_words": 150,
+          "required_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "observed_section_words": 153,
+          "observed_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "source_ids_declared_by_chapter": true,
+          "atom_ids_available_to_chapter": true
+        }
+      ],
+      "semantic_review": {
+        "reviewed_sha256": "1db4ba582a54dd4729eb978aa8f79345bb84f7fb1c5f8bafb1962c098561724e",
+        "reviewed_date": "2026-07-28",
+        "reviewer_role": "codex_editorial_semantic_review",
+        "disposition": "accepted_for_editorial_substance_no_evidence_effect",
+        "review_basis": [
+          "the eight concepts distinguish decision role, mission authority, meaningful judgment, observation trust, safe posture, reciprocal adaptation, strategic off-ramps, and accountable decommissioning",
+          "ICRC and SIPRI remain mandate-specific official-position and scenario-analysis sources; the international reports add context without becoming legal advice, prediction, or technical validation",
+          "the chapter preserves compressed timelines, base-rate failures, adversary response, secrecy limits, independent challenge, decommissioning residuals, and argument-only support"
+        ],
+        "support_state_effect": "none"
+      }
     },
     {
       "chapter_id": "evidence-states-and-claim-discipline",
@@ -2717,10 +2953,10 @@
       "chapter_id": "institutions-international-coordination-and-public-legitimacy",
       "chapter_title": "Institutions, International Coordination, and Public Legitimacy",
       "path": "chapters/institutions-international-coordination-and-public-legitimacy.qmd",
-      "sha256": "3ef996aa0a6fce69dcb4fad2ef6d8d2cb373c119e724d9f53c88b73353c4a4e9",
-      "word_count": 3533,
+      "sha256": "1650ae6f5ef4f1ebcfa2ff3392d5fe82fb8d3fab9b2a5da44f0251bfbc06e357",
+      "word_count": 4793,
       "word_trigger": 5000,
-      "depth_state": "queued_thin_chapter_for_manual_concept_contract",
+      "depth_state": "concept_contract_complete_semantic_reviewed",
       "short_reference_exception": false,
       "short_reference_justification": null,
       "atom_refs": [
@@ -2865,8 +3101,252 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": [],
-      "semantic_review": null
+      "concept_contracts": [
+        {
+          "concept_id": "mandate-jurisdiction-force",
+          "heading": "Mandate, jurisdiction, and legal force",
+          "source_ids": [
+            "ext_un_global_digital_compact_2024",
+            "ext_council_europe_ai_convention_2024"
+          ],
+          "atom_ids": [
+            "institutions-international-coordination-and-public-legitimacy.mechanism.001",
+            "institutions-international-coordination-and-public-legitimacy.invariant.001"
+          ],
+          "atom_ownership_rationale": "Mandate mapping and separation of legal, political, scientific, and legitimacy claims own legal force.",
+          "minimum_section_words": 150,
+          "required_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "observed_section_words": 152,
+          "observed_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "source_ids_declared_by_chapter": true,
+          "atom_ids_available_to_chapter": true
+        },
+        {
+          "concept_id": "publics-representation-standing",
+          "heading": "Affected publics, representation, and standing",
+          "source_ids": [
+            "ext_un_global_digital_compact_2024",
+            "ext_council_europe_ai_convention_2024"
+          ],
+          "atom_ids": [
+            "institutions-international-coordination-and-public-legitimacy.mechanism.001",
+            "institutions-international-coordination-and-public-legitimacy.invariant.002"
+          ],
+          "atom_ownership_rationale": "Standing and representation mapping plus denominator visibility own affected publics.",
+          "minimum_section_words": 150,
+          "required_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "observed_section_words": 151,
+          "observed_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "source_ids_declared_by_chapter": true,
+          "atom_ids_available_to_chapter": true
+        },
+        {
+          "concept_id": "science-law-standards",
+          "heading": "Science, law, standards, and conformance",
+          "source_ids": [
+            "ext_eu_article_50_transparency_guidelines_2026",
+            "ext_legal_alignment_2026"
+          ],
+          "atom_ids": [
+            "institutions-international-coordination-and-public-legitimacy.mechanism.002",
+            "institutions-international-coordination-and-public-legitimacy.invariant.001"
+          ],
+          "atom_ownership_rationale": "The versioned crosswalk and claim-separation invariant own non-collapsing conformance.",
+          "minimum_section_words": 150,
+          "required_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "observed_section_words": 156,
+          "observed_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "source_ids_declared_by_chapter": true,
+          "atom_ids_available_to_chapter": true
+        },
+        {
+          "concept_id": "verification-independence",
+          "heading": "Verification independence and access",
+          "source_ids": [
+            "ext_flexible_hardware_enabled_guarantees_2025",
+            "ext_un_global_digital_compact_2024",
+            "ext_council_europe_ai_convention_2024"
+          ],
+          "atom_ids": [
+            "institutions-international-coordination-and-public-legitimacy.mechanism.003"
+          ],
+          "atom_ownership_rationale": "The commitment mechanism explicitly owns verification and assessor independence.",
+          "minimum_section_words": 150,
+          "required_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "observed_section_words": 151,
+          "observed_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "source_ids_declared_by_chapter": true,
+          "atom_ids_available_to_chapter": true
+        },
+        {
+          "concept_id": "cross-border-enforcement",
+          "heading": "Cross-border commitment, defection, and enforcement",
+          "source_ids": [
+            "ext_un_global_digital_compact_2024",
+            "ext_council_europe_ai_convention_2024"
+          ],
+          "atom_ids": [
+            "institutions-international-coordination-and-public-legitimacy.mechanism.003",
+            "institutions-international-coordination-and-public-legitimacy.invariant.003"
+          ],
+          "atom_ownership_rationale": "Cross-border commitment design and named enforcement/remedy requirements own this concept.",
+          "minimum_section_words": 150,
+          "required_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "observed_section_words": 150,
+          "observed_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "source_ids_declared_by_chapter": true,
+          "atom_ids_available_to_chapter": true
+        },
+        {
+          "concept_id": "capacity-inequality",
+          "heading": "Capacity inequality and financing",
+          "source_ids": [
+            "ext_oecd_ai_infrastructure_competition_2025",
+            "ext_un_global_digital_compact_2024"
+          ],
+          "atom_ids": [
+            "institutions-international-coordination-and-public-legitimacy.mechanism.004"
+          ],
+          "atom_ownership_rationale": "The deployment observation atom owns capacity and distributional effects.",
+          "minimum_section_words": 150,
+          "required_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "observed_section_words": 150,
+          "observed_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "source_ids_declared_by_chapter": true,
+          "atom_ids_available_to_chapter": true
+        },
+        {
+          "concept_id": "capture-emergency-expiry",
+          "heading": "Capture, emergency authority, and expiry",
+          "source_ids": [
+            "ext_council_europe_ai_convention_2024",
+            "ext_un_global_digital_compact_2024"
+          ],
+          "atom_ids": [
+            "institutions-international-coordination-and-public-legitimacy.mechanism.004",
+            "institutions-international-coordination-and-public-legitimacy.invariant.005"
+          ],
+          "atom_ownership_rationale": "Capture monitoring and expiry review jointly own emergency authority.",
+          "minimum_section_words": 150,
+          "required_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "observed_section_words": 151,
+          "observed_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "source_ids_declared_by_chapter": true,
+          "atom_ids_available_to_chapter": true
+        },
+        {
+          "concept_id": "remedy-liability-competition",
+          "heading": "Remedy, liability, insurance, and competition",
+          "source_ids": [
+            "ext_eu_ai_civil_liability_2025",
+            "ext_oecd_ai_infrastructure_competition_2025",
+            "ext_icrc_autonomous_weapons_ihl_2025"
+          ],
+          "atom_ids": [
+            "institutions-international-coordination-and-public-legitimacy.mechanism.003",
+            "institutions-international-coordination-and-public-legitimacy.invariant.003"
+          ],
+          "atom_ownership_rationale": "Named remedy and enforcement paths own the institutional handoff while legal and competition conclusions remain bounded.",
+          "minimum_section_words": 150,
+          "required_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "observed_section_words": 150,
+          "observed_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "source_ids_declared_by_chapter": true,
+          "atom_ids_available_to_chapter": true
+        }
+      ],
+      "semantic_review": {
+        "reviewed_sha256": "1650ae6f5ef4f1ebcfa2ff3392d5fe82fb8d3fab9b2a5da44f0251bfbc06e357",
+        "reviewed_date": "2026-07-28",
+        "reviewer_role": "codex_editorial_semantic_review",
+        "disposition": "accepted_for_editorial_substance_no_evidence_effect",
+        "review_basis": [
+          "the eight concepts keep mandate, affected publics, scientific and legal crosswalks, verification access, cross-border enforcement, capacity, capture and emergency expiry, and remedy or competition distinct",
+          "UN, Council of Europe, EU, legal-alignment, hardware, OECD, and ICRC sources remain institution-, jurisdiction-, mandate-, and time-scoped comparators rather than compliance or legitimacy proof",
+          "the chapter preserves excluded populations, conflicting jurisdiction, assessor dependence, withdrawal, financing, appeal, irreversible harm, and argument-only support"
+        ],
+        "support_state_effect": "none"
+      }
     },
     {
       "chapter_id": "societal-resilience-and-misuse-defense",
@@ -3882,10 +4362,10 @@
       "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
       "chapter_title": "Adversarial Machine Learning and the Model Attack Surface",
       "path": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd",
-      "sha256": "16891e9d83aa458feb4ebe535cb4eca4274d6d78403eb6c9e8e74329e7c62c58",
-      "word_count": 3227,
+      "sha256": "f07ca47caf039614432e3e04fd081f254e1380a38c3d193479deb76d98be5c60",
+      "word_count": 4553,
       "word_trigger": 5000,
-      "depth_state": "queued_thin_chapter_for_manual_concept_contract",
+      "depth_state": "concept_contract_complete_semantic_reviewed",
       "short_reference_exception": false,
       "short_reference_justification": null,
       "atom_refs": [
@@ -4026,8 +4506,250 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": [],
-      "semantic_review": null
+      "concept_contracts": [
+        {
+          "concept_id": "threat-model-identity",
+          "heading": "Threat-model identity and lifecycle reopening",
+          "source_ids": [
+            "ext_nist_adversarial_ml_2024",
+            "ext_sleeper_agents_2024"
+          ],
+          "atom_ids": [
+            "adversarial-machine-learning-and-model-attack-surface.mechanism.001",
+            "adversarial-machine-learning-and-model-attack-surface.invariant.001"
+          ],
+          "atom_ownership_rationale": "The versioned threat-model mechanism and exact-identity invariant jointly own lifecycle reopening.",
+          "minimum_section_words": 150,
+          "required_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "observed_section_words": 176,
+          "observed_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "source_ids_declared_by_chapter": true,
+          "atom_ids_available_to_chapter": true
+        },
+        {
+          "concept_id": "adaptive-defense-aware-evaluation",
+          "heading": "Adaptive attacks and defense-aware evaluation",
+          "source_ids": [
+            "ext_nist_adversarial_ml_2024",
+            "ext_reluplex_2017"
+          ],
+          "atom_ids": [
+            "adversarial-machine-learning-and-model-attack-surface.mechanism.003",
+            "adversarial-machine-learning-and-model-attack-surface.invariant.002"
+          ],
+          "atom_ownership_rationale": "Adaptive evaluation and defense-aware attacker competence are explicit existing owners.",
+          "minimum_section_words": 150,
+          "required_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "observed_section_words": 157,
+          "observed_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "source_ids_declared_by_chapter": true,
+          "atom_ids_available_to_chapter": true
+        },
+        {
+          "concept_id": "evasion-reachability",
+          "heading": "Evasion and semantic or physical reachability",
+          "source_ids": [
+            "ext_adversarial_sensor_fusion_2022",
+            "ext_nist_adversarial_ml_2024"
+          ],
+          "atom_ids": [
+            "adversarial-machine-learning-and-model-attack-surface.mechanism.002",
+            "adversarial-machine-learning-and-model-attack-surface.invariant.003"
+          ],
+          "atom_ownership_rationale": "Separate attack lanes and joint utility reporting own bounded evasion reachability.",
+          "minimum_section_words": 150,
+          "required_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "observed_section_words": 154,
+          "observed_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "source_ids_declared_by_chapter": true,
+          "atom_ids_available_to_chapter": true
+        },
+        {
+          "concept_id": "poisoning-backdoor-repair",
+          "heading": "Poisoning, backdoors, and descendant repair",
+          "source_ids": [
+            "ext_sleeper_agents_2024",
+            "ext_nist_adversarial_ml_2024"
+          ],
+          "atom_ids": [
+            "adversarial-machine-learning-and-model-attack-surface.mechanism.002",
+            "adversarial-machine-learning-and-model-attack-surface.mechanism.004"
+          ],
+          "atom_ownership_rationale": "The poisoning/backdoor lane and retained repair lineage own descendant repair.",
+          "minimum_section_words": 150,
+          "required_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "observed_section_words": 154,
+          "observed_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "source_ids_declared_by_chapter": true,
+          "atom_ids_available_to_chapter": true
+        },
+        {
+          "concept_id": "extraction-inversion-privacy",
+          "heading": "Extraction, inversion, and privacy handoff",
+          "source_ids": [
+            "ext_carlini_training_data_extraction_2021",
+            "ext_nist_adversarial_ml_2024"
+          ],
+          "atom_ids": [
+            "adversarial-machine-learning-and-model-attack-surface.mechanism.002",
+            "adversarial-machine-learning-and-model-attack-surface.mechanism.005"
+          ],
+          "atom_ownership_rationale": "The privacy attack lanes and bounded privacy handoff jointly own this concept.",
+          "minimum_section_words": 150,
+          "required_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "observed_section_words": 156,
+          "observed_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "source_ids_declared_by_chapter": true,
+          "atom_ids_available_to_chapter": true
+        },
+        {
+          "concept_id": "multimodal-agentic-composition",
+          "heading": "Multimodal and agentic attack composition",
+          "source_ids": [
+            "ext_adversarial_sensor_fusion_2022",
+            "ext_nist_adversarial_ml_2024"
+          ],
+          "atom_ids": [
+            "adversarial-machine-learning-and-model-attack-surface.mechanism.002"
+          ],
+          "atom_ownership_rationale": "The explicit multimodal and agentic attack-lane atom owns composed attack evaluation.",
+          "minimum_section_words": 150,
+          "required_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "observed_section_words": 162,
+          "observed_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "source_ids_declared_by_chapter": true,
+          "atom_ids_available_to_chapter": true
+        },
+        {
+          "concept_id": "certificate-monitor-recovery",
+          "heading": "Certificates, monitoring, and recovery as non-substitutes",
+          "source_ids": [
+            "ext_reluplex_2017",
+            "ext_nist_adversarial_ml_2024"
+          ],
+          "atom_ids": [
+            "adversarial-machine-learning-and-model-attack-surface.mechanism.003",
+            "adversarial-machine-learning-and-model-attack-surface.invariant.003"
+          ],
+          "atom_ownership_rationale": "The defense-separation mechanism and joint-metric invariant own non-substitution.",
+          "minimum_section_words": 150,
+          "required_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "observed_section_words": 155,
+          "observed_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "source_ids_declared_by_chapter": true,
+          "atom_ids_available_to_chapter": true
+        },
+        {
+          "concept_id": "disclosure-residual-ownership",
+          "heading": "Disclosure, safe experimentation, and residual ownership",
+          "source_ids": [
+            "ext_nist_adversarial_ml_2024"
+          ],
+          "atom_ids": [
+            "adversarial-machine-learning-and-model-attack-surface.mechanism.004",
+            "adversarial-machine-learning-and-model-attack-surface.invariant.005"
+          ],
+          "atom_ownership_rationale": "Retained disclosure lineage and the no-real-target authority ceiling own safe experimentation and residuals.",
+          "minimum_section_words": 150,
+          "required_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "observed_section_words": 158,
+          "observed_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "source_ids_declared_by_chapter": true,
+          "atom_ids_available_to_chapter": true
+        }
+      ],
+      "semantic_review": {
+        "reviewed_sha256": "f07ca47caf039614432e3e04fd081f254e1380a38c3d193479deb76d98be5c60",
+        "reviewed_date": "2026-07-28",
+        "reviewer_role": "codex_editorial_semantic_review",
+        "disposition": "accepted_for_editorial_substance_no_evidence_effect",
+        "review_basis": [
+          "the eight concepts distinguish threat identity, adaptive evaluation, reachable evasion, poisoning repair, confidentiality attacks, composed attack paths, non-substitutable defenses, and safe disclosure",
+          "NIST, Sleeper Agents, GPT-2 extraction, camera-LiDAR attack, and Reluplex remain inside their taxonomy, constructed, model-family, modality, and property-specific boundaries",
+          "the chapter preserves attacker competence, positive controls, clean utility, false-negative ceilings, safe authority, residual ownership, and argument-only support"
+        ],
+        "support_state_effect": "none"
+      }
     },
     {
       "chapter_id": "privacy-data-rights-and-information-flow-governance",
@@ -4402,10 +5124,10 @@
       "chapter_id": "open-weight-release-and-post-release-control",
       "chapter_title": "Open-Weight Release and Post-Release Control",
       "path": "chapters/open-weight-release-and-post-release-control.qmd",
-      "sha256": "c200659424e87de0a3e75fae2cf930282ec4094156f039e58acc70b44d3fb30d",
-      "word_count": 3232,
+      "sha256": "e3036a2b89b49be3b8729338bfcc92fb00672632e7392e0dde947b0a7fec4c7a",
+      "word_count": 4511,
       "word_trigger": 5000,
-      "depth_state": "queued_thin_chapter_for_manual_concept_contract",
+      "depth_state": "concept_contract_complete_semantic_reviewed",
       "short_reference_exception": false,
       "short_reference_justification": null,
       "atom_refs": [
@@ -4414,8 +5136,248 @@
           "source_path": "evidence_quality/taxonomy_completion_claim_atoms_2026_07_24.json"
         }
       ],
-      "concept_contracts": [],
-      "semantic_review": null
+      "concept_contracts": [
+        {
+          "concept_id": "access-tier-option-set",
+          "heading": "Access-tier option set",
+          "source_ids": [
+            "ext_rand_model_weight_security_2024",
+            "ext_singapore_consensus_2026"
+          ],
+          "atom_ids": [
+            "open-weight-release-and-post-release-control.core"
+          ],
+          "atom_ownership_rationale": "The existing post-activation chapter-core atom intentionally owns the bounded access-tier-option-set proposition and its evidence ceiling; splitting it solely for count parity would create duplicate claim identities.",
+          "minimum_section_words": 150,
+          "required_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "observed_section_words": 158,
+          "observed_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "source_ids_declared_by_chapter": true,
+          "atom_ids_available_to_chapter": true
+        },
+        {
+          "concept_id": "artifact-derivative-identity",
+          "heading": "Exact artifact and derivative identity",
+          "source_ids": [
+            "ext_provable_model_weight_release_2025",
+            "ext_rand_model_weight_security_2024"
+          ],
+          "atom_ids": [
+            "open-weight-release-and-post-release-control.core"
+          ],
+          "atom_ownership_rationale": "The existing post-activation chapter-core atom intentionally owns the bounded artifact-derivative-identity proposition and its evidence ceiling; splitting it solely for count parity would create duplicate claim identities.",
+          "minimum_section_words": 150,
+          "required_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "observed_section_words": 152,
+          "observed_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "source_ids_declared_by_chapter": true,
+          "atom_ids_available_to_chapter": true
+        },
+        {
+          "concept_id": "malicious-adaptation",
+          "heading": "Malicious adaptation and evaluator competence",
+          "source_ids": [
+            "ext_openai_worst_case_open_weight_risks_2025",
+            "ext_anthropic_responsible_scaling_policy_3_4_2026",
+            "ext_international_ai_safety_report_2026"
+          ],
+          "atom_ids": [
+            "open-weight-release-and-post-release-control.core"
+          ],
+          "atom_ownership_rationale": "The existing post-activation chapter-core atom intentionally owns the bounded malicious-adaptation proposition and its evidence ceiling; splitting it solely for count parity would create duplicate claim identities.",
+          "minimum_section_words": 150,
+          "required_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "observed_section_words": 154,
+          "observed_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "source_ids_declared_by_chapter": true,
+          "atom_ids_available_to_chapter": true
+        },
+        {
+          "concept_id": "accessible-frontier",
+          "heading": "Accessible-frontier comparison and expiry",
+          "source_ids": [
+            "ext_rand_model_weight_security_2024",
+            "ext_international_ai_safety_report_2026",
+            "ext_singapore_consensus_2026"
+          ],
+          "atom_ids": [
+            "open-weight-release-and-post-release-control.core"
+          ],
+          "atom_ownership_rationale": "The existing post-activation chapter-core atom intentionally owns the bounded accessible-frontier proposition and its evidence ceiling; splitting it solely for count parity would create duplicate claim identities.",
+          "minimum_section_words": 150,
+          "required_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "observed_section_words": 155,
+          "observed_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "source_ids_declared_by_chapter": true,
+          "atom_ids_available_to_chapter": true
+        },
+        {
+          "concept_id": "marginal-cumulative-risk",
+          "heading": "Marginal and cumulative ecosystem risk",
+          "source_ids": [
+            "ext_provable_model_weight_release_2025",
+            "ext_international_ai_safety_report_2026"
+          ],
+          "atom_ids": [
+            "open-weight-release-and-post-release-control.core"
+          ],
+          "atom_ownership_rationale": "The existing post-activation chapter-core atom intentionally owns the bounded marginal-cumulative-risk proposition and its evidence ceiling; splitting it solely for count parity would create duplicate claim identities.",
+          "minimum_section_words": 150,
+          "required_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "observed_section_words": 153,
+          "observed_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "source_ids_declared_by_chapter": true,
+          "atom_ids_available_to_chapter": true
+        },
+        {
+          "concept_id": "benefit-access-distribution",
+          "heading": "Benefit and access distribution",
+          "source_ids": [
+            "ext_singapore_consensus_2026",
+            "ext_international_ai_safety_report_2026"
+          ],
+          "atom_ids": [
+            "open-weight-release-and-post-release-control.core"
+          ],
+          "atom_ownership_rationale": "The existing post-activation chapter-core atom intentionally owns the bounded benefit-access-distribution proposition and its evidence ceiling; splitting it solely for count parity would create duplicate claim identities.",
+          "minimum_section_words": 150,
+          "required_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "observed_section_words": 153,
+          "observed_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "source_ids_declared_by_chapter": true,
+          "atom_ids_available_to_chapter": true
+        },
+        {
+          "concept_id": "copy-surviving-controls",
+          "heading": "Controls that survive copying",
+          "source_ids": [
+            "ext_provable_model_weight_release_2025",
+            "ext_rand_model_weight_security_2024",
+            "ext_anthropic_responsible_scaling_policy_3_4_2026"
+          ],
+          "atom_ids": [
+            "open-weight-release-and-post-release-control.core"
+          ],
+          "atom_ownership_rationale": "The existing post-activation chapter-core atom intentionally owns the bounded copy-surviving-controls proposition and its evidence ceiling; splitting it solely for count parity would create duplicate claim identities.",
+          "minimum_section_words": 150,
+          "required_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "observed_section_words": 155,
+          "observed_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "source_ids_declared_by_chapter": true,
+          "atom_ids_available_to_chapter": true
+        },
+        {
+          "concept_id": "derivative-incident-residual",
+          "heading": "Derivative incidents, patch adoption, and irreversible residuals",
+          "source_ids": [
+            "ext_provable_model_weight_release_2025",
+            "ext_singapore_consensus_2026",
+            "ext_international_ai_safety_report_2026"
+          ],
+          "atom_ids": [
+            "open-weight-release-and-post-release-control.core"
+          ],
+          "atom_ownership_rationale": "The existing post-activation chapter-core atom intentionally owns the bounded derivative-incident-residual proposition and its evidence ceiling; splitting it solely for count parity would create duplicate claim identities.",
+          "minimum_section_words": 150,
+          "required_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "observed_section_words": 151,
+          "observed_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "source_ids_declared_by_chapter": true,
+          "atom_ids_available_to_chapter": true
+        }
+      ],
+      "semantic_review": {
+        "reviewed_sha256": "e3036a2b89b49be3b8729338bfcc92fb00672632e7392e0dde947b0a7fec4c7a",
+        "reviewed_date": "2026-07-28",
+        "reviewer_role": "codex_editorial_semantic_review",
+        "disposition": "accepted_for_editorial_substance_no_evidence_effect",
+        "review_basis": [
+          "the eight concepts distinguish access options, artifact and derivative identity, competent malicious adaptation, accessible-frontier expiry, marginal and cumulative risk, benefit distribution, controls after copying, and irreversible incident residuals",
+          "provider, policy, security, consensus, and international-report sources remain scoped comparators and do not become a categorical release decision or independent local evaluation",
+          "the chapter preserves fair rescue, exact artifact custody, ecosystem uncertainty, non-adoption, derivative exposure, and argument-only support"
+        ],
+        "support_state_effect": "none"
+      }
     },
     {
       "chapter_id": "ai-supply-chain-integrity-and-lifecycle-provenance",
@@ -10496,10 +11458,10 @@
       "chapter_id": "multi-agent-dynamics-collective-intelligence-and-systemic-risk",
       "chapter_title": "Multi-Agent Dynamics, Collective Intelligence, and Systemic Risk",
       "path": "chapters/multi-agent-dynamics-collective-intelligence-and-systemic-risk.qmd",
-      "sha256": "2010b193b1b73704f0228db0d896ea4e76bf249bd2a3254ec38434e220240abf",
-      "word_count": 3533,
+      "sha256": "7a05e18d529a8787d806b7faa6830f555540960c043a671a6d32261da15954a2",
+      "word_count": 4798,
       "word_trigger": 5000,
-      "depth_state": "queued_thin_chapter_for_manual_concept_contract",
+      "depth_state": "concept_contract_complete_semantic_reviewed",
       "short_reference_exception": false,
       "short_reference_justification": null,
       "atom_refs": [
@@ -10508,8 +11470,244 @@
           "source_path": "evidence_quality/round_18_breadth_completion_claim_atoms.json"
         }
       ],
-      "concept_contracts": [],
-      "semantic_review": null
+      "concept_contracts": [
+        {
+          "concept_id": "population-identity-diversity",
+          "heading": "Population identity, copies, and effective diversity",
+          "source_ids": [
+            "ext_multi_agent_risks_2025",
+            "ext_cooperative_ai_foundations_2023"
+          ],
+          "atom_ids": [
+            "multi-agent-dynamics-collective-intelligence-and-systemic-risk.core"
+          ],
+          "atom_ownership_rationale": "The existing post-activation chapter-core atom intentionally owns the bounded population-identity-diversity proposition and its evidence ceiling; splitting it solely for count parity would create duplicate claim identities.",
+          "minimum_section_words": 150,
+          "required_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "observed_section_words": 152,
+          "observed_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "source_ids_declared_by_chapter": true,
+          "atom_ids_available_to_chapter": true
+        },
+        {
+          "concept_id": "multiplex-graphs",
+          "heading": "Multiplex interaction and dependency graphs",
+          "source_ids": [
+            "ext_multi_agent_risks_2025",
+            "ext_cooperative_ai_foundations_2023"
+          ],
+          "atom_ids": [
+            "multi-agent-dynamics-collective-intelligence-and-systemic-risk.core"
+          ],
+          "atom_ownership_rationale": "The existing post-activation chapter-core atom intentionally owns the bounded multiplex-graphs proposition and its evidence ceiling; splitting it solely for count parity would create duplicate claim identities.",
+          "minimum_section_words": 150,
+          "required_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "observed_section_words": 151,
+          "observed_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "source_ids_declared_by_chapter": true,
+          "atom_ids_available_to_chapter": true
+        },
+        {
+          "concept_id": "cooperation-collusion-intelligence",
+          "heading": "Cooperation, collusion, and collective intelligence",
+          "source_ids": [
+            "ext_cooperative_ai_foundations_2023",
+            "ext_multi_agent_risks_2025"
+          ],
+          "atom_ids": [
+            "multi-agent-dynamics-collective-intelligence-and-systemic-risk.core"
+          ],
+          "atom_ownership_rationale": "The existing post-activation chapter-core atom intentionally owns the bounded cooperation-collusion-intelligence proposition and its evidence ceiling; splitting it solely for count parity would create duplicate claim identities.",
+          "minimum_section_words": 150,
+          "required_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "observed_section_words": 150,
+          "observed_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "source_ids_declared_by_chapter": true,
+          "atom_ids_available_to_chapter": true
+        },
+        {
+          "concept_id": "incentives-commitments-externalities",
+          "heading": "Incentives, commitments, bargaining, and externalities",
+          "source_ids": [
+            "ext_cooperative_ai_foundations_2023",
+            "ext_multi_agent_risks_2025"
+          ],
+          "atom_ids": [
+            "multi-agent-dynamics-collective-intelligence-and-systemic-risk.core"
+          ],
+          "atom_ownership_rationale": "The existing post-activation chapter-core atom intentionally owns the bounded incentives-commitments-externalities proposition and its evidence ceiling; splitting it solely for count parity would create duplicate claim identities.",
+          "minimum_section_words": 150,
+          "required_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "observed_section_words": 150,
+          "observed_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "source_ids_declared_by_chapter": true,
+          "atom_ids_available_to_chapter": true
+        },
+        {
+          "concept_id": "decision-theory-disagreement",
+          "heading": "Decision-theory disagreement",
+          "source_ids": [
+            "ext_functional_decision_theory_2017",
+            "ext_cooperative_ai_foundations_2023"
+          ],
+          "atom_ids": [
+            "multi-agent-dynamics-collective-intelligence-and-systemic-risk.core"
+          ],
+          "atom_ownership_rationale": "The existing post-activation chapter-core atom intentionally owns the bounded decision-theory-disagreement proposition and its evidence ceiling; splitting it solely for count parity would create duplicate claim identities.",
+          "minimum_section_words": 150,
+          "required_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "observed_section_words": 155,
+          "observed_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "source_ids_declared_by_chapter": true,
+          "atom_ids_available_to_chapter": true
+        },
+        {
+          "concept_id": "learning-nonstationarity-selection",
+          "heading": "Learning, nonstationarity, selection, and emergent objectives",
+          "source_ids": [
+            "ext_multi_agent_risks_2025",
+            "ext_cooperative_ai_foundations_2023"
+          ],
+          "atom_ids": [
+            "multi-agent-dynamics-collective-intelligence-and-systemic-risk.core"
+          ],
+          "atom_ownership_rationale": "The existing post-activation chapter-core atom intentionally owns the bounded learning-nonstationarity-selection proposition and its evidence ceiling; splitting it solely for count parity would create duplicate claim identities.",
+          "minimum_section_words": 150,
+          "required_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "observed_section_words": 152,
+          "observed_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "source_ids_declared_by_chapter": true,
+          "atom_ids_available_to_chapter": true
+        },
+        {
+          "concept_id": "systemic-risk-cascades",
+          "heading": "Concentration, cascades, and common-mode systemic risk",
+          "source_ids": [
+            "ext_multi_agent_risks_2025",
+            "ext_gradual_disempowerment_2025"
+          ],
+          "atom_ids": [
+            "multi-agent-dynamics-collective-intelligence-and-systemic-risk.core"
+          ],
+          "atom_ownership_rationale": "The existing post-activation chapter-core atom intentionally owns the bounded systemic-risk-cascades proposition and its evidence ceiling; splitting it solely for count parity would create duplicate claim identities.",
+          "minimum_section_words": 150,
+          "required_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "observed_section_words": 150,
+          "observed_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "source_ids_declared_by_chapter": true,
+          "atom_ids_available_to_chapter": true
+        },
+        {
+          "concept_id": "human-influence-disempowerment",
+          "heading": "Human influence, disempowerment, and intervention displacement",
+          "source_ids": [
+            "ext_gradual_disempowerment_2025",
+            "ext_constructive_interdependence_human_ai_2026"
+          ],
+          "atom_ids": [
+            "multi-agent-dynamics-collective-intelligence-and-systemic-risk.core"
+          ],
+          "atom_ownership_rationale": "The existing post-activation chapter-core atom intentionally owns the bounded human-influence-disempowerment proposition and its evidence ceiling; splitting it solely for count parity would create duplicate claim identities.",
+          "minimum_section_words": 150,
+          "required_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "observed_section_words": 153,
+          "observed_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "source_ids_declared_by_chapter": true,
+          "atom_ids_available_to_chapter": true
+        }
+      ],
+      "semantic_review": {
+        "reviewed_sha256": "7a05e18d529a8787d806b7faa6830f555540960c043a671a6d32261da15954a2",
+        "reviewed_date": "2026-07-28",
+        "reviewer_role": "codex_editorial_semantic_review",
+        "disposition": "accepted_for_editorial_substance_no_evidence_effect",
+        "review_basis": [
+          "the eight concepts distinguish population identity, multiplex dependency, cooperation and collusion, strategic incentives, decision-theory disagreement, nonstationary learning, systemic cascades, and human influence",
+          "multi-agent risk, cooperative AI, gradual disempowerment, constructive interdependence, and functional decision-theory sources remain taxonomic, agenda, conceptual, study-specific, or normative rather than predictions or universal solutions",
+          "the chapter preserves effective diversity, affected nonparticipants, externalities, alternative theories, false-negative defenses, intervention displacement, and argument-only support"
+        ],
+        "support_state_effect": "none"
+      }
     },
     {
       "chapter_id": "procedural-memory-and-cognitive-loop-closure",
@@ -13718,10 +14916,10 @@
       "chapter_id": "physical-compute-infrastructure-energy-and-environmental-constraints",
       "chapter_title": "Physical Compute Infrastructure, Energy, and Environmental Constraints",
       "path": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd",
-      "sha256": "46577984dbc01a338943d682d8292b2cd19ec837c26f3c8b1d3b7f8435e9af4a",
-      "word_count": 3359,
+      "sha256": "93c3e0e439438480a1fc5dc0385064fd754cb29658d09a28c350116fddcbf068",
+      "word_count": 4632,
       "word_trigger": 5000,
-      "depth_state": "queued_thin_chapter_for_manual_concept_contract",
+      "depth_state": "concept_contract_complete_semantic_reviewed",
       "short_reference_exception": false,
       "short_reference_justification": null,
       "atom_refs": [
@@ -13862,8 +15060,250 @@
           "source_path": "evidence_quality/claim_atom_registry.json"
         }
       ],
-      "concept_contracts": [],
-      "semantic_review": null
+      "concept_contracts": [
+        {
+          "concept_id": "useful-versus-nameplate",
+          "heading": "Useful compute versus nameplate capacity",
+          "source_ids": [
+            "ext_iea_energy_and_ai_2025",
+            "ext_lbnl_data_center_energy_2024"
+          ],
+          "atom_ids": [
+            "physical-compute-infrastructure-energy-and-environmental-constraints.mechanism.002",
+            "physical-compute-infrastructure-energy-and-environmental-constraints.invariant.001"
+          ],
+          "atom_ownership_rationale": "Meter reconciliation and distinct compute identities jointly own useful capacity.",
+          "minimum_section_words": 150,
+          "required_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "observed_section_words": 155,
+          "observed_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "source_ids_declared_by_chapter": true,
+          "atom_ids_available_to_chapter": true
+        },
+        {
+          "concept_id": "memory-interconnect-storage",
+          "heading": "Memory, interconnect, and storage bottlenecks",
+          "source_ids": [
+            "ext_lbnl_data_center_energy_2024",
+            "ext_iea_energy_and_ai_2025"
+          ],
+          "atom_ids": [
+            "physical-compute-infrastructure-energy-and-environmental-constraints.mechanism.001"
+          ],
+          "atom_ownership_rationale": "The workload envelope atom explicitly owns accelerator, memory, storage, network, latency, and reliability bottlenecks.",
+          "minimum_section_words": 150,
+          "required_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "observed_section_words": 157,
+          "observed_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "source_ids_declared_by_chapter": true,
+          "atom_ids_available_to_chapter": true
+        },
+        {
+          "concept_id": "temporal-local-energy",
+          "heading": "Temporal and local energy and grid causality",
+          "source_ids": [
+            "ext_iea_energy_and_ai_2025",
+            "ext_lbnl_data_center_energy_2024"
+          ],
+          "atom_ids": [
+            "physical-compute-infrastructure-energy-and-environmental-constraints.mechanism.003",
+            "physical-compute-infrastructure-energy-and-environmental-constraints.invariant.003"
+          ],
+          "atom_ownership_rationale": "Physical execution tracking and time-location uncertainty jointly own grid claims.",
+          "minimum_section_words": 150,
+          "required_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "observed_section_words": 153,
+          "observed_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "source_ids_declared_by_chapter": true,
+          "atom_ids_available_to_chapter": true
+        },
+        {
+          "concept_id": "cooling-water-land-community",
+          "heading": "Cooling, water, land, and community constraints",
+          "source_ids": [
+            "ext_iea_energy_and_ai_2025",
+            "ext_lbnl_data_center_energy_2024"
+          ],
+          "atom_ids": [
+            "physical-compute-infrastructure-energy-and-environmental-constraints.mechanism.003"
+          ],
+          "atom_ownership_rationale": "The execution atom explicitly owns cooling, water, land, and community effects.",
+          "minimum_section_words": 150,
+          "required_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "observed_section_words": 152,
+          "observed_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "source_ids_declared_by_chapter": true,
+          "atom_ids_available_to_chapter": true
+        },
+        {
+          "concept_id": "embodied-supply-retirement",
+          "heading": "Embodied materials, supply chains, and retirement",
+          "source_ids": [
+            "ext_iea_energy_and_ai_2025",
+            "ext_oecd_ai_infrastructure_competition_2025"
+          ],
+          "atom_ids": [
+            "physical-compute-infrastructure-energy-and-environmental-constraints.mechanism.003",
+            "physical-compute-infrastructure-energy-and-environmental-constraints.mechanism.005"
+          ],
+          "atom_ownership_rationale": "Material supply tracking and lifecycle closure jointly own embodied and retirement burdens.",
+          "minimum_section_words": 150,
+          "required_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "observed_section_words": 150,
+          "observed_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "source_ids_declared_by_chapter": true,
+          "atom_ids_available_to_chapter": true
+        },
+        {
+          "concept_id": "demand-response-resilience",
+          "heading": "Demand response, degradation, and resilience",
+          "source_ids": [
+            "ext_iea_energy_and_ai_2025",
+            "ext_lbnl_data_center_energy_2024"
+          ],
+          "atom_ids": [
+            "physical-compute-infrastructure-energy-and-environmental-constraints.mechanism.004",
+            "physical-compute-infrastructure-energy-and-environmental-constraints.invariant.005"
+          ],
+          "atom_ownership_rationale": "Degradation and demand-response plans plus authority narrowing own resilience.",
+          "minimum_section_words": 150,
+          "required_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "observed_section_words": 151,
+          "observed_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "source_ids_declared_by_chapter": true,
+          "atom_ids_available_to_chapter": true
+        },
+        {
+          "concept_id": "metering-allocation-rebound",
+          "heading": "Metering, allocation, uncertainty, and rebound",
+          "source_ids": [
+            "ext_lbnl_data_center_energy_2024",
+            "ext_iea_energy_and_ai_2025"
+          ],
+          "atom_ids": [
+            "physical-compute-infrastructure-energy-and-environmental-constraints.mechanism.002",
+            "physical-compute-infrastructure-energy-and-environmental-constraints.invariant.004"
+          ],
+          "atom_ownership_rationale": "Meter allocation and the denominator requirement jointly own rebound-bounded reporting.",
+          "minimum_section_words": 150,
+          "required_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "observed_section_words": 150,
+          "observed_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "source_ids_declared_by_chapter": true,
+          "atom_ids_available_to_chapter": true
+        },
+        {
+          "concept_id": "hardware-guarantees-concentration",
+          "heading": "Hardware guarantees, coverage, and concentration",
+          "source_ids": [
+            "ext_flexible_hardware_enabled_guarantees_2025",
+            "ext_oecd_ai_infrastructure_competition_2025"
+          ],
+          "atom_ids": [
+            "physical-compute-infrastructure-energy-and-environmental-constraints.core",
+            "physical-compute-infrastructure-energy-and-environmental-constraints.mechanism.003"
+          ],
+          "atom_ownership_rationale": "The bounded physical decision contract and supply-dependency ledger own hardware coverage and concentration without creating a legal claim.",
+          "minimum_section_words": 150,
+          "required_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "observed_section_words": 150,
+          "observed_elements": [
+            "**Mechanism.**",
+            "**Failure mode.**",
+            "**Non-claim.**",
+            "**Source grounding.**"
+          ],
+          "source_ids_declared_by_chapter": true,
+          "atom_ids_available_to_chapter": true
+        }
+      ],
+      "semantic_review": {
+        "reviewed_sha256": "93c3e0e439438480a1fc5dc0385064fd754cb29658d09a28c350116fddcbf068",
+        "reviewed_date": "2026-07-28",
+        "reviewer_role": "codex_editorial_semantic_review",
+        "disposition": "accepted_for_editorial_substance_no_evidence_effect",
+        "review_basis": [
+          "the eight concepts distinguish useful compute, bottleneck topology, temporal grid effects, local cooling and community constraints, embodied lifecycle, degradation, metering and rebound, and hardware-control concentration",
+          "IEA, LBNL, hardware-guarantee, and OECD sources remain scenario, national-method, design-proposal, and market-specific evidence rather than local facility measurement or legal adjudication",
+          "the chapter preserves denominators, time and location, uncertainty, distribution, correlated failure, total versus marginal effects, and argument-only support"
+        ],
+        "support_state_effect": "none"
+      }
     },
     {
       "chapter_id": "mathematical-and-search-substrates",
@@ -19978,15 +21418,15 @@
   "summary": {
     "chapter_count": 84,
     "thin_chapter_count": 20,
-    "contracted_chapter_count": 9,
-    "concept_complete_semantic_reviewed_chapter_count": 9,
-    "queued_thin_chapter_count": 14,
+    "contracted_chapter_count": 15,
+    "concept_complete_semantic_reviewed_chapter_count": 15,
+    "queued_thin_chapter_count": 8,
     "word_trigger_clear_chapter_count": 64,
     "atom_covered_chapter_count": 84,
     "atom_uncovered_chapter_count": 0,
-    "active_concept_count": 72,
-    "active_concepts_passing_count": 72,
-    "current_semantic_review_count": 9,
+    "active_concept_count": 120,
+    "active_concepts_passing_count": 120,
+    "current_semantic_review_count": 15,
     "low_atom_count_diagnostic_chapter_count": 19,
     "atom_count_is_acceptance_target": false,
     "word_trigger_is_completion_gate": false,

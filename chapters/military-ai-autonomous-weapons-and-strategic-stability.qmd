@@ -3,8 +3,8 @@ title: "Military AI, Autonomous Weapons, and Strategic Stability"
 chapter_id: "military-ai-autonomous-weapons-and-strategic-stability"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
-draft_maturity: "substantive conceptual draft"
-last_updated: "2026-07-25"
+draft_maturity: "v0.3 concept-complete argument-level manuscript"
+last_updated: "2026-07-28"
 primary_sources:
   - "ext_icrc_autonomous_weapons_ihl_2025"
   - "ext_sipri_military_ai_nuclear_escalation_2025"
@@ -286,6 +286,88 @@ adversaries, escalation pathways, proliferation, and off-ramps. Each assumption
 has an owner, basis, uncertainty, sensitivity analysis, expiry, and trigger for
 reconsideration. Technical updates invalidate dependent parts of the case;
 doctrinal or geopolitical changes do the same.
+
+## Concept-completion ledger
+
+### Use-case and decision-role taxonomy
+
+**Mechanism.** Classify military AI by function and causal role: logistics, maintenance, cyber defense, intelligence support, surveillance, recommendation, target development, command support, defensive interception, navigation, platform control, and force application. For each case, state whether the system informs, ranks, recommends, selects, authorizes, executes, or learns from effects. Governance attaches to the actual decision role and reachable consequence, not the vendor’s label “decision support.” Interfaces that change roles trigger a fresh classification.
+
+**Failure mode.** A recommendation can become de facto selection under time pressure, while broad “autonomous weapon” language can collapse low-risk logistics with lethal force. Dual-use components may change role after integration.
+
+**Non-claim.** Classification does not determine legality, morality, safety, or military necessity. It also does not imply that every system inside a category has comparable effects or operators.
+
+**Source grounding.** `ext_icrc_autonomous_weapons_ihl_2025` supplies an official ICRC position within its mandate. `ext_sipri_military_ai_nuclear_escalation_2025` supplies scenario analysis. Neither is universal legal advice or technical validation.
+
+### Mission, authority, and effect envelope
+
+**Mechanism.** Bind every deployment to mission, jurisdiction, commander and operator roles, rules and constraints, target and non-target classes, geography, time, environment, weapons and tools, communication assumptions, maximum effects, escalation boundaries, data retention, and stop authority. Changes in mission, platform, model, sensor, doctrine, or adversary reopen authorization. The envelope is machine-enforced where possible and independently reviewable. Exceptions name their issuer, duration, reason, and downstream effects.
+
+**Failure mode.** Mission creep can extend a system from observation to force without fresh review; vague geographic or object categories can expand reachable harm. Machine enforcement can encode an incorrect policy or be bypassed under emergency authority.
+
+**Non-claim.** An authorized envelope does not prove lawful conduct in every instance, correct classification, proportionality, or strategic wisdom. It cannot transfer accountability from decision makers to the machine-readable boundary.
+
+**Source grounding.** `ext_icrc_autonomous_weapons_ihl_2025` motivates constraints and human responsibility within international humanitarian law. It does not certify this envelope or resolve all jurisdictions.
+
+### Meaningful human judgment conditions
+
+**Mechanism.** Replace “human in the loop” with measurable conditions: legal and operational authority, time, attention, competence, uncertainty visibility, alternatives, ability to challenge, communication reliability, intervention reachability, and protection from automation bias or coercion. Evaluate realistic workload, alert volume, adversarial deception, fatigue, and compressed timelines. Approval records include what the person could actually know and do. Missed and overridden interventions remain in the denominator.
+
+**Failure mode.** A human may rubber-stamp machine outputs too quickly to understand them, or be blamed despite lacking authority to intervene. Excessive manual gates can overload operators and push decisions into informal channels.
+
+**Non-claim.** A human signature does not make a decision lawful, correct, safe, or morally legitimate. Nor does automation failure excuse an organization that designed an impossible review role. Meaningful judgment must be demonstrated.
+
+**Source grounding.** `ext_icrc_autonomous_weapons_ihl_2025` grounds the importance of human responsibility and constraints. The chapter’s operational conditions remain design rationale pending representative human-factors evidence.
+
+### Observation trust, false alarms, and provenance
+
+**Mechanism.** Join sensor origin, calibration, synchronization, fusion, model and data lineage, uncertainty, adversarial exposure, communications, corroboration, and operator interpretation into each consequential observation. Evaluate false positives, misses, abstention, subgroup and environmental performance, distribution shift, spoofing, and provenance breaks at the actual base rate. High-consequence action requires independent corroboration or an explicitly justified exception. Corroboration records shared dependencies that weaken independence.
+
+**Failure mode.** Rare-event classifiers can look accurate yet generate intolerable false alarms; correlated sensors can masquerade as independent confirmation. Adversarial or stale data can propagate through a polished fused display, compressing uncertainty away.
+
+**Non-claim.** Provenance and corroboration do not guarantee a true observation or lawful use of it. Their value is to expose dependency, uncertainty, and accountable interpretation. Unknowns remain action-relevant and can require abstention, delay, additional observation, or mission termination.
+
+**Source grounding.** `ext_sipri_military_ai_nuclear_escalation_2025` motivates concern about warning, uncertainty, and escalation pathways. It is scenario analysis, not a measured sensor-validation result.
+
+### Safe posture, communication loss, and degradation
+
+**Mechanism.** Prospectively define behavior for ambiguity, sensor conflict, low confidence, jamming, spoofing, lost command, damaged hardware, partial compromise, boundary exit, and expired authorization. Options include hold, disengage, return, reduced function, transfer channel, physical safe state, or stop. Test transitions, recovery, adversary exploitation, civilian effects, and whether “fail safe” at component level destabilizes the wider interaction. Repeated degradation cannot silently become ordinary authorization.
+
+**Failure mode.** Lost communication can trigger continued action under stale assumptions or a predictable posture exploitable by an adversary. A return-to-base behavior may cross danger zones; abrupt shutdown can remove a stabilizing defensive function.
+
+**Non-claim.** A documented fail-safe is not proof of safe behavior across environments or strategic contexts. Local harm reduction may coexist with wider escalation risk and operational failure. Recovery also requires fresh authorization, verified state, and renewed observation trust.
+
+**Source grounding.** `ext_icrc_autonomous_weapons_ihl_2025` motivates constraints on autonomy. `ext_sipri_military_ai_nuclear_escalation_2025` motivates strategic sensitivity. Neither validates a universal safe posture.
+
+### Adversary response, proliferation, and reciprocal dynamics
+
+**Mechanism.** Evaluate a capability as an intervention in a game: what adversaries observe, infer, copy, spoof, preempt, disperse, automate, or escalate; how allies and third parties respond; and how costs and expertise diffuse. Use multiple plausible opponent models, red-team doctrine, proliferation paths, and sensitivity ranges. Preserve asymmetric and unintended responses rather than selecting the most favorable equilibrium. Assumption owners and expiry dates accompany every modeled response.
+
+**Failure mode.** A system can improve local defense while accelerating adversary automation or first-mover pressure. Mirror-imaging assumes others share doctrine and risk tolerance; worst-case speculation can also make every technology appear destabilizing.
+
+**Non-claim.** Scenario plausibility is not prediction, and capability diffusion does not prove inevitable arms racing. Adversaries may adapt in ways outside every modeled branch, timeline, or doctrine. Those unknowns cap assurance and deployment claims.
+
+**Source grounding.** `ext_sipri_military_ai_nuclear_escalation_2025` provides bounded strategic scenario analysis. `ext_singapore_consensus_2026` and `ext_international_ai_safety_report_2026` supply broader coordination context, not military forecasts.
+
+### Strategic stability, off-ramps, and timeline compression
+
+**Mechanism.** Measure effects on warning time, decision time, attribution, survivability, first-strike incentives, escalation control, accidental use, signaling, communication, and confidence in restraint. Stress false alarms and ambiguous attacks under compressed timelines. A deployment case must identify credible off-ramps—delay, clarification, deconfliction, reversible posture, communication, and independent confirmation—and who can invoke them. Exercises include adversaries who misread or reject the off-ramp.
+
+**Failure mode.** Faster analysis can create pressure for faster action; opaque confidence can be mistaken for certainty. An off-ramp may be unavailable during jamming or interpreted as weakness. Aggregating these effects into one “stability score” hides opposing mechanisms.
+
+**Non-claim.** The presence of AI does not inherently stabilize or destabilize a conflict, and a war-game result is not a forecast. Stability remains conditional on actors, doctrine, information, context, time, and unmodeled response.
+
+**Source grounding.** `ext_sipri_military_ai_nuclear_escalation_2025` motivates the listed pathways but does not prove their direction or magnitude. The broader reports are contextual only.
+
+### Secrecy, independent review, accountability, and decommission
+
+**Mechanism.** Separate classified operational detail from reviewable assurance claims. Qualified independent reviewers receive sufficient access to test lineage, authority, failure handling, incidents, and strategic assumptions; public records expose ownership, applicable constraints, review status, remedy routes, and maximum supported conclusions. Preserve command and machine logs under lawful custody. Decommissioning revokes authority, secures models and data, disposes hardware, notifies dependents, and records residual copies and doctrine. Review access gaps narrow the public assurance ceiling.
+
+**Failure mode.** Secrecy can make assurance unfalsifiable and shield unlawful or unsafe practice; disclosure can create operational hazards. Internal review may share doctrine and incentives. Retirement on paper may leave models, keys, platforms, or learned procedures active.
+
+**Non-claim.** Independent classified review does not create public legitimacy, guarantee accountability, or erase irreversible proliferation. Decommissioning evidence remains bounded to inspected artifacts and authorities.
+
+**Source grounding.** `ext_icrc_autonomous_weapons_ihl_2025` supplies mandate-specific accountability and legal perspectives. `ext_sipri_military_ai_nuclear_escalation_2025` supplies strategic context. Neither validates this review or decommissioning regime.
 
 ## Interfaces
 
