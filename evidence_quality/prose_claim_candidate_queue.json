@@ -3,11 +3,11 @@
   "scanner": "modal and outcome-bearing sentence cue scan; candidates require semantic adjudication",
   "summary": {
     "chapter_count": 64,
-    "candidate_count": 3388,
+    "candidate_count": 3483,
     "review_state_counts": {
-      "duplicate_of_atom": 1638,
+      "duplicate_of_atom": 1713,
       "editorial_or_question": 59,
-      "historical_or_source_report": 295,
+      "historical_or_source_report": 315,
       "material_atom": 3,
       "nonmaterial_explanation": 1393
     }
@@ -7828,9 +7828,315 @@
       "target_atom_id": "human-ai-communication-persuasion-and-epistemic-security.mechanism.004"
     },
     {
+      "candidate_id": "human-ai-communication-persuasion-and-epistemic-security.prose.1619b4239a51",
+      "chapter_id": "human-ai-communication-persuasion-and-epistemic-security",
+      "source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:133",
+      "sentence": "Explanation aims to improve understanding; recommendation ranks options; negotiation advances stated interests; persuasion intentionally changes belief or choice.",
+      "cues": [
+        "improve"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `assistance-explanation-persuasion` proposition to the existing owner atom `human-ai-communication-persuasion-and-epistemic-security.core`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "human-ai-communication-persuasion-and-epistemic-security.core"
+    },
+    {
+      "candidate_id": "human-ai-communication-persuasion-and-epistemic-security.prose.67f80db5bc06",
+      "chapter_id": "human-ai-communication-persuasion-and-epistemic-security",
+      "source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:137",
+      "sentence": "**Non-claim.** Classification does not reveal the communicator’s true internal intent, make persuasion inherently illegitimate, or prove that an explanation is neutral.",
+      "cues": [
+        "prove"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `assistance-explanation-persuasion` proposition to the existing owner atom `human-ai-communication-persuasion-and-epistemic-security.problem.001`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "human-ai-communication-persuasion-and-epistemic-security.problem.001"
+    },
+    {
+      "candidate_id": "human-ai-communication-persuasion-and-epistemic-security.prose.a11a13290631",
+      "chapter_id": "human-ai-communication-persuasion-and-epistemic-security",
+      "source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:139",
+      "sentence": "**Source grounding.** `ext_anthropic_model_persuasiveness_2024` measures stated agreement change after one message and explicitly leaves real decisions open.",
+      "cues": [
+        "measures"
+      ],
+      "review_state": "historical_or_source_report",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 semantic review classified this as a bounded source-grounding statement for `assistance-explanation-persuasion`. It reports or limits external evidence and creates no local support-bearing atom or support-state movement.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "human-ai-communication-persuasion-and-epistemic-security.prose.5825c50249ea",
+      "chapter_id": "human-ai-communication-persuasion-and-epistemic-security",
+      "source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:145",
+      "sentence": "Authentic-looking provenance can launder a misleading frame, while excessive disclosure can overwhelm recipients and reduce comprehension.",
+      "cues": [
+        "reduce"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `epistemic-provenance` proposition to the existing owner atom `human-ai-communication-persuasion-and-epistemic-security.mechanism.003`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "human-ai-communication-persuasion-and-epistemic-security.mechanism.003"
+    },
+    {
+      "candidate_id": "human-ai-communication-persuasion-and-epistemic-security.prose.5d173bb8e532",
+      "chapter_id": "human-ai-communication-persuasion-and-epistemic-security",
+      "source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:147",
+      "sentence": "**Non-claim.** Provenance proves neither truth, balanced framing, audience understanding, benign intent, nor permission to amplify.",
+      "cues": [
+        "proves"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `epistemic-provenance` proposition to the existing owner atom `human-ai-communication-persuasion-and-epistemic-security.mechanism.003`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "human-ai-communication-persuasion-and-epistemic-security.mechanism.003"
+    },
+    {
+      "candidate_id": "human-ai-communication-persuasion-and-epistemic-security.prose.dae3856f6fe3",
+      "chapter_id": "human-ai-communication-persuasion-and-epistemic-security",
+      "source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:153",
+      "sentence": "High-risk decisions require slower presentation, alternatives, comprehension checks, human or independent review, and an appeal route; vulnerability information cannot itself become a persuasion feature.",
+      "cues": [
+        "cannot",
+        "require"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `audience-vulnerability` proposition to the existing owner atom `human-ai-communication-persuasion-and-epistemic-security.mechanism.002`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "human-ai-communication-persuasion-and-epistemic-security.mechanism.002"
+    },
+    {
+      "candidate_id": "human-ai-communication-persuasion-and-epistemic-security.prose.ff794574c844",
+      "chapter_id": "human-ai-communication-persuasion-and-epistemic-security",
+      "source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:157",
+      "sentence": "**Non-claim.** A vulnerability score does not define a person, establish incapacity, justify paternalism, or guarantee autonomous choice.",
+      "cues": [
+        "guarantee"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `audience-vulnerability` proposition to the existing owner atom `human-ai-communication-persuasion-and-epistemic-security.mechanism.002`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "human-ai-communication-persuasion-and-epistemic-security.mechanism.002"
+    },
+    {
+      "candidate_id": "human-ai-communication-persuasion-and-epistemic-security.prose.63b0732e69bc",
+      "chapter_id": "human-ai-communication-persuasion-and-epistemic-security",
+      "source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:159",
+      "sentence": "**Source grounding.** `ext_conversational_persuasion_gpt4_2025` shows that limited demographic personalization changed outcomes in one bounded debate condition.",
+      "cues": [
+        "shows"
+      ],
+      "review_state": "historical_or_source_report",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 semantic review classified this as a bounded source-grounding statement for `audience-vulnerability`. It reports or limits external evidence and creates no local support-bearing atom or support-state movement.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "human-ai-communication-persuasion-and-epistemic-security.prose.6919be0a2196",
+      "chapter_id": "human-ai-communication-persuasion-and-epistemic-security",
+      "source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:159",
+      "sentence": "Neither establishes general vulnerability effects or a mitigation.",
+      "cues": [
+        "establishes"
+      ],
+      "review_state": "historical_or_source_report",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 semantic review classified this as a bounded source-grounding statement for `audience-vulnerability`. It reports or limits external evidence and creates no local support-bearing atom or support-state movement.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "human-ai-communication-persuasion-and-epistemic-security.prose.f4d8a6a91b4e",
+      "chapter_id": "human-ai-communication-persuasion-and-epistemic-security",
+      "source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:163",
+      "sentence": "**Mechanism.** Separate data necessary to answer a request from data used to increase compliance.",
+      "cues": [
+        "increase",
+        "necessary"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `personalization-manipulation` proposition to the existing owner atom `human-ai-communication-persuasion-and-epistemic-security.mechanism.001`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "human-ai-communication-persuasion-and-epistemic-security.mechanism.001"
+    },
+    {
+      "candidate_id": "human-ai-communication-persuasion-and-epistemic-security.prose.65611b56d700",
+      "chapter_id": "human-ai-communication-persuasion-and-epistemic-security",
+      "source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:165",
+      "sentence": "A blanket ban on personalization can reduce accessibility or usefulness for legitimate user needs.",
+      "cues": [
+        "reduce"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `personalization-manipulation` proposition to the existing owner atom `human-ai-communication-persuasion-and-epistemic-security.invariant.002`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "human-ai-communication-persuasion-and-epistemic-security.invariant.002"
+    },
+    {
+      "candidate_id": "human-ai-communication-persuasion-and-epistemic-security.prose.8d040cc48dfa",
+      "chapter_id": "human-ai-communication-persuasion-and-epistemic-security",
+      "source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:177",
+      "sentence": "**Non-claim.** A recorded click does not prove informed consent, autonomy, legitimacy, comprehension, or absence of pressure.",
+      "cues": [
+        "prove"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `consent-contestability-exit` proposition to the existing owner atom `human-ai-communication-persuasion-and-epistemic-security.mechanism.002`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "human-ai-communication-persuasion-and-epistemic-security.mechanism.002"
+    },
+    {
+      "candidate_id": "human-ai-communication-persuasion-and-epistemic-security.prose.46d32f5a82f1",
+      "chapter_id": "human-ai-communication-persuasion-and-epistemic-security",
+      "source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:191",
+      "sentence": "Evaluation must preserve within-community disagreement and accessibility needs rather than selecting one supposedly representative speaker.",
+      "cues": [
+        "must"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `multilingual-cultural-validity` proposition to the existing owner atom `human-ai-communication-persuasion-and-epistemic-security.failure_mode.002`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "human-ai-communication-persuasion-and-epistemic-security.failure_mode.002"
+    },
+    {
+      "candidate_id": "human-ai-communication-persuasion-and-epistemic-security.prose.bbde080288f2",
+      "chapter_id": "human-ai-communication-persuasion-and-epistemic-security",
+      "source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:197",
+      "sentence": "Overloaded warnings can reduce attention to important facts, and excessive uncertainty language can create false balance or strategic ambiguity.",
+      "cues": [
+        "reduce"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `uncertainty-disclosure-identity` proposition to the existing owner atom `human-ai-communication-persuasion-and-epistemic-security.invariant.004`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "human-ai-communication-persuasion-and-epistemic-security.invariant.004"
+    },
+    {
+      "candidate_id": "human-ai-communication-persuasion-and-epistemic-security.prose.2375dea77f7a",
+      "chapter_id": "human-ai-communication-persuasion-and-epistemic-security",
+      "source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:201",
+      "sentence": "`ext_anthropic_model_persuasiveness_2024` and `ext_conversational_persuasion_gpt4_2025` measure influence in controlled settings but do not establish disclosure efficacy.",
+      "cues": [
+        "measure"
+      ],
+      "review_state": "historical_or_source_report",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 semantic review classified this as a bounded source-grounding statement for `uncertainty-disclosure-identity`. It reports or limits external evidence and creates no local support-bearing atom or support-state movement.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "human-ai-communication-persuasion-and-epistemic-security.prose.b2443ecadc28",
+      "chapter_id": "human-ai-communication-persuasion-and-epistemic-security",
+      "source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:209",
+      "sentence": "**Non-claim.** Better correction coverage does not erase the original effect, restore every recipient, prove causal welfare improvement, or establish general release readiness.",
+      "cues": [
+        "prove"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `intervention-outcomes-remedy` proposition to the existing owner atom `human-ai-communication-persuasion-and-epistemic-security.mechanism.005`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "human-ai-communication-persuasion-and-epistemic-security.mechanism.005"
+    },
+    {
       "candidate_id": "human-ai-communication-persuasion-and-epistemic-security.prose.1def349a2b43",
       "chapter_id": "human-ai-communication-persuasion-and-epistemic-security",
-      "source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:131",
+      "source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:215",
       "sentence": "The interface contract prevents convenient substitutions.",
       "cues": [
         "prevents"
@@ -7849,7 +8155,7 @@
     {
       "candidate_id": "human-ai-communication-persuasion-and-epistemic-security.prose.1fc98810b4ad",
       "chapter_id": "human-ai-communication-persuasion-and-epistemic-security",
-      "source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:134",
+      "source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:218",
       "sentence": "amplification; and a platform delivery receipt does not show comprehension.",
       "cues": [
         "show"
@@ -7868,7 +8174,7 @@
     {
       "candidate_id": "human-ai-communication-persuasion-and-epistemic-security.prose.55abae1d76bb",
       "chapter_id": "human-ai-communication-persuasion-and-epistemic-security",
-      "source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:149",
+      "source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:233",
       "sentence": "must retain the parent claim ceiling, sponsorship, audience restriction,",
       "cues": [
         "must"
@@ -7887,7 +8193,7 @@
     {
       "candidate_id": "human-ai-communication-persuasion-and-epistemic-security.prose.775134461f70",
       "chapter_id": "human-ai-communication-persuasion-and-epistemic-security",
-      "source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:152",
+      "source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:236",
       "sentence": "The requires claim status, speaker identity, audience, method, channel, amplification, expiry, and correction to remain joined.",
       "cues": [
         "requires"
@@ -7906,7 +8212,7 @@
     {
       "candidate_id": "human-ai-communication-persuasion-and-epistemic-security.prose.bd7acc7e71a5",
       "chapter_id": "human-ai-communication-persuasion-and-epistemic-security",
-      "source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:152",
+      "source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:236",
       "sentence": "Consent to receive is not consent to manipulation, and factuality cannot erase framing or distribution effects.",
       "cues": [
         "cannot"
@@ -7925,7 +8231,7 @@
     {
       "candidate_id": "human-ai-communication-persuasion-and-epistemic-security.prose.519ef25cac4c",
       "chapter_id": "human-ai-communication-persuasion-and-epistemic-security",
-      "source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:171",
+      "source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:255",
       "sentence": "Evaluation must measure exposure, comprehension, calibration, autonomy, correction reach, and heterogeneous effects rather than persuasive success alone.",
       "cues": [
         "measure",
@@ -7945,7 +8251,7 @@
     {
       "candidate_id": "human-ai-communication-persuasion-and-epistemic-security.prose.507d8be3d152",
       "chapter_id": "human-ai-communication-persuasion-and-epistemic-security",
-      "source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:171",
+      "source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:255",
       "sentence": "Positive controls include known misleading frames and channel-amplification faults; language and cultural transfer are separate tests, not assumed from English performance.",
       "cues": [
         "transfer"
@@ -7964,7 +8270,7 @@
     {
       "candidate_id": "human-ai-communication-persuasion-and-epistemic-security.prose.ad239a41c15b",
       "chapter_id": "human-ai-communication-persuasion-and-epistemic-security",
-      "source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:176",
+      "source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:260",
       "sentence": "conversation, consequential individual advice, and population-scale influence.",
       "cues": [
         "scale"
@@ -7983,7 +8289,7 @@
     {
       "candidate_id": "human-ai-communication-persuasion-and-epistemic-security.prose.92d0e560347e",
       "chapter_id": "human-ai-communication-persuasion-and-epistemic-security",
-      "source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:177",
+      "source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:261",
       "sentence": "Only the latter two require a complete packet, and higher scale progressively",
       "cues": [
         "require",
@@ -8003,7 +8309,7 @@
     {
       "candidate_id": "human-ai-communication-persuasion-and-epistemic-security.prose.202e8819f93a",
       "chapter_id": "human-ai-communication-persuasion-and-epistemic-security",
-      "source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:182",
+      "source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:266",
       "sentence": "It must not optimize vulnerable users or treat short-horizon self-report as durable welfare.",
       "cues": [
         "must"
@@ -8022,7 +8328,7 @@
     {
       "candidate_id": "human-ai-communication-persuasion-and-epistemic-security.prose.a85df25452f8",
       "chapter_id": "human-ai-communication-persuasion-and-epistemic-security",
-      "source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:188",
+      "source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:272",
       "sentence": "Argument exit requires preregistered communication studies with realistic audience and channel variation, matched message quality, persuasion and nonpersuasion controls, independent outcome measurement, multilingual and cultural challenge, amplification accounting, delayed correction, appeal, and privacy review.",
       "cues": [
         "requires"
@@ -8041,7 +8347,7 @@
     {
       "candidate_id": "human-ai-communication-persuasion-and-epistemic-security.prose.3bed148ea270",
       "chapter_id": "human-ai-communication-persuasion-and-epistemic-security",
-      "source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:188",
+      "source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:272",
       "sentence": "No bounded study establishes universal autonomy or legitimacy.",
       "cues": [
         "establishes"
@@ -8060,7 +8366,7 @@
     {
       "candidate_id": "human-ai-communication-persuasion-and-epistemic-security.prose.165c6afc5d96",
       "chapter_id": "human-ai-communication-persuasion-and-epistemic-security",
-      "source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:206",
+      "source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:290",
       "sentence": "No mature system should claim to compute a universal manipulation score.",
       "cues": [
         "should"
@@ -8079,7 +8385,7 @@
     {
       "candidate_id": "human-ai-communication-persuasion-and-epistemic-security.prose.6e99eb7b399c",
       "chapter_id": "human-ai-communication-persuasion-and-epistemic-security",
-      "source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:207",
+      "source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:291",
       "sentence": "Instead it should expose the relevant facts, deny clearly disallowed methods,",
       "cues": [
         "should"
@@ -8098,7 +8404,7 @@
     {
       "candidate_id": "human-ai-communication-persuasion-and-epistemic-security.prose.e1018c31d077",
       "chapter_id": "human-ai-communication-persuasion-and-epistemic-security",
-      "source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:224",
+      "source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:308",
       "sentence": "Planned formalization route: `lean:human-ai-communication-persuasion-and-epistemic-security.admission_boundary` covers only the finite admission record for human ai communication persuasion and epistemic security; it cannot establish whether human ai communication persuasion and epistemic security works safely or transfers.",
       "cues": [
         "cannot",
@@ -8118,7 +8424,7 @@
     {
       "candidate_id": "human-ai-communication-persuasion-and-epistemic-security.prose.d2702758bb8a",
       "chapter_id": "human-ai-communication-persuasion-and-epistemic-security",
-      "source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:279",
+      "source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:363",
       "sentence": "This decomposition prevents four common category errors: factuality becoming",
       "cues": [
         "prevents"
@@ -8137,7 +8443,7 @@
     {
       "candidate_id": "human-ai-communication-persuasion-and-epistemic-security.prose.37e6813b5a2b",
       "chapter_id": "human-ai-communication-persuasion-and-epistemic-security",
-      "source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:285",
+      "source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:369",
       "sentence": "It keeps claim evidence, audience, influence method, personalization, identity, channel, amplification, exposure, observed effects, correction, appeal, and expiry visible so fluent or factual language cannot acquire unlimited social authority.",
       "cues": [
         "cannot"
@@ -10175,9 +10481,370 @@
       "target_atom_id": "governed-objective-formation-value-learning-and-goal-integrity.mechanism.005"
     },
     {
-      "candidate_id": "governed-objective-formation-value-learning-and-goal-integrity.prose.6e4e80371048",
+      "candidate_id": "governed-objective-formation-value-learning-and-goal-integrity.prose.1fac982805fd",
+      "chapter_id": "governed-objective-formation-value-learning-and-goal-integrity",
+      "source": "chapters/governed-objective-formation-value-learning-and-goal-integrity.qmd:130",
+      "sentence": "A preference learner may update evidence about what a person wants; it cannot silently manufacture consent, aggregate legitimacy, or a persistent system goal.",
+      "cues": [
+        "cannot"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `preferences-values-authorization` proposition to the existing owner atom `governed-objective-formation-value-learning-and-goal-integrity.invariant.003`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "governed-objective-formation-value-learning-and-goal-integrity.invariant.003"
+    },
+    {
+      "candidate_id": "governed-objective-formation-value-learning-and-goal-integrity.prose.f3b5cbfab1ca",
+      "chapter_id": "governed-objective-formation-value-learning-and-goal-integrity",
+      "source": "chapters/governed-objective-formation-value-learning-and-goal-integrity.qmd:144",
+      "sentence": "**Non-claim.** Preserving plural values does not prove a fair aggregation rule, universal standing, moral truth, or political legitimacy.",
+      "cues": [
+        "prove"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `uncertainty-pluralism-standing` proposition to the existing owner atom `governed-objective-formation-value-learning-and-goal-integrity.invariant.004`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "governed-objective-formation-value-learning-and-goal-integrity.invariant.004"
+    },
+    {
+      "candidate_id": "governed-objective-formation-value-learning-and-goal-integrity.prose.df2b4d5637a3",
+      "chapter_id": "governed-objective-formation-value-learning-and-goal-integrity",
+      "source": "chapters/governed-objective-formation-value-learning-and-goal-integrity.qmd:146",
+      "sentence": "`ext_cooperative_inverse_rl_2016` shows why a system can remain uncertain about an objective in a cooperative formal setting, but its assumptions do not settle multi-party conflict or institutional authority.",
+      "cues": [
+        "shows"
+      ],
+      "review_state": "historical_or_source_report",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 semantic review classified this as a bounded source-grounding statement for `uncertainty-pluralism-standing`. It reports or limits external evidence and creates no local support-bearing atom or support-state movement.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "governed-objective-formation-value-learning-and-goal-integrity.prose.3472744412dd",
       "chapter_id": "governed-objective-formation-value-learning-and-goal-integrity",
       "source": "chapters/governed-objective-formation-value-learning-and-goal-integrity.qmd:150",
+      "sentence": "The consumer lease forbids preserving optionality only when the objective explicitly authorizes irreversible action; it carries interruption semantics, clarification triggers, anti-manipulation duties, and a test that the optimizer cannot make reauthorization harder in order to protect its current target.",
+      "cues": [
+        "cannot"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `corrigibility-lifecycle` proposition to the existing owner atom `governed-objective-formation-value-learning-and-goal-integrity.invariant.001`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "governed-objective-formation-value-learning-and-goal-integrity.invariant.001"
+    },
+    {
+      "candidate_id": "governed-objective-formation-value-learning-and-goal-integrity.prose.8f0d15416080",
+      "chapter_id": "governed-objective-formation-value-learning-and-goal-integrity",
+      "source": "chapters/governed-objective-formation-value-learning-and-goal-integrity.qmd:154",
+      "sentence": "**Non-claim.** A registry, shutdown response, or cooperative demeanor does not prove deep corrigibility, absence of deceptive behavior, or alignment across novel contexts.",
+      "cues": [
+        "prove"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `corrigibility-lifecycle` proposition to the existing owner atom `governed-objective-formation-value-learning-and-goal-integrity.mechanism.005`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "governed-objective-formation-value-learning-and-goal-integrity.mechanism.005"
+    },
+    {
+      "candidate_id": "governed-objective-formation-value-learning-and-goal-integrity.prose.1a9bfe9a29a7",
+      "chapter_id": "governed-objective-formation-value-learning-and-goal-integrity",
+      "source": "chapters/governed-objective-formation-value-learning-and-goal-integrity.qmd:160",
+      "sentence": "Drift opens a new adjudication transaction; it cannot be repaired by preserving the original text when the world, model capabilities, or meaning of its terms changed.",
+      "cues": [
+        "cannot"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `goal-drift-integrity` proposition to the existing owner atom `governed-objective-formation-value-learning-and-goal-integrity.mechanism.004`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "governed-objective-formation-value-learning-and-goal-integrity.mechanism.004"
+    },
+    {
+      "candidate_id": "governed-objective-formation-value-learning-and-goal-integrity.prose.cc8d84973332",
+      "chapter_id": "governed-objective-formation-value-learning-and-goal-integrity",
+      "source": "chapters/governed-objective-formation-value-learning-and-goal-integrity.qmd:162",
+      "sentence": "**Failure mode.** Byte-identical mission statements can acquire different consequences after an ontology migration or capability increase.",
+      "cues": [
+        "increase"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `goal-drift-integrity` proposition to the existing owner atom `governed-objective-formation-value-learning-and-goal-integrity.mechanism.004`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "governed-objective-formation-value-learning-and-goal-integrity.mechanism.004"
+    },
+    {
+      "candidate_id": "governed-objective-formation-value-learning-and-goal-integrity.prose.13af16b42587",
+      "chapter_id": "governed-objective-formation-value-learning-and-goal-integrity",
+      "source": "chapters/governed-objective-formation-value-learning-and-goal-integrity.qmd:164",
+      "sentence": "**Non-claim.** Detecting a changed representation or behavioral discrepancy does not identify the system’s true internal objective, prove deception, or establish that the original goal was correct.",
+      "cues": [
+        "prove"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `goal-drift-integrity` proposition to the existing owner atom `governed-objective-formation-value-learning-and-goal-integrity.mechanism.004`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "governed-objective-formation-value-learning-and-goal-integrity.mechanism.004"
+    },
+    {
+      "candidate_id": "governed-objective-formation-value-learning-and-goal-integrity.prose.9caaaf7f7221",
+      "chapter_id": "governed-objective-formation-value-learning-and-goal-integrity",
+      "source": "chapters/governed-objective-formation-value-learning-and-goal-integrity.qmd:166",
+      "sentence": "Neither source establishes that the proposed lineage checks detect internal goals.",
+      "cues": [
+        "establishes"
+      ],
+      "review_state": "historical_or_source_report",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 semantic review classified this as a bounded source-grounding statement for `goal-drift-integrity`. It reports or limits external evidence and creates no local support-bearing atom or support-state movement.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "governed-objective-formation-value-learning-and-goal-integrity.prose.a7e09281458d",
+      "chapter_id": "governed-objective-formation-value-learning-and-goal-integrity",
+      "source": "chapters/governed-objective-formation-value-learning-and-goal-integrity.qmd:170",
+      "sentence": "Evaluation includes interventions that improve the proxy while holding or worsening the target, evaluator swaps, hidden holdouts, reward-channel tampering, and capable wrong-goal controls.",
+      "cues": [
+        "improve"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `proxy-reward-evaluator-failure` proposition to the existing owner atom `governed-objective-formation-value-learning-and-goal-integrity.mechanism.004`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "governed-objective-formation-value-learning-and-goal-integrity.mechanism.004"
+    },
+    {
+      "candidate_id": "governed-objective-formation-value-learning-and-goal-integrity.prose.1d31fa652089",
+      "chapter_id": "governed-objective-formation-value-learning-and-goal-integrity",
+      "source": "chapters/governed-objective-formation-value-learning-and-goal-integrity.qmd:172",
+      "sentence": "**Failure mode.** Reward hacking can look like competence, evaluator mimicry can look like alignment, and weak models can look safe only because they cannot exploit the proxy.",
+      "cues": [
+        "cannot"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `proxy-reward-evaluator-failure` proposition to the existing owner atom `governed-objective-formation-value-learning-and-goal-integrity.mechanism.004`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "governed-objective-formation-value-learning-and-goal-integrity.mechanism.004"
+    },
+    {
+      "candidate_id": "governed-objective-formation-value-learning-and-goal-integrity.prose.fd7f73769c0a",
+      "chapter_id": "governed-objective-formation-value-learning-and-goal-integrity",
+      "source": "chapters/governed-objective-formation-value-learning-and-goal-integrity.qmd:172",
+      "sentence": "A badly designed challenge can produce the opposite false negative by testing an incapable implementation or an insensitive target measure.",
+      "cues": [
+        "measure"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `proxy-reward-evaluator-failure` proposition to the existing owner atom `governed-objective-formation-value-learning-and-goal-integrity.mechanism.004`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "governed-objective-formation-value-learning-and-goal-integrity.mechanism.004"
+    },
+    {
+      "candidate_id": "governed-objective-formation-value-learning-and-goal-integrity.prose.1869fe8d7fc6",
+      "chapter_id": "governed-objective-formation-value-learning-and-goal-integrity",
+      "source": "chapters/governed-objective-formation-value-learning-and-goal-integrity.qmd:174",
+      "sentence": "**Non-claim.** Surviving a finite proxy suite does not prove specification completeness, safe generalization, or absence of mesa-objectives.",
+      "cues": [
+        "prove"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `proxy-reward-evaluator-failure` proposition to the existing owner atom `governed-objective-formation-value-learning-and-goal-integrity.mechanism.004`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "governed-objective-formation-value-learning-and-goal-integrity.mechanism.004"
+    },
+    {
+      "candidate_id": "governed-objective-formation-value-learning-and-goal-integrity.prose.7ea74c34c0b0",
+      "chapter_id": "governed-objective-formation-value-learning-and-goal-integrity",
+      "source": "chapters/governed-objective-formation-value-learning-and-goal-integrity.qmd:180",
+      "sentence": "**Mechanism.** Require an authority graph for every objective transition.",
+      "cues": [
+        "require"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `objective-authority` proposition to the existing owner atom `governed-objective-formation-value-learning-and-goal-integrity.invariant.001`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "governed-objective-formation-value-learning-and-goal-integrity.invariant.001"
+    },
+    {
+      "candidate_id": "governed-objective-formation-value-learning-and-goal-integrity.prose.dc6452263af5",
+      "chapter_id": "governed-objective-formation-value-learning-and-goal-integrity",
+      "source": "chapters/governed-objective-formation-value-learning-and-goal-integrity.qmd:180",
+      "sentence": "Models may propose interpretations and forecast consequences, but the optimized system, its reward model, and its evaluator cannot ratify their own durable authority.",
+      "cues": [
+        "cannot"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `objective-authority` proposition to the existing owner atom `governed-objective-formation-value-learning-and-goal-integrity.invariant.001`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "governed-objective-formation-value-learning-and-goal-integrity.invariant.001"
+    },
+    {
+      "candidate_id": "governed-objective-formation-value-learning-and-goal-integrity.prose.442ab7e2d8f9",
+      "chapter_id": "governed-objective-formation-value-learning-and-goal-integrity",
+      "source": "chapters/governed-objective-formation-value-learning-and-goal-integrity.qmd:190",
+      "sentence": "Its disposition states which reasons controlled, what dissent remains, when the ruling expires, and which later evidence requires reopening.",
+      "cues": [
+        "requires"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `conflict-adjudication` proposition to the existing owner atom `governed-objective-formation-value-learning-and-goal-integrity.mechanism.003`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "governed-objective-formation-value-learning-and-goal-integrity.mechanism.003"
+    },
+    {
+      "candidate_id": "governed-objective-formation-value-learning-and-goal-integrity.prose.da84e9e85197",
+      "chapter_id": "governed-objective-formation-value-learning-and-goal-integrity",
+      "source": "chapters/governed-objective-formation-value-learning-and-goal-integrity.qmd:194",
+      "sentence": "**Non-claim.** A transparent adjudication process does not prove that the resulting compromise is just, optimal, culturally universal, or accepted by every affected person.",
+      "cues": [
+        "prove"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `conflict-adjudication` proposition to the existing owner atom `governed-objective-formation-value-learning-and-goal-integrity.mechanism.003`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "governed-objective-formation-value-learning-and-goal-integrity.mechanism.003"
+    },
+    {
+      "candidate_id": "governed-objective-formation-value-learning-and-goal-integrity.prose.6acc5a02fcca",
+      "chapter_id": "governed-objective-formation-value-learning-and-goal-integrity",
+      "source": "chapters/governed-objective-formation-value-learning-and-goal-integrity.qmd:204",
+      "sentence": "**Non-claim.** Administrative closure does not prove behavioral forgetting, deletion of learned influence, privacy erasure, or termination of every external effect.",
+      "cues": [
+        "prove"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `update-rollback-retirement` proposition to the existing owner atom `governed-objective-formation-value-learning-and-goal-integrity.mechanism.005`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "governed-objective-formation-value-learning-and-goal-integrity.mechanism.005"
+    },
+    {
+      "candidate_id": "governed-objective-formation-value-learning-and-goal-integrity.prose.c101e8421b97",
+      "chapter_id": "governed-objective-formation-value-learning-and-goal-integrity",
+      "source": "chapters/governed-objective-formation-value-learning-and-goal-integrity.qmd:206",
+      "sentence": "`alignment_field` grounds corrigible replacement as a normative requirement; none proves complete retirement in this stack.",
+      "cues": [
+        "proves"
+      ],
+      "review_state": "historical_or_source_report",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 semantic review classified this as a bounded source-grounding statement for `update-rollback-retirement`. It reports or limits external evidence and creates no local support-bearing atom or support-state movement.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "governed-objective-formation-value-learning-and-goal-integrity.prose.6e4e80371048",
+      "chapter_id": "governed-objective-formation-value-learning-and-goal-integrity",
+      "source": "chapters/governed-objective-formation-value-learning-and-goal-integrity.qmd:232",
       "sentence": "Under the , the optimized system cannot author or ratify its governing target, proxy success cannot inherit target support, dissent cannot vanish through aggregation, and material semantic or ontology change invalidates descendants.",
       "cues": [
         "cannot"
@@ -10196,7 +10863,7 @@
     {
       "candidate_id": "governed-objective-formation-value-learning-and-goal-integrity.prose.9a4ed7b5e92a",
       "chapter_id": "governed-objective-formation-value-learning-and-goal-integrity",
-      "source": "chapters/governed-objective-formation-value-learning-and-goal-integrity.qmd:160",
+      "source": "chapters/governed-objective-formation-value-learning-and-goal-integrity.qmd:242",
       "sentence": "Evaluations must include **capable wrong-goal controls**: agents that optimize a",
       "cues": [
         "must"
@@ -10215,7 +10882,7 @@
     {
       "candidate_id": "governed-objective-formation-value-learning-and-goal-integrity.prose.2b64eb2969ab",
       "chapter_id": "governed-objective-formation-value-learning-and-goal-integrity",
-      "source": "chapters/governed-objective-formation-value-learning-and-goal-integrity.qmd:162",
+      "source": "chapters/governed-objective-formation-value-learning-and-goal-integrity.qmd:244",
       "sentence": "Otherwise a weak policy may look aligned only because it cannot",
       "cues": [
         "cannot"
@@ -10234,7 +10901,7 @@
     {
       "candidate_id": "governed-objective-formation-value-learning-and-goal-integrity.prose.4ec37a9c1043",
       "chapter_id": "governed-objective-formation-value-learning-and-goal-integrity",
-      "source": "chapters/governed-objective-formation-value-learning-and-goal-integrity.qmd:169",
+      "source": "chapters/governed-objective-formation-value-learning-and-goal-integrity.qmd:251",
       "sentence": "Evaluation must distinguish a wrong target, a bad proxy, a poisoned preference estimate, evaluator capture, ontology drift, and optimization failure.",
       "cues": [
         "must"
@@ -10253,7 +10920,7 @@
     {
       "candidate_id": "governed-objective-formation-value-learning-and-goal-integrity.prose.4b66d73a65d2",
       "chapter_id": "governed-objective-formation-value-learning-and-goal-integrity",
-      "source": "chapters/governed-objective-formation-value-learning-and-goal-integrity.qmd:169",
+      "source": "chapters/governed-objective-formation-value-learning-and-goal-integrity.qmd:251",
       "sentence": "Known latent targets and deliberately misspecified proxies provide positive controls; a weak learner cannot be used to dismiss the governance mechanism.",
       "cues": [
         "cannot"
@@ -10272,7 +10939,7 @@
     {
       "candidate_id": "governed-objective-formation-value-learning-and-goal-integrity.prose.f0497196278d",
       "chapter_id": "governed-objective-formation-value-learning-and-goal-integrity",
-      "source": "chapters/governed-objective-formation-value-learning-and-goal-integrity.qmd:173",
+      "source": "chapters/governed-objective-formation-value-learning-and-goal-integrity.qmd:255",
       "sentence": "The registry should expose a small query API: resolve the current lease for a",
       "cues": [
         "should"
@@ -10291,7 +10958,7 @@
     {
       "candidate_id": "governed-objective-formation-value-learning-and-goal-integrity.prose.0395632cd4b9",
       "chapter_id": "governed-objective-formation-value-learning-and-goal-integrity",
-      "source": "chapters/governed-objective-formation-value-learning-and-goal-integrity.qmd:185",
+      "source": "chapters/governed-objective-formation-value-learning-and-goal-integrity.qmd:267",
       "sentence": "Argument exit requires campaigns where target properties and proxy interventions are independently observable, preference uncertainty and dissent are preserved, evaluator and ontology swaps are applied, descendants are invalidated, and retirement is tested across policies, planners, caches, and derived goals.",
       "cues": [
         "requires"
@@ -10310,7 +10977,7 @@
     {
       "candidate_id": "governed-objective-formation-value-learning-and-goal-integrity.prose.37269d17f8e1",
       "chapter_id": "governed-objective-formation-value-learning-and-goal-integrity",
-      "source": "chapters/governed-objective-formation-value-learning-and-goal-integrity.qmd:196",
+      "source": "chapters/governed-objective-formation-value-learning-and-goal-integrity.qmd:278",
       "sentence": "Research must establish whether this machinery improves behavior under",
       "cues": [
         "improves",
@@ -10330,7 +10997,7 @@
     {
       "candidate_id": "governed-objective-formation-value-learning-and-goal-integrity.prose.8a9534915c9d",
       "chapter_id": "governed-objective-formation-value-learning-and-goal-integrity",
-      "source": "chapters/governed-objective-formation-value-learning-and-goal-integrity.qmd:212",
+      "source": "chapters/governed-objective-formation-value-learning-and-goal-integrity.qmd:294",
       "sentence": "It enables capable optimization without allowing the optimizer to become the constitution, while preserving the unresolved normative and political questions that technical machinery cannot settle.",
       "cues": [
         "cannot"
@@ -10349,7 +11016,7 @@
     {
       "candidate_id": "governed-objective-formation-value-learning-and-goal-integrity.prose.d5c40c19e02a",
       "chapter_id": "governed-objective-formation-value-learning-and-goal-integrity",
-      "source": "chapters/governed-objective-formation-value-learning-and-goal-integrity.qmd:214",
+      "source": "chapters/governed-objective-formation-value-learning-and-goal-integrity.qmd:296",
       "sentence": "Goal-service support should stay at argument until the registry survives capable proxy exploitation, semantic change, reauthorization, and descendant retirement under the frozen comparisons.",
       "cues": [
         "should"
@@ -10368,7 +11035,7 @@
     {
       "candidate_id": "governed-objective-formation-value-learning-and-goal-integrity.prose.55b927a3a3f8",
       "chapter_id": "governed-objective-formation-value-learning-and-goal-integrity",
-      "source": "chapters/governed-objective-formation-value-learning-and-goal-integrity.qmd:225",
+      "source": "chapters/governed-objective-formation-value-learning-and-goal-integrity.qmd:307",
       "sentence": "Planned formalization route: `lean:governed-objective-formation-value-learning-and-goal-integrity.admission_boundary` covers only the finite admission record for governed objective formation value learning and goal integrity; it cannot establish whether governed objective formation value learning and goal integrity works safely or transfers.",
       "cues": [
         "cannot",
@@ -10388,7 +11055,7 @@
     {
       "candidate_id": "governed-objective-formation-value-learning-and-goal-integrity.prose.47ac629372e5",
       "chapter_id": "governed-objective-formation-value-learning-and-goal-integrity",
-      "source": "chapters/governed-objective-formation-value-learning-and-goal-integrity.qmd:247",
+      "source": "chapters/governed-objective-formation-value-learning-and-goal-integrity.qmd:329",
       "sentence": "consequential, so they require stronger causal challenge, narrower leases, and",
       "cues": [
         "require"
@@ -10407,7 +11074,7 @@
     {
       "candidate_id": "governed-objective-formation-value-learning-and-goal-integrity.prose.5a964e07e1aa",
       "chapter_id": "governed-objective-formation-value-learning-and-goal-integrity",
-      "source": "chapters/governed-objective-formation-value-learning-and-goal-integrity.qmd:251",
+      "source": "chapters/governed-objective-formation-value-learning-and-goal-integrity.qmd:333",
       "sentence": "It keeps authorized purpose, affected parties, contested evidence, target property, proxy, reward, evaluator, consumer, ontology, expiry, drift, and retirement distinct so optimization cannot turn a convenient signal into permanent authority.",
       "cues": [
         "cannot"
@@ -10426,7 +11093,7 @@
     {
       "candidate_id": "governed-objective-formation-value-learning-and-goal-integrity.prose.123ada7acd3e",
       "chapter_id": "governed-objective-formation-value-learning-and-goal-integrity",
-      "source": "chapters/governed-objective-formation-value-learning-and-goal-integrity.qmd:258",
+      "source": "chapters/governed-objective-formation-value-learning-and-goal-integrity.qmd:340",
       "sentence": "jurisdiction; institutions must establish who may authorize, contest, enforce,",
       "cues": [
         "must"
@@ -19701,9 +20368,334 @@
       "target_atom_id": null
     },
     {
+      "candidate_id": "autonomous-replication-proliferation-and-containment.prose.e2e05eeb43af",
+      "chapter_id": "autonomous-replication-proliferation-and-containment",
+      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:190",
+      "sentence": "A dependency graph shows which missing links block an end-to-end chain and which new tool or scaffold could close them, preventing both component inflation and toy-failure reassurance.",
+      "cues": [
+        "shows"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `replication-ladder` proposition to the existing owner atom `autonomous-replication-proliferation-and-containment.mechanism.003`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "autonomous-replication-proliferation-and-containment.mechanism.003"
+    },
+    {
+      "candidate_id": "autonomous-replication-proliferation-and-containment.prose.3c4525b6c5d9",
+      "chapter_id": "autonomous-replication-proliferation-and-containment",
+      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:200",
+      "sentence": "**Mechanism.** Test resource acquisition only through synthetic money, provider APIs, quotas, markets, and identities whose tokens cannot purchase real goods or services.",
+      "cues": [
+        "cannot"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `resource-acquisition` proposition to the existing owner atom `autonomous-replication-proliferation-and-containment.core`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "autonomous-replication-proliferation-and-containment.core"
+    },
+    {
+      "candidate_id": "autonomous-replication-proliferation-and-containment.prose.02b9d05382f9",
+      "chapter_id": "autonomous-replication-proliferation-and-containment",
+      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:210",
+      "sentence": "A census records active, stopped, unreachable, destroyed, and unresolved descendants, while signed heartbeats or external observations prevent self-report from being the sole population measure.",
+      "cues": [
+        "measure",
+        "prevent"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `descendant-lineage` proposition to the existing owner atom `autonomous-replication-proliferation-and-containment.mechanism.002`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "autonomous-replication-proliferation-and-containment.mechanism.002"
+    },
+    {
+      "candidate_id": "autonomous-replication-proliferation-and-containment.prose.c292780f5f66",
+      "chapter_id": "autonomous-replication-proliferation-and-containment",
+      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:214",
+      "sentence": "**Non-claim.** Complete known lineage does not prove that no hidden copy exists, that descendants remain behaviorally equivalent, or that their artifacts are safe.",
+      "cues": [
+        "prove"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `descendant-lineage` proposition to the existing owner atom `autonomous-replication-proliferation-and-containment.mechanism.002`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "autonomous-replication-proliferation-and-containment.mechanism.002"
+    },
+    {
+      "candidate_id": "autonomous-replication-proliferation-and-containment.prose.44bf7458a896",
+      "chapter_id": "autonomous-replication-proliferation-and-containment",
+      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:216",
+      "sentence": "`ext_replibench_2025` motivates separating weight transfer, deployment, and persistence.",
+      "cues": [
+        "transfer"
+      ],
+      "review_state": "historical_or_source_report",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 semantic review classified this as a bounded source-grounding statement for `descendant-lineage`. It reports or limits external evidence and creates no local support-bearing atom or support-state movement.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "autonomous-replication-proliferation-and-containment.prose.f82546e9e3b4",
+      "chapter_id": "autonomous-replication-proliferation-and-containment",
+      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:216",
+      "sentence": "Neither source demonstrates complete descendant discovery.",
+      "cues": [
+        "demonstrates"
+      ],
+      "review_state": "historical_or_source_report",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 semantic review classified this as a bounded source-grounding statement for `descendant-lineage`. It reports or limits external evidence and creates no local support-bearing atom or support-state movement.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "autonomous-replication-proliferation-and-containment.prose.669e030448d9",
+      "chapter_id": "autonomous-replication-proliferation-and-containment",
+      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:222",
+      "sentence": "If the test denies every recoverable action, it measures wrapper brittleness rather than governed replication.",
+      "cues": [
+        "measures"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `authorization-noninheritance` proposition to the existing owner atom `autonomous-replication-proliferation-and-containment.mechanism.001`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "autonomous-replication-proliferation-and-containment.mechanism.001"
+    },
+    {
+      "candidate_id": "autonomous-replication-proliferation-and-containment.prose.2d1dcae91ce7",
+      "chapter_id": "autonomous-replication-proliferation-and-containment",
+      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:232",
+      "sentence": "A benchmark can also overstate risk by assuming credentials, money, or provider access that the system cannot obtain.",
+      "cues": [
+        "cannot"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `proliferation-pathways` proposition to the existing owner atom `autonomous-replication-proliferation-and-containment.problem.001`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "autonomous-replication-proliferation-and-containment.problem.001"
+    },
+    {
+      "candidate_id": "autonomous-replication-proliferation-and-containment.prose.99b3af35345c",
+      "chapter_id": "autonomous-replication-proliferation-and-containment",
+      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:234",
+      "sentence": "**Non-claim.** Enumerating pathways does not show that a model will pursue them, that a path is feasible in the real world, or that all future routes are covered.",
+      "cues": [
+        "show"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `proliferation-pathways` proposition to the existing owner atom `autonomous-replication-proliferation-and-containment.core`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "autonomous-replication-proliferation-and-containment.core"
+    },
+    {
+      "candidate_id": "autonomous-replication-proliferation-and-containment.prose.bbf8b1f1187f",
+      "chapter_id": "autonomous-replication-proliferation-and-containment",
+      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:236",
+      "sentence": "Neither establishes propensity, real-provider feasibility, or a complete proliferation graph.",
+      "cues": [
+        "establishes"
+      ],
+      "review_state": "historical_or_source_report",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 semantic review classified this as a bounded source-grounding statement for `proliferation-pathways`. It reports or limits external evidence and creates no local support-bearing atom or support-state movement.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "autonomous-replication-proliferation-and-containment.prose.c1b90ac2ed2d",
+      "chapter_id": "autonomous-replication-proliferation-and-containment",
+      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:240",
+      "sentence": "Containment earns its added hazard and cost only if it answers a material threshold question that component tests cannot.",
+      "cues": [
+        "cannot"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `containment-competing-mechanism` proposition to the existing owner atom `autonomous-replication-proliferation-and-containment.minimum.001`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "autonomous-replication-proliferation-and-containment.minimum.001"
+    },
+    {
+      "candidate_id": "autonomous-replication-proliferation-and-containment.prose.fcb58352640e",
+      "chapter_id": "autonomous-replication-proliferation-and-containment",
+      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:240",
+      "sentence": "Positive controls prove the environment permits intended synthetic capabilities; escape canaries, independent network observation, resource accounting, and kill paths test whether the boundary—not merely the agent’s cooperation—prevents prohibited effects.",
+      "cues": [
+        "prevents",
+        "prove"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `containment-competing-mechanism` proposition to the existing owner atom `autonomous-replication-proliferation-and-containment.minimum.001`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "autonomous-replication-proliferation-and-containment.minimum.001"
+    },
+    {
+      "candidate_id": "autonomous-replication-proliferation-and-containment.prose.64cb7fbd4f88",
+      "chapter_id": "autonomous-replication-proliferation-and-containment",
+      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:244",
+      "sentence": "**Non-claim.** No finite synthetic campaign proves containment against all models, exploits, insiders, providers, or physical-world routes.",
+      "cues": [
+        "proves"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `containment-competing-mechanism` proposition to the existing owner atom `autonomous-replication-proliferation-and-containment.minimum.001`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "autonomous-replication-proliferation-and-containment.minimum.001"
+    },
+    {
+      "candidate_id": "autonomous-replication-proliferation-and-containment.prose.832f282136ed",
+      "chapter_id": "autonomous-replication-proliferation-and-containment",
+      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:250",
+      "sentence": "Closure requires a population denominator and lists unreachable copies or effects as residuals; an API success or silent heartbeat is insufficient.",
+      "cues": [
+        "requires"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `shutdown-recall-closure` proposition to the existing owner atom `autonomous-replication-proliferation-and-containment.mechanism.004`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "autonomous-replication-proliferation-and-containment.mechanism.004"
+    },
+    {
+      "candidate_id": "autonomous-replication-proliferation-and-containment.prose.038920367aa2",
+      "chapter_id": "autonomous-replication-proliferation-and-containment",
+      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:254",
+      "sentence": "**Non-claim.** Successful synthetic recall does not prove real-world shutdown, reverse external effects, establish artifact deletion, or eliminate every hidden descendant.",
+      "cues": [
+        "prove"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `shutdown-recall-closure` proposition to the existing owner atom `autonomous-replication-proliferation-and-containment.mechanism.004`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "autonomous-replication-proliferation-and-containment.mechanism.004"
+    },
+    {
+      "candidate_id": "autonomous-replication-proliferation-and-containment.prose.d3cd2f4ab517",
+      "chapter_id": "autonomous-replication-proliferation-and-containment",
+      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:260",
+      "sentence": "**Mechanism.** Before interpreting a negative replication result, demonstrate that the tested model can use the tools, understand the synthetic provider, recover from benign faults, and complete matched nonhazardous workflows.",
+      "cues": [
+        "demonstrate"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `elicitation-evaluator-competence` proposition to the existing owner atom `autonomous-replication-proliferation-and-containment.minimum.001`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "autonomous-replication-proliferation-and-containment.minimum.001"
+    },
+    {
+      "candidate_id": "autonomous-replication-proliferation-and-containment.prose.6500c0e7eea6",
+      "chapter_id": "autonomous-replication-proliferation-and-containment",
+      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:264",
+      "sentence": "**Non-claim.** Competent elicitation does not prove worst-case capability, propensity to replicate, real-world access, or safety beyond the frozen envelope.",
+      "cues": [
+        "prove"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `elicitation-evaluator-competence` proposition to the existing owner atom `autonomous-replication-proliferation-and-containment.minimum.001`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "autonomous-replication-proliferation-and-containment.minimum.001"
+    },
+    {
       "candidate_id": "autonomous-replication-proliferation-and-containment.prose.ca60a25165f5",
       "chapter_id": "autonomous-replication-proliferation-and-containment",
-      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:189",
+      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:271",
       "sentence": "may expose a synthetic provisioning call while the Security Kernel guarantees",
       "cues": [
         "guarantees"
@@ -19722,7 +20714,7 @@
     {
       "candidate_id": "autonomous-replication-proliferation-and-containment.prose.49ed3a781930",
       "chapter_id": "autonomous-replication-proliferation-and-containment",
-      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:190",
+      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:272",
       "sentence": "that the token cannot reach a real provider.",
       "cues": [
         "cannot"
@@ -19741,7 +20733,7 @@
     {
       "candidate_id": "autonomous-replication-proliferation-and-containment.prose.d29b554545c5",
       "chapter_id": "autonomous-replication-proliferation-and-containment",
-      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:207",
+      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:289",
       "sentence": "Parent and descendant state must remain distinguishable even when code and",
       "cues": [
         "must"
@@ -19760,7 +20752,7 @@
     {
       "candidate_id": "autonomous-replication-proliferation-and-containment.prose.54e1249e7b27",
       "chapter_id": "autonomous-replication-proliferation-and-containment",
-      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:232",
+      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:314",
       "sentence": "A competent evaluation must contain both a deliberately capable component path and an instrumented containment failure.",
       "cues": [
         "must"
@@ -19779,7 +20771,7 @@
     {
       "candidate_id": "autonomous-replication-proliferation-and-containment.prose.972fe2b77d10",
       "chapter_id": "autonomous-replication-proliferation-and-containment",
-      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:232",
+      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:314",
       "sentence": "It records human assistance, retries, partial descendants, resource and credential attempts, termination latency, recall coverage, and every residual; a toy agent that cannot copy proves neither safety nor impossibility.",
       "cues": [
         "cannot",
@@ -19799,7 +20791,7 @@
     {
       "candidate_id": "autonomous-replication-proliferation-and-containment.prose.b48cbf14ac93",
       "chapter_id": "autonomous-replication-proliferation-and-containment",
-      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:236",
+      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:318",
       "sentence": "The environment should contain both an achievable benign chain and a seeded",
       "cues": [
         "should"
@@ -19818,7 +20810,7 @@
     {
       "candidate_id": "autonomous-replication-proliferation-and-containment.prose.7f475d2c895c",
       "chapter_id": "autonomous-replication-proliferation-and-containment",
-      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:237",
+      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:319",
       "sentence": "The first proves that the agent, tools, fake provider, and",
       "cues": [
         "proves"
@@ -19837,7 +20829,7 @@
     {
       "candidate_id": "autonomous-replication-proliferation-and-containment.prose.ff4dacc12be1",
       "chapter_id": "autonomous-replication-proliferation-and-containment",
-      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:238",
+      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:320",
       "sentence": "scoring path can complete the intended workflow; the second proves that",
       "cues": [
         "proves"
@@ -19856,7 +20848,7 @@
     {
       "candidate_id": "autonomous-replication-proliferation-and-containment.prose.081d7662e880",
       "chapter_id": "autonomous-replication-proliferation-and-containment",
-      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:250",
+      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:332",
       "sentence": "Argument exit requires a prospectively frozen replication ladder and end-to-end containment campaign with capable positive controls, varied environments, explicit human assistance, independent descendant observation, shutdown and recall challenges, complete resource accounting, and adversarial escape probes.",
       "cues": [
         "requires"
@@ -19875,7 +20867,7 @@
     {
       "candidate_id": "autonomous-replication-proliferation-and-containment.prose.14b205c5b331",
       "chapter_id": "autonomous-replication-proliferation-and-containment",
-      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:272",
+      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:354",
       "sentence": "safe environment cannot bound descendants or effects, the correct research",
       "cues": [
         "cannot"
@@ -19894,7 +20886,7 @@
     {
       "candidate_id": "autonomous-replication-proliferation-and-containment.prose.c870701c9fd1",
       "chapter_id": "autonomous-replication-proliferation-and-containment",
-      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:278",
+      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:360",
       "sentence": "This remains a research target, and no current result establishes complete lineage control.",
       "cues": [
         "establishes"
@@ -19913,7 +20905,7 @@
     {
       "candidate_id": "autonomous-replication-proliferation-and-containment.prose.6c4a32c49915",
       "chapter_id": "autonomous-replication-proliferation-and-containment",
-      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:278",
+      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:360",
       "sentence": "The claim stays at argument until realistic end-to-end attempts demonstrate prevention, detection, shutdown, recall, and residual closure under adaptive assistance.",
       "cues": [
         "demonstrate"
@@ -19932,7 +20924,7 @@
     {
       "candidate_id": "autonomous-replication-proliferation-and-containment.prose.7dbf823163b7",
       "chapter_id": "autonomous-replication-proliferation-and-containment",
-      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:289",
+      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:371",
       "sentence": "Planned formalization route: `lean:autonomous-replication-proliferation-and-containment.admission_boundary` covers only the finite admission record for autonomous replication proliferation and containment; it cannot establish whether autonomous replication proliferation and containment works safely or transfers.",
       "cues": [
         "cannot",
@@ -19952,7 +20944,7 @@
     {
       "candidate_id": "autonomous-replication-proliferation-and-containment.prose.6272ae90aaf7",
       "chapter_id": "autonomous-replication-proliferation-and-containment",
-      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:301",
+      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:383",
       "sentence": "identity and credentials, transfer or reconstruct artifacts, provision and",
       "cues": [
         "transfer"
@@ -19971,7 +20963,7 @@
     {
       "candidate_id": "autonomous-replication-proliferation-and-containment.prose.5269426f2a88",
       "chapter_id": "autonomous-replication-proliferation-and-containment",
-      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:308",
+      "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:390",
       "sentence": "and closure requires census, revocation, resource reclamation, persistence",
       "cues": [
         "requires"
@@ -24121,9 +25113,180 @@
       "target_atom_id": "durable-semantic-memory-and-knowledge-lattices.mechanism.001"
     },
     {
+      "candidate_id": "durable-semantic-memory-and-knowledge-lattices.prose.e396b2346f9a",
+      "chapter_id": "durable-semantic-memory-and-knowledge-lattices",
+      "source": "chapters/durable-semantic-memory-and-knowledge-lattices.qmd:148",
+      "sentence": "No source establishes local identity accuracy or truth.",
+      "cues": [
+        "establishes"
+      ],
+      "review_state": "historical_or_source_report",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 semantic review classified this as a bounded source-grounding statement for `semantic-identity-provenance`. It reports or limits external evidence and creates no local support-bearing atom or support-state movement.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "durable-semantic-memory-and-knowledge-lattices.prose.fabcbc8af779",
+      "chapter_id": "durable-semantic-memory-and-knowledge-lattices",
+      "source": "chapters/durable-semantic-memory-and-knowledge-lattices.qmd:152",
+      "sentence": "A high retrieval score or model confidence cannot grant write authority.",
+      "cues": [
+        "cannot"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `write-admission` proposition to the existing owner atom `durable-semantic-memory-and-knowledge-lattices.mechanism.003`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "durable-semantic-memory-and-knowledge-lattices.mechanism.003"
+    },
+    {
+      "candidate_id": "durable-semantic-memory-and-knowledge-lattices.prose.cdfe0453f49e",
+      "chapter_id": "durable-semantic-memory-and-knowledge-lattices",
+      "source": "chapters/durable-semantic-memory-and-knowledge-lattices.qmd:152",
+      "sentence": "Rejected writes and unresolved collisions remain recorded so repeated proposals cannot bypass the original reason for denial.",
+      "cues": [
+        "cannot"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `write-admission` proposition to the existing owner atom `durable-semantic-memory-and-knowledge-lattices.mechanism.003`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "durable-semantic-memory-and-knowledge-lattices.mechanism.003"
+    },
+    {
+      "candidate_id": "durable-semantic-memory-and-knowledge-lattices.prose.bdba74d06507",
+      "chapter_id": "durable-semantic-memory-and-knowledge-lattices",
+      "source": "chapters/durable-semantic-memory-and-knowledge-lattices.qmd:176",
+      "sentence": "**Non-claim.** Preserving disagreement does not decide which assertion is true, guarantee calibrated belief revision, or make a contradiction resolvable with available evidence.",
+      "cues": [
+        "guarantee"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `contradiction-belief-revision` proposition to the existing owner atom `durable-semantic-memory-and-knowledge-lattices.invariant.002`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "durable-semantic-memory-and-knowledge-lattices.invariant.002"
+    },
+    {
+      "candidate_id": "durable-semantic-memory-and-knowledge-lattices.prose.a44fe207eba1",
+      "chapter_id": "durable-semantic-memory-and-knowledge-lattices",
+      "source": "chapters/durable-semantic-memory-and-knowledge-lattices.qmd:186",
+      "sentence": "**Non-claim.** Retrieval recall, answer accuracy, graph connectivity, or context length does not prove durable memory truth, causal use, safe authority, or general task adequacy.",
+      "cues": [
+        "prove"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `retrieval-context-assembly` proposition to the existing owner atom `durable-semantic-memory-and-knowledge-lattices.mechanism.004`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "durable-semantic-memory-and-knowledge-lattices.mechanism.004"
+    },
+    {
+      "candidate_id": "durable-semantic-memory-and-knowledge-lattices.prose.8f3c804aa9dd",
+      "chapter_id": "durable-semantic-memory-and-knowledge-lattices",
+      "source": "chapters/durable-semantic-memory-and-knowledge-lattices.qmd:196",
+      "sentence": "**Non-claim.** Retrieval suppression does not prove storage deletion, model unlearning, privacy repair, causal influence removal, or irrecoverability from every descendant.",
+      "cues": [
+        "prove"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `retention-forgetting-deletion` proposition to the existing owner atom `durable-semantic-memory-and-knowledge-lattices.mechanism.005`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "durable-semantic-memory-and-knowledge-lattices.mechanism.005"
+    },
+    {
+      "candidate_id": "durable-semantic-memory-and-knowledge-lattices.prose.73eeff473c86",
+      "chapter_id": "durable-semantic-memory-and-knowledge-lattices",
+      "source": "chapters/durable-semantic-memory-and-knowledge-lattices.qmd:206",
+      "sentence": "**Non-claim.** Passing a finite poisoning suite does not prove adversarial robustness, source honesty, or safe operation against novel attacks.",
+      "cues": [
+        "prove"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `poisoning-taint-quarantine` proposition to the existing owner atom `durable-semantic-memory-and-knowledge-lattices.failure_mode.005`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "durable-semantic-memory-and-knowledge-lattices.failure_mode.005"
+    },
+    {
+      "candidate_id": "durable-semantic-memory-and-knowledge-lattices.prose.5e1685825290",
+      "chapter_id": "durable-semantic-memory-and-knowledge-lattices",
+      "source": "chapters/durable-semantic-memory-and-knowledge-lattices.qmd:212",
+      "sentence": "Restart replay must either reproduce the governed view or enumerate every nondeterministic and lossy difference.",
+      "cues": [
+        "must"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `lineage-rollback-repair` proposition to the existing owner atom `durable-semantic-memory-and-knowledge-lattices.invariant.005`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "durable-semantic-memory-and-knowledge-lattices.invariant.005"
+    },
+    {
+      "candidate_id": "durable-semantic-memory-and-knowledge-lattices.prose.1cb49f6548b2",
+      "chapter_id": "durable-semantic-memory-and-knowledge-lattices",
+      "source": "chapters/durable-semantic-memory-and-knowledge-lattices.qmd:216",
+      "sentence": "**Non-claim.** Byte-equivalent restart does not establish semantic truth, and administrative rollback does not reverse external effects or prove every descendant repaired.",
+      "cues": [
+        "prove"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `lineage-rollback-repair` proposition to the existing owner atom `durable-semantic-memory-and-knowledge-lattices.invariant.005`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "durable-semantic-memory-and-knowledge-lattices.invariant.005"
+    },
+    {
       "candidate_id": "durable-semantic-memory-and-knowledge-lattices.prose.c6f9a7a8d586",
       "chapter_id": "durable-semantic-memory-and-knowledge-lattices",
-      "source": "chapters/durable-semantic-memory-and-knowledge-lattices.qmd:144",
+      "source": "chapters/durable-semantic-memory-and-knowledge-lattices.qmd:226",
       "sentence": "cannot promote a proposition, waive a right, or decide that a procedure is",
       "cues": [
         "cannot"
@@ -24142,7 +25305,7 @@
     {
       "candidate_id": "durable-semantic-memory-and-knowledge-lattices.prose.d45751408908",
       "chapter_id": "durable-semantic-memory-and-knowledge-lattices",
-      "source": "chapters/durable-semantic-memory-and-knowledge-lattices.qmd:163",
+      "source": "chapters/durable-semantic-memory-and-knowledge-lattices.qmd:245",
       "sentence": "Applying the , every stored relation retains provenance, support, time, rights, and revision lineage; contradiction stays representable; compaction and forgetting cannot silently rewrite a consumer's past basis.",
       "cues": [
         "cannot"
@@ -24161,7 +25324,7 @@
     {
       "candidate_id": "durable-semantic-memory-and-knowledge-lattices.prose.b0aa24da8be8",
       "chapter_id": "durable-semantic-memory-and-knowledge-lattices",
-      "source": "chapters/durable-semantic-memory-and-knowledge-lattices.qmd:177",
+      "source": "chapters/durable-semantic-memory-and-knowledge-lattices.qmd:259",
       "sentence": "Recovery and consumer-bound admission tests must detect both.",
       "cues": [
         "must"
@@ -24180,7 +25343,7 @@
     {
       "candidate_id": "durable-semantic-memory-and-knowledge-lattices.prose.30b167cf71fa",
       "chapter_id": "durable-semantic-memory-and-knowledge-lattices",
-      "source": "chapters/durable-semantic-memory-and-knowledge-lattices.qmd:181",
+      "source": "chapters/durable-semantic-memory-and-knowledge-lattices.qmd:263",
       "sentence": "Evaluation must distinguish retrieval failure from absent storage, identity collision, stale ontology, unsupported merge, rights denial, and reconstruction error.",
       "cues": [
         "must"
@@ -24199,7 +25362,7 @@
     {
       "candidate_id": "durable-semantic-memory-and-knowledge-lattices.prose.e183ffff7d45",
       "chapter_id": "durable-semantic-memory-and-knowledge-lattices",
-      "source": "chapters/durable-semantic-memory-and-knowledge-lattices.qmd:181",
+      "source": "chapters/durable-semantic-memory-and-knowledge-lattices.qmd:263",
       "sentence": "Positive controls seed contradictions, superseded facts, expired relations, and restart faults so a smooth answer cannot hide semantic corruption.",
       "cues": [
         "cannot"
@@ -24218,7 +25381,7 @@
     {
       "candidate_id": "durable-semantic-memory-and-knowledge-lattices.prose.f8078079d9f4",
       "chapter_id": "durable-semantic-memory-and-knowledge-lattices",
-      "source": "chapters/durable-semantic-memory-and-knowledge-lattices.qmd:186",
+      "source": "chapters/durable-semantic-memory-and-knowledge-lattices.qmd:268",
       "sentence": "store, the same admitted event stream should rebuild the same governed current",
       "cues": [
         "should"
@@ -24237,7 +25400,7 @@
     {
       "candidate_id": "durable-semantic-memory-and-knowledge-lattices.prose.fea6ec05ba16",
       "chapter_id": "durable-semantic-memory-and-knowledge-lattices",
-      "source": "chapters/durable-semantic-memory-and-knowledge-lattices.qmd:192",
+      "source": "chapters/durable-semantic-memory-and-knowledge-lattices.qmd:274",
       "sentence": "Measure task utility together with provenance survival, contradiction calibration, rights closure, latency, and residuals.",
       "cues": [
         "measure"
@@ -24256,7 +25419,7 @@
     {
       "candidate_id": "durable-semantic-memory-and-knowledge-lattices.prose.c30bd3db9633",
       "chapter_id": "durable-semantic-memory-and-knowledge-lattices",
-      "source": "chapters/durable-semantic-memory-and-knowledge-lattices.qmd:198",
+      "source": "chapters/durable-semantic-memory-and-knowledge-lattices.qmd:280",
       "sentence": "Argument exit requires held-out retrieval and update campaigns spanning contradiction, temporal change, ontology migration, restart, compaction, rights, and deletion.",
       "cues": [
         "requires"
@@ -24275,7 +25438,7 @@
     {
       "candidate_id": "durable-semantic-memory-and-knowledge-lattices.prose.40f10968d604",
       "chapter_id": "durable-semantic-memory-and-knowledge-lattices",
-      "source": "chapters/durable-semantic-memory-and-knowledge-lattices.qmd:210",
+      "source": "chapters/durable-semantic-memory-and-knowledge-lattices.qmd:292",
       "sentence": "It measures correction propagation, temporal reasoning,",
       "cues": [
         "measures"
@@ -24294,7 +25457,7 @@
     {
       "candidate_id": "durable-semantic-memory-and-knowledge-lattices.prose.d5a2067e56f4",
       "chapter_id": "durable-semantic-memory-and-knowledge-lattices",
-      "source": "chapters/durable-semantic-memory-and-knowledge-lattices.qmd:224",
+      "source": "chapters/durable-semantic-memory-and-knowledge-lattices.qmd:306",
       "sentence": "Memory-lattice support remains at argument until longitudinal replay demonstrates identity continuity, contradiction handling, provenance-complete revision, descendant invalidation, and bounded retrieval across model replacement.",
       "cues": [
         "demonstrates"
@@ -24313,7 +25476,7 @@
     {
       "candidate_id": "durable-semantic-memory-and-knowledge-lattices.prose.646e1bafbb91",
       "chapter_id": "durable-semantic-memory-and-knowledge-lattices",
-      "source": "chapters/durable-semantic-memory-and-knowledge-lattices.qmd:235",
+      "source": "chapters/durable-semantic-memory-and-knowledge-lattices.qmd:317",
       "sentence": "Planned formalization route: `lean:durable-semantic-memory-and-knowledge-lattices.admission_boundary` covers only the finite admission record for durable semantic memory and knowledge lattices; it cannot establish whether durable semantic memory and knowledge lattices works safely or transfers.",
       "cues": [
         "cannot",
@@ -28241,9 +29404,336 @@
       "target_atom_id": "ai-deployment-transition-distribution-and-human-agency.mechanism.001"
     },
     {
-      "candidate_id": "ai-deployment-transition-distribution-and-human-agency.prose.686cc26558c2",
+      "candidate_id": "ai-deployment-transition-distribution-and-human-agency.prose.f5c2aecac669",
+      "chapter_id": "ai-deployment-transition-distribution-and-human-agency",
+      "source": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd:133",
+      "sentence": "Aggregate benefit is reported beside subgroup outcomes and uncompensated contributions; a positive total cannot close an unresolved burden.",
+      "cues": [
+        "cannot"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `distribution-gains-burdens` proposition to the existing owner atom `ai-deployment-transition-distribution-and-human-agency.core`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "ai-deployment-transition-distribution-and-human-agency.core"
+    },
+    {
+      "candidate_id": "ai-deployment-transition-distribution-and-human-agency.prose.12445fdc3f8f",
+      "chapter_id": "ai-deployment-transition-distribution-and-human-agency",
+      "source": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd:143",
+      "sentence": "It records whether assistance complements workers, substitutes for tasks, changes hiring, or transfers tacit expertise into firm assets.",
+      "cues": [
+        "transfers"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `labor-transition` proposition to the existing owner atom `ai-deployment-transition-distribution-and-human-agency.mechanism.002`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "ai-deployment-transition-distribution-and-human-agency.mechanism.002"
+    },
+    {
+      "candidate_id": "ai-deployment-transition-distribution-and-human-agency.prose.6013e994c76f",
       "chapter_id": "ai-deployment-transition-distribution-and-human-agency",
       "source": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd:147",
+      "sentence": "**Non-claim.** One task or workplace cannot establish general employment, wage, skill, or macroeconomic effects, and exposure estimates are not forecasts.",
+      "cues": [
+        "cannot"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `labor-transition` proposition to the existing owner atom `ai-deployment-transition-distribution-and-human-agency.mechanism.002`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "ai-deployment-transition-distribution-and-human-agency.mechanism.002"
+    },
+    {
+      "candidate_id": "ai-deployment-transition-distribution-and-human-agency.prose.93e038a900de",
+      "chapter_id": "ai-deployment-transition-distribution-and-human-agency",
+      "source": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd:149",
+      "sentence": "Neither establishes long-run labor transition or an ASI-era conclusion.",
+      "cues": [
+        "establishes"
+      ],
+      "review_state": "historical_or_source_report",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 semantic review classified this as a bounded source-grounding statement for `labor-transition`. It reports or limits external evidence and creates no local support-bearing atom or support-state movement.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "ai-deployment-transition-distribution-and-human-agency.prose.a28cdfd6d547",
+      "chapter_id": "ai-deployment-transition-distribution-and-human-agency",
+      "source": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd:153",
+      "sentence": "**Mechanism.** Measure agency through practical options: the ability to understand a decision, exercise discretion, refuse AI mediation without retaliation, contest an output, reach a human with authority, select an alternative, and recover from error.",
+      "cues": [
+        "measure"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `human-agency` proposition to the existing owner atom `ai-deployment-transition-distribution-and-human-agency.invariant.004`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "ai-deployment-transition-distribution-and-human-agency.invariant.004"
+    },
+    {
+      "candidate_id": "ai-deployment-transition-distribution-and-human-agency.prose.074681eeeb19",
+      "chapter_id": "ai-deployment-transition-distribution-and-human-agency",
+      "source": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd:157",
+      "sentence": "**Non-claim.** More human clicks do not prove agency, dignity, welfare, informed consent, or better decisions.",
+      "cues": [
+        "prove"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `human-agency` proposition to the existing owner atom `ai-deployment-transition-distribution-and-human-agency.invariant.004`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "ai-deployment-transition-distribution-and-human-agency.invariant.004"
+    },
+    {
+      "candidate_id": "ai-deployment-transition-distribution-and-human-agency.prose.995e1e73dad3",
+      "chapter_id": "ai-deployment-transition-distribution-and-human-agency",
+      "source": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd:165",
+      "sentence": "Technical interoperability can exist on paper while data, capital, power, talent, or contracts prevent migration.",
+      "cues": [
+        "prevent"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `access-concentration` proposition to the existing owner atom `ai-deployment-transition-distribution-and-human-agency.mechanism.003`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "ai-deployment-transition-distribution-and-human-agency.mechanism.003"
+    },
+    {
+      "candidate_id": "ai-deployment-transition-distribution-and-human-agency.prose.c61427695f5a",
+      "chapter_id": "ai-deployment-transition-distribution-and-human-agency",
+      "source": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd:167",
+      "sentence": "**Non-claim.** This map does not define a legal market, prove anticompetitive conduct, select an optimal industrial policy, or show that decentralization improves every outcome.",
+      "cues": [
+        "improves",
+        "prove",
+        "show"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `access-concentration` proposition to the existing owner atom `ai-deployment-transition-distribution-and-human-agency.mechanism.003`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "ai-deployment-transition-distribution-and-human-agency.mechanism.003"
+    },
+    {
+      "candidate_id": "ai-deployment-transition-distribution-and-human-agency.prose.f16d9fd3d28d",
+      "chapter_id": "ai-deployment-transition-distribution-and-human-agency",
+      "source": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd:179",
+      "sentence": "Neither proves that the proposed exit contract restores agency.",
+      "cues": [
+        "proves"
+      ],
+      "review_state": "historical_or_source_report",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 semantic review classified this as a bounded source-grounding statement for `exit-fork-contestability`. It reports or limits external evidence and creates no local support-bearing atom or support-state movement.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "ai-deployment-transition-distribution-and-human-agency.prose.edfd0251e12b",
+      "chapter_id": "ai-deployment-transition-distribution-and-human-agency",
+      "source": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd:183",
+      "sentence": "**Mechanism.** Identify human and organizational capabilities that must survive deployment: diagnosis, exception handling, domain judgment, maintenance, teaching, emergency operation, and supplier migration.",
+      "cues": [
+        "must"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `capability-skill-preservation` proposition to the existing owner atom `ai-deployment-transition-distribution-and-human-agency.failure_mode.003`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "ai-deployment-transition-distribution-and-human-agency.failure_mode.003"
+    },
+    {
+      "candidate_id": "ai-deployment-transition-distribution-and-human-agency.prose.a21a787b0d11",
+      "chapter_id": "ai-deployment-transition-distribution-and-human-agency",
+      "source": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd:183",
+      "sentence": "Skill measures separate short-term output assistance from learning, dependency, and the ability to recover after tool withdrawal.",
+      "cues": [
+        "measures"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `capability-skill-preservation` proposition to the existing owner atom `ai-deployment-transition-distribution-and-human-agency.mechanism.004`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "ai-deployment-transition-distribution-and-human-agency.mechanism.004"
+    },
+    {
+      "candidate_id": "ai-deployment-transition-distribution-and-human-agency.prose.0e7c0fbeefeb",
+      "chapter_id": "ai-deployment-transition-distribution-and-human-agency",
+      "source": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd:187",
+      "sentence": "**Non-claim.** Preserved benchmark performance does not prove meaningful expertise, worker wellbeing, labor-market mobility, or that every displaced skill should be retained.",
+      "cues": [
+        "prove",
+        "should"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `capability-skill-preservation` proposition to the existing owner atom `ai-deployment-transition-distribution-and-human-agency.mechanism.004`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "ai-deployment-transition-distribution-and-human-agency.mechanism.004"
+    },
+    {
+      "candidate_id": "ai-deployment-transition-distribution-and-human-agency.prose.0fcf5373125a",
+      "chapter_id": "ai-deployment-transition-distribution-and-human-agency",
+      "source": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd:193",
+      "sentence": "Threshold breaches trigger funded actions—training, compensation, accessibility repair, scope reduction, pause, supplier migration, or withdrawal—and closure requires evidence that the remedy reached the affected state, not merely that it was announced.",
+      "cues": [
+        "requires"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `monitoring-correction-remedy` proposition to the existing owner atom `ai-deployment-transition-distribution-and-human-agency.invariant.005`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "ai-deployment-transition-distribution-and-human-agency.invariant.005"
+    },
+    {
+      "candidate_id": "ai-deployment-transition-distribution-and-human-agency.prose.7dea9e6247eb",
+      "chapter_id": "ai-deployment-transition-distribution-and-human-agency",
+      "source": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd:197",
+      "sentence": "**Non-claim.** Monitoring does not itself repair harm, prove causal attribution, or guarantee that every affected person can be found and restored.",
+      "cues": [
+        "guarantee",
+        "prove"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `monitoring-correction-remedy` proposition to the existing owner atom `ai-deployment-transition-distribution-and-human-agency.mechanism.005`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "ai-deployment-transition-distribution-and-human-agency.mechanism.005"
+    },
+    {
+      "candidate_id": "ai-deployment-transition-distribution-and-human-agency.prose.99a8261d7512",
+      "chapter_id": "ai-deployment-transition-distribution-and-human-agency",
+      "source": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd:203",
+      "sentence": "Authority scales with consequence and is separated from vendor, model, and local performance evaluator.",
+      "cues": [
+        "scales"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `institutional-transition-authority` proposition to the existing owner atom `ai-deployment-transition-distribution-and-human-agency.mechanism.001`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "ai-deployment-transition-distribution-and-human-agency.mechanism.001"
+    },
+    {
+      "candidate_id": "ai-deployment-transition-distribution-and-human-agency.prose.05ca08be5ef3",
+      "chapter_id": "ai-deployment-transition-distribution-and-human-agency",
+      "source": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd:203",
+      "sentence": "The institution records its jurisdiction, affected-party representation, evidence standard, conflicts of interest, expiry, and the residuals it cannot remedy.",
+      "cues": [
+        "cannot"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `institutional-transition-authority` proposition to the existing owner atom `ai-deployment-transition-distribution-and-human-agency.mechanism.001`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "ai-deployment-transition-distribution-and-human-agency.mechanism.001"
+    },
+    {
+      "candidate_id": "ai-deployment-transition-distribution-and-human-agency.prose.49fa687f0f93",
+      "chapter_id": "ai-deployment-transition-distribution-and-human-agency",
+      "source": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd:207",
+      "sentence": "**Non-claim.** A procedurally valid institution does not guarantee legitimacy, fairness, competence, democratic consent, or an optimal pace of adoption.",
+      "cues": [
+        "guarantee"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `institutional-transition-authority` proposition to the existing owner atom `ai-deployment-transition-distribution-and-human-agency.mechanism.001`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "ai-deployment-transition-distribution-and-human-agency.mechanism.001"
+    },
+    {
+      "candidate_id": "ai-deployment-transition-distribution-and-human-agency.prose.686cc26558c2",
+      "chapter_id": "ai-deployment-transition-distribution-and-human-agency",
+      "source": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd:229",
       "sentence": "The counterfactual and population cannot be rewritten after favorable groups",
       "cues": [
         "cannot"
@@ -28262,7 +29752,7 @@
     {
       "candidate_id": "ai-deployment-transition-distribution-and-human-agency.prose.63c080ca6d87",
       "chapter_id": "ai-deployment-transition-distribution-and-human-agency",
-      "source": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd:153",
+      "source": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd:235",
       "sentence": "These transition invariants specialize the : population denominators persist through delayed follow-up, benefit cannot cancel unremedied harm, and nominal choice does not count as exit when essential services, data, or learned workflows are stranded.",
       "cues": [
         "cannot"
@@ -28281,7 +29771,7 @@
     {
       "candidate_id": "ai-deployment-transition-distribution-and-human-agency.prose.ee5ca329d754",
       "chapter_id": "ai-deployment-transition-distribution-and-human-agency",
-      "source": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd:167",
+      "source": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd:249",
       "sentence": "Natural evaluation must make these pressures and",
       "cues": [
         "must"
@@ -28300,7 +29790,7 @@
     {
       "candidate_id": "ai-deployment-transition-distribution-and-human-agency.prose.7ea8b4fd8aa8",
       "chapter_id": "ai-deployment-transition-distribution-and-human-agency",
-      "source": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd:172",
+      "source": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd:254",
       "sentence": "Evaluation must preserve heterogeneous effects and delayed outcomes rather than optimize one average.",
       "cues": [
         "must"
@@ -28319,7 +29809,7 @@
     {
       "candidate_id": "ai-deployment-transition-distribution-and-human-agency.prose.cd2a6004ba6f",
       "chapter_id": "ai-deployment-transition-distribution-and-human-agency",
-      "source": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd:172",
+      "source": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd:254",
       "sentence": "A valid study must be able to detect both useful complementarity and real displacement or dependency, and it must record whether compensation, training, portability, and service continuity actually reached affected people.",
       "cues": [
         "must"
@@ -28338,7 +29828,7 @@
     {
       "candidate_id": "ai-deployment-transition-distribution-and-human-agency.prose.b7885716b0f7",
       "chapter_id": "ai-deployment-transition-distribution-and-human-agency",
-      "source": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd:176",
+      "source": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd:258",
       "sentence": "The first study should select a workflow where quality, throughput, worker",
       "cues": [
         "should"
@@ -28357,7 +29847,7 @@
     {
       "candidate_id": "ai-deployment-transition-distribution-and-human-agency.prose.35cb082ca5ac",
       "chapter_id": "ai-deployment-transition-distribution-and-human-agency",
-      "source": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd:183",
+      "source": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd:265",
       "sentence": "Run a staged natural workflow study with a frozen non-adoption comparator, worker and customer measures, subgroup denominators, delayed follow-up, independent analysis, and real remedy.",
       "cues": [
         "measures"
@@ -28376,7 +29866,7 @@
     {
       "candidate_id": "ai-deployment-transition-distribution-and-human-agency.prose.d7f36665c381",
       "chapter_id": "ai-deployment-transition-distribution-and-human-agency",
-      "source": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd:183",
+      "source": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd:265",
       "sentence": "Measure useful throughput and quality alongside skill, workload, discretion, compensation where appropriate, access, distribution, concentration proxies, exit, and transition cost.",
       "cues": [
         "measure"
@@ -28395,7 +29885,7 @@
     {
       "candidate_id": "ai-deployment-transition-distribution-and-human-agency.prose.9e0ef00df3f0",
       "chapter_id": "ai-deployment-transition-distribution-and-human-agency",
-      "source": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd:189",
+      "source": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd:271",
       "sentence": "Argument exit requires a prospective deployment study with an explicit counterfactual, adoption and nonadoption denominators, heterogeneous task and welfare outcomes, supplier and ownership effects, delayed follow-up, practical exit tests, and independently observed remedy.",
       "cues": [
         "requires"
@@ -28414,7 +29904,7 @@
     {
       "candidate_id": "ai-deployment-transition-distribution-and-human-agency.prose.62b2dd6cd694",
       "chapter_id": "ai-deployment-transition-distribution-and-human-agency",
-      "source": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd:212",
+      "source": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd:294",
       "sentence": "The control plane should pause or narrow a rollout when measurement",
       "cues": [
         "should"
@@ -28433,7 +29923,7 @@
     {
       "candidate_id": "ai-deployment-transition-distribution-and-human-agency.prose.714dc212f996",
       "chapter_id": "ai-deployment-transition-distribution-and-human-agency",
-      "source": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd:215",
+      "source": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd:297",
       "sentence": "It is successful only when capability gains improve durable options and service quality without hiding concentration, dependency, or unpriced transition burdens.",
       "cues": [
         "improve"
@@ -28452,7 +29942,7 @@
     {
       "candidate_id": "ai-deployment-transition-distribution-and-human-agency.prose.9c82351f57d7",
       "chapter_id": "ai-deployment-transition-distribution-and-human-agency",
-      "source": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd:217",
+      "source": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd:299",
       "sentence": "Transition-governance support should stay at argument until prospective deployments establish credible counterfactuals, delayed distributional measurement, reachable remedy, service continuity, and exercised exit.",
       "cues": [
         "should"
@@ -28471,7 +29961,7 @@
     {
       "candidate_id": "ai-deployment-transition-distribution-and-human-agency.prose.c5fb8565af6e",
       "chapter_id": "ai-deployment-transition-distribution-and-human-agency",
-      "source": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd:228",
+      "source": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd:310",
       "sentence": "Planned formalization route: `lean:ai-deployment-transition-distribution-and-human-agency.admission_boundary` covers only the finite admission record for ai deployment transition distribution and human agency; it cannot establish whether ai deployment transition distribution and human agency works safely or transfers.",
       "cues": [
         "cannot",
@@ -28491,7 +29981,7 @@
     {
       "candidate_id": "ai-deployment-transition-distribution-and-human-agency.prose.6c6897aae50f",
       "chapter_id": "ai-deployment-transition-distribution-and-human-agency",
-      "source": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd:284",
+      "source": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd:366",
       "sentence": "The transition ledger keeps capability, adoption, task change, productivity, distribution, concentration, service continuity, human decision rights, delayed outcomes, remedy, and exit separate so a locally successful tool cannot silently become an irreversible institution.",
       "cues": [
         "cannot"
@@ -28510,7 +30000,7 @@
     {
       "candidate_id": "ai-deployment-transition-distribution-and-human-agency.prose.9a7dcb2fcef8",
       "chapter_id": "ai-deployment-transition-distribution-and-human-agency",
-      "source": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd:290",
+      "source": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd:372",
       "sentence": "It preserves that history but cannot decide",
       "cues": [
         "cannot"
@@ -28529,7 +30019,7 @@
     {
       "candidate_id": "ai-deployment-transition-distribution-and-human-agency.prose.88b1cbd8ed44",
       "chapter_id": "ai-deployment-transition-distribution-and-human-agency",
-      "source": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd:291",
+      "source": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd:373",
       "sentence": "whether the distribution was fair, the remedy sufficient, the practical exit",
       "cues": [
         "sufficient"
@@ -57782,9 +59272,338 @@
       "target_atom_id": "scientific-discovery-and-experimental-governance.mechanism.004"
     },
     {
+      "candidate_id": "scientific-discovery-and-experimental-governance.prose.44b32a05ae9d",
+      "chapter_id": "scientific-discovery-and-experimental-governance",
+      "source": "chapters/scientific-discovery-and-experimental-governance.qmd:144",
+      "sentence": "It establishes custody of the search and test history only.",
+      "cues": [
+        "establishes"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `hypothesis-experiment-provenance` proposition to the existing owner atom `scientific-discovery-and-experimental-governance.mechanism.001`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "scientific-discovery-and-experimental-governance.mechanism.001"
+    },
+    {
+      "candidate_id": "scientific-discovery-and-experimental-governance.prose.94dde8a47561",
+      "chapter_id": "scientific-discovery-and-experimental-governance",
+      "source": "chapters/scientific-discovery-and-experimental-governance.qmd:146",
+      "sentence": "Neither source establishes that this provenance design improves discovery in a local campaign.",
+      "cues": [
+        "establishes",
+        "improves"
+      ],
+      "review_state": "historical_or_source_report",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 semantic review classified this as a bounded source-grounding statement for `hypothesis-experiment-provenance`. It reports or limits external evidence and creates no local support-bearing atom or support-state movement.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "scientific-discovery-and-experimental-governance.prose.aaa3dd0842d7",
+      "chapter_id": "scientific-discovery-and-experimental-governance",
+      "source": "chapters/scientific-discovery-and-experimental-governance.qmd:150",
+      "sentence": "Feedback may select the next permitted experiment, but it cannot expand the lease, reinterpret an observation as truth, or expose protected outcomes to a frozen confirmatory branch.",
+      "cues": [
+        "cannot"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `closed-loop-laboratory-authority` proposition to the existing owner atom `scientific-discovery-and-experimental-governance.mechanism.002`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "scientific-discovery-and-experimental-governance.mechanism.002"
+    },
+    {
+      "candidate_id": "scientific-discovery-and-experimental-governance.prose.457e91744c49",
+      "chapter_id": "scientific-discovery-and-experimental-governance",
+      "source": "chapters/scientific-discovery-and-experimental-governance.qmd:154",
+      "sentence": "**Non-claim.** Completing a robotic workflow demonstrates neither scientific autonomy nor safe laboratory operation beyond the named equipment, materials, intervention budget, and environment.",
+      "cues": [
+        "demonstrates"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `closed-loop-laboratory-authority` proposition to the existing owner atom `scientific-discovery-and-experimental-governance.mechanism.002`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "scientific-discovery-and-experimental-governance.mechanism.002"
+    },
+    {
+      "candidate_id": "scientific-discovery-and-experimental-governance.prose.f93dbf10ac83",
+      "chapter_id": "scientific-discovery-and-experimental-governance",
+      "source": "chapters/scientific-discovery-and-experimental-governance.qmd:156",
+      "sentence": "Its correction also shows why instrument and identification outputs require review.",
+      "cues": [
+        "require",
+        "shows"
+      ],
+      "review_state": "historical_or_source_report",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 semantic review classified this as a bounded source-grounding statement for `closed-loop-laboratory-authority`. It reports or limits external evidence and creates no local support-bearing atom or support-state movement.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "scientific-discovery-and-experimental-governance.prose.e9f95b98cbb6",
+      "chapter_id": "scientific-discovery-and-experimental-governance",
+      "source": "chapters/scientific-discovery-and-experimental-governance.qmd:160",
+      "sentence": "Promotion requires the claim compiler to select the narrowest supported discovery predicate and expose every denominator, including screened targets, attempted protocols, inconclusive identifications, and previously known items.",
+      "cues": [
+        "requires"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `discovery-versus-benchmark-success` proposition to the existing owner atom `scientific-discovery-and-experimental-governance.core`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "scientific-discovery-and-experimental-governance.core"
+    },
+    {
+      "candidate_id": "scientific-discovery-and-experimental-governance.prose.0ea55a078804",
+      "chapter_id": "scientific-discovery-and-experimental-governance",
+      "source": "chapters/scientific-discovery-and-experimental-governance.qmd:170",
+      "sentence": "A replication contract prospectively states which elements must be held equivalent, which differences create independence, what result range counts as consistent, and how disagreement changes the claim rather than forcing consensus.",
+      "cues": [
+        "must"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `reproducibility-and-replication` proposition to the existing owner atom `scientific-discovery-and-experimental-governance.invariant.005`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "scientific-discovery-and-experimental-governance.invariant.005"
+    },
+    {
+      "candidate_id": "scientific-discovery-and-experimental-governance.prose.d5f724d4358b",
+      "chapter_id": "scientific-discovery-and-experimental-governance",
+      "source": "chapters/scientific-discovery-and-experimental-governance.qmd:174",
+      "sentence": "**Non-claim.** One successful replay or replication does not establish broad reproducibility, transfer across domains, or correctness of the original causal interpretation.",
+      "cues": [
+        "transfer"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `reproducibility-and-replication` proposition to the existing owner atom `scientific-discovery-and-experimental-governance.invariant.005`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "scientific-discovery-and-experimental-governance.invariant.005"
+    },
+    {
+      "candidate_id": "scientific-discovery-and-experimental-governance.prose.5aacce6435b8",
+      "chapter_id": "scientific-discovery-and-experimental-governance",
+      "source": "chapters/scientific-discovery-and-experimental-governance.qmd:176",
+      "sentence": "The correction history in `ext_autonomous_lab_materials_2023` demonstrates why later reanalysis must remain connected to the original denominator.",
+      "cues": [
+        "demonstrates",
+        "must"
+      ],
+      "review_state": "historical_or_source_report",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 semantic review classified this as a bounded source-grounding statement for `reproducibility-and-replication`. It reports or limits external evidence and creates no local support-bearing atom or support-state movement.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "scientific-discovery-and-experimental-governance.prose.d873e7146d4f",
+      "chapter_id": "scientific-discovery-and-experimental-governance",
+      "source": "chapters/scientific-discovery-and-experimental-governance.qmd:180",
+      "sentence": "Known-null and known-effect controls calibrate the pipeline; publication and memory interfaces must make negative evidence retrievable without letting a high-volume generator bury it beneath successful-looking variants.",
+      "cues": [
+        "must"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `negative-and-null-results` proposition to the existing owner atom `scientific-discovery-and-experimental-governance.failure_mode.004`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "scientific-discovery-and-experimental-governance.failure_mode.004"
+    },
+    {
+      "candidate_id": "scientific-discovery-and-experimental-governance.prose.80baaad04699",
+      "chapter_id": "scientific-discovery-and-experimental-governance",
+      "source": "chapters/scientific-discovery-and-experimental-governance.qmd:186",
+      "sentence": "**Source grounding.** `ext_autonomous_lab_materials_2023` provides a concrete corrected denominator with failed and inconclusive targets that must not disappear.",
+      "cues": [
+        "must"
+      ],
+      "review_state": "historical_or_source_report",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 semantic review classified this as a bounded source-grounding statement for `negative-and-null-results`. It reports or limits external evidence and creates no local support-bearing atom or support-state movement.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "scientific-discovery-and-experimental-governance.prose.56218e2c82ab",
+      "chapter_id": "scientific-discovery-and-experimental-governance",
+      "source": "chapters/scientific-discovery-and-experimental-governance.qmd:190",
+      "sentence": "It records hazard class, plausible misuse pathway, required expertise and resources, affected populations, safer abstraction, access tier, monitoring, expiry, appeal, and residual knowledge that cannot be recalled.",
+      "cues": [
+        "cannot",
+        "required"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `dual-use-review` proposition to the existing owner atom `scientific-discovery-and-experimental-governance.mechanism.005`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "scientific-discovery-and-experimental-governance.mechanism.005"
+    },
+    {
+      "candidate_id": "scientific-discovery-and-experimental-governance.prose.40f41d81a070",
+      "chapter_id": "scientific-discovery-and-experimental-governance",
+      "source": "chapters/scientific-discovery-and-experimental-governance.qmd:194",
+      "sentence": "**Non-claim.** Dual-use review does not prove safety, eliminate misuse, or authorize secret adjudicators to alter scientific conclusions.",
+      "cues": [
+        "prove"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `dual-use-review` proposition to the existing owner atom `scientific-discovery-and-experimental-governance.mechanism.005`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "scientific-discovery-and-experimental-governance.mechanism.005"
+    },
+    {
+      "candidate_id": "scientific-discovery-and-experimental-governance.prose.79e50e74ca15",
+      "chapter_id": "scientific-discovery-and-experimental-governance",
+      "source": "chapters/scientific-discovery-and-experimental-governance.qmd:196",
+      "sentence": "`ext_autonomous_lab_materials_2023` is a benign materials case and supplies no general dual-use safeguard evidence; it shows only why integrated laboratory capability makes lifecycle review relevant.",
+      "cues": [
+        "shows"
+      ],
+      "review_state": "historical_or_source_report",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 semantic review classified this as a bounded source-grounding statement for `dual-use-review`. It reports or limits external evidence and creates no local support-bearing atom or support-state movement.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "scientific-discovery-and-experimental-governance.prose.0b30b0e5650b",
+      "chapter_id": "scientific-discovery-and-experimental-governance",
+      "source": "chapters/scientific-discovery-and-experimental-governance.qmd:206",
+      "sentence": "`ext_autonomous_lab_materials_2023` demonstrates active selection inside one bounded synthesis workflow.",
+      "cues": [
+        "demonstrates"
+      ],
+      "review_state": "historical_or_source_report",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 semantic review classified this as a bounded source-grounding statement for `resource-allocation`. It reports or limits external evidence and creates no local support-bearing atom or support-state movement.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "scientific-discovery-and-experimental-governance.prose.085040669165",
+      "chapter_id": "scientific-discovery-and-experimental-governance",
+      "source": "chapters/scientific-discovery-and-experimental-governance.qmd:210",
+      "sentence": "Automation must report when it lacks a competent instrument, when protected outcomes leaked, and when a decision exceeded the reviewer’s available time or expertise.",
+      "cues": [
+        "must"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 exact-digest semantic review maps this `human-scientific-judgment` proposition to the existing owner atom `scientific-discovery-and-experimental-governance.mechanism.003`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "scientific-discovery-and-experimental-governance.mechanism.003"
+    },
+    {
+      "candidate_id": "scientific-discovery-and-experimental-governance.prose.43682c930107",
+      "chapter_id": "scientific-discovery-and-experimental-governance",
+      "source": "chapters/scientific-discovery-and-experimental-governance.qmd:216",
+      "sentence": "The corrected `ext_autonomous_lab_materials_2023` history illustrates the value of later human reanalysis but does not prove that this governance arrangement prevents error or scales to autonomous science.",
+      "cues": [
+        "prevents",
+        "prove",
+        "scales"
+      ],
+      "review_state": "historical_or_source_report",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Round-21 semantic review classified this as a bounded source-grounding statement for `human-scientific-judgment`. It reports or limits external evidence and creates no local support-bearing atom or support-state movement.",
+      "target_atom_id": null
+    },
+    {
       "candidate_id": "scientific-discovery-and-experimental-governance.prose.93cf769e73f6",
       "chapter_id": "scientific-discovery-and-experimental-governance",
-      "source": "chapters/scientific-discovery-and-experimental-governance.qmd:161",
+      "source": "chapters/scientific-discovery-and-experimental-governance.qmd:243",
       "sentence": "The requires exploration and confirmation to remain distinct, instrument output to remain an observation, all attempts and interventions to remain counted, and claim scope to stay inside the design, calibration, analysis, and replication evidence.",
       "cues": [
         "requires"
@@ -57803,7 +59622,7 @@
     {
       "candidate_id": "scientific-discovery-and-experimental-governance.prose.e03e848e6dcc",
       "chapter_id": "scientific-discovery-and-experimental-governance",
-      "source": "chapters/scientific-discovery-and-experimental-governance.qmd:175",
+      "source": "chapters/scientific-discovery-and-experimental-governance.qmd:257",
       "sentence": "controls must pass under the same autonomy and tooling available to the target",
       "cues": [
         "must"
@@ -57822,7 +59641,7 @@
     {
       "candidate_id": "scientific-discovery-and-experimental-governance.prose.c4ad2da080d7",
       "chapter_id": "scientific-discovery-and-experimental-governance",
-      "source": "chapters/scientific-discovery-and-experimental-governance.qmd:180",
+      "source": "chapters/scientific-discovery-and-experimental-governance.qmd:262",
       "sentence": "Evaluation must inject known nulls, known effects, drift, contamination, selective stopping, analysis flexibility, and hidden intervention.",
       "cues": [
         "must"
@@ -57841,7 +59660,7 @@
     {
       "candidate_id": "scientific-discovery-and-experimental-governance.prose.42e5d0630e27",
       "chapter_id": "scientific-discovery-and-experimental-governance",
-      "source": "chapters/scientific-discovery-and-experimental-governance.qmd:180",
+      "source": "chapters/scientific-discovery-and-experimental-governance.qmd:262",
       "sentence": "The control plane fails if it cannot detect those cases; an incapable instrument or simulator narrows the run rather than the scientific-governance idea.",
       "cues": [
         "cannot"
@@ -57860,7 +59679,7 @@
     {
       "candidate_id": "scientific-discovery-and-experimental-governance.prose.7d39cfc1851e",
       "chapter_id": "scientific-discovery-and-experimental-governance",
-      "source": "chapters/scientific-discovery-and-experimental-governance.qmd:197",
+      "source": "chapters/scientific-discovery-and-experimental-governance.qmd:279",
       "sentence": "Argument exit requires multiple preregistered studies or replications in which hypothesis generation, instrument authority, execution, analysis, and adjudication are separable; positive and null controls work; all attempts are visible; independent reanalysis agrees or preserves disagreement; and the claim ceiling predicts what transfers and what does not.",
       "cues": [
         "requires",
@@ -57880,7 +59699,7 @@
     {
       "candidate_id": "scientific-discovery-and-experimental-governance.prose.06ea75bea2e5",
       "chapter_id": "scientific-discovery-and-experimental-governance",
-      "source": "chapters/scientific-discovery-and-experimental-governance.qmd:226",
+      "source": "chapters/scientific-discovery-and-experimental-governance.qmd:308",
       "sentence": "Scientific-automation support should stay at argument until known-null, known-effect, drift, contamination, selective-analysis, replication, and dual-use controls survive independently replayed workflows.",
       "cues": [
         "should"
@@ -57899,7 +59718,7 @@
     {
       "candidate_id": "scientific-discovery-and-experimental-governance.prose.a699f046284d",
       "chapter_id": "scientific-discovery-and-experimental-governance",
-      "source": "chapters/scientific-discovery-and-experimental-governance.qmd:237",
+      "source": "chapters/scientific-discovery-and-experimental-governance.qmd:319",
       "sentence": "Planned formalization route: `lean:scientific-discovery-and-experimental-governance.admission_boundary` covers only the finite admission record for scientific discovery and experimental governance; it cannot establish whether scientific discovery and experimental governance works safely or transfers.",
       "cues": [
         "cannot",
@@ -57919,7 +59738,7 @@
     {
       "candidate_id": "scientific-discovery-and-experimental-governance.prose.2dc2d398af99",
       "chapter_id": "scientific-discovery-and-experimental-governance",
-      "source": "chapters/scientific-discovery-and-experimental-governance.qmd:251",
+      "source": "chapters/scientific-discovery-and-experimental-governance.qmd:333",
       "sentence": "AI can accelerate every stage, so it must also make every",
       "cues": [
         "must"
@@ -57938,7 +59757,7 @@
     {
       "candidate_id": "scientific-discovery-and-experimental-governance.prose.00739a956cab",
       "chapter_id": "scientific-discovery-and-experimental-governance",
-      "source": "chapters/scientific-discovery-and-experimental-governance.qmd:261",
+      "source": "chapters/scientific-discovery-and-experimental-governance.qmd:343",
       "sentence": "Experimental custody preserves ancestry, design, instruments, calibration, attempts, blinding, stopping, analysis, replication, dual-use decisions, correction, and claim ceilings so automation increases search without silently weakening science.",
       "cues": [
         "increases"
@@ -57957,7 +59776,7 @@
     {
       "candidate_id": "scientific-discovery-and-experimental-governance.prose.d197a762b3ce",
       "chapter_id": "scientific-discovery-and-experimental-governance",
-      "source": "chapters/scientific-discovery-and-experimental-governance.qmd:268",
+      "source": "chapters/scientific-discovery-and-experimental-governance.qmd:350",
       "sentence": "maintain and coordinate those artifacts but cannot promote the scientific",
       "cues": [
         "cannot"

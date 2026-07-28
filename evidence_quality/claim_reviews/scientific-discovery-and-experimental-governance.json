@@ -5,9 +5,9 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/scientific-discovery-and-experimental-governance.qmd",
     "structured_atoms_reviewed": 33,
-    "prose_candidates_adjudicated": 20,
+    "prose_candidates_adjudicated": 37,
     "unowned_material_claims": 0,
-    "review_note": "Re-reviewed the complete W3-rewritten and reader-depth-completed Scientific Discovery And Experimental Governance chapter on 2026-07-26. All 20 current prose candidates are adjudicated as owned refinements, bounded explanations, source reports, or cross-chapter handoffs. No unowned material claim, atom proposition, support, release, or publication movement was introduced."
+    "review_note": "Re-reviewed the complete chapter through the Round-21 concept expansion on 2026-07-28. Every new claim-bearing sentence is reconciled to the exact concept-to-atom ownership recorded by the current-digest chapter substance contract, or classified as bounded source reporting. No new atom, unowned material claim, support transition, efficacy inference, release decision, or publication claim was introduced."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
@@ -16,7 +16,7 @@
       "environment": "The authored ASI Stack interfaces, future controlled fixtures, and prospectively frozen natural or adversarial workloads; production deployment and open-world transfer remain unestablished.",
       "model": "Model- and substrate-agnostic contract design at argument support; any implementation claim must name exact models, checkpoints, policies, prompts, tools, data, and evaluators.",
       "authority": "`scientific-discovery-and-experimental-governance` owns its bounded decision contract; adjacent chapters retain their own authority, and neither prose nor a passing record can widen an action grant.",
-      "time": "Semantic review current through 2026-07-26; material changes to evidence, authority, population, model, environment, ontology, or consumer require reauthorization.",
+      "time": "Semantic review current through 2026-07-28; material changes to evidence, authority, population, model, environment, ontology, consumer, or contracted concept prose require reauthorization.",
       "artifact": "chapters/scientific-discovery-and-experimental-governance.qmd, its manifest record, source crosswalk (the chapter source packet), claim dossier, and future versioned implementation/evaluation receipts."
     },
     "assumptions": [
@@ -194,6 +194,84 @@
       "state": "duplicate_of_atom",
       "rationale": "Semantically reviewed as the argument-support boundary for the mature experimental-governance target; it creates no separate support-bearing atom.",
       "target_atom_id": "scientific-discovery-and-experimental-governance.beyond_sota.001"
+    },
+    "scientific-discovery-and-experimental-governance.prose.44b32a05ae9d": {
+      "state": "duplicate_of_atom",
+      "rationale": "Round-21 exact-digest semantic review maps this `hypothesis-experiment-provenance` proposition to the existing owner atom `scientific-discovery-and-experimental-governance.mechanism.001`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "scientific-discovery-and-experimental-governance.mechanism.001"
+    },
+    "scientific-discovery-and-experimental-governance.prose.94dde8a47561": {
+      "state": "historical_or_source_report",
+      "rationale": "Round-21 semantic review classified this as a bounded source-grounding statement for `hypothesis-experiment-provenance`. It reports or limits external evidence and creates no local support-bearing atom or support-state movement."
+    },
+    "scientific-discovery-and-experimental-governance.prose.aaa3dd0842d7": {
+      "state": "duplicate_of_atom",
+      "rationale": "Round-21 exact-digest semantic review maps this `closed-loop-laboratory-authority` proposition to the existing owner atom `scientific-discovery-and-experimental-governance.mechanism.002`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "scientific-discovery-and-experimental-governance.mechanism.002"
+    },
+    "scientific-discovery-and-experimental-governance.prose.457e91744c49": {
+      "state": "duplicate_of_atom",
+      "rationale": "Round-21 exact-digest semantic review maps this `closed-loop-laboratory-authority` proposition to the existing owner atom `scientific-discovery-and-experimental-governance.mechanism.002`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "scientific-discovery-and-experimental-governance.mechanism.002"
+    },
+    "scientific-discovery-and-experimental-governance.prose.f93dbf10ac83": {
+      "state": "historical_or_source_report",
+      "rationale": "Round-21 semantic review classified this as a bounded source-grounding statement for `closed-loop-laboratory-authority`. It reports or limits external evidence and creates no local support-bearing atom or support-state movement."
+    },
+    "scientific-discovery-and-experimental-governance.prose.e9f95b98cbb6": {
+      "state": "duplicate_of_atom",
+      "rationale": "Round-21 exact-digest semantic review maps this `discovery-versus-benchmark-success` proposition to the existing owner atom `scientific-discovery-and-experimental-governance.core`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "scientific-discovery-and-experimental-governance.core"
+    },
+    "scientific-discovery-and-experimental-governance.prose.0ea55a078804": {
+      "state": "duplicate_of_atom",
+      "rationale": "Round-21 exact-digest semantic review maps this `reproducibility-and-replication` proposition to the existing owner atom `scientific-discovery-and-experimental-governance.invariant.005`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "scientific-discovery-and-experimental-governance.invariant.005"
+    },
+    "scientific-discovery-and-experimental-governance.prose.d5f724d4358b": {
+      "state": "duplicate_of_atom",
+      "rationale": "Round-21 exact-digest semantic review maps this `reproducibility-and-replication` proposition to the existing owner atom `scientific-discovery-and-experimental-governance.invariant.005`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "scientific-discovery-and-experimental-governance.invariant.005"
+    },
+    "scientific-discovery-and-experimental-governance.prose.5aacce6435b8": {
+      "state": "historical_or_source_report",
+      "rationale": "Round-21 semantic review classified this as a bounded source-grounding statement for `reproducibility-and-replication`. It reports or limits external evidence and creates no local support-bearing atom or support-state movement."
+    },
+    "scientific-discovery-and-experimental-governance.prose.d873e7146d4f": {
+      "state": "duplicate_of_atom",
+      "rationale": "Round-21 exact-digest semantic review maps this `negative-and-null-results` proposition to the existing owner atom `scientific-discovery-and-experimental-governance.failure_mode.004`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "scientific-discovery-and-experimental-governance.failure_mode.004"
+    },
+    "scientific-discovery-and-experimental-governance.prose.80baaad04699": {
+      "state": "historical_or_source_report",
+      "rationale": "Round-21 semantic review classified this as a bounded source-grounding statement for `negative-and-null-results`. It reports or limits external evidence and creates no local support-bearing atom or support-state movement."
+    },
+    "scientific-discovery-and-experimental-governance.prose.56218e2c82ab": {
+      "state": "duplicate_of_atom",
+      "rationale": "Round-21 exact-digest semantic review maps this `dual-use-review` proposition to the existing owner atom `scientific-discovery-and-experimental-governance.mechanism.005`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "scientific-discovery-and-experimental-governance.mechanism.005"
+    },
+    "scientific-discovery-and-experimental-governance.prose.40f41d81a070": {
+      "state": "duplicate_of_atom",
+      "rationale": "Round-21 exact-digest semantic review maps this `dual-use-review` proposition to the existing owner atom `scientific-discovery-and-experimental-governance.mechanism.005`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "scientific-discovery-and-experimental-governance.mechanism.005"
+    },
+    "scientific-discovery-and-experimental-governance.prose.79e50e74ca15": {
+      "state": "historical_or_source_report",
+      "rationale": "Round-21 semantic review classified this as a bounded source-grounding statement for `dual-use-review`. It reports or limits external evidence and creates no local support-bearing atom or support-state movement."
+    },
+    "scientific-discovery-and-experimental-governance.prose.0b30b0e5650b": {
+      "state": "historical_or_source_report",
+      "rationale": "Round-21 semantic review classified this as a bounded source-grounding statement for `resource-allocation`. It reports or limits external evidence and creates no local support-bearing atom or support-state movement."
+    },
+    "scientific-discovery-and-experimental-governance.prose.085040669165": {
+      "state": "duplicate_of_atom",
+      "rationale": "Round-21 exact-digest semantic review maps this `human-scientific-judgment` proposition to the existing owner atom `scientific-discovery-and-experimental-governance.mechanism.003`; it creates no additional atom and does not change support state.",
+      "target_atom_id": "scientific-discovery-and-experimental-governance.mechanism.003"
+    },
+    "scientific-discovery-and-experimental-governance.prose.43682c930107": {
+      "state": "historical_or_source_report",
+      "rationale": "Round-21 semantic review classified this as a bounded source-grounding statement for `human-scientific-judgment`. It reports or limits external evidence and creates no local support-bearing atom or support-state movement."
     }
   },
   "non_claims": [

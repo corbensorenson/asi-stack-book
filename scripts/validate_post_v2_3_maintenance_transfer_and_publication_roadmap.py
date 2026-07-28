@@ -416,7 +416,7 @@ def errors(data: dict) -> list[str]:
         "may not displace P2",
         "P6.9-R21-concept-complete-depth-and-atom-adequacy",
         "84/84 unified atom custody",
-        "twenty-chapter prose-depth queue",
+        "separate twenty-chapter diagnostic-thin list",
         "diagnostics only",
         "digest-bound semantic",
         "zero unjustified widest-spread blocks",
@@ -1645,9 +1645,9 @@ def errors(data: dict) -> list[str]:
         or template_guard.get("current_copied_diagram_and_test_spread") != 0
         or template_guard.get("repaired_chapter_count") != 10
         or template_guard.get("baseline_prose_candidate_count") != 3444
-        or template_guard.get("current_prose_candidate_count") != 3388
+        or template_guard.get("current_prose_candidate_count") != 3483
         or template_guard.get("retired_inherited_prose_candidate_count") != 247
-        or template_guard.get("added_domain_specific_prose_candidate_count") != 191
+        or template_guard.get("added_domain_specific_prose_candidate_count") != 286
         or template_guard.get("baseline_structured_atom_count") != 4067
         or template_guard.get("current_structured_atom_count") != 4058
         or template_guard.get("pending_prose_candidate_count") != 0
@@ -1676,7 +1676,7 @@ def errors(data: dict) -> list[str]:
         or w3.get("measurements", {}).get("editorial_narrative", {}).get("baseline", {}).get("distinct_repeated_12_grams") != 812
         or w3.get("measurements", {}).get("editorial_narrative", {}).get("current", {}).get("distinct_repeated_12_grams") != 0
         or w3.get("claim_review_reconciliation", {}).get("retired_inherited_prose_candidate_count") != 247
-        or w3.get("claim_review_reconciliation", {}).get("added_domain_specific_prose_candidate_count") != 191
+        or w3.get("claim_review_reconciliation", {}).get("added_domain_specific_prose_candidate_count") != 286
         or w3.get("claim_review_reconciliation", {}).get("current_pending_prose_candidate_count") != 0
         or w3.get("meaning_custody", {}).get("chapter_core_support_movements") != 0
     ):
