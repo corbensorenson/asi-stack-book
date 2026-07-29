@@ -1,0 +1,71 @@
+{
+  "scenario_id": "kimi-k3-architecture-triage-2026-07-28",
+  "scenario_scope": "Primary-source intake of Kimi K3 architecture and training mechanisms into existing substrate, routing, and governed-training owners.",
+  "case_validity_state": "reviewed",
+  "cases": [
+    {
+      "case_id": "kimi-k3-existing-owner-integration",
+      "intake_kind": "new_source",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "KDA, AttnRes, Stable LatentMoE, Quantile Balancing, SiTU-GLU, and Per-Head Muon strengthen existing substrate, routing, and training interfaces; the branded integrated system is not a new chapter boundary.",
+      "required_before_drafting": [
+        "completed primary-source note",
+        "explicit separation of provider-reported and locally reproduced evidence",
+        "scale, context, sparsity, and hardware transfer limits"
+      ],
+      "evidence_transition_preconditions": [
+        "faithful local implementation",
+        "matched strong controls",
+        "independent source-disjoint evaluation",
+        "accepted claim-specific transition"
+      ],
+      "promotion_blockers": [
+        "no local reproduction",
+        "aggregate architecture/data/training/system result has no component-level causal attribution"
+      ],
+      "non_claims": [
+        "does not establish Kimi K3 superiority",
+        "does not select any mechanism for Project Theseus"
+      ]
+    },
+    {
+      "case_id": "kimi-k3-standalone-chapter-rejection",
+      "intake_kind": "source_variant",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "reject_duplicate",
+      "chapter_manifest_action": "reject_duplicate",
+      "existing_chapter_id": "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+      "proposed_chapter_id": "kimi-k3-and-frontier-hybrid-architectures",
+      "decision_rationale": "A model-specific chapter would duplicate substrate, routing, optimization, scaling, and evidence boundaries already owned elsewhere.",
+      "required_before_drafting": [
+        "not applicable; use existing owners"
+      ],
+      "evidence_transition_preconditions": [
+        "a future distinct interface or failure mode would require fresh boundary review"
+      ],
+      "promotion_blockers": [
+        "novelty and scale are not chapter boundaries"
+      ],
+      "non_claims": [
+        "does not reserve a future model-specific chapter"
+      ]
+    }
+  ],
+  "validation_boundary": "Records source routing and duplicate-chapter rejection only. It does not validate Kimi K3 implementations, benchmarks, scaling efficiency, safety, transfer, or any Project Theseus candidate.",
+  "support_state_effect": "backlog_only",
+  "non_claims": [
+    "does not change chapter order",
+    "does not promote support",
+    "does not authorize training, evaluation, release, or deployment"
+  ]
+}

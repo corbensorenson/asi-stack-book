@@ -11,11 +11,11 @@ It does **not** quote or publish raw private source passages. It also does **not
 | Metric | Value |
 |---|---:|
 | Chapters audited | 84 |
-| Assigned source/chapter pairs | 1210 |
+| Assigned source/chapter pairs | 1213 |
 | Exact claim-source mappings | 1033 |
-| Unmapped assigned pairs | 177 |
-| Source notes present for assigned pairs | 1210 |
-| Source notes listing assigned chapter | 1210 |
+| Unmapped assigned pairs | 180 |
+| Source notes present for assigned pairs | 1213 |
+| Source notes listing assigned chapter | 1213 |
 | Passage-reviewed mappings recorded | 964 |
 | Support-state counts | {"argument": 84} |
 | Validation errors | 0 |
@@ -83,10 +83,10 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `inter-stack-protocols-identity-and-economic-exchange` | 11 | 10 | 11 | 11 | 10 | argument | passage review required before source-derived promotion |
 | `multi-agent-dynamics-collective-intelligence-and-systemic-risk` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
 | `procedural-memory-and-cognitive-loop-closure` | 23 | 19 | 23 | 23 | 19 | argument | passage review required before source-derived promotion |
-| `routing-heads-and-specialist-cores` | 20 | 18 | 20 | 20 | 18 | argument | passage review required before source-derived promotion |
-| `replaceable-cognitive-substrates-beyond-transformer-monoculture` | 48 | 39 | 48 | 48 | 39 | argument | passage review required before source-derived promotion |
+| `routing-heads-and-specialist-cores` | 21 | 18 | 21 | 21 | 18 | argument | passage review required before source-derived promotion |
+| `replaceable-cognitive-substrates-beyond-transformer-monoculture` | 49 | 39 | 49 | 49 | 39 | argument | passage review required before source-derived promotion |
 | `relational-dimension-compilation-and-polyadic-cognition` | 2 | 2 | 2 | 2 | 0 | argument | passage review required before source-derived promotion |
-| `governed-model-training-distributed-optimization-and-scaling` | 26 | 26 | 26 | 26 | 26 | argument | eligible for support review |
+| `governed-model-training-distributed-optimization-and-scaling` | 27 | 26 | 27 | 27 | 26 | argument | passage review required before source-derived promotion |
 | `learning-theory-generalization-and-scaling-science` | 10 | 8 | 10 | 10 | 0 | argument | passage review required before source-derived promotion |
 | `readiness-gates-residual-escrow-and-quarantine` | 20 | 18 | 20 | 20 | 18 | argument | passage review required before source-derived promotion |
 | `personal-compute-hives-and-federated-edge-intelligence` | 31 | 23 | 31 | 31 | 23 | argument | passage review required before source-derived promotion |
@@ -231,6 +231,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_checklist_2020` | 3 | yes |
 | `rgs` | 3 | yes |
 | `moecot_md` | 3 | yes |
+| `ext_kimi_k3_2026` | 3 | yes |
 | `ext_mamba_2023` | 3 | yes |
 | `ext_mlperf_training_v6_2026` | 3 | yes |
 | `ext_deepspeed_inference_2022` | 3 | yes |
@@ -1178,6 +1179,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `routing-heads-and-specialist-cores.core` | `routing-heads-and-specialist-cores` | `qcsa_whitepaper` | mapped | note present | chapter listed | passage-reviewed |
 | `routing-heads-and-specialist-cores.core` | `routing-heads-and-specialist-cores` | `reflexive_router_whitepaper` | unmapped | note present | chapter listed | not passage-reviewed |
 | `routing-heads-and-specialist-cores.core` | `routing-heads-and-specialist-cores` | `relational_dimension_compiler` | mapped | note present | chapter listed | passage-reviewed |
+| `routing-heads-and-specialist-cores.core` | `routing-heads-and-specialist-cores` | `ext_kimi_k3_2026` | unmapped | note present | chapter listed | not passage-reviewed |
 | `replaceable-cognitive-substrates-beyond-transformer-monoculture.core` | `replaceable-cognitive-substrates-beyond-transformer-monoculture` | `corben_chatgpt_kiss_irreducible_intelligence_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `replaceable-cognitive-substrates-beyond-transformer-monoculture.core` | `replaceable-cognitive-substrates-beyond-transformer-monoculture` | `corben_chatgpt_onecell_theseus_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `replaceable-cognitive-substrates-beyond-transformer-monoculture.core` | `replaceable-cognitive-substrates-beyond-transformer-monoculture` | `deterministic_capability_compilation` | unmapped | note present | chapter listed | not passage-reviewed |
@@ -1226,6 +1228,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `replaceable-cognitive-substrates-beyond-transformer-monoculture.core` | `replaceable-cognitive-substrates-beyond-transformer-monoculture` | `ext_photonic_neuromorphic_2024` | unmapped | note present | chapter listed | not passage-reviewed |
 | `replaceable-cognitive-substrates-beyond-transformer-monoculture.core` | `replaceable-cognitive-substrates-beyond-transformer-monoculture` | `ext_quantum_ml_shadows_2024` | unmapped | note present | chapter listed | not passage-reviewed |
 | `replaceable-cognitive-substrates-beyond-transformer-monoculture.core` | `replaceable-cognitive-substrates-beyond-transformer-monoculture` | `ext_organoid_intelligence_2023` | unmapped | note present | chapter listed | not passage-reviewed |
+| `replaceable-cognitive-substrates-beyond-transformer-monoculture.core` | `replaceable-cognitive-substrates-beyond-transformer-monoculture` | `ext_kimi_k3_2026` | unmapped | note present | chapter listed | not passage-reviewed |
 | `relational-dimension-compilation-and-polyadic-cognition.core` | `relational-dimension-compilation-and-polyadic-cognition` | `relational_dimension_compiler` | mapped | note present | chapter listed | not passage-reviewed |
 | `relational-dimension-compilation-and-polyadic-cognition.core` | `relational-dimension-compilation-and-polyadic-cognition` | `ext_neural_message_passing_2017` | mapped | note present | chapter listed | not passage-reviewed |
 | `governed-model-training-distributed-optimization-and-scaling.core` | `governed-model-training-distributed-optimization-and-scaling` | `ext_llama3_herd_2024` | mapped | note present | chapter listed | passage-reviewed |
@@ -1254,6 +1257,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `governed-model-training-distributed-optimization-and-scaling.core` | `governed-model-training-distributed-optimization-and-scaling` | `ext_proof_of_learning_2021` | mapped | note present | chapter listed | passage-reviewed |
 | `governed-model-training-distributed-optimization-and-scaling.core` | `governed-model-training-distributed-optimization-and-scaling` | `ext_test_time_training_2020` | mapped | note present | chapter listed | passage-reviewed |
 | `governed-model-training-distributed-optimization-and-scaling.core` | `governed-model-training-distributed-optimization-and-scaling` | `ext_curriculum_learning_2009` | mapped | note present | chapter listed | passage-reviewed |
+| `governed-model-training-distributed-optimization-and-scaling.core` | `governed-model-training-distributed-optimization-and-scaling` | `ext_kimi_k3_2026` | unmapped | note present | chapter listed | not passage-reviewed |
 | `learning-theory-generalization-and-scaling-science.core` | `learning-theory-generalization-and-scaling-science` | `simulation_scaling` | unmapped | note present | chapter listed | not passage-reviewed |
 | `learning-theory-generalization-and-scaling-science.core` | `learning-theory-generalization-and-scaling-science` | `ext_scaling_laws_neural_language_models_2020` | mapped | note present | chapter listed | not passage-reviewed |
 | `learning-theory-generalization-and-scaling-science.core` | `learning-theory-generalization-and-scaling-science` | `ext_mdl_tutorial_2004` | mapped | note present | chapter listed | not passage-reviewed |

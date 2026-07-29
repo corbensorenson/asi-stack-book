@@ -7772,5 +7772,24 @@
     "source_type": "research_survey",
     "published": "2026",
     "citation_label": "Microsoft Research (2026), Multilingual Contextual Evaluation"
+  },
+  {
+    "id": "ext_kimi_k3_2026",
+    "title": "Kimi K3: Open Frontier Intelligence",
+    "priority": "external_literature",
+    "layer": "hybrid_attention_sparse_routing_and_training_systems",
+    "chapter_targets": [
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+      "routing-heads-and-specialist-cores",
+      "governed-model-training-distributed-optimization-and-scaling"
+    ],
+    "url": "https://arxiv.org/abs/2607.24653",
+    "notes": "Primary technical report and official architecture summary for KDA/Gated-MLA hybrid attention, Attention Residuals, Stable LatentMoE, Quantile Balancing, SiTU-GLU, and Per-Head Muon. The approximately 2.5x scaling-efficiency result is provider-reported for the integrated 2.8T system and does not identify a transferable component effect.",
+    "source_type": "technical_report",
+    "arxiv_id": "2607.24653",
+    "published": "2026-07-27",
+    "updated": "2026-07-27",
+    "citation_label": "Kimi Team (2026), Kimi K3: Open Frontier Intelligence",
+    "doi": "10.48550/arXiv.2607.24653"
   }
 ]
