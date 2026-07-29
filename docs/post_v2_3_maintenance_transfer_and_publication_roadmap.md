@@ -628,6 +628,29 @@ The empirical slot remains infrastructure-blocked. Its exact unblock trigger
 is unchanged: a later receipt must show at least 50 GiB free and a reachable
 Docker daemon before the content-sealed sequential materializer may start.
 
+### P2-R3a exact capacity and Docker receipt — 2026-07-28
+
+The third exact preflight, `2026-07-28-r3a-003`, is bound to clean, deployed,
+and publicly attested source commit
+`cef11abd5fca0a421087b3123c1defb31f2b4e6d`. It measured only
+`4,690,223,104` available host bytes against the unchanged
+`53,687,091,200`-byte floor, a `48,996,868,096`-byte shortfall. Direct
+out-of-sandbox Docker diagnostics again found the client but not a usable
+daemon: version returned client metadata followed by `EOF`, info timed out
+after thirty seconds, and storage inspection returned `EOF`.
+
+The receipt preserves all prior attempts and binds the same resource contract
+and 30-candidate queue. It opened no task content or candidate outcome and ran
+no image pull, dependency materialization, evaluator, model, or task-specific
+command. No rank was burned. No Docker reclamation was attempted because
+reclaimable bytes remain unknown, and deletion of non-Docker user data remains
+unauthorized.
+
+This is another N0 infrastructure disposition, not a candidate or architecture
+result. P2 remains resource-blocked without consuming active WIP. Its unblock
+trigger is unchanged: at least 50 GiB free and a reachable Docker daemon in a
+later immutable receipt.
+
 The sequence may move past a packet only when its validator, negative controls,
 status projection, changelog, clean `main` commit, and exact residual record
 agree. “Blocked” requires a current command, artifact, failing predicate, and
@@ -3525,10 +3548,12 @@ is not a debugging interface.
    evidence-bearing transaction with exact commit, tree, artifact, and public-
    state reconciliation.
 2. **Ready natural-campaign preflight (`P2`).** Preserve the fixed P2
-   denominator and all N0 infrastructure outcomes. The 2026-07-24 observation
-   is below the 50-GiB entry floor and Docker inspection lacked socket access;
-   neither is a task outcome. Record the exact current state and attempt the
-   frozen path when eligible, or emit the exact failure receipt. Execute the
+   denominator and all N0 infrastructure outcomes. The exact 2026-07-28
+   out-of-sandbox receipt records only 4.37 GiB free against the 50-GiB entry
+   floor and an unreachable Docker daemon; neither condition is a task
+   outcome. The lane is resource-blocked and consumes no active WIP. Recheck
+   only after external capacity or daemon state changes. Once both gates pass,
+   execute the
    storage-feasible materialization protocol (sequential-verified
    readiness and Docker-scoped reclamation with receipts), then competently
    qualify all four replacement slots and restore the
@@ -3553,15 +3578,19 @@ is not a debugging interface.
    revocation, and descendant-aware deletion. Preserve the natural publication
    development trace's source/tested-artifact/no-rebuild deployment/public-
    monitor joins, but never place its outcome-aware happy path in a held-out
-   denominator. Implementation volume follows the case; it does not precede it.
+   denominator. Preserve the terminal 60-trial, 213-process authored
+   implementation/instrument qualification and its zero-natural-task boundary.
+   Admit consecutive development tasks only when independently necessary work
+   arises; never manufacture tasks to fill the campaign. The protected
+   forty-task denominator remains closed.
 6. **Evidence, instrument, and structural renewal (`P6`).** Keep primary comparators,
    evaluator sensitivity, false-negative controls, alternative substrates,
    governed update/unlearning, Deterministic Capability Compilation, and the
    Platonic World Model current without allowing prose to inherit evidence.
    R16-A's append-only atoms for the six post-baseline chapters are terminal.
-   Preserve the terminal W3 inheritance guard and terminal six-chapter T1D
-   manuscript-maturity receipt, then close the combined current 84-chapter
-   reader packet. The optimizer-landscape manuscript-depth
+   Preserve the terminal W3 inheritance guard, six-chapter T1D
+   manuscript-maturity receipt, and combined current 84-chapter reader packet.
+   The optimizer-landscape manuscript-depth
    amendment is terminal; its shared atom/reader projections remain inside
    R16-A/R16-B and its matched campaign remains an ordinary evidence residual.
    Preserve the terminal P6.7 inference-cache prose and source packet while its
@@ -3582,19 +3611,18 @@ is not a debugging interface.
    concept-complete dispositions. Treat the 5,000-word threshold and raw atom
    counts as diagnostics only. Reopen the lane only after digest drift or an
    explicit successor amendment; do not treat editorial completion as proof.
-   The Round 18 bounded breadth packet is terminal at argument support and the
-   structural freeze is restored. The remaining seven P6.4 candidates and
-   post-Round-18 Candidates N/O have no active queue position. N/O source and
-   boundary research remains closed until a material P2 checkpoint, terminal
-   T1D depth pack, and an available existing-book slot. Any future chapter
-   needs a dated amendment, a completed
-   material empirical/evidence checkpoint, and exclusive-owner, competence,
-   reader-value, safety, birth-artifact, and non-displacement gates. Manifest or
-   roadmap admission alone changes no support.
+   The Round 18 bounded breadth packet is terminal at argument support. The
+   binding no-deferral policy remains in force: no worthwhile manuscript idea
+   may be parked behind a structural freeze, while unearned empirical or proof
+   work may remain honestly open. The remaining historical P6.4 and N/O
+   candidates have no active queue position because their warranted concepts
+   were integrated or explicitly rejected, not deferred. Any future chapter
+   still needs a distinct unowned lifecycle and full birth artifacts. Manifest
+   or roadmap admission alone changes no support.
 7. **Narrative and reader quality (`P7`).** Preserve the published
    `reader-2026-07-18` receipts, close only compatibility claims that are
-   actually tested, preserve the terminal W3 meaning-preservation packet, close
-   the current-reader freshness packet after T1D, and
+   actually tested, preserve the terminal W3 meaning-preservation packet and
+   terminal current-reader freshness packet, and
    execute only P7.1b after the joined case stabilizes. The X synopsis remains
    staged until explicit action-time authorization.
 8. **Independent challenge (`P3`).** After `T5`, reproduce any broadened result
@@ -3622,12 +3650,12 @@ lies.
 
 | Milestone | State | Completion condition |
 |---|---|---|
-| M0 — Truth and identity control | in progress | Clean pushed/build/deploy checkpoint `5575d3cbf5f9dd9edfec8548c4279728b0da3995` is the latest commit-bound public checkpoint captured by the P5 natural development trace; close only after this transaction and every later evidence checkpoint receive their own clean custody and public-state reconciliation. |
+| M0 — Truth and identity control | in progress | The latest evidence-bearing checkpoint is clean `main` commit `cef11abd5fca0a421087b3123c1defb31f2b4e6d`: build `30410938617` passed deep validation, Lean, clean render, public-status and Human-view checks, then deploy/attest `30411437258` verified and deployed its tested artifact without rebuilding and passed the separate public crawl. Keep M0 continuous through every later evidence checkpoint. |
 | M1 — Negative-result rehabilitation | completed | All 90 accepted negative/no-change transitions are classified (1 N0, 15 N1, 74 N2, zero N3–N5), and the frozen 75-surface snapshot including the then-live 55 chapters preserves the resulting ceilings. |
 | M2 — Competent natural empirical result | in progress | A high-value natural, non-authored campaign passes every competence gate and ends with a bounded positive, negative, or inconclusive disposition. |
 | M3 — Reproduction and transfer | pending | Any broadened result has independent reproduction and two prospectively selected materially different transfer settings. |
 | M4 — Semantic formal depth | completed | All six frozen clusters are terminal across 25 modules with exact dispositions, modeled state, assumptions, countermodels, consumers, mutations, semantic separations, and maximum-inference ceilings. No aggregate theorem count or finite record grants empirical support. |
-| M5 — Effect-complete reference | in progress | The first eight-case slice exercises durable authority-to-effect, revocation, idempotency, crash recovery, rollback/compensation, nine-class restore, and local deletion. The seven-case successor adds actual model/Adam state, a weights-only rejecting control, full-state crash/restart recovery, one localhost partition with owned outbox and exactly-once external effect, stale-credential rejection, source/weight/environment custody, and separate-process observation. One outcome-aware natural publication happy path now preserves source, tested artifact, no-rebuild deploy, public effect, and post-deploy monitoring across hosted services, but supplies no fault, rollback, safety denominator, matched control, or support movement. Natural AI-service usefulness, strong models, distributed replicas/partitions, delayed/open-world effects, externally rooted model custody, independent reproduction, and prospective claim-bearing deployment evidence remain. |
+| M5 — Effect-complete reference | in progress | Two bounded local slices and one outcome-aware natural publication happy path are retained at their exact scopes. The frozen five-arm campaign now has a terminal authored implementation/instrument qualification across 60 arm/fault controls, 14 state classes, 213 child processes, 24/24 evaluator cases, and 14/14 development-opening gates. It ran zero natural tasks and observed no elapsed 24-hour window. Consecutive natural development work, full cost measurement, precision simulation, the single protected opening, causal comparison, transfer, and independent reproduction remain. |
 | M6 — Renewal and structural completeness | completed | The first tranche, A1/A2, Round 18 breadth packet, ten-owner no-deferral transaction, four-owner taxonomy reconciliation, 2026-07-25 full-coverage audit, T1D six-chapter maturity/source/reader packet, Precision Contract integration, R16-A six-chapter/thirty-atom organization packet, W3 84-chapter inheritance guard, and R16-B 84-chapter reader-freshness derivative are terminal at their declared argument or organization scope. The manifest is 84; no identified manuscript idea is deferred. Optimizer, heterogeneous-memory, and inference-cache manuscript depth is in the book; executable evidence residuals remain ordinary Phase 2 work. |
 | M7 — Reader/publication disposition | in progress | PDF, EPUB, and DOCX in `reader-2026-07-18` remain immutable published artifacts with exact receipts. The current 84-chapter source-fresh virtual QMD derivative is terminal; HTML, PDF, EPUB, DOCX, and audio are explicitly deferred pending format-specific QA rather than fabricated. Close M7 after public surfaces synchronize and the exact final `main`/Pages attestation succeeds; local source freshness does not imply a new external reader release. |
 | M8 — Successor continuity | pending | Every open item has a terminal disposition and the next exact authority is active. |

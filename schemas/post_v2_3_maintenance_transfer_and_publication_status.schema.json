@@ -1091,13 +1091,16 @@
           "observed_host_available_1k_blocks_2026_07_24": 22337556,
           "observed_host_available_bytes_2026_07_24": 22873657344,
           "docker_inspection_state_2026_07_24": "permission_denied_local_socket",
-          "latest_preflight_attempt_id": "2026-07-27-r3a-002",
-          "latest_preflight_source_commit": "2aae71bf83909298f4c5ebd5c6a819f687ba772e",
+          "latest_preflight_attempt_id": "2026-07-28-r3a-003",
+          "latest_preflight_source_commit": "cef11abd5fca0a421087b3123c1defb31f2b4e6d",
           "observed_host_available_bytes_2026_07_27": 25627230208,
           "observed_host_shortfall_bytes_2026_07_27": 28059860992,
           "docker_daemon_available_2026_07_27": false,
-          "latest_preflight_receipt_path": "experiments/p2_governed_repository_admission/infrastructure_materialization/attempts/2026-07-27-r3a-002/result.json",
-          "latest_preflight_human_receipt_path": "docs/p2_r3a_capacity_and_docker_preflight_2026_07_27.md",
+          "observed_host_available_bytes_2026_07_28": 4690223104,
+          "observed_host_shortfall_bytes_2026_07_28": 48996868096,
+          "docker_daemon_available_2026_07_28": false,
+          "latest_preflight_receipt_path": "experiments/p2_governed_repository_admission/infrastructure_materialization/attempts/2026-07-28-r3a-003/result.json",
+          "latest_preflight_human_receipt_path": "docs/p2_r3a_capacity_and_docker_preflight_2026_07_28.md",
           "minimum_host_free_bytes": 53687091200,
           "non_docker_user_data_deletion_allowed": false,
           "materialization_recipe_and_receipt_count_required": 30,
@@ -2527,6 +2530,11 @@
         "attested_head",
         "state",
         "working_tree_delta_file_count_at_review",
+        "build_run_id",
+        "deploy_run_id",
+        "tested_artifact_verified",
+        "deploy_rebuilt",
+        "public_crawl_passed",
         "commit_authority",
         "push_authority",
         "required_reconciliation"
@@ -2539,13 +2547,28 @@
           "const": false
         },
         "attested_head": {
-          "const": "8e2b5a2e2001010522721aabfd1f669998d87f09"
+          "const": "cef11abd5fca0a421087b3123c1defb31f2b4e6d"
         },
         "state": {
           "const": "pushed_deployed_clean_ancestral_checkpoint"
         },
         "working_tree_delta_file_count_at_review": {
           "const": 0
+        },
+        "build_run_id": {
+          "const": 30410938617
+        },
+        "deploy_run_id": {
+          "const": 30411437258
+        },
+        "tested_artifact_verified": {
+          "const": true
+        },
+        "deploy_rebuilt": {
+          "const": false
+        },
+        "public_crawl_passed": {
+          "const": true
         },
         "commit_authority": {
           "const": "owner_authorized_in_thread"

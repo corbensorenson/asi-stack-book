@@ -1,0 +1,132 @@
+{
+  "schema_version": "asi_stack.p2_r3a_capacity_preflight.v1",
+  "attempt_id": "2026-07-28-r3a-003",
+  "recorded_at_utc": "2026-07-29T00:34:38.093110+00:00",
+  "state": "blocked_before_materialization",
+  "claim_id": "p2.governed_natural_repository_change_admission_joint_frontier",
+  "scope": "host_capacity_and_docker_daemon_entry_preflight_only",
+  "source_commit": "cef11abd5fca0a421087b3123c1defb31f2b4e6d",
+  "inputs": {
+    "resource_ceiling_path": "evidence_quality/p2_resource_ceiling.json",
+    "resource_ceiling_sha256": "aeeef25145348544e73d9df0028e6bd70f63aa33da03b12c2b6464f5099762bb",
+    "replacement_queue_path": "experiments/p2_governed_repository_admission/corpus/replacement_queue.json",
+    "replacement_queue_sha256": "957d842b376812c510faefca04da48f543a928efddda00beebaf2fd6d54150f5",
+    "frozen_candidate_count": 30
+  },
+  "host_capacity": {
+    "measured_path": "/Users/corbensorenson/Documents/AI_book",
+    "total_bytes": 994662584320,
+    "used_bytes": 989972361216,
+    "available_bytes": 4690223104,
+    "minimum_required_bytes": 53687091200,
+    "shortfall_bytes": 48996868096,
+    "floor_pass": false
+  },
+  "docker": {
+    "daemon_reachable": false,
+    "all_diagnostic_commands_exit_zero": false,
+    "reclaimable_bytes_known": false,
+    "reclamation_attempted": false,
+    "reclamation_authorized_scope": "docker_objects_only"
+  },
+  "command_receipts": [
+    {
+      "argv": [
+        "df",
+        "-k",
+        "/Users/corbensorenson/Documents/AI_book"
+      ],
+      "shell_display": "df -k /Users/corbensorenson/Documents/AI_book",
+      "started_at_utc": "2026-07-29T00:34:38.093421+00:00",
+      "ended_at_utc": "2026-07-29T00:34:38.103216+00:00",
+      "wall_seconds": 0.009829,
+      "timeout_seconds": 30,
+      "timed_out": false,
+      "exit_code": 0,
+      "stdout": "Filesystem   1024-blocks      Used Available Capacity iused    ifree %iused  Mounted on\n/dev/disk3s5   971350180 917721484   4580296   100% 8566849 45802960   16%   /System/Volumes/Data\n",
+      "stderr": "",
+      "stdout_sha256": "de855b8f1f42024675853c3ceaa02bf0f3d160c3f25fb113332b0a6e2b45724b",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "docker",
+        "version",
+        "--format",
+        "{{json .}}"
+      ],
+      "shell_display": "docker version --format '{{json .}}'",
+      "started_at_utc": "2026-07-29T00:34:38.103321+00:00",
+      "ended_at_utc": "2026-07-29T00:34:38.415773+00:00",
+      "wall_seconds": 0.312511,
+      "timeout_seconds": 30,
+      "timed_out": false,
+      "exit_code": 1,
+      "stdout": "{\"Client\":{\"Version\":\"29.2.0\",\"ApiVersion\":\"1.53\",\"DefaultAPIVersion\":\"1.53\",\"GitCommit\":\"0b9d198\",\"GoVersion\":\"go1.25.6\",\"Os\":\"darwin\",\"Arch\":\"arm64\",\"BuildTime\":\"Mon Jan 26 19:25:13 2026\",\"Context\":\"desktop-linux\"},\"Server\":null}\n",
+      "stderr": "EOF\n",
+      "stdout_sha256": "bdadb5e69036a2282bbe6ef1737d27661619cbf699744e6b3a327e21ddace895",
+      "stderr_sha256": "2a21c5b3bff0299c0161470468f355e5b4afcf17a5f593ab68394ef7af319cdc"
+    },
+    {
+      "argv": [
+        "docker",
+        "info",
+        "--format",
+        "{{json .}}"
+      ],
+      "shell_display": "docker info --format '{{json .}}'",
+      "started_at_utc": "2026-07-29T00:34:38.415885+00:00",
+      "ended_at_utc": "2026-07-29T00:35:08.422615+00:00",
+      "wall_seconds": 30.005884,
+      "timeout_seconds": 30,
+      "timed_out": true,
+      "exit_code": 124,
+      "stdout": "",
+      "stderr": "",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "docker",
+        "system",
+        "df",
+        "--format",
+        "{{json .}}"
+      ],
+      "shell_display": "docker system df --format '{{json .}}'",
+      "started_at_utc": "2026-07-29T00:35:08.422710+00:00",
+      "ended_at_utc": "2026-07-29T00:35:08.547704+00:00",
+      "wall_seconds": 0.125095,
+      "timeout_seconds": 30,
+      "timed_out": false,
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "retrieving disk usage: EOF\n",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "867d0fcd80349fd25f4a791ea962c8c96c3149062720ab14f0fef393c3a77f47"
+    }
+  ],
+  "decision": {
+    "entry_gate_pass": false,
+    "blockers": [
+      "host_free_bytes_below_frozen_50_gib_floor",
+      "docker_daemon_unreachable"
+    ],
+    "pool_materialization_started": false,
+    "candidate_image_pull_started": false,
+    "dependency_materialization_started": false,
+    "protected_task_content_opened": false,
+    "candidate_outcome_opened": false,
+    "next_legal_action": "restore_frozen_capacity_floor_and_live_docker_daemon_then_record_new_immutable_preflight"
+  },
+  "negative_inference_level": "N0",
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "A failed capacity or Docker preflight is not evidence against governed repository admission.",
+    "No task problem, patch, test identity, command, label, model output, evaluator judgment, or outcome was opened.",
+    "This receipt does not materialize the thirty-candidate pool or qualify a replacement.",
+    "No non-Docker user data may be deleted by this protocol."
+  ]
+}

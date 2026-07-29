@@ -313,6 +313,7 @@ def errors(data: dict) -> list[str]:
         "## P0 — Public truth, claim identity, and attestation continuity",
         "## P1 — Negative-result rehabilitation and false-negative defense",
         "## P2 — Competence-qualified natural empirical frontier",
+        "### P2-R3a exact capacity and Docker receipt — 2026-07-28",
         "## P3 — Independent reproduction, transfer, and SOTA challenge",
         "## P4 — Semantically meaningful formal evidence",
         "## P5 — Effect-complete governed reference system",
@@ -1675,11 +1676,14 @@ def errors(data: dict) -> list[str]:
         or recovery.get("observed_host_available_1k_blocks_2026_07_24") != 22337556
         or recovery.get("observed_host_available_bytes_2026_07_24") != 22873657344
         or recovery.get("docker_inspection_state_2026_07_24") != "permission_denied_local_socket"
-        or recovery.get("latest_preflight_attempt_id") != "2026-07-27-r3a-002"
-        or recovery.get("latest_preflight_source_commit") != "2aae71bf83909298f4c5ebd5c6a819f687ba772e"
+        or recovery.get("latest_preflight_attempt_id") != "2026-07-28-r3a-003"
+        or recovery.get("latest_preflight_source_commit") != "cef11abd5fca0a421087b3123c1defb31f2b4e6d"
         or recovery.get("observed_host_available_bytes_2026_07_27") != 25627230208
         or recovery.get("observed_host_shortfall_bytes_2026_07_27") != 28059860992
         or recovery.get("docker_daemon_available_2026_07_27") is not False
+        or recovery.get("observed_host_available_bytes_2026_07_28") != 4690223104
+        or recovery.get("observed_host_shortfall_bytes_2026_07_28") != 48996868096
+        or recovery.get("docker_daemon_available_2026_07_28") is not False
     ):
         out.append("P2 historical or current capacity truth drifted")
     for field in ("latest_preflight_receipt_path", "latest_preflight_human_receipt_path"):
@@ -2127,6 +2131,16 @@ def errors(data: dict) -> list[str]:
         out.append("attestation must describe an ancestral checkpoint, not self-reference current HEAD")
     if attestation.get("working_tree_delta_file_count_at_review") != 0:
         out.append("attested custody checkpoint was not clean when reviewed")
+    if (
+        attestation.get("attested_head")
+        != "cef11abd5fca0a421087b3123c1defb31f2b4e6d"
+        or attestation.get("build_run_id") != 30410938617
+        or attestation.get("deploy_run_id") != 30411437258
+        or attestation.get("tested_artifact_verified") is not True
+        or attestation.get("deploy_rebuilt") is not False
+        or attestation.get("public_crawl_passed") is not True
+    ):
+        out.append("latest clean build/deploy/public-crawl custody receipt drifted")
 
     for path, text in data["public"].items():
         if "post_v2_3_maintenance_transfer_and_publication_roadmap.md" not in text:
@@ -2219,6 +2233,7 @@ def main() -> None:
     mutate("P5 qualification heldout opening", lambda c: c["p5_natural_qualification"].__setitem__("heldout_opening_gate_passed", True))
     mutate("P5 qualification model-quality laundering", lambda c: c["p5_natural_qualification"]["model_runtime_canary"].__setitem__("model_quality_evaluated", True))
     mutate("false self-referential attestation", lambda c: c["status"]["attestation"].__setitem__("state", "commit_bound_clean"))
+    mutate("attested build-run drift", lambda c: c["status"]["attestation"].__setitem__("build_run_id", 0))
     mutate("branch permission", lambda c: c["status"]["attestation"].__setitem__("branches_allowed_for_book_work", True))
     mutate("reader publication laundering", lambda c: c["reader_manifest"].__setitem__("release_state", "candidate"))
     mutate("N5 deletion", lambda c: c.__setitem__("competence", c["competence"].replace("N5 — Broad claim refutation", "N5 removed", 1)))
@@ -2332,7 +2347,7 @@ def main() -> None:
         "25 direct and 90 indirect identities resolved with zero unmapped; N0-N5 competence contract active and historical rehabilitation complete; "
         "90 accepted historical negatives classified as 1 N0, 15 N1, 74 N2, and 0 N3-N5; "
         "the frozen 75-surface rehabilitation snapshot including the then-live 55 chapters reconciled with zero overbroad negative language; "
-        "P2 selected prospectively from five candidates; natural development preflight covers 1,117 post-snapshot tasks, 12 repositories, seven languages, and 12 image manifests; the fixed gold denominator is fully dispositioned as eight qualified and four N0 replacements across 62 verified arm logs and eight attempts; the corrected infrastructure/content boundary reinstates rank five as setup-retry-pending and keeps rank six closed; the historical 2026-07-22 capacity entry condition was met, while the exact 2026-07-27 receipt confirms both a below-floor host and unreachable Docker daemon without opening protected content; the complete 30-candidate sequential materialization remains unpassed; Q1 D1 and Theseus Q2 D2 remain disjoint and sealed; remeasurement, qualification, construct, and heldout gates remain closed; "
+        "P2 selected prospectively from five candidates; natural development preflight covers 1,117 post-snapshot tasks, 12 repositories, seven languages, and 12 image manifests; the fixed gold denominator is fully dispositioned as eight qualified and four N0 replacements across 62 verified arm logs and eight attempts; the corrected infrastructure/content boundary reinstates rank five as setup-retry-pending and keeps rank six closed; the historical 2026-07-22 capacity entry condition was met, while the latest exact 2026-07-28 receipt confirms both a below-floor host and unreachable Docker daemon without opening protected content; the complete 30-candidate sequential materialization remains unpassed; Q1 D1 and Theseus Q2 D2 remain disjoint and sealed; remeasurement, qualification, construct, and heldout gates remain closed; "
         "all six semantic proof clusters are terminally adequate at bounded scope; the historical 66-chapter Round 18 freeze remains recorded, while the superseding no-deferral, taxonomy, and full-coverage transactions admit eighteen distinct manuscript owners into the current 84-chapter book at argument support, leave zero live candidate queue, add semantic review and current proof-triage custody, and remove structural freezing for manuscript ideas; the current 84-entry role partition is exact at 11 thesis, 54 load-bearing reference, 7 implementation, and 12 speculative chapters; the C0-C8 convergence amendment preserves three defended contributions, targets a 22-unit reader route, and adds shared calculus, developmental-loop, minimal-kernel, bounded-liveness, P0-P6 proof-depth, and natural-flagship work without an external-human prepublication gate; optimizer manuscript depth is terminal while its empirical campaign remains a nonblocking evidence residual; current proof and main-attestation baselines exact; no support/release effect; "
         f"{len(mutations)}/{len(mutations)} mutations rejected."
     )

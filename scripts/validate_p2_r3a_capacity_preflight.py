@@ -27,6 +27,13 @@ ATTEMPTS = [
         / "2026-07-27-r3a-002/result.json",
         ROOT / "docs/p2_r3a_capacity_and_docker_preflight_2026_07_27.md",
     ),
+    (
+        "2026-07-28-r3a-003",
+        ROOT
+        / "experiments/p2_governed_repository_admission/infrastructure_materialization/attempts"
+        / "2026-07-28-r3a-003/result.json",
+        ROOT / "docs/p2_r3a_capacity_and_docker_preflight_2026_07_28.md",
+    ),
 ]
 SCHEMA = ROOT / "schemas/p2_r3a_capacity_preflight.schema.json"
 RESOURCE = ROOT / "evidence_quality/p2_resource_ceiling.json"
