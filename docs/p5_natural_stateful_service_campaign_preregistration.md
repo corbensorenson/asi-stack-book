@@ -104,9 +104,14 @@ metric swap, denominator shrink, retry, or rescue.
 
 The campaign consumes neither P2 protected storage nor Q1/Q2 tasks. It cannot
 substitute for the Theseus T4 natural joined trace, unlock T5, promote support,
-or authorize release. The next legal action is to implement the five arms,
-sandbox dependency and fault adapters, separate evaluator and monitor,
-content-addressed intake, calibration suite, full-state checkpointing, and
-registered preflight. Development tasks may open only after those surfaces
-pass. Protected tasks remain closed until every competence, resource,
-precision, and custody gate passes.
+or authorize release. The authored implementation and instrument qualification
+now passes at the bounded scope recorded in
+`docs/p5_natural_stateful_service_campaign_qualification.md`: all five arms,
+twelve fault adapters, fourteen state classes, five dependency adapters, the
+separate evaluator and monitor, and twenty-four known-answer cases execute.
+That receipt ran zero natural tasks and observed no elapsed twenty-four-hour
+window. The next legal action is to admit consecutive eligible natural
+development tasks only when independently necessary project work arises, then
+run the frozen matched development procedure and precision simulation.
+Protected tasks remain closed until every competence, resource, precision, and
+custody gate passes.

@@ -43,6 +43,7 @@ P2_REPLACEMENT_QUEUE = ROOT / "experiments/p2_governed_repository_admission/corp
 P5_STATEFUL_RESULT = ROOT / "experiments/effect_complete_service/results/2026-07-27-local.json"
 P5_NATURAL_TRACE = ROOT / "experiments/p5_natural_publication_service_trace/results/2026-07-27-development.json"
 P5_NATURAL_CAMPAIGN = ROOT / "experiments/governed_operations_argument_exit/preregistration.json"
+P5_NATURAL_QUALIFICATION = ROOT / "experiments/governed_operations_argument_exit/qualification/2026-07-28-local.json"
 READER_MANIFEST = ROOT / "editions/reader_manuscript/reader_2026_07_18/manifest.json"
 READER_RELEASE_RECORD = ROOT / "release_records/2026-07-18-reader-2026-07-18-0921a924.json"
 STRUCTURAL_RESEARCH = ROOT / "docs/structural_completeness_chapter_research_2026_07_19.md"
@@ -230,6 +231,7 @@ def inputs() -> dict:
         "p5_stateful_result": load(P5_STATEFUL_RESULT),
         "p5_natural_trace": load(P5_NATURAL_TRACE),
         "p5_natural_campaign": load(P5_NATURAL_CAMPAIGN),
+        "p5_natural_qualification": load(P5_NATURAL_QUALIFICATION),
         "reader_manifest": load(READER_MANIFEST),
         "reader_release_record": load(READER_RELEASE_RECORD),
         "structural_research": STRUCTURAL_RESEARCH.read_text(encoding="utf-8"),
@@ -317,6 +319,7 @@ def errors(data: dict) -> list[str]:
         "### P5 stateful-service vertical-slice checkpoint — 2026-07-27",
         "### P5 natural publication-service development checkpoint — 2026-07-27",
         "### P5 prospective natural stateful-service campaign freeze — 2026-07-28",
+        "### P5 natural stateful-service implementation qualification — 2026-07-28",
         "## P6 — Evidence, instrument, and source renewal",
         "### P6.4-R18 — terminal bounded conceptual-completeness packet",
         "### P6.5 — Round 16 post-activation integration debt",
@@ -1996,7 +1999,6 @@ def errors(data: dict) -> list[str]:
         != "docs/p5_natural_stateful_service_campaign_preregistration.md"
         or p5_campaign.get("schema_path")
         != "schemas/governed_operations_campaign_preregistration.schema.json"
-        or p5_campaign.get("state") != campaign.get("state")
         or p5_campaign.get("frozen_date") != campaign.get("frozen_date")
         or p5_campaign.get("service_id") != campaign.get("service", {}).get("service_id")
         or p5_campaign.get("model_repository")
@@ -2054,6 +2056,54 @@ def errors(data: dict) -> list[str]:
         or campaign.get("release_effect") != "none"
     ):
         out.append("P5 prospective campaign opened outcomes or laundered authority")
+
+    p5_qualification = data["p5_natural_qualification"]
+    qualification_status = p5_campaign.get("qualification", {})
+    expected_qualification_status = {
+        "result_path": "experiments/governed_operations_argument_exit/qualification/2026-07-28-local.json",
+        "schema_path": "schemas/governed_operations_campaign_qualification.schema.json",
+        "runner_path": "scripts/run_p5_natural_service_campaign_qualification.py",
+        "validator_path": "scripts/validate_p5_natural_service_campaign_qualification.py",
+        "report_path": "docs/p5_natural_stateful_service_campaign_qualification.md",
+        "trial_count": p5_qualification.get("trial_count"),
+        "process_launch_count": p5_qualification.get("process_launch_count"),
+        "calibration_case_count": p5_qualification.get("evaluator_calibration", {}).get("case_count"),
+        "qualification_gate_count": p5_qualification.get("qualification_gate_count"),
+        "natural_tasks_run": p5_qualification.get("natural_tasks_run"),
+        "development_opening_gate_passed": p5_qualification.get("development_opening_gate_passed"),
+        "development_task_content_opened": p5_qualification.get("development_task_content_opened"),
+        "heldout_opening_gate_passed": p5_qualification.get("heldout_opening_gate_passed"),
+        "actual_twenty_four_hour_elapsed_monitor_evidence": p5_qualification.get(
+            "actual_twenty_four_hour_elapsed_monitor_evidence"
+        ),
+        "model_quality_evaluated": p5_qualification.get("model_runtime_canary", {}).get(
+            "model_quality_evaluated"
+        ),
+        "support_state_effect": p5_qualification.get("support_state_effect"),
+        "release_effect": p5_qualification.get("release_effect"),
+    }
+    if qualification_status != expected_qualification_status:
+        out.append("P5 qualification result and roadmap status diverged")
+    if (
+        p5_campaign.get("state")
+        != "implementation_and_instrument_qualified_development_content_still_closed"
+        or p5_qualification.get("result_role")
+        != "authored_implementation_and_instrument_qualification_not_natural_task_evidence"
+        or p5_qualification.get("trial_count") != 60
+        or p5_qualification.get("process_launch_count") != 213
+        or p5_qualification.get("qualification_gates_passed") != 14
+        or p5_qualification.get("development_opening_gate_passed") is not True
+        or p5_qualification.get("development_task_content_opened") is not False
+        or p5_qualification.get("heldout_opening_gate_passed") is not False
+        or p5_qualification.get("logical_time_monitor_only") is not True
+        or p5_qualification.get("actual_twenty_four_hour_elapsed_monitor_evidence") is not False
+        or p5_qualification.get("natural_tasks_run") != 0
+        or p5_qualification.get("fault_injections_on_natural_tasks") != 0
+        or p5_qualification.get("model_runtime_canary", {}).get("model_quality_evaluated") is not False
+        or p5_qualification.get("support_state_effect") != "none"
+        or p5_qualification.get("release_effect") != "none"
+    ):
+        out.append("P5 authored qualification opened natural evidence or laundered authority")
 
     expected_ids = [f"P{i}" for i in range(9)]
     if [row.get("id") for row in status.get("priorities", [])] != expected_ids:
@@ -2164,6 +2214,10 @@ def main() -> None:
     mutate("P5 public effect widening", lambda c: c["p5_natural_campaign"]["matching"].__setitem__("public_effects_during_trials", True))
     mutate("P5 institutional independence invention", lambda c: c["p5_natural_campaign"]["evaluator_and_monitor"].__setitem__("institutionally_independent", True))
     mutate("P5 T4 substitution laundering", lambda c: c["p5_natural_campaign"]["heldout"].__setitem__("t4_substitution_allowed", True))
+    mutate("P5 qualification natural-task invention", lambda c: c["p5_natural_qualification"].__setitem__("natural_tasks_run", 1))
+    mutate("P5 qualification elapsed-monitor invention", lambda c: c["p5_natural_qualification"].__setitem__("actual_twenty_four_hour_elapsed_monitor_evidence", True))
+    mutate("P5 qualification heldout opening", lambda c: c["p5_natural_qualification"].__setitem__("heldout_opening_gate_passed", True))
+    mutate("P5 qualification model-quality laundering", lambda c: c["p5_natural_qualification"]["model_runtime_canary"].__setitem__("model_quality_evaluated", True))
     mutate("false self-referential attestation", lambda c: c["status"]["attestation"].__setitem__("state", "commit_bound_clean"))
     mutate("branch permission", lambda c: c["status"]["attestation"].__setitem__("branches_allowed_for_book_work", True))
     mutate("reader publication laundering", lambda c: c["reader_manifest"].__setitem__("release_state", "candidate"))

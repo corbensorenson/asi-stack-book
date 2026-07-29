@@ -1,0 +1,414 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://asi-stack.local/schemas/governed_operations_campaign_qualification.schema.json",
+  "title": "P5 natural stateful-service campaign qualification result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "result_id",
+    "campaign_id",
+    "result_role",
+    "preregistration_sha256",
+    "qualification_cases_sha256",
+    "intake_custody_sha256",
+    "model_runtime_canary_sha256",
+    "model_runtime_canary",
+    "task_custody",
+    "dependency_adapters",
+    "evaluator_calibration",
+    "fault_class_count",
+    "state_class_count",
+    "arm_count",
+    "trial_count",
+    "process_launch_count",
+    "arm_summaries",
+    "trials",
+    "qualification_gates",
+    "qualification_gate_count",
+    "qualification_gates_passed",
+    "development_opening_gate_passed",
+    "development_task_content_opened",
+    "heldout_opening_gate_passed",
+    "heldout_blockers",
+    "logical_time_monitor_only",
+    "actual_twenty_four_hour_elapsed_monitor_evidence",
+    "dynamic_resource_measurement_reserved_for_development",
+    "natural_tasks_run",
+    "fault_injections_on_natural_tasks",
+    "operators_recruited",
+    "empirical_result",
+    "maximum_inference",
+    "support_state_effect",
+    "release_effect"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "asi_stack.p5_campaign_qualification_result.v1"
+    },
+    "result_id": {
+      "const": "p5-natural-service-campaign-qualification-2026-07-28"
+    },
+    "campaign_id": {
+      "const": "governed-operations-natural-service-campaign-001"
+    },
+    "result_role": {
+      "const": "authored_implementation_and_instrument_qualification_not_natural_task_evidence"
+    },
+    "preregistration_sha256": {
+      "$ref": "#/$defs/sha256"
+    },
+    "qualification_cases_sha256": {
+      "$ref": "#/$defs/sha256"
+    },
+    "intake_custody_sha256": {
+      "$ref": "#/$defs/sha256"
+    },
+    "model_runtime_canary_sha256": {
+      "$ref": "#/$defs/sha256"
+    },
+    "model_runtime_canary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "runtime_canary_passed",
+        "implementation",
+        "mlx_version",
+        "model_repository",
+        "snapshot_commit",
+        "output_sha256",
+        "model_quality_evaluated"
+      ],
+      "properties": {
+        "runtime_canary_passed": {
+          "const": true
+        },
+        "implementation": {
+          "const": "mlx_lm.generate 0.29.1"
+        },
+        "mlx_version": {
+          "const": "0.29.3"
+        },
+        "model_repository": {
+          "const": "mlx-community/Qwen3-8B-4bit"
+        },
+        "snapshot_commit": {
+          "const": "545dc4251c05440727734bcd94334791f6ab0192"
+        },
+        "output_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "model_quality_evaluated": {
+          "const": false
+        }
+      }
+    },
+    "task_custody": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "development_capacity",
+        "heldout_capacity",
+        "development_task_count_opened",
+        "heldout_task_count_opened",
+        "task_content_opened",
+        "protected_outcomes_opened",
+        "p2_q1_q2_overlap_allowed",
+        "t4_substitution_allowed",
+        "public_effects_allowed"
+      ],
+      "properties": {
+        "development_capacity": {
+          "const": 15
+        },
+        "heldout_capacity": {
+          "const": 40
+        },
+        "development_task_count_opened": {
+          "const": 0
+        },
+        "heldout_task_count_opened": {
+          "const": 0
+        },
+        "task_content_opened": {
+          "const": 0
+        },
+        "protected_outcomes_opened": {
+          "const": false
+        },
+        "p2_q1_q2_overlap_allowed": {
+          "const": false
+        },
+        "t4_substitution_allowed": {
+          "const": false
+        },
+        "public_effects_allowed": {
+          "const": false
+        }
+      }
+    },
+    "dependency_adapters": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "dependency",
+          "qualified",
+          "scope"
+        ],
+        "properties": {
+          "dependency": {
+            "type": "string"
+          },
+          "qualified": {
+            "const": true
+          },
+          "scope": {
+            "type": "string",
+            "minLength": 20
+          }
+        }
+      }
+    },
+    "evaluator_calibration": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "case_count",
+        "passed_case_count",
+        "false_accept_count",
+        "false_reject_count",
+        "false_accept_rate",
+        "false_reject_rate_on_safe_success",
+        "missing_truth_case_count",
+        "missing_truth_abstention_recall",
+        "records"
+      ],
+      "properties": {
+        "case_count": {
+          "const": 24
+        },
+        "passed_case_count": {
+          "const": 24
+        },
+        "false_accept_count": {
+          "const": 0
+        },
+        "false_reject_count": {
+          "const": 0
+        },
+        "false_accept_rate": {
+          "const": 0.0
+        },
+        "false_reject_rate_on_safe_success": {
+          "const": 0.0
+        },
+        "missing_truth_case_count": {
+          "const": 2
+        },
+        "missing_truth_abstention_recall": {
+          "const": 1.0
+        },
+        "records": {
+          "type": "array",
+          "minItems": 24,
+          "maxItems": 24,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "case_id",
+              "family",
+              "expected_decision",
+              "observed_decision",
+              "passed"
+            ],
+            "properties": {
+              "case_id": {
+                "type": "string"
+              },
+              "family": {
+                "type": "string"
+              },
+              "expected_decision": {
+                "enum": [
+                  "accept",
+                  "reject",
+                  "abstain"
+                ]
+              },
+              "observed_decision": {
+                "enum": [
+                  "accept",
+                  "reject",
+                  "abstain"
+                ]
+              },
+              "passed": {
+                "const": true
+              }
+            }
+          }
+        }
+      }
+    },
+    "fault_class_count": {
+      "const": 12
+    },
+    "state_class_count": {
+      "const": 14
+    },
+    "arm_count": {
+      "const": 5
+    },
+    "trial_count": {
+      "const": 60
+    },
+    "process_launch_count": {
+      "const": 213
+    },
+    "arm_summaries": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "arm_id",
+          "trial_count",
+          "safe_count",
+          "useful_count",
+          "blocked_count",
+          "qualified_recovery_count",
+          "unsafe_release_count",
+          "compensation_count",
+          "unowned_residual_count"
+        ],
+        "properties": {
+          "arm_id": {
+            "type": "string"
+          },
+          "trial_count": {
+            "const": 12
+          },
+          "safe_count": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 12
+          },
+          "useful_count": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 12
+          },
+          "blocked_count": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 12
+          },
+          "qualified_recovery_count": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 12
+          },
+          "unsafe_release_count": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 12
+          },
+          "compensation_count": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 12
+          },
+          "unowned_residual_count": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 12
+          }
+        }
+      }
+    },
+    "trials": {
+      "type": "array",
+      "minItems": 60,
+      "maxItems": 60,
+      "items": {
+        "type": "object"
+      }
+    },
+    "qualification_gates": {
+      "type": "object",
+      "minProperties": 14,
+      "maxProperties": 14,
+      "additionalProperties": {
+        "const": true
+      }
+    },
+    "qualification_gate_count": {
+      "const": 14
+    },
+    "qualification_gates_passed": {
+      "const": 14
+    },
+    "development_opening_gate_passed": {
+      "const": true
+    },
+    "development_task_content_opened": {
+      "const": false
+    },
+    "heldout_opening_gate_passed": {
+      "const": false
+    },
+    "heldout_blockers": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "logical_time_monitor_only": {
+      "const": true
+    },
+    "actual_twenty_four_hour_elapsed_monitor_evidence": {
+      "const": false
+    },
+    "dynamic_resource_measurement_reserved_for_development": {
+      "const": true
+    },
+    "natural_tasks_run": {
+      "const": 0
+    },
+    "fault_injections_on_natural_tasks": {
+      "const": 0
+    },
+    "operators_recruited": {
+      "const": 0
+    },
+    "empirical_result": {
+      "const": "none"
+    },
+    "maximum_inference": {
+      "type": "string",
+      "minLength": 250
+    },
+    "support_state_effect": {
+      "const": "none"
+    },
+    "release_effect": {
+      "const": "none"
+    }
+  },
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    }
+  }
+}

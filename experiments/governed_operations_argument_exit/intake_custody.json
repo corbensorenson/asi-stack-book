@@ -1,0 +1,27 @@
+{
+  "schema_version": "asi_stack.p5_natural_task_intake_custody.v1",
+  "campaign_id": "governed-operations-natural-service-campaign-001",
+  "state": "future_intake_initialized_content_closed",
+  "assignment_seed": 20260728,
+  "task_families": [
+    "manuscript_and_source_reconciliation",
+    "schema_validator_and_registry_maintenance",
+    "roadmap_status_and_claim_boundary_reconciliation",
+    "evidence_result_and_receipt_maintenance",
+    "publication_projection_and_public_truth_maintenance"
+  ],
+  "development_capacity": 15,
+  "heldout_capacity": 40,
+  "heldout_tasks_per_family": 8,
+  "development_task_ids": [],
+  "heldout_task_ids": [],
+  "task_content_opened": 0,
+  "protected_outcomes_opened": false,
+  "rejection_requires_pre_outcome_code": true,
+  "denominator_shrink_after_protected_output_allowed": false,
+  "p2_q1_q2_overlap_allowed": false,
+  "t4_substitution_allowed": false,
+  "public_effects_allowed": false,
+  "support_state_effect": "none",
+  "release_effect": "none"
+}

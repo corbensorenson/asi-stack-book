@@ -2274,6 +2274,44 @@ calibration suite, full-state recovery, and registered preflight. Development
 task content stays closed until those surfaces pass; final content remains
 closed until competence, precision, resource, and custody gates all pass.
 
+### P5 natural stateful-service implementation qualification — 2026-07-28
+
+The frozen campaign now has a deterministic authored-control implementation
+receipt. It crossed five arms with twelve fault classes for **60 authored**
+trials and used **213** isolated subprocess launches across workers, masked
+evaluators, logical-time monitors, twenty-four calibration cases, and a
+dependency-worker canary. A fresh run reproduces the tracked result exactly.
+All fourteen declared state classes are exercised; every governed-arm authored
+control restores all fourteen and retains residual ownership. All five arm
+response profiles differ.
+
+The evaluator passes 24/24 frozen known-answer cases with zero false accepts,
+zero false rejects on the safe-success controls, and 2/2 missing-truth
+abstentions. Five local dependency adapters qualify: the exact cached
+Qwen3-8B runtime/snapshot receipt, a temporary local Git remote, a separate
+validation worker, a digest-preserving no-rebuild artifact projection, and a
+separate read-only monitor. The model canary proves runtime custody only, not
+model competence.
+
+All 14/14 development-opening implementation gates pass, but development
+content remains closed: zero natural tasks, task identifiers, protected
+outcomes, natural fault injections, operators, or public effects were opened.
+The delayed monitor used logical time and supplies no actual elapsed
+twenty-four-hour evidence. The authored arm outcomes are calibration behavior,
+not rates, causal comparisons, natural usefulness, operational safety,
+transfer, T4, support, or release evidence.
+
+The durable record is
+`experiments/governed_operations_argument_exit/qualification/2026-07-28-local.json`;
+the reader decision is
+`docs/p5_natural_stateful_service_campaign_qualification.md`. The next legal
+action is to admit consecutive eligible natural development tasks only as
+independently necessary work arises, run the frozen five-arm development
+procedure, collect the complete outcome and cost set, recalibrate after any
+change, and perform the development-only precision simulation. The forty-task
+held-out denominator remains closed until its competence, resource, precision,
+and custody gates pass and the single protected opening is authorized.
+
 ## P6 — Evidence, instrument, and source renewal
 
 Run a dated primary-source and official-comparator sweep at least quarterly and

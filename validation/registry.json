@@ -2286,7 +2286,15 @@
     "schemas/governed_operations_campaign_preregistration.schema.json",
     "docs/p5_natural_stateful_service_campaign_preregistration.md",
     "docs/repository_map.md",
-    "scripts/register_p5_natural_stateful_service_campaign.py"
+    "scripts/register_p5_natural_stateful_service_campaign.py",
+    "experiments/governed_operations_argument_exit/model_runtime_canary.json",
+    "experiments/governed_operations_argument_exit/intake_custody.json",
+    "experiments/governed_operations_argument_exit/qualification_cases.json",
+    "experiments/governed_operations_argument_exit/qualification/2026-07-28-local.json",
+    "schemas/governed_operations_campaign_qualification.schema.json",
+    "scripts/run_p5_natural_service_campaign_qualification.py",
+    "scripts/validate_p5_natural_service_campaign_qualification.py",
+    "docs/p5_natural_stateful_service_campaign_qualification.md"
   ],
   "units": [
     {
@@ -12376,7 +12384,7 @@
       "args": [],
       "execution_tier": "pr",
       "validation_class": "publication_gate",
-      "input_contract": "Completed claim-proof predecessor; exact no-release terminal record; active unfinished-work successor; the current 84-chapter manifest and exact 11/54/7/12 chapter-role partition; the adjudicated Pro full-book review and C0-C8 convergence amendment; exact concept-first exit receipt with eight packets, 26 prose/product anchors, and zero current roadmap-only remainder; the terminal six-chapter/thirty-atom R16-A organization packet; canonical atoms and all accepted transitions with complete direct/indirect claim identity; N0-N5 negative-result rehabilitation and experiment competence; prospective P2 and ASI-THESEUS-FLAGSHIP-01 natural-evidence custody; two bounded P5 reference slices, one retrospective natural happy path, and the prospectively frozen five-arm/forty-task P5 natural-service campaign with protected outcomes closed; current reader, proof, attestation, derivative, and public-truth surfaces.",
+      "input_contract": "Completed claim-proof predecessor; exact no-release terminal record; active unfinished-work successor; the current 84-chapter manifest and exact 11/54/7/12 chapter-role partition; the adjudicated Pro full-book review and C0-C8 convergence amendment; exact concept-first exit receipt with eight packets, 26 prose/product anchors, and zero current roadmap-only remainder; the terminal six-chapter/thirty-atom R16-A organization packet; canonical atoms and all accepted transitions with complete direct/indirect claim identity; N0-N5 negative-result rehabilitation and experiment competence; prospective P2 and ASI-THESEUS-FLAGSHIP-01 natural-evidence custody; two bounded P5 reference slices, one retrospective natural happy path, one prospectively frozen five-arm/forty-task P5 natural-service campaign with protected outcomes closed, and its exact authored implementation/instrument qualification with natural content still closed; current reader, proof, attestation, derivative, and public-truth surfaces.",
       "input_artifacts": [
         "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md",
         "docs/c1_c8_phase1_idea_placement_and_prose_audit_2026_07_25.md",
@@ -12439,6 +12447,14 @@
         "experiments/governed_operations_argument_exit/preregistration.json",
         "schemas/governed_operations_campaign_preregistration.schema.json",
         "docs/p5_natural_stateful_service_campaign_preregistration.md",
+        "experiments/governed_operations_argument_exit/model_runtime_canary.json",
+        "experiments/governed_operations_argument_exit/intake_custody.json",
+        "experiments/governed_operations_argument_exit/qualification_cases.json",
+        "experiments/governed_operations_argument_exit/qualification/2026-07-28-local.json",
+        "schemas/governed_operations_campaign_qualification.schema.json",
+        "scripts/run_p5_natural_service_campaign_qualification.py",
+        "scripts/validate_p5_natural_service_campaign_qualification.py",
+        "docs/p5_natural_stateful_service_campaign_qualification.md",
         "scripts/validate_governed_operations_control_contract.py",
         "roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json",
         "schemas/post_v2_3_maintenance_transfer_and_publication_status.schema.json",
@@ -12482,7 +12498,7 @@
         "metadata-only queue contains 30 unique repositories while candidate content remains unopened",
         "construct and resource gates pending with heldout closed",
         "all six semantic proof clusters terminal at bounded adequate scope",
-        "P5 status binds two bounded slices, one retrospective natural happy path, and one prospectively frozen five-arm/forty-task natural-service campaign with 12 faults, 14 state classes, separate evaluator/monitor, full costs, protected outcomes closed, and no T4/support/release effect",
+        "P5 status binds two bounded slices, one retrospective natural happy path, one prospectively frozen five-arm/forty-task natural-service campaign, and a 60-trial/213-process authored implementation qualification with 24/24 evaluator controls and 14/14 gates while all natural and protected content remains closed",
         "N0-N5 competence contract",
         "current proof snapshot",
         "main-only stale attestation truth",
@@ -13929,7 +13945,15 @@
         "roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json",
         "docs/repository_map.md",
         "appendices/F_changelog.qmd",
-        "scripts/register_p5_natural_stateful_service_campaign.py"
+        "scripts/register_p5_natural_stateful_service_campaign.py",
+        "experiments/governed_operations_argument_exit/model_runtime_canary.json",
+        "experiments/governed_operations_argument_exit/intake_custody.json",
+        "experiments/governed_operations_argument_exit/qualification_cases.json",
+        "experiments/governed_operations_argument_exit/qualification/2026-07-28-local.json",
+        "schemas/governed_operations_campaign_qualification.schema.json",
+        "scripts/run_p5_natural_service_campaign_qualification.py",
+        "scripts/validate_p5_natural_service_campaign_qualification.py",
+        "docs/p5_natural_stateful_service_campaign_qualification.md"
       ]
     },
     {
@@ -13990,7 +14014,15 @@
         "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md",
         "docs/repository_map.md",
         "appendices/F_changelog.qmd",
-        "scripts/register_p5_natural_stateful_service_campaign.py"
+        "scripts/register_p5_natural_stateful_service_campaign.py",
+        "experiments/governed_operations_argument_exit/model_runtime_canary.json",
+        "experiments/governed_operations_argument_exit/intake_custody.json",
+        "experiments/governed_operations_argument_exit/qualification_cases.json",
+        "experiments/governed_operations_argument_exit/qualification/2026-07-28-local.json",
+        "schemas/governed_operations_campaign_qualification.schema.json",
+        "scripts/run_p5_natural_service_campaign_qualification.py",
+        "scripts/validate_p5_natural_service_campaign_qualification.py",
+        "docs/p5_natural_stateful_service_campaign_qualification.md"
       ]
     },
     {
@@ -15161,11 +15193,79 @@
       "prohibited_inference": "A complete handoff is not proof, empirical evidence, formal evidence, safety, deployment, release authority, SOTA, AGI, or ASI.",
       "contract_precision": "exact",
       "semantic_review_state": "all_184_concepts_exactly_handed_off_at_current_reviewed_digests"
+    },
+    {
+      "id": "validate_p5_natural_service_campaign_qualification.py:437",
+      "order": 437,
+      "script": "validate_p5_natural_service_campaign_qualification.py",
+      "args": [],
+      "execution_tier": "pr",
+      "validation_class": "proof_or_evidence_gate",
+      "input_contract": "The frozen five-arm natural-service preregistration; sealed 15-task development and 40-task held-out custody; exact local Qwen runtime canary; twenty-four known-answer evaluator cases; twelve fault cases; fourteen state classes; five local dependency adapters; sixty authored arm/fault controls; and a reader boundary that preserves zero natural-task evidence.",
+      "input_artifacts": [
+        "experiments/governed_operations_argument_exit/preregistration.json",
+        "schemas/governed_operations_campaign_preregistration.schema.json",
+        "docs/p5_natural_stateful_service_campaign_preregistration.md",
+        "experiments/governed_operations_argument_exit/model_runtime_canary.json",
+        "experiments/governed_operations_argument_exit/intake_custody.json",
+        "experiments/governed_operations_argument_exit/qualification_cases.json",
+        "experiments/governed_operations_argument_exit/qualification/2026-07-28-local.json",
+        "schemas/governed_operations_campaign_qualification.schema.json",
+        "scripts/run_p5_natural_service_campaign_qualification.py",
+        "scripts/validate_p5_natural_service_campaign_qualification.py",
+        "docs/p5_natural_stateful_service_campaign_qualification.md",
+        "docs/p7_2_t4_governed_operations_reader_integration.md",
+        "evidence_quality/p7_2_t4_governed_operations_reader_integration.json",
+        "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md",
+        "roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json",
+        "docs/repository_map.md",
+        "appendices/F_changelog.qmd",
+        "scripts/register_p5_natural_stateful_service_campaign.py"
+      ],
+      "output_contract": "Freshly replay and exactly reproduce all authored qualification records; require the complete five-by-twelve cross-product, masked separately launched evaluation and monitoring, full governed-state recovery, distinct arm profiles, 24/24 calibration, 14/14 implementation gates, closed task and protected-outcome custody, and seventeen rejecting mutations.",
+      "output_assertions": [
+        "5 campaign arms",
+        "12 authored fault classes",
+        "14 declared state classes",
+        "60 authored arm/fault trials",
+        "213 isolated process launches",
+        "24/24 known-answer evaluator controls",
+        "14/14 development-opening implementation gates",
+        "5 qualified local dependency adapters",
+        "0 natural tasks and 0 protected outcomes opened",
+        "logical-time monitor is not elapsed 24-hour evidence",
+        "17 mutations reject",
+        "support and release effects none"
+      ],
+      "claim_scope": "Local authored implementation, instrument, dependency-adapter, state-recovery, and custody qualification only.",
+      "negative_controls": "validator_owned_identity_digest_arm_fault_state_calibration_masking_recovery_task_custody_elapsed_monitor_model_quality_t4_public_effect_support_and_release_mutations",
+      "negative_control_cases": [
+        "task-content opening",
+        "protected-outcome opening",
+        "trial-denominator shrink",
+        "arm deletion",
+        "fault deletion",
+        "state-class shrink",
+        "gate failure",
+        "model-quality invention",
+        "elapsed-monitor invention",
+        "natural-task invention",
+        "held-out opening",
+        "T4 overlap",
+        "public-effect widening",
+        "support promotion",
+        "release promotion",
+        "evaluator arm leak",
+        "governed recovery deletion"
+      ],
+      "prohibited_inference": "Authored controls do not estimate natural usefulness, operational safety, false blocking, unsafe release, recovery rate, causal superiority, transfer, elapsed delayed harm, model quality, institutional independence, Theseus T4, support, release, AGI, or ASI.",
+      "contract_precision": "exact",
+      "semantic_review_state": "bounded_authored_qualification_with_natural_and_protected_content_closed"
     }
   ],
   "summary": {
-    "required_artifact_count": 2242,
-    "unit_count": 436
+    "required_artifact_count": 2250,
+    "unit_count": 437
   },
   "non_claims": [
     "Registry coverage does not establish semantic adequacy of every validator.",
