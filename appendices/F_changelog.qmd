@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-07-29 — Theseus T0A-to-T1 lineage currentness reconciliation
+
+- Imported published Project Theseus `main` commit
+  `264a31ee288fc288727c45a1166b4dbe36180b6b`: T0A is historically complete
+  at its GREEN pre-activation freeze, and T1 is active at shared-trunk step
+  9,048 and 69,310,840 of 1,096,734,920 frozen pretraining positions.
+- Recorded the unavailable step-3,480 payload and incomplete
+  step-3,480-to-9,048 predecessor chain as explicit custody limitations.
+  Neither repository may convert the historical qualification into a
+  present-tense full-chain replay claim.
+- Bound exact model, optimizer, RNG, receipt, stage, and migrated-plan
+  identities to a prospective anchor. Every later state-changing segment must
+  publish its before/after and host-guard identities to the append-only ledger
+  before another launch.
+- Reconciled the canonical roadmap, status, schema, public-safe import,
+  validator, and rejecting mutations. The evaluator remains unconsumed,
+  capability remains `NOT_EVALUATED`, T2 remains blocked, and no support or
+  release state moves.
+
 ## 2026-07-28 — P2-R3a third infrastructure entry receipt
 
 - Recorded immutable attempt `2026-07-28-r3a-003` against exact source commit

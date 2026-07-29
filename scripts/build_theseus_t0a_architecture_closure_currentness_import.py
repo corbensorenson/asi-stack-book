@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build and validate the public-safe Theseus T0/T0A currentness handoff."""
+"""Build and validate the public-safe Theseus T0A-to-T1 custody handoff."""
 
 from __future__ import annotations
 
@@ -20,226 +20,127 @@ DOC = ROOT / "docs/theseus_t0a_architecture_closure_currentness_import.md"
 
 def build() -> dict:
     return {
-        "schema_version": "asi_stack.theseus_t0a_architecture_closure_currentness_import.v5",
-        "import_id": "theseus-t0a-architecture-closure-currentness-2026-07-27-9e545cf1",
-        "observed_utc": "2026-07-27T16:25:51Z",
+        "schema_version": "asi_stack.theseus_t0a_architecture_closure_currentness_import.v6",
+        "import_id": "theseus-t0a-t1-lineage-currentness-2026-07-29-264a31ee",
+        "observed_utc": "2026-07-29T01:38:00Z",
         "source_authority": {
             "project": "Project Theseus / Theseus-Hive",
             "owner": "Corben Sorenson",
             "source_kind": "local_author_owned_implementation_reference",
             "branch": "main",
-            "commit": "9e545cf167f22b0bbda6f914a67d022d7b8c6b81",
+            "commit": "264a31ee288fc288727c45a1166b4dbe36180b6b",
             "worktree_clean": True,
             "ahead_of_origin_main_commit_count": 0,
             "published_on_origin_main": True,
-            "source_project_mutations": 0,
             "network_calls": 0,
             "external_inference_calls": 0,
         },
         "frozen_source_files": [
-            {
-                "path": "configs/roadmap_implementation_matrix.json",
-                "sha256": "3a3ee6037d915a50df9eeb1dfbdabdb512e943e404a4918095c071946cc32417",
-                "bytes": 926634,
-            },
-            {
-                "path": "configs/pretraining_architecture_freeze.json",
-                "sha256": "357c459aff0b3000828abc24750649ebecb0f7dd3a7a08dbcddd95f7ce7b17dc",
-                "bytes": 27593,
-            },
-            {
-                "path": "scripts/pretraining_architecture_freeze.py",
-                "sha256": "645944d5746bd9687db6e28d2236df7ba8dca620f80dcccf95664cba53435453",
-                "bytes": 35502,
-            },
-            {
-                "path": "tests/test_pretraining_architecture_freeze.py",
-                "sha256": "684d910bc558b8d32b7354c6c441e4ae0cf249a5420caecd74c5e6c520c0d18f",
-                "bytes": 27601,
-            },
-            {
-                "path": "reports/pretraining_architecture_freeze_package.json",
-                "sha256": "12217a2969e950622882f43d3a801a80e3d0c49da6250f520ca084ed7dfaa8c0",
-                "bytes": 171879,
-            },
-            {
-                "path": "reports/pretraining_factorized_bakeoff.json",
-                "sha256": "cba6a1d09919eae9bd653a8619fdfce4a76c482762464193cb700779e74cb29d",
-                "bytes": 5587,
-            },
-            {
-                "path": "configs/pretraining_architecture_candidates.json",
-                "sha256": "83701918935f22d9b9dd0d5e4fa8d7b5c4391eab047c83fffdad78fe6ba66c29",
-                "bytes": 34861,
-            },
-            {
-                "path": "configs/training_acceleration_final_selector.json",
-                "sha256": "c0fdb87d5f777b98649403f7fb7eb7d5ede962f4a4487894461324ee35ffa593",
-                "bytes": 2561,
-            },
-            {
-                "path": "reports/training_acceleration_final_selector.json",
-                "sha256": "3a347abe77866a8f9e9665bdb4b2fed26c34445561497102ea313145add1b1b2",
-                "bytes": 8704,
-            },
-            {
-                "path": "configs/project_manifest_registry.json",
-                "sha256": "40853038521351fea6e1873a7fb5ea2732dea8148663ec720dd5cb69ff357f58",
-                "bytes": 520627,
-            },
-            {
-                "path": "reports/accelerator_replay/optimizer_matched_adequacy_guard.json",
-                "sha256": "256c0a477bc3672eddf5ff8519a2266b84afb5daf02e823d8947dff9f754f4ae",
-                "bytes": 953,
-            },
-            {
-                "path": "reports/replay_safety/00.json",
-                "sha256": "72c6322c053e089adcd5539e59ba534ada252d6a3e1d4188386c23a6886eb961",
-                "bytes": 33180,
-            },
-            {
-                "path": "reports/replay_safety/01.json",
-                "sha256": "e925d575268116d82bf16571a769cc1ffbf09f86a9cb7252308a6c1ed8ca2027",
-                "bytes": 30271,
-            },
-            {
-                "path": "reports/replay_safety/02.json",
-                "sha256": "71b30334b96101570ae3f8eaf015fd7079b94839a22fab0ea7027e2645cc0678",
-                "bytes": 7270,
-            },
-            {
-                "path": "reports/replay_safety/03.json",
-                "sha256": "3cb8e95609914d2f40db6c74628844914392c046e935c8ec46319aaf8bd0453d",
-                "bytes": 3595,
-            },
-            {
-                "path": "reports/replay_safety/04.json",
-                "sha256": "2a786cc7a93b2c5137dd809913eadb8e95e4d30cae168697f7068717c73d2467",
-                "bytes": 2833,
-            },
-            {
-                "path": "reports/replay_safety/05.json",
-                "sha256": "ba65d9dd096157e28f31edd2ec941e1e9fc2c2fc7ba0599e3ebfdeddae98514a",
-                "bytes": 2889,
-            },
-            {
-                "path": "reports/replay_safety/06.json",
-                "sha256": "888f10e5f626ac68c4d2f478c7b049974e4cf1d274ee90fc066964a53fddc021",
-                "bytes": 31140,
-            },
-            {
-                "path": "roadmap.md",
-                "sha256": "1cc9b6115fa19f68d15aa2cf4b6566610e093271c8281093fcb14af8ce4199ba",
-                "bytes": 244072,
-            },
+            {"path": "roadmap.md", "sha256": "2a779c81b2ce28fd7af13f4fc74242c847fcc44c11479370a1aa8589cfc87b46", "bytes": 295825},
+            {"path": "docs/PROJECT_STATE.md", "sha256": "a390148387a58d06d66d7afff839546553ad2cd0b518062f514730245b9d4a40", "bytes": 76145},
+            {"path": "configs/neural_seed_t1_lineage_anchor.json", "sha256": "fe3f00728ad590e29acee50cf18c3099f6f48eef5c177de08519238ceb47e084", "bytes": 2977},
+            {"path": "configs/neural_seed_training_availability.json", "sha256": "96358877261da8cfe01d24921f7550f683b88fc9fef9129b8f9ef4c05732b475", "bytes": 1477},
+            {"path": "configs/moecot_language_arm_training.json", "sha256": "2e4eecf854e19cac493455caf61dd30110433a9eb782ed59dc0a575b1382d2a6", "bytes": 135681},
+            {"path": "configs/roadmap_implementation_matrix.json", "sha256": "06bdeae0044bd2a01dd111a4be0b66f141e13057b4ddae4da994f7381ffcd4dd", "bytes": 939391},
+            {"path": "configs/neural_seed_architecture_review_freeze_v5.json", "sha256": "efce27e4070c5feb54d98c2d120e104670b894d6f99e8ff88fcc96868681a6e3", "bytes": 3129},
+            {"path": "scripts/neural_seed_training_campaign.py", "sha256": "5f822783793242833d13cbebf61069dd72dd61d228192af8adae81e5be5ce44f", "bytes": 27715},
+            {"path": "scripts/roadmap_implementation_gate.py", "sha256": "457ee25d25a0e705ebc035be60b74a30924b2207eb59550f8acb21434caf4b9b", "bytes": 154377},
+            {"path": "tests/test_neural_seed_training_campaign.py", "sha256": "17530992f2eff3ef50f55114b75e24fe69ace5fae1a816330c48a63cedc1fb7a", "bytes": 6619},
+            {"path": "tests/test_roadmap_pretraining_gate.py", "sha256": "f7bba9a41bbaf914bc1d640c42e28a32a9d5e7af908f2bc09ed71cb7ab6a2c21", "bytes": 29765},
+            {"path": "reports/pretraining_architecture_freeze_package.json", "sha256": "966590a47b3e85c2d86299f15d5177b2ae6233a8eed04b72b2f18f99627a8c30", "bytes": 263149},
         ],
-        "historical_t0_package": {
-            "created_utc": "2026-07-26T14:17:19.993860Z",
-            "package_identity": "sha256:9d7dc30b378067c0a254fdca21ef54e3c5469af63c748d3cc49e1f427b251cce",
+        "historical_t0a_freeze": {
+            "source_commit": "2bd2f0b1f240b826c1606556313926084e9f3592",
+            "created_utc": "2026-07-28T20:35:44.353224Z",
+            "package_path": "reports/pretraining_architecture_freeze_package.json",
+            "package_identity": "sha256:0b83c4b55616679d636df84ec14dea5825e79357b228fe441f399241acc9ae9c",
             "trigger_state": "GREEN",
             "disposition": "architecture_frozen_training_not_started",
-            "artifact_count": 123,
-            "unchanged_artifact_count": 99,
-            "changed_artifact_count": 24,
-            "missing_artifact_count": 0,
-            "current_for_source_commit": False,
-            "role": "immutable_historical_control_only",
+            "artifact_count": 143,
+            "architecture_contract_count": 15,
+            "ready_architecture_contract_count": 15,
+            "accelerator_replay_receipt_count": 14,
+            "cpu_replay_pass_count": 7,
+            "role": "historical_architecture_and_execution_qualification",
         },
-        "current_t0a_state": {
-            "t0_state": "complete",
-            "t0a_state": "active",
-            "t1_state": "blocked_by_T0A",
-            "strict_architecture_first_enforcement": True,
-            "training_authority_state": "denied_until_finite_docket_and_freeze_package_are_green",
-            "finite_docket_closed_to_untriggered_new_architecture_families": True,
-            "factorized_bakeoff_trigger_state": "GREEN",
-            "factorized_bakeoff_disposition": "factorized_architecture_selected_training_not_started",
-            "acceleration_selector_trigger_state": "GREEN",
+        "current_dependency_state": {
+            "t0_state": "complete_historical_control",
+            "t0a_state": "complete_with_prospective_T1_custody_residual",
+            "t1_state": "active_step_9048_prospectively_anchored_not_evaluated",
+            "t2_state": "blocked_by_T1_behavioral_numerator",
+            "architecture_package_current_for_pre_activation_transaction": True,
+            "present_tense_full_chain_replay_allowed": False,
+        },
+        "t1_lineage": {
+            "policy": "project_theseus_t1_prospective_lineage_anchor_v1",
+            "campaign_id": "moecot_mlx_57m_active_preregistered_v1",
+            "target_id": "shared_trunk",
+            "anchor_kind": "prospective_reconciliation_after_predecessor_chain_gap",
+            "anchor_path": "configs/neural_seed_t1_lineage_anchor.json",
+            "legacy_receipt_plan_sha256": "1c7c859ecdf2112dbd9938a34631aab70545031649c4d970554395294b1c098f",
+            "current_plan_sha256": "38951e6bc9605b86c0e0c793b37eef7ae5c6b3d5ea89f7aef4180f1b40aaa60d",
+            "stage_signature": "d35a80daa9cba706f9f67acbd4d0650ca2a73b7fc548e9c8464f79d033f369f9",
+            "optimizer_steps": 9048,
+            "optimizer_positions": 69310840,
+            "pretrain_optimizer_positions": 69310840,
+            "target_pretrain_optimizer_positions": 1096734920,
+            "remaining_pretrain_optimizer_positions": 1027424080,
+            "estimated_remaining_device_days": 3.964,
+            "checkpoint_sha256": "ed28acc8cc9a82b4bd00dbd8487f17b8131157df3c828f66eb458902d4e3c16d",
+            "optimizer_state_sha256": "7b19ceb6880954a845bdb79914d84a6d388992abe45e98d63dfdfa3a2ed6c829",
+            "mlx_rng_state_sha256": "9209383f5b4eb599c89462f922957b13e60f03eb6fac3b73f6af9003c023850f",
+            "receipt_sha256": "e46683967238fd79c328bd7465bf7030e30bb5127f0afee7b02fbf936b0fed06",
+            "t0a_optimizer_steps": 3480,
+            "t0a_optimizer_positions": 26680656,
+            "t0a_checkpoint_sha256": "af4b55247e341c20cd7164890b71fa2daf9266bfccf22defb627b17445eb9247",
+            "t0a_optimizer_state_sha256": "29bcb5f8e93267da1b52670687c2fb8d9507d3dd81a60c193a7d2d2d9ec0a2f7",
+            "t0a_receipt_sha256": "3f4c4ced2c610f08dc62b9cc3c02e2f3a22222a1c467e5264c75546b451e007a",
+            "full_segment_predecessor_chain_available": False,
+            "t0a_payload_still_materialized_at_frozen_identity": False,
+            "prospective_append_only_lineage_trigger_state": "GREEN",
+            "prospective_ledger_manifest_count": 0,
+            "prospective_rule": "Before another segment launches, the live receipt must equal the anchor or the terminal ledger identity; every successful segment archives exact before/after receipts plus checkpoint, optimizer, RNG, child-report, and host-guard identities before the next launch.",
+        },
+        "currentness_gate": {
+            "pre_training_architecture_ready": True,
+            "pre_training_architecture_blocker_count": 0,
+            "historical_source_drift_count": 12,
+            "historical_source_drift_accepted_only_after_activation": True,
+            "current_plan_migration_present": True,
             "project_registry_trigger_state": "GREEN",
             "project_registry_blocker_count": 0,
-            "cpu_governance_replay_requested_count": 7,
-            "cpu_governance_replay_passed_count": 7,
-            "cpu_governance_replay_complete": True,
-            "accelerator_replay_requested_count": 14,
-            "accelerator_replay_valid_count": 13,
-            "accelerator_replay_invalid_count": 1,
-            "invalid_accelerator_shard_id": "optimizer_matched_adequacy",
-            "prior_live_reserve_calibration": {
-                "source_commit": "653401de663ad1d089be7d8d25903a113632e997",
-                "child_started": True,
-                "fault": "host_memory_reserve_breached",
-                "initial_reclaimable_available_mib": 5216.328,
-                "minimum_reclaimable_available_mib": 3686.562,
-                "fault_reclaimable_available_mib": 3708.391,
-                "attempt_launch_reserve_mib": 5120.0,
-                "live_reserve_mib": 4096.0,
-                "maximum_inferred_unified_memory_mib": 1529.766,
-                "maximum_process_rss_mib": 231.75,
-                "maximum_swapout_growth_mib": 0.0,
-                "qualification_authority": False,
-                "role": "prospective_launch_floor_calibration_only",
-            },
-            "latest_guarded_retry": {
-                "source_commit": "9e545cf167f22b0bbda6f914a67d022d7b8c6b81",
-                "child_started": False,
-                "fault": "host_memory_preflight_failed",
-                "available_mib": 3874.8,
-                "required_launch_reserve_mib": 6144.0,
-                "live_reserve_mib": 4096.0,
-                "returncode": None,
-                "terminated_by_guard": False,
-                "qualification_authority": False,
-                "role": "latest_exact_preflight_stop",
-            },
-            "launch_calibration_qualification_authority": False,
-            "launch_calibration_minimum_safety_margin_mib": 512.0,
-            "launch_calibration_required_floor_mib": 6137.766,
-            "prospective_launch_reserve_mib": 6144.0,
-            "launch_calibration_rejecting_controls_passed": True,
-            "architecture_package_current": False,
-            "remaining_blockers": [
-                "run the same guarded optimizer-matched workload only when its own exact preflight observes at least the corrected 6144 MiB launch reserve while preserving the 4096 MiB live reserve",
-                "publish a replacement content-addressed architecture-freeze package binding the current artifacts",
-            ],
-            "post_t0a_pretraining_prerequisite": "rerun the broader pre-training readiness gate against the current 84-chapter ASI Stack after the replacement package exists",
+            "aibom_artifact_count": 937,
+            "aibom_missing_identity_count": 0,
         },
-        "observation_receipts": [
-            {
-                "command": "python3 scripts/pretraining_architecture_freeze.py --execute-replays",
-                "exit_code": 1,
-                "result": "seven_cpu_governance_replays_passed_then_freeze_refused_for_one_invalid_accelerator_receipt",
-                "interpretation": "partial replay custody only; the replacement package was not written",
-            },
-            {
-                "command": "python3 scripts/pretraining_architecture_freeze.py --run-accelerator-shards --accelerator-shard optimizer_matched_adequacy",
-                "exit_code": 2,
-                "result": "latest_retry_stopped_before_child_at_exact_6144_mib_preflight",
-                "interpretation": "the guard observed 3874.8 MiB available against the prospective 6144 MiB launch floor, did not start the child, and preserved the earlier live-reserve calibration only as historical launch-floor evidence",
-            },
-            {
-                "command": "python3 -m pytest -q tests/test_pretraining_architecture_freeze.py tests/test_host_resource_safety.py",
-                "exit_code": 0,
-                "result": "36_passed_including_launch_calibration_rejecting_controls",
-                "interpretation": "the prospective 6144 MiB launch floor is machine-bound to the 4096 MiB live reserve, 1529.766 MiB observed peak, and 512 MiB margin; lowering the floor or granting the failed receipt qualification authority is rejected",
-            },
-            {
-                "command": "python3 scripts/theseus_project_registry.py --gate",
-                "exit_code": 0,
-                "result": "GREEN_zero_blockers",
-                "interpretation": "the exact replacement binding repair restored registry and cleanup-queue custody without adding a waiver",
-            },
-        ],
+        "evaluation_boundary": {
+            "private_development_freeze": "configs/neural_seed_architecture_review_freeze_v5.json",
+            "freeze_trigger_state": "GREEN",
+            "development_surface_reusable": True,
+            "confirmation_surface_consumed": False,
+            "public_surface_consumed": False,
+            "training_eligible": False,
+            "capability_claim": "NOT_EVALUATED",
+            "source_disjoint_behavior_observed": False,
+            "t2_numerator_opened": False,
+        },
+        "verification": {
+            "affected_tests_passed": 141,
+            "hardware_dependent_tests_skipped": 18,
+            "test_failures": 0,
+            "roadmap_gate_pre_training_ready": True,
+            "roadmap_gate_blocker_count": 0,
+            "project_registry_green": True,
+            "training_launched_during_reconciliation": False,
+        },
         "book_disposition": {
-            "prior_state": "T0A_active_before_guarded_replay_attempt",
-            "new_state": "T0A_active_with_7_of_7_cpu_replays_green_13_of_14_accelerator_receipts_valid_prior_live_reserve_calibration_preserved_latest_exact_preflight_stopped_before_child_and_replacement_freeze_unpublished",
-            "next_legal_action": "run only the same guarded optimizer-matched workload when its own exact preflight observes at least the corrected 6144 MiB launch reserve while preserving its 4096 MiB live reserve, then publish the replacement package",
+            "prior_state": "T0A_active_T1_blocked_at_9e545cf1",
+            "new_state": "T0A_historical_freeze_complete_T1_active_at_step_9048_with_explicit_pre_anchor_custody_gap_and_prospective_append_only_lineage",
+            "next_legal_action": "continue only the frozen T1 shared-trunk campaign through the append-only lineage controller when its exact resource and process-inventory gates pass; preserve evaluator non-consumption until its preregistered review boundary",
             "protected_outcomes_opened": 0,
             "support_state_effect": "none",
             "release_effect": "none",
         },
         "public_safety": {
-            "raw_gate_copied": False,
-            "raw_crosswalk_copied": False,
             "private_payloads_copied": 0,
             "training_rows_copied": 0,
             "prompts_copied": 0,
@@ -250,34 +151,29 @@ def build() -> dict:
         },
         "negative_controls": [
             "source_commit_substitution",
-            "dirty_worktree_erasure",
-            "remote_divergence_erasure",
             "origin_main_publication_erasure",
-            "changed_artifact_denominator_shrink",
-            "stale_package_marked_current",
-            "T0A_marked_complete",
-            "T1_unblocked",
-            "cpu_replay_failure_invention",
-            "accelerator_denominator_shrink",
-            "invalid_accelerator_receipt_erasure",
-            "prior_calibration_child_start_erasure",
-            "latest_retry_child_start_invention",
-            "latest_retry_available_memory_invention",
-            "prospective_launch_floor_regression",
-            "failed_receipt_qualification_authority_elevation",
-            "protected_outcome_invention",
-            "private_payload_copy",
+            "T0A_reopened",
+            "T1_blocked_after_published_activation",
+            "T2_unblocked_without_behavior",
+            "pre_anchor_chain_invention",
+            "T0A_payload_availability_invention",
+            "anchor_step_drift",
+            "checkpoint_identity_drift",
+            "optimizer_identity_drift",
+            "receipt_identity_drift",
+            "plan_migration_erasure",
+            "append_only_lineage_erasure",
+            "evaluator_consumption_invention",
+            "capability_invention",
+            "training_launch_invention",
             "support_promotion",
             "release_promotion",
         ],
         "non_claims": [
-            "This is a public-safe implementation-reference currentness handoff, not a training or capability result.",
-            "A GREEN historical package and GREEN factorized bakeoff do not make the changed current source tree training-ready.",
-            "The import does not establish model quality, useful behavior, training success, optimizer superiority, safety, deployment, transfer, AGI, ASI, or SOTA.",
-            "The runtime memory-reserve stop is not negative evidence about the optimizer or architecture.",
-            "The measured launch calibration is a prospective resource-safety contract, not a successful replay or optimizer result.",
-            "The later launch preflight stop does not supersede the earlier calibration or establish that the workload itself ran.",
-            "Seven CPU/governance passes and thirteen valid accelerator receipts do not make a fourteen-receipt freeze complete.",
+            "The historical T0A GREEN transaction does not prove a complete replayable transition chain from step 3480 to step 9048.",
+            "The pre-anchor custody gap is not architecture, optimizer, or capability counterevidence.",
+            "Training progress does not establish model quality, source-disjoint behavior, useful throughput, safety, deployment, transfer, AGI, ASI, or SOTA.",
+            "The private development evaluator has not been consumed and does not authorize T2, support, or release movement.",
             "No chapter-core or non-core support state changes.",
         ],
     }
@@ -286,90 +182,62 @@ def build() -> dict:
 def validate(actual: dict, expected: dict) -> list[str]:
     errors: list[str] = []
     if actual != expected:
-        errors.append("T0A currentness import differs from the exact sanitized observation")
+        errors.append("T0A-to-T1 currentness import differs from the exact sanitized observation")
     authority = actual.get("source_authority", {})
     if (
         authority.get("branch") != "main"
         or authority.get("worktree_clean") is not True
         or authority.get("ahead_of_origin_main_commit_count") != 0
         or authority.get("published_on_origin_main") is not True
-        or authority.get("source_project_mutations") != 0
     ):
-        errors.append("source authority or remote-divergence custody drifted")
-    old = actual.get("historical_t0_package", {})
+        errors.append("source authority or publication custody drifted")
+    state = actual.get("current_dependency_state", {})
     if (
-        old.get("artifact_count") != 123
-        or old.get("unchanged_artifact_count") != 99
-        or old.get("changed_artifact_count") != 24
-        or old.get("missing_artifact_count") != 0
-        or old.get("current_for_source_commit") is not False
-        or old.get("role") != "immutable_historical_control_only"
+        state.get("t0a_state") != "complete_with_prospective_T1_custody_residual"
+        or state.get("t1_state") != "active_step_9048_prospectively_anchored_not_evaluated"
+        or state.get("t2_state") != "blocked_by_T1_behavioral_numerator"
+        or state.get("present_tense_full_chain_replay_allowed") is not False
     ):
-        errors.append("historical package currentness boundary drifted")
-    current = actual.get("current_t0a_state", {})
+        errors.append("T0A/T1/T2 dependency state drifted")
+    lineage = actual.get("t1_lineage", {})
     if (
-        current.get("t0_state") != "complete"
-        or current.get("t0a_state") != "active"
-        or current.get("t1_state") != "blocked_by_T0A"
-        or current.get("project_registry_trigger_state") != "GREEN"
-        or current.get("project_registry_blocker_count") != 0
-        or current.get("cpu_governance_replay_requested_count") != 7
-        or current.get("cpu_governance_replay_passed_count") != 7
-        or current.get("cpu_governance_replay_complete") is not True
-        or current.get("accelerator_replay_requested_count") != 14
-        or current.get("accelerator_replay_valid_count") != 13
-        or current.get("accelerator_replay_invalid_count") != 1
-        or current.get("invalid_accelerator_shard_id") != "optimizer_matched_adequacy"
-        or current.get("launch_calibration_qualification_authority") is not False
-        or current.get("launch_calibration_minimum_safety_margin_mib") != 512.0
-        or current.get("launch_calibration_required_floor_mib") != 6137.766
-        or current.get("prospective_launch_reserve_mib") != 6144.0
-        or current.get("launch_calibration_rejecting_controls_passed") is not True
-        or current.get("architecture_package_current") is not False
-        or len(current.get("remaining_blockers", [])) != 2
+        lineage.get("optimizer_steps") != 9048
+        or lineage.get("optimizer_positions") != 69310840
+        or lineage.get("target_pretrain_optimizer_positions") != 1096734920
+        or lineage.get("full_segment_predecessor_chain_available") is not False
+        or lineage.get("t0a_payload_still_materialized_at_frozen_identity") is not False
+        or lineage.get("prospective_append_only_lineage_trigger_state") != "GREEN"
+        or lineage.get("prospective_ledger_manifest_count") != 0
     ):
-        errors.append("T0/T0A/T1 dependency state drifted")
-    prior = current.get("prior_live_reserve_calibration", {})
+        errors.append("T1 identity or custody boundary drifted")
+    gate = actual.get("currentness_gate", {})
     if (
-        prior.get("source_commit") != "653401de663ad1d089be7d8d25903a113632e997"
-        or prior.get("child_started") is not True
-        or prior.get("fault") != "host_memory_reserve_breached"
-        or prior.get("attempt_launch_reserve_mib") != 5120.0
-        or prior.get("live_reserve_mib") != 4096.0
-        or prior.get("maximum_inferred_unified_memory_mib") != 1529.766
-        or prior.get("maximum_process_rss_mib") != 231.75
-        or prior.get("maximum_swapout_growth_mib") != 0.0
-        or prior.get("qualification_authority") is not False
-        or prior.get("role") != "prospective_launch_floor_calibration_only"
+        gate.get("pre_training_architecture_ready") is not True
+        or gate.get("pre_training_architecture_blocker_count") != 0
+        or gate.get("historical_source_drift_count") != 12
+        or gate.get("historical_source_drift_accepted_only_after_activation") is not True
+        or gate.get("current_plan_migration_present") is not True
+        or gate.get("project_registry_trigger_state") != "GREEN"
+        or gate.get("aibom_missing_identity_count") != 0
     ):
-        errors.append("prior live-reserve calibration custody drifted")
-    latest = current.get("latest_guarded_retry", {})
+        errors.append("lifecycle-aware currentness gate drifted")
+    evaluation = actual.get("evaluation_boundary", {})
     if (
-        latest.get("source_commit") != "9e545cf167f22b0bbda6f914a67d022d7b8c6b81"
-        or latest.get("child_started") is not False
-        or latest.get("fault") != "host_memory_preflight_failed"
-        or latest.get("available_mib") != 3874.8
-        or latest.get("required_launch_reserve_mib") != 6144.0
-        or latest.get("live_reserve_mib") != 4096.0
-        or latest.get("returncode") is not None
-        or latest.get("terminated_by_guard") is not False
-        or latest.get("qualification_authority") is not False
-        or latest.get("role") != "latest_exact_preflight_stop"
+        evaluation.get("confirmation_surface_consumed") is not False
+        or evaluation.get("public_surface_consumed") is not False
+        or evaluation.get("capability_claim") != "NOT_EVALUATED"
+        or evaluation.get("source_disjoint_behavior_observed") is not False
+        or evaluation.get("t2_numerator_opened") is not False
     ):
-        errors.append("latest guarded retry custody drifted")
-    receipts = actual.get("observation_receipts", [])
+        errors.append("evaluation or capability boundary drifted")
+    verification = actual.get("verification", {})
     if (
-        len(receipts) != 4
-        or receipts[0].get("result")
-        != "seven_cpu_governance_replays_passed_then_freeze_refused_for_one_invalid_accelerator_receipt"
-        or receipts[1].get("result")
-        != "latest_retry_stopped_before_child_at_exact_6144_mib_preflight"
-        or receipts[2].get("result")
-        != "36_passed_including_launch_calibration_rejecting_controls"
-        or receipts[3].get("result") != "GREEN_zero_blockers"
-        or [row.get("exit_code") for row in receipts] != [1, 2, 0, 0]
+        verification.get("affected_tests_passed") != 141
+        or verification.get("hardware_dependent_tests_skipped") != 18
+        or verification.get("test_failures") != 0
+        or verification.get("training_launched_during_reconciliation") is not False
     ):
-        errors.append("fail-closed observation receipts drifted")
+        errors.append("verification receipt drifted")
     disposition = actual.get("book_disposition", {})
     if (
         disposition.get("protected_outcomes_opened") != 0
@@ -377,85 +245,83 @@ def validate(actual: dict, expected: dict) -> list[str]:
         or disposition.get("release_effect") != "none"
     ):
         errors.append("book disposition launders outcomes, support, or release")
-    safety = actual.get("public_safety", {})
-    if any(safety.get(key) for key in safety):
+    if any(actual.get("public_safety", {}).values()):
         errors.append("public-safety boundary failed")
-    if len(actual.get("negative_controls", [])) != 20:
+    if len(actual.get("negative_controls", [])) != 18:
         errors.append("negative-control denominator drifted")
     return errors
 
 
 def render(record: dict) -> str:
     authority = record["source_authority"]
-    old = record["historical_t0_package"]
-    current = record["current_t0a_state"]
-    return f"""# Project Theseus T0A architecture-closure currentness import
+    freeze = record["historical_t0a_freeze"]
+    state = record["current_dependency_state"]
+    lineage = record["t1_lineage"]
+    gate = record["currentness_gate"]
+    evaluation = record["evaluation_boundary"]
+    return f"""# Project Theseus T0A-to-T1 architecture and lineage currentness import
 
-Observed on 2026-07-27 from clean Project Theseus `main` at
-`{authority['commit']}`. The local branch was {authority['ahead_of_origin_main_commit_count']}
-commits ahead of `origin/main`, and the observed commit is published on
-`origin/main`. This import records that exact clean author-owned implementation
-state.
+Observed from clean, published Project Theseus `main` at
+`{authority['commit']}`. This public-safe handoff replaces the earlier
+partial-replay observation; it does not copy checkpoints, training rows,
+prompts, held-out outcomes, or private payloads.
 
-## Dependency correction
+## Dependency state
 
 | Gate | Exact state | Meaning |
 |---|---|---|
-| `T0` | `{current['t0_state']}` | The prior 57M architecture package remains an immutable historical control. |
-| `T0A` | `{current['t0a_state']}` | The successor finite architecture docket is selected, but its replacement freeze is not current. |
-| `T1` | `{current['t1_state']}` | Long training may not inherit authority from the stale `T0` package. |
+| `T0` | `{state['t0_state']}` | The prior 57M package remains an immutable historical control. |
+| `T0A` | `{state['t0a_state']}` | The architecture and execution qualification was GREEN at its committed pre-activation transaction; the later custody residual is explicit. |
+| `T1` | `{state['t1_state']}` | The one frozen shared-trunk campaign is active from an exact prospective anchor. |
+| `T2` | `{state['t2_state']}` | Training progress cannot substitute for source-disjoint model-only behavior. |
 
-The 2026-07-26 package recorded `{old['artifact_count']}` artifacts. Direct
-digest comparison against the observed source tree found
-`{old['unchanged_artifact_count']}` unchanged, `{old['changed_artifact_count']}`
-changed, and `{old['missing_artifact_count']}` missing. Its GREEN state and
-identity `{old['package_identity']}` therefore remain historical facts, not
-current training authority.
+The T0A package `{freeze['package_identity']}` bound
+`{freeze['artifact_count']}` artifacts, `{freeze['architecture_contract_count']}`
+architecture contracts, `{freeze['accelerator_replay_receipt_count']}`
+accelerator receipts, and `{freeze['cpu_replay_pass_count']}` of
+`{freeze['cpu_replay_pass_count']}` CPU replays. Its disposition was
+`{freeze['disposition']}`.
 
-## What is already organized
+## Honest custody boundary
 
-The finite docket is closed to untriggered architecture expansion. The matched
-factorized bakeoff is GREEN with disposition
-`{current['factorized_bakeoff_disposition']}`, and the acceleration selector is
-GREEN. The exact replacement binding repair leaves the project registry GREEN
-with zero blockers. All `{current['cpu_governance_replay_requested_count']}`
-CPU/governance replays are current and green. Of
-`{current['accelerator_replay_requested_count']}` selected accelerator receipts,
-`{current['accelerator_replay_valid_count']}` validate. Those records organize
-the selected route and scoped exclusions; they do not substitute for the
-current content-addressed package.
+The shared trunk is now at step `{lineage['optimizer_steps']:,}` and
+`{lineage['optimizer_positions']:,}` of
+`{lineage['target_pretrain_optimizer_positions']:,}` frozen pretraining
+positions. The prospective anchor binds exact model, AdamW, RNG, receipt,
+stage, and plan identities. The exact step-3,480 payload and a complete
+immutable segment-by-segment predecessor chain from 3,480 to 9,048 are not
+locally available. Therefore the historical GREEN T0A transaction remains a
+historical architecture/execution qualification, but the book must not claim a
+present-tense full-chain replay.
 
-## Remaining T0A work
+Every later state-changing segment must start from the anchor or terminal ledger
+identity and archive its exact before/after receipts, checkpoint, optimizer,
+RNG, child-report, and host-guard identities before another launch. The
+prospective ledger is GREEN and currently contains
+`{lineage['prospective_ledger_manifest_count']}` post-anchor segment manifests.
 
-1. Run the same guarded optimizer-matched workload only when the corrected
-   6,144 MiB prospective launch reserve is naturally available while preserving
-   the 4,096 MiB live reserve.
-2. Publish the replacement content-addressed architecture-freeze package.
+## Current verification and evidence boundary
 
-The prior calibration attempt passed its former 5,120 MiB launch reserve and
-started. The external guard stopped it after reclaimable memory fell to
-3,708.391 MiB, below the declared 4,096 MiB live reserve. Maximum inferred
-unified memory was 1,529.766 MiB, maximum process RSS was 231.75 MiB, and
-swapout growth was zero. That attempt has calibration authority only:
-4,096 + 1,529.766 + 512 = 6,137.766 MiB, rounded up to a prospective
-6,144 MiB launch floor.
+The lifecycle-aware roadmap gate reports pretraining ready with
+`{gate['pre_training_architecture_blocker_count']}` blockers. It preserves
+`{gate['historical_source_drift_count']}` historical source-drift observations
+and accepts them only through the explicit post-activation anchor and current
+plan migration. The project registry is GREEN with
+`{gate['aibom_missing_identity_count']}` missing AIBOM identities.
 
-The later exact retry at published commit `{authority['commit']}` did not
-reach the child process. The guard observed 3,874.8 MiB available against the
-6,144 MiB launch floor and stopped at preflight. This preserves host safety,
-does not supersede the earlier calibration, and is not optimizer or
-architecture counterevidence. The workload remains unexecuted under the
-corrected floor. A generic memory-pressure percentage is not entry authority;
-the exact guard must observe the floor at launch time. After `T0A`, the broader
-readiness gate must be rerun against the current 84-chapter ASI Stack before
-`T1`.
+The private development evaluator freeze is GREEN but unconsumed. Capability is
+`{evaluation['capability_claim']}`; no source-disjoint behavior or T2 numerator
+has been observed. The legal next action is to continue only the frozen T1
+campaign through the append-only controller when its exact resource and process
+inventory gates pass, preserving evaluator non-consumption until the
+preregistered review boundary.
 
 ## Boundary
 
-No training, held-out task, model output, private payload, checkpoint, support
-transition, or release transition was opened. This packet establishes
-dependency and artifact currentness only; it does not establish model quality,
-useful behavior, safety, deployment, transfer, AGI, ASI, or SOTA.
+The missing predecessor chain is a custody limitation, not architecture,
+optimizer, or capability counterevidence. Training progress establishes no
+useful behavior, safety, deployment, transfer, AGI, ASI, or SOTA result. No
+support or release state moves.
 """
 
 
@@ -467,36 +333,31 @@ def main() -> None:
     markdown = render(expected)
     if args.write:
         RECORD.parent.mkdir(parents=True, exist_ok=True)
-        RECORD.write_text(
-            json.dumps(expected, indent=2, ensure_ascii=False) + "\n",
-            encoding="utf-8",
-        )
+        RECORD.write_text(json.dumps(expected, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
         DOC.write_text(markdown, encoding="utf-8")
     if not RECORD.exists() or not DOC.exists():
-        raise SystemExit("T0A currentness import missing; run with --write")
+        raise SystemExit("T0A-to-T1 currentness import missing; run with --write")
     actual = json.loads(RECORD.read_text(encoding="utf-8"))
     errors = validate(actual, expected)
     if DOC.read_text(encoding="utf-8") != markdown:
-        errors.append("T0A human report drifted")
+        errors.append("T0A-to-T1 human report drifted")
     mutations = [
         ("commit", lambda x: x["source_authority"].__setitem__("commit", "0" * 40)),
-        ("dirty", lambda x: x["source_authority"].__setitem__("worktree_clean", False)),
-        ("remote divergence", lambda x: x["source_authority"].__setitem__("ahead_of_origin_main_commit_count", 1)),
         ("origin publication", lambda x: x["source_authority"].__setitem__("published_on_origin_main", False)),
-        ("artifact denominator", lambda x: x["historical_t0_package"].__setitem__("changed_artifact_count", 0)),
-        ("stale package current", lambda x: x["historical_t0_package"].__setitem__("current_for_source_commit", True)),
-        ("T0A complete", lambda x: x["current_t0a_state"].__setitem__("t0a_state", "complete")),
-        ("T1 unblocked", lambda x: x["current_t0a_state"].__setitem__("t1_state", "ready")),
-        ("cpu replay failure", lambda x: x["current_t0a_state"].__setitem__("cpu_governance_replay_passed_count", 6)),
-        ("accelerator denominator", lambda x: x["current_t0a_state"].__setitem__("accelerator_replay_requested_count", 13)),
-        ("invalid accelerator erasure", lambda x: x["current_t0a_state"].__setitem__("accelerator_replay_invalid_count", 0)),
-        ("prior child start erasure", lambda x: x["current_t0a_state"]["prior_live_reserve_calibration"].__setitem__("child_started", False)),
-        ("latest child start invention", lambda x: x["current_t0a_state"]["latest_guarded_retry"].__setitem__("child_started", True)),
-        ("latest available memory invention", lambda x: x["current_t0a_state"]["latest_guarded_retry"].__setitem__("available_mib", 6144.0)),
-        ("launch floor regression", lambda x: x["current_t0a_state"].__setitem__("prospective_launch_reserve_mib", 5120.0)),
-        ("calibration authority elevation", lambda x: x["current_t0a_state"].__setitem__("launch_calibration_qualification_authority", True)),
-        ("outcome invention", lambda x: x["book_disposition"].__setitem__("protected_outcomes_opened", 1)),
-        ("private copy", lambda x: x["public_safety"].__setitem__("private_payloads_copied", 1)),
+        ("T0A reopened", lambda x: x["current_dependency_state"].__setitem__("t0a_state", "active")),
+        ("T1 reblocked", lambda x: x["current_dependency_state"].__setitem__("t1_state", "blocked_by_T0A")),
+        ("T2 unblocked", lambda x: x["current_dependency_state"].__setitem__("t2_state", "active")),
+        ("pre-anchor chain invention", lambda x: x["t1_lineage"].__setitem__("full_segment_predecessor_chain_available", True)),
+        ("T0A payload invention", lambda x: x["t1_lineage"].__setitem__("t0a_payload_still_materialized_at_frozen_identity", True)),
+        ("anchor step drift", lambda x: x["t1_lineage"].__setitem__("optimizer_steps", 9049)),
+        ("checkpoint drift", lambda x: x["t1_lineage"].__setitem__("checkpoint_sha256", "0" * 64)),
+        ("optimizer drift", lambda x: x["t1_lineage"].__setitem__("optimizer_state_sha256", "0" * 64)),
+        ("receipt drift", lambda x: x["t1_lineage"].__setitem__("receipt_sha256", "0" * 64)),
+        ("plan migration erasure", lambda x: x["currentness_gate"].__setitem__("current_plan_migration_present", False)),
+        ("lineage erasure", lambda x: x["t1_lineage"].__setitem__("prospective_append_only_lineage_trigger_state", "MISSING")),
+        ("evaluator consumption", lambda x: x["evaluation_boundary"].__setitem__("confirmation_surface_consumed", True)),
+        ("capability invention", lambda x: x["evaluation_boundary"].__setitem__("capability_claim", "SUPPORTED")),
+        ("training launch invention", lambda x: x["verification"].__setitem__("training_launched_during_reconciliation", True)),
         ("support promotion", lambda x: x["book_disposition"].__setitem__("support_state_effect", "prototype-backed")),
         ("release promotion", lambda x: x["book_disposition"].__setitem__("release_effect", "published")),
     ]
@@ -506,16 +367,12 @@ def main() -> None:
         if not validate(candidate, expected):
             errors.append(f"negative mutation accepted: {label}")
     if errors:
-        raise SystemExit("Theseus T0A currentness import failed:\n - " + "\n - ".join(errors))
-    historical = expected["historical_t0_package"]
+        raise SystemExit("Theseus T0A-to-T1 currentness import failed:\n - " + "\n - ".join(errors))
     print(
-        "Theseus T0A currentness import passed: T0 complete, T0A active, "
-        f"T1 blocked; {historical['unchanged_artifact_count']}/"
-        f"{historical['artifact_count']} frozen artifacts unchanged, "
-        f"{historical['changed_artifact_count']} changed; "
-        "7/7 CPU replays green, 13/14 accelerator receipts valid, "
-        f"zero outcomes/support/release movement, "
-        f"{len(expected['negative_controls'])} rejecting controls."
+        "Theseus T0A-to-T1 currentness import passed: T0A historical GREEN, "
+        "T1 active at step 9,048 with explicit pre-anchor custody gap, "
+        f"{len(expected['negative_controls'])} rejecting controls, "
+        "zero capability/support/release movement."
     )
 
 

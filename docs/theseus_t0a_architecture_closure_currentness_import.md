@@ -1,67 +1,63 @@
-# Project Theseus T0A architecture-closure currentness import
+# Project Theseus T0A-to-T1 architecture and lineage currentness import
 
-Observed on 2026-07-27 from clean Project Theseus `main` at
-`9e545cf167f22b0bbda6f914a67d022d7b8c6b81`. The local branch was 0
-commits ahead of `origin/main`, and the observed commit is published on
-`origin/main`. This import records that exact clean author-owned implementation
-state.
+Observed from clean, published Project Theseus `main` at
+`264a31ee288fc288727c45a1166b4dbe36180b6b`. This public-safe handoff replaces the earlier
+partial-replay observation; it does not copy checkpoints, training rows,
+prompts, held-out outcomes, or private payloads.
 
-## Dependency correction
+## Dependency state
 
 | Gate | Exact state | Meaning |
 |---|---|---|
-| `T0` | `complete` | The prior 57M architecture package remains an immutable historical control. |
-| `T0A` | `active` | The successor finite architecture docket is selected, but its replacement freeze is not current. |
-| `T1` | `blocked_by_T0A` | Long training may not inherit authority from the stale `T0` package. |
+| `T0` | `complete_historical_control` | The prior 57M package remains an immutable historical control. |
+| `T0A` | `complete_with_prospective_T1_custody_residual` | The architecture and execution qualification was GREEN at its committed pre-activation transaction; the later custody residual is explicit. |
+| `T1` | `active_step_9048_prospectively_anchored_not_evaluated` | The one frozen shared-trunk campaign is active from an exact prospective anchor. |
+| `T2` | `blocked_by_T1_behavioral_numerator` | Training progress cannot substitute for source-disjoint model-only behavior. |
 
-The 2026-07-26 package recorded `123` artifacts. Direct
-digest comparison against the observed source tree found
-`99` unchanged, `24`
-changed, and `0` missing. Its GREEN state and
-identity `sha256:9d7dc30b378067c0a254fdca21ef54e3c5469af63c748d3cc49e1f427b251cce` therefore remain historical facts, not
-current training authority.
+The T0A package `sha256:0b83c4b55616679d636df84ec14dea5825e79357b228fe441f399241acc9ae9c` bound
+`143` artifacts, `15`
+architecture contracts, `14`
+accelerator receipts, and `7` of
+`7` CPU replays. Its disposition was
+`architecture_frozen_training_not_started`.
 
-## What is already organized
+## Honest custody boundary
 
-The finite docket is closed to untriggered architecture expansion. The matched
-factorized bakeoff is GREEN with disposition
-`factorized_architecture_selected_training_not_started`, and the acceleration selector is
-GREEN. The exact replacement binding repair leaves the project registry GREEN
-with zero blockers. All `7`
-CPU/governance replays are current and green. Of
-`14` selected accelerator receipts,
-`13` validate. Those records organize
-the selected route and scoped exclusions; they do not substitute for the
-current content-addressed package.
+The shared trunk is now at step `9,048` and
+`69,310,840` of
+`1,096,734,920` frozen pretraining
+positions. The prospective anchor binds exact model, AdamW, RNG, receipt,
+stage, and plan identities. The exact step-3,480 payload and a complete
+immutable segment-by-segment predecessor chain from 3,480 to 9,048 are not
+locally available. Therefore the historical GREEN T0A transaction remains a
+historical architecture/execution qualification, but the book must not claim a
+present-tense full-chain replay.
 
-## Remaining T0A work
+Every later state-changing segment must start from the anchor or terminal ledger
+identity and archive its exact before/after receipts, checkpoint, optimizer,
+RNG, child-report, and host-guard identities before another launch. The
+prospective ledger is GREEN and currently contains
+`0` post-anchor segment manifests.
 
-1. Run the same guarded optimizer-matched workload only when the corrected
-   6,144 MiB prospective launch reserve is naturally available while preserving
-   the 4,096 MiB live reserve.
-2. Publish the replacement content-addressed architecture-freeze package.
+## Current verification and evidence boundary
 
-The prior calibration attempt passed its former 5,120 MiB launch reserve and
-started. The external guard stopped it after reclaimable memory fell to
-3,708.391 MiB, below the declared 4,096 MiB live reserve. Maximum inferred
-unified memory was 1,529.766 MiB, maximum process RSS was 231.75 MiB, and
-swapout growth was zero. That attempt has calibration authority only:
-4,096 + 1,529.766 + 512 = 6,137.766 MiB, rounded up to a prospective
-6,144 MiB launch floor.
+The lifecycle-aware roadmap gate reports pretraining ready with
+`0` blockers. It preserves
+`12` historical source-drift observations
+and accepts them only through the explicit post-activation anchor and current
+plan migration. The project registry is GREEN with
+`0` missing AIBOM identities.
 
-The later exact retry at published commit `9e545cf167f22b0bbda6f914a67d022d7b8c6b81` did not
-reach the child process. The guard observed 3,874.8 MiB available against the
-6,144 MiB launch floor and stopped at preflight. This preserves host safety,
-does not supersede the earlier calibration, and is not optimizer or
-architecture counterevidence. The workload remains unexecuted under the
-corrected floor. A generic memory-pressure percentage is not entry authority;
-the exact guard must observe the floor at launch time. After `T0A`, the broader
-readiness gate must be rerun against the current 84-chapter ASI Stack before
-`T1`.
+The private development evaluator freeze is GREEN but unconsumed. Capability is
+`NOT_EVALUATED`; no source-disjoint behavior or T2 numerator
+has been observed. The legal next action is to continue only the frozen T1
+campaign through the append-only controller when its exact resource and process
+inventory gates pass, preserving evaluator non-consumption until the
+preregistered review boundary.
 
 ## Boundary
 
-No training, held-out task, model output, private payload, checkpoint, support
-transition, or release transition was opened. This packet establishes
-dependency and artifact currentness only; it does not establish model quality,
-useful behavior, safety, deployment, transfer, AGI, ASI, or SOTA.
+The missing predecessor chain is a custody limitation, not architecture,
+optimizer, or capability counterevidence. Training progress establishes no
+useful behavior, safety, deployment, transfer, AGI, ASI, or SOTA result. No
+support or release state moves.

@@ -2,7 +2,7 @@
 
 Status: **active canonical successor**  
 Activated: 2026-07-16  
-Substantively revised: 2026-07-25
+Substantively revised: 2026-07-29
 Authority: Corben Sorenson  
 Machine status: `roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json`  
 Experiment authority: `docs/claim_bearing_experiment_competence_standard.md`
@@ -414,35 +414,29 @@ payloads, and support states may not.
 | `T5` — Matched causal flagship | P2 + P5 | Independently frozen Q1 admission and Q2 student results are composed without shared-denominator or support leakage, with independent evaluation, uncertainty, weak tails, fair rescue, and total lifecycle cost. |
 | `T6` — Synthesis and challenge | P3 + P7 | A public-safe evidence pack updates only the exact affected atoms and reader case; any broader language waits for separate reproduction and two transfer settings. |
 
-The 2026-07-27 public-safe currentness handoff resolves a previously compressed
-dependency. Project Theseus `main` at published commit `9e545cf1` reports `T0`
-complete, `T0A` active, and `T1` blocked by `T0A`. Its July 26 historical
-freeze bound 123 artifacts; direct digest comparison now finds 99 unchanged,
-24 changed, and none missing. The historical package therefore remains an
-immutable control but is not current training authority. The finite factorized
-selection, acceleration selector, and project registry are GREEN. All 7
-CPU/governance replays are current and green, while 13 of 14 selected
-accelerator receipts validate. The prior optimizer-matched shard attempt passed
-its former 5,120 MiB launch reserve and started, but the external guard stopped
-it after reclaimable memory fell to 3,708.391 MiB below its declared 4,096 MiB
-live reserve. Maximum inferred unified memory was 1,529.766 MiB, maximum
-process RSS was 231.75 MiB, and swapout growth was zero. That safety stop is
-not optimizer or architecture counterevidence and does not close `T0A`; it has
-calibration authority only: 4,096 + 1,529.766 + 512 = 6,137.766 MiB, rounded
-up to a prospective 6,144 MiB launch floor. The latest exact retry then
-observed only 3,874.8 MiB available against that corrected floor, so the child
-did not start, no process was guard-terminated, no exit code exists, and no
-model result was produced. Rejecting controls preserve the chronology and
-reject floor regression, prior-start erasure, latest-start invention,
-available-memory invention, and qualification laundering. The legal next
-action is not another open architecture-idea cycle: run only the same guarded
-workload when its exact guard observes at least 6,144 MiB while preserving the
-4,096 MiB live reserve—a generic memory percentage is not launch
-authority—publish the replacement content-addressed package, and then rerun
-the broader readiness gate against the 84-chapter book. The exact sanitized receipt is
-`docs/theseus_t0a_architecture_closure_currentness_import.md`. No training,
-held-out outcome, support movement, or efficacy inference follows from this
-currentness reconciliation.
+The 2026-07-29 public-safe currentness handoff resolves that dependency against
+published Project Theseus `main` commit `264a31ee`. `T0A` is historically
+complete at a GREEN pre-activation transaction binding 143 artifacts, 15 of 15
+architecture contracts, 14 accelerator receipts, and 7 of 7 CPU replays. `T1`
+is active at shared-trunk step 9,048 and 69,310,840 of 1,096,734,920 frozen
+pretraining positions. Its exact model, AdamW, RNG, receipt, stage, and
+migrated-plan identities are bound by a prospective anchor.
+
+That correction includes a custody limitation rather than hiding it: the exact
+step-3,480 payload and a complete immutable segment-by-segment predecessor
+chain from 3,480 to 9,048 are not locally available. The historical T0A GREEN
+transaction remains an architecture and execution qualification, but neither
+repository may claim a present-tense full-chain replay. Every later
+state-changing segment must start from the anchor or terminal ledger identity
+and archive exact before/after receipts plus checkpoint, optimizer, RNG, child,
+and host-guard identities before another launch. The lifecycle-aware gate
+preserves twelve historical source-drift observations, accepts them only
+through the explicit post-activation anchor and plan migration, and reports
+pretraining ready with zero architecture blockers. The private development
+evaluator freeze is GREEN and unconsumed; capability remains
+`NOT_EVALUATED`, `T2` remains blocked, and no support or release state moves.
+The exact sanitized receipt is
+`docs/theseus_t0a_architecture_closure_currentness_import.md`.
 
 P2 may continue corpus, evaluator, construct, resource, and comparator preflight
 before `T2`. Assisted-product success may support usefulness at `T3`, but
