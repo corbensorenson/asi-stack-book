@@ -82,6 +82,40 @@ No new chapter is warranted. The source strengthens existing boundaries.
 - **Already corroborated:** the K3 report's cosine-schedule choice agrees with
   the existing Theseus cosine schedule and creates no new experiment by itself.
 
+## Failure Modes
+
+- **Component-attribution failure:** treating the reported integrated
+  approximately 2.5-fold scaling-efficiency result as evidence for any one of
+  KDA, AttnRes, LatentMoE, Quantile Balancing, SiTU-GLU, Per-Head Muon, or
+  quantization.
+- **Transfer failure:** assuming a mechanism demonstrated inside a 2.8T-total,
+  104B-active, million-token, 896-expert system will retain its benefit in a
+  57M-class, 512-token, Apple-MLX training regime.
+- **Accounting failure:** comparing quality or asymptotic compute while
+  omitting routing, memory traffic, expert balancing, persistent state,
+  checkpoint expansion, quantization conversion, wall time, or recovery cost.
+- **Benchmark-authority failure:** treating provider-run evaluations as an
+  independent reproduction, a safety result, or permission to admit benchmark
+  content into Theseus training.
+- **Compatibility laundering:** calling an incompatible campaign-one mechanism
+  disproved, or adopting it without a separately qualified successor topology
+  and prospective decision rule.
+
+## Claims To Add Or Update
+
+- In `replaceable-cognitive-substrates-beyond-transformer-monoculture`, record
+  KDA/Gated-MLA hybrid attention and AttnRes as current source-reported
+  substrate patterns whose system-level value remains configuration-bound.
+- In `routing-heads-and-specialist-cores`, add Stable LatentMoE and Quantile
+  Balancing as examples of lower-dimensional expert routing and balancing
+  mechanisms that still require matched load, quality, and total-cost tests.
+- In `governed-model-training-distributed-optimization-and-scaling`, add
+  Per-Head Muon and SiTU-GLU as bounded optimizer and numerical-stability
+  candidates, with equal-tuning and full-state comparison requirements.
+- Preserve `argument` support for all three chapter cores. These updates route
+  a current primary source; they do not establish superiority, transfer,
+  reproduction, safety, or a Project Theseus selection.
+
 ## Open Questions
 
 - Does Per-Head Muon change the time-to-quality or weak-arm behavior of the
