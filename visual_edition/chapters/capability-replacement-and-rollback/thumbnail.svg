@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">Capability Replacement and Rollback</title>
+  <desc id="desc">A candidate B enters a governed canary, then a red rollback arrow returns the route to A while a remote residual remains outside the recovery boundary.</desc>
+  <rect width="1280" height="720" fill="#101820"/>
+  <rect x="72" y="62" width="1136" height="596" rx="30" fill="#182630" stroke="#58B7D3" stroke-width="6"/>
+  <text x="110" y="150" fill="#F5F8FA" font-family="Avenir Next, sans-serif" font-size="58" font-weight="700">CAPABILITY REPLACEMENT</text>
+  <text x="110" y="210" fill="#B8C4CC" font-family="Avenir Next, sans-serif" font-size="34">A transaction, not a component swap</text>
+  <rect x="150" y="305" width="220" height="150" rx="20" fill="#101820" stroke="#62C370" stroke-width="7"/>
+  <text x="260" y="395" text-anchor="middle" fill="#62C370" font-family="Menlo, monospace" font-size="56" font-weight="700">A</text>
+  <rect x="505" y="305" width="220" height="150" rx="20" fill="#101820" stroke="#F2C14E" stroke-width="7"/>
+  <text x="615" y="370" text-anchor="middle" fill="#F2C14E" font-family="Menlo, monospace" font-size="50" font-weight="700">B</text>
+  <text x="615" y="420" text-anchor="middle" fill="#F2C14E" font-family="Avenir Next, sans-serif" font-size="26">CANARY</text>
+  <path d="M 700 480 C 590 585, 330 585, 250 470" fill="none" stroke="#F45B69" stroke-width="14"/>
+  <polygon points="235,455 275,470 245,495" fill="#F45B69"/>
+  <text x="465" y="610" text-anchor="middle" fill="#F45B69" font-family="Avenir Next, sans-serif" font-size="32" font-weight="700">EXACT ROLLBACK</text>
+  <circle cx="1000" cy="380" r="95" fill="none" stroke="#D66BA0" stroke-width="8" stroke-dasharray="18 14"/>
+  <text x="1000" y="370" text-anchor="middle" fill="#D66BA0" font-family="Avenir Next, sans-serif" font-size="25" font-weight="700">REMOTE</text>
+  <text x="1000" y="405" text-anchor="middle" fill="#D66BA0" font-family="Avenir Next, sans-serif" font-size="25" font-weight="700">RESIDUAL</text>
+</svg>

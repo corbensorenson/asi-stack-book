@@ -1,0 +1,167 @@
+{
+  "schema_version": "asi_stack.visual_chapter_packet.v1",
+  "video_id": "asi-video-replaceable-cognitive-substrates-beyond-transformer-monoculture",
+  "chapter_id": "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+  "chapter_path": "chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.qmd",
+  "chapter_sha256": "815de35df3af82c0b1fb146ebb2d07cea8e15864457a2d8c55d5685ebd911d5e",
+  "source_commit": "4169d5543f0f002b0718c275bca42a706b197ab6",
+  "pilot": true,
+  "lifecycle_state": "rendered",
+  "claim_bindings": [
+    {
+      "claim_id": "replaceable-cognitive-substrates-beyond-transformer-monoculture.core",
+      "claim_label": "Design rationale",
+      "support_state": "argument"
+    }
+  ],
+  "assigned_source_ids": [
+    "corben_chatgpt_kiss_irreducible_intelligence_2026",
+    "corben_chatgpt_onecell_theseus_2026",
+    "deterministic_capability_compilation",
+    "ext_attention_is_all_you_need_2017",
+    "ext_mamba2_ssd_2024",
+    "ext_s4_2022",
+    "ext_mamba3_2026",
+    "ext_gated_deltanet2_2026",
+    "ext_hyperscale_lottery_2026",
+    "ext_gated_deltanet_2024",
+    "ext_jamba_2024",
+    "ext_inkling_2026",
+    "ext_neural_message_passing_2017",
+    "ext_hyena_hierarchy_2023",
+    "ext_rwkv_2023",
+    "ext_xlstm_2024",
+    "ext_ttt_layers_2024",
+    "ext_titans_2025",
+    "ext_kan_2024",
+    "ext_kan_or_mlp_fairer_comparison_2024",
+    "ext_neural_turing_machines_2014",
+    "ext_differentiable_neural_computer_2016",
+    "ext_liquid_time_constant_networks_2021",
+    "ext_tiny_recursive_model_2025",
+    "ext_trm_arc_agi_analysis_2025",
+    "ext_tiny_autoregressive_recursive_models_2026",
+    "ext_unimatrix_2026",
+    "ext_memory_caching_2026",
+    "scf",
+    "rmi",
+    "benchmaxxing",
+    "ext_mamba_2023",
+    "ext_retnet_2023",
+    "ext_universal_transformer_2019",
+    "ext_dynamic_compute_recurrent_transformers_2026",
+    "ext_dreamcoder_2020",
+    "kernel_english_residual_compiler",
+    "relational_dimension_compiler",
+    "ext_llm_in_flash_2024",
+    "ext_powerinfer_2024",
+    "ext_atsinfer_2026",
+    "ext_test_time_training_2020",
+    "ext_llada_2025",
+    "ext_scaling_dllms_2026",
+    "ext_neuromorphic_computing_scale_2025",
+    "ext_photonic_neuromorphic_2024",
+    "ext_quantum_ml_shadows_2024",
+    "ext_organoid_intelligence_2023",
+    "ext_kimi_k3_2026"
+  ],
+  "maximum_inference": "The frozen historical implementation was inadequate, so broader KERC efficiency remains untested; two narrow finite observations survive with no semantic, multilingual, production, energy, architecture-winner, or core claim.",
+  "required_content": {
+    "problem": "Transformer-specific token, state, cache, checkpoint, and serving assumptions can turn claimed substrate replaceability into architectural lock-in.",
+    "core_mechanism": "A typed Cognitive Kernel ABI standardizes requests, proposals, exact state, authority ceilings, evidence, assistance, cost, fallback, checkpoint, recovery, and non-claims while preserving irreducible architecture differences.",
+    "worked_trace": "Reflex, reaction, deliberation, and specialist routes select qualified rules, SSMs, models, search, and kernels while a contribution ledger credits retrieval, tools, verifiers, adapters, and hardware.",
+    "failure_boundary": "Architecture catalogs, asymptotic wins, tiny-core parameter counts, hidden addressable memory, answer-bearing assistance, self-selected evaluation, and unmatched comparisons cannot establish a better substrate.",
+    "evidence_state": "The core remains Design rationale at argument support; a 16-case synthetic ABI checker rejects 12 malicious mutations, the real-kernel tournament has zero outcome runs, and historical KERC was inadequate.",
+    "non_claims": "The visual claims no superior architecture, real-kernel conformance, matched Pareto win, energy advantage, OneCell result, architectural RSI, SOTA, or support promotion.",
+    "handoff": "Relational Dimension Compilation and Polyadic Cognition next subjects one higher-order proposal to a typed, reversible, evidence-bounded lifecycle."
+  },
+  "artifacts": {
+    "storyboard": "visual_edition/chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture/storyboard.md",
+    "scene_code": "visual_edition/chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture/scene.py",
+    "narration_script": "visual_edition/chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture/narration.txt",
+    "captions": "visual_edition/chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture/captions.vtt",
+    "descriptive_transcript": "visual_edition/chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture/transcript.md",
+    "thumbnail": "visual_edition/chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture/thumbnail.svg",
+    "thumbnail_alt_text": "Transformer, state-space, recurrent, graph, and program-shaped kernels connect through a typed Cognitive Kernel ABI while a stop bar separates proposals from effects."
+  },
+  "render_receipt": {
+    "receipt_state": "current_release_visual_without_final_audio",
+    "validation_state": "local_release_visual_review_complete_audio_not_publication_cleared",
+    "rendered_at_utc": "2026-07-29T04:47:22Z",
+    "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+    "toolchain_qualification": "qualified_for_non_latex_pilots",
+    "render_profile": "release_video_only",
+    "command": "PYTHONPATH=. build/visual_edition/venv/bin/manim --config_file visual_edition/manim.cfg --disable_caching visual_edition/chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture/scene.py ReplaceableCognitiveSubstrates",
+    "duration_seconds": 299.961003,
+    "pixel_width": 1920,
+    "pixel_height": 1080,
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "output_sha256": "3ca3abc766b29560466b844d6598642e891b6141e2634d952a1a9610ec3e1c95",
+    "output_storage": "ignored build/visual_edition media only",
+    "visual_review": {
+      "draft_sample_seconds": [18.75, 56.25, 93.75, 131.25, 168.75, 206.25, 243.75, 281.25],
+      "release_sample_seconds": [20, 280],
+      "result": "pass",
+      "review_scope": "composition, legibility, architecture-shape and label semantics, contribution accounting, neutral comparator framing, corrected proof-boundary spacing, and end-card non-claims"
+    },
+    "local_timing_audio": {
+      "voice": "macOS Samantha en_US at 190 wpm",
+      "duration_seconds": 243.124535,
+      "publication_rights_state": "not_cleared",
+      "use": "local pacing review only",
+      "muxed_review_sha256": "14f1bec3f544c984cb3d09d33fc98e01a526f5c81d922bbb29d5fdebe4df57eb"
+    },
+    "artifact_sha256": {
+      "storyboard": "3c6d9726f353a02cc34dc3aeb79598809bdfb0c5c21cde393468272bfc0a9641",
+      "scene_code": "6b2c144c6842c72c38d9800ff2748f22bd505a83fbb08478cda1b4ccba496656",
+      "narration_script": "af00611865831df6dc28299e562a0b64ce69430847ae9a879f2be6a9cf518b8e",
+      "captions": "6fbec1961cca82f3419785bbd03ca9fa311dbd14b39075bbf4ae3eba3124b186",
+      "descriptive_transcript": "ff829456522922a76c9cae7869626cd684a873b65b60bd87808fdeffc95eff00",
+      "thumbnail": "271e9ed5f13b37a45cab21a59b1c8aa57ba0ac058be9b5e63fc2c2fc2b147fd9"
+    },
+    "remaining_release_gates": [
+      "record or license the final narration master for publication",
+      "perform final listening review and retime captions against that master",
+      "mux and validate the final accessible audio-video master",
+      "obtain exact action-time authority before any YouTube or playlist mutation"
+    ]
+  },
+  "youtube": {
+    "video_id": null,
+    "playlist_id": null,
+    "publication_state": "not_authorized",
+    "platform_receipt_path": null
+  },
+  "quarto_embed": {
+    "state": "absent_until_published",
+    "chapter_anchor": "visual-abstract",
+    "frame_title": "Visual abstract: Replaceable Cognitive Substrates",
+    "aria_label": "Play the visual abstract for Replaceable Cognitive Substrates"
+  },
+  "staleness": {
+    "state": "current",
+    "checked_chapter_sha256": "815de35df3af82c0b1fb146ebb2d07cea8e15864457a2d8c55d5685ebd911d5e",
+    "triggers": [
+      "core_claim",
+      "mechanism",
+      "worked_trace",
+      "evidence_state",
+      "non_claim",
+      "material_source",
+      "chapter_identity",
+      "handoff",
+      "public_url"
+    ]
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This derivative video does not promote or otherwise change any book claim.",
+    "A scripted pilot is not a validated render, release, upload, or publication.",
+    "An architecture name, interface trace, or asymptotic property does not establish a matched system-level win.",
+    "The post-render Kimi K3 source refresh changes neither the visual argument nor its evidence ceiling; no Kimi mechanism, benchmark, scaling result, transfer, or reproduction is claimed.",
+    "No real-kernel, OneCell, energy, production, SOTA, transfer, or architectural-RSI result is claimed."
+  ]
+}

@@ -12,6 +12,22 @@ REGISTRY = ROOT / "validation/registry.json"
 SCRIPT = "validate_visual_edition.py"
 EMBED_SCRIPT = "sync_visual_edition_embeds.py"
 TOOLCHAIN_SCRIPT = "validate_manim_toolchain.py"
+PILOTS = [
+    "asi-is-a-stack-not-a-model",
+    "capability-replacement-and-rollback",
+    "context-transactions-snapshots-mounts-and-taint",
+    "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+    "living-book-methodology",
+]
+PACKET_FILES = [
+    "packet.json",
+    "storyboard.md",
+    "scene.py",
+    "narration.txt",
+    "captions.vtt",
+    "transcript.md",
+    "thumbnail.svg",
+]
 ARTIFACTS = [
     "visual_edition/README.md",
     "visual_edition/manifest.json",
@@ -32,6 +48,10 @@ ARTIFACTS = [
     "scripts/validate_visual_edition.py",
     "scripts/sync_visual_edition_embeds.py",
     "scripts/register_visual_edition.py",
+] + [
+    f"visual_edition/chapters/{pilot}/{filename}"
+    for pilot in PILOTS
+    for filename in PACKET_FILES
 ]
 
 
@@ -50,7 +70,7 @@ def main() -> None:
         "args": [],
         "execution_tier": "pr",
         "validation_class": "publication_gate",
-        "input_contract": "Current 84-chapter book_structure manifest; exact P7.3 five-pilot identity; pinned ARM-native ManimCE toolchain record; candidate visual grammar; zero or more schema-valid chapter derivative packets; ignored build-output and YouTube-hosting boundary.",
+        "input_contract": "Current 84-chapter book_structure manifest; exact P7.3 five-pilot identity and complete tracked source packets; pinned ARM-native ManimCE toolchain record; candidate visual grammar; zero or more schema-valid chapter derivative packets; ignored build-output and YouTube-hosting boundary.",
         "input_artifacts": ARTIFACTS,
         "output_contract": "Reject chapter identity or digest drift, premature pilot or visual-grammar completion, incomplete packet artifacts, stale chapter bindings, invalid publication/embed states, missing render identity, out-of-range validated duration, tracked or Pages-hosted media binaries, and support-state movement. The separately registered embed reconciler rejects missing, stale, or unmanaged public embed surfaces.",
         "output_assertions": [

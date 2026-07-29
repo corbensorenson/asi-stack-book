@@ -2494,7 +2494,7 @@
     "manim_visual_edition": {
       "const": {
         "id": "P7.3-governed-manim-visual-edition",
-        "state": "active_foundation_and_five_pilot_ratchet",
+        "state": "active_five_pilot_release_visuals_waiting_final_audio",
         "execution_role": "active_owner_directed_book_packet_p2_scientific_headline_unchanged",
         "canonical_chapter_count": 84,
         "required_visual_abstract_duration_seconds": {
@@ -2575,14 +2575,32 @@
           "toolchain_contracts": 1,
           "candidate_visual_grammars": 1,
           "ratified_visual_grammars": 0,
-          "pilot_packets_present": 1,
-          "pilot_packets_rendered_local": 1,
+          "pilot_packets_present": 5,
+          "pilot_packets_rendered_local": 5,
           "pilot_packets_validated": 0,
           "chapter_packets_validated": 0,
           "current_rendered_videos": 0,
           "youtube_videos_published": 0,
           "current_quarto_embeds": 0,
           "stale_videos": 0
+        },
+        "visual_manifest_path": "visual_edition/manifest.json",
+        "five_pilot_checkpoint": {
+          "state": "all_five_source_packets_and_release_profile_visuals_rendered",
+          "packet_count": 5,
+          "rendered_lifecycle_count": 5,
+          "validated_final_av_count": 0,
+          "rights_cleared_narration_count": 0,
+          "release_visual_review_count": 5,
+          "visual_grammar_state": "candidate",
+          "remaining_release_gates": [
+            "authorized_or_licensed_narration_masters",
+            "final_caption_listening_reviews",
+            "final_audio_video_mux_and_validation",
+            "exact_action_time_youtube_authority"
+          ],
+          "support_state_effect": "none",
+          "release_effect": "none"
         },
         "first_pilot_checkpoint": {
           "chapter_id": "asi-is-a-stack-not-a-model",

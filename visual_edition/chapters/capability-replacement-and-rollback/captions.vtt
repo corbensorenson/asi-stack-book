@@ -1,0 +1,266 @@
+WEBVTT
+
+NOTE
+Canonical narration text; deterministic paragraph-window timing.
+Text and terminology reviewed against the chapter packet on 2026-07-29.
+Publication still requires final listening review against the authorized narration master.
+
+1
+00:00:00.200 --> 00:00:04.803
+A capable component is not a light bulb that can be
+
+2
+00:00:04.803 --> 00:00:08.151
+unscrewed and replaced. It may carry model weights,
+
+3
+00:00:08.151 --> 00:00:12.754
+optimizer and scheduler state, random-number state, caches, credentials, policies, routes, backups,
+
+4
+00:00:12.754 --> 00:00:16.102
+descendants, and commitments already made outside the machine.
+
+5
+00:00:16.102 --> 00:00:20.705
+A replacement can look successful while half of that world still
+
+6
+00:00:20.705 --> 00:00:25.309
+belongs to the old version. This chapter therefore treats replacement as
+
+7
+00:00:25.309 --> 00:00:29.075
+a governed transaction over one declared Stable Capability Field.
+
+8
+00:00:29.075 --> 00:00:33.260
+The transaction names the prior implementation, candidate, consumers, authority, evidence,
+
+9
+00:00:33.260 --> 00:00:37.863
+recovery objective, and every state or effect surface before the result
+
+10
+00:00:37.863 --> 00:00:38.700
+is known.
+
+11
+00:00:39.200 --> 00:00:43.002
+The first discipline is prospective identity. Before evaluation,
+
+12
+00:00:43.002 --> 00:00:47.756
+freeze the field version, prior and candidate digests, dependency graph,
+
+13
+00:00:47.756 --> 00:00:52.509
+change class, checkpoint authority, evaluator, monitor, canary scope, thresholds, owners,
+
+14
+00:00:52.509 --> 00:00:57.737
+and expiry. Then inventory state and effects. Model parameters are only
+
+15
+00:00:57.737 --> 00:01:02.965
+one row. Optimizer, scheduler, random-number generator, cache, backup, credential, policy, receipt,
+
+16
+00:01:02.965 --> 00:01:08.194
+data, route, monitor, descendant, and external commitment need explicit rows too.
+
+17
+00:01:08.194 --> 00:01:13.422
+Effects are classified as reversible, replayable, compensatable, forked, disclosure-like, externally owned,
+
+18
+00:01:13.422 --> 00:01:17.700
+or irreversible. Anything omitted cannot later be called recovered.
+
+19
+00:01:18.200 --> 00:01:23.194
+The candidate then moves through explicit states: proposed, precheck, isolated shadow,
+
+20
+00:01:23.194 --> 00:01:27.734
+bounded canary, default candidate, committed, monitored, rolled back, compensated, quarantined,
+
+21
+00:01:27.734 --> 00:01:32.729
+or retired. Shadow and canary routes have bounded data, tools, writes,
+
+22
+00:01:32.729 --> 00:01:37.723
+network access, learning, and external effects. Qualification includes usefulness, historical regressions,
+
+23
+00:01:37.723 --> 00:01:42.263
+critical-failure vetoes, adversarial cases, authority and rights preservation, state compatibility,
+
+24
+00:01:42.263 --> 00:01:47.257
+complete cost, and transfer. The candidate cannot be its own sole
+
+25
+00:01:47.257 --> 00:01:51.344
+proposer, evaluator, promoter, monitor, incident judge, and rollback authority.
+
+26
+00:01:51.344 --> 00:01:56.338
+Shared dependencies are recorded because independence is a property to measure,
+
+27
+00:01:56.338 --> 00:01:57.700
+not a label.
+
+28
+00:01:58.200 --> 00:02:02.985
+Imagine replacing a planning kernel. The current route is version A.
+
+29
+00:02:02.985 --> 00:02:07.770
+Version B passes prechecks and enters a five-percent canary without permission
+
+30
+00:02:07.770 --> 00:02:11.250
+to train descendants or mutate the default cache.
+
+31
+00:02:11.250 --> 00:02:16.035
+A delayed monitor detects a critical regression. The stop condition prevents
+
+32
+00:02:16.035 --> 00:02:20.820
+default promotion. Recovery restores the prospectively chosen checkpoint and route A,
+
+33
+00:02:20.820 --> 00:02:25.170
+then compares every declared state surface with its recovery objective.
+
+34
+00:02:25.170 --> 00:02:28.650
+A changed remote copy cannot be reversed locally,
+
+35
+00:02:28.650 --> 00:02:33.435
+so the transaction assigns compensation and an owner instead of announcing
+
+36
+00:02:33.435 --> 00:02:37.785
+success. The terminal receipt records the failed candidate, the rollback,
+
+37
+00:02:37.785 --> 00:02:41.700
+the unresolved external effect, cost, and every affected descendant.
+
+38
+00:02:42.200 --> 00:02:46.835
+This example separates six commonly collapsed outcomes. Restoring artifact bytes is
+
+39
+00:02:46.835 --> 00:02:51.470
+not restoring all state. Restarting a service is not recovering behavior.
+
+40
+00:02:51.470 --> 00:02:55.683
+Digest equality is not privacy repair. Compensation is not reversal.
+
+41
+00:02:55.683 --> 00:03:00.318
+A receipt is not independent observation. And one exact local inventory
+
+42
+00:03:00.318 --> 00:03:03.689
+is not proof that the inventory was complete.
+
+43
+00:03:03.689 --> 00:03:07.902
+The strongest failure modes follow directly: checkpoint hindsight, regression deletion,
+
+44
+00:03:07.902 --> 00:03:12.116
+evaluator capture, canary contamination, monitor blindness, partial commit, forward-only migration,
+
+45
+00:03:12.116 --> 00:03:15.487
+authority smuggling, rollback theater, irreversibility laundering, rollback cascades,
+
+46
+00:03:15.487 --> 00:03:19.700
+and repeated promote-rollback trials that hide accumulated cost and residuals.
+
+47
+00:03:20.200 --> 00:03:24.938
+The chapter has real but narrow evidence. One prospective local campaign
+
+48
+00:03:24.938 --> 00:03:28.383
+restored fifteen of fifteen declared transaction trees exactly,
+
+49
+00:03:28.383 --> 00:03:33.121
+while six best-versus-final checkpoint disagreements showed why checkpoint authority must be
+
+50
+00:03:33.121 --> 00:03:37.858
+fixed in advance. Another attack-control campaign achieved exact rollback in thirty-two
+
+51
+00:03:37.858 --> 00:03:42.596
+of thirty-six cases but admitted useful release in only two of
+
+52
+00:03:42.596 --> 00:03:47.334
+thirty-six, below both release gates. A larger bounded inventory exercise restored
+
+53
+00:03:47.334 --> 00:03:52.071
+thirty-five of thirty-five named local surfaces, while immutable corpus, feature, checkpoint,
+
+54
+00:03:52.071 --> 00:03:56.378
+raw-evidence, simulated remote, and external-descendant surfaces remained unresolved by design.
+
+55
+00:03:56.378 --> 00:04:00.254
+These are useful tests of record and recovery discipline,
+
+56
+00:04:00.254 --> 00:04:03.700
+not proof of production usefulness or effect-complete rollback.
+
+57
+00:04:04.200 --> 00:04:08.700
+The core claim therefore remains Design rationale at argument support.
+
+58
+00:04:08.700 --> 00:04:13.650
+The maximum justified inference is bounded local non-core governance effect only.
+
+59
+00:04:13.650 --> 00:04:18.150
+This visual does not establish a useful replacement, production transfer,
+
+60
+00:04:18.150 --> 00:04:22.200
+semantic recovery, privacy erasure, independent evaluator quality, safe self-improvement,
+
+61
+00:04:22.200 --> 00:04:25.800
+or chapter-core promotion. The practical rule is simple:
+
+62
+00:04:25.800 --> 00:04:30.750
+no replacement is complete until identity, evidence, state, effects, authority, recovery,
+
+63
+00:04:30.750 --> 00:04:35.700
+residuals, descendants, and terminal disposition are all explicit. The next chapter,
+
+64
+00:04:35.700 --> 00:04:40.650
+Security Kernel and Digital SCIFs, asks how privileged execution can remain
+
+65
+00:04:40.650 --> 00:04:44.700
+isolated while those replacement and recovery obligations are enforced.

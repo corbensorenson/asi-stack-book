@@ -1,0 +1,133 @@
+{
+  "schema_version": "asi_stack.visual_chapter_packet.v1",
+  "video_id": "asi-video-living-book-methodology",
+  "chapter_id": "living-book-methodology",
+  "chapter_path": "chapters/living-book-methodology.qmd",
+  "chapter_sha256": "3726577c58e2ee8bfbcf706dc41a5e4092f7de4cb7744ff0a70dbb5370c3ce68",
+  "source_commit": "7c655956aff6dd00de753dc79ccdefe3bb6eb080",
+  "pilot": true,
+  "lifecycle_state": "rendered",
+  "claim_bindings": [
+    {
+      "claim_id": "living-book-methodology.core",
+      "claim_label": "Design rationale",
+      "support_state": "argument"
+    }
+  ],
+  "assigned_source_ids": [
+    "benchmaxxing",
+    "viea",
+    "bugbrain",
+    "cognitive_loop_closure",
+    "moecot",
+    "moecot_md",
+    "road_to_agi",
+    "ext_openunlearning_2025",
+    "ext_literate_programming_1984",
+    "ext_jupyter_book_docs",
+    "ext_quarto_books_docs",
+    "ext_nist_ai_rmf_1_0_2023",
+    "ext_frontier_ai_regulation_2023",
+    "ext_helm_2022",
+    "ext_livebench_2024",
+    "ext_benchmark_contamination_2023"
+  ],
+  "maximum_inference": "Bounded local replay only; no deployment, whole-book proof, external effect authority, transfer, publication, release, editorial-quality, or accessibility-approval claim.",
+  "required_content": {
+    "problem": "A living technical book must absorb sources, structural changes, evidence movement, corrections, derivatives, and releases without losing canonical identity or failed history.",
+    "core_mechanism": "An Evidence-Preserving Publication Transaction freezes scope and authority, separates provenance lanes, binds claim dependencies, regenerates projections, runs surface-specific gates, and preserves correction and successor custody.",
+    "worked_trace": "A withdrawn source propagates through its claim, chapter, proof note, appendix, synopsis, transcript, video packet, public page, and citation while historical release identity remains immutable.",
+    "failure_boundary": "Source counts, theorem builds, validators, renders, polished prose, local artifacts, deployment, and publication remain non-substitutable and cannot establish chapter truth or approval.",
+    "evidence_state": "The core remains Design rationale at argument support; the strongest local bundle has 3 slices, 12 cases, 10 lifecycle states, 6 effects, 3 rollbacks, 20 boundary injections, 11 rejecting mutations, and an 11-surface sealed epoch.",
+    "non_claims": "The visual claims no source-interpretation proof, whole-book truth, editorial approval, accessibility approval, transfer, external publication, release, or support promotion.",
+    "handoff": "Open Research Agenda and Bibliography Plan next turns unresolved sources, artifacts, proofs, experiments, reproductions, and rejections into one durable backlog."
+  },
+  "artifacts": {
+    "storyboard": "visual_edition/chapters/living-book-methodology/storyboard.md",
+    "scene_code": "visual_edition/chapters/living-book-methodology/scene.py",
+    "narration_script": "visual_edition/chapters/living-book-methodology/narration.txt",
+    "captions": "visual_edition/chapters/living-book-methodology/captions.vtt",
+    "descriptive_transcript": "visual_edition/chapters/living-book-methodology/transcript.md",
+    "thumbnail": "visual_edition/chapters/living-book-methodology/thumbnail.svg",
+    "thumbnail_alt_text": "A canonical book source anchors a governed graph of sources, claims, proofs, tests, derivatives, releases, corrections, and one active roadmap."
+  },
+  "render_receipt": {
+    "receipt_state": "current_release_visual_without_final_audio",
+    "validation_state": "local_release_visual_review_complete_audio_not_publication_cleared",
+    "rendered_at_utc": "2026-07-29T04:47:22Z",
+    "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+    "toolchain_qualification": "qualified_for_non_latex_pilots",
+    "render_profile": "release_video_only",
+    "command": "PYTHONPATH=. build/visual_edition/venv/bin/manim --config_file visual_edition/manim.cfg --disable_caching visual_edition/chapters/living-book-methodology/scene.py LivingBookMethodology",
+    "duration_seconds": 299.966016,
+    "pixel_width": 1920,
+    "pixel_height": 1080,
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "output_sha256": "702ae6ac44074ef2f7fbb90d526a2f8c8a9e3b41f3e406dc7ffccad946dd9244",
+    "output_storage": "ignored build/visual_edition media only",
+    "visual_review": {
+      "draft_sample_seconds": [18.75, 56.25, 93.75, 131.25, 168.75, 206.25, 243.75, 281.25],
+      "release_sample_seconds": [130, 280],
+      "result": "pass",
+      "review_scope": "composition, legibility, canonical-to-derivative authority direction, correction propagation, local evidence denominators, successor custody, and end-card non-claims"
+    },
+    "local_timing_audio": {
+      "voice": "macOS Samantha en_US at 190 wpm",
+      "duration_seconds": 245.353651,
+      "publication_rights_state": "not_cleared",
+      "use": "local pacing review only",
+      "muxed_review_sha256": "5497ad6f6df2d1a87bd3011ab914fef3f5d92e5b9ce9fbb278ef28edf2205024"
+    },
+    "artifact_sha256": {
+      "storyboard": "138df4ab78867113a1ce0e232ea940866aa3136e267c3edbcfe5ed679eee182f",
+      "scene_code": "1c1e5236813e519647df797ce953d4faeb27d5ca3a5134219e138bb846effd89",
+      "narration_script": "017a33b9de2196ef56c6992e5159e45386d53148601edefbb9b6b101fb6b0f78",
+      "captions": "80bb115ea4e081f14032b04c3acfeecd8920304db3f20c33ee6736a058d19233",
+      "descriptive_transcript": "7f8065ecc2875634d9453388489eda1c89b1112c33c106bcf45b7ae2fe1c9ef2",
+      "thumbnail": "3bc1d659d705cd66c3a00cb642e8bbe70b695a87f07234e96c667b5f637e07ab"
+    },
+    "remaining_release_gates": [
+      "record or license the final narration master for publication",
+      "perform final listening review and retime captions against that master",
+      "mux and validate the final accessible audio-video master",
+      "obtain exact action-time authority before any YouTube or playlist mutation"
+    ]
+  },
+  "youtube": {
+    "video_id": null,
+    "playlist_id": null,
+    "publication_state": "not_authorized",
+    "platform_receipt_path": null
+  },
+  "quarto_embed": {
+    "state": "absent_until_published",
+    "chapter_anchor": "visual-abstract",
+    "frame_title": "Visual abstract: Living Book Methodology",
+    "aria_label": "Play the visual abstract for Living Book Methodology"
+  },
+  "staleness": {
+    "state": "current",
+    "checked_chapter_sha256": "3726577c58e2ee8bfbcf706dc41a5e4092f7de4cb7744ff0a70dbb5370c3ce68",
+    "triggers": [
+      "core_claim",
+      "mechanism",
+      "worked_trace",
+      "evidence_state",
+      "non_claim",
+      "material_source",
+      "chapter_identity",
+      "handoff",
+      "public_url"
+    ]
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This derivative video does not promote or otherwise change any book claim.",
+    "A scripted pilot is not a validated render, release, upload, or publication.",
+    "Self-application, validation, rendering, and deployment do not establish source interpretation or whole-book truth.",
+    "No editorial, accessibility, transfer, publication, release, AGI, ASI, or SOTA result is claimed."
+  ]
+}

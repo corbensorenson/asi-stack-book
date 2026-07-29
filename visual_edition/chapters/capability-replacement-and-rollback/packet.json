@@ -1,0 +1,130 @@
+{
+  "schema_version": "asi_stack.visual_chapter_packet.v1",
+  "video_id": "asi-video-capability-replacement-and-rollback",
+  "chapter_id": "capability-replacement-and-rollback",
+  "chapter_path": "chapters/capability-replacement-and-rollback.qmd",
+  "chapter_sha256": "dd21645821f309acacea9d780fd97a1076a55e69a21e08adef695a66184d42f7",
+  "source_commit": "7c655956aff6dd00de753dc79ccdefe3bb6eb080",
+  "pilot": true,
+  "lifecycle_state": "rendered",
+  "claim_bindings": [
+    {
+      "claim_id": "capability-replacement-and-rollback.core",
+      "claim_label": "Design rationale",
+      "support_state": "argument"
+    }
+  ],
+  "assigned_source_ids": [
+    "scf",
+    "deterministic_capability_compilation",
+    "rmi",
+    "benchmaxxing",
+    "cognitive_loop_closure",
+    "talos",
+    "moecot",
+    "ext_corrigibility_2015",
+    "ext_argo_rollouts_docs",
+    "ext_feature_toggles_fowler",
+    "ext_google_cloud_mlops_cd",
+    "ext_kubernetes_deployments_docs",
+    "ext_txfs_2018"
+  ],
+  "maximum_inference": "Bounded local non-core governance effect only; no family-wide truth, useful replacement, semantic recovery, transfer, deployment, privacy erasure, safe self-improvement, or chapter-core promotion.",
+  "required_content": {
+    "problem": "A capability replacement changes a field of state, effects, authority, descendants, and commitments rather than one isolated model artifact.",
+    "core_mechanism": "A prospectively authorized phase-gated transaction freezes identity, checkpoint authority, state and effect inventories, evidence, canary policy, recovery objective, owners, and terminal states.",
+    "worked_trace": "Planning kernel B enters a five-percent canary, triggers a delayed critical regression, restores route and declared local state to A, and assigns an irreversible remote copy to compensation and residual custody.",
+    "failure_boundary": "Artifact restoration, service restart, digest equality, compensation, receipts, and inventory-exact local replay remain distinct from full state, behavior, privacy, reversal, observation, and real-world completeness.",
+    "evidence_state": "The core remains Design rationale at argument support; bounded campaigns report 15/15 local trees, 32/36 attack-control rollbacks with 2/36 useful releases, and 35/35 named local surfaces.",
+    "non_claims": "The visual claims no useful production replacement, effect-complete rollback, semantic recovery, privacy erasure, evaluator independence, transfer, safe self-improvement, or support promotion.",
+    "handoff": "Security Kernel and Digital SCIFs next asks how privileged execution remains isolated while replacement and recovery obligations are enforced."
+  },
+  "artifacts": {
+    "storyboard": "visual_edition/chapters/capability-replacement-and-rollback/storyboard.md",
+    "scene_code": "visual_edition/chapters/capability-replacement-and-rollback/scene.py",
+    "narration_script": "visual_edition/chapters/capability-replacement-and-rollback/narration.txt",
+    "captions": "visual_edition/chapters/capability-replacement-and-rollback/captions.vtt",
+    "descriptive_transcript": "visual_edition/chapters/capability-replacement-and-rollback/transcript.md",
+    "thumbnail": "visual_edition/chapters/capability-replacement-and-rollback/thumbnail.svg",
+    "thumbnail_alt_text": "Candidate B enters a governed canary, then a rollback arrow restores route A while an irreversible remote effect remains an owned residual."
+  },
+  "render_receipt": {
+    "receipt_state": "current_release_visual_without_final_audio",
+    "validation_state": "local_release_visual_review_complete_audio_not_publication_cleared",
+    "rendered_at_utc": "2026-07-29T04:47:22Z",
+    "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+    "toolchain_qualification": "qualified_for_non_latex_pilots",
+    "render_profile": "release_video_only",
+    "command": "PYTHONPATH=. build/visual_edition/venv/bin/manim --config_file visual_edition/manim.cfg --disable_caching visual_edition/chapters/capability-replacement-and-rollback/scene.py CapabilityReplacementAndRollback",
+    "duration_seconds": 284.993815,
+    "pixel_width": 1920,
+    "pixel_height": 1080,
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "output_sha256": "5c634994b60e06ec7ba888358ba7c89dd6eb89ab7187e8d6a272adda18393560",
+    "output_storage": "ignored build/visual_edition media only",
+    "visual_review": {
+      "draft_sample_seconds": [17.5, 52.5, 87.5, 122.5, 157.5, 192.5, 227.5, 262.5],
+      "release_sample_seconds": [130, 280],
+      "result": "pass",
+      "review_scope": "composition, legibility, color-plus-shape semantics, monitor-triggered rollback completeness, evidence denominators, maximum-inference boundary, and end-card non-claims"
+    },
+    "local_timing_audio": {
+      "voice": "macOS Samantha en_US at 190 wpm",
+      "duration_seconds": 246.096689,
+      "publication_rights_state": "not_cleared",
+      "use": "local pacing review only",
+      "muxed_review_sha256": "e3f125dea2bdd0e02554a2269688eb2851a16fe794936d46ddd84abe1792098f"
+    },
+    "artifact_sha256": {
+      "storyboard": "702fc6aaa4635dd7fa4c61632dd83d17cf4b650fa5a50c95e7dc60f6f188e0fb",
+      "scene_code": "4a83fb8a97cd41450b296de7281c7b033831de78d227c2cb85057113d64562d1",
+      "narration_script": "4127055dc20d80f884d55a3e8e5d4670cb91236ae3fab75770e911653cf246e2",
+      "captions": "7b88c8a5b97c54558de7a5b43e32cc0aaa7e3f851929aa8d2f99351b5eb4a2b4",
+      "descriptive_transcript": "534c95b4db0a55c36adbc688f43b4073640265beaa5da69967efa4a65310abab",
+      "thumbnail": "47f4850ff241ab5fa80ce1e23add8a20639f24bf2d9be579f25d00281f531ef0"
+    },
+    "remaining_release_gates": [
+      "record or license the final narration master for publication",
+      "perform final listening review and retime captions against that master",
+      "mux and validate the final accessible audio-video master",
+      "obtain exact action-time authority before any YouTube or playlist mutation"
+    ]
+  },
+  "youtube": {
+    "video_id": null,
+    "playlist_id": null,
+    "publication_state": "not_authorized",
+    "platform_receipt_path": null
+  },
+  "quarto_embed": {
+    "state": "absent_until_published",
+    "chapter_anchor": "visual-abstract",
+    "frame_title": "Visual abstract: Capability Replacement and Rollback",
+    "aria_label": "Play the visual abstract for Capability Replacement and Rollback"
+  },
+  "staleness": {
+    "state": "current",
+    "checked_chapter_sha256": "dd21645821f309acacea9d780fd97a1076a55e69a21e08adef695a66184d42f7",
+    "triggers": [
+      "core_claim",
+      "mechanism",
+      "worked_trace",
+      "evidence_state",
+      "non_claim",
+      "material_source",
+      "chapter_identity",
+      "handoff",
+      "public_url"
+    ]
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This derivative video does not promote or otherwise change any book claim.",
+    "A scripted pilot is not a validated render, release, upload, or publication.",
+    "Exact declared local rollback does not establish complete real-world recovery.",
+    "No useful replacement, deployment, privacy erasure, transfer, or safe self-improvement result is claimed."
+  ]
+}

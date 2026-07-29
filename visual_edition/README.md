@@ -51,6 +51,14 @@ All counts are derived from current packets. A storyboard, scene stub, silent
 preview, unreviewed caption file, upload, or placeholder embed is not a
 completed chapter video.
 
+Current checkpoint: all five representative pilots have complete source
+packets and visually reviewed draft and 1920×1080/30-fps release-profile
+visuals. All five remain `rendered`, not `validated`: the local Samantha tracks
+are pacing aids whose publication rights are not cleared, final captions have
+not been listened against an authorized narration master, and no final A/V
+master exists. The grammar therefore remains `candidate`, the other 79
+chapters remain `planned`, and YouTube/playlist/embed counts remain zero.
+
 Release renders use the exact 1920×1080/30-fps values in `manim.cfg` with no
 quality shortcut flag. In particular, `-qh` is not the release command because
 ManimCE 0.20.1 expands that shortcut to 1080p60 and would override the pinned

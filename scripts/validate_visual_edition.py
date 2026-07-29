@@ -152,6 +152,7 @@ def errors(manifest: dict, grammar: dict | None = None) -> list[str]:
             if receipt.get("toolchain_id") != toolchain.get("toolchain_id"):
                 failures.append(f"{chapter['id']}: render/toolchain identity drift")
             artifact_keys = {
+                "storyboard": "storyboard",
                 "scene_code": "scene_code",
                 "narration_script": "narration_script",
                 "captions": "captions",

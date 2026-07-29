@@ -217,7 +217,7 @@ proceeds.
 | Existing-owner inference-cache packet — prose terminal; receipt and empirical work deferred | `P6.7-inference-cache-reuse-and-honest-pricing` | Reader-facing source integration was expressly commissioned and completed 2026-07-23; no new chapter or support movement | Maintain the three coordinated manuscript integrations and nine-source packet. Later implement the cache-reuse receipt and run separate exact-prefix and semantic-response campaigns under the ordinary post-gate entry condition. Preserve KV-versus-output, exact-versus-semantic, hit-versus-useful-outcome, and provider-contract-versus-local-evidence boundaries. |
 | Existing-owner functional-precision packet — source and prose terminal; evidence work queued | `P6.8-functional-precision-and-behavior-preserving-computation` | Source intake and the eight-owner manuscript integration are complete; schemas, validators, source resolution, and empirical work retain ordinary gates; no new chapter or support movement | Maintain the integrated Precision Contract treatment led by RankFold/NeuralFold. Preserve representation invariance, protected behavior, complete executable and physical-cost accounting, progressive residual precision, routed fallback, certificate scope, and program-transformation proof limits. Reconsider a standalone chapter only if a dated post-integration coherence audit finds a genuinely unowned lifecycle. |
 | Existing-book depth recovery — terminal | `P6.9-R21-concept-complete-depth-and-atom-adequacy` | The 84-chapter manifest is frozen; unified atom custody must stay 84/84; completion requires a named concept manifest plus a digest-bound semantic disposition, while word and atom counts remain diagnostic only | Preserve all twenty-three completed owners and 184 concepts at their reviewed digests. The raw-scaffold audit owns all 21 widest blocks with zero reader-visible or unjustified blocks; the exact 23-chapter/184-concept proof/evidence handoff is terminal. Reopen only after digest drift or an explicit successor amendment. |
-| Visual edition — active owner-directed book packet | `P7.3-governed-manim-visual-edition` | Foundation qualified 2026-07-29: exact ARM-native ManimCE `0.20.1` contract passes; the visual grammar remains candidate; pilot one has a complete packet, a reviewed 284.997-second draft, and a reviewed 284.999-second 1920×1080/30-fps release-profile visual render, but no cleared narration master, validated final A/V master, YouTube authority, publication, or support movement | Close narration, caption-listening, and final A/V gates for pilot one, then render and validate the remaining four representative pilots and ratify the reusable grammar. Produce one current 3–6 minute visual abstract for each of the 84 chapters in manifest order. Host final binaries on YouTube, keep code/scripts/captions/transcripts/manifests and receipts in Git, keep rendered media out of GitHub Pages, and embed only validated current URLs. |
+| Visual edition — active owner-directed book packet | `P7.3-governed-manim-visual-edition` | Foundation and all five representative source packets are complete. Five reviewed drafts and five reviewed 1920×1080/30-fps release-profile visuals now exist in ignored local storage; all five packets are `rendered`. The visual grammar remains candidate because there are still zero rights-cleared narration masters, reviewed final caption tracks, validated final A/V masters, YouTube videos, publications, embeds, or support movements. | Select and qualify one reproducible rights-cleared narration path; close narration, final caption-listening, and final A/V gates across all five pilots; then ratify or revise the reusable grammar from the five validated packets. Produce the remaining 79 current 3–6 minute visual abstracts in manifest order. Host final binaries on YouTube only with exact action-time authority, keep code/scripts/captions/transcripts/manifests and receipts in Git, keep rendered media out of GitHub Pages, and embed only validated current URLs. |
 | Formal slot — C6 residual triage terminal; dependency-safe execution active | `C6-remaining-stronger-model-rationalization` | The original 54-action residual estate had zero Lean dependencies and zero theorem consumers; two redundant witnesses and 43 Theseus repository-import mirrors are retired, leaving nine actions: eight summary-mirror retirements and one inverse-route rewrite | Retire the eight Benchmark/Runtime/Search/Stable-Capability summary mirrors next, then implement the Failure Modes inverse property. Rebuild the overlay and ledger after every tranche, with no support or release movement. |
 | Empirical headline — exact N0 entry receipt; materialization blocked | `P2-R3-storage-materialization-and-replacement-qualification` | `P2-R3a-002` measured 23.87 GiB free against the 50 GiB floor and no reachable Docker daemon; restore both gates and write a new immutable preflight before any pull | Then thirty sealed candidate recipes and receipts; terminal pool materialization; four competently qualified replacements restoring the fixed twelve-task denominator; rank progression only under the frozen amendment; zero protected-content leakage. No deletion of non-Docker user data is authorized. |
 | First structural tranche — terminal | White-Box, World Models, Human Factors, and Governed Operations are terminal at argument support | Four exact integration packets preserve owners, sources, formal ceilings, protocols, reader handoffs, and no-promotion boundaries | Maintenance only; no reopened chapter packet without a dated machine-validated defect. |
@@ -3613,6 +3613,51 @@ narration masters, reviewed final caption tracks, YouTube videos, playlist
 entries, or Quarto embeds. Close those release gates without laundering the
 macOS timing voice into a publishable asset; then complete pilots two through
 five before grammar ratification or the 79-chapter rollout.
+
+#### P7.3-F2 five-pilot source and release-visual checkpoint — 2026-07-29
+
+All five representative pilots now have complete, current source packets:
+storyboard, chapter-specific scene code, canonical narration text,
+deterministically timed draft captions, descriptive transcript, accessible
+thumbnail, exact core-claim and assigned-source bindings, maximum inference,
+staleness triggers, and zero support-state effect. The four added pilots are
+not copies of the first:
+
+- Capability Replacement and Rollback visualizes prospective identity,
+  full-state/effect inventory, monitor-triggered rollback, compensation, and
+  the `15/15`, `32/36` with `2/36` useful-release, and `35/35` bounded result
+  denominators.
+- Context Transactions visualizes exact snapshots, purpose-bound mounts,
+  non-collapsible commit states, semantic conflict, taint and deletion
+  propagation, response-cache taxonomy, and finite fixture limits.
+- Replaceable Cognitive Substrates visualizes the typed Cognitive Kernel ABI,
+  architecture-family differences, contribution accounting, architectural
+  RSI without self-ratification, OneCell defeat conditions, and the zero-run
+  heterogeneous-kernel boundary.
+- Living Book Methodology visualizes canonical artifact authority, separated
+  provenance lanes, claim dependency and validation gates, typed derivatives,
+  correction propagation, local lifecycle denominators, and successor
+  custody.
+
+Each new scene passed a full-duration 854×480/15-fps draft render and sampled
+visual review. Each then passed the exact 1920×1080/30-fps H.264/yuv420p
+release-visual profile, with durations of 284.994, 299.965, 299.961, and
+299.966 seconds respectively. Review caught and repaired two concrete visual
+defects before custody: a missing monitor card caused by competing animations
+and an evidence-boundary/end-card overlap. Local Samantha timing tracks at a
+recorded 190-wpm setting were muxed only for pacing review; their publication
+rights remain expressly uncleared and the media remains ignored.
+
+The canonical visual manifest therefore reports 84 chapters, five present
+packets, five `rendered`, seventy-nine `planned`, zero validated final A/V
+masters, zero YouTube publications, and zero current Quarto embeds. The
+five-pilot ratchet is **source- and release-visual complete but not validated**.
+The visual grammar remains `candidate`. The next legal work is to qualify a
+reproducible rights-cleared narration path, create and listen-review each
+pilot's final master, retime and review its caption track against that exact
+audio, mux and validate final A/V, and only then ratify or revise the grammar.
+No upload, playlist mutation, publication, or embed may occur without exact
+action-time authority.
 
 **P7.3 completion gate.** This lane is terminal only when all 84 current
 manifest chapters have validated derivative packets and current rendered

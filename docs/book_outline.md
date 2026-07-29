@@ -4614,7 +4614,7 @@ Source loading queue:
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 
-| Manifest assignment reconciliation | `deterministic_capability_compilation`, `ext_dont_hallucinate_abstain_2024`, `qcsa_whitepaper`, `reflexive_router_whitepaper`, `relational_dimension_compiler` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `deterministic_capability_compilation`, `ext_dont_hallucinate_abstain_2024`, `qcsa_whitepaper`, `reflexive_router_whitepaper`, `relational_dimension_compiler`, `ext_kimi_k3_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: The architecture needs to allocate cognition across specialists rather than force one system to do every task.
@@ -4720,7 +4720,7 @@ Source loading queue:
 | Mutable/external/dynamical/function/graph/program alternatives | `ext_ttt_layers_2024`, `ext_titans_2025`, `ext_kan_2024`, `ext_kan_or_mlp_fairer_comparison_2024`, `ext_neural_turing_machines_2014`, `ext_differentiable_neural_computer_2016`, `ext_liquid_time_constant_networks_2021`, `ext_neural_message_passing_2017`, `ext_dreamcoder_2020` | Use for online-state custody, fair KAN comparison, memory and topology extrapolation, continuous-time cost, relational processing, and verified abstraction tests. |
 | Hybrid composition | `ext_jamba_2024` | Use to make layer/expert/substrate composition and active-versus-total accounting explicit; do not infer a generally optimal mixture or local result. |
 
-| Manifest assignment reconciliation | `deterministic_capability_compilation`, `ext_gated_deltanet2_2026`, `ext_hyperscale_lottery_2026`, `ext_inkling_2026`, `kernel_english_residual_compiler`, `relational_dimension_compiler`, `ext_llm_in_flash_2024`, `ext_powerinfer_2024`, `ext_atsinfer_2026`, `ext_test_time_training_2020`, `ext_llada_2025`, `ext_scaling_dllms_2026`, `ext_neuromorphic_computing_scale_2025`, `ext_photonic_neuromorphic_2024`, `ext_quantum_ml_shadows_2024`, `ext_organoid_intelligence_2023` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `deterministic_capability_compilation`, `ext_gated_deltanet2_2026`, `ext_hyperscale_lottery_2026`, `ext_inkling_2026`, `kernel_english_residual_compiler`, `relational_dimension_compiler`, `ext_llm_in_flash_2024`, `ext_powerinfer_2024`, `ext_atsinfer_2026`, `ext_test_time_training_2020`, `ext_llada_2025`, `ext_scaling_dllms_2026`, `ext_neuromorphic_computing_scale_2025`, `ext_photonic_neuromorphic_2024`, `ext_quantum_ml_shadows_2024`, `ext_organoid_intelligence_2023`, `ext_kimi_k3_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Explain why a stable stack must abstract architecture without pretending that
@@ -4891,7 +4891,7 @@ Source loading queue:
 | Orthogonalized matrix updates | `ext_muon_scalable_2025`, `ext_muon_spectral_norm_2026` | Explain momentum plus approximate matrix orthogonalization, matrix eligibility, fallback optimizers, weight decay, update scaling, approximation precision, communication, and one theoretical spectral-norm interpretation. Do not collapse ideal and implemented Muon or infer universal superiority. |
 
 
-| Manifest assignment reconciliation | `corbens_trainer_project`, `ext_proof_of_learning_2021`, `ext_test_time_training_2020`, `ext_curriculum_learning_2009` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `corbens_trainer_project`, `ext_proof_of_learning_2021`, `ext_test_time_training_2020`, `ext_curriculum_learning_2009`, `ext_kimi_k3_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Explain why code, data, weights, and loss do not fully identify a stateful

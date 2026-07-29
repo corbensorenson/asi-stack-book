@@ -1,0 +1,140 @@
+{
+  "schema_version": "asi_stack.visual_chapter_packet.v1",
+  "video_id": "asi-video-context-transactions-snapshots-mounts-and-taint",
+  "chapter_id": "context-transactions-snapshots-mounts-and-taint",
+  "chapter_path": "chapters/context-transactions-snapshots-mounts-and-taint.qmd",
+  "chapter_sha256": "7e15d7abfff83d302eed12bd897e35898cd008d82bf59850d0fe180d7d4aa99c",
+  "source_commit": "7c655956aff6dd00de753dc79ccdefe3bb6eb080",
+  "pilot": true,
+  "lifecycle_state": "rendered",
+  "claim_bindings": [
+    {
+      "claim_id": "context-transactions-snapshots-mounts-and-taint.core",
+      "claim_label": "Design rationale",
+      "support_state": "argument"
+    }
+  ],
+  "assigned_source_ids": [
+    "vcm_public",
+    "platonic_world_model",
+    "ladon_manhattan",
+    "context_engineer",
+    "black_hole_context_manager",
+    "vcm_editable",
+    "ext_graphrag_2024",
+    "ext_mem0_2025",
+    "ext_cap_theorem_gilbert_lynch_2002",
+    "ext_txfs_2018",
+    "ext_bourtoule_machine_unlearning_2021",
+    "cca_project",
+    "moecot_manifest_project",
+    "beastbrain_project",
+    "bugbrain_project",
+    "corbens_best_model_possible_project",
+    "reflexive_router_whitepaper",
+    "kernel_english_residual_compiler",
+    "ext_openai_prompt_caching_docs_2026",
+    "ext_anthropic_prompt_caching_docs_2026",
+    "ext_gemini_context_caching_docs_2026",
+    "ext_vllm_automatic_prefix_caching_2026",
+    "ext_azure_llm_semantic_cache_2026"
+  ],
+  "maximum_inference": "Bounded finite POMDP result only; no open-world truth, general memory transfer, deployment, concurrency guarantee, complete erasure, useful cache, or chapter-core promotion.",
+  "required_content": {
+    "problem": "Durable context can mix snapshots, branches, indexes, caches, authority, taint, revocation, deletion, and recovery obligations while still presenting a clean prompt.",
+    "core_mechanism": "A Context Transaction binds an observed causal snapshot, purpose-bound mounts, actual state changes, isolation, durability, visibility, taint, deletion closure, retries, crashes, costs, and residuals.",
+    "worked_trace": "A source correction on branch B conflicts with branch C, propagates taint to summary, embedding, cache, and route, invalidates reachable descendants, and leaves an unreachable backup as a residual.",
+    "failure_boundary": "Transaction logs, storage commits, logical deletion, access denial, physical erasure, model forgetting, influence removal, privacy protection, and useful context are non-equivalent outcomes.",
+    "evidence_state": "The core remains Design rationale at argument support; finite checks cover 3/6 store fixtures, 2/4 event sequences, 78 rejected mutations, and one bounded historical lifecycle.",
+    "non_claims": "The visual claims no deployed store, serializability, crash durability, complete cache invalidation, erasure, forgetting, useful memory, transfer, or support promotion.",
+    "handoff": "Verification Bandwidth and Context Adequacy next asks whether a valid context view contains enough evidence to justify a claim."
+  },
+  "artifacts": {
+    "storyboard": "visual_edition/chapters/context-transactions-snapshots-mounts-and-taint/storyboard.md",
+    "scene_code": "visual_edition/chapters/context-transactions-snapshots-mounts-and-taint/scene.py",
+    "narration_script": "visual_edition/chapters/context-transactions-snapshots-mounts-and-taint/narration.txt",
+    "captions": "visual_edition/chapters/context-transactions-snapshots-mounts-and-taint/captions.vtt",
+    "descriptive_transcript": "visual_edition/chapters/context-transactions-snapshots-mounts-and-taint/transcript.md",
+    "thumbnail": "visual_edition/chapters/context-transactions-snapshots-mounts-and-taint/thumbnail.svg",
+    "thumbnail_alt_text": "An exact snapshot branches into corrected and conflicting memory states while taint reaches derivatives and an unreachable backup remains a residual."
+  },
+  "render_receipt": {
+    "receipt_state": "current_release_visual_without_final_audio",
+    "validation_state": "local_release_visual_review_complete_audio_not_publication_cleared",
+    "rendered_at_utc": "2026-07-29T04:47:22Z",
+    "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+    "toolchain_qualification": "qualified_for_non_latex_pilots",
+    "render_profile": "release_video_only",
+    "command": "PYTHONPATH=. build/visual_edition/venv/bin/manim --config_file visual_edition/manim.cfg --disable_caching visual_edition/chapters/context-transactions-snapshots-mounts-and-taint/scene.py ContextTransactionsSnapshotsMountsAndTaint",
+    "duration_seconds": 299.964714,
+    "pixel_width": 1920,
+    "pixel_height": 1080,
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "output_sha256": "7923cdca2d65d76c53b4d87fda88f53a7bb79e25f5d1d864453f96beca6efbd6",
+    "output_storage": "ignored build/visual_edition media only",
+    "visual_review": {
+      "draft_sample_seconds": [18.75, 56.25, 93.75, 131.25, 168.75, 206.25, 243.75, 281.25],
+      "release_sample_seconds": [130, 280],
+      "result": "pass",
+      "review_scope": "composition, legibility, color-plus-label semantics, branch and taint propagation, cache taxonomy, finite denominators, evidence ceiling, and end-card non-claims"
+    },
+    "local_timing_audio": {
+      "voice": "macOS Samantha en_US at 190 wpm",
+      "duration_seconds": 241.545578,
+      "publication_rights_state": "not_cleared",
+      "use": "local pacing review only",
+      "muxed_review_sha256": "32251f088f47f92bb67ba3d1a03eb6a3a5741cd751d26c989535ca917ea242b0"
+    },
+    "artifact_sha256": {
+      "storyboard": "bde14d302e7af3e626d480dd1aac162cad0ae99adada9862bc2f252c03d7cc9b",
+      "scene_code": "2b21bfa81abce78b7e089f14024aebc246625800d0a9114f5d21bff5c2ae68bf",
+      "narration_script": "9f6315375ceef9d89ca5185bb18de3fd42fdec6276d80c4ba871f84e366924e8",
+      "captions": "bcb652d513bcaba31647f136a30075053bbf849c7c7bd3023ee2b63e368b3546",
+      "descriptive_transcript": "bc5321f2b1ac264ebadd30612da8e8354dd107bd7915f3236cb7ac72f2777fc7",
+      "thumbnail": "286f8587a126a3a437fa307cb2aaaa5e55f91d344a9ca1f9da3ed1d30688ba09"
+    },
+    "remaining_release_gates": [
+      "record or license the final narration master for publication",
+      "perform final listening review and retime captions against that master",
+      "mux and validate the final accessible audio-video master",
+      "obtain exact action-time authority before any YouTube or playlist mutation"
+    ]
+  },
+  "youtube": {
+    "video_id": null,
+    "playlist_id": null,
+    "publication_state": "not_authorized",
+    "platform_receipt_path": null
+  },
+  "quarto_embed": {
+    "state": "absent_until_published",
+    "chapter_anchor": "visual-abstract",
+    "frame_title": "Visual abstract: Context Transactions, Snapshots, Mounts, and Taint",
+    "aria_label": "Play the visual abstract for Context Transactions, Snapshots, Mounts, and Taint"
+  },
+  "staleness": {
+    "state": "current",
+    "checked_chapter_sha256": "7e15d7abfff83d302eed12bd897e35898cd008d82bf59850d0fe180d7d4aa99c",
+    "triggers": [
+      "core_claim",
+      "mechanism",
+      "worked_trace",
+      "evidence_state",
+      "non_claim",
+      "material_source",
+      "chapter_identity",
+      "handoff",
+      "public_url"
+    ]
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This derivative video does not promote or otherwise change any book claim.",
+    "A scripted pilot is not a validated render, release, upload, or publication.",
+    "A valid context transaction does not establish truth, adequacy, usefulness, or complete erasure.",
+    "No deployed concurrency, durability, memory-transfer, privacy, or support result is claimed."
+  ]
+}

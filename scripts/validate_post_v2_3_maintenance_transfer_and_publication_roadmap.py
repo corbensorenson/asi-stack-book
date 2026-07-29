@@ -62,6 +62,7 @@ PRECISION_CONTRACT_BACKLOG = ROOT / "research_backlog_records/precision_contract
 PRECISION_CONTRACT_TRIAGE = ROOT / "new_paper_triage_scenarios/precision_contract_2026_07_24.json"
 SOURCE_INVENTORY = ROOT / "sources/source_inventory.json"
 BOOK_MANIFEST = ROOT / "book_structure.json"
+VISUAL_EDITION_MANIFEST = ROOT / "visual_edition/manifest.json"
 REVIEW_ADJUDICATION = ROOT / "docs/chatgpt_pro_full_book_review_adjudication_2026_07_25.md"
 CURRENT_ROLE_MAP = ROOT / "evidence_quality/current_chapter_role_map.json"
 PROOF_SEMANTIC_DEPTH_OVERLAY = ROOT / "proofs/proof_semantic_depth_overlay.json"
@@ -250,6 +251,7 @@ def inputs() -> dict:
         "precision_contract_triage": load(PRECISION_CONTRACT_TRIAGE),
         "source_inventory": load(SOURCE_INVENTORY),
         "book_manifest": load(BOOK_MANIFEST),
+        "visual_edition_manifest": load(VISUAL_EDITION_MANIFEST),
         "review_adjudication": REVIEW_ADJUDICATION.read_text(encoding="utf-8"),
         "current_role_map": load(CURRENT_ROLE_MAP),
         "proof_semantic_depth_overlay": load(PROOF_SEMANTIC_DEPTH_OVERLAY),
@@ -1196,8 +1198,8 @@ def errors(data: dict) -> list[str]:
     ]
     if manim.get("id") != "P7.3-governed-manim-visual-edition":
         out.append("Manim visual-edition identity drifted")
-    if manim.get("state") != "active_foundation_and_five_pilot_ratchet":
-        out.append("Manim visual-edition state is not the active foundation and pilot ratchet")
+    if manim.get("state") != "active_five_pilot_release_visuals_waiting_final_audio":
+        out.append("Manim visual-edition state does not preserve the five rendered pilots and open final-audio gate")
     if manim.get("canonical_chapter_count") != len(manifest_chapters) or len(manifest_chapters) != 84:
         out.append("Manim visual-edition chapter target does not match the canonical manifest")
     if manim.get("pilot_chapter_ids") != expected_pilots:
@@ -1239,8 +1241,8 @@ def errors(data: dict) -> list[str]:
         "toolchain_contracts": 1,
         "candidate_visual_grammars": 1,
         "ratified_visual_grammars": 0,
-        "pilot_packets_present": 1,
-        "pilot_packets_rendered_local": 1,
+        "pilot_packets_present": 5,
+        "pilot_packets_rendered_local": 5,
         "pilot_packets_validated": 0,
         "chapter_packets_validated": 0,
         "current_rendered_videos": 0,
@@ -1250,6 +1252,20 @@ def errors(data: dict) -> list[str]:
     }
     if counts != expected_counts:
         out.append("Manim visual-edition foundation or production counts drifted")
+    visual_manifest = data["visual_edition_manifest"]
+    visual_counts = visual_manifest.get("counts", {})
+    if (
+        manim.get("visual_manifest_path") != "visual_edition/manifest.json"
+        or visual_manifest.get("canonical_chapter_count") != 84
+        or visual_manifest.get("pilot_chapter_ids") != expected_pilots
+        or visual_counts.get("packets_present") != counts.get("pilot_packets_present")
+        or visual_counts.get("rendered") != counts.get("pilot_packets_rendered_local")
+        or visual_counts.get("validated") != counts.get("pilot_packets_validated")
+        or visual_counts.get("current_rendered_videos") != counts.get("current_rendered_videos")
+        or visual_counts.get("youtube_videos_published") != counts.get("youtube_videos_published")
+        or visual_counts.get("current_quarto_embeds") != counts.get("current_quarto_embeds")
+    ):
+        out.append("Manim roadmap counts do not reconcile with the canonical visual-edition manifest")
     grammar = manim.get("visual_grammar", {})
     if grammar != {
         "contract_path": "visual_edition/visual_grammar.json",
@@ -1282,6 +1298,24 @@ def errors(data: dict) -> list[str]:
         "release_effect": "none",
     }:
         out.append("Manim first-pilot checkpoint drifted or overclaimed")
+    if manim.get("five_pilot_checkpoint") != {
+        "state": "all_five_source_packets_and_release_profile_visuals_rendered",
+        "packet_count": 5,
+        "rendered_lifecycle_count": 5,
+        "validated_final_av_count": 0,
+        "rights_cleared_narration_count": 0,
+        "release_visual_review_count": 5,
+        "visual_grammar_state": "candidate",
+        "remaining_release_gates": [
+            "authorized_or_licensed_narration_masters",
+            "final_caption_listening_reviews",
+            "final_audio_video_mux_and_validation",
+            "exact_action_time_youtube_authority",
+        ],
+        "support_state_effect": "none",
+        "release_effect": "none",
+    }:
+        out.append("Manim five-pilot release-visual checkpoint drifted or overclaimed")
     if manim.get("support_state_effect") != "none":
         out.append("Manim visual edition moves claim support")
     expected_first_tranche_order = [
