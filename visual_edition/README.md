@@ -10,6 +10,8 @@ the chapter's claim label, support state, maximum inference, or release scope.
 - the 84-entry derivative manifest;
 - the exact toolchain lock and dependency lock;
 - the candidate or ratified visual grammar;
+- the canonical YouTube channel contract and generated 84-chapter
+  publication/revision ledger;
 - reusable Manim source;
 - per-chapter packet metadata, storyboard, scene code, narration, reviewed
   captions, descriptive transcript, thumbnail, and render/platform receipts.
@@ -43,6 +45,7 @@ Generate the 84-entry manifest and validate the edition:
 
 ```bash
 python3 scripts/build_visual_edition_manifest.py
+python3 scripts/build_youtube_ledger.py
 python3 scripts/validate_visual_edition.py
 python3 scripts/sync_visual_edition_embeds.py
 ```
@@ -69,3 +72,29 @@ The embed synchronizer is a no-write check by default. After an exact packet is
 `youtube-nocookie.com` player and the packet's full descriptive transcript
 next to one another in the canonical chapter. It removes managed blocks for
 videos that are no longer current and rejects unmanaged YouTube embeds.
+
+## YouTube identity and chapter updates
+
+`youtube_channel.json` binds this edition to the verified **corben sorenson**
+channel, ID `UCX7Tu67cGmKfT6O38xxiQFA`. Authentication proves access only; it
+does not authorize an upload or another mutation. The canonical playlist is
+created only after the five pilots have validated final A/V masters and exact
+action-time authority is given.
+
+`youtube_ledger.json` is generated in book order and provides one row for every
+canonical chapter, including chapters without packets. Each row preserves the
+stable internal identity `asi-video-<chapter-id>`, current chapter digest,
+packet and lifecycle state, YouTube channel/video/playlist identity, upload
+generation, uploaded render digest, bound chapter digest and source commit,
+publication receipt, predecessor video, and the next required action. Rebuild
+the ledger after any chapter, packet, publication, or playlist change.
+
+YouTube does not replace an uploaded binary at the same URL. A material chapter
+revision therefore creates a new video generation and new YouTube video ID.
+The prior generation and receipt remain historical; by default the prior video
+becomes unlisted and points to the current generation. In the same governed
+transaction, the new upload enters the canonical playlist position, its packet
+becomes `published_current`, the old packet generation becomes `superseded`,
+and the Quarto embed is reconciled to the new ID. The validator rejects a stale
+ledger, a mismatched uploaded/render digest, a missing platform receipt, a
+wrong channel, or an embed that does not match the current publication state.

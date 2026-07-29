@@ -2350,7 +2350,12 @@
     "visual_edition/chapters/living-book-methodology/narration.txt",
     "visual_edition/chapters/living-book-methodology/captions.vtt",
     "visual_edition/chapters/living-book-methodology/transcript.md",
-    "visual_edition/chapters/living-book-methodology/thumbnail.svg"
+    "visual_edition/chapters/living-book-methodology/thumbnail.svg",
+    "visual_edition/youtube_channel.json",
+    "visual_edition/youtube_ledger.json",
+    "schemas/youtube_channel.schema.json",
+    "schemas/youtube_ledger.schema.json",
+    "scripts/build_youtube_ledger.py"
   ],
   "units": [
     {
@@ -15325,7 +15330,7 @@
       "args": [],
       "execution_tier": "pr",
       "validation_class": "publication_gate",
-      "input_contract": "Current 84-chapter book_structure manifest; exact P7.3 five-pilot identity and complete tracked source packets; pinned ARM-native ManimCE toolchain record; candidate visual grammar; zero or more schema-valid chapter derivative packets; ignored build-output and YouTube-hosting boundary.",
+      "input_contract": "Current 84-chapter book_structure manifest; exact P7.3 five-pilot identity and complete tracked source packets; pinned ARM-native ManimCE toolchain record; candidate visual grammar; exact authenticated YouTube channel contract and generated 84-chapter publication/revision ledger; zero or more schema-valid chapter derivative packets; ignored build-output and YouTube-hosting boundary.",
       "input_artifacts": [
         "visual_edition/README.md",
         "visual_edition/manifest.json",
@@ -15333,6 +15338,8 @@
         "visual_edition/requirements.lock.txt",
         "visual_edition/manim.cfg",
         "visual_edition/visual_grammar.json",
+        "visual_edition/youtube_channel.json",
+        "visual_edition/youtube_ledger.json",
         "visual_edition/lib/__init__.py",
         "visual_edition/lib/asi_visuals.py",
         "visual_edition/scenes/primitive_gallery.py",
@@ -15340,9 +15347,12 @@
         "schemas/visual_grammar.schema.json",
         "schemas/visual_edition_manifest.schema.json",
         "schemas/visual_chapter_packet.schema.json",
+        "schemas/youtube_channel.schema.json",
+        "schemas/youtube_ledger.schema.json",
         "scripts/capture_manim_toolchain.py",
         "scripts/validate_manim_toolchain.py",
         "scripts/build_visual_edition_manifest.py",
+        "scripts/build_youtube_ledger.py",
         "scripts/validate_visual_edition.py",
         "scripts/sync_visual_edition_embeds.py",
         "scripts/register_visual_edition.py",
@@ -15388,6 +15398,7 @@
         "five exact pilot identities",
         "Manim Community Edition 0.20.1 contract",
         "YouTube canonical binary host",
+        "exact canonical YouTube channel and 84-chapter revision ledger",
         "no current external publication authority",
         "all packet and lifecycle counts derived",
         "zero tracked or Pages-hosted video/audio binaries",
@@ -15477,7 +15488,7 @@
     }
   ],
   "summary": {
-    "required_artifact_count": 2306,
+    "required_artifact_count": 2311,
     "unit_count": 440
   },
   "non_claims": [

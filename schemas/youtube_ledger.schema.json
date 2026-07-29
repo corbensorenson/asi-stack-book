@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/youtube_ledger.schema.json",
+  "title": "ASI Stack YouTube Revision Ledger",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at_utc",
+    "book_structure_path",
+    "book_structure_sha256",
+    "visual_manifest_path",
+    "visual_manifest_sha256",
+    "channel_config_path",
+    "channel_config_sha256",
+    "channel_id",
+    "playlist_id",
+    "counts",
+    "entries",
+    "support_state_effect",
+    "release_effect"
+  ],
+  "properties": {
+    "schema_version": {"const": "asi_stack.youtube_ledger.v1"},
+    "generated_at_utc": {"type": "string", "format": "date-time"},
+    "book_structure_path": {"const": "book_structure.json"},
+    "book_structure_sha256": {"pattern": "^[0-9a-f]{64}$"},
+    "visual_manifest_path": {"const": "visual_edition/manifest.json"},
+    "visual_manifest_sha256": {"pattern": "^[0-9a-f]{64}$"},
+    "channel_config_path": {"const": "visual_edition/youtube_channel.json"},
+    "channel_config_sha256": {"pattern": "^[0-9a-f]{64}$"},
+    "channel_id": {"const": "UCX7Tu67cGmKfT6O38xxiQFA"},
+    "playlist_id": {"type": ["string", "null"]},
+    "counts": {
+      "type": "object",
+      "required": [
+        "total_chapters",
+        "packets_present",
+        "youtube_objects",
+        "published_current",
+        "stale_or_superseded",
+        "replacement_required"
+      ],
+      "additionalProperties": {"type": "integer", "minimum": 0}
+    },
+    "entries": {
+      "type": "array",
+      "minItems": 84,
+      "maxItems": 84,
+      "items": {
+        "type": "object",
+        "required": [
+          "position",
+          "chapter_id",
+          "chapter_path",
+          "chapter_sha256",
+          "stable_internal_video_id",
+          "packet_path",
+          "lifecycle_state",
+          "staleness_state",
+          "youtube",
+          "required_action"
+        ],
+        "properties": {
+          "position": {"type": "integer", "minimum": 1, "maximum": 84},
+          "chapter_id": {"type": "string"},
+          "chapter_path": {"pattern": "^chapters/.+\\.qmd$"},
+          "chapter_sha256": {"pattern": "^[0-9a-f]{64}$"},
+          "stable_internal_video_id": {"pattern": "^asi-video-[a-z0-9-]+$"},
+          "packet_path": {"type": ["string", "null"]},
+          "lifecycle_state": {
+            "enum": ["planned", "storyboarded", "scripted", "rendered", "validated", "ready_not_published", "published_current", "stale", "superseded"]
+          },
+          "staleness_state": {"enum": ["not_yet_derived", "current", "stale"]},
+          "youtube": {
+            "type": "object",
+            "required": [
+              "channel_id",
+              "video_id",
+              "watch_url",
+              "playlist_id",
+              "generation",
+              "publication_state",
+              "uploaded_output_sha256",
+              "bound_chapter_sha256",
+              "bound_source_commit",
+              "published_at_utc",
+              "platform_receipt_path",
+              "supersedes_video_id"
+            ]
+          },
+          "required_action": {
+            "enum": [
+              "create_derivative_packet",
+              "finish_derivative_packet",
+              "finish_rights_cleared_final_av",
+              "prepare_youtube_metadata_and_receipt",
+              "obtain_action_time_upload_authority",
+              "monitor_chapter_freshness",
+              "upload_new_generation_and_reconcile_embed",
+              "regenerate_stale_derivative",
+              "retain_historical_receipt"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "support_state_effect": {"const": "none"},
+    "release_effect": {"const": "none"}
+  },
+  "additionalProperties": false
+}

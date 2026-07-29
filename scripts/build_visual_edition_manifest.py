@@ -13,6 +13,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 STRUCTURE = ROOT / "book_structure.json"
 OUT = ROOT / "visual_edition/manifest.json"
+CHANNEL = ROOT / "visual_edition/youtube_channel.json"
 PILOTS = [
     "asi-is-a-stack-not-a-model",
     "capability-replacement-and-rollback",
@@ -43,6 +44,7 @@ def git_head() -> str:
 
 def main() -> None:
     structure = json.loads(STRUCTURE.read_text(encoding="utf-8"))
+    channel = json.loads(CHANNEL.read_text(encoding="utf-8"))
     rows = []
     state_counts = {state: 0 for state in STATES}
     packet_count = 0
@@ -94,8 +96,11 @@ def main() -> None:
         "visual_grammar_path": "visual_edition/visual_grammar.json",
         "hosting": {
             "canonical_binary_host": "YouTube",
+            "channel_config_path": "visual_edition/youtube_channel.json",
+            "youtube_ledger_path": "visual_edition/youtube_ledger.json",
+            "channel_id": channel["channel"]["channel_id"],
             "canonical_playlist_required": True,
-            "playlist_id": None,
+            "playlist_id": channel["canonical_playlist"]["playlist_id"],
             "external_publication_authorized_now": False,
         },
         "repository_boundary": {

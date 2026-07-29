@@ -38,9 +38,20 @@
     "visual_grammar_path": {"const": "visual_edition/visual_grammar.json"},
     "hosting": {
       "type": "object",
-      "required": ["canonical_binary_host", "canonical_playlist_required", "playlist_id", "external_publication_authorized_now"],
+      "required": [
+        "canonical_binary_host",
+        "channel_config_path",
+        "youtube_ledger_path",
+        "channel_id",
+        "canonical_playlist_required",
+        "playlist_id",
+        "external_publication_authorized_now"
+      ],
       "properties": {
         "canonical_binary_host": {"const": "YouTube"},
+        "channel_config_path": {"const": "visual_edition/youtube_channel.json"},
+        "youtube_ledger_path": {"const": "visual_edition/youtube_ledger.json"},
+        "channel_id": {"const": "UCX7Tu67cGmKfT6O38xxiQFA"},
         "canonical_playlist_required": {"const": true},
         "playlist_id": {"type": ["string", "null"]},
         "external_publication_authorized_now": {"const": false}

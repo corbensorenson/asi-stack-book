@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/youtube_channel.schema.json",
+  "title": "ASI Stack YouTube Channel Contract",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "canonical_host",
+    "channel",
+    "access_verification",
+    "canonical_playlist",
+    "revision_policy",
+    "official_platform_sources",
+    "support_state_effect",
+    "release_effect"
+  ],
+  "properties": {
+    "schema_version": {"const": "asi_stack.youtube_channel.v1"},
+    "canonical_host": {"const": "YouTube"},
+    "channel": {
+      "type": "object",
+      "required": ["name", "channel_id", "public_url", "studio_url"],
+      "properties": {
+        "name": {"const": "corben sorenson"},
+        "channel_id": {"const": "UCX7Tu67cGmKfT6O38xxiQFA"},
+        "public_url": {"const": "https://www.youtube.com/channel/UCX7Tu67cGmKfT6O38xxiQFA"},
+        "studio_url": {"const": "https://studio.youtube.com/channel/UCX7Tu67cGmKfT6O38xxiQFA"}
+      },
+      "additionalProperties": false
+    },
+    "access_verification": {
+      "type": "object",
+      "required": ["checked_at_utc", "state", "scope", "external_mutation_authorized_now"],
+      "properties": {
+        "checked_at_utc": {"type": "string", "format": "date-time"},
+        "state": {"const": "authenticated_channel_dashboard_verified"},
+        "scope": {"const": "read-only channel identity and dashboard access"},
+        "external_mutation_authorized_now": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "canonical_playlist": {
+      "type": "object",
+      "required": ["title", "playlist_id", "playlist_url", "state", "ordering_authority"],
+      "properties": {
+        "title": {"const": "The ASI Stack — Visual Abstracts"},
+        "playlist_id": {"type": ["string", "null"]},
+        "playlist_url": {"type": ["string", "null"]},
+        "state": {"enum": ["not_created", "private", "unlisted", "public"]},
+        "ordering_authority": {"const": "book_structure.json"}
+      },
+      "additionalProperties": false
+    },
+    "revision_policy": {
+      "type": "object",
+      "required": [
+        "stable_internal_identity",
+        "youtube_binary_replacement_supported",
+        "new_material_revision_requires_new_youtube_video_id",
+        "retain_historical_receipts",
+        "default_historical_disposition",
+        "embed_only_publication_state",
+        "action_time_confirmation_required_for"
+      ],
+      "properties": {
+        "stable_internal_identity": {"const": "asi-video-<chapter-id>"},
+        "youtube_binary_replacement_supported": {"const": false},
+        "new_material_revision_requires_new_youtube_video_id": {"const": true},
+        "retain_historical_receipts": {"const": true},
+        "default_historical_disposition": {"const": "unlisted_with_pointer_to_current_generation"},
+        "embed_only_publication_state": {"const": "published_current"},
+        "action_time_confirmation_required_for": {
+          "type": "array",
+          "minItems": 7,
+          "uniqueItems": true,
+          "items": {"type": "string"}
+        }
+      },
+      "additionalProperties": false
+    },
+    "official_platform_sources": {
+      "type": "array",
+      "minItems": 2,
+      "uniqueItems": true,
+      "items": {"type": "string", "format": "uri"}
+    },
+    "support_state_effect": {"const": "none"},
+    "release_effect": {"const": "none"}
+  },
+  "additionalProperties": false
+}

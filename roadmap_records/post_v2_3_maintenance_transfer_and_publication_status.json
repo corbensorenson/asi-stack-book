@@ -1731,7 +1731,13 @@
     },
     "hosting": {
       "canonical_binary_host": "YouTube",
+      "channel_name": "corben sorenson",
+      "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+      "channel_contract_path": "visual_edition/youtube_channel.json",
+      "youtube_ledger_path": "visual_edition/youtube_ledger.json",
+      "authenticated_dashboard_access_verified": true,
       "canonical_playlist_required": true,
+      "canonical_playlist_id": null,
       "youtube_video_count_target": 84,
       "quarto_embed_only_after_published_current": true,
       "action_time_authority_required": true,
@@ -1789,6 +1795,7 @@
       "stale_videos": 0
     },
     "visual_manifest_path": "visual_edition/manifest.json",
+    "youtube_ledger_path": "visual_edition/youtube_ledger.json",
     "five_pilot_checkpoint": {
       "state": "all_five_source_packets_and_release_profile_visuals_rendered",
       "packet_count": 5,

@@ -12,11 +12,17 @@ from pathlib import Path
 
 from jsonschema import Draft202012Validator
 
+from build_youtube_ledger import build as build_expected_youtube_ledger
+
 
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "visual_edition/manifest.json"
 MANIFEST_SCHEMA = ROOT / "schemas/visual_edition_manifest.schema.json"
 PACKET_SCHEMA = ROOT / "schemas/visual_chapter_packet.schema.json"
+YOUTUBE_CHANNEL = ROOT / "visual_edition/youtube_channel.json"
+YOUTUBE_CHANNEL_SCHEMA = ROOT / "schemas/youtube_channel.schema.json"
+YOUTUBE_LEDGER = ROOT / "visual_edition/youtube_ledger.json"
+YOUTUBE_LEDGER_SCHEMA = ROOT / "schemas/youtube_ledger.schema.json"
 GRAMMAR = ROOT / "visual_edition/visual_grammar.json"
 GRAMMAR_SCHEMA = ROOT / "schemas/visual_grammar.schema.json"
 TOOLCHAIN = ROOT / "visual_edition/toolchain.json"
@@ -67,6 +73,28 @@ def errors(manifest: dict, grammar: dict | None = None) -> list[str]:
     failures = schema_errors(manifest, MANIFEST_SCHEMA, "manifest")
     grammar = grammar or load(GRAMMAR)
     failures.extend(schema_errors(grammar, GRAMMAR_SCHEMA, "grammar"))
+    channel = load(YOUTUBE_CHANNEL)
+    ledger = load(YOUTUBE_LEDGER)
+    failures.extend(schema_errors(channel, YOUTUBE_CHANNEL_SCHEMA, "youtube-channel"))
+    failures.extend(schema_errors(ledger, YOUTUBE_LEDGER_SCHEMA, "youtube-ledger"))
+    hosting = manifest.get("hosting", {})
+    if (
+        hosting.get("channel_config_path") != "visual_edition/youtube_channel.json"
+        or hosting.get("youtube_ledger_path") != "visual_edition/youtube_ledger.json"
+        or hosting.get("channel_id") != channel.get("channel", {}).get("channel_id")
+        or hosting.get("playlist_id") != channel.get("canonical_playlist", {}).get("playlist_id")
+    ):
+        failures.append("manifest/channel/playlist identity drift")
+    if ledger.get("book_structure_sha256") != digest(ROOT / "book_structure.json"):
+        failures.append("YouTube ledger is stale against book_structure.json")
+    if ledger.get("visual_manifest_sha256") != digest(MANIFEST):
+        failures.append("YouTube ledger is stale against visual manifest")
+    if ledger.get("channel_config_sha256") != digest(YOUTUBE_CHANNEL):
+        failures.append("YouTube ledger is stale against channel contract")
+    expected_ledger = build_expected_youtube_ledger()
+    expected_ledger["generated_at_utc"] = ledger.get("generated_at_utc")
+    if ledger != expected_ledger:
+        failures.append("YouTube ledger entries or derived counts drift")
     toolchain = load(TOOLCHAIN)
     structure = load(ROOT / "book_structure.json")
     canonical = [
@@ -183,11 +211,26 @@ def errors(manifest: dict, grammar: dict | None = None) -> list[str]:
                     failures.append(f"{chapter['id']}: validated render lacks digest")
         publication = packet.get("youtube", {}).get("publication_state")
         embed = packet.get("quarto_embed", {}).get("state")
+        youtube = packet.get("youtube", {})
+        if youtube.get("channel_id") != channel["channel"]["channel_id"]:
+            failures.append(f"{chapter['id']}: YouTube channel identity drift")
         if publication == "published_current":
             youtube_count += 1
-            youtube = packet["youtube"]
             if not youtube.get("video_id") or not youtube.get("playlist_id") or not youtube.get("platform_receipt_path"):
                 failures.append(f"{chapter['id']}: published YouTube identity incomplete")
+            if youtube.get("watch_url") != f"https://www.youtube.com/watch?v={youtube.get('video_id')}":
+                failures.append(f"{chapter['id']}: published YouTube watch URL drift")
+            if not receipt:
+                failures.append(f"{chapter['id']}: published video lacks render receipt")
+            elif youtube.get("uploaded_output_sha256") != receipt.get("output_sha256"):
+                failures.append(f"{chapter['id']}: uploaded binary digest/render receipt drift")
+            if youtube.get("bound_chapter_sha256") != packet.get("chapter_sha256"):
+                failures.append(f"{chapter['id']}: published chapter digest binding drift")
+            if youtube.get("bound_source_commit") != packet.get("source_commit"):
+                failures.append(f"{chapter['id']}: published source commit binding drift")
+            receipt_path = ROOT / youtube.get("platform_receipt_path", "")
+            if not receipt_path.is_file():
+                failures.append(f"{chapter['id']}: YouTube platform receipt missing")
             if embed != "published_current":
                 failures.append(f"{chapter['id']}: published video lacks current Quarto embed")
         if embed == "published_current":

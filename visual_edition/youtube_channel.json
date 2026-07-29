@@ -1,0 +1,46 @@
+{
+  "schema_version": "asi_stack.youtube_channel.v1",
+  "canonical_host": "YouTube",
+  "channel": {
+    "name": "corben sorenson",
+    "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+    "public_url": "https://www.youtube.com/channel/UCX7Tu67cGmKfT6O38xxiQFA",
+    "studio_url": "https://studio.youtube.com/channel/UCX7Tu67cGmKfT6O38xxiQFA"
+  },
+  "access_verification": {
+    "checked_at_utc": "2026-07-29T14:52:02Z",
+    "state": "authenticated_channel_dashboard_verified",
+    "scope": "read-only channel identity and dashboard access",
+    "external_mutation_authorized_now": false
+  },
+  "canonical_playlist": {
+    "title": "The ASI Stack — Visual Abstracts",
+    "playlist_id": null,
+    "playlist_url": null,
+    "state": "not_created",
+    "ordering_authority": "book_structure.json"
+  },
+  "revision_policy": {
+    "stable_internal_identity": "asi-video-<chapter-id>",
+    "youtube_binary_replacement_supported": false,
+    "new_material_revision_requires_new_youtube_video_id": true,
+    "retain_historical_receipts": true,
+    "default_historical_disposition": "unlisted_with_pointer_to_current_generation",
+    "embed_only_publication_state": "published_current",
+    "action_time_confirmation_required_for": [
+      "upload",
+      "metadata mutation",
+      "playlist mutation",
+      "publication",
+      "replacement",
+      "privacy change",
+      "deletion"
+    ]
+  },
+  "official_platform_sources": [
+    "https://support.google.com/youtube/answer/55770?co=GENIE.Platform%3DDesktop&hl=en",
+    "https://support.google.com/youtube/answer/10232933?hl=en"
+  ],
+  "support_state_effect": "none",
+  "release_effect": "none"
+}

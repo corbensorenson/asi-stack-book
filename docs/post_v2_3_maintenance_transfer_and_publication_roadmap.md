@@ -3566,6 +3566,25 @@ without a broken placeholder player. YouTube upload, metadata mutation,
 playlist mutation, publication, replacement, or deletion requires exact
 action-time authority and a resulting platform receipt.
 
+The canonical target is the verified **corben sorenson** channel,
+`UCX7Tu67cGmKfT6O38xxiQFA`. Preserve a generated all-84 publication and
+revision ledger in book order. Every row binds the stable internal video ID,
+chapter and packet identity, current chapter digest, upload generation,
+YouTube video and playlist IDs, uploaded render digest, bound source commit,
+publication timestamp and receipt, predecessor ID, staleness state, and next
+required action. Channel authentication is access evidence, not mutation
+authority.
+
+YouTube assigns a new URL to every new upload and does not support replacing a
+video binary in place. A material chapter update therefore creates a new
+generation and new YouTube ID. Retain the prior generation and platform
+receipt as historical evidence; default it to unlisted with a pointer to the
+current generation rather than deleting it. Update the canonical playlist
+position, packet, ledger, and Quarto embed in one reconciliation transaction.
+The old current publication becomes `superseded`; the new generation becomes
+`published_current` only after its own final A/V, accessibility, upload,
+playlist, and embed receipts pass.
+
 **Staleness and correction.** A changed core claim, mechanism, worked trace,
 evidence state, non-claim, material source, chapter identity, handoff, or
 public URL marks the video stale. Typographic changes that do not affect
@@ -3658,6 +3677,26 @@ pilot's final master, retime and review its caption track against that exact
 audio, mux and validate final A/V, and only then ratify or revise the grammar.
 No upload, playlist mutation, publication, or embed may occur without exact
 action-time authority.
+
+#### P7.3-F3 YouTube access and revision-custody checkpoint — 2026-07-29
+
+Authenticated YouTube Studio dashboard access is verified for the
+**corben sorenson** channel, ID `UCX7Tu67cGmKfT6O38xxiQFA`. This was a
+read-only identity check: zero videos, playlists, metadata fields, privacy
+states, or embeds were mutated. The canonical playlist therefore remains
+uncreated and the honest publication count remains zero.
+
+The repository now owns an exact channel contract and a generated 84-row
+YouTube ledger. The ledger covers planned chapters as well as present packets,
+so every canonical chapter already has a stable internal video identity and a
+specific next action. Published generations must additionally bind their
+YouTube ID and watch URL, playlist ID, uploaded output digest, chapter digest,
+source commit, publication time, receipt, and predecessor. Validation rejects
+channel drift, stale ledger inputs, generation/receipt omissions,
+uploaded-versus-rendered digest mismatch, and publication/embed disagreement.
+This closes access discovery and revision-custody design; it does not close the
+five pilots' final narration, final captions, final A/V, upload, playlist, or
+publication gates.
 
 **P7.3 completion gate.** This lane is terminal only when all 84 current
 manifest chapters have validated derivative packets and current rendered
