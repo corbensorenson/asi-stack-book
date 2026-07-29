@@ -1,0 +1,68 @@
+{
+  "schema_version": "asi_stack.manim_toolchain.v1",
+  "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+  "captured_at_utc": "2026-07-29T03:34:29Z",
+  "qualification_state": "qualified_for_non_latex_pilots",
+  "host": {
+    "operating_system": "macOS",
+    "operating_system_version": "15.0",
+    "operating_system_build": "24A5320a",
+    "architecture": "arm64"
+  },
+  "python": {
+    "implementation": "CPython",
+    "version": "3.12.5",
+    "architecture": "arm64",
+    "environment_class": "isolated_ignored_build_venv",
+    "canonical_relative_path": "build/visual_edition/venv/bin/python"
+  },
+  "manim": {
+    "distribution": "Manim Community Edition",
+    "version": "0.20.1",
+    "renderer": "cairo",
+    "manimgl": false
+  },
+  "native_dependencies": {
+    "cairo": "1.18.4",
+    "pango": "1.58.0",
+    "ffmpeg": "8.0.1",
+    "latex": "absent",
+    "dvisvgm": "absent"
+  },
+  "font_contract": {
+    "primary": "Avenir Next",
+    "fallback": "DejaVu Sans",
+    "monospace": "Menlo",
+    "math_strategy_until_latex_qualification": "pango_unicode_and_prevalidated_svg_only"
+  },
+  "render_profiles": {
+    "draft": {
+      "pixel_width": 854,
+      "pixel_height": 480,
+      "frame_rate": 15,
+      "quality_flag": "-ql"
+    },
+    "release": {
+      "pixel_width": 1920,
+      "pixel_height": 1080,
+      "frame_rate": 30,
+      "quality_flag": "none_use_exact_config",
+      "video_codec": "h264",
+      "pixel_format": "yuv420p"
+    }
+  },
+  "requirements_lock_path": "visual_edition/requirements.lock.txt",
+  "requirements_lock_sha256": "320706fbc5ab11b29227e832324a819ab9c0a7ccb069339db91a33f299da0088",
+  "configuration_path": "visual_edition/manim.cfg",
+  "configuration_sha256": "89fa7834195319a2cf7d9bb24d28f2832dbb30f93747c50e46a4151686307e8d",
+  "broken_global_environment_allowed": false,
+  "upgrade_gate": "rerender_all_reusable_primitives_and_five_pilots_before_adoption",
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This toolchain record does not prove that a chapter visual abstract exists.",
+    "A successful render does not promote, prove, rehabilitate, or refute a book claim.",
+    "LaTeX-dependent scenes are not qualified until an exact LaTeX and dvisvgm identity is installed and compatibility-tested.",
+    "A local binary is not a YouTube publication or a public release."
+  ]
+}

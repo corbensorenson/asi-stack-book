@@ -1715,11 +1715,19 @@
     "toolchain": {
       "implementation": "Manim Community Edition",
       "initial_pin": "0.20.1",
+      "contract_path": "visual_edition/toolchain.json",
+      "requirements_lock_path": "visual_edition/requirements.lock.txt",
+      "qualification_state": "qualified_for_non_latex_pilots",
       "manimgl_allowed": false,
       "isolated_arm_native_environment_required": true,
       "broken_global_environment_allowed": false,
       "exact_dependency_and_render_identity_required": true,
       "upgrade_requires_five_pilot_compatibility_rerender": true
+    },
+    "visual_grammar": {
+      "contract_path": "visual_edition/visual_grammar.json",
+      "state": "candidate",
+      "ratification_requires_all_five_pilots_validated": true
     },
     "hosting": {
       "canonical_binary_host": "YouTube",
@@ -1768,14 +1776,40 @@
       "public_url"
     ],
     "current_counts": {
-      "toolchain_contracts": 0,
+      "toolchain_contracts": 1,
+      "candidate_visual_grammars": 1,
       "ratified_visual_grammars": 0,
+      "pilot_packets_present": 1,
+      "pilot_packets_rendered_local": 1,
       "pilot_packets_validated": 0,
       "chapter_packets_validated": 0,
       "current_rendered_videos": 0,
       "youtube_videos_published": 0,
       "current_quarto_embeds": 0,
       "stale_videos": 0
+    },
+    "first_pilot_checkpoint": {
+      "chapter_id": "asi-is-a-stack-not-a-model",
+      "packet_path": "visual_edition/chapters/asi-is-a-stack-not-a-model/packet.json",
+      "lifecycle_state": "rendered",
+      "draft_duration_seconds": 284.99707,
+      "draft_dimensions": "854x480",
+      "draft_frame_rate": 15,
+      "visual_review_sample_count": 8,
+      "release_visual_render_present": true,
+      "release_visual_duration_seconds": 284.999023,
+      "release_visual_dimensions": "1920x1080",
+      "release_visual_frame_rate": 30,
+      "release_visual_review_sample_count": 2,
+      "local_timing_audio_publication_rights_cleared": false,
+      "remaining_release_gates": [
+        "authorized_or_licensed_narration_master",
+        "final_caption_listening_review",
+        "final_audio_video_mux_and_validation",
+        "exact_action_time_youtube_authority"
+      ],
+      "support_state_effect": "none",
+      "release_effect": "none"
     },
     "completion_requires": [
       "84_current_validated_derivative_packets",

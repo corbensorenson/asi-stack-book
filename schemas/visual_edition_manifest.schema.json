@@ -1,0 +1,118 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/visual_edition_manifest.schema.json",
+  "title": "ASI Stack Visual Edition Manifest",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "edition_id",
+    "generated_at_utc",
+    "book_structure_path",
+    "source_commit_at_generation",
+    "canonical_chapter_count",
+    "pilot_chapter_ids",
+    "toolchain_path",
+    "visual_grammar_path",
+    "hosting",
+    "repository_boundary",
+    "counts",
+    "chapters",
+    "support_state_effect",
+    "release_effect"
+  ],
+  "properties": {
+    "schema_version": {"const": "asi_stack.visual_edition_manifest.v1"},
+    "edition_id": {"const": "asi-stack-p7.3-visual-edition"},
+    "generated_at_utc": {"type": "string"},
+    "book_structure_path": {"const": "book_structure.json"},
+    "source_commit_at_generation": {"pattern": "^[0-9a-f]{40}$"},
+    "canonical_chapter_count": {"const": 84},
+    "pilot_chapter_ids": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "uniqueItems": true,
+      "items": {"type": "string"}
+    },
+    "toolchain_path": {"const": "visual_edition/toolchain.json"},
+    "visual_grammar_path": {"const": "visual_edition/visual_grammar.json"},
+    "hosting": {
+      "type": "object",
+      "required": ["canonical_binary_host", "canonical_playlist_required", "playlist_id", "external_publication_authorized_now"],
+      "properties": {
+        "canonical_binary_host": {"const": "YouTube"},
+        "canonical_playlist_required": {"const": true},
+        "playlist_id": {"type": ["string", "null"]},
+        "external_publication_authorized_now": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "repository_boundary": {
+      "type": "object",
+      "required": ["rendered_video_binary_tracked_in_git", "rendered_video_binary_in_pages_artifact", "local_render_location_class"],
+      "properties": {
+        "rendered_video_binary_tracked_in_git": {"const": false},
+        "rendered_video_binary_in_pages_artifact": {"const": false},
+        "local_render_location_class": {"const": "ignored_build_space"}
+      },
+      "additionalProperties": false
+    },
+    "counts": {
+      "type": "object",
+      "required": [
+        "planned",
+        "storyboarded",
+        "scripted",
+        "rendered",
+        "validated",
+        "ready_not_published",
+        "published_current",
+        "stale",
+        "superseded",
+        "packets_present",
+        "current_rendered_videos",
+        "youtube_videos_published",
+        "current_quarto_embeds"
+      ],
+      "additionalProperties": {"type": "integer", "minimum": 0}
+    },
+    "chapters": {
+      "type": "array",
+      "minItems": 84,
+      "maxItems": 84,
+      "items": {
+        "type": "object",
+        "required": [
+          "chapter_id",
+          "title",
+          "chapter_path",
+          "chapter_sha256",
+          "part_id",
+          "part_index",
+          "chapter_index",
+          "pilot",
+          "lifecycle_state",
+          "packet_path"
+        ],
+        "properties": {
+          "chapter_id": {"type": "string"},
+          "title": {"type": "string"},
+          "chapter_path": {"pattern": "^chapters/.+\\.qmd$"},
+          "chapter_sha256": {"pattern": "^[0-9a-f]{64}$"},
+          "part_id": {"type": "string"},
+          "part_index": {"type": "integer", "minimum": 1},
+          "chapter_index": {"type": "integer", "minimum": 1},
+          "pilot": {"type": "boolean"},
+          "lifecycle_state": {
+            "enum": ["planned", "storyboarded", "scripted", "rendered", "validated", "ready_not_published", "published_current", "stale", "superseded"]
+          },
+          "packet_path": {"type": ["string", "null"]}
+        },
+        "additionalProperties": false
+      }
+    },
+    "support_state_effect": {"const": "none"},
+    "release_effect": {"const": "none"}
+  },
+  "additionalProperties": false
+}

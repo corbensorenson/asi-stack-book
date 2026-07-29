@@ -1,0 +1,95 @@
+{
+  "schema_version": "asi_stack.visual_grammar.v1",
+  "grammar_id": "asi-stack-visual-grammar-candidate-1",
+  "state": "candidate_until_five_pilots_pass",
+  "aspect_ratio": "16:9",
+  "canvas": {
+    "release_width": 1920,
+    "release_height": 1080,
+    "safe_area_fraction": 0.9,
+    "minimum_text_height_pixels": 38,
+    "minimum_caption_safe_bottom_pixels": 150
+  },
+  "palette": {
+    "background": "#101820",
+    "surface": "#182630",
+    "ink": "#F5F8FA",
+    "muted": "#B8C4CC",
+    "accent": "#58B7D3",
+    "copper": "#D79A6B",
+    "authority": "#F2C14E",
+    "evidence": "#62C370",
+    "residual": "#D66BA0",
+    "rollback": "#F45B69",
+    "boundary": "#8F9AA3"
+  },
+  "semantic_symbols": {
+    "authority": "gold key in bounded shield",
+    "evidence": "green ledger check",
+    "residual": "magenta open loop",
+    "rollback": "red counterclockwise return arrow",
+    "quarantine": "dashed boundary box",
+    "proof_boundary": "double rule labeled with encoded scope",
+    "non_claim": "muted stop bar"
+  },
+  "typography": {
+    "primary": "Avenir Next",
+    "fallback": "DejaVu Sans",
+    "monospace": "Menlo",
+    "title_weight": "demi_bold",
+    "body_weight": "regular",
+    "maximum_lines_per_card": 5,
+    "maximum_words_per_line": 11
+  },
+  "motion": {
+    "default_transition_seconds": 0.8,
+    "minimum_hold_seconds": 1.2,
+    "maximum_camera_motion_degrees_per_second": 20,
+    "maximum_flashes_per_second": 0,
+    "meaning_must_survive_motion_disabled": true,
+    "reduced_motion_derivative_required_before_publication": false
+  },
+  "contrast": {
+    "normal_text_minimum_ratio": 4.5,
+    "large_text_minimum_ratio": 3.0,
+    "non_text_boundary_minimum_ratio": 3.0
+  },
+  "reusable_components": [
+    "stack",
+    "directed_acyclic_graph",
+    "ledger",
+    "state_machine",
+    "capability_field",
+    "route_selector",
+    "proof_boundary",
+    "timeline",
+    "before_after_state",
+    "authority_gate",
+    "evidence_badge",
+    "residual_marker",
+    "rollback_path",
+    "source_end_card"
+  ],
+  "accessibility": {
+    "motion_never_sole_carrier": true,
+    "color_never_sole_carrier": true,
+    "reviewed_captions_required": true,
+    "descriptive_transcript_required": true,
+    "material_visual_changes_described": true,
+    "thumbnail_alt_text_required": true,
+    "source_end_card_spoken_or_transcribed": true
+  },
+  "ratification_gate": {
+    "required_pilot_count": 5,
+    "required_pilots": [
+      "asi-is-a-stack-not-a-model",
+      "capability-replacement-and-rollback",
+      "context-transactions-snapshots-mounts-and-taint",
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+      "living-book-methodology"
+    ],
+    "current_state": "not_ratified"
+  },
+  "support_state_effect": "none",
+  "non_claim": "This grammar standardizes explanation. It does not standardize, strengthen, or validate chapter conclusions."
+}

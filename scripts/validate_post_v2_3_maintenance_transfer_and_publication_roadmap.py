@@ -1209,6 +1209,9 @@ def errors(data: dict) -> list[str]:
     if (
         toolchain.get("implementation") != "Manim Community Edition"
         or toolchain.get("initial_pin") != "0.20.1"
+        or toolchain.get("contract_path") != "visual_edition/toolchain.json"
+        or toolchain.get("requirements_lock_path") != "visual_edition/requirements.lock.txt"
+        or toolchain.get("qualification_state") != "qualified_for_non_latex_pilots"
         or toolchain.get("manimgl_allowed") is not False
         or toolchain.get("isolated_arm_native_environment_required") is not True
         or toolchain.get("broken_global_environment_allowed") is not False
@@ -1232,17 +1235,53 @@ def errors(data: dict) -> list[str]:
     ):
         out.append("Manim repository and Pages binary boundary drifted")
     counts = manim.get("current_counts", {})
-    if any(counts.get(key) != 0 for key in [
-        "toolchain_contracts",
-        "ratified_visual_grammars",
-        "pilot_packets_validated",
-        "chapter_packets_validated",
-        "current_rendered_videos",
-        "youtube_videos_published",
-        "current_quarto_embeds",
-        "stale_videos",
-    ]):
-        out.append("Manim visual-edition roadmap admission fabricates completed production")
+    expected_counts = {
+        "toolchain_contracts": 1,
+        "candidate_visual_grammars": 1,
+        "ratified_visual_grammars": 0,
+        "pilot_packets_present": 1,
+        "pilot_packets_rendered_local": 1,
+        "pilot_packets_validated": 0,
+        "chapter_packets_validated": 0,
+        "current_rendered_videos": 0,
+        "youtube_videos_published": 0,
+        "current_quarto_embeds": 0,
+        "stale_videos": 0,
+    }
+    if counts != expected_counts:
+        out.append("Manim visual-edition foundation or production counts drifted")
+    grammar = manim.get("visual_grammar", {})
+    if grammar != {
+        "contract_path": "visual_edition/visual_grammar.json",
+        "state": "candidate",
+        "ratification_requires_all_five_pilots_validated": True,
+    }:
+        out.append("Manim candidate visual-grammar boundary drifted")
+    first_pilot = manim.get("first_pilot_checkpoint", {})
+    if first_pilot != {
+        "chapter_id": "asi-is-a-stack-not-a-model",
+        "packet_path": "visual_edition/chapters/asi-is-a-stack-not-a-model/packet.json",
+        "lifecycle_state": "rendered",
+        "draft_duration_seconds": 284.99707,
+        "draft_dimensions": "854x480",
+        "draft_frame_rate": 15,
+        "visual_review_sample_count": 8,
+        "release_visual_render_present": True,
+        "release_visual_duration_seconds": 284.999023,
+        "release_visual_dimensions": "1920x1080",
+        "release_visual_frame_rate": 30,
+        "release_visual_review_sample_count": 2,
+        "local_timing_audio_publication_rights_cleared": False,
+        "remaining_release_gates": [
+            "authorized_or_licensed_narration_master",
+            "final_caption_listening_review",
+            "final_audio_video_mux_and_validation",
+            "exact_action_time_youtube_authority",
+        ],
+        "support_state_effect": "none",
+        "release_effect": "none",
+    }:
+        out.append("Manim first-pilot checkpoint drifted or overclaimed")
     if manim.get("support_state_effect") != "none":
         out.append("Manim visual edition moves claim support")
     expected_first_tranche_order = [

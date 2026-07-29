@@ -1,0 +1,125 @@
+{
+  "schema_version": "asi_stack.visual_chapter_packet.v1",
+  "video_id": "asi-video-asi-is-a-stack-not-a-model",
+  "chapter_id": "asi-is-a-stack-not-a-model",
+  "chapter_path": "chapters/asi-is-a-stack-not-a-model.qmd",
+  "chapter_sha256": "a51c585fcd4e622061c0212e721d6fe3ae15b42a459bb5880571f6e43b350fdd",
+  "source_commit": "11a6057212c86a82e652d730d6bbf5a44613fb0e",
+  "pilot": true,
+  "lifecycle_state": "rendered",
+  "claim_bindings": [
+    {
+      "claim_id": "asi-is-a-stack-not-a-model.core",
+      "claim_label": "Design rationale",
+      "support_state": "argument"
+    }
+  ],
+  "assigned_source_ids": [
+    "viea",
+    "beastbrain",
+    "aletheia",
+    "talos",
+    "moecot",
+    "scf",
+    "ext_drexler_cais_2019",
+    "ext_embedded_agency_2019"
+  ],
+  "maximum_inference": "No support movement follows from this derivative visual: the finite repository contracts and one local authority-to-effect path remain structural and local only, with no deployment, safety, empirical-efficiency, transfer, or ASI result.",
+  "required_content": {
+    "problem": "A raw model is too small a unit of analysis for a system that must govern context, authority, execution, observation, evidence, and recovery.",
+    "core_mechanism": "Seven logical responsibility layers exchange typed artifacts through explicit handoffs while authority, evidence, residual, and rollback contracts remain independently visible.",
+    "worked_trace": "A numbered request moves through planning, context, verification, a scoped grant, a material effect, independent observation, and an evidence record, with exact rollback targeting the recorded pre-state.",
+    "failure_boundary": "Interfaces can add latency, brittleness, information loss, and governance theater, so the stack does not win by definition and must face matched system-level comparisons.",
+    "evidence_state": "The chapter remains Design rationale at argument support; finite contracts and a single local path do not establish the whole architecture.",
+    "non_claims": "The visual claims no ASI, safety, deployment, empirical efficiency, transfer, architecture-generality, or evidence promotion.",
+    "handoff": "The next chapter asks whether explicit boundaries improve useful work per total governed cost under matched model, tools, context, tuning, and task conditions."
+  },
+  "artifacts": {
+    "storyboard": "visual_edition/chapters/asi-is-a-stack-not-a-model/storyboard.md",
+    "scene_code": "visual_edition/chapters/asi-is-a-stack-not-a-model/scene.py",
+    "narration_script": "visual_edition/chapters/asi-is-a-stack-not-a-model/narration.txt",
+    "captions": "visual_edition/chapters/asi-is-a-stack-not-a-model/captions.vtt",
+    "descriptive_transcript": "visual_edition/chapters/asi-is-a-stack-not-a-model/transcript.md",
+    "thumbnail": "visual_edition/chapters/asi-is-a-stack-not-a-model/thumbnail.svg",
+    "thumbnail_alt_text": "A small model circle sits inside a larger governed stack containing context, authority, execution, observation, and evidence, above the words ASI Is a Stack, Not a Model."
+  },
+  "render_receipt": {
+    "receipt_state": "current_release_visual_without_final_audio",
+    "validation_state": "local_release_visual_review_complete_audio_not_publication_cleared",
+    "rendered_at_utc": "2026-07-29T03:49:53Z",
+    "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+    "toolchain_qualification": "qualified_for_non_latex_pilots",
+    "render_profile": "release_video_only",
+    "command": "PYTHONPATH=. build/visual_edition/venv/bin/manim --config_file visual_edition/manim.cfg --disable_caching visual_edition/chapters/asi-is-a-stack-not-a-model/scene.py AsiIsAStackNotAModel",
+    "duration_seconds": 284.999023,
+    "pixel_width": 1920,
+    "pixel_height": 1080,
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "output_sha256": "8aadaa8824fbb4ecc20db39f95f94214785ad63cae9f0ef4e63f0f41d9e2faa7",
+    "output_storage": "ignored build/visual_edition media only",
+    "visual_review": {
+      "draft_sample_seconds": [10, 50, 90, 130, 175, 215, 260, 282],
+      "release_sample_seconds": [130, 260],
+      "result": "pass",
+      "review_scope": "composition, legibility, color-plus-shape semantics, persistent labels, evidence ceiling, and end-card non-claims"
+    },
+    "local_timing_audio": {
+      "voice": "macOS Samantha en_US",
+      "duration_seconds": 280.613152,
+      "publication_rights_state": "not_cleared",
+      "use": "local pacing review only",
+      "muxed_review_sha256": "ae0c189b27d0da156b8e016ca616419740d4bc4aabbaad86cae2b35e355b33e5"
+    },
+    "artifact_sha256": {
+      "scene_code": "3e5fddd6b0a8f3519658d7aa9722e698f501706e8d9640c811ce3599086269b6",
+      "narration_script": "822afddd2e2238d8697537caeae419eade84dfa48c9d10f2a49d29f0975e6eb0",
+      "captions": "a73f719a3c2828caea44e363ccf4b005a4c4226d33a048c4b21a03009d9aa471",
+      "descriptive_transcript": "3efd5478003fe4c71596edc12cae8580a11a97193b758d1732c1b5faebc1b211",
+      "thumbnail": "880333079684660d55520d95e4ecb12421f13368f5ce2bfcab5b217dc6ddd98f"
+    },
+    "remaining_release_gates": [
+      "record or license the final narration master",
+      "perform the final listening review and retime captions against that master",
+      "mux and validate the final audio-video master",
+      "obtain exact action-time authority before any YouTube or playlist mutation"
+    ]
+  },
+  "youtube": {
+    "video_id": null,
+    "playlist_id": null,
+    "publication_state": "not_authorized",
+    "platform_receipt_path": null
+  },
+  "quarto_embed": {
+    "state": "absent_until_published",
+    "chapter_anchor": "visual-abstract",
+    "frame_title": "Visual abstract: ASI Is a Stack, Not a Model",
+    "aria_label": "Play the five-minute visual abstract for ASI Is a Stack, Not a Model"
+  },
+  "staleness": {
+    "state": "current",
+    "checked_chapter_sha256": "a51c585fcd4e622061c0212e721d6fe3ae15b42a459bb5880571f6e43b350fdd",
+    "triggers": [
+      "core_claim",
+      "mechanism",
+      "worked_trace",
+      "evidence_state",
+      "non_claim",
+      "material_source",
+      "chapter_identity",
+      "handoff",
+      "public_url"
+    ]
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This derivative video does not promote or otherwise change any book claim.",
+    "The local preview render is not a release, a YouTube upload, or a public publication.",
+    "The synthetic timing voice is not cleared as a publication narration master.",
+    "One rendered pilot does not ratify the visual grammar or validate the five-pilot ratchet.",
+    "A successful animation render does not establish deployment, safety, efficiency, transfer, or ASI."
+  ]
+}

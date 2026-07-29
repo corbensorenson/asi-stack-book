@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/manim_toolchain.schema.json",
+  "title": "ASI Stack Manim Toolchain",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "toolchain_id",
+    "qualification_state",
+    "host",
+    "python",
+    "manim",
+    "native_dependencies",
+    "font_contract",
+    "render_profiles",
+    "requirements_lock_path",
+    "requirements_lock_sha256",
+    "configuration_path",
+    "configuration_sha256",
+    "broken_global_environment_allowed",
+    "upgrade_gate",
+    "support_state_effect",
+    "release_effect",
+    "non_claims"
+  ],
+  "properties": {
+    "schema_version": {"const": "asi_stack.manim_toolchain.v1"},
+    "toolchain_id": {"type": "string", "minLength": 12},
+    "captured_at_utc": {"type": "string"},
+    "qualification_state": {
+      "enum": [
+        "recorded_not_qualified",
+        "qualified_for_non_latex_pilots",
+        "qualified_for_all_pilots"
+      ]
+    },
+    "host": {
+      "type": "object",
+      "required": ["operating_system", "operating_system_version", "operating_system_build", "architecture"],
+      "properties": {
+        "operating_system": {"const": "macOS"},
+        "operating_system_version": {"type": "string"},
+        "operating_system_build": {"type": "string"},
+        "architecture": {"const": "arm64"}
+      },
+      "additionalProperties": false
+    },
+    "python": {
+      "type": "object",
+      "required": ["implementation", "version", "architecture", "environment_class", "canonical_relative_path"],
+      "properties": {
+        "implementation": {"const": "CPython"},
+        "version": {"type": "string"},
+        "architecture": {"const": "arm64"},
+        "environment_class": {"const": "isolated_ignored_build_venv"},
+        "canonical_relative_path": {"pattern": "^build/visual_edition/"}
+      },
+      "additionalProperties": false
+    },
+    "manim": {
+      "type": "object",
+      "required": ["distribution", "version", "renderer", "manimgl"],
+      "properties": {
+        "distribution": {"const": "Manim Community Edition"},
+        "version": {"const": "0.20.1"},
+        "renderer": {"const": "cairo"},
+        "manimgl": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "native_dependencies": {
+      "type": "object",
+      "required": ["cairo", "pango", "ffmpeg", "latex", "dvisvgm"],
+      "properties": {
+        "cairo": {"type": "string"},
+        "pango": {"type": "string"},
+        "ffmpeg": {"type": "string"},
+        "latex": {"type": "string"},
+        "dvisvgm": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "font_contract": {"type": "object"},
+    "render_profiles": {"type": "object"},
+    "requirements_lock_path": {"const": "visual_edition/requirements.lock.txt"},
+    "requirements_lock_sha256": {"pattern": "^[0-9a-f]{64}$"},
+    "configuration_path": {"const": "visual_edition/manim.cfg"},
+    "configuration_sha256": {"pattern": "^[0-9a-f]{64}$"},
+    "broken_global_environment_allowed": {"const": false},
+    "upgrade_gate": {"type": "string", "minLength": 20},
+    "support_state_effect": {"const": "none"},
+    "release_effect": {"const": "none"},
+    "non_claims": {"type": "array", "minItems": 4, "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}

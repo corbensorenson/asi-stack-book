@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/visual_grammar.schema.json",
+  "title": "ASI Stack Visual Grammar",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "grammar_id",
+    "state",
+    "aspect_ratio",
+    "canvas",
+    "palette",
+    "semantic_symbols",
+    "typography",
+    "motion",
+    "contrast",
+    "reusable_components",
+    "accessibility",
+    "ratification_gate",
+    "support_state_effect",
+    "non_claim"
+  ],
+  "properties": {
+    "schema_version": {"const": "asi_stack.visual_grammar.v1"},
+    "grammar_id": {"type": "string", "minLength": 12},
+    "state": {"enum": ["candidate_until_five_pilots_pass", "ratified"]},
+    "aspect_ratio": {"const": "16:9"},
+    "canvas": {"type": "object"},
+    "palette": {
+      "type": "object",
+      "required": ["background", "surface", "ink", "muted", "accent", "copper", "authority", "evidence", "residual", "rollback", "boundary"],
+      "additionalProperties": {"pattern": "^#[0-9A-Fa-f]{6}$"}
+    },
+    "semantic_symbols": {"type": "object", "minProperties": 7},
+    "typography": {"type": "object"},
+    "motion": {
+      "type": "object",
+      "required": ["default_transition_seconds", "minimum_hold_seconds", "maximum_camera_motion_degrees_per_second", "maximum_flashes_per_second", "meaning_must_survive_motion_disabled"],
+      "properties": {
+        "default_transition_seconds": {"type": "number", "minimum": 0.2},
+        "minimum_hold_seconds": {"type": "number", "minimum": 1},
+        "maximum_camera_motion_degrees_per_second": {"type": "number", "maximum": 30},
+        "maximum_flashes_per_second": {"const": 0},
+        "meaning_must_survive_motion_disabled": {"const": true},
+        "reduced_motion_derivative_required_before_publication": {"type": "boolean"}
+      }
+    },
+    "contrast": {"type": "object"},
+    "reusable_components": {
+      "type": "array",
+      "minItems": 13,
+      "uniqueItems": true,
+      "items": {"type": "string"}
+    },
+    "accessibility": {
+      "type": "object",
+      "required": ["motion_never_sole_carrier", "color_never_sole_carrier", "reviewed_captions_required", "descriptive_transcript_required", "material_visual_changes_described", "thumbnail_alt_text_required", "source_end_card_spoken_or_transcribed"],
+      "additionalProperties": {"const": true}
+    },
+    "ratification_gate": {"type": "object"},
+    "support_state_effect": {"const": "none"},
+    "non_claim": {"type": "string", "minLength": 30}
+  },
+  "additionalProperties": false
+}

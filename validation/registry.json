@@ -2296,7 +2296,26 @@
     "scripts/validate_p5_natural_service_campaign_qualification.py",
     "docs/p5_natural_stateful_service_campaign_qualification.md",
     "experiments/p2_governed_repository_admission/infrastructure_materialization/attempts/2026-07-28-r3a-003/result.json",
-    "docs/p2_r3a_capacity_and_docker_preflight_2026_07_28.md"
+    "docs/p2_r3a_capacity_and_docker_preflight_2026_07_28.md",
+    "visual_edition/README.md",
+    "visual_edition/manifest.json",
+    "visual_edition/toolchain.json",
+    "visual_edition/requirements.lock.txt",
+    "visual_edition/manim.cfg",
+    "visual_edition/visual_grammar.json",
+    "visual_edition/lib/__init__.py",
+    "visual_edition/lib/asi_visuals.py",
+    "visual_edition/scenes/primitive_gallery.py",
+    "schemas/manim_toolchain.schema.json",
+    "schemas/visual_grammar.schema.json",
+    "schemas/visual_edition_manifest.schema.json",
+    "schemas/visual_chapter_packet.schema.json",
+    "scripts/capture_manim_toolchain.py",
+    "scripts/validate_manim_toolchain.py",
+    "scripts/build_visual_edition_manifest.py",
+    "scripts/validate_visual_edition.py",
+    "scripts/register_visual_edition.py",
+    "scripts/sync_visual_edition_embeds.py"
   ],
   "units": [
     {
@@ -6848,8 +6867,8 @@
       "args": [],
       "execution_tier": "deep",
       "validation_class": "proof_or_evidence_gate",
-      "input_contract": "Re-executed governed Git slice, matched baseline metrics, derived invariant suite, claim dispositions, proof manifest/adequacy/artifact audits, volatile source records, inter-stack routing, terminology refresh, and readable D–F closure audit.",
-      "output_contract": "Reject drift in bounded empirical metrics, invariant mutations/residuals, core dispositions, proof target/adequacy traceability, volatile source routing, or D–F closure boundaries.",
+      "input_contract": "Re-executed governed Git slice, matched baseline metrics, derived invariant suite, claim dispositions, proof manifest/adequacy/artifact audits, volatile source records, inter-stack routing, terminology refresh, and readable D\u2013F closure audit.",
+      "output_contract": "Reject drift in bounded empirical metrics, invariant mutations/residuals, core dispositions, proof target/adequacy traceability, volatile source routing, or D\u2013F closure boundaries.",
       "claim_scope": "Local roadmap closure for Workstreams D, E, and F at their explicitly bounded empirical, formal, and source-governance scopes.",
       "negative_controls": "validator_owned",
       "prohibited_inference": "Local closure does not prove deployed safety, general cost-effectiveness, formal runtime enforcement, novelty, exhaustive literature coverage, or independent review.",
@@ -15263,11 +15282,133 @@
       "prohibited_inference": "Authored controls do not estimate natural usefulness, operational safety, false blocking, unsafe release, recovery rate, causal superiority, transfer, elapsed delayed harm, model quality, institutional independence, Theseus T4, support, release, AGI, or ASI.",
       "contract_precision": "exact",
       "semantic_review_state": "bounded_authored_qualification_with_natural_and_protected_content_closed"
+    },
+    {
+      "id": "validate_visual_edition.py:438",
+      "order": 438,
+      "script": "validate_visual_edition.py",
+      "args": [],
+      "execution_tier": "pr",
+      "validation_class": "publication_gate",
+      "input_contract": "Current 84-chapter book_structure manifest; exact P7.3 five-pilot identity; pinned ARM-native ManimCE toolchain record; candidate visual grammar; zero or more schema-valid chapter derivative packets; ignored build-output and YouTube-hosting boundary.",
+      "input_artifacts": [
+        "visual_edition/README.md",
+        "visual_edition/manifest.json",
+        "visual_edition/toolchain.json",
+        "visual_edition/requirements.lock.txt",
+        "visual_edition/manim.cfg",
+        "visual_edition/visual_grammar.json",
+        "visual_edition/lib/__init__.py",
+        "visual_edition/lib/asi_visuals.py",
+        "visual_edition/scenes/primitive_gallery.py",
+        "schemas/manim_toolchain.schema.json",
+        "schemas/visual_grammar.schema.json",
+        "schemas/visual_edition_manifest.schema.json",
+        "schemas/visual_chapter_packet.schema.json",
+        "scripts/capture_manim_toolchain.py",
+        "scripts/validate_manim_toolchain.py",
+        "scripts/build_visual_edition_manifest.py",
+        "scripts/validate_visual_edition.py",
+        "scripts/sync_visual_edition_embeds.py",
+        "scripts/register_visual_edition.py"
+      ],
+      "output_contract": "Reject chapter identity or digest drift, premature pilot or visual-grammar completion, incomplete packet artifacts, stale chapter bindings, invalid publication/embed states, missing render identity, out-of-range validated duration, tracked or Pages-hosted media binaries, and support-state movement. The separately registered embed reconciler rejects missing, stale, or unmanaged public embed surfaces.",
+      "output_assertions": [
+        "84 canonical visual-edition rows in book order",
+        "five exact pilot identities",
+        "Manim Community Edition 0.20.1 contract",
+        "YouTube canonical binary host",
+        "no current external publication authority",
+        "all packet and lifecycle counts derived",
+        "zero tracked or Pages-hosted video/audio binaries",
+        "eight rejecting mutations",
+        "support-state effect none"
+      ],
+      "claim_scope": "Visual-edition derivation identity, accessibility artifacts, freshness, binary custody, and publication/embed lifecycle only.",
+      "negative_controls": "validator_owned_eight_manifest_pilot_host_authority_support_grammar_motion_caption_mutations",
+      "negative_control_cases": [
+        "chapter deletion",
+        "pilot substitution",
+        "binary host widening",
+        "premature publication authority",
+        "support promotion",
+        "premature grammar ratification",
+        "motion-only meaning",
+        "caption deletion"
+      ],
+      "prohibited_inference": "A valid toolchain, scene, render, packet, caption, transcript, thumbnail, upload, playlist entry, or embed does not prove or promote a chapter claim, validate ASI, establish safety or SOTA, or authorize an external mutation.",
+      "contract_precision": "exact",
+      "semantic_review_state": "checked_visual_derivative_identity_accessibility_freshness_binary_hosting_publication_and_support_boundaries"
+    },
+    {
+      "id": "sync_visual_edition_embeds.py:439",
+      "order": 439,
+      "script": "sync_visual_edition_embeds.py",
+      "args": [],
+      "execution_tier": "pr",
+      "validation_class": "publication_gate",
+      "input_contract": "Current visual-edition manifest and chapter packets; canonical QMD chapters; publication and Quarto-embed lifecycle states.",
+      "input_artifacts": [
+        "visual_edition/manifest.json",
+        "scripts/sync_visual_edition_embeds.py"
+      ],
+      "output_contract": "Reject a missing or stale managed YouTube embed/transcript block for published_current packets, a managed public block for a non-current packet, or any unmanaged YouTube embed.",
+      "output_assertions": [
+        "no placeholder player before publication",
+        "published player uses youtube-nocookie.com",
+        "descriptive transcript is adjacent to every current player",
+        "non-current managed players are absent"
+      ],
+      "claim_scope": "Quarto projection of already-authorized current YouTube publications only.",
+      "negative_controls": "structural_exact_block_reconciliation_against_packet_lifecycle",
+      "negative_control_cases": [],
+      "prohibited_inference": "An exact embed and transcript do not validate video content, promote evidence, or authorize YouTube publication.",
+      "contract_precision": "exact",
+      "semantic_review_state": "checked_embed_transcript_and_publication_lifecycle_projection"
+    },
+    {
+      "id": "validate_manim_toolchain.py:440",
+      "order": 440,
+      "script": "validate_manim_toolchain.py",
+      "args": [],
+      "execution_tier": "pr",
+      "validation_class": "publication_gate",
+      "input_contract": "Pinned ManimCE dependency lock, exact ARM64 toolchain record, deterministic Cairo configuration, and ignored build-output boundary.",
+      "input_artifacts": [
+        "visual_edition/toolchain.json",
+        "visual_edition/requirements.lock.txt",
+        "visual_edition/manim.cfg",
+        "schemas/manim_toolchain.schema.json",
+        "scripts/validate_manim_toolchain.py"
+      ],
+      "output_contract": "Reject architecture, Manim distribution/version, environment class, lock/config digest, 1080p30 release profile, or support-state drift.",
+      "output_assertions": [
+        "Manim Community Edition 0.20.1",
+        "ARM64 CPython environment",
+        "exact frozen dependency lock",
+        "Cairo renderer and ignored media path",
+        "release profile exactly 1920x1080 at 30 fps",
+        "seven rejecting mutations"
+      ],
+      "claim_scope": "Local animation-build reproducibility and binary custody only.",
+      "negative_controls": "validator_owned_seven_architecture_distribution_version_environment_digest_frame_rate_and_support_mutations",
+      "negative_control_cases": [
+        "architecture widening",
+        "ManimGL substitution",
+        "version drift",
+        "global environment",
+        "binary path drift",
+        "1080p60 shortcut substitution",
+        "support promotion"
+      ],
+      "prohibited_inference": "A qualified animation toolchain does not validate a video, prove a chapter claim, or authorize publication.",
+      "contract_precision": "exact",
+      "semantic_review_state": "checked_arm_runtime_lock_renderer_release_profile_binary_and_support_boundaries"
     }
   ],
   "summary": {
-    "required_artifact_count": 2252,
-    "unit_count": 437
+    "required_artifact_count": 2271,
+    "unit_count": 440
   },
   "non_claims": [
     "Registry coverage does not establish semantic adequacy of every validator.",

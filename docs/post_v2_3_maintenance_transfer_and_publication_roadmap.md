@@ -217,7 +217,7 @@ proceeds.
 | Existing-owner inference-cache packet — prose terminal; receipt and empirical work deferred | `P6.7-inference-cache-reuse-and-honest-pricing` | Reader-facing source integration was expressly commissioned and completed 2026-07-23; no new chapter or support movement | Maintain the three coordinated manuscript integrations and nine-source packet. Later implement the cache-reuse receipt and run separate exact-prefix and semantic-response campaigns under the ordinary post-gate entry condition. Preserve KV-versus-output, exact-versus-semantic, hit-versus-useful-outcome, and provider-contract-versus-local-evidence boundaries. |
 | Existing-owner functional-precision packet — source and prose terminal; evidence work queued | `P6.8-functional-precision-and-behavior-preserving-computation` | Source intake and the eight-owner manuscript integration are complete; schemas, validators, source resolution, and empirical work retain ordinary gates; no new chapter or support movement | Maintain the integrated Precision Contract treatment led by RankFold/NeuralFold. Preserve representation invariance, protected behavior, complete executable and physical-cost accounting, progressive residual precision, routed fallback, certificate scope, and program-transformation proof limits. Reconsider a standalone chapter only if a dated post-integration coherence audit finds a genuinely unowned lifecycle. |
 | Existing-book depth recovery — terminal | `P6.9-R21-concept-complete-depth-and-atom-adequacy` | The 84-chapter manifest is frozen; unified atom custody must stay 84/84; completion requires a named concept manifest plus a digest-bound semantic disposition, while word and atom counts remain diagnostic only | Preserve all twenty-three completed owners and 184 concepts at their reviewed digests. The raw-scaffold audit owns all 21 widest blocks with zero reader-visible or unjustified blocks; the exact 23-chapter/184-concept proof/evidence handoff is terminal. Reopen only after digest drift or an explicit successor amendment. |
-| Visual edition — active owner-directed book packet | `P7.3-governed-manim-visual-edition` | The 84-chapter source manifest, atom custody, and current-reader projection are terminal; P2 is resource-blocked; a clean ARM-native ManimCE environment and derivative contract must pass before pilot rendering | Build five representative pilots, ratify one reusable visual grammar, then produce one current 3–6 minute visual abstract for each of the 84 chapters. Host final video binaries on YouTube, keep code/scripts/captions/transcripts/manifests and receipts in Git, keep rendered media out of GitHub Pages, and embed only validated current URLs. No animation changes support state or substitutes for proof. |
+| Visual edition — active owner-directed book packet | `P7.3-governed-manim-visual-edition` | Foundation qualified 2026-07-29: exact ARM-native ManimCE `0.20.1` contract passes; the visual grammar remains candidate; pilot one has a complete packet, a reviewed 284.997-second draft, and a reviewed 284.999-second 1920×1080/30-fps release-profile visual render, but no cleared narration master, validated final A/V master, YouTube authority, publication, or support movement | Close narration, caption-listening, and final A/V gates for pilot one, then render and validate the remaining four representative pilots and ratify the reusable grammar. Produce one current 3–6 minute visual abstract for each of the 84 chapters in manifest order. Host final binaries on YouTube, keep code/scripts/captions/transcripts/manifests and receipts in Git, keep rendered media out of GitHub Pages, and embed only validated current URLs. |
 | Formal slot — C6 residual triage terminal; dependency-safe execution active | `C6-remaining-stronger-model-rationalization` | The original 54-action residual estate had zero Lean dependencies and zero theorem consumers; two redundant witnesses and 43 Theseus repository-import mirrors are retired, leaving nine actions: eight summary-mirror retirements and one inverse-route rewrite | Retire the eight Benchmark/Runtime/Search/Stable-Capability summary mirrors next, then implement the Failure Modes inverse property. Rebuild the overlay and ledger after every tranche, with no support or release movement. |
 | Empirical headline — exact N0 entry receipt; materialization blocked | `P2-R3-storage-materialization-and-replacement-qualification` | `P2-R3a-002` measured 23.87 GiB free against the 50 GiB floor and no reachable Docker daemon; restore both gates and write a new immutable preflight before any pull | Then thirty sealed candidate recipes and receipts; terminal pool materialization; four competently qualified replacements restoring the fixed twelve-task denominator; rank progression only under the frozen amendment; zero protected-content leakage. No deletion of non-Docker user data is authorized. |
 | First structural tranche — terminal | White-Box, World Models, Human Factors, and Governed Operations are terminal at argument support | Four exact integration packets preserve owners, sources, formal ceilings, protocols, reader handoffs, and no-promotion boundaries | Maintenance only; no reopened chapter packet without a dated machine-validated defect. |
@@ -3581,6 +3581,38 @@ scene, narration, caption, transcript, evidence-boundary, render,
 accessibility, YouTube-readiness, and embed checks pass for every member. Do
 not count a scene stub, silent preview, thumbnail, uploaded binary, automatic
 caption track, or unvalidated embed as a completed chapter video.
+
+#### P7.3-F1 foundation and first-pilot checkpoint — 2026-07-29
+
+The isolated ARM64 environment is now an exact, validated contract:
+CPython 3.12.5, Manim Community Edition 0.20.1, Cairo 1.18.4, Pango 1.58.0,
+FFmpeg 8.0.1, a frozen dependency lock, deterministic draft/release profiles,
+and an explicit non-LaTeX qualification boundary. The reusable ASI Stack
+grammar and primitive gallery render coherently, but the grammar remains
+`candidate` until all five pilots validate.
+
+`asi-is-a-stack-not-a-model` is the first complete source packet and current
+local draft. Its 284.997-second 854×480/15-fps render was sampled at eight
+times across all seven semantic scenes for composition, legibility,
+color-plus-shape meaning, evidence ceiling, and end-card non-claims. The
+packet binds the exact chapter digest and source commit to its claim, sources,
+maximum inference, storyboard, scene code, 699-word narration, 72-cue caption
+draft, descriptive transcript, accessible thumbnail, render command, output
+digests, and staleness triggers.
+
+The visual-only release profile also passed at 284.999 seconds,
+1920×1080, 30 fps, H.264/yuv420p, including two full-resolution visual-review
+samples. A qualification run caught that ManimCE 0.20.1 expands `-qh` to
+1080p60, so the contract now rejects that shortcut and requires the exact
+30-fps configuration.
+
+This checkpoint counts one qualified toolchain contract, one candidate visual
+grammar, one present pilot packet, one local draft, and one release-profile
+visual render. It counts **zero** validated pilots, final A/V masters, cleared
+narration masters, reviewed final caption tracks, YouTube videos, playlist
+entries, or Quarto embeds. Close those release gates without laundering the
+macOS timing voice into a publishable asset; then complete pilots two through
+five before grammar ratification or the 79-chapter rollout.
 
 **P7.3 completion gate.** This lane is terminal only when all 84 current
 manifest chapters have validated derivative packets and current rendered
