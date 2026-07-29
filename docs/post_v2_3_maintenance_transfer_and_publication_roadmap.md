@@ -217,6 +217,7 @@ proceeds.
 | Existing-owner inference-cache packet — prose terminal; receipt and empirical work deferred | `P6.7-inference-cache-reuse-and-honest-pricing` | Reader-facing source integration was expressly commissioned and completed 2026-07-23; no new chapter or support movement | Maintain the three coordinated manuscript integrations and nine-source packet. Later implement the cache-reuse receipt and run separate exact-prefix and semantic-response campaigns under the ordinary post-gate entry condition. Preserve KV-versus-output, exact-versus-semantic, hit-versus-useful-outcome, and provider-contract-versus-local-evidence boundaries. |
 | Existing-owner functional-precision packet — source and prose terminal; evidence work queued | `P6.8-functional-precision-and-behavior-preserving-computation` | Source intake and the eight-owner manuscript integration are complete; schemas, validators, source resolution, and empirical work retain ordinary gates; no new chapter or support movement | Maintain the integrated Precision Contract treatment led by RankFold/NeuralFold. Preserve representation invariance, protected behavior, complete executable and physical-cost accounting, progressive residual precision, routed fallback, certificate scope, and program-transformation proof limits. Reconsider a standalone chapter only if a dated post-integration coherence audit finds a genuinely unowned lifecycle. |
 | Existing-book depth recovery — terminal | `P6.9-R21-concept-complete-depth-and-atom-adequacy` | The 84-chapter manifest is frozen; unified atom custody must stay 84/84; completion requires a named concept manifest plus a digest-bound semantic disposition, while word and atom counts remain diagnostic only | Preserve all twenty-three completed owners and 184 concepts at their reviewed digests. The raw-scaffold audit owns all 21 widest blocks with zero reader-visible or unjustified blocks; the exact 23-chapter/184-concept proof/evidence handoff is terminal. Reopen only after digest drift or an explicit successor amendment. |
+| Visual edition — active owner-directed book packet | `P7.3-governed-manim-visual-edition` | The 84-chapter source manifest, atom custody, and current-reader projection are terminal; P2 is resource-blocked; a clean ARM-native ManimCE environment and derivative contract must pass before pilot rendering | Build five representative pilots, ratify one reusable visual grammar, then produce one current 3–6 minute visual abstract for each of the 84 chapters. Host final video binaries on YouTube, keep code/scripts/captions/transcripts/manifests and receipts in Git, keep rendered media out of GitHub Pages, and embed only validated current URLs. No animation changes support state or substitutes for proof. |
 | Formal slot — C6 residual triage terminal; dependency-safe execution active | `C6-remaining-stronger-model-rationalization` | The original 54-action residual estate had zero Lean dependencies and zero theorem consumers; two redundant witnesses and 43 Theseus repository-import mirrors are retired, leaving nine actions: eight summary-mirror retirements and one inverse-route rewrite | Retire the eight Benchmark/Runtime/Search/Stable-Capability summary mirrors next, then implement the Failure Modes inverse property. Rebuild the overlay and ledger after every tranche, with no support or release movement. |
 | Empirical headline — exact N0 entry receipt; materialization blocked | `P2-R3-storage-materialization-and-replacement-qualification` | `P2-R3a-002` measured 23.87 GiB free against the 50 GiB floor and no reachable Docker daemon; restore both gates and write a new immutable preflight before any pull | Then thirty sealed candidate recipes and receipts; terminal pool materialization; four competently qualified replacements restoring the fixed twelve-task denominator; rank progression only under the frozen amendment; zero protected-content leakage. No deletion of non-Docker user data is authorized. |
 | First structural tranche — terminal | White-Box, World Models, Human Factors, and Governed Operations are terminal at argument support | Four exact integration packets preserve owners, sources, formal ceilings, protocols, reader handoffs, and no-promotion boundaries | Maintenance only; no reopened chapter packet without a dated machine-validated defect. |
@@ -3476,6 +3477,123 @@ against canonical Markdown and its manifest, recheck the top link, 2000×800
 header crop, platform alt-description behavior, visible word count, formatting,
 and audience, then publish only with explicit action-time authorization.
 
+### P7.3 — Governed Manim visual edition
+
+Create a maintained visual explanation for every canonical chapter without
+turning animation quality into evidence quality. The visual edition is a typed
+derivative of the live book: chapter prose and claim atoms remain canonical;
+scene code, narration, captions, descriptive transcripts, thumbnails, render
+receipts, YouTube identities, and Quarto embeds project that state for a
+different audience. A video may explain a mechanism, worked trace, failure
+mode, proof boundary, or current evidence state. It may not strengthen,
+promote, rehabilitate, or refute a claim.
+
+**Target and format.** Produce one current **3–6 minute visual abstract for all
+84 chapters**. Each abstract must present the chapter's problem, core
+mechanism, one worked trace or state transition, the strongest failure or
+counterexample boundary, the current evidence state and non-claims, and the
+handoff to the next chapter. Longer 8–15 minute flagship treatments and four
+part compilations are optional derivatives, not substitutes for 84/84 chapter
+coverage and not closure requirements.
+
+**Toolchain and environment.** Use the stable Manim Community Edition rather
+than ManimGL, initially pinned to `manim==0.20.1` in an isolated ARM-native
+environment with exact Python, Manim, renderer, LaTeX, font, audio, and codec
+identities. The existing broken global Manim/NumPy installation is not an
+admissible build environment. Use low-quality preview renders during drafting
+and deterministic release-quality settings for accepted outputs. A dependency
+upgrade requires a controlled compatibility render of every reusable
+primitive and at least the five pilot chapters before adoption.
+
+**Five-pilot ratchet.** Build these representative pilots before the
+full-manifest rollout:
+
+1. `asi-is-a-stack-not-a-model` — full-stack composition and cross-layer flow;
+2. `capability-replacement-and-rollback` — lifecycle, failure, and exact
+   rollback visualization;
+3. `context-transactions-snapshots-mounts-and-taint` — typed memory, paging,
+   taint, and state-transition visualization;
+4. `replaceable-cognitive-substrates-beyond-transformer-monoculture` —
+   architecture comparison without substrate or SOTA overclaim; and
+5. `living-book-methodology` — claim, evidence, derivative, correction,
+   release, and staleness custody.
+
+The pilot ratchet must exercise abstract architecture, stateful animation,
+mathematical and technical notation, real artifact boundaries, narration
+timing, captions, descriptive transcripts, and responsive book embedding.
+Ratify the shared primitives and style contract only after all five render and
+pass.
+
+**Reusable visual grammar.** Establish one ASI Stack design system with stable
+layer colors, authority/evidence/residual/rollback symbols, typography,
+motion-rate limits, safe-area rules, contrast targets, and reusable components
+for stacks, DAGs, ledgers, state machines, capability fields, route selection,
+proof boundaries, timelines, and before/after state. Reuse grammar, not
+chapter-specific conclusions: every chapter must retain its own mechanism,
+worked trace, and failure boundary. Motion must never be the sole carrier of
+meaning.
+
+**Per-chapter derivative packet.** Every chapter video must have:
+
+- a stable chapter/video ID and current chapter path;
+- the exact source commit, chapter digest, covered claim-atom IDs, support
+  states, sources, and maximum-inference boundary;
+- storyboard, scene code, narration script, reviewed captions, descriptive
+  transcript, thumbnail, alt text, and source/citation end card;
+- exact toolchain lock, render command, output digest, duration, dimensions,
+  frame rate, audio identity, and validation receipt;
+- YouTube video and playlist identities after publication, plus the Quarto
+  embed location, accessible frame title, and `aria-label`; and
+- one lifecycle state from `planned`, `storyboarded`, `scripted`, `rendered`,
+  `validated`, `ready_not_published`, `published_current`, `stale`, or
+  `superseded`.
+
+The canonical narration script remains independent of the speech engine.
+Author-recorded or properly licensed synthetic narration is admissible only
+with exact provenance and rights recorded. Automatically generated captions
+are drafts; release requires reviewed timing, terminology, equations, names,
+non-speech information, and descriptive coverage of material visual changes.
+No external-human prepublication review is required.
+
+**YouTube hosting and repository boundary.** YouTube is the canonical host for
+published video binaries and the ordered 84-video playlist. The repository
+stores the reproducible source and small accountability artifacts; ignored
+build space stores local renders. Do not commit MP4, WebM, MOV, partial-frame,
+audio-cache, or Manim media directories, and do not copy the 84 binaries into
+the GitHub Pages artifact. Quarto embeds a YouTube URL only after the matching
+packet is `published_current`; before publication the chapter remains complete
+without a broken placeholder player. YouTube upload, metadata mutation,
+playlist mutation, publication, replacement, or deletion requires exact
+action-time authority and a resulting platform receipt.
+
+**Staleness and correction.** A changed core claim, mechanism, worked trace,
+evidence state, non-claim, material source, chapter identity, handoff, or
+public URL marks the video stale. Typographic changes that do not affect
+spoken or visual meaning do not. Stale videos remain historical artifacts but
+must lose `published_current`; the chapter embed must be removed, labeled
+historical, or replaced in the same reconciliation transaction. Each major
+book release runs an all-84 freshness check.
+
+**Rollout order.** Execute foundation and pilot work first, then complete the
+remaining chapters in manifest order by part. Work in bounded batches whose
+source digests are frozen before storyboarding. A batch closes only after
+scene, narration, caption, transcript, evidence-boundary, render,
+accessibility, YouTube-readiness, and embed checks pass for every member. Do
+not count a scene stub, silent preview, thumbnail, uploaded binary, automatic
+caption track, or unvalidated embed as a completed chapter video.
+
+**P7.3 completion gate.** This lane is terminal only when all 84 current
+manifest chapters have validated derivative packets and current rendered
+videos; every published video is hosted on YouTube in the canonical playlist;
+every published chapter has a validated Quarto embed and adjacent descriptive
+transcript; no video is stale; all output binaries remain outside Git and the
+Pages artifact; platform and repository receipts bind exact identities; the
+full site passes render, link, responsive, keyboard, accessibility-tree, and
+public-crawl checks; and support-state, release-scope, and non-claim boundaries
+remain unchanged. If action-time YouTube authority is not yet available, the
+honest intermediate state is 84/84 `ready_not_published`, not a fabricated
+publication claim.
+
 ## P8 — Closure, residual ownership, and successor continuity
 
 At every checkpoint, adjudicate each opened item as completed, narrowed,
@@ -3488,9 +3606,9 @@ is invalid.
 Close this roadmap only when all opened campaigns have terminal dispositions,
 all accepted transition identities resolve, all negative inferences have an
 auditable N-level, public truth is reconciled, evidence lanes remain separate,
-local reader work is terminally dispositioned, external mutations have exact
-authority and receipts, and the next successor or continuing-maintenance
-authority activates in the same transaction.
+local reader and P7.3 visual-edition work are terminally dispositioned,
+external mutations have exact authority and receipts, and the next successor
+or continuing-maintenance authority activates in the same transaction.
 
 ## Execution order and decision rules
 
@@ -3513,8 +3631,12 @@ boundary before `T4`, but may not substitute fixtures for the natural
 vertical. P3 opens only after `T5` and exact access predicates are true. P7
 preserves current published artifacts now; its R16-A, W3, T1D, and R16-B
 organization sequence is terminal, while P7.1b narrative
-synthesis after `T4`; external actions still require explicit action-time
-authority. Candidate N/O research cannot become manifest work before the
+synthesis waits for `T4`. P7.3 is the active owner-directed book-production
+packet while P2 remains resource-blocked: foundation and pilot work may proceed
+now, followed by the all-84 rollout, without changing the P2 scientific
+headline or consuming protected outcomes. YouTube and other external actions
+still require explicit action-time authority. Candidate N/O research cannot
+become manifest work before the
 material P2 and terminal T1D gates. P8 closes every checkpoint.
 
 Every outcome-bearing item begins with an owner, stable claim identity, exact
@@ -3613,12 +3735,18 @@ is not a debugging interface.
    were integrated or explicitly rejected, not deferred. Any future chapter
    still needs a distinct unowned lifecycle and full birth artifacts. Manifest
    or roadmap admission alone changes no support.
-7. **Narrative and reader quality (`P7`).** Preserve the published
+7. **Narrative, reader, and visual-edition quality (`P7`).** Preserve the published
    `reader-2026-07-18` receipts, close only compatibility claims that are
    actually tested, preserve the terminal W3 meaning-preservation packet and
    terminal current-reader freshness packet, and
-   execute only P7.1b after the joined case stabilizes. The X synopsis remains
-   staged until explicit action-time authorization.
+   execute only P7.1b after the joined case stabilizes. Execute P7.3 now as the
+   active book-production packet: establish the reproducible ManimCE toolchain,
+   close the five-pilot ratchet, then produce and validate one current visual
+   abstract for every chapter. Keep rendered media out of Git and Pages; host
+   published binaries on YouTube; preserve captions, descriptive transcripts,
+   claim/evidence boundaries, exact digests, and staleness custody. The X
+   synopsis and every YouTube mutation remain staged until explicit action-time
+   authorization.
 8. **Independent challenge (`P3`).** After `T5`, reproduce any broadened result
    through a materially separate implementation/evaluator and two frozen
    transfer settings; a local positive does not become SOTA or architecture-
@@ -3636,9 +3764,12 @@ claim movements; semantic proof additions, reclassifications, and deletions;
 executed or blocked experiments; implementation, comparator, corpus, model,
 checkpoint, evaluator, and transfer identities; effect sizes and uncertainty;
 costs; reader and derivative freshness; rights/publication authority;
-failures; residuals; and the next owned trigger. It links public-safe raw
-artifacts and includes negative mutations for its most consequential possible
-lies.
+Manim toolchain and chapter-packet counts; current, stale,
+`ready_not_published`, and `published_current` video counts; YouTube playlist
+and video identities; caption, transcript, render, embed, and platform
+receipts; failures; residuals; and the next owned trigger. It links public-safe
+raw artifacts and includes negative mutations for its most consequential
+possible lies.
 
 ## Milestones
 
@@ -3651,7 +3782,7 @@ lies.
 | M4 — Semantic formal depth | completed | All six frozen clusters are terminal across 25 modules with exact dispositions, modeled state, assumptions, countermodels, consumers, mutations, semantic separations, and maximum-inference ceilings. No aggregate theorem count or finite record grants empirical support. |
 | M5 — Effect-complete reference | in progress | Two bounded local slices and one outcome-aware natural publication happy path are retained at their exact scopes. The frozen five-arm campaign now has a terminal authored implementation/instrument qualification across 60 arm/fault controls, 14 state classes, 213 child processes, 24/24 evaluator cases, and 14/14 development-opening gates. It ran zero natural tasks and observed no elapsed 24-hour window. Consecutive natural development work, full cost measurement, precision simulation, the single protected opening, causal comparison, transfer, and independent reproduction remain. |
 | M6 — Renewal and structural completeness | completed | The first tranche, A1/A2, Round 18 breadth packet, ten-owner no-deferral transaction, four-owner taxonomy reconciliation, 2026-07-25 full-coverage audit, T1D six-chapter maturity/source/reader packet, Precision Contract integration, R16-A six-chapter/thirty-atom organization packet, W3 84-chapter inheritance guard, and R16-B 84-chapter reader-freshness derivative are terminal at their declared argument or organization scope. The manifest is 84; no identified manuscript idea is deferred. Optimizer, heterogeneous-memory, and inference-cache manuscript depth is in the book; executable evidence residuals remain ordinary Phase 2 work. |
-| M7 — Reader/publication disposition | in progress | PDF, EPUB, and DOCX in `reader-2026-07-18` remain immutable published artifacts with exact receipts. The current 84-chapter source-fresh virtual QMD derivative is terminal; HTML, PDF, EPUB, DOCX, and audio are explicitly deferred pending format-specific QA rather than fabricated. Close M7 after public surfaces synchronize and the exact final `main`/Pages attestation succeeds; local source freshness does not imply a new external reader release. |
+| M7 — Reader, visual-edition, and publication disposition | in progress | PDF, EPUB, and DOCX in `reader-2026-07-18` remain immutable published artifacts with exact receipts. The current 84-chapter source-fresh virtual QMD derivative is terminal; HTML, PDF, EPUB, DOCX, and audio remain format-specific derivatives. P7.3 must establish a reproducible ManimCE toolchain, pass five representative pilots, and produce 84/84 current captioned and descriptively transcribed visual abstracts. Published binaries live on YouTube, not in Git or Pages; exact platform identities and current Quarto embeds are required before `published_current`. Close M7 after all current derivative surfaces synchronize and the exact final `main`/Pages/public-crawl attestation succeeds. |
 | M8 — Successor continuity | pending | Every open item has a terminal disposition and the next exact authority is active. |
 
 ## Definition of done
@@ -3670,5 +3801,7 @@ integration debt, a
 birth-complete terminal Round 18 breadth transaction followed by a structural
 freeze without treating the historical 72/73-entry or later theoretical
 75-candidate envelopes as targets, exact
-`main` attestation, terminal reader/publication
+`main` attestation, an 84/84 governed Manim visual edition with current
+captions, descriptive transcripts, YouTube identities or an exact
+`ready_not_published` authority disposition, terminal reader/publication
 dispositions, and uninterrupted successor ownership.

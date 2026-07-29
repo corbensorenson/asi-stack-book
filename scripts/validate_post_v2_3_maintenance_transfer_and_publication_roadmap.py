@@ -327,6 +327,7 @@ def errors(data: dict) -> list[str]:
         "### P6.8 — Functional precision and behavior-preserving computation",
         "### P6.9 — Round 20 chapter substance and concept fidelity",
         "## P7 — Reader remediation and owner-authorized publication",
+        "### P7.3 — Governed Manim visual edition",
         "## P8 — Closure, residual ownership, and successor continuity",
         "## Execution order and decision rules",
         "## Current owned queue",
@@ -344,6 +345,12 @@ def errors(data: dict) -> list[str]:
         "claim-commensurate competence",
         "Final held-out data is opened once",
         "Main-only repository continuity",
+        "Manim Community Edition",
+        "five-pilot ratchet",
+        "YouTube is the canonical host",
+        "84/84 `ready_not_published`",
+        "A video may explain",
+        "It may not strengthen",
         "subclaim_of",
         "proxy_for",
         "N0 instrument failure",
@@ -1150,8 +1157,8 @@ def errors(data: dict) -> list[str]:
 
     quality_program = status.get("quality_uplift_program", {})
     execution_readiness = status.get("execution_readiness", {})
-    if execution_readiness.get("state") != "phase_one_book_organization_terminal_p2_evidence_ready":
-        out.append("execution board does not close Phase 1 book organization and activate P2 evidence work")
+    if execution_readiness.get("state") != "p2_resource_blocked_p7_3_visual_edition_active":
+        out.append("execution board does not preserve the P2 resource block while activating P7.3 visual-edition work")
     if execution_readiness.get("headline_priority") != "P2" or execution_readiness.get("headline_priority_state") != "latest_exact_preflight_failed_capacity_and_docker_restore_both_before_retry":
         out.append("execution board obscures the P2 headline or the current below-floor attempt requirement")
     if execution_readiness.get("work_in_progress_limit") != 2 or execution_readiness.get("blocked_lane_consumes_work_in_progress") is not False:
@@ -1162,8 +1169,8 @@ def errors(data: dict) -> list[str]:
         out.append("execution board contradicts the superseding no-deferral manuscript policy")
     if execution_readiness.get("immediate_empirical_packet") != "P2-R3-storage-materialization-and-replacement-qualification":
         out.append("execution board does not make P2-R3 the operative empirical headline")
-    if execution_readiness.get("immediate_book_packet") != "P6.5-terminal-no-open-book-organization-packet":
-        out.append("execution board invents an open book-organization packet after terminal R16-B")
+    if execution_readiness.get("immediate_book_packet") != "P7.3-governed-manim-visual-edition":
+        out.append("execution board does not activate the governed Manim visual-edition packet")
     if execution_readiness.get("immediate_formal_packet") != "P4-terminal-no-open-formal-packet":
         out.append("execution board reopens terminal P4 formal work")
     if execution_readiness.get("maximum_concurrent_second_tranche_candidates") != 0:
@@ -1178,6 +1185,66 @@ def errors(data: dict) -> list[str]:
     ]
     if execution_readiness.get("structural_resume_requires") != expected_resume_gates:
         out.append("execution board structural-resume gate set drifted")
+
+    manim = status.get("manim_visual_edition", {})
+    expected_pilots = [
+        "asi-is-a-stack-not-a-model",
+        "capability-replacement-and-rollback",
+        "context-transactions-snapshots-mounts-and-taint",
+        "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+        "living-book-methodology",
+    ]
+    if manim.get("id") != "P7.3-governed-manim-visual-edition":
+        out.append("Manim visual-edition identity drifted")
+    if manim.get("state") != "active_foundation_and_five_pilot_ratchet":
+        out.append("Manim visual-edition state is not the active foundation and pilot ratchet")
+    if manim.get("canonical_chapter_count") != len(manifest_chapters) or len(manifest_chapters) != 84:
+        out.append("Manim visual-edition chapter target does not match the canonical manifest")
+    if manim.get("pilot_chapter_ids") != expected_pilots:
+        out.append("Manim five-pilot order drifted")
+    missing_pilots = sorted(set(expected_pilots) - manifest_ids)
+    if missing_pilots:
+        out.append(f"Manim pilot chapter IDs missing from manifest: {missing_pilots}")
+    toolchain = manim.get("toolchain", {})
+    if (
+        toolchain.get("implementation") != "Manim Community Edition"
+        or toolchain.get("initial_pin") != "0.20.1"
+        or toolchain.get("manimgl_allowed") is not False
+        or toolchain.get("isolated_arm_native_environment_required") is not True
+        or toolchain.get("broken_global_environment_allowed") is not False
+    ):
+        out.append("Manim toolchain boundary drifted")
+    hosting = manim.get("hosting", {})
+    if (
+        hosting.get("canonical_binary_host") != "YouTube"
+        or hosting.get("canonical_playlist_required") is not True
+        or hosting.get("youtube_video_count_target") != 84
+        or hosting.get("quarto_embed_only_after_published_current") is not True
+        or hosting.get("action_time_authority_required") is not True
+        or hosting.get("external_publication_authorized_now") is not False
+    ):
+        out.append("Manim YouTube hosting or action-time authority boundary drifted")
+    repository_boundary = manim.get("repository_boundary", {})
+    if (
+        repository_boundary.get("rendered_video_binary_tracked_in_git") is not False
+        or repository_boundary.get("rendered_video_binary_in_pages_artifact") is not False
+        or repository_boundary.get("local_render_location_class") != "ignored_build_space"
+    ):
+        out.append("Manim repository and Pages binary boundary drifted")
+    counts = manim.get("current_counts", {})
+    if any(counts.get(key) != 0 for key in [
+        "toolchain_contracts",
+        "ratified_visual_grammars",
+        "pilot_packets_validated",
+        "chapter_packets_validated",
+        "current_rendered_videos",
+        "youtube_videos_published",
+        "current_quarto_embeds",
+        "stale_videos",
+    ]):
+        out.append("Manim visual-edition roadmap admission fabricates completed production")
+    if manim.get("support_state_effect") != "none":
+        out.append("Manim visual edition moves claim support")
     expected_first_tranche_order = [
         "white-box-evidence-interpretability-and-activation-governance",
         "governed-world-models-and-reality-grounding",
@@ -2328,6 +2395,17 @@ def main() -> None:
     mutate("P2 post-content replay", lambda c: c["status"]["p2_sequential_materialization_contract"].__setitem__("post_content_replay_allowed", True))
     mutate("semantic proof cluster deletion", lambda c: c["status"]["semantic_proof_cluster_inventory"]["clusters"].pop())
     mutate("book organization reopening", lambda c: c["status"]["execution_readiness"].__setitem__("immediate_book_packet", "P7.2-T1-white-box-evidence-interpretability-and-activation-governance"))
+    mutate("ManimGL substitution", lambda c: c["status"]["manim_visual_edition"]["toolchain"].__setitem__("manimgl_allowed", True))
+    mutate("Manim global environment laundering", lambda c: c["status"]["manim_visual_edition"]["toolchain"].__setitem__("broken_global_environment_allowed", True))
+    mutate("Manim chapter denominator shrink", lambda c: c["status"]["manim_visual_edition"].__setitem__("canonical_chapter_count", 83))
+    mutate("Manim Git video-binary admission", lambda c: c["status"]["manim_visual_edition"]["repository_boundary"].__setitem__("rendered_video_binary_tracked_in_git", True))
+    mutate("Manim Pages video-binary admission", lambda c: c["status"]["manim_visual_edition"]["repository_boundary"].__setitem__("rendered_video_binary_in_pages_artifact", True))
+    mutate("Manim non-YouTube host drift", lambda c: c["status"]["manim_visual_edition"]["hosting"].__setitem__("canonical_binary_host", "GitHub Pages"))
+    mutate("Manim premature publication authority", lambda c: c["status"]["manim_visual_edition"]["hosting"].__setitem__("external_publication_authorized_now", True))
+    mutate("Manim upload-before-validation", lambda c: c["status"]["manim_visual_edition"]["hosting"].__setitem__("quarto_embed_only_after_published_current", False))
+    mutate("Manim completion invention", lambda c: c["status"]["manim_visual_edition"]["current_counts"].__setitem__("chapter_packets_validated", 84))
+    mutate("Manim support promotion", lambda c: c["status"]["manim_visual_edition"].__setitem__("support_state_effect", "promoted"))
+    mutate("Manim roadmap section deletion", lambda c: c.__setitem__("roadmap", c["roadmap"].replace("### P7.3 — Governed Manim visual edition", "### Removed visual edition", 1)))
     mutate("P4 next packet rollback", lambda c: c["status"]["execution_readiness"].__setitem__("immediate_formal_packet", "P4-C3-authority-effect-rollback-and-corrigibility-semantic-audit"))
     mutate("first-tranche terminal count rollback", lambda c: c["status"]["quality_uplift_program"]["structural_completeness_tranche"]["first_tranche"].__setitem__("completed_reader_chapter_count", 1))
     mutate("T1/T2/T3 terminal identity deletion", lambda c: c["status"]["quality_uplift_program"]["structural_completeness_tranche"]["first_tranche"].__setitem__("terminal_reader_chapter_ids", []))
@@ -2347,7 +2425,7 @@ def main() -> None:
         "90 accepted historical negatives classified as 1 N0, 15 N1, 74 N2, and 0 N3-N5; "
         "the frozen 75-surface rehabilitation snapshot including the then-live 55 chapters reconciled with zero overbroad negative language; "
         "P2 selected prospectively from five candidates; natural development preflight covers 1,117 post-snapshot tasks, 12 repositories, seven languages, and 12 image manifests; the fixed gold denominator is fully dispositioned as eight qualified and four N0 replacements across 62 verified arm logs and eight attempts; the corrected infrastructure/content boundary reinstates rank five as setup-retry-pending and keeps rank six closed; the historical 2026-07-22 capacity entry condition was met, while the latest exact 2026-07-28 receipt confirms both a below-floor host and unreachable Docker daemon without opening protected content; the complete 30-candidate sequential materialization remains unpassed; Q1 D1 and Theseus Q2 D2 remain disjoint and sealed; remeasurement, qualification, construct, and heldout gates remain closed; "
-        "all six semantic proof clusters are terminally adequate at bounded scope; the historical 66-chapter Round 18 freeze remains recorded, while the superseding no-deferral, taxonomy, and full-coverage transactions admit eighteen distinct manuscript owners into the current 84-chapter book at argument support, leave zero live candidate queue, add semantic review and current proof-triage custody, and remove structural freezing for manuscript ideas; the current 84-entry role partition is exact at 11 thesis, 54 load-bearing reference, 7 implementation, and 12 speculative chapters; the C0-C8 convergence amendment preserves three defended contributions, targets a 22-unit reader route, and adds shared calculus, developmental-loop, minimal-kernel, bounded-liveness, P0-P6 proof-depth, and natural-flagship work without an external-human prepublication gate; optimizer manuscript depth is terminal while its empirical campaign remains a nonblocking evidence residual; current proof and main-attestation baselines exact; no support/release effect; "
+        "all six semantic proof clusters are terminally adequate at bounded scope; the historical 66-chapter Round 18 freeze remains recorded, while the superseding no-deferral, taxonomy, and full-coverage transactions admit eighteen distinct manuscript owners into the current 84-chapter book at argument support, leave zero live candidate queue, add semantic review and current proof-triage custody, and remove structural freezing for manuscript ideas; the current 84-entry role partition is exact at 11 thesis, 54 load-bearing reference, 7 implementation, and 12 speculative chapters; the C0-C8 convergence amendment preserves three defended contributions, targets a 22-unit reader route, and adds shared calculus, developmental-loop, minimal-kernel, bounded-liveness, P0-P6 proof-depth, and natural-flagship work without an external-human prepublication gate; P7.3 is the active owner-directed book packet with five pilots, an all-84 ManimCE target, YouTube binary hosting, Git/Pages binary exclusion, exact captions/transcripts/receipts, and zero fabricated completion; optimizer manuscript depth is terminal while its empirical campaign remains a nonblocking evidence residual; current proof and main-attestation baselines exact; no support/release effect; "
         f"{len(mutations)}/{len(mutations)} mutations rejected."
     )
 

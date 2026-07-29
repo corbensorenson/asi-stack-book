@@ -32,6 +32,7 @@
     "p5_effect_complete_reference",
     "attestation",
     "reader_release_receipt",
+    "manim_visual_edition",
     "priorities",
     "milestones",
     "self_contained_execution",
@@ -43,7 +44,7 @@
   ],
   "properties": {
     "schema_version": {
-      "const": "asi_stack.post_v2_3_maintenance_transfer_publication_status.v23"
+      "const": "asi_stack.post_v2_3_maintenance_transfer_publication_status.v24"
     },
     "roadmap_id": {
       "const": "asi-stack-post-v2-3-evidence-competence-transfer-publication-2026-07-17"
@@ -88,7 +89,7 @@
       ],
       "properties": {
         "state": {
-          "const": "phase_one_book_organization_terminal_p2_evidence_ready"
+          "const": "p2_resource_blocked_p7_3_visual_edition_active"
         },
         "headline_priority": {
           "const": "P2"
@@ -112,7 +113,7 @@
           "const": "P2-R3-storage-materialization-and-replacement-qualification"
         },
         "immediate_book_packet": {
-          "const": "P6.5-terminal-no-open-book-organization-packet"
+          "const": "P7.3-governed-manim-visual-edition"
         },
         "immediate_formal_packet": {
           "const": "P4-terminal-no-open-formal-packet"
@@ -2488,6 +2489,103 @@
         "support_state_effect": {
           "const": "none"
         }
+      }
+    },
+    "manim_visual_edition": {
+      "const": {
+        "id": "P7.3-governed-manim-visual-edition",
+        "state": "active_foundation_and_five_pilot_ratchet",
+        "execution_role": "active_owner_directed_book_packet_p2_scientific_headline_unchanged",
+        "canonical_chapter_count": 84,
+        "required_visual_abstract_duration_seconds": {
+          "minimum": 180,
+          "maximum": 360
+        },
+        "pilot_chapter_ids": [
+          "asi-is-a-stack-not-a-model",
+          "capability-replacement-and-rollback",
+          "context-transactions-snapshots-mounts-and-taint",
+          "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+          "living-book-methodology"
+        ],
+        "toolchain": {
+          "implementation": "Manim Community Edition",
+          "initial_pin": "0.20.1",
+          "manimgl_allowed": false,
+          "isolated_arm_native_environment_required": true,
+          "broken_global_environment_allowed": false,
+          "exact_dependency_and_render_identity_required": true,
+          "upgrade_requires_five_pilot_compatibility_rerender": true
+        },
+        "hosting": {
+          "canonical_binary_host": "YouTube",
+          "canonical_playlist_required": true,
+          "youtube_video_count_target": 84,
+          "quarto_embed_only_after_published_current": true,
+          "action_time_authority_required": true,
+          "external_publication_authorized_now": false
+        },
+        "repository_boundary": {
+          "tracked_small_artifacts": [
+            "scene_code",
+            "storyboard",
+            "narration_script",
+            "reviewed_captions",
+            "descriptive_transcript",
+            "thumbnail",
+            "video_manifest",
+            "render_receipt",
+            "platform_receipt"
+          ],
+          "rendered_video_binary_tracked_in_git": false,
+          "rendered_video_binary_in_pages_artifact": false,
+          "local_render_location_class": "ignored_build_space"
+        },
+        "lifecycle_states": [
+          "planned",
+          "storyboarded",
+          "scripted",
+          "rendered",
+          "validated",
+          "ready_not_published",
+          "published_current",
+          "stale",
+          "superseded"
+        ],
+        "staleness_triggers": [
+          "core_claim",
+          "mechanism",
+          "worked_trace",
+          "evidence_state",
+          "non_claim",
+          "material_source",
+          "chapter_identity",
+          "handoff",
+          "public_url"
+        ],
+        "current_counts": {
+          "toolchain_contracts": 0,
+          "ratified_visual_grammars": 0,
+          "pilot_packets_validated": 0,
+          "chapter_packets_validated": 0,
+          "current_rendered_videos": 0,
+          "youtube_videos_published": 0,
+          "current_quarto_embeds": 0,
+          "stale_videos": 0
+        },
+        "completion_requires": [
+          "84_current_validated_derivative_packets",
+          "84_current_rendered_visual_abstracts",
+          "reviewed_captions_and_descriptive_transcripts",
+          "zero_stale_video_claim_surfaces",
+          "youtube_playlist_and_exact_platform_receipts_or_84_ready_not_published_authority_disposition",
+          "validated_quarto_embeds_for_every_published_current_video",
+          "no_rendered_video_binaries_in_git_or_pages",
+          "full_render_link_responsive_keyboard_accessibility_tree_and_public_crawl_pass",
+          "zero_support_state_movement"
+        ],
+        "support_state_effect": "none",
+        "release_effect": "none_until_validated_youtube_publication_receipts"
       }
     },
     "priorities": {

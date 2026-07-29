@@ -1,5 +1,5 @@
 {
-  "schema_version": "asi_stack.post_v2_3_maintenance_transfer_publication_status.v23",
+  "schema_version": "asi_stack.post_v2_3_maintenance_transfer_publication_status.v24",
   "roadmap_id": "asi-stack-post-v2-3-evidence-competence-transfer-publication-2026-07-17",
   "roadmap_path": "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md",
   "snapshot_date": "2026-07-29",
@@ -7,7 +7,7 @@
   "status": "active",
   "current_priority": "P2",
   "execution_readiness": {
-    "state": "phase_one_book_organization_terminal_p2_evidence_ready",
+    "state": "p2_resource_blocked_p7_3_visual_edition_active",
     "headline_priority": "P2",
     "headline_priority_state": "latest_exact_preflight_failed_capacity_and_docker_restore_both_before_retry",
     "work_in_progress_limit": 2,
@@ -15,7 +15,7 @@
     "protected_outcome_inspection_allowed": false,
     "structural_admission_freeze": false,
     "immediate_empirical_packet": "P2-R3-storage-materialization-and-replacement-qualification",
-    "immediate_book_packet": "P6.5-terminal-no-open-book-organization-packet",
+    "immediate_book_packet": "P7.3-governed-manim-visual-edition",
     "immediate_formal_packet": "P4-terminal-no-open-formal-packet",
     "structural_resume_requires": [
       "P2-pool-materialization-terminal-receipt",
@@ -1696,6 +1696,101 @@
     "accessibility_conformance_claimed": false,
     "support_state_effect": "none"
   },
+  "manim_visual_edition": {
+    "id": "P7.3-governed-manim-visual-edition",
+    "state": "active_foundation_and_five_pilot_ratchet",
+    "execution_role": "active_owner_directed_book_packet_p2_scientific_headline_unchanged",
+    "canonical_chapter_count": 84,
+    "required_visual_abstract_duration_seconds": {
+      "minimum": 180,
+      "maximum": 360
+    },
+    "pilot_chapter_ids": [
+      "asi-is-a-stack-not-a-model",
+      "capability-replacement-and-rollback",
+      "context-transactions-snapshots-mounts-and-taint",
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+      "living-book-methodology"
+    ],
+    "toolchain": {
+      "implementation": "Manim Community Edition",
+      "initial_pin": "0.20.1",
+      "manimgl_allowed": false,
+      "isolated_arm_native_environment_required": true,
+      "broken_global_environment_allowed": false,
+      "exact_dependency_and_render_identity_required": true,
+      "upgrade_requires_five_pilot_compatibility_rerender": true
+    },
+    "hosting": {
+      "canonical_binary_host": "YouTube",
+      "canonical_playlist_required": true,
+      "youtube_video_count_target": 84,
+      "quarto_embed_only_after_published_current": true,
+      "action_time_authority_required": true,
+      "external_publication_authorized_now": false
+    },
+    "repository_boundary": {
+      "tracked_small_artifacts": [
+        "scene_code",
+        "storyboard",
+        "narration_script",
+        "reviewed_captions",
+        "descriptive_transcript",
+        "thumbnail",
+        "video_manifest",
+        "render_receipt",
+        "platform_receipt"
+      ],
+      "rendered_video_binary_tracked_in_git": false,
+      "rendered_video_binary_in_pages_artifact": false,
+      "local_render_location_class": "ignored_build_space"
+    },
+    "lifecycle_states": [
+      "planned",
+      "storyboarded",
+      "scripted",
+      "rendered",
+      "validated",
+      "ready_not_published",
+      "published_current",
+      "stale",
+      "superseded"
+    ],
+    "staleness_triggers": [
+      "core_claim",
+      "mechanism",
+      "worked_trace",
+      "evidence_state",
+      "non_claim",
+      "material_source",
+      "chapter_identity",
+      "handoff",
+      "public_url"
+    ],
+    "current_counts": {
+      "toolchain_contracts": 0,
+      "ratified_visual_grammars": 0,
+      "pilot_packets_validated": 0,
+      "chapter_packets_validated": 0,
+      "current_rendered_videos": 0,
+      "youtube_videos_published": 0,
+      "current_quarto_embeds": 0,
+      "stale_videos": 0
+    },
+    "completion_requires": [
+      "84_current_validated_derivative_packets",
+      "84_current_rendered_visual_abstracts",
+      "reviewed_captions_and_descriptive_transcripts",
+      "zero_stale_video_claim_surfaces",
+      "youtube_playlist_and_exact_platform_receipts_or_84_ready_not_published_authority_disposition",
+      "validated_quarto_embeds_for_every_published_current_video",
+      "no_rendered_video_binaries_in_git_or_pages",
+      "full_render_link_responsive_keyboard_accessibility_tree_and_public_crawl_pass",
+      "zero_support_state_movement"
+    ],
+    "support_state_effect": "none",
+    "release_effect": "none_until_validated_youtube_publication_receipts"
+  },
   "priorities": [
     {
       "id": "P0",
@@ -1735,7 +1830,7 @@
     {
       "id": "P7",
       "state": "in_progress",
-      "purpose": "maintain the published PDF/EPUB/DOCX reader release and close compatibility residuals without overclaim"
+      "purpose": "maintain reader derivatives and complete the governed 84-chapter Manim visual edition for YouTube without overclaim"
     },
     {
       "id": "P8",
@@ -1782,7 +1877,7 @@
     {
       "id": "M7",
       "state": "in_progress",
-      "purpose": "preserve exact reader-release receipts while native-app and accessibility residuals remain open"
+      "purpose": "preserve exact reader-release receipts and complete the governed 84-chapter Manim visual edition with YouTube publication custody"
     },
     {
       "id": "M8",
@@ -1804,6 +1899,7 @@
     "An accepted transition is not necessarily an exact registry-atom transition until its identity edge is validated.",
     "A historical negative outcome remains observable even when broader negative inference is quarantined.",
     "A competence contract cannot guarantee a perfect experiment; it forces inadequate tests to fail closed.",
+    "A Manim scene, render, upload, playlist entry, or polished animation is an explanatory derivative and does not establish proof, empirical support, capability, safety, deployment readiness, SOTA, AGI, or ASI.",
     "This revision does not authorize commit, push, tag, deploy, archive deposit, license change, publication, or release."
   ],
   "no_deferral_manuscript_admission": {
