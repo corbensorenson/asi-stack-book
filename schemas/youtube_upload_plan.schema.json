@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/youtube_upload_plan.schema.json",
+  "title": "ASI Stack YouTube Upload Plan",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at_utc",
+    "book_structure_sha256",
+    "channel_config_sha256",
+    "channel_id",
+    "playlist_title",
+    "entry_count",
+    "external_mutation_authorized_now",
+    "publication_mode",
+    "entries",
+    "support_state_effect",
+    "release_effect"
+  ],
+  "properties": {
+    "schema_version": {"const": "asi_stack.youtube_upload_plan.v1"},
+    "generated_at_utc": {"type": "string", "format": "date-time"},
+    "book_structure_sha256": {"pattern": "^[0-9a-f]{64}$"},
+    "channel_config_sha256": {"pattern": "^[0-9a-f]{64}$"},
+    "channel_id": {"const": "UCX7Tu67cGmKfT6O38xxiQFA"},
+    "playlist_title": {"const": "The ASI Stack — Visual Abstracts"},
+    "entry_count": {"const": 84},
+    "external_mutation_authorized_now": {"const": false},
+    "publication_mode": {"const": "stage_all_unlisted_then_publish_reconciled_set"},
+    "entries": {
+      "type": "array",
+      "minItems": 84,
+      "maxItems": 84,
+      "items": {
+        "type": "object",
+        "required": [
+          "position",
+          "chapter_id",
+          "stable_internal_video_id",
+          "generation",
+          "title",
+          "description",
+          "category_id",
+          "made_for_kids",
+          "contains_synthetic_narration_disclosure",
+          "tags",
+          "thumbnail_source_path",
+          "thumbnail_source_sha256",
+          "thumbnail_path",
+          "thumbnail_sha256",
+          "caption_path",
+          "local_master_path",
+          "local_master_sha256",
+          "desired_playlist_position",
+          "initial_upload_privacy",
+          "desired_final_privacy",
+          "mutation_state"
+        ],
+        "properties": {
+          "position": {"type": "integer", "minimum": 1, "maximum": 84},
+          "chapter_id": {"type": "string", "minLength": 3},
+          "stable_internal_video_id": {"pattern": "^asi-video-[a-z0-9-]+$"},
+          "generation": {"const": 1},
+          "title": {"type": "string", "minLength": 10, "maxLength": 100},
+          "description": {"type": "string", "minLength": 300, "maxLength": 5000},
+          "category_id": {"const": "27"},
+          "made_for_kids": {"const": false},
+          "contains_synthetic_narration_disclosure": {"const": true},
+          "tags": {"type": "array", "minItems": 5, "uniqueItems": true},
+          "thumbnail_source_path": {"pattern": "^visual_edition/chapters/.+/thumbnail\\.svg$"},
+          "thumbnail_source_sha256": {"pattern": "^[0-9a-f]{64}$"},
+          "thumbnail_path": {"pattern": "^build/visual_edition/thumbnails/.+\\.png$"},
+          "thumbnail_sha256": {
+            "oneOf": [
+              {"type": "null"},
+              {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            ]
+          },
+          "caption_path": {"pattern": "^visual_edition/chapters/.+/captions\\.vtt$"},
+          "local_master_path": {"pattern": "^build/visual_edition/final/.+\\.mp4$"},
+          "local_master_sha256": {
+            "oneOf": [
+              {"type": "null"},
+              {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            ]
+          },
+          "desired_playlist_position": {"type": "integer", "minimum": 1, "maximum": 84},
+          "initial_upload_privacy": {"const": "unlisted"},
+          "desired_final_privacy": {"const": "public"},
+          "mutation_state": {"const": "prepared_not_authorized"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "support_state_effect": {"const": "none"},
+    "release_effect": {"const": "none"}
+  },
+  "additionalProperties": false
+}

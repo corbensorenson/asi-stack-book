@@ -1,0 +1,253 @@
+WEBVTT
+
+NOTE
+Canonical written narration timed from the exact local narration render receipt.
+Pronunciation-only substitutions are intentionally absent from caption text.
+
+1
+00:00:00.060 --> 00:00:04.492
+This chapter asks a specific question: A system can ask a
+
+2
+00:00:04.492 --> 00:00:08.925
+weaker human or model to judge a stronger system without recording
+
+3
+00:00:08.925 --> 00:00:12.149
+whether the supervisor can see the relevant evidence,
+
+4
+00:00:12.149 --> 00:00:16.178
+whether the protocol is vulnerable to persuasion or correlated failure,
+
+5
+00:00:16.178 --> 00:00:17.790
+what direct-review baseline exists,
+
+6
+00:00:18.130 --> 00:00:20.910
+or who escalates an unresolved result.
+
+7
+00:00:21.250 --> 00:00:27.110
+The tempting shortcut is insufficient: Unassisted review, AI judges, debate, consultancy,
+
+8
+00:00:27.110 --> 00:00:32.970
+weak-to-strong training, and reviewer ensembles can each improve selected outcomes while
+
+9
+00:00:32.970 --> 00:00:38.830
+failing under evidence-access limits, persuasion, shared dependencies, selective coverage, task leakage,
+
+10
+00:00:39.170 --> 00:00:42.925
+strategic abstention, or an artificially weak baseline.
+
+11
+00:00:43.525 --> 00:00:48.530
+The chapter's core claim is this: A governed stack admits scalable
+
+12
+00:00:48.530 --> 00:00:53.535
+oversight only as a versioned, consumer-bound protocol receipt rather than a
+
+13
+00:00:53.535 --> 00:00:58.085
+vote: it prospectively records task, cohort, risk and authority scope;
+
+14
+00:00:58.085 --> 00:01:02.180
+supervisor and system capability envelopes; evidence views; roles, incentives,
+
+15
+00:01:02.520 --> 00:01:09.651
+and dependency graph; informed direct-review baseline; declared outcome-audit path; calibration, coverage,
+
+16
+00:01:09.651 --> 00:01:16.782
+and abstention semantics; persuasion, correlation, operator-cost, and monitorability residuals; escalation owner;
+
+17
+00:01:16.782 --> 00:01:19.375
+expiry; and requalification triggers.
+
+18
+00:01:19.715 --> 00:01:24.800
+The receipt may inform only its permitted review or training consumer
+
+19
+00:01:24.800 --> 00:01:29.885
+through the owning gate and cannot by itself establish reviewer independence,
+
+20
+00:01:29.885 --> 00:01:34.970
+reliable supervision, correctness, safety, support movement, release readiness, or execution authority.
+
+21
+00:01:35.570 --> 00:01:39.600
+A concrete implementation trace makes the proposal testable.
+
+22
+00:01:39.940 --> 00:01:46.781
+The exact current minimum preserves the seven inherited oversight cases in
+
+23
+00:01:46.781 --> 00:01:52.379
+a seven-stage, 58-route oversight-review lifecycle with 65/65 rejecting mutations,
+
+24
+00:01:52.379 --> 00:01:59.220
+twelve ScalableOversightRefinement declarations, one bounded-use handoff, and one protocol-version-2 readmission witness.
+
+25
+00:01:59.560 --> 00:02:05.032
+It runs no model, reviewer, human, debate, consultancy, weak-to-strong learner,
+
+26
+00:02:05.032 --> 00:02:10.504
+natural task, outcome workload, causal intervention, release, deployment, reproduction, transfer,
+
+27
+00:02:10.504 --> 00:02:13.240
+chapter-core transition, or SOTA comparison.
+
+28
+00:02:13.580 --> 00:02:18.784
+Compare assisted oversight with a declared direct-review baseline and retain outcome-audit,
+
+29
+00:02:18.784 --> 00:02:23.989
+calibration, disagreement, and failure records instead of treating a verdict count
+
+30
+00:02:23.989 --> 00:02:24.935
+as success.
+
+31
+00:02:25.535 --> 00:02:30.830
+The design can still fail. Persuasion theater lets a capable advocate
+
+32
+00:02:30.830 --> 00:02:35.644
+win an inadequately calibrated judge without improving truth or safety.
+
+33
+00:02:35.644 --> 00:02:40.939
+Correlated model families, prompts, tools, or information access create false independence
+
+34
+00:02:40.939 --> 00:02:42.865
+across nominally separate reviewers.
+
+35
+00:02:43.205 --> 00:02:48.195
+A weak baseline makes a protocol look helpful while an informed
+
+36
+00:02:48.195 --> 00:02:51.824
+direct-review baseline would perform as well or better.
+
+37
+00:02:51.824 --> 00:02:56.813
+Outcome auditing observes only an easy or selected task cohort and
+
+38
+00:02:56.813 --> 00:02:59.535
+hides capability-gap, calibration, or distribution-shift failures.
+
+39
+00:02:59.875 --> 00:03:03.844
+The correct response is to stop, narrow, quarantine, compensate,
+
+40
+00:03:03.844 --> 00:03:08.255
+or retain an owned residual rather than narrate uncertainty away.
+
+41
+00:03:08.855 --> 00:03:13.901
+This chapter remains Design rationale at argument support. Its contracts, examples,
+
+42
+00:03:13.901 --> 00:03:18.030
+tests, or local artifacts establish only their encoded scope.
+
+43
+00:03:18.030 --> 00:03:23.076
+The chapter names proof targets rather than pretending they are already
+
+44
+00:03:23.076 --> 00:03:23.535
+closed.
+
+45
+00:03:23.875 --> 00:03:29.915
+A reachable high-risk review lifecycle without an independent outcome-audit record blocks
+
+46
+00:03:29.915 --> 00:03:35.405
+bounded-use adjudication without mutating lifecycle state or inferring reviewer competence.
+
+47
+00:03:35.745 --> 00:03:40.705
+A complete versioned review lifecycle emits only one bounded-use handoff to
+
+48
+00:03:40.705 --> 00:03:45.665
+its named consumer and assigns neither support nor an external effect.
+
+49
+00:03:45.665 --> 00:03:50.625
+Missing bound evidence views block review recording without mutating lifecycle state.
+
+50
+00:03:51.225 --> 00:03:56.189
+No chapter claim or evidence state is promoted by this visual.
+
+51
+00:03:56.189 --> 00:04:01.153
+A named mechanism is not proof of correct implementation or useful
+
+52
+00:04:01.153 --> 00:04:06.117
+deployment. A local check or formal model does not establish real-world
+
+53
+00:04:06.117 --> 00:04:10.630
+enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.
+
+54
+00:04:10.970 --> 00:04:15.445
+These boundaries matter because an explanatory derivative is useful only if
+
+55
+00:04:15.445 --> 00:04:18.700
+it preserves the evidence ceiling of its source.
+
+56
+00:04:19.300 --> 00:04:24.268
+At most, this visual explains the chapter's design rationale at argument
+
+57
+00:04:24.268 --> 00:04:28.784
+support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI,
+
+58
+00:04:28.784 --> 00:04:33.752
+or ASI result. The next chapter is Human Intent as a
+
+59
+00:04:33.752 --> 00:04:34.655
+Formal Input.
+
+60
+00:04:34.995 --> 00:04:40.782
+It takes responsibility for A natural-language request can mix desired outcome,
+
+61
+00:04:40.782 --> 00:04:46.569
+preferences, emotion, assumptions, source and privacy constraints, affected parties, risk tolerance,
+
+62
+00:04:46.569 --> 00:04:49.725
+authority, acceptance evidence, and stop conditions.

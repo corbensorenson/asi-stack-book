@@ -1,0 +1,154 @@
+{
+  "schema_version": "asi_stack.visual_chapter_packet.v1",
+  "video_id": "asi-video-rankfold-neuralfold-and-artifact-compression",
+  "chapter_id": "rankfold-neuralfold-and-artifact-compression",
+  "chapter_path": "chapters/rankfold-neuralfold-and-artifact-compression.qmd",
+  "chapter_sha256": "295defac19eb4742c4a5691a5f69edf830973890885fdff2ee9d071792840b17",
+  "source_commit": "f10ef079ecfeb48503407d67832a0251f77c2c78",
+  "pilot": false,
+  "lifecycle_state": "ready_not_published",
+  "claim_bindings": [
+    {
+      "claim_id": "rankfold-neuralfold-and-artifact-compression.core",
+      "claim_label": "Design rationale",
+      "support_state": "argument"
+    }
+  ],
+  "assigned_source_ids": [
+    "rankfold_neuralfold",
+    "rankfold_compressor",
+    "bbvca_v9",
+    "cgs",
+    "bugbrain",
+    "ext_raptor_2024",
+    "precision_contract"
+  ],
+  "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result.",
+  "required_content": {
+    "problem": "The stack needs artifact-level and tensor-level compression strategies that remain honest about residuals and utility. Storage savings are not enough if compressed artifacts lose semantics, break downstream use, or require expensive fallback too often.",
+    "core_mechanism": "A compressed artifact may enter a downstream route only through an artifact-, consumer-, use-, access-pattern-, decoder-, platform-, and time-specific admission lease that preserves the full source, separates representation, reconstruction, ratio, utility, latency, and evidentiary-authority claims, counts every byte and operation, exercises probes and fallback, and expires or quarantines on drift; RankFold/NeuralFold remains a bounded candidate implementation, and no compact form inherits the source artifact's authority. Freeze the source artifact digest, custody, rights, retention class, and preserved full-artifact fallback before encoding.",
+    "worked_trace": "Two retained finite probe/fallback and metadata countermodels plus an eight-declaration, eight-stage, 53-route artifact-to-consumption lifecycle; an independent consumer rejects 44/44 non-accepting mutations and digest-binds the exact compressed-artifact fixture, RAW0 replay, NEURAL0 metadata import, and two no-change decisions. One failed-probe route reaches fallback preparation, one qualified-use witness reaches closure, and support/effect authority remains none. Seventeen projections and theorem-per-record consequences are retired. This is bounded policy/conformance and artifact-identity evidence, not codec correctness, NeuralFold reproduction, useful compression, semantic preservation, downstream utility, deployed fallback, transfer, or SOTA evidence.",
+    "failure_boundary": "Rare critical clauses, code paths, diagrams, formatting, or provenance are damaged while common probes pass. The probe distribution is unrepresentative, leaked, too small, or optimized by the encoder. Metadata, residuals, code, environments, indexes, replicas, and preserved fallbacks erase the reported ratio. Encode, decode, verification, or fallback latency erases savings at the declared access pattern.",
+    "evidence_state": "This chapter remains Design rationale at argument support. Its contracts, examples, tests, or local artifacts establish only their encoded scope. A reachable artifact-to-consumption lifecycle requires full-source custody, exact identities, reconstruction checks, consumer probes, executable fallback, observed outcomes, and closure before a qualified use can complete. Failed probes route to fallback, exact-replay gaps block use, raw ratios cannot promote support, and missing evidence transitions block consumption.",
+    "non_claims": "No chapter claim or evidence state is promoted by this visual. A named mechanism is not proof of correct implementation or useful deployment. A local check or formal model does not establish real-world enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.",
+    "handoff": "The next chapter is Resource Economics and Token Budgets. It takes responsibility for Compute, context, verification, simulation fidelity, and human attention are scarce resources that the architecture must allocate explicitly."
+  },
+  "artifacts": {
+    "storyboard": "visual_edition/chapters/rankfold-neuralfold-and-artifact-compression/storyboard.md",
+    "scene_code": "visual_edition/chapters/rankfold-neuralfold-and-artifact-compression/scene.py",
+    "narration_script": "visual_edition/chapters/rankfold-neuralfold-and-artifact-compression/narration.txt",
+    "captions": "visual_edition/chapters/rankfold-neuralfold-and-artifact-compression/captions.vtt",
+    "descriptive_transcript": "visual_edition/chapters/rankfold-neuralfold-and-artifact-compression/transcript.md",
+    "thumbnail": "visual_edition/chapters/rankfold-neuralfold-and-artifact-compression/thumbnail.svg",
+    "scene_spec": "visual_edition/chapters/rankfold-neuralfold-and-artifact-compression/scene_spec.json",
+    "thumbnail_alt_text": "A governed route diagram for RankFold, NeuralFold, and Artifact Compression shows three named mechanism cards above a labeled failure and evidence boundary."
+  },
+  "render_receipt": {
+    "receipt_state": "current_final_av_master",
+    "validation_state": "validated",
+    "rendered_at_utc": "2026-07-30T03:33:50Z",
+    "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+    "toolchain_qualification": "qualified_for_all_non_latex_chapters",
+    "render_profile": "final_av_master",
+    "command": "Render the exact-timing ChapterVisualAbstract with pinned ManimCE 0.20.1 at 1920x1080/30, render pinned Kokoro-82M af_heart narration at speed 1.08 with a hard maximum of 300 characters per synthesis call and -16 LUFS, then align all seven visual scenes to the exact audio paragraph boundaries and mux with FFmpeg 8.0.1 as H.264 CRF 18 yuv420p plus AAC-LC 192 kb/s 48 kHz mono.",
+    "duration_seconds": 287.415,
+    "pixel_width": 1920,
+    "pixel_height": 1080,
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "output_sha256": "c0828cc62583453c40e2865da5c5c4aa27f02b25cb93cc9878905d9824a6bf77",
+    "mux_receipt_sha256": "c888bcbe7a2c23132a6ccba7692dc2df0b0c43b6e4d6502bd6686c835b7a52d7",
+    "output_storage": "ignored build/visual_edition media only",
+    "visual_review": {
+      "draft_sample_seconds": [
+        10.988,
+        48.56,
+        103.653,
+        151.708,
+        198.0,
+        238.782,
+        270.118
+      ],
+      "release_sample_seconds": [
+        48.56,
+        238.782
+      ],
+      "result": "pass",
+      "review_scope": "Exact mux-receipt midpoint sampling across all seven narration scenes checked composition, legibility, persistent labels, color-plus-shape semantics, evidence ceiling, non-claims, end-card identity, and absence of clipping or overflowing text."
+    },
+    "audio_master": {
+      "identity": "Kokoro-82M bf16 af_heart via kokoro-mlx 0.1.2 at speed 1.08",
+      "provenance": "Locally generated from the canonical narration with the pinned Apache-2.0 Kokoro-82M model and MIT kokoro-mlx implementation recorded in visual_edition/narration_toolchain.json.",
+      "publication_rights_state": "cleared",
+      "duration_seconds": 287.415,
+      "sha256": "af46b209d866e4f4a86a9413dcf2371178feaead750c258a42d36d2693a2025c"
+    },
+    "caption_review": {
+      "state": "machine_audited",
+      "audit_method": "Exact receipt-derived canonical timing plus local MLX Whisper transcript comparison and complete beginning/end coverage checks.",
+      "reviewed_against_audio_sha256": "af46b209d866e4f4a86a9413dcf2371178feaead750c258a42d36d2693a2025c",
+      "asr_model": "mlx-community/whisper-small.en-mlx@52a88bf6e98b114a210c21bb83e22d6e1505cb73",
+      "asr_word_error_rate": 0.015203,
+      "terminology": "pass",
+      "timing": "pass",
+      "non_speech_information": "pass",
+      "material_visual_changes": "described_in_adjacent_transcript"
+    },
+    "artifact_sha256": {
+      "storyboard": "7216a0ee99956d7d9f4e1df9df20e46dfb3bbd51b0fcbc8d7b17efe51bcf9b4a",
+      "scene_code": "a42140fee56a5fa68fb88bc64b048e952944749272567a72db38aa778418a329",
+      "narration_script": "fd55ab39f1e4a899715fed43aab67d0f0c175afa5db63478c49d27c48828ec77",
+      "captions": "e3653ad9c09ad2ad5d479eba1e3c291732f95b6a2969c7c3aefe88ba52e09860",
+      "descriptive_transcript": "7f2bd5ea2ed33076d7d81b1bdd2d3cc82f78ef0096614aa4271d81602bd2a10f",
+      "thumbnail": "5dc9c9cf04baa0fa659ec3ab0dd102222b87aac4b50212e9636dcf0d5604be17",
+      "scene_spec": "02f25a0244813cc916d0a7952126162d041ed8267d98c0fde2cf914b4ab5b70e"
+    },
+    "remaining_release_gates": [
+      "obtain exact action-time authority before any YouTube or playlist mutation"
+    ]
+  },
+  "youtube": {
+    "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+    "video_id": null,
+    "watch_url": null,
+    "playlist_id": null,
+    "generation": 0,
+    "publication_state": "not_authorized",
+    "uploaded_output_sha256": null,
+    "bound_chapter_sha256": null,
+    "bound_source_commit": null,
+    "published_at_utc": null,
+    "platform_receipt_path": null,
+    "supersedes_video_id": null
+  },
+  "quarto_embed": {
+    "state": "absent_until_published",
+    "chapter_anchor": "visual-abstract",
+    "frame_title": "Visual abstract: RankFold, NeuralFold, and Artifact Compression",
+    "aria_label": "Play the visual abstract for RankFold, NeuralFold, and Artifact Compression"
+  },
+  "staleness": {
+    "state": "current",
+    "checked_chapter_sha256": "295defac19eb4742c4a5691a5f69edf830973890885fdff2ee9d071792840b17",
+    "triggers": [
+      "core_claim",
+      "mechanism",
+      "worked_trace",
+      "evidence_state",
+      "non_claim",
+      "material_source",
+      "chapter_identity",
+      "handoff",
+      "public_url"
+    ]
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This derivative video does not promote or otherwise change any book claim.",
+    "The validated local final master is not a YouTube upload or a public publication.",
+    "Automated intelligibility and caption audits do not establish that every listener will prefer the synthetic voice.",
+    "A successful animation render does not establish deployment, safety, efficiency, transfer, state of the art, AGI, or ASI."
+  ]
+}

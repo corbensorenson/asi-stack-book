@@ -1,0 +1,70 @@
+{
+  "chapter_id": "open-research-agenda-and-bibliography-plan",
+  "title": "Open Research Agenda and Bibliography Plan",
+  "subtitle": "Open Research Agenda and Bibliography Plan owns a research-program-, source-or-gap-, backlog-item-, access-, provenance-, public-safety-… citation accuracy, literature completeness, research quality, claim support, reproduction, transfer, AGI, ASI, or SOTA.",
+  "archetype": "before_after",
+  "claim_label": "Design rationale",
+  "evidence_level": "argument",
+  "next_title": "ASI Is a Stack, Not a Model",
+  "display": {
+    "problem": "The book needs a managed research backlog and bibliography plan so new papers can be inserted without destabilizing the architecture.",
+    "insufficient": "A pile of sources or ad hoc citations does not… writing agents what to load, compare, prove, test, or defer.",
+    "mechanism": [
+      {
+        "label": "Freeze research-program purpose",
+        "detail": "Freeze the research-program purpose, intake window, source… public-safety boundary, consumers, environments, time, and non-claims."
+      },
+      {
+        "label": "Assign stable identities every",
+        "detail": "Assign stable identities to every source, version… reproduction, residual, correction, owner, action, and closure."
+      },
+      {
+        "label": "Candidate material provenance",
+        "detail": "Inventory candidate material before use and record… permission, public-safety state, and canonical source note."
+      },
+      {
+        "label": "Intake unread inventoried cached",
+        "detail": "Classify intake as unread, inventoried, cached, source-noted… duplicate, superseded, or retired without collapsing states."
+      }
+    ],
+    "trace": [
+      "Freeze research-program purpose",
+      "Assign stable identities every",
+      "Candidate material provenance",
+      "Intake unread inventoried cached"
+    ],
+    "failures": [
+      "Citation drift points a claim to… URL, correction, retraction, or access state.",
+      "Bibliographic hallucination fills missing metadata, passages… relationships because a record looks incomplete.",
+      "Unread-source laundering promotes titles, abstracts, citations… secondary descriptions as inspected support.",
+      "Inventory theater treats source counts, notes… research quality or literature completeness."
+    ],
+    "proof_targets": [
+      "A source-derived claim with neither a source… ingested artifact fails the finite source-evidence predicate.",
+      "An accepted new-source assignment to a nonexistent chapter fails the finite assignment predicate.",
+      "Bibliographic metadata is copied from inspected authoritative… version are never inferred for completion."
+    ],
+    "evidence_ceiling": "This chapter remains Design rationale at argument support.",
+    "nonclaims": [
+      "No chapter claim or evidence state is promoted by this visual.",
+      "A named mechanism is not proof of correct implementation or useful deployment.",
+      "A local check or formal model does not establish real-world enforcement.",
+      "No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows."
+    ],
+    "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result."
+  },
+  "timing": {
+    "basis": "exact_narration_paragraph_boundaries",
+    "narration_receipt_sha256": "9da229a187647725fa5dabb1407368a9f729022df084d6a83a7ae0a6c468be5f",
+    "target_duration_seconds": 286.79,
+    "scene_endpoints_seconds": [
+      22.15,
+      83.065,
+      140.93,
+      189.6,
+      230.345,
+      258.42,
+      286.79
+    ]
+  }
+}

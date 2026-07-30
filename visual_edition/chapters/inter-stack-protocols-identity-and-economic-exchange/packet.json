@@ -1,0 +1,158 @@
+{
+  "schema_version": "asi_stack.visual_chapter_packet.v1",
+  "video_id": "asi-video-inter-stack-protocols-identity-and-economic-exchange",
+  "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
+  "chapter_path": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd",
+  "chapter_sha256": "b7c88752f839811d5d7fad8af4d560a7478800f2482861534a39be49b92a91f5",
+  "source_commit": "f10ef079ecfeb48503407d67832a0251f77c2c78",
+  "pilot": false,
+  "lifecycle_state": "ready_not_published",
+  "claim_bindings": [
+    {
+      "claim_id": "inter-stack-protocols-identity-and-economic-exchange.core",
+      "claim_label": "Design rationale",
+      "support_state": "argument"
+    }
+  ],
+  "assigned_source_ids": [
+    "ext_mcp_protocol_2025_11_25",
+    "platonic_world_model",
+    "ext_a2a_protocol_1_0_0",
+    "ext_w3c_did_core_1_0_2022",
+    "ext_w3c_vc_data_model_2_0_2025",
+    "ext_interledger_protocol_v4",
+    "talos",
+    "vcm_public",
+    "tokenmana",
+    "ext_owasp_agentic_top_10_2026",
+    "qcsa_whitepaper"
+  ],
+  "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result.",
+  "required_content": {
+    "problem": "Local planning, context, artifact, and runtime contracts lose their binding when a request crosses to an independently operated protocol endpoint, agent, service, or value network without a record that separates peer identity, delegated authority, economic commitment, result evidence, revocation, and residual ownership.",
+    "core_mechanism": "A governed stack routes each cross-stack request through a versioned exchange contract that binds protocol and schema version, sender and receiver identities, endpoint and capability declaration, requested task or artifact, principal and delegated authority, credential verification, audience, scope, expiry, budget or consideration, expected receipt, dispute and revocation paths, and residual owner; an absent, mismatched, expired, revoked, unverified, or budget-unreserved required record blocks dispatch or routes accountable review, but does not itself establish peer trustworthiness, task or artifact truth, effect safety, payment settlement, legal validity, economic fairness, privacy, authorization correctness, or ASI.",
+    "worked_trace": "Nine digest-bound synthetic exchange records and eleven rejecting mutations bridge owned Lean routes for complete local handoff, missing sender, audience mismatch, expiry, invalid or revoked credentials, missing reserved budget, disputed receipt, and missing residual ownership. No peer, protocol, credential, payment, account, or remote effect ran. Represent owner, operator, peer, endpoint, agent, user, principal, subject, issuer, holder, verifier, and payee as separable roles rather than aliases. Bind task and artifact semantics to a namespace, version, digest, expected deliverable, acceptance predicate, and originating contract. Record endpoint and capability declarations as expiring, provenance-bearing, untrusted advertisements rather than trust or competence evidence.",
+    "failure_boundary": "Capability-card theater treats a self-described endpoint as a trusted, competent, authorized, or safe peer. Actor conflation treats an endpoint, owner, operator, agent, user, principal, credential subject, and payee as one actor. Credential laundering turns a structurally valid or cryptographically verified presentation into trust, authorization, competence, or current status. Delegation or deputy laundering widens a forwarded grant outside the originating principal's audience, capability, scope, expiry, or non-delegation rule.",
+    "evidence_state": "This chapter remains Design rationale at argument support. Its contracts, examples, tests, or local artifacts establish only their encoded scope. A finite requested cross-stack exchange with required invalid credential verification routes to denial rather than ordinary local dispatch, without inferring identity trust, task truth, authorization correctness, payment settlement, or ASI.",
+    "non_claims": "No chapter claim or evidence state is promoted by this visual. A named mechanism is not proof of correct implementation or useful deployment. A local check or formal model does not establish real-world enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.",
+    "handoff": "The next chapter is Multi-Agent Dynamics, Collective Intelligence, and Systemic Risk. It takes responsibility for Individually valid agents and pairwise exchanges can compose into miscoordination, conflict, collusion, coalitions, cascades, concentration, common-mode failure, and gradual human disempowerment."
+  },
+  "artifacts": {
+    "storyboard": "visual_edition/chapters/inter-stack-protocols-identity-and-economic-exchange/storyboard.md",
+    "scene_code": "visual_edition/chapters/inter-stack-protocols-identity-and-economic-exchange/scene.py",
+    "narration_script": "visual_edition/chapters/inter-stack-protocols-identity-and-economic-exchange/narration.txt",
+    "captions": "visual_edition/chapters/inter-stack-protocols-identity-and-economic-exchange/captions.vtt",
+    "descriptive_transcript": "visual_edition/chapters/inter-stack-protocols-identity-and-economic-exchange/transcript.md",
+    "thumbnail": "visual_edition/chapters/inter-stack-protocols-identity-and-economic-exchange/thumbnail.svg",
+    "scene_spec": "visual_edition/chapters/inter-stack-protocols-identity-and-economic-exchange/scene_spec.json",
+    "thumbnail_alt_text": "A governed timeline diagram for Inter-Stack Protocols, Identity, and Economic Exchange shows three named mechanism cards above a labeled failure and evidence boundary."
+  },
+  "render_receipt": {
+    "receipt_state": "current_final_av_master",
+    "validation_state": "validated",
+    "rendered_at_utc": "2026-07-30T03:25:34Z",
+    "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+    "toolchain_qualification": "qualified_for_all_non_latex_chapters",
+    "render_profile": "final_av_master",
+    "command": "Render the exact-timing ChapterVisualAbstract with pinned ManimCE 0.20.1 at 1920x1080/30, render pinned Kokoro-82M af_heart narration at speed 1.08 with a hard maximum of 300 characters per synthesis call and -16 LUFS, then align all seven visual scenes to the exact audio paragraph boundaries and mux with FFmpeg 8.0.1 as H.264 CRF 18 yuv420p plus AAC-LC 192 kb/s 48 kHz mono.",
+    "duration_seconds": 310.866667,
+    "pixel_width": 1920,
+    "pixel_height": 1080,
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "output_sha256": "87eaa8a3c19025d12c0aaf6ad0aeddcb38521dfd51a5a31555f55880b406de98",
+    "mux_receipt_sha256": "25f0caf8eb803a5fc18df013879d4fe4329b05f7414f85e32cd409d899fe8e2f",
+    "output_storage": "ignored build/visual_edition media only",
+    "visual_review": {
+      "draft_sample_seconds": [
+        25.395,
+        75.537,
+        128.355,
+        179.085,
+        226.017,
+        264.327,
+        294.613
+      ],
+      "release_sample_seconds": [
+        75.537,
+        264.327
+      ],
+      "result": "pass",
+      "review_scope": "Exact mux-receipt midpoint sampling across all seven narration scenes checked composition, legibility, persistent labels, color-plus-shape semantics, evidence ceiling, non-claims, end-card identity, and absence of clipping or overflowing text."
+    },
+    "audio_master": {
+      "identity": "Kokoro-82M bf16 af_heart via kokoro-mlx 0.1.2 at speed 1.08",
+      "provenance": "Locally generated from the canonical narration with the pinned Apache-2.0 Kokoro-82M model and MIT kokoro-mlx implementation recorded in visual_edition/narration_toolchain.json.",
+      "publication_rights_state": "cleared",
+      "duration_seconds": 310.866667,
+      "sha256": "053ef97067cb5e39ab3b99d7d0e00dbf92b583b8a09fb6f60ba3ad5989d1bc0c"
+    },
+    "caption_review": {
+      "state": "machine_audited",
+      "audit_method": "Exact receipt-derived canonical timing plus local MLX Whisper transcript comparison and complete beginning/end coverage checks.",
+      "reviewed_against_audio_sha256": "053ef97067cb5e39ab3b99d7d0e00dbf92b583b8a09fb6f60ba3ad5989d1bc0c",
+      "asr_model": "mlx-community/whisper-small.en-mlx@52a88bf6e98b114a210c21bb83e22d6e1505cb73",
+      "asr_word_error_rate": 0.015848,
+      "terminology": "pass",
+      "timing": "pass",
+      "non_speech_information": "pass",
+      "material_visual_changes": "described_in_adjacent_transcript"
+    },
+    "artifact_sha256": {
+      "storyboard": "658fc681c835f1b2357bf4a32e26f922ede8da5c9bb0a2b2bc9e404806fa45b3",
+      "scene_code": "abdd3aa681dacf5042d246c9f039e4f40f035553b5908d7d809bbf40d4c4a44a",
+      "narration_script": "f6975b431e25572d0592ff7509ab7f2de097a1f5948c875df1998dc3e96271fa",
+      "captions": "522a4207d44e7d3ddccf31a0aecacea80465973dd5abdbcc7b71b42d1aa2a125",
+      "descriptive_transcript": "7efb8f1df15ab97df258c6d80f6a5b668a4cc87ea1f874f288cf4c7ac2cfc825",
+      "thumbnail": "3fe528fee596d36f4814640308790b4c23a65970cc99157e480882756571a855",
+      "scene_spec": "330a5cd3630a66cb1e055587aa5733987de788bb54496ecf30836963ac8ff51e"
+    },
+    "remaining_release_gates": [
+      "obtain exact action-time authority before any YouTube or playlist mutation"
+    ]
+  },
+  "youtube": {
+    "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+    "video_id": null,
+    "watch_url": null,
+    "playlist_id": null,
+    "generation": 0,
+    "publication_state": "not_authorized",
+    "uploaded_output_sha256": null,
+    "bound_chapter_sha256": null,
+    "bound_source_commit": null,
+    "published_at_utc": null,
+    "platform_receipt_path": null,
+    "supersedes_video_id": null
+  },
+  "quarto_embed": {
+    "state": "absent_until_published",
+    "chapter_anchor": "visual-abstract",
+    "frame_title": "Visual abstract: Inter-Stack Protocols, Identity, and Economic Exchange",
+    "aria_label": "Play the visual abstract for Inter-Stack Protocols, Identity, and Economic Exchange"
+  },
+  "staleness": {
+    "state": "current",
+    "checked_chapter_sha256": "b7c88752f839811d5d7fad8af4d560a7478800f2482861534a39be49b92a91f5",
+    "triggers": [
+      "core_claim",
+      "mechanism",
+      "worked_trace",
+      "evidence_state",
+      "non_claim",
+      "material_source",
+      "chapter_identity",
+      "handoff",
+      "public_url"
+    ]
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This derivative video does not promote or otherwise change any book claim.",
+    "The validated local final master is not a YouTube upload or a public publication.",
+    "Automated intelligibility and caption audits do not establish that every listener will prefer the synthetic voice.",
+    "A successful animation render does not establish deployment, safety, efficiency, transfer, state of the art, AGI, or ASI."
+  ]
+}

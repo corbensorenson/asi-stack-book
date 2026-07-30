@@ -1,0 +1,167 @@
+{
+  "schema_version": "asi_stack.visual_chapter_packet.v1",
+  "video_id": "asi-video-cognitive-compilation-and-semantic-ir",
+  "chapter_id": "cognitive-compilation-and-semantic-ir",
+  "chapter_path": "chapters/cognitive-compilation-and-semantic-ir.qmd",
+  "chapter_sha256": "25752cddca2172607f9394ed80509758689b9b7f16f8d54b5b707e4529fd8833",
+  "source_commit": "f10ef079ecfeb48503407d67832a0251f77c2c78",
+  "pilot": false,
+  "lifecycle_state": "ready_not_published",
+  "claim_bindings": [
+    {
+      "claim_id": "cognitive-compilation-and-semantic-ir.core",
+      "claim_label": "Design rationale",
+      "support_state": "argument"
+    }
+  ],
+  "assigned_source_ids": [
+    "cognitive_compilation",
+    "deterministic_capability_compilation",
+    "platonic_world_model",
+    "planforge_compiler_arch",
+    "genesiscode",
+    "treellm",
+    "viea",
+    "cca_project",
+    "moecot_manifest_project",
+    "corbens_best_model_possible_project",
+    "qcsa_whitepaper",
+    "ext_pddl_1998",
+    "ext_shop2_2003",
+    "ext_tree_of_thoughts_2023",
+    "ext_dreamcoder_2020",
+    "ext_llvm_langref_docs",
+    "ext_mlir_2020",
+    "ext_translation_validation_1998",
+    "kernel_english_residual_compiler",
+    "relational_dimension_compiler"
+  ],
+  "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result.",
+  "required_content": {
+    "problem": "After Planning admits an obligation for lowering, the stack still has to translate it across source contracts, semantic representations, target representations, and concrete artifacts without losing meaning, authority, non-goals, evidence boundaries, repair identity, or residuals. Direct generation can produce a fluent target while silently changing the very obligation that justified it.",
+    "core_mechanism": "Cognitive Compilation should own a versioned, consumer- and target-relative translation contract that lowers an already accepted plan obligation through source, semantic, and target representations into a concrete artifact candidate while preserving addressable obligation, non-goal, authority, rights, assumption, source/context, evidence, resource, verifier, repair, and residual lineage. Every pass binds typed source and target semantics; declared normalization, loss, and ambiguity; preconditions and postconditions; dependencies; deterministic and nondeterministic inputs; compiler and validator identities; costs; receipts; and failure consequences.",
+    "worked_trace": "The current minimum is a record-and-bounded-reference scaffold: a semantic-atom schema; two valid and four rejecting hand-authored compilation traces; one blocked three-project semantic-preservation record and nine rejecting mutations; fourteen Lean theorem declarations grouped under three targets; and the QCSA reference package, whose 60 synthetic cases across 13 systems and three seeds produced 2,340 predictions plus one 13-stage zero-model temporary-file trace with ten rejecting adversarial paths and one byte-exact rollback.",
+    "failure_boundary": "Source-meaning capture or compiler hallucination turns a mistaken interpretation into precise IR. Obligation, non-goal, authority, rights, affected-party, evidence, stop, recovery, or residual loss occurs during parsing or lowering. IR drift changes field, type, unit, quantifier, precedence, identity, dependency, or semantics across passes. Schema and type theater treats well-formed records as correct meaning or acceptable artifacts.",
+    "evidence_state": "This chapter remains Design rationale at argument support. Its contracts, examples, tests, or local artifacts establish only their encoded scope. Every accepted target in the finite reachable lowering model preserves the exact plan, three represented obligations, source constraint, target identity, approved authority, and lowering/validation custody. A material repair can return to validated state only with localized scope, exact affected-obligation preservation, a one-step repair-ledger version increment, and a ledger receipt; open residuals block acceptance.",
+    "non_claims": "No chapter claim or evidence state is promoted by this visual. A named mechanism is not proof of correct implementation or useful deployment. A local check or formal model does not establish real-world enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.",
+    "handoff": "The next chapter is The Virtual Context ABI: Typed Pages, Cells, and Certificates. It takes responsibility for Between durable memory and a model's finite working context lies a static translation boundary: a consumer must request an exact purpose, object or address, snapshot, representation, authority, use, adequacy target."
+  },
+  "artifacts": {
+    "storyboard": "visual_edition/chapters/cognitive-compilation-and-semantic-ir/storyboard.md",
+    "scene_code": "visual_edition/chapters/cognitive-compilation-and-semantic-ir/scene.py",
+    "narration_script": "visual_edition/chapters/cognitive-compilation-and-semantic-ir/narration.txt",
+    "captions": "visual_edition/chapters/cognitive-compilation-and-semantic-ir/captions.vtt",
+    "descriptive_transcript": "visual_edition/chapters/cognitive-compilation-and-semantic-ir/transcript.md",
+    "thumbnail": "visual_edition/chapters/cognitive-compilation-and-semantic-ir/thumbnail.svg",
+    "scene_spec": "visual_edition/chapters/cognitive-compilation-and-semantic-ir/scene_spec.json",
+    "thumbnail_alt_text": "A governed timeline diagram for Cognitive Compilation and Semantic IR shows three named mechanism cards above a labeled failure and evidence boundary."
+  },
+  "render_receipt": {
+    "receipt_state": "current_final_av_master",
+    "validation_state": "validated",
+    "rendered_at_utc": "2026-07-30T03:18:08Z",
+    "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+    "toolchain_qualification": "qualified_for_all_non_latex_chapters",
+    "render_profile": "final_av_master",
+    "command": "Render the exact-timing ChapterVisualAbstract with pinned ManimCE 0.20.1 at 1920x1080/30, render pinned Kokoro-82M af_heart narration at speed 1.08 with a hard maximum of 300 characters per synthesis call and -16 LUFS, then align all seven visual scenes to the exact audio paragraph boundaries and mux with FFmpeg 8.0.1 as H.264 CRF 18 yuv420p plus AAC-LC 192 kb/s 48 kHz mono.",
+    "duration_seconds": 301.535,
+    "pixel_width": 1920,
+    "pixel_height": 1080,
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "output_sha256": "226b5d7429886d74990b31fce4542f364134f9ece115b50a6cf5dffa647616b3",
+    "mux_receipt_sha256": "029947dc81bc073d9507373ca068636cbb0bffce5dfc0f6d3d940e3941ffcdea",
+    "output_storage": "ignored build/visual_edition media only",
+    "visual_review": {
+      "draft_sample_seconds": [
+        25.445,
+        82.522,
+        135.252,
+        176.71,
+        218.505,
+        253.978,
+        284.775
+      ],
+      "release_sample_seconds": [
+        82.522,
+        253.978
+      ],
+      "result": "pass",
+      "review_scope": "Exact mux-receipt midpoint sampling across all seven narration scenes checked composition, legibility, persistent labels, color-plus-shape semantics, evidence ceiling, non-claims, end-card identity, and absence of clipping or overflowing text."
+    },
+    "audio_master": {
+      "identity": "Kokoro-82M bf16 af_heart via kokoro-mlx 0.1.2 at speed 1.08",
+      "provenance": "Locally generated from the canonical narration with the pinned Apache-2.0 Kokoro-82M model and MIT kokoro-mlx implementation recorded in visual_edition/narration_toolchain.json.",
+      "publication_rights_state": "cleared",
+      "duration_seconds": 301.535,
+      "sha256": "878bbcb954b80999accabf00f9ad2ec3593e960dbec95afcbfb9559ef5859b1a"
+    },
+    "caption_review": {
+      "state": "machine_audited",
+      "audit_method": "Exact receipt-derived canonical timing plus local MLX Whisper transcript comparison and complete beginning/end coverage checks.",
+      "reviewed_against_audio_sha256": "878bbcb954b80999accabf00f9ad2ec3593e960dbec95afcbfb9559ef5859b1a",
+      "asr_model": "mlx-community/whisper-small.en-mlx@52a88bf6e98b114a210c21bb83e22d6e1505cb73",
+      "asr_word_error_rate": 0.019481,
+      "terminology": "pass",
+      "timing": "pass",
+      "non_speech_information": "pass",
+      "material_visual_changes": "described_in_adjacent_transcript"
+    },
+    "artifact_sha256": {
+      "storyboard": "05cf46b82637b4a17563a7dbad9958ed3f6d9f88369765618f71a7b08fc0d319",
+      "scene_code": "1a090caf988e5447c8ef5433187b63b42d32a63cfaae02fd24cbb78ac623ce7f",
+      "narration_script": "3f0c94c223f42fa6c7c13ad81708d1ed9eacce9263b088de0f55a2f909e7402f",
+      "captions": "17835aed167cd5b0708aeb492a480fc24810531448ab0bc60a6a2ae5a09fc564",
+      "descriptive_transcript": "29e73051b00064568d1061f001c46f336f4e09fa05139bb7c77ab6577c4c8992",
+      "thumbnail": "4099722cbdf96a98bde738d9e0b2aeccda7e2e753311641786c68cb8c55f4a26",
+      "scene_spec": "5aadd2c6606fe5692aea5b1ec3c053bba9d813b0ff1f362795c94252ca12928c"
+    },
+    "remaining_release_gates": [
+      "obtain exact action-time authority before any YouTube or playlist mutation"
+    ]
+  },
+  "youtube": {
+    "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+    "video_id": null,
+    "watch_url": null,
+    "playlist_id": null,
+    "generation": 0,
+    "publication_state": "not_authorized",
+    "uploaded_output_sha256": null,
+    "bound_chapter_sha256": null,
+    "bound_source_commit": null,
+    "published_at_utc": null,
+    "platform_receipt_path": null,
+    "supersedes_video_id": null
+  },
+  "quarto_embed": {
+    "state": "absent_until_published",
+    "chapter_anchor": "visual-abstract",
+    "frame_title": "Visual abstract: Cognitive Compilation and Semantic IR",
+    "aria_label": "Play the visual abstract for Cognitive Compilation and Semantic IR"
+  },
+  "staleness": {
+    "state": "current",
+    "checked_chapter_sha256": "25752cddca2172607f9394ed80509758689b9b7f16f8d54b5b707e4529fd8833",
+    "triggers": [
+      "core_claim",
+      "mechanism",
+      "worked_trace",
+      "evidence_state",
+      "non_claim",
+      "material_source",
+      "chapter_identity",
+      "handoff",
+      "public_url"
+    ]
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This derivative video does not promote or otherwise change any book claim.",
+    "The validated local final master is not a YouTube upload or a public publication.",
+    "Automated intelligibility and caption audits do not establish that every listener will prefer the synthetic voice.",
+    "A successful animation render does not establish deployment, safety, efficiency, transfer, state of the art, AGI, or ASI."
+  ]
+}

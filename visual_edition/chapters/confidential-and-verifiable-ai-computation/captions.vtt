@@ -1,0 +1,269 @@
+WEBVTT
+
+NOTE
+Canonical written narration timed from the exact local narration render receipt.
+Pronunciation-only substitutions are intentionally absent from caption text.
+
+1
+00:00:00.060 --> 00:00:04.579
+This chapter asks a specific question: AI computation increasingly crosses distrust
+
+2
+00:00:04.579 --> 00:00:07.866
+boundaries: a user may need to hide inputs,
+
+3
+00:00:07.866 --> 00:00:12.386
+a provider may need to protect weights, an auditor may need
+
+4
+00:00:12.386 --> 00:00:14.440
+to verify the executed artifact,
+
+5
+00:00:14.780 --> 00:00:20.482
+and every party may need output integrity without granting another party
+
+6
+00:00:20.482 --> 00:00:25.148
+unrestricted custody. Ordinary transport encryption ends before computation begins.
+
+7
+00:00:25.148 --> 00:00:30.850
+The tempting shortcut is insufficient: Privacy policy governs permitted information use,
+
+8
+00:00:30.850 --> 00:00:33.960
+while hardware custody governs stored artifacts.
+
+9
+00:00:34.300 --> 00:00:41.750
+Neither supplies a guarantee-by-guarantee execution contract covering input confidentiality, model confidentiality,
+
+10
+00:00:41.750 --> 00:00:48.523
+computation integrity, output authenticity, attestation freshness, leakage, verifier policy, cost,
+
+11
+00:00:48.523 --> 00:00:50.555
+and failure recovery.
+
+12
+00:00:51.155 --> 00:00:56.829
+The chapter's core claim is this: Confidential and verifiable AI requires
+
+13
+00:00:56.829 --> 00:01:01.988
+a compositional execution contract that names the adversary, protected assets,
+
+14
+00:01:01.988 --> 00:01:07.662
+permitted leakage, trust anchors, proof or attestation statement, verifier policy, freshness,
+
+15
+00:01:07.662 --> 00:01:09.210
+revocation, performance budget,
+
+16
+00:01:09.550 --> 00:01:14.902
+and authorization boundary; no primitive or attestation may be treated as
+
+17
+00:01:14.902 --> 00:01:19.280
+proof of semantic correctness, legitimate purpose, or end-to-end privacy.
+
+18
+00:01:19.620 --> 00:01:26.498
+Express the requested guarantee vector separately for input privacy, model privacy,
+
+19
+00:01:26.498 --> 00:01:32.125
+intermediate-state privacy, computation integrity, output authenticity, availability, and auditability.
+
+20
+00:01:32.465 --> 00:01:38.138
+Choose among FHE, MPC, zero-knowledge proofs, confidential execution, private retrieval,
+
+21
+00:01:38.138 --> 00:01:44.378
+differential privacy, or hybrid composition against an explicit adversary and leakage
+
+22
+00:01:44.378 --> 00:01:44.945
+model.
+
+23
+00:01:45.545 --> 00:01:49.575
+A concrete implementation trace makes the proposal testable.
+
+24
+00:01:49.915 --> 00:01:56.014
+A guarantee matrix and local demonstration for one bounded inference operation
+
+25
+00:01:56.014 --> 00:02:02.114
+with explicit adversary and leakage models, artifact and configuration commitments, freshness,
+
+26
+00:02:02.114 --> 00:02:05.995
+independent verification, native-versus-protected latency and cost accounting,
+
+27
+00:02:06.335 --> 00:02:12.153
+negative tests for replay and mismatched artifacts, and a no-authorization non-claim.
+
+28
+00:02:12.153 --> 00:02:17.443
+Choose among FHE, MPC, zero-knowledge proofs, confidential execution, private retrieval,
+
+29
+00:02:17.443 --> 00:02:23.261
+differential privacy, or hybrid composition against an explicit adversary and leakage
+
+30
+00:02:23.261 --> 00:02:23.790
+model.
+
+31
+00:02:24.130 --> 00:02:29.554
+Bind code, model, configuration, data commitments, platform state, nonce or epoch,
+
+32
+00:02:29.554 --> 00:02:34.485
+and policy identity into evidence that a distinct verifier appraises.
+
+33
+00:02:34.825 --> 00:02:40.756
+Keep cryptographic correctness, attested identity, model quality, semantic validity, user authorization,
+
+34
+00:02:40.756 --> 00:02:44.530
+and lawful purpose as separate claim classes.
+
+35
+00:02:45.130 --> 00:02:51.104
+The design can still fail. Guarantee laundering collapses confidentiality, integrity, privacy,
+
+36
+00:02:51.104 --> 00:02:57.079
+authorization, and correctness into one secure-compute label. Stale or replayed attestation
+
+37
+00:02:57.079 --> 00:03:02.510
+is accepted after artifact, platform, policy, or revocation state changed.
+
+38
+00:03:02.850 --> 00:03:08.731
+Side channels, outputs, access patterns, logs, caches, or failure timing leak
+
+39
+00:03:08.731 --> 00:03:14.078
+protected information. The proved computation faithfully executes the wrong model,
+
+40
+00:03:14.078 --> 00:03:18.355
+wrong preprocessing, wrong policy, or semantically invalid relation.
+
+41
+00:03:18.695 --> 00:03:22.664
+The correct response is to stop, narrow, quarantine, compensate,
+
+42
+00:03:22.664 --> 00:03:27.075
+or retain an owned residual rather than narrate uncertainty away.
+
+43
+00:03:27.675 --> 00:03:32.721
+This chapter remains Design rationale at argument support. Its contracts, examples,
+
+44
+00:03:32.721 --> 00:03:36.850
+tests, or local artifacts establish only their encoded scope.
+
+45
+00:03:36.850 --> 00:03:41.896
+The chapter names proof targets rather than pretending they are already
+
+46
+00:03:41.896 --> 00:03:42.355
+closed.
+
+47
+00:03:42.695 --> 00:03:48.782
+A finite protected-execution record may hand off only when guarantees, adversary,
+
+48
+00:03:48.782 --> 00:03:54.870
+leakage, artifact, freshness, verifier policy, fallback, and unsupported properties are explicit;
+
+49
+00:03:54.870 --> 00:03:59.850
+no theorem proves semantic correctness, authorization, or end-to-end privacy.
+
+50
+00:04:00.190 --> 00:04:04.879
+An attestation proves only the appraised statement about a measured environment;
+
+51
+00:04:04.879 --> 00:04:08.290
+it does not prove trustworthy intent, correct policy,
+
+52
+00:04:08.290 --> 00:04:09.995
+or correct output meaning.
+
+53
+00:04:10.595 --> 00:04:15.559
+No chapter claim or evidence state is promoted by this visual.
+
+54
+00:04:15.559 --> 00:04:20.523
+A named mechanism is not proof of correct implementation or useful
+
+55
+00:04:20.523 --> 00:04:25.487
+deployment. A local check or formal model does not establish real-world
+
+56
+00:04:25.487 --> 00:04:30.000
+enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.
+
+57
+00:04:30.340 --> 00:04:34.815
+These boundaries matter because an explanatory derivative is useful only if
+
+58
+00:04:34.815 --> 00:04:38.070
+it preserves the evidence ceiling of its source.
+
+59
+00:04:38.670 --> 00:04:43.716
+At most, this visual explains the chapter's design rationale at argument
+
+60
+00:04:43.716 --> 00:04:48.303
+support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI,
+
+61
+00:04:48.303 --> 00:04:53.349
+or ASI result. The next chapter is Model-Weight Custody and Hardware
+
+62
+00:04:53.349 --> 00:04:54.725
+Roots of Trust.
+
+63
+00:04:55.065 --> 00:05:00.906
+It takes responsibility for A system can govern runtime tool authority
+
+64
+00:05:00.906 --> 00:05:06.748
+while model weights, optimizer state, adapters, quantizations, checkpoints, caches, recovery images,
+
+65
+00:05:06.748 --> 00:05:12.589
+extracted equivalents, and recipient derivatives are copied, reconstructed, decrypted, loaded, served,
+
+66
+00:05:12.589 --> 00:05:13.120
+revoked.

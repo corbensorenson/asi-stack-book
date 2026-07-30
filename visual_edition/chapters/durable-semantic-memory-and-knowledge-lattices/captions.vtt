@@ -1,0 +1,249 @@
+WEBVTT
+
+NOTE
+Canonical written narration timed from the exact local narration render receipt.
+Pronunciation-only substitutions are intentionally absent from caption text.
+
+1
+00:00:00.060 --> 00:00:05.715
+This chapter asks a specific question: Long-lived AI systems need semantic
+
+2
+00:00:05.715 --> 00:00:10.342
+objects that survive restarts, support graph and associative retrieval,
+
+3
+00:00:10.342 --> 00:00:15.998
+evolve across ontology versions, preserve provenance, merge and retract conflicting assertions,
+
+4
+00:00:15.998 --> 00:00:17.540
+forget under policy,
+
+5
+00:00:17.880 --> 00:00:21.985
+and remain distinguishable from transient context and model weights.
+
+6
+00:00:22.325 --> 00:00:27.842
+The tempting shortcut is insufficient: Vector stores, knowledge graphs, GraphRAG,
+
+7
+00:00:27.842 --> 00:00:33.358
+conversational memory, long-context models, and learned memory can improve retrieval,
+
+8
+00:00:33.358 --> 00:00:39.427
+but none automatically supplies stable object identity, temporal validity, typed relations,
+
+9
+00:00:39.427 --> 00:00:40.530
+provenance-preserving revision,
+
+10
+00:00:40.870 --> 00:00:47.775
+ontology migration, poisoning controls, rights propagation, compaction, and restart-consistent persistence.
+
+11
+00:00:48.375 --> 00:00:53.486
+The chapter's core claim is this: Durable semantic memory should be
+
+12
+00:00:53.486 --> 00:00:58.596
+admitted through a versioned knowledge-lattice contract that binds object and relation
+
+13
+00:00:58.596 --> 00:01:03.242
+identity, ontology, provenance, support state, temporal validity, authority and rights,
+
+14
+00:01:03.242 --> 00:01:06.030
+merge and supersession, contradiction, retrieval route,
+
+15
+00:01:06.370 --> 00:01:11.637
+compaction and forgetting, restart recovery, consumer use, and residual uncertainty;
+
+16
+00:01:11.637 --> 00:01:17.430
+retrieval quality, graph connectivity, model recall, persistence, or a fluent answer
+
+17
+00:01:17.430 --> 00:01:22.170
+alone establishes neither truth, complete memory, safe consolidation, erasure,
+
+18
+00:01:22.170 --> 00:01:23.750
+nor decision authority.
+
+19
+00:01:24.090 --> 00:01:29.292
+Assign stable semantic identities to entities, events, claims, relations, procedures,
+
+20
+00:01:29.292 --> 00:01:34.495
+and source objects while retaining aliases, uncertainty, and collision records.
+
+21
+00:01:34.835 --> 00:01:40.953
+Version ontologies and relation schemas; migrate through explicit mappings that preserve
+
+22
+00:01:40.953 --> 00:01:44.290
+losses, unresolved cases, and invalidated consumers.
+
+23
+00:01:44.890 --> 00:01:48.920
+A concrete implementation trace makes the proposal testable.
+
+24
+00:01:49.260 --> 00:01:53.632
+Implement a versioned semantic-object schema, event-sourced store, validator,
+
+25
+00:01:53.632 --> 00:01:59.643
+and replay fixture with typed nodes and relations, temporal validity, provenance,
+
+26
+00:01:59.643 --> 00:02:04.015
+contradiction, supersession, ontology version, rights, and transactional snapshots.
+
+27
+00:02:04.355 --> 00:02:10.077
+Compare exact, vector, graph, and hybrid retrieval on update-heavy tasks with
+
+28
+00:02:10.077 --> 00:02:15.278
+injected collisions, stale facts, conflicting sources, poisoning, deletion, compaction, crash,
+
+29
+00:02:15.278 --> 00:02:21.000
+and restart while measuring utility, provenance survival, contradiction calibration, rights closure,
+
+30
+00:02:21.000 --> 00:02:22.560
+latency, and residuals.
+
+31
+00:02:22.900 --> 00:02:28.984
+Version ontologies and relation schemas; migrate through explicit mappings that preserve
+
+32
+00:02:28.984 --> 00:02:35.068
+losses, unresolved cases, and invalidated consumers. Represent provenance, support, temporal scope,
+
+33
+00:02:35.068 --> 00:02:41.152
+authority, rights, contradictions, supersession, retraction, and derived dependencies on every memory
+
+34
+00:02:41.152 --> 00:02:41.705
+object.
+
+35
+00:02:42.305 --> 00:02:47.334
+The design can still fail. entity collision duplicate identity stale truth
+
+36
+00:02:47.334 --> 00:02:52.363
+ontology drift The correct response is to stop, narrow, quarantine, compensate,
+
+37
+00:02:52.363 --> 00:02:56.935
+or retain an owned residual rather than narrate uncertainty away.
+
+38
+00:02:57.535 --> 00:03:02.581
+This chapter remains Design rationale at argument support. Its contracts, examples,
+
+39
+00:03:02.581 --> 00:03:06.710
+tests, or local artifacts establish only their encoded scope.
+
+40
+00:03:06.710 --> 00:03:11.756
+The chapter names proof targets rather than pretending they are already
+
+41
+00:03:11.756 --> 00:03:12.215
+closed.
+
+42
+00:03:12.555 --> 00:03:17.687
+A finite Durable Semantic Memory and Knowledge Lattices record may hand
+
+43
+00:03:17.687 --> 00:03:21.420
+off only when identity, authority, version, required checks,
+
+44
+00:03:21.420 --> 00:03:26.552
+and residual ownership are present; no theorem grants empirical effectiveness or
+
+45
+00:03:26.552 --> 00:03:27.485
+release authority.
+
+46
+00:03:27.825 --> 00:03:33.363
+No merge erases provenance, contradiction, uncertainty, temporal scope, or rights.
+
+47
+00:03:33.363 --> 00:03:39.455
+Ontology migration records unmapped and lossy cases and invalidates affected consumers.
+
+48
+00:03:40.055 --> 00:03:45.019
+No chapter claim or evidence state is promoted by this visual.
+
+49
+00:03:45.019 --> 00:03:49.983
+A named mechanism is not proof of correct implementation or useful
+
+50
+00:03:49.983 --> 00:03:54.947
+deployment. A local check or formal model does not establish real-world
+
+51
+00:03:54.947 --> 00:03:59.460
+enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.
+
+52
+00:03:59.800 --> 00:04:04.275
+These boundaries matter because an explanatory derivative is useful only if
+
+53
+00:04:04.275 --> 00:04:07.530
+it preserves the evidence ceiling of its source.
+
+54
+00:04:08.130 --> 00:04:13.340
+At most, this visual explains the chapter's design rationale at argument
+
+55
+00:04:13.340 --> 00:04:18.077
+support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI,
+
+56
+00:04:18.077 --> 00:04:23.288
+or ASI result. The next chapter is Context Transactions, Snapshots, Mounts,
+
+57
+00:04:23.288 --> 00:04:24.235
+and Taint.
+
+58
+00:04:24.575 --> 00:04:29.712
+It takes responsibility for Long-lived agents and parallel workers mutate durable
+
+59
+00:04:29.712 --> 00:04:34.849
+context through multiple stores, branches, indexes, caches, summaries, and recovery paths.
+
+60
+00:04:34.849 --> 00:04:39.986
+Read the live chapter for its complete source mappings, interfaces, invariants,
+
+61
+00:04:39.986 --> 00:04:43.255
+failure modes, tests, and open evidence gaps.

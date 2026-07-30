@@ -1,0 +1,151 @@
+{
+  "schema_version": "asi_stack.visual_chapter_packet.v1",
+  "video_id": "asi-video-content-authenticity-watermarking-and-synthetic-media-integrity",
+  "chapter_id": "content-authenticity-watermarking-and-synthetic-media-integrity",
+  "chapter_path": "chapters/content-authenticity-watermarking-and-synthetic-media-integrity.qmd",
+  "chapter_sha256": "4e59c1fc56973e12cbe09d764aedcbabda51322d18e83e3142f526d46fa8b8e3",
+  "source_commit": "f10ef079ecfeb48503407d67832a0251f77c2c78",
+  "pilot": false,
+  "lifecycle_state": "ready_not_published",
+  "claim_bindings": [
+    {
+      "claim_id": "content-authenticity-watermarking-and-synthetic-media-integrity.core",
+      "claim_label": "Design rationale",
+      "support_state": "argument"
+    }
+  ],
+  "assigned_source_ids": [
+    "ext_c2pa_specification_2_3_2025",
+    "ext_eu_article_50_transparency_guidelines_2026",
+    "ext_international_ai_safety_report_2026",
+    "deterministic_capability_compilation"
+  ],
+  "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result.",
+  "required_content": {
+    "problem": "The stack tracks model and software provenance but lacks an owner for the provenance, disclosure, detectability, transformation history, and downstream interpretation of generated or manipulated outputs. Metadata, one watermark, a detector score, visible label, signature, or platform policy can be stripped, forged, misunderstood, or lost during transformation. None alone proves that content is true, false, human-made, AI-made, authorized, or harmless.",
+    "core_mechanism": "Synthetic-media integrity should use a layered authenticity envelope that binds asset identity, generator and editor claims, signed provenance, content bindings, watermark or fingerprint signals, detector outputs, visible disclosure, transformation history, trust policy, uncertainty, and remedy; every signal retains its own semantics, and no missing or valid signal becomes a universal truth judgment. Emit a signed generation event and content credential with exact model, tool, action, policy, and asset lineage where lawful and safe. Use robust watermarking or fingerprinting only as a scoped auxiliary signal with measured quality, false-positive, false-negative, removal, and collision behavior.",
+    "worked_trace": "Generate a small public-safe media set with signed C2PA-style manifests, visible labels, and a toy auxiliary watermark. Apply crop, resize, re-encode, metadata-strip, screenshot, and edit transformations; report which signals survive, fail, or conflict; exercise invalid-signature, missing-credential, compromised-trust, false-positive, correction, and accessibility cases. Use robust watermarking or fingerprinting only as a scoped auxiliary signal with measured quality, false-positive, false-negative, removal, and collision behavior. Preserve ingredient and edit histories through supported transformations and record explicit breaks when provenance is lost. Combine provenance validation, detector evidence, contextual verification, visible disclosure, and human review without collapsing them into one authenticity score.",
+    "failure_boundary": "metadata stripping watermark removal or collision detector distribution shift false attribution",
+    "evidence_state": "This chapter remains Design rationale at argument support. Its contracts, examples, tests, or local artifacts establish only their encoded scope. A finite authenticity envelope may hand off only when asset, claim, signer, trust policy, evidence types, transformation state, uncertainty, and remedy are explicit; no theorem proves content truth. A valid signature proves only the signed claim under the selected trust policy, not semantic truth. Missing provenance never proves synthetic origin, and present provenance never proves non-deception.",
+    "non_claims": "No chapter claim or evidence state is promoted by this visual. A named mechanism is not proof of correct implementation or useful deployment. A local check or formal model does not establish real-world enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.",
+    "handoff": "The next chapter is Governed Operations, Incident Command, and Graceful Degradation. It takes responsibility for A system can satisfy pre-deployment requirements yet fail after release through drift, dependency failure, operator overload, ambiguous incidents, correlated faults, or recovery actions that create new hazards."
+  },
+  "artifacts": {
+    "storyboard": "visual_edition/chapters/content-authenticity-watermarking-and-synthetic-media-integrity/storyboard.md",
+    "scene_code": "visual_edition/chapters/content-authenticity-watermarking-and-synthetic-media-integrity/scene.py",
+    "narration_script": "visual_edition/chapters/content-authenticity-watermarking-and-synthetic-media-integrity/narration.txt",
+    "captions": "visual_edition/chapters/content-authenticity-watermarking-and-synthetic-media-integrity/captions.vtt",
+    "descriptive_transcript": "visual_edition/chapters/content-authenticity-watermarking-and-synthetic-media-integrity/transcript.md",
+    "thumbnail": "visual_edition/chapters/content-authenticity-watermarking-and-synthetic-media-integrity/thumbnail.svg",
+    "scene_spec": "visual_edition/chapters/content-authenticity-watermarking-and-synthetic-media-integrity/scene_spec.json",
+    "thumbnail_alt_text": "A governed ledger diagram for Content Authenticity, Watermarking, and Synthetic Media Integrity shows three named mechanism cards above a labeled failure and evidence boundary."
+  },
+  "render_receipt": {
+    "receipt_state": "current_final_av_master",
+    "validation_state": "validated",
+    "rendered_at_utc": "2026-07-30T03:40:40Z",
+    "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+    "toolchain_qualification": "qualified_for_all_non_latex_chapters",
+    "render_profile": "final_av_master",
+    "command": "Render the exact-timing ChapterVisualAbstract with pinned ManimCE 0.20.1 at 1920x1080/30, render pinned Kokoro-82M af_heart narration at speed 1.08 with a hard maximum of 300 characters per synthesis call and -16 LUFS, then align all seven visual scenes to the exact audio paragraph boundaries and mux with FFmpeg 8.0.1 as H.264 CRF 18 yuv420p plus AAC-LC 192 kb/s 48 kHz mono.",
+    "duration_seconds": 260.033008,
+    "pixel_width": 1920,
+    "pixel_height": 1080,
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "output_sha256": "229fb6dc3b7dde57a27c27cdfde7d0c6d0624ab64a3485c06d6944de0e7233f0",
+    "mux_receipt_sha256": "7610044f212c9def01ad4d42a5d734e36ff0cb6231422581fd793a61cd148367",
+    "output_storage": "ignored build/visual_edition media only",
+    "visual_review": {
+      "draft_sample_seconds": [
+        17.325,
+        58.448,
+        111.54,
+        149.262,
+        178.412,
+        213.172,
+        243.62
+      ],
+      "release_sample_seconds": [
+        58.448,
+        213.172
+      ],
+      "result": "pass",
+      "review_scope": "Exact mux-receipt midpoint sampling across all seven narration scenes checked composition, legibility, persistent labels, color-plus-shape semantics, evidence ceiling, non-claims, end-card identity, and absence of clipping or overflowing text."
+    },
+    "audio_master": {
+      "identity": "Kokoro-82M bf16 af_heart via kokoro-mlx 0.1.2 at speed 1.08",
+      "provenance": "Locally generated from the canonical narration with the pinned Apache-2.0 Kokoro-82M model and MIT kokoro-mlx implementation recorded in visual_edition/narration_toolchain.json.",
+      "publication_rights_state": "cleared",
+      "duration_seconds": 260.033008,
+      "sha256": "c2814e0a57e6f1728e2d5bfc870ffdf7a3773ba69aba40f18a84b25c6fc02956"
+    },
+    "caption_review": {
+      "state": "machine_audited",
+      "audit_method": "Exact receipt-derived canonical timing plus local MLX Whisper transcript comparison and complete beginning/end coverage checks.",
+      "reviewed_against_audio_sha256": "c2814e0a57e6f1728e2d5bfc870ffdf7a3773ba69aba40f18a84b25c6fc02956",
+      "asr_model": "mlx-community/whisper-small.en-mlx@52a88bf6e98b114a210c21bb83e22d6e1505cb73",
+      "asr_word_error_rate": 0.010909,
+      "terminology": "pass",
+      "timing": "pass",
+      "non_speech_information": "pass",
+      "material_visual_changes": "described_in_adjacent_transcript"
+    },
+    "artifact_sha256": {
+      "storyboard": "27dfc2dabd2e4bb4185e7936515fd33af3de50108deb358b71b70c875c5043ea",
+      "scene_code": "4514807cac6a3e13cabe7bdfe13288da4029298c1bff961a5e392d9ca6b8b896",
+      "narration_script": "092adfec4de98a240bae13794d819e2c3bb80a3829c3d11f9c2359a524580fbc",
+      "captions": "b2ef995a830a162223d6c3af647bbe82d7416e8ce7cf5626d9ea65300a67bd32",
+      "descriptive_transcript": "cd6c279cd432b4dfdac5e2917ee5ba45fd56577a4a52a4844009210a1274c02b",
+      "thumbnail": "55c3562a02b7e99bd51397e1a969b3fc0a0f6fc4744953a4c4b4d7d210199b7b",
+      "scene_spec": "70d3147a4b87f35a748401cdea5f595c7adc21afcb5974428bb888bdc8da9d72"
+    },
+    "remaining_release_gates": [
+      "obtain exact action-time authority before any YouTube or playlist mutation"
+    ]
+  },
+  "youtube": {
+    "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+    "video_id": null,
+    "watch_url": null,
+    "playlist_id": null,
+    "generation": 0,
+    "publication_state": "not_authorized",
+    "uploaded_output_sha256": null,
+    "bound_chapter_sha256": null,
+    "bound_source_commit": null,
+    "published_at_utc": null,
+    "platform_receipt_path": null,
+    "supersedes_video_id": null
+  },
+  "quarto_embed": {
+    "state": "absent_until_published",
+    "chapter_anchor": "visual-abstract",
+    "frame_title": "Visual abstract: Content Authenticity, Watermarking, and Synthetic Media Integrity",
+    "aria_label": "Play the visual abstract for Content Authenticity, Watermarking, and Synthetic Media Integrity"
+  },
+  "staleness": {
+    "state": "current",
+    "checked_chapter_sha256": "4e59c1fc56973e12cbe09d764aedcbabda51322d18e83e3142f526d46fa8b8e3",
+    "triggers": [
+      "core_claim",
+      "mechanism",
+      "worked_trace",
+      "evidence_state",
+      "non_claim",
+      "material_source",
+      "chapter_identity",
+      "handoff",
+      "public_url"
+    ]
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This derivative video does not promote or otherwise change any book claim.",
+    "The validated local final master is not a YouTube upload or a public publication.",
+    "Automated intelligibility and caption audits do not establish that every listener will prefer the synthetic voice.",
+    "A successful animation render does not establish deployment, safety, efficiency, transfer, state of the art, AGI, or ASI."
+  ]
+}

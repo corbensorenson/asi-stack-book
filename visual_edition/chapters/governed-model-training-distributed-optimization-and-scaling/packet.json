@@ -1,0 +1,174 @@
+{
+  "schema_version": "asi_stack.visual_chapter_packet.v1",
+  "video_id": "asi-video-governed-model-training-distributed-optimization-and-scaling",
+  "chapter_id": "governed-model-training-distributed-optimization-and-scaling",
+  "chapter_path": "chapters/governed-model-training-distributed-optimization-and-scaling.qmd",
+  "chapter_sha256": "5bc81e00e397ad082ec61377db65fc5e7db145e193081d3a0056a618623eeda6",
+  "source_commit": "f10ef079ecfeb48503407d67832a0251f77c2c78",
+  "pilot": false,
+  "lifecycle_state": "ready_not_published",
+  "claim_bindings": [
+    {
+      "claim_id": "governed-model-training-distributed-optimization-and-scaling.core",
+      "claim_label": "Design rationale",
+      "support_state": "argument"
+    }
+  ],
+  "assigned_source_ids": [
+    "ext_llama3_herd_2024",
+    "ext_megatron_distributed_training_2021",
+    "ext_zero_optimizer_2019",
+    "ext_gspmd_2021",
+    "ext_datastates_llm_2024",
+    "ext_pytorch_distributed_checkpoint_2026",
+    "ext_mlperf_training_v6_2026",
+    "ext_adam_2015",
+    "ext_amsgrad_2018",
+    "ext_adamw_2019",
+    "ext_adafactor_2018",
+    "ext_lamb_2019",
+    "ext_shampoo_2018",
+    "ext_kfac_2015",
+    "ext_lion_2023",
+    "ext_sophia_2023",
+    "ext_soap_2024",
+    "ext_schedule_free_2024",
+    "ext_mup_2022",
+    "ext_modular_norm_2024",
+    "ext_muon_scalable_2025",
+    "ext_muon_spectral_norm_2026",
+    "corbens_trainer_project",
+    "ext_proof_of_learning_2021",
+    "ext_test_time_training_2020",
+    "ext_curriculum_learning_2009",
+    "ext_kimi_k3_2026"
+  ],
+  "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result.",
+  "required_content": {
+    "problem": "A checkpoint can load and a loss curve can converge even when data order, optimizer state, numerical policy, distributed topology, failure recovery, or checkpoint selection no longer matches the training process claimed. Code, data, weights, final loss, peak throughput, a framework save call, successful restart, or one retained checkpoint does not identify the full stateful distributed run or separate candidate selection from independent qualification.",
+    "core_mechanism": "A model-training candidate is eligible for qualification only when a prospectively frozen run contract binds architecture, data lease and order, objective, optimizer, scheduler, numerical policy, device and parallelism topology, code and environment, budget, stopping and fault policy, complete attempted-run denominator, full declared checkpoint state, commit consistency, resume equivalence class, candidate-checkpoint family, validation-only selection, independent unopened qualification, and residual ownership; a loss reduction, completed job, high utilization, checkpoint file, successful load, recovered run, selected candidate, formal record proof, or source-reported scale result alone establishes neither faithful training, model quality, optimizer superiority, fault tolerance, safety, support, readiness.",
+    "worked_trace": "Build a training-run transaction record, validator, and replay workflow around a competent open natural workload with uninterrupted, standard distributed, deliberately weight-only recovery, full-state governed, and strong alternative-topology arms; inject thirteen fault families across at least three seeds and multiple timings; keep qualification hidden; retain every attempt and checkpoint; and measure time-to-quality, resume distance, drift detection, downstream qualification, resources, operator work, and governance cost jointly. Compile and record the executed device mesh, parallelism dimensions, collective/compiler plan, batch arithmetic, and optimizer-step semantics. Enumerate complete base and architecture-specific model, optimizer, scheduler, scaler, RNG, sampler, data-cursor, topology, and compiler state.",
+    "failure_boundary": "run identity drift silent data replay or skip torn checkpoint state amnesia",
+    "evidence_state": "This chapter remains Design rationale at argument support. Its contracts, examples, tests, or local artifacts establish only their encoded scope. An accepted finite handoff requires exact declared identity, topology/numerical identity, complete committed checkpoint state, complete failure denominator, and no support or release request. An accepted finite handoff requires accounted resume state, retained checkpoint and failure families, validation-only selection, and unopened independent qualification. global batch arithmetic reconciles",
+    "non_claims": "No chapter claim or evidence state is promoted by this visual. A named mechanism is not proof of correct implementation or useful deployment. A local check or formal model does not establish real-world enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.",
+    "handoff": "The next chapter is Learning Theory, Generalization, and Scaling Science. It takes responsibility for The stack repeatedly relies on claims that learning will generalize, capabilities will transfer, losses will scale, or phase changes will appear outside observed training support."
+  },
+  "artifacts": {
+    "storyboard": "visual_edition/chapters/governed-model-training-distributed-optimization-and-scaling/storyboard.md",
+    "scene_code": "visual_edition/chapters/governed-model-training-distributed-optimization-and-scaling/scene.py",
+    "narration_script": "visual_edition/chapters/governed-model-training-distributed-optimization-and-scaling/narration.txt",
+    "captions": "visual_edition/chapters/governed-model-training-distributed-optimization-and-scaling/captions.vtt",
+    "descriptive_transcript": "visual_edition/chapters/governed-model-training-distributed-optimization-and-scaling/transcript.md",
+    "thumbnail": "visual_edition/chapters/governed-model-training-distributed-optimization-and-scaling/thumbnail.svg",
+    "scene_spec": "visual_edition/chapters/governed-model-training-distributed-optimization-and-scaling/scene_spec.json",
+    "thumbnail_alt_text": "A governed route diagram for Governed Model Training, Distributed Optimization, and Scaling shows three named mechanism cards above a labeled failure and evidence boundary."
+  },
+  "render_receipt": {
+    "receipt_state": "current_final_av_master",
+    "validation_state": "validated",
+    "rendered_at_utc": "2026-07-30T03:29:05Z",
+    "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+    "toolchain_qualification": "qualified_for_all_non_latex_chapters",
+    "render_profile": "final_av_master",
+    "command": "Render the exact-timing ChapterVisualAbstract with pinned ManimCE 0.20.1 at 1920x1080/30, render pinned Kokoro-82M af_heart narration at speed 1.08 with a hard maximum of 300 characters per synthesis call and -16 LUFS, then align all seven visual scenes to the exact audio paragraph boundaries and mux with FFmpeg 8.0.1 as H.264 CRF 18 yuv420p plus AAC-LC 192 kb/s 48 kHz mono.",
+    "duration_seconds": 265.105,
+    "pixel_width": 1920,
+    "pixel_height": 1080,
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "output_sha256": "3146e06f16b18cd2fe2df9f5f9c1390a66c8606e3728c606bc154fb80fdb78a8",
+    "mux_receipt_sha256": "36cd4338788d86be1ab89a343030d961a63f66af39d26af027f27861af2771c3",
+    "output_storage": "ignored build/visual_edition media only",
+    "visual_review": {
+      "draft_sample_seconds": [
+        17.537,
+        63.623,
+        121.327,
+        158.4,
+        187.012,
+        221.747,
+        250.445
+      ],
+      "release_sample_seconds": [
+        63.623,
+        221.747
+      ],
+      "result": "pass",
+      "review_scope": "Exact mux-receipt midpoint sampling across all seven narration scenes checked composition, legibility, persistent labels, color-plus-shape semantics, evidence ceiling, non-claims, end-card identity, and absence of clipping or overflowing text."
+    },
+    "audio_master": {
+      "identity": "Kokoro-82M bf16 af_heart via kokoro-mlx 0.1.2 at speed 1.08",
+      "provenance": "Locally generated from the canonical narration with the pinned Apache-2.0 Kokoro-82M model and MIT kokoro-mlx implementation recorded in visual_edition/narration_toolchain.json.",
+      "publication_rights_state": "cleared",
+      "duration_seconds": 265.105,
+      "sha256": "45afb3fc433b568c3c91516c31559d600939ea1943c84498eb4d760fe408e10c"
+    },
+    "caption_review": {
+      "state": "machine_audited",
+      "audit_method": "Exact receipt-derived canonical timing plus local MLX Whisper transcript comparison and complete beginning/end coverage checks.",
+      "reviewed_against_audio_sha256": "45afb3fc433b568c3c91516c31559d600939ea1943c84498eb4d760fe408e10c",
+      "asr_model": "mlx-community/whisper-small.en-mlx@52a88bf6e98b114a210c21bb83e22d6e1505cb73",
+      "asr_word_error_rate": 0.009141,
+      "terminology": "pass",
+      "timing": "pass",
+      "non_speech_information": "pass",
+      "material_visual_changes": "described_in_adjacent_transcript"
+    },
+    "artifact_sha256": {
+      "storyboard": "18c330c25ccb232363bf2c30573480796d87eaaabde9d54e01cf94e3ae223300",
+      "scene_code": "5e564ef43101a5b302e2e3a5fd9c57c74276afb0d05946f2dda3f88bed094c38",
+      "narration_script": "15e8beafff23e636116f028637e25e11d051c052ceb98b7a2a78e6a86e3928f1",
+      "captions": "86bc448fb6a7a916186d4300bd74b0319a5ae886a3050033f22cc4bb753f4b27",
+      "descriptive_transcript": "79c753dec496324323927c7a652efc556bdeed7ed0910ea34f3dca70d8608caa",
+      "thumbnail": "c5c7ba0936b770aa2df301e3bafc20b03f6b4d79551f685bc13d35be1b5f4e99",
+      "scene_spec": "2ed1918baf54c1bf4f3b32c68ade0b45b22d533e2ad8145fef03482bb3304e11"
+    },
+    "remaining_release_gates": [
+      "obtain exact action-time authority before any YouTube or playlist mutation"
+    ]
+  },
+  "youtube": {
+    "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+    "video_id": null,
+    "watch_url": null,
+    "playlist_id": null,
+    "generation": 0,
+    "publication_state": "not_authorized",
+    "uploaded_output_sha256": null,
+    "bound_chapter_sha256": null,
+    "bound_source_commit": null,
+    "published_at_utc": null,
+    "platform_receipt_path": null,
+    "supersedes_video_id": null
+  },
+  "quarto_embed": {
+    "state": "absent_until_published",
+    "chapter_anchor": "visual-abstract",
+    "frame_title": "Visual abstract: Governed Model Training, Distributed Optimization, and Scaling",
+    "aria_label": "Play the visual abstract for Governed Model Training, Distributed Optimization, and Scaling"
+  },
+  "staleness": {
+    "state": "current",
+    "checked_chapter_sha256": "5bc81e00e397ad082ec61377db65fc5e7db145e193081d3a0056a618623eeda6",
+    "triggers": [
+      "core_claim",
+      "mechanism",
+      "worked_trace",
+      "evidence_state",
+      "non_claim",
+      "material_source",
+      "chapter_identity",
+      "handoff",
+      "public_url"
+    ]
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This derivative video does not promote or otherwise change any book claim.",
+    "The validated local final master is not a YouTube upload or a public publication.",
+    "Automated intelligibility and caption audits do not establish that every listener will prefer the synthetic voice.",
+    "A successful animation render does not establish deployment, safety, efficiency, transfer, state of the art, AGI, or ASI."
+  ]
+}

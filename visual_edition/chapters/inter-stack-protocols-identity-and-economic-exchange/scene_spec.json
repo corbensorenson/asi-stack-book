@@ -1,0 +1,70 @@
+{
+  "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
+  "title": "Inter-Stack Protocols, Identity, and Economic Exchange",
+  "subtitle": "A governed stack routes each cross-stack request through a versioned exchange contract that binds… truth, effect safety, payment settlement, legal validity, economic fairness, privacy, authorization correctness, or ASI.",
+  "archetype": "timeline",
+  "claim_label": "Design rationale",
+  "evidence_level": "argument",
+  "next_title": "Multi-Agent Dynamics, Collective Intelligence, and Systemic Risk",
+  "display": {
+    "problem": "Local planning, context, artifact, and runtime contracts lose their binding… delegated authority, economic commitment, result evidence, revocation, and residual ownership.",
+    "insufficient": "Runtime Adapters own local effects, Artifact Graphs own generic provenance… disputes, and revocation before a remote handoff reaches local dispatch.",
+    "mechanism": [
+      {
+        "label": "Freeze protocol schema transport",
+        "detail": "Freeze the protocol, schema, transport binding, session… allowed change triggers before interpreting an exchange."
+      },
+      {
+        "label": "Owner operator peer endpoint",
+        "detail": "Represent owner, operator, peer, endpoint, agent, user… payee as separable roles rather than aliases."
+      },
+      {
+        "label": "Task artifact semantics namespace",
+        "detail": "Bind task and artifact semantics to… expected deliverable, acceptance predicate, and originating contract."
+      },
+      {
+        "label": "Endpoint capability declarations",
+        "detail": "Record endpoint and capability declarations as expiring… advertisements rather than trust or competence evidence."
+      }
+    ],
+    "trace": [
+      "Freeze protocol schema transport",
+      "Owner operator peer endpoint",
+      "Task artifact semantics namespace",
+      "Endpoint capability declarations"
+    ],
+    "failures": [
+      "Capability-card theater treats a self-described endpoint… trusted, competent, authorized, or safe peer.",
+      "Actor conflation treats an endpoint, owner… subject, and payee as one actor.",
+      "Credential laundering turns a structurally valid… trust, authorization, competence, or current status.",
+      "Delegation or deputy laundering widens a… capability, scope, expiry, or non-delegation rule."
+    ],
+    "proof_targets": [
+      "A finite requested cross-stack exchange with required… truth, authorization correctness, payment settlement, or ASI.",
+      "A finite value-bearing requested cross-stack exchange… settlement, economic fairness, authority correctness, or ASI.",
+      "A complete finite exchange record reaches… boundary without proving runtime authorization or execution."
+    ],
+    "evidence_ceiling": "This chapter remains Design rationale at argument support.",
+    "nonclaims": [
+      "No chapter claim or evidence state is promoted by this visual.",
+      "A named mechanism is not proof of correct implementation or useful deployment.",
+      "A local check or formal model does not establish real-world enforcement.",
+      "No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows."
+    ],
+    "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result."
+  },
+  "timing": {
+    "basis": "exact_narration_paragraph_boundaries",
+    "narration_receipt_sha256": "8f0d8254715aa713fef9bc2d58ea1039df5b35fc7618a3b198d56eb0f7c07067",
+    "target_duration_seconds": 310.86,
+    "scene_endpoints_seconds": [
+      50.79,
+      100.285,
+      156.425,
+      201.745,
+      250.29,
+      278.365,
+      310.86
+    ]
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "chapter_id": "capability-thresholds-and-deployment-commitments",
+  "title": "Capability Thresholds and Deployment Commitments",
+  "subtitle": "Capability Thresholds and Deployment Commitments owns a domain-, threat-, assessment-, policy-version-, safeguard-package-, release-path-, authority-… confers no general capability, safeguard efficacy, safety, readiness, deployment, support, transfer, or SOTA authority.",
+  "archetype": "state_machine",
+  "claim_label": "Design rationale",
+  "evidence_level": "argument",
+  "next_title": "Adversarial Evaluation, Sandbagging, and Training-Time Deception",
+  "display": {
+    "problem": "A system can collect a capability score, a time-horizon estimate… authority, or re-evaluation obligation that result is meant to trigger.",
+    "insufficient": "Benchmark Ratchets owns measurement integrity and regression pressure, Adversarial Evaluation… connects a scoped capability assessment to a predeclared deployment response.",
+    "mechanism": [
+      {
+        "label": "Register exact capability domain",
+        "detail": "Register the exact capability domain, threat model… path, owner, authority, rights, environment, and expiry."
+      },
+      {
+        "label": "Freeze versioned assessment",
+        "detail": "Freeze a versioned assessment envelope covering tasks… success rules, uncertainty, coverage, and evaluation-integrity dependencies."
+      },
+      {
+        "label": "Threshold rule units confidence",
+        "detail": "Define the threshold rule, units, confidence… what each state is allowed to change."
+      },
+      {
+        "label": "Write prospective if-then",
+        "detail": "Write the prospective if-then commitment before outcomes… re-evaluation, residual custody, and affected release paths."
+      }
+    ],
+    "trace": [
+      "Register exact capability domain",
+      "Freeze versioned assessment",
+      "Threshold rule units confidence",
+      "Write prospective if-then"
+    ],
+    "failures": [
+      "Metric laundering treats one benchmark or… general capability or dangerousness threshold.",
+      "Retroactive commitment drift changes the applicable… begins or a threshold is crossed.",
+      "Threshold gaming narrows tasks, access, prompts, or elicitation to manufacture a non-crossing.",
+      "Safeguard theater records a required control… completion, verification, or residual-risk record."
+    ],
+    "proof_targets": [
+      "A crossed-threshold lifecycle cannot reach control completion… package, verifier, bypass test, and rollback plan.",
+      "Missing evaluation envelope, elicitation, baseline, uncertainty, independent-evaluator, or assessment-result custody blocks assessment.",
+      "A fully recorded crossed-threshold assessment can emit… control, monitoring, residual, authority, and release-path custody."
+    ],
+    "evidence_ceiling": "This chapter remains Design rationale at argument support.",
+    "nonclaims": [
+      "No chapter claim or evidence state is promoted by this visual.",
+      "A named mechanism is not proof of correct implementation or useful deployment.",
+      "A local check or formal model does not establish real-world enforcement.",
+      "No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows."
+    ],
+    "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result."
+  },
+  "timing": {
+    "basis": "exact_narration_paragraph_boundaries",
+    "narration_receipt_sha256": "cd5c137d1664992089db30823225bfd6386268db7cfb357d0450dba20d16cf4b",
+    "target_duration_seconds": 312.635,
+    "scene_endpoints_seconds": [
+      43.72,
+      107.385,
+      165.875,
+      205.895,
+      248.515,
+      276.59,
+      312.635
+    ]
+  }
+}

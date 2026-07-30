@@ -1,0 +1,157 @@
+{
+  "schema_version": "asi_stack.visual_chapter_packet.v1",
+  "video_id": "asi-video-stable-capability-fields",
+  "chapter_id": "stable-capability-fields",
+  "chapter_path": "chapters/stable-capability-fields.qmd",
+  "chapter_sha256": "1e2359b33b1cd3bed110adcf1af1920de741ffbb237d73f115379429e73c0e6e",
+  "source_commit": "f10ef079ecfeb48503407d67832a0251f77c2c78",
+  "pilot": false,
+  "lifecycle_state": "ready_not_published",
+  "claim_bindings": [
+    {
+      "claim_id": "stable-capability-fields.core",
+      "claim_label": "Design rationale",
+      "support_state": "argument"
+    }
+  ],
+  "assigned_source_ids": [
+    "scf",
+    "deterministic_capability_compilation",
+    "viea",
+    "talos",
+    "ladon_manhattan",
+    "moecot",
+    "ext_capability_based_computer_systems_1984",
+    "ext_semver_2_0_0",
+    "ext_slsa_v1_0",
+    "reflexive_router_whitepaper"
+  ],
+  "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result.",
+  "required_content": {
+    "problem": "A governed stack needs to replace models, prompts, tools, adapters, policies, data, evaluators, and runtime dependencies without letting a persistent capability name conceal changes in observable behavior, failure semantics, authority, evidence, affected consumers, or recovery obligations. Without a consumer-relative and time-bounded substitution contract, an apparent upgrade can silently redefine success, strand state, erase regressions, widen permissions, or inherit trust earned by a different artifact in a different environment.",
+    "core_mechanism": "A Stable Capability Field should be a versioned, consumer-relative substitution contract rather than a capability name or implementation slot. It binds the field's semantic identity and observable interface—including admissible inputs, outputs, preconditions, postconditions, failures, abstentions, nondeterminism and resource bounds—to an authority ceiling, affected consumers, exact implementation and dependency identities, qualification context and lease, evaluator and evidence lineage, lifecycle and incident state, migration duties, preserved regressions, and effect-complete rollback obligations.",
+    "worked_trace": "The current minimum is one public SCF schema with three valid and six expected-invalid records, one readiness/residual gate harness for synthetic route and rollback prerequisites, one deterministic lifecycle probe with two valid traces and six expected-invalid transition controls, and 18 theorem declarations in AsiStackProofs.StableCapabilityFields grouped under four manifest targets. These artifacts exercise record shape, scoped qualification fields, evaluator-separation declarations, authority ceilings, lifecycle routes, selected promotion and terminal-state predicates, regression and rollback prerequisites, fixture counts, and explicit no-promotion boundaries only.",
+    "failure_boundary": "Identity laundering keeps the field name or compatible-looking version while observable behavior, failures, protected effects, or trust terms change. Interface theater treats matching signatures, schemas, or happy-path outputs as semantic substitutability. Qualification overreach generalizes one workload, consumer, evaluator, threat model, environment, or epoch to unrelated uses. Benchmark overfitting preserves the measured suite while degrading unmeasured obligations, rare failures, abstention quality, or downstream composition.",
+    "evidence_state": "This chapter remains Design rationale at argument support. Its contracts, examples, tests, or local artifacts establish only their encoded scope. A lifecycle review with a mismatched field identity routes to explicit replacement rejection. A replacement that expands authority without a governance grant is rejected.",
+    "non_claims": "No chapter claim or evidence state is promoted by this visual. A named mechanism is not proof of correct implementation or useful deployment. A local check or formal model does not establish real-world enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.",
+    "handoff": "The next chapter is Capability Replacement and Rollback. It takes responsibility for A governed stack must change live models, prompts, tools, policies, data, evaluators, dependencies, state schemas."
+  },
+  "artifacts": {
+    "storyboard": "visual_edition/chapters/stable-capability-fields/storyboard.md",
+    "scene_code": "visual_edition/chapters/stable-capability-fields/scene.py",
+    "narration_script": "visual_edition/chapters/stable-capability-fields/narration.txt",
+    "captions": "visual_edition/chapters/stable-capability-fields/captions.vtt",
+    "descriptive_transcript": "visual_edition/chapters/stable-capability-fields/transcript.md",
+    "thumbnail": "visual_edition/chapters/stable-capability-fields/thumbnail.svg",
+    "scene_spec": "visual_edition/chapters/stable-capability-fields/scene_spec.json",
+    "thumbnail_alt_text": "A governed ledger diagram for Stable Capability Fields shows three named mechanism cards above a labeled failure and evidence boundary."
+  },
+  "render_receipt": {
+    "receipt_state": "current_final_av_master",
+    "validation_state": "validated",
+    "rendered_at_utc": "2026-07-30T03:11:08Z",
+    "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+    "toolchain_qualification": "qualified_for_all_non_latex_chapters",
+    "render_profile": "final_av_master",
+    "command": "Render the exact-timing ChapterVisualAbstract with pinned ManimCE 0.20.1 at 1920x1080/30, render pinned Kokoro-82M af_heart narration at speed 1.08 with a hard maximum of 300 characters per synthesis call and -16 LUFS, then align all seven visual scenes to the exact audio paragraph boundaries and mux with FFmpeg 8.0.1 as H.264 CRF 18 yuv420p plus AAC-LC 192 kb/s 48 kHz mono.",
+    "duration_seconds": 261.975,
+    "pixel_width": 1920,
+    "pixel_height": 1080,
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "output_sha256": "774da9c264632d6c7adfc939e559047742a88a1f62b7389a789eadcf87271cd0",
+    "mux_receipt_sha256": "e969431985f43598fa889ed113713c5d5c558c5518d5c091599f2fe07dd8c8c6",
+    "output_storage": "ignored build/visual_edition media only",
+    "visual_review": {
+      "draft_sample_seconds": [
+        18.8,
+        58.822,
+        104.74,
+        152.282,
+        188.255,
+        215.417,
+        245.715
+      ],
+      "release_sample_seconds": [
+        58.822,
+        215.417
+      ],
+      "result": "pass",
+      "review_scope": "Exact mux-receipt midpoint sampling across all seven narration scenes checked composition, legibility, persistent labels, color-plus-shape semantics, evidence ceiling, non-claims, end-card identity, and absence of clipping or overflowing text."
+    },
+    "audio_master": {
+      "identity": "Kokoro-82M bf16 af_heart via kokoro-mlx 0.1.2 at speed 1.08",
+      "provenance": "Locally generated from the canonical narration with the pinned Apache-2.0 Kokoro-82M model and MIT kokoro-mlx implementation recorded in visual_edition/narration_toolchain.json.",
+      "publication_rights_state": "cleared",
+      "duration_seconds": 261.975,
+      "sha256": "73a105bdb296b93698ad21705c3b21ae1e4769842463b3e86d1009ed6f033ced"
+    },
+    "caption_review": {
+      "state": "machine_audited",
+      "audit_method": "Exact receipt-derived canonical timing plus local MLX Whisper transcript comparison and complete beginning/end coverage checks.",
+      "reviewed_against_audio_sha256": "73a105bdb296b93698ad21705c3b21ae1e4769842463b3e86d1009ed6f033ced",
+      "asr_model": "mlx-community/whisper-small.en-mlx@52a88bf6e98b114a210c21bb83e22d6e1505cb73",
+      "asr_word_error_rate": 0.026316,
+      "terminology": "pass",
+      "timing": "pass",
+      "non_speech_information": "pass",
+      "material_visual_changes": "described_in_adjacent_transcript"
+    },
+    "artifact_sha256": {
+      "storyboard": "ac6f76327ed7bd51ff257c5f6f1e50e337934c1d9f6954bd54bed98d9240a6b7",
+      "scene_code": "584e2842fc889fdf6f820dc164b8c012646810acc9553d7ca249ffb6c9700779",
+      "narration_script": "d05d31192c79b69a2de01705b99934db915c798f4756f518c3556eec5dc54118",
+      "captions": "2c848458b9414a214b63267a6e7f7bea4e8f82a2dd2ead57fda4d0f378dff8b8",
+      "descriptive_transcript": "77c194024baeb25f1b17c4bbe87fc86ac0e909ed692f15cec277d3d369b490f2",
+      "thumbnail": "cd394336200a9d1563dd39dd7aa043e9a24abfb0cab41633ed588dabd50ac5f6",
+      "scene_spec": "b4b51945deb612c0a2fa27d430d8f2addaf360d46925ac29ce04b3bb11693bea"
+    },
+    "remaining_release_gates": [
+      "obtain exact action-time authority before any YouTube or playlist mutation"
+    ]
+  },
+  "youtube": {
+    "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+    "video_id": null,
+    "watch_url": null,
+    "playlist_id": null,
+    "generation": 0,
+    "publication_state": "not_authorized",
+    "uploaded_output_sha256": null,
+    "bound_chapter_sha256": null,
+    "bound_source_commit": null,
+    "published_at_utc": null,
+    "platform_receipt_path": null,
+    "supersedes_video_id": null
+  },
+  "quarto_embed": {
+    "state": "absent_until_published",
+    "chapter_anchor": "visual-abstract",
+    "frame_title": "Visual abstract: Stable Capability Fields",
+    "aria_label": "Play the visual abstract for Stable Capability Fields"
+  },
+  "staleness": {
+    "state": "current",
+    "checked_chapter_sha256": "1e2359b33b1cd3bed110adcf1af1920de741ffbb237d73f115379429e73c0e6e",
+    "triggers": [
+      "core_claim",
+      "mechanism",
+      "worked_trace",
+      "evidence_state",
+      "non_claim",
+      "material_source",
+      "chapter_identity",
+      "handoff",
+      "public_url"
+    ]
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This derivative video does not promote or otherwise change any book claim.",
+    "The validated local final master is not a YouTube upload or a public publication.",
+    "Automated intelligibility and caption audits do not establish that every listener will prefer the synthetic voice.",
+    "A successful animation render does not establish deployment, safety, efficiency, transfer, state of the art, AGI, or ASI."
+  ]
+}

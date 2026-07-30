@@ -1,0 +1,156 @@
+{
+  "schema_version": "asi_stack.visual_chapter_packet.v1",
+  "video_id": "asi-video-human-ai-organizations-delegation-and-accountability",
+  "chapter_id": "human-ai-organizations-delegation-and-accountability",
+  "chapter_path": "chapters/human-ai-organizations-delegation-and-accountability.qmd",
+  "chapter_sha256": "6ae69f4b62ad9bb8c808408c864df115e8df5dcdce1bd3f84f7ce9753d026088",
+  "source_commit": "f10ef079ecfeb48503407d67832a0251f77c2c78",
+  "pilot": false,
+  "lifecycle_state": "ready_not_published",
+  "claim_bindings": [
+    {
+      "claim_id": "human-ai-organizations-delegation-and-accountability.core",
+      "claim_label": "Design rationale",
+      "support_state": "argument"
+    }
+  ],
+  "assigned_source_ids": [
+    "ext_nist_ai_rmf_1_0_2023",
+    "ext_moral_crumple_zones_2019",
+    "ext_ai_decision_authority_2020",
+    "ext_generative_ai_at_work_2025",
+    "ext_constructive_interdependence_human_ai_2026",
+    "talos",
+    "ext_human_ai_team_meta_analysis_2024",
+    "ext_human_ai_feedback_loops_2025",
+    "ext_eu_ai_civil_liability_2025"
+  ],
+  "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result.",
+  "required_content": {
+    "problem": "Repeated human-AI work changes decision rights, information, skill, workload, incentives, dependence, benefit, and accountability in ways that a typed task or generic human-in-the-loop label cannot govern. A human signature, model accuracy, role title, task reward, or throughput gain cannot establish meaningful control, legitimate authority, accountability, worker welfare, or organizational resilience.",
+    "core_mechanism": "Consequential delegation requires a versioned organizational contract binding charter, affected parties, actors, roles, competence, workload, accessibility, information and decision rights, delegation, separation of duties, conflicts, incentives, benefits, escalation, appeal, remedy, contribution, dependence, accountability, succession, dissolution, and residual custody. Charter purpose, mandate, affected parties, prohibited ends, lifespan, and owners. Register human, AI, team, and institutional actors with competence, training, workload, accessibility, and conflicts.",
+    "worked_trace": "Represent one recurring workflow with four decision classes and three roles; compile decision rights, competence and workload checks, delegation expiry, independent approval, stop and appeal routes, and accountability receipts; reject rubber-stamp, conflicted, overloaded, hidden-subdelegation, and stale-model cases. Register human, AI, team, and institutional actors with competence, training, workload, accessibility, and conflicts. Map proposal, advice, decision, execution, review, stop, appeal, and notice rights for each decision class. Bound delegation depth, duration, subdelegation, automation, replacement, and revocation.",
+    "failure_boundary": "moral crumple zone rubber-stamp review hidden subdelegation automation bias and deskilling",
+    "evidence_state": "This chapter remains Design rationale at argument support. Its contracts, examples, tests, or local artifacts establish only their encoded scope. A finite organizational record refuses accountability assignment when information, competence, time, or intervention authority is absent. no actor is accountable without practical capacity to intervene AI evaluation cannot be its own independent approval",
+    "non_claims": "No chapter claim or evidence state is promoted by this visual. A named mechanism is not proof of correct implementation or useful deployment. A local check or formal model does not establish real-world enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.",
+    "handoff": "The next chapter is Human-AI Symbiosis, Neurotechnology, and Cognitive Sovereignty. It takes responsibility for Longitudinal human-AI coupling changes both sides of the system. Advice, adaptation, wearables, neural sensing, stimulation, and assistive dependence can alter judgment, skill, autonomy, privacy, identity."
+  },
+  "artifacts": {
+    "storyboard": "visual_edition/chapters/human-ai-organizations-delegation-and-accountability/storyboard.md",
+    "scene_code": "visual_edition/chapters/human-ai-organizations-delegation-and-accountability/scene.py",
+    "narration_script": "visual_edition/chapters/human-ai-organizations-delegation-and-accountability/narration.txt",
+    "captions": "visual_edition/chapters/human-ai-organizations-delegation-and-accountability/captions.vtt",
+    "descriptive_transcript": "visual_edition/chapters/human-ai-organizations-delegation-and-accountability/transcript.md",
+    "thumbnail": "visual_edition/chapters/human-ai-organizations-delegation-and-accountability/thumbnail.svg",
+    "scene_spec": "visual_edition/chapters/human-ai-organizations-delegation-and-accountability/scene_spec.json",
+    "thumbnail_alt_text": "A governed before after diagram for Human-AI Organizations, Delegation, and Accountability shows three named mechanism cards above a labeled failure and evidence boundary."
+  },
+  "render_receipt": {
+    "receipt_state": "current_final_av_master",
+    "validation_state": "validated",
+    "rendered_at_utc": "2026-07-30T03:21:20Z",
+    "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+    "toolchain_qualification": "qualified_for_all_non_latex_chapters",
+    "render_profile": "final_av_master",
+    "command": "Render the exact-timing ChapterVisualAbstract with pinned ManimCE 0.20.1 at 1920x1080/30, render pinned Kokoro-82M af_heart narration at speed 1.08 with a hard maximum of 300 characters per synthesis call and -16 LUFS, then align all seven visual scenes to the exact audio paragraph boundaries and mux with FFmpeg 8.0.1 as H.264 CRF 18 yuv420p plus AAC-LC 192 kb/s 48 kHz mono.",
+    "duration_seconds": 243.7,
+    "pixel_width": 1920,
+    "pixel_height": 1080,
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "output_sha256": "f31ff2ff93dd624aad7555df7f985d8ec8d967a35462bcc6ca9ce243f740370c",
+    "mux_receipt_sha256": "43c2cb9c6b6c8e80fd012da1b7b755c2d81de62c74238fb3d3dc0593d335caa9",
+    "output_storage": "ignored build/visual_edition media only",
+    "visual_review": {
+      "draft_sample_seconds": [
+        15.988,
+        55.56,
+        105.84,
+        140.85,
+        165.652,
+        196.177,
+        226.95
+      ],
+      "release_sample_seconds": [
+        55.56,
+        196.177
+      ],
+      "result": "pass",
+      "review_scope": "Exact mux-receipt midpoint sampling across all seven narration scenes checked composition, legibility, persistent labels, color-plus-shape semantics, evidence ceiling, non-claims, end-card identity, and absence of clipping or overflowing text."
+    },
+    "audio_master": {
+      "identity": "Kokoro-82M bf16 af_heart via kokoro-mlx 0.1.2 at speed 1.08",
+      "provenance": "Locally generated from the canonical narration with the pinned Apache-2.0 Kokoro-82M model and MIT kokoro-mlx implementation recorded in visual_edition/narration_toolchain.json.",
+      "publication_rights_state": "cleared",
+      "duration_seconds": 243.7,
+      "sha256": "69eb0e0bbbedca8cb97f4055dad1f314d83c1661cda44653b5df9ef15cbb634d"
+    },
+    "caption_review": {
+      "state": "machine_audited",
+      "audit_method": "Exact receipt-derived canonical timing plus local MLX Whisper transcript comparison and complete beginning/end coverage checks.",
+      "reviewed_against_audio_sha256": "69eb0e0bbbedca8cb97f4055dad1f314d83c1661cda44653b5df9ef15cbb634d",
+      "asr_model": "mlx-community/whisper-small.en-mlx@52a88bf6e98b114a210c21bb83e22d6e1505cb73",
+      "asr_word_error_rate": 0.004132,
+      "terminology": "pass",
+      "timing": "pass",
+      "non_speech_information": "pass",
+      "material_visual_changes": "described_in_adjacent_transcript"
+    },
+    "artifact_sha256": {
+      "storyboard": "099096a409b8e15dfd05686b5e75c99b94666204689da1428cb834853870f9d3",
+      "scene_code": "874d4dc67081e4c6e5b9530d0b99b5f01f51c8efcf61335a357e03d8ac02f22f",
+      "narration_script": "1608210f5db7e4d06639d5995f24a101cc22d0c0919b97ed0f0902999d968701",
+      "captions": "848551cb315bb01a6a01d4c41e42fe16380389a8d22049b24327eb5d6ac99304",
+      "descriptive_transcript": "107ca55b06e73de2fd2f7f60307c9741c599d926db4b4154ad113a01aa72a35f",
+      "thumbnail": "42a6f6c6d4d58b5c69ae41448303729fd3ae01491326f8074f82461085f72239",
+      "scene_spec": "679ca3312d2fd47431fe3087ebd0d56de39134b974d3ed457f34fa259337e4b3"
+    },
+    "remaining_release_gates": [
+      "obtain exact action-time authority before any YouTube or playlist mutation"
+    ]
+  },
+  "youtube": {
+    "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+    "video_id": null,
+    "watch_url": null,
+    "playlist_id": null,
+    "generation": 0,
+    "publication_state": "not_authorized",
+    "uploaded_output_sha256": null,
+    "bound_chapter_sha256": null,
+    "bound_source_commit": null,
+    "published_at_utc": null,
+    "platform_receipt_path": null,
+    "supersedes_video_id": null
+  },
+  "quarto_embed": {
+    "state": "absent_until_published",
+    "chapter_anchor": "visual-abstract",
+    "frame_title": "Visual abstract: Human-AI Organizations, Delegation, and Accountability",
+    "aria_label": "Play the visual abstract for Human-AI Organizations, Delegation, and Accountability"
+  },
+  "staleness": {
+    "state": "current",
+    "checked_chapter_sha256": "6ae69f4b62ad9bb8c808408c864df115e8df5dcdce1bd3f84f7ce9753d026088",
+    "triggers": [
+      "core_claim",
+      "mechanism",
+      "worked_trace",
+      "evidence_state",
+      "non_claim",
+      "material_source",
+      "chapter_identity",
+      "handoff",
+      "public_url"
+    ]
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This derivative video does not promote or otherwise change any book claim.",
+    "The validated local final master is not a YouTube upload or a public publication.",
+    "Automated intelligibility and caption audits do not establish that every listener will prefer the synthetic voice.",
+    "A successful animation render does not establish deployment, safety, efficiency, transfer, state of the art, AGI, or ASI."
+  ]
+}

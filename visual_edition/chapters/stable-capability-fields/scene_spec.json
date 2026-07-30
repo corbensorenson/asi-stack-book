@@ -1,0 +1,70 @@
+{
+  "chapter_id": "stable-capability-fields",
+  "title": "Stable Capability Fields",
+  "subtitle": "A Stable Capability Field should be a versioned, consumer-relative substitution contract rather than a capability name or implementation slot.",
+  "archetype": "ledger",
+  "claim_label": "Design rationale",
+  "evidence_level": "argument",
+  "next_title": "Capability Replacement and Rollback",
+  "display": {
+    "problem": "A governed stack needs to replace models, prompts, tools, adapters… behavior, failure semantics, authority, evidence, affected consumers, or recovery obligations.",
+    "insufficient": "Plugin APIs, model registries, Semantic Versioning, capability-security references, supply-chain provenance… expiry, historical regressions, downstream reliance, incident response, and effect-complete rollback.",
+    "mechanism": [
+      {
+        "label": "Field identity independently any",
+        "detail": "Define field identity independently of any implementation… rather than silently reusing the old identity."
+      },
+      {
+        "label": "Specify observable contract over",
+        "detail": "Specify the observable contract over accepted… use, and required evidence and audit emissions."
+      },
+      {
+        "label": "Each qualification claim exact",
+        "detail": "Bind each qualification claim to exact code… threat model, consumer, use, and authority scope."
+      },
+      {
+        "label": "Candidate admission",
+        "detail": "Express candidate admission as consumer-relative behavioral refinement… provenance, or implementation similarity alone is insufficient."
+      }
+    ],
+    "trace": [
+      "Field identity independently any",
+      "Specify observable contract over",
+      "Each qualification claim exact",
+      "Candidate admission"
+    ],
+    "failures": [
+      "Identity laundering keeps the field name… protected effects, or trust terms change.",
+      "Interface theater treats matching signatures, schemas, or happy-path outputs as semantic substitutability.",
+      "Qualification overreach generalizes one workload, consumer… environment, or epoch to unrelated uses.",
+      "Benchmark overfitting preserves the measured suite… failures, abstention quality, or downstream composition."
+    ],
+    "proof_targets": [
+      "A lifecycle review with a mismatched field identity routes to explicit replacement rejection.",
+      "A replacement that expands authority without a governance grant is rejected.",
+      "A structured SCF lifecycle review routes identity… within ceiling, rollback readiness, or incident closure."
+    ],
+    "evidence_ceiling": "This chapter remains Design rationale at argument support.",
+    "nonclaims": [
+      "No chapter claim or evidence state is promoted by this visual.",
+      "A named mechanism is not proof of correct implementation or useful deployment.",
+      "A local check or formal model does not establish real-world enforcement.",
+      "No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows."
+    ],
+    "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result."
+  },
+  "timing": {
+    "basis": "exact_narration_paragraph_boundaries",
+    "narration_receipt_sha256": "69e6e81f509e981b42e0d468f5885ddfd40eecdc46fb0edabb5b3a763c4ac5e8",
+    "target_duration_seconds": 261.975,
+    "scene_endpoints_seconds": [
+      37.6,
+      80.045,
+      129.435,
+      175.13,
+      201.38,
+      229.455,
+      261.975
+    ]
+  }
+}

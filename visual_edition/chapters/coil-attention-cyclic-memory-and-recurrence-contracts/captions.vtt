@@ -1,0 +1,249 @@
+WEBVTT
+
+NOTE
+Canonical written narration timed from the exact local narration render receipt.
+Pronunciation-only substitutions are intentionally absent from caption text.
+
+1
+00:00:00.060 --> 00:00:04.054
+This chapter asks a specific question: Memory, attention,
+
+2
+00:00:04.054 --> 00:00:09.545
+and recurrence mechanisms need finite structural contracts for aliasing, coverage, freshness,
+
+3
+00:00:09.545 --> 00:00:13.040
+active work, loop exits, and overthinking boundaries.
+
+4
+00:00:13.380 --> 00:00:18.597
+The tempting shortcut is insufficient: Long context, sparse attention, ring buffers,
+
+5
+00:00:18.597 --> 00:00:23.340
+and recursive loops can silently hide stale reads, uncovered lags,
+
+6
+00:00:23.340 --> 00:00:26.660
+duplicate slots, alias collisions, or unbounded work.
+
+7
+00:00:27.260 --> 00:00:32.095
+The chapter's core claim is this: Coil Attention, Cyclic Memory,
+
+8
+00:00:32.095 --> 00:00:37.413
+and Recurrence Contracts owns a memory-object-, state-version-, request-, consumer-, workload-, structural-axis-,
+
+9
+00:00:37.413 --> 00:00:42.731
+budget-, and time-specific State-Carry and Recurrence Admission Lease: a slot read,
+
+10
+00:00:42.731 --> 00:00:44.665
+cyclic address, KV reuse,
+
+11
+00:00:45.005 --> 00:00:50.239
+sparse edge, fanout schedule, or recurrent step may be admitted only
+
+12
+00:00:50.239 --> 00:00:54.045
+when authority, provenance, residue and winding, freshness, coverage,
+
+13
+00:00:54.045 --> 00:00:58.803
+alias and collision state, active work, progress, exit, fallback, expiry,
+
+14
+00:00:58.803 --> 00:01:03.085
+and residuals satisfy the exact consumer contract; structural validity,
+
+15
+00:01:03.425 --> 00:01:09.107
+synthetic fixtures, receipt replay, cache presence, or reduced scheduled work alone
+
+16
+00:01:09.107 --> 00:01:14.789
+confers no retrieval, reasoning, context-length, quality, speed, memory, safety, deployment, transfer,
+
+17
+00:01:14.789 --> 00:01:16.855
+support, or SOTA authority.
+
+18
+00:01:17.455 --> 00:01:21.485
+A concrete implementation trace makes the proposal testable.
+
+19
+00:01:21.825 --> 00:01:26.514
+The exact current minimum is one schema-valid cyclic-memory record;
+
+20
+00:01:26.514 --> 00:01:30.682
+three valid and six expected-invalid synthetic contract traces;
+
+21
+00:01:30.682 --> 00:01:35.891
+five public-safe external Circle structural receipt slices for cyclic memory,
+
+22
+00:01:35.891 --> 00:01:40.580
+KV-cache freshness, recurrence scheduling, sparse-attention gaps, and strided fanout,
+
+23
+00:01:40.920 --> 00:01:46.753
+all with explicit no-promotion boundaries; and six finite local Lean theorem
+
+24
+00:01:46.753 --> 00:01:52.056
+declarations. It proves no deployed cache, sparse attention, recurrence controller,
+
+25
+00:01:52.056 --> 00:01:57.359
+useful memory, retrieval, reasoning, context-length, latency, memory, independent reproduction, transfer,
+
+26
+00:01:57.359 --> 00:01:58.950
+or chapter-core result.
+
+27
+00:01:59.290 --> 00:02:04.306
+Bind every carried state to source provenance, VCM packet or context
+
+28
+00:02:04.306 --> 00:02:09.321
+lineage, write and read epochs, model and tokenizer identity, cache layout,
+
+29
+00:02:09.321 --> 00:02:11.145
+device, and revocation state.
+
+30
+00:02:11.745 --> 00:02:16.705
+The design can still fail. Residue-only addressing hides winding, wraps, overwrites,
+
+31
+00:02:16.705 --> 00:02:21.664
+collisions, or aliased sources. A cache entry from another request, tenant,
+
+32
+00:02:21.664 --> 00:02:26.624
+model, tokenizer, policy, or epoch is accepted because its slot looks
+
+33
+00:02:26.624 --> 00:02:27.075
+fresh.
+
+34
+00:02:27.415 --> 00:02:33.018
+Physical presence or timestamp freshness is confused with authorized, relevant, correct,
+
+35
+00:02:33.018 --> 00:02:38.620
+or adequate content. Sparse lag or path coverage is treated as
+
+36
+00:02:38.620 --> 00:02:42.695
+semantic dependency coverage, retrieval quality, or long-context understanding.
+
+37
+00:02:43.035 --> 00:02:47.004
+The correct response is to stop, narrow, quarantine, compensate,
+
+38
+00:02:47.004 --> 00:02:51.415
+or retain an owned residual rather than narrate uncertainty away.
+
+39
+00:02:52.015 --> 00:02:57.061
+This chapter remains Design rationale at argument support. Its contracts, examples,
+
+40
+00:02:57.061 --> 00:03:01.190
+tests, or local artifacts establish only their encoded scope.
+
+41
+00:03:01.190 --> 00:03:06.236
+The chapter names proof targets rather than pretending they are already
+
+42
+00:03:06.236 --> 00:03:06.695
+closed.
+
+43
+00:03:07.035 --> 00:03:12.163
+A reused cyclic slot with missing residue or winding and no
+
+44
+00:03:12.163 --> 00:03:15.892
+visible alias residual fails the finite alias-boundary predicate.
+
+45
+00:03:15.892 --> 00:03:21.020
+A retrieval-quality record that promotes from sparse coverage and freshness while
+
+46
+00:03:21.020 --> 00:03:25.215
+semantic-quality evidence is absent fails the finite quality-promotion predicate.
+
+47
+00:03:25.555 --> 00:03:31.155
+Residue-only addressing never erases winding, wrap count, slot identity, collision, overwrite,
+
+48
+00:03:31.155 --> 00:03:34.210
+or alias residuals when they matter.
+
+49
+00:03:34.810 --> 00:03:39.774
+No chapter claim or evidence state is promoted by this visual.
+
+50
+00:03:39.774 --> 00:03:44.738
+A named mechanism is not proof of correct implementation or useful
+
+51
+00:03:44.738 --> 00:03:49.702
+deployment. A local check or formal model does not establish real-world
+
+52
+00:03:49.702 --> 00:03:54.215
+enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.
+
+53
+00:03:54.555 --> 00:03:59.030
+These boundaries matter because an explanatory derivative is useful only if
+
+54
+00:03:59.030 --> 00:04:02.285
+it preserves the evidence ceiling of its source.
+
+55
+00:04:02.885 --> 00:04:08.168
+At most, this visual explains the chapter's design rationale at argument
+
+56
+00:04:08.168 --> 00:04:12.971
+support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI,
+
+57
+00:04:12.971 --> 00:04:17.774
+or ASI result. The next chapter is CoilRA, MultiCoil RoPE,
+
+58
+00:04:17.774 --> 00:04:19.215
+and Cyclic Mixers.
+
+59
+00:04:19.555 --> 00:04:23.502
+It takes responsibility for Position encodings, adapters, route heads,
+
+60
+00:04:23.502 --> 00:04:28.326
+and mixers need a place for cyclic or block-cyclic structure that
+
+61
+00:04:28.326 --> 00:04:31.835
+separates structural invariants from quality and runtime claims.

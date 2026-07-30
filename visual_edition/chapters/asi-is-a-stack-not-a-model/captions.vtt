@@ -1,294 +1,309 @@
 WEBVTT
 
 NOTE
-Canonical narration text; deterministic paragraph-window timing.
-Text and terminology reviewed against the chapter packet on 2026-07-29.
-Publication still requires final listening review against the authorized narration master.
+Canonical written narration timed from the exact local narration render receipt.
+Pronunciation-only substitutions are intentionally absent from caption text.
 
 1
-00:00:00.200 --> 00:00:03.809
+00:00:00.060 --> 00:00:03.160
 What is the thing we are trying to build?
 
 2
-00:00:03.809 --> 00:00:08.221
+00:00:03.160 --> 00:00:06.949
 If the answer is simply “a bigger model,” we have already
 
 3
-00:00:08.221 --> 00:00:12.632
+00:00:06.949 --> 00:00:10.737
 hidden most of the engineering problem. A model can generate, compress,
 
 4
-00:00:12.632 --> 00:00:17.044
-classify, criticize, or plan. But an advanced AI system must also
+00:00:10.737 --> 00:00:12.115
+classify, criticize, or plan.
 
 5
-00:00:17.044 --> 00:00:20.653
-decide what context is permitted, which claims are supported,
+00:00:12.455 --> 00:00:16.369
+But an advanced AI system must also decide what context is
 
 6
-00:00:20.653 --> 00:00:24.664
-who may authorize an action, what changed in the world,
+00:00:16.369 --> 00:00:19.928
+permitted, which claims are supported, who may authorize an action,
 
 7
-00:00:24.664 --> 00:00:27.872
-and how a failed change can be reversed.
+00:00:19.928 --> 00:00:23.842
+what changed in the world, and how a failed change can
 
 8
-00:00:27.872 --> 00:00:32.283
-The ASI Stack begins by choosing the larger system as its
+00:00:23.842 --> 00:00:27.756
+be reversed. The ASI Stack begins by choosing the larger system
 
 9
-00:00:32.283 --> 00:00:36.695
-unit of analysis. The model is important, but it is one
+00:00:27.756 --> 00:00:29.535
+as its unit of analysis.
 
 10
-00:00:36.695 --> 00:00:38.700
-component inside a governed machine.
+00:00:29.875 --> 00:00:33.898
+The model is important, but it is one component inside a
 
 11
-00:00:39.200 --> 00:00:43.658
-The monolithic picture fails when useful ability silently becomes every other
+00:00:33.898 --> 00:00:34.630
+governed machine.
 
 12
-00:00:43.658 --> 00:00:48.116
-kind of power. A fluent plan is not permission to execute.
+00:00:35.230 --> 00:00:39.680
+The monolithic picture fails when useful ability silently becomes every other
 
 13
-00:00:48.116 --> 00:00:52.574
-Retrieved text is not automatically belief. A benchmark score is not
+00:00:39.680 --> 00:00:44.130
+kind of power. A fluent plan is not permission to execute.
 
 14
-00:00:52.574 --> 00:00:57.032
-deployment authority. A proof about a finite model is not runtime
+00:00:44.130 --> 00:00:48.580
+Retrieved text is not automatically belief. A benchmark score is not
 
 15
-00:00:57.032 --> 00:01:01.489
-enforcement. And a log saying that something happened is not the
+00:00:48.580 --> 00:00:53.030
+deployment authority. A proof about a finite model is not runtime
 
 16
-00:01:01.489 --> 00:01:05.542
-same as independent evidence that the world changed as claimed.
+00:00:53.030 --> 00:00:53.435
+enforcement.
 
 17
-00:01:05.542 --> 00:01:10.000
-If planning, memory, verification, execution, governance, and evidence all collapse into
+00:00:53.775 --> 00:00:57.600
+And a log saying that something happened is not the same
 
 18
-00:01:10.000 --> 00:01:14.053
-one opaque component, there is nowhere reliable to attach limits,
+00:00:57.600 --> 00:01:00.730
+as independent evidence that the world changed as claimed.
 
 19
-00:01:14.053 --> 00:01:17.700
-challenge a receipt, preserve a residual, or perform rollback.
+00:01:01.070 --> 00:01:06.132
+If planning, memory, verification, execution, governance, and evidence all collapse into
 
 20
-00:01:18.200 --> 00:01:21.790
-The stack replaces that ambiguity with explicit responsibility boundaries.
+00:01:06.132 --> 00:01:10.734
+one opaque component, there is nowhere reliable to attach limits,
 
 21
-00:01:21.790 --> 00:01:25.381
-Intent becomes a typed request. Planning produces a proposal,
+00:01:10.734 --> 00:01:14.875
+challenge a receipt, preserve a residual, or perform rollback.
 
 22
-00:01:25.381 --> 00:01:29.370
-not an effect. Context carries provenance, freshness, rights, and taint.
+00:01:15.475 --> 00:01:19.996
+The stack replaces that ambiguity with explicit responsibility boundaries.
 
 23
-00:01:29.370 --> 00:01:33.759
-Reasoning produces claims with uncertainty and dependencies. Authority arrives through a
+00:01:19.996 --> 00:01:24.516
+Intent becomes a typed request. Planning produces a proposal,
 
 24
-00:01:33.759 --> 00:01:37.349
-scoped, current grant. Execution passes through a narrow adapter.
+00:01:24.516 --> 00:01:29.539
+not an effect. Context carries provenance, freshness, rights, and taint.
 
 25
-00:01:37.349 --> 00:01:41.737
-Observation and evidence remain able to disagree with what execution reported.
+00:01:29.539 --> 00:01:33.055
+Reasoning produces claims with uncertainty and dependencies.
 
 26
-00:01:41.737 --> 00:01:45.727
-These layers are logical contracts, not a demand for microservices.
+00:01:33.395 --> 00:01:38.533
+Authority arrives through a scoped, current grant. Execution passes through a
 
 27
-00:01:45.727 --> 00:01:50.115
-One model may implement several roles, and several models or people
+00:01:38.533 --> 00:01:43.670
+narrow adapter. Observation and evidence remain able to disagree with what
 
 28
-00:01:50.115 --> 00:01:54.503
-may implement one role, as long as the boundaries remain externally
+00:01:43.670 --> 00:01:48.808
+execution reported. These layers are logical contracts, not a demand for
 
 29
-00:01:54.503 --> 00:01:55.700
-enforceable and auditable.
+00:01:48.808 --> 00:01:49.275
+microservices.
 
 30
-00:01:56.200 --> 00:02:00.591
-Consider one worked trace. A user asks for a material change.
+00:01:49.615 --> 00:01:54.094
+One model may implement several roles, and several models or people
 
 31
-00:02:00.591 --> 00:02:04.582
-First, the intent layer records the requested outcome and constraints.
+00:01:54.094 --> 00:01:58.573
+may implement one role, as long as the boundaries remain externally
 
 32
-00:02:04.582 --> 00:02:08.973
-Planning proposes steps and alternatives. The context layer mounts only the
+00:01:58.573 --> 00:01:59.795
+enforceable and auditable.
 
 33
-00:02:08.973 --> 00:02:13.364
-sources and state permitted for this job. A verifier checks the
+00:02:00.395 --> 00:02:04.881
+Consider one worked trace. A user asks for a material change.
 
 34
-00:02:13.364 --> 00:02:17.755
-plan’s claims and leaves unresolved questions visible. Only then can an
+00:02:04.881 --> 00:02:08.959
+First, the intent layer records the requested outcome and constraints.
 
 35
-00:02:17.755 --> 00:02:21.746
-authority gate issue a grant bounded by scope, time, owner,
+00:02:08.959 --> 00:02:13.445
+Planning proposes steps and alternatives. The context layer mounts only the
 
 36
-00:02:21.746 --> 00:02:26.137
-and revocation state. The execution adapter rechecks that grant before producing
+00:02:13.445 --> 00:02:16.300
+sources and state permitted for this job.
 
 37
-00:02:26.137 --> 00:02:29.729
-an effect. A receipt records what the adapter reports.
+00:02:16.640 --> 00:02:21.133
+A verifier checks the plan’s claims and leaves unresolved questions visible.
 
 38
-00:02:29.729 --> 00:02:34.120
-An independent observation checks the post-state. If observation contradicts the receipt,
+00:02:21.133 --> 00:02:25.626
+Only then can an authority gate issue a grant bounded by
 
 39
-00:02:34.120 --> 00:02:38.511
-the discrepancy survives as an owned residual. If the effect is
+00:02:25.626 --> 00:02:30.119
+scope, time, owner, and revocation state. The execution adapter rechecks that
 
 40
-00:02:38.511 --> 00:02:42.902
-reversible, rollback restores the recorded pre-state; otherwise compensation or quarantine must
+00:02:30.119 --> 00:02:34.612
+grant before producing an effect. A receipt records what the adapter
 
 41
-00:02:42.902 --> 00:02:43.700
-remain explicit.
+00:02:34.612 --> 00:02:35.020
+reports.
 
 42
-00:02:44.200 --> 00:02:48.564
-This trace expresses the stack’s noninheritance law. Capability does not confer
+00:02:35.360 --> 00:02:40.877
+An independent observation checks the post-state. If observation contradicts the receipt,
 
 43
-00:02:48.564 --> 00:02:51.738
-authority. Context does not confer belief or permission.
+00:02:40.877 --> 00:02:46.395
+the discrepancy survives as an owned residual. If the effect is
 
 44
-00:02:51.738 --> 00:02:56.102
-A plan does not confer an effect. A receipt does not
+00:02:46.395 --> 00:02:51.912
+reversible, rollback restores the recorded pre-state; otherwise compensation or quarantine must
 
 45
-00:02:56.102 --> 00:02:59.276
-confer reality. A theorem does not confer enforcement.
+00:02:51.912 --> 00:02:52.915
+remain explicit.
 
 46
-00:02:59.276 --> 00:03:02.450
-A replacement does not inherit its predecessor’s qualification.
+00:02:53.515 --> 00:02:58.257
+This trace expresses the stack’s noninheritance law. Capability does not confer
 
 47
-00:03:02.450 --> 00:03:06.814
-A proposal for self-improvement cannot approve itself. Every handoff must preserve
+00:02:58.257 --> 00:03:01.705
+authority. Context does not confer belief or permission.
 
 48
-00:03:06.814 --> 00:03:11.178
-identity and require an explicit transition for new authority, evidence, effect,
+00:03:01.705 --> 00:03:06.447
+A plan does not confer an effect. A receipt does not
 
 49
-00:03:11.178 --> 00:03:14.749
-qualification, or release state. The point is not paperwork.
+00:03:06.447 --> 00:03:09.895
+confer reality. A theorem does not confer enforcement.
 
 50
-00:03:14.749 --> 00:03:19.113
-The point is to stop one successful object from smuggling unrelated
+00:03:10.235 --> 00:03:14.021
+A replacement does not inherit its predecessor’s qualification.
 
 51
-00:03:19.113 --> 00:03:20.700
-powers across a boundary.
+00:03:14.021 --> 00:03:19.226
+A proposal for self-improvement cannot approve itself. Every handoff must preserve
 
 52
-00:03:21.200 --> 00:03:25.189
-There is a serious objection. Explicit interfaces can lose information,
+00:03:19.226 --> 00:03:24.431
+identity and require an explicit transition for new authority, evidence, effect,
 
 53
-00:03:25.189 --> 00:03:29.576
-add latency, create attack surfaces, and turn fluid cognition into brittle
+00:03:24.431 --> 00:03:28.690
+qualification, or release state. The point is not paperwork.
 
 54
-00:03:29.576 --> 00:03:33.964
-bureaucracy. Ordinary operating-system isolation and a lightweight tool wrapper may sometimes
+00:03:29.030 --> 00:03:33.617
+The point is to stop one successful object from smuggling unrelated
 
 55
-00:03:33.964 --> 00:03:37.554
-be enough. The stack therefore cannot win by definition.
+00:03:33.617 --> 00:03:35.285
+powers across a boundary.
 
 56
-00:03:37.554 --> 00:03:41.144
-A fair test must compare a strong monolithic agent,
+00:03:35.885 --> 00:03:40.581
+There is a serious objection. Explicit interfaces can lose information,
 
 57
-00:03:41.144 --> 00:03:45.531
-a lightweight wrapper, and the governed stack on the same natural
+00:03:40.581 --> 00:03:45.747
+add latency, create attack surfaces, and turn fluid cognition into brittle
 
 58
-00:03:45.531 --> 00:03:49.919
-tasks, with matched models, tools, context, tuning effort, and total cost.
+00:03:45.747 --> 00:03:50.913
+bureaucracy. Ordinary operating-system isolation and a lightweight tool wrapper may sometimes
 
 59
-00:03:49.919 --> 00:03:54.307
-It must count useful completion, unsafe or unauthorized effects, false refusals,
+00:03:50.913 --> 00:03:55.140
+be enough. The stack therefore cannot win by definition.
 
 60
-00:03:54.307 --> 00:03:56.700
-recovery, latency, and governance overhead together.
+00:03:55.480 --> 00:03:58.907
+A fair test must compare a strong monolithic agent,
 
 61
-00:03:57.200 --> 00:04:00.950
-The current chapter does not contain that broad result.
+00:03:58.907 --> 00:04:03.096
+a lightweight wrapper, and the governed stack on the same natural
 
 62
-00:04:00.950 --> 00:04:05.533
-Its core claim remains a design rationale at argument support and
+00:04:03.096 --> 00:04:07.285
+tasks, with matched models, tools, context, tuning effort, and total cost.
 
 63
-00:04:05.533 --> 00:04:09.283
-is recorded as blocked after a full bounded attempt.
+00:04:07.625 --> 00:04:13.209
+It must count useful completion, unsafe or unauthorized effects, false refusals,
 
 64
-00:04:09.283 --> 00:04:13.867
-Repository checks exercise finite layer contracts and one local authority-to-effect path,
+00:04:13.209 --> 00:04:16.255
+recovery, latency, and governance overhead together.
 
 65
-00:04:13.867 --> 00:04:18.450
-but they do not prove deployed authority, whole-system safety, empirical efficiency,
+00:04:16.855 --> 00:04:20.185
+The current chapter does not contain that broad result.
 
 66
-00:04:18.450 --> 00:04:22.617
-transfer, or ASI. The architecture test is narrower and practical:
+00:04:20.185 --> 00:04:24.255
+Its core claim remains a design rationale at argument support and
 
 67
-00:04:22.617 --> 00:04:25.950
-every powerful component should name what it owns,
+00:04:24.255 --> 00:04:27.585
+is recorded as blocked after a full bounded attempt.
 
 68
-00:04:25.950 --> 00:04:29.700
-what artifact crosses its boundary, which authority it has,
+00:04:27.925 --> 00:04:33.482
+Repository checks exercise finite layer contracts and one local authority-to-effect path,
 
 69
-00:04:29.700 --> 00:04:33.033
-what evidence it can create, what can fail,
+00:04:33.482 --> 00:04:39.039
+but they do not prove deployed authority, whole-system safety, empirical efficiency,
 
 70
-00:04:33.033 --> 00:04:37.617
-and how the failure remains recoverable. The next chapter asks whether
+00:04:39.039 --> 00:04:40.555
+transfer, or ASI.
 
 71
-00:04:37.617 --> 00:04:42.200
-those explicit boundaries can improve useful work per total governed cost.
+00:04:40.895 --> 00:04:45.144
+The architecture test is narrower and practical: every powerful component should
 
 72
-00:04:42.200 --> 00:04:44.700
-That is the Efficient ASI Hypothesis.
+00:04:45.144 --> 00:04:48.621
+name what it owns, what artifact crosses its boundary,
+
+73
+00:04:48.621 --> 00:04:52.098
+which authority it has, what evidence it can create,
+
+74
+00:04:52.098 --> 00:04:55.575
+what can fail, and how the failure remains recoverable.
+
+75
+00:04:55.915 --> 00:05:00.718
+The next chapter asks whether those explicit boundaries can improve useful
+
+76
+00:05:00.718 --> 00:05:05.520
+work per total governed cost. That is the Efficient ASI Hypothesis.

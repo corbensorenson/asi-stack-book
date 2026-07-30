@@ -67,6 +67,40 @@
   revisions require a new YouTube video ID. The prior generation remains
   historical and is superseded in one ledger/playlist/embed reconciliation
   transaction; deletion is not the default.
+- Replaced the uncleared local timing voice with a pinned local narration
+  contract: `kokoro-mlx==0.1.2`, Apache-2.0 Kokoro-82M bf16 revision
+  `a71e4d38b236d968966a2002c4c895dbd12b1c3c`, digest-bound `af_heart`,
+  exact pronunciation rules, 24-kHz mono masters, FFmpeg loudness
+  normalization, and synthetic-narration disclosure.
+- Added a pinned MLX Whisper transcript audit, receipt-derived canonical
+  caption timing, and final-master codec/duration/caption-span validation.
+  The gate caught and rejected one Living Book Methodology candidate that
+  omitted a whole sentence; the segment ceiling was reduced from 420 to 300
+  characters and every pilot was rerendered under the corrected contract.
+- Validated all five final 1920×1080/30-fps H.264/AAC masters with complete
+  caption span and content-normalized transcript error of 0.71%, 1.22%,
+  2.36%, 1.08%, and 1.33%. Ratified the shared visual grammar, qualified both
+  the non-LaTeX Manim and narration paths for the all-chapter rollout, and
+  advanced the canonical manifest to five `validated` and seventy-nine
+  `planned` chapters with zero YouTube, playlist, publication, or embed
+  mutations.
+- Completed autonomous local production for all 84 chapters. Every final
+  master passes H.264/AAC, 1920×1080, yuv420p, 30-fps, duration, caption-span,
+  narration, digest, ignored-build, and seven-scene timing gates. Two
+  one-frame global-rounding failures were rerendered from exact scene
+  endpoints without weakening the validator.
+- Audited all 84 narrations with the pinned MLX Whisper gate: duration spans
+  227.765–331.005 seconds, content-normalized word error spans 0–2.8658%, and
+  the largest expected-token gap is four against the frozen ceiling of eight.
+  The local final-master set totals 1,015,153,522 bytes and remains outside
+  Git and GitHub Pages.
+- Replaced a misleading percentage-based visual sampler with exact
+  mux-receipt scene midpoints, regenerated all review evidence, and passed a
+  human-visible sweep of 588 frames across 21 contact sheets plus all 84
+  3840×2160 upload thumbnails. Finalized all packets as
+  `ready_not_published` and rebuilt the manifest, publication ledger, and
+  non-authorizing upload plan at 84/84 with zero YouTube objects,
+  publications, or embeds.
 
 ## 2026-07-29 — Theseus T0A-to-T1 lineage currentness reconciliation
 

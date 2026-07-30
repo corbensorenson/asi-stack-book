@@ -1,0 +1,201 @@
+WEBVTT
+
+NOTE
+Canonical written narration timed from the exact local narration render receipt.
+Pronunciation-only substitutions are intentionally absent from caption text.
+
+1
+00:00:00.060 --> 00:00:05.493
+This chapter asks a specific question: Planning and control often treat
+
+2
+00:00:05.493 --> 00:00:10.926
+sensor-derived tokens, objects, or embeddings as reality even when calibration, time,
+
+3
+00:00:10.926 --> 00:00:15.865
+coverage, missingness, dependence, shift, or spoofing makes the observation unreliable.
+
+4
+00:00:16.205 --> 00:00:22.277
+The tempting shortcut is insufficient: Clean accuracy, more modalities, cross-modal similarity,
+
+5
+00:00:22.277 --> 00:00:27.796
+sensor count, or fused confidence cannot establish task-relevant observation trust,
+
+6
+00:00:27.796 --> 00:00:31.660
+independent evidence, causal grounding, or physical safety.
+
+7
+00:00:32.260 --> 00:00:38.178
+The chapter's core claim is this: A consequential observation requires a
+
+8
+00:00:38.178 --> 00:00:44.096
+versioned contract binding task need, sensor and modality identity, calibration, pose,
+
+9
+00:00:44.096 --> 00:00:50.014
+clocks, provenance, coverage, missingness, per-channel hypotheses, alignment, fusion, dependence, disagreement, shift,
+
+10
+00:00:50.014 --> 00:00:51.090
+active observation,
+
+11
+00:00:51.430 --> 00:00:57.657
+freshness, authority, cost, and residuals. Compile a task-relative observation need and
+
+12
+00:00:57.657 --> 00:01:02.751
+consequence class. Bind sensor, modality, model, calibration, pose, clock,
+
+13
+00:01:02.751 --> 00:01:07.846
+and operating environment. Preserve per-channel measurements, hypotheses, uncertainty, quality,
+
+14
+00:01:07.846 --> 00:01:10.110
+and missingness before fusion.
+
+15
+00:01:10.710 --> 00:01:14.740
+A concrete implementation trace makes the proposal testable.
+
+16
+00:01:15.080 --> 00:01:20.825
+Build a two- or three-modality observation service that emits a versioned
+
+17
+00:01:20.825 --> 00:01:25.003
+Observation Trust Record and validator with immutable identity,
+
+18
+00:01:25.003 --> 00:01:30.226
+clock and calibration checks, per-channel hypotheses, dependence-aware fusion, calibrated abstention,
+
+19
+00:01:30.226 --> 00:01:33.360
+one active-observation action, a safe-hold route,
+
+20
+00:01:33.700 --> 00:01:40.311
+and seeded time, missing-channel, correlated-failure, spoofing, and benign-disagreement fixtures. Bind sensor,
+
+21
+00:01:40.311 --> 00:01:46.923
+modality, model, calibration, pose, clock, and operating environment. Preserve per-channel measurements,
+
+22
+00:01:46.923 --> 00:01:51.130
+hypotheses, uncertainty, quality, and missingness before fusion.
+
+23
+00:01:51.470 --> 00:01:56.710
+Separate temporal, spatial, semantic, and population alignment. Throughout the trace,
+
+24
+00:01:56.710 --> 00:02:01.950
+one invariant remains visible: missing or stale modalities remain visible
+
+25
+00:02:02.550 --> 00:02:07.485
+The design can still fail. spoofing calibration or clock drift occlusion
+
+26
+00:02:07.485 --> 00:02:12.421
+and saturation modality collapse The correct response is to stop, narrow,
+
+27
+00:02:12.421 --> 00:02:17.356
+quarantine, compensate, or retain an owned residual rather than narrate uncertainty
+
+28
+00:02:17.356 --> 00:02:17.805
+away.
+
+29
+00:02:18.405 --> 00:02:23.451
+This chapter remains Design rationale at argument support. Its contracts, examples,
+
+30
+00:02:23.451 --> 00:02:27.580
+tests, or local artifacts establish only their encoded scope.
+
+31
+00:02:27.580 --> 00:02:32.626
+The chapter names proof targets rather than pretending they are already
+
+32
+00:02:32.626 --> 00:02:33.085
+closed.
+
+33
+00:02:33.425 --> 00:02:38.846
+A finite admission model refuses to promote correlated channel agreement as
+
+34
+00:02:38.846 --> 00:02:44.266
+independent evidence. correlated agreement is not independent evidence calibration is cohort
+
+35
+00:02:44.266 --> 00:02:46.730
+environment metric and version bound
+
+36
+00:02:47.330 --> 00:02:52.294
+No chapter claim or evidence state is promoted by this visual.
+
+37
+00:02:52.294 --> 00:02:57.258
+A named mechanism is not proof of correct implementation or useful
+
+38
+00:02:57.258 --> 00:03:02.222
+deployment. A local check or formal model does not establish real-world
+
+39
+00:03:02.222 --> 00:03:06.735
+enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.
+
+40
+00:03:07.075 --> 00:03:11.550
+These boundaries matter because an explanatory derivative is useful only if
+
+41
+00:03:11.550 --> 00:03:14.805
+it preserves the evidence ceiling of its source.
+
+42
+00:03:15.405 --> 00:03:20.475
+At most, this visual explains the chapter's design rationale at argument
+
+43
+00:03:20.475 --> 00:03:25.085
+support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI,
+
+44
+00:03:25.085 --> 00:03:30.155
+or ASI result. The next chapter is Planning as a Control
+
+45
+00:03:30.155 --> 00:03:32.460
+Layer: DAGs and Intelligence Arbitrage.
+
+46
+00:03:32.800 --> 00:03:37.184
+It takes responsibility for After a command contract is accepted,
+
+47
+00:03:37.184 --> 00:03:40.691
+the stack must choose which obligations become work,
+
+48
+00:03:40.691 --> 00:03:45.513
+which alternatives remain candidates, what dependencies and observations make nodes feasible,
+
+49
+00:03:45.513 --> 00:03:47.705
+how scarce capacity is scheduled.

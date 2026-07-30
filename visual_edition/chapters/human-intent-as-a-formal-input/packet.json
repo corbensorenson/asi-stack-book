@@ -1,0 +1,156 @@
+{
+  "schema_version": "asi_stack.visual_chapter_packet.v1",
+  "video_id": "asi-video-human-intent-as-a-formal-input",
+  "chapter_id": "human-intent-as-a-formal-input",
+  "chapter_path": "chapters/human-intent-as-a-formal-input.qmd",
+  "chapter_sha256": "a0f869c4c19a73cbce33f976322bf629cef5cb7a1483885df97dd855aa5c33e5",
+  "source_commit": "f10ef079ecfeb48503407d67832a0251f77c2c78",
+  "pilot": false,
+  "lifecycle_state": "ready_not_published",
+  "claim_bindings": [
+    {
+      "claim_id": "human-intent-as-a-formal-input.core",
+      "claim_label": "Design rationale",
+      "support_state": "argument"
+    }
+  ],
+  "assigned_source_ids": [
+    "viea",
+    "software_magic_grimoire",
+    "planforge",
+    "cognitive_compilation",
+    "talos",
+    "ext_goal_oriented_requirements_engineering_2001",
+    "ext_cooperative_inverse_rl_2016",
+    "ext_deep_rl_human_preferences_2017",
+    "ext_cultural_alignment_llms_2024"
+  ],
+  "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result.",
+  "required_content": {
+    "problem": "A natural-language request can mix desired outcome, preferences, emotion, assumptions, source and privacy constraints, affected parties, risk tolerance, authority, acceptance evidence, and stop conditions, then be lowered into planning or action as though one plausible interpretation were explicit permission. Prompts, goal-oriented requirements models, preference feedback, inferred rewards, conversational confirmations, and approval clicks can each communicate useful information while leaving authorization, allowed means, affected parties, evidence duties, expiry, and re-contract triggers unresolved.",
+    "core_mechanism": "A governed stack admits human intent only as a versioned interpretation contract that preserves the raw request while separately recording the desired outcome; allowed and forbidden means; authority basis, ceiling, and affected parties; source, privacy, and publication boundaries; acceptance and evidence requirements; field provenance; confirmed assumptions, bounded defaults, contested or open ambiguities; stop, expiry, revocation, appeal, and re-contract conditions; and permitted downstream consumers.",
+    "worked_trace": "The current minimum is a public `intent_contract` schema and valid fixture, a 25-declaration finite Lean module grouped under four manifest proof targets, a synthetic intake probe with four valid scenarios and six expected-invalid request-pressure controls, a re-contract probe with two valid routes and seven expected-invalid material-delta controls, and a plan-execution harness with three valid and ten expected-invalid fixtures. These artifacts exercise record shape, finite route consequences, origin/preservation checks, bounded-default non-authority, and no-support boundaries only; they do not measure natural-language understanding, authority extraction, informed consent, preference inference, user satisfaction, prompt-injection containment, deployed runtime enforcement, or effect safety.",
+    "failure_boundary": "Goal misbinding optimizes a plausible interpretation that the principal did not accept. Scope accretion adds individually plausible means until the work or effect surface exceeds the original grant. Implicit-permission laundering treats a desired outcome as approval for any convenient tool, source, expenditure, publication, deployment, or side effect. Assumption laundering converts an unconfirmed guess into a plan constraint, job, and external effect without an explicit disposition or re-contract decision.",
+    "evidence_state": "This chapter remains Design rationale at argument support. Its contracts, examples, tests, or local artifacts establish only their encoded scope. Every accepted compile in the finite reachable intent model preserves the root intent, exact versioned constraint and stop-condition hashes, and approved authority before contract acceptance. The reachable model and independent consumer reject missing payload, prohibited action, hidden override, authority widening, constraint/stop substitution, silent material deltas, and unreceipted or non-versioned re-contract.",
+    "non_claims": "No chapter claim or evidence state is promoted by this visual. A named mechanism is not proof of correct implementation or useful deployment. A local check or formal model does not establish real-world enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.",
+    "handoff": "The next chapter is Human Factors and Meaningful Control in Oversight. It takes responsibility for A formally permitted AI action can still be practically uncontrollable when operators lack time, attention, comprehension, calibrated trust, or an effective intervention path."
+  },
+  "artifacts": {
+    "storyboard": "visual_edition/chapters/human-intent-as-a-formal-input/storyboard.md",
+    "scene_code": "visual_edition/chapters/human-intent-as-a-formal-input/scene.py",
+    "narration_script": "visual_edition/chapters/human-intent-as-a-formal-input/narration.txt",
+    "captions": "visual_edition/chapters/human-intent-as-a-formal-input/captions.vtt",
+    "descriptive_transcript": "visual_edition/chapters/human-intent-as-a-formal-input/transcript.md",
+    "thumbnail": "visual_edition/chapters/human-intent-as-a-formal-input/thumbnail.svg",
+    "scene_spec": "visual_edition/chapters/human-intent-as-a-formal-input/scene_spec.json",
+    "thumbnail_alt_text": "A governed stack diagram for Human Intent as a Formal Input shows three named mechanism cards above a labeled failure and evidence boundary."
+  },
+  "render_receipt": {
+    "receipt_state": "current_final_av_master",
+    "validation_state": "validated",
+    "rendered_at_utc": "2026-07-30T03:08:06Z",
+    "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+    "toolchain_qualification": "qualified_for_all_non_latex_chapters",
+    "render_profile": "final_av_master",
+    "command": "Render the exact-timing ChapterVisualAbstract with pinned ManimCE 0.20.1 at 1920x1080/30, render pinned Kokoro-82M af_heart narration at speed 1.08 with a hard maximum of 300 characters per synthesis call and -16 LUFS, then align all seven visual scenes to the exact audio paragraph boundaries and mux with FFmpeg 8.0.1 as H.264 CRF 18 yuv420p plus AAC-LC 192 kb/s 48 kHz mono.",
+    "duration_seconds": 286.81,
+    "pixel_width": 1920,
+    "pixel_height": 1080,
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "output_sha256": "c406f8eece3877c8baea2e6ba610ed4fce5195be04c003070820c9f214569d9f",
+    "mux_receipt_sha256": "62886f8b4df23b11e9e64fa7a7c5f71e984a891247dfd81ceeff487b554b2fe2",
+    "output_storage": "ignored build/visual_edition media only",
+    "visual_review": {
+      "draft_sample_seconds": [
+        25.645,
+        68.99,
+        115.107,
+        165.435,
+        208.342,
+        243.377,
+        272.113
+      ],
+      "release_sample_seconds": [
+        68.99,
+        243.377
+      ],
+      "result": "pass",
+      "review_scope": "Exact mux-receipt midpoint sampling across all seven narration scenes checked composition, legibility, persistent labels, color-plus-shape semantics, evidence ceiling, non-claims, end-card identity, and absence of clipping or overflowing text."
+    },
+    "audio_master": {
+      "identity": "Kokoro-82M bf16 af_heart via kokoro-mlx 0.1.2 at speed 1.08",
+      "provenance": "Locally generated from the canonical narration with the pinned Apache-2.0 Kokoro-82M model and MIT kokoro-mlx implementation recorded in visual_edition/narration_toolchain.json.",
+      "publication_rights_state": "cleared",
+      "duration_seconds": 286.81,
+      "sha256": "33aa59ab75010d330ffb1df4ac8232af077ad784f61eec122380ebd86ba63b3b"
+    },
+    "caption_review": {
+      "state": "machine_audited",
+      "audit_method": "Exact receipt-derived canonical timing plus local MLX Whisper transcript comparison and complete beginning/end coverage checks.",
+      "reviewed_against_audio_sha256": "33aa59ab75010d330ffb1df4ac8232af077ad784f61eec122380ebd86ba63b3b",
+      "asr_model": "mlx-community/whisper-small.en-mlx@52a88bf6e98b114a210c21bb83e22d6e1505cb73",
+      "asr_word_error_rate": 0.005042,
+      "terminology": "pass",
+      "timing": "pass",
+      "non_speech_information": "pass",
+      "material_visual_changes": "described_in_adjacent_transcript"
+    },
+    "artifact_sha256": {
+      "storyboard": "a0f50fd07918c866f86c527784323ed452013ab1aee8c9fca5f2aac425dbb41d",
+      "scene_code": "b09324583674ec37cfc7886ab0e16f71770df4f1673fe41ced3232264f184be7",
+      "narration_script": "afc1c3eaaf59cc19ce45361d719b45056bc1bcc4ce19adb3938a6146788d83db",
+      "captions": "adec6e387595cb30878e7884e25391d149e679714cc8ebfb73c56bd39e1c1e56",
+      "descriptive_transcript": "48b45161706c37aaafb9db17ae7521c3264f42d3d32fe6e7295c2caf953db84b",
+      "thumbnail": "0a190d3e7abff3628e8ca8ec4bf7696fca4e1986510a49c39e0e3fd61570a49b",
+      "scene_spec": "74731014bf69e2f80ac7b0a39776d4691af740f1fea2cd41408ac3d4e9264430"
+    },
+    "remaining_release_gates": [
+      "obtain exact action-time authority before any YouTube or playlist mutation"
+    ]
+  },
+  "youtube": {
+    "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+    "video_id": null,
+    "watch_url": null,
+    "playlist_id": null,
+    "generation": 0,
+    "publication_state": "not_authorized",
+    "uploaded_output_sha256": null,
+    "bound_chapter_sha256": null,
+    "bound_source_commit": null,
+    "published_at_utc": null,
+    "platform_receipt_path": null,
+    "supersedes_video_id": null
+  },
+  "quarto_embed": {
+    "state": "absent_until_published",
+    "chapter_anchor": "visual-abstract",
+    "frame_title": "Visual abstract: Human Intent as a Formal Input",
+    "aria_label": "Play the visual abstract for Human Intent as a Formal Input"
+  },
+  "staleness": {
+    "state": "current",
+    "checked_chapter_sha256": "a0f869c4c19a73cbce33f976322bf629cef5cb7a1483885df97dd855aa5c33e5",
+    "triggers": [
+      "core_claim",
+      "mechanism",
+      "worked_trace",
+      "evidence_state",
+      "non_claim",
+      "material_source",
+      "chapter_identity",
+      "handoff",
+      "public_url"
+    ]
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This derivative video does not promote or otherwise change any book claim.",
+    "The validated local final master is not a YouTube upload or a public publication.",
+    "Automated intelligibility and caption audits do not establish that every listener will prefer the synthetic voice.",
+    "A successful animation render does not establish deployment, safety, efficiency, transfer, state of the art, AGI, or ASI."
+  ]
+}

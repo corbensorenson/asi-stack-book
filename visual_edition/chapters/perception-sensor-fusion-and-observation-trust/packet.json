@@ -1,0 +1,153 @@
+{
+  "schema_version": "asi_stack.visual_chapter_packet.v1",
+  "video_id": "asi-video-perception-sensor-fusion-and-observation-trust",
+  "chapter_id": "perception-sensor-fusion-and-observation-trust",
+  "chapter_path": "chapters/perception-sensor-fusion-and-observation-trust.qmd",
+  "chapter_sha256": "d2b199d42c24e39be96ab3fe1935f291f45569f91b1230f74bb2251fad3e5417",
+  "source_commit": "f10ef079ecfeb48503407d67832a0251f77c2c78",
+  "pilot": false,
+  "lifecycle_state": "ready_not_published",
+  "claim_bindings": [
+    {
+      "claim_id": "perception-sensor-fusion-and-observation-trust.core",
+      "claim_label": "Design rationale",
+      "support_state": "argument"
+    }
+  ],
+  "assigned_source_ids": [
+    "ext_multimodal_machine_learning_taxonomy_2019",
+    "ext_imagebind_2023",
+    "ext_3d_detection_corruptions_2023",
+    "ext_adversarial_sensor_fusion_2022",
+    "ext_gemini_robotics_2025",
+    "platonic_world_model"
+  ],
+  "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result.",
+  "required_content": {
+    "problem": "Planning and control often treat sensor-derived tokens, objects, or embeddings as reality even when calibration, time, coverage, missingness, dependence, shift, or spoofing makes the observation unreliable. Clean accuracy, more modalities, cross-modal similarity, sensor count, or fused confidence cannot establish task-relevant observation trust, independent evidence, causal grounding, or physical safety.",
+    "core_mechanism": "A consequential observation requires a versioned contract binding task need, sensor and modality identity, calibration, pose, clocks, provenance, coverage, missingness, per-channel hypotheses, alignment, fusion, dependence, disagreement, shift, active observation, freshness, authority, cost, and residuals. Compile a task-relative observation need and consequence class. Bind sensor, modality, model, calibration, pose, clock, and operating environment.",
+    "worked_trace": "Build a two- or three-modality observation service that emits a versioned Observation Trust Record and validator with immutable identity, clock and calibration checks, per-channel hypotheses, dependence-aware fusion, calibrated abstention, one active-observation action, a safe-hold route, and seeded time, missing-channel, correlated-failure, spoofing, and benign-disagreement fixtures. Bind sensor, modality, model, calibration, pose, clock, and operating environment. Preserve per-channel measurements, hypotheses, uncertainty, quality, and missingness before fusion. Separate temporal, spatial, semantic, and population alignment.",
+    "failure_boundary": "spoofing calibration or clock drift occlusion and saturation modality collapse",
+    "evidence_state": "This chapter remains Design rationale at argument support. Its contracts, examples, tests, or local artifacts establish only their encoded scope. A finite admission model refuses to promote correlated channel agreement as independent evidence. correlated agreement is not independent evidence calibration is cohort environment metric and version bound",
+    "non_claims": "No chapter claim or evidence state is promoted by this visual. A named mechanism is not proof of correct implementation or useful deployment. A local check or formal model does not establish real-world enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.",
+    "handoff": "The next chapter is Planning as a Control Layer: DAGs and Intelligence Arbitrage. It takes responsibility for After a command contract is accepted, the stack must choose which obligations become work, which alternatives remain candidates, what dependencies and observations make nodes feasible, how scarce capacity is scheduled."
+  },
+  "artifacts": {
+    "storyboard": "visual_edition/chapters/perception-sensor-fusion-and-observation-trust/storyboard.md",
+    "scene_code": "visual_edition/chapters/perception-sensor-fusion-and-observation-trust/scene.py",
+    "narration_script": "visual_edition/chapters/perception-sensor-fusion-and-observation-trust/narration.txt",
+    "captions": "visual_edition/chapters/perception-sensor-fusion-and-observation-trust/captions.vtt",
+    "descriptive_transcript": "visual_edition/chapters/perception-sensor-fusion-and-observation-trust/transcript.md",
+    "thumbnail": "visual_edition/chapters/perception-sensor-fusion-and-observation-trust/thumbnail.svg",
+    "scene_spec": "visual_edition/chapters/perception-sensor-fusion-and-observation-trust/scene_spec.json",
+    "thumbnail_alt_text": "A governed graph diagram for Perception, Sensor Fusion, and Observation Trust shows three named mechanism cards above a labeled failure and evidence boundary."
+  },
+  "render_receipt": {
+    "receipt_state": "current_final_av_master",
+    "validation_state": "validated",
+    "rendered_at_utc": "2026-07-30T03:46:55Z",
+    "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+    "toolchain_qualification": "qualified_for_all_non_latex_chapters",
+    "render_profile": "final_av_master",
+    "command": "Render the exact-timing ChapterVisualAbstract with pinned ManimCE 0.20.1 at 1920x1080/30, render pinned Kokoro-82M af_heart narration at speed 1.08 with a hard maximum of 300 characters per synthesis call and -16 LUFS, then align all seven visual scenes to the exact audio paragraph boundaries and mux with FFmpeg 8.0.1 as H.264 CRF 18 yuv420p plus AAC-LC 192 kb/s 48 kHz mono.",
+    "duration_seconds": 227.766016,
+    "pixel_width": 1920,
+    "pixel_height": 1080,
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "output_sha256": "43f67d9aedff029eba9a593f49ed0aef05d4ca56d37511074dd872c5625c9f33",
+    "mux_receipt_sha256": "7fbd4f3bafb469c7bf9430dce4ad06dfce9db34d1ee915e428ff0f0bb6f7c68b",
+    "output_storage": "ignored build/visual_edition media only",
+    "visual_review": {
+      "draft_sample_seconds": [
+        16.1,
+        51.425,
+        96.57,
+        130.417,
+        152.807,
+        181.307,
+        211.555
+      ],
+      "release_sample_seconds": [
+        51.425,
+        181.307
+      ],
+      "result": "pass",
+      "review_scope": "Exact mux-receipt midpoint sampling across all seven narration scenes checked composition, legibility, persistent labels, color-plus-shape semantics, evidence ceiling, non-claims, end-card identity, and absence of clipping or overflowing text."
+    },
+    "audio_master": {
+      "identity": "Kokoro-82M bf16 af_heart via kokoro-mlx 0.1.2 at speed 1.08",
+      "provenance": "Locally generated from the canonical narration with the pinned Apache-2.0 Kokoro-82M model and MIT kokoro-mlx implementation recorded in visual_edition/narration_toolchain.json.",
+      "publication_rights_state": "cleared",
+      "duration_seconds": 227.766016,
+      "sha256": "27271f1cab36c66d8721541f86b61fc5c7f07a0a856da2f5faab6f4a46f511ab"
+    },
+    "caption_review": {
+      "state": "machine_audited",
+      "audit_method": "Exact receipt-derived canonical timing plus local MLX Whisper transcript comparison and complete beginning/end coverage checks.",
+      "reviewed_against_audio_sha256": "27271f1cab36c66d8721541f86b61fc5c7f07a0a856da2f5faab6f4a46f511ab",
+      "asr_model": "mlx-community/whisper-small.en-mlx@52a88bf6e98b114a210c21bb83e22d6e1505cb73",
+      "asr_word_error_rate": 0.008547,
+      "terminology": "pass",
+      "timing": "pass",
+      "non_speech_information": "pass",
+      "material_visual_changes": "described_in_adjacent_transcript"
+    },
+    "artifact_sha256": {
+      "storyboard": "a0f16cd7baff3afdb1f8a2c44cf34ebbc32cdee77b828a53f7d6879906c7655e",
+      "scene_code": "f02a50b8412bd1692a519c4453aebcd6c606d0d0cfa7ec5e4e9e9944fc904f23",
+      "narration_script": "de13816881e7e64aead09a9d16817368688c474b56638a4b93faabb33f2daf56",
+      "captions": "58fb3e6c31a7760ef0b5658b6978b261e859750eb5f85c69ff0b9dfaec036fd8",
+      "descriptive_transcript": "b3a7801c7aa7bc3999abd72520a80ca64f41dd7f424ea78d2d7ff24f26e832ff",
+      "thumbnail": "a40b5e7c8c10bec80b0f5e37225430ed7a7e5e04d49dda0101126862c217bfad",
+      "scene_spec": "46662b5ea49b7815836aabac5d61e6bd7b793cb92f70439e69e990037b9c0a9b"
+    },
+    "remaining_release_gates": [
+      "obtain exact action-time authority before any YouTube or playlist mutation"
+    ]
+  },
+  "youtube": {
+    "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+    "video_id": null,
+    "watch_url": null,
+    "playlist_id": null,
+    "generation": 0,
+    "publication_state": "not_authorized",
+    "uploaded_output_sha256": null,
+    "bound_chapter_sha256": null,
+    "bound_source_commit": null,
+    "published_at_utc": null,
+    "platform_receipt_path": null,
+    "supersedes_video_id": null
+  },
+  "quarto_embed": {
+    "state": "absent_until_published",
+    "chapter_anchor": "visual-abstract",
+    "frame_title": "Visual abstract: Perception, Sensor Fusion, and Observation Trust",
+    "aria_label": "Play the visual abstract for Perception, Sensor Fusion, and Observation Trust"
+  },
+  "staleness": {
+    "state": "current",
+    "checked_chapter_sha256": "d2b199d42c24e39be96ab3fe1935f291f45569f91b1230f74bb2251fad3e5417",
+    "triggers": [
+      "core_claim",
+      "mechanism",
+      "worked_trace",
+      "evidence_state",
+      "non_claim",
+      "material_source",
+      "chapter_identity",
+      "handoff",
+      "public_url"
+    ]
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This derivative video does not promote or otherwise change any book claim.",
+    "The validated local final master is not a YouTube upload or a public publication.",
+    "Automated intelligibility and caption audits do not establish that every listener will prefer the synthetic voice.",
+    "A successful animation render does not establish deployment, safety, efficiency, transfer, state of the art, AGI, or ASI."
+  ]
+}

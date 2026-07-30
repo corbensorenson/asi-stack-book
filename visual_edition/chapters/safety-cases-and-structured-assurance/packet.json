@@ -1,0 +1,151 @@
+{
+  "schema_version": "asi_stack.visual_chapter_packet.v1",
+  "video_id": "asi-video-safety-cases-and-structured-assurance",
+  "chapter_id": "safety-cases-and-structured-assurance",
+  "chapter_path": "chapters/safety-cases-and-structured-assurance.qmd",
+  "chapter_sha256": "a74a75e18bb7f17baa663fb386d3d599eaed48a6674fb7f2e1513d273736083f",
+  "source_commit": "f10ef079ecfeb48503407d67832a0251f77c2c78",
+  "pilot": false,
+  "lifecycle_state": "ready_not_published",
+  "claim_bindings": [
+    {
+      "claim_id": "safety-cases-and-structured-assurance.core",
+      "claim_label": "Design rationale",
+      "support_state": "argument"
+    }
+  ],
+  "assigned_source_ids": [
+    "ext_gsn_community_standard_2011",
+    "ext_evaluations_safety_cases_scheming_2024",
+    "ext_aisi_safety_cases_2024",
+    "benchmaxxing"
+  ],
+  "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result.",
+  "required_content": {
+    "problem": "The stack has claim, source, proof, evaluation, threshold, safeguard, readiness, and residual records, but no bounded compilation surface that makes their dependencies, assumptions, countercases, and unresolved defeaters reviewable as one deployment-context argument. Evidence States owns support movement, Benchmark Ratchets owns measurement integrity, Adversarial Evaluation owns observation integrity, Capability Thresholds owns precommitted response, Readiness owns admission, and Artifact Graphs owns provenance, but none owns the structured assurance argument that can expose how those records jointly support or fail a scoped claim.",
+    "core_mechanism": "Safety Cases and Structured Assurance owns a deployment-context-, hazard-, claim-, strategy-, evidence-, assumption-, defeater-, safeguard-, threshold-, readiness-, authority-, release-path-, residual-, version-, and time-specific Assurance Argument Compilation Packet: it compiles exact governed references and bounded support or challenge relations, preserves alternatives, dissent, staleness, countercases, conflicts, overrides, costs, lineage, and downstream invalidation, and routes only a scoped case status to existing decision owners; a connected, rendered, notation-conformant, reviewed, accepted, or synthetically complete case alone establishes neither hazard completeness, evidence adequacy, argument validity, reviewer independence, control effectiveness, risk, safety, readiness, release authority, deployment, support, transfer, nor SOTA.",
+    "worked_trace": "Two public schemas plus eight digest-bound synthetic case records—one readiness-review route and seven negative routes—and five validator mutations bridge eight owned Lean declarations. All eight declarations are derived finite reductions of one hand-authored SafetyCaseRouteFor decision tree. No real case, hazard analysis, threat model, evidence-adequacy review, countercase search, safeguard verification, independent institution, acceptance, readiness, release, deployment, incident, reproduction, or transfer ran; chapter-core support effect is zero. Compile typed claim, strategy, evidence-reference, context, assumption, justification, hazard, safeguard, threshold, readiness, authority, defeater, countercase, dissent, residual, and decision nodes.",
+    "failure_boundary": "Argument theater presents a polished graph with unsupported edges, stale evidence, or omitted assumptions. Defeater laundering records only evidence for a preferred conclusion and hides countercases, dissent, or failed evaluations. Scope drift reuses a case outside its named deployment context, hazard model, model version, or access conditions. Evidence aliasing cites a receipt or metric as if it directly established a broader safety or control claim.",
+    "evidence_state": "This chapter remains Design rationale at argument support. Its contracts, examples, tests, or local artifacts establish only their encoded scope. A reachable case lifecycle binds exact case, context, hazard, evidence, challenge, review, authority, and residual identity before emitting a readiness handoff that assigns no release authority. Missing deployment context blocks the draft-to-scoped transition without mutating case state. Missing hazard or argument structure blocks scope admission without mutating case state.",
+    "non_claims": "No chapter claim or evidence state is promoted by this visual. A named mechanism is not proof of correct implementation or useful deployment. A local check or formal model does not establish real-world enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.",
+    "handoff": "The next chapter is Content Authenticity, Watermarking, and Synthetic Media Integrity. It takes responsibility for The stack tracks model and software provenance but lacks an owner for the provenance, disclosure, detectability, transformation history, and downstream interpretation of generated or manipulated outputs."
+  },
+  "artifacts": {
+    "storyboard": "visual_edition/chapters/safety-cases-and-structured-assurance/storyboard.md",
+    "scene_code": "visual_edition/chapters/safety-cases-and-structured-assurance/scene.py",
+    "narration_script": "visual_edition/chapters/safety-cases-and-structured-assurance/narration.txt",
+    "captions": "visual_edition/chapters/safety-cases-and-structured-assurance/captions.vtt",
+    "descriptive_transcript": "visual_edition/chapters/safety-cases-and-structured-assurance/transcript.md",
+    "thumbnail": "visual_edition/chapters/safety-cases-and-structured-assurance/thumbnail.svg",
+    "scene_spec": "visual_edition/chapters/safety-cases-and-structured-assurance/scene_spec.json",
+    "thumbnail_alt_text": "A governed graph diagram for Safety Cases and Structured Assurance shows three named mechanism cards above a labeled failure and evidence boundary."
+  },
+  "render_receipt": {
+    "receipt_state": "current_final_av_master",
+    "validation_state": "validated",
+    "rendered_at_utc": "2026-07-30T03:40:54Z",
+    "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+    "toolchain_qualification": "qualified_for_all_non_latex_chapters",
+    "render_profile": "final_av_master",
+    "command": "Render the exact-timing ChapterVisualAbstract with pinned ManimCE 0.20.1 at 1920x1080/30, render pinned Kokoro-82M af_heart narration at speed 1.08 with a hard maximum of 300 characters per synthesis call and -16 LUFS, then align all seven visual scenes to the exact audio paragraph boundaries and mux with FFmpeg 8.0.1 as H.264 CRF 18 yuv420p plus AAC-LC 192 kb/s 48 kHz mono.",
+    "duration_seconds": 297.98,
+    "pixel_width": 1920,
+    "pixel_height": 1080,
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "output_sha256": "6ef64380fb36766cad1db6efaf775403850aa35cce9cefe83960dfcedf6e31fa",
+    "mux_receipt_sha256": "cfaf9314ce83e99a7558f9fb9503d78a43032b9d021997775d72f50b092ba4ed",
+    "output_storage": "ignored build/visual_edition media only",
+    "visual_review": {
+      "draft_sample_seconds": [
+        23.382,
+        74.747,
+        129.762,
+        177.342,
+        217.787,
+        251.723,
+        281.87
+      ],
+      "release_sample_seconds": [
+        74.747,
+        251.723
+      ],
+      "result": "pass",
+      "review_scope": "Exact mux-receipt midpoint sampling across all seven narration scenes checked composition, legibility, persistent labels, color-plus-shape semantics, evidence ceiling, non-claims, end-card identity, and absence of clipping or overflowing text."
+    },
+    "audio_master": {
+      "identity": "Kokoro-82M bf16 af_heart via kokoro-mlx 0.1.2 at speed 1.08",
+      "provenance": "Locally generated from the canonical narration with the pinned Apache-2.0 Kokoro-82M model and MIT kokoro-mlx implementation recorded in visual_edition/narration_toolchain.json.",
+      "publication_rights_state": "cleared",
+      "duration_seconds": 297.98,
+      "sha256": "9614dc76fc8948f52aba20d87ec27e95e66d7c8ff77ce1bfcd6e0b91e72e0dde"
+    },
+    "caption_review": {
+      "state": "machine_audited",
+      "audit_method": "Exact receipt-derived canonical timing plus local MLX Whisper transcript comparison and complete beginning/end coverage checks.",
+      "reviewed_against_audio_sha256": "9614dc76fc8948f52aba20d87ec27e95e66d7c8ff77ce1bfcd6e0b91e72e0dde",
+      "asr_model": "mlx-community/whisper-small.en-mlx@52a88bf6e98b114a210c21bb83e22d6e1505cb73",
+      "asr_word_error_rate": 0.024876,
+      "terminology": "pass",
+      "timing": "pass",
+      "non_speech_information": "pass",
+      "material_visual_changes": "described_in_adjacent_transcript"
+    },
+    "artifact_sha256": {
+      "storyboard": "18204594367d585829427cc9e1d86db270d0f114bf9f819d02d956148b076a25",
+      "scene_code": "4dc40b9680b1a7ac1d556921d506b9ec343fa45cd57ad4bdddacf9774e78670b",
+      "narration_script": "6896b70420737b91b38688b9dc78cda1fa25568b80d07c9f3a52fc8be8a98fb8",
+      "captions": "0580cba1094a9eb50787b48f54e0c7da92f23d935eaf4e1b3dc2d4a374355cdd",
+      "descriptive_transcript": "5d6f2629c4894c62300a564ff057e8423e8b6ae18c9c729e506f408d4a5cd57a",
+      "thumbnail": "4f990f3e3527529ed4e890e0a37325ddb1b4be19bc631c9d0abc2089a099b6a1",
+      "scene_spec": "985108e81674b3a1010454d56b99daab070005e949fdbbdbf0333c139ba12a40"
+    },
+    "remaining_release_gates": [
+      "obtain exact action-time authority before any YouTube or playlist mutation"
+    ]
+  },
+  "youtube": {
+    "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+    "video_id": null,
+    "watch_url": null,
+    "playlist_id": null,
+    "generation": 0,
+    "publication_state": "not_authorized",
+    "uploaded_output_sha256": null,
+    "bound_chapter_sha256": null,
+    "bound_source_commit": null,
+    "published_at_utc": null,
+    "platform_receipt_path": null,
+    "supersedes_video_id": null
+  },
+  "quarto_embed": {
+    "state": "absent_until_published",
+    "chapter_anchor": "visual-abstract",
+    "frame_title": "Visual abstract: Safety Cases and Structured Assurance",
+    "aria_label": "Play the visual abstract for Safety Cases and Structured Assurance"
+  },
+  "staleness": {
+    "state": "current",
+    "checked_chapter_sha256": "a74a75e18bb7f17baa663fb386d3d599eaed48a6674fb7f2e1513d273736083f",
+    "triggers": [
+      "core_claim",
+      "mechanism",
+      "worked_trace",
+      "evidence_state",
+      "non_claim",
+      "material_source",
+      "chapter_identity",
+      "handoff",
+      "public_url"
+    ]
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This derivative video does not promote or otherwise change any book claim.",
+    "The validated local final master is not a YouTube upload or a public publication.",
+    "Automated intelligibility and caption audits do not establish that every listener will prefer the synthetic voice.",
+    "A successful animation render does not establish deployment, safety, efficiency, transfer, state of the art, AGI, or ASI."
+  ]
+}

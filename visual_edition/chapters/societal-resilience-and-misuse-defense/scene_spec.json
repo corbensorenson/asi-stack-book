@@ -1,0 +1,70 @@
+{
+  "chapter_id": "societal-resilience-and-misuse-defense",
+  "title": "Societal Resilience and Misuse Defense",
+  "subtitle": "Societal misuse defense should be operated as a domain-specific resist-absorb-recover-adapt network with shared incident… response, correction, and residual ownership; prevention metrics alone establish neither resilience nor acceptable harm.",
+  "archetype": "graph",
+  "claim_label": "Design rationale",
+  "evidence_level": "argument",
+  "next_title": "Stable Capability Fields",
+  "display": {
+    "problem": "Model safeguards and internal incident command cannot by themselves protect… diffuses across platforms, or harms exploit social and infrastructural vulnerabilities.",
+    "insufficient": "A classifier, terms of service, model refusal, takedown queue, or company-local incident process sees only one control point.",
+    "mechanism": [
+      {
+        "label": "Maintain domain playbooks fraud",
+        "detail": "Maintain domain playbooks for fraud and impersonation… misuse, biological/chemical misuse, manipulation, and vulnerable-user harms."
+      },
+      {
+        "label": "Shared incident identifiers",
+        "detail": "Define shared incident identifiers, severity, evidence minimums… contacts, and status transitions across participating organizations."
+      },
+      {
+        "label": "Layer prevention friction detection",
+        "detail": "Layer prevention, friction, detection, rapid patching, victim… adaptation instead of depending on one classifier."
+      },
+      {
+        "label": "Defense-favoring capability",
+        "detail": "Measure defense-favoring capability by time-to-detect, time-to-contain, prevented… false intervention, coverage, accessibility, and total burden."
+      }
+    ],
+    "trace": [
+      "Maintain domain playbooks fraud",
+      "Shared incident identifiers",
+      "Layer prevention friction detection",
+      "Defense-favoring capability"
+    ],
+    "failures": [
+      "single-platform blind spot",
+      "classifier monoculture",
+      "victim revictimization during evidence collection",
+      "privacy-invasive telemetry"
+    ],
+    "proof_targets": [
+      "A finite resilience incident packet may hand… are present; no theorem establishes social resilience.",
+      "Cross-organization sharing is purpose-limited, access-controlled, minimized, logged, and expiring.",
+      "Detection, containment, recovery, correction, and adaptation remain separate measured stages."
+    ],
+    "evidence_ceiling": "This chapter remains Design rationale at argument support.",
+    "nonclaims": [
+      "No chapter claim or evidence state is promoted by this visual.",
+      "A named mechanism is not proof of correct implementation or useful deployment.",
+      "A local check or formal model does not establish real-world enforcement.",
+      "No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows."
+    ],
+    "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result."
+  },
+  "timing": {
+    "basis": "exact_narration_paragraph_boundaries",
+    "narration_receipt_sha256": "a565b0264e1730d5a7681b134ee922d1f95e3f26ac49fbe260ac92de9f7af0a3",
+    "target_duration_seconds": 285.49,
+    "scene_endpoints_seconds": [
+      41.895,
+      101.81,
+      162.92,
+      182.2,
+      225.22,
+      253.295,
+      285.49
+    ]
+  }
+}

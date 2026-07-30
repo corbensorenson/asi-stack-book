@@ -1,0 +1,92 @@
+{
+  "schema_version": "asi_stack.narration_toolchain.v1",
+  "toolchain_id": "kokoro-82m-bf16-af-heart-kokoro-mlx-0.1.2",
+  "qualification_state": "qualified_for_all_chapters",
+  "runtime": {
+    "operating_system": "macOS",
+    "architecture": "arm64",
+    "python": "3.12.5",
+    "environment_class": "isolated_ignored_build_venv",
+    "canonical_relative_path": "build/visual_edition/tts_venv/bin/python"
+  },
+  "synthesis": {
+    "implementation": "kokoro-mlx",
+    "version": "0.1.2",
+    "implementation_license": "MIT",
+    "implementation_url": "https://github.com/gabrimatic/kokoro-mlx",
+    "model_repository": "mlx-community/Kokoro-82M-bf16",
+    "model_revision": "a71e4d38b236d968966a2002c4c895dbd12b1c3c",
+    "upstream_model_repository": "hexgrad/Kokoro-82M",
+    "model_license": "Apache-2.0",
+    "model_url": "https://huggingface.co/mlx-community/Kokoro-82M-bf16",
+    "config_sha256": "5abb01e2403b072bf03d04fde160443e209d7a0dad49a423be15196b9b43c17f",
+    "weights_sha256": "4e9ecdf03b8b6cf906070390237feda473dc13327cb8d56a43deaa374c02acd8",
+    "voice": "af_heart",
+    "voice_sha256": "2c1c733b0e6576c810e268d3e440c21dea4e0f0131a3ba4cfc98d7fe6136d094",
+    "language": "en-US",
+    "speed": 1.08,
+    "sample_rate": 24000,
+    "channels": 1,
+    "sample_format": "PCM_24",
+    "integrated_lufs_target": -16.0,
+    "true_peak_dbtp_target": -1.5,
+    "maximum_verified_true_peak_dbtp": -1.0,
+    "loudness_range_target": 11.0,
+    "sentence_pause_seconds": 0.22,
+    "paragraph_pause_seconds": 0.48,
+    "maximum_segment_characters": 300
+  },
+  "verification": {
+    "implementation": "mlx-whisper",
+    "version": "0.4.3",
+    "implementation_license": "MIT",
+    "implementation_url": "https://github.com/ml-explore/mlx-examples/tree/main/whisper",
+    "model_repository": "mlx-community/whisper-small.en-mlx",
+    "model_revision": "52a88bf6e98b114a210c21bb83e22d6e1505cb73",
+    "model_config_sha256": "40028e43687458e79ba89cc16bf14184c5414a5cbc00fd511f8f78d138647afd",
+    "model_weights_sha256": "1bb29b030aca711a035f7a084a0eefac6251ecc2bdd356fa748858fbad082f5a",
+    "maximum_content_normalized_word_error_rate": 0.03,
+    "required_checks": [
+      "exact input, lexicon, model, voice, output, receipt, ASR, and validator digest binding",
+      "hard three-hundred-character synthesis-call ceiling with exact written-token preservation",
+      "no internal ASR omission spanning more than eight expected content tokens",
+      "complete beginning and ending coverage",
+      "finite mono samples with no digital clipping",
+      "three-to-six-minute visual-edition duration",
+      "caption timing derived from the exact narration receipt",
+      "final A/V codec, geometry, frame-rate, audio, and duration checks"
+    ]
+  },
+  "tracked_inputs": {
+    "requirements_lock": "visual_edition/narration_requirements.lock.txt",
+    "requirements_lock_sha256": "d8aab961f8cea42ccd0509c3596e82d1ab63370dda4f826de0f88697632b48da",
+    "pronunciation_lexicon": "visual_edition/narration_pronunciations.json",
+    "pronunciation_lexicon_sha256": "bfcd892ebb6fd0e9bf6ea23cdf533713ee1145601920e519af624ab4ea109ce2",
+    "renderer": "scripts/render_visual_narration.py",
+    "renderer_sha256": "8669fb74e90714f35ffb1f1410f4a5607156aa92aeeae21b3daecca2b6b73396",
+    "caption_builder": "scripts/build_visual_captions_from_narration_receipt.py",
+    "caption_builder_sha256": "46c66f62a0d51204fa3f389b95e91b8f401ccd966182f17ec1a38d03ffa68c0e",
+    "narration_validator": "scripts/validate_visual_narration.py",
+    "narration_validator_sha256": "9079290cad5ef875b0547722b706f859ebb76571b7371eedd8ce3906e018887b",
+    "visual_master_validator": "scripts/validate_visual_master.py",
+    "visual_master_validator_sha256": "058dcdd7ce45f1c8941b82b996014488c28e63db1c02e809bde828d3bed40ae5"
+  },
+  "rights_and_disclosure": {
+    "publication_rights_state": "cleared_under_recorded_open_source_and_model_licenses",
+    "required_video_description_disclosure": "Narration is synthetic and generated locally with Kokoro-82M using the af_heart voice.",
+    "human_voice_impersonation_claimed": false,
+    "warranty_claimed": false
+  },
+  "storage_boundary": {
+    "tracked": "scripts, locks, lexicon, contracts, captions, and digest receipts",
+    "ignored": "model weights, virtual environments, raw audio, ASR output, and final media under build/visual_edition",
+    "pages_artifact_may_contain_media": false
+  },
+  "upgrade_gate": "rerun terminology, intelligibility, loudness, caption, mux, and five-pilot visual review before adoption",
+  "non_claims": [
+    "Automated transcript agreement does not prove that every listener will prefer the voice.",
+    "A qualified narration toolchain does not make an unvalidated chapter video publishable.",
+    "Open-source licensing does not create a warranty or erase platform disclosure duties.",
+    "Synthetic narration does not change any book claim or evidence state."
+  ]
+}

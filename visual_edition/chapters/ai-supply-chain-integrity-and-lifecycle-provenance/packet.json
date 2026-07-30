@@ -1,0 +1,162 @@
+{
+  "schema_version": "asi_stack.visual_chapter_packet.v1",
+  "video_id": "asi-video-ai-supply-chain-integrity-and-lifecycle-provenance",
+  "chapter_id": "ai-supply-chain-integrity-and-lifecycle-provenance",
+  "chapter_path": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd",
+  "chapter_sha256": "06e1257cde17ad0d047f12d50647f6c512039e58045ad5eab9feafdcef0b2544",
+  "source_commit": "f10ef079ecfeb48503407d67832a0251f77c2c78",
+  "pilot": false,
+  "lifecycle_state": "ready_not_published",
+  "claim_bindings": [
+    {
+      "claim_id": "ai-supply-chain-integrity-and-lifecycle-provenance.core",
+      "claim_label": "Design rationale",
+      "support_state": "argument"
+    }
+  ],
+  "assigned_source_ids": [
+    "ext_nist_cscrm_2022",
+    "deterministic_capability_compilation",
+    "platonic_world_model",
+    "ext_slsa_build_track_1_2",
+    "ext_openssf_model_signing_spec_2025",
+    "ext_spdx_ai_profile_3_0_1",
+    "cca_project",
+    "moecot_manifest_project",
+    "corbens_trainer_project",
+    "ext_w3c_prov_o_2013",
+    "ext_mlcommons_croissant_1_1_2026",
+    "ext_in_toto_2019",
+    "ext_owasp_agentic_top_10_2026",
+    "ext_proof_of_learning_2021",
+    "ext_c2pa_specification_2_3_2025"
+  ],
+  "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result.",
+  "required_content": {
+    "problem": "A model artifact can have a valid custody record while the data and rights, code, prompts and policies, dependencies, containers, hardware/firmware, build and training environments, evaluation packages, suppliers and services, signers, advisories, transformations, releases, recipients, descendants, incidents, and retirement conditions that produced or surround it remain unbound, stale, unverifiable, undisclosed, or unable to trigger observed downstream response.",
+    "core_mechanism": "Every governed AI supply-chain decision should bind a prospectively frozen consumer, requested use, threat and assurance model, materiality policy, and relation-specific asset closure to exact subject/content and lineage identity; typed data, code, model, prompt/policy, dependency, build/training/evaluation, environment, hardware/firmware, supplier/service, signer, advisory, transformation, release, recipient, descendant, retention, and retirement state; issuer, verifier, policy, freshness, trust and dependency boundaries; observed artifact and lifecycle effects; append-only invalidation and acknowledged affected-path propagation; restoration, compensation, disclosure, privacy/rights, availability, cost, and terminal residual ownership.",
+    "worked_trace": "Preserve the exact current finite boundary: one hand-authored three-project affected-path record reaches quarantine; ten mutations reject digest substitution, incomplete declared closure, missing response ownership, ordinary use during invalidation, overwritten history, revoked-path non-quarantine, stale-assurance admission, custody after invalidation, missing disposal closure, and support promotion; seven Lean theorem declarations under six manifest targets prove only explicit Boolean admission-route consequences. No real AI BOM, artifact/content verification, dataset, supplier, build/training execution, signature, key, verifier, advisory feed, dependency discovery, reproducible rebuild, relation-specific propagation, quarantine/restoration effect, recipient notice, sanitization, privacy/rights, availability, or security metric has been exercised.",
+    "failure_boundary": "Name, digest, version, tokenizer, dataset, dependency, model, configuration, policy, environment, build, package, signer, supplier, or recipient substitution occurs after approval or behind a familiar label. BOM or graph theater presents a well-formed but incomplete, stale, inaccessible, consumer-mismatched, or unverified inventory as world-complete integrity. Signature, provenance, SLSA, layout, checksum, dataset metadata, supplier, advisory, or conformance laundering turns a scoped predicate into artifact correctness, secure development, data fitness/rights, safe behavior, compliance, or authority.",
+    "evidence_state": "This chapter remains Design rationale at argument support. Its contracts, examples, tests, or local artifacts establish only their encoded scope. A finite AI supply-chain record with a requested artifact admission, complete required lineage fields, and an unresolved critical advisory routes to quarantine rather than custody review, without inferring compromise, artifact correctness, data fitness, safety, or ASI. A complete finite requested artifact with verified required signature, current advisory state, revocation path, and residual owner routes to custody review without granting load or deployment authority.",
+    "non_claims": "No chapter claim or evidence state is promoted by this visual. A named mechanism is not proof of correct implementation or useful deployment. A local check or formal model does not establish real-world enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.",
+    "handoff": "The next chapter is Recursive Self-Improvement Boundaries. It takes responsibility for A system that helps propose, implement, or evaluate changes to itself can alter the state, evidence, evaluator, authority, ontology, descendants, and recovery conditions by which the change is judged."
+  },
+  "artifacts": {
+    "storyboard": "visual_edition/chapters/ai-supply-chain-integrity-and-lifecycle-provenance/storyboard.md",
+    "scene_code": "visual_edition/chapters/ai-supply-chain-integrity-and-lifecycle-provenance/scene.py",
+    "narration_script": "visual_edition/chapters/ai-supply-chain-integrity-and-lifecycle-provenance/narration.txt",
+    "captions": "visual_edition/chapters/ai-supply-chain-integrity-and-lifecycle-provenance/captions.vtt",
+    "descriptive_transcript": "visual_edition/chapters/ai-supply-chain-integrity-and-lifecycle-provenance/transcript.md",
+    "thumbnail": "visual_edition/chapters/ai-supply-chain-integrity-and-lifecycle-provenance/thumbnail.svg",
+    "scene_spec": "visual_edition/chapters/ai-supply-chain-integrity-and-lifecycle-provenance/scene_spec.json",
+    "thumbnail_alt_text": "A governed route diagram for AI Supply-Chain Integrity and Lifecycle Provenance shows three named mechanism cards above a labeled failure and evidence boundary."
+  },
+  "render_receipt": {
+    "receipt_state": "current_final_av_master",
+    "validation_state": "validated",
+    "rendered_at_utc": "2026-07-30T03:14:32Z",
+    "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+    "toolchain_qualification": "qualified_for_all_non_latex_chapters",
+    "render_profile": "final_av_master",
+    "command": "Render the exact-timing ChapterVisualAbstract with pinned ManimCE 0.20.1 at 1920x1080/30, render pinned Kokoro-82M af_heart narration at speed 1.08 with a hard maximum of 300 characters per synthesis call and -16 LUFS, then align all seven visual scenes to the exact audio paragraph boundaries and mux with FFmpeg 8.0.1 as H.264 CRF 18 yuv420p plus AAC-LC 192 kb/s 48 kHz mono.",
+    "duration_seconds": 310.41,
+    "pixel_width": 1920,
+    "pixel_height": 1080,
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "output_sha256": "f79496a649843e4e91fd72098cd0560a8db7f320ed57bf5f94f50b6ac3767f40",
+    "mux_receipt_sha256": "0049da9170f290105a6ca09f7bfbf3f717f5c0414e64e956f28962b7c50b50b5",
+    "output_storage": "ignored build/visual_edition media only",
+    "visual_review": {
+      "draft_sample_seconds": [
+        16.725,
+        59.26,
+        116.738,
+        176.95,
+        228.742,
+        266.028,
+        295.238
+      ],
+      "release_sample_seconds": [
+        59.26,
+        266.028
+      ],
+      "result": "pass",
+      "review_scope": "Exact mux-receipt midpoint sampling across all seven narration scenes checked composition, legibility, persistent labels, color-plus-shape semantics, evidence ceiling, non-claims, end-card identity, and absence of clipping or overflowing text."
+    },
+    "audio_master": {
+      "identity": "Kokoro-82M bf16 af_heart via kokoro-mlx 0.1.2 at speed 1.08",
+      "provenance": "Locally generated from the canonical narration with the pinned Apache-2.0 Kokoro-82M model and MIT kokoro-mlx implementation recorded in visual_edition/narration_toolchain.json.",
+      "publication_rights_state": "cleared",
+      "duration_seconds": 310.41,
+      "sha256": "ccf4e79ba3acaf5b30d4e1b594cfc979da8997b96af5c9b1dbe9a86b3b35e741"
+    },
+    "caption_review": {
+      "state": "machine_audited",
+      "audit_method": "Exact receipt-derived canonical timing plus local MLX Whisper transcript comparison and complete beginning/end coverage checks.",
+      "reviewed_against_audio_sha256": "ccf4e79ba3acaf5b30d4e1b594cfc979da8997b96af5c9b1dbe9a86b3b35e741",
+      "asr_model": "mlx-community/whisper-small.en-mlx@52a88bf6e98b114a210c21bb83e22d6e1505cb73",
+      "asr_word_error_rate": 0.009917,
+      "terminology": "pass",
+      "timing": "pass",
+      "non_speech_information": "pass",
+      "material_visual_changes": "described_in_adjacent_transcript"
+    },
+    "artifact_sha256": {
+      "storyboard": "c10ca0d454ebf297c6f05290f11be7b1c1e4593e99aa703cc79ab672df8c52f4",
+      "scene_code": "797770f4912c0b1adb585d990e963ef31d97c4dacc1f335f6b4468f7d65c9e3c",
+      "narration_script": "fa133583baf359da1b46e767c4f82cef9e8991c0b26e08083411671e4e2d3120",
+      "captions": "ce28b3faa81e132d98a4ef4d3b7fd8f5a66a711c12bb56bbeadf27d3a7c9b5ac",
+      "descriptive_transcript": "7042c3d93c810aa3fb22623ef96405b5f783d4f38a4885cf160172590f412f12",
+      "thumbnail": "846f4e4894db8da08496d65c9e79a0490b222d4c7b9f17084efade7182129271",
+      "scene_spec": "103c0a3880d8722f94473c1b437d855e898dac14e8f6e8717016a0611a659f67"
+    },
+    "remaining_release_gates": [
+      "obtain exact action-time authority before any YouTube or playlist mutation"
+    ]
+  },
+  "youtube": {
+    "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+    "video_id": null,
+    "watch_url": null,
+    "playlist_id": null,
+    "generation": 0,
+    "publication_state": "not_authorized",
+    "uploaded_output_sha256": null,
+    "bound_chapter_sha256": null,
+    "bound_source_commit": null,
+    "published_at_utc": null,
+    "platform_receipt_path": null,
+    "supersedes_video_id": null
+  },
+  "quarto_embed": {
+    "state": "absent_until_published",
+    "chapter_anchor": "visual-abstract",
+    "frame_title": "Visual abstract: AI Supply-Chain Integrity and Lifecycle Provenance",
+    "aria_label": "Play the visual abstract for AI Supply-Chain Integrity and Lifecycle Provenance"
+  },
+  "staleness": {
+    "state": "current",
+    "checked_chapter_sha256": "06e1257cde17ad0d047f12d50647f6c512039e58045ad5eab9feafdcef0b2544",
+    "triggers": [
+      "core_claim",
+      "mechanism",
+      "worked_trace",
+      "evidence_state",
+      "non_claim",
+      "material_source",
+      "chapter_identity",
+      "handoff",
+      "public_url"
+    ]
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This derivative video does not promote or otherwise change any book claim.",
+    "The validated local final master is not a YouTube upload or a public publication.",
+    "Automated intelligibility and caption audits do not establish that every listener will prefer the synthetic voice.",
+    "A successful animation render does not establish deployment, safety, efficiency, transfer, state of the art, AGI, or ASI."
+  ]
+}

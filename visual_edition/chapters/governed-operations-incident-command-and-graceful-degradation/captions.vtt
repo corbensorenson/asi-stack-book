@@ -1,0 +1,221 @@
+WEBVTT
+
+NOTE
+Canonical written narration timed from the exact local narration render receipt.
+Pronunciation-only substitutions are intentionally absent from caption text.
+
+1
+00:00:00.060 --> 00:00:05.420
+This chapter asks a specific question: A system can satisfy pre-deployment
+
+2
+00:00:05.420 --> 00:00:10.780
+requirements yet fail after release through drift, dependency failure, operator overload,
+
+3
+00:00:10.780 --> 00:00:16.140
+ambiguous incidents, correlated faults, or recovery actions that create new hazards.
+
+4
+00:00:16.480 --> 00:00:21.035
+The tempting shortcut is insufficient: Monitoring, a kill switch, backups,
+
+5
+00:00:21.035 --> 00:00:25.591
+an incident plan, or rollback alone is not operational resilience:
+
+6
+00:00:25.591 --> 00:00:29.235
+signals may be stale, effects may be irreversible,
+
+7
+00:00:29.235 --> 00:00:33.335
+authority may be unclear, dependencies may share failure modes,
+
+8
+00:00:33.675 --> 00:00:38.375
+and rollback may restore code while leaving data, memory, credentials,
+
+9
+00:00:38.375 --> 00:00:40.255
+or downstream consequences changed.
+
+10
+00:00:40.855 --> 00:00:46.141
+The chapter's core claim is this: Governed operation is a closed
+
+11
+00:00:46.141 --> 00:00:51.427
+incident lifecycle that binds detection, classification, command authority, containment, effect-complete rollback,
+
+12
+00:00:51.427 --> 00:00:56.713
+graceful degradation, recovery evidence, and learning to the exact deployed system
+
+13
+00:00:56.713 --> 00:00:58.635
+and its dependency graph.
+
+14
+00:00:58.975 --> 00:01:04.530
+Maintain a deployment manifest covering model, policy, prompts, tools, data, identities,
+
+15
+00:01:04.530 --> 00:01:10.085
+caches, dependencies, owners, and rollback authority. Fuse behavioral, safety, security, dependency,
+
+16
+00:01:10.085 --> 00:01:15.640
+human, and business signals into versioned incident hypotheses rather than a
+
+17
+00:01:15.640 --> 00:01:17.155
+single health score.
+
+18
+00:01:17.495 --> 00:01:23.650
+Classify incidents by consequence, reversibility, scope, uncertainty, and propagation risk.
+
+19
+00:01:24.250 --> 00:01:28.280
+A concrete implementation trace makes the proposal testable.
+
+20
+00:01:28.620 --> 00:01:33.945
+Operate a fault-injected reference service with an exact deployment manifest,
+
+21
+00:01:33.945 --> 00:01:39.270
+independent telemetry, a versioned incident workflow record, named incident roles,
+
+22
+00:01:39.270 --> 00:01:45.128
+tool and credential revocation, safe degraded modes, full-state rollback plus external-effect
+
+23
+00:01:45.128 --> 00:01:46.725
+compensation, staged recovery,
+
+24
+00:01:47.065 --> 00:01:51.387
+and game-day scenarios including detector loss, correlated dependency failure,
+
+25
+00:01:51.387 --> 00:01:56.670
+and a rollback that appears successful while hidden state remains changed.
+
+26
+00:01:56.670 --> 00:02:01.953
+Fuse behavioral, safety, security, dependency, human, and business signals into versioned
+
+27
+00:02:01.953 --> 00:02:05.795
+incident hypotheses rather than a single health score.
+
+28
+00:02:06.135 --> 00:02:11.368
+Classify incidents by consequence, reversibility, scope, uncertainty, and propagation risk.
+
+29
+00:02:11.368 --> 00:02:16.602
+Bind each class to incident commander, technical and safety leads,
+
+30
+00:02:16.602 --> 00:02:20.265
+communication duties, action limits, and emergency expiry.
+
+31
+00:02:20.865 --> 00:02:25.782
+The design can still fail. silent drift detector blindness alert storm
+
+32
+00:02:25.782 --> 00:02:30.700
+ambiguous command The correct response is to stop, narrow, quarantine, compensate,
+
+33
+00:02:30.700 --> 00:02:35.170
+or retain an owned residual rather than narrate uncertainty away.
+
+34
+00:02:35.770 --> 00:02:40.816
+This chapter remains Design rationale at argument support. Its contracts, examples,
+
+35
+00:02:40.816 --> 00:02:44.945
+tests, or local artifacts establish only their encoded scope.
+
+36
+00:02:44.945 --> 00:02:49.991
+The chapter names proof targets rather than pretending they are already
+
+37
+00:02:49.991 --> 00:02:50.450
+closed.
+
+38
+00:02:50.790 --> 00:02:56.622
+Every finite degraded-mode transition preserves or narrows capability, data, tool,
+
+39
+00:02:56.622 --> 00:03:03.038
+and duration authority. Normal-service recovery is rejected when any required internal-state
+
+40
+00:03:03.038 --> 00:03:08.870
+component, external-effect disposition, acceptance check, or emergency-authority expiry is missing.
+
+41
+00:03:09.210 --> 00:03:13.540
+Containment does not require the suspected component to cooperate.
+
+42
+00:03:14.140 --> 00:03:19.104
+No chapter claim or evidence state is promoted by this visual.
+
+43
+00:03:19.104 --> 00:03:24.068
+A named mechanism is not proof of correct implementation or useful
+
+44
+00:03:24.068 --> 00:03:29.032
+deployment. A local check or formal model does not establish real-world
+
+45
+00:03:29.032 --> 00:03:33.545
+enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.
+
+46
+00:03:33.885 --> 00:03:38.360
+These boundaries matter because an explanatory derivative is useful only if
+
+47
+00:03:38.360 --> 00:03:41.615
+it preserves the evidence ceiling of its source.
+
+48
+00:03:42.215 --> 00:03:47.409
+At most, this visual explains the chapter's design rationale at argument
+
+49
+00:03:47.409 --> 00:03:52.131
+support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI,
+
+50
+00:03:52.131 --> 00:03:57.326
+or ASI result. The next chapter is Policy Optimization and Learning
+
+51
+00:03:57.326 --> 00:03:58.270
+from Feedback.
+
+52
+00:03:58.610 --> 00:04:03.633
+It takes responsibility for A governed stack needs to convert feedback,
+
+53
+00:04:03.633 --> 00:04:08.655
+verification, benchmark pressure, and failure into better future behavior without allowing
+
+54
+00:04:08.655 --> 00:04:12.765
+reward signals to bypass evidence, authority, or rollback boundaries.

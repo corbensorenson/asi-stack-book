@@ -6,7 +6,7 @@
   "chapter_sha256": "3726577c58e2ee8bfbcf706dc41a5e4092f7de4cb7744ff0a70dbb5370c3ce68",
   "source_commit": "7c655956aff6dd00de753dc79ccdefe3bb6eb080",
   "pilot": true,
-  "lifecycle_state": "rendered",
+  "lifecycle_state": "ready_not_published",
   "claim_bindings": [
     {
       "claim_id": "living-book-methodology.core",
@@ -52,46 +52,66 @@
     "thumbnail_alt_text": "A canonical book source anchors a governed graph of sources, claims, proofs, tests, derivatives, releases, corrections, and one active roadmap."
   },
   "render_receipt": {
-    "receipt_state": "current_release_visual_without_final_audio",
-    "validation_state": "local_release_visual_review_complete_audio_not_publication_cleared",
-    "rendered_at_utc": "2026-07-29T04:47:22Z",
+    "receipt_state": "current_final_av_master",
+    "validation_state": "validated",
+    "rendered_at_utc": "2026-07-30T03:45:50Z",
     "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
-    "toolchain_qualification": "qualified_for_non_latex_pilots",
-    "render_profile": "release_video_only",
-    "command": "PYTHONPATH=. build/visual_edition/venv/bin/manim --config_file visual_edition/manim.cfg --disable_caching visual_edition/chapters/living-book-methodology/scene.py LivingBookMethodology",
-    "duration_seconds": 299.966016,
+    "toolchain_qualification": "qualified_for_all_non_latex_chapters",
+    "render_profile": "final_av_master",
+    "command": "Reuse the ratified chapter-specific pilot visual with pinned ManimCE 0.20.1 at 1920x1080/30, render pinned Kokoro-82M af_heart narration at speed 1.08 with a hard maximum of 300 characters per synthesis call and -16 LUFS, then align all seven visual scenes to the exact audio paragraph boundaries and mux with FFmpeg 8.0.1 as H.264 CRF 18 yuv420p plus AAC-LC 192 kb/s 48 kHz mono.",
+    "duration_seconds": 307.033333,
     "pixel_width": 1920,
     "pixel_height": 1080,
     "frame_rate": 30,
     "video_codec": "h264",
     "pixel_format": "yuv420p",
-    "output_sha256": "702ae6ac44074ef2f7fbb90d526a2f8c8a9e3b41f3e406dc7ffccad946dd9244",
+    "output_sha256": "ccc00c1c374f0e1cf478973de37755f3dcc45cd38ac6701adde8c93bec16b529",
+    "mux_receipt_sha256": "03c003fc2324f4c979c0d545f1b65e0b5cb1c05366b0db90cf2740cd3eb7ffa0",
     "output_storage": "ignored build/visual_edition media only",
     "visual_review": {
-      "draft_sample_seconds": [18.75, 56.25, 93.75, 131.25, 168.75, 206.25, 243.75, 281.25],
-      "release_sample_seconds": [130, 280],
+      "draft_sample_seconds": [
+        18.862,
+        57.21,
+        97.655,
+        140.335,
+        185.787,
+        234.742,
+        283.495
+      ],
+      "release_sample_seconds": [
+        57.21,
+        234.742
+      ],
       "result": "pass",
-      "review_scope": "composition, legibility, canonical-to-derivative authority direction, correction propagation, local evidence denominators, successor custody, and end-card non-claims"
+      "review_scope": "Exact mux-receipt midpoint sampling across all seven narration scenes checked composition, legibility, persistent labels, color-plus-shape semantics, evidence ceiling, non-claims, end-card identity, and absence of clipping or overflowing text."
     },
-    "local_timing_audio": {
-      "voice": "macOS Samantha en_US at 190 wpm",
-      "duration_seconds": 245.353651,
-      "publication_rights_state": "not_cleared",
-      "use": "local pacing review only",
-      "muxed_review_sha256": "5497ad6f6df2d1a87bd3011ab914fef3f5d92e5b9ce9fbb278ef28edf2205024"
+    "audio_master": {
+      "identity": "Kokoro-82M bf16 af_heart via kokoro-mlx 0.1.2 at speed 1.08",
+      "provenance": "Locally generated from the canonical narration with the pinned Apache-2.0 Kokoro-82M model and MIT kokoro-mlx implementation recorded in visual_edition/narration_toolchain.json.",
+      "publication_rights_state": "cleared",
+      "duration_seconds": 307.033333,
+      "sha256": "da87c5faecb698d27b2d24c81bd493089465e162e12c10862ea7b414acbe060c"
+    },
+    "caption_review": {
+      "state": "machine_audited",
+      "audit_method": "Exact receipt-derived canonical timing plus local MLX Whisper transcript comparison and complete beginning/end coverage checks.",
+      "reviewed_against_audio_sha256": "da87c5faecb698d27b2d24c81bd493089465e162e12c10862ea7b414acbe060c",
+      "asr_model": "mlx-community/whisper-small.en-mlx@52a88bf6e98b114a210c21bb83e22d6e1505cb73",
+      "asr_word_error_rate": 0.010853,
+      "terminology": "pass",
+      "timing": "pass",
+      "non_speech_information": "pass",
+      "material_visual_changes": "described_in_adjacent_transcript"
     },
     "artifact_sha256": {
       "storyboard": "138df4ab78867113a1ce0e232ea940866aa3136e267c3edbcfe5ed679eee182f",
       "scene_code": "1c1e5236813e519647df797ce953d4faeb27d5ca3a5134219e138bb846effd89",
       "narration_script": "017a33b9de2196ef56c6992e5159e45386d53148601edefbb9b6b101fb6b0f78",
-      "captions": "80bb115ea4e081f14032b04c3acfeecd8920304db3f20c33ee6736a058d19233",
+      "captions": "37b6cf2260d269e3e95733cbe5a952c2bd24a976cc11f77d6ce1094b8d1fe122",
       "descriptive_transcript": "7f8065ecc2875634d9453388489eda1c89b1112c33c106bcf45b7ae2fe1c9ef2",
       "thumbnail": "3bc1d659d705cd66c3a00cb642e8bbe70b695a87f07234e96c667b5f637e07ab"
     },
     "remaining_release_gates": [
-      "record or license the final narration master for publication",
-      "perform final listening review and retime captions against that master",
-      "mux and validate the final accessible audio-video master",
       "obtain exact action-time authority before any YouTube or playlist mutation"
     ]
   },
@@ -134,8 +154,8 @@
   "release_effect": "none",
   "non_claims": [
     "This derivative video does not promote or otherwise change any book claim.",
-    "A scripted pilot is not a validated render, release, upload, or publication.",
-    "Self-application, validation, rendering, and deployment do not establish source interpretation or whole-book truth.",
-    "No editorial, accessibility, transfer, publication, release, AGI, ASI, or SOTA result is claimed."
+    "The validated local final master is not a YouTube upload or a public publication.",
+    "Automated intelligibility and caption audits do not establish that every listener will prefer the synthetic voice.",
+    "A successful animation render does not establish deployment, safety, efficiency, transfer, state of the art, AGI, or ASI."
   ]
 }

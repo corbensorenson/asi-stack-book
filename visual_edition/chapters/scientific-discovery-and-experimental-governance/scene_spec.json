@@ -1,0 +1,70 @@
+{
+  "chapter_id": "scientific-discovery-and-experimental-governance",
+  "title": "Scientific Discovery and Experimental Governance",
+  "subtitle": "An AI-generated scientific claim should enter the evidence stack only through a preregistered experimental… workflow validity alone establishes neither causal truth, general scientific discovery, reproducibility, safety, nor transfer.",
+  "archetype": "state_machine",
+  "claim_label": "Design rationale",
+  "evidence_level": "argument",
+  "next_title": "Artifact Steward Agents and Living Project Governance",
+  "display": {
+    "problem": "AI-assisted science closes a loop from research objective and hypothesis… causal or statistical claim, replication, dual-use review, and evidence handoff.",
+    "insufficient": "A fluent hypothesis, autonomous laboratory, successful synthesis, simulator result, significant… flexibility, failed experiments, human intervention, replication gaps, or dual-use risk.",
+    "mechanism": [
+      {
+        "label": "Hypothesis ancestry prior evidence",
+        "detail": "Record hypothesis ancestry, prior evidence, competing explanations… analysis before protected data are opened."
+      },
+      {
+        "label": "Lease simulators instruments",
+        "detail": "Lease simulators and instruments with calibration, operating… state, maintenance, operator intervention, and safety authority."
+      },
+      {
+        "label": "Separate generated hypotheses",
+        "detail": "Separate generated hypotheses, execution, measurement, analysis, causal… inspectable roles and preserve all failed attempts."
+      },
+      {
+        "label": "Positive negative null",
+        "detail": "Require positive, negative, null, contamination, drift… plus independent reanalysis and, where feasible, replication."
+      }
+    ],
+    "trace": [
+      "Hypothesis ancestry prior evidence",
+      "Lease simulators instruments",
+      "Separate generated hypotheses",
+      "Positive negative null"
+    ],
+    "failures": [
+      "HARKing",
+      "p-hacking",
+      "selective stopping",
+      "publication bias"
+    ],
+    "proof_targets": [
+      "A finite Scientific Discovery and Experimental Governance… theorem grants empirical effectiveness or release authority.",
+      "Simulator or instrument return is an observation, not scientific truth.",
+      "Exploratory and confirmatory analyses remain visibly distinct."
+    ],
+    "evidence_ceiling": "This chapter remains Design rationale at argument support.",
+    "nonclaims": [
+      "No chapter claim or evidence state is promoted by this visual.",
+      "A named mechanism is not proof of correct implementation or useful deployment.",
+      "A local check or formal model does not establish real-world enforcement.",
+      "No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows."
+    ],
+    "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result."
+  },
+  "timing": {
+    "basis": "exact_narration_paragraph_boundaries",
+    "narration_receipt_sha256": "7bb42a33cc070514725d1faf71e2dbe515735271a40269f763d192c56389dca6",
+    "target_duration_seconds": 270.215,
+    "scene_endpoints_seconds": [
+      48.115,
+      106.155,
+      157.02,
+      171.4,
+      211.77,
+      239.845,
+      270.215
+    ]
+  }
+}

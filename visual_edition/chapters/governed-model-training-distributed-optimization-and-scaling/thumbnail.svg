@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">Governed Model Training, Distributed Optimization, and Scaling</title>
+  <desc id="desc">A governed route diagram for Governed Model Training, Distributed Optimization, and Scaling shows three named mechanism cards above a labeled failure and evidence boundary.</desc>
+  <rect width="1280" height="720" fill="#101820"/>
+  <text x="70" y="100" fill="#F5F8FA" font-family="Avenir Next, sans-serif" font-size="48" font-weight="700">GOVERNED MODEL TRAINING,</text>
+  <text x="70" y="158" fill="#F5F8FA" font-family="Avenir Next, sans-serif" font-size="48" font-weight="700">DISTRIBUTED OPTIMIZATION, AND</text>
+  <text x="70" y="216" fill="#F5F8FA" font-family="Avenir Next, sans-serif" font-size="48" font-weight="700">SCALING</text>
+  <rect x="55" y="345" width="370" height="190" rx="22" fill="#182630" stroke="#58B7D3" stroke-width="7"/>
+  <text x="240" text-anchor="middle" fill="#58B7D3" font-family="Avenir Next, sans-serif" font-size="21" font-weight="700">
+    <tspan x="240" y="390">FREEZE EXACT RUN</tspan>
+    <tspan x="240" y="417">IDENTITY</tspan>
+  </text>
+  <text x="240" text-anchor="middle" fill="#B8C4CC" font-family="Avenir Next, sans-serif" font-size="17">
+    <tspan x="240" y="488">Freeze exact run identity, data</tspan>
+    <tspan x="240" y="511">order, topology… faults, selection,</tspan>
+  </text>
+  <rect x="455" y="345" width="370" height="190" rx="22" fill="#182630" stroke="#D79A6B" stroke-width="7"/>
+  <text x="640" text-anchor="middle" fill="#D79A6B" font-family="Avenir Next, sans-serif" font-size="21" font-weight="700">
+    <tspan x="640" y="390">EXECUTED DEVICE MESH</tspan>
+    <tspan x="640" y="417">PARALLELISM</tspan>
+  </text>
+  <text x="640" text-anchor="middle" fill="#B8C4CC" font-family="Avenir Next, sans-serif" font-size="17">
+    <tspan x="640" y="488">Compile and record the executed</tspan>
+    <tspan x="640" y="511">device mesh… collective/compiler</tspan>
+  </text>
+  <rect x="855" y="345" width="370" height="190" rx="22" fill="#182630" stroke="#62C370" stroke-width="7"/>
+  <text x="1040" text-anchor="middle" fill="#62C370" font-family="Avenir Next, sans-serif" font-size="21" font-weight="700">
+    <tspan x="1040" y="390">ENUMERATE COMPLETE</tspan>
+    <tspan x="1040" y="417">BASE</tspan>
+  </text>
+  <text x="1040" text-anchor="middle" fill="#B8C4CC" font-family="Avenir Next, sans-serif" font-size="17">
+    <tspan x="1040" y="488">Enumerate complete base and</tspan>
+    <tspan x="1040" y="511">architecture-specific model,</tspan>
+  </text>
+  <path d="M240 565 H1040" stroke="#8F9AA3" stroke-width="5"/>
+  <text x="640" y="625" text-anchor="middle" fill="#F45B69" font-family="Avenir Next, sans-serif" font-size="25" font-weight="700">MECHANISM • FAILURE BOUNDARY • EVIDENCE CEILING</text>
+</svg>

@@ -1,9 +1,9 @@
 {
   "schema_version": "asi_stack.visual_edition_manifest.v1",
   "edition_id": "asi-stack-p7.3-visual-edition",
-  "generated_at_utc": "2026-07-29T14:33:31Z",
+  "generated_at_utc": "2026-07-30T04:03:45Z",
   "book_structure_path": "book_structure.json",
-  "source_commit_at_generation": "3c51ea7b1bb9369499c49269c7d7648e6aeef0ec",
+  "source_commit_at_generation": "f10ef079ecfeb48503407d67832a0251f77c2c78",
   "canonical_chapter_count": 84,
   "pilot_chapter_ids": [
     "asi-is-a-stack-not-a-model",
@@ -29,17 +29,17 @@
     "local_render_location_class": "ignored_build_space"
   },
   "counts": {
-    "planned": 79,
+    "planned": 0,
     "storyboarded": 0,
     "scripted": 0,
-    "rendered": 5,
+    "rendered": 0,
     "validated": 0,
-    "ready_not_published": 0,
+    "ready_not_published": 84,
     "published_current": 0,
     "stale": 0,
     "superseded": 0,
-    "packets_present": 5,
-    "current_rendered_videos": 0,
+    "packets_present": 84,
+    "current_rendered_videos": 84,
     "youtube_videos_published": 0,
     "current_quarto_embeds": 0
   },
@@ -53,7 +53,7 @@
       "part_index": 1,
       "chapter_index": 1,
       "pilot": true,
-      "lifecycle_state": "rendered",
+      "lifecycle_state": "ready_not_published",
       "packet_path": "visual_edition/chapters/asi-is-a-stack-not-a-model/packet.json"
     },
     {
@@ -65,8 +65,8 @@
       "part_index": 1,
       "chapter_index": 2,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/the-efficient-asi-hypothesis/packet.json"
     },
     {
       "chapter_id": "system-boundaries-and-authority",
@@ -77,8 +77,8 @@
       "part_index": 1,
       "chapter_index": 3,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/system-boundaries-and-authority/packet.json"
     },
     {
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
@@ -89,8 +89,8 @@
       "part_index": 1,
       "chapter_index": 4,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/failure-modes-of-ungoverned-intelligence/packet.json"
     },
     {
       "chapter_id": "dangerous-capability-domains-and-misuse-uplift",
@@ -101,8 +101,8 @@
       "part_index": 1,
       "chapter_index": 5,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/dangerous-capability-domains-and-misuse-uplift/packet.json"
     },
     {
       "chapter_id": "military-ai-autonomous-weapons-and-strategic-stability",
@@ -113,8 +113,8 @@
       "part_index": 1,
       "chapter_index": 6,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/military-ai-autonomous-weapons-and-strategic-stability/packet.json"
     },
     {
       "chapter_id": "evidence-states-and-claim-discipline",
@@ -125,8 +125,8 @@
       "part_index": 1,
       "chapter_index": 7,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/evidence-states-and-claim-discipline/packet.json"
     },
     {
       "chapter_id": "scalable-oversight-and-adversarial-ai-control",
@@ -137,8 +137,8 @@
       "part_index": 1,
       "chapter_index": 8,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/scalable-oversight-and-adversarial-ai-control/packet.json"
     },
     {
       "chapter_id": "human-intent-as-a-formal-input",
@@ -149,8 +149,8 @@
       "part_index": 1,
       "chapter_index": 9,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/human-intent-as-a-formal-input/packet.json"
     },
     {
       "chapter_id": "human-factors-and-meaningful-control-in-oversight",
@@ -161,8 +161,8 @@
       "part_index": 1,
       "chapter_index": 10,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/human-factors-and-meaningful-control-in-oversight/packet.json"
     },
     {
       "chapter_id": "human-ai-communication-persuasion-and-epistemic-security",
@@ -173,8 +173,8 @@
       "part_index": 1,
       "chapter_index": 11,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/human-ai-communication-persuasion-and-epistemic-security/packet.json"
     },
     {
       "chapter_id": "constitutional-alignment-substrate",
@@ -185,8 +185,8 @@
       "part_index": 1,
       "chapter_index": 12,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/constitutional-alignment-substrate/packet.json"
     },
     {
       "chapter_id": "inner-alignment-mesa-optimization-and-learned-objective-integrity",
@@ -197,8 +197,8 @@
       "part_index": 1,
       "chapter_index": 13,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/inner-alignment-mesa-optimization-and-learned-objective-integrity/packet.json"
     },
     {
       "chapter_id": "moral-uncertainty-and-value-conflict",
@@ -209,8 +209,8 @@
       "part_index": 1,
       "chapter_index": 14,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/moral-uncertainty-and-value-conflict/packet.json"
     },
     {
       "chapter_id": "governed-objective-formation-value-learning-and-goal-integrity",
@@ -221,8 +221,8 @@
       "part_index": 1,
       "chapter_index": 15,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/governed-objective-formation-value-learning-and-goal-integrity/packet.json"
     },
     {
       "chapter_id": "institutions-international-coordination-and-public-legitimacy",
@@ -233,8 +233,8 @@
       "part_index": 1,
       "chapter_index": 16,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/institutions-international-coordination-and-public-legitimacy/packet.json"
     },
     {
       "chapter_id": "societal-resilience-and-misuse-defense",
@@ -245,8 +245,8 @@
       "part_index": 1,
       "chapter_index": 17,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/societal-resilience-and-misuse-defense/packet.json"
     },
     {
       "chapter_id": "stable-capability-fields",
@@ -257,8 +257,8 @@
       "part_index": 1,
       "chapter_index": 18,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/stable-capability-fields/packet.json"
     },
     {
       "chapter_id": "capability-replacement-and-rollback",
@@ -269,7 +269,7 @@
       "part_index": 1,
       "chapter_index": 19,
       "pilot": true,
-      "lifecycle_state": "rendered",
+      "lifecycle_state": "ready_not_published",
       "packet_path": "visual_edition/chapters/capability-replacement-and-rollback/packet.json"
     },
     {
@@ -281,8 +281,8 @@
       "part_index": 1,
       "chapter_index": 20,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/security-kernel-and-digital-scifs/packet.json"
     },
     {
       "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
@@ -293,8 +293,8 @@
       "part_index": 1,
       "chapter_index": 21,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/adversarial-machine-learning-and-model-attack-surface/packet.json"
     },
     {
       "chapter_id": "privacy-data-rights-and-information-flow-governance",
@@ -305,8 +305,8 @@
       "part_index": 1,
       "chapter_index": 22,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/privacy-data-rights-and-information-flow-governance/packet.json"
     },
     {
       "chapter_id": "confidential-and-verifiable-ai-computation",
@@ -317,8 +317,8 @@
       "part_index": 1,
       "chapter_index": 23,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/confidential-and-verifiable-ai-computation/packet.json"
     },
     {
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
@@ -329,8 +329,8 @@
       "part_index": 1,
       "chapter_index": 24,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/model-weight-custody-and-hardware-roots-of-trust/packet.json"
     },
     {
       "chapter_id": "open-weight-release-and-post-release-control",
@@ -341,8 +341,8 @@
       "part_index": 1,
       "chapter_index": 25,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/open-weight-release-and-post-release-control/packet.json"
     },
     {
       "chapter_id": "ai-supply-chain-integrity-and-lifecycle-provenance",
@@ -353,8 +353,8 @@
       "part_index": 1,
       "chapter_index": 26,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/ai-supply-chain-integrity-and-lifecycle-provenance/packet.json"
     },
     {
       "chapter_id": "recursive-self-improvement-boundaries",
@@ -365,8 +365,8 @@
       "part_index": 1,
       "chapter_index": 27,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/recursive-self-improvement-boundaries/packet.json"
     },
     {
       "chapter_id": "open-ended-improvement-engines",
@@ -377,8 +377,8 @@
       "part_index": 1,
       "chapter_index": 28,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/open-ended-improvement-engines/packet.json"
     },
     {
       "chapter_id": "autonomous-replication-proliferation-and-containment",
@@ -389,8 +389,8 @@
       "part_index": 1,
       "chapter_index": 29,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/autonomous-replication-proliferation-and-containment/packet.json"
     },
     {
       "chapter_id": "intent-to-execution-contracts",
@@ -401,8 +401,8 @@
       "part_index": 2,
       "chapter_index": 1,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/intent-to-execution-contracts/packet.json"
     },
     {
       "chapter_id": "perception-sensor-fusion-and-observation-trust",
@@ -413,8 +413,8 @@
       "part_index": 2,
       "chapter_index": 2,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/perception-sensor-fusion-and-observation-trust/packet.json"
     },
     {
       "chapter_id": "planning-as-a-control-layer",
@@ -425,8 +425,8 @@
       "part_index": 2,
       "chapter_index": 3,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/planning-as-a-control-layer/packet.json"
     },
     {
       "chapter_id": "governed-world-models-and-reality-grounding",
@@ -437,8 +437,8 @@
       "part_index": 2,
       "chapter_index": 4,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/governed-world-models-and-reality-grounding/packet.json"
     },
     {
       "chapter_id": "cognitive-compilation-and-semantic-ir",
@@ -449,8 +449,8 @@
       "part_index": 2,
       "chapter_index": 5,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/cognitive-compilation-and-semantic-ir/packet.json"
     },
     {
       "chapter_id": "virtual-context-abi",
@@ -461,8 +461,8 @@
       "part_index": 2,
       "chapter_index": 6,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/virtual-context-abi/packet.json"
     },
     {
       "chapter_id": "durable-semantic-memory-and-knowledge-lattices",
@@ -473,8 +473,8 @@
       "part_index": 2,
       "chapter_index": 7,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/durable-semantic-memory-and-knowledge-lattices/packet.json"
     },
     {
       "chapter_id": "context-transactions-snapshots-mounts-and-taint",
@@ -485,7 +485,7 @@
       "part_index": 2,
       "chapter_index": 8,
       "pilot": true,
-      "lifecycle_state": "rendered",
+      "lifecycle_state": "ready_not_published",
       "packet_path": "visual_edition/chapters/context-transactions-snapshots-mounts-and-taint/packet.json"
     },
     {
@@ -497,8 +497,8 @@
       "part_index": 2,
       "chapter_index": 9,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/verification-bandwidth-and-context-adequacy/packet.json"
     },
     {
       "chapter_id": "claim-ledgers-and-belief-revision",
@@ -509,8 +509,8 @@
       "part_index": 2,
       "chapter_index": 10,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/claim-ledgers-and-belief-revision/packet.json"
     },
     {
       "chapter_id": "spinoza-verification-and-proof-carrying-claims",
@@ -521,8 +521,8 @@
       "part_index": 2,
       "chapter_index": 11,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/spinoza-verification-and-proof-carrying-claims/packet.json"
     },
     {
       "chapter_id": "labor-os-and-typed-jobs",
@@ -533,8 +533,8 @@
       "part_index": 2,
       "chapter_index": 12,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/labor-os-and-typed-jobs/packet.json"
     },
     {
       "chapter_id": "human-ai-organizations-delegation-and-accountability",
@@ -545,8 +545,8 @@
       "part_index": 2,
       "chapter_index": 13,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/human-ai-organizations-delegation-and-accountability/packet.json"
     },
     {
       "chapter_id": "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty",
@@ -557,8 +557,8 @@
       "part_index": 2,
       "chapter_index": 14,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty/packet.json"
     },
     {
       "chapter_id": "ai-deployment-transition-distribution-and-human-agency",
@@ -569,8 +569,8 @@
       "part_index": 2,
       "chapter_index": 15,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/ai-deployment-transition-distribution-and-human-agency/packet.json"
     },
     {
       "chapter_id": "artifact-graphs-audit-logs-and-replay",
@@ -581,8 +581,8 @@
       "part_index": 2,
       "chapter_index": 16,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/artifact-graphs-audit-logs-and-replay/packet.json"
     },
     {
       "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
@@ -593,8 +593,8 @@
       "part_index": 2,
       "chapter_index": 17,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/runtime-adapters-tool-permissions-and-human-approval/packet.json"
     },
     {
       "chapter_id": "embodied-agency-real-time-control-and-physical-safety",
@@ -605,8 +605,8 @@
       "part_index": 2,
       "chapter_index": 18,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/embodied-agency-real-time-control-and-physical-safety/packet.json"
     },
     {
       "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
@@ -617,8 +617,8 @@
       "part_index": 2,
       "chapter_index": 19,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/inter-stack-protocols-identity-and-economic-exchange/packet.json"
     },
     {
       "chapter_id": "multi-agent-dynamics-collective-intelligence-and-systemic-risk",
@@ -629,8 +629,8 @@
       "part_index": 2,
       "chapter_index": 20,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/multi-agent-dynamics-collective-intelligence-and-systemic-risk/packet.json"
     },
     {
       "chapter_id": "procedural-memory-and-cognitive-loop-closure",
@@ -641,8 +641,8 @@
       "part_index": 2,
       "chapter_index": 21,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/procedural-memory-and-cognitive-loop-closure/packet.json"
     },
     {
       "chapter_id": "routing-heads-and-specialist-cores",
@@ -653,8 +653,8 @@
       "part_index": 3,
       "chapter_index": 1,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/routing-heads-and-specialist-cores/packet.json"
     },
     {
       "chapter_id": "replaceable-cognitive-substrates-beyond-transformer-monoculture",
@@ -665,7 +665,7 @@
       "part_index": 3,
       "chapter_index": 2,
       "pilot": true,
-      "lifecycle_state": "rendered",
+      "lifecycle_state": "ready_not_published",
       "packet_path": "visual_edition/chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture/packet.json"
     },
     {
@@ -677,8 +677,8 @@
       "part_index": 3,
       "chapter_index": 3,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/relational-dimension-compilation-and-polyadic-cognition/packet.json"
     },
     {
       "chapter_id": "governed-model-training-distributed-optimization-and-scaling",
@@ -689,8 +689,8 @@
       "part_index": 3,
       "chapter_index": 4,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/governed-model-training-distributed-optimization-and-scaling/packet.json"
     },
     {
       "chapter_id": "learning-theory-generalization-and-scaling-science",
@@ -701,8 +701,8 @@
       "part_index": 3,
       "chapter_index": 5,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/learning-theory-generalization-and-scaling-science/packet.json"
     },
     {
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
@@ -713,8 +713,8 @@
       "part_index": 3,
       "chapter_index": 6,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/readiness-gates-residual-escrow-and-quarantine/packet.json"
     },
     {
       "chapter_id": "personal-compute-hives-and-federated-edge-intelligence",
@@ -725,8 +725,8 @@
       "part_index": 3,
       "chapter_index": 7,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/personal-compute-hives-and-federated-edge-intelligence/packet.json"
     },
     {
       "chapter_id": "compact-generative-systems-and-residual-honesty",
@@ -737,8 +737,8 @@
       "part_index": 3,
       "chapter_index": 8,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/compact-generative-systems-and-residual-honesty/packet.json"
     },
     {
       "chapter_id": "fast-generation-architectures",
@@ -749,8 +749,8 @@
       "part_index": 3,
       "chapter_index": 9,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/fast-generation-architectures/packet.json"
     },
     {
       "chapter_id": "governed-deliberation-and-test-time-scaling",
@@ -761,8 +761,8 @@
       "part_index": 3,
       "chapter_index": 10,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/governed-deliberation-and-test-time-scaling/packet.json"
     },
     {
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
@@ -773,8 +773,8 @@
       "part_index": 3,
       "chapter_index": 11,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/rankfold-neuralfold-and-artifact-compression/packet.json"
     },
     {
       "chapter_id": "resource-economics-and-token-budgets",
@@ -785,8 +785,8 @@
       "part_index": 3,
       "chapter_index": 12,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/resource-economics-and-token-budgets/packet.json"
     },
     {
       "chapter_id": "physical-compute-infrastructure-energy-and-environmental-constraints",
@@ -797,8 +797,8 @@
       "part_index": 3,
       "chapter_index": 13,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/physical-compute-infrastructure-energy-and-environmental-constraints/packet.json"
     },
     {
       "chapter_id": "mathematical-and-search-substrates",
@@ -809,8 +809,8 @@
       "part_index": 3,
       "chapter_index": 14,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/mathematical-and-search-substrates/packet.json"
     },
     {
       "chapter_id": "circle-calculus-and-proof-carrying-ai-contracts",
@@ -821,8 +821,8 @@
       "part_index": 3,
       "chapter_index": 15,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/circle-calculus-and-proof-carrying-ai-contracts/packet.json"
     },
     {
       "chapter_id": "coil-attention-cyclic-memory-and-recurrence-contracts",
@@ -833,8 +833,8 @@
       "part_index": 3,
       "chapter_index": 16,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/coil-attention-cyclic-memory-and-recurrence-contracts/packet.json"
     },
     {
       "chapter_id": "coilra-multicoil-rope-and-cyclic-mixers",
@@ -845,8 +845,8 @@
       "part_index": 3,
       "chapter_index": 17,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/coilra-multicoil-rope-and-cyclic-mixers/packet.json"
     },
     {
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
@@ -857,8 +857,8 @@
       "part_index": 4,
       "chapter_index": 1,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/executable-specifications-and-lean-proof-envelope/packet.json"
     },
     {
       "chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
@@ -869,8 +869,8 @@
       "part_index": 4,
       "chapter_index": 2,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/benchmark-ratchets-and-anti-goodhart-evidence/packet.json"
     },
     {
       "chapter_id": "white-box-evidence-interpretability-and-activation-governance",
@@ -881,8 +881,8 @@
       "part_index": 4,
       "chapter_index": 3,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/white-box-evidence-interpretability-and-activation-governance/packet.json"
     },
     {
       "chapter_id": "capability-thresholds-and-deployment-commitments",
@@ -893,8 +893,8 @@
       "part_index": 4,
       "chapter_index": 4,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/capability-thresholds-and-deployment-commitments/packet.json"
     },
     {
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
@@ -905,8 +905,8 @@
       "part_index": 4,
       "chapter_index": 5,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/adversarial-evaluation-sandbagging-and-training-time-deception/packet.json"
     },
     {
       "chapter_id": "safety-cases-and-structured-assurance",
@@ -917,8 +917,8 @@
       "part_index": 4,
       "chapter_index": 6,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/safety-cases-and-structured-assurance/packet.json"
     },
     {
       "chapter_id": "content-authenticity-watermarking-and-synthetic-media-integrity",
@@ -929,8 +929,8 @@
       "part_index": 4,
       "chapter_index": 7,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/content-authenticity-watermarking-and-synthetic-media-integrity/packet.json"
     },
     {
       "chapter_id": "governed-operations-incident-command-and-graceful-degradation",
@@ -941,8 +941,8 @@
       "part_index": 4,
       "chapter_index": 8,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/governed-operations-incident-command-and-graceful-degradation/packet.json"
     },
     {
       "chapter_id": "policy-optimization-and-learning-from-feedback",
@@ -953,8 +953,8 @@
       "part_index": 4,
       "chapter_index": 9,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/policy-optimization-and-learning-from-feedback/packet.json"
     },
     {
       "chapter_id": "data-engines-continual-learning-and-unlearning",
@@ -965,8 +965,8 @@
       "part_index": 4,
       "chapter_index": 10,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/data-engines-continual-learning-and-unlearning/packet.json"
     },
     {
       "chapter_id": "scientific-discovery-and-experimental-governance",
@@ -977,8 +977,8 @@
       "part_index": 4,
       "chapter_index": 11,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/scientific-discovery-and-experimental-governance/packet.json"
     },
     {
       "chapter_id": "artifact-steward-agents-and-living-project-governance",
@@ -989,8 +989,8 @@
       "part_index": 4,
       "chapter_index": 12,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/artifact-steward-agents-and-living-project-governance/packet.json"
     },
     {
       "chapter_id": "integrated-reference-architecture",
@@ -1001,8 +1001,8 @@
       "part_index": 4,
       "chapter_index": 13,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/integrated-reference-architecture/packet.json"
     },
     {
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
@@ -1013,8 +1013,8 @@
       "part_index": 4,
       "chapter_index": 14,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/project-theseus-as-report-first-implementation-reference/packet.json"
     },
     {
       "chapter_id": "prototype-roadmap",
@@ -1025,8 +1025,8 @@
       "part_index": 4,
       "chapter_index": 15,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/prototype-roadmap/packet.json"
     },
     {
       "chapter_id": "living-book-methodology",
@@ -1037,7 +1037,7 @@
       "part_index": 4,
       "chapter_index": 16,
       "pilot": true,
-      "lifecycle_state": "rendered",
+      "lifecycle_state": "ready_not_published",
       "packet_path": "visual_edition/chapters/living-book-methodology/packet.json"
     },
     {
@@ -1049,8 +1049,8 @@
       "part_index": 4,
       "chapter_index": 17,
       "pilot": false,
-      "lifecycle_state": "planned",
-      "packet_path": null
+      "lifecycle_state": "ready_not_published",
+      "packet_path": "visual_edition/chapters/open-research-agenda-and-bibliography-plan/packet.json"
     }
   ],
   "support_state_effect": "none",

@@ -1,0 +1,153 @@
+{
+  "schema_version": "asi_stack.visual_chapter_packet.v1",
+  "video_id": "asi-video-inner-alignment-mesa-optimization-and-learned-objective-integrity",
+  "chapter_id": "inner-alignment-mesa-optimization-and-learned-objective-integrity",
+  "chapter_path": "chapters/inner-alignment-mesa-optimization-and-learned-objective-integrity.qmd",
+  "chapter_sha256": "a75ea8e57aff7c752142f0342f189cbe43091bac57198accea566e0511533482",
+  "source_commit": "f10ef079ecfeb48503407d67832a0251f77c2c78",
+  "pilot": false,
+  "lifecycle_state": "ready_not_published",
+  "claim_bindings": [
+    {
+      "claim_id": "inner-alignment-mesa-optimization-and-learned-objective-integrity.core",
+      "claim_label": "Design rationale",
+      "support_state": "argument"
+    }
+  ],
+  "assigned_source_ids": [
+    "ext_learned_optimization_risks_2019",
+    "ext_goal_misgeneralization_2022",
+    "ext_sleeper_agents_2024",
+    "ext_emergent_misalignment_reward_hacking_2025",
+    "ext_optimal_policies_power_2019",
+    "alignment_field"
+  ],
+  "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result.",
+  "required_content": {
+    "problem": "A correctly specified outer objective can produce a learned policy that follows a shortcut, conditional strategy, internal search process, or learned objective that agrees during training and diverges under deployment opportunity or distribution shift. Training reward, compliant behavior, low observed violation, readable reasoning, a white-box feature, or successful safety fine-tuning cannot identify the learned objective or rule out conditional deception, goal misgeneralization, or hidden optimization.",
+    "core_mechanism": "Consequential deployment requires a Learned-Objective Integrity Record binding the outer target, actual learning signals, model identity, behaviorally equivalent policy hypotheses, internal-optimization evidence, goal-generalization and conditional-policy tests, independent behavioral/interventional/white-box evidence, deployment opportunity, power indicators, mitigation hiding tests, monitoring, rollback, descendant invalidation, costs, residuals, and non-authorities. Freeze the outer target, proxies, constitutional constraints, and unresolved specification uncertainty. Trace actual data, reward, feedback, evaluator, optimizer, curriculum, selection, and failed-run signals.",
+    "worked_trace": "Build a versioned Learned-Objective Integrity Record and validator; train competent benign policies in an environment where two causal rules agree in training and diverge under sealed interventions; seed an explicit conditional-policy fixture; compare behavioral, causal, and white-box evidence; and narrow deployment authority when objective evidence is inconclusive. Trace actual data, reward, feedback, evaluator, optimizer, curriculum, selection, and failed-run signals. Enumerate shortcut, conditional-policy, internal-search, and simpler behaviorally equivalent hypotheses. Use prospectively sealed causal, distribution-shift, evaluator-awareness, and opportunity interventions.",
+    "failure_boundary": "mesa-optimization goal misgeneralization proxy or shortcut learning reward hacking",
+    "evidence_state": "This chapter remains Design rationale at argument support. Its contracts, examples, tests, or local artifacts establish only their encoded scope. A finite admission model refuses to infer learned-objective identity from compliant behavior alone. observed compliance never proves objective identity behavioral white-box and intervention evidence retain separate provenance",
+    "non_claims": "No chapter claim or evidence state is promoted by this visual. A named mechanism is not proof of correct implementation or useful deployment. A local check or formal model does not establish real-world enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.",
+    "handoff": "The next chapter is Moral Uncertainty, Value Conflict, and Contestable Governance. It takes responsibility for A governed stack may need to act while moral theories, stakeholder interests, evidence, jurisdictions, and authority claims remain unresolved; collapsing that disagreement into one reward, majority preference, policy sentence."
+  },
+  "artifacts": {
+    "storyboard": "visual_edition/chapters/inner-alignment-mesa-optimization-and-learned-objective-integrity/storyboard.md",
+    "scene_code": "visual_edition/chapters/inner-alignment-mesa-optimization-and-learned-objective-integrity/scene.py",
+    "narration_script": "visual_edition/chapters/inner-alignment-mesa-optimization-and-learned-objective-integrity/narration.txt",
+    "captions": "visual_edition/chapters/inner-alignment-mesa-optimization-and-learned-objective-integrity/captions.vtt",
+    "descriptive_transcript": "visual_edition/chapters/inner-alignment-mesa-optimization-and-learned-objective-integrity/transcript.md",
+    "thumbnail": "visual_edition/chapters/inner-alignment-mesa-optimization-and-learned-objective-integrity/thumbnail.svg",
+    "scene_spec": "visual_edition/chapters/inner-alignment-mesa-optimization-and-learned-objective-integrity/scene_spec.json",
+    "thumbnail_alt_text": "A governed timeline diagram for Inner Alignment, Mesa-Optimization, and Learned-Objective Integrity shows three named mechanism cards above a labeled failure and evidence boundary."
+  },
+  "render_receipt": {
+    "receipt_state": "current_final_av_master",
+    "validation_state": "validated",
+    "rendered_at_utc": "2026-07-30T03:09:27Z",
+    "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+    "toolchain_qualification": "qualified_for_all_non_latex_chapters",
+    "render_profile": "final_av_master",
+    "command": "Render the exact-timing ChapterVisualAbstract with pinned ManimCE 0.20.1 at 1920x1080/30, render pinned Kokoro-82M af_heart narration at speed 1.08 with a hard maximum of 300 characters per synthesis call and -16 LUFS, then align all seven visual scenes to the exact audio paragraph boundaries and mux with FFmpeg 8.0.1 as H.264 CRF 18 yuv420p plus AAC-LC 192 kb/s 48 kHz mono.",
+    "duration_seconds": 256.88,
+    "pixel_width": 1920,
+    "pixel_height": 1080,
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "output_sha256": "95ab4035baec3df61e862a0e73e499d08b7cec459cc989196093a8ed414dae0f",
+    "mux_receipt_sha256": "d02ea9f68f51f898794c7000f846965c8bfdfdd7693fadbdee51a46457e4239d",
+    "output_storage": "ignored build/visual_edition media only",
+    "visual_review": {
+      "draft_sample_seconds": [
+        18.7,
+        64.282,
+        119.798,
+        156.595,
+        180.072,
+        209.422,
+        240.17
+      ],
+      "release_sample_seconds": [
+        64.282,
+        209.422
+      ],
+      "result": "pass",
+      "review_scope": "Exact mux-receipt midpoint sampling across all seven narration scenes checked composition, legibility, persistent labels, color-plus-shape semantics, evidence ceiling, non-claims, end-card identity, and absence of clipping or overflowing text."
+    },
+    "audio_master": {
+      "identity": "Kokoro-82M bf16 af_heart via kokoro-mlx 0.1.2 at speed 1.08",
+      "provenance": "Locally generated from the canonical narration with the pinned Apache-2.0 Kokoro-82M model and MIT kokoro-mlx implementation recorded in visual_edition/narration_toolchain.json.",
+      "publication_rights_state": "cleared",
+      "duration_seconds": 256.88,
+      "sha256": "96fc5a75cc915263070de3cb92c5d99c3dcfa8b31fc5f8d0effa094e0affe7f7"
+    },
+    "caption_review": {
+      "state": "machine_audited",
+      "audit_method": "Exact receipt-derived canonical timing plus local MLX Whisper transcript comparison and complete beginning/end coverage checks.",
+      "reviewed_against_audio_sha256": "96fc5a75cc915263070de3cb92c5d99c3dcfa8b31fc5f8d0effa094e0affe7f7",
+      "asr_model": "mlx-community/whisper-small.en-mlx@52a88bf6e98b114a210c21bb83e22d6e1505cb73",
+      "asr_word_error_rate": 0.001942,
+      "terminology": "pass",
+      "timing": "pass",
+      "non_speech_information": "pass",
+      "material_visual_changes": "described_in_adjacent_transcript"
+    },
+    "artifact_sha256": {
+      "storyboard": "c6f7c02c7def368fe1ad469845e15e3d9d641a9e56c34b045348d8a5ff1d22a5",
+      "scene_code": "60fb40a81536259eb874b25e9f9bd5522f360593852b56dc04978ce103594a64",
+      "narration_script": "7e54dbc60519af9d1205d86b7098a337de3096e299490d9d5cf2f2f75600fdd4",
+      "captions": "c5979fea8ddb1310cc2a0d001d66274a74aabaef12e38266c929d9c096ea6719",
+      "descriptive_transcript": "38a03d8f4288579896ca5785193fa2a61e1755acad782638201abe2ff7784f33",
+      "thumbnail": "d989d843f50e17a7aa74821faf588cae3ef5f1bd57e6fb789a094f1e85f2b081",
+      "scene_spec": "ac5e17bbdf922776bb86682e43f822627cd2dbf1587b74b4d08bea454475b132"
+    },
+    "remaining_release_gates": [
+      "obtain exact action-time authority before any YouTube or playlist mutation"
+    ]
+  },
+  "youtube": {
+    "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+    "video_id": null,
+    "watch_url": null,
+    "playlist_id": null,
+    "generation": 0,
+    "publication_state": "not_authorized",
+    "uploaded_output_sha256": null,
+    "bound_chapter_sha256": null,
+    "bound_source_commit": null,
+    "published_at_utc": null,
+    "platform_receipt_path": null,
+    "supersedes_video_id": null
+  },
+  "quarto_embed": {
+    "state": "absent_until_published",
+    "chapter_anchor": "visual-abstract",
+    "frame_title": "Visual abstract: Inner Alignment, Mesa-Optimization, and Learned-Objective Integrity",
+    "aria_label": "Play the visual abstract for Inner Alignment, Mesa-Optimization, and Learned-Objective Integrity"
+  },
+  "staleness": {
+    "state": "current",
+    "checked_chapter_sha256": "a75ea8e57aff7c752142f0342f189cbe43091bac57198accea566e0511533482",
+    "triggers": [
+      "core_claim",
+      "mechanism",
+      "worked_trace",
+      "evidence_state",
+      "non_claim",
+      "material_source",
+      "chapter_identity",
+      "handoff",
+      "public_url"
+    ]
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This derivative video does not promote or otherwise change any book claim.",
+    "The validated local final master is not a YouTube upload or a public publication.",
+    "Automated intelligibility and caption audits do not establish that every listener will prefer the synthetic voice.",
+    "A successful animation render does not establish deployment, safety, efficiency, transfer, state of the art, AGI, or ASI."
+  ]
+}

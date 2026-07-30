@@ -1,0 +1,161 @@
+{
+  "schema_version": "asi_stack.visual_chapter_packet.v1",
+  "video_id": "asi-video-white-box-evidence-interpretability-and-activation-governance",
+  "chapter_id": "white-box-evidence-interpretability-and-activation-governance",
+  "chapter_path": "chapters/white-box-evidence-interpretability-and-activation-governance.qmd",
+  "chapter_sha256": "70373ee45fd1ef9e2fd2ea31a1175284ee7cdcff4a93e8df14e66a0982e275c5",
+  "source_commit": "f10ef079ecfeb48503407d67832a0251f77c2c78",
+  "pilot": false,
+  "lifecycle_state": "ready_not_published",
+  "claim_bindings": [
+    {
+      "claim_id": "white-box-evidence-interpretability-and-activation-governance.core",
+      "claim_label": "Design rationale",
+      "support_state": "argument"
+    }
+  ],
+  "assigned_source_ids": [
+    "deterministic_capability_compilation",
+    "kernel_english_residual_compiler",
+    "qcsa_whitepaper",
+    "platonic_world_model",
+    "ext_transformer_circuits_2021",
+    "ext_monosemanticity_2023",
+    "ext_scaling_sparse_autoencoders_2024",
+    "ext_circuit_tracing_2025",
+    "ext_probe_control_tasks_2019",
+    "ext_interpretability_illusion_bert_2021",
+    "ext_saebench_2025",
+    "ext_sae_benchmark_reliability_2026",
+    "ext_elk_report_2021",
+    "ext_influence_functions_2017"
+  ],
+  "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result.",
+  "required_content": {
+    "problem": "Behavioral tests can reveal what a model did without identifying the internal features, circuits, representations, or causal pathways that produced it, while interpretability methods can themselves generate persuasive but unstable stories. A probe, visualization, sparse feature label, attribution map, or circuit diagram is not white-box proof unless it is reproducible, causally tested, stable under relevant transformations, scoped to a model/version/data regime, and compared with plausible alternative explanations.",
+    "core_mechanism": "Internal-state observations should enter governance only as typed evidence artifacts with lineage, method assumptions, replication status, causal interventions, stability checks, coverage limits, and explicit non-authority; white-box evidence complements but does not replace behavioral and operational evidence. Define an evidence packet containing model hash, dataset slice, method version, feature/circuit identifiers, assumptions, and confidence. Separate observational association, predictive decoding, causal necessity, causal sufficiency, and completeness claims.",
+    "worked_trace": "The implemented minimum is a strict internal-evidence packet schema, one explicitly expired record-shape fixture, a separately implemented semantic consumer with twelve rejecting mutations, and a finite Lean route that rejects scientifically incomplete packets, expires changed packets, and cannot grant authority. The claim-bearing campaign is prospectively frozen and resource-isolated but unexecuted; it requires one digest-bound open model, two independently owned methods, a tuned behavioral baseline, positive and negative controls, causal interventions, stability and residual accounting, an independent evaluator, and a one-time held-out opening after seven competence gates. Separate observational association, predictive decoding, causal necessity, causal sufficiency, and completeness claims.",
+    "failure_boundary": "feature hallucination confirmation-biased labeling probe leakage polysemantic feature collapse",
+    "evidence_state": "This chapter remains Design rationale at argument support. Its contracts, examples, tests, or local artifacts establish only their encoded scope. In the finite policy model, no interpretability evidence packet can widen execution or release authority; it may only preserve, restrict, escalate, or reject. Packets with stale lineage, missing method assumptions, absent negative controls, or unsupported causal state are rejected before governance use. Labels retain examples, counterexamples, and uncertainty.",
+    "non_claims": "No chapter claim or evidence state is promoted by this visual. A named mechanism is not proof of correct implementation or useful deployment. A local check or formal model does not establish real-world enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.",
+    "handoff": "The next chapter is Capability Thresholds and Deployment Commitments. It takes responsibility for A system can collect a capability score, a time-horizon estimate, or a risk-evaluation result without recording which future safeguard, release constraint, exception authority."
+  },
+  "artifacts": {
+    "storyboard": "visual_edition/chapters/white-box-evidence-interpretability-and-activation-governance/storyboard.md",
+    "scene_code": "visual_edition/chapters/white-box-evidence-interpretability-and-activation-governance/scene.py",
+    "narration_script": "visual_edition/chapters/white-box-evidence-interpretability-and-activation-governance/narration.txt",
+    "captions": "visual_edition/chapters/white-box-evidence-interpretability-and-activation-governance/captions.vtt",
+    "descriptive_transcript": "visual_edition/chapters/white-box-evidence-interpretability-and-activation-governance/transcript.md",
+    "thumbnail": "visual_edition/chapters/white-box-evidence-interpretability-and-activation-governance/thumbnail.svg",
+    "scene_spec": "visual_edition/chapters/white-box-evidence-interpretability-and-activation-governance/scene_spec.json",
+    "thumbnail_alt_text": "A governed before after diagram for White-Box Evidence, Interpretability, and Activation Governance shows three named mechanism cards above a labeled failure and evidence boundary."
+  },
+  "render_receipt": {
+    "receipt_state": "current_final_av_master",
+    "validation_state": "validated",
+    "rendered_at_utc": "2026-07-30T03:38:23Z",
+    "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+    "toolchain_qualification": "qualified_for_all_non_latex_chapters",
+    "render_profile": "final_av_master",
+    "command": "Render the exact-timing ChapterVisualAbstract with pinned ManimCE 0.20.1 at 1920x1080/30, render pinned Kokoro-82M af_heart narration at speed 1.08 with a hard maximum of 300 characters per synthesis call and -16 LUFS, then align all seven visual scenes to the exact audio paragraph boundaries and mux with FFmpeg 8.0.1 as H.264 CRF 18 yuv420p plus AAC-LC 192 kb/s 48 kHz mono.",
+    "duration_seconds": 255.745,
+    "pixel_width": 1920,
+    "pixel_height": 1080,
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "output_sha256": "b4562edb4272f034db530b4d5ab667897227fb25f6f2d89fdbf75d0b8b151c21",
+    "mux_receipt_sha256": "37af7090b29358fecdd4060f317fe69b1788819bb167856038e1defa7e8b5711",
+    "output_storage": "ignored build/visual_edition media only",
+    "visual_review": {
+      "draft_sample_seconds": [
+        19.685,
+        61.867,
+        112.895,
+        149.965,
+        178.427,
+        212.387,
+        241.085
+      ],
+      "release_sample_seconds": [
+        61.867,
+        212.387
+      ],
+      "result": "pass",
+      "review_scope": "Exact mux-receipt midpoint sampling across all seven narration scenes checked composition, legibility, persistent labels, color-plus-shape semantics, evidence ceiling, non-claims, end-card identity, and absence of clipping or overflowing text."
+    },
+    "audio_master": {
+      "identity": "Kokoro-82M bf16 af_heart via kokoro-mlx 0.1.2 at speed 1.08",
+      "provenance": "Locally generated from the canonical narration with the pinned Apache-2.0 Kokoro-82M model and MIT kokoro-mlx implementation recorded in visual_edition/narration_toolchain.json.",
+      "publication_rights_state": "cleared",
+      "duration_seconds": 255.745,
+      "sha256": "67ba1bd16a4b728d13f80418430eaf7e8f59c0e19764280839dbbbb8da686072"
+    },
+    "caption_review": {
+      "state": "machine_audited",
+      "audit_method": "Exact receipt-derived canonical timing plus local MLX Whisper transcript comparison and complete beginning/end coverage checks.",
+      "reviewed_against_audio_sha256": "67ba1bd16a4b728d13f80418430eaf7e8f59c0e19764280839dbbbb8da686072",
+      "asr_model": "mlx-community/whisper-small.en-mlx@52a88bf6e98b114a210c21bb83e22d6e1505cb73",
+      "asr_word_error_rate": 0.0,
+      "terminology": "pass",
+      "timing": "pass",
+      "non_speech_information": "pass",
+      "material_visual_changes": "described_in_adjacent_transcript"
+    },
+    "artifact_sha256": {
+      "storyboard": "dd60f73f2db4514f061e2939c5dbf9598708e9d776be0879562e92ec47bc8772",
+      "scene_code": "75c9d7c419b13ef323fc74b9b9ab77fe6765133dbee5c521e10de4450be30d00",
+      "narration_script": "298ab739f236cea06b74810cc9e4c7a749ec8af8c4380226543cda11b7f29384",
+      "captions": "8d8146d5d608399395718c620965738fbfcae9d0c5084d2947fcbaa50021912d",
+      "descriptive_transcript": "b3a9bbf69b5e78f51df86657eb11b190ae2ceb0025b0bd8a53aab463bd278a79",
+      "thumbnail": "eda223593167c857aa96d73fbc1c34d831931176964f132f142b0e131246a16c",
+      "scene_spec": "4317c69f71910d3861715cf694c023d7c0dc40cff6b7eff9e982110c64c38a64"
+    },
+    "remaining_release_gates": [
+      "obtain exact action-time authority before any YouTube or playlist mutation"
+    ]
+  },
+  "youtube": {
+    "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+    "video_id": null,
+    "watch_url": null,
+    "playlist_id": null,
+    "generation": 0,
+    "publication_state": "not_authorized",
+    "uploaded_output_sha256": null,
+    "bound_chapter_sha256": null,
+    "bound_source_commit": null,
+    "published_at_utc": null,
+    "platform_receipt_path": null,
+    "supersedes_video_id": null
+  },
+  "quarto_embed": {
+    "state": "absent_until_published",
+    "chapter_anchor": "visual-abstract",
+    "frame_title": "Visual abstract: White-Box Evidence, Interpretability, and Activation Governance",
+    "aria_label": "Play the visual abstract for White-Box Evidence, Interpretability, and Activation Governance"
+  },
+  "staleness": {
+    "state": "current",
+    "checked_chapter_sha256": "70373ee45fd1ef9e2fd2ea31a1175284ee7cdcff4a93e8df14e66a0982e275c5",
+    "triggers": [
+      "core_claim",
+      "mechanism",
+      "worked_trace",
+      "evidence_state",
+      "non_claim",
+      "material_source",
+      "chapter_identity",
+      "handoff",
+      "public_url"
+    ]
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This derivative video does not promote or otherwise change any book claim.",
+    "The validated local final master is not a YouTube upload or a public publication.",
+    "Automated intelligibility and caption audits do not establish that every listener will prefer the synthetic voice.",
+    "A successful animation render does not establish deployment, safety, efficiency, transfer, state of the art, AGI, or ASI."
+  ]
+}

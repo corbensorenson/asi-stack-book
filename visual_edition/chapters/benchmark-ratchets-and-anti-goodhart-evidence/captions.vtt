@@ -1,0 +1,241 @@
+WEBVTT
+
+NOTE
+Canonical written narration timed from the exact local narration render receipt.
+Pronunciation-only substitutions are intentionally absent from caption text.
+
+1
+00:00:00.060 --> 00:00:04.943
+This chapter asks a specific question: The architecture needs a way
+
+2
+00:00:04.943 --> 00:00:09.825
+to move capability claims through evidence without overfitting to fixed benchmarks.
+
+3
+00:00:09.825 --> 00:00:14.264
+The tempting shortcut is insufficient: Benchmarks can saturate, be gamed,
+
+4
+00:00:14.264 --> 00:00:17.815
+erase regressions, or fail to represent real requirements.
+
+5
+00:00:18.415 --> 00:00:24.321
+The chapter's core claim is this: Benchmark Ratchets and Anti-Goodhart Evidence
+
+6
+00:00:24.321 --> 00:00:30.226
+owns a construct-, task-, dataset-, metric-, harness-, model-, checkpoint-, output-, evaluator-,
+
+7
+00:00:30.226 --> 00:00:35.595
+baseline-, retry-lineage-, budget-, environment-, claim-axis-, and time-specific Benchmark Instrument Lease:
+
+8
+00:00:35.935 --> 00:00:41.379
+a score or evaluation event may update only the exact claim
+
+9
+00:00:41.379 --> 00:00:46.822
+whose construct validity, target capacity, data and metric provenance, output binding,
+
+10
+00:00:46.822 --> 00:00:51.276
+contamination and public-calibration boundary, strong baselines and negative controls,
+
+11
+00:00:51.276 --> 00:00:54.740
+complete selection and failure lineage, regression floors,
+
+12
+00:00:55.080 --> 00:00:59.176
+frontier state, uncertainty, costs, causal checks, transfer, residuals,
+
+13
+00:00:59.176 --> 00:01:04.295
+and decision authority survive review; a green fixture, synthetic probe,
+
+14
+00:01:04.295 --> 00:01:08.391
+source-reported result, leaderboard gain, held-out score, saturation label,
+
+15
+00:01:08.391 --> 00:01:13.510
+or archived winner alone confers no capability, safety, readiness, deployment,
+
+16
+00:01:13.850 --> 00:01:16.030
+unlearning, support, transfer.
+
+17
+00:01:16.630 --> 00:01:20.660
+A concrete implementation trace makes the proposal testable.
+
+18
+00:01:21.000 --> 00:01:26.472
+The exact current minimum is one benchmark-ratchet schema and valid record
+
+19
+00:01:26.472 --> 00:01:31.944
+fixture; one metric-provenance schema with one valid blocked six-project-lineage record and
+
+20
+00:01:31.944 --> 00:01:37.415
+ten rejecting mutations; one synthetic anti-Goodhart harness with two valid records
+
+21
+00:01:37.415 --> 00:01:39.405
+and five expected-invalid controls;
+
+22
+00:01:39.745 --> 00:01:45.702
+one persisted executable fixture result aligned to the same two-valid/five-invalid set;
+
+23
+00:01:45.702 --> 00:01:51.659
+three proof targets; and three local BenchmarkRatchets declarations proving input-general finite
+
+24
+00:01:51.659 --> 00:01:57.075
+decision consequences. Executable fixture totals are not copied into Lean.
+
+25
+00:01:57.675 --> 00:02:02.450
+The design can still fail. A benchmark score substitutes for a
+
+26
+00:02:02.450 --> 00:02:05.922
+defined construct, natural workload, or real consumer need.
+
+27
+00:02:05.922 --> 00:02:10.696
+The target behavior is not expressible by the architecture, prompt, tools,
+
+28
+00:02:10.696 --> 00:02:15.471
+context, action space, or observation channel, but failure is attributed to
+
+29
+00:02:15.471 --> 00:02:15.905
+capability.
+
+30
+00:02:16.245 --> 00:02:20.665
+A build check, schema, fixture, synthetic probe, source-reported number,
+
+31
+00:02:20.665 --> 00:02:25.085
+or replayed headline is presented as empirical capability evidence.
+
+32
+00:02:25.085 --> 00:02:30.487
+Metric origin or transformations are obscured, or a proxy, constant, vacuous,
+
+33
+00:02:30.487 --> 00:02:33.925
+modeled, or source-reported value is labeled measured.
+
+34
+00:02:34.265 --> 00:02:38.234
+The correct response is to stop, narrow, quarantine, compensate,
+
+35
+00:02:38.234 --> 00:02:42.645
+or retain an owned residual rather than narrate uncertainty away.
+
+36
+00:02:43.245 --> 00:02:48.291
+This chapter remains Design rationale at argument support. Its contracts, examples,
+
+37
+00:02:48.291 --> 00:02:52.420
+tests, or local artifacts establish only their encoded scope.
+
+38
+00:02:52.420 --> 00:02:57.466
+The chapter names proof targets rather than pretending they are already
+
+39
+00:02:57.466 --> 00:02:57.925
+closed.
+
+40
+00:02:58.265 --> 00:03:03.842
+An accepted readiness-promotion decision in the finite ratchet model requires transfer-or-mutation
+
+41
+00:03:03.842 --> 00:03:07.897
+checks, preserved negative evidence, and preserved regression records.
+
+42
+00:03:07.897 --> 00:03:13.474
+An accepted contaminated benchmark review cannot select readiness promotion in the
+
+43
+00:03:13.474 --> 00:03:14.995
+finite ratchet model.
+
+44
+00:03:15.335 --> 00:03:21.875
+An independent benchmark anti-Goodhart consumer computes two valid fixtures and five
+
+45
+00:03:21.875 --> 00:03:28.414
+rejected controls; separately, retained quantified ratchet theorems require clean transfer-or-mutation checks,
+
+46
+00:03:28.414 --> 00:03:33.765
+negative-evidence preservation, and regression records and reject contaminated promotion.
+
+47
+00:03:34.365 --> 00:03:39.329
+No chapter claim or evidence state is promoted by this visual.
+
+48
+00:03:39.329 --> 00:03:44.293
+A named mechanism is not proof of correct implementation or useful
+
+49
+00:03:44.293 --> 00:03:49.257
+deployment. A local check or formal model does not establish real-world
+
+50
+00:03:49.257 --> 00:03:53.770
+enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.
+
+51
+00:03:54.110 --> 00:03:58.585
+These boundaries matter because an explanatory derivative is useful only if
+
+52
+00:03:58.585 --> 00:04:01.840
+it preserves the evidence ceiling of its source.
+
+53
+00:04:02.440 --> 00:04:07.925
+At most, this visual explains the chapter's design rationale at argument
+
+54
+00:04:07.925 --> 00:04:12.912
+support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI,
+
+55
+00:04:12.912 --> 00:04:17.899
+or ASI result. The next chapter is White-Box Evidence, Interpretability,
+
+56
+00:04:17.899 --> 00:04:19.395
+and Activation Governance.
+
+57
+00:04:19.735 --> 00:04:24.775
+It takes responsibility for Behavioral tests can reveal what a model
+
+58
+00:04:24.775 --> 00:04:28.441
+did without identifying the internal features, circuits, representations,
+
+59
+00:04:28.441 --> 00:04:31.190
+or causal pathways that produced it.

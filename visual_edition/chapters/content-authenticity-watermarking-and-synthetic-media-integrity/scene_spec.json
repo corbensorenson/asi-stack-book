@@ -1,0 +1,70 @@
+{
+  "chapter_id": "content-authenticity-watermarking-and-synthetic-media-integrity",
+  "title": "Content Authenticity, Watermarking, and Synthetic Media Integrity",
+  "subtitle": "Synthetic-media integrity should use a layered authenticity envelope that binds asset identity, generator… its own semantics, and no missing or valid signal becomes a universal truth judgment.",
+  "archetype": "ledger",
+  "claim_label": "Design rationale",
+  "evidence_level": "argument",
+  "next_title": "Governed Operations, Incident Command, and Graceful Degradation",
+  "display": {
+    "problem": "The stack tracks model and software provenance but lacks… transformation history, and downstream interpretation of generated or manipulated outputs.",
+    "insufficient": "Metadata, one watermark, a detector score, visible label, signature… policy can be stripped, forged, misunderstood, or lost during transformation.",
+    "mechanism": [
+      {
+        "label": "Emit signed generation event",
+        "detail": "Emit a signed generation event and content… asset lineage where lawful and safe."
+      },
+      {
+        "label": "Robust watermarking fingerprinting",
+        "detail": "Use robust watermarking or fingerprinting only… quality, false-positive, false-negative, removal, and collision behavior."
+      },
+      {
+        "label": "Ingredient edit histories through",
+        "detail": "Preserve ingredient and edit histories through supported… record explicit breaks when provenance is lost."
+      },
+      {
+        "label": "Combine provenance validation",
+        "detail": "Combine provenance validation, detector evidence, contextual verification… collapsing them into one authenticity score."
+      }
+    ],
+    "trace": [
+      "Emit signed generation event",
+      "Robust watermarking fingerprinting",
+      "Ingredient edit histories through",
+      "Combine provenance validation"
+    ],
+    "failures": [
+      "metadata stripping",
+      "watermark removal or collision",
+      "detector distribution shift",
+      "false attribution"
+    ],
+    "proof_targets": [
+      "A finite authenticity envelope may hand off… are explicit; no theorem proves content truth.",
+      "A valid signature proves only the signed… selected trust policy, not semantic truth.",
+      "Missing provenance never proves synthetic origin, and present provenance never proves non-deception."
+    ],
+    "evidence_ceiling": "This chapter remains Design rationale at argument support.",
+    "nonclaims": [
+      "No chapter claim or evidence state is promoted by this visual.",
+      "A named mechanism is not proof of correct implementation or useful deployment.",
+      "A local check or formal model does not establish real-world enforcement.",
+      "No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows."
+    ],
+    "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result."
+  },
+  "timing": {
+    "basis": "exact_narration_paragraph_boundaries",
+    "narration_receipt_sha256": "b5fa1ecde0d1ea24cc6159d131b82f6c84520dfaff97575b0560d874280a426a",
+    "target_duration_seconds": 260.03,
+    "scene_endpoints_seconds": [
+      34.65,
+      82.245,
+      140.835,
+      157.69,
+      199.135,
+      227.21,
+      260.03
+    ]
+  }
+}

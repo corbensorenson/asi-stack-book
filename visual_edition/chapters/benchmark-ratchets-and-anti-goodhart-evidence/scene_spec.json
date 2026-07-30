@@ -1,0 +1,70 @@
+{
+  "chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
+  "title": "Benchmark Ratchets and Anti-Goodhart Evidence",
+  "subtitle": "Benchmark Ratchets and Anti-Goodhart Evidence owns a construct-, task-, dataset-, metric-, harness-, model-, checkpoint-… winner alone confers no capability, safety, readiness, deployment, unlearning, support, transfer, or SOTA authority.",
+  "archetype": "timeline",
+  "claim_label": "Design rationale",
+  "evidence_level": "argument",
+  "next_title": "White-Box Evidence, Interpretability, and Activation Governance",
+  "display": {
+    "problem": "The architecture needs a way to move capability claims through evidence without overfitting to fixed benchmarks.",
+    "insufficient": "Benchmarks can saturate, be gamed, erase regressions, or fail to represent real requirements.",
+    "mechanism": [
+      {
+        "label": "Register intended construct exact",
+        "detail": "Register the intended construct, exact movable claim… evaluator, baselines, budget, authority, environment, and expiry."
+      },
+      {
+        "label": "Establish construct validity target",
+        "detail": "Establish construct validity and target capacity… observation channel can express the claimed behavior."
+      },
+      {
+        "label": "Datasets splits resources checksums",
+        "detail": "Version datasets, splits, resources, checksums, licenses, provenance… public exposure, contamination surface, and hidden-test custody."
+      },
+      {
+        "label": "Preregister workloads natural",
+        "detail": "Preregister workloads, natural and adversarial cases, metrics… analyses, exclusions, retries, falsifiers, narrowing, and retirement."
+      }
+    ],
+    "trace": [
+      "Register intended construct exact",
+      "Establish construct validity target",
+      "Datasets splits resources checksums",
+      "Preregister workloads natural"
+    ],
+    "failures": [
+      "A benchmark score substitutes for a… natural workload, or real consumer need.",
+      "The target behavior is not expressible… but failure is attributed to capability.",
+      "A build check, schema, fixture, synthetic… is presented as empirical capability evidence.",
+      "Metric origin or transformations are obscured… source-reported value is labeled measured."
+    ],
+    "proof_targets": [
+      "An accepted readiness-promotion decision in the finite… preserved negative evidence, and preserved regression records.",
+      "An accepted contaminated benchmark review cannot select readiness promotion in the finite ratchet model.",
+      "An independent benchmark anti-Goodhart consumer computes two… regression records and reject contaminated promotion."
+    ],
+    "evidence_ceiling": "This chapter remains Design rationale at argument support.",
+    "nonclaims": [
+      "No chapter claim or evidence state is promoted by this visual.",
+      "A named mechanism is not proof of correct implementation or useful deployment.",
+      "A local check or formal model does not establish real-world enforcement.",
+      "No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows."
+    ],
+    "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result."
+  },
+  "timing": {
+    "basis": "exact_narration_paragraph_boundaries",
+    "narration_receipt_sha256": "1697c0a1011b5c4c5037d07f8c380bab3bb2592f9a9dfe4fade6c870e846efea",
+    "target_duration_seconds": 271.25,
+    "scene_endpoints_seconds": [
+      18.355,
+      76.57,
+      117.615,
+      163.185,
+      214.305,
+      242.38,
+      271.25
+    ]
+  }
+}

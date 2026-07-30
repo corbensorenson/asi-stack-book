@@ -1,0 +1,70 @@
+{
+  "chapter_id": "ai-supply-chain-integrity-and-lifecycle-provenance",
+  "title": "AI Supply-Chain Integrity and Lifecycle Provenance",
+  "subtitle": "Every governed AI supply-chain decision should bind a prospectively frozen consumer, requested use, threat… acknowledged affected-path propagation; restoration, compensation, disclosure, privacy/rights, availability, cost, and terminal residual ownership.",
+  "archetype": "route",
+  "claim_label": "Design rationale",
+  "evidence_level": "argument",
+  "next_title": "Recursive Self-Improvement Boundaries",
+  "display": {
+    "problem": "A model artifact can have a valid custody record… stale, unverifiable, undisclosed, or unable to trigger observed downstream response.",
+    "insufficient": "A graph, BOM, checksum, signature, provenance statement, SLSA level, authorized-step… effective revocation/restoration, model safety, legal compliance, readiness, or deployment authority.",
+    "mechanism": [
+      {
+        "label": "Freeze versioned assurance request",
+        "detail": "Freeze a versioned assurance request naming consumer… evidence needed before ordinary use."
+      },
+      {
+        "label": "Maintain typed identities events",
+        "detail": "Maintain typed identities and events for data… advisories, transformations, releases/recipients/descendants, incidents, retention, and retirement."
+      },
+      {
+        "label": "Consumer-relative asset relation",
+        "detail": "Define consumer-relative asset and relation closure prospectively… residuals rather than calling the graph complete."
+      },
+      {
+        "label": "Each artifact statement exact",
+        "detail": "Bind each artifact and statement to exact… observed retrieval or verification result where feasible."
+      }
+    ],
+    "trace": [
+      "Freeze versioned assurance request",
+      "Maintain typed identities events",
+      "Consumer-relative asset relation",
+      "Each artifact statement exact"
+    ],
+    "failures": [
+      "Name, digest, version, tokenizer, dataset, dependency… approval or behind a familiar label.",
+      "BOM or graph theater presents a… unverified inventory as world-complete integrity.",
+      "Signature, provenance, SLSA, layout, checksum, dataset… fitness/rights, safe behavior, compliance, or authority.",
+      "Assertion and verification collapse lets issuer… one captured or self-ratifying dependency path."
+    ],
+    "proof_targets": [
+      "A finite AI supply-chain record with… artifact correctness, data fitness, safety, or ASI.",
+      "A complete finite requested artifact with verified… review without granting load or deployment authority.",
+      "A finite artifact record with identity… but missing lineage routes to lineage repair."
+    ],
+    "evidence_ceiling": "This chapter remains Design rationale at argument support.",
+    "nonclaims": [
+      "No chapter claim or evidence state is promoted by this visual.",
+      "A named mechanism is not proof of correct implementation or useful deployment.",
+      "A local check or formal model does not establish real-world enforcement.",
+      "No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows."
+    ],
+    "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result."
+  },
+  "timing": {
+    "basis": "exact_narration_paragraph_boundaries",
+    "narration_receipt_sha256": "b2794296ea29b67638a0f4ae79b6ce2caeb754a0ac4657d5e52bc659a1398d7d",
+    "target_duration_seconds": 310.41,
+    "scene_endpoints_seconds": [
+      33.45,
+      85.07,
+      148.405,
+      205.495,
+      251.99,
+      280.065,
+      310.41
+    ]
+  }
+}

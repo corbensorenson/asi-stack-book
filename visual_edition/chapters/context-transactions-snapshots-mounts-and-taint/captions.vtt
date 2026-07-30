@@ -1,254 +1,289 @@
 WEBVTT
 
 NOTE
-Canonical narration text; deterministic paragraph-window timing.
-Text and terminology reviewed against the chapter packet on 2026-07-29.
-Publication still requires final listening review against the authorized narration master.
+Canonical written narration timed from the exact local narration render receipt.
+Pronunciation-only substitutions are intentionally absent from caption text.
 
 1
-00:00:00.200 --> 00:00:03.930
+00:00:00.060 --> 00:00:04.125
 Long-lived AI systems do not merely retrieve context.
 
 2
-00:00:03.930 --> 00:00:09.060
+00:00:04.125 --> 00:00:09.715
 They mutate durable memory through stores, branches, indexes, caches, summaries, replicas,
 
 3
-00:00:09.060 --> 00:00:14.189
-and recovery paths. A clean-looking prompt can still come from a
+00:00:09.715 --> 00:00:11.240
+and recovery paths.
 
 4
-00:00:14.189 --> 00:00:19.318
-mixed snapshot, an uncommitted write, a stale index, a foreign branch,
+00:00:11.580 --> 00:00:15.347
+A clean-looking prompt can still come from a mixed snapshot,
 
 5
-00:00:19.318 --> 00:00:24.447
-or a derivative whose source was revoked. This chapter treats context
+00:00:15.347 --> 00:00:18.737
+an uncommitted write, a stale index, a foreign branch,
 
 6
-00:00:24.447 --> 00:00:29.576
-as accountable state. A Context Transaction binds the principal, purpose, operation,
+00:00:18.737 --> 00:00:22.880
+or a derivative whose source was revoked. This chapter treats context
 
 7
-00:00:29.576 --> 00:00:33.773
-base snapshot, branch, mounts, authority, rights, isolation, durability, budget,
+00:00:22.880 --> 00:00:24.010
+as accountable state.
 
 8
-00:00:33.773 --> 00:00:38.902
-and support ceiling to the actual pre-state and every attempted, applied,
+00:00:24.350 --> 00:00:29.892
+A Context Transaction binds the principal, purpose, operation, base snapshot, branch,
 
 9
-00:00:38.902 --> 00:00:41.700
-visible, replayed, recovered, or indeterminate post-state.
+00:00:29.892 --> 00:00:35.434
+mounts, authority, rights, isolation, durability, budget, and support ceiling to the
 
 10
-00:00:42.200 --> 00:00:48.129
-The transaction begins with an observed snapshot, not a friendly name
+00:00:35.434 --> 00:00:39.969
+actual pre-state and every attempted, applied, visible, replayed, recovered,
 
 11
-00:00:48.129 --> 00:00:54.057
-or timestamp. It binds exact object versions, content and index epochs,
+00:00:39.969 --> 00:00:41.480
+or indeterminate post-state.
 
 12
-00:00:54.057 --> 00:00:59.447
-causal parents, branch, mount policy, provenance, taint, leases, caches, backups,
+00:00:42.080 --> 00:00:47.197
+The transaction begins with an observed snapshot, not a friendly name
 
 13
-00:00:59.447 --> 00:01:05.375
-and open obligations. The request declares intended reads, writes, derivations, deletions,
+00:00:47.197 --> 00:00:52.313
+or timestamp. It binds exact object versions, content and index epochs,
 
 14
-00:01:05.375 --> 00:01:10.226
-and revocations, but the receipt records what actually happened.
+00:00:52.313 --> 00:00:56.965
+causal parents, branch, mount policy, provenance, taint, leases, caches, backups,
 
 15
-00:01:10.226 --> 00:01:15.616
-Purpose-bound mounts distinguish read, write, derive, delete, share, export, train,
+00:00:56.965 --> 00:00:58.360
+and open obligations.
 
 16
-00:01:15.616 --> 00:01:19.927
-and execute permission. No cache, summary, branch, replica,
+00:00:58.700 --> 00:01:03.610
+The request declares intended reads, writes, derivations, deletions, and revocations,
 
 17
-00:01:19.927 --> 00:01:23.700
-or restore route may widen that envelope.
+00:01:03.610 --> 00:01:09.011
+but the receipt records what actually happened. Purpose-bound mounts distinguish read,
 
 18
-00:01:24.200 --> 00:01:30.062
-Commit is a lifecycle, not a success boolean. Requested, admitted, prepared,
+00:01:09.011 --> 00:01:13.430
+write, derive, delete, share, export, train, and execute permission.
 
 19
-00:01:30.062 --> 00:01:34.325
-applied, durably committed, consumer-visible, replayed, recovered, compensated, aborted,
+00:01:13.770 --> 00:01:18.266
+No cache, summary, branch, replica, or restore route may widen that
 
 20
-00:01:34.325 --> 00:01:39.654
-and indeterminate are different states. Content, indexes, provenance, taint, rights,
+00:01:18.266 --> 00:01:18.675
+envelope.
 
 21
-00:01:39.654 --> 00:01:45.516
-derivative edges, deletion obligations, caches, and audit references commit atomically only
+00:01:19.275 --> 00:01:25.155
+Commit is a lifecycle, not a success boolean. Requested, admitted, prepared,
 
 22
-00:01:45.516 --> 00:01:51.378
-inside the declared boundary. Conflicts, lost updates, write skew, stale indexes,
+00:01:25.155 --> 00:01:29.432
+applied, durably committed, consumer-visible, replayed, recovered, compensated, aborted,
 
 23
-00:01:51.378 --> 00:01:56.174
-retry duplicates, partial writes, and uncertain participants remain explicit.
+00:01:29.432 --> 00:01:32.105
+and indeterminate are different states.
 
 24
-00:01:56.174 --> 00:02:02.036
-Crash recovery must return to the declared durable frontier and compare
+00:01:32.445 --> 00:01:37.627
+Content, indexes, provenance, taint, rights, derivative edges, deletion obligations, caches,
 
 25
-00:02:02.036 --> 00:02:04.700
-independently observed state after restart.
+00:01:37.627 --> 00:01:43.327
+and audit references commit atomically only inside the declared boundary. Conflicts,
 
 26
-00:02:05.200 --> 00:02:10.246
-Consider a source correction on branch B. A transaction reads snapshot
+00:01:43.327 --> 00:01:48.509
+lost updates, write skew, stale indexes, retry duplicates, partial writes,
 
 27
-00:02:10.246 --> 00:02:14.375
-forty-one through a purpose-bound mount, writes a corrected object,
+00:01:48.509 --> 00:01:51.100
+and uncertain participants remain explicit.
 
 28
-00:02:14.375 --> 00:02:19.422
-derives a summary and embedding, and invalidates an exact response cache.
+00:01:51.440 --> 00:01:56.548
+Crash recovery must return to the declared durable frontier and compare
 
 29
-00:02:19.422 --> 00:02:23.092
-A concurrent branch changes the same semantic object,
+00:01:56.548 --> 00:01:58.870
+independently observed state after restart.
 
 30
-00:02:23.092 --> 00:02:28.138
-so silent last-writer-wins is forbidden. The transaction rebases or preserves both
+00:01:59.470 --> 00:02:04.014
+Consider a source correction on branch B. A transaction reads snapshot
 
 31
-00:02:28.138 --> 00:02:32.726
-branches. Taint from the corrected source follows the summary, embedding,
+00:02:04.014 --> 00:02:07.731
+forty-one through a purpose-bound mount, writes a corrected object,
 
 32
-00:02:32.726 --> 00:02:37.313
-cache key, and downstream route. If deletion is later requested,
+00:02:07.731 --> 00:02:12.275
+derives a summary and embedding, and invalidates an exact response cache.
 
 33
-00:02:37.313 --> 00:02:41.901
-closure walks live objects, indexes, caches, replicas, exports, and backups.
+00:02:12.615 --> 00:02:16.234
+A concurrent branch changes the same semantic object,
 
 34
-00:02:41.901 --> 00:02:46.947
-An unreachable backup remains an owned residual; it cannot be relabeled
+00:02:16.234 --> 00:02:21.210
+so silent last-writer-wins is forbidden. The transaction rebases or preserves both
 
 35
-00:02:46.947 --> 00:02:49.700
-as physical erasure or model forgetting.
+00:02:21.210 --> 00:02:25.733
+branches. Taint from the corrected source follows the summary, embedding,
 
 36
-00:02:50.200 --> 00:02:55.109
-Caching makes the distinction especially important. Prefix caching reuses compatible model
+00:02:25.733 --> 00:02:27.995
+cache key, and downstream route.
 
 37
-00:02:55.109 --> 00:03:00.017
-state and still produces a new answer. Response caching returns a
+00:02:28.335 --> 00:02:33.510
+If deletion is later requested, closure walks live objects, indexes, caches,
 
 38
-00:03:00.017 --> 00:03:04.926
-prior answer. An exact response key therefore closes over request, consumer,
+00:02:33.510 --> 00:02:38.685
+replicas, exports, and backups. An unreachable backup remains an owned residual;
 
 39
-00:03:04.926 --> 00:03:09.834
-model, decoding, tools, sources, schema, locale, time, authority, purpose, policy, rights,
+00:02:38.685 --> 00:02:43.390
+it cannot be relabeled as physical erasure or model forgetting.
 
 40
-00:03:09.834 --> 00:03:14.743
-side-effect state, verifier, and dependency versions. A semantic cache weakens the
+00:02:43.990 --> 00:02:49.229
+Caching makes the distinction especially important. Prefix caching reuses compatible model
 
 41
-00:03:14.743 --> 00:03:19.652
-match further: similarity is only an approximate route candidate. Dynamic facts,
+00:02:49.229 --> 00:02:54.468
+state and still produces a new answer. Response caching returns a
 
 42
-00:03:19.652 --> 00:03:23.222
-personalized decisions, high-impact advice, security actions, rights-sensitive material,
+00:02:54.468 --> 00:02:55.420
+prior answer.
 
 43
-00:03:23.222 --> 00:03:28.130
-and side-effecting operations normally require fresh evaluation. Every hit discloses whether
+00:02:55.760 --> 00:03:01.505
+An exact response key therefore closes over request, consumer, model, decoding,
 
 44
-00:03:28.130 --> 00:03:31.700
-compatible prefill or a prior answer was reused.
+00:03:01.505 --> 00:03:07.251
+tools, sources, schema, locale, time, authority, purpose, policy, rights, side-effect state,
 
 45
-00:03:32.200 --> 00:03:37.700
-This design can still become transaction theater. A perfect log may
+00:03:07.251 --> 00:03:09.340
+verifier, and dependency versions.
 
 46
-00:03:37.700 --> 00:03:43.200
-describe bytes that never became durable. A database can protect records
+00:03:09.680 --> 00:03:15.741
+A semantic cache weakens the match further: similarity is only an
 
 47
-00:03:43.200 --> 00:03:47.200
-without preserving semantic identity, taint, or erasure categories.
+00:03:15.741 --> 00:03:21.801
+approximate route candidate. Dynamic facts, personalized decisions, high-impact advice, security actions,
 
 48
-00:03:47.200 --> 00:03:52.700
-Deleting storage does not establish behavioral forgetting, influence removal, privacy protection,
+00:03:21.801 --> 00:03:26.760
+rights-sensitive material, and side-effecting operations normally require fresh evaluation.
 
 49
-00:03:52.700 --> 00:03:58.200
-or removal from external descendants. The strongest current checks are finite:
+00:03:27.100 --> 00:03:31.780
+Every hit discloses whether compatible prefill or a prior answer was
 
 50
-00:03:58.200 --> 00:04:03.700
-three valid and six invalid store fixtures, two valid and four
+00:03:31.780 --> 00:03:32.205
+reused.
 
 51
-00:04:03.700 --> 00:04:09.200
-invalid event sequences, seventy-eight rejected mutations, and one bounded historical-project lifecycle.
+00:03:32.805 --> 00:03:37.821
+This design can still become transaction theater. A perfect log may
 
 52
-00:04:09.200 --> 00:04:13.700
-They establish record and route consequences, not concurrency, serializability,
+00:03:37.821 --> 00:03:42.837
+describe bytes that never became durable. A database can protect records
 
 53
-00:04:13.700 --> 00:04:17.700
-crash-safe deployed storage, complete invalidation, or useful memory.
+00:03:42.837 --> 00:03:46.485
+without preserving semantic identity, taint, or erasure categories.
 
 54
-00:04:18.200 --> 00:04:23.056
-The core remains Design rationale at argument support and blocked after
+00:03:46.825 --> 00:03:52.672
+Deleting storage does not establish behavioral forgetting, influence removal, privacy protection,
 
 55
-00:04:23.056 --> 00:04:27.913
-a full attempt. Its maximum inference is a bounded finite partially
+00:03:52.672 --> 00:03:55.330
+or removal from external descendants.
 
 56
-00:04:27.913 --> 00:04:32.328
-observed world-model result only—no open-world truth, general memory transfer, deployment,
+00:03:55.670 --> 00:04:00.946
+The strongest current checks are finite: three valid and six invalid
 
 57
-00:04:32.328 --> 00:04:37.184
-or chapter-core promotion. A valid context transaction says which state transition
+00:04:00.946 --> 00:04:05.263
+store fixtures, two valid and four invalid event sequences,
 
 58
-00:04:37.184 --> 00:04:42.040
-occurred within its declared boundary. It does not say that the
+00:04:05.263 --> 00:04:09.100
+seventy-eight rejected mutations, and one bounded historical-project lifecycle.
 
 59
-00:04:42.040 --> 00:04:46.455
-context is true, sufficient, safe, or useful. The next chapter,
+00:04:09.440 --> 00:04:14.591
+They establish record and route consequences, not concurrency, serializability,
 
 60
-00:04:46.455 --> 00:04:50.429
-Verification Bandwidth and Context Adequacy, asks that separate question:
+00:04:14.591 --> 00:04:19.170
+crash-safe deployed storage, complete invalidation, or useful memory.
 
 61
-00:04:50.429 --> 00:04:54.844
-whether the system has enough evidence, tools, comparisons, contradiction search,
+00:04:19.770 --> 00:04:25.130
+The core remains Design rationale at argument support and blocked after
 
 62
-00:04:54.844 --> 00:04:59.700
-and reviewer capacity to justify the claim it wants to make.
+00:04:25.130 --> 00:04:30.490
+a full attempt. Its maximum inference is a bounded finite partially
+
+63
+00:04:30.490 --> 00:04:35.363
+observed world-model result only—no open-world truth, general memory transfer, deployment,
+
+64
+00:04:35.363 --> 00:04:36.825
+or chapter-core promotion.
+
+65
+00:04:37.165 --> 00:04:41.493
+A valid context transaction says which state transition occurred within its
+
+66
+00:04:41.493 --> 00:04:45.821
+declared boundary. It does not say that the context is true,
+
+67
+00:04:45.821 --> 00:04:47.395
+sufficient, safe, or useful.
+
+68
+00:04:47.735 --> 00:04:51.233
+The next chapter, Verification Bandwidth and Context Adequacy,
+
+69
+00:04:51.233 --> 00:04:56.043
+asks that separate question: whether the system has enough evidence, tools,
+
+70
+00:04:56.043 --> 00:05:00.853
+comparisons, contradiction search, and reviewer capacity to justify the claim it
+
+71
+00:05:00.853 --> 00:05:02.165
+wants to make.

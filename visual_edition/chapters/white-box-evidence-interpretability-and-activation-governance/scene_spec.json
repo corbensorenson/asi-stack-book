@@ -1,0 +1,70 @@
+{
+  "chapter_id": "white-box-evidence-interpretability-and-activation-governance",
+  "title": "White-Box Evidence, Interpretability, and Activation Governance",
+  "subtitle": "Internal-state observations should enter governance only as typed evidence artifacts with lineage, method assumptions… explicit non-authority; white-box evidence complements but does not replace behavioral and operational evidence.",
+  "archetype": "before_after",
+  "claim_label": "Design rationale",
+  "evidence_level": "argument",
+  "next_title": "Capability Thresholds and Deployment Commitments",
+  "display": {
+    "problem": "Behavioral tests can reveal what a model did without identifying… interpretability methods can themselves generate persuasive but unstable stories.",
+    "insufficient": "A probe, visualization, sparse feature label, attribution map, or circuit… model/version/data regime, and compared with plausible alternative explanations.",
+    "mechanism": [
+      {
+        "label": "Evidence packet containing model",
+        "detail": "Define an evidence packet containing model hash… method version, feature/circuit identifiers, assumptions, and confidence."
+      },
+      {
+        "label": "Separate observational association",
+        "detail": "Separate observational association, predictive decoding, causal necessity, causal sufficiency, and completeness claims."
+      },
+      {
+        "label": "Held-out replication across prompts",
+        "detail": "Require held-out replication across prompts, seeds, checkpoints, and relevant transformations."
+      },
+      {
+        "label": "Activation patching ablation",
+        "detail": "Use activation patching, ablation, steering, counterfactual replacement, and negative controls to challenge causal claims."
+      }
+    ],
+    "trace": [
+      "Evidence packet containing model",
+      "Separate observational association",
+      "Held-out replication across prompts",
+      "Activation patching ablation"
+    ],
+    "failures": [
+      "feature hallucination",
+      "confirmation-biased labeling",
+      "probe leakage",
+      "polysemantic feature collapse"
+    ],
+    "proof_targets": [
+      "In the finite policy model, no interpretability… may only preserve, restrict, escalate, or reject.",
+      "Packets with stale lineage, missing method assumptions… causal state are rejected before governance use.",
+      "Labels retain examples, counterexamples, and uncertainty."
+    ],
+    "evidence_ceiling": "This chapter remains Design rationale at argument support.",
+    "nonclaims": [
+      "No chapter claim or evidence state is promoted by this visual.",
+      "A named mechanism is not proof of correct implementation or useful deployment.",
+      "A local check or formal model does not establish real-world enforcement.",
+      "No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows."
+    ],
+    "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result."
+  },
+  "timing": {
+    "basis": "exact_narration_paragraph_boundaries",
+    "narration_receipt_sha256": "d5ba4dc20a808fc12d5688cebfc314afdffb00c7c090d01860e585db7824c929",
+    "target_duration_seconds": 255.745,
+    "scene_endpoints_seconds": [
+      39.37,
+      84.365,
+      141.425,
+      158.505,
+      198.35,
+      226.425,
+      255.745
+    ]
+  }
+}

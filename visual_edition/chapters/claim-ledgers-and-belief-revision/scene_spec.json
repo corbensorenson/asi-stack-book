@@ -1,0 +1,70 @@
+{
+  "chapter_id": "claim-ledgers-and-belief-revision",
+  "title": "Claim Ledgers and Belief Revision",
+  "subtitle": "Claim Ledgers should own the durable identity and append-only state-transition history of each material claim and its semantic variants.",
+  "archetype": "ledger",
+  "claim_label": "Design rationale",
+  "evidence_level": "argument",
+  "next_title": "Proof-Carrying Claims and Adversarial Review",
+  "display": {
+    "problem": "A claim can be repeated, paraphrased, narrowed, challenged, contradicted, split… disagree silently about what was asserted and why it changed.",
+    "insufficient": "Prompts, citations, provenance graphs, vector similarity, confidence scores, self-critique, truth-maintenance… expiry, authority, and complete revision history under one executable contract.",
+    "mechanism": [
+      {
+        "label": "Register every candidate material",
+        "detail": "Register every candidate material claim with… extraction or registration as truth or support."
+      },
+      {
+        "label": "Factor definitions quantifiers",
+        "detail": "Factor definitions, quantifiers, scope, population, environment, time… new semantic version or child claim."
+      },
+      {
+        "label": "Exact equivalent entailing narrower",
+        "detail": "Represent exact, equivalent, entailing, narrower, broader, overlapping… unresolved ambiguity rather than automatic merges."
+      },
+      {
+        "label": "Keep provenance source roles",
+        "detail": "Keep provenance, source roles, evidence refs, attacks… release as separate typed records and owners."
+      }
+    ],
+    "trace": [
+      "Register every candidate material",
+      "Factor definitions quantifiers",
+      "Exact equivalent entailing narrower",
+      "Keep provenance source roles"
+    ],
+    "failures": [
+      "Prose-as-database failure lets polished wording, summaries… ledger records drift or disappear.",
+      "Identity aliasing treats similar wording, embeddings… despite material scope or assumption differences.",
+      "Semantic-merge laundering collapses broader, narrower, disputed… transfers evidence or support across them.",
+      "Assumption erasure records a proposition while… make it true or useful."
+    ],
+    "proof_targets": [
+      "An accepted ledger step preserves durable claim… ledger version and append count exactly once.",
+      "Stale bases, ledger self-approval, event substitution, open… incomplete custody block append or exact acknowledgment.",
+      "A reachable propose-append-materialize-acknowledge lifecycle binds exact versions… dependencies, ontology migration, residuals, and surface receipts."
+    ],
+    "evidence_ceiling": "This chapter remains Design rationale at argument support.",
+    "nonclaims": [
+      "No chapter claim or evidence state is promoted by this visual.",
+      "A named mechanism is not proof of correct implementation or useful deployment.",
+      "A local check or formal model does not establish real-world enforcement.",
+      "No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows."
+    ],
+    "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result."
+  },
+  "timing": {
+    "basis": "exact_narration_paragraph_boundaries",
+    "narration_receipt_sha256": "d30565c7c6d5ca8898f54c41b29a750d8699107ed656777530ceed4b4dcf397f",
+    "target_duration_seconds": 326.24,
+    "scene_endpoints_seconds": [
+      52.945,
+      102.485,
+      163.045,
+      216.68,
+      265.295,
+      293.37,
+      326.24
+    ]
+  }
+}

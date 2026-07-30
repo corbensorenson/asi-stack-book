@@ -1,0 +1,178 @@
+{
+  "schema_version": "asi_stack.visual_chapter_packet.v1",
+  "video_id": "asi-video-open-research-agenda-and-bibliography-plan",
+  "chapter_id": "open-research-agenda-and-bibliography-plan",
+  "chapter_path": "chapters/open-research-agenda-and-bibliography-plan.qmd",
+  "chapter_sha256": "d34da96b100e4c6884545415237821a25182529ddb747aaff0368ea3deda791f",
+  "source_commit": "f10ef079ecfeb48503407d67832a0251f77c2c78",
+  "pilot": false,
+  "lifecycle_state": "ready_not_published",
+  "claim_bindings": [
+    {
+      "claim_id": "open-research-agenda-and-bibliography-plan.core",
+      "claim_label": "Design rationale",
+      "support_state": "argument"
+    }
+  ],
+  "assigned_source_ids": [
+    "verification_bandwidth",
+    "deterministic_capability_compilation",
+    "platonic_world_model",
+    "benchmaxxing",
+    "alignment_field",
+    "scf",
+    "planforge",
+    "vcm_public",
+    "spinoza",
+    "talos",
+    "rmi",
+    "cgs",
+    "genesiscode",
+    "simulation_scaling",
+    "moecot",
+    "coilmoecot",
+    "road_to_agi",
+    "vcm_editable",
+    "field_of_god_ai_constitution",
+    "project_theseus_whitepaper",
+    "circle_calculus_core",
+    "circle_ai_contract_suite",
+    "theseus_circle_transfer",
+    "ext_graphrag_2024",
+    "ext_hipporag_2024",
+    "ext_mmlu_2020",
+    "ext_gpqa_2023",
+    "ext_livebench_2024",
+    "ext_lean4_theorem_proving",
+    "ext_moe_llm_survey_2024",
+    "relational_dimension_compiler"
+  ],
+  "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result.",
+  "required_content": {
+    "problem": "The book needs a managed research backlog and bibliography plan so new papers can be inserted without destabilizing the architecture. A pile of sources or ad hoc citations does not tell future writing agents what to load, compare, prove, test, or defer.",
+    "core_mechanism": "Open Research Agenda and Bibliography Plan owns a research-program-, source-or-gap-, backlog-item-, access-, provenance-, public-safety-, chapter-boundary-, claim-, proof-or-experiment-, deduplication-, evidence-transition-, owner-, next-action-, closure-, consumer-, environment-, and time-specific Research Backlog Admission and Closure Contract: every new paper, local project, missing artifact, conflicting result, proof idea, experiment, reproduction need, correction, or chapter proposal enters through exact intake, triage, assignment, preconditions, blockers, non-claims, and terminal closure before it changes prose or support; no title, citation, source count, inventory row, source note, queue, priority label, backlog size, fixture, theorem, validator, or completed reading task alone establishes citation accuracy, literature completeness.",
+    "worked_trace": "Twenty-eight exact source-to-claim mappings; a source inventory and source-note corpus split across Corben/local, external, and author-intent appendices; one research-backlog record schema and public-safe fixture; one new-paper triage scenario fixture covering update-existing, propose-new-owner, defer-unread-external, and reject-duplicate decisions; source inventory, source-note, protocol, appendix, citation, and mapping validators; two proof targets implemented by two derived Lean counterexample declarations over hand-authored finite source-ingestion and chapter-assignment records after retiring two premise-restating projections; and an explicit active backlog including citation normalization, artifact reproduction, proof and experiment work, GraphRAG/HippoRAG overlap, and rejected or blocked items.",
+    "failure_boundary": "Citation drift points a claim to the wrong source, version, passage, author, venue, DOI, URL, correction, retraction, or access state. Bibliographic hallucination fills missing metadata, passages, results, permissions, or relationships because a record looks incomplete. Unread-source laundering promotes titles, abstracts, citations, snippets, connector placeholders, source-note summaries, or secondary descriptions as inspected support. Inventory theater treats source counts, notes, mappings, passage refs, backlog size, or appendix coverage as research quality or literature completeness.",
+    "evidence_state": "This chapter remains Design rationale at argument support. Its contracts, examples, tests, or local artifacts establish only their encoded scope. A source-derived claim with neither a source note nor an ingested artifact fails the finite source-evidence predicate. An accepted new-source assignment to a nonexistent chapter fails the finite assignment predicate. Bibliographic metadata is copied from inspected authoritative records or marked unknown; title, author, venue, year, DOI, URL, and version are never inferred for completion.",
+    "non_claims": "No chapter claim or evidence state is promoted by this visual. A named mechanism is not proof of correct implementation or useful deployment. A local check or formal model does not establish real-world enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.",
+    "handoff": "The next chapter is ASI Is a Stack, Not a Model. It takes responsibility for The book needs a single architecture frame for advanced AI systems that must plan, remember, verify, act, route work, compress representations, and improve under governance."
+  },
+  "artifacts": {
+    "storyboard": "visual_edition/chapters/open-research-agenda-and-bibliography-plan/storyboard.md",
+    "scene_code": "visual_edition/chapters/open-research-agenda-and-bibliography-plan/scene.py",
+    "narration_script": "visual_edition/chapters/open-research-agenda-and-bibliography-plan/narration.txt",
+    "captions": "visual_edition/chapters/open-research-agenda-and-bibliography-plan/captions.vtt",
+    "descriptive_transcript": "visual_edition/chapters/open-research-agenda-and-bibliography-plan/transcript.md",
+    "thumbnail": "visual_edition/chapters/open-research-agenda-and-bibliography-plan/thumbnail.svg",
+    "scene_spec": "visual_edition/chapters/open-research-agenda-and-bibliography-plan/scene_spec.json",
+    "thumbnail_alt_text": "A governed before after diagram for Open Research Agenda and Bibliography Plan shows three named mechanism cards above a labeled failure and evidence boundary."
+  },
+  "render_receipt": {
+    "receipt_state": "current_final_av_master",
+    "validation_state": "validated",
+    "rendered_at_utc": "2026-07-30T03:46:06Z",
+    "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+    "toolchain_qualification": "qualified_for_all_non_latex_chapters",
+    "render_profile": "final_av_master",
+    "command": "Render the exact-timing ChapterVisualAbstract with pinned ManimCE 0.20.1 at 1920x1080/30, render pinned Kokoro-82M af_heart narration at speed 1.08 with a hard maximum of 300 characters per synthesis call and -16 LUFS, then align all seven visual scenes to the exact audio paragraph boundaries and mux with FFmpeg 8.0.1 as H.264 CRF 18 yuv420p plus AAC-LC 192 kb/s 48 kHz mono.",
+    "duration_seconds": 286.8,
+    "pixel_width": 1920,
+    "pixel_height": 1080,
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "output_sha256": "b3859885094d06c8ca5e813395b3c82446e8f1bfcb2e1c32a0008873c2020eb0",
+    "mux_receipt_sha256": "c1e6cbb4c9fdd5ac58458ed0ae3fdb45fa08d06d973bcc01b7c1359fcdaac5f0",
+    "output_storage": "ignored build/visual_edition media only",
+    "visual_review": {
+      "draft_sample_seconds": [
+        11.075,
+        52.608,
+        111.997,
+        165.265,
+        209.972,
+        244.382,
+        272.605
+      ],
+      "release_sample_seconds": [
+        52.608,
+        244.382
+      ],
+      "result": "pass",
+      "review_scope": "Exact mux-receipt midpoint sampling across all seven narration scenes checked composition, legibility, persistent labels, color-plus-shape semantics, evidence ceiling, non-claims, end-card identity, and absence of clipping or overflowing text."
+    },
+    "audio_master": {
+      "identity": "Kokoro-82M bf16 af_heart via kokoro-mlx 0.1.2 at speed 1.08",
+      "provenance": "Locally generated from the canonical narration with the pinned Apache-2.0 Kokoro-82M model and MIT kokoro-mlx implementation recorded in visual_edition/narration_toolchain.json.",
+      "publication_rights_state": "cleared",
+      "duration_seconds": 286.8,
+      "sha256": "7e0ff932000aa0e4748c60ace635016cf69fe9ca2f69bf4ca1d76416703db5c8"
+    },
+    "caption_review": {
+      "state": "machine_audited",
+      "audit_method": "Exact receipt-derived canonical timing plus local MLX Whisper transcript comparison and complete beginning/end coverage checks.",
+      "reviewed_against_audio_sha256": "7e0ff932000aa0e4748c60ace635016cf69fe9ca2f69bf4ca1d76416703db5c8",
+      "asr_model": "mlx-community/whisper-small.en-mlx@52a88bf6e98b114a210c21bb83e22d6e1505cb73",
+      "asr_word_error_rate": 0.023026,
+      "terminology": "pass",
+      "timing": "pass",
+      "non_speech_information": "pass",
+      "material_visual_changes": "described_in_adjacent_transcript"
+    },
+    "artifact_sha256": {
+      "storyboard": "257d3c440615280fdab91a8459800c00e7a10ac11375673d02dcf0aba7e8dac3",
+      "scene_code": "6b640bedec4238591fa0fd156e4ed9dcb799670f540502aa29376195312e9b0d",
+      "narration_script": "b588c98893798569be2c66cb8c0dd0e90b4066b410c8bd9a45b2b1217707d087",
+      "captions": "cdba9b207de2c152a5ca0244f514397781d8ade9cfc180bb46d5ccba4e9c422e",
+      "descriptive_transcript": "e7a0c2acde3729f934da9286b72de3a97b46c73ee51e6f831aa1e5b481cbb905",
+      "thumbnail": "2c321b49b98ef3f5d471d6f63b7dafb90fdfab7b4d14647315381248d6ef52e3",
+      "scene_spec": "7c9991fc8bd61a7fc931b4821690612d1d9ef0ca1e11317f681f7a5c2f7e806e"
+    },
+    "remaining_release_gates": [
+      "obtain exact action-time authority before any YouTube or playlist mutation"
+    ]
+  },
+  "youtube": {
+    "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+    "video_id": null,
+    "watch_url": null,
+    "playlist_id": null,
+    "generation": 0,
+    "publication_state": "not_authorized",
+    "uploaded_output_sha256": null,
+    "bound_chapter_sha256": null,
+    "bound_source_commit": null,
+    "published_at_utc": null,
+    "platform_receipt_path": null,
+    "supersedes_video_id": null
+  },
+  "quarto_embed": {
+    "state": "absent_until_published",
+    "chapter_anchor": "visual-abstract",
+    "frame_title": "Visual abstract: Open Research Agenda and Bibliography Plan",
+    "aria_label": "Play the visual abstract for Open Research Agenda and Bibliography Plan"
+  },
+  "staleness": {
+    "state": "current",
+    "checked_chapter_sha256": "d34da96b100e4c6884545415237821a25182529ddb747aaff0368ea3deda791f",
+    "triggers": [
+      "core_claim",
+      "mechanism",
+      "worked_trace",
+      "evidence_state",
+      "non_claim",
+      "material_source",
+      "chapter_identity",
+      "handoff",
+      "public_url"
+    ]
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This derivative video does not promote or otherwise change any book claim.",
+    "The validated local final master is not a YouTube upload or a public publication.",
+    "Automated intelligibility and caption audits do not establish that every listener will prefer the synthetic voice.",
+    "A successful animation render does not establish deployment, safety, efficiency, transfer, state of the art, AGI, or ASI."
+  ]
+}

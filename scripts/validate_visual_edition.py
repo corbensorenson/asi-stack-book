@@ -23,9 +23,13 @@ YOUTUBE_CHANNEL = ROOT / "visual_edition/youtube_channel.json"
 YOUTUBE_CHANNEL_SCHEMA = ROOT / "schemas/youtube_channel.schema.json"
 YOUTUBE_LEDGER = ROOT / "visual_edition/youtube_ledger.json"
 YOUTUBE_LEDGER_SCHEMA = ROOT / "schemas/youtube_ledger.schema.json"
+YOUTUBE_UPLOAD_PLAN = ROOT / "visual_edition/youtube_upload_plan.json"
+YOUTUBE_UPLOAD_PLAN_SCHEMA = ROOT / "schemas/youtube_upload_plan.schema.json"
 GRAMMAR = ROOT / "visual_edition/visual_grammar.json"
 GRAMMAR_SCHEMA = ROOT / "schemas/visual_grammar.schema.json"
 TOOLCHAIN = ROOT / "visual_edition/toolchain.json"
+NARRATION_TOOLCHAIN = ROOT / "visual_edition/narration_toolchain.json"
+NARRATION_TOOLCHAIN_SCHEMA = ROOT / "schemas/narration_toolchain.schema.json"
 VIDEO_SUFFIXES = {".mp4", ".webm", ".mov", ".mkv"}
 AUDIO_SUFFIXES = {".wav", ".aiff", ".mp3", ".m4a", ".aac", ".flac"}
 PILOTS = [
@@ -45,6 +49,9 @@ STALENESS_TRIGGERS = {
     "chapter_identity",
     "handoff",
     "public_url",
+}
+GENERATED_ARCHETYPES = {
+    "state_machine", "stack", "graph", "ledger", "route", "timeline", "before_after"
 }
 
 
@@ -75,8 +82,35 @@ def errors(manifest: dict, grammar: dict | None = None) -> list[str]:
     failures.extend(schema_errors(grammar, GRAMMAR_SCHEMA, "grammar"))
     channel = load(YOUTUBE_CHANNEL)
     ledger = load(YOUTUBE_LEDGER)
+    upload_plan = load(YOUTUBE_UPLOAD_PLAN)
     failures.extend(schema_errors(channel, YOUTUBE_CHANNEL_SCHEMA, "youtube-channel"))
     failures.extend(schema_errors(ledger, YOUTUBE_LEDGER_SCHEMA, "youtube-ledger"))
+    failures.extend(
+        schema_errors(upload_plan, YOUTUBE_UPLOAD_PLAN_SCHEMA, "youtube-upload-plan")
+    )
+    narration_toolchain = load(NARRATION_TOOLCHAIN)
+    failures.extend(
+        schema_errors(
+            narration_toolchain,
+            NARRATION_TOOLCHAIN_SCHEMA,
+            "narration-toolchain",
+        )
+    )
+    tracked_narration_inputs = narration_toolchain.get("tracked_inputs", {})
+    for path_key, digest_key in (
+        ("requirements_lock", "requirements_lock_sha256"),
+        ("pronunciation_lexicon", "pronunciation_lexicon_sha256"),
+        ("renderer", "renderer_sha256"),
+        ("caption_builder", "caption_builder_sha256"),
+        ("narration_validator", "narration_validator_sha256"),
+        ("visual_master_validator", "visual_master_validator_sha256"),
+    ):
+        relative = tracked_narration_inputs.get(path_key)
+        expected_digest = tracked_narration_inputs.get(digest_key)
+        if not relative or not (ROOT / relative).is_file():
+            failures.append(f"narration toolchain missing tracked input: {path_key}")
+        elif digest(ROOT / relative) != expected_digest:
+            failures.append(f"narration toolchain tracked input drift: {path_key}")
     hosting = manifest.get("hosting", {})
     if (
         hosting.get("channel_config_path") != "visual_edition/youtube_channel.json"
@@ -91,6 +125,12 @@ def errors(manifest: dict, grammar: dict | None = None) -> list[str]:
         failures.append("YouTube ledger is stale against visual manifest")
     if ledger.get("channel_config_sha256") != digest(YOUTUBE_CHANNEL):
         failures.append("YouTube ledger is stale against channel contract")
+    if upload_plan.get("book_structure_sha256") != digest(ROOT / "book_structure.json"):
+        failures.append("YouTube upload plan is stale against book_structure.json")
+    if upload_plan.get("channel_config_sha256") != digest(YOUTUBE_CHANNEL):
+        failures.append("YouTube upload plan is stale against channel contract")
+    if upload_plan.get("external_mutation_authorized_now") is not False:
+        failures.append("YouTube upload plan claims external mutation authority")
     expected_ledger = build_expected_youtube_ledger()
     expected_ledger["generated_at_utc"] = ledger.get("generated_at_utc")
     if ledger != expected_ledger:
@@ -103,11 +143,14 @@ def errors(manifest: dict, grammar: dict | None = None) -> list[str]:
         for chapter_index, chapter in enumerate(part["chapters"], start=1)
     ]
     rows = manifest.get("chapters", [])
+    upload_entries = upload_plan.get("entries", [])
     if len(canonical) != 84 or len(rows) != 84:
         failures.append(f"canonical/manifest count mismatch: {len(canonical)}/{len(rows)}")
         return failures
     if manifest.get("pilot_chapter_ids") != PILOTS:
         failures.append("five-pilot identity or order drift")
+    if len(upload_entries) != len(canonical):
+        failures.append("YouTube upload-plan chapter count drift")
 
     lifecycle_counts = {state: 0 for state in (
         "planned", "storyboarded", "scripted", "rendered", "validated",
@@ -115,7 +158,10 @@ def errors(manifest: dict, grammar: dict | None = None) -> list[str]:
     )}
     packet_count = rendered_count = youtube_count = embed_count = 0
     packets = []
-    for expected, row in zip(canonical, rows):
+    for manifest_position, (expected, row, upload_entry) in enumerate(
+        zip(canonical, rows, upload_entries),
+        start=1,
+    ):
         part_index, part, chapter_index, chapter = expected
         path = ROOT / chapter["file"]
         exact = {
@@ -131,6 +177,12 @@ def errors(manifest: dict, grammar: dict | None = None) -> list[str]:
         for key, value in exact.items():
             if row.get(key) != value:
                 failures.append(f"{chapter['id']}: manifest {key} drift")
+        if upload_entry.get("position") != manifest_position:
+            failures.append(f"{chapter['id']}: YouTube upload-plan order drift")
+        if upload_entry.get("chapter_id") != chapter["id"]:
+            failures.append(f"{chapter['id']}: YouTube upload-plan identity drift")
+        if upload_entry.get("desired_playlist_position") != upload_entry.get("position"):
+            failures.append(f"{chapter['id']}: YouTube upload-plan playlist order drift")
         state = row.get("lifecycle_state")
         if state in lifecycle_counts:
             lifecycle_counts[state] += 1
@@ -147,6 +199,38 @@ def errors(manifest: dict, grammar: dict | None = None) -> list[str]:
         packet = load(packet_path)
         packets.append(packet)
         failures.extend(schema_errors(packet, PACKET_SCHEMA, chapter["id"]))
+        if upload_entry.get("stable_internal_video_id") != packet.get("video_id"):
+            failures.append(f"{chapter['id']}: upload-plan stable video identity drift")
+        if (
+            upload_entry.get("thumbnail_source_path")
+            != packet.get("artifacts", {}).get("thumbnail")
+        ):
+            failures.append(f"{chapter['id']}: upload-plan thumbnail-source drift")
+        thumbnail_source = ROOT / packet.get("artifacts", {}).get("thumbnail", "")
+        if (
+            not thumbnail_source.is_file()
+            or upload_entry.get("thumbnail_source_sha256")
+            != digest(thumbnail_source)
+        ):
+            failures.append(f"{chapter['id']}: upload-plan thumbnail-source digest drift")
+        expected_thumbnail = f"build/visual_edition/thumbnails/{chapter['id']}.png"
+        if upload_entry.get("thumbnail_path") != expected_thumbnail:
+            failures.append(f"{chapter['id']}: upload-plan thumbnail path drift")
+        local_thumbnail = ROOT / expected_thumbnail
+        if (
+            local_thumbnail.is_file()
+            and upload_entry.get("thumbnail_sha256") != digest(local_thumbnail)
+        ):
+            failures.append(f"{chapter['id']}: upload-plan thumbnail digest drift")
+        if upload_entry.get("caption_path") != packet.get("artifacts", {}).get("captions"):
+            failures.append(f"{chapter['id']}: upload-plan caption path drift")
+        description = upload_entry.get("description", "")
+        if (
+            packet.get("chapter_sha256") not in description
+            or packet.get("source_commit") not in description
+            or "Narration is synthetic" not in description
+        ):
+            failures.append(f"{chapter['id']}: upload-plan description binding drift")
         if packet.get("chapter_id") != chapter["id"]:
             failures.append(f"{chapter['id']}: packet identity mismatch")
         if packet.get("chapter_path") != chapter["file"]:
@@ -169,6 +253,81 @@ def errors(manifest: dict, grammar: dict | None = None) -> list[str]:
             failures.append(f"{chapter['id']}: exact core claim binding drift")
         if set(packet.get("staleness", {}).get("triggers", [])) != STALENESS_TRIGGERS:
             failures.append(f"{chapter['id']}: staleness trigger contract drift")
+        if not packet.get("pilot"):
+            directory = packet_path.parent
+            scene_spec_path = directory / "scene_spec.json"
+            if not scene_spec_path.is_file():
+                failures.append(f"{chapter['id']}: generated scene specification missing")
+            else:
+                scene_spec = load(scene_spec_path)
+                if scene_spec.get("chapter_id") != chapter["id"]:
+                    failures.append(f"{chapter['id']}: scene specification identity drift")
+                if scene_spec.get("archetype") not in GENERATED_ARCHETYPES:
+                    failures.append(f"{chapter['id']}: unknown generated visual archetype")
+                display = scene_spec.get("display", {})
+                for key, count in (
+                    ("mechanism", 4),
+                    ("trace", 4),
+                    ("failures", 4),
+                    ("proof_targets", 3),
+                    ("nonclaims", 4),
+                ):
+                    if len(display.get(key, [])) != count:
+                        failures.append(
+                            f"{chapter['id']}: scene specification {key} count drift"
+                        )
+                timing = scene_spec.get("timing")
+                if timing:
+                    endpoints = timing.get("scene_endpoints_seconds", [])
+                    target = timing.get("target_duration_seconds")
+                    if timing.get("basis") != "exact_narration_paragraph_boundaries":
+                        failures.append(f"{chapter['id']}: scene timing basis drift")
+                    if (
+                        len(endpoints) != 7
+                        or any(
+                            not isinstance(value, (int, float)) or value <= 0
+                            for value in endpoints
+                        )
+                        or any(a >= b for a, b in zip(endpoints, endpoints[1:]))
+                    ):
+                        failures.append(f"{chapter['id']}: invalid scene timing endpoints")
+                    elif (
+                        not isinstance(target, (int, float))
+                        or not 180 <= target <= 360
+                        or abs(endpoints[-1] - target) > 0.25
+                    ):
+                        failures.append(f"{chapter['id']}: scene/audio duration binding drift")
+                    if not re.fullmatch(
+                        r"[0-9a-f]{64}",
+                        timing.get("narration_receipt_sha256", ""),
+                    ):
+                        failures.append(f"{chapter['id']}: narration timing receipt digest missing")
+                elif state in {"validated", "ready_not_published", "published_current"}:
+                    failures.append(f"{chapter['id']}: validated render lacks exact scene timing")
+            narration_path = directory / "narration.txt"
+            if narration_path.is_file():
+                narration_text = narration_path.read_text(encoding="utf-8").strip()
+                paragraphs = [
+                    item for item in re.split(r"\n\s*\n", narration_text) if item.strip()
+                ]
+                narration_words = re.findall(r"\b[\w’'-]+\b", narration_text)
+                if len(paragraphs) != 7:
+                    failures.append(f"{chapter['id']}: narration must contain seven semantic paragraphs")
+                if not 400 <= len(narration_words) <= 700:
+                    failures.append(
+                        f"{chapter['id']}: narration word count outside governed source range"
+                    )
+                stop_words = {
+                    "a", "an", "and", "as", "at", "before", "by", "for", "from",
+                    "in", "into", "of", "on", "or", "the", "that", "to", "under",
+                    "which", "while", "with", "without",
+                }
+                for paragraph in paragraphs:
+                    final_word = paragraph.rstrip(".!?").split()[-1].lower().strip(",:;")
+                    if final_word in stop_words:
+                        failures.append(
+                            f"{chapter['id']}: narration ends a paragraph mid-clause"
+                        )
         for artifact_name, relative in packet.get("artifacts", {}).items():
             if artifact_name == "thumbnail_alt_text":
                 continue
@@ -186,6 +345,7 @@ def errors(manifest: dict, grammar: dict | None = None) -> list[str]:
                 "captions": "captions",
                 "descriptive_transcript": "descriptive_transcript",
                 "thumbnail": "thumbnail",
+                "scene_spec": "scene_spec",
             }
             recorded_hashes = receipt.get("artifact_sha256", {})
             for hash_key, artifact_key in artifact_keys.items():
@@ -209,6 +369,12 @@ def errors(manifest: dict, grammar: dict | None = None) -> list[str]:
                     failures.append(f"{chapter['id']}: validated duration outside 180-360 seconds")
                 if receipt.get("output_sha256") in (None, "", "0" * 64):
                     failures.append(f"{chapter['id']}: validated render lacks digest")
+                if upload_entry.get("local_master_sha256") != receipt.get("output_sha256"):
+                    failures.append(f"{chapter['id']}: upload-plan local master digest drift")
+            elif upload_entry.get("local_master_sha256") is not None:
+                failures.append(f"{chapter['id']}: upload-plan digest without validated master")
+        elif upload_entry.get("local_master_sha256") is not None:
+            failures.append(f"{chapter['id']}: upload-plan digest without render receipt")
         publication = packet.get("youtube", {}).get("publication_state")
         embed = packet.get("quarto_embed", {}).get("state")
         youtube = packet.get("youtube", {})
@@ -261,8 +427,15 @@ def errors(manifest: dict, grammar: dict | None = None) -> list[str]:
             "validated", "ready_not_published", "published_current"
         }
     }
-    if grammar.get("state") == "ratified" and validated_pilots != set(PILOTS):
+    all_pilots_validated = validated_pilots == set(PILOTS)
+    grammar_ratified = (
+        grammar.get("state") == "ratified"
+        and grammar.get("ratification_gate", {}).get("current_state") == "ratified"
+    )
+    if grammar_ratified and not all_pilots_validated:
         failures.append("visual grammar ratified before all five pilots validated")
+    if all_pilots_validated and not grammar_ratified:
+        failures.append("visual grammar remained candidate after all five pilots validated")
 
     tracked = subprocess.check_output(["git", "ls-files"], cwd=ROOT, text=True).splitlines()
     forbidden_tracked = [
@@ -291,13 +464,23 @@ def main() -> None:
     grammar = load(GRAMMAR)
     failures = errors(manifest, grammar)
     mutations = []
+    grammar_mutation_label = (
+        "post-gate grammar deratification"
+        if grammar.get("state") == "ratified"
+        else "premature grammar ratification"
+    )
+    grammar_mutation = (
+        (lambda d: d.__setitem__("state", "candidate_until_five_pilots_pass"))
+        if grammar.get("state") == "ratified"
+        else (lambda d: d.__setitem__("state", "ratified"))
+    )
     for label, target, edit in (
         ("chapter deletion", "manifest", lambda d: d["chapters"].pop()),
         ("pilot substitution", "manifest", lambda d: d["pilot_chapter_ids"].__setitem__(0, "wrong")),
         ("binary host widening", "manifest", lambda d: d["hosting"].__setitem__("canonical_binary_host", "GitHub Pages")),
         ("premature authority", "manifest", lambda d: d["hosting"].__setitem__("external_publication_authorized_now", True)),
         ("support promotion", "manifest", lambda d: d.__setitem__("support_state_effect", "promotion")),
-        ("premature grammar ratification", "grammar", lambda d: d.__setitem__("state", "ratified")),
+        (grammar_mutation_label, "grammar", grammar_mutation),
         ("motion-only meaning", "grammar", lambda d: d["motion"].__setitem__("meaning_must_survive_motion_disabled", False)),
         ("caption deletion", "grammar", lambda d: d["accessibility"].__setitem__("reviewed_captions_required", False)),
     ):

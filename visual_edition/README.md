@@ -32,6 +32,20 @@ python3 -m venv build/visual_edition/venv
 build/visual_edition/venv/bin/python -m pip install "manim==0.20.1"
 ```
 
+Create the separate local narration and transcript-audit environment from the
+exact resolved lock:
+
+```bash
+python3 -m venv build/visual_edition/tts_venv
+build/visual_edition/tts_venv/bin/python -m pip install \
+  -r visual_edition/narration_requirements.lock.txt
+```
+
+The ignored model cache must contain the exact Kokoro synthesis and
+Whisper-small.en verification revisions and file digests recorded in
+`narration_toolchain.json`. The voice, model weights, virtual environments,
+raw narration, ASR JSON, and final media never enter Git or the Pages artifact.
+
 Capture or verify the exact runtime:
 
 ```bash
@@ -46,6 +60,9 @@ Generate the 84-entry manifest and validate the edition:
 ```bash
 python3 scripts/build_visual_edition_manifest.py
 python3 scripts/build_youtube_ledger.py
+python3 scripts/render_youtube_thumbnails.py --all-chapters
+python3 scripts/build_youtube_thumbnail_review_sheets.py
+python3 scripts/build_youtube_upload_plan.py
 python3 scripts/validate_visual_edition.py
 python3 scripts/sync_visual_edition_embeds.py
 ```
@@ -54,13 +71,37 @@ All counts are derived from current packets. A storyboard, scene stub, silent
 preview, unreviewed caption file, upload, or placeholder embed is not a
 completed chapter video.
 
-Current checkpoint: all five representative pilots have complete source
-packets and visually reviewed draft and 1920×1080/30-fps release-profile
-visuals. All five remain `rendered`, not `validated`: the local Samantha tracks
-are pacing aids whose publication rights are not cleared, final captions have
-not been listened against an authorized narration master, and no final A/V
-master exists. The grammar therefore remains `candidate`, the other 79
-chapters remain `planned`, and YouTube/playlist/embed counts remain zero.
+Current checkpoint: all 84 chapters have validated final
+1920×1080/30-fps H.264/AAC masters in ignored local storage. Narration uses
+the pinned Apache-2.0 Kokoro-82M bf16 model and `af_heart` voice through the
+MIT-licensed `kokoro-mlx` implementation. Exact narration receipts drive the
+canonical caption timing; a pinned local MLX Whisper audit checks complete
+beginning/end coverage, requires content-normalized word error at or below
+3%, and rejects an internal expected-token gap above eight. Across all 84
+masters, word error is 0–2.8658%, the largest expected-token gap is four, and
+duration is 227.765–331.005 seconds.
+
+The shared visual grammar and narration path are `ratified` and
+`qualified_for_all_chapters`. All 84 packets are `ready_not_published`, with
+reviewed captions, descriptive transcripts, validated final masters, render
+and mux receipts, and seven exact scene-midpoint review frames. The local
+masters total 1,015,153,522 bytes outside Git and Pages. YouTube, playlist,
+publication, and embed counts remain zero. A local validated master is not a
+publication.
+
+Each packet keeps an editable SVG thumbnail source in Git. Upload preparation
+rasterizes it to an ignored 3840×2160 PNG, binds both source and output
+digests, rejects files above the YouTube Data API's 2 MB ceiling, and builds
+bounded contact sheets for visual review. The publication plan stages every
+first-generation upload as `unlisted`; the reconciled set becomes `public`
+only after video processing, metadata, captions, thumbnails, playlist order,
+receipts, and embeds all pass.
+
+Visual QA samples the midpoint of each exact narration scene from the mux
+receipt, not arbitrary fractions of total runtime. The 84-chapter review is 21
+bounded contact sheets covering 588 scene-midpoint frames. This sampling
+contract caught and replaced an earlier percentage-based reviewer that could
+land inside transitions and misrepresent scene completeness.
 
 Release renders use the exact 1920×1080/30-fps values in `manim.cfg` with no
 quality shortcut flag. In particular, `-qh` is not the release command because
@@ -77,9 +118,9 @@ videos that are no longer current and rejects unmanaged YouTube embeds.
 
 `youtube_channel.json` binds this edition to the verified **corben sorenson**
 channel, ID `UCX7Tu67cGmKfT6O38xxiQFA`. Authentication proves access only; it
-does not authorize an upload or another mutation. The canonical playlist is
-created only after the five pilots have validated final A/V masters and exact
-action-time authority is given.
+does not authorize an upload or another mutation. The all-84 local validation
+prerequisite is satisfied, but the canonical playlist remains uncreated until
+exact action-time authority is given.
 
 `youtube_ledger.json` is generated in book order and provides one row for every
 canonical chapter, including chapters without packets. Each row preserves the

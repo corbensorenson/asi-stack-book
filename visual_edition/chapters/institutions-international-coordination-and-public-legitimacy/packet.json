@@ -1,0 +1,156 @@
+{
+  "schema_version": "asi_stack.visual_chapter_packet.v1",
+  "video_id": "asi-video-institutions-international-coordination-and-public-legitimacy",
+  "chapter_id": "institutions-international-coordination-and-public-legitimacy",
+  "chapter_path": "chapters/institutions-international-coordination-and-public-legitimacy.qmd",
+  "chapter_sha256": "1650ae6f5ef4f1ebcfa2ff3392d5fe82fb8d3fab9b2a5da44f0251bfbc06e357",
+  "source_commit": "f10ef079ecfeb48503407d67832a0251f77c2c78",
+  "pilot": false,
+  "lifecycle_state": "ready_not_published",
+  "claim_bindings": [
+    {
+      "claim_id": "institutions-international-coordination-and-public-legitimacy.core",
+      "claim_label": "Design rationale",
+      "support_state": "argument"
+    }
+  ],
+  "assigned_source_ids": [
+    "coherence_exchange",
+    "ext_un_global_digital_compact_2024",
+    "ext_council_europe_ai_convention_2024",
+    "ext_flexible_hardware_enabled_guarantees_2025",
+    "ext_legal_alignment_2026",
+    "ext_eu_article_50_transparency_guidelines_2026",
+    "ext_oecd_ai_infrastructure_competition_2025",
+    "ext_eu_ai_civil_liability_2025",
+    "ext_icrc_autonomous_weapons_ihl_2025"
+  ],
+  "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result.",
+  "required_content": {
+    "problem": "ASI-scale systems cross organizations, jurisdictions, borders, public services, and affected populations. Technical permissions and private governance cannot determine who has public authority, whose participation counts, how conflicting rules are resolved, or how international commitments are verified and amended. A compliance checklist, technical standard, treaty text, risk framework, or corporate safety policy can name duties without establishing jurisdiction, representative input, assessor independence, enforcement, remedy, capacity, legitimacy, or observed effectiveness. Architecture cannot manufacture democratic consent.",
+    "core_mechanism": "Public deployment and cross-border coordination should proceed only through a versioned institutional packet that keeps jurisdiction, mandate, participation, scientific evidence, law and standards, verification, enforcement, remedy, capacity, conflict, expiry, and legitimacy residuals distinct; legal text, technical conformance, stakeholder consultation, or an international commitment alone establishes neither lawful authority, effective governance, representative legitimacy, nor safety. Map jurisdiction, mandate, standing, affected publics, representation, excluded groups, and conflicts before treating an institution as an authority. Join public reasons and scientific evidence to a versioned law-policy-standard crosswalk without collapsing these different sources of legitimacy.",
+    "worked_trace": "Build a jurisdiction-and-commitment packet and test it on public-record cases and adversarial multi-jurisdiction tabletop exercises containing conflicting rules, missing participation, assessor conflicts, evidence revision, incidents, noncompliance, and remedy requests. The exercise can test record completeness and conflict routing, not legal compliance, public trust, or geopolitical stability. Join public reasons and scientific evidence to a versioned law-policy-standard crosswalk without collapsing these different sources of legitimacy. Define cross-border commitments with named verification, assessor independence, noncompliance handling, enforcement, dispute, remedy, amendment, and withdrawal paths. Track institutional capacity, distributional effects, emergency authority, exceptions, capture indicators, and unresolved conflicts through deployment.",
+    "failure_boundary": "regulatory capture forum shopping race-to-the-bottom deployment standards laundering",
+    "evidence_state": "This chapter remains Design rationale at argument support. Its contracts, examples, tests, or local artifacts establish only their encoded scope. A finite Institutions, International Coordination, and Public Legitimacy record may hand off only when identity, authority, version, required checks, and residual ownership are present; no theorem grants empirical effectiveness or release authority. Affected and excluded populations remain visible in the denominator. Every commitment names verification, noncompliance, enforcement, and remedy.",
+    "non_claims": "No chapter claim or evidence state is promoted by this visual. A named mechanism is not proof of correct implementation or useful deployment. A local check or formal model does not establish real-world enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.",
+    "handoff": "The next chapter is Societal Resilience and Misuse Defense. It takes responsibility for Model safeguards and internal incident command cannot by themselves protect people, institutions, and critical services when prevention fails, misuse diffuses across platforms, or harms exploit social and infrastructural vulnerabilities."
+  },
+  "artifacts": {
+    "storyboard": "visual_edition/chapters/institutions-international-coordination-and-public-legitimacy/storyboard.md",
+    "scene_code": "visual_edition/chapters/institutions-international-coordination-and-public-legitimacy/scene.py",
+    "narration_script": "visual_edition/chapters/institutions-international-coordination-and-public-legitimacy/narration.txt",
+    "captions": "visual_edition/chapters/institutions-international-coordination-and-public-legitimacy/captions.vtt",
+    "descriptive_transcript": "visual_edition/chapters/institutions-international-coordination-and-public-legitimacy/transcript.md",
+    "thumbnail": "visual_edition/chapters/institutions-international-coordination-and-public-legitimacy/thumbnail.svg",
+    "scene_spec": "visual_edition/chapters/institutions-international-coordination-and-public-legitimacy/scene_spec.json",
+    "thumbnail_alt_text": "A governed stack diagram for Institutions, International Coordination, and Public Legitimacy shows three named mechanism cards above a labeled failure and evidence boundary."
+  },
+  "render_receipt": {
+    "receipt_state": "current_final_av_master",
+    "validation_state": "validated",
+    "rendered_at_utc": "2026-07-30T03:10:04Z",
+    "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+    "toolchain_qualification": "qualified_for_all_non_latex_chapters",
+    "render_profile": "final_av_master",
+    "command": "Render the exact-timing ChapterVisualAbstract with pinned ManimCE 0.20.1 at 1920x1080/30, render pinned Kokoro-82M af_heart narration at speed 1.08 with a hard maximum of 300 characters per synthesis call and -16 LUFS, then align all seven visual scenes to the exact audio paragraph boundaries and mux with FFmpeg 8.0.1 as H.264 CRF 18 yuv420p plus AAC-LC 192 kb/s 48 kHz mono.",
+    "duration_seconds": 280.64,
+    "pixel_width": 1920,
+    "pixel_height": 1080,
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "output_sha256": "f13bd07b9e137dd938591c45a7363e2198ef190c58392889d39e01b86f257213",
+    "mux_receipt_sha256": "1e13a21595406f22e376694e96411f78c09078d842340b913cb8a67348423342",
+    "output_storage": "ignored build/visual_edition media only",
+    "visual_review": {
+      "draft_sample_seconds": [
+        23.357,
+        73.65,
+        131.04,
+        169.46,
+        198.272,
+        233.157,
+        263.917
+      ],
+      "release_sample_seconds": [
+        73.65,
+        233.157
+      ],
+      "result": "pass",
+      "review_scope": "Exact mux-receipt midpoint sampling across all seven narration scenes checked composition, legibility, persistent labels, color-plus-shape semantics, evidence ceiling, non-claims, end-card identity, and absence of clipping or overflowing text."
+    },
+    "audio_master": {
+      "identity": "Kokoro-82M bf16 af_heart via kokoro-mlx 0.1.2 at speed 1.08",
+      "provenance": "Locally generated from the canonical narration with the pinned Apache-2.0 Kokoro-82M model and MIT kokoro-mlx implementation recorded in visual_edition/narration_toolchain.json.",
+      "publication_rights_state": "cleared",
+      "duration_seconds": 280.64,
+      "sha256": "386d50867d9497ad5d865c449159154d6b5efd8538bfd044575fdc5f0e1ea87f"
+    },
+    "caption_review": {
+      "state": "machine_audited",
+      "audit_method": "Exact receipt-derived canonical timing plus local MLX Whisper transcript comparison and complete beginning/end coverage checks.",
+      "reviewed_against_audio_sha256": "386d50867d9497ad5d865c449159154d6b5efd8538bfd044575fdc5f0e1ea87f",
+      "asr_model": "mlx-community/whisper-small.en-mlx@52a88bf6e98b114a210c21bb83e22d6e1505cb73",
+      "asr_word_error_rate": 0.0,
+      "terminology": "pass",
+      "timing": "pass",
+      "non_speech_information": "pass",
+      "material_visual_changes": "described_in_adjacent_transcript"
+    },
+    "artifact_sha256": {
+      "storyboard": "5c524e8d1b6c53bd88b9b6394c272666c58631ab7af957d987f32eff091bee92",
+      "scene_code": "066b68c142fdc4ad132d52e7326a22b7d4ee216ca2df86abd189b8d7a1c61690",
+      "narration_script": "509d317614675d9cd523752b44b6b3600732c9f9cc4309a7589a5fe668d79746",
+      "captions": "e8ffeec8ec4e12fd8f512fadfe65e45a96bf8a32bfadd6868b244f654f19eaf6",
+      "descriptive_transcript": "239cb4aaca215ef779262268c07314b4a50c8a731745df4a79e0dea1ee25372d",
+      "thumbnail": "0dd336a98430ab22121f5e6b63611542e1a01efdb5cbdc4277d61679e7212873",
+      "scene_spec": "8ead5d2b5910bbd4cba31c1dff4583651c1f3866a38e9d9e65c9371eb2330e91"
+    },
+    "remaining_release_gates": [
+      "obtain exact action-time authority before any YouTube or playlist mutation"
+    ]
+  },
+  "youtube": {
+    "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+    "video_id": null,
+    "watch_url": null,
+    "playlist_id": null,
+    "generation": 0,
+    "publication_state": "not_authorized",
+    "uploaded_output_sha256": null,
+    "bound_chapter_sha256": null,
+    "bound_source_commit": null,
+    "published_at_utc": null,
+    "platform_receipt_path": null,
+    "supersedes_video_id": null
+  },
+  "quarto_embed": {
+    "state": "absent_until_published",
+    "chapter_anchor": "visual-abstract",
+    "frame_title": "Visual abstract: Institutions, International Coordination, and Public Legitimacy",
+    "aria_label": "Play the visual abstract for Institutions, International Coordination, and Public Legitimacy"
+  },
+  "staleness": {
+    "state": "current",
+    "checked_chapter_sha256": "1650ae6f5ef4f1ebcfa2ff3392d5fe82fb8d3fab9b2a5da44f0251bfbc06e357",
+    "triggers": [
+      "core_claim",
+      "mechanism",
+      "worked_trace",
+      "evidence_state",
+      "non_claim",
+      "material_source",
+      "chapter_identity",
+      "handoff",
+      "public_url"
+    ]
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This derivative video does not promote or otherwise change any book claim.",
+    "The validated local final master is not a YouTube upload or a public publication.",
+    "Automated intelligibility and caption audits do not establish that every listener will prefer the synthetic voice.",
+    "A successful animation render does not establish deployment, safety, efficiency, transfer, state of the art, AGI, or ASI."
+  ]
+}

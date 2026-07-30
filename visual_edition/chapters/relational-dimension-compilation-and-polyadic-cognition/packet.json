@@ -1,0 +1,149 @@
+{
+  "schema_version": "asi_stack.visual_chapter_packet.v1",
+  "video_id": "asi-video-relational-dimension-compilation-and-polyadic-cognition",
+  "chapter_id": "relational-dimension-compilation-and-polyadic-cognition",
+  "chapter_path": "chapters/relational-dimension-compilation-and-polyadic-cognition.qmd",
+  "chapter_sha256": "b3155703d9cdbc0689b309f26223f4e92858f93af4f88bf5802b7c413abaa05c",
+  "source_commit": "f10ef079ecfeb48503407d67832a0251f77c2c78",
+  "pilot": false,
+  "lifecycle_state": "ready_not_published",
+  "claim_bindings": [
+    {
+      "claim_id": "relational-dimension-compilation-and-polyadic-cognition.core",
+      "claim_label": "Design rationale",
+      "support_state": "argument"
+    }
+  ],
+  "assigned_source_ids": [
+    "relational_dimension_compiler",
+    "ext_neural_message_passing_2017"
+  ],
+  "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result.",
+  "required_content": {
+    "problem": "Many cognitive problems are natively polyadic: the meaning of a relation depends on several typed roles jointly, and its useful order may change with context. Flattening every relation into pairwise edges or token sequences can lose role identity, create ambiguous contractions, and hide the cost of proposing and maintaining higher-order structure.",
+    "core_mechanism": "Polyadic cognition should be implemented as a slow-path relational-dimension compiler over stable lower-arity primitives: candidate higher-order structure is typed, role-addressable, denominator-complete, qualified against strong pairwise and sequence baselines, budgeted, reversible, and retained only when it improves held-out relational performance without violating memory, latency, calibration, or governance constraints. Represent each candidate relation with typed roles, dimensional signature, scope, provenance, uncertainty, resource cost, and expiry. Generate candidate dimensional topologies on a slow path from residual relational failures rather than materializing all possible tuples.",
+    "worked_trace": "A deterministic compiler for a small typed-relation language with candidate and denominator logs, pairwise-node and sequence baselines, role-permutation and counterfactual tests, promotion and demotion thresholds, cost accounting, reversible contraction, descendant invalidation, and a held-out RODIE fixture family. Generate candidate dimensional topologies on a slow path from residual relational failures rather than materializing all possible tuples. Compare candidates with strong rescues including reified relation nodes, message passing, factorization, sequence serialization, retrieval, and tool-mediated computation. Qualify a candidate on held-out role-sensitive tasks with a complete proposal denominator, calibration, invariance, counterfactual-role, and cost tests.",
+    "failure_boundary": "Combinatorial explosion from indiscriminate tuple materialization. Arity theater relabels pairwise or sequence computation without adding role-sensitive capability. Role collapse treats distinct participant positions as exchangeable. Proposal filtering hides the denominator and inflates apparent qualification rates.",
+    "evidence_state": "This chapter remains Design rationale at argument support. Its contracts, examples, tests, or local artifacts establish only their encoded scope. A finite relational candidate may hand off only when typed roles, lower-order rescues, proposal denominator, qualification, cost, fallback, descendants, and contraction state are explicit; no theorem proves irreducibility, usefulness, or bounded primitive arity. No proposal is judged without its full candidate denominator and resource cost. Higher order is admitted only after named lower-order rescues are implemented competently under matched budgets.",
+    "non_claims": "No chapter claim or evidence state is promoted by this visual. A named mechanism is not proof of correct implementation or useful deployment. A local check or formal model does not establish real-world enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.",
+    "handoff": "The next chapter is Governed Model Training, Distributed Optimization, and Scaling. It takes responsibility for A checkpoint can load and a loss curve can converge even when data order, optimizer state, numerical policy, distributed topology, failure recovery."
+  },
+  "artifacts": {
+    "storyboard": "visual_edition/chapters/relational-dimension-compilation-and-polyadic-cognition/storyboard.md",
+    "scene_code": "visual_edition/chapters/relational-dimension-compilation-and-polyadic-cognition/scene.py",
+    "narration_script": "visual_edition/chapters/relational-dimension-compilation-and-polyadic-cognition/narration.txt",
+    "captions": "visual_edition/chapters/relational-dimension-compilation-and-polyadic-cognition/captions.vtt",
+    "descriptive_transcript": "visual_edition/chapters/relational-dimension-compilation-and-polyadic-cognition/transcript.md",
+    "thumbnail": "visual_edition/chapters/relational-dimension-compilation-and-polyadic-cognition/thumbnail.svg",
+    "scene_spec": "visual_edition/chapters/relational-dimension-compilation-and-polyadic-cognition/scene_spec.json",
+    "thumbnail_alt_text": "A governed ledger diagram for Relational Dimension Compilation and Polyadic Cognition shows three named mechanism cards above a labeled failure and evidence boundary."
+  },
+  "render_receipt": {
+    "receipt_state": "current_final_av_master",
+    "validation_state": "validated",
+    "rendered_at_utc": "2026-07-30T03:28:30Z",
+    "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+    "toolchain_qualification": "qualified_for_all_non_latex_chapters",
+    "render_profile": "final_av_master",
+    "command": "Render the exact-timing ChapterVisualAbstract with pinned ManimCE 0.20.1 at 1920x1080/30, render pinned Kokoro-82M af_heart narration at speed 1.08 with a hard maximum of 300 characters per synthesis call and -16 LUFS, then align all seven visual scenes to the exact audio paragraph boundaries and mux with FFmpeg 8.0.1 as H.264 CRF 18 yuv420p plus AAC-LC 192 kb/s 48 kHz mono.",
+    "duration_seconds": 274.415,
+    "pixel_width": 1920,
+    "pixel_height": 1080,
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "output_sha256": "76eab5d76264ede3a2412f17283bc9a92ecf19a22cb1e322e12e213c37d10d5d",
+    "mux_receipt_sha256": "08e3341c51c42663fd0fb58f35c16a9b87436a5e60fc0139b41abb5eb5de0cf9",
+    "output_storage": "ignored build/visual_edition media only",
+    "visual_review": {
+      "draft_sample_seconds": [
+        12.7,
+        54.457,
+        111.745,
+        155.925,
+        194.61,
+        231.382,
+        259.917
+      ],
+      "release_sample_seconds": [
+        54.457,
+        231.382
+      ],
+      "result": "pass",
+      "review_scope": "Exact mux-receipt midpoint sampling across all seven narration scenes checked composition, legibility, persistent labels, color-plus-shape semantics, evidence ceiling, non-claims, end-card identity, and absence of clipping or overflowing text."
+    },
+    "audio_master": {
+      "identity": "Kokoro-82M bf16 af_heart via kokoro-mlx 0.1.2 at speed 1.08",
+      "provenance": "Locally generated from the canonical narration with the pinned Apache-2.0 Kokoro-82M model and MIT kokoro-mlx implementation recorded in visual_edition/narration_toolchain.json.",
+      "publication_rights_state": "cleared",
+      "duration_seconds": 274.415,
+      "sha256": "954c0a46636ec1a7a52b98fab4229ceacceb67618e9c9bd0dcaadb200d809564"
+    },
+    "caption_review": {
+      "state": "machine_audited",
+      "audit_method": "Exact receipt-derived canonical timing plus local MLX Whisper transcript comparison and complete beginning/end coverage checks.",
+      "reviewed_against_audio_sha256": "954c0a46636ec1a7a52b98fab4229ceacceb67618e9c9bd0dcaadb200d809564",
+      "asr_model": "mlx-community/whisper-small.en-mlx@52a88bf6e98b114a210c21bb83e22d6e1505cb73",
+      "asr_word_error_rate": 0.007117,
+      "terminology": "pass",
+      "timing": "pass",
+      "non_speech_information": "pass",
+      "material_visual_changes": "described_in_adjacent_transcript"
+    },
+    "artifact_sha256": {
+      "storyboard": "145c0201c20ca7db4bf194c29aa7abaefd63daba81fad6a2699fd43a9750d520",
+      "scene_code": "2b8edc72bf074de67d2f093d0d0b4b53d8bb47fdba78b78d2758fc88b0684f98",
+      "narration_script": "d10ca726b831c10634149b12e28c8a342a623541e0f2984eb1d92d20f19415b4",
+      "captions": "c995f9b337a1c168f68f3b9492616d71b85b7dc30cc1b615aee4e7c96f97d3e0",
+      "descriptive_transcript": "48d27e183427b61a32a8f881478934ead186e6a68b8e0070b0de96178bcf8292",
+      "thumbnail": "bb469f6da17d6fba7d16268bb21da8413cb8e3c2ac30707efdb256d0dd2daa91",
+      "scene_spec": "574e697da20fac118aeff9dcc48bbf54eaa69cd3f1512e263e97b480d1c83160"
+    },
+    "remaining_release_gates": [
+      "obtain exact action-time authority before any YouTube or playlist mutation"
+    ]
+  },
+  "youtube": {
+    "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+    "video_id": null,
+    "watch_url": null,
+    "playlist_id": null,
+    "generation": 0,
+    "publication_state": "not_authorized",
+    "uploaded_output_sha256": null,
+    "bound_chapter_sha256": null,
+    "bound_source_commit": null,
+    "published_at_utc": null,
+    "platform_receipt_path": null,
+    "supersedes_video_id": null
+  },
+  "quarto_embed": {
+    "state": "absent_until_published",
+    "chapter_anchor": "visual-abstract",
+    "frame_title": "Visual abstract: Relational Dimension Compilation and Polyadic Cognition",
+    "aria_label": "Play the visual abstract for Relational Dimension Compilation and Polyadic Cognition"
+  },
+  "staleness": {
+    "state": "current",
+    "checked_chapter_sha256": "b3155703d9cdbc0689b309f26223f4e92858f93af4f88bf5802b7c413abaa05c",
+    "triggers": [
+      "core_claim",
+      "mechanism",
+      "worked_trace",
+      "evidence_state",
+      "non_claim",
+      "material_source",
+      "chapter_identity",
+      "handoff",
+      "public_url"
+    ]
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This derivative video does not promote or otherwise change any book claim.",
+    "The validated local final master is not a YouTube upload or a public publication.",
+    "Automated intelligibility and caption audits do not establish that every listener will prefer the synthetic voice.",
+    "A successful animation render does not establish deployment, safety, efficiency, transfer, state of the art, AGI, or ASI."
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "chapter_id": "perception-sensor-fusion-and-observation-trust",
+  "title": "Perception, Sensor Fusion, and Observation Trust",
+  "subtitle": "A consequential observation requires a versioned contract binding task need, sensor and modality identity… per-channel hypotheses, alignment, fusion, dependence, disagreement, shift, active observation, freshness, authority, cost, and residuals.",
+  "archetype": "graph",
+  "claim_label": "Design rationale",
+  "evidence_level": "argument",
+  "next_title": "Planning as a Control Layer: DAGs and Intelligence Arbitrage",
+  "display": {
+    "problem": "Planning and control often treat sensor-derived tokens, objects, or embeddings… coverage, missingness, dependence, shift, or spoofing makes the observation unreliable.",
+    "insufficient": "Clean accuracy, more modalities, cross-modal similarity, sensor count, or fused… task-relevant observation trust, independent evidence, causal grounding, or physical safety.",
+    "mechanism": [
+      {
+        "label": "Task-relative observation need",
+        "detail": "Compile a task-relative observation need and consequence class."
+      },
+      {
+        "label": "Sensor modality model calibration",
+        "detail": "Bind sensor, modality, model, calibration, pose, clock, and operating environment."
+      },
+      {
+        "label": "Per-channel measurements hypotheses",
+        "detail": "Preserve per-channel measurements, hypotheses, uncertainty, quality, and missingness before fusion."
+      },
+      {
+        "label": "Separate temporal spatial semantic",
+        "detail": "Separate temporal, spatial, semantic, and population alignment."
+      }
+    ],
+    "trace": [
+      "Task-relative observation need",
+      "Sensor modality model calibration",
+      "Per-channel measurements hypotheses",
+      "Separate temporal spatial semantic"
+    ],
+    "failures": [
+      "spoofing",
+      "calibration or clock drift",
+      "occlusion and saturation",
+      "modality collapse"
+    ],
+    "proof_targets": [
+      "A finite admission model refuses to promote correlated channel agreement as independent evidence.",
+      "correlated agreement is not independent evidence",
+      "calibration is cohort environment metric and version bound"
+    ],
+    "evidence_ceiling": "This chapter remains Design rationale at argument support.",
+    "nonclaims": [
+      "No chapter claim or evidence state is promoted by this visual.",
+      "A named mechanism is not proof of correct implementation or useful deployment.",
+      "A local check or formal model does not establish real-world enforcement.",
+      "No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows."
+    ],
+    "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result."
+  },
+  "timing": {
+    "basis": "exact_narration_paragraph_boundaries",
+    "narration_receipt_sha256": "8fc311cc4762033763c295426c08cbf747f756c8aded3584dd62d5d08e1784ae",
+    "target_duration_seconds": 227.765,
+    "scene_endpoints_seconds": [
+      32.2,
+      70.65,
+      122.49,
+      138.345,
+      167.27,
+      195.345,
+      227.765
+    ]
+  }
+}

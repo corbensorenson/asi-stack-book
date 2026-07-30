@@ -1,0 +1,29 @@
+{
+  "schema_version": "asi_stack.narration_pronunciations.v1",
+  "language": "en-US",
+  "substitutions": {
+    "ABI": "A B I",
+    "AI": "A I",
+    "ASI": "A S I",
+    "DOCX": "doc ex",
+    "EPUB": "ee pub",
+    "HTML": "H T M L",
+    "KAN": "can",
+    "KANs": "cans",
+    "KERC": "K E R C",
+    "Manim": "man im",
+    "MoECOT": "M O E C O T",
+    "OneCell": "One Cell",
+    "PDF": "P D F",
+    "QCSA": "Q C S A",
+    "Quarto": "quarto",
+    "RSI": "R S I",
+    "SCIFs": "skiffs",
+    "SSM": "S S M"
+  },
+  "contract": [
+    "Substitutions change pronunciation only; captions and descriptive transcripts preserve the canonical written chapter language.",
+    "Every added technical term must be auditioned in context before a narration master can validate.",
+    "A pronunciation-map change makes every narration master that used the changed entry stale."
+  ]
+}

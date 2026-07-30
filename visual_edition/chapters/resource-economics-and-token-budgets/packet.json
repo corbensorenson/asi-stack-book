@@ -1,0 +1,189 @@
+{
+  "schema_version": "asi_stack.visual_chapter_packet.v1",
+  "video_id": "asi-video-resource-economics-and-token-budgets",
+  "chapter_id": "resource-economics-and-token-budgets",
+  "chapter_path": "chapters/resource-economics-and-token-budgets.qmd",
+  "chapter_sha256": "08fa55e97f13fb7940fbd5884a51183032c957e8c7f45f6f5836ad304ec76975",
+  "source_commit": "f10ef079ecfeb48503407d67832a0251f77c2c78",
+  "pilot": false,
+  "lifecycle_state": "ready_not_published",
+  "claim_bindings": [
+    {
+      "claim_id": "resource-economics-and-token-budgets.core",
+      "claim_label": "Design rationale",
+      "support_state": "argument"
+    }
+  ],
+  "assigned_source_ids": [
+    "tokenmana",
+    "planforge",
+    "coherence_exchange",
+    "simulation_scaling",
+    "viea",
+    "project_theseus_whitepaper",
+    "coilra_multicoil_rope",
+    "cgs",
+    "rankfold_neuralfold",
+    "alignment_field",
+    "ext_pagedattention_vllm_2023",
+    "ext_reluplex_2017",
+    "ext_mem0_2025",
+    "ext_recurrent_transformer_2026",
+    "ext_dynamic_compute_recurrent_transformers_2026",
+    "ext_claw_swe_bench_2026",
+    "reflexive_router_whitepaper",
+    "kernel_english_residual_compiler",
+    "ext_mlperf_training_v6_2026",
+    "relational_dimension_compiler",
+    "ext_airllm_2023",
+    "ext_deepspeed_inference_2022",
+    "ext_flexgen_2023",
+    "ext_hf_accelerate_big_model_inference_2026",
+    "ext_llama_cpp_memory_mapping_2026",
+    "ext_llm_in_flash_2024",
+    "ext_powerinfer_2024",
+    "ext_vattention_2025",
+    "ext_infinigen_2024",
+    "ext_specache_2025",
+    "ext_specoffload_2025",
+    "ext_atsinfer_2026",
+    "ext_openai_prompt_caching_docs_2026",
+    "ext_anthropic_prompt_caching_docs_2026",
+    "ext_gemini_context_caching_docs_2026",
+    "ext_vllm_automatic_prefix_caching_2026",
+    "ext_sglang_radixattention_2024",
+    "ext_prompt_cache_2024",
+    "ext_mooncake_2025",
+    "ext_cacheblend_2025",
+    "ext_azure_llm_semantic_cache_2026",
+    "precision_contract"
+  ],
+  "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result.",
+  "required_content": {
+    "problem": "Compute, context, verification, simulation fidelity, and human attention are scarce resources that the architecture must allocate explicitly. Ignoring resource economics or fidelity boundaries makes high-quality verification unaffordable, encourages synchronized overload or hidden cost shifts, and lets synthetic results travel farther than their contracts support.",
+    "core_mechanism": "Resource Economics owns a consumer-, task-, risk-, workload-, organization-, resource-, and time-specific allocation lease that admits, prices, schedules, defers, shrinks, escalates, or rejects work only after protected safety and rights floors, complete direct and displaced costs, uncertainty, useful outcome value, verification capacity, load and tail stability, simulation-transfer limits, recovery, and residual ownership are explicit; throughput, low token count, synthetic success, or a cheap route alone confers no quality, safety, economic-optimality, support, or deployment authority. Freeze consumer, task, value hypothesis, risk, workload, organization, authority, rights, horizon, success, and non-claims before allocation.",
+    "worked_trace": "Twenty-three retained countermodels and bounded computations plus an eight-declaration, nine-stage, 66-route allocation, execution, simulation-transport, reconciliation, and closure lifecycle; an independently implemented consumer rejects 57/57 non-accepting mutations and digest-binds twelve bounded source families. Thirty-five assumption projections and copied fixture summaries are retired. The model separates useful outcomes from raw resource proxies, blocks fidelity overclaims, requires failure and unsafe-release accounting, and grants no support or external-effect authority. This is bounded policy/conformance evidence over synthetic fixtures, repository replays, local timing, historical CI, and sanitized imports—not economic optimality, deployed scheduling, useful-throughput improvement, simulation adequacy, physical feasibility, transfer, or SOTA evidence.",
+    "failure_boundary": "Verification, security, rights, approval, replay, rollback, audit, or human review is cut to make a route appear cheaper. Synchronized arrivals, shared retries, cache misses, or failures produce load collapse and correlated quality degradation. Low-value or strategically inflated work hoards compute, verifier, reviewer, tool, or approval capacity. Aggregate serving throughput or cache savings are mistaken for lower single-request risk, better quality, or economic value.",
+    "evidence_state": "This chapter remains Design rationale at argument support. Its contracts, examples, tests, or local artifacts establish only their encoded scope. A reachable allocation lifecycle requires a scoped request, explicit resource inventory and units, direct, displaced, verification, and uncertainty costs, protected floors, bounded capacity, reviewer and verifier capacity, queue policy, observed spend, useful-outcome accounting, verification, reconciliation, and closure. Missing protected floors, reviewer capacity, failure retention, or evidence-transition accounting blocks the corresponding allocation stage; raw resource proxies cannot promote support.",
+    "non_claims": "No chapter claim or evidence state is promoted by this visual. A named mechanism is not proof of correct implementation or useful deployment. A local check or formal model does not establish real-world enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.",
+    "handoff": "The next chapter is Physical Compute Infrastructure, Energy, and Environmental Constraints. It takes responsibility for Requested compute becomes useful work only through accelerators, memory, storage, interconnect, facilities, grid connections, generation, cooling, water, land, materials, maintenance, resilience, and retirement at particular places and times."
+  },
+  "artifacts": {
+    "storyboard": "visual_edition/chapters/resource-economics-and-token-budgets/storyboard.md",
+    "scene_code": "visual_edition/chapters/resource-economics-and-token-budgets/scene.py",
+    "narration_script": "visual_edition/chapters/resource-economics-and-token-budgets/narration.txt",
+    "captions": "visual_edition/chapters/resource-economics-and-token-budgets/captions.vtt",
+    "descriptive_transcript": "visual_edition/chapters/resource-economics-and-token-budgets/transcript.md",
+    "thumbnail": "visual_edition/chapters/resource-economics-and-token-budgets/thumbnail.svg",
+    "scene_spec": "visual_edition/chapters/resource-economics-and-token-budgets/scene_spec.json",
+    "thumbnail_alt_text": "A governed timeline diagram for Resource Economics and Token Budgets shows three named mechanism cards above a labeled failure and evidence boundary."
+  },
+  "render_receipt": {
+    "receipt_state": "current_final_av_master",
+    "validation_state": "validated",
+    "rendered_at_utc": "2026-07-30T03:33:57Z",
+    "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+    "toolchain_qualification": "qualified_for_all_non_latex_chapters",
+    "render_profile": "final_av_master",
+    "command": "Render the exact-timing ChapterVisualAbstract with pinned ManimCE 0.20.1 at 1920x1080/30, render pinned Kokoro-82M af_heart narration at speed 1.08 with a hard maximum of 300 characters per synthesis call and -16 LUFS, then align all seven visual scenes to the exact audio paragraph boundaries and mux with FFmpeg 8.0.1 as H.264 CRF 18 yuv420p plus AAC-LC 192 kb/s 48 kHz mono.",
+    "duration_seconds": 296.045,
+    "pixel_width": 1920,
+    "pixel_height": 1080,
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "output_sha256": "d18602caee89a09b32ad3e2d83c7d9b5da347401383ddb3f36a29fc223dc1770",
+    "mux_receipt_sha256": "986290a8de62d0d68458307e6516d2c9dc5529100d5bfb8384135ccd85f9bd47",
+    "output_storage": "ignored build/visual_edition media only",
+    "visual_review": {
+      "draft_sample_seconds": [
+        14.487,
+        54.248,
+        111.19,
+        163.595,
+        208.802,
+        247.312,
+        278.698
+      ],
+      "release_sample_seconds": [
+        54.248,
+        247.312
+      ],
+      "result": "pass",
+      "review_scope": "Exact mux-receipt midpoint sampling across all seven narration scenes checked composition, legibility, persistent labels, color-plus-shape semantics, evidence ceiling, non-claims, end-card identity, and absence of clipping or overflowing text."
+    },
+    "audio_master": {
+      "identity": "Kokoro-82M bf16 af_heart via kokoro-mlx 0.1.2 at speed 1.08",
+      "provenance": "Locally generated from the canonical narration with the pinned Apache-2.0 Kokoro-82M model and MIT kokoro-mlx implementation recorded in visual_edition/narration_toolchain.json.",
+      "publication_rights_state": "cleared",
+      "duration_seconds": 296.045,
+      "sha256": "37307864284a34324dc705d5397faec1dd85bd454500b8ce4050fd84360ec5b5"
+    },
+    "caption_review": {
+      "state": "machine_audited",
+      "audit_method": "Exact receipt-derived canonical timing plus local MLX Whisper transcript comparison and complete beginning/end coverage checks.",
+      "reviewed_against_audio_sha256": "37307864284a34324dc705d5397faec1dd85bd454500b8ce4050fd84360ec5b5",
+      "asr_model": "mlx-community/whisper-small.en-mlx@52a88bf6e98b114a210c21bb83e22d6e1505cb73",
+      "asr_word_error_rate": 0.011905,
+      "terminology": "pass",
+      "timing": "pass",
+      "non_speech_information": "pass",
+      "material_visual_changes": "described_in_adjacent_transcript"
+    },
+    "artifact_sha256": {
+      "storyboard": "39fce03f236d6ba5d9cc6cd470b0c2cd180a8dd151fa6000854e8c8f57a2fe48",
+      "scene_code": "e66815156ac63b7c47b333ac723da7fd53f6251bcadf6fa32534e8211d38bc89",
+      "narration_script": "46422c892b3a95555af08bf5faca9e3595e12f2cc21635f7bbe0958a79e16d40",
+      "captions": "93c8023ec87eb674732b3b3afd2d8b8afc97a4a51d04915d859e80c3e40b1c47",
+      "descriptive_transcript": "cada3eb3be71004ee4ce2ffa8e3d36f71cc43ccbdca5c4b7853539f6cc70eeaa",
+      "thumbnail": "e4dbaee0d92a33c00b2d2d3dd438d23ceffdbfcf1c74010b37b07565cffb94c3",
+      "scene_spec": "10421002beb3747da976d496cc226bcacd93660903a78b181910458496247652"
+    },
+    "remaining_release_gates": [
+      "obtain exact action-time authority before any YouTube or playlist mutation"
+    ]
+  },
+  "youtube": {
+    "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+    "video_id": null,
+    "watch_url": null,
+    "playlist_id": null,
+    "generation": 0,
+    "publication_state": "not_authorized",
+    "uploaded_output_sha256": null,
+    "bound_chapter_sha256": null,
+    "bound_source_commit": null,
+    "published_at_utc": null,
+    "platform_receipt_path": null,
+    "supersedes_video_id": null
+  },
+  "quarto_embed": {
+    "state": "absent_until_published",
+    "chapter_anchor": "visual-abstract",
+    "frame_title": "Visual abstract: Resource Economics and Token Budgets",
+    "aria_label": "Play the visual abstract for Resource Economics and Token Budgets"
+  },
+  "staleness": {
+    "state": "current",
+    "checked_chapter_sha256": "08fa55e97f13fb7940fbd5884a51183032c957e8c7f45f6f5836ad304ec76975",
+    "triggers": [
+      "core_claim",
+      "mechanism",
+      "worked_trace",
+      "evidence_state",
+      "non_claim",
+      "material_source",
+      "chapter_identity",
+      "handoff",
+      "public_url"
+    ]
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This derivative video does not promote or otherwise change any book claim.",
+    "The validated local final master is not a YouTube upload or a public publication.",
+    "Automated intelligibility and caption audits do not establish that every listener will prefer the synthetic voice.",
+    "A successful animation render does not establish deployment, safety, efficiency, transfer, state of the art, AGI, or ASI."
+  ]
+}

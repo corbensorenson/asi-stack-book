@@ -1,0 +1,153 @@
+{
+  "schema_version": "asi_stack.visual_chapter_packet.v1",
+  "video_id": "asi-video-human-ai-communication-persuasion-and-epistemic-security",
+  "chapter_id": "human-ai-communication-persuasion-and-epistemic-security",
+  "chapter_path": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd",
+  "chapter_sha256": "5b7d7c381ed217fc030b5f410bf925304a58c090094aacbe97cfd50588f5e658",
+  "source_commit": "f10ef079ecfeb48503407d67832a0251f77c2c78",
+  "pilot": false,
+  "lifecycle_state": "ready_not_published",
+  "claim_bindings": [
+    {
+      "claim_id": "human-ai-communication-persuasion-and-epistemic-security.core",
+      "claim_label": "Design rationale",
+      "support_state": "argument"
+    }
+  ],
+  "assigned_source_ids": [
+    "talos",
+    "ext_conversational_persuasion_gpt4_2025",
+    "ext_anthropic_model_persuasiveness_2024",
+    "ext_commercial_persuasion_ai_2026",
+    "ext_cultural_alignment_llms_2024",
+    "ext_multilingual_evaluation_state_2026"
+  ],
+  "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result.",
+  "required_content": {
+    "problem": "An AI system can preserve internal evidence discipline and still change beliefs, choices, and institutions through selective framing, personalization, synthetic identity, repetition, and amplification. The stack therefore needs an owner for the complete outbound communication transaction, including correction after a message escapes its original channel. Truthfulness checks, content filters, generic human-factors guidance, and red-team prompts inspect fragments of influence.",
+    "core_mechanism": "Consequential AI communication should be eligible for delivery only through an evidence-bounded communication packet whose audience, influence method, amplification authority, provenance, expiry, correction reach, and observed effects remain inspectable; fluent text, factual fragments, user consent, or a successful persuasion score alone establishes neither epistemic safety, autonomy, legitimacy, durable benefit, nor release readiness. Compile a communication packet from claim identity, maximum warranted inference, uncertainty, audience class, purpose, protected or denied personalization attributes, persuasive technique, channel, disclosure, and amplification ceiling. Run audience-risk and autonomy checks before delivery.",
+    "worked_trace": "A useful first implementation is a communication-packet schema plus a delivery proxy that rejects evidence overstatement, denied personalization, undisclosed sponsorship, unbounded amplification, missing expiry, and unreachable correction routes. A benign held-out study can compare neutral assistance, bounded personalization, disclosure, and correction variants while measuring comprehension and autonomy as well as persuasion. It must not optimize vulnerable users or treat short-horizon self-report as durable welfare. Run audience-risk and autonomy checks before delivery. Vulnerability, dependency, power asymmetry, urgency, and inability to exit narrow the permitted technique and scale.",
+    "failure_boundary": "calibrated-sounding misinformation selective framing sycophancy emotional manipulation",
+    "evidence_state": "This chapter remains Design rationale at argument support. Its contracts, examples, tests, or local artifacts establish only their encoded scope. A finite Human-AI Communication, Persuasion, and Epistemic Security record may hand off only when identity, authority, version, required checks, and residual ownership are present; no theorem grants empirical effectiveness or release authority. Personalization may not use denied attributes or exploit a known vulnerability. Amplification requires a bounded audience denominator and revocable authority.",
+    "non_claims": "No chapter claim or evidence state is promoted by this visual. A named mechanism is not proof of correct implementation or useful deployment. A local check or formal model does not establish real-world enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.",
+    "handoff": "The next chapter is Constitutional Alignment: Agency, Dignity, and Corrigibility. It takes responsibility for A powerful stack can satisfy a request or policy while concentrating power, manipulating choice, eroding correction channels, hiding normative conflict, or changing the constitution that constrained it."
+  },
+  "artifacts": {
+    "storyboard": "visual_edition/chapters/human-ai-communication-persuasion-and-epistemic-security/storyboard.md",
+    "scene_code": "visual_edition/chapters/human-ai-communication-persuasion-and-epistemic-security/scene.py",
+    "narration_script": "visual_edition/chapters/human-ai-communication-persuasion-and-epistemic-security/narration.txt",
+    "captions": "visual_edition/chapters/human-ai-communication-persuasion-and-epistemic-security/captions.vtt",
+    "descriptive_transcript": "visual_edition/chapters/human-ai-communication-persuasion-and-epistemic-security/transcript.md",
+    "thumbnail": "visual_edition/chapters/human-ai-communication-persuasion-and-epistemic-security/thumbnail.svg",
+    "scene_spec": "visual_edition/chapters/human-ai-communication-persuasion-and-epistemic-security/scene_spec.json",
+    "thumbnail_alt_text": "A governed ledger diagram for Human-AI Communication, Persuasion, and Epistemic Security shows three named mechanism cards above a labeled failure and evidence boundary."
+  },
+  "render_receipt": {
+    "receipt_state": "current_final_av_master",
+    "validation_state": "validated",
+    "rendered_at_utc": "2026-07-30T03:47:01Z",
+    "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+    "toolchain_qualification": "qualified_for_all_non_latex_chapters",
+    "render_profile": "final_av_master",
+    "command": "Render the exact-timing ChapterVisualAbstract with pinned ManimCE 0.20.1 at 1920x1080/30, render pinned Kokoro-82M af_heart narration at speed 1.08 with a hard maximum of 300 characters per synthesis call and -16 LUFS, then align all seven visual scenes to the exact audio paragraph boundaries and mux with FFmpeg 8.0.1 as H.264 CRF 18 yuv420p plus AAC-LC 192 kb/s 48 kHz mono.",
+    "duration_seconds": 278.266016,
+    "pixel_width": 1920,
+    "pixel_height": 1080,
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "output_sha256": "942691292bb7053b92cdf68128a03c92ae7c8097713b7a1e4a947eaa3dbd7580",
+    "mux_receipt_sha256": "a3769392e6005d3353373914e4f6546dc0577dd7d181edc66af424fcd5bc7c74",
+    "output_storage": "ignored build/visual_edition media only",
+    "visual_review": {
+      "draft_sample_seconds": [
+        25.47,
+        79.785,
+        134.037,
+        167.71,
+        197.26,
+        232.582,
+        262.442
+      ],
+      "release_sample_seconds": [
+        79.785,
+        232.582
+      ],
+      "result": "pass",
+      "review_scope": "Exact mux-receipt midpoint sampling across all seven narration scenes checked composition, legibility, persistent labels, color-plus-shape semantics, evidence ceiling, non-claims, end-card identity, and absence of clipping or overflowing text."
+    },
+    "audio_master": {
+      "identity": "Kokoro-82M bf16 af_heart via kokoro-mlx 0.1.2 at speed 1.08",
+      "provenance": "Locally generated from the canonical narration with the pinned Apache-2.0 Kokoro-82M model and MIT kokoro-mlx implementation recorded in visual_edition/narration_toolchain.json.",
+      "publication_rights_state": "cleared",
+      "duration_seconds": 278.266016,
+      "sha256": "d68af1d4ddd7129f63f198f6ea6a8e54f5c821f76839beb7362c71aa45d7fb32"
+    },
+    "caption_review": {
+      "state": "machine_audited",
+      "audit_method": "Exact receipt-derived canonical timing plus local MLX Whisper transcript comparison and complete beginning/end coverage checks.",
+      "reviewed_against_audio_sha256": "d68af1d4ddd7129f63f198f6ea6a8e54f5c821f76839beb7362c71aa45d7fb32",
+      "asr_model": "mlx-community/whisper-small.en-mlx@52a88bf6e98b114a210c21bb83e22d6e1505cb73",
+      "asr_word_error_rate": 0.003591,
+      "terminology": "pass",
+      "timing": "pass",
+      "non_speech_information": "pass",
+      "material_visual_changes": "described_in_adjacent_transcript"
+    },
+    "artifact_sha256": {
+      "storyboard": "6e7ac10bc0ab31f996d6d339c925a637dc5c1f58cb1df9ad5c6d8ab8e88a5ee9",
+      "scene_code": "6c2ad20bfffb4d07ee41b41b45aa689d1cbb08fed46e0cfb605c77ae75d8aa92",
+      "narration_script": "4a5d6001ee24bca03c4f1f9ad598dba971f1c4e5845a7a0ad150eb0f6e8008ce",
+      "captions": "73651af3a0afab9bfd57b3ceab66afb6f18d06341ea6cfdddbebaddc34aa31bf",
+      "descriptive_transcript": "80869ad06809698d56551535fcfaba88e7fe4ca975fc1a93468845c52478b331",
+      "thumbnail": "2f4231e0812c9afe2304d52434cf491c9902e3ad8413c7f7433e645126140f4a",
+      "scene_spec": "fd93383d686f7f07617c3962288b6ecbdf64aac101be33f7b63be7bbdfa6596e"
+    },
+    "remaining_release_gates": [
+      "obtain exact action-time authority before any YouTube or playlist mutation"
+    ]
+  },
+  "youtube": {
+    "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+    "video_id": null,
+    "watch_url": null,
+    "playlist_id": null,
+    "generation": 0,
+    "publication_state": "not_authorized",
+    "uploaded_output_sha256": null,
+    "bound_chapter_sha256": null,
+    "bound_source_commit": null,
+    "published_at_utc": null,
+    "platform_receipt_path": null,
+    "supersedes_video_id": null
+  },
+  "quarto_embed": {
+    "state": "absent_until_published",
+    "chapter_anchor": "visual-abstract",
+    "frame_title": "Visual abstract: Human-AI Communication, Persuasion, and Epistemic Security",
+    "aria_label": "Play the visual abstract for Human-AI Communication, Persuasion, and Epistemic Security"
+  },
+  "staleness": {
+    "state": "current",
+    "checked_chapter_sha256": "5b7d7c381ed217fc030b5f410bf925304a58c090094aacbe97cfd50588f5e658",
+    "triggers": [
+      "core_claim",
+      "mechanism",
+      "worked_trace",
+      "evidence_state",
+      "non_claim",
+      "material_source",
+      "chapter_identity",
+      "handoff",
+      "public_url"
+    ]
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This derivative video does not promote or otherwise change any book claim.",
+    "The validated local final master is not a YouTube upload or a public publication.",
+    "Automated intelligibility and caption audits do not establish that every listener will prefer the synthetic voice.",
+    "A successful animation render does not establish deployment, safety, efficiency, transfer, state of the art, AGI, or ASI."
+  ]
+}

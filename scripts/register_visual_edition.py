@@ -27,40 +27,72 @@ PACKET_FILES = [
     "captions.vtt",
     "transcript.md",
     "thumbnail.svg",
+    "scene_spec.json",
 ]
-ARTIFACTS = [
+BASE_ARTIFACTS = [
     "visual_edition/README.md",
     "visual_edition/manifest.json",
     "visual_edition/toolchain.json",
     "visual_edition/requirements.lock.txt",
+    "visual_edition/narration_toolchain.json",
+    "visual_edition/narration_requirements.lock.txt",
+    "visual_edition/narration_pronunciations.json",
     "visual_edition/manim.cfg",
     "visual_edition/visual_grammar.json",
     "visual_edition/youtube_channel.json",
     "visual_edition/youtube_ledger.json",
+    "visual_edition/youtube_upload_plan.json",
     "visual_edition/lib/__init__.py",
     "visual_edition/lib/asi_visuals.py",
+    "visual_edition/lib/chapter_scene.py",
     "visual_edition/scenes/primitive_gallery.py",
     "schemas/manim_toolchain.schema.json",
+    "schemas/narration_toolchain.schema.json",
     "schemas/visual_grammar.schema.json",
     "schemas/visual_edition_manifest.schema.json",
     "schemas/visual_chapter_packet.schema.json",
     "schemas/youtube_channel.schema.json",
     "schemas/youtube_ledger.schema.json",
+    "schemas/youtube_upload_plan.schema.json",
     "scripts/capture_manim_toolchain.py",
     "scripts/validate_manim_toolchain.py",
+    "scripts/render_visual_narration.py",
+    "scripts/build_visual_captions_from_narration_receipt.py",
+    "scripts/validate_visual_narration.py",
+    "scripts/validate_visual_master.py",
+    "scripts/generate_visual_chapter_packets.py",
+    "scripts/produce_visual_chapter.py",
+    "scripts/transcribe_visual_narrations.py",
+    "scripts/render_visual_scenes.py",
+    "scripts/sync_visual_scene_timings.py",
+    "scripts/finalize_visual_chapter_packets.py",
+    "scripts/mux_visual_masters.py",
+    "scripts/build_visual_review_sheets.py",
     "scripts/build_visual_edition_manifest.py",
     "scripts/build_youtube_ledger.py",
+    "scripts/build_youtube_upload_plan.py",
+    "scripts/render_youtube_thumbnails.py",
+    "scripts/build_youtube_thumbnail_review_sheets.py",
     "scripts/validate_visual_edition.py",
     "scripts/sync_visual_edition_embeds.py",
     "scripts/register_visual_edition.py",
-] + [
-    f"visual_edition/chapters/{pilot}/{filename}"
-    for pilot in PILOTS
-    for filename in PACKET_FILES
 ]
 
 
+def chapter_artifacts() -> list[str]:
+    structure = json.loads((ROOT / "book_structure.json").read_text(encoding="utf-8"))
+    result = []
+    for part in structure["parts"]:
+        for chapter in part["chapters"]:
+            for filename in PACKET_FILES:
+                relative = f"visual_edition/chapters/{chapter['id']}/{filename}"
+                if (ROOT / relative).is_file():
+                    result.append(relative)
+    return result
+
+
 def main() -> None:
+    artifacts = BASE_ARTIFACTS + chapter_artifacts()
     registry = json.loads(REGISTRY.read_text(encoding="utf-8"))
     registry["units"] = [
         unit for unit in registry["units"]
@@ -75,9 +107,9 @@ def main() -> None:
         "args": [],
         "execution_tier": "pr",
         "validation_class": "publication_gate",
-        "input_contract": "Current 84-chapter book_structure manifest; exact P7.3 five-pilot identity and complete tracked source packets; pinned ARM-native ManimCE toolchain record; candidate visual grammar; exact authenticated YouTube channel contract and generated 84-chapter publication/revision ledger; zero or more schema-valid chapter derivative packets; ignored build-output and YouTube-hosting boundary.",
-        "input_artifacts": ARTIFACTS,
-        "output_contract": "Reject chapter identity or digest drift, premature pilot or visual-grammar completion, incomplete packet artifacts, stale chapter bindings, invalid publication/embed states, missing render identity, out-of-range validated duration, tracked or Pages-hosted media binaries, and support-state movement. The separately registered embed reconciler rejects missing, stale, or unmanaged public embed surfaces.",
+        "input_contract": "Current 84-chapter book_structure manifest; exact P7.3 five-pilot identity and complete tracked source packets for all 84 chapters; pinned ARM-native ManimCE, local Kokoro narration, and MLX Whisper verification contracts; ratified visual grammar; exact authenticated YouTube channel contract and generated 84-chapter publication/revision ledger; ignored build-output and YouTube-hosting boundary.",
+        "input_artifacts": artifacts,
+        "output_contract": "Reject chapter identity or digest drift, premature or missing post-pilot visual-grammar ratification, narration-toolchain input drift, incomplete packet artifacts, stale chapter bindings, invalid publication/embed states, missing render identity, out-of-range validated duration, tracked or Pages-hosted media binaries, and support-state movement. The separately registered embed reconciler rejects missing, stale, or unmanaged public embed surfaces.",
         "output_assertions": [
             "84 canonical visual-edition rows in book order",
             "five exact pilot identities",
@@ -98,7 +130,7 @@ def main() -> None:
             "binary host widening",
             "premature publication authority",
             "support promotion",
-            "premature grammar ratification",
+            "premature ratification or post-gate deratification",
             "motion-only meaning",
             "caption deletion",
         ],
@@ -177,7 +209,7 @@ def main() -> None:
         "contract_precision": "exact",
         "semantic_review_state": "checked_arm_runtime_lock_renderer_release_profile_binary_and_support_boundaries",
     })
-    for artifact in ARTIFACTS:
+    for artifact in artifacts:
         if artifact not in registry["required_artifacts"]:
             registry["required_artifacts"].append(artifact)
     registry["units"].sort(key=lambda unit: unit["order"])

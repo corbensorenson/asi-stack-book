@@ -6,7 +6,7 @@
   "chapter_sha256": "815de35df3af82c0b1fb146ebb2d07cea8e15864457a2d8c55d5685ebd911d5e",
   "source_commit": "4169d5543f0f002b0718c275bca42a706b197ab6",
   "pilot": true,
-  "lifecycle_state": "rendered",
+  "lifecycle_state": "ready_not_published",
   "claim_bindings": [
     {
       "claim_id": "replaceable-cognitive-substrates-beyond-transformer-monoculture.core",
@@ -85,46 +85,66 @@
     "thumbnail_alt_text": "Transformer, state-space, recurrent, graph, and program-shaped kernels connect through a typed Cognitive Kernel ABI while a stop bar separates proposals from effects."
   },
   "render_receipt": {
-    "receipt_state": "current_release_visual_without_final_audio",
-    "validation_state": "local_release_visual_review_complete_audio_not_publication_cleared",
-    "rendered_at_utc": "2026-07-29T04:47:22Z",
+    "receipt_state": "current_final_av_master",
+    "validation_state": "validated",
+    "rendered_at_utc": "2026-07-30T03:28:38Z",
     "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
-    "toolchain_qualification": "qualified_for_non_latex_pilots",
-    "render_profile": "release_video_only",
-    "command": "PYTHONPATH=. build/visual_edition/venv/bin/manim --config_file visual_edition/manim.cfg --disable_caching visual_edition/chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture/scene.py ReplaceableCognitiveSubstrates",
-    "duration_seconds": 299.961003,
+    "toolchain_qualification": "qualified_for_all_non_latex_chapters",
+    "render_profile": "final_av_master",
+    "command": "Reuse the ratified chapter-specific pilot visual with pinned ManimCE 0.20.1 at 1920x1080/30, render pinned Kokoro-82M af_heart narration at speed 1.08 with a hard maximum of 300 characters per synthesis call and -16 LUFS, then align all seven visual scenes to the exact audio paragraph boundaries and mux with FFmpeg 8.0.1 as H.264 CRF 18 yuv420p plus AAC-LC 192 kb/s 48 kHz mono.",
+    "duration_seconds": 314.8,
     "pixel_width": 1920,
     "pixel_height": 1080,
     "frame_rate": 30,
     "video_codec": "h264",
     "pixel_format": "yuv420p",
-    "output_sha256": "3ca3abc766b29560466b844d6598642e891b6141e2634d952a1a9610ec3e1c95",
+    "output_sha256": "a41ee376c04ca166eb8372a0ec6e26ef50a75a7a964174ca26b172bd2176ebb3",
+    "mux_receipt_sha256": "4ccf3e8b711b800eae478f6a9ca407382609f31562737d80d4a05d4cd559699c",
     "output_storage": "ignored build/visual_edition media only",
     "visual_review": {
-      "draft_sample_seconds": [18.75, 56.25, 93.75, 131.25, 168.75, 206.25, 243.75, 281.25],
-      "release_sample_seconds": [20, 280],
+      "draft_sample_seconds": [
+        20.235,
+        61.217,
+        106.062,
+        153.02,
+        196.602,
+        242.41,
+        291.14
+      ],
+      "release_sample_seconds": [
+        61.217,
+        242.41
+      ],
       "result": "pass",
-      "review_scope": "composition, legibility, architecture-shape and label semantics, contribution accounting, neutral comparator framing, corrected proof-boundary spacing, and end-card non-claims"
+      "review_scope": "Exact mux-receipt midpoint sampling across all seven narration scenes checked composition, legibility, persistent labels, color-plus-shape semantics, evidence ceiling, non-claims, end-card identity, and absence of clipping or overflowing text."
     },
-    "local_timing_audio": {
-      "voice": "macOS Samantha en_US at 190 wpm",
-      "duration_seconds": 243.124535,
-      "publication_rights_state": "not_cleared",
-      "use": "local pacing review only",
-      "muxed_review_sha256": "14f1bec3f544c984cb3d09d33fc98e01a526f5c81d922bbb29d5fdebe4df57eb"
+    "audio_master": {
+      "identity": "Kokoro-82M bf16 af_heart via kokoro-mlx 0.1.2 at speed 1.08",
+      "provenance": "Locally generated from the canonical narration with the pinned Apache-2.0 Kokoro-82M model and MIT kokoro-mlx implementation recorded in visual_edition/narration_toolchain.json.",
+      "publication_rights_state": "cleared",
+      "duration_seconds": 314.8,
+      "sha256": "84529a7d02d971c364075963d19da625e8ccc465533c28b483d4fa6c44d947e6"
+    },
+    "caption_review": {
+      "state": "machine_audited",
+      "audit_method": "Exact receipt-derived canonical timing plus local MLX Whisper transcript comparison and complete beginning/end coverage checks.",
+      "reviewed_against_audio_sha256": "84529a7d02d971c364075963d19da625e8ccc465533c28b483d4fa6c44d947e6",
+      "asr_model": "mlx-community/whisper-small.en-mlx@52a88bf6e98b114a210c21bb83e22d6e1505cb73",
+      "asr_word_error_rate": 0.014793,
+      "terminology": "pass",
+      "timing": "pass",
+      "non_speech_information": "pass",
+      "material_visual_changes": "described_in_adjacent_transcript"
     },
     "artifact_sha256": {
       "storyboard": "3c6d9726f353a02cc34dc3aeb79598809bdfb0c5c21cde393468272bfc0a9641",
       "scene_code": "6b2c144c6842c72c38d9800ff2748f22bd505a83fbb08478cda1b4ccba496656",
       "narration_script": "af00611865831df6dc28299e562a0b64ce69430847ae9a879f2be6a9cf518b8e",
-      "captions": "6fbec1961cca82f3419785bbd03ca9fa311dbd14b39075bbf4ae3eba3124b186",
+      "captions": "b04e25d60acd2e22f513884cb703b5caab7cf73fa6434fe819179767c127036a",
       "descriptive_transcript": "ff829456522922a76c9cae7869626cd684a873b65b60bd87808fdeffc95eff00",
       "thumbnail": "271e9ed5f13b37a45cab21a59b1c8aa57ba0ac058be9b5e63fc2c2fc2b147fd9"
     },
     "remaining_release_gates": [
-      "record or license the final narration master for publication",
-      "perform final listening review and retime captions against that master",
-      "mux and validate the final accessible audio-video master",
       "obtain exact action-time authority before any YouTube or playlist mutation"
     ]
   },
@@ -167,9 +187,8 @@
   "release_effect": "none",
   "non_claims": [
     "This derivative video does not promote or otherwise change any book claim.",
-    "A scripted pilot is not a validated render, release, upload, or publication.",
-    "An architecture name, interface trace, or asymptotic property does not establish a matched system-level win.",
-    "The post-render Kimi K3 source refresh changes neither the visual argument nor its evidence ceiling; no Kimi mechanism, benchmark, scaling result, transfer, or reproduction is claimed.",
-    "No real-kernel, OneCell, energy, production, SOTA, transfer, or architectural-RSI result is claimed."
+    "The validated local final master is not a YouTube upload or a public publication.",
+    "Automated intelligibility and caption audits do not establish that every listener will prefer the synthetic voice.",
+    "A successful animation render does not establish deployment, safety, efficiency, transfer, state of the art, AGI, or ASI."
   ]
 }

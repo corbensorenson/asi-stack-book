@@ -1,0 +1,70 @@
+{
+  "chapter_id": "learning-theory-generalization-and-scaling-science",
+  "title": "Learning Theory, Generalization, and Scaling Science",
+  "subtitle": "A generalization, transfer, emergence, or scaling assertion should be accepted only through a dated… larger model alone establishes neither broad generalization, capability emergence, safety, nor future scale behavior.",
+  "archetype": "timeline",
+  "claim_label": "Design rationale",
+  "evidence_level": "argument",
+  "next_title": "Readiness Gates, Residual Escrow, and Quarantine",
+  "display": {
+    "problem": "The stack repeatedly relies on claims that learning will generalize… scale, or phase changes will appear outside observed training support.",
+    "insufficient": "PAC bounds, capacity measures, stability, compression, information theory, scaling-law fits, emergence plots, and benchmark curves each illuminate part of learning.",
+    "mechanism": [
+      {
+        "label": "State population sampling process",
+        "detail": "State the population, sampling process, shift model… consumer before making a generalization claim."
+      },
+      {
+        "label": "Multiple explanatory",
+        "detail": "Use multiple explanatory lenses—capacity and complexity, stability… benign-overfitting hypotheses—without laundering one into another."
+      },
+      {
+        "label": "Fit scaling relations uncertainty",
+        "detail": "Fit scaling relations with uncertainty, held-out scales… compute accounting, breakpoint diagnostics, and prospective forecasts."
+      },
+      {
+        "label": "Distinguish smooth underlying",
+        "detail": "Distinguish smooth underlying performance from thresholded metrics… survives metric, prompting, sampling, and denominator changes."
+      }
+    ],
+    "trace": [
+      "State population sampling process",
+      "Multiple explanatory",
+      "Fit scaling relations uncertainty",
+      "Distinguish smooth underlying"
+    ],
+    "failures": [
+      "vacuous bounds",
+      "distribution laundering",
+      "test contamination",
+      "post-hoc curve fitting"
+    ],
+    "proof_targets": [
+      "A finite Learning Theory, Generalization, and Scaling… theorem grants empirical effectiveness or release authority.",
+      "Training fit, in-distribution generalization, transfer, compositionality, and safety remain distinct.",
+      "Loss scaling does not automatically predict thresholded capability or risk."
+    ],
+    "evidence_ceiling": "This chapter remains Design rationale at argument support.",
+    "nonclaims": [
+      "No chapter claim or evidence state is promoted by this visual.",
+      "A named mechanism is not proof of correct implementation or useful deployment.",
+      "A local check or formal model does not establish real-world enforcement.",
+      "No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows."
+    ],
+    "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result."
+  },
+  "timing": {
+    "basis": "exact_narration_paragraph_boundaries",
+    "narration_receipt_sha256": "ac6a5c4c11c59ab25b8f6038ed4bb624674a2b26ea4698e94bded868a138b494",
+    "target_duration_seconds": 268.4,
+    "scene_endpoints_seconds": [
+      39.57,
+      92.565,
+      149.055,
+      165.31,
+      208.155,
+      236.23,
+      268.4
+    ]
+  }
+}

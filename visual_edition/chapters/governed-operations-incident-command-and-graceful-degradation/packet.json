@@ -1,0 +1,156 @@
+{
+  "schema_version": "asi_stack.visual_chapter_packet.v1",
+  "video_id": "asi-video-governed-operations-incident-command-and-graceful-degradation",
+  "chapter_id": "governed-operations-incident-command-and-graceful-degradation",
+  "chapter_path": "chapters/governed-operations-incident-command-and-graceful-degradation.qmd",
+  "chapter_sha256": "50a74bc7bcc73815be65fad63e234ab0ff6e0d379b0d9d8e8a0f8bb2e5b6a10a",
+  "source_commit": "f10ef079ecfeb48503407d67832a0251f77c2c78",
+  "pilot": false,
+  "lifecycle_state": "ready_not_published",
+  "claim_bindings": [
+    {
+      "claim_id": "governed-operations-incident-command-and-graceful-degradation.core",
+      "claim_label": "Design rationale",
+      "support_state": "argument"
+    }
+  ],
+  "assigned_source_ids": [
+    "scf",
+    "deterministic_capability_compilation",
+    "theseus_operator_os",
+    "viea",
+    "talos",
+    "platonic_world_model",
+    "ext_nist_ai_rmf_1_0_2023",
+    "ext_nist_deployed_ai_monitoring_2026",
+    "ext_nist_incident_response_2025"
+  ],
+  "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result.",
+  "required_content": {
+    "problem": "A system can satisfy pre-deployment requirements yet fail after release through drift, dependency failure, operator overload, ambiguous incidents, correlated faults, or recovery actions that create new hazards. Monitoring, a kill switch, backups, an incident plan, or rollback alone is not operational resilience: signals may be stale, effects may be irreversible, authority may be unclear, dependencies may share failure modes, and rollback may restore code while leaving data, memory, credentials, or downstream consequences changed.",
+    "core_mechanism": "Governed operation is a closed incident lifecycle that binds detection, classification, command authority, containment, effect-complete rollback, graceful degradation, recovery evidence, and learning to the exact deployed system and its dependency graph. Maintain a deployment manifest covering model, policy, prompts, tools, data, identities, caches, dependencies, owners, and rollback authority. Fuse behavioral, safety, security, dependency, human, and business signals into versioned incident hypotheses rather than a single health score.",
+    "worked_trace": "Operate a fault-injected reference service with an exact deployment manifest, independent telemetry, a versioned incident workflow record, named incident roles, tool and credential revocation, safe degraded modes, full-state rollback plus external-effect compensation, staged recovery, and game-day scenarios including detector loss, correlated dependency failure, and a rollback that appears successful while hidden state remains changed. Fuse behavioral, safety, security, dependency, human, and business signals into versioned incident hypotheses rather than a single health score. Classify incidents by consequence, reversibility, scope, uncertainty, and propagation risk. Bind each class to incident commander, technical and safety leads, communication duties, action limits, and emergency expiry.",
+    "failure_boundary": "silent drift detector blindness alert storm ambiguous command",
+    "evidence_state": "This chapter remains Design rationale at argument support. Its contracts, examples, tests, or local artifacts establish only their encoded scope. Every finite degraded-mode transition preserves or narrows capability, data, tool, and duration authority. Normal-service recovery is rejected when any required internal-state component, external-effect disposition, acceptance check, or emergency-authority expiry is missing. Containment does not require the suspected component to cooperate.",
+    "non_claims": "No chapter claim or evidence state is promoted by this visual. A named mechanism is not proof of correct implementation or useful deployment. A local check or formal model does not establish real-world enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.",
+    "handoff": "The next chapter is Policy Optimization and Learning from Feedback. It takes responsibility for A governed stack needs to convert feedback, verification, benchmark pressure, and failure into better future behavior without allowing reward signals to bypass evidence, authority, or rollback boundaries."
+  },
+  "artifacts": {
+    "storyboard": "visual_edition/chapters/governed-operations-incident-command-and-graceful-degradation/storyboard.md",
+    "scene_code": "visual_edition/chapters/governed-operations-incident-command-and-graceful-degradation/scene.py",
+    "narration_script": "visual_edition/chapters/governed-operations-incident-command-and-graceful-degradation/narration.txt",
+    "captions": "visual_edition/chapters/governed-operations-incident-command-and-graceful-degradation/captions.vtt",
+    "descriptive_transcript": "visual_edition/chapters/governed-operations-incident-command-and-graceful-degradation/transcript.md",
+    "thumbnail": "visual_edition/chapters/governed-operations-incident-command-and-graceful-degradation/thumbnail.svg",
+    "scene_spec": "visual_edition/chapters/governed-operations-incident-command-and-graceful-degradation/scene_spec.json",
+    "thumbnail_alt_text": "A governed route diagram for Governed Operations, Incident Command, and Graceful Degradation shows three named mechanism cards above a labeled failure and evidence boundary."
+  },
+  "render_receipt": {
+    "receipt_state": "current_final_av_master",
+    "validation_state": "validated",
+    "rendered_at_utc": "2026-07-30T03:41:40Z",
+    "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+    "toolchain_qualification": "qualified_for_all_non_latex_chapters",
+    "render_profile": "final_av_master",
+    "command": "Render the exact-timing ChapterVisualAbstract with pinned ManimCE 0.20.1 at 1920x1080/30, render pinned Kokoro-82M af_heart narration at speed 1.08 with a hard maximum of 300 characters per synthesis call and -16 LUFS, then align all seven visual scenes to the exact audio paragraph boundaries and mux with FFmpeg 8.0.1 as H.264 CRF 18 yuv420p plus AAC-LC 192 kb/s 48 kHz mono.",
+    "duration_seconds": 252.833333,
+    "pixel_width": 1920,
+    "pixel_height": 1080,
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "output_sha256": "cfdcb205cd02ec4385f6e4fb747845b5a4eac88772ccd6ccdf2b52bbc0f36b29",
+    "mux_receipt_sha256": "e38565fbcf1ef8bf0e8d504dd4d9a36bc4dabd923c5dee15a4fb8807d396e530",
+    "output_storage": "ignored build/visual_edition media only",
+    "visual_review": {
+      "draft_sample_seconds": [
+        20.397,
+        62.492,
+        112.497,
+        148.257,
+        174.895,
+        208.117,
+        237.49
+      ],
+      "release_sample_seconds": [
+        62.492,
+        208.117
+      ],
+      "result": "pass",
+      "review_scope": "Exact mux-receipt midpoint sampling across all seven narration scenes checked composition, legibility, persistent labels, color-plus-shape semantics, evidence ceiling, non-claims, end-card identity, and absence of clipping or overflowing text."
+    },
+    "audio_master": {
+      "identity": "Kokoro-82M bf16 af_heart via kokoro-mlx 0.1.2 at speed 1.08",
+      "provenance": "Locally generated from the canonical narration with the pinned Apache-2.0 Kokoro-82M model and MIT kokoro-mlx implementation recorded in visual_edition/narration_toolchain.json.",
+      "publication_rights_state": "cleared",
+      "duration_seconds": 252.833333,
+      "sha256": "45c6e9b87dfa114535675b0fb706e7b6b314393d845e8d10cb2a89729262a2ed"
+    },
+    "caption_review": {
+      "state": "machine_audited",
+      "audit_method": "Exact receipt-derived canonical timing plus local MLX Whisper transcript comparison and complete beginning/end coverage checks.",
+      "reviewed_against_audio_sha256": "45c6e9b87dfa114535675b0fb706e7b6b314393d845e8d10cb2a89729262a2ed",
+      "asr_model": "mlx-community/whisper-small.en-mlx@52a88bf6e98b114a210c21bb83e22d6e1505cb73",
+      "asr_word_error_rate": 0.0,
+      "terminology": "pass",
+      "timing": "pass",
+      "non_speech_information": "pass",
+      "material_visual_changes": "described_in_adjacent_transcript"
+    },
+    "artifact_sha256": {
+      "storyboard": "fa915003c4fd77c1dac8b3d935d27e9851ff48d402286e3f77967443d8ac168a",
+      "scene_code": "df46cea9bd3f22baeca1f1114f30cd027db2a99d78b63ce602ae5c0178f68b74",
+      "narration_script": "26b46e57a1100f06fb574e2b0ca8b0d90f840f821aa886177120ff2512647490",
+      "captions": "f8d71813ae951342bba4df5cf70012ec4a9daeedd8c3d9a35f90b452ab908002",
+      "descriptive_transcript": "d6474834c9e088d889f3a70d0773ead686b89aa745689417b46ea0eff90eddec",
+      "thumbnail": "9e984772ad57ff65087dbf55b410bf58a528fd93c77110ef46e9488831b45673",
+      "scene_spec": "5dc1072766704e1a951549788326436608b4e345e2bd6cc2f35a2ae3b636819a"
+    },
+    "remaining_release_gates": [
+      "obtain exact action-time authority before any YouTube or playlist mutation"
+    ]
+  },
+  "youtube": {
+    "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+    "video_id": null,
+    "watch_url": null,
+    "playlist_id": null,
+    "generation": 0,
+    "publication_state": "not_authorized",
+    "uploaded_output_sha256": null,
+    "bound_chapter_sha256": null,
+    "bound_source_commit": null,
+    "published_at_utc": null,
+    "platform_receipt_path": null,
+    "supersedes_video_id": null
+  },
+  "quarto_embed": {
+    "state": "absent_until_published",
+    "chapter_anchor": "visual-abstract",
+    "frame_title": "Visual abstract: Governed Operations, Incident Command, and Graceful Degradation",
+    "aria_label": "Play the visual abstract for Governed Operations, Incident Command, and Graceful Degradation"
+  },
+  "staleness": {
+    "state": "current",
+    "checked_chapter_sha256": "50a74bc7bcc73815be65fad63e234ab0ff6e0d379b0d9d8e8a0f8bb2e5b6a10a",
+    "triggers": [
+      "core_claim",
+      "mechanism",
+      "worked_trace",
+      "evidence_state",
+      "non_claim",
+      "material_source",
+      "chapter_identity",
+      "handoff",
+      "public_url"
+    ]
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This derivative video does not promote or otherwise change any book claim.",
+    "The validated local final master is not a YouTube upload or a public publication.",
+    "Automated intelligibility and caption audits do not establish that every listener will prefer the synthetic voice.",
+    "A successful animation render does not establish deployment, safety, efficiency, transfer, state of the art, AGI, or ASI."
+  ]
+}

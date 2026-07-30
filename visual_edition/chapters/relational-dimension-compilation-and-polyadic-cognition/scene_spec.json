@@ -1,0 +1,70 @@
+{
+  "chapter_id": "relational-dimension-compilation-and-polyadic-cognition",
+  "title": "Relational Dimension Compilation and Polyadic Cognition",
+  "subtitle": "Polyadic cognition should be implemented as a slow-path relational-dimension compiler over stable lower-arity primitives… when it improves held-out relational performance without violating memory, latency, calibration, or governance constraints.",
+  "archetype": "ledger",
+  "claim_label": "Design rationale",
+  "evidence_level": "argument",
+  "next_title": "Governed Model Training, Distributed Optimization, and Scaling",
+  "display": {
+    "problem": "Many cognitive problems are natively polyadic: the meaning… roles jointly, and its useful order may change with context.",
+    "insufficient": "A substrate catalogue can name hypergraphs, tensor products, slots… reversibly, and evaluates whether the added structure earns its cost.",
+    "mechanism": [
+      {
+        "label": "Each candidate relation typed",
+        "detail": "Represent each candidate relation with typed roles… scope, provenance, uncertainty, resource cost, and expiry."
+      },
+      {
+        "label": "Generate candidate dimensional",
+        "detail": "Generate candidate dimensional topologies on a slow… failures rather than materializing all possible tuples."
+      },
+      {
+        "label": "Compare candidates strong rescues",
+        "detail": "Compare candidates with strong rescues including reified… factorization, sequence serialization, retrieval, and tool-mediated computation."
+      },
+      {
+        "label": "Qualify candidate held-out",
+        "detail": "Qualify a candidate on held-out role-sensitive tasks… denominator, calibration, invariance, counterfactual-role, and cost tests."
+      }
+    ],
+    "trace": [
+      "Each candidate relation typed",
+      "Generate candidate dimensional",
+      "Compare candidates strong rescues",
+      "Qualify candidate held-out"
+    ],
+    "failures": [
+      "Combinatorial explosion from indiscriminate tuple materialization.",
+      "Arity theater relabels pairwise or sequence computation without adding role-sensitive capability.",
+      "Role collapse treats distinct participant positions as exchangeable.",
+      "Proposal filtering hides the denominator and inflates apparent qualification rates."
+    ],
+    "proof_targets": [
+      "A finite relational candidate may hand off… proves irreducibility, usefulness, or bounded primitive arity.",
+      "No proposal is judged without its full candidate denominator and resource cost.",
+      "Higher order is admitted only after named… rescues are implemented competently under matched budgets."
+    ],
+    "evidence_ceiling": "This chapter remains Design rationale at argument support.",
+    "nonclaims": [
+      "No chapter claim or evidence state is promoted by this visual.",
+      "A named mechanism is not proof of correct implementation or useful deployment.",
+      "A local check or formal model does not establish real-world enforcement.",
+      "No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows."
+    ],
+    "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result."
+  },
+  "timing": {
+    "basis": "exact_narration_paragraph_boundaries",
+    "narration_receipt_sha256": "c34810380d581c18e7711c023600096d467d578aaeb67ad7c8bdd9835418d835",
+    "target_duration_seconds": 274.415,
+    "scene_endpoints_seconds": [
+      25.4,
+      83.515,
+      139.975,
+      171.875,
+      217.345,
+      245.42,
+      274.415
+    ]
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "chapter_id": "human-intent-as-a-formal-input",
+  "title": "Human Intent as a Formal Input",
+  "subtitle": "A governed stack admits human intent only as a versioned interpretation contract that preserves… open ambiguities; stop, expiry, revocation, appeal, and re-contract conditions; and permitted downstream consumers.",
+  "archetype": "stack",
+  "claim_label": "Design rationale",
+  "evidence_level": "argument",
+  "next_title": "Human Factors and Meaningful Control in Oversight",
+  "display": {
+    "problem": "A natural-language request can mix desired outcome, preferences, emotion, assumptions… action as though one plausible interpretation were explicit permission.",
+    "insufficient": "Prompts, goal-oriented requirements models, preference feedback, inferred rewards, conversational confirmations… means, affected parties, evidence duties, expiry, and re-contract triggers unresolved.",
+    "mechanism": [
+      {
+        "label": "Exact raw request separately",
+        "detail": "Preserve the exact raw request and create… evidence and cannot override the accepted contract."
+      },
+      {
+        "label": "Separate desired outcome",
+        "detail": "Separate desired outcome and preferences from allowed… permitted downstream consumers before executable planning."
+      },
+      {
+        "label": "Every inferred omitted material",
+        "detail": "Classify every inferred or omitted material field… planning, carry provenance and rollback, and expire."
+      },
+      {
+        "label": "Route intake through explicit",
+        "detail": "Route intake through explicit raw, interpreted, bounded-default… rejected/expired states with exact allowed downstream movements."
+      }
+    ],
+    "trace": [
+      "Exact raw request separately",
+      "Separate desired outcome",
+      "Every inferred omitted material",
+      "Route intake through explicit"
+    ],
+    "failures": [
+      "Goal misbinding optimizes a plausible interpretation that the principal did not accept.",
+      "Scope accretion adds individually plausible means… effect surface exceeds the original grant.",
+      "Implicit-permission laundering treats a desired outcome… expenditure, publication, deployment, or side effect.",
+      "Assumption laundering converts an unconfirmed guess… explicit disposition or re-contract decision."
+    ],
+    "proof_targets": [
+      "Every accepted compile in the finite reachable… hashes, and approved authority before contract acceptance.",
+      "The reachable model and independent consumer reject… material deltas, and unreceipted or non-versioned re-contract.",
+      "Structured intent-resolution and intent-admission records route missing… clarification, repair, review, or re-contracting before compilation/admission."
+    ],
+    "evidence_ceiling": "This chapter remains Design rationale at argument support.",
+    "nonclaims": [
+      "No chapter claim or evidence state is promoted by this visual.",
+      "A named mechanism is not proof of correct implementation or useful deployment.",
+      "A local check or formal model does not establish real-world enforcement.",
+      "No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows."
+    ],
+    "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result."
+  },
+  "timing": {
+    "basis": "exact_narration_paragraph_boundaries",
+    "narration_receipt_sha256": "0af27f71053a1604fd046a6722ebd07501150866b386933b20c8823848a2beb1",
+    "target_duration_seconds": 286.81,
+    "scene_endpoints_seconds": [
+      51.29,
+      86.69,
+      143.525,
+      187.345,
+      229.34,
+      257.415,
+      286.81
+    ]
+  }
+}

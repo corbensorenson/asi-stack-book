@@ -1,0 +1,70 @@
+{
+  "chapter_id": "labor-os-and-typed-jobs",
+  "title": "Labor OS and Typed Jobs",
+  "subtitle": "The execution layer should convert plans into typed jobs managed by a governed labor operating system.",
+  "archetype": "timeline",
+  "claim_label": "Design rationale",
+  "evidence_level": "argument",
+  "next_title": "Human-AI Organizations, Delegation, and Accountability",
+  "display": {
+    "problem": "Intelligence must become typed work with lifecycle, permissions, artifacts, logs, and approvals.",
+    "insufficient": "Chat outputs do not provide deterministic job lifecycle, tool isolation, auditability, or repeatable cognitive manufacturing.",
+    "mechanism": [
+      {
+        "label": "Freeze one job contract",
+        "detail": "Freeze one job contract from an accepted… risk, authority, rights, budget, deadline, and expiry."
+      },
+      {
+        "label": "Assign stable job attempt",
+        "detail": "Assign stable job, attempt, lease, workspace, adapter… identities with causal lineage and idempotency keys."
+      },
+      {
+        "label": "Admit refuse defer split",
+        "detail": "Admit, refuse, defer, split, or quarantine work… resource envelope, authority, rights, and open blockers."
+      },
+      {
+        "label": "Lock material job fields",
+        "detail": "Lock material job fields before dispatch… adapter, policy, threat, environment, or consumer change."
+      }
+    ],
+    "trace": [
+      "Freeze one job contract",
+      "Assign stable job attempt",
+      "Admit refuse defer split",
+      "Lock material job fields"
+    ],
+    "failures": [
+      "Ambient-agent execution allows work or side… contract, authority, owner, or terminal receipt.",
+      "Contract or plan drift executes stale… work after the material boundary changed.",
+      "Lifecycle laundering treats queueing, leasing, running… idleness as completion or evidence readiness.",
+      "Permission and approval laundering widens grants… irreversible work without the current gate."
+    ],
+    "proof_targets": [
+      "A reachable versioned typed-job lifecycle preserves exact… closure without assigning support or external effects.",
+      "Approval, permission, lease, scheduler, retry/idempotency, cancellation, artifact/audit… residual-owner, and consumer-acknowledgment failures block lifecycle progress.",
+      "An independent consumer covers twenty-eight typed-job lifecycle… adjudication, receipt, replay, residual, and acknowledgment mutations."
+    ],
+    "evidence_ceiling": "This chapter remains Design rationale at argument support.",
+    "nonclaims": [
+      "No chapter claim or evidence state is promoted by this visual.",
+      "A named mechanism is not proof of correct implementation or useful deployment.",
+      "A local check or formal model does not establish real-world enforcement.",
+      "No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows."
+    ],
+    "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result."
+  },
+  "timing": {
+    "basis": "exact_narration_paragraph_boundaries",
+    "narration_receipt_sha256": "e0397456fb7636f16cceca497d73c7deecf7fbffe7a3ec4e5877d3c9335f2dca",
+    "target_duration_seconds": 285.16,
+    "scene_endpoints_seconds": [
+      20.38,
+      72.395,
+      133.68,
+      181.57,
+      224.865,
+      252.94,
+      285.16
+    ]
+  }
+}

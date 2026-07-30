@@ -1,0 +1,257 @@
+WEBVTT
+
+NOTE
+Canonical written narration timed from the exact local narration render receipt.
+Pronunciation-only substitutions are intentionally absent from caption text.
+
+1
+00:00:00.060 --> 00:00:04.938
+This chapter asks a specific question: Position encodings, adapters, route heads,
+
+2
+00:00:04.938 --> 00:00:09.817
+and mixers need a place for cyclic or block-cyclic structure that
+
+3
+00:00:09.817 --> 00:00:13.365
+separates structural invariants from quality and runtime claims.
+
+4
+00:00:13.705 --> 00:00:18.905
+The tempting shortcut is insufficient: Parameter-count, equivariance, or exact phase facts
+
+5
+00:00:18.905 --> 00:00:24.105
+can be mistaken for better model behavior unless baselines, hardware costs,
+
+6
+00:00:24.105 --> 00:00:28.360
+alias and load diagnostics, and failure cases are separated.
+
+7
+00:00:28.960 --> 00:00:33.279
+The chapter's core claim is this: CoilRA, MultiCoil RoPE,
+
+8
+00:00:33.279 --> 00:00:38.557
+and Cyclic Mixers owns a model-, layer-, mechanism-version-, workload-, baseline-, kernel-,
+
+9
+00:00:38.557 --> 00:00:43.836
+hardware-, claim-axis-, and time-specific Cyclic Mechanism Tradeoff Packet: a cyclic adapter,
+
+10
+00:00:43.836 --> 00:00:46.715
+phase bank, rotary scheme, route head,
+
+11
+00:00:47.055 --> 00:00:53.062
+circulant operator, or block-cyclic mixer may enter a canary only when
+
+12
+00:00:53.062 --> 00:00:59.070
+exact residue/winding, phase horizon, alias/collision/load, dense-reference parity, parameter and operation accounting,
+
+13
+00:00:59.070 --> 00:01:03.985
+numerical error, kernel availability, complete cost, quality, failure, fallback,
+
+14
+00:01:04.325 --> 00:01:09.484
+and rights evidence is matched against strong ordinary controls; equivariance,
+
+15
+00:01:09.484 --> 00:01:15.158
+finite proofs, receipt validity, parameter reduction, or structural parity alone confers
+
+16
+00:01:15.158 --> 00:01:20.832
+no quality, context-length, speed, memory, stability, efficiency, safety, deployment, transfer, support,
+
+17
+00:01:20.832 --> 00:01:22.380
+or SOTA authority.
+
+18
+00:01:22.980 --> 00:01:27.010
+A concrete implementation trace makes the proposal testable.
+
+19
+00:01:27.350 --> 00:01:32.860
+The exact current minimum is one schema-valid cyclic-mixer evaluation record;
+
+20
+00:01:32.860 --> 00:01:38.922
+one inherited public-safe RoPE structural receipt boundary; one public-safe Circle cyclic-mixer
+
+21
+00:01:38.922 --> 00:01:43.330
+receipt with bounded dense-reference parity and parameter accounting;
+
+22
+00:01:43.670 --> 00:01:48.781
+one public-safe MultiCoil phase receipt with finite phase and relative-shift facts;
+
+23
+00:01:48.781 --> 00:01:52.498
+two no-change decisions for the local cyclic slices;
+
+24
+00:01:52.498 --> 00:01:55.750
+and seven finite local Lean theorem declarations.
+
+25
+00:01:56.090 --> 00:02:02.363
+It includes no trained cyclic model, natural workload, baseline matrix,
+
+26
+00:02:02.363 --> 00:02:09.263
+real kernel or hardware benchmark, measured quality/context/runtime/memory/stability benefit, independent reproduction, transfer,
+
+27
+00:02:09.263 --> 00:02:11.145
+or chapter-core transition.
+
+28
+00:02:11.485 --> 00:02:16.752
+Declare why cyclic structure is native to the data, task, geometry,
+
+29
+00:02:16.752 --> 00:02:21.540
+recurrence, position, routing, or computation rather than an aesthetic substitution.
+
+30
+00:02:22.140 --> 00:02:26.710
+The design can still fail. Cyclic elegance, prime periods,
+
+31
+00:02:26.710 --> 00:02:32.295
+or equivariance substitutes for workload-native justification. A finite theorem or receipt
+
+32
+00:02:32.295 --> 00:02:37.372
+is laundered into trained-model quality, usable context, runtime, memory, safety,
+
+33
+00:02:37.372 --> 00:02:38.895
+or deployment authority.
+
+34
+00:02:39.235 --> 00:02:44.953
+Exact phase-bank or integer collision results are generalized to floating-point RoPE
+
+35
+00:02:44.953 --> 00:02:49.632
+or learned positions without a numerical and behavioral bridge.
+
+36
+00:02:49.632 --> 00:02:54.830
+Residue-only diagnostics hide winding, wraps, aliases, collisions, joint repeat horizons,
+
+37
+00:02:54.830 --> 00:02:56.390
+or load concentration.
+
+38
+00:02:56.730 --> 00:03:00.699
+The correct response is to stop, narrow, quarantine, compensate,
+
+39
+00:03:00.699 --> 00:03:05.110
+or retain an owned residual rather than narrate uncertainty away.
+
+40
+00:03:05.710 --> 00:03:10.756
+This chapter remains Design rationale at argument support. Its contracts, examples,
+
+41
+00:03:10.756 --> 00:03:14.885
+tests, or local artifacts establish only their encoded scope.
+
+42
+00:03:14.885 --> 00:03:19.931
+The chapter names proof targets rather than pretending they are already
+
+43
+00:03:19.931 --> 00:03:20.390
+closed.
+
+44
+00:03:20.730 --> 00:03:25.792
+A cyclic mixer review missing any structural, quality, runtime, memory,
+
+45
+00:03:25.792 --> 00:03:29.842
+or parameter partition fails the finite structural-claim predicate.
+
+46
+00:03:29.842 --> 00:03:35.410
+A promoted cyclic substrate missing baseline references or tradeoff metrics fails
+
+47
+00:03:35.410 --> 00:03:37.435
+the finite promotion predicate.
+
+48
+00:03:37.775 --> 00:03:44.653
+Structural, functional-parity, numerical, parameter, operation, quality, context, runtime, memory, stability, safety,
+
+49
+00:03:44.653 --> 00:03:49.030
+deployment, transfer, and SOTA axes remain separate.
+
+50
+00:03:49.630 --> 00:03:54.594
+No chapter claim or evidence state is promoted by this visual.
+
+51
+00:03:54.594 --> 00:03:59.558
+A named mechanism is not proof of correct implementation or useful
+
+52
+00:03:59.558 --> 00:04:04.522
+deployment. A local check or formal model does not establish real-world
+
+53
+00:04:04.522 --> 00:04:09.035
+enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.
+
+54
+00:04:09.375 --> 00:04:13.850
+These boundaries matter because an explanatory derivative is useful only if
+
+55
+00:04:13.850 --> 00:04:17.105
+it preserves the evidence ceiling of its source.
+
+56
+00:04:17.705 --> 00:04:23.045
+At most, this visual explains the chapter's design rationale at argument
+
+57
+00:04:23.045 --> 00:04:27.899
+support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI,
+
+58
+00:04:27.899 --> 00:04:33.239
+or ASI result. The next chapter is Executable Specifications and Lean
+
+59
+00:04:33.239 --> 00:04:34.210
+Proof Envelope.
+
+60
+00:04:34.550 --> 00:04:39.048
+It takes responsibility for The book needs to decide which architecture
+
+61
+00:04:39.048 --> 00:04:42.319
+claims should become executable specs or Lean proofs.
+
+62
+00:04:42.319 --> 00:04:46.818
+Read the live chapter for its complete source mappings, interfaces, invariants,
+
+63
+00:04:46.818 --> 00:04:49.680
+failure modes, tests, and open evidence gaps.

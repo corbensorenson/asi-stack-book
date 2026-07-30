@@ -1,0 +1,168 @@
+{
+  "schema_version": "asi_stack.visual_chapter_packet.v1",
+  "video_id": "asi-video-artifact-graphs-audit-logs-and-replay",
+  "chapter_id": "artifact-graphs-audit-logs-and-replay",
+  "chapter_path": "chapters/artifact-graphs-audit-logs-and-replay.qmd",
+  "chapter_sha256": "409216d851b9bf630853bb7b0246b6bcbcd9b512e1264a67af1654b7f657707b",
+  "source_commit": "f10ef079ecfeb48503407d67832a0251f77c2c78",
+  "pilot": false,
+  "lifecycle_state": "ready_not_published",
+  "claim_bindings": [
+    {
+      "claim_id": "artifact-graphs-audit-logs-and-replay.core",
+      "claim_label": "Design rationale",
+      "support_state": "argument"
+    }
+  ],
+  "assigned_source_ids": [
+    "talos",
+    "deterministic_capability_compilation",
+    "platonic_world_model",
+    "viea",
+    "cognitive_compilation",
+    "spinoza_composer",
+    "genesiscode",
+    "cognitive_loop_closure",
+    "moecot",
+    "ext_w3c_prov_o_2013",
+    "ext_mlcommons_croissant_1_1_2026",
+    "ext_in_toto_2019",
+    "cca_project",
+    "moecot_manifest_project",
+    "bugbrain_project",
+    "corbens_trainer_project",
+    "corbens_best_model_possible_project",
+    "ext_claw_swe_bench_2026",
+    "ext_txfs_2018",
+    "ext_faithfulness_information_flow_2026",
+    "ext_swe_rebench_v2_2026"
+  ],
+  "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result.",
+  "required_content": {
+    "problem": "The stack needs durable artifacts and replayable traces so work can be inspected, reused, tested, and improved. If outputs are not tied to inputs, tools, context, claims, and logs, later verification and improvement cannot know what happened.",
+    "core_mechanism": "Execution should produce an artifact graph with audit logs, provenance, replay metadata, and links to claims and tests. Freeze an artifact admission envelope with stable artifact and revision identity, type, role, producer, parent job and attempt, intended consumers, consequence, authority, rights, retention, and expiry before reuse. Compute content digests and, where policy matters, compound content-and-policy identities while treating paths, URLs, object keys, cache slots, and display names as mutable locations or projections.",
+    "worked_trace": "The current minimum is two public artifact/projection schemas; 2 valid/6 rejecting replay fixtures; 1 valid/10 rejecting projection-revocation records; 1 valid/4 rejecting record-reality sequences; 3 valid/6 rejecting receipt-faithfulness records; a four-surface repository audit with 55 digest checks and five mutations; four deterministic challenges and five mutations; one live artifact with three observation routes and seven mutations; four sampled artifacts with twelve observation routes and eight mutations; 3 valid/6 rejecting epistemic-TCB records; one historical GitHub Actions service record; one historical public-page fetch record; eight accepted no-promotion decisions; and forty-three Lean declarations under ten public targets.",
+    "failure_boundary": "Artifact amnesia leaves useful or harmful work products without stable identity, parent work, source, context, tool, effect, claim, test, owner, or residual lineage. Path and name authority makes relocation, cache movement, renaming, or object-store migration change identity or silently bind the wrong bytes. Provenance theater records plausible asserted edges while actual inputs, transformations, side effects, omitted dependencies, or responsible actors remain unknown. Audit-log theater accepts mutable, dropped, selectively written, unauthenticated, inaccessible, or producer-controlled events as a complete reconstruction.",
+    "evidence_state": "This chapter remains Design rationale at argument support. Its contracts, examples, tests, or local artifacts establish only their encoded scope. A reachable artifact lifecycle preserves exact artifact, content, parent-job, source, context, transaction, certificate, tool, claim, test, policy, and consumer custody from registration through consumer-acknowledged admission without assigning support or external effects. Missing provenance, replay, observation, cross-check, trap, attestation-limit, trust-root, verifier-separation, recursion-stop, residual, revocation, or consumer obligations block lifecycle progress.",
+    "non_claims": "No chapter claim or evidence state is promoted by this visual. A named mechanism is not proof of correct implementation or useful deployment. A local check or formal model does not establish real-world enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.",
+    "handoff": "The next chapter is Runtime Adapters, Tool Permissions, and Human Approval. It takes responsibility for Plans become real-world effects only through tools, runtimes, deployment adapters, and approval gates."
+  },
+  "artifacts": {
+    "storyboard": "visual_edition/chapters/artifact-graphs-audit-logs-and-replay/storyboard.md",
+    "scene_code": "visual_edition/chapters/artifact-graphs-audit-logs-and-replay/scene.py",
+    "narration_script": "visual_edition/chapters/artifact-graphs-audit-logs-and-replay/narration.txt",
+    "captions": "visual_edition/chapters/artifact-graphs-audit-logs-and-replay/captions.vtt",
+    "descriptive_transcript": "visual_edition/chapters/artifact-graphs-audit-logs-and-replay/transcript.md",
+    "thumbnail": "visual_edition/chapters/artifact-graphs-audit-logs-and-replay/thumbnail.svg",
+    "scene_spec": "visual_edition/chapters/artifact-graphs-audit-logs-and-replay/scene_spec.json",
+    "thumbnail_alt_text": "A governed graph diagram for Artifact Graphs, Audit Logs, and Replay shows three named mechanism cards above a labeled failure and evidence boundary."
+  },
+  "render_receipt": {
+    "receipt_state": "current_final_av_master",
+    "validation_state": "validated",
+    "rendered_at_utc": "2026-07-30T03:22:38Z",
+    "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+    "toolchain_qualification": "qualified_for_all_non_latex_chapters",
+    "render_profile": "final_av_master",
+    "command": "Render the exact-timing ChapterVisualAbstract with pinned ManimCE 0.20.1 at 1920x1080/30, render pinned Kokoro-82M af_heart narration at speed 1.08 with a hard maximum of 300 characters per synthesis call and -16 LUFS, then align all seven visual scenes to the exact audio paragraph boundaries and mux with FFmpeg 8.0.1 as H.264 CRF 18 yuv420p plus AAC-LC 192 kb/s 48 kHz mono.",
+    "duration_seconds": 293.766016,
+    "pixel_width": 1920,
+    "pixel_height": 1080,
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "output_sha256": "b2e5d1a9e66d95d10c174ce9c1b2b94265f3df388583607fa9f227be505ceffd",
+    "mux_receipt_sha256": "96773306367e5975f87189ab43dc3bb3df18652f2a7886d2d1b3d5442381e9ca",
+    "output_storage": "ignored build/visual_edition media only",
+    "visual_review": {
+      "draft_sample_seconds": [
+        11.025,
+        49.945,
+        105.922,
+        159.987,
+        209.442,
+        246.952,
+        277.375
+      ],
+      "release_sample_seconds": [
+        49.945,
+        246.952
+      ],
+      "result": "pass",
+      "review_scope": "Exact mux-receipt midpoint sampling across all seven narration scenes checked composition, legibility, persistent labels, color-plus-shape semantics, evidence ceiling, non-claims, end-card identity, and absence of clipping or overflowing text."
+    },
+    "audio_master": {
+      "identity": "Kokoro-82M bf16 af_heart via kokoro-mlx 0.1.2 at speed 1.08",
+      "provenance": "Locally generated from the canonical narration with the pinned Apache-2.0 Kokoro-82M model and MIT kokoro-mlx implementation recorded in visual_edition/narration_toolchain.json.",
+      "publication_rights_state": "cleared",
+      "duration_seconds": 293.766016,
+      "sha256": "775d771f5a499c4dcad1d7fa840c29bb78ba0ce7af92d417ad23be74ec886648"
+    },
+    "caption_review": {
+      "state": "machine_audited",
+      "audit_method": "Exact receipt-derived canonical timing plus local MLX Whisper transcript comparison and complete beginning/end coverage checks.",
+      "reviewed_against_audio_sha256": "775d771f5a499c4dcad1d7fa840c29bb78ba0ce7af92d417ad23be74ec886648",
+      "asr_model": "mlx-community/whisper-small.en-mlx@52a88bf6e98b114a210c21bb83e22d6e1505cb73",
+      "asr_word_error_rate": 0.0,
+      "terminology": "pass",
+      "timing": "pass",
+      "non_speech_information": "pass",
+      "material_visual_changes": "described_in_adjacent_transcript"
+    },
+    "artifact_sha256": {
+      "storyboard": "088fe6b330c4fdbd73802912df97fd5653752f55365726b694ce222c53243e53",
+      "scene_code": "baf2561183e243bcdfbcb59837a07ed38af55c0242c9cdbe5353b0f4352f3d26",
+      "narration_script": "05d760308312b1cb8df663a3d340f6f50a072a93e838d59de946613e8c32d3d1",
+      "captions": "9c231112ea7069e419d33f48fc5a03004468aa2634f6ba4199fb789a4ce4a8e4",
+      "descriptive_transcript": "be747e0d797f18c6701ca7c95e65f978882b76bf62db24365c5b48043c5b1971",
+      "thumbnail": "558817b54719f556542d53df517932f84698ca75a1f6c0873b41de4a22c5b3f0",
+      "scene_spec": "8e57b35c1d64b38079608c7b35063e7a7744a25dd607cdd895dafbafcd395a9a"
+    },
+    "remaining_release_gates": [
+      "obtain exact action-time authority before any YouTube or playlist mutation"
+    ]
+  },
+  "youtube": {
+    "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+    "video_id": null,
+    "watch_url": null,
+    "playlist_id": null,
+    "generation": 0,
+    "publication_state": "not_authorized",
+    "uploaded_output_sha256": null,
+    "bound_chapter_sha256": null,
+    "bound_source_commit": null,
+    "published_at_utc": null,
+    "platform_receipt_path": null,
+    "supersedes_video_id": null
+  },
+  "quarto_embed": {
+    "state": "absent_until_published",
+    "chapter_anchor": "visual-abstract",
+    "frame_title": "Visual abstract: Artifact Graphs, Audit Logs, and Replay",
+    "aria_label": "Play the visual abstract for Artifact Graphs, Audit Logs, and Replay"
+  },
+  "staleness": {
+    "state": "current",
+    "checked_chapter_sha256": "409216d851b9bf630853bb7b0246b6bcbcd9b512e1264a67af1654b7f657707b",
+    "triggers": [
+      "core_claim",
+      "mechanism",
+      "worked_trace",
+      "evidence_state",
+      "non_claim",
+      "material_source",
+      "chapter_identity",
+      "handoff",
+      "public_url"
+    ]
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This derivative video does not promote or otherwise change any book claim.",
+    "The validated local final master is not a YouTube upload or a public publication.",
+    "Automated intelligibility and caption audits do not establish that every listener will prefer the synthetic voice.",
+    "A successful animation render does not establish deployment, safety, efficiency, transfer, state of the art, AGI, or ASI."
+  ]
+}

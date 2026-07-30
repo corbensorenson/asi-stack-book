@@ -1,0 +1,70 @@
+{
+  "chapter_id": "physical-compute-infrastructure-energy-and-environmental-constraints",
+  "title": "Physical Compute Infrastructure, Energy, and Environmental Constraints",
+  "subtitle": "A compute allocation should be physically eligible only through a workload-to-capacity contract that binds… aggregate energy alone establishes neither availability, sustainability, community acceptability, nor lower total impact.",
+  "archetype": "before_after",
+  "claim_label": "Design rationale",
+  "evidence_level": "argument",
+  "next_title": "Mathematical and Search Substrates",
+  "display": {
+    "problem": "Requested compute becomes useful work only through accelerators, memory, storage… materials, maintenance, resilience, and retirement at particular places and times.",
+    "insufficient": "Nameplate accelerator capacity, chip TDP, workload energy, facility PUE, annual… estimates, water figures, or capital cost each describe a slice.",
+    "mechanism": [
+      {
+        "label": "Workload requirements timing",
+        "detail": "Compile workload requirements into time- and location-specific… storage, network, reliability, latency, and scheduling envelopes."
+      },
+      {
+        "label": "Reconcile requested nameplate",
+        "detail": "Reconcile requested, nameplate, available, delivered, and useful… grid meters plus uncertainty and allocation rules."
+      },
+      {
+        "label": "Power temporal matching congestion",
+        "detail": "Track power, temporal matching, congestion, generation, backup… maintenance, spares, community effects, and supply dependencies."
+      },
+      {
+        "label": "Authority-narrowing degradation",
+        "detail": "Use authority-narrowing degradation, placement, demand response, failover… water, network, power, or component limits bind."
+      }
+    ],
+    "trace": [
+      "Workload requirements timing",
+      "Reconcile requested nameplate",
+      "Power temporal matching congestion",
+      "Authority-narrowing degradation"
+    ],
+    "failures": [
+      "stranded capacity",
+      "interconnect bottlenecks",
+      "grid-queue mismatch",
+      "temporal carbon laundering"
+    ],
+    "proof_targets": [
+      "A finite Physical Compute Infrastructure, Energy… theorem grants empirical effectiveness or release authority.",
+      "Workload energy, facility overhead, grid effects, and embodied impact remain separately attributable.",
+      "Location, time, uncertainty, and allocation method remain attached to energy, emissions, and water claims."
+    ],
+    "evidence_ceiling": "This chapter remains Design rationale at argument support.",
+    "nonclaims": [
+      "No chapter claim or evidence state is promoted by this visual.",
+      "A named mechanism is not proof of correct implementation or useful deployment.",
+      "A local check or formal model does not establish real-world enforcement.",
+      "No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows."
+    ],
+    "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result."
+  },
+  "timing": {
+    "basis": "exact_narration_paragraph_boundaries",
+    "narration_receipt_sha256": "6dcd2d73a3abbdbfee3d637ebde37925ef5284d7b31bebed7e5e6e29fdc4e35a",
+    "target_duration_seconds": 276.275,
+    "scene_endpoints_seconds": [
+      49.77,
+      100.29,
+      154.455,
+      170.585,
+      215.88,
+      243.955,
+      276.275
+    ]
+  }
+}

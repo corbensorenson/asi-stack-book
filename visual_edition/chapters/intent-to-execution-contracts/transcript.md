@@ -1,0 +1,56 @@
+# Descriptive transcript — Command Contracts: From Intent to Executable Work
+
+Canonical live chapter:
+<https://corbensorenson.github.io/asi-stack-book/chapters/intent-to-execution-contracts.html>
+
+Video ID: `asi-video-intent-to-execution-contracts`
+
+Lifecycle: scripted local derivative; no YouTube publication is authorized
+
+Current support: `argument` — `Design rationale`
+
+## 00:00–00:32 — Problem and shortcut
+
+**Visual description.** The chapter title resolves into two labeled cards: the problem and the shortcut that does not solve it.
+
+**Narration.** This chapter asks a specific question: After an intent owner accepts a request, every lowering into commands, plans, jobs, tool calls, effects, artifacts, verification, delivery, and residuals can change meaning or authority. A governed stack therefore needs a consumer-relative conformance contract that can detect semantic loss, unauthorized amplification, response-for-effect substitution, and incomplete delivery across the complete lineage rather than merely recording that each stage exists.
+
+## 00:32–01:18 — Operating mechanism
+
+**Visual description.** A labeled stack diagram exposes four distinct responsibilities and their explicit relationships.
+
+**Narration.** The chapter's core claim is this: Intent-to-Execution Contracts should own a versioned, consumer-relative conformance relation between an accepted intent receipt and the complete execution lineage. Before any material dispatch, the relation binds exact objective and non-goals, semantic fields and precedence, authority ceiling and affected parties, state and environmental assumptions, allowed and forbidden means, artifacts and effect postconditions, verification and independence requirements, budgets and stop conditions, failure and compensation behavior, expiry and re-contract triggers, and the required receipts through plan, job, adapter, observed effect, artifact, delivery, feedback, and residual custody.
+
+## 01:18–02:18 — Concrete state transition
+
+**Visual description.** Four numbered state nodes move left to right; an observed receipt and an open residual remain separately labeled.
+
+**Narration.** A concrete implementation trace makes the proposal testable. The current minimum is a record-and-route scaffold: intent, command, and trace schemas; synthetic plan-execution, handoff, replacement-bridge, and one-shot-action fixtures; one consumed hand-authored five-project lifecycle; 33 rejecting mutations across the three named probes; seven manifest proof targets backed by finite Lean declarations; a 16-run governed-work campaign with zero governed releases; a 36-transaction usefulness campaign with 2/36 correct candidates and four inexact attack-control rollbacks; a 12-task natural-work campaign with zero parseable final contracts; and a repaired 32-candidate renewal with only 2/32 independently correct candidates, zero useful releases in either arm, zero unsafe releases in either arm, and a frozen 8/8-versus-9/9 metadata error.
+
+## 02:18–03:13 — Failure boundary
+
+**Visual description.** Four failure cards meet a red fail-closed boundary labeled RECORD THE RESIDUAL.
+
+**Narration.** The design can still fail. Intent laundering converts an uncertain or disputed interpretation into an accepted command without preserving alternatives, ambiguity, affected parties, or the intake owner's basis. Field laundering moves vague prose into typed fields whose units, quantifiers, precedence, materiality, verifier, and consequence remain undefined. Semantic drift changes objective, non-goals, constraints, success criteria, or failure behavior during normalization, decomposition, compilation, routing, retry, fallback, repair, or summarization. Context injection lets retrieved or tool-produced data, examples, prior conversation, or hidden content become authoritative control flow. The correct response is to stop, narrow, quarantine, compensate, or retain an owned residual rather than narrate uncertainty away.
+
+## 03:13–04:03 — Evidence state
+
+**Visual description.** A double-rule proof boundary names the claim label and support state beside three unresolved proof targets.
+
+**Narration.** This chapter remains Design rationale at argument support. Its contracts, examples, tests, or local artifacts establish only their encoded scope. The chapter names proof targets rather than pretending they are already closed. Every accepted edge in the finite vertical transition model preserves the root contract and exact artifact parent, cannot widen authority or apply hidden overrides, and reaches material effect and delivery only through approval, dispatch, observation, artifact, and independent-verification custody. The vertical model and concrete-schema consumer reject missing approval, authority widening, hidden override, effect without dispatch, unverified delivery, unsafe release, incomplete rollback custody, residual erasure, and support laundering.
+
+## 04:03–04:31 — Non-claims
+
+**Visual description.** Four muted non-claim rows, each marked by a red stop bar, state what the visual does not establish.
+
+**Narration.** No chapter claim or evidence state is promoted by this visual. A named mechanism is not proof of correct implementation or useful deployment. A local check or formal model does not establish real-world enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows. These boundaries matter because an explanatory derivative is useful only if it preserves the evidence ceiling of its source.
+
+## 04:31–05:03 — Handoff
+
+**Visual description.** The source end card states the live chapter, evidence ceiling, canonical URL, and successor chapter.
+
+**Narration.** At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result. The next chapter is Perception, Sensor Fusion, and Observation Trust. It takes responsibility for Planning and control often treat sensor-derived tokens, objects, or embeddings as reality even when calibration, time, coverage, missingness, dependence, shift, or spoofing makes the observation unreliable.
+
+## Source and evidence boundary
+
+At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result.

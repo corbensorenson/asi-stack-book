@@ -1,0 +1,70 @@
+{
+  "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
+  "title": "Adversarial Machine Learning and the Model Attack Surface",
+  "subtitle": "A learned model should receive security authority only through a versioned model-threat contract… robustness, red-team coverage, or formal certification alone establishes neither general robustness nor secure deployment.",
+  "archetype": "before_after",
+  "claim_label": "Design rationale",
+  "evidence_level": "argument",
+  "next_title": "Privacy, Data Rights, and Information-Flow Governance",
+  "display": {
+    "problem": "A learned artifact creates attack surfaces that ordinary application security does not fully own.",
+    "insufficient": "Generic access control, one robustness score, static red teaming, accuracy… data, or a single defense cannot characterize a model attack.",
+    "mechanism": [
+      {
+        "label": "Threat model model family",
+        "detail": "Version the threat model by model family… goal, knowledge, budget, and prohibited real-world effects."
+      },
+      {
+        "label": "Maintain separate evasion poisoning",
+        "detail": "Maintain separate evasion, poisoning, backdoor, safeguard-bypass, extraction… agentic attack lanes with complete attempt denominators."
+      },
+      {
+        "label": "Evaluate defenses against adaptive",
+        "detail": "Evaluate defenses against adaptive attacks and matched… bounded certificates by their actual scope."
+      },
+      {
+        "label": "Retain attack traces detector",
+        "detail": "Retain attack traces, detector outcomes, mitigations, model… vulnerabilities, and disclosure decisions as one lineage."
+      }
+    ],
+    "trace": [
+      "Threat model model family",
+      "Maintain separate evasion poisoning",
+      "Evaluate defenses against adaptive",
+      "Retain attack traces detector"
+    ],
+    "failures": [
+      "evasion",
+      "training-data poisoning",
+      "clean-label poisoning",
+      "backdoors and trojans"
+    ],
+    "proof_targets": [
+      "A finite Adversarial Machine Learning and… theorem grants empirical effectiveness or release authority.",
+      "A defense is evaluated against an attacker… defense whenever the threat model permits.",
+      "Clean utility, attacked utility, detection, false positives, recovery, and cost remain jointly visible."
+    ],
+    "evidence_ceiling": "This chapter remains Design rationale at argument support.",
+    "nonclaims": [
+      "No chapter claim or evidence state is promoted by this visual.",
+      "A named mechanism is not proof of correct implementation or useful deployment.",
+      "A local check or formal model does not establish real-world enforcement.",
+      "No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows."
+    ],
+    "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result."
+  },
+  "timing": {
+    "basis": "exact_narration_paragraph_boundaries",
+    "narration_receipt_sha256": "ffd62c81ae5f4bbc9054b7d51dbcbcd292ae5f5503487b7358db97ed6e58975f",
+    "target_duration_seconds": 271.57,
+    "scene_endpoints_seconds": [
+      38.495,
+      97.96,
+      150.275,
+      165.905,
+      210.25,
+      238.325,
+      271.57
+    ]
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "schema_version": "asi_stack.visual_chapter_packet.v1",
+  "video_id": "asi-video-governed-objective-formation-value-learning-and-goal-integrity",
+  "chapter_id": "governed-objective-formation-value-learning-and-goal-integrity",
+  "chapter_path": "chapters/governed-objective-formation-value-learning-and-goal-integrity.qmd",
+  "chapter_sha256": "1ca50374319b7bdbb0ef919912233efe46da6aa7fadcfac7197e86606d965cdc",
+  "source_commit": "f10ef079ecfeb48503407d67832a0251f77c2c78",
+  "pilot": false,
+  "lifecycle_state": "ready_not_published",
+  "claim_bindings": [
+    {
+      "claim_id": "governed-objective-formation-value-learning-and-goal-integrity.core",
+      "claim_label": "Design rationale",
+      "support_state": "argument"
+    }
+  ],
+  "assigned_source_ids": [
+    "alignment_field",
+    "ext_cooperative_inverse_rl_2016",
+    "ext_goal_misgeneralization_2022",
+    "ext_learned_optimization_risks_2019",
+    "ext_emergent_misalignment_reward_hacking_2025"
+  ],
+  "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result.",
+  "required_content": {
+    "problem": "The stack has owners for requests, constitutions, value conflict, optimization, planning, and self-improvement, but those layers presuppose an operational objective they do not create. Without a positive objective-formation lifecycle, a temporary request, learned preference estimate, or convenient metric can silently become a durable goal. A reward function, preference model, constitutional rule set, or natural-language mission does not by itself preserve the distinction between authorized purpose, contested value, target property, measurable proxy, training signal, evaluator, planning criterion, persistence, and reauthorization when people or ontologies change.",
+    "core_mechanism": "A durable objective should be usable only through a versioned target-property contract that binds authority and affected parties to target/proxy causal assumptions, uncertainty and dissent, consumer-specific use, tampering tests, generalization limits, ontology version, expiry, reauthorization, and retirement; proxy improvement, predicted preference, reward, evaluator approval, or formal record validity alone establishes neither the right objective, moral truth, stable alignment, nor safe optimization. Create an objective charter naming purpose, principal, affected parties, constitutional ceilings, unresolved conflicts, normative and preference evidence, and explicit non-goals.",
+    "worked_trace": "Implement an objective-contract registry with target/proxy graphs, consumer bindings, expiry, and invalidation. Test it in small environments containing known latent targets, deliberately misspecified proxies, preference uncertainty, tampering, distribution shift, and ontology changes. Compare fixed reward, ordinary preference learning, contract-governed optimization, and an oracle-bound control without claiming that a toy environment discovers human values. Separate the target property from every proxy, reward, evaluator, benchmark, planner heuristic, and deployment decision that consumes it; record the causal assumptions for each binding. Represent uncertainty, dissent, aggregation rules, domain and temporal limits, and the conditions under which clarification or abstention outranks optimization.",
+    "failure_boundary": "reward misspecification Goodhart effects goal misgeneralization preference manipulation",
+    "evidence_state": "This chapter remains Design rationale at argument support. Its contracts, examples, tests, or local artifacts establish only their encoded scope. A finite Governed Objective Formation, Value Learning, and Goal Integrity record may hand off only when identity, authority, version, required checks, and residual ownership are present; no theorem grants empirical effectiveness or release authority. Proxy improvement never implies target-property improvement without separate evidence. Predicted preference is evidence about a person, not authority over that person.",
+    "non_claims": "No chapter claim or evidence state is promoted by this visual. A named mechanism is not proof of correct implementation or useful deployment. A local check or formal model does not establish real-world enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.",
+    "handoff": "The next chapter is Institutions, International Coordination, and Public Legitimacy. It takes responsibility for ASI-scale systems cross organizations, jurisdictions, borders, public services, and affected populations. Technical permissions and private governance cannot determine who has public authority, whose participation counts, how conflicting rules are resolved."
+  },
+  "artifacts": {
+    "storyboard": "visual_edition/chapters/governed-objective-formation-value-learning-and-goal-integrity/storyboard.md",
+    "scene_code": "visual_edition/chapters/governed-objective-formation-value-learning-and-goal-integrity/scene.py",
+    "narration_script": "visual_edition/chapters/governed-objective-formation-value-learning-and-goal-integrity/narration.txt",
+    "captions": "visual_edition/chapters/governed-objective-formation-value-learning-and-goal-integrity/captions.vtt",
+    "descriptive_transcript": "visual_edition/chapters/governed-objective-formation-value-learning-and-goal-integrity/transcript.md",
+    "thumbnail": "visual_edition/chapters/governed-objective-formation-value-learning-and-goal-integrity/thumbnail.svg",
+    "scene_spec": "visual_edition/chapters/governed-objective-formation-value-learning-and-goal-integrity/scene_spec.json",
+    "thumbnail_alt_text": "A governed state machine diagram for Governed Objective Formation, Value Learning, and Goal Integrity shows three named mechanism cards above a labeled failure and evidence boundary."
+  },
+  "render_receipt": {
+    "receipt_state": "current_final_av_master",
+    "validation_state": "validated",
+    "rendered_at_utc": "2026-07-30T03:09:57Z",
+    "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+    "toolchain_qualification": "qualified_for_all_non_latex_chapters",
+    "render_profile": "final_av_master",
+    "command": "Render the exact-timing ChapterVisualAbstract with pinned ManimCE 0.20.1 at 1920x1080/30, render pinned Kokoro-82M af_heart narration at speed 1.08 with a hard maximum of 300 characters per synthesis call and -16 LUFS, then align all seven visual scenes to the exact audio paragraph boundaries and mux with FFmpeg 8.0.1 as H.264 CRF 18 yuv420p plus AAC-LC 192 kb/s 48 kHz mono.",
+    "duration_seconds": 277.115,
+    "pixel_width": 1920,
+    "pixel_height": 1080,
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "output_sha256": "3bd9b8a6804075a6cb455814de1b56c3d1522544b536eaca9f36d7132d25211d",
+    "mux_receipt_sha256": "93e96516535069f35fa221afedc8eae885a834bbccb70d73edb2654c6dec0fe4",
+    "output_storage": "ignored build/visual_edition media only",
+    "visual_review": {
+      "draft_sample_seconds": [
+        24.582,
+        72.688,
+        124.903,
+        161.897,
+        191.51,
+        226.857,
+        259.005
+      ],
+      "release_sample_seconds": [
+        72.688,
+        226.857
+      ],
+      "result": "pass",
+      "review_scope": "Exact mux-receipt midpoint sampling across all seven narration scenes checked composition, legibility, persistent labels, color-plus-shape semantics, evidence ceiling, non-claims, end-card identity, and absence of clipping or overflowing text."
+    },
+    "audio_master": {
+      "identity": "Kokoro-82M bf16 af_heart via kokoro-mlx 0.1.2 at speed 1.08",
+      "provenance": "Locally generated from the canonical narration with the pinned Apache-2.0 Kokoro-82M model and MIT kokoro-mlx implementation recorded in visual_edition/narration_toolchain.json.",
+      "publication_rights_state": "cleared",
+      "duration_seconds": 277.115,
+      "sha256": "e40bcd584b9f24cc6cd06a29c964bf6ef68e7b105091fb48e152d2ddfd397e72"
+    },
+    "caption_review": {
+      "state": "machine_audited",
+      "audit_method": "Exact receipt-derived canonical timing plus local MLX Whisper transcript comparison and complete beginning/end coverage checks.",
+      "reviewed_against_audio_sha256": "e40bcd584b9f24cc6cd06a29c964bf6ef68e7b105091fb48e152d2ddfd397e72",
+      "asr_model": "mlx-community/whisper-small.en-mlx@52a88bf6e98b114a210c21bb83e22d6e1505cb73",
+      "asr_word_error_rate": 0.008993,
+      "terminology": "pass",
+      "timing": "pass",
+      "non_speech_information": "pass",
+      "material_visual_changes": "described_in_adjacent_transcript"
+    },
+    "artifact_sha256": {
+      "storyboard": "5fc729c91190012ef2d9e337e179d16242e060d960cd83e38c0e2aca6abf1762",
+      "scene_code": "45f4689cc9ef427fe89fb31f46f74295af4e07275dca729bcd635327c787bae1",
+      "narration_script": "d33f6064cd5db39ec7f79880e89d6f8c9e4631cb3213da211717dacc613d6b44",
+      "captions": "03671c31802c097cf06338571185b59fb5ef9f0ec46acaedaf3358d7dda6e84a",
+      "descriptive_transcript": "6c661068295cfcfe093bf60501fd8ad1a477d524c889b7d479907274579556f3",
+      "thumbnail": "7f5a464671725fcef154707030ffd863c6209248930b2a5efc79ec6c8d7fc23b",
+      "scene_spec": "c55c0ac1d2d754fc6ac69574cb127e3c0f8d95905225098db29343926366aa55"
+    },
+    "remaining_release_gates": [
+      "obtain exact action-time authority before any YouTube or playlist mutation"
+    ]
+  },
+  "youtube": {
+    "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+    "video_id": null,
+    "watch_url": null,
+    "playlist_id": null,
+    "generation": 0,
+    "publication_state": "not_authorized",
+    "uploaded_output_sha256": null,
+    "bound_chapter_sha256": null,
+    "bound_source_commit": null,
+    "published_at_utc": null,
+    "platform_receipt_path": null,
+    "supersedes_video_id": null
+  },
+  "quarto_embed": {
+    "state": "absent_until_published",
+    "chapter_anchor": "visual-abstract",
+    "frame_title": "Visual abstract: Governed Objective Formation, Value Learning, and Goal Integrity",
+    "aria_label": "Play the visual abstract for Governed Objective Formation, Value Learning, and Goal Integrity"
+  },
+  "staleness": {
+    "state": "current",
+    "checked_chapter_sha256": "1ca50374319b7bdbb0ef919912233efe46da6aa7fadcfac7197e86606d965cdc",
+    "triggers": [
+      "core_claim",
+      "mechanism",
+      "worked_trace",
+      "evidence_state",
+      "non_claim",
+      "material_source",
+      "chapter_identity",
+      "handoff",
+      "public_url"
+    ]
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This derivative video does not promote or otherwise change any book claim.",
+    "The validated local final master is not a YouTube upload or a public publication.",
+    "Automated intelligibility and caption audits do not establish that every listener will prefer the synthetic voice.",
+    "A successful animation render does not establish deployment, safety, efficiency, transfer, state of the art, AGI, or ASI."
+  ]
+}

@@ -1,0 +1,257 @@
+WEBVTT
+
+NOTE
+Canonical written narration timed from the exact local narration render receipt.
+Pronunciation-only substitutions are intentionally absent from caption text.
+
+1
+00:00:00.060 --> 00:00:04.929
+This chapter asks a specific question: The stack needs durable artifacts
+
+2
+00:00:04.929 --> 00:00:09.355
+and replayable traces so work can be inspected, reused, tested,
+
+3
+00:00:09.355 --> 00:00:10.240
+and improved.
+
+4
+00:00:10.580 --> 00:00:15.389
+The tempting shortcut is insufficient: If outputs are not tied to
+
+5
+00:00:15.389 --> 00:00:20.198
+inputs, tools, context, claims, and logs, later verification and improvement cannot
+
+6
+00:00:20.198 --> 00:00:21.510
+know what happened.
+
+7
+00:00:22.110 --> 00:00:26.627
+The chapter's core claim is this: Execution should produce an artifact
+
+8
+00:00:26.627 --> 00:00:31.144
+graph with audit logs, provenance, replay metadata, and links to claims
+
+9
+00:00:31.144 --> 00:00:31.965
+and tests.
+
+10
+00:00:32.305 --> 00:00:37.866
+Freeze an artifact admission envelope with stable artifact and revision identity,
+
+11
+00:00:37.866 --> 00:00:43.427
+type, role, producer, parent job and attempt, intended consumers, consequence, authority,
+
+12
+00:00:43.427 --> 00:00:46.460
+rights, retention, and expiry before reuse.
+
+13
+00:00:46.800 --> 00:00:52.387
+Compute content digests and, where policy matters, compound content-and-policy identities while
+
+14
+00:00:52.387 --> 00:00:57.973
+treating paths, URLs, object keys, cache slots, and display names as
+
+15
+00:00:57.973 --> 00:01:00.005
+mutable locations or projections.
+
+16
+00:01:00.345 --> 00:01:06.173
+Bind each artifact revision to exact source, dataset, contract, plan, job,
+
+17
+00:01:06.173 --> 00:01:12.002
+attempt, context transaction, semantic certificate, model, prompt, tool, adapter, code, environment,
+
+18
+00:01:12.002 --> 00:01:17.300
+policy, approval, permission, cost, and residual lineage that actually applied.
+
+19
+00:01:17.900 --> 00:01:21.930
+A concrete implementation trace makes the proposal testable.
+
+20
+00:01:22.270 --> 00:01:27.286
+The current minimum is two public artifact/projection schemas;
+
+21
+00:01:27.286 --> 00:01:33.555
+2 valid/6 rejecting replay fixtures; 1 valid/10 rejecting projection-revocation records;
+
+22
+00:01:33.555 --> 00:01:39.825
+1 valid/4 rejecting record-reality sequences; 3 valid/6 rejecting receipt-faithfulness records;
+
+23
+00:01:40.165 --> 00:01:45.421
+a four-surface repository audit with 55 digest checks and five mutations;
+
+24
+00:01:45.421 --> 00:01:50.677
+four deterministic challenges and five mutations; one live artifact with three
+
+25
+00:01:50.677 --> 00:01:55.934
+observation routes and seven mutations; four sampled artifacts with twelve observation
+
+26
+00:01:55.934 --> 00:01:57.845
+routes and eight mutations;
+
+27
+00:01:58.185 --> 00:02:04.188
+3 valid/6 rejecting epistemic-TCB records; one historical GitHub Actions service record;
+
+28
+00:02:04.188 --> 00:02:09.099
+one historical public-page fetch record; eight accepted no-promotion decisions;
+
+29
+00:02:09.099 --> 00:02:13.465
+and forty-three Lean declarations under ten public targets.
+
+30
+00:02:14.065 --> 00:02:19.115
+The design can still fail. Artifact amnesia leaves useful or harmful
+
+31
+00:02:19.115 --> 00:02:24.165
+work products without stable identity, parent work, source, context, tool, effect,
+
+32
+00:02:24.165 --> 00:02:26.920
+claim, test, owner, or residual lineage.
+
+33
+00:02:27.260 --> 00:02:31.324
+Path and name authority makes relocation, cache movement, renaming,
+
+34
+00:02:31.324 --> 00:02:36.290
+or object-store migration change identity or silently bind the wrong bytes.
+
+35
+00:02:36.630 --> 00:02:42.264
+Provenance theater records plausible asserted edges while actual inputs, transformations,
+
+36
+00:02:42.264 --> 00:02:47.335
+side effects, omitted dependencies, or responsible actors remain unknown.
+
+37
+00:02:47.675 --> 00:02:52.241
+Audit-log theater accepts mutable, dropped, selectively written, unauthenticated, inaccessible,
+
+38
+00:02:52.241 --> 00:02:57.821
+or producer-controlled events as a complete reconstruction. The correct response is
+
+39
+00:02:57.821 --> 00:03:03.401
+to stop, narrow, quarantine, compensate, or retain an owned residual rather
+
+40
+00:03:03.401 --> 00:03:05.430
+than narrate uncertainty away.
+
+41
+00:03:06.030 --> 00:03:11.076
+This chapter remains Design rationale at argument support. Its contracts, examples,
+
+42
+00:03:11.076 --> 00:03:15.205
+tests, or local artifacts establish only their encoded scope.
+
+43
+00:03:15.205 --> 00:03:20.251
+The chapter names proof targets rather than pretending they are already
+
+44
+00:03:20.251 --> 00:03:20.710
+closed.
+
+45
+00:03:21.050 --> 00:03:27.377
+A reachable artifact lifecycle preserves exact artifact, content, parent-job, source, context,
+
+46
+00:03:27.377 --> 00:03:33.704
+transaction, certificate, tool, claim, test, policy, and consumer custody from registration
+
+47
+00:03:33.704 --> 00:03:38.880
+through consumer-acknowledged admission without assigning support or external effects.
+
+48
+00:03:39.220 --> 00:03:47.259
+Missing provenance, replay, observation, cross-check, trap, attestation-limit, trust-root, verifier-separation, recursion-stop, residual,
+
+49
+00:03:47.259 --> 00:03:52.375
+revocation, or consumer obligations block lifecycle progress.
+
+50
+00:03:52.975 --> 00:03:57.939
+No chapter claim or evidence state is promoted by this visual.
+
+51
+00:03:57.939 --> 00:04:02.903
+A named mechanism is not proof of correct implementation or useful
+
+52
+00:04:02.903 --> 00:04:07.867
+deployment. A local check or formal model does not establish real-world
+
+53
+00:04:07.867 --> 00:04:12.380
+enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.
+
+54
+00:04:12.720 --> 00:04:17.195
+These boundaries matter because an explanatory derivative is useful only if
+
+55
+00:04:17.195 --> 00:04:20.450
+it preserves the evidence ceiling of its source.
+
+56
+00:04:21.050 --> 00:04:26.206
+At most, this visual explains the chapter's design rationale at argument
+
+57
+00:04:26.206 --> 00:04:30.893
+support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI,
+
+58
+00:04:30.893 --> 00:04:36.049
+or ASI result. The next chapter is Runtime Adapters, Tool Permissions,
+
+59
+00:04:36.049 --> 00:04:37.455
+and Human Approval.
+
+60
+00:04:37.795 --> 00:04:42.794
+It takes responsibility for Plans become real-world effects only through tools,
+
+61
+00:04:42.794 --> 00:04:47.792
+runtimes, deployment adapters, and approval gates. Read the live chapter for
+
+62
+00:04:47.792 --> 00:04:51.882
+its complete source mappings, interfaces, invariants, failure modes, tests,
+
+63
+00:04:51.882 --> 00:04:53.700
+and open evidence gaps.

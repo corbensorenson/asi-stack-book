@@ -1,0 +1,241 @@
+WEBVTT
+
+NOTE
+Canonical written narration timed from the exact local narration render receipt.
+Pronunciation-only substitutions are intentionally absent from caption text.
+
+1
+00:00:00.060 --> 00:00:04.453
+This chapter asks a specific question: Many cognitive problems are natively
+
+2
+00:00:04.453 --> 00:00:08.846
+polyadic: the meaning of a relation depends on several typed roles
+
+3
+00:00:08.846 --> 00:00:12.440
+jointly, and its useful order may change with context.
+
+4
+00:00:12.780 --> 00:00:17.891
+Flattening every relation into pairwise edges or token sequences can lose
+
+5
+00:00:17.891 --> 00:00:23.002
+role identity, create ambiguous contractions, and hide the cost of proposing
+
+6
+00:00:23.002 --> 00:00:24.860
+and maintaining higher-order structure.
+
+7
+00:00:25.460 --> 00:00:31.334
+The chapter's core claim is this: Polyadic cognition should be implemented
+
+8
+00:00:31.334 --> 00:00:36.139
+as a slow-path relational-dimension compiler over stable lower-arity primitives:
+
+9
+00:00:36.139 --> 00:00:42.013
+candidate higher-order structure is typed, role-addressable, denominator-complete, qualified against strong pairwise
+
+10
+00:00:42.013 --> 00:00:43.615
+and sequence baselines,
+
+11
+00:00:43.955 --> 00:00:49.629
+budgeted, reversible, and retained only when it improves held-out relational performance
+
+12
+00:00:49.629 --> 00:00:53.756
+without violating memory, latency, calibration, or governance constraints.
+
+13
+00:00:53.756 --> 00:00:59.431
+Represent each candidate relation with typed roles, dimensional signature, scope, provenance,
+
+14
+00:00:59.431 --> 00:01:02.010
+uncertainty, resource cost, and expiry.
+
+15
+00:01:02.350 --> 00:01:07.884
+Generate candidate dimensional topologies on a slow path from residual relational
+
+16
+00:01:07.884 --> 00:01:11.405
+failures rather than materializing all possible tuples.
+
+17
+00:01:11.745 --> 00:01:18.608
+Compare candidates with strong rescues including reified relation nodes, message passing,
+
+18
+00:01:18.608 --> 00:01:22.975
+factorization, sequence serialization, retrieval, and tool-mediated computation.
+
+19
+00:01:23.575 --> 00:01:27.605
+A concrete implementation trace makes the proposal testable.
+
+20
+00:01:27.945 --> 00:01:34.183
+A deterministic compiler for a small typed-relation language with candidate and
+
+21
+00:01:34.183 --> 00:01:39.854
+denominator logs, pairwise-node and sequence baselines, role-permutation and counterfactual tests,
+
+22
+00:01:39.854 --> 00:01:45.525
+promotion and demotion thresholds, cost accounting, reversible contraction, descendant invalidation,
+
+23
+00:01:45.865 --> 00:01:51.333
+and a held-out RODIE fixture family. Generate candidate dimensional topologies on
+
+24
+00:01:51.333 --> 00:01:56.801
+a slow path from residual relational failures rather than materializing all
+
+25
+00:01:56.801 --> 00:01:57.795
+possible tuples.
+
+26
+00:01:58.135 --> 00:02:04.998
+Compare candidates with strong rescues including reified relation nodes, message passing,
+
+27
+00:02:04.998 --> 00:02:09.365
+factorization, sequence serialization, retrieval, and tool-mediated computation.
+
+28
+00:02:09.705 --> 00:02:15.651
+Qualify a candidate on held-out role-sensitive tasks with a complete proposal
+
+29
+00:02:15.651 --> 00:02:19.435
+denominator, calibration, invariance, counterfactual-role, and cost tests.
+
+30
+00:02:20.035 --> 00:02:26.298
+The design can still fail. Combinatorial explosion from indiscriminate tuple materialization.
+
+31
+00:02:26.298 --> 00:02:32.560
+Arity theater relabels pairwise or sequence computation without adding role-sensitive capability.
+
+32
+00:02:32.560 --> 00:02:37.115
+Role collapse treats distinct participant positions as exchangeable.
+
+33
+00:02:37.455 --> 00:02:42.241
+Proposal filtering hides the denominator and inflates apparent qualification rates.
+
+34
+00:02:42.241 --> 00:02:46.549
+The correct response is to stop, narrow, quarantine, compensate,
+
+35
+00:02:46.549 --> 00:02:51.335
+or retain an owned residual rather than narrate uncertainty away.
+
+36
+00:02:51.935 --> 00:02:56.981
+This chapter remains Design rationale at argument support. Its contracts, examples,
+
+37
+00:02:56.981 --> 00:03:01.110
+tests, or local artifacts establish only their encoded scope.
+
+38
+00:03:01.110 --> 00:03:06.156
+The chapter names proof targets rather than pretending they are already
+
+39
+00:03:06.156 --> 00:03:06.615
+closed.
+
+40
+00:03:06.955 --> 00:03:12.690
+A finite relational candidate may hand off only when typed roles,
+
+41
+00:03:12.690 --> 00:03:16.861
+lower-order rescues, proposal denominator, qualification, cost, fallback, descendants,
+
+42
+00:03:16.861 --> 00:03:22.075
+and contraction state are explicit; no theorem proves irreducibility, usefulness,
+
+43
+00:03:22.075 --> 00:03:24.160
+or bounded primitive arity.
+
+44
+00:03:24.500 --> 00:03:29.513
+No proposal is judged without its full candidate denominator and resource
+
+45
+00:03:29.513 --> 00:03:34.526
+cost. Higher order is admitted only after named lower-order rescues are
+
+46
+00:03:34.526 --> 00:03:36.805
+implemented competently under matched budgets.
+
+47
+00:03:37.405 --> 00:03:42.369
+No chapter claim or evidence state is promoted by this visual.
+
+48
+00:03:42.369 --> 00:03:47.333
+A named mechanism is not proof of correct implementation or useful
+
+49
+00:03:47.333 --> 00:03:52.297
+deployment. A local check or formal model does not establish real-world
+
+50
+00:03:52.297 --> 00:03:56.810
+enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.
+
+51
+00:03:57.150 --> 00:04:01.625
+These boundaries matter because an explanatory derivative is useful only if
+
+52
+00:04:01.625 --> 00:04:04.880
+it preserves the evidence ceiling of its source.
+
+53
+00:04:05.480 --> 00:04:10.856
+At most, this visual explains the chapter's design rationale at argument
+
+54
+00:04:10.856 --> 00:04:15.743
+support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI,
+
+55
+00:04:15.743 --> 00:04:20.630
+or ASI result. The next chapter is Governed Model Training,
+
+56
+00:04:20.630 --> 00:04:22.585
+Distributed Optimization, and Scaling.
+
+57
+00:04:22.925 --> 00:04:27.761
+It takes responsibility for A checkpoint can load and a loss
+
+58
+00:04:27.761 --> 00:04:32.597
+curve can converge even when data order, optimizer state, numerical policy,
+
+59
+00:04:32.597 --> 00:04:34.355
+distributed topology, failure recovery.

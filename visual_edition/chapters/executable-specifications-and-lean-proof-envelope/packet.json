@@ -1,0 +1,161 @@
+{
+  "schema_version": "asi_stack.visual_chapter_packet.v1",
+  "video_id": "asi-video-executable-specifications-and-lean-proof-envelope",
+  "chapter_id": "executable-specifications-and-lean-proof-envelope",
+  "chapter_path": "chapters/executable-specifications-and-lean-proof-envelope.qmd",
+  "chapter_sha256": "87611d53873593752c309bd7383bcae6802d2520bc7eb259c6ce7e2697687441",
+  "source_commit": "f10ef079ecfeb48503407d67832a0251f77c2c78",
+  "pilot": false,
+  "lifecycle_state": "ready_not_published",
+  "claim_bindings": [
+    {
+      "claim_id": "executable-specifications-and-lean-proof-envelope.core",
+      "claim_label": "Design rationale",
+      "support_state": "argument"
+    }
+  ],
+  "assigned_source_ids": [
+    "genesiscode",
+    "spinoza",
+    "scf",
+    "talos",
+    "viea",
+    "circle_calculus_core",
+    "circle_ai_contract_suite",
+    "rope_position_certifier",
+    "proof_carrying_circular_computation",
+    "cca_project",
+    "moecot_manifest_project",
+    "corbens_best_model_possible_project",
+    "precision_contract",
+    "ext_reluplex_2017"
+  ],
+  "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result.",
+  "required_content": {
+    "problem": "The book needs to decide which architecture claims should become executable specs or Lean proofs. Formal methods are ineffective when applied to vague philosophical claims instead of operational predicates and transitions.",
+    "core_mechanism": "Executable Specifications and Lean Proof Envelope owns a proposition-, predicate-, abstraction-, artifact-, verifier-, consumer-, implementation-, version-, environment-, and time-specific Formal Artifact Authority Lease: a schema, executable model, Lean theorem, model-checking result, runtime monitor, behavior test, benchmark, or external theorem may authorize only the exact consumer statement whose operational semantics, abstraction map and losses, assumptions, dependency closure, verifier result, semantic adequacy, implementation binding, limitations, non-claims, expiry, and revocation path are recorded; artifact existence, field presence, a finite route, proof depth, a green build, a passing fixture, or an external theorem identity alone confers no deployed enforcement.",
+    "worked_trace": "The exact current minimum is one proof-target schema and valid fixture; one generated 329-target proof manifest with 303 implemented and 26 planned targets; a 111-module Lean workspace with 1,272 theorem declarations classified as 882 derived/decomposed, 171 direct/projection, and 219 unknown/mixed; one proof-readiness classification; one wiring-only proof artifact audit; one semantic-adequacy review surface; one blocked formal-semantic-depth record with ten rejecting mutations; and five local ProofEnvelope declarations, all derived finite negative cases after retirement of its two direct projections. The separate activation audit preserves its historical 298-target, 65-module, and 1,151-theorem baseline.",
+    "failure_boundary": "Formal notation or theorem counts decorate an argument whose operational predicate and consumer use were never defined. A broad safety, alignment, capability, quality, deployment, or SOTA claim is hidden inside a trivial finite record predicate. A passing schema, process validator, behavior test, benchmark, or external citation is described as a Lean proof or equivalent formal guarantee. A direct projection or assumption restatement is marketed as a derived semantic invariant.",
+    "evidence_state": "This chapter remains Design rationale at argument support. Its contracts, examples, tests, or local artifacts establish only their encoded scope. Independent registry and artifact validators require each implemented target to name an existing imported module, while the retained finite Lean negative case rejects an implemented target missing its module or passing build. The retained finite Lean route excludes implemented status for a target assumed non-operational and routed only to planned or blocked, while independent validators enforce the current registry classification.",
+    "non_claims": "No chapter claim or evidence state is promoted by this visual. A named mechanism is not proof of correct implementation or useful deployment. A local check or formal model does not establish real-world enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.",
+    "handoff": "The next chapter is Benchmark Ratchets and Anti-Goodhart Evidence. It takes responsibility for The architecture needs a way to move capability claims through evidence without overfitting to fixed benchmarks."
+  },
+  "artifacts": {
+    "storyboard": "visual_edition/chapters/executable-specifications-and-lean-proof-envelope/storyboard.md",
+    "scene_code": "visual_edition/chapters/executable-specifications-and-lean-proof-envelope/scene.py",
+    "narration_script": "visual_edition/chapters/executable-specifications-and-lean-proof-envelope/narration.txt",
+    "captions": "visual_edition/chapters/executable-specifications-and-lean-proof-envelope/captions.vtt",
+    "descriptive_transcript": "visual_edition/chapters/executable-specifications-and-lean-proof-envelope/transcript.md",
+    "thumbnail": "visual_edition/chapters/executable-specifications-and-lean-proof-envelope/thumbnail.svg",
+    "scene_spec": "visual_edition/chapters/executable-specifications-and-lean-proof-envelope/scene_spec.json",
+    "thumbnail_alt_text": "A governed route diagram for Executable Specifications and Lean Proof Envelope shows three named mechanism cards above a labeled failure and evidence boundary."
+  },
+  "render_receipt": {
+    "receipt_state": "current_final_av_master",
+    "validation_state": "validated",
+    "rendered_at_utc": "2026-07-30T03:37:59Z",
+    "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+    "toolchain_qualification": "qualified_for_all_non_latex_chapters",
+    "render_profile": "final_av_master",
+    "command": "Render the exact-timing ChapterVisualAbstract with pinned ManimCE 0.20.1 at 1920x1080/30, render pinned Kokoro-82M af_heart narration at speed 1.08 with a hard maximum of 300 characters per synthesis call and -16 LUFS, then align all seven visual scenes to the exact audio paragraph boundaries and mux with FFmpeg 8.0.1 as H.264 CRF 18 yuv420p plus AAC-LC 192 kb/s 48 kHz mono.",
+    "duration_seconds": 285.67,
+    "pixel_width": 1920,
+    "pixel_height": 1080,
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "output_sha256": "5a82a525c631aed90e2333fa5e2f105c84a2d8a6d7495b394340463201381cd8",
+    "mux_receipt_sha256": "f1752fcaca576876ca26c295902b70d3b4e98dbb03b4c61fb2bdfd9b8b692945",
+    "output_storage": "ignored build/visual_edition media only",
+    "visual_review": {
+      "draft_sample_seconds": [
+        9.39,
+        48.563,
+        108.953,
+        160.82,
+        203.64,
+        239.238,
+        269.473
+      ],
+      "release_sample_seconds": [
+        48.563,
+        239.238
+      ],
+      "result": "pass",
+      "review_scope": "Exact mux-receipt midpoint sampling across all seven narration scenes checked composition, legibility, persistent labels, color-plus-shape semantics, evidence ceiling, non-claims, end-card identity, and absence of clipping or overflowing text."
+    },
+    "audio_master": {
+      "identity": "Kokoro-82M bf16 af_heart via kokoro-mlx 0.1.2 at speed 1.08",
+      "provenance": "Locally generated from the canonical narration with the pinned Apache-2.0 Kokoro-82M model and MIT kokoro-mlx implementation recorded in visual_edition/narration_toolchain.json.",
+      "publication_rights_state": "cleared",
+      "duration_seconds": 285.67,
+      "sha256": "dd6aa86f3d719ac1d84df3520686fbfc110a0dc0e16e25ddc3d347373c3a0ac6"
+    },
+    "caption_review": {
+      "state": "machine_audited",
+      "audit_method": "Exact receipt-derived canonical timing plus local MLX Whisper transcript comparison and complete beginning/end coverage checks.",
+      "reviewed_against_audio_sha256": "dd6aa86f3d719ac1d84df3520686fbfc110a0dc0e16e25ddc3d347373c3a0ac6",
+      "asr_model": "mlx-community/whisper-small.en-mlx@52a88bf6e98b114a210c21bb83e22d6e1505cb73",
+      "asr_word_error_rate": 0.008418,
+      "terminology": "pass",
+      "timing": "pass",
+      "non_speech_information": "pass",
+      "material_visual_changes": "described_in_adjacent_transcript"
+    },
+    "artifact_sha256": {
+      "storyboard": "4ea8a9fb63f35cff7a38bbfbd684afc54aab5c2d707febf5dab725f5108ac5e8",
+      "scene_code": "8882a2c73ec95f7bbf6ba54c4bb3e801ac27a4aa32623f4258d799f981669ba5",
+      "narration_script": "b10e1f5d61b389bbdb49ddccc0682bdb51b5c75b2c52f772e6bb3169595b5633",
+      "captions": "a39aedaf40a0d8658589b6d07f55a017d9fd64f193ba3586fd8648b6dcd1eee8",
+      "descriptive_transcript": "562386308125574ac41927ca7fda1e4b07a58e13f8cb3157d8f60e33988d22e2",
+      "thumbnail": "d3f006e96a70df5eee49a3e3fdb10c40053ddc8f51f0b0547329ade692b43c18",
+      "scene_spec": "dc9f498390238e44b782001581d2293cae3a75ceb0af9d06843a6e3dd72ab05c"
+    },
+    "remaining_release_gates": [
+      "obtain exact action-time authority before any YouTube or playlist mutation"
+    ]
+  },
+  "youtube": {
+    "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+    "video_id": null,
+    "watch_url": null,
+    "playlist_id": null,
+    "generation": 0,
+    "publication_state": "not_authorized",
+    "uploaded_output_sha256": null,
+    "bound_chapter_sha256": null,
+    "bound_source_commit": null,
+    "published_at_utc": null,
+    "platform_receipt_path": null,
+    "supersedes_video_id": null
+  },
+  "quarto_embed": {
+    "state": "absent_until_published",
+    "chapter_anchor": "visual-abstract",
+    "frame_title": "Visual abstract: Executable Specifications and Lean Proof Envelope",
+    "aria_label": "Play the visual abstract for Executable Specifications and Lean Proof Envelope"
+  },
+  "staleness": {
+    "state": "current",
+    "checked_chapter_sha256": "87611d53873593752c309bd7383bcae6802d2520bc7eb259c6ce7e2697687441",
+    "triggers": [
+      "core_claim",
+      "mechanism",
+      "worked_trace",
+      "evidence_state",
+      "non_claim",
+      "material_source",
+      "chapter_identity",
+      "handoff",
+      "public_url"
+    ]
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This derivative video does not promote or otherwise change any book claim.",
+    "The validated local final master is not a YouTube upload or a public publication.",
+    "Automated intelligibility and caption audits do not establish that every listener will prefer the synthetic voice.",
+    "A successful animation render does not establish deployment, safety, efficiency, transfer, state of the art, AGI, or ASI."
+  ]
+}

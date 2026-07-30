@@ -1,0 +1,245 @@
+WEBVTT
+
+NOTE
+Canonical written narration timed from the exact local narration render receipt.
+Pronunciation-only substitutions are intentionally absent from caption text.
+
+1
+00:00:00.060 --> 00:00:05.062
+This chapter asks a specific question: Plans become real-world effects only
+
+2
+00:00:05.062 --> 00:00:08.700
+through tools, runtimes, deployment adapters, and approval gates.
+
+3
+00:00:08.700 --> 00:00:13.702
+The tempting shortcut is insufficient: Tool calling without a permission and
+
+4
+00:00:13.702 --> 00:00:17.340
+approval model turns reasoning errors into side effects.
+
+5
+00:00:17.940 --> 00:00:23.182
+The chapter's core claim is this: Runtime adapters should enforce typed
+
+6
+00:00:23.182 --> 00:00:26.995
+permissions, sandboxing, human approval, and post-action evidence capture.
+
+7
+00:00:27.335 --> 00:00:33.387
+Freeze an invocation contract with stable invocation, job, attempt, adapter, target,
+
+8
+00:00:33.387 --> 00:00:39.439
+operation, requester, consumer, consequence, risk, authority, rights, budget, deadline, expiry, policy,
+
+9
+00:00:39.439 --> 00:00:42.740
+and environment identities before effect outcomes.
+
+10
+00:00:43.080 --> 00:00:49.625
+Classify target type, effect class, impact, reversibility, external visibility, affected parties,
+
+11
+00:00:49.625 --> 00:00:54.385
+data sensitivity, secret use, legal or organizational consequence,
+
+12
+00:00:54.385 --> 00:00:57.360
+and required recovery objective prospectively.
+
+13
+00:00:57.700 --> 00:01:03.223
+Validate exact contract, plan, job, attempt, principal, delegation, authority ceiling,
+
+14
+00:01:03.223 --> 00:01:09.298
+approval policy, current lifecycle, and unresolved blocker parentage before an adapter
+
+15
+00:01:09.298 --> 00:01:10.955
+can request capability.
+
+16
+00:01:11.555 --> 00:01:15.834
+A concrete implementation trace makes the proposal testable.
+
+17
+00:01:15.834 --> 00:01:20.113
+The current minimum is one public invocation schema;
+
+18
+00:01:20.113 --> 00:01:25.996
+a 2 valid/7 rejecting permission harness; one rollback-exact temporary-file effect with
+
+19
+00:01:25.996 --> 00:01:30.810
+two no-mutation denial controls; 2 valid/12 rejecting adversarial-boundary records;
+
+20
+00:01:31.150 --> 00:01:37.855
+3 valid/7 rejecting human-oversight records and one accepted no-promotion decision;
+
+21
+00:01:37.855 --> 00:01:45.230
+3 valid/6 rejecting partitioned-authority records; one bounded/10 rejecting historical capability-envelope record;
+
+22
+00:01:45.570 --> 00:01:51.264
+the adjacent QCSA synthetic authority and one reversible vertical-effect results at
+
+23
+00:01:51.264 --> 00:01:56.957
+their exact non-core ceilings; and forty-nine Lean declarations under six public
+
+24
+00:01:56.957 --> 00:01:57.475
+targets.
+
+25
+00:01:57.815 --> 00:02:03.197
+These artifacts exercise authored record shape, finite route consequences,
+
+26
+00:02:03.197 --> 00:02:09.178
+one public-safe local write/restore, synthetic authority, approval, injection-adjacent, revocation, reviewer,
+
+27
+00:02:09.178 --> 00:02:11.570
+and partition controls only.
+
+28
+00:02:12.170 --> 00:02:17.232
+The design can still fail. Ambient tool authority lets cognition invoke
+
+29
+00:02:17.232 --> 00:02:22.294
+effects without an exact parent job, principal, capability, target, lease, policy,
+
+30
+00:02:22.294 --> 00:02:23.675
+or terminal receipt.
+
+31
+00:02:24.015 --> 00:02:30.343
+Capability overreach widens executable, argument, object, path, network, API, data, clock,
+
+32
+00:02:30.343 --> 00:02:36.095
+randomness, environment, secret, hardware, rate, cost, retention, or delegation scope.
+
+33
+00:02:36.435 --> 00:02:41.302
+Semantic or alias escalation turns a recognized operation, nearby address,
+
+34
+00:02:41.302 --> 00:02:46.655
+tool discovery, fluent rationale, or certificate into authority over a different
+
+35
+00:02:46.655 --> 00:02:48.115
+target or effect.
+
+36
+00:02:48.455 --> 00:02:52.402
+Confused-deputy and delegation laundering use adapter, service, human,
+
+37
+00:02:52.402 --> 00:02:57.335
+or remote peer authority that the requesting principal never held.
+
+38
+00:02:57.935 --> 00:03:02.981
+This chapter remains Design rationale at argument support. Its contracts, examples,
+
+39
+00:03:02.981 --> 00:03:07.110
+tests, or local artifacts establish only their encoded scope.
+
+40
+00:03:07.110 --> 00:03:12.156
+The chapter names proof targets rather than pretending they are already
+
+41
+00:03:12.156 --> 00:03:12.615
+closed.
+
+42
+00:03:12.955 --> 00:03:17.463
+A runtime adapter invocation is valid only when job permissions include
+
+43
+00:03:17.463 --> 00:03:21.151
+the adapter capability and its effect lease is active,
+
+44
+00:03:21.151 --> 00:03:23.610
+scoped to that capability, and sandboxed.
+
+45
+00:03:23.950 --> 00:03:29.603
+A high-impact adapter call without approval or a required rollback handle
+
+46
+00:03:29.603 --> 00:03:35.255
+is rejected, mismatched, expired, or unsandboxed effect leases cannot validate invocation,
+
+47
+00:03:35.255 --> 00:03:39.880
+and modeled confused-deputy or sandbox-escape attempts cannot pass dispatch.
+
+48
+00:03:40.480 --> 00:03:45.444
+No chapter claim or evidence state is promoted by this visual.
+
+49
+00:03:45.444 --> 00:03:50.408
+A named mechanism is not proof of correct implementation or useful
+
+50
+00:03:50.408 --> 00:03:55.372
+deployment. A local check or formal model does not establish real-world
+
+51
+00:03:55.372 --> 00:03:59.885
+enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.
+
+52
+00:04:00.225 --> 00:04:04.700
+These boundaries matter because an explanatory derivative is useful only if
+
+53
+00:04:04.700 --> 00:04:07.955
+it preserves the evidence ceiling of its source.
+
+54
+00:04:08.555 --> 00:04:13.876
+At most, this visual explains the chapter's design rationale at argument
+
+55
+00:04:13.876 --> 00:04:18.713
+support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI,
+
+56
+00:04:18.713 --> 00:04:24.034
+or ASI result. The next chapter is Embodied Agency, Real-Time Control,
+
+57
+00:04:24.034 --> 00:04:25.485
+and Physical Safety.
+
+58
+00:04:25.825 --> 00:04:31.556
+It takes responsibility for An authorized symbolic action can become unsafe
+
+59
+00:04:31.556 --> 00:04:36.766
+when translated into deadline-bound control under dynamics, contact, actuator limits,
+
+60
+00:04:36.766 --> 00:04:41.455
+human proximity, sensor loss, communication failure, or irreversible effects.

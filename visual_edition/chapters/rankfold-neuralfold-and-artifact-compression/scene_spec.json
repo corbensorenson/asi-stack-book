@@ -1,0 +1,70 @@
+{
+  "chapter_id": "rankfold-neuralfold-and-artifact-compression",
+  "title": "RankFold, NeuralFold, and Artifact Compression",
+  "subtitle": "A compressed artifact may enter a downstream route only through an artifact-, consumer-, use-… remains a bounded candidate implementation, and no compact form inherits the source artifact's authority.",
+  "archetype": "route",
+  "claim_label": "Design rationale",
+  "evidence_level": "argument",
+  "next_title": "Resource Economics and Token Budgets",
+  "display": {
+    "problem": "The stack needs artifact-level and tensor-level compression strategies that remain honest about residuals and utility.",
+    "insufficient": "Storage savings are not enough if compressed artifacts lose semantics, break downstream use, or require expensive fallback too often.",
+    "mechanism": [
+      {
+        "label": "Freeze source artifact digest",
+        "detail": "Freeze the source artifact digest, custody, rights… class, and preserved full-artifact fallback before encoding."
+      },
+      {
+        "label": "Declare consumer task family",
+        "detail": "Declare the consumer, task family, access pattern… use horizon before choosing a compressed route."
+      },
+      {
+        "label": "Encoder decoder arithmetic",
+        "detail": "Version encoder, decoder, arithmetic, serialization, platform, dependencies, parameters, seeds, manifests, and hardware assumptions."
+      },
+      {
+        "label": "Separate representation",
+        "detail": "Separate representation, reconstruction, serialized-ratio, downstream-utility, latency, evidentiary-authority, and support-state claims."
+      }
+    ],
+    "trace": [
+      "Freeze source artifact digest",
+      "Declare consumer task family",
+      "Encoder decoder arithmetic",
+      "Separate representation"
+    ],
+    "failures": [
+      "Rare critical clauses, code paths, diagrams… are damaged while common probes pass.",
+      "The probe distribution is unrepresentative, leaked… small, or optimized by the encoder.",
+      "Metadata, residuals, code, environments, indexes, replicas… preserved fallbacks erase the reported ratio.",
+      "Encode, decode, verification, or fallback latency… savings at the declared access pattern."
+    ],
+    "proof_targets": [
+      "A reachable artifact-to-consumption lifecycle requires full-source custody… closure before a qualified use can complete.",
+      "Failed probes route to fallback, exact-replay gaps… support, and missing evidence transitions block consumption.",
+      "Eight stages and 53 independently consumed routes… closure without support or external-effect authority."
+    ],
+    "evidence_ceiling": "This chapter remains Design rationale at argument support.",
+    "nonclaims": [
+      "No chapter claim or evidence state is promoted by this visual.",
+      "A named mechanism is not proof of correct implementation or useful deployment.",
+      "A local check or formal model does not establish real-world enforcement.",
+      "No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows."
+    ],
+    "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result."
+  },
+  "timing": {
+    "basis": "exact_narration_paragraph_boundaries",
+    "narration_receipt_sha256": "7e30e16c136695874d30f4dc3764a00b48f86796f9b657a7df9b3de67b5ec452",
+    "target_duration_seconds": 287.415,
+    "scene_endpoints_seconds": [
+      21.975,
+      75.145,
+      132.16,
+      171.255,
+      224.745,
+      252.82,
+      287.415
+    ]
+  }
+}

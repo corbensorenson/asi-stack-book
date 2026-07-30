@@ -1,0 +1,265 @@
+WEBVTT
+
+NOTE
+Canonical written narration timed from the exact local narration render receipt.
+Pronunciation-only substitutions are intentionally absent from caption text.
+
+1
+00:00:00.060 --> 00:00:05.201
+This chapter asks a specific question: After an intent owner accepts
+
+2
+00:00:05.201 --> 00:00:10.342
+a request, every lowering into commands, plans, jobs, tool calls, effects,
+
+3
+00:00:10.342 --> 00:00:15.015
+artifacts, verification, delivery, and residuals can change meaning or authority.
+
+4
+00:00:15.355 --> 00:00:20.882
+A governed stack therefore needs a consumer-relative conformance contract that can
+
+5
+00:00:20.882 --> 00:00:26.408
+detect semantic loss, unauthorized amplification, response-for-effect substitution, and incomplete delivery across
+
+6
+00:00:26.408 --> 00:00:31.935
+the complete lineage rather than merely recording that each stage exists.
+
+7
+00:00:32.535 --> 00:00:37.641
+The chapter's core claim is this: Intent-to-Execution Contracts should own a
+
+8
+00:00:37.641 --> 00:00:42.747
+versioned, consumer-relative conformance relation between an accepted intent receipt and the
+
+9
+00:00:42.747 --> 00:00:44.140
+complete execution lineage.
+
+10
+00:00:44.480 --> 00:00:50.211
+Before any material dispatch, the relation binds exact objective and non-goals,
+
+11
+00:00:50.211 --> 00:00:54.899
+semantic fields and precedence, authority ceiling and affected parties,
+
+12
+00:00:54.899 --> 00:00:59.067
+state and environmental assumptions, allowed and forbidden means,
+
+13
+00:00:59.067 --> 00:01:03.235
+artifacts and effect postconditions, verification and independence requirements,
+
+14
+00:01:03.575 --> 00:01:07.598
+budgets and stop conditions, failure and compensation behavior,
+
+15
+00:01:07.598 --> 00:01:13.129
+expiry and re-contract triggers, and the required receipts through plan, job,
+
+16
+00:01:13.129 --> 00:01:17.655
+adapter, observed effect, artifact, delivery, feedback, and residual custody.
+
+17
+00:01:18.255 --> 00:01:22.285
+A concrete implementation trace makes the proposal testable.
+
+18
+00:01:22.625 --> 00:01:27.612
+The current minimum is a record-and-route scaffold: intent, command,
+
+19
+00:01:27.612 --> 00:01:33.152
+and trace schemas; synthetic plan-execution, handoff, replacement-bridge, and one-shot-action fixtures;
+
+20
+00:01:33.152 --> 00:01:39.247
+one consumed hand-authored five-project lifecycle; 33 rejecting mutations across the three
+
+21
+00:01:39.247 --> 00:01:40.355
+named probes;
+
+22
+00:01:40.695 --> 00:01:45.654
+seven manifest proof targets backed by finite Lean declarations;
+
+23
+00:01:45.654 --> 00:01:50.062
+a 16-run governed-work campaign with zero governed releases;
+
+24
+00:01:50.062 --> 00:01:56.123
+a 36-transaction usefulness campaign with 2/36 correct candidates and four inexact
+
+25
+00:01:56.123 --> 00:01:57.225
+attack-control rollbacks;
+
+26
+00:01:57.565 --> 00:02:02.226
+a 12-task natural-work campaign with zero parseable final contracts;
+
+27
+00:02:02.226 --> 00:02:07.923
+and a repaired 32-candidate renewal with only 2/32 independently correct candidates,
+
+28
+00:02:07.923 --> 00:02:13.620
+zero useful releases in either arm, zero unsafe releases in either
+
+29
+00:02:13.620 --> 00:02:17.245
+arm, and a frozen 8/8-versus-9/9 metadata error.
+
+30
+00:02:17.845 --> 00:02:23.180
+The design can still fail. Intent laundering converts an uncertain or
+
+31
+00:02:23.180 --> 00:02:28.030
+disputed interpretation into an accepted command without preserving alternatives, ambiguity,
+
+32
+00:02:28.030 --> 00:02:31.425
+affected parties, or the intake owner's basis.
+
+33
+00:02:31.765 --> 00:02:37.726
+Field laundering moves vague prose into typed fields whose units, quantifiers,
+
+34
+00:02:37.726 --> 00:02:41.520
+precedence, materiality, verifier, and consequence remain undefined.
+
+35
+00:02:41.860 --> 00:02:46.719
+Semantic drift changes objective, non-goals, constraints, success criteria,
+
+36
+00:02:46.719 --> 00:02:53.400
+or failure behavior during normalization, decomposition, compilation, routing, retry, fallback, repair,
+
+37
+00:02:53.400 --> 00:02:54.615
+or summarization.
+
+38
+00:02:54.955 --> 00:02:59.831
+Context injection lets retrieved or tool-produced data, examples, prior conversation,
+
+39
+00:02:59.831 --> 00:03:05.195
+or hidden content become authoritative control flow. The correct response is
+
+40
+00:03:05.195 --> 00:03:10.559
+to stop, narrow, quarantine, compensate, or retain an owned residual rather
+
+41
+00:03:10.559 --> 00:03:12.510
+than narrate uncertainty away.
+
+42
+00:03:13.110 --> 00:03:18.156
+This chapter remains Design rationale at argument support. Its contracts, examples,
+
+43
+00:03:18.156 --> 00:03:22.285
+tests, or local artifacts establish only their encoded scope.
+
+44
+00:03:22.285 --> 00:03:27.331
+The chapter names proof targets rather than pretending they are already
+
+45
+00:03:27.331 --> 00:03:27.790
+closed.
+
+46
+00:03:28.130 --> 00:03:33.434
+Every accepted edge in the finite vertical transition model preserves the
+
+47
+00:03:33.434 --> 00:03:38.738
+root contract and exact artifact parent, cannot widen authority or apply
+
+48
+00:03:38.738 --> 00:03:44.042
+hidden overrides, and reaches material effect and delivery only through approval,
+
+49
+00:03:44.042 --> 00:03:46.935
+dispatch, observation, artifact, and independent-verification custody.
+
+50
+00:03:47.275 --> 00:03:53.239
+The vertical model and concrete-schema consumer reject missing approval, authority widening,
+
+51
+00:03:53.239 --> 00:03:58.118
+hidden override, effect without dispatch, unverified delivery, unsafe release,
+
+52
+00:03:58.118 --> 00:04:02.455
+incomplete rollback custody, residual erasure, and support laundering.
+
+53
+00:04:03.055 --> 00:04:08.019
+No chapter claim or evidence state is promoted by this visual.
+
+54
+00:04:08.019 --> 00:04:12.983
+A named mechanism is not proof of correct implementation or useful
+
+55
+00:04:12.983 --> 00:04:17.947
+deployment. A local check or formal model does not establish real-world
+
+56
+00:04:17.947 --> 00:04:22.460
+enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.
+
+57
+00:04:22.800 --> 00:04:27.275
+These boundaries matter because an explanatory derivative is useful only if
+
+58
+00:04:27.275 --> 00:04:30.530
+it preserves the evidence ceiling of its source.
+
+59
+00:04:31.130 --> 00:04:36.413
+At most, this visual explains the chapter's design rationale at argument
+
+60
+00:04:36.413 --> 00:04:41.216
+support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI,
+
+61
+00:04:41.216 --> 00:04:46.019
+or ASI result. The next chapter is Perception, Sensor Fusion,
+
+62
+00:04:46.019 --> 00:04:47.460
+and Observation Trust.
+
+63
+00:04:47.800 --> 00:04:53.256
+It takes responsibility for Planning and control often treat sensor-derived tokens,
+
+64
+00:04:53.256 --> 00:04:58.712
+objects, or embeddings as reality even when calibration, time, coverage, missingness,
+
+65
+00:04:58.712 --> 00:05:02.680
+dependence, shift, or spoofing makes the observation unreliable.

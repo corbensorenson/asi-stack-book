@@ -1,0 +1,70 @@
+{
+  "chapter_id": "military-ai-autonomous-weapons-and-strategic-stability",
+  "title": "Military AI, Autonomous Weapons, and Strategic Stability",
+  "subtitle": "Military AI should be governed as a command-and-interaction system: deployment requires a declared mission… prospective off-ramps; component benchmark gains alone establish neither lawful use nor strategic safety.",
+  "archetype": "timeline",
+  "claim_label": "Design rationale",
+  "evidence_level": "argument",
+  "next_title": "Evidence States and Claim Discipline",
+  "display": {
+    "problem": "Military AI can change sensing, targeting, command timing, warning interpretation, autonomous engagement, and adversary expectations inside already dangerous strategic systems.",
+    "insufficient": "A generic dangerous-capability or misuse chapter treats risk mainly as actor uplift.",
+    "mechanism": [
+      {
+        "label": "Every mission decision role",
+        "detail": "Classify every use by mission, decision role… environment, command chain, reversibility, and escalation sensitivity."
+      },
+      {
+        "label": "Separate decision support defensive",
+        "detail": "Separate decision support, defensive automation, targeting support… instead of assigning them one autonomy score."
+      },
+      {
+        "label": "Authorities target effect",
+        "detail": "Bind authorities, target and effect constraints, confidence… behavior, and human confirmation requirements before operation."
+      },
+      {
+        "label": "Model interaction pathways",
+        "detail": "Model interaction pathways including false alarms, compressed… proliferation, entanglement, reciprocal deployment, and crisis escalation."
+      }
+    ],
+    "trace": [
+      "Every mission decision role",
+      "Separate decision support defensive",
+      "Authorities target effect",
+      "Model interaction pathways"
+    ],
+    "failures": [
+      "Automation bias converts an advisory system into de facto decision authority.",
+      "Decision-time compression removes deliberation, verification, or diplomatic off-ramps.",
+      "Spoofed, ambiguous, or correlated sensors produce confident false alarms.",
+      "Optimization for tactical success externalizes civilian harm, reciprocal escalation, or long-run instability."
+    ],
+    "proof_targets": [
+      "A finite military-AI interaction record may hand… proves lawful use or strategic stability.",
+      "Meaningful human judgment must be demonstrated… context rather than asserted from interface presence.",
+      "Abstention, communication loss, sensor conflict, and integrity… resolve to a prospectively declared safe posture."
+    ],
+    "evidence_ceiling": "This chapter remains Design rationale at argument support.",
+    "nonclaims": [
+      "No chapter claim or evidence state is promoted by this visual.",
+      "A named mechanism is not proof of correct implementation or useful deployment.",
+      "A local check or formal model does not establish real-world enforcement.",
+      "No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows."
+    ],
+    "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result."
+  },
+  "timing": {
+    "basis": "exact_narration_paragraph_boundaries",
+    "narration_receipt_sha256": "a4184cd73119763ac0defc4e35a4ab0061a7ce6a86c110f26dfde32b10dae02b",
+    "target_duration_seconds": 310.255,
+    "scene_endpoints_seconds": [
+      52.49,
+      109.655,
+      170.34,
+      205.015,
+      253.785,
+      281.86,
+      310.255
+    ]
+  }
+}

@@ -1,0 +1,237 @@
+WEBVTT
+
+NOTE
+Canonical written narration timed from the exact local narration render receipt.
+Pronunciation-only substitutions are intentionally absent from caption text.
+
+1
+00:00:00.060 --> 00:00:04.090
+This chapter asks a specific question: Governance, reliability,
+
+2
+00:00:04.090 --> 00:00:09.128
+and self-improvement claims cannot be tested unless their failure conditions,
+
+3
+00:00:09.128 --> 00:00:14.165
+observable boundary events, evidence records, and owners are declared prospectively.
+
+4
+00:00:14.505 --> 00:00:19.384
+The tempting shortcut is insufficient: Labels such as alignment failure or
+
+5
+00:00:19.384 --> 00:00:23.820
+unsafe autonomy do not by themselves identify which contract failed,
+
+6
+00:00:23.820 --> 00:00:28.699
+what observable event occurred, which detector fired, whether an effect escaped,
+
+7
+00:00:28.699 --> 00:00:31.360
+or who owns containment and residuals.
+
+8
+00:00:31.960 --> 00:00:36.664
+The chapter's core claim is this: A stack-level failure model should
+
+9
+00:00:36.664 --> 00:00:41.368
+represent each named risk as a distinct boundary event with a
+
+10
+00:00:41.368 --> 00:00:46.072
+trigger, protected invariant, detector or observer, receipt, owner, containment action, residual,
+
+11
+00:00:46.072 --> 00:00:49.065
+recurrence state, and escalation or learning path;
+
+12
+00:00:49.405 --> 00:00:53.864
+a taxonomy entry alone establishes neither occurrence nor mitigation.
+
+13
+00:00:53.864 --> 00:00:58.819
+Classify each admitted failure record by versioned failure class, layer,
+
+14
+00:00:58.819 --> 00:01:04.269
+affected contract, and boundary-event state without forcing unmapped observations into a
+
+15
+00:01:04.269 --> 00:01:05.260
+known class.
+
+16
+00:01:05.600 --> 00:01:10.956
+Map each named failure to a protected invariant, detector or observer,
+
+17
+00:01:10.956 --> 00:01:14.852
+receipt, containment owner, residual, and planned falsification test.
+
+18
+00:01:14.852 --> 00:01:20.208
+Add or revise architectural boundaries only from accepted failure, near-miss, escape,
+
+19
+00:01:20.208 --> 00:01:23.130
+or detector-gap records with versioned lineage.
+
+20
+00:01:23.730 --> 00:01:27.701
+A concrete implementation trace makes the proposal testable.
+
+21
+00:01:27.701 --> 00:01:33.161
+A Failure Boundary Map schema plus an executable receipt suite covering
+
+22
+00:01:33.161 --> 00:01:38.125
+blocked and realized events, recurrence escalation, containment, residuals, detector gaps,
+
+23
+00:01:38.125 --> 00:01:40.110
+and rejecting negative controls.
+
+24
+00:01:40.450 --> 00:01:45.806
+Map each named failure to a protected invariant, detector or observer,
+
+25
+00:01:45.806 --> 00:01:49.702
+receipt, containment owner, residual, and planned falsification test.
+
+26
+00:01:49.702 --> 00:01:55.058
+Add or revise architectural boundaries only from accepted failure, near-miss, escape,
+
+27
+00:01:55.058 --> 00:01:57.980
+or detector-gap records with versioned lineage.
+
+28
+00:01:58.320 --> 00:02:03.137
+Classify each admitted failure record by versioned failure class, layer,
+
+29
+00:02:03.137 --> 00:02:08.437
+affected contract, and boundary-event state without forcing unmapped observations into a
+
+30
+00:02:08.437 --> 00:02:09.400
+known class.
+
+31
+00:02:10.000 --> 00:02:15.447
+The design can still fail. Evaluator capture. Memory poisoning. Tool/action overreach.
+
+32
+00:02:15.447 --> 00:02:20.893
+Compression that hides residual complexity. The correct response is to stop,
+
+33
+00:02:20.893 --> 00:02:26.340
+narrow, quarantine, compensate, or retain an owned residual rather than narrate
+
+34
+00:02:26.340 --> 00:02:27.330
+uncertainty away.
+
+35
+00:02:27.930 --> 00:02:32.809
+This chapter remains Design rationale at argument support. Its contracts, examples,
+
+36
+00:02:32.809 --> 00:02:36.801
+tests, or local artifacts establish only their encoded scope.
+
+37
+00:02:36.801 --> 00:02:41.681
+The chapter names proof targets rather than pretending they are already
+
+38
+00:02:41.681 --> 00:02:46.560
+closed. A component with a failed required invariant cannot be promoted.
+
+39
+00:02:46.900 --> 00:02:51.727
+A finite incident whose authority exceeds its ceiling routes to explicit
+
+40
+00:02:51.727 --> 00:02:52.605
+authority review.
+
+41
+00:02:52.945 --> 00:02:59.574
+If the finite failure-recurrence router returns closeFailureRecord, every required failure, class,
+
+42
+00:02:59.574 --> 00:03:06.204
+boundary, receipt, owner, containment, residual, learning, normalization, and non-claim field is
+
+43
+00:03:06.204 --> 00:03:11.025
+true and no earlier recurrence, severe-irreversible, unreviewed-promotion, unquarantined-escape,
+
+44
+00:03:11.365 --> 00:03:14.270
+or missing-evidence-transition branch applies.
+
+45
+00:03:14.870 --> 00:03:19.834
+No chapter claim or evidence state is promoted by this visual.
+
+46
+00:03:19.834 --> 00:03:24.798
+A named mechanism is not proof of correct implementation or useful
+
+47
+00:03:24.798 --> 00:03:29.762
+deployment. A local check or formal model does not establish real-world
+
+48
+00:03:29.762 --> 00:03:34.275
+enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.
+
+49
+00:03:34.615 --> 00:03:39.090
+These boundaries matter because an explanatory derivative is useful only if
+
+50
+00:03:39.090 --> 00:03:42.345
+it preserves the evidence ceiling of its source.
+
+51
+00:03:42.945 --> 00:03:48.212
+At most, this visual explains the chapter's design rationale at argument
+
+52
+00:03:48.212 --> 00:03:53.000
+support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI,
+
+53
+00:03:53.000 --> 00:03:58.267
+or ASI result. The next chapter is Dangerous Capability Domains and
+
+54
+00:03:58.267 --> 00:03:59.225
+Misuse Uplift.
+
+55
+00:03:59.565 --> 00:04:04.937
+It takes responsibility for Capability-threshold policies require domain-specific evidence about whether
+
+56
+00:04:04.937 --> 00:04:10.309
+a model can materially increase an actor's ability to cause harm,
+
+57
+00:04:10.309 --> 00:04:15.193
+yet the stack has no owner for CBRN, offensive cyber,
+
+58
+00:04:15.193 --> 00:04:16.170
+psychological manipulation.

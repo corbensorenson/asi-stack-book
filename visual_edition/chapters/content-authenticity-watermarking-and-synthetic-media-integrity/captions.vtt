@@ -1,0 +1,233 @@
+WEBVTT
+
+NOTE
+Canonical written narration timed from the exact local narration render receipt.
+Pronunciation-only substitutions are intentionally absent from caption text.
+
+1
+00:00:00.060 --> 00:00:05.287
+This chapter asks a specific question: The stack tracks model and
+
+2
+00:00:05.287 --> 00:00:10.513
+software provenance but lacks an owner for the provenance, disclosure, detectability,
+
+3
+00:00:10.513 --> 00:00:15.265
+transformation history, and downstream interpretation of generated or manipulated outputs.
+
+4
+00:00:15.605 --> 00:00:20.824
+The tempting shortcut is insufficient: Metadata, one watermark, a detector score,
+
+5
+00:00:20.824 --> 00:00:26.044
+visible label, signature, or platform policy can be stripped, forged, misunderstood,
+
+6
+00:00:26.044 --> 00:00:31.263
+or lost during transformation. None alone proves that content is true,
+
+7
+00:00:31.263 --> 00:00:34.110
+false, human-made, AI-made, authorized, or harmless.
+
+8
+00:00:34.710 --> 00:00:40.212
+The chapter's core claim is this: Synthetic-media integrity should use a
+
+9
+00:00:40.212 --> 00:00:45.713
+layered authenticity envelope that binds asset identity, generator and editor claims,
+
+10
+00:00:45.713 --> 00:00:50.714
+signed provenance, content bindings, watermark or fingerprint signals, detector outputs,
+
+11
+00:00:50.714 --> 00:00:52.715
+visible disclosure, transformation history,
+
+12
+00:00:53.055 --> 00:00:57.667
+trust policy, uncertainty, and remedy; every signal retains its own semantics,
+
+13
+00:00:57.667 --> 00:01:02.280
+and no missing or valid signal becomes a universal truth judgment.
+
+14
+00:01:02.280 --> 00:01:06.892
+Emit a signed generation event and content credential with exact model,
+
+15
+00:01:06.892 --> 00:01:11.085
+tool, action, policy, and asset lineage where lawful and safe.
+
+16
+00:01:11.425 --> 00:01:17.079
+Use robust watermarking or fingerprinting only as a scoped auxiliary signal
+
+17
+00:01:17.079 --> 00:01:21.705
+with measured quality, false-positive, false-negative, removal, and collision behavior.
+
+18
+00:01:22.305 --> 00:01:26.211
+A concrete implementation trace makes the proposal testable.
+
+19
+00:01:26.211 --> 00:01:31.093
+Generate a small public-safe media set with signed C2PA-style manifests,
+
+20
+00:01:31.093 --> 00:01:34.510
+visible labels, and a toy auxiliary watermark.
+
+21
+00:01:34.850 --> 00:01:40.702
+Apply crop, resize, re-encode, metadata-strip, screenshot, and edit transformations;
+
+22
+00:01:40.702 --> 00:01:47.854
+report which signals survive, fail, or conflict; exercise invalid-signature, missing-credential, compromised-trust,
+
+23
+00:01:47.854 --> 00:01:51.105
+false-positive, correction, and accessibility cases.
+
+24
+00:01:51.445 --> 00:01:56.916
+Use robust watermarking or fingerprinting only as a scoped auxiliary signal
+
+25
+00:01:56.916 --> 00:02:01.392
+with measured quality, false-positive, false-negative, removal, and collision behavior.
+
+26
+00:02:01.392 --> 00:02:06.863
+Preserve ingredient and edit histories through supported transformations and record explicit
+
+27
+00:02:06.863 --> 00:02:09.350
+breaks when provenance is lost.
+
+28
+00:02:09.690 --> 00:02:14.713
+Combine provenance validation, detector evidence, contextual verification, visible disclosure,
+
+29
+00:02:14.713 --> 00:02:20.295
+and human review without collapsing them into one authenticity score.
+
+30
+00:02:20.895 --> 00:02:26.004
+The design can still fail. metadata stripping watermark removal or collision
+
+31
+00:02:26.004 --> 00:02:31.112
+detector distribution shift false attribution The correct response is to stop,
+
+32
+00:02:31.112 --> 00:02:36.221
+narrow, quarantine, compensate, or retain an owned residual rather than narrate
+
+33
+00:02:36.221 --> 00:02:37.150
+uncertainty away.
+
+34
+00:02:37.750 --> 00:02:42.796
+This chapter remains Design rationale at argument support. Its contracts, examples,
+
+35
+00:02:42.796 --> 00:02:46.925
+tests, or local artifacts establish only their encoded scope.
+
+36
+00:02:46.925 --> 00:02:51.971
+The chapter names proof targets rather than pretending they are already
+
+37
+00:02:51.971 --> 00:02:52.430
+closed.
+
+38
+00:02:52.770 --> 00:02:57.590
+A finite authenticity envelope may hand off only when asset, claim,
+
+39
+00:02:57.590 --> 00:03:01.095
+signer, trust policy, evidence types, transformation state, uncertainty,
+
+40
+00:03:01.095 --> 00:03:05.039
+and remedy are explicit; no theorem proves content truth.
+
+41
+00:03:05.039 --> 00:03:09.859
+A valid signature proves only the signed claim under the selected
+
+42
+00:03:09.859 --> 00:03:12.050
+trust policy, not semantic truth.
+
+43
+00:03:12.390 --> 00:03:18.078
+Missing provenance never proves synthetic origin, and present provenance never proves
+
+44
+00:03:18.078 --> 00:03:18.595
+non-deception.
+
+45
+00:03:19.195 --> 00:03:24.159
+No chapter claim or evidence state is promoted by this visual.
+
+46
+00:03:24.159 --> 00:03:29.123
+A named mechanism is not proof of correct implementation or useful
+
+47
+00:03:29.123 --> 00:03:34.087
+deployment. A local check or formal model does not establish real-world
+
+48
+00:03:34.087 --> 00:03:38.600
+enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.
+
+49
+00:03:38.940 --> 00:03:43.415
+These boundaries matter because an explanatory derivative is useful only if
+
+50
+00:03:43.415 --> 00:03:46.670
+it preserves the evidence ceiling of its source.
+
+51
+00:03:47.270 --> 00:03:52.709
+At most, this visual explains the chapter's design rationale at argument
+
+52
+00:03:52.709 --> 00:03:57.653
+support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI,
+
+53
+00:03:57.653 --> 00:04:03.092
+or ASI result. The next chapter is Governed Operations, Incident Command,
+
+54
+00:04:03.092 --> 00:04:04.575
+and Graceful Degradation.
+
+55
+00:04:04.915 --> 00:04:10.257
+It takes responsibility for A system can satisfy pre-deployment requirements yet
+
+56
+00:04:10.257 --> 00:04:15.599
+fail after release through drift, dependency failure, operator overload, ambiguous incidents,
+
+57
+00:04:15.599 --> 00:04:19.970
+correlated faults, or recovery actions that create new hazards.

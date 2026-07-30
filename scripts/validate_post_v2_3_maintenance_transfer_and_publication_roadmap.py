@@ -1198,8 +1198,8 @@ def errors(data: dict) -> list[str]:
     ]
     if manim.get("id") != "P7.3-governed-manim-visual-edition":
         out.append("Manim visual-edition identity drifted")
-    if manim.get("state") != "active_five_pilot_release_visuals_waiting_final_audio":
-        out.append("Manim visual-edition state does not preserve the five rendered pilots and open final-audio gate")
+    if manim.get("state") != "active_all_84_ready_not_published_waiting_youtube_authority":
+        out.append("Manim visual-edition state does not preserve the 84 validated local masters and open YouTube-authority gate")
     if manim.get("canonical_chapter_count") != len(manifest_chapters) or len(manifest_chapters) != 84:
         out.append("Manim visual-edition chapter target does not match the canonical manifest")
     if manim.get("pilot_chapter_ids") != expected_pilots:
@@ -1213,7 +1213,7 @@ def errors(data: dict) -> list[str]:
         or toolchain.get("initial_pin") != "0.20.1"
         or toolchain.get("contract_path") != "visual_edition/toolchain.json"
         or toolchain.get("requirements_lock_path") != "visual_edition/requirements.lock.txt"
-        or toolchain.get("qualification_state") != "qualified_for_non_latex_pilots"
+        or toolchain.get("qualification_state") != "qualified_for_all_non_latex_chapters"
         or toolchain.get("manimgl_allowed") is not False
         or toolchain.get("isolated_arm_native_environment_required") is not True
         or toolchain.get("broken_global_environment_allowed") is not False
@@ -1239,13 +1239,13 @@ def errors(data: dict) -> list[str]:
     counts = manim.get("current_counts", {})
     expected_counts = {
         "toolchain_contracts": 1,
-        "candidate_visual_grammars": 1,
-        "ratified_visual_grammars": 0,
+        "candidate_visual_grammars": 0,
+        "ratified_visual_grammars": 1,
         "pilot_packets_present": 5,
         "pilot_packets_rendered_local": 5,
-        "pilot_packets_validated": 0,
-        "chapter_packets_validated": 0,
-        "current_rendered_videos": 0,
+        "pilot_packets_validated": 5,
+        "chapter_packets_validated": 84,
+        "current_rendered_videos": 84,
         "youtube_videos_published": 0,
         "current_quarto_embeds": 0,
         "stale_videos": 0,
@@ -1258,9 +1258,10 @@ def errors(data: dict) -> list[str]:
         manim.get("visual_manifest_path") != "visual_edition/manifest.json"
         or visual_manifest.get("canonical_chapter_count") != 84
         or visual_manifest.get("pilot_chapter_ids") != expected_pilots
-        or visual_counts.get("packets_present") != counts.get("pilot_packets_present")
-        or visual_counts.get("rendered") != counts.get("pilot_packets_rendered_local")
-        or visual_counts.get("validated") != counts.get("pilot_packets_validated")
+        or visual_counts.get("packets_present") != counts.get("chapter_packets_validated")
+        or visual_counts.get("ready_not_published") != counts.get("chapter_packets_validated")
+        or visual_counts.get("planned") != 0
+        or visual_counts.get("validated") != 0
         or visual_counts.get("current_rendered_videos") != counts.get("current_rendered_videos")
         or visual_counts.get("youtube_videos_published") != counts.get("youtube_videos_published")
         or visual_counts.get("current_quarto_embeds") != counts.get("current_quarto_embeds")
@@ -1269,15 +1270,15 @@ def errors(data: dict) -> list[str]:
     grammar = manim.get("visual_grammar", {})
     if grammar != {
         "contract_path": "visual_edition/visual_grammar.json",
-        "state": "candidate",
+        "state": "ratified",
         "ratification_requires_all_five_pilots_validated": True,
     }:
-        out.append("Manim candidate visual-grammar boundary drifted")
+        out.append("Manim ratified visual-grammar boundary drifted")
     first_pilot = manim.get("first_pilot_checkpoint", {})
     if first_pilot != {
         "chapter_id": "asi-is-a-stack-not-a-model",
         "packet_path": "visual_edition/chapters/asi-is-a-stack-not-a-model/packet.json",
-        "lifecycle_state": "rendered",
+        "lifecycle_state": "ready_not_published",
         "draft_duration_seconds": 284.99707,
         "draft_dimensions": "854x480",
         "draft_frame_rate": 15,
@@ -1289,9 +1290,6 @@ def errors(data: dict) -> list[str]:
         "release_visual_review_sample_count": 2,
         "local_timing_audio_publication_rights_cleared": False,
         "remaining_release_gates": [
-            "authorized_or_licensed_narration_master",
-            "final_caption_listening_review",
-            "final_audio_video_mux_and_validation",
             "exact_action_time_youtube_authority",
         ],
         "support_state_effect": "none",
@@ -1299,23 +1297,46 @@ def errors(data: dict) -> list[str]:
     }:
         out.append("Manim first-pilot checkpoint drifted or overclaimed")
     if manim.get("five_pilot_checkpoint") != {
-        "state": "all_five_source_packets_and_release_profile_visuals_rendered",
+        "state": "all_five_final_av_masters_validated",
         "packet_count": 5,
         "rendered_lifecycle_count": 5,
-        "validated_final_av_count": 0,
-        "rights_cleared_narration_count": 0,
+        "validated_final_av_count": 5,
+        "rights_cleared_narration_count": 5,
         "release_visual_review_count": 5,
-        "visual_grammar_state": "candidate",
+        "visual_grammar_state": "ratified",
         "remaining_release_gates": [
-            "authorized_or_licensed_narration_masters",
-            "final_caption_listening_reviews",
-            "final_audio_video_mux_and_validation",
             "exact_action_time_youtube_authority",
         ],
         "support_state_effect": "none",
         "release_effect": "none",
     }:
         out.append("Manim five-pilot release-visual checkpoint drifted or overclaimed")
+    if manim.get("all_chapter_checkpoint") != {
+        "state": "all_84_ready_not_published",
+        "packet_count": 84,
+        "validated_final_av_count": 84,
+        "reviewed_caption_count": 84,
+        "descriptive_transcript_count": 84,
+        "reviewed_thumbnail_count": 84,
+        "scene_midpoint_review_frame_count": 588,
+        "scene_midpoint_review_sheet_count": 21,
+        "content_word_error_rate_minimum": 0.0,
+        "content_word_error_rate_maximum": 0.028658,
+        "maximum_contiguous_expected_token_gap": 4,
+        "duration_seconds_minimum": 227.765,
+        "duration_seconds_maximum": 331.005,
+        "local_final_master_bytes": 1015153522,
+        "youtube_platform_object_count": 0,
+        "current_quarto_embed_count": 0,
+        "remaining_release_gates": [
+            "exact_action_time_youtube_authority",
+            "youtube_playlist_upload_metadata_caption_thumbnail_processing_publication_receipts",
+            "quarto_embed_and_public_crawl_reconciliation",
+        ],
+        "support_state_effect": "none",
+        "release_effect": "none",
+    }:
+        out.append("Manim all-chapter ready-not-published checkpoint drifted or overclaimed")
     if manim.get("support_state_effect") != "none":
         out.append("Manim visual edition moves claim support")
     expected_first_tranche_order = [
@@ -2476,7 +2497,7 @@ def main() -> None:
     mutate("Manim non-YouTube host drift", lambda c: c["status"]["manim_visual_edition"]["hosting"].__setitem__("canonical_binary_host", "GitHub Pages"))
     mutate("Manim premature publication authority", lambda c: c["status"]["manim_visual_edition"]["hosting"].__setitem__("external_publication_authorized_now", True))
     mutate("Manim upload-before-validation", lambda c: c["status"]["manim_visual_edition"]["hosting"].__setitem__("quarto_embed_only_after_published_current", False))
-    mutate("Manim completion invention", lambda c: c["status"]["manim_visual_edition"]["current_counts"].__setitem__("chapter_packets_validated", 84))
+    mutate("Manim local-completion denominator drift", lambda c: c["status"]["manim_visual_edition"]["current_counts"].__setitem__("chapter_packets_validated", 83))
     mutate("Manim support promotion", lambda c: c["status"]["manim_visual_edition"].__setitem__("support_state_effect", "promoted"))
     mutate("Manim roadmap section deletion", lambda c: c.__setitem__("roadmap", c["roadmap"].replace("### P7.3 — Governed Manim visual edition", "### Removed visual edition", 1)))
     mutate("P4 next packet rollback", lambda c: c["status"]["execution_readiness"].__setitem__("immediate_formal_packet", "P4-C3-authority-effect-rollback-and-corrigibility-semantic-audit"))

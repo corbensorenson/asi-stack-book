@@ -1,0 +1,153 @@
+{
+  "schema_version": "asi_stack.visual_chapter_packet.v1",
+  "video_id": "asi-video-capability-thresholds-and-deployment-commitments",
+  "chapter_id": "capability-thresholds-and-deployment-commitments",
+  "chapter_path": "chapters/capability-thresholds-and-deployment-commitments.qmd",
+  "chapter_sha256": "ac99a39eec04cb67c51c81516edc55ecf9c22161958a0ce027abdfb788d71d71",
+  "source_commit": "f10ef079ecfeb48503407d67832a0251f77c2c78",
+  "pilot": false,
+  "lifecycle_state": "ready_not_published",
+  "claim_bindings": [
+    {
+      "claim_id": "capability-thresholds-and-deployment-commitments.core",
+      "claim_label": "Design rationale",
+      "support_state": "argument"
+    }
+  ],
+  "assigned_source_ids": [
+    "ext_metr_time_horizons_2025",
+    "ext_anthropic_rsp_2026",
+    "ext_openai_preparedness_framework_2025",
+    "benchmaxxing",
+    "theseus_architecture_gate",
+    "ext_inspect_ai_2024"
+  ],
+  "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result.",
+  "required_content": {
+    "problem": "A system can collect a capability score, a time-horizon estimate, or a risk-evaluation result without recording which future safeguard, release constraint, exception authority, or re-evaluation obligation that result is meant to trigger. Benchmark Ratchets owns measurement integrity and regression pressure, Adversarial Evaluation owns elicitation and observation integrity, Readiness Gates owns technical admission, and Recursive Self-Improvement owns bounded system change, but none owns the versioned if-then commitment that connects a scoped capability assessment to a predeclared deployment response.",
+    "core_mechanism": "Capability Thresholds and Deployment Commitments owns a domain-, threat-, assessment-, policy-version-, safeguard-package-, release-path-, authority-, exception-, residual-, and time-specific Capability-to-Deployment Commitment: before outcomes are visible, it binds a scoped crossing, non-crossing, incomparable, or stale assessment to predeclared safeguards, verification criteria, deadlines, access and monitoring constraints, re-evaluation, exceptions, residual custody, rollback, disclosure, and release-path consequences; a score, time-horizon estimate, threshold label, crossing, non-crossing, safeguard record, exception, or green readiness handoff alone confers no general capability, safeguard efficacy, safety, readiness, deployment, support, transfer, or SOTA authority.",
+    "worked_trace": "The exact current minimum preserves eight digest-bound commitment cases in a six-stage, 43-route repeated-assessment lifecycle with 48/48 rejecting mutations, twelve CapabilityThresholdRefinement declarations, one readiness handoff, and one version-2 reassessment witness. It runs no model, capability task, time-horizon suite, dangerous-capability profile, human baseline, real safeguard, bypass test, exception review, independent verifier, deployed invalidation, readiness service, release process, deployment, incident response, reproduction, transfer, chapter-core transition, or SOTA comparison. Freeze a versioned assessment envelope covering tasks, data, model and scaffold, tools and access, elicitation, scorers, baselines, success rules, uncertainty, coverage, and evaluation-integrity dependencies.",
+    "failure_boundary": "Metric laundering treats one benchmark or time-horizon headline as a general capability or dangerousness threshold. Retroactive commitment drift changes the applicable safeguard after an evaluation begins or a threshold is crossed. Threshold gaming narrows tasks, access, prompts, or elicitation to manufacture a non-crossing. Safeguard theater records a required control without a completion, verification, or residual-risk record.",
+    "evidence_state": "This chapter remains Design rationale at argument support. Its contracts, examples, tests, or local artifacts establish only their encoded scope. A crossed-threshold lifecycle cannot reach control completion without a safeguard package, verifier, bypass test, and rollback plan. Missing evaluation envelope, elicitation, baseline, uncertainty, independent-evaluator, or assessment-result custody blocks assessment. A fully recorded crossed-threshold assessment can emit only a readiness handoff after control, monitoring, residual, authority, and release-path custody.",
+    "non_claims": "No chapter claim or evidence state is promoted by this visual. A named mechanism is not proof of correct implementation or useful deployment. A local check or formal model does not establish real-world enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.",
+    "handoff": "The next chapter is Adversarial Evaluation, Sandbagging, and Training-Time Deception. It takes responsibility for Evaluation, training, and deployment observations change meaning with their consumer, elicitation, tools, authority, monitor visibility, reward, selection consequence, evaluator, hypothesis, and time; without exact lineage, an ordinary error, context effect."
+  },
+  "artifacts": {
+    "storyboard": "visual_edition/chapters/capability-thresholds-and-deployment-commitments/storyboard.md",
+    "scene_code": "visual_edition/chapters/capability-thresholds-and-deployment-commitments/scene.py",
+    "narration_script": "visual_edition/chapters/capability-thresholds-and-deployment-commitments/narration.txt",
+    "captions": "visual_edition/chapters/capability-thresholds-and-deployment-commitments/captions.vtt",
+    "descriptive_transcript": "visual_edition/chapters/capability-thresholds-and-deployment-commitments/transcript.md",
+    "thumbnail": "visual_edition/chapters/capability-thresholds-and-deployment-commitments/thumbnail.svg",
+    "scene_spec": "visual_edition/chapters/capability-thresholds-and-deployment-commitments/scene_spec.json",
+    "thumbnail_alt_text": "A governed state machine diagram for Capability Thresholds and Deployment Commitments shows three named mechanism cards above a labeled failure and evidence boundary."
+  },
+  "render_receipt": {
+    "receipt_state": "current_final_av_master",
+    "validation_state": "validated",
+    "rendered_at_utc": "2026-07-30T03:39:55Z",
+    "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+    "toolchain_qualification": "qualified_for_all_non_latex_chapters",
+    "render_profile": "final_av_master",
+    "command": "Render the exact-timing ChapterVisualAbstract with pinned ManimCE 0.20.1 at 1920x1080/30, render pinned Kokoro-82M af_heart narration at speed 1.08 with a hard maximum of 300 characters per synthesis call and -16 LUFS, then align all seven visual scenes to the exact audio paragraph boundaries and mux with FFmpeg 8.0.1 as H.264 CRF 18 yuv420p plus AAC-LC 192 kb/s 48 kHz mono.",
+    "duration_seconds": 312.635,
+    "pixel_width": 1920,
+    "pixel_height": 1080,
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "output_sha256": "e715414381052811ecd3d14a9111424dd84db76de9a7b6b8b7e1121f4a235939",
+    "mux_receipt_sha256": "e3febbfe8842bd288eeea16738e7e55ce84932676d724e8cc5de120aed1adb3e",
+    "output_storage": "ignored build/visual_edition media only",
+    "visual_review": {
+      "draft_sample_seconds": [
+        21.86,
+        75.553,
+        136.63,
+        185.885,
+        227.205,
+        262.553,
+        294.613
+      ],
+      "release_sample_seconds": [
+        75.553,
+        262.553
+      ],
+      "result": "pass",
+      "review_scope": "Exact mux-receipt midpoint sampling across all seven narration scenes checked composition, legibility, persistent labels, color-plus-shape semantics, evidence ceiling, non-claims, end-card identity, and absence of clipping or overflowing text."
+    },
+    "audio_master": {
+      "identity": "Kokoro-82M bf16 af_heart via kokoro-mlx 0.1.2 at speed 1.08",
+      "provenance": "Locally generated from the canonical narration with the pinned Apache-2.0 Kokoro-82M model and MIT kokoro-mlx implementation recorded in visual_edition/narration_toolchain.json.",
+      "publication_rights_state": "cleared",
+      "duration_seconds": 312.635,
+      "sha256": "16827efe136320e9cde42d117a4552adcf3fbf9ff61be939ace10fdd5e5cf587"
+    },
+    "caption_review": {
+      "state": "machine_audited",
+      "audit_method": "Exact receipt-derived canonical timing plus local MLX Whisper transcript comparison and complete beginning/end coverage checks.",
+      "reviewed_against_audio_sha256": "16827efe136320e9cde42d117a4552adcf3fbf9ff61be939ace10fdd5e5cf587",
+      "asr_model": "mlx-community/whisper-small.en-mlx@52a88bf6e98b114a210c21bb83e22d6e1505cb73",
+      "asr_word_error_rate": 0.023885,
+      "terminology": "pass",
+      "timing": "pass",
+      "non_speech_information": "pass",
+      "material_visual_changes": "described_in_adjacent_transcript"
+    },
+    "artifact_sha256": {
+      "storyboard": "b7f207c431834ddb303da5b3a7c37248ac7eb45360c9c69851bafd10bacff492",
+      "scene_code": "e075c938ac7bfd64fb3e24e78178b9bccced41981634ee745a93a3ae7f8c77a6",
+      "narration_script": "117b8a3f7dabf5902de5576436e5f408aa15eaeca1931a0c92757fec8879043c",
+      "captions": "073f7d692b2c179248ff8207fb8927e4dd56899c05f14c22124b740806b0dab2",
+      "descriptive_transcript": "9a9a90c86972818ccf4071617d68a24198629aa4a99071ec2c915c78e31760b2",
+      "thumbnail": "fb14b093193195d3da8d91646ea950120a0945a7ab9e4b1a42af2c0869362e12",
+      "scene_spec": "01bc874bac0c02208b89010f9e20553a3fb609f2a491ab4ce2b04f838a8fae2c"
+    },
+    "remaining_release_gates": [
+      "obtain exact action-time authority before any YouTube or playlist mutation"
+    ]
+  },
+  "youtube": {
+    "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+    "video_id": null,
+    "watch_url": null,
+    "playlist_id": null,
+    "generation": 0,
+    "publication_state": "not_authorized",
+    "uploaded_output_sha256": null,
+    "bound_chapter_sha256": null,
+    "bound_source_commit": null,
+    "published_at_utc": null,
+    "platform_receipt_path": null,
+    "supersedes_video_id": null
+  },
+  "quarto_embed": {
+    "state": "absent_until_published",
+    "chapter_anchor": "visual-abstract",
+    "frame_title": "Visual abstract: Capability Thresholds and Deployment Commitments",
+    "aria_label": "Play the visual abstract for Capability Thresholds and Deployment Commitments"
+  },
+  "staleness": {
+    "state": "current",
+    "checked_chapter_sha256": "ac99a39eec04cb67c51c81516edc55ecf9c22161958a0ce027abdfb788d71d71",
+    "triggers": [
+      "core_claim",
+      "mechanism",
+      "worked_trace",
+      "evidence_state",
+      "non_claim",
+      "material_source",
+      "chapter_identity",
+      "handoff",
+      "public_url"
+    ]
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This derivative video does not promote or otherwise change any book claim.",
+    "The validated local final master is not a YouTube upload or a public publication.",
+    "Automated intelligibility and caption audits do not establish that every listener will prefer the synthetic voice.",
+    "A successful animation render does not establish deployment, safety, efficiency, transfer, state of the art, AGI, or ASI."
+  ]
+}

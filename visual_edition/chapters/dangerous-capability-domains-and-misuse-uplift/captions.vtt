@@ -1,0 +1,245 @@
+WEBVTT
+
+NOTE
+Canonical written narration timed from the exact local narration render receipt.
+Pronunciation-only substitutions are intentionally absent from caption text.
+
+1
+00:00:00.060 --> 00:00:05.416
+This chapter asks a specific question: Capability-threshold policies require domain-specific evidence
+
+2
+00:00:05.416 --> 00:00:10.773
+about whether a model can materially increase an actor's ability to
+
+3
+00:00:10.773 --> 00:00:15.642
+cause harm, yet the stack has no owner for CBRN,
+
+4
+00:00:15.642 --> 00:00:17.590
+offensive cyber, psychological manipulation,
+
+5
+00:00:17.930 --> 00:00:23.019
+or the science of measuring model-caused uplift. The tempting shortcut is
+
+6
+00:00:23.019 --> 00:00:27.646
+insufficient: Knowledge quizzes, refusal rates, benchmark scores, one red team,
+
+7
+00:00:27.646 --> 00:00:31.810
+or a capability label cannot identify real actor uplift.
+
+8
+00:00:32.150 --> 00:00:37.578
+They omit baseline expertise, tool and scaffold access, multi-step completion,
+
+9
+00:00:37.578 --> 00:00:42.463
+bottlenecks outside the model, elicitation quality, safeguards, substitution, uncertainty,
+
+10
+00:00:42.463 --> 00:00:46.805
+and the danger created by the evaluation itself.
+
+11
+00:00:47.405 --> 00:00:52.575
+The chapter's core claim is this: Dangerous-capability authority should be based
+
+12
+00:00:52.575 --> 00:00:57.745
+on a versioned domain threat model and an uplift dossier that
+
+13
+00:00:57.745 --> 00:01:02.445
+separates latent capability, elicited performance, propensity, safeguard bypass, actor uplift,
+
+14
+00:01:02.445 --> 00:01:05.735
+and realized harm; preserves expertise, tools, assistance,
+
+15
+00:01:06.075 --> 00:01:12.290
+attempts, uncertainty, and sensitive-detail boundaries; and routes only bounded findings into
+
+16
+00:01:12.290 --> 00:01:15.680
+thresholds, release, monitoring, and resilience decisions.
+
+17
+00:01:16.020 --> 00:01:22.654
+Decompose each domain into actor, objective, access, prerequisites, bottlenecks, model contribution,
+
+18
+00:01:22.654 --> 00:01:26.875
+external controls, consequences, and safe evaluation envelope.
+
+19
+00:01:27.215 --> 00:01:32.255
+Use controlled uplift studies that compare matched actors with and without
+
+20
+00:01:32.255 --> 00:01:37.295
+bounded model assistance while stratifying prior expertise and preserving all attempts.
+
+21
+00:01:37.895 --> 00:01:41.925
+A concrete implementation trace makes the proposal testable.
+
+22
+00:01:42.265 --> 00:01:47.685
+Create a public-safe threat-model and uplift-dossier format, then run a harmless
+
+23
+00:01:47.685 --> 00:01:52.612
+analogue study with stratified participants or competent agents, matched assistance,
+
+24
+00:01:52.612 --> 00:01:57.046
+known-positive and known-negative controls, blinded scoring, complete attempt logs,
+
+25
+00:01:57.046 --> 00:02:00.495
+and no real hazardous materials or targets.
+
+26
+00:02:00.835 --> 00:02:05.593
+Demonstrate that the instrument can distinguish a real assistance effect before
+
+27
+00:02:05.593 --> 00:02:10.351
+using a null result. Use controlled uplift studies that compare matched
+
+28
+00:02:10.351 --> 00:02:15.110
+actors with and without bounded model assistance while stratifying prior expertise
+
+29
+00:02:15.110 --> 00:02:16.840
+and preserving all attempts.
+
+30
+00:02:17.180 --> 00:02:23.674
+Triangulate knowledge, workflow, long-horizon, expert-probing, safeguard-bypass, and trend evaluations without collapsing
+
+31
+00:02:23.674 --> 00:02:26.035
+them into one score.
+
+32
+00:02:26.635 --> 00:02:28.515
+The design can still fail.
+
+33
+00:02:28.855 --> 00:02:34.314
+knowledge benchmark substituted for operational uplift refusal behavior substituted for latent
+
+34
+00:02:34.314 --> 00:02:39.773
+capability expertise imbalance between arms weak elicitation or scaffold The correct
+
+35
+00:02:39.773 --> 00:02:45.232
+response is to stop, narrow, quarantine, compensate, or retain an owned
+
+36
+00:02:45.232 --> 00:02:48.210
+residual rather than narrate uncertainty away.
+
+37
+00:02:48.810 --> 00:02:53.856
+This chapter remains Design rationale at argument support. Its contracts, examples,
+
+38
+00:02:53.856 --> 00:02:57.985
+tests, or local artifacts establish only their encoded scope.
+
+39
+00:02:57.985 --> 00:03:03.031
+The chapter names proof targets rather than pretending they are already
+
+40
+00:03:03.031 --> 00:03:03.490
+closed.
+
+41
+00:03:03.830 --> 00:03:09.538
+A finite dangerous-capability dossier may hand off only when model, threat,
+
+42
+00:03:09.538 --> 00:03:14.728
+cohort, access, evaluator, uncertainty, expiry, and maximum inference are present;
+
+43
+00:03:14.728 --> 00:03:18.360
+no theorem establishes dangerous capability or safety.
+
+44
+00:03:18.700 --> 00:03:24.277
+Every result is bound to an exact model, checkpoint, scaffold, tools,
+
+45
+00:03:24.277 --> 00:03:28.332
+access level, actor cohort, domain, date, and evaluator.
+
+46
+00:03:28.332 --> 00:03:33.402
+A negative result is interpretable only after positive-control, elicitation, sensitivity,
+
+47
+00:03:33.402 --> 00:03:35.430
+and task-validity gates pass.
+
+48
+00:03:36.030 --> 00:03:40.994
+No chapter claim or evidence state is promoted by this visual.
+
+49
+00:03:40.994 --> 00:03:45.958
+A named mechanism is not proof of correct implementation or useful
+
+50
+00:03:45.958 --> 00:03:50.922
+deployment. A local check or formal model does not establish real-world
+
+51
+00:03:50.922 --> 00:03:55.435
+enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.
+
+52
+00:03:55.775 --> 00:04:00.250
+These boundaries matter because an explanatory derivative is useful only if
+
+53
+00:04:00.250 --> 00:04:03.505
+it preserves the evidence ceiling of its source.
+
+54
+00:04:04.105 --> 00:04:09.481
+At most, this visual explains the chapter's design rationale at argument
+
+55
+00:04:09.481 --> 00:04:14.368
+support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI,
+
+56
+00:04:14.368 --> 00:04:19.744
+or ASI result. The next chapter is Military AI, Autonomous Weapons,
+
+57
+00:04:19.744 --> 00:04:21.210
+and Strategic Stability.
+
+58
+00:04:21.550 --> 00:04:27.229
+It takes responsibility for Military AI can change sensing, targeting,
+
+59
+00:04:27.229 --> 00:04:33.476
+command timing, warning interpretation, autonomous engagement, and adversary expectations inside already
+
+60
+00:04:33.476 --> 00:04:35.180
+dangerous strategic systems.

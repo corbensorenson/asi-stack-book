@@ -1,0 +1,233 @@
+WEBVTT
+
+NOTE
+Canonical written narration timed from the exact local narration render receipt.
+Pronunciation-only substitutions are intentionally absent from caption text.
+
+1
+00:00:00.060 --> 00:00:05.812
+This chapter asks a specific question: Requested compute becomes useful work
+
+2
+00:00:05.812 --> 00:00:11.565
+only through accelerators, memory, storage, interconnect, facilities, grid connections, generation, cooling,
+
+3
+00:00:11.565 --> 00:00:17.317
+water, land, materials, maintenance, resilience, and retirement at particular places and
+
+4
+00:00:17.317 --> 00:00:17.840
+times.
+
+5
+00:00:18.180 --> 00:00:23.489
+Abstract token or FLOP budgets hide these physical constraints and their
+
+6
+00:00:23.489 --> 00:00:28.315
+affected communities. The tempting shortcut is insufficient: Nameplate accelerator capacity,
+
+7
+00:00:28.315 --> 00:00:33.141
+chip TDP, workload energy, facility PUE, annual electricity, carbon estimates,
+
+8
+00:00:33.141 --> 00:00:37.485
+water figures, or capital cost each describe a slice.
+
+9
+00:00:37.825 --> 00:00:43.528
+They do not establish delivered useful compute, temporal and locational impact,
+
+10
+00:00:43.528 --> 00:00:49.230
+grid effects, resilience, embodied materials, rebound, community burden, or retireable capacity.
+
+11
+00:00:49.830 --> 00:00:54.838
+The chapter's core claim is this: A compute allocation should be
+
+12
+00:00:54.838 --> 00:00:59.846
+physically eligible only through a workload-to-capacity contract that binds location and
+
+13
+00:00:59.846 --> 00:01:04.853
+time, hardware and interconnect, delivered useful work, facility and grid dependencies,
+
+14
+00:01:04.853 --> 00:01:07.585
+energy attribution, cooling and water, materials,
+
+15
+00:01:07.925 --> 00:01:13.862
+land and community effects, metering uncertainty, resilience and degradation, maintenance,
+
+16
+00:01:13.862 --> 00:01:20.393
+demand response, reuse, retirement, and residuals; nameplate compute, efficiency, low PUE,
+
+17
+00:01:20.393 --> 00:01:26.330
+renewable procurement, or aggregate energy alone establishes neither availability, sustainability,
+
+18
+00:01:26.670 --> 00:01:33.210
+community acceptability, nor lower total impact. Compile workload requirements into time-
+
+19
+00:01:33.210 --> 00:01:39.750
+and location-specific accelerator, memory, storage, network, reliability, latency, and scheduling envelopes.
+
+20
+00:01:40.350 --> 00:01:44.360
+A concrete implementation trace makes the proposal testable.
+
+21
+00:01:44.360 --> 00:01:49.874
+Instrument matched public workloads on local hardware across precision, batching, placement,
+
+22
+00:01:49.874 --> 00:01:52.380
+memory pressure, and scheduler variants.
+
+23
+00:01:52.720 --> 00:01:58.231
+Reconcile software counters with host power and resource records, inject thermal,
+
+24
+00:01:58.231 --> 00:02:03.741
+network, storage, and failover constraints, and report useful work, latency, energy,
+
+25
+00:02:03.741 --> 00:02:08.250
+peak power, bottlenecks, metering error, availability, cost, and residuals.
+
+26
+00:02:08.590 --> 00:02:14.110
+Local results do not establish frontier-facility or grid transfer. Reconcile requested,
+
+27
+00:02:14.110 --> 00:02:19.630
+nameplate, available, delivered, and useful compute with workload, host, rack, facility,
+
+28
+00:02:19.630 --> 00:02:23.645
+and grid meters plus uncertainty and allocation rules.
+
+29
+00:02:23.985 --> 00:02:30.053
+Track power, temporal matching, congestion, generation, backup, cooling, water, land, materials,
+
+30
+00:02:30.053 --> 00:02:33.915
+maintenance, spares, community effects, and supply dependencies.
+
+31
+00:02:34.515 --> 00:02:39.692
+The design can still fail. stranded capacity interconnect bottlenecks grid-queue mismatch
+
+32
+00:02:39.692 --> 00:02:44.868
+temporal carbon laundering The correct response is to stop, narrow, quarantine,
+
+33
+00:02:44.868 --> 00:02:50.045
+compensate, or retain an owned residual rather than narrate uncertainty away.
+
+34
+00:02:50.645 --> 00:02:55.691
+This chapter remains Design rationale at argument support. Its contracts, examples,
+
+35
+00:02:55.691 --> 00:02:59.820
+tests, or local artifacts establish only their encoded scope.
+
+36
+00:02:59.820 --> 00:03:04.866
+The chapter names proof targets rather than pretending they are already
+
+37
+00:03:04.866 --> 00:03:05.325
+closed.
+
+38
+00:03:05.665 --> 00:03:11.033
+A finite Physical Compute Infrastructure, Energy, and Environmental Constraints record may
+
+39
+00:03:11.033 --> 00:03:15.426
+hand off only when identity, authority, version, required checks,
+
+40
+00:03:15.426 --> 00:03:20.794
+and residual ownership are present; no theorem grants empirical effectiveness or
+
+41
+00:03:20.794 --> 00:03:21.770
+release authority.
+
+42
+00:03:22.110 --> 00:03:27.707
+Workload energy, facility overhead, grid effects, and embodied impact remain separately
+
+43
+00:03:27.707 --> 00:03:33.305
+attributable. Location, time, uncertainty, and allocation method remain attached to energy,
+
+44
+00:03:33.305 --> 00:03:35.340
+emissions, and water claims.
+
+45
+00:03:35.940 --> 00:03:40.904
+No chapter claim or evidence state is promoted by this visual.
+
+46
+00:03:40.904 --> 00:03:45.868
+A named mechanism is not proof of correct implementation or useful
+
+47
+00:03:45.868 --> 00:03:50.832
+deployment. A local check or formal model does not establish real-world
+
+48
+00:03:50.832 --> 00:03:55.345
+enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.
+
+49
+00:03:55.685 --> 00:04:00.160
+These boundaries matter because an explanatory derivative is useful only if
+
+50
+00:04:00.160 --> 00:04:03.415
+it preserves the evidence ceiling of its source.
+
+51
+00:04:04.015 --> 00:04:09.310
+At most, this visual explains the chapter's design rationale at argument
+
+52
+00:04:09.310 --> 00:04:14.125
+support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI,
+
+53
+00:04:14.125 --> 00:04:19.420
+or ASI result. The next chapter is Mathematical and Search Substrates.
+
+54
+00:04:19.760 --> 00:04:24.652
+It takes responsibility for The source corpus contains exploratory mathematical/search substrates
+
+55
+00:04:24.652 --> 00:04:28.210
+that may matter but must not be overclaimed.
+
+56
+00:04:28.210 --> 00:04:33.102
+Read the live chapter for its complete source mappings, interfaces, invariants,
+
+57
+00:04:33.102 --> 00:04:36.215
+failure modes, tests, and open evidence gaps.

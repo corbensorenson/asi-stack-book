@@ -1,0 +1,56 @@
+# Descriptive transcript — Executable Specifications and Lean Proof Envelope
+
+Canonical live chapter:
+<https://corbensorenson.github.io/asi-stack-book/chapters/executable-specifications-and-lean-proof-envelope.html>
+
+Video ID: `asi-video-executable-specifications-and-lean-proof-envelope`
+
+Lifecycle: scripted local derivative; no YouTube publication is authorized
+
+Current support: `argument` — `Design rationale`
+
+## 00:00–00:19 — Problem and shortcut
+
+**Visual description.** The chapter title resolves into two labeled cards: the problem and the shortcut that does not solve it.
+
+**Narration.** This chapter asks a specific question: The book needs to decide which architecture claims should become executable specs or Lean proofs. The tempting shortcut is insufficient: Formal methods are ineffective when applied to vague philosophical claims instead of operational predicates and transitions.
+
+## 00:19–01:18 — Operating mechanism
+
+**Visual description.** A labeled route diagram exposes four distinct responsibilities and their explicit relationships.
+
+**Narration.** The chapter's core claim is this: Executable Specifications and Lean Proof Envelope owns a proposition-, predicate-, abstraction-, artifact-, verifier-, consumer-, implementation-, version-, environment-, and time-specific Formal Artifact Authority Lease: a schema, executable model, Lean theorem, model-checking result, runtime monitor, behavior test, benchmark, or external theorem may authorize only the exact consumer statement whose operational semantics, abstraction map and losses, assumptions, dependency closure, verifier result, semantic adequacy, implementation binding, limitations, non-claims, expiry, and revocation path are recorded; artifact existence, field presence, a finite route, proof depth, a green build, a passing fixture, or an external theorem identity alone confers no deployed enforcement, empirical truth, system safety, source correctness, support promotion, transfer.
+
+## 01:18–02:20 — Concrete state transition
+
+**Visual description.** Four numbered state nodes move left to right; an observed receipt and an open residual remain separately labeled.
+
+**Narration.** A concrete implementation trace makes the proposal testable. The exact current minimum is one proof-target schema and valid fixture; one generated 329-target proof manifest with 303 implemented and 26 planned targets; a 111-module Lean workspace with 1,272 theorem declarations classified as 882 derived/decomposed, 171 direct/projection, and 219 unknown/mixed; one proof-readiness classification; one wiring-only proof artifact audit; one semantic-adequacy review surface; one blocked formal-semantic-depth record with ten rejecting mutations; and five local ProofEnvelope declarations, all derived finite negative cases after retirement of its two direct projections. The separate activation audit preserves its historical 298-target, 65-module, and 1,151-theorem baseline.
+
+## 02:20–03:02 — Failure boundary
+
+**Visual description.** Four failure cards meet a red fail-closed boundary labeled RECORD THE RESIDUAL.
+
+**Narration.** The design can still fail. Formal notation or theorem counts decorate an argument whose operational predicate and consumer use were never defined. A broad safety, alignment, capability, quality, deployment, or SOTA claim is hidden inside a trivial finite record predicate. A passing schema, process validator, behavior test, benchmark, or external citation is described as a Lean proof or equivalent formal guarantee. A direct projection or assumption restatement is marketed as a derived semantic invariant. The correct response is to stop, narrow, quarantine, compensate, or retain an owned residual rather than narrate uncertainty away.
+
+## 03:02–03:45 — Evidence state
+
+**Visual description.** A double-rule proof boundary names the claim label and support state beside three unresolved proof targets.
+
+**Narration.** This chapter remains Design rationale at argument support. Its contracts, examples, tests, or local artifacts establish only their encoded scope. The chapter names proof targets rather than pretending they are already closed. Independent registry and artifact validators require each implemented target to name an existing imported module, while the retained finite Lean negative case rejects an implemented target missing its module or passing build. The retained finite Lean route excludes implemented status for a target assumed non-operational and routed only to planned or blocked, while independent validators enforce the current registry classification.
+
+## 03:45–04:13 — Non-claims
+
+**Visual description.** Four muted non-claim rows, each marked by a red stop bar, state what the visual does not establish.
+
+**Narration.** No chapter claim or evidence state is promoted by this visual. A named mechanism is not proof of correct implementation or useful deployment. A local check or formal model does not establish real-world enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows. These boundaries matter because an explanatory derivative is useful only if it preserves the evidence ceiling of its source.
+
+## 04:13–04:46 — Handoff
+
+**Visual description.** The source end card states the live chapter, evidence ceiling, canonical URL, and successor chapter.
+
+**Narration.** At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result. The next chapter is Benchmark Ratchets and Anti-Goodhart Evidence. It takes responsibility for The architecture needs a way to move capability claims through evidence without overfitting to fixed benchmarks. Read the live chapter for its complete source mappings, interfaces, invariants, failure modes, tests, and open evidence gaps.
+
+## Source and evidence boundary
+
+At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result.

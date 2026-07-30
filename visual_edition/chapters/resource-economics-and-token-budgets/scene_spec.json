@@ -1,0 +1,70 @@
+{
+  "chapter_id": "resource-economics-and-token-budgets",
+  "title": "Resource Economics and Token Budgets",
+  "subtitle": "Resource Economics owns a consumer-, task-, risk-, workload-, organization-, resource-, and time-specific allocation lease… cheap route alone confers no quality, safety, economic-optimality, support, or deployment authority.",
+  "archetype": "timeline",
+  "claim_label": "Design rationale",
+  "evidence_level": "argument",
+  "next_title": "Physical Compute Infrastructure, Energy, and Environmental Constraints",
+  "display": {
+    "problem": "Compute, context, verification, simulation fidelity, and human attention are scarce resources that the architecture must allocate explicitly.",
+    "insufficient": "Ignoring resource economics or fidelity boundaries makes high-quality verification unaffordable… lets synthetic results travel farther than their contracts support.",
+    "mechanism": [
+      {
+        "label": "Freeze consumer task value",
+        "detail": "Freeze consumer, task, value hypothesis, risk, workload… rights, horizon, success, and non-claims before allocation."
+      },
+      {
+        "label": "Memory storage network energy",
+        "detail": "Inventory compute, memory, storage, network, energy, tool… recovery capacity with units and owners."
+      },
+      {
+        "label": "Protected safety verification",
+        "detail": "Define protected safety, verification, security, rights, approval… human-review floors that price pressure cannot erase."
+      },
+      {
+        "label": "Estimate direct spend uncertainty",
+        "detail": "Estimate direct spend, uncertainty, cost of error… opportunity, reviewer, governance, and displaced future costs."
+      }
+    ],
+    "trace": [
+      "Freeze consumer task value",
+      "Memory storage network energy",
+      "Protected safety verification",
+      "Estimate direct spend uncertainty"
+    ],
+    "failures": [
+      "Verification, security, rights, approval, replay, rollback… make a route appear cheaper.",
+      "Synchronized arrivals, shared retries, cache misses… load collapse and correlated quality degradation.",
+      "Low-value or strategically inflated work hoards… verifier, reviewer, tool, or approval capacity.",
+      "Aggregate serving throughput or cache savings… risk, better quality, or economic value."
+    ],
+    "proof_targets": [
+      "A reachable allocation lifecycle requires a scoped… spend, useful-outcome accounting, verification, reconciliation, and closure.",
+      "Missing protected floors, reviewer capacity, failure retention… stage; raw resource proxies cannot promote support.",
+      "The stronger lifecycle digest-binds the bounded four-route… fixture-specific 66.98% arithmetic without inferring economic optimality."
+    ],
+    "evidence_ceiling": "This chapter remains Design rationale at argument support.",
+    "nonclaims": [
+      "No chapter claim or evidence state is promoted by this visual.",
+      "A named mechanism is not proof of correct implementation or useful deployment.",
+      "A local check or formal model does not establish real-world enforcement.",
+      "No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows."
+    ],
+    "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result."
+  },
+  "timing": {
+    "basis": "exact_narration_paragraph_boundaries",
+    "narration_receipt_sha256": "701e3caec619d1d0ecbc6effe85ba270874c56320c6a60e2df0dfb981d746962",
+    "target_duration_seconds": 296.045,
+    "scene_endpoints_seconds": [
+      28.975,
+      79.52,
+      142.86,
+      184.33,
+      233.275,
+      261.35,
+      296.045
+    ]
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
+  "title": "Runtime Adapters, Tool Permissions, and Human Approval",
+  "subtitle": "Runtime adapters should enforce typed permissions, sandboxing, human approval, and post-action evidence capture.",
+  "archetype": "ledger",
+  "claim_label": "Design rationale",
+  "evidence_level": "argument",
+  "next_title": "Embodied Agency, Real-Time Control, and Physical Safety",
+  "display": {
+    "problem": "Plans become real-world effects only through tools, runtimes, deployment adapters, and approval gates.",
+    "insufficient": "Tool calling without a permission and approval model turns reasoning errors into side effects.",
+    "mechanism": [
+      {
+        "label": "Freeze invocation contract stable",
+        "detail": "Freeze an invocation contract with stable invocation… policy, and environment identities before effect outcomes."
+      },
+      {
+        "label": "Target type effect class",
+        "detail": "Classify target type, effect class, impact, reversibility… organizational consequence, and required recovery objective prospectively."
+      },
+      {
+        "label": "Validate exact contract plan",
+        "detail": "Validate exact contract, plan, job, attempt, principal… parentage before an adapter can request capability."
+      },
+      {
+        "label": "Resolve typed capability envelope",
+        "detail": "Resolve a typed capability envelope over executable… hardware, rate, cost, retention, and downstream delegation."
+      }
+    ],
+    "trace": [
+      "Freeze invocation contract stable",
+      "Target type effect class",
+      "Validate exact contract plan",
+      "Resolve typed capability envelope"
+    ],
+    "failures": [
+      "Ambient tool authority lets cognition invoke… target, lease, policy, or terminal receipt.",
+      "Capability overreach widens executable, argument, object… rate, cost, retention, or delegation scope.",
+      "Semantic or alias escalation turns a… over a different target or effect.",
+      "Confused-deputy and delegation laundering use adapter… requesting principal never held."
+    ],
+    "proof_targets": [
+      "A runtime adapter invocation is valid only… active, scoped to that capability, and sandboxed.",
+      "A high-impact adapter call without approval… confused-deputy or sandbox-escape attempts cannot pass dispatch.",
+      "A modeled runtime-adapter effect replay routes missing… replay while admitting a public-safe rollback-exact replay."
+    ],
+    "evidence_ceiling": "This chapter remains Design rationale at argument support.",
+    "nonclaims": [
+      "No chapter claim or evidence state is promoted by this visual.",
+      "A named mechanism is not proof of correct implementation or useful deployment.",
+      "A local check or formal model does not establish real-world enforcement.",
+      "No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows."
+    ],
+    "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result."
+  },
+  "timing": {
+    "basis": "exact_narration_paragraph_boundaries",
+    "narration_receipt_sha256": "2127e5d11fb9cc903447fa5cddfc3ef60229eadfaaf82b8bb6bc57c4f5ebc0b0",
+    "target_duration_seconds": 281.515,
+    "scene_endpoints_seconds": [
+      17.88,
+      71.495,
+      132.11,
+      177.875,
+      220.42,
+      248.495,
+      281.515
+    ]
+  }
+}

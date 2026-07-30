@@ -1,0 +1,70 @@
+{
+  "chapter_id": "coil-attention-cyclic-memory-and-recurrence-contracts",
+  "title": "Coil Attention, Cyclic Memory, and Recurrence Contracts",
+  "subtitle": "Coil Attention, Cyclic Memory, and Recurrence Contracts owns a memory-object-, state-version-, request-, consumer-, workload-… no retrieval, reasoning, context-length, quality, speed, memory, safety, deployment, transfer, support, or SOTA authority.",
+  "archetype": "graph",
+  "claim_label": "Design rationale",
+  "evidence_level": "argument",
+  "next_title": "CoilRA, MultiCoil RoPE, and Cyclic Mixers",
+  "display": {
+    "problem": "Memory, attention, and recurrence mechanisms need finite structural contracts for aliasing, coverage, freshness, active work, loop exits, and overthinking boundaries.",
+    "insufficient": "Long context, sparse attention, ring buffers, and recursive loops can… reads, uncovered lags, duplicate slots, alias collisions, or unbounded work.",
+    "mechanism": [
+      {
+        "label": "Register memory object state",
+        "detail": "Register the memory object, state and model… structural axes, budget, horizon, and prohibited inferences."
+      },
+      {
+        "label": "Every carried state source",
+        "detail": "Bind every carried state to source provenance… identity, cache layout, device, and revocation state."
+      },
+      {
+        "label": "Cyclic address residue plus",
+        "detail": "Represent cyclic address with residue plus winding… never residue alone when wrap identity matters."
+      },
+      {
+        "label": "Slot occupancy collision alias",
+        "detail": "Compute slot occupancy, collision and alias load… read or route is eligible."
+      }
+    ],
+    "trace": [
+      "Register memory object state",
+      "Every carried state source",
+      "Cyclic address residue plus",
+      "Slot occupancy collision alias"
+    ],
+    "failures": [
+      "Residue-only addressing hides winding, wraps, overwrites, collisions, or aliased sources.",
+      "A cache entry from another request… accepted because its slot looks fresh.",
+      "Physical presence or timestamp freshness is… authorized, relevant, correct, or adequate content.",
+      "Sparse lag or path coverage is… coverage, retrieval quality, or long-context understanding."
+    ],
+    "proof_targets": [
+      "A reused cyclic slot with missing residue… alias residual fails the finite alias-boundary predicate.",
+      "A retrieval-quality record that promotes from sparse… is absent fails the finite quality-promotion predicate.",
+      "Residue-only addressing never erases winding, wrap count… overwrite, or alias residuals when they matter."
+    ],
+    "evidence_ceiling": "This chapter remains Design rationale at argument support.",
+    "nonclaims": [
+      "No chapter claim or evidence state is promoted by this visual.",
+      "A named mechanism is not proof of correct implementation or useful deployment.",
+      "A local check or formal model does not establish real-world enforcement.",
+      "No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows."
+    ],
+    "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result."
+  },
+  "timing": {
+    "basis": "exact_narration_paragraph_boundaries",
+    "narration_receipt_sha256": "afa029c2b3b6a06cbe3d18c8fd65f8b9b97048aeb9683bd782e50762fd118911",
+    "target_duration_seconds": 271.895,
+    "scene_endpoints_seconds": [
+      27.2,
+      77.395,
+      131.685,
+      171.955,
+      214.75,
+      242.825,
+      271.895
+    ]
+  }
+}

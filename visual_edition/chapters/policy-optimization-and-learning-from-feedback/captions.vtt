@@ -1,0 +1,257 @@
+WEBVTT
+
+NOTE
+Canonical written narration timed from the exact local narration render receipt.
+Pronunciation-only substitutions are intentionally absent from caption text.
+
+1
+00:00:00.060 --> 00:00:05.170
+This chapter asks a specific question: A governed stack needs to
+
+2
+00:00:05.170 --> 00:00:10.280
+convert feedback, verification, benchmark pressure, and failure into better future behavior
+
+3
+00:00:10.280 --> 00:00:15.390
+without allowing reward signals to bypass evidence, authority, or rollback boundaries.
+
+4
+00:00:15.730 --> 00:00:19.994
+The tempting shortcut is insufficient: RLHF, preference optimization,
+
+5
+00:00:19.994 --> 00:00:25.856
+and verifier rewards are often treated as model-alignment recipes rather than
+
+6
+00:00:25.856 --> 00:00:31.186
+governed update mechanisms across planners, routers, context policies, execution policies,
+
+7
+00:00:31.186 --> 00:00:32.785
+and generation modes.
+
+8
+00:00:33.385 --> 00:00:39.371
+The chapter's core claim is this: Policy Optimization and Learning from
+
+9
+00:00:39.371 --> 00:00:45.356
+Feedback owns a target-policy-, baseline-, objective-, feedback-, evaluator-, dataset-, optimizer-, checkpoint-,
+
+10
+00:00:45.356 --> 00:00:49.165
+rollout-, authority-, resource-, monitor-, rollback-, consumer-, environment-,
+
+11
+00:00:49.505 --> 00:00:53.897
+and time-specific Governed Policy Update Lease: before any update,
+
+12
+00:00:53.897 --> 00:00:59.265
+it freezes the legitimate target behavior, admissible feedback and proxy boundary,
+
+13
+00:00:59.265 --> 00:01:04.145
+strong baselines, update family and budget, drift and authority ceilings,
+
+14
+00:01:04.145 --> 00:01:06.585
+complete evaluation and failure denominators,
+
+15
+00:01:06.925 --> 00:01:11.476
+reward-hacking and causal checks, rollback and monitoring, residuals, expiry,
+
+16
+00:01:11.476 --> 00:01:16.533
+and promotion authority; a reward, preference, verifier score, benchmark gain,
+
+17
+00:01:16.533 --> 00:01:21.084
+loss reduction, synthetic canary, formal route, rollback dry run,
+
+18
+00:01:21.084 --> 00:01:25.130
+or trained checkpoint alone establishes neither reward validity,
+
+19
+00:01:25.470 --> 00:01:31.550
+causal policy improvement, retained capability, alignment, safety, readiness, deployment, support.
+
+20
+00:01:32.150 --> 00:01:36.180
+A concrete implementation trace makes the proposal testable.
+
+21
+00:01:36.520 --> 00:01:43.089
+The exact current minimum preserves eleven inherited contradiction/guard theorems and the
+
+22
+00:01:43.089 --> 00:01:48.464
+deterministic six-sample, two-holdout, five-candidate lease probe inside a seven-stage,
+
+23
+00:01:48.464 --> 00:01:55.033
+63-route governed-update lifecycle with two composed Lean traces, 73/73 route mutations,
+
+24
+00:01:55.033 --> 00:01:56.825
+3/3 cross-stage mutations,
+
+25
+00:01:57.165 --> 00:02:01.372
+one bounded lease, and one protocol-version-2 readmission witness.
+
+26
+00:02:01.372 --> 00:02:06.630
+It runs no optimizer, model, trainer, preference dataset, reward model,
+
+27
+00:02:06.630 --> 00:02:12.415
+natural workload, real policy update, deployed canary, live rollback, independent reproduction,
+
+28
+00:02:12.415 --> 00:02:15.570
+transfer, chapter-core transition, or SOTA comparison.
+
+29
+00:02:15.910 --> 00:02:21.357
+Bind exact target layer, policy and implementation identity, model and checkpoint,
+
+30
+00:02:21.357 --> 00:02:26.804
+prompt and scaffold, tools and permissions, data and environment, dependencies, runtime,
+
+31
+00:02:26.804 --> 00:02:28.290
+and affected consumers.
+
+32
+00:02:28.890 --> 00:02:34.043
+The design can still fail. Reward hacking or verifier gaming increases
+
+33
+00:02:34.043 --> 00:02:39.196
+the selected signal while the target property, retained utility, safety, privacy,
+
+34
+00:02:39.196 --> 00:02:41.070
+rights, or robustness degrades.
+
+35
+00:02:41.410 --> 00:02:45.908
+Preference overoptimization learns style, agreeableness, verbosity, brevity, persuasion,
+
+36
+00:02:45.908 --> 00:02:52.093
+or annotator artifacts instead of truth or task success. Planner, router,
+
+37
+00:02:52.093 --> 00:02:58.278
+context, verifier, execution, governance, or generation-mode policies learn hidden shortcuts that
+
+38
+00:02:58.278 --> 00:02:59.965
+evade local evaluation.
+
+39
+00:03:00.305 --> 00:03:05.807
+Latency, token, or cost rewards suppress necessary retrieval, verification, abstention, escalation,
+
+40
+00:03:05.807 --> 00:03:11.308
+approval, or recovery. The correct response is to stop, narrow, quarantine,
+
+41
+00:03:11.308 --> 00:03:16.810
+compensate, or retain an owned residual rather than narrate uncertainty away.
+
+42
+00:03:17.410 --> 00:03:22.456
+This chapter remains Design rationale at argument support. Its contracts, examples,
+
+43
+00:03:22.456 --> 00:03:26.585
+tests, or local artifacts establish only their encoded scope.
+
+44
+00:03:26.585 --> 00:03:31.631
+The chapter names proof targets rather than pretending they are already
+
+45
+00:03:31.631 --> 00:03:32.090
+closed.
+
+46
+00:03:32.430 --> 00:03:38.380
+A versioned governed-update lifecycle binds target, baseline, objective, data, feedback,
+
+47
+00:03:38.380 --> 00:03:44.330
+full optimizer/checkpoint/RNG and descendant state, evaluation, adjudication, bounded consumption, rollback,
+
+48
+00:03:44.330 --> 00:03:49.685
+and readmission without assigning support or an external effect.
+
+49
+00:03:50.025 --> 00:03:56.955
+Missing target evaluation, causal ablation, reward-hacking probes, regression, forgetting, safety/rights, uncertainty,
+
+50
+00:03:56.955 --> 00:04:03.255
+or independent evaluation blocks a policy update before bounded-lease adjudication.
+
+51
+00:04:03.855 --> 00:04:08.819
+No chapter claim or evidence state is promoted by this visual.
+
+52
+00:04:08.819 --> 00:04:13.783
+A named mechanism is not proof of correct implementation or useful
+
+53
+00:04:13.783 --> 00:04:18.747
+deployment. A local check or formal model does not establish real-world
+
+54
+00:04:18.747 --> 00:04:23.260
+enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.
+
+55
+00:04:23.600 --> 00:04:28.075
+These boundaries matter because an explanatory derivative is useful only if
+
+56
+00:04:28.075 --> 00:04:31.330
+it preserves the evidence ceiling of its source.
+
+57
+00:04:31.930 --> 00:04:37.116
+At most, this visual explains the chapter's design rationale at argument
+
+58
+00:04:37.116 --> 00:04:41.831
+support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI,
+
+59
+00:04:41.831 --> 00:04:47.017
+or ASI result. The next chapter is Data Engines, Continual Learning,
+
+60
+00:04:47.017 --> 00:04:47.960
+and Unlearning.
+
+61
+00:04:48.300 --> 00:04:52.784
+It takes responsibility for A self-improving stack needs to decide which
+
+62
+00:04:52.784 --> 00:04:57.269
+data and feedback may enter future learning without confusing an intake
+
+63
+00:04:57.269 --> 00:05:00.530
+decision with a capability result, a privacy guarantee.

@@ -1,0 +1,56 @@
+# Descriptive transcript — Claim Ledgers and Belief Revision
+
+Canonical live chapter:
+<https://corbensorenson.github.io/asi-stack-book/chapters/claim-ledgers-and-belief-revision.html>
+
+Video ID: `asi-video-claim-ledgers-and-belief-revision`
+
+Lifecycle: scripted local derivative; no YouTube publication is authorized
+
+Current support: `argument` — `Design rationale`
+
+## 00:00–00:53 — Problem and shortcut
+
+**Visual description.** The chapter title resolves into two labeled cards: the problem and the shortcut that does not solve it.
+
+**Narration.** This chapter asks a specific question: A claim can be repeated, paraphrased, narrowed, challenged, contradicted, split, merged, downgraded, superseded, or published across many surfaces without a durable identity and append-only transition history, allowing prose, caches, summaries, and releases to disagree silently about what was asserted and why it changed. The tempting shortcut is insufficient: Prompts, citations, provenance graphs, vector similarity, confidence scores, self-critique, truth-maintenance formalisms, evidence matrices, version control, and publication workflows each preserve useful fragments but do not by themselves bind natural-language claim identity, scope and assumptions, support and contradiction state, dependency closure, ontology migration, concurrent revision, surface synchronization.
+
+## 00:53–01:42 — Operating mechanism
+
+**Visual description.** A labeled ledger diagram exposes four distinct responsibilities and their explicit relationships.
+
+**Narration.** The chapter's core claim is this: Claim Ledgers should own the durable identity and append-only state-transition history of each material claim and its semantic variants. Every record binds canonical proposition and scope, definitions and assumptions, population and environment, provenance and source roles, evidence and attack refs, support and uncertainty states, contradiction and defeater links, dependencies, ontology version, lifecycle, commitment, authority and rights, surface refs, expiry, residuals, and current materialized view; every proposed update binds trigger, before/after states, transition type, evidence-transition and review refs, affected dependency closure, surface-sync plan, concurrency base, migration, costs, and non-overwrite receipt.
+
+## 01:42–02:43 — Concrete state transition
+
+**Visual description.** Four numbered state nodes move left to right; an observed receipt and an open residual remain separately labeled.
+
+**Narration.** A concrete implementation trace makes the proposal testable. Five valid and seven expected-invalid claim-revision fixtures; one bounded five-project contradiction lifecycle with eleven rejecting mutations; four retained bounded legacy lemmas; and a stronger append-only Claim Ledger refinement whose independent consumer covers seventeen routes, five reachable stages, and twenty-nine rejected mutations. The refinement binds exact claim, ledger, head, semantic, ontology, support-view, history, non-overwrite, dependency, migration, residual, and surface state; an authored upward support record requires an evidence-owner receipt, and the ledger cannot self-approve support or commit an external effect. This remains finite structured-record evidence, not a claim extractor, semantic-equivalence engine, deployed concurrent store, natural multi-surface repair system, evidence-quality judgment, or chapter-core result.
+
+## 02:43–03:37 — Failure boundary
+
+**Visual description.** Four failure cards meet a red fail-closed boundary labeled RECORD THE RESIDUAL.
+
+**Narration.** The design can still fail. Prose-as-database failure lets polished wording, summaries, or releases become the de facto belief state while ledger records drift or disappear. Identity aliasing treats similar wording, embeddings, citations, addresses, or database keys as the same claim despite material scope or assumption differences. Semantic-merge laundering collapses broader, narrower, disputed, conditionally equivalent, or evaluator-uncertain variants and transfers evidence or support across them. Assumption erasure records a proposition while omitting the definitions, quantifiers, population, environment, exceptions, or contested premises that make it true or useful. The correct response is to stop, narrow, quarantine, compensate, or retain an owned residual rather than narrate uncertainty away.
+
+## 03:37–04:25 — Evidence state
+
+**Visual description.** A double-rule proof boundary names the claim label and support state beside three unresolved proof targets.
+
+**Narration.** This chapter remains Design rationale at argument support. Its contracts, examples, tests, or local artifacts establish only their encoded scope. The chapter names proof targets rather than pretending they are already closed. An accepted ledger step preserves durable claim identity and cannot commit an external effect; an authorized append advances ledger version and append count exactly once. Stale bases, ledger self-approval, event substitution, open contradictions, missing evidence-owner receipts, and incomplete custody block append or exact acknowledgment. A reachable propose-append-materialize-acknowledge lifecycle binds exact versions, history, dependencies, ontology migration, residuals, and surface receipts.
+
+## 04:25–04:53 — Non-claims
+
+**Visual description.** Four muted non-claim rows, each marked by a red stop bar, state what the visual does not establish.
+
+**Narration.** No chapter claim or evidence state is promoted by this visual. A named mechanism is not proof of correct implementation or useful deployment. A local check or formal model does not establish real-world enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows. These boundaries matter because an explanatory derivative is useful only if it preserves the evidence ceiling of its source.
+
+## 04:53–05:26 — Handoff
+
+**Visual description.** The source end card states the live chapter, evidence ceiling, canonical URL, and successor chapter.
+
+**Narration.** At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result. The next chapter is Proof-Carrying Claims and Adversarial Review. It takes responsibility for High-value claims and high-risk artifacts need a governed verification path that can choose proof, citation, procedure, replay, benchmark, or adversarial-review treatment without laundering failed, mismatched, or contested evidence into support.
+
+## Source and evidence boundary
+
+At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result.

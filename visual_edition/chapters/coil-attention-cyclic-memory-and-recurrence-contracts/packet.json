@@ -1,0 +1,154 @@
+{
+  "schema_version": "asi_stack.visual_chapter_packet.v1",
+  "video_id": "asi-video-coil-attention-cyclic-memory-and-recurrence-contracts",
+  "chapter_id": "coil-attention-cyclic-memory-and-recurrence-contracts",
+  "chapter_path": "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd",
+  "chapter_sha256": "dffef52d2ef064306a5e812257dfbcc78ab57c5cba0debff5fa955947b54d020",
+  "source_commit": "f10ef079ecfeb48503407d67832a0251f77c2c78",
+  "pilot": false,
+  "lifecycle_state": "ready_not_published",
+  "claim_bindings": [
+    {
+      "claim_id": "coil-attention-cyclic-memory-and-recurrence-contracts.core",
+      "claim_label": "Design rationale",
+      "support_state": "argument"
+    }
+  ],
+  "assigned_source_ids": [
+    "coil_attention_memory",
+    "circle_ai_contract_suite",
+    "theseus_circle_transfer",
+    "vcm_public",
+    "ext_universal_transformer_2019",
+    "ext_recurrent_transformer_2026",
+    "ext_dynamic_compute_recurrent_transformers_2026"
+  ],
+  "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result.",
+  "required_content": {
+    "problem": "Memory, attention, and recurrence mechanisms need finite structural contracts for aliasing, coverage, freshness, active work, loop exits, and overthinking boundaries. Long context, sparse attention, ring buffers, and recursive loops can silently hide stale reads, uncovered lags, duplicate slots, alias collisions, or unbounded work.",
+    "core_mechanism": "Coil Attention, Cyclic Memory, and Recurrence Contracts owns a memory-object-, state-version-, request-, consumer-, workload-, structural-axis-, budget-, and time-specific State-Carry and Recurrence Admission Lease: a slot read, cyclic address, KV reuse, sparse edge, fanout schedule, or recurrent step may be admitted only when authority, provenance, residue and winding, freshness, coverage, alias and collision state, active work, progress, exit, fallback, expiry, and residuals satisfy the exact consumer contract; structural validity, synthetic fixtures, receipt replay, cache presence, or reduced scheduled work alone confers no retrieval, reasoning, context-length, quality, speed, memory, safety, deployment, transfer, support, or SOTA authority.",
+    "worked_trace": "The exact current minimum is one schema-valid cyclic-memory record; three valid and six expected-invalid synthetic contract traces; five public-safe external Circle structural receipt slices for cyclic memory, KV-cache freshness, recurrence scheduling, sparse-attention gaps, and strided fanout, all with explicit no-promotion boundaries; and six finite local Lean theorem declarations. It proves no deployed cache, sparse attention, recurrence controller, useful memory, retrieval, reasoning, context-length, latency, memory, independent reproduction, transfer, or chapter-core result. Bind every carried state to source provenance, VCM packet or context lineage, write and read epochs, model and tokenizer identity, cache layout, device, and revocation state.",
+    "failure_boundary": "Residue-only addressing hides winding, wraps, overwrites, collisions, or aliased sources. A cache entry from another request, tenant, model, tokenizer, policy, or epoch is accepted because its slot looks fresh. Physical presence or timestamp freshness is confused with authorized, relevant, correct, or adequate content. Sparse lag or path coverage is treated as semantic dependency coverage, retrieval quality, or long-context understanding.",
+    "evidence_state": "This chapter remains Design rationale at argument support. Its contracts, examples, tests, or local artifacts establish only their encoded scope. A reused cyclic slot with missing residue or winding and no visible alias residual fails the finite alias-boundary predicate. A retrieval-quality record that promotes from sparse coverage and freshness while semantic-quality evidence is absent fails the finite quality-promotion predicate. Residue-only addressing never erases winding, wrap count, slot identity, collision, overwrite, or alias residuals when they matter.",
+    "non_claims": "No chapter claim or evidence state is promoted by this visual. A named mechanism is not proof of correct implementation or useful deployment. A local check or formal model does not establish real-world enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.",
+    "handoff": "The next chapter is CoilRA, MultiCoil RoPE, and Cyclic Mixers. It takes responsibility for Position encodings, adapters, route heads, and mixers need a place for cyclic or block-cyclic structure that separates structural invariants from quality and runtime claims."
+  },
+  "artifacts": {
+    "storyboard": "visual_edition/chapters/coil-attention-cyclic-memory-and-recurrence-contracts/storyboard.md",
+    "scene_code": "visual_edition/chapters/coil-attention-cyclic-memory-and-recurrence-contracts/scene.py",
+    "narration_script": "visual_edition/chapters/coil-attention-cyclic-memory-and-recurrence-contracts/narration.txt",
+    "captions": "visual_edition/chapters/coil-attention-cyclic-memory-and-recurrence-contracts/captions.vtt",
+    "descriptive_transcript": "visual_edition/chapters/coil-attention-cyclic-memory-and-recurrence-contracts/transcript.md",
+    "thumbnail": "visual_edition/chapters/coil-attention-cyclic-memory-and-recurrence-contracts/thumbnail.svg",
+    "scene_spec": "visual_edition/chapters/coil-attention-cyclic-memory-and-recurrence-contracts/scene_spec.json",
+    "thumbnail_alt_text": "A governed graph diagram for Coil Attention, Cyclic Memory, and Recurrence Contracts shows three named mechanism cards above a labeled failure and evidence boundary."
+  },
+  "render_receipt": {
+    "receipt_state": "current_final_av_master",
+    "validation_state": "validated",
+    "rendered_at_utc": "2026-07-30T03:36:03Z",
+    "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+    "toolchain_qualification": "qualified_for_all_non_latex_chapters",
+    "render_profile": "final_av_master",
+    "command": "Render the exact-timing ChapterVisualAbstract with pinned ManimCE 0.20.1 at 1920x1080/30, render pinned Kokoro-82M af_heart narration at speed 1.08 with a hard maximum of 300 characters per synthesis call and -16 LUFS, then align all seven visual scenes to the exact audio paragraph boundaries and mux with FFmpeg 8.0.1 as H.264 CRF 18 yuv420p plus AAC-LC 192 kb/s 48 kHz mono.",
+    "duration_seconds": 271.9,
+    "pixel_width": 1920,
+    "pixel_height": 1080,
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "output_sha256": "60d5aec116a15ad07b606e03c4bc476f39309c25cbd69a86010fb9d817c50ee6",
+    "mux_receipt_sha256": "b23ede5830703f061637e446121746fa28b09e7e0f66613596726398931640ac",
+    "output_storage": "ignored build/visual_edition media only",
+    "visual_review": {
+      "draft_sample_seconds": [
+        13.6,
+        52.297,
+        104.54,
+        151.82,
+        193.352,
+        228.787,
+        257.36
+      ],
+      "release_sample_seconds": [
+        52.297,
+        228.787
+      ],
+      "result": "pass",
+      "review_scope": "Exact mux-receipt midpoint sampling across all seven narration scenes checked composition, legibility, persistent labels, color-plus-shape semantics, evidence ceiling, non-claims, end-card identity, and absence of clipping or overflowing text."
+    },
+    "audio_master": {
+      "identity": "Kokoro-82M bf16 af_heart via kokoro-mlx 0.1.2 at speed 1.08",
+      "provenance": "Locally generated from the canonical narration with the pinned Apache-2.0 Kokoro-82M model and MIT kokoro-mlx implementation recorded in visual_edition/narration_toolchain.json.",
+      "publication_rights_state": "cleared",
+      "duration_seconds": 271.9,
+      "sha256": "1200e54dee5934b87f7386104ddfbc03c480450ef16decbfc02fffb3e739d7d6"
+    },
+    "caption_review": {
+      "state": "machine_audited",
+      "audit_method": "Exact receipt-derived canonical timing plus local MLX Whisper transcript comparison and complete beginning/end coverage checks.",
+      "reviewed_against_audio_sha256": "1200e54dee5934b87f7386104ddfbc03c480450ef16decbfc02fffb3e739d7d6",
+      "asr_model": "mlx-community/whisper-small.en-mlx@52a88bf6e98b114a210c21bb83e22d6e1505cb73",
+      "asr_word_error_rate": 0.025729,
+      "terminology": "pass",
+      "timing": "pass",
+      "non_speech_information": "pass",
+      "material_visual_changes": "described_in_adjacent_transcript"
+    },
+    "artifact_sha256": {
+      "storyboard": "dd453d2c952b08d46e9b1f3062e8e98ef892a8e5ef10d92acef0bf245cb7e909",
+      "scene_code": "c0b63ee1e36654bb78867469cebf12f65da056933e0d1a77af29af51cf6ecdbc",
+      "narration_script": "8b6ae666395e66a59a399505c218e2e80e72d6a9f16f223ea445d84f8a28f85c",
+      "captions": "b78ba0cb5af67cb7e8d00615ad2abf6c211b614942d594be6815ebf9f4aaa8aa",
+      "descriptive_transcript": "03977a94be0dea359eb212eaa1ac8bb19f0a063aee6bf0a045cfe139fcbff2f3",
+      "thumbnail": "1d026481aedf2e20a19e557c1e5b3197a7920fec16ba14d2b1d9902e42aee338",
+      "scene_spec": "a4c6803d5d5c8cdc58269a3006d7dae056aa5bbfca4da5167580fc28cb2695f4"
+    },
+    "remaining_release_gates": [
+      "obtain exact action-time authority before any YouTube or playlist mutation"
+    ]
+  },
+  "youtube": {
+    "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+    "video_id": null,
+    "watch_url": null,
+    "playlist_id": null,
+    "generation": 0,
+    "publication_state": "not_authorized",
+    "uploaded_output_sha256": null,
+    "bound_chapter_sha256": null,
+    "bound_source_commit": null,
+    "published_at_utc": null,
+    "platform_receipt_path": null,
+    "supersedes_video_id": null
+  },
+  "quarto_embed": {
+    "state": "absent_until_published",
+    "chapter_anchor": "visual-abstract",
+    "frame_title": "Visual abstract: Coil Attention, Cyclic Memory, and Recurrence Contracts",
+    "aria_label": "Play the visual abstract for Coil Attention, Cyclic Memory, and Recurrence Contracts"
+  },
+  "staleness": {
+    "state": "current",
+    "checked_chapter_sha256": "dffef52d2ef064306a5e812257dfbcc78ab57c5cba0debff5fa955947b54d020",
+    "triggers": [
+      "core_claim",
+      "mechanism",
+      "worked_trace",
+      "evidence_state",
+      "non_claim",
+      "material_source",
+      "chapter_identity",
+      "handoff",
+      "public_url"
+    ]
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This derivative video does not promote or otherwise change any book claim.",
+    "The validated local final master is not a YouTube upload or a public publication.",
+    "Automated intelligibility and caption audits do not establish that every listener will prefer the synthetic voice.",
+    "A successful animation render does not establish deployment, safety, efficiency, transfer, state of the art, AGI, or ASI."
+  ]
+}

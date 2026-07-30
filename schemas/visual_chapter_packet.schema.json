@@ -50,7 +50,8 @@
         "toolchain_qualification": {
           "enum": [
             "qualified_for_non_latex_pilots",
-            "qualified_for_all_pilots"
+            "qualified_for_all_pilots",
+            "qualified_for_all_non_latex_chapters"
           ]
         },
         "render_profile": {
@@ -84,6 +85,9 @@
           "const": "yuv420p"
         },
         "output_sha256": {
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "mux_receipt_sha256": {
           "pattern": "^[0-9a-f]{64}$"
         },
         "output_storage": {
@@ -155,15 +159,21 @@
           "type": "object",
           "required": [
             "state",
+            "audit_method",
             "reviewed_against_audio_sha256",
+            "asr_model",
+            "asr_word_error_rate",
             "terminology",
             "timing",
             "non_speech_information",
             "material_visual_changes"
           ],
           "properties": {
-            "state": {"const": "reviewed"},
+            "state": {"enum": ["reviewed", "machine_audited"]},
+            "audit_method": {"type": "string", "minLength": 30},
             "reviewed_against_audio_sha256": {"pattern": "^[0-9a-f]{64}$"},
+            "asr_model": {"type": "string", "minLength": 20},
+            "asr_word_error_rate": {"type": "number", "minimum": 0, "maximum": 0.03},
             "terminology": {"const": "pass"},
             "timing": {"const": "pass"},
             "non_speech_information": {"const": "pass"},
@@ -199,7 +209,7 @@
             }
           },
           "then": {
-            "required": ["audio_master", "caption_review"],
+            "required": ["audio_master", "caption_review", "mux_receipt_sha256"],
             "properties": {
               "receipt_state": {"const": "current_final_av_master"},
               "render_profile": {"const": "final_av_master"}
@@ -283,6 +293,7 @@
         "captions": {"type": "string"},
         "descriptive_transcript": {"type": "string"},
         "thumbnail": {"type": "string"},
+        "scene_spec": {"type": "string"},
         "thumbnail_alt_text": {"type": "string", "minLength": 30}
       },
       "additionalProperties": false

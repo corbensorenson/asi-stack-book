@@ -1,0 +1,161 @@
+{
+  "schema_version": "asi_stack.visual_chapter_packet.v1",
+  "video_id": "asi-video-intent-to-execution-contracts",
+  "chapter_id": "intent-to-execution-contracts",
+  "chapter_path": "chapters/intent-to-execution-contracts.qmd",
+  "chapter_sha256": "ab6dd38d6e42c7d694ecbf721f37fc134954e61dc93a58877ff0ea8dfb322c4f",
+  "source_commit": "f10ef079ecfeb48503407d67832a0251f77c2c78",
+  "pilot": false,
+  "lifecycle_state": "ready_not_published",
+  "claim_bindings": [
+    {
+      "claim_id": "intent-to-execution-contracts.core",
+      "claim_label": "Design rationale",
+      "support_state": "argument"
+    }
+  ],
+  "assigned_source_ids": [
+    "viea",
+    "deterministic_capability_compilation",
+    "talos",
+    "software_magic_grimoire",
+    "genesiscode",
+    "moecot",
+    "cognitive_compilation",
+    "ext_camel_prompt_injection_2025",
+    "cca_project",
+    "moecot_manifest_project",
+    "beastbrain_project",
+    "bugbrain_project",
+    "corbens_best_model_possible_project",
+    "reflexive_router_whitepaper"
+  ],
+  "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result.",
+  "required_content": {
+    "problem": "After an intent owner accepts a request, every lowering into commands, plans, jobs, tool calls, effects, artifacts, verification, delivery, and residuals can change meaning or authority. A governed stack therefore needs a consumer-relative conformance contract that can detect semantic loss, unauthorized amplification, response-for-effect substitution, and incomplete delivery across the complete lineage rather than merely recording that each stage exists.",
+    "core_mechanism": "Intent-to-Execution Contracts should own a versioned, consumer-relative conformance relation between an accepted intent receipt and the complete execution lineage. Before any material dispatch, the relation binds exact objective and non-goals, semantic fields and precedence, authority ceiling and affected parties, state and environmental assumptions, allowed and forbidden means, artifacts and effect postconditions, verification and independence requirements, budgets and stop conditions, failure and compensation behavior, expiry and re-contract triggers, and the required receipts through plan, job, adapter, observed effect, artifact, delivery, feedback, and residual custody.",
+    "worked_trace": "The current minimum is a record-and-route scaffold: intent, command, and trace schemas; synthetic plan-execution, handoff, replacement-bridge, and one-shot-action fixtures; one consumed hand-authored five-project lifecycle; 33 rejecting mutations across the three named probes; seven manifest proof targets backed by finite Lean declarations; a 16-run governed-work campaign with zero governed releases; a 36-transaction usefulness campaign with 2/36 correct candidates and four inexact attack-control rollbacks; a 12-task natural-work campaign with zero parseable final contracts; and a repaired 32-candidate renewal with only 2/32 independently correct candidates, zero useful releases in either arm, zero unsafe releases in either arm, and a frozen 8/8-versus-9/9 metadata error.",
+    "failure_boundary": "Intent laundering converts an uncertain or disputed interpretation into an accepted command without preserving alternatives, ambiguity, affected parties, or the intake owner's basis. Field laundering moves vague prose into typed fields whose units, quantifiers, precedence, materiality, verifier, and consequence remain undefined. Semantic drift changes objective, non-goals, constraints, success criteria, or failure behavior during normalization, decomposition, compilation, routing, retry, fallback, repair, or summarization. Context injection lets retrieved or tool-produced data, examples, prior conversation, or hidden content become authoritative control flow.",
+    "evidence_state": "This chapter remains Design rationale at argument support. Its contracts, examples, tests, or local artifacts establish only their encoded scope. Every accepted edge in the finite vertical transition model preserves the root contract and exact artifact parent, cannot widen authority or apply hidden overrides, and reaches material effect and delivery only through approval, dispatch, observation, artifact, and independent-verification custody.",
+    "non_claims": "No chapter claim or evidence state is promoted by this visual. A named mechanism is not proof of correct implementation or useful deployment. A local check or formal model does not establish real-world enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.",
+    "handoff": "The next chapter is Perception, Sensor Fusion, and Observation Trust. It takes responsibility for Planning and control often treat sensor-derived tokens, objects, or embeddings as reality even when calibration, time, coverage, missingness, dependence, shift, or spoofing makes the observation unreliable."
+  },
+  "artifacts": {
+    "storyboard": "visual_edition/chapters/intent-to-execution-contracts/storyboard.md",
+    "scene_code": "visual_edition/chapters/intent-to-execution-contracts/scene.py",
+    "narration_script": "visual_edition/chapters/intent-to-execution-contracts/narration.txt",
+    "captions": "visual_edition/chapters/intent-to-execution-contracts/captions.vtt",
+    "descriptive_transcript": "visual_edition/chapters/intent-to-execution-contracts/transcript.md",
+    "thumbnail": "visual_edition/chapters/intent-to-execution-contracts/thumbnail.svg",
+    "scene_spec": "visual_edition/chapters/intent-to-execution-contracts/scene_spec.json",
+    "thumbnail_alt_text": "A governed stack diagram for Command Contracts: From Intent to Executable Work shows three named mechanism cards above a labeled failure and evidence boundary."
+  },
+  "render_receipt": {
+    "receipt_state": "current_final_av_master",
+    "validation_state": "validated",
+    "rendered_at_utc": "2026-07-30T03:16:21Z",
+    "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+    "toolchain_qualification": "qualified_for_all_non_latex_chapters",
+    "render_profile": "final_av_master",
+    "command": "Render the exact-timing ChapterVisualAbstract with pinned ManimCE 0.20.1 at 1920x1080/30, render pinned Kokoro-82M af_heart narration at speed 1.08 with a hard maximum of 300 characters per synthesis call and -16 LUFS, then align all seven visual scenes to the exact audio paragraph boundaries and mux with FFmpeg 8.0.1 as H.264 CRF 18 yuv420p plus AAC-LC 192 kb/s 48 kHz mono.",
+    "duration_seconds": 302.74,
+    "pixel_width": 1920,
+    "pixel_height": 1080,
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "output_sha256": "f25bfd919c3a3c3c7d40df884d623b4ab04d970454d445d6abb1331157949d93",
+    "mux_receipt_sha256": "9ffe5e1e2cb5d7886822acd36bf810431d23d33bdcf9af6624ab1c2ec38c576d",
+    "output_storage": "ignored build/visual_edition media only",
+    "visual_review": {
+      "draft_sample_seconds": [
+        16.237,
+        55.335,
+        107.99,
+        165.417,
+        218.022,
+        257.033,
+        286.905
+      ],
+      "release_sample_seconds": [
+        55.335,
+        257.033
+      ],
+      "result": "pass",
+      "review_scope": "Exact mux-receipt midpoint sampling across all seven narration scenes checked composition, legibility, persistent labels, color-plus-shape semantics, evidence ceiling, non-claims, end-card identity, and absence of clipping or overflowing text."
+    },
+    "audio_master": {
+      "identity": "Kokoro-82M bf16 af_heart via kokoro-mlx 0.1.2 at speed 1.08",
+      "provenance": "Locally generated from the canonical narration with the pinned Apache-2.0 Kokoro-82M model and MIT kokoro-mlx implementation recorded in visual_edition/narration_toolchain.json.",
+      "publication_rights_state": "cleared",
+      "duration_seconds": 302.74,
+      "sha256": "01faee1718482c5be6163f5bf37454681aa8e41be0defec791e80a50168413ab"
+    },
+    "caption_review": {
+      "state": "machine_audited",
+      "audit_method": "Exact receipt-derived canonical timing plus local MLX Whisper transcript comparison and complete beginning/end coverage checks.",
+      "reviewed_against_audio_sha256": "01faee1718482c5be6163f5bf37454681aa8e41be0defec791e80a50168413ab",
+      "asr_model": "mlx-community/whisper-small.en-mlx@52a88bf6e98b114a210c21bb83e22d6e1505cb73",
+      "asr_word_error_rate": 0.019048,
+      "terminology": "pass",
+      "timing": "pass",
+      "non_speech_information": "pass",
+      "material_visual_changes": "described_in_adjacent_transcript"
+    },
+    "artifact_sha256": {
+      "storyboard": "6a02a0966204ecd3209eb30c94a5aa5af0ef16369a4d1b60b6c255cbf37f326a",
+      "scene_code": "24895c3fa4b2a67b533b21ddafdbdb3143640df6246302c1d31ca0e38506454d",
+      "narration_script": "3b3249d1c7930b49267a7eb613c7ba94d5b97247bbec44537cfdda0cce2e39e6",
+      "captions": "1a3d56490f643c2434f8129145a0eb83420a436c4a70fb4aa470df8bbac51b33",
+      "descriptive_transcript": "a1889f4c879399567a5f20943e0f3ec0385aa090e9c3e108e30df76dcdd9b272",
+      "thumbnail": "754395d8e84bf163b83ef247159fb17a759dbbf7e493837b98ecf7fc81302f7c",
+      "scene_spec": "02ccdf92830b871bd2893f161aab883483de94204b5e4d8e91e2d9bcea98ac56"
+    },
+    "remaining_release_gates": [
+      "obtain exact action-time authority before any YouTube or playlist mutation"
+    ]
+  },
+  "youtube": {
+    "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+    "video_id": null,
+    "watch_url": null,
+    "playlist_id": null,
+    "generation": 0,
+    "publication_state": "not_authorized",
+    "uploaded_output_sha256": null,
+    "bound_chapter_sha256": null,
+    "bound_source_commit": null,
+    "published_at_utc": null,
+    "platform_receipt_path": null,
+    "supersedes_video_id": null
+  },
+  "quarto_embed": {
+    "state": "absent_until_published",
+    "chapter_anchor": "visual-abstract",
+    "frame_title": "Visual abstract: Command Contracts: From Intent to Executable Work",
+    "aria_label": "Play the visual abstract for Command Contracts: From Intent to Executable Work"
+  },
+  "staleness": {
+    "state": "current",
+    "checked_chapter_sha256": "ab6dd38d6e42c7d694ecbf721f37fc134954e61dc93a58877ff0ea8dfb322c4f",
+    "triggers": [
+      "core_claim",
+      "mechanism",
+      "worked_trace",
+      "evidence_state",
+      "non_claim",
+      "material_source",
+      "chapter_identity",
+      "handoff",
+      "public_url"
+    ]
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This derivative video does not promote or otherwise change any book claim.",
+    "The validated local final master is not a YouTube upload or a public publication.",
+    "Automated intelligibility and caption audits do not establish that every listener will prefer the synthetic voice.",
+    "A successful animation render does not establish deployment, safety, efficiency, transfer, state of the art, AGI, or ASI."
+  ]
+}

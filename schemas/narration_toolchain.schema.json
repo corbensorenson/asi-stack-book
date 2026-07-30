@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/narration_toolchain.schema.json",
+  "title": "ASI Stack Narration Toolchain",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "toolchain_id",
+    "qualification_state",
+    "runtime",
+    "synthesis",
+    "verification",
+    "tracked_inputs",
+    "rights_and_disclosure",
+    "storage_boundary",
+    "upgrade_gate",
+    "non_claims"
+  ],
+  "properties": {
+    "schema_version": {"const": "asi_stack.narration_toolchain.v1"},
+    "toolchain_id": {"type": "string", "minLength": 20},
+    "qualification_state": {
+      "enum": [
+        "candidate",
+        "qualified_for_five_pilot_production",
+        "qualified_for_all_chapters"
+      ]
+    },
+    "runtime": {"type": "object"},
+    "synthesis": {
+      "type": "object",
+      "required": [
+        "implementation",
+        "version",
+        "implementation_license",
+        "model_repository",
+        "model_revision",
+        "model_license",
+        "config_sha256",
+        "weights_sha256",
+        "voice",
+        "voice_sha256",
+        "speed",
+        "sample_rate",
+        "channels"
+      ],
+      "properties": {
+        "implementation": {"const": "kokoro-mlx"},
+        "version": {"const": "0.1.2"},
+        "implementation_license": {"const": "MIT"},
+        "model_license": {"const": "Apache-2.0"},
+        "model_revision": {"pattern": "^[0-9a-f]{40}$"},
+        "config_sha256": {"pattern": "^[0-9a-f]{64}$"},
+        "weights_sha256": {"pattern": "^[0-9a-f]{64}$"},
+        "voice_sha256": {"pattern": "^[0-9a-f]{64}$"},
+        "speed": {"type": "number", "minimum": 0.8, "maximum": 1.3},
+        "sample_rate": {"const": 24000},
+        "channels": {"const": 1}
+      },
+      "additionalProperties": true
+    },
+    "verification": {
+      "type": "object",
+      "required": [
+        "implementation",
+        "version",
+        "implementation_license",
+        "model_repository",
+        "model_revision",
+        "model_config_sha256",
+        "model_weights_sha256",
+        "maximum_content_normalized_word_error_rate",
+        "required_checks"
+      ],
+      "properties": {
+        "implementation": {"const": "mlx-whisper"},
+        "version": {"const": "0.4.3"},
+        "implementation_license": {"const": "MIT"},
+        "model_revision": {"pattern": "^[0-9a-f]{40}$"},
+        "model_config_sha256": {"pattern": "^[0-9a-f]{64}$"},
+        "model_weights_sha256": {"pattern": "^[0-9a-f]{64}$"},
+        "maximum_content_normalized_word_error_rate": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 0.05
+        },
+        "required_checks": {"type": "array", "minItems": 6, "uniqueItems": true}
+      },
+      "additionalProperties": true
+    },
+    "tracked_inputs": {"type": "object"},
+    "rights_and_disclosure": {
+      "type": "object",
+      "required": [
+        "publication_rights_state",
+        "required_video_description_disclosure",
+        "human_voice_impersonation_claimed",
+        "warranty_claimed"
+      ],
+      "properties": {
+        "publication_rights_state": {
+          "const": "cleared_under_recorded_open_source_and_model_licenses"
+        },
+        "required_video_description_disclosure": {"type": "string", "minLength": 40},
+        "human_voice_impersonation_claimed": {"const": false},
+        "warranty_claimed": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "storage_boundary": {"type": "object"},
+    "upgrade_gate": {"type": "string", "minLength": 40},
+    "non_claims": {"type": "array", "minItems": 4, "uniqueItems": true}
+  },
+  "additionalProperties": false
+}

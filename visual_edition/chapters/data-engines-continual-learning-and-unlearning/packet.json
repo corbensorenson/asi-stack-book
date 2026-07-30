@@ -1,0 +1,162 @@
+{
+  "schema_version": "asi_stack.visual_chapter_packet.v1",
+  "video_id": "asi-video-data-engines-continual-learning-and-unlearning",
+  "chapter_id": "data-engines-continual-learning-and-unlearning",
+  "chapter_path": "chapters/data-engines-continual-learning-and-unlearning.qmd",
+  "chapter_sha256": "8a0c8702168381ea41729b255aa20fb2bf5e07735329eafdebd10e6036e6f5cf",
+  "source_commit": "f10ef079ecfeb48503407d67832a0251f77c2c78",
+  "pilot": false,
+  "lifecycle_state": "ready_not_published",
+  "claim_bindings": [
+    {
+      "claim_id": "data-engines-continual-learning-and-unlearning.core",
+      "claim_label": "Design rationale",
+      "support_state": "argument"
+    }
+  ],
+  "assigned_source_ids": [
+    "ext_bourtoule_machine_unlearning_2021",
+    "deterministic_capability_compilation",
+    "platonic_world_model",
+    "ext_shumailov_model_collapse_2023",
+    "ext_gerstgrasser_data_accumulation_2024",
+    "theseus_synthetic_data_curation",
+    "ext_w3c_prov_o_2013",
+    "ext_mlcommons_croissant_1_1_2026",
+    "ext_muse_unlearning_2025",
+    "ext_unlearning_benchmarks_weak_2024",
+    "ext_openunlearning_2025",
+    "qcsa_whitepaper",
+    "ext_v_jepa_2_2025",
+    "ext_influence_functions_2017",
+    "ext_curriculum_learning_2009"
+  ],
+  "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result.",
+  "required_content": {
+    "problem": "A self-improving stack needs to decide which data and feedback may enter future learning without confusing an intake decision with a capability result, a privacy guarantee, or proof that a model has forgotten a record. Training corpora, synthetic-data pipelines, replay buffers, and deletion requests are often handled as separate operational concerns, leaving provenance, contamination control, retention, distributional trade-offs, downstream descendants, and evidence effects without one governable lifecycle.",
+    "core_mechanism": "Data Engines, Continual Learning, and Unlearning owns a datum-, cohort-, provenance-, rights-, split-, contamination-, learning-lane-, retention-, checkpoint-authority-, full-state-inventory-, descendant-, deletion-request-, claim-axis-, consumer-, environment-, and time-specific Data-and-Descendant Custody Lease: before learning or deletion, it binds admissible use, evaluation exclusions, synthetic and transformation lineage, coverage and distribution residuals, model/optimizer/scheduler/RNG/cache/backup/descendant state, prospective checkpoint authority, retention and replay, deletion propagation, verification, rollback, expiry, and terminal custody; behavioral cohort change, causal influence reduction, privacy leakage reduction, lineage invalidation, legal compliance, and storage or backup erasure remain separate claims, and no receipt, checksum, exclusion, invalidation, benchmark score, rollback match.",
+    "worked_trace": "The exact current minimum preserves all fifteen legacy data-admission, full-state, and unlearning-claim route theorems; the four-scenario admission probe; the 24-surface/15-transaction full-state bridge; and the three-seed/twelve-arm small-model update result inside an eight-stage, 82-route custody/update/deletion lifecycle with two composed Lean traces, 96/96 route mutations, 3/3 cross-stage mutations, one bounded custody handoff, and one protocol-version-2 readmission witness. Influence remains unestablished, storage erasure remains zero, all four affected claims remain no-change, and no source/rights truth, semantic contamination, foundation-model learning, privacy/legal/backup/external-descendant erasure, production rollback, transfer, chapter-core transition, or SOTA result exists.",
+    "failure_boundary": "Provenance laundering relabels transformed, distilled, generated, retrieved, replayed, inferred, or mixed data as origin-complete source material. Metadata theater treats a valid schema, checksum, license field, or PROV/Croissant-shaped record as proof of integrity, representativeness, lawful use, fitness, privacy, or safety. Exact-overlap checks miss semantic leakage, benchmark memorization, near duplicates, indirect exposure, contamination, subgroup loss, or distribution shift. Synthetic replacement collapses coverage and tails, while indiscriminate accumulation retains poisoned, private, obsolete, low-quality, or revoked material.",
+    "evidence_state": "This chapter remains Design rationale at argument support. Its contracts, examples, tests, or local artifacts establish only their encoded scope. Missing bound provenance, rights, or authority blocks the reachable custody lifecycle before data admission. Missing split exclusions or a contamination-check record blocks the reachable custody lifecycle before admission. A complete admission record advances only to full-state binding and does not establish data quality, training, deletion, or support.",
+    "non_claims": "No chapter claim or evidence state is promoted by this visual. A named mechanism is not proof of correct implementation or useful deployment. A local check or formal model does not establish real-world enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.",
+    "handoff": "The next chapter is Scientific Discovery and Experimental Governance. It takes responsibility for AI-assisted science closes a loop from research objective and hypothesis through design, simulation or instrument control, measurement, analysis, causal or statistical claim, replication, dual-use review, and evidence handoff."
+  },
+  "artifacts": {
+    "storyboard": "visual_edition/chapters/data-engines-continual-learning-and-unlearning/storyboard.md",
+    "scene_code": "visual_edition/chapters/data-engines-continual-learning-and-unlearning/scene.py",
+    "narration_script": "visual_edition/chapters/data-engines-continual-learning-and-unlearning/narration.txt",
+    "captions": "visual_edition/chapters/data-engines-continual-learning-and-unlearning/captions.vtt",
+    "descriptive_transcript": "visual_edition/chapters/data-engines-continual-learning-and-unlearning/transcript.md",
+    "thumbnail": "visual_edition/chapters/data-engines-continual-learning-and-unlearning/thumbnail.svg",
+    "scene_spec": "visual_edition/chapters/data-engines-continual-learning-and-unlearning/scene_spec.json",
+    "thumbnail_alt_text": "A governed before after diagram for Data Engines, Continual Learning, and Unlearning shows three named mechanism cards above a labeled failure and evidence boundary."
+  },
+  "render_receipt": {
+    "receipt_state": "current_final_av_master",
+    "validation_state": "validated",
+    "rendered_at_utc": "2026-07-30T03:43:04Z",
+    "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+    "toolchain_qualification": "qualified_for_all_non_latex_chapters",
+    "render_profile": "final_av_master",
+    "command": "Render the exact-timing ChapterVisualAbstract with pinned ManimCE 0.20.1 at 1920x1080/30, render pinned Kokoro-82M af_heart narration at speed 1.08 with a hard maximum of 300 characters per synthesis call and -16 LUFS, then align all seven visual scenes to the exact audio paragraph boundaries and mux with FFmpeg 8.0.1 as H.264 CRF 18 yuv420p plus AAC-LC 192 kb/s 48 kHz mono.",
+    "duration_seconds": 318.733008,
+    "pixel_width": 1920,
+    "pixel_height": 1080,
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "output_sha256": "4e596221e94985a202610e277c60d5c6c856e4cab020af6c60293d148710cd43",
+    "mux_receipt_sha256": "8479aed34771a347fdcb8a2158be5a56428f86bec2317f80ee31fbafe1218652",
+    "output_storage": "ignored build/visual_edition media only",
+    "visual_review": {
+      "draft_sample_seconds": [
+        18.872,
+        72.202,
+        136.327,
+        192.802,
+        238.707,
+        271.843,
+        302.303
+      ],
+      "release_sample_seconds": [
+        72.202,
+        271.843
+      ],
+      "result": "pass",
+      "review_scope": "Exact mux-receipt midpoint sampling across all seven narration scenes checked composition, legibility, persistent labels, color-plus-shape semantics, evidence ceiling, non-claims, end-card identity, and absence of clipping or overflowing text."
+    },
+    "audio_master": {
+      "identity": "Kokoro-82M bf16 af_heart via kokoro-mlx 0.1.2 at speed 1.08",
+      "provenance": "Locally generated from the canonical narration with the pinned Apache-2.0 Kokoro-82M model and MIT kokoro-mlx implementation recorded in visual_edition/narration_toolchain.json.",
+      "publication_rights_state": "cleared",
+      "duration_seconds": 318.733008,
+      "sha256": "f68cdaa1832160e15f7a0cc649ecd67e6f23ecd0faaaf43120d5903e657f0cea"
+    },
+    "caption_review": {
+      "state": "machine_audited",
+      "audit_method": "Exact receipt-derived canonical timing plus local MLX Whisper transcript comparison and complete beginning/end coverage checks.",
+      "reviewed_against_audio_sha256": "f68cdaa1832160e15f7a0cc649ecd67e6f23ecd0faaaf43120d5903e657f0cea",
+      "asr_model": "mlx-community/whisper-small.en-mlx@52a88bf6e98b114a210c21bb83e22d6e1505cb73",
+      "asr_word_error_rate": 0.027778,
+      "terminology": "pass",
+      "timing": "pass",
+      "non_speech_information": "pass",
+      "material_visual_changes": "described_in_adjacent_transcript"
+    },
+    "artifact_sha256": {
+      "storyboard": "4604d80d6af312819eba290a428b96f0572c22cbbb5d1fc2240002cc076ab175",
+      "scene_code": "8d6bcfa65e00583ce113d7659fb26f1992ff37c87d8686aee545dc0f6edce06c",
+      "narration_script": "f559c9ffd24e681ad9400830e7dc1c66207a195ba9c8b34cebd9f5757675ec32",
+      "captions": "42e3733b0407ce5f685abe404c267574924726de882973dc928467c53bad6efc",
+      "descriptive_transcript": "16d4e53f95709698890e14f1b7f3925e44f3468e39fc56f0d2895cc14098f01f",
+      "thumbnail": "b5b04036de2464d4371e5d70e7bb4488099af01e6c83ee442f484324a1da131c",
+      "scene_spec": "a6217b07a233bbd1b16e50db96e6d534864cffdb737b541f7b4f9b389c667cef"
+    },
+    "remaining_release_gates": [
+      "obtain exact action-time authority before any YouTube or playlist mutation"
+    ]
+  },
+  "youtube": {
+    "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+    "video_id": null,
+    "watch_url": null,
+    "playlist_id": null,
+    "generation": 0,
+    "publication_state": "not_authorized",
+    "uploaded_output_sha256": null,
+    "bound_chapter_sha256": null,
+    "bound_source_commit": null,
+    "published_at_utc": null,
+    "platform_receipt_path": null,
+    "supersedes_video_id": null
+  },
+  "quarto_embed": {
+    "state": "absent_until_published",
+    "chapter_anchor": "visual-abstract",
+    "frame_title": "Visual abstract: Data Engines, Continual Learning, and Unlearning",
+    "aria_label": "Play the visual abstract for Data Engines, Continual Learning, and Unlearning"
+  },
+  "staleness": {
+    "state": "current",
+    "checked_chapter_sha256": "8a0c8702168381ea41729b255aa20fb2bf5e07735329eafdebd10e6036e6f5cf",
+    "triggers": [
+      "core_claim",
+      "mechanism",
+      "worked_trace",
+      "evidence_state",
+      "non_claim",
+      "material_source",
+      "chapter_identity",
+      "handoff",
+      "public_url"
+    ]
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This derivative video does not promote or otherwise change any book claim.",
+    "The validated local final master is not a YouTube upload or a public publication.",
+    "Automated intelligibility and caption audits do not establish that every listener will prefer the synthetic voice.",
+    "A successful animation render does not establish deployment, safety, efficiency, transfer, state of the art, AGI, or ASI."
+  ]
+}

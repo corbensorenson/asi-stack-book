@@ -1,0 +1,156 @@
+{
+  "schema_version": "asi_stack.visual_chapter_packet.v1",
+  "video_id": "asi-video-dangerous-capability-domains-and-misuse-uplift",
+  "chapter_id": "dangerous-capability-domains-and-misuse-uplift",
+  "chapter_path": "chapters/dangerous-capability-domains-and-misuse-uplift.qmd",
+  "chapter_sha256": "ac1d4f76782a429696fcb13dbb11407695d5686780f8bfe89e31bf33e2407579",
+  "source_commit": "f10ef079ecfeb48503407d67832a0251f77c2c78",
+  "pilot": false,
+  "lifecycle_state": "ready_not_published",
+  "claim_bindings": [
+    {
+      "claim_id": "dangerous-capability-domains-and-misuse-uplift.core",
+      "claim_label": "Design rationale",
+      "support_state": "argument"
+    }
+  ],
+  "assigned_source_ids": [
+    "ext_model_evaluation_extreme_risks_2023",
+    "ext_openai_preparedness_framework_2025",
+    "ext_singapore_consensus_2026",
+    "ext_international_ai_safety_report_2026",
+    "ext_openai_worst_case_open_weight_risks_2025",
+    "ext_aisi_misuse_safeguards_safety_case_2026",
+    "ext_anthropic_responsible_scaling_policy_3_4_2026",
+    "ext_aisi_frontier_ai_trends_2025",
+    "benchmaxxing"
+  ],
+  "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result.",
+  "required_content": {
+    "problem": "Capability-threshold policies require domain-specific evidence about whether a model can materially increase an actor's ability to cause harm, yet the stack has no owner for CBRN, offensive cyber, psychological manipulation, or the science of measuring model-caused uplift. Knowledge quizzes, refusal rates, benchmark scores, one red team, or a capability label cannot identify real actor uplift. They omit baseline expertise, tool and scaffold access, multi-step completion, bottlenecks outside the model, elicitation quality, safeguards, substitution, uncertainty, and the danger created by the evaluation itself.",
+    "core_mechanism": "Dangerous-capability authority should be based on a versioned domain threat model and an uplift dossier that separates latent capability, elicited performance, propensity, safeguard bypass, actor uplift, and realized harm; preserves expertise, tools, assistance, attempts, uncertainty, and sensitive-detail boundaries; and routes only bounded findings into thresholds, release, monitoring, and resilience decisions. Decompose each domain into actor, objective, access, prerequisites, bottlenecks, model contribution, external controls, consequences, and safe evaluation envelope. Use controlled uplift studies that compare matched actors with and without bounded model assistance while stratifying prior expertise and preserving all attempts.",
+    "worked_trace": "Create a public-safe threat-model and uplift-dossier format, then run a harmless analogue study with stratified participants or competent agents, matched assistance, known-positive and known-negative controls, blinded scoring, complete attempt logs, and no real hazardous materials or targets. Demonstrate that the instrument can distinguish a real assistance effect before using a null result. Use controlled uplift studies that compare matched actors with and without bounded model assistance while stratifying prior expertise and preserving all attempts. Triangulate knowledge, workflow, long-horizon, expert-probing, safeguard-bypass, and trend evaluations without collapsing them into one score.",
+    "failure_boundary": "knowledge benchmark substituted for operational uplift refusal behavior substituted for latent capability expertise imbalance between arms weak elicitation or scaffold",
+    "evidence_state": "This chapter remains Design rationale at argument support. Its contracts, examples, tests, or local artifacts establish only their encoded scope. A finite dangerous-capability dossier may hand off only when model, threat, cohort, access, evaluator, uncertainty, expiry, and maximum inference are present; no theorem establishes dangerous capability or safety. Every result is bound to an exact model, checkpoint, scaffold, tools, access level, actor cohort, domain, date, and evaluator. A negative result is interpretable only after positive-control, elicitation, sensitivity, and task-validity gates pass.",
+    "non_claims": "No chapter claim or evidence state is promoted by this visual. A named mechanism is not proof of correct implementation or useful deployment. A local check or formal model does not establish real-world enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.",
+    "handoff": "The next chapter is Military AI, Autonomous Weapons, and Strategic Stability. It takes responsibility for Military AI can change sensing, targeting, command timing, warning interpretation, autonomous engagement, and adversary expectations inside already dangerous strategic systems."
+  },
+  "artifacts": {
+    "storyboard": "visual_edition/chapters/dangerous-capability-domains-and-misuse-uplift/storyboard.md",
+    "scene_code": "visual_edition/chapters/dangerous-capability-domains-and-misuse-uplift/scene.py",
+    "narration_script": "visual_edition/chapters/dangerous-capability-domains-and-misuse-uplift/narration.txt",
+    "captions": "visual_edition/chapters/dangerous-capability-domains-and-misuse-uplift/captions.vtt",
+    "descriptive_transcript": "visual_edition/chapters/dangerous-capability-domains-and-misuse-uplift/transcript.md",
+    "thumbnail": "visual_edition/chapters/dangerous-capability-domains-and-misuse-uplift/thumbnail.svg",
+    "scene_spec": "visual_edition/chapters/dangerous-capability-domains-and-misuse-uplift/scene_spec.json",
+    "thumbnail_alt_text": "A governed route diagram for Dangerous Capability Domains and Misuse Uplift shows three named mechanism cards above a labeled failure and evidence boundary."
+  },
+  "render_receipt": {
+    "receipt_state": "current_final_av_master",
+    "validation_state": "validated",
+    "rendered_at_utc": "2026-07-30T03:06:29Z",
+    "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+    "toolchain_qualification": "qualified_for_all_non_latex_chapters",
+    "render_profile": "final_av_master",
+    "command": "Render the exact-timing ChapterVisualAbstract with pinned ManimCE 0.20.1 at 1920x1080/30, render pinned Kokoro-82M af_heart narration at speed 1.08 with a hard maximum of 300 characters per synthesis call and -16 LUFS, then align all seven visual scenes to the exact audio paragraph boundaries and mux with FFmpeg 8.0.1 as H.264 CRF 18 yuv420p plus AAC-LC 192 kb/s 48 kHz mono.",
+    "duration_seconds": 275.24,
+    "pixel_width": 1920,
+    "pixel_height": 1080,
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "output_sha256": "c41ed343fafe2319cfb6cf75a1a4fab0cc768ca957016a40dfa327c6daa861d3",
+    "mux_receipt_sha256": "108860430a1e742322216280400e396f0290ef796451f663657800229f02aa00",
+    "output_storage": "ignored build/visual_edition media only",
+    "visual_review": {
+      "draft_sample_seconds": [
+        23.672,
+        72.59,
+        122.205,
+        157.662,
+        192.36,
+        230.007,
+        259.642
+      ],
+      "release_sample_seconds": [
+        72.59,
+        230.007
+      ],
+      "result": "pass",
+      "review_scope": "Exact mux-receipt midpoint sampling across all seven narration scenes checked composition, legibility, persistent labels, color-plus-shape semantics, evidence ceiling, non-claims, end-card identity, and absence of clipping or overflowing text."
+    },
+    "audio_master": {
+      "identity": "Kokoro-82M bf16 af_heart via kokoro-mlx 0.1.2 at speed 1.08",
+      "provenance": "Locally generated from the canonical narration with the pinned Apache-2.0 Kokoro-82M model and MIT kokoro-mlx implementation recorded in visual_edition/narration_toolchain.json.",
+      "publication_rights_state": "cleared",
+      "duration_seconds": 275.24,
+      "sha256": "ee932cdd4626871ae60752f5bf66b393043d79fb96fdcafcab45cfc198b54d9e"
+    },
+    "caption_review": {
+      "state": "machine_audited",
+      "audit_method": "Exact receipt-derived canonical timing plus local MLX Whisper transcript comparison and complete beginning/end coverage checks.",
+      "reviewed_against_audio_sha256": "ee932cdd4626871ae60752f5bf66b393043d79fb96fdcafcab45cfc198b54d9e",
+      "asr_model": "mlx-community/whisper-small.en-mlx@52a88bf6e98b114a210c21bb83e22d6e1505cb73",
+      "asr_word_error_rate": 0.014085,
+      "terminology": "pass",
+      "timing": "pass",
+      "non_speech_information": "pass",
+      "material_visual_changes": "described_in_adjacent_transcript"
+    },
+    "artifact_sha256": {
+      "storyboard": "0cc25bc44ecebe9a6cf04a3208e0d3481db146a21228d5fbbb68c88cca0b1a92",
+      "scene_code": "a13619e6ac2fbf41eed87c8455fc4cd47d912243e584d7d5862563dcffcc27a5",
+      "narration_script": "c6d8c2a8f4f3f97afecee72745e29b3af957c9f8d4988090a2683d00097ac47c",
+      "captions": "af60449b4d556479f3b2f98a3e8790a471376f572916070ecc37c9fb8542fead",
+      "descriptive_transcript": "688242226aa81e8e2c19746588bef179ed1d90fd1394dc5b26219c956c654cfb",
+      "thumbnail": "b16f392cbc63715879b9d2f1016268f263da0a872f30886fcd014e84f1425d6e",
+      "scene_spec": "0302e5298eb09711045322bfb51b9eab7be2abf4bfdac76356e4e1bb27762ca3"
+    },
+    "remaining_release_gates": [
+      "obtain exact action-time authority before any YouTube or playlist mutation"
+    ]
+  },
+  "youtube": {
+    "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+    "video_id": null,
+    "watch_url": null,
+    "playlist_id": null,
+    "generation": 0,
+    "publication_state": "not_authorized",
+    "uploaded_output_sha256": null,
+    "bound_chapter_sha256": null,
+    "bound_source_commit": null,
+    "published_at_utc": null,
+    "platform_receipt_path": null,
+    "supersedes_video_id": null
+  },
+  "quarto_embed": {
+    "state": "absent_until_published",
+    "chapter_anchor": "visual-abstract",
+    "frame_title": "Visual abstract: Dangerous Capability Domains and Misuse Uplift",
+    "aria_label": "Play the visual abstract for Dangerous Capability Domains and Misuse Uplift"
+  },
+  "staleness": {
+    "state": "current",
+    "checked_chapter_sha256": "ac1d4f76782a429696fcb13dbb11407695d5686780f8bfe89e31bf33e2407579",
+    "triggers": [
+      "core_claim",
+      "mechanism",
+      "worked_trace",
+      "evidence_state",
+      "non_claim",
+      "material_source",
+      "chapter_identity",
+      "handoff",
+      "public_url"
+    ]
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This derivative video does not promote or otherwise change any book claim.",
+    "The validated local final master is not a YouTube upload or a public publication.",
+    "Automated intelligibility and caption audits do not establish that every listener will prefer the synthetic voice.",
+    "A successful animation render does not establish deployment, safety, efficiency, transfer, state of the art, AGI, or ASI."
+  ]
+}

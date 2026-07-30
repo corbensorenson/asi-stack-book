@@ -1,0 +1,159 @@
+{
+  "schema_version": "asi_stack.visual_chapter_packet.v1",
+  "video_id": "asi-video-privacy-data-rights-and-information-flow-governance",
+  "chapter_id": "privacy-data-rights-and-information-flow-governance",
+  "chapter_path": "chapters/privacy-data-rights-and-information-flow-governance.qmd",
+  "chapter_sha256": "8941bd2fd7c63a6f44c830591763af89ca7d76657feb282fc37037c3331f9370",
+  "source_commit": "f10ef079ecfeb48503407d67832a0251f77c2c78",
+  "pilot": false,
+  "lifecycle_state": "ready_not_published",
+  "claim_bindings": [
+    {
+      "claim_id": "privacy-data-rights-and-information-flow-governance.core",
+      "claim_label": "Design rationale",
+      "support_state": "argument"
+    }
+  ],
+  "assigned_source_ids": [
+    "ext_nist_privacy_framework_2020",
+    "ext_eu_gdpr_2016",
+    "ext_w3c_dpv_2024",
+    "ext_abadi_dpsgd_2016",
+    "ext_algospec_purpose_limitation_2024",
+    "ext_carlini_training_data_extraction_2021",
+    "ext_choquette_choo_label_only_mia_2021",
+    "ext_nist_differential_privacy_2025",
+    "ext_mahloujifar_fdp_audit_2025",
+    "theseus_synthetic_data_curation",
+    "ext_nist_privacy_enhancing_cryptography_2026",
+    "ext_who_neurotechnology_landscape_2025"
+  ],
+  "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result.",
+  "required_content": {
+    "problem": "A system can preserve confidentiality and pass access checks while authorized collection, linkage, inference, memory, training, sharing, retention, or derivatives violate purpose, minimization, privacy expectations, or executable rights. Access control, consent text, a DP label, a low observed attack rate, one deleted row, a changed answer, or a closed rights ticket cannot establish purpose compatibility, privacy, complete propagation, legal compliance, or total forgetting.",
+    "core_mechanism": "An information use is eligible for bounded execution only when a prospectively declared record binds affected parties, exact purpose and processing, claimed authority and jurisdiction, recipients, retention, minimization, complete-enough flow and derivatives, cross-user boundaries, privacy unit, adjacency, accountant and budget where applicable, threat model and attack plan, rights state and remedy, exceptions, residual copies and influence, costs, and non-authorities; no individual control or receipt alone establishes privacy, legal compliance, total erasure, behavioral forgetting, influence removal, support, readiness, release, transfer, or SOTA. Name subjects, affected groups, and unknown-identity routes.",
+    "worked_trace": "Build a synthetic lifecycle transaction and then a prospectively frozen natural small-model/memory campaign comparing ordinary, access-only, minimization, DP, purpose-bound, and competent remediation arms under strong positive-controlled attacks, complete descendant rights workflows, at least three seeds, independent evaluation, and joint utility/privacy/rights/cost outcomes. Bind exact purpose, operation, claimed authority, jurisdiction, recipients, retention, expiry, and objection state. Test a less-data alternative and admit only necessary fields and granularity. Map context, memory, training, inference, output, audit, sharing, cache, backup, checkpoint, and derivative flows while retaining unknowns.",
+    "failure_boundary": "purpose drift consent laundering minimization theater cross-user leakage",
+    "evidence_state": "This chapter remains Design rationale at argument support. Its contracts, examples, tests, or local artifacts establish only their encoded scope. An accepted finite information use requires matching purpose and authority, minimization, complete-enough flow, and competent privacy evaluation. An accepted bounded receipt preserves storage, behavior, influence, privacy, and legal-compliance separation and refuses authority laundering. less-data alternatives are tested",
+    "non_claims": "No chapter claim or evidence state is promoted by this visual. A named mechanism is not proof of correct implementation or useful deployment. A local check or formal model does not establish real-world enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.",
+    "handoff": "The next chapter is Confidential and Verifiable AI Computation. It takes responsibility for AI computation increasingly crosses distrust boundaries: a user may need to hide inputs, a provider may need to protect weights, an auditor may need to verify the executed artifact."
+  },
+  "artifacts": {
+    "storyboard": "visual_edition/chapters/privacy-data-rights-and-information-flow-governance/storyboard.md",
+    "scene_code": "visual_edition/chapters/privacy-data-rights-and-information-flow-governance/scene.py",
+    "narration_script": "visual_edition/chapters/privacy-data-rights-and-information-flow-governance/narration.txt",
+    "captions": "visual_edition/chapters/privacy-data-rights-and-information-flow-governance/captions.vtt",
+    "descriptive_transcript": "visual_edition/chapters/privacy-data-rights-and-information-flow-governance/transcript.md",
+    "thumbnail": "visual_edition/chapters/privacy-data-rights-and-information-flow-governance/thumbnail.svg",
+    "scene_spec": "visual_edition/chapters/privacy-data-rights-and-information-flow-governance/scene_spec.json",
+    "thumbnail_alt_text": "A governed state machine diagram for Privacy, Data Rights, and Information-Flow Governance shows three named mechanism cards above a labeled failure and evidence boundary."
+  },
+  "render_receipt": {
+    "receipt_state": "current_final_av_master",
+    "validation_state": "validated",
+    "rendered_at_utc": "2026-07-30T03:12:42Z",
+    "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+    "toolchain_qualification": "qualified_for_all_non_latex_chapters",
+    "render_profile": "final_av_master",
+    "command": "Render the exact-timing ChapterVisualAbstract with pinned ManimCE 0.20.1 at 1920x1080/30, render pinned Kokoro-82M af_heart narration at speed 1.08 with a hard maximum of 300 characters per synthesis call and -16 LUFS, then align all seven visual scenes to the exact audio paragraph boundaries and mux with FFmpeg 8.0.1 as H.264 CRF 18 yuv420p plus AAC-LC 192 kb/s 48 kHz mono.",
+    "duration_seconds": 260.28,
+    "pixel_width": 1920,
+    "pixel_height": 1080,
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "output_sha256": "a91336d310e70ccd02298785b001940c43e88af760da90b90c8ed1ea157a7606",
+    "mux_receipt_sha256": "4b53136fb17d55f389c83fe5cda3f2c5ef8626b40b0b9b1043af3248ea3b3f35",
+    "output_storage": "ignored build/visual_edition media only",
+    "visual_review": {
+      "draft_sample_seconds": [
+        18.387,
+        64.635,
+        121.165,
+        157.587,
+        183.7,
+        216.097,
+        245.207
+      ],
+      "release_sample_seconds": [
+        64.635,
+        216.097
+      ],
+      "result": "pass",
+      "review_scope": "Exact mux-receipt midpoint sampling across all seven narration scenes checked composition, legibility, persistent labels, color-plus-shape semantics, evidence ceiling, non-claims, end-card identity, and absence of clipping or overflowing text."
+    },
+    "audio_master": {
+      "identity": "Kokoro-82M bf16 af_heart via kokoro-mlx 0.1.2 at speed 1.08",
+      "provenance": "Locally generated from the canonical narration with the pinned Apache-2.0 Kokoro-82M model and MIT kokoro-mlx implementation recorded in visual_edition/narration_toolchain.json.",
+      "publication_rights_state": "cleared",
+      "duration_seconds": 260.28,
+      "sha256": "4d171cf1809be40780607621ddb0b4212dc54cb1d67c193b603024427edce514"
+    },
+    "caption_review": {
+      "state": "machine_audited",
+      "audit_method": "Exact receipt-derived canonical timing plus local MLX Whisper transcript comparison and complete beginning/end coverage checks.",
+      "reviewed_against_audio_sha256": "4d171cf1809be40780607621ddb0b4212dc54cb1d67c193b603024427edce514",
+      "asr_model": "mlx-community/whisper-small.en-mlx@52a88bf6e98b114a210c21bb83e22d6e1505cb73",
+      "asr_word_error_rate": 0.009311,
+      "terminology": "pass",
+      "timing": "pass",
+      "non_speech_information": "pass",
+      "material_visual_changes": "described_in_adjacent_transcript"
+    },
+    "artifact_sha256": {
+      "storyboard": "b5ff6211aebf788053c3fa96b576c3637a29ded5e3e28038864a9732f990131f",
+      "scene_code": "196ac6e260df54cdb58e228733acd7b06ced23207f8832ceeb1de973ac26ce7b",
+      "narration_script": "ad53efd47ba0bcb2e67654001f13e7975cc6a099b45efa3ec783a78af9a9dcb8",
+      "captions": "46aa4613ae3690ab6d9ca8c3524eb11bb04a44cae3ff8ca519a244b7a4d3cdd1",
+      "descriptive_transcript": "79f8af332a40d088b28916ebcfaa2b394b4ad772b21dfaa00bd04bba86783b7f",
+      "thumbnail": "5bf59bdb64660a51ea1898ea73a2ab2b082b6aebde5a19313a676baf1fca2e4b",
+      "scene_spec": "19c22bc7c9b443d152c8f744c3ffa8559b8a7d1d2783cd1b89ffde32b4ee2de5"
+    },
+    "remaining_release_gates": [
+      "obtain exact action-time authority before any YouTube or playlist mutation"
+    ]
+  },
+  "youtube": {
+    "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+    "video_id": null,
+    "watch_url": null,
+    "playlist_id": null,
+    "generation": 0,
+    "publication_state": "not_authorized",
+    "uploaded_output_sha256": null,
+    "bound_chapter_sha256": null,
+    "bound_source_commit": null,
+    "published_at_utc": null,
+    "platform_receipt_path": null,
+    "supersedes_video_id": null
+  },
+  "quarto_embed": {
+    "state": "absent_until_published",
+    "chapter_anchor": "visual-abstract",
+    "frame_title": "Visual abstract: Privacy, Data Rights, and Information-Flow Governance",
+    "aria_label": "Play the visual abstract for Privacy, Data Rights, and Information-Flow Governance"
+  },
+  "staleness": {
+    "state": "current",
+    "checked_chapter_sha256": "8941bd2fd7c63a6f44c830591763af89ca7d76657feb282fc37037c3331f9370",
+    "triggers": [
+      "core_claim",
+      "mechanism",
+      "worked_trace",
+      "evidence_state",
+      "non_claim",
+      "material_source",
+      "chapter_identity",
+      "handoff",
+      "public_url"
+    ]
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This derivative video does not promote or otherwise change any book claim.",
+    "The validated local final master is not a YouTube upload or a public publication.",
+    "Automated intelligibility and caption audits do not establish that every listener will prefer the synthetic voice.",
+    "A successful animation render does not establish deployment, safety, efficiency, transfer, state of the art, AGI, or ASI."
+  ]
+}

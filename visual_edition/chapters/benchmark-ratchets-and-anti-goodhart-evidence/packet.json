@@ -1,0 +1,185 @@
+{
+  "schema_version": "asi_stack.visual_chapter_packet.v1",
+  "video_id": "asi-video-benchmark-ratchets-and-anti-goodhart-evidence",
+  "chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
+  "chapter_path": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
+  "chapter_sha256": "25546aeac43b68808534d18d78e1487ec03edfbff39bf09138a144aa09757d26",
+  "source_commit": "f10ef079ecfeb48503407d67832a0251f77c2c78",
+  "pilot": false,
+  "lifecycle_state": "ready_not_published",
+  "claim_bindings": [
+    {
+      "claim_id": "benchmark-ratchets-and-anti-goodhart-evidence.core",
+      "claim_label": "Design rationale",
+      "support_state": "argument"
+    }
+  ],
+  "assigned_source_ids": [
+    "benchmaxxing",
+    "deterministic_capability_compilation",
+    "platonic_world_model",
+    "rmi",
+    "cognitive_loop_closure",
+    "uat",
+    "coherence_exchange",
+    "tokenmana",
+    "moecot",
+    "road_to_agi",
+    "project_theseus_whitepaper",
+    "theseus_architecture_gate",
+    "theseus_self_evolution_system",
+    "theseus_circle_transfer",
+    "ext_mem0_2025",
+    "ext_mlcommons_croissant_1_1_2026",
+    "ext_inspect_ai_2024",
+    "ext_agentdojo_2024",
+    "ext_darwin_godel_machine_2025",
+    "ext_adas_2024",
+    "ext_dynamic_compute_recurrent_transformers_2026",
+    "cca_project",
+    "moecot_manifest_project",
+    "beastbrain_project",
+    "bugbrain_project",
+    "corbens_trainer_project",
+    "corbens_best_model_possible_project",
+    "ext_claw_swe_bench_2026",
+    "ext_muse_unlearning_2025",
+    "ext_unlearning_benchmarks_weak_2024",
+    "ext_openunlearning_2025",
+    "reflexive_router_whitepaper",
+    "kernel_english_residual_compiler",
+    "ext_swe_rebench_v2_2026",
+    "ext_mlperf_training_v6_2026",
+    "relational_dimension_compiler",
+    "ext_cultural_alignment_llms_2024",
+    "ext_multilingual_evaluation_state_2026"
+  ],
+  "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result.",
+  "required_content": {
+    "problem": "The architecture needs a way to move capability claims through evidence without overfitting to fixed benchmarks. Benchmarks can saturate, be gamed, erase regressions, or fail to represent real requirements.",
+    "core_mechanism": "Benchmark Ratchets and Anti-Goodhart Evidence owns a construct-, task-, dataset-, metric-, harness-, model-, checkpoint-, output-, evaluator-, baseline-, retry-lineage-, budget-, environment-, claim-axis-, and time-specific Benchmark Instrument Lease: a score or evaluation event may update only the exact claim whose construct validity, target capacity, data and metric provenance, output binding, contamination and public-calibration boundary, strong baselines and negative controls, complete selection and failure lineage, regression floors, frontier state, uncertainty, costs, causal checks, transfer, residuals, and decision authority survive review; a green fixture, synthetic probe, source-reported result, leaderboard gain, held-out score, saturation label.",
+    "worked_trace": "The exact current minimum is one benchmark-ratchet schema and valid record fixture; one metric-provenance schema with one valid blocked six-project-lineage record and ten rejecting mutations; one synthetic anti-Goodhart harness with two valid records and five expected-invalid controls; one persisted executable fixture result aligned to the same two-valid/five-invalid set; three proof targets; and three local BenchmarkRatchets declarations proving input-general finite decision consequences. Executable fixture totals are not copied into Lean.",
+    "failure_boundary": "A benchmark score substitutes for a defined construct, natural workload, or real consumer need. The target behavior is not expressible by the architecture, prompt, tools, context, action space, or observation channel, but failure is attributed to capability. A build check, schema, fixture, synthetic probe, source-reported number, or replayed headline is presented as empirical capability evidence. Metric origin or transformations are obscured, or a proxy, constant, vacuous, modeled, or source-reported value is labeled measured.",
+    "evidence_state": "This chapter remains Design rationale at argument support. Its contracts, examples, tests, or local artifacts establish only their encoded scope. An accepted readiness-promotion decision in the finite ratchet model requires transfer-or-mutation checks, preserved negative evidence, and preserved regression records. An accepted contaminated benchmark review cannot select readiness promotion in the finite ratchet model. An independent benchmark anti-Goodhart consumer computes two valid fixtures and five rejected controls; separately, retained quantified ratchet theorems require clean transfer-or-mutation checks, negative-evidence preservation, and regression records and reject contaminated promotion.",
+    "non_claims": "No chapter claim or evidence state is promoted by this visual. A named mechanism is not proof of correct implementation or useful deployment. A local check or formal model does not establish real-world enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.",
+    "handoff": "The next chapter is White-Box Evidence, Interpretability, and Activation Governance. It takes responsibility for Behavioral tests can reveal what a model did without identifying the internal features, circuits, representations, or causal pathways that produced it."
+  },
+  "artifacts": {
+    "storyboard": "visual_edition/chapters/benchmark-ratchets-and-anti-goodhart-evidence/storyboard.md",
+    "scene_code": "visual_edition/chapters/benchmark-ratchets-and-anti-goodhart-evidence/scene.py",
+    "narration_script": "visual_edition/chapters/benchmark-ratchets-and-anti-goodhart-evidence/narration.txt",
+    "captions": "visual_edition/chapters/benchmark-ratchets-and-anti-goodhart-evidence/captions.vtt",
+    "descriptive_transcript": "visual_edition/chapters/benchmark-ratchets-and-anti-goodhart-evidence/transcript.md",
+    "thumbnail": "visual_edition/chapters/benchmark-ratchets-and-anti-goodhart-evidence/thumbnail.svg",
+    "scene_spec": "visual_edition/chapters/benchmark-ratchets-and-anti-goodhart-evidence/scene_spec.json",
+    "thumbnail_alt_text": "A governed timeline diagram for Benchmark Ratchets and Anti-Goodhart Evidence shows three named mechanism cards above a labeled failure and evidence boundary."
+  },
+  "render_receipt": {
+    "receipt_state": "current_final_av_master",
+    "validation_state": "validated",
+    "rendered_at_utc": "2026-07-30T03:38:20Z",
+    "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+    "toolchain_qualification": "qualified_for_all_non_latex_chapters",
+    "render_profile": "final_av_master",
+    "command": "Render the exact-timing ChapterVisualAbstract with pinned ManimCE 0.20.1 at 1920x1080/30, render pinned Kokoro-82M af_heart narration at speed 1.08 with a hard maximum of 300 characters per synthesis call and -16 LUFS, then align all seven visual scenes to the exact audio paragraph boundaries and mux with FFmpeg 8.0.1 as H.264 CRF 18 yuv420p plus AAC-LC 192 kb/s 48 kHz mono.",
+    "duration_seconds": 271.266016,
+    "pixel_width": 1920,
+    "pixel_height": 1080,
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "output_sha256": "3d1945fc55d5b880163076752a5fccc45eeed3d9b8b5a391ed899407a2ade78e",
+    "mux_receipt_sha256": "d3a0a0565ed020e0c59dc191332fc7a1b2941ace3e30f8dfe732f19b2c993fac",
+    "output_storage": "ignored build/visual_edition media only",
+    "visual_review": {
+      "draft_sample_seconds": [
+        9.178,
+        47.462,
+        97.093,
+        140.4,
+        188.745,
+        228.343,
+        256.815
+      ],
+      "release_sample_seconds": [
+        47.462,
+        228.343
+      ],
+      "result": "pass",
+      "review_scope": "Exact mux-receipt midpoint sampling across all seven narration scenes checked composition, legibility, persistent labels, color-plus-shape semantics, evidence ceiling, non-claims, end-card identity, and absence of clipping or overflowing text."
+    },
+    "audio_master": {
+      "identity": "Kokoro-82M bf16 af_heart via kokoro-mlx 0.1.2 at speed 1.08",
+      "provenance": "Locally generated from the canonical narration with the pinned Apache-2.0 Kokoro-82M model and MIT kokoro-mlx implementation recorded in visual_edition/narration_toolchain.json.",
+      "publication_rights_state": "cleared",
+      "duration_seconds": 271.266016,
+      "sha256": "ed1890ed8948b0bb290dd5852d9e5191c1ad144fcbe8c9799a96a9940207a781"
+    },
+    "caption_review": {
+      "state": "machine_audited",
+      "audit_method": "Exact receipt-derived canonical timing plus local MLX Whisper transcript comparison and complete beginning/end coverage checks.",
+      "reviewed_against_audio_sha256": "ed1890ed8948b0bb290dd5852d9e5191c1ad144fcbe8c9799a96a9940207a781",
+      "asr_model": "mlx-community/whisper-small.en-mlx@52a88bf6e98b114a210c21bb83e22d6e1505cb73",
+      "asr_word_error_rate": 0.017422,
+      "terminology": "pass",
+      "timing": "pass",
+      "non_speech_information": "pass",
+      "material_visual_changes": "described_in_adjacent_transcript"
+    },
+    "artifact_sha256": {
+      "storyboard": "03f6add94b81f8ccb4fc901d6374feb9cd582d288e4dbc8981b8e133676d318a",
+      "scene_code": "cfcc311a533735268e221424765872a41bf53e5b5957f56be959e8b83a12430f",
+      "narration_script": "033f1f0c643c4afe0306a7ff833be4f14c4fb9e370acbbf408e5402b4283aaef",
+      "captions": "522f39690bb84b9df4b4caeb605d489f93ba29b505bfd8b80311ca4ad5111491",
+      "descriptive_transcript": "ca23ba07da93f2e385be087d828e9be431b7c8a95341f46389f8103abe05ebf0",
+      "thumbnail": "58a34378594599cbf1a5bf5941d8a526f5b37ca19520490dbfe27f2f3fd00a52",
+      "scene_spec": "6a6eefcd300c608ac4eb1b0943e4570be14b7bdfa3c184101a140f77df8b4cf9"
+    },
+    "remaining_release_gates": [
+      "obtain exact action-time authority before any YouTube or playlist mutation"
+    ]
+  },
+  "youtube": {
+    "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+    "video_id": null,
+    "watch_url": null,
+    "playlist_id": null,
+    "generation": 0,
+    "publication_state": "not_authorized",
+    "uploaded_output_sha256": null,
+    "bound_chapter_sha256": null,
+    "bound_source_commit": null,
+    "published_at_utc": null,
+    "platform_receipt_path": null,
+    "supersedes_video_id": null
+  },
+  "quarto_embed": {
+    "state": "absent_until_published",
+    "chapter_anchor": "visual-abstract",
+    "frame_title": "Visual abstract: Benchmark Ratchets and Anti-Goodhart Evidence",
+    "aria_label": "Play the visual abstract for Benchmark Ratchets and Anti-Goodhart Evidence"
+  },
+  "staleness": {
+    "state": "current",
+    "checked_chapter_sha256": "25546aeac43b68808534d18d78e1487ec03edfbff39bf09138a144aa09757d26",
+    "triggers": [
+      "core_claim",
+      "mechanism",
+      "worked_trace",
+      "evidence_state",
+      "non_claim",
+      "material_source",
+      "chapter_identity",
+      "handoff",
+      "public_url"
+    ]
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This derivative video does not promote or otherwise change any book claim.",
+    "The validated local final master is not a YouTube upload or a public publication.",
+    "Automated intelligibility and caption audits do not establish that every listener will prefer the synthetic voice.",
+    "A successful animation render does not establish deployment, safety, efficiency, transfer, state of the art, AGI, or ASI."
+  ]
+}

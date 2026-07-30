@@ -1,0 +1,70 @@
+{
+  "chapter_id": "artifact-graphs-audit-logs-and-replay",
+  "title": "Artifact Graphs, Audit Logs, and Replay",
+  "subtitle": "Execution should produce an artifact graph with audit logs, provenance, replay metadata, and links to claims and tests.",
+  "archetype": "graph",
+  "claim_label": "Design rationale",
+  "evidence_level": "argument",
+  "next_title": "Runtime Adapters, Tool Permissions, and Human Approval",
+  "display": {
+    "problem": "The stack needs durable artifacts and replayable traces so work can be inspected, reused, tested, and improved.",
+    "insufficient": "If outputs are not tied to inputs, tools, context, claims, and logs, later verification and improvement cannot know what happened.",
+    "mechanism": [
+      {
+        "label": "Freeze artifact admission envelope",
+        "detail": "Freeze an artifact admission envelope with stable… authority, rights, retention, and expiry before reuse."
+      },
+      {
+        "label": "Content digests where policy",
+        "detail": "Compute content digests and, where policy matters… display names as mutable locations or projections."
+      },
+      {
+        "label": "Each artifact revision exact",
+        "detail": "Bind each artifact revision to exact source… cost, and residual lineage that actually applied."
+      },
+      {
+        "label": "Append-only superseding audit",
+        "detail": "Record append-only or superseding audit events… retirement with actor and clock boundaries."
+      }
+    ],
+    "trace": [
+      "Freeze artifact admission envelope",
+      "Content digests where policy",
+      "Each artifact revision exact",
+      "Append-only superseding audit"
+    ],
+    "failures": [
+      "Artifact amnesia leaves useful or harmful… claim, test, owner, or residual lineage.",
+      "Path and name authority makes relocation… silently bind the wrong bytes.",
+      "Provenance theater records plausible asserted edges… dependencies, or responsible actors remain unknown.",
+      "Audit-log theater accepts mutable, dropped, selectively… producer-controlled events as a complete reconstruction."
+    ],
+    "proof_targets": [
+      "A reachable artifact lifecycle preserves exact artifact… admission without assigning support or external effects.",
+      "Missing provenance, replay, observation, cross-check, trap, attestation-limit… revocation, or consumer obligations block lifecycle progress.",
+      "The refinement preserves exact replay-packet custody… certificates, and replay validation before reality review."
+    ],
+    "evidence_ceiling": "This chapter remains Design rationale at argument support.",
+    "nonclaims": [
+      "No chapter claim or evidence state is promoted by this visual.",
+      "A named mechanism is not proof of correct implementation or useful deployment.",
+      "A local check or formal model does not establish real-world enforcement.",
+      "No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows."
+    ],
+    "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result."
+  },
+  "timing": {
+    "basis": "exact_narration_paragraph_boundaries",
+    "narration_receipt_sha256": "49a689b48ecaa9712781f44feb1a8b5af13b9a75dda5f2d4d58a0f9eee3bb83f",
+    "target_duration_seconds": 293.76,
+    "scene_endpoints_seconds": [
+      22.05,
+      77.84,
+      134.005,
+      185.97,
+      232.915,
+      260.99,
+      293.76
+    ]
+  }
+}

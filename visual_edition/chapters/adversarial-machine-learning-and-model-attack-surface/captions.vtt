@@ -1,0 +1,241 @@
+WEBVTT
+
+NOTE
+Canonical written narration timed from the exact local narration render receipt.
+Pronunciation-only substitutions are intentionally absent from caption text.
+
+1
+00:00:00.060 --> 00:00:04.972
+This chapter asks a specific question: A learned artifact creates attack
+
+2
+00:00:04.972 --> 00:00:08.990
+surfaces that ordinary application security does not fully own.
+
+3
+00:00:09.330 --> 00:00:14.225
+Attackers can shape training data, perturb inference inputs, implant triggers,
+
+4
+00:00:14.225 --> 00:00:19.121
+adapt to defenses, steal behavior through queries, infer sensitive properties,
+
+5
+00:00:19.121 --> 00:00:24.506
+or exploit multimodal and agentic pathways while the surrounding software remains
+
+6
+00:00:24.506 --> 00:00:25.485
+nominally secure.
+
+7
+00:00:25.825 --> 00:00:30.767
+The tempting shortcut is insufficient: Generic access control, one robustness score,
+
+8
+00:00:30.767 --> 00:00:35.709
+static red teaming, accuracy on clean data, or a single defense
+
+9
+00:00:35.709 --> 00:00:37.955
+cannot characterize a model attack.
+
+10
+00:00:38.555 --> 00:00:43.729
+The chapter's core claim is this: A learned model should receive
+
+11
+00:00:43.729 --> 00:00:48.904
+security authority only through a versioned model-threat contract and attack/defense ledger
+
+12
+00:00:48.904 --> 00:00:54.078
+that binds checkpoint identity, lifecycle stage, attacker knowledge and capability, surface,
+
+13
+00:00:54.078 --> 00:00:55.960
+budget, objective, adaptation, transfer,
+
+14
+00:00:56.300 --> 00:01:02.034
+observed effect, detection, mitigation, utility cost, recovery, residual, and disclosure;
+
+15
+00:01:02.034 --> 00:01:06.622
+clean accuracy, attack failure, benchmark robustness, red-team coverage,
+
+16
+00:01:06.622 --> 00:01:12.930
+or formal certification alone establishes neither general robustness nor secure deployment.
+
+17
+00:01:13.270 --> 00:01:17.691
+Version the threat model by model family, exact checkpoint,
+
+18
+00:01:17.691 --> 00:01:23.094
+data and adaptation lineage, modality, lifecycle stage, access, attacker goal, knowledge,
+
+19
+00:01:23.094 --> 00:01:25.550
+budget, and prohibited real-world effects.
+
+20
+00:01:25.890 --> 00:01:32.565
+Maintain separate evasion, poisoning, backdoor, safeguard-bypass, extraction, inversion, transfer, adaptive, multimodal,
+
+21
+00:01:32.565 --> 00:01:37.420
+and agentic attack lanes with complete attempt denominators.
+
+22
+00:01:38.020 --> 00:01:41.700
+A concrete implementation trace makes the proposal testable.
+
+23
+00:01:41.700 --> 00:01:46.760
+Implement a model-threat record and a safe evaluation harness over public
+
+24
+00:01:46.760 --> 00:01:48.600
+toy or consented models.
+
+25
+00:01:48.940 --> 00:01:53.679
+Include clean, random-noise, known-vulnerable, attack-aware, transfer, and adaptive controls;
+
+26
+00:01:53.679 --> 00:01:59.471
+preserve query and tuning budgets; and report robustness with clean utility,
+
+27
+00:01:59.471 --> 00:02:05.264
+false positives, recovery, latency, and residuals. No result transfers automatically to
+
+28
+00:02:05.264 --> 00:02:07.370
+frontier models or production.
+
+29
+00:02:07.710 --> 00:02:14.385
+Maintain separate evasion, poisoning, backdoor, safeguard-bypass, extraction, inversion, transfer, adaptive, multimodal,
+
+30
+00:02:14.385 --> 00:02:19.240
+and agentic attack lanes with complete attempt denominators.
+
+31
+00:02:19.580 --> 00:02:24.150
+Evaluate defenses against adaptive attacks and matched clean utility;
+
+32
+00:02:24.150 --> 00:02:29.735
+distinguish empirical monitoring, recovery, and bounded certificates by their actual scope.
+
+33
+00:02:30.335 --> 00:02:35.502
+The design can still fail. evasion training-data poisoning clean-label poisoning backdoors
+
+34
+00:02:35.502 --> 00:02:40.668
+and trojans The correct response is to stop, narrow, quarantine, compensate,
+
+35
+00:02:40.668 --> 00:02:45.365
+or retain an owned residual rather than narrate uncertainty away.
+
+36
+00:02:45.965 --> 00:02:51.011
+This chapter remains Design rationale at argument support. Its contracts, examples,
+
+37
+00:02:51.011 --> 00:02:55.140
+tests, or local artifacts establish only their encoded scope.
+
+38
+00:02:55.140 --> 00:03:00.186
+The chapter names proof targets rather than pretending they are already
+
+39
+00:03:00.186 --> 00:03:00.645
+closed.
+
+40
+00:03:00.985 --> 00:03:05.969
+A finite Adversarial Machine Learning and the Model Attack Surface record
+
+41
+00:03:05.969 --> 00:03:10.500
+may hand off only when identity, authority, version, required checks,
+
+42
+00:03:10.500 --> 00:03:15.484
+and residual ownership are present; no theorem grants empirical effectiveness or
+
+43
+00:03:15.484 --> 00:03:16.390
+release authority.
+
+44
+00:03:16.730 --> 00:03:21.653
+A defense is evaluated against an attacker aware of that defense
+
+45
+00:03:21.653 --> 00:03:26.129
+whenever the threat model permits. Clean utility, attacked utility, detection,
+
+46
+00:03:26.129 --> 00:03:29.710
+false positives, recovery, and cost remain jointly visible.
+
+47
+00:03:30.310 --> 00:03:35.274
+No chapter claim or evidence state is promoted by this visual.
+
+48
+00:03:35.274 --> 00:03:40.238
+A named mechanism is not proof of correct implementation or useful
+
+49
+00:03:40.238 --> 00:03:45.202
+deployment. A local check or formal model does not establish real-world
+
+50
+00:03:45.202 --> 00:03:49.715
+enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.
+
+51
+00:03:50.055 --> 00:03:54.530
+These boundaries matter because an explanatory derivative is useful only if
+
+52
+00:03:54.530 --> 00:03:57.785
+it preserves the evidence ceiling of its source.
+
+53
+00:03:58.385 --> 00:04:03.652
+At most, this visual explains the chapter's design rationale at argument
+
+54
+00:04:03.652 --> 00:04:08.440
+support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI,
+
+55
+00:04:08.440 --> 00:04:13.229
+or ASI result. The next chapter is Privacy, Data Rights,
+
+56
+00:04:13.229 --> 00:04:14.665
+and Information-Flow Governance.
+
+57
+00:04:15.005 --> 00:04:20.679
+It takes responsibility for A system can preserve confidentiality and pass
+
+58
+00:04:20.679 --> 00:04:26.352
+access checks while authorized collection, linkage, inference, memory, training, sharing, retention,
+
+59
+00:04:26.352 --> 00:04:31.510
+or derivatives violate purpose, minimization, privacy expectations, or executable rights.

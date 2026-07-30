@@ -1,0 +1,162 @@
+{
+  "schema_version": "asi_stack.visual_chapter_packet.v1",
+  "video_id": "asi-video-governed-world-models-and-reality-grounding",
+  "chapter_id": "governed-world-models-and-reality-grounding",
+  "chapter_path": "chapters/governed-world-models-and-reality-grounding.qmd",
+  "chapter_sha256": "7d980e1a5020e96438933e60528accc6cf71a40f2134daef58f72b2635f75912",
+  "source_commit": "f10ef079ecfeb48503407d67832a0251f77c2c78",
+  "pilot": false,
+  "lifecycle_state": "ready_not_published",
+  "claim_bindings": [
+    {
+      "claim_id": "governed-world-models-and-reality-grounding.core",
+      "claim_label": "Design rationale",
+      "support_state": "argument"
+    }
+  ],
+  "assigned_source_ids": [
+    "platonic_world_model",
+    "deterministic_capability_compilation",
+    "qcsa_whitepaper",
+    "simulation_scaling",
+    "cognitive_compilation",
+    "planforge",
+    "relational_dimension_compiler",
+    "ext_world_models_2018",
+    "ext_dreamer_v3_2025",
+    "ext_v_jepa_2_2025",
+    "ext_toward_causal_representation_learning_2021",
+    "ext_causal_calculus_1995",
+    "ext_deep_ensembles_2017",
+    "ext_conformal_prediction_2021",
+    "ext_wilds_2021"
+  ],
+  "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result.",
+  "required_content": {
+    "problem": "Planning and control fail when an agent's latent or simulated future is mistaken for the world, when prediction error is hidden, or when model updates expand action authority without evidence. A more accurate predictor, larger simulator, or compelling rollout is not enough: open-loop scores can conceal compounding error, partial observability, distribution shift, causal confusion, reward exploitation, and unsafe actions selected from attractive hallucinated futures.",
+    "core_mechanism": "A world model should be governed as a fallible, versioned prediction service whose state, horizon, uncertainty, provenance, and calibration bound which imagined consequences may influence planning and action; observation must repeatedly reconcile imagination with reality. Represent world-model outputs as versioned state-transition hypotheses with provenance, horizon, uncertainty, and validity domains. Separate observation encoding, latent dynamics, decoding, value/reward prediction, and policy use so each can be challenged independently.",
+    "worked_trace": "Build a bounded partially observed control task with two independently trained dynamics models, horizon-conditional calibration, receding observation updates, model-disagreement routing, support-aware action gating, counterfactual receipts, and adversarial tests for exploitation and distribution shift. Separate observation encoding, latent dynamics, decoding, value/reward prediction, and policy use so each can be challenged independently. Calibrate uncertainty by horizon, state region, intervention type, and consequence class. Use receding-horizon observation updates and explicit residuals to reconcile predicted and observed state.",
+    "failure_boundary": "latent hallucination compounding rollout error partial-observation aliasing causal confusion",
+    "evidence_state": "This chapter remains Design rationale at argument support. Its contracts, examples, tests, or local artifacts establish only their encoded scope. In the finite admission model, an unsupported, stale, materially disagreeing, or uncalibrated rollout cannot authorize a consequential action. A material observation residual forces bounded re-estimation, fallback, review, or safe hold before further model-based execution. Observation can override imagination and trigger replanning.",
+    "non_claims": "No chapter claim or evidence state is promoted by this visual. A named mechanism is not proof of correct implementation or useful deployment. A local check or formal model does not establish real-world enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.",
+    "handoff": "The next chapter is Cognitive Compilation and Semantic IR. It takes responsibility for After Planning admits an obligation for lowering, the stack still has to translate it across source contracts, semantic representations, target representations, and concrete artifacts without losing meaning, authority, non-goals."
+  },
+  "artifacts": {
+    "storyboard": "visual_edition/chapters/governed-world-models-and-reality-grounding/storyboard.md",
+    "scene_code": "visual_edition/chapters/governed-world-models-and-reality-grounding/scene.py",
+    "narration_script": "visual_edition/chapters/governed-world-models-and-reality-grounding/narration.txt",
+    "captions": "visual_edition/chapters/governed-world-models-and-reality-grounding/captions.vtt",
+    "descriptive_transcript": "visual_edition/chapters/governed-world-models-and-reality-grounding/transcript.md",
+    "thumbnail": "visual_edition/chapters/governed-world-models-and-reality-grounding/thumbnail.svg",
+    "scene_spec": "visual_edition/chapters/governed-world-models-and-reality-grounding/scene_spec.json",
+    "thumbnail_alt_text": "A governed route diagram for Governed World Models and Reality Grounding shows three named mechanism cards above a labeled failure and evidence boundary."
+  },
+  "render_receipt": {
+    "receipt_state": "current_final_av_master",
+    "validation_state": "validated",
+    "rendered_at_utc": "2026-07-30T03:17:25Z",
+    "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+    "toolchain_qualification": "qualified_for_all_non_latex_chapters",
+    "render_profile": "final_av_master",
+    "command": "Render the exact-timing ChapterVisualAbstract with pinned ManimCE 0.20.1 at 1920x1080/30, render pinned Kokoro-82M af_heart narration at speed 1.08 with a hard maximum of 300 characters per synthesis call and -16 LUFS, then align all seven visual scenes to the exact audio paragraph boundaries and mux with FFmpeg 8.0.1 as H.264 CRF 18 yuv420p plus AAC-LC 192 kb/s 48 kHz mono.",
+    "duration_seconds": 250.3,
+    "pixel_width": 1920,
+    "pixel_height": 1080,
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "output_sha256": "35b1cdbdcc7ad6ad45335c1590604ef8eee54a0e14d6d9b6cd588c8185ff3ed3",
+    "mux_receipt_sha256": "cdbdf0453e94fba9ed4464f72dc3af2daafe75734e69c4752427f9193c789b4d",
+    "output_storage": "ignored build/visual_edition media only",
+    "visual_review": {
+      "draft_sample_seconds": [
+        18.085,
+        58.192,
+        107.385,
+        143.107,
+        170.92,
+        204.217,
+        234.277
+      ],
+      "release_sample_seconds": [
+        58.192,
+        204.217
+      ],
+      "result": "pass",
+      "review_scope": "Exact mux-receipt midpoint sampling across all seven narration scenes checked composition, legibility, persistent labels, color-plus-shape semantics, evidence ceiling, non-claims, end-card identity, and absence of clipping or overflowing text."
+    },
+    "audio_master": {
+      "identity": "Kokoro-82M bf16 af_heart via kokoro-mlx 0.1.2 at speed 1.08",
+      "provenance": "Locally generated from the canonical narration with the pinned Apache-2.0 Kokoro-82M model and MIT kokoro-mlx implementation recorded in visual_edition/narration_toolchain.json.",
+      "publication_rights_state": "cleared",
+      "duration_seconds": 250.3,
+      "sha256": "04449f19a34cc6e31804ca6390779e6dc7ae71846b46c1533bd79f491c6b8605"
+    },
+    "caption_review": {
+      "state": "machine_audited",
+      "audit_method": "Exact receipt-derived canonical timing plus local MLX Whisper transcript comparison and complete beginning/end coverage checks.",
+      "reviewed_against_audio_sha256": "04449f19a34cc6e31804ca6390779e6dc7ae71846b46c1533bd79f491c6b8605",
+      "asr_model": "mlx-community/whisper-small.en-mlx@52a88bf6e98b114a210c21bb83e22d6e1505cb73",
+      "asr_word_error_rate": 0.011742,
+      "terminology": "pass",
+      "timing": "pass",
+      "non_speech_information": "pass",
+      "material_visual_changes": "described_in_adjacent_transcript"
+    },
+    "artifact_sha256": {
+      "storyboard": "feebde48dfa66eaceba909dfe4f863a804eb0e4ed0f02ba0ee97befd88da505e",
+      "scene_code": "c318356958b15b4f539149398411047572f89f6e059f2f787cfe918c01316892",
+      "narration_script": "aa36fd3be416262d3fda00d212517670736078a8d7ce21168d1f6fecd10fa140",
+      "captions": "3faff44ba3e9545b185d19af83e105b5ba6397c74d0563898364c2473140a857",
+      "descriptive_transcript": "93f443035e1b61056a5abf431e4c4d673ea7402b82661dd1a2db0636720ce7f1",
+      "thumbnail": "f9438adce4f76173f5d3cba389e2b68e0f7dae8168064481f1a139fef1213f7d",
+      "scene_spec": "d768df8c3b12c05c5ff2bca4611888b860eb6856b179f2fb2cbbce7ad6527eb9"
+    },
+    "remaining_release_gates": [
+      "obtain exact action-time authority before any YouTube or playlist mutation"
+    ]
+  },
+  "youtube": {
+    "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+    "video_id": null,
+    "watch_url": null,
+    "playlist_id": null,
+    "generation": 0,
+    "publication_state": "not_authorized",
+    "uploaded_output_sha256": null,
+    "bound_chapter_sha256": null,
+    "bound_source_commit": null,
+    "published_at_utc": null,
+    "platform_receipt_path": null,
+    "supersedes_video_id": null
+  },
+  "quarto_embed": {
+    "state": "absent_until_published",
+    "chapter_anchor": "visual-abstract",
+    "frame_title": "Visual abstract: Governed World Models and Reality Grounding",
+    "aria_label": "Play the visual abstract for Governed World Models and Reality Grounding"
+  },
+  "staleness": {
+    "state": "current",
+    "checked_chapter_sha256": "7d980e1a5020e96438933e60528accc6cf71a40f2134daef58f72b2635f75912",
+    "triggers": [
+      "core_claim",
+      "mechanism",
+      "worked_trace",
+      "evidence_state",
+      "non_claim",
+      "material_source",
+      "chapter_identity",
+      "handoff",
+      "public_url"
+    ]
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This derivative video does not promote or otherwise change any book claim.",
+    "The validated local final master is not a YouTube upload or a public publication.",
+    "Automated intelligibility and caption audits do not establish that every listener will prefer the synthetic voice.",
+    "A successful animation render does not establish deployment, safety, efficiency, transfer, state of the art, AGI, or ASI."
+  ]
+}

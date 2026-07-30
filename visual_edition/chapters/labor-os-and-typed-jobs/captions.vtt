@@ -1,0 +1,237 @@
+WEBVTT
+
+NOTE
+Canonical written narration timed from the exact local narration render receipt.
+Pronunciation-only substitutions are intentionally absent from caption text.
+
+1
+00:00:00.060 --> 00:00:05.786
+This chapter asks a specific question: Intelligence must become typed work
+
+2
+00:00:05.786 --> 00:00:11.512
+with lifecycle, permissions, artifacts, logs, and approvals. The tempting shortcut is
+
+3
+00:00:11.512 --> 00:00:17.237
+insufficient: Chat outputs do not provide deterministic job lifecycle, tool isolation,
+
+4
+00:00:17.237 --> 00:00:19.840
+auditability, or repeatable cognitive manufacturing.
+
+5
+00:00:20.440 --> 00:00:24.842
+The chapter's core claim is this: The execution layer should convert
+
+6
+00:00:24.842 --> 00:00:29.245
+plans into typed jobs managed by a governed labor operating system.
+
+7
+00:00:29.585 --> 00:00:34.937
+Freeze one job contract from an accepted contract and dispatchable plan
+
+8
+00:00:34.937 --> 00:00:40.288
+node with exact type, objective, scope, inputs, expected artifacts, acceptance tests,
+
+9
+00:00:40.288 --> 00:00:45.640
+failure behavior, consumer, consequence, risk, authority, rights, budget, deadline, and expiry.
+
+10
+00:00:45.980 --> 00:00:51.720
+Assign stable job, attempt, lease, workspace, adapter invocation, approval, effect, artifact,
+
+11
+00:00:51.720 --> 00:00:57.460
+receipt, residual, and parent identities with causal lineage and idempotency keys.
+
+12
+00:00:57.800 --> 00:01:03.322
+Admit, refuse, defer, split, or quarantine work only after validating parent
+
+13
+00:01:03.322 --> 00:01:08.341
+contract and plan versions, lifecycle state, required inputs, adapter eligibility,
+
+14
+00:01:08.341 --> 00:01:11.855
+resource envelope, authority, rights, and open blockers.
+
+15
+00:01:12.455 --> 00:01:16.485
+A concrete implementation trace makes the proposal testable.
+
+16
+00:01:16.825 --> 00:01:22.592
+The current authored zero-model scaffold has one public typed-job schema,
+
+17
+00:01:22.592 --> 00:01:28.358
+3 valid/10 rejecting plan-execution fixtures, 2 valid/7 rejecting delivery/evidence-readiness traces,
+
+18
+00:01:28.358 --> 00:01:34.702
+2 valid/9 rejecting durable-lifecycle traces, one accepted no-promotion decision for the
+
+19
+00:01:34.702 --> 00:01:35.855
+durable probe,
+
+20
+00:01:36.195 --> 00:01:40.700
+and 27 Lean declarations under 5 public targets.
+
+21
+00:01:40.700 --> 00:01:46.895
+Two declarations project modeled lifecycle/approval predicates, 23 prove finite route or
+
+22
+00:01:46.895 --> 00:01:51.400
+negative-case consequences, and 2 restate authored probe summaries.
+
+23
+00:01:51.740 --> 00:01:58.733
+No scheduler, worker, workspace, secret broker, permission service, approval service,
+
+24
+00:01:58.733 --> 00:02:06.424
+adapter runner, external-effect observer, durable workflow engine, Temporal/Airflow/BPMN/Kubernetes integration, natural workload,
+
+25
+00:02:06.424 --> 00:02:10.620
+useful advantage, causal ablation, reproduction, transfer,
+
+26
+00:02:10.960 --> 00:02:13.140
+or core support effect exists.
+
+27
+00:02:13.740 --> 00:02:18.825
+The design can still fail. Ambient-agent execution allows work or side
+
+28
+00:02:18.825 --> 00:02:23.911
+effects without an admitted typed job, exact parent contract, authority, owner,
+
+29
+00:02:23.911 --> 00:02:28.996
+or terminal receipt. Contract or plan drift executes stale, widened, substituted,
+
+30
+00:02:28.996 --> 00:02:32.695
+or outcome-edited work after the material boundary changed.
+
+31
+00:02:33.035 --> 00:02:37.693
+Lifecycle laundering treats queueing, leasing, running, output, delivery, acknowledgement,
+
+32
+00:02:37.693 --> 00:02:41.315
+or idleness as completion or evidence readiness.
+
+33
+00:02:41.655 --> 00:02:46.729
+Permission and approval laundering widens grants, reuses stale approvals, self-approves,
+
+34
+00:02:46.729 --> 00:02:52.310
+delegates beyond authority, or dispatches irreversible work without the current gate.
+
+35
+00:02:52.650 --> 00:02:56.619
+The correct response is to stop, narrow, quarantine, compensate,
+
+36
+00:02:56.619 --> 00:03:01.030
+or retain an owned residual rather than narrate uncertainty away.
+
+37
+00:03:01.630 --> 00:03:06.676
+This chapter remains Design rationale at argument support. Its contracts, examples,
+
+38
+00:03:06.676 --> 00:03:10.805
+tests, or local artifacts establish only their encoded scope.
+
+39
+00:03:10.805 --> 00:03:15.851
+The chapter names proof targets rather than pretending they are already
+
+40
+00:03:15.851 --> 00:03:16.310
+closed.
+
+41
+00:03:16.650 --> 00:03:22.191
+A reachable versioned typed-job lifecycle preserves exact job, contract, plan, authority,
+
+42
+00:03:22.191 --> 00:03:27.733
+permission, lease, scheduler, and consumer custody from lock through acknowledged closure
+
+43
+00:03:27.733 --> 00:03:30.755
+without assigning support or external effects.
+
+44
+00:03:31.095 --> 00:03:39.364
+Approval, permission, lease, scheduler, retry/idempotency, cancellation, artifact/audit, verification, completion/replay, residual-owner,
+
+45
+00:03:39.364 --> 00:03:44.325
+and consumer-acknowledgment failures block lifecycle progress.
+
+46
+00:03:44.925 --> 00:03:49.889
+No chapter claim or evidence state is promoted by this visual.
+
+47
+00:03:49.889 --> 00:03:54.853
+A named mechanism is not proof of correct implementation or useful
+
+48
+00:03:54.853 --> 00:03:59.817
+deployment. A local check or formal model does not establish real-world
+
+49
+00:03:59.817 --> 00:04:04.330
+enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.
+
+50
+00:04:04.670 --> 00:04:09.145
+These boundaries matter because an explanatory derivative is useful only if
+
+51
+00:04:09.145 --> 00:04:12.400
+it preserves the evidence ceiling of its source.
+
+52
+00:04:13.000 --> 00:04:18.585
+At most, this visual explains the chapter's design rationale at argument
+
+53
+00:04:18.585 --> 00:04:23.662
+support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI,
+
+54
+00:04:23.662 --> 00:04:28.740
+or ASI result. The next chapter is Human-AI Organizations, Delegation,
+
+55
+00:04:28.740 --> 00:04:29.755
+and Accountability.
+
+56
+00:04:30.095 --> 00:04:35.597
+It takes responsibility for Repeated human-AI work changes decision rights, information,
+
+57
+00:04:35.597 --> 00:04:41.099
+skill, workload, incentives, dependence, benefit, and accountability in ways that a
+
+58
+00:04:41.099 --> 00:04:45.100
+typed task or generic human-in-the-loop label cannot govern.

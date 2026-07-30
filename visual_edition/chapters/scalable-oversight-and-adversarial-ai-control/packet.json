@@ -1,0 +1,155 @@
+{
+  "schema_version": "asi_stack.visual_chapter_packet.v1",
+  "video_id": "asi-video-scalable-oversight-and-adversarial-ai-control",
+  "chapter_id": "scalable-oversight-and-adversarial-ai-control",
+  "chapter_path": "chapters/scalable-oversight-and-adversarial-ai-control.qmd",
+  "chapter_sha256": "a8e3592db7d25b6740b7a623d9b6378ba930084780353055a23a8812f22df2c6",
+  "source_commit": "f10ef079ecfeb48503407d67832a0251f77c2c78",
+  "pilot": false,
+  "lifecycle_state": "ready_not_published",
+  "claim_bindings": [
+    {
+      "claim_id": "scalable-oversight-and-adversarial-ai-control.core",
+      "claim_label": "Design rationale",
+      "support_state": "argument"
+    }
+  ],
+  "assigned_source_ids": [
+    "ext_weak_to_strong_generalization_2023",
+    "ext_scalable_oversight_weak_llms_2024",
+    "ext_ai_safety_debate_2018",
+    "verification_bandwidth",
+    "ext_monitorbench_2026",
+    "ext_conversational_persuasion_gpt4_2025",
+    "ext_anthropic_model_persuasiveness_2024",
+    "ext_commercial_persuasion_ai_2026"
+  ],
+  "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result.",
+  "required_content": {
+    "problem": "A system can ask a weaker human or model to judge a stronger system without recording whether the supervisor can see the relevant evidence, whether the protocol is vulnerable to persuasion or correlated failure, what direct-review baseline exists, or who escalates an unresolved result. Unassisted review, AI judges, debate, consultancy, weak-to-strong training, and reviewer ensembles can each improve selected outcomes while failing under evidence-access limits, persuasion, shared dependencies, selective coverage, task leakage, strategic abstention, or an artificially weak baseline.",
+    "core_mechanism": "A governed stack admits scalable oversight only as a versioned, consumer-bound protocol receipt rather than a vote: it prospectively records task, cohort, risk and authority scope; supervisor and system capability envelopes; evidence views; roles, incentives, and dependency graph; informed direct-review baseline; declared outcome-audit path; calibration, coverage, and abstention semantics; persuasion, correlation, operator-cost, and monitorability residuals; escalation owner; expiry; and requalification triggers. The receipt may inform only its permitted review or training consumer through the owning gate and cannot by itself establish reviewer independence, reliable supervision, correctness, safety, support movement, release readiness, or execution authority.",
+    "worked_trace": "The exact current minimum preserves the seven inherited oversight cases in a seven-stage, 58-route oversight-review lifecycle with 65/65 rejecting mutations, twelve ScalableOversightRefinement declarations, one bounded-use handoff, and one protocol-version-2 readmission witness. It runs no model, reviewer, human, debate, consultancy, weak-to-strong learner, natural task, outcome workload, causal intervention, release, deployment, reproduction, transfer, chapter-core transition, or SOTA comparison. Compare assisted oversight with a declared direct-review baseline and retain outcome-audit, calibration, disagreement, and failure records instead of treating a verdict count as success.",
+    "failure_boundary": "Persuasion theater lets a capable advocate win an inadequately calibrated judge without improving truth or safety. Correlated model families, prompts, tools, or information access create false independence across nominally separate reviewers. A weak baseline makes a protocol look helpful while an informed direct-review baseline would perform as well or better. Outcome auditing observes only an easy or selected task cohort and hides capability-gap, calibration, or distribution-shift failures.",
+    "evidence_state": "This chapter remains Design rationale at argument support. Its contracts, examples, tests, or local artifacts establish only their encoded scope. A reachable high-risk review lifecycle without an independent outcome-audit record blocks bounded-use adjudication without mutating lifecycle state or inferring reviewer competence. A complete versioned review lifecycle emits only one bounded-use handoff to its named consumer and assigns neither support nor an external effect. Missing bound evidence views block review recording without mutating lifecycle state.",
+    "non_claims": "No chapter claim or evidence state is promoted by this visual. A named mechanism is not proof of correct implementation or useful deployment. A local check or formal model does not establish real-world enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.",
+    "handoff": "The next chapter is Human Intent as a Formal Input. It takes responsibility for A natural-language request can mix desired outcome, preferences, emotion, assumptions, source and privacy constraints, affected parties, risk tolerance, authority, acceptance evidence, and stop conditions."
+  },
+  "artifacts": {
+    "storyboard": "visual_edition/chapters/scalable-oversight-and-adversarial-ai-control/storyboard.md",
+    "scene_code": "visual_edition/chapters/scalable-oversight-and-adversarial-ai-control/scene.py",
+    "narration_script": "visual_edition/chapters/scalable-oversight-and-adversarial-ai-control/narration.txt",
+    "captions": "visual_edition/chapters/scalable-oversight-and-adversarial-ai-control/captions.vtt",
+    "descriptive_transcript": "visual_edition/chapters/scalable-oversight-and-adversarial-ai-control/transcript.md",
+    "thumbnail": "visual_edition/chapters/scalable-oversight-and-adversarial-ai-control/thumbnail.svg",
+    "scene_spec": "visual_edition/chapters/scalable-oversight-and-adversarial-ai-control/scene_spec.json",
+    "thumbnail_alt_text": "A governed state machine diagram for Scalable Oversight and Adversarial AI Control shows three named mechanism cards above a labeled failure and evidence boundary."
+  },
+  "render_receipt": {
+    "receipt_state": "current_final_av_master",
+    "validation_state": "validated",
+    "rendered_at_utc": "2026-07-30T03:06:55Z",
+    "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+    "toolchain_qualification": "qualified_for_all_non_latex_chapters",
+    "render_profile": "final_av_master",
+    "command": "Render the exact-timing ChapterVisualAbstract with pinned ManimCE 0.20.1 at 1920x1080/30, render pinned Kokoro-82M af_heart narration at speed 1.08 with a hard maximum of 300 characters per synthesis call and -16 LUFS, then align all seven visual scenes to the exact audio paragraph boundaries and mux with FFmpeg 8.0.1 as H.264 CRF 18 yuv420p plus AAC-LC 192 kb/s 48 kHz mono.",
+    "duration_seconds": 289.8,
+    "pixel_width": 1920,
+    "pixel_height": 1080,
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "output_sha256": "d097143ea9609cc10388f636d588dc538236fa2163b3359e719a646db88c9b10",
+    "mux_receipt_sha256": "4c9fdd1217f31c7596d0f4e68b3c8c861a60a31ab4750c995964ce434dd9eba9",
+    "output_storage": "ignored build/visual_edition media only",
+    "visual_review": {
+      "draft_sample_seconds": [
+        21.732,
+        69.487,
+        120.493,
+        167.135,
+        209.98,
+        245.202,
+        274.513
+      ],
+      "release_sample_seconds": [
+        69.487,
+        245.202
+      ],
+      "result": "pass",
+      "review_scope": "Exact mux-receipt midpoint sampling across all seven narration scenes checked composition, legibility, persistent labels, color-plus-shape semantics, evidence ceiling, non-claims, end-card identity, and absence of clipping or overflowing text."
+    },
+    "audio_master": {
+      "identity": "Kokoro-82M bf16 af_heart via kokoro-mlx 0.1.2 at speed 1.08",
+      "provenance": "Locally generated from the canonical narration with the pinned Apache-2.0 Kokoro-82M model and MIT kokoro-mlx implementation recorded in visual_edition/narration_toolchain.json.",
+      "publication_rights_state": "cleared",
+      "duration_seconds": 289.8,
+      "sha256": "2970c827e4a484c37ed75e017d6d9f1f01985b114c0d33f22a250dafcfa75b3e"
+    },
+    "caption_review": {
+      "state": "machine_audited",
+      "audit_method": "Exact receipt-derived canonical timing plus local MLX Whisper transcript comparison and complete beginning/end coverage checks.",
+      "reviewed_against_audio_sha256": "2970c827e4a484c37ed75e017d6d9f1f01985b114c0d33f22a250dafcfa75b3e",
+      "asr_model": "mlx-community/whisper-small.en-mlx@52a88bf6e98b114a210c21bb83e22d6e1505cb73",
+      "asr_word_error_rate": 0.011401,
+      "terminology": "pass",
+      "timing": "pass",
+      "non_speech_information": "pass",
+      "material_visual_changes": "described_in_adjacent_transcript"
+    },
+    "artifact_sha256": {
+      "storyboard": "1242c6842b08b770ab48bbe98a7c58e186cb3d8d4570bdd7435f3c45e0602c90",
+      "scene_code": "791a5598c86e6a859ae963efa0af6653b7a6dc871ff667e31a20a65e40be2303",
+      "narration_script": "89668b69fb69e9cb482bf3fd07455e57c40840b8856494bfa157936ef0af7ea4",
+      "captions": "a5042a7f0df444fe3de8fcbc76fe996a69484ea43b8fa7b3ac3a505a340e226e",
+      "descriptive_transcript": "1bf0d34c5ba06bbebc0db30458761dc1b711dcb39f39ddd70ce68daff59f0dc5",
+      "thumbnail": "836cee1d42098e075741fcd10f93db470b41c7ce7e3a269170d8797724077c4a",
+      "scene_spec": "d6ac22fcfc014fc52859d363d130cec4dc9befc7957631a9d8f7fed2a59d35d4"
+    },
+    "remaining_release_gates": [
+      "obtain exact action-time authority before any YouTube or playlist mutation"
+    ]
+  },
+  "youtube": {
+    "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+    "video_id": null,
+    "watch_url": null,
+    "playlist_id": null,
+    "generation": 0,
+    "publication_state": "not_authorized",
+    "uploaded_output_sha256": null,
+    "bound_chapter_sha256": null,
+    "bound_source_commit": null,
+    "published_at_utc": null,
+    "platform_receipt_path": null,
+    "supersedes_video_id": null
+  },
+  "quarto_embed": {
+    "state": "absent_until_published",
+    "chapter_anchor": "visual-abstract",
+    "frame_title": "Visual abstract: Scalable Oversight and Adversarial AI Control",
+    "aria_label": "Play the visual abstract for Scalable Oversight and Adversarial AI Control"
+  },
+  "staleness": {
+    "state": "current",
+    "checked_chapter_sha256": "a8e3592db7d25b6740b7a623d9b6378ba930084780353055a23a8812f22df2c6",
+    "triggers": [
+      "core_claim",
+      "mechanism",
+      "worked_trace",
+      "evidence_state",
+      "non_claim",
+      "material_source",
+      "chapter_identity",
+      "handoff",
+      "public_url"
+    ]
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This derivative video does not promote or otherwise change any book claim.",
+    "The validated local final master is not a YouTube upload or a public publication.",
+    "Automated intelligibility and caption audits do not establish that every listener will prefer the synthetic voice.",
+    "A successful animation render does not establish deployment, safety, efficiency, transfer, state of the art, AGI, or ASI."
+  ]
+}

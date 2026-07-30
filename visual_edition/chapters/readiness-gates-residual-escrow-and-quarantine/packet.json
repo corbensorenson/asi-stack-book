@@ -1,0 +1,167 @@
+{
+  "schema_version": "asi_stack.visual_chapter_packet.v1",
+  "video_id": "asi-video-readiness-gates-residual-escrow-and-quarantine",
+  "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
+  "chapter_path": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd",
+  "chapter_sha256": "5080ce0698bcb426766e8649f5325cbab16788184f202ab38685443a3f76bc3c",
+  "source_commit": "f10ef079ecfeb48503407d67832a0251f77c2c78",
+  "pilot": false,
+  "lifecycle_state": "ready_not_published",
+  "claim_bindings": [
+    {
+      "claim_id": "readiness-gates-residual-escrow-and-quarantine.core",
+      "claim_label": "Design rationale",
+      "support_state": "argument"
+    }
+  ],
+  "assigned_source_ids": [
+    "rmi",
+    "deterministic_capability_compilation",
+    "benchmaxxing",
+    "scf",
+    "octopus_router",
+    "cognitive_loop_closure",
+    "moecot",
+    "project_theseus_whitepaper",
+    "theseus_architecture_gate",
+    "theseus_self_evolution_system",
+    "cca_project",
+    "moecot_manifest_project",
+    "beastbrain_project",
+    "bugbrain_project",
+    "corbens_trainer_project",
+    "corbens_best_model_possible_project",
+    "ext_darwin_godel_machine_2025",
+    "ext_dont_hallucinate_abstain_2024",
+    "ext_swe_rebench_v2_2026",
+    "precision_contract"
+  ],
+  "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result.",
+  "required_content": {
+    "problem": "Every routable or replaceable capability needs a consumer- and use-specific decision about whether it may enter shadow, canary, qualified, ordinary, diagnostic, quarantined, superseded, or retired operation now, and who owns unresolved obligations afterward. A benchmark score, source report, schema-valid packet, green aggregate, route match, model agreement, or prior qualification cannot by itself establish current routability because it can omit applicability, failed or waived checks, freshness, evaluator dependence, regression floors, authority and rights ceilings, rollback and fallback, inherited residuals, lineage invalidation, load, delayed effects.",
+    "core_mechanism": "For an exact versioned target, consumer, use, workload family, authority and rights envelope, and evaluation horizon, readiness should issue an expiring routability lease only from independently owned gate evidence, complete per-check state, preserved regression floors, inherited residual custody, allowed and blocked routes, monitoring, rollback and fallback obligations, and review triggers; failed, stale, waived, quarantined, superseded, retired, or lineage-invalidated targets cannot enter ordinary use, and split, merge, retrain, replace, rollback, and retirement transitions must preserve affected descendants, artifacts, effects, and residual owners.",
+    "worked_trace": "Four public record schemas; four valid and five invalid readiness/residual scenarios; one quarantined six-project check-lifecycle record and nine invalid mutations; six valid lifecycle transitions and twelve invalid controls; one exact Project Theseus YELLOW currentness import with eight negative controls; bounded post-v2.1 and post-v2.3 calibration failures; two accepted no-promotion readiness/residual transition records; and twenty Lean declarations classified as eight direct predicate/projection checks, eleven derived finite route or negative consequences, and one authored-summary bridge.",
+    "failure_boundary": "Score laundering collapses readiness into one benchmark, aggregate, schema, proof, route score, model vote, or source-reported status. Skipped-as-green converts missing, unknown, not applicable, unattempted, or infrastructure-blocked checks into success. Waiver laundering uses accepted risk or reviewer override as evidence that the waived property passed. Stale qualification survives target, dependency, policy, evaluator, benchmark, authority, rights, environment, workload, or time change.",
+    "evidence_state": "This chapter remains Design rationale at argument support. Its contracts, examples, tests, or local artifacts establish only their encoded scope. A reachable readiness lifecycle preserves exact capability, implementation, model-state, workload, baseline, evaluator, policy, authority, consumer, fallback, and residual custody from candidate through acknowledged terminal closure while separating ordinary release, quarantine, support, and external effects.",
+    "non_claims": "No chapter claim or evidence state is promoted by this visual. A named mechanism is not proof of correct implementation or useful deployment. A local check or formal model does not establish real-world enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.",
+    "handoff": "The next chapter is Personal Compute Hives and Federated Edge Intelligence. It takes responsibility for A governed ASI stack needs an owned, inspectable compute substrate that can place work across personal, family, project, and rented nodes while preserving exact principal, use, data, tool, locality, rights."
+  },
+  "artifacts": {
+    "storyboard": "visual_edition/chapters/readiness-gates-residual-escrow-and-quarantine/storyboard.md",
+    "scene_code": "visual_edition/chapters/readiness-gates-residual-escrow-and-quarantine/scene.py",
+    "narration_script": "visual_edition/chapters/readiness-gates-residual-escrow-and-quarantine/narration.txt",
+    "captions": "visual_edition/chapters/readiness-gates-residual-escrow-and-quarantine/captions.vtt",
+    "descriptive_transcript": "visual_edition/chapters/readiness-gates-residual-escrow-and-quarantine/transcript.md",
+    "thumbnail": "visual_edition/chapters/readiness-gates-residual-escrow-and-quarantine/thumbnail.svg",
+    "scene_spec": "visual_edition/chapters/readiness-gates-residual-escrow-and-quarantine/scene_spec.json",
+    "thumbnail_alt_text": "A governed before after diagram for Readiness Gates, Residual Escrow, and Quarantine shows three named mechanism cards above a labeled failure and evidence boundary."
+  },
+  "render_receipt": {
+    "receipt_state": "current_final_av_master",
+    "validation_state": "validated",
+    "rendered_at_utc": "2026-07-30T03:31:39Z",
+    "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+    "toolchain_qualification": "qualified_for_all_non_latex_chapters",
+    "render_profile": "final_av_master",
+    "command": "Render the exact-timing ChapterVisualAbstract with pinned ManimCE 0.20.1 at 1920x1080/30, render pinned Kokoro-82M af_heart narration at speed 1.08 with a hard maximum of 300 characters per synthesis call and -16 LUFS, then align all seven visual scenes to the exact audio paragraph boundaries and mux with FFmpeg 8.0.1 as H.264 CRF 18 yuv420p plus AAC-LC 192 kb/s 48 kHz mono.",
+    "duration_seconds": 331.005,
+    "pixel_width": 1920,
+    "pixel_height": 1080,
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "output_sha256": "77d726b1e4652cc77f9e18bc1bfb3742e66ee5b22dad4d256663cb7dac9bde1e",
+    "mux_receipt_sha256": "2847af94f01db0326fc0f329798c4160e5b84d58258502c50b92d8912e6fc437",
+    "output_storage": "ignored build/visual_edition media only",
+    "visual_review": {
+      "draft_sample_seconds": [
+        24.86,
+        78.44,
+        139.592,
+        193.56,
+        243.14,
+        285.223,
+        315.133
+      ],
+      "release_sample_seconds": [
+        78.44,
+        285.223
+      ],
+      "result": "pass",
+      "review_scope": "Exact mux-receipt midpoint sampling across all seven narration scenes checked composition, legibility, persistent labels, color-plus-shape semantics, evidence ceiling, non-claims, end-card identity, and absence of clipping or overflowing text."
+    },
+    "audio_master": {
+      "identity": "Kokoro-82M bf16 af_heart via kokoro-mlx 0.1.2 at speed 1.08",
+      "provenance": "Locally generated from the canonical narration with the pinned Apache-2.0 Kokoro-82M model and MIT kokoro-mlx implementation recorded in visual_edition/narration_toolchain.json.",
+      "publication_rights_state": "cleared",
+      "duration_seconds": 331.005,
+      "sha256": "d5d292e221f5734d97a1b63cdf7876944744ea8db695124d070ca0f50e0f8a38"
+    },
+    "caption_review": {
+      "state": "machine_audited",
+      "audit_method": "Exact receipt-derived canonical timing plus local MLX Whisper transcript comparison and complete beginning/end coverage checks.",
+      "reviewed_against_audio_sha256": "d5d292e221f5734d97a1b63cdf7876944744ea8db695124d070ca0f50e0f8a38",
+      "asr_model": "mlx-community/whisper-small.en-mlx@52a88bf6e98b114a210c21bb83e22d6e1505cb73",
+      "asr_word_error_rate": 0.015129,
+      "terminology": "pass",
+      "timing": "pass",
+      "non_speech_information": "pass",
+      "material_visual_changes": "described_in_adjacent_transcript"
+    },
+    "artifact_sha256": {
+      "storyboard": "7f43499ae2c1885e03afc2d74ecb0ec21596e20118c3874a95c80c92747ff6cb",
+      "scene_code": "f2c578cdb629e5535a91c81ff06fd80094f02a2feafeda17a7dadd91d86f98c2",
+      "narration_script": "4ff1d247f6f962e4e9dc1726c7d0cbb3c942109ca854291a8b7c7c54ec6b251a",
+      "captions": "2cba482a614875d43886db4eac9461a683334db1b1602cc7d7ab891164a838f7",
+      "descriptive_transcript": "ee2a3124cbde2a73578803503d06bf8b5c7be321d468f398163d3019813d6a2c",
+      "thumbnail": "47f7502432f3848f50f5f3c550d6e801f1de42e99b74c40378b341640ce0e26c",
+      "scene_spec": "e66ded8b15efe76c6a47acac3dc50153ea1e924c1f8c00beb2ca61c5f2713819"
+    },
+    "remaining_release_gates": [
+      "obtain exact action-time authority before any YouTube or playlist mutation"
+    ]
+  },
+  "youtube": {
+    "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+    "video_id": null,
+    "watch_url": null,
+    "playlist_id": null,
+    "generation": 0,
+    "publication_state": "not_authorized",
+    "uploaded_output_sha256": null,
+    "bound_chapter_sha256": null,
+    "bound_source_commit": null,
+    "published_at_utc": null,
+    "platform_receipt_path": null,
+    "supersedes_video_id": null
+  },
+  "quarto_embed": {
+    "state": "absent_until_published",
+    "chapter_anchor": "visual-abstract",
+    "frame_title": "Visual abstract: Readiness Gates, Residual Escrow, and Quarantine",
+    "aria_label": "Play the visual abstract for Readiness Gates, Residual Escrow, and Quarantine"
+  },
+  "staleness": {
+    "state": "current",
+    "checked_chapter_sha256": "5080ce0698bcb426766e8649f5325cbab16788184f202ab38685443a3f76bc3c",
+    "triggers": [
+      "core_claim",
+      "mechanism",
+      "worked_trace",
+      "evidence_state",
+      "non_claim",
+      "material_source",
+      "chapter_identity",
+      "handoff",
+      "public_url"
+    ]
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This derivative video does not promote or otherwise change any book claim.",
+    "The validated local final master is not a YouTube upload or a public publication.",
+    "Automated intelligibility and caption audits do not establish that every listener will prefer the synthetic voice.",
+    "A successful animation render does not establish deployment, safety, efficiency, transfer, state of the art, AGI, or ASI."
+  ]
+}

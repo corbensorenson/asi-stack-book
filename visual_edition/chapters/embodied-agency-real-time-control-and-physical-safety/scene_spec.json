@@ -1,0 +1,70 @@
+{
+  "chapter_id": "embodied-agency-real-time-control-and-physical-safety",
+  "title": "Embodied Agency, Real-Time Control, and Physical Safety",
+  "subtitle": "Physical execution requires a plant-specific control lease binding embodiment, workspace, state estimator, dynamics, timing… switching and interlocks, exploration, degraded modes, observed effects, compensation, irreversible residuals, costs, and expiry.",
+  "archetype": "route",
+  "claim_label": "Design rationale",
+  "evidence_level": "argument",
+  "next_title": "Inter-Stack Protocols, Identity, and Economic Exchange",
+  "display": {
+    "problem": "An authorized symbolic action can become unsafe when translated… limits, human proximity, sensor loss, communication failure, or irreversible effects.",
+    "insufficient": "A model demonstration, simulation success, barrier certificate, safe-RL label, emergency… software rollback cannot establish plant-specific physical safety or effect reversal.",
+    "mechanism": [
+      {
+        "label": "Freeze plant payload workspace",
+        "detail": "Freeze plant, payload, workspace, firmware, actuator, sensor, power, communication, and maintenance identity."
+      },
+      {
+        "label": "Semantic request trajectory control",
+        "detail": "Compile the semantic request into trajectory… force, space, time, contact, and irreversibility limits."
+      },
+      {
+        "label": "Establish safe-set dynamics state",
+        "detail": "Establish safe-set, dynamics, state, uncertainty, deadline, and human-presence assumptions."
+      },
+      {
+        "label": "Separate advanced controller safety",
+        "detail": "Separate advanced controller, safety monitor/filter, baseline controller, and independent stop path."
+      }
+    ],
+    "trace": [
+      "Freeze plant payload workspace",
+      "Semantic request trajectory control",
+      "Establish safe-set dynamics state",
+      "Separate advanced controller safety"
+    ],
+    "failures": [
+      "deadline miss",
+      "actuator saturation",
+      "contact instability",
+      "unsafe exploration"
+    ],
+    "proof_targets": [
+      "A finite control admission model blocks physical… envelope, fallback, or stop evidence is missing.",
+      "stop authority is independent enough to survive advanced-controller failure",
+      "fallback is reachable before the safety margin expires"
+    ],
+    "evidence_ceiling": "This chapter remains Design rationale at argument support.",
+    "nonclaims": [
+      "No chapter claim or evidence state is promoted by this visual.",
+      "A named mechanism is not proof of correct implementation or useful deployment.",
+      "A local check or formal model does not establish real-world enforcement.",
+      "No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows."
+    ],
+    "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result."
+  },
+  "timing": {
+    "basis": "exact_narration_paragraph_boundaries",
+    "narration_receipt_sha256": "0f48b2dec546a693546e8211f1ab6a7ffd126e962af34d9b9165bc6358c37b21",
+    "target_duration_seconds": 235.66,
+    "scene_endpoints_seconds": [
+      32.175,
+      78.095,
+      129.985,
+      146.115,
+      178.19,
+      206.265,
+      235.66
+    ]
+  }
+}

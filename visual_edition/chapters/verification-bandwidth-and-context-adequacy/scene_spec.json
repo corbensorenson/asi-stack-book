@@ -1,0 +1,70 @@
+{
+  "chapter_id": "verification-bandwidth-and-context-adequacy",
+  "title": "Verification Bandwidth and Context Adequacy",
+  "subtitle": "Verification Bandwidth should own the prospective, claim-specific adequacy contract for a verification attempt.",
+  "archetype": "graph",
+  "claim_label": "Design rationale",
+  "evidence_level": "argument",
+  "next_title": "Claim Ledgers and Belief Revision",
+  "display": {
+    "problem": "A system can possess relevant context, tools, formal checks, citations… verification work to justify the requested conclusion or support transition.",
+    "insufficient": "Long context, RAG, graph retrieval, hierarchical summaries, and prompt compression… target claim's obligations were identified and jointly checked.",
+    "mechanism": [
+      {
+        "label": "Freeze target proposition",
+        "detail": "Freeze the target proposition, definitions, scope, population… horizon, and material-change triggers before verification outcomes."
+      },
+      {
+        "label": "Target explicit premise definition",
+        "detail": "Decompose the target into explicit premise, definition… transfer obligations with owners and falsifiers."
+      },
+      {
+        "label": "Obligation dependency interaction",
+        "detail": "Build an obligation dependency and interaction graph… completeness residuals whenever the graph is reduced."
+      },
+      {
+        "label": "Actual source units",
+        "detail": "Inventory the actual source units and model-… transformed, inaccessible, conflicting, stale, or rights-blocked material."
+      }
+    ],
+    "trace": [
+      "Freeze target proposition",
+      "Target explicit premise definition",
+      "Obligation dependency interaction",
+      "Actual source units"
+    ],
+    "failures": [
+      "Verification theater records planned checks, role… observing competent claim-specific work and consequences.",
+      "Context-length laundering treats more tokens, retrieved… window size as joint verification capacity.",
+      "Obligation deletion omits negative, boundary, contradiction… shrinks the denominator after seeing results.",
+      "Decomposition laundering reduces pairwise or higher-order… omitted interactions, completeness assumptions, or residuals."
+    ],
+    "proof_targets": [
+      "Context admission is separated from a frozen… exactly bound execution can advance to adjudication.",
+      "Direct chapter-core promotion requests and represented contradictions… evidence-gate handoff; high-risk correlated evaluation requires escalation.",
+      "A five-stage lifecycle covers twelve explicit routes… independent evidence gate, never support assignment."
+    ],
+    "evidence_ceiling": "This chapter remains Design rationale at argument support.",
+    "nonclaims": [
+      "No chapter claim or evidence state is promoted by this visual.",
+      "A named mechanism is not proof of correct implementation or useful deployment.",
+      "A local check or formal model does not establish real-world enforcement.",
+      "No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows."
+    ],
+    "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result."
+  },
+  "timing": {
+    "basis": "exact_narration_paragraph_boundaries",
+    "narration_receipt_sha256": "b9fd64c5b9b0a2b3b528ea6daee8a939cfb20313d41c7ac9f62eab0bb59f8c5f",
+    "target_duration_seconds": 292.415,
+    "scene_endpoints_seconds": [
+      36.125,
+      84.315,
+      136.28,
+      186.825,
+      231.77,
+      259.845,
+      292.415
+    ]
+  }
+}

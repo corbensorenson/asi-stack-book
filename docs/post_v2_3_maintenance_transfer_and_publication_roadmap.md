@@ -217,7 +217,7 @@ proceeds.
 | Existing-owner inference-cache packet — prose terminal; receipt and empirical work deferred | `P6.7-inference-cache-reuse-and-honest-pricing` | Reader-facing source integration was expressly commissioned and completed 2026-07-23; no new chapter or support movement | Maintain the three coordinated manuscript integrations and nine-source packet. Later implement the cache-reuse receipt and run separate exact-prefix and semantic-response campaigns under the ordinary post-gate entry condition. Preserve KV-versus-output, exact-versus-semantic, hit-versus-useful-outcome, and provider-contract-versus-local-evidence boundaries. |
 | Existing-owner functional-precision packet — source and prose terminal; evidence work queued | `P6.8-functional-precision-and-behavior-preserving-computation` | Source intake and the eight-owner manuscript integration are complete; schemas, validators, source resolution, and empirical work retain ordinary gates; no new chapter or support movement | Maintain the integrated Precision Contract treatment led by RankFold/NeuralFold. Preserve representation invariance, protected behavior, complete executable and physical-cost accounting, progressive residual precision, routed fallback, certificate scope, and program-transformation proof limits. Reconsider a standalone chapter only if a dated post-integration coherence audit finds a genuinely unowned lifecycle. |
 | Existing-book depth recovery — terminal | `P6.9-R21-concept-complete-depth-and-atom-adequacy` | The 84-chapter manifest is frozen; unified atom custody must stay 84/84; completion requires a named concept manifest plus a digest-bound semantic disposition, while word and atom counts remain diagnostic only | Preserve all twenty-three completed owners and 184 concepts at their reviewed digests. The raw-scaffold audit owns all 21 widest blocks with zero reader-visible or unjustified blocks; the exact 23-chapter/184-concept proof/evidence handoff is terminal. Reopen only after digest drift or an explicit successor amendment. |
-| Visual edition — active owner-directed book packet | `P7.3-governed-manim-visual-edition` | Foundation and all five representative source packets are complete. Five reviewed drafts and five reviewed 1920×1080/30-fps release-profile visuals now exist in ignored local storage; all five packets are `rendered`. The visual grammar remains candidate because there are still zero rights-cleared narration masters, reviewed final caption tracks, validated final A/V masters, YouTube videos, publications, embeds, or support movements. | Select and qualify one reproducible rights-cleared narration path; close narration, final caption-listening, and final A/V gates across all five pilots; then ratify or revise the reusable grammar from the five validated packets. Produce the remaining 79 current 3–6 minute visual abstracts in manifest order. Host final binaries on YouTube only with exact action-time authority, keep code/scripts/captions/transcripts/manifests and receipts in Git, keep rendered media out of GitHub Pages, and embed only validated current URLs. |
+| Visual edition — active owner-directed book packet | `P7.3-governed-manim-visual-edition` | All 84 current packets and 1920×1080/30-fps H.264/AAC masters are locally validated and `ready_not_published`. The exact Kokoro/MLX-Whisper audit spans all chapters at 0–2.8658% content-normalized WER, maximum expected-token gap four, and 227.765–331.005 seconds. All 588 exact scene-midpoint frames and 84 upload thumbnails passed bounded visual review; mux receipts bind source visual, narration, seven scene endpoints, and final digest. The 1,015,153,522 bytes of final media remain ignored and absent from Pages. YouTube, playlist, publication, and embed counts remain zero. | With exact action-time authority, create the canonical playlist, stage all 84 current masters unlisted, set metadata/captions/thumbnails/order, reconcile processing and receipts, then publish the complete validated set and write matching Quarto embeds. After public completion, use author feedback to exercise one real new-generation upload, supersession receipt, playlist reconciliation, and embed replacement. |
 | Formal slot — C6 residual triage terminal; dependency-safe execution active | `C6-remaining-stronger-model-rationalization` | The original 54-action residual estate had zero Lean dependencies and zero theorem consumers; two redundant witnesses and 43 Theseus repository-import mirrors are retired, leaving nine actions: eight summary-mirror retirements and one inverse-route rewrite | Retire the eight Benchmark/Runtime/Search/Stable-Capability summary mirrors next, then implement the Failure Modes inverse property. Rebuild the overlay and ledger after every tranche, with no support or release movement. |
 | Empirical headline — exact N0 entry receipt; materialization blocked | `P2-R3-storage-materialization-and-replacement-qualification` | `P2-R3a-002` measured 23.87 GiB free against the 50 GiB floor and no reachable Docker daemon; restore both gates and write a new immutable preflight before any pull | Then thirty sealed candidate recipes and receipts; terminal pool materialization; four competently qualified replacements restoring the fixed twelve-task denominator; rank progression only under the frozen amendment; zero protected-content leakage. No deletion of non-Docker user data is authorized. |
 | First structural tranche — terminal | White-Box, World Models, Human Factors, and Governed Operations are terminal at argument support | Four exact integration packets preserve owners, sources, formal ceilings, protocols, reader handoffs, and no-promotion boundaries | Maintenance only; no reopened chapter packet without a dated machine-validated defect. |
@@ -3697,6 +3697,80 @@ uploaded-versus-rendered digest mismatch, and publication/embed disagreement.
 This closes access discovery and revision-custody design; it does not close the
 five pilots' final narration, final captions, final A/V, upload, playlist, or
 publication gates.
+
+#### P7.3-F4 validated five-pilot ratchet and autonomous-production checkpoint — 2026-07-29
+
+The local narration path is now an exact, reproducible contract rather than a
+timing aid. Synthesis uses `kokoro-mlx==0.1.2`, the Apache-2.0
+`mlx-community/Kokoro-82M-bf16` model at revision
+`a71e4d38b236d968966a2002c4c895dbd12b1c3c`, the digest-bound `af_heart`
+voice, speed 1.08, 24 kHz mono PCM masters, and FFmpeg loudness normalization.
+Verification uses `mlx-whisper==0.4.3` with
+`mlx-community/whisper-small.en-mlx` at revision
+`52a88bf6e98b114a210c21bb83e22d6e1505cb73`. Both models, virtual
+environments, ASR output, raw audio, and MP4 masters remain ignored.
+
+The transcript gate is outcome-bearing. Its first Living Book Methodology
+candidate omitted a complete sentence despite a superficially valid audio
+file and receipt. The candidate failed at 7.73% content-normalized word error.
+The synthesis ceiling was therefore reduced from 420 to 300 characters, exact
+segmentation settings were added to every narration receipt, and all five
+pilots were rerendered rather than grandfathering earlier passes. The final
+content-normalized error rates are 0.71%, 1.22%, 2.36%, 1.08%, and 1.33%;
+every master also passes complete beginning/end coverage, finite mono samples,
+no clipping, and the three-to-six-minute duration contract.
+
+All five exact narration receipts now generate canonical WebVTT timing without
+placing pronunciation-only substitutions in caption text. Final A/V masters
+pass 1920×1080, 30-fps H.264/yuv420p, 48-kHz mono AAC, caption ordering and
+span, narration/master duration, ignored-build custody, and digest checks.
+Sampled final frames preserve the reviewed chapter-specific mechanisms and
+the shared color-plus-shape semantics.
+
+The canonical manifest therefore reports five `validated` packets and
+seventy-nine `planned` chapters. The five-pilot ratchet is complete, the
+shared visual grammar is `ratified`, and the narration path is
+`qualified_for_all_chapters`. This checkpoint authorizes autonomous local
+production in manifest order; it does not authorize YouTube, playlist,
+metadata, publication, or embed mutations. Those counts remain zero until
+exact action-time authority and platform receipts exist.
+
+#### P7.3-F5 all-chapter local-production and visual-review checkpoint — 2026-07-29
+
+Autonomous local production is complete for all 84 canonical chapters. Every
+packet has current storyboard, scene source, narration, reviewed WebVTT,
+descriptive transcript, editable SVG thumbnail, render receipt, exact chapter
+and source-commit binding, and zero support-state effect. The 79 non-pilot
+chapters use the ratified data-driven seven-scene grammar; the five pilots
+retain their chapter-specific visual implementations.
+
+All 84 Kokoro masters pass the pinned MLX Whisper outcome gate. Durations span
+227.765–331.005 seconds, content-normalized word error spans 0–2.8658%, and
+the largest contiguous expected-token omission is four against the frozen
+ceiling of eight. The final-master validator accepts exactly 84/84 H.264,
+1920×1080, yuv420p, 30-fps videos with 48-kHz mono AAC, complete caption span,
+matching narration duration, ignored-build custody, digest-bound mux receipts,
+and seven scene endpoints within one frame. Two initial global-rounding edge
+cases failed the scene gate and were rerendered from exact source endpoints;
+the gate was not relaxed.
+
+Human-visible QA covers 588 exact scene-midpoint frames across 21 bounded
+contact sheets plus all 84 upload thumbnails. Review found that the first
+sampler used arbitrary whole-video percentages and could land inside a
+transition; the reviewer was corrected to derive one midpoint from each exact
+narration scene in the mux receipt, all frames were regenerated, and the
+complete sweep then passed for population, order, legibility, clipping, and
+end-card integrity. The final masters total 1,015,153,522 bytes in ignored
+local storage and remain absent from Git and the Pages artifact.
+
+The manifest and publication ledger therefore report 84/84
+`ready_not_published`, zero platform objects, zero playlist entries, zero
+publications, and zero embeds. The next transaction is platform staging and
+publication, not more local video creation. It requires exact action-time
+authority for playlist creation, 84 unlisted uploads, metadata, reviewed
+captions, thumbnails, ordering, privacy transitions, receipts, and Quarto
+embed reconciliation. After the complete edition is public, author feedback
+must drive one real generation-two supersession exercise.
 
 **P7.3 completion gate.** This lane is terminal only when all 84 current
 manifest chapters have validated derivative packets and current rendered

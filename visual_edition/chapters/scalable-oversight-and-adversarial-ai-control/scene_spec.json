@@ -1,0 +1,70 @@
+{
+  "chapter_id": "scalable-oversight-and-adversarial-ai-control",
+  "title": "Scalable Oversight and Adversarial AI Control",
+  "subtitle": "A governed stack admits scalable oversight only as a versioned, consumer-bound protocol receipt rather… abstention semantics; persuasion, correlation, operator-cost, and monitorability residuals; escalation owner; expiry; and requalification triggers.",
+  "archetype": "state_machine",
+  "claim_label": "Design rationale",
+  "evidence_level": "argument",
+  "next_title": "Human Intent as a Formal Input",
+  "display": {
+    "problem": "A system can ask a weaker human or model… what direct-review baseline exists, or who escalates an unresolved result.",
+    "insufficient": "Unassisted review, AI judges, debate, consultancy, weak-to-strong training, and reviewer… coverage, task leakage, strategic abstention, or an artificially weak baseline.",
+    "mechanism": [
+      {
+        "label": "Declare task envelope risk",
+        "detail": "Declare the task envelope, risk tier, supervisor… permitted downstream consumer before oversight begins."
+      },
+      {
+        "label": "Compare assisted oversight declared",
+        "detail": "Compare assisted oversight with a declared direct-review… treating a verdict count as success."
+      },
+      {
+        "label": "Separate proposer critic debater",
+        "detail": "Separate proposer, critic or debater, judge, outcome… self-score cannot be named independent confirmation."
+      },
+      {
+        "label": "Route high-risk inadequately",
+        "detail": "Route high-risk or inadequately audited outcomes… authorize an external action on its own."
+      }
+    ],
+    "trace": [
+      "Declare task envelope risk",
+      "Compare assisted oversight declared",
+      "Separate proposer critic debater",
+      "Route high-risk inadequately"
+    ],
+    "failures": [
+      "Persuasion theater lets a capable advocate… judge without improving truth or safety.",
+      "Correlated model families, prompts, tools, or… false independence across nominally separate reviewers.",
+      "A weak baseline makes a protocol… would perform as well or better.",
+      "Outcome auditing observes only an easy… hides capability-gap, calibration, or distribution-shift failures."
+    ],
+    "proof_targets": [
+      "A reachable high-risk review lifecycle without… mutating lifecycle state or inferring reviewer competence.",
+      "A complete versioned review lifecycle emits only… assigns neither support nor an external effect.",
+      "Missing bound evidence views block review recording without mutating lifecycle state."
+    ],
+    "evidence_ceiling": "This chapter remains Design rationale at argument support.",
+    "nonclaims": [
+      "No chapter claim or evidence state is promoted by this visual.",
+      "A named mechanism is not proof of correct implementation or useful deployment.",
+      "A local check or formal model does not establish real-world enforcement.",
+      "No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows."
+    ],
+    "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result."
+  },
+  "timing": {
+    "basis": "exact_narration_paragraph_boundaries",
+    "narration_receipt_sha256": "19668f6496d07483396d18275ece9c564959c37f9c388d5b89c2c5c30246d8bf",
+    "target_duration_seconds": 289.785,
+    "scene_endpoints_seconds": [
+      43.465,
+      95.51,
+      145.475,
+      188.795,
+      231.165,
+      259.24,
+      289.785
+    ]
+  }
+}

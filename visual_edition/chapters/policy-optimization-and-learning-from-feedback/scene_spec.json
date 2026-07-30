@@ -1,0 +1,70 @@
+{
+  "chapter_id": "policy-optimization-and-learning-from-feedback",
+  "title": "Policy Optimization and Learning from Feedback",
+  "subtitle": "Policy Optimization and Learning from Feedback owns a target-policy-, baseline-, objective-, feedback-, evaluator-, dataset-… validity, causal policy improvement, retained capability, alignment, safety, readiness, deployment, support, transfer, nor SOTA.",
+  "archetype": "timeline",
+  "claim_label": "Design rationale",
+  "evidence_level": "argument",
+  "next_title": "Data Engines, Continual Learning, and Unlearning",
+  "display": {
+    "problem": "A governed stack needs to convert feedback, verification, benchmark pressure… allowing reward signals to bypass evidence, authority, or rollback boundaries.",
+    "insufficient": "RLHF, preference optimization, and verifier rewards are often treated… across planners, routers, context policies, execution policies, and generation modes.",
+    "mechanism": [
+      {
+        "label": "Freeze named consumer legitimate",
+        "detail": "Freeze the named consumer, legitimate objective, target… feedback or candidate outcomes are inspected."
+      },
+      {
+        "label": "Exact target layer policy",
+        "detail": "Bind exact target layer, policy and implementation… environment, dependencies, runtime, and affected consumers."
+      },
+      {
+        "label": "Feedback human preference verifier",
+        "detail": "Classify feedback as human preference, verifier, benchmark… provenance, incentives, rights, uncertainty, and contamination boundary."
+      },
+      {
+        "label": "Separate proxy preference reward",
+        "detail": "Separate the proxy, preference, reward model, judge… is informative, gameable, distribution-bound, conflicting, or ineligible."
+      }
+    ],
+    "trace": [
+      "Freeze named consumer legitimate",
+      "Exact target layer policy",
+      "Feedback human preference verifier",
+      "Separate proxy preference reward"
+    ],
+    "failures": [
+      "Reward hacking or verifier gaming increases… safety, privacy, rights, or robustness degrades.",
+      "Preference overoptimization learns style, agreeableness, verbosity… instead of truth or task success.",
+      "Planner, router, context, verifier, execution, governance… hidden shortcuts that evade local evaluation.",
+      "Latency, token, or cost rewards suppress… verification, abstention, escalation, approval, or recovery."
+    ],
+    "proof_targets": [
+      "A versioned governed-update lifecycle binds target, baseline… assigning support or an external effect.",
+      "Missing target evaluation, causal ablation, reward-hacking probes… blocks a policy update before bounded-lease adjudication.",
+      "All finite update-lifecycle routes reject or redirect… rollback, or readmission records before bounded use."
+    ],
+    "evidence_ceiling": "This chapter remains Design rationale at argument support.",
+    "nonclaims": [
+      "No chapter claim or evidence state is promoted by this visual.",
+      "A named mechanism is not proof of correct implementation or useful deployment.",
+      "A local check or formal model does not establish real-world enforcement.",
+      "No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows."
+    ],
+    "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result."
+  },
+  "timing": {
+    "basis": "exact_narration_paragraph_boundaries",
+    "narration_receipt_sha256": "891c2e076b29676c43815be17e80da17b0c47cc811f6d2f4e13362144694e5b6",
+    "target_duration_seconds": 300.59,
+    "scene_endpoints_seconds": [
+      33.325,
+      92.09,
+      148.83,
+      197.35,
+      243.795,
+      271.87,
+      300.59
+    ]
+  }
+}

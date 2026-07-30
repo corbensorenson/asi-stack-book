@@ -1,0 +1,70 @@
+{
+  "chapter_id": "privacy-data-rights-and-information-flow-governance",
+  "title": "Privacy, Data Rights, and Information-Flow Governance",
+  "subtitle": "An information use is eligible for bounded execution only when a prospectively declared record… legal compliance, total erasure, behavioral forgetting, influence removal, support, readiness, release, transfer, or SOTA.",
+  "archetype": "state_machine",
+  "claim_label": "Design rationale",
+  "evidence_level": "argument",
+  "next_title": "Confidential and Verifiable AI Computation",
+  "display": {
+    "problem": "A system can preserve confidentiality and pass access checks… derivatives violate purpose, minimization, privacy expectations, or executable rights.",
+    "insufficient": "Access control, consent text, a DP label, a low observed… purpose compatibility, privacy, complete propagation, legal compliance, or total forgetting.",
+    "mechanism": [
+      {
+        "label": "Name subjects affected groups",
+        "detail": "Name subjects, affected groups, and unknown-identity routes."
+      },
+      {
+        "label": "Exact purpose operation claimed",
+        "detail": "Bind exact purpose, operation, claimed authority, jurisdiction, recipients, retention, expiry, and objection state."
+      },
+      {
+        "label": "Less-data alternative admit only",
+        "detail": "Test a less-data alternative and admit only necessary fields and granularity."
+      },
+      {
+        "label": "Context memory training inference",
+        "detail": "Map context, memory, training, inference, output, audit… checkpoint, and derivative flows while retaining unknowns."
+      }
+    ],
+    "trace": [
+      "Name subjects affected groups",
+      "Exact purpose operation claimed",
+      "Less-data alternative admit only",
+      "Context memory training inference"
+    ],
+    "failures": [
+      "purpose drift",
+      "consent laundering",
+      "minimization theater",
+      "cross-user leakage"
+    ],
+    "proof_targets": [
+      "An accepted finite information use requires matching… minimization, complete-enough flow, and competent privacy evaluation.",
+      "An accepted bounded receipt preserves storage, behavior… legal-compliance separation and refuses authority laundering.",
+      "less-data alternatives are tested"
+    ],
+    "evidence_ceiling": "This chapter remains Design rationale at argument support.",
+    "nonclaims": [
+      "No chapter claim or evidence state is promoted by this visual.",
+      "A named mechanism is not proof of correct implementation or useful deployment.",
+      "A local check or formal model does not establish real-world enforcement.",
+      "No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows."
+    ],
+    "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result."
+  },
+  "timing": {
+    "basis": "exact_narration_paragraph_boundaries",
+    "narration_receipt_sha256": "7128517ebd6e864be08e55d40ecf48c1e744ae025bdbbd980f9d7a358869a549",
+    "target_duration_seconds": 260.28,
+    "scene_endpoints_seconds": [
+      36.775,
+      92.495,
+      149.835,
+      165.34,
+      202.06,
+      230.135,
+      260.28
+    ]
+  }
+}

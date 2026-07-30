@@ -1,0 +1,70 @@
+{
+  "chapter_id": "open-weight-release-and-post-release-control",
+  "title": "Open-Weight Release and Post-Release Control",
+  "subtitle": "An open-weight release should require a prospective irreversible-release case that binds the exact artifact… support safer derivatives, but it must not claim revocation authority it no longer possesses.",
+  "archetype": "ledger",
+  "claim_label": "Design rationale",
+  "evidence_level": "argument",
+  "next_title": "AI Supply-Chain Integrity and Lifecycle Provenance",
+  "display": {
+    "problem": "Once unrestricted model weights are published, the original releaser generally… recall copies, enforce serving-layer safeguards, observe use, or prevent derivatives.",
+    "insufficient": "A model card, default refusal behavior, license, checksum, takedown request… fine-tuning, redistribution, merging, quantization, hidden deployment, or cumulative ecosystem effects.",
+    "mechanism": [
+      {
+        "label": "Access tiers irreversible",
+        "detail": "Classify access tiers and make the irreversible transition from custody to public replication explicit."
+      },
+      {
+        "label": "Evaluate exact candidate competent",
+        "detail": "Evaluate the exact candidate, competent maliciously fine-tuned… current accessible frontier under matched budgets."
+      },
+      {
+        "label": "Assess marginal risk cumulative",
+        "detail": "Assess marginal risk, cumulative ecosystem risk, expected… access distribution, and who bears residual harm."
+      },
+      {
+        "label": "Ship signed artifacts complete",
+        "detail": "Ship signed artifacts, complete documentation, evaluation interfaces… safeguards without calling them enforceable after release."
+      }
+    ],
+    "trace": [
+      "Access tiers irreversible",
+      "Evaluate exact candidate competent",
+      "Assess marginal risk cumulative",
+      "Ship signed artifacts complete"
+    ],
+    "failures": [
+      "default-model-only evaluation",
+      "weak malicious fine-tuning",
+      "stale accessible-frontier comparator",
+      "license-as-control illusion"
+    ],
+    "proof_targets": [
+      "A finite open-weight decision may hand off… non-authority are explicit; no theorem authorizes release.",
+      "Default alignment is never treated as a safeguard that determined downstream users cannot remove.",
+      "Post-release actions are not described as recall, revocation, or complete containment."
+    ],
+    "evidence_ceiling": "This chapter remains Design rationale at argument support.",
+    "nonclaims": [
+      "No chapter claim or evidence state is promoted by this visual.",
+      "A named mechanism is not proof of correct implementation or useful deployment.",
+      "A local check or formal model does not establish real-world enforcement.",
+      "No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows."
+    ],
+    "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result."
+  },
+  "timing": {
+    "basis": "exact_narration_paragraph_boundaries",
+    "narration_receipt_sha256": "6dece307696ee4fec6cae82e498f1645398d2e9e271c5a169c9ab79ded095b49",
+    "target_duration_seconds": 260.995,
+    "scene_endpoints_seconds": [
+      38.795,
+      92.46,
+      139.475,
+      158.28,
+      200.3,
+      228.375,
+      260.995
+    ]
+  }
+}

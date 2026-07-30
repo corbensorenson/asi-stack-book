@@ -1,0 +1,162 @@
+{
+  "schema_version": "asi_stack.visual_chapter_packet.v1",
+  "video_id": "asi-video-failure-modes-of-ungoverned-intelligence",
+  "chapter_id": "failure-modes-of-ungoverned-intelligence",
+  "chapter_path": "chapters/failure-modes-of-ungoverned-intelligence.qmd",
+  "chapter_sha256": "50dc1c8e6458686862f3abf8a827696d37ab3363cde091bfe09da4ca05409cdb",
+  "source_commit": "f10ef079ecfeb48503407d67832a0251f77c2c78",
+  "pilot": false,
+  "lifecycle_state": "ready_not_published",
+  "claim_bindings": [
+    {
+      "claim_id": "failure-modes-of-ungoverned-intelligence.core",
+      "claim_label": "Design rationale",
+      "support_state": "argument"
+    }
+  ],
+  "assigned_source_ids": [
+    "scf",
+    "vcm_public",
+    "talos",
+    "spinoza",
+    "field_of_god",
+    "viea",
+    "simulation_scaling",
+    "vcm_editable",
+    "moecot",
+    "ext_concrete_ai_safety_2016",
+    "ext_goal_misgeneralization_2022",
+    "ext_learned_optimization_risks_2019",
+    "ext_optimal_policies_power_2019",
+    "ext_goodhart_variants_2018",
+    "ext_gradual_disempowerment_2025"
+  ],
+  "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result.",
+  "required_content": {
+    "problem": "Governance, reliability, and self-improvement claims cannot be tested unless their failure conditions, observable boundary events, evidence records, and owners are declared prospectively. Labels such as alignment failure or unsafe autonomy do not by themselves identify which contract failed, what observable event occurred, which detector fired, whether an effect escaped, or who owns containment and residuals.",
+    "core_mechanism": "A stack-level failure model should represent each named risk as a distinct boundary event with a trigger, protected invariant, detector or observer, receipt, owner, containment action, residual, recurrence state, and escalation or learning path; a taxonomy entry alone establishes neither occurrence nor mitigation. Classify each admitted failure record by versioned failure class, layer, affected contract, and boundary-event state without forcing unmapped observations into a known class. Map each named failure to a protected invariant, detector or observer, receipt, containment owner, residual, and planned falsification test.",
+    "worked_trace": "A Failure Boundary Map schema plus an executable receipt suite covering blocked and realized events, recurrence escalation, containment, residuals, detector gaps, and rejecting negative controls. Map each named failure to a protected invariant, detector or observer, receipt, containment owner, residual, and planned falsification test. Add or revise architectural boundaries only from accepted failure, near-miss, escape, or detector-gap records with versioned lineage. Classify each admitted failure record by versioned failure class, layer, affected contract, and boundary-event state without forcing unmapped observations into a known class.",
+    "failure_boundary": "Evaluator capture. Memory poisoning. Tool/action overreach. Compression that hides residual complexity.",
+    "evidence_state": "This chapter remains Design rationale at argument support. Its contracts, examples, tests, or local artifacts establish only their encoded scope. A component with a failed required invariant cannot be promoted. A finite incident whose authority exceeds its ceiling routes to explicit authority review. If the finite failure-recurrence router returns closeFailureRecord, every required failure, class, boundary, receipt, owner, containment, residual, learning, normalization, and non-claim field is true and no earlier recurrence, severe-irreversible, unreviewed-promotion, unquarantined-escape, or missing-evidence-transition branch applies.",
+    "non_claims": "No chapter claim or evidence state is promoted by this visual. A named mechanism is not proof of correct implementation or useful deployment. A local check or formal model does not establish real-world enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.",
+    "handoff": "The next chapter is Dangerous Capability Domains and Misuse Uplift. It takes responsibility for Capability-threshold policies require domain-specific evidence about whether a model can materially increase an actor's ability to cause harm, yet the stack has no owner for CBRN, offensive cyber, psychological manipulation."
+  },
+  "artifacts": {
+    "storyboard": "visual_edition/chapters/failure-modes-of-ungoverned-intelligence/storyboard.md",
+    "scene_code": "visual_edition/chapters/failure-modes-of-ungoverned-intelligence/scene.py",
+    "narration_script": "visual_edition/chapters/failure-modes-of-ungoverned-intelligence/narration.txt",
+    "captions": "visual_edition/chapters/failure-modes-of-ungoverned-intelligence/captions.vtt",
+    "descriptive_transcript": "visual_edition/chapters/failure-modes-of-ungoverned-intelligence/transcript.md",
+    "thumbnail": "visual_edition/chapters/failure-modes-of-ungoverned-intelligence/thumbnail.svg",
+    "scene_spec": "visual_edition/chapters/failure-modes-of-ungoverned-intelligence/scene_spec.json",
+    "thumbnail_alt_text": "A governed ledger diagram for Failure Modes of Ungoverned Intelligence shows three named mechanism cards above a labeled failure and evidence boundary."
+  },
+  "render_receipt": {
+    "receipt_state": "current_final_av_master",
+    "validation_state": "validated",
+    "rendered_at_utc": "2026-07-30T03:04:18Z",
+    "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+    "toolchain_qualification": "qualified_for_all_non_latex_chapters",
+    "render_profile": "final_av_master",
+    "command": "Render the exact-timing ChapterVisualAbstract with pinned ManimCE 0.20.1 at 1920x1080/30, render pinned Kokoro-82M af_heart narration at speed 1.08 with a hard maximum of 300 characters per synthesis call and -16 LUFS, then align all seven visual scenes to the exact audio paragraph boundaries and mux with FFmpeg 8.0.1 as H.264 CRF 18 yuv420p plus AAC-LC 192 kb/s 48 kHz mono.",
+    "duration_seconds": 256.233008,
+    "pixel_width": 1920,
+    "pixel_height": 1080,
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "output_sha256": "24bae6c4ce654ca1d5746dfecf32e749bf715f6dfc8149a8c0ca2be4a240519f",
+    "mux_receipt_sha256": "753058adbf23a22b9b8739b2de0f65733651ca4802ea609616afc6c02fb542dc",
+    "output_storage": "ignored build/visual_edition media only",
+    "visual_review": {
+      "draft_sample_seconds": [
+        15.95,
+        57.785,
+        106.805,
+        138.905,
+        171.34,
+        208.847,
+        239.557
+      ],
+      "release_sample_seconds": [
+        57.785,
+        208.847
+      ],
+      "result": "pass",
+      "review_scope": "Exact mux-receipt midpoint sampling across all seven narration scenes checked composition, legibility, persistent labels, color-plus-shape semantics, evidence ceiling, non-claims, end-card identity, and absence of clipping or overflowing text."
+    },
+    "audio_master": {
+      "identity": "Kokoro-82M bf16 af_heart via kokoro-mlx 0.1.2 at speed 1.08",
+      "provenance": "Locally generated from the canonical narration with the pinned Apache-2.0 Kokoro-82M model and MIT kokoro-mlx implementation recorded in visual_edition/narration_toolchain.json.",
+      "publication_rights_state": "cleared",
+      "duration_seconds": 256.233008,
+      "sha256": "c74a289169c31555649bfba039c316fc1bdf2de41b88947e97c0b6420305099d"
+    },
+    "caption_review": {
+      "state": "machine_audited",
+      "audit_method": "Exact receipt-derived canonical timing plus local MLX Whisper transcript comparison and complete beginning/end coverage checks.",
+      "reviewed_against_audio_sha256": "c74a289169c31555649bfba039c316fc1bdf2de41b88947e97c0b6420305099d",
+      "asr_model": "mlx-community/whisper-small.en-mlx@52a88bf6e98b114a210c21bb83e22d6e1505cb73",
+      "asr_word_error_rate": 0.018349,
+      "terminology": "pass",
+      "timing": "pass",
+      "non_speech_information": "pass",
+      "material_visual_changes": "described_in_adjacent_transcript"
+    },
+    "artifact_sha256": {
+      "storyboard": "99b2ef209303bf5ab316b75ca5d38f7bc15a43054665e4dcfcbafc988d8b501c",
+      "scene_code": "3b68da23af6dff0ff247414a9615da14ffbeb51488584d0ccbbcbd26caa62726",
+      "narration_script": "10a41149f226a4415e976a1f2d2fbbbced3358172ce70ec0f8677ff16409d11d",
+      "captions": "5044fb618813f3c8d21f856260249ec9d7a173ac0105f3fe13d336e55a8c18f8",
+      "descriptive_transcript": "46a6b11b4df47f4b32d8ebe60544a947579ceb639fb03829763e154a04e3ad2d",
+      "thumbnail": "4f453134c9cc6d513ed884b44e90599b5cae62b29d530dd2d67486cf01800e79",
+      "scene_spec": "026e59f39f6b30a3672e958af6671ff4256fe1520d202c14431979fcc2c1024e"
+    },
+    "remaining_release_gates": [
+      "obtain exact action-time authority before any YouTube or playlist mutation"
+    ]
+  },
+  "youtube": {
+    "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+    "video_id": null,
+    "watch_url": null,
+    "playlist_id": null,
+    "generation": 0,
+    "publication_state": "not_authorized",
+    "uploaded_output_sha256": null,
+    "bound_chapter_sha256": null,
+    "bound_source_commit": null,
+    "published_at_utc": null,
+    "platform_receipt_path": null,
+    "supersedes_video_id": null
+  },
+  "quarto_embed": {
+    "state": "absent_until_published",
+    "chapter_anchor": "visual-abstract",
+    "frame_title": "Visual abstract: Failure Modes of Ungoverned Intelligence",
+    "aria_label": "Play the visual abstract for Failure Modes of Ungoverned Intelligence"
+  },
+  "staleness": {
+    "state": "current",
+    "checked_chapter_sha256": "50dc1c8e6458686862f3abf8a827696d37ab3363cde091bfe09da4ca05409cdb",
+    "triggers": [
+      "core_claim",
+      "mechanism",
+      "worked_trace",
+      "evidence_state",
+      "non_claim",
+      "material_source",
+      "chapter_identity",
+      "handoff",
+      "public_url"
+    ]
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This derivative video does not promote or otherwise change any book claim.",
+    "The validated local final master is not a YouTube upload or a public publication.",
+    "Automated intelligibility and caption audits do not establish that every listener will prefer the synthetic voice.",
+    "A successful animation render does not establish deployment, safety, efficiency, transfer, state of the art, AGI, or ASI."
+  ]
+}

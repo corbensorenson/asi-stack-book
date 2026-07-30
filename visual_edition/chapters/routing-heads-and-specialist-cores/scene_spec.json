@@ -1,0 +1,70 @@
+{
+  "chapter_id": "routing-heads-and-specialist-cores",
+  "title": "Routing Heads and Specialist Cores",
+  "subtitle": "ASI scales through a lightweight routing head that selects bounded specialist cores with local tools, memory, and authority.",
+  "archetype": "stack",
+  "claim_label": "Design rationale",
+  "evidence_level": "argument",
+  "next_title": "Replaceable Cognitive Substrates: Beyond Transformer Monoculture",
+  "display": {
+    "problem": "The architecture needs to allocate cognition across specialists rather than force one system to do every task.",
+    "insufficient": "Monolithic scaling, static tool lists, and branded runtime references do… bounded authority, specialist lifecycle, readiness-aware routing, replay, or source-state separation.",
+    "mechanism": [
+      {
+        "label": "Freeze task consumer requested",
+        "detail": "Freeze the task, consumer, requested capability, acceptance… risk, resource budget, deadline, and fallback obligation."
+      },
+      {
+        "label": "Snapshot versioned candidate",
+        "detail": "Snapshot a versioned candidate registry containing specialist… cost, latency, load, dependencies, and lifecycle state."
+      },
+      {
+        "label": "Semantic task artifact identity",
+        "detail": "Compile semantic task or artifact identity separately… expert, tool, node, human, or composite route."
+      },
+      {
+        "label": "Eliminate candidates fail",
+        "detail": "Eliminate candidates that fail capability, authority, rights… resource, dependency, or conflict-of-interest gates before scoring."
+      }
+    ],
+    "trace": [
+      "Freeze task consumer requested",
+      "Snapshot versioned candidate",
+      "Semantic task artifact identity",
+      "Eliminate candidates fail"
+    ],
+    "failures": [
+      "Semantic-fit laundering chooses a relevant specialist… useful competence, privacy, budget, or verification.",
+      "Oracle laundering compares against a privileged… calls the gap attainable routing quality.",
+      "Route-label leakage lets training, features, prompts… evaluators observe held-out actions or outcomes.",
+      "Router overconfidence suppresses clarification, fallback, abstention… escalation on ambiguous or out-of-distribution work."
+    ],
+    "proof_targets": [
+      "A reachable routing lifecycle preserves exact task… assigning no support or external effects.",
+      "Missing authority, readiness, fresh leases, selective handling… closure, or consumer acknowledgment blocks lifecycle progress.",
+      "The independent consumer preserves all forty-two routing… separate dispatch, observation, and closure stages."
+    ],
+    "evidence_ceiling": "This chapter remains Design rationale at argument support.",
+    "nonclaims": [
+      "No chapter claim or evidence state is promoted by this visual.",
+      "A named mechanism is not proof of correct implementation or useful deployment.",
+      "A local check or formal model does not establish real-world enforcement.",
+      "No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows."
+    ],
+    "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result."
+  },
+  "timing": {
+    "basis": "exact_narration_paragraph_boundaries",
+    "narration_receipt_sha256": "90cab4712277028e227b965a0ffb0dbbff6fe2d5ba1866606d28690007c43cfc",
+    "target_duration_seconds": 278.61,
+    "scene_endpoints_seconds": [
+      25.4,
+      70.365,
+      120.28,
+      163.0,
+      216.34,
+      244.415,
+      278.61
+    ]
+  }
+}

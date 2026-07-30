@@ -1,0 +1,70 @@
+{
+  "chapter_id": "human-factors-and-meaningful-control-in-oversight",
+  "title": "Human Factors and Meaningful Control in Oversight",
+  "subtitle": "Meaningful oversight is a resource-bounded control contract: the system must preserve an identified human… intervention path, and must degrade or abstain when that control envelope cannot be maintained.",
+  "archetype": "graph",
+  "claim_label": "Design rationale",
+  "evidence_level": "argument",
+  "next_title": "Human-AI Communication, Persuasion, and Epistemic Security",
+  "display": {
+    "problem": "A formally permitted AI action can still be practically uncontrollable… time, attention, comprehension, calibrated trust, or an effective intervention path.",
+    "insufficient": "A dashboard, approval click, nominal human-in-the-loop, or fixed automation level… degradation, mode confusion, workload saturation, and delayed effects defeat intervention.",
+    "mechanism": [
+      {
+        "label": "Consequential tasks oversight",
+        "detail": "Compile consequential tasks into oversight contracts naming… rights, intervention points, deadlines, and safe defaults."
+      },
+      {
+        "label": "Estimate oversight budget over",
+        "detail": "Estimate an oversight budget over attention, comprehension time, workload, practice recency, and action latency."
+      },
+      {
+        "label": "Expose uncertainty mode authority",
+        "detail": "Expose uncertainty, mode, authority, provenance, consequence, and time-to-irreversibility instead of raw telemetry alone."
+      },
+      {
+        "label": "Active comprehension checks",
+        "detail": "Require active comprehension checks for high-impact transitions."
+      }
+    ],
+    "trace": [
+      "Consequential tasks oversight",
+      "Estimate oversight budget over",
+      "Expose uncertainty mode authority",
+      "Active comprehension checks"
+    ],
+    "failures": [
+      "automation bias",
+      "complacency",
+      "out-of-the-loop skill decay",
+      "mode confusion"
+    ],
+    "proof_targets": [
+      "In the finite model, any consequential transition… reachable safe state is rejected or degraded.",
+      "The bounded accountability assignment never attributes operational… effective control recorded in the oversight contract.",
+      "Loss of observability or intervention capacity cannot silently preserve autonomy."
+    ],
+    "evidence_ceiling": "This chapter remains Design rationale at argument support.",
+    "nonclaims": [
+      "No chapter claim or evidence state is promoted by this visual.",
+      "A named mechanism is not proof of correct implementation or useful deployment.",
+      "A local check or formal model does not establish real-world enforcement.",
+      "No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows."
+    ],
+    "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result."
+  },
+  "timing": {
+    "basis": "exact_narration_paragraph_boundaries",
+    "narration_receipt_sha256": "8cd6ef38fc6540f9aea25574c5b5c60f54f2d91706c3c906cde6ea79db80b2bb",
+    "target_duration_seconds": 248.825,
+    "scene_endpoints_seconds": [
+      35.87,
+      79.59,
+      130.43,
+      146.085,
+      188.655,
+      216.73,
+      248.825
+    ]
+  }
+}

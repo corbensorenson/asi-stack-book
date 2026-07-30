@@ -1,0 +1,164 @@
+{
+  "schema_version": "asi_stack.visual_chapter_packet.v1",
+  "video_id": "asi-video-verification-bandwidth-and-context-adequacy",
+  "chapter_id": "verification-bandwidth-and-context-adequacy",
+  "chapter_path": "chapters/verification-bandwidth-and-context-adequacy.qmd",
+  "chapter_sha256": "0470b10f070b747efb8ab664b20a9fd12e45790d289470a5c71419b92ce30e32",
+  "source_commit": "f10ef079ecfeb48503407d67832a0251f77c2c78",
+  "pilot": false,
+  "lifecycle_state": "ready_not_published",
+  "claim_bindings": [
+    {
+      "claim_id": "verification-bandwidth-and-context-adequacy.core",
+      "claim_label": "Design rationale",
+      "support_state": "argument"
+    }
+  ],
+  "assigned_source_ids": [
+    "verification_bandwidth",
+    "vcm_public",
+    "spinoza",
+    "treellm",
+    "vcm_editable",
+    "ext_graphrag_2024",
+    "ext_hipporag_2024",
+    "ext_raptor_2024",
+    "ext_dont_hallucinate_abstain_2024",
+    "ext_alce_2023",
+    "ext_checklist_2020",
+    "ext_gpqa_2023",
+    "ext_longbench_2023",
+    "ext_ruler_2024",
+    "ext_longllmlingua_2023",
+    "ext_reluplex_2017",
+    "kernel_english_residual_compiler"
+  ],
+  "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result.",
+  "required_content": {
+    "problem": "A system can possess relevant context, tools, formal checks, citations, reviewers, and compute yet still lack enough independent, claim-specific verification work to justify the requested conclusion or support transition. Without an explicit adequacy boundary, context length, retrieval coverage, citation count, benchmark success, proof-checker output, model agreement, or review activity can be laundered into confidence while obligations, counterevidence, disagreements, costs, and unattempted checks disappear.",
+    "core_mechanism": "Verification Bandwidth should own the prospective, claim-specific adequacy contract for a verification attempt. Before outcomes, it binds target proposition and scope, population and environment, risk and consequence, requested support effect, required positive, negative, boundary, contradiction, counterexample, and transfer obligations, available source units, verification modes, tools, evaluator-dependency graph, authority and rights, budget, horizon, stop rule, and escalation path. After execution, it records every attempted, passed, failed, disputed, unknown, infeasible, and unattempted obligation plus actual artifacts, costs, disagreement, residuals, expiry, and causal-use observations.",
+    "worked_trace": "The current minimum is an authored record-and-route scaffold: one context-adequacy schema and fixture; three valid and five rejecting admission/adequacy records; two valid contradiction/adequacy traces and seven rejecting controls; three valid capacity traces and five rejecting controls; one conservative twelve-unit record with sixty-six all-pairwise obligations, eighteen checked and forty-eight residual; one named decomposition with twenty-four modeled obligations including six boundary checks; and fourteen Lean theorem declarations grouped under four public targets. Three theorem declarations restate modeled predicates or summary validity and eleven construct a finite witness or prove finite route consequences.",
+    "failure_boundary": "Verification theater records planned checks, role labels, artifacts, or green status without observing competent claim-specific work and consequences. Context-length laundering treats more tokens, retrieved units, or nominal window size as joint verification capacity. Obligation deletion omits negative, boundary, contradiction, threat, causal, outcome, cost, reproduction, or transfer checks and shrinks the denominator after seeing results. Decomposition laundering reduces pairwise or higher-order work without naming boundary obligations, omitted interactions, completeness assumptions, or residuals.",
+    "evidence_state": "This chapter remains Design rationale at argument support. Its contracts, examples, tests, or local artifacts establish only their encoded scope. Context admission is separated from a frozen claim-specific obligation plan; only an exactly bound execution can advance to adjudication. Direct chapter-core promotion requests and represented contradictions block evidence-gate handoff; high-risk correlated evaluation requires escalation. A five-stage lifecycle covers twelve explicit routes whose strongest positive effect is handoff to an independent evidence gate, never support assignment.",
+    "non_claims": "No chapter claim or evidence state is promoted by this visual. A named mechanism is not proof of correct implementation or useful deployment. A local check or formal model does not establish real-world enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.",
+    "handoff": "The next chapter is Claim Ledgers and Belief Revision. It takes responsibility for A claim can be repeated, paraphrased, narrowed, challenged, contradicted, split, merged, downgraded, superseded, or published across many surfaces without a durable identity and append-only transition history, allowing prose, caches, summaries."
+  },
+  "artifacts": {
+    "storyboard": "visual_edition/chapters/verification-bandwidth-and-context-adequacy/storyboard.md",
+    "scene_code": "visual_edition/chapters/verification-bandwidth-and-context-adequacy/scene.py",
+    "narration_script": "visual_edition/chapters/verification-bandwidth-and-context-adequacy/narration.txt",
+    "captions": "visual_edition/chapters/verification-bandwidth-and-context-adequacy/captions.vtt",
+    "descriptive_transcript": "visual_edition/chapters/verification-bandwidth-and-context-adequacy/transcript.md",
+    "thumbnail": "visual_edition/chapters/verification-bandwidth-and-context-adequacy/thumbnail.svg",
+    "scene_spec": "visual_edition/chapters/verification-bandwidth-and-context-adequacy/scene_spec.json",
+    "thumbnail_alt_text": "A governed graph diagram for Verification Bandwidth and Context Adequacy shows three named mechanism cards above a labeled failure and evidence boundary."
+  },
+  "render_receipt": {
+    "receipt_state": "current_final_av_master",
+    "validation_state": "validated",
+    "rendered_at_utc": "2026-07-30T03:19:53Z",
+    "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+    "toolchain_qualification": "qualified_for_all_non_latex_chapters",
+    "render_profile": "final_av_master",
+    "command": "Render the exact-timing ChapterVisualAbstract with pinned ManimCE 0.20.1 at 1920x1080/30, render pinned Kokoro-82M af_heart narration at speed 1.08 with a hard maximum of 300 characters per synthesis call and -16 LUFS, then align all seven visual scenes to the exact audio paragraph boundaries and mux with FFmpeg 8.0.1 as H.264 CRF 18 yuv420p plus AAC-LC 192 kb/s 48 kHz mono.",
+    "duration_seconds": 292.415,
+    "pixel_width": 1920,
+    "pixel_height": 1080,
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "output_sha256": "59a908814103812b42e57bfce463f4d05f63d0a0812fbda9a1d106607d1d0448",
+    "mux_receipt_sha256": "dd34f90ecc398e81c01df0ad0998f0432906491182fe0c5b042bccc07fdf3577",
+    "output_storage": "ignored build/visual_edition media only",
+    "visual_review": {
+      "draft_sample_seconds": [
+        18.062,
+        60.22,
+        110.297,
+        161.552,
+        209.297,
+        245.807,
+        276.13
+      ],
+      "release_sample_seconds": [
+        60.22,
+        245.807
+      ],
+      "result": "pass",
+      "review_scope": "Exact mux-receipt midpoint sampling across all seven narration scenes checked composition, legibility, persistent labels, color-plus-shape semantics, evidence ceiling, non-claims, end-card identity, and absence of clipping or overflowing text."
+    },
+    "audio_master": {
+      "identity": "Kokoro-82M bf16 af_heart via kokoro-mlx 0.1.2 at speed 1.08",
+      "provenance": "Locally generated from the canonical narration with the pinned Apache-2.0 Kokoro-82M model and MIT kokoro-mlx implementation recorded in visual_edition/narration_toolchain.json.",
+      "publication_rights_state": "cleared",
+      "duration_seconds": 292.415,
+      "sha256": "97b2d1edc09ec2f51b1ef5a564d9f22f2eed5d152630a15c9864d279274986e9"
+    },
+    "caption_review": {
+      "state": "machine_audited",
+      "audit_method": "Exact receipt-derived canonical timing plus local MLX Whisper transcript comparison and complete beginning/end coverage checks.",
+      "reviewed_against_audio_sha256": "97b2d1edc09ec2f51b1ef5a564d9f22f2eed5d152630a15c9864d279274986e9",
+      "asr_model": "mlx-community/whisper-small.en-mlx@52a88bf6e98b114a210c21bb83e22d6e1505cb73",
+      "asr_word_error_rate": 0.011804,
+      "terminology": "pass",
+      "timing": "pass",
+      "non_speech_information": "pass",
+      "material_visual_changes": "described_in_adjacent_transcript"
+    },
+    "artifact_sha256": {
+      "storyboard": "5351f66bad488c9646b6ce3334451c6d6897ff4d0edc125f1a771f35da79d3f6",
+      "scene_code": "f0f592bec8427d871bac39745de3eb043351d66babc1cd4e991e2cfdd43621ba",
+      "narration_script": "3a1da879e697a2ddeec30035b3e0a10fd02e529077c14454e5db7c28a3ef9d2e",
+      "captions": "4d5f3ebeb648f115977861df5342ecbeead7faa763db2d6e2dba7353743dc0d7",
+      "descriptive_transcript": "bba0e0de981deab2c3aa11b68bda162cc8de200fba72624c8b525063aa138cc1",
+      "thumbnail": "6d4c53ce75d47952f99ebdbe28f233e7f6fe9f68500873fbc9ce40ed00ac479c",
+      "scene_spec": "f4653222a8e216f008833b980a9c30eae9c2a12c390689d234cd00e726d430cf"
+    },
+    "remaining_release_gates": [
+      "obtain exact action-time authority before any YouTube or playlist mutation"
+    ]
+  },
+  "youtube": {
+    "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+    "video_id": null,
+    "watch_url": null,
+    "playlist_id": null,
+    "generation": 0,
+    "publication_state": "not_authorized",
+    "uploaded_output_sha256": null,
+    "bound_chapter_sha256": null,
+    "bound_source_commit": null,
+    "published_at_utc": null,
+    "platform_receipt_path": null,
+    "supersedes_video_id": null
+  },
+  "quarto_embed": {
+    "state": "absent_until_published",
+    "chapter_anchor": "visual-abstract",
+    "frame_title": "Visual abstract: Verification Bandwidth and Context Adequacy",
+    "aria_label": "Play the visual abstract for Verification Bandwidth and Context Adequacy"
+  },
+  "staleness": {
+    "state": "current",
+    "checked_chapter_sha256": "0470b10f070b747efb8ab664b20a9fd12e45790d289470a5c71419b92ce30e32",
+    "triggers": [
+      "core_claim",
+      "mechanism",
+      "worked_trace",
+      "evidence_state",
+      "non_claim",
+      "material_source",
+      "chapter_identity",
+      "handoff",
+      "public_url"
+    ]
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This derivative video does not promote or otherwise change any book claim.",
+    "The validated local final master is not a YouTube upload or a public publication.",
+    "Automated intelligibility and caption audits do not establish that every listener will prefer the synthetic voice.",
+    "A successful animation render does not establish deployment, safety, efficiency, transfer, state of the art, AGI, or ASI."
+  ]
+}

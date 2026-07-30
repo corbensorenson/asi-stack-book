@@ -1,0 +1,217 @@
+WEBVTT
+
+NOTE
+Canonical written narration timed from the exact local narration render receipt.
+Pronunciation-only substitutions are intentionally absent from caption text.
+
+1
+00:00:00.060 --> 00:00:05.296
+This chapter asks a specific question: A formally permitted AI action
+
+2
+00:00:05.296 --> 00:00:10.533
+can still be practically uncontrollable when operators lack time, attention, comprehension,
+
+3
+00:00:10.533 --> 00:00:13.865
+calibrated trust, or an effective intervention path.
+
+4
+00:00:14.205 --> 00:00:20.103
+The tempting shortcut is insufficient: A dashboard, approval click, nominal human-in-the-loop,
+
+5
+00:00:20.103 --> 00:00:24.929
+or fixed automation level does not establish meaningful control;
+
+6
+00:00:24.929 --> 00:00:30.290
+each can preserve responsibility theater while automation bias, out-of-the-loop degradation,
+
+7
+00:00:30.290 --> 00:00:32.435
+mode confusion, workload saturation,
+
+8
+00:00:32.775 --> 00:00:35.330
+and delayed effects defeat intervention.
+
+9
+00:00:35.930 --> 00:00:41.318
+The chapter's core claim is this: Meaningful oversight is a resource-bounded
+
+10
+00:00:41.318 --> 00:00:46.706
+control contract: the system must preserve an identified human controller's knowledge,
+
+11
+00:00:46.706 --> 00:00:50.135
+authority, time, observability, and effective intervention path,
+
+12
+00:00:50.475 --> 00:00:55.834
+and must degrade or abstain when that control envelope cannot be
+
+13
+00:00:55.834 --> 00:01:00.707
+maintained. Compile consequential tasks into oversight contracts naming controller, rights,
+
+14
+00:01:00.707 --> 00:01:03.630
+intervention points, deadlines, and safe defaults.
+
+15
+00:01:03.970 --> 00:01:10.114
+Estimate an oversight budget over attention, comprehension time, workload, practice recency,
+
+16
+00:01:10.114 --> 00:01:15.140
+and action latency. Expose uncertainty, mode, authority, provenance, consequence,
+
+17
+00:01:15.140 --> 00:01:19.050
+and time-to-irreversibility instead of raw telemetry alone.
+
+18
+00:01:19.650 --> 00:01:23.680
+A concrete implementation trace makes the proposal testable.
+
+19
+00:01:24.020 --> 00:01:29.126
+Implement one bounded high-impact workflow with a versioned oversight contract,
+
+20
+00:01:29.126 --> 00:01:34.231
+workload and deadline gate, mode/authority display, comprehension probe, exercised override,
+
+21
+00:01:34.231 --> 00:01:39.847
+safe hold, intervention receipt, and simulator scenarios for overload, missed alarms,
+
+22
+00:01:39.847 --> 00:01:42.400
+mode confusion, and late intervention.
+
+23
+00:01:42.740 --> 00:01:48.889
+Estimate an oversight budget over attention, comprehension time, workload, practice recency,
+
+24
+00:01:48.889 --> 00:01:53.919
+and action latency. Expose uncertainty, mode, authority, provenance, consequence,
+
+25
+00:01:53.919 --> 00:02:00.068
+and time-to-irreversibility instead of raw telemetry alone. Require active comprehension checks
+
+26
+00:02:00.068 --> 00:02:01.745
+for high-impact transitions.
+
+27
+00:02:02.085 --> 00:02:07.451
+Throughout the trace, one invariant remains visible: Consequential action has an
+
+28
+00:02:07.451 --> 00:02:09.890
+identified controller with current authority.
+
+29
+00:02:10.490 --> 00:02:15.665
+The design can still fail. automation bias complacency out-of-the-loop skill decay
+
+30
+00:02:15.665 --> 00:02:20.840
+mode confusion The correct response is to stop, narrow, quarantine, compensate,
+
+31
+00:02:20.840 --> 00:02:25.545
+or retain an owned residual rather than narrate uncertainty away.
+
+32
+00:02:26.145 --> 00:02:31.191
+This chapter remains Design rationale at argument support. Its contracts, examples,
+
+33
+00:02:31.191 --> 00:02:35.320
+tests, or local artifacts establish only their encoded scope.
+
+34
+00:02:35.320 --> 00:02:40.366
+The chapter names proof targets rather than pretending they are already
+
+35
+00:02:40.366 --> 00:02:40.825
+closed.
+
+36
+00:02:41.165 --> 00:02:46.680
+In the finite model, any consequential transition lacking authority, observability, comprehension,
+
+37
+00:02:46.680 --> 00:02:52.195
+timely intervention, or a reachable safe state is rejected or degraded.
+
+38
+00:02:52.535 --> 00:02:58.445
+The bounded accountability assignment never attributes operational responsibility beyond the authority
+
+39
+00:02:58.445 --> 00:03:02.743
+and effective control recorded in the oversight contract.
+
+40
+00:03:02.743 --> 00:03:08.115
+Loss of observability or intervention capacity cannot silently preserve autonomy.
+
+41
+00:03:08.715 --> 00:03:13.679
+No chapter claim or evidence state is promoted by this visual.
+
+42
+00:03:13.679 --> 00:03:18.643
+A named mechanism is not proof of correct implementation or useful
+
+43
+00:03:18.643 --> 00:03:23.607
+deployment. A local check or formal model does not establish real-world
+
+44
+00:03:23.607 --> 00:03:28.120
+enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.
+
+45
+00:03:28.460 --> 00:03:32.935
+These boundaries matter because an explanatory derivative is useful only if
+
+46
+00:03:32.935 --> 00:03:36.190
+it preserves the evidence ceiling of its source.
+
+47
+00:03:36.790 --> 00:03:42.275
+At most, this visual explains the chapter's design rationale at argument
+
+48
+00:03:42.275 --> 00:03:47.262
+support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI,
+
+49
+00:03:47.262 --> 00:03:52.249
+or ASI result. The next chapter is Human-AI Communication, Persuasion,
+
+50
+00:03:52.249 --> 00:03:53.745
+and Epistemic Security.
+
+51
+00:03:54.085 --> 00:03:59.852
+It takes responsibility for An AI system can preserve internal evidence
+
+52
+00:03:59.852 --> 00:04:05.619
+discipline and still change beliefs, choices, and institutions through selective framing,
+
+53
+00:04:05.619 --> 00:04:08.765
+personalization, synthetic identity, repetition, and amplification.

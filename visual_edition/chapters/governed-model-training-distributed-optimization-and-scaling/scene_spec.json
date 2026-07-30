@@ -1,0 +1,70 @@
+{
+  "chapter_id": "governed-model-training-distributed-optimization-and-scaling",
+  "title": "Governed Model Training, Distributed Optimization, and Scaling",
+  "subtitle": "A model-training candidate is eligible for qualification only when a prospectively frozen run contract… training, model quality, optimizer superiority, fault tolerance, safety, support, readiness, release, transfer, nor SOTA.",
+  "archetype": "route",
+  "claim_label": "Design rationale",
+  "evidence_level": "argument",
+  "next_title": "Learning Theory, Generalization, and Scaling Science",
+  "display": {
+    "problem": "A checkpoint can load and a loss curve can converge… checkpoint selection no longer matches the training process claimed.",
+    "insufficient": "Code, data, weights, final loss, peak throughput, a framework save… stateful distributed run or separate candidate selection from independent qualification.",
+    "mechanism": [
+      {
+        "label": "Freeze exact run identity",
+        "detail": "Freeze exact run identity, data order, topology… faults, selection, qualification, and nonclaims before execution."
+      },
+      {
+        "label": "Executed device mesh parallelism",
+        "detail": "Compile and record the executed device mesh… collective/compiler plan, batch arithmetic, and optimizer-step semantics."
+      },
+      {
+        "label": "Enumerate complete base",
+        "detail": "Enumerate complete base and architecture-specific model, optimizer… RNG, sampler, data-cursor, topology, and compiler state."
+      },
+      {
+        "label": "Every attempt failure interruption",
+        "detail": "Record every attempt, failure, interruption, recovery, batch… actual resource cost without censoring failed runs."
+      }
+    ],
+    "trace": [
+      "Freeze exact run identity",
+      "Executed device mesh parallelism",
+      "Enumerate complete base",
+      "Every attempt failure interruption"
+    ],
+    "failures": [
+      "run identity drift",
+      "silent data replay or skip",
+      "torn checkpoint",
+      "state amnesia"
+    ],
+    "proof_targets": [
+      "An accepted finite handoff requires exact declared… denominator, and no support or release request.",
+      "An accepted finite handoff requires accounted resume… families, validation-only selection, and unopened independent qualification.",
+      "global batch arithmetic reconciles"
+    ],
+    "evidence_ceiling": "This chapter remains Design rationale at argument support.",
+    "nonclaims": [
+      "No chapter claim or evidence state is promoted by this visual.",
+      "A named mechanism is not proof of correct implementation or useful deployment.",
+      "A local check or formal model does not establish real-world enforcement.",
+      "No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows."
+    ],
+    "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result."
+  },
+  "timing": {
+    "basis": "exact_narration_paragraph_boundaries",
+    "narration_receipt_sha256": "47d422b90cc6b53c11213a2938fe39c1b9d5bff378321549bcb8f35e542d117a",
+    "target_duration_seconds": 265.105,
+    "scene_endpoints_seconds": [
+      35.075,
+      92.17,
+      150.485,
+      166.315,
+      207.71,
+      235.785,
+      265.105
+    ]
+  }
+}

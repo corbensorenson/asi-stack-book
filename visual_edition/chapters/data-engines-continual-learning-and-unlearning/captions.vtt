@@ -1,0 +1,265 @@
+WEBVTT
+
+NOTE
+Canonical written narration timed from the exact local narration render receipt.
+Pronunciation-only substitutions are intentionally absent from caption text.
+
+1
+00:00:00.060 --> 00:00:04.320
+This chapter asks a specific question: A self-improving stack needs to
+
+2
+00:00:04.320 --> 00:00:08.581
+decide which data and feedback may enter future learning without confusing
+
+3
+00:00:08.581 --> 00:00:12.454
+an intake decision with a capability result, a privacy guarantee,
+
+4
+00:00:12.454 --> 00:00:15.940
+or proof that a model has forgotten a record.
+
+5
+00:00:16.280 --> 00:00:22.607
+The tempting shortcut is insufficient: Training corpora, synthetic-data pipelines, replay buffers,
+
+6
+00:00:22.607 --> 00:00:28.358
+and deletion requests are often handled as separate operational concerns,
+
+7
+00:00:28.358 --> 00:00:33.535
+leaving provenance, contamination control, retention, distributional trade-offs, downstream descendants,
+
+8
+00:00:33.875 --> 00:00:37.205
+and evidence effects without one governable lifecycle.
+
+9
+00:00:37.805 --> 00:00:43.634
+The chapter's core claim is this: Data Engines, Continual Learning,
+
+10
+00:00:43.634 --> 00:00:50.047
+and Unlearning owns a datum-, cohort-, provenance-, rights-, split-, contamination-, learning-lane-,
+
+11
+00:00:50.047 --> 00:00:54.710
+retention-, checkpoint-authority-, full-state-inventory-, descendant-, deletion-request-, claim-axis-, consumer-, environment-,
+
+12
+00:00:55.050 --> 00:01:01.930
+and time-specific Data-and-Descendant Custody Lease: before learning or deletion,
+
+13
+00:01:01.930 --> 00:01:09.575
+it binds admissible use, evaluation exclusions, synthetic and transformation lineage,
+
+14
+00:01:09.575 --> 00:01:16.455
+coverage and distribution residuals, model/optimizer/scheduler/RNG/cache/backup/descendant state, prospective checkpoint authority,
+
+15
+00:01:16.795 --> 00:01:22.633
+retention and replay, deletion propagation, verification, rollback, expiry, and terminal custody;
+
+16
+00:01:22.633 --> 00:01:28.470
+behavioral cohort change, causal influence reduction, privacy leakage reduction, lineage invalidation,
+
+17
+00:01:28.470 --> 00:01:33.777
+legal compliance, and storage or backup erasure remain separate claims,
+
+18
+00:01:33.777 --> 00:01:35.900
+and no receipt, checksum,
+
+19
+00:01:36.240 --> 00:01:42.633
+exclusion, invalidation, benchmark score, rollback match, or synthetic campaign alone establishes
+
+20
+00:01:42.633 --> 00:01:46.120
+model quality, forgetting, privacy, erasure, safety.
+
+21
+00:01:46.720 --> 00:01:50.750
+A concrete implementation trace makes the proposal testable.
+
+22
+00:01:51.090 --> 00:01:56.874
+The exact current minimum preserves all fifteen legacy data-admission, full-state,
+
+23
+00:01:56.874 --> 00:02:01.501
+and unlearning-claim route theorems; the four-scenario admission probe;
+
+24
+00:02:01.501 --> 00:02:07.863
+the 24-surface/15-transaction full-state bridge; and the three-seed/twelve-arm small-model update result inside
+
+25
+00:02:07.863 --> 00:02:09.020
+an eight-stage,
+
+26
+00:02:09.360 --> 00:02:16.500
+82-route custody/update/deletion lifecycle with two composed Lean traces, 96/96 route mutations,
+
+27
+00:02:16.500 --> 00:02:23.641
+3/3 cross-stage mutations, one bounded custody handoff, and one protocol-version-2 readmission
+
+28
+00:02:23.641 --> 00:02:24.290
+witness.
+
+29
+00:02:24.630 --> 00:02:31.880
+Influence remains unestablished, storage erasure remains zero, all four affected claims
+
+30
+00:02:31.880 --> 00:02:38.471
+remain no-change, and no source/rights truth, semantic contamination, foundation-model learning,
+
+31
+00:02:38.471 --> 00:02:43.085
+privacy/legal/backup/external-descendant erasure, production rollback, transfer, chapter-core transition,
+
+32
+00:02:43.425 --> 00:02:45.455
+or SOTA result exists.
+
+33
+00:02:46.055 --> 00:02:51.872
+The design can still fail. Provenance laundering relabels transformed, distilled, generated,
+
+34
+00:02:51.872 --> 00:02:57.160
+retrieved, replayed, inferred, or mixed data as origin-complete source material.
+
+35
+00:02:57.500 --> 00:03:02.256
+Metadata theater treats a valid schema, checksum, license field,
+
+36
+00:03:02.256 --> 00:03:08.070
+or PROV/Croissant-shaped record as proof of integrity, representativeness, lawful use, fitness,
+
+37
+00:03:08.070 --> 00:03:09.655
+privacy, or safety.
+
+38
+00:03:09.995 --> 00:03:16.663
+Exact-overlap checks miss semantic leakage, benchmark memorization, near duplicates, indirect exposure,
+
+39
+00:03:16.663 --> 00:03:20.300
+contamination, subgroup loss, or distribution shift.
+
+40
+00:03:20.640 --> 00:03:26.271
+Synthetic replacement collapses coverage and tails, while indiscriminate accumulation retains poisoned,
+
+41
+00:03:26.271 --> 00:03:31.903
+private, obsolete, low-quality, or revoked material. The correct response is to
+
+42
+00:03:31.903 --> 00:03:37.534
+stop, narrow, quarantine, compensate, or retain an owned residual rather than
+
+43
+00:03:37.534 --> 00:03:39.070
+narrate uncertainty away.
+
+44
+00:03:39.670 --> 00:03:44.716
+This chapter remains Design rationale at argument support. Its contracts, examples,
+
+45
+00:03:44.716 --> 00:03:48.845
+tests, or local artifacts establish only their encoded scope.
+
+46
+00:03:48.845 --> 00:03:53.891
+The chapter names proof targets rather than pretending they are already
+
+47
+00:03:53.891 --> 00:03:54.350
+closed.
+
+48
+00:03:54.690 --> 00:04:00.104
+Missing bound provenance, rights, or authority blocks the reachable custody lifecycle
+
+49
+00:04:00.104 --> 00:04:05.517
+before data admission. Missing split exclusions or a contamination-check record blocks
+
+50
+00:04:05.517 --> 00:04:08.470
+the reachable custody lifecycle before admission.
+
+51
+00:04:08.810 --> 00:04:13.705
+A complete admission record advances only to full-state binding and does
+
+52
+00:04:13.705 --> 00:04:17.265
+not establish data quality, training, deletion, or support.
+
+53
+00:04:17.865 --> 00:04:22.829
+No chapter claim or evidence state is promoted by this visual.
+
+54
+00:04:22.829 --> 00:04:27.793
+A named mechanism is not proof of correct implementation or useful
+
+55
+00:04:27.793 --> 00:04:32.757
+deployment. A local check or formal model does not establish real-world
+
+56
+00:04:32.757 --> 00:04:37.270
+enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.
+
+57
+00:04:37.610 --> 00:04:42.085
+These boundaries matter because an explanatory derivative is useful only if
+
+58
+00:04:42.085 --> 00:04:45.340
+it preserves the evidence ceiling of its source.
+
+59
+00:04:45.940 --> 00:04:51.342
+At most, this visual explains the chapter's design rationale at argument
+
+60
+00:04:51.342 --> 00:04:56.252
+support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI,
+
+61
+00:04:56.252 --> 00:05:01.654
+or ASI result. The next chapter is Scientific Discovery and Experimental
+
+62
+00:05:01.654 --> 00:05:02.145
+Governance.
+
+63
+00:05:02.485 --> 00:05:08.047
+It takes responsibility for AI-assisted science closes a loop from research
+
+64
+00:05:08.047 --> 00:05:13.609
+objective and hypothesis through design, simulation or instrument control, measurement, analysis,
+
+65
+00:05:13.609 --> 00:05:18.665
+causal or statistical claim, replication, dual-use review, and evidence handoff.

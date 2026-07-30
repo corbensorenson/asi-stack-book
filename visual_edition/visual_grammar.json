@@ -1,7 +1,7 @@
 {
   "schema_version": "asi_stack.visual_grammar.v1",
-  "grammar_id": "asi-stack-visual-grammar-candidate-1",
-  "state": "candidate_until_five_pilots_pass",
+  "grammar_id": "asi-stack-visual-grammar-1",
+  "state": "ratified",
   "aspect_ratio": "16:9",
   "canvas": {
     "release_width": 1920,
@@ -34,7 +34,7 @@
   },
   "typography": {
     "primary": "Avenir Next",
-    "fallback": "DejaVu Sans",
+    "fallback": "Arial",
     "monospace": "Menlo",
     "title_weight": "demi_bold",
     "body_weight": "regular",
@@ -88,7 +88,9 @@
       "replaceable-cognitive-substrates-beyond-transformer-monoculture",
       "living-book-methodology"
     ],
-    "current_state": "not_ratified"
+    "current_state": "ratified",
+    "ratified_at_utc": "2026-07-29T16:17:04Z",
+    "ratification_basis": "All five named pilots have validated final 1080p30 A/V masters, exact narration and caption audits, descriptive transcripts, reviewed release visuals, and current digest receipts. The all-chapter rollout additionally passed long-title, dense-content, shortest-script, and longest-script stress tests; explanatory body copy uses the installed Arial fallback after full-resolution inspection rejected uneven small-text spacing."
   },
   "support_state_effect": "none",
   "non_claim": "This grammar standardizes explanation. It does not standardize, strengthen, or validate chapter conclusions."

@@ -1,0 +1,70 @@
+{
+  "chapter_id": "failure-modes-of-ungoverned-intelligence",
+  "title": "Failure Modes of Ungoverned Intelligence",
+  "subtitle": "A stack-level failure model should represent each named risk as a distinct boundary event… escalation or learning path; a taxonomy entry alone establishes neither occurrence nor mitigation.",
+  "archetype": "ledger",
+  "claim_label": "Design rationale",
+  "evidence_level": "argument",
+  "next_title": "Dangerous Capability Domains and Misuse Uplift",
+  "display": {
+    "problem": "Governance, reliability, and self-improvement claims cannot be tested unless their… observable boundary events, evidence records, and owners are declared prospectively.",
+    "insufficient": "Labels such as alignment failure or unsafe autonomy do not… whether an effect escaped, or who owns containment and residuals.",
+    "mechanism": [
+      {
+        "label": "Each admitted failure versioned",
+        "detail": "Classify each admitted failure record by versioned… forcing unmapped observations into a known class."
+      },
+      {
+        "label": "Each named failure protected",
+        "detail": "Map each named failure to a protected… containment owner, residual, and planned falsification test."
+      },
+      {
+        "label": "Add revise architectural boundaries",
+        "detail": "Add or revise architectural boundaries only… escape, or detector-gap records with versioned lineage."
+      },
+      {
+        "label": "Repeated failure cannot become",
+        "detail": "Repeated failure cannot become accepted behavior merely… operator habituation, or routing around the detector."
+      }
+    ],
+    "trace": [
+      "Each admitted failure versioned",
+      "Each named failure protected",
+      "Add revise architectural boundaries",
+      "Repeated failure cannot become"
+    ],
+    "failures": [
+      "Evaluator capture.",
+      "Memory poisoning.",
+      "Tool/action overreach.",
+      "Compression that hides residual complexity."
+    ],
+    "proof_targets": [
+      "A component with a failed required invariant cannot be promoted.",
+      "A finite incident whose authority exceeds its ceiling routes to explicit authority review.",
+      "If the finite failure-recurrence router returns closeFailureRecord… severe-irreversible, unreviewed-promotion, unquarantined-escape, or missing-evidence-transition branch applies."
+    ],
+    "evidence_ceiling": "This chapter remains Design rationale at argument support.",
+    "nonclaims": [
+      "No chapter claim or evidence state is promoted by this visual.",
+      "A named mechanism is not proof of correct implementation or useful deployment.",
+      "A local check or formal model does not establish real-world enforcement.",
+      "No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows."
+    ],
+    "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result."
+  },
+  "timing": {
+    "basis": "exact_narration_paragraph_boundaries",
+    "narration_receipt_sha256": "a041eba299c9360064d5be43c93d0621fc66ef2426fd80f17b8b32eb38e5e5f1",
+    "target_duration_seconds": 256.23,
+    "scene_endpoints_seconds": [
+      31.9,
+      83.67,
+      129.94,
+      147.87,
+      194.81,
+      222.885,
+      256.23
+    ]
+  }
+}

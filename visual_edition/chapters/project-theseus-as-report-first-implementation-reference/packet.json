@@ -1,0 +1,158 @@
+{
+  "schema_version": "asi_stack.visual_chapter_packet.v1",
+  "video_id": "asi-video-project-theseus-as-report-first-implementation-reference",
+  "chapter_id": "project-theseus-as-report-first-implementation-reference",
+  "chapter_path": "chapters/project-theseus-as-report-first-implementation-reference.qmd",
+  "chapter_sha256": "85d9d6aa93974ec20357d9f3a189b7a8e353f8c189f9dfb62fa4b23942238a1b",
+  "source_commit": "f10ef079ecfeb48503407d67832a0251f77c2c78",
+  "pilot": false,
+  "lifecycle_state": "ready_not_published",
+  "claim_bindings": [
+    {
+      "claim_id": "project-theseus-as-report-first-implementation-reference.core",
+      "claim_label": "Design rationale",
+      "support_state": "argument"
+    }
+  ],
+  "assigned_source_ids": [
+    "project_theseus_whitepaper",
+    "deterministic_capability_compilation",
+    "theseus_plan_compiler",
+    "theseus_self_evolution_system",
+    "theseus_architecture_gate",
+    "theseus_operator_os",
+    "theseus_circle_transfer",
+    "ext_model_cards_2019",
+    "ext_datasheets_datasets_2021",
+    "ext_factsheets_ai_services_2019",
+    "ext_ml_reproducibility_program_2021"
+  ],
+  "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result.",
+  "required_content": {
+    "problem": "The book needs a concrete implementation-reference chapter for how the ASI stack can be operated as report-first local machinery instead of only conceptual layer diagrams. A prototype roadmap is not enough unless readers can see how goals, plans, arms, reports, gates, residuals, checkpoints, compute, and operator surfaces interact in a working research system.",
+    "core_mechanism": "Project Theseus as Report-First Implementation Reference owns a source-project-, pinned-revision-, report-family-, command-, environment-, artifact-, lineage-, evidence-state-, replay-, public-safety-, publication-permission-, reviewer-, consumer-, and time-specific Implementation-Reference Evidence Packet: it binds every imported or replayed report, configuration, ledger, work-board summary, registry, gate, crosswalk, trace, retained artifact, command, environment note, digest, missing artifact, decision, residual, and non-claim to source-note-only, imported, replay-ready, replay-failed, locally reproduced, stale, runtime-blocked, or archived lineage; dashboards and latest files are projections only, and no GREEN gate, complete registry, module card, pointer row, metadata snapshot, parity manifest, command replay, fixture, theorem.",
+    "worked_trace": "Ten exact source-to-claim mappings; twelve proof targets implemented by fifty-four Lean declarations that are finite record implications, reductions, fixture normalizations, and explicit overclaim controls rather than empirical projections; one report-crosswalk schema and fixture; a static 14/14 architecture-gate import; an 18-mode and 13-comparison generation-mode import with zero promotable comparisons; a two-command ten-artifact support replay with no transition; one valid and seven invalid report-bundle audit cases; a metadata-only 64-task public bundle with zero public training rows; a selected support aggregate with four command replays, sixteen artifact digests, sixty-eight task records, fourteen rejected controls, and two accepted no-promotion decisions; bounded artifact-retention, 22-module definition-of-done.",
+    "failure_boundary": "Latest-file overwrite or dashboard theater replaces canonical lineage, hides stale or failed runs, and makes a projection look like source truth. Report-shape laundering treats a complete schema, polished packet, checklist, or documentation standard as proof that the underlying report or system is correct. Stale-snapshot currentness promotes historical work-board, registry, gate, readiness, or runtime metadata as a statement about the current project. Digest, path, revision, generator, command, environment, or dependency drift joins an imported fact to the wrong artifact or makes replay irreproducible.",
+    "evidence_state": "This chapter remains Design rationale at argument support. Its contracts, examples, tests, or local artifacts establish only their encoded scope. A finite implementation-reference claim that lacks both a report and a config-or-tool reference, or relies on dashboard prose alone, is rejected. A capability or self-evolution promotion is blocked when required gate reports are absent or failing.",
+    "non_claims": "No chapter claim or evidence state is promoted by this visual. A named mechanism is not proof of correct implementation or useful deployment. A local check or formal model does not establish real-world enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.",
+    "handoff": "The next chapter is Prototype Roadmap. It takes responsibility for The architecture needs a build sequence that does not introduce agency or self-improvement before auditability and governance are credible."
+  },
+  "artifacts": {
+    "storyboard": "visual_edition/chapters/project-theseus-as-report-first-implementation-reference/storyboard.md",
+    "scene_code": "visual_edition/chapters/project-theseus-as-report-first-implementation-reference/scene.py",
+    "narration_script": "visual_edition/chapters/project-theseus-as-report-first-implementation-reference/narration.txt",
+    "captions": "visual_edition/chapters/project-theseus-as-report-first-implementation-reference/captions.vtt",
+    "descriptive_transcript": "visual_edition/chapters/project-theseus-as-report-first-implementation-reference/transcript.md",
+    "thumbnail": "visual_edition/chapters/project-theseus-as-report-first-implementation-reference/thumbnail.svg",
+    "scene_spec": "visual_edition/chapters/project-theseus-as-report-first-implementation-reference/scene_spec.json",
+    "thumbnail_alt_text": "A governed ledger diagram for Project Theseus as Report-First Implementation Reference shows three named mechanism cards above a labeled failure and evidence boundary."
+  },
+  "render_receipt": {
+    "receipt_state": "current_final_av_master",
+    "validation_state": "validated",
+    "rendered_at_utc": "2026-07-30T03:45:24Z",
+    "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+    "toolchain_qualification": "qualified_for_all_non_latex_chapters",
+    "render_profile": "final_av_master",
+    "command": "Render the exact-timing ChapterVisualAbstract with pinned ManimCE 0.20.1 at 1920x1080/30, render pinned Kokoro-82M af_heart narration at speed 1.08 with a hard maximum of 300 characters per synthesis call and -16 LUFS, then align all seven visual scenes to the exact audio paragraph boundaries and mux with FFmpeg 8.0.1 as H.264 CRF 18 yuv420p plus AAC-LC 192 kb/s 48 kHz mono.",
+    "duration_seconds": 308.966016,
+    "pixel_width": 1920,
+    "pixel_height": 1080,
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "output_sha256": "dcabfc71fed682e8994fd591b314416f2822f1cca25b51ae2bb87ca332d0cc18",
+    "mux_receipt_sha256": "42e04305ed92b18d52921e32aedaeea971586db60bc5338f5a12bf7895504ecc",
+    "output_storage": "ignored build/visual_edition media only",
+    "visual_review": {
+      "draft_sample_seconds": [
+        14.463,
+        60.445,
+        124.595,
+        178.395,
+        223.937,
+        262.347,
+        292.67
+      ],
+      "release_sample_seconds": [
+        60.445,
+        262.347
+      ],
+      "result": "pass",
+      "review_scope": "Exact mux-receipt midpoint sampling across all seven narration scenes checked composition, legibility, persistent labels, color-plus-shape semantics, evidence ceiling, non-claims, end-card identity, and absence of clipping or overflowing text."
+    },
+    "audio_master": {
+      "identity": "Kokoro-82M bf16 af_heart via kokoro-mlx 0.1.2 at speed 1.08",
+      "provenance": "Locally generated from the canonical narration with the pinned Apache-2.0 Kokoro-82M model and MIT kokoro-mlx implementation recorded in visual_edition/narration_toolchain.json.",
+      "publication_rights_state": "cleared",
+      "duration_seconds": 308.966016,
+      "sha256": "d26360495637befe00e041ee3d942b42b5b73472c207f593a3be049fe9557b96"
+    },
+    "caption_review": {
+      "state": "machine_audited",
+      "audit_method": "Exact receipt-derived canonical timing plus local MLX Whisper transcript comparison and complete beginning/end coverage checks.",
+      "reviewed_against_audio_sha256": "d26360495637befe00e041ee3d942b42b5b73472c207f593a3be049fe9557b96",
+      "asr_model": "mlx-community/whisper-small.en-mlx@52a88bf6e98b114a210c21bb83e22d6e1505cb73",
+      "asr_word_error_rate": 0.028658,
+      "terminology": "pass",
+      "timing": "pass",
+      "non_speech_information": "pass",
+      "material_visual_changes": "described_in_adjacent_transcript"
+    },
+    "artifact_sha256": {
+      "storyboard": "f03d29552447cc569e8baed9d9178e93c89f2c0ae86e2d3882de4c5092e4cd22",
+      "scene_code": "db25bc39c14f2638ee76745c74252c1d6ad739f008bd53454e3c3bffed407a3c",
+      "narration_script": "a6830391bf8e80bb2ce9776494ac0332d80bc84f9d5a24da67da5473fa536553",
+      "captions": "eb7c7a86c1eb80ae1ac34f9f447af9281cf1bbcac0445c820ab336dc1d155aad",
+      "descriptive_transcript": "668f6d171721316e478ed55747df35d006b62c5690e9b38acad63b0c576c9e32",
+      "thumbnail": "8dfb40ea64e821461245a4ba63d53f587c002d2f35908aeaabb6c88c021ba3bb",
+      "scene_spec": "cff959a29395d9a72fc1e3850cdffcd79af3a91591ac021f5178412c44baa3de"
+    },
+    "remaining_release_gates": [
+      "obtain exact action-time authority before any YouTube or playlist mutation"
+    ]
+  },
+  "youtube": {
+    "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+    "video_id": null,
+    "watch_url": null,
+    "playlist_id": null,
+    "generation": 0,
+    "publication_state": "not_authorized",
+    "uploaded_output_sha256": null,
+    "bound_chapter_sha256": null,
+    "bound_source_commit": null,
+    "published_at_utc": null,
+    "platform_receipt_path": null,
+    "supersedes_video_id": null
+  },
+  "quarto_embed": {
+    "state": "absent_until_published",
+    "chapter_anchor": "visual-abstract",
+    "frame_title": "Visual abstract: Project Theseus as Report-First Implementation Reference",
+    "aria_label": "Play the visual abstract for Project Theseus as Report-First Implementation Reference"
+  },
+  "staleness": {
+    "state": "current",
+    "checked_chapter_sha256": "85d9d6aa93974ec20357d9f3a189b7a8e353f8c189f9dfb62fa4b23942238a1b",
+    "triggers": [
+      "core_claim",
+      "mechanism",
+      "worked_trace",
+      "evidence_state",
+      "non_claim",
+      "material_source",
+      "chapter_identity",
+      "handoff",
+      "public_url"
+    ]
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This derivative video does not promote or otherwise change any book claim.",
+    "The validated local final master is not a YouTube upload or a public publication.",
+    "Automated intelligibility and caption audits do not establish that every listener will prefer the synthetic voice.",
+    "A successful animation render does not establish deployment, safety, efficiency, transfer, state of the art, AGI, or ASI."
+  ]
+}

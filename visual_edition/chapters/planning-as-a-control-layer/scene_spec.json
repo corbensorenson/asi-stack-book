@@ -1,0 +1,70 @@
+{
+  "chapter_id": "planning-as-a-control-layer",
+  "title": "Planning as a Control Layer: DAGs and Intelligence Arbitrage",
+  "subtitle": "Planning as a Control Layer should own a versioned, consumer-relative plan policy that selects and revises a partial order of obligations under uncertainty before execution.",
+  "archetype": "ledger",
+  "claim_label": "Design rationale",
+  "evidence_level": "argument",
+  "next_title": "Governed World Models and Reality Grounding",
+  "display": {
+    "problem": "After a command contract is accepted, the stack must choose… is permitted, and how feedback changes only the affected future.",
+    "insufficient": "Prompt plans, chain or tree search, HTN/PDDL task models, DAG… replan behavior, or total cost against strong matched baselines.",
+    "mechanism": [
+      {
+        "label": "Freeze accepted command consumer",
+        "detail": "Freeze the accepted command version, consumer… ceiling, and material-change triggers before comparing plans."
+      },
+      {
+        "label": "Generate receive multiple candidate",
+        "detail": "Generate or receive multiple candidate decompositions plus… search history, discarded alternatives, and selection denominator."
+      },
+      {
+        "label": "Each node obligation exact",
+        "detail": "Represent each node as an obligation… verifier, failure behavior, fallback, and residual owner."
+      },
+      {
+        "label": "Type dependency edges data",
+        "detail": "Type dependency edges as data, control, semantic… distinguish asserted, inferred, observed, and unknown relations."
+      }
+    ],
+    "trace": [
+      "Freeze accepted command consumer",
+      "Generate receive multiple candidate",
+      "Each node obligation exact",
+      "Type dependency edges data"
+    ],
+    "failures": [
+      "Scope and obligation drift adds goals… accepted contract did not authorize.",
+      "Decomposition theater produces plausible nodes that… effects, verification, delivery, or recovery work.",
+      "Dependency hallucination asserts causal or feasibility… confidence, or graph convenience without evidence.",
+      "Dependency omission allows a node to… evidence, resource, or recovery prerequisites exist."
+    ],
+    "proof_targets": [
+      "A plan node inherits the authority ceiling… its parent contract unless governance lowers it.",
+      "A plan with unsatisfied required constraints cannot be dispatched.",
+      "Modeled plan-graph admission routes missing command-contract acceptance… registers, and non-claim boundaries to explicit outcomes."
+    ],
+    "evidence_ceiling": "This chapter remains Design rationale at argument support.",
+    "nonclaims": [
+      "No chapter claim or evidence state is promoted by this visual.",
+      "A named mechanism is not proof of correct implementation or useful deployment.",
+      "A local check or formal model does not establish real-world enforcement.",
+      "No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows."
+    ],
+    "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result."
+  },
+  "timing": {
+    "basis": "exact_narration_paragraph_boundaries",
+    "narration_receipt_sha256": "7ab4f454a9b42ea0807d44e064e4979357e54a1d4e9c905ee844f8b0ca3bc413",
+    "target_duration_seconds": 300.93,
+    "scene_endpoints_seconds": [
+      38.97,
+      86.54,
+      148.425,
+      195.795,
+      242.86,
+      270.935,
+      300.93
+    ]
+  }
+}

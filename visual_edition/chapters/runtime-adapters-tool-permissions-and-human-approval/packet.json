@@ -1,0 +1,175 @@
+{
+  "schema_version": "asi_stack.visual_chapter_packet.v1",
+  "video_id": "asi-video-runtime-adapters-tool-permissions-and-human-approval",
+  "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
+  "chapter_path": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd",
+  "chapter_sha256": "981d8423a51f2201e4bc93feb616bc9aff5398e71e0327f4d784a32b97de9035",
+  "source_commit": "f10ef079ecfeb48503407d67832a0251f77c2c78",
+  "pilot": false,
+  "lifecycle_state": "ready_not_published",
+  "claim_bindings": [
+    {
+      "claim_id": "runtime-adapters-tool-permissions-and-human-approval.core",
+      "claim_label": "Design rationale",
+      "support_state": "argument"
+    }
+  ],
+  "assigned_source_ids": [
+    "talos",
+    "deterministic_capability_compilation",
+    "platonic_world_model",
+    "viea",
+    "ladon_manhattan",
+    "software_magic_grimoire",
+    "genesiscode",
+    "moecot",
+    "field_of_god_ai_constitution",
+    "theseus_operator_os",
+    "ext_humans_automation_1997",
+    "ext_ironies_automation_1983",
+    "ext_levels_automation_2000",
+    "ext_complacency_bias_automation_2010",
+    "ext_cap_theorem_gilbert_lynch_2002",
+    "ext_inspect_ai_2024",
+    "ext_agentdojo_2024",
+    "ext_camel_prompt_injection_2025",
+    "ext_owasp_agentic_top_10_2026",
+    "moecot_manifest_project",
+    "beastbrain_project",
+    "bugbrain_project",
+    "corbens_trainer_project",
+    "corbens_best_model_possible_project",
+    "ext_claw_swe_bench_2026",
+    "ext_txfs_2018",
+    "qcsa_whitepaper",
+    "reflexive_router_whitepaper"
+  ],
+  "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result.",
+  "required_content": {
+    "problem": "Plans become real-world effects only through tools, runtimes, deployment adapters, and approval gates. Tool calling without a permission and approval model turns reasoning errors into side effects.",
+    "core_mechanism": "Runtime adapters should enforce typed permissions, sandboxing, human approval, and post-action evidence capture. Freeze an invocation contract with stable invocation, job, attempt, adapter, target, operation, requester, consumer, consequence, risk, authority, rights, budget, deadline, expiry, policy, and environment identities before effect outcomes. Classify target type, effect class, impact, reversibility, external visibility, affected parties, data sensitivity, secret use, legal or organizational consequence, and required recovery objective prospectively.",
+    "worked_trace": "The current minimum is one public invocation schema; a 2 valid/7 rejecting permission harness; one rollback-exact temporary-file effect with two no-mutation denial controls; 2 valid/12 rejecting adversarial-boundary records; 3 valid/7 rejecting human-oversight records and one accepted no-promotion decision; 3 valid/6 rejecting partitioned-authority records; one bounded/10 rejecting historical capability-envelope record; the adjacent QCSA synthetic authority and one reversible vertical-effect results at their exact non-core ceilings; and forty-nine Lean declarations under six public targets. These artifacts exercise authored record shape, finite route consequences, one public-safe local write/restore, synthetic authority, approval, injection-adjacent, revocation, reviewer, and partition controls only.",
+    "failure_boundary": "Ambient tool authority lets cognition invoke effects without an exact parent job, principal, capability, target, lease, policy, or terminal receipt. Capability overreach widens executable, argument, object, path, network, API, data, clock, randomness, environment, secret, hardware, rate, cost, retention, or delegation scope. Semantic or alias escalation turns a recognized operation, nearby address, tool discovery, fluent rationale, or certificate into authority over a different target or effect. Confused-deputy and delegation laundering use adapter, service, human, or remote peer authority that the requesting principal never held.",
+    "evidence_state": "This chapter remains Design rationale at argument support. Its contracts, examples, tests, or local artifacts establish only their encoded scope. A runtime adapter invocation is valid only when job permissions include the adapter capability and its effect lease is active, scoped to that capability, and sandboxed. A high-impact adapter call without approval or a required rollback handle is rejected, mismatched, expired, or unsandboxed effect leases cannot validate invocation, and modeled confused-deputy or sandbox-escape attempts cannot pass dispatch.",
+    "non_claims": "No chapter claim or evidence state is promoted by this visual. A named mechanism is not proof of correct implementation or useful deployment. A local check or formal model does not establish real-world enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.",
+    "handoff": "The next chapter is Embodied Agency, Real-Time Control, and Physical Safety. It takes responsibility for An authorized symbolic action can become unsafe when translated into deadline-bound control under dynamics, contact, actuator limits, human proximity, sensor loss, communication failure, or irreversible effects."
+  },
+  "artifacts": {
+    "storyboard": "visual_edition/chapters/runtime-adapters-tool-permissions-and-human-approval/storyboard.md",
+    "scene_code": "visual_edition/chapters/runtime-adapters-tool-permissions-and-human-approval/scene.py",
+    "narration_script": "visual_edition/chapters/runtime-adapters-tool-permissions-and-human-approval/narration.txt",
+    "captions": "visual_edition/chapters/runtime-adapters-tool-permissions-and-human-approval/captions.vtt",
+    "descriptive_transcript": "visual_edition/chapters/runtime-adapters-tool-permissions-and-human-approval/transcript.md",
+    "thumbnail": "visual_edition/chapters/runtime-adapters-tool-permissions-and-human-approval/thumbnail.svg",
+    "scene_spec": "visual_edition/chapters/runtime-adapters-tool-permissions-and-human-approval/scene_spec.json",
+    "thumbnail_alt_text": "A governed ledger diagram for Runtime Adapters, Tool Permissions, and Human Approval shows three named mechanism cards above a labeled failure and evidence boundary."
+  },
+  "render_receipt": {
+    "receipt_state": "current_final_av_master",
+    "validation_state": "validated",
+    "rendered_at_utc": "2026-07-30T03:23:23Z",
+    "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+    "toolchain_qualification": "qualified_for_all_non_latex_chapters",
+    "render_profile": "final_av_master",
+    "command": "Render the exact-timing ChapterVisualAbstract with pinned ManimCE 0.20.1 at 1920x1080/30, render pinned Kokoro-82M af_heart narration at speed 1.08 with a hard maximum of 300 characters per synthesis call and -16 LUFS, then align all seven visual scenes to the exact audio paragraph boundaries and mux with FFmpeg 8.0.1 as H.264 CRF 18 yuv420p plus AAC-LC 192 kb/s 48 kHz mono.",
+    "duration_seconds": 281.515,
+    "pixel_width": 1920,
+    "pixel_height": 1080,
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "output_sha256": "b6bfd208ed0fe36b14ac27a1564ee8cff70d675cb3f4278c78f53f5452d2f4dc",
+    "mux_receipt_sha256": "f325bf793d2ee37ed8c01994ab412aa8930a5f6dc26546953b7a08025d481229",
+    "output_storage": "ignored build/visual_edition media only",
+    "visual_review": {
+      "draft_sample_seconds": [
+        8.94,
+        44.688,
+        101.802,
+        154.992,
+        199.147,
+        234.457,
+        265.005
+      ],
+      "release_sample_seconds": [
+        44.688,
+        234.457
+      ],
+      "result": "pass",
+      "review_scope": "Exact mux-receipt midpoint sampling across all seven narration scenes checked composition, legibility, persistent labels, color-plus-shape semantics, evidence ceiling, non-claims, end-card identity, and absence of clipping or overflowing text."
+    },
+    "audio_master": {
+      "identity": "Kokoro-82M bf16 af_heart via kokoro-mlx 0.1.2 at speed 1.08",
+      "provenance": "Locally generated from the canonical narration with the pinned Apache-2.0 Kokoro-82M model and MIT kokoro-mlx implementation recorded in visual_edition/narration_toolchain.json.",
+      "publication_rights_state": "cleared",
+      "duration_seconds": 281.515,
+      "sha256": "75f733b95ac73a27801bd774308a0f886d3a39a8b215362bee1b1741ac0dcd84"
+    },
+    "caption_review": {
+      "state": "machine_audited",
+      "audit_method": "Exact receipt-derived canonical timing plus local MLX Whisper transcript comparison and complete beginning/end coverage checks.",
+      "reviewed_against_audio_sha256": "75f733b95ac73a27801bd774308a0f886d3a39a8b215362bee1b1741ac0dcd84",
+      "asr_model": "mlx-community/whisper-small.en-mlx@52a88bf6e98b114a210c21bb83e22d6e1505cb73",
+      "asr_word_error_rate": 0.017452,
+      "terminology": "pass",
+      "timing": "pass",
+      "non_speech_information": "pass",
+      "material_visual_changes": "described_in_adjacent_transcript"
+    },
+    "artifact_sha256": {
+      "storyboard": "ac0ca534c1ecfc5509cff740841c9b4164f95453286781a07a715b6147cf2e1d",
+      "scene_code": "ba523276935ef8d5471b439836ef46de085c492b544f6d4aa78b1f1af13591dc",
+      "narration_script": "895999c1ea31d9da4b29a67dbd31c7558ac7a9aa6ac5aa14f4abd5d288701423",
+      "captions": "1f9db735b487e4dc4da1ea5fd24bf79c8526117944a2c4feb7f31e6abfa292de",
+      "descriptive_transcript": "be6f4e61017258f8a55d4f620e60dcd3f80b15d514a52f614d029eda23e4b4c1",
+      "thumbnail": "2e923c54c6b6d400aa9151a39437c31970f7720d2a2fc378f48406c46aed178e",
+      "scene_spec": "8aaddee14c6da728677c6a6ec0eaa7b88d2de432a999308c42e20ec845df1226"
+    },
+    "remaining_release_gates": [
+      "obtain exact action-time authority before any YouTube or playlist mutation"
+    ]
+  },
+  "youtube": {
+    "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+    "video_id": null,
+    "watch_url": null,
+    "playlist_id": null,
+    "generation": 0,
+    "publication_state": "not_authorized",
+    "uploaded_output_sha256": null,
+    "bound_chapter_sha256": null,
+    "bound_source_commit": null,
+    "published_at_utc": null,
+    "platform_receipt_path": null,
+    "supersedes_video_id": null
+  },
+  "quarto_embed": {
+    "state": "absent_until_published",
+    "chapter_anchor": "visual-abstract",
+    "frame_title": "Visual abstract: Runtime Adapters, Tool Permissions, and Human Approval",
+    "aria_label": "Play the visual abstract for Runtime Adapters, Tool Permissions, and Human Approval"
+  },
+  "staleness": {
+    "state": "current",
+    "checked_chapter_sha256": "981d8423a51f2201e4bc93feb616bc9aff5398e71e0327f4d784a32b97de9035",
+    "triggers": [
+      "core_claim",
+      "mechanism",
+      "worked_trace",
+      "evidence_state",
+      "non_claim",
+      "material_source",
+      "chapter_identity",
+      "handoff",
+      "public_url"
+    ]
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This derivative video does not promote or otherwise change any book claim.",
+    "The validated local final master is not a YouTube upload or a public publication.",
+    "Automated intelligibility and caption audits do not establish that every listener will prefer the synthetic voice.",
+    "A successful animation render does not establish deployment, safety, efficiency, transfer, state of the art, AGI, or ASI."
+  ]
+}

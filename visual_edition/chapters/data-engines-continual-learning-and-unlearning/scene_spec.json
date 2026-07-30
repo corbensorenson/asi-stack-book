@@ -1,0 +1,70 @@
+{
+  "chapter_id": "data-engines-continual-learning-and-unlearning",
+  "title": "Data Engines, Continual Learning, and Unlearning",
+  "subtitle": "Data Engines, Continual Learning, and Unlearning owns a datum-, cohort-, provenance-, rights-, split-, contamination-… alone establishes model quality, forgetting, privacy, erasure, safety, readiness, deployment, support, transfer, or SOTA.",
+  "archetype": "before_after",
+  "claim_label": "Design rationale",
+  "evidence_level": "argument",
+  "next_title": "Scientific Discovery and Experimental Governance",
+  "display": {
+    "problem": "A self-improving stack needs to decide which data and feedback… guarantee, or proof that a model has forgotten a record.",
+    "insufficient": "Training corpora, synthetic-data pipelines, replay buffers, and deletion requests are… trade-offs, downstream descendants, and evidence effects without one governable lifecycle.",
+    "mechanism": [
+      {
+        "label": "Freeze consumer purpose cohort",
+        "detail": "Freeze the consumer, purpose, cohort, learning lane… scope before admission or update work begins."
+      },
+      {
+        "label": "Exact source author collector",
+        "detail": "Bind the exact source, author or collector… location, transformations, generator, reviewer, and decision authority."
+      },
+      {
+        "label": "Permitted prohibited purposes",
+        "detail": "Record permitted and prohibited purposes, jurisdiction, affected… revocation and deletion paths, and appeal authority."
+      },
+      {
+        "label": "Distinguish source human synthetic",
+        "detail": "Distinguish source, human, synthetic, augmented, translated, summarized… laundering transformations into a generic corpus label."
+      }
+    ],
+    "trace": [
+      "Freeze consumer purpose cohort",
+      "Exact source author collector",
+      "Permitted prohibited purposes",
+      "Distinguish source human synthetic"
+    ],
+    "failures": [
+      "Provenance laundering relabels transformed, distilled, generated… mixed data as origin-complete source material.",
+      "Metadata theater treats a valid schema… lawful use, fitness, privacy, or safety.",
+      "Exact-overlap checks miss semantic leakage, benchmark… contamination, subgroup loss, or distribution shift.",
+      "Synthetic replacement collapses coverage and tails… private, obsolete, low-quality, or revoked material."
+    ],
+    "proof_targets": [
+      "Missing bound provenance, rights, or authority blocks the reachable custody lifecycle before data admission.",
+      "Missing split exclusions or a contamination-check record blocks the reachable custody lifecycle before admission.",
+      "A complete admission record advances only… establish data quality, training, deletion, or support."
+    ],
+    "evidence_ceiling": "This chapter remains Design rationale at argument support.",
+    "nonclaims": [
+      "No chapter claim or evidence state is promoted by this visual.",
+      "A named mechanism is not proof of correct implementation or useful deployment.",
+      "A local check or formal model does not establish real-world enforcement.",
+      "No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows."
+    ],
+    "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result."
+  },
+  "timing": {
+    "basis": "exact_narration_paragraph_boundaries",
+    "narration_receipt_sha256": "d350127cf5dac84ea71578a3c4164b5094b2dd1997a3829ed38e0fc91f9f4571",
+    "target_duration_seconds": 318.725,
+    "scene_endpoints_seconds": [
+      37.745,
+      106.66,
+      165.995,
+      219.61,
+      257.805,
+      285.88,
+      318.725
+    ]
+  }
+}

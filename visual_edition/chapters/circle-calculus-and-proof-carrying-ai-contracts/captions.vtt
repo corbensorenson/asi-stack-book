@@ -1,0 +1,249 @@
+WEBVTT
+
+NOTE
+Canonical written narration timed from the exact local narration render receipt.
+Pronunciation-only substitutions are intentionally absent from caption text.
+
+1
+00:00:00.060 --> 00:00:05.444
+This chapter asks a specific question: The stack needs a way
+
+2
+00:00:05.444 --> 00:00:09.849
+to turn selected mathematical and AI-infrastructure claims into theorem-linked,
+
+3
+00:00:09.849 --> 00:00:13.765
+machine-readable contracts without treating proofs as model-quality evidence.
+
+4
+00:00:14.105 --> 00:00:17.725
+The tempting shortcut is insufficient: Ordinary prose, tests,
+
+5
+00:00:17.725 --> 00:00:22.702
+and diagrams can show intent, but they do not give downstream
+
+6
+00:00:22.702 --> 00:00:27.228
+systems stable theorem IDs, proof status, receipt fingerprints, replay checks,
+
+7
+00:00:27.228 --> 00:00:28.585
+and explicit non-claims.
+
+8
+00:00:29.185 --> 00:00:34.433
+The chapter's core claim is this: Circle Calculus and Proof-Carrying AI
+
+9
+00:00:34.433 --> 00:00:39.204
+Contracts owns a theorem-, model-, artifact-, implementation-, consumer-, claim-, version-,
+
+10
+00:00:39.204 --> 00:00:44.452
+and time-specific Proof Contract Transport Envelope: a finite formal fact may
+
+11
+00:00:44.452 --> 00:00:47.315
+travel only with resolvable proof identity,
+
+12
+00:00:47.655 --> 00:00:53.364
+exact assumptions and semantics, source and toolchain provenance, content fingerprints,
+
+13
+00:00:53.364 --> 00:00:59.072
+deterministic recomputation or replay, least-authority consumer gates, expiry and revocation,
+
+14
+00:00:59.072 --> 00:01:04.210
+and preserved non-claims; theorem validity, receipt readiness, archive integrity,
+
+15
+00:01:04.550 --> 00:01:10.277
+or transport success alone confers no model-quality, runtime, memory, safety, deployment,
+
+16
+00:01:10.277 --> 00:01:12.880
+transfer, support, or SOTA authority.
+
+17
+00:01:13.220 --> 00:01:19.330
+Register the exact formal claim, theorem namespace and identity, finite model,
+
+18
+00:01:19.330 --> 00:01:24.884
+assumptions, proof status, source version, toolchain, implementation object, intended consumers,
+
+19
+00:01:24.884 --> 00:01:26.550
+and prohibited inferences.
+
+20
+00:01:27.150 --> 00:01:31.180
+A concrete implementation trace makes the proposal testable.
+
+21
+00:01:31.520 --> 00:01:35.896
+The exact current minimum contains two schema-valid proof/receipt records;
+
+22
+00:01:35.896 --> 00:01:41.245
+one external clean-checkout Circle rope slice with a narrow non-core argument-to-prototype-backed
+
+23
+00:01:41.245 --> 00:01:46.594
+transition; one ASI-side gate accepting one pinned receipt and rejecting four
+
+24
+00:01:46.594 --> 00:01:49.025
+mutations with no core effect;
+
+25
+00:01:49.365 --> 00:01:54.515
+one digest-verified archive of nine contracts and four policy receipts with
+
+26
+00:01:54.515 --> 00:01:59.665
+five rejected controls and a no-change decision; and ten finite local
+
+27
+00:01:59.665 --> 00:02:01.070
+Lean theorem declarations.
+
+28
+00:02:01.410 --> 00:02:06.540
+It does not establish a locally built general resolver,
+
+29
+00:02:06.540 --> 00:02:11.670
+end-to-end transport service, semantic refinement, descendant revocation, independent reproduction,
+
+30
+00:02:11.670 --> 00:02:15.090
+downstream empirical benefit, or chapter-core transition.
+
+31
+00:02:15.690 --> 00:02:20.027
+The design can still fail. A theorem name, badge, diagram,
+
+32
+00:02:20.027 --> 00:02:24.797
+proof count, or green build creates authority beyond the exact statement.
+
+33
+00:02:24.797 --> 00:02:29.134
+A theorem ID resolves to the wrong declaration, changed statement,
+
+34
+00:02:29.134 --> 00:02:32.170
+different assumptions, stale source, or incompatible toolchain.
+
+35
+00:02:32.510 --> 00:02:37.607
+The formal model is correct but does not faithfully represent the
+
+36
+00:02:37.607 --> 00:02:42.704
+engineering object or deployed implementation. Exact finite or discrete facts are
+
+37
+00:02:42.704 --> 00:02:47.802
+applied to approximate, floating-point, probabilistic, continuous, or adversarial behavior without a
+
+38
+00:02:47.802 --> 00:02:48.265
+bridge.
+
+39
+00:02:48.605 --> 00:02:52.574
+The correct response is to stop, narrow, quarantine, compensate,
+
+40
+00:02:52.574 --> 00:02:56.985
+or retain an owned residual rather than narrate uncertainty away.
+
+41
+00:02:57.585 --> 00:03:02.631
+This chapter remains Design rationale at argument support. Its contracts, examples,
+
+42
+00:03:02.631 --> 00:03:06.760
+tests, or local artifacts establish only their encoded scope.
+
+43
+00:03:06.760 --> 00:03:11.806
+The chapter names proof targets rather than pretending they are already
+
+44
+00:03:11.806 --> 00:03:12.265
+closed.
+
+45
+00:03:12.605 --> 00:03:17.015
+A finite proof-contract receipt missing theorem references, deterministic fields,
+
+46
+00:03:17.015 --> 00:03:21.915
+or an explicit non-claim boundary is rejected from downstream use.
+
+47
+00:03:21.915 --> 00:03:27.305
+A downstream claim cannot be promoted solely from contract readiness without
+
+48
+00:03:27.305 --> 00:03:30.735
+a workload, baseline, metric, and evidence artifact.
+
+49
+00:03:31.335 --> 00:03:36.299
+No chapter claim or evidence state is promoted by this visual.
+
+50
+00:03:36.299 --> 00:03:41.263
+A named mechanism is not proof of correct implementation or useful
+
+51
+00:03:41.263 --> 00:03:46.227
+deployment. A local check or formal model does not establish real-world
+
+52
+00:03:46.227 --> 00:03:50.740
+enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.
+
+53
+00:03:51.080 --> 00:03:55.555
+These boundaries matter because an explanatory derivative is useful only if
+
+54
+00:03:55.555 --> 00:03:58.810
+it preserves the evidence ceiling of its source.
+
+55
+00:03:59.410 --> 00:04:04.644
+At most, this visual explains the chapter's design rationale at argument
+
+56
+00:04:04.644 --> 00:04:09.403
+support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI,
+
+57
+00:04:09.403 --> 00:04:14.637
+or ASI result. The next chapter is Coil Attention, Cyclic Memory,
+
+58
+00:04:14.637 --> 00:04:16.065
+and Recurrence Contracts.
+
+59
+00:04:16.405 --> 00:04:21.965
+It takes responsibility for Memory, attention, and recurrence mechanisms need finite
+
+60
+00:04:21.965 --> 00:04:27.019
+structural contracts for aliasing, coverage, freshness, active work, loop exits,
+
+61
+00:04:27.019 --> 00:04:28.535
+and overthinking boundaries.

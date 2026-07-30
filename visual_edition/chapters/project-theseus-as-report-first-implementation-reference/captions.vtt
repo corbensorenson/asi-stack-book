@@ -1,0 +1,265 @@
+WEBVTT
+
+NOTE
+Canonical written narration timed from the exact local narration render receipt.
+Pronunciation-only substitutions are intentionally absent from caption text.
+
+1
+00:00:00.060 --> 00:00:04.843
+This chapter asks a specific question: The book needs a concrete
+
+2
+00:00:04.843 --> 00:00:09.626
+implementation-reference chapter for how the ASI stack can be operated as
+
+3
+00:00:09.626 --> 00:00:13.540
+report-first local machinery instead of only conceptual layer diagrams.
+
+4
+00:00:13.880 --> 00:00:18.715
+The tempting shortcut is insufficient: A prototype roadmap is not enough
+
+5
+00:00:18.715 --> 00:00:23.550
+unless readers can see how goals, plans, arms, reports, gates, residuals,
+
+6
+00:00:23.550 --> 00:00:28.385
+checkpoints, compute, and operator surfaces interact in a working research system.
+
+7
+00:00:28.985 --> 00:00:35.740
+The chapter's core claim is this: Project Theseus as Report-First Implementation
+
+8
+00:00:35.740 --> 00:00:42.495
+Reference owns a source-project-, pinned-revision-, report-family-, command-, environment-, artifact-, lineage-, evidence-state-,
+
+9
+00:00:42.495 --> 00:00:45.565
+replay-, public-safety-, publication-permission-, reviewer-, consumer-,
+
+10
+00:00:45.905 --> 00:00:52.214
+and time-specific Implementation-Reference Evidence Packet: it binds every imported or replayed
+
+11
+00:00:52.214 --> 00:00:58.522
+report, configuration, ledger, work-board summary, registry, gate, crosswalk, trace, retained artifact,
+
+12
+00:00:58.522 --> 00:01:03.110
+command, environment note, digest, missing artifact, decision, residual,
+
+13
+00:01:03.450 --> 00:01:09.140
+and non-claim to source-note-only, imported, replay-ready, replay-failed, locally reproduced, stale, runtime-blocked,
+
+14
+00:01:09.140 --> 00:01:14.313
+or archived lineage; dashboards and latest files are projections only,
+
+15
+00:01:14.313 --> 00:01:19.486
+and no GREEN gate, complete registry, module card, pointer row,
+
+16
+00:01:19.486 --> 00:01:21.555
+metadata snapshot, parity manifest,
+
+17
+00:01:21.895 --> 00:01:27.719
+command replay, fixture, theorem, or sanitized import alone establishes current runtime
+
+18
+00:01:27.719 --> 00:01:31.425
+truth, clean live replay, model quality, capability.
+
+19
+00:01:32.025 --> 00:01:36.055
+A concrete implementation trace makes the proposal testable.
+
+20
+00:01:36.395 --> 00:01:42.230
+Ten exact source-to-claim mappings; twelve proof targets implemented by fifty-four Lean
+
+21
+00:01:42.230 --> 00:01:47.004
+declarations that are finite record implications, reductions, fixture normalizations,
+
+22
+00:01:47.004 --> 00:01:51.248
+and explicit overclaim controls rather than empirical projections;
+
+23
+00:01:51.248 --> 00:01:53.900
+one report-crosswalk schema and fixture;
+
+24
+00:01:54.240 --> 00:02:00.549
+a static 14/14 architecture-gate import; an 18-mode and 13-comparison generation-mode import
+
+25
+00:02:00.549 --> 00:02:06.858
+with zero promotable comparisons; a two-command ten-artifact support replay with no
+
+26
+00:02:06.858 --> 00:02:12.020
+transition; one valid and seven invalid report-bundle audit cases;
+
+27
+00:02:12.360 --> 00:02:17.736
+a metadata-only 64-task public bundle with zero public training rows;
+
+28
+00:02:17.736 --> 00:02:23.651
+a selected support aggregate with four command replays, sixteen artifact digests,
+
+29
+00:02:23.651 --> 00:02:29.565
+sixty-eight task records, fourteen rejected controls, and two accepted no-promotion decisions;
+
+30
+00:02:29.565 --> 00:02:30.640
+bounded artifact-retention,
+
+31
+00:02:30.980 --> 00:02:36.685
+22-module definition-of-done, 5,662-path registry.
+
+32
+00:02:37.285 --> 00:02:41.973
+The design can still fail. Latest-file overwrite or dashboard theater replaces
+
+33
+00:02:41.973 --> 00:02:46.660
+canonical lineage, hides stale or failed runs, and makes a projection
+
+34
+00:02:46.660 --> 00:02:48.365
+look like source truth.
+
+35
+00:02:48.705 --> 00:02:52.880
+Report-shape laundering treats a complete schema, polished packet, checklist,
+
+36
+00:02:52.880 --> 00:02:57.982
+or documentation standard as proof that the underlying report or system
+
+37
+00:02:57.982 --> 00:02:58.910
+is correct.
+
+38
+00:02:59.250 --> 00:03:03.308
+Stale-snapshot currentness promotes historical work-board, registry, gate, readiness,
+
+39
+00:03:03.308 --> 00:03:08.380
+or runtime metadata as a statement about the current project.
+
+40
+00:03:08.720 --> 00:03:14.118
+Digest, path, revision, generator, command, environment, or dependency drift joins an
+
+41
+00:03:14.118 --> 00:03:19.025
+imported fact to the wrong artifact or makes replay irreproducible.
+
+42
+00:03:19.625 --> 00:03:24.671
+This chapter remains Design rationale at argument support. Its contracts, examples,
+
+43
+00:03:24.671 --> 00:03:28.800
+tests, or local artifacts establish only their encoded scope.
+
+44
+00:03:28.800 --> 00:03:33.846
+The chapter names proof targets rather than pretending they are already
+
+45
+00:03:33.846 --> 00:03:34.305
+closed.
+
+46
+00:03:34.645 --> 00:03:39.597
+A finite implementation-reference claim that lacks both a report and a
+
+47
+00:03:39.597 --> 00:03:44.098
+config-or-tool reference, or relies on dashboard prose alone, is rejected.
+
+48
+00:03:44.098 --> 00:03:49.049
+A capability or self-evolution promotion is blocked when required gate reports
+
+49
+00:03:49.049 --> 00:03:50.850
+are absent or failing.
+
+50
+00:03:51.190 --> 00:03:57.073
+A public-safe Theseus report-bundle audit fixture is accepted only when bundle
+
+51
+00:03:57.073 --> 00:04:02.422
+components, replay-readiness rows, crosswalk rows, gate mappings, work-board contract fields,
+
+52
+00:04:02.422 --> 00:04:07.770
+visible artifact gaps, intervention-ladder ordering, and no-promotion boundaries are complete.
+
+53
+00:04:08.370 --> 00:04:13.334
+No chapter claim or evidence state is promoted by this visual.
+
+54
+00:04:13.334 --> 00:04:18.298
+A named mechanism is not proof of correct implementation or useful
+
+55
+00:04:18.298 --> 00:04:23.262
+deployment. A local check or formal model does not establish real-world
+
+56
+00:04:23.262 --> 00:04:27.775
+enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.
+
+57
+00:04:28.115 --> 00:04:32.590
+These boundaries matter because an explanatory derivative is useful only if
+
+58
+00:04:32.590 --> 00:04:35.845
+it preserves the evidence ceiling of its source.
+
+59
+00:04:36.445 --> 00:04:41.690
+At most, this visual explains the chapter's design rationale at argument
+
+60
+00:04:41.690 --> 00:04:46.458
+support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI,
+
+61
+00:04:46.458 --> 00:04:50.750
+or ASI result. The next chapter is Prototype Roadmap.
+
+62
+00:04:51.090 --> 00:04:55.867
+It takes responsibility for The architecture needs a build sequence that
+
+63
+00:04:55.867 --> 00:05:00.644
+does not introduce agency or self-improvement before auditability and governance are
+
+64
+00:05:00.644 --> 00:05:05.421
+credible. Read the live chapter for its complete source mappings, interfaces,
+
+65
+00:05:05.421 --> 00:05:08.895
+invariants, failure modes, tests, and open evidence gaps.

@@ -1,0 +1,161 @@
+{
+  "schema_version": "asi_stack.visual_chapter_packet.v1",
+  "video_id": "asi-video-system-boundaries-and-authority",
+  "chapter_id": "system-boundaries-and-authority",
+  "chapter_path": "chapters/system-boundaries-and-authority.qmd",
+  "chapter_sha256": "fca198bec754d81535cffb98543a48d96e1cd5e42bfeee7fe0f4c0bab78bf101",
+  "source_commit": "f10ef079ecfeb48503407d67832a0251f77c2c78",
+  "pilot": false,
+  "lifecycle_state": "ready_not_published",
+  "claim_bindings": [
+    {
+      "claim_id": "system-boundaries-and-authority.core",
+      "claim_label": "Design rationale",
+      "support_state": "argument"
+    }
+  ],
+  "assigned_source_ids": [
+    "viea",
+    "scf",
+    "talos",
+    "ladon_manhattan",
+    "genesiscode",
+    "moecot",
+    "cca_project",
+    "moecot_manifest_project",
+    "beastbrain_project",
+    "bugbrain_project",
+    "corbens_trainer_project",
+    "corbens_best_model_possible_project",
+    "ext_camel_prompt_injection_2025",
+    "ext_owasp_agentic_top_10_2026"
+  ],
+  "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result.",
+  "required_content": {
+    "problem": "To test whether cross-layer effects are authorized, the stack needs explicit identities for the principal, execution domain, operation, target, permission class, ceiling, grant lifecycle, delegation, and receipt. Role labels, prompts, and ambient process identity do not by themselves distinguish read, transform, disclose, write, execute, and approve authority or enforce delegation, expiry, revocation, and cross-domain approval.",
+    "core_mechanism": "External-effect authority should be represented as a versioned, revocable tuple binding principal, execution domain, operation, target, permission class, scope, ceiling, grant state, delegation, expiry or revocation epoch, and receipt obligations; capability, context access, route quality, or ambient process power alone confers none of it. Define principals, authorities, ceilings, grants, revocations, and handoff contracts. Separate knowledge access from action authority.",
+    "worked_trace": "An authority-transition schema plus a unified authority-tuple lifecycle that binds execution-domain ownership, scope, budget, trace, replay, grant, revocation, cross-domain approval, receipts, and protocol-versus-hardware-root boundaries. Separate knowledge access from action authority. Represent missing authority as a detectable failure rather than implicit permission. Bind principal, execution domain, operation, target, permission class, scope, budget account, trace, replay identity, grant, policy version, revocation epoch, and expiry in one authority tuple.",
+    "failure_boundary": "Authority creep. Confused-deputy tool calls. Memory access treated as action approval. Authority identity forks across budget, trace, replay, or revocation.",
+    "evidence_state": "This chapter remains Design rationale at argument support. Its contracts, examples, tests, or local artifacts establish only their encoded scope. Every accepted issuance, dispatch, and effect in the finite reachable grant model remains within the caller ceiling and exactly binds grant ID, principal, operation, target, epoch, expiry, remaining uses, approval, dispatch, and effect custody. The reachable model and independent consumer reject authority widening, confused-deputy substitution, stale or expired grants, missing approval/dispatch/effect receipts, post-revocation dispatch, effect without dispatch, and consumed one-shot reuse.",
+    "non_claims": "No chapter claim or evidence state is promoted by this visual. A named mechanism is not proof of correct implementation or useful deployment. A local check or formal model does not establish real-world enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.",
+    "handoff": "The next chapter is Failure Modes of Ungoverned Intelligence. It takes responsibility for Governance, reliability, and self-improvement claims cannot be tested unless their failure conditions, observable boundary events, evidence records, and owners are declared prospectively."
+  },
+  "artifacts": {
+    "storyboard": "visual_edition/chapters/system-boundaries-and-authority/storyboard.md",
+    "scene_code": "visual_edition/chapters/system-boundaries-and-authority/scene.py",
+    "narration_script": "visual_edition/chapters/system-boundaries-and-authority/narration.txt",
+    "captions": "visual_edition/chapters/system-boundaries-and-authority/captions.vtt",
+    "descriptive_transcript": "visual_edition/chapters/system-boundaries-and-authority/transcript.md",
+    "thumbnail": "visual_edition/chapters/system-boundaries-and-authority/thumbnail.svg",
+    "scene_spec": "visual_edition/chapters/system-boundaries-and-authority/scene_spec.json",
+    "thumbnail_alt_text": "A governed graph diagram for System Boundaries and Authority shows three named mechanism cards above a labeled failure and evidence boundary."
+  },
+  "render_receipt": {
+    "receipt_state": "current_final_av_master",
+    "validation_state": "validated",
+    "rendered_at_utc": "2026-07-30T03:04:16Z",
+    "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+    "toolchain_qualification": "qualified_for_all_non_latex_chapters",
+    "render_profile": "final_av_master",
+    "command": "Render the exact-timing ChapterVisualAbstract with pinned ManimCE 0.20.1 at 1920x1080/30, render pinned Kokoro-82M af_heart narration at speed 1.08 with a hard maximum of 300 characters per synthesis call and -16 LUFS, then align all seven visual scenes to the exact audio paragraph boundaries and mux with FFmpeg 8.0.1 as H.264 CRF 18 yuv420p plus AAC-LC 192 kb/s 48 kHz mono.",
+    "duration_seconds": 245.266667,
+    "pixel_width": 1920,
+    "pixel_height": 1080,
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "output_sha256": "9f7d5d263db53ae79541f6483849e49759b7e9e42d6962c85a1f4bbc57d13c4b",
+    "mux_receipt_sha256": "dea406d084e744d6085c865b5a70bdac58a13386e216b904e89c194a42d69b49",
+    "output_storage": "ignored build/visual_edition media only",
+    "visual_review": {
+      "draft_sample_seconds": [
+        16.362,
+        52.322,
+        95.38,
+        129.665,
+        164.062,
+        201.672,
+        230.482
+      ],
+      "release_sample_seconds": [
+        52.322,
+        201.672
+      ],
+      "result": "pass",
+      "review_scope": "Exact mux-receipt midpoint sampling across all seven narration scenes checked composition, legibility, persistent labels, color-plus-shape semantics, evidence ceiling, non-claims, end-card identity, and absence of clipping or overflowing text."
+    },
+    "audio_master": {
+      "identity": "Kokoro-82M bf16 af_heart via kokoro-mlx 0.1.2 at speed 1.08",
+      "provenance": "Locally generated from the canonical narration with the pinned Apache-2.0 Kokoro-82M model and MIT kokoro-mlx implementation recorded in visual_edition/narration_toolchain.json.",
+      "publication_rights_state": "cleared",
+      "duration_seconds": 245.266667,
+      "sha256": "47bce4945e89b39c76fe72fc00669a6bbb2cf959002880e65f1a78a815a6de6a"
+    },
+    "caption_review": {
+      "state": "machine_audited",
+      "audit_method": "Exact receipt-derived canonical timing plus local MLX Whisper transcript comparison and complete beginning/end coverage checks.",
+      "reviewed_against_audio_sha256": "47bce4945e89b39c76fe72fc00669a6bbb2cf959002880e65f1a78a815a6de6a",
+      "asr_model": "mlx-community/whisper-small.en-mlx@52a88bf6e98b114a210c21bb83e22d6e1505cb73",
+      "asr_word_error_rate": 0.011788,
+      "terminology": "pass",
+      "timing": "pass",
+      "non_speech_information": "pass",
+      "material_visual_changes": "described_in_adjacent_transcript"
+    },
+    "artifact_sha256": {
+      "storyboard": "90303905bb7f1150686525ff0df7270ed3ff5e9af19dc46c54d7ae434f19b026",
+      "scene_code": "b5f11a60b1c526dc1576483b540a8d491a895721964ebf73fcd46824101aa911",
+      "narration_script": "5316f744b4ea17d4e941397f1b0b2bf4e9b04d420d6de5faee039a4b905c16f6",
+      "captions": "627a3c9b808bdac456bec065bc9bdb95b606aeb340ac4b151fd19863cceb289e",
+      "descriptive_transcript": "9f34ea65170690ed54de52c7c50f185dd9b1ec7876201a5b57e81592502d5968",
+      "thumbnail": "ba8ba69e040f1f31939ca58b908462c6d509cb6cd4fab33ebd85ae80ae4ec468",
+      "scene_spec": "8b30e59a92d43ca8f94ab815004ce49d2873713990233a2436b0dc32df368666"
+    },
+    "remaining_release_gates": [
+      "obtain exact action-time authority before any YouTube or playlist mutation"
+    ]
+  },
+  "youtube": {
+    "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+    "video_id": null,
+    "watch_url": null,
+    "playlist_id": null,
+    "generation": 0,
+    "publication_state": "not_authorized",
+    "uploaded_output_sha256": null,
+    "bound_chapter_sha256": null,
+    "bound_source_commit": null,
+    "published_at_utc": null,
+    "platform_receipt_path": null,
+    "supersedes_video_id": null
+  },
+  "quarto_embed": {
+    "state": "absent_until_published",
+    "chapter_anchor": "visual-abstract",
+    "frame_title": "Visual abstract: System Boundaries and Authority",
+    "aria_label": "Play the visual abstract for System Boundaries and Authority"
+  },
+  "staleness": {
+    "state": "current",
+    "checked_chapter_sha256": "fca198bec754d81535cffb98543a48d96e1cd5e42bfeee7fe0f4c0bab78bf101",
+    "triggers": [
+      "core_claim",
+      "mechanism",
+      "worked_trace",
+      "evidence_state",
+      "non_claim",
+      "material_source",
+      "chapter_identity",
+      "handoff",
+      "public_url"
+    ]
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This derivative video does not promote or otherwise change any book claim.",
+    "The validated local final master is not a YouTube upload or a public publication.",
+    "Automated intelligibility and caption audits do not establish that every listener will prefer the synthetic voice.",
+    "A successful animation render does not establish deployment, safety, efficiency, transfer, state of the art, AGI, or ASI."
+  ]
+}

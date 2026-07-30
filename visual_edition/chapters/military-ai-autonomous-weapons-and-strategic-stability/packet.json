@@ -1,0 +1,151 @@
+{
+  "schema_version": "asi_stack.visual_chapter_packet.v1",
+  "video_id": "asi-video-military-ai-autonomous-weapons-and-strategic-stability",
+  "chapter_id": "military-ai-autonomous-weapons-and-strategic-stability",
+  "chapter_path": "chapters/military-ai-autonomous-weapons-and-strategic-stability.qmd",
+  "chapter_sha256": "1db4ba582a54dd4729eb978aa8f79345bb84f7fb1c5f8bafb1962c098561724e",
+  "source_commit": "f10ef079ecfeb48503407d67832a0251f77c2c78",
+  "pilot": false,
+  "lifecycle_state": "ready_not_published",
+  "claim_bindings": [
+    {
+      "claim_id": "military-ai-autonomous-weapons-and-strategic-stability.core",
+      "claim_label": "Design rationale",
+      "support_state": "argument"
+    }
+  ],
+  "assigned_source_ids": [
+    "ext_icrc_autonomous_weapons_ihl_2025",
+    "ext_sipri_military_ai_nuclear_escalation_2025",
+    "ext_singapore_consensus_2026",
+    "ext_international_ai_safety_report_2026"
+  ],
+  "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result.",
+  "required_content": {
+    "problem": "Military AI can change sensing, targeting, command timing, warning interpretation, autonomous engagement, and adversary expectations inside already dangerous strategic systems. A model that is locally accurate can still increase catastrophe risk through compression of decision time, false confidence, interaction effects, proliferation, or loss of context-specific human judgment. A generic dangerous-capability or misuse chapter treats risk mainly as actor uplift.",
+    "core_mechanism": "Military AI should be governed as a command-and-interaction system: deployment requires a declared mission and legal boundary, preserved accountable human authority, bounded sensing and action, adversarial and escalation analysis, fail-safe behavior, auditable provenance, and prospective off-ramps; component benchmark gains alone establish neither lawful use nor strategic safety. Classify every use by mission, decision role, affected population, operating environment, command chain, reversibility, and escalation sensitivity. Separate decision support, defensive automation, targeting support, and autonomous force application instead of assigning them one autonomy score.",
+    "worked_trace": "A non-operational governance prototype with a mission and authority register, legal-review record, decision-role taxonomy, sensor-to-recommendation provenance, abstention and safe-posture rules, escalation-path scenario matrix, accountable approval log, incident schema, and suspension/decommission procedure tested only on synthetic or publicly safe scenarios. Separate decision support, defensive automation, targeting support, and autonomous force application instead of assigning them one autonomy score. Bind authorities, target and effect constraints, confidence and abstention rules, communication-loss behavior, and human confirmation requirements before operation. Model interaction pathways including false alarms, compressed timelines, adversary spoofing, automation bias, proliferation, entanglement, reciprocal deployment, and crisis escalation.",
+    "failure_boundary": "Automation bias converts an advisory system into de facto decision authority. Decision-time compression removes deliberation, verification, or diplomatic off-ramps. Spoofed, ambiguous, or correlated sensors produce confident false alarms. Optimization for tactical success externalizes civilian harm, reciprocal escalation, or long-run instability.",
+    "evidence_state": "This chapter remains Design rationale at argument support. Its contracts, examples, tests, or local artifacts establish only their encoded scope. A finite military-AI interaction record may hand off only when mission, authority, human judgment, effect bounds, escalation assumptions, safe posture, and residuals are explicit; no theorem authorizes a weapon or proves lawful use or strategic stability. Meaningful human judgment must be demonstrated for the actual decision context rather than asserted from interface presence.",
+    "non_claims": "No chapter claim or evidence state is promoted by this visual. A named mechanism is not proof of correct implementation or useful deployment. A local check or formal model does not establish real-world enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.",
+    "handoff": "The next chapter is Evidence States and Claim Discipline. It takes responsibility for A living technical book needs a versioned claim lifecycle that separates what an assertion says from what evidence currently supports it and preserves why each state change was accepted."
+  },
+  "artifacts": {
+    "storyboard": "visual_edition/chapters/military-ai-autonomous-weapons-and-strategic-stability/storyboard.md",
+    "scene_code": "visual_edition/chapters/military-ai-autonomous-weapons-and-strategic-stability/scene.py",
+    "narration_script": "visual_edition/chapters/military-ai-autonomous-weapons-and-strategic-stability/narration.txt",
+    "captions": "visual_edition/chapters/military-ai-autonomous-weapons-and-strategic-stability/captions.vtt",
+    "descriptive_transcript": "visual_edition/chapters/military-ai-autonomous-weapons-and-strategic-stability/transcript.md",
+    "thumbnail": "visual_edition/chapters/military-ai-autonomous-weapons-and-strategic-stability/thumbnail.svg",
+    "scene_spec": "visual_edition/chapters/military-ai-autonomous-weapons-and-strategic-stability/scene_spec.json",
+    "thumbnail_alt_text": "A governed timeline diagram for Military AI, Autonomous Weapons, and Strategic Stability shows three named mechanism cards above a labeled failure and evidence boundary."
+  },
+  "render_receipt": {
+    "receipt_state": "current_final_av_master",
+    "validation_state": "validated",
+    "rendered_at_utc": "2026-07-30T03:06:43Z",
+    "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+    "toolchain_qualification": "qualified_for_all_non_latex_chapters",
+    "render_profile": "final_av_master",
+    "command": "Render the exact-timing ChapterVisualAbstract with pinned ManimCE 0.20.1 at 1920x1080/30, render pinned Kokoro-82M af_heart narration at speed 1.08 with a hard maximum of 300 characters per synthesis call and -16 LUFS, then align all seven visual scenes to the exact audio paragraph boundaries and mux with FFmpeg 8.0.1 as H.264 CRF 18 yuv420p plus AAC-LC 192 kb/s 48 kHz mono.",
+    "duration_seconds": 310.266016,
+    "pixel_width": 1920,
+    "pixel_height": 1080,
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "output_sha256": "d51fe15f7a837e13164c9141e6d8a13c73b9eb3c926b9bb8f5863ceb3a710412",
+    "mux_receipt_sha256": "3c791cc3727c501a469f2d6cafe8488dfeb6638212af3c67893f9c284c8f0acf",
+    "output_storage": "ignored build/visual_edition media only",
+    "visual_review": {
+      "draft_sample_seconds": [
+        26.245,
+        81.072,
+        139.997,
+        187.677,
+        229.4,
+        267.822,
+        296.058
+      ],
+      "release_sample_seconds": [
+        81.072,
+        267.822
+      ],
+      "result": "pass",
+      "review_scope": "Exact mux-receipt midpoint sampling across all seven narration scenes checked composition, legibility, persistent labels, color-plus-shape semantics, evidence ceiling, non-claims, end-card identity, and absence of clipping or overflowing text."
+    },
+    "audio_master": {
+      "identity": "Kokoro-82M bf16 af_heart via kokoro-mlx 0.1.2 at speed 1.08",
+      "provenance": "Locally generated from the canonical narration with the pinned Apache-2.0 Kokoro-82M model and MIT kokoro-mlx implementation recorded in visual_edition/narration_toolchain.json.",
+      "publication_rights_state": "cleared",
+      "duration_seconds": 310.266016,
+      "sha256": "f64bec90afc3e4a7da045ee2451eeeda5bc6e94bba73dd5b1f3e73a8ed637d45"
+    },
+    "caption_review": {
+      "state": "machine_audited",
+      "audit_method": "Exact receipt-derived canonical timing plus local MLX Whisper transcript comparison and complete beginning/end coverage checks.",
+      "reviewed_against_audio_sha256": "f64bec90afc3e4a7da045ee2451eeeda5bc6e94bba73dd5b1f3e73a8ed637d45",
+      "asr_model": "mlx-community/whisper-small.en-mlx@52a88bf6e98b114a210c21bb83e22d6e1505cb73",
+      "asr_word_error_rate": 0.012759,
+      "terminology": "pass",
+      "timing": "pass",
+      "non_speech_information": "pass",
+      "material_visual_changes": "described_in_adjacent_transcript"
+    },
+    "artifact_sha256": {
+      "storyboard": "3027b08be78bedcd9ebef96778091e60be8ebd1c1d9c4f8430945245e7ef0ca5",
+      "scene_code": "e9eeed38da7b22bd1cbfdc1733ab013151402e90d61bd0a1a67ee1f7f8807bae",
+      "narration_script": "131823544d91c2b45cec0c04c74fb4d29eeb650e8abd7bfeefe3eb090adb40d1",
+      "captions": "f663c94d7cb2e124f63d5b51b71fbe076130c199ce02140e891a94eeacc8ec87",
+      "descriptive_transcript": "67ea65ed13e60c8101a5715d7be95e6cfd828925fee9fc1cd3804a12ebe8696a",
+      "thumbnail": "ca7c277b826fd74f1257b74f92b5fe6cd42a41cbb4ebcb1e472d57e4d093745e",
+      "scene_spec": "8ea08d394aef79dfb1103df5dfc35fc9b7e3cacab56d7d452b82c47beeb5653e"
+    },
+    "remaining_release_gates": [
+      "obtain exact action-time authority before any YouTube or playlist mutation"
+    ]
+  },
+  "youtube": {
+    "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+    "video_id": null,
+    "watch_url": null,
+    "playlist_id": null,
+    "generation": 0,
+    "publication_state": "not_authorized",
+    "uploaded_output_sha256": null,
+    "bound_chapter_sha256": null,
+    "bound_source_commit": null,
+    "published_at_utc": null,
+    "platform_receipt_path": null,
+    "supersedes_video_id": null
+  },
+  "quarto_embed": {
+    "state": "absent_until_published",
+    "chapter_anchor": "visual-abstract",
+    "frame_title": "Visual abstract: Military AI, Autonomous Weapons, and Strategic Stability",
+    "aria_label": "Play the visual abstract for Military AI, Autonomous Weapons, and Strategic Stability"
+  },
+  "staleness": {
+    "state": "current",
+    "checked_chapter_sha256": "1db4ba582a54dd4729eb978aa8f79345bb84f7fb1c5f8bafb1962c098561724e",
+    "triggers": [
+      "core_claim",
+      "mechanism",
+      "worked_trace",
+      "evidence_state",
+      "non_claim",
+      "material_source",
+      "chapter_identity",
+      "handoff",
+      "public_url"
+    ]
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This derivative video does not promote or otherwise change any book claim.",
+    "The validated local final master is not a YouTube upload or a public publication.",
+    "Automated intelligibility and caption audits do not establish that every listener will prefer the synthetic voice.",
+    "A successful animation render does not establish deployment, safety, efficiency, transfer, state of the art, AGI, or ASI."
+  ]
+}

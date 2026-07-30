@@ -1,0 +1,70 @@
+{
+  "chapter_id": "governed-operations-incident-command-and-graceful-degradation",
+  "title": "Governed Operations, Incident Command, and Graceful Degradation",
+  "subtitle": "Governed operation is a closed incident lifecycle that binds detection, classification, command authority, containment… degradation, recovery evidence, and learning to the exact deployed system and its dependency graph.",
+  "archetype": "route",
+  "claim_label": "Design rationale",
+  "evidence_level": "argument",
+  "next_title": "Policy Optimization and Learning from Feedback",
+  "display": {
+    "problem": "A system can satisfy pre-deployment requirements yet fail after release… incidents, correlated faults, or recovery actions that create new hazards.",
+    "insufficient": "Monitoring, a kill switch, backups, an incident plan, or rollback… code while leaving data, memory, credentials, or downstream consequences changed.",
+    "mechanism": [
+      {
+        "label": "Maintain deployment manifest",
+        "detail": "Maintain a deployment manifest covering model, policy… identities, caches, dependencies, owners, and rollback authority."
+      },
+      {
+        "label": "Fuse behavioral safety security",
+        "detail": "Fuse behavioral, safety, security, dependency, human… hypotheses rather than a single health score."
+      },
+      {
+        "label": "Incidents consequence reversibility",
+        "detail": "Classify incidents by consequence, reversibility, scope, uncertainty, and propagation risk."
+      },
+      {
+        "label": "Each class incident commander",
+        "detail": "Bind each class to incident commander, technical… communication duties, action limits, and emergency expiry."
+      }
+    ],
+    "trace": [
+      "Maintain deployment manifest",
+      "Fuse behavioral safety security",
+      "Incidents consequence reversibility",
+      "Each class incident commander"
+    ],
+    "failures": [
+      "silent drift",
+      "detector blindness",
+      "alert storm",
+      "ambiguous command"
+    ],
+    "proof_targets": [
+      "Every finite degraded-mode transition preserves or narrows capability, data, tool, and duration authority.",
+      "Normal-service recovery is rejected when any required… acceptance check, or emergency-authority expiry is missing.",
+      "Containment does not require the suspected component to cooperate."
+    ],
+    "evidence_ceiling": "This chapter remains Design rationale at argument support.",
+    "nonclaims": [
+      "No chapter claim or evidence state is promoted by this visual.",
+      "A named mechanism is not proof of correct implementation or useful deployment.",
+      "A local check or formal model does not establish real-world enforcement.",
+      "No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows."
+    ],
+    "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result."
+  },
+  "timing": {
+    "basis": "exact_narration_paragraph_boundaries",
+    "narration_receipt_sha256": "d162ad49681e076caf1fafd26528df920497407f6ab4bb153401753e8fe24425",
+    "target_duration_seconds": 252.825,
+    "scene_endpoints_seconds": [
+      40.795,
+      84.19,
+      140.805,
+      155.71,
+      194.08,
+      222.155,
+      252.825
+    ]
+  }
+}

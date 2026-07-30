@@ -1,0 +1,179 @@
+{
+  "schema_version": "asi_stack.visual_chapter_packet.v1",
+  "video_id": "asi-video-prototype-roadmap",
+  "chapter_id": "prototype-roadmap",
+  "chapter_path": "chapters/prototype-roadmap.qmd",
+  "chapter_sha256": "85d05443dc75d291be1b11b5b50827e14bb8a6e4b40f2c149e7d6f1ca1ae74f7",
+  "source_commit": "f10ef079ecfeb48503407d67832a0251f77c2c78",
+  "pilot": false,
+  "lifecycle_state": "ready_not_published",
+  "claim_bindings": [
+    {
+      "claim_id": "prototype-roadmap.core",
+      "claim_label": "Design rationale",
+      "support_state": "argument"
+    }
+  ],
+  "assigned_source_ids": [
+    "viea",
+    "deterministic_capability_compilation",
+    "platonic_world_model",
+    "benchmaxxing",
+    "scf",
+    "vcm_public",
+    "planforge",
+    "beastbrain",
+    "beastbrain_timeless",
+    "bugbrain",
+    "moecot",
+    "moecot_md",
+    "road_to_agi",
+    "coherence_exchange",
+    "project_theseus_whitepaper",
+    "theseus_plan_compiler",
+    "theseus_self_evolution_system",
+    "theseus_architecture_gate",
+    "theseus_operator_os",
+    "theseus_circle_transfer",
+    "circle_ai_contract_suite",
+    "ext_nist_ai_rmf_1_0_2023",
+    "ext_model_evaluation_extreme_risks_2023",
+    "ext_dafny_2010",
+    "ext_copilot_runtime_monitor_2010",
+    "ext_shop2_2003",
+    "ext_swe_bench_2023",
+    "ext_mmlu_2020",
+    "ext_checklist_2020",
+    "ext_codebleu_2020",
+    "ext_qlora_2023",
+    "ext_swe_rebench_v2_2026"
+  ],
+  "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result.",
+  "required_content": {
+    "problem": "The architecture needs a build sequence that does not introduce agency or self-improvement before auditability and governance are credible. A roadmap that jumps to autonomous improvement skips source matrices, artifact graphs, claim ledgers, tests, and authority controls.",
+    "core_mechanism": "Prototype Roadmap owns a program-, roadmap-, phase-, dependency-, artifact-, acceptance-gate-, authority-, evaluator-, evidence-transition-, phase-debt-, residual-, rollback-, reviewer-, consumer-, environment-, and time-specific Evidence-Gated Phase Unlock Contract: it binds every proposed phase to prerequisites, allowed work state, required artifacts, commands, environment, resource bounds, gates, independent evaluation, residuals, debt, rollback, retirement, evidence effect, and non-claims before later work may research, demo, integrate, promote, or release; no roadmap row, milestone, source report, dashboard, task count, passing fixture, theorem, validator, build, or locally useful prototype alone establishes phase completion, safe dependency order, capability, governance effectiveness, deployment, transfer, AGI, ASI.",
+    "worked_trace": "Twenty-nine exact source-to-claim mappings; one prototype phase record schema and public-safe fixture; a deterministic dependency-gate harness with two valid fixtures and six expected-invalid controls covering missing artifacts, dependency inversion, self-improvement without an independent evaluator, support promotion without an evidence transition, phase debt without retirement, and missing non-claims; three proof targets implemented by nine Lean declarations that reduce one derived negative case, hand-authored finite route functions, and fixture summaries; and one synthetic readiness/residual expired-evidence rerun/reject check.",
+    "failure_boundary": "Agency-first sequencing grants tools, execution, deployment, training, or self-improvement authority before evidence, containment, rollback, and terminal governance exist. Dependency inversion lets a later phase manufacture, assume, or waive its own prerequisite or treat a cyclic dependency as progress. Roadmap-as-evidence laundering treats rows, dates, percentages, status colors, task counts, reports, demos, builds, fixtures, or proofs as completed empirical outcomes. Prototype theater presents a board, dashboard, agent loop, retrieval store, benchmark, or generated report without its acceptance packet, effects, failures, and evidence transition.",
+    "evidence_state": "This chapter remains Design rationale at argument support. Its contracts, examples, tests, or local artifacts establish only their encoded scope. A finite prototype-phase route with declared prerequisites but failed acceptance gates remains research-only rather than integrating. A finite phase-promotion request without an evidence-transition record is rejected, and a reached milestone with no evidence cannot promote. A modeled prototype phase-gate fixture bridge accepts only the complete public-safe fixture summary and rejects missing non-claim boundaries while preserving no support-state promotion and no phase-completion claim.",
+    "non_claims": "No chapter claim or evidence state is promoted by this visual. A named mechanism is not proof of correct implementation or useful deployment. A local check or formal model does not establish real-world enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.",
+    "handoff": "The next chapter is Living Book Methodology. It takes responsibility for The book itself must remain a living technical system rather than a static anthology."
+  },
+  "artifacts": {
+    "storyboard": "visual_edition/chapters/prototype-roadmap/storyboard.md",
+    "scene_code": "visual_edition/chapters/prototype-roadmap/scene.py",
+    "narration_script": "visual_edition/chapters/prototype-roadmap/narration.txt",
+    "captions": "visual_edition/chapters/prototype-roadmap/captions.vtt",
+    "descriptive_transcript": "visual_edition/chapters/prototype-roadmap/transcript.md",
+    "thumbnail": "visual_edition/chapters/prototype-roadmap/thumbnail.svg",
+    "scene_spec": "visual_edition/chapters/prototype-roadmap/scene_spec.json",
+    "thumbnail_alt_text": "A governed route diagram for Prototype Roadmap shows three named mechanism cards above a labeled failure and evidence boundary."
+  },
+  "render_receipt": {
+    "receipt_state": "current_final_av_master",
+    "validation_state": "validated",
+    "rendered_at_utc": "2026-07-30T03:45:25Z",
+    "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+    "toolchain_qualification": "qualified_for_all_non_latex_chapters",
+    "render_profile": "final_av_master",
+    "command": "Render the exact-timing ChapterVisualAbstract with pinned ManimCE 0.20.1 at 1920x1080/30, render pinned Kokoro-82M af_heart narration at speed 1.08 with a hard maximum of 300 characters per synthesis call and -16 LUFS, then align all seven visual scenes to the exact audio paragraph boundaries and mux with FFmpeg 8.0.1 as H.264 CRF 18 yuv420p plus AAC-LC 192 kb/s 48 kHz mono.",
+    "duration_seconds": 285.08,
+    "pixel_width": 1920,
+    "pixel_height": 1080,
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "output_sha256": "7a655aa37dab94218d839c759191240d31e313514ed475d2f3dace978b8b05de",
+    "mux_receipt_sha256": "87c3715df26103b005c0b6828093f265becb7d70a849538bf5191c71a01202f8",
+    "output_storage": "ignored build/visual_edition media only",
+    "visual_review": {
+      "draft_sample_seconds": [
+        11.263,
+        51.445,
+        103.36,
+        153.422,
+        203.525,
+        240.597,
+        269.857
+      ],
+      "release_sample_seconds": [
+        51.445,
+        240.597
+      ],
+      "result": "pass",
+      "review_scope": "Exact mux-receipt midpoint sampling across all seven narration scenes checked composition, legibility, persistent labels, color-plus-shape semantics, evidence ceiling, non-claims, end-card identity, and absence of clipping or overflowing text."
+    },
+    "audio_master": {
+      "identity": "Kokoro-82M bf16 af_heart via kokoro-mlx 0.1.2 at speed 1.08",
+      "provenance": "Locally generated from the canonical narration with the pinned Apache-2.0 Kokoro-82M model and MIT kokoro-mlx implementation recorded in visual_edition/narration_toolchain.json.",
+      "publication_rights_state": "cleared",
+      "duration_seconds": 285.08,
+      "sha256": "742b2454ce82ba3b2748efc8bb8db995003526ed2d25447d1f0def80fab37826"
+    },
+    "caption_review": {
+      "state": "machine_audited",
+      "audit_method": "Exact receipt-derived canonical timing plus local MLX Whisper transcript comparison and complete beginning/end coverage checks.",
+      "reviewed_against_audio_sha256": "742b2454ce82ba3b2748efc8bb8db995003526ed2d25447d1f0def80fab37826",
+      "asr_model": "mlx-community/whisper-small.en-mlx@52a88bf6e98b114a210c21bb83e22d6e1505cb73",
+      "asr_word_error_rate": 0.01675,
+      "terminology": "pass",
+      "timing": "pass",
+      "non_speech_information": "pass",
+      "material_visual_changes": "described_in_adjacent_transcript"
+    },
+    "artifact_sha256": {
+      "storyboard": "e9354d19a616369caa6bf54c57c1a6dd0b6450b68e99566b3b686eea842d0bfb",
+      "scene_code": "995cb790a2754545d28de522dcb3cbbd25ed45d50d11bfd97d448b864ab32554",
+      "narration_script": "0bfbb4707cd19a860fc39fb95985c36da8828f3b703593211523b0ac24e201fc",
+      "captions": "2d32d8b536e8eb7f4cfc7558cf134a3241fb9c572420fe3b6470c3ed211a929b",
+      "descriptive_transcript": "5379353b4c24f429e07daf96b238e1e7cf9b50a660bf03e3de1a23bec0279d44",
+      "thumbnail": "8054b9cb75f82e463e2c1b86e68d84999c34680227047da15cdb4578c2b17473",
+      "scene_spec": "a47264bcc65ab2513238bc554ce12adcea2f2d94bd914b6f5062657e22e07356"
+    },
+    "remaining_release_gates": [
+      "obtain exact action-time authority before any YouTube or playlist mutation"
+    ]
+  },
+  "youtube": {
+    "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+    "video_id": null,
+    "watch_url": null,
+    "playlist_id": null,
+    "generation": 0,
+    "publication_state": "not_authorized",
+    "uploaded_output_sha256": null,
+    "bound_chapter_sha256": null,
+    "bound_source_commit": null,
+    "published_at_utc": null,
+    "platform_receipt_path": null,
+    "supersedes_video_id": null
+  },
+  "quarto_embed": {
+    "state": "absent_until_published",
+    "chapter_anchor": "visual-abstract",
+    "frame_title": "Visual abstract: Prototype Roadmap",
+    "aria_label": "Play the visual abstract for Prototype Roadmap"
+  },
+  "staleness": {
+    "state": "current",
+    "checked_chapter_sha256": "85d05443dc75d291be1b11b5b50827e14bb8a6e4b40f2c149e7d6f1ca1ae74f7",
+    "triggers": [
+      "core_claim",
+      "mechanism",
+      "worked_trace",
+      "evidence_state",
+      "non_claim",
+      "material_source",
+      "chapter_identity",
+      "handoff",
+      "public_url"
+    ]
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This derivative video does not promote or otherwise change any book claim.",
+    "The validated local final master is not a YouTube upload or a public publication.",
+    "Automated intelligibility and caption audits do not establish that every listener will prefer the synthetic voice.",
+    "A successful animation render does not establish deployment, safety, efficiency, transfer, state of the art, AGI, or ASI."
+  ]
+}

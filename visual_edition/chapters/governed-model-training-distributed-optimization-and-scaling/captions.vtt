@@ -1,0 +1,233 @@
+WEBVTT
+
+NOTE
+Canonical written narration timed from the exact local narration render receipt.
+Pronunciation-only substitutions are intentionally absent from caption text.
+
+1
+00:00:00.060 --> 00:00:04.852
+This chapter asks a specific question: A checkpoint can load and
+
+2
+00:00:04.852 --> 00:00:09.644
+a loss curve can converge even when data order, optimizer state,
+
+3
+00:00:09.644 --> 00:00:14.437
+numerical policy, distributed topology, failure recovery, or checkpoint selection no longer
+
+4
+00:00:14.437 --> 00:00:16.615
+matches the training process claimed.
+
+5
+00:00:16.955 --> 00:00:21.706
+The tempting shortcut is insufficient: Code, data, weights, final loss,
+
+6
+00:00:21.706 --> 00:00:25.507
+peak throughput, a framework save call, successful restart,
+
+7
+00:00:25.507 --> 00:00:30.734
+or one retained checkpoint does not identify the full stateful distributed
+
+8
+00:00:30.734 --> 00:00:34.535
+run or separate candidate selection from independent qualification.
+
+9
+00:00:35.135 --> 00:00:40.495
+The chapter's core claim is this: A model-training candidate is eligible
+
+10
+00:00:40.495 --> 00:00:45.856
+for qualification only when a prospectively frozen run contract binds architecture,
+
+11
+00:00:45.856 --> 00:00:50.242
+data lease and order, objective, optimizer, scheduler, numerical policy,
+
+12
+00:00:50.242 --> 00:00:54.140
+device and parallelism topology, code and environment, budget,
+
+13
+00:00:54.480 --> 00:01:00.975
+stopping and fault policy, complete attempted-run denominator, full declared checkpoint state,
+
+14
+00:01:00.975 --> 00:01:06.290
+commit consistency, resume equivalence class, candidate-checkpoint family, validation-only selection,
+
+15
+00:01:06.290 --> 00:01:12.785
+independent unopened qualification, and residual ownership; a loss reduction, completed job,
+
+16
+00:01:13.125 --> 00:01:18.412
+high utilization, checkpoint file, successful load, recovered run, selected candidate,
+
+17
+00:01:18.412 --> 00:01:24.228
+formal record proof, or source-reported scale result alone establishes neither faithful
+
+18
+00:01:24.228 --> 00:01:30.044
+training, model quality, optimizer superiority, fault tolerance, safety, support, readiness, release,
+
+19
+00:01:30.044 --> 00:01:31.630
+transfer, nor SOTA.
+
+20
+00:01:32.230 --> 00:01:36.260
+A concrete implementation trace makes the proposal testable.
+
+21
+00:01:36.600 --> 00:01:42.819
+Build a training-run transaction record, validator, and replay workflow around a
+
+22
+00:01:42.819 --> 00:01:49.038
+competent open natural workload with uninterrupted, standard distributed, deliberately weight-only recovery,
+
+23
+00:01:49.038 --> 00:01:52.430
+full-state governed, and strong alternative-topology arms;
+
+24
+00:01:52.770 --> 00:01:58.233
+inject thirteen fault families across at least three seeds and multiple
+
+25
+00:01:58.233 --> 00:02:02.703
+timings; keep qualification hidden; retain every attempt and checkpoint;
+
+26
+00:02:02.703 --> 00:02:07.670
+and measure time-to-quality, resume distance, drift detection, downstream qualification, resources,
+
+27
+00:02:07.670 --> 00:02:10.650
+operator work, and governance cost jointly.
+
+28
+00:02:10.990 --> 00:02:17.506
+Compile and record the executed device mesh, parallelism dimensions, collective/compiler plan,
+
+29
+00:02:17.506 --> 00:02:24.022
+batch arithmetic, and optimizer-step semantics. Enumerate complete base and architecture-specific model,
+
+30
+00:02:24.022 --> 00:02:29.945
+optimizer, scheduler, scaler, RNG, sampler, data-cursor, topology, and compiler state.
+
+31
+00:02:30.545 --> 00:02:35.199
+The design can still fail. run identity drift silent data replay
+
+32
+00:02:35.199 --> 00:02:39.852
+or skip torn checkpoint state amnesia The correct response is to
+
+33
+00:02:39.852 --> 00:02:44.506
+stop, narrow, quarantine, compensate, or retain an owned residual rather than
+
+34
+00:02:44.506 --> 00:02:45.775
+narrate uncertainty away.
+
+35
+00:02:46.375 --> 00:02:51.421
+This chapter remains Design rationale at argument support. Its contracts, examples,
+
+36
+00:02:51.421 --> 00:02:55.550
+tests, or local artifacts establish only their encoded scope.
+
+37
+00:02:55.550 --> 00:03:00.596
+The chapter names proof targets rather than pretending they are already
+
+38
+00:03:00.596 --> 00:03:01.055
+closed.
+
+39
+00:03:01.395 --> 00:03:06.647
+An accepted finite handoff requires exact declared identity, topology/numerical identity,
+
+40
+00:03:06.647 --> 00:03:12.425
+complete committed checkpoint state, complete failure denominator, and no support or
+
+41
+00:03:12.425 --> 00:03:13.475
+release request.
+
+42
+00:03:13.815 --> 00:03:18.460
+An accepted finite handoff requires accounted resume state,
+
+43
+00:03:18.460 --> 00:03:24.847
+retained checkpoint and failure families, validation-only selection, and unopened independent qualification.
+
+44
+00:03:24.847 --> 00:03:27.170
+global batch arithmetic reconciles
+
+45
+00:03:27.770 --> 00:03:32.734
+No chapter claim or evidence state is promoted by this visual.
+
+46
+00:03:32.734 --> 00:03:37.698
+A named mechanism is not proof of correct implementation or useful
+
+47
+00:03:37.698 --> 00:03:42.662
+deployment. A local check or formal model does not establish real-world
+
+48
+00:03:42.662 --> 00:03:47.175
+enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.
+
+49
+00:03:47.515 --> 00:03:51.990
+These boundaries matter because an explanatory derivative is useful only if
+
+50
+00:03:51.990 --> 00:03:55.245
+it preserves the evidence ceiling of its source.
+
+51
+00:03:55.845 --> 00:04:01.096
+At most, this visual explains the chapter's design rationale at argument
+
+52
+00:04:01.096 --> 00:04:05.869
+support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI,
+
+53
+00:04:05.869 --> 00:04:10.643
+or ASI result. The next chapter is Learning Theory, Generalization,
+
+54
+00:04:10.643 --> 00:04:12.075
+and Scaling Science.
+
+55
+00:04:12.415 --> 00:04:17.206
+It takes responsibility for The stack repeatedly relies on claims that
+
+56
+00:04:17.206 --> 00:04:21.125
+learning will generalize, capabilities will transfer, losses will scale,
+
+57
+00:04:21.125 --> 00:04:25.045
+or phase changes will appear outside observed training support.

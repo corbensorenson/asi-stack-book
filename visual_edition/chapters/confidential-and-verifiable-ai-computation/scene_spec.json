@@ -1,0 +1,70 @@
+{
+  "chapter_id": "confidential-and-verifiable-ai-computation",
+  "title": "Confidential and Verifiable AI Computation",
+  "subtitle": "Confidential and verifiable AI requires a compositional execution contract that names the adversary, protected… attestation may be treated as proof of semantic correctness, legitimate purpose, or end-to-end privacy.",
+  "archetype": "stack",
+  "claim_label": "Design rationale",
+  "evidence_level": "argument",
+  "next_title": "Model-Weight Custody and Hardware Roots of Trust",
+  "display": {
+    "problem": "AI computation increasingly crosses distrust boundaries: a user may need… may need output integrity without granting another party unrestricted custody.",
+    "insufficient": "Privacy policy governs permitted information use, while hardware custody governs stored artifacts.",
+    "mechanism": [
+      {
+        "label": "Requested guarantee vector",
+        "detail": "Express the requested guarantee vector separately… computation integrity, output authenticity, availability, and auditability."
+      },
+      {
+        "label": "Choose among FHE MPC",
+        "detail": "Choose among FHE, MPC, zero-knowledge proofs, confidential… against an explicit adversary and leakage model."
+      },
+      {
+        "label": "Code model configuration data",
+        "detail": "Bind code, model, configuration, data commitments, platform… evidence that a distinct verifier appraises."
+      },
+      {
+        "label": "Keep cryptographic correctness",
+        "detail": "Keep cryptographic correctness, attested identity, model quality… lawful purpose as separate claim classes."
+      }
+    ],
+    "trace": [
+      "Requested guarantee vector",
+      "Choose among FHE MPC",
+      "Code model configuration data",
+      "Keep cryptographic correctness"
+    ],
+    "failures": [
+      "Guarantee laundering collapses confidentiality, integrity, privacy… correctness into one secure-compute label.",
+      "Stale or replayed attestation is accepted… platform, policy, or revocation state changed.",
+      "Side channels, outputs, access patterns, logs… failure timing leak protected information.",
+      "The proved computation faithfully executes the… wrong policy, or semantically invalid relation."
+    ],
+    "proof_targets": [
+      "A finite protected-execution record may hand off… proves semantic correctness, authorization, or end-to-end privacy.",
+      "An attestation proves only the appraised statement… intent, correct policy, or correct output meaning.",
+      "A zero-knowledge proof proves only the encoded… cryptographic assumptions; the circuit-to-semantics gap remains explicit."
+    ],
+    "evidence_ceiling": "This chapter remains Design rationale at argument support.",
+    "nonclaims": [
+      "No chapter claim or evidence state is promoted by this visual.",
+      "A named mechanism is not proof of correct implementation or useful deployment.",
+      "A local check or formal model does not establish real-world enforcement.",
+      "No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows."
+    ],
+    "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result."
+  },
+  "timing": {
+    "basis": "exact_narration_paragraph_boundaries",
+    "narration_receipt_sha256": "d27b61b583287e0183fd60a575778d189893d21c98a33effe2f6923a34626b52",
+    "target_duration_seconds": 313.18,
+    "scene_endpoints_seconds": [
+      51.095,
+      105.485,
+      165.07,
+      207.615,
+      250.535,
+      278.61,
+      313.18
+    ]
+  }
+}

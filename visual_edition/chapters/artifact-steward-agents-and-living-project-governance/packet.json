@@ -1,0 +1,170 @@
+{
+  "schema_version": "asi_stack.visual_chapter_packet.v1",
+  "video_id": "asi-video-artifact-steward-agents-and-living-project-governance",
+  "chapter_id": "artifact-steward-agents-and-living-project-governance",
+  "chapter_path": "chapters/artifact-steward-agents-and-living-project-governance.qmd",
+  "chapter_sha256": "acedd6d95d4b1d72ce357a512744eab9cb59680b4477595c19d52925294002fa",
+  "source_commit": "f10ef079ecfeb48503407d67832a0251f77c2c78",
+  "pilot": false,
+  "lifecycle_state": "ready_not_published",
+  "claim_bindings": [
+    {
+      "claim_id": "artifact-steward-agents-and-living-project-governance.core",
+      "claim_label": "Design rationale",
+      "support_state": "argument"
+    }
+  ],
+  "assigned_source_ids": [
+    "viea",
+    "talos",
+    "planforge",
+    "vcm_public",
+    "spinoza",
+    "benchmaxxing",
+    "rmi",
+    "cognitive_loop_closure",
+    "tokenmana",
+    "coherence_exchange",
+    "project_theseus_whitepaper",
+    "theseus_operator_os",
+    "scf",
+    "field_of_god_ai_constitution",
+    "ext_akash_docs_2026",
+    "ext_golem_docs_2025",
+    "ext_github_webhooks_docs",
+    "ext_github_self_hosted_runners_docs",
+    "ext_openzeppelin_governor_docs",
+    "ext_open_collective_docs",
+    "ext_github_sponsors_docs",
+    "ext_agentic_workflow_injection_2026",
+    "ext_dao_delegation_fairness_2025"
+  ],
+  "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result.",
+  "required_content": {
+    "problem": "Durable artifacts need continuity across planning, funding, work assignment, release, maintenance, governance, and eventual sunset without turning an AI manager into the owner of the project. Issue trackers, CI systems, bots, DAOs, funding pages, and project-management tools each cover a slice of artifact lifecycle, but none by themselves preserve mission, memory, authority, treasury limits, contributor credit, evidence, and death protocol as one governed project steward.",
+    "core_mechanism": "Artifact Steward Agents and Living Project Governance owns a project-, artifact-, mission-, owner-, authority-, roadmap-, work-contract-, event-, treasury-, compute-, contributor-, evidence-, governance-, release-, federation-, sunset-, consumer-, environment-, and time-specific Artifact Steward Continuity Lease: it may observe, propose, prepare, coordinate, execute, reverse, archive, or retire only through a versioned charter, taint-aware intake, scoped work contracts, separated contribution ledgers, bounded treasury and compute policy, verification and release gates, appeal and fork or exit paths, effect-complete rollback, and explicit sunset authority; it never acquires ownership, governance legitimacy, evidence authority, funding rights, release authority, legal standing.",
+    "worked_trace": "Seven schema-and-fixture record families; twelve Lean declarations reducing lifecycle, contribution-ledger, and federation route functions; one deterministic public-safe lifecycle probe with two valid routes and six expected-invalid controls; and one adjacent synthetic release evidence-and-approval handoff. Work-contract dispatch and release-gate route targets remain planned rather than being represented by assumption-restating implications. No steward bot, real event intake, treasury or compute executor, contributor service, governance runner, federation harness, protected-branch action, release runner, sunset protocol, natural project workload, independent reproduction, deployment, or chapter-core support effect exists.",
+    "failure_boundary": "Mission drift and activity Goodhart optimize issue, commit, release, contributor, funding, or benchmark counts while user value and protected purpose decay. Authority laundering converts a helpful proposal, prior approval, role, token, vote, workflow, fixture, theorem, or emergency action into general permission. Workflow injection lets untrusted issue, pull-request, comment, webhook, dependency, artifact, benchmark, or worker text become steward control input. Credential and protected-asset capture exposes branches, releases, registries, domains, keys, wallets, personal data, or external systems beyond the contract.",
+    "evidence_state": "This chapter remains Design rationale at argument support. Its contracts, examples, tests, or local artifacts establish only their encoded scope. A reachable steward dispatch model derives contract repair or refusal when objective, authority, tool, verification, budget, or non-claim boundaries are missing. A finite steward lifecycle decision with requested treasury spend outside policy routes to approval. A reachable steward release model derives refusal when test, evidence, changelog, residual, or approval records are missing.",
+    "non_claims": "No chapter claim or evidence state is promoted by this visual. A named mechanism is not proof of correct implementation or useful deployment. A local check or formal model does not establish real-world enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.",
+    "handoff": "The next chapter is Integrated Reference Architecture. It takes responsibility for Readers need to see how the layers operate as one machine from intent to governed action and improvement."
+  },
+  "artifacts": {
+    "storyboard": "visual_edition/chapters/artifact-steward-agents-and-living-project-governance/storyboard.md",
+    "scene_code": "visual_edition/chapters/artifact-steward-agents-and-living-project-governance/scene.py",
+    "narration_script": "visual_edition/chapters/artifact-steward-agents-and-living-project-governance/narration.txt",
+    "captions": "visual_edition/chapters/artifact-steward-agents-and-living-project-governance/captions.vtt",
+    "descriptive_transcript": "visual_edition/chapters/artifact-steward-agents-and-living-project-governance/transcript.md",
+    "thumbnail": "visual_edition/chapters/artifact-steward-agents-and-living-project-governance/thumbnail.svg",
+    "scene_spec": "visual_edition/chapters/artifact-steward-agents-and-living-project-governance/scene_spec.json",
+    "thumbnail_alt_text": "A governed stack diagram for Artifact Steward Agents and Living Project Governance shows three named mechanism cards above a labeled failure and evidence boundary."
+  },
+  "render_receipt": {
+    "receipt_state": "current_final_av_master",
+    "validation_state": "validated",
+    "rendered_at_utc": "2026-07-30T03:44:02Z",
+    "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+    "toolchain_qualification": "qualified_for_all_non_latex_chapters",
+    "render_profile": "final_av_master",
+    "command": "Render the exact-timing ChapterVisualAbstract with pinned ManimCE 0.20.1 at 1920x1080/30, render pinned Kokoro-82M af_heart narration at speed 1.08 with a hard maximum of 300 characters per synthesis call and -16 LUFS, then align all seven visual scenes to the exact audio paragraph boundaries and mux with FFmpeg 8.0.1 as H.264 CRF 18 yuv420p plus AAC-LC 192 kb/s 48 kHz mono.",
+    "duration_seconds": 297.605,
+    "pixel_width": 1920,
+    "pixel_height": 1080,
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "output_sha256": "3a741b2ffe4d97b6bb3754357f6f3c588597d64fd237ce58522d5ae7b5c95a89",
+    "mux_receipt_sha256": "ef6cf849a10d456a2037e2f355d8e33e77b1b248bbae7087f67f6130a73db1ee",
+    "output_storage": "ignored build/visual_edition media only",
+    "visual_review": {
+      "draft_sample_seconds": [
+        18.185,
+        64.64,
+        119.03,
+        171.245,
+        217.6,
+        251.897,
+        281.77
+      ],
+      "release_sample_seconds": [
+        64.64,
+        251.897
+      ],
+      "result": "pass",
+      "review_scope": "Exact mux-receipt midpoint sampling across all seven narration scenes checked composition, legibility, persistent labels, color-plus-shape semantics, evidence ceiling, non-claims, end-card identity, and absence of clipping or overflowing text."
+    },
+    "audio_master": {
+      "identity": "Kokoro-82M bf16 af_heart via kokoro-mlx 0.1.2 at speed 1.08",
+      "provenance": "Locally generated from the canonical narration with the pinned Apache-2.0 Kokoro-82M model and MIT kokoro-mlx implementation recorded in visual_edition/narration_toolchain.json.",
+      "publication_rights_state": "cleared",
+      "duration_seconds": 297.605,
+      "sha256": "de8471b5836647eef06d4be210f79e4ee06ba83f26bf0300d5906556297d5d2e"
+    },
+    "caption_review": {
+      "state": "machine_audited",
+      "audit_method": "Exact receipt-derived canonical timing plus local MLX Whisper transcript comparison and complete beginning/end coverage checks.",
+      "reviewed_against_audio_sha256": "de8471b5836647eef06d4be210f79e4ee06ba83f26bf0300d5906556297d5d2e",
+      "asr_model": "mlx-community/whisper-small.en-mlx@52a88bf6e98b114a210c21bb83e22d6e1505cb73",
+      "asr_word_error_rate": 0.016077,
+      "terminology": "pass",
+      "timing": "pass",
+      "non_speech_information": "pass",
+      "material_visual_changes": "described_in_adjacent_transcript"
+    },
+    "artifact_sha256": {
+      "storyboard": "38fcc1cb873a71d222f94039bb0707755bcaae24d3f6d03112c7b6e92124d46d",
+      "scene_code": "5c0698444451a34c7bc2edd835bd3ec01bc6b1b18a2fc63860097722934def0f",
+      "narration_script": "41a6d3f125066e93043602b9c5ac8dfde393e07ae40c965173e75a00a986ee1d",
+      "captions": "a3424b96020929fae1b6b5705f1323b0b8e5f32f3b1e113577499ac5670bfe54",
+      "descriptive_transcript": "029864db85b3fdf26a90b63777326db147ebd7f959fcfc7662c718f9763d0059",
+      "thumbnail": "78a23ac7c4390c5182b2399e6ab5fdc4b3b9a9a172a272e1802543df8b4a8c5f",
+      "scene_spec": "8037e6da660c6a6f00423eb01d52119e73ba66cda893f4109048cf8e9a49cf96"
+    },
+    "remaining_release_gates": [
+      "obtain exact action-time authority before any YouTube or playlist mutation"
+    ]
+  },
+  "youtube": {
+    "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+    "video_id": null,
+    "watch_url": null,
+    "playlist_id": null,
+    "generation": 0,
+    "publication_state": "not_authorized",
+    "uploaded_output_sha256": null,
+    "bound_chapter_sha256": null,
+    "bound_source_commit": null,
+    "published_at_utc": null,
+    "platform_receipt_path": null,
+    "supersedes_video_id": null
+  },
+  "quarto_embed": {
+    "state": "absent_until_published",
+    "chapter_anchor": "visual-abstract",
+    "frame_title": "Visual abstract: Artifact Steward Agents and Living Project Governance",
+    "aria_label": "Play the visual abstract for Artifact Steward Agents and Living Project Governance"
+  },
+  "staleness": {
+    "state": "current",
+    "checked_chapter_sha256": "acedd6d95d4b1d72ce357a512744eab9cb59680b4477595c19d52925294002fa",
+    "triggers": [
+      "core_claim",
+      "mechanism",
+      "worked_trace",
+      "evidence_state",
+      "non_claim",
+      "material_source",
+      "chapter_identity",
+      "handoff",
+      "public_url"
+    ]
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This derivative video does not promote or otherwise change any book claim.",
+    "The validated local final master is not a YouTube upload or a public publication.",
+    "Automated intelligibility and caption audits do not establish that every listener will prefer the synthetic voice.",
+    "A successful animation render does not establish deployment, safety, efficiency, transfer, state of the art, AGI, or ASI."
+  ]
+}

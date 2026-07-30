@@ -1,0 +1,157 @@
+{
+  "schema_version": "asi_stack.visual_chapter_packet.v1",
+  "video_id": "asi-video-human-factors-and-meaningful-control-in-oversight",
+  "chapter_id": "human-factors-and-meaningful-control-in-oversight",
+  "chapter_path": "chapters/human-factors-and-meaningful-control-in-oversight.qmd",
+  "chapter_sha256": "cb2d389178f3a9d3d07c8914812bd28c12196ef4245a0ed5f2599e78bf5be434",
+  "source_commit": "f10ef079ecfeb48503407d67832a0251f77c2c78",
+  "pilot": false,
+  "lifecycle_state": "ready_not_published",
+  "claim_bindings": [
+    {
+      "claim_id": "human-factors-and-meaningful-control-in-oversight.core",
+      "claim_label": "Design rationale",
+      "support_state": "argument"
+    }
+  ],
+  "assigned_source_ids": [
+    "viea",
+    "talos",
+    "theseus_operator_os",
+    "scf",
+    "ext_humans_automation_1997",
+    "ext_ironies_automation_1983",
+    "ext_levels_automation_2000",
+    "ext_complacency_bias_automation_2010",
+    "ext_meaningful_human_control_actionable_2022",
+    "ext_agentic_oversight_practice_2026"
+  ],
+  "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result.",
+  "required_content": {
+    "problem": "A formally permitted AI action can still be practically uncontrollable when operators lack time, attention, comprehension, calibrated trust, or an effective intervention path. A dashboard, approval click, nominal human-in-the-loop, or fixed automation level does not establish meaningful control; each can preserve responsibility theater while automation bias, out-of-the-loop degradation, mode confusion, workload saturation, and delayed effects defeat intervention.",
+    "core_mechanism": "Meaningful oversight is a resource-bounded control contract: the system must preserve an identified human controller's knowledge, authority, time, observability, and effective intervention path, and must degrade or abstain when that control envelope cannot be maintained. Compile consequential tasks into oversight contracts naming controller, rights, intervention points, deadlines, and safe defaults. Estimate an oversight budget over attention, comprehension time, workload, practice recency, and action latency.",
+    "worked_trace": "Implement one bounded high-impact workflow with a versioned oversight contract, workload and deadline gate, mode/authority display, comprehension probe, exercised override, safe hold, intervention receipt, and simulator scenarios for overload, missed alarms, mode confusion, and late intervention. Estimate an oversight budget over attention, comprehension time, workload, practice recency, and action latency. Expose uncertainty, mode, authority, provenance, consequence, and time-to-irreversibility instead of raw telemetry alone. Require active comprehension checks for high-impact transitions.",
+    "failure_boundary": "automation bias complacency out-of-the-loop skill decay mode confusion",
+    "evidence_state": "This chapter remains Design rationale at argument support. Its contracts, examples, tests, or local artifacts establish only their encoded scope. In the finite model, any consequential transition lacking authority, observability, comprehension, timely intervention, or a reachable safe state is rejected or degraded. The bounded accountability assignment never attributes operational responsibility beyond the authority and effective control recorded in the oversight contract. Loss of observability or intervention capacity cannot silently preserve autonomy.",
+    "non_claims": "No chapter claim or evidence state is promoted by this visual. A named mechanism is not proof of correct implementation or useful deployment. A local check or formal model does not establish real-world enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.",
+    "handoff": "The next chapter is Human-AI Communication, Persuasion, and Epistemic Security. It takes responsibility for An AI system can preserve internal evidence discipline and still change beliefs, choices, and institutions through selective framing, personalization, synthetic identity, repetition, and amplification."
+  },
+  "artifacts": {
+    "storyboard": "visual_edition/chapters/human-factors-and-meaningful-control-in-oversight/storyboard.md",
+    "scene_code": "visual_edition/chapters/human-factors-and-meaningful-control-in-oversight/scene.py",
+    "narration_script": "visual_edition/chapters/human-factors-and-meaningful-control-in-oversight/narration.txt",
+    "captions": "visual_edition/chapters/human-factors-and-meaningful-control-in-oversight/captions.vtt",
+    "descriptive_transcript": "visual_edition/chapters/human-factors-and-meaningful-control-in-oversight/transcript.md",
+    "thumbnail": "visual_edition/chapters/human-factors-and-meaningful-control-in-oversight/thumbnail.svg",
+    "scene_spec": "visual_edition/chapters/human-factors-and-meaningful-control-in-oversight/scene_spec.json",
+    "thumbnail_alt_text": "A governed graph diagram for Human Factors and Meaningful Control in Oversight shows three named mechanism cards above a labeled failure and evidence boundary."
+  },
+  "render_receipt": {
+    "receipt_state": "current_final_av_master",
+    "validation_state": "validated",
+    "rendered_at_utc": "2026-07-30T03:07:57Z",
+    "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+    "toolchain_qualification": "qualified_for_all_non_latex_chapters",
+    "render_profile": "final_av_master",
+    "command": "Render the exact-timing ChapterVisualAbstract with pinned ManimCE 0.20.1 at 1920x1080/30, render pinned Kokoro-82M af_heart narration at speed 1.08 with a hard maximum of 300 characters per synthesis call and -16 LUFS, then align all seven visual scenes to the exact audio paragraph boundaries and mux with FFmpeg 8.0.1 as H.264 CRF 18 yuv420p plus AAC-LC 192 kb/s 48 kHz mono.",
+    "duration_seconds": 248.833008,
+    "pixel_width": 1920,
+    "pixel_height": 1080,
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "output_sha256": "5afa4a90ead0f07eaab87e10d8ec23382de07d1fffeeb31aafa85dbe03f25ffb",
+    "mux_receipt_sha256": "d06b1524f27a014eff0fafd34ecf2152eacb732f1688a0aea30db40e00d16840",
+    "output_storage": "ignored build/visual_edition media only",
+    "visual_review": {
+      "draft_sample_seconds": [
+        17.935,
+        57.73,
+        105.01,
+        138.257,
+        167.37,
+        202.692,
+        232.777
+      ],
+      "release_sample_seconds": [
+        57.73,
+        202.692
+      ],
+      "result": "pass",
+      "review_scope": "Exact mux-receipt midpoint sampling across all seven narration scenes checked composition, legibility, persistent labels, color-plus-shape semantics, evidence ceiling, non-claims, end-card identity, and absence of clipping or overflowing text."
+    },
+    "audio_master": {
+      "identity": "Kokoro-82M bf16 af_heart via kokoro-mlx 0.1.2 at speed 1.08",
+      "provenance": "Locally generated from the canonical narration with the pinned Apache-2.0 Kokoro-82M model and MIT kokoro-mlx implementation recorded in visual_edition/narration_toolchain.json.",
+      "publication_rights_state": "cleared",
+      "duration_seconds": 248.833008,
+      "sha256": "8faccd128e5737473e88dd28c644394a8abfd296eb0cb537cdcd944b736f671d"
+    },
+    "caption_review": {
+      "state": "machine_audited",
+      "audit_method": "Exact receipt-derived canonical timing plus local MLX Whisper transcript comparison and complete beginning/end coverage checks.",
+      "reviewed_against_audio_sha256": "8faccd128e5737473e88dd28c644394a8abfd296eb0cb537cdcd944b736f671d",
+      "asr_model": "mlx-community/whisper-small.en-mlx@52a88bf6e98b114a210c21bb83e22d6e1505cb73",
+      "asr_word_error_rate": 0.001965,
+      "terminology": "pass",
+      "timing": "pass",
+      "non_speech_information": "pass",
+      "material_visual_changes": "described_in_adjacent_transcript"
+    },
+    "artifact_sha256": {
+      "storyboard": "507ffa2ea1d0a06645f74c290d7c6586876474cc7f3319711aff960dd365b864",
+      "scene_code": "ed28eb6382e45f7e16612b0682d7f0f85b06d270346f7fee659bde77f4b950f7",
+      "narration_script": "ce3097fa215e9591134feb0eb412766d2633b98f2905caf076600c31ce599976",
+      "captions": "ef502ca057f6b102fda006f651a32215e93a9a674b3ce58afacd87625c4aa46f",
+      "descriptive_transcript": "cc0960eb7bdd7b14343cf3552ca76e7c9fb38ca069923febbaabf72a99964cf4",
+      "thumbnail": "91f1495f0598d99d89200aa7218c91e9b2c71979795a31d26c4383fa8b573750",
+      "scene_spec": "3498dbc63b8c6b0fc316a275234c1d2cdb14b2efc321f75849c56b6b464a329e"
+    },
+    "remaining_release_gates": [
+      "obtain exact action-time authority before any YouTube or playlist mutation"
+    ]
+  },
+  "youtube": {
+    "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+    "video_id": null,
+    "watch_url": null,
+    "playlist_id": null,
+    "generation": 0,
+    "publication_state": "not_authorized",
+    "uploaded_output_sha256": null,
+    "bound_chapter_sha256": null,
+    "bound_source_commit": null,
+    "published_at_utc": null,
+    "platform_receipt_path": null,
+    "supersedes_video_id": null
+  },
+  "quarto_embed": {
+    "state": "absent_until_published",
+    "chapter_anchor": "visual-abstract",
+    "frame_title": "Visual abstract: Human Factors and Meaningful Control in Oversight",
+    "aria_label": "Play the visual abstract for Human Factors and Meaningful Control in Oversight"
+  },
+  "staleness": {
+    "state": "current",
+    "checked_chapter_sha256": "cb2d389178f3a9d3d07c8914812bd28c12196ef4245a0ed5f2599e78bf5be434",
+    "triggers": [
+      "core_claim",
+      "mechanism",
+      "worked_trace",
+      "evidence_state",
+      "non_claim",
+      "material_source",
+      "chapter_identity",
+      "handoff",
+      "public_url"
+    ]
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This derivative video does not promote or otherwise change any book claim.",
+    "The validated local final master is not a YouTube upload or a public publication.",
+    "Automated intelligibility and caption audits do not establish that every listener will prefer the synthetic voice.",
+    "A successful animation render does not establish deployment, safety, efficiency, transfer, state of the art, AGI, or ASI."
+  ]
+}

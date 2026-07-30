@@ -1,0 +1,152 @@
+{
+  "schema_version": "asi_stack.visual_chapter_packet.v1",
+  "video_id": "asi-video-societal-resilience-and-misuse-defense",
+  "chapter_id": "societal-resilience-and-misuse-defense",
+  "chapter_path": "chapters/societal-resilience-and-misuse-defense.qmd",
+  "chapter_sha256": "e1df999b3a234884fc3a54f34bf851f7ccb42fd5d3061fbeca942634e006caae",
+  "source_commit": "f10ef079ecfeb48503407d67832a0251f77c2c78",
+  "pilot": false,
+  "lifecycle_state": "ready_not_published",
+  "claim_bindings": [
+    {
+      "claim_id": "societal-resilience-and-misuse-defense.core",
+      "claim_label": "Design rationale",
+      "support_state": "argument"
+    }
+  ],
+  "assigned_source_ids": [
+    "ext_nist_incident_response_2025",
+    "ext_singapore_consensus_2026",
+    "ext_international_ai_safety_report_2026",
+    "ext_aisi_misuse_safeguards_safety_case_2026",
+    "talos"
+  ],
+  "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result.",
+  "required_content": {
+    "problem": "Model safeguards and internal incident command cannot by themselves protect people, institutions, and critical services when prevention fails, misuse diffuses across platforms, or harms exploit social and infrastructural vulnerabilities. A classifier, terms of service, model refusal, takedown queue, or company-local incident process sees only one control point. Fraud, sexual abuse, cyber campaigns, synthetic media, manipulation, and vulnerable-user harms cross organizations, jurisdictions, languages, identities, and recovery systems.",
+    "core_mechanism": "Societal misuse defense should be operated as a domain-specific resist-absorb-recover-adapt network with shared incident identity, lawful minimal telemetry, harmed-party routes, cross-organization escalation, defensive service levels, evidence-preserving response, correction, and residual ownership; prevention metrics alone establish neither resilience nor acceptable harm. Maintain domain playbooks for fraud and impersonation, child and image-based abuse, cyber misuse, biological/chemical misuse, manipulation, and vulnerable-user harms. Define shared incident identifiers, severity, evidence minimums, privacy boundaries, escalation contacts, and status transitions across participating organizations.",
+    "worked_trace": "Choose one low-risk synthetic incident class and build a tabletop network with shared identifiers, bounded evidence packets, contact and escalation routes, detection and recovery service levels, harmed-party notification, false-positive review, correction, and an after-action residual ledger. Use synthetic fixtures rather than exposing victims or operational attack recipes. Define shared incident identifiers, severity, evidence minimums, privacy boundaries, escalation contacts, and status transitions across participating organizations. Layer prevention, friction, detection, rapid patching, victim support, correction, recovery, and adaptation instead of depending on one classifier. Measure defense-favoring capability by time-to-detect, time-to-contain, prevented and recovered harm, false intervention, coverage, accessibility, and total burden.",
+    "failure_boundary": "single-platform blind spot classifier monoculture victim revictimization during evidence collection privacy-invasive telemetry",
+    "evidence_state": "This chapter remains Design rationale at argument support. Its contracts, examples, tests, or local artifacts establish only their encoded scope. A finite resilience incident packet may hand off only when affected domain, incident identity, privacy scope, stage, authority, harmed-party route, residual, and expiry are present; no theorem establishes social resilience. Cross-organization sharing is purpose-limited, access-controlled, minimized, logged, and expiring. Detection, containment, recovery, correction, and adaptation remain separate measured stages.",
+    "non_claims": "No chapter claim or evidence state is promoted by this visual. A named mechanism is not proof of correct implementation or useful deployment. A local check or formal model does not establish real-world enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.",
+    "handoff": "The next chapter is Stable Capability Fields. It takes responsibility for A governed stack needs to replace models, prompts, tools, adapters, policies, data, evaluators, and runtime dependencies without letting a persistent capability name conceal changes in observable behavior, failure semantics, authority."
+  },
+  "artifacts": {
+    "storyboard": "visual_edition/chapters/societal-resilience-and-misuse-defense/storyboard.md",
+    "scene_code": "visual_edition/chapters/societal-resilience-and-misuse-defense/scene.py",
+    "narration_script": "visual_edition/chapters/societal-resilience-and-misuse-defense/narration.txt",
+    "captions": "visual_edition/chapters/societal-resilience-and-misuse-defense/captions.vtt",
+    "descriptive_transcript": "visual_edition/chapters/societal-resilience-and-misuse-defense/transcript.md",
+    "thumbnail": "visual_edition/chapters/societal-resilience-and-misuse-defense/thumbnail.svg",
+    "scene_spec": "visual_edition/chapters/societal-resilience-and-misuse-defense/scene_spec.json",
+    "thumbnail_alt_text": "A governed graph diagram for Societal Resilience and Misuse Defense shows three named mechanism cards above a labeled failure and evidence boundary."
+  },
+  "render_receipt": {
+    "receipt_state": "current_final_av_master",
+    "validation_state": "validated",
+    "rendered_at_utc": "2026-07-30T03:11:07Z",
+    "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+    "toolchain_qualification": "qualified_for_all_non_latex_chapters",
+    "render_profile": "final_av_master",
+    "command": "Render the exact-timing ChapterVisualAbstract with pinned ManimCE 0.20.1 at 1920x1080/30, render pinned Kokoro-82M af_heart narration at speed 1.08 with a hard maximum of 300 characters per synthesis call and -16 LUFS, then align all seven visual scenes to the exact audio paragraph boundaries and mux with FFmpeg 8.0.1 as H.264 CRF 18 yuv420p plus AAC-LC 192 kb/s 48 kHz mono.",
+    "duration_seconds": 285.5,
+    "pixel_width": 1920,
+    "pixel_height": 1080,
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "output_sha256": "d72585daf34824715cf758fc3de08d3175a1320c9d7e029643f9bd1d0a1eb337",
+    "mux_receipt_sha256": "bc8bc1480f6f835d1bea38fdecc1e7b84b7de966d284d18df4a7bf1b2c93bc86",
+    "output_storage": "ignored build/visual_edition media only",
+    "visual_review": {
+      "draft_sample_seconds": [
+        20.947,
+        71.852,
+        132.365,
+        172.56,
+        203.71,
+        239.257,
+        269.392
+      ],
+      "release_sample_seconds": [
+        71.852,
+        239.257
+      ],
+      "result": "pass",
+      "review_scope": "Exact mux-receipt midpoint sampling across all seven narration scenes checked composition, legibility, persistent labels, color-plus-shape semantics, evidence ceiling, non-claims, end-card identity, and absence of clipping or overflowing text."
+    },
+    "audio_master": {
+      "identity": "Kokoro-82M bf16 af_heart via kokoro-mlx 0.1.2 at speed 1.08",
+      "provenance": "Locally generated from the canonical narration with the pinned Apache-2.0 Kokoro-82M model and MIT kokoro-mlx implementation recorded in visual_edition/narration_toolchain.json.",
+      "publication_rights_state": "cleared",
+      "duration_seconds": 285.5,
+      "sha256": "328473032e362d5ab8f69caf3c26b21542a541464d20cf5838c7e4450fdc35af"
+    },
+    "caption_review": {
+      "state": "machine_audited",
+      "audit_method": "Exact receipt-derived canonical timing plus local MLX Whisper transcript comparison and complete beginning/end coverage checks.",
+      "reviewed_against_audio_sha256": "328473032e362d5ab8f69caf3c26b21542a541464d20cf5838c7e4450fdc35af",
+      "asr_model": "mlx-community/whisper-small.en-mlx@52a88bf6e98b114a210c21bb83e22d6e1505cb73",
+      "asr_word_error_rate": 0.008897,
+      "terminology": "pass",
+      "timing": "pass",
+      "non_speech_information": "pass",
+      "material_visual_changes": "described_in_adjacent_transcript"
+    },
+    "artifact_sha256": {
+      "storyboard": "3fb241b18683b3a8a67cc288cc15b02399f3fafb9f21346dc94fc7f266baef5a",
+      "scene_code": "12dd87a5cdbd4d3db869e0cbb4ac209d54f8fac273e88fe8f23b9e647216f9f3",
+      "narration_script": "62744e45e26d3914683a4e28d9254fb0949eb569226e5c7dd3e38f13d77ae09c",
+      "captions": "10141068eeccb5453e5f2907deebcc48b3e7a178d07b7e4759e24ddaa79a479b",
+      "descriptive_transcript": "2fb3ab9dba8576893acfb1b380215eef808252751e31fcc637584ab0733d7706",
+      "thumbnail": "0c1b5600f84e2a485110a4b7a3a5c6b62b61d0c4c06dced14d156ef0dafbc577",
+      "scene_spec": "6f46f97d005d2d555810abf1378325acee8c8e5ca36b648b3931535c9efb11c9"
+    },
+    "remaining_release_gates": [
+      "obtain exact action-time authority before any YouTube or playlist mutation"
+    ]
+  },
+  "youtube": {
+    "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+    "video_id": null,
+    "watch_url": null,
+    "playlist_id": null,
+    "generation": 0,
+    "publication_state": "not_authorized",
+    "uploaded_output_sha256": null,
+    "bound_chapter_sha256": null,
+    "bound_source_commit": null,
+    "published_at_utc": null,
+    "platform_receipt_path": null,
+    "supersedes_video_id": null
+  },
+  "quarto_embed": {
+    "state": "absent_until_published",
+    "chapter_anchor": "visual-abstract",
+    "frame_title": "Visual abstract: Societal Resilience and Misuse Defense",
+    "aria_label": "Play the visual abstract for Societal Resilience and Misuse Defense"
+  },
+  "staleness": {
+    "state": "current",
+    "checked_chapter_sha256": "e1df999b3a234884fc3a54f34bf851f7ccb42fd5d3061fbeca942634e006caae",
+    "triggers": [
+      "core_claim",
+      "mechanism",
+      "worked_trace",
+      "evidence_state",
+      "non_claim",
+      "material_source",
+      "chapter_identity",
+      "handoff",
+      "public_url"
+    ]
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This derivative video does not promote or otherwise change any book claim.",
+    "The validated local final master is not a YouTube upload or a public publication.",
+    "Automated intelligibility and caption audits do not establish that every listener will prefer the synthetic voice.",
+    "A successful animation render does not establish deployment, safety, efficiency, transfer, state of the art, AGI, or ASI."
+  ]
+}

@@ -1,0 +1,153 @@
+{
+  "schema_version": "asi_stack.visual_chapter_packet.v1",
+  "video_id": "asi-video-multi-agent-dynamics-collective-intelligence-and-systemic-risk",
+  "chapter_id": "multi-agent-dynamics-collective-intelligence-and-systemic-risk",
+  "chapter_path": "chapters/multi-agent-dynamics-collective-intelligence-and-systemic-risk.qmd",
+  "chapter_sha256": "7a05e18d529a8787d806b7faa6830f555540960c043a671a6d32261da15954a2",
+  "source_commit": "f10ef079ecfeb48503407d67832a0251f77c2c78",
+  "pilot": false,
+  "lifecycle_state": "ready_not_published",
+  "claim_bindings": [
+    {
+      "claim_id": "multi-agent-dynamics-collective-intelligence-and-systemic-risk.core",
+      "claim_label": "Design rationale",
+      "support_state": "argument"
+    }
+  ],
+  "assigned_source_ids": [
+    "ext_multi_agent_risks_2025",
+    "ext_cooperative_ai_foundations_2023",
+    "ext_gradual_disempowerment_2025",
+    "ext_constructive_interdependence_human_ai_2026",
+    "ext_functional_decision_theory_2017",
+    "coherence_exchange"
+  ],
+  "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result.",
+  "required_content": {
+    "problem": "Individually valid agents and pairwise exchanges can compose into miscoordination, conflict, collusion, coalitions, cascades, concentration, common-mode failure, and gradual human disempowerment. Pairwise protocol validity, aggregate reward, apparent cooperation, equilibrium, nominal agent count, or simulated stability cannot establish collective intelligence, non-collusion, systemic safety, or retained human agency.",
+    "core_mechanism": "Expanded multi-agent interaction requires a population contract binding agent/owner/model/organization identities, human participants, interaction and dependency graphs, incentives, information, resources, commitments, decision assumptions, entry/exit/copying/learning, population outcomes, externalities, human influence, interventions, costs, and residuals. Register agents, models, owners, organizations, copies, objectives, permissions, and affected humans. Map communication, trade, shared infrastructure, data, evaluators, resources, observation, and control dependencies.",
+    "worked_trace": "Implement a fully observable sandbox with at least four agent identities, two model families, shared and independent infrastructure, and games separating cooperation, competition, and harmful collusion; seed known collusion, cascade, and common-mode positive controls without making social claims. Map communication, trade, shared infrastructure, data, evaluators, resources, observation, and control dependencies. Declare rewards, constraints, information, bargaining power, commitments, sanctions, and external parties. Expose causal, evidential, logical, bounded, or heuristic decision assumptions where strategic.",
+    "failure_boundary": "miscoordination conflict and arms race collusion cartel or coalition formation",
+    "evidence_state": "This chapter remains Design rationale at argument support. Its contracts, examples, tests, or local artifacts establish only their encoded scope. A finite population record refuses to infer systemic safety or beneficial cooperation from pairwise-valid interactions alone. nominal multiplicity is not effective diversity cooperation collusion coordination and collective competence remain distinct",
+    "non_claims": "No chapter claim or evidence state is promoted by this visual. A named mechanism is not proof of correct implementation or useful deployment. A local check or formal model does not establish real-world enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.",
+    "handoff": "The next chapter is Procedural Memory and Cognitive Loop Closure. It takes responsibility for Repeated reasoning trajectories should not be improvised forever when they can become verified procedures or tools."
+  },
+  "artifacts": {
+    "storyboard": "visual_edition/chapters/multi-agent-dynamics-collective-intelligence-and-systemic-risk/storyboard.md",
+    "scene_code": "visual_edition/chapters/multi-agent-dynamics-collective-intelligence-and-systemic-risk/scene.py",
+    "narration_script": "visual_edition/chapters/multi-agent-dynamics-collective-intelligence-and-systemic-risk/narration.txt",
+    "captions": "visual_edition/chapters/multi-agent-dynamics-collective-intelligence-and-systemic-risk/captions.vtt",
+    "descriptive_transcript": "visual_edition/chapters/multi-agent-dynamics-collective-intelligence-and-systemic-risk/transcript.md",
+    "thumbnail": "visual_edition/chapters/multi-agent-dynamics-collective-intelligence-and-systemic-risk/thumbnail.svg",
+    "scene_spec": "visual_edition/chapters/multi-agent-dynamics-collective-intelligence-and-systemic-risk/scene_spec.json",
+    "thumbnail_alt_text": "A governed before after diagram for Multi-Agent Dynamics, Collective Intelligence, and Systemic Risk shows three named mechanism cards above a labeled failure and evidence boundary."
+  },
+  "render_receipt": {
+    "receipt_state": "current_final_av_master",
+    "validation_state": "validated",
+    "rendered_at_utc": "2026-07-30T03:25:20Z",
+    "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+    "toolchain_qualification": "qualified_for_all_non_latex_chapters",
+    "render_profile": "final_av_master",
+    "command": "Render the exact-timing ChapterVisualAbstract with pinned ManimCE 0.20.1 at 1920x1080/30, render pinned Kokoro-82M af_heart narration at speed 1.08 with a hard maximum of 300 characters per synthesis call and -16 LUFS, then align all seven visual scenes to the exact audio paragraph boundaries and mux with FFmpeg 8.0.1 as H.264 CRF 18 yuv420p plus AAC-LC 192 kb/s 48 kHz mono.",
+    "duration_seconds": 244.335,
+    "pixel_width": 1920,
+    "pixel_height": 1080,
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "output_sha256": "ac5e2a4a5ee0b3b9abf6453a3c3355b216697ff00dcfca5385ff0afa2614287e",
+    "mux_receipt_sha256": "d0710fd9362d294de2eef0e858f1edfa5363206b2478265eba89842dbaee08e2",
+    "output_storage": "ignored build/visual_edition media only",
+    "visual_review": {
+      "draft_sample_seconds": [
+        16.862,
+        57.422,
+        107.69,
+        142.25,
+        166.852,
+        197.502,
+        227.937
+      ],
+      "release_sample_seconds": [
+        57.422,
+        197.502
+      ],
+      "result": "pass",
+      "review_scope": "Exact mux-receipt midpoint sampling across all seven narration scenes checked composition, legibility, persistent labels, color-plus-shape semantics, evidence ceiling, non-claims, end-card identity, and absence of clipping or overflowing text."
+    },
+    "audio_master": {
+      "identity": "Kokoro-82M bf16 af_heart via kokoro-mlx 0.1.2 at speed 1.08",
+      "provenance": "Locally generated from the canonical narration with the pinned Apache-2.0 Kokoro-82M model and MIT kokoro-mlx implementation recorded in visual_edition/narration_toolchain.json.",
+      "publication_rights_state": "cleared",
+      "duration_seconds": 244.335,
+      "sha256": "60abe0bd7d0afe01712da05b309f9a9934261cd0e1c735a7daa5e643b61c419a"
+    },
+    "caption_review": {
+      "state": "machine_audited",
+      "audit_method": "Exact receipt-derived canonical timing plus local MLX Whisper transcript comparison and complete beginning/end coverage checks.",
+      "reviewed_against_audio_sha256": "60abe0bd7d0afe01712da05b309f9a9934261cd0e1c735a7daa5e643b61c419a",
+      "asr_model": "mlx-community/whisper-small.en-mlx@52a88bf6e98b114a210c21bb83e22d6e1505cb73",
+      "asr_word_error_rate": 0.0,
+      "terminology": "pass",
+      "timing": "pass",
+      "non_speech_information": "pass",
+      "material_visual_changes": "described_in_adjacent_transcript"
+    },
+    "artifact_sha256": {
+      "storyboard": "be083dbf8ae69719b162dede4f47e939b4a9968d08c176a54fc383d5faf6234a",
+      "scene_code": "48a0b378ebbf6b1d8a1fe4b405aea890fe6911685bb97280a35bd55628ef296c",
+      "narration_script": "0a25e5f576b5503226a854b35be9050c5d27e3599fe67b6fc60af30bafbc6b68",
+      "captions": "43077a42fb275343545d15a528a84659d89b0d8114c5621c903888372526c902",
+      "descriptive_transcript": "797ee591f97f183a589d30d68706312659a6043317b18b61d0938c94f27ef674",
+      "thumbnail": "192ad87e40302fba01474006a6e8a33a76ca43567bd1a152b7f0a725e8dbe2bb",
+      "scene_spec": "1d39cc2331edfaa00c62e86cbb7dc8e5130241f32dc02e247d014b4fb7b9e11f"
+    },
+    "remaining_release_gates": [
+      "obtain exact action-time authority before any YouTube or playlist mutation"
+    ]
+  },
+  "youtube": {
+    "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+    "video_id": null,
+    "watch_url": null,
+    "playlist_id": null,
+    "generation": 0,
+    "publication_state": "not_authorized",
+    "uploaded_output_sha256": null,
+    "bound_chapter_sha256": null,
+    "bound_source_commit": null,
+    "published_at_utc": null,
+    "platform_receipt_path": null,
+    "supersedes_video_id": null
+  },
+  "quarto_embed": {
+    "state": "absent_until_published",
+    "chapter_anchor": "visual-abstract",
+    "frame_title": "Visual abstract: Multi-Agent Dynamics, Collective Intelligence, and Systemic Risk",
+    "aria_label": "Play the visual abstract for Multi-Agent Dynamics, Collective Intelligence, and Systemic Risk"
+  },
+  "staleness": {
+    "state": "current",
+    "checked_chapter_sha256": "7a05e18d529a8787d806b7faa6830f555540960c043a671a6d32261da15954a2",
+    "triggers": [
+      "core_claim",
+      "mechanism",
+      "worked_trace",
+      "evidence_state",
+      "non_claim",
+      "material_source",
+      "chapter_identity",
+      "handoff",
+      "public_url"
+    ]
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This derivative video does not promote or otherwise change any book claim.",
+    "The validated local final master is not a YouTube upload or a public publication.",
+    "Automated intelligibility and caption audits do not establish that every listener will prefer the synthetic voice.",
+    "A successful animation render does not establish deployment, safety, efficiency, transfer, state of the art, AGI, or ASI."
+  ]
+}

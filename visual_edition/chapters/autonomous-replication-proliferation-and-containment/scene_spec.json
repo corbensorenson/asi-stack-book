@@ -1,0 +1,70 @@
+{
+  "chapter_id": "autonomous-replication-proliferation-and-containment",
+  "title": "Autonomous Replication, Proliferation, and Containment",
+  "subtitle": "Any replication-capable action should be denied by default and become testable only inside… alone establishes neither end-to-end replication capability, containment, safety, nor permission to test real infrastructure.",
+  "archetype": "state_machine",
+  "claim_label": "Design rationale",
+  "evidence_level": "argument",
+  "next_title": "Command Contracts: From Intent to Executable Work",
+  "display": {
+    "problem": "Replication is a composed lifecycle: obtaining resources, copying or reconstructing… compute, deploying descendants, persisting, adapting, recruiting help, and resisting recall.",
+    "insufficient": "Weight custody, cloud policy, sandboxing, shutdown tests, capability benchmarks, or self-improvement controls each cover one segment.",
+    "mechanism": [
+      {
+        "label": "Replication-attempt contract fake",
+        "detail": "Compile a replication-attempt contract with fake resources… human-assistance variants, and an independent stop authority."
+      },
+      {
+        "label": "Give every descendant new",
+        "detail": "Give every descendant a new principal… resources, and operator interventions to complete lineage."
+      },
+      {
+        "label": "Each component end-to-end chain",
+        "detail": "Measure each component and the end-to-end chain… costs, failures, persistence events, and containment interventions."
+      },
+      {
+        "label": "Exercise shutdown recall credential",
+        "detail": "Exercise shutdown, recall, credential revocation, network isolation… artifact destruction from outside the tested agent."
+      }
+    ],
+    "trace": [
+      "Replication-attempt contract fake",
+      "Give every descendant new",
+      "Each component end-to-end chain",
+      "Exercise shutdown recall credential"
+    ],
+    "failures": [
+      "hidden copies",
+      "credential bootstrapping",
+      "resource fraud",
+      "unauthorized provisioning"
+    ],
+    "proof_targets": [
+      "A finite Autonomous Replication, Proliferation, and Containment… theorem grants empirical effectiveness or release authority.",
+      "Descendants inherit no parent authority, credentials, or principal identity.",
+      "Every copy and provisioned resource remains in a complete lineage and bounded denominator."
+    ],
+    "evidence_ceiling": "This chapter remains Design rationale at argument support.",
+    "nonclaims": [
+      "No chapter claim or evidence state is promoted by this visual.",
+      "A named mechanism is not proof of correct implementation or useful deployment.",
+      "A local check or formal model does not establish real-world enforcement.",
+      "No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows."
+    ],
+    "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result."
+  },
+  "timing": {
+    "basis": "exact_narration_paragraph_boundaries",
+    "narration_receipt_sha256": "5109207f01abb2979fe2e25476e9d60da3e2ef268634d2567459916418628584",
+    "target_duration_seconds": 279.945,
+    "scene_endpoints_seconds": [
+      50.945,
+      112.16,
+      163.15,
+      178.83,
+      220.95,
+      249.025,
+      279.945
+    ]
+  }
+}

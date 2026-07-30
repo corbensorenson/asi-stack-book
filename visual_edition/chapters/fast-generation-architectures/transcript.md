@@ -1,0 +1,56 @@
+# Descriptive transcript — Fast Generation Architectures
+
+Canonical live chapter:
+<https://corbensorenson.github.io/asi-stack-book/chapters/fast-generation-architectures.html>
+
+Video ID: `asi-video-fast-generation-architectures`
+
+Lifecycle: scripted local derivative; no YouTube publication is authorized
+
+Current support: `argument` — `Design rationale`
+
+## 00:00–00:47 — Problem and shortcut
+
+**Visual description.** The chapter title resolves into two labeled cards: the problem and the shortcut that does not solve it.
+
+**Narration.** This chapter asks a specific question: The stack needs lower end-to-end time to useful accepted work without allowing raw token rate, synthetic proxy speed, aggregate serving throughput, or a cheaper unverified path to masquerade as intelligence, quality, safety, or evidence. The tempting shortcut is insufficient: Standard autoregressive decoding, isolated speculative or parallel methods, serving-only optimizations, and raw throughput leaderboards do not define a matched consumer/workload/model/hardware boundary, attribute verifier, repair, fallback, queueing, warmup, cache, memory, energy, human, and governance costs, or show that a faster route preserves quality and rights under load, failure, drift, and transfer.
+
+## 00:47–01:42 — Operating mechanism
+
+**Visual description.** A labeled graph diagram exposes four distinct responsibilities and their explicit relationships.
+
+**Narration.** The chapter's core claim is this: Fast-generation admission is consumer-, workload-, model-, hardware-, serving-policy-, and time-window-specific: a controller may route an eligible request through a named accelerated path only after prospectively binding the context, quality, risk, budget, metric, verifier, fallback, rollback, and expiry contracts; separating attempted, proposed, accepted, verified, delivered, and useful output; fully attributing queueing, prefill, decode, verification, repair, retry, fallback, cache, memory, bandwidth, energy, human, and governance burdens; and showing a meaningful end-to-end improvement over matched quality-equivalent baselines without violating safety, authority, rights, or residual gates. Raw tokens per second, FLOP estimates, aggregate throughput, synthetic templates, or unverified speed lifts alone cannot qualify a route.
+
+## 01:42–02:35 — Concrete state transition
+
+**Visual description.** Four numbered state nodes move left to right; an observed receipt and an open residual remain separately labeled.
+
+**Narration.** A concrete implementation trace makes the proposal testable. The current minimum contains three retained finite countermodels plus a seventeen-declaration, eight-stage, sixty-route request-to-closure lifecycle; an independent consumer rejecting 51/51 non-accepting mutations and digest-binding the two-valid/four-invalid baseline suite, three-route/four-task accounting bundle, and one-valid/six-invalid Theseus import; one reachable modeled fallback; and no support or external effect. Thirty-five assumed projections, copied fixture facts, and summary bridges are retired. This is bounded local policy/conformance evidence, not model speed, natural-workload usefulness, verifier independence, evaluator adequacy, deployed fallback, serving performance, transfer, or SOTA evidence.
+
+## 02:35–03:21 — Failure boundary
+
+**Visual description.** Four failure cards meet a red fail-closed boundary labeled RECORD THE RESIDUAL.
+
+**Narration.** The design can still fail. Raw tokens per second or proposed spans replace accepted, verified, delivered, or useful work in the numerator. The accelerated route is compared with an unoptimized, smaller-context, lower-quality, differently quantized, differently batched, or otherwise weaker baseline. The task cohort is cherry-picked for high draft acceptance, short outputs, repeated prefixes, easy verification, or favorable hardware occupancy. Average quality hides rare catastrophic, citation, code, policy, rights, multilingual, long-context, or high-risk regressions. The correct response is to stop, narrow, quarantine, compensate, or retain an owned residual rather than narrate uncertainty away.
+
+## 03:21–04:10 — Evidence state
+
+**Visual description.** A double-rule proof boundary names the claim label and support state beside three unresolved proof targets.
+
+**Narration.** This chapter remains Design rationale at argument support. Its contracts, examples, tests, or local artifacts establish only their encoded scope. The chapter names proof targets rather than pretending they are already closed. Reachable admission binds task, context, consumer, mode, risk, verifier, baseline, quality, latency, resource, fallback, and rights records before fast selection. Reachable accounting and decision routes block raw-speed promotion without accepted output, task success, matched baseline, complete costs, and an evidence transition. Eight stages and sixty independently consumed routes govern context binding, selection, drafting, verification or fallback, useful-outcome accounting, decision, and closure.
+
+## 04:10–04:38 — Non-claims
+
+**Visual description.** Four muted non-claim rows, each marked by a red stop bar, state what the visual does not establish.
+
+**Narration.** No chapter claim or evidence state is promoted by this visual. A named mechanism is not proof of correct implementation or useful deployment. A local check or formal model does not establish real-world enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows. These boundaries matter because an explanatory derivative is useful only if it preserves the evidence ceiling of its source.
+
+## 04:38–05:10 — Handoff
+
+**Visual description.** The source end card states the live chapter, evidence ceiling, canonical URL, and successor chapter.
+
+**Narration.** At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result. The next chapter is Governed Deliberation and Test-Time Scaling. It takes responsibility for Additional inference can change a system's answer through search, revision, candidate aggregation, or verifier calls without a prospective rule for when extra compute is worthwhile, what evidence the verifier contributes.
+
+## Source and evidence boundary
+
+At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result.

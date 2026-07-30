@@ -1698,7 +1698,7 @@
   },
   "manim_visual_edition": {
     "id": "P7.3-governed-manim-visual-edition",
-    "state": "active_five_pilot_release_visuals_waiting_final_audio",
+    "state": "active_all_84_ready_not_published_waiting_youtube_authority",
     "execution_role": "active_owner_directed_book_packet_p2_scientific_headline_unchanged",
     "canonical_chapter_count": 84,
     "required_visual_abstract_duration_seconds": {
@@ -1717,7 +1717,7 @@
       "initial_pin": "0.20.1",
       "contract_path": "visual_edition/toolchain.json",
       "requirements_lock_path": "visual_edition/requirements.lock.txt",
-      "qualification_state": "qualified_for_non_latex_pilots",
+      "qualification_state": "qualified_for_all_non_latex_chapters",
       "manimgl_allowed": false,
       "isolated_arm_native_environment_required": true,
       "broken_global_environment_allowed": false,
@@ -1726,7 +1726,7 @@
     },
     "visual_grammar": {
       "contract_path": "visual_edition/visual_grammar.json",
-      "state": "candidate",
+      "state": "ratified",
       "ratification_requires_all_five_pilots_validated": true
     },
     "hosting": {
@@ -1783,13 +1783,13 @@
     ],
     "current_counts": {
       "toolchain_contracts": 1,
-      "candidate_visual_grammars": 1,
-      "ratified_visual_grammars": 0,
+      "candidate_visual_grammars": 0,
+      "ratified_visual_grammars": 1,
       "pilot_packets_present": 5,
       "pilot_packets_rendered_local": 5,
-      "pilot_packets_validated": 0,
-      "chapter_packets_validated": 0,
-      "current_rendered_videos": 0,
+      "pilot_packets_validated": 5,
+      "chapter_packets_validated": 84,
+      "current_rendered_videos": 84,
       "youtube_videos_published": 0,
       "current_quarto_embeds": 0,
       "stale_videos": 0
@@ -1797,17 +1797,14 @@
     "visual_manifest_path": "visual_edition/manifest.json",
     "youtube_ledger_path": "visual_edition/youtube_ledger.json",
     "five_pilot_checkpoint": {
-      "state": "all_five_source_packets_and_release_profile_visuals_rendered",
+      "state": "all_five_final_av_masters_validated",
       "packet_count": 5,
       "rendered_lifecycle_count": 5,
-      "validated_final_av_count": 0,
-      "rights_cleared_narration_count": 0,
+      "validated_final_av_count": 5,
+      "rights_cleared_narration_count": 5,
       "release_visual_review_count": 5,
-      "visual_grammar_state": "candidate",
+      "visual_grammar_state": "ratified",
       "remaining_release_gates": [
-        "authorized_or_licensed_narration_masters",
-        "final_caption_listening_reviews",
-        "final_audio_video_mux_and_validation",
         "exact_action_time_youtube_authority"
       ],
       "support_state_effect": "none",
@@ -1816,7 +1813,7 @@
     "first_pilot_checkpoint": {
       "chapter_id": "asi-is-a-stack-not-a-model",
       "packet_path": "visual_edition/chapters/asi-is-a-stack-not-a-model/packet.json",
-      "lifecycle_state": "rendered",
+      "lifecycle_state": "ready_not_published",
       "draft_duration_seconds": 284.99707,
       "draft_dimensions": "854x480",
       "draft_frame_rate": 15,
@@ -1828,10 +1825,32 @@
       "release_visual_review_sample_count": 2,
       "local_timing_audio_publication_rights_cleared": false,
       "remaining_release_gates": [
-        "authorized_or_licensed_narration_master",
-        "final_caption_listening_review",
-        "final_audio_video_mux_and_validation",
         "exact_action_time_youtube_authority"
+      ],
+      "support_state_effect": "none",
+      "release_effect": "none"
+    },
+    "all_chapter_checkpoint": {
+      "state": "all_84_ready_not_published",
+      "packet_count": 84,
+      "validated_final_av_count": 84,
+      "reviewed_caption_count": 84,
+      "descriptive_transcript_count": 84,
+      "reviewed_thumbnail_count": 84,
+      "scene_midpoint_review_frame_count": 588,
+      "scene_midpoint_review_sheet_count": 21,
+      "content_word_error_rate_minimum": 0.0,
+      "content_word_error_rate_maximum": 0.028658,
+      "maximum_contiguous_expected_token_gap": 4,
+      "duration_seconds_minimum": 227.765,
+      "duration_seconds_maximum": 331.005,
+      "local_final_master_bytes": 1015153522,
+      "youtube_platform_object_count": 0,
+      "current_quarto_embed_count": 0,
+      "remaining_release_gates": [
+        "exact_action_time_youtube_authority",
+        "youtube_playlist_upload_metadata_caption_thumbnail_processing_publication_receipts",
+        "quarto_embed_and_public_crawl_reconciliation"
       ],
       "support_state_effect": "none",
       "release_effect": "none"

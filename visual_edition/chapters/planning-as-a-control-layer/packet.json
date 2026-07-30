@@ -1,0 +1,158 @@
+{
+  "schema_version": "asi_stack.visual_chapter_packet.v1",
+  "video_id": "asi-video-planning-as-a-control-layer",
+  "chapter_id": "planning-as-a-control-layer",
+  "chapter_path": "chapters/planning-as-a-control-layer.qmd",
+  "chapter_sha256": "c191d467277c26c75f1e32d9b074c1914570ba3b69d38b65aa0e72217e4e2dae",
+  "source_commit": "f10ef079ecfeb48503407d67832a0251f77c2c78",
+  "pilot": false,
+  "lifecycle_state": "ready_not_published",
+  "claim_bindings": [
+    {
+      "claim_id": "planning-as-a-control-layer.core",
+      "claim_label": "Design rationale",
+      "support_state": "argument"
+    }
+  ],
+  "assigned_source_ids": [
+    "planforge",
+    "platonic_world_model",
+    "viea",
+    "cognitive_compilation",
+    "software_magic_grimoire",
+    "moecot",
+    "planforge_compiler_arch",
+    "coherence_exchange",
+    "tokenmana",
+    "ext_v_jepa_2_2025",
+    "reflexive_router_whitepaper"
+  ],
+  "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result.",
+  "required_content": {
+    "problem": "After a command contract is accepted, the stack must choose which obligations become work, which alternatives remain candidates, what dependencies and observations make nodes feasible, how scarce capacity is scheduled, when dispatch is permitted, and how feedback changes only the affected future. A graph can be acyclic and still pursue the wrong decomposition, conceal uncertainty, request impossible context, select an inadequate route, violate authority or rights, erase counterfactuals, or create more coordination and recovery cost than useful work.",
+    "core_mechanism": "Planning as a Control Layer should own a versioned, consumer-relative plan policy that selects and revises a partial order of obligations under uncertainty before execution. The policy binds the accepted command version; candidate decompositions and explicit abstention; typed nodes and dependency semantics; assumptions, observations, predictive-state and error models; context, tool, capability, authority, rights, resource, and verifier requirements; adequacy and utility predicates; lifecycle, dispatch, merge, stop, fallback, recovery, and replan rules; complete alternative and attempt denominators; and expected versus observed cost, latency, risk, and residuals.",
+    "worked_trace": "The current minimum is a record-and-route scaffold: plan-graph, PlanForge-DAG, command, job, and semantic-atom schemas; three valid and ten invalid plan-execution fixtures; two valid scheduler-state traces and seven rejecting mutations; two valid runtime-replan traces and nine rejecting mutations; two accepted no-change transitions; and 33 theorem declarations grouped under seven manifest targets. These artifacts exercise exact record shapes, declared dependency order and cycles, selected lifecycle and dispatch routes, authority/stop preservation bits, local-repair scope, cost-ledger fields, digests, and no-promotion boundaries only.",
+    "failure_boundary": "Scope and obligation drift adds goals, means, parties, or success criteria that the accepted contract did not authorize. Decomposition theater produces plausible nodes that omit cross-cutting obligations, irreversible effects, verification, delivery, or recovery work. Dependency hallucination asserts causal or feasibility relations from textual order, model confidence, or graph convenience without evidence. Dependency omission allows a node to dispatch before required data, state, authority, rights, evidence, resource, or recovery prerequisites exist.",
+    "evidence_state": "This chapter remains Design rationale at argument support. Its contracts, examples, tests, or local artifacts establish only their encoded scope. A plan node inherits the authority ceiling of its parent contract unless governance lowers it. A plan with unsatisfied required constraints cannot be dispatched. Modeled plan-graph admission routes missing command-contract acceptance, decomposition, acyclicity, dependency order, authority inheritance, context demand, adequacy contracts, verification plans, dispatch gates, dispatch receipts, replanning controls, residual registers, and non-claim boundaries to explicit outcomes.",
+    "non_claims": "No chapter claim or evidence state is promoted by this visual. A named mechanism is not proof of correct implementation or useful deployment. A local check or formal model does not establish real-world enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.",
+    "handoff": "The next chapter is Governed World Models and Reality Grounding. It takes responsibility for Planning and control fail when an agent's latent or simulated future is mistaken for the world, when prediction error is hidden, or when model updates expand action authority without evidence."
+  },
+  "artifacts": {
+    "storyboard": "visual_edition/chapters/planning-as-a-control-layer/storyboard.md",
+    "scene_code": "visual_edition/chapters/planning-as-a-control-layer/scene.py",
+    "narration_script": "visual_edition/chapters/planning-as-a-control-layer/narration.txt",
+    "captions": "visual_edition/chapters/planning-as-a-control-layer/captions.vtt",
+    "descriptive_transcript": "visual_edition/chapters/planning-as-a-control-layer/transcript.md",
+    "thumbnail": "visual_edition/chapters/planning-as-a-control-layer/thumbnail.svg",
+    "scene_spec": "visual_edition/chapters/planning-as-a-control-layer/scene_spec.json",
+    "thumbnail_alt_text": "A governed ledger diagram for Planning as a Control Layer: DAGs and Intelligence Arbitrage shows three named mechanism cards above a labeled failure and evidence boundary."
+  },
+  "render_receipt": {
+    "receipt_state": "current_final_av_master",
+    "validation_state": "validated",
+    "rendered_at_utc": "2026-07-30T03:17:11Z",
+    "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+    "toolchain_qualification": "qualified_for_all_non_latex_chapters",
+    "render_profile": "final_av_master",
+    "command": "Render the exact-timing ChapterVisualAbstract with pinned ManimCE 0.20.1 at 1920x1080/30, render pinned Kokoro-82M af_heart narration at speed 1.08 with a hard maximum of 300 characters per synthesis call and -16 LUFS, then align all seven visual scenes to the exact audio paragraph boundaries and mux with FFmpeg 8.0.1 as H.264 CRF 18 yuv420p plus AAC-LC 192 kb/s 48 kHz mono.",
+    "duration_seconds": 300.933008,
+    "pixel_width": 1920,
+    "pixel_height": 1080,
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "output_sha256": "d3e69d75ca72c47e21fddbc7cb5bbd4a4cd8612b53a846cf136a87f694cda97d",
+    "mux_receipt_sha256": "6a71d969044295bff95fabd9293c3760f6f9a98d76ac70843e64c333f52fb5b0",
+    "output_storage": "ignored build/visual_edition media only",
+    "visual_review": {
+      "draft_sample_seconds": [
+        19.485,
+        62.755,
+        117.482,
+        172.11,
+        219.327,
+        256.898,
+        285.933
+      ],
+      "release_sample_seconds": [
+        62.755,
+        256.898
+      ],
+      "result": "pass",
+      "review_scope": "Exact mux-receipt midpoint sampling across all seven narration scenes checked composition, legibility, persistent labels, color-plus-shape semantics, evidence ceiling, non-claims, end-card identity, and absence of clipping or overflowing text."
+    },
+    "audio_master": {
+      "identity": "Kokoro-82M bf16 af_heart via kokoro-mlx 0.1.2 at speed 1.08",
+      "provenance": "Locally generated from the canonical narration with the pinned Apache-2.0 Kokoro-82M model and MIT kokoro-mlx implementation recorded in visual_edition/narration_toolchain.json.",
+      "publication_rights_state": "cleared",
+      "duration_seconds": 300.933008,
+      "sha256": "9634d6c42437eb7ef633b2ec4bc4b615459d443afd0d51572cc3f4da68d116cd"
+    },
+    "caption_review": {
+      "state": "machine_audited",
+      "audit_method": "Exact receipt-derived canonical timing plus local MLX Whisper transcript comparison and complete beginning/end coverage checks.",
+      "reviewed_against_audio_sha256": "9634d6c42437eb7ef633b2ec4bc4b615459d443afd0d51572cc3f4da68d116cd",
+      "asr_model": "mlx-community/whisper-small.en-mlx@52a88bf6e98b114a210c21bb83e22d6e1505cb73",
+      "asr_word_error_rate": 0.014377,
+      "terminology": "pass",
+      "timing": "pass",
+      "non_speech_information": "pass",
+      "material_visual_changes": "described_in_adjacent_transcript"
+    },
+    "artifact_sha256": {
+      "storyboard": "63dd02b2a3e89ec2fc97875adbe66179d7cdd29250df341ec41c83a2422e747c",
+      "scene_code": "0da549fc3324986f9494d4ca1a8d2385412c82fcb1e76eb97b4bbba7825b9981",
+      "narration_script": "cb5107148ccaf956bfa26a23d2f5e421ac3de9ad907099f77981219e285370a7",
+      "captions": "b18ac0d9370cf527e03ce04e072eb2328eb69211aae9d50e6c29cae99364b46e",
+      "descriptive_transcript": "a49992e5d38abc0c4bf0c27cb59c3ce207d4a9a335c598034da27e2e5855d0a5",
+      "thumbnail": "6d9265806d71c042f50e689f01b9b10cfc4c1e833020cbd7152bc023803c96fa",
+      "scene_spec": "2202b84b5f681f4437dd8b869e436e0d98d85bac8c7cbae4c22edcce890ec9db"
+    },
+    "remaining_release_gates": [
+      "obtain exact action-time authority before any YouTube or playlist mutation"
+    ]
+  },
+  "youtube": {
+    "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+    "video_id": null,
+    "watch_url": null,
+    "playlist_id": null,
+    "generation": 0,
+    "publication_state": "not_authorized",
+    "uploaded_output_sha256": null,
+    "bound_chapter_sha256": null,
+    "bound_source_commit": null,
+    "published_at_utc": null,
+    "platform_receipt_path": null,
+    "supersedes_video_id": null
+  },
+  "quarto_embed": {
+    "state": "absent_until_published",
+    "chapter_anchor": "visual-abstract",
+    "frame_title": "Visual abstract: Planning as a Control Layer: DAGs and Intelligence Arbitrage",
+    "aria_label": "Play the visual abstract for Planning as a Control Layer: DAGs and Intelligence Arbitrage"
+  },
+  "staleness": {
+    "state": "current",
+    "checked_chapter_sha256": "c191d467277c26c75f1e32d9b074c1914570ba3b69d38b65aa0e72217e4e2dae",
+    "triggers": [
+      "core_claim",
+      "mechanism",
+      "worked_trace",
+      "evidence_state",
+      "non_claim",
+      "material_source",
+      "chapter_identity",
+      "handoff",
+      "public_url"
+    ]
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This derivative video does not promote or otherwise change any book claim.",
+    "The validated local final master is not a YouTube upload or a public publication.",
+    "Automated intelligibility and caption audits do not establish that every listener will prefer the synthetic voice.",
+    "A successful animation render does not establish deployment, safety, efficiency, transfer, state of the art, AGI, or ASI."
+  ]
+}

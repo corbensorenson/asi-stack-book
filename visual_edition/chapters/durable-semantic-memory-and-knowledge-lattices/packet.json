@@ -1,0 +1,152 @@
+{
+  "schema_version": "asi_stack.visual_chapter_packet.v1",
+  "video_id": "asi-video-durable-semantic-memory-and-knowledge-lattices",
+  "chapter_id": "durable-semantic-memory-and-knowledge-lattices",
+  "chapter_path": "chapters/durable-semantic-memory-and-knowledge-lattices.qmd",
+  "chapter_sha256": "12e4abe8c64c6a55058ee9bec76c668258b3ec30023298c3512fd368c6b78efc",
+  "source_commit": "f10ef079ecfeb48503407d67832a0251f77c2c78",
+  "pilot": false,
+  "lifecycle_state": "ready_not_published",
+  "claim_bindings": [
+    {
+      "claim_id": "durable-semantic-memory-and-knowledge-lattices.core",
+      "claim_label": "Design rationale",
+      "support_state": "argument"
+    }
+  ],
+  "assigned_source_ids": [
+    "qcsa_whitepaper",
+    "ext_graphrag_2024",
+    "ext_hipporag_2024",
+    "ext_mem0_2025",
+    "ext_titans_2025"
+  ],
+  "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result.",
+  "required_content": {
+    "problem": "Long-lived AI systems need semantic objects that survive restarts, support graph and associative retrieval, evolve across ontology versions, preserve provenance, merge and retract conflicting assertions, forget under policy, and remain distinguishable from transient context and model weights. Vector stores, knowledge graphs, GraphRAG, conversational memory, long-context models, and learned memory can improve retrieval, but none automatically supplies stable object identity, temporal validity, typed relations, provenance-preserving revision, ontology migration, poisoning controls, rights propagation, compaction, and restart-consistent persistence.",
+    "core_mechanism": "Durable semantic memory should be admitted through a versioned knowledge-lattice contract that binds object and relation identity, ontology, provenance, support state, temporal validity, authority and rights, merge and supersession, contradiction, retrieval route, compaction and forgetting, restart recovery, consumer use, and residual uncertainty; retrieval quality, graph connectivity, model recall, persistence, or a fluent answer alone establishes neither truth, complete memory, safe consolidation, erasure, nor decision authority. Assign stable semantic identities to entities, events, claims, relations, procedures, and source objects while retaining aliases, uncertainty, and collision records.",
+    "worked_trace": "Implement a versioned semantic-object schema, event-sourced store, validator, and replay fixture with typed nodes and relations, temporal validity, provenance, contradiction, supersession, ontology version, rights, and transactional snapshots. Compare exact, vector, graph, and hybrid retrieval on update-heavy tasks with injected collisions, stale facts, conflicting sources, poisoning, deletion, compaction, crash, and restart while measuring utility, provenance survival, contradiction calibration, rights closure, latency, and residuals. Version ontologies and relation schemas; migrate through explicit mappings that preserve losses, unresolved cases, and invalidated consumers. Represent provenance, support, temporal scope, authority, rights, contradictions, supersession, retraction, and derived dependencies on every memory object.",
+    "failure_boundary": "entity collision duplicate identity stale truth ontology drift",
+    "evidence_state": "This chapter remains Design rationale at argument support. Its contracts, examples, tests, or local artifacts establish only their encoded scope. A finite Durable Semantic Memory and Knowledge Lattices record may hand off only when identity, authority, version, required checks, and residual ownership are present; no theorem grants empirical effectiveness or release authority. No merge erases provenance, contradiction, uncertainty, temporal scope, or rights. Ontology migration records unmapped and lossy cases and invalidates affected consumers.",
+    "non_claims": "No chapter claim or evidence state is promoted by this visual. A named mechanism is not proof of correct implementation or useful deployment. A local check or formal model does not establish real-world enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.",
+    "handoff": "The next chapter is Context Transactions, Snapshots, Mounts, and Taint. It takes responsibility for Long-lived agents and parallel workers mutate durable context through multiple stores, branches, indexes, caches, summaries, and recovery paths."
+  },
+  "artifacts": {
+    "storyboard": "visual_edition/chapters/durable-semantic-memory-and-knowledge-lattices/storyboard.md",
+    "scene_code": "visual_edition/chapters/durable-semantic-memory-and-knowledge-lattices/scene.py",
+    "narration_script": "visual_edition/chapters/durable-semantic-memory-and-knowledge-lattices/narration.txt",
+    "captions": "visual_edition/chapters/durable-semantic-memory-and-knowledge-lattices/captions.vtt",
+    "descriptive_transcript": "visual_edition/chapters/durable-semantic-memory-and-knowledge-lattices/transcript.md",
+    "thumbnail": "visual_edition/chapters/durable-semantic-memory-and-knowledge-lattices/thumbnail.svg",
+    "scene_spec": "visual_edition/chapters/durable-semantic-memory-and-knowledge-lattices/scene_spec.json",
+    "thumbnail_alt_text": "A governed state machine diagram for Durable Semantic Memory and Knowledge Lattices shows three named mechanism cards above a labeled failure and evidence boundary."
+  },
+  "render_receipt": {
+    "receipt_state": "current_final_av_master",
+    "validation_state": "validated",
+    "rendered_at_utc": "2026-07-30T03:18:49Z",
+    "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+    "toolchain_qualification": "qualified_for_all_non_latex_chapters",
+    "render_profile": "final_av_master",
+    "command": "Render the exact-timing ChapterVisualAbstract with pinned ManimCE 0.20.1 at 1920x1080/30, render pinned Kokoro-82M af_heart narration at speed 1.08 with a hard maximum of 300 characters per synthesis call and -16 LUFS, then align all seven visual scenes to the exact audio paragraph boundaries and mux with FFmpeg 8.0.1 as H.264 CRF 18 yuv420p plus AAC-LC 192 kb/s 48 kHz mono.",
+    "duration_seconds": 283.315,
+    "pixel_width": 1920,
+    "pixel_height": 1080,
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "output_sha256": "f7164675fa78ab39e44d11330526ec495cc876893f1e54942c856d0a8cd7d767",
+    "mux_receipt_sha256": "5693bbc3e32e60b0ec0db6f355a283855b0e45d2ab1c11f451609ac1e5b14ff4",
+    "output_storage": "ignored build/visual_edition media only",
+    "visual_review": {
+      "draft_sample_seconds": [
+        24.157,
+        76.573,
+        133.538,
+        169.86,
+        198.735,
+        234.032,
+        265.692
+      ],
+      "release_sample_seconds": [
+        76.573,
+        234.032
+      ],
+      "result": "pass",
+      "review_scope": "Exact mux-receipt midpoint sampling across all seven narration scenes checked composition, legibility, persistent labels, color-plus-shape semantics, evidence ceiling, non-claims, end-card identity, and absence of clipping or overflowing text."
+    },
+    "audio_master": {
+      "identity": "Kokoro-82M bf16 af_heart via kokoro-mlx 0.1.2 at speed 1.08",
+      "provenance": "Locally generated from the canonical narration with the pinned Apache-2.0 Kokoro-82M model and MIT kokoro-mlx implementation recorded in visual_edition/narration_toolchain.json.",
+      "publication_rights_state": "cleared",
+      "duration_seconds": 283.315,
+      "sha256": "638bff1ba2bd0d1d8e7bf64a5f9bc99a8ceffa785f0a2bbe994ba4262107399c"
+    },
+    "caption_review": {
+      "state": "machine_audited",
+      "audit_method": "Exact receipt-derived canonical timing plus local MLX Whisper transcript comparison and complete beginning/end coverage checks.",
+      "reviewed_against_audio_sha256": "638bff1ba2bd0d1d8e7bf64a5f9bc99a8ceffa785f0a2bbe994ba4262107399c",
+      "asr_model": "mlx-community/whisper-small.en-mlx@52a88bf6e98b114a210c21bb83e22d6e1505cb73",
+      "asr_word_error_rate": 0.012346,
+      "terminology": "pass",
+      "timing": "pass",
+      "non_speech_information": "pass",
+      "material_visual_changes": "described_in_adjacent_transcript"
+    },
+    "artifact_sha256": {
+      "storyboard": "7ff1d9eed06c2a8d96a944b19fe5ce334facb99141033192b9aebeed34852af9",
+      "scene_code": "e368bd9356b816a179800d83e2c78113b28c4b7b0d43f3532028eab517796efd",
+      "narration_script": "f3d20bf6cd8bded5f9bf3727428288868ff2480170113eef05277aaf54e67d13",
+      "captions": "1098e8b5ae2f4b5c3f85763899eed8fa83f3526d3021377fc770bbbe897d916d",
+      "descriptive_transcript": "0a999670bb4f562187b12a6e46024da06fa02016cb901ee6026a0efa716d1842",
+      "thumbnail": "3dc420a1f6f73115dec4d074fc97450ff687881b202e21283a989aafe04fe279",
+      "scene_spec": "e734f08c21b7a8ce85b15e23e69af6fd8cea5a2fa7c53b4472c21b16e2682aa2"
+    },
+    "remaining_release_gates": [
+      "obtain exact action-time authority before any YouTube or playlist mutation"
+    ]
+  },
+  "youtube": {
+    "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+    "video_id": null,
+    "watch_url": null,
+    "playlist_id": null,
+    "generation": 0,
+    "publication_state": "not_authorized",
+    "uploaded_output_sha256": null,
+    "bound_chapter_sha256": null,
+    "bound_source_commit": null,
+    "published_at_utc": null,
+    "platform_receipt_path": null,
+    "supersedes_video_id": null
+  },
+  "quarto_embed": {
+    "state": "absent_until_published",
+    "chapter_anchor": "visual-abstract",
+    "frame_title": "Visual abstract: Durable Semantic Memory and Knowledge Lattices",
+    "aria_label": "Play the visual abstract for Durable Semantic Memory and Knowledge Lattices"
+  },
+  "staleness": {
+    "state": "current",
+    "checked_chapter_sha256": "12e4abe8c64c6a55058ee9bec76c668258b3ec30023298c3512fd368c6b78efc",
+    "triggers": [
+      "core_claim",
+      "mechanism",
+      "worked_trace",
+      "evidence_state",
+      "non_claim",
+      "material_source",
+      "chapter_identity",
+      "handoff",
+      "public_url"
+    ]
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This derivative video does not promote or otherwise change any book claim.",
+    "The validated local final master is not a YouTube upload or a public publication.",
+    "Automated intelligibility and caption audits do not establish that every listener will prefer the synthetic voice.",
+    "A successful animation render does not establish deployment, safety, efficiency, transfer, state of the art, AGI, or ASI."
+  ]
+}

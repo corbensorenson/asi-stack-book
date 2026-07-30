@@ -1,0 +1,155 @@
+{
+  "schema_version": "asi_stack.visual_chapter_packet.v1",
+  "video_id": "asi-video-physical-compute-infrastructure-energy-and-environmental-constraints",
+  "chapter_id": "physical-compute-infrastructure-energy-and-environmental-constraints",
+  "chapter_path": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd",
+  "chapter_sha256": "93c3e0e439438480a1fc5dc0385064fd754cb29658d09a28c350116fddcbf068",
+  "source_commit": "f10ef079ecfeb48503407d67832a0251f77c2c78",
+  "pilot": false,
+  "lifecycle_state": "ready_not_published",
+  "claim_bindings": [
+    {
+      "claim_id": "physical-compute-infrastructure-energy-and-environmental-constraints.core",
+      "claim_label": "Design rationale",
+      "support_state": "argument"
+    }
+  ],
+  "assigned_source_ids": [
+    "tokenmana",
+    "ext_iea_energy_and_ai_2025",
+    "ext_lbnl_data_center_energy_2024",
+    "ext_flexible_hardware_enabled_guarantees_2025",
+    "ext_neuromorphic_computing_scale_2025",
+    "ext_photonic_neuromorphic_2024",
+    "ext_quantum_ml_shadows_2024",
+    "ext_oecd_ai_infrastructure_competition_2025"
+  ],
+  "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result.",
+  "required_content": {
+    "problem": "Requested compute becomes useful work only through accelerators, memory, storage, interconnect, facilities, grid connections, generation, cooling, water, land, materials, maintenance, resilience, and retirement at particular places and times. Abstract token or FLOP budgets hide these physical constraints and their affected communities. Nameplate accelerator capacity, chip TDP, workload energy, facility PUE, annual electricity, carbon estimates, water figures, or capital cost each describe a slice. They do not establish delivered useful compute, temporal and locational impact, grid effects, resilience, embodied materials, rebound, community burden, or retireable capacity.",
+    "core_mechanism": "A compute allocation should be physically eligible only through a workload-to-capacity contract that binds location and time, hardware and interconnect, delivered useful work, facility and grid dependencies, energy attribution, cooling and water, materials, land and community effects, metering uncertainty, resilience and degradation, maintenance, demand response, reuse, retirement, and residuals; nameplate compute, efficiency, low PUE, renewable procurement, or aggregate energy alone establishes neither availability, sustainability, community acceptability, nor lower total impact. Compile workload requirements into time- and location-specific accelerator, memory, storage, network, reliability, latency, and scheduling envelopes.",
+    "worked_trace": "Instrument matched public workloads on local hardware across precision, batching, placement, memory pressure, and scheduler variants. Reconcile software counters with host power and resource records, inject thermal, network, storage, and failover constraints, and report useful work, latency, energy, peak power, bottlenecks, metering error, availability, cost, and residuals. Local results do not establish frontier-facility or grid transfer. Reconcile requested, nameplate, available, delivered, and useful compute with workload, host, rack, facility, and grid meters plus uncertainty and allocation rules. Track power, temporal matching, congestion, generation, backup, cooling, water, land, materials, maintenance, spares, community effects, and supply dependencies.",
+    "failure_boundary": "stranded capacity interconnect bottlenecks grid-queue mismatch temporal carbon laundering",
+    "evidence_state": "This chapter remains Design rationale at argument support. Its contracts, examples, tests, or local artifacts establish only their encoded scope. A finite Physical Compute Infrastructure, Energy, and Environmental Constraints record may hand off only when identity, authority, version, required checks, and residual ownership are present; no theorem grants empirical effectiveness or release authority. Workload energy, facility overhead, grid effects, and embodied impact remain separately attributable. Location, time, uncertainty, and allocation method remain attached to energy, emissions, and water claims.",
+    "non_claims": "No chapter claim or evidence state is promoted by this visual. A named mechanism is not proof of correct implementation or useful deployment. A local check or formal model does not establish real-world enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.",
+    "handoff": "The next chapter is Mathematical and Search Substrates. It takes responsibility for The source corpus contains exploratory mathematical/search substrates that may matter but must not be overclaimed."
+  },
+  "artifacts": {
+    "storyboard": "visual_edition/chapters/physical-compute-infrastructure-energy-and-environmental-constraints/storyboard.md",
+    "scene_code": "visual_edition/chapters/physical-compute-infrastructure-energy-and-environmental-constraints/scene.py",
+    "narration_script": "visual_edition/chapters/physical-compute-infrastructure-energy-and-environmental-constraints/narration.txt",
+    "captions": "visual_edition/chapters/physical-compute-infrastructure-energy-and-environmental-constraints/captions.vtt",
+    "descriptive_transcript": "visual_edition/chapters/physical-compute-infrastructure-energy-and-environmental-constraints/transcript.md",
+    "thumbnail": "visual_edition/chapters/physical-compute-infrastructure-energy-and-environmental-constraints/thumbnail.svg",
+    "scene_spec": "visual_edition/chapters/physical-compute-infrastructure-energy-and-environmental-constraints/scene_spec.json",
+    "thumbnail_alt_text": "A governed before after diagram for Physical Compute Infrastructure, Energy, and Environmental Constraints shows three named mechanism cards above a labeled failure and evidence boundary."
+  },
+  "render_receipt": {
+    "receipt_state": "current_final_av_master",
+    "validation_state": "validated",
+    "rendered_at_utc": "2026-07-30T03:34:35Z",
+    "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+    "toolchain_qualification": "qualified_for_all_non_latex_chapters",
+    "render_profile": "final_av_master",
+    "command": "Render the exact-timing ChapterVisualAbstract with pinned ManimCE 0.20.1 at 1920x1080/30, render pinned Kokoro-82M af_heart narration at speed 1.08 with a hard maximum of 300 characters per synthesis call and -16 LUFS, then align all seven visual scenes to the exact audio paragraph boundaries and mux with FFmpeg 8.0.1 as H.264 CRF 18 yuv420p plus AAC-LC 192 kb/s 48 kHz mono.",
+    "duration_seconds": 276.275,
+    "pixel_width": 1920,
+    "pixel_height": 1080,
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "output_sha256": "b08cc75bb5c6b417ca0263ed2fea77b09c48d16d8730d2a37146f713cee47633",
+    "mux_receipt_sha256": "b05c685ee8477bf8f0234e86764cbb29af8a7ecc03e4057c3af6f9345ad5ac1c",
+    "output_storage": "ignored build/visual_edition media only",
+    "visual_review": {
+      "draft_sample_seconds": [
+        24.885,
+        75.03,
+        127.373,
+        162.52,
+        193.233,
+        229.917,
+        260.115
+      ],
+      "release_sample_seconds": [
+        75.03,
+        229.917
+      ],
+      "result": "pass",
+      "review_scope": "Exact mux-receipt midpoint sampling across all seven narration scenes checked composition, legibility, persistent labels, color-plus-shape semantics, evidence ceiling, non-claims, end-card identity, and absence of clipping or overflowing text."
+    },
+    "audio_master": {
+      "identity": "Kokoro-82M bf16 af_heart via kokoro-mlx 0.1.2 at speed 1.08",
+      "provenance": "Locally generated from the canonical narration with the pinned Apache-2.0 Kokoro-82M model and MIT kokoro-mlx implementation recorded in visual_edition/narration_toolchain.json.",
+      "publication_rights_state": "cleared",
+      "duration_seconds": 276.275,
+      "sha256": "80722bf358da997430898467fdeba8cfecec0cd6423c449e753807a042ba65ab"
+    },
+    "caption_review": {
+      "state": "machine_audited",
+      "audit_method": "Exact receipt-derived canonical timing plus local MLX Whisper transcript comparison and complete beginning/end coverage checks.",
+      "reviewed_against_audio_sha256": "80722bf358da997430898467fdeba8cfecec0cd6423c449e753807a042ba65ab",
+      "asr_model": "mlx-community/whisper-small.en-mlx@52a88bf6e98b114a210c21bb83e22d6e1505cb73",
+      "asr_word_error_rate": 0.001789,
+      "terminology": "pass",
+      "timing": "pass",
+      "non_speech_information": "pass",
+      "material_visual_changes": "described_in_adjacent_transcript"
+    },
+    "artifact_sha256": {
+      "storyboard": "bf20e97cb1d057ced1cd072638b2c1e7997bbc16e77384b2bd92a08ced9fc2ba",
+      "scene_code": "12e9e1a6bcf677b2b5b87299def86e73bcab2748fe80367b48145d8fe80068e7",
+      "narration_script": "e446676ca259948f365b0e1858679e9772c9bf9bf721608a8ab0af448ca7f7d4",
+      "captions": "a0800f345834acff3682beaaf10bdc6c50638f291c497038ebc5cf5c88f03853",
+      "descriptive_transcript": "70cfce3acba6511025138e43c52da6cec3d131c1bacd4351cfc9dbeccf6c2c81",
+      "thumbnail": "31f65b51b8ba75d85eb519d7e9633e509f8ebbc3eb1928df6373ace1833aaddb",
+      "scene_spec": "059568186abd0f08537aa61137e4e8281a88c36736a8e5fc08362a3e828ecc36"
+    },
+    "remaining_release_gates": [
+      "obtain exact action-time authority before any YouTube or playlist mutation"
+    ]
+  },
+  "youtube": {
+    "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+    "video_id": null,
+    "watch_url": null,
+    "playlist_id": null,
+    "generation": 0,
+    "publication_state": "not_authorized",
+    "uploaded_output_sha256": null,
+    "bound_chapter_sha256": null,
+    "bound_source_commit": null,
+    "published_at_utc": null,
+    "platform_receipt_path": null,
+    "supersedes_video_id": null
+  },
+  "quarto_embed": {
+    "state": "absent_until_published",
+    "chapter_anchor": "visual-abstract",
+    "frame_title": "Visual abstract: Physical Compute Infrastructure, Energy, and Environmental Constraints",
+    "aria_label": "Play the visual abstract for Physical Compute Infrastructure, Energy, and Environmental Constraints"
+  },
+  "staleness": {
+    "state": "current",
+    "checked_chapter_sha256": "93c3e0e439438480a1fc5dc0385064fd754cb29658d09a28c350116fddcbf068",
+    "triggers": [
+      "core_claim",
+      "mechanism",
+      "worked_trace",
+      "evidence_state",
+      "non_claim",
+      "material_source",
+      "chapter_identity",
+      "handoff",
+      "public_url"
+    ]
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This derivative video does not promote or otherwise change any book claim.",
+    "The validated local final master is not a YouTube upload or a public publication.",
+    "Automated intelligibility and caption audits do not establish that every listener will prefer the synthetic voice.",
+    "A successful animation render does not establish deployment, safety, efficiency, transfer, state of the art, AGI, or ASI."
+  ]
+}

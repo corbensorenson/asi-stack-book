@@ -1,0 +1,70 @@
+{
+  "chapter_id": "security-kernel-and-digital-scifs",
+  "title": "Security Kernel and Digital SCIFs",
+  "subtitle": "Every privileged information flow or effect should execute as a threat-model-bound authority-use transaction through… recovery; and never infer security from the record, handle, compartment, or finite test alone.",
+  "archetype": "timeline",
+  "claim_label": "Design rationale",
+  "evidence_level": "argument",
+  "next_title": "Adversarial Machine Learning and the Model Attack Surface",
+  "display": {
+    "problem": "Tool-using and high-agency AI systems can transform untrusted content… effects across model, runtime, operator, vendor, and descendant trust boundaries.",
+    "insufficient": "Prompt instructions, model-visible secrets, one-time approval, opaque handles, allowlists, software… complete mediation, trustworthy declassification, isolation, revocation, side-channel control, or recovery.",
+    "mechanism": [
+      {
+        "label": "Freeze versioned threat model",
+        "detail": "Freeze a versioned threat model naming protected… explicitly out-of-scope channels before evaluating a control."
+      },
+      {
+        "label": "Each request exact authority",
+        "detail": "Represent each request as an exact authority… window, nonce, policy, approval, and revocation authority."
+      },
+      {
+        "label": "Keep secret bytes raw",
+        "detail": "Keep secret bytes and raw protected data… opacity as proof of safe authority use."
+      },
+      {
+        "label": "Task-relative context purpose",
+        "detail": "Compile task-relative context under purpose limitation, data… rules, recording material withheld and adequacy residuals."
+      }
+    ],
+    "trace": [
+      "Freeze versioned threat model",
+      "Each request exact authority",
+      "Keep secret bytes raw",
+      "Task-relative context purpose"
+    ],
+    "failures": [
+      "Prompt, artifact, memory, tool-output, multimodal, or… confuses untrusted data with control authority.",
+      "A confused deputy, compromised tool, or… principal, purpose, target, destination, or effect.",
+      "Ambient authority, replay, stale approval, incomplete… permits use outside the frozen lease.",
+      "Overbroad context admission leaks protected or irrelevant facts before execution begins."
+    ],
+    "proof_targets": [
+      "The finite authority-use route denies secret substitution… boundary is unauthorized or lacks substitution permission.",
+      "A context packet with insufficient clearance cannot enter a protected SCIF.",
+      "A structured authority-use review routes missing handles… clean authorized use into explicit security-kernel outcomes."
+    ],
+    "evidence_ceiling": "This chapter remains Design rationale at argument support.",
+    "nonclaims": [
+      "No chapter claim or evidence state is promoted by this visual.",
+      "A named mechanism is not proof of correct implementation or useful deployment.",
+      "A local check or formal model does not establish real-world enforcement.",
+      "No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows."
+    ],
+    "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result."
+  },
+  "timing": {
+    "basis": "exact_narration_paragraph_boundaries",
+    "narration_receipt_sha256": "07217aa8a21090f7ef7d2ee95c05bc4d16fbce27311456c97b666bdcde52b1b3",
+    "target_duration_seconds": 297.03,
+    "scene_endpoints_seconds": [
+      49.965,
+      94.285,
+      144.025,
+      186.52,
+      237.885,
+      265.96,
+      297.03
+    ]
+  }
+}

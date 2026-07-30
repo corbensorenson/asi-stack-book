@@ -1,0 +1,151 @@
+{
+  "schema_version": "asi_stack.visual_chapter_packet.v1",
+  "video_id": "asi-video-human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty",
+  "chapter_id": "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty",
+  "chapter_path": "chapters/human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.qmd",
+  "chapter_sha256": "73aa3426379c6f0057eebf4efd8ecf890505eb63fe54694fcbe2b73c9cc929fa",
+  "source_commit": "f10ef079ecfeb48503407d67832a0251f77c2c78",
+  "pilot": false,
+  "lifecycle_state": "ready_not_published",
+  "claim_bindings": [
+    {
+      "claim_id": "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.core",
+      "claim_label": "Design rationale",
+      "support_state": "argument"
+    }
+  ],
+  "assigned_source_ids": [
+    "ext_human_ai_team_meta_analysis_2024",
+    "ext_human_ai_feedback_loops_2025",
+    "ext_oecd_neuro_ai_convergence_2025",
+    "ext_who_neurotechnology_landscape_2025"
+  ],
+  "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result.",
+  "required_content": {
+    "problem": "Longitudinal human-AI coupling changes both sides of the system. Advice, adaptation, wearables, neural sensing, stimulation, and assistive dependence can alter judgment, skill, autonomy, privacy, identity, and access while continuously generating unusually sensitive cognitive and neural data. Human-factors chapters usually ask whether an operator can supervise a tool, and organization chapters assign tasks and accountability. They do not own bidirectional adaptation, neural-data rights, cognitive liberty, medical-versus-enhancement boundaries, dependence, skill retention, identity-sensitive effects, device exit, or unequal access across a person's lifecycle.",
+    "core_mechanism": "Human-AI symbiosis should be evaluated as a reversible coupled-control intervention: the combined system must beat human-alone and AI-alone baselines on declared outcomes while preserving informed consent, mental integrity, cognitive agency, neural-data purpose limits, skill and exit capacity, equitable access, clinical boundaries, and longitudinal monitoring. Declare the coupling mode, intended benefit, affected cognitive function, medical or enhancement status, duration, adaptation pathway, and reversibility. Maintain human-alone, AI-alone, and combined-system baselines; measure complementarity rather than assuming that a team is better.",
+    "worked_trace": "A non-clinical longitudinal protocol for a low-risk assistive task with human-alone, AI-alone, and combined baselines; explicit adaptation and data-flow maps; skill-retention, dependence, calibration, well-being, subgroup, and exit measures; user-controlled pause and reset; and ethics review before any human or neural-data study. Maintain human-alone, AI-alone, and combined-system baselines; measure complementarity rather than assuming that a team is better. Track coupled trajectories in performance, calibration, bias, attention, workload, skill, dependence, well-being, identity-sensitive change, and distribution. Treat neural and inferred mental data as purpose-bound high-sensitivity data with collection minimization, local processing where feasible, access logs, deletion, and prohibition on covert secondary inference.",
+    "failure_boundary": "The combined system underperforms the better component while interface theater is reported as synergy. Feedback loops amplify model or human bias across repeated interaction. Personalization induces dependency, deskilling, preference manipulation, or identity-sensitive drift. Neural or behavioral exhaust enables covert mental-state inference and secondary use.",
+    "evidence_state": "This chapter remains Design rationale at argument support. Its contracts, examples, tests, or local artifacts establish only their encoded scope. A finite human-AI coupling record may hand off only when component baselines, adaptation, data purpose, skill, dependence, exit, subgroup, and irreversible residuals are explicit; no theorem establishes beneficial symbiosis or authorizes neural intervention. Consent to one coupling function does not authorize unrelated mental inference, model training, employment use, insurance use, advertising, or surveillance.",
+    "non_claims": "No chapter claim or evidence state is promoted by this visual. A named mechanism is not proof of correct implementation or useful deployment. A local check or formal model does not establish real-world enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.",
+    "handoff": "The next chapter is AI Deployment, Transition, Distribution, and Human Agency. It takes responsibility for A useful AI deployment changes tasks, roles, skill, discretion, wages, ownership returns, prices, access, concentration, critical-service continuity, and the practical choices available to people and communities."
+  },
+  "artifacts": {
+    "storyboard": "visual_edition/chapters/human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty/storyboard.md",
+    "scene_code": "visual_edition/chapters/human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty/scene.py",
+    "narration_script": "visual_edition/chapters/human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty/narration.txt",
+    "captions": "visual_edition/chapters/human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty/captions.vtt",
+    "descriptive_transcript": "visual_edition/chapters/human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty/transcript.md",
+    "thumbnail": "visual_edition/chapters/human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty/thumbnail.svg",
+    "scene_spec": "visual_edition/chapters/human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty/scene_spec.json",
+    "thumbnail_alt_text": "A governed state machine diagram for Human-AI Symbiosis, Neurotechnology, and Cognitive Sovereignty shows three named mechanism cards above a labeled failure and evidence boundary."
+  },
+  "render_receipt": {
+    "receipt_state": "current_final_av_master",
+    "validation_state": "validated",
+    "rendered_at_utc": "2026-07-30T03:22:05Z",
+    "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+    "toolchain_qualification": "qualified_for_all_non_latex_chapters",
+    "render_profile": "final_av_master",
+    "command": "Render the exact-timing ChapterVisualAbstract with pinned ManimCE 0.20.1 at 1920x1080/30, render pinned Kokoro-82M af_heart narration at speed 1.08 with a hard maximum of 300 characters per synthesis call and -16 LUFS, then align all seven visual scenes to the exact audio paragraph boundaries and mux with FFmpeg 8.0.1 as H.264 CRF 18 yuv420p plus AAC-LC 192 kb/s 48 kHz mono.",
+    "duration_seconds": 305.28,
+    "pixel_width": 1920,
+    "pixel_height": 1080,
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "output_sha256": "80c4e0368b0e558df963ab63979c2f34c68394cb10fed65f9a70431e39ba3a45",
+    "mux_receipt_sha256": "fb44a252ea39fd845f8f7815103c55cc1a6c805713f47ac8ba4d099d6b10d26e",
+    "output_storage": "ignored build/visual_edition media only",
+    "visual_review": {
+      "draft_sample_seconds": [
+        25.082,
+        77.575,
+        134.64,
+        182.167,
+        221.912,
+        257.822,
+        288.57
+      ],
+      "release_sample_seconds": [
+        77.575,
+        257.822
+      ],
+      "result": "pass",
+      "review_scope": "Exact mux-receipt midpoint sampling across all seven narration scenes checked composition, legibility, persistent labels, color-plus-shape semantics, evidence ceiling, non-claims, end-card identity, and absence of clipping or overflowing text."
+    },
+    "audio_master": {
+      "identity": "Kokoro-82M bf16 af_heart via kokoro-mlx 0.1.2 at speed 1.08",
+      "provenance": "Locally generated from the canonical narration with the pinned Apache-2.0 Kokoro-82M model and MIT kokoro-mlx implementation recorded in visual_edition/narration_toolchain.json.",
+      "publication_rights_state": "cleared",
+      "duration_seconds": 305.28,
+      "sha256": "f15d9ef25465909025c336673920dda28c4c88a5fc8c63af5b55783c13e8e2eb"
+    },
+    "caption_review": {
+      "state": "machine_audited",
+      "audit_method": "Exact receipt-derived canonical timing plus local MLX Whisper transcript comparison and complete beginning/end coverage checks.",
+      "reviewed_against_audio_sha256": "f15d9ef25465909025c336673920dda28c4c88a5fc8c63af5b55783c13e8e2eb",
+      "asr_model": "mlx-community/whisper-small.en-mlx@52a88bf6e98b114a210c21bb83e22d6e1505cb73",
+      "asr_word_error_rate": 0.006441,
+      "terminology": "pass",
+      "timing": "pass",
+      "non_speech_information": "pass",
+      "material_visual_changes": "described_in_adjacent_transcript"
+    },
+    "artifact_sha256": {
+      "storyboard": "1d77e536f5a00c68d2128f2534c243d33480e2efb189e06a200ce3cfd41ca939",
+      "scene_code": "60311e06ade4b68e5b33688e42cb347a2477c32cfaf6646913c6d2b1d531d66f",
+      "narration_script": "3d6fa482180172291d95c9565634e0f06a51d1e3d7bab261c291e77f1b06aeb4",
+      "captions": "2ed3a821770e831cba2ff13f2778f3d456fb2a229cc64422fe7d3ea04e466be1",
+      "descriptive_transcript": "15e2ce0303bc38ef8e99bda9f476f8bcf16523352185151f4141a888bdc15095",
+      "thumbnail": "2f1df2b275fd586314675d4da6237eb51db808c7ce819e052dd1a5e133926cfd",
+      "scene_spec": "7f6ba27d70c3f0dae90489d574f795508fdf9f5505458895afe65841ad222c23"
+    },
+    "remaining_release_gates": [
+      "obtain exact action-time authority before any YouTube or playlist mutation"
+    ]
+  },
+  "youtube": {
+    "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+    "video_id": null,
+    "watch_url": null,
+    "playlist_id": null,
+    "generation": 0,
+    "publication_state": "not_authorized",
+    "uploaded_output_sha256": null,
+    "bound_chapter_sha256": null,
+    "bound_source_commit": null,
+    "published_at_utc": null,
+    "platform_receipt_path": null,
+    "supersedes_video_id": null
+  },
+  "quarto_embed": {
+    "state": "absent_until_published",
+    "chapter_anchor": "visual-abstract",
+    "frame_title": "Visual abstract: Human-AI Symbiosis, Neurotechnology, and Cognitive Sovereignty",
+    "aria_label": "Play the visual abstract for Human-AI Symbiosis, Neurotechnology, and Cognitive Sovereignty"
+  },
+  "staleness": {
+    "state": "current",
+    "checked_chapter_sha256": "73aa3426379c6f0057eebf4efd8ecf890505eb63fe54694fcbe2b73c9cc929fa",
+    "triggers": [
+      "core_claim",
+      "mechanism",
+      "worked_trace",
+      "evidence_state",
+      "non_claim",
+      "material_source",
+      "chapter_identity",
+      "handoff",
+      "public_url"
+    ]
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This derivative video does not promote or otherwise change any book claim.",
+    "The validated local final master is not a YouTube upload or a public publication.",
+    "Automated intelligibility and caption audits do not establish that every listener will prefer the synthetic voice.",
+    "A successful animation render does not establish deployment, safety, efficiency, transfer, state of the art, AGI, or ASI."
+  ]
+}

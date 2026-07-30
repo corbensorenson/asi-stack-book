@@ -1,0 +1,233 @@
+WEBVTT
+
+NOTE
+Canonical written narration timed from the exact local narration render receipt.
+Pronunciation-only substitutions are intentionally absent from caption text.
+
+1
+00:00:00.060 --> 00:00:05.316
+This chapter asks a specific question: Behavioral tests can reveal what
+
+2
+00:00:05.316 --> 00:00:10.095
+a model did without identifying the internal features, circuits, representations,
+
+3
+00:00:10.095 --> 00:00:15.351
+or causal pathways that produced it, while interpretability methods can themselves
+
+4
+00:00:15.351 --> 00:00:17.740
+generate persuasive but unstable stories.
+
+5
+00:00:18.080 --> 00:00:23.503
+The tempting shortcut is insufficient: A probe, visualization, sparse feature label,
+
+6
+00:00:23.503 --> 00:00:28.926
+attribution map, or circuit diagram is not white-box proof unless it
+
+7
+00:00:28.926 --> 00:00:32.870
+is reproducible, causally tested, stable under relevant transformations,
+
+8
+00:00:32.870 --> 00:00:35.335
+scoped to a model/version/data regime,
+
+9
+00:00:35.675 --> 00:00:38.830
+and compared with plausible alternative explanations.
+
+10
+00:00:39.430 --> 00:00:45.100
+The chapter's core claim is this: Internal-state observations should enter governance
+
+11
+00:00:45.100 --> 00:00:50.771
+only as typed evidence artifacts with lineage, method assumptions, replication status,
+
+12
+00:00:50.771 --> 00:00:55.410
+causal interventions, stability checks, coverage limits, and explicit non-authority;
+
+13
+00:00:55.750 --> 00:01:01.568
+white-box evidence complements but does not replace behavioral and operational evidence.
+
+14
+00:01:01.568 --> 00:01:07.386
+Define an evidence packet containing model hash, dataset slice, method version,
+
+15
+00:01:07.386 --> 00:01:10.030
+feature/circuit identifiers, assumptions, and confidence.
+
+16
+00:01:10.370 --> 00:01:15.874
+Separate observational association, predictive decoding, causal necessity, causal sufficiency,
+
+17
+00:01:15.874 --> 00:01:21.990
+and completeness claims. Require held-out replication across prompts, seeds, checkpoints,
+
+18
+00:01:21.990 --> 00:01:23.825
+and relevant transformations.
+
+19
+00:01:24.425 --> 00:01:28.455
+A concrete implementation trace makes the proposal testable.
+
+20
+00:01:28.795 --> 00:01:33.265
+The implemented minimum is a strict internal-evidence packet schema,
+
+21
+00:01:33.265 --> 00:01:38.728
+one explicitly expired record-shape fixture, a separately implemented semantic consumer with
+
+22
+00:01:38.728 --> 00:01:44.192
+twelve rejecting mutations, and a finite Lean route that rejects scientifically
+
+23
+00:01:44.192 --> 00:01:46.675
+incomplete packets, expires changed packets,
+
+24
+00:01:47.015 --> 00:01:48.895
+and cannot grant authority.
+
+25
+00:01:49.235 --> 00:01:54.472
+The claim-bearing campaign is prospectively frozen and resource-isolated but unexecuted;
+
+26
+00:01:54.472 --> 00:01:59.709
+it requires one digest-bound open model, two independently owned methods,
+
+27
+00:01:59.709 --> 00:02:04.945
+a tuned behavioral baseline, positive and negative controls, causal interventions,
+
+28
+00:02:04.945 --> 00:02:07.040
+stability and residual accounting,
+
+29
+00:02:07.380 --> 00:02:13.570
+an independent evaluator, and a one-time held-out opening after seven competence
+
+30
+00:02:13.570 --> 00:02:19.197
+gates. Separate observational association, predictive decoding, causal necessity, causal sufficiency,
+
+31
+00:02:19.197 --> 00:02:20.885
+and completeness claims.
+
+32
+00:02:21.485 --> 00:02:26.978
+The design can still fail. feature hallucination confirmation-biased labeling probe leakage
+
+33
+00:02:26.978 --> 00:02:32.472
+polysemantic feature collapse The correct response is to stop, narrow, quarantine,
+
+34
+00:02:32.472 --> 00:02:37.965
+compensate, or retain an owned residual rather than narrate uncertainty away.
+
+35
+00:02:38.565 --> 00:02:43.611
+This chapter remains Design rationale at argument support. Its contracts, examples,
+
+36
+00:02:43.611 --> 00:02:47.740
+tests, or local artifacts establish only their encoded scope.
+
+37
+00:02:47.740 --> 00:02:52.786
+The chapter names proof targets rather than pretending they are already
+
+38
+00:02:52.786 --> 00:02:53.245
+closed.
+
+39
+00:02:53.585 --> 00:02:58.669
+In the finite policy model, no interpretability evidence packet can widen
+
+40
+00:02:58.669 --> 00:03:03.291
+execution or release authority; it may only preserve, restrict, escalate,
+
+41
+00:03:03.291 --> 00:03:04.215
+or reject.
+
+42
+00:03:04.555 --> 00:03:09.857
+Packets with stale lineage, missing method assumptions, absent negative controls,
+
+43
+00:03:09.857 --> 00:03:14.629
+or unsupported causal state are rejected before governance use.
+
+44
+00:03:14.629 --> 00:03:17.810
+Labels retain examples, counterexamples, and uncertainty.
+
+45
+00:03:18.410 --> 00:03:23.374
+No chapter claim or evidence state is promoted by this visual.
+
+46
+00:03:23.374 --> 00:03:28.338
+A named mechanism is not proof of correct implementation or useful
+
+47
+00:03:28.338 --> 00:03:33.302
+deployment. A local check or formal model does not establish real-world
+
+48
+00:03:33.302 --> 00:03:37.815
+enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.
+
+49
+00:03:38.155 --> 00:03:42.630
+These boundaries matter because an explanatory derivative is useful only if
+
+50
+00:03:42.630 --> 00:03:45.885
+it preserves the evidence ceiling of its source.
+
+51
+00:03:46.485 --> 00:03:51.787
+At most, this visual explains the chapter's design rationale at argument
+
+52
+00:03:51.787 --> 00:03:56.606
+support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI,
+
+53
+00:03:56.606 --> 00:04:01.908
+or ASI result. The next chapter is Capability Thresholds and Deployment
+
+54
+00:04:01.908 --> 00:04:02.390
+Commitments.
+
+55
+00:04:02.730 --> 00:04:08.008
+It takes responsibility for A system can collect a capability score,
+
+56
+00:04:08.008 --> 00:04:13.286
+a time-horizon estimate, or a risk-evaluation result without recording which future
+
+57
+00:04:13.286 --> 00:04:15.685
+safeguard, release constraint, exception authority.

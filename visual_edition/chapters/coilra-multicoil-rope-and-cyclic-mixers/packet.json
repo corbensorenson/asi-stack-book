@@ -1,0 +1,152 @@
+{
+  "schema_version": "asi_stack.visual_chapter_packet.v1",
+  "video_id": "asi-video-coilra-multicoil-rope-and-cyclic-mixers",
+  "chapter_id": "coilra-multicoil-rope-and-cyclic-mixers",
+  "chapter_path": "chapters/coilra-multicoil-rope-and-cyclic-mixers.qmd",
+  "chapter_sha256": "5d3f17c772dc077b49551dc2d855f57f2fcc7683fccf0611c60b15145be159be",
+  "source_commit": "f10ef079ecfeb48503407d67832a0251f77c2c78",
+  "pilot": false,
+  "lifecycle_state": "ready_not_published",
+  "claim_bindings": [
+    {
+      "claim_id": "coilra-multicoil-rope-and-cyclic-mixers.core",
+      "claim_label": "Design rationale",
+      "support_state": "argument"
+    }
+  ],
+  "assigned_source_ids": [
+    "coilra_multicoil_rope",
+    "rope_position_certifier",
+    "circle_ai_contract_suite",
+    "theseus_circle_transfer",
+    "circle_ai_architectures"
+  ],
+  "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result.",
+  "required_content": {
+    "problem": "Position encodings, adapters, route heads, and mixers need a place for cyclic or block-cyclic structure that separates structural invariants from quality and runtime claims. Parameter-count, equivariance, or exact phase facts can be mistaken for better model behavior unless baselines, hardware costs, alias and load diagnostics, and failure cases are separated.",
+    "core_mechanism": "CoilRA, MultiCoil RoPE, and Cyclic Mixers owns a model-, layer-, mechanism-version-, workload-, baseline-, kernel-, hardware-, claim-axis-, and time-specific Cyclic Mechanism Tradeoff Packet: a cyclic adapter, phase bank, rotary scheme, route head, circulant operator, or block-cyclic mixer may enter a canary only when exact residue/winding, phase horizon, alias/collision/load, dense-reference parity, parameter and operation accounting, numerical error, kernel availability, complete cost, quality, failure, fallback, and rights evidence is matched against strong ordinary controls; equivariance, finite proofs, receipt validity, parameter reduction, or structural parity alone confers no quality, context-length, speed, memory, stability, efficiency, safety, deployment, transfer, support.",
+    "worked_trace": "The exact current minimum is one schema-valid cyclic-mixer evaluation record; one inherited public-safe RoPE structural receipt boundary; one public-safe Circle cyclic-mixer receipt with bounded dense-reference parity and parameter accounting; one public-safe MultiCoil phase receipt with finite phase and relative-shift facts; two no-change decisions for the local cyclic slices; and seven finite local Lean theorem declarations. It includes no trained cyclic model, natural workload, baseline matrix, real kernel or hardware benchmark, measured quality/context/runtime/memory/stability benefit, independent reproduction, transfer, or chapter-core transition. Declare why cyclic structure is native to the data, task, geometry, recurrence, position, routing, or computation rather than an aesthetic substitution.",
+    "failure_boundary": "Cyclic elegance, prime periods, or equivariance substitutes for workload-native justification. A finite theorem or receipt is laundered into trained-model quality, usable context, runtime, memory, safety, or deployment authority. Exact phase-bank or integer collision results are generalized to floating-point RoPE or learned positions without a numerical and behavioral bridge. Residue-only diagnostics hide winding, wraps, aliases, collisions, joint repeat horizons, or load concentration.",
+    "evidence_state": "This chapter remains Design rationale at argument support. Its contracts, examples, tests, or local artifacts establish only their encoded scope. A cyclic mixer review missing any structural, quality, runtime, memory, or parameter partition fails the finite structural-claim predicate. A promoted cyclic substrate missing baseline references or tradeoff metrics fails the finite promotion predicate. Structural, functional-parity, numerical, parameter, operation, quality, context, runtime, memory, stability, safety, deployment, transfer, and SOTA axes remain separate.",
+    "non_claims": "No chapter claim or evidence state is promoted by this visual. A named mechanism is not proof of correct implementation or useful deployment. A local check or formal model does not establish real-world enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.",
+    "handoff": "The next chapter is Executable Specifications and Lean Proof Envelope. It takes responsibility for The book needs to decide which architecture claims should become executable specs or Lean proofs."
+  },
+  "artifacts": {
+    "storyboard": "visual_edition/chapters/coilra-multicoil-rope-and-cyclic-mixers/storyboard.md",
+    "scene_code": "visual_edition/chapters/coilra-multicoil-rope-and-cyclic-mixers/scene.py",
+    "narration_script": "visual_edition/chapters/coilra-multicoil-rope-and-cyclic-mixers/narration.txt",
+    "captions": "visual_edition/chapters/coilra-multicoil-rope-and-cyclic-mixers/captions.vtt",
+    "descriptive_transcript": "visual_edition/chapters/coilra-multicoil-rope-and-cyclic-mixers/transcript.md",
+    "thumbnail": "visual_edition/chapters/coilra-multicoil-rope-and-cyclic-mixers/thumbnail.svg",
+    "scene_spec": "visual_edition/chapters/coilra-multicoil-rope-and-cyclic-mixers/scene_spec.json",
+    "thumbnail_alt_text": "A governed ledger diagram for CoilRA, MultiCoil RoPE, and Cyclic Mixers shows three named mechanism cards above a labeled failure and evidence boundary."
+  },
+  "render_receipt": {
+    "receipt_state": "current_final_av_master",
+    "validation_state": "validated",
+    "rendered_at_utc": "2026-07-30T03:36:56Z",
+    "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+    "toolchain_qualification": "qualified_for_all_non_latex_chapters",
+    "render_profile": "final_av_master",
+    "command": "Render the exact-timing ChapterVisualAbstract with pinned ManimCE 0.20.1 at 1920x1080/30, render pinned Kokoro-82M af_heart narration at speed 1.08 with a hard maximum of 300 characters per synthesis call and -16 LUFS, then align all seven visual scenes to the exact audio paragraph boundaries and mux with FFmpeg 8.0.1 as H.264 CRF 18 yuv420p plus AAC-LC 192 kb/s 48 kHz mono.",
+    "duration_seconds": 289.74,
+    "pixel_width": 1920,
+    "pixel_height": 1080,
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "output_sha256": "ca366a94d471b96b79e8175b31357474218f610f4c14d419c47f1537f2267a1a",
+    "mux_receipt_sha256": "45ade1e44da1e9a99ee08a6f0ecf0e0190b14fbaa34b4450dd9c996d97ed0873",
+    "output_storage": "ignored build/visual_edition media only",
+    "visual_review": {
+      "draft_sample_seconds": [
+        14.45,
+        55.91,
+        112.5,
+        163.865,
+        207.61,
+        243.608,
+        273.693
+      ],
+      "release_sample_seconds": [
+        55.91,
+        243.608
+      ],
+      "result": "pass",
+      "review_scope": "Exact mux-receipt midpoint sampling across all seven narration scenes checked composition, legibility, persistent labels, color-plus-shape semantics, evidence ceiling, non-claims, end-card identity, and absence of clipping or overflowing text."
+    },
+    "audio_master": {
+      "identity": "Kokoro-82M bf16 af_heart via kokoro-mlx 0.1.2 at speed 1.08",
+      "provenance": "Locally generated from the canonical narration with the pinned Apache-2.0 Kokoro-82M model and MIT kokoro-mlx implementation recorded in visual_edition/narration_toolchain.json.",
+      "publication_rights_state": "cleared",
+      "duration_seconds": 289.74,
+      "sha256": "d7a8d7393c103fbc7a9d77c8bdff24aa47db482f66bd6229b5f84f1eae3d8bf1"
+    },
+    "caption_review": {
+      "state": "machine_audited",
+      "audit_method": "Exact receipt-derived canonical timing plus local MLX Whisper transcript comparison and complete beginning/end coverage checks.",
+      "reviewed_against_audio_sha256": "d7a8d7393c103fbc7a9d77c8bdff24aa47db482f66bd6229b5f84f1eae3d8bf1",
+      "asr_model": "mlx-community/whisper-small.en-mlx@52a88bf6e98b114a210c21bb83e22d6e1505cb73",
+      "asr_word_error_rate": 0.027778,
+      "terminology": "pass",
+      "timing": "pass",
+      "non_speech_information": "pass",
+      "material_visual_changes": "described_in_adjacent_transcript"
+    },
+    "artifact_sha256": {
+      "storyboard": "502fb8e103e985fab56756dbb6d033d149814dc082c123e10e9aae2093b5a435",
+      "scene_code": "1121270d0f63b1ed8f68e68e2566ead6124d2d077ae0898dd2245d1881dc937d",
+      "narration_script": "a0f29898a25e773c3117f6ae8ba45308b7a8c25030594ac4b1cc5092485549c4",
+      "captions": "8a3cab8d27b0d234f221e8c1169d405938a0497510ad884f025b70e9c28c2756",
+      "descriptive_transcript": "1e632d3b6c1f4304fadb0d1476b236710be2ab764c76ab3c6c88e3e9fb8c0329",
+      "thumbnail": "b57157fbad24e5e37b3af50cdaa086ae4bcdef7951cd666c1b83d8fdd488153a",
+      "scene_spec": "695dee1cadccdd31a104d65796eb2cf41a6f603fb6518bb8f691ab46b2e9a909"
+    },
+    "remaining_release_gates": [
+      "obtain exact action-time authority before any YouTube or playlist mutation"
+    ]
+  },
+  "youtube": {
+    "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+    "video_id": null,
+    "watch_url": null,
+    "playlist_id": null,
+    "generation": 0,
+    "publication_state": "not_authorized",
+    "uploaded_output_sha256": null,
+    "bound_chapter_sha256": null,
+    "bound_source_commit": null,
+    "published_at_utc": null,
+    "platform_receipt_path": null,
+    "supersedes_video_id": null
+  },
+  "quarto_embed": {
+    "state": "absent_until_published",
+    "chapter_anchor": "visual-abstract",
+    "frame_title": "Visual abstract: CoilRA, MultiCoil RoPE, and Cyclic Mixers",
+    "aria_label": "Play the visual abstract for CoilRA, MultiCoil RoPE, and Cyclic Mixers"
+  },
+  "staleness": {
+    "state": "current",
+    "checked_chapter_sha256": "5d3f17c772dc077b49551dc2d855f57f2fcc7683fccf0611c60b15145be159be",
+    "triggers": [
+      "core_claim",
+      "mechanism",
+      "worked_trace",
+      "evidence_state",
+      "non_claim",
+      "material_source",
+      "chapter_identity",
+      "handoff",
+      "public_url"
+    ]
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This derivative video does not promote or otherwise change any book claim.",
+    "The validated local final master is not a YouTube upload or a public publication.",
+    "Automated intelligibility and caption audits do not establish that every listener will prefer the synthetic voice.",
+    "A successful animation render does not establish deployment, safety, efficiency, transfer, state of the art, AGI, or ASI."
+  ]
+}

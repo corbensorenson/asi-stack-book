@@ -1,0 +1,70 @@
+{
+  "chapter_id": "integrated-reference-architecture",
+  "title": "Integrated Reference Architecture",
+  "subtitle": "Integrated Reference Architecture owns a trace-, run-, request-, intent-, authority-, artifact-, parentage-, layer-, canonical-state-… cannot establish whole-stack execution, semantic preservation, governance enforcement, safety, capability, deployment, transfer, or SOTA.",
+  "archetype": "graph",
+  "claim_label": "Design rationale",
+  "evidence_level": "argument",
+  "next_title": "Project Theseus as Report-First Implementation Reference",
+  "display": {
+    "problem": "Readers need to see how the layers operate as one machine from intent to governed action and improvement.",
+    "insufficient": "Layer chapters can still feel disconnected unless the book traces the complete control flow and artifacts.",
+    "mechanism": [
+      {
+        "label": "Freeze trace purpose request",
+        "detail": "Freeze the trace purpose, request, initiating intent… expected effects, acceptance criteria, and explicit non-claims."
+      },
+      {
+        "label": "Authority chain scope delegation",
+        "detail": "Bind the authority chain, scope, delegation, ceilings… every handoff without allowing downstream widening."
+      },
+      {
+        "label": "Assign stable identities digests",
+        "detail": "Assign stable identities and digests to parent… evaluations, evidence events, residuals, rollbacks, and descendants."
+      },
+      {
+        "label": "Each layer typed owner",
+        "detail": "Represent each layer as a typed owner… surface, failure routes, rollback, expiry, and non-claims."
+      }
+    ],
+    "trace": [
+      "Freeze trace purpose request",
+      "Authority chain scope delegation",
+      "Assign stable identities digests",
+      "Each layer typed owner"
+    ],
+    "failures": [
+      "Interface theater names layers, services, tools… never causally reach the material effect.",
+      "Super-owner collapse lets the integrator, shared… evidence, governance, release, or legal authority.",
+      "Handoff laundering converts an untyped summary… identifier into a trusted cross-layer artifact.",
+      "Planning/execution collapse lets the planner execute… completion without joined effects and receipts."
+    ],
+    "proof_targets": [
+      "Every accepted finite cross-layer trace joins exact… authority ceiling, and cannot widen active authority.",
+      "A cross-layer transition with a parent/state fork… rollback is rejected or contained in quarantine.",
+      "The source-anchored finite consumer composes approved, blocked… no-promotion boundaries and rejecting targeted mutations."
+    ],
+    "evidence_ceiling": "This chapter remains Design rationale at argument support.",
+    "nonclaims": [
+      "No chapter claim or evidence state is promoted by this visual.",
+      "A named mechanism is not proof of correct implementation or useful deployment.",
+      "A local check or formal model does not establish real-world enforcement.",
+      "No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows."
+    ],
+    "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result."
+  },
+  "timing": {
+    "basis": "exact_narration_paragraph_boundaries",
+    "narration_receipt_sha256": "4b521c6568a00e3ceeba6c1563039917fcf80f15769a1590adf1d44e8b95a00b",
+    "target_duration_seconds": 280.69,
+    "scene_endpoints_seconds": [
+      18.705,
+      78.845,
+      131.01,
+      180.875,
+      222.92,
+      250.995,
+      280.69
+    ]
+  }
+}

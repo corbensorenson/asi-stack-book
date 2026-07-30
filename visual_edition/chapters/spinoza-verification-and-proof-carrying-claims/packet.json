@@ -1,0 +1,167 @@
+{
+  "schema_version": "asi_stack.visual_chapter_packet.v1",
+  "video_id": "asi-video-spinoza-verification-and-proof-carrying-claims",
+  "chapter_id": "spinoza-verification-and-proof-carrying-claims",
+  "chapter_path": "chapters/spinoza-verification-and-proof-carrying-claims.qmd",
+  "chapter_sha256": "c25b0665944adff5e8e5a6098a8e90200f25f9c923c35b17e8ec33ec7a7ece83",
+  "source_commit": "f10ef079ecfeb48503407d67832a0251f77c2c78",
+  "pilot": false,
+  "lifecycle_state": "ready_not_published",
+  "claim_bindings": [
+    {
+      "claim_id": "spinoza-verification-and-proof-carrying-claims.core",
+      "claim_label": "Design rationale",
+      "support_state": "argument"
+    }
+  ],
+  "assigned_source_ids": [
+    "spinoza",
+    "deterministic_capability_compilation",
+    "platonic_world_model",
+    "genesiscode",
+    "coherence_exchange",
+    "verification_bandwidth",
+    "treellm",
+    "uat",
+    "talos",
+    "ext_proof_carrying_code_1997",
+    "ext_lean4_theorem_proving",
+    "ext_autoformalization_llms_2022",
+    "ext_ai_safety_debate_2018",
+    "ext_llm_as_judge_mt_bench_2023",
+    "ext_contestable_ai_design_2022",
+    "cca_project",
+    "moecot_manifest_project",
+    "beastbrain_project",
+    "bugbrain_project",
+    "corbens_best_model_possible_project"
+  ],
+  "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result.",
+  "required_content": {
+    "problem": "High-value claims and high-risk artifacts need a governed verification path that can choose proof, citation, procedure, replay, benchmark, or adversarial-review treatment without laundering failed, mismatched, or contested evidence into support. Neural generation, one-pass self-critique, and informal review can produce plausible justification language without preserving proof scope, verifier result, evidence dossier, dissent, failed attempts, verdict constraints, or downgrade routes.",
+    "core_mechanism": "Selected claims and artifacts should move through proof-carrying, justification-carrying, or adversarial-review envelopes that record tier, interpretation mapping, evidence dossier, verifier or tribunal result, dissent, limitations, failed attempts, required actions, residuals, and ledger effects. Freeze target claim or artifact identity, exact natural and formal scope, definitions, assumptions, consumer, consequence, risk, requested standing or action effect, authority, rights, budget, horizon, and change triggers before route outcomes. Classify the target and declare eligible, ineligible, required, and unavailable verification modes: source inspection, citation dossier, formal proof, executable procedure, replay, benchmark, adversarial review, accountable-human adjudication, downgrade, block, or abstention.",
+    "worked_trace": "The current authored zero-model scaffold has three public record schemas; 3 valid/5 rejecting proof-carrying fixtures; 3 valid/5 rejecting tribunal fixtures; 2 valid/7 rejecting adversarial-dossier cases; 1 bounded five-project method/independence record with 11 rejecting mutations; a related 3 valid/6 rejecting epistemic-TCB fixture owned by Artifact Graphs; and 21 Lean declarations under 5 public targets. Twelve declarations are predicate-projection or blocking consequences, eight are finite tribunal-route consequences, and one is an authored-summary bridge.",
+    "failure_boundary": "Certified delusion pairs a false, unsupported, or irrelevant natural claim with a valid-looking artifact or verdict. Invalid formalization proves or refutes a target that differs materially from the prose, assumptions, scope, population, environment, policy, or consumer question. Theorem, citation, replay, benchmark, or procedure laundering widens a mode-specific result beyond the property and boundary actually checked. Artifact theater supplies a missing, stale, unverifiable, policy-mismatched, environment-mismatched, self-reported, or reality-false justification object.",
+    "evidence_state": "This chapter remains Design rationale at argument support. Its contracts, examples, tests, or local artifacts establish only their encoded scope. A target-specific verification lifecycle preserves exact claim, interpretation, scope, assumption, artifact, verifier, and trusted-base custody while preventing direct support assignment or external effects. Passed results require artifacts and semantic review; negative results cannot request scoped promotion; mismatch requires tribunal; high-risk adjudication requires an independent dossier.",
+    "non_claims": "No chapter claim or evidence state is promoted by this visual. A named mechanism is not proof of correct implementation or useful deployment. A local check or formal model does not establish real-world enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.",
+    "handoff": "The next chapter is Labor OS and Typed Jobs. It takes responsibility for Intelligence must become typed work with lifecycle, permissions, artifacts, logs, and approvals."
+  },
+  "artifacts": {
+    "storyboard": "visual_edition/chapters/spinoza-verification-and-proof-carrying-claims/storyboard.md",
+    "scene_code": "visual_edition/chapters/spinoza-verification-and-proof-carrying-claims/scene.py",
+    "narration_script": "visual_edition/chapters/spinoza-verification-and-proof-carrying-claims/narration.txt",
+    "captions": "visual_edition/chapters/spinoza-verification-and-proof-carrying-claims/captions.vtt",
+    "descriptive_transcript": "visual_edition/chapters/spinoza-verification-and-proof-carrying-claims/transcript.md",
+    "thumbnail": "visual_edition/chapters/spinoza-verification-and-proof-carrying-claims/thumbnail.svg",
+    "scene_spec": "visual_edition/chapters/spinoza-verification-and-proof-carrying-claims/scene_spec.json",
+    "thumbnail_alt_text": "A governed route diagram for Proof-Carrying Claims and Adversarial Review shows three named mechanism cards above a labeled failure and evidence boundary."
+  },
+  "render_receipt": {
+    "receipt_state": "current_final_av_master",
+    "validation_state": "validated",
+    "rendered_at_utc": "2026-07-30T03:20:38Z",
+    "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+    "toolchain_qualification": "qualified_for_all_non_latex_chapters",
+    "render_profile": "final_av_master",
+    "command": "Render the exact-timing ChapterVisualAbstract with pinned ManimCE 0.20.1 at 1920x1080/30, render pinned Kokoro-82M af_heart narration at speed 1.08 with a hard maximum of 300 characters per synthesis call and -16 LUFS, then align all seven visual scenes to the exact audio paragraph boundaries and mux with FFmpeg 8.0.1 as H.264 CRF 18 yuv420p plus AAC-LC 192 kb/s 48 kHz mono.",
+    "duration_seconds": 305.0,
+    "pixel_width": 1920,
+    "pixel_height": 1080,
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "output_sha256": "8b972c985d907a4fe063fb5e1678fd2bade4a5f3ca49ccf01da9e3291193beab",
+    "mux_receipt_sha256": "f28e6669ea503c9370ef14344f29d3cdbbe8df396e3ca1f9297eea3bef3df95f",
+    "output_storage": "ignored build/visual_edition media only",
+    "visual_review": {
+      "draft_sample_seconds": [
+        17.9,
+        63.347,
+        123.202,
+        179.83,
+        225.06,
+        260.007,
+        289.518
+      ],
+      "release_sample_seconds": [
+        63.347,
+        260.007
+      ],
+      "result": "pass",
+      "review_scope": "Exact mux-receipt midpoint sampling across all seven narration scenes checked composition, legibility, persistent labels, color-plus-shape semantics, evidence ceiling, non-claims, end-card identity, and absence of clipping or overflowing text."
+    },
+    "audio_master": {
+      "identity": "Kokoro-82M bf16 af_heart via kokoro-mlx 0.1.2 at speed 1.08",
+      "provenance": "Locally generated from the canonical narration with the pinned Apache-2.0 Kokoro-82M model and MIT kokoro-mlx implementation recorded in visual_edition/narration_toolchain.json.",
+      "publication_rights_state": "cleared",
+      "duration_seconds": 305.0,
+      "sha256": "7a30340ef8431f986c33158086a73f32e53b81f7e659b23a07629acf93050f2e"
+    },
+    "caption_review": {
+      "state": "machine_audited",
+      "audit_method": "Exact receipt-derived canonical timing plus local MLX Whisper transcript comparison and complete beginning/end coverage checks.",
+      "reviewed_against_audio_sha256": "7a30340ef8431f986c33158086a73f32e53b81f7e659b23a07629acf93050f2e",
+      "asr_model": "mlx-community/whisper-small.en-mlx@52a88bf6e98b114a210c21bb83e22d6e1505cb73",
+      "asr_word_error_rate": 0.009693,
+      "terminology": "pass",
+      "timing": "pass",
+      "non_speech_information": "pass",
+      "material_visual_changes": "described_in_adjacent_transcript"
+    },
+    "artifact_sha256": {
+      "storyboard": "726fa62320b6c646da85b83a784a8bf575e80450c77dfc78d6ee66dcd2e8f859",
+      "scene_code": "d4ea03b60bf2759d5e88e78a4cb487ea0a84512908ec8eae5e84eaa2c92b754e",
+      "narration_script": "18d0d126484c84960fd538ff60d99ee33764c48b86d973c860f14fdc4b9ac5d2",
+      "captions": "969812e2183073f4f3a67d031b6dea7d13125f32408bfe97f02be98994f61924",
+      "descriptive_transcript": "be6ac91016d039f7872b350135f0862014cd8be8426a99a0fb79a4390b73fd28",
+      "thumbnail": "1f6f1fcc11c922862d14b3a105587b55bd97ab0892689a2249bd0c249666c071",
+      "scene_spec": "93595bf05407f09e752b66c7f4aa8808503b89708f320e376e69cc0104ce59f9"
+    },
+    "remaining_release_gates": [
+      "obtain exact action-time authority before any YouTube or playlist mutation"
+    ]
+  },
+  "youtube": {
+    "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+    "video_id": null,
+    "watch_url": null,
+    "playlist_id": null,
+    "generation": 0,
+    "publication_state": "not_authorized",
+    "uploaded_output_sha256": null,
+    "bound_chapter_sha256": null,
+    "bound_source_commit": null,
+    "published_at_utc": null,
+    "platform_receipt_path": null,
+    "supersedes_video_id": null
+  },
+  "quarto_embed": {
+    "state": "absent_until_published",
+    "chapter_anchor": "visual-abstract",
+    "frame_title": "Visual abstract: Proof-Carrying Claims and Adversarial Review",
+    "aria_label": "Play the visual abstract for Proof-Carrying Claims and Adversarial Review"
+  },
+  "staleness": {
+    "state": "current",
+    "checked_chapter_sha256": "c25b0665944adff5e8e5a6098a8e90200f25f9c923c35b17e8ec33ec7a7ece83",
+    "triggers": [
+      "core_claim",
+      "mechanism",
+      "worked_trace",
+      "evidence_state",
+      "non_claim",
+      "material_source",
+      "chapter_identity",
+      "handoff",
+      "public_url"
+    ]
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This derivative video does not promote or otherwise change any book claim.",
+    "The validated local final master is not a YouTube upload or a public publication.",
+    "Automated intelligibility and caption audits do not establish that every listener will prefer the synthetic voice.",
+    "A successful animation render does not establish deployment, safety, efficiency, transfer, state of the art, AGI, or ASI."
+  ]
+}

@@ -1,0 +1,162 @@
+{
+  "schema_version": "asi_stack.visual_chapter_packet.v1",
+  "video_id": "asi-video-evidence-states-and-claim-discipline",
+  "chapter_id": "evidence-states-and-claim-discipline",
+  "chapter_path": "chapters/evidence-states-and-claim-discipline.qmd",
+  "chapter_sha256": "50fdc97ab2d11c3f2b3379150803bec479ca2b3c1e200dc17f6afc46d1c3e113",
+  "source_commit": "f10ef079ecfeb48503407d67832a0251f77c2c78",
+  "pilot": false,
+  "lifecycle_state": "ready_not_published",
+  "claim_bindings": [
+    {
+      "claim_id": "evidence-states-and-claim-discipline.core",
+      "claim_label": "Design rationale",
+      "support_state": "argument"
+    }
+  ],
+  "assigned_source_ids": [
+    "benchmaxxing",
+    "spinoza",
+    "viea",
+    "uat",
+    "coherence_exchange",
+    "verification_bandwidth",
+    "ext_w3c_prov_o_2013",
+    "cca_project",
+    "moecot_manifest_project",
+    "beastbrain_project",
+    "bugbrain_project",
+    "corbens_trainer_project",
+    "corbens_best_model_possible_project",
+    "ext_unlearning_benchmarks_weak_2024",
+    "ext_embedded_agency_2019"
+  ],
+  "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result.",
+  "required_content": {
+    "problem": "A living technical book needs a versioned claim lifecycle that separates what an assertion says from what evidence currently supports it and preserves why each state change was accepted. Citations, passing validators, proof objects, benchmark scores, and polished prose do not by themselves identify the exact claim atom, evidence role, scope, independence, causal link, negative result, or accepted transition they justify.",
+    "core_mechanism": "Each material claim should have a stable identity, versioned text and scope, claim label, support state, non-aggregating evidence-quality vector, and transition ledger; upward movement is allowed only through an accepted claim-specific transition whose artifacts and evidence roles meet declared gates, while contradiction, failed verification, missing support, and scope mismatch remain eligible to narrow, downgrade, refute, or deprecate the claim. Project canonical claim records and accepted transition lineage into Appendix C as the public claim ledger without treating that projection as evidence.",
+    "worked_trace": "A canonical claim record, evidence transition record, non-aggregating evidence cell, public Appendix C projection, one bounded six-project lineage cell, and executable positive and rejecting suites for missing bindings, absent evidence, negative-result deletion, dimension aggregation, scope strengthening, lineage splicing, false independence, stale projections, and support-state laundering, with no chapter-core support movement. Represent claim label, support state, lifecycle state, and terminal disposition as distinct fields so assertion kind, current backing, review status, and outcome cannot collapse into one confidence word. Permit source-derived movement only from a passage-reviewed, exact claim mapping that records the source's evidence role, interpretation boundary, contradictions, and non-claims.",
+    "failure_boundary": "Support-state inflation. Citation laundering. Silent removal of failed claims. Ownership laundering.",
+    "evidence_state": "This chapter remains Design rationale at argument support. Its contracts, examples, tests, or local artifacts establish only their encoded scope. A reachable lifecycle freezes exact atom and proposition/obligation/predicate projections, derives non-aggregating target evidence, preserves negative evidence and non-claims, and cannot assign support, move related claims, or create external effects. A claim cannot be promoted when required evidence is absent.",
+    "non_claims": "No chapter claim or evidence state is promoted by this visual. A named mechanism is not proof of correct implementation or useful deployment. A local check or formal model does not establish real-world enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.",
+    "handoff": "The next chapter is Scalable Oversight and Adversarial AI Control. It takes responsibility for A system can ask a weaker human or model to judge a stronger system without recording whether the supervisor can see the relevant evidence."
+  },
+  "artifacts": {
+    "storyboard": "visual_edition/chapters/evidence-states-and-claim-discipline/storyboard.md",
+    "scene_code": "visual_edition/chapters/evidence-states-and-claim-discipline/scene.py",
+    "narration_script": "visual_edition/chapters/evidence-states-and-claim-discipline/narration.txt",
+    "captions": "visual_edition/chapters/evidence-states-and-claim-discipline/captions.vtt",
+    "descriptive_transcript": "visual_edition/chapters/evidence-states-and-claim-discipline/transcript.md",
+    "thumbnail": "visual_edition/chapters/evidence-states-and-claim-discipline/thumbnail.svg",
+    "scene_spec": "visual_edition/chapters/evidence-states-and-claim-discipline/scene_spec.json",
+    "thumbnail_alt_text": "A governed before after diagram for Evidence States and Claim Discipline shows three named mechanism cards above a labeled failure and evidence boundary."
+  },
+  "render_receipt": {
+    "receipt_state": "current_final_av_master",
+    "validation_state": "validated",
+    "rendered_at_utc": "2026-07-30T03:06:24Z",
+    "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+    "toolchain_qualification": "qualified_for_all_non_latex_chapters",
+    "render_profile": "final_av_master",
+    "command": "Render the exact-timing ChapterVisualAbstract with pinned ManimCE 0.20.1 at 1920x1080/30, render pinned Kokoro-82M af_heart narration at speed 1.08 with a hard maximum of 300 characters per synthesis call and -16 LUFS, then align all seven visual scenes to the exact audio paragraph boundaries and mux with FFmpeg 8.0.1 as H.264 CRF 18 yuv420p plus AAC-LC 192 kb/s 48 kHz mono.",
+    "duration_seconds": 239.166667,
+    "pixel_width": 1920,
+    "pixel_height": 1080,
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "output_sha256": "60340dde3ae2b13d26f0580b42be58b76db06b172745e4f029ab2ceaf47bc89d",
+    "mux_receipt_sha256": "db7075bfbd47c46572e38e7249c6c99ccdefd96985a92a112689b676a3b299b0",
+    "output_storage": "ignored build/visual_edition media only",
+    "visual_review": {
+      "draft_sample_seconds": [
+        16.15,
+        52.835,
+        101.812,
+        139.07,
+        165.945,
+        198.042,
+        225.615
+      ],
+      "release_sample_seconds": [
+        52.835,
+        198.042
+      ],
+      "result": "pass",
+      "review_scope": "Exact mux-receipt midpoint sampling across all seven narration scenes checked composition, legibility, persistent labels, color-plus-shape semantics, evidence ceiling, non-claims, end-card identity, and absence of clipping or overflowing text."
+    },
+    "audio_master": {
+      "identity": "Kokoro-82M bf16 af_heart via kokoro-mlx 0.1.2 at speed 1.08",
+      "provenance": "Locally generated from the canonical narration with the pinned Apache-2.0 Kokoro-82M model and MIT kokoro-mlx implementation recorded in visual_edition/narration_toolchain.json.",
+      "publication_rights_state": "cleared",
+      "duration_seconds": 239.166667,
+      "sha256": "0c26a392d91a871cf1883085e5c1bb33c877f509820975d548b79c14d1eab75a"
+    },
+    "caption_review": {
+      "state": "machine_audited",
+      "audit_method": "Exact receipt-derived canonical timing plus local MLX Whisper transcript comparison and complete beginning/end coverage checks.",
+      "reviewed_against_audio_sha256": "0c26a392d91a871cf1883085e5c1bb33c877f509820975d548b79c14d1eab75a",
+      "asr_model": "mlx-community/whisper-small.en-mlx@52a88bf6e98b114a210c21bb83e22d6e1505cb73",
+      "asr_word_error_rate": 0.003868,
+      "terminology": "pass",
+      "timing": "pass",
+      "non_speech_information": "pass",
+      "material_visual_changes": "described_in_adjacent_transcript"
+    },
+    "artifact_sha256": {
+      "storyboard": "8c70e4955a11495a7fda06163d15a54f26838138b504fd958d16f5714ecb97f1",
+      "scene_code": "bd960ec31a492733d2935b8bcf558aee46797ccecef38f39c400f5866264dc46",
+      "narration_script": "fd54a5f15418367f0881ad6f1be5c79152124bc8bfe8ef8243554eaa08d77c22",
+      "captions": "bc65bfd07c642745f471e297b35a51a240058d30f94dbc4d16c09f373590ed75",
+      "descriptive_transcript": "9b0d123c0d16cc9e1a90db03b7503e8a71db754d8035546795ddc128f7f13112",
+      "thumbnail": "dba07ca97be8396f7686ef6dd230fdaad82c40f97d4ef4e2dca912c6849f143a",
+      "scene_spec": "9bfaf9dadac824a8dbd671d9f150e926e1bd0b28da051c69d88300c2cd826cb9"
+    },
+    "remaining_release_gates": [
+      "obtain exact action-time authority before any YouTube or playlist mutation"
+    ]
+  },
+  "youtube": {
+    "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+    "video_id": null,
+    "watch_url": null,
+    "playlist_id": null,
+    "generation": 0,
+    "publication_state": "not_authorized",
+    "uploaded_output_sha256": null,
+    "bound_chapter_sha256": null,
+    "bound_source_commit": null,
+    "published_at_utc": null,
+    "platform_receipt_path": null,
+    "supersedes_video_id": null
+  },
+  "quarto_embed": {
+    "state": "absent_until_published",
+    "chapter_anchor": "visual-abstract",
+    "frame_title": "Visual abstract: Evidence States and Claim Discipline",
+    "aria_label": "Play the visual abstract for Evidence States and Claim Discipline"
+  },
+  "staleness": {
+    "state": "current",
+    "checked_chapter_sha256": "50fdc97ab2d11c3f2b3379150803bec479ca2b3c1e200dc17f6afc46d1c3e113",
+    "triggers": [
+      "core_claim",
+      "mechanism",
+      "worked_trace",
+      "evidence_state",
+      "non_claim",
+      "material_source",
+      "chapter_identity",
+      "handoff",
+      "public_url"
+    ]
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This derivative video does not promote or otherwise change any book claim.",
+    "The validated local final master is not a YouTube upload or a public publication.",
+    "Automated intelligibility and caption audits do not establish that every listener will prefer the synthetic voice.",
+    "A successful animation render does not establish deployment, safety, efficiency, transfer, state of the art, AGI, or ASI."
+  ]
+}

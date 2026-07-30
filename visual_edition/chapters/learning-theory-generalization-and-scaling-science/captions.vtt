@@ -1,0 +1,233 @@
+WEBVTT
+
+NOTE
+Canonical written narration timed from the exact local narration render receipt.
+Pronunciation-only substitutions are intentionally absent from caption text.
+
+1
+00:00:00.060 --> 00:00:04.923
+This chapter asks a specific question: The stack repeatedly relies on
+
+2
+00:00:04.923 --> 00:00:09.786
+claims that learning will generalize, capabilities will transfer, losses will scale,
+
+3
+00:00:09.786 --> 00:00:13.765
+or phase changes will appear outside observed training support.
+
+4
+00:00:14.105 --> 00:00:18.957
+Those claims require an owner that connects assumptions about data,
+
+5
+00:00:18.957 --> 00:00:24.294
+hypothesis class, optimization, inductive bias, compute, and evaluation to an exact
+
+6
+00:00:24.294 --> 00:00:26.235
+prediction and failure envelope.
+
+7
+00:00:26.575 --> 00:00:32.055
+The tempting shortcut is insufficient: PAC bounds, capacity measures, stability, compression,
+
+8
+00:00:32.055 --> 00:00:37.535
+information theory, scaling-law fits, emergence plots, and benchmark curves each illuminate
+
+9
+00:00:37.535 --> 00:00:39.030
+part of learning.
+
+10
+00:00:39.630 --> 00:00:44.348
+The chapter's core claim is this: A generalization, transfer, emergence,
+
+11
+00:00:44.348 --> 00:00:49.537
+or scaling assertion should be accepted only through a dated claim
+
+12
+00:00:49.537 --> 00:00:53.783
+contract that binds population and sampling assumptions, data support,
+
+13
+00:00:53.783 --> 00:00:57.085
+hypothesis and algorithm, optimization and inductive bias,
+
+14
+00:00:57.425 --> 00:01:02.911
+complexity or explanatory lens, metric, compute regime, uncertainty, breakpoint tests,
+
+15
+00:01:02.911 --> 00:01:08.946
+held-out prediction, alternatives, and transfer boundary; a bound, fit, interpolation result,
+
+16
+00:01:08.946 --> 00:01:14.981
+compression ratio, benchmark jump, or larger model alone establishes neither broad
+
+17
+00:01:14.981 --> 00:01:15.530
+generalization,
+
+18
+00:01:15.870 --> 00:01:21.255
+capability emergence, safety, nor future scale behavior. State the population,
+
+19
+00:01:21.255 --> 00:01:26.640
+sampling process, shift model, hypothesis family, learning algorithm, optimization path,
+
+20
+00:01:26.640 --> 00:01:32.025
+inductive bias, metric, and consumer before making a generalization claim.
+
+21
+00:01:32.625 --> 00:01:36.522
+A concrete implementation trace makes the proposal testable.
+
+22
+00:01:36.522 --> 00:01:41.880
+Create a claim-contract and forecasting notebook over several public small-model runs.
+
+23
+00:01:42.220 --> 00:01:47.129
+Freeze candidate curve families and explanatory lenses, hold out scale points
+
+24
+00:01:47.129 --> 00:01:52.038
+and task families, record failed runs and tuning, test breakpoint alternatives,
+
+25
+00:01:52.038 --> 00:01:56.500
+and compare prediction intervals for loss, calibration, and downstream tasks.
+
+26
+00:01:56.840 --> 00:02:03.385
+The result can evaluate local forecast discipline, not establish a universal
+
+27
+00:02:03.385 --> 00:02:09.930
+law. Use multiple explanatory lenses—capacity and complexity, stability, compression and MDL,
+
+28
+00:02:09.930 --> 00:02:16.475
+information, margins, implicit bias, interpolation, and benign-overfitting hypotheses—without laundering one into
+
+29
+00:02:16.475 --> 00:02:17.070
+another.
+
+30
+00:02:17.410 --> 00:02:23.518
+Fit scaling relations with uncertainty, held-out scales, architecture and data identifiers,
+
+31
+00:02:23.518 --> 00:02:28.515
+failed runs, compute accounting, breakpoint diagnostics, and prospective forecasts.
+
+32
+00:02:29.115 --> 00:02:34.333
+The design can still fail. vacuous bounds distribution laundering test contamination
+
+33
+00:02:34.333 --> 00:02:39.552
+post-hoc curve fitting The correct response is to stop, narrow, quarantine,
+
+34
+00:02:39.552 --> 00:02:44.770
+compensate, or retain an owned residual rather than narrate uncertainty away.
+
+35
+00:02:45.370 --> 00:02:50.416
+This chapter remains Design rationale at argument support. Its contracts, examples,
+
+36
+00:02:50.416 --> 00:02:54.545
+tests, or local artifacts establish only their encoded scope.
+
+37
+00:02:54.545 --> 00:02:59.591
+The chapter names proof targets rather than pretending they are already
+
+38
+00:02:59.591 --> 00:03:00.050
+closed.
+
+39
+00:03:00.390 --> 00:03:05.548
+A finite Learning Theory, Generalization, and Scaling Science record may hand
+
+40
+00:03:05.548 --> 00:03:09.299
+off only when identity, authority, version, required checks,
+
+41
+00:03:09.299 --> 00:03:14.457
+and residual ownership are present; no theorem grants empirical effectiveness or
+
+42
+00:03:14.457 --> 00:03:15.395
+release authority.
+
+43
+00:03:15.735 --> 00:03:21.675
+Training fit, in-distribution generalization, transfer, compositionality, and safety remain distinct.
+
+44
+00:03:21.675 --> 00:03:27.615
+Loss scaling does not automatically predict thresholded capability or risk.
+
+45
+00:03:28.215 --> 00:03:33.179
+No chapter claim or evidence state is promoted by this visual.
+
+46
+00:03:33.179 --> 00:03:38.143
+A named mechanism is not proof of correct implementation or useful
+
+47
+00:03:38.143 --> 00:03:43.107
+deployment. A local check or formal model does not establish real-world
+
+48
+00:03:43.107 --> 00:03:47.620
+enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.
+
+49
+00:03:47.960 --> 00:03:52.435
+These boundaries matter because an explanatory derivative is useful only if
+
+50
+00:03:52.435 --> 00:03:55.690
+it preserves the evidence ceiling of its source.
+
+51
+00:03:56.290 --> 00:04:01.492
+At most, this visual explains the chapter's design rationale at argument
+
+52
+00:04:01.492 --> 00:04:06.222
+support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI,
+
+53
+00:04:06.222 --> 00:04:11.424
+or ASI result. The next chapter is Readiness Gates, Residual Escrow,
+
+54
+00:04:11.424 --> 00:04:12.370
+and Quarantine.
+
+55
+00:04:12.710 --> 00:04:18.256
+It takes responsibility for Every routable or replaceable capability needs a
+
+56
+00:04:18.256 --> 00:04:23.802
+consumer- and use-specific decision about whether it may enter shadow, canary,
+
+57
+00:04:23.802 --> 00:04:28.340
+qualified, ordinary, diagnostic, quarantined, superseded, or retired operation now.

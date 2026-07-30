@@ -1,0 +1,225 @@
+WEBVTT
+
+NOTE
+Canonical written narration timed from the exact local narration render receipt.
+Pronunciation-only substitutions are intentionally absent from caption text.
+
+1
+00:00:00.060 --> 00:00:05.569
+This chapter asks a specific question: A governed stack needs to
+
+2
+00:00:05.569 --> 00:00:09.575
+replace models, prompts, tools, adapters, policies, data, evaluators,
+
+3
+00:00:09.575 --> 00:00:15.084
+and runtime dependencies without letting a persistent capability name conceal changes
+
+4
+00:00:15.084 --> 00:00:18.590
+in observable behavior, failure semantics, authority, evidence,
+
+5
+00:00:18.930 --> 00:00:24.320
+affected consumers, or recovery obligations. Without a consumer-relative and time-bounded substitution
+
+6
+00:00:24.320 --> 00:00:29.220
+contract, an apparent upgrade can silently redefine success, strand state,
+
+7
+00:00:29.220 --> 00:00:34.610
+erase regressions, widen permissions, or inherit trust earned by a different
+
+8
+00:00:34.610 --> 00:00:37.060
+artifact in a different environment.
+
+9
+00:00:37.660 --> 00:00:42.436
+The chapter's core claim is this: A Stable Capability Field should
+
+10
+00:00:42.436 --> 00:00:47.212
+be a versioned, consumer-relative substitution contract rather than a capability name
+
+11
+00:00:47.212 --> 00:00:48.515
+or implementation slot.
+
+12
+00:00:48.855 --> 00:00:55.796
+It binds the field's semantic identity and observable interface—including admissible inputs,
+
+13
+00:00:55.796 --> 00:01:02.737
+outputs, preconditions, postconditions, failures, abstentions, nondeterminism and resource bounds—to an authority
+
+14
+00:01:02.737 --> 00:01:07.785
+ceiling, affected consumers, exact implementation and dependency identities,
+
+15
+00:01:08.125 --> 00:01:12.677
+qualification context and lease, evaluator and evidence lineage,
+
+16
+00:01:12.677 --> 00:01:17.229
+lifecycle and incident state, migration duties, preserved regressions,
+
+17
+00:01:17.229 --> 00:01:19.505
+and effect-complete rollback obligations.
+
+18
+00:01:20.105 --> 00:01:24.135
+A concrete implementation trace makes the proposal testable.
+
+19
+00:01:24.475 --> 00:01:29.810
+The current minimum is one public SCF schema with three valid
+
+20
+00:01:29.810 --> 00:01:35.145
+and six expected-invalid records, one readiness/residual gate harness for synthetic route
+
+21
+00:01:35.145 --> 00:01:40.480
+and rollback prerequisites, one deterministic lifecycle probe with two valid traces
+
+22
+00:01:40.480 --> 00:01:42.905
+and six expected-invalid transition controls,
+
+23
+00:01:43.245 --> 00:01:50.600
+and 18 theorem declarations in AsiStackProofs.StableCapabilityFields grouped under four manifest targets.
+
+24
+00:01:50.940 --> 00:01:56.925
+These artifacts exercise record shape, scoped qualification fields, evaluator-separation declarations,
+
+25
+00:01:56.925 --> 00:02:02.312
+authority ceilings, lifecycle routes, selected promotion and terminal-state predicates,
+
+26
+00:02:02.312 --> 00:02:08.895
+regression and rollback prerequisites, fixture counts, and explicit no-promotion boundaries only.
+
+27
+00:02:09.495 --> 00:02:14.928
+The design can still fail. Identity laundering keeps the field name
+
+28
+00:02:14.928 --> 00:02:19.373
+or compatible-looking version while observable behavior, failures, protected effects,
+
+29
+00:02:19.373 --> 00:02:24.312
+or trust terms change. Interface theater treats matching signatures, schemas,
+
+30
+00:02:24.312 --> 00:02:27.275
+or happy-path outputs as semantic substitutability.
+
+31
+00:02:27.615 --> 00:02:33.320
+Qualification overreach generalizes one workload, consumer, evaluator, threat model, environment,
+
+32
+00:02:33.320 --> 00:02:39.595
+or epoch to unrelated uses. Benchmark overfitting preserves the measured suite
+
+33
+00:02:39.595 --> 00:02:45.870
+while degrading unmeasured obligations, rare failures, abstention quality, or downstream composition.
+
+34
+00:02:46.210 --> 00:02:50.179
+The correct response is to stop, narrow, quarantine, compensate,
+
+35
+00:02:50.179 --> 00:02:54.590
+or retain an owned residual rather than narrate uncertainty away.
+
+36
+00:02:55.190 --> 00:03:00.236
+This chapter remains Design rationale at argument support. Its contracts, examples,
+
+37
+00:03:00.236 --> 00:03:04.365
+tests, or local artifacts establish only their encoded scope.
+
+38
+00:03:04.365 --> 00:03:09.411
+The chapter names proof targets rather than pretending they are already
+
+39
+00:03:09.411 --> 00:03:09.870
+closed.
+
+40
+00:03:10.210 --> 00:03:15.082
+A lifecycle review with a mismatched field identity routes to explicit
+
+41
+00:03:15.082 --> 00:03:19.954
+replacement rejection. A replacement that expands authority without a governance grant
+
+42
+00:03:19.954 --> 00:03:20.840
+is rejected.
+
+43
+00:03:21.440 --> 00:03:26.404
+No chapter claim or evidence state is promoted by this visual.
+
+44
+00:03:26.404 --> 00:03:31.368
+A named mechanism is not proof of correct implementation or useful
+
+45
+00:03:31.368 --> 00:03:36.332
+deployment. A local check or formal model does not establish real-world
+
+46
+00:03:36.332 --> 00:03:40.845
+enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.
+
+47
+00:03:41.185 --> 00:03:45.660
+These boundaries matter because an explanatory derivative is useful only if
+
+48
+00:03:45.660 --> 00:03:48.915
+it preserves the evidence ceiling of its source.
+
+49
+00:03:49.515 --> 00:03:54.819
+At most, this visual explains the chapter's design rationale at argument
+
+50
+00:03:54.819 --> 00:03:59.641
+support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI,
+
+51
+00:03:59.641 --> 00:04:04.945
+or ASI result. The next chapter is Capability Replacement and Rollback.
+
+52
+00:04:05.285 --> 00:04:10.229
+It takes responsibility for A governed stack must change live models,
+
+53
+00:04:10.229 --> 00:04:13.825
+prompts, tools, policies, data, evaluators, dependencies, state schemas.
+
+54
+00:04:13.825 --> 00:04:18.769
+Read the live chapter for its complete source mappings, interfaces, invariants,
+
+55
+00:04:18.769 --> 00:04:21.915
+failure modes, tests, and open evidence gaps.

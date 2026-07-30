@@ -1,0 +1,176 @@
+{
+  "schema_version": "asi_stack.visual_chapter_packet.v1",
+  "video_id": "asi-video-policy-optimization-and-learning-from-feedback",
+  "chapter_id": "policy-optimization-and-learning-from-feedback",
+  "chapter_path": "chapters/policy-optimization-and-learning-from-feedback.qmd",
+  "chapter_sha256": "3d7ff4266c43fab89f6b5c4bf10e3426f20333a848fab3b80085af9f57d46e44",
+  "source_commit": "f10ef079ecfeb48503407d67832a0251f77c2c78",
+  "pilot": false,
+  "lifecycle_state": "ready_not_published",
+  "claim_bindings": [
+    {
+      "claim_id": "policy-optimization-and-learning-from-feedback.core",
+      "claim_label": "Design rationale",
+      "support_state": "argument"
+    }
+  ],
+  "assigned_source_ids": [
+    "benchmaxxing",
+    "rmi",
+    "spinoza",
+    "verification_bandwidth",
+    "talos",
+    "vcm_public",
+    "planforge",
+    "octopus_router",
+    "scf",
+    "tokenmana",
+    "cognitive_loop_closure",
+    "moecot",
+    "ext_trpo_2015",
+    "ext_ppo_2017",
+    "ext_remax_2023",
+    "ext_dpo_2023",
+    "ext_ipo_preference_2023",
+    "ext_orpo_2024",
+    "ext_kto_2024",
+    "ext_simpo_2024",
+    "ext_reinforce_style_rlhf_2024",
+    "ext_deepseek_r1_2025",
+    "ext_dapo_2025",
+    "ext_gspo_2025",
+    "ext_s_grpo_2025",
+    "ext_longrlvr_2026",
+    "ext_rlhf_limitations_2023",
+    "ext_muse_unlearning_2025",
+    "ext_faithfulness_information_flow_2026"
+  ],
+  "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result.",
+  "required_content": {
+    "problem": "A governed stack needs to convert feedback, verification, benchmark pressure, and failure into better future behavior without allowing reward signals to bypass evidence, authority, or rollback boundaries. RLHF, preference optimization, and verifier rewards are often treated as model-alignment recipes rather than governed update mechanisms across planners, routers, context policies, execution policies, and generation modes.",
+    "core_mechanism": "Policy Optimization and Learning from Feedback owns a target-policy-, baseline-, objective-, feedback-, evaluator-, dataset-, optimizer-, checkpoint-, rollout-, authority-, resource-, monitor-, rollback-, consumer-, environment-, and time-specific Governed Policy Update Lease: before any update, it freezes the legitimate target behavior, admissible feedback and proxy boundary, strong baselines, update family and budget, drift and authority ceilings, complete evaluation and failure denominators, reward-hacking and causal checks, rollback and monitoring, residuals, expiry, and promotion authority; a reward, preference, verifier score, benchmark gain, loss reduction, synthetic canary, formal route, rollback dry run, or trained checkpoint alone establishes neither reward validity.",
+    "worked_trace": "The exact current minimum preserves eleven inherited contradiction/guard theorems and the deterministic six-sample, two-holdout, five-candidate lease probe inside a seven-stage, 63-route governed-update lifecycle with two composed Lean traces, 73/73 route mutations, 3/3 cross-stage mutations, one bounded lease, and one protocol-version-2 readmission witness. It runs no optimizer, model, trainer, preference dataset, reward model, natural workload, real policy update, deployed canary, live rollback, independent reproduction, transfer, chapter-core transition, or SOTA comparison. Bind exact target layer, policy and implementation identity, model and checkpoint, prompt and scaffold, tools and permissions, data and environment, dependencies, runtime, and affected consumers.",
+    "failure_boundary": "Reward hacking or verifier gaming increases the selected signal while the target property, retained utility, safety, privacy, rights, or robustness degrades. Preference overoptimization learns style, agreeableness, verbosity, brevity, persuasion, or annotator artifacts instead of truth or task success. Planner, router, context, verifier, execution, governance, or generation-mode policies learn hidden shortcuts that evade local evaluation. Latency, token, or cost rewards suppress necessary retrieval, verification, abstention, escalation, approval, or recovery.",
+    "evidence_state": "This chapter remains Design rationale at argument support. Its contracts, examples, tests, or local artifacts establish only their encoded scope. A versioned governed-update lifecycle binds target, baseline, objective, data, feedback, full optimizer/checkpoint/RNG and descendant state, evaluation, adjudication, bounded consumption, rollback, and readmission without assigning support or an external effect. Missing target evaluation, causal ablation, reward-hacking probes, regression, forgetting, safety/rights, uncertainty, or independent evaluation blocks a policy update before bounded-lease adjudication.",
+    "non_claims": "No chapter claim or evidence state is promoted by this visual. A named mechanism is not proof of correct implementation or useful deployment. A local check or formal model does not establish real-world enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.",
+    "handoff": "The next chapter is Data Engines, Continual Learning, and Unlearning. It takes responsibility for A self-improving stack needs to decide which data and feedback may enter future learning without confusing an intake decision with a capability result, a privacy guarantee."
+  },
+  "artifacts": {
+    "storyboard": "visual_edition/chapters/policy-optimization-and-learning-from-feedback/storyboard.md",
+    "scene_code": "visual_edition/chapters/policy-optimization-and-learning-from-feedback/scene.py",
+    "narration_script": "visual_edition/chapters/policy-optimization-and-learning-from-feedback/narration.txt",
+    "captions": "visual_edition/chapters/policy-optimization-and-learning-from-feedback/captions.vtt",
+    "descriptive_transcript": "visual_edition/chapters/policy-optimization-and-learning-from-feedback/transcript.md",
+    "thumbnail": "visual_edition/chapters/policy-optimization-and-learning-from-feedback/thumbnail.svg",
+    "scene_spec": "visual_edition/chapters/policy-optimization-and-learning-from-feedback/scene_spec.json",
+    "thumbnail_alt_text": "A governed timeline diagram for Policy Optimization and Learning from Feedback shows three named mechanism cards above a labeled failure and evidence boundary."
+  },
+  "render_receipt": {
+    "receipt_state": "current_final_av_master",
+    "validation_state": "validated",
+    "rendered_at_utc": "2026-07-30T03:42:52Z",
+    "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+    "toolchain_qualification": "qualified_for_all_non_latex_chapters",
+    "render_profile": "final_av_master",
+    "command": "Render the exact-timing ChapterVisualAbstract with pinned ManimCE 0.20.1 at 1920x1080/30, render pinned Kokoro-82M af_heart narration at speed 1.08 with a hard maximum of 300 characters per synthesis call and -16 LUFS, then align all seven visual scenes to the exact audio paragraph boundaries and mux with FFmpeg 8.0.1 as H.264 CRF 18 yuv420p plus AAC-LC 192 kb/s 48 kHz mono.",
+    "duration_seconds": 300.6,
+    "pixel_width": 1920,
+    "pixel_height": 1080,
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "output_sha256": "c039302d0444ac1828886e5e111d1d13f3bed8fb83b3b3d062cb43f0cfd41204",
+    "mux_receipt_sha256": "faedd5cbe575ca500f3027f36dbeea3a506ac87c75d23b7c74a4a94e01e0f4f9",
+    "output_storage": "ignored build/visual_edition media only",
+    "visual_review": {
+      "draft_sample_seconds": [
+        16.662,
+        62.707,
+        120.46,
+        173.09,
+        220.572,
+        257.833,
+        286.23
+      ],
+      "release_sample_seconds": [
+        62.707,
+        257.833
+      ],
+      "result": "pass",
+      "review_scope": "Exact mux-receipt midpoint sampling across all seven narration scenes checked composition, legibility, persistent labels, color-plus-shape semantics, evidence ceiling, non-claims, end-card identity, and absence of clipping or overflowing text."
+    },
+    "audio_master": {
+      "identity": "Kokoro-82M bf16 af_heart via kokoro-mlx 0.1.2 at speed 1.08",
+      "provenance": "Locally generated from the canonical narration with the pinned Apache-2.0 Kokoro-82M model and MIT kokoro-mlx implementation recorded in visual_edition/narration_toolchain.json.",
+      "publication_rights_state": "cleared",
+      "duration_seconds": 300.6,
+      "sha256": "9495de872392df65d373bd579314846cc50bf0d3f10b98a884c14babdf5bca40"
+    },
+    "caption_review": {
+      "state": "machine_audited",
+      "audit_method": "Exact receipt-derived canonical timing plus local MLX Whisper transcript comparison and complete beginning/end coverage checks.",
+      "reviewed_against_audio_sha256": "9495de872392df65d373bd579314846cc50bf0d3f10b98a884c14babdf5bca40",
+      "asr_model": "mlx-community/whisper-small.en-mlx@52a88bf6e98b114a210c21bb83e22d6e1505cb73",
+      "asr_word_error_rate": 0.021346,
+      "terminology": "pass",
+      "timing": "pass",
+      "non_speech_information": "pass",
+      "material_visual_changes": "described_in_adjacent_transcript"
+    },
+    "artifact_sha256": {
+      "storyboard": "be0ead9a11403fd483d1aaeb2a92fe8edad093ed45c64f60ef429dada664190d",
+      "scene_code": "ade6046ed5e6d8e0864fbbfbc826fc7e18c36e7fe6fd0a374f37148111d3be88",
+      "narration_script": "bc883e2f2b55701d9eff4f58cfe68c4f830714af24b36f1406166b62c6e50e43",
+      "captions": "b5918d8a7cd01bd330cae19ef6ba456acb74e59bb8c026fe48a11cf6e1ed99ca",
+      "descriptive_transcript": "671a6bda40b55d8dcd01494ee218c14016d6e1d67479e4b5881c0415cacdc8db",
+      "thumbnail": "fde7850abe84c76c842483521b9646c0ffa921590593997047bf7bdfaf39ac11",
+      "scene_spec": "e43e2c2b3c4543c4ee068063d7eebf2a65d5d692ab8d2dcdbdfa24a533fb13ef"
+    },
+    "remaining_release_gates": [
+      "obtain exact action-time authority before any YouTube or playlist mutation"
+    ]
+  },
+  "youtube": {
+    "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+    "video_id": null,
+    "watch_url": null,
+    "playlist_id": null,
+    "generation": 0,
+    "publication_state": "not_authorized",
+    "uploaded_output_sha256": null,
+    "bound_chapter_sha256": null,
+    "bound_source_commit": null,
+    "published_at_utc": null,
+    "platform_receipt_path": null,
+    "supersedes_video_id": null
+  },
+  "quarto_embed": {
+    "state": "absent_until_published",
+    "chapter_anchor": "visual-abstract",
+    "frame_title": "Visual abstract: Policy Optimization and Learning from Feedback",
+    "aria_label": "Play the visual abstract for Policy Optimization and Learning from Feedback"
+  },
+  "staleness": {
+    "state": "current",
+    "checked_chapter_sha256": "3d7ff4266c43fab89f6b5c4bf10e3426f20333a848fab3b80085af9f57d46e44",
+    "triggers": [
+      "core_claim",
+      "mechanism",
+      "worked_trace",
+      "evidence_state",
+      "non_claim",
+      "material_source",
+      "chapter_identity",
+      "handoff",
+      "public_url"
+    ]
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This derivative video does not promote or otherwise change any book claim.",
+    "The validated local final master is not a YouTube upload or a public publication.",
+    "Automated intelligibility and caption audits do not establish that every listener will prefer the synthetic voice.",
+    "A successful animation render does not establish deployment, safety, efficiency, transfer, state of the art, AGI, or ASI."
+  ]
+}

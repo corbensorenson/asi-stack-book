@@ -1,0 +1,70 @@
+{
+  "chapter_id": "governed-world-models-and-reality-grounding",
+  "title": "Governed World Models and Reality Grounding",
+  "subtitle": "A world model should be governed as a fallible, versioned prediction service whose state… imagined consequences may influence planning and action; observation must repeatedly reconcile imagination with reality.",
+  "archetype": "route",
+  "claim_label": "Design rationale",
+  "evidence_level": "argument",
+  "next_title": "Cognitive Compilation and Semantic IR",
+  "display": {
+    "problem": "Planning and control fail when an agent's latent or simulated… hidden, or when model updates expand action authority without evidence.",
+    "insufficient": "A more accurate predictor, larger simulator, or compelling rollout is… reward exploitation, and unsafe actions selected from attractive hallucinated futures.",
+    "mechanism": [
+      {
+        "label": "World-model outputs versioned",
+        "detail": "Represent world-model outputs as versioned state-transition hypotheses with provenance, horizon, uncertainty, and validity domains."
+      },
+      {
+        "label": "Separate observation encoding",
+        "detail": "Separate observation encoding, latent dynamics, decoding, value/reward… use so each can be challenged independently."
+      },
+      {
+        "label": "Calibrate uncertainty horizon state",
+        "detail": "Calibrate uncertainty by horizon, state region, intervention type, and consequence class."
+      },
+      {
+        "label": "Receding-horizon observation",
+        "detail": "Use receding-horizon observation updates and explicit residuals to reconcile predicted and observed state."
+      }
+    ],
+    "trace": [
+      "World-model outputs versioned",
+      "Separate observation encoding",
+      "Calibrate uncertainty horizon state",
+      "Receding-horizon observation"
+    ],
+    "failures": [
+      "latent hallucination",
+      "compounding rollout error",
+      "partial-observation aliasing",
+      "causal confusion"
+    ],
+    "proof_targets": [
+      "In the finite admission model, an unsupported… uncalibrated rollout cannot authorize a consequential action.",
+      "A material observation residual forces bounded re-estimation… safe hold before further model-based execution.",
+      "Observation can override imagination and trigger replanning."
+    ],
+    "evidence_ceiling": "This chapter remains Design rationale at argument support.",
+    "nonclaims": [
+      "No chapter claim or evidence state is promoted by this visual.",
+      "A named mechanism is not proof of correct implementation or useful deployment.",
+      "A local check or formal model does not establish real-world enforcement.",
+      "No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows."
+    ],
+    "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result."
+  },
+  "timing": {
+    "basis": "exact_narration_paragraph_boundaries",
+    "narration_receipt_sha256": "5f50ffeea6baafb0480b6f62a0954b984bc4150fd2f1539cf3e92024f2308984",
+    "target_duration_seconds": 250.3,
+    "scene_endpoints_seconds": [
+      36.17,
+      80.215,
+      134.555,
+      151.66,
+      190.18,
+      218.255,
+      250.3
+    ]
+  }
+}

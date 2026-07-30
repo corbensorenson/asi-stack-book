@@ -1,0 +1,221 @@
+WEBVTT
+
+NOTE
+Canonical written narration timed from the exact local narration render receipt.
+Pronunciation-only substitutions are intentionally absent from caption text.
+
+1
+00:00:00.060 --> 00:00:04.484
+This chapter asks a specific question: Planning and control fail when
+
+2
+00:00:04.484 --> 00:00:08.909
+an agent's latent or simulated future is mistaken for the world,
+
+3
+00:00:08.909 --> 00:00:13.333
+when prediction error is hidden, or when model updates expand action
+
+4
+00:00:13.333 --> 00:00:14.540
+authority without evidence.
+
+5
+00:00:14.880 --> 00:00:20.497
+The tempting shortcut is insufficient: A more accurate predictor, larger simulator,
+
+6
+00:00:20.497 --> 00:00:26.114
+or compelling rollout is not enough: open-loop scores can conceal compounding
+
+7
+00:00:26.114 --> 00:00:30.710
+error, partial observability, distribution shift, causal confusion, reward exploitation,
+
+8
+00:00:31.050 --> 00:00:35.630
+and unsafe actions selected from attractive hallucinated futures.
+
+9
+00:00:36.230 --> 00:00:41.068
+The chapter's core claim is this: A world model should be
+
+10
+00:00:41.068 --> 00:00:45.907
+governed as a fallible, versioned prediction service whose state, horizon, uncertainty,
+
+11
+00:00:45.907 --> 00:00:50.745
+provenance, and calibration bound which imagined consequences may influence planning and
+
+12
+00:00:50.745 --> 00:00:51.185
+action;
+
+13
+00:00:51.525 --> 00:00:58.573
+observation must repeatedly reconcile imagination with reality. Represent world-model outputs as
+
+14
+00:00:58.573 --> 00:01:04.980
+versioned state-transition hypotheses with provenance, horizon, uncertainty, and validity domains.
+
+15
+00:01:05.320 --> 00:01:09.421
+Separate observation encoding, latent dynamics, decoding, value/reward prediction,
+
+16
+00:01:09.421 --> 00:01:14.036
+and policy use so each can be challenged independently.
+
+17
+00:01:14.036 --> 00:01:19.675
+Calibrate uncertainty by horizon, state region, intervention type, and consequence class.
+
+18
+00:01:20.275 --> 00:01:24.305
+A concrete implementation trace makes the proposal testable.
+
+19
+00:01:24.645 --> 00:01:31.170
+Build a bounded partially observed control task with two independently trained
+
+20
+00:01:31.170 --> 00:01:36.509
+dynamics models, horizon-conditional calibration, receding observation updates, model-disagreement routing,
+
+21
+00:01:36.509 --> 00:01:39.475
+support-aware action gating, counterfactual receipts,
+
+22
+00:01:39.815 --> 00:01:45.469
+and adversarial tests for exploitation and distribution shift. Separate observation encoding,
+
+23
+00:01:45.469 --> 00:01:51.124
+latent dynamics, decoding, value/reward prediction, and policy use so each can
+
+24
+00:01:51.124 --> 00:01:56.778
+be challenged independently. Calibrate uncertainty by horizon, state region, intervention type,
+
+25
+00:01:56.778 --> 00:01:58.320
+and consequence class.
+
+26
+00:01:58.660 --> 00:02:04.290
+Use receding-horizon observation updates and explicit residuals to reconcile predicted and
+
+27
+00:02:04.290 --> 00:02:08.897
+observed state. Throughout the trace, one invariant remains visible:
+
+28
+00:02:08.897 --> 00:02:14.015
+Predictions are labeled by model version, horizon, and support domain.
+
+29
+00:02:14.615 --> 00:02:20.117
+The design can still fail. latent hallucination compounding rollout error partial-observation
+
+30
+00:02:20.117 --> 00:02:25.618
+aliasing causal confusion The correct response is to stop, narrow, quarantine,
+
+31
+00:02:25.618 --> 00:02:31.120
+compensate, or retain an owned residual rather than narrate uncertainty away.
+
+32
+00:02:31.720 --> 00:02:36.766
+This chapter remains Design rationale at argument support. Its contracts, examples,
+
+33
+00:02:36.766 --> 00:02:40.895
+tests, or local artifacts establish only their encoded scope.
+
+34
+00:02:40.895 --> 00:02:45.941
+The chapter names proof targets rather than pretending they are already
+
+35
+00:02:45.941 --> 00:02:46.400
+closed.
+
+36
+00:02:46.740 --> 00:02:52.109
+In the finite admission model, an unsupported, stale, materially disagreeing,
+
+37
+00:02:52.109 --> 00:02:56.404
+or uncalibrated rollout cannot authorize a consequential action.
+
+38
+00:02:56.404 --> 00:03:01.237
+A material observation residual forces bounded re-estimation, fallback, review,
+
+39
+00:03:01.237 --> 00:03:04.995
+or safe hold before further model-based execution.
+
+40
+00:03:05.335 --> 00:03:09.640
+Observation can override imagination and trigger replanning.
+
+41
+00:03:10.240 --> 00:03:15.204
+No chapter claim or evidence state is promoted by this visual.
+
+42
+00:03:15.204 --> 00:03:20.168
+A named mechanism is not proof of correct implementation or useful
+
+43
+00:03:20.168 --> 00:03:25.132
+deployment. A local check or formal model does not establish real-world
+
+44
+00:03:25.132 --> 00:03:29.645
+enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.
+
+45
+00:03:29.985 --> 00:03:34.460
+These boundaries matter because an explanatory derivative is useful only if
+
+46
+00:03:34.460 --> 00:03:37.715
+it preserves the evidence ceiling of its source.
+
+47
+00:03:38.315 --> 00:03:43.625
+At most, this visual explains the chapter's design rationale at argument
+
+48
+00:03:43.625 --> 00:03:48.452
+support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI,
+
+49
+00:03:48.452 --> 00:03:53.762
+or ASI result. The next chapter is Cognitive Compilation and Semantic
+
+50
+00:03:53.762 --> 00:03:54.245
+IR.
+
+51
+00:03:54.585 --> 00:03:59.803
+It takes responsibility for After Planning admits an obligation for lowering,
+
+52
+00:03:59.803 --> 00:04:04.547
+the stack still has to translate it across source contracts,
+
+53
+00:04:04.547 --> 00:04:09.766
+semantic representations, target representations, and concrete artifacts without losing meaning, authority,
+
+54
+00:04:09.766 --> 00:04:10.240
+non-goals.

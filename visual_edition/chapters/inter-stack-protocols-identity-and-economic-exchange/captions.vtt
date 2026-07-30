@@ -1,0 +1,277 @@
+WEBVTT
+
+NOTE
+Canonical written narration timed from the exact local narration render receipt.
+Pronunciation-only substitutions are intentionally absent from caption text.
+
+1
+00:00:00.060 --> 00:00:04.717
+This chapter asks a specific question: Local planning, context, artifact,
+
+2
+00:00:04.717 --> 00:00:09.841
+and runtime contracts lose their binding when a request crosses to
+
+3
+00:00:09.841 --> 00:00:14.964
+an independently operated protocol endpoint, agent, service, or value network without
+
+4
+00:00:14.964 --> 00:00:18.690
+a record that separates peer identity, delegated authority,
+
+5
+00:00:19.030 --> 00:00:24.010
+economic commitment, result evidence, revocation, and residual ownership.
+
+6
+00:00:24.350 --> 00:00:29.116
+The tempting shortcut is insufficient: Runtime Adapters own local effects,
+
+7
+00:00:29.116 --> 00:00:34.358
+Artifact Graphs own generic provenance and replay, Resource Economics owns local
+
+8
+00:00:34.358 --> 00:00:38.171
+budget policy, Personal Compute Hives owns federation topology,
+
+9
+00:00:38.171 --> 00:00:41.030
+and Security Kernel owns protected handles,
+
+10
+00:00:41.370 --> 00:00:47.475
+but none owns the cross-stack contract that binds protocol structure, identities,
+
+11
+00:00:47.475 --> 00:00:50.250
+credentials, delegation, consideration, receipts, disputes.
+
+12
+00:00:50.850 --> 00:00:55.788
+The chapter's core claim is this: A governed stack routes each
+
+13
+00:00:55.788 --> 00:01:00.725
+cross-stack request through a versioned exchange contract that binds protocol and
+
+14
+00:01:00.725 --> 00:01:05.214
+schema version, sender and receiver identities, endpoint and capability declaration,
+
+15
+00:01:05.214 --> 00:01:08.805
+requested task or artifact, principal and delegated authority,
+
+16
+00:01:09.145 --> 00:01:14.586
+credential verification, audience, scope, expiry, budget or consideration, expected receipt,
+
+17
+00:01:14.586 --> 00:01:20.571
+dispute and revocation paths, and residual owner; an absent, mismatched, expired,
+
+18
+00:01:20.571 --> 00:01:26.556
+revoked, unverified, or budget-unreserved required record blocks dispatch or routes accountable
+
+19
+00:01:26.556 --> 00:01:27.100
+review,
+
+20
+00:01:27.440 --> 00:01:33.080
+but does not itself establish peer trustworthiness, task or artifact truth,
+
+21
+00:01:33.080 --> 00:01:38.720
+effect safety, payment settlement, legal validity, economic fairness, privacy, authorization correctness,
+
+22
+00:01:38.720 --> 00:01:39.745
+or ASI.
+
+23
+00:01:40.345 --> 00:01:44.375
+A concrete implementation trace makes the proposal testable.
+
+24
+00:01:44.715 --> 00:01:50.256
+Nine digest-bound synthetic exchange records and eleven rejecting mutations bridge owned
+
+25
+00:01:50.256 --> 00:01:55.797
+Lean routes for complete local handoff, missing sender, audience mismatch, expiry,
+
+26
+00:01:55.797 --> 00:02:00.330
+invalid or revoked credentials, missing reserved budget, disputed receipt,
+
+27
+00:02:00.330 --> 00:02:02.345
+and missing residual ownership.
+
+28
+00:02:02.685 --> 00:02:07.562
+No peer, protocol, credential, payment, account, or remote effect ran.
+
+29
+00:02:07.562 --> 00:02:12.926
+Represent owner, operator, peer, endpoint, agent, user, principal, subject, issuer, holder,
+
+30
+00:02:12.926 --> 00:02:17.315
+verifier, and payee as separable roles rather than aliases.
+
+31
+00:02:17.655 --> 00:02:23.179
+Bind task and artifact semantics to a namespace, version, digest,
+
+32
+00:02:23.179 --> 00:02:29.256
+expected deliverable, acceptance predicate, and originating contract. Record endpoint and capability
+
+33
+00:02:29.256 --> 00:02:35.333
+declarations as expiring, provenance-bearing, untrusted advertisements rather than trust or competence
+
+34
+00:02:35.333 --> 00:02:35.885
+evidence.
+
+35
+00:02:36.485 --> 00:02:41.582
+The design can still fail. Capability-card theater treats a self-described endpoint
+
+36
+00:02:41.582 --> 00:02:45.288
+as a trusted, competent, authorized, or safe peer.
+
+37
+00:02:45.288 --> 00:02:49.922
+Actor conflation treats an endpoint, owner, operator, agent, user, principal,
+
+38
+00:02:49.922 --> 00:02:53.165
+credential subject, and payee as one actor.
+
+39
+00:02:53.505 --> 00:02:59.477
+Credential laundering turns a structurally valid or cryptographically verified presentation into
+
+40
+00:02:59.477 --> 00:03:02.735
+trust, authorization, competence, or current status.
+
+41
+00:03:03.075 --> 00:03:08.323
+Delegation or deputy laundering widens a forwarded grant outside the originating
+
+42
+00:03:08.323 --> 00:03:12.140
+principal's audience, capability, scope, expiry, or non-delegation rule.
+
+43
+00:03:12.140 --> 00:03:16.434
+The correct response is to stop, narrow, quarantine, compensate,
+
+44
+00:03:16.434 --> 00:03:21.205
+or retain an owned residual rather than narrate uncertainty away.
+
+45
+00:03:21.805 --> 00:03:26.851
+This chapter remains Design rationale at argument support. Its contracts, examples,
+
+46
+00:03:26.851 --> 00:03:30.980
+tests, or local artifacts establish only their encoded scope.
+
+47
+00:03:30.980 --> 00:03:36.026
+The chapter names proof targets rather than pretending they are already
+
+48
+00:03:36.026 --> 00:03:36.485
+closed.
+
+49
+00:03:36.825 --> 00:03:42.602
+A finite requested cross-stack exchange with required invalid credential verification routes
+
+50
+00:03:42.602 --> 00:03:48.379
+to denial rather than ordinary local dispatch, without inferring identity trust,
+
+51
+00:03:48.379 --> 00:03:52.580
+task truth, authorization correctness, payment settlement, or ASI.
+
+52
+00:03:52.920 --> 00:03:58.063
+A finite value-bearing requested cross-stack exchange with all required identity and
+
+53
+00:03:58.063 --> 00:04:03.205
+authority records but no reserved budget routes to budget repair rather
+
+54
+00:04:03.205 --> 00:04:07.880
+than ordinary local dispatch, without inferring payment, settlement, economic fairness,
+
+55
+00:04:07.880 --> 00:04:09.750
+authority correctness, or ASI.
+
+56
+00:04:10.350 --> 00:04:15.314
+No chapter claim or evidence state is promoted by this visual.
+
+57
+00:04:15.314 --> 00:04:20.278
+A named mechanism is not proof of correct implementation or useful
+
+58
+00:04:20.278 --> 00:04:25.242
+deployment. A local check or formal model does not establish real-world
+
+59
+00:04:25.242 --> 00:04:29.755
+enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.
+
+60
+00:04:30.095 --> 00:04:34.570
+These boundaries matter because an explanatory derivative is useful only if
+
+61
+00:04:34.570 --> 00:04:37.825
+it preserves the evidence ceiling of its source.
+
+62
+00:04:38.425 --> 00:04:43.848
+At most, this visual explains the chapter's design rationale at argument
+
+63
+00:04:43.848 --> 00:04:48.778
+support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI,
+
+64
+00:04:48.778 --> 00:04:54.201
+or ASI result. The next chapter is Multi-Agent Dynamics, Collective Intelligence,
+
+65
+00:04:54.201 --> 00:04:55.680
+and Systemic Risk.
+
+66
+00:04:56.020 --> 00:05:02.523
+It takes responsibility for Individually valid agents and pairwise exchanges can
+
+67
+00:05:02.523 --> 00:05:08.435
+compose into miscoordination, conflict, collusion, coalitions, cascades, concentration, common-mode failure,
+
+68
+00:05:08.435 --> 00:05:10.800
+and gradual human disempowerment.

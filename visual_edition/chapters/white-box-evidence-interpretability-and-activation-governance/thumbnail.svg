@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">White-Box Evidence, Interpretability, and Activation Governance</title>
+  <desc id="desc">A governed before after diagram for White-Box Evidence, Interpretability, and Activation Governance shows three named mechanism cards above a labeled failure and evidence boundary.</desc>
+  <rect width="1280" height="720" fill="#101820"/>
+  <text x="70" y="100" fill="#F5F8FA" font-family="Avenir Next, sans-serif" font-size="48" font-weight="700">WHITE-BOX EVIDENCE,</text>
+  <text x="70" y="158" fill="#F5F8FA" font-family="Avenir Next, sans-serif" font-size="48" font-weight="700">INTERPRETABILITY, AND ACTIVATION</text>
+  <text x="70" y="216" fill="#F5F8FA" font-family="Avenir Next, sans-serif" font-size="48" font-weight="700">GOVERNANCE</text>
+  <rect x="55" y="345" width="370" height="190" rx="22" fill="#182630" stroke="#58B7D3" stroke-width="7"/>
+  <text x="240" text-anchor="middle" fill="#58B7D3" font-family="Avenir Next, sans-serif" font-size="21" font-weight="700">
+    <tspan x="240" y="390">EVIDENCE PACKET</tspan>
+    <tspan x="240" y="417">CONTAINING MODEL</tspan>
+  </text>
+  <text x="240" text-anchor="middle" fill="#B8C4CC" font-family="Avenir Next, sans-serif" font-size="17">
+    <tspan x="240" y="488">Define an evidence packet</tspan>
+    <tspan x="240" y="511">containing model hash… method</tspan>
+  </text>
+  <rect x="455" y="345" width="370" height="190" rx="22" fill="#182630" stroke="#D79A6B" stroke-width="7"/>
+  <text x="640" text-anchor="middle" fill="#D79A6B" font-family="Avenir Next, sans-serif" font-size="21" font-weight="700">
+    <tspan x="640" y="390">SEPARATE</tspan>
+    <tspan x="640" y="417">OBSERVATIONAL</tspan>
+    <tspan x="640" y="444">ASSOCIATION</tspan>
+  </text>
+  <text x="640" text-anchor="middle" fill="#B8C4CC" font-family="Avenir Next, sans-serif" font-size="17">
+    <tspan x="640" y="488">Separate observational association,</tspan>
+    <tspan x="640" y="511">predictive decoding, causal</tspan>
+  </text>
+  <rect x="855" y="345" width="370" height="190" rx="22" fill="#182630" stroke="#62C370" stroke-width="7"/>
+  <text x="1040" text-anchor="middle" fill="#62C370" font-family="Avenir Next, sans-serif" font-size="21" font-weight="700">
+    <tspan x="1040" y="390">HELD-OUT REPLICATION</tspan>
+    <tspan x="1040" y="417">ACROSS PROMPTS</tspan>
+  </text>
+  <text x="1040" text-anchor="middle" fill="#B8C4CC" font-family="Avenir Next, sans-serif" font-size="17">
+    <tspan x="1040" y="488">Require held-out replication across</tspan>
+    <tspan x="1040" y="511">prompts, seeds, checkpoints, and</tspan>
+  </text>
+  <path d="M240 565 H1040" stroke="#8F9AA3" stroke-width="5"/>
+  <text x="640" y="625" text-anchor="middle" fill="#F45B69" font-family="Avenir Next, sans-serif" font-size="25" font-weight="700">MECHANISM • FAILURE BOUNDARY • EVIDENCE CEILING</text>
+</svg>

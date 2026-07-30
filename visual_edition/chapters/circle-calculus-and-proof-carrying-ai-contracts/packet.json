@@ -1,0 +1,152 @@
+{
+  "schema_version": "asi_stack.visual_chapter_packet.v1",
+  "video_id": "asi-video-circle-calculus-and-proof-carrying-ai-contracts",
+  "chapter_id": "circle-calculus-and-proof-carrying-ai-contracts",
+  "chapter_path": "chapters/circle-calculus-and-proof-carrying-ai-contracts.qmd",
+  "chapter_sha256": "ae9975fd09503880b076041ed6ff94af97fd21a9d665fe151e9f121d768ee291",
+  "source_commit": "f10ef079ecfeb48503407d67832a0251f77c2c78",
+  "pilot": false,
+  "lifecycle_state": "ready_not_published",
+  "claim_bindings": [
+    {
+      "claim_id": "circle-calculus-and-proof-carrying-ai-contracts.core",
+      "claim_label": "Design rationale",
+      "support_state": "argument"
+    }
+  ],
+  "assigned_source_ids": [
+    "circle_calculus_core",
+    "circle_ai_contract_suite",
+    "rope_position_certifier",
+    "proof_carrying_circular_computation",
+    "circle_ai_architectures"
+  ],
+  "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result.",
+  "required_content": {
+    "problem": "The stack needs a way to turn selected mathematical and AI-infrastructure claims into theorem-linked, machine-readable contracts without treating proofs as model-quality evidence. Ordinary prose, tests, and diagrams can show intent, but they do not give downstream systems stable theorem IDs, proof status, receipt fingerprints, replay checks, and explicit non-claims.",
+    "core_mechanism": "Circle Calculus and Proof-Carrying AI Contracts owns a theorem-, model-, artifact-, implementation-, consumer-, claim-, version-, and time-specific Proof Contract Transport Envelope: a finite formal fact may travel only with resolvable proof identity, exact assumptions and semantics, source and toolchain provenance, content fingerprints, deterministic recomputation or replay, least-authority consumer gates, expiry and revocation, and preserved non-claims; theorem validity, receipt readiness, archive integrity, or transport success alone confers no model-quality, runtime, memory, safety, deployment, transfer, support, or SOTA authority.",
+    "worked_trace": "The exact current minimum contains two schema-valid proof/receipt records; one external clean-checkout Circle rope slice with a narrow non-core argument-to-prototype-backed transition; one ASI-side gate accepting one pinned receipt and rejecting four mutations with no core effect; one digest-verified archive of nine contracts and four policy receipts with five rejected controls and a no-change decision; and ten finite local Lean theorem declarations. It does not establish a locally built general resolver, end-to-end transport service, semantic refinement, descendant revocation, independent reproduction, downstream empirical benefit, or chapter-core transition.",
+    "failure_boundary": "A theorem name, badge, diagram, proof count, or green build creates authority beyond the exact statement. A theorem ID resolves to the wrong declaration, changed statement, different assumptions, stale source, or incompatible toolchain. The formal model is correct but does not faithfully represent the engineering object or deployed implementation. Exact finite or discrete facts are applied to approximate, floating-point, probabilistic, continuous, or adversarial behavior without a bridge.",
+    "evidence_state": "This chapter remains Design rationale at argument support. Its contracts, examples, tests, or local artifacts establish only their encoded scope. A finite proof-contract receipt missing theorem references, deterministic fields, or an explicit non-claim boundary is rejected from downstream use. A downstream claim cannot be promoted solely from contract readiness without a workload, baseline, metric, and evidence artifact.",
+    "non_claims": "No chapter claim or evidence state is promoted by this visual. A named mechanism is not proof of correct implementation or useful deployment. A local check or formal model does not establish real-world enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.",
+    "handoff": "The next chapter is Coil Attention, Cyclic Memory, and Recurrence Contracts. It takes responsibility for Memory, attention, and recurrence mechanisms need finite structural contracts for aliasing, coverage, freshness, active work, loop exits, and overthinking boundaries."
+  },
+  "artifacts": {
+    "storyboard": "visual_edition/chapters/circle-calculus-and-proof-carrying-ai-contracts/storyboard.md",
+    "scene_code": "visual_edition/chapters/circle-calculus-and-proof-carrying-ai-contracts/scene.py",
+    "narration_script": "visual_edition/chapters/circle-calculus-and-proof-carrying-ai-contracts/narration.txt",
+    "captions": "visual_edition/chapters/circle-calculus-and-proof-carrying-ai-contracts/captions.vtt",
+    "descriptive_transcript": "visual_edition/chapters/circle-calculus-and-proof-carrying-ai-contracts/transcript.md",
+    "thumbnail": "visual_edition/chapters/circle-calculus-and-proof-carrying-ai-contracts/thumbnail.svg",
+    "scene_spec": "visual_edition/chapters/circle-calculus-and-proof-carrying-ai-contracts/scene_spec.json",
+    "thumbnail_alt_text": "A governed stack diagram for Circle Calculus and Proof-Carrying AI Contracts shows three named mechanism cards above a labeled failure and evidence boundary."
+  },
+  "render_receipt": {
+    "receipt_state": "current_final_av_master",
+    "validation_state": "validated",
+    "rendered_at_utc": "2026-07-30T03:35:52Z",
+    "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+    "toolchain_qualification": "qualified_for_all_non_latex_chapters",
+    "render_profile": "final_av_master",
+    "command": "Render the exact-timing ChapterVisualAbstract with pinned ManimCE 0.20.1 at 1920x1080/30, render pinned Kokoro-82M af_heart narration at speed 1.08 with a hard maximum of 300 characters per synthesis call and -16 LUFS, then align all seven visual scenes to the exact audio paragraph boundaries and mux with FFmpeg 8.0.1 as H.264 CRF 18 yuv420p plus AAC-LC 192 kb/s 48 kHz mono.",
+    "duration_seconds": 268.6,
+    "pixel_width": 1920,
+    "pixel_height": 1080,
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "output_sha256": "6597975cffe8b141cb9ff34a7158301e7e2278a9c92082c34140d35224198e2a",
+    "mux_receipt_sha256": "7975bef7701f5865fcf6f44007e2f9e514af5f7cee689cc5a58cb9efe9ce1904",
+    "output_storage": "ignored build/visual_edition media only",
+    "visual_review": {
+      "draft_sample_seconds": [
+        14.562,
+        58.108,
+        111.36,
+        156.577,
+        194.4,
+        225.312,
+        253.972
+      ],
+      "release_sample_seconds": [
+        58.108,
+        225.312
+      ],
+      "result": "pass",
+      "review_scope": "Exact mux-receipt midpoint sampling across all seven narration scenes checked composition, legibility, persistent labels, color-plus-shape semantics, evidence ceiling, non-claims, end-card identity, and absence of clipping or overflowing text."
+    },
+    "audio_master": {
+      "identity": "Kokoro-82M bf16 af_heart via kokoro-mlx 0.1.2 at speed 1.08",
+      "provenance": "Locally generated from the canonical narration with the pinned Apache-2.0 Kokoro-82M model and MIT kokoro-mlx implementation recorded in visual_edition/narration_toolchain.json.",
+      "publication_rights_state": "cleared",
+      "duration_seconds": 268.6,
+      "sha256": "f6001c1b9b5c1c1df263d9a7b038eb192ef21f7a40d358485d99d93dd0df5ce0"
+    },
+    "caption_review": {
+      "state": "machine_audited",
+      "audit_method": "Exact receipt-derived canonical timing plus local MLX Whisper transcript comparison and complete beginning/end coverage checks.",
+      "reviewed_against_audio_sha256": "f6001c1b9b5c1c1df263d9a7b038eb192ef21f7a40d358485d99d93dd0df5ce0",
+      "asr_model": "mlx-community/whisper-small.en-mlx@52a88bf6e98b114a210c21bb83e22d6e1505cb73",
+      "asr_word_error_rate": 0.012238,
+      "terminology": "pass",
+      "timing": "pass",
+      "non_speech_information": "pass",
+      "material_visual_changes": "described_in_adjacent_transcript"
+    },
+    "artifact_sha256": {
+      "storyboard": "76f1f0203da850a55727cb60ed010631552b317179d81a2b358e311a389f1a56",
+      "scene_code": "9ba49a3a4a067c5a0c444e08a79675ff017aec00b2856b29988c6ad19b9fc9a8",
+      "narration_script": "002167772f2f2a817188f1720db857466649e83de6c98a92592357113b81f5a3",
+      "captions": "6c2b20ec0cfb9ad79b7558285d8c1fffdcfd88ddcba901cca9ed5754e9697300",
+      "descriptive_transcript": "4f832e1128d705fac74b8f40cbf82dab14624632334794e7b88aaf4bc9a86c4b",
+      "thumbnail": "f43351bca42ab08c9a317b76efa6a22b00ff349d099153499783d18321bc5860",
+      "scene_spec": "35fea99fc2ba497fb21770e95e7ddbe040cb8bfca95da65c16c9416774861c60"
+    },
+    "remaining_release_gates": [
+      "obtain exact action-time authority before any YouTube or playlist mutation"
+    ]
+  },
+  "youtube": {
+    "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+    "video_id": null,
+    "watch_url": null,
+    "playlist_id": null,
+    "generation": 0,
+    "publication_state": "not_authorized",
+    "uploaded_output_sha256": null,
+    "bound_chapter_sha256": null,
+    "bound_source_commit": null,
+    "published_at_utc": null,
+    "platform_receipt_path": null,
+    "supersedes_video_id": null
+  },
+  "quarto_embed": {
+    "state": "absent_until_published",
+    "chapter_anchor": "visual-abstract",
+    "frame_title": "Visual abstract: Circle Calculus and Proof-Carrying AI Contracts",
+    "aria_label": "Play the visual abstract for Circle Calculus and Proof-Carrying AI Contracts"
+  },
+  "staleness": {
+    "state": "current",
+    "checked_chapter_sha256": "ae9975fd09503880b076041ed6ff94af97fd21a9d665fe151e9f121d768ee291",
+    "triggers": [
+      "core_claim",
+      "mechanism",
+      "worked_trace",
+      "evidence_state",
+      "non_claim",
+      "material_source",
+      "chapter_identity",
+      "handoff",
+      "public_url"
+    ]
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This derivative video does not promote or otherwise change any book claim.",
+    "The validated local final master is not a YouTube upload or a public publication.",
+    "Automated intelligibility and caption audits do not establish that every listener will prefer the synthetic voice.",
+    "A successful animation render does not establish deployment, safety, efficiency, transfer, state of the art, AGI, or ASI."
+  ]
+}

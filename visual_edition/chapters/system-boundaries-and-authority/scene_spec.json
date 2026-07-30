@@ -1,0 +1,70 @@
+{
+  "chapter_id": "system-boundaries-and-authority",
+  "title": "System Boundaries and Authority",
+  "subtitle": "External-effect authority should be represented as a versioned, revocable tuple binding principal, execution domain… capability, context access, route quality, or ambient process power alone confers none of it.",
+  "archetype": "graph",
+  "claim_label": "Design rationale",
+  "evidence_level": "argument",
+  "next_title": "Failure Modes of Ungoverned Intelligence",
+  "display": {
+    "problem": "To test whether cross-layer effects are authorized, the stack needs… operation, target, permission class, ceiling, grant lifecycle, delegation, and receipt.",
+    "insufficient": "Role labels, prompts, and ambient process identity do not… approve authority or enforce delegation, expiry, revocation, and cross-domain approval.",
+    "mechanism": [
+      {
+        "label": "Principals authorities ceilings",
+        "detail": "Define principals, authorities, ceilings, grants, revocations, and handoff contracts."
+      },
+      {
+        "label": "Separate knowledge access action",
+        "detail": "Separate knowledge access from action authority."
+      },
+      {
+        "label": "Missing authority detectable",
+        "detail": "Represent missing authority as a detectable failure rather than implicit permission."
+      },
+      {
+        "label": "Principal execution domain",
+        "detail": "Bind principal, execution domain, operation, target, permission… epoch, and expiry in one authority tuple."
+      }
+    ],
+    "trace": [
+      "Principals authorities ceilings",
+      "Separate knowledge access action",
+      "Missing authority detectable",
+      "Principal execution domain"
+    ],
+    "failures": [
+      "Authority creep.",
+      "Confused-deputy tool calls.",
+      "Memory access treated as action approval.",
+      "Authority identity forks across budget, trace, replay, or revocation."
+    ],
+    "proof_targets": [
+      "Every accepted issuance, dispatch, and effect… remaining uses, approval, dispatch, and effect custody.",
+      "The reachable model and independent consumer reject… effect without dispatch, and consumed one-shot reuse.",
+      "Modeled authority lifecycle admission routes missing principals… records, and non-claim boundaries to explicit outcomes."
+    ],
+    "evidence_ceiling": "This chapter remains Design rationale at argument support.",
+    "nonclaims": [
+      "No chapter claim or evidence state is promoted by this visual.",
+      "A named mechanism is not proof of correct implementation or useful deployment.",
+      "A local check or formal model does not establish real-world enforcement.",
+      "No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows."
+    ],
+    "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result."
+  },
+  "timing": {
+    "basis": "exact_narration_paragraph_boundaries",
+    "narration_receipt_sha256": "0394b6784905d83a130a4edf94ec38a15fb5b9dd4e22143b8d12bde7b228b5d1",
+    "target_duration_seconds": 245.255,
+    "scene_endpoints_seconds": [
+      32.725,
+      71.92,
+      118.84,
+      140.49,
+      187.635,
+      215.71,
+      245.255
+    ]
+  }
+}

@@ -1,0 +1,213 @@
+WEBVTT
+
+NOTE
+Canonical written narration timed from the exact local narration render receipt.
+Pronunciation-only substitutions are intentionally absent from caption text.
+
+1
+00:00:00.060 --> 00:00:04.881
+This chapter asks a specific question: A correctly specified outer objective
+
+2
+00:00:04.881 --> 00:00:09.702
+can produce a learned policy that follows a shortcut, conditional strategy,
+
+3
+00:00:09.702 --> 00:00:14.522
+internal search process, or learned objective that agrees during training and
+
+4
+00:00:14.522 --> 00:00:17.590
+diverges under deployment opportunity or distribution shift.
+
+5
+00:00:17.930 --> 00:00:22.662
+The tempting shortcut is insufficient: Training reward, compliant behavior,
+
+6
+00:00:22.662 --> 00:00:26.869
+low observed violation, readable reasoning, a white-box feature,
+
+7
+00:00:26.869 --> 00:00:32.653
+or successful safety fine-tuning cannot identify the learned objective or rule
+
+8
+00:00:32.653 --> 00:00:36.860
+out conditional deception, goal misgeneralization, or hidden optimization.
+
+9
+00:00:37.460 --> 00:00:43.924
+The chapter's core claim is this: Consequential deployment requires a Learned-Objective
+
+10
+00:00:43.924 --> 00:00:50.388
+Integrity Record binding the outer target, actual learning signals, model identity,
+
+11
+00:00:50.388 --> 00:00:56.265
+behaviorally equivalent policy hypotheses, internal-optimization evidence, goal-generalization and conditional-policy tests,
+
+12
+00:00:56.605 --> 00:01:04.751
+independent behavioral/interventional/white-box evidence, deployment opportunity, power indicators, mitigation hiding tests, monitoring,
+
+13
+00:01:04.751 --> 00:01:09.935
+rollback, descendant invalidation, costs, residuals, and non-authorities.
+
+14
+00:01:10.275 --> 00:01:16.734
+Freeze the outer target, proxies, constitutional constraints, and unresolved specification uncertainty.
+
+15
+00:01:16.734 --> 00:01:22.018
+Trace actual data, reward, feedback, evaluator, optimizer, curriculum, selection,
+
+16
+00:01:22.018 --> 00:01:23.780
+and failed-run signals.
+
+17
+00:01:24.120 --> 00:01:30.625
+Enumerate shortcut, conditional-policy, internal-search, and simpler behaviorally equivalent hypotheses.
+
+18
+00:01:31.225 --> 00:01:35.255
+A concrete implementation trace makes the proposal testable.
+
+19
+00:01:35.595 --> 00:01:39.354
+Build a versioned Learned-Objective Integrity Record and validator;
+
+20
+00:01:39.354 --> 00:01:44.523
+train competent benign policies in an environment where two causal rules
+
+21
+00:01:44.523 --> 00:01:48.281
+agree in training and diverge under sealed interventions;
+
+22
+00:01:48.281 --> 00:01:53.450
+seed an explicit conditional-policy fixture; compare behavioral, causal, and white-box evidence;
+
+23
+00:01:53.790 --> 00:01:59.117
+and narrow deployment authority when objective evidence is inconclusive.
+
+24
+00:01:59.117 --> 00:02:04.443
+Trace actual data, reward, feedback, evaluator, optimizer, curriculum, selection,
+
+25
+00:02:04.443 --> 00:02:10.953
+and failed-run signals. Enumerate shortcut, conditional-policy, internal-search, and simpler behaviorally equivalent
+
+26
+00:02:10.953 --> 00:02:11.545
+hypotheses.
+
+27
+00:02:11.885 --> 00:02:17.220
+Use prospectively sealed causal, distribution-shift, evaluator-awareness, and opportunity interventions.
+
+28
+00:02:17.220 --> 00:02:23.741
+Throughout the trace, one invariant remains visible: outer objective training signal
+
+29
+00:02:23.741 --> 00:02:27.890
+learned behavior and learned-objective hypothesis remain distinct
+
+30
+00:02:28.490 --> 00:02:33.733
+The design can still fail. mesa-optimization goal misgeneralization proxy or shortcut
+
+31
+00:02:33.733 --> 00:02:38.977
+learning reward hacking The correct response is to stop, narrow, quarantine,
+
+32
+00:02:38.977 --> 00:02:44.220
+compensate, or retain an owned residual rather than narrate uncertainty away.
+
+33
+00:02:44.820 --> 00:02:49.866
+This chapter remains Design rationale at argument support. Its contracts, examples,
+
+34
+00:02:49.866 --> 00:02:53.995
+tests, or local artifacts establish only their encoded scope.
+
+35
+00:02:53.995 --> 00:02:59.041
+The chapter names proof targets rather than pretending they are already
+
+36
+00:02:59.041 --> 00:02:59.500
+closed.
+
+37
+00:02:59.840 --> 00:03:05.953
+A finite admission model refuses to infer learned-objective identity from compliant
+
+38
+00:03:05.953 --> 00:03:12.066
+behavior alone. observed compliance never proves objective identity behavioral white-box and
+
+39
+00:03:12.066 --> 00:03:14.845
+intervention evidence retain separate provenance
+
+40
+00:03:15.445 --> 00:03:20.409
+No chapter claim or evidence state is promoted by this visual.
+
+41
+00:03:20.409 --> 00:03:25.373
+A named mechanism is not proof of correct implementation or useful
+
+42
+00:03:25.373 --> 00:03:30.337
+deployment. A local check or formal model does not establish real-world
+
+43
+00:03:30.337 --> 00:03:34.850
+enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.
+
+44
+00:03:35.190 --> 00:03:39.665
+These boundaries matter because an explanatory derivative is useful only if
+
+45
+00:03:39.665 --> 00:03:42.920
+it preserves the evidence ceiling of its source.
+
+46
+00:03:43.520 --> 00:03:48.951
+At most, this visual explains the chapter's design rationale at argument
+
+47
+00:03:48.951 --> 00:03:53.888
+support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI,
+
+48
+00:03:53.888 --> 00:03:59.319
+or ASI result. The next chapter is Moral Uncertainty, Value Conflict,
+
+49
+00:03:59.319 --> 00:04:00.800
+and Contestable Governance.
+
+50
+00:04:01.140 --> 00:04:06.367
+It takes responsibility for A governed stack may need to act
+
+51
+00:04:06.367 --> 00:04:11.593
+while moral theories, stakeholder interests, evidence, jurisdictions, and authority claims remain
+
+52
+00:04:11.593 --> 00:04:16.820
+unresolved; collapsing that disagreement into one reward, majority preference, policy sentence.

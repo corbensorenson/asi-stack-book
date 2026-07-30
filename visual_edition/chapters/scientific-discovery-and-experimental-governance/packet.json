@@ -1,0 +1,149 @@
+{
+  "schema_version": "asi_stack.visual_chapter_packet.v1",
+  "video_id": "asi-video-scientific-discovery-and-experimental-governance",
+  "chapter_id": "scientific-discovery-and-experimental-governance",
+  "chapter_path": "chapters/scientific-discovery-and-experimental-governance.qmd",
+  "chapter_sha256": "23673a03724b4987590fd9d53a698b57c92343e820b9b05ebc8d188218e34b2e",
+  "source_commit": "f10ef079ecfeb48503407d67832a0251f77c2c78",
+  "pilot": false,
+  "lifecycle_state": "ready_not_published",
+  "claim_bindings": [
+    {
+      "claim_id": "scientific-discovery-and-experimental-governance.core",
+      "claim_label": "Design rationale",
+      "support_state": "argument"
+    }
+  ],
+  "assigned_source_ids": [
+    "aletheia",
+    "ext_autonomous_lab_materials_2023"
+  ],
+  "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result.",
+  "required_content": {
+    "problem": "AI-assisted science closes a loop from research objective and hypothesis through design, simulation or instrument control, measurement, analysis, causal or statistical claim, replication, dual-use review, and evidence handoff. Generic planning and tool use do not preserve the epistemic controls of that full loop. A fluent hypothesis, autonomous laboratory, successful synthesis, simulator result, significant p-value, or generated paper can be useful while still hiding HARKing, selective stopping, instrument drift, contaminated controls, analysis flexibility, failed experiments, human intervention, replication gaps, or dual-use risk.",
+    "core_mechanism": "An AI-generated scientific claim should enter the evidence stack only through a preregistered experimental contract that binds hypothesis lineage, exploratory versus confirmatory status, design and power, instrument or simulator authority, calibration, sample and protocol lineage, blinding and holdouts, stopping and exclusions, analysis, complete attempts, independent replication, dual-use disposition, and claim ceiling; experimental completion, significance, synthesis, instrument output, or formal workflow validity alone establishes neither causal truth, general scientific discovery, reproducibility, safety, nor transfer. Record hypothesis ancestry, prior evidence, competing explanations, exploratory status, preregistration, design, power, outcomes, exclusions, stopping, and analysis before protected data are opened.",
+    "worked_trace": "Use a benign reproducible simulation or low-risk open instrument with injected null and known effects. Freeze stopping and analysis, preserve every attempt, blind the confirmatory holdout, run independent analysis, and package protocol, data, code, calibration, exclusions, and residuals for replication. This tests the control plane, not autonomous science in general. Lease simulators and instruments with calibration, operating envelope, sample identity, control state, maintenance, operator intervention, and safety authority. Separate generated hypotheses, execution, measurement, analysis, causal interpretation, and claim drafting across inspectable roles and preserve all failed attempts.",
+    "failure_boundary": "HARKing p-hacking selective stopping publication bias",
+    "evidence_state": "This chapter remains Design rationale at argument support. Its contracts, examples, tests, or local artifacts establish only their encoded scope. A finite Scientific Discovery and Experimental Governance record may hand off only when identity, authority, version, required checks, and residual ownership are present; no theorem grants empirical effectiveness or release authority. Simulator or instrument return is an observation, not scientific truth. Exploratory and confirmatory analyses remain visibly distinct.",
+    "non_claims": "No chapter claim or evidence state is promoted by this visual. A named mechanism is not proof of correct implementation or useful deployment. A local check or formal model does not establish real-world enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.",
+    "handoff": "The next chapter is Artifact Steward Agents and Living Project Governance. It takes responsibility for Durable artifacts need continuity across planning, funding, work assignment, release, maintenance, governance, and eventual sunset without turning an AI manager into the owner of the project."
+  },
+  "artifacts": {
+    "storyboard": "visual_edition/chapters/scientific-discovery-and-experimental-governance/storyboard.md",
+    "scene_code": "visual_edition/chapters/scientific-discovery-and-experimental-governance/scene.py",
+    "narration_script": "visual_edition/chapters/scientific-discovery-and-experimental-governance/narration.txt",
+    "captions": "visual_edition/chapters/scientific-discovery-and-experimental-governance/captions.vtt",
+    "descriptive_transcript": "visual_edition/chapters/scientific-discovery-and-experimental-governance/transcript.md",
+    "thumbnail": "visual_edition/chapters/scientific-discovery-and-experimental-governance/thumbnail.svg",
+    "scene_spec": "visual_edition/chapters/scientific-discovery-and-experimental-governance/scene_spec.json",
+    "thumbnail_alt_text": "A governed state machine diagram for Scientific Discovery and Experimental Governance shows three named mechanism cards above a labeled failure and evidence boundary."
+  },
+  "render_receipt": {
+    "receipt_state": "current_final_av_master",
+    "validation_state": "validated",
+    "rendered_at_utc": "2026-07-30T03:42:54Z",
+    "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+    "toolchain_qualification": "qualified_for_all_non_latex_chapters",
+    "render_profile": "final_av_master",
+    "command": "Render the exact-timing ChapterVisualAbstract with pinned ManimCE 0.20.1 at 1920x1080/30, render pinned Kokoro-82M af_heart narration at speed 1.08 with a hard maximum of 300 characters per synthesis call and -16 LUFS, then align all seven visual scenes to the exact audio paragraph boundaries and mux with FFmpeg 8.0.1 as H.264 CRF 18 yuv420p plus AAC-LC 192 kb/s 48 kHz mono.",
+    "duration_seconds": 270.215,
+    "pixel_width": 1920,
+    "pixel_height": 1080,
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "output_sha256": "f7b98a2fd747da9b5f3c1940a4678dd1ca6e6262bf04072d5749a88cb55c8801",
+    "mux_receipt_sha256": "acc1eef5656acd24fe3ce522194e4119f72f44455d880fdcbe9a5e280fee6ef7",
+    "output_storage": "ignored build/visual_edition media only",
+    "visual_review": {
+      "draft_sample_seconds": [
+        24.058,
+        77.135,
+        131.587,
+        164.21,
+        191.585,
+        225.807,
+        255.03
+      ],
+      "release_sample_seconds": [
+        77.135,
+        225.807
+      ],
+      "result": "pass",
+      "review_scope": "Exact mux-receipt midpoint sampling across all seven narration scenes checked composition, legibility, persistent labels, color-plus-shape semantics, evidence ceiling, non-claims, end-card identity, and absence of clipping or overflowing text."
+    },
+    "audio_master": {
+      "identity": "Kokoro-82M bf16 af_heart via kokoro-mlx 0.1.2 at speed 1.08",
+      "provenance": "Locally generated from the canonical narration with the pinned Apache-2.0 Kokoro-82M model and MIT kokoro-mlx implementation recorded in visual_edition/narration_toolchain.json.",
+      "publication_rights_state": "cleared",
+      "duration_seconds": 270.215,
+      "sha256": "883859769ab8022863e5e44d96604518b061b766ab001e40ad558c994fb09df8"
+    },
+    "caption_review": {
+      "state": "machine_audited",
+      "audit_method": "Exact receipt-derived canonical timing plus local MLX Whisper transcript comparison and complete beginning/end coverage checks.",
+      "reviewed_against_audio_sha256": "883859769ab8022863e5e44d96604518b061b766ab001e40ad558c994fb09df8",
+      "asr_model": "mlx-community/whisper-small.en-mlx@52a88bf6e98b114a210c21bb83e22d6e1505cb73",
+      "asr_word_error_rate": 0.009259,
+      "terminology": "pass",
+      "timing": "pass",
+      "non_speech_information": "pass",
+      "material_visual_changes": "described_in_adjacent_transcript"
+    },
+    "artifact_sha256": {
+      "storyboard": "75b7b6d7cc0f308738a23fe371672333f78e0484e5fe8a64818e46f0bd9cc29a",
+      "scene_code": "61edd14602d6dc42114eeea7b0109fb8b0ad89b2f2d54ff20448b02dd763745a",
+      "narration_script": "5c9fda5ad9dbee9fc4b2d8553219e5732c0f94b7c36fcbfb9fcf434ab2e65765",
+      "captions": "52abd8a768910aa61cae4c3bc68a761dee22d3338217c8c0f3f88b3d20328e3c",
+      "descriptive_transcript": "0d79df306e77dd1e08be49e2952e5e2c5c2ef77daa02c5fd7fbac956349f17ef",
+      "thumbnail": "3e5e0dbc0b06fb67b52b20f2fd4a6385779d1a08086188c4ce8d83fbf6315d9b",
+      "scene_spec": "c510d8fd89618d20ff66fc88115bf53d9943ad8c53bef56c7fa7655aab002f84"
+    },
+    "remaining_release_gates": [
+      "obtain exact action-time authority before any YouTube or playlist mutation"
+    ]
+  },
+  "youtube": {
+    "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+    "video_id": null,
+    "watch_url": null,
+    "playlist_id": null,
+    "generation": 0,
+    "publication_state": "not_authorized",
+    "uploaded_output_sha256": null,
+    "bound_chapter_sha256": null,
+    "bound_source_commit": null,
+    "published_at_utc": null,
+    "platform_receipt_path": null,
+    "supersedes_video_id": null
+  },
+  "quarto_embed": {
+    "state": "absent_until_published",
+    "chapter_anchor": "visual-abstract",
+    "frame_title": "Visual abstract: Scientific Discovery and Experimental Governance",
+    "aria_label": "Play the visual abstract for Scientific Discovery and Experimental Governance"
+  },
+  "staleness": {
+    "state": "current",
+    "checked_chapter_sha256": "23673a03724b4987590fd9d53a698b57c92343e820b9b05ebc8d188218e34b2e",
+    "triggers": [
+      "core_claim",
+      "mechanism",
+      "worked_trace",
+      "evidence_state",
+      "non_claim",
+      "material_source",
+      "chapter_identity",
+      "handoff",
+      "public_url"
+    ]
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This derivative video does not promote or otherwise change any book claim.",
+    "The validated local final master is not a YouTube upload or a public publication.",
+    "Automated intelligibility and caption audits do not establish that every listener will prefer the synthetic voice.",
+    "A successful animation render does not establish deployment, safety, efficiency, transfer, state of the art, AGI, or ASI."
+  ]
+}

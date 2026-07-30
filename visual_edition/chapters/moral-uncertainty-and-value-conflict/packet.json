@@ -1,0 +1,161 @@
+{
+  "schema_version": "asi_stack.visual_chapter_packet.v1",
+  "video_id": "asi-video-moral-uncertainty-and-value-conflict",
+  "chapter_id": "moral-uncertainty-and-value-conflict",
+  "chapter_path": "chapters/moral-uncertainty-and-value-conflict.qmd",
+  "chapter_sha256": "d123828dfd9f4fce32aca865074f1cde30dd05502d717d288423a4567da05802",
+  "source_commit": "f10ef079ecfeb48503407d67832a0251f77c2c78",
+  "pilot": false,
+  "lifecycle_state": "ready_not_published",
+  "claim_bindings": [
+    {
+      "claim_id": "moral-uncertainty-and-value-conflict.core",
+      "claim_label": "Design rationale",
+      "support_state": "argument"
+    }
+  ],
+  "assigned_source_ids": [
+    "ethica_mechanica",
+    "platonic_world_model",
+    "alignment_field",
+    "coherence_exchange",
+    "uat",
+    "spinoza",
+    "field_of_god_ai_constitution",
+    "ladon_manhattan",
+    "ext_reinforcement_learning_moral_uncertainty_2020",
+    "ext_contestable_ai_design_2022",
+    "ext_collective_constitutional_ai_2024",
+    "ext_corrigibility_2015",
+    "ext_off_switch_game_2016",
+    "ext_taking_ai_welfare_seriously_2024"
+  ],
+  "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result.",
+  "required_content": {
+    "problem": "A governed stack may need to act while moral theories, stakeholder interests, evidence, jurisdictions, and authority claims remain unresolved; collapsing that disagreement into one reward, majority preference, policy sentence, or reviewer verdict can erase standing, dissent, uncertainty, reversibility, and the affected party's practical ability to challenge or leave.",
+    "core_mechanism": "A contestable governance layer should represent each action under unresolved value conflict as a versioned decision lease plus a linked rights receipt. The lease binds value propositions and their epistemic status, affected parties and standing, stakes and reversibility, authority and consent boundaries, the declared aggregation or precedence rule, preserved dissent, evidence and uncertainty, permitted and prohibited actions, expiry and revisit triggers, and rollback or redress.",
+    "worked_trace": "The current minimum is two public record schemas with valid fixtures, a value-conflict harness with three valid and five expected-invalid cases, a governance-rights harness with three valid and five expected-invalid cases, one synthetic care-memory contestability example with seven rejecting mutations, a bounded Theseus import covering four governance-right and four constitutional scenarios plus seven expected-invalid controls, chapter-local finite Lean route models, and a shared safety-critical lifecycle model with an independently implemented trace checker under seven manifest proof targets.",
+    "failure_boundary": "Value flattening compresses incommensurable claims, uncertainty, standing, and vetoes into one scalar objective. False consensus treats majority aggregation, model synthesis, silence, exhausted agreement, or one reviewer verdict as settled moral agreement. Stakeholder erasure omits affected parties, future people, third parties, or less powerful participants from standing, evidence, notice, and appeal. Procedure laundering hides a contested moral choice inside an apparently neutral aggregation rule, threshold, priority, taxonomy, or default.",
+    "evidence_state": "This chapter remains Design rationale at argument support. Its contracts, examples, tests, or local artifacts establish only their encoded scope. A value-conflict effect commits only after review, residual, dissent, correction, and accountability obligations are recorded, while accepted traces preserve protected state and non-increasing authority. The missing-residual countermodel cannot commit, so the modeled high-stakes path cannot bypass its residual and review obligations.",
+    "non_claims": "No chapter claim or evidence state is promoted by this visual. A named mechanism is not proof of correct implementation or useful deployment. A local check or formal model does not establish real-world enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.",
+    "handoff": "The next chapter is Governed Objective Formation, Value Learning, and Goal Integrity. It takes responsibility for The stack has owners for requests, constitutions, value conflict, optimization, planning, and self-improvement, but those layers presuppose an operational objective they do not create."
+  },
+  "artifacts": {
+    "storyboard": "visual_edition/chapters/moral-uncertainty-and-value-conflict/storyboard.md",
+    "scene_code": "visual_edition/chapters/moral-uncertainty-and-value-conflict/scene.py",
+    "narration_script": "visual_edition/chapters/moral-uncertainty-and-value-conflict/narration.txt",
+    "captions": "visual_edition/chapters/moral-uncertainty-and-value-conflict/captions.vtt",
+    "descriptive_transcript": "visual_edition/chapters/moral-uncertainty-and-value-conflict/transcript.md",
+    "thumbnail": "visual_edition/chapters/moral-uncertainty-and-value-conflict/thumbnail.svg",
+    "scene_spec": "visual_edition/chapters/moral-uncertainty-and-value-conflict/scene_spec.json",
+    "thumbnail_alt_text": "A governed before after diagram for Moral Uncertainty, Value Conflict, and Contestable Governance shows three named mechanism cards above a labeled failure and evidence boundary."
+  },
+  "render_receipt": {
+    "receipt_state": "current_final_av_master",
+    "validation_state": "validated",
+    "rendered_at_utc": "2026-07-30T03:09:39Z",
+    "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+    "toolchain_qualification": "qualified_for_all_non_latex_chapters",
+    "render_profile": "final_av_master",
+    "command": "Render the exact-timing ChapterVisualAbstract with pinned ManimCE 0.20.1 at 1920x1080/30, render pinned Kokoro-82M af_heart narration at speed 1.08 with a hard maximum of 300 characters per synthesis call and -16 LUFS, then align all seven visual scenes to the exact audio paragraph boundaries and mux with FFmpeg 8.0.1 as H.264 CRF 18 yuv420p plus AAC-LC 192 kb/s 48 kHz mono.",
+    "duration_seconds": 263.6,
+    "pixel_width": 1920,
+    "pixel_height": 1080,
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "output_sha256": "083cf434a07c5bee0ace6e34b637d18b61e4630c8916922215d0a009d05e53f6",
+    "mux_receipt_sha256": "084089f1d324af524267f26e88702d6d56eef773ba371e8e635d6aad7b69a095",
+    "output_storage": "ignored build/visual_edition media only",
+    "visual_review": {
+      "draft_sample_seconds": [
+        13.3,
+        51.933,
+        99.025,
+        143.882,
+        185.64,
+        218.337,
+        247.985
+      ],
+      "release_sample_seconds": [
+        51.933,
+        218.337
+      ],
+      "result": "pass",
+      "review_scope": "Exact mux-receipt midpoint sampling across all seven narration scenes checked composition, legibility, persistent labels, color-plus-shape semantics, evidence ceiling, non-claims, end-card identity, and absence of clipping or overflowing text."
+    },
+    "audio_master": {
+      "identity": "Kokoro-82M bf16 af_heart via kokoro-mlx 0.1.2 at speed 1.08",
+      "provenance": "Locally generated from the canonical narration with the pinned Apache-2.0 Kokoro-82M model and MIT kokoro-mlx implementation recorded in visual_edition/narration_toolchain.json.",
+      "publication_rights_state": "cleared",
+      "duration_seconds": 263.6,
+      "sha256": "1bfde4187d337d97d2263c6e12cee576ef1d773047a6102bdd358a1e04645ac3"
+    },
+    "caption_review": {
+      "state": "machine_audited",
+      "audit_method": "Exact receipt-derived canonical timing plus local MLX Whisper transcript comparison and complete beginning/end coverage checks.",
+      "reviewed_against_audio_sha256": "1bfde4187d337d97d2263c6e12cee576ef1d773047a6102bdd358a1e04645ac3",
+      "asr_model": "mlx-community/whisper-small.en-mlx@52a88bf6e98b114a210c21bb83e22d6e1505cb73",
+      "asr_word_error_rate": 0.010791,
+      "terminology": "pass",
+      "timing": "pass",
+      "non_speech_information": "pass",
+      "material_visual_changes": "described_in_adjacent_transcript"
+    },
+    "artifact_sha256": {
+      "storyboard": "c070b736070fc21d306b961c5aa9d2e69c16676c94de9ca5fb3ca50946ef6f3d",
+      "scene_code": "652ee53dec112bd608c415ea44c4f12f8979e6f0f94111293a8a2cb0d63729ea",
+      "narration_script": "c7b50ba24c04174179a5aba597d8b7f2c9f083d44048c9a2d1dccd442e1a7c05",
+      "captions": "cdeaa4fcf0c116d6877363f256ba0fd4feb7220cba289c0fcca6a29f4bd3d96f",
+      "descriptive_transcript": "3fc2553d4c672455a465ab071dd7c098cfaf596f5d3257b44a962ea16f29adae",
+      "thumbnail": "3b50d23fbc1822fe81494e9cbf7e1b27c75d99954030197f1873e7aa21708655",
+      "scene_spec": "df79e6a4807d8210e2654d7bc5eebd5f0db1eff7dea607c705b66ed95f6f8f6c"
+    },
+    "remaining_release_gates": [
+      "obtain exact action-time authority before any YouTube or playlist mutation"
+    ]
+  },
+  "youtube": {
+    "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+    "video_id": null,
+    "watch_url": null,
+    "playlist_id": null,
+    "generation": 0,
+    "publication_state": "not_authorized",
+    "uploaded_output_sha256": null,
+    "bound_chapter_sha256": null,
+    "bound_source_commit": null,
+    "published_at_utc": null,
+    "platform_receipt_path": null,
+    "supersedes_video_id": null
+  },
+  "quarto_embed": {
+    "state": "absent_until_published",
+    "chapter_anchor": "visual-abstract",
+    "frame_title": "Visual abstract: Moral Uncertainty, Value Conflict, and Contestable Governance",
+    "aria_label": "Play the visual abstract for Moral Uncertainty, Value Conflict, and Contestable Governance"
+  },
+  "staleness": {
+    "state": "current",
+    "checked_chapter_sha256": "d123828dfd9f4fce32aca865074f1cde30dd05502d717d288423a4567da05802",
+    "triggers": [
+      "core_claim",
+      "mechanism",
+      "worked_trace",
+      "evidence_state",
+      "non_claim",
+      "material_source",
+      "chapter_identity",
+      "handoff",
+      "public_url"
+    ]
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This derivative video does not promote or otherwise change any book claim.",
+    "The validated local final master is not a YouTube upload or a public publication.",
+    "Automated intelligibility and caption audits do not establish that every listener will prefer the synthetic voice.",
+    "A successful animation render does not establish deployment, safety, efficiency, transfer, state of the art, AGI, or ASI."
+  ]
+}

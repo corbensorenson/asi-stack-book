@@ -1,0 +1,201 @@
+WEBVTT
+
+NOTE
+Canonical written narration timed from the exact local narration render receipt.
+Pronunciation-only substitutions are intentionally absent from caption text.
+
+1
+00:00:00.060 --> 00:00:05.699
+This chapter asks a specific question: An authorized symbolic action can
+
+2
+00:00:05.699 --> 00:00:10.826
+become unsafe when translated into deadline-bound control under dynamics, contact,
+
+3
+00:00:10.826 --> 00:00:16.465
+actuator limits, human proximity, sensor loss, communication failure, or irreversible effects.
+
+4
+00:00:16.805 --> 00:00:22.298
+The tempting shortcut is insufficient: A model demonstration, simulation success,
+
+5
+00:00:22.298 --> 00:00:28.339
+barrier certificate, safe-RL label, emergency stop, or software rollback cannot establish
+
+6
+00:00:28.339 --> 00:00:31.635
+plant-specific physical safety or effect reversal.
+
+7
+00:00:32.235 --> 00:00:38.510
+The chapter's core claim is this: Physical execution requires a plant-specific
+
+8
+00:00:38.510 --> 00:00:44.785
+control lease binding embodiment, workspace, state estimator, dynamics, timing, force/space/contact limits,
+
+9
+00:00:44.785 --> 00:00:50.490
+human presence, advanced/baseline/stop controllers, switching and interlocks, exploration, degraded modes,
+
+10
+00:00:50.830 --> 00:00:57.529
+observed effects, compensation, irreversible residuals, costs, and expiry. Freeze plant, payload,
+
+11
+00:00:57.529 --> 00:01:03.010
+workspace, firmware, actuator, sensor, power, communication, and maintenance identity.
+
+12
+00:01:03.350 --> 00:01:09.360
+Compile the semantic request into trajectory or control objectives with force,
+
+13
+00:01:09.360 --> 00:01:15.370
+space, time, contact, and irreversibility limits. Establish safe-set, dynamics, state, uncertainty,
+
+14
+00:01:15.370 --> 00:01:17.555
+deadline, and human-presence assumptions.
+
+15
+00:01:18.155 --> 00:01:22.185
+A concrete implementation trace makes the proposal testable.
+
+16
+00:01:22.525 --> 00:01:27.749
+Use a low-energy simulated plant with conventional and advanced controllers,
+
+17
+00:01:27.749 --> 00:01:33.496
+an independent safety monitor, reachable stop, and complete trace; seed deadline,
+
+18
+00:01:33.496 --> 00:01:39.243
+state-estimator, saturation, communication, and fallback faults; transfer only to isolated low-energy
+
+19
+00:01:39.243 --> 00:01:41.855
+hardware after positive controls pass.
+
+20
+00:01:42.195 --> 00:01:48.205
+Compile the semantic request into trajectory or control objectives with force,
+
+21
+00:01:48.205 --> 00:01:54.215
+space, time, contact, and irreversibility limits. Establish safe-set, dynamics, state, uncertainty,
+
+22
+00:01:54.215 --> 00:01:56.400
+deadline, and human-presence assumptions.
+
+23
+00:01:56.740 --> 00:02:01.916
+Separate advanced controller, safety monitor/filter, baseline controller, and independent stop path.
+
+24
+00:02:01.916 --> 00:02:07.092
+Throughout the trace, one invariant remains visible: every command belongs to
+
+25
+00:02:07.092 --> 00:02:09.445
+a current plant and lease
+
+26
+00:02:10.045 --> 00:02:15.383
+The design can still fail. deadline miss actuator saturation contact instability
+
+27
+00:02:15.383 --> 00:02:20.722
+unsafe exploration The correct response is to stop, narrow, quarantine, compensate,
+
+28
+00:02:20.722 --> 00:02:25.575
+or retain an owned residual rather than narrate uncertainty away.
+
+29
+00:02:26.175 --> 00:02:31.221
+This chapter remains Design rationale at argument support. Its contracts, examples,
+
+30
+00:02:31.221 --> 00:02:35.350
+tests, or local artifacts establish only their encoded scope.
+
+31
+00:02:35.350 --> 00:02:40.396
+The chapter names proof targets rather than pretending they are already
+
+32
+00:02:40.396 --> 00:02:40.855
+closed.
+
+33
+00:02:41.195 --> 00:02:46.367
+A finite control admission model blocks physical commands when timing, state,
+
+34
+00:02:46.367 --> 00:02:51.538
+envelope, fallback, or stop evidence is missing. stop authority is independent
+
+35
+00:02:51.538 --> 00:02:56.710
+enough to survive advanced-controller failure fallback is reachable before the safety
+
+36
+00:02:56.710 --> 00:02:57.650
+margin expires
+
+37
+00:02:58.250 --> 00:03:03.214
+No chapter claim or evidence state is promoted by this visual.
+
+38
+00:03:03.214 --> 00:03:08.178
+A named mechanism is not proof of correct implementation or useful
+
+39
+00:03:08.178 --> 00:03:13.142
+deployment. A local check or formal model does not establish real-world
+
+40
+00:03:13.142 --> 00:03:17.655
+enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.
+
+41
+00:03:17.995 --> 00:03:22.470
+These boundaries matter because an explanatory derivative is useful only if
+
+42
+00:03:22.470 --> 00:03:25.725
+it preserves the evidence ceiling of its source.
+
+43
+00:03:26.325 --> 00:03:31.713
+At most, this visual explains the chapter's design rationale at argument
+
+44
+00:03:31.713 --> 00:03:36.612
+support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI,
+
+45
+00:03:36.612 --> 00:03:41.510
+or ASI result. The next chapter is Inter-Stack Protocols, Identity,
+
+46
+00:03:41.510 --> 00:03:42.980
+and Economic Exchange.
+
+47
+00:03:43.320 --> 00:03:47.098
+It takes responsibility for Local planning, context, artifact,
+
+48
+00:03:47.098 --> 00:03:52.294
+and runtime contracts lose their binding when a request crosses to
+
+49
+00:03:52.294 --> 00:03:55.600
+an independently operated protocol endpoint, agent, service.

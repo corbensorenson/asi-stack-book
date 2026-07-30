@@ -1,0 +1,70 @@
+{
+  "chapter_id": "intent-to-execution-contracts",
+  "title": "Command Contracts: From Intent to Executable Work",
+  "subtitle": "Intent-to-Execution Contracts should own a versioned, consumer-relative conformance relation between an accepted intent receipt and the complete execution lineage.",
+  "archetype": "stack",
+  "claim_label": "Design rationale",
+  "evidence_level": "argument",
+  "next_title": "Perception, Sensor Fusion, and Observation Trust",
+  "display": {
+    "problem": "After an intent owner accepts a request, every lowering… artifacts, verification, delivery, and residuals can change meaning or authority.",
+    "insufficient": "Prompt templates, typed schemas, planning languages, workflow engines, capability systems… stop rules, and residuals survived every representation and material effect.",
+    "mechanism": [
+      {
+        "label": "Receive only accepted intent",
+        "detail": "Receive only an accepted intent receipt whose… re-contract triggers have an accountable upstream owner."
+      },
+      {
+        "label": "Versioned command contract stable",
+        "detail": "Create a versioned command contract with stable… rather than moving prose into untested labels."
+      },
+      {
+        "label": "Separate informative context",
+        "detail": "Separate informative context, untrusted content, examples, retrieved… expand authority through placement or fluency."
+      },
+      {
+        "label": "Conformance relation each lowering",
+        "detail": "Define a conformance relation for each lowering… verification to delivery and residual custody."
+      }
+    ],
+    "trace": [
+      "Receive only accepted intent",
+      "Versioned command contract stable",
+      "Separate informative context",
+      "Conformance relation each lowering"
+    ],
+    "failures": [
+      "Intent laundering converts an uncertain or… parties, or the intake owner's basis.",
+      "Field laundering moves vague prose into… materiality, verifier, and consequence remain undefined.",
+      "Semantic drift changes objective, non-goals, constraints… routing, retry, fallback, repair, or summarization.",
+      "Context injection lets retrieved or tool-produced… hidden content become authoritative control flow."
+    ],
+    "proof_targets": [
+      "Every accepted edge in the finite vertical… approval, dispatch, observation, artifact, and independent-verification custody.",
+      "The vertical model and concrete-schema consumer reject… rollback custody, residual erasure, and support laundering.",
+      "A structured execution dispatch review routes missing… complete dispatch reviews into explicit outcomes."
+    ],
+    "evidence_ceiling": "This chapter remains Design rationale at argument support.",
+    "nonclaims": [
+      "No chapter claim or evidence state is promoted by this visual.",
+      "A named mechanism is not proof of correct implementation or useful deployment.",
+      "A local check or formal model does not establish real-world enforcement.",
+      "No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows."
+    ],
+    "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result."
+  },
+  "timing": {
+    "basis": "exact_narration_paragraph_boundaries",
+    "narration_receipt_sha256": "5e56347a95c53f5d6bc51e977c414fc1baf9cd4b4cdca22fac7ab0c8462c023f",
+    "target_duration_seconds": 302.74,
+    "scene_endpoints_seconds": [
+      32.475,
+      78.195,
+      137.785,
+      193.05,
+      242.995,
+      271.07,
+      302.74
+    ]
+  }
+}

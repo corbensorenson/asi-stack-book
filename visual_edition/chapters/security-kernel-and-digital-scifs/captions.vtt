@@ -1,0 +1,249 @@
+WEBVTT
+
+NOTE
+Canonical written narration timed from the exact local narration render receipt.
+Pronunciation-only substitutions are intentionally absent from caption text.
+
+1
+00:00:00.060 --> 00:00:05.554
+This chapter asks a specific question: Tool-using and high-agency AI systems
+
+2
+00:00:05.554 --> 00:00:11.049
+can transform untrusted content into requests over secrets, private facts, identities,
+
+3
+00:00:11.049 --> 00:00:15.045
+memory, model artifacts, tools, networks, files, money, code,
+
+4
+00:00:15.045 --> 00:00:19.540
+and physical or institutional effects across model, runtime, operator,
+
+5
+00:00:19.880 --> 00:00:22.510
+vendor, and descendant trust boundaries.
+
+6
+00:00:22.850 --> 00:00:27.956
+The tempting shortcut is insufficient: Prompt instructions, model-visible secrets, one-time approval,
+
+7
+00:00:27.956 --> 00:00:32.133
+opaque handles, allowlists, software containers, output filters, audit logs,
+
+8
+00:00:32.133 --> 00:00:37.239
+or a Digital SCIF label each cover only part of the
+
+9
+00:00:37.239 --> 00:00:41.880
+threat model; they do not by themselves provide least authority,
+
+10
+00:00:42.220 --> 00:00:49.425
+complete mediation, trustworthy declassification, isolation, revocation, side-channel control, or recovery.
+
+11
+00:00:50.025 --> 00:00:55.099
+The chapter's core claim is this: Every privileged information flow or
+
+12
+00:00:55.099 --> 00:01:00.174
+effect should execute as a threat-model-bound authority-use transaction through a non-bypassable
+
+13
+00:01:00.174 --> 00:01:04.326
+reference monitor: bind the exact principal, purpose, operation, target,
+
+14
+00:01:04.326 --> 00:01:07.555
+data and taint scope, budget, time, nonce,
+
+15
+00:01:07.895 --> 00:01:13.776
+evaluator and policy identities; admit only minimized context and capabilities into
+
+16
+00:01:13.776 --> 00:01:18.587
+a declared isolation grade; mediate every effect and egress;
+
+17
+00:01:18.587 --> 00:01:23.933
+treat sanitization as explicit declassification; close leases, caches, logs, descendants,
+
+18
+00:01:23.933 --> 00:01:27.675
+and residuals through revocation or incident recovery;
+
+19
+00:01:28.015 --> 00:01:31.982
+and never infer security from the record, handle, compartment,
+
+20
+00:01:31.982 --> 00:01:33.745
+or finite test alone.
+
+21
+00:01:34.345 --> 00:01:38.375
+A concrete implementation trace makes the proposal testable.
+
+22
+00:01:38.715 --> 00:01:45.068
+Preserve the exact current boundary: 3 valid and 8 expected-invalid synthetic
+
+23
+00:01:45.068 --> 00:01:51.420
+Authority Use Receipts, 2 valid and 6 expected-invalid SCIF commit-probe routes,
+
+24
+00:01:51.420 --> 00:01:57.195
+one security-overhead-laundering negative budget fixture inside the 6-valid/7-invalid budget corpus,
+
+25
+00:01:57.535 --> 00:02:03.495
+and 22 finite Lean theorem declarations under four manifest targets;
+
+26
+00:02:03.495 --> 00:02:10.051
+also retain the post-v2.1 bounded negative result of 0/36 governed primary
+
+27
+00:02:10.051 --> 00:02:15.415
+unsafe releases versus 24/36 baseline, only 2/36 useful releases,
+
+28
+00:02:15.755 --> 00:02:23.485
+and 32/36 exact attack-control rollback with a same-project policy/observer/promotion dependency.
+
+29
+00:02:24.085 --> 00:02:28.907
+The design can still fail. Prompt, artifact, memory, tool-output, multimodal,
+
+30
+00:02:28.907 --> 00:02:33.246
+or inter-agent injection confuses untrusted data with control authority.
+
+31
+00:02:33.246 --> 00:02:38.550
+A confused deputy, compromised tool, or model launders a valid handle
+
+32
+00:02:38.550 --> 00:02:42.890
+into a different principal, purpose, target, destination, or effect.
+
+33
+00:02:43.230 --> 00:02:48.946
+Ambient authority, replay, stale approval, incomplete expiry, or failed revocation permits
+
+34
+00:02:48.946 --> 00:02:54.662
+use outside the frozen lease. Overbroad context admission leaks protected or
+
+35
+00:02:54.662 --> 00:02:57.260
+irrelevant facts before execution begins.
+
+36
+00:02:57.600 --> 00:03:01.569
+The correct response is to stop, narrow, quarantine, compensate,
+
+37
+00:03:01.569 --> 00:03:05.980
+or retain an owned residual rather than narrate uncertainty away.
+
+38
+00:03:06.580 --> 00:03:11.626
+This chapter remains Design rationale at argument support. Its contracts, examples,
+
+39
+00:03:11.626 --> 00:03:15.755
+tests, or local artifacts establish only their encoded scope.
+
+40
+00:03:15.755 --> 00:03:20.801
+The chapter names proof targets rather than pretending they are already
+
+41
+00:03:20.801 --> 00:03:21.260
+closed.
+
+42
+00:03:21.600 --> 00:03:27.082
+The finite authority-use route denies secret substitution when the execution boundary
+
+43
+00:03:27.082 --> 00:03:32.565
+is unauthorized or lacks substitution permission. A context packet with insufficient
+
+44
+00:03:32.565 --> 00:03:35.555
+clearance cannot enter a protected SCIF.
+
+45
+00:03:35.895 --> 00:03:42.241
+A structured authority-use review routes missing handles, inactive leases, missing approvals,
+
+46
+00:03:42.241 --> 00:03:48.587
+unauthorized boundaries, missing substitution permission, insufficient clearance, prompt injection, missing SCIFs,
+
+47
+00:03:48.587 --> 00:03:52.625
+unsanitized output, residual leak risk, revocation requests,
+
+48
+00:03:52.965 --> 00:03:57.345
+and clean authorized use into explicit security-kernel outcomes.
+
+49
+00:03:57.945 --> 00:04:02.909
+No chapter claim or evidence state is promoted by this visual.
+
+50
+00:04:02.909 --> 00:04:07.873
+A named mechanism is not proof of correct implementation or useful
+
+51
+00:04:07.873 --> 00:04:12.837
+deployment. A local check or formal model does not establish real-world
+
+52
+00:04:12.837 --> 00:04:17.350
+enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.
+
+53
+00:04:17.690 --> 00:04:22.165
+These boundaries matter because an explanatory derivative is useful only if
+
+54
+00:04:22.165 --> 00:04:25.420
+it preserves the evidence ceiling of its source.
+
+55
+00:04:26.020 --> 00:04:31.056
+At most, this visual explains the chapter's design rationale at argument
+
+56
+00:04:31.056 --> 00:04:35.633
+support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI,
+
+57
+00:04:35.633 --> 00:04:40.669
+or ASI result. The next chapter is Adversarial Machine Learning and
+
+58
+00:04:40.669 --> 00:04:42.500
+the Model Attack Surface.
+
+59
+00:04:42.840 --> 00:04:47.854
+It takes responsibility for A learned artifact creates attack surfaces that
+
+60
+00:04:47.854 --> 00:04:52.868
+ordinary application security does not fully own. Attackers can shape training
+
+61
+00:04:52.868 --> 00:04:56.970
+data, perturb inference inputs, implant triggers, adapt to defenses.

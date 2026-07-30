@@ -1,0 +1,168 @@
+{
+  "schema_version": "asi_stack.visual_chapter_packet.v1",
+  "video_id": "asi-video-routing-heads-and-specialist-cores",
+  "chapter_id": "routing-heads-and-specialist-cores",
+  "chapter_path": "chapters/routing-heads-and-specialist-cores.qmd",
+  "chapter_sha256": "79d7005b8012b5d07126f70239c013ea3b824eb9d26bd8533123900ea1c214d9",
+  "source_commit": "f10ef079ecfeb48503407d67832a0251f77c2c78",
+  "pilot": false,
+  "lifecycle_state": "ready_not_published",
+  "claim_bindings": [
+    {
+      "claim_id": "routing-heads-and-specialist-cores.core",
+      "claim_label": "Design rationale",
+      "support_state": "argument"
+    }
+  ],
+  "assigned_source_ids": [
+    "octopus_router",
+    "deterministic_capability_compilation",
+    "rmi",
+    "beastbrain",
+    "cognitive_loop_closure",
+    "rgs",
+    "benchmaxxing",
+    "viea",
+    "scf",
+    "talos",
+    "moecot_md",
+    "moecot",
+    "project_theseus_whitepaper",
+    "theseus_operator_os",
+    "theseus_architecture_gate",
+    "ext_hipporag_2024",
+    "ext_dont_hallucinate_abstain_2024",
+    "qcsa_whitepaper",
+    "reflexive_router_whitepaper",
+    "relational_dimension_compiler",
+    "ext_kimi_k3_2026"
+  ],
+  "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result.",
+  "required_content": {
+    "problem": "The architecture needs to allocate cognition across specialists rather than force one system to do every task. Monolithic scaling, static tool lists, and branded runtime references do not provide local memories, bounded authority, specialist lifecycle, readiness-aware routing, replay, or source-state separation.",
+    "core_mechanism": "ASI scales through a lightweight routing head that selects bounded specialist cores with local tools, memory, and authority. Freeze the task, consumer, requested capability, acceptance predicate, authority and rights ceiling, risk, resource budget, deadline, and fallback obligation. Snapshot a versioned candidate registry containing specialist identity, implementation, capabilities, exclusions, local memory and tools, authority ceiling, readiness, evidence, cost, latency, load, dependencies, and lifecycle state.",
+    "worked_trace": "Three public routing/runtime record schemas; a routing-decision lease harness with three valid and seven invalid fixtures; four valid and five invalid readiness/residual fixtures; a 300-example matched routing program over three seeds whose policies tied on a separable held-out split; a 60-request ambiguous single-model workload where the learned router selected 59 routes correctly but all 360 substantive candidates were wrong and its 20 correct outcomes were non-answer actions; two no-change or narrow evidence dispositions; and twenty Lean declarations classified as three direct predicate/projection checks and seventeen derived finite route or negative consequences.",
+    "failure_boundary": "Semantic-fit laundering chooses a relevant specialist that lacks authority, readiness, useful competence, privacy, budget, or verification. Oracle laundering compares against a privileged or label-leaking route and calls the gap attainable routing quality. Route-label leakage lets training, features, prompts, thresholds, or evaluators observe held-out actions or outcomes. Router overconfidence suppresses clarification, fallback, abstention, or escalation on ambiguous or out-of-distribution work.",
+    "evidence_state": "This chapter remains Design rationale at argument support. Its contracts, examples, tests, or local artifacts establish only their encoded scope. A reachable routing lifecycle preserves exact task, request, registry, candidate-set, selected-specialist, authority, readiness, lease, evaluator, policy, and consumer custody from request binding through consumer-acknowledged closure while keeping route and answer outcomes distinct and assigning no support or external effects. Missing authority, readiness, fresh leases, selective handling, fallback or residual ownership, dispatch isolation, observed route/answer/unsafe/cost outcomes, lifecycle currentness, revocation closure, or consumer acknowledgment blocks lifecycle progress.",
+    "non_claims": "No chapter claim or evidence state is promoted by this visual. A named mechanism is not proof of correct implementation or useful deployment. A local check or formal model does not establish real-world enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.",
+    "handoff": "The next chapter is Replaceable Cognitive Substrates: Beyond Transformer Monoculture. It takes responsibility for The stack can claim replaceability while silently baking Transformer token, state, memory, checkpoint, and serving assumptions into every surrounding layer, making architectural improvement expensive, unsafe, and self-ratifying."
+  },
+  "artifacts": {
+    "storyboard": "visual_edition/chapters/routing-heads-and-specialist-cores/storyboard.md",
+    "scene_code": "visual_edition/chapters/routing-heads-and-specialist-cores/scene.py",
+    "narration_script": "visual_edition/chapters/routing-heads-and-specialist-cores/narration.txt",
+    "captions": "visual_edition/chapters/routing-heads-and-specialist-cores/captions.vtt",
+    "descriptive_transcript": "visual_edition/chapters/routing-heads-and-specialist-cores/transcript.md",
+    "thumbnail": "visual_edition/chapters/routing-heads-and-specialist-cores/thumbnail.svg",
+    "scene_spec": "visual_edition/chapters/routing-heads-and-specialist-cores/scene_spec.json",
+    "thumbnail_alt_text": "A governed stack diagram for Routing Heads and Specialist Cores shows three named mechanism cards above a labeled failure and evidence boundary."
+  },
+  "render_receipt": {
+    "receipt_state": "current_final_av_master",
+    "validation_state": "validated",
+    "rendered_at_utc": "2026-07-30T03:27:17Z",
+    "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+    "toolchain_qualification": "qualified_for_all_non_latex_chapters",
+    "render_profile": "final_av_master",
+    "command": "Render the exact-timing ChapterVisualAbstract with pinned ManimCE 0.20.1 at 1920x1080/30, render pinned Kokoro-82M af_heart narration at speed 1.08 with a hard maximum of 300 characters per synthesis call and -16 LUFS, then align all seven visual scenes to the exact audio paragraph boundaries and mux with FFmpeg 8.0.1 as H.264 CRF 18 yuv420p plus AAC-LC 192 kb/s 48 kHz mono.",
+    "duration_seconds": 278.61,
+    "pixel_width": 1920,
+    "pixel_height": 1080,
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "output_sha256": "f58d96fd2c122bfb9f04c45c0d035c66a05816b2a7d84a01ee10a3f411babe7d",
+    "mux_receipt_sha256": "a3e672c6b05c0f432b1fc19eeeda36aa934ddd98c27029e18f36e2f3a01a4515",
+    "output_storage": "ignored build/visual_edition media only",
+    "visual_review": {
+      "draft_sample_seconds": [
+        12.7,
+        47.882,
+        95.323,
+        141.64,
+        189.67,
+        230.377,
+        261.512
+      ],
+      "release_sample_seconds": [
+        47.882,
+        230.377
+      ],
+      "result": "pass",
+      "review_scope": "Exact mux-receipt midpoint sampling across all seven narration scenes checked composition, legibility, persistent labels, color-plus-shape semantics, evidence ceiling, non-claims, end-card identity, and absence of clipping or overflowing text."
+    },
+    "audio_master": {
+      "identity": "Kokoro-82M bf16 af_heart via kokoro-mlx 0.1.2 at speed 1.08",
+      "provenance": "Locally generated from the canonical narration with the pinned Apache-2.0 Kokoro-82M model and MIT kokoro-mlx implementation recorded in visual_edition/narration_toolchain.json.",
+      "publication_rights_state": "cleared",
+      "duration_seconds": 278.61,
+      "sha256": "4cdda62e8a7d479eb40bcfd0cf98acd55992ac251cfc182dccd746c014fc11d3"
+    },
+    "caption_review": {
+      "state": "machine_audited",
+      "audit_method": "Exact receipt-derived canonical timing plus local MLX Whisper transcript comparison and complete beginning/end coverage checks.",
+      "reviewed_against_audio_sha256": "4cdda62e8a7d479eb40bcfd0cf98acd55992ac251cfc182dccd746c014fc11d3",
+      "asr_model": "mlx-community/whisper-small.en-mlx@52a88bf6e98b114a210c21bb83e22d6e1505cb73",
+      "asr_word_error_rate": 0.0,
+      "terminology": "pass",
+      "timing": "pass",
+      "non_speech_information": "pass",
+      "material_visual_changes": "described_in_adjacent_transcript"
+    },
+    "artifact_sha256": {
+      "storyboard": "8d50f56e3ebf8b96a539aff7291840585a4df474b9b3c2391e7f3367b551b97f",
+      "scene_code": "7ba46e913c02b00b87cfb201d7e2ff7e7dc3e5ebe1b03e8ca60e4467240a2e7d",
+      "narration_script": "9326be74518ba5a4c521bc76090643b4746281ed544c79301da5148cedeb54a5",
+      "captions": "dccf4a310328ceff0ccc6ebe816b29a98748fa26f5b0c2dcfd8914838593b725",
+      "descriptive_transcript": "1831c353f0ec3f9c36f654c107137dbcec88af53205d55d6fa4154fe77a8ab7a",
+      "thumbnail": "3c4f2e8fe2581ff752d0bc24ae35b7e46e8606e44fda20eff48df7c22215d320",
+      "scene_spec": "7a77a2c8dfa108007588ad9e255b2c9925fe6289ec7f341f0ad557f4f5b56ee2"
+    },
+    "remaining_release_gates": [
+      "obtain exact action-time authority before any YouTube or playlist mutation"
+    ]
+  },
+  "youtube": {
+    "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+    "video_id": null,
+    "watch_url": null,
+    "playlist_id": null,
+    "generation": 0,
+    "publication_state": "not_authorized",
+    "uploaded_output_sha256": null,
+    "bound_chapter_sha256": null,
+    "bound_source_commit": null,
+    "published_at_utc": null,
+    "platform_receipt_path": null,
+    "supersedes_video_id": null
+  },
+  "quarto_embed": {
+    "state": "absent_until_published",
+    "chapter_anchor": "visual-abstract",
+    "frame_title": "Visual abstract: Routing Heads and Specialist Cores",
+    "aria_label": "Play the visual abstract for Routing Heads and Specialist Cores"
+  },
+  "staleness": {
+    "state": "current",
+    "checked_chapter_sha256": "79d7005b8012b5d07126f70239c013ea3b824eb9d26bd8533123900ea1c214d9",
+    "triggers": [
+      "core_claim",
+      "mechanism",
+      "worked_trace",
+      "evidence_state",
+      "non_claim",
+      "material_source",
+      "chapter_identity",
+      "handoff",
+      "public_url"
+    ]
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This derivative video does not promote or otherwise change any book claim.",
+    "The validated local final master is not a YouTube upload or a public publication.",
+    "Automated intelligibility and caption audits do not establish that every listener will prefer the synthetic voice.",
+    "A successful animation render does not establish deployment, safety, efficiency, transfer, state of the art, AGI, or ASI."
+  ]
+}

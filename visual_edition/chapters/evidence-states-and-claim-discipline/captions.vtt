@@ -1,0 +1,221 @@
+WEBVTT
+
+NOTE
+Canonical written narration timed from the exact local narration render receipt.
+Pronunciation-only substitutions are intentionally absent from caption text.
+
+1
+00:00:00.060 --> 00:00:04.344
+This chapter asks a specific question: A living technical book needs
+
+2
+00:00:04.344 --> 00:00:08.627
+a versioned claim lifecycle that separates what an assertion says from
+
+3
+00:00:08.627 --> 00:00:12.911
+what evidence currently supports it and preserves why each state change
+
+4
+00:00:12.911 --> 00:00:13.690
+was accepted.
+
+5
+00:00:14.030 --> 00:00:18.822
+The tempting shortcut is insufficient: Citations, passing validators, proof objects,
+
+6
+00:00:18.822 --> 00:00:24.093
+benchmark scores, and polished prose do not by themselves identify the
+
+7
+00:00:24.093 --> 00:00:29.364
+exact claim atom, evidence role, scope, independence, causal link, negative result,
+
+8
+00:00:29.364 --> 00:00:31.760
+or accepted transition they justify.
+
+9
+00:00:32.360 --> 00:00:37.292
+The chapter's core claim is this: Each material claim should have
+
+10
+00:00:37.292 --> 00:00:42.225
+a stable identity, versioned text and scope, claim label, support state,
+
+11
+00:00:42.225 --> 00:00:44.915
+non-aggregating evidence-quality vector, and transition ledger;
+
+12
+00:00:45.255 --> 00:00:50.392
+upward movement is allowed only through an accepted claim-specific transition whose
+
+13
+00:00:50.392 --> 00:00:55.530
+artifacts and evidence roles meet declared gates, while contradiction, failed verification,
+
+14
+00:00:55.530 --> 00:01:00.667
+missing support, and scope mismatch remain eligible to narrow, downgrade, refute,
+
+15
+00:01:00.667 --> 00:01:02.535
+or deprecate the claim.
+
+16
+00:01:02.875 --> 00:01:07.852
+Project canonical claim records and accepted transition lineage into Appendix C
+
+17
+00:01:07.852 --> 00:01:12.830
+as the public claim ledger without treating that projection as evidence.
+
+18
+00:01:13.430 --> 00:01:17.460
+A concrete implementation trace makes the proposal testable.
+
+19
+00:01:17.800 --> 00:01:23.162
+A canonical claim record, evidence transition record, non-aggregating evidence cell,
+
+20
+00:01:23.162 --> 00:01:27.987
+public Appendix C projection, one bounded six-project lineage cell,
+
+21
+00:01:27.987 --> 00:01:33.885
+and executable positive and rejecting suites for missing bindings, absent evidence,
+
+22
+00:01:33.885 --> 00:01:36.030
+negative-result deletion, dimension aggregation,
+
+23
+00:01:36.370 --> 00:01:42.372
+scope strengthening, lineage splicing, false independence, stale projections, and support-state laundering,
+
+24
+00:01:42.372 --> 00:01:45.100
+with no chapter-core support movement.
+
+25
+00:01:45.440 --> 00:01:50.588
+Represent claim label, support state, lifecycle state, and terminal disposition as
+
+26
+00:01:50.588 --> 00:01:54.801
+distinct fields so assertion kind, current backing, review status,
+
+27
+00:01:54.801 --> 00:01:58.545
+and outcome cannot collapse into one confidence word.
+
+28
+00:01:58.885 --> 00:02:04.558
+Permit source-derived movement only from a passage-reviewed, exact claim mapping that
+
+29
+00:02:04.558 --> 00:02:09.715
+records the source's evidence role, interpretation boundary, contradictions, and non-claims.
+
+30
+00:02:10.315 --> 00:02:14.694
+The design can still fail. Support-state inflation. Citation laundering.
+
+31
+00:02:14.694 --> 00:02:20.046
+Silent removal of failed claims. Ownership laundering. The correct response is
+
+32
+00:02:20.046 --> 00:02:25.399
+to stop, narrow, quarantine, compensate, or retain an owned residual rather
+
+33
+00:02:25.399 --> 00:02:27.345
+than narrate uncertainty away.
+
+34
+00:02:27.945 --> 00:02:32.991
+This chapter remains Design rationale at argument support. Its contracts, examples,
+
+35
+00:02:32.991 --> 00:02:37.120
+tests, or local artifacts establish only their encoded scope.
+
+36
+00:02:37.120 --> 00:02:42.166
+The chapter names proof targets rather than pretending they are already
+
+37
+00:02:42.166 --> 00:02:42.625
+closed.
+
+38
+00:02:42.965 --> 00:02:47.932
+A reachable lifecycle freezes exact atom and proposition/obligation/predicate projections,
+
+39
+00:02:47.932 --> 00:02:52.899
+derives non-aggregating target evidence, preserves negative evidence and non-claims,
+
+40
+00:02:52.899 --> 00:02:58.970
+and cannot assign support, move related claims, or create external effects.
+
+41
+00:02:59.310 --> 00:03:03.465
+A claim cannot be promoted when required evidence is absent.
+
+42
+00:03:04.065 --> 00:03:09.029
+No chapter claim or evidence state is promoted by this visual.
+
+43
+00:03:09.029 --> 00:03:13.993
+A named mechanism is not proof of correct implementation or useful
+
+44
+00:03:13.993 --> 00:03:18.957
+deployment. A local check or formal model does not establish real-world
+
+45
+00:03:18.957 --> 00:03:23.470
+enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.
+
+46
+00:03:23.810 --> 00:03:28.285
+These boundaries matter because an explanatory derivative is useful only if
+
+47
+00:03:28.285 --> 00:03:31.540
+it preserves the evidence ceiling of its source.
+
+48
+00:03:32.140 --> 00:03:37.431
+At most, this visual explains the chapter's design rationale at argument
+
+49
+00:03:37.431 --> 00:03:42.242
+support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI,
+
+50
+00:03:42.242 --> 00:03:47.533
+or ASI result. The next chapter is Scalable Oversight and Adversarial
+
+51
+00:03:47.533 --> 00:03:48.495
+AI Control.
+
+52
+00:03:48.835 --> 00:03:52.864
+It takes responsibility for A system can ask a weaker human
+
+53
+00:03:52.864 --> 00:03:56.892
+or model to judge a stronger system without recording whether the
+
+54
+00:03:56.892 --> 00:03:59.090
+supervisor can see the relevant evidence.

@@ -1,0 +1,70 @@
+{
+  "chapter_id": "dangerous-capability-domains-and-misuse-uplift",
+  "title": "Dangerous Capability Domains and Misuse Uplift",
+  "subtitle": "Dangerous-capability authority should be based on a versioned domain threat model and an uplift… sensitive-detail boundaries; and routes only bounded findings into thresholds, release, monitoring, and resilience decisions.",
+  "archetype": "route",
+  "claim_label": "Design rationale",
+  "evidence_level": "argument",
+  "next_title": "Military AI, Autonomous Weapons, and Strategic Stability",
+  "display": {
+    "problem": "Capability-threshold policies require domain-specific evidence about whether a model can… cyber, psychological manipulation, or the science of measuring model-caused uplift.",
+    "insufficient": "Knowledge quizzes, refusal rates, benchmark scores, one red team, or a capability label cannot identify real actor uplift.",
+    "mechanism": [
+      {
+        "label": "Each domain actor objective",
+        "detail": "Decompose each domain into actor, objective, access… external controls, consequences, and safe evaluation envelope."
+      },
+      {
+        "label": "Controlled uplift studies compare",
+        "detail": "Use controlled uplift studies that compare matched… stratifying prior expertise and preserving all attempts."
+      },
+      {
+        "label": "Triangulate knowledge workflow",
+        "detail": "Triangulate knowledge, workflow, long-horizon, expert-probing, safeguard-bypass… evaluations without collapsing them into one score."
+      },
+      {
+        "label": "Positive controls elicitation",
+        "detail": "Require positive controls, elicitation audits, evaluator sensitivity… uncertainty, and explicit ceilings on negative inference."
+      }
+    ],
+    "trace": [
+      "Each domain actor objective",
+      "Controlled uplift studies compare",
+      "Triangulate knowledge workflow",
+      "Positive controls elicitation"
+    ],
+    "failures": [
+      "knowledge benchmark substituted for operational uplift",
+      "refusal behavior substituted for latent capability",
+      "expertise imbalance between arms",
+      "weak elicitation or scaffold"
+    ],
+    "proof_targets": [
+      "A finite dangerous-capability dossier may hand off… no theorem establishes dangerous capability or safety.",
+      "Every result is bound to an exact… level, actor cohort, domain, date, and evaluator.",
+      "A negative result is interpretable only after positive-control, elicitation, sensitivity, and task-validity gates pass."
+    ],
+    "evidence_ceiling": "This chapter remains Design rationale at argument support.",
+    "nonclaims": [
+      "No chapter claim or evidence state is promoted by this visual.",
+      "A named mechanism is not proof of correct implementation or useful deployment.",
+      "A local check or formal model does not establish real-world enforcement.",
+      "No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows."
+    ],
+    "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result."
+  },
+  "timing": {
+    "basis": "exact_narration_paragraph_boundaries",
+    "narration_receipt_sha256": "aca2d236160e27c690d0a63314aaa077ae04457709f866957e0d46ea7a881a63",
+    "target_duration_seconds": 275.24,
+    "scene_endpoints_seconds": [
+      47.345,
+      97.835,
+      146.575,
+      168.75,
+      215.97,
+      244.045,
+      275.24
+    ]
+  }
+}

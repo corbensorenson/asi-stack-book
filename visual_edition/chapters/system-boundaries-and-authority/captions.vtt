@@ -1,0 +1,225 @@
+WEBVTT
+
+NOTE
+Canonical written narration timed from the exact local narration render receipt.
+Pronunciation-only substitutions are intentionally absent from caption text.
+
+1
+00:00:00.060 --> 00:00:05.187
+This chapter asks a specific question: To test whether cross-layer effects
+
+2
+00:00:05.187 --> 00:00:09.847
+are authorized, the stack needs explicit identities for the principal,
+
+3
+00:00:09.847 --> 00:00:14.508
+execution domain, operation, target, permission class, ceiling, grant lifecycle, delegation,
+
+4
+00:00:14.508 --> 00:00:15.440
+and receipt.
+
+5
+00:00:15.780 --> 00:00:19.757
+The tempting shortcut is insufficient: Role labels, prompts,
+
+6
+00:00:19.757 --> 00:00:25.225
+and ambient process identity do not by themselves distinguish read, transform,
+
+7
+00:00:25.225 --> 00:00:30.694
+disclose, write, execute, and approve authority or enforce delegation, expiry, revocation,
+
+8
+00:00:30.694 --> 00:00:32.185
+and cross-domain approval.
+
+9
+00:00:32.785 --> 00:00:38.383
+The chapter's core claim is this: External-effect authority should be represented
+
+10
+00:00:38.383 --> 00:00:43.981
+as a versioned, revocable tuple binding principal, execution domain, operation, target,
+
+11
+00:00:43.981 --> 00:00:49.579
+permission class, scope, ceiling, grant state, delegation, expiry or revocation epoch,
+
+12
+00:00:49.579 --> 00:00:51.615
+and receipt obligations; capability,
+
+13
+00:00:51.955 --> 00:00:57.388
+context access, route quality, or ambient process power alone confers none
+
+14
+00:00:57.388 --> 00:01:02.821
+of it. Define principals, authorities, ceilings, grants, revocations, and handoff contracts.
+
+15
+00:01:02.821 --> 00:01:05.785
+Separate knowledge access from action authority.
+
+16
+00:01:06.125 --> 00:01:11.380
+Represent missing authority as a detectable failure rather than implicit permission.
+
+17
+00:01:11.980 --> 00:01:16.719
+A concrete implementation trace makes the proposal testable.
+
+18
+00:01:16.719 --> 00:01:23.235
+An authority-transition schema plus a unified authority-tuple lifecycle that binds execution-domain
+
+19
+00:01:23.235 --> 00:01:29.158
+ownership, scope, budget, trace, replay, grant, revocation, cross-domain approval, receipts,
+
+20
+00:01:29.158 --> 00:01:30.935
+and protocol-versus-hardware-root boundaries.
+
+21
+00:01:31.275 --> 00:01:36.616
+Separate knowledge access from action authority. Represent missing authority as a
+
+22
+00:01:36.616 --> 00:01:39.530
+detectable failure rather than implicit permission.
+
+23
+00:01:39.870 --> 00:01:45.501
+Bind principal, execution domain, operation, target, permission class, scope, budget account,
+
+24
+00:01:45.501 --> 00:01:49.597
+trace, replay identity, grant, policy version, revocation epoch,
+
+25
+00:01:49.597 --> 00:01:54.204
+and expiry in one authority tuple. Throughout the trace,
+
+26
+00:01:54.204 --> 00:01:58.300
+one invariant remains visible: Authority never expands silently.
+
+27
+00:01:58.900 --> 00:02:03.832
+The design can still fail. Authority creep. Confused-deputy tool calls.
+
+28
+00:02:03.832 --> 00:02:09.257
+Memory access treated as action approval. Authority identity forks across budget,
+
+29
+00:02:09.257 --> 00:02:11.230
+trace, replay, or revocation.
+
+30
+00:02:11.570 --> 00:02:15.539
+The correct response is to stop, narrow, quarantine, compensate,
+
+31
+00:02:15.539 --> 00:02:19.950
+or retain an owned residual rather than narrate uncertainty away.
+
+32
+00:02:20.550 --> 00:02:25.596
+This chapter remains Design rationale at argument support. Its contracts, examples,
+
+33
+00:02:25.596 --> 00:02:29.725
+tests, or local artifacts establish only their encoded scope.
+
+34
+00:02:29.725 --> 00:02:34.771
+The chapter names proof targets rather than pretending they are already
+
+35
+00:02:34.771 --> 00:02:35.230
+closed.
+
+36
+00:02:35.570 --> 00:02:40.489
+Every accepted issuance, dispatch, and effect in the finite reachable grant
+
+37
+00:02:40.489 --> 00:02:45.409
+model remains within the caller ceiling and exactly binds grant ID,
+
+38
+00:02:45.409 --> 00:02:49.433
+principal, operation, target, epoch, expiry, remaining uses, approval, dispatch,
+
+39
+00:02:49.433 --> 00:02:50.775
+and effect custody.
+
+40
+00:02:51.115 --> 00:02:57.625
+The reachable model and independent consumer reject authority widening, confused-deputy substitution,
+
+41
+00:02:57.625 --> 00:03:02.952
+stale or expired grants, missing approval/dispatch/effect receipts, post-revocation dispatch,
+
+42
+00:03:02.952 --> 00:03:07.095
+effect without dispatch, and consumed one-shot reuse.
+
+43
+00:03:07.695 --> 00:03:12.659
+No chapter claim or evidence state is promoted by this visual.
+
+44
+00:03:12.659 --> 00:03:17.623
+A named mechanism is not proof of correct implementation or useful
+
+45
+00:03:17.623 --> 00:03:22.587
+deployment. A local check or formal model does not establish real-world
+
+46
+00:03:22.587 --> 00:03:27.100
+enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.
+
+47
+00:03:27.440 --> 00:03:31.915
+These boundaries matter because an explanatory derivative is useful only if
+
+48
+00:03:31.915 --> 00:03:35.170
+it preserves the evidence ceiling of its source.
+
+49
+00:03:35.770 --> 00:03:41.005
+At most, this visual explains the chapter's design rationale at argument
+
+50
+00:03:41.005 --> 00:03:45.764
+support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI,
+
+51
+00:03:45.764 --> 00:03:50.999
+or ASI result. The next chapter is Failure Modes of Ungoverned
+
+52
+00:03:50.999 --> 00:03:51.475
+Intelligence.
+
+53
+00:03:51.815 --> 00:03:57.476
+It takes responsibility for Governance, reliability, and self-improvement claims cannot be
+
+54
+00:03:57.476 --> 00:04:02.622
+tested unless their failure conditions, observable boundary events, evidence records,
+
+55
+00:04:02.622 --> 00:04:05.195
+and owners are declared prospectively.

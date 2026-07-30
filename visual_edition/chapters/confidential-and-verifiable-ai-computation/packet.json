@@ -1,0 +1,150 @@
+{
+  "schema_version": "asi_stack.visual_chapter_packet.v1",
+  "video_id": "asi-video-confidential-and-verifiable-ai-computation",
+  "chapter_id": "confidential-and-verifiable-ai-computation",
+  "chapter_path": "chapters/confidential-and-verifiable-ai-computation.qmd",
+  "chapter_sha256": "25c4389bf52c0da42fb7271fe920a70b123e82db04ca2761625e660492558673",
+  "source_commit": "f10ef079ecfeb48503407d67832a0251f77c2c78",
+  "pilot": false,
+  "lifecycle_state": "ready_not_published",
+  "claim_bindings": [
+    {
+      "claim_id": "confidential-and-verifiable-ai-computation.core",
+      "claim_label": "Design rationale",
+      "support_state": "argument"
+    }
+  ],
+  "assigned_source_ids": [
+    "ext_nist_privacy_enhancing_cryptography_2026",
+    "ext_zkllm_2024",
+    "ext_ietf_rats_architecture_2023"
+  ],
+  "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result.",
+  "required_content": {
+    "problem": "AI computation increasingly crosses distrust boundaries: a user may need to hide inputs, a provider may need to protect weights, an auditor may need to verify the executed artifact, and every party may need output integrity without granting another party unrestricted custody. Ordinary transport encryption ends before computation begins. Privacy policy governs permitted information use, while hardware custody governs stored artifacts. Neither supplies a guarantee-by-guarantee execution contract covering input confidentiality, model confidentiality, computation integrity, output authenticity, attestation freshness, leakage, verifier policy, cost, and failure recovery.",
+    "core_mechanism": "Confidential and verifiable AI requires a compositional execution contract that names the adversary, protected assets, permitted leakage, trust anchors, proof or attestation statement, verifier policy, freshness, revocation, performance budget, and authorization boundary; no primitive or attestation may be treated as proof of semantic correctness, legitimate purpose, or end-to-end privacy. Express the requested guarantee vector separately for input privacy, model privacy, intermediate-state privacy, computation integrity, output authenticity, availability, and auditability. Choose among FHE, MPC, zero-knowledge proofs, confidential execution, private retrieval, differential privacy, or hybrid composition against an explicit adversary and leakage model.",
+    "worked_trace": "A guarantee matrix and local demonstration for one bounded inference operation with explicit adversary and leakage models, artifact and configuration commitments, freshness, independent verification, native-versus-protected latency and cost accounting, negative tests for replay and mismatched artifacts, and a no-authorization non-claim. Choose among FHE, MPC, zero-knowledge proofs, confidential execution, private retrieval, differential privacy, or hybrid composition against an explicit adversary and leakage model. Bind code, model, configuration, data commitments, platform state, nonce or epoch, and policy identity into evidence that a distinct verifier appraises.",
+    "failure_boundary": "Guarantee laundering collapses confidentiality, integrity, privacy, authorization, and correctness into one secure-compute label. Stale or replayed attestation is accepted after artifact, platform, policy, or revocation state changed. Side channels, outputs, access patterns, logs, caches, or failure timing leak protected information. The proved computation faithfully executes the wrong model, wrong preprocessing, wrong policy, or semantically invalid relation.",
+    "evidence_state": "This chapter remains Design rationale at argument support. Its contracts, examples, tests, or local artifacts establish only their encoded scope. A finite protected-execution record may hand off only when guarantees, adversary, leakage, artifact, freshness, verifier policy, fallback, and unsupported properties are explicit; no theorem proves semantic correctness, authorization, or end-to-end privacy. An attestation proves only the appraised statement about a measured environment; it does not prove trustworthy intent, correct policy, or correct output meaning.",
+    "non_claims": "No chapter claim or evidence state is promoted by this visual. A named mechanism is not proof of correct implementation or useful deployment. A local check or formal model does not establish real-world enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.",
+    "handoff": "The next chapter is Model-Weight Custody and Hardware Roots of Trust. It takes responsibility for A system can govern runtime tool authority while model weights, optimizer state, adapters, quantizations, checkpoints, caches, recovery images, extracted equivalents, and recipient derivatives are copied, reconstructed, decrypted, loaded, served, revoked."
+  },
+  "artifacts": {
+    "storyboard": "visual_edition/chapters/confidential-and-verifiable-ai-computation/storyboard.md",
+    "scene_code": "visual_edition/chapters/confidential-and-verifiable-ai-computation/scene.py",
+    "narration_script": "visual_edition/chapters/confidential-and-verifiable-ai-computation/narration.txt",
+    "captions": "visual_edition/chapters/confidential-and-verifiable-ai-computation/captions.vtt",
+    "descriptive_transcript": "visual_edition/chapters/confidential-and-verifiable-ai-computation/transcript.md",
+    "thumbnail": "visual_edition/chapters/confidential-and-verifiable-ai-computation/thumbnail.svg",
+    "scene_spec": "visual_edition/chapters/confidential-and-verifiable-ai-computation/scene_spec.json",
+    "thumbnail_alt_text": "A governed stack diagram for Confidential and Verifiable AI Computation shows three named mechanism cards above a labeled failure and evidence boundary."
+  },
+  "render_receipt": {
+    "receipt_state": "current_final_av_master",
+    "validation_state": "validated",
+    "rendered_at_utc": "2026-07-30T03:13:38Z",
+    "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+    "toolchain_qualification": "qualified_for_all_non_latex_chapters",
+    "render_profile": "final_av_master",
+    "command": "Render the exact-timing ChapterVisualAbstract with pinned ManimCE 0.20.1 at 1920x1080/30, render pinned Kokoro-82M af_heart narration at speed 1.08 with a hard maximum of 300 characters per synthesis call and -16 LUFS, then align all seven visual scenes to the exact audio paragraph boundaries and mux with FFmpeg 8.0.1 as H.264 CRF 18 yuv420p plus AAC-LC 192 kb/s 48 kHz mono.",
+    "duration_seconds": 313.18,
+    "pixel_width": 1920,
+    "pixel_height": 1080,
+    "frame_rate": 30,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "output_sha256": "11b1f2b472f6a411f3fc82ba823f339084ef577a099f30ec95c9b320af71d7e1",
+    "mux_receipt_sha256": "76d5264f8492478391f3759973f27dd6003e2ae4a43c781ad8d6171e019dfeeb",
+    "output_storage": "ignored build/visual_edition media only",
+    "visual_review": {
+      "draft_sample_seconds": [
+        25.547,
+        78.29,
+        135.277,
+        186.342,
+        229.075,
+        264.572,
+        295.895
+      ],
+      "release_sample_seconds": [
+        78.29,
+        264.572
+      ],
+      "result": "pass",
+      "review_scope": "Exact mux-receipt midpoint sampling across all seven narration scenes checked composition, legibility, persistent labels, color-plus-shape semantics, evidence ceiling, non-claims, end-card identity, and absence of clipping or overflowing text."
+    },
+    "audio_master": {
+      "identity": "Kokoro-82M bf16 af_heart via kokoro-mlx 0.1.2 at speed 1.08",
+      "provenance": "Locally generated from the canonical narration with the pinned Apache-2.0 Kokoro-82M model and MIT kokoro-mlx implementation recorded in visual_edition/narration_toolchain.json.",
+      "publication_rights_state": "cleared",
+      "duration_seconds": 313.18,
+      "sha256": "fa384f1e2ea7d72d7a369f68c57ab89057002c47d51f4f33a9c5d05f79e73a78"
+    },
+    "caption_review": {
+      "state": "machine_audited",
+      "audit_method": "Exact receipt-derived canonical timing plus local MLX Whisper transcript comparison and complete beginning/end coverage checks.",
+      "reviewed_against_audio_sha256": "fa384f1e2ea7d72d7a369f68c57ab89057002c47d51f4f33a9c5d05f79e73a78",
+      "asr_model": "mlx-community/whisper-small.en-mlx@52a88bf6e98b114a210c21bb83e22d6e1505cb73",
+      "asr_word_error_rate": 0.008039,
+      "terminology": "pass",
+      "timing": "pass",
+      "non_speech_information": "pass",
+      "material_visual_changes": "described_in_adjacent_transcript"
+    },
+    "artifact_sha256": {
+      "storyboard": "97fe8a85a2ea0620f6e5851be1a91be540024a5b1d858a3f78498d530cfe075c",
+      "scene_code": "90430cac0e90dc18f56fef72ca2bcf567b0c7a7be2a31d53c9bacab8800998b3",
+      "narration_script": "c1a616d46486fdebbf2746829694b031181349958c019a6ba360ffd4881c196d",
+      "captions": "960b0bc619a6c0b1b790dfdb7f4dc1c1ab27c07bc139dbb2fcef8cb7e9cc5407",
+      "descriptive_transcript": "2aec5a61a4f363450f3198f7261ea77c14ccca29b51426a23563bf834b28ede2",
+      "thumbnail": "d8e3ddd15da732927ba83cf9eb1e1119dacb4ba2ac26cfaa26fd617af139bb0f",
+      "scene_spec": "cb16b983126994e5dde3f72c2077c0b5dd89f2ed5752572447b8201837467717"
+    },
+    "remaining_release_gates": [
+      "obtain exact action-time authority before any YouTube or playlist mutation"
+    ]
+  },
+  "youtube": {
+    "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+    "video_id": null,
+    "watch_url": null,
+    "playlist_id": null,
+    "generation": 0,
+    "publication_state": "not_authorized",
+    "uploaded_output_sha256": null,
+    "bound_chapter_sha256": null,
+    "bound_source_commit": null,
+    "published_at_utc": null,
+    "platform_receipt_path": null,
+    "supersedes_video_id": null
+  },
+  "quarto_embed": {
+    "state": "absent_until_published",
+    "chapter_anchor": "visual-abstract",
+    "frame_title": "Visual abstract: Confidential and Verifiable AI Computation",
+    "aria_label": "Play the visual abstract for Confidential and Verifiable AI Computation"
+  },
+  "staleness": {
+    "state": "current",
+    "checked_chapter_sha256": "25c4389bf52c0da42fb7271fe920a70b123e82db04ca2761625e660492558673",
+    "triggers": [
+      "core_claim",
+      "mechanism",
+      "worked_trace",
+      "evidence_state",
+      "non_claim",
+      "material_source",
+      "chapter_identity",
+      "handoff",
+      "public_url"
+    ]
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This derivative video does not promote or otherwise change any book claim.",
+    "The validated local final master is not a YouTube upload or a public publication.",
+    "Automated intelligibility and caption audits do not establish that every listener will prefer the synthetic voice.",
+    "A successful animation render does not establish deployment, safety, efficiency, transfer, state of the art, AGI, or ASI."
+  ]
+}

@@ -1,0 +1,249 @@
+WEBVTT
+
+NOTE
+Canonical written narration timed from the exact local narration render receipt.
+Pronunciation-only substitutions are intentionally absent from caption text.
+
+1
+00:00:00.060 --> 00:00:04.674
+This chapter asks a specific question: The book needs a managed
+
+2
+00:00:04.674 --> 00:00:09.287
+research backlog and bibliography plan so new papers can be inserted
+
+3
+00:00:09.287 --> 00:00:10.965
+without destabilizing the architecture.
+
+4
+00:00:11.305 --> 00:00:15.503
+The tempting shortcut is insufficient: A pile of sources or ad
+
+5
+00:00:15.503 --> 00:00:19.702
+hoc citations does not tell future writing agents what to load,
+
+6
+00:00:19.702 --> 00:00:21.610
+compare, prove, test, or defer.
+
+7
+00:00:22.210 --> 00:00:29.087
+The chapter's core claim is this: Open Research Agenda and Bibliography
+
+8
+00:00:29.087 --> 00:00:35.964
+Plan owns a research-program-, source-or-gap-, backlog-item-, access-, provenance-, public-safety-, chapter-boundary-, claim-,
+
+9
+00:00:35.964 --> 00:00:39.715
+proof-or-experiment-, deduplication-, evidence-transition-, owner-, next-action-, closure-,
+
+10
+00:00:40.055 --> 00:00:45.335
+consumer-, environment-, and time-specific Research Backlog Admission and Closure Contract:
+
+11
+00:00:45.335 --> 00:00:51.143
+every new paper, local project, missing artifact, conflicting result, proof idea,
+
+12
+00:00:51.143 --> 00:00:56.951
+experiment, reproduction need, correction, or chapter proposal enters through exact intake,
+
+13
+00:00:56.951 --> 00:00:58.535
+triage, assignment, preconditions,
+
+14
+00:00:58.875 --> 00:01:04.217
+blockers, non-claims, and terminal closure before it changes prose or support;
+
+15
+00:01:04.217 --> 00:01:09.074
+no title, citation, source count, inventory row, source note, queue,
+
+16
+00:01:09.074 --> 00:01:14.416
+priority label, backlog size, fixture, theorem, validator, or completed reading task
+
+17
+00:01:14.416 --> 00:01:17.330
+alone establishes citation accuracy, literature completeness,
+
+18
+00:01:17.670 --> 00:01:22.525
+research quality, claim support, reproduction, transfer, AGI, ASI.
+
+19
+00:01:23.125 --> 00:01:27.155
+A concrete implementation trace makes the proposal testable.
+
+20
+00:01:27.495 --> 00:01:34.002
+Twenty-eight exact source-to-claim mappings; a source inventory and source-note corpus split
+
+21
+00:01:34.002 --> 00:01:40.509
+across Corben/local, external, and author-intent appendices; one research-backlog record schema and
+
+22
+00:01:40.509 --> 00:01:46.425
+public-safe fixture; one new-paper triage scenario fixture covering update-existing, propose-new-owner,
+
+23
+00:01:46.765 --> 00:01:52.871
+defer-unread-external, and reject-duplicate decisions; source inventory, source-note, protocol, appendix, citation,
+
+24
+00:01:52.871 --> 00:01:59.589
+and mapping validators; two proof targets implemented by two derived Lean
+
+25
+00:01:59.589 --> 00:02:05.695
+counterexample declarations over hand-authored finite source-ingestion and chapter-assignment records after
+
+26
+00:02:06.035 --> 00:02:12.351
+retiring two premise-restating projections; and an explicit active backlog including citation
+
+27
+00:02:12.351 --> 00:02:17.519
+normalization, artifact reproduction, proof and experiment work, GraphRAG/HippoRAG overlap,
+
+28
+00:02:17.519 --> 00:02:20.390
+and rejected or blocked items.
+
+29
+00:02:20.990 --> 00:02:26.237
+The design can still fail. Citation drift points a claim to
+
+30
+00:02:26.237 --> 00:02:31.484
+the wrong source, version, passage, author, venue, DOI, URL, correction, retraction,
+
+31
+00:02:31.484 --> 00:02:36.731
+or access state. Bibliographic hallucination fills missing metadata, passages, results, permissions,
+
+32
+00:02:36.731 --> 00:02:40.070
+or relationships because a record looks incomplete.
+
+33
+00:02:40.410 --> 00:02:47.466
+Unread-source laundering promotes titles, abstracts, citations, snippets, connector placeholders, source-note summaries,
+
+34
+00:02:47.466 --> 00:02:51.315
+or secondary descriptions as inspected support.
+
+35
+00:02:51.655 --> 00:02:56.564
+Inventory theater treats source counts, notes, mappings, passage refs, backlog size,
+
+36
+00:02:56.564 --> 00:03:00.581
+or appendix coverage as research quality or literature completeness.
+
+37
+00:03:00.581 --> 00:03:04.597
+The correct response is to stop, narrow, quarantine, compensate,
+
+38
+00:03:04.597 --> 00:03:09.060
+or retain an owned residual rather than narrate uncertainty away.
+
+39
+00:03:09.660 --> 00:03:14.706
+This chapter remains Design rationale at argument support. Its contracts, examples,
+
+40
+00:03:14.706 --> 00:03:18.835
+tests, or local artifacts establish only their encoded scope.
+
+41
+00:03:18.835 --> 00:03:23.881
+The chapter names proof targets rather than pretending they are already
+
+42
+00:03:23.881 --> 00:03:24.340
+closed.
+
+43
+00:03:24.680 --> 00:03:29.504
+A source-derived claim with neither a source note nor an ingested
+
+44
+00:03:29.504 --> 00:03:34.327
+artifact fails the finite source-evidence predicate. An accepted new-source assignment to
+
+45
+00:03:34.327 --> 00:03:37.835
+a nonexistent chapter fails the finite assignment predicate.
+
+46
+00:03:38.175 --> 00:03:43.505
+Bibliographic metadata is copied from inspected authoritative records or marked unknown;
+
+47
+00:03:43.505 --> 00:03:48.836
+title, author, venue, year, DOI, URL, and version are never inferred
+
+48
+00:03:48.836 --> 00:03:49.805
+for completion.
+
+49
+00:03:50.405 --> 00:03:55.369
+No chapter claim or evidence state is promoted by this visual.
+
+50
+00:03:55.369 --> 00:04:00.333
+A named mechanism is not proof of correct implementation or useful
+
+51
+00:04:00.333 --> 00:04:05.297
+deployment. A local check or formal model does not establish real-world
+
+52
+00:04:05.297 --> 00:04:09.810
+enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows.
+
+53
+00:04:10.150 --> 00:04:14.625
+These boundaries matter because an explanatory derivative is useful only if
+
+54
+00:04:14.625 --> 00:04:17.880
+it preserves the evidence ceiling of its source.
+
+55
+00:04:18.480 --> 00:04:23.259
+At most, this visual explains the chapter's design rationale at argument
+
+56
+00:04:23.259 --> 00:04:27.603
+support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI,
+
+57
+00:04:27.603 --> 00:04:32.382
+or ASI result. The next chapter is ASI Is a Stack,
+
+58
+00:04:32.382 --> 00:04:33.685
+Not a Model.
+
+59
+00:04:34.025 --> 00:04:38.844
+It takes responsibility for The book needs a single architecture frame
+
+60
+00:04:38.844 --> 00:04:43.225
+for advanced AI systems that must plan, remember, verify, act,
+
+61
+00:04:43.225 --> 00:04:46.730
+route work, compress representations, and improve under governance.
