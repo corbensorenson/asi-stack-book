@@ -14,6 +14,8 @@ from build_youtube_publication_preflight import ROOT, OUT, build
 
 SCHEMA = ROOT / "schemas/youtube_publication_preflight.schema.json"
 RECEIPT_SCHEMA = ROOT / "schemas/youtube_platform_receipt.schema.json"
+MUTATION_SCOPE_SCHEMA = ROOT / "schemas/youtube_mutation_scope.schema.json"
+MUTATION_SCOPE = ROOT / "visual_edition/youtube_mutation_scope.json"
 
 
 def read(path: Path) -> dict:
@@ -26,10 +28,18 @@ def errors(value: dict, expected: dict) -> list[str]:
         for error in Draft202012Validator(read(SCHEMA)).iter_errors(value)
     ]
     receipt_schema = read(RECEIPT_SCHEMA)
+    mutation_scope_schema = read(MUTATION_SCOPE_SCHEMA)
     try:
         Draft202012Validator.check_schema(receipt_schema)
+        Draft202012Validator.check_schema(mutation_scope_schema)
     except Exception as error:  # jsonschema supplies the diagnostic.
-        failures.append(f"platform receipt schema invalid: {error}")
+        failures.append(f"YouTube publication schema invalid: {error}")
+    failures.extend(
+        f"mutation-scope-schema:{'.'.join(map(str, error.path))}: {error.message}"
+        for error in Draft202012Validator(mutation_scope_schema).iter_errors(
+            read(MUTATION_SCOPE)
+        )
+    )
     comparable = copy.deepcopy(expected)
     comparable["generated_at_utc"] = value.get("generated_at_utc")
     if value != comparable:
@@ -52,6 +62,7 @@ def main() -> None:
     add("master digest substitution", lambda d: d["entries"][0].__setitem__("master_sha256", "0" * 64))
     add("thumbnail oversize", lambda d: d["entries"][0].__setitem__("thumbnail_bytes", 2 * 1024 * 1024 + 1))
     add("premature authority", lambda d: d.__setitem__("external_mutation_authorized_now", True))
+    add("mutation scope substitution", lambda d: d.__setitem__("mutation_scope_sha256", "0" * 64))
     add("studio batch widening", lambda d: d["studio_browser_route"].__setitem__("maximum_files_per_upload_dialog", 84))
     add("API quota-day collapse", lambda d: d["data_api_route"].__setitem__("minimum_quota_days_for_complete_batch", 1))
     add("forced-private boundary deletion", lambda d: d["data_api_route"].__setitem__("unverified_api_projects_force_private_uploads", False))
@@ -68,7 +79,7 @@ def main() -> None:
         "YouTube publication preflight passed: "
         f"{value['ready_entry_count']}/84 masters, captions, and thumbnails exact; "
         "six bounded Studio batches; five-day default API-quota route; "
-        "8/8 mutations rejected; no platform mutation authorized."
+        "9/9 mutations rejected; no platform mutation authorized."
     )
 
 

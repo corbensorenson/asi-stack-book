@@ -1,0 +1,44 @@
+{
+  "schema_version": "asi_stack.youtube_mutation_scope.v1",
+  "scope_id": "p7.3-generation-1-complete-edition-publication",
+  "state": "scope_prepared_not_authorized",
+  "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+  "channel_display_name": "corben sorenson",
+  "upload_plan_path": "visual_edition/youtube_upload_plan.json",
+  "upload_plan_sha256": "282def3437fb58214d46ace5cabc117125f9847735e40ba12c787dd5980d0682",
+  "chapter_count": 84,
+  "playlist_title": "The ASI Stack — Chapter Visual Abstracts",
+  "allowed_platform_mutations": [
+    "create one canonical playlist for the 84 chapter visual abstracts",
+    "upload each exact digest-bound master once with initial visibility unlisted",
+    "apply the exact planned title description tags category and audience setting",
+    "attach the reviewed English caption track and reviewed thumbnail",
+    "insert each video into the canonical playlist in positions 1 through 84",
+    "after all checks pass set all 84 videos and the canonical playlist public",
+    "read processing metadata accessibility playlist and public watch-page state for receipts"
+  ],
+  "allowed_repository_reconciliation": [
+    "record exact platform observation receipts",
+    "reconcile channel playlist packet manifest ledger and managed Quarto embed state",
+    "commit and push the receipt-bound repository state to main",
+    "observe build deploy and public-crawl attestation"
+  ],
+  "prohibited_mutations": [
+    "delete or modify any pre-existing unrelated video playlist comment subscription or channel setting",
+    "upload a master whose digest differs from the upload plan",
+    "duplicate a completed upload when resuming after a limit or interruption",
+    "publish a partial or unreconciled edition",
+    "reuse this scope for a later generation supersession or any other project"
+  ],
+  "stop_conditions": [
+    "signed-in channel identity differs from the scoped channel",
+    "a local input metadata caption or thumbnail digest differs",
+    "YouTube reports a daily limit policy warning unresolved processing error or ambiguous mutation result",
+    "playlist order metadata accessibility or public reachability cannot be verified exactly",
+    "receipt or repository reconciliation validation fails"
+  ],
+  "approval_contract": "Corben must explicitly authorize this exact scope at action time; preparing or hashing this file is not authorization.",
+  "external_mutation_authorized_now": false,
+  "support_state_effect": "none",
+  "book_claim_release_effect": "none"
+}

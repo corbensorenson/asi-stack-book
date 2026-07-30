@@ -8,6 +8,11 @@
   a five-day default-quota Data API fallback derived from current official
   platform constraints. The record remains explicitly
   `ready_not_authorized`.
+- Anchored the still-unapproved operation to one immutable mutation scope that
+  names the exact channel and upload plan, allowed changes, forbidden
+  unrelated or destructive changes, duplicate-prevention rule, and stop
+  conditions. Receipt tooling rejects arbitrary authorization digests; Corben
+  must approve the tracked scope digest at action time.
 - Added schema-bound platform receipts and a complete-edition reconciler that
   requires one exact authorization scope, unique video and playlist-item
   identities, ordered playlist positions, exact metadata, captions,

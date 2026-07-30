@@ -19,6 +19,7 @@ from jsonschema import Draft202012Validator
 
 ROOT = Path(__file__).resolve().parents[1]
 PLAN = ROOT / "visual_edition/youtube_upload_plan.json"
+MUTATION_SCOPE = ROOT / "visual_edition/youtube_mutation_scope.json"
 SCHEMA = ROOT / "schemas/youtube_platform_receipt.schema.json"
 OUT_ROOT = ROOT / "visual_edition/platform_receipts/generation-1"
 
@@ -74,6 +75,11 @@ def main() -> None:
     args = parser.parse_args()
     if not re.fullmatch(r"[0-9a-f]{64}", args.authorization_scope_sha256):
         raise SystemExit("authorization scope must be a lowercase SHA-256 digest")
+    expected_scope_digest = sha256(MUTATION_SCOPE)
+    if args.authorization_scope_sha256 != expected_scope_digest:
+        raise SystemExit(
+            "authorization scope digest does not match the tracked exact mutation scope"
+        )
     plan = json.loads(PLAN.read_text(encoding="utf-8"))
     entry = next(
         (

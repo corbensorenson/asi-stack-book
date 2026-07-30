@@ -21,6 +21,7 @@ from jsonschema import Draft202012Validator
 ROOT = Path(__file__).resolve().parents[1]
 PLAN = ROOT / "visual_edition/youtube_upload_plan.json"
 CHANNEL = ROOT / "visual_edition/youtube_channel.json"
+MUTATION_SCOPE = ROOT / "visual_edition/youtube_mutation_scope.json"
 MANIFEST = ROOT / "visual_edition/manifest.json"
 LEDGER = ROOT / "visual_edition/youtube_ledger.json"
 RECEIPT_SCHEMA = ROOT / "schemas/youtube_platform_receipt.schema.json"
@@ -194,6 +195,10 @@ def main() -> None:
     args = parser.parse_args()
     if not re.fullmatch(r"[0-9a-f]{64}", args.authorization_scope_sha256):
         raise SystemExit("authorization scope must be a lowercase SHA-256 digest")
+    if args.authorization_scope_sha256 != sha256(MUTATION_SCOPE):
+        raise SystemExit(
+            "authorization scope digest does not match the tracked exact mutation scope"
+        )
     rows, playlist_id = validate_receipts(args.authorization_scope_sha256)
     if not args.write:
         print(

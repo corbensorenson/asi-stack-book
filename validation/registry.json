@@ -3017,7 +3017,9 @@
     "scripts/validate_youtube_publication_preflight.py",
     "scripts/record_youtube_platform_receipt.py",
     "scripts/reconcile_youtube_publication_receipts.py",
-    "scripts/visual_chapter_source.py"
+    "scripts/visual_chapter_source.py",
+    "visual_edition/youtube_mutation_scope.json",
+    "schemas/youtube_mutation_scope.schema.json"
   ],
   "units": [
     {
@@ -16006,6 +16008,7 @@
         "visual_edition/youtube_channel.json",
         "visual_edition/youtube_ledger.json",
         "visual_edition/youtube_upload_plan.json",
+        "visual_edition/youtube_mutation_scope.json",
         "visual_edition/youtube_publication_preflight.json",
         "visual_edition/lib/__init__.py",
         "visual_edition/lib/asi_visuals.py",
@@ -16019,6 +16022,7 @@
         "schemas/youtube_channel.schema.json",
         "schemas/youtube_ledger.schema.json",
         "schemas/youtube_upload_plan.schema.json",
+        "schemas/youtube_mutation_scope.schema.json",
         "schemas/youtube_publication_preflight.schema.json",
         "schemas/youtube_platform_receipt.schema.json",
         "scripts/capture_manim_toolchain.py",
@@ -16815,7 +16819,7 @@
     }
   ],
   "summary": {
-    "required_artifact_count": 2973,
+    "required_artifact_count": 2975,
     "unit_count": 440
   },
   "non_claims": [

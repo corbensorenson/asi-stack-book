@@ -11,6 +11,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 PLAN = ROOT / "visual_edition/youtube_upload_plan.json"
+MUTATION_SCOPE = ROOT / "visual_edition/youtube_mutation_scope.json"
 OUT = ROOT / "visual_edition/youtube_publication_preflight.json"
 MAX_API_THUMBNAIL_BYTES = 2 * 1024 * 1024
 MAX_CAPTION_BYTES = 100 * 1024 * 1024
@@ -22,6 +23,11 @@ def sha256(path: Path) -> str:
 
 def build() -> dict:
     plan = json.loads(PLAN.read_text(encoding="utf-8"))
+    mutation_scope = json.loads(MUTATION_SCOPE.read_text(encoding="utf-8"))
+    if mutation_scope.get("upload_plan_sha256") != sha256(PLAN):
+        raise SystemExit("YouTube mutation scope is stale against upload plan")
+    if mutation_scope.get("external_mutation_authorized_now") is not False:
+        raise SystemExit("YouTube mutation scope improperly claims current authority")
     rows = []
     total_bytes = 0
     for entry in plan["entries"]:
@@ -71,6 +77,8 @@ def build() -> dict:
         "state": "ready_not_authorized",
         "upload_plan_path": "visual_edition/youtube_upload_plan.json",
         "upload_plan_sha256": sha256(PLAN),
+        "mutation_scope_path": "visual_edition/youtube_mutation_scope.json",
+        "mutation_scope_sha256": sha256(MUTATION_SCOPE),
         "channel_id": plan["channel_id"],
         "entry_count": len(rows),
         "ready_entry_count": sum(row["ready"] for row in rows),

@@ -3777,7 +3777,13 @@ must drive one real generation-two supersession exercise.
 The exact publication input set is now frozen as 84 master/caption/thumbnail
 triples. A tracked preflight binds every path, digest, byte count, chapter
 position, the 1,015,153,522-byte master total, and the still-false external
-mutation authority. It records two honest execution routes from current
+mutation authority. It also binds immutable exact mutation scope
+`5e4676683842f9e23216abd0ecc91672f6e280b5180c84795e7b196a5c880b54`:
+the intended channel and upload plan, allowed platform and repository changes,
+prohibited unrelated or destructive changes, duplicate-prevention rule, and
+mandatory stop conditions. Preparing that scope is not authorization; Corben's
+action-time approval must point to that exact digest. The preflight records two
+honest execution routes from current
 official YouTube constraints: six signed-in Studio batches of
 15/15/15/15/15/9, stopping without duplicate uploads on any channel-specific
 daily limit; or a verified OAuth/Data API project using resumable uploads and

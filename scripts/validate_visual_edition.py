@@ -27,6 +27,8 @@ YOUTUBE_LEDGER = ROOT / "visual_edition/youtube_ledger.json"
 YOUTUBE_LEDGER_SCHEMA = ROOT / "schemas/youtube_ledger.schema.json"
 YOUTUBE_UPLOAD_PLAN = ROOT / "visual_edition/youtube_upload_plan.json"
 YOUTUBE_UPLOAD_PLAN_SCHEMA = ROOT / "schemas/youtube_upload_plan.schema.json"
+YOUTUBE_MUTATION_SCOPE = ROOT / "visual_edition/youtube_mutation_scope.json"
+YOUTUBE_MUTATION_SCOPE_SCHEMA = ROOT / "schemas/youtube_mutation_scope.schema.json"
 YOUTUBE_PREFLIGHT = ROOT / "visual_edition/youtube_publication_preflight.json"
 YOUTUBE_PREFLIGHT_SCHEMA = ROOT / "schemas/youtube_publication_preflight.schema.json"
 YOUTUBE_PLATFORM_RECEIPT_SCHEMA = ROOT / "schemas/youtube_platform_receipt.schema.json"
@@ -106,11 +108,19 @@ def errors(manifest: dict, grammar: dict | None = None) -> list[str]:
     channel = load(YOUTUBE_CHANNEL)
     ledger = load(YOUTUBE_LEDGER)
     upload_plan = load(YOUTUBE_UPLOAD_PLAN)
+    mutation_scope = load(YOUTUBE_MUTATION_SCOPE)
     youtube_preflight = load(YOUTUBE_PREFLIGHT)
     failures.extend(schema_errors(channel, YOUTUBE_CHANNEL_SCHEMA, "youtube-channel"))
     failures.extend(schema_errors(ledger, YOUTUBE_LEDGER_SCHEMA, "youtube-ledger"))
     failures.extend(
         schema_errors(upload_plan, YOUTUBE_UPLOAD_PLAN_SCHEMA, "youtube-upload-plan")
+    )
+    failures.extend(
+        schema_errors(
+            mutation_scope,
+            YOUTUBE_MUTATION_SCOPE_SCHEMA,
+            "youtube-mutation-scope",
+        )
     )
     failures.extend(
         schema_errors(
@@ -162,6 +172,13 @@ def errors(manifest: dict, grammar: dict | None = None) -> list[str]:
         failures.append("YouTube upload plan is stale against channel contract")
     if upload_plan.get("external_mutation_authorized_now") is not False:
         failures.append("YouTube upload plan claims external mutation authority")
+    if (
+        mutation_scope.get("upload_plan_sha256") != digest(YOUTUBE_UPLOAD_PLAN)
+        or mutation_scope.get("channel_id") != upload_plan.get("channel_id")
+        or mutation_scope.get("chapter_count") != 84
+        or mutation_scope.get("external_mutation_authorized_now") is not False
+    ):
+        failures.append("YouTube exact mutation scope drift or authority overclaim")
     local_preflight_inputs_present = all(
         (ROOT / entry.get("local_master_path", "")).is_file()
         and (ROOT / entry.get("thumbnail_path", "")).is_file()
@@ -176,6 +193,8 @@ def errors(manifest: dict, grammar: dict | None = None) -> list[str]:
             failures.append("YouTube publication preflight drift")
     elif (
         youtube_preflight.get("upload_plan_sha256") != digest(YOUTUBE_UPLOAD_PLAN)
+        or youtube_preflight.get("mutation_scope_sha256")
+        != digest(YOUTUBE_MUTATION_SCOPE)
         or youtube_preflight.get("entry_count") != 84
         or youtube_preflight.get("ready_entry_count") != 84
         or youtube_preflight.get("external_mutation_authorized_now") is not False

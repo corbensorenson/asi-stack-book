@@ -2629,6 +2629,9 @@
         "all_chapter_checkpoint": {
           "state": "all_84_ready_not_published",
           "publication_preflight_path": "visual_edition/youtube_publication_preflight.json",
+          "mutation_scope_path": "visual_edition/youtube_mutation_scope.json",
+          "mutation_scope_sha256": "5e4676683842f9e23216abd0ecc91672f6e280b5180c84795e7b196a5c880b54",
+          "mutation_scope_requires_exact_action_time_authorization": true,
           "platform_receipt_schema_path": "schemas/youtube_platform_receipt.schema.json",
           "platform_receipt_recorder_path": "scripts/record_youtube_platform_receipt.py",
           "publication_reconciler_path": "scripts/reconcile_youtube_publication_receipts.py",

@@ -101,7 +101,11 @@ receipts, and embeds all pass.
 
 `youtube_publication_preflight.json` proves that all 84 exact local master,
 caption, and thumbnail triples remain ready without claiming an upload. It
-also records two honest execution routes. YouTube Studio accepts at most 15
+binds `youtube_mutation_scope.json`, the immutable allowlist, prohibition list,
+stop conditions, channel identity, and exact upload-plan digest to which
+action-time approval and every platform receipt must refer. Preparing or
+hashing that scope is not authorization. The preflight also records two honest
+execution routes. YouTube Studio accepts at most 15
 files in one upload dialog, so the browser route uses batches of
 15/15/15/15/15/9 and stops cleanly on the channel-specific daily video or
 thumbnail limit. The Data API fallback uses resumable uploads, but its default
