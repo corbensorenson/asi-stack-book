@@ -63,6 +63,7 @@ def main() -> None:
     add("thumbnail oversize", lambda d: d["entries"][0].__setitem__("thumbnail_bytes", 2 * 1024 * 1024 + 1))
     add("premature authority", lambda d: d.__setitem__("external_mutation_authorized_now", True))
     add("mutation scope substitution", lambda d: d.__setitem__("mutation_scope_sha256", "0" * 64))
+    add("playlist title substitution", lambda d: d.__setitem__("playlist_title", "Ambiguous playlist"))
     add("studio batch widening", lambda d: d["studio_browser_route"].__setitem__("maximum_files_per_upload_dialog", 84))
     add("API quota-day collapse", lambda d: d["data_api_route"].__setitem__("minimum_quota_days_for_complete_batch", 1))
     add("forced-private boundary deletion", lambda d: d["data_api_route"].__setitem__("unverified_api_projects_force_private_uploads", False))
@@ -79,7 +80,7 @@ def main() -> None:
         "YouTube publication preflight passed: "
         f"{value['ready_entry_count']}/84 masters, captions, and thumbnails exact; "
         "six bounded Studio batches; five-day default API-quota route; "
-        "9/9 mutations rejected; no platform mutation authorized."
+        "10/10 mutations rejected; no platform mutation authorized."
     )
 
 

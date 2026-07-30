@@ -3778,7 +3778,7 @@ The exact publication input set is now frozen as 84 master/caption/thumbnail
 triples. A tracked preflight binds every path, digest, byte count, chapter
 position, the 1,015,153,522-byte master total, and the still-false external
 mutation authority. It also binds immutable exact mutation scope
-`5e4676683842f9e23216abd0ecc91672f6e280b5180c84795e7b196a5c880b54`:
+`3f901ca06169b3df555b6e8dbc6a327c6dab9e623b6712407cf0a9366eeb55f0`:
 the intended channel and upload plan, allowed platform and repository changes,
 prohibited unrelated or destructive changes, duplicate-prevention rule, and
 mandatory stop conditions. Preparing that scope is not authorization; Corben's

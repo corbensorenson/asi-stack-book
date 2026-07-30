@@ -26,6 +26,12 @@ def build() -> dict:
     mutation_scope = json.loads(MUTATION_SCOPE.read_text(encoding="utf-8"))
     if mutation_scope.get("upload_plan_sha256") != sha256(PLAN):
         raise SystemExit("YouTube mutation scope is stale against upload plan")
+    if mutation_scope.get("channel_id") != plan.get("channel_id"):
+        raise SystemExit("YouTube mutation scope channel differs from upload plan")
+    if mutation_scope.get("playlist_title") != plan.get("playlist_title"):
+        raise SystemExit("YouTube mutation scope playlist title differs from upload plan")
+    if mutation_scope.get("chapter_count") != len(plan.get("entries", [])):
+        raise SystemExit("YouTube mutation scope chapter denominator differs from upload plan")
     if mutation_scope.get("external_mutation_authorized_now") is not False:
         raise SystemExit("YouTube mutation scope improperly claims current authority")
     rows = []
@@ -79,7 +85,9 @@ def build() -> dict:
         "upload_plan_sha256": sha256(PLAN),
         "mutation_scope_path": "visual_edition/youtube_mutation_scope.json",
         "mutation_scope_sha256": sha256(MUTATION_SCOPE),
+        "scope_id": mutation_scope["scope_id"],
         "channel_id": plan["channel_id"],
+        "playlist_title": plan["playlist_title"],
         "entry_count": len(rows),
         "ready_entry_count": sum(row["ready"] for row in rows),
         "local_master_total_bytes": total_bytes,

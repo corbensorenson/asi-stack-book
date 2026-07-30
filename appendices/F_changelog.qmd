@@ -22,6 +22,11 @@
 - Rebuilt the 184-concept proof/evidence handoff and registered a validator
   that rejects identity, digest, falsifier, source-boundary, count-target, and
   support-state drift.
+- During action-time YouTube preparation, found and repaired a playlist-title
+  mismatch between the mutation scope and the canonical channel/upload plan.
+  The publication preflight now compares channel, playlist title, chapter
+  denominator, and upload-plan digest across contracts and rejects title
+  substitution before any external mutation.
 
 ## 2026-07-30 — P7.3 generation-two supersession custody
 
