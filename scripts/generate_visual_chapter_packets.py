@@ -12,6 +12,8 @@ import subprocess
 import textwrap
 from pathlib import Path
 
+from visual_chapter_source import canonical_chapter_sha256
+
 
 ROOT = Path(__file__).resolve().parents[1]
 STRUCTURE = ROOT / "book_structure.json"
@@ -463,7 +465,7 @@ def build_packet(chapter: dict, spec: dict, chapter_sha: str, source_commit: str
 def write_chapter(chapter: dict, next_chapter: dict, index: int, source_commit: str) -> None:
     directory = ROOT / "visual_edition/chapters" / chapter["id"]
     directory.mkdir(parents=True, exist_ok=True)
-    chapter_sha = sha256(ROOT / chapter["file"])
+    chapter_sha = canonical_chapter_sha256(ROOT / chapter["file"])
     content = build_content(chapter, next_chapter, index)
     content["chapter_id"] = chapter["id"]
     content["title"] = chapter["title"]

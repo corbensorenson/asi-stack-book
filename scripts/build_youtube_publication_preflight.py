@@ -1,0 +1,169 @@
+#!/usr/bin/env python3
+"""Build the exact non-authorizing preflight for the 84-video publication."""
+
+from __future__ import annotations
+
+import hashlib
+import json
+from datetime import datetime, timezone
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parents[1]
+PLAN = ROOT / "visual_edition/youtube_upload_plan.json"
+OUT = ROOT / "visual_edition/youtube_publication_preflight.json"
+MAX_API_THUMBNAIL_BYTES = 2 * 1024 * 1024
+MAX_CAPTION_BYTES = 100 * 1024 * 1024
+
+
+def sha256(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def build() -> dict:
+    plan = json.loads(PLAN.read_text(encoding="utf-8"))
+    rows = []
+    total_bytes = 0
+    for entry in plan["entries"]:
+        master = ROOT / entry["local_master_path"]
+        caption = ROOT / entry["caption_path"]
+        thumbnail = ROOT / entry["thumbnail_path"]
+        missing = [
+            str(path.relative_to(ROOT))
+            for path in (master, caption, thumbnail)
+            if not path.is_file()
+        ]
+        if missing:
+            raise SystemExit(f"{entry['chapter_id']}: missing publication input(s): {missing}")
+        master_digest = sha256(master)
+        caption_digest = sha256(caption)
+        thumbnail_digest = sha256(thumbnail)
+        if master_digest != entry["local_master_sha256"]:
+            raise SystemExit(f"{entry['chapter_id']}: local master digest drift")
+        if thumbnail_digest != entry["thumbnail_sha256"]:
+            raise SystemExit(f"{entry['chapter_id']}: thumbnail digest drift")
+        if thumbnail.stat().st_size > MAX_API_THUMBNAIL_BYTES:
+            raise SystemExit(f"{entry['chapter_id']}: thumbnail exceeds API 2 MiB limit")
+        if caption.stat().st_size > MAX_CAPTION_BYTES:
+            raise SystemExit(f"{entry['chapter_id']}: caption exceeds API 100 MiB limit")
+        total_bytes += master.stat().st_size
+        rows.append({
+            "position": entry["position"],
+            "chapter_id": entry["chapter_id"],
+            "master_path": entry["local_master_path"],
+            "master_sha256": master_digest,
+            "master_bytes": master.stat().st_size,
+            "caption_path": entry["caption_path"],
+            "caption_sha256": caption_digest,
+            "caption_bytes": caption.stat().st_size,
+            "thumbnail_path": entry["thumbnail_path"],
+            "thumbnail_sha256": thumbnail_digest,
+            "thumbnail_bytes": thumbnail.stat().st_size,
+            "ready": True,
+        })
+    if len(rows) != 84:
+        raise SystemExit(f"Expected 84 publication rows, found {len(rows)}")
+    return {
+        "schema_version": "asi_stack.youtube_publication_preflight.v1",
+        "generated_at_utc": datetime.now(timezone.utc).replace(
+            microsecond=0
+        ).isoformat().replace("+00:00", "Z"),
+        "state": "ready_not_authorized",
+        "upload_plan_path": "visual_edition/youtube_upload_plan.json",
+        "upload_plan_sha256": sha256(PLAN),
+        "channel_id": plan["channel_id"],
+        "entry_count": len(rows),
+        "ready_entry_count": sum(row["ready"] for row in rows),
+        "local_master_total_bytes": total_bytes,
+        "studio_browser_route": {
+            "adapter": "youtube_studio_signed_in_browser",
+            "signed_in_channel_recheck_required_at_execution": True,
+            "maximum_files_per_upload_dialog": 15,
+            "batch_count": 6,
+            "batch_sizes": [15, 15, 15, 15, 15, 9],
+            "daily_video_upload_limit_is_channel_specific": True,
+            "daily_thumbnail_limit_is_channel_specific": True,
+            "resume_policy": (
+                "stop on a platform limit or unresolved check; preserve completed "
+                "unlisted identities and resume without duplicate upload"
+            ),
+        },
+        "data_api_route": {
+            "adapter": "youtube_data_api_v3_resumable",
+            "oauth_and_verified_api_project_required": True,
+            "unverified_api_projects_force_private_uploads": True,
+            "default_daily_video_insert_calls": 100,
+            "default_daily_other_units": 10000,
+            "operation_costs": {
+                "videos_insert": 1,
+                "playlists_insert": 50,
+                "playlist_items_insert": 50,
+                "thumbnails_set": 50,
+                "captions_insert": 400,
+                "videos_update": 50,
+                "playlists_update": 50,
+            },
+            "minimum_quota_days_for_complete_batch": 5,
+            "quota_schedule": [
+                {
+                    "day": 1,
+                    "video_insert_calls": 84,
+                    "other_units": 9650,
+                    "operations": [
+                        "create one private playlist",
+                        "upload 84 private or unlisted masters",
+                        "insert 84 ordered playlist items",
+                        "set 84 thumbnails",
+                        "insert 3 caption tracks",
+                    ],
+                },
+                *[
+                    {
+                        "day": day,
+                        "video_insert_calls": 0,
+                        "other_units": 10000,
+                        "operations": ["insert 25 caption tracks"],
+                    }
+                    for day in (2, 3, 4)
+                ],
+                {
+                    "day": 5,
+                    "video_insert_calls": 0,
+                    "other_units": 6650,
+                    "operations": [
+                        "insert final 6 caption tracks",
+                        "set 84 videos public",
+                        "set canonical playlist public",
+                    ],
+                },
+            ],
+        },
+        "entries": rows,
+        "official_platform_sources": [
+            "https://support.google.com/youtube/answer/57407?hl=en",
+            "https://support.google.com/youtube/answer/2734796?hl=en-EN",
+            "https://support.google.com/youtube/answer/72431?hl=en",
+            "https://developers.google.com/youtube/v3/guides/using_resumable_upload_protocol",
+            "https://developers.google.com/youtube/v3/determine_quota_cost",
+            "https://developers.google.com/youtube/v3/docs/videos/insert",
+            "https://developers.google.com/youtube/v3/docs/captions/insert",
+            "https://developers.google.com/youtube/v3/docs/thumbnails/set",
+        ],
+        "external_mutation_authorized_now": False,
+        "support_state_effect": "none",
+        "book_claim_release_effect": "none",
+    }
+
+
+def main() -> None:
+    value = build()
+    OUT.write_text(json.dumps(value, indent=2) + "\n", encoding="utf-8")
+    print(
+        "Built YouTube publication preflight: "
+        f"{value['ready_entry_count']}/84 exact inputs ready, "
+        f"{value['local_master_total_bytes']} master bytes, no mutation authorized."
+    )
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,153 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/youtube_platform_receipt.schema.json",
+  "title": "ASI Stack YouTube Platform Receipt",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "receipt_id",
+    "recorded_at_utc",
+    "authorization_scope_sha256",
+    "adapter",
+    "chapter_id",
+    "stable_internal_video_id",
+    "generation",
+    "channel_id",
+    "video_id",
+    "watch_url",
+    "playlist_id",
+    "playlist_item_id",
+    "playlist_position",
+    "source_upload",
+    "metadata",
+    "accessibility",
+    "platform_observation",
+    "supersedes_video_id",
+    "support_state_effect",
+    "book_claim_release_effect",
+    "non_claims"
+  ],
+  "properties": {
+    "schema_version": {"const": "asi_stack.youtube_platform_receipt.v1"},
+    "receipt_id": {"pattern": "^youtube-[a-z0-9-]+-g[1-9][0-9]*$"},
+    "recorded_at_utc": {"type": "string", "format": "date-time"},
+    "authorization_scope_sha256": {"pattern": "^[0-9a-f]{64}$"},
+    "adapter": {
+      "enum": ["youtube_studio_signed_in_browser", "youtube_data_api_v3_resumable"]
+    },
+    "chapter_id": {"type": "string", "minLength": 3},
+    "stable_internal_video_id": {"pattern": "^asi-video-[a-z0-9-]+$"},
+    "generation": {"type": "integer", "minimum": 1},
+    "channel_id": {"const": "UCX7Tu67cGmKfT6O38xxiQFA"},
+    "video_id": {"pattern": "^[A-Za-z0-9_-]{11}$"},
+    "watch_url": {"pattern": "^https://www\\.youtube\\.com/watch\\?v=[A-Za-z0-9_-]{11}$"},
+    "playlist_id": {"pattern": "^[A-Za-z0-9_-]{10,64}$"},
+    "playlist_item_id": {"pattern": "^[A-Za-z0-9_-]{8,128}$"},
+    "playlist_position": {"type": "integer", "minimum": 1, "maximum": 84},
+    "source_upload": {
+      "type": "object",
+      "required": [
+        "local_master_path",
+        "local_master_sha256",
+        "local_master_bytes",
+        "bound_chapter_sha256",
+        "bound_source_commit"
+      ],
+      "properties": {
+        "local_master_path": {"pattern": "^build/visual_edition/final/.+\\.mp4$"},
+        "local_master_sha256": {"pattern": "^[0-9a-f]{64}$"},
+        "local_master_bytes": {"type": "integer", "minimum": 1},
+        "bound_chapter_sha256": {"pattern": "^[0-9a-f]{64}$"},
+        "bound_source_commit": {"pattern": "^[0-9a-f]{40}$"}
+      },
+      "additionalProperties": false
+    },
+    "metadata": {
+      "type": "object",
+      "required": [
+        "title_sha256",
+        "description_sha256",
+        "tags_sha256",
+        "category_id",
+        "made_for_kids",
+        "synthetic_narration_disclosed",
+        "state"
+      ],
+      "properties": {
+        "title_sha256": {"pattern": "^[0-9a-f]{64}$"},
+        "description_sha256": {"pattern": "^[0-9a-f]{64}$"},
+        "tags_sha256": {"pattern": "^[0-9a-f]{64}$"},
+        "category_id": {"const": "27"},
+        "made_for_kids": {"const": false},
+        "synthetic_narration_disclosed": {"const": true},
+        "state": {"const": "exact"}
+      },
+      "additionalProperties": false
+    },
+    "accessibility": {
+      "type": "object",
+      "required": [
+        "caption_path",
+        "caption_sha256",
+        "caption_language",
+        "caption_track_id",
+        "caption_state",
+        "thumbnail_path",
+        "thumbnail_sha256",
+        "thumbnail_state"
+      ],
+      "properties": {
+        "caption_path": {"pattern": "^visual_edition/chapters/.+/captions\\.vtt$"},
+        "caption_sha256": {"pattern": "^[0-9a-f]{64}$"},
+        "caption_language": {"const": "en"},
+        "caption_track_id": {"type": "string", "minLength": 4},
+        "caption_state": {"const": "published"},
+        "thumbnail_path": {"pattern": "^build/visual_edition/thumbnails/.+\\.png$"},
+        "thumbnail_sha256": {"pattern": "^[0-9a-f]{64}$"},
+        "thumbnail_state": {"const": "applied"}
+      },
+      "additionalProperties": false
+    },
+    "platform_observation": {
+      "type": "object",
+      "required": [
+        "upload_status",
+        "privacy_status",
+        "definition",
+        "embeddable",
+        "playlist_state",
+        "metadata_state",
+        "watch_page_state",
+        "observed_at_utc",
+        "observation_payload_sha256"
+      ],
+      "properties": {
+        "upload_status": {"const": "processed"},
+        "privacy_status": {"const": "public"},
+        "definition": {"const": "hd"},
+        "embeddable": {"const": true},
+        "playlist_state": {"const": "ordered_current"},
+        "metadata_state": {"const": "exact"},
+        "watch_page_state": {"const": "publicly_reachable"},
+        "observed_at_utc": {"type": "string", "format": "date-time"},
+        "observation_payload_sha256": {"pattern": "^[0-9a-f]{64}$"}
+      },
+      "additionalProperties": false
+    },
+    "supersedes_video_id": {
+      "oneOf": [
+        {"type": "null"},
+        {"type": "string", "pattern": "^[A-Za-z0-9_-]{11}$"}
+      ]
+    },
+    "support_state_effect": {"const": "none"},
+    "book_claim_release_effect": {"const": "none"},
+    "non_claims": {
+      "type": "array",
+      "minItems": 4,
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 20}
+    }
+  },
+  "additionalProperties": false
+}

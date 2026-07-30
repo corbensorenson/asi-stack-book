@@ -3772,6 +3772,42 @@ captions, thumbnails, ordering, privacy transitions, receipts, and Quarto
 embed reconciliation. After the complete edition is public, author feedback
 must drive one real generation-two supersession exercise.
 
+#### P7.3-F6 publication-transaction preflight and self-staleness repair — 2026-07-29
+
+The exact publication input set is now frozen as 84 master/caption/thumbnail
+triples. A tracked preflight binds every path, digest, byte count, chapter
+position, the 1,015,153,522-byte master total, and the still-false external
+mutation authority. It records two honest execution routes from current
+official YouTube constraints: six signed-in Studio batches of
+15/15/15/15/15/9, stopping without duplicate uploads on any channel-specific
+daily limit; or a verified OAuth/Data API project using resumable uploads and
+at least five default-quota days to complete videos, ordered playlist items,
+84 thumbnails, 84 caption tracks, and final privacy transitions. An unverified
+API project that forces uploads private is not a publication route.
+
+Each completed platform object must receive a schema-valid receipt binding the
+exact authorization-scope digest, adapter, channel, video and watch identities,
+playlist and ordered item identities, local master and chapter/source-commit
+digests, metadata hashes, reviewed caption track, thumbnail, HD processing,
+embeddability, public reachability, and zero support or claim-release effect.
+The repository reconciler accepts only one complete 84-receipt set with unique
+video IDs, playlist-item IDs, and positions. Its write path snapshots every
+packet, canonical chapter, manifest, channel contract, and ledger and restores
+that snapshot if generation, embed synchronization, or validation fails.
+
+The chapter-freshness contract now hashes canonical manuscript content with
+the generated managed visual block excluded. Inserting or replacing the
+YouTube player and adjacent transcript therefore cannot make its own packet
+stale, while any material chapter change outside that exact block still
+changes the digest. Both behaviors are validator probes. Clean CI can verify
+the tracked preflight row-by-row without the ignored 1 GB media cache; the
+local preflight additionally rehashes every master, caption, and thumbnail.
+
+This checkpoint creates no YouTube object and grants no mutation authority.
+The observable state remains 84/84 `ready_not_published`, zero playlist
+entries, zero publications, and zero embeds. Exact action-time authority is
+still required before the signed-in Studio transaction begins.
+
 **P7.3 completion gate.** This lane is terminal only when all 84 current
 manifest chapters have validated derivative packets and current rendered
 videos; every published video is hosted on YouTube in the canonical playlist;

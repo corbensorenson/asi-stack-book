@@ -1313,6 +1313,16 @@ def errors(data: dict) -> list[str]:
         out.append("Manim five-pilot release-visual checkpoint drifted or overclaimed")
     if manim.get("all_chapter_checkpoint") != {
         "state": "all_84_ready_not_published",
+        "publication_preflight_path": "visual_edition/youtube_publication_preflight.json",
+        "platform_receipt_schema_path": "schemas/youtube_platform_receipt.schema.json",
+        "platform_receipt_recorder_path": "scripts/record_youtube_platform_receipt.py",
+        "publication_reconciler_path": "scripts/reconcile_youtube_publication_receipts.py",
+        "canonical_chapter_digest_excludes_managed_visual_block": True,
+        "repository_reconciliation_rollback_complete": True,
+        "published_receipt_set_all_or_nothing": True,
+        "publication_input_triples_ready": 84,
+        "studio_browser_batch_count": 6,
+        "data_api_default_minimum_quota_days": 5,
         "packet_count": 84,
         "validated_final_av_count": 84,
         "reviewed_caption_count": 84,

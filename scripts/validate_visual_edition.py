@@ -12,7 +12,9 @@ from pathlib import Path
 
 from jsonschema import Draft202012Validator
 
+from build_youtube_publication_preflight import build as build_expected_youtube_preflight
 from build_youtube_ledger import build as build_expected_youtube_ledger
+from visual_chapter_source import canonical_chapter_sha256, canonicalize_chapter_source
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -25,6 +27,9 @@ YOUTUBE_LEDGER = ROOT / "visual_edition/youtube_ledger.json"
 YOUTUBE_LEDGER_SCHEMA = ROOT / "schemas/youtube_ledger.schema.json"
 YOUTUBE_UPLOAD_PLAN = ROOT / "visual_edition/youtube_upload_plan.json"
 YOUTUBE_UPLOAD_PLAN_SCHEMA = ROOT / "schemas/youtube_upload_plan.schema.json"
+YOUTUBE_PREFLIGHT = ROOT / "visual_edition/youtube_publication_preflight.json"
+YOUTUBE_PREFLIGHT_SCHEMA = ROOT / "schemas/youtube_publication_preflight.schema.json"
+YOUTUBE_PLATFORM_RECEIPT_SCHEMA = ROOT / "schemas/youtube_platform_receipt.schema.json"
 GRAMMAR = ROOT / "visual_edition/visual_grammar.json"
 GRAMMAR_SCHEMA = ROOT / "schemas/visual_grammar.schema.json"
 TOOLCHAIN = ROOT / "visual_edition/toolchain.json"
@@ -53,6 +58,7 @@ STALENESS_TRIGGERS = {
 GENERATED_ARCHETYPES = {
     "state_machine", "stack", "graph", "ledger", "route", "timeline", "before_after"
 }
+_LOCAL_PREFLIGHT_CACHE: dict | None = None
 
 
 def load(path: Path) -> dict:
@@ -61,6 +67,23 @@ def load(path: Path) -> dict:
 
 def digest(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def text_digest(value: str) -> str:
+    return hashlib.sha256(value.encode("utf-8")).hexdigest()
+
+
+def tags_digest(values: list[str]) -> str:
+    return text_digest(
+        json.dumps(values, ensure_ascii=False, separators=(",", ":"))
+    )
+
+
+def expected_local_preflight() -> dict:
+    global _LOCAL_PREFLIGHT_CACHE
+    if _LOCAL_PREFLIGHT_CACHE is None:
+        _LOCAL_PREFLIGHT_CACHE = build_expected_youtube_preflight()
+    return copy.deepcopy(_LOCAL_PREFLIGHT_CACHE)
 
 
 def vtt_seconds(timestamp: str) -> float:
@@ -83,10 +106,18 @@ def errors(manifest: dict, grammar: dict | None = None) -> list[str]:
     channel = load(YOUTUBE_CHANNEL)
     ledger = load(YOUTUBE_LEDGER)
     upload_plan = load(YOUTUBE_UPLOAD_PLAN)
+    youtube_preflight = load(YOUTUBE_PREFLIGHT)
     failures.extend(schema_errors(channel, YOUTUBE_CHANNEL_SCHEMA, "youtube-channel"))
     failures.extend(schema_errors(ledger, YOUTUBE_LEDGER_SCHEMA, "youtube-ledger"))
     failures.extend(
         schema_errors(upload_plan, YOUTUBE_UPLOAD_PLAN_SCHEMA, "youtube-upload-plan")
+    )
+    failures.extend(
+        schema_errors(
+            youtube_preflight,
+            YOUTUBE_PREFLIGHT_SCHEMA,
+            "youtube-publication-preflight",
+        )
     )
     narration_toolchain = load(NARRATION_TOOLCHAIN)
     failures.extend(
@@ -131,6 +162,52 @@ def errors(manifest: dict, grammar: dict | None = None) -> list[str]:
         failures.append("YouTube upload plan is stale against channel contract")
     if upload_plan.get("external_mutation_authorized_now") is not False:
         failures.append("YouTube upload plan claims external mutation authority")
+    local_preflight_inputs_present = all(
+        (ROOT / entry.get("local_master_path", "")).is_file()
+        and (ROOT / entry.get("thumbnail_path", "")).is_file()
+        for entry in upload_plan.get("entries", [])
+    )
+    if local_preflight_inputs_present:
+        expected_preflight = expected_local_preflight()
+        expected_preflight["generated_at_utc"] = youtube_preflight.get(
+            "generated_at_utc"
+        )
+        if youtube_preflight != expected_preflight:
+            failures.append("YouTube publication preflight drift")
+    elif (
+        youtube_preflight.get("upload_plan_sha256") != digest(YOUTUBE_UPLOAD_PLAN)
+        or youtube_preflight.get("entry_count") != 84
+        or youtube_preflight.get("ready_entry_count") != 84
+        or youtube_preflight.get("external_mutation_authorized_now") is not False
+    ):
+        failures.append("tracked YouTube publication preflight binding drift")
+    preflight_entries = youtube_preflight.get("entries", [])
+    if len(preflight_entries) != len(upload_plan.get("entries", [])):
+        failures.append("YouTube publication preflight entry count drift")
+    for position, (upload_entry, preflight_entry) in enumerate(
+        zip(upload_plan.get("entries", []), preflight_entries),
+        start=1,
+    ):
+        caption_path = ROOT / upload_entry.get("caption_path", "")
+        exact_preflight = {
+            "position": position,
+            "chapter_id": upload_entry.get("chapter_id"),
+            "master_path": upload_entry.get("local_master_path"),
+            "master_sha256": upload_entry.get("local_master_sha256"),
+            "caption_path": upload_entry.get("caption_path"),
+            "caption_sha256": (
+                digest(caption_path) if caption_path.is_file() else None
+            ),
+            "thumbnail_path": upload_entry.get("thumbnail_path"),
+            "thumbnail_sha256": upload_entry.get("thumbnail_sha256"),
+            "ready": True,
+        }
+        for key, expected in exact_preflight.items():
+            if preflight_entry.get(key) != expected:
+                failures.append(
+                    f"{upload_entry.get('chapter_id', position)}: "
+                    f"YouTube publication preflight {key} drift"
+                )
     expected_ledger = build_expected_youtube_ledger()
     expected_ledger["generated_at_utc"] = ledger.get("generated_at_utc")
     if ledger != expected_ledger:
@@ -142,6 +219,31 @@ def errors(manifest: dict, grammar: dict | None = None) -> list[str]:
         for part_index, part in enumerate(structure["parts"], start=1)
         for chapter_index, chapter in enumerate(part["chapters"], start=1)
     ]
+    binding_probe_path = ROOT / canonical[0][3]["file"]
+    binding_probe_source = binding_probe_path.read_text(encoding="utf-8")
+    front_matter_close = binding_probe_source.find("\n---\n", 4)
+    if front_matter_close < 0:
+        failures.append("visual chapter-binding probe lacks closed front matter")
+    else:
+        insertion_point = front_matter_close + len("\n---\n")
+        binding_probe_projected = (
+            binding_probe_source[:insertion_point]
+            + "\n<!-- BEGIN MANAGED VISUAL ABSTRACT:asi-is-a-stack-not-a-model -->\n"
+            + "projection-only probe\n"
+            + "<!-- END MANAGED VISUAL ABSTRACT:asi-is-a-stack-not-a-model -->\n"
+            + binding_probe_source[insertion_point:].lstrip("\n")
+        )
+        if canonicalize_chapter_source(binding_probe_projected) != binding_probe_source:
+            failures.append("managed visual projection changes canonical chapter binding")
+        changed_probe = binding_probe_source.replace(
+            "## Chapter status",
+            "## Changed chapter status",
+            1,
+        )
+        if hashlib.sha256(
+            canonicalize_chapter_source(changed_probe).encode("utf-8")
+        ).hexdigest() == canonical_chapter_sha256(binding_probe_path):
+            failures.append("manuscript change does not change canonical chapter binding")
     rows = manifest.get("chapters", [])
     upload_entries = upload_plan.get("entries", [])
     if len(canonical) != 84 or len(rows) != 84:
@@ -158,17 +260,27 @@ def errors(manifest: dict, grammar: dict | None = None) -> list[str]:
     )}
     packet_count = rendered_count = youtube_count = embed_count = 0
     packets = []
+    published_authority_digests = set()
+    published_video_ids = set()
+    published_playlist_ids = set()
+    published_playlist_item_ids = set()
+    published_playlist_positions = set()
     for manifest_position, (expected, row, upload_entry) in enumerate(
         zip(canonical, rows, upload_entries),
         start=1,
     ):
+        preflight_entry = (
+            preflight_entries[manifest_position - 1]
+            if manifest_position <= len(preflight_entries)
+            else {}
+        )
         part_index, part, chapter_index, chapter = expected
         path = ROOT / chapter["file"]
         exact = {
             "chapter_id": chapter["id"],
             "title": chapter["title"],
             "chapter_path": chapter["file"],
-            "chapter_sha256": digest(path),
+            "chapter_sha256": canonical_chapter_sha256(path),
             "part_id": part["id"],
             "part_index": part_index,
             "chapter_index": chapter_index,
@@ -235,7 +347,7 @@ def errors(manifest: dict, grammar: dict | None = None) -> list[str]:
             failures.append(f"{chapter['id']}: packet identity mismatch")
         if packet.get("chapter_path") != chapter["file"]:
             failures.append(f"{chapter['id']}: packet path mismatch")
-        if packet.get("chapter_sha256") != digest(path):
+        if packet.get("chapter_sha256") != canonical_chapter_sha256(path):
             failures.append(f"{chapter['id']}: packet is stale against chapter bytes")
         if packet.get("lifecycle_state") != state:
             failures.append(f"{chapter['id']}: packet/manifest lifecycle mismatch")
@@ -382,6 +494,10 @@ def errors(manifest: dict, grammar: dict | None = None) -> list[str]:
             failures.append(f"{chapter['id']}: YouTube channel identity drift")
         if publication == "published_current":
             youtube_count += 1
+            if receipt and receipt.get("remaining_release_gates"):
+                failures.append(
+                    f"{chapter['id']}: published video retains release gates"
+                )
             if not youtube.get("video_id") or not youtube.get("playlist_id") or not youtube.get("platform_receipt_path"):
                 failures.append(f"{chapter['id']}: published YouTube identity incomplete")
             if youtube.get("watch_url") != f"https://www.youtube.com/watch?v={youtube.get('video_id')}":
@@ -397,6 +513,118 @@ def errors(manifest: dict, grammar: dict | None = None) -> list[str]:
             receipt_path = ROOT / youtube.get("platform_receipt_path", "")
             if not receipt_path.is_file():
                 failures.append(f"{chapter['id']}: YouTube platform receipt missing")
+            else:
+                platform_receipt = load(receipt_path)
+                failures.extend(
+                    schema_errors(
+                        platform_receipt,
+                        YOUTUBE_PLATFORM_RECEIPT_SCHEMA,
+                        f"{chapter['id']}:youtube-platform-receipt",
+                    )
+                )
+                receipt_exact = {
+                    "chapter_id": chapter["id"],
+                    "stable_internal_video_id": packet.get("video_id"),
+                    "channel_id": youtube.get("channel_id"),
+                    "video_id": youtube.get("video_id"),
+                    "watch_url": youtube.get("watch_url"),
+                    "playlist_id": youtube.get("playlist_id"),
+                    "playlist_position": manifest_position,
+                    "generation": youtube.get("generation"),
+                }
+                for key, expected in receipt_exact.items():
+                    if platform_receipt.get(key) != expected:
+                        failures.append(
+                            f"{chapter['id']}: platform receipt {key} drift"
+                        )
+                published_authority_digests.add(
+                    platform_receipt.get("authorization_scope_sha256")
+                )
+                video_id = platform_receipt.get("video_id")
+                playlist_id = platform_receipt.get("playlist_id")
+                playlist_item_id = platform_receipt.get("playlist_item_id")
+                playlist_position = platform_receipt.get("playlist_position")
+                if video_id in published_video_ids:
+                    failures.append(
+                        f"{chapter['id']}: duplicate published YouTube video ID"
+                    )
+                if playlist_item_id in published_playlist_item_ids:
+                    failures.append(
+                        f"{chapter['id']}: duplicate published playlist item ID"
+                    )
+                if playlist_position in published_playlist_positions:
+                    failures.append(
+                        f"{chapter['id']}: duplicate published playlist position"
+                    )
+                published_video_ids.add(video_id)
+                published_playlist_ids.add(playlist_id)
+                published_playlist_item_ids.add(playlist_item_id)
+                published_playlist_positions.add(playlist_position)
+                source_upload = platform_receipt.get("source_upload", {})
+                if (
+                    source_upload.get("local_master_path")
+                    != upload_entry.get("local_master_path")
+                    or source_upload.get("local_master_sha256")
+                    != upload_entry.get("local_master_sha256")
+                    or source_upload.get("local_master_bytes")
+                    != preflight_entry.get("master_bytes")
+                    or source_upload.get("local_master_sha256")
+                    != receipt.get("output_sha256")
+                    or source_upload.get("bound_chapter_sha256")
+                    != packet.get("chapter_sha256")
+                    or source_upload.get("bound_source_commit")
+                    != packet.get("source_commit")
+                ):
+                    failures.append(
+                        f"{chapter['id']}: platform receipt source binding drift"
+                    )
+                expected_metadata = {
+                    "title_sha256": text_digest(upload_entry.get("title", "")),
+                    "description_sha256": text_digest(
+                        upload_entry.get("description", "")
+                    ),
+                    "tags_sha256": tags_digest(upload_entry.get("tags", [])),
+                    "category_id": upload_entry.get("category_id"),
+                    "made_for_kids": upload_entry.get("made_for_kids"),
+                    "synthetic_narration_disclosed": upload_entry.get(
+                        "contains_synthetic_narration_disclosure"
+                    ),
+                    "state": "exact",
+                }
+                metadata = platform_receipt.get("metadata", {})
+                for key, expected in expected_metadata.items():
+                    if metadata.get(key) != expected:
+                        failures.append(
+                            f"{chapter['id']}: platform receipt metadata {key} drift"
+                        )
+                caption_path = ROOT / upload_entry.get("caption_path", "")
+                thumbnail_path = ROOT / upload_entry.get("thumbnail_path", "")
+                expected_accessibility = {
+                    "caption_path": upload_entry.get("caption_path"),
+                    "caption_sha256": (
+                        digest(caption_path) if caption_path.is_file() else None
+                    ),
+                    "caption_language": "en",
+                    "caption_state": "published",
+                    "thumbnail_path": upload_entry.get("thumbnail_path"),
+                    "thumbnail_sha256": upload_entry.get("thumbnail_sha256"),
+                    "thumbnail_state": "applied",
+                }
+                accessibility = platform_receipt.get("accessibility", {})
+                for key, expected in expected_accessibility.items():
+                    if accessibility.get(key) != expected:
+                        failures.append(
+                            f"{chapter['id']}: platform receipt accessibility "
+                            f"{key} drift"
+                        )
+                if (
+                    thumbnail_path.is_file()
+                    and accessibility.get("thumbnail_sha256")
+                    != digest(thumbnail_path)
+                ):
+                    failures.append(
+                        f"{chapter['id']}: published thumbnail bytes drift"
+                    )
             if embed != "published_current":
                 failures.append(f"{chapter['id']}: published video lacks current Quarto embed")
         if embed == "published_current":
@@ -405,6 +633,24 @@ def errors(manifest: dict, grammar: dict | None = None) -> list[str]:
                 failures.append(f"{chapter['id']}: current embed without current YouTube publication")
         if state == "published_current" and publication != "published_current":
             failures.append(f"{chapter['id']}: lifecycle publication mismatch")
+
+    if youtube_count:
+        if youtube_count != 84:
+            failures.append(
+                "published visual edition must reconcile as zero or all 84 videos"
+            )
+        if len(published_authority_digests) != 1:
+            failures.append(
+                "published videos do not share one exact authorization scope"
+            )
+        if len(published_playlist_ids) != 1:
+            failures.append(
+                "published videos do not share one canonical playlist"
+            )
+        if published_playlist_positions != set(range(1, youtube_count + 1)):
+            failures.append(
+                "published playlist positions are not a complete ordered prefix"
+            )
 
     counts = manifest.get("counts", {})
     for state, count in lifecycle_counts.items():

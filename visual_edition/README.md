@@ -63,6 +63,8 @@ python3 scripts/build_youtube_ledger.py
 python3 scripts/render_youtube_thumbnails.py --all-chapters
 python3 scripts/build_youtube_thumbnail_review_sheets.py
 python3 scripts/build_youtube_upload_plan.py
+python3 scripts/build_youtube_publication_preflight.py
+python3 scripts/validate_youtube_publication_preflight.py
 python3 scripts/validate_visual_edition.py
 python3 scripts/sync_visual_edition_embeds.py
 ```
@@ -97,6 +99,17 @@ first-generation upload as `unlisted`; the reconciled set becomes `public`
 only after video processing, metadata, captions, thumbnails, playlist order,
 receipts, and embeds all pass.
 
+`youtube_publication_preflight.json` proves that all 84 exact local master,
+caption, and thumbnail triples remain ready without claiming an upload. It
+also records two honest execution routes. YouTube Studio accepts at most 15
+files in one upload dialog, so the browser route uses batches of
+15/15/15/15/15/9 and stops cleanly on the channel-specific daily video or
+thumbnail limit. The Data API fallback uses resumable uploads, but its default
+100-video insert bucket and 10,000-unit general bucket require at least five
+quota days to attach 84 reviewed caption tracks, thumbnails, ordered playlist
+items, and final privacy transitions. An unverified API project also
+force-restricts uploads to private, so it is not a publication shortcut.
+
 Visual QA samples the midpoint of each exact narration scene from the mux
 receipt, not arbitrary fractions of total runtime. The 84-chapter review is 21
 bounded contact sheets covering 588 scene-midpoint frames. This sampling
@@ -113,6 +126,10 @@ The embed synchronizer is a no-write check by default. After an exact packet is
 `youtube-nocookie.com` player and the packet's full descriptive transcript
 next to one another in the canonical chapter. It removes managed blocks for
 videos that are no longer current and rejects unmanaged YouTube embeds.
+Chapter freshness is computed over canonical manuscript content with this
+managed block excluded. Consequently, inserting or replacing the generated
+player cannot make its own packet stale, while any material prose or source
+change outside the block still changes the bound digest.
 
 ## YouTube identity and chapter updates
 
@@ -139,3 +156,12 @@ becomes `published_current`, the old packet generation becomes `superseded`,
 and the Quarto embed is reconciled to the new ID. The validator rejects a stale
 ledger, a mismatched uploaded/render digest, a missing platform receipt, a
 wrong channel, or an embed that does not match the current publication state.
+
+After platform processing and public observation, use
+`record_youtube_platform_receipt.py` to bind the exact video, playlist item,
+metadata, reviewed caption, thumbnail, local master, chapter, source commit,
+authorization scope, and public observation. Once all 84 receipts exist,
+`reconcile_youtube_publication_receipts.py` validates the complete set before
+changing any tracked file. Its `--write` mode then updates all packets,
+channel/playlist identity, manifest, revision ledger, and managed Quarto
+blocks as one complete-edition reconciliation; it never calls YouTube itself.

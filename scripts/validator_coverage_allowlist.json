@@ -31,6 +31,10 @@
     {
       "script": "scripts/validate_visual_narration.py",
       "reason": "Per-narration local media validator: it requires each ignored WAV master and ignored MLX Whisper ASR audit plus NumPy and SoundFile. All 84 narrations were run before packet finalization; their validator hashes and pass receipts are bound into the tracked chapter packets and checked by the registered validate_visual_edition.py publication gate, while the local audio and ASR build products intentionally remain outside Git and CI."
+    },
+    {
+      "script": "scripts/validate_youtube_publication_preflight.py",
+      "reason": "Local publication-input validator: it recomputes SHA-256 and size constraints over all 84 ignored final MP4 masters and ignored raster thumbnails plus tracked reviewed captions. The generated preflight, schemas, upload-plan binding, exact counts, no-authority state, and future platform-receipt contract are checked by the registered validate_visual_edition.py gate in clean CI; the gigabyte-scale local media intentionally remains outside Git and CI."
     }
   ]
 }

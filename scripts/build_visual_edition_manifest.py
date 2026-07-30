@@ -9,6 +9,8 @@ import subprocess
 from datetime import datetime, timezone
 from pathlib import Path
 
+from visual_chapter_source import canonical_chapter_sha256
+
 
 ROOT = Path(__file__).resolve().parents[1]
 STRUCTURE = ROOT / "book_structure.json"
@@ -76,7 +78,7 @@ def main() -> None:
                 "chapter_id": chapter_id,
                 "title": chapter["title"],
                 "chapter_path": chapter["file"],
-                "chapter_sha256": digest(chapter_path),
+                "chapter_sha256": canonical_chapter_sha256(chapter_path),
                 "part_id": part["id"],
                 "part_index": part_index,
                 "chapter_index": chapter_index,

@@ -1,0 +1,159 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/youtube_publication_preflight.schema.json",
+  "title": "ASI Stack YouTube Publication Preflight",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at_utc",
+    "state",
+    "upload_plan_path",
+    "upload_plan_sha256",
+    "channel_id",
+    "entry_count",
+    "ready_entry_count",
+    "local_master_total_bytes",
+    "studio_browser_route",
+    "data_api_route",
+    "entries",
+    "official_platform_sources",
+    "external_mutation_authorized_now",
+    "support_state_effect",
+    "book_claim_release_effect"
+  ],
+  "properties": {
+    "schema_version": {"const": "asi_stack.youtube_publication_preflight.v1"},
+    "generated_at_utc": {"type": "string", "format": "date-time"},
+    "state": {"const": "ready_not_authorized"},
+    "upload_plan_path": {"const": "visual_edition/youtube_upload_plan.json"},
+    "upload_plan_sha256": {"pattern": "^[0-9a-f]{64}$"},
+    "channel_id": {"const": "UCX7Tu67cGmKfT6O38xxiQFA"},
+    "entry_count": {"const": 84},
+    "ready_entry_count": {"const": 84},
+    "local_master_total_bytes": {"type": "integer", "minimum": 1},
+    "studio_browser_route": {
+      "type": "object",
+      "required": [
+        "adapter",
+        "signed_in_channel_recheck_required_at_execution",
+        "maximum_files_per_upload_dialog",
+        "batch_count",
+        "batch_sizes",
+        "daily_video_upload_limit_is_channel_specific",
+        "daily_thumbnail_limit_is_channel_specific",
+        "resume_policy"
+      ],
+      "properties": {
+        "adapter": {"const": "youtube_studio_signed_in_browser"},
+        "signed_in_channel_recheck_required_at_execution": {"const": true},
+        "maximum_files_per_upload_dialog": {"const": 15},
+        "batch_count": {"const": 6},
+        "batch_sizes": {
+          "const": [15, 15, 15, 15, 15, 9]
+        },
+        "daily_video_upload_limit_is_channel_specific": {"const": true},
+        "daily_thumbnail_limit_is_channel_specific": {"const": true},
+        "resume_policy": {
+          "const": "stop on a platform limit or unresolved check; preserve completed unlisted identities and resume without duplicate upload"
+        }
+      },
+      "additionalProperties": false
+    },
+    "data_api_route": {
+      "type": "object",
+      "required": [
+        "adapter",
+        "oauth_and_verified_api_project_required",
+        "unverified_api_projects_force_private_uploads",
+        "default_daily_video_insert_calls",
+        "default_daily_other_units",
+        "operation_costs",
+        "minimum_quota_days_for_complete_batch",
+        "quota_schedule"
+      ],
+      "properties": {
+        "adapter": {"const": "youtube_data_api_v3_resumable"},
+        "oauth_and_verified_api_project_required": {"const": true},
+        "unverified_api_projects_force_private_uploads": {"const": true},
+        "default_daily_video_insert_calls": {"const": 100},
+        "default_daily_other_units": {"const": 10000},
+        "operation_costs": {
+          "const": {
+            "videos_insert": 1,
+            "playlists_insert": 50,
+            "playlist_items_insert": 50,
+            "thumbnails_set": 50,
+            "captions_insert": 400,
+            "videos_update": 50,
+            "playlists_update": 50
+          }
+        },
+        "minimum_quota_days_for_complete_batch": {"const": 5},
+        "quota_schedule": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "items": {
+            "type": "object",
+            "required": ["day", "video_insert_calls", "other_units", "operations"],
+            "properties": {
+              "day": {"type": "integer", "minimum": 1, "maximum": 5},
+              "video_insert_calls": {"type": "integer", "minimum": 0, "maximum": 100},
+              "other_units": {"type": "integer", "minimum": 0, "maximum": 10000},
+              "operations": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "entries": {
+      "type": "array",
+      "minItems": 84,
+      "maxItems": 84,
+      "items": {
+        "type": "object",
+        "required": [
+          "position",
+          "chapter_id",
+          "master_path",
+          "master_sha256",
+          "master_bytes",
+          "caption_path",
+          "caption_sha256",
+          "caption_bytes",
+          "thumbnail_path",
+          "thumbnail_sha256",
+          "thumbnail_bytes",
+          "ready"
+        ],
+        "properties": {
+          "position": {"type": "integer", "minimum": 1, "maximum": 84},
+          "chapter_id": {"type": "string", "minLength": 3},
+          "master_path": {"pattern": "^build/visual_edition/final/.+\\.mp4$"},
+          "master_sha256": {"pattern": "^[0-9a-f]{64}$"},
+          "master_bytes": {"type": "integer", "minimum": 1},
+          "caption_path": {"pattern": "^visual_edition/chapters/.+/captions\\.vtt$"},
+          "caption_sha256": {"pattern": "^[0-9a-f]{64}$"},
+          "caption_bytes": {"type": "integer", "minimum": 1, "maximum": 104857600},
+          "thumbnail_path": {"pattern": "^build/visual_edition/thumbnails/.+\\.png$"},
+          "thumbnail_sha256": {"pattern": "^[0-9a-f]{64}$"},
+          "thumbnail_bytes": {"type": "integer", "minimum": 1, "maximum": 2097152},
+          "ready": {"const": true}
+        },
+        "additionalProperties": false
+      }
+    },
+    "official_platform_sources": {
+      "type": "array",
+      "minItems": 7,
+      "uniqueItems": true,
+      "items": {"type": "string", "format": "uri"}
+    },
+    "external_mutation_authorized_now": {"const": false},
+    "support_state_effect": {"const": "none"},
+    "book_claim_release_effect": {"const": "none"}
+  },
+  "additionalProperties": false
+}

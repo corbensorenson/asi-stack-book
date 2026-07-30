@@ -1,5 +1,30 @@
 # Changelog
 
+## 2026-07-29 — P7.3 YouTube publication-transaction hardening
+
+- Added an exact 84-row publication preflight over every final master,
+  reviewed caption track, and upload thumbnail, including byte counts, digests,
+  the 1,015,153,522-byte master total, six bounded YouTube Studio batches, and
+  a five-day default-quota Data API fallback derived from current official
+  platform constraints. The record remains explicitly
+  `ready_not_authorized`.
+- Added schema-bound platform receipts and a complete-edition reconciler that
+  requires one exact authorization scope, unique video and playlist-item
+  identities, ordered playlist positions, exact metadata, captions,
+  thumbnails, HD processing, embeddability, public reachability, and zero
+  support-state effect before projecting publication into the repository.
+- Made the repository write transaction rollback-complete: packets, channel
+  identity, manifest, ledger, and all 84 canonical chapters are snapshotted
+  and restored if generation, embed synchronization, or validation fails.
+- Repaired a self-staleness defect by defining the chapter digest over
+  canonical manuscript content with the generated visual-abstract block
+  excluded. A managed player/transcript insertion now preserves the packet
+  binding, while a material manuscript edit still invalidates it.
+- Strengthened clean-CI validation so every preflight row and every eventual
+  platform receipt is independently checked against the tracked upload plan,
+  even though the roughly 1 GB ignored media cache is intentionally absent.
+  No YouTube, playlist, publication, or Quarto-embed mutation occurred.
+
 ## 2026-07-29 — P7.3 CI coverage reconciliation
 
 - Reconciled validator coverage for the two per-media P7.3 validators. Both
