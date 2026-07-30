@@ -23,6 +23,7 @@
     "accessibility",
     "platform_observation",
     "supersedes_video_id",
+    "predecessor_disposition",
     "support_state_effect",
     "book_claim_release_effect",
     "non_claims"
@@ -140,6 +141,33 @@
         {"type": "string", "pattern": "^[A-Za-z0-9_-]{11}$"}
       ]
     },
+    "predecessor_disposition": {
+      "oneOf": [
+        {"type": "null"},
+        {
+          "type": "object",
+          "required": [
+            "video_id",
+            "old_playlist_item_id",
+            "privacy_status",
+            "playlist_state",
+            "current_pointer_state",
+            "observed_at_utc",
+            "observation_payload_sha256"
+          ],
+          "properties": {
+            "video_id": {"pattern": "^[A-Za-z0-9_-]{11}$"},
+            "old_playlist_item_id": {"pattern": "^[A-Za-z0-9_-]{8,128}$"},
+            "privacy_status": {"const": "unlisted"},
+            "playlist_state": {"const": "removed_from_canonical_playlist"},
+            "current_pointer_state": {"const": "points_to_successor"},
+            "observed_at_utc": {"type": "string", "format": "date-time"},
+            "observation_payload_sha256": {"pattern": "^[0-9a-f]{64}$"}
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
     "support_state_effect": {"const": "none"},
     "book_claim_release_effect": {"const": "none"},
     "non_claims": {
@@ -149,5 +177,25 @@
       "items": {"type": "string", "minLength": 20}
     }
   },
+  "allOf": [
+    {
+      "if": {"properties": {"generation": {"const": 1}}},
+      "then": {
+        "properties": {
+          "supersedes_video_id": {"const": null},
+          "predecessor_disposition": {"const": null}
+        }
+      },
+      "else": {
+        "properties": {
+          "supersedes_video_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]{11}$"
+          },
+          "predecessor_disposition": {"type": "object"}
+        }
+      }
+    }
+  ],
   "additionalProperties": false
 }

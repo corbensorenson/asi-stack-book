@@ -159,6 +159,7 @@ def main() -> None:
             "observation_payload_sha256": sha256(observation),
         },
         "supersedes_video_id": args.supersedes_video_id,
+        "predecessor_disposition": None,
         "support_state_effect": "none",
         "book_claim_release_effect": "none",
         "non_claims": [

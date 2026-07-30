@@ -1,0 +1,181 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/youtube_supersession_plan.schema.json",
+  "title": "ASI Stack YouTube Supersession Plan",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "plan_id",
+    "generated_at_utc",
+    "state",
+    "channel_id",
+    "playlist_id",
+    "playlist_position",
+    "chapter_id",
+    "chapter_path",
+    "stable_internal_video_id",
+    "generation",
+    "change_reason",
+    "predecessor",
+    "replacement",
+    "idempotency_key",
+    "ordered_platform_steps",
+    "rollback_contract",
+    "allowed_platform_mutations",
+    "prohibited_mutations",
+    "stop_conditions",
+    "external_mutation_authorized_now",
+    "support_state_effect",
+    "book_claim_release_effect",
+    "non_claims"
+  ],
+  "properties": {
+    "schema_version": {"const": "asi_stack.youtube_supersession_plan.v1"},
+    "plan_id": {"pattern": "^youtube-supersession-[a-z0-9-]+-g[2-9][0-9]*$"},
+    "generated_at_utc": {"type": "string", "format": "date-time"},
+    "state": {"const": "ready_not_authorized"},
+    "channel_id": {"const": "UCX7Tu67cGmKfT6O38xxiQFA"},
+    "playlist_id": {"type": "string", "minLength": 10},
+    "playlist_position": {"type": "integer", "minimum": 1, "maximum": 84},
+    "chapter_id": {"pattern": "^[a-z0-9-]+$"},
+    "chapter_path": {"pattern": "^chapters/.+\\.qmd$"},
+    "stable_internal_video_id": {"pattern": "^asi-video-[a-z0-9-]+$"},
+    "generation": {"type": "integer", "minimum": 2},
+    "change_reason": {"type": "string", "minLength": 20},
+    "predecessor": {
+      "type": "object",
+      "required": [
+        "generation",
+        "video_id",
+        "watch_url",
+        "playlist_item_id",
+        "platform_receipt_path",
+        "platform_receipt_sha256",
+        "uploaded_output_sha256",
+        "bound_chapter_sha256",
+        "bound_source_commit",
+        "required_final_disposition"
+      ],
+      "properties": {
+        "generation": {"type": "integer", "minimum": 1},
+        "video_id": {"pattern": "^[A-Za-z0-9_-]{11}$"},
+        "watch_url": {"pattern": "^https://www\\.youtube\\.com/watch\\?v=[A-Za-z0-9_-]{11}$"},
+        "playlist_item_id": {"type": "string", "minLength": 8},
+        "platform_receipt_path": {"pattern": "^visual_edition/platform_receipts/generation-[1-9][0-9]*/.+\\.json$"},
+        "platform_receipt_sha256": {"pattern": "^[0-9a-f]{64}$"},
+        "uploaded_output_sha256": {"pattern": "^[0-9a-f]{64}$"},
+        "bound_chapter_sha256": {"pattern": "^[0-9a-f]{64}$"},
+        "bound_source_commit": {"pattern": "^[0-9a-f]{40}$"},
+        "required_final_disposition": {
+          "const": "unlisted_outside_canonical_playlist_with_pointer_to_successor"
+        }
+      },
+      "additionalProperties": false
+    },
+    "replacement": {
+      "type": "object",
+      "required": [
+        "title",
+        "description",
+        "tags",
+        "category_id",
+        "made_for_kids",
+        "contains_synthetic_narration_disclosure",
+        "local_master_path",
+        "local_master_sha256",
+        "local_master_bytes",
+        "caption_path",
+        "caption_sha256",
+        "thumbnail_path",
+        "thumbnail_sha256",
+        "bound_chapter_sha256",
+        "bound_source_commit",
+        "initial_upload_privacy",
+        "desired_final_privacy"
+      ],
+      "properties": {
+        "title": {"type": "string", "minLength": 10, "maxLength": 100},
+        "description": {"type": "string", "minLength": 100, "maxLength": 5000},
+        "tags": {"type": "array", "minItems": 3, "uniqueItems": true, "items": {"type": "string"}},
+        "category_id": {"const": "27"},
+        "made_for_kids": {"const": false},
+        "contains_synthetic_narration_disclosure": {"const": true},
+        "local_master_path": {"pattern": "^build/visual_edition/final/.+\\.mp4$"},
+        "local_master_sha256": {"pattern": "^[0-9a-f]{64}$"},
+        "local_master_bytes": {"type": "integer", "minimum": 1},
+        "caption_path": {"pattern": "^visual_edition/chapters/.+/captions\\.vtt$"},
+        "caption_sha256": {"pattern": "^[0-9a-f]{64}$"},
+        "thumbnail_path": {"pattern": "^build/visual_edition/thumbnails/.+\\.png$"},
+        "thumbnail_sha256": {"pattern": "^[0-9a-f]{64}$"},
+        "bound_chapter_sha256": {"pattern": "^[0-9a-f]{64}$"},
+        "bound_source_commit": {"pattern": "^[0-9a-f]{40}$"},
+        "initial_upload_privacy": {"const": "unlisted"},
+        "desired_final_privacy": {"const": "public"}
+      },
+      "additionalProperties": false
+    },
+    "idempotency_key": {"pattern": "^asi-youtube-supersession:[a-z0-9-]+:g[2-9][0-9]*:[0-9a-f]{64}$"},
+    "ordered_platform_steps": {
+      "const": [
+        "recheck exact signed-in channel and scope digest",
+        "upload the replacement master once as unlisted",
+        "wait for HD processing and apply exact metadata captions and thumbnail",
+        "insert the replacement at the predecessor canonical playlist position",
+        "verify replacement watch accessibility metadata captions thumbnail and playlist position",
+        "set the replacement public",
+        "mark the predecessor description with a current-generation pointer",
+        "set the predecessor unlisted and remove its old canonical playlist item",
+        "record replacement and predecessor-disposition observations",
+        "reconcile packet generation ledger and Quarto embed atomically"
+      ]
+    },
+    "rollback_contract": {
+      "const": [
+        "before replacement publication retain the predecessor as current and keep the candidate unlisted",
+        "if playlist switching fails restore the predecessor playlist item and keep the candidate unlisted",
+        "if repository reconciliation fails restore packet ledger manifest and Quarto bytes while retaining platform receipts",
+        "never delete either generation as an automatic rollback"
+      ]
+    },
+    "allowed_platform_mutations": {
+      "const": [
+        "upload one exact replacement master",
+        "apply exact replacement metadata captions and thumbnail",
+        "insert one replacement playlist item at the predecessor position",
+        "set the replacement public after all checks pass",
+        "annotate and set the predecessor unlisted",
+        "remove only the predecessor canonical playlist item",
+        "read exact platform state for receipts"
+      ]
+    },
+    "prohibited_mutations": {
+      "const": [
+        "delete either video generation",
+        "modify any unrelated video playlist comment subscription or channel setting",
+        "reuse this plan for another chapter generation or master digest",
+        "duplicate a completed replacement upload",
+        "leave both generations in the canonical playlist",
+        "mark the replacement current before receipt and embed reconciliation"
+      ]
+    },
+    "stop_conditions": {
+      "const": [
+        "signed-in channel playlist predecessor or digest identity differs",
+        "the replacement no longer matches its validated packet inputs",
+        "YouTube reports a limit policy warning unresolved processing error or ambiguous mutation result",
+        "accessibility metadata playlist order or predecessor disposition cannot be verified",
+        "receipt or repository reconciliation validation fails"
+      ]
+    },
+    "external_mutation_authorized_now": {"const": false},
+    "support_state_effect": {"const": "none"},
+    "book_claim_release_effect": {"const": "none"},
+    "non_claims": {
+      "type": "array",
+      "minItems": 4,
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 20}
+    }
+  },
+  "additionalProperties": false
+}

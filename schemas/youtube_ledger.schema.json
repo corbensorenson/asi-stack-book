@@ -38,7 +38,9 @@
         "youtube_objects",
         "published_current",
         "stale_or_superseded",
-        "replacement_required"
+        "replacement_required",
+        "platform_generations",
+        "historical_generations"
       ],
       "additionalProperties": {"type": "integer", "minimum": 0}
     },
@@ -58,6 +60,7 @@
           "lifecycle_state",
           "staleness_state",
           "youtube",
+          "generations",
           "required_action"
         ],
         "properties": {
@@ -88,6 +91,48 @@
               "supersedes_video_id"
             ]
           },
+          "generations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "generation",
+                "video_id",
+                "watch_url",
+                "playlist_id",
+                "playlist_item_id",
+                "publication_state",
+                "platform_receipt_path",
+                "platform_receipt_sha256",
+                "uploaded_output_sha256",
+                "bound_chapter_sha256",
+                "bound_source_commit",
+                "published_at_utc",
+                "supersedes_video_id"
+              ],
+              "properties": {
+                "generation": {"type": "integer", "minimum": 1},
+                "video_id": {"pattern": "^[A-Za-z0-9_-]{11}$"},
+                "watch_url": {"pattern": "^https://www\\.youtube\\.com/watch\\?v=[A-Za-z0-9_-]{11}$"},
+                "playlist_id": {"type": "string", "minLength": 10},
+                "playlist_item_id": {"type": "string", "minLength": 8},
+                "publication_state": {"enum": ["published_current", "stale", "superseded"]},
+                "platform_receipt_path": {"pattern": "^visual_edition/platform_receipts/generation-[1-9][0-9]*/.+\\.json$"},
+                "platform_receipt_sha256": {"pattern": "^[0-9a-f]{64}$"},
+                "uploaded_output_sha256": {"pattern": "^[0-9a-f]{64}$"},
+                "bound_chapter_sha256": {"pattern": "^[0-9a-f]{64}$"},
+                "bound_source_commit": {"pattern": "^[0-9a-f]{40}$"},
+                "published_at_utc": {"type": "string", "format": "date-time"},
+                "supersedes_video_id": {
+                  "oneOf": [
+                    {"type": "null"},
+                    {"type": "string", "pattern": "^[A-Za-z0-9_-]{11}$"}
+                  ]
+                }
+              },
+              "additionalProperties": false
+            }
+          },
           "required_action": {
             "enum": [
               "create_derivative_packet",
@@ -96,7 +141,7 @@
               "prepare_youtube_metadata_and_receipt",
               "obtain_action_time_upload_authority",
               "monitor_chapter_freshness",
-              "upload_new_generation_and_reconcile_embed",
+              "prepare_supersession_plan",
               "regenerate_stale_derivative",
               "retain_historical_receipt"
             ]

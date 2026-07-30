@@ -1,5 +1,26 @@
 # Changelog
 
+## 2026-07-30 — P7.3 generation-two supersession custody
+
+- Repaired chapter-video regeneration so a published YouTube identity is
+  preserved as a stale predecessor instead of being reset to an unpublished
+  blank projection.
+- Added exact generation-N supersession plans, replacement receipt recording,
+  and rollback-complete repository reconciliation. Each replacement binds its
+  validated master, caption, thumbnail, chapter, source, predecessor receipt,
+  playlist position, allowed mutations, stop conditions, and its own
+  action-time authorization digest.
+- Made the YouTube ledger derive append-only per-chapter generation history
+  from immutable receipts and reject missing generations, duplicate video IDs,
+  broken predecessor chains, or disagreement with the current packet.
+- Required replaced videos to remain retained, become unlisted, leave the
+  canonical playlist, and point to the successor. Automatic rollback never
+  deletes either generation.
+- Added a dedicated workflow validator that rejects 12 generation, identity,
+  authority, deletion, disposition, and overclaim mutations. No YouTube object
+  was created or changed; the real generation-two exercise still follows
+  generation-one publication and author feedback.
+
 ## 2026-07-29 — P7.3 YouTube publication-transaction hardening
 
 - Added an exact 84-row publication preflight over every final master,

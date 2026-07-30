@@ -14,6 +14,7 @@ from jsonschema import Draft202012Validator
 
 from build_youtube_publication_preflight import build as build_expected_youtube_preflight
 from build_youtube_ledger import build as build_expected_youtube_ledger
+from prepare_youtube_supersession import semantic_failures as supersession_plan_failures
 from visual_chapter_source import canonical_chapter_sha256, canonicalize_chapter_source
 
 
@@ -32,6 +33,8 @@ YOUTUBE_MUTATION_SCOPE_SCHEMA = ROOT / "schemas/youtube_mutation_scope.schema.js
 YOUTUBE_PREFLIGHT = ROOT / "visual_edition/youtube_publication_preflight.json"
 YOUTUBE_PREFLIGHT_SCHEMA = ROOT / "schemas/youtube_publication_preflight.schema.json"
 YOUTUBE_PLATFORM_RECEIPT_SCHEMA = ROOT / "schemas/youtube_platform_receipt.schema.json"
+YOUTUBE_SUPERSESSION_SCHEMA = ROOT / "schemas/youtube_supersession_plan.schema.json"
+YOUTUBE_SUPERSESSION_ROOT = ROOT / "visual_edition/supersession_plans"
 GRAMMAR = ROOT / "visual_edition/visual_grammar.json"
 GRAMMAR_SCHEMA = ROOT / "schemas/visual_grammar.schema.json"
 TOOLCHAIN = ROOT / "visual_edition/toolchain.json"
@@ -330,32 +333,107 @@ def errors(manifest: dict, grammar: dict | None = None) -> list[str]:
         packet = load(packet_path)
         packets.append(packet)
         failures.extend(schema_errors(packet, PACKET_SCHEMA, chapter["id"]))
+        youtube_projection = packet.get("youtube", {})
+        publication_entry = upload_entry
+        publication_master_bytes = preflight_entry.get("master_bytes")
+        current_generation = int(youtube_projection.get("generation", 0))
+        target_generation = (
+            current_generation + 1
+            if youtube_projection.get("publication_state") == "stale"
+            else current_generation
+        )
+        if target_generation >= 2:
+            supersession_path = (
+                YOUTUBE_SUPERSESSION_ROOT
+                / f"{chapter['id']}-g{target_generation}.json"
+            )
+            if not supersession_path.is_file():
+                failures.append(
+                    f"{chapter['id']}: generation {target_generation} "
+                    "supersession plan missing"
+                )
+                supersession_plan = None
+            else:
+                supersession_plan = load(supersession_path)
+                failures.extend(
+                    schema_errors(
+                        supersession_plan,
+                        YOUTUBE_SUPERSESSION_SCHEMA,
+                        f"{chapter['id']}:youtube-supersession-plan",
+                    )
+                )
+                failures.extend(
+                    f"{chapter['id']}: supersession plan {failure}"
+                    for failure in supersession_plan_failures(
+                        supersession_plan
+                    )
+                )
+                supersession_exact = {
+                    "chapter_id": chapter["id"],
+                    "chapter_path": chapter["file"],
+                    "stable_internal_video_id": packet.get("video_id"),
+                    "generation": target_generation,
+                    "playlist_position": manifest_position,
+                }
+                for key, expected in supersession_exact.items():
+                    if supersession_plan.get(key) != expected:
+                        failures.append(
+                            f"{chapter['id']}: supersession plan {key} drift"
+                        )
+                replacement = supersession_plan.get("replacement", {})
+                publication_entry = {
+                    "chapter_id": chapter["id"],
+                    "stable_internal_video_id": packet.get("video_id"),
+                    "generation": target_generation,
+                    "title": replacement.get("title"),
+                    "description": replacement.get("description"),
+                    "tags": replacement.get("tags"),
+                    "category_id": replacement.get("category_id"),
+                    "made_for_kids": replacement.get("made_for_kids"),
+                    "contains_synthetic_narration_disclosure": replacement.get(
+                        "contains_synthetic_narration_disclosure"
+                    ),
+                    "thumbnail_path": replacement.get("thumbnail_path"),
+                    "thumbnail_sha256": replacement.get("thumbnail_sha256"),
+                    "caption_path": replacement.get("caption_path"),
+                    "local_master_path": replacement.get("local_master_path"),
+                    "local_master_sha256": replacement.get(
+                        "local_master_sha256"
+                    ),
+                    "desired_playlist_position": manifest_position,
+                }
+                publication_master_bytes = replacement.get(
+                    "local_master_bytes"
+                )
         if upload_entry.get("stable_internal_video_id") != packet.get("video_id"):
             failures.append(f"{chapter['id']}: upload-plan stable video identity drift")
-        if (
+        if target_generation < 2 and (
             upload_entry.get("thumbnail_source_path")
             != packet.get("artifacts", {}).get("thumbnail")
         ):
             failures.append(f"{chapter['id']}: upload-plan thumbnail-source drift")
         thumbnail_source = ROOT / packet.get("artifacts", {}).get("thumbnail", "")
         if (
+            target_generation < 2
+            and (
             not thumbnail_source.is_file()
             or upload_entry.get("thumbnail_source_sha256")
             != digest(thumbnail_source)
+            )
         ):
             failures.append(f"{chapter['id']}: upload-plan thumbnail-source digest drift")
         expected_thumbnail = f"build/visual_edition/thumbnails/{chapter['id']}.png"
-        if upload_entry.get("thumbnail_path") != expected_thumbnail:
-            failures.append(f"{chapter['id']}: upload-plan thumbnail path drift")
+        if publication_entry.get("thumbnail_path") != expected_thumbnail:
+            failures.append(f"{chapter['id']}: current publication thumbnail path drift")
         local_thumbnail = ROOT / expected_thumbnail
         if (
             local_thumbnail.is_file()
-            and upload_entry.get("thumbnail_sha256") != digest(local_thumbnail)
+            and publication_entry.get("thumbnail_sha256") != digest(local_thumbnail)
         ):
-            failures.append(f"{chapter['id']}: upload-plan thumbnail digest drift")
-        if upload_entry.get("caption_path") != packet.get("artifacts", {}).get("captions"):
-            failures.append(f"{chapter['id']}: upload-plan caption path drift")
-        description = upload_entry.get("description", "")
+            failures.append(f"{chapter['id']}: current publication thumbnail digest drift")
+        if publication_entry.get("caption_path") != packet.get("artifacts", {}).get("captions"):
+            failures.append(f"{chapter['id']}: current publication caption path drift")
+        description = publication_entry.get("description", "")
         if (
             packet.get("chapter_sha256") not in description
             or packet.get("source_commit") not in description
@@ -500,12 +578,12 @@ def errors(manifest: dict, grammar: dict | None = None) -> list[str]:
                     failures.append(f"{chapter['id']}: validated duration outside 180-360 seconds")
                 if receipt.get("output_sha256") in (None, "", "0" * 64):
                     failures.append(f"{chapter['id']}: validated render lacks digest")
-                if upload_entry.get("local_master_sha256") != receipt.get("output_sha256"):
-                    failures.append(f"{chapter['id']}: upload-plan local master digest drift")
-            elif upload_entry.get("local_master_sha256") is not None:
-                failures.append(f"{chapter['id']}: upload-plan digest without validated master")
-        elif upload_entry.get("local_master_sha256") is not None:
-            failures.append(f"{chapter['id']}: upload-plan digest without render receipt")
+                if publication_entry.get("local_master_sha256") != receipt.get("output_sha256"):
+                    failures.append(f"{chapter['id']}: current publication master digest drift")
+            elif publication_entry.get("local_master_sha256") is not None:
+                failures.append(f"{chapter['id']}: publication digest without validated master")
+        elif publication_entry.get("local_master_sha256") is not None:
+            failures.append(f"{chapter['id']}: publication digest without render receipt")
         publication = packet.get("youtube", {}).get("publication_state")
         embed = packet.get("quarto_embed", {}).get("state")
         youtube = packet.get("youtube", {})
@@ -582,11 +660,11 @@ def errors(manifest: dict, grammar: dict | None = None) -> list[str]:
                 source_upload = platform_receipt.get("source_upload", {})
                 if (
                     source_upload.get("local_master_path")
-                    != upload_entry.get("local_master_path")
+                    != publication_entry.get("local_master_path")
                     or source_upload.get("local_master_sha256")
-                    != upload_entry.get("local_master_sha256")
+                    != publication_entry.get("local_master_sha256")
                     or source_upload.get("local_master_bytes")
-                    != preflight_entry.get("master_bytes")
+                    != publication_master_bytes
                     or source_upload.get("local_master_sha256")
                     != receipt.get("output_sha256")
                     or source_upload.get("bound_chapter_sha256")
@@ -598,14 +676,14 @@ def errors(manifest: dict, grammar: dict | None = None) -> list[str]:
                         f"{chapter['id']}: platform receipt source binding drift"
                     )
                 expected_metadata = {
-                    "title_sha256": text_digest(upload_entry.get("title", "")),
+                    "title_sha256": text_digest(publication_entry.get("title", "")),
                     "description_sha256": text_digest(
-                        upload_entry.get("description", "")
+                        publication_entry.get("description", "")
                     ),
-                    "tags_sha256": tags_digest(upload_entry.get("tags", [])),
-                    "category_id": upload_entry.get("category_id"),
-                    "made_for_kids": upload_entry.get("made_for_kids"),
-                    "synthetic_narration_disclosed": upload_entry.get(
+                    "tags_sha256": tags_digest(publication_entry.get("tags", [])),
+                    "category_id": publication_entry.get("category_id"),
+                    "made_for_kids": publication_entry.get("made_for_kids"),
+                    "synthetic_narration_disclosed": publication_entry.get(
                         "contains_synthetic_narration_disclosure"
                     ),
                     "state": "exact",
@@ -616,17 +694,17 @@ def errors(manifest: dict, grammar: dict | None = None) -> list[str]:
                         failures.append(
                             f"{chapter['id']}: platform receipt metadata {key} drift"
                         )
-                caption_path = ROOT / upload_entry.get("caption_path", "")
-                thumbnail_path = ROOT / upload_entry.get("thumbnail_path", "")
+                caption_path = ROOT / publication_entry.get("caption_path", "")
+                thumbnail_path = ROOT / publication_entry.get("thumbnail_path", "")
                 expected_accessibility = {
-                    "caption_path": upload_entry.get("caption_path"),
+                    "caption_path": publication_entry.get("caption_path"),
                     "caption_sha256": (
                         digest(caption_path) if caption_path.is_file() else None
                     ),
                     "caption_language": "en",
                     "caption_state": "published",
-                    "thumbnail_path": upload_entry.get("thumbnail_path"),
-                    "thumbnail_sha256": upload_entry.get("thumbnail_sha256"),
+                    "thumbnail_path": publication_entry.get("thumbnail_path"),
+                    "thumbnail_sha256": publication_entry.get("thumbnail_sha256"),
                     "thumbnail_state": "applied",
                 }
                 accessibility = platform_receipt.get("accessibility", {})

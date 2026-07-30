@@ -12,6 +12,7 @@ REGISTRY = ROOT / "validation/registry.json"
 SCRIPT = "validate_visual_edition.py"
 EMBED_SCRIPT = "sync_visual_edition_embeds.py"
 TOOLCHAIN_SCRIPT = "validate_manim_toolchain.py"
+SUPERSESSION_SCRIPT = "validate_youtube_supersession_workflow.py"
 PILOTS = [
     "asi-is-a-stack-not-a-model",
     "capability-replacement-and-rollback",
@@ -59,6 +60,7 @@ BASE_ARTIFACTS = [
     "schemas/youtube_mutation_scope.schema.json",
     "schemas/youtube_publication_preflight.schema.json",
     "schemas/youtube_platform_receipt.schema.json",
+    "schemas/youtube_supersession_plan.schema.json",
     "scripts/capture_manim_toolchain.py",
     "scripts/validate_manim_toolchain.py",
     "scripts/render_visual_narration.py",
@@ -82,6 +84,11 @@ BASE_ARTIFACTS = [
     "scripts/validate_youtube_publication_preflight.py",
     "scripts/record_youtube_platform_receipt.py",
     "scripts/reconcile_youtube_publication_receipts.py",
+    "scripts/visual_publication_lifecycle.py",
+    "scripts/prepare_youtube_supersession.py",
+    "scripts/record_youtube_supersession_receipt.py",
+    "scripts/reconcile_youtube_supersession_receipt.py",
+    "scripts/validate_youtube_supersession_workflow.py",
     "scripts/visual_chapter_source.py",
     "scripts/validate_visual_edition.py",
     "scripts/sync_visual_edition_embeds.py",
@@ -106,7 +113,12 @@ def main() -> None:
     registry = json.loads(REGISTRY.read_text(encoding="utf-8"))
     registry["units"] = [
         unit for unit in registry["units"]
-        if unit.get("script") not in {SCRIPT, EMBED_SCRIPT, TOOLCHAIN_SCRIPT}
+        if unit.get("script") not in {
+            SCRIPT,
+            EMBED_SCRIPT,
+            TOOLCHAIN_SCRIPT,
+            SUPERSESSION_SCRIPT,
+        }
     ]
     used = {unit["order"] for unit in registry["units"]}
     order = next(index for index in range(1, len(registry["units"]) + 2) if index not in used)
@@ -221,6 +233,63 @@ def main() -> None:
         "prohibited_inference": "A qualified animation toolchain does not validate a video, prove a chapter claim, or authorize publication.",
         "contract_precision": "exact",
         "semantic_review_state": "checked_arm_runtime_lock_renderer_release_profile_binary_and_support_boundaries",
+    })
+    used.add(toolchain_order)
+    supersession_order = next(
+        index for index in range(1, len(registry["units"]) + 5)
+        if index not in used
+    )
+    registry["units"].append({
+        "id": f"{SUPERSESSION_SCRIPT}:{supersession_order}",
+        "order": supersession_order,
+        "script": SUPERSESSION_SCRIPT,
+        "args": [],
+        "execution_tier": "pr",
+        "validation_class": "publication_gate",
+        "input_contract": "Visual packet regeneration, immutable generation receipts, current YouTube ledger, generation-N supersession-plan schema, replacement receipt schema, exact predecessor disposition, idempotency, rollback, and no-authority contracts.",
+        "input_artifacts": [
+            "visual_edition/youtube_ledger.json",
+            "schemas/youtube_ledger.schema.json",
+            "schemas/youtube_platform_receipt.schema.json",
+            "schemas/youtube_supersession_plan.schema.json",
+            "scripts/visual_publication_lifecycle.py",
+            "scripts/generate_visual_chapter_packets.py",
+            "scripts/build_youtube_ledger.py",
+            "scripts/prepare_youtube_supersession.py",
+            "scripts/record_youtube_supersession_receipt.py",
+            "scripts/reconcile_youtube_supersession_receipt.py",
+            "scripts/validate_youtube_supersession_workflow.py",
+        ],
+        "output_contract": "Reject predecessor erasure during regeneration, generation gaps, broken predecessor chains, identical replacements, idempotency drift, premature authority, deletion permission, incomplete rollback, reused video IDs, missing or wrong predecessor disposition, and support promotion.",
+        "output_assertions": [
+            "published predecessor preserved as stale during regeneration",
+            "generation receipts remain contiguous and append-only",
+            "one exact predecessor per replacement",
+            "replacement video ID differs from predecessor",
+            "predecessor becomes unlisted outside canonical playlist",
+            "rollback never deletes either generation",
+            "twelve rejecting mutations",
+            "support-state effect none",
+        ],
+        "claim_scope": "Visual-publication revision identity, generation custody, playlist/embed handoff, predecessor retention, and rollback only.",
+        "negative_controls": "validator_owned_twelve_generation_predecessor_idempotency_authority_deletion_rollback_receipt_and_support_mutations",
+        "negative_control_cases": [
+            "generation gap",
+            "identical predecessor",
+            "idempotency drift",
+            "premature authority",
+            "delete permission",
+            "rollback deletion",
+            "support promotion",
+            "video ID reuse",
+            "missing predecessor disposition",
+            "wrong old playlist item",
+            "predecessor deletion",
+            "support promotion receipt",
+        ],
+        "prohibited_inference": "A correct replacement transaction does not validate the chapter claim, promote evidence, establish safety, or authorize any platform mutation.",
+        "contract_precision": "exact",
+        "semantic_review_state": "checked_generation_chain_predecessor_retention_idempotency_rollback_playlist_embed_and_support_boundaries",
     })
     for artifact in artifacts:
         if artifact not in registry["required_artifacts"]:

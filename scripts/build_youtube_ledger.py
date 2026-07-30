@@ -14,6 +14,7 @@ STRUCTURE = ROOT / "book_structure.json"
 VISUAL_MANIFEST = ROOT / "visual_edition/manifest.json"
 CHANNEL = ROOT / "visual_edition/youtube_channel.json"
 OUT = ROOT / "visual_edition/youtube_ledger.json"
+RECEIPT_ROOT = ROOT / "visual_edition/platform_receipts"
 
 
 def load(path: Path) -> dict:
@@ -46,6 +47,14 @@ def required_action(packet: dict | None) -> str:
         return "create_derivative_packet"
     state = packet["lifecycle_state"]
     youtube = packet["youtube"]
+    if youtube.get("publication_state") == "stale" and youtube.get("video_id"):
+        if (
+            state == "ready_not_published"
+            and packet.get("render_receipt", {}).get("validation_state")
+            == "validated"
+        ):
+            return "prepare_supersession_plan"
+        return "regenerate_stale_derivative"
     if state in {"planned", "storyboarded", "scripted"}:
         return "finish_derivative_packet"
     if state == "rendered":
@@ -56,11 +65,80 @@ def required_action(packet: dict | None) -> str:
         return "obtain_action_time_upload_authority"
     if state == "published_current":
         return "monitor_chapter_freshness"
-    if state == "stale" and youtube.get("video_id"):
-        return "upload_new_generation_and_reconcile_embed"
     if state == "stale":
         return "regenerate_stale_derivative"
     return "retain_historical_receipt"
+
+
+def generation_history(
+    chapter_id: str,
+    current: dict,
+    receipt_root: Path = RECEIPT_ROOT,
+) -> list[dict]:
+    rows = []
+    for path in sorted(receipt_root.glob(f"generation-*/{chapter_id}.json")):
+        receipt = load(path)
+        try:
+            receipt_relative = path.relative_to(ROOT)
+        except ValueError:
+            receipt_relative = (
+                Path("visual_edition/platform_receipts")
+                / path.relative_to(receipt_root)
+            )
+        if (
+            receipt.get("video_id") == current.get("video_id")
+            and current.get("publication_state") in {"published_current", "stale"}
+        ):
+            state = current["publication_state"]
+        else:
+            state = "superseded"
+        rows.append({
+            "generation": receipt["generation"],
+            "video_id": receipt["video_id"],
+            "watch_url": receipt["watch_url"],
+            "playlist_id": receipt["playlist_id"],
+            "playlist_item_id": receipt["playlist_item_id"],
+            "publication_state": state,
+            "platform_receipt_path": str(receipt_relative),
+            "platform_receipt_sha256": digest(path),
+            "uploaded_output_sha256": receipt["source_upload"][
+                "local_master_sha256"
+            ],
+            "bound_chapter_sha256": receipt["source_upload"][
+                "bound_chapter_sha256"
+            ],
+            "bound_source_commit": receipt["source_upload"][
+                "bound_source_commit"
+            ],
+            "published_at_utc": receipt["platform_observation"][
+                "observed_at_utc"
+            ],
+            "supersedes_video_id": receipt["supersedes_video_id"],
+        })
+    rows = sorted(rows, key=lambda row: row["generation"])
+    generations = [row["generation"] for row in rows]
+    if generations and generations != list(range(1, generations[-1] + 1)):
+        raise SystemExit(
+            f"{chapter_id}: non-contiguous YouTube generation history {generations}"
+        )
+    if len({row["video_id"] for row in rows}) != len(rows):
+        raise SystemExit(f"{chapter_id}: duplicate video ID in generation history")
+    for index, row in enumerate(rows):
+        expected_predecessor = None if index == 0 else rows[index - 1]["video_id"]
+        if row["supersedes_video_id"] != expected_predecessor:
+            raise SystemExit(
+                f"{chapter_id}: broken predecessor chain at generation "
+                f"{row['generation']}"
+            )
+    if (
+        rows
+        and current.get("publication_state") in {"published_current", "stale"}
+        and rows[-1]["video_id"] != current.get("video_id")
+    ):
+        raise SystemExit(
+            f"{chapter_id}: current packet does not match latest generation receipt"
+        )
+    return rows
 
 
 def build() -> dict:
@@ -77,6 +155,8 @@ def build() -> dict:
         "published_current": 0,
         "stale_or_superseded": 0,
         "replacement_required": 0,
+        "platform_generations": 0,
+        "historical_generations": 0,
     }
     position = 0
     for part in structure["parts"]:
@@ -87,16 +167,21 @@ def build() -> dict:
             packet_path = row.get("packet_path")
             packet = load(ROOT / packet_path) if packet_path else None
             youtube = packet["youtube"] if packet else blank_youtube(channel_id)
+            generations = generation_history(chapter_id, youtube)
             if packet:
                 counts["packets_present"] += 1
-            if youtube.get("video_id"):
-                counts["youtube_objects"] += 1
+            counts["youtube_objects"] += len(generations)
+            counts["platform_generations"] += len(generations)
+            counts["historical_generations"] += sum(
+                item["publication_state"] == "superseded"
+                for item in generations
+            )
             if youtube["publication_state"] == "published_current":
                 counts["published_current"] += 1
             if youtube["publication_state"] in {"stale", "superseded"}:
                 counts["stale_or_superseded"] += 1
             action = required_action(packet)
-            if action == "upload_new_generation_and_reconcile_embed":
+            if action == "prepare_supersession_plan":
                 counts["replacement_required"] += 1
             entries.append({
                 "position": position,
@@ -112,6 +197,7 @@ def build() -> dict:
                     packet["staleness"]["state"] if packet else "not_yet_derived"
                 ),
                 "youtube": youtube,
+                "generations": generations,
                 "required_action": action,
             })
             counts["total_chapters"] += 1

@@ -13,6 +13,7 @@ import textwrap
 from pathlib import Path
 
 from visual_chapter_source import canonical_chapter_sha256
+from visual_publication_lifecycle import preserve_predecessor_projection
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -465,6 +466,12 @@ def build_packet(chapter: dict, spec: dict, chapter_sha: str, source_commit: str
 def write_chapter(chapter: dict, next_chapter: dict, index: int, source_commit: str) -> None:
     directory = ROOT / "visual_edition/chapters" / chapter["id"]
     directory.mkdir(parents=True, exist_ok=True)
+    prior_packet_path = directory / "packet.json"
+    prior_packet = (
+        json.loads(prior_packet_path.read_text(encoding="utf-8"))
+        if prior_packet_path.is_file()
+        else None
+    )
     chapter_sha = canonical_chapter_sha256(ROOT / chapter["file"])
     content = build_content(chapter, next_chapter, index)
     content["chapter_id"] = chapter["id"]
@@ -524,7 +531,10 @@ def write_chapter(chapter: dict, next_chapter: dict, index: int, source_commit: 
         build_thumbnail(chapter, spec_for_docs),
         encoding="utf-8",
     )
-    packet = build_packet(chapter, spec_for_docs, chapter_sha, source_commit)
+    packet = preserve_predecessor_projection(
+        prior_packet,
+        build_packet(chapter, spec_for_docs, chapter_sha, source_commit),
+    )
     (directory / "packet.json").write_text(
         json.dumps(packet, indent=2, ensure_ascii=False) + "\n",
         encoding="utf-8",

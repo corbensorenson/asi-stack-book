@@ -3814,6 +3814,52 @@ The observable state remains 84/84 `ready_not_published`, zero playlist
 entries, zero publications, and zero embeds. Exact action-time authority is
 still required before the signed-in Studio transaction begins.
 
+#### P7.3-F7 generation-two preservation and supersession custody — 2026-07-30
+
+The update path is now executable before the first publication. Packet
+regeneration no longer replaces a published YouTube projection with a blank
+unpublished projection. It preserves the latest video, playlist, generation,
+receipt, upload, chapter, and source identities as a `stale` predecessor and
+removes only the managed current-embed projection. This closes the failure
+mode in which local regeneration could silently lose custody of a still-live
+public derivative.
+
+The generated ledger now derives each chapter's append-only generation history
+from immutable `generation-N` platform receipts. It rejects a missing
+generation, duplicate video identity, broken `supersedes_video_id` chain, or
+disagreement between the latest receipt and the packet's current projection.
+A material update is therefore a new generation, not an in-place overwrite or
+an edit that destroys historical provenance.
+
+One exact supersession plan owns each generation-two-or-later transaction. It
+binds the stale predecessor receipt; validated replacement master, caption,
+thumbnail, chapter, and source digests; exact playlist position; idempotency
+key; allowed and prohibited platform mutations; stop conditions; and a
+rollback contract that never deletes either video. The plan requires the
+replacement to be uploaded once as unlisted and made public only after HD,
+metadata, caption, thumbnail, and playlist checks. It then requires the
+predecessor to point to the successor, become unlisted, and leave the canonical
+playlist. Its file digest is the action-time authorization scope for that
+single replacement; generation-one authority cannot be reused.
+
+The generation-N receipt and repository reconciler independently prove the new
+public object and the predecessor's final disposition before changing the
+packet, ledger, manifest, or Quarto embed. Repository changes are snapshotted
+and restored on failure; immutable platform receipts survive, and automatic
+rollback never deletes a platform generation. The dedicated validator rejects
+12 negative mutations covering generation gaps, identical replacements,
+idempotency drift, premature authority, deletion permissions, support
+promotion, video-ID reuse, wrong or absent predecessor disposition, private or
+deleted predecessors, and receipt overclaim.
+
+This is an implemented non-authorizing maintenance path, not a simulated
+successful replacement. Current counts remain zero platform generations and
+zero supersession plans. The real generation-two exercise remains downstream
+of the authorized complete generation-one publication and Corben's feedback
+on one published chapter. It will use a newly prepared plan and new exact
+action-time authority, preserve both generations, and create no support-state
+or book-claim-release effect.
+
 **P7.3 completion gate.** This lane is terminal only when all 84 current
 manifest chapters have validated derivative packets and current rendered
 videos; every published video is hosted on YouTube in the canonical playlist;

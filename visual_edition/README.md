@@ -12,6 +12,7 @@ the chapter's claim label, support state, maximum inference, or release scope.
 - the candidate or ratified visual grammar;
 - the canonical YouTube channel contract and generated 84-chapter
   publication/revision ledger;
+- immutable generation receipts and exact, non-authorizing replacement plans;
 - reusable Manim source;
 - per-chapter packet metadata, storyboard, scene code, narration, reviewed
   captions, descriptive transcript, thumbnail, and render/platform receipts.
@@ -65,6 +66,7 @@ python3 scripts/build_youtube_thumbnail_review_sheets.py
 python3 scripts/build_youtube_upload_plan.py
 python3 scripts/build_youtube_publication_preflight.py
 python3 scripts/validate_youtube_publication_preflight.py
+python3 scripts/validate_youtube_supersession_workflow.py
 python3 scripts/validate_visual_edition.py
 python3 scripts/sync_visual_edition_embeds.py
 ```
@@ -160,6 +162,53 @@ becomes `published_current`, the old packet generation becomes `superseded`,
 and the Quarto embed is reconciled to the new ID. The validator rejects a stale
 ledger, a mismatched uploaded/render digest, a missing platform receipt, a
 wrong channel, or an embed that does not match the current publication state.
+Regenerating a packet preserves any existing platform identity as `stale`
+instead of resetting it to an unpublished blank. The ledger derives its
+append-only `generations` history from immutable receipts under
+`visual_edition/platform_receipts/generation-N/`; it rejects gaps, duplicate
+video IDs, broken predecessor chains, or disagreement between the latest
+receipt and the packet's current platform projection.
+
+After a published chapter is materially revised and its new local derivative
+is validated, prepare its replacement transaction:
+
+```bash
+python3 scripts/prepare_youtube_supersession.py \
+  --chapter-id <chapter-id> \
+  --change-reason "<material revision>" \
+  --write
+python3 scripts/validate_youtube_supersession_workflow.py
+```
+
+The resulting `visual_edition/supersession_plans/<chapter-id>-gN.json` is the
+complete allowlist, ordering, rollback, stop-condition, predecessor, and
+replacement contract for that one generation. Its file SHA-256 is the only
+valid action-time authorization scope for that replacement. Generation-one
+publication authority cannot be reused, and preparing the plan is not
+authorization. After the exact platform steps have been performed and both
+the replacement and predecessor disposition have been observed, record and
+reconcile them:
+
+```bash
+python3 scripts/record_youtube_supersession_receipt.py \
+  --plan visual_edition/supersession_plans/<chapter-id>-gN.json \
+  --authorization-scope-sha256 <exact-plan-sha256> \
+  <observed-platform-arguments> \
+  --write
+python3 scripts/reconcile_youtube_supersession_receipt.py \
+  --plan visual_edition/supersession_plans/<chapter-id>-gN.json \
+  --receipt visual_edition/platform_receipts/generation-N/<chapter-id>.json
+python3 scripts/reconcile_youtube_supersession_receipt.py \
+  --plan visual_edition/supersession_plans/<chapter-id>-gN.json \
+  --receipt visual_edition/platform_receipts/generation-N/<chapter-id>.json \
+  --write
+```
+
+The reconciler verifies the new public video, exact master and metadata,
+caption and thumbnail, playlist position, predecessor pointer, predecessor
+`unlisted` state, and removal of only the predecessor playlist item. Its
+rollback restores tracked repository bytes and never deletes either YouTube
+generation. The no-write reconciliation command is the required preview.
 
 After platform processing and public observation, use
 `record_youtube_platform_receipt.py` to bind the exact video, playlist item,
