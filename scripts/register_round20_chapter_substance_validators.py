@@ -9,6 +9,56 @@ ROOT = Path(__file__).resolve().parents[1]
 REGISTRY = ROOT / "validation/registry.json"
 UNITS = [
     {
+        "script": "validate_round22_concept_linked_claim_atom_addendum.py",
+        "input_contract": (
+            "The thirteen low-atom owners that already have eight current, digest-bound, "
+            "semantically reviewed concept contracts; one independently falsifiable "
+            "current atom for each retained material concept."
+        ),
+        "input_artifacts": [
+            "evidence_quality/round22_concept_linked_claim_atom_addendum.json",
+            "schemas/round22_concept_linked_claim_atom_addendum.schema.json",
+            "scripts/build_round22_concept_linked_claim_atom_addendum.py",
+            "scripts/validate_round22_concept_linked_claim_atom_addendum.py",
+            "scripts/register_round20_chapter_substance_validators.py",
+            "evidence_quality/chapter_substance_contract.json",
+            "book_structure.json",
+        ],
+        "output_contract": (
+            "Preserve 104 concept-linked propositions, falsifiers, source boundaries, "
+            "evidence routes, and non-claims across thirteen exact reviewed owners while "
+            "keeping count diagnostic and support unchanged."
+        ),
+        "output_assertions": [
+            "thirteen exact current owners",
+            "104 distinct reviewed concepts and atom identities",
+            "one current atom per retained material concept",
+            "current chapter-digest binding",
+            "atom count is not an acceptance target",
+            "zero support or release movement",
+            "eight mutations reject",
+        ],
+        "negative_controls": "validator_owned_eight_identity_digest_falsifier_source_and_support_mutations",
+        "negative_control_cases": [
+            "atom deletion",
+            "wrong owner",
+            "support promotion",
+            "falsifier deletion",
+            "source-boundary deletion",
+            "review mismatch",
+            "chapter-digest drift",
+            "count-target activation",
+        ],
+        "claim_scope": (
+            "Current concept-level manuscript custody and future evidence routing only."
+        ),
+        "prohibited_inference": (
+            "Concept decomposition is not proof, empirical support, atom-count quality, "
+            "safety, release authority, SOTA, AGI, or ASI."
+        ),
+        "semantic_review_state": "thirteen_current_digest_bound_concept_decompositions",
+    },
+    {
         "script": "validate_round20_four_chapter_claim_atom_addendum.py",
         "input_contract": (
             "The exact four current-manifest chapters not covered by the frozen base "
@@ -75,6 +125,7 @@ UNITS = [
             "evidence_quality/taxonomy_completion_claim_atoms_2026_07_24.json",
             "evidence_quality/round_18_breadth_completion_claim_atoms.json",
             "evidence_quality/round20_four_chapter_claim_atom_addendum.json",
+            "evidence_quality/round22_concept_linked_claim_atom_addendum.json",
             "book_structure.json",
         ],
         "output_contract": (

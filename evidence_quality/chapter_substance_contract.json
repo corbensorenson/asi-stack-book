@@ -15,7 +15,8 @@
     "evidence_quality/post_activation_six_chapter_claim_atom_addendum.json",
     "evidence_quality/taxonomy_completion_claim_atoms_2026_07_24.json",
     "evidence_quality/round_18_breadth_completion_claim_atoms.json",
-    "evidence_quality/round20_four_chapter_claim_atom_addendum.json"
+    "evidence_quality/round20_four_chapter_claim_atom_addendum.json",
+    "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
   ],
   "chapter_records": [
     {
@@ -552,6 +553,38 @@
         {
           "atom_id": "dangerous-capability-domains-and-misuse-uplift.core",
           "source_path": "evidence_quality/taxonomy_completion_claim_atoms_2026_07_24.json"
+        },
+        {
+          "atom_id": "dangerous-capability-domains-and-misuse-uplift.concept.knowledge-versus-completion",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "dangerous-capability-domains-and-misuse-uplift.concept.refusal-versus-capability",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "dangerous-capability-domains-and-misuse-uplift.concept.capability-versus-propensity",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "dangerous-capability-domains-and-misuse-uplift.concept.measurement-ladder",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "dangerous-capability-domains-and-misuse-uplift.concept.threat-model-freeze",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "dangerous-capability-domains-and-misuse-uplift.concept.actor-cohorts-and-counterfactuals",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "dangerous-capability-domains-and-misuse-uplift.concept.elicitation-competence",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "dangerous-capability-domains-and-misuse-uplift.concept.cbrn-domain-program",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
         }
       ],
       "concept_contracts": [
@@ -563,9 +596,9 @@
             "ext_aisi_frontier_ai_trends_2025"
           ],
           "atom_ids": [
-            "dangerous-capability-domains-and-misuse-uplift.core"
+            "dangerous-capability-domains-and-misuse-uplift.concept.knowledge-versus-completion"
           ],
-          "atom_ownership_rationale": "The existing chapter-core atom is intentionally composite and owns the bounded knowledge-versus-completion concept together with its scope, falsifier, evidence route, promotion ceiling, and non-claims; a duplicate atom would create count parity without a new proposition.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -590,9 +623,9 @@
             "ext_openai_worst_case_open_weight_risks_2025"
           ],
           "atom_ids": [
-            "dangerous-capability-domains-and-misuse-uplift.core"
+            "dangerous-capability-domains-and-misuse-uplift.concept.refusal-versus-capability"
           ],
-          "atom_ownership_rationale": "The existing chapter-core atom is intentionally composite and owns the bounded refusal-versus-capability concept together with its scope, falsifier, evidence route, promotion ceiling, and non-claims; a duplicate atom would create count parity without a new proposition.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -617,9 +650,9 @@
             "ext_singapore_consensus_2026"
           ],
           "atom_ids": [
-            "dangerous-capability-domains-and-misuse-uplift.core"
+            "dangerous-capability-domains-and-misuse-uplift.concept.capability-versus-propensity"
           ],
-          "atom_ownership_rationale": "The existing chapter-core atom is intentionally composite and owns the bounded capability-versus-propensity concept together with its scope, falsifier, evidence route, promotion ceiling, and non-claims; a duplicate atom would create count parity without a new proposition.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -644,9 +677,9 @@
             "ext_aisi_misuse_safeguards_safety_case_2026"
           ],
           "atom_ids": [
-            "dangerous-capability-domains-and-misuse-uplift.core"
+            "dangerous-capability-domains-and-misuse-uplift.concept.measurement-ladder"
           ],
-          "atom_ownership_rationale": "The existing chapter-core atom is intentionally composite and owns the bounded measurement-ladder concept together with its scope, falsifier, evidence route, promotion ceiling, and non-claims; a duplicate atom would create count parity without a new proposition.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -672,9 +705,9 @@
             "ext_anthropic_responsible_scaling_policy_3_4_2026"
           ],
           "atom_ids": [
-            "dangerous-capability-domains-and-misuse-uplift.core"
+            "dangerous-capability-domains-and-misuse-uplift.concept.threat-model-freeze"
           ],
-          "atom_ownership_rationale": "The existing chapter-core atom is intentionally composite and owns the bounded threat-model-freeze concept together with its scope, falsifier, evidence route, promotion ceiling, and non-claims; a duplicate atom would create count parity without a new proposition.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -699,9 +732,9 @@
             "ext_singapore_consensus_2026"
           ],
           "atom_ids": [
-            "dangerous-capability-domains-and-misuse-uplift.core"
+            "dangerous-capability-domains-and-misuse-uplift.concept.actor-cohorts-and-counterfactuals"
           ],
-          "atom_ownership_rationale": "The existing chapter-core atom is intentionally composite and owns the bounded actor-cohorts-and-counterfactuals concept together with its scope, falsifier, evidence route, promotion ceiling, and non-claims; a duplicate atom would create count parity without a new proposition.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -727,9 +760,9 @@
             "ext_openai_worst_case_open_weight_risks_2025"
           ],
           "atom_ids": [
-            "dangerous-capability-domains-and-misuse-uplift.core"
+            "dangerous-capability-domains-and-misuse-uplift.concept.elicitation-competence"
           ],
-          "atom_ownership_rationale": "The existing chapter-core atom is intentionally composite and owns the bounded elicitation-competence concept together with its scope, falsifier, evidence route, promotion ceiling, and non-claims; a duplicate atom would create count parity without a new proposition.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -756,9 +789,9 @@
             "ext_anthropic_responsible_scaling_policy_3_4_2026"
           ],
           "atom_ids": [
-            "dangerous-capability-domains-and-misuse-uplift.core"
+            "dangerous-capability-domains-and-misuse-uplift.concept.cbrn-domain-program"
           ],
-          "atom_ownership_rationale": "The existing chapter-core atom is intentionally composite and owns the bounded cbrn-domain-program concept together with its scope, falsifier, evidence route, promotion ceiling, and non-claims; a duplicate atom would create count parity without a new proposition.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -820,6 +853,38 @@
         {
           "atom_id": "military-ai-autonomous-weapons-and-strategic-stability.argument_exit",
           "source_path": "evidence_quality/round20_four_chapter_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "military-ai-autonomous-weapons-and-strategic-stability.concept.use-case-decision-role",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "military-ai-autonomous-weapons-and-strategic-stability.concept.mission-authority-effect",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "military-ai-autonomous-weapons-and-strategic-stability.concept.meaningful-human-judgment",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "military-ai-autonomous-weapons-and-strategic-stability.concept.observation-trust",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "military-ai-autonomous-weapons-and-strategic-stability.concept.safe-posture",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "military-ai-autonomous-weapons-and-strategic-stability.concept.adversary-response-proliferation",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "military-ai-autonomous-weapons-and-strategic-stability.concept.strategic-stability-off-ramps",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "military-ai-autonomous-weapons-and-strategic-stability.concept.secrecy-review-decommission",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
         }
       ],
       "concept_contracts": [
@@ -831,9 +896,9 @@
             "ext_sipri_military_ai_nuclear_escalation_2025"
           ],
           "atom_ids": [
-            "military-ai-autonomous-weapons-and-strategic-stability.core"
+            "military-ai-autonomous-weapons-and-strategic-stability.concept.use-case-decision-role"
           ],
-          "atom_ownership_rationale": "The core strategic interaction contract owns bounded use-case and decision-role identity.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -858,9 +923,9 @@
             "ext_icrc_autonomous_weapons_ihl_2025"
           ],
           "atom_ids": [
-            "military-ai-autonomous-weapons-and-strategic-stability.mechanism"
+            "military-ai-autonomous-weapons-and-strategic-stability.concept.mission-authority-effect"
           ],
-          "atom_ownership_rationale": "The mechanism atom owns the mission, authority, observation, posture, and strategic case.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -885,9 +950,9 @@
             "ext_icrc_autonomous_weapons_ihl_2025"
           ],
           "atom_ids": [
-            "military-ai-autonomous-weapons-and-strategic-stability.boundary"
+            "military-ai-autonomous-weapons-and-strategic-stability.concept.meaningful-human-judgment"
           ],
-          "atom_ownership_rationale": "The boundary atom preserves human judgment, legal review, and adjacent technical authority.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -912,9 +977,9 @@
             "ext_sipri_military_ai_nuclear_escalation_2025"
           ],
           "atom_ids": [
-            "military-ai-autonomous-weapons-and-strategic-stability.mechanism"
+            "military-ai-autonomous-weapons-and-strategic-stability.concept.observation-trust"
           ],
-          "atom_ownership_rationale": "Observation trust is an explicit component of the existing strategic mechanism.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -940,9 +1005,9 @@
             "ext_sipri_military_ai_nuclear_escalation_2025"
           ],
           "atom_ids": [
-            "military-ai-autonomous-weapons-and-strategic-stability.failure_boundary"
+            "military-ai-autonomous-weapons-and-strategic-stability.concept.safe-posture"
           ],
-          "atom_ownership_rationale": "The failure-boundary atom owns communication loss, degraded posture, and maximum inference.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -969,10 +1034,9 @@
             "ext_international_ai_safety_report_2026"
           ],
           "atom_ids": [
-            "military-ai-autonomous-weapons-and-strategic-stability.mechanism",
-            "military-ai-autonomous-weapons-and-strategic-stability.failure_boundary"
+            "military-ai-autonomous-weapons-and-strategic-stability.concept.adversary-response-proliferation"
           ],
-          "atom_ownership_rationale": "Strategic assumptions and bounded failure analysis own adversary response.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -997,10 +1061,9 @@
             "ext_sipri_military_ai_nuclear_escalation_2025"
           ],
           "atom_ids": [
-            "military-ai-autonomous-weapons-and-strategic-stability.mechanism",
-            "military-ai-autonomous-weapons-and-strategic-stability.argument_exit"
+            "military-ai-autonomous-weapons-and-strategic-stability.concept.strategic-stability-off-ramps"
           ],
-          "atom_ownership_rationale": "The strategic case and argument-exit atom own off-ramps and proof handoff.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -1026,10 +1089,9 @@
             "ext_sipri_military_ai_nuclear_escalation_2025"
           ],
           "atom_ids": [
-            "military-ai-autonomous-weapons-and-strategic-stability.boundary",
-            "military-ai-autonomous-weapons-and-strategic-stability.argument_exit"
+            "military-ai-autonomous-weapons-and-strategic-stability.concept.secrecy-review-decommission"
           ],
-          "atom_ownership_rationale": "Authority separation and the handoff ceiling own review, accountability, and closure.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -2297,6 +2359,38 @@
         {
           "atom_id": "inner-alignment-mesa-optimization-and-learned-objective-integrity.core",
           "source_path": "evidence_quality/round_18_breadth_completion_claim_atoms.json"
+        },
+        {
+          "atom_id": "inner-alignment-mesa-optimization-and-learned-objective-integrity.concept.target-signal-policy-hypothesis",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "inner-alignment-mesa-optimization-and-learned-objective-integrity.concept.behavioral-equivalence-interventions",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "inner-alignment-mesa-optimization-and-learned-objective-integrity.concept.optimizer-versus-heuristic",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "inner-alignment-mesa-optimization-and-learned-objective-integrity.concept.capability-preserving-goal-shift",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "inner-alignment-mesa-optimization-and-learned-objective-integrity.concept.evaluation-awareness-deception",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "inner-alignment-mesa-optimization-and-learned-objective-integrity.concept.independent-evidence-lanes",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "inner-alignment-mesa-optimization-and-learned-objective-integrity.concept.mitigation-removal-concealment",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "inner-alignment-mesa-optimization-and-learned-objective-integrity.concept.opportunity-power-expiry-descendants",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
         }
       ],
       "concept_contracts": [
@@ -2309,9 +2403,9 @@
             "alignment_field"
           ],
           "atom_ids": [
-            "inner-alignment-mesa-optimization-and-learned-objective-integrity.core"
+            "inner-alignment-mesa-optimization-and-learned-objective-integrity.concept.target-signal-policy-hypothesis"
           ],
-          "atom_ownership_rationale": "The existing Round-18 chapter-core atom intentionally owns the bounded target-signal-policy-hypothesis proposition with its scope, falsifier, promotion ceiling, and non-claims; splitting solely for count parity would duplicate rather than clarify the current claim identity.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -2337,9 +2431,9 @@
             "ext_sleeper_agents_2024"
           ],
           "atom_ids": [
-            "inner-alignment-mesa-optimization-and-learned-objective-integrity.core"
+            "inner-alignment-mesa-optimization-and-learned-objective-integrity.concept.behavioral-equivalence-interventions"
           ],
-          "atom_ownership_rationale": "The existing Round-18 chapter-core atom intentionally owns the bounded behavioral-equivalence-interventions proposition with its scope, falsifier, promotion ceiling, and non-claims; splitting solely for count parity would duplicate rather than clarify the current claim identity.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -2365,9 +2459,9 @@
             "alignment_field"
           ],
           "atom_ids": [
-            "inner-alignment-mesa-optimization-and-learned-objective-integrity.core"
+            "inner-alignment-mesa-optimization-and-learned-objective-integrity.concept.optimizer-versus-heuristic"
           ],
-          "atom_ownership_rationale": "The existing Round-18 chapter-core atom intentionally owns the bounded optimizer-versus-heuristic proposition with its scope, falsifier, promotion ceiling, and non-claims; splitting solely for count parity would duplicate rather than clarify the current claim identity.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -2393,9 +2487,9 @@
             "ext_emergent_misalignment_reward_hacking_2025"
           ],
           "atom_ids": [
-            "inner-alignment-mesa-optimization-and-learned-objective-integrity.core"
+            "inner-alignment-mesa-optimization-and-learned-objective-integrity.concept.capability-preserving-goal-shift"
           ],
-          "atom_ownership_rationale": "The existing Round-18 chapter-core atom intentionally owns the bounded capability-preserving-goal-shift proposition with its scope, falsifier, promotion ceiling, and non-claims; splitting solely for count parity would duplicate rather than clarify the current claim identity.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -2421,9 +2515,9 @@
             "ext_emergent_misalignment_reward_hacking_2025"
           ],
           "atom_ids": [
-            "inner-alignment-mesa-optimization-and-learned-objective-integrity.core"
+            "inner-alignment-mesa-optimization-and-learned-objective-integrity.concept.evaluation-awareness-deception"
           ],
-          "atom_ownership_rationale": "The existing Round-18 chapter-core atom intentionally owns the bounded evaluation-awareness-deception proposition with its scope, falsifier, promotion ceiling, and non-claims; splitting solely for count parity would duplicate rather than clarify the current claim identity.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -2449,9 +2543,9 @@
             "ext_sleeper_agents_2024"
           ],
           "atom_ids": [
-            "inner-alignment-mesa-optimization-and-learned-objective-integrity.core"
+            "inner-alignment-mesa-optimization-and-learned-objective-integrity.concept.independent-evidence-lanes"
           ],
-          "atom_ownership_rationale": "The existing Round-18 chapter-core atom intentionally owns the bounded independent-evidence-lanes proposition with its scope, falsifier, promotion ceiling, and non-claims; splitting solely for count parity would duplicate rather than clarify the current claim identity.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -2477,9 +2571,9 @@
             "ext_emergent_misalignment_reward_hacking_2025"
           ],
           "atom_ids": [
-            "inner-alignment-mesa-optimization-and-learned-objective-integrity.core"
+            "inner-alignment-mesa-optimization-and-learned-objective-integrity.concept.mitigation-removal-concealment"
           ],
-          "atom_ownership_rationale": "The existing Round-18 chapter-core atom intentionally owns the bounded mitigation-removal-concealment proposition with its scope, falsifier, promotion ceiling, and non-claims; splitting solely for count parity would duplicate rather than clarify the current claim identity.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -2505,9 +2599,9 @@
             "alignment_field"
           ],
           "atom_ids": [
-            "inner-alignment-mesa-optimization-and-learned-objective-integrity.core"
+            "inner-alignment-mesa-optimization-and-learned-objective-integrity.concept.opportunity-power-expiry-descendants"
           ],
-          "atom_ownership_rationale": "The existing Round-18 chapter-core atom intentionally owns the bounded opportunity-power-expiry-descendants proposition with its scope, falsifier, promotion ceiling, and non-claims; splitting solely for count parity would duplicate rather than clarify the current claim identity.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -3599,6 +3693,38 @@
         {
           "atom_id": "societal-resilience-and-misuse-defense.core",
           "source_path": "evidence_quality/taxonomy_completion_claim_atoms_2026_07_24.json"
+        },
+        {
+          "atom_id": "societal-resilience-and-misuse-defense.concept.classifier-coverage",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "societal-resilience-and-misuse-defense.concept.recovery-beyond-takedown",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "societal-resilience-and-misuse-defense.concept.rights-preserving-reporting",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "societal-resilience-and-misuse-defense.concept.four-stage-resilience",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "societal-resilience-and-misuse-defense.concept.federated-incident-envelope",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "societal-resilience-and-misuse-defense.concept.fraud-and-impersonation",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "societal-resilience-and-misuse-defense.concept.child-safety-and-ncii",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "societal-resilience-and-misuse-defense.concept.mental-health-and-parasocial-harm",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
         }
       ],
       "concept_contracts": [
@@ -3609,9 +3735,9 @@
             "ext_international_ai_safety_report_2026"
           ],
           "atom_ids": [
-            "societal-resilience-and-misuse-defense.core"
+            "societal-resilience-and-misuse-defense.concept.classifier-coverage"
           ],
-          "atom_ownership_rationale": "The existing chapter-core atom is intentionally composite and owns the bounded classifier-coverage concept together with its scope, falsifier, evidence route, promotion ceiling, and non-claims; a duplicate atom would create count parity without a new proposition.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -3636,9 +3762,9 @@
             "ext_nist_incident_response_2025"
           ],
           "atom_ids": [
-            "societal-resilience-and-misuse-defense.core"
+            "societal-resilience-and-misuse-defense.concept.recovery-beyond-takedown"
           ],
-          "atom_ownership_rationale": "The existing chapter-core atom is intentionally composite and owns the bounded recovery-beyond-takedown concept together with its scope, falsifier, evidence route, promotion ceiling, and non-claims; a duplicate atom would create count parity without a new proposition.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -3664,9 +3790,9 @@
             "ext_nist_incident_response_2025"
           ],
           "atom_ids": [
-            "societal-resilience-and-misuse-defense.core"
+            "societal-resilience-and-misuse-defense.concept.rights-preserving-reporting"
           ],
-          "atom_ownership_rationale": "The existing chapter-core atom is intentionally composite and owns the bounded rights-preserving-reporting concept together with its scope, falsifier, evidence route, promotion ceiling, and non-claims; a duplicate atom would create count parity without a new proposition.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -3691,9 +3817,9 @@
             "ext_international_ai_safety_report_2026"
           ],
           "atom_ids": [
-            "societal-resilience-and-misuse-defense.core"
+            "societal-resilience-and-misuse-defense.concept.four-stage-resilience"
           ],
-          "atom_ownership_rationale": "The existing chapter-core atom is intentionally composite and owns the bounded four-stage-resilience concept together with its scope, falsifier, evidence route, promotion ceiling, and non-claims; a duplicate atom would create count parity without a new proposition.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -3718,9 +3844,9 @@
             "ext_nist_incident_response_2025"
           ],
           "atom_ids": [
-            "societal-resilience-and-misuse-defense.core"
+            "societal-resilience-and-misuse-defense.concept.federated-incident-envelope"
           ],
-          "atom_ownership_rationale": "The existing chapter-core atom is intentionally composite and owns the bounded federated-incident-envelope concept together with its scope, falsifier, evidence route, promotion ceiling, and non-claims; a duplicate atom would create count parity without a new proposition.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -3745,9 +3871,9 @@
             "ext_international_ai_safety_report_2026"
           ],
           "atom_ids": [
-            "societal-resilience-and-misuse-defense.core"
+            "societal-resilience-and-misuse-defense.concept.fraud-and-impersonation"
           ],
-          "atom_ownership_rationale": "The existing chapter-core atom is intentionally composite and owns the bounded fraud-and-impersonation concept together with its scope, falsifier, evidence route, promotion ceiling, and non-claims; a duplicate atom would create count parity without a new proposition.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -3772,9 +3898,9 @@
             "ext_international_ai_safety_report_2026"
           ],
           "atom_ids": [
-            "societal-resilience-and-misuse-defense.core"
+            "societal-resilience-and-misuse-defense.concept.child-safety-and-ncii"
           ],
-          "atom_ownership_rationale": "The existing chapter-core atom is intentionally composite and owns the bounded child-safety-and-ncii concept together with its scope, falsifier, evidence route, promotion ceiling, and non-claims; a duplicate atom would create count parity without a new proposition.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -3800,9 +3926,9 @@
             "ext_international_ai_safety_report_2026"
           ],
           "atom_ids": [
-            "societal-resilience-and-misuse-defense.core"
+            "societal-resilience-and-misuse-defense.concept.mental-health-and-parasocial-harm"
           ],
-          "atom_ownership_rationale": "The existing chapter-core atom is intentionally composite and owns the bounded mental-health-and-parasocial-harm concept together with its scope, falsifier, evidence route, promotion ceiling, and non-claims; a duplicate atom would create count parity without a new proposition.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -5053,6 +5179,38 @@
         {
           "atom_id": "confidential-and-verifiable-ai-computation.argument_exit",
           "source_path": "evidence_quality/round20_four_chapter_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "confidential-and-verifiable-ai-computation.concept.guarantee-vector-adversary",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "confidential-and-verifiable-ai-computation.concept.construction-selection-composition",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "confidential-and-verifiable-ai-computation.concept.artifact-configuration-binding",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "confidential-and-verifiable-ai-computation.concept.attestation-role-separation",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "confidential-and-verifiable-ai-computation.concept.freshness-revocation-replay",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "confidential-and-verifiable-ai-computation.concept.circuit-semantics-correspondence",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "confidential-and-verifiable-ai-computation.concept.leakage-side-channels-metadata",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "confidential-and-verifiable-ai-computation.concept.cost-fallback-downgrade",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
         }
       ],
       "concept_contracts": [
@@ -5063,9 +5221,9 @@
             "ext_nist_privacy_enhancing_cryptography_2026"
           ],
           "atom_ids": [
-            "confidential-and-verifiable-ai-computation.core"
+            "confidential-and-verifiable-ai-computation.concept.guarantee-vector-adversary"
           ],
-          "atom_ownership_rationale": "The existing core atom is the bounded owner for guarantee-vector-adversary; the mapping preserves independent failure and promotion ceilings without manufacturing a duplicate atom.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -5091,9 +5249,9 @@
             "ext_zkllm_2024"
           ],
           "atom_ids": [
-            "confidential-and-verifiable-ai-computation.boundary"
+            "confidential-and-verifiable-ai-computation.concept.construction-selection-composition"
           ],
-          "atom_ownership_rationale": "The existing boundary atom is the bounded owner for construction-selection-composition; the mapping preserves independent failure and promotion ceilings without manufacturing a duplicate atom.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -5118,9 +5276,9 @@
             "ext_zkllm_2024"
           ],
           "atom_ids": [
-            "confidential-and-verifiable-ai-computation.mechanism"
+            "confidential-and-verifiable-ai-computation.concept.artifact-configuration-binding"
           ],
-          "atom_ownership_rationale": "The existing mechanism atom is the bounded owner for artifact-configuration-binding; the mapping preserves independent failure and promotion ceilings without manufacturing a duplicate atom.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -5145,9 +5303,9 @@
             "ext_ietf_rats_architecture_2023"
           ],
           "atom_ids": [
-            "confidential-and-verifiable-ai-computation.boundary"
+            "confidential-and-verifiable-ai-computation.concept.attestation-role-separation"
           ],
-          "atom_ownership_rationale": "The existing boundary atom is the bounded owner for attestation-role-separation; the mapping preserves independent failure and promotion ceilings without manufacturing a duplicate atom.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -5172,9 +5330,9 @@
             "ext_ietf_rats_architecture_2023"
           ],
           "atom_ids": [
-            "confidential-and-verifiable-ai-computation.mechanism"
+            "confidential-and-verifiable-ai-computation.concept.freshness-revocation-replay"
           ],
-          "atom_ownership_rationale": "The existing mechanism atom is the bounded owner for freshness-revocation-replay; the mapping preserves independent failure and promotion ceilings without manufacturing a duplicate atom.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -5199,9 +5357,9 @@
             "ext_zkllm_2024"
           ],
           "atom_ids": [
-            "confidential-and-verifiable-ai-computation.mechanism"
+            "confidential-and-verifiable-ai-computation.concept.circuit-semantics-correspondence"
           ],
-          "atom_ownership_rationale": "The existing mechanism atom is the bounded owner for circuit-semantics-correspondence; the mapping preserves independent failure and promotion ceilings without manufacturing a duplicate atom.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -5228,9 +5386,9 @@
             "ext_zkllm_2024"
           ],
           "atom_ids": [
-            "confidential-and-verifiable-ai-computation.failure_boundary"
+            "confidential-and-verifiable-ai-computation.concept.leakage-side-channels-metadata"
           ],
-          "atom_ownership_rationale": "The existing failure-boundary atom is the bounded owner for leakage-side-channels-metadata; the mapping preserves independent failure and promotion ceilings without manufacturing a duplicate atom.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -5255,9 +5413,9 @@
             "ext_zkllm_2024"
           ],
           "atom_ids": [
-            "confidential-and-verifiable-ai-computation.argument_exit"
+            "confidential-and-verifiable-ai-computation.concept.cost-fallback-downgrade"
           ],
-          "atom_ownership_rationale": "The existing argument-exit atom is the bounded owner for cost-fallback-downgrade; the mapping preserves independent failure and promotion ceilings without manufacturing a duplicate atom.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -5602,6 +5760,38 @@
         {
           "atom_id": "open-weight-release-and-post-release-control.core",
           "source_path": "evidence_quality/taxonomy_completion_claim_atoms_2026_07_24.json"
+        },
+        {
+          "atom_id": "open-weight-release-and-post-release-control.concept.access-tier-option-set",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "open-weight-release-and-post-release-control.concept.artifact-derivative-identity",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "open-weight-release-and-post-release-control.concept.malicious-adaptation",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "open-weight-release-and-post-release-control.concept.accessible-frontier",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "open-weight-release-and-post-release-control.concept.marginal-cumulative-risk",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "open-weight-release-and-post-release-control.concept.benefit-access-distribution",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "open-weight-release-and-post-release-control.concept.copy-surviving-controls",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "open-weight-release-and-post-release-control.concept.derivative-incident-residual",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
         }
       ],
       "concept_contracts": [
@@ -5613,9 +5803,9 @@
             "ext_singapore_consensus_2026"
           ],
           "atom_ids": [
-            "open-weight-release-and-post-release-control.core"
+            "open-weight-release-and-post-release-control.concept.access-tier-option-set"
           ],
-          "atom_ownership_rationale": "The existing post-activation chapter-core atom intentionally owns the bounded access-tier-option-set proposition and its evidence ceiling; splitting it solely for count parity would create duplicate claim identities.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -5641,9 +5831,9 @@
             "ext_rand_model_weight_security_2024"
           ],
           "atom_ids": [
-            "open-weight-release-and-post-release-control.core"
+            "open-weight-release-and-post-release-control.concept.artifact-derivative-identity"
           ],
-          "atom_ownership_rationale": "The existing post-activation chapter-core atom intentionally owns the bounded artifact-derivative-identity proposition and its evidence ceiling; splitting it solely for count parity would create duplicate claim identities.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -5670,9 +5860,9 @@
             "ext_international_ai_safety_report_2026"
           ],
           "atom_ids": [
-            "open-weight-release-and-post-release-control.core"
+            "open-weight-release-and-post-release-control.concept.malicious-adaptation"
           ],
-          "atom_ownership_rationale": "The existing post-activation chapter-core atom intentionally owns the bounded malicious-adaptation proposition and its evidence ceiling; splitting it solely for count parity would create duplicate claim identities.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -5699,9 +5889,9 @@
             "ext_singapore_consensus_2026"
           ],
           "atom_ids": [
-            "open-weight-release-and-post-release-control.core"
+            "open-weight-release-and-post-release-control.concept.accessible-frontier"
           ],
-          "atom_ownership_rationale": "The existing post-activation chapter-core atom intentionally owns the bounded accessible-frontier proposition and its evidence ceiling; splitting it solely for count parity would create duplicate claim identities.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -5727,9 +5917,9 @@
             "ext_international_ai_safety_report_2026"
           ],
           "atom_ids": [
-            "open-weight-release-and-post-release-control.core"
+            "open-weight-release-and-post-release-control.concept.marginal-cumulative-risk"
           ],
-          "atom_ownership_rationale": "The existing post-activation chapter-core atom intentionally owns the bounded marginal-cumulative-risk proposition and its evidence ceiling; splitting it solely for count parity would create duplicate claim identities.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -5755,9 +5945,9 @@
             "ext_international_ai_safety_report_2026"
           ],
           "atom_ids": [
-            "open-weight-release-and-post-release-control.core"
+            "open-weight-release-and-post-release-control.concept.benefit-access-distribution"
           ],
-          "atom_ownership_rationale": "The existing post-activation chapter-core atom intentionally owns the bounded benefit-access-distribution proposition and its evidence ceiling; splitting it solely for count parity would create duplicate claim identities.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -5784,9 +5974,9 @@
             "ext_anthropic_responsible_scaling_policy_3_4_2026"
           ],
           "atom_ids": [
-            "open-weight-release-and-post-release-control.core"
+            "open-weight-release-and-post-release-control.concept.copy-surviving-controls"
           ],
-          "atom_ownership_rationale": "The existing post-activation chapter-core atom intentionally owns the bounded copy-surviving-controls proposition and its evidence ceiling; splitting it solely for count parity would create duplicate claim identities.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -5813,9 +6003,9 @@
             "ext_international_ai_safety_report_2026"
           ],
           "atom_ids": [
-            "open-weight-release-and-post-release-control.core"
+            "open-weight-release-and-post-release-control.concept.derivative-incident-residual"
           ],
-          "atom_ownership_rationale": "The existing post-activation chapter-core atom intentionally owns the bounded derivative-incident-residual proposition and its evidence ceiling; splitting it solely for count parity would create duplicate claim identities.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -7503,6 +7693,38 @@
         {
           "atom_id": "perception-sensor-fusion-and-observation-trust.core",
           "source_path": "evidence_quality/round_18_breadth_completion_claim_atoms.json"
+        },
+        {
+          "atom_id": "perception-sensor-fusion-and-observation-trust.concept.observation-need-authority",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "perception-sensor-fusion-and-observation-trust.concept.sensor-identity-calibration",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "perception-sensor-fusion-and-observation-trust.concept.time-pose-alignment",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "perception-sensor-fusion-and-observation-trust.concept.channel-hypotheses-missingness",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "perception-sensor-fusion-and-observation-trust.concept.dependence-disagreement-fusion",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "perception-sensor-fusion-and-observation-trust.concept.corruption-shift-integrity",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "perception-sensor-fusion-and-observation-trust.concept.active-observation-degradation",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "perception-sensor-fusion-and-observation-trust.concept.observation-lease-reconciliation",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
         }
       ],
       "concept_contracts": [
@@ -7514,9 +7736,9 @@
             "ext_gemini_robotics_2025"
           ],
           "atom_ids": [
-            "perception-sensor-fusion-and-observation-trust.core"
+            "perception-sensor-fusion-and-observation-trust.concept.observation-need-authority"
           ],
-          "atom_ownership_rationale": "The existing Round-18 chapter-core atom intentionally owns the bounded observation-need-authority proposition with its scope, falsifier, promotion ceiling, and non-claims; splitting solely for count parity would duplicate rather than clarify the current claim identity.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -7542,9 +7764,9 @@
             "ext_adversarial_sensor_fusion_2022"
           ],
           "atom_ids": [
-            "perception-sensor-fusion-and-observation-trust.core"
+            "perception-sensor-fusion-and-observation-trust.concept.sensor-identity-calibration"
           ],
-          "atom_ownership_rationale": "The existing Round-18 chapter-core atom intentionally owns the bounded sensor-identity-calibration proposition with its scope, falsifier, promotion ceiling, and non-claims; splitting solely for count parity would duplicate rather than clarify the current claim identity.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -7569,9 +7791,9 @@
             "ext_multimodal_machine_learning_taxonomy_2019"
           ],
           "atom_ids": [
-            "perception-sensor-fusion-and-observation-trust.core"
+            "perception-sensor-fusion-and-observation-trust.concept.time-pose-alignment"
           ],
-          "atom_ownership_rationale": "The existing Round-18 chapter-core atom intentionally owns the bounded time-pose-alignment proposition with its scope, falsifier, promotion ceiling, and non-claims; splitting solely for count parity would duplicate rather than clarify the current claim identity.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -7597,9 +7819,9 @@
             "ext_multimodal_machine_learning_taxonomy_2019"
           ],
           "atom_ids": [
-            "perception-sensor-fusion-and-observation-trust.core"
+            "perception-sensor-fusion-and-observation-trust.concept.channel-hypotheses-missingness"
           ],
-          "atom_ownership_rationale": "The existing Round-18 chapter-core atom intentionally owns the bounded channel-hypotheses-missingness proposition with its scope, falsifier, promotion ceiling, and non-claims; splitting solely for count parity would duplicate rather than clarify the current claim identity.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -7625,9 +7847,9 @@
             "ext_adversarial_sensor_fusion_2022"
           ],
           "atom_ids": [
-            "perception-sensor-fusion-and-observation-trust.core"
+            "perception-sensor-fusion-and-observation-trust.concept.dependence-disagreement-fusion"
           ],
-          "atom_ownership_rationale": "The existing Round-18 chapter-core atom intentionally owns the bounded dependence-disagreement-fusion proposition with its scope, falsifier, promotion ceiling, and non-claims; splitting solely for count parity would duplicate rather than clarify the current claim identity.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -7653,9 +7875,9 @@
             "ext_adversarial_sensor_fusion_2022"
           ],
           "atom_ids": [
-            "perception-sensor-fusion-and-observation-trust.core"
+            "perception-sensor-fusion-and-observation-trust.concept.corruption-shift-integrity"
           ],
-          "atom_ownership_rationale": "The existing Round-18 chapter-core atom intentionally owns the bounded corruption-shift-integrity proposition with its scope, falsifier, promotion ceiling, and non-claims; splitting solely for count parity would duplicate rather than clarify the current claim identity.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -7680,9 +7902,9 @@
             "ext_gemini_robotics_2025"
           ],
           "atom_ids": [
-            "perception-sensor-fusion-and-observation-trust.core"
+            "perception-sensor-fusion-and-observation-trust.concept.active-observation-degradation"
           ],
-          "atom_ownership_rationale": "The existing Round-18 chapter-core atom intentionally owns the bounded active-observation-degradation proposition with its scope, falsifier, promotion ceiling, and non-claims; splitting solely for count parity would duplicate rather than clarify the current claim identity.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -7707,9 +7929,9 @@
             "platonic_world_model"
           ],
           "atom_ids": [
-            "perception-sensor-fusion-and-observation-trust.core"
+            "perception-sensor-fusion-and-observation-trust.concept.observation-lease-reconciliation"
           ],
-          "atom_ownership_rationale": "The existing Round-18 chapter-core atom intentionally owns the bounded observation-lease-reconciliation proposition with its scope, falsifier, promotion ceiling, and non-claims; splitting solely for count parity would duplicate rather than clarify the current claim identity.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -10695,6 +10917,38 @@
         {
           "atom_id": "human-ai-organizations-delegation-and-accountability.core",
           "source_path": "evidence_quality/round_18_breadth_completion_claim_atoms.json"
+        },
+        {
+          "atom_id": "human-ai-organizations-delegation-and-accountability.concept.charter-standing",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "human-ai-organizations-delegation-and-accountability.concept.role-capacity-state",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "human-ai-organizations-delegation-and-accountability.concept.decision-rights-intervention",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "human-ai-organizations-delegation-and-accountability.concept.delegation-lifecycle",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "human-ai-organizations-delegation-and-accountability.concept.duties-conflicts-benefits",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "human-ai-organizations-delegation-and-accountability.concept.longitudinal-contribution-dependence",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "human-ai-organizations-delegation-and-accountability.concept.accountability-causation-remedy",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "human-ai-organizations-delegation-and-accountability.concept.succession-dissolution-custody",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
         }
       ],
       "concept_contracts": [
@@ -10706,9 +10960,9 @@
             "talos"
           ],
           "atom_ids": [
-            "human-ai-organizations-delegation-and-accountability.core"
+            "human-ai-organizations-delegation-and-accountability.concept.charter-standing"
           ],
-          "atom_ownership_rationale": "The existing Round-18 chapter-core atom intentionally owns the bounded charter-standing proposition with its scope, falsifier, promotion ceiling, and non-claims; splitting solely for count parity would duplicate rather than clarify the current claim identity.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -10734,9 +10988,9 @@
             "ext_generative_ai_at_work_2025"
           ],
           "atom_ids": [
-            "human-ai-organizations-delegation-and-accountability.core"
+            "human-ai-organizations-delegation-and-accountability.concept.role-capacity-state"
           ],
-          "atom_ownership_rationale": "The existing Round-18 chapter-core atom intentionally owns the bounded role-capacity-state proposition with its scope, falsifier, promotion ceiling, and non-claims; splitting solely for count parity would duplicate rather than clarify the current claim identity.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -10763,9 +11017,9 @@
             "talos"
           ],
           "atom_ids": [
-            "human-ai-organizations-delegation-and-accountability.core"
+            "human-ai-organizations-delegation-and-accountability.concept.decision-rights-intervention"
           ],
-          "atom_ownership_rationale": "The existing Round-18 chapter-core atom intentionally owns the bounded decision-rights-intervention proposition with its scope, falsifier, promotion ceiling, and non-claims; splitting solely for count parity would duplicate rather than clarify the current claim identity.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -10791,9 +11045,9 @@
             "talos"
           ],
           "atom_ids": [
-            "human-ai-organizations-delegation-and-accountability.core"
+            "human-ai-organizations-delegation-and-accountability.concept.delegation-lifecycle"
           ],
-          "atom_ownership_rationale": "The existing Round-18 chapter-core atom intentionally owns the bounded delegation-lifecycle proposition with its scope, falsifier, promotion ceiling, and non-claims; splitting solely for count parity would duplicate rather than clarify the current claim identity.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -10820,9 +11074,9 @@
             "ext_eu_ai_civil_liability_2025"
           ],
           "atom_ids": [
-            "human-ai-organizations-delegation-and-accountability.core"
+            "human-ai-organizations-delegation-and-accountability.concept.duties-conflicts-benefits"
           ],
-          "atom_ownership_rationale": "The existing Round-18 chapter-core atom intentionally owns the bounded duties-conflicts-benefits proposition with its scope, falsifier, promotion ceiling, and non-claims; splitting solely for count parity would duplicate rather than clarify the current claim identity.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -10849,9 +11103,9 @@
             "ext_human_ai_feedback_loops_2025"
           ],
           "atom_ids": [
-            "human-ai-organizations-delegation-and-accountability.core"
+            "human-ai-organizations-delegation-and-accountability.concept.longitudinal-contribution-dependence"
           ],
-          "atom_ownership_rationale": "The existing Round-18 chapter-core atom intentionally owns the bounded longitudinal-contribution-dependence proposition with its scope, falsifier, promotion ceiling, and non-claims; splitting solely for count parity would duplicate rather than clarify the current claim identity.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -10877,9 +11131,9 @@
             "ext_eu_ai_civil_liability_2025"
           ],
           "atom_ids": [
-            "human-ai-organizations-delegation-and-accountability.core"
+            "human-ai-organizations-delegation-and-accountability.concept.accountability-causation-remedy"
           ],
-          "atom_ownership_rationale": "The existing Round-18 chapter-core atom intentionally owns the bounded accountability-causation-remedy proposition with its scope, falsifier, promotion ceiling, and non-claims; splitting solely for count parity would duplicate rather than clarify the current claim identity.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -10906,9 +11160,9 @@
             "ext_human_ai_feedback_loops_2025"
           ],
           "atom_ids": [
-            "human-ai-organizations-delegation-and-accountability.core"
+            "human-ai-organizations-delegation-and-accountability.concept.succession-dissolution-custody"
           ],
-          "atom_ownership_rationale": "The existing Round-18 chapter-core atom intentionally owns the bounded succession-dissolution-custody proposition with its scope, falsifier, promotion ceiling, and non-claims; splitting solely for count parity would duplicate rather than clarify the current claim identity.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -10970,6 +11224,38 @@
         {
           "atom_id": "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.argument_exit",
           "source_path": "evidence_quality/round20_four_chapter_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.concept.coupled-trajectory-state",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.concept.three-arm-complementarity",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.concept.bidirectional-adaptation",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.concept.skill-dependence-calibration",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.concept.neural-data-purpose-inference",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.concept.intervention-consent-boundary",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.concept.exit-and-human-recovery",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.concept.equity-longitudinal-remedy",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
         }
       ],
       "concept_contracts": [
@@ -10980,9 +11266,9 @@
             "ext_human_ai_feedback_loops_2025"
           ],
           "atom_ids": [
-            "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.mechanism"
+            "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.concept.coupled-trajectory-state"
           ],
-          "atom_ownership_rationale": "The existing mechanism atom is the bounded owner for coupled-trajectory-state; the mapping preserves independent failure and promotion ceilings without manufacturing a duplicate atom.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -11007,9 +11293,9 @@
             "ext_human_ai_team_meta_analysis_2024"
           ],
           "atom_ids": [
-            "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.core"
+            "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.concept.three-arm-complementarity"
           ],
-          "atom_ownership_rationale": "The existing core atom is the bounded owner for three-arm-complementarity; the mapping preserves independent failure and promotion ceilings without manufacturing a duplicate atom.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -11035,9 +11321,9 @@
             "ext_who_neurotechnology_landscape_2025"
           ],
           "atom_ids": [
-            "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.mechanism"
+            "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.concept.bidirectional-adaptation"
           ],
-          "atom_ownership_rationale": "The existing mechanism atom is the bounded owner for bidirectional-adaptation; the mapping preserves independent failure and promotion ceilings without manufacturing a duplicate atom.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -11063,9 +11349,9 @@
             "ext_human_ai_feedback_loops_2025"
           ],
           "atom_ids": [
-            "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.failure_boundary"
+            "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.concept.skill-dependence-calibration"
           ],
-          "atom_ownership_rationale": "The existing failure-boundary atom is the bounded owner for skill-dependence-calibration; the mapping preserves independent failure and promotion ceilings without manufacturing a duplicate atom.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -11090,9 +11376,9 @@
             "ext_who_neurotechnology_landscape_2025"
           ],
           "atom_ids": [
-            "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.boundary"
+            "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.concept.neural-data-purpose-inference"
           ],
-          "atom_ownership_rationale": "The existing boundary atom is the bounded owner for neural-data-purpose-inference; the mapping preserves independent failure and promotion ceilings without manufacturing a duplicate atom.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -11118,9 +11404,9 @@
             "ext_who_neurotechnology_landscape_2025"
           ],
           "atom_ids": [
-            "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.boundary"
+            "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.concept.intervention-consent-boundary"
           ],
-          "atom_ownership_rationale": "The existing boundary atom is the bounded owner for intervention-consent-boundary; the mapping preserves independent failure and promotion ceilings without manufacturing a duplicate atom.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -11145,9 +11431,9 @@
             "ext_human_ai_feedback_loops_2025"
           ],
           "atom_ids": [
-            "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.argument_exit"
+            "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.concept.exit-and-human-recovery"
           ],
-          "atom_ownership_rationale": "The existing argument-exit atom is the bounded owner for exit-and-human-recovery; the mapping preserves independent failure and promotion ceilings without manufacturing a duplicate atom.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -11174,9 +11460,9 @@
             "ext_who_neurotechnology_landscape_2025"
           ],
           "atom_ids": [
-            "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.failure_boundary"
+            "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.concept.equity-longitudinal-remedy"
           ],
-          "atom_ownership_rationale": "The existing failure-boundary atom is the bounded owner for equity-longitudinal-remedy; the mapping preserves independent failure and promotion ceilings without manufacturing a duplicate atom.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -12288,6 +12574,38 @@
         {
           "atom_id": "embodied-agency-real-time-control-and-physical-safety.core",
           "source_path": "evidence_quality/round_18_breadth_completion_claim_atoms.json"
+        },
+        {
+          "atom_id": "embodied-agency-real-time-control-and-physical-safety.concept.plant-task-hazard-envelope",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "embodied-agency-real-time-control-and-physical-safety.concept.observation-control-separation",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "embodied-agency-real-time-control-and-physical-safety.concept.timing-dynamics-reachability",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "embodied-agency-real-time-control-and-physical-safety.concept.advanced-baseline-controller-switching",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "embodied-agency-real-time-control-and-physical-safety.concept.barrier-shield-interlock",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "embodied-agency-real-time-control-and-physical-safety.concept.exploration-learning-authority",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "embodied-agency-real-time-control-and-physical-safety.concept.digital-twin-sim-real",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "embodied-agency-real-time-control-and-physical-safety.concept.incident-recovery-recommissioning",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
         }
       ],
       "concept_contracts": [
@@ -12299,9 +12617,9 @@
             "ext_gemini_robotics_2025"
           ],
           "atom_ids": [
-            "embodied-agency-real-time-control-and-physical-safety.core"
+            "embodied-agency-real-time-control-and-physical-safety.concept.plant-task-hazard-envelope"
           ],
-          "atom_ownership_rationale": "The existing Round-18 chapter-core atom intentionally owns the bounded plant-task-hazard-envelope proposition with its scope, falsifier, promotion ceiling, and non-claims; splitting solely for count parity would duplicate rather than clarify the current claim identity.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -12327,9 +12645,9 @@
             "ext_simplex_architecture_1998"
           ],
           "atom_ids": [
-            "embodied-agency-real-time-control-and-physical-safety.core"
+            "embodied-agency-real-time-control-and-physical-safety.concept.observation-control-separation"
           ],
-          "atom_ownership_rationale": "The existing Round-18 chapter-core atom intentionally owns the bounded observation-control-separation proposition with its scope, falsifier, promotion ceiling, and non-claims; splitting solely for count parity would duplicate rather than clarify the current claim identity.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -12354,9 +12672,9 @@
             "ext_control_barrier_functions_2019"
           ],
           "atom_ids": [
-            "embodied-agency-real-time-control-and-physical-safety.core"
+            "embodied-agency-real-time-control-and-physical-safety.concept.timing-dynamics-reachability"
           ],
-          "atom_ownership_rationale": "The existing Round-18 chapter-core atom intentionally owns the bounded timing-dynamics-reachability proposition with its scope, falsifier, promotion ceiling, and non-claims; splitting solely for count parity would duplicate rather than clarify the current claim identity.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -12381,9 +12699,9 @@
             "ext_simplex_architecture_1998"
           ],
           "atom_ids": [
-            "embodied-agency-real-time-control-and-physical-safety.core"
+            "embodied-agency-real-time-control-and-physical-safety.concept.advanced-baseline-controller-switching"
           ],
-          "atom_ownership_rationale": "The existing Round-18 chapter-core atom intentionally owns the bounded advanced-baseline-controller-switching proposition with its scope, falsifier, promotion ceiling, and non-claims; splitting solely for count parity would duplicate rather than clarify the current claim identity.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -12409,9 +12727,9 @@
             "ext_safe_reinforcement_learning_survey_2015"
           ],
           "atom_ids": [
-            "embodied-agency-real-time-control-and-physical-safety.core"
+            "embodied-agency-real-time-control-and-physical-safety.concept.barrier-shield-interlock"
           ],
-          "atom_ownership_rationale": "The existing Round-18 chapter-core atom intentionally owns the bounded barrier-shield-interlock proposition with its scope, falsifier, promotion ceiling, and non-claims; splitting solely for count parity would duplicate rather than clarify the current claim identity.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -12436,9 +12754,9 @@
             "ext_safe_reinforcement_learning_survey_2015"
           ],
           "atom_ids": [
-            "embodied-agency-real-time-control-and-physical-safety.core"
+            "embodied-agency-real-time-control-and-physical-safety.concept.exploration-learning-authority"
           ],
-          "atom_ownership_rationale": "The existing Round-18 chapter-core atom intentionally owns the bounded exploration-learning-authority proposition with its scope, falsifier, promotion ceiling, and non-claims; splitting solely for count parity would duplicate rather than clarify the current claim identity.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -12463,9 +12781,9 @@
             "ext_ai_simulation_digital_twins_2025"
           ],
           "atom_ids": [
-            "embodied-agency-real-time-control-and-physical-safety.core"
+            "embodied-agency-real-time-control-and-physical-safety.concept.digital-twin-sim-real"
           ],
-          "atom_ownership_rationale": "The existing Round-18 chapter-core atom intentionally owns the bounded digital-twin-sim-real proposition with its scope, falsifier, promotion ceiling, and non-claims; splitting solely for count parity would duplicate rather than clarify the current claim identity.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -12492,9 +12810,9 @@
             "ext_ai_simulation_digital_twins_2025"
           ],
           "atom_ids": [
-            "embodied-agency-real-time-control-and-physical-safety.core"
+            "embodied-agency-real-time-control-and-physical-safety.concept.incident-recovery-recommissioning"
           ],
-          "atom_ownership_rationale": "The existing Round-18 chapter-core atom intentionally owns the bounded incident-recovery-recommissioning proposition with its scope, falsifier, promotion ceiling, and non-claims; splitting solely for count parity would duplicate rather than clarify the current claim identity.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -12875,6 +13193,38 @@
         {
           "atom_id": "multi-agent-dynamics-collective-intelligence-and-systemic-risk.core",
           "source_path": "evidence_quality/round_18_breadth_completion_claim_atoms.json"
+        },
+        {
+          "atom_id": "multi-agent-dynamics-collective-intelligence-and-systemic-risk.concept.population-identity-diversity",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "multi-agent-dynamics-collective-intelligence-and-systemic-risk.concept.multiplex-graphs",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "multi-agent-dynamics-collective-intelligence-and-systemic-risk.concept.cooperation-collusion-intelligence",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "multi-agent-dynamics-collective-intelligence-and-systemic-risk.concept.incentives-commitments-externalities",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "multi-agent-dynamics-collective-intelligence-and-systemic-risk.concept.decision-theory-disagreement",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "multi-agent-dynamics-collective-intelligence-and-systemic-risk.concept.learning-nonstationarity-selection",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "multi-agent-dynamics-collective-intelligence-and-systemic-risk.concept.systemic-risk-cascades",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "multi-agent-dynamics-collective-intelligence-and-systemic-risk.concept.human-influence-disempowerment",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
         }
       ],
       "concept_contracts": [
@@ -12886,9 +13236,9 @@
             "ext_cooperative_ai_foundations_2023"
           ],
           "atom_ids": [
-            "multi-agent-dynamics-collective-intelligence-and-systemic-risk.core"
+            "multi-agent-dynamics-collective-intelligence-and-systemic-risk.concept.population-identity-diversity"
           ],
-          "atom_ownership_rationale": "The existing post-activation chapter-core atom intentionally owns the bounded population-identity-diversity proposition and its evidence ceiling; splitting it solely for count parity would create duplicate claim identities.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -12914,9 +13264,9 @@
             "ext_cooperative_ai_foundations_2023"
           ],
           "atom_ids": [
-            "multi-agent-dynamics-collective-intelligence-and-systemic-risk.core"
+            "multi-agent-dynamics-collective-intelligence-and-systemic-risk.concept.multiplex-graphs"
           ],
-          "atom_ownership_rationale": "The existing post-activation chapter-core atom intentionally owns the bounded multiplex-graphs proposition and its evidence ceiling; splitting it solely for count parity would create duplicate claim identities.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -12942,9 +13292,9 @@
             "ext_multi_agent_risks_2025"
           ],
           "atom_ids": [
-            "multi-agent-dynamics-collective-intelligence-and-systemic-risk.core"
+            "multi-agent-dynamics-collective-intelligence-and-systemic-risk.concept.cooperation-collusion-intelligence"
           ],
-          "atom_ownership_rationale": "The existing post-activation chapter-core atom intentionally owns the bounded cooperation-collusion-intelligence proposition and its evidence ceiling; splitting it solely for count parity would create duplicate claim identities.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -12970,9 +13320,9 @@
             "ext_multi_agent_risks_2025"
           ],
           "atom_ids": [
-            "multi-agent-dynamics-collective-intelligence-and-systemic-risk.core"
+            "multi-agent-dynamics-collective-intelligence-and-systemic-risk.concept.incentives-commitments-externalities"
           ],
-          "atom_ownership_rationale": "The existing post-activation chapter-core atom intentionally owns the bounded incentives-commitments-externalities proposition and its evidence ceiling; splitting it solely for count parity would create duplicate claim identities.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -12998,9 +13348,9 @@
             "ext_cooperative_ai_foundations_2023"
           ],
           "atom_ids": [
-            "multi-agent-dynamics-collective-intelligence-and-systemic-risk.core"
+            "multi-agent-dynamics-collective-intelligence-and-systemic-risk.concept.decision-theory-disagreement"
           ],
-          "atom_ownership_rationale": "The existing post-activation chapter-core atom intentionally owns the bounded decision-theory-disagreement proposition and its evidence ceiling; splitting it solely for count parity would create duplicate claim identities.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -13026,9 +13376,9 @@
             "ext_cooperative_ai_foundations_2023"
           ],
           "atom_ids": [
-            "multi-agent-dynamics-collective-intelligence-and-systemic-risk.core"
+            "multi-agent-dynamics-collective-intelligence-and-systemic-risk.concept.learning-nonstationarity-selection"
           ],
-          "atom_ownership_rationale": "The existing post-activation chapter-core atom intentionally owns the bounded learning-nonstationarity-selection proposition and its evidence ceiling; splitting it solely for count parity would create duplicate claim identities.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -13054,9 +13404,9 @@
             "ext_gradual_disempowerment_2025"
           ],
           "atom_ids": [
-            "multi-agent-dynamics-collective-intelligence-and-systemic-risk.core"
+            "multi-agent-dynamics-collective-intelligence-and-systemic-risk.concept.systemic-risk-cascades"
           ],
-          "atom_ownership_rationale": "The existing post-activation chapter-core atom intentionally owns the bounded systemic-risk-cascades proposition and its evidence ceiling; splitting it solely for count parity would create duplicate claim identities.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -13082,9 +13432,9 @@
             "ext_constructive_interdependence_human_ai_2026"
           ],
           "atom_ids": [
-            "multi-agent-dynamics-collective-intelligence-and-systemic-risk.core"
+            "multi-agent-dynamics-collective-intelligence-and-systemic-risk.concept.human-influence-disempowerment"
           ],
-          "atom_ownership_rationale": "The existing post-activation chapter-core atom intentionally owns the bounded human-influence-disempowerment proposition and its evidence ceiling; splitting it solely for count parity would create duplicate claim identities.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -13847,6 +14197,38 @@
         {
           "atom_id": "relational-dimension-compilation-and-polyadic-cognition.argument_exit",
           "source_path": "evidence_quality/round20_four_chapter_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "relational-dimension-compilation-and-polyadic-cognition.concept.dimension-type-separation",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "relational-dimension-compilation-and-polyadic-cognition.concept.typed-role-relational-ir",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "relational-dimension-compilation-and-polyadic-cognition.concept.residual-proposal-denominator",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "relational-dimension-compilation-and-polyadic-cognition.concept.lower-order-rescue",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "relational-dimension-compilation-and-polyadic-cognition.concept.qualification-order-ladder",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "relational-dimension-compilation-and-polyadic-cognition.concept.compilation-conformance",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "relational-dimension-compilation-and-polyadic-cognition.concept.adaptive-order-contraction",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "relational-dimension-compilation-and-polyadic-cognition.concept.rodie-joint-evaluation",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
         }
       ],
       "concept_contracts": [
@@ -13857,9 +14239,9 @@
             "relational_dimension_compiler"
           ],
           "atom_ids": [
-            "relational-dimension-compilation-and-polyadic-cognition.boundary"
+            "relational-dimension-compilation-and-polyadic-cognition.concept.dimension-type-separation"
           ],
-          "atom_ownership_rationale": "The existing boundary atom is the bounded owner for dimension-type-separation; the mapping preserves independent failure and promotion ceilings without manufacturing a duplicate atom.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -13885,9 +14267,9 @@
             "ext_neural_message_passing_2017"
           ],
           "atom_ids": [
-            "relational-dimension-compilation-and-polyadic-cognition.mechanism"
+            "relational-dimension-compilation-and-polyadic-cognition.concept.typed-role-relational-ir"
           ],
-          "atom_ownership_rationale": "The existing mechanism atom is the bounded owner for typed-role-relational-ir; the mapping preserves independent failure and promotion ceilings without manufacturing a duplicate atom.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -13912,9 +14294,9 @@
             "relational_dimension_compiler"
           ],
           "atom_ids": [
-            "relational-dimension-compilation-and-polyadic-cognition.mechanism"
+            "relational-dimension-compilation-and-polyadic-cognition.concept.residual-proposal-denominator"
           ],
-          "atom_ownership_rationale": "The existing mechanism atom is the bounded owner for residual-proposal-denominator; the mapping preserves independent failure and promotion ceilings without manufacturing a duplicate atom.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -13940,9 +14322,9 @@
             "ext_neural_message_passing_2017"
           ],
           "atom_ids": [
-            "relational-dimension-compilation-and-polyadic-cognition.boundary"
+            "relational-dimension-compilation-and-polyadic-cognition.concept.lower-order-rescue"
           ],
-          "atom_ownership_rationale": "The existing boundary atom is the bounded owner for lower-order-rescue; the mapping preserves independent failure and promotion ceilings without manufacturing a duplicate atom.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -13967,9 +14349,9 @@
             "relational_dimension_compiler"
           ],
           "atom_ids": [
-            "relational-dimension-compilation-and-polyadic-cognition.core"
+            "relational-dimension-compilation-and-polyadic-cognition.concept.qualification-order-ladder"
           ],
-          "atom_ownership_rationale": "The existing core atom is the bounded owner for qualification-order-ladder; the mapping preserves independent failure and promotion ceilings without manufacturing a duplicate atom.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -13994,9 +14376,9 @@
             "relational_dimension_compiler"
           ],
           "atom_ids": [
-            "relational-dimension-compilation-and-polyadic-cognition.mechanism"
+            "relational-dimension-compilation-and-polyadic-cognition.concept.compilation-conformance"
           ],
-          "atom_ownership_rationale": "The existing mechanism atom is the bounded owner for compilation-conformance; the mapping preserves independent failure and promotion ceilings without manufacturing a duplicate atom.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -14021,9 +14403,9 @@
             "relational_dimension_compiler"
           ],
           "atom_ids": [
-            "relational-dimension-compilation-and-polyadic-cognition.failure_boundary"
+            "relational-dimension-compilation-and-polyadic-cognition.concept.adaptive-order-contraction"
           ],
-          "atom_ownership_rationale": "The existing failure-boundary atom is the bounded owner for adaptive-order-contraction; the mapping preserves independent failure and promotion ceilings without manufacturing a duplicate atom.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -14049,9 +14431,9 @@
             "ext_neural_message_passing_2017"
           ],
           "atom_ids": [
-            "relational-dimension-compilation-and-polyadic-cognition.argument_exit"
+            "relational-dimension-compilation-and-polyadic-cognition.concept.rodie-joint-evaluation"
           ],
-          "atom_ownership_rationale": "The existing argument-exit atom is the bounded owner for rodie-joint-evaluation; the mapping preserves independent failure and promotion ceilings without manufacturing a duplicate atom.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -20077,6 +20459,38 @@
         {
           "atom_id": "content-authenticity-watermarking-and-synthetic-media-integrity.core",
           "source_path": "evidence_quality/taxonomy_completion_claim_atoms_2026_07_24.json"
+        },
+        {
+          "atom_id": "content-authenticity-watermarking-and-synthetic-media-integrity.concept.signed-provenance",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "content-authenticity-watermarking-and-synthetic-media-integrity.concept.watermarking",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "content-authenticity-watermarking-and-synthetic-media-integrity.concept.fingerprinting",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "content-authenticity-watermarking-and-synthetic-media-integrity.concept.statistical-detection",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "content-authenticity-watermarking-and-synthetic-media-integrity.concept.visible-disclosure",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "content-authenticity-watermarking-and-synthetic-media-integrity.concept.contextual-verification",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "content-authenticity-watermarking-and-synthetic-media-integrity.concept.transformation-lineage",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        },
+        {
+          "atom_id": "content-authenticity-watermarking-and-synthetic-media-integrity.concept.article-50-interface",
+          "source_path": "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
         }
       ],
       "concept_contracts": [
@@ -20087,9 +20501,9 @@
             "ext_c2pa_specification_2_3_2025"
           ],
           "atom_ids": [
-            "content-authenticity-watermarking-and-synthetic-media-integrity.core"
+            "content-authenticity-watermarking-and-synthetic-media-integrity.concept.signed-provenance"
           ],
-          "atom_ownership_rationale": "The existing chapter-core atom is intentionally composite and owns the bounded signed-provenance concept together with its scope, falsifier, evidence route, promotion ceiling, and non-claims; a duplicate atom would create count parity without a new proposition.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -20114,9 +20528,9 @@
             "ext_international_ai_safety_report_2026"
           ],
           "atom_ids": [
-            "content-authenticity-watermarking-and-synthetic-media-integrity.core"
+            "content-authenticity-watermarking-and-synthetic-media-integrity.concept.watermarking"
           ],
-          "atom_ownership_rationale": "The existing chapter-core atom is intentionally composite and owns the bounded watermarking concept together with its scope, falsifier, evidence route, promotion ceiling, and non-claims; a duplicate atom would create count parity without a new proposition.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -20141,9 +20555,9 @@
             "ext_international_ai_safety_report_2026"
           ],
           "atom_ids": [
-            "content-authenticity-watermarking-and-synthetic-media-integrity.core"
+            "content-authenticity-watermarking-and-synthetic-media-integrity.concept.fingerprinting"
           ],
-          "atom_ownership_rationale": "The existing chapter-core atom is intentionally composite and owns the bounded fingerprinting concept together with its scope, falsifier, evidence route, promotion ceiling, and non-claims; a duplicate atom would create count parity without a new proposition.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -20168,9 +20582,9 @@
             "ext_international_ai_safety_report_2026"
           ],
           "atom_ids": [
-            "content-authenticity-watermarking-and-synthetic-media-integrity.core"
+            "content-authenticity-watermarking-and-synthetic-media-integrity.concept.statistical-detection"
           ],
-          "atom_ownership_rationale": "The existing chapter-core atom is intentionally composite and owns the bounded statistical-detection concept together with its scope, falsifier, evidence route, promotion ceiling, and non-claims; a duplicate atom would create count parity without a new proposition.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -20195,9 +20609,9 @@
             "ext_eu_article_50_transparency_guidelines_2026"
           ],
           "atom_ids": [
-            "content-authenticity-watermarking-and-synthetic-media-integrity.core"
+            "content-authenticity-watermarking-and-synthetic-media-integrity.concept.visible-disclosure"
           ],
-          "atom_ownership_rationale": "The existing chapter-core atom is intentionally composite and owns the bounded visible-disclosure concept together with its scope, falsifier, evidence route, promotion ceiling, and non-claims; a duplicate atom would create count parity without a new proposition.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -20222,9 +20636,9 @@
             "ext_international_ai_safety_report_2026"
           ],
           "atom_ids": [
-            "content-authenticity-watermarking-and-synthetic-media-integrity.core"
+            "content-authenticity-watermarking-and-synthetic-media-integrity.concept.contextual-verification"
           ],
-          "atom_ownership_rationale": "The existing chapter-core atom is intentionally composite and owns the bounded contextual-verification concept together with its scope, falsifier, evidence route, promotion ceiling, and non-claims; a duplicate atom would create count parity without a new proposition.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -20249,9 +20663,9 @@
             "ext_c2pa_specification_2_3_2025"
           ],
           "atom_ids": [
-            "content-authenticity-watermarking-and-synthetic-media-integrity.core"
+            "content-authenticity-watermarking-and-synthetic-media-integrity.concept.transformation-lineage"
           ],
-          "atom_ownership_rationale": "The existing chapter-core atom is intentionally composite and owns the bounded transformation-lineage concept together with its scope, falsifier, evidence route, promotion ceiling, and non-claims; a duplicate atom would create count parity without a new proposition.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -20276,9 +20690,9 @@
             "ext_eu_article_50_transparency_guidelines_2026"
           ],
           "atom_ids": [
-            "content-authenticity-watermarking-and-synthetic-media-integrity.core"
+            "content-authenticity-watermarking-and-synthetic-media-integrity.concept.article-50-interface"
           ],
-          "atom_ownership_rationale": "The existing chapter-core atom is intentionally composite and owns the bounded article-50-interface concept together with its scope, falsifier, evidence route, promotion ceiling, and non-claims; a duplicate atom would create count parity without a new proposition.",
+          "atom_ownership_rationale": "Round 22 assigns this already-reviewed material concept its own stable proposition, falsifier, evidence route, promotion ceiling, source boundary, and non-claims so it can fail or mature independently.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -23303,7 +23717,7 @@
     "active_concept_count": 184,
     "active_concepts_passing_count": 184,
     "current_semantic_review_count": 23,
-    "low_atom_count_diagnostic_chapter_count": 19,
+    "low_atom_count_diagnostic_chapter_count": 6,
     "atom_count_is_acceptance_target": false,
     "word_trigger_is_completion_gate": false,
     "support_state_effect": "none"

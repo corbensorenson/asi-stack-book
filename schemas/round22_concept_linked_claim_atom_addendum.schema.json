@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/round22_concept_linked_claim_atom_addendum.schema.json",
+  "title": "Round 22 Concept-Linked Claim-Atom Addendum",
+  "type": "object",
+  "required": [
+    "schema_version", "packet_id", "recorded_date", "chapter_count",
+    "concepts_per_chapter", "atom_count", "chapter_ids", "atoms",
+    "chapter_reviews", "historical_atom_sources_rewritten",
+    "atom_count_is_acceptance_target", "support_state_effect",
+    "release_effect", "non_claims"
+  ],
+  "properties": {
+    "schema_version": {"const": "asi_stack.round22_concept_linked_claim_atom_addendum.v1"},
+    "packet_id": {"const": "P6.10-R22-concept-linked-falsifiability"},
+    "recorded_date": {"const": "2026-07-30"},
+    "chapter_count": {"const": 13},
+    "concepts_per_chapter": {"const": 8},
+    "atom_count": {"const": 104},
+    "chapter_ids": {
+      "type": "array", "minItems": 13, "maxItems": 13, "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "atoms": {
+      "type": "array", "minItems": 104, "maxItems": 104,
+      "items": {"$ref": "#/$defs/atom"}
+    },
+    "chapter_reviews": {
+      "type": "array", "minItems": 13, "maxItems": 13,
+      "items": {"$ref": "#/$defs/review"}
+    },
+    "historical_atom_sources_rewritten": {"const": false},
+    "atom_count_is_acceptance_target": {"const": false},
+    "support_state_effect": {"const": "none"},
+    "release_effect": {"const": "none"},
+    "non_claims": {
+      "type": "array", "minItems": 3,
+      "items": {"type": "string", "minLength": 20}
+    }
+  },
+  "$defs": {
+    "atom": {
+      "type": "object",
+      "required": [
+        "id", "chapter_id", "concept_id", "role", "heading", "proposition",
+        "scope", "assumptions", "counterclaim", "falsifier",
+        "required_evidence_lanes", "source_ids", "source_grounding",
+        "contrary_evidence", "acceptance_criterion", "narrowing_criterion",
+        "refutation_criterion", "deprecation_criterion", "promotion_ceiling",
+        "owner", "support_state", "support_state_effect", "non_claims"
+      ],
+      "properties": {
+        "id": {"type": "string", "pattern": "^[a-z0-9-]+\\.concept\\.[a-z0-9-]+$"},
+        "chapter_id": {"type": "string", "minLength": 1},
+        "concept_id": {"type": "string", "minLength": 1},
+        "role": {"const": "concept"},
+        "heading": {"type": "string", "minLength": 4},
+        "proposition": {"type": "string", "minLength": 100},
+        "scope": {"type": "string", "minLength": 100},
+        "assumptions": {
+          "type": "array", "minItems": 3,
+          "items": {"type": "string", "minLength": 20}
+        },
+        "counterclaim": {"type": "string", "minLength": 60},
+        "falsifier": {"type": "string", "minLength": 100},
+        "required_evidence_lanes": {
+          "type": "array", "minItems": 6, "uniqueItems": true,
+          "items": {"type": "string", "minLength": 10}
+        },
+        "source_ids": {
+          "type": "array", "minItems": 1, "uniqueItems": true,
+          "items": {"type": "string", "minLength": 2}
+        },
+        "source_grounding": {"type": "string", "minLength": 60},
+        "contrary_evidence": {
+          "type": "array", "items": {"type": "string"}
+        },
+        "acceptance_criterion": {"type": "string", "minLength": 100},
+        "narrowing_criterion": {"type": "string", "minLength": 60},
+        "refutation_criterion": {"type": "string", "minLength": 60},
+        "deprecation_criterion": {"type": "string", "minLength": 60},
+        "promotion_ceiling": {"type": "string", "minLength": 40},
+        "owner": {"type": "string", "minLength": 1},
+        "support_state": {"const": "argument"},
+        "support_state_effect": {"const": "none"},
+        "non_claims": {
+          "type": "array", "minItems": 2,
+          "items": {"type": "string", "minLength": 20}
+        }
+      },
+      "additionalProperties": false
+    },
+    "review": {
+      "type": "object",
+      "required": [
+        "chapter_id", "chapter_sha256", "concept_ids", "atom_ids",
+        "semantic_review_state", "support_state_effect"
+      ],
+      "properties": {
+        "chapter_id": {"type": "string", "minLength": 1},
+        "chapter_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "concept_ids": {
+          "type": "array", "minItems": 8, "maxItems": 8, "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "atom_ids": {
+          "type": "array", "minItems": 8, "maxItems": 8, "uniqueItems": true,
+          "items": {"type": "string", "minLength": 4}
+        },
+        "semantic_review_state": {
+          "const": "concept_linked_decomposition_bound_to_current_reviewed_chapter"
+        },
+        "support_state_effect": {"const": "none"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

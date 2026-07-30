@@ -1014,6 +1014,30 @@ roadmap record or program result.
 
 ## Sequence and milestones
 
+### Round 22 execution amendment — evidence before more surface
+
+The Round 22 adjudication at
+`docs/round_22_evidence_pivot_and_concept_atom_adjudication_2026_07_30.md`
+is binding on the remaining sequence.
+
+- Breadth and taxonomy growth are frozen unless a demonstrated ownership gap
+  passes the existing chapter-admission gate.
+- P2-R3a is the first empirical headline. Its blocked infrastructure preflight
+  is not a negative result. Restore the frozen 50 GiB capacity floor and
+  Docker-daemon access, then rerun the exact preflight before materialization.
+- Thirteen coarse-atom chapters now have 104 concept-linked, independently
+  falsifiable identities with zero support movement.
+- Six low-atom chapters remain a manual semantic-decomposition queue:
+  Human Factors, Privacy and Data Rights, Governed World Models, Governed
+  Model Training, White-Box Evidence, and Governed Operations. Their exit is
+  zero unowned material concepts, not numerical atom parity.
+- The reader projection already strips research-only status/test metadata, and
+  visual abstracts already stale on canonical chapter-digest drift. Preserve
+  both gates; do not reopen them as prose campaigns.
+
+This amendment changes execution priority, not evidence state. No empirical
+claim moves until a competent accepted transition exists.
+
 ### M0 — Authority and truth freeze
 
 - install this roadmap as the current pointer;

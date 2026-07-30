@@ -513,8 +513,24 @@ def errors(data: dict) -> list[str]:
         or round_20.get("next_priority_batch") != expected_round_20_remaining
         or round_20.get("throughput_unit")
         != "concept_complete_digest_bound_semantic_dispositions"
-        or round_20.get("low_atom_count_diagnostic_chapter_count") != 19
-        or round_20.get("single_atom_diagnostic_chapter_count") != 9
+        or round_20.get("round_22_adjudication_path")
+        != "docs/round_22_evidence_pivot_and_concept_atom_adjudication_2026_07_30.md"
+        or round_20.get("concept_linked_atom_addendum_path")
+        != "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+        or round_20.get("initial_low_atom_count_diagnostic_chapter_count") != 19
+        or round_20.get("concept_linked_decomposition_chapter_count") != 13
+        or round_20.get("concept_linked_decomposition_atom_count") != 104
+        or round_20.get("low_atom_count_diagnostic_chapter_count") != 6
+        or round_20.get("single_atom_diagnostic_chapter_count") != 0
+        or round_20.get("remaining_manual_decomposition_chapters")
+        != [
+            "human-factors-and-meaningful-control-in-oversight",
+            "privacy-data-rights-and-information-flow-governance",
+            "governed-world-models-and-reality-grounding",
+            "governed-model-training-distributed-optimization-and-scaling",
+            "white-box-evidence-interpretability-and-activation-governance",
+            "governed-operations-incident-command-and-graceful-degradation",
+        ]
         or round_20.get("atom_count_parity_is_acceptance_target") is not False
         or round_20.get("reader_facing_w3_repeated_12_grams") != 0
         or round_20.get("raw_qmd_repeated_12_grams") != 925
@@ -584,7 +600,7 @@ def errors(data: dict) -> list[str]:
         or substance_summary.get("active_concepts_passing_count") != 184
         or substance_summary.get("concept_complete_semantic_reviewed_chapter_count") != 23
         or substance_summary.get("current_semantic_review_count") != 23
-        or substance_summary.get("low_atom_count_diagnostic_chapter_count") != 19
+        or substance_summary.get("low_atom_count_diagnostic_chapter_count") != 6
         or substance_summary.get("atom_count_is_acceptance_target") is not False
         or substance_summary.get("word_trigger_is_completion_gate") is not False
         or substance.get("manual_semantic_review_required") is not True

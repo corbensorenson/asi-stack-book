@@ -22,6 +22,7 @@ ATOM_SOURCES = [
     ROOT / "evidence_quality/taxonomy_completion_claim_atoms_2026_07_24.json",
     ROOT / "evidence_quality/round_18_breadth_completion_claim_atoms.json",
     ROOT / "evidence_quality/round20_four_chapter_claim_atom_addendum.json",
+    ROOT / "evidence_quality/round22_concept_linked_claim_atom_addendum.json",
 ]
 DEFAULT_FUTURE_LANES = [
     "source-synthesis",

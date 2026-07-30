@@ -24,6 +24,7 @@ ATOM_SOURCES = [
     ROOT / "evidence_quality/taxonomy_completion_claim_atoms_2026_07_24.json",
     ROOT / "evidence_quality/round_18_breadth_completion_claim_atoms.json",
     ROOT / "evidence_quality/round20_four_chapter_claim_atom_addendum.json",
+    ROOT / "evidence_quality/round22_concept_linked_claim_atom_addendum.json",
 ]
 
 CONCEPT_SPECS: dict[str, list[dict[str, Any]]] = {
@@ -465,6 +466,38 @@ for _chapter_id, _routes in _five_atom_routes.items():
             ),
         }
         for _concept_id, _suffix in _routes.items()
+    }
+
+# Round 22 replaces coarse many-to-one custody only where eight material
+# concepts already have current digest-bound semantic reviews. This is a
+# concept/falsifier denominator, not an atom-count denominator.
+for _chapter_id in {
+    "dangerous-capability-domains-and-misuse-uplift",
+    "military-ai-autonomous-weapons-and-strategic-stability",
+    "inner-alignment-mesa-optimization-and-learned-objective-integrity",
+    "societal-resilience-and-misuse-defense",
+    "confidential-and-verifiable-ai-computation",
+    "open-weight-release-and-post-release-control",
+    "perception-sensor-fusion-and-observation-trust",
+    "human-ai-organizations-delegation-and-accountability",
+    "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty",
+    "embodied-agency-real-time-control-and-physical-safety",
+    "multi-agent-dynamics-collective-intelligence-and-systemic-risk",
+    "relational-dimension-compilation-and-polyadic-cognition",
+    "content-authenticity-watermarking-and-synthetic-media-integrity",
+}:
+    CONCEPT_ATOM_MAPPINGS[_chapter_id] = {
+        _spec["concept_id"]: {
+            "atom_ids": [
+                f"{_chapter_id}.concept.{_spec['concept_id']}"
+            ],
+            "rationale": (
+                "Round 22 assigns this already-reviewed material concept its own "
+                "stable proposition, falsifier, evidence route, promotion ceiling, "
+                "source boundary, and non-claims so it can fail or mature independently."
+            ),
+        }
+        for _spec in CONCEPT_SPECS[_chapter_id]
     }
 
 CONCEPT_ATOM_MAPPINGS["learning-theory-generalization-and-scaling-science"] = {
