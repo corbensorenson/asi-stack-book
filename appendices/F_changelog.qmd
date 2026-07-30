@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-07-29 — P7.3 CI coverage reconciliation
+
+- Reconciled validator coverage for the two per-media P7.3 validators. Both
+  validators require ignored local narration or final-video artifacts and were
+  executed across all 84 chapter masters before packet finalization; they are
+  now explicitly allowlisted with those non-hermetic inputs and their tracked
+  receipt-verification path documented. The registered visual-edition gate
+  continues to bind and reject drift in the resulting chapter packets without
+  copying roughly 1.015 GB of generated media into Git or CI.
+
 ## 2026-07-29 — Governed Manim visual-edition roadmap activation
 
 - Added `P7.3-governed-manim-visual-edition` as the active owner-directed

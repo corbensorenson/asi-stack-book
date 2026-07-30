@@ -23,6 +23,14 @@
     {
       "script": "scripts/validate_retired_theseus_formal_mirrors.py",
       "reason": "Shared validation library imported by nine registered Project Theseus executable validators; it has no standalone command surface and is exercised whenever any of those validators checks theorem retirement, ledger custody, and stale-target absence."
+    },
+    {
+      "script": "scripts/validate_visual_master.py",
+      "reason": "Per-master local media validator: it requires each ignored 1920x1080 H.264/AAC final video, ignored mux receipt, local ffprobe, and narration-validation receipt. All 84 outputs were run before packet finalization; their validator hashes and pass receipts are bound into the tracked chapter packets and checked by the registered validate_visual_edition.py publication gate, while the gigabyte-scale masters intentionally remain outside Git and CI."
+    },
+    {
+      "script": "scripts/validate_visual_narration.py",
+      "reason": "Per-narration local media validator: it requires each ignored WAV master and ignored MLX Whisper ASR audit plus NumPy and SoundFile. All 84 narrations were run before packet finalization; their validator hashes and pass receipts are bound into the tracked chapter packets and checked by the registered validate_visual_edition.py publication gate, while the local audio and ASR build products intentionally remain outside Git and CI."
     }
   ]
 }
