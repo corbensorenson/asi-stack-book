@@ -11,12 +11,12 @@ It does **not** quote or publish raw private source passages. It also does **not
 | Metric | Value |
 |---|---:|
 | Chapters audited | 84 |
-| Assigned source/chapter pairs | 1216 |
-| Exact claim-source mappings | 1036 |
+| Assigned source/chapter pairs | 1218 |
+| Exact claim-source mappings | 1038 |
 | Unmapped assigned pairs | 180 |
-| Source notes present for assigned pairs | 1216 |
-| Source notes listing assigned chapter | 1216 |
-| Passage-reviewed mappings recorded | 967 |
+| Source notes present for assigned pairs | 1218 |
+| Source notes listing assigned chapter | 1218 |
+| Passage-reviewed mappings recorded | 969 |
 | Support-state counts | {"argument": 84} |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -88,7 +88,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `relational-dimension-compilation-and-polyadic-cognition` | 2 | 2 | 2 | 2 | 0 | argument | passage review required before source-derived promotion |
 | `governed-model-training-distributed-optimization-and-scaling` | 27 | 26 | 27 | 27 | 26 | argument | passage review required before source-derived promotion |
 | `learning-theory-generalization-and-scaling-science` | 10 | 8 | 10 | 10 | 0 | argument | passage review required before source-derived promotion |
-| `readiness-gates-residual-escrow-and-quarantine` | 20 | 18 | 20 | 20 | 18 | argument | passage review required before source-derived promotion |
+| `readiness-gates-residual-escrow-and-quarantine` | 21 | 19 | 21 | 21 | 19 | argument | passage review required before source-derived promotion |
 | `personal-compute-hives-and-federated-edge-intelligence` | 31 | 23 | 31 | 31 | 23 | argument | passage review required before source-derived promotion |
 | `compact-generative-systems-and-residual-honesty` | 20 | 17 | 20 | 20 | 17 | argument | passage review required before source-derived promotion |
 | `fast-generation-architectures` | 44 | 21 | 44 | 44 | 21 | argument | passage review required before source-derived promotion |
@@ -101,7 +101,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `coil-attention-cyclic-memory-and-recurrence-contracts` | 7 | 7 | 7 | 7 | 7 | argument | eligible for support review |
 | `coilra-multicoil-rope-and-cyclic-mixers` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
 | `executable-specifications-and-lean-proof-envelope` | 14 | 13 | 14 | 14 | 13 | argument | passage review required before source-derived promotion |
-| `benchmark-ratchets-and-anti-goodhart-evidence` | 38 | 31 | 38 | 38 | 31 | argument | passage review required before source-derived promotion |
+| `benchmark-ratchets-and-anti-goodhart-evidence` | 39 | 32 | 39 | 39 | 32 | argument | passage review required before source-derived promotion |
 | `white-box-evidence-interpretability-and-activation-governance` | 14 | 14 | 14 | 14 | 14 | argument | eligible for support review |
 | `capability-thresholds-and-deployment-commitments` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
 | `adversarial-evaluation-sandbagging-and-training-time-deception` | 10 | 10 | 10 | 10 | 10 | argument | eligible for support review |
@@ -179,6 +179,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_graphrag_2024` | 5 | yes |
 | `ext_hipporag_2024` | 5 | yes |
 | `ext_swe_rebench_v2_2026` | 5 | yes |
+| `rgs` | 5 | yes |
 | `octopus_router` | 5 | yes |
 | `ext_dynamic_compute_recurrent_transformers_2026` | 5 | yes |
 | `beastbrain` | 4 | yes |
@@ -229,7 +230,6 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_azure_llm_semantic_cache_2026` | 3 | yes |
 | `ext_dont_hallucinate_abstain_2024` | 3 | yes |
 | `ext_checklist_2020` | 3 | yes |
-| `rgs` | 3 | yes |
 | `moecot_md` | 3 | yes |
 | `ext_kimi_k3_2026` | 3 | yes |
 | `ext_mamba_2023` | 3 | yes |
@@ -1272,6 +1272,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `learning-theory-generalization-and-scaling-science.core` | `learning-theory-generalization-and-scaling-science` | `ext_emergent_abilities_mirage_2023` | mapped | note present | chapter listed | not passage-reviewed |
 | `learning-theory-generalization-and-scaling-science.core` | `learning-theory-generalization-and-scaling-science` | `ext_no_free_lunch_inductive_bias_2024` | unmapped | note present | chapter listed | not passage-reviewed |
 | `readiness-gates-residual-escrow-and-quarantine.core` | `readiness-gates-residual-escrow-and-quarantine` | `rmi` | mapped | note present | chapter listed | passage-reviewed |
+| `readiness-gates-residual-escrow-and-quarantine.core` | `readiness-gates-residual-escrow-and-quarantine` | `rgs` | mapped | note present | chapter listed | passage-reviewed |
 | `readiness-gates-residual-escrow-and-quarantine.core` | `readiness-gates-residual-escrow-and-quarantine` | `deterministic_capability_compilation` | unmapped | note present | chapter listed | not passage-reviewed |
 | `readiness-gates-residual-escrow-and-quarantine.core` | `readiness-gates-residual-escrow-and-quarantine` | `benchmaxxing` | mapped | note present | chapter listed | passage-reviewed |
 | `readiness-gates-residual-escrow-and-quarantine.core` | `readiness-gates-residual-escrow-and-quarantine` | `scf` | mapped | note present | chapter listed | passage-reviewed |
@@ -1500,6 +1501,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `benchmark-ratchets-and-anti-goodhart-evidence.core` | `benchmark-ratchets-and-anti-goodhart-evidence` | `deterministic_capability_compilation` | unmapped | note present | chapter listed | not passage-reviewed |
 | `benchmark-ratchets-and-anti-goodhart-evidence.core` | `benchmark-ratchets-and-anti-goodhart-evidence` | `platonic_world_model` | unmapped | note present | chapter listed | not passage-reviewed |
 | `benchmark-ratchets-and-anti-goodhart-evidence.core` | `benchmark-ratchets-and-anti-goodhart-evidence` | `rmi` | mapped | note present | chapter listed | passage-reviewed |
+| `benchmark-ratchets-and-anti-goodhart-evidence.core` | `benchmark-ratchets-and-anti-goodhart-evidence` | `rgs` | mapped | note present | chapter listed | passage-reviewed |
 | `benchmark-ratchets-and-anti-goodhart-evidence.core` | `benchmark-ratchets-and-anti-goodhart-evidence` | `cognitive_loop_closure` | mapped | note present | chapter listed | passage-reviewed |
 | `benchmark-ratchets-and-anti-goodhart-evidence.core` | `benchmark-ratchets-and-anti-goodhart-evidence` | `uat` | mapped | note present | chapter listed | passage-reviewed |
 | `benchmark-ratchets-and-anti-goodhart-evidence.core` | `benchmark-ratchets-and-anti-goodhart-evidence` | `coherence_exchange` | mapped | note present | chapter listed | passage-reviewed |

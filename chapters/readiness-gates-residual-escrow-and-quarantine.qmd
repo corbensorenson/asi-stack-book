@@ -7,6 +7,7 @@ draft_maturity: "v0.3 claim-proof program"
 last_updated: "2026-07-31"
 primary_sources:
   - "rmi"
+  - "rgs"
   - "benchmaxxing"
   - "scf"
   - "octopus_router"
@@ -41,16 +42,16 @@ open_evidence_gaps:
 | Status | conceptual |
 | Manuscript maturity | v0.3 claim-proof program |
 | Last updated | 2026-07-26 |
-| Primary source records | 17 assigned sources: architecture, historical-project, self-improvement, and selective-prediction comparators |
+| Primary source records | 21 assigned architecture, historical-project, self-improvement, and selective-prediction sources |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source queue | primary: `rmi`, `benchmaxxing`, `scf`; supporting: 13 architecture, historical-project, and external comparators; connector/recovery: `moecot` |
-| Source loading state | all 17 assigned sources have exact reviewed mappings; `moecot` remains source-note/connector context and Darwin Gödel Machine and Don’t Hallucinate, Abstain remain external comparators, not local results |
+| Source queue | primary: `rmi`, `benchmaxxing`, `scf`; supporting includes the passage-reviewed RGS precursor plus architecture, historical-project, and external comparators; connector/recovery: `moecot` |
+| Source loading state | 19 of 21 assigned sources have exact reviewed mappings; RGS is treated as a same-author precursor to RMI rather than independent confirmation, and connector/external sources remain comparators rather than local results |
 | Test state | Existing readiness fixture, Lean, residual-gate, and six-transition lifecycle probes remain. `python3 scripts/validate_readiness_check_lifecycle.py` additionally accepts one quarantined six-project lineage record and rejects nine mutations covering skipped-as-green, ready-with-failed checks, non-monotone containment, orphaned quarantine, waiver substitution, unknown applicability, pass without evidence, ordinary routing under quarantine, and fixture-based support promotion. It is record discipline only, not deployed quarantine or readiness evidence. |
 
 ## Drafting guardrail
 
-The readiness-gate layer has 17 exact reviewed source mappings. MoECOT remains connector/source-note context. A bounded Project Theseus currentness import did rerun one pre-training architecture gate at exact commit `d2343540a17ea3e12760983f653529621fa445f1`; the result was YELLOW, with 12 wired, 2 implemented, 5 partial, and 1 frozen phase. That exact observation is implementation-reference currentness only, not model quality, deployment readiness, safety, transfer, or support promotion. The repository also proves finite predicates over authored readiness records; it has not implemented a deployed lifecycle engine.
+The readiness-gate layer has 19 exact reviewed mappings across 21 assigned sources. RGS is a same-author precursor to RMI, not independent corroboration, and MoECOT remains connector/source-note context. A bounded Project Theseus currentness import did rerun one pre-training architecture gate at exact commit `d2343540a17ea3e12760983f653529621fa445f1`; the result was YELLOW, with 12 wired, 2 implemented, 5 partial, and 1 frozen phase. That exact observation is implementation-reference currentness only, not model quality, deployment readiness, safety, transfer, or support promotion. The repository also proves finite predicates over authored readiness records; it has not implemented a deployed lifecycle engine.
 
 After routing, readiness determines whether a semantically plausible route is allowed to become ordinary execution. The route can be correct as a match and still fail as a governed choice because evidence is stale, regressions are unresolved, scope is too broad, or residuals need quarantine.
 
@@ -240,6 +241,37 @@ Readiness has three inputs. Gate evidence names the source notes, test records, 
 Quarantine is not deletion. It is a routing state. A quarantined module can remain available for diagnosis, replay, repair, or restricted review while ordinary routes are blocked. This distinction is what lets the architecture learn from failures without letting failures remain live in the control path.
 
 Residual escrow is not an unstructured backlog or a reputation marker. It is the mechanism that prevents unresolved cases from being laundered away during promotion, merge, split, retirement, or retraining. A residual can be accepted as bounded only when its scope, trigger, owner, and next review condition are named. Inherited residuals are especially important: a renamed, wrapped, split, or merged target must carry old residuals forward unless a separate record retires them.
+
+### Residual escrow is an active lifecycle, not a graveyard
+
+Ratcheting Generative Systems gives escrow three legitimate exits. A residual
+can be reattempted and, after consistent solution under the relevant contract,
+become a regression item. A recurring cluster can cross a prospectively named
+recurrence rule and become an active diagnostic or frontier candidate. Or an
+instrument audit can show that the item is ambiguous, noisy, mislabeled,
+unsolvable, or otherwise defective, in which case the benchmark item is
+repaired or retired while its audit history remains visible. Mere age, owner
+fatigue, a renamed target, or a higher aggregate score is not an exit.
+
+The escrow record therefore needs more than a description of “what remains.”
+It binds source instrument and run, affected obligation and consumers, failure
+type and cluster, severity and criticality, evidence, recurrence count and
+window, reattempt policy, next trigger, current disposition, descendants,
+owner, review budget, and closure receipt. Reattempts preserve selection
+lineage so repeated favorable sampling cannot manufacture consistent solution.
+Recurrence promotion is also claim-scoped: similar surface errors become one
+cluster only when the evaluator can defend the shared mechanism or obligation.
+
+Escrow receives a protected share of evaluation and review capacity, but the
+paper's illustrative frontier/regression/escrow/public-calibration percentages
+are not defaults. A fixed share can starve a severe tail, reward creation of
+cheap residuals, or keep an obsolete backlog alive. The budget policy instead
+responds to severity, critical vetoes, recurrence, uncertainty, information
+value, consumer exposure, review capacity, frontier opportunity cost, and
+time-to-expiry. Critical residuals can block routes regardless of allocation;
+ordinary low-value residuals can remain preserved without dominating the
+frontier. The governing tension is persistent pressure without either tail
+erasure or tail obsession.
 
 ### Runtime modes and residual custody
 
@@ -621,6 +653,7 @@ These rows keep Readiness Gates, Residual Escrow, and Quarantine's manifest assi
 
 | Source | Intake role | Boundary |
 |---|---|---|
+| `rgs` | Passage-reviewed comparator: Ratcheting Generative Systems. Supplies residual escrow as an active lifecycle: periodic reattempt, consistently solved promotion to regression, recurring-cluster promotion to diagnosis/frontier work, defective-item repair or retirement, and a protected but non-dominating evaluation budget. It also supplies subgroup floors and critical-failure vetoes around ordinary mastery graduation. | Conceptual precursor in the same author-side lineage as RMI, not independent confirmation. No residual store, recurrence classifier, reattempt scheduler, budget allocator, readiness engine, benchmark run, or promotion decision has been implemented or measured. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `deterministic_capability_compilation` | Metadata-first comparator: Deterministic Capability Compilation: A Capability-Preserving Ladder from Executable Scaffolds to Governed Adaptive Agents. Corben-authored July 2026 architecture and research program for compiling executable scaffolds into contract-bound experts and linked Neural Capability Objects while retaining semantic obligation mass balance, candidate-specific translation validation, fallback, residual escrow, authority ceilings, reification, and effect-complete recovery. Existing chapters are upgraded first; no foundry implementation, learned-capability result, preservation result, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_dont_hallucinate_abstain_2024` | Passage-reviewed comparator: Don't Hallucinate, Abstain: Identifying LLM Knowledge Gaps via Multi-LLM Collaboration. Supports measuring abstention with coverage, accuracy, calibration, and useful response behavior while treating self-reflection and model agreement as fallible evidence. | The ACL models, prompts, domains, collaboration schemes, and reported gains were not reproduced; the local single-model router is not an independent multi-model panel. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_swe_rebench_v2_2026` | Passage-reviewed comparator: SWE-rebench V2: Language-Agnostic SWE Task Collection at Scale. Adds concrete instrument-failure gates for missing images, broken setup, parser drift, implicit naming, external context, test coupling, emulation cost, and failed positive controls. | A failed instrument closes the denominator and cannot be laundered into negative evidence about a model, mechanism, or governance architecture. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |

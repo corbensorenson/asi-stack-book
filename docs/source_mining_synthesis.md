@@ -10,20 +10,20 @@ This report records the source-mining pass used to expand the book from a 16-cha
 - Locally readable Corben paper corpus: 44 canonical mining texts—37 cached
   Google Docs text exports and seven supplied Markdown whitepapers. Paired DOCX
   files are presentation counterparts, not independent idea sources.
-- Full section-family closure audits now exist for twenty papers:
+- Full section-family closure audits now exist for twenty-one papers:
   `deterministic_capability_compilation`, `platonic_world_model`, `scf`,
   `qcsa_whitepaper`, `reflexive_router_whitepaper`,
   `kernel_english_residual_compiler`, `relational_dimension_compiler`, and
   `precision_contract`, `planforge`, `planforge_compiler_arch`, and
   `cognitive_compilation`, `talos`, `vcm_public`, `spinoza`, and
   `spinoza_composer`, `octopus_router`, `rmi`, `cognitive_loop_closure`,
-  `benchmaxxing`, and `cgs`.
+  `benchmaxxing`, `cgs`, and `rgs`.
 - The 2026-07-31 VIEA second pass is the first legacy-paper fidelity repair: it
   expands the note from a routing summary into a 2,388-word system note and
   writes previously absent mechanisms into seven canonical chapters.
 - Every recent rich whitepaper in this audit now has an exact
   section-family-to-manuscript closure audit.
-- Twenty-three readable legacy papers still have first-pass routing notes rather
+- Twenty-two readable legacy papers still have first-pass routing notes rather
   than full-fidelity notes. Their ideas may be present in chapters, but note
   existence or manifest assignment is no longer accepted as proof of complete
   mining.
@@ -63,9 +63,9 @@ source assignment alone does not count.
 
 | State | Sources | Required next operation |
 |---|---|---|
-| Section-family audit complete | `deterministic_capability_compilation`, `platonic_world_model`, `scf`, `qcsa_whitepaper`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `relational_dimension_compiler`, `precision_contract`, `planforge`, `planforge_compiler_arch`, `cognitive_compilation`, `talos`, `vcm_public`, `spinoza`, `spinoza_composer`, `octopus_router`, `rmi`, `cognitive_loop_closure`, `benchmaxxing`, `cgs` | Re-open only on paper or chapter drift. |
+| Section-family audit complete | `deterministic_capability_compilation`, `platonic_world_model`, `scf`, `qcsa_whitepaper`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `relational_dimension_compiler`, `precision_contract`, `planforge`, `planforge_compiler_arch`, `cognitive_compilation`, `talos`, `vcm_public`, `spinoza`, `spinoza_composer`, `octopus_router`, `rmi`, `cognitive_loop_closure`, `benchmaxxing`, `cgs`, `rgs` | Re-open only on paper or chapter drift. |
 | Legacy paper repaired in this pass | `viea` | Re-run chapter/source validation and retain its new section-family map. |
-| Compression, representation, and substrate; deep note required | `rgs`, `rankfold_neuralfold`, `rankfold_compressor`, `bbvca_v9`, `bbvca_main`, `genesiscode`, `treellm`, `simulation_scaling`, `tokenmana`, `bugbrain` | Preserve equations, decoders, accounting, verification, failure surfaces, and rival representations—not only the compression slogan. |
+| Compression, representation, and substrate; deep note required | `rankfold_neuralfold`, `rankfold_compressor`, `bbvca_v9`, `bbvca_main`, `genesiscode`, `treellm`, `simulation_scaling`, `tokenmana`, `bugbrain` | Preserve equations, decoders, accounting, verification, failure surfaces, and rival representations—not only the compression slogan. |
 | Alignment, verification, context, and execution lineage; deep note required | `alignment_field`, `field_of_god`, `ethica_mechanica`, `eternal_code`, `verification_bandwidth`, `beastbrain`, `beastbrain_timeless`, `aletheia`, `context_engineer`, `black_hole_context_manager`, `ladon_manhattan`, `uat`, `software_magic_grimoire` | Separate operational mechanisms from metaphysics, branding, repeated drafts, unsafe absolutes, and unsupported performance claims; integrate only the durable architecture. `coherence_exchange` remains a separately connector-mined source rather than one of the 44 local paper texts. |
 
 The register is an honest queue, not a deferral license. When a paper yields a
@@ -273,6 +273,39 @@ verification, nondiscriminating levels, destructive active compression,
 analogy laundering, and recursive instability. No compactness, adequacy,
 compression, agent, control, governance, safety, implementation, or
 support-state result is inferred.
+
+## Ratcheting Generative Systems section-family closure result
+
+Ratcheting Generative Systems' 19 numbered sections, three appendices, and
+selected references now terminate in canonical prose, a public-safe deep note,
+an explicit research obligation, or a non-claim. The audit identifies RGS as
+the precursor unified ratchet later decomposed and expanded by RMI,
+Benchmaxxing, Compact Generative Systems, Cognitive Loop Closure, and Octopus
+Router. Shared wording and mechanisms are counted once rather than used as
+independent corroboration.
+
+The one material manuscript repair is in Readiness Gates. Residual escrow now
+has an active lifecycle: periodic reattempt; consistently solved promotion to
+regression; defensible recurring-cluster promotion to diagnosis or frontier;
+instrument-defect repair or retirement; and closure only through evidence,
+owner, affected descendants, and receipt. Escrow receives protected evaluation
+capacity, but the source's example percentages are not defaults and cannot
+override severity, critical vetoes, recurrence, uncertainty, consumer
+exposure, information value, or frontier opportunity cost.
+
+The deep note preserves the nine-component system state, vector-bounded
+frontier/floor rule, mastery threshold, subgroup floors, critical veto,
+stalled-effort decay, Frontier Momentum predicate, residual recurrence and
+budget, public calibration split, ten-stage loop closure, five-element optional
+substrate, interpreter/tool/reflex modes, six execution tiers, four risk tiers,
+hierarchical embodied logging, four ledgers, seven-level intervention ladder,
+anti-Goodhart safeguards, coding illustration, claims/non-claims, seven
+implementation phases, six research families, and appendix roles. It adds
+falsifiers for patience gaming, tail erasure/obsession, false recurrence,
+nontransferring bridges, wrong interventions, compiled-tool corruption,
+calibration collapse, missed reflex deadlines, ledger theater, and governance
+cost. No ratchet, threshold, residual, tool, benchmark, architecture, safety,
+implementation, or support-state result is inferred.
 
 ## SCF fidelity repair: first recovered depth
 

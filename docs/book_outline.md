@@ -5062,7 +5062,7 @@ Source loading queue:
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 
-| Manifest assignment reconciliation | `deterministic_capability_compilation`, `ext_dont_hallucinate_abstain_2024`, `ext_swe_rebench_v2_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `rgs`, `deterministic_capability_compilation`, `ext_dont_hallucinate_abstain_2024`, `ext_swe_rebench_v2_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: Every routable or replaceable capability needs a current consumer- and use-specific decision about shadow, canary, ordinary, diagnostic, quarantined, superseded, or retired operation and downstream residual ownership.
@@ -6234,7 +6234,7 @@ Source loading queue:
 
 
 
-| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `ext_claw_swe_bench_2026`, `ext_muse_unlearning_2025`, `ext_unlearning_benchmarks_weak_2024`, `ext_openunlearning_2025`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `ext_swe_rebench_v2_2026`, `ext_mlperf_training_v6_2026`, `relational_dimension_compiler`, `ext_cultural_alignment_llms_2024`, `ext_multilingual_evaluation_state_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `rgs`, `ext_claw_swe_bench_2026`, `ext_muse_unlearning_2025`, `ext_unlearning_benchmarks_weak_2024`, `ext_openunlearning_2025`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `ext_swe_rebench_v2_2026`, `ext_mlperf_training_v6_2026`, `relational_dimension_compiler`, `ext_cultural_alignment_llms_2024`, `ext_multilingual_evaluation_state_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: The architecture needs a way to move capability claims through evidence without overfitting to fixed benchmarks.

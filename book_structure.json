@@ -15969,6 +15969,7 @@
           "claim_label": "Design rationale",
           "source_ids": [
             "rmi",
+            "rgs",
             "deterministic_capability_compilation",
             "benchmaxxing",
             "scf",
@@ -15996,6 +15997,7 @@
               "scf"
             ],
             "supporting": [
+              "rgs",
               "octopus_router",
               "cognitive_loop_closure",
               "project_theseus_whitepaper",
@@ -16036,6 +16038,21 @@
                 "sources/raw/google_docs/rmi.txt:1330-1337"
               ],
               "passage_review_note": "Reviewed local raw cache for mastery thresholds, time-decayed floors, critical-failure vetoes, residual escrow, benchmark lifecycle states, specialist add/split/merge/retire rules, residual escrow ledger fields, under/over-quarantine mitigations, and frontier/floor discipline; no readiness engine, benchmark run, residual ledger, or prototype inspection is promoted."
+            },
+            {
+              "source_id": "rgs",
+              "mapped_support": "Supplies residual escrow as an active lifecycle: periodic reattempt, consistently solved promotion to regression, recurring-cluster promotion to diagnosis/frontier work, defective-item repair or retirement, and a protected but non-dominating evaluation budget. It also supplies subgroup floors and critical-failure vetoes around ordinary mastery graduation.",
+              "limits": "Conceptual precursor in the same author-side lineage as RMI, not independent confirmation. No residual store, recurrence classifier, reattempt scheduler, budget allocator, readiness engine, benchmark run, or promotion decision has been implemented or measured.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/rgs.txt:421-460",
+                "sources/raw/google_docs/rgs.txt:464-551",
+                "sources/raw/google_docs/rgs.txt:555-628",
+                "sources/raw/google_docs/rgs.txt:907-1026",
+                "sources/raw/google_docs/rgs.txt:1139-1214",
+                "sources/raw/google_docs/rgs.txt:1336-1426"
+              ],
+              "passage_review_note": "Reviewed the complete raw-cache families for the system tuple and ratchet rules, mastery/subgroup/veto/decay/frontier-momentum policy, residual lifecycle and recurrence promotion, illustrative budget, four ledgers, execution and risk tiers, implementation phases, and non-claims; no readiness or residual-lifecycle result is promoted."
             },
             {
               "source_id": "benchmaxxing",
@@ -21382,6 +21399,7 @@
             "deterministic_capability_compilation",
             "platonic_world_model",
             "rmi",
+            "rgs",
             "cognitive_loop_closure",
             "uat",
             "coherence_exchange",
@@ -21423,6 +21441,7 @@
               "rmi"
             ],
             "supporting": [
+              "rgs",
               "cognitive_loop_closure",
               "uat",
               "coherence_exchange",
@@ -21503,6 +21522,24 @@
               ],
               "passage_review_note": "Reviewed the complete local raw cache for pressure-to-structure loops, benchmark lifecycle, mastery decay and vetoes, residual escrow, public calibration, the seven-level intervention ladder, bridge frontiers, architecture hypotheses, benchmark/model/tool/residual ledgers, metrics, failure modes, implementation phases, and non-claims; no RMI prototype, intervention comparison, or benchmark result is promoted.",
               "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "rgs",
+              "mapped_support": "Supplies the precursor unified ratchet joining benchmark pressure, mastery and subgroup floors, critical-failure vetoes, stalled-effort threshold decay, frontier momentum, residual escrow, public calibration, loop closure, three execution modes, four ledgers, and a seven-level intervention ladder.",
+              "limits": "Conceptual precursor in the same author-side lineage as RMI, Benchmaxxing, CGS, and Cognitive Loop Closure; overlap is not independent corroboration. The 90/70 thresholds and portfolio percentages are illustrative, and no benchmark, intervention, tool, safety, transfer, or capability result exists.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/google_docs/rgs.txt:94-205",
+                "sources/raw/google_docs/rgs.txt:209-282",
+                "sources/raw/google_docs/rgs.txt:287-417",
+                "sources/raw/google_docs/rgs.txt:421-551",
+                "sources/raw/google_docs/rgs.txt:555-680",
+                "sources/raw/google_docs/rgs.txt:684-815",
+                "sources/raw/google_docs/rgs.txt:819-1135",
+                "sources/raw/google_docs/rgs.txt:1218-1300",
+                "sources/raw/google_docs/rgs.txt:1304-1481"
+              ],
+              "passage_review_note": "Reviewed the complete raw cache for the unified loop, formal state, active compression, compact generative structure, mastery decay, subgroup floors, critical vetoes, residual recurrence and budget, public calibration, loop closure, optional substrate, execution modes, ledgers, intervention ladder, anti-Goodhart controls, implementation, research agenda, and non-claims; no empirical result or independent confirmation is promoted."
             },
             {
               "source_id": "cognitive_loop_closure",
