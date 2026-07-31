@@ -23,6 +23,8 @@ primary_sources:
   - "relational_dimension_compiler"
   - "ext_cultural_alignment_llms_2024"
   - "ext_multilingual_evaluation_state_2026"
+  - "portia_synapse"
+  - "spider_synapse"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -787,6 +789,34 @@ record `blocked_after_full_attempt`. Until the required lanes pass and an exact
 transition is accepted, the core remains `argument`; score increases, green
 fixtures, and growing benchmark inventories are non-terminal.
 
+### The Portia/Spider lineage is a benchmark-authenticity test
+
+SpiderSynapse reports an extended plateau; PortiaSynapse reports a replacement
+that compiles, trains with finite losses, and passes a test suite. Keeping both
+records prevents successor bias, but neither record by itself establishes the
+causal repair. Portia's own document gives three incompatible test counts—15,
+22, and 24—and leaves full integration and comparative benchmarking incomplete.
+The contradiction is not clerical noise: it is a concrete reason to bind every
+claim to an exact commit, test manifest, command, environment, and result.
+
+The benchmark must also target the right object. Mean bit accuracy over a
+128-bit HLSH coordinate can look good while every full coordinate is wrong;
+coordinate recovery can improve while route selection or downstream task
+success does not. The evidence packet therefore reports bit accuracy, exact
+coordinate identity, prefix/depth error, graph distance, edge accuracy, route
+success, task success, calibration to a named release event, abstention,
+fallback, latency, memory, and batch-composition invariance separately.
+
+Matched baselines include the previous Synapse, one-path linear and MLP heads,
+Portia without Focus, without mutable memory, without each refinement, and
+Spider with controlled branch count and depth. Random walks and known paths
+are partitioned by semantic object and graph lineage to prevent structural
+leakage. A passing deterministic fallback cannot mask a failed learned path,
+and a stable optimization trace cannot substitute for held-out improvement.
+Only factorial ablation and replication can support the proposed causal story;
+otherwise the honest outcome is an improved implementation candidate with an
+unresolved mechanism.
+
 ## Codex test plan
 
 | Test | Purpose | Status |
@@ -845,6 +875,8 @@ implementation refinement; empirical obligations stay empirical.
 | `corbens_trainer_project` | Corben's Trainer epistemic training and evaluation control plane | local_project_lineage | Metric authenticity, seed identity, quarantined-run inheritance, stale promotion, and checkpoint completion. | public-safe source note; no external benchmark claim |
 | `corbens_best_model_possible_project` | Corben's Best Model Possible recurrent-model and mechanism laboratory | local_project_lineage | Metric-origin algebra, representation-capacity gate, retry discipline, and checkpoint-to-output binding. | public-safe source note; no reproduced general model capability |
 | `ext_mem0_2025`, `ext_mlcommons_croissant_1_1_2026`, `ext_inspect_ai_2024`, `ext_agentdojo_2024`, `ext_darwin_godel_machine_2025`, `ext_adas_2024`, `ext_dynamic_compute_recurrent_transformers_2026` | Current memory, dataset, evaluation, security, self-improvement, architecture-search, and adaptive-compute comparators | external_benchmark_infrastructure | Use to expand benchmark/version/evaluator/adaptive-attack and complexity-controlled ratchets while preserving judge, contamination, evaluator-capture, transfer, and generalization limits. | source notes available; no local reproduction or benchmark promotion |
+| `portia_synapse` | PortiaSynapse | routing_training_and_dkl_navigation | Successor benchmark-authenticity case: bind implementation, test manifest, phase gates, exact coordinate/route/task metrics, calibration, memory isolation, and matched ablations. | authenticated Drive paper reviewed; conflicting test counts and incomplete comparison preserved; no local reproduction |
+| `spider_synapse` | SpiderSynapse | routing_training_and_dkl_navigation | Negative-result lineage for retaining plateaus, complete denominators, path-level diagnostics, and causal recovery rather than laundering a successor story. | authenticated Drive paper reviewed; reported failure not locally reproduced and mechanism remains unidentified |
 
 
 Those failures prevent a semantic or model conclusion even though exact-object and byte-count submetrics were informative.

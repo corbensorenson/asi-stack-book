@@ -374,6 +374,18 @@ fatigue, proof-laundering resistance, useful outcomes, error cost, latency,
 privacy exposure, maintenance, and human governance burden against direct,
 citation-only, stateless-prover, checklist, and accountable-editor baselines.
 
+TreeLLM adds a specific anti-laundering case: a traversal path is an execution
+trace, not a proof-carrying claim. It may show which graph objects and edge
+types a navigator visited, but it does not establish stable referent
+resolution, edge truth, source authority, entailment, completeness, causal use
+by the model, or answer correctness. The claim packet therefore binds path and
+graph epochs, exact object and sense identities, relation provenance,
+contradictions, approximate or speculative hops, omitted frontier, retrieved
+context, cited context, and evidence actually used. Soft links and Scout
+bridges remain proposals; repeated traversal cannot harden them into belief.
+The source's perfect-grounding and native-explainability language is
+explicitly rejected, and no TreeLLM implementation or result is imported.
+
 ### Proof-carrying training and semantic-basis validity
 
 Deterministic Capability Compilation proposes a proof-carrying training receipt
@@ -780,7 +792,7 @@ usefulness, safety, or transfer.
 | `genesiscode` | GenesisCode | executable_specification | Obligation-carrying artifacts, tests/proofs/provenance, capability boundaries, semantic patch validation, and small trusted-core discipline. | passage-reviewed local raw cache |
 | `coherence_exchange` | The Coherence Exchange | epistemic_market_synthesis | Connector/source-note synthesis for verification supply chains, contestability, fork/exit/audit, and review-market framing. | source note available; connector or recovery required |
 | `verification_bandwidth` | Verification Bandwidth in Bounded Contexts | context_verification_theory | Generation/verification separation, verification workspace limits, pairwise checking cost, and context-adequacy pressure. | passage-reviewed local raw cache |
-| `treellm` | TreeLLM | semantic_representation | Semantic graph/path framing for interpretation mappings and traceable claim representation. | passage-reviewed local raw cache |
+| `treellm` | TreeLLM correction lineage | semantic_representation | Graph/path traces as versioned route artifacts, with exact/approximate/speculative hops and stable identity/provenance required before any claim use. A route is neither truth, entailment, causal explanation, nor proof. | complete 65,779-word lineage section-family reviewed; no local implementation or result |
 | `uat` | Unified Adaptive Tribunal | evaluation_refinement | Retrieval-bounded dossiers, atomic proposition states, adversarial review, hard cycle caps, SME checkpoints, and dissent preservation. | passage-reviewed local raw cache |
 | `talos` | Talos Protocol | labor_execution_os | Typed review artifacts, claim graphs, evidence sets, logs, replay, residual risk, and human adjudication pressure. | passage-reviewed local raw cache |
 | `ext_proof_carrying_code_1997` | Proof-Carrying Code | external_literature | Comparator for machine-checkable artifact evidence and host-side policy verification. | source note available |

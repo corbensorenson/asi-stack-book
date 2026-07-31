@@ -167,6 +167,29 @@ A substrate adoption record separates:
 
 This lets the architecture keep a library of promising substrates without turning the library into a mythology.
 
+TreeLLM supplies a useful matched substrate family because its own drafts move
+among hard DAG traversal, HLSH coordinates, ANN soft-linking, learned routing,
+recurrent navigation, adaptive short-id caching, and multi-hop speculative
+prefetch. The adoption record must not bundle them into one “graph
+intelligence” treatment. Exact graph lookup, ordinary knowledge-graph
+retrieval, dense vector search, hybrid retrieval, GraphRAG-style assembly,
+learned navigation, HLSH/path tokens, and speculative traversal are separate
+candidates with matched information and I/O budgets. Hard-edge, no-residual,
+random-coordinate, fixed-versus-evolving-anchor, no-cache/conventional-cache,
+no-speculation, and oracle-route controls isolate the claimed mechanism.
+
+The causal signature must match the story. If HLSH matters, semantic
+neighborhoods should survive held-out senses and graph updates better than
+random or ordinary identifiers. If structured tokens matter, a matched model
+should improve consumer utility or reduce total burden after first-use,
+residual, cache, verification, and fallback costs. If soft-linking matters, it
+should recover missing edges without amplifying false neighbors. If
+speculation matters, useful tail latency should improve after wrong-path reads
+and privacy/epoch checks. If routing matters, learned choices should beat a
+strong default and approach an oracle without collapsing to one lane. None of
+these results exists locally; the complete lineage remains an exploratory
+candidate with explicit retirement conditions.
+
 Optionality is a positive design state. It means the stack can route experiments toward a substrate while keeping default behavior on ordinary baselines. It also means a future implementation can test a substrate without changing the book's core architecture claim. The substrate becomes load-bearing only after evidence, not before.
 
 Adoption states should therefore be operational: exploratory, structural-only, canary, qualified-for-scope, blocked, retired, or superseded. A state that does not change routing, testing, consumer access, or evidence obligations is a label, not governance. The schema uses the same states as machine-readable values such as `structural_only` and `qualified_for_scope`.
@@ -460,7 +483,7 @@ cannot by itself authorize adoption.
 | `genesiscode` | GenesisCode | executable_specification | Tiny pure calculus + obligations + provenance for auditable AI-symbiotic programming. | source note available; local raw cache available |
 | `temporal_coil_research` | Temporal Coil Research | mathematical_search_substrate | Manifest-driven A/B process for temporal-coil integration in language model training. | source note available; local raw cache available |
 | `cognitive_compilation` | Cognitive Compilation | planning_semantic_ir | Compiler framing for LLM-centered planning, semantic IR, target compilation, incremental repair. | source note available; local raw cache available |
-| `treellm` | TreeLLM | semantic_representation | Hierarchical semantic token system for grounded, efficient, explainable language modeling. | source note available; local raw cache available |
+| `treellm` | TreeLLM correction lineage | semantic_representation | Matched candidate family for hard graph, HLSH/path tokens, ANN fallback, learned and recurrent navigation, caching, and speculative traversal, with mechanism-specific ablations and retirement tests. | complete 65,779-word lineage section-family reviewed; exploratory only, no local implementation or result |
 | `simulation_scaling` | Simulation Scaling Law | compute_fidelity_constraints | Resource constraints on scope, clockspeed, and fidelity in simulations. | source note available; local raw cache available |
 | `coilmoecot` | CoilMoECOT Whitepaper v2.0 | mathematical_search_substrate | Prime-temporal coil networks as governed specialist cores in MoECOT runtime. | source note available; local raw cache available |
 | `circle_calculus_core` | Circle Calculus | proof_carrying_mathematical_substrate | Proof-carrying finite cyclic mathematics project with Lean proofs, Python reference models, Rust utilities, theorem manifests, papers, and Quarto living book. | source note available |

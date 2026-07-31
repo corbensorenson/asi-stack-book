@@ -6,11 +6,13 @@ This report records the source-mining pass used to expand the book from a 16-cha
 
 ## Coverage
 
-- Current inventory: 463 Corben-side and external source records.
-- Locally readable Corben paper corpus: 44 canonical mining texts—37 cached
-  Google Docs text exports and seven supplied Markdown whitepapers. Paired DOCX
-  files are presentation counterparts, not independent idea sources.
-- Full section-family closure audits now exist for twenty-six papers:
+- Current inventory: 465 Corben-side and external source records.
+- Locally readable Corben paper corpus: 46 canonical mining texts—37 cached
+  Google Docs text exports, seven supplied Markdown whitepapers, and two
+  authenticated Google Drive Markdown papers recovered through the
+  TreeLLM-successor search. Paired DOCX files are presentation counterparts,
+  not independent idea sources.
+- Full section-family closure audits now exist for twenty-nine papers:
   `deterministic_capability_compilation`, `platonic_world_model`, `scf`,
   `qcsa_whitepaper`, `reflexive_router_whitepaper`,
   `kernel_english_residual_compiler`, `relational_dimension_compiler`, and
@@ -18,13 +20,14 @@ This report records the source-mining pass used to expand the book from a 16-cha
   `cognitive_compilation`, `talos`, `vcm_public`, `spinoza`, and
   `spinoza_composer`, `octopus_router`, `rmi`, `cognitive_loop_closure`,
   `benchmaxxing`, `cgs`, `rgs`, `rankfold_neuralfold`, and
-  `rankfold_compressor`, `bbvca_v9`, `bbvca_main`, and `genesiscode`.
+  `rankfold_compressor`, `bbvca_v9`, `bbvca_main`, `genesiscode`, `treellm`,
+  `spider_synapse`, and `portia_synapse`.
 - The 2026-07-31 VIEA second pass is the first legacy-paper fidelity repair: it
   expands the note from a routing summary into a 2,388-word system note and
   writes previously absent mechanisms into seven canonical chapters.
 - Every recent rich whitepaper in this audit now has an exact
   section-family-to-manuscript closure audit.
-- Seventeen readable legacy papers still have first-pass routing notes rather
+- Sixteen readable legacy papers still have first-pass routing notes rather
   than full-fidelity notes. Their ideas may be present in chapters, but note
   existence or manifest assignment is no longer accepted as proof of complete
   mining.
@@ -64,9 +67,9 @@ source assignment alone does not count.
 
 | State | Sources | Required next operation |
 |---|---|---|
-| Section-family audit complete | `deterministic_capability_compilation`, `platonic_world_model`, `scf`, `qcsa_whitepaper`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `relational_dimension_compiler`, `precision_contract`, `planforge`, `planforge_compiler_arch`, `cognitive_compilation`, `talos`, `vcm_public`, `spinoza`, `spinoza_composer`, `octopus_router`, `rmi`, `cognitive_loop_closure`, `benchmaxxing`, `cgs`, `rgs`, `rankfold_neuralfold`, `rankfold_compressor`, `bbvca_v9`, `bbvca_main`, `genesiscode` | Re-open only on paper or chapter drift. |
+| Section-family audit complete | `deterministic_capability_compilation`, `platonic_world_model`, `scf`, `qcsa_whitepaper`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `relational_dimension_compiler`, `precision_contract`, `planforge`, `planforge_compiler_arch`, `cognitive_compilation`, `talos`, `vcm_public`, `spinoza`, `spinoza_composer`, `octopus_router`, `rmi`, `cognitive_loop_closure`, `benchmaxxing`, `cgs`, `rgs`, `rankfold_neuralfold`, `rankfold_compressor`, `bbvca_v9`, `bbvca_main`, `genesiscode`, `treellm`, `spider_synapse`, `portia_synapse` | Re-open only on paper or chapter drift. |
 | Legacy paper repaired in this pass | `viea` | Re-run chapter/source validation and retain its new section-family map. |
-| Compression, representation, and substrate; deep note required | `treellm`, `simulation_scaling`, `tokenmana`, `bugbrain` | Preserve equations, decoders, accounting, verification, failure surfaces, and rival representations—not only the compression slogan. |
+| Compression, representation, and substrate; deep note required | `simulation_scaling`, `tokenmana`, `bugbrain` | Preserve equations, decoders, accounting, verification, failure surfaces, and rival representations—not only the compression slogan. |
 | Alignment, verification, context, and execution lineage; deep note required | `alignment_field`, `field_of_god`, `ethica_mechanica`, `eternal_code`, `verification_bandwidth`, `beastbrain`, `beastbrain_timeless`, `aletheia`, `context_engineer`, `black_hole_context_manager`, `ladon_manhattan`, `uat`, `software_magic_grimoire` | Separate operational mechanisms from metaphysics, branding, repeated drafts, unsafe absolutes, and unsupported performance claims; integrate only the durable architecture. `coherence_exchange` remains a separately connector-mined source rather than one of the 44 local paper texts. |
 
 The register is an honest queue, not a deferral license. When a paper yields a
@@ -509,6 +512,47 @@ replay, package policy, patch checker, type/proof stack, translation
 validation, optimizer, benchmark, safety result, deployment, support, novelty,
 SOTA, AGI, or ASI claim is inferred. The paper spans existing specification,
 compilation, runtime, and artifact owners; no new chapter is warranted.
+
+## TreeLLM, SpiderSynapse, and PortiaSynapse closure result
+
+TreeLLM's 65,779-word cache is not one stable paper. It is a 28-visible-tab
+correction lineage: early graph-and-navigator architecture, increasingly strong
+promotional drafts, an unusually useful self-critique, revised engineering
+variants, a RadixBeast representation bridge, and four final Aletheia tabs that
+belong to another source family. Tabs 14--16 are absent. The audit uses the
+self-critique to control earlier claims and excludes the Aletheia contamination
+rather than counting repetition as corroboration.
+
+The durable contribution is a separation stack: memory from navigator;
+semantic object from coordinate, path, token, embedding, or storage address;
+retrieval proposal from belief and persistence; narrow database write cost
+from effect-complete semantic closure; and background graph repair from
+authority. These distinctions now live in Durable Semantic Memory, Cognitive
+Compilation, Compact Generative Systems, Verification Bandwidth, Spinoza, and
+Mathematical and Search Substrates. Fixed thirteen roots, eternal frozen
+navigators, one global truth graph, perfect grounding, fixed-width semantic
+sufficiency, and unqualified device-scale or O(1) claims are explicitly
+rejected.
+
+The author's successor lead recovered two additional authenticated Drive
+papers. SpiderSynapse is the failed multi-hypothesis predecessor: four paths,
+three refinements, mutable memory, selection, and typed outputs with a reported
+training plateau. PortiaSynapse explicitly replaces it with a Scout, Focus,
+two residual refinements, a 512-dimensional `RichContext`, coordinate/edge/
+confidence heads, phased training, diagnostic traits, a registry, and fallback.
+Their joined value is the preserved failure-and-repair record, not a conclusion
+that the successor solved learning.
+
+The book now requires the smallest learning contract first; evidence-gated
+rather than percentage-gated phases; exact coordinate, route, task, and
+calibration metrics; per-path gradients, utilization, diversity, and selector
+credit; batch-composition invariance; request/session memory isolation; matched
+component and compute baselines; structural-leakage controls; and factorial
+ablation before causal claims. Portia's inconsistent 15/22/24 test totals and
+unfinished integration/benchmark milestones remain visible. No TreeLLM graph,
+Spider failure, Portia learning result, DKL navigation advantage, memory
+property, safety result, production result, or support-state transition is
+inferred, and no new chapter is warranted.
 
 ## SCF fidelity repair: first recovered depth
 

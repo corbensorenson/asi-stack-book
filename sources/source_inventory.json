@@ -7791,5 +7791,40 @@
     "updated": "2026-07-27",
     "citation_label": "Kimi Team (2026), Kimi K3: Open Frontier Intelligence",
     "doi": "10.48550/arXiv.2607.24653"
+  },
+  {
+    "id": "portia_synapse",
+    "title": "PortiaSynapse: A Cognitive Spider Architecture for DKL Navigation",
+    "priority": "supporting_lineage",
+    "layer": "routing_training_and_dkl_navigation",
+    "chapter_targets": [
+      "routing-heads-and-specialist-cores",
+      "policy-optimization-and-learning-from-feedback",
+      "governed-deliberation-and-test-time-scaling",
+      "benchmark-ratchets-and-anti-goodhart-evidence",
+      "durable-semantic-memory-and-knowledge-lattices"
+    ],
+    "url": "https://drive.google.com/file/d/1ZnsE0rAC8YdiMFeo3N4kWEU8keTthF9v",
+    "notes": "Authenticated Google Drive successor to TreeLLM's failed SpiderSynapse path. It proposes a replacement-compatible Scout/Focus/refinement navigator, phased training, diagnostic traits, typed DKL outputs, and fallback. The source reports implementation and tests but contains conflicting test totals, incomplete integration and benchmarking, and unresolved causal, attention-axis, memory-isolation, metric, and calibration questions; no local result is inferred.",
+    "source_type": "technical_whitepaper",
+    "published": "2024-12-23",
+    "citation_label": "Sorenson (2024), PortiaSynapse"
+  },
+  {
+    "id": "spider_synapse",
+    "title": "SpiderSynapse: A Multi-Hypothesis Reasoning Architecture",
+    "priority": "supporting_lineage",
+    "layer": "routing_training_and_dkl_navigation",
+    "chapter_targets": [
+      "routing-heads-and-specialist-cores",
+      "policy-optimization-and-learning-from-feedback",
+      "governed-deliberation-and-test-time-scaling",
+      "benchmark-ratchets-and-anti-goodhart-evidence"
+    ],
+    "url": "https://drive.google.com/file/d/1PPxsdmNbj8Ao1mNIelMrMxEr8ajIgWDn",
+    "notes": "Authenticated Google Drive predecessor to PortiaSynapse. It preserves a source-reported training plateau in a four-hypothesis, three-refinement architecture and proposes a one-path recovery protocol. The failure is valuable negative evidence but does not identify branching, refinement, memory, selector credit, label smoothing, or target geometry as the cause, and it has not been locally reproduced.",
+    "source_type": "technical_whitepaper",
+    "published": "2024-12-23",
+    "citation_label": "Sorenson (2024), SpiderSynapse"
   }
 ]

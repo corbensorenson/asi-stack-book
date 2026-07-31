@@ -9460,6 +9460,8 @@
           "source_ids": [
             "qcsa_whitepaper",
             "vcm_public",
+            "treellm",
+            "portia_synapse",
             "ext_graphrag_2024",
             "ext_hipporag_2024",
             "ext_mem0_2025",
@@ -9589,6 +9591,26 @@
                 "sources/source_notes/ext_titans_2025.md"
               ],
               "passage_review_note": "The local source note was reviewed for bounded mechanism, evidence, failure, and non-claim use."
+            },
+            {
+              "source_id": "treellm",
+              "mapped_support": "Complete visible TreeLLM correction lineage for model/memory separation, explicit semantic graphs, structured tokens, typed exact/approximate/exploratory/ingestion routes, learned anchors, DKL snapshots, overlays, graph hygiene, adaptive caching, speculative traversal, skills, and mobile or federated variants.",
+              "limits": "The lineage contains mutually inconsistent drafts and later Aletheia contamination. No local graph, token, HLSH property, semantic update bound, retrieval result, grounding, privacy, federation, or production claim is established.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/treellm.md"
+              ],
+              "passage_review_note": "Reviewed all 28 visible TreeLLM tabs, recorded missing tabs 14--16, let the source's own critique control earlier promotional claims, and excluded the four Aletheia-contaminated final tabs from TreeLLM support."
+            },
+            {
+              "source_id": "portia_synapse",
+              "mapped_support": "Authenticated TreeLLM successor that instantiates a DKL navigator over a versioned RichContext and mutable Focus memory, motivating snapshot, codec, provenance, neighbor-policy, and session-isolation obligations.",
+              "limits": "Source-reported implementation only; it does not establish memory truth, state isolation, deletion closure, learning, routing quality, or transfer.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/portia_synapse.md"
+              ],
+              "passage_review_note": "Reviewed the complete authenticated Drive paper, including architecture, phased training, traits, tests, limitations, and unresolved contradictions."
             }
           ],
           "proof_targets": [
@@ -14189,7 +14211,9 @@
             "qcsa_whitepaper",
             "reflexive_router_whitepaper",
             "relational_dimension_compiler",
-            "ext_kimi_k3_2026"
+            "ext_kimi_k3_2026",
+            "portia_synapse",
+            "spider_synapse"
           ],
           "source_queue": {
             "primary": [
@@ -14493,6 +14517,26 @@
                 "sources/source_notes/relational_dimension_compiler.md"
               ],
               "passage_review_note": "Reviewed the complete paper for relational-order routing, operator registry, candidate denominators, least-sufficient-order escalation, lower-order rescue, abstention, and total-cost boundaries."
+            },
+            {
+              "source_id": "portia_synapse",
+              "mapped_support": "TreeLLM successor architecture for a replacement-compatible Scout, Focus, refinement, coordinate, edge, and confidence route with phased training, diagnostics, stable traits, registry selection, and fallback.",
+              "limits": "Conflicting source test counts, incomplete integration and comparative benchmarking, possible batch-coupled attention, mutable-memory isolation, and weak exact task metrics remain unresolved; no local route learning is established.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/portia_synapse.md"
+              ],
+              "passage_review_note": "Reviewed the complete authenticated Drive paper and mapped replacement compatibility, training phases, diagnostics, fallback, internal contradictions, and non-claims."
+            },
+            {
+              "source_id": "spider_synapse",
+              "mapped_support": "Failed predecessor case for multi-hypothesis routing, repeated refinement, mutable working memory, selection, typed output heads, path diagnostics, and one-path recovery.",
+              "limits": "Its reported plateau does not identify branching, refinement, memory, selector credit, label smoothing, or supervision geometry as the cause and has not been locally reproduced.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/spider_synapse.md"
+              ],
+              "passage_review_note": "Reviewed the complete authenticated Drive paper, preserving its negative result, proposed recovery, causal uncertainty, and generalization limits."
             }
           ],
           "mechanism": [
@@ -18267,7 +18311,9 @@
             "ext_s_grpo_2025",
             "ext_universal_transformer_2019",
             "ext_dynamic_compute_recurrent_transformers_2026",
-            "ext_faithfulness_information_flow_2026"
+            "ext_faithfulness_information_flow_2026",
+            "portia_synapse",
+            "spider_synapse"
           ],
           "source_queue": {
             "primary": [
@@ -18369,6 +18415,26 @@
               ],
               "passage_review_state": "reviewed",
               "passage_review_note": "Primary-source passages were reviewed for the stated comparator contribution and limits; no local implementation, reproduction, safety result, or support-state promotion is inferred."
+            },
+            {
+              "source_id": "portia_synapse",
+              "mapped_support": "Successor case for distinguishing fixed hidden refinement from evidence-bearing deliberation, testing Focus and mutable-memory isolation, and admitting adaptive refinement only after a one-path contract learns.",
+              "limits": "The paper's Scout, Focus, and residual blocks do not by naming establish search, trial-and-error, causal correction, useful extra compute, or safe mutable state.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/portia_synapse.md"
+              ],
+              "passage_review_note": "Reviewed the complete paper for refinement semantics, attention-axis risk, memory lifetime, confidence, fallback, phase gates, and benchmark gaps."
+            },
+            {
+              "source_id": "spider_synapse",
+              "mapped_support": "Negative predecessor case for branch utilization, diversity, selector credit, repeated-refinement causality, corruption, cost, stop behavior, and recovery to one hypothesis and one refinement.",
+              "limits": "The source-reported failure cannot establish a general law about multi-hypothesis deliberation and was not locally reproduced.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/spider_synapse.md"
+              ],
+              "passage_review_note": "Reviewed the complete paper for the reported plateau, architecture, diagnostics gap, recovery plan, and explicit causal limits."
             }
           ],
           "problem": "Additional inference can change a system's answer through search, revision, candidate aggregation, or verifier calls without a prospective rule for when extra compute is worthwhile, what evidence the verifier contributes, how initially correct answers are protected, when to stop or abstain, and what the resulting candidate may influence.",
@@ -21460,7 +21526,9 @@
             "ext_mlperf_training_v6_2026",
             "relational_dimension_compiler",
             "ext_cultural_alignment_llms_2024",
-            "ext_multilingual_evaluation_state_2026"
+            "ext_multilingual_evaluation_state_2026",
+            "portia_synapse",
+            "spider_synapse"
           ],
           "source_queue": {
             "primary": [
@@ -21917,6 +21985,26 @@
                 "sources/source_notes/relational_dimension_compiler.md"
               ],
               "passage_review_note": "Reviewed the complete paper for RODIE suites, baseline requirements, falsifiers, candidate denominators, causal controls, transfer axes, and anti-self-confirmation limits."
+            },
+            {
+              "source_id": "portia_synapse",
+              "mapped_support": "Benchmark-authenticity case for binding a successor implementation to an exact test manifest, evidence-gated training phases, exact coordinate and route metrics, calibration, memory isolation, and matched component ablations.",
+              "limits": "The source contains conflicting test counts and incomplete integration and comparative benchmarking; finite loss, stable steps, and passing unit tests do not establish learning or causal repair.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/portia_synapse.md"
+              ],
+              "passage_review_note": "Reviewed the complete authenticated paper and preserved all conflicting counts, unfinished milestones, metric weaknesses, and causal obligations."
+            },
+            {
+              "source_id": "spider_synapse",
+              "mapped_support": "Negative-result lineage for retaining a plateau, full path denominators, component diagnostics, and causal recovery rather than treating a successor as retroactive proof.",
+              "limits": "The reported plateau is not locally reproduced and does not identify which component or training choice caused failure.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/spider_synapse.md"
+              ],
+              "passage_review_note": "Reviewed the complete authenticated paper for architecture, reported metrics, failure analysis, recovery protocol, and causal uncertainty."
             }
           ],
           "mechanism": [
@@ -23492,7 +23580,9 @@
             "ext_longrlvr_2026",
             "ext_rlhf_limitations_2023",
             "ext_muse_unlearning_2025",
-            "ext_faithfulness_information_flow_2026"
+            "ext_faithfulness_information_flow_2026",
+            "portia_synapse",
+            "spider_synapse"
           ],
           "problem": "A governed stack needs to convert feedback, verification, benchmark pressure, and failure into better future behavior without allowing reward signals to bypass evidence, authority, or rollback boundaries.",
           "insufficient": "RLHF, preference optimization, and verifier rewards are often treated as model-alignment recipes rather than governed update mechanisms across planners, routers, context policies, execution policies, and generation modes.",
@@ -23876,6 +23966,26 @@
               ],
               "passage_review_state": "reviewed",
               "passage_review_note": "Primary-source passages were reviewed for the stated comparator contribution and limits; no local implementation, reproduction, safety result, or support-state promotion is inferred."
+            },
+            {
+              "source_id": "portia_synapse",
+              "mapped_support": "Case study for evidence-gated phase training, smallest-contract-first optimization, gradient and activation diagnostics, confidence calibration, component admission, matched ablation, and rollback.",
+              "limits": "The source reports an implementation but does not provide local training artifacts, independent reproduction, exact task learning, causal repair evidence, or deployment evidence.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/portia_synapse.md"
+              ],
+              "passage_review_note": "Reviewed the complete authenticated paper for its phase schedule, loss design, diagnostics, reported tests, internal contradictions, limitations, and unresolved causal claims."
+            },
+            {
+              "source_id": "spider_synapse",
+              "mapped_support": "Preserved negative result and recovery case for reducing branch count and refinement depth, isolating a coordinate-only target, logging per-path evidence, and reintroducing mechanisms one at a time.",
+              "limits": "The proposed one-twelfth gradient explanation is a hypothesis, and the report does not causally identify branching, memory, selection, label smoothing, or target geometry.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/spider_synapse.md"
+              ],
+              "passage_review_note": "Reviewed the complete authenticated paper and preserved the failure as bounded evidence without promoting its speculative causal explanation."
             }
           ],
           "mechanism": [

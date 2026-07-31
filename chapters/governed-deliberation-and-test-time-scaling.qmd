@@ -14,6 +14,8 @@ primary_sources:
   - "ext_universal_transformer_2019"
   - "ext_dynamic_compute_recurrent_transformers_2026"
   - "ext_faithfulness_information_flow_2026"
+  - "portia_synapse"
+  - "spider_synapse"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -452,6 +454,32 @@ correct candidate. The current real-model null result is preserved exactly for
 that reason. A later successful cohort may add evidence; it may not rewrite
 the earlier denominator or reinterpret a non-estimable metric as zero harm.
 
+### Hidden refinement is not deliberation by naming
+
+SpiderSynapse described four hypotheses and three refinement passes; Portia
+replaced them with a Scout, a Focus stage, and two residual refinements. These
+are useful candidate mechanisms, but their names do not establish search,
+reflection, or trial-and-error. A fixed feed-forward block is deliberation only
+if the system exposes a changing candidate state, obtains new evidence or an
+independent evaluation, makes a causal correction, and earns the extra cost
+over a matched-depth baseline. Otherwise it is simply a deeper computation.
+
+The same discipline applies to Focus. The paper's displayed matrix operation
+on a two-dimensional batch-by-feature tensor appears capable of mixing examples
+across the batch unless an unshown reshape or attention axis prevents it. A
+mandatory batch-composition test therefore repeats one request beside unrelated
+neighbors and requires invariant output. Mutable working memory is scoped by
+request, user, session, model, and DKL snapshot; a lock prevents a data race but
+does not prevent semantic cross-session leakage.
+
+Branching can be reintroduced only after the one-path contract learns. Each
+branch then needs utilization, diversity, marginal repair, corruption, selector
+credit, cost, and stop evidence. Refinement depth is compared with matched
+parameter and compute baselines, and confidence is calibrated to a named
+release event rather than average coordinate-bit accuracy. A weak branch may
+be stopped, routed to the old Synapse, or escrowed; it may not hide inside an
+aggregate loss.
+
 Finally, release policy is evaluated alongside answer policy. Report useful
 answers delivered, correct answers withheld, incorrect answers released,
 abstentions, escalations, residual age, latency distribution, compute cost,
@@ -641,6 +669,8 @@ training eliminates reward hacking.
 | `ext_deepseek_r1_2025` | DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning | Comparator for reasoning-RL, self-reflection, verification, and dynamic strategy adaptation in the source setting; not an independent verifier or local model result. |
 | `ext_s_grpo_2025` | S-GRPO: Early Exit via Reinforcement Learning in Reasoning Models | Comparator for reasoning-stop policy and early-exit tradeoffs; not evidence that shorter reasoning is adequate. |
 | `ext_universal_transformer_2019`, `ext_dynamic_compute_recurrent_transformers_2026` | Shared-weight recurrence and complexity-controlled adaptive compute | Comparators for per-position halting, allocation timing, and the negative boundary that difficulty-aligned compute need not yield algorithmic generalization or local reasoning improvement. |
+| `portia_synapse` | PortiaSynapse | Successor case for distinguishing fixed hidden refinement from evidence-bearing deliberation, testing Focus/memory isolation, and admitting adaptive refinement only after one-path learning. |
+| `spider_synapse` | SpiderSynapse | Negative predecessor case for branch credit, utilization, selector behavior, refinement causality, and recovery to the smallest falsifiable path. |
 
 ### Manifest source assignment reconciliation
 

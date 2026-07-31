@@ -312,6 +312,37 @@ sequence, valid packet, or successful cycle. The paper proposes the test
 surface but supplies no independent evaluator, measured error-detection rate,
 or evidence that verification cost leaves a net benefit.
 
+### Verify graph packets without treating traversal as truth
+
+TreeLLM's later snapshot interface suggests a useful verification unit: entry
+objects, graph epoch, maximum hops and nodes, allowed relation types, minimum
+weights, and a bounded neighborhood. Verification Bandwidth adds what the
+snapshot omits. The packet records the retrieval plan, exact and approximate
+routes, denied candidates, source and rights references, contradictions,
+unresolved senses, token/coordinate codec, cache epoch, omitted frontier,
+expiry, and the objects actually delivered to and used by the verifier.
+
+The adequacy campaign varies polysemy, aliases, sarcasm, multilingual terms,
+temporal change, contradictory sources, near-neighbor but distinct entities,
+ontology migration, stale tokens, poisoned popular edges, overlay/global
+conflict, and deletion after snapshot. It compares exact database lookup,
+ordinary graph retrieval, vector and hybrid retrieval, GraphRAG-style
+assembly, path/coordinate tokens, bounded snapshots, and full-source context
+under matched information and total cost. HLSH neighborhood recall, false
+neighbors, collision, stability under update, residual ablations, cache
+hit/miss/tail behavior, route calibration, provenance survival, contradiction
+survival, rights violations, downstream utility, and source-fallback rate stay
+separate axes.
+
+A graph path can pass structural replay and still fail epistemic adequacy: the
+edge may be false, the wrong sense may have been resolved, material evidence
+may sit outside the hop bound, or the model may not have used the returned
+object. “O(1)” node writes are evaluated separately from identity resolution,
+edge repair, token and index migration, cache invalidation, descendant notices,
+backups, and deletion closure. The TreeLLM source reports no local graph,
+token, cache, benchmark, or independent evaluator, so this remains an
+argument-level falsification program.
+
 ## Interfaces
 
 Context adequacy travels with the packet and claim, but ownership remains
@@ -649,7 +680,7 @@ independent implementations, reproduction, and accepted evidence transitions.
 | `verification_bandwidth` | Verification Bandwidth in Bounded Contexts | context_verification_theory | Generation vs verification; long context is not automatically long-range reasoning. | source note available; local raw cache passage-reviewed |
 | `vcm_public` | Virtual_Context_Memory_v1 | memory_context | Public VCM release. Governed protocol for compiled working context. | source note available; local raw cache passage-reviewed |
 | `spinoza` | Proof of Belief / The Spinoza Architecture | reasoning_epistemology | Neurosymbolic belief, transparent axiomatic AI belief systems, verification, belief revision. | source note available; local raw cache passage-reviewed |
-| `treellm` | TreeLLM | semantic_representation | Hierarchical semantic token system for grounded, efficient, explainable language modeling. | source note available; local raw cache passage-reviewed |
+| `treellm` | TreeLLM correction lineage | semantic_representation | Bounded graph snapshots, structured token contracts, exact/approximate/exploratory routes, residuals, caching, migration, and an adversarial adequacy matrix after rejecting route-as-proof and fixed-width-as-sufficiency. | complete 65,779-word lineage section-family reviewed; no local graph, token, cache, evaluator, or result |
 | `vcm_editable` | Virtual_Context_Memory_v1.0_Editable | memory_context | Editable version with evidence-carrying planner-guided context compiler framing. | source note available; connector or recovery required |
 | `ext_graphrag_2024`, `ext_hipporag_2024`, `ext_raptor_2024` | GraphRAG, HippoRAG, and RAPTOR | retrieval_and_memory | Comparators for global summaries, associative navigation, and multi-resolution retrieval while keeping retrieval quality separate from evidential adequacy. | source notes available; no local QA, adequacy, or verification result |
 | `ext_alce_2023` | ALCE | citation_evaluation | Comparator separating answer fluency, correctness, citation presence, and citation quality. | primary-record note reviewed; no local citation audit |

@@ -35,6 +35,8 @@ primary_sources:
   - "ext_rlhf_limitations_2023"
   - "ext_muse_unlearning_2025"
   - "ext_faithfulness_information_flow_2026"
+  - "portia_synapse"
+  - "spider_synapse"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -182,6 +184,35 @@ A policy update record separates:
 The core rule is simple: policy optimization may learn from feedback, but the book should never let a reward signal silently become evidence, authority, or readiness.
 
 Every update should produce a policy-delta receipt. The receipt records what behavior changed, which feedback authorized the change, which probes tried to break the reward, which holdouts and regressions were checked, which authority boundary remained unchanged, what monitor window was opened, which evidence packet was produced, which deployment scope was allowed, and how rollback would restore the prior policy.
+
+### Portia and Spider: optimize the smallest learning contract first
+
+The SpiderSynapse-to-PortiaSynapse transition supplies a compact case study in
+why architectural repair should begin with the smallest falsifiable learning
+contract. Spider combined four hypotheses, three refinements, working memory,
+a selector, and several output heads before it had shown that one path could
+learn one coordinate target. Its reported plateau is worth retaining, but the
+claim that each path received only one twelfth of the gradient is a causal
+hypothesis, not an established law. Gradient magnitude, path utilization,
+prediction diversity, selector credit, target geometry, and label smoothing
+were not independently identified.
+
+The repaired protocol begins at `K=1`, `N=1`, coordinate-only training. It
+records per-layer gradients, activations, exact-coordinate accuracy, route or
+task success, and held-out learning curves before adding an edge head. Focus
+and mutable memory enter only after a memory-disabled ablation shows a task
+that needs them. Confidence enters only after its target event is named and
+calibration is evaluated. Full integration is the final phase, not evidence
+that the earlier phases succeeded.
+
+Phase progression is triggered by frozen evidence gates rather than a fixed
+fraction of training. Each gate requires matched no-component and simpler
+baselines, seed replication, exact denominators, leakage checks over generated
+walks and known paths, and rollback to the last admitted phase. A causal matrix
+varies branch count, refinement depth, memory, selector, label smoothing, and
+loss geometry independently. This prevents a later architecture from
+retroactively converting a predecessor's opaque failure into proof of its own
+explanation.
 
 ## Method families
 
@@ -465,6 +496,8 @@ evidence, authority, or readiness by itself.
 | `tokenmana` | TokenMana | resource_economics | Token, latency, load, and resource reward components without collapsing them into quality claims. | source note available; local raw cache available |
 | `cognitive_loop_closure` | Cognitive Loop Closure | procedural_memory | Toolification and procedural-memory feedback loops for repeated successful trajectories. | source note available; local raw cache available |
 | `moecot` | MoECOT-Agent Architecture Whitepaper | implementation_reference | Multi-core routing and runtime implementation-reference context; not reproduced here. | source note available; connector or recovery required |
+| `portia_synapse` | PortiaSynapse | routing_training_and_dkl_navigation | Evidence-gated phase training, gradient and activation diagnostics, confidence calibration, component admission, and rollback for a TreeLLM/DKL navigator. | authenticated Drive paper reviewed; source-reported implementation only; no local trainer or learning result |
+| `spider_synapse` | SpiderSynapse | routing_training_and_dkl_navigation | Preserved negative result and recovery design for diagnosing branch, refinement, memory, selector, and supervision failures before architectural expansion. | authenticated Drive paper reviewed; failure not locally reproduced and causal explanation remains unresolved |
 
 External method-family notes now cover the initial policy-optimization literature queue. They are intentionally separate from local evidence: source-note coverage does not imply a trainer, reward model, preference dataset, RLVR benchmark, reasoning-budget study, or policy update exists in this repository.
 

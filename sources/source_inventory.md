@@ -407,3 +407,20 @@ This inventory lists the source documents Codex should ingest, export, or ask th
 - **URL:** https://docs.google.com/document/d/1XR716XCo-WmvOpvGTGDmh9zbv44oiyjfcVDVQ1YibIc
 - **Notes:** Edge/resource-aware implementation context.
 
+## PortiaSynapse
+
+- **ID:** `portia_synapse`
+- **Priority:** `supporting_lineage`
+- **Layer:** `routing_training_and_dkl_navigation`
+- **Chapter targets:** Durable Semantic Memory and Knowledge Lattices; Routing Heads and Specialist Cores; Governed Deliberation and Test-Time Scaling; Policy Optimization and Learning from Feedback; Benchmark Ratchets and Anti-Goodhart Evidence
+- **URL:** https://drive.google.com/file/d/1ZnsE0rAC8YdiMFeo3N4kWEU8keTthF9v
+- **Notes:** Authenticated TreeLLM successor that replaces SpiderSynapse with a Scout/Focus/refinement DKL navigator, phased training, diagnostics, stable interfaces, and fallback. Source-reported implementation only; conflicting test totals and unresolved learning, causality, memory-isolation, attention-axis, metric, and calibration questions are preserved.
+
+## SpiderSynapse
+
+- **ID:** `spider_synapse`
+- **Priority:** `supporting_lineage`
+- **Layer:** `routing_training_and_dkl_navigation`
+- **Chapter targets:** Routing Heads and Specialist Cores; Governed Deliberation and Test-Time Scaling; Policy Optimization and Learning from Feedback; Benchmark Ratchets and Anti-Goodhart Evidence
+- **URL:** https://drive.google.com/file/d/1PPxsdmNbj8Ao1mNIelMrMxEr8ajIgWDn
+- **Notes:** Authenticated failed predecessor to Portia. Its reported plateau is retained as negative evidence and a recovery prompt, not as proof that branching, refinement, memory, selector credit, or label smoothing caused failure.

@@ -25,6 +25,10 @@ primary_sources:
   - "qcsa_whitepaper"
   - "reflexive_router_whitepaper"
   - "relational_dimension_compiler"
+  - "portia_synapse"
+  - "spider_synapse"
+  - "portia_synapse"
+  - "spider_synapse"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -507,6 +511,40 @@ candidate set, disqualifications, selected route, costs, terminal outcome, and
 recovery. Slow-lane recommendations return through qualification and change
 control; they cannot edit the live router silently.
 
+### PortiaSynapse: replacement-compatible routing must earn each mechanism
+
+The TreeLLM lineage eventually moved from a general DKL navigation proposal to
+two concrete Synapse designs. SpiderSynapse proposed four parallel hypotheses,
+three refinements per hypothesis, a mutable working memory, a selector, and
+coordinate, edge, confidence, and uncertainty heads. Its own report preserves a
+useful failure: loss plateaued near 0.57, reported accuracy stayed near 68--70%,
+coordinate alignment stayed near 0.5621, and the memory appeared unused. Those
+numbers do not prove that branching or memory is intrinsically harmful. They
+show that a twelve-path system with weak path-level observability could not
+identify whether representation, supervision, credit assignment, selection,
+or mutation caused the failure.
+
+PortiaSynapse is the explicit replacement. It narrows the candidate path to a
+Scout gated MLP, a Focus block with working memory, two residual refinements,
+and coordinate, edge, and confidence heads over a 512-dimensional
+`RichContext`. Its most reusable contribution is the compatibility boundary:
+`SynapseCore`, trainable and chain-trainable variants, a diagnostic wrapper,
+and a registry permit an old route and a candidate route to coexist. Type
+compatibility is only the first gate, however. A replacement must also preserve
+input semantics, DKL snapshot identity, coordinate version, edge vocabulary,
+confidence meaning, latency and resource ceilings, session isolation,
+fallback, and downstream acceptance behavior.
+
+The phase ladder should therefore be evidence-gated rather than percentage-
+gated. Coordinate prediction enters first; edge prediction, Focus/memory,
+confidence, and full integration enter only after held-out improvement,
+non-regression, and causal-use tests. Per-layer gradients, activation
+statistics, branch utilization, exact route outcomes, calibration, batch-
+composition invariance, and fallback behavior remain visible throughout. The
+source reports an implementation and tests, but its conflicting test counts
+and incomplete integration/benchmark milestones prevent the book from
+treating "compiles," "finite loss," or "stable steps" as learned routing.
+
 ### P4/M6 held-out routing result
 
 The completed P4/M6 campaign supplies a bounded mixed result, not chapter-core
@@ -920,6 +958,8 @@ These rows keep Routing Heads and Specialist Cores's manifest assignments visibl
 | `qcsa_whitepaper` | Passage-reviewed comparator: Question-Compiled Semantic Addressing. Separates semantic identity and address selection from the physical expert/model route, while making fallback, abstention, load, cost, hardware, permissions, and verifier requirements explicit in the compiled route plan; the later repository adds a bounded local 12-lane implementation, 60-case held-out evaluation over 13 systems and three seeds, and one 13-stage governed vertical trace. | The exact matched-advantage and resource gates failed, and the active-question ablation is N2 proxy/regime evidence rather than an exact or broad refutation. No learned-router, trained-specialist, production, chapter-core promotion, AGI, or ASI result is established. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `relational_dimension_compiler` | Passage-reviewed comparator: The Relational Dimension Compiler: Adaptive Polyadic Cognition with Bounded Computational Arity and Unbounded Semantic Structure. Extends routing to candidate topology, relational order, operator family, factorization, precision, scale, branch resolution, verification effort, and stopping or abstention under a complete proposal-through-repair cost ledger. | No learned order router, proposal-recall result, regret bound, useful polyadic route, or natural-task routing advantage is demonstrated. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_kimi_k3_2026` | Metadata-first comparator: Kimi K3: Open Frontier Intelligence. Primary technical report and official architecture summary for KDA/Gated-MLA hybrid attention, Attention Residuals, Stable LatentMoE, Quantile Balancing, SiTU-GLU, and Per-Head Muon. The approximately 2.5x scaling-efficiency result is provider-reported for the integrated 2.8T system and does not identify a transferable component effect. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `portia_synapse` | Passage-reviewed comparator: PortiaSynapse: A Cognitive Spider Architecture for DKL Navigation. TreeLLM successor architecture for a replacement-compatible Scout, Focus, refinement, coordinate, edge, and confidence route with phased training, diagnostics, stable traits, registry selection, and fallback. | Conflicting source test counts, incomplete integration and comparative benchmarking, possible batch-coupled attention, mutable-memory isolation, and weak exact task metrics remain unresolved; no local route learning is established. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `spider_synapse` | Passage-reviewed comparator: SpiderSynapse: A Multi-Hypothesis Reasoning Architecture. Failed predecessor case for multi-hypothesis routing, repeated refinement, mutable working memory, selection, typed output heads, path diagnostics, and one-path recovery. | Its reported plateau does not identify branching, refinement, memory, selector credit, label smoothing, or supervision geometry as the cause and has not been locally reproduced. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Post-v2 matched routing result

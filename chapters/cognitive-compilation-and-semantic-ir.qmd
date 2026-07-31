@@ -457,6 +457,36 @@ share one result bundle but license different prose. None
 licenses the core claim, arbitrary semantic equivalence, or question-policy
 value outside the frozen fixtures.
 
+### A semantic token is an ABI object, not the referent
+
+TreeLLM's correction history repeatedly changes the shape of the “semantic
+token”: paths through a question DAG, fixed roots, learned anchors, an HLSH
+coordinate, type flags, and a residual fingerprint. A compiler cannot let any
+one encoding become the identity of the object it represents. It carries four
+separately versioned things: the stable object and interpretation identity;
+the semantic address or graph route; the model-facing representation; and the
+physical storage or retrieval route. Re-clustering anchors, changing an HLSH
+scheme, compacting a graph, or moving a node between stores then becomes a
+migration rather than a silent rename.
+
+The semantic-token ABI binds object and sense, representation schema, graph
+and ontology epoch, codec and feature semantics, provenance/rights references,
+ambiguity and collision state, residual or exact-source reference, intended
+consumer, permitted transformations, expiry, revalidation trigger, and
+fallback. Exact lookup, graph traversal, ANN fallback, learned navigation,
+exploratory bridging, ingestion, and external tool acquisition lower to
+different route variants. An ANN neighbor or Scout proposal cannot enter the
+same IR variant as an admitted relation merely because both produce 128 bits.
+
+This distinction also keeps cache optimization below semantics. A
+context-local short id may name a full structured token only inside a pinned
+session/model/codec/graph epoch and must be invalidated on migration. A path
+trace records an execution route, not an interpretation proof. Compilation
+succeeds only when the consumer's distinctions survive or a typed residual,
+source expansion, alternate representation, abstention, or quarantine is
+returned. TreeLLM supplies the interface pressure; it supplies no local token
+validator, lowering proof, benchmark, or implementation.
+
 ### Relational IR requires dimension-safe lowering
 
 The Relational Dimension Compiler adds an important distinction to this
@@ -950,7 +980,7 @@ incremental-repair locality, artifact usefulness, or production transfer.
 | `cognitive_compilation` | Cognitive Compilation | planning_semantic_ir | Compiler framing for LLM-centered planning, semantic IR, target compilation, incremental repair. | source note available; local raw cache passage-reviewed |
 | `planforge_compiler_arch` | PlanForge: A Compiler Architecture for AI Task Orchestration | planning_control | Later/alternate PlanForge framing. Prefer highest-quality/latest content after comparison. | source note available; local raw cache passage-reviewed |
 | `genesiscode` | GenesisCode | executable_specification | Tiny pure calculus + obligations + provenance for auditable AI-symbiotic programming. | source note available; local raw cache passage-reviewed |
-| `treellm` | TreeLLM | semantic_representation | Hierarchical semantic token system for grounded, efficient, explainable language modeling. | source note available; local raw cache passage-reviewed |
+| `treellm` | TreeLLM correction lineage | semantic_representation | Structured-token ABI pressure, external semantic memory, stable-object versus coordinate/path separation, route variants, residuals, cache epochs, and migration after rejecting fixed-root and canonical-truth drafts. | complete 65,779-word lineage section-family reviewed; no compiler, token validator, or result |
 | `viea` | Verified Intent-to-Execution Architecture | whole_stack_execution_spine | Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. | source note available; local raw cache passage-reviewed |
 | `cca_project` | Compiled Cognitive Architecture project | historical_project_lineage | Typed semantic atoms, explicit ambiguity, pass hashes, verification, bounded repair, target IR, and trace bundles. | public-safe pinned-project note; project runtime not replayed here |
 | `moecot_manifest_project` | MoECOT Manifest compiler-era project | historical_project_lineage | Authority-bearing semantic IR, ambiguity debt, field and provenance retention, pass/failure records, applied localized-repair receipts, and semantic portability. | public-safe pinned-project note; compiler, holdouts, and deployments not rerun here |

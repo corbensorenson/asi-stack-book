@@ -7,6 +7,8 @@ draft_maturity: "v0.3 concept-complete argument-level manuscript"
 last_updated: "2026-07-31"
 primary_sources:
   - "vcm_public"
+  - "treellm"
+  - "portia_synapse"
   - "ext_graphrag_2024"
   - "ext_hipporag_2024"
   - "ext_mem0_2025"
@@ -210,6 +212,113 @@ blind spots, prohibited uses, signatures, and rollback references. This makes
 semantic organization a governed artifact rather than an invisible side
 effect of embedding training.
 
+### TreeLLM after its own correction history
+
+The complete TreeLLM lineage makes the knowledge-lattice idea more useful by
+showing how it fails when stated too strongly. Its first paper separates a
+traversable semantic graph from a learned navigator and gives model-visible
+symbols paths, types, probabilities, and residual attributes. The next drafts
+turn thirteen English questions into eternal roots, declare one global graph
+the source of truth, freeze the navigator forever, and attach perfect
+grounding and device-scale claims. A later internal critique rejects those
+choices; revised versions replace fixed roots with learned or evolvable
+anchors and add approximate fallbacks, private overlays, streaming ingestion,
+semantic compaction, bounded graph snapshots, caching, and speculative
+prefetch. The correction sequence is more informative than any “final” label:
+every convenient hidden assumption eventually returns as an identity,
+version, authority, bandwidth, ambiguity, update, or governance obligation.
+
+The stack retains that lesson through four separations. First, a stable object
+or relation identity is not its HLSH coordinate, path, embedding, canonical
+text, anchor, or storage key. Those are versioned atlas representations that
+may migrate. Second, a graph record is not a belief verdict. Observation,
+quotation, user assertion, model inference, rule, contradiction, and
+retraction enter as different objects with different authority. Third, a
+retrieval route is not evidence acceptance. Exact lookup, graph traversal,
+vector fallback, learned navigation, exploratory bridging, and external tool
+acquisition are separately typed proposal routes. Fourth, a representation's
+fixed byte width is not its semantic adequacy. A compact token needs a source
+or richer-representation fallback, collision and ambiguity state, graph and
+codec epoch, task envelope, expiry, and a consumer-specific residual.
+
+TreeLLM's `Synapse`, `Navigator`, `Scout`, and `Ingestor` names can therefore
+be reconstructed as an ordinary routing contract. The exact route retrieves a
+known identity or typed edge. The approximate route uses vector or ANN search
+when hard structure is insufficient. The exploratory route proposes a bridge
+without writing it as fact. The ingestion route proposes objects, aliases,
+relations, and evidence packets. A tool route obtains new observations through
+the Runtime Adapter owner. An abstain or escalation route handles unresolved
+identity, support, rights, or budget. Route confidence is calibrated against
+route-specific error; it cannot authorize persistence or harden an edge.
+Repeated traversal is popularity, not corroboration.
+
+The later `DklSnapshot` sketch also supplies a useful bounded alternative to
+“infinite context.” A snapshot request names entry objects, graph epoch, hop
+depth, node budget, allowed relation types, weight threshold, time, rights,
+purpose, and consumer. The result includes admitted nodes, the routes that
+found them, denied candidates, provenance, contradictions, omissions, expiry,
+and the objects actually delivered and used. Writing an old conversation as a
+session-summary node is a lossy derivative with parents and residuals, not
+exact recall. Likewise, an HLSH prefix or graph path can help retrieve a
+candidate without proving that the consumer saw, used, or correctly
+interpreted it.
+
+An update is effect-complete only when its descendants close. A single node
+write may be constant-time at the database API while entity resolution, sense
+separation, contradiction, rights, relation validation, address/token
+migration, index and cache invalidation, snapshot expiry, learned-router
+calibration, backup state, deletion duties, and consumer notices are not.
+Append-only event history can preserve how a view changed, but it does not
+excuse retraction, redaction, or erasure. “O(1) update” is therefore reserved
+for the narrow storage operation unless the complete semantic closure is
+measured.
+
+TreeLLM calls background graph repair the **Gardener**. Here it is a proposal
+engine, not a semantic sovereign. A merge of close nodes records stable parent
+identities, sense-aware preconditions, affected relations and consumers,
+retained disagreement, rights intersection, before/after adequacy, reversible
+migration, and rollback. Soft edges found by approximate search remain soft
+until independent evidence and admission policy justify a typed relation.
+Otherwise a popular false path can become permanent through its own retrieval
+feedback.
+
+Private user overlays, organizational stores, public evidence, and federated
+contributions remain different tiers. A read does not simply union them:
+precedence, conflict, authority, temporal scope, and disclosure depend on the
+consumer. Each tier carries fork, correction, export, deletion, and audit
+rights. Federated graph or gradient updates need a threat model, consent,
+poisoning and Sybil controls, rollback, and privacy accounting; keeping a
+mobile copy or a shared Rust core does not by itself make the system
+sovereign.
+
+Finally, adaptive token caching and speculative traversal remain performance
+hypotheses behind the same contract. A short id is scoped to a session, model,
+token codec, and graph epoch; it is collision checked, invalidated on update,
+bounded against thrashing, and falls back to the full representation.
+Speculative paths may prefetch several candidates, but wrong-path reads,
+privacy crossings, stale epochs, wasted bandwidth, and tail latency remain in
+the cost record. Only committed and verified hops may appear in a downstream
+route receipt. The source-reported percentages and production claims supply no
+local evidence.
+
+**Source grounding.** `treellm` supplies the correction lineage, structured
+token variants, DKL records, router roles, exact/soft traversal, Ingestor,
+Gardener, overlays, snapshots, skill subgraphs, caching, speculation, and
+mobile/federated proposals. Its 65,779-word cache contains no inspected local
+implementation or reproduced result, and four final tabs are Aletheia source
+contamination rather than independent support. The mechanism above is a
+conservative reconstruction at argument support.
+
+PortiaSynapse makes the learned-navigator boundary more concrete without
+changing the authority model. Its `RichContext` joins coordinate bits, content,
+edge distribution, neighbor summary, and modulation into one input packet.
+That packet must bind the exact DKL snapshot, codec, neighbor-selection policy,
+provenance, rights filter, and construction version; otherwise the same vector
+shape can describe different worlds. Its mutable Focus memory is request- and
+session-scoped, resettable, replayable, and excluded from cross-user reuse by
+default. A lock can make mutation race-safe, but it cannot make state
+semantically isolated or deletion-complete.
+
 ### Retrieval and context assembly
 
 **Mechanism.** Compile retrieval as a plan over exact identity, semantic similarity, graph relations, time, rights, support, task purpose, and cost. Each candidate carries the route that found it and each denial records the failed filter. Context assembly selects a bounded set with provenance, contradictions, expiry, and residual uncertainty, then records which objects the model actually received and which were cited or used downstream. Learned navigation remains a replaceable proposal mechanism behind this contract.
@@ -372,6 +481,8 @@ Planned formalization route: `lean:durable-semantic-memory-and-knowledge-lattice
 |---|---|---|
 | `vcm_public` | Virtual Context Memory | Passage-reviewed Corben architecture for immutable events and semantic pages, representation graphs, contradiction/rejection memory, decision-time observable retention features, anti-starvation, invalidation, deletion closure, and blind-policy versus future-aware-oracle separation. Its activated-fault study and uninformative packet pilot do not establish durable-memory truth, retention-policy quality, natural outcomes, deletion/unlearning completeness, privacy, or chapter-core support. |
 | `qcsa_whitepaper` | Question-Compiled Semantic Addressing | Corben-authored semantic-control-plane lineage for stable object identity, versioned addresses, evidence-bearing hypergraphs, lifecycle migration, and explicit residuals. Its bounded local artifacts do not establish durable memory truth, deletion completeness, restart equivalence, retrieval quality, or production transfer. |
+| `treellm` | TreeLLM correction lineage | Complete 28-tab visible lineage for explicit semantic graphs, structured tokens, model/memory separation, exact/approximate/exploratory/ingestion routing, learned anchors, overlays, snapshots, graph hygiene, adaptive caching, speculative traversal, skills, and mobile/federated variants. The source's own critique controls frozen-root and final-architecture drafts; no local implementation, graph, token, HLSH property, benchmark, O(1) semantic update, grounding, privacy, or production result is established. |
+| `portia_synapse` | PortiaSynapse | Authenticated successor paper that instantiates a DKL navigator over a 512-dimensional `RichContext` and mutable Focus memory. It motivates snapshot/codec/provenance binding and request-scoped state; its source-reported implementation does not establish memory truth, isolation, deletion closure, learning, or routing quality. |
 | `ext_graphrag_2024` | From Local to Global: A Graph RAG Approach to Query-Focused Summarization | Primary GraphRAG comparator for LLM-derived entity graphs, community summaries, and global corpus questions; generated graph and summary layers remain fallible derived representations and do not establish truth, complete coverage, local adequacy, or an ASI Stack memory result. |
 | `ext_hipporag_2024` | HippoRAG: Neurobiologically Inspired Long-Term Memory for Large Language Models | Primary NeurIPS comparator for knowledge-graph retrieval with Personalized PageRank and single-step associative navigation; reported multi-hop QA gains do not establish durable truth, update correctness, resistance to poisoning, local reproduction, or a general memory system. |
 | `ext_mem0_2025` | Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory | Primary preprint comparator for extracting, consolidating, retrieving, and graph-linking conversational memory under latency and token-cost constraints; LOCOMO and LLM-judge results do not establish fact correctness, poisoning resistance, general memory, local reproduction, or production readiness here. |
