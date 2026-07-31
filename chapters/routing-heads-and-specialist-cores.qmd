@@ -215,6 +215,80 @@ Each route shape still needs the same discipline: capability match, authority ma
 
 The decision should also record non-selection. A rejected candidate may be too expensive, underqualified, overprivileged, stale, quarantined, or missing context. Those rejections are evidence for future readiness, routing, and resource policy.
 
+### An arm is three contracts, not an expert label
+
+The Octopus Router paper's arm-anatomy and arm-card tables make a distinction
+that is easy to lose in agent frameworks. A specialist is not defined by its
+name, prompt, model endpoint, or benchmark score. It exists at the intersection
+of three versioned contracts:
+
+| Contract | Required content | What it must not imply |
+|---|---|---|
+| Capability | Included and excluded task families, input and output schemas, tools, dependencies, runtime, local memory, and fallback. | That semantic relevance makes the arm adequate for every instance. |
+| Authority | Maximum memory, tools, runtime, side effects, budget, risk, locality, privacy, rights, and escalation envelope. | That registration grants any of that authority to a particular task. |
+| Evidence | Benchmark frontier, regression floor, residual clusters, reliability, freshness, evaluator and environment scope, lifecycle state, and retirement criteria. | That a score is current, causal, transferable, or sufficient for release. |
+
+The registry records the maximum declared envelope. A route grants only its
+task-local intersection with principal, consumer, policy, rights, readiness,
+resource, and risk ceilings. The result is an **arm contract**, not a standing
+appointment. This prevents a useful specialist from becoming an ambient agent
+and prevents a broad “coding” or “research” label from hiding incompatible
+subdomains, tools, and risks.
+
+An arm result needs an equally explicit envelope. It carries the scoped result,
+confidence semantics, evidence and provenance, required assumptions, residuals,
+risk flags, suggested successor or verifier routes, observed cost, and effect
+receipts. A separate composition receipt records which fields the head used,
+which conflicts it resolved or exposed, which evidence it discarded, which
+verification it requested, and why the terminal output is faithful to the arm
+artifacts. Fluency is not composition evidence.
+
+### Semantic routing and physical residency are separate
+
+ORA's resident-head/cold-arm proposal adds a control problem beyond selecting
+the right capability. A semantically correct arm can still be unavailable,
+stale, too slow to load, incompatible with a dependency, resident on a
+disallowed node, or more expensive than a warm generalist. The router therefore
+must not collapse **which capability should act** into **where and whether its
+artifacts are resident**.
+
+A residency record should bind the selected arm and dependency versions,
+previous state, placement, trust zone, cold-start and transfer time, bytes
+moved, peak and active memory, warm-cache status, prefetch reason, unload
+policy, terminal state, fallback, and observed cost. Useful residency states
+include cold, loading, warm, active, unloading, unavailable, stale, and
+quarantined. Loading never expands authority: a prefetched or warm arm remains
+ineligible until the task-local route lease passes.
+
+Dynamic loading is successful only if the end-to-end route preserves its
+quality, safety, and isolation floors while improving a declared resource
+objective. The comparison must include warm generalists, ordinary caching or
+paging, quantization, and static specialist pools—not merely an always-resident
+copy of the same modular system. Report cold-start and tail latency, transfer
+volume, cache-hit and prefetch precision, load/unload overhead, thrashing,
+unavailable-arm failures, memory saved, and total verification and governance
+cost. Prefetch also belongs in the threat model because speculative loading can
+reveal sensitive task intent or expose a capability before authorization.
+
+### Topology change is a replacement transaction
+
+The source's spawn, split, merge, and retire signals are useful diagnostics,
+not self-executing rules. Repeated demand and residual clusters may justify a
+new arm; unrelated tools, growing memory, divergent risks, internal branching,
+and declining reliability may justify a split; overlapping tools, memory,
+benchmarks, outputs, and failures may justify a merge; staleness, regression,
+unsafe behavior, supersession, or excessive cost may justify retirement.
+
+Every such change alters the candidate denominator and may also alter route
+features, memory custody, tool contracts, dependencies, regression floors,
+cache state, and rollback. The lifecycle decision therefore enters Stable
+Capability Field and replacement governance with a frozen pre-state,
+counterfactual no-change baseline, migration map, qualification scope, canary,
+rollback, affected consumers, and residual owner. A local arm ratchet is not
+independent in effect when it changes shared embeddings, schemas, tools,
+memories, or composition behavior. “Independently improvable” is a property to
+test, not a consequence of modular naming.
+
 ### Routing linked neural capability objects
 
 Deterministic Capability Compilation gives the router a package richer than an
@@ -516,6 +590,60 @@ Routing Decision Record fields:
 - `ledger_refs`
 - `non_claims`
 
+Arm Result Envelope fields:
+
+- `arm_id`
+- `arm_version`
+- `route_lease_ref`
+- `scoped_result`
+- `confidence_semantics`
+- `evidence_refs`
+- `provenance_refs`
+- `required_assumptions`
+- `residuals`
+- `risk_flags`
+- `suggested_successors`
+- `verifier_requests`
+- `resource_receipts`
+- `effect_receipts`
+- `non_claims`
+
+Composition Receipt fields:
+
+- `composition_id`
+- `route_decision_ref`
+- `arm_result_refs`
+- `fields_used`
+- `fields_discarded`
+- `material_disagreements`
+- `conflict_dispositions`
+- `verification_refs`
+- `provenance_preservation_check`
+- `terminal_output_ref`
+- `faithfulness_evaluator_ref`
+- `residual_owner`
+- `non_claims`
+
+Arm Residency Record fields:
+
+- `arm_id`
+- `artifact_and_dependency_versions`
+- `prior_residency_state`
+- `target_residency_state`
+- `placement_and_trust_zone`
+- `route_lease_ref`
+- `prefetch_reason`
+- `warm_cache_state`
+- `bytes_transferred`
+- `cold_start_latency`
+- `peak_and_active_memory`
+- `load_unload_overhead`
+- `availability_result`
+- `fallback_ref`
+- `terminal_residency_state`
+- `cost_receipts`
+- `non_claims`
+
 MoECOT Orchestration Record fields:
 
 - `run_id`
@@ -572,6 +700,17 @@ The public schemas now make that receipt explicit. Specialist registry records c
 17. Replay reconstructs frozen admissible inputs and records nondeterminism.
 18. Evidence language stays inside the exercised workload, policy, specialist,
    evaluator, model, environment, organization, threat, cost, and time envelope.
+19. Arm capability, maximum authority, evidence, and task-local granted
+    authority remain distinct records.
+20. Semantic selection never implies residency, availability, placement trust,
+    or permission to load and execute.
+21. Composition preserves every material arm disagreement and cannot create
+    evidence, confidence, authority, or consensus absent from its inputs.
+22. Prefetch, warm residency, and cache state confer no route eligibility or
+    effect authority.
+23. Spawn, split, merge, replace, quarantine, and retirement preserve complete
+    identity, dependency, memory, consumer, regression, migration, and rollback
+    records.
 
 The important invariant is that selection and authorization are different predicates. A specialist can be the best semantic match and still be disallowed because its authority scope, readiness state, or evidence state is inadequate for the task.
 
