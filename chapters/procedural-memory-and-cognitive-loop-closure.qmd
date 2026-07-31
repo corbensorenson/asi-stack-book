@@ -208,6 +208,39 @@ A tool card should name source traces, invariant structure, parameters, precondi
 
 Negative examples are part of the memory, not clutter. A loop detector that only sees successes will overgeneralize; a tool card without failed cases cannot say where the procedure stops. The procedure card preserves near misses, rejected traces, and residuals so the future router knows when not to use the tool.
 
+### Active parameter discovery attacks accidental invariants
+
+Repeated traces reveal only the variation that happened to occur. Three runs
+using `npm`, USD, one schema, one jurisdiction, or one output format do not make
+those values invariant. Before synthesis, the abstraction proposal therefore
+faces six kinds of probe:
+
+1. historical variance across the complete eligible trace set;
+2. counterfactual replay with controlled substitutions in a sandbox;
+3. synthetic cases that add missing fields, alternative environments,
+   boundary values, and unobserved but plausible structures;
+4. adversarial cases with ambiguity, partial data, malformed inputs, drift,
+   conflicts, stale dependencies, and unsafe edge conditions;
+5. environment interrogation of configuration, versions, units, permissions,
+   schemas, dependencies, and platform immediately before use; and
+6. a named human or supervisory question when a dependency cannot be inferred
+   safely.
+
+Each candidate variable remains one of four epistemic states: `invariant`,
+`parameter`, `precondition`, or `unknown_assumption`. A parameter needs a type,
+unit, range, validation rule, source, interaction set, and evidence that
+changing it affects execution or checking without unexpectedly destroying the
+procedure. A suspected dependency that cannot be represented safely becomes a
+precondition, clarification/abstention trigger, or residual—not a hidden
+default.
+
+Active probing carries authority and safety obligations of its own. A
+counterfactual is cheap only in a faithful sandbox; an environment query can
+disclose sensitive state; a physical perturbation can cause an irreversible
+effect. The probe record binds environment, permitted mutations, stop rule,
+observations, evaluator, cost, and affected residuals. “Discover the boundary”
+never grants permission to cross it.
+
 Loop closure is reasoning compression. It turns many successful trajectories into one parameterized procedure, but only when the verification burden has been paid.
 
 Semantic facts and procedural traces remain separate memory domains. A fact
@@ -373,6 +406,37 @@ residue supports long-horizon memory without preserving every token, but it is
 not automatically a canonical Form, fact, policy, or skill. Promotion still
 passes the appropriate epistemic, semantic, and procedural gates.
 
+### “Verified tool” is a vector, not one maturity badge
+
+Cognitive Loop Closure separates several properties that tool registries often
+collapse. A candidate can be deterministic yet untested, widely tested yet
+nondeterministic, sandboxed but semantically wrong, fast but overprivileged, or
+safe for an assisted workflow but unsafe for automatic routing.
+
+| Axis | Example states | Governing question |
+|---|---|---|
+| Internal generation | deterministic; bounded nondeterministic; model-assisted | What output variation and retry/selection lineage remain? |
+| Verification evidence | unverified; replay; held-out; synthetic; adversarial; runtime-monitored; scoped human approval; domain certification | Which exact behavior, environment, threat, and consumer did the evidence cover? |
+| Runtime assurance | template; assisted workflow; typed function; sandbox; memory-safe system; real-time controller | What can the executing artifact access, mutate, and recover from? |
+| Latency | nonurgent; interactive; operational; real-time; safety reflex | What deadline and tail/jitter bound must the complete trigger-to-effect path meet? |
+| Consequence | low; medium; high; critical | What happens when the tool or its monitor is wrong? |
+| Lifecycle | candidate; proposed; probed; tested; probationary; active; monitored; revised; quarantined; retired | Is this version currently eligible for the requested route? |
+
+A semi-deterministic tool binds its internal model, prompt or policy, context
+sources, decoding, retry budget, candidate denominator, selector, verifier,
+fallback, and observed variance. Wrapping a model call in a function does not
+make it deterministic. Replay success does not imply held-out generalization;
+synthetic and adversarial coverage inherits generator blind spots; runtime
+monitoring observes only specified properties; human approval is scoped; and a
+“certified” label names a domain, version, authority, and expiry.
+
+The route lease consumes the whole vector. It rechecks task and parameter
+match, preconditions, environment, freshness, risk, authority, side effects,
+verification coverage, runtime, latency, monitor, and fallback. For hard
+real-time or safety-reflex classes, fresh language-model reasoning is not an
+admissible fallback merely because the compiled path failed. The fallback must
+already meet the deadline and physical or operational containment contract.
+
 ### Tool maturity, confidence decay, and revalidation
 
 VIEA prevents the jump from “this pattern recurred” to “the system may execute
@@ -429,14 +493,27 @@ Minimum fields:
 
 - `tool_id`
 - `source_traces`
+- `eligible_trace_universe`
+- `rejected_and_negative_traces`
 - `invariant_structure`
 - `parameters`
+- `unknown_assumptions`
+- `active_probe_refs`
 - `preconditions`
 - `postconditions`
+- `generation_determinism`
+- `model_and_selection_lineage`
 - `verification_result`
+- `verification_scope_and_expiry`
 - `risk_tier`
 - `runtime_tier`
+- `latency_class`
+- `authority_and_permissions`
+- `allowed_side_effects`
+- `fallback_mode`
 - `monitoring_plan`
+- `dependency_versions`
+- `effect_receipts`
 - `residuals`
 - `regressions`
 - `lifecycle_state`

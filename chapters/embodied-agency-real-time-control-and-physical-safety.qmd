@@ -6,6 +6,7 @@ status: "conceptual"
 draft_maturity: "v0.3 concept-complete argument-level manuscript"
 last_updated: "2026-07-28"
 primary_sources:
+  - "cognitive_loop_closure"
   - "rmi"
   - "ext_gemini_robotics_2025"
   - "ext_foundation_robotics_physical_risk_2025"
@@ -30,7 +31,7 @@ open_evidence_gaps:
 | Manuscript maturity | v0.1 integrated argument chapter |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source loading state | One passage-reviewed Corben architecture source supplies hierarchical embodied logging, and five external records cover generalist robotics, foundation-model physical risks, barrier-function safety filters, independent runtime fallback, and safe-RL taxonomy. No local physical or logging result is claimed. |
+| Source loading state | Two passage-reviewed Corben architecture sources supply hierarchical embodied logging and reflex-data policy, and five external records cover generalist robotics, foundation-model physical risks, barrier-function safety filters, independent runtime fallback, and safe-RL taxonomy. No local physical or logging result is claimed. |
 | Test state | Simulation-to-low-energy-hardware campaign specified; no plant, controller, fault, or person observed. |
 
 ## Drafting guardrail
@@ -537,6 +538,7 @@ These rows keep Embodied Agency, Real-Time Control, and Physical Safety's manife
 | Source | Intake role | Boundary |
 |---|---|---|
 | `rmi` | Passage-reviewed comparator: Ratcheting Modular Intelligence. Supplies a hierarchical embodied-log design separating raw telemetry, salient events, semantic state, active skill/controller identity, and residuals so loop learning and safety review do not consume an undifferentiated sensor stream. | Conceptual architecture only; no logger, event detector, semantic encoder, raw-ring buffer, trace join, incident reconstruction, storage result, privacy result, physical controller, or hardware campaign has been implemented or measured. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `cognitive_loop_closure` | Passage-reviewed comparator: Cognitive Loop Closure. Supplies the detailed embodied trajectory policy: raw telemetry separated from cognitive/event/residual logs, rolling multi-resolution buffers, triggered pre/post-event retention, semantic eventization, feature compression, reflex-state custody, memory budgets, and explicit warning against loss of safety-relevant information. | Conceptual architecture only; no telemetry corpus, eventizer, feature compressor, raw-buffer policy, reflex logger, incident reconstruction, privacy evaluation, real-time controller, simulator, or hardware result has been implemented or measured. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_ai_simulation_digital_twins_2025` | Passage-reviewed comparator: AI Simulation by Digital Twins: Systematic Survey, Reference Framework, and Mapping to a Standardized Architecture. Surveys AI-enabled simulation and digital-twin patterns relevant to plant models, telemetry synchronization, scenario testing, and sim-to-real residuals. | A digital twin is a maintained model, not the physical system; fidelity, synchronization, coverage, and transfer must be measured for each use. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->

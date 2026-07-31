@@ -10,19 +10,20 @@ This report records the source-mining pass used to expand the book from a 16-cha
 - Locally readable Corben paper corpus: 44 canonical mining texts—37 cached
   Google Docs text exports and seven supplied Markdown whitepapers. Paired DOCX
   files are presentation counterparts, not independent idea sources.
-- Full section-family closure audits now exist for seventeen papers:
+- Full section-family closure audits now exist for eighteen papers:
   `deterministic_capability_compilation`, `platonic_world_model`, `scf`,
   `qcsa_whitepaper`, `reflexive_router_whitepaper`,
   `kernel_english_residual_compiler`, `relational_dimension_compiler`, and
   `precision_contract`, `planforge`, `planforge_compiler_arch`, and
   `cognitive_compilation`, `talos`, `vcm_public`, `spinoza`, and
-  `spinoza_composer`, `octopus_router`, and `rmi`.
+  `spinoza_composer`, `octopus_router`, `rmi`, and
+  `cognitive_loop_closure`.
 - The 2026-07-31 VIEA second pass is the first legacy-paper fidelity repair: it
   expands the note from a routing summary into a 2,388-word system note and
   writes previously absent mechanisms into seven canonical chapters.
 - Every recent rich whitepaper in this audit now has an exact
   section-family-to-manuscript closure audit.
-- Twenty-six readable legacy papers still have first-pass routing notes rather
+- Twenty-five readable legacy papers still have first-pass routing notes rather
   than full-fidelity notes. Their ideas may be present in chapters, but note
   existence or manifest assignment is no longer accepted as proof of complete
   mining.
@@ -62,9 +63,9 @@ source assignment alone does not count.
 
 | State | Sources | Required next operation |
 |---|---|---|
-| Section-family audit complete | `deterministic_capability_compilation`, `platonic_world_model`, `scf`, `qcsa_whitepaper`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `relational_dimension_compiler`, `precision_contract`, `planforge`, `planforge_compiler_arch`, `cognitive_compilation`, `talos`, `vcm_public`, `spinoza`, `spinoza_composer`, `octopus_router`, `rmi` | Re-open only on paper or chapter drift. |
+| Section-family audit complete | `deterministic_capability_compilation`, `platonic_world_model`, `scf`, `qcsa_whitepaper`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `relational_dimension_compiler`, `precision_contract`, `planforge`, `planforge_compiler_arch`, `cognitive_compilation`, `talos`, `vcm_public`, `spinoza`, `spinoza_composer`, `octopus_router`, `rmi`, `cognitive_loop_closure` | Re-open only on paper or chapter drift. |
 | Legacy paper repaired in this pass | `viea` | Re-run chapter/source validation and retain its new section-family map. |
-| Legacy system spine; deep note required | `cognitive_loop_closure`, `benchmaxxing` | Reconstruct the complete object model and lifecycle before deciding whether prose is missing. |
+| Legacy system spine; deep note required | `benchmaxxing` | Reconstruct the complete object model and lifecycle before deciding whether prose is missing. |
 | Compression, representation, and substrate; deep note required | `cgs`, `rgs`, `rankfold_neuralfold`, `rankfold_compressor`, `bbvca_v9`, `bbvca_main`, `genesiscode`, `treellm`, `simulation_scaling`, `tokenmana`, `bugbrain` | Preserve equations, decoders, accounting, verification, failure surfaces, and rival representations—not only the compression slogan. |
 | Alignment, verification, context, and execution lineage; deep note required | `alignment_field`, `field_of_god`, `ethica_mechanica`, `eternal_code`, `verification_bandwidth`, `beastbrain`, `beastbrain_timeless`, `aletheia`, `context_engineer`, `black_hole_context_manager`, `ladon_manhattan`, `uat`, `software_magic_grimoire` | Separate operational mechanisms from metaphysics, branding, repeated drafts, unsafe absolutes, and unsupported performance claims; integrate only the durable architecture. `coherence_exchange` remains a separately connector-mined source rather than one of the 44 local paper texts. |
 
@@ -158,6 +159,47 @@ ledger-theater, and logging-blindness falsifiers. No RMI implementation,
 benchmark or intervention advantage, useful synthesized tool, modular growth,
 physical logging result, safety result, deployment, or support-state promotion
 is inferred.
+
+## Cognitive Loop Closure section-family closure result
+
+Cognitive Loop Closure's 22 numbered sections, three appendices, and reference
+list now terminate in canonical prose, a public-safe deep note, a concrete
+implementation or evaluation obligation, or an explicit boundary. The audit
+keeps the paper's central proposal narrow: repeated successful reasoning can
+be compiled into reusable procedures only when the system discovers rather
+than assumes parameters, retains failed and rejected traces, binds verification
+to a scope, and rechecks authority and environment at execution time.
+
+The repair adds several mechanisms that the previous routing note and chapter
+did not preserve:
+
+- Procedural Memory now makes active parameter discovery explicit through
+  historical, counterfactual, synthetic, adversarial, environment, and
+  supervisory probes, while tracking each variable as an invariant, parameter,
+  precondition, or unknown assumption.
+- Tool assurance is represented as a vector across generation determinism,
+  verification evidence, runtime assurance, latency, consequence, and
+  lifecycle. A model call wrapped in a function is not mislabeled as a
+  deterministic tool, and a route lease consumes the complete assurance
+  vector rather than one maturity badge.
+- Tool records now retain the eligible trace universe, negative traces,
+  unresolved assumptions, probe lineage, model/selection lineage,
+  verification scope and expiry, authority, side effects, fallback,
+  dependencies, and effect receipts.
+- Embodied Control now shares ownership of the paper's raw/event/semantic/
+  skill/residual logging hierarchy and reflex-data policy, while preserving
+  the boundary between high-bandwidth capture and automatic promotion into
+  durable knowledge or executable skill.
+
+The deep note preserves the ten-component closure architecture, formal object
+model, tool cards and registry, execution modes, routing and latency classes,
+lifecycle and economics, metrics, governance, failure modes, staged research
+program, claim boundaries, and appendix schemas. It adds falsifiers for
+accidental invariants, silent model nondeterminism, verification-scope
+laundering, unsafe active probes, stale authority, reflex deadline violations,
+registry rot, and lossy-log overclaiming. No useful-tool synthesis,
+generalization, verification, latency, safety, economic, deployment, or
+support-state result is inferred.
 
 ## SCF fidelity repair: first recovered depth
 

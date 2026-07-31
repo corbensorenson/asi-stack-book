@@ -6898,11 +6898,15 @@
               "limits": "Conceptual framework only; no local trajectory mining, tool synthesis, verifier, routing, transfer, or safe procedural-improvement result is reproduced here.",
               "passage_review_state": "reviewed",
               "passage_refs": [
-                "sources/source_notes/cognitive_loop_closure.md:11-33",
-                "sources/source_notes/cognitive_loop_closure.md:35-58",
-                "sources/source_notes/cognitive_loop_closure.md:60-72"
+                "sources/raw/google_docs/cognitive_loop_closure.txt:148-333",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:432-607",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:612-723",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:882-1038",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:1406-1566",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:1827-1991",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:1995-2129"
               ],
-              "passage_review_note": "Reviewed the complete source note for the ten-component loop-closure architecture, three execution modes, tool-card governance, verification, monitoring, retirement, and failure boundaries; no generated procedure or local result is imported."
+              "passage_review_note": "Reviewed the complete local raw cache for the ten-component closure architecture, active parameter probes, tool synthesis and verification, routing modes, assurance/runtime/latency/risk axes, lifecycle, closure economics, failure modes, research agenda, implementation phases, and non-claims; no generated procedure or useful improvement result is promoted."
             },
             {
               "source_id": "benchmaxxing",
@@ -12997,6 +13001,7 @@
           "claim_label": "Design rationale",
           "source_ids": [
             "rmi",
+            "cognitive_loop_closure",
             "ext_gemini_robotics_2025",
             "ext_foundation_robotics_physical_risk_2025",
             "ext_control_barrier_functions_2019",
@@ -13016,7 +13021,8 @@
             ],
             "supporting": [
               "viea",
-              "rmi"
+              "rmi",
+              "cognitive_loop_closure"
             ],
             "variants": [],
             "connector_or_recovery": [],
@@ -13109,6 +13115,21 @@
                 "sources/raw/google_docs/rmi.txt:1349-1365"
               ],
               "passage_review_note": "Reviewed the complete local raw cache for high-bandwidth embodied streams, raw/event/semantic/skill/residual log roles, the joint storage budget, reflex gaps, runtime tiers, system metrics, safety controls, and the implementation boundary; no physical or logging result is promoted.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "cognitive_loop_closure",
+              "mapped_support": "Supplies the detailed embodied trajectory policy: raw telemetry separated from cognitive/event/residual logs, rolling multi-resolution buffers, triggered pre/post-event retention, semantic eventization, feature compression, reflex-state custody, memory budgets, and explicit warning against loss of safety-relevant information.",
+              "limits": "Conceptual architecture only; no telemetry corpus, eventizer, feature compressor, raw-buffer policy, reflex logger, incident reconstruction, privacy evaluation, real-time controller, simulator, or hardware result has been implemented or measured.",
+              "passage_refs": [
+                "sources/raw/google_docs/cognitive_loop_closure.txt:726-878",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:1165-1201",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:1340-1402",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:1907-1920",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:1974-1981",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:2110-2129"
+              ],
+              "passage_review_note": "Reviewed the complete local raw cache for the embodied logging problem, telemetry/cognitive/event/residual separation, multi-resolution rolling buffers, retention triggers, semantic eventization, compressed features, reflex trace requirements, memory budget, latency/reflex routing, failure modes, research questions, and non-claims; no logging or physical-safety result is promoted.",
               "passage_review_state": "reviewed"
             }
           ],
@@ -13726,16 +13747,21 @@
           "claim_source_mappings": [
             {
               "source_id": "cognitive_loop_closure",
-              "mapped_support": "Supports the core loop-closure mechanism through trajectory logging, loop detection, abstraction, active parameter discovery, tool synthesis, verification, registry, routing, monitoring, revision/retirement, three execution modes, and tool-card governance.",
-              "limits": "No local loop-detection system, tool-synthesis run, verification harness, routing monitor, or retirement automation has been executed.",
+              "mapped_support": "Supports the core loop-closure mechanism through complete trajectory logging, loop detection, invariant abstraction, six active parameter probes and four variable states, deterministic or bounded model-assisted tool synthesis, verification portfolios, orthogonal assurance/runtime/latency/risk axes, registry, per-invocation routing, monitoring, revision/retirement, and interpreter/compiled/reflex modes.",
+              "limits": "Conceptual architecture source only; no local trajectory corpus, loop detector, abstraction or parameter-discovery evaluation, synthesized tool, verifier-quality campaign, routing monitor, savings result, physical logger, or retirement automation has been executed.",
               "passage_review_state": "reviewed",
               "passage_refs": [
                 "sources/raw/google_docs/cognitive_loop_closure.txt:10-24",
                 "sources/raw/google_docs/cognitive_loop_closure.txt:25-35",
                 "sources/raw/google_docs/cognitive_loop_closure.txt:148-219",
-                "sources/raw/google_docs/cognitive_loop_closure.txt:232-333"
+                "sources/raw/google_docs/cognitive_loop_closure.txt:232-333",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:432-723",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:882-1201",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:1205-1566",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:1664-1815",
+                "sources/raw/google_docs/cognitive_loop_closure.txt:1827-2129"
               ],
-              "passage_review_note": "Reviewed local raw cache for repeated trajectory logging, loop detection, invariant abstraction, parameter discovery, synthesis, verification, registry/routing/monitoring, three execution modes, procedural-memory framing, governed tool-card fields, and retirement conditions; no local loop detector, synthesis run, routing monitor, or retirement automation is promoted."
+              "passage_review_note": "Reviewed the complete local raw cache for repeated cognition as procedural memory, formal sketches, adjacent-work distinctions, ten components, parameter probes/states, embodied logs, deterministic/model-assisted tools, verification sources/grades, execution and latency classes, full tool cards, lifecycle, decision factors, comparisons, metrics, governance, failure modes, research questions, phases, and non-claims; no loop detector, synthesized tool, verifier, router, physical logger, savings result, or retirement automation is promoted."
             },
             {
               "source_id": "rmi",

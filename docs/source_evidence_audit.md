@@ -11,12 +11,12 @@ It does **not** quote or publish raw private source passages. It also does **not
 | Metric | Value |
 |---|---:|
 | Chapters audited | 84 |
-| Assigned source/chapter pairs | 1215 |
-| Exact claim-source mappings | 1035 |
+| Assigned source/chapter pairs | 1216 |
+| Exact claim-source mappings | 1036 |
 | Unmapped assigned pairs | 180 |
-| Source notes present for assigned pairs | 1215 |
-| Source notes listing assigned chapter | 1215 |
-| Passage-reviewed mappings recorded | 966 |
+| Source notes present for assigned pairs | 1216 |
+| Source notes listing assigned chapter | 1216 |
+| Passage-reviewed mappings recorded | 967 |
 | Support-state counts | {"argument": 84} |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -79,7 +79,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `ai-deployment-transition-distribution-and-human-agency` | 4 | 2 | 4 | 4 | 0 | argument | passage review required before source-derived promotion |
 | `artifact-graphs-audit-logs-and-replay` | 21 | 19 | 21 | 21 | 19 | argument | passage review required before source-derived promotion |
 | `runtime-adapters-tool-permissions-and-human-approval` | 28 | 25 | 28 | 28 | 25 | argument | passage review required before source-derived promotion |
-| `embodied-agency-real-time-control-and-physical-safety` | 8 | 8 | 8 | 8 | 8 | argument | eligible for support review |
+| `embodied-agency-real-time-control-and-physical-safety` | 9 | 9 | 9 | 9 | 9 | argument | eligible for support review |
 | `inter-stack-protocols-identity-and-economic-exchange` | 11 | 10 | 11 | 11 | 10 | argument | passage review required before source-derived promotion |
 | `multi-agent-dynamics-collective-intelligence-and-systemic-risk` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
 | `procedural-memory-and-cognitive-loop-closure` | 23 | 19 | 23 | 23 | 19 | argument | passage review required before source-derived promotion |
@@ -139,10 +139,10 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `vcm_public` | 14 | yes |
 | `coherence_exchange` | 14 | yes |
 | `bugbrain_project` | 13 | yes |
+| `cognitive_loop_closure` | 13 | yes |
 | `kernel_english_residual_compiler` | 13 | yes |
 | `beastbrain_project` | 12 | yes |
 | `reflexive_router_whitepaper` | 12 | yes |
-| `cognitive_loop_closure` | 12 | yes |
 | `qcsa_whitepaper` | 12 | yes |
 | `project_theseus_whitepaper` | 12 | yes |
 | `corbens_trainer_project` | 11 | yes |
@@ -1114,6 +1114,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `runtime-adapters-tool-permissions-and-human-approval.core` | `runtime-adapters-tool-permissions-and-human-approval` | `qcsa_whitepaper` | mapped | note present | chapter listed | passage-reviewed |
 | `runtime-adapters-tool-permissions-and-human-approval.core` | `runtime-adapters-tool-permissions-and-human-approval` | `reflexive_router_whitepaper` | unmapped | note present | chapter listed | not passage-reviewed |
 | `embodied-agency-real-time-control-and-physical-safety.core` | `embodied-agency-real-time-control-and-physical-safety` | `rmi` | mapped | note present | chapter listed | passage-reviewed |
+| `embodied-agency-real-time-control-and-physical-safety.core` | `embodied-agency-real-time-control-and-physical-safety` | `cognitive_loop_closure` | mapped | note present | chapter listed | passage-reviewed |
 | `embodied-agency-real-time-control-and-physical-safety.core` | `embodied-agency-real-time-control-and-physical-safety` | `ext_gemini_robotics_2025` | mapped | note present | chapter listed | passage-reviewed |
 | `embodied-agency-real-time-control-and-physical-safety.core` | `embodied-agency-real-time-control-and-physical-safety` | `ext_foundation_robotics_physical_risk_2025` | mapped | note present | chapter listed | passage-reviewed |
 | `embodied-agency-real-time-control-and-physical-safety.core` | `embodied-agency-real-time-control-and-physical-safety` | `ext_control_barrier_functions_2019` | mapped | note present | chapter listed | passage-reviewed |
