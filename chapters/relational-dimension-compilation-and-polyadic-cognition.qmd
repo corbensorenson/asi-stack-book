@@ -4,7 +4,7 @@ chapter_id: "relational-dimension-compilation-and-polyadic-cognition"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.3 concept-complete argument-level manuscript"
-last_updated: "2026-07-28"
+last_updated: "2026-07-31"
 primary_sources:
   - "relational_dimension_compiler"
   - "ext_neural_message_passing_2017"
@@ -283,16 +283,22 @@ separately.
 
 **Mechanism.** Adapt order through explicit promotion, demotion, expiry, and contraction transactions that invalidate descendants, caches, certificates, and compiled operators when their parent changes. **Failure mode.** Online order growth can become self-authorized ontology expansion, while contraction can strand stale descendants or delete needed distinctions. **Non-claim.** Reversible records do not show that recovery is complete or affordable. **Source grounding.** Lifecycle and contraction requirements come from the Relational Dimension Compiler and remain test proposals.
 
-Relational-Order Discovery, Inference, and Evaluation should separate at least
-five capabilities:
+Relational-Order Discovery, Inference, and Evaluation should separate the
+paper's diagnostic suites rather than collapsing them into one “relational
+intelligence” score:
 
 | Track | Question |
 |---|---|
-| Topology discovery | Can the system propose the needed relation without seeing its template in training? |
-| Role binding | Does it preserve asymmetric roles, missing roles, and permutation behavior? |
-| Compositional transfer | Does an admitted relation transfer across entities, domains, time, and unseen configurations? |
-| Order selection | Does the system prefer a simpler sufficient representation and abstain when no candidate qualifies? |
-| Lifecycle integrity | Can it promote, compile, demote, contract, and invalidate descendants without state corruption? |
+| Minimal relational order | Which primitive order survives competent lower-order rescue at matched information and budget? |
+| Typed role binding | Does the system preserve asymmetric, symmetric, repeated, optional, missing, and permuted roles? |
+| Latent topology discovery | Can it propose the needed relation and schema without receiving the authored template or an oracle candidate set? |
+| Counterfactual and causal fidelity | Do role deletion, substitution, and intervention change predictions in the independently expected direction? |
+| Dynamic topology and identity | Can relations appear, change, split, merge, contradict, and retire without losing identity or rewriting history? |
+| Multiscale contraction | Does a macro-object preserve a declared query family within tolerance and expand when boundary conditions fail? |
+| Geometry and fields | Do discrete role objects and continuous fields exchange state without confusing coordinate, role, branch, or authority axes? |
+| Branch and epistemic separation | Do proposed, believed, simulated, observed, executed, contradicted, and counterfactual relations remain isolated? |
+| Compilation and reuse | Does a compiled recognizer retain scope, calibration, counterexamples, provenance, expiry, rollback, and the slow recheck path? |
+| Natural-domain transfer | Does any diagnostic gain improve useful behavior on domains whose relational structure was not authored to match RDC? |
 
 Synthetic generators permit exact topology and counterfactual controls, but
 they can reward template recognition. Natural tasks are necessary to test
@@ -356,6 +362,48 @@ contracts; the evidence system records denominators and residuals. These roles
 may share software in a prototype, but their records and authority remain
 separable. A high proposer score cannot authorize installation.
 
+### Operator registry and hardware lowering
+
+The semantic relation is not a kernel schedule. After qualification, a typed
+operator registry can choose among exact joins and solvers, pairwise message
+passing, factorized or low-rank contractions, selective triadic or polynomial
+kernels, hypergraph or cell-complex operators, equivariant geometry, neural
+operators, planners, and database or symbolic routes. Each entry declares
+input and output types, semantic and primitive arity, role symmetry, branch and
+time behavior, precision, approximation, state, device, data layout, cost,
+failure classes, verifier compatibility, and fallback. A nominally higher-
+order operator has no privilege over a competent reified-node or pairwise
+route.
+
+Persistent state can be stored as columnar entity, relation, and incidence
+tables plus an operator schedule. Relation rows hold stable identity, schema,
+branch, lifecycle, uncertainty, provenance, and qualification; incidence rows
+bind participant identity to a typed role, order, multiplicity, time, and
+confidence. Schema batching groups compatible relations by role signature,
+symmetry, feature width, branch, time window, device, and precision. Sparse
+gather/contract/scatter kernels, block locality, branch copy-on-write,
+structured factorization, and cache reuse may then regularize the hot path
+without making the storage representation the semantic truth.
+
+Every lowering receipt retains candidate and accepted counts; bytes and data
+movement; sparse indices; cache and invalidation identity; gather, kernel, and
+scatter time; communication and synchronization; factorization and precision;
+approximation loss; verification; fallback; and hardware occupancy. A fast
+contraction that excludes candidate proposal, irregular memory traffic,
+qualification, or repair is a hardware illusion. Cache keys include schema,
+relation and branch versions, operator, factorization, precision, environment,
+consumer, and policy so a plausible stale relation cannot impersonate a valid
+hit.
+
+Learning is governed by the same separation. Observation-to-structure models,
+order routers, qualifiers, dynamics, and contraction policies may share a
+composite training objective, but their release receipts remain distinct.
+Curriculum can move from known schemas to discovered and evolving topology;
+it cannot postpone branch isolation, role fidelity, proposal denominators,
+authority, or rollback until after scaling. The source proposes these data
+structures and objectives; it reports no kernel, throughput, learning, or
+distributed-execution result.
+
 ## Interfaces
 
 - Replaceable Cognitive Substrates for primitive families and capability-field contracts
@@ -399,6 +447,28 @@ All exceptions require explicit review.
 - Contraction deletes information or leaves stale descendants and cache entries.
 - Compiler overhead exceeds the value of the admitted structure.
 - Self-modification authority is smuggled into a learned proposal mechanism.
+- Relational hallucination gives a typed, authoritative surface to a false or
+  unsupported structure.
+- False reduction or pairwise laundering hides an irreducible joint residual
+  behind several correlated edges and then calls the aggregate qualified.
+- Axis confusion mixes batch, role, time, space, scale, branch, confidence,
+  precision, or authority because they happen to occupy tensor dimensions.
+- Branch leakage actualizes a plan, simulation, prediction, or counterfactual
+  without an observation, execution, or adoption event.
+- False objecthood and over-contraction turn a transient statistical cluster
+  into a durable entity and accumulate abstraction debt.
+- Relation, topology, schema, certificate, cache, or operator drift leaves old
+  qualifications active after their premises changed.
+- Poisoned relations, forged provenance, or evaluator capture let the proposer
+  manufacture both structure and its acceptance evidence.
+- A hidden oracle supplies candidate tuples, schemas, roles, or stop points
+  that ordinary baselines do not receive.
+- Schema capture and representational lock-in make one early ontology costly to
+  challenge, fork, or migrate.
+- Explicit inferred relations amplify sensitive information beyond the facts
+  a principal was individually permitted to inspect.
+- An inspectable relation graph is presented as a causal or mechanistic
+  explanation without intervention or mediation evidence.
 
 ### When not to compile
 

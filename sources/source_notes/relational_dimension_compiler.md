@@ -100,6 +100,149 @@ not a fixed tensor order.
     identity, multiscale contraction, geometry/fields, branch separation, and
     compilation/reuse, with strong lower-order rescues and total-system cost.
 
+## Claim Boundary and Status
+
+- RDC is a proposed relational representation/compiler architecture and
+  falsification program, not evidence that explicit polyadic structure improves
+  a model.
+- “Higher dimensional” is not used as a synonym for higher tensor rank,
+  geometric dimension, more hidden width, more branches, more abstraction
+  levels, or greater intelligence.
+- Finite role-preserving reification establishes representational recoverability
+  under stated identity/schema assumptions. It does not establish learnability,
+  efficient queries, causal correctness, natural usefulness, or hardware gain.
+- Bounded primitive arity is a default research hypothesis with an explicit
+  order-four-and-above escape route, not a universal theorem.
+- Qualified relations are scoped epistemic artifacts. They do not become world
+  truth, effect authority, causal explanations, or unique ontologies.
+- Reversible contraction restores declared representation paths only; it does
+  not undo external effects or guarantee removal of learned influence.
+- All manuscript integrations remain `Design rationale` / `argument`; no
+  support transition follows from the paper.
+
+## Conceptual Primitives
+
+- **Dimensional axis type:** carrier, semantics, role or coordinate meaning,
+  symmetry, unit/metric, variance law, legal operations, and compatibility.
+- **Relation schema:** stable role-bearing type with optional/repeated roles,
+  symmetry, branch/time policy, constraints, and version.
+- **Relation instance:** persistent identity plus schema, typed incidences,
+  provenance, uncertainty, defeaters, branch, lifecycle, and dependencies.
+- **Typed incidence:** participant-to-relation binding whose role, order,
+  multiplicity, time, confidence, and provenance survive storage and lowering.
+- **Candidate denominator:** every proposed, rejected, retried, filtered,
+  shadowed, admitted, demoted, and failed relation/operator pair plus cost.
+- **Relational-order certificate:** evidence that a selected topology,
+  primitive order, operator, factorization, precision, and verifier are
+  qualified for one consumer and envelope after lower-order rescue.
+- **Branch-indexed state:** actual, believed, predicted, planned, simulated,
+  counterfactual, fictional, and normative structures with explicit bridges.
+- **Macro-object:** a query-relative contraction of a stable subcomplex plus a
+  boundary interface, tolerance, uncertainty, provenance, and expansion rule.
+- **Compiled relational specialist:** a cheaper recognizer or operator bound to
+  its qualified slow program, scope, counterexamples, drift checks, expiry,
+  fallback, and rollback.
+
+## Interfaces, Artifacts, and State Machines
+
+A `RelationalConstructionRequest` names the consumer, task/query family,
+entities and fields, observations, branch, candidate sources, allowed schemas,
+cost/risk envelope, evidence floor, primitive-order ceiling, verifier policy,
+and fallback. The compiler returns a `QualifiedRelationalComplexPacket` or a
+typed residual. The packet binds relation and incidence tables, field state,
+branch DAG, operator schedule, candidate denominator, order decisions,
+qualification, contraction maps, provenance, uncertainty, lifecycle events,
+and descendant refs.
+
+Relation instances move through proposed, qualified, believed, observed or
+executed, weakened, contradicted, superseded, archived, and retired states.
+Macro-objects and compiled specialists have parallel proposal, shadow,
+qualification, canary, active, demotion, expiry, contraction/decompilation, and
+retirement transitions. Observation, action, adoption, reconciliation, and
+governance events—not model confidence—authorize crossings between epistemic
+or lifecycle states.
+
+## Assumptions and Invariants
+
+- Semantic arity, primitive computational arity, and storage arity remain
+  separate through every record and receipt.
+- Typed role identity survives permutation, persistence, branching, lowering,
+  caching, contraction, expansion, explanation, migration, and rollback.
+- Candidate sparsity does not hide proposal recall or rejected-candidate cost.
+- A higher-order path competes with competent reification, message passing,
+  factorization, sequence, retrieval, tool, solver, and ordinary-model rescues
+  under matched information and budgets.
+- Qualification is independent enough from proposal and cannot be created by a
+  higher proposer score.
+- Confidence, evidence, belief, observation, execution, and authority remain
+  distinct axes.
+- Hypothetical or branch-local state cannot actualize without an authorized
+  bridge event.
+- Object–field exchange declares sampling, source, boundary, event-creation,
+  scale, unit, uncertainty, and conservation behavior.
+- Contraction is sound only for a declared query/environment envelope and must
+  retain expansion and invalidation triggers.
+- Every compiled fast path retains the exact slower qualified route and
+  dependency-closed decompilation.
+- Schema evolution preserves historical interpretation, plural alternatives,
+  migration dispositions, and rollback rather than overwriting one ontology.
+- Hardware credit includes irregular data movement, state, communication,
+  qualification, verification, cache invalidation, repair, and fallback.
+
+## Algorithms and Conditional Results
+
+The paper specifies sparse candidate narrowing, adaptive order routing,
+relation qualification, typed reification, branch-local update, contraction,
+expansion, reconciliation, schema evolution, and slow-path compilation as
+proposed algorithms. A composite learning objective covers structure,
+dynamics, order, qualification, contraction, calibration, sparsity, cost, and
+security. These are not implemented procedures.
+
+The exact finite-reification result is conditional on stable relation identity,
+schema, and typed incidences, with recovery only up to identifier renaming. The
+least-sufficient-order and contraction results remain consumer-, model-family-,
+information-, resource-, environment-, query-, and tolerance-relative.
+Certificates do not automatically compose or transfer.
+
+## Threats, Costs, and Governance
+
+The complete threat surface includes hallucinated relations, combinatorial
+overproduction, false reduction, pairwise laundering, role failure, axis
+confusion, branch leakage, false objecthood, contraction debt, topology/schema/
+cache drift, poisoning, provenance forgery, evaluator capture, hidden proposal
+oracles, hardware illusion, schema capture, privacy amplification, explanation
+overclaiming, and self-certifying modification. Governance owns schema and
+operator registries, proposal budgets, qualification independence, branch
+bridges, actuality, lifecycle movement, contraction, migration, privacy,
+appeal, expiry, rollback, and emergency retirement.
+
+Total cost includes observation and entity construction; proposal and rejected
+tuples; schema/role inference; relation and incidence storage; sparse gathers,
+kernel work, and scatters; data movement; communication; factorization;
+precision; branch copies; fields; qualification and verification; caching and
+invalidation; contraction and expansion; learning; compilation; monitoring;
+repair; human review; migration; privacy; and rollback.
+
+## Cross-Paper Synthesis
+
+- QCSA supplies stable semantic identity, plural addresses, question-guided
+  evidence acquisition, and typed hypergraph memory; RDC supplies adaptive
+  role-bearing relation construction and computational lowering.
+- Platonic World Model supplies semantic basis, branch, proposition,
+  attestation, commitment, proof, grounding, and governed ontology change;
+  RDC's relation graph cannot replace those epistemic distinctions.
+- Cognitive Compilation owns obligation-preserving translation; RDC supplies a
+  relational IR with semantic, evidence, computational, and abstraction
+  layers.
+- Governed World Models own observation, dynamics, counterfactuals, and reality
+  reconciliation; RDC supplies candidate object/field topology and branch-local
+  relation state.
+- Routing and Replaceable Substrates own qualified operator selection and ABI-
+  neutral implementation; RDC makes relational order, factorization, precision,
+  and topology routed resources.
+- Procedural Memory owns compiled-specialist lifecycle and slow-path recovery;
+  Resource Economics and Benchmark Ratchets own complete cost and RODIE.
+
 ## Formal and Conditional Results
 
 - The finite role-reification construction is representational: given stable
@@ -275,3 +418,48 @@ promote any chapter core or non-core mechanism claim.
   reproduced through this ingestion.
 - No chapter-core claim, release state, publication state, AGI claim, or ASI
   claim changes.
+
+## Section-Family Coverage
+
+| Paper section family | Actual manuscript or durable owner | Disposition and boundary |
+|---|---|---|
+| §§1–2 | `relational-dimension-compilation-and-polyadic-cognition`; Replaceable Substrates | Thesis, contribution, axis type system, and semantic/primitive/storage separation integrated. “Higher dimension” remains typed rather than valorized. |
+| §3 related work | source note; Appendix H backlog | Comparator families and missing-conjunction claim retained pending independent current-primary-source review. |
+| §4 formal model | RDC chapter; Governed World Models; Cognitive Compilation | Typed relational state, exact role reification, operational order, branch state, and object–field complementarity integrated. Recoverability is representational only. |
+| §5 compiler architecture | RDC chapter; Integrated Reference Architecture | Request/packet contracts, typechecker, proposer, order router, operator registry, qualifier, store, contraction compiler, and reconciler integrated or retained as proposed components. |
+| §6 sparse adaptive order | RDC chapter; Routing; Benchmark Ratchets | Candidate narrowing, factorized kernels, order routing, least sufficient order, order certificates, counterfactual deletion, lower-order rescue, controls, and update loop integrated. |
+| §7 bounded computational/unbounded semantic arity | RDC chapter; Replaceable Substrates; Cognitive Compilation | Relation-instance objects, exact reification boundary, metarelations, bounded default, selective triadic and higher-order escape routes, and relational calculus integrated. |
+| §8 semantic renormalization | RDC chapter; Governed World Models; Procedural Memory | Stable subcomplexes, query-relative soundness, contraction/expansion, recursive scale, compilation, and learned-topology hypothesis integrated. No universal objecthood or certificate composition. |
+| §9 branches and action boundary | Governed World Models; RDC chapter; Runtime/Claim owners | Branch identity, epistemic lifecycle, confidence/authority separation, provenance, and non-retroactive reconciliation integrated. |
+| §10 self-constructing topology | RDC chapter; Integrated Architecture; VCM; Procedural Memory | Relational IR, learned contraction graph, persistent complex, possible worlds, schema evolution, reflex formation, and substrate neutrality integrated as a speculative endpoint. |
+| §11 implementation and hardware | RDC chapter; Replaceable Substrates; Resource Economics | Entity/relation/incidence tables, schedules, schema batching, sparsity/locality, factorization, caches, distribution, complexity envelopes, and service decomposition integrated. No hardware result. |
+| §12 learning/training | source note; Governed Model Training; Benchmark Ratchets | Structured data, observation-to-topology, dynamics, router/qualifier/contraction learning, joint objective, and curriculum retained as a concrete research program. |
+| §13 RODIE | RDC chapter; Benchmark Ratchets | Nine diagnostic suites, natural-domain transfer, vector metrics, baselines, proposal denominators, and lower-order rescues integrated. RODIE remains a proposal, not a benchmark result. |
+| §14 hypotheses and negatives | source note; RDC/benchmark falsifiers | Ten hypotheses and decisive negative dispositions retained, including order, regret, transfer, causal, multiscale, bounded-order, compilation, topology, object–field, and total-system tests. |
+| §15 threats/hazards | RDC chapter; Security/Privacy/Evidence owners; source note | All eighteen failure families integrated or retained with cost and governance routes. Explicit structure creates no truth, causality, privacy, or explanatory privilege. |
+| §16 limitations/non-claims | source note; chapter non-claims | Paper's limitations preserved without softening; no universal arity, relation truth, natural-task, hardware, safety, self-improvement, or ASI result. |
+| §17 reference implementation | RDC Minimum Viable Implementation; `prototype-roadmap`; source note | Required components, comparisons, acceptance conditions, and public interface routed to implementation work. No implementation exists. |
+| §18 discussion | RDC summary; Replaceable Substrates; Governed World Models; source note | Transformer delta, neural/symbolic bridge, representation–compute co-design, scaling-axis hypothesis, science/language/planning implications, and “not universal graph/tensor” boundaries retained. |
+| §19 conclusion | RDC chapter summary; this note | Self-constructing typed-topology thesis integrated at `argument`. |
+| Appendix A | source note; executable-specification backlog | Formal schema, incidence, branch copy-on-write, contraction certificate, and order-regret definitions retained as proposed formal objects. |
+| Appendix B | source note; RDC lifecycle; Procedural Memory | Relation, macro-object, and compiled-specialist state sketches integrated or retained as lifecycle requirements. |
+| Appendix C and references | Benchmark Ratchets; Appendix H backlog | Evaluation checklist retained; external bibliography requires independent passage review before support or novelty use. |
+
+## Closure Status
+
+**Section-family audit complete as of 2026-07-31.** All 19 numbered sections,
+three appendices, and references terminate in manuscript integration,
+public-safe note retention, a concrete implementation/evaluation obligation, or
+an explicit non-claim. The dedicated RDC chapter already preserved the core
+arity, reification, rescue, routing, contraction, lifecycle, and RODIE model.
+This pass repaired the remaining compression: all nine RODIE diagnostic suites
+plus natural transfer, the operator-registry and hardware-lowering contract,
+learning-release separation, and the full epistemic/security hazard surface.
+No substantive section is orphaned.
+
+Closure does not establish an RDC implementation, learned topology, natural
+relation, proposal recall, order-router calibration, irreducible polyadic
+advantage, bounded-arity theorem, contraction fidelity, compiled-specialist
+gain, hardware efficiency, RODIE corpus/result, privacy or safety result,
+external reproduction, production transfer, or ASI claim. Support remains
+`argument`; reopen on material paper or receiving-chapter drift.
