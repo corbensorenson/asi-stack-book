@@ -21451,7 +21451,7 @@
           "claim_source_mappings": [
             {
               "source_id": "benchmaxxing",
-              "mapped_support": "Supports the benchmark-ratchet claim directly with lifecycle states for frontier, diagnostic, regression, retired, and live benchmarks plus wall diagnosis, benchmark/model ledgers, anti-Goodhart safeguards, holdouts, mutation, transfer checks, and contamination audits.",
+              "mapped_support": "Supports the benchmark-ratchet claim directly by distinguishing instrument saturation from a development wall and architecture limitation; decomposing the system into architecture, parameters, data, and inference procedure; defining frontier, diagnostic, regression, retired, live, multi-rate, and safety instrument roles; supplying six saturation signals, a five-level diagnostic ladder, linked benchmark/model ledgers, capability narratives, anti-Goodhart safeguards, and a frontier-gain/regression-floor rule.",
               "limits": "No benchmark harness, mutation test, holdout run, transfer check, contamination audit, live benchmark, empirical benchmark result, or model-capability result has been run in this repository.",
               "passage_refs": [
                 "sources/raw/google_docs/benchmaxxing.txt:10-21",
@@ -21461,13 +21461,19 @@
                 "sources/raw/google_docs/benchmaxxing.txt:165-192",
                 "sources/raw/google_docs/benchmaxxing.txt:217-243",
                 "sources/raw/google_docs/benchmaxxing.txt:329-357",
+                "sources/raw/google_docs/benchmaxxing.txt:361-486",
+                "sources/raw/google_docs/benchmaxxing.txt:491-555",
                 "sources/raw/google_docs/benchmaxxing.txt:559-640",
+                "sources/raw/google_docs/benchmaxxing.txt:644-758",
+                "sources/raw/google_docs/benchmaxxing.txt:762-889",
                 "sources/raw/google_docs/benchmaxxing.txt:912-970",
                 "sources/raw/google_docs/benchmaxxing.txt:974-1001",
                 "sources/raw/google_docs/benchmaxxing.txt:1026-1035",
-                "sources/raw/google_docs/benchmaxxing.txt:1103-1168"
+                "sources/raw/google_docs/benchmaxxing.txt:1103-1168",
+                "sources/raw/google_docs/benchmaxxing.txt:1172-1321",
+                "sources/raw/google_docs/benchmaxxing.txt:1359-1449"
               ],
-              "passage_review_note": "Reviewed local raw cache for benchmark saturation, frontier-to-regression transition, wall diagnosis, benchmark portfolio design, anti-Goodhart safeguards, private holdouts, benchmark mutation, multi-metric evaluation, transfer checks, contamination audits, capability narratives, benchmark/model ledgers, ratchet rule, and failure-mode mitigations; no benchmark run or empirical capability result is promoted.",
+              "passage_review_note": "Reviewed the complete local raw cache for the eight-stage loop, formal model, saturation-versus-wall distinction, diagnostic ladder, lifecycle, multi-rate portfolio, six saturation signals, five wall classes, architecture-change hypothesis, four-set protocol, benchmark/model ledgers, plural evaluation axes, examples, failure mitigations, research agenda, six implementation phases, claims/non-claims, and appendix templates; no benchmark run, wall diagnosis, architecture comparison, transfer, safety, or empirical capability result is promoted.",
               "passage_review_state": "reviewed"
             },
             {

@@ -10,20 +10,20 @@ This report records the source-mining pass used to expand the book from a 16-cha
 - Locally readable Corben paper corpus: 44 canonical mining texts—37 cached
   Google Docs text exports and seven supplied Markdown whitepapers. Paired DOCX
   files are presentation counterparts, not independent idea sources.
-- Full section-family closure audits now exist for eighteen papers:
+- Full section-family closure audits now exist for nineteen papers:
   `deterministic_capability_compilation`, `platonic_world_model`, `scf`,
   `qcsa_whitepaper`, `reflexive_router_whitepaper`,
   `kernel_english_residual_compiler`, `relational_dimension_compiler`, and
   `precision_contract`, `planforge`, `planforge_compiler_arch`, and
   `cognitive_compilation`, `talos`, `vcm_public`, `spinoza`, and
-  `spinoza_composer`, `octopus_router`, `rmi`, and
-  `cognitive_loop_closure`.
+  `spinoza_composer`, `octopus_router`, `rmi`, `cognitive_loop_closure`, and
+  `benchmaxxing`.
 - The 2026-07-31 VIEA second pass is the first legacy-paper fidelity repair: it
   expands the note from a routing summary into a 2,388-word system note and
   writes previously absent mechanisms into seven canonical chapters.
 - Every recent rich whitepaper in this audit now has an exact
   section-family-to-manuscript closure audit.
-- Twenty-five readable legacy papers still have first-pass routing notes rather
+- Twenty-four readable legacy papers still have first-pass routing notes rather
   than full-fidelity notes. Their ideas may be present in chapters, but note
   existence or manifest assignment is no longer accepted as proof of complete
   mining.
@@ -63,9 +63,8 @@ source assignment alone does not count.
 
 | State | Sources | Required next operation |
 |---|---|---|
-| Section-family audit complete | `deterministic_capability_compilation`, `platonic_world_model`, `scf`, `qcsa_whitepaper`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `relational_dimension_compiler`, `precision_contract`, `planforge`, `planforge_compiler_arch`, `cognitive_compilation`, `talos`, `vcm_public`, `spinoza`, `spinoza_composer`, `octopus_router`, `rmi`, `cognitive_loop_closure` | Re-open only on paper or chapter drift. |
+| Section-family audit complete | `deterministic_capability_compilation`, `platonic_world_model`, `scf`, `qcsa_whitepaper`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `relational_dimension_compiler`, `precision_contract`, `planforge`, `planforge_compiler_arch`, `cognitive_compilation`, `talos`, `vcm_public`, `spinoza`, `spinoza_composer`, `octopus_router`, `rmi`, `cognitive_loop_closure`, `benchmaxxing` | Re-open only on paper or chapter drift. |
 | Legacy paper repaired in this pass | `viea` | Re-run chapter/source validation and retain its new section-family map. |
-| Legacy system spine; deep note required | `benchmaxxing` | Reconstruct the complete object model and lifecycle before deciding whether prose is missing. |
 | Compression, representation, and substrate; deep note required | `cgs`, `rgs`, `rankfold_neuralfold`, `rankfold_compressor`, `bbvca_v9`, `bbvca_main`, `genesiscode`, `treellm`, `simulation_scaling`, `tokenmana`, `bugbrain` | Preserve equations, decoders, accounting, verification, failure surfaces, and rival representations—not only the compression slogan. |
 | Alignment, verification, context, and execution lineage; deep note required | `alignment_field`, `field_of_god`, `ethica_mechanica`, `eternal_code`, `verification_bandwidth`, `beastbrain`, `beastbrain_timeless`, `aletheia`, `context_engineer`, `black_hole_context_manager`, `ladon_manhattan`, `uat`, `software_magic_grimoire` | Separate operational mechanisms from metaphysics, branding, repeated drafts, unsafe absolutes, and unsupported performance claims; integrate only the durable architecture. `coherence_exchange` remains a separately connector-mined source rather than one of the 44 local paper texts. |
 
@@ -200,6 +199,43 @@ laundering, unsafe active probes, stale authority, reflex deadline violations,
 registry rot, and lossy-log overclaiming. No useful-tool synthesis,
 generalization, verification, latency, safety, economic, deployment, or
 support-state result is inferred.
+
+## Benchmaxxing section-family closure result
+
+Benchmaxxing's 21 numbered sections, five appendices, and selected references
+now terminate in canonical prose, a public-safe deep note, a concrete research
+obligation, or an explicit boundary. The audit confirms that the current
+Benchmark Ratchets chapter already exceeds the paper on construct validity,
+evidence states, evaluator independence, output binding, complete denominators,
+rights, cost, and promotion discipline, so no new chapter is warranted.
+
+The repair preserves and makes explicit the paper's distinctive foundations:
+
+- saturation, development wall, and architecture limitation are separate
+  diagnoses; score level alone establishes none of them;
+- the development object is decomposed into architecture, trained parameters,
+  data, and inference procedure so interventions can identify what changed;
+- saturation is a vector across ceiling, system separation, uncertainty,
+  noise, exposure, transfer, and residual value rather than one universal
+  threshold or a naive product of flags;
+- the benchmark portfolio is a multi-rate control system spanning fast inner
+  loops, diagnostics, frontiers, private/temporal holdouts, live work,
+  regression floors, safety/misuse instruments, and explicit retirement; and
+- benchmark and model ledgers are distinct joined records, while each material
+  score receives a bounded capability narrative.
+
+The deep note retains the eight-stage ratchet, original five-level diagnostic
+ladder, five benchmark lifecycle roles, seven anti-Goodhart safeguards, five
+portfolio cadences, six saturation signals, five wall classes, prospective
+architecture-change hypothesis, four-set protocol, ratchet formulas, plural
+evaluation axes, three examples, eight failure mitigations, seven research
+areas, six implementation phases, claims/non-claims, and appendix templates.
+It adds falsifiers for unstable saturation, nonpredictive residual value,
+misdiagnosed walls, under-tuned lower-level interventions, false architecture
+necessity, failed transfer, uncalibrated capability narratives, hidden tails,
+and rename-based resurrection of retired instruments. No benchmark, wall,
+architecture, transfer, safety, readiness, deployment, or support-state result
+is inferred.
 
 ## SCF fidelity repair: first recovered depth
 

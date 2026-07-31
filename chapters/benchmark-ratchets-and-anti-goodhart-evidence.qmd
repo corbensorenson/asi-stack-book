@@ -207,6 +207,75 @@ generalization and next work. Public exposure therefore receives its own
 budget and contamination record; a public calibration score cannot directly
 serve as the complete internal optimizer without changing its evidence value.
 
+### Saturation and a wall are different diagnoses
+
+Benchmaxxing distinguishes two events that are easy to collapse. A benchmark
+is **saturated** when it no longer provides useful development information. A
+system hits a **wall** when it stops improving on an instrument that is still
+valid, unsaturated, and capable of distinguishing the target behavior. A high
+score can coexist with an unsaturated tail; a low score can coexist with a
+saturated or broken instrument. Neither event can be inferred from score alone.
+
+Saturation is a joint diagnostic vector. Candidate signals include ceiling
+performance, clustering among competent systems, overlapping uncertainty,
+noise or ambiguity dominating the remaining errors, high exposure or
+contamination risk, weak transfer, and low residual value. The last signal is
+especially important: an instrument may remain difficult while its failures no
+longer identify a useful intervention. Conversely, a benchmark with a high
+average remains frontier pressure when a consequential subgroup or task family
+is still discriminative. Suite-wide saturation therefore cannot be computed as
+a naive product of per-task threshold flags; task weights, vetoes, uncertainty,
+critical tails, construct drift, and consumer scope remain explicit.
+
+A wall diagnosis freezes the development object as
+`M_t = (A_t, theta_t, D_t, I_t)`: architecture or model class, trained
+parameters, training/post-training data, and inference procedure including
+tools, memory, retrieval, and scaffolding. Interventions must say which
+component changed, what residual-specific movement was predicted, what budget
+and stopping rule counted as a fair attempt, and which components remained
+fixed. If the benchmark changes materially, the record is an instrument
+repair or frontier transition, not evidence that the old model wall moved.
+
+Architecture necessity is counterfactual and prospective. The claim is not
+"the new architecture scored higher" but "mechanism `X` should improve
+residual class `B` after adequate instrument, data, training, inference, and
+procedural hypotheses failed, while preserving regression floor `G`." A
+result that changes architecture, data, compute, inference, evaluator, and
+task distribution together cannot identify an architecture wall.
+
+### A benchmark portfolio is a multi-rate control system
+
+One benchmark cannot simultaneously be cheap enough for every training loop,
+deep enough for diagnosis, difficult enough for architectural decisions,
+fresh enough to resist contamination, and broad enough to guard safety. The
+portfolio therefore operates at multiple rates:
+
+| Instrument class | Primary use | Admission boundary |
+|---|---|---|
+| Fast inner loop | Frequent training feedback and cheap regression detection | Narrow construct; known proxy gap; cannot establish broad capability |
+| Diagnostic | Isolate a failure mechanism or residual cluster | Evaluator must distinguish competing diagnoses |
+| Frontier | Guide major development decisions on difficult unsolved work | Frozen target, adequate capacity, strong baselines, full costs |
+| Private or temporal holdout | Test generalization outside the development surface | Protected custody, exposure accounting, one-way result flow |
+| Live external | Test freshness and real-work transfer | Versioned population, sampling frame, rights, and operational context |
+| Regression floor | Preserve a previously accepted obligation | Exact inherited scope and change-triggered requalification |
+| Safety or misuse | Measure unacceptable behavior and control adequacy | Separate vetoes and authority; capability gains cannot compensate for failure |
+| Retired or historical | Preserve lineage without steering current optimization | Explicit retirement reason and prohibited downstream uses |
+
+Promotion between roles is governed. A frontier can become a regression floor
+only for the exact behavior it validly measured. A public benchmark can remain
+a calibration surface without becoming a private development target. A
+contaminated instrument may retain historical value but lose promotion
+authority. Retirement is not deletion: label errors, ambiguity, cost,
+contamination, narrowness, metric failure, or zero residual value remain in
+the ledger so descendants cannot silently resurrect the same instrument.
+
+Each score also receives a **capability narrative**: the task population,
+environment, allowed tools, horizon, reliability, exclusions, failure tail,
+and human or operational meaning of the result. "82%" is not a capability.
+"Resolves short, well-specified repository defects under a frozen tool and
+time contract, but fails ambiguous requests and large refactors" is a bounded
+claim that another layer can evaluate.
+
 ### Eighteen-stage benchmark-instrument lifecycle
 
 The lifecycle registers the construct, movable claim, task population, data,
@@ -550,6 +619,18 @@ Minimum fields:
 - `promotion_decision`
 - `support_state_effect`
 - `negative_results`
+
+Those compact fields join two separate ledgers rather than hiding benchmark
+and system change in one row. The **Benchmark Ledger** additionally records the
+claimed construct, task population and sampling frame, instrument role,
+version, evaluator, saturation vector, contamination/public-exposure state,
+label or test reliability, transfer evidence, cost, last refresh, retirement
+criteria, and capability narrative. The **Model Ledger** records
+`(architecture, parameters/checkpoint, data, training process, inference
+process)`, complete portfolio results, residual map, inherited floors, cost and
+latency profile, safety profile, selection lineage, and current limiting
+hypothesis. Their join identifies which model-system actually faced which
+instrument. Neither ledger substitutes for raw runs or evaluator records.
 
 The operational packet around those fields should also name the evidence class, benchmark ownership, public-calibration boundary, contamination surface, hidden/transfer status, fixture-vs-run distinction, exact claim that could move, exact claim that cannot move, and the reviewer or automation that made the promotion decision. If any of those are unknown, the packet can still be useful, but it cannot move a support state.
 
