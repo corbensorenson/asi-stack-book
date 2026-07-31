@@ -10,7 +10,7 @@ This report records the source-mining pass used to expand the book from a 16-cha
 - Locally readable Corben paper corpus: 44 canonical mining texts—37 cached
   Google Docs text exports and seven supplied Markdown whitepapers. Paired DOCX
   files are presentation counterparts, not independent idea sources.
-- Full section-family closure audits now exist for twenty-five papers:
+- Full section-family closure audits now exist for twenty-six papers:
   `deterministic_capability_compilation`, `platonic_world_model`, `scf`,
   `qcsa_whitepaper`, `reflexive_router_whitepaper`,
   `kernel_english_residual_compiler`, `relational_dimension_compiler`, and
@@ -18,13 +18,13 @@ This report records the source-mining pass used to expand the book from a 16-cha
   `cognitive_compilation`, `talos`, `vcm_public`, `spinoza`, and
   `spinoza_composer`, `octopus_router`, `rmi`, `cognitive_loop_closure`,
   `benchmaxxing`, `cgs`, `rgs`, `rankfold_neuralfold`, and
-  `rankfold_compressor`, `bbvca_v9`, and `bbvca_main`.
+  `rankfold_compressor`, `bbvca_v9`, `bbvca_main`, and `genesiscode`.
 - The 2026-07-31 VIEA second pass is the first legacy-paper fidelity repair: it
   expands the note from a routing summary into a 2,388-word system note and
   writes previously absent mechanisms into seven canonical chapters.
 - Every recent rich whitepaper in this audit now has an exact
   section-family-to-manuscript closure audit.
-- Eighteen readable legacy papers still have first-pass routing notes rather
+- Seventeen readable legacy papers still have first-pass routing notes rather
   than full-fidelity notes. Their ideas may be present in chapters, but note
   existence or manifest assignment is no longer accepted as proof of complete
   mining.
@@ -64,9 +64,9 @@ source assignment alone does not count.
 
 | State | Sources | Required next operation |
 |---|---|---|
-| Section-family audit complete | `deterministic_capability_compilation`, `platonic_world_model`, `scf`, `qcsa_whitepaper`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `relational_dimension_compiler`, `precision_contract`, `planforge`, `planforge_compiler_arch`, `cognitive_compilation`, `talos`, `vcm_public`, `spinoza`, `spinoza_composer`, `octopus_router`, `rmi`, `cognitive_loop_closure`, `benchmaxxing`, `cgs`, `rgs`, `rankfold_neuralfold`, `rankfold_compressor`, `bbvca_v9`, `bbvca_main` | Re-open only on paper or chapter drift. |
+| Section-family audit complete | `deterministic_capability_compilation`, `platonic_world_model`, `scf`, `qcsa_whitepaper`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `relational_dimension_compiler`, `precision_contract`, `planforge`, `planforge_compiler_arch`, `cognitive_compilation`, `talos`, `vcm_public`, `spinoza`, `spinoza_composer`, `octopus_router`, `rmi`, `cognitive_loop_closure`, `benchmaxxing`, `cgs`, `rgs`, `rankfold_neuralfold`, `rankfold_compressor`, `bbvca_v9`, `bbvca_main`, `genesiscode` | Re-open only on paper or chapter drift. |
 | Legacy paper repaired in this pass | `viea` | Re-run chapter/source validation and retain its new section-family map. |
-| Compression, representation, and substrate; deep note required | `genesiscode`, `treellm`, `simulation_scaling`, `tokenmana`, `bugbrain` | Preserve equations, decoders, accounting, verification, failure surfaces, and rival representations—not only the compression slogan. |
+| Compression, representation, and substrate; deep note required | `treellm`, `simulation_scaling`, `tokenmana`, `bugbrain` | Preserve equations, decoders, accounting, verification, failure surfaces, and rival representations—not only the compression slogan. |
 | Alignment, verification, context, and execution lineage; deep note required | `alignment_field`, `field_of_god`, `ethica_mechanica`, `eternal_code`, `verification_bandwidth`, `beastbrain`, `beastbrain_timeless`, `aletheia`, `context_engineer`, `black_hole_context_manager`, `ladon_manhattan`, `uat`, `software_magic_grimoire` | Separate operational mechanisms from metaphysics, branding, repeated drafts, unsafe absolutes, and unsupported performance claims; integrate only the durable architecture. `coherence_exchange` remains a separately connector-mined source rather than one of the 44 local paper texts. |
 
 The register is an honest queue, not a deferral license. When a paper yields a
@@ -469,6 +469,46 @@ No codec, bitstream, independent decoder, exactness, rate, mapping/3D/overlap
 advantage, proxy calibration, runtime, memory, utility, safety, deployment,
 support, novelty, SOTA, AGI, or ASI result is inferred. The lineage deepens the
 existing Compact Generative Systems owner; no new chapter is warranted.
+
+## GenesisCode section-family closure result
+
+The 7,785-word GenesisCode cache contains a v0.2 paper/technical
+specification, a Rust implementation handoff, and a style/authoring contract.
+The prior 591-word note captured the headline small-kernel, effects,
+obligations, patch, and replay ideas but not the operational contradictions,
+artifact families, test program, or source-type boundaries. The deep audit now
+disposes every paper section, implementation milestone, CLI/module/file-format
+proposal, conformance item, style rule, template, and open design choice.
+
+The manuscript integration concentrates on four durable interfaces. Executable
+Specifications now distinguishes a nominally small TCB from the checker and
+environment it still trusts; treats fresh seal-token minting as authority-
+bearing state/effect rather than an unexplained pure primitive; separates
+obligation declaration, procedure, artifact, verdict, policy, and consumer;
+and reserves translation-validation language for the relation actually
+checked. Runtime Adapters separates authenticated control variants from
+authorization, response hashes from replay-complete response custody, cached
+model outputs from call reproduction, and observed paths from complete effect
+mediation. Artifact Graphs treats semantic patches as compare-and-swap
+transactions with stable anchors, impact closure, revalidation, self-weakening
+controls, inverse/compensation, and replay-grade downgrade after deletion.
+Cognitive Compilation's source boundary now separates canonical syntax from
+semantic identity and finite equivalence tests from general preservation.
+
+The note retains Gλ/CoreForm, contracts/delegation/explain traces, seal roles,
+Pure/Perform effects, capability declarations, effect-log structure,
+obligation/evidence/package records, row/effect/refinement candidates,
+shapes/PICs/e-graphs/WASM, Rust crate and CLI plan, golden/spoof/fuzz/
+metamorphic/replay tests, conformance checklist, canonical format, qualified
+names, module metadata, and AI-authoring rules. Dated Codex model, worktree,
+instruction-file, and skill advice remains historical process context rather
+than book architecture.
+
+No parser, evaluator, token-security result, effect runner, sandbox, complete
+replay, package policy, patch checker, type/proof stack, translation
+validation, optimizer, benchmark, safety result, deployment, support, novelty,
+SOTA, AGI, or ASI claim is inferred. The paper spans existing specification,
+compilation, runtime, and artifact owners; no new chapter is warranted.
 
 ## SCF fidelity repair: first recovered depth
 

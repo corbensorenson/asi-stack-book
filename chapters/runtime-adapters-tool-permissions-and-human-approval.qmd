@@ -139,7 +139,7 @@ secret isolation, or SOTA performance in this repository.
 | `viea` | Structured command contracts, runtime adapters, verified outputs, deployment feedback, residuals, tools, benchmarks, and regression coverage. | passage-reviewed local raw cache | No deployed runtime adapter, feedback loop, or verified VIEA execution trace exists here. |
 | `ladon_manhattan` | Hardened secret managers, opaque credential handles, policy-mediated injection, ephemeral compartments, zeroization, outbound-call interception, and side-channel assumptions. | passage-reviewed local raw cache | Security architecture only; no Ladon implementation, kernel-level test, side-channel validation, or security audit exists here. |
 | `software_magic_grimoire` | Guarded entry/exit rules, handoff artifacts, verification and failure behavior, incompatible-mode separation, evidence-advancing loops, and scoped recursion. | passage-reviewed local raw cache | Workflow vocabulary only; does not prove adapter enforcement, approval quality, or tool safety. |
-| `genesiscode` | Capability-mediated effects for I/O, time, randomness, networking, model calls, deterministic effect logs, and protocol seals. | passage-reviewed local raw cache | No local capability runtime, sandbox, effect log verifier, or security proof exists. |
+| `genesiscode` | Authenticated privileged protocol variants; explicit effect programs; deny-by-default host capabilities; ordered allow/deny and response records; AI calls as governed effects; replay mismatch; and the distinctions between token origin and authority, hash verification and response-complete replay, observed-path coverage and full mediation. | full three-tab section-family audit | No seal issuer/custody system, capability runner, sandbox, complete effect transcript, replay checker, bypass analysis, OS enforcement, model-call reproduction, or security proof exists. |
 | `moecot` | Specialist lanes, fail-closed control-plane ledgers, readiness gates, replay, handoff, promotion blockers, and authority-sensitive runtime orchestration. | connector/source-note mapped only | Runtime artifacts and benchmark/replay logs remain uninspected and unreproduced. |
 | `field_of_god_ai_constitution` | Governed tool use, power, memory, delegation, consent, reversibility, least sufficient power, risk tiers, auditability, human review, and no self-authorization. | passage-reviewed local public-project source | Constitutional specification only; no runtime policy engine, red-team suite, system-prompt evaluation, or proof was run here. |
 | `theseus_operator_os` | Shared command vocabulary, durable work board, node registry, background/watch/wake contracts, skill registry, tool hooks, feedback routing, TTLs, kill switches, signed updates, and isolation. | passage-reviewed local public-project source | No Hive board, SQLite database, node registry, command channel, hook ledger, or dashboard was run from this repository. |
@@ -263,6 +263,41 @@ authorize an OS-enforcement claim only when an identified sandbox instance and
 its probes were observed. Until then, it remains a bounded probe, ordinary
 dispatch stays blocked, and irreversible residuals remain explicit even when
 none were observed in the toy run.
+
+### Protocol authenticity, capability coverage, and replay-complete effects
+
+GenesisCode's sealed `EFFECT`, `ERROR`, and `UNHANDLED` variants improve on
+magic strings: ordinary model or program data cannot impersonate a privileged
+control response merely by sharing its shape. The boundary is authentication,
+not permission. Effect admission still intersects authenticated principal,
+delegation, operation, target, capability, policy, scope, consequence,
+approval, lease, sandbox, and revocation. Issuing or sharing the seal token is
+itself an authority event and requires custody, rotation, revocation, and
+incident semantics.
+
+The source proposes a replay entry with request hash, allow/deny decision,
+response hash, capability identity, and optional response data. “Optional” is
+the critical fault line. A digest can verify a response supplied from
+elsewhere; it cannot reproduce a missing value. Deterministic replay therefore
+requires the response bytes or an immutable content-addressed reference with
+declared availability. If privacy, secrecy, licensing, size, or deletion policy
+prevents retention, the record must fall to verification-only, semantic,
+partial, or non-replayable status rather than call a response hash replay.
+
+Request identity also binds the exact program and canonical semantics,
+captured continuation environment, dependencies, Prelude/runtime, initial
+state, capability and policy versions, effect index, and ordered prior effects.
+For a model call, prompt bytes, system/tool/context state, provider route,
+model revision, parameters, and returned artifact custody all matter. Reusing a
+cached response reproduces downstream reduction from that response; it does
+not reproduce the remote generation event.
+
+Finally, “declared capabilities cover observed effect operations” is a trace
+property. It does not cover an unexecuted branch, adversarial input, dependency,
+reflection, FFI, or bypass path. The receipt distinguishes static effect-row or
+whole-program coverage, runtime reference-monitor enforcement, observed trace
+coverage, adversarial tests, and OS or hardware enforcement. A clean trace can
+support only the lane it actually observed.
 
 The invocation lifecycle is:
 

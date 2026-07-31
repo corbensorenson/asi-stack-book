@@ -8703,18 +8703,20 @@
             },
             {
               "source_id": "genesiscode",
-              "mapped_support": "Supports evidence-carrying IR discipline through canonical intermediate forms, stable provenance hashes, semantic patches, obligations, deterministic replay logs, capability boundaries, compiler-equivalence checks, and protocol seals.",
-              "limits": "No GenesisCode implementation, replay checker, proof module, benchmark result, translation-validation artifact, or security audit is present in this repository.",
+              "mapped_support": "Supports evidence-carrying compilation through canonical CoreForm, explicit desugaring and semantics, qualified operations and payloads, structural validation, content identity, semantic patches, dependency/obligation rechecking, provenance, capability/effect metadata, row/effect/refinement type candidates, e-graph optimization candidates, and translation-validation discipline. The full audit adds the boundary between canonical syntax and semantic identity, stable semantic anchors and positional AST paths, observed effects and complete capability coverage, and finite equivalence tests and general translation validation.",
+              "limits": "Three-tab paper, implementation-handoff, and style-contract architecture only. No parser, canonicalizer, evaluator, compiler, semantic patcher, impact-closure analysis, effect/type checker, proof module, translation-validation artifact, benchmark, or security audit exists. Dated Codex workflow advice is lineage context rather than a compiler invariant.",
               "passage_review_state": "reviewed",
               "passage_refs": [
-                "sources/raw/google_docs/genesiscode.txt:9-25",
-                "sources/raw/google_docs/genesiscode.txt:63-77",
-                "sources/raw/google_docs/genesiscode.txt:165-202",
-                "sources/raw/google_docs/genesiscode.txt:218-260",
-                "sources/raw/google_docs/genesiscode.txt:354-392",
-                "sources/raw/google_docs/genesiscode.txt:641-704"
+                "sources/raw/google_docs/genesiscode.txt:8-81",
+                "sources/raw/google_docs/genesiscode.txt:83-163",
+                "sources/raw/google_docs/genesiscode.txt:164-323",
+                "sources/raw/google_docs/genesiscode.txt:324-442",
+                "sources/raw/google_docs/genesiscode.txt:443-729",
+                "sources/raw/google_docs/genesiscode.txt:730-867",
+                "sources/raw/google_docs/genesiscode.txt:868-1142",
+                "sources/raw/google_docs/genesiscode.txt:1143-1291"
               ],
-              "passage_review_note": "Reviewed local raw cache for canonical CoreForm IR, structural validation, semantic patch artifacts, stable provenance hashes, sealed effect requests, capability boundaries, deterministic effect logs, replay semantics, obligations, evidence artifacts, registry acceptance, translation validation, and implementation-roadmap phases; no GenesisCode implementation, replay checker, proof module, benchmark, translation-validation artifact, or security audit is promoted."
+              "passage_review_note": "Reviewed all three tabs: paper semantics, Rust handoff, and style contract. Covered canonical CoreForm and hashing, Gλ, sealed protocol variants, effects/replay, obligations/evidence, semantic patches, row/effect/refinement types, e-graphs and translation validation, implementation crates/CLI/tests/conformance, qualified names, explicit payloads, stable formatting, module metadata, and AI-authoring rules. Added missing fresh-seal, closure identity, replay-completeness, capability-coverage, patch-anchor/impact, self-weakening, and finite-test boundaries. No implementation or empirical/security result is promoted."
             },
             {
               "source_id": "treellm",
@@ -12071,16 +12073,18 @@
             },
             {
               "source_id": "genesiscode",
-              "mapped_support": "Supports provenance-bearing artifacts through canonical intermediate forms, semantic patches, stable provenance hashes, deterministic effect logs, replay/audit, obligations, and privileged protocol seals.",
-              "limits": "No GenesisCode kernel, semantic patch checker, deterministic replay system, or proof artifact exists in this repo.",
+              "mapped_support": "Supports provenance-bearing artifacts through canonical CoreForm identity, content-addressed package/evidence records, ordered effect transcripts, semantic patch operations, obligation artifacts, privileged protocol roles, and replay mismatch. The full audit adds stable semantic anchors, expected-old preconditions, dependency/consumer impact closure, affected-obligation revalidation, self-weakening controls, inverse/compensation, response-byte or durable-ref custody, and replay-grade downgrades after redaction/deletion.",
+              "limits": "No GenesisCode kernel, canonicalizer, response/evidence store, invalidation engine, semantic patch checker, dependency-impact analysis, rollback, deterministic replay system, or proof artifact exists. A response hash alone supports integrity checking, not replay, and content identity does not establish evidence validity.",
               "passage_review_state": "reviewed",
               "passage_refs": [
-                "sources/raw/google_docs/genesiscode.txt:9-24",
-                "sources/raw/google_docs/genesiscode.txt:183-210",
-                "sources/raw/google_docs/genesiscode.txt:218-243",
-                "sources/raw/google_docs/genesiscode.txt:354-361"
+                "sources/raw/google_docs/genesiscode.txt:63-77",
+                "sources/raw/google_docs/genesiscode.txt:164-264",
+                "sources/raw/google_docs/genesiscode.txt:343-361",
+                "sources/raw/google_docs/genesiscode.txt:542-573",
+                "sources/raw/google_docs/genesiscode.txt:642-729",
+                "sources/raw/google_docs/genesiscode.txt:1088-1182"
               ],
-              "passage_review_note": "Reviewed local raw cache for canonical IR, semantic patch artifacts, deterministic effect logs, replay semantics, auditable AI calls, obligation/evidence artifacts, content-addressed package hashes, and example acceptance with recorded effect logs and provenance; no GenesisCode kernel, patch checker, deterministic replay system, proof artifact, benchmark, or security audit is promoted."
+              "passage_review_note": "Reviewed the complete paper, implementation guide, and style contract for canonical identities, content-addressed artifacts, complete effect transcript requirements, obligations/evidence, package hashes, semantic patch operations and validation, patch-friendly structure, provenance, replay, and AI-assisted examples. Added response-custody, stable-anchor, compare-and-swap, conflict, impact-closure, self-weakening, inverse/compensation, invalidation, and replay-downgrade obligations. No implementation or result is promoted."
             },
             {
               "source_id": "cognitive_loop_closure",
@@ -12581,17 +12585,18 @@
             },
             {
               "source_id": "genesiscode",
-              "mapped_support": "Supports capability-mediated effects by keeping nondeterminism, I/O, time, randomness, networking, and model calls behind capability boundaries with deterministic effect logs and protocol seals.",
-              "limits": "No local capability runtime, sandbox, effect log verifier, or security proof has been implemented from GenesisCode.",
+              "mapped_support": "Supports capability-mediated effects through authenticated privileged control variants, explicit Pure/Perform effect programs, deny-by-default host capabilities, ordered request/decision/response records, replay mismatch, and AI calls as governed effects. The full audit adds the separation of protocol authenticity from authorization, fresh-token minting from pure sealing, response-hash verification from replay-complete custody, cached model output from call reproduction, and observed trace coverage from static/runtime/OS enforcement.",
+              "limits": "No seal issuer/custody/revocation system, capability runner, sandbox, complete response transcript, replay checker, bypass/FFI analysis, OS enforcement, model-call reproduction, or security proof exists. Nominal sealed variants and clean observed traces do not establish unforgeability, permission correctness, or full mediation.",
               "passage_review_state": "reviewed",
               "passage_refs": [
-                "sources/raw/google_docs/genesiscode.txt:9-26",
-                "sources/raw/google_docs/genesiscode.txt:164-211",
-                "sources/raw/google_docs/genesiscode.txt:218-245",
-                "sources/raw/google_docs/genesiscode.txt:493-502",
-                "sources/raw/google_docs/genesiscode.txt:641-668"
+                "sources/raw/google_docs/genesiscode.txt:45-59",
+                "sources/raw/google_docs/genesiscode.txt:83-128",
+                "sources/raw/google_docs/genesiscode.txt:164-214",
+                "sources/raw/google_docs/genesiscode.txt:443-502",
+                "sources/raw/google_docs/genesiscode.txt:573-668",
+                "sources/raw/google_docs/genesiscode.txt:1039-1099"
               ],
-              "passage_review_note": "Reviewed local raw cache for untrusted-by-default AI output, explicit effect boundaries, unforgeable protocol seals, sealed effect requests, host-provided capabilities, deny-by-default runners, deterministic effect logs, replay semantics, auditable LLM calls, obligations, evidence artifacts, package-acceptance policy, content-addressed artifacts, and replay checking. No local capability runtime, sandbox, effect-log verifier, supply-chain gate, or security proof is promoted."
+              "passage_review_note": "Reviewed all three tabs for protocol seals, token custody implications, effect IR, capability injection and declarations, deny-by-default runner, request/decision/response logs, replay checker, model calls, no-panic error conversion, effect-row candidates, Rust runner modules, CLI run/replay, spoof/bypass/determinism/fuzz tests, and style-level capability rules. Added the fresh-seal effect, response-custody, closure/environment identity, remote-call playback, observed-path, and enforcement-layer boundaries. No runtime or security result is promoted."
             },
             {
               "source_id": "moecot",
@@ -21041,8 +21046,8 @@
             },
             {
               "source_id": "genesiscode",
-              "mapped_support": "Supports small executable invariants through a tiny deterministic kernel, explicit effect boundaries, provenance hashes, semantic patches, replayable logs, obligations, capability policies, and protocol seals.",
-              "limits": "Local raw-cache specification source only; no GenesisCode implementation, replay checker, semantic patch engine, obligation runner, proof stack, security audit, benchmark, or integration has been implemented or validated here beyond ASI Stack's separate schema and Lean gates.",
+              "mapped_support": "Supports executable-specification discipline through explicit trust strata, a small Gλ/CoreForm semantic target, total-error policy, authenticated control variants, capability/effect boundaries, heterogeneous obligations and evidence, semantic patches, row/effect/refinement candidates, e-graph rewrite candidates, translation validation, conformance, negative/golden/metamorphic/fuzz tests, and spec-first change. The audit adds token minting as authority-bearing state, obligation declaration/procedure/evidence/verdict/policy/consumer separation, and exact translation-validation language.",
+              "limits": "Three-tab architecture and implementation plan only. No parser, evaluator, formal semantics, token-security proof, replay checker, semantic patch engine, obligation runner, type/proof stack, optimizer checker, benchmark, integration, or security audit exists. TCB membership is unmeasured; finite equivalence tests are not a universal compiler-equivalence proof; dated Codex workflow advice has no formal support effect.",
               "passage_refs": [
                 "sources/raw/google_docs/genesiscode.txt:9-10",
                 "sources/raw/google_docs/genesiscode.txt:16-25",
@@ -21058,7 +21063,7 @@
                 "sources/raw/google_docs/genesiscode.txt:886-893",
                 "sources/raw/google_docs/genesiscode.txt:1134-1138"
               ],
-              "passage_review_note": "Reviewed local raw cache for small deterministic kernel scope, sealed protocols, capability-mediated effects, deterministic logs and replay, obligation/evidence artifacts, semantic patches, translation validation, AI-as-proposer boundaries, and no-proof-without-spec discipline; no GenesisCode implementation or proof artifact is promoted.",
+              "passage_review_note": "Completed the three-tab section-family audit: paper/technical semantics, Rust implementation handoff, and style contract. Reviewed TCB-A/B/non-TCB split, Gλ/CoreForm, total failures, seals, effects/replay, obligations/evidence/policy, patches, types/refinements, e-graphs/translation validation/WASM, examples, phases, conformance, crate/CLI/test plan, normative spec lock, formatting/lint rules, and AI-authoring constraints. Added fresh-token, runtime identity, heterogeneous-evidence, independent-policy, self-weakening, and translation-proof boundaries. No implementation or proof result is promoted.",
               "passage_review_state": "reviewed"
             },
             {

@@ -96,7 +96,7 @@ Appendix C records exact passage-reviewed mappings for all twelve assigned sourc
 
 | Source | What it supports | Limit |
 |---|---|---|
-| `genesiscode` | Tiny deterministic kernels, sealed protocols, capability-mediated effects, effect logs, replay, obligations, semantic patches, provenance, and no-proof-without-spec discipline. | No GenesisCode implementation, replay checker, semantic patch engine, obligation runner, proof stack, security audit, benchmark, or integration has been validated here. |
+| `genesiscode` | Three-part paper, Rust handoff, and style-contract bundle for trust strata, Gλ/CoreForm semantics, authenticated control variants, capability effects, graded replay, heterogeneous obligation/evidence lanes, semantic patches, types, e-graphs, translation validation, conformance, and spec-first tests. The audit additionally exposes fresh-token minting as an authority-bearing effect and finite equivalence tests as weaker than full translation validation. | No parser, evaluator, seal security, runner, replay checker, patch engine, obligation policy, type/proof stack, optimizer checker, benchmark, integration, or security result exists locally. The dated Codex workflow advice is not a language invariant or current-product source. |
 | `spinoza` | Proposer/verifier separation, explicit formal scope, proof/citation/procedure tiers, belief revision, dependency tracing, downgrade behavior, and verifier-bound claims. | No open-domain autoformalizer, proof verifier, belief-maintainer, tier engine, arbitrary theorem-validity result, or whole-system epistemic correctness proof exists here. |
 | `scf` | Stable capability identity, exact content binding, trusted-validator/untrusted-proposer split, contract requirements, evidence graphs, caller-bound authority, lifecycle ordering, and migration solvency. | Does not prove production safety, global alignment, evaluator integrity, route quality, actual rollback, or the SCF companion executable fragment inside this repo. |
 | `talos` | Typed jobs, contract locks, claim extraction, evidence binding, adversarial verification, artifact certification, proof bundles, replay, secret-blind execution, and audit logs. | No Talos runtime, job executor, security benchmark, replay proof bundle, imported log, or execution-security result is validated here. |
@@ -136,6 +136,54 @@ A layered formalization path protects proof claims from inflation. First the pro
 Every passed artifact should produce a proof/spec receipt. The receipt says what command ran, what artifact was checked, what predicate or schema it covers, what consumer may rely on it, and what claims it explicitly does not support.
 
 The artifact lane is a first-class field because different lanes fail differently. A Lean lane can fail because the module does not build. A schema lane can pass while the represented event never happened. A process-validator lane can check wiring without checking semantics. A behavior-test lane can exercise a path without proving a theorem. A benchmark lane can measure performance while saying nothing about proof. The proof envelope is useful only if those lane differences survive into the fixture and into the prose that consumes it.
+
+### A tiny kernel still has authority-bearing roots
+
+GenesisCode proposes a useful three-way trust split: a minimal evaluator,
+immutable primitives, and seal operations at the semantic root; capability,
+replay, and package verifiers in an operational trust layer; and optimizers,
+JITs, e-graph rewriters, compilers, and backends outside the TCB when checked
+per artifact. The important word is *when*. Calling a component non-TCB does
+not remove it from the causal path. It moves trust to a checker whose source,
+semantics, dependencies, build, command, assumptions, and consumer claim must
+be smaller and independently bound.
+
+The proposal exposes a subtle specification contradiction. A fresh
+unforgeable `seal()` cannot be an ordinary pure deterministic primitive unless
+its name supply and initial state are explicit. Freshness requires mutable
+state, randomness, a deterministic state-passing schedule, or a host-issued
+token. The stack should therefore keep sealing/unsealing as a pure relation but
+treat token minting as an authority-bearing initialization or runtime effect.
+Its issuer, entropy or counter state, epoch, scope, exportability, persistence,
+revocation, and replay behavior belong in the formal artifact. A nominal
+`SealId` field proves neither unforgeability nor safe custody across memory,
+serialization, FFI, reflection, restart, or process boundaries.
+
+Sealed control variants still supply a strong invariant: user data that looks
+like `UNHANDLED`, `EFFECT`, or `ERROR` must not become privileged protocol
+state by matching a string or ordinary structure. But authenticated protocol
+origin is not authorization. Anyone holding the relevant token can construct
+the variant, so token distribution is capability distribution. A formal target
+must separate control authenticity, caller identity, delegated authority,
+target permission, and the runtime decision that follows.
+
+GenesisCode's Obligation Engine also sharpens the envelope. An obligation
+declaration, verification procedure, evidence artifact, verifier result,
+registry policy decision, and consumer claim are different objects. A package
+can choose weak obligations; a hash can identify bytes without validating
+them; a test, coverage report, benchmark, SMT trace, proof object, signature,
+and translation certificate confer different authority. Independent policy
+must define mandatory obligations, scope, expiry, waiver, challenge, and
+invalidation across dependency, toolchain, policy, verifier, or artifact
+change.
+
+Optimization illustrates why exact names matter. Comparing source and target
+on a finite test suite is an equivalence test, not complete translation
+validation. A proof-producing rewrite trace, independently checked per
+translation, or a scoped symbolic/refinement relation may justify stronger
+language. E-graph rules additionally bind side conditions, arithmetic, effects,
+resource semantics, and the extraction cost model. “The compiler is outside
+the TCB” is earned only by the exact relation the checker actually decides.
 
 This chapter has a narrower owner than the book's general evidence system.
 Claims and Evidence owns support transitions, and Proof Contract Transport owns

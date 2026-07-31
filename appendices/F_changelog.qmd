@@ -3,8 +3,8 @@
 ## 2026-07-31 — Corben paper fidelity audits and manuscript integration
 
 - Reclassified the 44 locally readable Corben paper texts by mining fidelity:
-  twenty-five now have complete section-family audits, VIEA is repaired in this
-  pass, and eighteen legacy papers still have routing-grade rather than
+  twenty-six now have complete section-family audits, VIEA is repaired in this
+  pass, and seventeen legacy papers still have routing-grade rather than
   full-fidelity notes. Note existence and chapter assignment no longer count as
   proof that a paper was fully mined.
 - Expanded the source-note template to retain claim boundaries, primitives,
@@ -277,6 +277,25 @@
   bottleneck gates. No codec, bitstream, independent decoder, exactness, rate,
   mapping/3D/overlap advantage, proxy calibration, runtime, memory, utility,
   safety, deployment, support, novelty, SOTA, AGI, or ASI result moved.
+- Completed GenesisCode's 7,785-word, three-tab audit across its v0.2 paper,
+  Rust implementation handoff, and style/authoring contract. Replaced the
+  591-word routing note with a complete semantics, trust, protocol, effect,
+  replay, obligation, package, patch, type, optimization, implementation,
+  conformance, test, style, failure, and section-disposition record. Added to
+  Executable Specifications the fresh-seal contradiction, authority-bearing
+  token minting, heterogeneous obligation/evidence chain, and exact
+  translation-validation boundary; to Runtime Adapters the separation of
+  protocol authenticity from authorization, response hashes from replay-
+  complete custody, cached model output from call reproduction, and observed
+  effects from full enforcement; and to Artifact Graphs stable semantic patch
+  anchors, preconditions, impact closure, revalidation, self-weakening
+  controls, inverse/compensation, and replay downgrade after deletion. Updated
+  Cognitive Compilation's source boundary for canonical syntax versus
+  semantics. Dated Codex workflow advice remains lineage context. No parser,
+  evaluator, token-security result, runner, sandbox, replay, package gate,
+  patch checker, type/proof stack, translation validation, optimizer,
+  benchmark, safety, deployment, support, novelty, SOTA, AGI, or ASI result
+  moved.
 
 ## 2026-07-30 — P7.3 twelve-chapter integrated visual preview
 

@@ -123,7 +123,7 @@ Appendix C maps this artifact-graph claim to all assigned source records. Six or
 | `viea` | Artifact graphs for claims, requirements, critiques, releases, feedback, tools, benchmarks, residuals, verification ledgers, runtime execution, and feedback loops. | Passage-reviewed local raw cache. | No completed VIEA deployment, runtime trace, artifact graph service, or benchmark result exists here. |
 | `cognitive_compilation` | Build-graph traceability through source plans, typed semantic IR, dependencies, validation requirements, scheduling, target lowering, localized repair, and compiler-style metrics. | Passage-reviewed local raw cache. | No working compiler, trace suite, repair-locality benchmark, or empirical ablation exists here. |
 | `spinoza_composer` | Ten-tab lineage: append-only evidence and rebuildable views, draft/active canon, modality and quotation custody, dependency-directed poison recovery, section/scene contracts, causal/presentation time, validator disagreement, Element Packs and continuity observations, partial delivery, audit bundles, disclosures, baselines, and cost/evaluation plans. | Complete section-family review using bounded-coherence v3.0 as the controlling claim surface. | No implementation, extraction/canon/validator/continuity/style result, benchmark, cost, security, deployment, support, or ASI claim is established. |
-| `genesiscode` | Canonical IR, semantic patches, provenance hashes, deterministic effect logs, replay/audit, obligations, and privileged protocol seals. | Passage-reviewed local raw cache. | No GenesisCode kernel, semantic patch checker, deterministic replay system, or proof artifact exists here. |
+| `genesiscode` | Canonical CoreForm identity; content-addressed packages/evidence; ordered effect transcripts; semantic patch operations; patch precondition, impact-closure, revalidation, provenance, inverse/compensation, and self-weakening boundaries; and the requirement that replay retain response bytes or durable refs rather than hashes alone. | Full three-tab section-family audit. | No kernel, canonicalizer, response store, package/evidence invalidation engine, semantic patch checker, dependency-impact analysis, rollback, deterministic replay, or proof artifact exists here. |
 | `cognitive_loop_closure` | Execution traces as procedural-memory substrate through logging, loop detection, tool cards, verification, registries, monitoring, lifecycle states, and retirement discipline. | Passage-reviewed local raw cache. | No local loop detector, trace miner, synthesized tool, or verification harness has been executed. |
 | `moecot` | Runtime-reference ledgers, replay, handoff, readiness gates, benchmark artifacts, promotion blockers, and residual tracking. | Connector/source-note mapped only. | Runtime artifacts, ledgers, logs, and benchmark records have not been imported, inspected, or reproduced here. |
 | `ext_w3c_prov_o_2013` | Interoperable asserted provenance vocabulary for entities, activities, agents, derivation, attribution, delegation, revision, and invalidation. | Complete source-note review. | Vocabulary does not establish provenance truth, completeness, integrity, authority, receipt faithfulness, or safety; no local conformance run exists. |
@@ -222,6 +222,37 @@ The artifact record attaches identity to work product history. It links parent j
 Artifacts should have stable IDs and versioned revisions. Audit logs should be append-only or versioned. Replay metadata should declare what can be replayed, what cannot, and which environment assumptions matter.
 
 Replay should be graded rather than binary. Some artifacts can be reconstructed byte for byte from recorded inputs and deterministic tools. Some can be replayed semantically, where the same obligations are checked even if nondeterministic text differs. Some can only be partially replayed because an external service, source snapshot, human decision, context transaction, or environment state is missing. Some have not been replayed at all. A replay record names that grade and exposes the residual instead of treating partial replay as success.
+
+### Semantic patches are governed artifact transactions
+
+GenesisCode's strongest change-management idea is to ask an AI for a
+structural patch rather than an unrestricted text rewrite. Structure alone is
+not enough, however. A production Semantic Patch Record binds source artifact
+and version, stable semantic anchor, expected old content or precondition,
+operation, intent and non-goals, authority, dependency and consumer impact,
+predicted obligation set, target identity, actual mutation set, validator and
+evidence refs, provenance, conflicts, inverse or compensation, and residuals.
+
+Raw AST positions are brittle: canonical formatting, a neighboring edit,
+refactor, module move, or concurrent patch can redirect the same path. Stable
+semantic IDs or content-addressed anchors need ambiguity detection and
+compare-and-swap preconditions. A patch that changes a dependency, effect,
+public interface, proof assumption, capability, or evidence policy triggers
+affected-descendant closure and revalidation. Incremental checking is safe only
+when that closure is itself tested; uncertainty routes to the full gate.
+
+Obligation changes require special authority. An ordinary behavior patch must
+not make itself acceptable by deleting a failing test, weakening a capability
+policy, changing the verifier, narrowing the benchmark, or replacing an exact
+postcondition with a looser one. Such changes become separate policy patches
+with independent review, explicit semantic debt, and downstream invalidation.
+The AI-proposal identity remains provenance, not correctness evidence.
+
+Effect-log custody follows the same transaction rule. A response hash without
+the response bytes or a durable immutable reference supports integrity checking
+only, not deterministic replay. Redaction or deletion may be correct for
+privacy or rights, but it spends replay authority and must downgrade affected
+artifacts and descendants instead of leaving the old replay label in place.
 
 The context-to-artifact handoff is now explicit: an artifact should not merely say that it used context. It should name the context transaction that materialized the view and the semantic certificates that bounded any derived cells. That lets later evidence, compression, and procedural-memory layers tell whether a work product inherited a valid representation boundary or only a loose source citation.
 
