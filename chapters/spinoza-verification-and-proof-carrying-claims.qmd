@@ -179,7 +179,7 @@ competence, verdict correctness, institutional redress, or deployed behavior.
 | Lineage | Source IDs | What the sources contribute | Limit |
 |---|---|---|---|
 | Proof-carrying claims | `spinoza`, `genesiscode`, `verification_bandwidth`, `treellm`, `coherence_exchange` | Proposer/verifier separation, tiered claims, proof/citation/procedure envelopes, obligation artifacts, downgrade behavior, verification-workspace limits, and possible semantic traces. | No open-domain autoformalizer, arbitrary theorem-validity result, citation validator, semantic-equivalence checker, or verifier-quality result exists here. |
-| Tribunal review | `uat`, `spinoza`, `talos`, `verification_bandwidth`, `coherence_exchange` | Retrieval-bounded dossiers, atomic proposition states, adversarial probes, reviewer roles, dissent, cycle caps, SME checkpoints, constraint effects, and action-linked review artifacts. | No multi-reviewer tribunal run, reviewer-independence audit, adversarial-probe-quality result, consensus-quality result, or verdict-correctness result exists here. |
+| Tribunal review | `uat`, `spinoza`, `talos`, `verification_bandwidth`, `coherence_exchange` | Retrieval-bounded dossiers, atomic proposition states, adversarial probes, reviewer roles, dissent, cycle caps, SME checkpoints, constraint effects, action-linked review artifacts, and Talos's final correction that capped termination, state stability, epistemic revision, and correctness are different properties. | No multi-reviewer tribunal run, reviewer-independence audit, adversarial-probe-quality result, consensus-quality result, density/coverage validity result, cost-certainty result, or verdict-correctness result exists here. |
 | External comparators | `ext_proof_carrying_code_1997`, `ext_lean4_theorem_proving`, `ext_autoformalization_llms_2022`, `ext_ai_safety_debate_2018`, `ext_llm_as_judge_mt_bench_2023`, `ext_contestable_ai_design_2022` | Position machine-checkable evidence, dependent-type proof practice, informal-to-formal translation, adversarial debate, model-graded review, and contestable review surfaces. | Comparator status only; no local reproduction, autoformalizer, debate run, judge-calibration result, tribunal-quality result, or support-state promotion. |
 
 ### Strongest objection
@@ -317,6 +317,45 @@ while becoming invalid under the current preferred basis or unauthorized for a
 present action. Formal deduction, statistical synthesis, measurement procedure,
 and review dossier are different proof-object types and cannot borrow one
 another's certainty.
+
+### What a bounded verification loop converges to
+
+The Talos lineage usefully corrects its own early “truth by siege” language.
+Its final form says adversarial review converges because time, tokens, and
+cycles are capped—not because the process reaches truth. That distinction
+separates four properties that a verifier record must not merge:
+
+1. **Termination** means every attempt reaches a typed terminal route before
+   its budget expires.
+2. **Within-run state discipline** means one frozen claim, evidence set,
+   policy, and evaluator cannot change state without a recorded transition.
+3. **Cross-run epistemic revision** means new evidence, definitions, policy,
+   ontology, attacks, or evaluator findings may downgrade or split an earlier
+   result.
+4. **Correctness** means the scoped proposition actually satisfies an external
+   target; termination, stability, and a clean transition history do not
+   establish it.
+
+A three-state vocabulary such as supported, uncertain, and refuted is useful
+only when each state binds claim version, scope, evidence set, verifier,
+policy, time, environment, and defeaters. “Supported” is not an absorbing
+state. It may remain stable inside a frozen run while being superseded or
+downgraded later. The ledger must preserve both the historical verdict and the
+current materialized view.
+
+Likewise, draft stability and information density are control signals rather
+than truth metrics. Low edit distance can mean that reviewers share the same
+blind spot. High claim density can reward duplicated or atomized nonsense.
+Domain coverage is undefined without a declared denominator and omission
+evaluator. These measures may trigger more retrieval, another method, human
+review, abstention, or a residual; none may promote the claim by itself.
+
+The same caution applies to cost-versus-certainty. More retrieval and review
+can reduce some uncertainty, but can also introduce contradictory evidence,
+correlated judges, fatigue, privacy exposure, delay, or new unknowns. The
+useful object is an empirical, task-specific frontier over accepted utility,
+calibration, omission, unsafe release, cost, latency, and human burden—not a
+strict law that spending more monotonically buys truth.
 
 ## Interfaces
 

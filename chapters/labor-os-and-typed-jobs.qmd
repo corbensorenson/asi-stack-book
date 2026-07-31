@@ -115,7 +115,7 @@ permission service, adapter, replay engine, or useful-outcome result.
 
 | Source | What it supports | Limit |
 |---|---|---|
-| `talos` | Passage-reviewed: Operating System for AI Labor and control-plane framing, contract lock, MVI routing, adversarial verification, atomic decomposition, blind execution, observability, factory-to-tribunal job flow, deterministic cognitive manufacturing, job-based asynchronous execution, fixed execution pipeline, intent sanitation, claim extraction, evidence binding, proof bundles, hashed/auditable I/O, replay/reverification/evidence audit, typed claim/evidence/state/artifact records, and explicit non-claims about truth/correctness/SME replacement. | No Talos scheduler, approval service, runtime, replay log, benchmark, security result, or proof bundle has been reproduced here. |
+| `talos` | Passage-reviewed across all 30 related tabs: Operating System for AI Labor and control-plane framing, contract lock, MVI routing, typed tests, topological execution, job-based asynchronous custody, factory-to-tribunal flow, intent sanitation, lossy claim extraction, evidence binding, bounded adversarial review, claim/evidence/state/artifact records, proof bundles, audit/replay pressure, and the final corrections from deterministic/zero-copy/truth language to hardware-bounded, handle/cache-separated, accountability-only claims. | One repeatedly revised author lineage, not corroboration. No Talos scheduler, approval service, runtime, replay log, benchmark, security result, or proof bundle has been reproduced here; thresholds, costs, targets, compliance mappings, and “standard” status remain proposals. |
 | `viea` | Passage-reviewed: generation-not-execution framing, intent to command to artifact graph to routed specialist execution to runtime target to verification gate to execution and feedback, command contracts, artifact graph, permission model, specialist/runtime adapter subsystems, least-privilege permission envelopes, approval roles, integration contracts, side-effect classes, rollback limits, irreversible side-effect gates, runtime-adapter maturity levels, and runtime-specific verification. | No deployed intent-to-job pipeline, permission service, runtime adapter, feedback loop, or verified execution trace exists here. |
 | `genesiscode` | Passage-reviewed: untrusted AI-output premise, small pure kernel, capability boundary for nondeterminism, deterministic effect logs, replay semantics, obligation engine, canonical IR validators, semantic patches, AI as proposer not authority, sealed effect requests, host-provided capabilities, evidence artifacts, registry rejection until obligations pass, content-addressed packages, and accepted-patch provenance. | No local GenesisCode implementation, effect runner, replay checker, proof artifact, security audit, registry policy, or obligation run exists here. |
 | `software_magic_grimoire` | Passage-reviewed: bounded instruction artifacts, artifact/objective/constraint/output/truth-condition framing, eight-limb role/objective/context/constraints/procedure/output-contract/verification/failure-behavior anatomy, risk-scaled cast levels, exploration/execution separation, artifact/invariant/search/output/verification/failure workflow, prompt pathologies, spell-stack coordination, FEATURE-RAIL, loop rules, and verification-bundle shape. | Workflow vocabulary only; not empirical evidence that a labor OS performs better or safely executes work. |
@@ -241,6 +241,42 @@ different objects with different clocks and failure surfaces. Their shared job
 and attempt lineage makes later reconstruction possible while preserving the
 points where custody changed hands, observation was partial, or a downstream
 owner declined the result.
+
+### Asynchrony is a custody contract
+
+Talos's later revisions make an important correction: verified work may outlive
+an HTTP request, a model session, a worker lease, or the client's attention.
+Moving from chat-style request/response to a ticket, queue, and callback does
+not merely improve timeout behavior. It creates a durable custody obligation.
+The system must still know what happened when the client disconnects, a worker
+restarts, a callback is duplicated, verification exhausts its budget, or an
+external effect succeeds just before cancellation.
+
+The lifecycle therefore separates seven events that are often collapsed:
+
+| Event | What it establishes | What it does not establish |
+|---|---|---|
+| submission accepted | the gateway received a versioned request | admission, authorization, or queue durability |
+| job admitted | policy accepted the job into durable custody | dispatch, useful work, or effect authority |
+| attempt leased | one worker has bounded execution custody | exactly-once effects or terminal completion |
+| output produced | an attempt emitted a candidate artifact | verification, delivery, or user acceptance |
+| delivery attempted | the system tried a declared channel | receipt by the intended consumer |
+| delivery acknowledged | the consumer or its authorized proxy receipted bytes | evidentiary readiness, correctness, or support |
+| terminal receipt issued | completion, refusal, cancellation, compensation, or open residuals are durably recorded | truth, safety, or downstream promotion |
+
+Callbacks and pull APIs are interchangeable delivery mechanisms only when they
+resolve to the same terminal record. Callback signatures, destination and
+policy versions, idempotency keys, acknowledgement deadlines, retry ceilings,
+dead-letter custody, pull fallback, cancellation races, and consumer disputes
+remain part of the job. A `202 Accepted`, quiet queue, successful worker exit,
+or emitted webhook cannot stand in for terminal custody.
+
+This also changes how latency is judged. A deep path can be deliberately
+asynchronous when the consumer accepts delayed delivery and the expected value
+of additional verification exceeds its compute, human, opportunity, and
+freshness costs. That decision is task- and consumer-specific. It cannot be
+derived from a branded “verification tax,” a fixed risk threshold, or the idea
+that slower work is necessarily more correct.
 
 ### Typed job lifecycle states
 

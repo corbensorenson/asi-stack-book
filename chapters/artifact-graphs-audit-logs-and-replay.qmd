@@ -119,7 +119,7 @@ Appendix C maps this artifact-graph claim to all assigned source records. Six or
 
 | Source | What it supports | Review state | Limit |
 |---|---|---|---|
-| `talos` | Typed jobs, delivery, evidence records, audit logs, replay, source allow-listing, blind handles, tests, residuals, regression coverage, and forgotten-failure prevention. | Passage-reviewed local raw cache. | No Talos artifact graph, audit reconstruction, replay run, benchmark, or security result has been reproduced here. |
+| `talos` | Thirty-tab lineage for typed jobs, asynchronous delivery, evidence records, audit logs, replay, source allow-listing, blind handles, tests, residuals, regression coverage, forgotten-failure prevention, and the Ouroboros tension between semantic log compression/deletion and replay, investigation, appeal, and descendant invalidation. | Passage-reviewed local raw cache; repeated variants count once. | No Talos artifact graph, audit reconstruction, retention/deletion mechanism, replay run, benchmark, or security result has been reproduced here. |
 | `viea` | Artifact graphs for claims, requirements, critiques, releases, feedback, tools, benchmarks, residuals, verification ledgers, runtime execution, and feedback loops. | Passage-reviewed local raw cache. | No completed VIEA deployment, runtime trace, artifact graph service, or benchmark result exists here. |
 | `cognitive_compilation` | Build-graph traceability through source plans, typed semantic IR, dependencies, validation requirements, scheduling, target lowering, localized repair, and compiler-style metrics. | Passage-reviewed local raw cache. | No working compiler, trace suite, repair-locality benchmark, or empirical ablation exists here. |
 | `spinoza_composer` | World graphs, belief states, causal history, scope tags, narrative trees, verified logical state, disclosures, exports, baselines, and evaluation plans. | Passage-reviewed local raw cache. | No composer implementation, continuity benchmark, extraction validation, or render-from-verified-state test has been run. |
@@ -249,6 +249,38 @@ history. The invariant is concise: **preserve provenance, but route relevance**.
 This is not a deletion guarantee, relevance oracle, or privacy proof; it is the
 interface that lets retention, privacy, context adequacy, and resource cost be
 reviewed separately.
+
+### Compression and deletion spend replay authority
+
+Talos's proposed Ouroboros loop exposes a conflict that every living system
+eventually meets: raw traces are expensive and privacy-sensitive, while replay,
+incident investigation, appeal, and descendant invalidation depend on details
+that summaries may remove. Distilling logs into a semantic graph and destroying
+the originals can be a valid retention decision. It cannot preserve the old
+replay or forensic grade by declaration.
+
+Every compression or deletion event therefore records the exact source set,
+derived artifact, transformation and evaluator, fields and relations retained,
+known omissions, rights and policy basis, legal holds, descendant dependencies,
+key-destruction or physical-erasure method, surviving caches and backups,
+effective replay-grade change, and residual owner. A digest proves which bytes
+were transformed; it does not prove that the summary retained the fact later
+needed to explain an effect.
+
+The decision is consumer-specific. A compact semantic trace may remain adequate
+for routing statistics while becoming inadequate for safety investigation,
+affected-party appeal, source quotation, model-update attribution, or exact
+re-execution. Those lost capabilities are written as explicit consequences.
+Privacy deletion also inventories derivatives and descendants: destroying an
+encryption key or primary log does not establish that summaries, embeddings,
+training examples, checkpoints, caches, screenshots, exports, or external
+effects disappeared.
+
+This prevents two symmetric errors. Audit requirements cannot justify
+indefinite, universally retrievable surveillance, and deletion claims cannot
+erase unresolved accountability or pretend that a lossy summary is original
+evidence. Privacy, legal, incident, evidence, and artifact owners negotiate the
+retention lease; the graph records the resulting capability loss and custody.
 
 ### Canonical truth, projections, and transitive revocation
 

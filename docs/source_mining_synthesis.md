@@ -10,18 +10,18 @@ This report records the source-mining pass used to expand the book from a 16-cha
 - Locally readable Corben paper corpus: 44 canonical mining texts—37 cached
   Google Docs text exports and seven supplied Markdown whitepapers. Paired DOCX
   files are presentation counterparts, not independent idea sources.
-- Full section-family closure audits now exist for eleven papers:
+- Full section-family closure audits now exist for twelve papers:
   `deterministic_capability_compilation`, `platonic_world_model`, `scf`,
   `qcsa_whitepaper`, `reflexive_router_whitepaper`,
   `kernel_english_residual_compiler`, `relational_dimension_compiler`, and
   `precision_contract`, `planforge`, `planforge_compiler_arch`, and
-  `cognitive_compilation`.
+  `cognitive_compilation`, and `talos`.
 - The 2026-07-31 VIEA second pass is the first legacy-paper fidelity repair: it
   expands the note from a routing summary into a 2,388-word system note and
   writes previously absent mechanisms into seven canonical chapters.
 - Every recent rich whitepaper in this audit now has an exact
   section-family-to-manuscript closure audit.
-- Thirty-two readable legacy papers still have first-pass routing notes rather
+- Thirty-one readable legacy papers still have first-pass routing notes rather
   than full-fidelity notes. Their ideas may be present in chapters, but note
   existence or manifest assignment is no longer accepted as proof of complete
   mining.
@@ -61,9 +61,9 @@ source assignment alone does not count.
 
 | State | Sources | Required next operation |
 |---|---|---|
-| Section-family audit complete | `deterministic_capability_compilation`, `platonic_world_model`, `scf`, `qcsa_whitepaper`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `relational_dimension_compiler`, `precision_contract`, `planforge`, `planforge_compiler_arch`, `cognitive_compilation` | Re-open only on paper or chapter drift. |
+| Section-family audit complete | `deterministic_capability_compilation`, `platonic_world_model`, `scf`, `qcsa_whitepaper`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `relational_dimension_compiler`, `precision_contract`, `planforge`, `planforge_compiler_arch`, `cognitive_compilation`, `talos` | Re-open only on paper or chapter drift. |
 | Legacy paper repaired in this pass | `viea` | Re-run chapter/source validation and retain its new section-family map. |
-| Legacy system spine; deep note required | `talos`, `vcm_public`, `spinoza`, `spinoza_composer`, `octopus_router`, `rmi`, `cognitive_loop_closure`, `benchmaxxing` | Reconstruct the complete object model and lifecycle before deciding whether prose is missing. |
+| Legacy system spine; deep note required | `vcm_public`, `spinoza`, `spinoza_composer`, `octopus_router`, `rmi`, `cognitive_loop_closure`, `benchmaxxing` | Reconstruct the complete object model and lifecycle before deciding whether prose is missing. |
 | Compression, representation, and substrate; deep note required | `cgs`, `rgs`, `rankfold_neuralfold`, `rankfold_compressor`, `bbvca_v9`, `bbvca_main`, `genesiscode`, `treellm`, `simulation_scaling`, `tokenmana`, `bugbrain` | Preserve equations, decoders, accounting, verification, failure surfaces, and rival representations—not only the compression slogan. |
 | Alignment, verification, context, and execution lineage; deep note required | `alignment_field`, `field_of_god`, `ethica_mechanica`, `eternal_code`, `verification_bandwidth`, `beastbrain`, `beastbrain_timeless`, `aletheia`, `context_engineer`, `black_hole_context_manager`, `ladon_manhattan`, `uat`, `software_magic_grimoire` | Separate operational mechanisms from metaphysics, branding, repeated drafts, unsafe absolutes, and unsupported performance claims; integrate only the durable architecture. `coherence_exchange` remains a separately connector-mined source rather than one of the 44 local paper texts. |
 
@@ -342,6 +342,39 @@ license policy, four target backends, three golden fixtures, UI/CLI surfaces,
 and acceptance/delivery lists without turning a prescriptive build document
 into an implementation claim. All four tabs now terminate explicitly; the
 source remains `argument`.
+
+## Talos section-family closure result
+
+Talos is a 30-tab, roughly 55,500-word Titan-to-Talos revision lineage rather
+than 30 independent sources. The deep audit reconciles the early agent factory,
+security/context revisions, internal red-team and editorial corrections,
+enterprise reference editions, UAT synthesis, asynchronous-job rewrite, and
+final bounded protocol. Its most important evidence is the correction path:
+benchmarks become targets, deterministic isolation becomes hardware-bounded,
+“zero-copy” splits into logical handles and physical cache sharing, debate
+becomes capped review, and the final version refuses truth-oracle,
+correctness-guarantee, and SME-replacement claims.
+
+The manuscript now adds three previously compressed consequences. Labor OS
+treats asynchrony as durable custody and separates submission, admission,
+lease, production, delivery attempt, acknowledgement, and terminal receipt.
+Proof-Carrying Claims separates termination, within-run transition discipline,
+cross-run epistemic revision, and correctness, while rejecting stability,
+density, and spend as truth metrics. Artifact Graphs makes semantic log
+compression and deletion explicitly spend replay, forensic, appeal, and
+descendant-invalidation authority. Existing Security and Context chapters
+already supplied stronger handle, mediation, isolation-grade, covert-channel,
+taint, cache, revocation, and non-claim boundaries.
+
+The complete note preserves contract lock, MVI routing, typed tests,
+topological execution, claim/evidence/state/artifact primitives, proof bundles,
+Airlock/Aigis/SCIF lineage, observability, reviewer-fatigue and density guards,
+Nocturne learning, Ouroboros retention tension, worked examples, pseudocode,
+schemas, cost categories, compliance mappings, and every tab's disposition.
+Invented thresholds, performance percentages, latency/TCO figures, compliance
+alignment, standards status, non-repudiation, and security absolutes remain
+unverified proposals. No implementation, benchmark, security, privacy, replay,
+compliance, deployment, support, or ASI claim moved.
 
 ## Main Architecture Clusters Mined
 
