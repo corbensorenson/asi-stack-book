@@ -16,6 +16,7 @@ ROOT = Path(__file__).resolve().parents[1]
 STRUCTURE = ROOT / "book_structure.json"
 OUT = ROOT / "visual_edition/manifest.json"
 CHANNEL = ROOT / "visual_edition/youtube_channel.json"
+PREVIEW_BINDINGS = ROOT / "visual_edition/youtube_preview_bindings.json"
 PILOTS = [
     "asi-is-a-stack-not-a-model",
     "capability-replacement-and-rollback",
@@ -47,6 +48,8 @@ def git_head() -> str:
 def main() -> None:
     structure = json.loads(STRUCTURE.read_text(encoding="utf-8"))
     channel = json.loads(CHANNEL.read_text(encoding="utf-8"))
+    preview = json.loads(PREVIEW_BINDINGS.read_text(encoding="utf-8"))
+    preview_count = len(preview["entries"])
     rows = []
     state_counts = {state: 0 for state in STATES}
     packet_count = 0
@@ -110,12 +113,23 @@ def main() -> None:
             "rendered_video_binary_in_pages_artifact": False,
             "local_render_location_class": "ignored_build_space",
         },
+        "preview": {
+            "state": preview["state"],
+            "binding_path": "visual_edition/youtube_preview_bindings.json",
+            "binding_sha256": digest(PREVIEW_BINDINGS),
+            "unlisted_video_count": preview_count,
+            "current_quarto_preview_embeds": preview_count,
+            "edition_complete": False,
+            "next_upload_position": preview["next_upload_position"],
+        },
         "counts": {
             **state_counts,
             "packets_present": packet_count,
             "current_rendered_videos": rendered_count,
             "youtube_videos_published": youtube_count,
             "current_quarto_embeds": embed_count,
+            "youtube_videos_unlisted_preview": preview_count,
+            "current_quarto_preview_embeds": preview_count,
         },
         "chapters": rows,
         "support_state_effect": "none",

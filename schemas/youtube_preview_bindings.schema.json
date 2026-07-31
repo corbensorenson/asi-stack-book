@@ -1,0 +1,185 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/youtube_preview_bindings.schema.json",
+  "title": "ASI Stack YouTube Preview Bindings",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "state",
+    "edition_id",
+    "authorized_at_utc",
+    "authority_statement",
+    "authority_statement_sha256",
+    "channel_id",
+    "playlist_id",
+    "playlist_title",
+    "playlist_visibility",
+    "edition_chapter_count",
+    "preview_entry_count",
+    "next_upload_position",
+    "entries",
+    "support_state_effect",
+    "release_effect",
+    "non_claims"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "asi_stack.youtube_preview_bindings.v1"
+    },
+    "state": {
+      "const": "owner_authorized_partial_unlisted_preview"
+    },
+    "edition_id": {
+      "const": "asi-stack-p7.3-visual-edition"
+    },
+    "authorized_at_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "authority_statement": {
+      "const": "can we get those 12 videos that we have uploaded to youtube embedded properly into the living book? id like to see it together properly."
+    },
+    "authority_statement_sha256": {
+      "const": "6e62537b8f21d8c4a97e9af1e5913aec8b2e2332d70dfa8168ebedd2050d14ee"
+    },
+    "channel_id": {
+      "const": "UCX7Tu67cGmKfT6O38xxiQFA"
+    },
+    "playlist_id": {
+      "const": "PLFBbJWCCrseo"
+    },
+    "playlist_title": {
+      "const": "The ASI Stack — Visual Abstracts"
+    },
+    "playlist_visibility": {
+      "const": "private"
+    },
+    "edition_chapter_count": {
+      "const": 84
+    },
+    "preview_entry_count": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 84
+    },
+    "next_upload_position": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 85
+    },
+    "entries": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 84,
+      "items": {
+        "type": "object",
+        "required": [
+          "position",
+          "chapter_id",
+          "chapter_path",
+          "title",
+          "video_id",
+          "watch_url",
+          "embed_url",
+          "playlist_position",
+          "video_visibility",
+          "projection_state",
+          "local_master_sha256",
+          "bound_chapter_sha256",
+          "bound_source_commit",
+          "descriptive_transcript_path",
+          "local_caption_path",
+          "local_caption_sha256",
+          "platform_caption_state",
+          "platform_thumbnail_state",
+          "observed_at_utc"
+        ],
+        "properties": {
+          "position": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 84
+          },
+          "chapter_id": {
+            "pattern": "^[a-z0-9-]+$"
+          },
+          "chapter_path": {
+            "pattern": "^chapters/.+\\.qmd$"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 10
+          },
+          "video_id": {
+            "pattern": "^[A-Za-z0-9_-]{11}$"
+          },
+          "watch_url": {
+            "pattern": "^https://www\\.youtube\\.com/watch\\?v=[A-Za-z0-9_-]{11}$"
+          },
+          "embed_url": {
+            "pattern": "^https://www\\.youtube-nocookie\\.com/embed/[A-Za-z0-9_-]{11}$"
+          },
+          "playlist_position": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 84
+          },
+          "video_visibility": {
+            "const": "unlisted"
+          },
+          "projection_state": {
+            "const": "preview_current"
+          },
+          "local_master_sha256": {
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "bound_chapter_sha256": {
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "bound_source_commit": {
+            "pattern": "^[0-9a-f]{40}$"
+          },
+          "descriptive_transcript_path": {
+            "pattern": "^visual_edition/chapters/.+/transcript\\.md$"
+          },
+          "local_caption_path": {
+            "pattern": "^visual_edition/chapters/.+/captions\\.vtt$"
+          },
+          "local_caption_sha256": {
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "platform_caption_state": {
+            "const": "machine_audited_local_vtt_not_yet_attached"
+          },
+          "platform_thumbnail_state": {
+            "enum": [
+              "applied",
+              "not_yet_applied"
+            ]
+          },
+          "observed_at_utc": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "support_state_effect": {
+      "const": "none"
+    },
+    "release_effect": {
+      "const": "preview_projection_only_no_published_current_transition"
+    },
+    "non_claims": {
+      "type": "array",
+      "minItems": 5,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 20
+      }
+    }
+  },
+  "additionalProperties": false
+}

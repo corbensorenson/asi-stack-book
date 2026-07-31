@@ -1,5 +1,27 @@
 # Changelog
 
+## 2026-07-30 — P7.3 twelve-chapter integrated visual preview
+
+- Bound the first twelve exact unlisted YouTube identities to their canonical
+  chapters under a new owner-authorized preview record. The record preserves
+  title, position, video, playlist, master, chapter, source-commit, caption,
+  transcript, thumbnail, and observation state without calling any preview
+  `published_current`.
+- Added responsive `youtube-nocookie.com` players to chapters 1–12, each with
+  a visible 12-of-84 staging boundary, an external YouTube link, and its
+  adjacent descriptive transcript. Added a generated landing-page roster so
+  the current preview can be reviewed as one coherent sequence.
+- Kept all 84 packets `ready_not_published`, the canonical playlist private,
+  the twelve videos unlisted, published-current platform receipts at zero,
+  and rendered media outside Git and Pages. The first six custom thumbnails
+  are applied; thumbnails 7–12 and all twelve reviewed local caption tracks
+  remain open platform-reconciliation work.
+- Added a schema and validator for preview authority, canonical-prefix order,
+  unique identities, source/master/caption bindings, truthful platform state,
+  exact managed projections, and zero support movement. Eight negative
+  mutations cover duplication, gaps, visibility and caption overclaim,
+  substitution, omission, and support promotion.
+
 ## 2026-07-30 — Round 22 evidence pivot and concept-linked atoms
 
 - Adjudicated the Round 22 review and made the evidence pivot explicit:

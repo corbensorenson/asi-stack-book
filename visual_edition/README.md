@@ -12,6 +12,8 @@ the chapter's claim label, support state, maximum inference, or release scope.
 - the candidate or ratified visual grammar;
 - the canonical YouTube channel contract and generated 84-chapter
   publication/revision ledger;
+- owner-authorized unlisted-preview bindings, kept separate from final
+  publication receipts;
 - immutable generation receipts and exact, non-authorizing replacement plans;
 - reusable Manim source;
 - per-chapter packet metadata, storyboard, scene code, narration, reviewed
@@ -66,6 +68,7 @@ python3 scripts/build_youtube_thumbnail_review_sheets.py
 python3 scripts/build_youtube_upload_plan.py
 python3 scripts/build_youtube_publication_preflight.py
 python3 scripts/validate_youtube_publication_preflight.py
+python3 scripts/validate_youtube_preview_bindings.py
 python3 scripts/validate_youtube_supersession_workflow.py
 python3 scripts/validate_visual_edition.py
 python3 scripts/sync_visual_edition_embeds.py
@@ -89,9 +92,22 @@ The shared visual grammar and narration path are `ratified` and
 `qualified_for_all_chapters`. All 84 packets are `ready_not_published`, with
 reviewed captions, descriptive transcripts, validated final masters, render
 and mux receipts, and seven exact scene-midpoint review frames. The local
-masters total 1,015,153,522 bytes outside Git and Pages. YouTube, playlist,
-publication, and embed counts remain zero. A local validated master is not a
-publication.
+masters total 1,015,153,522 bytes outside Git and Pages. Twelve exact masters
+are now staged as unlisted YouTube videos in the private canonical playlist
+and projected into their chapters as visibly labeled preview players with
+adjacent descriptive transcripts. Published-current videos, final platform
+receipts, and published-current Quarto embeds remain zero. A local validated
+master or an unlisted preview is not a publication.
+
+The preview exception is narrow and explicit. A managed player may appear
+before full publication only when an exact row in
+`youtube_preview_bindings.json` binds the owner authorization, canonical
+position, YouTube identity, local master, chapter digest, source commit,
+caption, transcript, thumbnail state, and unlisted visibility. The player and
+landing-page roster must identify the incomplete denominator, and preview
+counts must remain separate from `published_current`. The current preview is
+12/84; local caption tracks still need platform attachment for all twelve, and
+custom thumbnails still need application for videos 7–12.
 
 Each packet keeps an editable SVG thumbnail source in Git. Upload preparation
 rasterizes it to an ignored 3840×2160 PNG, binds both source and output

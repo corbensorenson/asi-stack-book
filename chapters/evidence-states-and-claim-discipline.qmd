@@ -21,6 +21,141 @@ open_evidence_gaps:
   - "No support-state promotion is implied by this drafting pass."
 ---
 
+<!-- BEGIN MANAGED VISUAL ABSTRACT:evidence-states-and-claim-discipline -->
+::: {#visual-abstract .asi-visual-abstract .asi-visual-abstract--preview}
+## Visual abstract preview
+
+
+<div class="asi-visual-preview-notice" role="status">
+<strong>Visual-edition preview — 7 of 84.</strong>
+This is an unlisted staging preview from the first 12 uploaded chapters. The
+complete edition is not public yet; the reviewed local caption track has not
+yet been attached on YouTube, and this preview does not count as
+<code>published_current</code> or change any book claim.
+</div>
+
+<div class="ratio ratio-16x9">
+<iframe
+  src="https://www.youtube-nocookie.com/embed/J3dvJWTEtsE"
+  title="Visual abstract: Evidence States and Claim Discipline"
+  aria-label="Play the visual abstract for Evidence States and Claim Discipline"
+  loading="lazy"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerpolicy="strict-origin-when-cross-origin"
+  allowfullscreen>
+</iframe>
+</div>
+
+<p class="asi-visual-preview-links"><a href="https://www.youtube.com/watch?v=J3dvJWTEtsE">Open this unlisted preview on YouTube</a></p>
+
+<details class="asi-visual-transcript">
+<summary>Read the descriptive transcript</summary>
+
+<p>Canonical live chapter: <a
+href="https://corbensorenson.github.io/asi-stack-book/chapters/evidence-states-and-claim-discipline.html">https://corbensorenson.github.io/asi-stack-book/chapters/evidence-states-and-claim-discipline.html</a></p>
+<p>Video ID:
+<code>asi-video-evidence-states-and-claim-discipline</code></p>
+<p>Lifecycle: scripted local derivative; no YouTube publication is
+authorized</p>
+<p>Current support: <code>argument</code> —
+<code>Design rationale</code></p>
+<h3 class="asi-visual-transcript-heading" id="00000032--problem-and-shortcut">00:00–00:32 — Problem and
+shortcut</h3>
+<p><strong>Visual description.</strong> The chapter title resolves into
+two labeled cards: the problem and the shortcut that does not solve
+it.</p>
+<p><strong>Narration.</strong> This chapter asks a specific question: A
+living technical book needs a versioned claim lifecycle that separates
+what an assertion says from what evidence currently supports it and
+preserves why each state change was accepted. The tempting shortcut is
+insufficient: Citations, passing validators, proof objects, benchmark
+scores, and polished prose do not by themselves identify the exact claim
+atom, evidence role, scope, independence, causal link, negative result,
+or accepted transition they justify.</p>
+<h3 class="asi-visual-transcript-heading" id="00320113--operating-mechanism">00:32–01:13 — Operating
+mechanism</h3>
+<p><strong>Visual description.</strong> A labeled before after diagram
+exposes four distinct responsibilities and their explicit
+relationships.</p>
+<p><strong>Narration.</strong> The chapter's core claim is this: Each
+material claim should have a stable identity, versioned text and scope,
+claim label, support state, non-aggregating evidence-quality vector, and
+transition ledger; upward movement is allowed only through an accepted
+claim-specific transition whose artifacts and evidence roles meet
+declared gates, while contradiction, failed verification, missing
+support, and scope mismatch remain eligible to narrow, downgrade,
+refute, or deprecate the claim. Project canonical claim records and
+accepted transition lineage into Appendix C as the public claim ledger
+without treating that projection as evidence.</p>
+<h3 class="asi-visual-transcript-heading" id="01130210--concrete-state-transition">01:13–02:10 — Concrete
+state transition</h3>
+<p><strong>Visual description.</strong> Four numbered state nodes move
+left to right; an observed receipt and an open residual remain
+separately labeled.</p>
+<p><strong>Narration.</strong> A concrete implementation trace makes the
+proposal testable. A canonical claim record, evidence transition record,
+non-aggregating evidence cell, public Appendix C projection, one bounded
+six-project lineage cell, and executable positive and rejecting suites
+for missing bindings, absent evidence, negative-result deletion,
+dimension aggregation, scope strengthening, lineage splicing, false
+independence, stale projections, and support-state laundering, with no
+chapter-core support movement. Represent claim label, support state,
+lifecycle state, and terminal disposition as distinct fields so
+assertion kind, current backing, review status, and outcome cannot
+collapse into one confidence word. Permit source-derived movement only
+from a passage-reviewed, exact claim mapping that records the source's
+evidence role, interpretation boundary, contradictions, and
+non-claims.</p>
+<h3 class="asi-visual-transcript-heading" id="02100228--failure-boundary">02:10–02:28 — Failure boundary</h3>
+<p><strong>Visual description.</strong> Four failure cards meet a red
+fail-closed boundary labeled RECORD THE RESIDUAL.</p>
+<p><strong>Narration.</strong> The design can still fail. Support-state
+inflation. Citation laundering. Silent removal of failed claims.
+Ownership laundering. The correct response is to stop, narrow,
+quarantine, compensate, or retain an owned residual rather than narrate
+uncertainty away.</p>
+<h3 class="asi-visual-transcript-heading" id="02280304--evidence-state">02:28–03:04 — Evidence state</h3>
+<p><strong>Visual description.</strong> A double-rule proof boundary
+names the claim label and support state beside three unresolved proof
+targets.</p>
+<p><strong>Narration.</strong> This chapter remains Design rationale at
+argument support. Its contracts, examples, tests, or local artifacts
+establish only their encoded scope. The chapter names proof targets
+rather than pretending they are already closed. A reachable lifecycle
+freezes exact atom and proposition/obligation/predicate projections,
+derives non-aggregating target evidence, preserves negative evidence and
+non-claims, and cannot assign support, move related claims, or create
+external effects. A claim cannot be promoted when required evidence is
+absent.</p>
+<h3 class="asi-visual-transcript-heading" id="03040332--non-claims">03:04–03:32 — Non-claims</h3>
+<p><strong>Visual description.</strong> Four muted non-claim rows, each
+marked by a red stop bar, state what the visual does not establish.</p>
+<p><strong>Narration.</strong> No chapter claim or evidence state is
+promoted by this visual. A named mechanism is not proof of correct
+implementation or useful deployment. A local check or formal model does
+not establish real-world enforcement. No safety, transfer,
+state-of-the-art, AGI, or ASI conclusion follows. These boundaries
+matter because an explanatory derivative is useful only if it preserves
+the evidence ceiling of its source.</p>
+<h3 class="asi-visual-transcript-heading" id="03320359--handoff">03:32–03:59 — Handoff</h3>
+<p><strong>Visual description.</strong> The source end card states the
+live chapter, evidence ceiling, canonical URL, and successor
+chapter.</p>
+<p><strong>Narration.</strong> At most, this visual explains the
+chapter's design rationale at argument support; it adds no empirical,
+deployment, safety, transfer, state-of-the-art, AGI, or ASI result. The
+next chapter is Scalable Oversight and Adversarial AI Control. It takes
+responsibility for A system can ask a weaker human or model to judge a
+stronger system without recording whether the supervisor can see the
+relevant evidence.</p>
+<h3 class="asi-visual-transcript-heading" id="source-and-evidence-boundary">Source and evidence boundary</h3>
+<p>At most, this visual explains the chapter's design rationale at
+argument support; it adds no empirical, deployment, safety, transfer,
+state-of-the-art, AGI, or ASI result.</p>
+
+</details>
+:::
+<!-- END MANAGED VISUAL ABSTRACT:evidence-states-and-claim-discipline -->
 ## Chapter status
 
 | Field | Value |

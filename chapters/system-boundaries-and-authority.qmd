@@ -28,6 +28,139 @@ open_evidence_gaps:
   - "No support-state promotion is implied by this drafting pass."
 ---
 
+<!-- BEGIN MANAGED VISUAL ABSTRACT:system-boundaries-and-authority -->
+::: {#visual-abstract .asi-visual-abstract .asi-visual-abstract--preview}
+## Visual abstract preview
+
+
+<div class="asi-visual-preview-notice" role="status">
+<strong>Visual-edition preview — 3 of 84.</strong>
+This is an unlisted staging preview from the first 12 uploaded chapters. The
+complete edition is not public yet; the reviewed local caption track has not
+yet been attached on YouTube, and this preview does not count as
+<code>published_current</code> or change any book claim.
+</div>
+
+<div class="ratio ratio-16x9">
+<iframe
+  src="https://www.youtube-nocookie.com/embed/lT2ftLM4erY"
+  title="Visual abstract: System Boundaries and Authority"
+  aria-label="Play the visual abstract for System Boundaries and Authority"
+  loading="lazy"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerpolicy="strict-origin-when-cross-origin"
+  allowfullscreen>
+</iframe>
+</div>
+
+<p class="asi-visual-preview-links"><a href="https://www.youtube.com/watch?v=lT2ftLM4erY">Open this unlisted preview on YouTube</a></p>
+
+<details class="asi-visual-transcript">
+<summary>Read the descriptive transcript</summary>
+
+<p>Canonical live chapter: <a
+href="https://corbensorenson.github.io/asi-stack-book/chapters/system-boundaries-and-authority.html">https://corbensorenson.github.io/asi-stack-book/chapters/system-boundaries-and-authority.html</a></p>
+<p>Video ID: <code>asi-video-system-boundaries-and-authority</code></p>
+<p>Lifecycle: scripted local derivative; no YouTube publication is
+authorized</p>
+<p>Current support: <code>argument</code> —
+<code>Design rationale</code></p>
+<h3 class="asi-visual-transcript-heading" id="00000033--problem-and-shortcut">00:00–00:33 — Problem and
+shortcut</h3>
+<p><strong>Visual description.</strong> The chapter title resolves into
+two labeled cards: the problem and the shortcut that does not solve
+it.</p>
+<p><strong>Narration.</strong> This chapter asks a specific question: To
+test whether cross-layer effects are authorized, the stack needs
+explicit identities for the principal, execution domain, operation,
+target, permission class, ceiling, grant lifecycle, delegation, and
+receipt. The tempting shortcut is insufficient: Role labels, prompts,
+and ambient process identity do not by themselves distinguish read,
+transform, disclose, write, execute, and approve authority or enforce
+delegation, expiry, revocation, and cross-domain approval.</p>
+<h3 class="asi-visual-transcript-heading" id="00330112--operating-mechanism">00:33–01:12 — Operating
+mechanism</h3>
+<p><strong>Visual description.</strong> A labeled graph diagram exposes
+four distinct responsibilities and their explicit relationships.</p>
+<p><strong>Narration.</strong> The chapter's core claim is this:
+External-effect authority should be represented as a versioned,
+revocable tuple binding principal, execution domain, operation, target,
+permission class, scope, ceiling, grant state, delegation, expiry or
+revocation epoch, and receipt obligations; capability, context access,
+route quality, or ambient process power alone confers none of it. Define
+principals, authorities, ceilings, grants, revocations, and handoff
+contracts. Separate knowledge access from action authority. Represent
+missing authority as a detectable failure rather than implicit
+permission.</p>
+<h3 class="asi-visual-transcript-heading" id="01120159--concrete-state-transition">01:12–01:59 — Concrete
+state transition</h3>
+<p><strong>Visual description.</strong> Four numbered state nodes move
+left to right; an observed receipt and an open residual remain
+separately labeled.</p>
+<p><strong>Narration.</strong> A concrete implementation trace makes the
+proposal testable. An authority-transition schema plus a unified
+authority-tuple lifecycle that binds execution-domain ownership, scope,
+budget, trace, replay, grant, revocation, cross-domain approval,
+receipts, and protocol-versus-hardware-root boundaries. Separate
+knowledge access from action authority. Represent missing authority as a
+detectable failure rather than implicit permission. Bind principal,
+execution domain, operation, target, permission class, scope, budget
+account, trace, replay identity, grant, policy version, revocation
+epoch, and expiry in one authority tuple. Throughout the trace, one
+invariant remains visible: Authority never expands silently.</p>
+<h3 class="asi-visual-transcript-heading" id="01590220--failure-boundary">01:59–02:20 — Failure boundary</h3>
+<p><strong>Visual description.</strong> Four failure cards meet a red
+fail-closed boundary labeled RECORD THE RESIDUAL.</p>
+<p><strong>Narration.</strong> The design can still fail. Authority
+creep. Confused-deputy tool calls. Memory access treated as action
+approval. Authority identity forks across budget, trace, replay, or
+revocation. The correct response is to stop, narrow, quarantine,
+compensate, or retain an owned residual rather than narrate uncertainty
+away.</p>
+<h3 class="asi-visual-transcript-heading" id="02200308--evidence-state">02:20–03:08 — Evidence state</h3>
+<p><strong>Visual description.</strong> A double-rule proof boundary
+names the claim label and support state beside three unresolved proof
+targets.</p>
+<p><strong>Narration.</strong> This chapter remains Design rationale at
+argument support. Its contracts, examples, tests, or local artifacts
+establish only their encoded scope. The chapter names proof targets
+rather than pretending they are already closed. Every accepted issuance,
+dispatch, and effect in the finite reachable grant model remains within
+the caller ceiling and exactly binds grant ID, principal, operation,
+target, epoch, expiry, remaining uses, approval, dispatch, and effect
+custody. The reachable model and independent consumer reject authority
+widening, confused-deputy substitution, stale or expired grants, missing
+approval/dispatch/effect receipts, post-revocation dispatch, effect
+without dispatch, and consumed one-shot reuse.</p>
+<h3 class="asi-visual-transcript-heading" id="03080336--non-claims">03:08–03:36 — Non-claims</h3>
+<p><strong>Visual description.</strong> Four muted non-claim rows, each
+marked by a red stop bar, state what the visual does not establish.</p>
+<p><strong>Narration.</strong> No chapter claim or evidence state is
+promoted by this visual. A named mechanism is not proof of correct
+implementation or useful deployment. A local check or formal model does
+not establish real-world enforcement. No safety, transfer,
+state-of-the-art, AGI, or ASI conclusion follows. These boundaries
+matter because an explanatory derivative is useful only if it preserves
+the evidence ceiling of its source.</p>
+<h3 class="asi-visual-transcript-heading" id="03360405--handoff">03:36–04:05 — Handoff</h3>
+<p><strong>Visual description.</strong> The source end card states the
+live chapter, evidence ceiling, canonical URL, and successor
+chapter.</p>
+<p><strong>Narration.</strong> At most, this visual explains the
+chapter's design rationale at argument support; it adds no empirical,
+deployment, safety, transfer, state-of-the-art, AGI, or ASI result. The
+next chapter is Failure Modes of Ungoverned Intelligence. It takes
+responsibility for Governance, reliability, and self-improvement claims
+cannot be tested unless their failure conditions, observable boundary
+events, evidence records, and owners are declared prospectively.</p>
+<h3 class="asi-visual-transcript-heading" id="source-and-evidence-boundary">Source and evidence boundary</h3>
+<p>At most, this visual explains the chapter's design rationale at
+argument support; it adds no empirical, deployment, safety, transfer,
+state-of-the-art, AGI, or ASI result.</p>
+
+</details>
+:::
+<!-- END MANAGED VISUAL ABSTRACT:system-boundaries-and-authority -->
 ## Chapter status
 
 | Field | Value |

@@ -217,7 +217,7 @@ proceeds.
 | Existing-owner inference-cache packet — prose terminal; receipt and empirical work deferred | `P6.7-inference-cache-reuse-and-honest-pricing` | Reader-facing source integration was expressly commissioned and completed 2026-07-23; no new chapter or support movement | Maintain the three coordinated manuscript integrations and nine-source packet. Later implement the cache-reuse receipt and run separate exact-prefix and semantic-response campaigns under the ordinary post-gate entry condition. Preserve KV-versus-output, exact-versus-semantic, hit-versus-useful-outcome, and provider-contract-versus-local-evidence boundaries. |
 | Existing-owner functional-precision packet — source and prose terminal; evidence work queued | `P6.8-functional-precision-and-behavior-preserving-computation` | Source intake and the eight-owner manuscript integration are complete; schemas, validators, source resolution, and empirical work retain ordinary gates; no new chapter or support movement | Maintain the integrated Precision Contract treatment led by RankFold/NeuralFold. Preserve representation invariance, protected behavior, complete executable and physical-cost accounting, progressive residual precision, routed fallback, certificate scope, and program-transformation proof limits. Reconsider a standalone chapter only if a dated post-integration coherence audit finds a genuinely unowned lifecycle. |
 | Existing-book depth recovery — terminal | `P6.9-R21-concept-complete-depth-and-atom-adequacy` | The 84-chapter manifest is frozen; unified atom custody must stay 84/84; completion requires a named concept manifest plus a digest-bound semantic disposition, while word and atom counts remain diagnostic only | Preserve all twenty-three completed owners and 184 concepts at their reviewed digests. The raw-scaffold audit owns all 21 widest blocks with zero reader-visible or unjustified blocks; the exact 23-chapter/184-concept proof/evidence handoff is terminal. Reopen only after digest drift or an explicit successor amendment. |
-| Visual edition — active owner-directed book packet | `P7.3-governed-manim-visual-edition` | All 84 current packets and 1920×1080/30-fps H.264/AAC masters are locally validated and `ready_not_published`. The exact Kokoro/MLX-Whisper audit spans all chapters at 0–2.8658% content-normalized WER, maximum expected-token gap four, and 227.765–331.005 seconds. All 588 exact scene-midpoint frames and 84 upload thumbnails passed bounded visual review; mux receipts bind source visual, narration, seven scene endpoints, and final digest. The 1,015,153,522 bytes of final media remain ignored and absent from Pages. YouTube, playlist, publication, and embed counts remain zero. | With exact action-time authority, create the canonical playlist, stage all 84 current masters unlisted, set metadata/captions/thumbnails/order, reconcile processing and receipts, then publish the complete validated set and write matching Quarto embeds. After public completion, use author feedback to exercise one real new-generation upload, supersession receipt, playlist reconciliation, and embed replacement. |
+| Visual edition — active owner-directed book packet | `P7.3-governed-manim-visual-edition` | All 84 current packets and 1920×1080/30-fps H.264/AAC masters are locally validated and `ready_not_published`. The exact Kokoro/MLX-Whisper audit spans all chapters at 0–2.8658% content-normalized WER, maximum expected-token gap four, and 227.765–331.005 seconds. All 588 exact scene-midpoint frames and 84 upload thumbnails passed bounded visual review; mux receipts bind source visual, narration, seven scene endpoints, and final digest. The 1,015,153,522 bytes of final media remain ignored and absent from Pages. The canonical private playlist contains twelve exact unlisted staging videos in positions 1–12, projected into their chapters as owner-authorized preview embeds with adjacent descriptive transcripts. Published-current videos, final platform receipts, and published-current embeds remain zero. | Continue at chapter 13 after the YouTube daily-upload window resets; apply reviewed local captions to videos 1–12 and custom thumbnails to videos 7–12; finish all 84 metadata/caption/thumbnail/order/processing checks; then publish and receipt the complete validated set. The preview projection must never be counted as completion. After public completion, use author feedback to exercise one real new-generation upload, supersession receipt, playlist reconciliation, and embed replacement. |
 | Formal slot — C6 residual triage terminal; dependency-safe execution active | `C6-remaining-stronger-model-rationalization` | The original 54-action residual estate had zero Lean dependencies and zero theorem consumers; two redundant witnesses and 43 Theseus repository-import mirrors are retired, leaving nine actions: eight summary-mirror retirements and one inverse-route rewrite | Retire the eight Benchmark/Runtime/Search/Stable-Capability summary mirrors next, then implement the Failure Modes inverse property. Rebuild the overlay and ledger after every tranche, with no support or release movement. |
 | Empirical headline — exact N0 entry receipt; materialization blocked | `P2-R3-storage-materialization-and-replacement-qualification` | `P2-R3a-002` measured 23.87 GiB free against the 50 GiB floor and no reachable Docker daemon; restore both gates and write a new immutable preflight before any pull | Then thirty sealed candidate recipes and receipts; terminal pool materialization; four competently qualified replacements restoring the fixed twelve-task denominator; rank progression only under the frozen amendment; zero protected-content leakage. No deletion of non-Docker user data is authorized. |
 | First structural tranche — terminal | White-Box, World Models, Human Factors, and Governed Operations are terminal at argument support | Four exact integration packets preserve owners, sources, formal ceilings, protocols, reader handoffs, and no-promotion boundaries | Maintenance only; no reopened chapter packet without a dated machine-validated defect. |
@@ -3860,6 +3860,42 @@ on one published chapter. It will use a newly prepared plan and new exact
 action-time authority, preserve both generations, and create no support-state
 or book-claim-release effect.
 
+#### P7.3-F8 owner-authorized twelve-chapter integrated preview — 2026-07-30
+
+Corben explicitly requested that the twelve already uploaded videos be
+embedded into the living book for integrated review. That request creates a
+narrow projection authority, not permission to fabricate a completed visual
+edition or weaken the complete-publication gate. The repository therefore
+owns a separate schema-bound `youtube_preview_bindings.json` record rather
+than relabeling the chapter packets or manufacturing final platform receipts.
+
+The binding record maps canonical positions 1–12 to twelve unique unlisted
+YouTube identities in the private canonical playlist. Every row binds the
+planned title, chapter and source-commit digests, exact local-master digest,
+local machine-audited WebVTT digest, descriptive transcript, observed
+thumbnail state, and the `preview_current` projection state. Videos 1–6 have
+their reviewed custom thumbnails applied; videos 7–12 do not. None of the
+twelve reviewed local caption tracks is yet attached on YouTube. These open
+platform states are shown rather than laundered.
+
+Each bound chapter now contains one managed responsive
+`youtube-nocookie.com` player, a visible unlisted-staging notice, a direct
+YouTube link, and the complete adjacent descriptive transcript. The landing
+page carries a generated canonical-order roster linking to all twelve chapter
+players so the staged edition can be reviewed as a coherent sequence. The
+managed block remains excluded from the canonical chapter digest, so the
+projection does not make its own source binding stale.
+
+Validation distinguishes `youtube_videos_unlisted_preview` and
+`current_quarto_preview_embeds` from `youtube_videos_published` and
+`current_quarto_embeds`. The preview validator rejects duplicate IDs,
+non-prefix positions, public-visibility or caption-attachment overclaims,
+master or chapter substitution, omission, and support promotion. The
+published-current counts remain zero, all 84 packets remain
+`ready_not_published`, the playlist remains private, the twelve videos remain
+unlisted, rendered binaries remain absent from Git and Pages, and support and
+book-claim release effects remain none.
+
 **P7.3 completion gate.** This lane is terminal only when all 84 current
 manifest chapters have validated derivative packets and current rendered
 videos; every published video is hosted on YouTube in the canonical playlist;
@@ -3868,9 +3904,12 @@ transcript; no video is stale; all output binaries remain outside Git and the
 Pages artifact; platform and repository receipts bind exact identities; the
 full site passes render, link, responsive, keyboard, accessibility-tree, and
 public-crawl checks; and support-state, release-scope, and non-claim boundaries
-remain unchanged. If action-time YouTube authority is not yet available, the
-honest intermediate state is 84/84 `ready_not_published`, not a fabricated
-publication claim.
+remain unchanged. An owner-authorized unlisted preview may project a strict
+subset for review only when its exact binding, incomplete denominator,
+accessibility residuals, and non-publication state are visible and validated.
+It never satisfies the completion gate. If final platform reconciliation is
+not yet available, the honest lifecycle state remains 84/84
+`ready_not_published`, not a fabricated publication claim.
 
 ## P8 — Closure, residual ownership, and successor continuity
 

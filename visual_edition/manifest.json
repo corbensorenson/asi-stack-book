@@ -1,9 +1,9 @@
 {
   "schema_version": "asi_stack.visual_edition_manifest.v1",
   "edition_id": "asi-stack-p7.3-visual-edition",
-  "generated_at_utc": "2026-07-30T05:00:42Z",
+  "generated_at_utc": "2026-07-31T05:25:44Z",
   "book_structure_path": "book_structure.json",
-  "source_commit_at_generation": "ae7ad0c7f7fb430d55f7b82731aa0a4abdc4b901",
+  "source_commit_at_generation": "eda8603b9bfc4ab2ae51ccda49732f0ffc46acda",
   "canonical_chapter_count": 84,
   "pilot_chapter_ids": [
     "asi-is-a-stack-not-a-model",
@@ -28,6 +28,15 @@
     "rendered_video_binary_in_pages_artifact": false,
     "local_render_location_class": "ignored_build_space"
   },
+  "preview": {
+    "state": "owner_authorized_partial_unlisted_preview",
+    "binding_path": "visual_edition/youtube_preview_bindings.json",
+    "binding_sha256": "6c650b883458dd7c6d34aec8c131b80adcf583bffac0043658481fa67286b2a7",
+    "unlisted_video_count": 12,
+    "current_quarto_preview_embeds": 12,
+    "edition_complete": false,
+    "next_upload_position": 13
+  },
   "counts": {
     "planned": 0,
     "storyboarded": 0,
@@ -41,7 +50,9 @@
     "packets_present": 84,
     "current_rendered_videos": 84,
     "youtube_videos_published": 0,
-    "current_quarto_embeds": 0
+    "current_quarto_embeds": 0,
+    "youtube_videos_unlisted_preview": 12,
+    "current_quarto_preview_embeds": 12
   },
   "chapters": [
     {

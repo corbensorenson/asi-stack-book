@@ -16,6 +16,7 @@ from build_youtube_publication_preflight import build as build_expected_youtube_
 from build_youtube_ledger import build as build_expected_youtube_ledger
 from prepare_youtube_supersession import semantic_failures as supersession_plan_failures
 from visual_chapter_source import canonical_chapter_sha256, canonicalize_chapter_source
+from validate_youtube_preview_bindings import semantic_errors as preview_errors
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -106,6 +107,7 @@ def schema_errors(value: dict, schema_path: Path, label: str) -> list[str]:
 
 def errors(manifest: dict, grammar: dict | None = None) -> list[str]:
     failures = schema_errors(manifest, MANIFEST_SCHEMA, "manifest")
+    failures.extend(preview_errors(load(ROOT / "visual_edition/youtube_preview_bindings.json")))
     grammar = grammar or load(GRAMMAR)
     failures.extend(schema_errors(grammar, GRAMMAR_SCHEMA, "grammar"))
     channel = load(YOUTUBE_CHANNEL)
@@ -243,21 +245,22 @@ def errors(manifest: dict, grammar: dict | None = None) -> list[str]:
     ]
     binding_probe_path = ROOT / canonical[0][3]["file"]
     binding_probe_source = binding_probe_path.read_text(encoding="utf-8")
-    front_matter_close = binding_probe_source.find("\n---\n", 4)
+    binding_probe_canonical = canonicalize_chapter_source(binding_probe_source)
+    front_matter_close = binding_probe_canonical.find("\n---\n", 4)
     if front_matter_close < 0:
         failures.append("visual chapter-binding probe lacks closed front matter")
     else:
         insertion_point = front_matter_close + len("\n---\n")
         binding_probe_projected = (
-            binding_probe_source[:insertion_point]
+            binding_probe_canonical[:insertion_point]
             + "\n<!-- BEGIN MANAGED VISUAL ABSTRACT:asi-is-a-stack-not-a-model -->\n"
             + "projection-only probe\n"
             + "<!-- END MANAGED VISUAL ABSTRACT:asi-is-a-stack-not-a-model -->\n"
-            + binding_probe_source[insertion_point:].lstrip("\n")
+            + binding_probe_canonical[insertion_point:].lstrip("\n")
         )
-        if canonicalize_chapter_source(binding_probe_projected) != binding_probe_source:
+        if canonicalize_chapter_source(binding_probe_projected) != binding_probe_canonical:
             failures.append("managed visual projection changes canonical chapter binding")
-        changed_probe = binding_probe_source.replace(
+        changed_probe = binding_probe_canonical.replace(
             "## Chapter status",
             "## Changed chapter status",
             1,
@@ -842,6 +845,7 @@ def main() -> None:
         f"84 chapters, {counts['packets_present']} packet(s), "
         f"{counts['current_rendered_videos']} validated render(s), "
         f"{counts['youtube_videos_published']} YouTube publication(s), "
+        f"{counts['youtube_videos_unlisted_preview']} unlisted preview(s), "
         "zero tracked/Pages media binaries, 8/8 mutations rejected, support effect none."
     )
 

@@ -15,6 +15,7 @@
     "visual_grammar_path",
     "hosting",
     "repository_boundary",
+    "preview",
     "counts",
     "chapters",
     "support_state_effect",
@@ -68,6 +69,48 @@
       },
       "additionalProperties": false
     },
+    "preview": {
+      "type": "object",
+      "required": [
+        "state",
+        "binding_path",
+        "binding_sha256",
+        "unlisted_video_count",
+        "current_quarto_preview_embeds",
+        "edition_complete",
+        "next_upload_position"
+      ],
+      "properties": {
+        "state": {
+          "const": "owner_authorized_partial_unlisted_preview"
+        },
+        "binding_path": {
+          "const": "visual_edition/youtube_preview_bindings.json"
+        },
+        "binding_sha256": {
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "unlisted_video_count": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 84
+        },
+        "current_quarto_preview_embeds": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 84
+        },
+        "edition_complete": {
+          "const": false
+        },
+        "next_upload_position": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 85
+        }
+      },
+      "additionalProperties": false
+    },
     "counts": {
       "type": "object",
       "required": [
@@ -83,7 +126,9 @@
         "packets_present",
         "current_rendered_videos",
         "youtube_videos_published",
-        "current_quarto_embeds"
+        "current_quarto_embeds",
+        "youtube_videos_unlisted_preview",
+        "current_quarto_preview_embeds"
       ],
       "additionalProperties": {"type": "integer", "minimum": 0}
     },
