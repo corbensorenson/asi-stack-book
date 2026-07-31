@@ -4,7 +4,7 @@ chapter_id: "cognitive-compilation-and-semantic-ir"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 semantically reviewed proof-contract draft"
-last_updated: "2026-07-22"
+last_updated: "2026-07-31"
 primary_sources:
   - "cognitive_compilation"
   - "planforge_compiler_arch"
@@ -40,7 +40,7 @@ open_evidence_gaps:
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
 | Manuscript maturity | v0.3 semantically reviewed proof-contract draft |
-| Last updated | 2026-07-22 |
+| Last updated | 2026-07-31 |
 | Primary source records | 20 assigned records with 17 exact claim mappings, including the Relational Dimension Compiler's dimension-safe relational lowering proposal |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -335,6 +335,24 @@ privacy, and interaction budgets. The resulting question trace joins the
 ambiguity ledger and lowering receipt. If no admissible question can close the
 required distinction, strict lowering returns a typed adequacy fault instead
 of inventing one clean meaning.
+
+Question choice is decision-relative rather than entropy-minimizing by default.
+If two interpretations lead to the same safe action, resolving them may have
+no present value; if a small ambiguity changes legal authority, physical risk,
+or an irreversible effect, clarification may be mandatory. The compiler ranks
+questions by expected regret reduction, threshold-crossing probability,
+verification value, route-cost reduction, privacy/risk cost, and human burden.
+Several cheap independent checks may run in parallel when latency dominates.
+
+Answers remain defeasible. Sensor error, misunderstood clarification,
+conflicting retrieval, and learned-discriminator mistakes update a posterior
+rather than deleting all alternatives. Beam search, backtracking, repeated or
+cross-facet checks, and explicit `unknown`, `conflicting`, and `abstain` states
+make early routing errors recoverable. The trace records which evidence moved
+the posterior and why the chosen commitment was adequate for this consumer.
+An efficient internal discriminator may be operationally and extensionally
+characterized without a faithful intensional label; the system must not invent
+a human-readable semantic explanation merely because examples can be named.
 
 This yields three additional compiler obligations:
 

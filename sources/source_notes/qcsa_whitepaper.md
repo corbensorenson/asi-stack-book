@@ -31,6 +31,39 @@ This is a successor synthesis to TreeLLM and the folded Semantic Representation
 Leasing material. It is not a synonym for binary tokenization, hierarchical
 softmax, a universal concept tree, or a tokenizer replacement.
 
+## Claim Boundary and Status
+
+- QCSA is a conceptual architecture, formal model, artifact specification,
+  inference protocol, governance design, and falsifiable research program.
+- Stable identity, plural addresses, active questions, and compiled routes are
+  proposed separations; the paper does not establish universal semantic
+  identity, correct grounding, useful compression, routing advantage,
+  interpretability, authority safety, or self-reorganization safety.
+- The local reference package and synthetic runs are later repository evidence,
+  not evidence supplied by the paper. Their matched-advantage and resource
+  gates failed, so they cannot retroactively make the whitepaper empirical.
+- Binary paths, trees, latent codewords, and hierarchical generation remain
+  admissible implementations or indexes; none is the canonical truth
+  substrate or durable identity by itself.
+
+## Conceptual Primitives and Distinctions
+
+- **Identity / address / route:** what object persists, how a consumer locates
+  it semantically, and where/how the current task executes are separate.
+- **Occurrence / type / instance / expression:** contextual evidence,
+  reusable category, concrete referent, and compositional semantic program are
+  not interchangeable records.
+- **Graph / atlas / path:** the typed evidence-bearing hypergraph is the
+  substrate; an atlas is a consumer-oriented index; one SVA is a defeasible
+  path through an atlas epoch.
+- **Question / commitment:** evidence acquisition can remain adaptive and
+  posterior-preserving until one consumer's consequence requires commitment.
+- **Semantic migration / physical remapping:** reorganization of meaning needs
+  epoch migration; moving shards, experts, decoders, or compute normally does
+  not.
+- **Ontology / evidence / belief / authority:** a graph object, support for a
+  proposition, present epistemic standing, and permission to act are distinct.
+
 ## Required Terminology
 
 - Question-Compiled Semantic Addressing (QCSA)
@@ -81,6 +114,62 @@ softmax, a universal concept tree, or a tokenizer replacement.
 - Re-resolve generated output and compare object identity, roles, negation,
   modality, quantity, time, claim/citation bindings, authority, and residuals as
   a bounded translation-validation pattern.
+
+## Interfaces, Artifacts, and State Machines
+
+- `SemanticObjectRecord` owns stable kind, namespace, aliases, provenance,
+  lifecycle, and merge/split lineage without treating similarity as identity.
+- `AtlasEpoch` owns facet contracts, codebooks, topology, calibration,
+  representative/boundary cases, utilization, known collisions, prohibited
+  uses, migration maps, signatures, and rollback.
+- `SemanticAddressCertificate` binds one resolution to occurrence/expression,
+  consumer, task, epoch, weighted paths, confidence, evidence, grounding,
+  residuals, allowed/prohibited uses, authority ceiling, expiry, and migration.
+- `QuestionTrace` binds posterior before/after, candidate question or batch,
+  expected decision value, costs, acquired evidence, noise/conflict,
+  backtracking, commitment, and unresolved alternatives.
+- `PhysicalRoutePlan` binds memory/model/tool targets, redactions, resources,
+  joins, validators, approval, fallback, abstention, and receipts without
+  redefining the semantic object or granting itself authority.
+- `AddressMigrationRecord` binds old/new epochs, address mapping, same-SOID
+  check, affected consumers/descendants, compatibility, failures, rollback,
+  and explicit unresolved cases.
+
+## Assumptions, Invariants, and Conditional Results
+
+- Names, embeddings, codes, paths, models, languages, and locations cannot
+  serve as stable semantic identity without an explicit governed identity rule.
+- Every old address either resolves to the same SOID after migration or fails
+  explicitly; silent retargeting is forbidden.
+- A shorter or cleaner address is an improvement only when omitted
+  distinctions, collisions, verification, repair, migration, and fallback are
+  included in the account.
+- A semantic certificate can constrain use and preserve lineage but cannot
+  establish that the object, proposition, grounding, or action is correct.
+- Internal discriminators may be operationally useful without a faithful
+  natural-language intensional explanation.
+- Active questions are valuable only when they improve a downstream decision
+  frontier after compute, latency, privacy, risk, and human burden.
+- A route plan remains subordinate to capability, policy, and effect authority.
+
+## Algorithms and Implementation Program
+
+1. Resolve surface evidence into candidate occurrences, types, instances, and
+   expressions while preserving ambiguity and provenance.
+2. Retrieve a stable SOID or create a provisional local object after collision
+   search; govern later merge or split without historical rewrite.
+3. Materialize relevant facet candidates from the current atlas epoch and
+   retain soft paths, variable depth, mixed arity, and cross-facet conflict.
+4. If consumer adequacy is insufficient, select one question or parallel batch
+   by expected decision value minus resource, privacy, risk, and burden costs;
+   update rather than hard-delete the posterior.
+5. Issue a SAC only at the named commitment boundary, then compile a temporary
+   physical plan through separate authority and resource policy.
+6. For generation, construct a typed semantic expression, decode it, re-resolve
+   the output, and compare identity, roles, operators, claims, and residuals.
+7. Keep contextual resolution fast, resolver/codebook learning medium, and
+   atlas publication slow; publish new epochs only with compatibility,
+   migration, staged use, rollback, and descendant repair.
 
 ## Normative Artifacts Proposed
 
@@ -175,6 +264,20 @@ nine existing chapter owners; they do not promote any chapter-core claim above
 - Governance infrastructure that precisely documents wrong resolutions without
   improving behavior enough to justify its cost.
 
+## Threats, Misuse, and Governance Costs
+
+- Semantic aliases and apparently nearby concepts can become confused-deputy
+  paths into privileged tools or data.
+- Address patterns, facets, and question traces may reveal sensitive traits
+  even when raw content is withheld.
+- Atlas owners can encode institutional or cultural power into a seemingly
+  technical hierarchy; plural facets reduce but do not remove capture.
+- Certificates, migration, calibration, graph storage, question acquisition,
+  verification, and fallback can cost more than the retrieval or routing
+  benefit. Total-cost and missed-help comparisons are mandatory.
+- A richly audited but systematically wrong resolver can scale error more
+  efficiently; governance record completeness is not semantic correctness.
+
 ## Book Chapters Supported
 
 | Chapter | QCSA contribution | Passage basis | Boundary |
@@ -227,6 +330,70 @@ conditions.
 - Add the compression invariant that a shorter path is acceptable only when
   omitted distinctions, collisions, verification, repair, migration, and
   fallback remain visible.
+
+## Cross-Paper Synthesis and Tensions
+
+- TreeLLM supplies hierarchical semantic representation lineage; QCSA replaces
+  one canonical tree with stable identity, a graph substrate, plural atlases,
+  active navigation, and separate physical lowering.
+- VCM supplies typed context materialization; QCSA supplies the SOID/SVA/SAC
+  identity and addressing contract VCM may consume.
+- Cognitive Compilation treats question traces as evidence-acquisition IR and
+  route plans as target lowering, while Talos and Runtime retain execution
+  authority.
+- SCF supplies epoch, qualification, migration, and replacement discipline;
+  QCSA specializes those controls for semantic objects and atlases.
+- The Platonic World Model provides a richer constitutional semantics and
+  grounding plane; QCSA provides a more operational address/navigation fabric.
+  Neither makes semantic identity metaphysically final.
+- Relational Dimension Compilation can type the roles and dimensions inside
+  QCSA expressions, while QCSA supplies durable identity and address custody.
+- Compact Generative Systems can exploit inherited path deltas, but QCSA's
+  residual and round-trip rules prevent the hierarchy from claiming complete
+  semantic compression.
+
+## Section-Family Coverage
+
+- §§1–4: originating intuition, SOTA boundary, and twelve axioms → source note,
+  Cognitive Compilation, VCM, Durable Semantic Memory, and Integrated
+  Architecture.
+- §§5–6: ten-subsystem reference architecture and formal model → chapter
+  owners plus normative artifact/research program; equations remain proposed.
+- §§7–8: semantic identity, typed hypergraph, and plural atlas geometry →
+  Durable Semantic Memory and VCM.
+- §§9–10: active navigator and semantic-to-physical translation → Cognitive
+  Compilation, Routing, Runtime, and Procedural Memory.
+- §11: compositional representation, semantic-first generation, and round-trip
+  validation → Compact Generative Systems and Cognitive Compilation.
+- §§12–13: three-timescale learning, migration, multilingual and multimodal
+  grounding → Data Engines, World Models, and Perception/grounding owners.
+- §§14–15: certificates, authority, taint, poisoning, privacy, residuals, and
+  failure analysis → VCM, Security, Runtime, Privacy, Memory, and Failure Modes.
+- §16: seven workstreams, baselines, ablations, success, and falsification →
+  Benchmark Ratchets and Open Research Agenda; the local synthetic result is
+  separately bounded.
+- §§17–20: contribution boundary, eight integrations, limitations, conclusion
+  → source note and existing chapter owners; no standalone chapter warranted.
+- Appendices A–C: record sketches, inference protocol, and research artifact
+  set → schemas/fixtures and research obligations; not paper-supplied results.
+- Appendix D and references: terminology and prior-art candidates → glossary
+  and independent external-source backlog.
+
+## Closure Status
+
+Section-family closure completed 2026-07-31 against the current 84-chapter
+manuscript. The final repair added object-level identity distinctions and
+plural atlas geometry to Durable Semantic Memory, decision-relative noisy and
+parallel question compilation to Cognitive Compilation, and three-timescale
+atlas learning plus referentially safe physical/semantic remapping to Data
+Engines. All remaining paper formulas, normative record sketches, inference
+protocol detail, benchmark workstreams, and reference candidates have explicit
+research or source-note destinations.
+
+Closure creates no claim that QCSA beats a matched baseline, that active
+questioning works generally, that semantic round trips preserve meaning, or
+that the architecture is safe, private, efficient, deployed, or supported
+above the already recorded narrow fixture dispositions.
 
 ## Open Questions
 

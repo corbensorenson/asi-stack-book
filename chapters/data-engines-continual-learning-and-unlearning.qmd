@@ -4,7 +4,7 @@ chapter_id: "data-engines-continual-learning-and-unlearning"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.3 manuscript draft"
-last_updated: "2026-07-27"
+last_updated: "2026-07-31"
 primary_sources:
   - "ext_bourtoule_machine_unlearning_2021"
   - "ext_shumailov_model_collapse_2023"
@@ -28,7 +28,7 @@ open_evidence_gaps:
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
 | Manuscript maturity | v0.3 manuscript draft |
-| Last updated | 2026-07-27 |
+| Last updated | 2026-07-31 |
 | Primary source records | 11 assigned, 11 passage-reviewed mappings, including SISA, model-collapse and accumulation work, Theseus, W3C PROV-O, Croissant, MUSE, OpenUnlearning, the benchmark critique, QCSA, and V-JEPA 2 |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -321,6 +321,34 @@ and the unlearning result remains partitioned. That is the desired governance
 behavior: a technically successful transaction control does not rescue a weak
 learning outcome, and a changed cohort prediction does not erase retained
 storage.
+
+### Three-timescale atlas learning and referentially safe remapping
+
+QCSA separates semantic change by clock. Fast contextual resolution may choose
+different addresses or questions for one task without changing the atlas.
+Medium-timescale learning may update resolver, question policy, codebooks, or
+physical translation behind a frozen epoch and evaluation boundary. Slow
+governance publishes a new atlas only after collision, calibration, plural-
+facet, grounding, downstream-compatibility, authority, privacy, and rollback
+review. Success at one clock grants no authority to advance the next.
+
+Physical relocation is normally cheaper than semantic migration. Moving a
+memory shard, replacing an expert, changing a decoder, or rebalancing hardware
+updates the semantic-to-physical translation table while the SOID and atlas
+epoch remain fixed. A semantic reorganization instead emits a migration map.
+Every old address must resolve to the same SOID under the new epoch or return a
+typed failure; silent retargeting is forbidden. Splits preserve an ambiguous
+parent or deprecated alias and re-resolve old occurrences with uncertainty;
+merges preserve both original identities and evidence rather than rewriting
+history.
+
+Alternating optimization may improve resolver, atlas, question, routing, and
+representation objectives, but release remains multi-objective and
+Pareto-gated. Quality, calibration, migration stability, residual burden,
+resource cost, authority, privacy, and downstream repair cannot be hidden in
+one loss. This lifecycle is a design contract from QCSA, not evidence of
+continual-learning quality, catastrophic-drift prevention, or safe ontology
+self-reorganization.
 
 ### Upward concept learning and foundry-state custody
 

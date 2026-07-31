@@ -59,9 +59,9 @@ source assignment alone does not count.
 
 | State | Sources | Required next operation |
 |---|---|---|
-| Section-family audit complete | `deterministic_capability_compilation`, `platonic_world_model`, `scf` | Re-open only on paper or chapter drift. |
+| Section-family audit complete | `deterministic_capability_compilation`, `platonic_world_model`, `scf`, `qcsa_whitepaper` | Re-open only on paper or chapter drift. |
 | Legacy paper repaired in this pass | `viea` | Re-run chapter/source validation and retain its new section-family map. |
-| Rich note; closure audit still required | `qcsa_whitepaper`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `relational_dimension_compiler`, `precision_contract` | Compare every paper section, appendix, algorithm, limitation, and falsifier with actual manuscript prose. |
+| Rich note; closure audit still required | `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `relational_dimension_compiler`, `precision_contract` | Compare every paper section, appendix, algorithm, limitation, and falsifier with actual manuscript prose. |
 | Legacy system spine; deep note required | `planforge`, `planforge_compiler_arch`, `cognitive_compilation`, `talos`, `vcm_public`, `spinoza`, `spinoza_composer`, `octopus_router`, `rmi`, `cognitive_loop_closure`, `benchmaxxing` | Reconstruct the complete object model and lifecycle before deciding whether prose is missing. |
 | Compression, representation, and substrate; deep note required | `cgs`, `rgs`, `rankfold_neuralfold`, `rankfold_compressor`, `bbvca_v9`, `bbvca_main`, `genesiscode`, `treellm`, `simulation_scaling`, `tokenmana`, `bugbrain` | Preserve equations, decoders, accounting, verification, failure surfaces, and rival representations—not only the compression slogan. |
 | Alignment, verification, context, and execution lineage; deep note required | `alignment_field`, `field_of_god`, `ethica_mechanica`, `eternal_code`, `verification_bandwidth`, `beastbrain`, `beastbrain_timeless`, `aletheia`, `context_engineer`, `black_hole_context_manager`, `ladon_manhattan`, `uat`, `software_magic_grimoire` | Separate operational mechanisms from metaphysics, branding, repeated drafts, unsafe absolutes, and unsupported performance claims; integrate only the durable architecture. `coherence_exchange` remains a separately connector-mined source rather than one of the 44 local paper texts. |
@@ -144,6 +144,34 @@ programs rather than being copied into prose as implied results.
 **Closure result:** SCF has no orphaned substantive section. Its core claim
 remains `argument`; no source-reported formal, implementation, benchmark,
 governance, recovery, safety, or ASI result was promoted.
+
+## QCSA section-family closure result
+
+QCSA's 20 sections and four appendices now terminate in manuscript prose,
+public-safe source-note retention, concrete research obligations, or explicit
+non-claims. The audit confirmed that the book already owned the major
+identity–address–route separation, SOID/SVA/SAC records, typed failure,
+migration invariant, authority separation, residual accounting, and bounded
+local negative result. It repaired three deeper losses:
+
+- Durable Semantic Memory now separates occurrence, type, instance, and
+  compositional expression, and explains soft multi-path facets, variable
+  depth, adaptive arity, boundary objects, and cross-facet error detection.
+- Cognitive Compilation now treats questions as decision-relative evidence
+  acquisition under regret, cost, privacy, risk, and burden; noisy answers use
+  posterior updates, parallel tests, backtracking, and explicit unresolved
+  states without fabricated intensional explanations.
+- Data Engines now owns fast contextual resolution, medium resolver/codebook
+  learning, slow governed atlas publication, physical remapping without
+  semantic migration, same-SOID-or-fail migration, identity-preserving
+  merge/split lineage, and multi-objective release.
+
+The complete mapping remains in `sources/source_notes/qcsa_whitepaper.md`.
+Formal notation, normative record sketches, reference inference protocol,
+seven-workstream evaluation program, baselines, and falsifiers remain explicit
+research objects rather than implied results. QCSA still has no matched-resource
+advantage, general active-question result, semantic-correctness proof,
+production transfer, safety claim, or chapter-core support promotion.
 
 ## Main Architecture Clusters Mined
 

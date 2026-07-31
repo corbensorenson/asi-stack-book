@@ -4,7 +4,7 @@ chapter_id: "durable-semantic-memory-and-knowledge-lattices"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 concept-complete argument-level manuscript"
-last_updated: "2026-07-28"
+last_updated: "2026-07-31"
 primary_sources:
   - "ext_graphrag_2024"
   - "ext_hipporag_2024"
@@ -26,7 +26,7 @@ open_evidence_gaps:
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
 | Manuscript maturity | v0.3 concept-complete argument-level manuscript |
-| Last updated | 2026-07-28 |
+| Last updated | 2026-07-31 |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source loading state | Assigned source notes support mechanism and boundary discussion; all reported outcomes remain source-reported. |
@@ -176,6 +176,38 @@ proposal may act.
 **Non-claim.** Preserving disagreement does not decide which assertion is true, guarantee calibrated belief revision, or make a contradiction resolvable with available evidence.
 
 **Source grounding.** `qcsa_whitepaper` explicitly separates propositions, evidence, provenance, belief state, contradiction, and permitted use. `ext_graphrag_2024` and `ext_hipporag_2024` motivate graph traversal but do not supply governed belief revision. The chapter’s event-sourced revision design remains an argument, not a reproduced result.
+
+### Identity levels and plural atlas geometry
+
+QCSA prevents durable memory from collapsing four different objects into one
+vector key. An **occurrence** is the exact mention, image region, sensor span,
+or code reference in context. A **type** is a reusable abstraction. An
+**instance** is one world or system object. An **expression** composes objects,
+roles, negation, quantity, time, modality, causality, and operators. The word
+“bank,” a river-edge type, one particular bank, and “the fisherman sat on the
+bank yesterday” require different identities and lifecycle rules. Similarity,
+translation, synonymy, and shared function remain evidence for identity—not
+identity itself.
+
+The address atlas is consequently plural. Each facet declares its consumer,
+optimization target, relation and grounding sources, branching/depth policy,
+calibration, migration cadence, and prohibited uses. Paths may be soft,
+variable-depth, mixed-arity, and multi-parent. A boundary object can retain
+several candidate paths until a consumer-specific threshold requires
+commitment. Branching width is chosen against joint compute, serial depth,
+classification error, load balance, migration stability, accelerator fit, and
+semantic-purity cost rather than a universal binary rule.
+
+Plural facets also provide error-detecting redundancy. An ontological path
+suggesting a financial institution while contextual and linguistic facets
+suggest a river edge triggers re-resolution rather than a tidy but wrong
+record. Cross-facet disagreement is not proof that one facet is false; it is a
+typed reason to preserve alternatives, acquire evidence, or abstain. The atlas
+epoch publishes topology, intended consumers, objectives, representative and
+boundary cases, calibration, utilization, migration maps, known collisions,
+blind spots, prohibited uses, signatures, and rollback references. This makes
+semantic organization a governed artifact rather than an invisible side
+effect of embedding training.
 
 ### Retrieval and context assembly
 
