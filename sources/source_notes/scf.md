@@ -321,6 +321,24 @@ consumers, profiles, state, evidence, and effects.
 - §§20–22: ASI implications, open questions, conclusion → RSI Boundaries and
   Open Research Agenda.
 
+## Closure Status
+
+Section-family closure completed 2026-07-31 against the current 84-chapter
+manuscript. Every substantive section and appendix is now assigned to actual
+manuscript integration, retained source-note detail, a research obligation, or
+an explicit boundary. The final repair added profile-specific transfer,
+consequence-bounded canaries, sealed adaptation epochs, toxic-composition
+review, evaluator-overlap vectors, and predecessor-authorized constitutional
+epochs to `stable-capability-fields`.
+
+The reference implementation, pseudocode, formal predicates, proof sketches,
+worked examples, measurement formulas, and empirical protocols remain source
+note or research-program material where reproducing them in chapter prose
+would imply implementation or duplicate the executable-specification,
+benchmark, resource, roadmap, and open-research owners. Closure means no useful
+idea is orphaned; it does not mean SCF is implemented, validated, novel,
+superior, safe, or supported above `argument`.
+
 ## Open Questions
 
 - Which SCF executable fragment should be ported into the book repo first?

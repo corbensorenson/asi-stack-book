@@ -4,7 +4,7 @@ chapter_id: "stable-capability-fields"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.3 proof-program manuscript"
-last_updated: "2026-07-16"
+last_updated: "2026-07-31"
 primary_sources:
   - "scf"
   - "viea"
@@ -33,7 +33,7 @@ open_evidence_gaps:
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
 | Manuscript maturity | v0.3 proof-program manuscript |
-| Last updated | 2026-07-14 |
+| Last updated | 2026-07-31 |
 | Primary source records | `scf`, `viea`, `talos`, `ladon_manhattan`, `moecot`, `ext_capability_based_computer_systems_1984`, `ext_semver_2_0_0`, `ext_slsa_v1_0`, `reflexive_router_whitepaper` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -184,6 +184,66 @@ from the count does not shrink the trust argument. Rich meta-services may
 discover risk, choose evaluators, synthesize clauses, or propose routes, but
 their output must return as a content-bound certificate to the layer that owns
 the corresponding authorization.
+
+### Scoped transfer, bounded canaries, and sealed adaptation
+
+Evidence does not move between profiles because one profile looks “easier” or
+one implementation ranks higher on average. A `ProfileTransferWitness` names
+the exact claim, artifact, relied-upon properties, source and destination
+profiles, consumer-visible differences, preserved counterexamples, statistical
+rule, authority/effect delta, and expiry. Transfer is rejected when the needed
+property is absent, the environment changes the failure surface, or the witness
+depends on the candidate's own unsupported interpretation. This avoids a false
+global ordering in which success for one consumer silently authorizes all
+others.
+
+Likewise, a canary is bounded by consequence rather than traffic fraction. One
+percent of calls can still be catastrophic if the route can publish, spend,
+modify durable state, train descendants, or actuate a high-impact system. The
+canary record therefore caps reachable effects, affected principals, durable
+writes, descendant creation, external commitments, exposure time, and recovery
+burden; it also binds kill criteria and the observer that can exercise them.
+
+High-frequency online learning receives a separate **adaptation epoch**. The
+epoch pins the updater, admitted data and receipts, baseline, state boundary,
+authority and effect ceiling, cumulative risk and query budgets, journal,
+sentinels, checkpoints, expiry, and breach response. Updates may vary inside
+that sealed envelope, but they cannot change the envelope or certify their own
+continuation. A sentinel breach, missing receipt, budget exhaustion, authority
+delta, or journal discontinuity seals the epoch and revokes its token. This
+bounds mechanics and response obligations; it does not guarantee that small
+updates cannot cause abrupt behavior between observations.
+
+### Composition, evaluator dependence, and constitutional change
+
+Individually admissible fields can form a toxic combination. A retriever,
+planner, credential broker, and publisher may each remain inside its local
+contract while their composition creates an undeclared exfiltration or
+publication path. Composition review therefore records assume-guarantee
+claims, shared state, timing, information flows, joint authority, consequence
+budgets, and known toxic sets, then attacks the integration envelope. Unknown
+combinations remain residuals; a finite catalog does not prove open-world
+composition safety.
+
+Evaluator independence is also a vector, not a role label. The qualification
+record exposes overlap in base model, provider, training and evaluation data,
+generated tests, prompts, memory, tools, code, infrastructure, operators,
+organization, incentives, and time. High overlap can narrow the claim, require
+sealed assets or external evidence, or block high-consequence promotion.
+Renaming the same dependency chain “proposer,” “critic,” and “judge” does not
+create independent evidence.
+
+When SCF changes its own constitutional machinery, the membership epoch is
+fixed before the proposal: named public keys and roles, threshold and diversity
+rules, transparency commitment, timelock, predecessor, and effective interval.
+The predecessor epoch authorizes its successor; newly invented keys cannot
+create their own quorum. Emergency authority is asymmetric: it may narrow
+grants, freeze adaptation, revoke routes, isolate state, preserve evidence, or
+select a prequalified recovery path, but it may not add governors, broaden
+ordinary authority, weaken non-waivable clauses, erase events, or permanently
+amend the constitution. Cryptographic thresholding authenticates a decision;
+it does not establish legitimate membership, prevent collusion, or settle who
+should govern.
 
 ### Capability fields as compilation units
 

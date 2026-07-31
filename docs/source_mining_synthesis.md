@@ -59,9 +59,9 @@ source assignment alone does not count.
 
 | State | Sources | Required next operation |
 |---|---|---|
-| Section-family audit complete | `deterministic_capability_compilation`, `platonic_world_model` | Re-open only on paper or chapter drift. |
+| Section-family audit complete | `deterministic_capability_compilation`, `platonic_world_model`, `scf` | Re-open only on paper or chapter drift. |
 | Legacy paper repaired in this pass | `viea` | Re-run chapter/source validation and retain its new section-family map. |
-| Rich note; closure audit still required | `scf`, `qcsa_whitepaper`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `relational_dimension_compiler`, `precision_contract` | Compare every paper section, appendix, algorithm, limitation, and falsifier with actual manuscript prose. SCF's deep note and first missing-mechanism repair landed on 2026-07-31. |
+| Rich note; closure audit still required | `qcsa_whitepaper`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `relational_dimension_compiler`, `precision_contract` | Compare every paper section, appendix, algorithm, limitation, and falsifier with actual manuscript prose. |
 | Legacy system spine; deep note required | `planforge`, `planforge_compiler_arch`, `cognitive_compilation`, `talos`, `vcm_public`, `spinoza`, `spinoza_composer`, `octopus_router`, `rmi`, `cognitive_loop_closure`, `benchmaxxing` | Reconstruct the complete object model and lifecycle before deciding whether prose is missing. |
 | Compression, representation, and substrate; deep note required | `cgs`, `rgs`, `rankfold_neuralfold`, `rankfold_compressor`, `bbvca_v9`, `bbvca_main`, `genesiscode`, `treellm`, `simulation_scaling`, `tokenmana`, `bugbrain` | Preserve equations, decoders, accounting, verification, failure surfaces, and rival representations—not only the compression slogan. |
 | Alignment, verification, context, and execution lineage; deep note required | `alignment_field`, `field_of_god`, `ethica_mechanica`, `eternal_code`, `verification_bandwidth`, `beastbrain`, `beastbrain_timeless`, `aletheia`, `context_engineer`, `black_hole_context_manager`, `ladon_manhattan`, `uat`, `software_magic_grimoire` | Separate operational mechanisms from metaphysics, branding, repeated drafts, unsafe absolutes, and unsupported performance claims; integrate only the durable architecture. `coherence_exchange` remains a separately connector-mined source rather than one of the 44 local paper texts. |
@@ -108,11 +108,42 @@ the effective-property TCB, predecessor-authorized constitutional epochs, and
 asymmetric emergency power. Stable Capability Fields now teaches the goalpost
 firewall, reliance-aware invalidation, and honest TCB accounting directly.
 
-SCF still requires the final closure operation: check every one of its 22
-sections and six appendices against all assigned chapters and route any
-remaining algorithms, empirical obligations, governance limitations, or
-cross-field mechanisms. The source note is no longer the fidelity bottleneck,
-but complete manuscript coverage is not yet asserted.
+SCF's final closure operation is now complete: all 22 sections and six
+appendices were checked against actual manuscript owners. Algorithms, formal
+fragments, measurements, and empirical protocols remain explicitly routed to
+the executable-specification, benchmark, resource, roadmap, and open-research
+programs rather than being copied into prose as implied results.
+
+### SCF section-family closure ledger
+
+| Paper section family | Actual manuscript or durable owner | Disposition and boundary |
+|---|---|---|
+| Abstract and §1 | `stable-capability-fields`; `recursive-self-improvement-boundaries` | Field-as-governed-substitution thesis integrated; no safety or implemented-RSI claim. |
+| §2 design problem and requirements | `stable-capability-fields`; `system-boundaries-and-authority` | Continuity, flat-registry insufficiency, requirements, and non-goals integrated. |
+| §3 prior work and contribution | SCF source note; chapter external comparators | Neutral comparison retained; novelty requires independent literature review. |
+| §4 formal core and normalized ontology | `stable-capability-fields`; `executable-specifications-and-lean-proof-envelope` | Orthogonal states, exact identity, qualification, route validity, and lifecycle predicates integrated; source formulas remain proposed targets. |
+| §5 contracts | `stable-capability-fields` | Clause classes, contract dimensions, debt, goalpost firewall, refinement, and statistical obligations integrated. |
+| §6 implementations, state, boundaries, adaptation | `stable-capability-fields`; `policy-optimization-and-learning-from-feedback`; `data-engines-continual-learning-and-unlearning` | Heterogeneous/fused implementations, field boundaries, state ownership, and sealed adaptation epochs integrated. |
+| §7 evidence registry | `artifact-graphs-audit-logs-and-replay`; `claim-ledgers-and-belief-revision`; SCF chapter | Append-only authority, deterministic views, defeaters, waivers, property invalidation, retention, privacy, and federation integrated. |
+| §8 contextual routing | `routing-heads-and-specialist-cores`; SCF chapter | Untrusted proposal, invocation-time validation, profile transfer, fallback, diversity, and replay boundaries integrated. |
+| §9 tools, effects, authority, information flow | `runtime-adapters-tool-permissions-and-human-approval`; `security-kernel-and-digital-scifs`; SCF chapter | Caller-bound grants, effect/reversibility classes, toxic combinations, information-flow limits, and TOCTOU duties integrated. |
+| §10 evaluator architecture | `spinoza-verification-and-proof-carrying-claims`; `benchmark-ratchets-and-anti-goodhart-evidence`; SCF chapter | Portfolio, dependence vector, adaptive overfit, sealed service, dual-run update, and observability boundaries integrated. |
+| §11 governed improvement lifecycle | `capability-replacement-and-rollback`; `readiness-gates-residual-escrow-and-quarantine`; `governed-operations-incident-command-and-graceful-degradation` | Thirteen-stage lifecycle, consequence canaries, expiry, containment, compensation, fork, and rollback-graph duties integrated. |
+| §12 cross-field composition | SCF chapter; `integrated-reference-architecture` | Assume-guarantee and toxic-composition review integrated; open-world safety remains a residual. |
+| §13 abstraction and institutional evolution | `recursive-self-improvement-boundaries`; `institutions-international-coordination-and-public-legitimacy`; SCF chapter | Contract evolution, appeals, federation, concentration, constitutional epochs, and emergency asymmetry integrated. |
+| §14 TCB and bootstrap | `stable-capability-fields`; `security-kernel-and-digital-scifs`; `model-weight-custody-and-hardware-roots-of-trust` | Four trust strata, property-relative effective TCB, root dual-run, recovery root, and incremental adoption integrated. |
+| §15 threat model | `failure-modes-of-ungoverned-intelligence`; SCF failure modes and source note | Semantic, evidence, registry, authority, state, effect, remote, adaptive, composition, governance, privacy, and strategic threats retained without claiming detection. |
+| §16 conditional properties | `executable-specifications-and-lean-proof-envelope`; SCF invariants | Bounded authority and related arguments retained as conditional targets, not deployed theorems. |
+| §17 reference implementation and cost | `prototype-roadmap`; `resource-economics-and-token-budgets`; SCF source note | Services, records, scaling variables, and total-cost program routed to implementation/research; source-reported checks are not imported as results. |
+| §18 worked examples | SCF source note; SCF chapter examples | Illustrative routing, migration, canary, federation, and recovery cases retained as examples only. |
+| §19 empirical agenda | `benchmark-ratchets-and-anti-goodhart-evidence`; `open-research-agenda-and-bibliography-plan` | Conditions, fields, RQs, ablations, injections, statistics, hypotheses, and disconfirmation routed as research obligations. |
+| §§20–22 | `recursive-self-improvement-boundaries`; `open-research-agenda-and-bibliography-plan`; SCF summary | ASI implications, evaluator regress, plurality, open problems, and limitations integrated or retained open. |
+| Appendices A–E | SCF source note; schema, roadmap, and research owners | Manifest, promotion pseudocode, change checklist, event sketch, and overlap record retained as proposed artifact families. |
+| Appendix F and references | `executable-specifications-and-lean-proof-envelope`; external-source backlog | Executable reference fragment is source-reported only; references require independent primary-source review. |
+
+**Closure result:** SCF has no orphaned substantive section. Its core claim
+remains `argument`; no source-reported formal, implementation, benchmark,
+governance, recovery, safety, or ASI result was promoted.
 
 ## Main Architecture Clusters Mined
 
