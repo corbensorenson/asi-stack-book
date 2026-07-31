@@ -370,6 +370,25 @@ The ledger records forks and unresolved disagreement instead of forcing global
 consistency or one final ontology. This is an architecture proposal from
 `platonic_world_model`, not an implemented belief-revision result.
 
+### Waivers reduce process, not evidence
+
+Full claim extraction is disproportionate for some private, low-risk scratch
+artifacts. VIEA therefore permits an explicit **claim-ledger waiver** binding
+artifact, reason, risk tier, scope, expiry, and approving policy or person. A
+waiver is not a support state and creates no positive evidence. It is forbidden
+for public, executable, safety, legal, medical, financial, benchmark, or other
+high-consequence claims unless the owning policy defines a narrower admissible
+case.
+
+The critical control is downstream reactivation. If a waived draft becomes a
+source for a release, deployment, benchmark, fabrication packet, training
+record, policy, or high-impact decision, its material claims must be extracted
+and reviewed before the dependency is admitted. The waiver cannot flow through
+provenance as inherited trust. Likewise, agreement among correlated models or
+review roles cannot create verified standing; challenge, expiry, failed tests,
+changed dependencies, or contradictory field feedback trigger downgrade or
+review rather than letting an old label persist.
+
 ## Interfaces
 
 1. **Verification Bandwidth** supplies adequacy, attempt, disagreement, and

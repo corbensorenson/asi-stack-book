@@ -336,6 +336,26 @@ residue supports long-horizon memory without preserving every token, but it is
 not automatically a canonical Form, fact, policy, or skill. Promotion still
 passes the appropriate epistemic, semantic, and procedural gates.
 
+### Tool maturity, confidence decay, and revalidation
+
+VIEA prevents the jump from “this pattern recurred” to “the system may execute
+it.” A compiled procedure moves through candidate, draft, shadow, assisted,
+active, certified, and retired states. Promotion requires repeated success
+across more than one context, declared preconditions and postconditions,
+verification, absence or disposition of critical failures, total-cost review,
+fallback, and a named retirement policy. The exact threshold is task- and
+risk-dependent; the example counts in the source are design defaults rather
+than universal laws.
+
+Trust then decays with time since valid use, dependency and runtime changes,
+environment shift, low or changed usage, failed executions, unresolved
+residuals, and changes to the verification suite or consequence tier. Those
+events can force shadow, assisted use, requalification, or retirement.
+Robotics, fabrication, deployment, finance, and security procedures require
+runtime monitoring and failsafe behavior even after certification. A tool is
+procedural memory only while its applicability and evidence remain current;
+otherwise it is a historical artifact with a stale execution hypothesis.
+
 ## Interfaces
 
 Reusable cognition becomes operational through twelve explicit owner

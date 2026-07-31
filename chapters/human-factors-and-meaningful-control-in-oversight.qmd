@@ -515,6 +515,24 @@ flowchart LR
     R -->|no| Q["Clarify / degrade / safe hold"]
 ```
 
+### Qualified review capacity is a governed resource
+
+“Human approval required” is incomplete unless the system knows who may
+approve this consequence, what evidence they received, whether they are
+qualified and independent enough for the role, whether they have time before
+irreversibility, and whether workload or repeated prompts have degraded the
+review. VIEA treats review capacity as a resource envelope: available roles,
+qualification scope, queue length, expected latency, fatigue indicators,
+accessibility needs, conflict state, review budget, and critical-coverage gaps.
+
+This should reduce rather than multiply ritual clicks. Low-risk deltas can be
+batched or governed by pre-approved policy; reversible action can use a lower
+gate; material changes receive concise comparison packets; and critical action
+enters safe hold when no qualified authority is available. Throughput,
+intervention success, missed hazards, false holds, queue delay, reviewer
+burden, and appeal outcomes must be reported together. Human attention is not
+free verification, and a design that needs unlimited review does not scale.
+
 ## Interfaces
 
 Meaningful control is a joined property, so its interface cannot be reduced to

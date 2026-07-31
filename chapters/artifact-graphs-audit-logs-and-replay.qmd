@@ -227,6 +227,29 @@ The context-to-artifact handoff is now explicit: an artifact should not merely s
 
 The graph is also an improvement substrate. Repeated traces can become procedural memory. Failed traces can become residuals. Verified artifacts can become regression coverage.
 
+### Preserve provenance, route relevance
+
+Durability creates its own failure mode: if every scratch decomposition,
+alternative, and intermediate output remains equally active, the graph becomes
+an expensive and hazardous memory dump. VIEA's answer is to separate storage
+custody from context admission. Core artifacts such as commands, claims,
+requirements, decisions, releases, tools, and feedback are retained until an
+owned retirement decision. Support artifacts may be summarized and archived.
+Transient artifacts expire or compress unless a content-bound link connects
+them to a core artifact, decision, residual, tool, or release. Deprecated and
+archived artifacts remain available for lineage but are excluded from default
+routing.
+
+Retention does not authorize retrieval. An active-context selector filters by
+the current command, artifact type, dependency distance, freshness, support
+state, specialist scope, runtime target, permission envelope, and residual
+relevance. Its receipt records both included and materially excluded nodes so
+later reviewers can distinguish a deliberate bounded view from missing
+history. The invariant is concise: **preserve provenance, but route relevance**.
+This is not a deletion guarantee, relevance oracle, or privacy proof; it is the
+interface that lets retention, privacy, context adequacy, and resource cost be
+reviewed separately.
+
 ### Canonical truth, projections, and transitive revocation
 
 Artifact Graphs owns **canonical-truth separation** because supply-chain integrity governs admission and lifecycle policy, while this layer governs the durable dependency graph after admission. A canonical manifest, event log, or content-addressed artifact is not interchangeable with its cache, index, report, dashboard, claim evaluation, promotion label, or public page. Every projection records the canonical artifact ID and digest from which it was derived, its own digest, refresh state, and revocation state.

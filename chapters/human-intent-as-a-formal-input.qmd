@@ -311,6 +311,27 @@ Contract change rules belong in the intent record. A plan that changes allowed m
 
 The state labels matter because they decide what kind of help is allowed. A draft, clarification, plan source, approval request, and rejected residual can all be useful, but they are not the same authority state. Conflating them is how helpful intake turns into hidden power.
 
+### Intent checksum, assumption diff, and the no-silent-authority rule
+
+A form is not the only way to make intent explicit. VIEA proposes a friction
+gradient in which a person can begin with ordinary language while the system
+drafts more structure as consequence rises. For medium- or high-consequence
+work, the intake packet should expose an **intent checksum**—a short statement
+of what outcome the system thinks matters—and an **assumption diff** listing
+the audience, artifact type, evidence standard, tone, time horizon, affected
+parties, and means it inferred. One adversarial prompt asks what the command
+must *not* optimize. The person confirms or corrects the material delta rather
+than rubber-stamping a long generated form.
+
+This does not make the model an intent oracle. The checksum and diff are
+contestable projections of the raw request, and their value is measured by
+material correction rate, missed-authority errors, clarification burden, and
+downstream re-contracts. The governing invariant is sharper than “confirm
+important fields”: **the system may infer structure, but it may not silently
+infer authority**. An ambiguous request can produce a draft contract, options,
+or reversible planning; it cannot silently become publication, spending,
+tool-use, data-access, deployment, fabrication, or actuation permission.
+
 ### Intent intake states
 
 Intent intake should use explicit states:

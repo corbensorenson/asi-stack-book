@@ -375,6 +375,27 @@ contracts, algorithms, threat hypotheses, and ReflexBench plan; it supplies no
 trained router, implementation, benchmark result, effect campaign, or external
 reproduction. The core routing claim remains at `argument`.
 
+### Fast routing policy and slow routing improvement
+
+VIEA contributes a second separation inside the routing layer. A **Fast
+Router** executes the currently admitted policy under hard caps for specialist
+calls, context, tokens, compute, latency, money, human-review requests,
+authority, consequence, and fallback. It stays on the critical path and should
+be deterministic or policy-constrained wherever practical. A **Slow
+Conductor** works asynchronously over logs, outcomes, and residuals to propose
+policy changes, specialist splits or merges, changed defaults, and new
+fallbacks. It does not acquire online effect authority merely because it
+learns from more history.
+
+That division avoids replacing a monolithic model with a monolithic
+orchestrator. It also gives routing failure an owned vocabulary: wrong or
+missing specialist, context under-allocation, context over-allocation,
+unresolved specialist conflict, skipped verifier, over-routing, under-routing,
+and permission mismatch. Each residual binds the admitted policy version,
+candidate set, disqualifications, selected route, costs, terminal outcome, and
+recovery. Slow-lane recommendations return through qualification and change
+control; they cannot edit the live router silently.
+
 ### P4/M6 held-out routing result
 
 The completed P4/M6 campaign supplies a bounded mixed result, not chapter-core

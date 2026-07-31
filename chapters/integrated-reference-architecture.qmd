@@ -628,6 +628,26 @@ only; it is not an implemented router, real effect kernel, safe compiler,
 usefulness result, or whole-stack demonstration. Chapter-core support remains
 `argument`.
 
+### Recomposition is a transaction
+
+Modular decomposition does not guarantee coherent recomposition. VIEA calls
+the resulting failure **contextual shattering**: the planner, code specialist,
+hardware specialist, verifier, and deployment specialist may each satisfy a
+local contract while their combined artifact violates a global interface,
+resource, authority, or recovery obligation. The integrated trace therefore
+needs an `IntegrationContract` binding the global objective, shared
+constraints, required interfaces, runtime target, resource envelope, critical
+invariants, integration tests, failure boundary, and rollback plan.
+
+For consequential work, the specialist bundle is admitted as one transaction.
+No subset crosses into effect merely because it passed locally. If the joined
+state fails, the system preserves the failed bundle and exact incompatibility,
+restores the last known valid checkpoint where restoration is possible,
+records irreversible effects and compensating duties where it is not, creates
+an integration residual, and requires a new whole-system candidate. This adds
+the recomposition complement to routing and planning: locally valid outputs do
+not become executable until the integrated state passes.
+
 ## Interfaces
 
 Twelve owner groups participate without surrendering authority: intent,

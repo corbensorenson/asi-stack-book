@@ -142,6 +142,49 @@ Recovery must be effect-complete. The record identifies the prior implementation
 
 Every decision emits a replacement receipt binding old and new identities, evidence views, authority delta, consumers, state movement, monitors, residuals, recovery trigger and owner, terminal outcome, and support-state non-effect. This is the durable handoff to Capability Replacement and Rollback's transaction protocol.
 
+### Contract debt and the goalpost firewall
+
+A schema-complete field can still be semantically incomplete. SCF classifies
+contract clauses by how they can be enforced or evidenced—mechanical,
+protocol, deterministic, statistical, calibration, runtime-monitorable,
+governance, aspirational, or explanatory—and records every uncovered behavior
+as contract debt with severity, blast radius, monitor gap, owner, compensating
+control, expiry, and closure criterion. Unknown behavior may remain usable
+inside smaller effects, shorter leases, stronger monitoring, or abstention; it
+does not become safe because the manifest has no blank field.
+
+Self-improvement makes contract synthesis adversarial. A candidate could
+propose a weaker definition of success and then “pass.” The **goalpost
+firewall** separates contract and implementation changes into different
+immutable transactions, freezes the motivating candidate, runs old and new
+contracts against anchors, protected counterexamples, known-good and known-bad
+cases, records a semantic/authority/state/evidence diff, and forbids
+retroactive certification solely from the changed norm. Candidate,
+contract-synthesizer, evaluator, and approver overlap is disclosed across
+model, provider, data, tools, prompts, memory, operators, organization, and
+incentives. This blocks the easiest self-ratification path; it does not prove
+that the reviewers chose the right contract.
+
+### Reliance-aware invalidation and the effective trusted base
+
+Requalifying every field after every dependency change is unusable, while
+reusing all old evidence is unsafe. Property-sensitive invalidation follows
+the exact properties on which a qualification relied. But the reliance edge
+and compatibility witness are themselves adversarial artifacts: they require
+provenance, negative tests, review, expiry, and incident history. Unknown or
+disputed dependencies fail wide. A small impact cone is valuable only when the
+unsafe-reuse rate also stays low.
+
+The validator is “small” only relative to a named property. The effective
+trusted base for identity includes hashes, signatures, keys, membership, and
+the event log; for time-bounded invocation it also includes a clock and
+revocation; for authority it includes brokers and isolation; for state-aware
+activation it includes state and recovery services. Omitting those dependencies
+from the count does not shrink the trust argument. Rich meta-services may
+discover risk, choose evaluators, synthesize clauses, or propose routes, but
+their output must return as a content-bound certificate to the layer that owns
+the corresponding authorization.
+
 ### Capability fields as compilation units
 
 Deterministic Capability Compilation makes the field contract executable. Its

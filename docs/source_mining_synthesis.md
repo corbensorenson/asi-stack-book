@@ -1,21 +1,118 @@
 # Source Mining Synthesis
 
-Updated: 2026-06-24
+Updated: 2026-07-31
 
 This report records the source-mining pass used to expand the book from a 16-chapter starter scaffold into a more granular source-of-truth outline. It is a planning and architecture synthesis record, not a replacement for per-source notes. Do not promote claims to `source-derived` solely because they appear here.
 
 ## Coverage
 
-- Inventoried source records: 59.
-- Locally readable cached text exports materially mined: 38.
-- Local project repositories mined in this pass: Project Theseus / SymLiquid RMI from `/Users/corbensorenson/Documents/Theseus-Hive`, and Circle Calculus from `/Users/corbensorenson/Documents/circle math`.
-- Connector-mined in this working session: `coherence_exchange`.
-- Connector-mined earlier in this same project session and reflected in the outline: `vcm_editable`.
-- Conversation-mined v2 packet reviewed locally from `sources/inbox/conversation_mining_v2/`; it is used only as author-intent, terminology, lineage, deduplication, and recovery context.
-- Authenticated or recovery gaps still requiring durable source notes before source-derived claims: `moecot`, `moecot_md`, `road_to_agi`, `coilmoecot`, and `talos_md` variant.
-- The `talos` primary source is readable, so the unusable `talos_md` variant is not a blocker for execution-layer outlining.
+- Current inventory: 463 Corben-side and external source records.
+- Locally readable Corben paper corpus: 44 canonical mining texts—37 cached
+  Google Docs text exports and seven supplied Markdown whitepapers. Paired DOCX
+  files are presentation counterparts, not independent idea sources.
+- Full section-family closure audits already exist for
+  `deterministic_capability_compilation` and `platonic_world_model`.
+- The 2026-07-31 VIEA second pass is the first legacy-paper fidelity repair: it
+  expands the note from a routing summary into a 2,388-word system note and
+  writes previously absent mechanisms into seven canonical chapters.
+- Five recent whitepapers have materially richer notes but still need an exact
+  section-family-to-manuscript closure audit: `qcsa_whitepaper`,
+  `reflexive_router_whitepaper`, `kernel_english_residual_compiler`,
+  `relational_dimension_compiler`, and `precision_contract`.
+- Thirty-six readable legacy papers still have first-pass routing notes rather
+  than full-fidelity notes. Their ideas may be present in chapters, but note
+  existence or manifest assignment is no longer accepted as proof of complete
+  mining.
+- Local project repositories remain separate implementation-lineage sources;
+  this paper-fidelity pass does not convert project history into paper evidence.
+- Conversation packets remain author-intent and recovery context only.
 
-Several Drive-file `.bin` cache entries are Google sign-in pages rather than source exports. They remain useful as inventory records but not as source text. The outline now marks these as connector/recovery sources where relevant.
+Several Drive-file `.bin` entries are sign-in pages rather than readable
+source exports. A readable primary variant may keep the family unblocked, but
+the unread variant cannot supply distinct ideas, version corrections, or
+evidence until recovered.
+
+## Second-pass fidelity standard
+
+The first pass answered “where might this source belong?” The second pass asks
+“did the book preserve the source's complete useful model?” A paper is not
+closed merely because it has a note, appears in Appendix G, or is assigned to
+many chapters. Closure requires every substantive section or tab to terminate
+in one of four explicit states:
+
+1. manuscript integration of its mechanism, invariant, interface, failure, or
+   useful distinction;
+2. source-note retention when detail would duplicate or overload the chapter;
+3. a concrete research obligation for an algorithm, artifact, experiment,
+   baseline, or unresolved proposition; or
+4. an explicit boundary for non-goals, superseded variants, illustrative
+   material, metaphysics, or unsupported claims.
+
+The deep note must preserve claim boundaries, conceptual primitives,
+mechanisms, interfaces, state machines, assumptions, conditional results,
+algorithms, implementation stages, evidence, falsifiers, baselines, threats,
+governance costs, cross-paper tensions, and section-family coverage. The
+manuscript audit then searches the actual prose for the transferred concept;
+source assignment alone does not count.
+
+### Fidelity register
+
+| State | Sources | Required next operation |
+|---|---|---|
+| Section-family audit complete | `deterministic_capability_compilation`, `platonic_world_model` | Re-open only on paper or chapter drift. |
+| Legacy paper repaired in this pass | `viea` | Re-run chapter/source validation and retain its new section-family map. |
+| Rich note; closure audit still required | `scf`, `qcsa_whitepaper`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `relational_dimension_compiler`, `precision_contract` | Compare every paper section, appendix, algorithm, limitation, and falsifier with actual manuscript prose. SCF's deep note and first missing-mechanism repair landed on 2026-07-31. |
+| Legacy system spine; deep note required | `planforge`, `planforge_compiler_arch`, `cognitive_compilation`, `talos`, `vcm_public`, `spinoza`, `spinoza_composer`, `octopus_router`, `rmi`, `cognitive_loop_closure`, `benchmaxxing` | Reconstruct the complete object model and lifecycle before deciding whether prose is missing. |
+| Compression, representation, and substrate; deep note required | `cgs`, `rgs`, `rankfold_neuralfold`, `rankfold_compressor`, `bbvca_v9`, `bbvca_main`, `genesiscode`, `treellm`, `simulation_scaling`, `tokenmana`, `bugbrain` | Preserve equations, decoders, accounting, verification, failure surfaces, and rival representations—not only the compression slogan. |
+| Alignment, verification, context, and execution lineage; deep note required | `alignment_field`, `field_of_god`, `ethica_mechanica`, `eternal_code`, `coherence_exchange`, `verification_bandwidth`, `beastbrain`, `beastbrain_timeless`, `aletheia`, `context_engineer`, `black_hole_context_manager`, `ladon_manhattan`, `uat`, `software_magic_grimoire` | Separate operational mechanisms from metaphysics, branding, repeated drafts, unsafe absolutes, and unsupported performance claims; integrate only the durable architecture. |
+
+The register is an honest queue, not a deferral license. When a paper yields a
+useful idea with a canonical owner, that idea moves into the book in the same
+mining pass. A new chapter is considered only when no existing chapter can own
+the distinct interface, invariant, artifact family, or failure mode without
+blurring responsibilities.
+
+## VIEA fidelity repair: what the first pass lost
+
+The earlier VIEA note preserved the headline intent-to-execution loop but not
+the expanded paper's control structure. The second pass recovered and placed:
+
+- intent checksums, assumption diffs, misalignment probes, and the rule that
+  structure may be inferred but authority may not;
+- artifact retention classes, hash-linked survival, and active-context
+  selection under the rule “preserve provenance, route relevance”;
+- expiring claim waivers whose downstream use requires reactivation, plus an
+  epistemic-collapse boundary against model-only consensus;
+- qualified approval capacity, queue, latency, fatigue, and review budgets;
+- a policy-constrained Fast Router separated from an asynchronous Slow
+  Conductor, with a typed routing-residual taxonomy;
+- contextual shattering and transactional whole-system integration; and
+- candidate-to-certified tool maturity, confidence decay, rot, revalidation,
+  and retirement.
+
+These concepts now live in Human Intent, Artifact Graphs, Claim Ledgers, Human
+Factors, Routing Heads, Procedural Memory, and Integrated Reference
+Architecture. They remain design arguments; the mining repair creates no
+implementation, benchmark, safety, or support-state result.
+
+## SCF fidelity repair: first recovered depth
+
+The initial SCF note named exact identity, expiring qualification, route
+validation, state migration, adaptation, federation, and constitutional
+governance, but compressed away several mechanisms that determine whether the
+architecture resists self-ratification. The deep note now preserves contract
+clause classes and debt, the goalpost firewall, property-sensitive
+invalidation with adversarial reliance metadata, profile-specific transfer,
+independence vectors, consequence-bounded canaries, sealed adaptation epochs,
+the effective-property TCB, predecessor-authorized constitutional epochs, and
+asymmetric emergency power. Stable Capability Fields now teaches the goalpost
+firewall, reliance-aware invalidation, and honest TCB accounting directly.
+
+SCF still requires the final closure operation: check every one of its 22
+sections and six appendices against all assigned chapters and route any
+remaining algorithms, empirical obligations, governance limitations, or
+cross-field mechanisms. The source note is no longer the fidelity bottleneck,
+but complete manuscript coverage is not yet asserted.
 
 ## Main Architecture Clusters Mined
 
