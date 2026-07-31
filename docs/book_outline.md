@@ -4298,7 +4298,7 @@ Source loading queue:
 | Learning taxonomy | `ext_safe_reinforcement_learning_survey_2015` | Use for constrained objective and safe-exploration taxonomy; a survey does not validate a deployed controller. |
 
 
-| Manifest assignment reconciliation | `ext_ai_simulation_digital_twins_2025`, `viea` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `rmi`, `ext_ai_simulation_digital_twins_2025`, `viea` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Separate deliberative policy, trajectory or action proposal, safety filter,

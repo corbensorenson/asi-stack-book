@@ -6,6 +6,7 @@ status: "conceptual"
 draft_maturity: "v0.3 concept-complete argument-level manuscript"
 last_updated: "2026-07-28"
 primary_sources:
+  - "rmi"
   - "ext_gemini_robotics_2025"
   - "ext_foundation_robotics_physical_risk_2025"
   - "ext_control_barrier_functions_2019"
@@ -29,7 +30,7 @@ open_evidence_gaps:
 | Manuscript maturity | v0.1 integrated argument chapter |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source loading state | Five external records cover generalist robotics, foundation-model physical risks, barrier-function safety filters, independent runtime fallback, and safe-RL taxonomy. All reported results remain external. |
+| Source loading state | One passage-reviewed Corben architecture source supplies hierarchical embodied logging, and five external records cover generalist robotics, foundation-model physical risks, barrier-function safety filters, independent runtime fallback, and safe-RL taxonomy. No local physical or logging result is claimed. |
 | Test state | Simulation-to-low-energy-hardware campaign specified; no plant, controller, fault, or person observed. |
 
 ## Drafting guardrail
@@ -269,6 +270,41 @@ stateDiagram-v2
     Recover --> Deliberate: plant state verified
 ```
 
+### Hierarchical logs without evidence amnesia
+
+Ratcheting Modular Intelligence identifies a practical mismatch between
+embodied telemetry and capability learning. Camera, lidar, IMU, force, motor,
+localization, controller, and power streams are too large and too weakly typed
+to feed directly into loop discovery, yet an event summary alone may discard
+the precursor that later explains an accident. The logging surface therefore
+keeps five linked representations:
+
+| Representation | Primary use | Characteristic failure |
+|---|---|---|
+| Raw telemetry | Plant replay, forensics, calibration, and new detector development. | Excess storage and privacy exposure; unindexed volume can still be unusable. |
+| Event log | Salient transitions such as contact, slip, gate failure, reflex, hold, or recovery. | Detector blind spots omit events that were not anticipated. |
+| Semantic trace | Objects, landmarks, relations, task and environment state, and uncertainty. | Learned interpretation can rewrite ambiguous observation as fact. |
+| Skill trace | Active planner, controller, tool, specialist, configuration, and authority lease. | A nominal skill label can hide the actual command path. |
+| Residual log | Surprises, prediction errors, monitor violations, unsafe margins, failed recovery, and unresolved effects. | Taxonomy errors can route a real incident into a low-severity bucket. |
+
+All five share a synchronized trace identity and clock model so a semantic
+event can be joined back to the responsible command, controller, lease, raw
+window, observation age, actuator acknowledgement, effect, and recovery. A
+bounded raw ring buffer preserves pre-trigger and post-trigger windows around
+hazards, anomalies, random audit samples, operator interventions, and policy
+changes. The retention policy names which triggers pin data, which consumers
+need which fidelity, what may be summarized or deleted, and which privacy,
+rights, security, and access constraints apply.
+
+Compression is not neutral. Every event extractor, semantic encoder, and log
+retention rule declares expected information loss, missingness, version,
+dependencies, and fallback. Qualification includes incident-reconstruction
+recall, false and missed triggers, clock drift, cross-layer join completeness,
+raw-to-summary discrepancy, replay fidelity, storage and bandwidth, detector
+latency, privacy exposure, and whether independently written queries can still
+recover the causal precursor. “Enough logging to debug” is a measured,
+hazard-specific claim—not a consequence of having an event table.
+
 ### Required artifacts
 
 ```text
@@ -500,6 +536,7 @@ These rows keep Embodied Agency, Real-Time Control, and Physical Safety's manife
 
 | Source | Intake role | Boundary |
 |---|---|---|
+| `rmi` | Passage-reviewed comparator: Ratcheting Modular Intelligence. Supplies a hierarchical embodied-log design separating raw telemetry, salient events, semantic state, active skill/controller identity, and residuals so loop learning and safety review do not consume an undifferentiated sensor stream. | Conceptual architecture only; no logger, event detector, semantic encoder, raw-ring buffer, trace join, incident reconstruction, storage result, privacy result, physical controller, or hardware campaign has been implemented or measured. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_ai_simulation_digital_twins_2025` | Passage-reviewed comparator: AI Simulation by Digital Twins: Systematic Survey, Reference Framework, and Mapping to a Standardized Architecture. Surveys AI-enabled simulation and digital-twin patterns relevant to plant models, telemetry synchronization, scenario testing, and sim-to-real residuals. | A digital twin is a maintained model, not the physical system; fidelity, synchronization, coverage, and transfer must be measured for each use. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->

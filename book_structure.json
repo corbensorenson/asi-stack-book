@@ -6880,15 +6880,17 @@
           "claim_source_mappings": [
             {
               "source_id": "rmi",
-              "mapped_support": "Supplies conceptual campaign vocabulary for benchmark pressure, routed specialist attempts, residual escrow, negative knowledge, regression preservation, lifecycle review, and harder-frontier selection.",
-              "limits": "Conceptual architecture only; no RMI campaign, candidate generator, search result, useful novelty, transfer, safety, or deployed improvement is reproduced here.",
+              "mapped_support": "Supplies conceptual campaign vocabulary for pressure-to-structure cycles, preserved residuals, an ordered benchmark/data/training/inference/loop-closure/bridge/architecture intervention ladder, regression-floor inheritance, modular lifecycle review, and harder-frontier selection.",
+              "limits": "Conceptual architecture only; no RMI campaign, intervention comparison, candidate generator, search result, useful novelty, transfer, safety, or deployed improvement is reproduced here.",
               "passage_review_state": "reviewed",
               "passage_refs": [
-                "sources/source_notes/rmi.md:11-32",
-                "sources/source_notes/rmi.md:34-55",
-                "sources/source_notes/rmi.md:57-66"
+                "sources/raw/google_docs/rmi.txt:136-160",
+                "sources/raw/google_docs/rmi.txt:213-315",
+                "sources/raw/google_docs/rmi.txt:874-919",
+                "sources/raw/google_docs/rmi.txt:1226-1295",
+                "sources/raw/google_docs/rmi.txt:1299-1375"
               ],
-              "passage_review_note": "Reviewed the complete source note for ratcheting modular growth, routed attempts, residual escrow, regression floors, specialist lifecycle, negative knowledge, and harder-frontier selection; no empirical improvement or implementation claim is imported."
+              "passage_review_note": "Reviewed the complete local raw cache for pressure/attempt/residual/compression/verification cycles, intervention ordering, residual inheritance, bridge frontiers, architecture hypotheses, lifecycle failures, metrics, phase ordering, and non-claims; no improvement campaign or architecture advantage is promoted."
             },
             {
               "source_id": "cognitive_loop_closure",
@@ -12994,6 +12996,7 @@
           "evidence_level": "argument",
           "claim_label": "Design rationale",
           "source_ids": [
+            "rmi",
             "ext_gemini_robotics_2025",
             "ext_foundation_robotics_physical_risk_2025",
             "ext_control_barrier_functions_2019",
@@ -13012,7 +13015,8 @@
               "ext_ai_simulation_digital_twins_2025"
             ],
             "supporting": [
-              "viea"
+              "viea",
+              "rmi"
             ],
             "variants": [],
             "connector_or_recovery": [],
@@ -13092,6 +13096,19 @@
                 "sources/source_notes/viea.md"
               ],
               "passage_review_note": "Reviewed as local runtime and effect-trace lineage only; no physical-safety support.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "rmi",
+              "mapped_support": "Supplies a hierarchical embodied-log design separating raw telemetry, salient events, semantic state, active skill/controller identity, and residuals so loop learning and safety review do not consume an undifferentiated sensor stream.",
+              "limits": "Conceptual architecture only; no logger, event detector, semantic encoder, raw-ring buffer, trace join, incident reconstruction, storage result, privacy result, physical controller, or hardware campaign has been implemented or measured.",
+              "passage_refs": [
+                "sources/raw/google_docs/rmi.txt:997-1028",
+                "sources/raw/google_docs/rmi.txt:1178-1222",
+                "sources/raw/google_docs/rmi.txt:1276-1288",
+                "sources/raw/google_docs/rmi.txt:1349-1365"
+              ],
+              "passage_review_note": "Reviewed the complete local raw cache for high-bandwidth embodied streams, raw/event/semantic/skill/residual log roles, the joint storage budget, reflex gaps, runtime tiers, system metrics, safety controls, and the implementation boundary; no physical or logging result is promoted.",
               "passage_review_state": "reviewed"
             }
           ],
@@ -21429,8 +21446,8 @@
             },
             {
               "source_id": "rmi",
-              "mapped_support": "Supports preserving floors while moving frontiers through benchmark pressure, routed specialist attempts, residual escrow, regression preservation, harder frontiers, mastery thresholds, and lifecycle discipline.",
-              "limits": "Conceptual architecture source only here; no independent reproduction, benchmark run, prototype inspection, specialist-arm evaluation, router benchmark, safety result, or capability result is recorded.",
+              "mapped_support": "Supports preserving floors while moving frontiers through benchmark pressure, routed specialist attempts, residual escrow, regression preservation, harder frontiers, public/internal calibration separation, prospectively bounded mastery-threshold decay, critical-failure vetoes, and a benchmark/data/training/inference/loop-closure/bridge/architecture intervention ladder.",
+              "limits": "Conceptual architecture source only here; its threshold values and intervention ordering are proposed policy inputs, and no independent reproduction, benchmark run, intervention comparison, prototype inspection, specialist-arm evaluation, router benchmark, safety result, or capability result is recorded.",
               "passage_refs": [
                 "sources/raw/google_docs/rmi.txt:10-25",
                 "sources/raw/google_docs/rmi.txt:72-88",
@@ -21440,13 +21457,14 @@
                 "sources/raw/google_docs/rmi.txt:418-448",
                 "sources/raw/google_docs/rmi.txt:736-843",
                 "sources/raw/google_docs/rmi.txt:846-870",
+                "sources/raw/google_docs/rmi.txt:874-919",
                 "sources/raw/google_docs/rmi.txt:1074-1129",
                 "sources/raw/google_docs/rmi.txt:1156-1222",
                 "sources/raw/google_docs/rmi.txt:1226-1245",
                 "sources/raw/google_docs/rmi.txt:1330-1348",
                 "sources/raw/google_docs/rmi.txt:1379-1406"
               ],
-              "passage_review_note": "Reviewed local raw cache for pressure-to-structure loop, benchmark ratcheting, regression floors, residual escrow, specialist routing, benchmark lifecycle, mastery thresholds, critical-failure vetoes, public calibration, benchmark/model/residual ledgers, metrics, failure modes, implementation phases, and non-claims; no RMI prototype or benchmark result is promoted.",
+              "passage_review_note": "Reviewed the complete local raw cache for pressure-to-structure loops, benchmark lifecycle, mastery decay and vetoes, residual escrow, public calibration, the seven-level intervention ladder, bridge frontiers, architecture hypotheses, benchmark/model/tool/residual ledgers, metrics, failure modes, implementation phases, and non-claims; no RMI prototype, intervention comparison, or benchmark result is promoted.",
               "passage_review_state": "reviewed"
             },
             {
@@ -22520,9 +22538,13 @@
               "mapped_support": "Supports regression-floor, residual-escrow, routed-attempt, benchmark-pressure, and lifecycle vocabulary for retaining discrepancies and failed evaluations rather than deleting them.",
               "limits": "Conceptual architecture source only; no model, router, evaluator, sandbagging probe, deception result, mitigation, or safety result was reproduced.",
               "passage_refs": [
-                "sources/source_notes/rmi.md:1-68"
+                "sources/raw/google_docs/rmi.txt:136-160",
+                "sources/raw/google_docs/rmi.txt:736-842",
+                "sources/raw/google_docs/rmi.txt:1074-1174",
+                "sources/raw/google_docs/rmi.txt:1226-1295",
+                "sources/raw/google_docs/rmi.txt:1379-1406"
               ],
-              "passage_review_note": "Reviewed the full raw-cache-backed source note for ratchet, regression, residual, and lifecycle interfaces; no independent reproduction, evaluation campaign, or mitigation exists here.",
+              "passage_review_note": "Reviewed the complete local raw cache for residual escrow, critical-failure vetoes, regression preservation, benchmark and residual ledgers, tail erasure, benchmark gaming, failure retention, and non-claims; the paper contains no deception or sandbagging experiment.",
               "passage_review_state": "reviewed"
             },
             {
