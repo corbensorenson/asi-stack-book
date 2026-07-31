@@ -257,6 +257,52 @@ changes to source, snapshot, address atlas, policy, authority, rights,
 evaluator, environment, consumer, or target use expire affected receipts and
 require revalidation or an explicit residual.
 
+### Four planes, six identities, and orthogonal outcomes
+
+VCM's shorter public specification supplies a useful trust decomposition. The
+**ledger plane** stores immutable objects, versions, relations, validation,
+capability, retention, and materialization state. The fallible **judgment
+plane** proposes segmentation, discovery, contracts, semantic coverage,
+contradictions, and review. The smaller **kernel plane** authenticates
+obligations, checks authorization, pins snapshots, invokes bounded selection,
+filters faults, signs messages, and enforces coherence. The **model plane**
+receives the compiled packet and proposes text or actions; current external
+effects still pass through the runtime authority gate.
+
+This split prevents deterministic-control theater. A kernel can enforce the
+wrong source-authority label perfectly. A semantic judge can identify the right
+obligation but cannot grant itself storage, disclosure, behavioral, or action
+authority. The trusted computing base and the larger trusted judgment base are
+therefore named separately, along with their independent failure and recovery
+routes.
+
+Six identities keep dynamic state from masquerading as memory content:
+`ObjectID` names the governed semantic object; `VersionID` names immutable
+content and ancestry; `RepresentationID` names one task-relative view;
+`ValidationID` names one assessment under a snapshot, policy, authorization,
+time, and validator; `PacketID` names the admitted logical set before provider
+adaptation; and `MaterializationID` names the actual messages, bytes, tokens,
+prefix, or runtime cache. A revocation may invalidate validation, packet, and
+materialization without changing the historical object version.
+
+The result contract is likewise a product of states rather than one `success`
+flag:
+
+| Dimension | Representative states | Boundary |
+|---|---|---|
+| adequacy | satisfied, unsatisfied, unknown | whether one representation meets one obligation |
+| admission | final, provisional, deferred, rejected | whether and how it may enter this packet |
+| feasibility | feasible, proven infeasible, unknown | whether the protected set can fit |
+| optimality | proven optimal, bounded gap, best effort, not applicable | what is known about selector quality |
+| compilation | ready/provisional packet, ask, abstain, deny, unsafe fit, retry | the caller's next safe route |
+| lifecycle | validated, stale/dirty, invalid, purged | whether an existing view may still be reused |
+
+A timeout cannot become `proven_infeasible`; an admitted planning brief cannot
+become adequate evidence; a best-effort packet cannot be narrated as optimal;
+and a purged cache does not prove that every descendant or trained influence
+was erased. Preserving this outcome algebra is more important than preserving
+the source's exact enum spelling.
+
 ### Retrieval-augmented generation is a governed pipeline, not a feature toggle
 
 RAG is often described as “search, add passages to the prompt, generate.” That
@@ -751,6 +797,42 @@ evaluators must label source obligations, actual packet content, model use,
 task outcomes, faults, costs, and delayed residuals; inject staleness,
 poisoning, omission, authority, cache, and frontier attacks; rerun from locked
 artifacts; and transfer to a second model and memory backend.
+
+### What the VCM source-reported evidence establishes
+
+The shorter VCM paper reports a synthetic fault-injection result that should be
+preserved at its exact boundary. Every trial activates one of seven modeled
+fault families. Under mostly oracle source-authority labels, twenty paired
+seeds with 10,000 activated-fault trials per seed report mean severity-weighted
+unsafe rates of 77.51 percent for a typed compiler, 3.29 percent for a
+point-hardened typed compiler, and 0.44 percent for VCM Core. On the combined
+authorization/invalidation check-use race, the reported rates are 44.60,
+15.87, and 0 percent. Injecting 5 percent source-authority label error raises
+the VCM result to 2.00 percent.
+
+This is conditional mechanism evidence, not a prevalence, natural-task,
+semantic-front-end, model-quality, security, or production result. Its narrow
+lesson is that one declared cross-layer binding can prevent modeled races that
+isolated checks miss under the study's assumptions, while wrong labels remain
+an unsafe path. The source's conformance suite similarly establishes one
+implementation's declared behavior rather than independent interoperability.
+
+The source also preserves a result that should remain unknown. A stronger
+eight-seed tiny-model study did not reproduce an earlier favorable packet-
+format ranking: accuracy stayed near floor, five paired seeds tied, and the
+tests did not distinguish the strong typed composite from full VCM. That pilot
+does not show VCM packets are worse for real pretrained models. It shows that
+the source has no reliable model-facing packet-format result. Stable identity,
+source escalation, scoped preference, negative memory, invalidation, and typed
+infeasibility remain separable control-plane hypotheses.
+
+The decisive next comparison freezes the protocol before annotation, uses
+natural or independently authored histories and at least two frozen
+instruction-tuned model families, matches admitted content and budgets, adds a
+strong typed-memory-plus-compiler baseline and a released close neighbor,
+attributes errors by stage, and charges review, storage, maintenance, privacy,
+latency, and developer cost. A simpler design that matches the useful and
+governance outcomes at lower total burden should replace or narrow VCM.
 
 ## Mature Research Target
 

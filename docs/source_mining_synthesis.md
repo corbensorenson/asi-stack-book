@@ -10,18 +10,18 @@ This report records the source-mining pass used to expand the book from a 16-cha
 - Locally readable Corben paper corpus: 44 canonical mining texts—37 cached
   Google Docs text exports and seven supplied Markdown whitepapers. Paired DOCX
   files are presentation counterparts, not independent idea sources.
-- Full section-family closure audits now exist for twelve papers:
+- Full section-family closure audits now exist for thirteen papers:
   `deterministic_capability_compilation`, `platonic_world_model`, `scf`,
   `qcsa_whitepaper`, `reflexive_router_whitepaper`,
   `kernel_english_residual_compiler`, `relational_dimension_compiler`, and
   `precision_contract`, `planforge`, `planforge_compiler_arch`, and
-  `cognitive_compilation`, and `talos`.
+  `cognitive_compilation`, `talos`, and `vcm_public`.
 - The 2026-07-31 VIEA second pass is the first legacy-paper fidelity repair: it
   expands the note from a routing summary into a 2,388-word system note and
   writes previously absent mechanisms into seven canonical chapters.
 - Every recent rich whitepaper in this audit now has an exact
   section-family-to-manuscript closure audit.
-- Thirty-one readable legacy papers still have first-pass routing notes rather
+- Thirty readable legacy papers still have first-pass routing notes rather
   than full-fidelity notes. Their ideas may be present in chapters, but note
   existence or manifest assignment is no longer accepted as proof of complete
   mining.
@@ -61,9 +61,9 @@ source assignment alone does not count.
 
 | State | Sources | Required next operation |
 |---|---|---|
-| Section-family audit complete | `deterministic_capability_compilation`, `platonic_world_model`, `scf`, `qcsa_whitepaper`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `relational_dimension_compiler`, `precision_contract`, `planforge`, `planforge_compiler_arch`, `cognitive_compilation`, `talos` | Re-open only on paper or chapter drift. |
+| Section-family audit complete | `deterministic_capability_compilation`, `platonic_world_model`, `scf`, `qcsa_whitepaper`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `relational_dimension_compiler`, `precision_contract`, `planforge`, `planforge_compiler_arch`, `cognitive_compilation`, `talos`, `vcm_public` | Re-open only on paper or chapter drift. |
 | Legacy paper repaired in this pass | `viea` | Re-run chapter/source validation and retain its new section-family map. |
-| Legacy system spine; deep note required | `vcm_public`, `spinoza`, `spinoza_composer`, `octopus_router`, `rmi`, `cognitive_loop_closure`, `benchmaxxing` | Reconstruct the complete object model and lifecycle before deciding whether prose is missing. |
+| Legacy system spine; deep note required | `spinoza`, `spinoza_composer`, `octopus_router`, `rmi`, `cognitive_loop_closure`, `benchmaxxing` | Reconstruct the complete object model and lifecycle before deciding whether prose is missing. |
 | Compression, representation, and substrate; deep note required | `cgs`, `rgs`, `rankfold_neuralfold`, `rankfold_compressor`, `bbvca_v9`, `bbvca_main`, `genesiscode`, `treellm`, `simulation_scaling`, `tokenmana`, `bugbrain` | Preserve equations, decoders, accounting, verification, failure surfaces, and rival representations—not only the compression slogan. |
 | Alignment, verification, context, and execution lineage; deep note required | `alignment_field`, `field_of_god`, `ethica_mechanica`, `eternal_code`, `verification_bandwidth`, `beastbrain`, `beastbrain_timeless`, `aletheia`, `context_engineer`, `black_hole_context_manager`, `ladon_manhattan`, `uat`, `software_magic_grimoire` | Separate operational mechanisms from metaphysics, branding, repeated drafts, unsafe absolutes, and unsupported performance claims; integrate only the durable architecture. `coherence_exchange` remains a separately connector-mined source rather than one of the 44 local paper texts. |
 
@@ -375,6 +375,35 @@ Invented thresholds, performance percentages, latency/TCO figures, compliance
 alignment, standards status, non-repudiation, and security absolutes remain
 unverified proposals. No implementation, benchmark, security, privacy, replay,
 compliance, deployment, support, or ASI claim moved.
+
+## VCM section-family closure result
+
+The VCM cache contains two related papers: a shorter evidence-bearing public
+protocol and a denser architecture/VCM-Bench research specification. The deep
+audit reconciles them as one lineage. It preserves the object/version/
+representation/validation/packet/materialization identity split; ledger,
+judgment, kernel, and model planes; role-indexed obligations; authenticated
+stabilization; protected joint compilation; exact-decode versus semantic-
+materialization boundary; planner-guided staging; context faults and switching;
+transactions, cache coherence, deletion closure, wire protocol, security,
+reference algorithms, all nineteen invariants, and the complete benchmark
+program.
+
+The manuscript now adds the missing four-plane trust split and six-identity,
+six-dimension outcome algebra to Virtual Context ABI. It also records the
+source-reported activated-fault result at its exact conditional boundary and
+the stronger eight-seed packet pilot as an uninformative non-replication rather
+than a negative verdict. Durable Semantic Memory now owns decision-time
+observable retention manifests and the future-query barrier: later questions,
+answers, gold dependencies, and hindsight page boundaries cannot leak into the
+deployable memory policy, and future-aware oracle utility remains separate.
+
+The reported 77.51/3.29/0.44 percent synthetic unsafe-rate comparison and
+combined-race result remain conditional on activated faults and mostly oracle
+authority labels; label-error sensitivity remains explicit. No natural
+long-horizon, semantic-front-end, model-facing packet, independent
+interoperability, deletion/unlearning, security, privacy, production-cost,
+deployment, support, or ASI claim moved.
 
 ## Main Architecture Clusters Mined
 

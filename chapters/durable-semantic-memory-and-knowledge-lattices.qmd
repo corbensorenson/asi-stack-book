@@ -6,6 +6,7 @@ status: "conceptual"
 draft_maturity: "v0.3 concept-complete argument-level manuscript"
 last_updated: "2026-07-31"
 primary_sources:
+  - "vcm_public"
   - "ext_graphrag_2024"
   - "ext_hipporag_2024"
   - "ext_mem0_2025"
@@ -223,6 +224,23 @@ effect of embedding training.
 
 **Mechanism.** Model retention as separate authorities over storage, retrieval, use, training influence, behavioral expression, privacy, backups, and legal or audit preservation. A deletion event identifies the object, purpose, affected derivatives, indexes, caches, checkpoints, backups, and consumers; each returns a disposition and residual. Tombstones and minimal accountability records may remain where authorized so a forbidden object is not silently reintroduced, while content access is removed according to the governing duty.
 
+A learned retention or compression policy also freezes a **decision-time
+observable manifest**. It may use only the events, features, page boundaries,
+source roles, policy state, and costs actually available when the choice was
+made. Later queries, answers, gold evidence labels, benchmark dependency
+annotations, and post-decision page boundaries attach to a separate hindsight
+record for learning and counterfactual analysis; they do not rewrite the
+original manifest. A future-aware oracle is reported as an upper bound, never
+as the deployable policy.
+
+This barrier matters because a memory system can appear prescient when its
+summaries, retention labels, page boundaries, or value model were built with
+knowledge of the later question. Evaluation must replay the decision from the
+frozen observable record, report blind utility and oracle gap separately, and
+include delayed utility, distribution shift, costly reacquisition, stale
+evidence, and resurfacing of rarely used but consequential pages. Low past
+retrieval frequency alone cannot authorize permanent deletion.
+
 **Failure mode.** Deleting one database row can leave embeddings, summaries, caches, model influence, and backups active. Conversely, claiming complete erasure may conflict with audit obligations, while an overbroad tombstone can reveal that sensitive content existed. Behavioral absence on a probe can be mistaken for influence or storage erasure.
 
 **Non-claim.** Retrieval suppression does not prove storage deletion, model unlearning, privacy repair, causal influence removal, or irrecoverability from every descendant.
@@ -352,6 +370,7 @@ Planned formalization route: `lean:durable-semantic-memory-and-knowledge-lattice
 
 | Source ID | Title | Bounded use |
 |---|---|---|
+| `vcm_public` | Virtual Context Memory | Passage-reviewed Corben architecture for immutable events and semantic pages, representation graphs, contradiction/rejection memory, decision-time observable retention features, anti-starvation, invalidation, deletion closure, and blind-policy versus future-aware-oracle separation. Its activated-fault study and uninformative packet pilot do not establish durable-memory truth, retention-policy quality, natural outcomes, deletion/unlearning completeness, privacy, or chapter-core support. |
 | `qcsa_whitepaper` | Question-Compiled Semantic Addressing | Corben-authored semantic-control-plane lineage for stable object identity, versioned addresses, evidence-bearing hypergraphs, lifecycle migration, and explicit residuals. Its bounded local artifacts do not establish durable memory truth, deletion completeness, restart equivalence, retrieval quality, or production transfer. |
 | `ext_graphrag_2024` | From Local to Global: A Graph RAG Approach to Query-Focused Summarization | Primary GraphRAG comparator for LLM-derived entity graphs, community summaries, and global corpus questions; generated graph and summary layers remain fallible derived representations and do not establish truth, complete coverage, local adequacy, or an ASI Stack memory result. |
 | `ext_hipporag_2024` | HippoRAG: Neurobiologically Inspired Long-Term Memory for Large Language Models | Primary NeurIPS comparator for knowledge-graph retrieval with Personalized PageRank and single-step associative navigation; reported multi-hop QA gains do not establish durable truth, update correctness, resistance to poisoning, local reproduction, or a general memory system. |

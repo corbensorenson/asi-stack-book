@@ -3325,6 +3325,7 @@ Source loading queue:
 | Role | Source IDs | Loading instruction |
 |---|---|---|
 | Primary | `ext_graphrag_2024`, `ext_hipporag_2024`, `ext_mem0_2025`, `ext_titans_2025` | Use the assigned source notes for bounded mechanism, comparator, failure, and limitation context. Source-reported results remain distinct from local evidence. |
+| Supporting | `vcm_public` | Use the passage-reviewed VCM lineage for semantic-page lifecycle, decision-time observability, anti-starvation, contradiction/rejection memory, invalidation, and deletion closure. Keep its synthetic control-plane result and packet-format non-result at their exact source-reported boundaries. |
 
 
 | Manifest assignment reconciliation | `qcsa_whitepaper` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |

@@ -9451,6 +9451,7 @@
           "claim_label": "Design rationale",
           "source_ids": [
             "qcsa_whitepaper",
+            "vcm_public",
             "ext_graphrag_2024",
             "ext_hipporag_2024",
             "ext_mem0_2025",
@@ -9513,12 +9514,24 @@
               "ext_mem0_2025",
               "ext_titans_2025"
             ],
-            "supporting": [],
+            "supporting": [
+              "vcm_public"
+            ],
             "variants": [],
             "connector_or_recovery": [],
             "handoff_or_recovery_notes": []
           },
           "claim_source_mappings": [
+            {
+              "source_id": "vcm_public",
+              "mapped_support": "Passage-reviewed VCM lineage for durable semantic objects and immutable events, representation graphs, contradiction and rejection memory, decision-time observable retention features, anti-starvation, invalidation, deletion closure, and the barrier between deployable blind memory policy and future-aware oracle labels.",
+              "limits": "The source reports a bounded synthetic control-plane study and an uninformative packet pilot, not durable-memory truth, retention-policy quality, natural long-horizon outcomes, deletion or unlearning completeness, privacy, deployment, or chapter-core support.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/vcm_public.md"
+              ],
+              "passage_review_note": "Both the shorter evidence-bearing public release and the denser architecture paper were section-family reviewed; future-information and retention claims remain bounded to proposed contracts and source-reported synthetic evidence."
+            },
             {
               "source_id": "qcsa_whitepaper",
               "mapped_support": "Author-source architecture for question-compiled semantic addressing, typed semantic objects, multi-facet address atlases, certificates, and semantic-to-physical resolution. It supplies a bounded design vocabulary for the chapter's durable knowledge-lattice contract.",

@@ -11,12 +11,12 @@ It does **not** quote or publish raw private source passages. It also does **not
 | Metric | Value |
 |---|---:|
 | Chapters audited | 84 |
-| Assigned source/chapter pairs | 1213 |
-| Exact claim-source mappings | 1033 |
+| Assigned source/chapter pairs | 1214 |
+| Exact claim-source mappings | 1034 |
 | Unmapped assigned pairs | 180 |
-| Source notes present for assigned pairs | 1213 |
-| Source notes listing assigned chapter | 1213 |
-| Passage-reviewed mappings recorded | 964 |
+| Source notes present for assigned pairs | 1214 |
+| Source notes listing assigned chapter | 1214 |
+| Passage-reviewed mappings recorded | 965 |
 | Support-state counts | {"argument": 84} |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -68,7 +68,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `governed-world-models-and-reality-grounding` | 15 | 15 | 15 | 15 | 15 | argument | eligible for support review |
 | `cognitive-compilation-and-semantic-ir` | 20 | 17 | 20 | 20 | 17 | argument | passage review required before source-derived promotion |
 | `virtual-context-abi` | 31 | 24 | 31 | 31 | 24 | argument | passage review required before source-derived promotion |
-| `durable-semantic-memory-and-knowledge-lattices` | 5 | 5 | 5 | 5 | 1 | argument | passage review required before source-derived promotion |
+| `durable-semantic-memory-and-knowledge-lattices` | 6 | 6 | 6 | 6 | 2 | argument | passage review required before source-derived promotion |
 | `context-transactions-snapshots-mounts-and-taint` | 23 | 15 | 23 | 23 | 15 | argument | passage review required before source-derived promotion |
 | `verification-bandwidth-and-context-adequacy` | 17 | 16 | 17 | 17 | 16 | argument | passage review required before source-derived promotion |
 | `claim-ledgers-and-belief-revision` | 20 | 18 | 20 | 20 | 18 | argument | passage review required before source-derived promotion |
@@ -136,9 +136,9 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `cca_project` | 16 | yes |
 | `spinoza` | 15 | yes |
 | `corbens_best_model_possible_project` | 14 | yes |
+| `vcm_public` | 14 | yes |
 | `coherence_exchange` | 14 | yes |
 | `bugbrain_project` | 13 | yes |
-| `vcm_public` | 13 | yes |
 | `kernel_english_residual_compiler` | 13 | yes |
 | `beastbrain_project` | 12 | yes |
 | `reflexive_router_whitepaper` | 12 | yes |
@@ -951,6 +951,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `virtual-context-abi.core` | `virtual-context-abi` | `ext_airllm_2023` | unmapped | note present | chapter listed | not passage-reviewed |
 | `virtual-context-abi.core` | `virtual-context-abi` | `ext_hf_accelerate_big_model_inference_2026` | unmapped | note present | chapter listed | not passage-reviewed |
 | `durable-semantic-memory-and-knowledge-lattices.core` | `durable-semantic-memory-and-knowledge-lattices` | `qcsa_whitepaper` | mapped | note present | chapter listed | passage-reviewed |
+| `durable-semantic-memory-and-knowledge-lattices.core` | `durable-semantic-memory-and-knowledge-lattices` | `vcm_public` | mapped | note present | chapter listed | passage-reviewed |
 | `durable-semantic-memory-and-knowledge-lattices.core` | `durable-semantic-memory-and-knowledge-lattices` | `ext_graphrag_2024` | mapped | note present | chapter listed | not passage-reviewed |
 | `durable-semantic-memory-and-knowledge-lattices.core` | `durable-semantic-memory-and-knowledge-lattices` | `ext_hipporag_2024` | mapped | note present | chapter listed | not passage-reviewed |
 | `durable-semantic-memory-and-knowledge-lattices.core` | `durable-semantic-memory-and-knowledge-lattices` | `ext_mem0_2025` | mapped | note present | chapter listed | not passage-reviewed |
