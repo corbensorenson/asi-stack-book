@@ -15,10 +15,10 @@ This report records the source-mining pass used to expand the book from a 16-cha
 - The 2026-07-31 VIEA second pass is the first legacy-paper fidelity repair: it
   expands the note from a routing summary into a 2,388-word system note and
   writes previously absent mechanisms into seven canonical chapters.
-- Five recent whitepapers have materially richer notes but still need an exact
-  section-family-to-manuscript closure audit: `qcsa_whitepaper`,
-  `reflexive_router_whitepaper`, `kernel_english_residual_compiler`,
-  `relational_dimension_compiler`, and `precision_contract`.
+- Three recent whitepapers have materially richer notes but still need an exact
+  section-family-to-manuscript closure audit:
+  `kernel_english_residual_compiler`, `relational_dimension_compiler`, and
+  `precision_contract`.
 - Thirty-five readable legacy papers still have first-pass routing notes rather
   than full-fidelity notes. Their ideas may be present in chapters, but note
   existence or manifest assignment is no longer accepted as proof of complete
@@ -59,9 +59,9 @@ source assignment alone does not count.
 
 | State | Sources | Required next operation |
 |---|---|---|
-| Section-family audit complete | `deterministic_capability_compilation`, `platonic_world_model`, `scf`, `qcsa_whitepaper` | Re-open only on paper or chapter drift. |
+| Section-family audit complete | `deterministic_capability_compilation`, `platonic_world_model`, `scf`, `qcsa_whitepaper`, `reflexive_router_whitepaper` | Re-open only on paper or chapter drift. |
 | Legacy paper repaired in this pass | `viea` | Re-run chapter/source validation and retain its new section-family map. |
-| Rich note; closure audit still required | `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `relational_dimension_compiler`, `precision_contract` | Compare every paper section, appendix, algorithm, limitation, and falsifier with actual manuscript prose. |
+| Rich note; closure audit still required | `kernel_english_residual_compiler`, `relational_dimension_compiler`, `precision_contract` | Compare every paper section, appendix, algorithm, limitation, and falsifier with actual manuscript prose. |
 | Legacy system spine; deep note required | `planforge`, `planforge_compiler_arch`, `cognitive_compilation`, `talos`, `vcm_public`, `spinoza`, `spinoza_composer`, `octopus_router`, `rmi`, `cognitive_loop_closure`, `benchmaxxing` | Reconstruct the complete object model and lifecycle before deciding whether prose is missing. |
 | Compression, representation, and substrate; deep note required | `cgs`, `rgs`, `rankfold_neuralfold`, `rankfold_compressor`, `bbvca_v9`, `bbvca_main`, `genesiscode`, `treellm`, `simulation_scaling`, `tokenmana`, `bugbrain` | Preserve equations, decoders, accounting, verification, failure surfaces, and rival representations—not only the compression slogan. |
 | Alignment, verification, context, and execution lineage; deep note required | `alignment_field`, `field_of_god`, `ethica_mechanica`, `eternal_code`, `verification_bandwidth`, `beastbrain`, `beastbrain_timeless`, `aletheia`, `context_engineer`, `black_hole_context_manager`, `ladon_manhattan`, `uat`, `software_magic_grimoire` | Separate operational mechanisms from metaphysics, branding, repeated drafts, unsafe absolutes, and unsupported performance claims; integrate only the durable architecture. `coherence_exchange` remains a separately connector-mined source rather than one of the 44 local paper texts. |
@@ -172,6 +172,36 @@ seven-workstream evaluation program, baselines, and falsifiers remain explicit
 research objects rather than implied results. QCSA still has no matched-resource
 advantage, general active-question result, semantic-correctness proof,
 production transfer, safety claim, or chapter-core support promotion.
+
+## Reflexive Router section-family closure result
+
+The Reflexive Router's 24 numbered sections, seven appendices, glossary, and
+references now terminate in manuscript prose, a public-safe durable note,
+concrete protocol/evaluation work, or an explicit boundary. The audit
+confirmed that qualification-before-optimization, semantic-operation DAGs,
+stable capabilities, effect custody, typed result continuity, bitemporal
+Chronicle records, trace-to-reflex compilation, ReflexBench, and joint cost
+accounting already had canonical owners. It repaired two compressed families:
+
+- Command Contracts now treats the User Command Registry as a governed
+  personal instruction set with typed parameters and dynamic defaults,
+  deterministic scope and namespace resolution, requested-versus-realized
+  route/effort fidelity, inspection and rollback, authority-diff review,
+  literal isolation, and executable-package supply-chain duties.
+- Routing Heads now specifies a bounded hierarchical router, calibration by
+  domain and consequence, risk–coverage rather than top-one accuracy,
+  OOD-triggered abstention, deadline-aware qualified cascades, and the
+  invariant that outcome learning may change ranking but cannot learn
+  authority.
+
+The complete ledger remains in
+`sources/source_notes/reflexive_router_whitepaper.md`. Four algorithms,
+normative schemas and checklists, implementation phases, worked examples,
+external novelty comparisons, and 23 open questions remain proposed research
+objects or explicit non-claims. The paper still establishes no trained router,
+useful-throughput advantage, deployed command plane, Chronicle, effect kernel,
+safe reflex compiler, production transfer, or ASI result; support remains
+`argument`.
 
 ## Main Architecture Clusters Mined
 

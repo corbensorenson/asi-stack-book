@@ -4,7 +4,7 @@ chapter_id: "intent-to-execution-contracts"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-07-16"
+last_updated: "2026-07-31"
 primary_sources:
   - "viea"
   - "talos"
@@ -323,6 +323,46 @@ that fact and the exact fallback authority rather than presenting another route
 as though it honored the command. These are proposed contract semantics from a
 Corben-authored paper, not evidence that a parser or dispatcher implements
 them; support remains `argument`.
+
+### The command registry is a governed instruction set
+
+An explicit command is not a trusted text macro. It is a versioned binding
+between an authenticated name and a semantic route, capability, resource
+profile, or workflow. Its descriptor declares owner and scope; aliases and
+namespace; positional, named, optional, and defaulted parameters; permitted
+context variables; authority and effect class; confirmation policy; budgets;
+verifier; fallback; renderer; compatible capability versions; provenance;
+review date; and revocation state. Routine invocation uses a conventional
+lexer, parser, registry lookup, and typed argument binder. Natural language may
+help author a descriptor once, but it does not reinterpret the binding on each
+use.
+
+Defaults are dependencies, not conveniences hidden from the trace. A command
+that reads `$profile.default_location`, `$context.active_document`,
+`$context.last_result`, or `$time.today` declares the dependency, scope,
+freshness rule, and missing-value outcome. A supplied argument overrides a
+default for that invocation without mutating the command. The resulting
+dispatch receipt records both the requested route or effort profile and the
+one actually realized; an unavailable high-effort profile cannot be silently
+downgraded unless the contract explicitly authorizes that fallback.
+
+Resolution is deterministic across reserved, fully qualified, session,
+personal, workspace, shared, and platform namespaces. The interface must let a
+principal inspect the active binding and shadowed alternatives, preview exact
+effects, dry-run it, compare capability and authority diffs, disable it, view
+history, and roll back a prior version. A model may propose a shortcut after
+repeated use, but registration and any later expansion of authority,
+consequence, target set, or hidden dependency require a separately authorized
+mutation. Imported command packages remain executable supply-chain artifacts:
+names such as `/morning` or `/weather` do not disclose their permissions.
+
+Command-looking strings in documents, webpages, messages, quoted examples,
+tool output, and model output remain inert data. Literal escaping and a small
+non-overridable recovery namespace keep it possible to discuss a command,
+inspect permissions, stop execution, or recover a damaged registry without
+activating the named operation. These rules turn the user-visible vocabulary
+into an inspectable personal instruction set without letting convenience
+syntax acquire ambient authority.
 
 ### The capability charter as executable intent
 

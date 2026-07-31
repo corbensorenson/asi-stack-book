@@ -4,7 +4,7 @@ chapter_id: "routing-heads-and-specialist-cores"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.3 claim-proof program"
-last_updated: "2026-07-22"
+last_updated: "2026-07-31"
 primary_sources:
   - "octopus_router"
   - "rmi"
@@ -374,6 +374,43 @@ This is a design integration, not a result. The paper supplies the ordering,
 contracts, algorithms, threat hypotheses, and ReflexBench plan; it supplies no
 trained router, implementation, benchmark result, effect campaign, or external
 reproduction. The core routing claim remains at `argument`.
+
+### Hierarchical routing, selective risk, and bounded cascades
+
+A route taxonomy should not become one enormous flat classifier or a miniature
+chatbot. A bounded router can first distinguish broad operation families—read,
+compute, prove, transform, act, deliberate, or clarify—then load only the
+relevant capability index and refine within that branch. Its output is a typed
+candidate set with atomicity, scores, margins, OOD indicators, effect class,
+and abstention probability. It cannot invent a capability name or arguments,
+and it has no executable authority.
+
+Scores require calibration by route family, request domain, effect class, and
+observed distribution shift. The operating objective is a risk–coverage curve,
+not top-one accuracy: thresholds are chosen to keep wrong fast-path execution
+inside a consequence-specific budget. Distance from known cases, head or
+ensemble disagreement, low margins, rejected contracts, novel schema/entity
+combinations, and sudden telemetry drift must change behavior by increasing
+abstention. Merely logging a lower confidence while downstream execution stays
+unchanged is not OOD handling.
+
+Qualification can still support a deadline-aware cascade. The runtime may
+start a cheap admitted computation, reserve time for verification, escalate to
+a stronger exact or specialist route when ambiguity remains, and use
+deliberation only for the unresolved synthesis. Every stage inherits the same
+deadline, authority, privacy, and effect ceiling, and the trace records which
+candidate failed which obligation. This makes a cascade a sequence of
+qualified fallbacks rather than an invisible retry ladder.
+
+Outcome traces may update ranking and calibration from observed route success,
+verification, cost, user correction, and downstream usefulness. They may not
+update authority. Repeatedly succeeding at a calendar read does not grant
+calendar-write permission. Router releases therefore bind a versioned model to
+route-level confusion matrices, risk–coverage curves, adversarial paraphrases,
+OOD cases, current capability-contract compatibility, shadow evidence, and
+rollback thresholds. Because routing determines which subsystem sees an
+event, a small classifier regression can create a system-wide authority,
+quality, or cost regression.
 
 ### Fast routing policy and slow routing improvement
 

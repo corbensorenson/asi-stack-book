@@ -79,6 +79,172 @@ authenticated event and command plane
     verification cost, monitoring cost, effects, and abstention. “Useful Reflex
     Efficiency” must not become a score that hides unsafe or useless outputs.
 
+## Claim Boundary and Status
+
+- The source is a Corben-authored architectural synthesis and research plan;
+  it is not independent evidence for the novelty, safety, performance, or
+  deployability of the proposed system.
+- “Reflexive” means a guarded, non-deliberative execution path, not an
+  uncontrolled low-latency reaction and not a claim about consciousness.
+- “Minimum sufficient compute” is constrained optimization over qualified and
+  authorized candidates. It is not permission to choose the cheapest route or
+  omit verification, monitoring, human work, recovery, or residual risk.
+- User-directed dispatch constrains inference inside an existing authority
+  envelope. It does not confer new permissions or make a direct command safe
+  by construction.
+- The Chronicle and typed-result schemas improve separation and traceability;
+  neither structure establishes the truth of its contents.
+- Trace-to-reflex compilation is a proposed governed lifecycle. Repetition,
+  fluency, user silence, or model agreement is not qualification evidence.
+- All manuscript uses remain `Design rationale` / `argument`; no Appendix C
+  support transition follows from this source audit.
+
+## Conceptual Primitives
+
+- **Canonical event:** authenticated ingress identity plus literal payload,
+  time, modality, principal, tenant, context, authority, privacy, budget, and
+  requested route constraints.
+- **Command descriptor:** a scoped, versioned binding to a route, capability,
+  effort profile, or workflow with typed arguments and lifecycle controls.
+- **Reflex:** a bounded executable mapping whose guard, authority, resource,
+  verifier, failure, expiry, and fallback contracts are explicit.
+- **Route proposal / admission:** a candidate score or decomposition is
+  non-authoritative; qualification and authority predicates determine
+  eligibility.
+- **Qualified plan:** one capability call or a bounded semantic-operation DAG
+  whose node and dependency obligations hold for the present event.
+- **Stable capability:** a semantic operation separated from replaceable
+  implementations and their consumer-relative qualification.
+- **Typed result packet:** the authoritative value envelope from which prose,
+  UI, speech, prompts, and audit views are derived.
+- **Temporal Chronicle:** bitemporal, provenance-aware records that keep
+  entities, events, states, claims, plans, predictions, and counterfactuals
+  distinct.
+- **Reflex candidate:** a proposed rule, query, cache plan, workflow, program,
+  solver template, or bounded specialist policy derived from eligible traces.
+- **Decompilation:** removal of an active fast path plus restoration of the
+  deliberative parent and invalidation of dependent aliases, caches, routes,
+  workflows, and descendants.
+
+## Interfaces, Artifacts, and State Machines
+
+The paper defines one ordered interface but assigns authority to separate
+owners: event normalization; authenticated command parsing; authority/hazard
+gating; deterministic and learned proposal; qualification; bounded planning;
+stable-capability resolution; effect custody; verification; result commit;
+context and Chronicle projection; trace analysis; and governed compilation.
+The common trace must retain ingress mode, proposal denominator,
+disqualifications, selection, fallback, requested and realized effort,
+capability versions, effects, observations, verification, terminal outcome,
+and downstream dependencies.
+
+Three artifact families carry most of the design:
+
+1. reflex and command descriptors with scope, precedence, schemas, dynamic
+   defaults, authority, effects, budgets, verifier, fallback, provenance,
+   expiry, and rollback;
+2. typed plan/result/Chronicle records preserving dependency and temporal
+   semantics across heterogeneous executors; and
+3. compilation evidence binding positive, negative, boundary, adversarial,
+   replay, differential, shadow, canary, drift, quarantine, and rollback data
+   to an exact candidate.
+
+The proposed reflex lifecycle is `PROPOSED -> STATICALLY_CHECKED ->
+REPLAY_TESTED -> SHADOWING -> QUALIFIED -> CANARY -> ACTIVE -> MONITORED`, with
+revision, quarantine, revocation, rollback, or decompilation as explicit exits.
+No transition authorizes itself.
+
+## Assumptions and Invariants
+
+- Only authenticated user-control input can activate command syntax; retrieved
+  or generated command-looking text is inert.
+- Constitutional and platform invariants, authority, and consequence policy
+  precede user commands; user commands precede automatic optimization.
+- A user may bypass inference but never authentication, authorization, typing,
+  consequence policy, verification, audit, expiry, or revocation.
+- Learned components propose; deterministic contracts and policy authorize.
+- Optimization occurs only over qualified candidates; high confidence is not
+  qualification.
+- The LLM is one capability in the fabric, not an exempt control-plane owner.
+- Every effectful path converges on one Effect Commit Kernel; preparation,
+  commit, observation, verification, and compensation remain distinct.
+- Plans, predictions, claims, observations, events, states, counterfactuals,
+  and fictional records cannot silently substitute for one another.
+- A typed structure can still carry false evidence; provenance and verifier
+  independence remain separate obligations.
+- Procedure guards are at least as important as bodies; positive examples
+  alone cannot define safe applicability.
+- Learning from outcomes may change ranking or calibration but cannot learn or
+  widen authority.
+- Every fast path has an explicit fallback, expiration, quarantine, rollback,
+  and decompilation route or remains unqualified.
+
+## Algorithms and Formal Objects
+
+The paper supplies four pseudocode algorithms: dispatch with user overrides,
+automatic event routing, reflex compilation, and temporal-fact resolution.
+It also defines constrained route selection over a generalized cost vector,
+risk–coverage and selective-risk measures, route regret relative to an oracle,
+and a break-even condition for compilation after testing and monitoring cost.
+These are proposed decision objects, not proved algorithms or measured
+estimators. The YAML reflex/command examples, JSON typed-result and benchmark
+records, canonical terminal outcomes, and registration checklists are
+normative sketches. They belong to protocol and evaluation work until an
+implementation binds them to observed behavior.
+
+## Evidence and Falsifiers
+
+The paper would gain empirical support only through matched routes and
+resources over natural and adversarial workloads with independent route,
+outcome, and effect adjudication. It can be falsified or narrowed if dispatch
+overhead erases the savings; wrong fast paths remain high at useful coverage;
+qualification is too expensive; OOD abstention fails; bounded decomposition
+cannot preserve cross-clause constraints; typed continuity does not improve
+downstream accuracy; Chronicle maintenance costs exceed its use; compiled
+reflexes fail shifted cases or cannot decompile completely; verifier dependence
+launders executor error; or total useful throughput loses after monitoring,
+human work, governance, and recovery are included.
+
+## Threats, Costs, and Governance
+
+The complete threat surface includes routing injection, literal-command
+activation, rule shadowing, alias cycles, unsafe registry mutation, semantic
+cache collision, Chronicle poisoning, privilege amplification, decomposition
+bombs, cost amplification, cross-tenant leakage, verifier monoculture, retry
+duplication, stale reflexes, context-handle confusion, feedback loops, and
+learned self-installation. Governance must cover owners, signatures,
+capability diffs, supply-chain dependencies, scopes, precedence, expiry,
+review, emergency revocation, and incident custody. Total cost includes
+dispatch, execution, verification, monitoring, human review, state, cache and
+Chronicle maintenance, invalidation, compilation, rollback, recovery, energy,
+latency, money, opportunity cost, and residual risk.
+
+## Cross-Paper Synthesis
+
+- VIEA supplies intent custody, the fast-router/slow-conductor split, artifact
+  survival, and transactional integration; Reflexive Router makes the
+  event-to-qualified-plan hot path concrete.
+- SCF owns durable semantic capability identity, qualification leases,
+  reliance invalidation, state and implementation replacement, and lifecycle
+  authority consumed by routes and compiled reflexes.
+- PlanForge and Cognitive Compilation own graph planning and semantic IR; the
+  router may propose a bounded operation graph but cannot absorb their
+  planning authority.
+- VCM and Context Transactions own durable context, projections, cache keys,
+  snapshots, invalidation, and privacy; the Reflex Context Frame is only a hot
+  view.
+- Spinoza and the claim ledger own epistemic standing and belief revision; the
+  Chronicle is not permitted to turn extracted claims into facts.
+- Talos and Runtime Adapters own job/effect execution, observations, receipts,
+  idempotency, compensation, and human approval; a route receipt is not an
+  effect receipt.
+- Cognitive Loop Closure owns procedure lifecycle and descendant recovery;
+  Reflexive Router contributes the specific trace-to-reflex compiler and
+  pre-deliberative consumer.
+- Benchmaxxing/RMI own evidence ratchets, residuals, qualification, and
+  promotion discipline; ReflexBench is one proposed campaign within that
+  broader evidence system.
+
 ## Evidence
 
 - The complete 3,489-line Markdown source was read across all 24 sections,
@@ -282,3 +448,47 @@ program below.
   temporal, routing, or effect result has been reproduced.
 - No raw-source publication, release, deployment, or external post is
   authorized by ingestion.
+
+## Section-Family Coverage
+
+| Paper section family | Actual manuscript or durable owner | Disposition and boundary |
+|---|---|---|
+| Abstract, Executive Summary, §§1–3 | `routing-heads-and-specialist-cores`; `resource-economics-and-token-budgets`; this note | Interface/executor separation, pre-deliberative thesis, user-directed dispatch, exact invocation, qualification-before-optimization, and non-claims integrated. Minimum sufficient compute remains a proposed constrained objective. |
+| §4 architecture overview | `integrated-reference-architecture`; `intent-to-execution-contracts`; `runtime-adapters-tool-permissions-and-human-approval` | Fifteen-component ordering, distinct authorities, shared enforcement convergence, typed results, Chronicle updates, and compiler feedback integrated. The diagram is an architecture contract, not a running system. |
+| §5 reflex classes and contracts | `procedural-memory-and-cognitive-loop-closure`; `stable-capability-fields`; this note | Reflex taxonomy, declarative contract fields, guard primacy, precedence/conflict analysis, and effect classes integrated or retained as proposed artifact requirements. |
+| §6 User Command Plane | `intent-to-execution-contracts`; `routing-heads-and-specialist-cores` | Route/direct/workflow modes, effort profiles, typed parameters and defaults, context variables, registry scope/namespace, inspection, mutation, supply chain, literal isolation, requested/realized fidelity, and formal dispatch boundary integrated. |
+| §7 learned router | `routing-heads-and-specialist-cores` | Bounded hierarchical router, calibrated selective risk, OOD-triggered abstention, outcome learning without authority learning, versioning, shadowing, and rollback integrated. No trained router result imported. |
+| §8 qualification-first dispatch | `routing-heads-and-specialist-cores`; `resource-economics-and-token-budgets` | Contract proof obligations, consequence-relative thresholds, generalized cost, route regret, and deadline-aware cascading integrated. Formal expressions remain proposed targets. |
+| §9 composite requests | `planning-as-a-control-layer`; `routing-heads-and-specialist-cores` | Semantic-operation DAGs, bounded decomposition, node-local partial qualification, concurrency/cancellation/retry, and plan provenance integrated. Planning authority remains outside Routing. |
+| §10 Stable Capability Fabric | `stable-capability-fields`; `integrated-reference-architecture` | Semantic names, consumer-relative descriptors, typed composition, deliberation as one capability, and shared inside/outside capability access integrated. No substitution result imported. |
+| §11 structured actions | `runtime-adapters-tool-permissions-and-human-approval`; `claim-ledgers-and-belief-revision` | Action-understanding/effect-commit split, consequence-aware confirmation, idempotency, partial failure, compensation, result receipts, and action/observation/state Chronicle writes integrated. |
+| §12 typed results and continuity | `virtual-context-abi`; `context-transactions-snapshots-mounts-and-taint` | Authoritative packet versus rendering, hot projections, provenance-preserving synthesis, dispatch provenance, dependency closure, and invalidation integrated. A typed packet does not prove truth. |
+| §13 Temporal Chronicle | `claim-ledgers-and-belief-revision`; `context-transactions-snapshots-mounts-and-taint` | Entity/event/state/claim/plan/prediction/counterfactual separation, valid/transaction time, epistemic status, provenance, event-sourced views, temporal relations, scoped writes, and poisoning/invalidation integrated or retained. |
+| §14 reflex compilation | `procedural-memory-and-cognitive-loop-closure`; `stable-capability-fields` | Representation selection, trace eligibility, distillation, negative-space guards, static analysis, replay/differential/shadow stages, signed promotion, monitoring, economics, expiry, and decompilation integrated. No compiler result imported. |
+| §15 algorithms | this note; `schemas/reflexive_dispatch_trace_record.schema.json`; protocol/evaluation backlog | Four algorithms are retained as normative pseudocode and finite design-record targets. They are not presented as implemented or correct algorithms. |
+| §§16–17 security and failure model | `intent-to-execution-contracts`; `runtime-adapters-tool-permissions-and-human-approval`; `context-transactions-snapshots-mounts-and-taint`; `benchmark-ratchets-and-anti-goodhart-evidence`; this note | Instruction/data isolation, capability security, cache/Chronicle poisoning, registry and reflex supply chain, threat matrix, premature reflexization, latency inversion, rule explosion, false structure, and feedback loops integrated or retained as negative controls. |
+| §18 ReflexBench | `benchmark-ratchets-and-anti-goodhart-evidence`; `resource-economics-and-token-budgets`; active experiment roadmap | Eight tracks, comparator matrix, launch-gate boundary, user-command track, complete denominators, and plural usefulness/safety/effect/cost metrics integrated as an argument-exit program. Source contains no run. |
+| §19 implementation blueprint | `prototype-roadmap`; `integrated-reference-architecture`; this note | Service/store decomposition, stage budgets, structured concurrency, observability, compatibility, seven phases, minimal experiment, deterministic shell, typed pipelines, and modes retained as implementation obligations rather than copied as accomplished work. |
+| §20 worked examples | receiving chapter examples and this note | Historical, ambiguous arithmetic, proof, current-information, effectful, deployment, forced-route, parameterized, analytical-profile, and compiled-workflow cases retained as boundary illustrations only. |
+| §21 prior work | Appendix H records and external-source backlog | Comparators and narrow synthesis claim retained pending independent primary-source passage review; the Corben paper does not independently establish novelty. |
+| §22 advanced-intelligence implications | `asi-is-a-stack-not-a-model`; `replaceable-cognitive-substrates-beyond-transformer-monoculture`; `recursive-self-improvement-boundaries`; `procedural-memory-and-cognitive-loop-closure` | LLM-as-exception-handler, hierarchy of computation, procedural accumulation, temporal continuity, controlled execution-graph improvement, and personal instruction set integrated as design implications, not ASI evidence. |
+| §§23–24 | this note; `open-research-agenda-and-bibliography-plan`; chapter summaries | Twenty-three research questions remain open; conclusion is represented by the cross-layer synthesis without promoting capability or safety. |
+| Appendices A–G | this note; schema/fixture/benchmark backlogs; `schemas/reflexive_dispatch_trace_record.schema.json` | Reflex contract, typed packet, terminal outcomes, registration checklists, benchmark record, and command descriptor retained as normative sketches. The repository's finite trace schema is a design consumer, not a deployed implementation. |
+| Glossary and references | chapter terminology; Appendix H | Durable terms integrated where owned. The 36 references require independent current-primary-source review before external support or novelty use. |
+
+## Closure Status
+
+**Section-family audit complete as of 2026-07-31.** All 24 numbered sections,
+seven appendices, glossary, and references terminate in manuscript integration,
+public-safe source-note retention, a concrete protocol/evaluation/research
+obligation, or an explicit non-claim. This pass repaired two compressed
+families in the manuscript: the scoped and mutable User Command Registry as a
+governed personal instruction set, and hierarchical selective-risk routing
+with OOD-triggered abstention, deadline-aware cascades, and outcome learning
+that cannot learn authority. No substantive section is orphaned.
+
+Closure does not establish a trained router, calibrated selective-risk result,
+useful-throughput advantage, deployed command plane, Temporal Chronicle,
+effect kernel, safe reflex compiler, security result, independent novelty
+finding, production transfer, or ASI claim. The source remains `argument` and
+must be reopened if the paper or any receiving chapter materially changes.
