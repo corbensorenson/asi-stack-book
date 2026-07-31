@@ -3,8 +3,8 @@
 ## 2026-07-31 — Corben paper fidelity audit and VIEA deep-mining repair
 
 - Reclassified the 44 locally readable Corben paper texts by mining fidelity:
-  ten now have complete section-family audits, VIEA is repaired in this
-  pass, and thirty-three legacy papers still have routing-grade rather than
+  eleven now have complete section-family audits, VIEA is repaired in this
+  pass, and thirty-two legacy papers still have routing-grade rather than
   full-fidelity notes. Note existence and chapter assignment no longer count as
   proof that a paper was fully mined.
 - Expanded the source-note template to retain claim boundaries, primitives,
@@ -91,14 +91,16 @@
   separated semantic relation atoms from executable primitives in Cognitive
   Compilation. No implementation, scheduler, decomposition, merge, MVI,
   savings, quality, reliability, security, transfer, support, or ASI claim moved.
-- Began the Cognitive Compilation four-tab fidelity audit. Expanded its source
+- Completed the Cognitive Compilation four-tab fidelity audit. Expanded its source
   note from a routing summary into a forward-compiler, product-blueprint, and
   reverse-compilation system record, then added the previously missing
   artifact-lifting, fact/claim/guess, semantic knowledge graph, merge-bundle,
   conflict, refactor, recompilation, provenance, rejected-origin, and rights
-  machinery to Cognitive Compilation. The detailed SCW schema/security/license/
-  backend/fixture field comparison remains open, so the paper is not counted as
-  closed and no implementation or support claim moved.
+  machinery to Cognitive Compilation and added forward-build/lift/merge custody
+  to Artifact Graphs. Retained every detailed SCW schema, adapter, validator,
+  repair, store, security, licensing, backend, fixture, UI/CLI, acceptance, and
+  delivery family as a concrete implementation obligation. No compiler,
+  lifting, merge, repair, security, licensing, deployment, or support claim moved.
 
 ## 2026-07-30 — P7.3 twelve-chapter integrated visual preview
 

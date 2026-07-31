@@ -4,7 +4,7 @@ chapter_id: "artifact-graphs-audit-logs-and-replay"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 claim-proof program"
-last_updated: "2026-07-16"
+last_updated: "2026-07-31"
 primary_sources:
   - "talos"
   - "viea"
@@ -305,6 +305,34 @@ Replay binds both artifact lineage and the exact semantic basis that interpreted
 it. An unchanged byte artifact can become stale when a semantic dependency,
 grounder, authority, or mapping changes; an updated artifact can preserve old
 meaning through an explicit verified bridge.
+
+### Compiler trace bundles and lifted-origin custody
+
+Cognitive Compilation contributes a concrete cross-artifact bundle. One
+compiler run binds the locked source plan, semantic IR, schedule, target IRs,
+rendered artifacts, source-to-artifact span maps, structured validator results,
+router decisions, complete cost report, security/redaction report, and a
+manifest hashing every component. The bundle records what was produced and why
+the system says it was produced; it does not prove that the source plan was
+complete, that the semantics were preserved, or that the artifact is useful.
+
+Reverse compilation adds origin edges in the opposite direction. A lifted node
+points to exact repository files and lines, document spans, scenes, parser and
+model versions, extraction method, confidence, fact/claim/guess class, license
+metadata, taint, and source digest. Merge bundles retain every contributing
+origin, candidate alias, conflict, policy, authority decision, rejected
+alternative, and resulting semantic node. Refactoring or recompilation creates
+new descendants; it cannot replace the origin record or erase a rejected
+source from the decision history.
+
+Replay therefore has three different targets: reproduce the forward build,
+reproduce the observed lift, and reproduce the governed merge decision. A
+parser-version change may invalidate a lifted fact without changing the source;
+a rights or deletion event may block reuse even when the semantic result still
+looks correct; and a changed merge policy may produce a valid alternative
+descendant rather than prove the old one wrong. Content-addressed storage binds
+identity across those paths, while explicit supersession, invalidation, and
+residual state explain what remains usable.
 
 ## Interfaces
 

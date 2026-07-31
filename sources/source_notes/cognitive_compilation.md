@@ -109,6 +109,19 @@ update entitlement, and non-destructive expiry behavior. Those are product
 policy proposals, not book architecture defaults. A license mechanism cannot
 erase user data, hide provenance, or grant rights over imported material.
 
+The detailed build fields remain concrete implementation obligations:
+
+| Family | Retained requirements and boundary |
+|---|---|
+| Plan/S-IR | Canonical JSON lock hashes; stable clause and node IDs; typed interfaces; hard/soft constraints; validators; provenance; lints; routing bounds; ambiguity, novelty, blast-radius, and validator-strength features. Hashing proves exact identity, not semantic completeness. |
+| Schedule/T-IR | Policy version; critical/slack priority; assigned tier/engine/model and fallbacks; attempt/token/money/time budgets; sandbox; p50/p90 forecast; concurrency groups; target render units, paths, trace anchors, and validator plan. Forecasts are not outcomes. |
+| Trace | Plans, IRs, artifacts, span maps, structured validator JSONL, route decisions, cost, redaction, and manifest hashes. A reproducible bundle can reproduce the wrong semantics. |
+| Adapters/validators | OpenRouter-first plus optional direct adapters; strict structured responses; Python `ruff`/compile/tests/smoke, Docs lint and claim/code checks, Narrative continuity/constraint checks, and Song structure/meter heuristics. A validator's claimed scope and destructive controls remain explicit. |
+| Repair/store | Node and diagnostic IDs, failed validators, frozen affected subgraph, patch operations, actual mutation set, dependency rebuild, rollback; SQLite index plus content-addressed artifacts and versioned run bundles. “Split on failure” does not prove semantic locality. |
+| Security | OS keychain, no keys in prompts/logs, sandbox profiles, network/file/time limits, export redaction, and a redaction manifest. Local API and local storage do not by themselves establish confidentiality. |
+| License | Signed trial/full status, offline checks and grace, update entitlement, non-destructive expiry, and always-available data export. Commercial enforcement is outside the book's evidence and rights authority. |
+| Backends/fixtures | Python, Docs, Narrative, and Song target contracts; deterministic todo-CLI, mini-narrative, and song-structure fixtures; plan lock, stable IR, schedule, trace, structured failure, repair, export, key, and license acceptance checks. Passing fixtures would establish only their declared finite behavior. |
+
 ### Reverse compilation and merge
 
 A repository lifter deterministically inventories files, languages, ASTs,
@@ -306,11 +319,19 @@ domains, models, languages, organizations, and time.
 
 ## Closure Status
 
-**Section-family audit not yet terminal.** The forward architecture, product
-blueprint, and reverse-compilation addendum are now represented in this deep
-note, and the previously missing reverse-lift/merge mechanism is in the
-manuscript. Before closure, compare every detailed SCW schema, security,
-licensing, backend, fixture, and acceptance field against the receiving
-chapters and decide whether any additional reader-facing mechanism is missing.
-No compiler, lift, merge, trace, repair, cost, security, licensing, deployment,
-support, or ASI result is established.
+**Section-family audit complete as of 2026-07-31.** All three forward-compiler
+variants, the nineteen-part SCW build specification, Appendix A, references,
+and the ten-part reverse-compilation addendum terminate in manuscript
+integration, public-safe note retention, a concrete implementation/evaluation
+obligation, variant reconciliation, or an explicit non-claim. The detailed
+schema, adapter, validator, repair, store, security, licensing, backend,
+fixture, UI/CLI, acceptance, and delivery fields remain in this note because
+repeating a commercial product specification would overload the book. Their
+durable architectural consequences—translation contracts, stable identity,
+trace bundles, observed repair locality, reverse lifting, governed merge,
+origin/rights custody, and leakage checks—are reader-visible in Cognitive
+Compilation and Artifact Graphs.
+
+Closure establishes no compiler, lift, merge, trace, repair, cost, security,
+licensing, deployment, support, or ASI result. Reopen on material source,
+implementation-artifact, or receiving-chapter drift.
