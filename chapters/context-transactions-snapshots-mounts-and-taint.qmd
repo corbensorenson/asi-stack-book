@@ -4,7 +4,7 @@ chapter_id: "context-transactions-snapshots-mounts-and-taint"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 manuscript draft"
-last_updated: "2026-07-23"
+last_updated: "2026-07-31"
 primary_sources:
   - "vcm_public"
   - "platonic_world_model"
@@ -434,6 +434,43 @@ branches. This supplies a semantic taint rule: unresolved version, grounding,
 mapping, defeater, or authority dependencies invalidate or explicitly degrade
 the affected snapshot instead of silently refreshing its vocabulary.
 
+### The interaction residual is transactional state
+
+KERC's interaction-global residual is compact precisely because later packets
+refer to earlier terminology, alias, unit, style, fidelity, and security
+choices. That makes it mutable shared state, not harmless tokenizer metadata.
+Its lifecycle is `INIT -> ACTIVE -> UPDATED -> CHECKPOINTED -> CLOSED`, with
+typed operations for defining realizations, setting style, binding aliases,
+locking terms, applying segment overrides, evicting entries, resetting scopes,
+and checkpointing an exact state hash. Each entry carries origin, owner,
+authority, scope, confidence, privacy, expiry, and precedence.
+
+An update produces an append-only delta against an immutable parent plus a new
+content hash. Every Kernel packet binds the state version it consumed. Compiler
+and renderer hash mismatch, an unknown dictionary entry, an incompatible
+codebook, or a missing concept capsule is a transaction fault: the receiver
+requests a checkpoint or dependency, rolls back to a compatible state, or uses
+explicit local metadata. It may not approximate an unknown short code and
+render a plausible answer. Periodic full checkpoints, deterministic conflict
+rules, version negotiation, bounded state, and signed deltas for high-integrity
+uses make restart and replay testable.
+
+Promotion of repeated local residue into shared state is also a governed
+transaction. The candidate records expected reuse, definition and reference
+cost, applicability, negative cases, privacy and profiling cost, requested
+scope, expiry, and whether user approval is required. A document-local
+terminology lock does not silently become a permanent user preference; an
+inferred preference does not outrank an explicit user rule; and a quoted
+instruction cannot mutate the ledger merely because the compiler recognized
+its syntax.
+
+Reset, deletion, and migration propagate through materialized packets, caches,
+memories, rendered descendants, compiled macros, training exports, telemetry,
+and backups according to their distinct retention contracts. Deleting the
+visible glossary does not prove those descendants forgot it. This paper
+supplies a state model and recovery rules, not crash, concurrency, privacy, or
+migration evidence for an implemented residual service.
+
 ## Interfaces
 
 Context changes travel through a Context Transaction Record, but ownership does
@@ -773,7 +810,7 @@ These rows keep Context Transactions, Snapshots, Mounts, and Taint's manifest as
 | Source | Intake role | Boundary |
 |---|---|---|
 | `platonic_world_model` | Metadata-first comparator: The Platonic World Model: A Semantic Constitution for Grounded, Proof-Carrying, Self-Editing Artificial Intelligence. Corben-authored July 2026 conceptual architecture and falsifiable research program for semantic continuity through stable Form lineages, immutable semantic versions, typed Essence Contracts, six mutually constraining planes, explicit proposition-attestation-commitment-proof separation, branch-protected world dynamics, qualified grounding, semantic transactions, runtime packet compilation, and federated mappings. Existing chapters are upgraded first; no implemented substrate, benchmark result, philosophical solution to grounding, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
-| `kernel_english_residual_compiler` | Metadata-first comparator: Kernel English with Hierarchical, Interaction-Amortized Residuals: A Dual-Vocabulary Cognitive Compiler for Efficient Language-Model Reasoning. Corben-authored July 2026 architecture proposal for KERC: protected-object capture, uncertainty-aware normalization, sense-aware Kernel IR, dual surface/core vocabularies, a four-level interaction-amortized residual ledger, exact object storage, grammar-aware macro fusion, structured answer packets, rendering, round-trip verification, versioned migration, and complete rate-compute-fidelity evaluation. Existing chapters are upgraded first; no implementation, benchmark, novelty, efficiency, fidelity, safety, transfer, SOTA, AGI, ASI, or support-state result is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `kernel_english_residual_compiler` | Passage-reviewed Corben architecture source: Kernel English with Hierarchical, Interaction-Amortized Residuals: A Dual-Vocabulary Cognitive Compiler for Efficient Language-Model Reasoning. Corben-authored July 2026 architecture proposal for KERC: protected-object capture, uncertainty-aware normalization, sense-aware Kernel IR, dual surface/core vocabularies, a four-level interaction-amortized residual ledger, exact object storage, grammar-aware macro fusion, structured answer packets, rendering, round-trip verification, versioned migration, and complete rate-compute-fidelity evaluation. Existing chapters are upgraded first; no implementation, benchmark, novelty, efficiency, fidelity, safety, transfer, SOTA, AGI, ASI, or support-state result is inferred. | No local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_openai_prompt_caching_docs_2026` | Metadata-first comparator: Prompt Caching. Current official provider contract for exact-prefix prompt caching, cache-write and cache-read metering, usage receipts, retention, organization isolation, and rate-limit boundaries. Product behavior and prices are time-sensitive; inspected 2026-07-23. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_anthropic_prompt_caching_docs_2026` | Metadata-first comparator: Prompt caching. Current official provider contract for reusable prompt prefixes, explicit cache breakpoints, five-minute and one-hour lifetimes, cache creation and read metering, and prewarming. Product behavior and prices are time-sensitive; inspected 2026-07-23. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_gemini_context_caching_docs_2026` | Metadata-first comparator: Context caching. Current official provider contract for implicit and explicit context caching, common-prefix placement, cached-token usage reporting, time-to-live, and storage charges. Product behavior and prices are time-sensitive; inspected 2026-07-23. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |

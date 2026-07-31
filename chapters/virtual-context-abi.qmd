@@ -4,7 +4,7 @@ chapter_id: "virtual-context-abi"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 proof-program manuscript"
-last_updated: "2026-07-23"
+last_updated: "2026-07-31"
 primary_sources:
   - "vcm_public"
   - "context_engineer"
@@ -520,6 +520,41 @@ continuity contract and failure hypotheses only; no production materializer,
 cache, or context-quality result is established, and support stays at
 `argument`.
 
+### Kernel packets as representation-aware context pages
+
+KERC contributes a concrete packet family for consumers that want semantic
+context without discarding exact source access. A materialized Kernel page
+binds the Kernel language and tokenizer versions; compact tokens and expanded
+debug form; entity and concept-capsule tables; exact-object handles; source
+alignment; ambiguity and correction lattices; global, segment, and local
+residual refs; provenance; authority and privacy; and compatibility hashes for
+the compiler, renderer, verifier, registries, and core. The compact token
+stream is not the packet's full information content.
+
+Concept capsules are open-world context objects rather than excuses to expand
+one fixed ontology indefinitely. A capsule may resolve to a governed registry
+identity, define a local concept compositionally, remain an opaque term, or
+fall back to exact bytes. The packet says which route was taken and which
+consumer may rely on it. Stable identity is separate from a short local handle,
+runtime code, address, embedding, or display label, so codebook and tokenizer
+migration need not rewrite the represented concept.
+
+Exact-object access is selective. Most reasoning sees a typed handle and
+minimal metadata; spelling analysis, quotation, code debugging, legal text, or
+identity resolution can request the protected bytes through a separately
+authorized expansion. That expansion becomes a new materialization with its
+own purpose, disclosure, cost, and taint receipt. The ABI therefore supports a
+compact reasoning view without pretending that exact source bytes vanished or
+were safe to expose everywhere.
+
+A Kernel page faults rather than guessing when a residual state hash, concept
+definition, object, registry version, migration map, or source span is missing.
+It can request the missing dependency, materialize a less compressed explicit
+form, raise fidelity, or return to source. This preserves the Virtual Context
+rule that compactness and availability are not adequacy: the source proposes a
+representation protocol, not evidence that any KERC packet is semantically
+complete, cheaper, or useful to a real reasoner.
+
 ## Interfaces
 
 The public interface is a static request, candidate set, certificate, packet,
@@ -855,7 +890,7 @@ These rows keep The Virtual Context ABI: Typed Pages, Cells, and Certificates's 
 | `deterministic_capability_compilation` | Metadata-first comparator: Deterministic Capability Compilation: A Capability-Preserving Ladder from Executable Scaffolds to Governed Adaptive Agents. Corben-authored July 2026 architecture and research program for compiling executable scaffolds into contract-bound experts and linked Neural Capability Objects while retaining semantic obligation mass balance, candidate-specific translation validation, fallback, residual escrow, authority ceilings, reification, and effect-complete recovery. Existing chapters are upgraded first; no foundry implementation, learned-capability result, preservation result, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `platonic_world_model` | Metadata-first comparator: The Platonic World Model: A Semantic Constitution for Grounded, Proof-Carrying, Self-Editing Artificial Intelligence. Corben-authored July 2026 conceptual architecture and falsifiable research program for semantic continuity through stable Form lineages, immutable semantic versions, typed Essence Contracts, six mutually constraining planes, explicit proposition-attestation-commitment-proof separation, branch-protected world dynamics, qualified grounding, semantic transactions, runtime packet compilation, and federated mappings. Existing chapters are upgraded first; no implemented substrate, benchmark result, philosophical solution to grounding, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `qcsa_whitepaper` | Passage-reviewed comparator: Question-Compiled Semantic Addressing. Adds stable SOID identity, plural contextual SVA leases, atlas epochs, SAC adequacy and residual fields, bounded graph materialization, revalidation triggers, and explicit failure when semantic uncertainty is insufficient for a consumer; the later repository adds a bounded local 12-lane implementation, 60-case held-out evaluation over 13 systems and three seeds, and one 13-stage governed vertical trace. | The exact matched-advantage and resource gates failed, and the active-question ablation is N2 proxy/regime evidence rather than an exact or broad refutation. No natural-task, learned-model, universal-semantic, production, safety, privacy, external-independence, chapter-core promotion, AGI, or ASI result is established. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
-| `kernel_english_residual_compiler` | Metadata-first comparator: Kernel English with Hierarchical, Interaction-Amortized Residuals: A Dual-Vocabulary Cognitive Compiler for Efficient Language-Model Reasoning. Corben-authored July 2026 architecture proposal for KERC: protected-object capture, uncertainty-aware normalization, sense-aware Kernel IR, dual surface/core vocabularies, a four-level interaction-amortized residual ledger, exact object storage, grammar-aware macro fusion, structured answer packets, rendering, round-trip verification, versioned migration, and complete rate-compute-fidelity evaluation. Existing chapters are upgraded first; no implementation, benchmark, novelty, efficiency, fidelity, safety, transfer, SOTA, AGI, ASI, or support-state result is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `kernel_english_residual_compiler` | Passage-reviewed Corben architecture source: Kernel English with Hierarchical, Interaction-Amortized Residuals: A Dual-Vocabulary Cognitive Compiler for Efficient Language-Model Reasoning. Corben-authored July 2026 architecture proposal for KERC: protected-object capture, uncertainty-aware normalization, sense-aware Kernel IR, dual surface/core vocabularies, a four-level interaction-amortized residual ledger, exact object storage, grammar-aware macro fusion, structured answer packets, rendering, round-trip verification, versioned migration, and complete rate-compute-fidelity evaluation. Existing chapters are upgraded first; no implementation, benchmark, novelty, efficiency, fidelity, safety, transfer, SOTA, AGI, ASI, or support-state result is inferred. | No local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_pagedattention_vllm_2023` | Metadata-first comparator: Efficient Memory Management for Large Language Model Serving with PagedAttention. Primary external paper for vLLM/PagedAttention, which treats KV-cache memory management and serving throughput as a distinct acceleration axis. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_airllm_2023` | Metadata-first comparator: AirLLM: Scaling Large Language Models on Low-End Commodity Computers. Official implementation comparator for layer-wise model sharding, one-layer accelerator residency, next-layer prefetch, optional storage compression, and original-versus-transformed model storage. Maintainer-reported fit and speed claims are not independently reproduced. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_hf_accelerate_big_model_inference_2026` | Metadata-first comparator: Hugging Face Accelerate: Loading Big Models into Memory. Official implementation documentation for automatic or explicit GPU/CPU/disk device maps and memory-mapped disk tensors. The documented sequential-dispatch, prefetch, and hard-drive-performance limitations make it a baseline, not a qualification result. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |

@@ -81,6 +81,182 @@ immutable source
     propose reusable macros only through typed expansion, cross-domain tests,
     ambiguity/security review, versioned deployment, monitoring, and rollback.
 
+## Claim Boundary and Status
+
+- KERC is a proposed cognitive compiler, representation protocol, residual
+  codec family, model decomposition, and research program. It is not an
+  implemented language model or evidence that a canonical internal language is
+  useful.
+- The word “Kernel” names an inspectable semantic interface, not a trusted
+  operating-system kernel and not a claim that discrete tokens reveal all
+  neural computation.
+- A shorter Kernel stream is not compression, speed, memory, or energy evidence
+  until residuals, metadata, exact objects, compiler, renderer, verifier,
+  registries, state, migration, fallback, and governance are counted.
+- Lossless KERC relocates information. It does not evade source entropy; any
+  benefit must come from sending different information through different-cost
+  computational paths.
+- Round-trip recompilation checks selected translation properties. It does not
+  prove truth, task correctness, policy compliance, interpretability, or
+  independence from the compiler's errors.
+- The proposed Kernel inventory, code sizes, thresholds, component sizes,
+  equations, and implementation stages are hypotheses, not measurements.
+- All book integrations remain `Design rationale` / `argument`; no support
+  transition follows from this source.
+
+## Conceptual Primitives
+
+- **Immutable source record:** original bytes or content-addressed source plus
+  encoding, normalization, language, provenance, rights, and integrity data.
+- **Protected object:** a typed form- or identity-sensitive span kept outside
+  destructive normalization and referenced by a local handle.
+- **Correction lattice:** alternative lexical repairs with probability,
+  evidence, source alignment, and abstention rather than one overwritten form.
+- **Kernel concept:** stable contextual sense distinct from its debug label,
+  compact runtime code, macro, tokenizer token, and surface realizations.
+- **Concept capsule:** an open-world local or registered concept with stable
+  identity, type, Kernel definition, arguments, labels, provenance, and trust
+  state.
+- **Kernel packet:** the versioned ABI carrying semantic tokens, handles,
+  residual refs, alignment, uncertainty, provenance, and compatibility.
+- **Hierarchical residual:** global, segment, local, or exact information routed
+  around the principal reasoning stream.
+- **Source residual / render plan:** reconstruction information for existing
+  text versus realization constraints for newly generated text.
+- **Fidelity mode:** semantic, faithful, lexical, or exact preservation under
+  consumer-relative hard and soft constraints.
+- **Answer packet:** intended content, qualifiers, entities, terminology,
+  style, citations, and uncertainty before surface realization.
+- **Grammar macro:** a compact token or local instruction with a deterministic
+  typed expansion into authoritative Kernel form.
+
+## Interfaces, Artifacts, and State Machines
+
+The end-to-end interface is: immutable source -> protection and entity table ->
+correction lattice -> sense-aware compiler -> Kernel packet and residual ledger
+-> grammar-aware serialization/tokenization -> compatible cognitive core ->
+answer packet -> renderer/copy path -> recompiler and semantic checks. Artifact
+identity is separate at each boundary so one component can change without
+silently inheriting another's evidence.
+
+The Kernel packet binds grammar, registry, codebook, tokenizer, residual,
+object-type, compiler, core, renderer, and verifier versions. The global
+residual follows `INIT -> ACTIVE -> UPDATED -> CHECKPOINTED -> CLOSED`; deltas
+operate against immutable parents and every packet carries the consumed state
+hash. Unknown state, missing objects, or incompatibility causes dependency
+recovery, explicit local expansion, rollback, reset, or a less compressed
+fallback—not approximate decoding.
+
+Kernel and residual candidates have distinct lifecycle authority. Local
+capsules, dictionary entries, or macros may be proposed and exercised within a
+packet; promotion into a shared registry requires evidence, scope, review,
+versioning, migration, monitoring, expiry, and rollback. Historical packets
+retain the versions required for replay or fault explicitly.
+
+## Assumptions and Invariants
+
+- Protect form-sensitive and identity-sensitive objects before correction or
+  canonicalization.
+- Canonicalize contextual senses and relations, never strings alone; preserve
+  ambiguity when evidence does not resolve it.
+- Semantic importance, surface importance, and identity anchoring are separate
+  allocation signals.
+- Stable semantic identity is not a short code, token, embedding, label, or
+  local handle.
+- The expanded Kernel form is authoritative over fused macros; every macro has
+  a deterministic typed expansion.
+- Negation, scope, quantification, attribution, values, quotations,
+  provenance, and authority may not disappear across fusion or lowering.
+- Exact bytes remain selectively accessible when the consumer needs them; a
+  compact handle is not proof that the bytes are irrelevant.
+- Global, segment, local, and exact residuals have distinct scopes and costs;
+  promotion requires a measured break-even and governed applicability.
+- Source reconstruction and output realization are different directions and
+  cannot share an unmarked residual.
+- Compiler confidence propagates into downstream uncertainty; canonicalization
+  may not launder an uncertain interpretation into a fact.
+- A round trip cannot exceed the independence and construct validity of the
+  compiler/recompiler pair.
+- Version changes invalidate dependent packets, memories, tools, macros, and
+  evidence unless migration and revalidation close the dependency graph.
+
+## Algorithms and Conditional Results
+
+The paper provides reference algorithms for compiling one input turn,
+promoting repeated local residue into interaction state, reasoning and
+rendering, and round-trip verification. It proposes a learned codebook
+objective, importance-weighted rate–distortion allocation, conditional residual
+entropy coding, a multi-term joint training loss, and full-system architecture
+search. These are normative procedures and optimization targets, not executed
+algorithms.
+
+Three conditional propositions set useful boundaries. A bijective exact
+encoder/decoder preserves entropy between source and Kernel-plus-residual. A
+shared lexical entry breaks even only after definition and reference cost is
+less than repeated local encoding. Residual routing can reduce expensive core
+compute without deleting information for some distributions when the residual
+uses a cheaper path and avoids global reasoning. None establishes that a
+learned KERC compiler finds the right semantics, that a realistic residual is
+cheap, or that total end-to-end cost improves.
+
+## Evidence and Falsifiers
+
+Support requires a complete implementation and matched campaign over natural,
+form-sensitive, multilingual/dialectal, long-interaction, and adversarial
+workloads. KERC is narrowed or rejected as an efficiency architecture if no
+realistic long-context regime improves end-to-end compute or memory; task
+accuracy falls at equal bytes and FLOPs; semantic corruption remains
+unacceptable; residual rate erases the saving; shared state never amortizes;
+rare-name or exact-value fidelity loses to copy-aware baselines; or engineering
+and governance cost rises without a compensating frontier. A partial result in
+which only protected handles, terminology locks, or shared glossaries help is
+an acceptable outcome.
+
+## Threats, Costs, and Governance
+
+Threats include overcorrection and dialect bias, canonicalization hardening an
+ambiguous mistake, residual injection, state desynchronization, concept and
+macro poisoning, confusable-identity attacks, exact-object disclosure,
+instruction/data confusion across representation layers, cross-scope profile
+leakage, version skew, verifier monoculture, and interpretability theater.
+Governance covers source retention and rights, object access, correction and
+terminology control, registry ownership, capsule/macro promotion, privacy,
+scope, expiry, deletion, signed updates, emergency revocation, migration, and
+rollback.
+
+Total burden includes source capture; protection; compilation; correction;
+entity/concept resolution; Kernel and residual rate; codecs; registries;
+object-store storage and reads; core training/inference; renderer and output
+heads; verification; state updates and checkpoints; recovery; migration;
+fallback; human adjudication; privacy; security; observability; and opportunity
+cost. No component is free because it is outside the core model.
+
+## Cross-Paper Synthesis
+
+- Cognitive Compilation owns source/target meaning, IR legality, obligation
+  preservation, answer packets, and translation validation; KERC supplies a
+  specific natural-language source dialect and Kernel target family.
+- Compact Generative Systems owns conservation, residual honesty, decoding,
+  repair, and total burden; KERC supplies the four-level residual hierarchy and
+  interaction-amortized hypothesis.
+- VCM and Context Transactions own packet materialization, exact-source
+  expansion, shared-state mutation, snapshots, faults, migration, privacy, and
+  descendant invalidation.
+- SCF owns stable capability and component replacement; KERC components and
+  registries require consumer-relative compatibility rather than version-name
+  equality.
+- Routing and Replaceable Substrates may select Transformer, recurrent, state-
+  space, symbolic, or hybrid cores behind the same packet contract; KERC does
+  not privilege one hidden computation.
+- Procedural Memory owns macro and dictionary promotion, monitoring, expiry,
+  rollback, and decompilation.
+- Resource Economics and Benchmark Ratchets own equal-budget comparison,
+  break-even regimes, complete denominators, causal ablations, negative
+  results, transfer, and support movement.
+- Security and White-Box Evidence keep semantic interfaces inspectable while
+  rejecting the inference that readable packets prove mechanistic fidelity or
+  authority.
+
 ## Evidence
 
 The source contributes formal design arguments and a falsifiable empirical
@@ -235,3 +411,49 @@ Systems without conflicting invariants or destructive duplication.
 - No round trip establishes truth, semantic completeness, or independent review.
 - No raw source file is published by this intake.
 - No chapter-core support state changes.
+
+## Section-Family Coverage
+
+| Paper section family | Actual manuscript or durable owner | Disposition and boundary |
+|---|---|---|
+| Abstract and §§1–2 | `cognitive-compilation-and-semantic-ir`; `compact-generative-systems-and-residual-honesty`; this note | Surface/Kernel/residual/output separation, four-objective warning, dual-vocabulary thesis, and research questions integrated. No efficiency claim. |
+| §3 prior work and missing-system claim | this note; Appendix H backlog | Comparator categories and narrow synthesis claim retained pending independent primary-source review. Corben's paper does not independently establish novelty. |
+| §4 design principles | Cognitive Compilation; Compact Generative Systems; VCM; Resource Economics | Protection, sense-level canonicalization, uncertainty retention, identity/code separation, open-world handles, adaptive fidelity, shared residuals, inspectability boundary, macro fusion, and complete accounting integrated. |
+| §5 end-to-end architecture | `cognitive-compilation-and-semantic-ir`; `virtual-context-abi`; `integrated-reference-architecture` | All eleven stages, Kernel Packet Protocol, immutable source, correction lattice, concept binding, answer packet, rendering, and recompile checks integrated. No component implementation imported. |
+| §6 Kernel language specification | Cognitive Compilation; source note; protocol backlog | Root/sense distinction, regular features, roles, scope/modality, ambiguity, quantities, discourse, capsules, codebook, macros, and discrete-interface boundary integrated or retained as proposed language design. The provisional inventory is not frozen fact. |
+| §7 Hierarchical Residual Ledger | `compact-generative-systems-and-residual-honesty`; `context-transactions-snapshots-mounts-and-taint`; `security-kernel-and-digital-scifs` | Four scopes, source-map analogy, dictionaries, amortization, adaptive fidelity, entropy coding, source/render distinction, modes, lifecycle, recovery, privacy, and leakage integrated. |
+| §8 dual-vocabulary architecture | `fast-generation-architectures`; `replaceable-cognitive-substrates-beyond-transformer-monoculture`; `virtual-context-abi` | Surface/Kernel/pointer spaces, modular and shared-trunk options, tying policy, output-head hypothesis, tool/memory packets, byte and latent hybrids, and local macros integrated. No architecture advantage imported. |
+| §9 formal rate–compute–fidelity analysis | `resource-economics-and-token-budgets`; Compact Generative Systems; this note | Entropy relocation, total coded rate, core and total compute, KV cache, vocabulary cost, multidimensional distortion, amortization, break-even, optimization, and equal-budget controls integrated as conditional objects. |
+| §10 training | source note; `data-engines-continual-learning-and-unlearning`; Benchmark Ratchets; protocol backlog | Coordinated dataset, lexicon, compiler, hygiene, entity, codebook, BPE, core, reasoning, residual, renderer, verifier, joint-loss, distillation, and versioned-artifact requirements retained as an implementation/research program. No training result imported. |
+| §11 worked examples | this note and receiving chapter examples | Ten examples preserve the intended packet and residual semantics as illustrations; none is treated as executed evidence. |
+| §12 experimental program | `benchmark-ratchets-and-anti-goodhart-evidence`; `resource-economics-and-token-budgets`; active research roadmap | Hypotheses, baselines, scales, domains, eight track families, ablations, long-context curve, human/statistical protocols, falsifiers, and minimum reporting integrated as an argument-exit campaign. |
+| §13 comparison and novelty | this note; Appendix H backlog | Differences from byte, learned compression, compact reasoning, AMR, and controlled language retained as hypotheses pending current independent passage review. |
+| §14 safety/security/governance | `security-kernel-and-digital-scifs`; Context Transactions; White-Box Evidence; Cognitive Compilation | Compiler-error amplification, dialect bias, residual and macro poisoning, desynchronization, confusable identity, object access, injection, verifier and interpretability limits, version governance, and user controls integrated. |
+| §15 limitations and falsifiers | this note; Benchmark Ratchets; chapter failure modes | All twelve limitations and the explicit rejection/narrowing rule retained. Simpler byte, latent, entity-handle, glossary, and copy-aware systems remain live alternatives. |
+| §16 extensions | Replaceable Substrates; VCM; Procedural Memory; source note | Multilingual/domain profiles, memory compaction, agent protocols, tool compilation, hyperprior, adaptive fidelity, latent intervals, macro evolution, and non-English syntax routed as research extensions—not claimed capabilities. |
+| §17 conclusion | chapter summaries; this note | Conservation-and-routing thesis integrated without promoting KERC, efficiency, fidelity, or ASI. |
+| Appendix A | source note; Cognitive Compilation/protocol backlog | Provisional grammar, syntax, frames, types, scope, and alignment retained as a draft specification, not a standardized or validated language. |
+| Appendix B | source note; Context Transactions/schema backlog | Logical/binary residual layouts, precedence, recovery, and garbage collection retained as normative schema work. |
+| Appendix C | source note; executable-specification backlog | Four pseudocode procedures retained as proposed algorithms; no implementation or proof inferred. |
+| Appendix D | `prototype-roadmap`; Integrated Reference Architecture; source note | Component sizing, contracts, stores, hardware opportunities, debugging, and reproducibility artifacts retained as implementation obligations. |
+| Appendix E and references | Benchmark Ratchets; source note; Appendix H backlog | Complete reporting checklist retained; external references require independent current-primary-source review. |
+
+## Closure Status
+
+**Section-family audit complete as of 2026-07-31.** All 17 numbered sections,
+five appendices, and references terminate in manuscript integration,
+public-safe source-note retention, concrete implementation/evaluation work, or
+an explicit non-claim. This pass repaired the prior metadata-only treatment by
+writing the protected sense-aware compiler, hierarchical residual ledger,
+Kernel packet ABI, transactional residual lifecycle, dual-vocabulary runtime,
+rate–compute–fidelity ledger, representation-layer threat surface, macro
+promotion lifecycle, full-system benchmark, independent adequacy boundary, and
+cross-stack trace into their canonical chapters. No substantive section is
+orphaned.
+
+Closure does not establish a trained compiler, canonical language, native
+Kernel core, residual codec, renderer, verifier, semantic-preservation result,
+interaction amortization, speed or memory advantage, security result,
+multilingual fairness, external reproduction, novelty, production transfer, or
+ASI claim. The source remains `argument` and must be reopened on material paper
+or receiving-chapter drift.

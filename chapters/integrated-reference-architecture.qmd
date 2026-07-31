@@ -4,7 +4,7 @@ chapter_id: "integrated-reference-architecture"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.3 manuscript draft"
-last_updated: "2026-07-27"
+last_updated: "2026-07-31"
 primary_sources:
   - "viea"
   - "scf"
@@ -628,6 +628,58 @@ only; it is not an implemented router, real effect kernel, safe compiler,
 usefulness result, or whole-stack demonstration. Chapter-core support remains
 `argument`.
 
+### The Kernel compiler path across the stack
+
+KERC contributes a representation path that surrounds rather than replaces the
+cognitive core. The immutable source enters Artifact custody; protected-object
+extraction obtains identity, privacy, and exact-byte handles; Cognitive
+Compilation emits an uncertainty-bearing Kernel packet; the Context ABI
+materializes the packet and selective source views; Context Transactions own
+global residual state and migrations; Routing selects a compatible reasoner;
+the reasoner emits a typed answer packet; a surface renderer realizes it; and
+an independent-enough verification lane recompiles the output and compares the
+declared semantic contract. Claim, evidence, effect, and support authority stay
+outside that representation cycle.
+
+```{mermaid}
+flowchart LR
+  S["Immutable source + rights"] --> P["Protected objects + correction lattice"]
+  P --> C["Sense-aware compiler"]
+  C --> K["Kernel packet + residual refs"]
+  K --> M["Context materialization"]
+  M --> R["Compatible cognitive core"]
+  R --> A["Typed answer packet"]
+  A --> Y["Surface renderer + copy path"]
+  Y --> V["Recompile + semantic checks"]
+  V --> G{"Contract preserved?"}
+  G -- "yes" --> O["Typed result + provenance"]
+  G -- "local mismatch" --> Y
+  G -- "semantic or state fault" --> F["Source expansion / higher fidelity / fallback"]
+  F --> M
+```
+
+No single record owns the complete truth. The Kernel packet states what the
+compiler represented; the residual ledger states which distinctions bypassed
+the core; the answer packet states intended content; the rendering receipt
+states which surface form was produced; the recompile receipt states whether
+selected distinctions survived; factual and task evaluators state whether the
+answer was correct or useful; and Resource Economics states whether the route
+beat its baseline after every component was charged.
+
+Replacement is component-specific but dependency-closed. Compiler, grammar,
+concept registry, runtime codebook, tokenizer, core, residual codec, object
+store, renderer, verifier, and migration logic have separate identities and
+compatibility ranges. Changing one invalidates exactly the packets, memories,
+macros, routes, renderings, and evidence that relied on it. Short codes and
+model weights cannot become the permanent semantic identity, and rollback must
+restore both visible state and decoder compatibility for historical packets.
+
+This architecture supports narrower deployments: protected entity handles
+without a Kernel core, shared terminology without lossless reconstruction, or
+typed answer packets without a learned residual codec. Those partial systems
+must be named rather than marketed as KERC. The source provides the integrated
+contract and falsifiers, not a working vertical slice or efficiency result.
+
 ### Recomposition is a transaction
 
 Modular decomposition does not guarantee coherent recomposition. VIEA calls
@@ -1119,7 +1171,7 @@ These rows keep Integrated Reference Architecture's manifest assignments visible
 | `qcsa_whitepaper` | Passage-reviewed comparator: Question-Compiled Semantic Addressing. Defines QCSA as the semantic control plane connecting grounding, context, planning, memory, claims, routing, tools, generation, evidence acquisition, lifecycle migration, governance, and execution receipts through identity-address-route indirection; the later repository adds a bounded local 12-lane implementation, 60-case held-out evaluation over 13 systems and three seeds, and one 13-stage governed vertical trace. | The exact matched-advantage and resource gates failed, and the active-question ablation is N2 proxy/regime evidence rather than an exact or broad refutation. The local vertical path does not establish broad deployment, production safety, chapter-core promotion, AGI, or ASI. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_v_jepa_2_2025` | Passage-reviewed comparator: V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning. Supplies the external predictive-state-to-planning interface for a governed world-model lane while preserving camera, search-cost, representation, and sim-to-real residuals. | The reported video and robot results do not establish local model quality, causal understanding, safe control, transfer, deployment, or an ASI Stack result. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_embedded_agency_2019` | Passage-reviewed comparator: Embedded Agency. Supplies the open-world foundations residual beneath the finite reference trace: the stack is inside the world it records and cannot treat its own ledger as an external omniscient model. | The paper is an informal obstacle survey, not a solved theory; the ASI Stack's finite records and proofs do not solve logical uncertainty, self-reference, robust delegation, subsystem alignment, or open-world embedded agency. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
-| `kernel_english_residual_compiler` | Metadata-first comparator: Kernel English with Hierarchical, Interaction-Amortized Residuals: A Dual-Vocabulary Cognitive Compiler for Efficient Language-Model Reasoning. Corben-authored July 2026 architecture proposal for KERC: protected-object capture, uncertainty-aware normalization, sense-aware Kernel IR, dual surface/core vocabularies, a four-level interaction-amortized residual ledger, exact object storage, grammar-aware macro fusion, structured answer packets, rendering, round-trip verification, versioned migration, and complete rate-compute-fidelity evaluation. Existing chapters are upgraded first; no implementation, benchmark, novelty, efficiency, fidelity, safety, transfer, SOTA, AGI, ASI, or support-state result is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `kernel_english_residual_compiler` | Passage-reviewed Corben architecture source: Kernel English with Hierarchical, Interaction-Amortized Residuals: A Dual-Vocabulary Cognitive Compiler for Efficient Language-Model Reasoning. Corben-authored July 2026 architecture proposal for KERC: protected-object capture, uncertainty-aware normalization, sense-aware Kernel IR, dual surface/core vocabularies, a four-level interaction-amortized residual ledger, exact object storage, grammar-aware macro fusion, structured answer packets, rendering, round-trip verification, versioned migration, and complete rate-compute-fidelity evaluation. Existing chapters are upgraded first; no implementation, benchmark, novelty, efficiency, fidelity, safety, transfer, SOTA, AGI, ASI, or support-state result is inferred. | No local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_swe_rebench_v2_2026` | Passage-reviewed comparator: SWE-rebench V2: Language-Agnostic SWE Task Collection at Scale. Provides a natural repository-change substrate for testing the same candidate through matched test-only, record-only, and full-governance admission routes with visible utility, unsafe admission, false blocking, latency, rollback, residual, and cost outcomes. | No local gold run, candidate campaign, final heldout result, governance advantage, deployment, safety, or transfer result exists yet. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `relational_dimension_compiler` | Passage-reviewed comparator: The Relational Dimension Compiler: Adaptive Polyadic Cognition with Bounded Computational Arity and Unbounded Semantic Structure. Adds a joined relational-complex state across semantic entities/relations/fields, evidence and lifecycle metadata, selected computational operators, branch identity, and abstraction maps, with explicit interfaces to routing, world models, memory, effects, and reconciliation. | The RDC lifecycle has not been implemented, joined to the current reference trace, or shown to preserve semantics, improve utility, reduce cost, or govern effects. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 

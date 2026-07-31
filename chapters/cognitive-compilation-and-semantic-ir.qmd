@@ -522,6 +522,58 @@ meaning. The prospective full RDC owner remains deferred by the active chapter
 freeze; this section strengthens the existing translation boundary without
 pre-empting that later adjudication.
 
+### Protected, sense-aware lowering into a Kernel packet
+
+Kernel English makes ordinary language a particularly demanding source
+dialect. The compiler cannot begin by “cleaning” the text, because the apparent
+noise may contain the only correct name, quotation, code token, identifier,
+unit, significant figure, dialect form, or term under discussion. It first
+freezes the source bytes or a content-addressed handle and extracts typed
+protected objects. Semantic importance, surface-form importance, and identity
+anchoring remain separate attributes: an approximate rate may allow different
+wording while a semantically minor quotation may require exact bytes.
+
+Unprotected text enters an uncertainty-aware correction lattice rather than an
+overwrite pass. Candidate spelling or grammar repairs retain probabilities,
+source alignment, and an abstention route. The next pass canonicalizes
+contextual senses—not strings—while making roles, negation, tense, aspect,
+modality, quantification, scope, coreference, discourse relation, attribution,
+and ambiguity explicit. “The panel did not approve the plan” may share a
+Kernel proposition with a passive paraphrase; “has not approved it yet” cannot
+lose perfect aspect or the still-open possibility of approval. An unresolved
+pronoun becomes a weighted or branched reference, not a convenient guess.
+
+Open-world entities and concepts cross the boundary through handles. A concept
+capsule binds stable identity, type, Kernel definition, argument schema,
+surface labels, provenance, and registry version; an unresolved label may stay
+opaque or fall back to bytes. Stable concept identity, human-readable debug
+root, compact runtime code, grammar macro, and tokenizer token are deliberately
+different objects. A codebook or BPE revision may change the latter four
+without silently changing the concept. Grammar-aware macro fusion is legal
+only when every fused token has a typed deterministic expansion and does not
+erase entity, scope, negation, quantifier, quotation, value, provenance, or
+authority boundaries.
+
+The result is a versioned Kernel packet carrying Kernel tokens, entity and
+concept tables, protected-object handles, residual refs, source alignment,
+uncertainty, provenance, and compatibility hashes. A reasoner may use the
+compact representation while requesting exact source expansion when wording
+matters. It ends in a structured answer packet whose claims, modality,
+qualifiers, entities, required terms, style, citations, and uncertainty are
+separate from prose realization. A renderer then produces surface text, and a
+recompiler checks entity identity, values and units, negation and scope,
+modality, time, causal direction, attribution, quotations, and required
+caveats.
+
+Round-trip agreement is translation validation at one boundary, not proof of
+truth. Compiler and recompiler can share an error, and readable Kernel can be a
+post-hoc rationale rather than a faithful view of hidden neural computation.
+High-impact use therefore keeps source access, alternative parses,
+independent-enough semantic probes, task outcomes, factual grounding, policy,
+and authority checks outside the cycle. This paper supplies the IR and
+validation design; it supplies no trained compiler, reasoner, renderer, or
+meaning-preservation result.
+
 ## Interfaces
 
 The public interface is a typed translation graph and receipt set, not a prose
@@ -862,7 +914,7 @@ These rows keep Cognitive Compilation and Semantic IR's manifest assignments vis
 | `deterministic_capability_compilation` | Metadata-first comparator: Deterministic Capability Compilation: A Capability-Preserving Ladder from Executable Scaffolds to Governed Adaptive Agents. Corben-authored July 2026 architecture and research program for compiling executable scaffolds into contract-bound experts and linked Neural Capability Objects while retaining semantic obligation mass balance, candidate-specific translation validation, fallback, residual escrow, authority ceilings, reification, and effect-complete recovery. Existing chapters are upgraded first; no foundry implementation, learned-capability result, preservation result, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `platonic_world_model` | Metadata-first comparator: The Platonic World Model: A Semantic Constitution for Grounded, Proof-Carrying, Self-Editing Artificial Intelligence. Corben-authored July 2026 conceptual architecture and falsifiable research program for semantic continuity through stable Form lineages, immutable semantic versions, typed Essence Contracts, six mutually constraining planes, explicit proposition-attestation-commitment-proof separation, branch-protected world dynamics, qualified grounding, semantic transactions, runtime packet compilation, and federated mappings. Existing chapters are upgraded first; no implemented substrate, benchmark result, philosophical solution to grounding, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `qcsa_whitepaper` | Passage-reviewed comparator: Question-Compiled Semantic Addressing. Frames SOIDs and SACs as typed semantic-IR references, question traces as evidence-acquisition programs, and semantic-to-physical route plans as policy-constrained target lowering; the later repository adds a bounded local 12-lane implementation, 60-case held-out evaluation over 13 systems and three seeds, and one 13-stage governed vertical trace. | The exact matched-advantage and resource gates failed, and the active-question ablation is N2 proxy/regime evidence rather than an exact or broad refutation. No natural-task, learned-model, universal-semantic, production, safety, privacy, external-independence, chapter-core promotion, AGI, or ASI result is established. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
-| `kernel_english_residual_compiler` | Metadata-first comparator: Kernel English with Hierarchical, Interaction-Amortized Residuals: A Dual-Vocabulary Cognitive Compiler for Efficient Language-Model Reasoning. Corben-authored July 2026 architecture proposal for KERC: protected-object capture, uncertainty-aware normalization, sense-aware Kernel IR, dual surface/core vocabularies, a four-level interaction-amortized residual ledger, exact object storage, grammar-aware macro fusion, structured answer packets, rendering, round-trip verification, versioned migration, and complete rate-compute-fidelity evaluation. Existing chapters are upgraded first; no implementation, benchmark, novelty, efficiency, fidelity, safety, transfer, SOTA, AGI, ASI, or support-state result is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `kernel_english_residual_compiler` | Passage-reviewed Corben architecture source: Kernel English with Hierarchical, Interaction-Amortized Residuals: A Dual-Vocabulary Cognitive Compiler for Efficient Language-Model Reasoning. Corben-authored July 2026 architecture proposal for KERC: protected-object capture, uncertainty-aware normalization, sense-aware Kernel IR, dual surface/core vocabularies, a four-level interaction-amortized residual ledger, exact object storage, grammar-aware macro fusion, structured answer packets, rendering, round-trip verification, versioned migration, and complete rate-compute-fidelity evaluation. Existing chapters are upgraded first; no implementation, benchmark, novelty, efficiency, fidelity, safety, transfer, SOTA, AGI, ASI, or support-state result is inferred. | No local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `relational_dimension_compiler` | Passage-reviewed comparator: The Relational Dimension Compiler: Adaptive Polyadic Cognition with Bounded Computational Arity and Unbounded Semantic Structure. Adds a dimensional type system and a four-layer relational IR whose semantic, evidence, computational, and abstraction records can lower relation objects into neural, graph, database, symbolic, simulator, planning, or verification backends without identifying a tensor index with semantic identity. | The existing chapter owns accepted-obligation translation, not the complete RDC world-structure lifecycle; no lowering preserves open-world relational meaning by source authority alone. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->

@@ -4,7 +4,7 @@ chapter_id: "compact-generative-systems-and-residual-honesty"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.3 claim-proof program"
-last_updated: "2026-07-16"
+last_updated: "2026-07-31"
 primary_sources:
   - "cgs"
   - "rgs"
@@ -322,6 +322,57 @@ or treats ordering as another governed route. Unknown cases go to more
 precision, the reference implementation, abstention, or escalation—not silent
 approximation.
 
+### Hierarchical residual custody for semantic compression
+
+Kernel English supplies a concrete residual decomposition for a compact
+semantic representation. If several surface expressions compile to one Kernel
+proposition, exact reconstruction cannot come from that proposition alone. The
+complete representation is therefore `(K, R)`, where `K` is the semantic path
+processed by the expensive reasoner and `R` carries distinctions routed around
+it. In lossless mode a deterministic one-to-one encoder and decoder only
+relocate entropy: `H(X) = H(K,R)`. The architecture can win only if expensive
+global computation depends mostly on `K` while cheaper, narrower components
+store, decode, or inspect `R`.
+
+The Hierarchical Residual Ledger gives different information the scope at
+which it is reusable:
+
+- an interaction-global residual stores dialect, register, terminology locks,
+  aliases, units, formatting, fidelity policy, version, and security state;
+- a segment residual stores local voice, rhetorical frame, emphasis, discourse
+  order, quotation style, and temporary lexical overrides;
+- a token- or concept-local residual stores only an exceptional realization,
+  morphology, capitalization, exactness, source span, or confidence; and
+- an exact-object store retains arbitrary bytes and typed values for names,
+  quotations, identifiers, URLs, code, formulas, or other non-regenerable
+  objects.
+
+The ledger distinguishes a **source residual**, which reconstructs or
+faithfully quotes existing input, from a **render plan**, which constrains a new
+answer for which no original wording exists. It also separates semantic,
+faithful, lexical, and exact fidelity. Allocation is importance-weighted under
+hard preservation constraints: identity, number/unit, approximation,
+quotation, code, authority, or user-locked terminology cannot be traded away
+merely because an embedding similarity remains high. Model uncertainty is one
+input to importance, not its definition.
+
+Shared state earns credit only after its definition and reference costs break
+even. If an entry costs `b_def`, a local realization costs `b_direct`, and a
+reference costs `b_ref`, promotion is economical only after
+`m > b_def / (b_direct - b_ref)` uses—and only after adding lookup,
+synchronization, privacy, checkpoint, migration, and recovery costs. Early
+turns and stylistically diverse text may remain net negative. A global
+dictionary that saves local tags but becomes an unpriced permanent profile is
+not residual honesty.
+
+This decomposition makes narrow outcomes scientifically useful. Entity
+handles, exact-object routing, terminology locks, or interaction-shared
+glossaries may survive even if the full canonical language loses to a strong
+byte, token, or learned-compression baseline. Conversely, a shorter Kernel
+sequence with a large residual, renderer, verifier, registry, and fallback
+burden is not compression success. The source provides conservation rules and
+break-even hypotheses, not a measured rate, fidelity, or compute advantage.
+
 ## Interfaces
 
 Compact generators are exposed through the Compact Generative Record.
@@ -580,7 +631,7 @@ These rows keep Compact Generative Systems: Generate, Verify, Repair, and Residu
 |---|---|---|
 | `deterministic_capability_compilation` | Metadata-first comparator: Deterministic Capability Compilation: A Capability-Preserving Ladder from Executable Scaffolds to Governed Adaptive Agents. Corben-authored July 2026 architecture and research program for compiling executable scaffolds into contract-bound experts and linked Neural Capability Objects while retaining semantic obligation mass balance, candidate-specific translation validation, fallback, residual escrow, authority ceilings, reification, and effect-complete recovery. Existing chapters are upgraded first; no foundry implementation, learned-capability result, preservation result, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `qcsa_whitepaper` | Passage-reviewed comparator: Question-Compiled Semantic Addressing. Extends Semantic Representation Leasing with plural address leases, path deltas, open-world expressions, semantic-first generation, round-trip structural checks, consumer adequacy, and explicit collision, verification, migration, repair, and fallback residuals; the later repository adds a bounded local 12-lane implementation, 60-case held-out evaluation over 13 systems and three seeds, and one 13-stage governed vertical trace. | The exact matched-advantage and resource gates failed, and the active-question ablation is N2 proxy/regime evidence rather than an exact or broad refutation. No useful compression, model-quality, production, chapter-core promotion, AGI, or ASI result is established. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
-| `kernel_english_residual_compiler` | Metadata-first comparator: Kernel English with Hierarchical, Interaction-Amortized Residuals: A Dual-Vocabulary Cognitive Compiler for Efficient Language-Model Reasoning. Corben-authored July 2026 architecture proposal for KERC: protected-object capture, uncertainty-aware normalization, sense-aware Kernel IR, dual surface/core vocabularies, a four-level interaction-amortized residual ledger, exact object storage, grammar-aware macro fusion, structured answer packets, rendering, round-trip verification, versioned migration, and complete rate-compute-fidelity evaluation. Existing chapters are upgraded first; no implementation, benchmark, novelty, efficiency, fidelity, safety, transfer, SOTA, AGI, ASI, or support-state result is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `kernel_english_residual_compiler` | Passage-reviewed Corben architecture source: Kernel English with Hierarchical, Interaction-Amortized Residuals: A Dual-Vocabulary Cognitive Compiler for Efficient Language-Model Reasoning. Corben-authored July 2026 architecture proposal for KERC: protected-object capture, uncertainty-aware normalization, sense-aware Kernel IR, dual surface/core vocabularies, a four-level interaction-amortized residual ledger, exact object storage, grammar-aware macro fusion, structured answer packets, rendering, round-trip verification, versioned migration, and complete rate-compute-fidelity evaluation. Existing chapters are upgraded first; no implementation, benchmark, novelty, efficiency, fidelity, safety, transfer, SOTA, AGI, ASI, or support-state result is inferred. | No local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `precision_contract` | Metadata-first comparator: The Precision Contract: A Functional Rate–Distortion Theory for Behavior-Preserving Neural Computation. Corben-authored July 2026 theoretical and systems paper replacing universal per-weight precision questions with a contract-relative functional rate-distortion problem over complete executable descriptions. It proposes representation canonicalization, protected-behavior contracts, precision fields, progressive base/residual encoding, dynamic routing, full physical and assurance-cost accounting, a Functional Precision Compiler, and scoped precision certificates. Existing chapters are upgraded first; no universal bit bound, implemented compiler, preserved-behavior result, efficiency result, certificate validity, support promotion, SOTA, AGI, or ASI claim is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->

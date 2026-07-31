@@ -4,7 +4,7 @@ chapter_id: "verification-bandwidth-and-context-adequacy"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 manuscript draft"
-last_updated: "2026-07-16"
+last_updated: "2026-07-31"
 primary_sources:
   - "verification_bandwidth"
   - "vcm_public"
@@ -279,6 +279,38 @@ movement, authority, and release remain decisions of their respective owners.
 | `contradicted` | The adequacy pass found a conflict that matters to the target claim. | Revision, downgrade, or refutation path. |
 
 This table does not measure a model's true attention. It gives the stack a public vocabulary for refusing overconfident prose.
+
+### Verify the semantic contract without trusting the compression loop
+
+KERC turns compressed context adequacy into a paired question. First, does the
+Kernel packet preserve the distinctions required by this consumer—entities,
+values, scope, modality, time, attribution, uncertainty, authority, and exact
+objects? Second, does the rendered output preserve the intended answer packet?
+A consumer can pass one and fail the other. A semantically adequate planning
+view may be inadequate for quotation; a perfect surface reconstruction may
+carry a wrong canonical proposition.
+
+Round-trip recompilation is useful as a high-throughput local check for dropped
+negation, swapped entities, changed units, strengthened certainty, reversed
+causality, lost attribution, altered quotation, or omitted caveats. Its ceiling
+is determined by evaluator dependence. When compiler and recompiler share
+architecture, training data, concept registry, codebook, prompts, or
+organization, agreement can reproduce the same mistake. Symbolic exact checks,
+alternative parsers, source-grounded questions, task outcomes, and independent
+adjudication remain separate lanes.
+
+Verification can request selective source expansion rather than loading every
+exact byte into every reasoning step. The request names the disputed Kernel
+unit, protected object, source span, fidelity mode, consumer, authority, and
+purpose. The returned view may resolve the issue, preserve several candidate
+parses, or show that the representation is inadequate. Expansion cost,
+privacy, latency, evaluator capacity, and residual uncertainty stay visible;
+fallback to source is a normal adequacy outcome, not a defeat to hide.
+
+No architecture may claim adequate compressed context solely from a short
+sequence, valid packet, or successful cycle. The paper proposes the test
+surface but supplies no independent evaluator, measured error-detection rate,
+or evidence that verification cost leaves a net benefit.
 
 ## Interfaces
 
@@ -637,7 +669,7 @@ These rows keep Verification Bandwidth and Context Adequacy's manifest assignmen
 
 | Source | Intake role | Boundary |
 |---|---|---|
-| `kernel_english_residual_compiler` | Metadata-first comparator: Kernel English with Hierarchical, Interaction-Amortized Residuals: A Dual-Vocabulary Cognitive Compiler for Efficient Language-Model Reasoning. Corben-authored July 2026 architecture proposal for KERC: protected-object capture, uncertainty-aware normalization, sense-aware Kernel IR, dual surface/core vocabularies, a four-level interaction-amortized residual ledger, exact object storage, grammar-aware macro fusion, structured answer packets, rendering, round-trip verification, versioned migration, and complete rate-compute-fidelity evaluation. Existing chapters are upgraded first; no implementation, benchmark, novelty, efficiency, fidelity, safety, transfer, SOTA, AGI, ASI, or support-state result is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `kernel_english_residual_compiler` | Passage-reviewed Corben architecture source: Kernel English with Hierarchical, Interaction-Amortized Residuals: A Dual-Vocabulary Cognitive Compiler for Efficient Language-Model Reasoning. Corben-authored July 2026 architecture proposal for KERC: protected-object capture, uncertainty-aware normalization, sense-aware Kernel IR, dual surface/core vocabularies, a four-level interaction-amortized residual ledger, exact object storage, grammar-aware macro fusion, structured answer packets, rendering, round-trip verification, versioned migration, and complete rate-compute-fidelity evaluation. Existing chapters are upgraded first; no implementation, benchmark, novelty, efficiency, fidelity, safety, transfer, SOTA, AGI, ASI, or support-state result is inferred. | No local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Post-v2.1 evaluator adequacy result

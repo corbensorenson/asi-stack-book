@@ -4,7 +4,7 @@ chapter_id: "security-kernel-and-digital-scifs"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.3 semantically reviewed proof-contract draft"
-last_updated: "2026-07-16"
+last_updated: "2026-07-31"
 primary_sources:
   - "ladon_manhattan"
   - "context_engineer"
@@ -269,6 +269,48 @@ replay, independent authorization, and preserved recovery tooling. These
 controls complement operating-system, key, model, network, and sensor security;
 they do not replace them or establish a secure implementation.
 
+### Representation-layer security: residuals, macros, and exact objects
+
+KERC adds a second semantic attack surface around the compiler. A residual can
+change future terminology, aliases, style, or fidelity; a concept capsule can
+hide a false definition behind a short handle; a macro can fuse away an
+authority or scope boundary; and an exact-object handle can disclose secrets,
+proprietary code, personal data, or an embedded prompt injection. These objects
+are typed state and executable representation dependencies, not passive
+compression metadata.
+
+Residual mutations require an authenticated principal, declared source,
+schema, scope, expiry, precedence, conflict analysis, privacy label, signature
+where distributed, and an audit trail. Quoted or retrieved instructions cannot
+write the ledger. User terminology locks outrank inferred preferences unless a
+higher policy forbids them, and no local entry silently crosses user, project,
+organization, or trust-domain boundaries. Inspection, reset, deletion, and
+export controls are required because a compact global residue can become an
+invisible linguistic profile.
+
+Concept and macro registries separate stable identity from short runtime code.
+Capsules retain definition hashes, provenance, review state, allowed domains,
+and whether the object is known, local, opaque, or unresolved. Macro expansion
+must be deterministic and type checked; merges cannot cross protected objects,
+negation, quantification, quotation, values, provenance, or authority without
+an explicit semantic definition. Promotion from a local sequence to a global
+macro passes cross-domain ambiguity, security, migration, and rollback tests.
+
+Exact-object access follows least privilege. A core may receive a type,
+identity handle, redacted summary, or hash without receiving bytes; expansion
+is a purpose-bound auditable tool call. Unicode code points, normalization,
+script, confusables, aliases, and identity provenance remain separate so a
+renderer does not merge visually similar people or identifiers. Compiler and
+renderer version mismatch or unknown residual state fails closed to recovery
+or explicit form rather than approximate decoding.
+
+Finally, a readable Kernel statement such as `SOURCE @DOC CLAIM [...]` helps
+mark untrusted data but does not prove the compiler classified authority
+correctly. Adversarial documents must try to escape quote, object, concept,
+macro, residual, and control boundaries. The source proposes these controls;
+it contains no hardened parser, enforced isolation, cross-tenant campaign, or
+security result.
+
 ## Interfaces
 
 The current public Authority Use Receipt is only an early interface slice. Its eleven required fields—`handle_id`, `principal`, `purpose`, `destination`, `allowed_action`, `clearance`, `approval_record`, `scif_lifecycle`, `sanitized_output`, `residual_leak_risk`, and `revocation_path`—do not yet encode a complete threat model, exact policy/evaluator identity, data and taint scope, nonce and use count, isolation grade, actual effects, telemetry completeness, declassification authority, descendants, external effects, or incident closure. Schema validity must not be confused with an enforced security transaction.
@@ -449,7 +491,7 @@ These rows keep Security Kernel and Digital SCIFs's manifest assignments visible
 | Source | Intake role | Boundary |
 |---|---|---|
 | `platonic_world_model` | Metadata-first comparator: The Platonic World Model: A Semantic Constitution for Grounded, Proof-Carrying, Self-Editing Artificial Intelligence. Corben-authored July 2026 conceptual architecture and falsifiable research program for semantic continuity through stable Form lineages, immutable semantic versions, typed Essence Contracts, six mutually constraining planes, explicit proposition-attestation-commitment-proof separation, branch-protected world dynamics, qualified grounding, semantic transactions, runtime packet compilation, and federated mappings. Existing chapters are upgraded first; no implemented substrate, benchmark result, philosophical solution to grounding, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
-| `kernel_english_residual_compiler` | Metadata-first comparator: Kernel English with Hierarchical, Interaction-Amortized Residuals: A Dual-Vocabulary Cognitive Compiler for Efficient Language-Model Reasoning. Corben-authored July 2026 architecture proposal for KERC: protected-object capture, uncertainty-aware normalization, sense-aware Kernel IR, dual surface/core vocabularies, a four-level interaction-amortized residual ledger, exact object storage, grammar-aware macro fusion, structured answer packets, rendering, round-trip verification, versioned migration, and complete rate-compute-fidelity evaluation. Existing chapters are upgraded first; no implementation, benchmark, novelty, efficiency, fidelity, safety, transfer, SOTA, AGI, ASI, or support-state result is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `kernel_english_residual_compiler` | Passage-reviewed Corben architecture source: Kernel English with Hierarchical, Interaction-Amortized Residuals: A Dual-Vocabulary Cognitive Compiler for Efficient Language-Model Reasoning. Corben-authored July 2026 architecture proposal for KERC: protected-object capture, uncertainty-aware normalization, sense-aware Kernel IR, dual surface/core vocabularies, a four-level interaction-amortized residual ledger, exact object storage, grammar-aware macro fusion, structured answer packets, rendering, round-trip verification, versioned migration, and complete rate-compute-fidelity evaluation. Existing chapters are upgraded first; no implementation, benchmark, novelty, efficiency, fidelity, safety, transfer, SOTA, AGI, ASI, or support-state result is inferred. | No local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_nist_pqc_standards_2024` | Metadata-first comparator: Announcing Approval of Three Federal Information Processing Standards for Post-Quantum Cryptography. Official NIST announcement for FIPS 203, 204, and 205. It establishes approved algorithm standards and migration urgency, not implementation security, protocol correctness, complete inventory, or successful system migration. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->

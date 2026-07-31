@@ -4,7 +4,7 @@ chapter_id: "fast-generation-architectures"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.3 claim-proof program"
-last_updated: "2026-07-23"
+last_updated: "2026-07-31"
 primary_sources:
   - "cgs"
   - "cognitive_loop_closure"
@@ -614,6 +614,42 @@ flowchart LR
     D -->|unknown or deadline| F["Reference / abstain / escalate"]
 ```
 
+### Dual-vocabulary generation separates reasoning from realization
+
+KERC proposes three logical code spaces: a rich surface vocabulary for input
+and output, a smaller canonical Kernel vocabulary for recurrent reasoning, and
+a pointer/control space for objects, handles, residuals, versions, and byte
+fallback. The proposed speedup does not come from calling the surface language
+unimportant. It comes from avoiding a large surface projection and its lexical
+competition at every internal step while retaining a separate high-fidelity
+realization path at the end.
+
+The cleanest architecture uses a surface compiler, a large core reasoner over
+Kernel plus pointers, and a surface renderer with copy access to protected
+objects. A lower-parameter alternative shares a trunk while retaining distinct
+surface, Kernel, and copy heads. Full vocabulary tying is not assumed: surface
+and Kernel forms may share a stable concept base while adding code-specific or
+form-specific components. The shared-trunk design saves parameters but raises
+interference risk; the modular design simplifies replacement and multilingual
+rendering but can make compiler and renderer passes dominate latency.
+
+The output-head hypothesis is workload-specific. If a long internal trace has
+`L_K` Kernel steps and the final answer has `L_Y` surface steps, the large
+surface head is needed for roughly `L_Y` rather than `L_K + L_Y` positions.
+That arithmetic matters only after charging compilation, residual coding,
+object retrieval, rendering, recompilation, local regeneration, and fallback.
+A small core surrounded by two large slow language models is not a fast
+generation architecture.
+
+The representation boundary is compatible with byte-level dynamic chunking
+at ingress and with latent recurrent intervals inside the core. Discrete
+Kernel checkpoints can be emitted when a tool call, memory write, branch,
+verification, inter-agent handoff, or audit view needs a stable object, while
+unobserved microsteps remain latent. These hybrids are alternatives to test,
+not free improvements to stack together. No source result shows that a
+dual-vocabulary implementation beats a strong ordinary, byte-level, dynamic
+chunking, latent, or copy-aware baseline.
+
 ## Interfaces
 
 Generation choices are surfaced through a generation-mode record. Fast
@@ -819,7 +855,7 @@ These rows keep Fast Generation Architectures's manifest assignments visible at 
 
 | Source | Intake role | Boundary |
 |---|---|---|
-| `kernel_english_residual_compiler` | Metadata-first comparator: Kernel English with Hierarchical, Interaction-Amortized Residuals: A Dual-Vocabulary Cognitive Compiler for Efficient Language-Model Reasoning. Corben-authored July 2026 architecture proposal for KERC: protected-object capture, uncertainty-aware normalization, sense-aware Kernel IR, dual surface/core vocabularies, a four-level interaction-amortized residual ledger, exact object storage, grammar-aware macro fusion, structured answer packets, rendering, round-trip verification, versioned migration, and complete rate-compute-fidelity evaluation. Existing chapters are upgraded first; no implementation, benchmark, novelty, efficiency, fidelity, safety, transfer, SOTA, AGI, ASI, or support-state result is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `kernel_english_residual_compiler` | Passage-reviewed Corben architecture source: Kernel English with Hierarchical, Interaction-Amortized Residuals: A Dual-Vocabulary Cognitive Compiler for Efficient Language-Model Reasoning. Corben-authored July 2026 architecture proposal for KERC: protected-object capture, uncertainty-aware normalization, sense-aware Kernel IR, dual surface/core vocabularies, a four-level interaction-amortized residual ledger, exact object storage, grammar-aware macro fusion, structured answer packets, rendering, round-trip verification, versioned migration, and complete rate-compute-fidelity evaluation. Existing chapters are upgraded first; no implementation, benchmark, novelty, efficiency, fidelity, safety, transfer, SOTA, AGI, ASI, or support-state result is inferred. | No local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_airllm_2023` | Metadata-first comparator: AirLLM: Scaling Large Language Models on Low-End Commodity Computers. Official implementation comparator for layer-wise model sharding, one-layer accelerator residency, next-layer prefetch, optional storage compression, and original-versus-transformed model storage. Maintainer-reported fit and speed claims are not independently reproduced. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_deepspeed_inference_2022` | Metadata-first comparator: DeepSpeed Inference: Enabling Efficient Inference of Transformer Models at Unprecedented Scale. Primary heterogeneous-inference systems source spanning GPU, CPU, and NVMe for dense and sparse Transformer inference. Reported latency, throughput, scale, and model-fit results remain source-scoped and unreproduced. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_flexgen_2023` | Metadata-first comparator: FlexGen: High-Throughput Generative Inference of Large Language Models with a Single GPU. Primary planned-placement source for GPU/CPU/disk tensor storage and access, batching, and optional weight/cache compression under latency-insensitive workloads. Its throughput results are not interactive-latency or local evidence. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |

@@ -15,10 +15,9 @@ This report records the source-mining pass used to expand the book from a 16-cha
 - The 2026-07-31 VIEA second pass is the first legacy-paper fidelity repair: it
   expands the note from a routing summary into a 2,388-word system note and
   writes previously absent mechanisms into seven canonical chapters.
-- Three recent whitepapers have materially richer notes but still need an exact
-  section-family-to-manuscript closure audit:
-  `kernel_english_residual_compiler`, `relational_dimension_compiler`, and
-  `precision_contract`.
+- Two recent whitepapers have materially richer notes but still need an exact
+  section-family-to-manuscript closure audit: `relational_dimension_compiler`
+  and `precision_contract`.
 - Thirty-five readable legacy papers still have first-pass routing notes rather
   than full-fidelity notes. Their ideas may be present in chapters, but note
   existence or manifest assignment is no longer accepted as proof of complete
@@ -59,9 +58,9 @@ source assignment alone does not count.
 
 | State | Sources | Required next operation |
 |---|---|---|
-| Section-family audit complete | `deterministic_capability_compilation`, `platonic_world_model`, `scf`, `qcsa_whitepaper`, `reflexive_router_whitepaper` | Re-open only on paper or chapter drift. |
+| Section-family audit complete | `deterministic_capability_compilation`, `platonic_world_model`, `scf`, `qcsa_whitepaper`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler` | Re-open only on paper or chapter drift. |
 | Legacy paper repaired in this pass | `viea` | Re-run chapter/source validation and retain its new section-family map. |
-| Rich note; closure audit still required | `kernel_english_residual_compiler`, `relational_dimension_compiler`, `precision_contract` | Compare every paper section, appendix, algorithm, limitation, and falsifier with actual manuscript prose. |
+| Rich note; closure audit still required | `relational_dimension_compiler`, `precision_contract` | Compare every paper section, appendix, algorithm, limitation, and falsifier with actual manuscript prose. |
 | Legacy system spine; deep note required | `planforge`, `planforge_compiler_arch`, `cognitive_compilation`, `talos`, `vcm_public`, `spinoza`, `spinoza_composer`, `octopus_router`, `rmi`, `cognitive_loop_closure`, `benchmaxxing` | Reconstruct the complete object model and lifecycle before deciding whether prose is missing. |
 | Compression, representation, and substrate; deep note required | `cgs`, `rgs`, `rankfold_neuralfold`, `rankfold_compressor`, `bbvca_v9`, `bbvca_main`, `genesiscode`, `treellm`, `simulation_scaling`, `tokenmana`, `bugbrain` | Preserve equations, decoders, accounting, verification, failure surfaces, and rival representations—not only the compression slogan. |
 | Alignment, verification, context, and execution lineage; deep note required | `alignment_field`, `field_of_god`, `ethica_mechanica`, `eternal_code`, `verification_bandwidth`, `beastbrain`, `beastbrain_timeless`, `aletheia`, `context_engineer`, `black_hole_context_manager`, `ladon_manhattan`, `uat`, `software_magic_grimoire` | Separate operational mechanisms from metaphysics, branding, repeated drafts, unsafe absolutes, and unsupported performance claims; integrate only the durable architecture. `coherence_exchange` remains a separately connector-mined source rather than one of the 44 local paper texts. |
@@ -202,6 +201,39 @@ objects or explicit non-claims. The paper still establishes no trained router,
 useful-throughput advantage, deployed command plane, Chronicle, effect kernel,
 safe reflex compiler, production transfer, or ASI result; support remains
 `argument`.
+
+## Kernel English section-family closure result
+
+Kernel English's 17 sections, five appendices, and references now terminate in
+canonical prose, a public-safe source note, concrete implementation/evaluation
+work, or an explicit non-claim. The audit found that the paper had been broadly
+assigned but was still represented mainly by repeated metadata rows. It
+repaired the manuscript at the mechanism level:
+
+- Cognitive Compilation now owns immutable source capture, protected objects,
+  uncertainty-aware correction, sense- and scope-aware lowering, open-world
+  capsules, stable identity versus runtime code, Kernel/answer packets,
+  grammar-macro boundaries, and the ceiling on round-trip verification.
+- Compact Generative Systems now owns the global/segment/local/exact residual
+  hierarchy, source-residual/render-plan distinction, fidelity modes, entropy
+  relocation, interaction break-even, and narrow-result policy.
+- VCM and Context Transactions now own representation-aware Kernel pages,
+  selective exact-source expansion, state hashes, deltas, checkpoints, scope,
+  privacy, recovery, migration, and descendant invalidation.
+- Fast Generation, Resource Economics, Security, Procedural Memory,
+  Verification Bandwidth, Benchmark Ratchets, and Integrated Architecture now
+  own the dual-vocabulary path, full rate–compute–fidelity ledger,
+  representation-layer attacks, macro evolution, independent adequacy limit,
+  matched full-system campaign, and cross-stack trace.
+
+The complete disposition remains in
+`sources/source_notes/kernel_english_residual_compiler.md`. Proposed grammar,
+algorithms, training program, component sizes, worked examples, extensions,
+and comparison claims remain research objects rather than implied results.
+KERC still has no trained compiler or core, semantic-preservation result,
+interaction-amortized advantage, speed/memory result, security result,
+external reproduction, novelty finding, production transfer, or ASI support;
+the source remains `argument`.
 
 ## Main Architecture Clusters Mined
 
