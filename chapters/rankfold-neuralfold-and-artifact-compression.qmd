@@ -150,12 +150,164 @@ fallback execution, and independent review exist.
 
 | Source | What it supports | Limit |
 |---|---|---|
-| `rankfold_neuralfold` | Tensor-centric archival structure, per-artifact optimization, low-rank residual transforms, residual-coder cost alignment, WORM assumptions, manifests, codec parameters, deterministic decode, fuzz/integration tests, and reconstruction checks. | No local compression implementation, corpus benchmark, deterministic decoder, reproduced ratio, or utility probe exists here. |
+| `rankfold_neuralfold` | Variant-family architecture for a universal container, RankFold predictor/corrector and EARO refinement, bounded residual coding, NeuralFold field and byte paths, probe-route-fallback policy, WORM economics, manifests, deterministic decode, Rust/WASM interfaces, fuzz/integration tests, and reconstruction checks. | No local enabled NeuralFold encode, codec-correctness result, corpus benchmark, reproduced ratio, router calibration, utility probe, cross-target decoder result, economic result, or product claim follows from the source. |
 | `rankfold_compressor` | Vector-pair and factorized representations, adaptive rank, normalization, entropy-aware coding, shape optimization, recursive cascades, correctness/determinism ambitions, metrics, and CLI plans. | Lineage source with broad source-reported claims; no compressor, ratio reproduction, lossless reconstruction validation, or public matrix corpus test has been run. |
 | `bbvca_v9` | Reconstruction contracts, exact repairs, bounded verification, fallback, interface costs, and proxy/final-rate separation for artifact compression discipline. | Does not provide local RankFold performance evidence, artifact utility evidence, or codec correctness. |
 | `cgs` | Compact seeds, generated structure, residual channels, verification contracts, governance interfaces, and hidden-complexity accounting. | Does not prove that any compressed artifact preserves downstream utility or cost advantage. |
 | `bugbrain` | Tiny/local cognition, storage paging, embedded workflow, and edge-efficiency concerns that make artifact size and runtime burden visible. | Speculative prototype-lineage source; no embedded runtime, paging behavior, artifact compressor, or hardware benchmark has been validated. |
 | `ext_raptor_2024` | Recursive abstraction and hierarchical retrieval as a compact-view comparator. | Metadata-first note only; no local tree, fidelity, reconstruction, provenance, utility, or RankFold comparison result. |
+
+### What “universal” means—and does not mean
+
+The local RankFold/NeuralFold source is a bundle of technical papers,
+implementation specifications, and product plans rather than one stable
+edition. Its technical core is consistent, but its module boundary is not.
+Some variants call NeuralFold an optional expansion after a tensor-codec
+wedge. Others call it mandatory or inseparable because the name covers
+inspection, routing, and fallback in addition to neural representations. The
+book preserves the conflict instead of manufacturing consensus: the invariant
+is a mandatory **typed routing and fallback function**; whether that function
+and both learned front-ends ship in one module named NeuralFold is packaging.
+
+The source also uses “universal” in several senses that must not collapse:
+
+| Universality claim | Defensible design meaning | What remains unproved |
+|---|---|---|
+| Container universality | A common indexed container can carry tensor, field, byte/bundle, and conventional-codec streams. | Frozen format, interoperability, parser safety, or successful support for every artifact. |
+| Routing universality | Every admitted artifact can receive a typed candidate route, literal fallback, or refusal. | Correct route selection, calibrated abstention, or bounded decision cost. |
+| Representation breadth | Proposed tensor, continuous-field, and discrete-byte paths cover several major artifact families. | Adequacy, efficiency, or semantic preservation for all members of those families. |
+| Compression-advantage universality | None. The architecture explicitly permits `RAW` to win. | Any claim that neural or low-rank encoding always compresses better. |
+
+This distinction is architectural, not rhetorical. A fallback makes a format
+able to *store* arbitrary bytes; it does not make every specialized route
+useful. The source's later claims of superiority, novelty priority, market
+size, profitability, or ROI are product hypotheses. They are not compression
+evidence and do not enter the book's claim ledger.
+
+### The RankFold candidate codec
+
+RankFold starts with a matrix or tensor unfolding $M$, rank $r$, factors $U,V$,
+and quantization step $\Delta$:
+
+$$
+P=UV^\top,\qquad
+E_q=\left\lfloor\frac{M-P}{\Delta}\right\rceil,\qquad
+\widehat M=P+\Delta E_q.
+$$
+
+Unlike a headline “low rank means small” argument, the archive bill includes
+the header, both factors, and coded residual. The candidate only wins if
+
+$$
+B_{\mathrm{header}}+B_U+B_V+B_{\mathrm{residual}}
+< B_{\mathrm{strongest\ qualified\ baseline}}
+$$
+
+under the same reconstruction contract. Predictor precision, tensor
+unfolding, traversal order, code tables, and side information therefore belong
+in the receipt. A factorization can reduce squared error and still increase
+the final bitstream.
+
+The proposed **Entropy-Aware Rank Optimization** (EARO) makes that mismatch an
+optimization target. Starting from truncated or deterministic approximate SVD,
+it refines $U,V$ against a coder-motivated proxy:
+
+$$
+\mathcal L(U,V)=
+\sum_{i,j}\log\left(1+\frac{|E_{q,ij}|}{\delta}\right)
++\lambda(\lVert U\rVert_F^2+\lVert V\rVert_F^2),
+$$
+
+using a straight-through estimator through quantization. Because
+$Z=(M-UV^\top)/\Delta$, an implementation must retain the $1/\Delta$ gradient
+scaling. The suggested Adam step count is an initial setting, not a result.
+
+The corresponding residual coder has a bounded alphabet. It traverses
+quantized residuals row-major or in tiled Morton order, encodes zero runs with
+Rice or bucketed rANS, emits one sign bit per nonzero, represents small
+magnitudes in a finite rANS alphabet, and sends large magnitudes through an
+escape symbol plus Exp-Golomb- or Elias-style coding. This makes table size and
+outlier behavior explicit. Traversal and escape coding remain ablations, not
+presumed wins.
+
+The proxy is vulnerable to Goodharting. Every run must therefore report
+surrogate-versus-actual-bit correlation, factor and residual byte breakdowns,
+escape rate, and sensitivity to rank, quantization, and optimization steps.
+Periodic “true bytes in the loop” can detect drift during training, but the
+serialized stream—not the differentiable proxy—adjudicates the rate claim.
+
+### The NeuralFold candidate front-ends
+
+`NF-FIELD` fits a coordinate function to an image, audio signal, video, or
+scientific field. Model specification, coordinate normalization, tiling,
+weights, distortion target, and decode budget all travel in the stream. Tiling
+supports random access and bounded decode, but adds boundaries and metadata.
+This route is normally lossy: exactly decoding the stored network is not the
+same as exactly reconstructing the source signal.
+
+`NF-BYTE` predicts bundle bytes and retains a lossless residual, for example
+$R[i]=B[i]\mathbin{\mathrm{xor}}\widehat B[i]$. Exactness requires the same
+predictor behavior, the complete residual, and a bundle table that restores
+paths, offsets, and required metadata. Random or already-compressed bytes
+should leave a high-entropy residual and route to a conventional codec. The
+predictor's weights and compute are not free merely because the residual is
+small.
+
+Both paths use two stages: fit the artifact contract, then fine-tune the
+parameters against a RankFold-aligned rate proxy while retaining the distortion
+or residual constraint. This is a co-design hypothesis. An adequate field
+model that stores badly and a compact model that violates the reconstruction
+contract both lose.
+
+### Probe accuracy is part of compression performance
+
+Before a costly route, a bounded probe estimates metadata, compressed weights,
+residual or raw payload, and applicable encode/decode constraints. The source
+offers a 3–5% “honesty margin” as an example before accepting a neural win. The
+book does not promote that number into a default. A margin must be calibrated
+prospectively from estimator error, route costs, workload shift, and the
+asymmetric harm of false admissions versus missed savings.
+
+A router report therefore includes predicted and achieved bytes by route,
+route confusion, excess work spent on losing probes, missed wins, false neural
+admissions, constraint violations, fallback frequency, and decode burden. Its
+baseline is a strong type-aware conventional router, not a fixed weak codec.
+Already-compressed, encrypted, tiny, adversarial, and high-entropy artifacts
+are mandatory controls.
+
+### WORM economics and implementation closure
+
+RankFold/NeuralFold is a WORM proposal. Expensive per-artifact search is
+justified only if retention duration, avoided storage, or repeated transfers
+and reads amortize encoding, pilot, verification, and migration cost. Hot or
+mutable checkpoints, rare reads, latency-critical retrieval, and mandatory
+full-copy retention can reverse the result. ROI is therefore measured over an
+access-pattern horizon; a vendor price inserted into a formula is not an
+economic result.
+
+The implementation lineage usefully separates container, router, RankFold,
+NeuralFold, entropy, tensor, CLI, and optional WASM surfaces. A rational order
+is `RAW` container and golden vectors, one tensor codec with independent
+decode, minimal `RF-TENSOR`/`RAW` routing, then field, byte, and browser paths.
+Open coder, traversal, initializer, field-model, and byte-predictor interfaces
+keep research changes from silently changing archive identity.
+
+Decode determinism is harder and more important than repeatable training. It
+requires fixed endianness and rounding, stable bit layouts, bounded output,
+validated entropy tables, explicit arithmetic/platform envelopes, and
+cross-target golden vectors. Malformed offsets, corrupt tables, truncated
+streams, oversized dimensions, decompression bombs, dependency drift, and
+native/WASM disagreement must fail closed. Browser-local execution can reduce
+upload exposure, but it does not prove privacy or compliance; signed local
+license tokens deter forgery but cannot make client-side code unpatchable.
+
+These details produce a stricter falsification program. EARO narrows if SVD
+with the identical coder matches it, if lower proxy loss does not lower actual
+bytes, or if factor/metadata costs erase the gain. NeuralFold narrows if strong
+domain codecs win, its residual remains expensive, or decode cost breaks the
+use contract. The system-level claim narrows if the router cannot distinguish
+winning paths or WORM amortization fails. Those are informative results, not
+excuses to weaken the baseline.
 
 ### Compressed-artifact admission lifecycle
 
