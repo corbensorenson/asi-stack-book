@@ -10,7 +10,7 @@ This report records the source-mining pass used to expand the book from a 16-cha
 - Locally readable Corben paper corpus: 44 canonical mining texts—37 cached
   Google Docs text exports and seven supplied Markdown whitepapers. Paired DOCX
   files are presentation counterparts, not independent idea sources.
-- Full section-family closure audits now exist for twenty-three papers:
+- Full section-family closure audits now exist for twenty-four papers:
   `deterministic_capability_compilation`, `platonic_world_model`, `scf`,
   `qcsa_whitepaper`, `reflexive_router_whitepaper`,
   `kernel_english_residual_compiler`, `relational_dimension_compiler`, and
@@ -18,13 +18,13 @@ This report records the source-mining pass used to expand the book from a 16-cha
   `cognitive_compilation`, `talos`, `vcm_public`, `spinoza`, and
   `spinoza_composer`, `octopus_router`, `rmi`, `cognitive_loop_closure`,
   `benchmaxxing`, `cgs`, `rgs`, `rankfold_neuralfold`, and
-  `rankfold_compressor`.
+  `rankfold_compressor`, and `bbvca_v9`.
 - The 2026-07-31 VIEA second pass is the first legacy-paper fidelity repair: it
   expands the note from a routing summary into a 2,388-word system note and
   writes previously absent mechanisms into seven canonical chapters.
 - Every recent rich whitepaper in this audit now has an exact
   section-family-to-manuscript closure audit.
-- Twenty readable legacy papers still have first-pass routing notes rather
+- Nineteen readable legacy papers still have first-pass routing notes rather
   than full-fidelity notes. Their ideas may be present in chapters, but note
   existence or manifest assignment is no longer accepted as proof of complete
   mining.
@@ -64,9 +64,9 @@ source assignment alone does not count.
 
 | State | Sources | Required next operation |
 |---|---|---|
-| Section-family audit complete | `deterministic_capability_compilation`, `platonic_world_model`, `scf`, `qcsa_whitepaper`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `relational_dimension_compiler`, `precision_contract`, `planforge`, `planforge_compiler_arch`, `cognitive_compilation`, `talos`, `vcm_public`, `spinoza`, `spinoza_composer`, `octopus_router`, `rmi`, `cognitive_loop_closure`, `benchmaxxing`, `cgs`, `rgs`, `rankfold_neuralfold`, `rankfold_compressor` | Re-open only on paper or chapter drift. |
+| Section-family audit complete | `deterministic_capability_compilation`, `platonic_world_model`, `scf`, `qcsa_whitepaper`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `relational_dimension_compiler`, `precision_contract`, `planforge`, `planforge_compiler_arch`, `cognitive_compilation`, `talos`, `vcm_public`, `spinoza`, `spinoza_composer`, `octopus_router`, `rmi`, `cognitive_loop_closure`, `benchmaxxing`, `cgs`, `rgs`, `rankfold_neuralfold`, `rankfold_compressor`, `bbvca_v9` | Re-open only on paper or chapter drift. |
 | Legacy paper repaired in this pass | `viea` | Re-run chapter/source validation and retain its new section-family map. |
-| Compression, representation, and substrate; deep note required | `bbvca_v9`, `bbvca_main`, `genesiscode`, `treellm`, `simulation_scaling`, `tokenmana`, `bugbrain` | Preserve equations, decoders, accounting, verification, failure surfaces, and rival representations—not only the compression slogan. |
+| Compression, representation, and substrate; deep note required | `bbvca_main`, `genesiscode`, `treellm`, `simulation_scaling`, `tokenmana`, `bugbrain` | Preserve equations, decoders, accounting, verification, failure surfaces, and rival representations—not only the compression slogan. |
 | Alignment, verification, context, and execution lineage; deep note required | `alignment_field`, `field_of_god`, `ethica_mechanica`, `eternal_code`, `verification_bandwidth`, `beastbrain`, `beastbrain_timeless`, `aletheia`, `context_engineer`, `black_hole_context_manager`, `ladon_manhattan`, `uat`, `software_magic_grimoire` | Separate operational mechanisms from metaphysics, branding, repeated drafts, unsafe absolutes, and unsupported performance claims; integrate only the durable architecture. `coherence_exchange` remains a separately connector-mined source rather than one of the 44 local paper texts. |
 
 The register is an honest queue, not a deferral license. When a paper yields a
@@ -393,6 +393,49 @@ and “red team accepted” have no support effect. No codec, ratio, exactness,
 preview utility, probe quality, security, determinism, economics, deployment,
 SOTA, support, AGI, or ASI result is inferred. The NeuralFold addenda overlap
 the separate mature bundle and count once; no new chapter is warranted.
+
+## BBVCA v9 section-family closure result
+
+The 10,221-word BBVCA v9 source contains 26 numbered sections and five
+appendices. Its former 406-word note captured bounded search, verification,
+repair, proxy rate, and safe fallback, but omitted the distinctions that make
+those slogans operational. The completed audit disposes every section family
+and appendix against the manuscript, the durable source note, or a named
+research obligation.
+
+The canonical Compact Generative Systems chapter now closes the BBVCA object
+with a six-field Reconstruction Contract
+`K = (Omega, M, Delta, A, L, Pi)`: artifact domain, mapping, decoding rule,
+acceptance predicate, resource limits, and fallback policy. It separates
+ontological universality—the claim that artifacts may have lawful structure—
+from codec universality—the much harder claim that a fixed finite format and
+decoder can exploit that structure. It excludes apex descriptions that merely
+rename the payload, distinguishes reversible factorization from predictive
+restoration and exact repair, requires layerwise exactness, bounds the tiny
+public law family and proposal set, and makes local verification plus the
+repair ladder part of the object rather than optional implementation detail.
+The interface test `g + s + r < n b` ensures that generator, selector, and
+residual costs all enter admission.
+
+The chapter also distinguishes a frozen search-time proxy from the realized
+entropy-coded rate. Bootstrap estimates may start from corpus, scan, or
+zero-order statistics, but smoothing, shrinkage, a safe literal ceiling,
+conservative anti-pruning, and prospective refresh are required to prevent a
+weak proxy from deleting useful candidates. The source's bottom-up adaptive-
+tree dynamic program is retained only under its restricted separability and
+state assumptions. Mapping cost, model state, tables, alignment, headers,
+indexes, padding, verification, repair, and decoder burden remain in the full
+denominator.
+
+The deep note preserves the constant, affine, trilinear, and literal law
+family; native-3D mapping boundary; bounded proposal rules; repair ladder;
+systems layout; staged A–F implementation roadmap; matched baselines,
+ablations, friendly and hostile artifacts, falsifiers, and the tension between
+additive search costs and a stateful entropy stream. No implementation,
+bitstream, decoder, exact reconstruction, compression ratio, proxy accuracy,
+runtime, utility, safety, deployment, support, novelty, SOTA, AGI, or ASI
+result is inferred. The architecture extends existing Compact Generative
+Systems and Generate-Verify-Repair owners; no new chapter is warranted.
 
 ## SCF fidelity repair: first recovered depth
 

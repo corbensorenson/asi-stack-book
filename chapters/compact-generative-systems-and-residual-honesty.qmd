@@ -110,7 +110,7 @@ Appendix C carries exact reviewed mappings for all 17 assigned sources. RAPTOR i
 | `simulation_scaling` | Scope, clockspeed, fidelity, efficiency, physical capacity, and bottleneck accounting for making compactness resource-explicit. | Theoretical scaling framework only; no physical experiment, simulation benchmark, or independent literature audit was run. |
 | `rmi` | Benchmark frontier pressure, routed specialist attempts, residual escrow, loop closure, independent arm/router improvement, regression preservation, and lifecycle discipline. | No independent reproduction, benchmark run, prototype inspection, or empirical modular-intelligence result exists here. |
 | `project_theseus_whitepaper` | SymLiquid, SparkStream, Octopus routing, bounded specialist arms, benchmark/residual ledgers, checkpoints, trusted Hive nodes, observability, and evidence-before-growth discipline. | Source-reported implementation narrative only; current Theseus reports, ledgers, code paths, and command outputs were not rerun from this repo. |
-| `bbvca_v9` | Reconstruction contracts, shared law families, exact repair streams, bounded local verification, explicit fallback, boundary/interface costs, proxy-rate versus final serialization discipline, and anti-universality constraints. | BBVCA Prototype A, compression ratios, codec correctness, and rate experiments have not been implemented or run here. |
+| `bbvca_v9` | Six-field reconstruction contract, ontological/codec universality split, public-law amortization, apex exclusion, two exact transition families, layerwise exactness, local generation/verification/repair, interface inequality, full rate, proxy bootstrap/calibration, conservative pruning, restricted adaptive-tree DP, literal fallback, systems layout, and falsification program. | Mature conceptual codec only; no Prototype A, bottom mapping, entropy stream, independent decoder, proxy-gap measurement, codec correctness, rate, runtime, utility, transfer, safety, deployment, support, SOTA, AGI, or ASI result has been reproduced. |
 | `bbvca_main` | Hierarchical causal/volumetric reconstruction, compact generator states, deterministic laws, multiscale verification, side information, and repair risks as lineage for the stricter v9 formulation. | Earlier architecture draft only; use v9 for final bounded rate/exactness claims, and no local codec or benchmark exists. |
 | `rankfold_neuralfold` | Low-rank residual coding, artifact-to-tensor conversion, WORM archive assumptions, manifests, codec parameters, deterministic decode, and reconstruction checks as comparison points for artifact compression. | Architecture and implementation-plan source only; no local compression benchmark, implementation artifact, deterministic decoder, or reproduced ratio is present. |
 | `treellm` | Traversable semantic graphs, path-derived fixed-size semantic tokens, residual attributes, graph updates, shared graph usage, analogy/interpolation/counterfactual operations, explanation traces, and editable external knowledge. | Whitepaper/specification only; no TreeLLM implementation, measured compression ratio, verified token format, or benchmarked reasoning gain exists here. |
@@ -244,6 +244,125 @@ flowchart LR
 ```
 
 **Reading the receipt lane:** Generated reconstruction is useful only when verification, repair, fallback, final-rate accounting, and consumer policy stay attached. A mismatch is not a defect to hide; it becomes a repair stream, declared loss, literal fallback, quarantine, or negative evidence for that representation.
+
+### BBVCA v9: from a universe metaphor to a bounded codec
+
+BBVCA v9 makes the generate/verify/repair lane concrete by distinguishing two
+kinds of “universal.” A hypothetical world generator might produce everything
+inside its world under laws that are already present. A file codec has no such
+free environment: it must identify which decoder and laws are genuinely
+public and stable and transmit everything artifact-specific. Moving repeated
+explanation into a shared law family can reduce per-artifact rate, but shared
+law storage, distribution, training, versioning, execution, rights, and
+selection cost do not disappear.
+
+Every BBVCA candidate begins with a Reconstruction Contract
+
+$$
+\mathcal K=(\Omega,\mathcal M,\Delta,\mathcal A,\mathcal L,\Pi).
+$$
+
+$\Omega$ names the exact source domain. $\mathcal M$ maps it to the bottom
+field and supplies an inverse. $\Delta$ specifies exact equality or bounded
+distortion. $\mathcal A$ fixes widths, rounding, overflow, boundaries, and
+update order. $\mathcal L$ declares admissible liberties rather than taking
+them as free gains. $\Pi$ identifies the public law library. If any of these
+objects is bespoke, private, unstable, or absent at decode time, its bits and
+burden belong in the package.
+
+The **Apex-Only Exclusion** is the corresponding counting boundary. A strictly
+smaller upper state cannot injectively represent every admissible larger lower
+state by itself. Exactness must live in one of two transition families:
+
+- reversible factorization retains an upper state, exact detail, and an
+  invertible schedule;
+- predictive generation creates a lower candidate, then closes it with dense
+  residual, sparse correction, literal block, split, or another exact
+  restoration stream.
+
+The first is the more ambitious long-term object; the second is Prototype A's
+practical path. Each layer restores exactness before continuing, or—under a
+lossy contract—records its consumed distortion and residual custody. This
+prevents error from compounding invisibly across a hierarchy.
+
+Prototype A begins on native 3D or clearly tensorized domains because its
+face, edge, corner, and multiscale neighborhoods have a plausible relationship
+to the source. A generic byte stream forced into a volume can acquire false
+adjacencies. Mapping identity, inverse, metadata, locality effect, and search
+therefore count; success on volumes does not establish generic-stream value.
+
+The initial law family is deliberately small—constant, affine/planar,
+trilinear patch, and literal microblock. Each nonliteral law receives only a
+bounded deterministic proposal set from cached local statistics. Verification
+compares generated and target blocks and prices law selection, parameters,
+exact repair, interface, split, and literal alternatives. Repair escalates
+through exact-as-is, sparse correction, dense residual, split/recurse, and
+literal storage. The cheapest contracted-exact route wins.
+
+Splitting is not automatically compression. A candidate that explains $n$
+literal samples of $b$ bits is locally viable only when
+
+$$
+g+s+r<nb,
+$$
+
+where $g$ is generator burden, $s$ is selection, split, boundary, and
+interface burden, and $r$ is retained detail or repair. Aggressive partitions
+can lower interior error while increasing signaling and edge residuals enough
+to lose.
+
+### Search-time proxy rate is not final rate
+
+The paper exposes a difficult optimization mismatch. Bottom-up dynamic
+programming needs additive local prices after child costs are fixed. A real
+context-adaptive entropy coder makes symbol prices depend on coding history.
+BBVCA therefore uses two explicit phases:
+
+1. freeze stream-separable proxy tables and optimize an additive
+   $\widehat B_{total}$ over the restricted candidate tree;
+2. freeze the resulting tree and law schedule, serialize every real stream,
+   and measure $B_{final}$;
+3. if a prospectively committed proxy-gap threshold fires, refresh prices from
+   observed histograms and rerun at most once.
+
+The dynamic program may be exact for $\widehat B$ without being optimal for
+$B_{final}$. Every report keeps the gap and structural regret visible.
+
+Proxy tables are bootstrapped in descending trust from domain-matched corpus
+priors, a cheap scan of the current artifact, and a padded zero-order fallback.
+Sparse tables are smoothed and shrunk toward pooled parents, then frozen before
+search. A safe literal ceiling includes a conservative margin; a partial
+candidate is pruned only when it cannot beat that ceiling under the committed
+bound. This is essential because the optional refresh cannot resurrect a
+branch that an overconfident first pass deleted.
+
+Under non-overlap, additive proxy costs, bounded candidates, and constant-time
+scoring from cached statistics, a bottom-up adaptive-tree program can find the
+best encode **inside that restricted proxy family**. It does not solve rich
+overlap, globally coupled laws, unrestricted program search, or final entropy
+optimality. Statistics construction, memory traffic, serialization, decoder
+distribution, and the possible second pass still count. Level-major or
+Morton/brick layout, compact node records, separated streams, branch-light
+scoring, and child prefetch are therefore part of the experimental system;
+cache and bandwidth can dominate the nominal arithmetic.
+
+The complete codec denominator includes seed, law selection, parameters,
+retained detail, residuals, corrections, split flags, interfaces, literals,
+mapping, and verification. System advantage additionally counts shared-law
+amortization, encode/decode work, memory, energy, recovery, governance, rights,
+and human burden. A result must report these components, the proxy/final gap,
+nodes visited and pruned, split/literal/repair density, and whether refresh
+fired.
+
+The falsification program is intentionally asymmetric. Friendly constants,
+smooth fields, repeated motifs, and structured volumes ask whether the method
+can win where its model is plausible. Random fields, shuffled locality,
+heterogeneous blocks, and deliberately miscalibrated proxies ask whether it
+falls back with bounded overhead. A useful narrow domain win is enough to keep
+research alive; repeated repair domination, interface explosion, mapping loss,
+proxy regret, or impractical search narrows or rejects broader codec claims.
+The repository has not run Prototype A, so this remains a detailed research
+contract rather than a compression result.
 
 ### Compression receipt states
 
