@@ -319,6 +319,24 @@ observed output, planner cost, rate-limit model, confidence interval, failure
 trace, or quality result accompanies those examples. PlanForge and its compiler
 variant remain one `argument`-level architecture lineage.
 
+## Cognitive Compilation audit in progress
+
+The four-tab source contains three forward-compiler variants plus a detailed
+Semantic Compiler Workbench build specification and a reverse-compilation
+addendum. Its note now retains the forward pass model, concrete Plan/S-IR/
+Schedule/T-IR/Trace objects, local Rust/Tauri product shape, security and
+licensing requirements, multi-target backends, fixtures, and the complete
+artifact-to-lifted-IR-to-merge-to-recompile path.
+
+The manuscript previously had rich forward compilation and learned-capability
+feedback but almost no treatment of reverse lifting and semantic merge. A new
+section now distinguishes deterministic artifact facts, evidence-backed claims,
+and model guesses; binds origin spans, lift methods, license/rights metadata,
+conflicts, aliases, rejected variants, provenance, refactoring, recompilation,
+and leakage checks; and refuses to call lifting recovery of authorial intent.
+This source remains in the active legacy queue until every detailed SCW field
+family is compared with its receiving chapters.
+
 ## Main Architecture Clusters Mined
 
 | Cluster | Mined source families | Architectural role in the expanded outline |

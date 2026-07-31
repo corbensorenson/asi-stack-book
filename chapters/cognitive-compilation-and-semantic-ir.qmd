@@ -293,6 +293,64 @@ The strongest objection is that these records can be self-consistent and still e
 
 The negative project record matters here. Corben's Best Model Possible called an equality-like comparison over unrelated FNV digest strings cross-stage semantic parity and localized repairs by positional adjacency. Those mechanisms are useful warnings: hashes answer identity questions, not meaning questions, and positional insertion can invalidate repair identity. The book's fixture instead uses requirement-addressed semantic validators and stable semantic node references, then compares declared repair scope with the actual mutation set.
 
+### Reverse compilation, lifted IR, and semantic merge
+
+The Cognitive Compilation source family also proposes a reverse path for
+existing artifacts:
+
+`artifact -> target IR -> lifted semantic IR -> governed merge/refactor ->
+locked semantic IR -> new target artifacts`.
+
+Reverse compilation is an evidence-producing analysis, not recovery of the
+author's one true intent. A repository lifter can deterministically index files,
+ASTs, public interfaces, imports, routes, configuration, tests, and documented
+claims; a document or narrative lifter can segment structure and extract
+entities, events, continuity claims, and explicit constraints. Every lifted
+node records origin kind and digest, exact file/span/scene references, method,
+confidence, parser/model versions, licenses and rights metadata, and whether it
+is a deterministic fact, evidence-backed claim, or unverified guess. LLM-only
+inference defaults to defeasible `guess`; it cannot become a hard constraint
+because it was fluently expressed.
+
+A semantic knowledge graph may retain lifted entities, interfaces, invariants,
+components, and workflows across runs, but retrieval does not grant truth or
+reuse permission. A **Merge Bundle** names all source fingerprints, comparison
+scope, policy, candidate aliases, conflicts, chosen and rejected alternatives,
+human or validator decisions, resulting IR, and trace links back to every
+origin. Policies such as higher confidence, source priority, stronger
+validator, lower complexity, or keep-both-as-variants are declared decision
+rules rather than universal truth criteria.
+
+Conflict detection begins with exact interfaces, schemas, invariants,
+dependency order, names, and types, then exposes semantic disagreements that
+require a qualified evaluator. Alias candidates never merge solely by name or
+embedding. Every accepted merged node retains which sources contributed,
+which policy or authority chose it, what incompatible alternatives remain, and
+how to split or supersede it. Semantic refactoring creates a new IR version;
+promoting `guess -> claim -> fact` requires new evidence and never rewrites the
+origin record.
+
+Recompilation validates the new artifact against the locked merged obligations
+and checks for leakage from rejected origins. Provenance does not settle
+copyright, license compatibility, consent, trade-secret, or attribution duties.
+Importers record available license and origin metadata, surface conflicts, and
+route decisions to rights owners; the compiler does not declare legal
+compliance. Secrets and personal data are tainted at lift time, propagated
+through merge and target IR, redacted from exports where policy requires, and
+retained or deleted under their actual source obligations.
+
+This mechanism creates useful paper/project mining infrastructure for the ASI
+Stack itself: multiple historical artifacts can be lifted, compared at stable
+semantic identities, reconciled with explicit conflicts, and recompiled into
+one chapter without treating repeated wording as corroboration. It also creates
+a severe laundering risk. Structure-level synthesis can still copy protected
+expression, erase provenance, invent semantics, or combine incompatible
+licenses. The mature test therefore measures interface and dependency recall,
+claim calibration, conflict detection, rejected-origin leakage, provenance
+completeness, rights behavior, reconstruction/utility, and downstream target
+validity against parser-only, retrieval, summary, manual integration, and
+full-source baselines.
+
 ### Bidirectional capability and concept compilation
 
 Deterministic Capability Compilation extends the source language beyond prose
