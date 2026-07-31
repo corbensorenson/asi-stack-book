@@ -68,7 +68,7 @@ tracked copied scaffold. Its semantic queue retires 241 inherited prose IDs,
 adjudicates 177 domain-specific replacements, preserves all 4,067 structured
 atoms, and leaves zero pending candidates without moving support. The owner-directed
 prose-completion transaction has already placed
-all accepted T1D concepts and the eight-owner Precision Contract treatment in
+all accepted T1D concepts and the nine-owner Precision Contract treatment in
 the manuscript without opening protected outcomes, a third empirical lane, a
 new chapter, or support movement. Optimizer, heterogeneous-memory,
 inference-cache, T1D, and Precision Contract manuscript depth is therefore

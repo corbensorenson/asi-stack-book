@@ -33,6 +33,7 @@ No new chapter is admitted. The current owners already partition the lifecycle:
 | `executable-specifications-and-lean-proof-envelope` | Quantization as a program transformation; reference-to-bit-exact refinement; formal scope and evaluator limitations. |
 | `model-weight-custody-and-hardware-roots-of-trust` | Derivative closure across quantized shards, codebooks, residuals, decoders, kernels, caches, and platform-bound hashes. |
 | `the-efficient-asi-hypothesis` | Precision as one governed adaptive resource within route selection rather than a universal static property. |
+| `open-weight-release-and-post-release-control` | Progressive base/residual/decoder packages as composable release objects; certificate expiry cannot create fictional recall. |
 
 The title `functional-precision-and-behavior-preserving-computation` is retained
 only as a contingency label for a later owner audit. It is not a chapter
@@ -46,8 +47,8 @@ under the present owners.
 The coordinated prose transaction now:
 
 1. adds one primary section-scale treatment to RankFold/NeuralFold;
-2. adds bounded handoff sections or subsections to the seven supporting owners;
-3. uses one shared `PrecisionContract` vocabulary and avoids eight independent
+2. adds bounded handoff sections or subsections to the eight supporting owners;
+3. uses one shared `PrecisionContract` vocabulary and avoids nine independent
    restatements of the paper;
 4. preserves protected-behavior, complete-accounting, and certificate-scope
    nonclaims at every handoff;
@@ -88,7 +89,7 @@ transition says otherwise.
 ## Roadmap placement
 
 Source intake, storage, note, triage, owner adjudication, and the bounded
-eight-owner manuscript integration are terminal. Corben's explicit request to
+nine-owner manuscript integration are terminal. Corben's explicit request to
 put all roadmap concepts into the live manuscript authorized the prose-only
 transaction without opening evidence work or another chapter. The transaction
 does not displace P2, activate a third empirical WIP lane, reopen structural

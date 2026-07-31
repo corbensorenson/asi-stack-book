@@ -4,7 +4,7 @@ chapter_id: "rankfold-neuralfold-and-artifact-compression"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.3 claim-proof program"
-last_updated: "2026-07-16"
+last_updated: "2026-07-31"
 primary_sources:
   - "rankfold_neuralfold"
   - "rankfold_compressor"
@@ -29,7 +29,7 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | v0.3 claim-proof program |
-| Last updated | 2026-07-15 |
+| Last updated | 2026-07-31 |
 | Primary source records | `rankfold_neuralfold`, `rankfold_compressor`, `bbvca_v9`, `cgs`, `bugbrain`, `ext_raptor_2024` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -204,6 +204,36 @@ contract*. Two artifacts may be far apart in parameter space and equivalent
 for one bounded consumer; two nearby parameter vectors may differ on a rare,
 calibrated, abstention-sensitive, or high-consequence slice.
 
+Four contract classes prevent one evidence style from impersonating another.
+A **distributional** contract controls an expectation or quantile under a
+named sampling process. A **conditional** contract protects each named slice
+instead of averaging it into the majority. A **worst-case or formal** contract
+requires a predicate over a finite region and states the abstraction and proof
+coverage. An **adaptive** contract qualifies both several execution levels and
+the router that chooses among them. These classes can be conjoined: a model may
+need broad distributional utility, conditional tail protection, one formally
+checked arithmetic invariant, and a conservative adaptive fallback.
+
+For a reference system $M$, candidate decoder $\mathsf{Dec}$, code $z$, and
+precision contract $\mathcal C$, the paper's target is
+
+$$
+R^\star(M,\mathcal C)
+=
+\min_z\left\{L(z):
+\operatorname{SAT}(\mathcal C,\mathsf{Dec}(z))=1\right\}.
+$$
+
+This is a comparison target, not a computable universal constant. It is
+relative to the contract, candidate code family, decoder, shared side
+information, platform, and accounting boundary. Relaxing a tolerance cannot
+raise the mathematical optimum, while strengthening a contract cannot lower
+it; a particular heuristic or bit-width ladder need not behave monotonically.
+The “behavioral quotient” language is exact only when the chosen relation is
+reflexive, symmetric, and transitive. Distribution-limited or asymmetric
+tests usually define a contract-acceptable neighborhood instead, and the
+certificate must not promote that neighborhood into global equivalence.
+
 Complete description length counts more than payload values:
 
 $$
@@ -273,13 +303,42 @@ validity window, and revocation state. A changed kernel, platform, domain,
 decoder, model descendant, or evaluator can expire the certificate even when
 the payload bytes are unchanged.
 
-The falsification program compares naïve magnitude rules under
-function-preserving reparameterization; parameter distance against behavioral
-distance; payload-only against complete accounting; static, layer-wise, mixed,
-progressive, and dynamically routed precision; and average parity against
-protected-slice failures. A strong static policy wins if it preserves the same
-contract at lower total cost. Dynamic precision loses if routing overhead,
-instability, attack surface, or fallback burden exceeds the saved work.
+The certificate also keeps four bit classes and six states explicit. Ordinary
+numeric values are **representational bits**; shapes, scales, codebooks,
+indices, transforms, and routing tables are **structural bits**; exceptions,
+adapters, and refinement planes are **residual bits**; hashes, manifests,
+tests, proof objects, exception lists, and expiry rules are **assurance bits**.
+Their stored sizes are reported separately from the compute and human work
+needed to produce and maintain assurance. `CERTIFIED`, `PROVISIONAL`,
+`DOMAIN_RESTRICTED`, `UNSAT`, `UNVERIFIED`, and `REVOKED` are scoped states,
+not confidence adjectives. Evidence is property-specific: exact proof or
+exhaustive checking, sound regional bounds, adversarial stress with statistical
+guarantees, held-out evaluation, calibration-only proxies, and tensor error
+form a descending ladder. Lower rungs can guide search but cannot silently
+support claims belonging to higher rungs.
+
+The falsification program is an eight-experiment matrix rather than one
+headline quantization score:
+
+| Experiment | Competent comparison | Decisive narrowing result |
+|---|---|---|
+| Reparameterization stress | Naïve, canonicalized, reparameterization-aware, and contract-aware quantization across exactly equivalent models | Canonicalization adds little if outcomes and allocations are already stable, and becomes optional if it harms the best frontier. |
+| Parameter versus behavioral distance | Matched reconstruction errors across random, high-/low-sensitivity, outlier, and protected-circuit perturbations | The added framework narrows if simple error predicts every protected metric as well. |
+| Complete accounting | Nominal bits versus exact package bytes, movement, peak memory, latency, energy, routing, and certificates | Accounting remains conceptually required but practically minor if overhead never changes rankings. |
+| Progressive residual curves | Numeric, magnitude, Hessian, contract-benefit, and random orderings against matched static checkpoints | Fixed precision wins where ordering adds no consistent benefit or higher levels regress protected behavior. |
+| Aggregate-equivalence illusion | Aggregate parity versus decision, slice, calibration, safety, multilingual, long-context, tool, and consequence metrics | A vector contract adds little where aggregate metrics reliably upper-bound every protected difference. |
+| Static versus routed precision | Strong uniform, static mixed, generic-confidence, contract router, reference, and oracle routes | Dynamic routing loses when false negatives, overhead, shift, or attack surface erase the gain. |
+| Certificate discrimination | Constructed candidates that each pass a proxy but fail an independent protected obligation | The certificate is bureaucracy if it cannot assign the intended `UNSAT`, restricted, provisional, or revoked state. |
+| Shift and rare-event stress | Calibration/deployment shifts across language, context, domain, scale, environment, and adversaries | Static allocation may suffice if it remains stable; certification must narrow if drift detection lags failures. |
+
+The cross-model suite spans a small verifiable classifier, scientific
+surrogate or controller, language models at several scales and architectures,
+a tool-using agent, and an exact synthetic task. Calibration and validation
+remain disjoint where independence is claimed. All model, tokenizer, sampler,
+format, accumulator, KV state, kernel, data, seed, confidence interval,
+multiple-testing, hardware, and unsupported-region details travel with the
+result. A weak round-to-nearest toy can debug this pipeline; it cannot falsify
+the architecture.
 
 ## Mechanism
 
@@ -515,7 +574,7 @@ These rows keep RankFold, NeuralFold, and Artifact Compression's manifest assign
 
 | Source | Intake role | Boundary |
 |---|---|---|
-| `precision_contract` | Metadata-first comparator: The Precision Contract: A Functional Rate–Distortion Theory for Behavior-Preserving Neural Computation. Corben-authored July 2026 theoretical and systems paper replacing universal per-weight precision questions with a contract-relative functional rate-distortion problem over complete executable descriptions. It proposes representation canonicalization, protected-behavior contracts, precision fields, progressive base/residual encoding, dynamic routing, full physical and assurance-cost accounting, a Functional Precision Compiler, and scoped precision certificates. Existing chapters are upgraded first; no universal bit bound, implemented compiler, preserved-behavior result, efficiency result, certificate validity, support promotion, SOTA, AGI, or ASI claim is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `precision_contract` | Passage-reviewed Corben architecture source: The Precision Contract: A Functional Rate–Distortion Theory for Behavior-Preserving Neural Computation. Corben-authored July 2026 theoretical and systems paper replacing universal per-weight precision questions with a contract-relative functional rate-distortion problem over complete executable descriptions. It proposes representation canonicalization, protected-behavior contracts, precision fields, progressive base/residual encoding, dynamic routing, full physical and assurance-cost accounting, a Functional Precision Compiler, and scoped precision certificates. Existing chapters are upgraded first; no universal bit bound, implemented compiler, preserved-behavior result, efficiency result, certificate validity, support promotion, SOTA, AGI, or ASI claim is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Summary

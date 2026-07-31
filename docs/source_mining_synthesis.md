@@ -10,13 +10,16 @@ This report records the source-mining pass used to expand the book from a 16-cha
 - Locally readable Corben paper corpus: 44 canonical mining texts—37 cached
   Google Docs text exports and seven supplied Markdown whitepapers. Paired DOCX
   files are presentation counterparts, not independent idea sources.
-- Full section-family closure audits already exist for
-  `deterministic_capability_compilation` and `platonic_world_model`.
+- Full section-family closure audits now exist for eight papers:
+  `deterministic_capability_compilation`, `platonic_world_model`, `scf`,
+  `qcsa_whitepaper`, `reflexive_router_whitepaper`,
+  `kernel_english_residual_compiler`, `relational_dimension_compiler`, and
+  `precision_contract`.
 - The 2026-07-31 VIEA second pass is the first legacy-paper fidelity repair: it
   expands the note from a routing summary into a 2,388-word system note and
   writes previously absent mechanisms into seven canonical chapters.
-- One recent whitepaper has a materially richer note but still needs an exact
-  section-family-to-manuscript closure audit: `precision_contract`.
+- Every recent rich whitepaper in this audit now has an exact
+  section-family-to-manuscript closure audit.
 - Thirty-five readable legacy papers still have first-pass routing notes rather
   than full-fidelity notes. Their ideas may be present in chapters, but note
   existence or manifest assignment is no longer accepted as proof of complete
@@ -57,9 +60,8 @@ source assignment alone does not count.
 
 | State | Sources | Required next operation |
 |---|---|---|
-| Section-family audit complete | `deterministic_capability_compilation`, `platonic_world_model`, `scf`, `qcsa_whitepaper`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `relational_dimension_compiler` | Re-open only on paper or chapter drift. |
+| Section-family audit complete | `deterministic_capability_compilation`, `platonic_world_model`, `scf`, `qcsa_whitepaper`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `relational_dimension_compiler`, `precision_contract` | Re-open only on paper or chapter drift. |
 | Legacy paper repaired in this pass | `viea` | Re-run chapter/source validation and retain its new section-family map. |
-| Rich note; closure audit still required | `precision_contract` | Compare every paper section, appendix, algorithm, limitation, and falsifier with actual manuscript prose. |
 | Legacy system spine; deep note required | `planforge`, `planforge_compiler_arch`, `cognitive_compilation`, `talos`, `vcm_public`, `spinoza`, `spinoza_composer`, `octopus_router`, `rmi`, `cognitive_loop_closure`, `benchmaxxing` | Reconstruct the complete object model and lifecycle before deciding whether prose is missing. |
 | Compression, representation, and substrate; deep note required | `cgs`, `rgs`, `rankfold_neuralfold`, `rankfold_compressor`, `bbvca_v9`, `bbvca_main`, `genesiscode`, `treellm`, `simulation_scaling`, `tokenmana`, `bugbrain` | Preserve equations, decoders, accounting, verification, failure surfaces, and rival representations—not only the compression slogan. |
 | Alignment, verification, context, and execution lineage; deep note required | `alignment_field`, `field_of_god`, `ethica_mechanica`, `eternal_code`, `verification_bandwidth`, `beastbrain`, `beastbrain_timeless`, `aletheia`, `context_engineer`, `black_hole_context_manager`, `ladon_manhattan`, `uat`, `software_magic_grimoire` | Separate operational mechanisms from metaphysics, branding, repeated drafts, unsafe absolutes, and unsupported performance claims; integrate only the durable architecture. `coherence_exchange` remains a separately connector-mined source rather than one of the 44 local paper texts. |
@@ -262,6 +264,32 @@ natural relation, order-router result, irreducible higher-order advantage,
 bounded-arity theorem, contraction fidelity, compiled-specialist gain, hardware
 efficiency, RODIE result, security result, production transfer, or ASI support;
 the source remains `argument`.
+
+## Precision Contract section-family closure result
+
+The Precision Contract's twelve sections, four appendices, and references now
+terminate in the existing nine receiving chapters, a public-safe deep note, a
+concrete empirical/formal obligation, or an explicit boundary. The original
+eight-owner transaction correctly kept RankFold/NeuralFold as the primary
+compressed-artifact owner and distributed routing, resource, readiness,
+formal, custody, efficiency, and release consequences without creating a
+duplicate chapter.
+
+This pass repaired the concepts that were still compressed out of the public
+manuscript: distributional, conditional, formal, and adaptive contract classes;
+the conditional functional-rate and acceptable-neighborhood formalism; the
+nonmonotonicity of behavioral refinement; the full residual-form family and
+safe operating envelope; representational, structural, residual, and assurance
+bit classes; the six certificate states and evidence ladder; a regional
+refinement condition; complete progressive-release package closure; and the
+exact eight-experiment, five-model falsification program with strong baselines
+and decisive narrowing outcomes.
+
+The complete ledger remains in `sources/source_notes/precision_contract.md`.
+No compiler, quantizer, router, certificate, achieved rate, preserved-behavior
+result, cost advantage, release control, safety result, external reproduction,
+production transfer, or ASI support was established; the source remains
+`argument`.
 
 ## Main Architecture Clusters Mined
 

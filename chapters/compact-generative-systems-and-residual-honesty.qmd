@@ -307,6 +307,16 @@ operations it refines, its decoder and kernel requirements, expected
 contract-level benefit, added bytes and movement, verification burden, and the
 route that requests it.
 
+Residual precision is not restricted to literal low-order bit planes. Sparse
+exceptions preserve outliers but pay index and branch cost; low-rank residuals
+capture correlated error but can miss localized failures; additive codebooks
+trade storage for lookup and decoder complexity; protected full-precision
+blocks make an assurance boundary coarse but legible; task adapters make
+correction conditional but enlarge version and routing state; and an external
+exact tool moves fidelity across a latency and trust boundary. A hybrid bundle
+can use several forms, but its ledger counts every dependency and identifies
+which residual repairs which protected obligation.
+
 This is not permission to relabel reconstruction quality as capability.
 Weight error, activation error, output divergence, protected behavior,
 downstream utility, physical cost, and authority are separate ledgers. A low
@@ -321,6 +331,15 @@ A compact package either qualifies one fixed ordering for a declared envelope
 or treats ordering as another governed route. Unknown cases go to more
 precision, the reference implementation, abstention, or escalation—not silent
 approximation.
+
+More numerical bits do not guarantee monotone behavioral improvement. A new
+plane can cross a decision, refusal, calibration, or routing boundary in either
+direction. Each cumulative level therefore receives its own contract vector;
+measured regressions remain visible even if the reconstruction norm improves.
+Co-training may penalize those regressions, but no monotonicity claim transfers
+outside the tested domain. If residual benefit does not beat a matched static
+checkpoint after decoding, movement, verification, and fallback, the honest
+route is the static representation.
 
 ### Hierarchical residual custody for semantic compression
 
@@ -632,7 +651,7 @@ These rows keep Compact Generative Systems: Generate, Verify, Repair, and Residu
 | `deterministic_capability_compilation` | Metadata-first comparator: Deterministic Capability Compilation: A Capability-Preserving Ladder from Executable Scaffolds to Governed Adaptive Agents. Corben-authored July 2026 architecture and research program for compiling executable scaffolds into contract-bound experts and linked Neural Capability Objects while retaining semantic obligation mass balance, candidate-specific translation validation, fallback, residual escrow, authority ceilings, reification, and effect-complete recovery. Existing chapters are upgraded first; no foundry implementation, learned-capability result, preservation result, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `qcsa_whitepaper` | Passage-reviewed comparator: Question-Compiled Semantic Addressing. Extends Semantic Representation Leasing with plural address leases, path deltas, open-world expressions, semantic-first generation, round-trip structural checks, consumer adequacy, and explicit collision, verification, migration, repair, and fallback residuals; the later repository adds a bounded local 12-lane implementation, 60-case held-out evaluation over 13 systems and three seeds, and one 13-stage governed vertical trace. | The exact matched-advantage and resource gates failed, and the active-question ablation is N2 proxy/regime evidence rather than an exact or broad refutation. No useful compression, model-quality, production, chapter-core promotion, AGI, or ASI result is established. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `kernel_english_residual_compiler` | Passage-reviewed Corben architecture source: Kernel English with Hierarchical, Interaction-Amortized Residuals: A Dual-Vocabulary Cognitive Compiler for Efficient Language-Model Reasoning. Corben-authored July 2026 architecture proposal for KERC: protected-object capture, uncertainty-aware normalization, sense-aware Kernel IR, dual surface/core vocabularies, a four-level interaction-amortized residual ledger, exact object storage, grammar-aware macro fusion, structured answer packets, rendering, round-trip verification, versioned migration, and complete rate-compute-fidelity evaluation. Existing chapters are upgraded first; no implementation, benchmark, novelty, efficiency, fidelity, safety, transfer, SOTA, AGI, ASI, or support-state result is inferred. | No local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
-| `precision_contract` | Metadata-first comparator: The Precision Contract: A Functional Rate–Distortion Theory for Behavior-Preserving Neural Computation. Corben-authored July 2026 theoretical and systems paper replacing universal per-weight precision questions with a contract-relative functional rate-distortion problem over complete executable descriptions. It proposes representation canonicalization, protected-behavior contracts, precision fields, progressive base/residual encoding, dynamic routing, full physical and assurance-cost accounting, a Functional Precision Compiler, and scoped precision certificates. Existing chapters are upgraded first; no universal bit bound, implemented compiler, preserved-behavior result, efficiency result, certificate validity, support promotion, SOTA, AGI, or ASI claim is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `precision_contract` | Passage-reviewed Corben architecture source: The Precision Contract: A Functional Rate–Distortion Theory for Behavior-Preserving Neural Computation. Corben-authored July 2026 theoretical and systems paper replacing universal per-weight precision questions with a contract-relative functional rate-distortion problem over complete executable descriptions. It proposes representation canonicalization, protected-behavior contracts, precision fields, progressive base/residual encoding, dynamic routing, full physical and assurance-cost accounting, a Functional Precision Compiler, and scoped precision certificates. Existing chapters are upgraded first; no universal bit bound, implemented compiler, preserved-behavior result, efficiency result, certificate validity, support promotion, SOTA, AGI, or ASI claim is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Post-v2.3 residual-honesty protocol result

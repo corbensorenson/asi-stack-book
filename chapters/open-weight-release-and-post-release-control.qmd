@@ -4,7 +4,7 @@ chapter_id: "open-weight-release-and-post-release-control"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.3 concept-complete argument-level manuscript"
-last_updated: "2026-07-28"
+last_updated: "2026-07-31"
 primary_sources:
   - "ext_international_ai_safety_report_2026"
   - "ext_openai_worst_case_open_weight_risks_2025"
@@ -182,6 +182,23 @@ precision, licenses, usage policy, evaluation commit, training and
 post-training disclosures, known dependencies, and build instructions. A
 quantized or merged derivative is a different object even when it uses the
 same name.
+
+A progressive-precision release is a package rather than a checkpoint. Its
+scope includes the base shards, scales and zero points, codebooks, sparse
+indices, residual planes, adapters, decoder, kernels, router, calibration
+artifacts, certificates, caches, and any reference fallback. Publishing only
+the base may lower immediate capability while leaving residual or decoder
+releases to change the accessible frontier later; publishing the residuals can
+make capabilities reconstructable even after the base listing is withdrawn.
+The release decision therefore models every admissible combination and likely
+third-party recomposition, not merely the default vendor command.
+
+Certificate expiry can withdraw official support or block a governed runtime,
+but it cannot erase copied weights, residuals, decoders, or derived programs.
+Post-release records distinguish policy revocation, key destruction, hosting
+removal, observed deletion, copy erasure, and capability removal. A precision
+contract can qualify an exact artifact before release; it cannot make an
+irreversible public release recallable.
 
 ### 2. Compare against the accessible frontier
 
@@ -505,7 +522,7 @@ These rows keep Open-Weight Release and Post-Release Control's manifest assignme
 
 | Source | Intake role | Boundary |
 |---|---|---|
-| `precision_contract` | Metadata-first comparator: The Precision Contract: A Functional Rate–Distortion Theory for Behavior-Preserving Neural Computation. Corben-authored July 2026 theoretical and systems paper replacing universal per-weight precision questions with a contract-relative functional rate-distortion problem over complete executable descriptions. It proposes representation canonicalization, protected-behavior contracts, precision fields, progressive base/residual encoding, dynamic routing, full physical and assurance-cost accounting, a Functional Precision Compiler, and scoped precision certificates. Existing chapters are upgraded first; no universal bit bound, implemented compiler, preserved-behavior result, efficiency result, certificate validity, support promotion, SOTA, AGI, or ASI claim is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `precision_contract` | Passage-reviewed Corben architecture source: The Precision Contract: A Functional Rate–Distortion Theory for Behavior-Preserving Neural Computation. Corben-authored July 2026 theoretical and systems paper replacing universal per-weight precision questions with a contract-relative functional rate-distortion problem over complete executable descriptions. It proposes representation canonicalization, protected-behavior contracts, precision fields, progressive base/residual encoding, dynamic routing, full physical and assurance-cost accounting, a Functional Precision Compiler, and scoped precision certificates. Existing chapters are upgraded first; no universal bit bound, implemented compiler, preserved-behavior result, efficiency result, certificate validity, support promotion, SOTA, AGI, or ASI claim is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Summary

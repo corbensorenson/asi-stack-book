@@ -4,7 +4,7 @@ chapter_id: "executable-specifications-and-lean-proof-envelope"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.3 manuscript draft"
-last_updated: "2026-07-16"
+last_updated: "2026-07-31"
 primary_sources:
   - "genesiscode"
   - "spinoza"
@@ -350,6 +350,16 @@ distribution shift, and evaluator adequacy. The transformation record assigns
 each obligation to its actual evidence lane rather than claiming that a finite
 numeric bound proves behavior.
 
+The strongest finite transfer has the shape of a margin argument. If a
+reference artifact satisfies property $\varphi$ with decision margin $m(x)$
+and an independently checked implementation bound establishes
+$\lVert M(x)-\widehat M(x)\rVert\leq\delta(x)<m(x)$ for every $x$ in the
+declared region, then that property transfers on that region. The conclusion
+does not cover other properties, inputs, preprocessing, samplers, kernels, or
+agent environments. Small verifiers, routers, numerical kernels, constrained
+decoders, and safety monitors may admit this treatment even when a frontier
+generative model does not.
+
 A translation-validation pattern is appropriate when verifying every compiler
 pass is impractical. For each produced artifact, independently check the exact
 reference/transformed pair against a bounded equivalence or refinement
@@ -615,7 +625,7 @@ These rows keep Executable Specifications and Lean Proof Envelope's manifest ass
 
 | Source | Intake role | Boundary |
 |---|---|---|
-| `precision_contract` | Metadata-first comparator: The Precision Contract: A Functional Rate–Distortion Theory for Behavior-Preserving Neural Computation. Corben-authored July 2026 theoretical and systems paper replacing universal per-weight precision questions with a contract-relative functional rate-distortion problem over complete executable descriptions. It proposes representation canonicalization, protected-behavior contracts, precision fields, progressive base/residual encoding, dynamic routing, full physical and assurance-cost accounting, a Functional Precision Compiler, and scoped precision certificates. Existing chapters are upgraded first; no universal bit bound, implemented compiler, preserved-behavior result, efficiency result, certificate validity, support promotion, SOTA, AGI, or ASI claim is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `precision_contract` | Passage-reviewed Corben architecture source: The Precision Contract: A Functional Rate–Distortion Theory for Behavior-Preserving Neural Computation. Corben-authored July 2026 theoretical and systems paper replacing universal per-weight precision questions with a contract-relative functional rate-distortion problem over complete executable descriptions. It proposes representation canonicalization, protected-behavior contracts, precision fields, progressive base/residual encoding, dynamic routing, full physical and assurance-cost accounting, a Functional Precision Compiler, and scoped precision certificates. Existing chapters are upgraded first; no universal bit bound, implemented compiler, preserved-behavior result, efficiency result, certificate validity, support promotion, SOTA, AGI, or ASI claim is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_reluplex_2017` | Passage-reviewed comparator: Reluplex: An Efficient SMT Solver for Verifying Deep Neural Networks. Supplies a concrete neural-network verification case in which a solver checks a stated property over a bounded ReLU network region. | The theorem concerns only the encoded network, property, arithmetic semantics, and region; it does not prove model intent, data quality, whole-system safety, or deployed implementation binding. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
