@@ -164,6 +164,62 @@ A compact generative system should answer five questions:
 - What governance interface and authority boundary decide permitted use, fallback, promotion, and retirement?
 - What burden ledger and cost-accounting entries make reconstruction, decision, governance, review, fallback, and residual costs visible?
 
+### Eligibility, scope, and the CGS ladder
+
+“Compact generative system” is an admission class, not a compliment for
+anything with a short description. A serious candidate must expose seven
+things: a seed/rule/state representation meaningfully simpler than its target
+space; an actual reconstruction, prediction, generation, control,
+coordination, or governance operation; the rules by which the seed unfolds;
+persistent state where behavior is dynamic; an explicit residual channel; a
+verification contract; and full burden accounting. A label, embedding,
+summary, prompt, small seed with a huge decoder, or policy whose missing
+judgment lives in people or the environment does not pass merely because its
+visible core is small.
+
+CGS then separates seven functional levels:
+
+| Level | Function | Evidence boundary |
+|---|---|---|
+| 0 | Compact description | Describes or indexes; need not reconstruct or act |
+| 1 | Reconstruction | Recreates a declared target under an exact or lossy contract |
+| 2 | Prediction | Generalizes to prospectively unseen observations |
+| 3 | Generation | Produces new instances satisfying a validity distribution or contract |
+| 4 | Control | Regulates a process through state, action, feedback, and residuals |
+| 5 | Governance | Constrains or coordinates the evolution of a system of systems |
+| 6 | Recursive governance | Governs changes to its own seed, rules, state, verifier, or authority |
+
+The ladder is a taxonomy of claimed function, not a maturity score. Higher is
+not automatically better, safer, or more compact; a Level 1 codec may be fully
+qualified while a Level 6 proposal is inadmissible. Evidence does not inherit
+upward. Prediction does not establish generation, generation does not
+establish control, and control does not establish governance. Recursive
+governance additionally requires versioned self-change scope, evaluator and
+ledger protection, staged qualification, rollback or compensation,
+containment, and residual inheritance.
+
+### Compactness is a vector, not the provisional scalar
+
+The source proposes generative leverage, fidelity, residual burden,
+verification cost, governance power, and hidden complexity debt. Those are
+useful accounting dimensions but should not be collapsed into its provisional
+quality ratio. Description lengths may be incomparable across representations;
+domain discrepancy is not automatically normalized; governance utility may be
+negative or multidimensional; and multiplying ratios can hide a zero-fidelity,
+unsafe, or rights-violating route behind high leverage.
+
+Report the vector instead. Generative leverage compares target burden with
+seed, rule, and state burden. Fidelity is consumer- and domain-specific.
+Residual burden prices what the representation fails to carry. Verification
+cost includes artifact size, runtime, evaluator upkeep, and human work.
+Governance power compares a governed system with a competent ungoverned or
+simpler baseline. Hidden complexity debt names decoder, human, environment,
+training-data, scaffolding, verification-gap, and unknown-residual burden.
+Each component keeps units, uncertainty, scope, and vetoes; total accounting
+adds storage, compute, time, bandwidth, energy, money, authority, recovery,
+maintenance, and displaced work without pretending they share one natural
+unit.
+
 The raw LLM fits this frame as a compressed generative engine, not as the whole intelligence. It can generate across many targets, but the stack still needs routing, verification, residuals, authority, and evidence around its outputs.
 
 A compact-system receipt separates three burdens: reconstruction burden, decision burden, and governance burden. Reconstruction burden is the cost of producing a usable artifact from the compact seed. Decision burden is the cost of knowing whether the artifact is adequate. Governance burden is the cost of approvals, non-claims, fallback, retirement, and residual review.

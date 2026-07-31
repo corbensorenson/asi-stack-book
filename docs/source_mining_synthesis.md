@@ -10,20 +10,20 @@ This report records the source-mining pass used to expand the book from a 16-cha
 - Locally readable Corben paper corpus: 44 canonical mining texts—37 cached
   Google Docs text exports and seven supplied Markdown whitepapers. Paired DOCX
   files are presentation counterparts, not independent idea sources.
-- Full section-family closure audits now exist for nineteen papers:
+- Full section-family closure audits now exist for twenty papers:
   `deterministic_capability_compilation`, `platonic_world_model`, `scf`,
   `qcsa_whitepaper`, `reflexive_router_whitepaper`,
   `kernel_english_residual_compiler`, `relational_dimension_compiler`, and
   `precision_contract`, `planforge`, `planforge_compiler_arch`, and
   `cognitive_compilation`, `talos`, `vcm_public`, `spinoza`, and
-  `spinoza_composer`, `octopus_router`, `rmi`, `cognitive_loop_closure`, and
-  `benchmaxxing`.
+  `spinoza_composer`, `octopus_router`, `rmi`, `cognitive_loop_closure`,
+  `benchmaxxing`, and `cgs`.
 - The 2026-07-31 VIEA second pass is the first legacy-paper fidelity repair: it
   expands the note from a routing summary into a 2,388-word system note and
   writes previously absent mechanisms into seven canonical chapters.
 - Every recent rich whitepaper in this audit now has an exact
   section-family-to-manuscript closure audit.
-- Twenty-four readable legacy papers still have first-pass routing notes rather
+- Twenty-three readable legacy papers still have first-pass routing notes rather
   than full-fidelity notes. Their ideas may be present in chapters, but note
   existence or manifest assignment is no longer accepted as proof of complete
   mining.
@@ -63,9 +63,9 @@ source assignment alone does not count.
 
 | State | Sources | Required next operation |
 |---|---|---|
-| Section-family audit complete | `deterministic_capability_compilation`, `platonic_world_model`, `scf`, `qcsa_whitepaper`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `relational_dimension_compiler`, `precision_contract`, `planforge`, `planforge_compiler_arch`, `cognitive_compilation`, `talos`, `vcm_public`, `spinoza`, `spinoza_composer`, `octopus_router`, `rmi`, `cognitive_loop_closure`, `benchmaxxing` | Re-open only on paper or chapter drift. |
+| Section-family audit complete | `deterministic_capability_compilation`, `platonic_world_model`, `scf`, `qcsa_whitepaper`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `relational_dimension_compiler`, `precision_contract`, `planforge`, `planforge_compiler_arch`, `cognitive_compilation`, `talos`, `vcm_public`, `spinoza`, `spinoza_composer`, `octopus_router`, `rmi`, `cognitive_loop_closure`, `benchmaxxing`, `cgs` | Re-open only on paper or chapter drift. |
 | Legacy paper repaired in this pass | `viea` | Re-run chapter/source validation and retain its new section-family map. |
-| Compression, representation, and substrate; deep note required | `cgs`, `rgs`, `rankfold_neuralfold`, `rankfold_compressor`, `bbvca_v9`, `bbvca_main`, `genesiscode`, `treellm`, `simulation_scaling`, `tokenmana`, `bugbrain` | Preserve equations, decoders, accounting, verification, failure surfaces, and rival representations—not only the compression slogan. |
+| Compression, representation, and substrate; deep note required | `rgs`, `rankfold_neuralfold`, `rankfold_compressor`, `bbvca_v9`, `bbvca_main`, `genesiscode`, `treellm`, `simulation_scaling`, `tokenmana`, `bugbrain` | Preserve equations, decoders, accounting, verification, failure surfaces, and rival representations—not only the compression slogan. |
 | Alignment, verification, context, and execution lineage; deep note required | `alignment_field`, `field_of_god`, `ethica_mechanica`, `eternal_code`, `verification_bandwidth`, `beastbrain`, `beastbrain_timeless`, `aletheia`, `context_engineer`, `black_hole_context_manager`, `ladon_manhattan`, `uat`, `software_magic_grimoire` | Separate operational mechanisms from metaphysics, branding, repeated drafts, unsafe absolutes, and unsupported performance claims; integrate only the durable architecture. `coherence_exchange` remains a separately connector-mined source rather than one of the 44 local paper texts. |
 
 The register is an honest queue, not a deferral license. When a paper yields a
@@ -236,6 +236,43 @@ necessity, failed transfer, uncalibrated capability narratives, hidden tails,
 and rename-based resurrection of retired instruments. No benchmark, wall,
 architecture, transfer, safety, readiness, deployment, or support-state result
 is inferred.
+
+## Compact Generative Systems section-family closure result
+
+Compact Generative Systems' 16 numbered sections, four appendices, and selected
+references now terminate in canonical prose, a public-safe deep note, an open
+research obligation, or an explicit boundary. Its existing chapter already
+owns the right abstraction and later source lineages supply more specific
+compression, semantic, precision, and residual contracts, so the audit
+improves that owner rather than creating a parallel chapter.
+
+The repair adds the source's missing admission and comparison discipline:
+
+- a candidate must expose compactness, an actual generative/governing
+  operation, rules, dynamic state where needed, residuals, verification, and
+  full burden accounting before it qualifies as a serious CGS;
+- description, reconstruction, prediction, generation, control, governance,
+  and recursive governance are separate functional levels with no upward
+  evidence inheritance or presumption that higher is better;
+- generative leverage, fidelity, residual burden, verification cost,
+  governance power, and hidden complexity debt remain a vector with units,
+  uncertainty, consumer scope, and vetoes rather than the paper's provisional
+  scalar quality ratio; and
+- active compression receives an adversarial boundary against simplifying the
+  world, observations, task population, or verifier instead of solving the
+  protected obligation.
+
+The deep note preserves the formal tuple and objective, distinctions from
+compression/MDL/cybernetics, seven entry criteria, intellectual lineage, seven
+levels, seven design laws, six metric dimensions, ten-part template, seven
+case-study families, AI agent and Active Compression Network sketches, six
+failure families, six reviewer objections, seven research directions,
+claims/non-claims, and appendix roles. It adds falsifiers for vacuous entry,
+hidden-cost dominance, residual explosion, lost utility, captured
+verification, nondiscriminating levels, destructive active compression,
+analogy laundering, and recursive instability. No compactness, adequacy,
+compression, agent, control, governance, safety, implementation, or
+support-state result is inferred.
 
 ## SCF fidelity repair: first recovered depth
 
