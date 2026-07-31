@@ -11,6 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 REGISTRY = ROOT / "validation/registry.json"
 SCRIPT = "validate_visual_edition.py"
 EMBED_SCRIPT = "sync_visual_edition_embeds.py"
+PREVIEW_SCRIPT = "validate_youtube_preview_bindings.py"
 TOOLCHAIN_SCRIPT = "validate_manim_toolchain.py"
 SUPERSESSION_SCRIPT = "validate_youtube_supersession_workflow.py"
 PILOTS = [
@@ -119,6 +120,7 @@ def main() -> None:
         if unit.get("script") not in {
             SCRIPT,
             EMBED_SCRIPT,
+            PREVIEW_SCRIPT,
             TOOLCHAIN_SCRIPT,
             SUPERSESSION_SCRIPT,
         }
@@ -198,8 +200,55 @@ def main() -> None:
         "semantic_review_state": "checked_embed_transcript_and_publication_lifecycle_projection",
     })
     used.add(embed_order)
+    preview_order = next(
+        index for index in range(1, len(registry["units"]) + 4)
+        if index not in used
+    )
+    registry["units"].append({
+        "id": f"{PREVIEW_SCRIPT}:{preview_order}",
+        "order": preview_order,
+        "script": PREVIEW_SCRIPT,
+        "args": [],
+        "execution_tier": "pr",
+        "validation_class": "publication_gate",
+        "input_contract": "Exact owner preview authority; canonical 84-chapter manifest and visual packets; twelve observed unlisted YouTube objects; local master, caption, transcript, and thumbnail identities; managed Quarto chapter blocks and landing-page roster; published-current state.",
+        "input_artifacts": [
+            "visual_edition/youtube_preview_bindings.json",
+            "schemas/youtube_preview_bindings.schema.json",
+            "scripts/validate_youtube_preview_bindings.py",
+            "visual_edition/manifest.json",
+            "visual_edition/youtube_ledger.json",
+            "index.qmd",
+        ],
+        "output_contract": "Reject preview-authority, channel, playlist, canonical-order, chapter, digest, video-ID, visibility, observation, caption, transcript, thumbnail, managed-projection, count, published-current, or support-state drift.",
+        "output_assertions": [
+            "twelve exact unlisted preview bindings in canonical order",
+            "owner request digest exact",
+            "privacy-enhanced chapter embeds exact",
+            "landing roster exact",
+            "zero published-current transition",
+            "eight rejecting mutations",
+            "support-state effect none",
+        ],
+        "claim_scope": "Owner-authorized, explicitly labeled unlisted preview identity and Quarto projection only.",
+        "negative_controls": "validator_owned_eight_authority_order_identity_visibility_caption_thumbnail_projection_and_support_mutations",
+        "negative_control_cases": [
+            "authority digest drift",
+            "canonical order drift",
+            "video identity drift",
+            "visibility widening",
+            "caption-state inflation",
+            "thumbnail-state inflation",
+            "managed projection deletion",
+            "support promotion",
+        ],
+        "prohibited_inference": "An exact unlisted preview binding does not make a video published-current, validate its chapter claim, promote evidence, or authorize another platform mutation.",
+        "contract_precision": "exact",
+        "semantic_review_state": "checked_owner_authority_identity_order_visibility_accessibility_projection_publication_and_support_boundaries",
+    })
+    used.add(preview_order)
     toolchain_order = next(
-        index for index in range(1, len(registry["units"]) + 4) if index not in used
+        index for index in range(1, len(registry["units"]) + 5) if index not in used
     )
     registry["units"].append({
         "id": f"{TOOLCHAIN_SCRIPT}:{toolchain_order}",

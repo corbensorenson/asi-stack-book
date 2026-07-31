@@ -6,6 +6,8 @@ import re
 import sys
 from pathlib import Path
 
+from visual_chapter_source import canonicalize_chapter_source
+
 ROOT = Path(__file__).resolve().parents[1]
 STRUCTURE = ROOT / "book_structure.json"
 
@@ -225,7 +227,10 @@ def main() -> None:
             errors.append(f"{chapter['file']}: missing chapter file")
             continue
 
-        text = path.read_text(encoding="utf-8", errors="ignore")
+        text = canonicalize_chapter_source(
+            path.read_text(encoding="utf-8", errors="ignore"),
+            label=chapter["file"],
+        )
         missing_sections = [section for section in REQUIRED_SECTIONS if section not in text]
         if missing_sections:
             errors.append(f"{chapter['file']}: missing DoD sections: {', '.join(missing_sections)}")

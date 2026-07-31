@@ -16794,8 +16794,50 @@
       "semantic_review_state": "checked_embed_transcript_and_publication_lifecycle_projection"
     },
     {
-      "id": "validate_manim_toolchain.py:440",
+      "id": "validate_youtube_preview_bindings.py:440",
       "order": 440,
+      "script": "validate_youtube_preview_bindings.py",
+      "args": [],
+      "execution_tier": "pr",
+      "validation_class": "publication_gate",
+      "input_contract": "Exact owner preview authority; canonical 84-chapter manifest and visual packets; twelve observed unlisted YouTube objects; local master, caption, transcript, and thumbnail identities; managed Quarto chapter blocks and landing-page roster; published-current state.",
+      "input_artifacts": [
+        "visual_edition/youtube_preview_bindings.json",
+        "schemas/youtube_preview_bindings.schema.json",
+        "scripts/validate_youtube_preview_bindings.py",
+        "visual_edition/manifest.json",
+        "visual_edition/youtube_ledger.json",
+        "index.qmd"
+      ],
+      "output_contract": "Reject preview-authority, channel, playlist, canonical-order, chapter, digest, video-ID, visibility, observation, caption, transcript, thumbnail, managed-projection, count, published-current, or support-state drift.",
+      "output_assertions": [
+        "twelve exact unlisted preview bindings in canonical order",
+        "owner request digest exact",
+        "privacy-enhanced chapter embeds exact",
+        "landing roster exact",
+        "zero published-current transition",
+        "eight rejecting mutations",
+        "support-state effect none"
+      ],
+      "claim_scope": "Owner-authorized, explicitly labeled unlisted preview identity and Quarto projection only.",
+      "negative_controls": "validator_owned_eight_authority_order_identity_visibility_caption_thumbnail_projection_and_support_mutations",
+      "negative_control_cases": [
+        "authority digest drift",
+        "canonical order drift",
+        "video identity drift",
+        "visibility widening",
+        "caption-state inflation",
+        "thumbnail-state inflation",
+        "managed projection deletion",
+        "support promotion"
+      ],
+      "prohibited_inference": "An exact unlisted preview binding does not make a video published-current, validate its chapter claim, promote evidence, or authorize another platform mutation.",
+      "contract_precision": "exact",
+      "semantic_review_state": "checked_owner_authority_identity_order_visibility_accessibility_projection_publication_and_support_boundaries"
+    },
+    {
+      "id": "validate_manim_toolchain.py:441",
+      "order": 441,
       "script": "validate_manim_toolchain.py",
       "args": [],
       "execution_tier": "pr",
@@ -16831,58 +16873,6 @@
       "prohibited_inference": "A qualified animation toolchain does not validate a video, prove a chapter claim, or authorize publication.",
       "contract_precision": "exact",
       "semantic_review_state": "checked_arm_runtime_lock_renderer_release_profile_binary_and_support_boundaries"
-    },
-    {
-      "id": "validate_youtube_supersession_workflow.py:441",
-      "order": 441,
-      "script": "validate_youtube_supersession_workflow.py",
-      "args": [],
-      "execution_tier": "pr",
-      "validation_class": "publication_gate",
-      "input_contract": "Visual packet regeneration, immutable generation receipts, current YouTube ledger, generation-N supersession-plan schema, replacement receipt schema, exact predecessor disposition, idempotency, rollback, and no-authority contracts.",
-      "input_artifacts": [
-        "visual_edition/youtube_ledger.json",
-        "schemas/youtube_ledger.schema.json",
-        "schemas/youtube_platform_receipt.schema.json",
-        "schemas/youtube_supersession_plan.schema.json",
-        "scripts/visual_publication_lifecycle.py",
-        "scripts/generate_visual_chapter_packets.py",
-        "scripts/build_youtube_ledger.py",
-        "scripts/prepare_youtube_supersession.py",
-        "scripts/record_youtube_supersession_receipt.py",
-        "scripts/reconcile_youtube_supersession_receipt.py",
-        "scripts/validate_youtube_supersession_workflow.py"
-      ],
-      "output_contract": "Reject predecessor erasure during regeneration, generation gaps, broken predecessor chains, identical replacements, idempotency drift, premature authority, deletion permission, incomplete rollback, reused video IDs, missing or wrong predecessor disposition, and support promotion.",
-      "output_assertions": [
-        "published predecessor preserved as stale during regeneration",
-        "generation receipts remain contiguous and append-only",
-        "one exact predecessor per replacement",
-        "replacement video ID differs from predecessor",
-        "predecessor becomes unlisted outside canonical playlist",
-        "rollback never deletes either generation",
-        "twelve rejecting mutations",
-        "support-state effect none"
-      ],
-      "claim_scope": "Visual-publication revision identity, generation custody, playlist/embed handoff, predecessor retention, and rollback only.",
-      "negative_controls": "validator_owned_twelve_generation_predecessor_idempotency_authority_deletion_rollback_receipt_and_support_mutations",
-      "negative_control_cases": [
-        "generation gap",
-        "identical predecessor",
-        "idempotency drift",
-        "premature authority",
-        "delete permission",
-        "rollback deletion",
-        "support promotion",
-        "video ID reuse",
-        "missing predecessor disposition",
-        "wrong old playlist item",
-        "predecessor deletion",
-        "support promotion receipt"
-      ],
-      "prohibited_inference": "A correct replacement transaction does not validate the chapter claim, promote evidence, establish safety, or authorize any platform mutation.",
-      "contract_precision": "exact",
-      "semantic_review_state": "checked_generation_chain_predecessor_retention_idempotency_rollback_playlist_embed_and_support_boundaries"
     },
     {
       "id": "validate_chapter_substance_contract.py:442",
@@ -16937,11 +16927,63 @@
       "prohibited_inference": "Passing structure, labels, or word counts does not establish semantic quality, claim truth, empirical support, proof, safety, release, SOTA, AGI, or ASI.",
       "contract_precision": "exact",
       "semantic_review_state": "twenty_three_current_digest_bound_reviews_and_zero_remaining_owner_reviews"
+    },
+    {
+      "id": "validate_youtube_supersession_workflow.py:443",
+      "order": 443,
+      "script": "validate_youtube_supersession_workflow.py",
+      "args": [],
+      "execution_tier": "pr",
+      "validation_class": "publication_gate",
+      "input_contract": "Visual packet regeneration, immutable generation receipts, current YouTube ledger, generation-N supersession-plan schema, replacement receipt schema, exact predecessor disposition, idempotency, rollback, and no-authority contracts.",
+      "input_artifacts": [
+        "visual_edition/youtube_ledger.json",
+        "schemas/youtube_ledger.schema.json",
+        "schemas/youtube_platform_receipt.schema.json",
+        "schemas/youtube_supersession_plan.schema.json",
+        "scripts/visual_publication_lifecycle.py",
+        "scripts/generate_visual_chapter_packets.py",
+        "scripts/build_youtube_ledger.py",
+        "scripts/prepare_youtube_supersession.py",
+        "scripts/record_youtube_supersession_receipt.py",
+        "scripts/reconcile_youtube_supersession_receipt.py",
+        "scripts/validate_youtube_supersession_workflow.py"
+      ],
+      "output_contract": "Reject predecessor erasure during regeneration, generation gaps, broken predecessor chains, identical replacements, idempotency drift, premature authority, deletion permission, incomplete rollback, reused video IDs, missing or wrong predecessor disposition, and support promotion.",
+      "output_assertions": [
+        "published predecessor preserved as stale during regeneration",
+        "generation receipts remain contiguous and append-only",
+        "one exact predecessor per replacement",
+        "replacement video ID differs from predecessor",
+        "predecessor becomes unlisted outside canonical playlist",
+        "rollback never deletes either generation",
+        "twelve rejecting mutations",
+        "support-state effect none"
+      ],
+      "claim_scope": "Visual-publication revision identity, generation custody, playlist/embed handoff, predecessor retention, and rollback only.",
+      "negative_controls": "validator_owned_twelve_generation_predecessor_idempotency_authority_deletion_rollback_receipt_and_support_mutations",
+      "negative_control_cases": [
+        "generation gap",
+        "identical predecessor",
+        "idempotency drift",
+        "premature authority",
+        "delete permission",
+        "rollback deletion",
+        "support promotion",
+        "video ID reuse",
+        "missing predecessor disposition",
+        "wrong old playlist item",
+        "predecessor deletion",
+        "support promotion receipt"
+      ],
+      "prohibited_inference": "A correct replacement transaction does not validate the chapter claim, promote evidence, establish safety, or authorize any platform mutation.",
+      "contract_precision": "exact",
+      "semantic_review_state": "checked_generation_chain_predecessor_retention_idempotency_rollback_playlist_embed_and_support_boundaries"
     }
   ],
   "summary": {
     "required_artifact_count": 2988,
-    "unit_count": 442
+    "unit_count": 443
   },
   "non_claims": [
     "Registry coverage does not establish semantic adequacy of every validator.",

@@ -15,6 +15,8 @@ import re
 import sys
 from pathlib import Path
 
+from visual_chapter_source import canonicalize_chapter_source
+
 
 ROOT = Path(__file__).resolve().parents[1]
 STRUCTURE = ROOT / "book_structure.json"
@@ -68,7 +70,10 @@ def chapter_rows() -> list[dict[str, object]]:
     for chapter in flatten_chapters(structure):
         chapter_id = str(chapter.get("id", ""))
         file_path = ROOT / str(chapter.get("file", ""))
-        text = file_path.read_text(encoding="utf-8", errors="ignore")
+        text = canonicalize_chapter_source(
+            file_path.read_text(encoding="utf-8", errors="ignore"),
+            label=str(chapter.get("file", "")),
+        )
         pre_crosswalk = before_source_crosswalk(text)
         positioned_ids = sorted(set(EXT_ID_RE.findall(pre_crosswalk)))
         has_exception = bool(EXCEPTION_RE.search(pre_crosswalk))
