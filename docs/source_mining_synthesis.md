@@ -10,20 +10,21 @@ This report records the source-mining pass used to expand the book from a 16-cha
 - Locally readable Corben paper corpus: 44 canonical mining texts—37 cached
   Google Docs text exports and seven supplied Markdown whitepapers. Paired DOCX
   files are presentation counterparts, not independent idea sources.
-- Full section-family closure audits now exist for twenty-two papers:
+- Full section-family closure audits now exist for twenty-three papers:
   `deterministic_capability_compilation`, `platonic_world_model`, `scf`,
   `qcsa_whitepaper`, `reflexive_router_whitepaper`,
   `kernel_english_residual_compiler`, `relational_dimension_compiler`, and
   `precision_contract`, `planforge`, `planforge_compiler_arch`, and
   `cognitive_compilation`, `talos`, `vcm_public`, `spinoza`, and
   `spinoza_composer`, `octopus_router`, `rmi`, `cognitive_loop_closure`,
-  `benchmaxxing`, `cgs`, `rgs`, and `rankfold_neuralfold`.
+  `benchmaxxing`, `cgs`, `rgs`, `rankfold_neuralfold`, and
+  `rankfold_compressor`.
 - The 2026-07-31 VIEA second pass is the first legacy-paper fidelity repair: it
   expands the note from a routing summary into a 2,388-word system note and
   writes previously absent mechanisms into seven canonical chapters.
 - Every recent rich whitepaper in this audit now has an exact
   section-family-to-manuscript closure audit.
-- Twenty-one readable legacy papers still have first-pass routing notes rather
+- Twenty readable legacy papers still have first-pass routing notes rather
   than full-fidelity notes. Their ideas may be present in chapters, but note
   existence or manifest assignment is no longer accepted as proof of complete
   mining.
@@ -63,9 +64,9 @@ source assignment alone does not count.
 
 | State | Sources | Required next operation |
 |---|---|---|
-| Section-family audit complete | `deterministic_capability_compilation`, `platonic_world_model`, `scf`, `qcsa_whitepaper`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `relational_dimension_compiler`, `precision_contract`, `planforge`, `planforge_compiler_arch`, `cognitive_compilation`, `talos`, `vcm_public`, `spinoza`, `spinoza_composer`, `octopus_router`, `rmi`, `cognitive_loop_closure`, `benchmaxxing`, `cgs`, `rgs`, `rankfold_neuralfold` | Re-open only on paper or chapter drift. |
+| Section-family audit complete | `deterministic_capability_compilation`, `platonic_world_model`, `scf`, `qcsa_whitepaper`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `relational_dimension_compiler`, `precision_contract`, `planforge`, `planforge_compiler_arch`, `cognitive_compilation`, `talos`, `vcm_public`, `spinoza`, `spinoza_composer`, `octopus_router`, `rmi`, `cognitive_loop_closure`, `benchmaxxing`, `cgs`, `rgs`, `rankfold_neuralfold`, `rankfold_compressor` | Re-open only on paper or chapter drift. |
 | Legacy paper repaired in this pass | `viea` | Re-run chapter/source validation and retain its new section-family map. |
-| Compression, representation, and substrate; deep note required | `rankfold_compressor`, `bbvca_v9`, `bbvca_main`, `genesiscode`, `treellm`, `simulation_scaling`, `tokenmana`, `bugbrain` | Preserve equations, decoders, accounting, verification, failure surfaces, and rival representations—not only the compression slogan. |
+| Compression, representation, and substrate; deep note required | `bbvca_v9`, `bbvca_main`, `genesiscode`, `treellm`, `simulation_scaling`, `tokenmana`, `bugbrain` | Preserve equations, decoders, accounting, verification, failure surfaces, and rival representations—not only the compression slogan. |
 | Alignment, verification, context, and execution lineage; deep note required | `alignment_field`, `field_of_god`, `ethica_mechanica`, `eternal_code`, `verification_bandwidth`, `beastbrain`, `beastbrain_timeless`, `aletheia`, `context_engineer`, `black_hole_context_manager`, `ladon_manhattan`, `uat`, `software_magic_grimoire` | Separate operational mechanisms from metaphysics, branding, repeated drafts, unsafe absolutes, and unsupported performance claims; integrate only the durable architecture. `coherence_exchange` remains a separately connector-mined source rather than one of the 44 local paper texts. |
 
 The register is an honest queue, not a deferral license. When a paper yields a
@@ -350,6 +351,48 @@ enabled NeuralFold result, codec correctness, ratio, router calibration,
 utility, interoperability, security, economic advantage, deployment, SOTA,
 AGI, ASI, or support-state promotion is inferred. No new chapter is warranted;
 the existing technique chapter is the coherent owner.
+
+## RankFold Compressor correction-lineage closure result
+
+The 22,636-word RankFold Compressor cache contains fourteen labeled tabs and
+several embedded papers/specifications. It begins with a broad MatrixFold claim
+that arbitrary matrices can be stored losslessly in fewer vector entries by
+using hyper-precision, quantum-inspired distributions, fractals, programs,
+square shapes, and recursive cascades. It ends with a bounded lossy RankFold
+rate–distortion codec, finite residual coder, dry-run gate, implementation
+specification, and NeuralFold addenda. The audit makes the later correction
+control the earlier variants and treats repeated drafts as one lineage.
+
+The canonical artifact-compression chapter now teaches the missing lesson:
+cardinality is not finite description length. Bits hidden in real-number
+precision, distributions, rich decoders, shared state, programs, or residuals
+still count. Rank-one parameter arithmetic applies only to rank-one data;
+near-square shapes do not prove lower rank or entropy; recursive ratios cannot
+be multiplied over changing denominators; and convergence of a generator does
+not prove that its output is the target artifact. Hyper-precision, arbitrary-
+matrix bijection, quantum/fractal robustness, algorithmic-optimality,
+cryptographic, energy, exponential-gain, and universal-lossless claims are
+explicit non-claims.
+
+The repair also adds factor-first progressive access. RankFold factors may
+serve as an approximate preview before residual layers arrive, but each prefix
+needs its own bytes, latency, distortion, task-utility, and authority lease.
+Full residual decode may deterministically reproduce the stored lossy
+reconstruction without recovering the original FP32 byte string. A true
+lossless mode needs an original-byte repair channel.
+
+The deep note preserves the mature predictor/corrector, EARO gradient scaling,
+finite rANS/Rice/escape coder, unfolding, blocking, progressive access,
+production probe, file format, Rust modules, deterministic modes, exceptional-
+value and parser risks, CLI, test plan, hard matched baselines, RD sweeps,
+ablations, falsifiers, and NeuralFold relationship. The repeated 3.1–4.6×,
+15–25%, 10× encode, millisecond preview, A100, and earlier 1.5–50× tables have
+no accompanying code, inputs, bitstreams, environments, logs, or receipts and
+remain source-reported non-evidence. Editorial labels such as “camera-ready”
+and “red team accepted” have no support effect. No codec, ratio, exactness,
+preview utility, probe quality, security, determinism, economics, deployment,
+SOTA, support, AGI, or ASI result is inferred. The NeuralFold addenda overlap
+the separate mature bundle and count once; no new chapter is warranted.
 
 ## SCF fidelity repair: first recovered depth
 

@@ -151,7 +151,7 @@ fallback execution, and independent review exist.
 | Source | What it supports | Limit |
 |---|---|---|
 | `rankfold_neuralfold` | Variant-family architecture for a universal container, RankFold predictor/corrector and EARO refinement, bounded residual coding, NeuralFold field and byte paths, probe-route-fallback policy, WORM economics, manifests, deterministic decode, Rust/WASM interfaces, fuzz/integration tests, and reconstruction checks. | No local enabled NeuralFold encode, codec-correctness result, corpus benchmark, reproduced ratio, router calibration, utility probe, cross-target decoder result, economic result, or product claim follows from the source. |
-| `rankfold_compressor` | Vector-pair and factorized representations, adaptive rank, normalization, entropy-aware coding, shape optimization, recursive cascades, correctness/determinism ambitions, metrics, and CLI plans. | Lineage source with broad source-reported claims; no compressor, ratio reproduction, lossless reconstruction validation, or public matrix corpus test has been run. |
+| `rankfold_compressor` | Correction lineage from speculative MatrixFold shortcuts to a bounded lossy RankFold codec: finite-description accounting, predictor/corrector and EARO, bounded residual coding, unfolding/blocking, progressive preview/refinement, production probing, deterministic Rust architecture, and RD-fair evaluation. | Early hyper-precision, arbitrary-matrix bijection, quantum/fractal/program, recursive-exponential, lossless, benchmark, SOTA, latency, energy, cryptographic, and code-availability claims are rejected or unsupported. No reported ratio or implementation is reproduced here. |
 | `bbvca_v9` | Reconstruction contracts, exact repairs, bounded verification, fallback, interface costs, and proxy/final-rate separation for artifact compression discipline. | Does not provide local RankFold performance evidence, artifact utility evidence, or codec correctness. |
 | `cgs` | Compact seeds, generated structure, residual channels, verification contracts, governance interfaces, and hidden-complexity accounting. | Does not prove that any compressed artifact preserves downstream utility or cost advantage. |
 | `bugbrain` | Tiny/local cognition, storage paging, embedded workflow, and edge-efficiency concerns that make artifact size and runtime burden visible. | Speculative prototype-lineage source; no embedded runtime, paging behavior, artifact compressor, or hardware benchmark has been validated. |
@@ -184,6 +184,67 @@ useful. The source's later claims of superiority, novelty priority, market
 size, profitability, or ROI are product hypotheses. They are not compression
 evidence and do not enter the book's claim ledger.
 
+### The MatrixFold correction: bits cannot hide in richer coordinates
+
+The earlier RankFold Compressor bundle is valuable partly because it records a
+failed conceptual route. Its first MatrixFold drafts propose mapping an
+arbitrary matrix into fewer vector entries by using hyper-precision reals,
+probability distributions, topological or fractal objects, or short programs,
+then applying square reshaping and recursive compression. Later drafts abandon
+that claim and converge on the bounded RankFold codec below. The correction is
+an information-accounting lesson that applies well beyond this compressor.
+
+A set-theoretic bijection between real spaces is not a finite code. If $mn$
+finite-precision values are digit-interleaved into $m+n$ “hyper-precision”
+scalars, the missing bits live in the precision of those scalars. A rank-one
+outer product $uv^\top$ uses fewer ordinary coordinates only when the matrix
+actually satisfies the rank-one constraint. A general matrix must pay for
+higher rank, a residual, or a richer decoder. The scaling freedom
+$uv^\top=(cu)(v/c)^\top$ further warns that stored coordinates and independent
+degrees of freedom are not interchangeable counts.
+
+Square reshaping has a similarly narrow truth. For fixed $K=mn$, $m+K/m$ is
+smallest near a square; this minimizes the nominal shape of a rank-one factor
+pair. It does not prove the reshaped values are low-rank, low-entropy,
+locality-preserving, or cheap under a coder. Shape and unfolding are search
+variables whose permutation, inverse map, search budget, and metadata count.
+They must beat domain-native views, blocking, and no reshape on actual bytes.
+
+Nor may a recursive codec multiply ratios measured at changing denominators.
+For transforms $T_1,\ldots,T_k$, the only admissible rate is the final payload
+plus every stage descriptor, model, parameter, decoder, residual, and repair:
+
+$$
+B_{\mathrm{complete}}=
+B_{T_k\circ\cdots\circ T_1(x)}
++\sum_{j=1}^{k}B_{\mathrm{stage}_j}
++B_{\mathrm{residuals}}+B_{\mathrm{decoder}}.
+$$
+
+Multistage and recursive transforms can be useful, but each new stage must
+show marginal actual-byte or utility benefit over the best direct route.
+Entropy reduction is not guaranteed on an already coded stream, and removed
+redundancy cannot be credited twice.
+
+The same rule governs distributions, diffusion priors, manifolds, fractal
+attractors, and programs. These can be powerful description families for
+structured artifacts, but a distribution is not its sampled artifact and a
+generator is not an exact code without its parameters, shared state,
+numerical semantics, and residual closure. Kolmogorov complexity supplies an
+ideal limit, not a generally computable encoder. Contraction of a proposed
+fractal map does not establish that its attractor is the target. The early
+“quantum-inspired,” cryptographic, robustness, energy, and exponential-gain
+claims therefore remain non-claims.
+
+This source lineage also illustrates why editorial confidence is not evidence.
+Its successive tabs repeat ratios, latency, A100 settings, benchmark tables,
+and statements that a red team accepted the mechanism or a draft is
+camera-ready. No local corpus, code, bitstream, output log, environment,
+baseline receipt, or reproducible run accompanies those values. The book uses
+the equations and test obligations, not the numbers. Later narrowing from
+arbitrary lossless compression to a lossy tensor-specific rate–distortion
+candidate controls all earlier versions.
+
 ### The RankFold candidate codec
 
 RankFold starts with a matrix or tensor unfolding $M$, rank $r$, factors $U,V$,
@@ -207,6 +268,15 @@ under the same reconstruction contract. Predictor precision, tensor
 unfolding, traversal order, code tables, and side information therefore belong
 in the receipt. A factorization can reduce squared error and still increase
 the final bitstream.
+
+The factor blobs also suggest a useful progressive route. A consumer can load
+$U,V$ first for a rank-$r$ preview, then decode residual layers to reach the
+stored reconstruction. That route earns only the utility measured at each
+prefix. It must report bytes, latency, distortion, task behavior, residual
+ordering, and any non-monotonic regression. Deterministically reproducing the
+stored $\widehat M$ after the full residual is not the same as recovering the
+original FP32 byte string; a true lossless mode needs an original-byte repair
+channel.
 
 The proposed **Entropy-Aware Rank Optimization** (EARO) makes that mismatch an
 optimization target. Starting from truncated or deterministic approximate SVD,
