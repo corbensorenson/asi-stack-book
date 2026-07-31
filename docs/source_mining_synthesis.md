@@ -19,7 +19,7 @@ This report records the source-mining pass used to expand the book from a 16-cha
   section-family-to-manuscript closure audit: `qcsa_whitepaper`,
   `reflexive_router_whitepaper`, `kernel_english_residual_compiler`,
   `relational_dimension_compiler`, and `precision_contract`.
-- Thirty-six readable legacy papers still have first-pass routing notes rather
+- Thirty-five readable legacy papers still have first-pass routing notes rather
   than full-fidelity notes. Their ideas may be present in chapters, but note
   existence or manifest assignment is no longer accepted as proof of complete
   mining.
@@ -64,7 +64,7 @@ source assignment alone does not count.
 | Rich note; closure audit still required | `scf`, `qcsa_whitepaper`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `relational_dimension_compiler`, `precision_contract` | Compare every paper section, appendix, algorithm, limitation, and falsifier with actual manuscript prose. SCF's deep note and first missing-mechanism repair landed on 2026-07-31. |
 | Legacy system spine; deep note required | `planforge`, `planforge_compiler_arch`, `cognitive_compilation`, `talos`, `vcm_public`, `spinoza`, `spinoza_composer`, `octopus_router`, `rmi`, `cognitive_loop_closure`, `benchmaxxing` | Reconstruct the complete object model and lifecycle before deciding whether prose is missing. |
 | Compression, representation, and substrate; deep note required | `cgs`, `rgs`, `rankfold_neuralfold`, `rankfold_compressor`, `bbvca_v9`, `bbvca_main`, `genesiscode`, `treellm`, `simulation_scaling`, `tokenmana`, `bugbrain` | Preserve equations, decoders, accounting, verification, failure surfaces, and rival representations—not only the compression slogan. |
-| Alignment, verification, context, and execution lineage; deep note required | `alignment_field`, `field_of_god`, `ethica_mechanica`, `eternal_code`, `coherence_exchange`, `verification_bandwidth`, `beastbrain`, `beastbrain_timeless`, `aletheia`, `context_engineer`, `black_hole_context_manager`, `ladon_manhattan`, `uat`, `software_magic_grimoire` | Separate operational mechanisms from metaphysics, branding, repeated drafts, unsafe absolutes, and unsupported performance claims; integrate only the durable architecture. |
+| Alignment, verification, context, and execution lineage; deep note required | `alignment_field`, `field_of_god`, `ethica_mechanica`, `eternal_code`, `verification_bandwidth`, `beastbrain`, `beastbrain_timeless`, `aletheia`, `context_engineer`, `black_hole_context_manager`, `ladon_manhattan`, `uat`, `software_magic_grimoire` | Separate operational mechanisms from metaphysics, branding, repeated drafts, unsafe absolutes, and unsupported performance claims; integrate only the durable architecture. `coherence_exchange` remains a separately connector-mined source rather than one of the 44 local paper texts. |
 
 The register is an honest queue, not a deferral license. When a paper yields a
 useful idea with a canonical owner, that idea moves into the book in the same
