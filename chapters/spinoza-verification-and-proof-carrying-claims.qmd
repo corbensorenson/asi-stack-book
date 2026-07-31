@@ -299,6 +299,81 @@ States, and downstream control layers retain authority over their respective
 questions. A complete record therefore exposes where confidence came from
 without turning record completeness into confidence.
 
+### Commitment classes, interpretation custody, and semantic escape
+
+The complete Spinoza lineage makes an important correction to a simple
+“certified / probable / speculative” ladder. A formal proof, a mapping to a
+norm, a reproducible procedure, and a heuristic synthesis are different
+**justification classes**, not interchangeable amounts of confidence:
+
+| Class | Required artifact | What it can establish | What remains outside it |
+|---|---|---|---|
+| deductive | exact formal target, proof term or certificate, dependencies, theory and kernel pins | checker acceptance for that target in that theory | intended meaning, premise truth, world fit, safety, and authority |
+| norm-anchored | exact versioned spans plus a Formal Interpretation Mapping Object | one documented reading under declared applicability and conflict rules | unique interpretation, legal correctness, legitimacy, or compliance approval |
+| procedural | pinned inputs, toolchain, run, output, log, and replay checksum | that the declared procedure produced the result under those pins | that the procedure encodes the right standard or predicts the world |
+| speculative | labeled synthesis plus sources, assumptions, uncertainty, and verification route | a proposal that may be examined | commitment, support, action authority, or release |
+| metacognitive | named metric, detector, window, threshold, log, and escalation owner | a bounded observation about the verification system | permission to rewrite its own policy, bridge, axiom, or support state |
+
+No class automatically dominates another. A procedure can reveal that a
+formal model omitted a physical condition. A proof and a norm mapping can both
+be valid inside different scopes while disagreeing at their interface. A
+monitoring alert can require review without becoming a self-authenticating
+truth. Each class therefore keeps its own scope, allowed consumers, expiry,
+downgrade rule, and non-claims.
+
+A **Formal Interpretation Mapping Object** makes the norm route concrete. It
+pins corpus identity and version, exact span and hash, jurisdiction and
+effective time, subject and applicability predicates, exceptions, imported
+definitions, term bindings, interpretation mode, competing-norm set, conflict
+policy, assumption ledger, creator and reviewer, and canonical object hash.
+Anchor-only, explicitly mapped, and conflict-checked states remain distinct.
+Even the strongest state means “this documented reading was checked against
+this declared conflict set,” not “the organization is compliant.” A disputed
+mapping forks or downgrades the result instead of disappearing behind a green
+badge.
+
+Formalization then needs two complementary meaning checks. First, a
+deterministic renderer exposes every quantifier, negation, condition, scope,
+and exception rather than asking another language model for a persuasive
+paraphrase. Ambiguous inputs produce several side-by-side candidates and a
+semantic diff. Second, counterexample-driven intent testing supplies positive,
+negative, boundary, and quantifier/exception-confuser scenarios. If the
+selected statement classifies those cases differently from the intended
+meaning, it is rejected or quarantined before proof can raise its standing.
+
+These checks reduce one failure path; they do not prove equivalence. The
+formalizer, renderer, scenario generator, schema author, and reviewer may share
+the same missing concept. The record therefore retains the original prose,
+formal candidate, deterministic rendering, scenario suite, reviewer role,
+uncovered frontier, and later **semantic escapes**—cases in which an accepted
+mapping fails independently labeled scenarios after deployment.
+
+Routine mappings also cannot require a confirmation click forever. A trusted
+template registry may automate restricted formalization, norm-mapping, or
+procedure templates only through a multi-factor record: diverse slot and
+boundary coverage, scenario-test history, rollback and escape rate, approved
+compartments and versions, reviewer quality and dependence, time and drift,
+centrality, and adversarial signals. Audit sampling emphasizes rare buckets,
+boundaries, changed distributions, and high-impact templates. Bursts, repeated
+easy values, and implausibly fast approvals are grinding signals. Trust decays
+when schema, source, policy, conflict incidence, or use distribution changes;
+the source's suggested counts and thresholds remain unvalidated parameters.
+
+Finally, proof validity is compartment-relative. A least-privilege bridge
+names the exact imported symbols and permitted lemma shapes, explicitly
+forbids other imports, binds proof or regression duties, records the background
+assumptions on both sides, and carries rate and centrality budgets. Cross-class
+or cross-compartment contradictions end in typed routes—quarantine, downgrade,
+fork, replay, supersession, governance escalation, or persistent conflict—not
+an implicit priority rule. This turns proof laundering, hidden definition
+imports, and background-assumption drift into reviewable artifacts.
+
+The corresponding evaluation is not proof count alone. It jointly measures
+semantic escape, contradiction persistence, silence or paralysis, confirmation
+fatigue, proof-laundering resistance, useful outcomes, error cost, latency,
+privacy exposure, maintenance, and human governance burden against direct,
+citation-only, stateless-prover, checklist, and accountable-editor baselines.
+
 ### Proof-carrying training and semantic-basis validity
 
 Deterministic Capability Compilation proposes a proof-carrying training receipt
@@ -701,7 +776,7 @@ usefulness, safety, or transfer.
 
 | Source ID | Title | Layer | Planned use | Readiness |
 |---|---|---|---|---|
-| `spinoza` | Proof of Belief / The Spinoza Architecture | reasoning_epistemology | Neurosymbolic belief, proof-carrying claim tiers, verifier separation, downgrade/block behavior, and contradiction handling. | passage-reviewed local raw cache |
+| `spinoza` | Proof of Belief / The Spinoza Architecture | reasoning_epistemology | Twelve-tab lineage fully section-family reviewed: artifact-class commitments, proof/norm/procedure/speculation boundaries, FIMO, deterministic rendering and counterexample intent tests, template trust and decay, bounded revision, theory bridges, contradiction arbitration, threats, metrics, and explicit nonclaims. | controlling v4.2 plus complete variant lineage reviewed; no implementation or empirical result |
 | `genesiscode` | GenesisCode | executable_specification | Obligation-carrying artifacts, tests/proofs/provenance, capability boundaries, semantic patch validation, and small trusted-core discipline. | passage-reviewed local raw cache |
 | `coherence_exchange` | The Coherence Exchange | epistemic_market_synthesis | Connector/source-note synthesis for verification supply chains, contestability, fork/exit/audit, and review-market framing. | source note available; connector or recovery required |
 | `verification_bandwidth` | Verification Bandwidth in Bounded Contexts | context_verification_theory | Generation/verification separation, verification workspace limits, pairwise checking cost, and context-adequacy pressure. | passage-reviewed local raw cache |

@@ -10,18 +10,19 @@ This report records the source-mining pass used to expand the book from a 16-cha
 - Locally readable Corben paper corpus: 44 canonical mining texts—37 cached
   Google Docs text exports and seven supplied Markdown whitepapers. Paired DOCX
   files are presentation counterparts, not independent idea sources.
-- Full section-family closure audits now exist for thirteen papers:
+- Full section-family closure audits now exist for fifteen papers:
   `deterministic_capability_compilation`, `platonic_world_model`, `scf`,
   `qcsa_whitepaper`, `reflexive_router_whitepaper`,
   `kernel_english_residual_compiler`, `relational_dimension_compiler`, and
   `precision_contract`, `planforge`, `planforge_compiler_arch`, and
-  `cognitive_compilation`, `talos`, and `vcm_public`.
+  `cognitive_compilation`, `talos`, `vcm_public`, `spinoza`, and
+  `spinoza_composer`.
 - The 2026-07-31 VIEA second pass is the first legacy-paper fidelity repair: it
   expands the note from a routing summary into a 2,388-word system note and
   writes previously absent mechanisms into seven canonical chapters.
 - Every recent rich whitepaper in this audit now has an exact
   section-family-to-manuscript closure audit.
-- Thirty readable legacy papers still have first-pass routing notes rather
+- Twenty-eight readable legacy papers still have first-pass routing notes rather
   than full-fidelity notes. Their ideas may be present in chapters, but note
   existence or manifest assignment is no longer accepted as proof of complete
   mining.
@@ -61,9 +62,9 @@ source assignment alone does not count.
 
 | State | Sources | Required next operation |
 |---|---|---|
-| Section-family audit complete | `deterministic_capability_compilation`, `platonic_world_model`, `scf`, `qcsa_whitepaper`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `relational_dimension_compiler`, `precision_contract`, `planforge`, `planforge_compiler_arch`, `cognitive_compilation`, `talos`, `vcm_public` | Re-open only on paper or chapter drift. |
+| Section-family audit complete | `deterministic_capability_compilation`, `platonic_world_model`, `scf`, `qcsa_whitepaper`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `relational_dimension_compiler`, `precision_contract`, `planforge`, `planforge_compiler_arch`, `cognitive_compilation`, `talos`, `vcm_public`, `spinoza`, `spinoza_composer` | Re-open only on paper or chapter drift. |
 | Legacy paper repaired in this pass | `viea` | Re-run chapter/source validation and retain its new section-family map. |
-| Legacy system spine; deep note required | `spinoza`, `spinoza_composer`, `octopus_router`, `rmi`, `cognitive_loop_closure`, `benchmaxxing` | Reconstruct the complete object model and lifecycle before deciding whether prose is missing. |
+| Legacy system spine; deep note required | `octopus_router`, `rmi`, `cognitive_loop_closure`, `benchmaxxing` | Reconstruct the complete object model and lifecycle before deciding whether prose is missing. |
 | Compression, representation, and substrate; deep note required | `cgs`, `rgs`, `rankfold_neuralfold`, `rankfold_compressor`, `bbvca_v9`, `bbvca_main`, `genesiscode`, `treellm`, `simulation_scaling`, `tokenmana`, `bugbrain` | Preserve equations, decoders, accounting, verification, failure surfaces, and rival representations—not only the compression slogan. |
 | Alignment, verification, context, and execution lineage; deep note required | `alignment_field`, `field_of_god`, `ethica_mechanica`, `eternal_code`, `verification_bandwidth`, `beastbrain`, `beastbrain_timeless`, `aletheia`, `context_engineer`, `black_hole_context_manager`, `ladon_manhattan`, `uat`, `software_magic_grimoire` | Separate operational mechanisms from metaphysics, branding, repeated drafts, unsafe absolutes, and unsupported performance claims; integrate only the durable architecture. `coherence_exchange` remains a separately connector-mined source rather than one of the 44 local paper texts. |
 
@@ -404,6 +405,61 @@ authority labels; label-error sensitivity remains explicit. No natural
 long-horizon, semantic-front-end, model-facing packet, independent
 interoperability, deletion/unlearning, security, privacy, production-cost,
 deployment, support, or ASI claim moved.
+
+## Spinoza section-family closure result
+
+The twelve-tab Spinoza cache is a revision lineage from a maximalist axiomatic
+mind through a bounded governed epistemic engine. The deep audit preserves the
+proposer/verifier/maintainer split; proof-, norm-mapping-, procedure-,
+speculation-, and monitoring-artifact classes; proof/citation/procedure
+hypergraph; deterministic rendering; counterexample-driven intent tests;
+FIMO applicability, exceptions, interpretation, and conflict fields; TTR trust
+vectors, decay, coverage, re-audit, and grinding defenses; bounded revision;
+least-privilege theory bridges; cross-tier arbitration; threat model; outputs;
+metrics; pseudocode; and worked cases.
+
+Proof-Carrying Claims now states the missing commitment algebra explicitly.
+Formal, normative, procedural, speculative, and metacognitive records answer
+different questions rather than forming one confidence ladder. The chapter
+adds FIMO custody, deterministic semantic diffs plus independent scenario
+confusers, template trust and decay, semantic-escape measurement,
+compartment-relative proof, least-privilege bridges, and typed quarantine,
+downgrade, fork, replay, supersession, escalation, and persistent-conflict
+outcomes.
+
+The final v4.2 boundary controls earlier promises of inherent consistency,
+vector-grounded truth, autonomous axiom rewriting, and universal formalization.
+The separate v5.0 tab's cost, error-rate, ROI, cold-start, and pilot figures are
+preserved only as hypothetical scenarios or targets. No implementation,
+autoformalization, theorem, legal, template-calibration, revision-quality,
+security, deployment, workflow, support, or ASI result moved.
+
+## Spinoza Composer section-family closure result
+
+The ten-tab Composer cache evolves from a narrative/compliance Trinity through
+style-cloning and media-foundry drafts into a bounded-coherence operational
+specification. The audit preserves world/fact/belief scope, causal versus
+presentation time, logical debt, soft-deviation proposals, section and scene
+contracts, format/capability routing, visual reference assets, continuity
+observations, internal audit bundles, external credentials, style-asset rights,
+security, disclosure, evaluation, and MVP ordering while treating the last
+v3.0 correction as authoritative where variants conflict.
+
+Artifact Graphs now owns the missing cross-modal custody model: append-only
+evidence records, rebuildable evidence views, Draft Canon, versioned Active
+Canon, and a dependency graph remain separate. Quoted instructions cannot
+self-promote into policy. Poisoned sources trigger stale closure and bounded
+regeneration. Validators are fallible sensors; pairwise checks do not establish
+global coherence. Element Packs do not guarantee identity. Video routes carry
+prospective retry/human/spend budgets and the explicit Finish-Low,
+Finish-Hybrid, or Stop-Clean terminal policy. Internal lineage remains distinct
+from portable content credentials.
+
+All complexity, training-time, style-fidelity, video-success, dollar-cost,
+HCSR/PCR, contradiction-reduction, review-time, ROI, and benchmark figures are
+unverified proposals. No implementation, extraction, canon, semantic or visual
+validator, continuity, style, rights, security, cost, deployment, support, or
+ASI result moved.
 
 ## Main Architecture Clusters Mined
 

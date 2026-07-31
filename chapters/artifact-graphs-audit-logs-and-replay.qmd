@@ -122,7 +122,7 @@ Appendix C maps this artifact-graph claim to all assigned source records. Six or
 | `talos` | Thirty-tab lineage for typed jobs, asynchronous delivery, evidence records, audit logs, replay, source allow-listing, blind handles, tests, residuals, regression coverage, forgotten-failure prevention, and the Ouroboros tension between semantic log compression/deletion and replay, investigation, appeal, and descendant invalidation. | Passage-reviewed local raw cache; repeated variants count once. | No Talos artifact graph, audit reconstruction, retention/deletion mechanism, replay run, benchmark, or security result has been reproduced here. |
 | `viea` | Artifact graphs for claims, requirements, critiques, releases, feedback, tools, benchmarks, residuals, verification ledgers, runtime execution, and feedback loops. | Passage-reviewed local raw cache. | No completed VIEA deployment, runtime trace, artifact graph service, or benchmark result exists here. |
 | `cognitive_compilation` | Build-graph traceability through source plans, typed semantic IR, dependencies, validation requirements, scheduling, target lowering, localized repair, and compiler-style metrics. | Passage-reviewed local raw cache. | No working compiler, trace suite, repair-locality benchmark, or empirical ablation exists here. |
-| `spinoza_composer` | World graphs, belief states, causal history, scope tags, narrative trees, verified logical state, disclosures, exports, baselines, and evaluation plans. | Passage-reviewed local raw cache. | No composer implementation, continuity benchmark, extraction validation, or render-from-verified-state test has been run. |
+| `spinoza_composer` | Ten-tab lineage: append-only evidence and rebuildable views, draft/active canon, modality and quotation custody, dependency-directed poison recovery, section/scene contracts, causal/presentation time, validator disagreement, Element Packs and continuity observations, partial delivery, audit bundles, disclosures, baselines, and cost/evaluation plans. | Complete section-family review using bounded-coherence v3.0 as the controlling claim surface. | No implementation, extraction/canon/validator/continuity/style result, benchmark, cost, security, deployment, support, or ASI claim is established. |
 | `genesiscode` | Canonical IR, semantic patches, provenance hashes, deterministic effect logs, replay/audit, obligations, and privileged protocol seals. | Passage-reviewed local raw cache. | No GenesisCode kernel, semantic patch checker, deterministic replay system, or proof artifact exists here. |
 | `cognitive_loop_closure` | Execution traces as procedural-memory substrate through logging, loop detection, tool cards, verification, registries, monitoring, lifecycle states, and retirement discipline. | Passage-reviewed local raw cache. | No local loop detector, trace miner, synthesized tool, or verification harness has been executed. |
 | `moecot` | Runtime-reference ledgers, replay, handoff, readiness gates, benchmark artifacts, promotion blockers, and residual tracking. | Connector/source-note mapped only. | Runtime artifacts, ledgers, logs, and benchmark records have not been imported, inspected, or reproduced here. |
@@ -365,6 +365,150 @@ looks correct; and a changed merge policy may produce a valid alternative
 descendant rather than prove the old one wrong. Content-addressed storage binds
 identity across those paths, while explicit supersession, invalidation, and
 residual state explain what remains usable.
+
+### Evidence, canon, and cross-modal compilation
+
+Spinoza Composer extends the artifact graph from software and prose into a
+cross-modal production dependency graph. Its mature correction is to reject one
+mutable “knowledge graph” as source of truth. Four stores have different
+authority:
+
+| Store | Contents | Mutation rule | Authority boundary |
+|---|---|---|---|
+| evidence store | raw and normalized statements, modality, exact pointers, extractor pins, conflicts, quotation scope, and taint | append or supersede; never rewrite source history | records what was captured or asserted, not what the artifact must claim |
+| evidence view | resolved entities, aliases, clusters, communities, summaries, and search projections | rebuild when resolver, source, policy, or model changes | fallible interpretation and navigation only |
+| draft canon | machine-assembled candidate commitments and continuity rules | revise freely with complete deltas | proposal surface; cannot constrain accepted output by itself |
+| active canon | approved project commitments, uncertainty, rules, entity states, and continuity constraints | versioned approval, rollback, and retirement | governs this artifact within the approved stakes profile, not external truth |
+
+This separation catches a subtle provenance failure. Entity resolution may
+merge two people, a community summary may omit an exception, or an extractor
+may treat a character's belief as narrator fact. Recomputing the view must not
+erase the evidence records that exposed the mistake. Likewise, approving a
+canon choice records what the project commits to; it does not retroactively
+make one contested source correct.
+
+The evidence record therefore carries more than a subject–predicate–object
+triple. It distinguishes fact, reported speech, opinion, estimate, fiction
+canon, and instruction; asserted, negated, and uncertain polarity; quotation
+scope; exact page/span or media timestamp; extractor and configuration; and
+injection-like or policy-sensitive text. A quoted imperative remains data. It
+cannot turn itself into runtime instruction or canon authority because it was
+retrieved from a source.
+
+A dependency graph then connects evidence records and views to canon nodes,
+section and scene contracts, generated segments, validation observations,
+disclosures, and final exports. When a source is poisoned, revoked, corrected,
+or newly contested, the graph finds the affected closure, marks projections
+and outputs stale, rebuilds only the necessary views, and requires the
+appropriate canon deltas to be reapproved. Incremental repair is a performance
+strategy; unresolved reachability remains a blocker rather than evidence that
+the rest of the artifact is clean.
+
+#### Contracts across text and media
+
+Each text section receives a **Section Contract** before generation: required
+and forbidden claims, evidence or synthesis state, entity and temporal
+assumptions, required uncertainty language, format, risk, allowed consumers,
+and retry, time, spend, and human-intervention budgets. Each shot receives a
+**Scene Contract**: stable element identities, props, actions, setting,
+continuity locks, forbidden elements, duration, camera hints, and acceptable
+variance. Candidate output includes a structured claim/state delta; acceptance
+means that the declared checks ran under their pins, not that a generator
+preserved meaning perfectly.
+
+Local interaction checks can cheaply test possession, location, knowledge,
+and preconditions among entities that actually interact. Global lint checks
+inventory conservation, location exclusivity, lifecycle, causal ordering,
+unresolved references, and cross-segment conflicts. Neither route is complete.
+Pairwise checks miss higher-order dependencies; global checks operate under a
+bounded lookback and a fallible extracted state. Causal time, presentation
+order, and transaction/version time stay separate so a flashback can read an
+earlier state without rewriting the history that later scenes depend on.
+
+Semantic and vision validators are sensors, not truth oracles. Deterministic
+checks can reject malformed IDs, missing fields, invalid pointers, and illegal
+state deltas. Model-based contradiction or visual-identity checks return
+confidence and disagreement. Multiple judges may expose instability, but
+voting does not create independence or correctness. Low-confidence minor
+findings can enter a warning route; high-impact uncertainty escalates. The
+audit record retains false-positive and false-negative estimates, shared model
+or data dependencies, retries, human overrides, and accepted residuals.
+
+For visual work, a hashed **Element Pack** supplies reference frames, character
+sheets, prop turnarounds, location plates, palette, and camera constraints. A
+fallible vision route writes observed attributes and uncertainty into a
+continuity buffer for the next shot. Canon, references, observed frame state,
+and validator judgment remain separate: a wrong observation cannot rewrite an
+entity's canonical identity, and reference conditioning cannot be advertised
+as an identity guarantee.
+
+```{mermaid}
+flowchart LR
+  S["Untrusted sources"] --> ES["Append-only evidence store"]
+  ES --> EV["Rebuildable evidence views"]
+  EV --> DC["Draft canon"]
+  DC -->|"reviewed delta"| AC["Versioned active canon"]
+  AC --> TC["Section / scene contracts"]
+  TC --> G["Text / visual candidates"]
+  G --> V["Rule + semantic + vision observations"]
+  V -->|"accept / warn / repair / escalate"| A["Artifact + audit bundle"]
+  ES --> DG["Dependency graph"]
+  EV --> DG
+  AC --> DG
+  TC --> DG
+  A --> DG
+  Q["Source taint / canon change"] --> DG
+  DG --> R["Stale closure + bounded regeneration"]
+```
+
+**How to read the foundry graph:** source capture, interpretation, project
+commitment, generation contract, candidate output, validation observation, and
+final artifact are different nodes. A later source or canon change travels
+through the dependency graph and makes affected descendants stale; it does not
+rewrite the evidence store or silently regenerate public output.
+
+#### Bounded degradation and complete delivery custody
+
+The final Composer draft replaces indefinite video retries with explicit
+tiers: reliable slides/diagrams, bounded short-form generation, and hybrid
+longer-form production using stock, CGI, diagrams, or manual work. Each route
+fixes retry, review, latency, and spend caps prospectively and forecasts
+completion probability and cost ranges. A forecast is not a promise, so actual
+failures and overages remain in the denominator.
+
+Before work begins, the consumer chooses the terminal route for exhausted
+budgets: **Finish-Low** delivers a complete timeline with visible warnings or
+watermarks on degraded segments; **Finish-Hybrid** substitutes reliable media;
+**Stop-Clean** delivers only completed sections plus the script, contracts, and
+shot list for missing work. A polished file cannot erase degraded, contested,
+unreviewed, or absent segments. Delivery state, disclosure, and consumer
+acknowledgement remain part of artifact custody.
+
+The internal provenance bundle binds input snapshots, evidence and canon
+versions, contracts, prompts or protected templates, routes, validators,
+repairs, rejected candidates, deviations, element packs, observed continuity,
+backend versions, human approvals, costs, residuals, and final hashes. Portable
+content credentials may expose selected origin and transformation facts, but
+they are a separate projection: distribution platforms can strip them, and a
+valid signature establishes neither factuality, consent, complete lineage, nor
+safe publication.
+
+Style examples and adapters are also artifacts. They carry ownership,
+licensing, consent, approved transformations, training and storage location,
+disclosure, model compatibility, expiry, deletion, and revocation. Surface
+similarity, perplexity, a LoRA file, or local storage does not establish
+authorship, faithful voice preservation, privacy, non-infringement, or the
+source's early claim that style cloning preserves a person.
+
+The research test compares this governed foundry with prompted LLM plus RAG
+and self-critique, ordinary continuity-bible/editorial practice, and current
+video generation plus human cleanup. It jointly measures extraction and
+conflict preservation, evidence-to-canon errors, contract coverage, validator
+calibration and dependence, provenance/synthesis/unresolved rates, text and
+visual drift, retries and intervention, partial-delivery usefulness, rights and
+privacy outcomes, delayed publication errors, and total production cost. A
+simpler accountable editorial workflow should win when it matches those
+outcomes at lower burden.
 
 ## Interfaces
 
@@ -855,7 +999,7 @@ into a receipt or require disclosure of sensitive private reasoning.
 | `talos` | Talos Protocol | labor_execution_os | AI labor OS. Deterministic cognitive manufacturing, typed jobs, control planes, auditability, tool isolation. | source note available; passage-reviewed local raw cache |
 | `viea` | Verified Intent-to-Execution Architecture | whole_stack_execution_spine | Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. | source note available; passage-reviewed local raw cache |
 | `cognitive_compilation` | Cognitive Compilation | planning_semantic_ir | Compiler framing for LLM-centered planning, semantic IR, target compilation, incremental repair. | source note available; passage-reviewed local raw cache |
-| `spinoza_composer` | Spinoza Composer / Spinoza Trinity | reasoning_media_compliance | Narrative/compliance operating system variant. Use as applied Spinoza. | source note available; passage-reviewed local raw cache |
+| `spinoza_composer` | Spinoza Composer / Spinoza Trinity | reasoning_media_compliance | Bounded cross-modal compilation lineage: evidence/view/canon separation, contracts, dependency repair, visual custody, partial delivery, and internal/external provenance boundaries. | complete ten-tab section-family audit; architecture only, no implementation or empirical result |
 | `genesiscode` | GenesisCode | executable_specification | Tiny pure calculus + obligations + provenance for auditable AI-symbiotic programming. | source note available; passage-reviewed local raw cache |
 | `cognitive_loop_closure` | Cognitive Loop Closure | procedural_memory | Repeated cognition should become procedural memory / verified tools. | source note available; passage-reviewed local raw cache |
 | `moecot` | MoECOT-Agent Architecture Whitepaper | implementation_reference | Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. | source note available; connector or recovery required |
