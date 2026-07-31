@@ -4,7 +4,7 @@
   "recorded_date": "2026-07-28",
   "manifest_path": "book_structure.json",
   "manifest_chapter_count_freeze": 84,
-  "word_count_method": "Unicode text split on whitespace over the complete tracked QMD; diagnostic trigger only",
+  "word_count_method": "Unicode text split on whitespace over canonical chapter source with the generated visual projection removed; diagnostic trigger only",
   "word_trigger": 5000,
   "concept_contract_rule": "An active concept section must be named, contain at least 150 words, and separately state mechanism, failure mode, non-claim, and source grounding. It must also map to one or more existing owner atoms with an explicit many-to-one ownership rationale. Completion additionally requires a digest-bound chapter-specific semantic review. The diagnostic word trigger does not participate in concept completion, and passing remains editorial preparation rather than evidence.",
   "semantic_review_rule": "A semantic disposition is valid only for the exact reviewed chapter SHA-256, must give chapter-specific review reasons, and has no support-state effect. Regeneration cannot renew or synthesize that disposition after prose changes.",

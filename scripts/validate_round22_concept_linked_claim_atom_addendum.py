@@ -4,10 +4,11 @@
 from __future__ import annotations
 
 import copy
-import hashlib
 import json
 from collections import Counter
 from pathlib import Path
+
+from visual_chapter_source import canonical_chapter_sha256
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -20,7 +21,7 @@ def load(path: Path) -> dict:
 
 
 def digest(path: Path) -> str:
-    return hashlib.sha256(path.read_bytes()).hexdigest()
+    return canonical_chapter_sha256(path)
 
 
 def errors(packet: dict, contract: dict) -> list[str]:

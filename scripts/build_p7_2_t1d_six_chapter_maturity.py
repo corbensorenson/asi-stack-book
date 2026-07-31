@@ -14,6 +14,8 @@ import re
 from pathlib import Path
 from typing import Any
 
+from visual_chapter_source import canonical_chapter_sha256, canonical_chapter_text
+
 
 ROOT = Path(__file__).resolve().parents[1]
 BOOK = ROOT / "book_structure.json"
@@ -217,7 +219,7 @@ def build() -> dict[str, Any]:
         for row in r16_atoms["chapter_reviews"]
     }
     corpus_text = {
-        row["id"]: (ROOT / row["file"]).read_text(encoding="utf-8")
+        row["id"]: canonical_chapter_text(ROOT / row["file"])
         for row in chapters(book)
     }
     records: list[dict[str, Any]] = []
@@ -268,7 +270,7 @@ def build() -> dict[str, Any]:
             {
                 "chapter_id": spec["id"],
                 "chapter_path": chapter["file"],
-                "chapter_sha256": sha256(path),
+                "chapter_sha256": canonical_chapter_sha256(path),
                 "claim_label": chapter["claim_label"],
                 "support_state": chapter["evidence_level"],
                 "maturity_conditions": {
@@ -305,13 +307,13 @@ def build() -> dict[str, Any]:
     repairs = []
     for repair in REPAIRS:
         path = ROOT / repair["path"]
-        text = path.read_text(encoding="utf-8")
+        text = canonical_chapter_text(path)
         if repair["anchor"] not in text:
             raise ValueError(f"owner repair missing: {repair['topic']}")
         repairs.append(
             {
                 **repair,
-                "chapter_sha256": sha256(path),
+                "chapter_sha256": canonical_chapter_sha256(path),
                 "state": "meaning_bearing_prose_present",
                 "support_state_effect": "none",
             }

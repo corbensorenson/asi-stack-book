@@ -17,6 +17,8 @@ from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any
 
+from visual_chapter_source import canonical_chapter_text
+
 
 ROOT = Path(__file__).resolve().parents[1]
 STRUCTURE = ROOT / "book_structure.json"
@@ -354,7 +356,7 @@ def strip_nonprose(
 
 
 def prose_candidates(chapter: dict[str, Any], manifest_texts: set[str]) -> list[dict[str, Any]]:
-    body = (ROOT / chapter["file"]).read_text(encoding="utf-8")
+    body = canonical_chapter_text(ROOT / chapter["file"])
     result: list[dict[str, Any]] = []
     seen: set[str] = set()
     for line, text in strip_nonprose(

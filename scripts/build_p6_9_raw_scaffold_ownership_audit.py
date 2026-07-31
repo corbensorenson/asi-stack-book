@@ -11,6 +11,8 @@ from collections import defaultdict
 from pathlib import Path
 from typing import Any
 
+from visual_chapter_source import canonical_chapter_text
+
 
 ROOT = Path(__file__).resolve().parents[1]
 STRUCTURE = ROOT / "book_structure.json"
@@ -53,7 +55,7 @@ def build() -> dict[str, Any]:
     if len(rows) != 84:
         raise ValueError(f"expected 84 manifest chapters, found {len(rows)}")
     chapters = {
-        row["id"]: (ROOT / row["file"]).read_text(encoding="utf-8")
+        row["id"]: canonical_chapter_text(ROOT / row["file"])
         for row in rows
     }
     spread: dict[tuple[str, ...], set[str]] = defaultdict(set)

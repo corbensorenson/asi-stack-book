@@ -4,13 +4,13 @@
 from __future__ import annotations
 
 import copy
-import hashlib
 import json
 from pathlib import Path
 
 from jsonschema import Draft202012Validator
 
 from build_post_activation_six_chapter_claim_atom_addendum import CHAPTERS, build
+from visual_chapter_source import canonical_chapter_sha256
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -26,7 +26,7 @@ def load(path: Path) -> dict:
 
 
 def sha256(path: Path) -> str:
-    return hashlib.sha256(path.read_bytes()).hexdigest()
+    return canonical_chapter_sha256(path)
 
 
 def manifest_chapters() -> dict[str, dict]:

@@ -9,6 +9,8 @@ import re
 from pathlib import Path
 from typing import Any
 
+from visual_chapter_source import canonical_chapter_text
+
 
 ROOT = Path(__file__).resolve().parents[1]
 CONTRACT_BUILDER = ROOT / "scripts/build_chapter_substance_contract.py"
@@ -74,7 +76,7 @@ def build() -> dict[str, Any]:
     for chapter_id in CHAPTER_IDS:
         chapter = chapters[chapter_id]
         path = ROOT / chapter["file"]
-        text = path.read_text(encoding="utf-8")
+        text = canonical_chapter_text(path)
         specs = module.CONCEPT_SPECS.get(chapter_id, [])
         semantic_review = module.SEMANTIC_REVIEWS.get(chapter_id)
         if len(specs) != 8:

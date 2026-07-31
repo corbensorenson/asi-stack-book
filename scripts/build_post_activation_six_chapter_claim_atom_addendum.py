@@ -4,9 +4,10 @@
 from __future__ import annotations
 
 import argparse
-import hashlib
 import json
 from pathlib import Path
+
+from visual_chapter_source import canonical_chapter_sha256
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -465,7 +466,7 @@ def manifest_chapters() -> dict[str, dict]:
 
 
 def sha256(path: Path) -> str:
-    return hashlib.sha256(path.read_bytes()).hexdigest()
+    return canonical_chapter_sha256(path)
 
 
 def build() -> dict:

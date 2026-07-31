@@ -9,6 +9,8 @@ import sys
 from pathlib import Path
 from typing import Any
 
+from visual_chapter_source import canonical_chapter_sha256
+
 ROOT = Path(__file__).resolve().parents[1]
 AUDIT = ROOT / "evidence_quality/p7_2_t3_human_factors_reader_integration.json"
 STATUS = ROOT / "roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json"
@@ -49,7 +51,14 @@ def errors(data: dict[str, Any]) -> list[str]:
         value: Any = audit
         for part in path_key:
             value = value.get(part, {}) if isinstance(value, dict) else {}
-        if not isinstance(value, str) or not (ROOT / value).is_file() or owner.get(digest_key) != sha(ROOT / value):
+        actual_digest = (
+            canonical_chapter_sha256(ROOT / value)
+            if path_key == ("chapter_path",) and isinstance(value, str)
+            else sha(ROOT / value)
+            if isinstance(value, str) and (ROOT / value).is_file()
+            else None
+        )
+        if not isinstance(value, str) or not (ROOT / value).is_file() or owner.get(digest_key) != actual_digest:
             out.append(f"digest or artifact drifted: {'.'.join(path_key)}")
 
     source_ids = audit.get("source_crosswalk", {}).get("primary_external_source_ids", []) + audit.get("source_crosswalk", {}).get("supporting_corben_source_ids", [])

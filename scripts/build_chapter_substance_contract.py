@@ -3,11 +3,12 @@
 
 from __future__ import annotations
 
-import hashlib
 import json
 import re
 from pathlib import Path
 from typing import Any
+
+from visual_chapter_source import canonical_chapter_sha256, canonical_chapter_text
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -825,7 +826,7 @@ def load(path: Path) -> Any:
 
 
 def sha256(path: Path) -> str:
-    return hashlib.sha256(path.read_bytes()).hexdigest()
+    return canonical_chapter_sha256(path)
 
 
 def manifest_chapters() -> list[dict[str, Any]]:
@@ -883,7 +884,7 @@ def build() -> dict[str, Any]:
     records = []
     for chapter in chapters:
         path = ROOT / chapter["file"]
-        text = path.read_text(encoding="utf-8")
+        text = canonical_chapter_text(path)
         word_count = len(text.split())
         specs = CONCEPT_SPECS.get(chapter["id"], [])
         available_atom_ids = {
@@ -962,7 +963,7 @@ def build() -> dict[str, Any]:
         "recorded_date": "2026-07-28",
         "manifest_path": "book_structure.json",
         "manifest_chapter_count_freeze": MANIFEST_FREEZE,
-        "word_count_method": "Unicode text split on whitespace over the complete tracked QMD; diagnostic trigger only",
+        "word_count_method": "Unicode text split on whitespace over canonical chapter source with the generated visual projection removed; diagnostic trigger only",
         "word_trigger": WORD_TRIGGER,
         "concept_contract_rule": (
             "An active concept section must be named, contain at least 150 words, "

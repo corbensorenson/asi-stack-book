@@ -12,6 +12,8 @@ from collections import defaultdict
 from pathlib import Path
 from typing import Any
 
+from visual_chapter_source import canonical_chapter_text
+
 ROOT = Path(__file__).resolve().parents[1]
 STRUCTURE = ROOT / "book_structure.json"
 ARTIFACT = ROOT / "evidence_quality/p7_1a_w3_inheritance_guard.json"
@@ -258,7 +260,7 @@ def build() -> dict[str, Any]:
     current_rows = {row["id"]: row for row in current_manifest}
     baseline_rows = {row["id"]: row for row in baseline_manifest}
     current = {
-        row["id"]: (ROOT / row["file"]).read_text(encoding="utf-8")
+        row["id"]: canonical_chapter_text(ROOT / row["file"])
         for row in current_manifest
     }
     baseline = {

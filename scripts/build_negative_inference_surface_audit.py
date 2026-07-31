@@ -8,6 +8,8 @@ import json
 import re
 from pathlib import Path
 
+from visual_chapter_source import canonical_chapter_text
+
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "evidence_quality/negative_inference_surface_audit.json"
@@ -72,10 +74,6 @@ REQUIRED = {
 }
 
 
-def digest(path: Path) -> str:
-    return hashlib.sha256(path.read_bytes()).hexdigest()
-
-
 def chapter_paths() -> list[str]:
     structure = json.loads((ROOT / "book_structure.json").read_text(encoding="utf-8"))
     return [
@@ -87,7 +85,10 @@ def chapter_paths() -> list[str]:
 
 def audit() -> dict:
     chapters = chapter_paths()
-    methodology_text = (ROOT / "chapters/living-book-methodology.qmd").read_text(encoding="utf-8")
+    chapter_set = set(chapters)
+    methodology_text = canonical_chapter_text(
+        ROOT / "chapters/living-book-methodology.qmd"
+    )
     methodology_normalized = re.sub(r"\s+", " ", methodology_text)
     centralized_boundary = "These are residual proof obligations, not false claims."
     paths = sorted(set(PUBLIC_SURFACES + chapters))
@@ -98,7 +99,12 @@ def audit() -> dict:
     term_counts = {"refuted": 0, "no_change": 0, "blocked_after_full_attempt": 0}
     for relative in paths:
         path = ROOT / relative
-        text = path.read_text(encoding="utf-8")
+        text = (
+            canonical_chapter_text(path)
+            if relative in chapter_set
+            else path.read_text(encoding="utf-8")
+        )
+        surface_bytes = text.encode("utf-8")
         normalized_text = re.sub(r"\s+", " ", text)
         for phrase in FORBIDDEN:
             for match in re.finditer(re.escape(phrase), text, flags=re.IGNORECASE):
@@ -126,8 +132,8 @@ def audit() -> dict:
                 blocked_boundary_failures.append(relative)
         records.append({
             "path": relative,
-            "sha256": digest(path),
-            "bytes": path.stat().st_size,
+            "sha256": hashlib.sha256(surface_bytes).hexdigest(),
+            "bytes": len(surface_bytes),
             "term_counts": counts,
         })
     return {
