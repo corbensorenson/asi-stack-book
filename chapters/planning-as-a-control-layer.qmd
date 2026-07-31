@@ -4,7 +4,7 @@ chapter_id: "planning-as-a-control-layer"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-07-16"
+last_updated: "2026-07-31"
 primary_sources:
   - "planforge"
   - "viea"
@@ -253,6 +253,70 @@ That extra structure changes the meaning of "use a smaller model." A cheap route
 Every node therefore carries two contracts. The work contract names what the node may do. The adequacy contract names what would make the output usable by downstream dependents. Scheduling without the second contract creates text or artifacts without reliable progress.
 
 The DAG also makes local repair possible. If one source-reading node used stale evidence, the scheduler should identify the affected subgraph, repair the stale node, rerun dependents whose assumptions changed, and preserve unaffected work. That is the compiler intuition behind PlanForge: the graph lets the stack rebuild only the parts whose dependencies changed while keeping residuals and rejected routes visible.
+
+### PlanForge compiler, scheduler, and Watchdog contract
+
+PlanForge's front end stops recursive decomposition only when a leaf matches a
+versioned primitive schema. Matching a verb is insufficient. The leaf binds
+typed arguments, units, preconditions, postconditions, idempotence, effects,
+authority, context, output schema, verifier, and recovery behavior. A fixed
+catalog of semantic words is not automatically an executable primitive set:
+`VERIFY` can describe an epistemic relation while still lacking a verifier,
+target, threshold, evidence class, and failure consequence. Unknown or
+ill-typed leaves route to clarification, schema extension review, or residuals
+rather than being coerced into the nearest tool.
+
+The middle end can deduplicate exact operations and propose semantic merges,
+but an embedding threshold is only a candidate generator. Two nodes merge only
+when their parameters, consumers, authority, rights, state epoch, side effects,
+quality predicates, and downstream dependency meaning are compatible. “Email
+Bob” and “contact Robert” can be the same intent, different people, or different
+channels; a cosine score cannot decide that. Every merge retains the source
+nodes, proof or review basis, affected edges, rollback split, and any saved cost.
+Failed positive controls on true aliases or negative controls on confusable
+actions block deduplication claims.
+
+Minimum Viable Intelligence is a calibrated adequacy estimate, not a permanent
+rank attached to a model name. For node $n$ and route $w$, the scheduler needs
+the predicted probability and consequence of failing the node's adequacy
+contract, confidence and data age, task-family coverage, context and tool
+requirements, latency distribution, verifier capacity, and fallback burden.
+Historical failure logs may train a classifier, but unseen primitives and
+distribution shift default conservatively; a source-paper rule such as “bump a
+tier above 20% historical failure” is an illustrative policy, not a validated
+constant. Humans, scripts, tools, local models, services, and robots share the
+same contract surface without being reduced to one fictional intelligence
+scalar.
+
+For a feasible DAG, critical-path slack creates a genuine scheduling option.
+Zero-slack nodes may justify faster qualified routes; positive-slack nodes may
+use cheaper slower routes without moving the deadline. A heuristic such as
+HEFT or greedy list scheduling can minimize a declared combination of route
+cost and sink finish time under dependency, capacity, deadline, and adequacy
+constraints. It does not compute an “optimal plan” when duration, failure,
+queue, merge, verification, and repair estimates are uncertain. The receipt
+reports predicted and observed makespan, cost, slack, queueing, coordination,
+verification, retries, canceled work, and quality rather than only the visible
+worker bill.
+
+The Watchdog is a runtime consumer of the compiled schedule, not proof that the
+plan is correct. It validates input and output schemas; observes start,
+heartbeat, completion, effect, and verifier events; retries only where
+idempotence or compensation permits; carries structured failure context into a
+qualified escalation; and asks Planning to recompile when an assumption or
+dependency changes. A lazy-start speculative route can launch a stronger
+worker near a latency quantile while a cheaper attempt runs, but both attempts,
+cancellation latency, duplicate effects, privacy exposure, rate limits, and
+verifier capacity count. Speculation is disabled for non-idempotent or
+irreversible effects unless a downstream owner supplies isolation and commit.
+
+The paper family's reported 60–85% token-cost language comes from two synthetic
+arithmetic scenarios with assumed prices, fifty-way parallelism, no rate-limit
+bottleneck, and no measured output-quality, orchestration, verification,
+failure, or merge burden. Those numbers illustrate why workload mix matters:
+the “grunt work” scenario predicts large savings while a reasoning-heavy
+refactor predicts little. They are not a benchmark result, empirical validation,
+or a prior for this book's mature campaign.
 
 ### Semantic-operation DAGs and partial qualification
 

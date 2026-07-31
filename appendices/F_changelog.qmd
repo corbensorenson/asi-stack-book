@@ -3,8 +3,8 @@
 ## 2026-07-31 — Corben paper fidelity audit and VIEA deep-mining repair
 
 - Reclassified the 44 locally readable Corben paper texts by mining fidelity:
-  eight now have complete section-family audits, VIEA is repaired in this
-  pass, and thirty-five legacy papers still have routing-grade rather than
+  ten now have complete section-family audits, VIEA is repaired in this
+  pass, and thirty-three legacy papers still have routing-grade rather than
   full-fidelity notes. Note existence and chapter assignment no longer count as
   proof that a paper was fully mined.
 - Expanded the source-note template to retain claim boundaries, primitives,
@@ -81,6 +81,16 @@
   stale metadata-first crosswalk labels with passage-reviewed architecture
   labels. No compiler, quantizer, router, certificate, preserved-behavior,
   efficiency, release-control, safety, deployment, support, or ASI claim moved.
+- Completed the PlanForge four-tab variant-family audit together with its
+  separately inventoried compiler-architecture duplicate. Normalized comparison
+  proved that the separate cache is byte-identical to embedded Tab 4, so its
+  prose and synthetic numbers count once. Added typed primitive stopping,
+  semantic-merge qualification, calibrated MVI, critical-path slack, complete
+  scheduling receipts, Watchdog state and escalation, side-effect-safe
+  lazy-start speculation, and exact synthetic-benchmark limits to Planning;
+  separated semantic relation atoms from executable primitives in Cognitive
+  Compilation. No implementation, scheduler, decomposition, merge, MVI,
+  savings, quality, reliability, security, transfer, support, or ASI claim moved.
 
 ## 2026-07-30 — P7.3 twelve-chapter integrated visual preview
 

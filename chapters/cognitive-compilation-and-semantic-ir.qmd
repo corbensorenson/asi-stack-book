@@ -205,6 +205,16 @@ code, prose, schemas, proofs, experiments, diagrams, or job packets while
 retaining the exact target language, dependencies, build inputs, environment,
 and artifact identity.
 
+PlanForge makes the planner/compiler boundary concrete. Its raw task tree and
+optimized DAG are source and scheduling IRs, not “machine code” merely because
+they are serialized. A semantic atom such as `KNOW`, `CAUSE`, or `VERIFY` names
+a relation family; an executable primitive additionally needs typed operands,
+environment and tool bindings, preconditions, effects, authority, evidence,
+failure, and recovery semantics. Argument canonicalization can reduce fuzzy
+lowering, while semantic hashes can propose common subexpressions, but neither
+proves two obligations interchangeable. Exact merge eligibility is checked
+after consumer, state, rights, authority, effect, and verification binding.
+
 Translation validation is separate from generation. Requirement-specific
 validators compare the accepted source obligation with the actual target
 artifact and keep source validity, IR validity, lowering preservation, target

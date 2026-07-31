@@ -10,17 +10,17 @@ This report records the source-mining pass used to expand the book from a 16-cha
 - Locally readable Corben paper corpus: 44 canonical mining texts—37 cached
   Google Docs text exports and seven supplied Markdown whitepapers. Paired DOCX
   files are presentation counterparts, not independent idea sources.
-- Full section-family closure audits now exist for eight papers:
+- Full section-family closure audits now exist for ten papers:
   `deterministic_capability_compilation`, `platonic_world_model`, `scf`,
   `qcsa_whitepaper`, `reflexive_router_whitepaper`,
   `kernel_english_residual_compiler`, `relational_dimension_compiler`, and
-  `precision_contract`.
+  `precision_contract`, `planforge`, and `planforge_compiler_arch`.
 - The 2026-07-31 VIEA second pass is the first legacy-paper fidelity repair: it
   expands the note from a routing summary into a 2,388-word system note and
   writes previously absent mechanisms into seven canonical chapters.
 - Every recent rich whitepaper in this audit now has an exact
   section-family-to-manuscript closure audit.
-- Thirty-five readable legacy papers still have first-pass routing notes rather
+- Thirty-three readable legacy papers still have first-pass routing notes rather
   than full-fidelity notes. Their ideas may be present in chapters, but note
   existence or manifest assignment is no longer accepted as proof of complete
   mining.
@@ -60,9 +60,9 @@ source assignment alone does not count.
 
 | State | Sources | Required next operation |
 |---|---|---|
-| Section-family audit complete | `deterministic_capability_compilation`, `platonic_world_model`, `scf`, `qcsa_whitepaper`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `relational_dimension_compiler`, `precision_contract` | Re-open only on paper or chapter drift. |
+| Section-family audit complete | `deterministic_capability_compilation`, `platonic_world_model`, `scf`, `qcsa_whitepaper`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `relational_dimension_compiler`, `precision_contract`, `planforge`, `planforge_compiler_arch` | Re-open only on paper or chapter drift. |
 | Legacy paper repaired in this pass | `viea` | Re-run chapter/source validation and retain its new section-family map. |
-| Legacy system spine; deep note required | `planforge`, `planforge_compiler_arch`, `cognitive_compilation`, `talos`, `vcm_public`, `spinoza`, `spinoza_composer`, `octopus_router`, `rmi`, `cognitive_loop_closure`, `benchmaxxing` | Reconstruct the complete object model and lifecycle before deciding whether prose is missing. |
+| Legacy system spine; deep note required | `cognitive_compilation`, `talos`, `vcm_public`, `spinoza`, `spinoza_composer`, `octopus_router`, `rmi`, `cognitive_loop_closure`, `benchmaxxing` | Reconstruct the complete object model and lifecycle before deciding whether prose is missing. |
 | Compression, representation, and substrate; deep note required | `cgs`, `rgs`, `rankfold_neuralfold`, `rankfold_compressor`, `bbvca_v9`, `bbvca_main`, `genesiscode`, `treellm`, `simulation_scaling`, `tokenmana`, `bugbrain` | Preserve equations, decoders, accounting, verification, failure surfaces, and rival representations—not only the compression slogan. |
 | Alignment, verification, context, and execution lineage; deep note required | `alignment_field`, `field_of_god`, `ethica_mechanica`, `eternal_code`, `verification_bandwidth`, `beastbrain`, `beastbrain_timeless`, `aletheia`, `context_engineer`, `black_hole_context_manager`, `ladon_manhattan`, `uat`, `software_magic_grimoire` | Separate operational mechanisms from metaphysics, branding, repeated drafts, unsafe absolutes, and unsupported performance claims; integrate only the durable architecture. `coherence_exchange` remains a separately connector-mined source rather than one of the 44 local paper texts. |
 
@@ -290,6 +290,34 @@ No compiler, quantizer, router, certificate, achieved rate, preserved-behavior
 result, cost advantage, release control, safety result, external reproduction,
 production transfer, or ASI support was established; the source remains
 `argument`.
+
+## PlanForge variant-family closure result
+
+The PlanForge cache is a four-tab family: an original hierarchical orchestrator
+draft, two near-duplicate Cognitive Compiler editions, and an embedded
+compiler-architecture export. The separately inventoried
+`planforge_compiler_arch` cache is byte-identical to the embedded fourth tab
+after stripping its BOM and enclosing tab marker. The audit therefore counts
+the architecture and both synthetic scenarios once rather than treating
+variants as independent corroboration.
+
+The Planning chapter already preserved the governed obligation DAG and mature
+evaluation program. This pass restored the paper-specific compiler mechanics:
+typed primitive stopping, semantic hashes as merge proposals rather than proof,
+consumer/effect/authority-aware deduplication, MVI as a calibrated node-route
+estimate rather than fixed model rank, critical-path slack as a conditional
+arbitrage opportunity, HEFT/list scheduling as heuristics, schema-validating
+Watchdog transitions, error-context escalation, and lazy-start speculation with
+idempotence, cancellation, privacy, duplicate-effect, capacity, and full-cost
+constraints. Cognitive Compilation now distinguishes Aletheia-style semantic
+relation atoms from bound executable primitives.
+
+The family notes preserve every tab's implementation suggestions, use cases,
+roadmap delta, limitations, comparisons, references, and exact synthetic
+arithmetic while rejecting the papers' “validated 60–85%” wording. No code,
+observed output, planner cost, rate-limit model, confidence interval, failure
+trace, or quality result accompanies those examples. PlanForge and its compiler
+variant remain one `argument`-level architecture lineage.
 
 ## Main Architecture Clusters Mined
 
