@@ -96,8 +96,8 @@ completed chapter video.
 
 Current checkpoint: the 84-chapter generation-one baseline remains preserved
 as ignored local history, while generation two is the active quality lane.
-Generation-two chapters 1–16 have passed beat-plan, animatic, and
-picture-and-sound-lock gates; chapters 17–84 remain planned. Generation two
+Generation-two chapters 1–17 have passed beat-plan, animatic, and
+picture-and-sound-lock gates; chapters 18–84 remain planned. Generation two
 does not yet have a release candidate, accepted video, YouTube-current video,
 or current Quarto embed. Chapter 14 is intentionally 06:41.90: the six-minute
 value is a preferred soft range, and shortening its allocation puzzle, standing
@@ -143,12 +143,12 @@ requires at least 4/5 independently for clarity, composition, motion, sync,
 continuity, pacing, voice, mix, engagement, accessibility, and claim fidelity.
 The first five form the remediation cohort, the remaining seven previews
 followed, and chapters 13–84 were held until the revised method passed. Chapters
-13–16 are now through picture-and-sound lock under that method; chapters
-17–84 remain gated behind the same production chain. Existing unlisted embeds remain
+13–17 are now through picture-and-sound lock under that method; chapters
+18–84 remain gated behind the same production chain. Existing unlisted embeds remain
 historical review previews, not publication-quality acceptance.
 
-The generation-2 ledger currently has 68 planned chapters and sixteen chapters
-through both animatic and picture-and-sound lock. The first sixteen
+The generation-2 ledger currently has 67 planned chapters and seventeen chapters
+through both animatic and picture-and-sound lock. The first seventeen
 replacements use chapter-specific persistent worlds, audio-derived beat timing,
 exhaustive caption-boundary review, and independent per-dimension scores without
 average laundering. Chapter 10, `human-factors-and-meaningful-control-in-oversight`,
@@ -182,7 +182,14 @@ verification independence, commitment lifecycle, capacity, capture, emergency
 expiry, remedy, competition, withdrawal custody, and legitimacy residuals
 typed. Its provider-paid assessor pause, missing-standing repair, hidden-
 settlement counterexample, finite tabletop, and evidence ceiling remain
-explicitly bounded. All sixteen delivery masters remain
+explicitly bounded. Chapter 17,
+`societal-resilience-and-misuse-defense`, uses a synthetic Harborline
+benefits-portal impersonation incident to keep resist, absorb, recover, and
+adapt distinct; its federated incident envelope, lawful-minimal privacy
+custody, coverage graph, correlated-detector failure, language-access false
+positive, affected-path inventory, authority handoff, correction propagation,
+residual ledger, and finite tabletop ceiling remain explicitly bounded. All
+seventeen delivery masters remain
 candidates only: no generation-2 video has passed release-candidate,
 independent, technical, claim-fidelity, or acceptance gates, and none is
 uploaded or current in Quarto.
