@@ -39,6 +39,7 @@ import AsiStackProofs.FailureRecoveryRefinement
 import AsiStackProofs.GenerateVerifyRepair
 import AsiStackProofs.GovernanceRights
 import AsiStackProofs.GovernedOperations
+import AsiStackProofs.GovernedOperationsRefinement
 import AsiStackProofs.GovernedModelTraining
 import AsiStackProofs.GovernedWorldModels
 import AsiStackProofs.HumanFactorsOversight

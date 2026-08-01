@@ -4,7 +4,7 @@ chapter_id: "governed-operations-incident-command-and-graceful-degradation"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.4 integrated reader chapter"
-last_updated: "2026-07-27"
+last_updated: "2026-08-01"
 primary_sources:
   - "scf"
   - "deterministic_capability_compilation"
@@ -38,7 +38,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source loading state | Source notes are available for all nine assigned records, and the manifest records claim-level mappings and limits. The three NIST records are external comparators; the six Corben/local records contribute architecture or implementation lineage, not independent incident-performance evidence. |
 | Test state | The governed-operations packet schema, authored safe-hold fixture, independent route consumer, completed positive recovery control, and eighteen rejecting mutations are implemented. The first P5 slice adds 8/8 real-subprocess authority/effect/recovery cases. The second adds 7/7 commit-bound service cases with actual learning state, weights-only rollback rejection, crash/restart restoration, localhost partition/outbox retry, one external effect, stale-credential and custody-tamper rejection, and separate-process observation. A retrospective natural publication-service development trace adds an exact source/build/artifact/no-rebuild deploy/public-monitor chain and thirteen rejecting semantic mutations. The claim-bearing natural-service campaign remains unexecuted; no flagship T4 trace, natural AI-service incident, operator game day, distributed partition, deployed recovery, matched comparison, or external reproduction is recorded. |
-| Formal state | Both public targets are implemented in `AsiStackProofs.GovernedOperations` through thirteen theorem declarations. Their maximum inference is finite declared-record routing only. |
+| Formal state | Three public targets are implemented through twenty-six theorem declarations in `AsiStackProofs.GovernedOperations` and `AsiStackProofs.GovernedOperationsRefinement`. The refinement adds an eight-stage incident lifecycle and two explicit composition theorems into the original degradation and recovery predicates. Their maximum inference remains finite declared-record routing and lifecycle refinement only. |
 
 ## Drafting guardrail
 
@@ -1011,15 +1011,24 @@ adequacy nor operational safety by themselves.
 |---|---|---|---|
 | `lean:operations.degradation_never_widens_authority` | implemented | Every accepted modeled degraded-mode transition preserves or narrows capability, data, tool, population, and duration authority. | The general consequence and five widening countermodels are checked against the same dimensions consumed by the independent packet validator. |
 | `lean:operations.recovery_requires_complete_state` | implemented | Modeled recovery acceptance requires exact declared-state reconciliation, descendant inventory, external-effect disposition, fresh independent acceptance, qualified fallback, emergency-authority expiry, and no authority request. | The general completeness consequence, rejecting countermodels, and complete declared-inventory witness are checked. |
+| `lean:operations.incident_lifecycle_refines_static_contracts` | implemented | A reachable eight-stage incident lifecycle preserves exact rejected state, refines the original degradation and recovery predicates at accepted boundaries, expires emergency authority before restoration, and re-enters incident control on recurrence. | Thirteen refinement theorems and an independently encoded 44-mutation consumer cover stage order, identity, replay, authority, containment, reconciliation, review, restoration, bounded recovery, and recurrence without assigning support or external authority. |
 
 ### Formalization disposition
 
-The two finite targets are now implemented against the same authority
+The three finite targets are now implemented against the same authority
 dimensions, state-class count, effect-disposition, acceptance, fallback, and
-lease fields used by the independent packet consumer. Thirteen theorem
+lease fields used by the independent packet consumer. Twenty-six theorem
 declarations include general accepted-route consequences, five authority-
 widening countermodels, missing-state, unknown-effect, stale-check, active-
-lease countermodels, and a complete declared-inventory witness.
+lease countermodels, a complete declared-inventory witness, exact rejected-state
+preservation, two refinement theorems into the original static contracts, a
+seven-transition recovery witness, and modeled recurrence re-entry.
+
+The independently encoded consumer now checks the eight-stage incident lifecycle
+without importing Lean definitions. It accepts the canonical seven-transition
+path to restored service, reopens incident control on one recurrence, and rejects
+44 stage, identity, replay, authority, containment, reconciliation, review, and
+restoration mutations while preserving the exact prior state on every rejection.
 
 The abstraction remains deliberately smaller than the architecture. It models
 five authority dimensions and recovery completeness relative to eleven named

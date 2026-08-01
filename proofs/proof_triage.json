@@ -2761,6 +2761,16 @@
       "rationale": "Model a declared recovery checklist and derive rejection for missing components. The formal target trusts state enumeration and dispositions and cannot prove semantic completeness, effect reversibility, recovery safety, bounded harm, reproduction, or transfer."
     },
     {
+      "tag": "lean:operations.incident_lifecycle_refines_static_contracts",
+      "chapter_id": "governed-operations-incident-command-and-graceful-degradation",
+      "module": "AsiStackProofs.GovernedOperationsRefinement",
+      "formal_target": "A reachable eight-stage incident lifecycle preserves exact state on rejection, refines the existing degradation and recovery predicates at accepted boundaries, expires emergency authority before restoration, and re-enters incident control on modeled recurrence without assigning support or external authority.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "The lifecycle composes the chapter's static authority and recovery guards across a reachable finite sequence and adds mutation-sensitive recurrence handling. It still trusts incident detection, state and effect enumeration, verifier competence, fallback usefulness, and operator execution; those remain Theseus and empirical responsibilities."
+    },
+    {
       "tag": "lean:policy_optimization.update.operational_invariant",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
       "module": "AsiStackProofs.PolicyOptimizationRefinement",
@@ -3221,5 +3231,5 @@
       "rationale": "The planned boundary makes roles, lower-order rescues, the complete candidate denominator, qualification, cost, fallback, descendants, and contraction state explicit. It cannot establish irreducibility, representational usefulness, bounded primitive arity, general reasoning, safe online adaptation, or ASI."
     }
   ],
-  "record_count": 321
+  "record_count": 322
 }

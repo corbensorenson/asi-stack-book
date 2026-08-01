@@ -4,7 +4,7 @@
   "state": "terminal_integrated_argument_chapter",
   "chapter_id": "governed-operations-incident-command-and-graceful-degradation",
   "chapter_path": "chapters/governed-operations-incident-command-and-graceful-degradation.qmd",
-  "chapter_sha256": "50a74bc7bcc73815be65fad63e234ab0ff6e0d379b0d9d8e8a0f8bb2e5b6a10a",
+  "chapter_sha256": "918fdd4e18cdd9cf6ed2cf48fdc8e8a3b6c1e608b4b5221195ec109b7de53a89",
   "reader_role": "load-bearing-reference",
   "terminal_decision": "integrate_at_argument_support",
   "exclusive_owner": "post-deployment continuity and control across field observability, incident declaration, scoped command, independent containment, degraded and fallback modes, state/effect reconciliation, recovery, disclosure, learning handoff, and decommissioning",
@@ -30,10 +30,15 @@
     "module": "AsiStackProofs.GovernedOperations",
     "module_path": "lean/AsiStackProofs/GovernedOperations.lean",
     "module_sha256": "532d249a15e3940d49ea751bbb57b48fd25b616a2d59d73a8ec3fa8a5ea5fa14",
-    "public_target_count": 2,
-    "implemented_target_count": 2,
-    "theorem_declaration_count": 13,
-    "maximum_inference": "Finite declared-record identity, five-dimensional authority monotonicity, recovery-completeness, safe-hold, and no-authority consequences only; no detector sensitivity, inventory completeness, external-effect truth or reversal, fallback usefulness, human command performance, incident efficacy, recovery efficacy, safety, or deployment result."
+    "refinement_module": "AsiStackProofs.GovernedOperationsRefinement",
+    "refinement_module_path": "lean/AsiStackProofs/GovernedOperationsRefinement.lean",
+    "refinement_module_sha256": "3c971d537f3f51cdd7fc2c84e8061a1a2bbf1b3d151dcec9ea5bbd0287ddee1f",
+    "public_target_count": 3,
+    "implemented_target_count": 3,
+    "theorem_declaration_count": 26,
+    "lifecycle_stage_count": 8,
+    "lifecycle_mutations_rejected": 44,
+    "maximum_inference": "Finite declared-record identity, five-dimensional authority monotonicity, recovery completeness, exact rejected-state preservation, reachable lifecycle refinement, bounded recurrence, safe hold, and no-authority consequences only; no detector sensitivity, inventory completeness, external-effect truth or reversal, fallback usefulness, human command performance, incident efficacy, recovery efficacy, safety, or deployment result."
   },
   "record_contract": {
     "schema_path": "schemas/governed_operations_control_packet.schema.json",

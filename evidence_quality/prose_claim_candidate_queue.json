@@ -3,13 +3,13 @@
   "scanner": "modal and outcome-bearing sentence cue scan; candidates require semantic adjudication",
   "summary": {
     "chapter_count": 64,
-    "candidate_count": 3811,
+    "candidate_count": 3813,
     "review_state_counts": {
-      "duplicate_of_atom": 1827,
+      "duplicate_of_atom": 1828,
       "editorial_or_question": 59,
       "historical_or_source_report": 323,
       "material_atom": 3,
-      "nonmaterial_explanation": 1599
+      "nonmaterial_explanation": 1600
     }
   },
   "candidates": [
@@ -4008,9 +4008,66 @@
       "target_atom_id": "failure-modes-of-ungoverned-intelligence.minimum.001"
     },
     {
+      "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.d8e05dc6da47",
+      "chapter_id": "failure-modes-of-ungoverned-intelligence",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:449",
+      "sentence": "transition function cannot assign support or external authority.",
+      "cues": [
+        "cannot"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "States the no-support and no-external-authority consequence already owned by the closed-loop refinement target.",
+      "target_atom_id": "failure-modes-of-ungoverned-intelligence.formal.failure-recovery-closed-loop-refinement"
+    },
+    {
+      "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.6ee2a5207cdd",
+      "chapter_id": "failure-modes-of-ungoverned-intelligence",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:450",
+      "sentence": "requires exact incident and version identity, current assurance and taxonomy,",
+      "cues": [
+        "requires"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Continues the exact guarded-readmission conditions already owned by the closed-loop refinement target.",
+      "target_atom_id": "failure-modes-of-ungoverned-intelligence.formal.failure-recovery-closed-loop-refinement"
+    },
+    {
+      "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.4d1adf1dac2f",
+      "chapter_id": "failure-modes-of-ungoverned-intelligence",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:462",
+      "sentence": "observe actual effects and containment, exercise restart and rollback, measure",
+      "cues": [
+        "measure"
+      ],
+      "review_state": "nonmaterial_explanation",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Names the executable and empirical work that remains outside the finite proof; it adds no positive chapter claim.",
+      "target_atom_id": null
+    },
+    {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.50a163ae7d4e",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:448",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:470",
       "sentence": "Ungoverned intelligence should be monitored through ordinary stack breakdowns before those failures can hide behind dramatic or abstract risk language.",
       "cues": [
         "should"
@@ -4029,7 +4086,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.c4a4deae6594",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:448",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:470",
       "sentence": "A mature failure-radar layer would classify failures by layer, map each failure to an invariant, attach at least one planned falsification test, and use the resulting failures to justify new boundaries only when the records show a real control need.",
       "cues": [
         "show"
@@ -4048,7 +4105,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.bcc0c42d77db",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:450",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:472",
       "sentence": "A risk that cannot be mapped to a boundary would remain a residual rather than becoming vague fear or rhetorical urgency.",
       "cues": [
         "cannot"
@@ -4065,13 +4122,13 @@
       "target_atom_id": "failure-modes-of-ungoverned-intelligence.interface.001"
     },
     {
-      "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.6d4f878f5b30",
+      "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.50d767ea0abe",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:476",
-      "sentence": "They prove that a modeled component with a failed required invariant is not promotable, that an explicit authority-over-ceiling incident routes to authority review, that three other modeled incident states route to quarantine, frozen review, or blocked promotion, and that modeled failure recurrence records route missing class, boundary, receipt, owner, containment, residual, learning-path, normalization-guard, review, quarantine, evidence-transition, and non-claim-boundary fields to explicit outcomes.",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:500",
+      "sentence": "`AsiStackProofs.FailureRecoveryRefinement` adds a reachable five-stage transition system: rejected events preserve exact state; accepted transitions cannot mint support or external authority; accepted detection disables modeled effects; accepted readmission requires current assurance, current taxonomy, residual custody, and explicit authority; and one bounded recurrence re-isolates the system.",
       "cues": [
-        "prove",
-        "required"
+        "cannot",
+        "requires"
       ],
       "review_state": "duplicate_of_atom",
       "allowed_dispositions": [
@@ -4081,32 +4138,13 @@
         "editorial_or_question",
         "historical_or_source_report"
       ],
-      "disposition_rationale": "Detailed prose summary of the retained finite incident-route and recurrence-routing targets.",
-      "target_atom_id": "failure-modes-of-ungoverned-intelligence.formal.failure-recurrence-escalation-route"
-    },
-    {
-      "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.23e67ca05ff1",
-      "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:476",
-      "sentence": "The close-state result is now an input-general inverse: returning `closeFailureRecord` entails every required field and excludes every earlier guard, rather than merely normalizing an authored all-green constant.",
-      "cues": [
-        "required"
-      ],
-      "review_state": "duplicate_of_atom",
-      "allowed_dispositions": [
-        "material_atom",
-        "nonmaterial_explanation",
-        "duplicate_of_atom",
-        "editorial_or_question",
-        "historical_or_source_report"
-      ],
-      "disposition_rationale": "Explains the completed input-general inverse theorem and its improvement over the retired authored-constant normalization; the formal target already owns the claim.",
-      "target_atom_id": "failure-modes-of-ungoverned-intelligence.formal.failure-recurrence-escalation-route"
+      "disposition_rationale": "Readable summary of exact rejected-state, authority-neutrality, detection, readmission, and recurrence results owned by the closed-loop refinement target.",
+      "target_atom_id": "failure-modes-of-ungoverned-intelligence.formal.failure-recovery-closed-loop-refinement"
     },
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.887c506d8be3",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:486",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:511",
       "sentence": "These hooks do not prove those properties and do",
       "cues": [
         "prove"
@@ -4125,7 +4163,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.5e2dacd86611",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:503",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:528",
       "sentence": "require explicit boundary records and treat normalized expansion of option",
       "cues": [
         "require"
@@ -4144,7 +4182,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.8c072742bcf6",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:513",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:538",
       "sentence": "If AI substitutes reduce both forms of dependence, local adoption",
       "cues": [
         "reduce"
@@ -4163,7 +4201,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.15d4e52f1140",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:518",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:543",
       "sentence": "The failure record therefore cannot be a deployment count or GDP proxy.",
       "cues": [
         "cannot"
@@ -4182,7 +4220,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.fdc29bafa970",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:523",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:548",
       "sentence": "It must distinguish augmentation from displacement, relative",
       "cues": [
         "must"
@@ -4201,7 +4239,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.836ad3bf9aa8",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:525",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:550",
       "sentence": "Leading indicators, thresholds, and intervention triggers must be",
       "cues": [
         "must"
@@ -4220,7 +4258,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.2f2363db023e",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:529",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:554",
       "sentence": "can identify a mechanism or falsify a local model, but it cannot establish a",
       "cues": [
         "cannot"
@@ -4239,7 +4277,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.dbf882a812cf",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:533",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:558",
       "sentence": "cross-system feedback, distribution-sensitive welfare and agency measures,",
       "cues": [
         "measures"
@@ -4258,7 +4296,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.b854ed808173",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:541",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:566",
       "sentence": "warning threshold, or show that any proposed intervention works.",
       "cues": [
         "show"
@@ -4277,7 +4315,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.df0c8c37138f",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:579",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:604",
       "sentence": "Each failure names a boundary that must detect, contain, and preserve evidence:",
       "cues": [
         "must"
@@ -4296,7 +4334,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.bfe680e01110",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:586",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:611",
       "sentence": "The failure taxonomy appears early because the rest of the book should read like a response to it.",
       "cues": [
         "should"
@@ -4315,7 +4353,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.8a1d468e6f4f",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:586",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:611",
       "sentence": "If a later mechanism cannot say which failure it prevents, detects, or makes recoverable, it is probably decorative.",
       "cues": [
         "cannot",
@@ -4335,7 +4373,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.08361505a02a",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:588",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:613",
       "sentence": "A failure mode should have somewhere to go.",
       "cues": [
         "should"
@@ -4354,7 +4392,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.9a058e570cf0",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:588",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:613",
       "sentence": "If it cannot produce a receipt, owner, containment action, residual, or review path, the architecture has named a worry but not yet built a boundary.",
       "cues": [
         "cannot"
@@ -4373,7 +4411,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.ab69c20adc4b",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:628",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:653",
       "sentence": "Prospective failure obligations identify broad hazards but do not measure",
       "cues": [
         "measure"
@@ -4392,7 +4430,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.cfcd78ccb82d",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:629",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:654",
       "sentence": "whether a particular model materially helps a particular actor cause them.",
       "cues": [
         "cause"

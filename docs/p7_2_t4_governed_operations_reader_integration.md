@@ -27,11 +27,13 @@ semantic mutations attack identity, every authority dimension, containment,
 state, effect, freshness, verifier separation, expiry, fallback, source
 custody, and authority laundering.
 
-`AsiStackProofs.GovernedOperations` implements both public targets through
-thirteen theorem declarations. General results constrain accepted degradation
-and recovery relative to the declared record; countermodels reject authority
-widening, incomplete state, unknown effect, stale checks, and an active
-emergency lease. These are finite semantics, not operational evidence.
+`AsiStackProofs.GovernedOperations` and
+`AsiStackProofs.GovernedOperationsRefinement` implement three public targets
+through twenty-six theorem declarations. The refinement adds an eight-stage
+reachable lifecycle, exact rejected-state preservation, explicit composition
+into the original degradation and recovery predicates, bounded restoration,
+and recurrence re-entry. An independently encoded consumer rejects 44
+lifecycle mutations. These are finite semantics, not operational evidence.
 
 ## Empirical and flagship separation
 

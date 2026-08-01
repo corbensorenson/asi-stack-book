@@ -44,6 +44,14 @@ def errors(data: dict[str, Any]) -> list[str]:
             value = value.get(key, {}) if isinstance(value, dict) else {}
         if not isinstance(value, str) or not (ROOT / value).is_file() or owner.get(digest_key) != sha(ROOT / value):
             out.append(f"digest or artifact drifted: {'.'.join(path_keys)}")
+    formal = audit["formalization"]
+    refinement_path = formal.get("refinement_module_path")
+    if (
+        not isinstance(refinement_path, str)
+        or not (ROOT / refinement_path).is_file()
+        or formal.get("refinement_module_sha256") != sha(ROOT / refinement_path)
+    ):
+        out.append("refinement module digest or artifact drifted")
     source_ids = audit["source_crosswalk"]["primary_external_source_ids"] + audit["source_crosswalk"]["supporting_corben_source_ids"]
     if set(source_ids) != set(EXPECTED_SOURCES) or audit["source_crosswalk"].get("assigned_source_count") != 9:
         out.append("source denominator drifted")
@@ -55,10 +63,15 @@ def errors(data: dict[str, Any]) -> list[str]:
     if chapter is None or set(chapter.get("source_ids", [])) != set(EXPECTED_SOURCES):
         out.append("manifest source assignment drifted")
     targets = [row for row in data["manifest"]["records"] if row.get("chapter_id") == CHAPTER_ID]
-    if len(targets) != 2 or any(row.get("status") != "implemented" for row in targets):
+    if len(targets) != 3 or any(row.get("status") != "implemented" for row in targets):
         out.append("proof target implementation denominator drifted")
-    formal = audit["formalization"]
-    if formal.get("public_target_count") != 2 or formal.get("implemented_target_count") != 2 or formal.get("theorem_declaration_count") != 13:
+    if (
+        formal.get("public_target_count") != 3
+        or formal.get("implemented_target_count") != 3
+        or formal.get("theorem_declaration_count") != 26
+        or formal.get("lifecycle_stage_count") != 8
+        or formal.get("lifecycle_mutations_rejected") != 44
+    ):
         out.append("formal denominator drifted")
     record = audit["record_contract"]
     if record.get("fixture_degradation_route") != "accept_degraded" or record.get("fixture_recovery_route") != "safe_hold" or record.get("declared_state_class_count") != 11 or record.get("semantic_mutations_rejected") != 18 or record.get("natural_incidents_observed") != 0:
@@ -122,7 +135,7 @@ def main() -> None:
     contract = subprocess.run([sys.executable, "scripts/validate_governed_operations_control_contract.py"], cwd=ROOT, text=True, capture_output=True)
     if contract.returncode: failures.append((contract.stdout + contract.stderr).strip())
     if failures: raise SystemExit("P7.2-T4 reader integration failed:\n - " + "\n - ".join(failures))
-    print("P7.2-T4 reader integration passed: first tranche terminal at 4 argument-level chapters, 9 source mappings, 2 implemented targets, 13 Lean declarations, authored safe hold, prospectively frozen 5-arm/40-task campaign unexecuted, flagship separate, 13 integration mutations rejected; support/release/publication none.")
+    print("P7.2-T4 reader integration passed: first tranche terminal at 4 argument-level chapters, 9 source mappings, 3 implemented targets, 26 Lean declarations, 8-stage lifecycle with 44 rejecting mutations, authored safe hold, prospectively frozen 5-arm/40-task campaign unexecuted, flagship separate, 13 integration mutations rejected; support/release/publication none.")
 
 
 if __name__ == "__main__":

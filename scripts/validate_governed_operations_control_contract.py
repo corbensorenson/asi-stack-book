@@ -15,9 +15,31 @@ CAMPAIGN_SCHEMA = ROOT / "schemas/governed_operations_campaign_preregistration.s
 FIXTURE = ROOT / "tests/fixtures/protocol_records/governed_operations_control_packet.valid.json"
 PROTOCOL = ROOT / "experiments/governed_operations_argument_exit/preregistration.json"
 LEAN = ROOT / "lean/AsiStackProofs/GovernedOperations.lean"
+REFINEMENT_LEAN = ROOT / "lean/AsiStackProofs/GovernedOperationsRefinement.lean"
 CHAPTER = ROOT / "chapters/governed-operations-incident-command-and-graceful-degradation.qmd"
 STATE_CLASSES = {"model", "optimizer", "scheduler", "rng", "cache", "memory", "credentials", "data", "replicas", "backups", "descendants"}
 SOURCES = {"scf", "deterministic_capability_compilation", "theseus_operator_os", "viea", "talos", "platonic_world_model", "ext_nist_ai_rmf_1_0_2023", "ext_nist_deployed_ai_monitoring_2026", "ext_nist_incident_response_2025"}
+
+LIFECYCLE_ORDER = [
+    "normal",
+    "incident_open",
+    "command_bound",
+    "contained",
+    "degraded",
+    "reconciled",
+    "reviewed",
+    "restored",
+]
+EXPECTED_EVENT = {
+    "normal": "detect_incident",
+    "incident_open": "bind_command",
+    "command_bound": "confirm_containment",
+    "contained": "enter_degraded_mode",
+    "degraded": "reconcile_state_and_effects",
+    "reconciled": "review_recovery",
+    "reviewed": "restore_service",
+    "restored": "detect_incident",
+}
 
 
 def load(path: Path) -> Any:
@@ -75,6 +97,146 @@ def recovery_route(packet: dict[str, Any]) -> str:
     if not acceptance["useful_service_check_fresh"] or not acceptance["safety_check_fresh"] or not packet["containment"]["fallback_qualified"] or not no_authority_leak(packet):
         return "safe_hold"
     return "accept_recovery"
+
+
+def lifecycle_route(state: dict[str, Any], event: str, packet: dict[str, Any]) -> str:
+    stage = state["stage"]
+    if event != EXPECTED_EVENT[stage]:
+        return "reject_wrong_stage"
+    for key in ("deployment_digest", "incident_digest", "command_digest", "candidate_digest", "protocol_version"):
+        if state[key] != packet[key]:
+            return "reject_identity_substitution"
+    if packet["event_digest"] == state["last_event_digest"]:
+        return "reject_replay"
+    if any(packet[key] for key in ("support_assignment_requested", "release_requested", "external_authority_requested")):
+        return "reject_authority_leak"
+    if stage in {"normal", "restored"}:
+        if not packet["incident_observed"]:
+            return "request_observation"
+        if not packet["detector_independent"]:
+            return "reject_self_detection"
+        return "accept_detection"
+    if stage == "incident_open":
+        if not packet["commander_bound"]:
+            return "request_command"
+        if not packet["emergency_lease_present"]:
+            return "request_emergency_lease"
+        return "accept_command"
+    if stage == "command_bound":
+        if not packet["containment_observed"]:
+            return "request_containment"
+        if not packet["containment_independent"]:
+            return "reject_dependent_containment"
+        return "accept_containment"
+    if stage == "contained":
+        if not all(
+            packet[key]
+            for key in ("incident_observed", "commander_bound", "emergency_lease_present", "containment_independent")
+        ):
+            return "request_containment"
+        if not authority_within(state["normal_authority"], packet["proposed_authority"]):
+            return "reject_authority_widening"
+        if not packet["fallback_qualified"]:
+            return "request_qualified_fallback"
+        return "accept_degradation"
+    if stage in {"degraded", "reviewed"}:
+        if packet["reconciled_state_count"] != packet["required_state_count"] or not packet["descendants_complete"]:
+            return "request_state_inventory"
+        if not all(
+            packet[key]
+            for key in ("effects_enumerated", "effects_disposition_complete", "irreversible_residual_accepted")
+        ):
+            return "request_effect_disposition"
+        if not packet["residual_owner_accepted"]:
+            return "request_residual_owner" if stage == "degraded" else "request_effect_disposition"
+        if stage == "degraded":
+            return "accept_reconciliation"
+    if stage in {"reconciled", "reviewed"}:
+        if not packet["acceptance_fresh"]:
+            return "request_fresh_acceptance"
+        if not packet["independent_verifier"]:
+            return "reject_dependent_verifier"
+        if stage == "reconciled":
+            return "accept_review"
+        if not packet["fallback_qualified"]:
+            return "request_qualified_fallback"
+        if not packet["emergency_lease_expired"]:
+            return "request_emergency_expiry"
+        return "accept_restoration"
+    raise AssertionError(f"unhandled lifecycle stage: {stage}")
+
+
+def apply_lifecycle_event(state: dict[str, Any], event: str, packet: dict[str, Any]) -> tuple[dict[str, Any], str]:
+    route = lifecycle_route(state, event, packet)
+    if not route.startswith("accept_"):
+        return copy.deepcopy(state), route
+    updated = copy.deepcopy(state)
+    if state["stage"] in {"normal", "restored"}:
+        updated["stage"] = "incident_open"
+    else:
+        updated["stage"] = LIFECYCLE_ORDER[LIFECYCLE_ORDER.index(state["stage"]) + 1]
+    updated["last_event_digest"] = packet["event_digest"]
+    updated["receipt_count"] += 1
+    updated["recovery_count"] += int(route == "accept_restoration")
+    updated["recurrence_count"] += int(route == "accept_detection" and packet["recurrence_of_prior_incident"])
+    updated["containment_active"] = route != "accept_restoration"
+    updated["external_effects_enabled"] = route == "accept_restoration"
+    return updated, route
+
+
+def canonical_lifecycle_state(packet: dict[str, Any]) -> dict[str, Any]:
+    identity = packet["identity"]
+    return {
+        "stage": "normal",
+        "deployment_digest": identity["deployment_id"],
+        "incident_digest": identity["incident_id"],
+        "command_digest": identity["command_lease_id"],
+        "candidate_digest": identity["recovery_candidate_id"],
+        "protocol_version": 2,
+        "normal_authority": copy.deepcopy(packet["current_authority"]),
+        "last_event_digest": "none",
+        "receipt_count": 0,
+        "recovery_count": 0,
+        "recurrence_count": 0,
+        "containment_active": False,
+        "external_effects_enabled": True,
+        "support_assignment_count": 0,
+        "external_authority_count": 0,
+    }
+
+
+def canonical_lifecycle_packet(packet: dict[str, Any], event_digest: str) -> dict[str, Any]:
+    identity = packet["identity"]
+    return {
+        "deployment_digest": identity["deployment_id"],
+        "incident_digest": identity["incident_id"],
+        "command_digest": identity["command_lease_id"],
+        "candidate_digest": identity["recovery_candidate_id"],
+        "protocol_version": 2,
+        "event_digest": event_digest,
+        "proposed_authority": copy.deepcopy(packet["proposed_degraded_authority"]),
+        "incident_observed": True,
+        "detector_independent": True,
+        "commander_bound": True,
+        "emergency_lease_present": True,
+        "containment_observed": True,
+        "containment_independent": True,
+        "fallback_qualified": True,
+        "required_state_count": 11,
+        "reconciled_state_count": 11,
+        "descendants_complete": True,
+        "effects_enumerated": True,
+        "effects_disposition_complete": True,
+        "irreversible_residual_accepted": True,
+        "residual_owner_accepted": True,
+        "acceptance_fresh": True,
+        "independent_verifier": True,
+        "emergency_lease_expired": True,
+        "recurrence_of_prior_incident": False,
+        "support_assignment_requested": False,
+        "release_requested": False,
+        "external_authority_requested": False,
+    }
 
 
 def errors(packet: dict[str, Any], protocol: dict[str, Any], *, validate_schema: bool = True) -> list[str]:
@@ -190,8 +352,24 @@ def errors(packet: dict[str, Any], protocol: dict[str, Any], *, validate_schema:
     for fragment in ("accepted_degradation_preserves_or_narrows_all_authority_dimensions", "accepted_recovery_requires_complete_declared_state_effect_and_expiry", "incomplete_recovery_route_never_accepts"):
         if fragment not in lean:
             out.append(f"Lean semantic fragment missing: {fragment}")
+    refinement_lean = REFINEMENT_LEAN.read_text(encoding="utf-8")
+    if len(re.findall(r"(?m)^theorem ", refinement_lean)) != 13:
+        out.append("Lean refinement theorem denominator drifted")
+    for fragment in (
+        "accepted_degradation_refines_static_authority_contract",
+        "accepted_restoration_refines_static_recovery_contract",
+        "bounded_incident_lifecycle_reaches_restored_service",
+        "bounded_recurrence_reenters_incident_control",
+    ):
+        if fragment not in refinement_lean:
+            out.append(f"Lean refinement semantic fragment missing: {fragment}")
     chapter = CHAPTER.read_text(encoding="utf-8")
-    for fragment in ("authored joined authority-to-effect case", "record-shape and route evidence only", "thirteen theorem declarations"):
+    for fragment in (
+        "authored joined authority-to-effect case",
+        "record-shape and route evidence only",
+        "twenty-six theorem declarations",
+        "eight-stage incident lifecycle",
+    ):
         if fragment not in chapter:
             out.append(f"chapter integration fragment missing: {fragment}")
     return out
@@ -256,9 +434,118 @@ def main() -> None:
         mutation(candidate_protocol)
         if not set(errors(packet, candidate_protocol)) - baseline:
             failures.append(f"campaign negative mutation accepted: {label}")
+
+    lifecycle_state = canonical_lifecycle_state(packet)
+    stage_states: dict[str, dict[str, Any]] = {}
+    lifecycle_events = [
+        "detect_incident",
+        "bind_command",
+        "confirm_containment",
+        "enter_degraded_mode",
+        "reconcile_state_and_effects",
+        "review_recovery",
+        "restore_service",
+    ]
+    accepted_routes: list[str] = []
+    for index, event in enumerate(lifecycle_events, start=1):
+        stage_states[lifecycle_state["stage"]] = copy.deepcopy(lifecycle_state)
+        lifecycle_packet = canonical_lifecycle_packet(packet, f"lifecycle-event-{index}")
+        lifecycle_state, route = apply_lifecycle_event(lifecycle_state, event, lifecycle_packet)
+        accepted_routes.append(route)
+    stage_states["restored"] = copy.deepcopy(lifecycle_state)
+    if accepted_routes != [
+        "accept_detection",
+        "accept_command",
+        "accept_containment",
+        "accept_degradation",
+        "accept_reconciliation",
+        "accept_review",
+        "accept_restoration",
+    ]:
+        failures.append("canonical lifecycle accepted-route sequence drifted")
+    if (
+        lifecycle_state["stage"] != "restored"
+        or lifecycle_state["receipt_count"] != 7
+        or lifecycle_state["recovery_count"] != 1
+        or lifecycle_state["containment_active"]
+        or not lifecycle_state["external_effects_enabled"]
+        or lifecycle_state["support_assignment_count"] != 0
+        or lifecycle_state["external_authority_count"] != 0
+    ):
+        failures.append("canonical lifecycle did not reach bounded authority-neutral restoration")
+    recurrence_packet = canonical_lifecycle_packet(packet, "lifecycle-event-8")
+    recurrence_packet["recurrence_of_prior_incident"] = True
+    recurrence_state, recurrence_route = apply_lifecycle_event(
+        lifecycle_state, "detect_incident", recurrence_packet
+    )
+    if (
+        recurrence_route != "accept_detection"
+        or recurrence_state["stage"] != "incident_open"
+        or recurrence_state["receipt_count"] != 8
+        or recurrence_state["recurrence_count"] != 1
+        or not recurrence_state["containment_active"]
+        or recurrence_state["external_effects_enabled"]
+    ):
+        failures.append("bounded recurrence did not re-enter incident control")
+
+    lifecycle_mutations: list[tuple[str, str, Any]] = []
+    for stage in LIFECYCLE_ORDER:
+        wrong_event = "bind_command" if EXPECTED_EVENT[stage] != "bind_command" else "detect_incident"
+        lifecycle_mutations.append((stage, f"{stage} wrong-stage event", lambda p, event=wrong_event: event))
+    for key in ("deployment_digest", "incident_digest", "command_digest", "candidate_digest", "protocol_version"):
+        lifecycle_mutations.append(("normal", f"substitute {key}", lambda p, field=key: p.__setitem__(field, "substituted")))
+    lifecycle_mutations.extend(
+        [
+            ("normal", "replay event", lambda p: p.__setitem__("event_digest", "none")),
+            ("normal", "request support assignment", lambda p: p.__setitem__("support_assignment_requested", True)),
+            ("normal", "request release", lambda p: p.__setitem__("release_requested", True)),
+            ("normal", "request external authority", lambda p: p.__setitem__("external_authority_requested", True)),
+            ("normal", "erase incident observation", lambda p: p.__setitem__("incident_observed", False)),
+            ("normal", "use dependent detector", lambda p: p.__setitem__("detector_independent", False)),
+            ("incident_open", "erase commander", lambda p: p.__setitem__("commander_bound", False)),
+            ("incident_open", "erase emergency lease", lambda p: p.__setitem__("emergency_lease_present", False)),
+            ("command_bound", "erase containment observation", lambda p: p.__setitem__("containment_observed", False)),
+            ("command_bound", "use dependent containment", lambda p: p.__setitem__("containment_independent", False)),
+            ("contained", "widen capability", lambda p: p["proposed_authority"]["capabilities"].append("administer")),
+            ("contained", "widen data", lambda p: p["proposed_authority"]["data_classes"].append("secret")),
+            ("contained", "widen tool", lambda p: p["proposed_authority"]["tools"].append("network_admin")),
+            ("contained", "widen population", lambda p: p["proposed_authority"].__setitem__("population_ceiling", 101)),
+            ("contained", "widen duration", lambda p: p["proposed_authority"].__setitem__("duration_seconds", 3601)),
+            ("contained", "erase fallback qualification", lambda p: p.__setitem__("fallback_qualified", False)),
+            ("degraded", "drop state reconciliation", lambda p: p.__setitem__("reconciled_state_count", 10)),
+            ("degraded", "drop descendant inventory", lambda p: p.__setitem__("descendants_complete", False)),
+            ("degraded", "drop effect enumeration", lambda p: p.__setitem__("effects_enumerated", False)),
+            ("degraded", "drop effect disposition", lambda p: p.__setitem__("effects_disposition_complete", False)),
+            ("degraded", "drop irreversible residual acceptance", lambda p: p.__setitem__("irreversible_residual_accepted", False)),
+            ("degraded", "drop residual owner", lambda p: p.__setitem__("residual_owner_accepted", False)),
+            ("reconciled", "stale acceptance", lambda p: p.__setitem__("acceptance_fresh", False)),
+            ("reconciled", "dependent verifier", lambda p: p.__setitem__("independent_verifier", False)),
+            ("reviewed", "restore with incomplete state", lambda p: p.__setitem__("reconciled_state_count", 10)),
+            ("reviewed", "restore with unknown effects", lambda p: p.__setitem__("effects_disposition_complete", False)),
+            ("reviewed", "restore without residual owner", lambda p: p.__setitem__("residual_owner_accepted", False)),
+            ("reviewed", "restore with stale acceptance", lambda p: p.__setitem__("acceptance_fresh", False)),
+            ("reviewed", "restore with dependent verifier", lambda p: p.__setitem__("independent_verifier", False)),
+            ("reviewed", "restore with unqualified fallback", lambda p: p.__setitem__("fallback_qualified", False)),
+            ("reviewed", "restore with active lease", lambda p: p.__setitem__("emergency_lease_expired", False)),
+        ]
+    )
+    lifecycle_mutation_count = 0
+    for stage, label, mutation in lifecycle_mutations:
+        state = stage_states[stage]
+        event = EXPECTED_EVENT[stage]
+        candidate = canonical_lifecycle_packet(packet, f"mutation-{stage}-{lifecycle_mutation_count}")
+        if "wrong-stage event" in label:
+            event = mutation(candidate)
+        else:
+            mutation(candidate)
+        before = copy.deepcopy(state)
+        after, route = apply_lifecycle_event(state, event, candidate)
+        lifecycle_mutation_count += 1
+        if route.startswith("accept_") or after != before:
+            failures.append(f"lifecycle negative mutation accepted or changed state: {label}")
     if failures:
         raise SystemExit("Governed operations control contract failed:\n - " + "\n - ".join(failures))
-    print("Governed operations control contract passed: authored joined case, narrowed degradation accepted, unknown external effect held safe, completed positive recovery control accepted, 11 packet state classes, prospectively frozen 5-arm/40-task natural campaign with 14 campaign state classes, 18 packet plus 15 campaign mutations rejected, 13 Lean declarations; protected outcomes closed and no support/release/publication authority.")
+    print(f"Governed operations control contract passed: authored joined case, narrowed degradation accepted, unknown external effect held safe, completed positive recovery control accepted, independently encoded 8-stage lifecycle with 7 accepted transitions and bounded recurrence, {lifecycle_mutation_count}/{lifecycle_mutation_count} lifecycle mutations rejected with exact state preservation, 11 packet state classes, prospectively frozen 5-arm/40-task natural campaign with 14 campaign state classes, 18 packet plus 15 campaign mutations rejected, 26 Lean declarations; protected outcomes closed and no support/release/publication authority.")
 
 
 if __name__ == "__main__":

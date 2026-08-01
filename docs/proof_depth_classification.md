@@ -12,12 +12,12 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 321 |
-| Lean modules scanned | 112 |
-| Theorem declarations classified | 1229 |
+| Proof targets in manifest | 322 |
+| Lean modules scanned | 113 |
+| Theorem declarations classified | 1242 |
 | Direct/projection-style theorem declarations | 172 |
-| Derived/decomposed theorem declarations | 836 |
-| Unknown or mixed theorem declarations | 221 |
+| Derived/decomposed theorem declarations | 842 |
+| Unknown or mixed theorem declarations | 228 |
 | Safety-critical theorem declarations | 73 |
 | Safety-critical direct/projection declarations | 1 |
 | Safety-critical chapter classifications present | 1/1 |
@@ -97,6 +97,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/GovernanceRights.lean` | moral-uncertainty-and-value-conflict | 1 | 7 | 0 | 7 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/GovernedModelTraining.lean` | governed-model-training-distributed-optimization-and-scaling | 2 | 13 | 0 | 4 | 9 | manual review |
 | `lean/AsiStackProofs/GovernedOperations.lean` | governed-operations-incident-command-and-graceful-degradation | 2 | 13 | 0 | 3 | 10 | manual review |
+| `lean/AsiStackProofs/GovernedOperationsRefinement.lean` | governed-operations-incident-command-and-graceful-degradation | 1 | 13 | 0 | 6 | 7 | manual review |
 | `lean/AsiStackProofs/GovernedWorldModels.lean` | governed-world-models-and-reality-grounding | 2 | 9 | 0 | 5 | 4 | manual review |
 | `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | personal-compute-hives-and-federated-edge-intelligence | 6 | 17 | 13 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/HumanAIOrganizations.lean` | human-ai-organizations-delegation-and-accountability | 1 | 0 | 0 | 0 | 0 | derived/decomposed by classifier |
@@ -639,6 +640,19 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/GovernedOperations.lean` | `widening_duration_rejects_degradation` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/GovernedOperations.lean` | `widening_population_rejects_degradation` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/GovernedOperations.lean` | `widening_tools_rejects_degradation` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/GovernedOperationsRefinement.lean` | `accepted_degradation_refines_static_authority_contract` | derived_or_decomposed | no | uses by_cases, cases, have, rcases, simp |
+| `lean/AsiStackProofs/GovernedOperationsRefinement.lean` | `accepted_detection_disables_effects` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/GovernedOperationsRefinement.lean` | `accepted_restoration_refines_static_recovery_contract` | derived_or_decomposed | no | uses by_cases, cases, have, rcases, simp |
+| `lean/AsiStackProofs/GovernedOperationsRefinement.lean` | `active_emergency_lease_blocks_restoration` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/GovernedOperationsRefinement.lean` | `authority_leak_blocks_every_lifecycle_stage` | derived_or_decomposed | no | uses cases |
+| `lean/AsiStackProofs/GovernedOperationsRefinement.lean` | `bounded_incident_lifecycle_reaches_restored_service` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/GovernedOperationsRefinement.lean` | `bounded_recurrence_reenters_incident_control` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/GovernedOperationsRefinement.lean` | `dependent_verifier_blocks_review` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/GovernedOperationsRefinement.lean` | `incomplete_descendant_inventory_blocks_reconciliation` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/GovernedOperationsRefinement.lean` | `rejected_event_preserves_exact_state` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/GovernedOperationsRefinement.lean` | `transition_cannot_assign_support_or_external_authority` | derived_or_decomposed | no | uses by_cases, simp |
+| `lean/AsiStackProofs/GovernedOperationsRefinement.lean` | `unknown_effect_blocks_reconciliation` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/GovernedOperationsRefinement.lean` | `widening_authority_blocks_degradation` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/GovernedWorldModels.lean` | `admitted_rollout_preserves_declared_boundary` | derived_or_decomposed | no | uses cases, split, unfold |
 | `lean/AsiStackProofs/GovernedWorldModels.lean` | `material_fixture_holds_safely` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/GovernedWorldModels.lean` | `material_residual_selects_bounded_response` | derived_or_decomposed | no | uses cases |

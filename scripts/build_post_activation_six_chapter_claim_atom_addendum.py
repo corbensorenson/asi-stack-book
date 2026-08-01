@@ -560,7 +560,7 @@ def build() -> dict:
             "This addendum organizes propositions and owners; it does not provide new empirical, formal, executable, or external evidence.",
             "Semantic review, a falsifier, an acceptance criterion, or an evidence-plan route does not establish proposition truth.",
             "No atom in this packet promotes a chapter core claim, authorizes release, or establishes transfer, SOTA, AGI, or ASI.",
-            "The historical 3,730-atom activation denominator, the current 4,058-atom registry, and the historical 15-atom addendum are not rewritten by this packet.",
+            "The historical 3,730-atom activation denominator, the current claim-atom registry, and the historical 15-atom addendum are not rewritten by this packet.",
         ],
     }
 

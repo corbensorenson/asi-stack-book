@@ -170,7 +170,7 @@ It creates no support state or release effect and does not alter the immutable
 - Major-version human-consumption bundles now have explicit reader-format, optional e-reader conversion, audio artifact, and audio-embedded EPUB gates in `editions/release_profiles.json`, generated manifests, and edition release records.
 - Every chapter has stable `lean:*` proof targets in the outline.
 - `proofs/proof_manifest.json` is generated from the outline.
-- `docs/proof_artifact_audit.md` records the current proof artifact traceability audit across all 321 proof targets: 295 implemented and 26 deliberately planned chapter targets.
+- `docs/proof_artifact_audit.md` records the current proof artifact traceability audit across all 322 proof targets: 296 implemented and 26 deliberately planned chapter targets.
 - `docs/source_evidence_audit.md` records the current public-safe source evidence audit across 1,206 assigned source/chapter pairs with complete source-note/chapter-listing coverage and bounded claim mappings.
 - Source metadata is tracked without publishing raw source exports.
 - Source readiness is tracked in `docs/source_readiness_report.md`.

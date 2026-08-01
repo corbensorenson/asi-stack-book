@@ -4,10 +4,10 @@
   "review_state": "completed",
   "semantic_sweep": {
     "reviewed_source": "chapters/failure-modes-of-ungoverned-intelligence.qmd",
-    "structured_atoms_reviewed": 32,
-    "prose_candidates_adjudicated": 70,
+    "structured_atoms_reviewed": 33,
+    "prose_candidates_adjudicated": 72,
     "unowned_material_claims": 0,
-    "review_note": "Reviewed the complete chapter, manifest semantics, tables and diagrams, all four formal targets, every scanner candidate, and unscanned taxonomy bullets. The sweep replaced a dramatic risk list with a versioned Failure Boundary Map; separated named risk, observed event, detection, containment, and mitigation; added explicit unmapped-event, evaluator-independence, negative-evidence, recurrence, ownership-transfer, and revalidation obligations; expanded six prose-only failure obligations into manifest ownership; and preserved zero support-state effect."
+    "review_note": "Reviewed the complete chapter, manifest semantics, tables and diagrams, all five formal targets, every scanner candidate, and unscanned taxonomy bullets. The sweep replaced a dramatic risk list with a versioned Failure Boundary Map; separated named risk, observed event, detection, containment, and mitigation; added explicit unmapped-event, evaluator-independence, negative-evidence, recurrence, ownership-transfer, and revalidation obligations; expanded six prose-only failure obligations into manifest ownership; and preserved zero support-state effect."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
@@ -218,6 +218,29 @@
     "failure-modes-of-ungoverned-intelligence.formal.failure-recurrence-escalation-route": {
       "proposition_type":"formal", "assumptions":["The finite record fields and recurrence states exhaust only the modeled route."], "dependencies":["failure-modes-of-ungoverned-intelligence.invariant.004", "failure-modes-of-ungoverned-intelligence.invariant.005"], "strongest_counterclaim":"The route is schema completeness by construction and does not prove that fields are truthful, sufficient, or causally useful.", "falsifier":"A modeled missing class, boundary, receipt, owner, containment, residual, learning, normalization, review, quarantine, transition, or non-claim field reaches an allowed terminal route.", "required_lanes":[{"lane":"formal","necessity":"Check exhaustive finite routing and recurrence escalation."},{"lane":"executable","necessity":"Mutate every modeled field through the runtime bridge."}], "acceptance_criteria":["`cd lean && lake build` checks the route and each seeded field mutation reaches its exact modeled outcome; truth and mitigation remain outside scope."], "promotion_ceiling":"formally_checked_for_exact_finite_route_only_no_mitigation_promotion"
     },
+    "failure-modes-of-ungoverned-intelligence.formal.failure-recovery-closed-loop-refinement": {
+      "proposition_type": "formal",
+      "assumptions": [
+        "Incident identity, lifecycle version, observations, remediation evidence, reviewer independence, assurance currency, taxonomy currency, and readmission authority are represented faithfully only within the finite authored model.",
+        "The five modeled stages and their declared transitions do not claim open-world state or effect completeness."
+      ],
+      "dependencies": [
+        "failure-modes-of-ungoverned-intelligence.invariant.004",
+        "failure-modes-of-ungoverned-intelligence.invariant.005",
+        "failure-modes-of-ungoverned-intelligence.invariant.006"
+      ],
+      "strongest_counterclaim": "A reachable closed route can still be operationally useless or unsafe when observations, inventories, reviewers, or effects are false, incomplete, correlated, or outside the modeled boundary.",
+      "falsifier": "A modeled rejection changes state; accepted detection leaves effects enabled; accepted readmission lacks current assurance, current taxonomy, independent review, residual custody, or authority; a modeled recurrence remains in normal operation; or the independent consumer accepts a declared mutation.",
+      "required_lanes": [
+        {"lane": "formal", "necessity": "Check exact state preservation, guarded stage transitions, bounded recovery, and recurrence re-isolation."},
+        {"lane": "executable", "necessity": "Independently encode the route and reject identity, replay, authority, observation, containment, remediation, review, assurance, taxonomy, and readmission mutations."},
+        {"lane": "transfer", "necessity": "Project Theseus must exercise real detection, effect disablement, containment, rollback or compensation, restart, and recurrence handling across representative system contexts."}
+      ],
+      "acceptance_criteria": [
+        "`cd lean && lake build` checks the five-stage model and `python3 scripts/validate_failure_recovery_refinement.py` rejects all 31 declared mutations with no support or external-authority effect."
+      ],
+      "promotion_ceiling": "formally_checked_for_bounded_five_stage_recovery_only_no_detector_containment_recovery_or_safety_promotion"
+    },
     "failure-modes-of-ungoverned-intelligence.formal.failure-taxonomy-detector-probe-bridge": {
       "proposition_type":"executable", "current_disposition":"retain_as_p2_bridge_pending_real_consumer_replacement",
       "assumptions":["The deterministic incidents are seeded contract tests, not samples from a natural distribution or independent detector evaluation."], "dependencies":["failure-modes-of-ungoverned-intelligence.minimum.001"],
@@ -261,7 +284,6 @@
     "failure-modes-of-ungoverned-intelligence.prose.50a163ae7d4e":{"state":"duplicate_of_atom","rationale":"Reader-language motivation for operational boundary events before abstract risk labels.","target_atom_id":"failure-modes-of-ungoverned-intelligence.core"},
     "failure-modes-of-ungoverned-intelligence.prose.c4a4deae6594":{"state":"duplicate_of_atom","rationale":"Earlier prose form of the mature failure-radar research target.","target_atom_id":"failure-modes-of-ungoverned-intelligence.beyond_sota.001"},
     "failure-modes-of-ungoverned-intelligence.prose.bcc0c42d77db":{"state":"duplicate_of_atom","rationale":"Restates the explicit residual and unmapped-event route.","target_atom_id":"failure-modes-of-ungoverned-intelligence.interface.001"},
-    "failure-modes-of-ungoverned-intelligence.prose.6d4f878f5b30":{"state":"duplicate_of_atom","rationale":"Detailed prose summary of the retained finite incident-route and recurrence-routing targets.","target_atom_id":"failure-modes-of-ungoverned-intelligence.formal.failure-recurrence-escalation-route"},
     "failure-modes-of-ungoverned-intelligence.prose.887c506d8be3":{"state":"nonmaterial_explanation","rationale":"Explicit non-claim boundary for the finite hooks and synthetic harness."},
     "failure-modes-of-ungoverned-intelligence.prose.df0c8c37138f":{"state":"duplicate_of_atom","rationale":"Figure introduction restating the core boundary obligation.","target_atom_id":"failure-modes-of-ungoverned-intelligence.core"},
     "failure-modes-of-ungoverned-intelligence.prose.bfe680e01110":{"state":"editorial_or_question","rationale":"Reader-order rationale for placing the taxonomy early."},
@@ -297,11 +319,10 @@
     "failure-modes-of-ungoverned-intelligence.prose.aa253d98e6e8": {"state": "duplicate_of_atom", "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.", "target_atom_id": "failure-modes-of-ungoverned-intelligence.core"},
     "failure-modes-of-ungoverned-intelligence.prose.6737d4cee4fa": {"state": "duplicate_of_atom", "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.", "target_atom_id": "failure-modes-of-ungoverned-intelligence.core"},
     "failure-modes-of-ungoverned-intelligence.prose.7a6b8e699a80": {"state": "historical_or_source_report", "rationale": "Bounded source, measurement, or explicit non-claim report; it adds no independent load-bearing atom."},
-    "failure-modes-of-ungoverned-intelligence.prose.23e67ca05ff1": {
-      "state": "duplicate_of_atom",
-      "rationale": "Explains the completed input-general inverse theorem and its improvement over the retired authored-constant normalization; the formal target already owns the claim.",
-      "target_atom_id": "failure-modes-of-ungoverned-intelligence.formal.failure-recurrence-escalation-route"
-    }
+    "failure-modes-of-ungoverned-intelligence.prose.d8e05dc6da47": {"state": "duplicate_of_atom", "rationale": "States the no-support and no-external-authority consequence already owned by the closed-loop refinement target.", "target_atom_id": "failure-modes-of-ungoverned-intelligence.formal.failure-recovery-closed-loop-refinement"},
+    "failure-modes-of-ungoverned-intelligence.prose.6ee2a5207cdd": {"state": "duplicate_of_atom", "rationale": "Continues the exact guarded-readmission conditions already owned by the closed-loop refinement target.", "target_atom_id": "failure-modes-of-ungoverned-intelligence.formal.failure-recovery-closed-loop-refinement"},
+    "failure-modes-of-ungoverned-intelligence.prose.4d1adf1dac2f": {"state": "nonmaterial_explanation", "rationale": "Names the executable and empirical work that remains outside the finite proof; it adds no positive chapter claim."},
+    "failure-modes-of-ungoverned-intelligence.prose.50d767ea0abe": {"state": "duplicate_of_atom", "rationale": "Readable summary of exact rejected-state, authority-neutrality, detection, readmission, and recurrence results owned by the closed-loop refinement target.", "target_atom_id": "failure-modes-of-ungoverned-intelligence.formal.failure-recovery-closed-loop-refinement"}
   },
   "prose_review_lineage": [
     {

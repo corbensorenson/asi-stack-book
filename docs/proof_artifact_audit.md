@@ -10,10 +10,10 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Metric | Value |
 |---|---:|
-| Proof targets audited | 321 |
-| Manifest status counts | {"implemented": 295, "planned": 26} |
-| Triage class counts | {"formal-invariant": 303, "process-contract": 18} |
-| Lean modules referenced | 73 |
+| Proof targets audited | 322 |
+| Manifest status counts | {"implemented": 296, "planned": 26} |
+| Triage class counts | {"formal-invariant": 304, "process-contract": 18} |
+| Lean modules referenced | 74 |
 | Chapters with proof targets | 84 |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -61,6 +61,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/GovernanceRights.lean` | 1 | 7 | 0 | 11 | 3 |
 | `lean/AsiStackProofs/GovernedModelTraining.lean` | 2 | 13 | 0 | 7 | 1 |
 | `lean/AsiStackProofs/GovernedOperations.lean` | 2 | 13 | 0 | 7 | 2 |
+| `lean/AsiStackProofs/GovernedOperationsRefinement.lean` | 1 | 13 | 0 | 13 | 2 |
 | `lean/AsiStackProofs/GovernedWorldModels.lean` | 2 | 9 | 0 | 6 | 2 |
 | `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | 6 | 17 | 0 | 10 | 3 |
 | `lean/AsiStackProofs/HumanFactorsOversight.lean` | 2 | 9 | 0 | 6 | 1 |
@@ -141,7 +142,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `governed-deliberation-and-test-time-scaling` | 10 | 10 | 0 | 0 |
 | `governed-model-training-distributed-optimization-and-scaling` | 2 | 2 | 0 | 0 |
 | `governed-objective-formation-value-learning-and-goal-integrity` | 1 | 0 | 0 | 0 |
-| `governed-operations-incident-command-and-graceful-degradation` | 2 | 2 | 0 | 0 |
+| `governed-operations-incident-command-and-graceful-degradation` | 3 | 3 | 0 | 0 |
 | `governed-world-models-and-reality-grounding` | 2 | 2 | 0 | 0 |
 | `human-ai-communication-persuasion-and-epistemic-security` | 1 | 0 | 0 | 0 |
 | `human-ai-organizations-delegation-and-accountability` | 1 | 0 | 0 | 0 |
@@ -477,6 +478,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:content-authenticity-watermarking-and-synthetic-media-integrity.admission_boundary` | `content-authenticity-watermarking-and-synthetic-media-integrity` | `AsiStackProofs.NoDeferralAdmission` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
 | `lean:operations.degradation_never_widens_authority` | `governed-operations-incident-command-and-graceful-degradation` | `AsiStackProofs.GovernedOperations` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:operations.recovery_requires_complete_state` | `governed-operations-incident-command-and-graceful-degradation` | `AsiStackProofs.GovernedOperations` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:operations.incident_lifecycle_refines_static_contracts` | `governed-operations-incident-command-and-graceful-degradation` | `AsiStackProofs.GovernedOperationsRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:policy_optimization.update.operational_invariant` | `policy-optimization-and-learning-from-feedback` | `AsiStackProofs.PolicyOptimizationRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:policy_optimization.reward_boundary.failure_blocks_promotion` | `policy-optimization-and-learning-from-feedback` | `AsiStackProofs.PolicyOptimizationRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:policy_optimization.promotion_route.failure_routes` | `policy-optimization-and-learning-from-feedback` | `AsiStackProofs.PolicyOptimizationRefinement` | triage ok; module ok; chapter tag ok; limitation ok |

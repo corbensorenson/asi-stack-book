@@ -65,8 +65,8 @@ def errors(packet: dict) -> list[str]:
         out.append("historical 15-atom addendum denominator was rewritten")
     if packet.get("historical_denominators_rewritten") is not False:
         out.append("packet claims permission to rewrite historical denominators")
-    if len(load(REGISTRY).get("atoms", [])) != 4058:
-        out.append("current 4,058-atom registry was rewritten")
+    if len(load(REGISTRY).get("atoms", [])) != 4059:
+        out.append("current 4,059-atom registry was rewritten")
     if len(load(HISTORICAL_ADDENDUM).get("atoms", [])) != 15:
         out.append("historical replaceable-substrates addendum was rewritten")
 

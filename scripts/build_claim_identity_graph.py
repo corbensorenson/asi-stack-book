@@ -326,7 +326,7 @@ def render_doc(value: dict) -> str:
         "",
         "This resolves ownership and traceability; it does not create evidence. An exact `atom` relation still uses the accepted-transition and registry-reconciliation process. A `subclaim_of` or `proxy_for` edge has no support-state effect on its parent. Proxy results cannot become target results without separate construct-validity evidence.",
         "",
-        f"The canonical identity denominator is now {summary['canonical_atom_count']:,}: the current 4,058-atom registry, the historical 15-atom replaceable-substrates addendum, and the separately reviewed 30-atom R16-A addendum. The historical addenda remain separately versioned, and no support state moves.",
+        f"The canonical identity denominator is now {summary['canonical_atom_count']:,}: the current claim-atom registry, the historical 15-atom replaceable-substrates addendum, and the separately reviewed 30-atom R16-A addendum. The historical addenda remain separately versioned, and no support state moves.",
         "",
         "## Adjudication method",
         "",

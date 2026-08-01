@@ -7,7 +7,7 @@ This is the readable projection of `evidence_quality/claim_atom_registry.json`. 
 ## Coverage summary
 
 - Chapters: 64
-- Structured manifest atoms: 4058
+- Structured manifest atoms: 4059
 - Machine candidates awaiting semantic atom review: 0
 - Prose-only candidates awaiting materiality adjudication: 0
 - Support-state effect: none
@@ -17,7 +17,7 @@ This is the readable projection of `evidence_quality/claim_atom_registry.json`. 
 | `beyond_sota` | 64 |
 | `core` | 64 |
 | `failure_mode` | 1031 |
-| `formal_target` | 293 |
+| `formal_target` | 294 |
 | `insufficiency` | 64 |
 | `interface` | 603 |
 | `invariant` | 902 |
@@ -33,7 +33,7 @@ This is the readable projection of `evidence_quality/claim_atom_registry.json`. 
 | ASI Is a Stack, Not a Model | 24 | 0 | 0 | `evidence_quality/claim_dossiers/asi-is-a-stack-not-a-model.md` |
 | The Efficient ASI Hypothesis | 24 | 0 | 0 | `evidence_quality/claim_dossiers/the-efficient-asi-hypothesis.md` |
 | System Boundaries and Authority | 35 | 0 | 0 | `evidence_quality/claim_dossiers/system-boundaries-and-authority.md` |
-| Failure Modes of Ungoverned Intelligence | 32 | 0 | 0 | `evidence_quality/claim_dossiers/failure-modes-of-ungoverned-intelligence.md` |
+| Failure Modes of Ungoverned Intelligence | 33 | 0 | 0 | `evidence_quality/claim_dossiers/failure-modes-of-ungoverned-intelligence.md` |
 | Evidence States and Claim Discipline | 42 | 0 | 0 | `evidence_quality/claim_dossiers/evidence-states-and-claim-discipline.md` |
 | Scalable Oversight and Adversarial AI Control | 45 | 0 | 0 | `evidence_quality/claim_dossiers/scalable-oversight-and-adversarial-ai-control.md` |
 | Human Intent as a Formal Input | 45 | 0 | 0 | `evidence_quality/claim_dossiers/human-intent-as-a-formal-input.md` |

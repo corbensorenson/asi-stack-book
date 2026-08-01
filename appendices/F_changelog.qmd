@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-08-01 - Governed-operations lifecycle refinement
+
+- Added `AsiStackProofs.GovernedOperationsRefinement`, an eight-stage incident
+  lifecycle with thirteen theorems for exact rejected-state preservation,
+  authority-neutral transitions, refinement into the existing degradation and
+  recovery predicates, emergency-authority expiry, bounded restoration, and
+  recurrence re-entry.
+- Extended the canonical governed-operations consumer to accept seven ordered
+  lifecycle transitions and reject 44 independent lifecycle mutations while
+  retaining the existing packet and frozen-campaign controls.
+- Registered one new proof target and documented the exact boundary: no
+  detector, containment, recovery, fallback, safety, deployment, support, or
+  release claim changes.
+
 ## 2026-08-01 — Failure-recovery Lean refinement
 
 - Added a five-stage failure-recovery transition system with exact incident and
@@ -1476,7 +1490,7 @@
   exact scope-language rewrites, and thirty-nine public-target migrations. The
   live estate is 1,304 declarations: 35 P0, 753 P1, 25 P2, 319 P3, 93 P4, 79
   P5, and zero P6. The remaining queue contains 92 stronger-model rewrites.
-- Current proof-depth snapshot: 321 proof targets, 112 Lean modules, 1229 theorem declarations, 836 derived/decomposed, 172 direct/projection, 221 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Current proof-depth snapshot: 322 proof targets, 113 Lean modules, 1242 theorem declarations, 842 derived/decomposed, 172 direct/projection, 228 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - No theorem count is treated as a success metric. No policy-quality,
   substrate-quality, safety-lifecycle, chapter-core support, release, or
   publication-authority claim changes.

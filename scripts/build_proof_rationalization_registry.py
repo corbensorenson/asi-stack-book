@@ -22,6 +22,23 @@ REPORT = ROOT / "docs" / "proof_rationalization_registry.md"
 DOSSIERS = ROOT / "evidence_quality" / "proof_model_dossiers"
 ROADMAP_ID = "asi-stack-post-v2-3-claim-proof-sota-challenge-2026-07-14"
 
+CURRENT_REFINEMENTS = {
+    "failure-modes-of-ungoverned-intelligence": """## Current refinement
+
+`AsiStackProofs.FailureRecoveryRefinement` supplies the stronger model requested
+by the baseline review. Its five reachable stages preserve rejected state,
+disable modeled effects after accepted detection, guard readmission through
+exact identity plus remediation, independent review, current assurance and
+taxonomy, residual custody, and authority, and re-isolate one bounded
+recurrence. `scripts/validate_failure_recovery_refinement.py` independently
+encodes the transition system and rejects 31 mutations. The bounded model has
+`support_state_effect=none`: detector truth, containment and remediation
+effectiveness, deployed recovery, safety, and transfer remain Theseus or
+empirical obligations.
+
+""",
+}
+
 
 def load(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
@@ -288,6 +305,7 @@ def build() -> tuple[dict[str, Any], str, dict[str, str]]:
             f"| `{row['name']}` | {row['depth_class']} | {row['review_state']} | {row.get('disposition') or 'pending'} |"
             for row in theorems
         )
+        current_refinement = CURRENT_REFINEMENTS.get(chapter_id, "")
         dossiers[chapter_id] = f"""# Proof-model dossier: {chapter_id}
 
 Generated from the frozen activation-baseline inventory and semantic review overlay. It is a P2 work surface, not proof of adequacy or a support transition.
@@ -298,7 +316,7 @@ Generated from the frozen activation-baseline inventory and semantic review over
 |---|---|---|
 {target_lines}
 
-## Baseline theorem declarations
+{current_refinement}## Baseline theorem declarations
 
 | Theorem | Syntax depth | Review state | Disposition |
 |---|---|---|---|
