@@ -443,6 +443,93 @@ for theorem_name in (
         ),
     }
 
+for theorem_name, rationale in {
+    "complete_population_has_pairwise_validity":
+        "The closed complete population witnesses all six directed pairwise authorizations.",
+    "complete_population_is_campaign_ready":
+        "The closed complete population witnesses the finite ten-dimension review predicate.",
+    "complete_population_routes_to_theseus_campaign":
+        "The closed complete population reaches the only accepted route, which starts a Theseus campaign rather than claiming an outcome.",
+    "pairwise_only_population_has_pairwise_validity":
+        "The closed pairwise-only population witnesses all six local authorization edges.",
+    "pairwise_only_population_is_not_campaign_ready":
+        "The closed pairwise-only population witnesses refusal despite complete local authorization.",
+    "pairwise_only_population_routes_to_dependency_mapping":
+        "The closed pairwise-only population reaches the exact common-dependency repair route.",
+}.items():
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/MultiAgentDynamics.lean::{theorem_name}"
+    ] = {
+        "disposition": "retain",
+        "semantic_level": "P2",
+        "witness_refs": [f"lean-theorem:{theorem_name}"],
+        "classification_basis": [
+            "a closed three-party population witnesses one derived finite review property"
+        ],
+        "rationale": rationale,
+    }
+
+for theorem_name, rationale in {
+    "complete_and_pairwise_only_have_identical_pairwise_evidence": (
+        "Function equality proves the accepted and rejected records expose the same six-edge classifier input."
+    ),
+    "pairwise_validity_does_not_entail_population_campaign_readiness": (
+        "An existential countermodel separates complete pairwise authorization from the larger readiness predicate."
+    ),
+    "no_pairwise_only_classifier_exactly_recovers_campaign_readiness": (
+        "A finite indistinguishability argument proves no Boolean classifier over only the pairwise matrix is exact for every modeled record."
+    ),
+    "every_systemic_axis_omission_preserves_pairwise_validity": (
+        "Universal case analysis shows all nine systemic mutations retain the six-edge local evidence."
+    ),
+    "every_systemic_axis_omission_blocks_campaign_readiness": (
+        "Universal case analysis shows all nine systemic mutations reject readiness."
+    ),
+    "every_systemic_axis_omission_reaches_exact_repair_route": (
+        "Universal case analysis binds every systemic mutation to its exact repair consumer."
+    ),
+}.items():
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/MultiAgentDynamics.lean::{theorem_name}"
+    ] = {
+        "disposition": "retain",
+        "semantic_level": "P3",
+        "witness_refs": [
+            "lean-theorem:complete_population_is_campaign_ready",
+            "lean-theorem:pairwise_only_population_is_not_campaign_ready",
+        ],
+        "classification_basis": [
+            "a finite countermodel or mutation family proves pairwise-only underdetermination"
+        ],
+        "rationale": rationale,
+    }
+
+for theorem_name in (
+    "campaign_readiness_requires_population_registry",
+    "campaign_readiness_requires_pairwise_validity",
+    "campaign_readiness_requires_effective_diversity",
+    "campaign_readiness_requires_diversified_resource_control",
+    "campaign_readiness_requires_human_stop",
+    "campaign_readiness_requires_affected_party_coverage",
+    "campaign_readiness_requires_human_exit",
+    "campaign_readiness_requires_recovery",
+    "campaign_readiness_requires_residual_custody",
+    "campaign_readiness_requires_non_claim_boundary",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/MultiAgentDynamics.lean::{theorem_name}"
+    ] = {
+        "disposition": "retain",
+        "semantic_level": "P1",
+        "classification_basis": [
+            "a universal finite predicate decomposition exposes one necessary review condition"
+        ],
+        "rationale": (
+            "The theorem projects one necessary authored condition from campaign readiness; "
+            "it proves no field truth or population outcome."
+        ),
+    }
+
 # Older validation-registry entries predate per-unit input_artifact indexing.
 # These explicit aliases recover only known, validator-owned module bindings;
 # they do not infer a binding from filename similarity.
@@ -473,6 +560,9 @@ LEGACY_VALIDATOR_ALIASES = {
     },
     "lean/AsiStackProofs/HumanAIOrganizations.lean": {
         "validate_human_ai_organization_accountability.py"
+    },
+    "lean/AsiStackProofs/MultiAgentDynamics.lean": {
+        "validate_multi_agent_systemic_boundary.py"
     },
     "lean/AsiStackProofs/TheseusReference.lean": {"validate_theseus_report.py"},
     "lean/AsiStackProofs/CyclicMixers.lean": {"validate_circle_cyclic_mixer_receipt_slice.py"},

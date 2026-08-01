@@ -699,14 +699,15 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
         "support_state_effect": "none",
     },
     "multi-agent-dynamics-collective-intelligence-and-systemic-risk": {
-        "reviewed_sha256": "7a05e18d529a8787d806b7faa6830f555540960c043a671a6d32261da15954a2",
-        "reviewed_date": "2026-07-28",
+        "reviewed_sha256": "1e629163dfd8c74d8331c1550b747eb1509ad6eeb3c4e9449c11d07ba624e3ee",
+        "reviewed_date": "2026-08-01",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,
         "review_basis": [
             "the eight concepts distinguish population identity, multiplex dependency, cooperation and collusion, strategic incentives, decision-theory disagreement, nonstationary learning, systemic cascades, and human influence",
             "multi-agent risk, cooperative AI, gradual disempowerment, constructive interdependence, and functional decision-theory sources remain taxonomic, agenda, conceptual, study-specific, or normative rather than predictions or universal solutions",
             "the chapter preserves effective diversity, affected nonparticipants, externalities, alternative theories, false-negative defenses, intervention displacement, and argument-only support",
+            "the finite pairwise-evidence impossibility model and nine systemic mutations establish only authored campaign-admission discipline; population outcomes, effective human agency, and support remain Theseus or empirical obligations",
         ],
         "support_state_effect": "none",
     },

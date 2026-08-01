@@ -11,9 +11,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | Metric | Value |
 |---|---:|
 | Proof targets audited | 324 |
-| Manifest status counts | {"implemented": 304, "planned": 20} |
+| Manifest status counts | {"implemented": 305, "planned": 19} |
 | Triage class counts | {"formal-invariant": 306, "process-contract": 18} |
-| Lean modules referenced | 77 |
+| Lean modules referenced | 78 |
 | Chapters with proof targets | 84 |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -75,6 +75,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/LearnedObjectiveIntegrity.lean` | 2 | 14 | 0 | 13 | 4 |
 | `lean/AsiStackProofs/LivingBook.lean` | 4 | 18 | 0 | 10 | 6 |
 | `lean/AsiStackProofs/ModelWeightCustody.lean` | 8 | 9 | 0 | 2 | 2 |
+| `lean/AsiStackProofs/MultiAgentDynamics.lean` | 1 | 22 | 0 | 11 | 1 |
 | `lean/AsiStackProofs/ObservationTrust.lean` | 2 | 16 | 0 | 16 | 4 |
 | `lean/AsiStackProofs/OpenEndedImprovementRefinement.lean` | 7 | 5 | 7 | 10 | 2 |
 | `lean/AsiStackProofs/PlanForge.lean` | 2 | 3 | 0 | 4 | 3 |
@@ -164,7 +165,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `military-ai-autonomous-weapons-and-strategic-stability` | 1 | 0 | 0 | 0 |
 | `model-weight-custody-and-hardware-roots-of-trust` | 8 | 8 | 0 | 0 |
 | `moral-uncertainty-and-value-conflict` | 7 | 7 | 0 | 0 |
-| `multi-agent-dynamics-collective-intelligence-and-systemic-risk` | 1 | 0 | 0 | 0 |
+| `multi-agent-dynamics-collective-intelligence-and-systemic-risk` | 1 | 1 | 0 | 0 |
 | `open-ended-improvement-engines` | 7 | 7 | 0 | 0 |
 | `open-research-agenda-and-bibliography-plan` | 2 | 2 | 0 | 0 |
 | `open-weight-release-and-post-release-control` | 1 | 0 | 0 | 0 |
@@ -378,7 +379,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:inter_stack.revoked_credential.denies_dispatch` | `inter-stack-protocols-identity-and-economic-exchange` | `AsiStackProofs.InterStackProtocols` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:inter_stack.disputed_receipt.requires_review` | `inter-stack-protocols-identity-and-economic-exchange` | `AsiStackProofs.InterStackProtocols` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:inter_stack.missing_residual_owner.requires_review` | `inter-stack-protocols-identity-and-economic-exchange` | `AsiStackProofs.InterStackProtocols` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:multi_agent.pairwise_validity_no_systemic_promotion` | `multi-agent-dynamics-collective-intelligence-and-systemic-risk` | `AsiStackProofs.MultiAgentDynamics` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
+| `lean:multi_agent.pairwise_validity_no_systemic_promotion` | `multi-agent-dynamics-collective-intelligence-and-systemic-risk` | `AsiStackProofs.MultiAgentDynamics` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:procedural.loop_closure.operational_invariant` | `procedural-memory-and-cognitive-loop-closure` | `AsiStackProofs.ProceduralMemoryRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:procedural.loop_closure.failure_blocks_promotion` | `procedural-memory-and-cognitive-loop-closure` | `AsiStackProofs.ProceduralMemoryRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:routing.specialists.operational_invariant` | `routing-heads-and-specialist-cores` | `AsiStackProofs.RoutingRefinement` | triage ok; module ok; chapter tag ok; limitation ok |

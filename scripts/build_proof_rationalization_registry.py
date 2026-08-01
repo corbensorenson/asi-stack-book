@@ -96,6 +96,25 @@ resilience, support transition, external effect, deployment, AGI, or ASI.
 Chapter support remains `argument` and `support_state_effect` remains `none`.
 
 """,
+    "multi-agent-dynamics-collective-intelligence-and-systemic-risk": """## Current refinement
+
+`AsiStackProofs.MultiAgentDynamics` implements a finite three-party population
+review over six directed pairwise-authorization edges and nine systemic axes.
+Two closed records expose identical pairwise evidence but opposite campaign-
+readiness decisions, proving that no classifier restricted to that matrix can
+exactly recover the ten-dimension review for every modeled record. Nine
+systemic-axis mutations preserve pairwise validity, fail readiness, and reach
+exact repair routes; the only accepted route starts a Project Theseus
+population campaign.
+
+The model trusts every authored identity, lineage, control, coverage, exit,
+recovery, custody, and boundary field. It proves no beneficial cooperation,
+non-collusion, collective competence, systemic safety, effective human agency,
+institutional legitimacy or outcome, social prediction, support transition,
+external effect, deployment, AGI, or ASI. Chapter support remains `argument`
+and `support_state_effect` remains `none`.
+
+""",
 }
 
 

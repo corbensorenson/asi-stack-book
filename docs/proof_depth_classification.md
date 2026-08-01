@@ -14,10 +14,10 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 324 |
 | Lean modules scanned | 113 |
-| Theorem declarations classified | 1332 |
-| Direct/projection-style theorem declarations | 183 |
-| Derived/decomposed theorem declarations | 865 |
-| Unknown or mixed theorem declarations | 284 |
+| Theorem declarations classified | 1354 |
+| Direct/projection-style theorem declarations | 185 |
+| Derived/decomposed theorem declarations | 879 |
+| Unknown or mixed theorem declarations | 290 |
 | Safety-critical theorem declarations | 73 |
 | Safety-critical direct/projection declarations | 1 |
 | Safety-critical chapter classifications present | 1/1 |
@@ -112,7 +112,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/LivingBook.lean` | living-book-methodology | 4 | 18 | 0 | 18 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/MoECOTRuntime.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ModelWeightCustody.lean` | model-weight-custody-and-hardware-roots-of-trust | 8 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
-| `lean/AsiStackProofs/MultiAgentDynamics.lean` | multi-agent-dynamics-collective-intelligence-and-systemic-risk | 1 | 0 | 0 | 0 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/MultiAgentDynamics.lean` | multi-agent-dynamics-collective-intelligence-and-systemic-risk | 1 | 22 | 2 | 14 | 6 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/NoDeferralAdmission.lean` | adversarial-machine-learning-and-model-attack-surface, ai-deployment-transition-distribution-and-human-agency, autonomous-replication-proliferation-and-containment, confidential-and-verifiable-ai-computation, content-authenticity-watermarking-and-synthetic-media-integrity, dangerous-capability-domains-and-misuse-uplift, durable-semantic-memory-and-knowledge-lattices, governed-objective-formation-value-learning-and-goal-integrity, human-ai-communication-persuasion-and-epistemic-security, human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty, institutions-international-coordination-and-public-legitimacy, learning-theory-generalization-and-scaling-science, military-ai-autonomous-weapons-and-strategic-stability, open-weight-release-and-post-release-control, physical-compute-infrastructure-energy-and-environmental-constraints, relational-dimension-compilation-and-polyadic-cognition, scientific-discovery-and-experimental-governance, societal-resilience-and-misuse-defense | 18 | 0 | 0 | 0 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ObservationTrust.lean` | perception-sensor-fusion-and-observation-trust | 2 | 16 | 5 | 7 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/OpenEndedImprovement.lean` | unmapped | 0 | 7 | 0 | 7 | 0 | derived/decomposed by classifier |
@@ -862,6 +862,28 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ModelWeightCustody.lean` | `stale_attestation_requires_refresh` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ModelWeightCustody.lean` | `undisclosed_verifier_dependencies_require_review` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ModelWeightCustody.lean` | `unobserved_load_requires_observation` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/MultiAgentDynamics.lean` | `campaign_readiness_requires_affected_party_coverage` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/MultiAgentDynamics.lean` | `campaign_readiness_requires_diversified_resource_control` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/MultiAgentDynamics.lean` | `campaign_readiness_requires_effective_diversity` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/MultiAgentDynamics.lean` | `campaign_readiness_requires_human_exit` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/MultiAgentDynamics.lean` | `campaign_readiness_requires_human_stop` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/MultiAgentDynamics.lean` | `campaign_readiness_requires_non_claim_boundary` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/MultiAgentDynamics.lean` | `campaign_readiness_requires_pairwise_validity` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/MultiAgentDynamics.lean` | `campaign_readiness_requires_population_registry` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/MultiAgentDynamics.lean` | `campaign_readiness_requires_recovery` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/MultiAgentDynamics.lean` | `campaign_readiness_requires_residual_custody` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/MultiAgentDynamics.lean` | `complete_and_pairwise_only_have_identical_pairwise_evidence` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/MultiAgentDynamics.lean` | `complete_population_has_pairwise_validity` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/MultiAgentDynamics.lean` | `complete_population_is_campaign_ready` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/MultiAgentDynamics.lean` | `complete_population_routes_to_theseus_campaign` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/MultiAgentDynamics.lean` | `every_systemic_axis_omission_blocks_campaign_readiness` | derived_or_decomposed | no | uses cases |
+| `lean/AsiStackProofs/MultiAgentDynamics.lean` | `every_systemic_axis_omission_preserves_pairwise_validity` | derived_or_decomposed | no | uses cases |
+| `lean/AsiStackProofs/MultiAgentDynamics.lean` | `every_systemic_axis_omission_reaches_exact_repair_route` | derived_or_decomposed | no | uses cases |
+| `lean/AsiStackProofs/MultiAgentDynamics.lean` | `no_pairwise_only_classifier_exactly_recovers_campaign_readiness` | derived_or_decomposed | no | uses have, rw, simp |
+| `lean/AsiStackProofs/MultiAgentDynamics.lean` | `pairwise_only_population_has_pairwise_validity` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/MultiAgentDynamics.lean` | `pairwise_only_population_is_not_campaign_ready` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/MultiAgentDynamics.lean` | `pairwise_only_population_routes_to_dependency_mapping` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/MultiAgentDynamics.lean` | `pairwise_validity_does_not_entail_population_campaign_readiness` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ObservationTrust.lean` | `apply_event_cannot_assign_support_or_external_authority` | derived_or_decomposed | no | uses by_cases, simp |
 | `lean/AsiStackProofs/ObservationTrust.lean` | `apply_event_preserves_observation_identity` | derived_or_decomposed | no | uses by_cases, simp |
 | `lean/AsiStackProofs/ObservationTrust.lean` | `correlated_pair_cannot_satisfy_two_item_use_request` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |

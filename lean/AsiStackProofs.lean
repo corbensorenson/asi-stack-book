@@ -44,6 +44,7 @@ import AsiStackProofs.GovernedModelTraining
 import AsiStackProofs.GovernedWorldModels
 import AsiStackProofs.HumanFactorsOversight
 import AsiStackProofs.HumanAIOrganizations
+import AsiStackProofs.MultiAgentDynamics
 import AsiStackProofs.IntentContracts
 import AsiStackProofs.IntentResolutionRefinement
 import AsiStackProofs.IntentToExecution

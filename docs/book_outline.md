@@ -4526,7 +4526,7 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:multi_agent.pairwise_validity_no_systemic_promotion` | `AsiStackProofs.MultiAgentDynamics` | A finite population record refuses to infer systemic safety or beneficial cooperation from pairwise-valid interactions alone. | planned |
+| `lean:multi_agent.pairwise_validity_no_systemic_promotion` | `AsiStackProofs.MultiAgentDynamics` | A finite three-party population model proves that identical six-edge pairwise-authorization evidence can coexist with opposite campaign-readiness decisions; no classifier over that matrix alone can exactly recover the ten-dimension review. Nine systemic-axis mutations preserve pairwise validity, fail readiness, and reach exact repair routes. It establishes no cooperation, non-collusion, systemic safety, human agency, institutional outcome, support, or external effect. | implemented |
 
 ### Procedural Memory and Cognitive Loop Closure
 
@@ -6167,7 +6167,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 298 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 298 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 324 proof targets, 113 Lean modules, 1286 theorem declarations, 856 derived/decomposed, 183 direct/projection, 247 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 324 proof targets, 113 Lean modules, 1354 theorem declarations, 879 derived/decomposed, 185 direct/projection, 290 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.

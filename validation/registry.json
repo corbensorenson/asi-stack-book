@@ -382,6 +382,10 @@
     "scripts/validate_human_ai_organization_accountability.py",
     "chapters/human-ai-organizations-delegation-and-accountability.qmd",
     "evidence_quality/proof_model_dossiers/human-ai-organizations-delegation-and-accountability.md",
+    "lean/AsiStackProofs/MultiAgentDynamics.lean",
+    "scripts/validate_multi_agent_systemic_boundary.py",
+    "chapters/multi-agent-dynamics-collective-intelligence-and-systemic-risk.qmd",
+    "evidence_quality/proof_model_dossiers/multi-agent-dynamics-collective-intelligence-and-systemic-risk.md",
     "scripts/validate_artifact_graph_replay.py",
     "scripts/validate_receipt_faithfulness.py",
     "docs/receipt_faithfulness_adversarial_fixture.md",
@@ -17333,11 +17337,54 @@
       "prohibited_inference": "No theorem or consumer establishes field truth, reviewer competence, real human intervention, lawful or legitimate accountability, organizational effectiveness, worker welfare, fairness, resilience, support transition, external effect, deployment, AGI, or ASI.",
       "contract_precision": "exact",
       "semantic_review_state": "manual_staged_accountability_reachability_refusal_and_no_promotion_boundary_reviewed"
+    },
+    {
+      "id": "validate_multi_agent_systemic_boundary.py:449",
+      "order": 449,
+      "script": "validate_multi_agent_systemic_boundary.py",
+      "args": [],
+      "execution_tier": "pr",
+      "validation_class": "proof_or_evidence_gate",
+      "input_contract": "The finite three-party population model, six-edge pairwise evidence projection, ten-dimension campaign-readiness predicate, nine systemic mutation axes, 22-theorem Lean surface, chapter boundary, generated proof manifest, and reviewed triage record.",
+      "input_artifacts": [
+        "lean/AsiStackProofs/MultiAgentDynamics.lean",
+        "scripts/validate_multi_agent_systemic_boundary.py",
+        "chapters/multi-agent-dynamics-collective-intelligence-and-systemic-risk.qmd",
+        "evidence_quality/proof_model_dossiers/multi-agent-dynamics-collective-intelligence-and-systemic-risk.md",
+        "proofs/proof_manifest.json",
+        "proofs/proof_triage.json"
+      ],
+      "output_contract": "Independently reproduce two records with identical six-edge pairwise input and opposite campaign-readiness decisions; mutate all nine systemic axes while preserving pairwise validity; require exact repair routes; verify all 22 Lean declarations and canonical bindings; and reject population-outcome or support overclaims.",
+      "output_assertions": [
+        "six directed pairwise authorization edges",
+        "identical pairwise input with opposite readiness outputs",
+        "complete record routes only to a Project Theseus campaign",
+        "9/9 systemic-axis mutations preserve pairwise validity and reject readiness",
+        "all nine mutations reach exact repair routes",
+        "22 exact Lean declarations exist",
+        "zero cooperation, non-collusion, systemic-safety, human-agency, institutional, support, or external-effect claim"
+      ],
+      "claim_scope": "Finite pairwise-evidence underdetermination and authored population-campaign admission semantics only.",
+      "negative_controls": "validator_owned_nine_systemic_axis_mutations_and_same_input_opposite_decision_pair",
+      "negative_control_cases": [
+        "missing population registry",
+        "shared model lineage",
+        "concentrated resource control",
+        "missing human stop authority",
+        "missing affected-party coverage",
+        "missing human exit",
+        "missing recovery",
+        "missing residual custody",
+        "missing non-claim boundary"
+      ],
+      "prohibited_inference": "No theorem or consumer establishes beneficial cooperation, non-collusion, collective competence, systemic safety, effective human agency, institutional legitimacy or outcome, social prediction, support transition, external effect, deployment, AGI, or ASI.",
+      "contract_precision": "exact",
+      "semantic_review_state": "manual_pairwise_underdetermination_systemic_mutation_consumer_and_no_promotion_boundary_reviewed"
     }
   ],
   "summary": {
-    "required_artifact_count": 3035,
-    "unit_count": 448
+    "required_artifact_count": 3039,
+    "unit_count": 449
   },
   "non_claims": [
     "Registry coverage does not establish semantic adequacy of every validator.",

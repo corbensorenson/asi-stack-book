@@ -1314,11 +1314,12 @@ declarations across 105 theorem-bearing modules. That
 denominator remains frozen in the cumulative rationalization ledger.
 
 The dated 2026-08-01 Failure Modes, Governed Operations, Learned Objective
-Integrity, Observation Trust, and Search Substrate expansions reopen
+Integrity, Observation Trust, Search Substrate, Artifact Steward, Human-AI
+Organizations, and Multi-Agent Dynamics expansions reopen
 formal growth without rewriting that history. The current overlay in
-`proofs/proof_semantic_depth_overlay.json` classifies 1,332 live theorem
-declarations across 110 theorem-bearing modules and maps them to 64 active
-semantic-owner chapters. The 113 added declarations are bound to the
+`proofs/proof_semantic_depth_overlay.json` classifies 1,354 live theorem
+declarations across 111 theorem-bearing modules and maps them to 65 active
+semantic-owner chapters. The 135 added declarations are bound to the
 five-stage failure-recovery model, the eight-stage governed-operations
 lifecycle, the learned-objective non-identification witness and eight-stage
 integrity lifecycle, and the declared-dependence pair classifier plus
@@ -1327,12 +1328,14 @@ classifier with four accepted non-promoting traces and eight exact rejected
 controls, plus the Artifact Steward reachable work-contract and release-review
 models with arbitrary-length completeness invariants and seventeen exact
 boundary controls, plus the Human-AI Organizations five-stage accountability
-review with a finite-run invariant and twenty independent field mutations.
+review with a finite-run invariant and twenty independent field mutations,
+plus the Multi-Agent Dynamics pairwise-underdetermination model with nine
+systemic-axis mutations and an exact Project Theseus campaign handoff.
 Independently encoded validators preserve exact no-support
 boundaries across every added model.
 
-The live semantic-depth distribution is 26 P0 record-shape results, 699 P1
-finite-route results, 82 P2 reachability/nonvacuity results, 336 P3
+The live semantic-depth distribution is 26 P0 record-shape results, 709 P1
+finite-route results, 88 P2 reachability/nonvacuity results, 342 P3
 implementation-refinement results, 99 P4 cross-component-safety results, 90 P5
 liveness/recovery results, and zero P6 empirically bound results. P6 being zero
 is intentional: the existence of an experiment file, trace, or generated
@@ -1341,11 +1344,11 @@ artifact does not turn a theorem into empirical evidence.
 Every overlay row records its assumptions, active semantic owner, downstream
 consumer, witness or explicit witness absence, implementation binding, mutation
 evidence, maximum inference, and disposition. The resulting current estate is
-1,332 retain, zero retire as narrow projection, zero pending scope-language
-rewrites, and zero stronger-model actions remaining. All 1,332 rows have
+1,354 retain, zero retire as narrow projection, zero pending scope-language
+rewrites, and zero stronger-model actions remaining. All 1,354 rows have
 mutation coverage and every retained theorem has a named consumer. The
 terminal rationalization receipt remains 1,219 retain with no pending action;
-the later 113 theorems are additive consumer-owned formal expansion, not
+the later 135 theorems are additive consumer-owned formal expansion, not
 retroactive rationalization.
 
 The cumulative dependency-safe retirement ledger is
@@ -3275,7 +3278,7 @@ dependence, accountability and remedy, and succession or dissolution. Their
 sources retain exact conceptual, constructed, empirical, formal, framework,
 jurisdictional, and authorial ceilings. The contract therefore reports
 twenty-three concept-complete chapters, 184/184 passing concepts, twenty-three
-current semantic reviews, sixteen diagnostically thin chapters, and an empty
+current semantic reviews, fifteen diagnostically thin chapters, and an empty
 concept-completion queue. No support, release, safety, deployment, SOTA, AGI,
 or ASI conclusion moved.
 
@@ -4369,7 +4372,7 @@ is not a debugging interface.
    twenty-three reviewed owners, 184/184 concepts, the exact 21-fingerprint
    raw-scaffold ownership audit, and the exact 23-chapter/184-concept
    proof/evidence handoff. Retain the separate
-   sixteen-chapter diagnostic-thin list. Preserve the twenty-three
+   fifteen-chapter diagnostic-thin list. Preserve the twenty-three
    concept-complete owners at their reviewed digests and measure throughput in
    concept-complete dispositions. Treat the 5,000-word threshold and raw atom
    counts as diagnostics only. Reopen the lane only after digest drift or an

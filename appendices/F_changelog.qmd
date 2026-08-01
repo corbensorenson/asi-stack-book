@@ -1,5 +1,22 @@
 # Changelog
 
+## 2026-08-01 - Pairwise evidence and systemic-readiness separation
+
+- Implemented `lean:multi_agent.pairwise_validity_no_systemic_promotion` as a
+  finite three-party population model with six directed pairwise authorization
+  edges and nine independently mutable systemic review axes.
+- Added 22 Lean declarations, including a same-input/opposite-decision witness
+  pair and an impossibility theorem showing that no classifier restricted to
+  the pairwise matrix can exactly recover full campaign readiness. Every
+  systemic-axis omission preserves pairwise validity, fails readiness, and
+  reaches its exact repair route.
+- Current proof-depth snapshot: 324 proof targets, 113 Lean modules, 1354 theorem declarations, 879 derived/decomposed, 185 direct/projection, 290 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Kept the result at its formal boundary. The successful route admits only a
+  Project Theseus population campaign; no theorem establishes cooperation,
+  non-collusion, systemic safety, effective human agency, institutional
+  outcomes, support movement, or external effects. Chapter support remains
+  `argument`.
+
 ## 2026-08-01 - Human-AI accountability assignment review
 
 - Implemented `lean:human_ai_org.accountability_requires_authority` as a

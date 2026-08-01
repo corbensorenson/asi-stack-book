@@ -4,7 +4,7 @@ chapter_id: "multi-agent-dynamics-collective-intelligence-and-systemic-risk"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 concept-complete argument-level manuscript"
-last_updated: "2026-07-28"
+last_updated: "2026-08-01"
 primary_sources:
   - "ext_multi_agent_risks_2025"
   - "ext_cooperative_ai_foundations_2023"
@@ -30,7 +30,7 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source loading state | Five records cover advanced multi-agent risks, cooperative-AI foundations, gradual human disempowerment, constructive interdependence, and decision-theory disagreement. |
-| Test state | Population-level campaign specified; no environment, agent, institution, market, or person observed. |
+| Test state | A 22-declaration Lean countermodel separates six-edge pairwise authorization from ten-dimension campaign readiness; no environment, agent, institution, market, or person observed. |
 
 ## Drafting guardrail
 
@@ -539,21 +539,47 @@ common-mode faults. This is a **falsifiable research program, not a current
 result**: no such campaign has passed here, and synthetic population behavior
 cannot promote claims about society.
 
+## Formalization hooks
+
+### Implemented formalization
+
+`lean:multi_agent.pairwise_validity_no_systemic_promotion` is implemented in
+`AsiStackProofs.MultiAgentDynamics` as a finite three-party population review.
+The 22 theorem declarations compute six directed pairwise-authorization edges,
+effective model-lineage diversity, diversification of compute and capital
+control, human stop reachability, participant and bystander coverage, human
+exit, recovery, residual custody, and the non-claim boundary. A complete record
+reaches `runTheseusPopulationCampaign`; a pairwise-only record has the identical
+authorization matrix but fails campaign readiness and routes to dependency
+mapping.
+
+The central impossibility result proves that no Boolean classifier restricted
+to that pairwise matrix can exactly recover the full review for every record:
+the two closed records supply the same classifier input and require opposite
+outputs. Nine independently checkable systemic-axis mutations preserve all six
+pairwise authorizations, fail readiness, and reach their exact repair routes.
+This is a non-inference boundary over authored finite data, not a model of
+emergent behavior. It does not prove beneficial cooperation, non-collusion,
+systemic safety, effective human agency, institutional legitimacy, social
+prediction, support, or an external effect. Chapter support remains `argument`.
+
+The executable handoff is a Project Theseus campaign that must vary population
+size, communication, common lineage, resource control, coalition incentives,
+human veto and exit, affected-party externalities, and intervention policy;
+retain tail-risk, concentration, displaced-effect, recovery, and governance-
+cost measurements; and compare communication-free, simple heuristic,
+centralized, and mechanism-design baselines. The Lean gate can admit that work;
+only those observations can evaluate population outcomes.
+
 ## Codex test plan
-
-### Planned formalization
-
-`lean:multi_agent.pairwise_validity_no_systemic_promotion` will keep pairwise
-message validity and population-level authority as distinct finite predicates.
-It cannot establish beneficial cooperation, non-collusion, systemic safety,
-human agency, institutional legitimacy, or social prediction.
 
 | Test | Purpose | Status |
 |---|---|---|
 | Known-game positive controls | Recover seeded equilibria and deliberately seeded collusion/cascades. | planned |
-| Effective-diversity audit | Detect common models, data, evaluators, and infrastructure behind nominally distinct agents. | planned |
+| Pairwise-only inference guard | Reject population-campaign readiness when identical pairwise evidence omits any modeled systemic axis. | implemented in Lean with nine exact mutations; no runtime outcome |
+| Effective-diversity audit | Detect common models, data, evaluators, and infrastructure behind nominally distinct agents. | finite lineage countermodel implemented; population campaign planned |
 | Cooperation-versus-collusion test | Show beneficiary and externality identity changes the policy. | planned |
-| Human-influence trajectory | Track veto, exit, option value, and dependence across repeated rounds. | planned |
+| Human-influence trajectory | Track veto, exit, option value, and dependence across repeated rounds. | finite stop/exit refusal implemented; longitudinal campaign planned |
 | Intervention displacement test | Detect evasion, exclusion, or concentration caused by a mitigation. | planned |
 
 ## Source crosswalk
