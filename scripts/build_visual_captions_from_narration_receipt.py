@@ -20,7 +20,7 @@ def timestamp(seconds: float) -> str:
     return f"{hours:02d}:{minutes:02d}:{secs:02d}.{millis:03d}"
 
 
-def chunks(text: str, maximum_words: int) -> list[str]:
+def chunks(text: str, maximum_words: int, minimum_final_words: int = 4) -> list[str]:
     words = text.split()
     result = []
     start = 0
@@ -33,6 +33,14 @@ def chunks(text: str, maximum_words: int) -> list[str]:
                     break
         result.append(" ".join(words[start:end]))
         start = end
+    if len(result) > 1:
+        final_words = result[-1].split()
+        previous_words = result[-2].split()
+        if len(final_words) < minimum_final_words:
+            move = min(minimum_final_words - len(final_words), len(previous_words) - 5)
+            if move > 0:
+                result[-2] = " ".join(previous_words[:-move])
+                result[-1] = " ".join(previous_words[-move:] + final_words)
     return result
 
 

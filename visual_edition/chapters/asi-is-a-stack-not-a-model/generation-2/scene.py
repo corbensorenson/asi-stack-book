@@ -609,21 +609,17 @@ class AsiIsAStackNotAModelGeneration2(AsiScene):
         ).shift(LEFT * 1.6 + UP * -0.7)
         outside_keys = VGroup(self.box("APPROVE", "external", AUTHORITY, 2.1), self.box("CERTIFY", "external", EVIDENCE, 2.1)).arrange(UP * -1, buff=0.4).shift(RIGHT * 2.7 + UP * -0.7)
         separating_line = Line(UP * 1.25, UP * -2.0, color=BOUNDARY, stroke_width=3).shift(RIGHT * 0.55 + UP * -0.35)
+        self_improvement_title = self.label("SELF-IMPROVEMENT CANNOT CERTIFY ITSELF", 24, ACCENT, "BOLD").move_to(noninheritance_title)
         self.play_beat(
             21,
-            Succession(
-                AnimationGroup(
-                    FadeOut(rows2),
-                    FadeOut(noninheritance_panel),
-                    FadeOut(noninheritance_title),
-                    run_time=1.0,
-                ),
-                AnimationGroup(
-                    FadeIn(candidate, scale=0.85),
-                    Create(separating_line),
-                    LaggedStart(*[FadeIn(k) for k in outside_keys], lag_ratio=0.18),
-                    run_time=5.5,
-                ),
+            AnimationGroup(
+                FadeOut(rows2, shift=LEFT * 0.15),
+                Transform(noninheritance_title, self_improvement_title),
+                noninheritance_panel.animate.set_stroke(ACCENT).set_fill(SURFACE, opacity=0.82),
+                FadeIn(candidate, scale=0.85),
+                Create(separating_line),
+                LaggedStart(*[FadeIn(k) for k in outside_keys], lag_ratio=0.18),
+                lag_ratio=0.08,
             ),
         )
 
@@ -643,25 +639,37 @@ class AsiIsAStackNotAModelGeneration2(AsiScene):
             fill_color=SURFACE,
             fill_opacity=0.92,
         ).set_z_index(-8)
-        cost_heading = self.label("EXPLICIT INTERFACES HAVE REAL COSTS", 27, INK, "BOLD").move_to(UP * 0.35)
-        # A persistent visual field prevents late-scene crossfades from
-        # becoming empty frames while the narration is still carrying state.
-        self.add(late_panel, cost_heading)
+        cost_heading = self.label("EXPLICIT INTERFACES HAVE REAL COSTS", 27, INK, "BOLD").move_to(UP * 2.35)
+        # Keep the self-improvement candidate visible until the costs have
+        # assembled. The objection therefore grows out of the mechanism it
+        # qualifies instead of arriving across an empty crossfade.
+        self.add(late_panel)
         self.bring_to_back(late_panel)
         self.play_beat(
             22,
-            AnimationGroup(
+            Succession(
                 AnimationGroup(
-                    FadeOut(candidate), FadeOut(outside_keys), FadeOut(separating_line),
-                    run_time=0.7,
+                    FadeIn(cost_heading, shift=UP * 0.12),
+                    FadeOut(noninheritance_title),
+                    FadeOut(noninheritance_panel),
+                    run_time=1.0,
+                ),
+                AnimationGroup(
+                    candidate.animate.scale(0.78).move_to(LEFT * 2.0 + UP * 0.55),
+                    outside_keys.animate.scale(0.78).move_to(RIGHT * 2.5 + UP * 0.55),
+                    separating_line.animate.scale(0.78).move_to(ORIGIN + UP * 0.55),
+                    run_time=1.5,
                 ),
                 AnimationGroup(
                     LaggedStart(*[FadeIn(cost, shift=UP * 0.25) for cost in costs], lag_ratio=0.14),
-                    trace.animate.shift(UP * 0.18),
-                    FadeOut(cost_heading),
                     run_time=5.5,
                 ),
-                lag_ratio=0.08,
+                AnimationGroup(
+                    candidate.animate.set_opacity(0.18),
+                    outside_keys.animate.set_opacity(0.18),
+                    separating_line.animate.set_opacity(0.18),
+                    run_time=0.8,
+                ),
             ),
         )
 
@@ -686,7 +694,14 @@ class AsiIsAStackNotAModelGeneration2(AsiScene):
         self.play_beat(
             23,
             Succession(
-                AnimationGroup(FadeOut(costs), FadeOut(trace), FadeOut(trace_arrows), run_time=1.0),
+                AnimationGroup(
+                    FadeOut(costs),
+                    FadeOut(trace),
+                    FadeOut(trace_arrows),
+                    FadeOut(cost_heading),
+                    FadeOut(late_panel),
+                    run_time=1.0,
+                ),
                 AnimationGroup(
                     FadeIn(race_panel),
                     FadeIn(matched),

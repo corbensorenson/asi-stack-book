@@ -132,6 +132,9 @@ def negative_control_failures(value: dict) -> list[str]:
 
     averaged_review = copy.deepcopy(value)
     averaged_review["entries"][0]["target"]["gates"]["animatic"] = "pass"
+    averaged_review["entries"][0]["target"]["experience_review_paths"]["animatic"] = (
+        "visual_edition/chapters/asi-is-a-stack-not-a-model/generation-2/reviews/animatic-r2.json"
+    )
     controls.append(("rejected review promotion", averaged_review, "averages cannot hide sub-4 dimensions"))
 
     premature_acceptance = copy.deepcopy(value)

@@ -134,8 +134,8 @@
     "planned": 83,
     "briefed": 0,
     "scripted": 0,
-    "animatic_passed": 0,
-    "picture_and_sound_lock_passed": 0,
+    "animatic_passed": 1,
+    "picture_and_sound_lock_passed": 1,
     "release_candidate_passed": 0,
     "accepted_generation_2": 0,
     "youtube_predecessors": 12,
@@ -162,7 +162,7 @@
       },
       "target": {
         "generation": 2,
-        "stage": "animatic",
+        "stage": "picture_and_sound_lock",
         "beat_plan_path": "visual_edition/chapters/asi-is-a-stack-not-a-model/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/asi-is-a-stack-not-a-model/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/asi-is-a-stack-not-a-model/generation-2/narration.txt",
@@ -173,15 +173,15 @@
         "master_sha256": null,
         "render_receipt_path": null,
         "experience_review_paths": {
-          "animatic": "visual_edition/chapters/asi-is-a-stack-not-a-model/generation-2/reviews/animatic-r2.json",
+          "animatic": "visual_edition/chapters/asi-is-a-stack-not-a-model/generation-2/reviews/animatic-r3.json",
           "picture_and_sound_lock": "visual_edition/chapters/asi-is-a-stack-not-a-model/generation-2/reviews/picture_and_sound_lock.json",
           "release_candidate": "visual_edition/chapters/asi-is-a-stack-not-a-model/generation-2/reviews/release_candidate.json",
           "independent_release_candidate": "visual_edition/chapters/asi-is-a-stack-not-a-model/generation-2/reviews/independent_release_candidate.json"
         },
         "gates": {
           "beat_plan": "pass",
-          "animatic": "revise",
-          "picture_and_sound_lock": "not_started",
+          "animatic": "pass",
+          "picture_and_sound_lock": "pass",
           "release_candidate": "not_started",
           "independent_release_candidate": "not_started",
           "technical": "not_started",

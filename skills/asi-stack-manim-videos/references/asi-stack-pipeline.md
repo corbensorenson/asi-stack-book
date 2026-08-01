@@ -124,9 +124,12 @@ punctuation normalization.
 11. Run `audit_av_experience.py` for mechanical freeze, silence, and loudness
     diagnostics; investigate every finding in playback.
 12. Render the pinned 1920×1080/30 release profile and mux exact audio.
-13. Run repository visual, caption, transcript, receipt, and publication
+13. Run `build_caption_review_sheet.py` against the mux and final VTT; reject
+    overlaps, sub-320-millisecond cues, overlong cues, or captions that obscure
+    the active visual region in the representative exact-frame sheet.
+14. Run repository visual, caption, transcript, receipt, and publication
     validators.
-14. Perform the complete experience review in `experience-review.md`.
+15. Perform the complete experience review in `experience-review.md`.
 
 ## Validation and review
 
