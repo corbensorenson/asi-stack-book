@@ -22,8 +22,8 @@ MAINTENANCE_STATUS = ROOT / "roadmap_records" / "post_v2_3_maintenance_transfer_
 
 HISTORICAL_PROOF_TARGET_COUNT = 298
 CURRENT_PROOF_TARGET_COUNT = 324
-CURRENT_IMPLEMENTED_TARGET_COUNT = 305
-CURRENT_PLANNED_TARGET_COUNT = 19
+CURRENT_IMPLEMENTED_TARGET_COUNT = 306
+CURRENT_PLANNED_TARGET_COUNT = 18
 CURRENT_RATIONALIZATION_PLANNED_TARGET_COUNT = 0
 HISTORICAL_EXPECTED_CLASSES = {
     "adequate finite-record invariant": 73,
@@ -111,6 +111,7 @@ PLANNED_CHAPTERS = (
     "perception-sensor-fusion-and-observation-trust",
     "human-ai-organizations-delegation-and-accountability",
     "multi-agent-dynamics-collective-intelligence-and-systemic-risk",
+    "embodied-agency-real-time-control-and-physical-safety",
 }
 EXPECTED_RICHER = {
     "constitutional-alignment-substrate": 6,

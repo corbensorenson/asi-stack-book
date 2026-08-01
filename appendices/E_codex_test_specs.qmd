@@ -6,6 +6,7 @@ No result is recorded here unless a test has actually been implemented and run.
 
 | Chapter ID | Chapter | Test spec | Implementation status | Result status |
 |---|---|---|---|---|
+| `asi-is-a-stack-not-a-model` | ASI Is a Stack, Not a Model | Derived control-lease admission guard | implemented | passed |
 | `asi-is-a-stack-not-a-model` | ASI Is a Stack, Not a Model | Layer-contract admission lifecycle route | implemented | passes 18/18 generated route cases via `python3 scripts/validate_stack_boundary_effect_consumer.py`; no deployed layer enforcement, complete source-to-layer traceability, whole-system safety, or support-state promotion claim |
 | `asi-is-a-stack-not-a-model` | ASI Is a Stack, Not a Model | Reachable stack-boundary authority/effect consumer | implemented | passes via `python3 scripts/validate_stack_boundary_effect_consumer.py`: 6 authority fixtures, 3 runtime paths, 10 accepted events, 1 effect, 1 observation, 1 exact rollback, 2 no-mutation denials, 5 revocation entries, and 12/12 rejected mutations; support-state effect none |
 | `asi-is-a-stack-not-a-model` | ASI Is a Stack, Not a Model | Layer-boundary audit | implemented | passes via `python3 scripts/validate_stack_layer_traceability.py`; repository metadata/fixture audit only |
@@ -276,7 +277,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `labor-os-and-typed-jobs` | Labor OS and Typed Jobs | Typed job delivery and evidence-readiness probe | implemented | passes via deterministic synthetic typed-job delivery fixture at experiments/typed_job_delivery/results/2026-07-02-local.json: two valid synthetic typed-job traces and seven expected-invalid controls; no deployed scheduler, permission-enforcement, approval-service, runtime-adapter, replay-correctness, support-state-promotion, or evidence-transition claim |
 | `labor-os-and-typed-jobs` | Labor OS and Typed Jobs | Typed job durable lifecycle probe | implemented | passes via deterministic synthetic durable lifecycle fixture at experiments/typed_job_durable_lifecycle/results/2026-07-02-local.json: two valid synthetic durable lifecycle traces and nine expected-invalid controls; no deployed scheduler, durable workflow recovery, permission-enforcement, approval-service, replay-correctness, support-state-promotion, or evidence-transition claim |
 | `labor-os-and-typed-jobs` | Labor OS and Typed Jobs | Typed-job versioned execution and closure refinement | implemented | passes exact 2/7 delivery and 2/9 durable suites, 28 routes, seven reachable stages, and 42/42 rejecting mutations; support-state effect none; no deployed scheduler, enforcement, recovery, task-success, truth, usefulness, safety, reproduction, or transfer claim |
-| `human-ai-organizations-delegation-and-accountability` | Human-AI Organizations, Delegation, and Accountability | Decision-right and crumple-zone mutations | planned | not_run |
+| `human-ai-organizations-delegation-and-accountability` | Human-AI Organizations, Delegation, and Accountability | Decision-right and crumple-zone mutations | implemented | passed |
 | `human-ai-organizations-delegation-and-accountability` | Human-AI Organizations, Delegation, and Accountability | Competence workload and interdependence campaign | planned | not_run |
 | `human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty` | Human-AI Symbiosis, Neurotechnology, and Cognitive Sovereignty | Layer claim falsification test | planned | not run |
 | `ai-deployment-transition-distribution-and-human-agency` | AI Deployment, Transition, Distribution, and Human Agency | Contract completeness mutation test | planned | not run |
@@ -316,6 +317,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `inter-stack-protocols-identity-and-economic-exchange` | Inter-Stack Protocols, Identity, and Economic Exchange | Missing-reserved-budget value-bearing dispatch repair route | planned | not run |
 | `inter-stack-protocols-identity-and-economic-exchange` | Inter-Stack Protocols, Identity, and Economic Exchange | Public-safe exchange contract workload with identity, delegation, expiry, revocation, budget, receipt, dispute, and residual negative controls | planned | not run |
 | `inter-stack-protocols-identity-and-economic-exchange` | Inter-Stack Protocols, Identity, and Economic Exchange | Eleven validator-owned rejecting mutations | planned | not run |
+| `multi-agent-dynamics-collective-intelligence-and-systemic-risk` | Multi-Agent Dynamics, Collective Intelligence, and Systemic Risk | Pairwise-only systemic inference guard | implemented | passed |
 | `multi-agent-dynamics-collective-intelligence-and-systemic-risk` | Multi-Agent Dynamics, Collective Intelligence, and Systemic Risk | Known-game population controls | planned | not_run |
 | `multi-agent-dynamics-collective-intelligence-and-systemic-risk` | Multi-Agent Dynamics, Collective Intelligence, and Systemic Risk | Human influence and intervention displacement | planned | not_run |
 | `procedural-memory-and-cognitive-loop-closure` | Procedural Memory and Cognitive Loop Closure | Loop detection test | implemented | passes via synthetic procedural memory loop harness; no deployed loop detector or tool-synthesis claim |
@@ -581,7 +583,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `scientific-discovery-and-experimental-governance` | Scientific Discovery and Experimental Governance | No-support-promotion control | planned | not run |
 | `artifact-steward-agents-and-living-project-governance` | Artifact Steward Agents and Living Project Governance | Project steward manifest fixture validation | implemented | passes via protocol fixture validation |
 | `artifact-steward-agents-and-living-project-governance` | Artifact Steward Agents and Living Project Governance | Treasury policy and event-taint fixture validation | implemented | passes via protocol fixture validation |
-| `artifact-steward-agents-and-living-project-governance` | Artifact Steward Agents and Living Project Governance | Work contract authority denial test | planned | not run; record-shape fixture only |
+| `artifact-steward-agents-and-living-project-governance` | Artifact Steward Agents and Living Project Governance | Work contract authority denial test | implemented | passes via Lean build and nine independently encoded lifecycle-probe controls |
 | `artifact-steward-agents-and-living-project-governance` | Artifact Steward Agents and Living Project Governance | Treasury spend-cap test | implemented | passes via Lean build |
 | `artifact-steward-agents-and-living-project-governance` | Artifact Steward Agents and Living Project Governance | Untrusted event taint test | implemented | passes via Lean build |
 | `artifact-steward-agents-and-living-project-governance` | Artifact Steward Agents and Living Project Governance | Contribution ledger separation test | implemented | passes via Lean build |
@@ -589,7 +591,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `artifact-steward-agents-and-living-project-governance` | Artifact Steward Agents and Living Project Governance | Release evidence handoff test | implemented | validated locally by synthetic fixtures; no steward release run |
 | `artifact-steward-agents-and-living-project-governance` | Artifact Steward Agents and Living Project Governance | Project federation contract test | implemented | passes via Lean build |
 | `artifact-steward-agents-and-living-project-governance` | Artifact Steward Agents and Living Project Governance | Autonomy-mode transition test | implemented | passes via Lean build |
-| `artifact-steward-agents-and-living-project-governance` | Artifact Steward Agents and Living Project Governance | Release evidence gate test | planned | not run; expected-invalid lifecycle trace only |
+| `artifact-steward-agents-and-living-project-governance` | Artifact Steward Agents and Living Project Governance | Release evidence gate test | implemented | passes via Lean build and eight independently encoded lifecycle-probe controls |
 | `artifact-steward-agents-and-living-project-governance` | Artifact Steward Agents and Living Project Governance | Sunset ordinary-work block test | implemented | passes via deterministic lifecycle probe |
 | `artifact-steward-agents-and-living-project-governance` | Artifact Steward Agents and Living Project Governance | Artifact steward lifecycle probe | implemented | passes via deterministic public-safe lifecycle probe; no steward-bot, treasury-executor, event-taint-workflow, contributor-ledger, governance-runner, project-federation, release-runner, sunset-protocol, or support-state-promotion claim |
 | `integrated-reference-architecture` | Integrated Reference Architecture | End-to-end intent trace test | implemented | passing via `python3 scripts/validate_reference_trace.py` |
@@ -703,13 +705,12 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Target status | Count |
 |---|---:|
-| implemented | 300 |
-| planned | 24 |
+| implemented | 306 |
+| planned | 18 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 300 |
-| planned | formal-invariant | lean-candidate | 6 |
+| implemented | formal-invariant | lean-candidate | 306 |
 | planned | process-contract | policy-model-first | 18 |

@@ -11,9 +11,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | Metric | Value |
 |---|---:|
 | Proof targets audited | 324 |
-| Manifest status counts | {"implemented": 305, "planned": 19} |
+| Manifest status counts | {"implemented": 306, "planned": 18} |
 | Triage class counts | {"formal-invariant": 306, "process-contract": 18} |
-| Lean modules referenced | 78 |
+| Lean modules referenced | 79 |
 | Chapters with proof targets | 84 |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -53,6 +53,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/DataEngineLifecycleRefinement.lean` | 15 | 5 | 15 | 10 | 2 |
 | `lean/AsiStackProofs/DeliberationRefinement.lean` | 10 | 11 | 0 | 12 | 3 |
 | `lean/AsiStackProofs/Efficiency.lean` | 2 | 2 | 0 | 3 | 2 |
+| `lean/AsiStackProofs/EmbodiedPhysicalSafety.lean` | 1 | 22 | 0 | 12 | 1 |
 | `lean/AsiStackProofs/EvidenceStates.lean` | 1 | 6 | 0 | 7 | 2 |
 | `lean/AsiStackProofs/EvidenceTransitionRefinement.lean` | 2 | 6 | 0 | 8 | 2 |
 | `lean/AsiStackProofs/FailureModes.lean` | 4 | 21 | 0 | 6 | 4 |
@@ -138,7 +139,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `dangerous-capability-domains-and-misuse-uplift` | 1 | 0 | 0 | 0 |
 | `data-engines-continual-learning-and-unlearning` | 15 | 15 | 0 | 0 |
 | `durable-semantic-memory-and-knowledge-lattices` | 1 | 0 | 0 | 0 |
-| `embodied-agency-real-time-control-and-physical-safety` | 1 | 0 | 0 | 0 |
+| `embodied-agency-real-time-control-and-physical-safety` | 1 | 1 | 0 | 0 |
 | `evidence-states-and-claim-discipline` | 3 | 3 | 0 | 0 |
 | `executable-specifications-and-lean-proof-envelope` | 2 | 2 | 0 | 0 |
 | `failure-modes-of-ungoverned-intelligence` | 5 | 5 | 0 | 0 |
@@ -369,7 +370,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:runtime.adapters.adversarial_boundary_probe_bridge` | `runtime-adapters-tool-permissions-and-human-approval` | `AsiStackProofs.RuntimeAdapters` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:runtime.adapters.revocation_route_bridge` | `runtime-adapters-tool-permissions-and-human-approval` | `AsiStackProofs.RuntimeAdapters` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:runtime.adapters.human_oversight_degradation_fixture_bridge` | `runtime-adapters-tool-permissions-and-human-approval` | `AsiStackProofs.RuntimeAdapters` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:embodiment.missing_safety_state_blocks_control` | `embodied-agency-real-time-control-and-physical-safety` | `AsiStackProofs.EmbodiedPhysicalSafety` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
+| `lean:embodiment.missing_safety_state_blocks_control` | `embodied-agency-real-time-control-and-physical-safety` | `AsiStackProofs.EmbodiedPhysicalSafety` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:inter_stack.invalid_credential.blocks_dispatch` | `inter-stack-protocols-identity-and-economic-exchange` | `AsiStackProofs.InterStackProtocols` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:inter_stack.missing_reserved_budget.blocks_economic_dispatch` | `inter-stack-protocols-identity-and-economic-exchange` | `AsiStackProofs.InterStackProtocols` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:inter_stack.complete_exchange.reaches_local_dispatch` | `inter-stack-protocols-identity-and-economic-exchange` | `AsiStackProofs.InterStackProtocols` | triage ok; module ok; chapter tag ok; limitation ok |

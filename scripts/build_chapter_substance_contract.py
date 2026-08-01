@@ -785,14 +785,15 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
         "support_state_effect": "none",
     },
     "embodied-agency-real-time-control-and-physical-safety": {
-        "reviewed_sha256": "cdf30a5166f4a51c4d7a59b52593a49a7ec8c5a76b367c21eb93b840044805f9",
-        "reviewed_date": "2026-07-31",
+        "reviewed_sha256": "04d3faefcf3592e6cf131139e7a8bdeb078c893377db66663d47758bb0b55418",
+        "reviewed_date": "2026-08-01",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,
         "review_basis": [
             "the eight concepts distinguish plant and hazard identity, observation-to-control separation, timing and reachability, advanced and fallback control, barriers and interlocks, learning authority, twin fidelity, and incident recommissioning",
             "robotics capability, physical-risk survey, barrier, Simplex, safe-RL, digital-twin, and VIEA sources remain reported, survey, formal-framework, architectural, or authorial comparators rather than a local physical-safety result",
             "the chapter preserves latency, shared-defect, infeasibility, exploration, simulator exploitation, independent stop, incident evidence, latent damage, safe-hold, and no consequential-plant claim",
+            "the added finite control-lease model proves only authored admission semantics, 13 exact mutation routes, and three arithmetic monotonicity laws; Project Theseus closed-loop behavior, plant truth, physical safety, and support movement remain outside the formal result",
         ],
         "support_state_effect": "none",
     },

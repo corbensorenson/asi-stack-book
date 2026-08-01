@@ -384,6 +384,7 @@
     "evidence_quality/proof_model_dossiers/human-ai-organizations-delegation-and-accountability.md",
     "lean/AsiStackProofs/MultiAgentDynamics.lean",
     "scripts/validate_multi_agent_systemic_boundary.py",
+    "tests/fixtures/proof_models/multi_agent_population.json",
     "chapters/multi-agent-dynamics-collective-intelligence-and-systemic-risk.qmd",
     "evidence_quality/proof_model_dossiers/multi-agent-dynamics-collective-intelligence-and-systemic-risk.md",
     "scripts/validate_artifact_graph_replay.py",
@@ -3083,7 +3084,13 @@
     "scripts/validate_observation_trust.py",
     "scripts/register_observation_trust.py",
     "chapters/perception-sensor-fusion-and-observation-trust.qmd",
-    "evidence_quality/proof_model_dossiers/perception-sensor-fusion-and-observation-trust.md"
+    "evidence_quality/proof_model_dossiers/perception-sensor-fusion-and-observation-trust.md",
+    "lean/AsiStackProofs/EmbodiedPhysicalSafety.lean",
+    "scripts/validate_embodied_physical_safety.py",
+    "scripts/register_embodied_physical_safety.py",
+    "chapters/embodied-agency-real-time-control-and-physical-safety.qmd",
+    "evidence_quality/proof_model_dossiers/embodied-agency-real-time-control-and-physical-safety.md",
+    "tests/fixtures/proof_models/embodied_control_lease.json"
   ],
   "units": [
     {
@@ -17349,6 +17356,7 @@
       "input_artifacts": [
         "lean/AsiStackProofs/MultiAgentDynamics.lean",
         "scripts/validate_multi_agent_systemic_boundary.py",
+        "tests/fixtures/proof_models/multi_agent_population.json",
         "chapters/multi-agent-dynamics-collective-intelligence-and-systemic-risk.qmd",
         "evidence_quality/proof_model_dossiers/multi-agent-dynamics-collective-intelligence-and-systemic-risk.md",
         "proofs/proof_manifest.json",
@@ -17380,11 +17388,60 @@
       "prohibited_inference": "No theorem or consumer establishes beneficial cooperation, non-collusion, collective competence, systemic safety, effective human agency, institutional legitimacy or outcome, social prediction, support transition, external effect, deployment, AGI, or ASI.",
       "contract_precision": "exact",
       "semantic_review_state": "manual_pairwise_underdetermination_systemic_mutation_consumer_and_no_promotion_boundary_reviewed"
+    },
+    {
+      "id": "validate_embodied_physical_safety.py:450",
+      "order": 450,
+      "script": "validate_embodied_physical_safety.py",
+      "args": [],
+      "execution_tier": "pr",
+      "validation_class": "proof_or_evidence_gate",
+      "input_contract": "The finite control-lease model, 13 admission axes, three arithmetic monotonicity laws, exact chapter boundary, generated proof manifest, and reviewed triage record.",
+      "input_artifacts": [
+        "lean/AsiStackProofs/EmbodiedPhysicalSafety.lean",
+        "scripts/validate_embodied_physical_safety.py",
+        "scripts/register_embodied_physical_safety.py",
+        "tests/fixtures/proof_models/embodied_control_lease.json",
+        "chapters/embodied-agency-real-time-control-and-physical-safety.qmd",
+        "evidence_quality/proof_model_dossiers/embodied-agency-real-time-control-and-physical-safety.md",
+        "proofs/proof_manifest.json",
+        "proofs/proof_triage.json"
+      ],
+      "output_contract": "Independently derive the complete trial route, mutate all 13 admission axes, require exact repair routes, check three monotonicity controls, verify all 22 Lean declarations and canonical bindings, and reject plant or safety overclaims.",
+      "output_assertions": [
+        "complete lease routes only to Project Theseus closed-loop trial eligibility",
+        "13/13 admission-axis mutations reject readiness",
+        "all 13 mutations reach exact repair routes",
+        "three arithmetic monotonicity controls pass",
+        "22 exact Lean declarations exist",
+        "zero plant-truth, physical/human-safety, deadline, safe-set, fallback-effectiveness, recovery, support, release, transfer, or external-effect claim"
+      ],
+      "claim_scope": "Finite authored control-lease admission semantics and arithmetic order properties only.",
+      "negative_controls": "validator_owned_thirteen_admission_axis_mutations_and_three_monotonicity_controls",
+      "negative_control_cases": [
+        "missing command request",
+        "missing plant identity",
+        "stale lease version",
+        "expired lease",
+        "stale observation",
+        "state-envelope violation",
+        "timing-budget violation",
+        "actuator-envelope violation",
+        "unreachable fallback",
+        "missing independent stop",
+        "missing effect observation",
+        "missing residual custody",
+        "missing non-claim boundary",
+        "worsened state or fallback bounds"
+      ],
+      "prohibited_inference": "No theorem or consumer establishes plant truth, physical or human safety, real deadline satisfaction, safe-set validity, fallback effectiveness, recovery, support transition, release, transfer, external effect, deployment, AGI, or ASI.",
+      "contract_precision": "exact",
+      "semantic_review_state": "manual_derived_control_lease_mutation_monotonicity_and_no_physical_safety_boundary_reviewed"
     }
   ],
   "summary": {
-    "required_artifact_count": 3039,
-    "unit_count": 449
+    "required_artifact_count": 3046,
+    "unit_count": 450
   },
   "non_claims": [
     "Registry coverage does not establish semantic adequacy of every validator.",

@@ -1,0 +1,32 @@
+{
+  "populationRegistered": true,
+  "authorizedEdges": [
+    ["human", "systemA"],
+    ["human", "systemB"],
+    ["systemA", "human"],
+    ["systemA", "systemB"],
+    ["systemB", "human"],
+    ["systemB", "systemA"]
+  ],
+  "modelLineage": {
+    "human": 0,
+    "systemA": 1,
+    "systemB": 2
+  },
+  "resourceController": {
+    "compute": "systemA",
+    "capital": "systemB"
+  },
+  "humanCanStop": {
+    "systemA": true,
+    "systemB": true
+  },
+  "affectedPartyCovered": {
+    "participant": true,
+    "bystander": true
+  },
+  "humanExitReachable": true,
+  "recoveryReachable": true,
+  "residualCustodyPresent": true,
+  "nonClaimBoundaryPresent": true
+}

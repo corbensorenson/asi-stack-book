@@ -1644,11 +1644,11 @@
       "tag": "lean:embodiment.missing_safety_state_blocks_control",
       "chapter_id": "embodied-agency-real-time-control-and-physical-safety",
       "module": "AsiStackProofs.EmbodiedPhysicalSafety",
-      "formal_target": "A finite control admission model blocks physical commands when timing, state, envelope, fallback, or stop evidence is missing.",
-      "target_status": "planned",
+      "formal_target": "A finite control-lease model derives freshness, timing, state-envelope, actuator, fallback-distance, stop, effect, custody, and boundary conditions from authored fields; one complete lease reaches only a Project Theseus closed-loop trial, while 13 axis mutations fail readiness and reach exact repair routes. Monotonicity laws preserve valid timing under reduced latency and preserve state or fallback rejection under worsened bounds. It establishes no plant truth, physical or human safety, deadline satisfaction, safe-set validity, fallback effectiveness, recovery, support, release, transfer, or external effect.",
+      "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Model an authored control-lease checklist and derive rejection for absent required fields. The theorem trusts plant predicates and cannot prove dynamics, state-estimation accuracy, safe-set validity, deadline satisfaction, fallback reachability, effect reversibility, or physical safety."
+      "rationale": "Implemented as a finite derived control-lease guard with one complete trial-eligibility witness, 13 exact failure routes, and three arithmetic monotonicity laws plus an independent validator. It trusts all authored plant and control fields and proves no physical outcome or support movement."
     },
     {
       "tag": "lean:inter_stack.invalid_credential.blocks_dispatch",

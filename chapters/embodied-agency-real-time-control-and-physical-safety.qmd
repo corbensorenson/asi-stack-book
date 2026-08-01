@@ -4,7 +4,7 @@ chapter_id: "embodied-agency-real-time-control-and-physical-safety"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 concept-complete argument-level manuscript"
-last_updated: "2026-07-28"
+last_updated: "2026-08-01"
 primary_sources:
   - "cognitive_loop_closure"
   - "rmi"
@@ -32,7 +32,7 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source loading state | Two passage-reviewed Corben architecture sources supply hierarchical embodied logging and reflex-data policy, and five external records cover generalist robotics, foundation-model physical risks, barrier-function safety filters, independent runtime fallback, and safe-RL taxonomy. No local physical or logging result is claimed. |
-| Test state | Simulation-to-low-energy-hardware campaign specified; no plant, controller, fault, or person observed. |
+| Test state | A 22-declaration finite control-lease model and independent 13-axis mutation validator pass locally; the Project Theseus closed-loop and simulation-to-low-energy-hardware campaigns remain unrun, with no plant, controller, fault, or person observed. |
 
 ## Drafting guardrail
 
@@ -505,20 +505,53 @@ establishes dominance, physical safety, or general embodied competence.
 
 ## Codex test plan
 
-### Planned formalization
+### Formalization hooks
 
-`lean:embodiment.missing_safety_state_blocks_control` will reject a finite
-control lease missing required timing, state, envelope, fallback, or stop
-evidence. It will trust the authored predicates and cannot establish plant
-dynamics, safe-set validity, deadline satisfaction, recovery, or physical safety.
+**Implemented finite control-lease model.**
+
+`lean:embodiment.missing_safety_state_blocks_control` is implemented in
+`AsiStackProofs.EmbodiedPhysicalSafety` with 22 theorem declarations in a finite
+control-lease model. A complete authored lease derives current-version and
+expiry checks, observation freshness, state and actuator envelopes, timing
+budget, fallback stopping distance, independent stop, effect observation,
+residual custody, and a non-claim boundary. Its only successful route is
+eligibility for a Project Theseus closed-loop trial, not permission to actuate a
+physical plant.
+
+Thirteen independently checkable admission-axis mutations each fail readiness,
+reach their exact repair route, and cannot reach trial eligibility. Three
+arithmetic monotonicity laws establish that reducing latency preserves an
+already-valid timing budget, lowering an already-unsafe estimated lower bound
+cannot restore the state envelope, and increasing an already-infeasible stop-
+distance bound cannot restore fallback reachability. The independent Python
+consumer re-encodes those decisions instead of reading a copied Lean summary.
+
+The formalization does not prove physical safety. The model trusts every
+authored plant, estimator, controller, timing, effect,
+custody, and boundary field. It establishes no plant truth, physical or human
+safety, real deadline satisfaction, safe-set validity, fallback effectiveness,
+recovery, support movement, release, transfer, or external effect. Chapter support remains `argument`.
 
 | Test | Purpose | Status |
 |---|---|---|
+| Derived control-lease admission guard | Recompute the positive route, all 13 exact failure routes, and three arithmetic monotonicity controls independently of Lean. | implemented and passed locally |
 | Deadline and jitter injection | Verify late control narrows authority before unsafe state. | planned |
 | State and actuator fault suite | Detect wrong estimates, saturation, desynchronization, and unavailable fallback. | planned |
 | Independent stop-path test | Demonstrate stop reachability under advanced-controller and communication failure. | planned |
 | Simulation-to-hardware equivalence audit | Record every assumption that fails to transfer. | planned |
 | Irreversible-effect accounting | Reject software rollback as physical recovery. | planned |
+
+### Project Theseus closed-loop campaign handoff
+
+Project Theseus must replace the model's authored fields with measured plant,
+estimator, scheduler, actuator, fallback, stop, and effect traces. The first
+bounded campaign should compare a competent conventional controller, an
+advanced controller, and the governed lease under matched timing, state-error,
+saturation, sensor-loss, fallback, communication-loss, and irreversible-effect
+faults. It must keep failed controls, missed deadlines, nuisance stops, damage,
+and recovery residuals in the denominator. Only that executable campaign can
+test whether the formal admission boundary corresponds to real closed-loop
+behavior; this Lean result does not move a support state.
 
 ## Source crosswalk
 

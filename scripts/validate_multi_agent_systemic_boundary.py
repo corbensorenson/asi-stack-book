@@ -17,6 +17,7 @@ MANIFEST = ROOT / "proofs" / "proof_manifest.json"
 TRIAGE = ROOT / "proofs" / "proof_triage.json"
 STRUCTURE = ROOT / "book_structure.json"
 OUTLINE = ROOT / "docs" / "book_outline.md"
+FIXTURE = ROOT / "tests" / "fixtures" / "proof_models" / "multi_agent_population.json"
 
 TAG = "lean:multi_agent.pairwise_validity_no_systemic_promotion"
 MODULE = "AsiStackProofs.MultiAgentDynamics"
@@ -46,6 +47,14 @@ def complete_record() -> dict[str, Any]:
         "residualCustodyPresent": True,
         "nonClaimBoundaryPresent": True,
     }
+
+
+def fixture_record() -> dict[str, Any]:
+    fixture = load(FIXTURE)
+    fixture["pairwiseAuthorized"] = {
+        tuple(edge): True for edge in fixture.pop("authorizedEdges")
+    }
+    return fixture
 
 
 def pairwise_only_record() -> dict[str, Any]:
@@ -177,12 +186,14 @@ def fail(errors: list[str]) -> None:
 
 def main() -> None:
     errors: list[str] = []
-    for path in (LEAN, LEAN_ROOT, CHAPTER, DOSSIER, MANIFEST, TRIAGE, STRUCTURE, OUTLINE):
+    for path in (LEAN, LEAN_ROOT, CHAPTER, DOSSIER, MANIFEST, TRIAGE, STRUCTURE, OUTLINE, FIXTURE):
         if not path.exists():
             errors.append(f"missing {path.relative_to(ROOT)}")
     fail(errors)
 
-    complete = complete_record()
+    complete = fixture_record()
+    if complete != complete_record():
+        errors.append("public population fixture drifted from the closed Lean witness")
     pairwise_only = pairwise_only_record()
     if len(DISTINCT_EDGES) != 6 or not pairwise_valid(complete) or not pairwise_valid(pairwise_only):
         errors.append("both witnesses must preserve all six directed pairwise authorizations")

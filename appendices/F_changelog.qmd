@@ -1,5 +1,22 @@
 # Changelog
 
+## 2026-08-01 - Finite embodied control-lease admission
+
+- Implemented `lean:embodiment.missing_safety_state_blocks_control` as a finite
+  derived control-lease guard over current lease state, observation freshness,
+  state and actuator envelopes, timing, fallback stopping distance, independent
+  stop, effect observation, residual custody, and a non-claim boundary.
+- Added 22 Lean declarations: one complete lease reaches only Project Theseus
+  closed-loop trial eligibility, 13 admission-axis mutations fail readiness and
+  reach exact repair routes, and three arithmetic laws preserve timing validity
+  or rejection under monotone changes. An independent validator re-encodes all
+  decisions rather than consuming a copied Lean summary.
+- Preserved the physical-evidence boundary. The model trusts every authored
+  plant and control field and establishes no plant truth, physical or human
+  safety, deadline satisfaction, safe-set validity, fallback effectiveness,
+  recovery, support movement, release, transfer, or external effect. Chapter
+  support remains `argument`.
+
 ## 2026-08-01 - Pairwise evidence and systemic-readiness separation
 
 - Implemented `lean:multi_agent.pairwise_validity_no_systemic_promotion` as a
@@ -10,7 +27,7 @@
   the pairwise matrix can exactly recover full campaign readiness. Every
   systemic-axis omission preserves pairwise validity, fails readiness, and
   reaches its exact repair route.
-- Current proof-depth snapshot: 324 proof targets, 113 Lean modules, 1354 theorem declarations, 879 derived/decomposed, 185 direct/projection, 290 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Current proof-depth snapshot: 324 proof targets, 113 Lean modules, 1376 theorem declarations, 898 derived/decomposed, 186 direct/projection, 292 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - Kept the result at its formal boundary. The successful route admits only a
   Project Theseus population campaign; no theorem establishes cooperation,
   non-collusion, systemic safety, effective human agency, institutional

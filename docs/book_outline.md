@@ -4299,7 +4299,7 @@ Cross-chapter partitioned-authority proof note: the partitioned-authority fixtur
 
 Stable ID: `embodied-agency-real-time-control-and-physical-safety`
 
-Concept-completion state (2026-07-28): eight owner-specific mechanisms are written and exact-digest reviewed at argument support; controller stability, sim-to-real transfer, intervention efficacy, and deployed physical safety remain unproved.
+Concept-completion state (2026-08-01): eight owner-specific mechanisms are written and exact-digest reviewed at argument support. The 22-declaration finite control-lease model and independent 13-axis mutation validator are implemented; controller stability, sim-to-real transfer, intervention efficacy, and deployed physical safety remain unproved.
 
 Chapter job: Own the transition from an authorized decision to deadline-bound
 physical actuation under uncertain dynamics, independent interlocks, fallback
@@ -4352,7 +4352,7 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:embodiment.missing_safety_state_blocks_control` | `AsiStackProofs.EmbodiedPhysicalSafety` | A finite control admission model blocks physical commands when timing, state, envelope, fallback, or stop evidence is missing. | planned |
+| `lean:embodiment.missing_safety_state_blocks_control` | `AsiStackProofs.EmbodiedPhysicalSafety` | A finite control-lease model derives freshness, timing, state-envelope, actuator, fallback-distance, stop, effect, custody, and boundary conditions from authored fields; one complete lease reaches only a Project Theseus closed-loop trial, while 13 axis mutations fail readiness and reach exact repair routes. Monotonicity laws preserve valid timing under reduced latency and preserve state or fallback rejection under worsened bounds. It establishes no plant truth, physical or human safety, deadline satisfaction, safe-set validity, fallback effectiveness, recovery, support, release, transfer, or external effect. | implemented |
 
 ### Inter-Stack Protocols, Identity, and Economic Exchange
 
@@ -6167,7 +6167,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 298 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 298 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 324 proof targets, 113 Lean modules, 1354 theorem declarations, 879 derived/decomposed, 185 direct/projection, 290 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 324 proof targets, 113 Lean modules, 1376 theorem declarations, 898 derived/decomposed, 186 direct/projection, 292 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.

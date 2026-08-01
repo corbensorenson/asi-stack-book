@@ -266,6 +266,80 @@ for theorem_name in (
     }
 
 for theorem_name, rationale in {
+    "complete_control_lease_is_ready":
+        "The closed complete lease witnesses the derived finite admissibility predicate.",
+    "complete_control_lease_routes_only_to_theseus_trial":
+        "The closed complete lease reaches only trial eligibility, not physical actuation authority.",
+}.items():
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/EmbodiedPhysicalSafety.lean::{theorem_name}"
+    ] = {
+        "disposition": "retain",
+        "semantic_level": "P2",
+        "witness_refs": [f"lean-theorem:{theorem_name}"],
+        "classification_basis": [
+            "a closed control lease witnesses one derived finite admission result"
+        ],
+        "rationale": rationale,
+    }
+
+for theorem_name, rationale in {
+    "every_control_axis_omission_blocks_readiness":
+        "Universal finite case analysis shows all 13 admission-axis omissions reject readiness.",
+    "every_control_axis_omission_reaches_exact_repair_route":
+        "Universal finite case analysis binds all 13 omissions to their exact repair routes.",
+    "every_control_axis_omission_blocks_trial_eligibility":
+        "Universal finite case analysis prevents every omission from reaching trial eligibility.",
+    "reduced_latency_preserves_timing_validity":
+        "Natural-number order proves an already-valid timing budget remains valid when latency decreases.",
+    "lower_state_violation_persists_under_downward_widening":
+        "Natural-number order proves lowering an already-unsafe estimate cannot restore the state envelope.",
+    "fallback_distance_violation_persists_when_bound_grows":
+        "Natural-number order proves increasing an infeasible stopping-distance bound cannot restore fallback reachability.",
+}.items():
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/EmbodiedPhysicalSafety.lean::{theorem_name}"
+    ] = {
+        "disposition": "retain",
+        "semantic_level": "P3",
+        "witness_refs": ["lean-theorem:complete_control_lease_is_ready"],
+        "classification_basis": [
+            "a quantified mutation family or arithmetic monotonicity law constrains the finite model"
+        ],
+        "rationale": rationale,
+    }
+
+for theorem_name in (
+    "admissible_control_lease_is_ready",
+    "readiness_requires_command_request",
+    "readiness_requires_plant_identity",
+    "readiness_requires_current_lease_version",
+    "readiness_requires_unexpired_lease",
+    "readiness_requires_fresh_observation",
+    "readiness_requires_state_envelope",
+    "readiness_requires_timing_budget",
+    "readiness_requires_actuator_envelope",
+    "readiness_requires_reachable_fallback",
+    "readiness_requires_independent_stop",
+    "readiness_requires_effect_observation",
+    "readiness_requires_residual_custody",
+    "readiness_requires_non_claim_boundary",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/EmbodiedPhysicalSafety.lean::{theorem_name}"
+    ] = {
+        "disposition": "retain",
+        "semantic_level": "P1",
+        "classification_basis": [
+            "a universal finite predicate bridge or projection exposes one necessary admission condition"
+        ],
+        "rationale": (
+            "The theorem decomposes the authored finite lease predicate; it establishes no field truth "
+            "or physical outcome."
+        ),
+    }
+
+for theorem_name, rationale in {
     "complete_work_contract_reaches_dispatch_ready":
         "The closed complete contract witnesses reachability of dispatch readiness without executing work.",
     "missing_work_objective_reaches_repair":
@@ -563,6 +637,9 @@ LEGACY_VALIDATOR_ALIASES = {
     },
     "lean/AsiStackProofs/MultiAgentDynamics.lean": {
         "validate_multi_agent_systemic_boundary.py"
+    },
+    "lean/AsiStackProofs/EmbodiedPhysicalSafety.lean": {
+        "validate_embodied_physical_safety.py"
     },
     "lean/AsiStackProofs/TheseusReference.lean": {"validate_theseus_report.py"},
     "lean/AsiStackProofs/CyclicMixers.lean": {"validate_circle_cyclic_mixer_receipt_slice.py"},
