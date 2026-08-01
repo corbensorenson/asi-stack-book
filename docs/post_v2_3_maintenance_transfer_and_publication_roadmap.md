@@ -4155,8 +4155,8 @@ without imposing a broadcast loudness target on YouTube.
 `visual_edition/manim_v2_production_ledger.json` derives all 84 targets in
 canonical order across the 5/7/72 cohorts. Three schemas and a registered
 validator make the beat, review, predecessor, gate, receipt, YouTube, and
-Quarto transitions fail closed. The ledger currently records 81 planned
-chapters, three chapters through animatic, and three through picture-and-sound
+Quarto transitions fail closed. The ledger currently records 80 planned
+chapters, four chapters through animatic, and three through picture-and-sound
 lock. Chapter 1 turns a
 duplicate-file deletion request into a persistent proposal, authority,
 observation, mismatch, and rollback trace. Chapter 2 turns one invoice into a
@@ -4165,9 +4165,14 @@ fallback, verification, repair, and maintenance enter the same accounting
 boundary. Chapter 3 turns one flawless refund into an authority-envelope trace
 across scoped read, transform, disclosure denial, narrow approval, effect
 custody, confused-deputy substitution, expiry, revocation, replacement, and
-the exact evidence ceiling. Together they carry 73 audio-derived beats, original
+the exact evidence ceiling. Chapter 4 rewinds one apparently successful
+deployment through goal misbinding, stale context, authority expansion,
+evaluator capture, purpose-free execution, residual laundering, and
+self-ratification before binding the joined trace to custody, recovery,
+recurrence, detector evaluation, and a hard evidence ceiling. Together they
+carry 97 audio-derived beats, original
 chapter-specific scenes, balanced captions, descriptive transcripts, custom
-thumbnails, 219 exact beat samples across animatic and delivery review, and
+thumbnails, 291 exact beat samples across animatic and delivery review, and
 per-dimension experience passes without average laundering. The rejected
 Chapter 1 animatic remains preserved as generation history. All three delivery
 masters remain candidates only: zero generation-2 chapters have passed
