@@ -13,11 +13,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 | Metric | Value |
 |---|---:|
 | Proof targets in manifest | 324 |
-| Lean modules scanned | 113 |
-| Theorem declarations classified | 1376 |
-| Direct/projection-style theorem declarations | 186 |
-| Derived/decomposed theorem declarations | 898 |
-| Unknown or mixed theorem declarations | 292 |
+| Lean modules scanned | 114 |
+| Theorem declarations classified | 1396 |
+| Direct/projection-style theorem declarations | 187 |
+| Derived/decomposed theorem declarations | 913 |
+| Unknown or mixed theorem declarations | 296 |
 | Safety-critical theorem declarations | 73 |
 | Safety-critical direct/projection declarations | 1 |
 | Safety-critical chapter classifications present | 1/1 |
@@ -81,6 +81,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ContextTransactions.lean` | unmapped | 0 | 17 | 0 | 17 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/Corrigibility.lean` | constitutional-alignment-substrate | 1 | 4 | 0 | 4 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/CyclicMixers.lean` | coilra-multicoil-rope-and-cyclic-mixers | 2 | 5 | 0 | 5 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/DangerousCapabilityReview.lean` | dangerous-capability-domains-and-misuse-uplift | 1 | 20 | 1 | 15 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/DataEngineLifecycleRefinement.lean` | data-engines-continual-learning-and-unlearning | 15 | 5 | 0 | 2 | 3 | manual review |
 | `lean/AsiStackProofs/DataEngines.lean` | unmapped | 0 | 15 | 0 | 15 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/Deliberation.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
@@ -113,7 +114,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/MoECOTRuntime.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ModelWeightCustody.lean` | model-weight-custody-and-hardware-roots-of-trust | 8 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/MultiAgentDynamics.lean` | multi-agent-dynamics-collective-intelligence-and-systemic-risk | 1 | 22 | 2 | 14 | 6 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/NoDeferralAdmission.lean` | adversarial-machine-learning-and-model-attack-surface, ai-deployment-transition-distribution-and-human-agency, autonomous-replication-proliferation-and-containment, confidential-and-verifiable-ai-computation, content-authenticity-watermarking-and-synthetic-media-integrity, dangerous-capability-domains-and-misuse-uplift, durable-semantic-memory-and-knowledge-lattices, governed-objective-formation-value-learning-and-goal-integrity, human-ai-communication-persuasion-and-epistemic-security, human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty, institutions-international-coordination-and-public-legitimacy, learning-theory-generalization-and-scaling-science, military-ai-autonomous-weapons-and-strategic-stability, open-weight-release-and-post-release-control, physical-compute-infrastructure-energy-and-environmental-constraints, relational-dimension-compilation-and-polyadic-cognition, scientific-discovery-and-experimental-governance, societal-resilience-and-misuse-defense | 18 | 0 | 0 | 0 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/NoDeferralAdmission.lean` | adversarial-machine-learning-and-model-attack-surface, ai-deployment-transition-distribution-and-human-agency, autonomous-replication-proliferation-and-containment, confidential-and-verifiable-ai-computation, content-authenticity-watermarking-and-synthetic-media-integrity, durable-semantic-memory-and-knowledge-lattices, governed-objective-formation-value-learning-and-goal-integrity, human-ai-communication-persuasion-and-epistemic-security, human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty, institutions-international-coordination-and-public-legitimacy, learning-theory-generalization-and-scaling-science, military-ai-autonomous-weapons-and-strategic-stability, open-weight-release-and-post-release-control, physical-compute-infrastructure-energy-and-environmental-constraints, relational-dimension-compilation-and-polyadic-cognition, scientific-discovery-and-experimental-governance, societal-resilience-and-misuse-defense | 17 | 0 | 0 | 0 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ObservationTrust.lean` | perception-sensor-fusion-and-observation-trust | 2 | 16 | 5 | 7 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/OpenEndedImprovement.lean` | unmapped | 0 | 7 | 0 | 7 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/OpenEndedImprovementRefinement.lean` | open-ended-improvement-engines | 7 | 5 | 0 | 2 | 3 | manual review |
@@ -532,6 +533,26 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/CyclicMixers.lean` | `cyclic_mixer_claim_missing_claim_partition_rejected` | derived_or_decomposed | no | uses cases, contradiction, rw, unfold |
 | `lean/AsiStackProofs/CyclicMixers.lean` | `cyclic_substrate_promotion_without_baselines_or_tradeoffs_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/CyclicMixers.lean` | `hardware_mismatch_without_refusal_path_rejected` | derived_or_decomposed | no | uses contradiction, have, rw, unfold |
+| `lean/AsiStackProofs/DangerousCapabilityReview.lean` | `admissible_dossier_is_ready` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/DangerousCapabilityReview.lean` | `aggregate_score_cannot_recover_component_sensitive_review` | derived_or_decomposed | no | uses contradiction, have, rw, simp |
+| `lean/AsiStackProofs/DangerousCapabilityReview.lean` | `attempt_shortfall_persists_when_retention_decreases` | derived_or_decomposed | no | uses omega, unfold |
+| `lean/AsiStackProofs/DangerousCapabilityReview.lean` | `campaign_eligibility_requires_admissible_dossier` | derived_or_decomposed | no | uses have |
+| `lean/AsiStackProofs/DangerousCapabilityReview.lean` | `complete_dossier_is_ready` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/DangerousCapabilityReview.lean` | `complete_dossier_reaches_only_harmless_analogue_campaign` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/DangerousCapabilityReview.lean` | `equal_aggregate_score_can_hide_distinct_outcome_vectors` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/DangerousCapabilityReview.lean` | `equal_aggregate_score_can_require_opposite_component_reviews` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/DangerousCapabilityReview.lean` | `every_admission_axis_mutation_blocks_campaign_eligibility` | derived_or_decomposed | no | uses cases |
+| `lean/AsiStackProofs/DangerousCapabilityReview.lean` | `every_admission_axis_mutation_blocks_readiness` | derived_or_decomposed | no | uses cases |
+| `lean/AsiStackProofs/DangerousCapabilityReview.lean` | `every_admission_axis_mutation_reaches_exact_repair` | derived_or_decomposed | no | uses cases |
+| `lean/AsiStackProofs/DangerousCapabilityReview.lean` | `expired_dossier_remains_expired_when_time_advances` | derived_or_decomposed | no | uses omega, unfold |
+| `lean/AsiStackProofs/DangerousCapabilityReview.lean` | `readiness_requires_baselines` | derived_or_decomposed | no | uses have |
+| `lean/AsiStackProofs/DangerousCapabilityReview.lean` | `readiness_requires_custody_and_currentness` | derived_or_decomposed | no | uses have |
+| `lean/AsiStackProofs/DangerousCapabilityReview.lean` | `readiness_requires_identity_review` | derived_or_decomposed | no | uses have |
+| `lean/AsiStackProofs/DangerousCapabilityReview.lean` | `readiness_requires_instrument_competence` | derived_or_decomposed | no | uses have |
+| `lean/AsiStackProofs/DangerousCapabilityReview.lean` | `readiness_requires_non_authorizing_boundary` | derived_or_decomposed | no | uses have |
+| `lean/AsiStackProofs/DangerousCapabilityReview.lean` | `readiness_requires_threat_review` | derived_or_decomposed | no | uses have |
+| `lean/AsiStackProofs/DangerousCapabilityReview.lean` | `review_run_preserves_stage_invariant` | derived_or_decomposed | no | uses induction, simp |
+| `lean/AsiStackProofs/DangerousCapabilityReview.lean` | `review_step_preserves_stage_invariant` | derived_or_decomposed | no | uses cases, omega, simp, split |
 | `lean/AsiStackProofs/DataEngineLifecycleRefinement.lean` | `accepted_event_increments_receipt_count` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/DataEngineLifecycleRefinement.lean` | `data_engine_axis_laundering_blocks_custody_and_readmission` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/DataEngineLifecycleRefinement.lean` | `data_engine_full_cycle_composes` | unknown_or_mixed | no | no recognized depth pattern |

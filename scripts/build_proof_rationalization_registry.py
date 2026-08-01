@@ -115,6 +115,29 @@ external effect, deployment, AGI, or ASI. Chapter support remains `argument`
 and `support_state_effect` remains `none`.
 
 """,
+    "dangerous-capability-domains-and-misuse-uplift": """## Current refinement
+
+`AsiStackProofs.DangerousCapabilityReview` implements a seven-stage finite
+pre-campaign review over exact identity, threat, domain, cohort, expertise,
+baseline, elicitation, control, attempt, outcome-axis, evaluator, custody,
+uncertainty, expiry, maximum-inference, residual, non-claim, and non-authority
+fields. One complete dossier reaches only a Project Theseus harmless-analogue
+campaign. All 29 admission-axis mutations fail readiness and reach exact repair
+or refusal routes; two arithmetic monotonicity laws preserve expiry and attempt-
+shortfall rejection under adverse changes.
+
+Two same-total witnesses require opposite component-sensitive review decisions,
+and a universal theorem proves that no classifier restricted to the aggregate
+score is exact for every modeled outcome vector. The independently encoded
+consumer reconstructs the route, mutation, arithmetic, and scalar-collision
+surfaces from a generic public fixture. Authored fields remain assumptions: no
+result truth, dangerous capability, uplift, safeguard efficacy, harm, safety,
+threshold, support, release, transfer, or external effect follows. Chapter
+support remains `argument` and `support_state_effect` remains `none`.
+
+The independent consumer checks 29 exact mutation routes, two arithmetic monotonicity controls, and one aggregate-score impossibility result.
+
+""",
     "embodied-agency-real-time-control-and-physical-safety": """## Current refinement
 
 `AsiStackProofs.EmbodiedPhysicalSafety` implements a finite control-lease

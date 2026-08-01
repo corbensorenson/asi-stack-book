@@ -3,8 +3,8 @@
   "note": "Generated from Lean proof target tables in docs/book_outline.md. Edit the outline, not this file.",
   "proof_target_count": 324,
   "status_counts": {
-    "implemented": 306,
-    "planned": 18
+    "implemented": 307,
+    "planned": 17
   },
   "chapter_counts": {
     "adversarial-evaluation-sandbagging-and-training-time-deception": 8,
@@ -257,11 +257,11 @@
       "chapter_id": "dangerous-capability-domains-and-misuse-uplift",
       "chapter_title": "Dangerous Capability Domains and Misuse Uplift",
       "tag": "lean:dangerous-capability-domains-and-misuse-uplift.admission_boundary",
-      "module": "AsiStackProofs.NoDeferralAdmission",
-      "formal_target": "A finite dangerous-capability dossier may hand off only when model, threat, cohort, access, evaluator, uncertainty, expiry, and maximum inference are present; no theorem establishes dangerous capability or safety.",
-      "status": "planned",
+      "module": "AsiStackProofs.DangerousCapabilityReview",
+      "formal_target": "A seven-stage finite dossier review preserves accumulated identity, threat, baseline, instrument, custody, and non-authorizing boundary obligations; one complete authored record reaches only a Project Theseus harmless-analogue campaign, while 29 admission-axis mutations reach exact repair or refusal states. Expiry and attempt shortfall remain rejecting under adverse monotone changes, and equal aggregate scores cannot recover a component-sensitive review rule. No theorem establishes dangerous capability, actor uplift, safeguard efficacy, realized harm, safety, support, release, transfer, or external effect.",
+      "status": "implemented",
       "outline_line": 765,
-      "module_path": "lean/AsiStackProofs/NoDeferralAdmission.lean"
+      "module_path": "lean/AsiStackProofs/DangerousCapabilityReview.lean"
     },
     {
       "chapter_id": "military-ai-autonomous-weapons-and-strategic-stability",

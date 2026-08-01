@@ -11,9 +11,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | Metric | Value |
 |---|---:|
 | Proof targets audited | 324 |
-| Manifest status counts | {"implemented": 306, "planned": 18} |
-| Triage class counts | {"formal-invariant": 306, "process-contract": 18} |
-| Lean modules referenced | 79 |
+| Manifest status counts | {"implemented": 307, "planned": 17} |
+| Triage class counts | {"formal-invariant": 307, "process-contract": 17} |
+| Lean modules referenced | 80 |
 | Chapters with proof targets | 84 |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -50,6 +50,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/ContextTransactionRefinement.lean` | 4 | 20 | 0 | 18 | 2 |
 | `lean/AsiStackProofs/Corrigibility.lean` | 1 | 4 | 0 | 6 | 2 |
 | `lean/AsiStackProofs/CyclicMixers.lean` | 2 | 5 | 0 | 5 | 5 |
+| `lean/AsiStackProofs/DangerousCapabilityReview.lean` | 1 | 20 | 0 | 20 | 2 |
 | `lean/AsiStackProofs/DataEngineLifecycleRefinement.lean` | 15 | 5 | 15 | 10 | 2 |
 | `lean/AsiStackProofs/DeliberationRefinement.lean` | 10 | 11 | 0 | 12 | 3 |
 | `lean/AsiStackProofs/Efficiency.lean` | 2 | 2 | 0 | 3 | 2 |
@@ -136,7 +137,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `constitutional-alignment-substrate` | 6 | 6 | 0 | 0 |
 | `content-authenticity-watermarking-and-synthetic-media-integrity` | 1 | 0 | 0 | 0 |
 | `context-transactions-snapshots-mounts-and-taint` | 4 | 4 | 0 | 0 |
-| `dangerous-capability-domains-and-misuse-uplift` | 1 | 0 | 0 | 0 |
+| `dangerous-capability-domains-and-misuse-uplift` | 1 | 1 | 0 | 0 |
 | `data-engines-continual-learning-and-unlearning` | 15 | 15 | 0 | 0 |
 | `durable-semantic-memory-and-knowledge-lattices` | 1 | 0 | 0 | 0 |
 | `embodied-agency-real-time-control-and-physical-safety` | 1 | 1 | 0 | 0 |
@@ -220,7 +221,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:failure.recurrence.escalation_route` | `failure-modes-of-ungoverned-intelligence` | `AsiStackProofs.FailureModes` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:failure.taxonomy.detector_probe_bridge` | `failure-modes-of-ungoverned-intelligence` | `AsiStackProofs.FailureModes` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:failure.recovery.closed_loop_refinement` | `failure-modes-of-ungoverned-intelligence` | `AsiStackProofs.FailureRecoveryRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:dangerous-capability-domains-and-misuse-uplift.admission_boundary` | `dangerous-capability-domains-and-misuse-uplift` | `AsiStackProofs.NoDeferralAdmission` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
+| `lean:dangerous-capability-domains-and-misuse-uplift.admission_boundary` | `dangerous-capability-domains-and-misuse-uplift` | `AsiStackProofs.DangerousCapabilityReview` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:military-ai-autonomous-weapons-and-strategic-stability.admission_boundary` | `military-ai-autonomous-weapons-and-strategic-stability` | `AsiStackProofs.NoDeferralAdmission` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
 | `lean:evidence.support_state.operational_invariant` | `evidence-states-and-claim-discipline` | `AsiStackProofs.EvidenceTransitionRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:evidence.support_state.failure_blocks_promotion` | `evidence-states-and-claim-discipline` | `AsiStackProofs.EvidenceStates` | triage ok; module ok; chapter tag ok; limitation ok |

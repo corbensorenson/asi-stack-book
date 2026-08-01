@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-08-01 - Dangerous-capability dossier review and scalar non-identifiability
+
+- Implemented
+  `lean:dangerous-capability-domains-and-misuse-uplift.admission_boundary`
+  as a seven-stage finite pre-campaign dossier review with accumulated identity,
+  threat, baseline, instrument, custody, and non-authorizing boundary invariants.
+- Added 20 Lean declarations and an independently encoded generic fixture
+  consumer. One complete record reaches only Project Theseus harmless-analogue
+  campaign eligibility; 29 admission-axis mutations reach exact repair or
+  refusal states; expiry and attempt shortfall remain rejecting under adverse
+  monotone changes.
+- Added a universal non-identifiability result: two distinct
+  capability/propensity/bypass/uplift/harm vectors can have the same aggregate
+  score but require opposite component-sensitive review decisions, so no
+  classifier restricted to the scalar is exact for every modeled vector.
+- Preserved the evidence boundary. Authored fields are assumptions, and no
+  theorem establishes dangerous capability, uplift, safeguard efficacy, harm,
+  safety, threshold crossing, support movement, release, transfer, or external
+  effect. Chapter support remains `argument`.
+
 ## 2026-08-01 - Finite embodied control-lease admission
 
 - Implemented `lean:embodiment.missing_safety_state_blocks_control` as a finite
@@ -27,7 +47,7 @@
   the pairwise matrix can exactly recover full campaign readiness. Every
   systemic-axis omission preserves pairwise validity, fails readiness, and
   reaches its exact repair route.
-- Current proof-depth snapshot: 324 proof targets, 113 Lean modules, 1376 theorem declarations, 898 derived/decomposed, 186 direct/projection, 292 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Current proof-depth snapshot: 324 proof targets, 114 Lean modules, 1396 theorem declarations, 913 derived/decomposed, 187 direct/projection, 296 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - Kept the result at its formal boundary. The successful route admits only a
   Project Theseus population campaign; no theorem establishes cooperation,
   non-collusion, systemic safety, effective human agency, institutional

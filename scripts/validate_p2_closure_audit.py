@@ -22,8 +22,8 @@ MAINTENANCE_STATUS = ROOT / "roadmap_records" / "post_v2_3_maintenance_transfer_
 
 HISTORICAL_PROOF_TARGET_COUNT = 298
 CURRENT_PROOF_TARGET_COUNT = 324
-CURRENT_IMPLEMENTED_TARGET_COUNT = 306
-CURRENT_PLANNED_TARGET_COUNT = 18
+CURRENT_IMPLEMENTED_TARGET_COUNT = 307
+CURRENT_PLANNED_TARGET_COUNT = 17
 CURRENT_RATIONALIZATION_PLANNED_TARGET_COUNT = 0
 HISTORICAL_EXPECTED_CLASSES = {
     "adequate finite-record invariant": 73,
@@ -34,9 +34,9 @@ HISTORICAL_EXPECTED_CLASSES = {
     "research-agenda until artifact import": 2,
 }
 CURRENT_EXPECTED_CLASSES = {
-    "adequate finite-record invariant": 70,
+    "adequate finite-record invariant": 71,
     "useful but too narrow": 160,
-    "needs richer state-machine or review semantics": 33,
+    "needs richer state-machine or review semantics": 32,
     "needs executable tests first": 38,
     "needs empirical or baseline tests first": 21,
     "research-agenda until artifact import": 2,
@@ -112,6 +112,7 @@ PLANNED_CHAPTERS = (
     "human-ai-organizations-delegation-and-accountability",
     "multi-agent-dynamics-collective-intelligence-and-systemic-risk",
     "embodied-agency-real-time-control-and-physical-safety",
+    "dangerous-capability-domains-and-misuse-uplift",
 }
 EXPECTED_RICHER = {
     "constitutional-alignment-substrate": 6,

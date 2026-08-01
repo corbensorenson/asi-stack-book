@@ -543,14 +543,15 @@ REQUIRED_ELEMENTS = ["**Mechanism.**", "**Failure mode.**", "**Non-claim.**", "*
 # disposition before the chapter can remain concept-complete.
 SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
     "dangerous-capability-domains-and-misuse-uplift": {
-        "reviewed_sha256": "ac1d4f76782a429696fcb13dbb11407695d5686780f8bfe89e31bf33e2407579",
-        "reviewed_date": "2026-07-27",
+        "reviewed_sha256": "711807c566dbffff0b6ce61e705ddaad9bef70ac0d0c0eb46216ff67292e42c5",
+        "reviewed_date": "2026-08-01",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,
         "review_basis": [
             "all eight named concepts explain a domain-specific mechanism and failure boundary",
             "source contributions and limits remain inside the chapter's declared queue",
             "the chapter states explicit non-claims and preserves adjacent-owner handoffs",
+            "the staged dossier proof and scalar non-identifiability result remain bounded to authored finite records and a no-support handoff",
         ],
         "support_state_effect": "none",
     },

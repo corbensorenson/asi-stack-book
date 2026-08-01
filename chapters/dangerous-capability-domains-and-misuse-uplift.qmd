@@ -4,7 +4,7 @@ chapter_id: "dangerous-capability-domains-and-misuse-uplift"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.2 complete argument-level manuscript"
-last_updated: "2026-07-24"
+last_updated: "2026-08-01"
 primary_sources:
   - "ext_singapore_consensus_2026"
   - "ext_international_ai_safety_report_2026"
@@ -757,18 +757,45 @@ jointly inspectable while remaining safe enough to operate. This remains a
 research target until natural-domain evaluations with competent positive
 controls and independent challenge have passed.
 
-Planned formalization hook: `lean:dangerous-capability-domains-and-misuse-uplift.admission_boundary` remains a process-contract target; it does not claim an implemented theorem.
+### Formalization hooks
+
+`lean:dangerous-capability-domains-and-misuse-uplift.admission_boundary` is
+implemented in `AsiStackProofs.DangerousCapabilityReview`. Its 20 theorem declarations operate over a finite, authored pre-campaign dossier. A seven-stage
+lifecycle accumulates identity, threat, baseline, instrument, custody, and
+non-authorizing boundary obligations. One complete record reaches only
+eligibility for a Project Theseus harmless-analogue campaign.
+
+The model includes 29 independently checkable admission-axis mutations. Each
+missing or forbidden axis blocks readiness and reaches its exact repair or
+refusal state. Two arithmetic monotonicity results prevent advancing time from
+laundering an expired dossier and prevent lower attempt retention from
+laundering an existing denominator shortfall. The aggregate-score impossibility result gives two distinct capability/propensity/bypass/uplift/harm vectors with
+the same total but opposite component-sensitive review decisions, then proves
+that no classifier using only that total is exact for every modeled vector.
+
+The proofs trust every authored identity, control, evaluator, custody, and
+outcome-vector field. They do not prove that an evaluator is competent or
+independent in practice, that any observed result is true, or that a model has
+dangerous capability. They establish no actor uplift, safeguard efficacy,
+realized harm, safety, threshold crossing, support transition, release,
+transfer, or external effect. Chapter support remains `argument`;
+`support_state_effect` remains `none`.
+
+The canonical next consumer is the Project Theseus harmless-analogue campaign:
+run the frozen public-safe instrument, retain every attempt, exercise controls
+and expiry, and return measured records for review without inheriting authority
+from Lean.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
-| Threat-model completeness | Reject missing actor, objective, access, bottleneck, consequence, or safe-exclusion fields. | planned |
-| Type-confusion mutation | Reject capability described as propensity, uplift, or realized harm. | planned |
-| Competence gate | Block negative interpretation when elicitation, positive control, sensitivity, or task validity fails. | planned |
-| Disclosure boundary | Reject public packets containing prohibited operational details or missing restricted-review custody. | planned |
-| Expiry test | Reopen the dossier after model, scaffold, tool, threat, or comparator change. | planned |
-| No-promotion control | Ensure prose, source synthesis, schema checks, and safe analogues do not promote the chapter core. | planned |
+| Threat-model completeness | Reject missing identity, threat-version, domain, cohort, expertise, access, safeguard-comparator, or baseline fields. | implemented in Lean and independent fixture validator |
+| Type-confusion mutation | Preserve capability, propensity, bypass, uplift, and harm as separate vector components and reject scalar-only exact classification. | implemented in Lean and independent fixture validator |
+| Competence gate | Block handoff when elicitation, positive control, negative control, task validity, attempt accounting, or evaluator fields fail. | implemented in Lean and independent fixture validator |
+| Disclosure boundary | Refuse operational-detail publication or missing information-hazard custody, maximum inference, residual custody, and non-claim fields. | implemented in Lean and independent fixture validator |
+| Expiry test | Preserve rejection when an already expired dossier advances to a later time. | implemented in Lean and independent fixture validator |
+| No-promotion control | Ensure formal and fixture checks create no support, threshold, release, or external-effect authority. | implemented at the finite-record boundary |
 
 ## Source crosswalk
 

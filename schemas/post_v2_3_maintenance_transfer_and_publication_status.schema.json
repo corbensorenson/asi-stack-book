@@ -569,20 +569,20 @@
                   "const": "proofs/proof_semantic_rationalization_ledger.json"
                 },
                 "theorem_count": {
-                  "const": 1376
+                  "const": 1396
                 },
                 "theorem_bearing_module_count": {
-                  "const": 112
+                  "const": 113
                 },
                 "semantic_owner_chapter_count": {
-                  "const": 66
+                  "const": 67
                 },
                 "semantic_level_counts": {
                   "const": {
                     "P0": 26,
-                    "P1": 723,
-                    "P2": 90,
-                    "P3": 348,
+                    "P1": 733,
+                    "P2": 94,
+                    "P3": 354,
                     "P4": 99,
                     "P5": 90,
                     "P6": 0
@@ -590,7 +590,7 @@
                 },
                 "disposition_counts": {
                   "const": {
-                    "retain": 1376
+                    "retain": 1396
                   }
                 },
                 "executed_retirement_count": {
@@ -1455,11 +1455,11 @@
         "external_reproduction_count": 0,
         "sota_supported_count": 0,
         "proof_target_count": 324,
-        "lean_module_count": 113,
-        "theorem_declaration_count": 1376,
-        "derived_or_decomposed_theorem_count": 898,
-        "direct_or_projection_theorem_count": 186,
-        "unknown_or_mixed_theorem_count": 292,
+        "lean_module_count": 114,
+        "theorem_declaration_count": 1396,
+        "derived_or_decomposed_theorem_count": 913,
+        "direct_or_projection_theorem_count": 187,
+        "unknown_or_mixed_theorem_count": 296,
         "historical_v2_2_approved_exact_local_reader_formats": [
           "html"
         ],
@@ -2548,10 +2548,10 @@
           "production_validator_path": "scripts/validate_manim_v2_production_ledger.py",
           "target_generation": 2,
           "generation_2_counts": {
-            "planned": 76,
+            "planned": 74,
             "animatic_revision": 0,
-            "animatic_passed": 8,
-            "picture_and_sound_lock_passed": 8,
+            "animatic_passed": 10,
+            "picture_and_sound_lock_passed": 10,
             "release_candidate_passed": 0,
             "accepted": 0,
             "youtube_current": 0,

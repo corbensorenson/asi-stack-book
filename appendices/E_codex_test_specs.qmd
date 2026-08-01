@@ -34,11 +34,10 @@ No result is recorded here unless a test has actually been implemented and run.
 | `failure-modes-of-ungoverned-intelligence` | Failure Modes of Ungoverned Intelligence | Unverified-claim scenario | implemented | passes via Lean build |
 | `failure-modes-of-ungoverned-intelligence` | Failure Modes of Ungoverned Intelligence | Failure taxonomy detector and mitigation-boundary probe | implemented | passes via deterministic synthetic failure-taxonomy detector fixture at experiments/failure_taxonomy_detector/results/2026-07-02-local.json: two valid synthetic failure incidents and seven expected-invalid controls; no deployed detector, prevention, mitigation-effectiveness, evaluator-independence, support-state-promotion, or evidence-transition claim |
 | `failure-modes-of-ungoverned-intelligence` | Failure Modes of Ungoverned Intelligence | Failure recovery lifecycle refinement | implemented | passes via Lean build and python3 scripts/validate_failure_recovery_refinement.py; five reachable stages, five accepted transitions, 31/31 rejecting mutations, support-state effect none; no event-truth, detector-quality, containment-effectiveness, remediation-effectiveness, deployed-recovery, safety, or chapter-core support claim |
-| `dangerous-capability-domains-and-misuse-uplift` | Dangerous Capability Domains and Misuse Uplift | Threat-model completeness mutation test | planned | not run |
-| `dangerous-capability-domains-and-misuse-uplift` | Dangerous Capability Domains and Misuse Uplift | Capability-versus-uplift type-confusion rejection test | planned | not run |
-| `dangerous-capability-domains-and-misuse-uplift` | Dangerous Capability Domains and Misuse Uplift | Positive-control and elicitation competence gate | planned | not run |
-| `dangerous-capability-domains-and-misuse-uplift` | Dangerous Capability Domains and Misuse Uplift | Sensitive-output nonpublication control | planned | not run |
-| `dangerous-capability-domains-and-misuse-uplift` | Dangerous Capability Domains and Misuse Uplift | No-support-promotion control | planned | not run |
+| `dangerous-capability-domains-and-misuse-uplift` | Dangerous Capability Domains and Misuse Uplift | Threat-model and dossier completeness mutation suite | implemented | passing via python3 scripts/validate_dangerous_capability_review.py; 29/29 generic mutations reject |
+| `dangerous-capability-domains-and-misuse-uplift` | Dangerous Capability Domains and Misuse Uplift | Capability-component scalar-collapse counterexample | implemented | passing in Lean and independent fixture validator; no empirical result claim |
+| `dangerous-capability-domains-and-misuse-uplift` | Dangerous Capability Domains and Misuse Uplift | Expiry and attempt-denominator monotonicity controls | implemented | passing in Lean and independent fixture validator |
+| `dangerous-capability-domains-and-misuse-uplift` | Dangerous Capability Domains and Misuse Uplift | No-authority and information-hazard boundary suite | implemented | passing for finite authored fields; no deployed enforcement or safety claim |
 | `military-ai-autonomous-weapons-and-strategic-stability` | Military AI, Autonomous Weapons, and Strategic Stability | Layer claim falsification test | planned | not run |
 | `evidence-states-and-claim-discipline` | Evidence States and Claim Discipline | Support-state transition test | implemented | validated locally |
 | `evidence-states-and-claim-discipline` | Evidence States and Claim Discipline | Projection-aware evidence-transition refinement | implemented | validated locally at experiments/evidence_transition_refinement/results/2026-07-26-local.json; all 35 declared routes reached by an independent consumer; support, inheritance, and external effect none |
@@ -705,12 +704,12 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Target status | Count |
 |---|---:|
-| implemented | 306 |
-| planned | 18 |
+| implemented | 307 |
+| planned | 17 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 306 |
-| planned | process-contract | policy-model-first | 18 |
+| implemented | formal-invariant | lean-candidate | 307 |
+| planned | process-contract | policy-model-first | 17 |

@@ -1358,11 +1358,30 @@
           "minimal_implementation": "Create a public-safe threat-model and uplift-dossier format, then run a harmless analogue study with stratified participants or competent agents, matched assistance, known-positive and known-negative controls, blinded scoring, complete attempt logs, and no real hazardous materials or targets. Demonstrate that the instrument can distinguish a real assistance effect before using a null result.",
           "beyond_state_of_art": "The mature operational contract makes dangerous-capability evaluation a continuously renewed, domain-specific causal measurement service. It links controlled uplift, long-horizon task completion, safeguard bypass, accessible-frontier comparison, real incident indicators, and independent expert review while minimizing information hazard. It can update threshold and release decisions without claiming that a benchmark score is harm, that a refusal is safety, or that an unobserved capability is absent.",
           "codex_tests": [
-            "Threat-model completeness mutation test",
-            "Capability-versus-uplift type-confusion rejection test",
-            "Positive-control and elicitation competence gate",
-            "Sensitive-output nonpublication control",
-            "No-support-promotion control"
+            {
+              "name": "Threat-model and dossier completeness mutation suite",
+              "purpose": "Reject missing identity, threat, domain, cohort, expertise, baseline, instrument, custody, expiry, and boundary fields through exact routes.",
+              "implementation_status": "implemented",
+              "result_status": "passing via python3 scripts/validate_dangerous_capability_review.py; 29/29 generic mutations reject"
+            },
+            {
+              "name": "Capability-component scalar-collapse counterexample",
+              "purpose": "Show that equal aggregate totals can preserve distinct outcome vectors and opposite component-sensitive review decisions.",
+              "implementation_status": "implemented",
+              "result_status": "passing in Lean and independent fixture validator; no empirical result claim"
+            },
+            {
+              "name": "Expiry and attempt-denominator monotonicity controls",
+              "purpose": "Prevent later time or lower retained-attempt counts from laundering an existing dossier rejection.",
+              "implementation_status": "implemented",
+              "result_status": "passing in Lean and independent fixture validator"
+            },
+            {
+              "name": "No-authority and information-hazard boundary suite",
+              "purpose": "Refuse requested support assignment, release authority, operational-detail publication, or missing custody and maximum-inference fields.",
+              "implementation_status": "implemented",
+              "result_status": "passing for finite authored fields; no deployed enforcement or safety claim"
+            }
           ],
           "source_queue": {
             "primary": [
@@ -1477,12 +1496,12 @@
           "proof_targets": [
             {
               "tag": "lean:dangerous-capability-domains-and-misuse-uplift.admission_boundary",
-              "module": "AsiStackProofs.NoDeferralAdmission",
-              "target": "A finite dangerous-capability dossier may hand off only when model, threat, cohort, access, evaluator, uncertainty, expiry, and maximum inference are present; no theorem establishes dangerous capability or safety.",
-              "status": "planned"
+              "module": "AsiStackProofs.DangerousCapabilityReview",
+              "target": "A seven-stage finite dossier review preserves accumulated identity, threat, baseline, instrument, custody, and non-authorizing boundary obligations; one complete authored record reaches only a Project Theseus harmless-analogue campaign, while 29 admission-axis mutations reach exact repair or refusal states. Expiry and attempt shortfall remain rejecting under adverse monotone changes, and equal aggregate scores cannot recover a component-sensitive review rule. No theorem establishes dangerous capability, actor uplift, safeguard efficacy, realized harm, safety, support, release, transfer, or external effect.",
+              "status": "implemented"
             }
           ],
-          "lean_module": "AsiStackProofs.NoDeferralAdmission"
+          "lean_module": "AsiStackProofs.DangerousCapabilityReview"
         },
         {
           "id": "military-ai-autonomous-weapons-and-strategic-stability",
@@ -21459,7 +21478,7 @@
             "Revocation stops at the theorem record while derived claims, releases, runtime consumers, caches, and public wording remain stale.",
             "Sunk-cost attachment to a large proof corpus prevents merging, replacing, refuting, or retiring declarations that do not constrain a real consumer."
           ],
-          "minimal_implementation": "The exact current minimum is one proof-target schema and valid fixture; one generated 322-target proof manifest with 296 implemented and 26 planned targets; a 113-module Lean workspace with 1,242 theorem declarations classified as 842 derived/decomposed, 172 direct/projection, and 228 unknown/mixed; one proof-readiness classification; one wiring-only proof artifact audit; one semantic-adequacy review surface; one blocked formal-semantic-depth record with ten rejecting mutations; and five local ProofEnvelope declarations, all derived finite negative cases after retirement of its two direct projections. The separate activation audit preserves its historical 298-target, 65-module, and 1,151-theorem baseline. This minimum provides no complete semantic formalization of the stack, deployed enforcement proof, general implementation refinement, independent formal reproduction, empirical result, chapter-core transition, or SOTA result.",
+          "minimal_implementation": "The exact current minimum is one proof-target schema and valid fixture; one generated 324-target proof manifest with 307 implemented and 17 planned targets; a 114-module Lean workspace with 1,396 theorem declarations classified as 913 derived/decomposed, 187 direct/projection, and 296 unknown/mixed; one proof-readiness classification; one wiring-only proof artifact audit; one semantic-adequacy review surface; one blocked formal-semantic-depth record with ten rejecting mutations; and five local ProofEnvelope declarations, all derived finite negative cases after retirement of its two direct projections. The separate activation audit preserves its historical 298-target, 65-module, and 1,151-theorem baseline. This minimum provides no complete semantic formalization of the stack, deployed enforcement proof, general implementation refinement, independent formal reproduction, empirical result, chapter-core transition, or SOTA result.",
           "beyond_state_of_art": "The mature Formal Claim Admission and Proof-Rationalization Program audits every proposition, all 298 activation-baseline proof targets, and all 1,151 activation-baseline theorem declarations for semantic necessity, vacuity, reachability, assumptions, dependencies, consumers, and implementation binding. It replaces load-bearing projections with richer state-machine, temporal, concurrency, noninterference, resource, recovery, probabilistic, or refinement models where warranted; moves behavior and performance obligations to executable and empirical lanes; validates implementation relations and runtime monitors; runs countermodels, mutations, adversarial schedules, and negative controls; requires independent formalizations, tools, implementations, and evaluators for decisive claims; measures proof and governance cost; propagates expiry and revocation through every consumer and release surface; and preserves narrow, null, refuted, retired, or blocked-after-full-attempt outcomes instead of optimizing theorem counts or green builds.",
           "open_evidence_gaps": [
             "All twelve assigned sources have exact passage-reviewed mappings, but they support formalization and claim-boundary design only; no source-reported system, proof corpus, deployment, runtime, security, capability, or performance result is imported as ASI Stack evidence.",

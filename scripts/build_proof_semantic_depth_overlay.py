@@ -604,6 +604,83 @@ for theorem_name in (
         ),
     }
 
+for theorem_name, rationale in {
+    "complete_dossier_is_ready":
+        "The closed complete dossier witnesses the derived finite admissibility predicate.",
+    "complete_dossier_reaches_only_harmless_analogue_campaign":
+        "The closed dossier reaches only harmless-analogue campaign eligibility, not a result or release decision.",
+    "equal_aggregate_score_can_hide_distinct_outcome_vectors":
+        "Two closed vectors witness distinct component states under one aggregate total.",
+    "equal_aggregate_score_can_require_opposite_component_reviews":
+        "Two closed equal-total vectors witness opposite component-sensitive modeled decisions.",
+}.items():
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/DangerousCapabilityReview.lean::{theorem_name}"
+    ] = {
+        "disposition": "retain",
+        "semantic_level": "P2",
+        "witness_refs": [f"lean-theorem:{theorem_name}"],
+        "classification_basis": [
+            "a closed generic dossier or outcome-vector pair witnesses one bounded modeled result"
+        ],
+        "rationale": rationale,
+    }
+
+for theorem_name, rationale in {
+    "every_admission_axis_mutation_blocks_readiness":
+        "Universal finite case analysis shows all 29 admission-axis mutations reject readiness.",
+    "every_admission_axis_mutation_reaches_exact_repair":
+        "Universal finite case analysis binds all 29 mutations to exact repair or refusal states.",
+    "every_admission_axis_mutation_blocks_campaign_eligibility":
+        "Universal finite case analysis prevents every mutation from reaching campaign eligibility.",
+    "expired_dossier_remains_expired_when_time_advances":
+        "Natural-number order proves advancing time cannot restore an already expired dossier.",
+    "attempt_shortfall_persists_when_retention_decreases":
+        "Natural-number order proves retaining fewer attempts cannot repair an existing denominator shortfall.",
+    "aggregate_score_cannot_recover_component_sensitive_review":
+        "A same-total/opposite-decision collision proves no scalar-only classifier is exact over every modeled vector.",
+}.items():
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/DangerousCapabilityReview.lean::{theorem_name}"
+    ] = {
+        "disposition": "retain",
+        "semantic_level": "P3",
+        "witness_refs": [
+            "lean-theorem:complete_dossier_is_ready",
+            "tests/fixtures/proof_models/dangerous_capability_dossier.json",
+        ],
+        "classification_basis": [
+            "a quantified mutation, arithmetic monotonicity, or non-identifiability result is independently reconstructed"
+        ],
+        "rationale": rationale,
+    }
+
+for theorem_name in (
+    "review_step_preserves_stage_invariant",
+    "review_run_preserves_stage_invariant",
+    "campaign_eligibility_requires_admissible_dossier",
+    "admissible_dossier_is_ready",
+    "readiness_requires_identity_review",
+    "readiness_requires_threat_review",
+    "readiness_requires_baselines",
+    "readiness_requires_instrument_competence",
+    "readiness_requires_custody_and_currentness",
+    "readiness_requires_non_authorizing_boundary",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/DangerousCapabilityReview.lean::{theorem_name}"
+    ] = {
+        "disposition": "retain",
+        "semantic_level": "P1",
+        "classification_basis": [
+            "a universal finite lifecycle invariant, predicate bridge, or grouped necessity result constrains authored dossier state"
+        ],
+        "rationale": (
+            "The theorem constrains only the seven-stage finite review and authored fields; "
+            "it establishes no field truth, dangerous capability, safety, support, or authority."
+        ),
+    }
+
 # Older validation-registry entries predate per-unit input_artifact indexing.
 # These explicit aliases recover only known, validator-owned module bindings;
 # they do not infer a binding from filename similarity.
@@ -640,6 +717,9 @@ LEGACY_VALIDATOR_ALIASES = {
     },
     "lean/AsiStackProofs/EmbodiedPhysicalSafety.lean": {
         "validate_embodied_physical_safety.py"
+    },
+    "lean/AsiStackProofs/DangerousCapabilityReview.lean": {
+        "validate_dangerous_capability_review.py"
     },
     "lean/AsiStackProofs/TheseusReference.lean": {"validate_theseus_report.py"},
     "lean/AsiStackProofs/CyclicMixers.lean": {"validate_circle_cyclic_mixer_receipt_slice.py"},

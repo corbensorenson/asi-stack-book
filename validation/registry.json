@@ -3090,7 +3090,13 @@
     "scripts/register_embodied_physical_safety.py",
     "chapters/embodied-agency-real-time-control-and-physical-safety.qmd",
     "evidence_quality/proof_model_dossiers/embodied-agency-real-time-control-and-physical-safety.md",
-    "tests/fixtures/proof_models/embodied_control_lease.json"
+    "tests/fixtures/proof_models/embodied_control_lease.json",
+    "lean/AsiStackProofs/DangerousCapabilityReview.lean",
+    "scripts/validate_dangerous_capability_review.py",
+    "scripts/register_dangerous_capability_review.py",
+    "tests/fixtures/proof_models/dangerous_capability_dossier.json",
+    "chapters/dangerous-capability-domains-and-misuse-uplift.qmd",
+    "evidence_quality/proof_model_dossiers/dangerous-capability-domains-and-misuse-uplift.md"
   ],
   "units": [
     {
@@ -12048,8 +12054,8 @@
       "output_assertions": [
         "1,151/1,151 activation-baseline theorem declarations and 298/298 baseline targets are reviewed and dispositioned",
         "298/298 historical proof targets remain implemented and explicitly adequacy-routed",
-        "324 current targets comprise 304 implemented and 20 planned, including the consumer-owned Failure Modes, Governed Operations, Learned Objective Integrity, Observation Trust, Search Substrate, Artifact Steward, and Human-AI Organizations refinements",
-        "the thirty-three richer-semantics targets remain bounded and route to P3/P4 rather than disappearing",
+        "324 current targets comprise 307 implemented and 17 planned, including the consumer-owned Failure Modes, Governed Operations, Learned Objective Integrity, Observation Trust, Search Substrate, Artifact Steward, Human-AI Organizations, Multi-Agent Dynamics, Embodied Physical Safety, and Dangerous Capability Review refinements",
+        "the thirty-two richer-semantics targets remain bounded and route to P3/P4 rather than disappearing",
         "nine required safety-critical, integration, and review-named refinement models have dossiers and registered consumers",
         "P2/M3 is completed, P3 is active, and prerequisite M2 is active without support-state movement"
       ],
@@ -17437,11 +17443,55 @@
       "prohibited_inference": "No theorem or consumer establishes plant truth, physical or human safety, real deadline satisfaction, safe-set validity, fallback effectiveness, recovery, support transition, release, transfer, external effect, deployment, AGI, or ASI.",
       "contract_precision": "exact",
       "semantic_review_state": "manual_derived_control_lease_mutation_monotonicity_and_no_physical_safety_boundary_reviewed"
+    },
+    {
+      "id": "validate_dangerous_capability_review.py:451",
+      "order": 451,
+      "script": "validate_dangerous_capability_review.py",
+      "args": [],
+      "execution_tier": "pr",
+      "validation_class": "proof_or_evidence_gate",
+      "input_contract": "The seven-stage finite dossier model, 29 admission axes, two monotonic rejection laws, aggregate-score collision, exact chapter boundary, generated proof manifest, and reviewed triage record.",
+      "input_artifacts": [
+        "lean/AsiStackProofs/DangerousCapabilityReview.lean",
+        "scripts/validate_dangerous_capability_review.py",
+        "scripts/register_dangerous_capability_review.py",
+        "tests/fixtures/proof_models/dangerous_capability_dossier.json",
+        "chapters/dangerous-capability-domains-and-misuse-uplift.qmd",
+        "evidence_quality/proof_model_dossiers/dangerous-capability-domains-and-misuse-uplift.md",
+        "proofs/proof_manifest.json",
+        "proofs/proof_triage.json"
+      ],
+      "output_contract": "Independently derive the complete harmless-analogue route, mutate all 29 admission axes, require exact repair or refusal routes, check expiry and denominator monotonicity, reconstruct the scalar collision, verify all 20 Lean declarations and canonical bindings, and reject dangerous-capability or safety overclaims.",
+      "output_assertions": [
+        "complete dossier routes only to Project Theseus harmless-analogue campaign eligibility",
+        "29/29 admission-axis mutations reject readiness",
+        "all 29 mutations reach exact repair or refusal routes",
+        "two arithmetic monotonicity controls pass",
+        "equal scalar totals require opposite component-sensitive review decisions",
+        "20 exact Lean declarations exist",
+        "zero dangerous-capability, uplift, safeguard-efficacy, harm, safety, support, release, transfer, or external-effect claim"
+      ],
+      "claim_scope": "Finite authored pre-campaign dossier review semantics, arithmetic order properties, and aggregate-score non-identifiability only.",
+      "negative_controls": "validator_owned_twenty_nine_admission_axis_mutations_two_monotonicity_controls_and_scalar_collision",
+      "negative_control_cases": [
+        "missing model/checkpoint/scaffold/tool identity",
+        "stale threat model or collapsed domains",
+        "missing cohort, expertise, safeguard, or baseline binding",
+        "failed elicitation, control, validity, attempt, axis-separation, or evaluator gate",
+        "missing information-hazard custody, uncertainty, currentness, maximum inference, residual, or non-claim boundary",
+        "requested support assignment, release authority, or operational-detail publication",
+        "worsened expiry or attempt-retention shortfall",
+        "equal aggregate score with opposite component-sensitive decisions"
+      ],
+      "prohibited_inference": "No theorem or consumer establishes dangerous capability, actor uplift, safeguard efficacy, realized harm, safety, a threshold crossing, support transition, release, transfer, external effect, deployment, AGI, or ASI.",
+      "contract_precision": "exact",
+      "semantic_review_state": "manual_staged_dossier_mutation_monotonicity_scalar_impossibility_and_no_capability_boundary_reviewed"
     }
   ],
   "summary": {
-    "required_artifact_count": 3046,
-    "unit_count": 450
+    "required_artifact_count": 3052,
+    "unit_count": 451
   },
   "non_claims": [
     "Registry coverage does not establish semantic adequacy of every validator.",
