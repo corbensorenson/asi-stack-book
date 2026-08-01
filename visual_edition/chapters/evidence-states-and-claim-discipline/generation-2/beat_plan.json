@@ -1,0 +1,259 @@
+{
+  "schema_version": "asi_stack.manim_beat_plan.v2",
+  "chapter_id": "evidence-states-and-claim-discipline",
+  "teaching_promise": "The viewer can separate a claim's label, support, lifecycle, and disposition; explain why evidence quality cannot be averaged; and predict when a claim-specific transition must stop, narrow, downgrade, refute, or remain unchanged.",
+  "target_duration_seconds": 314.575,
+  "chapter_sha256": "2af3a2a6ad307c5b1f3b42ddef3dbef1cb5fb8259280b848cd0b936062e14ded",
+  "source_commit": "6464629867516ad693ab9ff82f81f8763fc6b79d",
+  "story": {
+    "concrete_case": "A green PROVEN stamp lands on the claim that a memory adapter improved held-out retrieval by eighteen percent, then every missing identity, evidence role, and transition gate is exposed.",
+    "opening_question": "What exactly was proven when a confident result card, citation, proof, fixture, or benchmark appears beside a claim?",
+    "payoff": "A claim-specific transition packet allows stronger language only when exact, non-compensable evidence burdens are met while negative results and residuals remain attached.",
+    "transfer": "The next chapter applies this visibility discipline to supervisors judging stronger systems."
+  },
+  "art_direction": {
+    "visual_thesis": "Evidence does not pour into one confidence meter; distinct artifacts touch a versioned claim through typed roles and a gated, reversible lifecycle.",
+    "signature_image": "A bright eighteen-percent claim card approaches an evidence airlock while eight unequal quality bars and one dark independence bar refuse to collapse into a score.",
+    "visual_world": "A claim laboratory evolves from an overconfident result card into synchronized claim views, a faceted evidence cell, a transition airlock, scoped artifact stations, a negative-evidence shadow, a family graph, and a public ledger projection.",
+    "persistent_objects": ["claim atom", "version seal", "evidence cell", "transition airlock", "negative-evidence shadow", "public ledger"],
+    "composition_rule": "The claim remains central, evidence arrives from the left, review and gates occupy the center, unsupported inferences stop at the right boundary, and negative lineage remains visible below.",
+    "palette_rule": "Cyan marks claims and observations, green marks satisfied bounded evidence, amber marks review and transition authority, magenta marks missing requirements or adverse evidence, and every color is duplicated by label, shape, position, or line style.",
+    "typography_rule": "Use short claim, role, dimension, gate, transition, and residual labels; never replace the narration with paragraph cards or a single confidence number.",
+    "motion_character": "Stamps recoil, claim views split and rejoin, artifacts dock by role, quality bars refuse aggregation, gates remain mechanically closed, negative evidence casts a persistent shadow, and public projection moves away from evidence flow.",
+    "camera_rule": "Hold a stable claim-laboratory plane, move closer for the eight-dimensional cell and worked transition, widen for claim-family isolation, then pull back for the ledger and handoff.",
+    "surface_rule": "Use inspectable cards, seals, facets, rails, gates, shadows, and lineage edges on a dark laboratory surface with generous caption-safe lower space.",
+    "ending_image": "A clear claim card and its owned residual remain linked behind an argument-support boundary while an oversight aperture opens beyond the handoff axis."
+  },
+  "audio_direction": {
+    "narration_style": "Curious and exact at the opening, firm on scope and non-aggregation, slower through the failed control and downward transitions, then concise at the evidence ceiling and payoff.",
+    "pacing_arc": "Quick false-confidence reveal, measured identity construction, rhythmic artifact comparisons, deliberate worked trace, slower adverse-result turn, and a clean ledger payoff.",
+    "music_policy": "No music in generation 2; the claim stamp, gate mechanics, lineage, and voice carry the explanation without adding false confidence or drama.",
+    "sound_effect_policy": "No effects in the locked mix; every stamp, stop, recoil, downgrade, and projection remains visually and caption redundantly encoded.",
+    "review_devices": ["headphones", "earbuds", "laptop speakers", "phone speakers"]
+  },
+  "accessibility": {
+    "color_redundancy": "Claim state, support state, evidence role, satisfied gate, missing gate, adverse evidence, transition outcome, and projection differ through text, position, enclosure, line style, and shape as well as color.",
+    "motion_redundancy": "Every split, dock, rejection, closed gate, downward movement, lineage attachment, and family isolation resolves into a stable labeled state.",
+    "integrated_description": "Narration names the result card, four identities, three claim views, artifact roles, eight evidence dimensions, transition packet, closed gates, worked trace, failed control, negative shadow, claim family, public ledger, and evidence ceiling.",
+    "caption_plan": "Ninety-one exact receipt-derived cues sit below the active claim laboratory and are reviewed against representative full-resolution frames.",
+    "reduced_motion_assessment": "No flash, shake, spin, continuous zoom, or rapid parallax; transforms settle into labeled structures and failed transitions use short directional motion only."
+  },
+  "beats": [
+    {
+      "id": "b01", "story_function": "hook", "start_seconds": 0.0, "end_seconds": 12.73,
+      "narration": "A result card arrives with a confident headline: “The memory adapter improved retrieval by eighteen percent.” A green stamp lands on it: PROVEN. Stop there. What, exactly, was proven?",
+      "sync_anchor": "What, exactly, was proven", "visual_purpose": "Create and immediately destabilize an intuitive but unjustified proof judgment.", "visual_action": "Slide in the eighteen-percent claim card, strike it with a green PROVEN stamp, freeze, then recoil the stamp and replace it with a question aperture.", "attention_target": "The unsupported PROVEN stamp.",
+      "semantic_encodings": ["attention", "uncertainty", "contrast"], "object_before": "An empty claim laboratory.", "object_after": "A versionless result claim remains under an explicit question.", "continuity_objects": ["claim atom", "transition airlock"],
+      "composition": "Claim card center, stamp upper-right, question aperture behind it.", "motion_curve": "Fast arrival, emphatic stamp, complete pause, restrained recoil.", "camera_action": "Static close claim view.", "animation_techniques": ["FadeIn", "GrowFromCenter", "Indicate", "ReplacementTransform"],
+      "on_screen_text": ["RETRIEVAL +18%", "PROVEN?", "WHAT TOUCHED THIS CLAIM?"], "settle_seconds": 0.7, "hold_purpose": "Let the viewer notice the inference before the chapter dismantles it.", "new_concepts": ["claim atom"], "claim_role": "question", "evidence_boundary": "The headline is a synthetic example, not a measured result."
+    },
+    {
+      "id": "b02", "story_function": "setup", "start_seconds": 12.73, "end_seconds": 21.21,
+      "narration": "The sentence is only a claim atom. Its wording, scope, and version must stay fixed while we ask what evidence actually touched it.",
+      "sync_anchor": "wording, scope, and version", "visual_purpose": "Give the claim a stable identity before evidence arrives.", "visual_action": "Wrap the claim in wording, scope, and version seals and lock their edges together.", "attention_target": "The version seal on the claim card.",
+      "semantic_encodings": ["identity", "containment"], "object_before": "A loose headline with no stable identity.", "object_after": "A sealed version-one claim atom has explicit wording and scope.", "continuity_objects": ["claim atom", "version seal"],
+      "composition": "Claim center with three locking tabs along its perimeter.", "motion_curve": "Tabs dock one by one and the seal closes last.", "camera_action": "Hold claim close-up.", "animation_techniques": ["LaggedStart", "Create"],
+      "on_screen_text": ["WORDING", "SCOPE", "VERSION 1"], "settle_seconds": 0.45, "hold_purpose": "Make identity immutability visible.", "new_concepts": ["stable claim identity"], "claim_role": "mechanism", "evidence_boundary": "Identity does not establish truth."
+    },
+    {
+      "id": "b03", "story_function": "construction", "start_seconds": 21.21, "end_seconds": 34.665,
+      "narration": "Four identities must remain separate. The claim label says what kind of assertion this is. Support state says what backs it. Lifecycle state says where review stands. Disposition says what ultimately happened.",
+      "sync_anchor": "Four identities must remain separate", "visual_purpose": "Prevent four governance dimensions from collapsing into one confidence word.", "visual_action": "Split four labeled rails from the claim and place distinct markers on label, support, lifecycle, and disposition.", "attention_target": "The four noninterchangeable rails.",
+      "semantic_encodings": ["identity", "contrast", "relation"], "object_before": "One sealed claim atom carries no governance state.", "object_after": "Four parallel state rails remain distinct and linked to the atom.", "continuity_objects": ["claim atom", "version seal"],
+      "composition": "Claim left, four parallel rails extending right.", "motion_curve": "Rails unfold in narration order with no merging.", "camera_action": "Widen to the state rails.", "animation_techniques": ["Create", "TransformFromCopy", "LaggedStart"],
+      "on_screen_text": ["LABEL · DESIGN RATIONALE", "SUPPORT · ARGUMENT", "LIFECYCLE · UNDER REVIEW", "DISPOSITION · OPEN"], "settle_seconds": 0.55, "hold_purpose": "Let each field answer a different question.", "new_concepts": ["four claim identities"], "claim_role": "mechanism", "evidence_boundary": "State labels are records, not evidence."
+    },
+    {
+      "id": "b04", "story_function": "construction", "start_seconds": 34.665, "end_seconds": 48.32,
+      "narration": "Now split the atom into three synchronized views: the proposition a reader sees, the obligation the architecture imposes, and the predicate a machine can check. Substituting any one creates a different claim.",
+      "sync_anchor": "three synchronized views", "visual_purpose": "Show semantic identity across prose, architecture, and machine check.", "visual_action": "Transform copies of the atom into proposition, obligation, and predicate cards; align their version seals; reject a swapped predicate.", "attention_target": "The shared identity line across all three views.",
+      "semantic_encodings": ["identity", "relation", "contrast"], "object_before": "One prose-facing claim card.", "object_after": "Three synchronized projections share one exact identity while a substitute is rejected.", "continuity_objects": ["claim atom", "version seal"],
+      "composition": "Three triangularly arranged views connected by one identity loop.", "motion_curve": "Copies fan outward, seals align, substituted view rebounds.", "camera_action": "Hold the projection triangle.", "animation_techniques": ["TransformFromCopy", "Create", "MoveAlongPath"],
+      "on_screen_text": ["PROPOSITION", "OBLIGATION", "PREDICATE", "SAME ATOM", "SUBSTITUTION REJECTED"], "settle_seconds": 0.6, "hold_purpose": "Make semantic substitution visibly different from restatement.", "new_concepts": ["claim projections"], "claim_role": "mechanism", "evidence_boundary": "Projection agreement is a consistency property only."
+    },
+    {
+      "id": "b05", "story_function": "comparison", "start_seconds": 48.32, "end_seconds": 62.325,
+      "narration": "Evidence enters with a role, not a halo. A citation can supply lineage or context. A proof can cover a formal predicate. A fixture can test one encoded behavior. A measurement can estimate an effect.",
+      "sync_anchor": "with a role, not a halo", "visual_purpose": "Assign distinct evidentiary jobs to four artifact classes.", "visual_action": "Dock citation, proof, fixture, and measurement tokens into four differently shaped role ports rather than a common glow.", "attention_target": "The role-specific ports.",
+      "semantic_encodings": ["identity", "relation", "contrast"], "object_before": "The claim has synchronized views but no evidence artifacts.", "object_after": "Four artifacts remain typed by their actual roles.", "continuity_objects": ["claim atom", "evidence cell"],
+      "composition": "Claim center with four artifact stations around it.", "motion_curve": "Artifacts arrive sequentially and fit only their matching ports.", "camera_action": "Widen to the evidence stations.", "animation_techniques": ["LaggedStart", "MoveAlongPath", "Indicate"],
+      "on_screen_text": ["CITATION · LINEAGE", "PROOF · PREDICATE", "FIXTURE · BEHAVIOR", "MEASUREMENT · EFFECT"], "settle_seconds": 0.55, "hold_purpose": "Prevent evidence-role laundering.", "new_concepts": ["typed evidence roles"], "claim_role": "mechanism", "evidence_boundary": "No artifact supports roles it did not perform."
+    },
+    {
+      "id": "b06", "story_function": "construction", "start_seconds": 62.325, "end_seconds": 76.33,
+      "narration": "Store those artifacts in a non-aggregating evidence cell. Independence, reproducibility, recency, coverage, adversarial strength, validity, artifact access, and transfer distance remain separate dimensions.",
+      "sync_anchor": "non-aggregating evidence cell", "visual_purpose": "Replace a scalar score with eight inspectable quality dimensions.", "visual_action": "Build an eight-facet evidence cell and route each artifact into the dimensions it informs without computing a total.", "attention_target": "Eight unequal facets with no sum display.",
+      "semantic_encodings": ["quantity", "containment", "relation"], "object_before": "Typed evidence tokens surround the claim.", "object_after": "An eight-dimensional evidence cell contains distinct quality assessments.", "continuity_objects": ["claim atom", "evidence cell"],
+      "composition": "Claim left, eight-facet cell center-right, no numeric total.", "motion_curve": "Facets assemble in pairs; connecting edges resolve last.", "camera_action": "Move closer to the evidence cell.", "animation_techniques": ["LaggedStart", "Create", "GrowArrow"],
+      "on_screen_text": ["INDEPENDENCE", "REPRODUCIBILITY", "RECENCY", "COVERAGE", "ADVERSARIAL", "VALIDITY", "ACCESS", "TRANSFER"], "settle_seconds": 0.65, "hold_purpose": "Allow all dimensions to be scanned separately.", "new_concepts": ["non-aggregating evidence cell"], "claim_role": "mechanism", "evidence_boundary": "Dimensions are assessed, not proven by display."
+    },
+    {
+      "id": "b07", "story_function": "counterexample", "start_seconds": 76.33, "end_seconds": 89.185,
+      "narration": "Imagine seven dimensions look excellent, but the evaluator is the same system that produced the answer. Independence remains weak. Seven bright bars cannot average that missing safeguard away.",
+      "sync_anchor": "cannot average that missing safeguard away", "visual_purpose": "Demonstrate a non-compensable evidence deficit.", "visual_action": "Raise seven bright bars, leave independence dark, attempt a mean gauge, then crack and remove the gauge.", "attention_target": "The dark independence bar beside seven bright bars.",
+      "semantic_encodings": ["quantity", "contrast", "uncertainty"], "object_before": "Eight evidence dimensions have no values.", "object_after": "Seven strong dimensions coexist with one blocking weak dimension and no average.", "continuity_objects": ["evidence cell", "transition airlock"],
+      "composition": "Eight bars center, invalid average gauge right.", "motion_curve": "Seven bars rise, independence stays low, gauge forms then fractures.", "camera_action": "Hold the dimension close-up.", "animation_techniques": ["LaggedStart", "Create", "FadeOut"],
+      "on_screen_text": ["7 STRONG", "INDEPENDENCE WEAK", "NO AVERAGING"], "settle_seconds": 0.7, "hold_purpose": "Let the blocking dimension dominate attention.", "new_concepts": ["non-compensable deficit"], "claim_role": "counterexample", "evidence_boundary": "The values are illustrative, not measured."
+    },
+    {
+      "id": "b08", "story_function": "construction", "start_seconds": 89.185, "end_seconds": 104.265,
+      "narration": "To move support, construct a transition packet. Bind the exact claim version, source passage or artifact, evidence role, scope, method, negative results, reviewer, blockers, downgrade triggers, limitations, and explicit non-claims.",
+      "sync_anchor": "construct a transition packet", "visual_purpose": "Make every support movement depend on a complete review object.", "visual_action": "Fold twelve labeled fields into a sealed transition packet while retaining an attached negative-evidence pocket.", "attention_target": "The negative-results and blocker fields.",
+      "semantic_encodings": ["containment", "identity", "authority"], "object_before": "An evidence cell exists without transition authority.", "object_after": "A claim-specific transition packet contains all required review fields.", "continuity_objects": ["claim atom", "version seal", "evidence cell", "transition airlock", "negative-evidence shadow"],
+      "composition": "Packet center, fields docking from both sides, negative pocket below.", "motion_curve": "Fields fold in causal groups; the seal closes only after non-claims.", "camera_action": "Reframe to packet construction.", "animation_techniques": ["LaggedStart", "TransformFromCopy", "Create"],
+      "on_screen_text": ["CLAIM + VERSION", "ARTIFACT + ROLE", "SCOPE + METHOD", "NEGATIVE RESULTS", "REVIEWER", "BLOCKERS", "DOWNGRADE TRIGGERS", "LIMITS", "NON-CLAIMS"], "settle_seconds": 0.65, "hold_purpose": "Keep adverse and limiting fields first-class.", "new_concepts": ["transition packet"], "claim_role": "transition", "evidence_boundary": "Packet completeness does not authorize movement."
+    },
+    {
+      "id": "b09", "story_function": "mechanism", "start_seconds": 104.265, "end_seconds": 114.795,
+      "narration": "The packet approaches an upward gate. It opens only when the target support state names its required evidence and every non-compensable requirement is present.",
+      "sync_anchor": "every non-compensable requirement", "visual_purpose": "Show target-specific promotion as a fail-closed gate.", "visual_action": "Move the sealed packet toward an upward airlock; illuminate its required slots; keep the door closed while independence is absent.", "attention_target": "The unfilled independence slot in the airlock.",
+      "semantic_encodings": ["authority", "sequence", "containment"], "object_before": "A complete-shaped packet awaits adjudication.", "object_after": "A target-specific upward gate remains closed on a missing requirement.", "continuity_objects": ["claim atom", "evidence cell", "transition airlock"],
+      "composition": "Packet left, vertical airlock center, target support state right.", "motion_curve": "Packet advances, slot lights sequence, door stops firmly.", "camera_action": "Hold the transition airlock.", "animation_techniques": ["MoveAlongPath", "LaggedStart", "Indicate"],
+      "on_screen_text": ["TARGET · EMPIRICAL", "REQUIRED EVIDENCE", "INDEPENDENCE MISSING", "GATE CLOSED"], "settle_seconds": 0.65, "hold_purpose": "Make missing evidence visibly blocking.", "new_concepts": ["target-specific gate"], "claim_role": "mechanism", "evidence_boundary": "No support movement occurs."
+    },
+    {
+      "id": "b10", "story_function": "counterexample", "start_seconds": 114.795, "end_seconds": 125.575,
+      "narration": "A nearby citation does not open it. The source may motivate the mechanism while saying nothing about this adapter, workload, effect size, or implementation.",
+      "sync_anchor": "does not open it", "visual_purpose": "Reject citation proximity as effect evidence.", "visual_action": "Send a citation token toward the empirical slot; fit it into a lineage port instead and leave the effect gate closed.", "attention_target": "The citation redirected from effect to lineage.",
+      "semantic_encodings": ["contrast", "relation", "containment"], "object_before": "The empirical airlock lacks independent effect evidence.", "object_after": "The citation occupies its proper lineage role without changing support.", "continuity_objects": ["claim atom", "evidence cell", "transition airlock"],
+      "composition": "Citation left, lineage port lower-center, closed gate right.", "motion_curve": "Citation approaches wrong slot, arcs to proper port, settles.", "camera_action": "Hold the artifact-gate comparison.", "animation_techniques": ["MoveAlongPath", "Indicate"],
+      "on_screen_text": ["CITATION", "LINEAGE · YES", "EFFECT · NO", "NO CHANGE"], "settle_seconds": 0.55, "hold_purpose": "Let the typed role correction register.", "new_concepts": ["citation-role boundary"], "claim_role": "counterexample", "evidence_boundary": "A source cannot measure this implementation unless it actually did."
+    },
+    {
+      "id": "b11", "story_function": "counterexample", "start_seconds": 125.575, "end_seconds": 138.18,
+      "narration": "A proof object does not open every gate either. It can establish the encoded theorem under its assumptions; it cannot silently become deployment, usefulness, or real-world enforcement evidence.",
+      "sync_anchor": "under its assumptions", "visual_purpose": "Bound formal proof to its encoded theorem.", "visual_action": "Place a proof token inside an assumptions frame and stop deployment, usefulness, and enforcement badges outside it.", "attention_target": "The assumptions frame around the proof.",
+      "semantic_encodings": ["containment", "contrast", "authority"], "object_before": "The airlock awaits effect evidence.", "object_after": "A proof supports one predicate while three stronger inferences remain outside.", "continuity_objects": ["claim atom", "evidence cell", "transition airlock"],
+      "composition": "Proof frame center, prohibited badges right, claim left.", "motion_curve": "Theorem closes inside its frame; stronger badges hit the boundary sequentially.", "camera_action": "Hold the proof boundary.", "animation_techniques": ["Create", "LaggedStart", "MoveAlongPath"],
+      "on_screen_text": ["THEOREM", "ASSUMPTIONS", "DEPLOYMENT ≠", "USEFULNESS ≠", "ENFORCEMENT ≠"], "settle_seconds": 0.6, "hold_purpose": "Separate mechanized scope from rhetorical extension.", "new_concepts": ["proof scope"], "claim_role": "counterexample", "evidence_boundary": "Formal validity is limited to the encoded model and assumptions."
+    },
+    {
+      "id": "b12", "story_function": "counterexample", "start_seconds": 138.18, "end_seconds": 150.135,
+      "narration": "A benchmark score is also scoped. It speaks for the frozen tasks, protocol, comparator, and measurement boundary—not every user, distribution, system state, or future revision.",
+      "sync_anchor": "frozen tasks, protocol, comparator", "visual_purpose": "Prevent benchmark results from expanding beyond their denominator.", "visual_action": "Enclose a score within four frozen boundary tiles and fade unsupported populations beyond the enclosure.", "attention_target": "The finite benchmark enclosure.",
+      "semantic_encodings": ["containment", "quantity", "contrast"], "object_before": "A score token appears portable across contexts.", "object_after": "The score remains bound to tasks, protocol, comparator, and measurement.", "continuity_objects": ["claim atom", "evidence cell", "transition airlock"],
+      "composition": "Benchmark enclosure center, out-of-scope populations at edges.", "motion_curve": "Boundary tiles close; external populations recede.", "camera_action": "Widen slightly to show excluded scope.", "animation_techniques": ["LaggedStart", "Create", "FadeOut"],
+      "on_screen_text": ["TASKS", "PROTOCOL", "COMPARATOR", "MEASUREMENT", "OUT OF SCOPE"], "settle_seconds": 0.6, "hold_purpose": "Make the denominator visible.", "new_concepts": ["benchmark scope"], "claim_role": "counterexample", "evidence_boundary": "No transfer beyond the frozen denominator is implied."
+    },
+    {
+      "id": "b13", "story_function": "worked_trace", "start_seconds": 150.135, "end_seconds": 163.415,
+      "narration": "Return to the eighteen-percent headline. Version one claims a held-out retrieval gain for a named adapter, model, corpus, metric, baseline, and confidence procedure. The scope now fits on the card.",
+      "sync_anchor": "The scope now fits on the card", "visual_purpose": "Turn the vague headline into a testable exact claim.", "visual_action": "Restore the result card and dock seven scope fields into its version-one envelope.", "attention_target": "The exact baseline and confidence-procedure fields.",
+      "semantic_encodings": ["identity", "containment", "quantity"], "object_before": "A headline lacks a complete experimental denominator.", "object_after": "Version one names adapter, model, corpus, metric, baseline, held-out split, and confidence procedure.", "continuity_objects": ["claim atom", "version seal", "evidence cell", "transition airlock"],
+      "composition": "Expanded claim card center with seven compact field tabs.", "motion_curve": "Headline reappears; fields dock in experimental order; seal closes.", "camera_action": "Close on the worked claim.", "animation_techniques": ["FadeIn", "LaggedStart", "Create"],
+      "on_screen_text": ["ADAPTER", "MODEL", "CORPUS", "HELD-OUT", "METRIC", "BASELINE", "CONFIDENCE PROCEDURE"], "settle_seconds": 0.65, "hold_purpose": "Let the complete testable scope scan as one object.", "new_concepts": ["exact effect claim"], "claim_role": "concrete_example", "evidence_boundary": "The worked claim is synthetic and remains unsupported."
+    },
+    {
+      "id": "b14", "story_function": "worked_trace", "start_seconds": 163.415, "end_seconds": 174.12,
+      "narration": "A passage-reviewed paper supports the adapter’s design rationale. Record that role. It does not measure our implementation, so the effect claim remains unmoved.",
+      "sync_anchor": "effect claim remains unmoved", "visual_purpose": "Record useful source support without promoting an implementation claim.", "visual_action": "Attach the paper to a design-rationale sidecar while the effect-support marker stays fixed at argument.", "attention_target": "The unchanged effect-support marker.",
+      "semantic_encodings": ["relation", "contrast", "sequence"], "object_before": "The exact effect claim has no mapped source role.", "object_after": "A source supports rationale while effect support remains unchanged.", "continuity_objects": ["claim atom", "version seal", "evidence cell", "transition airlock"],
+      "composition": "Claim center, rationale sidecar left, support marker right.", "motion_curve": "Paper docks to sidecar; marker pulses but does not move.", "camera_action": "Hold the worked trace.", "animation_techniques": ["MoveAlongPath", "Indicate"],
+      "on_screen_text": ["PASSAGE REVIEWED", "ROLE · DESIGN RATIONALE", "EFFECT · UNMOVED"], "settle_seconds": 0.55, "hold_purpose": "Show a useful no-promotion source mapping.", "new_concepts": ["source-role mapping"], "claim_role": "evidence", "evidence_boundary": "The paper did not measure the local implementation."
+    },
+    {
+      "id": "b15", "story_function": "worked_trace", "start_seconds": 174.12, "end_seconds": 185.8,
+      "narration": "A synthetic fixture verifies that the adapter routes the authored cases correctly. That earns narrow synthetic-test backing for the fixture claim, not an eighteen-percent empirical gain.",
+      "sync_anchor": "for the fixture claim", "visual_purpose": "Allow a narrow evidence transition without laundering it into the core effect claim.", "visual_action": "Pass authored cases through the adapter, promote a small fixture subclaim, and stop its arrow before the effect claim.", "attention_target": "The barrier between fixture behavior and empirical effect.",
+      "semantic_encodings": ["sequence", "causality", "containment"], "object_before": "The adapter has source rationale but no tested behavior.", "object_after": "A fixture subclaim gains synthetic backing while the effect claim remains unchanged.", "continuity_objects": ["claim atom", "evidence cell", "transition airlock"],
+      "composition": "Fixture path left, adapter center, two separated claim cards right.", "motion_curve": "Cases route, fixture marker advances, effect arrow stops.", "camera_action": "Pan across the fixture trace.", "animation_techniques": ["MoveAlongPath", "GrowArrow", "Indicate"],
+      "on_screen_text": ["AUTHORED CASES", "ROUTE CORRECT", "FIXTURE CLAIM · SYNTHETIC", "EFFECT CLAIM · NO CHANGE"], "settle_seconds": 0.6, "hold_purpose": "Make claim-specific movement explicit.", "new_concepts": ["claim-specific transition"], "claim_role": "transition", "evidence_boundary": "Synthetic authored cases do not establish held-out effect."
+    },
+    {
+      "id": "b16", "story_function": "failure", "start_seconds": 185.8, "end_seconds": 196.63,
+      "narration": "The independent held-out run is still missing. The empirical gate remains closed, and the public ledger records the blocker instead of replacing it with optimistic prose.",
+      "sync_anchor": "records the blocker", "visual_purpose": "Turn missing evidence into visible owned status.", "visual_action": "Leave the held-out slot empty, close the empirical gate, and copy the missing-run blocker into the ledger rail.", "attention_target": "The named missing-run blocker.",
+      "semantic_encodings": ["uncertainty", "authority", "sequence"], "object_before": "A fixture transition tempts expansion to the effect claim.", "object_after": "The empirical gate stays closed and the blocker is publicly owned.", "continuity_objects": ["claim atom", "transition airlock", "public ledger"],
+      "composition": "Empty slot center, closed gate right, ledger rail below.", "motion_curve": "Slot waits, gate closes, blocker copy descends into ledger.", "camera_action": "Hold the blocker transfer.", "animation_techniques": ["Indicate", "TransformFromCopy", "Create"],
+      "on_screen_text": ["INDEPENDENT HELD-OUT RUN · MISSING", "EMPIRICAL GATE CLOSED", "BLOCKER RECORDED"], "settle_seconds": 0.65, "hold_purpose": "Normalize visible incompleteness instead of rhetorical substitution.", "new_concepts": ["owned blocker"], "claim_role": "boundary", "evidence_boundary": "No empirical support is assigned."
+    },
+    {
+      "id": "b17", "story_function": "failure", "start_seconds": 196.63, "end_seconds": 204.36,
+      "narration": "Then a positive control fails. The instrument could not detect a known retrieval difference.",
+      "sync_anchor": "could not detect a known retrieval difference", "visual_purpose": "Expose instrument incompetence with a positive control.", "visual_action": "Run a known-difference token through the instrument and keep its detector visibly flat.", "attention_target": "The flat detector beside the known difference.",
+      "semantic_encodings": ["causality", "uncertainty"], "object_before": "The empirical gate is closed only for missing independence.", "object_after": "A failed positive-control receipt shows that the instrument missed a known difference.", "continuity_objects": ["claim atom", "evidence cell", "transition airlock", "negative-evidence shadow"],
+      "composition": "Known difference left, instrument center, flat detector right.", "motion_curve": "Control enters, passes through, and the detector remains flat.", "camera_action": "Hold the failed detector.", "animation_techniques": ["MoveAlongPath", "Create", "Indicate"],
+      "on_screen_text": ["KNOWN DIFFERENCE", "NO DETECTION", "POSITIVE CONTROL FAILED"], "settle_seconds": 0.55, "hold_purpose": "Make the instrument failure undeniable before interpreting it.", "new_concepts": ["positive-control failure"], "claim_role": "counterexample", "evidence_boundary": "The control result tests the instrument, not the adapter effect."
+    },
+    {
+      "id": "b18", "story_function": "consequence", "start_seconds": 204.36, "end_seconds": 208.735,
+      "narration": "That result does not prove no improvement; it weakens the test and forces the inference downward.",
+      "sync_anchor": "forces the inference downward", "visual_purpose": "Route a failed instrument to weaker inference rather than a false negative claim.", "visual_action": "Move the inference marker away from NO IMPROVEMENT and downward into TEST WEAK while preserving an open effect residual.", "attention_target": "The test-weak destination and open residual.",
+      "semantic_encodings": ["rollback", "causality", "uncertainty"], "object_before": "A known difference passed through a nonresponsive instrument.", "object_after": "The inference is downgraded to test weak without asserting no improvement.", "continuity_objects": ["claim atom", "evidence cell", "transition airlock", "negative-evidence shadow"],
+      "composition": "False-negative route upper-right, downward test-weak rail center, residual below.", "motion_curve": "False-negative marker recoils; test status drops and settles.", "camera_action": "Follow the downward inference route.", "animation_techniques": ["ReplacementTransform", "MoveAlongPath", "FadeIn"],
+      "on_screen_text": ["NO IMPROVEMENT? · BLOCKED", "TEST WEAK", "EFFECT RESIDUAL OPEN"], "settle_seconds": 0.45, "hold_purpose": "Prevent an underpowered test from becoming an incapability claim.", "new_concepts": ["inference downgrade"], "claim_role": "transition", "evidence_boundary": "A weak instrument supports neither improvement nor no improvement."
+    },
+    {
+      "id": "b19", "story_function": "mechanism", "start_seconds": 208.735, "end_seconds": 219.615,
+      "narration": "Transitions are not only promotions. Review may leave support unchanged, narrow scope, downgrade backing, refute the atom, or deprecate a superseded version.",
+      "sync_anchor": "not only promotions", "visual_purpose": "Present the complete bidirectional transition vocabulary.", "visual_action": "Fan five outcome routes from review: no change, narrow, downgrade, refute, and deprecate; keep promotion absent.", "attention_target": "The five downward or neutral routes.",
+      "semantic_encodings": ["sequence", "rollback", "contrast"], "object_before": "One failed test suggests only a blocked promotion.", "object_after": "Five distinct non-promotion outcomes are available and labeled.", "continuity_objects": ["claim atom", "transition airlock", "negative-evidence shadow"],
+      "composition": "Review hub center with five outcome rails fanning right and down.", "motion_curve": "Routes unfold from neutral to terminal in measured order.", "camera_action": "Widen to the transition fan.", "animation_techniques": ["GrowArrow", "LaggedStart"],
+      "on_screen_text": ["NO CHANGE", "NARROW", "DOWNGRADE", "REFUTE", "DEPRECATE"], "settle_seconds": 0.65, "hold_purpose": "Make downward movement a normal lifecycle action.", "new_concepts": ["bidirectional claim lifecycle"], "claim_role": "mechanism", "evidence_boundary": "Transitions require separate accepted records."
+    },
+    {
+      "id": "b20", "story_function": "consequence", "start_seconds": 219.615, "end_seconds": 231.37,
+      "narration": "Negative evidence stays attached like a visible shadow. A cleaner revision may answer it, but it may not delete the failed control, contradiction, or abandoned inference from lineage.",
+      "sync_anchor": "stays attached like a visible shadow", "visual_purpose": "Preserve adverse evidence through revision rather than hiding it.", "visual_action": "Create version two above version one while a magenta shadow containing failed control, contradiction, and abandoned inference remains linked below both.", "attention_target": "The persistent adverse-evidence shadow.",
+      "semantic_encodings": ["identity", "sequence", "rollback"], "object_before": "Version one has a failed control and possible revisions.", "object_after": "Version two exists without erasing version-one adverse lineage.", "continuity_objects": ["claim atom", "version seal", "negative-evidence shadow"],
+      "composition": "Version lineage upper-center, shadow ledger along lower rail.", "motion_curve": "New version rises; shadow stretches but never detaches.", "camera_action": "Track the version lineage upward.", "animation_techniques": ["TransformFromCopy", "Create", "GrowArrow"],
+      "on_screen_text": ["VERSION 1", "VERSION 2", "FAILED CONTROL", "CONTRADICTION", "ABANDONED INFERENCE", "LINEAGE PRESERVED"], "settle_seconds": 0.7, "hold_purpose": "Make negative evidence durable and visible.", "new_concepts": ["negative-evidence lineage"], "claim_role": "transition", "evidence_boundary": "A revision does not erase prior results."
+    },
+    {
+      "id": "b21", "story_function": "mechanism", "start_seconds": 231.37, "end_seconds": 243.775,
+      "narration": "Appendix C is a public projection of this ledger. It shows current claim, support, transition, limitation, and residual. The projection is an interface—not another piece of evidence.",
+      "sync_anchor": "an interface—not another piece of evidence", "visual_purpose": "Separate public status projection from evidence generation.", "visual_action": "Project five ledger fields onto an Appendix C display while a one-way interface arrow prevents the display from feeding back into the evidence cell.", "attention_target": "The one-way projection arrow.",
+      "semantic_encodings": ["relation", "sequence", "contrast"], "object_before": "The internal ledger holds claim and transition lineage.", "object_after": "A public interface mirrors status without becoming evidence.", "continuity_objects": ["claim atom", "evidence cell", "negative-evidence shadow", "public ledger"],
+      "composition": "Internal ledger left, one-way boundary center, Appendix C display right.", "motion_curve": "Fields copy outward; attempted reverse arrow stops and fades.", "camera_action": "Widen to internal and public surfaces.", "animation_techniques": ["TransformFromCopy", "GrowArrow", "FadeOut"],
+      "on_screen_text": ["CURRENT CLAIM", "SUPPORT", "TRANSITION", "LIMITATION", "RESIDUAL", "PUBLIC PROJECTION", "NOT EVIDENCE"], "settle_seconds": 0.65, "hold_purpose": "Prevent projection self-confirmation.", "new_concepts": ["public claim ledger"], "claim_role": "mechanism", "evidence_boundary": "Publication of status adds no support."
+    },
+    {
+      "id": "b22", "story_function": "failure", "start_seconds": 243.775, "end_seconds": 254.53,
+      "narration": "Nor does one accepted transition move a whole claim family. Parent, sibling, and descendant claims keep their own identities and burdens unless separately reviewed.",
+      "sync_anchor": "keep their own identities and burdens", "visual_purpose": "Block support propagation across related claims.", "visual_action": "Reveal a parent-sibling-descendant graph, move one atom, and lock every adjacent edge against inherited promotion.", "attention_target": "The locked edges around the moved atom.",
+      "semantic_encodings": ["relation", "identity", "authority"], "object_before": "One claim transition appears near related claims.", "object_after": "Only the reviewed atom moves while family members stay fixed.", "continuity_objects": ["claim atom", "version seal", "transition airlock"],
+      "composition": "Moved atom center, related nodes around it, locks on every connecting edge.", "motion_curve": "One node advances; locks close sequentially on neighboring edges.", "camera_action": "Widen to the claim family graph.", "animation_techniques": ["MoveAlongPath", "LaggedStart", "Create"],
+      "on_screen_text": ["PARENT", "REVIEWED ATOM", "SIBLING", "DESCENDANT", "NO INHERITED MOVEMENT"], "settle_seconds": 0.65, "hold_purpose": "Make claim-local authority explicit.", "new_concepts": ["claim-family isolation"], "claim_role": "boundary", "evidence_boundary": "Related claims require their own transitions."
+    },
+    {
+      "id": "b23", "story_function": "construction", "start_seconds": 254.53, "end_seconds": 266.46,
+      "narration": "The decision record preserves reviewer independence, dissent, acceptance blockers, limitations, and the reason for no change or movement. Confidence changes through receipts, not mood.",
+      "sync_anchor": "through receipts, not mood", "visual_purpose": "Bind adjudication to an inspectable decision receipt.", "visual_action": "Assemble five review fields into a signed decision record and reject an unlabeled confidence slider.", "attention_target": "The reviewer-independence and dissent fields.",
+      "semantic_encodings": ["authority", "identity", "contrast"], "object_before": "The transition mechanism has outcomes but no durable adjudication record.", "object_after": "A decision receipt records review basis while the mood slider is removed.", "continuity_objects": ["claim atom", "transition airlock", "public ledger"],
+      "composition": "Decision receipt center, mood slider crossed at left, ledger route right.", "motion_curve": "Fields assemble, signature closes, slider fractures.", "camera_action": "Close on the decision record.", "animation_techniques": ["LaggedStart", "Create", "FadeOut"],
+      "on_screen_text": ["INDEPENDENCE", "DISSENT", "BLOCKERS", "LIMITATIONS", "REASON", "DECISION RECEIPT", "NOT MOOD"], "settle_seconds": 0.65, "hold_purpose": "Make review custody legible.", "new_concepts": ["decision receipt"], "claim_role": "mechanism", "evidence_boundary": "A recorded decision may still be mistaken."
+    },
+    {
+      "id": "b24", "story_function": "evidence_boundary", "start_seconds": 266.46, "end_seconds": 277.84,
+      "narration": "This is not a numeric confidence machine. Evidence dimensions answer different questions, and the public support state is a lossy summary chosen for a particular claim and reader.",
+      "sync_anchor": "not a numeric confidence machine", "visual_purpose": "State the method's anti-scalar boundary.", "visual_action": "Return to the eight facets, collapse only a labeled public summary card, and leave all source dimensions visible behind it.", "attention_target": "The lossy-summary warning between facets and support state.",
+      "semantic_encodings": ["quantity", "contrast", "containment"], "object_before": "Review receipts might still be mistaken for a confidence calculator.", "object_after": "A public support label is visibly derived as a lossy view without erasing dimensions.", "continuity_objects": ["claim atom", "evidence cell", "public ledger"],
+      "composition": "Eight facets left, lossy aperture center, support label right.", "motion_curve": "Facets remain; one summary card forms through a narrow aperture.", "camera_action": "Hold the anti-scalar view.", "animation_techniques": ["TransformFromCopy", "Create", "Indicate"],
+      "on_screen_text": ["8 DISTINCT QUESTIONS", "LOSSY SUMMARY", "SUPPORT · ARGUMENT", "NO CONFIDENCE SUM"], "settle_seconds": 0.7, "hold_purpose": "Keep the full evidence cell visible behind the public state.", "new_concepts": ["lossy support projection"], "claim_role": "boundary", "evidence_boundary": "Support state is not a calibrated probability."
+    },
+    {
+      "id": "b25", "story_function": "evidence_boundary", "start_seconds": 277.84, "end_seconds": 292.895,
+      "narration": "This chapter remains Design rationale at argument support. Its schemas, finite proofs, and synthetic mutation suites establish only their encoded record and transition behavior; they do not validate the method in deployment.",
+      "sync_anchor": "only their encoded record and transition behavior", "visual_purpose": "Bind the visual to the chapter's current evidence ceiling.", "visual_action": "Place schemas, finite proofs, and mutation suites inside an argument-support enclosure and stop deployment-validation outside it.", "attention_target": "The argument-support enclosure.",
+      "semantic_encodings": ["containment", "contrast", "authority"], "object_before": "The method appears coherent and operationally specified.", "object_after": "Three bounded artifact classes remain inside argument support while deployment stays unclaimed.", "continuity_objects": ["claim atom", "evidence cell", "transition airlock", "public ledger"],
+      "composition": "Bounded artifact enclosure center, deployment badge right, support label above.", "motion_curve": "Artifacts dock, enclosure closes, deployment badge stops.", "camera_action": "Hold the evidence ceiling.", "animation_techniques": ["LaggedStart", "Create", "MoveAlongPath"],
+      "on_screen_text": ["SCHEMAS", "FINITE PROOFS", "SYNTHETIC MUTATIONS", "ARGUMENT SUPPORT", "DEPLOYMENT UNVALIDATED"], "settle_seconds": 0.8, "hold_purpose": "Let the precise evidence ceiling scan completely.", "new_concepts": ["chapter evidence ceiling"], "claim_role": "boundary", "evidence_boundary": "Argument support only; no deployed validation."
+    },
+    {
+      "id": "b26", "story_function": "payoff", "start_seconds": 292.895, "end_seconds": 304.625,
+      "narration": "The payoff is disciplined revision. Clearer prose may improve understanding, but only an accepted, claim-specific transition may strengthen what the book says the evidence supports.",
+      "sync_anchor": "only an accepted, claim-specific transition", "visual_purpose": "Resolve the chapter into a memorable revision invariant.", "visual_action": "Polish the prose face of the claim without moving support, then pass a complete packet through the airlock and move only the reviewed support marker.", "attention_target": "The support marker moving only after the accepted packet.",
+      "semantic_encodings": ["sequence", "authority", "contrast"], "object_before": "A clearer claim card and unchanged support coexist.", "object_after": "Only an accepted transition changes the support marker while prose quality remains a separate axis.", "continuity_objects": ["claim atom", "version seal", "evidence cell", "transition airlock", "negative-evidence shadow", "public ledger"],
+      "composition": "Prose axis upper-left, transition airlock center, support axis right, residual below.", "motion_curve": "Prose brightens without movement; packet passes; one marker advances.", "camera_action": "Pull back to the complete lifecycle.", "animation_techniques": ["Indicate", "MoveAlongPath", "ReplacementTransform"],
+      "on_screen_text": ["CLEARER PROSE", "NO AUTOMATIC PROMOTION", "ACCEPTED TRANSITION", "CLAIM-SPECIFIC MOVEMENT"], "settle_seconds": 0.8, "hold_purpose": "Make the anti-inflation invariant memorable.", "new_concepts": ["disciplined revision"], "claim_role": "connective", "evidence_boundary": "The visual itself changes no support state."
+    },
+    {
+      "id": "b27", "story_function": "handoff", "start_seconds": 304.625, "end_seconds": 314.575,
+      "narration": "Next, Scalable Oversight and Adversarial AI Control asks whether a weaker supervisor can actually see enough of a stronger system’s work to judge it.",
+      "sync_anchor": "see enough of a stronger system’s work", "visual_purpose": "Transfer evidence visibility into the oversight problem.", "visual_action": "Move the claim packet beneath an oversight aperture where a smaller reviewer window faces a larger hidden work trace.", "attention_target": "The mismatch between reviewer aperture and hidden work trace.",
+      "semantic_encodings": ["relation", "uncertainty", "sequence"], "object_before": "The evidence lifecycle resolves claim movement within the book.", "object_after": "A bounded claim packet enters the next chapter's supervisor-visibility problem.", "continuity_objects": ["claim atom", "evidence cell", "public ledger"],
+      "composition": "Completed packet left, handoff axis center, reviewer aperture and hidden trace right.", "motion_curve": "Packet travels, aperture opens partially, hidden trace remains larger.", "camera_action": "Pull back to the chapter handoff.", "animation_techniques": ["MoveAlongPath", "Create", "FadeIn"],
+      "on_screen_text": ["NEXT · SCALABLE OVERSIGHT", "WEAKER REVIEWER", "STRONGER TRACE", "CAN THE EVIDENCE BE SEEN?"], "settle_seconds": 0.8, "hold_purpose": "Leave one precise open question for the next chapter.", "new_concepts": ["oversight aperture"], "claim_role": "connective", "evidence_boundary": "No oversight competence is established."
+    }
+  ]
+}
