@@ -1,0 +1,243 @@
+{
+  "schema_version": "asi_stack.manim_beat_plan.v2",
+  "chapter_id": "dangerous-capability-domains-and-misuse-uplift",
+  "teaching_promise": "The viewer can distinguish knowledge, capability, propensity, bypass, actor uplift, and harm; diagnose an insensitive null; and explain why every D0-D5 promotion needs its own bridge study and bounded dossier.",
+  "target_duration_seconds": 299.945,
+  "chapter_sha256": "b2010b0c8e9bb3dab2ef7a1ff82d9f11c01f83e51fc4c536720a6764f7f6229d",
+  "source_commit": "dad411b6150a72244af73fecea8e8eea13ca7fb6",
+  "story": {
+    "concrete_case": "A novice and an expert take a harmless logistics maze with matched assistance; equal knowledge scores conceal sharply different causal uplift.",
+    "opening_question": "Both participants know the answer, but only the assisted novice finishes: which measurement should govern the decision?",
+    "payoff": "A dangerous-capability result becomes governable only as a versioned assistance effect with instrument competence, explicit bridges, restricted detail, expiry, and a hard maximum inference.",
+    "transfer": "Use the same dossier discipline for domain thresholds, release decisions, safety cases, monitoring, resilience, and the military-AI evidence handoff."
+  },
+  "art_direction": {
+    "visual_thesis": "A capability label is not a scalar: one actor-system pairing can cross a bottleneck while adjacent evidence rungs remain unbridged.",
+    "signature_image": "Two matched runners traverse a harmless maze beneath a six-rung D0-D5 ladder; the novice's AI-assisted route crosses one highlighted bottleneck while red bridge gaps remain locked.",
+    "visual_world": "A persistent maze token becomes a matched-trial receipt, climbs only earned ladder rungs, splits into restricted and public dossier surfaces, and expires before downstream handoff.",
+    "persistent_objects": ["maze token", "novice and expert markers", "uplift delta", "D0-D5 ladder", "instrument receipt", "restricted annex", "public dossier"],
+    "composition_rule": "Matched actors stay left and right around a central maze; the ladder grows vertically; dossier custody and decision consumers occupy the final horizontal field.",
+    "palette_rule": "Cyan marks tested systems, green observed bounded effects, amber governance and bridge requirements, magenta failed sensitivity or prohibited inference, with labels and shapes duplicating every color.",
+    "typography_rule": "Use short experimental labels, rung names, and receipt fields; never show hazardous procedures or turn the six quantities into a paragraph wall.",
+    "motion_character": "Matched starts, bottleneck crossings, failed-control recoil, deliberate rung locks, sealed-annex closure, expiry wipes, and restrained least-authority handoffs.",
+    "camera_rule": "Hold a stable experimental bench, reframe upward once for the ladder, then widen for disclosure, review, expiry, and downstream consumers.",
+    "surface_rule": "Dark laboratory-console surface with safe synthetic geometry, crisp condition rails, inspectable receipts, and no photorealistic hazardous imagery.",
+    "ending_image": "An amber public dossier reaches bounded decision owners while the restricted annex stays sealed and a military-AI command lattice opens beyond the handoff axis."
+  },
+  "audio_direction": {
+    "narration_style": "Calm experimental voice with firm emphasis on exact actor, positive control, instrument failure, named bridge, maximum inference, and protect the null.",
+    "pacing_arc": "Fast matched-case surprise, methodical experimental construction, sharp false-negative reversal, rhythmic ladder climb, slower disclosure and review, quiet evidence ceiling, forward handoff.",
+    "music_policy": "No music in generation 2; the matched trial, ladder locks, and narration carry the argument without masking speech.",
+    "sound_effect_policy": "No effects in the locked mix; maze crossings, failed controls, sealed custody, and expiry remain visually and caption redundantly encoded.",
+    "review_devices": ["headphones", "earbuds", "laptop speakers", "phone speakers"]
+  },
+  "accessibility": {
+    "color_redundancy": "Actor conditions, control status, ladder level, bridge state, disclosure surface, expiry, and decision authority differ by label, position, shape, and line style as well as color.",
+    "motion_redundancy": "Every maze crossing, failed control, rung promotion, quarantine, annex seal, dossier handoff, and expiry resolves into a stable labeled state.",
+    "integrated_description": "Narration names the matched actors, harmless maze, treatment arms, positive and negative controls, D0-D5 rungs, bridge studies, restricted annex, public card, expiry, and evidence boundary.",
+    "caption_plan": "Exact narration in balanced cues under eleven words and eighty-four characters, placed below the active maze, ladder, and dossier surfaces.",
+    "reduced_motion_assessment": "No flash, shake, spin, continuous zoom, or rapid full-frame parallax; local paths use eased movement and stable comparison holds."
+  },
+  "beats": [
+    {
+      "id": "b01", "story_function": "hook", "start_seconds": 0.0, "end_seconds": 12.255,
+      "narration": "Two participants face the same harmless logistics maze. Both pass the knowledge quiz. Without assistance, neither finishes. With an AI copilot, the expert saves one minute—and the novice completes the route.",
+      "sync_anchor": "the novice completes", "visual_purpose": "Create the central puzzle: equal knowledge, unequal causal assistance effect.", "visual_action": "Run novice and expert markers to the same bottleneck, then add the AI rail and let only the novice cross while an expert clock moves by one minute.", "attention_target": "the novice crossing the bottleneck",
+      "semantic_encodings": ["contrast", "causality", "quantity"], "object_before": "Two matched actors and a closed synthetic maze.", "object_after": "Both know the route; assistance changes completion differently.", "continuity_objects": ["maze token", "novice and expert markers", "uplift delta"],
+      "composition": "Novice left lane, expert right lane, shared bottleneck center, quiz badge above.", "motion_curve": "Matched start, simultaneous stop, then one decisive assisted crossing.", "camera_action": "Static experimental bench.", "animation_techniques": ["MoveAlongPath", "LaggedStart", "ReplacementTransform"],
+      "on_screen_text": ["KNOWLEDGE ✓", "NO ASSIST: STOP", "AI ASSIST", "NOVICE: COMPLETE", "EXPERT: −1 MIN"], "settle_seconds": 0.8, "hold_purpose": "Invite a prediction about which result matters.", "new_concepts": ["heterogeneous uplift"], "claim_role": "question", "evidence_boundary": "Harmless fictional analogue only.", "question_id": "which_measure_governs", "reasoning_pause_seconds": 0.9
+    },
+    {
+      "id": "b02", "story_function": "comparison", "start_seconds": 12.255, "end_seconds": 22.885,
+      "narration": "Which result matters? Not the quiz score or a broad capability label. The decision question is causal: how much did this exact system change what this exact actor could accomplish?",
+      "sync_anchor": "decision question is causal", "visual_purpose": "Replace label-based judgment with an actor-system counterfactual.", "visual_action": "Cross out QUIZ and CAPABLE badges, then measure the gap between the same actor's unassisted and assisted endpoints.", "attention_target": "the assistance-effect bracket",
+      "semantic_encodings": ["causality", "contrast", "quantity"], "object_before": "Equal quiz scores coexist with unequal completion.", "object_after": "A bracket names the exact actor-system assistance effect.", "continuity_objects": ["maze token", "uplift delta"],
+      "composition": "Rejected labels upper-left; paired endpoints center; delta bracket below.", "motion_curve": "Quick label rejection, slow bracket construction.", "camera_action": "Static close comparison.", "animation_techniques": ["Cross", "Create", "Indicate"],
+      "on_screen_text": ["QUIZ ≠ UPLIFT", "CAPABLE ≠ EFFECT", "Δ WITH − WITHOUT"], "settle_seconds": 0.55, "hold_purpose": "Make the counterfactual the visual unit.", "new_concepts": ["actor-system counterfactual"], "claim_role": "mechanism", "evidence_boundary": "Design rationale, not an estimated treatment effect.", "resolves_question_id": "which_measure_governs"
+    },
+    {
+      "id": "b03", "story_function": "mechanism", "start_seconds": 22.885, "end_seconds": 35.39,
+      "narration": "Keep six quantities separate: latent capability, elicited performance, behavioral propensity, safeguard bypass, actor uplift, and realized harm. Each asks a different question; none may borrow another's evidence.",
+      "sync_anchor": "none may borrow", "visual_purpose": "Prevent six distinct measurements from collapsing into one danger label.", "visual_action": "Split one large DANGER disk into six shape-coded sockets and place a lock between every adjacent pair.", "attention_target": "the locked gaps between quantities",
+      "semantic_encodings": ["identity", "contrast", "containment"], "object_before": "One assistance-effect bracket replaces labels.", "object_after": "Six distinct evidence sockets remain unmerged.", "continuity_objects": ["uplift delta", "instrument receipt"],
+      "composition": "Six sockets in a hexagon around an empty central label.", "motion_curve": "Disk separates evenly; locks arrive one by one.", "camera_action": "Static wide taxonomy view.", "animation_techniques": ["ReplacementTransform", "LaggedStart", "FadeIn"],
+      "on_screen_text": ["LATENT", "ELICITED", "PROPENSITY", "BYPASS", "UPLIFT", "HARM"], "settle_seconds": 0.55, "hold_purpose": "Let all six identities register.", "new_concepts": ["six-measure separation"], "claim_role": "mechanism", "evidence_boundary": "No quantity is measured by this visual."
+    },
+    {
+      "id": "b04", "story_function": "evidence_boundary", "start_seconds": 35.39, "end_seconds": 46.77,
+      "narration": "The maze is deliberately harmless: public rules, synthetic obstacles, and no real target, credential, material, or operational recipe. It tests the instrument, not a hazardous domain.",
+      "sync_anchor": "tests the instrument", "visual_purpose": "Mark the safe analogue and its non-transfer boundary before adding realism.", "visual_action": "Enclose the maze in a cyan SAFE ANALOGUE frame while four prohibited red objects stop outside it.", "attention_target": "the safe-envelope boundary",
+      "semantic_encodings": ["containment", "contrast", "uncertainty"], "object_before": "Six measurement identities surround the trial.", "object_after": "The trial is explicitly bounded away from hazardous artifacts.", "continuity_objects": ["maze token", "instrument receipt"],
+      "composition": "Safe maze center; prohibited object silhouettes outside four edges.", "motion_curve": "Envelope draws; incoming objects halt at boundary.", "camera_action": "Static envelope view.", "animation_techniques": ["Create", "MoveAlongPath", "Cross"],
+      "on_screen_text": ["SAFE ANALOGUE", "PUBLIC RULES", "NO TARGET", "NO CREDENTIAL", "NO MATERIAL", "NO RECIPE"], "settle_seconds": 0.6, "hold_purpose": "Preserve the exact scope of the analogue.", "new_concepts": ["information-hazard boundary"], "claim_role": "boundary", "evidence_boundary": "Instrument validation cannot promote to hazardous-domain capability."
+    },
+    {
+      "id": "b05", "story_function": "construction", "start_seconds": 46.77, "end_seconds": 60.175,
+      "narration": "Before the trial, freeze a threat pathway. Name actor, objective class, access, prerequisites, bottlenecks, proposed model contribution, external controls, possible consequence, time horizon, and the boundary where observation stops.",
+      "sync_anchor": "freeze a threat pathway", "visual_purpose": "Turn a broad domain name into a versioned causal path and stop condition.", "visual_action": "Build a directed path from ACTOR through ACCESS and BOTTLENECK to CONSEQUENCE, attach a model-contribution branch, then seal the observation boundary.", "attention_target": "the frozen path and stop bar",
+      "semantic_encodings": ["causality", "sequence", "containment"], "object_before": "Safe analogue has an explicit envelope.", "object_after": "A versioned threat path names every assumed link and stop boundary.", "continuity_objects": ["maze token", "instrument receipt"],
+      "composition": "Directed path left-to-right; model contribution above; stop bar right.", "motion_curve": "Edges grow in causal order; stop bar lands firmly.", "camera_action": "Widen to pathway view.", "animation_techniques": ["GrowArrow", "LaggedStart", "Create"],
+      "on_screen_text": ["ACTOR", "ACCESS", "PREREQS", "BOTTLENECK", "MODEL Δ", "CONTROLS", "CONSEQUENCE", "STOP"], "settle_seconds": 0.5, "hold_purpose": "Make assumptions and omissions inspectable.", "new_concepts": ["versioned threat pathway"], "claim_role": "mechanism", "evidence_boundary": "A complete record does not establish pathway probability."
+    },
+    {
+      "id": "b06", "story_function": "construction", "start_seconds": 60.175, "end_seconds": 73.205,
+      "narration": "Now freeze the cohorts. Separate novices, professionals, teams, and autonomous agents. Expertise, tool fluency, language, exposure, and dropout stay visible because an average can erase the group that crosses a bottleneck.",
+      "sync_anchor": "average can erase", "visual_purpose": "Expose heterogeneous effects that a pooled average hides.", "visual_action": "Deal four cohort cards into separate lanes, plot distinct deltas, then overlay and reject one average bar that hides the novice crossing.", "attention_target": "the hidden subgroup effect",
+      "semantic_encodings": ["contrast", "quantity", "identity"], "object_before": "Threat path names the proposed bottleneck.", "object_after": "Four cohorts retain separate identities and uplift deltas.", "continuity_objects": ["novice and expert markers", "uplift delta", "instrument receipt"],
+      "composition": "Four horizontal cohort lanes with one translucent average crossing them.", "motion_curve": "Cards deal evenly; average appears, then becomes transparent.", "camera_action": "Static cohort view.", "animation_techniques": ["LaggedStart", "TransformFromCopy", "Indicate"],
+      "on_screen_text": ["NOVICE", "PRO", "TEAM", "AGENT", "AVERAGE HIDES WHO CROSSED"], "settle_seconds": 0.55, "hold_purpose": "Keep subgroup outcomes visible.", "new_concepts": ["cohort-stratified uplift"], "claim_role": "mechanism", "evidence_boundary": "No population-prevalence inference."
+    },
+    {
+      "id": "b07", "story_function": "construction", "start_seconds": 73.205, "end_seconds": 86.535,
+      "narration": "Give each cohort credible counterfactuals: no assistance, a conventional tool, and the exact AI system. Match time, interface, tools, retries, human help, and scoring—or the treatment is not an identified model effect.",
+      "sync_anchor": "credible counterfactuals", "visual_purpose": "Construct matched arms and expose treatment-bundle confounding.", "visual_action": "Create three parallel rails, align six condition locks across them, and reject a tempting AI rail carrying extra time and retries.", "attention_target": "the matched-condition locks",
+      "semantic_encodings": ["contrast", "causality", "relation"], "object_before": "Cohort lanes expose heterogeneous effects.", "object_after": "Three assistance arms share the same non-treatment conditions.", "continuity_objects": ["maze token", "novice and expert markers", "instrument receipt"],
+      "composition": "Three rails stacked; six locks in a central vertical column.", "motion_curve": "Rails extend together; mismatched extras bounce away.", "camera_action": "Static trial-arm view.", "animation_techniques": ["Create", "LaggedStart", "Cross"],
+      "on_screen_text": ["NONE", "CONVENTIONAL", "EXACT AI", "TIME", "INTERFACE", "TOOLS", "RETRIES", "HELP", "SCORE"], "settle_seconds": 0.5, "hold_purpose": "Make the treatment boundary explicit.", "new_concepts": ["credible counterfactual"], "claim_role": "mechanism", "evidence_boundary": "A matched design still requires uncertainty and validity checks."
+    },
+    {
+      "id": "b08", "story_function": "mechanism", "start_seconds": 86.535, "end_seconds": 97.64,
+      "narration": "Before reading any null, pass a known-positive control through the same interface and grader. Here, a prevalidated hint should improve the maze outcome. A known-negative control should remain inert.",
+      "sync_anchor": "known-positive control", "visual_purpose": "Require sensitivity evidence from the exact outcome pipeline.", "visual_action": "Send HELPFUL HINT and INERT TOKEN through the same maze and grader; show one expected delta and one flat trace.", "attention_target": "the positive-control delta",
+      "semantic_encodings": ["causality", "contrast", "quantity"], "object_before": "Three treatment arms are condition-matched.", "object_after": "The instrument visibly detects a known effect and ignores an inert control.", "continuity_objects": ["maze token", "uplift delta", "instrument receipt"],
+      "composition": "Two control tokens left; shared pipeline center; outcome traces right.", "motion_curve": "Matched traversal with diverging endpoints.", "camera_action": "Static control bench.", "animation_techniques": ["MoveAlongPath", "TransformFromCopy", "Indicate"],
+      "on_screen_text": ["POSITIVE", "NEGATIVE", "SAME PIPELINE", "DETECTED", "INERT"], "settle_seconds": 0.55, "hold_purpose": "Show what instrument competence looks like.", "new_concepts": ["positive control", "negative control"], "claim_role": "mechanism", "evidence_boundary": "Prospective requirement, not a completed local study."
+    },
+    {
+      "id": "b09", "story_function": "counterexample", "start_seconds": 97.64, "end_seconds": 110.42,
+      "narration": "Now let the positive control fail while the tested model also shows no uplift. That is instrument failure, not incapability: the task may be at floor, the grader insensitive, or the control aimed at the wrong bottleneck.",
+      "sync_anchor": "instrument failure", "visual_purpose": "Block the false-negative inference with a memorable failed-control reversal.", "visual_action": "Flatten both outcome traces at zero, stamp NULL, then shatter the INCAPABLE conclusion into FLOOR, INSENSITIVE, and WRONG BOTTLENECK defects.", "attention_target": "the blocked incapability claim",
+      "semantic_encodings": ["uncertainty", "causality", "contrast"], "object_before": "Positive and negative controls validate the pipeline.", "object_after": "A failed positive control converts the null into an instrument defect.", "continuity_objects": ["uplift delta", "instrument receipt"],
+      "composition": "Flat traces center; false conclusion right; three defect cards below.", "motion_curve": "Quiet flatline, abrupt stamp, controlled fracture into explanations.", "camera_action": "One close reframe on the failed control.", "animation_techniques": ["Transform", "Cross", "LaggedStart"],
+      "on_screen_text": ["NULL", "POSITIVE CONTROL ✕", "INCAPABLE? BLOCKED", "FLOOR", "INSENSITIVE", "WRONG BOTTLENECK"], "settle_seconds": 0.65, "hold_purpose": "Protect the null from overinterpretation.", "new_concepts": ["instrument failure", "false-negative guard"], "claim_role": "counterexample", "evidence_boundary": "A failed instrument supports no absence claim."
+    },
+    {
+      "id": "b10", "story_function": "construction", "start_seconds": 110.42, "end_seconds": 123.575,
+      "narration": "Elicitation competence needs a receipt. Freeze prompt and scaffold families, harmless tools, adaptation and rescue budgets, and stopping rules. Keep deployed-policy behavior separate from stronger capability elicitation.",
+      "sync_anchor": "needs a receipt", "visual_purpose": "Bind elicitation effort and separate policy from latent-capability arms.", "visual_action": "Populate a competence receipt, then fork DEPLOYED POLICY and ELICITED CAPABILITY into separate sealed lanes with equal budgets.", "attention_target": "the arm-separation membrane",
+      "semantic_encodings": ["identity", "containment", "quantity"], "object_before": "Failed control exposes instrument weakness.", "object_after": "A versioned receipt fixes elicitation and keeps policy distinct from capability.", "continuity_objects": ["instrument receipt", "maze token"],
+      "composition": "Receipt left; two arm lanes right; budget locks between.", "motion_curve": "Fields populate, then a firm membrane separates arms.", "camera_action": "Static receipt view.", "animation_techniques": ["LaggedStart", "Create", "TransformFromCopy"],
+      "on_screen_text": ["PROMPTS", "SCAFFOLDS", "TOOLS", "ADAPT", "RESCUE", "STOP", "POLICY", "ELICITED"], "settle_seconds": 0.55, "hold_purpose": "Prevent refusal from becoming incapability.", "new_concepts": ["elicitation competence receipt"], "claim_role": "mechanism", "evidence_boundary": "Passing competence does not make a null true."
+    },
+    {
+      "id": "b11", "story_function": "mechanism", "start_seconds": 123.575, "end_seconds": 134.63,
+      "narration": "Place each finding on a six-level ladder. D zero asks whether bounded relevant knowledge is present. Calibrated questions may support that rung, but not real-world task completion.",
+      "sync_anchor": "D zero", "visual_purpose": "Begin the maximum-inference ladder at bounded knowledge.", "visual_action": "Raise a vertical D0-D5 ladder, place the knowledge token on D0, and lock the edge to D1.", "attention_target": "the locked D0-to-D1 bridge",
+      "semantic_encodings": ["sequence", "containment", "identity"], "object_before": "Competence receipt separates tested arms.", "object_after": "Knowledge occupies D0 and cannot climb without new evidence.", "continuity_objects": ["D0-D5 ladder", "maze token", "instrument receipt"],
+      "composition": "Ladder center-right; knowledge token on lowest rung; receipt left.", "motion_curve": "Ladder rises; token settles; lock closes.", "camera_action": "Reframe upward to ladder.", "animation_techniques": ["Create", "MoveAlongPath", "FadeIn"],
+      "on_screen_text": ["D0 KNOWLEDGE", "NOT COMPLETION", "BRIDGE LOCKED"], "settle_seconds": 0.45, "hold_purpose": "Establish the rung grammar.", "new_concepts": ["D0 knowledge"], "claim_role": "mechanism", "evidence_boundary": "Knowledge evidence only."
+    },
+    {
+      "id": "b12", "story_function": "mechanism", "start_seconds": 134.63, "end_seconds": 145.035,
+      "narration": "D one asks whether one safe component skill works. Positive controls and visible errors can validate that component task. They say nothing about an end-to-end operation.",
+      "sync_anchor": "one safe component", "visual_purpose": "Promote only to a controlled component skill.", "visual_action": "Unlock D1 with a tiny safe sub-maze and positive-control receipt, while the D2 workflow bridge stays red.", "attention_target": "the still-locked workflow bridge",
+      "semantic_encodings": ["sequence", "containment", "causality"], "object_before": "Knowledge token rests at D0.", "object_after": "One validated component reaches D1 without implying workflow completion.", "continuity_objects": ["D0-D5 ladder", "maze token", "instrument receipt"],
+      "composition": "D1 rung highlighted; component mini-maze left; D2 lock above.", "motion_curve": "One short unlock and controlled rise.", "camera_action": "Static ladder view.", "animation_techniques": ["ReplacementTransform", "MoveAlongPath", "Indicate"],
+      "on_screen_text": ["D1 COMPONENT", "CONTROL ✓", "END-TO-END? NO"], "settle_seconds": 0.45, "hold_purpose": "Keep component and workflow distinct.", "new_concepts": ["D1 component skill"], "claim_role": "mechanism", "evidence_boundary": "Safe component only."
+    },
+    {
+      "id": "b13", "story_function": "mechanism", "start_seconds": 145.035, "end_seconds": 157.415,
+      "narration": "D two asks whether the system improves a multi-step workflow in a bounded simulation. Intermediate state, recovery, abandonment, and help remain visible; omitted real-world steps remain explicit gaps.",
+      "sync_anchor": "multi-step workflow", "visual_purpose": "Show a bounded workflow with visible intermediate and missing state.", "visual_action": "Route the token through PLAN, ACT, ERROR, RECOVER, and COMPLETE stations, leaving a striped OMITTED STEP gap beyond the simulation.", "attention_target": "the explicit omitted-step gap",
+      "semantic_encodings": ["sequence", "uncertainty", "causality"], "object_before": "Component token rests at D1.", "object_after": "A bounded workflow reaches D2 while omitted reality remains visible.", "continuity_objects": ["D0-D5 ladder", "maze token", "instrument receipt"],
+      "composition": "Workflow rail left; D2 rung right; omitted gap above.", "motion_curve": "Stepwise station traversal with one recovery loop.", "camera_action": "Static ladder-and-workflow view.", "animation_techniques": ["MoveAlongPath", "LaggedStart", "Create"],
+      "on_screen_text": ["PLAN", "ACT", "ERROR", "RECOVER", "COMPLETE", "OMITTED"], "settle_seconds": 0.5, "hold_purpose": "Preserve what the simulation cannot observe.", "new_concepts": ["D2 workflow contribution"], "claim_role": "mechanism", "evidence_boundary": "No real infrastructure effect."
+    },
+    {
+      "id": "b14", "story_function": "mechanism", "start_seconds": 157.415, "end_seconds": 169.195,
+      "narration": "D three is actor uplift. Matched or randomized actors use the system and a credible counterfactual. The estimate stays bound to cohort, assistance contract, tasks, access, and uncertainty.",
+      "sync_anchor": "actor uplift", "visual_purpose": "Bind the causal estimate to its exact sampled envelope.", "visual_action": "Move paired actor endpoints into D3, draw an uncertainty interval around delta, and dock cohort, task, access, and assistance tags to it.", "attention_target": "the bounded delta with uncertainty",
+      "semantic_encodings": ["quantity", "identity", "causality"], "object_before": "Bounded workflow reaches D2.", "object_after": "A conditional actor-level assistance effect reaches D3.", "continuity_objects": ["D0-D5 ladder", "novice and expert markers", "uplift delta", "instrument receipt"],
+      "composition": "D3 rung center; paired endpoints left; condition tags around interval.", "motion_curve": "Paired endpoints converge into a bracket and confidence band.", "camera_action": "Static ladder close view.", "animation_techniques": ["TransformFromCopy", "Create", "LaggedStart"],
+      "on_screen_text": ["D3 UPLIFT", "COHORT", "CONTRACT", "TASKS", "ACCESS", "UNCERTAINTY"], "settle_seconds": 0.5, "hold_purpose": "Keep the estimate conditional.", "new_concepts": ["D3 actor uplift"], "claim_role": "mechanism", "evidence_boundary": "No realized harm or population effect."
+    },
+    {
+      "id": "b15", "story_function": "mechanism", "start_seconds": 169.195, "end_seconds": 180.675,
+      "narration": "D four measures safeguard robustness. Freeze an adaptive challenge budget and preserve successful and failed attempts. Tested resistance cannot establish that no untested bypass exists.",
+      "sync_anchor": "cannot establish", "visual_purpose": "Make bypass evidence effort-bounded and incomplete.", "visual_action": "Spend a fixed stack of challenge tokens against a guard, preserve pass and fail receipts, and leave an UNKNOWN routes cloud beyond the budget wall.", "attention_target": "the unknown routes beyond the budget",
+      "semantic_encodings": ["quantity", "containment", "uncertainty"], "object_before": "Conditional uplift rests at D3.", "object_after": "Effort-bounded robustness reaches D4 with unknown bypasses retained.", "continuity_objects": ["D0-D5 ladder", "instrument receipt"],
+      "composition": "Budget tokens left; safeguard center; receipts and unknown cloud right.", "motion_curve": "Tokens spend one by one; wall closes at zero.", "camera_action": "Static challenge bench.", "animation_techniques": ["LaggedStart", "MoveAlongPath", "FadeIn"],
+      "on_screen_text": ["D4 SAFEGUARDS", "BUDGET FROZEN", "PASS", "BYPASS", "UNTESTED? UNKNOWN"], "settle_seconds": 0.55, "hold_purpose": "Prevent tested robustness from becoming universal absence.", "new_concepts": ["D4 safeguard robustness"], "claim_role": "mechanism", "evidence_boundary": "No absence of untested bypasses."
+    },
+    {
+      "id": "b16", "story_function": "evidence_boundary", "start_seconds": 180.675, "end_seconds": 192.28,
+      "narration": "D five concerns field consequence: incidents, defensive outcomes, or losses. Sparse reports do not identify clean causality. Every move between rungs requires a named bridge study.",
+      "sync_anchor": "named bridge study", "visual_purpose": "Complete the ladder while exposing every prohibited automatic promotion.", "visual_action": "Place sparse incident dots on D5, draw amber bridge labels between all rungs, and make an unbridged token fall back to its last supported rung.", "attention_target": "the missing bridge and fallback",
+      "semantic_encodings": ["causality", "sequence", "uncertainty"], "object_before": "D4 holds effort-bounded safeguard evidence.", "object_after": "D5 exists, but the ladder permits no automatic promotion.", "continuity_objects": ["D0-D5 ladder", "instrument receipt"],
+      "composition": "Full ladder center; sparse incident field right; bridge labels left.", "motion_curve": "Incident dots arrive quietly; unsupported leap recoils.", "camera_action": "Widen to full ladder.", "animation_techniques": ["FadeIn", "Create", "MoveAlongPath"],
+      "on_screen_text": ["D5 FIELD", "INCIDENTS", "OUTCOMES", "LOSSES", "BRIDGE REQUIRED"], "settle_seconds": 0.6, "hold_purpose": "Show that proximity is not evidence.", "new_concepts": ["D5 field consequence", "bridge study"], "claim_role": "boundary", "evidence_boundary": "No clean causal attribution without a design."
+    },
+    {
+      "id": "b17", "story_function": "comparison", "start_seconds": 192.28, "end_seconds": 204.485,
+      "narration": "Do not compress the trial into one dramatic score. Preserve completion, quality, time, errors, unsafe detail, refusal, interventions, help, abandonment, human burden, cost, and residual uncertainty.",
+      "sync_anchor": "one dramatic score", "visual_purpose": "Replace scalar theater with a multidimensional outcome ledger.", "visual_action": "Crush a large 87 score tile, then unfold twelve small outcome dials with mixed directions and an open residual.", "attention_target": "the conflicting outcome dials",
+      "semantic_encodings": ["quantity", "contrast", "uncertainty"], "object_before": "Full ladder exposes bridge requirements.", "object_after": "The trial reports a vector of outcomes rather than one score.", "continuity_objects": ["uplift delta", "instrument receipt"],
+      "composition": "Rejected scalar left; twelve compact dials in a grid; residual below.", "motion_curve": "Score compresses; dials unfold in three waves.", "camera_action": "Static outcome-dashboard view.", "animation_techniques": ["ReplacementTransform", "LaggedStart", "Indicate"],
+      "on_screen_text": ["COMPLETE", "QUALITY", "TIME", "ERROR", "UNSAFE", "REFUSAL", "INTERVENE", "HELP", "ABANDON", "BURDEN", "COST", "RESIDUAL"], "settle_seconds": 0.5, "hold_purpose": "Let tradeoffs coexist.", "new_concepts": ["multidimensional uplift outcome"], "claim_role": "mechanism", "evidence_boundary": "No universal scalar risk score."
+    },
+    {
+      "id": "b18", "story_function": "construction", "start_seconds": 204.485, "end_seconds": 218.415,
+      "narration": "The result needs two surfaces. A restricted annex may hold tasks, traces, and reusable details under access logs and retention rules. The public card carries method, uncertainty, limitations, and the checks redaction prevents.",
+      "sync_anchor": "two surfaces", "visual_purpose": "Separate evaluability from dangerous disclosure without hiding the epistemic cost.", "visual_action": "Split the instrument receipt into a sealed magenta annex and an amber public card; attach digest, access log, retention, and redaction-gap fields.", "attention_target": "the explicit redaction-gap statement",
+      "semantic_encodings": ["containment", "identity", "uncertainty"], "object_before": "Outcome vector preserves mixed trial results.", "object_after": "Restricted and public surfaces carry different content and linked receipts.", "continuity_objects": ["instrument receipt", "restricted annex", "public dossier"],
+      "composition": "Sealed annex left; digest bridge center; public card right.", "motion_curve": "Receipt bifurcates; annex seals; public limits remain open.", "camera_action": "Static custody view.", "animation_techniques": ["TransformFromCopy", "Create", "FadeIn"],
+      "on_screen_text": ["RESTRICTED", "TASKS", "TRACES", "DETAILS", "DIGEST", "PUBLIC", "METHOD", "UNCERTAINTY", "CANNOT CHECK"], "settle_seconds": 0.65, "hold_purpose": "Make redaction's verification cost visible.", "new_concepts": ["dual-surface disclosure"], "claim_role": "mechanism", "evidence_boundary": "No hazardous detail is displayed."
+    },
+    {
+      "id": "b19", "story_function": "mechanism", "start_seconds": 218.415, "end_seconds": 232.42,
+      "narration": "Independent review chooses a route. An invalid or unsafe study is quarantined, redesigned, or narrowed. A bounded finding becomes a least-authority dossier. Unknown risk plus inadequate measurement can justify narrower access.",
+      "sync_anchor": "chooses a route", "visual_purpose": "Show fail-closed review without manufacturing reassurance.", "visual_action": "Fork the linked receipt at independent review: three rejecting routes return to quarantine, while one bounded route enters a narrow dossier aperture.", "attention_target": "the quarantine branch and narrow aperture",
+      "semantic_encodings": ["sequence", "authority", "containment"], "object_before": "Annex and public card are linked by digest.", "object_after": "Review either narrows the study or emits a bounded decision packet.", "continuity_objects": ["restricted annex", "public dossier", "instrument receipt"],
+      "composition": "Review diamond center; quarantine loop left; narrow dossier gate right.", "motion_curve": "Three firm rejections, then one deliberate bounded pass.", "camera_action": "Static review fork.", "animation_techniques": ["GrowArrow", "LaggedStart", "MoveAlongPath"],
+      "on_screen_text": ["INDEPENDENT REVIEW", "INVALID", "UNSAFE", "NARROW", "QUARANTINE", "BOUNDED FINDING"], "settle_seconds": 0.6, "hold_purpose": "Make stopping a legitimate output.", "new_concepts": ["least-authority dossier"], "claim_role": "mechanism", "evidence_boundary": "Decision architecture only."
+    },
+    {
+      "id": "b20", "story_function": "construction", "start_seconds": 232.42, "end_seconds": 244.75,
+      "narration": "That dossier freezes model, checkpoint, policy, scaffold, tools, safeguards, threat version, cohort, comparator, evaluator, attempts, uncertainty, expiry, information-hazard boundary, and maximum inference.",
+      "sync_anchor": "That dossier freezes", "visual_purpose": "Populate the minimum context that prevents portable danger labels.", "visual_action": "Open the public dossier and dock fifteen compact field chips around a central maximum-inference capsule.", "attention_target": "the maximum-inference capsule",
+      "semantic_encodings": ["identity", "containment", "sequence"], "object_before": "Review emits a bounded finding.", "object_after": "The finding is inseparable from model, study, uncertainty, expiry, and disclosure context.", "continuity_objects": ["public dossier", "instrument receipt"],
+      "composition": "Wide dossier frame; field chips in three rows; maximum inference centered.", "motion_curve": "Fields populate in causal groups rather than a text dump.", "camera_action": "Close stable dossier view.", "animation_techniques": ["LaggedStart", "FadeIn", "Circumscribe"],
+      "on_screen_text": ["MODEL", "CHECKPOINT", "POLICY", "SCAFFOLD", "TOOLS", "GUARDS", "THREAT v", "COHORT", "COMPARATOR", "EVALUATOR", "ATTEMPTS", "UNCERTAINTY", "EXPIRY", "MAX INFERENCE"], "settle_seconds": 0.55, "hold_purpose": "Let the bounded identity scan as one object.", "new_concepts": ["uplift dossier"], "claim_role": "mechanism", "evidence_boundary": "Complete fields do not validate their contents."
+    },
+    {
+      "id": "b21", "story_function": "mechanism", "start_seconds": 244.75, "end_seconds": 257.08,
+      "narration": "Threshold, release, monitoring, safety-case, and resilience owners may consume the packet, but none receives a portable danger label. Material change expires the result and preserves its superseded receipt.",
+      "sync_anchor": "material change expires", "visual_purpose": "Route least-authority consumers and demonstrate expiry rather than silent reuse.", "visual_action": "Send bounded receipt copies to five owners, block a detached DANGER stamp, then change MODEL v and move the packet into SUPERSEDED custody.", "attention_target": "the expiry transition",
+      "semantic_encodings": ["authority", "sequence", "identity"], "object_before": "Dossier contains full decision context.", "object_after": "Consumers receive scoped copies; a material change expires and preserves the old receipt.", "continuity_objects": ["public dossier", "instrument receipt"],
+      "composition": "Dossier center; five consumer spokes; superseded archive below.", "motion_curve": "Receipts radiate, label bounces, version changes, packet drops to archive.", "camera_action": "Widen to consumer field.", "animation_techniques": ["TransformFromCopy", "Cross", "ReplacementTransform"],
+      "on_screen_text": ["THRESHOLD", "RELEASE", "MONITOR", "SAFETY CASE", "RESILIENCE", "PORTABLE LABEL ✕", "EXPIRED", "SUPERSEDED"], "settle_seconds": 0.55, "hold_purpose": "Show custody after expiry.", "new_concepts": ["expiry on material change"], "claim_role": "mechanism", "evidence_boundary": "No downstream authority is granted by the visual."
+    },
+    {
+      "id": "b22", "story_function": "evidence_boundary", "start_seconds": 257.08, "end_seconds": 269.735,
+      "narration": "Today this chapter provides a design rationale and public-safe evaluation architecture. It does not run a hazardous-domain uplift study, calibrate a threshold, validate a safeguard, or establish danger or safety.",
+      "sync_anchor": "Today this chapter provides", "visual_purpose": "State the exact current evidence envelope without promotional drift.", "visual_action": "Place DESIGN RATIONALE and PUBLIC-SAFE ARCHITECTURE inside an amber frame while four operational claims stop behind a red rule.", "attention_target": "the hard current-support boundary",
+      "semantic_encodings": ["containment", "contrast", "uncertainty"], "object_before": "Expired dossier remains preserved for consumers.", "object_after": "Current support is bounded to argument-level architecture.", "continuity_objects": ["public dossier", "restricted annex", "instrument receipt"],
+      "composition": "Supported artifacts left; vertical boundary center; unrun claims right.", "motion_curve": "Two supported tiles settle; four claims approach and stop.", "camera_action": "Static evidence-boundary view.", "animation_techniques": ["FadeIn", "MoveAlongPath", "Cross"],
+      "on_screen_text": ["DESIGN RATIONALE", "PUBLIC-SAFE ARCHITECTURE", "NO UPLIFT STUDY", "NO THRESHOLD", "NO SAFEGUARD RESULT", "NO DANGER / SAFETY"], "settle_seconds": 0.65, "hold_purpose": "Keep evidence and proposal separate.", "new_concepts": ["current evidence envelope"], "claim_role": "boundary", "evidence_boundary": "Argument support only."
+    },
+    {
+      "id": "b23", "story_function": "payoff", "start_seconds": 269.735, "end_seconds": 282.215,
+      "narration": "Especially protect the null. Negative interpretation is blocked when positive control, task validity, elicitation competence, sensitivity, or cohort balance fails. A weak instrument proves only its own failure.",
+      "sync_anchor": "protect the null", "visual_purpose": "Resolve the false-negative concern into a five-lock release rule.", "visual_action": "Return the NULL token to a gate with five locks; fail one sensitivity lock and route the token to INSTRUMENT FAILURE rather than ABSENT CAPABILITY.", "attention_target": "the null diverted to instrument failure",
+      "semantic_encodings": ["uncertainty", "sequence", "containment"], "object_before": "Evidence boundary states what has not been run.", "object_after": "A five-lock gate blocks unsupported negative inference.", "continuity_objects": ["instrument receipt", "uplift delta"],
+      "composition": "Null token left; five-lock gate center; two conclusions right.", "motion_curve": "Locks test sequentially; one fails; token takes lower route.", "camera_action": "Static final mechanism view.", "animation_techniques": ["LaggedStart", "MoveAlongPath", "Indicate"],
+      "on_screen_text": ["POSITIVE", "VALID TASK", "ELICITATION", "SENSITIVITY", "BALANCE", "INSTRUMENT FAILURE", "ABSENT? BLOCKED"], "settle_seconds": 0.7, "hold_purpose": "Make the false-negative guard memorable.", "new_concepts": ["negative-interpretation gate"], "claim_role": "mechanism", "evidence_boundary": "A weak instrument supports no capability absence."
+    },
+    {
+      "id": "b24", "story_function": "payoff", "start_seconds": 282.215, "end_seconds": 291.695,
+      "narration": "Dangerous capability becomes governable when the stack measures a bounded assistance effect, preserves what it could not safely observe, and limits downstream inference.",
+      "sync_anchor": "bounded assistance effect", "visual_purpose": "Resolve the chapter on one governed measurement object.", "visual_action": "Dock uplift delta, open residual, sealed annex, public dossier, and expiry receipt into one amber custody frame.", "attention_target": "the complete bounded packet",
+      "semantic_encodings": ["containment", "authority", "identity"], "object_before": "Five locks protect negative interpretation.", "object_after": "A governed uplift packet retains both observation and unobserved residual.", "continuity_objects": ["uplift delta", "instrument receipt", "restricted annex", "public dossier"],
+      "composition": "Owned dossier centered with linked annex, delta, residual, expiry, and maximum-inference chips.", "motion_curve": "Five persistent objects settle into one inspectable custody frame.", "camera_action": "Stable payoff composition.", "animation_techniques": ["Transform", "LaggedStart", "Indicate"],
+      "on_screen_text": ["BOUNDED Δ", "RESIDUAL OPEN", "ANNEX SEALED", "EXPIRES", "MAX INFERENCE"], "settle_seconds": 0.7, "hold_purpose": "End the argument on bounded custody.", "new_concepts": ["governed dangerous-capability packet"], "claim_role": "mechanism", "evidence_boundary": "The packet remains a design rationale, not a danger or safety result."
+    },
+    {
+      "id": "b25", "story_function": "handoff", "start_seconds": 291.695, "end_seconds": 299.945,
+      "narration": "Next, Military AI examines how bounded capability evidence enters sensing, command, autonomous action, and strategic stability.",
+      "sync_anchor": "Military AI", "visual_purpose": "Hand the bounded evidence object to a distinct strategic-system analysis without granting it command authority.", "visual_action": "Slide the amber packet to a handoff axis and open an abstract sensing-command-action lattice on the far side.", "attention_target": "the custody boundary before the command lattice",
+      "semantic_encodings": ["sequence", "authority", "containment"], "object_before": "The uplift packet rests in bounded custody.", "object_after": "A military-AI lattice opens beyond, without receiving portable authority.", "continuity_objects": ["instrument receipt", "public dossier"],
+      "composition": "Bounded dossier left; handoff axis center; abstract command lattice right.", "motion_curve": "One deliberate packet approach, hard stop, then lattice opening.", "camera_action": "Stable final wide composition.", "animation_techniques": ["MoveAlongPath", "Create", "FadeIn"],
+      "on_screen_text": ["BOUNDED EVIDENCE", "NO COMMAND AUTHORITY", "NEXT: MILITARY AI"], "settle_seconds": 0.8, "hold_purpose": "Preserve custody across the chapter transition.", "new_concepts": ["strategic-system handoff"], "claim_role": "transition", "evidence_boundary": "The visual adds no military-system, deployment, safety, AGI, or ASI result."
+    }
+  ]
+}

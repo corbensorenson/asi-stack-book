@@ -4157,8 +4157,8 @@ without imposing a broadcast loudness target on YouTube.
 `visual_edition/manim_v2_production_ledger.json` derives all 84 targets in
 canonical order across the 5/7/72 cohorts. Three schemas and a registered
 validator make the beat, review, predecessor, gate, receipt, YouTube, and
-Quarto transitions fail closed. The ledger currently records 80 planned
-chapters, four chapters through animatic, and four through picture-and-sound
+Quarto transitions fail closed. The ledger currently records 79 planned
+chapters, five chapters through animatic, and four through picture-and-sound
 lock. Chapter 1 turns a
 duplicate-file deletion request into a persistent proposal, authority,
 observation, mismatch, and rollback trace. Chapter 2 turns one invoice into a
@@ -4171,13 +4171,18 @@ the exact evidence ceiling. Chapter 4 rewinds one apparently successful
 deployment through goal misbinding, stale context, authority expansion,
 evaluator capture, purpose-free execution, residual laundering, and
 self-ratification before binding the joined trace to custody, recovery,
-recurrence, detector evaluation, and a hard evidence ceiling. Together they
-carry 97 audio-derived beats, original
+recurrence, detector evaluation, and a hard evidence ceiling. Chapter 5 turns
+equal knowledge but unequal performance in a harmless logistics maze into a
+matched actor-system uplift instrument, protects the null with positive
+controls, separates six quantities, locks every unearned D0–D5 bridge, and
+binds surviving findings to a restricted/public, expiring dossier. Together
+they carry 122 audio-derived beats, original
 chapter-specific scenes, balanced captions, descriptive transcripts, custom
-thumbnails, 363 exact beat samples across animatic and delivery review, and
+thumbnails, 438 exact beat samples across animatic and delivery review, and
 per-dimension experience passes without average laundering. The rejected
-Chapter 1 animatic remains preserved as generation history. All four delivery
-masters remain candidates only: zero generation-2 chapters have passed
+Chapter 1 and Chapter 5 animatics remain preserved as generation history. All
+four delivery masters and the fifth animatic remain candidates only: zero
+generation-2 chapters have passed
 release candidate, independent review, technical, claim-fidelity, or
 acceptance, and zero generation-2 YouTube or Quarto identities are current.
 
