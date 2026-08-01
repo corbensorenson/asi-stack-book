@@ -1313,16 +1313,18 @@ baseline declarations. At terminal C6 closure, the overlay classified all 1,219 
 declarations across 105 theorem-bearing modules. That
 denominator remains frozen in the cumulative rationalization ledger.
 
-The dated 2026-08-01 Failure Modes and Governed Operations expansions reopen
+The dated 2026-08-01 Failure Modes, Governed Operations, and Learned Objective
+Integrity expansions reopen
 formal growth without rewriting that history. The current overlay in
-`proofs/proof_semantic_depth_overlay.json` classifies 1,242 live theorem
-declarations across 107 theorem-bearing modules and maps them to 61 active
-semantic-owner chapters. The twenty-three added declarations are bound to the
+`proofs/proof_semantic_depth_overlay.json` classifies 1,256 live theorem
+declarations across 108 theorem-bearing modules and maps them to 62 active
+semantic-owner chapters. The thirty-seven added declarations are bound to the
 five-stage failure-recovery model, the eight-stage governed-operations
-lifecycle, independently encoded validators, 31 and 44 rejecting mutations,
-and exact no-support boundaries.
+lifecycle, the learned-objective non-identification witness and eight-stage
+integrity lifecycle, independently encoded validators, 31, 44, and 59 rejecting
+mutations, and exact no-support boundaries.
 
-The live semantic-depth distribution is 19 P0 record-shape results, 675 P1
+The live semantic-depth distribution is 25 P0 record-shape results, 683 P1
 finite-route results, 25 P2 reachability/nonvacuity results, 336 P3
 implementation-refinement results, 97 P4 cross-component-safety results, 90 P5
 liveness/recovery results, and zero P6 empirically bound results. P6 being zero
@@ -1332,11 +1334,11 @@ artifact does not turn a theorem into empirical evidence.
 Every overlay row records its assumptions, active semantic owner, downstream
 consumer, witness or explicit witness absence, implementation binding, mutation
 evidence, maximum inference, and disposition. The resulting current estate is
-1,242 retain, zero retire as narrow projection, zero pending scope-language
-rewrites, and zero stronger-model actions remaining. All 1,242 rows have
+1,256 retain, zero retire as narrow projection, zero pending scope-language
+rewrites, and zero stronger-model actions remaining. All 1,256 rows have
 mutation coverage and every retained theorem has a named consumer. The
 terminal rationalization receipt remains 1,219 retain with no pending action;
-the later twenty-three theorems are additive consumer-owned formal expansion, not
+the later thirty-seven theorems are additive consumer-owned formal expansion, not
 retroactive rationalization.
 
 The cumulative dependency-safe retirement ledger is

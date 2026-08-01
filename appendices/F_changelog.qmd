@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-08-01 - Learned-objective integrity formalization
+
+- Added `AsiStackProofs.LearnedObjectiveIntegrity`, including a constructive
+  witness that identical compliant traces can arise from distinct learned
+  objective hypotheses and a separating opportunity that produces different
+  actions. This proves finite trace-only non-identification in the model, not
+  objective identity, mesa-optimizer detection, or absence of deception.
+- Added an eight-stage hypothesis-review lifecycle with exact model,
+  checkpoint, signal, evidence, reviewer, consumer, residual, and version
+  custody. Its independent validator accepts seven ordered transitions and
+  rejects 59 wrong-stage, weak-evidence, monitor, authority, expiry, rollback,
+  handoff, and invalidation mutations without changing rejected state.
+- Registered two canonical proof targets and integrated the result into the
+  chapter, outline, manifest, proof dossier, adequacy review, and generated
+  proof surfaces. Chapter support remains `argument`; evaluator competence,
+  intervention validity, training-time deception detection, mitigation
+  effectiveness, deployment behavior, safety, and transfer remain empirical
+  or Project Theseus obligations.
+
 ## 2026-08-01 - Governed-operations lifecycle refinement
 
 - Added `AsiStackProofs.GovernedOperationsRefinement`, an eight-stage incident
@@ -1490,7 +1509,7 @@
   exact scope-language rewrites, and thirty-nine public-target migrations. The
   live estate is 1,304 declarations: 35 P0, 753 P1, 25 P2, 319 P3, 93 P4, 79
   P5, and zero P6. The remaining queue contains 92 stronger-model rewrites.
-- Current proof-depth snapshot: 322 proof targets, 113 Lean modules, 1242 theorem declarations, 842 derived/decomposed, 172 direct/projection, 228 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Current proof-depth snapshot: 323 proof targets, 113 Lean modules, 1256 theorem declarations, 847 derived/decomposed, 178 direct/projection, 231 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - No theorem count is treated as a success metric. No policy-quality,
   substrate-quality, safety-lifecycle, chapter-core support, release, or
   publication-authority claim changes.

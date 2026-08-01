@@ -414,11 +414,21 @@
       "tag": "lean:inner_alignment.behavior_does_not_identify_objective",
       "chapter_id": "inner-alignment-mesa-optimization-and-learned-objective-integrity",
       "module": "AsiStackProofs.LearnedObjectiveIntegrity",
-      "formal_target": "A finite admission model refuses to infer learned-objective identity from compliant behavior alone.",
-      "target_status": "planned",
+      "formal_target": "Two finite worlds carry the same observed compliant trace and distinct authored objective hypotheses, so no deterministic trace-only inference can identify both; one separating opportunity produces different actions.",
+      "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Model only the non-identification boundary over finite authored policy hypotheses and behavior observations. The theorem must not claim access to a model's true objective, absence of mesa-optimization or deception, alignment, safety, or deployment readiness."
+      "rationale": "Implemented as a constructive finite non-identification result over two authored worlds with equal compliant traces, distinct objective hypotheses, and different opportunity actions. It proves only that one deterministic trace-only inference cannot correctly identify both worlds; it does not establish that either hypothesis is a real learned objective or that the witness resembles a trained model."
+    },
+    {
+      "tag": "lean:inner_alignment.hypothesis_review_lifecycle",
+      "chapter_id": "inner-alignment-mesa-optimization-and-learned-objective-integrity",
+      "module": "AsiStackProofs.LearnedObjectiveIntegrity",
+      "formal_target": "An eight-stage lifecycle binds plural hypotheses, independent evidence lanes, sealed shift and opportunity interventions, concealment-aware mitigation review, residual uncertainty, bounded use, independent handoff, and descendant invalidation while preserving rejected state and minting no support or external authority.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented as a reachable authored-record lifecycle with seven accepted transitions, exact rejection preservation, one bounded handoff, one material-change invalidation, and an independently encoded 59-mutation consumer. It does not establish evidence truth, objective identity, deception detection, evaluator independence, mitigation efficacy, alignment, safety, or readiness."
     },
     {
       "tag": "lean:values.conflict.operational_invariant",
@@ -3231,5 +3241,5 @@
       "rationale": "The planned boundary makes roles, lower-order rescues, the complete candidate denominator, qualification, cost, fallback, descendants, and contraction state explicit. It cannot establish irreducibility, representational usefulness, bounded primitive arity, general reasoning, safe online adaptation, or ASI."
     }
   ],
-  "record_count": 322
+  "record_count": 323
 }

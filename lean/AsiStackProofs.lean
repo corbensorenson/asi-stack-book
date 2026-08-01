@@ -50,6 +50,7 @@ import AsiStackProofs.IntentExecutionRefinement
 import AsiStackProofs.InterStackProtocols
 import AsiStackProofs.IntegratedReferenceTrace
 import AsiStackProofs.LivingBook
+import AsiStackProofs.LearnedObjectiveIntegrity
 import AsiStackProofs.MoECOTRuntime
 import AsiStackProofs.ModelWeightCustody
 import AsiStackProofs.PolicyOptimization

@@ -3065,7 +3065,12 @@
     "visual_edition/chapters/asi-is-a-stack-not-a-model/generation-2/reviews/animatic-r2.json",
     "lean/AsiStackProofs/FailureRecoveryRefinement.lean",
     "scripts/validate_failure_recovery_refinement.py",
-    "tests/fixtures/protocol_records/failure_boundary_map.valid.json"
+    "tests/fixtures/protocol_records/failure_boundary_map.valid.json",
+    "lean/AsiStackProofs/LearnedObjectiveIntegrity.lean",
+    "scripts/validate_learned_objective_integrity.py",
+    "scripts/register_learned_objective_integrity.py",
+    "chapters/inner-alignment-mesa-optimization-and-learned-objective-integrity.qmd",
+    "evidence_quality/proof_model_dossiers/inner-alignment-mesa-optimization-and-learned-objective-integrity.md"
   ],
   "units": [
     {
@@ -11961,8 +11966,8 @@
       "output_assertions": [
         "1,151/1,151 activation-baseline theorem declarations and 298/298 baseline targets are reviewed and dispositioned",
         "298/298 historical proof targets remain implemented and explicitly adequacy-routed",
-        "322 current targets comprise 296 implemented and 26 planned, including the consumer-owned Failure Modes and Governed Operations lifecycle refinements",
-        "the thirty-five richer-semantics targets remain bounded and route to P3/P4 rather than disappearing",
+        "323 current targets comprise 298 implemented and 25 planned, including the consumer-owned Failure Modes, Governed Operations, and Learned Objective Integrity lifecycle refinements",
+        "the thirty-four richer-semantics targets remain bounded and route to P3/P4 rather than disappearing",
         "nine required safety-critical, integration, and review-named refinement models have dossiers and registered consumers",
         "P2/M3 is completed, P3 is active, and prerequisite M2 is active without support-state movement"
       ],
@@ -17125,11 +17130,57 @@
       "prohibited_inference": "The model does not establish event truth, detector or reviewer independence, containment or remediation effectiveness, deployed recovery, safety, transfer, chapter-core support, AGI, or ASI.",
       "contract_precision": "exact",
       "semantic_review_state": "checked_bounded_reachability_rejection_noninterference_readmission_and_recurrence_contract"
+    },
+    {
+      "id": "validate_learned_objective_integrity.py:446",
+      "order": 446,
+      "script": "validate_learned_objective_integrity.py",
+      "args": [],
+      "execution_tier": "pr",
+      "validation_class": "proof_or_evidence_gate",
+      "input_contract": "The bounded learned-objective non-identification witness, eight-stage integrity lifecycle, exact chapter proof boundary, generated proof manifest, and reviewed triage record.",
+      "input_artifacts": [
+        "lean/AsiStackProofs/LearnedObjectiveIntegrity.lean",
+        "scripts/validate_learned_objective_integrity.py",
+        "scripts/register_learned_objective_integrity.py",
+        "chapters/inner-alignment-mesa-optimization-and-learned-objective-integrity.qmd",
+        "evidence_quality/proof_model_dossiers/inner-alignment-mesa-optimization-and-learned-objective-integrity.md",
+        "proofs/proof_manifest.json",
+        "proofs/proof_triage.json"
+      ],
+      "output_contract": "Reproduce the equal-compliant-trace counterexample and all seven accepted lifecycle transitions independently; reject wrong-stage, identity, replay, objective-certainty, missing-evidence, mitigation, use, and descendant-invalidation mutations with exact state preservation.",
+      "output_assertions": [
+        "two equal compliant traces have distinct authored objective hypotheses",
+        "a separating opportunity yields different actions",
+        "eight lifecycle stages and seven accepted transitions",
+        "59 exact-state mutations reject",
+        "14 Lean declarations exist",
+        "zero support or external-authority effect"
+      ],
+      "claim_scope": "Finite non-identification and authored learned-objective integrity record discipline only.",
+      "negative_controls": "validator_owned_fifty_nine_identity_lifecycle_and_overclaim_mutations",
+      "negative_control_cases": [
+        "wrong-stage transitions",
+        "identity substitution",
+        "event replay",
+        "support or authority laundering",
+        "objective certainty laundering",
+        "missing plural hypotheses",
+        "missing independent evidence lanes",
+        "unsealed or opportunity-free intervention",
+        "missing concealment review",
+        "missing residual hypothesis",
+        "unbounded or unowned use",
+        "stale descendants after material change"
+      ],
+      "prohibited_inference": "No theorem or consumer identifies a model objective, detects mesa-optimization or deception, proves evaluator competence, mitigation efficacy, alignment, safety, readiness, release authority, transfer, SOTA, AGI, or ASI.",
+      "contract_precision": "exact",
+      "semantic_review_state": "manual_nonidentification_lifecycle_consumer_and_no_promotion_boundary_reviewed"
     }
   ],
   "summary": {
-    "required_artifact_count": 3021,
-    "unit_count": 445
+    "required_artifact_count": 3026,
+    "unit_count": 446
   },
   "non_claims": [
     "Registry coverage does not establish semantic adequacy of every validator.",

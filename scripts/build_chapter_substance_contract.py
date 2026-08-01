@@ -795,14 +795,15 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
         "support_state_effect": "none",
     },
     "inner-alignment-mesa-optimization-and-learned-objective-integrity": {
-        "reviewed_sha256": "a75ea8e57aff7c752142f0342f189cbe43091bac57198accea566e0511533482",
-        "reviewed_date": "2026-07-28",
+        "reviewed_sha256": "af7d3d13dcfc3fe0887413dfd287e1b381d520e30b0c065eb2731e97bbea947e",
+        "reviewed_date": "2026-08-01",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,
         "review_basis": [
             "the eight concepts preserve outer target, actual signal, policy, compatible objective hypotheses, internal optimization, capable goal shift, evaluation awareness, evidence independence, mitigation hiding, opportunity, expiry, and descendants without collapsing behavior into objective identity",
             "learned-optimization, goal-misgeneralization, Sleeper Agents, reward-hacking misalignment, power-seeking, and Alignment Field sources retain conceptual, construction, environment, model, formal-assumption, and authorial-lineage ceilings rather than becoming a local inner-alignment result",
             "the chapter preserves competence and opportunity controls, sealed separating interventions, alternative explanations, removal-versus-concealment denominators, full-state rollback residuals, descendant invalidation, and argument-only support",
+            "the added Lean counterexample and eight-stage lifecycle prove only finite non-identification and authored record discipline; the independent 59-mutation consumer and formal nonclaims preserve objective-discovery, deception-detection, mitigation, evaluator-quality, deployment, alignment, and safety boundaries",
         ],
         "support_state_effect": "none",
     },

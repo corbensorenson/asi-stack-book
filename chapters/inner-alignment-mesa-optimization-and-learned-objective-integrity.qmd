@@ -4,7 +4,7 @@ chapter_id: "inner-alignment-mesa-optimization-and-learned-objective-integrity"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.3 concept-complete argument-level manuscript"
-last_updated: "2026-07-28"
+last_updated: "2026-08-01"
 primary_sources:
   - "ext_learned_optimization_risks_2019"
   - "ext_goal_misgeneralization_2022"
@@ -30,7 +30,7 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source loading state | Five records cover learned optimization, goal misgeneralization, constructed persistent deceptive behavior, reward-hacking-linked misalignment, and power-seeking pressure. |
-| Test state | Benign objective-generalization and mitigation protocol specified; no model trained or evaluated. |
+| Test state | A finite non-identification witness and eight-stage Lean integrity lifecycle are implemented with an independently encoded 59-mutation consumer. The benign objective-generalization and mitigation campaign remains specified but unexecuted; no model has been trained or evaluated. |
 
 ## Drafting guardrail
 
@@ -758,14 +758,40 @@ positive controls, relevant opportunity, and method-specific rescue. This is a
 passed here, and the current evidence supports only the need for the bounded
 integrity contract.
 
+## Formalization hooks
+
+`AsiStackProofs.LearnedObjectiveIntegrity` now proves a finite
+non-identification boundary rather than assuming it. Two authored worlds have
+the same three-action compliant observation trace but distinct objective
+hypotheses; one takes a different action when a separating opportunity appears.
+Any deterministic inference that sees only the shared trace therefore cannot
+identify both worlds correctly. This is an impossibility result about the
+information in the encoded trace, not evidence that either hypothesis is an
+actual learned objective.
+
+The same module implements an eight-stage lifecycle from scoped record through
+plural hypotheses, evidence binding, intervention review, mitigation review,
+bounded use, Readiness handoff, and material-change invalidation. The lifecycle
+requires separate behavioral, training-process, causal, and white-box lanes;
+competence and positive controls; sealed shift and opportunity tests;
+monitor-independence and disagreement records; concealment and capability-damage
+review; unresolved-hypothesis custody; bounded authority, expiry, rollback, and
+descendant ownership; independent review; and a maximum-inference boundary.
+Rejected events preserve exact state. Accepted events cannot assign support or
+external authority.
+
+| Target | Exact mechanized result | Status |
+|---|---|---|
+| `lean:inner_alignment.behavior_does_not_identify_objective` | Equal compliant traces plus distinct authored hypotheses cannot both be identified by one trace-only inference; a separating opportunity distinguishes the concrete witnesses. | implemented |
+| `lean:inner_alignment.hypothesis_review_lifecycle` | Seven accepted transitions reach one bounded handoff and one descendant invalidation; 59 independently encoded mutations reject without changing state. | implemented |
+
+The formal result does not prove or identify a model objective, detect mesa-optimization
+or deception, establish evaluator or monitor independence, show that a
+mitigation removes rather than hides behavior, validate a deployment gate, or
+prove alignment or safety. Chapter support remains `argument`. Those outcomes
+require the planned competent campaign and Project Theseus runtime integration.
+
 ## Codex test plan
-
-### Planned formalization
-
-`lean:inner_alignment.behavior_does_not_identify_objective` will encode only a
-finite non-identification boundary: compliant observations cannot select one
-learned-objective hypothesis without separating evidence. It will not identify
-an actual model objective or prove alignment, safety, or deception absence.
 
 | Test | Purpose | Status |
 |---|---|---|

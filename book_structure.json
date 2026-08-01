@@ -3387,8 +3387,14 @@
             {
               "tag": "lean:inner_alignment.behavior_does_not_identify_objective",
               "module": "AsiStackProofs.LearnedObjectiveIntegrity",
-              "target": "A finite admission model refuses to infer learned-objective identity from compliant behavior alone.",
-              "status": "planned"
+              "target": "Two finite worlds carry the same observed compliant trace and distinct authored objective hypotheses, so no deterministic trace-only inference can identify both; one separating opportunity produces different actions.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:inner_alignment.hypothesis_review_lifecycle",
+              "module": "AsiStackProofs.LearnedObjectiveIntegrity",
+              "target": "An eight-stage lifecycle binds plural hypotheses, independent evidence lanes, sealed shift and opportunity interventions, concealment-aware mitigation review, residual uncertainty, bounded use, independent handoff, and descendant invalidation while preserving rejected state and minting no support or external authority.",
+              "status": "implemented"
             }
           ],
           "draft_maturity": "integrated_argument_chapter",

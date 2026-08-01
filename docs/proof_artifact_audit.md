@@ -10,10 +10,10 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Metric | Value |
 |---|---:|
-| Proof targets audited | 322 |
-| Manifest status counts | {"implemented": 296, "planned": 26} |
-| Triage class counts | {"formal-invariant": 304, "process-contract": 18} |
-| Lean modules referenced | 74 |
+| Proof targets audited | 323 |
+| Manifest status counts | {"implemented": 298, "planned": 25} |
+| Triage class counts | {"formal-invariant": 305, "process-contract": 18} |
+| Lean modules referenced | 75 |
 | Chapters with proof targets | 84 |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -71,6 +71,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/IntentResolutionRefinement.lean` | 3 | 12 | 0 | 10 | 2 |
 | `lean/AsiStackProofs/IntentToExecution.lean` | 2 | 9 | 0 | 2 | 2 |
 | `lean/AsiStackProofs/InterStackProtocols.lean` | 9 | 9 | 0 | 1 | 1 |
+| `lean/AsiStackProofs/LearnedObjectiveIntegrity.lean` | 2 | 14 | 0 | 13 | 4 |
 | `lean/AsiStackProofs/LivingBook.lean` | 4 | 18 | 0 | 10 | 6 |
 | `lean/AsiStackProofs/ModelWeightCustody.lean` | 8 | 9 | 0 | 2 | 2 |
 | `lean/AsiStackProofs/OpenEndedImprovementRefinement.lean` | 7 | 5 | 7 | 10 | 2 |
@@ -149,7 +150,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty` | 1 | 0 | 0 | 0 |
 | `human-factors-and-meaningful-control-in-oversight` | 2 | 2 | 0 | 0 |
 | `human-intent-as-a-formal-input` | 4 | 4 | 0 | 0 |
-| `inner-alignment-mesa-optimization-and-learned-objective-integrity` | 1 | 0 | 0 | 0 |
+| `inner-alignment-mesa-optimization-and-learned-objective-integrity` | 2 | 2 | 0 | 0 |
 | `institutions-international-coordination-and-public-legitimacy` | 1 | 0 | 0 | 0 |
 | `integrated-reference-architecture` | 3 | 3 | 0 | 0 |
 | `intent-to-execution-contracts` | 7 | 7 | 0 | 0 |
@@ -240,7 +241,8 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:corrigibility.agency.operational_invariant` | `constitutional-alignment-substrate` | `AsiStackProofs.SafetyCriticalLifecycle` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:corrigibility.agency.failure_blocks_promotion` | `constitutional-alignment-substrate` | `AsiStackProofs.SafetyCriticalLifecycle` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:corrigibility.agency.generic_countermodel_routes` | `constitutional-alignment-substrate` | `AsiStackProofs.Corrigibility` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:inner_alignment.behavior_does_not_identify_objective` | `inner-alignment-mesa-optimization-and-learned-objective-integrity` | `AsiStackProofs.LearnedObjectiveIntegrity` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
+| `lean:inner_alignment.behavior_does_not_identify_objective` | `inner-alignment-mesa-optimization-and-learned-objective-integrity` | `AsiStackProofs.LearnedObjectiveIntegrity` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:inner_alignment.hypothesis_review_lifecycle` | `inner-alignment-mesa-optimization-and-learned-objective-integrity` | `AsiStackProofs.LearnedObjectiveIntegrity` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:values.conflict.operational_invariant` | `moral-uncertainty-and-value-conflict` | `AsiStackProofs.SafetyCriticalLifecycle` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:values.conflict.failure_blocks_promotion` | `moral-uncertainty-and-value-conflict` | `AsiStackProofs.SafetyCriticalLifecycle` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:values.conflict.lifecycle_admission_route` | `moral-uncertainty-and-value-conflict` | `AsiStackProofs.ValueConflict` | triage ok; module ok; chapter tag ok; limitation ok |

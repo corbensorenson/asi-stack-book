@@ -12,12 +12,12 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 322 |
+| Proof targets in manifest | 323 |
 | Lean modules scanned | 113 |
-| Theorem declarations classified | 1242 |
-| Direct/projection-style theorem declarations | 172 |
-| Derived/decomposed theorem declarations | 842 |
-| Unknown or mixed theorem declarations | 228 |
+| Theorem declarations classified | 1256 |
+| Direct/projection-style theorem declarations | 178 |
+| Derived/decomposed theorem declarations | 847 |
+| Unknown or mixed theorem declarations | 231 |
 | Safety-critical theorem declarations | 73 |
 | Safety-critical direct/projection declarations | 1 |
 | Safety-critical chapter classifications present | 1/1 |
@@ -108,7 +108,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/IntentResolutionRefinement.lean` | human-intent-as-a-formal-input | 3 | 12 | 0 | 4 | 8 | manual review |
 | `lean/AsiStackProofs/IntentToExecution.lean` | intent-to-execution-contracts | 2 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/InterStackProtocols.lean` | inter-stack-protocols-identity-and-economic-exchange | 9 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
-| `lean/AsiStackProofs/LearnedObjectiveIntegrity.lean` | inner-alignment-mesa-optimization-and-learned-objective-integrity | 1 | 0 | 0 | 0 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/LearnedObjectiveIntegrity.lean` | inner-alignment-mesa-optimization-and-learned-objective-integrity | 2 | 14 | 6 | 5 | 3 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/LivingBook.lean` | living-book-methodology | 4 | 18 | 0 | 18 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/MoECOTRuntime.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ModelWeightCustody.lean` | model-weight-custody-and-hardware-roots-of-trust | 8 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
@@ -773,6 +773,20 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/InterStackProtocols.lean` | `missing_residual_owner_requires_review` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/InterStackProtocols.lean` | `missing_sender_requires_identity_repair` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/InterStackProtocols.lean` | `revoked_credential_denies_dispatch` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/LearnedObjectiveIntegrity.lean` | `absence_of_deception_overclaim_is_rejected` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/LearnedObjectiveIntegrity.lean` | `accepted_event_adds_one_receipt` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/LearnedObjectiveIntegrity.lean` | `apply_event_cannot_assign_support_or_external_authority` | derived_or_decomposed | no | uses by_cases, simp |
+| `lean/AsiStackProofs/LearnedObjectiveIntegrity.lean` | `apply_event_preserves_identity` | derived_or_decomposed | no | uses by_cases, simp |
+| `lean/AsiStackProofs/LearnedObjectiveIntegrity.lean` | `behavior_only_evidence_does_not_bind_integrity` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/LearnedObjectiveIntegrity.lean` | `compliant_behavior_alone_cannot_identify_both_worlds` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/LearnedObjectiveIntegrity.lean` | `compliant_trace_has_distinct_objective_witness` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/LearnedObjectiveIntegrity.lean` | `equal_trace_distinct_objectives_not_both_identified` | derived_or_decomposed | no | uses calc, have, left, right, rw |
+| `lean/AsiStackProofs/LearnedObjectiveIntegrity.lean` | `full_integrity_lifecycle_reaches_invalidated_state` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/LearnedObjectiveIntegrity.lean` | `objective_identity_overclaim_is_rejected` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/LearnedObjectiveIntegrity.lean` | `rejected_event_preserves_exact_state` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/LearnedObjectiveIntegrity.lean` | `separating_opportunity_distinguishes_the_witness` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/LearnedObjectiveIntegrity.lean` | `stale_descendants_block_invalidation` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/LearnedObjectiveIntegrity.lean` | `unresolved_hypothesis_is_required_for_bounded_use` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/LivingBook.lean` | `change_packet_public_surface_records_required_boundaries` | derived_or_decomposed | no | uses cases, have |
 | `lean/AsiStackProofs/LivingBook.lean` | `change_packet_without_validation_changelog_support_or_nonclaims_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw |
 | `lean/AsiStackProofs/LivingBook.lean` | `derived_artifact_equal_authority_change_packet_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
