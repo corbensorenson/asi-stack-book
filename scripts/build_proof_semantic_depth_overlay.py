@@ -415,6 +415,59 @@ for theorem_name in (
     }
 
 for theorem_name, rationale in {
+    "complete_dossier_is_ready": "The closed authored dossier witnesses the finite adversarial-model-security admissibility predicate.",
+    "complete_dossier_reaches_only_model_security_campaign": "The closed dossier reaches only Project Theseus model-security campaign eligibility, not deployment or attack authority.",
+    "identical_aggregate_signals_can_hide_opposite_security_state": "Two model-security cases witness opposite bounded states under identical clean accuracy, failed-attack count, red-team coverage, and certificate signals.",
+    "identical_local_checks_can_hide_opposite_composition_state": "Two composition cases witness opposite cross-boundary attack-path reachability under identical local component checks.",
+}.items():
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/AdversarialModelSecurity.lean::{theorem_name}"
+    ] = {
+        "disposition": "retain", "semantic_level": "P2",
+        "witness_refs": [f"lean-theorem:{theorem_name}"],
+        "classification_basis": ["a closed threat dossier or collision pair witnesses one bounded modeled result"],
+        "rationale": rationale,
+    }
+
+for theorem_name, rationale in {
+    "quarantine_all_covers_every_finite_trace": "Structural induction proves every member of an arbitrary finite attack-trace list is quarantined by the modeled map.",
+    "every_admission_axis_mutation_blocks_readiness": "Universal case analysis shows all 58 admission-axis mutations reject readiness.",
+    "every_admission_axis_mutation_has_exact_repair": "Universal case analysis binds all 58 mutations to exact repair or refusal dispositions.",
+    "every_admission_axis_mutation_reaches_repair": "Universal case analysis routes all 58 mutations into the lifecycle repair state.",
+    "expired_disposition_remains_expired_when_time_advances": "Natural-number order proves advancing time cannot restore an expired bounded disposition.",
+    "checkpoint_change_invalidates_disposition": "The checkpoint-identity conjunct rejects every disposition presented for a different checkpoint.",
+    "configuration_change_invalidates_disposition": "The serving-configuration conjunct rejects every disposition presented for a different configuration.",
+    "budget_widening_invalidates_disposition": "The attacker-budget conjunct rejects every disposition presented under a widened budget.",
+    "aggregate_scores_cannot_recover_bounded_security_state": "A same-aggregate/opposite-state collision proves no aggregate-signal classifier is exact for every modeled security case.",
+    "local_component_checks_cannot_recover_attack_path_reachability": "A same-local-check/opposite-composition collision proves no local-check classifier is exact for every modeled composition case.",
+    "ready_dossier_supplies_bounded_adversarial_evaluation_fields": "A ready threat dossier refines only named bounded fields in the adversarial-evaluation consumer while leaving robustness, release, and support overclaims false.",
+}.items():
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/AdversarialModelSecurity.lean::{theorem_name}"
+    ] = {
+        "disposition": "retain", "semantic_level": "P3",
+        "witness_refs": ["lean-theorem:complete_dossier_is_ready", "tests/fixtures/proof_models/adversarial_model_security_dossier.json"],
+        "classification_basis": ["a quantified mutation, finite induction, disposition invalidation, non-identifiability, or consumer-refinement result is independently reconstructed"],
+        "rationale": rationale,
+    }
+
+for theorem_name in (
+    "certificate_does_not_discharge_monitoring", "monitoring_does_not_discharge_recovery",
+    "recovery_does_not_discharge_certificate", "review_step_preserves_stage_invariant",
+    "review_run_preserves_stage_invariant", "campaign_eligibility_requires_admissible_dossier",
+    "readiness_requires_identity", "readiness_requires_threat", "readiness_requires_challenge",
+    "readiness_requires_observation", "readiness_requires_recovery", "readiness_requires_assurance",
+    "readiness_requires_disclosure_boundary",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/AdversarialModelSecurity.lean::{theorem_name}"
+    ] = {
+        "disposition": "retain", "semantic_level": "P1",
+        "classification_basis": ["a typed assurance decision, universal finite lifecycle invariant, or grouped necessity result constrains authored threat-review state"],
+        "rationale": "The theorem constrains only the encoded adversarial-model-security review; it establishes no robustness, exploitability, defense efficacy, recovery efficacy, support, deployment, or attack authority.",
+    }
+
+for theorem_name, rationale in {
     "complete_control_lease_is_ready":
         "The closed complete lease witnesses the derived finite admissibility predicate.",
     "complete_control_lease_routes_only_to_theseus_trial":
@@ -965,6 +1018,9 @@ LEGACY_VALIDATOR_ALIASES = {
     },
     "lean/AsiStackProofs/ObjectiveLeaseGovernance.lean": {
         "validate_objective_lease_governance.py"
+    },
+    "lean/AsiStackProofs/AdversarialModelSecurity.lean": {
+        "validate_adversarial_model_security.py"
     },
     "lean/AsiStackProofs/TheseusReference.lean": {"validate_theseus_report.py"},
     "lean/AsiStackProofs/CyclicMixers.lean": {"validate_circle_cyclic_mixer_receipt_slice.py"},

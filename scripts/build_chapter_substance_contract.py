@@ -654,13 +654,14 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
         "support_state_effect": "none",
     },
     "adversarial-machine-learning-and-model-attack-surface": {
-        "reviewed_sha256": "f07ca47caf039614432e3e04fd081f254e1380a38c3d193479deb76d98be5c60",
-        "reviewed_date": "2026-07-28",
+        "reviewed_sha256": "5327345ae90479f457faede91c29518edb99f219956e1c45c917bff4e782ad86",
+        "reviewed_date": "2026-08-01",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,
         "review_basis": [
             "the eight concepts distinguish threat identity, adaptive evaluation, reachable evasion, poisoning repair, confidentiality attacks, composed attack paths, non-substitutable defenses, and safe disclosure",
             "NIST, Sleeper Agents, GPT-2 extraction, camera-LiDAR attack, and Reluplex remain inside their taxonomy, constructed, model-family, modality, and property-specific boundaries",
+            "the formalization is restricted to authored dossier admissibility, exact repair routes, typed assurance separation, finite trace quarantine, bounded disposition invalidation, information-loss countermodels, and a no-release consumer bridge",
             "the chapter preserves attacker competence, positive controls, clean utility, false-negative ceilings, safe authority, residual ownership, and argument-only support",
         ],
         "support_state_effect": "none",

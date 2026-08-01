@@ -11,9 +11,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | Metric | Value |
 |---|---:|
 | Proof targets audited | 324 |
-| Manifest status counts | {"implemented": 311, "planned": 13} |
-| Triage class counts | {"formal-invariant": 311, "process-contract": 13} |
-| Lean modules referenced | 84 |
+| Manifest status counts | {"implemented": 312, "planned": 12} |
+| Triage class counts | {"formal-invariant": 312, "process-contract": 12} |
+| Lean modules referenced | 85 |
 | Chapters with proof targets | 84 |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -32,6 +32,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | Lean module path | Targets | Theorems | Rationalized targets | Defs | Structures |
 |---|---:|---:|---:|---:|---:|
 | `lean/AsiStackProofs/AdversarialEvaluationRefinement.lean` | 8 | 12 | 0 | 9 | 2 |
+| `lean/AsiStackProofs/AdversarialModelSecurity.lean` | 1 | 28 | 0 | 31 | 7 |
 | `lean/AsiStackProofs/Alignment.lean` | 1 | 21 | 0 | 8 | 3 |
 | `lean/AsiStackProofs/ArtifactCompressionRefinement.lean` | 3 | 8 | 0 | 5 | 2 |
 | `lean/AsiStackProofs/ArtifactRealityRefinement.lean` | 10 | 15 | 0 | 32 | 3 |
@@ -121,7 +122,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | Chapter ID | Tags present | Limitation references | Missing tags | Missing limitation references |
 |---|---:|---:|---:|---:|
 | `adversarial-evaluation-sandbagging-and-training-time-deception` | 8 | 8 | 0 | 0 |
-| `adversarial-machine-learning-and-model-attack-surface` | 1 | 0 | 0 | 0 |
+| `adversarial-machine-learning-and-model-attack-surface` | 1 | 1 | 0 | 0 |
 | `ai-deployment-transition-distribution-and-human-agency` | 1 | 0 | 0 | 0 |
 | `ai-supply-chain-integrity-and-lifecycle-provenance` | 6 | 6 | 0 | 0 |
 | `artifact-graphs-audit-logs-and-replay` | 10 | 10 | 0 | 0 |
@@ -276,7 +277,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:security.scif.failure_blocks_promotion` | `security-kernel-and-digital-scifs` | `AsiStackProofs.SecurityKernel` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:security.scif.route_envelope` | `security-kernel-and-digital-scifs` | `AsiStackProofs.SecurityKernel` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:security.scif.commit_probe_bridge` | `security-kernel-and-digital-scifs` | `AsiStackProofs.SecurityKernel` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:adversarial-machine-learning-and-model-attack-surface.admission_boundary` | `adversarial-machine-learning-and-model-attack-surface` | `AsiStackProofs.NoDeferralAdmission` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
+| `lean:adversarial-machine-learning-and-model-attack-surface.admission_boundary` | `adversarial-machine-learning-and-model-attack-surface` | `AsiStackProofs.AdversarialModelSecurity` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:privacy_information_flow.admission_invariants` | `privacy-data-rights-and-information-flow-governance` | `AsiStackProofs.PrivacyInformationFlow` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:privacy_information_flow.outcome_separation` | `privacy-data-rights-and-information-flow-governance` | `AsiStackProofs.PrivacyInformationFlow` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:confidential-and-verifiable-ai-computation.admission_boundary` | `confidential-and-verifiable-ai-computation` | `AsiStackProofs.NoDeferralAdmission` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |

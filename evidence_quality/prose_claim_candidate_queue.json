@@ -3,13 +3,13 @@
   "scanner": "modal and outcome-bearing sentence cue scan; candidates require semantic adjudication",
   "summary": {
     "chapter_count": 64,
-    "candidate_count": 3825,
+    "candidate_count": 3828,
     "review_state_counts": {
       "duplicate_of_atom": 1828,
       "editorial_or_question": 59,
       "historical_or_source_report": 323,
       "material_atom": 3,
-      "nonmaterial_explanation": 1612
+      "nonmaterial_explanation": 1615
     }
   },
   "candidates": [
@@ -16417,13 +16417,12 @@
       "target_atom_id": "adversarial-machine-learning-and-model-attack-surface.beyond_sota.001"
     },
     {
-      "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.8ba48b2d7233",
+      "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.d3789952299f",
       "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
-      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:366",
-      "sentence": "Planned formalization route: `lean:adversarial-machine-learning-and-model-attack-surface.admission_boundary` covers only the finite admission record for adversarial machine learning and model attack surface; it cannot establish whether adversarial machine learning and model attack surface works safely or transfers.",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:370",
+      "sentence": "The aggregate-score impossibility proves that the same clean accuracy, failed-attack count, red-team coverage, and certificate signal can accompany opposite bounded security states.",
       "cues": [
-        "cannot",
-        "transfers"
+        "proves"
       ],
       "review_state": "nonmaterial_explanation",
       "allowed_dispositions": [
@@ -16433,13 +16432,72 @@
         "editorial_or_question",
         "historical_or_source_report"
       ],
-      "disposition_rationale": "Formalization-scope caption that narrows the existing planned admission-boundary target and expressly denies runtime, safety, and transfer inference.",
+      "disposition_rationale": "Bounded explanation of the aggregate-signal collision theorem already governed by the chapter formal target; it creates no system-security, support, or deployment claim.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.98de1f9f8a0f",
+      "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:370",
+      "sentence": "The component-composition impossibility proves that identical local model, memory, and tool checks can accompany opposite composed attack-path reachability.",
+      "cues": [
+        "proves"
+      ],
+      "review_state": "nonmaterial_explanation",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Bounded explanation of the local-component composition collision theorem already governed by the chapter formal target; it creates no attack-reachability, support, or deployment claim.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.ed356197f549",
+      "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:372",
+      "sentence": "Lean does not prove robustness, exploitability, attack reachability, defense or detector efficacy, recovery efficacy, confidentiality, secure deployment, attack authorization, support, transfer, or external effect.",
+      "cues": [
+        "prove",
+        "transfer"
+      ],
+      "review_state": "nonmaterial_explanation",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Explicit formalization non-claim that narrows the existing proof target and prohibits robustness, efficacy, authority, transfer, and support inference.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.1dbcee87cf94",
+      "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:372",
+      "sentence": "Project Theseus must run competent model-security campaigns with pinned checkpoints, adaptive and transfer attackers, positive controls, clean and attacked utility, false alarms, independent replay, recovery tests, and complete attempt denominators.",
+      "cues": [
+        "must",
+        "transfer"
+      ],
+      "review_state": "nonmaterial_explanation",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Downstream Project Theseus campaign handoff naming required future evidence fields; it reports no campaign result and creates no support-bearing atom.",
       "target_atom_id": null
     },
     {
       "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.53cfe988ee7c",
       "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
-      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:397",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:403",
       "sentence": "transfer challenges, utility measurement, recovery, disclosure custody, and",
       "cues": [
         "transfer"
@@ -16458,7 +16516,7 @@
     {
       "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.85ff0f996f56",
       "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
-      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:405",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:411",
       "sentence": "It does not inherit a privacy violation, compliance conclusion, or authority to process data; it must apply its own information-lifecycle and rights tests.",
       "cues": [
         "must"

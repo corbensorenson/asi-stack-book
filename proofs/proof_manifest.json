@@ -3,8 +3,8 @@
   "note": "Generated from Lean proof target tables in docs/book_outline.md. Edit the outline, not this file.",
   "proof_target_count": 324,
   "status_counts": {
-    "implemented": 311,
-    "planned": 13
+    "implemented": 312,
+    "planned": 12
   },
   "chapter_counts": {
     "adversarial-evaluation-sandbagging-and-training-time-deception": 8,
@@ -767,11 +767,11 @@
       "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
       "chapter_title": "Adversarial Machine Learning and the Model Attack Surface",
       "tag": "lean:adversarial-machine-learning-and-model-attack-surface.admission_boundary",
-      "module": "AsiStackProofs.NoDeferralAdmission",
-      "formal_target": "A finite Adversarial Machine Learning and the Model Attack Surface record may hand off only when identity, authority, version, required checks, and residual ownership are present; no theorem grants empirical effectiveness or release authority.",
-      "status": "planned",
+      "module": "AsiStackProofs.AdversarialModelSecurity",
+      "formal_target": "An eight-step finite threat-dossier review preserves artifact identity, separated attack lanes, adaptive-challenge competence, observation and utility-cost, recovery, assurance, disclosure, and non-authority obligations; a complete authored dossier reaches only a Project Theseus model-security campaign, while 58 admission-axis mutations block readiness and receive exact repair or refusal dispositions. Regional certificates, runtime monitors, and recovery procedures do not substitute for one another. Expiry, checkpoint change, serving-configuration change, and attacker-budget widening invalidate a bounded disposition; finite quarantine covers every listed attack trace. Aggregate scores cannot recover bounded security state, and local component checks cannot recover composed attack-path reachability. A bounded bridge supplies only explicit fields to the adversarial-evaluation consumer. No theorem establishes robustness, exploitability, attack reachability, defense or detector efficacy, recovery efficacy, confidentiality, secure deployment, attack authority, support, transfer, or external effect.",
+      "status": "implemented",
       "outline_line": 2112,
-      "module_path": "lean/AsiStackProofs/NoDeferralAdmission.lean"
+      "module_path": "lean/AsiStackProofs/AdversarialModelSecurity.lean"
     },
     {
       "chapter_id": "privacy-data-rights-and-information-flow-governance",

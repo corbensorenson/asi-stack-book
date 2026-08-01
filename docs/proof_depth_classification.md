@@ -13,11 +13,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 | Metric | Value |
 |---|---:|
 | Proof targets in manifest | 324 |
-| Lean modules scanned | 118 |
-| Theorem declarations classified | 1487 |
-| Direct/projection-style theorem declarations | 210 |
-| Derived/decomposed theorem declarations | 965 |
-| Unknown or mixed theorem declarations | 312 |
+| Lean modules scanned | 119 |
+| Theorem declarations classified | 1515 |
+| Direct/projection-style theorem declarations | 223 |
+| Derived/decomposed theorem declarations | 976 |
+| Unknown or mixed theorem declarations | 316 |
 | Safety-critical theorem declarations | 73 |
 | Safety-critical direct/projection declarations | 1 |
 | Safety-critical chapter classifications present | 1/1 |
@@ -54,6 +54,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 |---|---|---:|---:|---:|---:|---:|---|
 | `lean/AsiStackProofs/AdversarialEvaluation.lean` | unmapped | 0 | 8 | 0 | 8 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/AdversarialEvaluationRefinement.lean` | adversarial-evaluation-sandbagging-and-training-time-deception | 8 | 12 | 8 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/AdversarialModelSecurity.lean` | adversarial-machine-learning-and-model-attack-surface | 1 | 28 | 13 | 11 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Alignment.lean` | constitutional-alignment-substrate | 1 | 21 | 0 | 21 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ArtifactCompression.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ArtifactCompressionRefinement.lean` | rankfold-neuralfold-and-artifact-compression | 3 | 8 | 0 | 0 | 8 | manual review |
@@ -116,7 +117,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/MoECOTRuntime.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ModelWeightCustody.lean` | model-weight-custody-and-hardware-roots-of-trust | 8 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/MultiAgentDynamics.lean` | multi-agent-dynamics-collective-intelligence-and-systemic-risk | 1 | 22 | 2 | 14 | 6 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/NoDeferralAdmission.lean` | adversarial-machine-learning-and-model-attack-surface, ai-deployment-transition-distribution-and-human-agency, autonomous-replication-proliferation-and-containment, confidential-and-verifiable-ai-computation, content-authenticity-watermarking-and-synthetic-media-integrity, durable-semantic-memory-and-knowledge-lattices, human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty, institutions-international-coordination-and-public-legitimacy, learning-theory-generalization-and-scaling-science, physical-compute-infrastructure-energy-and-environmental-constraints, relational-dimension-compilation-and-polyadic-cognition, scientific-discovery-and-experimental-governance, societal-resilience-and-misuse-defense | 13 | 0 | 0 | 0 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/NoDeferralAdmission.lean` | ai-deployment-transition-distribution-and-human-agency, autonomous-replication-proliferation-and-containment, confidential-and-verifiable-ai-computation, content-authenticity-watermarking-and-synthetic-media-integrity, durable-semantic-memory-and-knowledge-lattices, human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty, institutions-international-coordination-and-public-legitimacy, learning-theory-generalization-and-scaling-science, physical-compute-infrastructure-energy-and-environmental-constraints, relational-dimension-compilation-and-polyadic-cognition, scientific-discovery-and-experimental-governance, societal-resilience-and-misuse-defense | 12 | 0 | 0 | 0 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ObjectiveLeaseGovernance.lean` | governed-objective-formation-value-learning-and-goal-integrity | 1 | 27 | 12 | 11 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ObservationTrust.lean` | perception-sensor-fusion-and-observation-trust | 2 | 16 | 5 | 7 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/OpenEndedImprovement.lean` | unmapped | 0 | 7 | 0 | 7 | 0 | derived/decomposed by classifier |
@@ -195,6 +196,34 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/AdversarialEvaluationRefinement.lean` | `observation_cannot_launder_intent_inference` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/AdversarialEvaluationRefinement.lean` | `rejected_event_preserves_state` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/AdversarialEvaluationRefinement.lean` | `unresolved_discrepancy_requires_quarantine_record` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/AdversarialModelSecurity.lean` | `aggregate_scores_cannot_recover_bounded_security_state` | derived_or_decomposed | no | uses contradiction, have, rw, simp |
+| `lean/AsiStackProofs/AdversarialModelSecurity.lean` | `budget_widening_invalidates_disposition` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/AdversarialModelSecurity.lean` | `campaign_eligibility_requires_admissible_dossier` | derived_or_decomposed | no | uses have |
+| `lean/AsiStackProofs/AdversarialModelSecurity.lean` | `certificate_does_not_discharge_monitoring` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/AdversarialModelSecurity.lean` | `checkpoint_change_invalidates_disposition` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/AdversarialModelSecurity.lean` | `complete_dossier_is_ready` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/AdversarialModelSecurity.lean` | `complete_dossier_reaches_only_model_security_campaign` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/AdversarialModelSecurity.lean` | `configuration_change_invalidates_disposition` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/AdversarialModelSecurity.lean` | `every_admission_axis_mutation_blocks_readiness` | derived_or_decomposed | no | uses cases |
+| `lean/AsiStackProofs/AdversarialModelSecurity.lean` | `every_admission_axis_mutation_has_exact_repair` | derived_or_decomposed | no | uses cases |
+| `lean/AsiStackProofs/AdversarialModelSecurity.lean` | `every_admission_axis_mutation_reaches_repair` | derived_or_decomposed | no | uses cases |
+| `lean/AsiStackProofs/AdversarialModelSecurity.lean` | `expired_disposition_remains_expired_when_time_advances` | derived_or_decomposed | no | uses omega, unfold |
+| `lean/AsiStackProofs/AdversarialModelSecurity.lean` | `identical_aggregate_signals_can_hide_opposite_security_state` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/AdversarialModelSecurity.lean` | `identical_local_checks_can_hide_opposite_composition_state` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/AdversarialModelSecurity.lean` | `local_component_checks_cannot_recover_attack_path_reachability` | derived_or_decomposed | no | uses contradiction, have, rw, simp |
+| `lean/AsiStackProofs/AdversarialModelSecurity.lean` | `monitoring_does_not_discharge_recovery` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/AdversarialModelSecurity.lean` | `quarantine_all_covers_every_finite_trace` | derived_or_decomposed | no | uses induction, rcases, simp, subst |
+| `lean/AsiStackProofs/AdversarialModelSecurity.lean` | `readiness_requires_assurance` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/AdversarialModelSecurity.lean` | `readiness_requires_challenge` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/AdversarialModelSecurity.lean` | `readiness_requires_disclosure_boundary` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/AdversarialModelSecurity.lean` | `readiness_requires_identity` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/AdversarialModelSecurity.lean` | `readiness_requires_observation` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/AdversarialModelSecurity.lean` | `readiness_requires_recovery` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/AdversarialModelSecurity.lean` | `readiness_requires_threat` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/AdversarialModelSecurity.lean` | `ready_dossier_supplies_bounded_adversarial_evaluation_fields` | derived_or_decomposed | no | uses have, simp |
+| `lean/AsiStackProofs/AdversarialModelSecurity.lean` | `recovery_does_not_discharge_certificate` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/AdversarialModelSecurity.lean` | `review_run_preserves_stage_invariant` | derived_or_decomposed | no | uses induction, simp |
+| `lean/AsiStackProofs/AdversarialModelSecurity.lean` | `review_step_preserves_stage_invariant` | derived_or_decomposed | no | uses cases, simp, split |
 | `lean/AsiStackProofs/Alignment.lean` | `accepted_transition_cannot_drop_protected_predicate` | derived_or_decomposed | yes | uses contradiction, rw, simp, unfold |
 | `lean/AsiStackProofs/Alignment.lean` | `complete_constitutional_lifecycle_admits_constraint` | derived_or_decomposed | yes | uses simp, unfold |
 | `lean/AsiStackProofs/Alignment.lean` | `constitutional_record_without_nonclaim_boundary_preserves_boundary` | derived_or_decomposed | yes | uses simp, unfold |

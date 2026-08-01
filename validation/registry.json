@@ -3118,7 +3118,12 @@
     "lean/AsiStackProofs/ObjectiveLeaseGovernance.lean",
     "tests/fixtures/proof_models/objective_lease_dossier.json",
     "evidence_quality/proof_model_dossiers/governed-objective-formation-value-learning-and-goal-integrity.md",
-    "chapters/governed-objective-formation-value-learning-and-goal-integrity.qmd"
+    "chapters/governed-objective-formation-value-learning-and-goal-integrity.qmd",
+    "scripts/validate_adversarial_model_security.py",
+    "lean/AsiStackProofs/AdversarialModelSecurity.lean",
+    "tests/fixtures/proof_models/adversarial_model_security_dossier.json",
+    "evidence_quality/proof_model_dossiers/adversarial-machine-learning-and-model-attack-surface.md",
+    "chapters/adversarial-machine-learning-and-model-attack-surface.qmd"
   ],
   "units": [
     {
@@ -12076,7 +12081,7 @@
       "output_assertions": [
         "1,151/1,151 activation-baseline theorem declarations and 298/298 baseline targets are reviewed and dispositioned",
         "298/298 historical proof targets remain implemented and explicitly adequacy-routed",
-        "324 current targets comprise 311 implemented and 13 planned, including the consumer-owned Failure Modes, Governed Operations, Learned Objective Integrity, Observation Trust, Search Substrate, Artifact Steward, Human-AI Organizations, Multi-Agent Dynamics, Embodied Physical Safety, Dangerous Capability Review, Military Interaction Review, Open-Weight Release Review, Communication Influence Review, and Objective Lease Governance refinements",
+        "324 current targets comprise 312 implemented and 12 planned, including the consumer-owned Failure Modes, Governed Operations, Learned Objective Integrity, Observation Trust, Search Substrate, Artifact Steward, Human-AI Organizations, Multi-Agent Dynamics, Embodied Physical Safety, Dangerous Capability Review, Military Interaction Review, Open-Weight Release Review, Communication Influence Review, Objective Lease Governance, and Adversarial Model Security refinements",
         "the thirty-two richer-semantics targets remain bounded and route to P3/P4 rather than disappearing",
         "nine required safety-critical, integration, and review-named refinement models have dossiers and registered consumers",
         "P2/M3 is completed, P3 is active, and prerequisite M2 is active without support-state movement"
@@ -17684,11 +17689,56 @@
       "prohibited_inference": "Does not establish correct values, consent, moral truth, political legitimacy, corrigibility, preference accuracy, target truth, behavioral goal alignment, complete external retirement, safe optimization, transfer, SOTA, AGI, or ASI.",
       "contract_precision": "exact",
       "semantic_review_state": "checked_bounded_formal_model_and_independent_consumer_no_support_effect"
+    },
+    {
+      "id": "validate_adversarial_model_security.py:456",
+      "order": 456,
+      "script": "validate_adversarial_model_security.py",
+      "args": [],
+      "execution_tier": "pr",
+      "validation_class": "proof_or_evidence_gate",
+      "input_contract": "Canonical adversarial-model-security Lean model, independent 58-axis fixture, chapter proof boundary, proof dossier, manifest, triage, and outline binding.",
+      "input_artifacts": [
+        "scripts/validate_adversarial_model_security.py",
+        "lean/AsiStackProofs/AdversarialModelSecurity.lean",
+        "tests/fixtures/proof_models/adversarial_model_security_dossier.json",
+        "evidence_quality/proof_model_dossiers/adversarial-machine-learning-and-model-attack-surface.md",
+        "chapters/adversarial-machine-learning-and-model-attack-surface.qmd",
+        "proofs/proof_manifest.json",
+        "proofs/proof_triage.json",
+        "docs/book_outline.md"
+      ],
+      "output_contract": "Reject lifecycle, exact-repair, assurance-substitution, disposition-scope, trace-quarantine, collision-witness, consumer-bridge, canonical-binding, and no-promotion drift.",
+      "output_assertions": [
+        "eight-step review reaches only Project Theseus model-security campaign eligibility",
+        "58/58 admission-axis mutations reject readiness and receive exact repair or refusal dispositions",
+        "certificate, monitoring, and recovery obligations remain non-substitutable",
+        "checkpoint change, configuration change, budget widening, and expiry invalidate bounded dispositions",
+        "quarantineAll covers every member of an arbitrary finite attack-trace list",
+        "aggregate scores cannot recover bounded security state and local checks cannot recover composed-path reachability",
+        "the adversarial-evaluation consumer receives only bounded observation fields and no support or external authority",
+        "28 exact Lean declarations move no chapter support, deployment, attack, release, transfer, or external-effect state"
+      ],
+      "claim_scope": "Bounded authored threat review, typed assurance separation, finite disposition checks, inductive trace quarantine, consumer refinement, and finite non-identifiability only.",
+      "negative_controls": "validator_owned_58_axis_assurance_disposition_quarantine_collision_consumer_and_binding_mutations",
+      "negative_control_cases": [
+        "weak positive control",
+        "defense-unaware attack",
+        "incomplete denominator",
+        "certificate laundering",
+        "configuration drift",
+        "component composition",
+        "attack authorization",
+        "support promotion"
+      ],
+      "prohibited_inference": "Does not establish robustness, exploitability, attack reachability, defense efficacy, detector competence, recovery efficacy, confidentiality, secure deployment, attack authority, transfer, SOTA, AGI, or ASI.",
+      "contract_precision": "exact",
+      "semantic_review_state": "checked_bounded_formal_model_and_independent_consumer_no_support_effect"
     }
   ],
   "summary": {
-    "required_artifact_count": 3074,
-    "unit_count": 455
+    "required_artifact_count": 3079,
+    "unit_count": 456
   },
   "non_claims": [
     "Registry coverage does not establish semantic adequacy of every validator.",

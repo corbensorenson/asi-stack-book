@@ -10,7 +10,7 @@ This inventory freezes the 1,151 theorem declarations and 298 proof targets that
 |---|---:|
 | Baseline theorem declarations | 1151 |
 | Baseline proof targets | 298 |
-| Chapters | 62 |
+| Chapters | 63 |
 | Lean modules | 65 |
 | Fully reviewed modules | 65 |
 | Safety-critical modules fully reviewed | 5/5 |
@@ -26,6 +26,7 @@ This inventory freezes the 1,151 theorem declarations and 298 proof targets that
 | Chapter | Targets | Theorems | Pending targets | Pending theorems |
 |---|---:|---:|---:|---:|
 | `adversarial-evaluation-sandbagging-and-training-time-deception` | 8 | 8 | 0 | 0 |
+| `adversarial-machine-learning-and-model-attack-surface` | 0 | 0 | 0 | 0 |
 | `ai-supply-chain-integrity-and-lifecycle-provenance` | 6 | 7 | 0 | 0 |
 | `artifact-graphs-audit-logs-and-replay` | 10 | 43 | 0 | 0 |
 | `artifact-steward-agents-and-living-project-governance` | 7 | 16 | 0 | 0 |

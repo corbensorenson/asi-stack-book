@@ -4,7 +4,7 @@ chapter_id: "adversarial-machine-learning-and-model-attack-surface"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.3 concept-complete argument-level manuscript"
-last_updated: "2026-07-28"
+last_updated: "2026-08-01"
 primary_sources:
   - "ext_nist_adversarial_ml_2024"
   - "ext_sleeper_agents_2024"
@@ -25,12 +25,12 @@ open_evidence_gaps:
 | Chapter ID | `adversarial-machine-learning-and-model-attack-surface` |
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
-| Manuscript maturity | v0.2 complete argument-level manuscript |
-| Last updated | 2026-07-24 |
+| Manuscript maturity | v0.3 concept-complete argument-level manuscript |
+| Last updated | 2026-08-01 |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source loading state | Assigned source notes support mechanism and boundary discussion; all reported outcomes remain source-reported. |
-| Test state | The chapter defines a minimum implementation and falsification plan; no chapter-core promotion follows from prose or source synthesis. |
+| Test state | The 28-declaration `AsiStackProofs.AdversarialModelSecurity` model and independent 58-axis consumer pass locally; this mechanizes only the bounded threat dossier, not model robustness or defense efficacy, and chapter support remains argument. |
 
 ## Drafting guardrail
 
@@ -358,12 +358,18 @@ The target architecture is not evidence of present robustness. The model-securit
 
 | Test | Purpose | Status |
 |---|---|---|
-| Threat-model separation | Reject a record that merges evasion, extraction, poisoning, privacy leakage, or supply-chain compromise into one score. | planned |
-| Adaptive challenge | Require a budgeted adaptive attacker and a known-vulnerability positive control before interpreting attack failure. | planned |
-| Defense externalities | Preserve protected-task damage, false alarms, latency, and attack-surface migration after mitigation. | planned |
-| Disposition ceiling | Prevent a bounded attack/defense result from becoming general robustness or deployment authority. | planned |
+| Threat-model separation | Reject a record that merges evasion, extraction, poisoning, privacy leakage, or supply-chain compromise into one score. | Lean attack-lane separation and aggregate-score impossibility implemented; campaign planned |
+| Adaptive challenge | Require a budgeted adaptive attacker and a known-vulnerability positive control before interpreting attack failure. | Lean admission and budget invalidation implemented; competent challenge planned |
+| Defense externalities | Preserve protected-task damage, false alarms, latency, and attack-surface migration after mitigation. | Lean custody obligations implemented; measurement planned |
+| Disposition ceiling | Prevent a bounded attack/defense result from becoming general robustness or deployment authority. | Lean non-authority and version invalidation implemented |
 
-Planned formalization route: `lean:adversarial-machine-learning-and-model-attack-surface.admission_boundary` covers only the finite admission record for adversarial machine learning and model attack surface; it cannot establish whether adversarial machine learning and model attack surface works safely or transfers.
+### Formalization hooks
+
+`lean:adversarial-machine-learning-and-model-attack-surface.admission_boundary` is implemented by the 28 theorem declarations in `AsiStackProofs.AdversarialModelSecurity`. The eight-step review preserves artifact identity, separated threat lanes, adaptive-challenge competence, observations and utility costs, recovery, assurance scope, disclosure custody, and non-authority. Its 58 admission-axis mutations all block readiness and receive exact repair or refusal dispositions before the only positive terminal state, a Project Theseus model-security campaign.
+
+The formal surface includes assurance non-substitution among regional certificates, runtime monitors, and recovery procedures; expiry, checkpoint, serving-configuration, and attacker-budget invalidation; and finite attack-trace quarantine by induction over an arbitrary list. The aggregate-score impossibility proves that the same clean accuracy, failed-attack count, red-team coverage, and certificate signal can accompany opposite bounded security states. The component-composition impossibility proves that identical local model, memory, and tool checks can accompany opposite composed attack-path reachability. A bounded consumer bridge populates only explicit model-task, protocol, observation, denominator, challenge, cost, residual, expiry, and no-release fields in `AsiStackProofs.AdversarialEvaluationRefinement`.
+
+All dossier fields are authored assumptions. Lean does not prove robustness, exploitability, attack reachability, defense or detector efficacy, recovery efficacy, confidentiality, secure deployment, attack authorization, support, transfer, or external effect. Chapter support remains `argument`; `support_state_effect=none`. Project Theseus must run competent model-security campaigns with pinned checkpoints, adaptive and transfer attackers, positive controls, clean and attacked utility, false alarms, independent replay, recovery tests, and complete attempt denominators.
 
 ## Source crosswalk
 

@@ -2109,7 +2109,7 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:adversarial-machine-learning-and-model-attack-surface.admission_boundary` | `AsiStackProofs.NoDeferralAdmission` | A finite Adversarial Machine Learning and the Model Attack Surface record may hand off only when identity, authority, version, required checks, and residual ownership are present; no theorem grants empirical effectiveness or release authority. | planned |
+| `lean:adversarial-machine-learning-and-model-attack-surface.admission_boundary` | `AsiStackProofs.AdversarialModelSecurity` | An eight-step finite threat-dossier review preserves artifact identity, separated attack lanes, adaptive-challenge competence, observation and utility-cost, recovery, assurance, disclosure, and non-authority obligations; a complete authored dossier reaches only a Project Theseus model-security campaign, while 58 admission-axis mutations block readiness and receive exact repair or refusal dispositions. Regional certificates, runtime monitors, and recovery procedures do not substitute for one another. Expiry, checkpoint change, serving-configuration change, and attacker-budget widening invalidate a bounded disposition; finite quarantine covers every listed attack trace. Aggregate scores cannot recover bounded security state, and local component checks cannot recover composed attack-path reachability. A bounded bridge supplies only explicit fields to the adversarial-evaluation consumer. No theorem establishes robustness, exploitability, attack reachability, defense or detector efficacy, recovery efficacy, confidentiality, secure deployment, attack authority, support, transfer, or external effect. | implemented |
 <!-- NO-DEFERRAL-OUTLINE-ENTRY:adversarial-machine-learning-and-model-attack-surface:END -->
 
 ### Privacy, Data Rights, and Information-Flow Governance
@@ -6167,7 +6167,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 298 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 298 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 324 proof targets, 118 Lean modules, 1487 theorem declarations, 965 derived/decomposed, 210 direct/projection, 312 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 324 proof targets, 119 Lean modules, 1515 theorem declarations, 976 derived/decomposed, 223 direct/projection, 316 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.
