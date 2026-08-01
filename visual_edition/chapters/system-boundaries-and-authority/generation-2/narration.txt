@@ -1,0 +1,43 @@
+A system writes a flawless refund instruction. It knows the account, the amount, and the command. Should the refund happen?
+
+That question separates capability from authority. Capability says the system can compose the effect. Authority says whether this principal may cause it, here, now, under this policy.
+
+Picture the task inside an authority envelope. The envelope names the principal, execution domain, operation, target, permission class, scope, ceiling, grant state, epoch, expiry, and required receipts.
+
+Those fields travel together. A plausible answer, trusted model, available tool, or high route score cannot silently fill in a missing permission.
+
+Our refund begins with read authority inside the accounting domain. The grant opens only the customer record named in its scope, and the read produces its own receipt.
+
+Summarizing that record is a different operation. It stays inside the domain, but transform authority must still be present; knowledge access is not ambient permission to do anything with knowledge.
+
+Now the plan asks to send the summary to a vendor. The target crosses into an external domain, and the permission class changes from transform to disclose.
+
+The envelope lacks disclosure approval. So the message stops. This denial is not a broken system. It is a successful authority decision with an owned reason.
+
+An authorized approver may issue a narrower grant: this vendor, this summary, one dispatch, before expiry, with an effect receipt and independent observation required.
+
+Only then does the handoff compile into action. The dispatch receipt proves what was requested; the effect receipt records what ran; observation checks what actually happened.
+
+Now try a confused-deputy shortcut. A low-authority requester asks a powerful service to reuse the service's own broad credentials. The requested effect is possible, but the caller's ceiling does not travel with it.
+
+The envelope exposes the substitution. Principal, grant, target, and delegation chain disagree, so the deputy cannot convert its capability into the caller's missing authority.
+
+Time changes authority too. A valid grant can expire, be revoked, or consume its final use. A replay after any of those transitions must fail even if every model output is byte-for-byte identical.
+
+Replacement is another pressure point. A better model may occupy the same capability slot, but it does not inherit secret handles, approval power, or a predecessor's live grant merely by being better.
+
+Permission classes make these differences explicit: read, transform, disclose, write, execute, and approve are separate powers. Convenience cannot collapse them into one role label.
+
+Missing authority should therefore be machine-visible. The result names the absent field, the denying policy version, the residual owner, and the lawful escalation path.
+
+This changes the meaning of useful work. A plan can be correct, a source can be available, and a model can be capable while refusal remains the only acceptable output.
+
+The repository tests a finite version of that idea: six authority fixtures, two pre-effect denials, one executed local effect, one observation, exact rollback, five revocation entries, and thirty-eight rejected semantic mutations.
+
+The formal model also keeps accepted issuance, dispatch, effect, revocation, one-shot use, and rollback inside the caller ceiling. That is real bounded support for the encoded transition system.
+
+It is not deployed authorization. Authentic identities, complete mediation, concurrent revocation, secure tool wrappers, production adapters, and open-world observation remain outside the result.
+
+So the chapter's core claim remains design rationale at argument support. The visual explains why authority should be explicit, versioned, revocable, and receipt-bearing; it adds no safety, transfer, or A S I conclusion.
+
+The refund stops or proceeds for a reason that can be inspected. Next, Failure Modes of Ungoverned Intelligence asks how such boundaries break, how we notice, and who owns the residual.

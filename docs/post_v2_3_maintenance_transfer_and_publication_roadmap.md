@@ -4154,17 +4154,21 @@ without imposing a broadcast loudness target on YouTube.
 `visual_edition/manim_v2_production_ledger.json` derives all 84 targets in
 canonical order across the 5/7/72 cohorts. Three schemas and a registered
 validator make the beat, review, predecessor, gate, receipt, YouTube, and
-Quarto transitions fail closed. The ledger currently records 82 planned
-chapters and two chapters through picture-and-sound lock. Chapter 1 turns a
+Quarto transitions fail closed. The ledger currently records 81 planned
+chapters, three chapters through animatic, and three through picture-and-sound
+lock. Chapter 1 turns a
 duplicate-file deletion request into a persistent proposal, authority,
 observation, mismatch, and rollback trace. Chapter 2 turns one invoice into a
 four-route exchange whose visible one-unit winner loses twelve-to-nine after
 fallback, verification, repair, and maintenance enter the same accounting
-boundary. Together they carry 49 audio-derived beats, original
+boundary. Chapter 3 turns one flawless refund into an authority-envelope trace
+across scoped read, transform, disclosure denial, narrow approval, effect
+custody, confused-deputy substitution, expiry, revocation, replacement, and
+the exact evidence ceiling. Together they carry 73 audio-derived beats, original
 chapter-specific scenes, balanced captions, descriptive transcripts, custom
-thumbnails, 147 exact beat samples across animatic and delivery review, and
+thumbnails, 219 exact beat samples across animatic and delivery review, and
 per-dimension experience passes without average laundering. The rejected
-Chapter 1 animatic remains preserved as generation history. Both delivery
+Chapter 1 animatic remains preserved as generation history. All three delivery
 masters remain candidates only: zero generation-2 chapters have passed
 release candidate, independent review, technical, claim-fidelity, or
 acceptance, and zero generation-2 YouTube or Quarto identities are current.

@@ -1,0 +1,273 @@
+WEBVTT
+
+NOTE
+Canonical written narration timed from the exact local narration render receipt.
+Pronunciation-only substitutions are intentionally absent from caption text.
+
+1
+00:00:00.060 --> 00:00:04.325
+A system writes a flawless refund instruction. It knows the account,
+
+2
+00:00:04.325 --> 00:00:07.815
+the amount, and the command. Should the refund happen?
+
+3
+00:00:08.415 --> 00:00:13.286
+That question separates capability from authority. Capability says the system can
+
+4
+00:00:13.286 --> 00:00:18.156
+compose the effect. Authority says whether this principal may cause it,
+
+5
+00:00:18.156 --> 00:00:20.370
+here, now, under this policy.
+
+6
+00:00:20.970 --> 00:00:26.574
+Picture the task inside an authority envelope. The envelope names the
+
+7
+00:00:26.574 --> 00:00:31.159
+principal, execution domain, operation, target, permission class, scope, ceiling,
+
+8
+00:00:31.159 --> 00:00:34.725
+grant state, epoch, expiry, and required receipts.
+
+9
+00:00:35.325 --> 00:00:40.152
+Those fields travel together. A plausible answer, trusted model, available tool,
+
+10
+00:00:40.152 --> 00:00:44.980
+or high route score cannot silently fill in a missing permission.
+
+11
+00:00:45.580 --> 00:00:49.430
+Our refund begins with read authority inside the accounting domain.
+
+12
+00:00:49.430 --> 00:00:53.665
+The grant opens only the customer record named in its scope,
+
+13
+00:00:53.665 --> 00:00:56.360
+and the read produces its own receipt.
+
+14
+00:00:56.960 --> 00:01:01.545
+Summarizing that record is a different operation. It stays inside the
+
+15
+00:01:01.545 --> 00:01:04.880
+domain, but transform authority must still be present;
+
+16
+00:01:04.880 --> 00:01:09.465
+knowledge access is not ambient permission to do anything with knowledge.
+
+17
+00:01:10.065 --> 00:01:14.212
+Now the plan asks to send the summary to a vendor.
+
+18
+00:01:14.212 --> 00:01:18.360
+The target crosses into an external domain, and the permission class
+
+19
+00:01:18.360 --> 00:01:20.245
+changes from transform to disclose.
+
+20
+00:01:20.845 --> 00:01:24.438
+The envelope lacks disclosure approval. So the message stops.
+
+21
+00:01:24.438 --> 00:01:28.830
+This denial is not a broken system. It is a successful
+
+22
+00:01:28.830 --> 00:01:31.225
+authority decision with an owned reason.
+
+23
+00:01:31.825 --> 00:01:36.515
+An authorized approver may issue a narrower grant: this vendor,
+
+24
+00:01:36.515 --> 00:01:41.204
+this summary, one dispatch, before expiry, with an effect receipt
+
+25
+00:01:41.204 --> 00:01:43.080
+and independent observation required.
+
+26
+00:01:43.680 --> 00:01:47.128
+Only then does the handoff compile into action.
+
+27
+00:01:47.128 --> 00:01:51.868
+The dispatch receipt proves what was requested; the effect receipt records
+
+28
+00:01:51.868 --> 00:01:54.885
+what ran; observation checks what actually happened.
+
+29
+00:01:55.485 --> 00:02:00.295
+Now try a confused-deputy shortcut. A low-authority requester asks a powerful
+
+30
+00:02:00.295 --> 00:02:03.793
+service to reuse the service's own broad credentials.
+
+31
+00:02:03.793 --> 00:02:08.166
+The requested effect is possible, but the caller's ceiling does
+
+32
+00:02:08.166 --> 00:02:09.915
+not travel with it.
+
+33
+00:02:10.515 --> 00:02:14.417
+The envelope exposes the substitution. Principal, grant, target,
+
+34
+00:02:14.417 --> 00:02:19.781
+and delegation chain disagree, so the deputy cannot convert its capability
+
+35
+00:02:19.781 --> 00:02:22.220
+into the caller's missing authority.
+
+36
+00:02:22.820 --> 00:02:27.513
+Time changes authority too. A valid grant can expire, be revoked,
+
+37
+00:02:27.513 --> 00:02:32.207
+or consume its final use. A replay after any of those
+
+38
+00:02:32.207 --> 00:02:36.900
+transitions must fail even if every model output is byte-for-byte identical.
+
+39
+00:02:37.500 --> 00:02:42.031
+Replacement is another pressure point. A better model may occupy the
+
+40
+00:02:42.031 --> 00:02:46.149
+same capability slot, but it does not inherit secret handles,
+
+41
+00:02:46.149 --> 00:02:50.680
+approval power, or a predecessor's live grant merely by being better.
+
+42
+00:02:51.280 --> 00:02:55.960
+Permission classes make these differences explicit: read, transform, disclose,
+
+43
+00:02:55.960 --> 00:03:01.680
+write, execute, and approve are separate powers. Convenience cannot collapse them
+
+44
+00:03:01.680 --> 00:03:03.760
+into one role label.
+
+45
+00:03:04.360 --> 00:03:09.289
+Missing authority should therefore be machine-visible. The result names the absent
+
+46
+00:03:09.289 --> 00:03:12.874
+field, the denying policy version, the residual owner,
+
+47
+00:03:12.874 --> 00:03:15.115
+and the lawful escalation path.
+
+48
+00:03:15.715 --> 00:03:19.741
+This changes the meaning of useful work. A plan can be
+
+49
+00:03:19.741 --> 00:03:23.767
+correct, a source can be available, and a model can be
+
+50
+00:03:23.767 --> 00:03:26.695
+capable while refusal remains the only acceptable output.
+
+51
+00:03:27.295 --> 00:03:32.036
+The repository tests a finite version of that idea:
+
+52
+00:03:32.036 --> 00:03:37.304
+six authority fixtures, two pre-effect denials, one executed local effect,
+
+53
+00:03:37.304 --> 00:03:40.991
+one observation, exact rollback, five revocation entries,
+
+54
+00:03:40.991 --> 00:03:43.625
+and thirty-eight rejected semantic mutations.
+
+55
+00:03:44.225 --> 00:03:48.888
+The formal model also keeps accepted issuance, dispatch, effect, revocation,
+
+56
+00:03:48.888 --> 00:03:52.618
+one-shot use, and rollback inside the caller ceiling.
+
+57
+00:03:52.618 --> 00:03:57.280
+That is real bounded support for the encoded transition system.
+
+58
+00:03:57.880 --> 00:04:03.057
+It is not deployed authorization. Authentic identities, complete mediation,
+
+59
+00:04:03.057 --> 00:04:07.083
+concurrent revocation, secure tool wrappers, production adapters,
+
+60
+00:04:07.083 --> 00:04:11.110
+and open-world observation remain outside the result.
+
+61
+00:04:11.710 --> 00:04:16.645
+So the chapter's core claim remains design rationale at argument support.
+
+62
+00:04:16.645 --> 00:04:21.131
+The visual explains why authority should be explicit, versioned, revocable,
+
+63
+00:04:21.131 --> 00:04:24.720
+and receipt-bearing; it adds no safety, transfer, or
+
+64
+00:04:24.720 --> 00:04:26.515
+A S I conclusion.
+
+65
+00:04:27.115 --> 00:04:31.535
+The refund stops or proceeds for a reason that can be
+
+66
+00:04:31.535 --> 00:04:35.954
+inspected. Next, Failure Modes of Ungoverned Intelligence asks how such boundaries
+
+67
+00:04:35.954 --> 00:04:39.570
+break, how we notice, and who owns the residual.
