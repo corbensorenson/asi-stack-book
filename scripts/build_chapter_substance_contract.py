@@ -556,14 +556,15 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
         "support_state_effect": "none",
     },
     "content-authenticity-watermarking-and-synthetic-media-integrity": {
-        "reviewed_sha256": "5cf2a1d2e194c65a3e7e8f65d9ffd069aa65279708179aa793ff3d565a9154f1",
-        "reviewed_date": "2026-07-31",
+        "reviewed_sha256": "6f0bed529f8776b24f33bc2d688d52b73652fd4aa288a8e9b17ab558885fb138",
+        "reviewed_date": "2026-08-01",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,
         "review_basis": [
             "all eight named concepts distinguish provenance, watermark, fingerprint, detection, disclosure, and verification roles",
             "transformation lineage and Article 50 limits are explicit rather than inferred from keyword presence",
             "the chapter states failure modes, non-claims, and adjacent-owner handoffs without evidence promotion",
+            "the authenticity-envelope lifecycle, exact repairs, transformation accounting, scope invalidation, non-identifiability results, and rejecting communication bridge remain bounded to authored finite records",
         ],
         "support_state_effect": "none",
     },

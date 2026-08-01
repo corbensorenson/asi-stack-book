@@ -6167,7 +6167,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 298 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 298 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 324 proof targets, 120 Lean modules, 1546 theorem declarations, 990 derived/decomposed, 236 direct/projection, 320 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 324 proof targets, 121 Lean modules, 1578 theorem declarations, 1004 derived/decomposed, 250 direct/projection, 324 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.
@@ -6749,7 +6749,7 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:content-authenticity-watermarking-and-synthetic-media-integrity.admission_boundary` | `AsiStackProofs.NoDeferralAdmission` | A finite authenticity envelope may hand off only when asset, claim, signer, trust policy, evidence types, transformation state, uncertainty, and remedy are explicit; no theorem proves content truth. | planned |
+| `lean:content-authenticity-watermarking-and-synthetic-media-integrity.admission_boundary` | `AsiStackProofs.ContentAuthenticityReview` | An eight-transition finite authenticity-envelope review preserves identity, typed evidence, transformation, current trust, conflict/remedy, accessible-disclosure, and non-authority invariants; 42 exact mutation repairs, receipt/staleness invalidation, transformation rejection, semantic-truth and origin-from-absence impossibility results, and a rejecting communication-consumer bridge prove only authored record and information-loss properties before Project Theseus evaluation. | implemented |
 
 ### Governed Operations, Incident Command, and Graceful Degradation
 

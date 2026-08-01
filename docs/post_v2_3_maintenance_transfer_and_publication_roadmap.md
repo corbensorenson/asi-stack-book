@@ -1317,9 +1317,9 @@ The dated 2026-08-01 Failure Modes, Governed Operations, Learned Objective
 Integrity, Observation Trust, Search Substrate, Artifact Steward, Human-AI
 Organizations, Multi-Agent Dynamics, Embodied Physical Safety, Dangerous Capability Review, and Military Interaction Review expansions reopen
 formal growth without rewriting that history. The current overlay in
-`proofs/proof_semantic_depth_overlay.json` classifies 1,546 live theorem
-declarations across 119 theorem-bearing modules and maps them to 73 active
-semantic-owner chapters. The 327 added declarations are bound to the
+`proofs/proof_semantic_depth_overlay.json` classifies 1,578 live theorem
+declarations across 120 theorem-bearing modules and maps them to 74 active
+semantic-owner chapters. The 359 added declarations are bound to the
 five-stage failure-recovery model, the eight-stage governed-operations
 lifecycle, the learned-objective non-identification witness and eight-stage
 integrity lifecycle, and the declared-dependence pair classifier plus
@@ -1346,11 +1346,15 @@ They also include the Communication Influence Review six-stage lifecycle, 42
 exact repair or refusal dispositions, three adverse exposure monotonicity
 controls, typed denied-attribute noninterference, and two non-identifiability
 results for compressed surface signals and provenance.
+They also include Objective Lease Governance, Adversarial Model Security,
+Protected Computation Review, and Content Authenticity Review lifecycles with
+exact mutation repair, scoped invalidation, non-substitution,
+non-identifiability, and rejecting cross-owner consumer bridges.
 Independently encoded validators preserve exact no-support
 boundaries across every added model.
 
-The live semantic-depth distribution is 26 P0 record-shape results, 760 P1
-finite-route results, 106 P2 reachability/nonvacuity results, 379 P3
+The live semantic-depth distribution is 26 P0 record-shape results, 811 P1
+finite-route results, 122 P2 reachability/nonvacuity results, 430 P3
 implementation-refinement results, 99 P4 cross-component-safety results, 90 P5
 liveness/recovery results, and zero P6 empirically bound results. P6 being zero
 is intentional: the existence of an experiment file, trace, or generated
@@ -1359,11 +1363,11 @@ artifact does not turn a theorem into empirical evidence.
 Every overlay row records its assumptions, active semantic owner, downstream
 consumer, witness or explicit witness absence, implementation binding, mutation
 evidence, maximum inference, and disposition. The resulting current estate is
-1,460 retain, zero retire as narrow projection, zero pending scope-language
-rewrites, and zero stronger-model actions remaining. All 1,460 rows have
+1,578 retain, zero retire as narrow projection, zero pending scope-language
+rewrites, and zero stronger-model actions remaining. All 1,578 rows have
 mutation coverage and every retained theorem has a named consumer. The
 terminal rationalization receipt remains 1,219 retain with no pending action;
-the later 241 theorems are additive consumer-owned formal expansion, not
+the later 359 theorems are additive consumer-owned formal expansion, not
 retroactive rationalization.
 
 The cumulative dependency-safe retirement ledger is

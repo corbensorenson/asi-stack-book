@@ -283,6 +283,29 @@ support, transfer, or external effect follows. Chapter support remains
 The independent consumer checks 48 exact mutation dispositions, three evidence non-substitution results, finite leakage accounting, five adverse scope changes, two fallback rejections, two impossibility results, and one rejecting privacy bridge.
 
 """,
+    "content-authenticity-watermarking-and-synthetic-media-integrity": """## Current refinement
+
+`AsiStackProofs.ContentAuthenticityReview` implements a reachable
+eight-transition review over exact asset and rendition identity, separated
+evidence semantics, finite transformation accounting, current trust policy and
+signer state, conflict and remedy custody, accessible disclosure, and explicit
+non-authority. One complete envelope reaches only Project Theseus authenticity
+campaign eligibility. Forty-two mutations receive exact repair or refusal
+routes; receipt and staleness theorems reject changed assets, policies,
+transformations, signer epochs, and expired use; typed transformation rules
+reject unsupported preservation and unbound composites; two collision pairs
+prove that technical signals cannot recover semantic truth and absence cannot
+recover human origin; and a communication bridge refuses to inherit recipient
+comprehension.
+
+`scripts/validate_content_authenticity_review.py` independently reconstructs
+the model and 32-theorem surface. The model trusts authored fields and proves
+no provenance correctness, watermark or detector robustness, truth, origin,
+authorship, comprehension, compliance, remedy efficacy, deployment, transfer,
+support transition, AGI, or ASI. Chapter support remains `argument` and
+`support_state_effect` remains `none`.
+
+""",
     "human-ai-communication-persuasion-and-epistemic-security": """## Current refinement
 
 `AsiStackProofs.CommunicationInfluenceReview` implements a reachable six-stage

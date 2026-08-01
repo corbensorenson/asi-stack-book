@@ -3128,7 +3128,12 @@
     "lean/AsiStackProofs/ProtectedComputationReview.lean",
     "tests/fixtures/proof_models/protected_computation_dossier.json",
     "evidence_quality/proof_model_dossiers/confidential-and-verifiable-ai-computation.md",
-    "chapters/confidential-and-verifiable-ai-computation.qmd"
+    "chapters/confidential-and-verifiable-ai-computation.qmd",
+    "scripts/validate_content_authenticity_review.py",
+    "lean/AsiStackProofs/ContentAuthenticityReview.lean",
+    "tests/fixtures/proof_models/content_authenticity_envelope.json",
+    "evidence_quality/proof_model_dossiers/content-authenticity-watermarking-and-synthetic-media-integrity.md",
+    "chapters/content-authenticity-watermarking-and-synthetic-media-integrity.qmd"
   ],
   "units": [
     {
@@ -12086,7 +12091,7 @@
       "output_assertions": [
         "1,151/1,151 activation-baseline theorem declarations and 298/298 baseline targets are reviewed and dispositioned",
         "298/298 historical proof targets remain implemented and explicitly adequacy-routed",
-        "324 current targets comprise 313 implemented and 11 planned, including the consumer-owned Failure Modes, Governed Operations, Learned Objective Integrity, Observation Trust, Search Substrate, Artifact Steward, Human-AI Organizations, Multi-Agent Dynamics, Embodied Physical Safety, Dangerous Capability Review, Military Interaction Review, Open-Weight Release Review, Communication Influence Review, Objective Lease Governance, Adversarial Model Security, and Protected Computation Review refinements",
+        "324 current targets comprise 314 implemented and 10 planned, including the consumer-owned Failure Modes, Governed Operations, Learned Objective Integrity, Observation Trust, Search Substrate, Artifact Steward, Human-AI Organizations, Multi-Agent Dynamics, Embodied Physical Safety, Dangerous Capability Review, Military Interaction Review, Open-Weight Release Review, Communication Influence Review, Objective Lease Governance, Adversarial Model Security, Protected Computation Review, and Content Authenticity Review refinements",
         "the thirty-two richer-semantics targets remain bounded and route to P3/P4 rather than disappearing",
         "nine required safety-critical, integration, and review-named refinement models have dossiers and registered consumers",
         "P2/M3 is completed, P3 is active, and prerequisite M2 is active without support-state movement"
@@ -17784,11 +17789,57 @@
       "prohibited_inference": "Does not establish cryptographic soundness, attestation validity, hardware trust, side-channel resistance, leakage bounds in practice, semantic correctness, authorization, privacy, fallback efficacy, acceptable cost, secure deployment, transfer, SOTA, AGI, or ASI.",
       "contract_precision": "exact",
       "semantic_review_state": "checked_bounded_formal_model_and_independent_consumer_no_support_effect"
+    },
+    {
+      "id": "validate_content_authenticity_review.py:458",
+      "order": 458,
+      "script": "validate_content_authenticity_review.py",
+      "args": [],
+      "execution_tier": "pr",
+      "validation_class": "proof_or_evidence_gate",
+      "input_contract": "Canonical authenticity-envelope Lean review, independent 42-axis fixture, chapter proof boundary, proof dossier, manifest, triage, and outline binding.",
+      "input_artifacts": [
+        "scripts/validate_content_authenticity_review.py",
+        "lean/AsiStackProofs/ContentAuthenticityReview.lean",
+        "tests/fixtures/proof_models/content_authenticity_envelope.json",
+        "evidence_quality/proof_model_dossiers/content-authenticity-watermarking-and-synthetic-media-integrity.md",
+        "chapters/content-authenticity-watermarking-and-synthetic-media-integrity.qmd",
+        "proofs/proof_manifest.json",
+        "proofs/proof_triage.json",
+        "docs/book_outline.md"
+      ],
+      "output_contract": "Reject lifecycle, exact-repair, evidence-substitution, transformation, trust-policy, signer-revocation, receipt, truth/origin collision, communication-consumer, binding, and no-promotion drift.",
+      "output_assertions": [
+        "eight-transition review reaches only Project Theseus authenticity campaign eligibility",
+        "42/42 admission-axis mutations reject readiness and receive exact repair or refusal dispositions",
+        "provenance, watermark, detector, truth, origin, authorship, compliance, and support claims remain separated",
+        "finite transformation accounting covers every listed transformation",
+        "asset, trust-policy, transformation, signer-epoch, and expiry changes invalidate a bounded receipt",
+        "unsupported preservation and unbound composite claims reject",
+        "authenticity signals cannot recover semantic truth and absent signals cannot recover human origin",
+        "the communication consumer rejects inherited comprehension",
+        "32 exact Lean declarations move no chapter support, deployment, release, transfer, or external-effect state"
+      ],
+      "claim_scope": "Bounded authored authenticity-envelope review, evidence-role separation, finite transformation accounting, receipt invalidation, consumer rejection, and non-identifiability only.",
+      "negative_controls": "validator_owned_42_axis_evidence_transformation_receipt_collision_consumer_and_binding_mutations",
+      "negative_control_cases": [
+        "signal laundering",
+        "unsupported transformation",
+        "policy drift",
+        "signer revocation",
+        "truth inference",
+        "origin inference",
+        "comprehension inheritance",
+        "support promotion"
+      ],
+      "prohibited_inference": "Does not establish signature or provenance correctness, watermark or detector robustness, semantic truth, human or synthetic origin, authorship, consent, comprehension, legal compliance, remedy efficacy, secure deployment, transfer, SOTA, AGI, or ASI.",
+      "contract_precision": "exact",
+      "semantic_review_state": "checked_bounded_formal_model_and_independent_consumer_no_support_effect"
     }
   ],
   "summary": {
-    "required_artifact_count": 3084,
-    "unit_count": 457
+    "required_artifact_count": 3089,
+    "unit_count": 458
   },
   "non_claims": [
     "Registry coverage does not establish semantic adequacy of every validator.",

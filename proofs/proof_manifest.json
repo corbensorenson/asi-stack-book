@@ -3,8 +3,8 @@
   "note": "Generated from Lean proof target tables in docs/book_outline.md. Edit the outline, not this file.",
   "proof_target_count": 324,
   "status_counts": {
-    "implemented": 313,
-    "planned": 11
+    "implemented": 314,
+    "planned": 10
   },
   "chapter_counts": {
     "adversarial-evaluation-sandbagging-and-training-time-deception": 8,
@@ -2877,11 +2877,11 @@
       "chapter_id": "content-authenticity-watermarking-and-synthetic-media-integrity",
       "chapter_title": "Content Authenticity, Watermarking, and Synthetic Media Integrity",
       "tag": "lean:content-authenticity-watermarking-and-synthetic-media-integrity.admission_boundary",
-      "module": "AsiStackProofs.NoDeferralAdmission",
-      "formal_target": "A finite authenticity envelope may hand off only when asset, claim, signer, trust policy, evidence types, transformation state, uncertainty, and remedy are explicit; no theorem proves content truth.",
-      "status": "planned",
+      "module": "AsiStackProofs.ContentAuthenticityReview",
+      "formal_target": "An eight-transition finite authenticity-envelope review preserves identity, typed evidence, transformation, current trust, conflict/remedy, accessible-disclosure, and non-authority invariants; 42 exact mutation repairs, receipt/staleness invalidation, transformation rejection, semantic-truth and origin-from-absence impossibility results, and a rejecting communication-consumer bridge prove only authored record and information-loss properties before Project Theseus evaluation.",
+      "status": "implemented",
       "outline_line": 6752,
-      "module_path": "lean/AsiStackProofs/NoDeferralAdmission.lean"
+      "module_path": "lean/AsiStackProofs/ContentAuthenticityReview.lean"
     },
     {
       "chapter_id": "governed-operations-incident-command-and-graceful-degradation",

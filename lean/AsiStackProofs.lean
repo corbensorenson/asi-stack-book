@@ -33,6 +33,7 @@ import AsiStackProofs.DangerousCapabilityReview
 import AsiStackProofs.MilitaryInteractionReview
 import AsiStackProofs.OpenWeightReleaseReview
 import AsiStackProofs.CommunicationInfluenceReview
+import AsiStackProofs.ContentAuthenticityReview
 import AsiStackProofs.ObjectiveLeaseGovernance
 import AsiStackProofs.AdversarialModelSecurity
 import AsiStackProofs.ProtectedComputationReview

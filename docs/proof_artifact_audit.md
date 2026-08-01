@@ -11,9 +11,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | Metric | Value |
 |---|---:|
 | Proof targets audited | 324 |
-| Manifest status counts | {"implemented": 313, "planned": 11} |
-| Triage class counts | {"formal-invariant": 313, "process-contract": 11} |
-| Lean modules referenced | 86 |
+| Manifest status counts | {"implemented": 314, "planned": 10} |
+| Triage class counts | {"formal-invariant": 314, "process-contract": 10} |
+| Lean modules referenced | 87 |
 | Chapters with proof targets | 84 |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -48,6 +48,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/CommandSemanticRefinement.lean` | 3 | 12 | 0 | 25 | 3 |
 | `lean/AsiStackProofs/CommunicationInfluenceReview.lean` | 1 | 21 | 0 | 27 | 7 |
 | `lean/AsiStackProofs/CompactGenerationRefinement.lean` | 9 | 17 | 0 | 11 | 3 |
+| `lean/AsiStackProofs/ContentAuthenticityReview.lean` | 1 | 32 | 0 | 34 | 8 |
 | `lean/AsiStackProofs/ContextCertificateRefinement.lean` | 3 | 17 | 0 | 17 | 2 |
 | `lean/AsiStackProofs/ContextTransactionRefinement.lean` | 4 | 20 | 0 | 18 | 2 |
 | `lean/AsiStackProofs/Corrigibility.lean` | 1 | 4 | 0 | 6 | 2 |
@@ -141,7 +142,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `compact-generative-systems-and-residual-honesty` | 9 | 9 | 0 | 0 |
 | `confidential-and-verifiable-ai-computation` | 1 | 1 | 0 | 0 |
 | `constitutional-alignment-substrate` | 6 | 6 | 0 | 0 |
-| `content-authenticity-watermarking-and-synthetic-media-integrity` | 1 | 0 | 0 | 0 |
+| `content-authenticity-watermarking-and-synthetic-media-integrity` | 1 | 1 | 0 | 0 |
 | `context-transactions-snapshots-mounts-and-taint` | 4 | 4 | 0 | 0 |
 | `dangerous-capability-domains-and-misuse-uplift` | 1 | 1 | 0 | 0 |
 | `data-engines-continual-learning-and-unlearning` | 15 | 15 | 0 | 0 |
@@ -489,7 +490,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:safety_cases.missing_independent_review.requires_review` | `safety-cases-and-structured-assurance` | `AsiStackProofs.SafetyCaseRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:safety_cases.unresolved_defeater.blocks_affected_release` | `safety-cases-and-structured-assurance` | `AsiStackProofs.SafetyCaseRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:safety_cases.case_status.cannot_authorize_release` | `safety-cases-and-structured-assurance` | `AsiStackProofs.SafetyCaseRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:content-authenticity-watermarking-and-synthetic-media-integrity.admission_boundary` | `content-authenticity-watermarking-and-synthetic-media-integrity` | `AsiStackProofs.NoDeferralAdmission` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
+| `lean:content-authenticity-watermarking-and-synthetic-media-integrity.admission_boundary` | `content-authenticity-watermarking-and-synthetic-media-integrity` | `AsiStackProofs.ContentAuthenticityReview` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:operations.degradation_never_widens_authority` | `governed-operations-incident-command-and-graceful-degradation` | `AsiStackProofs.GovernedOperations` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:operations.recovery_requires_complete_state` | `governed-operations-incident-command-and-graceful-degradation` | `AsiStackProofs.GovernedOperations` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:operations.incident_lifecycle_refines_static_contracts` | `governed-operations-incident-command-and-graceful-degradation` | `AsiStackProofs.GovernedOperationsRefinement` | triage ok; module ok; chapter tag ok; limitation ok |

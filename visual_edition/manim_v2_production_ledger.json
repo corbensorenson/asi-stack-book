@@ -3,7 +3,7 @@
   "edition_id": "asi-stack-p7.3-visual-edition",
   "generated_at_utc": "2026-08-01T05:10:09Z",
   "book_structure_path": "book_structure.json",
-  "book_structure_sha256": "1fa68e61b995bd9b3a5cad6e58e2c03097d7677b737fe930f0d82eefb97aeaed",
+  "book_structure_sha256": "1c64184695bc72035dc78aca4a18f9ee30d590107954d7228bcdd788a40d1eae",
   "visual_manifest_path": "visual_edition/manifest.json",
   "visual_manifest_sha256": "66543db7cdf7afd2483a966d0d41119f3e767918f69a40e448bb34987bf42a85",
   "authoring_standard_path": "skills/asi-stack-manim-videos/SKILL.md",
@@ -131,11 +131,11 @@
     "external_human_prepublication_gate_required": false
   },
   "counts": {
-    "planned": 71,
+    "planned": 70,
     "briefed": 0,
     "scripted": 0,
-    "animatic_passed": 13,
-    "picture_and_sound_lock_passed": 13,
+    "animatic_passed": 14,
+    "picture_and_sound_lock_passed": 14,
     "release_candidate_passed": 0,
     "accepted_generation_2": 0,
     "youtube_predecessors": 12,
@@ -812,7 +812,7 @@
       },
       "target": {
         "generation": 2,
-        "stage": "planned",
+        "stage": "picture_and_sound_lock",
         "beat_plan_path": "visual_edition/chapters/moral-uncertainty-and-value-conflict/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/moral-uncertainty-and-value-conflict/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/moral-uncertainty-and-value-conflict/generation-2/narration.txt",
@@ -829,9 +829,9 @@
           "independent_release_candidate": "visual_edition/chapters/moral-uncertainty-and-value-conflict/generation-2/reviews/independent_release_candidate.json"
         },
         "gates": {
-          "beat_plan": "not_started",
-          "animatic": "not_started",
-          "picture_and_sound_lock": "not_started",
+          "beat_plan": "pass",
+          "animatic": "pass",
+          "picture_and_sound_lock": "pass",
           "release_candidate": "not_started",
           "independent_release_candidate": "not_started",
           "technical": "not_started",

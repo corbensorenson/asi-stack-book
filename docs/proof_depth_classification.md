@@ -13,11 +13,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 | Metric | Value |
 |---|---:|
 | Proof targets in manifest | 324 |
-| Lean modules scanned | 120 |
-| Theorem declarations classified | 1546 |
-| Direct/projection-style theorem declarations | 236 |
-| Derived/decomposed theorem declarations | 990 |
-| Unknown or mixed theorem declarations | 320 |
+| Lean modules scanned | 121 |
+| Theorem declarations classified | 1578 |
+| Direct/projection-style theorem declarations | 250 |
+| Derived/decomposed theorem declarations | 1004 |
+| Unknown or mixed theorem declarations | 324 |
 | Safety-critical theorem declarations | 73 |
 | Safety-critical direct/projection declarations | 1 |
 | Safety-critical chapter classifications present | 1/1 |
@@ -77,6 +77,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/CommunicationInfluenceReview.lean` | human-ai-communication-persuasion-and-epistemic-security | 1 | 21 | 5 | 12 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/CompactGenerationRefinement.lean` | compact-generative-systems-and-residual-honesty | 9 | 17 | 13 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/CompactGenerativeSystems.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/ContentAuthenticityReview.lean` | content-authenticity-watermarking-and-synthetic-media-integrity | 1 | 32 | 14 | 14 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ContextCertificateRefinement.lean` | virtual-context-abi | 3 | 17 | 0 | 3 | 14 | manual review |
 | `lean/AsiStackProofs/ContextCertificates.lean` | unmapped | 0 | 16 | 0 | 16 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ContextTransactionRefinement.lean` | context-transactions-snapshots-mounts-and-taint | 4 | 20 | 0 | 4 | 16 | manual review |
@@ -117,7 +118,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/MoECOTRuntime.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ModelWeightCustody.lean` | model-weight-custody-and-hardware-roots-of-trust | 8 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/MultiAgentDynamics.lean` | multi-agent-dynamics-collective-intelligence-and-systemic-risk | 1 | 22 | 2 | 14 | 6 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/NoDeferralAdmission.lean` | ai-deployment-transition-distribution-and-human-agency, autonomous-replication-proliferation-and-containment, content-authenticity-watermarking-and-synthetic-media-integrity, durable-semantic-memory-and-knowledge-lattices, human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty, institutions-international-coordination-and-public-legitimacy, learning-theory-generalization-and-scaling-science, physical-compute-infrastructure-energy-and-environmental-constraints, relational-dimension-compilation-and-polyadic-cognition, scientific-discovery-and-experimental-governance, societal-resilience-and-misuse-defense | 11 | 0 | 0 | 0 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/NoDeferralAdmission.lean` | ai-deployment-transition-distribution-and-human-agency, autonomous-replication-proliferation-and-containment, durable-semantic-memory-and-knowledge-lattices, human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty, institutions-international-coordination-and-public-legitimacy, learning-theory-generalization-and-scaling-science, physical-compute-infrastructure-energy-and-environmental-constraints, relational-dimension-compilation-and-polyadic-cognition, scientific-discovery-and-experimental-governance, societal-resilience-and-misuse-defense | 10 | 0 | 0 | 0 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ObjectiveLeaseGovernance.lean` | governed-objective-formation-value-learning-and-goal-integrity | 1 | 27 | 12 | 11 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ObservationTrust.lean` | perception-sensor-fusion-and-observation-trust | 2 | 16 | 5 | 7 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/OpenEndedImprovement.lean` | unmapped | 0 | 7 | 0 | 7 | 0 | derived/decomposed by classifier |
@@ -509,6 +510,38 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/CompactGenerationRefinement.lean` | `unresolved_obligation_without_owner_blocks_residualization` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/CompactGenerativeSystems.lean` | `lossy_unverified_representation_marked_exact_rejected` | derived_or_decomposed | no | uses cases, have, rw |
 | `lean/AsiStackProofs/CompactGenerativeSystems.lean` | `unresolved_obligations_without_residual_records_rejected` | derived_or_decomposed | no | uses cases, have, rw |
+| `lean/AsiStackProofs/ContentAuthenticityReview.lean` | `absence_signals_cannot_recover_human_origin` | derived_or_decomposed | no | uses contradiction, have, rw, simp |
+| `lean/AsiStackProofs/ContentAuthenticityReview.lean` | `asset_change_invalidates_authenticity_receipt` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ContentAuthenticityReview.lean` | `authenticity_receipt_cannot_substitute_for_recipient_comprehension` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/ContentAuthenticityReview.lean` | `authenticity_signals_cannot_recover_semantic_truth` | derived_or_decomposed | no | uses contradiction, have, rw, simp |
+| `lean/AsiStackProofs/ContentAuthenticityReview.lean` | `campaign_eligibility_requires_admissible_envelope` | derived_or_decomposed | no | uses have |
+| `lean/AsiStackProofs/ContentAuthenticityReview.lean` | `check_all_covers_every_finite_transformation` | derived_or_decomposed | no | uses induction, rcases, simp, subst |
+| `lean/AsiStackProofs/ContentAuthenticityReview.lean` | `complete_envelope_is_ready` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ContentAuthenticityReview.lean` | `complete_envelope_reaches_only_authenticity_campaign` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ContentAuthenticityReview.lean` | `composite_without_region_binding_is_blocked` | derived_or_decomposed | no | uses have, simp |
+| `lean/AsiStackProofs/ContentAuthenticityReview.lean` | `detector_output_does_not_establish_authorship` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ContentAuthenticityReview.lean` | `every_admission_axis_mutation_blocks_readiness` | derived_or_decomposed | no | uses cases |
+| `lean/AsiStackProofs/ContentAuthenticityReview.lean` | `every_admission_axis_mutation_has_exact_repair` | derived_or_decomposed | no | uses cases |
+| `lean/AsiStackProofs/ContentAuthenticityReview.lean` | `every_admission_axis_mutation_reaches_repair` | derived_or_decomposed | no | uses cases |
+| `lean/AsiStackProofs/ContentAuthenticityReview.lean` | `expired_envelope_remains_expired_when_time_advances` | derived_or_decomposed | no | uses omega, unfold |
+| `lean/AsiStackProofs/ContentAuthenticityReview.lean` | `identical_absence_signals_can_hide_opposite_origin` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ContentAuthenticityReview.lean` | `identical_authenticity_signals_can_hide_opposite_truth_state` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ContentAuthenticityReview.lean` | `readiness_requires_accessible_disclosure` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ContentAuthenticityReview.lean` | `readiness_requires_conflict_routes` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ContentAuthenticityReview.lean` | `readiness_requires_current_trust` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ContentAuthenticityReview.lean` | `readiness_requires_evidence` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ContentAuthenticityReview.lean` | `readiness_requires_identity` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ContentAuthenticityReview.lean` | `readiness_requires_nonclaim_boundary` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ContentAuthenticityReview.lean` | `readiness_requires_transformations` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ContentAuthenticityReview.lean` | `review_run_preserves_stage_invariant` | derived_or_decomposed | no | uses induction, simp |
+| `lean/AsiStackProofs/ContentAuthenticityReview.lean` | `review_step_preserves_stage_invariant` | derived_or_decomposed | no | uses cases, simp, split |
+| `lean/AsiStackProofs/ContentAuthenticityReview.lean` | `signed_provenance_does_not_establish_semantic_truth` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ContentAuthenticityReview.lean` | `signer_epoch_change_invalidates_authenticity_receipt` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ContentAuthenticityReview.lean` | `stale_signer_status_remains_stale_when_current_epoch_advances` | derived_or_decomposed | no | uses omega, unfold |
+| `lean/AsiStackProofs/ContentAuthenticityReview.lean` | `transformation_change_invalidates_authenticity_receipt` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ContentAuthenticityReview.lean` | `trust_policy_change_invalidates_authenticity_receipt` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ContentAuthenticityReview.lean` | `unsupported_transformation_cannot_claim_verified_preservation` | derived_or_decomposed | no | uses have, simp |
+| `lean/AsiStackProofs/ContentAuthenticityReview.lean` | `watermark_absence_does_not_establish_human_origin` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ContextCertificateRefinement.lean` | `accepted_admission_preserves_provenance_contracts_and_authority` | derived_or_decomposed | no | uses have, rcases, simp |
 | `lean/AsiStackProofs/ContextCertificateRefinement.lean` | `accepted_derivation_preserves_source_and_authority` | derived_or_decomposed | no | uses have, rcases, simp |
 | `lean/AsiStackProofs/ContextCertificateRefinement.lean` | `accepted_step_is_valid` | derived_or_decomposed | no | uses simp, split, unfold |

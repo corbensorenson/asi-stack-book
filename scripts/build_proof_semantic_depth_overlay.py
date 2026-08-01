@@ -526,6 +526,65 @@ for theorem_name in (
     }
 
 for theorem_name, rationale in {
+    "complete_envelope_is_ready": "The closed authored envelope witnesses the finite content-authenticity admissibility predicate.",
+    "complete_envelope_reaches_only_authenticity_campaign": "The closed envelope reaches only Project Theseus authenticity-campaign eligibility, not a truth, compliance, support, or release judgment.",
+    "identical_authenticity_signals_can_hide_opposite_truth_state": "Two cases witness opposite semantic-truth states under identical provenance, watermark, detector, and disclosure signals.",
+    "identical_absence_signals_can_hide_opposite_origin": "Two cases witness human and synthetic origins under the same absent credential, watermark, and detector signals.",
+}.items():
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/ContentAuthenticityReview.lean::{theorem_name}"
+    ] = {
+        "disposition": "retain", "semantic_level": "P2",
+        "witness_refs": [f"lean-theorem:{theorem_name}"],
+        "classification_basis": ["a closed authenticity envelope or collision pair witnesses one bounded modeled result"],
+        "rationale": rationale,
+    }
+
+for theorem_name, rationale in {
+    "check_all_covers_every_finite_transformation": "Structural induction proves every member of an arbitrary finite transformation list is checked by the modeled map.",
+    "every_admission_axis_mutation_blocks_readiness": "Universal case analysis shows all 42 authenticity-envelope mutations reject readiness.",
+    "every_admission_axis_mutation_has_exact_repair": "Universal case analysis binds all 42 mutations to exact repair or refusal dispositions.",
+    "every_admission_axis_mutation_reaches_repair": "Universal case analysis routes all 42 mutations into the lifecycle repair state.",
+    "expired_envelope_remains_expired_when_time_advances": "Natural-number order proves advancing time cannot restore an expired authenticity envelope.",
+    "stale_signer_status_remains_stale_when_current_epoch_advances": "Natural-number order proves advancing the current signer epoch cannot restore a stale signer check.",
+    "asset_change_invalidates_authenticity_receipt": "The asset-identity conjunct rejects every receipt presented for a different asset.",
+    "trust_policy_change_invalidates_authenticity_receipt": "The trust-policy conjunct rejects every receipt presented under a different policy.",
+    "transformation_change_invalidates_authenticity_receipt": "The transformation-digest conjunct rejects every receipt presented for a different transformation state.",
+    "signer_epoch_change_invalidates_authenticity_receipt": "The signer-epoch conjunct rejects every receipt presented after signer-state drift.",
+    "unsupported_transformation_cannot_claim_verified_preservation": "The typed transformation relation excludes verified preservation for every unsupported transformation.",
+    "composite_without_region_binding_is_blocked": "The typed transformation relation excludes every composite whose regions are not bound.",
+    "authenticity_signals_cannot_recover_semantic_truth": "A same-signal/opposite-truth collision proves no authenticity-signal classifier is exact for every modeled case.",
+    "absence_signals_cannot_recover_human_origin": "A same-absence/opposite-origin collision proves no absence-only classifier is exact for every modeled case.",
+    "authenticity_receipt_cannot_substitute_for_recipient_comprehension": "The consumer refinement deliberately leaves comprehension false, so accessible disclosure does not become recipient understanding.",
+}.items():
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/ContentAuthenticityReview.lean::{theorem_name}"
+    ] = {
+        "disposition": "retain", "semantic_level": "P3",
+        "witness_refs": ["lean-theorem:complete_envelope_is_ready", "tests/fixtures/proof_models/content_authenticity_envelope.json"],
+        "classification_basis": ["a quantified mutation, finite induction, scope invalidation, transformation rule, non-identifiability result, or rejecting consumer refinement is independently reconstructed"],
+        "rationale": rationale,
+    }
+
+for theorem_name in (
+    "signed_provenance_does_not_establish_semantic_truth",
+    "watermark_absence_does_not_establish_human_origin",
+    "detector_output_does_not_establish_authorship",
+    "review_step_preserves_stage_invariant", "review_run_preserves_stage_invariant",
+    "campaign_eligibility_requires_admissible_envelope", "readiness_requires_identity",
+    "readiness_requires_evidence", "readiness_requires_transformations",
+    "readiness_requires_current_trust", "readiness_requires_conflict_routes",
+    "readiness_requires_accessible_disclosure", "readiness_requires_nonclaim_boundary",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/ContentAuthenticityReview.lean::{theorem_name}"
+    ] = {
+        "disposition": "retain", "semantic_level": "P1",
+        "classification_basis": ["a typed evidence decision, universal finite lifecycle invariant, or grouped necessity result constrains authored authenticity-envelope state"],
+        "rationale": "The theorem constrains only the encoded authenticity review; it establishes no provenance correctness, content truth, origin, authorship, comprehension, compliance, support, or deployment authority.",
+    }
+
+for theorem_name, rationale in {
     "complete_control_lease_is_ready":
         "The closed complete lease witnesses the derived finite admissibility predicate.",
     "complete_control_lease_routes_only_to_theseus_trial":
@@ -1082,6 +1141,9 @@ LEGACY_VALIDATOR_ALIASES = {
     },
     "lean/AsiStackProofs/ProtectedComputationReview.lean": {
         "validate_protected_computation_review.py"
+    },
+    "lean/AsiStackProofs/ContentAuthenticityReview.lean": {
+        "validate_content_authenticity_review.py"
     },
     "lean/AsiStackProofs/TheseusReference.lean": {"validate_theseus_report.py"},
     "lean/AsiStackProofs/CyclicMixers.lean": {"validate_circle_cyclic_mixer_receipt_slice.py"},

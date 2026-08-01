@@ -94,15 +94,19 @@ All counts are derived from current packets. A storyboard, scene stub, silent
 preview, unreviewed caption file, upload, or placeholder embed is not a
 completed chapter video.
 
-Current checkpoint: all 84 chapters have validated final
-1920×1080/30-fps H.264/AAC masters in ignored local storage. Narration uses
-the pinned Apache-2.0 Kokoro-82M bf16 model and `af_heart` voice through the
-MIT-licensed `kokoro-mlx` implementation. Exact narration receipts drive the
-canonical caption timing; a pinned local MLX Whisper audit checks complete
-beginning/end coverage, requires content-normalized word error at or below
-3%, and rejects an internal expected-token gap above eight. Across all 84
-masters, word error is 0–2.8658%, the largest expected-token gap is four, and
-duration is 227.765–331.005 seconds.
+Current checkpoint: the 84-chapter generation-one baseline remains preserved
+as ignored local history, while generation two is the active quality lane.
+Generation-two chapters 1–14 have passed beat-plan, animatic, and
+picture-and-sound-lock gates; chapters 15–84 remain planned. Generation two
+does not yet have a release candidate, accepted video, YouTube-current video,
+or current Quarto embed. Chapter 14 is intentionally 06:41.90: the six-minute
+value is a preferred soft range, and shortening its allocation puzzle, standing
+repair, rights receipt, fork/export duties, evidence boundary, or handoff would
+collapse distinct teaching responsibilities. Narration uses the pinned
+Apache-2.0 Kokoro-82M bf16 model and `af_heart` voice through the MIT-licensed
+`kokoro-mlx` implementation. Exact narration receipts drive canonical caption
+timing; local AV diagnostics and receipt-derived beat reviews are evidence for
+the audiovisual derivative only, not for any book claim.
 
 The original technical visual grammar and narration path are `ratified` and
 `qualified_for_all_chapters`. All 84 packets are `ready_not_published`, with
@@ -129,13 +133,13 @@ captions-on, phone/large-screen, headphone/speaker, and random-frame passes and
 requires at least 4/5 independently for clarity, composition, motion, sync,
 continuity, pacing, voice, mix, engagement, accessibility, and claim fidelity.
 The first five form the remediation cohort, the remaining seven previews
-followed, and chapters 13–84 were held until the revised method passed. Chapter
-13 is now through picture-and-sound lock under that method; chapters 14–84
-remain gated behind the same production chain. Existing unlisted embeds remain
+followed, and chapters 13–84 were held until the revised method passed. Chapters
+13 and 14 are now through picture-and-sound lock under that method; chapters
+15–84 remain gated behind the same production chain. Existing unlisted embeds remain
 historical review previews, not publication-quality acceptance.
 
-The generation-2 ledger currently has 71 planned chapters and thirteen chapters
-through both animatic and picture-and-sound lock. The first thirteen
+The generation-2 ledger currently has 70 planned chapters and fourteen chapters
+through both animatic and picture-and-sound lock. The first fourteen
 replacements use chapter-specific persistent worlds, audio-derived beat timing,
 exhaustive caption-boundary review, and independent per-dimension scores without
 average laundering. Chapter 10, `human-factors-and-meaningful-control-in-oversight`,
@@ -151,7 +155,12 @@ constitutional update, descendant-handle preservation, and explicitly finite
 proof envelope. Chapter 13, `inner-alignment-mesa-optimization-and-learned-objective-integrity`,
 uses an identical-trace sorting-lab puzzle, a sealed stripe intervention,
 camera-aware policy test, four evidence lanes, mitigation transfer, and a
-finite objective-integrity boundary. All thirteen delivery masters remain
+finite objective-integrity boundary. Chapter 14,
+`moral-uncertainty-and-value-conflict`, uses one emergency generator, two
+defensible obligations, a value-conflict record, a bounded decision lease, a
+linked rights receipt, fail-closed standing repair, custody separation,
+replacement/fork requalification, and an explicit non-claim boundary. All
+fourteen delivery masters remain
 candidates only: no generation-2 video has passed release-candidate,
 independent, technical, claim-fidelity, or acceptance gates, and none is
 uploaded or current in Quarto.
@@ -160,10 +169,12 @@ The repository-local `skills/asi-stack-manim-videos/` authoring skill includes
 a structural v2 beat-plan audit,
 start/middle/end frame extraction for every beat, and mechanical A/V
 diagnostics for freezes, black intervals, silence, duration drift, loudness,
-and true peak. On the first current muxed master, the diagnostic found six
-32.5–42.9-second frozen-image intervals while the audio itself measured -16.4
-LUFS integrated, 2.6 LU loudness range, and -1.4 dBTP. Mechanical checks locate
-review risks; they do not certify beauty, comfort, truth, or learning.
+and true peak. On the Chapter 14 picture-and-sound lock, the diagnostic found
+thirteen
+intentional 6.0–9.9-second reading holds while the audio measured -16.4 LUFS
+integrated, 3.1 LU loudness range, and -1.3 dBTP. Each hold is paired with
+narrated reasoning and a visible state transition; mechanical checks locate
+review risks and do not certify beauty, comfort, truth, or learning.
 
 The preview exception is narrow and explicit. A managed player may appear
 before full publication only when an exact row in

@@ -4,7 +4,7 @@ chapter_id: "content-authenticity-watermarking-and-synthetic-media-integrity"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.2 complete argument-level manuscript"
-last_updated: "2026-07-24"
+last_updated: "2026-08-01"
 primary_sources:
   - "ext_c2pa_specification_2_3_2025"
   - "ext_eu_article_50_transparency_guidelines_2026"
@@ -617,19 +617,40 @@ identity or surveillance layer. This remains a research target until
 interoperable tools, adversarial transformations, representative users, and
 real remedy pathways have been evaluated together.
 
-Planned formalization hook: `lean:content-authenticity-watermarking-and-synthetic-media-integrity.admission_boundary` remains a process-contract target; it does not claim an implemented theorem.
+### Formalization hooks
+
+The implemented target
+`lean:content-authenticity-watermarking-and-synthetic-media-integrity.admission_boundary`
+is realized by `AsiStackProofs.ContentAuthenticityReview`. Its 32 theorem
+declarations cover an eight-transition envelope review, 42 admission-axis
+mutations with exact repairs, typed evidence non-substitution, finite
+transformation accounting, trust-policy and signer-revocation staleness,
+scoped receipt invalidation, unsupported-transformation and unbound-composite
+rejection, a semantic-truth impossibility result, an origin-from-absence
+impossibility result, and a communication-consumer bridge that refuses to
+inherit recipient comprehension from an authenticity receipt.
+
+The proof is intentionally bounded. It trusts the authored asset, signer,
+policy, transformation, disclosure, remedy, and revocation fields. This model does not prove signature correctness, provenance completeness, watermark or detector
+robustness, content truth, human or synthetic origin, authorship, consent,
+comprehension, legal compliance, remedy efficacy, interoperability, deployment
+safety, or social benefit. Chapter support remains `argument`.
+The next evidence step is a Project Theseus authenticity campaign over
+independent authoring and validation tools, adversarial transformations,
+compromised signers, accessible disclosures, correction propagation, and
+representative users.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
-| Evidence-type separation | Reject a record that collapses signature, watermark, detector, and truth into one field. | planned |
-| Transformation matrix | Exercise ordinary and adversarial transformations and preserve explicit lineage breaks. | planned |
-| Signed-false-claim control | Prove that cryptographic validity does not force semantic-truth status. | planned |
-| Missing-signal control | Reject inference of human or synthetic origin from absence alone. | planned |
-| Trust revocation | Propagate signer/root invalidation to cached and derivative decisions. | planned |
+| Evidence-type separation | Reject a record that collapses signature, watermark, detector, and truth into one field. | implemented in Lean and the independent 42-axis validator |
+| Transformation matrix | Exercise ordinary and adversarial transformations and preserve explicit lineage breaks. | finite accounting and rejection properties implemented; natural transformations remain planned for Theseus |
+| Signed-false-claim control | Prove that cryptographic validity does not force semantic-truth status. | implemented as a universal non-identifiability result |
+| Missing-signal control | Reject inference of human or synthetic origin from absence alone. | implemented as a universal non-identifiability result |
+| Trust revocation | Propagate signer/root invalidation to cached and derivative decisions. | scoped receipt and monotonic staleness properties implemented; deployed propagation remains planned |
 | Accessibility and remedy | Check visible disclosure, correction, and harmed-party routes. | planned |
-| No-promotion control | Prevent standards conformance or prose from becoming a robustness, compliance, or truth claim. | planned |
+| No-promotion control | Prevent standards conformance or prose from becoming a robustness, compliance, or truth claim. | implemented for the authored envelope and communication consumer |
 
 ## Source crosswalk
 
