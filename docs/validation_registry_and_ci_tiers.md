@@ -3,7 +3,7 @@
 Last updated: 2026-07-10
 
 `validation/registry.json` is the sole declarative inventory and execution plan
-for repository validation. It currently contains 238 ordered units and 734
+for repository validation. It currently contains 443 ordered units and 2,990
 required artifacts.
 Every unit names an execution tier, validation class, input/output contract,
 claim scope, negative-control status, and prohibited inference.
@@ -21,11 +21,11 @@ the legacy list, dispatcher, child-suppression environment, or dual authority.
 
 ## Tiers
 
-- `pr` runs the base structural gate plus 21 fast publication, status,
+- `pr` runs the base structural gate plus 105 fast publication, status,
   product, contribution, outline, proof-manifest, schema, and registry checks.
-- `deep` includes PR checks and the 193 deeper fixture, proof/evidence,
+- `deep` includes PR checks and 310 deeper fixture, proof/evidence,
   reader-preparation, replay, and artifact checks. Pages build uses this tier.
-- `release` adds 24 format/application/release-candidate checks and is manual;
+- `release` adds 28 format/application/release-candidate checks and is manual;
   it does not approve artifacts merely because the tier exists.
 
 The workflows are separated accordingly:

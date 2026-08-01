@@ -40,6 +40,12 @@ This report records the source-mining pass used to expand the book from a 16-cha
   writes previously absent mechanisms into seven canonical chapters.
 - Every recent rich whitepaper in this audit now has an exact
   section-family-to-manuscript closure audit.
+- Every local paper in the 46-record closure also has a tracked, public-safe
+  custody receipt in `sources/corben_raw_source_receipts.json`. The receipt
+  binds the exact ignored source bytes by relative path, byte count, and
+  SHA-256 digest. Local validation replays those hashes; CI validates the
+  receipt and closure topology without receiving the private paper bodies.
+  This is an identity and reproducibility control, not evidentiary promotion.
 - No locally readable Corben paper remains at first-pass routing-note fidelity.
   A future source revision, recovered inaccessible variant, or new paper reopens
   only its affected family; note existence or manifest assignment still does

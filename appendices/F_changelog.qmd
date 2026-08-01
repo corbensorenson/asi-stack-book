@@ -2,6 +2,11 @@
 
 ## 2026-07-31 — Corben paper fidelity audits and manuscript integration
 
+- Bound all 46 locally audited, git-ignored paper bodies to a public-safe
+  custody ledger containing exact relative paths, byte counts, and SHA-256
+  receipts. Local validation detects source-byte drift; tracked-files-only CI
+  validates the same closure topology without publishing the private corpus.
+  The receipt is explicitly identity metadata, not evidence promotion.
 - Completed the 11,080-word Aletheia correction-lineage audit across the
   original epistemic-engine paper, Aletheia Foundry, Proof-Carrying Workbench
   v1.1, and self-contained PCW v1.2. Replaced the routing note with a complete

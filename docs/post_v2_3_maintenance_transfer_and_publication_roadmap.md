@@ -3334,8 +3334,12 @@ their source-reported implementation and empirical statements.
 
 The authoritative synthesis is `docs/source_mining_synthesis.md`; the local and
 connector ledgers are `sources/corben_paper_corpus_closure.json` and
-`sources/corben_connector_source_closure.json`; each source has a public-safe
-note under `sources/source_notes/`. Closure means that every
+`sources/corben_connector_source_closure.json`; the exact ignored bytes behind
+the local ledger are bound without publication by
+`sources/corben_raw_source_receipts.json`; and each source has a public-safe
+note under `sources/source_notes/`. Local validation checks each receipt
+against the private cache, while CI checks the tracked receipt and closure
+topology. A receipt establishes byte identity only. Closure means that every
 substantive section, appendix, variant, formal object, algorithm, interface,
 state machine, implementation stage, threat, failure, limitation, baseline,
 falsifier, and cross-paper tension ends in exactly one disposition:

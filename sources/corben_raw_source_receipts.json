@@ -1,0 +1,332 @@
+{
+  "schema_version": "asi_stack.corben_raw_source_receipts.v1",
+  "as_of": "2026-07-31",
+  "expected_record_count": 46,
+  "storage_policy": "Raw paper bodies remain local and git-ignored. This tracked metadata binds the exact bytes used for section-family mining without publishing those bytes.",
+  "evidence_boundary": "A digest proves byte identity only. It does not establish authorship, publication rights, truth, novelty, implementation quality, or empirical support.",
+  "records_sha256": "08213ba6045208419d031607d6ff5693d03637e87f1db0d7f732294b9c2cd7af",
+  "records": [
+    {
+      "source_id": "deterministic_capability_compilation",
+      "raw_source": "sources/raw/corben_papers/deterministic_capability_compilation/deterministic_capability_compilation.md",
+      "bytes": 98419,
+      "sha256": "8306d2bd40662245f8d3f044b4ca11a61c0fb18ab7cb799ccfe64f5e8c8a80c1",
+      "custody_state": "locally_verified_private_cache"
+    },
+    {
+      "source_id": "platonic_world_model",
+      "raw_source": "sources/raw/corben_papers/platonic_world_model/platonic_world_model.md",
+      "bytes": 153305,
+      "sha256": "8ae760b6b2fd814b4c75260f146bf53789481b9c65fa5aded67a8934bb32427b",
+      "custody_state": "locally_verified_private_cache"
+    },
+    {
+      "source_id": "scf",
+      "raw_source": "sources/raw/google_docs/scf.txt",
+      "bytes": 215254,
+      "sha256": "aca5350d923638e59fac0061c84226b0432dd344da15f9fb6b6ea7ec1f4d24d9",
+      "custody_state": "locally_verified_private_cache"
+    },
+    {
+      "source_id": "qcsa_whitepaper",
+      "raw_source": "sources/raw/question_compiled_semantic_addressing_whitepaper.md",
+      "bytes": 94943,
+      "sha256": "d9e594d40dfd62c899ab25e9d395d34c702dac12e8afd75eed133392f78c0c8c",
+      "custody_state": "locally_verified_private_cache"
+    },
+    {
+      "source_id": "reflexive_router_whitepaper",
+      "raw_source": "sources/raw/reflexive_router/the_reflexive_router_white_paper_v1_2.md",
+      "bytes": 163605,
+      "sha256": "003a693741c40ca96ec3aece5b76ee90ec95a1d6c27ec81a970cff175f509068",
+      "custody_state": "locally_verified_private_cache"
+    },
+    {
+      "source_id": "kernel_english_residual_compiler",
+      "raw_source": "sources/raw/kernel_english_residual_compiler/kernel_english_hierarchical_residuals.md",
+      "bytes": 156368,
+      "sha256": "f560c61196cb2a114475ebd455f8643536e78c82dbbf6ec8dd712d993f2b6519",
+      "custody_state": "locally_verified_private_cache"
+    },
+    {
+      "source_id": "relational_dimension_compiler",
+      "raw_source": "sources/raw/corben_papers/relational_dimension_compiler/relational_dimension_compiler.md",
+      "bytes": 135827,
+      "sha256": "85bcb1865da74ffe57d04c763557993799065ec975c2b0eca5e093c23e9eaa5a",
+      "custody_state": "locally_verified_private_cache"
+    },
+    {
+      "source_id": "precision_contract",
+      "raw_source": "sources/raw/corben_papers/precision_contract/precision_contract.md",
+      "bytes": 116585,
+      "sha256": "c8c5eeedf72f5fad4132d9916971f1c1853c74f01fc4a6bab9ad8c0700b39ac7",
+      "custody_state": "locally_verified_private_cache"
+    },
+    {
+      "source_id": "planforge",
+      "raw_source": "sources/raw/google_docs/planforge.txt",
+      "bytes": 49857,
+      "sha256": "a429b6312668a53fc12982f7ee06b33d94794fb392e2126a57b5afb2d4c32a07",
+      "custody_state": "locally_verified_private_cache"
+    },
+    {
+      "source_id": "planforge_compiler_arch",
+      "raw_source": "sources/raw/google_docs/planforge_compiler_arch.txt",
+      "bytes": 18745,
+      "sha256": "5cb241085015bb7f85b9a1d7bc453b5cf00207837bd03e615e3e398d515a6793",
+      "custody_state": "locally_verified_private_cache"
+    },
+    {
+      "source_id": "cognitive_compilation",
+      "raw_source": "sources/raw/google_docs/cognitive_compilation.txt",
+      "bytes": 112425,
+      "sha256": "ccfbb66eec294648738bc7b1e8d575b882b9a56c65a48b2ef8b781a48d346213",
+      "custody_state": "locally_verified_private_cache"
+    },
+    {
+      "source_id": "talos",
+      "raw_source": "sources/raw/google_docs/talos.txt",
+      "bytes": 440468,
+      "sha256": "02bc9b2e895cee21e80be8ca204b499ea1c8d0801de14433878e3dd8bdb5388f",
+      "custody_state": "locally_verified_private_cache"
+    },
+    {
+      "source_id": "vcm_public",
+      "raw_source": "sources/raw/google_docs/vcm_public.txt",
+      "bytes": 235401,
+      "sha256": "832a96c700074246b537b4f97c5a3611d676eed9f1a9d1f0b68057e980a9de8a",
+      "custody_state": "locally_verified_private_cache"
+    },
+    {
+      "source_id": "spinoza",
+      "raw_source": "sources/raw/google_docs/spinoza.txt",
+      "bytes": 209889,
+      "sha256": "62ce996a2e366a419764c9a8dc5214d5c48b2c9c95b59200c90e9e7028240867",
+      "custody_state": "locally_verified_private_cache"
+    },
+    {
+      "source_id": "spinoza_composer",
+      "raw_source": "sources/raw/google_docs/spinoza_composer.txt",
+      "bytes": 113517,
+      "sha256": "d4670fdf7db9f2f275b7c4008e8c602561099564c0eab47acaef6f351cacad2a",
+      "custody_state": "locally_verified_private_cache"
+    },
+    {
+      "source_id": "octopus_router",
+      "raw_source": "sources/raw/google_docs/octopus_router.txt",
+      "bytes": 49310,
+      "sha256": "6b0ae00f09f47b9ae36c7b5ced0086388d58e8baecf8dbd82b7b8c929f400bb5",
+      "custody_state": "locally_verified_private_cache"
+    },
+    {
+      "source_id": "rmi",
+      "raw_source": "sources/raw/google_docs/rmi.txt",
+      "bytes": 49750,
+      "sha256": "1ab708ee4f0df25e66237b641e6da21bb847377af1d08ceeab7a2ca9ac19a35f",
+      "custody_state": "locally_verified_private_cache"
+    },
+    {
+      "source_id": "cognitive_loop_closure",
+      "raw_source": "sources/raw/google_docs/cognitive_loop_closure.txt",
+      "bytes": 77845,
+      "sha256": "94d4191afa537e2b3f9b58edc6dc00e250b5c232f6b37f6e26b78ec9aceaf8e7",
+      "custody_state": "locally_verified_private_cache"
+    },
+    {
+      "source_id": "benchmaxxing",
+      "raw_source": "sources/raw/google_docs/benchmaxxing.txt",
+      "bytes": 51787,
+      "sha256": "dedaa0772ada1bfaa0609d1512bd35ca5305b45c1ea10b41f389a10da8762659",
+      "custody_state": "locally_verified_private_cache"
+    },
+    {
+      "source_id": "cgs",
+      "raw_source": "sources/raw/google_docs/cgs.txt",
+      "bytes": 60191,
+      "sha256": "0634f12037d3c4723c69972670efbc9871d88a432cfe3482e38bf61d23b0679b",
+      "custody_state": "locally_verified_private_cache"
+    },
+    {
+      "source_id": "rgs",
+      "raw_source": "sources/raw/google_docs/rgs.txt",
+      "bytes": 58010,
+      "sha256": "0e59aa8adbce049634bd34a56d10f060a9bf5a28aa54ef30b013d83be0f90711",
+      "custody_state": "locally_verified_private_cache"
+    },
+    {
+      "source_id": "rankfold_neuralfold",
+      "raw_source": "sources/raw/google_docs/rankfold_neuralfold.txt",
+      "bytes": 108056,
+      "sha256": "6f072621dcf4534934b45446d749b359669e3fdea01ac66055cb4ee909579419",
+      "custody_state": "locally_verified_private_cache"
+    },
+    {
+      "source_id": "rankfold_compressor",
+      "raw_source": "sources/raw/google_docs/rankfold_compressor.txt",
+      "bytes": 185058,
+      "sha256": "fe986e86f406a84d105079879012dbef665a21d8c1eb1b4ce0eed1f7f03179a9",
+      "custody_state": "locally_verified_private_cache"
+    },
+    {
+      "source_id": "bbvca_v9",
+      "raw_source": "sources/raw/google_docs/bbvca_v9.txt",
+      "bytes": 71278,
+      "sha256": "76cc710e686a631134c913a88706b684355718af0d304ffab564bfae1cd42e4f",
+      "custody_state": "locally_verified_private_cache"
+    },
+    {
+      "source_id": "bbvca_main",
+      "raw_source": "sources/raw/google_docs/bbvca_main.txt",
+      "bytes": 416925,
+      "sha256": "89f342cab5b9389cbc807de3ee2a1f5b3032b9db77d400b6836c5335940b6d1b",
+      "custody_state": "locally_verified_private_cache"
+    },
+    {
+      "source_id": "genesiscode",
+      "raw_source": "sources/raw/google_docs/genesiscode.txt",
+      "bytes": 60187,
+      "sha256": "dcc3902d01fc6b82ae4693fccd59f399db5a66399c62412b49d98fa93ba09ca6",
+      "custody_state": "locally_verified_private_cache"
+    },
+    {
+      "source_id": "treellm",
+      "raw_source": "sources/raw/google_docs/treellm.txt",
+      "bytes": 550184,
+      "sha256": "f63b8298eaa6a046fba8c09d3263a964e9385b0a8ca69789b41067598ed5254c",
+      "custody_state": "locally_verified_private_cache"
+    },
+    {
+      "source_id": "spider_synapse",
+      "raw_source": "sources/raw/google_drive/spider_synapse_whitepaper.md",
+      "bytes": 22071,
+      "sha256": "7939bad0c29afcd3962d946a19862f34e404f994f566c558517b53cb3a221d5d",
+      "custody_state": "locally_verified_private_cache"
+    },
+    {
+      "source_id": "portia_synapse",
+      "raw_source": "sources/raw/google_drive/portia_synapse_whitepaper.md",
+      "bytes": 60274,
+      "sha256": "79501f3b5f1d068a9c2dfd285f9b502eaedcb84663ef4b070638311554092ce6",
+      "custody_state": "locally_verified_private_cache"
+    },
+    {
+      "source_id": "alignment_field",
+      "raw_source": "sources/raw/google_docs/alignment_field.txt",
+      "bytes": 458438,
+      "sha256": "cb3a0d845691ef78eb9c27fc244725815902ab53e907ef7a4e301089ccee878f",
+      "custody_state": "locally_verified_private_cache"
+    },
+    {
+      "source_id": "field_of_god",
+      "raw_source": "sources/raw/google_docs/field_of_god.txt",
+      "bytes": 246511,
+      "sha256": "bd8860ed12749a60763665f900daca548c38c873cff070515f20ed402add549e",
+      "custody_state": "locally_verified_private_cache"
+    },
+    {
+      "source_id": "ethica_mechanica",
+      "raw_source": "sources/raw/google_docs/ethica_mechanica.txt",
+      "bytes": 15708,
+      "sha256": "9c6aa463c047d3de1e82482333f90960e54203647ae09863cbe40974cfb6f1a0",
+      "custody_state": "locally_verified_private_cache"
+    },
+    {
+      "source_id": "eternal_code",
+      "raw_source": "sources/raw/google_docs/eternal_code.txt",
+      "bytes": 92385,
+      "sha256": "4dc1fa6583ed2c7993443d7144b24b3405caa3728538e758d3524b5522a839cd",
+      "custody_state": "locally_verified_private_cache"
+    },
+    {
+      "source_id": "verification_bandwidth",
+      "raw_source": "sources/raw/google_docs/verification_bandwidth.txt",
+      "bytes": 10913,
+      "sha256": "9f32fbc2517c5260dc7ac8d07cef4a7c0946b62063b0d245925d305744f5dbb0",
+      "custody_state": "locally_verified_private_cache"
+    },
+    {
+      "source_id": "beastbrain",
+      "raw_source": "sources/raw/google_docs/beastbrain.txt",
+      "bytes": 571911,
+      "sha256": "2ef45cb2862ac8a2bb25b65fcfab823987203cb7f7296733e21803ea76b23145",
+      "custody_state": "locally_verified_private_cache"
+    },
+    {
+      "source_id": "beastbrain_timeless",
+      "raw_source": "sources/raw/google_docs/beastbrain_timeless.txt",
+      "bytes": 26911,
+      "sha256": "4448c30ebe22dc4681ee7b6f9bc49c2edd18773061062731d20cc61893c730c4",
+      "custody_state": "locally_verified_private_cache"
+    },
+    {
+      "source_id": "aletheia",
+      "raw_source": "sources/raw/google_docs/aletheia.txt",
+      "bytes": 91713,
+      "sha256": "fc7404139542f04a295734b0c79eb90d4aaa062e052bdf4d26e954a9c2f7b874",
+      "custody_state": "locally_verified_private_cache"
+    },
+    {
+      "source_id": "context_engineer",
+      "raw_source": "sources/raw/google_docs/context_engineer.txt",
+      "bytes": 18556,
+      "sha256": "7fb934628b283102a69935abcdb45649667f67ddf55e4c7192a4c5c5915d11b2",
+      "custody_state": "locally_verified_private_cache"
+    },
+    {
+      "source_id": "black_hole_context_manager",
+      "raw_source": "sources/raw/google_docs/black_hole_context_manager.txt",
+      "bytes": 19880,
+      "sha256": "8db214a8752aabbed1e8661701daa3bfaef6c96d09b1c65c976c5c8a427547da",
+      "custody_state": "locally_verified_private_cache"
+    },
+    {
+      "source_id": "ladon_manhattan",
+      "raw_source": "sources/raw/google_docs/ladon_manhattan.txt",
+      "bytes": 8945,
+      "sha256": "57d415f70ed6128b3d408ae1f56030aeeec72a13930d6cd890c24c640e7e6763",
+      "custody_state": "locally_verified_private_cache"
+    },
+    {
+      "source_id": "uat",
+      "raw_source": "sources/raw/google_docs/uat.txt",
+      "bytes": 40830,
+      "sha256": "8b1be068633829b1caa64ed77b705ef5cd01fb2251ad5792e36c2f19ff52e634",
+      "custody_state": "locally_verified_private_cache"
+    },
+    {
+      "source_id": "simulation_scaling",
+      "raw_source": "sources/raw/google_docs/simulation_scaling.txt",
+      "bytes": 136055,
+      "sha256": "783d9d443b32001516038b839a7e3003990cd78c2866ecf1d855a753ffe6c4d7",
+      "custody_state": "locally_verified_private_cache"
+    },
+    {
+      "source_id": "tokenmana",
+      "raw_source": "sources/raw/google_docs/tokenmana.txt",
+      "bytes": 60285,
+      "sha256": "03460d7bb87822d9792cad12828633418e744674d5baa0aa0c33307ff43e758d",
+      "custody_state": "locally_verified_private_cache"
+    },
+    {
+      "source_id": "bugbrain",
+      "raw_source": "sources/raw/google_docs/bugbrain.txt",
+      "bytes": 313058,
+      "sha256": "339f43b7379ab2598d0bcf2a9354457bbed196c471eb489f28f1d3fc960e7805",
+      "custody_state": "locally_verified_private_cache"
+    },
+    {
+      "source_id": "software_magic_grimoire",
+      "raw_source": "sources/raw/google_docs/software_magic_grimoire.txt",
+      "bytes": 407939,
+      "sha256": "bd841654248c8707cae8048ac8e4c12dd76fcd91775b7bd746048ba4eaead959",
+      "custody_state": "locally_verified_private_cache"
+    },
+    {
+      "source_id": "viea",
+      "raw_source": "sources/raw/google_docs/viea.txt",
+      "bytes": 211471,
+      "sha256": "9f49a6d9622c139349cd3c448017e8c17a7a39a525a12019e236969c30c4fc91",
+      "custody_state": "locally_verified_private_cache"
+    }
+  ]
+}

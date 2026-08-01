@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
+import hashlib
 import json
 import re
 import sys
@@ -13,6 +14,7 @@ STRUCTURE = ROOT / "book_structure.json"
 SOURCE_INVENTORY = ROOT / "sources" / "source_inventory.json"
 CORBEN_CORPUS_CLOSURE = ROOT / "sources" / "corben_paper_corpus_closure.json"
 CORBEN_CONNECTOR_CLOSURE = ROOT / "sources" / "corben_connector_source_closure.json"
+CORBEN_RAW_SOURCE_RECEIPTS = ROOT / "sources" / "corben_raw_source_receipts.json"
 SOURCE_SYNTHESIS = ROOT / "docs" / "source_mining_synthesis.md"
 ACTIVE_ROADMAP = ROOT / "docs" / "post_v2_3_maintenance_transfer_and_publication_roadmap.md"
 
@@ -83,7 +85,87 @@ def inventory_source_ids() -> set[str]:
     return {str(record.get("id", "")) for record in inventory if isinstance(record, dict) and record.get("id")}
 
 
-def validate_corben_corpus_closure(inventory_ids: set[str], errors: list[str]) -> None:
+def canonical_sha(value: object) -> str:
+    encoded = json.dumps(value, sort_keys=True, separators=(",", ":")).encode()
+    return hashlib.sha256(encoded).hexdigest()
+
+
+def validate_corben_raw_source_receipts(errors: list[str]) -> dict[str, dict]:
+    if not CORBEN_RAW_SOURCE_RECEIPTS.exists():
+        errors.append("missing sources/corben_raw_source_receipts.json")
+        return {}
+    payload = read_json(CORBEN_RAW_SOURCE_RECEIPTS)
+    if not isinstance(payload, dict):
+        errors.append("sources/corben_raw_source_receipts.json must contain an object")
+        return {}
+    if payload.get("schema_version") != "asi_stack.corben_raw_source_receipts.v1":
+        errors.append("Corben raw-source receipt ledger has the wrong schema_version")
+    if payload.get("as_of") != "2026-07-31":
+        errors.append("Corben raw-source receipt ledger must retain its audited as_of date")
+    storage_policy = payload.get("storage_policy", "")
+    if not isinstance(storage_policy, str) or "git-ignored" not in storage_policy or "without publishing" not in storage_policy:
+        errors.append("Corben raw-source receipt ledger must preserve its private-cache storage boundary")
+    evidence_boundary = payload.get("evidence_boundary", "")
+    if not isinstance(evidence_boundary, str) or "byte identity only" not in evidence_boundary:
+        errors.append("Corben raw-source receipt ledger must preserve its non-evidentiary boundary")
+
+    records = payload.get("records", [])
+    expected_count = payload.get("expected_record_count")
+    if not isinstance(records, list) or expected_count != 46 or len(records) != expected_count:
+        errors.append(
+            f"Corben raw-source receipt ledger must contain exactly 46 records; found {len(records) if isinstance(records, list) else 'non-list'}"
+        )
+        return {}
+    if payload.get("records_sha256") != canonical_sha(records):
+        errors.append("Corben raw-source receipt ledger records_sha256 does not match its records")
+
+    receipt_by_id: dict[str, dict] = {}
+    seen_paths: set[str] = set()
+    for index, receipt in enumerate(records):
+        if not isinstance(receipt, dict):
+            errors.append(f"Corben raw-source receipt {index} must be an object")
+            continue
+        source_id = receipt.get("source_id")
+        raw_source = receipt.get("raw_source")
+        digest = receipt.get("sha256")
+        byte_count = receipt.get("bytes")
+        if not isinstance(source_id, str) or not source_id:
+            errors.append(f"Corben raw-source receipt {index} has no source_id")
+            continue
+        if source_id in receipt_by_id:
+            errors.append(f"Corben raw-source receipt ledger repeats source ID `{source_id}`")
+        if not isinstance(raw_source, str) or not raw_source.startswith("sources/raw/") or Path(raw_source).is_absolute():
+            errors.append(f"`{source_id}` has an invalid private raw-source receipt path: {raw_source!r}")
+        elif raw_source in seen_paths:
+            errors.append(f"Corben raw-source receipt ledger repeats path `{raw_source}`")
+        else:
+            seen_paths.add(raw_source)
+        if not isinstance(digest, str) or not re.fullmatch(r"[0-9a-f]{64}", digest):
+            errors.append(f"`{source_id}` has an invalid SHA-256 receipt")
+        if not isinstance(byte_count, int) or isinstance(byte_count, bool) or byte_count <= 0:
+            errors.append(f"`{source_id}` has an invalid byte count")
+        if receipt.get("custody_state") != "locally_verified_private_cache":
+            errors.append(f"`{source_id}` has an invalid custody_state")
+
+        if isinstance(raw_source, str) and raw_source.startswith("sources/raw/"):
+            local_path = ROOT / raw_source
+            if local_path.exists():
+                content = local_path.read_bytes()
+                if len(content) != byte_count:
+                    errors.append(f"`{source_id}` private raw-source byte count drifted")
+                if hashlib.sha256(content).hexdigest() != digest:
+                    errors.append(f"`{source_id}` private raw-source SHA-256 drifted")
+        receipt_by_id[source_id] = receipt
+
+    gitignore = (ROOT / ".gitignore").read_text(encoding="utf-8", errors="ignore")
+    if "sources/raw/*" not in gitignore or "!sources/raw/README.md" not in gitignore:
+        errors.append(".gitignore no longer preserves the private raw-source cache boundary")
+    return receipt_by_id
+
+
+def validate_corben_corpus_closure(
+    inventory_ids: set[str], raw_receipts: dict[str, dict], errors: list[str]
+) -> None:
     if not CORBEN_CORPUS_CLOSURE.exists():
         errors.append("missing sources/corben_paper_corpus_closure.json")
         return
@@ -134,13 +216,18 @@ def validate_corben_corpus_closure(inventory_ids: set[str], errors: list[str]) -
             errors.append(f"`{source_id}` source_note must be {expected_note}")
         raw_source = record.get("raw_source")
         audit_basis = record.get("audit_basis")
-        for label, relative in (("raw_source", raw_source), ("source_note", record.get("source_note")), ("audit_basis", audit_basis)):
+        for label, relative in (("source_note", record.get("source_note")), ("audit_basis", audit_basis)):
             if not isinstance(relative, str) or not relative or Path(relative).is_absolute() or not (ROOT / relative).exists():
                 errors.append(f"`{source_id}` has a missing or invalid {label}: {relative!r}")
         if isinstance(raw_source, str):
             if raw_source in seen_raw_paths:
                 errors.append(f"Corben corpus closure ledger repeats raw source path `{raw_source}`")
             seen_raw_paths.add(raw_source)
+        receipt = raw_receipts.get(source_id)
+        if not receipt:
+            errors.append(f"`{source_id}` has no private raw-source custody receipt")
+        elif receipt.get("raw_source") != raw_source:
+            errors.append(f"`{source_id}` closure path and private raw-source receipt path disagree")
 
         if isinstance(audit_basis, str) and (ROOT / audit_basis).exists():
             audit_text = (ROOT / audit_basis).read_text(encoding="utf-8", errors="ignore")
@@ -262,7 +349,8 @@ def main() -> None:
     notes_to_validate = required_set | assigned
 
     errors: list[str] = []
-    validate_corben_corpus_closure(inventory_ids, errors)
+    raw_receipts = validate_corben_raw_source_receipts(errors)
+    validate_corben_corpus_closure(inventory_ids, raw_receipts, errors)
     validate_corben_connector_closure(inventory_ids, errors)
     missing_inventory = sorted(source_id for source_id in assigned if source_id not in inventory_ids)
     for source_id in missing_inventory:
